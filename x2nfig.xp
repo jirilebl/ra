@@ -1,0 +1,39 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+int n=1;
+
+// gather references to integrand
+double f(double t)
+{
+	return pow(t,2*n);
+}
+
+int main()
+{
+  picture(P(-1.0,0.0), P(1.0,1.0), "3x2in");
+
+  begin();
+
+  h_axis(2);
+  v_axis(1);
+
+  bold();
+  n = 1;
+  plot(f, -1.0, 1.0, 150);
+  label(P(0.2,0.1), "$x^2$");
+  n = 2;
+  plot(f, -1.0, 1.0, 150);
+  label(P(0.45,0.1), "$x^4$");
+  n = 3;
+  plot(f, -1.0, 1.0, 150);
+  label(P(0.75,0.1), "$x^6$");
+  n = 8;
+  plot(f, -1.0, 1.0, 150);
+  label(P(0.93,0.09), "$x^{16}$");
+
+  tikz_format();
+  end();
+}
+

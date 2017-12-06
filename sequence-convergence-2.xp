@@ -1,0 +1,76 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+#include <stdio.h>
+
+double seq[] =
+{
+	1.9,
+	0.2,
+	1.7,
+	0.8,
+	0.6,
+	0.5,
+	1.25,
+	1.1,
+	1.18,
+	0.95
+};
+
+double seqoff[] =
+{
+	0,
+	0,
+	0,
+	0,
+	0,
+	0.3,
+	0,
+	0,
+	0.3,
+	0.3
+};
+
+int main() 
+{
+	int i;
+	picture(P(0,-0.75), P(2,0.5), "3x0.7in");
+
+	begin();   
+	
+	//rect(P(0,-0.75), P(2,0.5)); // corners
+
+	Black(0.1);
+	pen(Black(0.1));
+	fill(Black(0.1));
+	rect(P(0.74,-0.0), P(1.26,0.2)); // corners
+	pen(Black(1.0));
+
+	label(P(1,0),P(0,10),"$x$",t);
+	line(P(1,-0.1),P(1,0.2));
+
+	label(P(1.26,0),P(0,10),"$x+\\epsilon$",t);
+	line(P(1.26,-0.1),P(1.26,0.2));
+
+	label(P(0.74,0),P(0,10),"$x-\\epsilon$",t);
+	line(P(0.74,-0.1),P(0.74,0.2));
+
+	h_axis(1);
+
+	for (int i = 0; i < 10; i++) {
+		char num[10];
+		sprintf(num, "$x_{%d}$", i+1);
+		line(P(seq[i],-0.15),P(seq[i],0.1));
+		if (seqoff[i] > 0.00001) {
+			pen(Black(0.3));
+			line(P(seq[i],-0.1),P(seq[i],-0.15-seqoff[i]));
+			pen(Black(1.0));
+		}
+		label(P(seq[i],-0.1-seqoff[i]),P(0,-5),num,b);
+	}
+
+	tikz_format();
+	end();
+}
+

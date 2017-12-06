@@ -1,0 +1,57 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+#include <string.h>
+#include <stdio.h>
+using namespace ePiX;
+
+int main()
+{
+  picture(P(-1.07,-0.4), P(2.05,1.1), "4.7x2in");
+
+  begin();
+  //border();
+
+  double epsilon = 0.25;
+
+  rect(P(1.0-epsilon,0.0),P(1.0+epsilon,1.0));
+
+  fill(Black(0.1));
+  rect(P(0.0,0.0),P(1.0-epsilon,1.0));
+  nofill();
+
+  h_axis(P(0,0),P(2,0),2);
+  v_axis(P(0,0),P(0,1),1);
+
+  pen(1.5);
+  line(P(0,1),P(1,1));
+  line(P(1,0),P(2,0));
+  plain();
+
+  label (P(0.0,0.0), P(0,-6), "$0$", b);
+  label (P(1-epsilon,0.0), P(0,-6), "$1-\\epsilon$", b);
+  label (P(1+epsilon,0.0), P(0,-6), "$1+\\epsilon$", b);
+  label (P(2,0.0), P(0,-6), "$2$", b);
+
+  solid();
+  arrow_inset(0.9);
+  aarrow(P(0,-0.2),P(1-epsilon,-0.2));
+  label (P((1-epsilon)/2,-0.2), P(0,-4), "$\\Delta x_1=1-\\epsilon$", b);
+
+  aarrow(P(1-epsilon,-0.2),P(1+epsilon,-0.2));
+  label (P(1,-0.2), P(0,-4), "$\\Delta x_2=2\\epsilon$", b);
+
+  aarrow(P(1+epsilon,-0.2),P(2,-0.2));
+  label (P((2+1+epsilon)/2,-0.2), P(0,-4), "$\\Delta x_3=1-\\epsilon$", b);
+
+  label (P(-0.1,0), P(0,0), "$M_3=m_2=m_3=0$", l);
+  label (P(-0.1,1), P(0,0), "$M_1=M_2=m_1=1$", l);
+
+  dot_size(3);
+  dot(P(1,0.5));
+  circ(P(1,0.0));
+  circ(P(1,1.0));
+
+  tikz_format();
+  end();
+}
+

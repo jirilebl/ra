@@ -1,0 +1,46 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+// gather references to integrand
+double f(double t)
+{
+  if (t==0.0) return 0.0;
+  return sin(1/t);
+}
+
+int main()
+{
+  int n;
+  picture(P(-1.0,-1.0), P(1.0,1.0), "3x2in");
+
+  begin();
+
+  h_axis(2);
+  v_axis(2);
+
+  //bold();
+  int N = 30;
+  plot(f, -1.0, -1.0/(2*M_PI), 150);
+  plot(f, 1.0/(2*M_PI), 1.0, 150);
+  for (n=2; n <= N; n++) {
+	int k = 28;
+	if (n >= 10)
+		k=8;
+	else if (n >= 20)
+		k=4;
+	  plot(f, -1.0/(n*M_PI), -1.0/(M_PI*(n+1)), k);
+	  plot(f, 1.0/((n+1)*M_PI), 1.0/(M_PI*n), k);
+  }
+
+  // blackness in the middle
+  fill(Black());
+  quad(P(-1.0/((N+1)*M_PI),-1),
+       P(-1.0/((N+1)*M_PI),1),
+       P(1.0/((N+1)*M_PI),1),
+       P(1.0/((N+1)*M_PI),-1));
+
+  tikz_format();
+  end();
+}
+

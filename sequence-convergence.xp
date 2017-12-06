@@ -1,0 +1,78 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+#include <stdio.h>
+
+double seq[] =
+{
+	1.9,
+	0.2,
+	1.7,
+	0.8,
+	0.6,
+	0.50,
+	1.25,
+	1.1,
+	1.18,
+	0.95
+};
+
+int main() 
+{
+	int i;
+	picture(P(-1.7,-0.45), P(10.9,2), "3.78x2.45in");
+
+	begin();   
+	//rect(P(-1.7,-0.45), P(10.9,2)); // corners
+	screen subfig(P(0,0), P(10,2));
+	activate(subfig);
+
+
+	Black(0.1);
+	pen(Black(0.1));
+	fill(Black(0.1));
+	rect(P(0,0.74), P(10.1,1.26)); // corners
+	triangle(P(10.1,0.74), P(10.1,0.84), P(10.4,0.79));
+	triangle(P(10.1,0.84), P(10.1,0.94), P(10.4,0.89));
+	triangle(P(10.1,0.94), P(10.1,1.04), P(10.4,0.99));
+	triangle(P(10.1,1.04), P(10.1,1.15), P(10.4,1.09));
+	triangle(P(10.1,1.15), P(10.1,1.26), P(10.4,1.20));
+	pen(Black(1.0));
+
+	label(P(0,1),P(-5,0),"$x$",l);
+	label(P(0,1.26),P(-5,0),"$x+\\epsilon$",l);
+	line(P(-0.1,1.26),P(0.1,1.26));
+	label(P(0,0.74),P(-5,0),"$x-\\epsilon$",l);
+	line(P(-0.1,0.74),P(0.1,0.74));
+	line(P(-0.1,1),P(10.1,1));
+	line(P(10,0),P(10.4,0));
+	line(P(10.45,0),P(10.55,0));
+	line(P(10.6,0),P(10.7,0));
+	line(P(10.75,0),P(10.8,0));
+
+
+	h_axis(10);
+	v_axis(4);
+
+	dot_size(3);
+	for (int i = 0; i < 10; i++) {
+		char num[10];
+		ddot(P(i+1, seq[i]));
+		sprintf(num, "%d", i+1);
+		label(P(i+1,0),P(0,-10),num,b);
+	}
+
+	dot_size(2);
+
+	label(P(10.1,1),P(0,0),"${}\\cdots$",r);
+
+	label(P(7,0),P(0,-22),"M",b);
+
+	deactivate(subfig);
+	inset(subfig);
+
+	tikz_format();
+	end();
+}
+

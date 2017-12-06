@@ -1,0 +1,26 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+int main()
+{
+  picture(P(-0.05,-0.08), P(1.0,1.0), "3x2in");
+
+  begin();
+
+  dashed();
+  h_axis(P(0,0),P(1,0),1);
+  v_axis(P(0,0),P(0,1),1);
+  solid();
+
+  bold();
+  line(P(0.0,1.0), P(1.0/3.0,0.0));
+  line(P(1.0/3.0,0.0), P(1.0,0.0));
+
+  label(P(-0.035,1.0), "$1$");
+  label(P(1.0/3.0,-0.06), "$\\nicefrac{1}{n}$");
+
+  tikz_format();
+  end();
+}
+

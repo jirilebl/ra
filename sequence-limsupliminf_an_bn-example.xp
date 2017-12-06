@@ -1,0 +1,79 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+#include <stdio.h>
+#include <stdlib.h>
+
+double seq[100];
+double an[100];
+double bn[100];
+
+int main() 
+{
+	int i;
+	picture(P(-10.7,-0.1), P(20.9,2), "5.50x2.40in");
+
+	begin();   
+	//line(P(-10.7,-0.05), P(50.9,2));
+	screen subfig(P(0,0), P(20,2));
+	activate(subfig);
+
+	/* figure out it out till 100, but only draw till 20 */
+	for (i=0;i<100;i++) {
+		/*
+		double shim = 0.8*(i)/(100);
+		seq[i] = ((rand()%10000)/10000.0)*(2.0-2*shim) + shim;
+		*/
+		if ((i+1) % 2 == 1) {
+			seq[i] = ((double)(i+1)+1)/(double)(i+1);
+		} else {
+			seq[i] = 0;
+		}
+	}
+	for (i=0;i<100;i++) {
+		int j;
+		an[i] = seq[i];
+		bn[i] = seq[i];
+		for (j=i+1;j<100;j++) {
+			if (an[i] < seq[j]) an[i] = seq[j];
+			if (bn[i] > seq[j]) bn[i] = seq[j];
+		}
+	}
+
+
+	/*cheat :) */
+	an[80] = 1.0;
+	bn[80] = 0.0;
+
+	/* good approx for limsup and liminf */
+	dashed();
+	line(P(-0.1,an[80]),P(20,an[80]));
+	//line(P(-0.1,bn[80]),P(20,bn[80]));
+	solid();
+	line(P(-0.1,bn[80]),P(20,bn[80]));
+
+	label(P(-0.1,an[80]),P(-5,0),"$\\displaystyle \\limsup_{n\\to\\infty} x_n$",l);
+	label(P(-0.1,bn[80]),P(-5,0),"$\\displaystyle \\liminf_{n\\to\\infty} x_n$",l);
+
+
+	//h_axis(20);
+	h_axis(1);
+	v_axis(2);
+
+	dot_size(3);
+	for (int i = 0; i < 20; i++) {
+		ddot(P(i+1, seq[i]));
+		marker(P(i+1, an[i]),RING);
+		marker(P(i+1, bn[i]-0.004),DIAMOND);
+	}
+
+	dot_size(2);
+
+	deactivate(subfig);
+	inset(subfig);
+
+	tikz_format();
+	end();
+}
+

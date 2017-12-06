@@ -1,0 +1,65 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+// gather references to integrand
+double f(double t)
+{
+  //return 1.5*(sqrt(t+0.1)-sqrt(0.1));
+  //return (t-0.5)*(t-0.5)+0.5;
+  if (t < 0.2) {
+    return f(0.2)-(t-0.2)*(t-0.2);
+  } else if (t > 1.75) {
+    return f(1.75)+0.2*(t-1.75);
+  } else {
+    return -(t-2.2)*t*(t-1.8)+1.4;
+  }
+}
+
+int main()
+{
+  double slope;
+  double c;
+  double x;
+
+  picture(P(0,0), P(2,1.5), "2x1.3in");
+
+  begin();
+
+  h_axis(2);
+  v_axis(2);
+
+  c = 0.6;
+  x = 1.5;
+
+  slope = (f(x)-f(c))/(x-c);
+
+  line(P(c-0.2,f(c)-0.2*slope),P(x+0.2,f(x)+0.2*slope));
+
+  //fill(Black());
+  //circle(P(c,f(c)),0.03);
+  //circle(P(x,f(x)),0.03);
+  //nofill();
+  spot(P(c,f(c)));
+  spot(P(x,f(x)));
+
+  dashed();
+  line(P(c,f(c)),P(c,0.0));
+  line(P(x,f(x)),P(x,0.0));
+  solid();
+
+  label(P(c,0.0), P(0,-4), "$x$", b);
+  label(P(x,0.0), P(0,-4), "$y$", b);
+
+  //label(P(x-0.3,f(x)-0.3*slope),
+        //P(1,4), "slope $= \\frac{f(x)-f(y)}{x-y}$", tl);
+  label(P(0.2,1.2),P(0,0), "slope $= \\frac{f(x)-f(y)}{x-y}$", br);
+  //label(P(0.2,1.2),P(0,0), "$\\lvert \\text{slope} \\rvert \\leq K$", br);
+
+  bold();
+  plot(f, xmin(), xmax(), 40);
+
+  tikz_format();
+  end();
+}
+

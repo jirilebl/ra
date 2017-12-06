@@ -1,0 +1,50 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+int main()
+{
+  int n;
+  int k;
+  double x1;
+  double f1;
+  double x2;
+  double f2;
+
+  picture(P(-0.12,1.25), P(1.01,3.08), "2.3x1.2in");
+
+  begin();
+  //border();
+
+  dotted();
+  h_axis(P(0,1.5),P(1,1.5),2);
+  solid();
+
+  v_axis(P(0,1.5),P(0,3),3);
+
+  font_size("small");
+
+  label(P(0,1.5),P(-4,0),"1.5",l);
+  label(P(0,2),P(-4,0),"2",l);
+  label(P(0,2.5),P(-4,0),"2.5",l);
+  label(P(0,3),P(-4,0),"3",l);
+
+  label(P(0,1.5),P(0,-4),"0",b);
+  label(P(1,1.5),P(0,-4),"1",b);
+
+
+  bold();
+
+  for(k=1; k < 20; k++) {
+	  x1 = 1.0-1.0/k;
+	  f1 = x1 + 2*(1-pow(0.5,k+1));
+	  x2 = 1.0-1.0/(k+1);
+	  f2 = x2 + 2*(1-pow(0.5,k+1));
+	  line(P(x1,f1),P(x2,f2));
+  }
+  line(P(x2,f2),P(1,3));
+
+  tikz_format();
+  end();
+}
+

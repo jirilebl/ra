@@ -1,0 +1,50 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+// gather references to integrand
+double f(double t)
+{
+  return 1.5*(sqrt(t+0.1)-sqrt(0.1));
+}
+
+int main()
+{
+  double slope;
+  double c;
+
+  picture(P(0,0), P(2,2), "2x2in");
+
+  begin();
+
+  h_axis(2);
+  v_axis(2);
+
+  Deriv df(f);
+
+  c = 0.6;
+
+  slope = df.eval(c);
+
+  line(P(c-0.55,f(c)-slope*0.55),P(c+0.55,f(c)+slope*0.55));
+
+  //fill(Black());
+  //circle(P(c,f(c)),0.03);
+  //nofill();
+  spot(P(c,f(c)));
+
+  dashed();
+  line(P(c,f(c)),P(c,0.0));
+  solid();
+
+  label(P(c,0.0), P(0,-4), "$c$", b);
+
+  label(P(c+0.5,f(c)+0.5*slope), P(0,0), "slope $= f'(c)$", tl);
+
+  bold();
+  plot(f, xmin(), xmax(), 40);
+
+  tikz_format();
+  end();
+}
+

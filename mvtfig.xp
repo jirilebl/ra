@@ -1,0 +1,50 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+// gather references to integrand
+double f(double t)
+{
+  return t*(t-2)*(t-3)/2-0.3+t*0.5;
+}
+
+int main()
+{
+  double slope;
+  double c;
+
+  picture(P(0,-0.5), P(3,1.5), "3x2in");
+
+  begin();
+
+  h_axis(3);
+  v_axis(4);
+
+  slope = (f(3)-f(0))/3;
+  c = 0.7847;
+
+  line(P(c-0.5,f(c)-slope*0.5),P(c+0.5,f(c)+slope*0.5));
+
+  line(P(0,f(0)),P(3,f(3)));
+
+  //fill(Black());
+  //circle(P(c,f(c)),0.03);
+  //nofill();
+  spot(P(c,f(c)));
+
+  dashed();
+  line(P(c,f(c)),P(c,0.0));
+  solid();
+
+  label(P(c,0.0), P(0,-4), "$c$", b);
+
+  label(P(0,f(0)), P(2,-4), "$(a,f(a))$", r);
+  label(P(3,f(3)), P(-2,4), "$(b,f(b))$", l);
+
+  bold();
+  plot(f, xmin(), xmax(), 40);
+
+  tikz_format();
+  end();
+}
+

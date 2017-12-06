@@ -1,0 +1,164 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+#include <string.h>
+#include <stdio.h>
+using namespace ePiX;
+
+double f(double t)
+{
+	//return 0.7*(t-0.5)*(t-1.0)*t+0.5;//sqrt(t-0.4)/sqrt(1.5-0.4);
+	//return (-t*t*t+1.5*t*t+4)/5.5;
+	//return (0.2*t+0.6)*(-t*t*t+1.5*t*t+3)/3.0;
+	return ((-(t-0.6)*(t-0.6)+2.5)/2.5)*(4-t*t)/4.0;
+}
+
+double integral_of_f(double a, double b)
+{
+	double in;
+	double t;
+	double inc = (b-a)/100.0;
+
+	in = 0.0;
+	for (t = a; t < b; t += inc) {
+		in += f(t)*inc;
+	}
+
+	return in;
+}
+
+int main()
+{
+  double t;
+
+  picture(P(-0.23,-0.33), P(2.05,1), "6x2.1in");
+
+  begin();
+
+  //font_size("small");
+
+  //border();
+
+  arrow_inset(0.9);
+
+  double x1=0.0;
+  double x2=2.0/3.0;
+  double x3=4.0/3.0;
+  double x4=2.0;
+  double in1 = integral_of_f(x1,x2) / ((2.0)/(3.0));
+  double in2 = integral_of_f(x2,x3) / ((2.0)/(3.0));
+  double in3 = integral_of_f(x3,x4) / ((2.0)/(3.0));
+
+  fill(Black(0.1));
+  rect(P(x1,0.0),P(x2,in1));
+  rect(P(x2,0.0),P(x3,in2));
+  rect(P(x3,0.0),P(x4,in3));
+  nofill();
+
+  h_axis(P(0,0),P(2,0),3);
+  v_axis(P(0,0),P(0,1),1);
+
+  bold();
+  plot(f,0.0,2.0,20);
+
+  label (P(x2,0.34), P(4,0), "$\\text{area} = f(c_i) \\Delta x_i$", r);
+  label (P(x2,0.16), P(4,0), "$\\text{\\phantom{area}} = F(x_i)-F(x_{i-1})$", r);
+
+  label (P(x1,0.34), P(3,0), "$\\text{area} = f(c_{i-1}) \\Delta x_{i-1}$", r);
+  label (P(x1,0.16), P(3,0), "$\\text{\\phantom{area}} = F(x_{i-1})-F(x_{i-2})$", r);
+
+  label (P(x3-0.00,0.84), P(4,0), "$\\text{area} = f(c_{i+1}) \\Delta x_{i+1}$", r);
+  label (P(x3-0.00,0.66), P(4,0), "$\\text{\\phantom{area}} = F(x_{i+1})-F(x_{i})$", r);
+
+  arrow(P(x3+0.2,0.50),P(x3+0.15,0.1));
+  
+  label (P(x1,0), P(0,-5), "$x_{i-2}$", b);
+  label (P(x2,0), P(0,-5), "$x_{i-1}$", b);
+  label (P(x3,0), P(0,-5), "$x_i$", b);
+  label (P(x4,0), P(0,-5), "$x_{i+1}$", b);
+
+  plain();
+  dashed();
+  line(P(x1,in1),P(-0.02,in1));
+  line(P(x2,in2),P(-0.02,in2));
+  line(P(x3,in3),P(x3-0.04,in3));
+  //line(P(x2-0.02,in3),P(x2+0.06,in3));
+  line(P(x1+0.06,in3),P(-0.02,in3));
+  solid();
+
+  label (P(-0.02,in1), P(-4,0), "$f(c_{i-1})$", l);
+  label (P(-0.02,in2), P(-4,0), "$f(c_i)$", l);
+  label (P(-0.02,in3), P(-4,0), "$f(c_{i+1})$", l);
+
+  for (t=x1;t<x4;t=t+0.01) {
+	  if ((f(t)-in1)*(f(t+0.01)-in1) <= 0.0)
+		  break;
+  }
+  dashed();
+  line(P(t,in1),P(t,0.47));
+  line(P(t,0.06),P(t,-0.02));
+  solid();
+  label (P(t,0), P(0,-5), "$c_{i-1}$", b);
+
+  for (t=x2;t<x4;t=t+0.01) {
+	  if ((f(t)-in2)*(f(t+0.01)-in2) <= 0.0)
+		  break;
+  }
+  dashed();
+  line(P(t,in2),P(t,0.47));
+  line(P(t,0.06),P(t,-0.02));
+  solid();
+  label (P(t,0), P(0,-5), "$c_i$", b);
+
+
+  for (t=x3;t<x4;t=t+0.01) {
+	  if ((f(t)-in3)*(f(t+0.01)-in3) <= 0.0)
+		  break;
+  }
+  dashed();
+  line(P(t,in3),P(t,-0.02));
+  solid();
+  label (P(t,0), P(0,-5), "$c_{i+1}$", b);
+
+
+  aarrow(P(x1,-0.2),P(x2,-0.2));
+  label (P((x1+x2)/2.0,-0.2), P(0,-4), "$\\Delta x_{i-1}$", b);
+  aarrow(P(x2,-0.2),P(x3,-0.2));
+  label (P((x2+x3)/2.0,-0.2), P(0,-4), "$\\Delta x_i$", b);
+  aarrow(P(x3,-0.2),P(x4,-0.2));
+  label (P((x3+x4)/2.0,-0.2), P(0,-4), "$\\Delta x_{i+1}$", b);
+
+  label (P(1.01,0.90), P(0,0), "$y=f(x)=F'(x)$", c);
+
+  //pen(1.5);
+  //line(P(0,1),P(1,1));
+  //line(P(1,0),P(2,0));
+  //plain();
+//
+  //label (P(0.0,0.0), P(0,-6), "$0$", b);
+  //label (P(1-epsilon,0.0), P(0,-6), "$1-\\epsilon$", b);
+  //label (P(1+epsilon,0.0), P(0,-6), "$1+\\epsilon$", b);
+  //label (P(2,0.0), P(0,-6), "$2$", b);
+//
+  //solid();
+  //arrow_inset(0.9);
+  //aarrow(P(0,-0.2),P(1-epsilon,-0.2));
+  //label (P((1-epsilon)/2,-0.2), P(0,-4), "$\\Delta x_1=1-\\epsilon$", b);
+//
+  //aarrow(P(1-epsilon,-0.2),P(1+epsilon,-0.2));
+  //label (P(1,-0.2), P(0,-4), "$\\Delta x_2=2\\epsilon$", b);
+//
+  //aarrow(P(1+epsilon,-0.2),P(2,-0.2));
+  //label (P((2+1+epsilon)/2,-0.2), P(0,-4), "$\\Delta x_3=1-\\epsilon$", b);
+//
+  //label (P(-0.1,0), P(0,0), "$M_3=m_2=m_3=0$", l);
+  //label (P(-0.1,1), P(0,0), "$M_1=M_2=m_1=1$", l);
+//
+  //dot_size(3);
+  //dot(P(1,0.5));
+  //circ(P(1,0.0));
+  //circ(P(1,1.0));
+
+  tikz_format();
+  end();
+}
+

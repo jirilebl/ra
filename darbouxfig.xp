@@ -1,0 +1,69 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+#include <string.h>
+#include <stdio.h>
+using namespace ePiX;
+
+const int N(8); // Number of rectangles
+
+// gather references to integrand
+double f(double t)
+{
+  return -t*(t-2.6)*(t-3)/1.9+1.95;
+}
+
+int main()
+{
+	int i;
+  picture(P(-0.3,-0.2), P(3.1,2), "3.6x1.8in");
+
+  begin();
+
+  //rect(P(-0.3,-0.2),P(3.1,2));
+
+  const double dx(xsize()/N);
+
+  riemann_sum(f, 0.0, 3.0, N, UPPER);
+
+  fill(Black(0.1));
+  riemann_sum(f, 0.0, 3.0, N, LOWER);
+  nofill();
+
+  h_axis(P(0,0),P(3,0),1);
+  v_axis(P(0,0),P(0,2),1);
+
+  bold();
+  plot(f, 0.0, 3.0, 40);
+  plain();
+
+  for (i=0; i <= N; i++) {
+	  char txt[20];
+	  snprintf (txt, 20, "$x_{%d}$", i);
+	  label (P((i*3.0)/N,0.0), P(0,-4), txt, b);
+  }
+
+  dashed();
+  double xjm = (4*3.0)/N;
+  double xj = (5*3.0)/N;
+  double xjp = (6*3.0)/N;
+  line(P(xjm,f(xj)),P(xjm,1.8));
+  line(P(xj,f(xjp)),P(xj,1.8));
+  solid();
+  arrow_inset(0.9);
+  aarrow(P(xjm,1.7),P(xj,1.7));
+  label (P((xj+xjm)/2.0,1.7), P(0,4), "$\\Delta x_5$", t);
+
+  double xk = (4*3.0)/N;
+  double xkp = (5*3.0)/N;
+  dashed();
+  line (P(-0.07,f(xk)), P(xk,f(xk)));
+  line (P(-0.07,f(xkp)), P(xk,f(xkp)));
+  solid();
+
+  label (P(-0.1,f(xk)), P(0,0), "$m_5$", l);
+  label (P(-0.1,f(xkp)), P(0,0), "$M_5$", l);
+
+  tikz_format();
+  end();
+}
+

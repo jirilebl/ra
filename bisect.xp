@@ -1,0 +1,90 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+#include <string.h>
+#include <stdio.h>
+using namespace ePiX;
+
+// gather references to integrand
+double f(double t)
+{
+  return 0.7*(-(t-2)*(t-2)+2);
+}
+
+int main()
+{
+  double c;
+
+  double a,b;
+  int iter;
+
+  picture(P(-0.1,-4.2), P(2.9,1.41), "3x2.6in");
+
+  a = 0;
+  b = 2.8;
+
+  begin();
+
+  h_axis(3);
+  //v_axis(4);
+
+  dashed();
+  line(P(a,f(a)),P(a,-2));
+  line(P(b,f(b)),P(b,-2));
+  solid();
+  line(P(a,-2.0),P(b,-2.0));
+  line(P(a,-2.0+0.09),P(a,-2.09));
+  line(P(b,-2.0+0.09),P(b,-2.09));
+  label(P(a,-2.25), "$a_1$");
+  label(P(b,-2.25), "$b_1$");
+
+  for (iter = 1; iter <= 4; iter++) {
+	  char foo[25];
+	  c = (a+b)/2.0;
+	  if (f(c) >= 0.0) {
+		  b = c;
+	  } else {
+		  a = c;
+	  }
+	  dashed();
+	  line(P(c,f(c)),P(c,-2.0 - iter*0.5));
+	  solid();
+	  line(P(a,-2.0-iter*0.5),P(b,-2.0 - iter*0.5));
+	  snprintf (foo, 25, "$a_%d$", iter+1);
+	  label(P(a,-2.25-iter*0.5), foo);
+	  snprintf (foo, 25, "$b_%d$", iter+1);
+	  label(P(b,-2.25-iter*0.5), foo);
+	  line(P(a,-2.0 +0.09 - iter*0.5),P(a,-2.09 - iter*0.5));
+	  line(P(b,-2.0 +0.09 - iter*0.5),P(b,-2.09 - iter*0.5));
+  }
+
+  c = 0.58578643;
+
+  line_style("-.");
+  line(P(c,f(c)+0.5),P(c,-2.0 - (iter-1)*0.5));
+  solid();
+  label(P(c,f(c)+0.7), "c");
+
+  /*c = 0.7847;
+
+  line(P(c-0.5,f(c)),P(c+0.5,f(c)));
+
+  fill(Black());
+  circle(P(c,f(c)),0.03);
+  nofill();
+
+  dashed();
+  line(P(c,f(c)),P(c,0.0));
+  solid();
+
+  label(P(c,-0.1), "$c$");
+  label(P(0.1,-0.1), "$a$");
+  label(P(2.9,0.1), "$b$");
+  */
+
+  bold();
+  plot(f, xmin(), xmax(), 40);
+
+  tikz_format();
+  end();
+}
+

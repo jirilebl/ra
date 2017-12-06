@@ -1,0 +1,55 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+// gather references to integrand
+double f(double t)
+{
+  return 1.5*(sqrt(t+0.1)-sqrt(0.1));
+}
+
+int main()
+{
+  double slope;
+  double c;
+  double x;
+
+  picture(P(0,0), P(2,2), "2x2in");
+
+  begin();
+
+  h_axis(2);
+  v_axis(2);
+
+  c = 0.6;
+  x = 1.5;
+
+  slope = (f(x)-f(c))/(x-c);
+
+  line(P(c-0.4,f(c)-0.4*slope),P(x+0.4,f(x)+0.4*slope));
+
+  //fill(Black());
+  //circle(P(c,f(c)),0.03);
+  //circle(P(x,f(x)),0.03);
+  //nofill();
+  spot(P(c,f(c)));
+  spot(P(x,f(x)));
+
+  dashed();
+  line(P(c,f(c)),P(c,0.0));
+  line(P(x,f(x)),P(x,0.0));
+  solid();
+
+  label(P(c,0.0), P(0,-4), "$c$", b);
+  label(P(x,0.0), P(0,-4), "$x$", b);
+
+  label(P(x-0.3,f(x)-0.3*slope),
+        P(1,4), "slope $= \\frac{f(x)-f(c)}{x-c}$", tl);
+
+  bold();
+  plot(f, xmin(), xmax(), 40);
+
+  tikz_format();
+  end();
+}
+

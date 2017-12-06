@@ -1,0 +1,86 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+// gather references to integrand
+double f(double t)
+{
+  return -(t-0.5)*(t-3.5)+2.5;
+}
+
+int main()
+{
+  double slope;
+  double c;
+
+  picture(P(-1.0,-0.6), P(4.0,4.95), "3.3x1.4in");
+
+  begin();
+
+  //border();
+
+  h_axis(1);
+  //v_axis(4);
+
+  //slope = (f(3)-f(0))/3;
+  //c = 0.7847;
+  //
+
+  //pen(Black(0.7));
+  slope = 4;
+  c = 0;
+  line(P(c-0.3,f(c)-slope*0.3),P(c+0.6,f(c)+slope*0.6));
+  //pen(Black());
+
+  spot(P(c,f(c)));
+
+  dashed();
+  line(P(c,f(c)),P(c,0.0));
+  solid();
+
+  label(P(c,0.0), P(0,-4), "$a$", b);
+
+  label(P(c,f(c)),P(0,4), "$g'(a) > 0$", tl);
+
+  //pen(Black(0.7));
+  slope = 0;
+  c = 2;
+  line(P(c-0.8,f(c)-slope*0.8),P(c+0.8,f(c)+slope*0.8));
+  //pen(Black());
+
+  //fill(Black());
+  //circle(P(c,f(c)),0.03);
+  //nofill();
+  spot(P(c,f(c)));
+
+  dashed();
+  line(P(c,f(c)),P(c,0.0));
+  solid();
+
+  label(P(c,0.0), P(0,-4), "$c$", b);
+
+  label(P(c-1.0,f(c)-0.1),P(0,0), "$g'(c) = 0$", l);
+
+  //pen(Black(0.7));
+  slope = -2;
+  c = 3;
+  line(P(c-0.6,f(c)-slope*0.6),P(c+0.5,f(c)+slope*0.5));
+  //pen(Black());
+
+  spot(P(c,f(c)));
+
+  dashed();
+  line(P(c,f(c)),P(c,0.0));
+  solid();
+
+  label(P(c,0.0), P(0,-2), "$b$", b);
+
+  label(P(c,f(c)),P(0,4), "$g'(b) < 0$", tr);
+
+  bold();
+  plot(f, 0, 3, 30);
+
+  tikz_format();
+  end();
+}
+
