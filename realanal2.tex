@@ -33,6 +33,7 @@
 \usepackage[all]{xy}
 \usepackage{nicefrac}
 \usepackage{microtype}
+\usepackage{import}
 
 \usepackage[margin=10pt,font=small,labelfont=bf,labelsep=colon,singlelinecheck=false]{caption}
 
@@ -324,9 +325,9 @@ Copyright \copyright 2012--2017 Ji{\v r}\'i Lebl
 %\begin{floatingfigure}{1.4in}
 %\vspace{-0.05in}
 \noindent
-\includegraphics[width=1.38in]{license}
+\includegraphics[width=1.38in]{figures/license}
 \quad
-\includegraphics[width=1.38in]{license2}
+\includegraphics[width=1.38in]{figures/license2}
 %\end{floatingfigure}
 
 \bigskip
@@ -1061,7 +1062,7 @@ $x$ to $y$ lies in $U$.  That is, if the \emph{\myindex{convex combination}}
 $(1-t)x+ty$ is in $U$ for all $t \in [0,1]$.  See \figureref{mv:convexcomb}.
 
 \begin{myfigureht}
-\input convexset.pdf_t
+\subimport*{figures/}{convexset.pdf_t}
 \caption{Convexity.\label{mv:convexcomb}}
 \end{myfigureht}
 
@@ -3101,7 +3102,7 @@ Think spiral staircase with room in the middle.  See
 \figureref{mv:fignonlip}.
 
 \begin{myfigureht}
-\input example-nonlip.pdf_t
+\subimport*{figures/}{example-nonlip.pdf_t}
 \caption{A non-Lipschitz function with uniformly bounded
 derivative.\label{mv:fignonlip}}
 \end{myfigureht}
@@ -5905,7 +5906,7 @@ V(R) = \sum_{j=1}^N V(R_j).
 \end{equation*}
 
 \begin{myfigureht}
-\input figrect.pdf_t
+\subimport*{figures/}{figrect.pdf_t}
 \caption{Example partition of a rectangle in $\R^2$.  The order of the
 subrectangles is not important.\label{mv:figrect}}
 \end{myfigureht}
@@ -6031,7 +6032,7 @@ Simply put, in a refinement we take the subrectangles of $P$,
 and we cut them into smaller subrectangles.  See \figureref{mv:figrectpart}.
 
 \begin{myfigureht}
-\input figrectpart.pdf_t
+\subimport*{figures/}{figrectpart.pdf_t}
 \caption{Example refinement of a partition.  New ``cuts'' are marked in
 dashed lines.  Do note that the exact order of the new subrectangles does not
 matter.\label{mv:figrectpart}}
@@ -7589,7 +7590,7 @@ words,
 uncountable.
 \end{enumerate}
 \begin{myfigureht}
-\input cantorfig.pdf_t
+\subimport*{figures/}{cantorfig.pdf_t}
 \caption{Cantor set construction.\label{fig:cantor}}
 \end{myfigureht}
 See \figureref{fig:cantor}.

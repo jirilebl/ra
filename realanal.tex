@@ -33,6 +33,7 @@
 \usepackage[all]{xy}
 \usepackage{nicefrac}
 \usepackage{microtype}
+\usepackage{import}
 
 %\usepackage{draftwatermark}
 %\SetWatermarkText{DRAFT}
@@ -309,7 +310,7 @@ Copyright \copyright 2009--2017 Ji{\v r}\'i Lebl
 %\begin{floatingfigure}{1.4in}
 %\vspace{-0.05in}
 \noindent
-\includegraphics[width=1.38in]{license}
+\includegraphics[width=1.38in]{figures/license}
 %\end{floatingfigure}
 
 \bigskip
@@ -838,7 +839,7 @@ use the set difference notation $A \setminus B$.
 
 \begin{myfigureht}
 %\begin{center}
-\input figsetop.pdf_t
+\subimport*{figures/}{figsetop.pdf_t}
 \caption{Venn diagrams of set operations.\label{figsetop}}
 %\end{center}
 \end{myfigureht}
@@ -1148,7 +1149,7 @@ f^{-1}(D) := \{ x \in A : f(x) \in D \} .
 \end{defn}
 \begin{myfigureht}
 %\begin{center}
-\parbox{2.5in}{\input funcimags.pdf_t}
+\parbox{2.5in}{\subimport*{figures/}{funcimags.pdf_t}}
 \parbox{2in}{%
 $f(\{1,2,3,4\}) = \{ b, c, d \}$\\[3pt]
 $f(\{1,2,4\}) = \{ b, d \}$\\[3pt]
@@ -2243,7 +2244,7 @@ upper bound.
 
 \begin{myfigureht}
 %\begin{center}
-\input figdensofQ.pdf_t
+\subimport*{figures/}{figdensofQ.pdf_t}
 \caption{Idea of the proof of the density of $\Q$: Find $n$ such that $y-x >
 \nicefrac{1}{n}$, then take the least $m$ such that $x >
 \nicefrac{m}{n}$.\label{figdensofQ}}
@@ -2801,7 +2802,7 @@ then it is not bounded.
 \begin{myfigureht}
 %\begin{center}
 % to get the fonts right input eepic
-\input boundedfunc.eepic
+\subimport*{figures/}{boundedfunc.eepic}
 \caption{Example of a bounded function, a bound $M$, and its supremum and infimum.\label{boundedfuncfig}}
 %\end{center}
 \end{myfigureht}
@@ -3768,11 +3769,11 @@ line.
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input sequence-convergence.eepic
+\subimport*{figures/}{sequence-convergence.eepic}
 
 \vspace*{12pt}
 
-\hspace{13pt} \input sequence-convergence-2.eepic
+\hspace{13pt} \subimport*{figures/}{sequence-convergence-2.eepic}
 \caption{Illustration of convergence.  On top, the first ten points of the sequence as a graph
 with $M$ and the interval around the limit $x$ marked.  On bottom, the points of the same sequence marked on the
 number line.\label{figsequenceconvergence}}
@@ -3956,7 +3957,7 @@ are shown in
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input sequence-increasing.eepic
+\subimport*{figures/}{sequence-increasing.eepic}
 \caption{First few terms of a monotone increasing sequence as a
 graph.\label{figsequenceincreasing}}
 %\end{center}
@@ -4447,7 +4448,7 @@ rigorously.
 %\begin{center}
 \newcommand{\ltepsilon}{< \nicefrac{2\epsilon}{3} + \nicefrac{\epsilon}{3} =
 \epsilon}
-\input figsqueeze.pdf_t
+\subimport*{figures/}{figsqueeze.pdf_t}
 \caption{Squeeze lemma proof in picture.\label{figsqueeze}}
 %\end{center}
 \end{myfigureht}
@@ -5092,7 +5093,7 @@ it will eventually be less than $r$, which is still less than 1.
 The intuitive idea of the proof is illustrated in \figureref{figratseq}.
 \begin{myfigureht}
 %\begin{center}
-\input figratseq.pdf_t
+\subimport*{figures/}{figratseq.pdf_t}
 \caption{Proof of ratio test in picture.  The short lines represent the
 ratios 
 $\frac{\abs{x_{n+1}}}{\abs{x_n}}$
@@ -5420,7 +5421,7 @@ Apply \lemmaref{limandineq:lemma} to obtain
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input sequence-limsupliminf_an_bn.eepic
+\subimport*{figures/}{sequence-limsupliminf_an_bn.eepic}
 \caption{First 50 terms of an example sequence.  Terms $x_n$ of the sequence are
 marked with dots (\raisebox{0.25ex}{\tiny$\bullet$}), $a_n$ are marked with
 circles ($\circ$), and
@@ -5473,7 +5474,7 @@ Do note that the sequence $\{ x_n \}$ is not a convergent sequence.
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input sequence-limsupliminf_an_bn-example.eepic
+\subimport*{figures/}{sequence-limsupliminf_an_bn-example.eepic}
 \caption{First 20 terms of the sequence in \exampleref{example:liminfsupex}.
 The marking is the same as in \figureref{sequence-limsupliminf_an_bn}.
 \label{sequence-limsupliminf_an_bn-example}}
@@ -6525,7 +6526,7 @@ The equality is easy to see when $k=1$.  The proof for general $k$
 follows by \hyperref[induction:thm]{induction}, which we leave to the
 reader.  See \figureref{figcutseries} for an illustration.
 \begin{myfigureht}
-\input figcutseries.pdf_t
+\subimport*{figures/}{figcutseries.pdf_t}
 \caption{The equality 
 $\left( \sum_{n=1}^k \frac{1}{2^n} \right)
 + \frac{1}{2^k}
@@ -7969,7 +7970,7 @@ and in \exampleref{ps:divergeex} the radius of convergence is $\rho=0$.
 
 \begin{myfigureht}
 %\begin{center}
-\input ps-conv.pdf_t
+\subimport*{figures/}{ps-conv.pdf_t}
 \caption{Convergence of a power series.\label{ps:convfig}}
 %\end{center}
 \end{myfigureht}
@@ -8596,11 +8597,11 @@ See \figureref{figsin1x}.
 
 \begin{myfigureht}
 %\begin{center}
-%\includegraphics[width=3in]{sin1x}
-\includegraphics{sin1xfig}
+%\includegraphics[width=3in]{figures/sin1x}
+\includegraphics{figures/sin1xfig}
 \qquad
-%\includegraphics[width=3in]{xsin1x}
-\includegraphics{xsin1xfig}
+%\includegraphics[width=3in]{figures/xsin1x}
+\includegraphics{figures/xsin1xfig}
 \caption{Graphs of $\sin(\nicefrac{1}{x})$ and $x \sin(\nicefrac{1}{x})$.
 Note that the computer cannot properly graph $\sin(\nicefrac{1}{x})$
 near zero as it oscillates too fast.\label{figsin1x}}
@@ -9066,7 +9067,7 @@ $f$ is a \emph{\myindex{continuous function}}.
 \end{defn}
 \begin{myfigureht}
 %\begin{center}
-\input contigr.pdf_t
+\subimport*{figures/}{contigr.pdf_t}
 \caption{For $\abs{x-c} < \delta$, $f(x)$ should be within the gray region.\label{fig:contigr}}
 %\end{center}
 \end{myfigureht}
@@ -9372,7 +9373,7 @@ $\lim\, f(-\nicefrac{1}{n}) = -1$, but $f(0) = 1$.  See
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input jumpdiscont.eepic
+\subimport*{figures/}{jumpdiscont.eepic}
 \caption{Graph of the jump discontinuity.  The values of
 $f(-\nicefrac{1}{n})$ and $f(0)$ are marked.\label{fig:jumpdiscont}}
 %\end{center}
@@ -9437,7 +9438,7 @@ $f$ is continuous at all irrational $c$ and
 discontinuous at all rational $c$.
 \begin{myfigureht}
 %\begin{center}
-\includegraphics{popcornfig}
+\includegraphics{figures/popcornfig}
 \caption{Graph of the ``popcorn function.''\label{popcornfig}}
 %\end{center}
 \end{myfigureht}
@@ -9716,7 +9717,7 @@ $S$}.
 \begin{myfigureht}
 %\begin{center}
 % to get the fonts right input eepic
-\input minmax.eepic
+\subimport*{figures/}{minmax.eepic}
 \caption{$f \colon [a,b] \to \R$ achieves an absolute maximum $f(c)$ at
 $c$, and an absolute minimum $f(d)$ at $d$.\label{fig:minmax}}
 %\end{center}
@@ -9843,7 +9844,7 @@ $b_{n+1} := b_n$.
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input bisect.eepic
+\subimport*{figures/}{bisect.eepic}
 \caption{Finding roots (bisection method).\label{bisectfig}}
 %\end{center}
 \end{myfigureht}
@@ -10521,7 +10522,7 @@ points has slope less than or equal to $K$.  See \figureref{fig:lipschitz}.
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input lipschitzfig.eepic
+\subimport*{figures/}{lipschitzfig.eepic}
 \caption{The slope of a secant line.
 A function is Lipschitz if $\abs{\text{slope}} =
 \abs{\frac{f(x)-f(y)}{x-y}} \leq K$ for all $x$ and $y$.\label{fig:lipschitz}}
@@ -11226,7 +11227,7 @@ When $c \in I$ is an endpoint, the proof is similar and is left as an exercise.
 
 \begin{myfigureht}
 %\begin{center}
-\input figinccont.pdf_t
+\subimport*{figures/}{figinccont.pdf_t}
 \caption{Increasing function $f \colon I \to \R$ discontinuity at
 $c$.\label{fig:figinccont}}
 %\end{center}
@@ -11282,7 +11283,7 @@ defined on a closed bounded interval.  See \figureref{fig:countdiscont}.
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input increasing-discont-fig.eepic
+\subimport*{figures/}{increasing-discont-fig.eepic}
 \caption{Increasing function with countable many
 discontinuities.\label{fig:countdiscont}}
 %\end{center}
@@ -11549,9 +11550,9 @@ at the point $\bigl(c,f(c)\bigr)$.
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input derivdfig.eepic
+\subimport*{figures/}{derivdfig.eepic}
 \qquad
-\input derivfig.eepic
+\subimport*{figures/}{derivfig.eepic}
 \caption{Graphical interpretation of the derivative.\label{derivfig}}
 %\end{center}
 \end{myfigureht}
@@ -11712,7 +11713,7 @@ f(x)\bigl( g(x) - g(c) \bigr)
 which is illustrated in \figureref{figprodrule}.
 \begin{myfigureht}
 %\begin{center}
-\input figprodrule.pdf_t
+\subimport*{figures/}{figprodrule.pdf_t}
 \caption{The idea of product rule.  The area of the entire rectangle
 $f(x)g(x)$ differs from the area of the white rectangle $f(c)g(c)$
 by the area of the lightly shaded rectangle
@@ -11994,7 +11995,7 @@ See \figureref{fig:critpt} for an illustration.
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input critpt.eepic
+\subimport*{figures/}{critpt.eepic}
 \caption{Slopes of secants at a relative maximum.\label{fig:critpt}}
 %\end{center}
 \end{myfigureht}
@@ -12042,7 +12043,7 @@ so-called Rolle's theorem%
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input rollefig.eepic
+\subimport*{figures/}{rollefig.eepic}
 \caption{Point where tangent line is horizontal, that is $f'(c) =
 0$.\label{rollefig}}
 %\end{center}
@@ -12121,7 +12122,7 @@ function has derivative zero.
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input mvtfig.eepic
+\subimport*{figures/}{mvtfig.eepic}
 \caption{Graphical interpretation of the mean value theorem.\label{mvtfig}}
 %\end{center}
 \end{myfigureht}
@@ -12307,7 +12308,7 @@ where the derivative is zero.  See \figureref{darbouxthmfig}.
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input darbouxthmfig.eepic
+\subimport*{figures/}{darbouxthmfig.eepic}
 \caption{Idea of the proof of Darboux theorem.\label{darbouxthmfig}}
 %\end{center}
 \end{myfigureht}
@@ -12366,9 +12367,9 @@ changes sign infinitely often near the origin.
 See \figureref{fig:nonc1diff}.
 \begin{myfigureht}
 %\begin{center}
-\includegraphics{nonc1difffig}
+\includegraphics{figures/nonc1difffig}
 \qquad
-\includegraphics{nonc1diffderfig}
+\includegraphics{figures/nonc1diffderfig}
 \caption{A function with a discontinuous derivative. The function $f$ is on the left
 and $f'$ is on the right.  Notice that $f(x) \leq x^2$ on the left graph.\label{fig:nonc1diff}}
 %\end{center}
@@ -12807,9 +12808,9 @@ See \figureref{inversefig} for the geometric idea.
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input inversefigA.eepic
+\subimport*{figures/}{inversefigA.eepic}
 \quad
-\input inversefigB.eepic
+\subimport*{figures/}{inversefigB.eepic}
 \caption{Interpretation of the derivative of the inverse
 function.\label{inversefig}}
 %\end{center}
@@ -12896,7 +12897,7 @@ See also \exerciseref{exercise:oddroot}.
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input cubecuberoot.eepic
+\subimport*{figures/}{cubecuberoot.eepic}
 \caption{Graphs of $x^3$ and $x^{1/3}$.\label{cubecuberootfig}}
 %\end{center}
 \end{myfigureht}
@@ -13055,7 +13056,7 @@ of the entire rectangle is $M_i$.
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input darbouxfig.eepic
+\subimport*{figures/}{darbouxfig.eepic}
 \caption{Sample Darboux sums.\label{darbouxfig}}
 %\end{center}
 \end{myfigureht}
@@ -13206,7 +13207,7 @@ x_j - x_{j-1} =
 \end{equation*}
 \begin{myfigureht}
 %\begin{center}
-\input figrefinement.pdf_t
+\subimport*{figures/}{figrefinement.pdf_t}
 \caption{Refinement of a subinterval.  Notice $\Delta x_j =
 \Delta \widetilde{x}_{p-2} +
 \Delta \widetilde{x}_{p-1} +
@@ -13401,7 +13402,7 @@ See \figureref{darbouxfigstep}.
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input darbouxfigstep.eepic
+\subimport*{figures/}{darbouxfigstep.eepic}
 \caption{Darboux sums for the step function.  $L(P,f)$ is the area of the
 shaded rectangle, $U(P,f)$ is the area of both rectangles, and
 $U(P,f)-L(P,f)$ is the area of the unshaded rectangle.\label{darbouxfigstep}}
@@ -14471,7 +14472,7 @@ we prove that this area is the integral of $f$.
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input fundthmfig.eepic
+\subimport*{figures/}{fundthmfig.eepic}
 \caption{Mean value theorem on subintervals of a partition
 approximating area under the curve.\label{fig:fundthmfig}}
 %\end{center}
@@ -15926,8 +15927,8 @@ in both pure and applied mathematics.  Define
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input sincfig.eepic
-%\includegraphics{sincfig}
+\subimport*{figures/}{sincfig.eepic}
+%\includegraphics{figures/sincfig}
 \caption{The sinc function.
 %The $x$ axis runs
 %from -15 to 15 and the $y$ axis from $\nicefrac{-1}{4}$ to 1.
@@ -16027,7 +16028,7 @@ See \figureref{fig:sincbound}.
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input sincbound.eepic
+\subimport*{figures/}{sincbound.eepic}
 \caption{Bound of $\int_{2\pi n}^{2\pi (n+1)} \frac{\sin(x)}{x} ~dx$ using
 the shaded integral (signed area
 $\frac{1}{\pi n} 
@@ -16452,7 +16453,7 @@ See \figureref{x2nfig}.
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input x2nfig.eepic
+\subimport*{figures/}{x2nfig.eepic}
 \caption{Graphs of $f_1$, $f_2$, $f_3$, and $f_8$ for $f_n(x) :=
 x^{2n}$.\label{x2nfig}}
 %\end{center}
@@ -16921,7 +16922,7 @@ See \figureref{contconvcntr:fig}.
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input contconvcntr.eepic
+\subimport*{figures/}{contconvcntr.eepic}
 \caption{Graph of $f_n(x)$.%
 \label{contconvcntr:fig}}
 %\end{center}
@@ -17020,7 +17021,7 @@ See \figureref{intconvcntr:fig}.
 \begin{myfigureht}
 %\begin{center}
 % To get fonts right we have to use .eepic not .pdf
-\input intconvcntr.eepic
+\subimport*{figures/}{intconvcntr.eepic}
 \caption{Graph of $f_n(x)$.%
 \label{intconvcntr:fig}}
 %\end{center}
@@ -17977,7 +17978,7 @@ inequality \ref{metric:triang} has the interpretation given in
 \figureref{fig:mstriang}.
 \begin{myfigureht}
 %\begin{center}
-\input ms-triang.pdf_t
+\subimport*{figures/}{ms-triang.pdf_t}
 \caption{Diagram of the triangle inequality in metric spaces.\label{fig:mstriang}}
 %\end{center}
 \end{myfigureht}
@@ -18199,7 +18200,7 @@ Things become subtle when $X$ is an infinite set such
 as the real numbers.
 \begin{myfigureht}
 %\begin{center}
-\input msdiscmetric.pdf_t
+\subimport*{figures/}{msdiscmetric.pdf_t}
 \caption{Sample discrete metric space $\{ a,b,c,d,e \}$, the distance
 between any two points is $1$.\label{fig:msdiscmetric}}
 %\end{center}
@@ -18498,7 +18499,7 @@ sometimes just \emph{\myindex{neighborhood}}).
 
 \begin{myfigureht}
 %\begin{center}
-\input msopenset.pdf_t
+\subimport*{figures/}{msopenset.pdf_t}
 \caption{Open set in a metric space.  Note that $\delta$ depends on $x$.\label{fig:msopenset}}
 %\end{center}
 \end{myfigureht}
@@ -18891,7 +18892,7 @@ $B(x,\delta) \cap A^c$ are both nonempty.
 \end{prop}
 
 \begin{myfigureht}
-\input msboundary.pdf_t
+\subimport*{figures/}{msboundary.pdf_t}
 \caption{Boundary is the set where every ball contains points in the set and
 also its complement.\label{figmsboundary}}
 \end{myfigureht}
