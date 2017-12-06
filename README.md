@@ -11,6 +11,7 @@ A free online textbook.  See http://www.jirka.org/ra/
 * realanal3.tex is an unfinished set of topics possibly to just add to Volume II
 * similarly extras.tex and stieltjes.tex
 
-Note: Some of the shell scripts here are really for me
-and are really hacky ways to just do things.  Feel free to ignore
-them
+
+* publish.sh compiles the volume I file to pdf
+* publish2.sh compiles the volume II file to pdf
+* make-tar.sh makes a tarball
