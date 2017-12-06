@@ -8,8 +8,8 @@ Volume I and II both in this directory
 
 A free online textbook.  See http://www.jirka.org/ra/
 
-* realanal3.tex is an unfinished set of topics possibly to just add to Volume II
-* similarly extras.tex and stieltjes.tex
+* wip/realanal3.tex is an unfinished set of topics possibly to just add to Volume II
+* similarly wip/extras.tex and wip/stieltjes.tex
 
 
 * publish.sh compiles the volume I file to pdf
