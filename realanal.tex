@@ -3024,10 +3024,18 @@ The intervals $[a,\infty)$, $(-\infty,b]$, and $\R$ are sometimes called
 and $(a,\infty)$, $(-\infty,b)$, and $\R$ are sometimes called
 \emph{\myindex{unbounded open intervals}}.
 
-In short, an interval is a set $I \subset \R$ with at least 2 elements,
-such that if $a < b < c$ and
-$a,c \in I$, then $b \in I$.
-See \exerciseref{exercise:intervaldef}.
+In short, an interval is a set with at least two points
+that contains all points between any two
+points.\footnote{Sometimes single point sets and the empty set are
+also called intervals, but in this book, intervals have at least 2 points.}
+The proof of the following proposition is left as an exercise.
+
+\begin{prop} \label{prop:intervaldef}
+Let $I \subset \R$ be a set.
+Then $I$ is an interval if and only if
+$I$ contains at least 2 points, and
+whenever $a < b < c$ and $a, c \in I$, then $b \in I$.
+\end{prop}
 
 We have already seen that any open interval $(a,b)$ (where $a < b$ of course)
 must be nonempty.  For example, it contains the number $\frac{a+b}{2}$.
@@ -3148,9 +3156,12 @@ bijection from $[-1,1]$ to $\R$.
 %\end{exercise}
 
 \begin{exercise} \label{exercise:intervaldef}
-Suppose $I \subset \R$ is a subset with at least 2 elements
-such that if $a < b < c$ and $a, c \in I$, then 
-it is one of the nine types of intervals explicitly given in this section.
+Prove \propref{prop:intervaldef}.
+That is,
+suppose $I \subset \R$ is a subset with at least 2 elements
+such that if $a < b < c$ and $a, c \in I$, then $b \in I$.
+Prove that $I$ is one of the nine types of intervals explicitly
+given in this section.
 Furthermore, prove that the intervals given in this section
 all satisfy this property.
 \end{exercise}
@@ -11077,29 +11088,42 @@ Sometimes \emph{\myindex{nondecreasing}}
 for increasing (resp.\ decreasing) function to emphasize it is not
 strictly increasing (resp.\ strictly decreasing).
 
+If $f$ is increasing, then $-f$ is decreasing and vice-versa.  Therefore,
+many results about monotone functions can just be proved for say increasing
+functions, and the results will follow easily for decreasing functions.
+
 \subsection{Continuity of monotone functions}
 
 It is easy to compute one-sided limits for monotone functions.
 
 \begin{prop} \label{prop:monotlimits}
-Let $S \subset \R$, $c \in \R$, and $f \colon S \to \R$ be increasing.
+Let $S \subset \R$, $c \in \R$,
+$f \colon S \to \R$ be increasing,
+and
+$g \colon S \to \R$ be decreasing.
 If $c$ is a cluster point of $S \cap (-\infty,c)$, then
 \begin{equation*}
-\lim_{x \to c^-} f(x) = \sup \{ f(x) : x < c, x \in S \} ,
+\lim_{x \to c^-} f(x) = \sup \{ f(x) : x < c, x \in S \}
+\qquad \text{and} \qquad
+\lim_{x \to c^-} g(x) = \inf \{ g(x) : x < c, x \in S \} .
 \end{equation*}
-and if $c$ is a cluster point of $S \cap (c,\infty)$, then
+If $c$ is a cluster point of $S \cap (c,\infty)$, then
 \begin{equation*}
-\lim_{x \to c^+} f(x) = \inf \{ f(x) : x > c, x \in S \} .
+\lim_{x \to c^+} f(x) = \inf \{ f(x) : x > c, x \in S \}
+\qquad \text{and} \qquad
+\lim_{x \to c^+} g(x) = \sup \{ g(x) : x > c, x \in S \} .
 \end{equation*}
-
-Similarly, if $f$ is decreasing and
-$c$ is a cluster point of $S \cap (-\infty,c)$, then
+If $\infty$ is a cluster point of $S$, then
 \begin{equation*}
-\lim_{x \to c^-} f(x) = \inf \{ f(x) : x < c, x \in S \} ,
+\lim_{x \to \infty} f(x) = \sup \{ f(x) : x \in S \}
+\qquad \text{and} \qquad
+\lim_{x \to \infty} g(x) = \inf \{ g(x) : x \in S \} .
 \end{equation*}
-and if $c$ is a cluster point of $S \cap (c,\infty)$, then
+If $-\infty$ is a cluster point of $S$, then
 \begin{equation*}
-\lim_{x \to c^+} f(x) = \sup \{ f(x) : x > c, x \in S \} .
+\lim_{x \to -\infty} f(x) = \inf \{ f(x) : x \in S \}
+\qquad \text{and} \qquad
+\lim_{x \to -\infty} g(x) = \sup \{ g(x) : x \in S \} .
 \end{equation*}
 \end{prop}
 
@@ -11115,16 +11139,17 @@ equality.  The rest of the proof is very similar and is left as an
 exercise.
 
 Let $a := \sup \{ f(x) : x < c, x \in S \}$.  If $a = \infty$,
-then given an $M \in \R$, there exists an $x_M < c$ such that $f(x_M) > M$. 
+then given an $M \in \R$, there exists an $x_M \in S$, $x_M < c$, such that $f(x_M) > M$. 
 As $f$ is increasing, $f(x) \geq f(x_M) >  M$ for all $x \in S$ with $x > x_M$.  If
 we take $\delta := c-x_M > 0$, then we obtain the definition of the limit going to
 infinity.
 
-Assume $a < \infty$.
+Next suppose $a < \infty$.
 Let $\epsilon > 0$ be given.  Because $a$ is the supremum and
-$S \cap (-\infty,c)$ is nonempty,
-there exists an $x_\epsilon < c$,
+$S \cap (-\infty,c)$ is nonempty, $a \in \R$ and
+there exists an
 $x_\epsilon \in S$,
+$x_\epsilon < c$,
 such that $f(x_\epsilon) > a-\epsilon$.  As $f$ is increasing,
 if $x \in S$ and $x_\epsilon < x < c$, we have
 $a-\epsilon < f(x_\epsilon) \leq f(x) \leq a$.  Let
@@ -11195,8 +11220,8 @@ Without loss of generality suppose $f$ is increasing.
 First suppose $f$ is continuous.  Take two points
 $f(x_1) < f(x_2)$ in $f(I)$.
 As $f$ is increasing then $x_1 < x_2$.  By the
-\hyperref[IVT:thm]{intermediate value theorem}
-for any $y$ with $f(x_1) < y < f(x_2)$, we find
+\hyperref[IVT:thm]{intermediate value theorem},
+given any $y$ with $f(x_1) < y < f(x_2)$, we find
 a $c \in (x_1,x_2) \subset I$ such that $f(c) = y$, so $y \in f(I)$. 
 Hence, $f(I)$ is an interval.
 
@@ -11216,8 +11241,8 @@ If $x < c$, then $f(x) \leq a$, and
 if $x > c$, then $f(x) \geq b$.  Therefore
 no point
 in $(a,b) \setminus \{ f(c) \}$ is in $f(I)$.
-However there exists $x_1 \in S$, $x_1 < c$ so
-$f(x_1) \leq a$, and there exists $x_2 \in S$, $x_2 > c$
+However there exists $x_1 \in S$, $x_1 < c$, so
+$f(x_1) \leq a$, and there exists $x_2 \in S$, $x_2 > c$,
 so $f(x_2) \geq b$.  Both $f(x_1)$ and $f(x_2)$ are in $f(I)$,
 but there are points in between them that are not in $f(I)$.
 So $f(I)$ is not an interval.  See \figureref{fig:figinccont}.
@@ -11259,10 +11284,11 @@ b := \lim_{x \to c^+} f(x) = \inf \{ f(x) : x \in I, x > c \} .
 As $c$ is a discontinuity, we have $a < b$.  
 There exists a rational number $q \in (a,b)$, so let $h(c) := q$.
 If $d \in E$ is another discontinuity, then if $d > c$, then there
-exist an $x$ with $c < x < d$, and so $\lim_{x \to c^-} f(x) > b$.
-Hence the rational number we choose for $h(d)$ is different from $q$ (since
-$q < b$).   Similarly if $d < c$.  So after making such a choice for
-every $c \in E$ we have a one
+exist an $x \in I$ with $c < x < d$, and so $\lim_{x \to d^-} f(x) \geq b$.
+Hence the rational number we choose for $h(d)$ is different from $q$,
+since $q=h(c) < b$ and $h(d) > b$.
+Similarly if $d < c$.  So after making such a choice for
+every $c \in E$, we have a one
 one-to-one (injective) function into $\Q$.  Therefore, $E$ is countable.
 \end{proof}
 
@@ -11324,19 +11350,19 @@ Suppose both of the following one-sided limits exist:
 x_0 & := \lim_{y \to c^-} f^{-1}(y) =
 \sup \{ f^{-1}(y) : y < c, y \in f(I) \}
 =
-\sup \{ x : f(x) < c, x \in I \} , \\
+\sup \{ x \in I : f(x) < c \} , \\
 x_1 & := \lim_{y \to c^+} f^{-1}(y) =
 \inf \{ f^{-1}(y) : y > c, y \in f(I) \}
 =
-\inf \{ x : f(x) > c, x \in I \} .
+\inf \{ x \in I : f(x) > c \} .
 \end{align*}
 We have $x_0 \leq x_1$ as $f^{-1}$ is increasing.
 For all $x > x_0$ with $x \in I$, we have $f(x) \geq c$.  As $f$ is strictly increasing,
 we must have $f(x) > c$ for all $x > x_0$, $x \in I$.  Therefore,
 \begin{equation*}
-\{ x : x > x_0, x \in I \} \subset \{ x : f(x) > c, x \in I \}.
+\{ x \in I : x > x_0 \} \subset \{ x \in I : f(x) > c \}.
 \end{equation*}
-The infimum of the left hand set is $x_0$ and the infimum of the right hand
+The infimum of the left hand set is $x_0$, and the infimum of the right hand
 set is $x_1$, so we obtain $x_0 \geq x_1$.
 So $x_1 = x_0$, and $f^{-1}$ is continuous at $c$.
 
@@ -11401,6 +11427,8 @@ Suppose $f \colon [0,1] \to \R$ is monotone.  Prove $f$ is bounded.
 
 \begin{exercise}
 Finish the proof of \propref{prop:monotlimits}.
+Hint: You can halve your work by noticing that if $g$ is decreasing
+then $-g$ is increasing.
 \end{exercise}
 
 \begin{exercise}
