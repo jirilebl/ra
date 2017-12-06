@@ -1,5 +1,5 @@
 #!/bin/sh
-FILES=`git ls-files | grep -v '^D$' | grep -v '.cvsignore' | grep -v 'make-tar.sh' | grep -v 'publish.sh' | grep -v 'publish2.sh'`
+FILES=`git ls-files | grep -v '.gitignore' | grep -v 'make-tar.sh'`
 
 rm -fR realanal
 mkdir realanal
