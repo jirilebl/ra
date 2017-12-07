@@ -499,7 +499,7 @@ for a single exercise or example.
 %(\sectionref{sec:taylor}) can safely be skipped as it is never used later.
 %Other parts are marked in the section notes for each section.
 %Uncountability of $\R$ in \sectionref{sec:intandsizeR} can safely be skipped.
-%The alternative proof of Bolzano-Weierstrass in \sectionref{sec:bw} can
+%The alternative proof of Bolzano--Weierstrass in \sectionref{sec:bw} can
 %safely be skipped.
 %And of course, the section on Picard's theorem can also
 %be skipped if there is no time at the end of the course, though I have not
@@ -1310,7 +1310,7 @@ We state without proof that
 $\abs{A} = \abs{B}$ have the same cardinality if and only if
 $\abs{A} \leq \abs{B}$ and
 $\abs{B} \leq \abs{A}$.  This is the so-called
-\myindex{Cantor-Bernstein-Schr\"oder} theorem.
+\myindex{Cantor--Bernstein--Schr\"oder} theorem.
 Furthermore, if $A$ and $B$ are any two sets,
 we can always write $\abs{A} \leq \abs{B}$ or
 $\abs{B} \leq \abs{A}$.  The issues surrounding this
@@ -1375,7 +1375,7 @@ Similarly, if $B$ is finite and $A \subset B$, then $A$ is finite.
 
 %  As we will not need this statement in
 %the sequel, and as the proof requires the
-%Cantor-Bernstein-Schr\"oder theorem mentioned above, we will not give it
+%Cantor--Bernstein--Schr\"oder theorem mentioned above, we will not give it
 %here.
 
 We give the first truly striking result.  First, we need a notation for
@@ -3211,7 +3211,7 @@ $(0,1)$ by showing that
 $\abs{[0,1]} \leq \abs{(0,1)}$ and
 $\abs{(0,1)} \leq \abs{[0,1]}$.  See 
 \defnref{def:comparecards}.
-Note that this requires the Cantor-Bernstein-Schr\"oder theorem we
+Note that this requires the Cantor--Bernstein--Schr\"oder theorem we
 stated without proof.  Also note that this proof does not give you an
 explicit bijection.
 \end{exercise}
@@ -3664,7 +3664,7 @@ Consider even and odd digits to construct a bijection between
 $[0,1] \setminus A$ and $[0,1] \times [0,1]$ for a countable set $A$ (be
 careful about uniqueness of representation).
 Then construct a bijection between $([0,1] \times [0,1]) \setminus B$
-and $[0,1] \times [0,1]$ for a countable set $B$ (e.g. use 
+and $[0,1] \times [0,1]$ for a countable set $B$ (e.g.\ use 
 that $\N$ and the even natural numbers are bijective).
 \end{exercise}
 
@@ -5319,7 +5319,7 @@ case it converges to 0.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Limit superior, limit inferior, and Bolzano-Weierstrass}
+\section{Limit superior, limit inferior, and Bolzano--Weierstrass}
 \label{sec:bw}
 
 \sectionnotes{1--2 lectures, alternative proof of BW optional}
@@ -5328,7 +5328,7 @@ In this section we study bounded sequences and their subsequences.
 In particular we define the so-called limit superior and limit inferior
 of a bounded sequence and talk about limits of subsequences.
 Furthermore, we prove the
-Bolzano-Weierstrass theorem%
+Bolzano--Weierstrass theorem%
 \footnote{%
 Named after the Czech mathematician
 \href{http://en.wikipedia.org/wiki/Bernard_Bolzano}{Bernhard Placidus Johann Nepomuk Bolzano}
@@ -5696,16 +5696,16 @@ every convergent subsequence
 $\{ x_{n_k} \}$ converges to $x$.
 \end{prop}
 
-\subsection{Bolzano-Weierstrass theorem}
+\subsection{Bolzano--Weierstrass theorem}
 
 While it is not true that a bounded sequence is convergent, the
-Bolzano-Weierstrass theorem tells us that we can at least find a convergent
+Bolzano--Weierstrass theorem tells us that we can at least find a convergent
 subsequence.
-The version of Bolzano-Weierstrass 
-that we present in this section is the Bolzano-Weierstrass for
+The version of Bolzano--Weierstrass 
+that we present in this section is the Bolzano--Weierstrass for
 sequences.
 
-\begin{thm}[Bolzano-Weierstrass]\index{Bolzano-Weierstrass theorem}\label{thm:bwseq}
+\begin{thm}[Bolzano--Weierstrass]\index{Bolzano--Weierstrass theorem}\label{thm:bwseq}
 Suppose a sequence $\{ x_n \}$ of real numbers is bounded.
 Then there exists a convergent subsequence $\{ x_{n_i} \}$.
 \end{thm}
@@ -5717,17 +5717,17 @@ a subsequence whose limit is $\limsup \, x_n$.
 
 The reader might complain right now that 
 \thmref{subseqlimsupinf:thm} is strictly stronger than the
-Bolzano-Weierstrass theorem as presented above.  That is true.
+Bolzano--Weierstrass theorem as presented above.  That is true.
 However, 
 \thmref{subseqlimsupinf:thm} only applies to the real line, but
-Bolzano-Weierstrass applies in more general contexts (that is, in $\R^n$)
+Bolzano--Weierstrass applies in more general contexts (that is, in $\R^n$)
 with pretty much the exact same statement.
 
 As the theorem is so important to analysis, we present an explicit
 proof.
 The following proof generalizes more easily to different contexts.
 
-\begin{proof}[Alternate proof of Bolzano-Weierstrass]
+\begin{proof}[Alternate proof of Bolzano--Weierstrass]
 As the sequence is bounded, then there exist two numbers $a_1 < b_1$
 such that $a_1 \leq x_n \leq b_1$ for all $n \in \N$.
 
@@ -5785,7 +5785,7 @@ Because $\frac{b_1-a_1}{2^{i-1}}$ is arbitrarily small and $y-x \geq 0$,
 we have $y-x = 0$.  Finish by the \hyperref[squeeze:lemma]{squeeze lemma}.
 \end{proof}
 
-Yet another proof of the Bolzano-Weierstrass theorem is to show the
+Yet another proof of the Bolzano--Weierstrass theorem is to show the
 following claim,
 which is left as a challenging exercise.
 \emph{Claim: Every sequence has a monotone subsequence}.
@@ -6038,7 +6038,7 @@ if for every $\epsilon > 0$, the set $(x-\epsilon,x+\epsilon) \cap S
 arbitrarily close to $x$.
 For example, $S := \{ \nicefrac{1}{n} : n \in \N \}$ has a unique (only
 one) cluster point $0$, but $0 \notin S$.
-Prove the following version of the Bolzano-Weierstrass theorem:
+Prove the following version of the Bolzano--Weierstrass theorem:
 
 \medskip
 
@@ -6060,7 +6060,7 @@ There are two possibilities: Either the sequence has at most finitely many
 peaks,
 or it has infinitely many peaks.
 \\ \nopagebreak
-b)~Conclude the Bolzano-Weierstrass theorem.
+b)~Conclude the Bolzano--Weierstrass theorem.
 \end{exercise}
 
 \begin{exercise}
@@ -9698,7 +9698,7 @@ $n \in \N$, there is an $x_n \in [a,b]$, such that
 \abs{f(x_n)} \geq n .
 \end{equation*}
 The sequenece $\{ x_n \}$ is bounded as $a \leq x_n \leq b$.
-By the \hyperref[thm:bwseq]{Bolzano-Weierstrass theorem},
+By the \hyperref[thm:bwseq]{Bolzano--Weierstrass theorem},
 there is a convergent subsequence $\{ x_{n_i} \}$.  Let $x := \lim\, x_{n_i}$.
 Since $a \leq x_{n_i} \leq b$ for all $i$, then $a \leq x \leq b$.
 The sequence $\{ f(x_{n_i}) \}$ is not bounded 
@@ -9773,7 +9773,7 @@ We know $\{ x_n \}$ and $\{ y_n \}$ are bounded (their elements
 belong to 
 a bounded interval $[a,b]$).
 Apply the 
-\hyperref[thm:bwseq]{Bolzano-Weierstrass theorem},
+\hyperref[thm:bwseq]{Bolzano--Weierstrass theorem},
 to find
 convergent subsequences
 $\{ x_{n_i} \}$ and 
@@ -10336,7 +10336,7 @@ So for the $\epsilon > 0$ above,
 we find sequences $\{ x_n \}$ and $\{ y_n \}$ such that
 $\abs{x_n-y_n} < \nicefrac{1}{n}$ and such that $\abs{f(x_n)-f(y_n)} \geq
 \epsilon$.  By
-\hyperref[thm:bwseq]{Bolzano-Weierstrass},
+\hyperref[thm:bwseq]{Bolzano--Weierstrass},
 there exists a convergent subsequence
 $\{ x_{n_k} \}$.  Let $c := \lim\, x_{n_k}$.
 As $a \leq x_{n_k} \leq b$, then $a \leq c \leq b$.  Write
@@ -14154,7 +14154,7 @@ M(b-a) .
 \end{equation*}
 Therefore the sequence of numbers
 $\{ \int_{a_n}^{b_n} f \}_{n=1}^\infty$ is bounded and by
-\hyperref[thm:bwseq]{Bolzano-Weierstrass}
+\hyperref[thm:bwseq]{Bolzano--Weierstrass}
 has a convergent subsequence indexed by $n_k$.  Let us call
 $L$ the limit of the subsequence
 $\{ \int_{a_{n_k}}^{b_{n_k}} f \}_{k=1}^\infty$.
@@ -15310,7 +15310,7 @@ b) Prove that the limit
 \frac{1}{k} - \ln (n) \right)
 \end{equation*}
 exists.  This constant is known as the
-\emph{\myindex{Euler-Mascheroni constant}}%
+\emph{\myindex{Euler--Mascheroni constant}}%
 \footnote{Named for the Swiss mathematician
 \href{http://en.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Paul Euler} (1707 -- 1783)
 and the Italian mathematician
@@ -18089,9 +18089,9 @@ $n$-dimensional \emph{\myindex{euclidean space}} $\R^n = \R
 notation for points: $x =(x_1,x_2,\ldots,x_n) \in \R^n$.  We also
 simply write $0 \in \R^n$ to mean the vector $(0,0,\ldots,0)$.  Before
 making $\R^n$ a metric space, let us prove an important inequality, the
-so-called Cauchy-Schwarz inequality.
+so-called Cauchy--Schwarz inequality.
 
-\begin{lemma}[\myindex{Cauchy-Schwarz inequality}]
+\begin{lemma}[\myindex{Cauchy--Schwarz inequality}]
 Take $x =(x_1,x_2,\ldots,x_n) \in \R^n$ and $y =(y_1,y_2,\ldots,y_n) \in
 \R^n$.  Then
 \begin{equation*}
@@ -18156,7 +18156,7 @@ d(x,y) :=
 For $n=1$, the real line, this metric agrees with what we did above.  Again,
 the only tricky part of the definition to check is the triangle inequality.
 It is less messy to work with the square of the metric.  In the
-following, note the use of the Cauchy-Schwarz inequality.
+following, note the use of the Cauchy--Schwarz inequality.
 \begin{equation*}
 \begin{split}
 {\bigl(d(x,z)\bigr)}^2 & =
@@ -18453,7 +18453,7 @@ Consider $\ell^2$ the set of sequences $\{ x_n \}$
 of real numbers
 such that $\sum_{n=1}^\infty x_n^2 < \infty$.
 \\
-a) Prove the Cauchy-Schwarz inequality for two sequences
+a) Prove the Cauchy--Schwarz inequality for two sequences
 $\{x_n \}$ and $\{ y_n \}$ in $\ell^2$:
 \begin{equation*}
 {\biggl( \sum_{j=1}^\infty x_j y_j \biggr)}^2
@@ -19727,7 +19727,7 @@ which is a contradiction.
 \end{proof}
 
 \begin{example}
-The Bolzano-Weierstrass theorem for sequences of real numbers
+The Bolzano--Weierstrass theorem for sequences of real numbers
 (\thmref{thm:bwseq})
 says that any bounded sequence in $\R$ has a convergent
 subsequence.  Therefore any sequence in a closed interval $[a,b] \subset \R$ has 
@@ -19748,21 +19748,21 @@ some $x \in K$.  As $E$ is closed the limit of a sequence in $E$ is also in $E$
 and so $x \in E$.  Thus $E$ must be compact.
 \end{proof}
 
-\begin{thm}[Heine-Borel%
+\begin{thm}[Heine--Borel%
 \footnote{Named after the German mathematician 
 \href{http://en.wikipedia.org/wiki/Eduard_Heine}{Heinrich Eduard Heine}
 (1821--1881),
 and the French mathematician
 \href{http://en.wikipedia.org/wiki/\%C3\%89mile_Borel}{F\'elix \'Edouard Justin \'Emile Borel}
 (1871--1956).}]%
-\index{Heine-Borel theorem}
+\index{Heine--Borel theorem}
 \label{thm:msbw}
 A closed bounded subset $K \subset \R^n$ is compact.
 \end{thm}
 
 So subsets of $\R^n$ are compact if and only if they are closed and bounded,
 a condition that is much easier to check.
-Let us reiterate that the Heine-Borel theorem only holds for $\R^n$ and not
+Let us reiterate that the Heine--Borel theorem only holds for $\R^n$ and not
 for metric spaces in general.  In general, compact implies closed and
 bounded, but not vice versa.
 
@@ -19770,7 +19770,7 @@ bounded, but not vice versa.
 For $\R = \R^1$ if $K \subset \R$ is closed and bounded, then
 any sequence $\{ x_k \}$ in $K$ is bounded, so it has a convergent
 subsequence by
-Bolzano-Weierstrass theorem (\thmref{thm:bwseq}).
+Bolzano--Weierstrass theorem (\thmref{thm:bwseq}).
 As $K$ is closed, the limit of the subsequence must be an element of
 $K$.  So $K$ is compact.
 
@@ -19908,7 +19908,7 @@ such that the conclusion of the Lebesgue covering lemma does not hold.
 \end{exercise}
 
 \begin{exercise}
-Prove the general \myindex{Bolzano-Weierstrass theorem}:
+Prove the general \myindex{Bolzano--Weierstrass theorem}:
 Any bounded sequence $\{ x_k
 \}$ in $\R^n$ has a convergent subsequence.
 \end{exercise}
