@@ -597,7 +597,7 @@ Dan Stoneham, Jeremy Sutter, Eliya Gwetta, Daniel Pimentel-Alarc\'on,
 Steve Hoerning, Yi Zhang, Nicole Caviris,
 Kristopher Lee, Baoyue Bi, Hannah Lund,
 Trevor Mannella, Mitchel Meyer, Gregory Beauregard,
-Chase Meadors, Andreas Giannopoulos, Nick Nelsen,
+Chase Meadors, Andreas Giannopoulos, Nick Nelsen, Anton Petrunin,
 an anonymous reader, and in general all the students in my classes for suggestions and
 finding errors and typos.
 
@@ -777,7 +777,10 @@ Let us mention the
 \{ x \in A : P(x) \} .
 \end{equation*}
 This notation refers to a subset of the set $A$ containing all elements
-of $A$ that satisfy the property $P(x)$.  The notation is sometimes
+of $A$ that satisfy the property $P(x)$.
+For example, using $S = \{ 0, 1, 2 \}$ as above, $\{ x \in S : x \not= 2 \}$
+is the set $\{ 0, 1 \}$.
+The notation is sometimes
 abbreviated, $A$ is not mentioned when understood from context.
 Furthermore, $x \in A$ is sometimes replaced with a formula to make the notation
 easier to read.  
@@ -1008,7 +1011,7 @@ is usually called the \emph{\myindex{induction hypothesis}}.
 \begin{example}
 Let us prove that for all $n \in \N$,
 \begin{equation*}
-2^{n-1} \leq n! .
+2^{n-1} \leq n! \qquad \text{(recall $n! = 1 \cdot 2 \cdot 3 \cdots n$)}.
 \end{equation*}
 We let $P(n)$ be the statement that
 $2^{n-1} \leq n!$ is true.  By plugging in $n=1$, we see that $P(1)$
@@ -1049,11 +1052,14 @@ it is true for $n$.  Then
 \end{equation*}
 \end{example}
 
-There is an equivalent principle called strong induction.  The proof that
-strong induction is equivalent to induction is left as an exercise.
+Sometimes, it is easier to use in the inductive step
+that $P(k)$ is true for all $k = 1,2,\ldots,n$, not just for $k=n$.
+This principle is called \emph{\myindex{strong induction}} and is equivalent
+to the normal induction above.  The proof that
+equivalence is left as an exercise.
 
 \begin{thm}[Principle of strong induction]
-\index{principle of strong induction}
+\index{principle of strong induction}\index{strong induction}
 Let $P(n)$ be a statement depending on a natural number $n$.  Suppose that
 \begin{enumerate}[(i)]
 \item \emph{(basis statement)} $P(1)$ is true,
@@ -1085,7 +1091,7 @@ The subtle issue here is that a single function can have several different
 formulas, all giving the same function.  Also, for many functions, there is
 no formula that expresses its values.
 
-To define a function rigorously first let us define the Cartesian product.
+To define a function rigorously, first let us define the Cartesian product.
 
 \begin{defn}
 Let $A$ and $B$ be sets.  The \emph{\myindex{Cartesian product}}
@@ -1533,7 +1539,7 @@ nor $g$ are bijective.
 \end{exercise}
 
 \begin{exercise}
-Prove that $n < 2^n$ by induction.
+Prove by induction that $n < 2^n$ for all $n \in \N$.
 \end{exercise}
 
 \begin{exercise}
@@ -1906,13 +1912,13 @@ corresponding property for greatest lower bounds.
 \begin{prop}
 Let $F$ be an ordered field with the least-upper-bound property.
 Let $A \subset F$ be a nonempty set that is bounded below.
-Then $\inf A$ exists.
+Then $\inf\, A$ exists.
 \end{prop}
 
 \begin{proof}
 Let $B := \{ -x : x \in A \}$. Let $b$ be a lower bound for $A$,
 that is if $x \in A$, then $x \geq b$, or $-x \leq -b$.  So $-b$
-is an upper bound for $B$, $c:=\sup B$ exists, and $c \leq -b$.
+is an upper bound for $B$, $c:=\sup\, B$ exists, and $c \leq -b$.
 Since $y \leq c$
 for all $y \in B$, then $-c \leq x$ for all $x \in A$.
 So
@@ -1995,7 +2001,7 @@ such that $x \leq y$.  Show that $\sup \, B$ exists and $\sup \, B = \sup \, A$.
 Let $D$ be the ordered set of all possible words (not just English words,
 all strings of letters of arbitrary length)
 using the Latin alphabet using only lower case letters.  The order is the
-lexicographic order as in a dictionary (e.g.\ \emph{aaa} $<$ \emph{dog} $<$ \emph{door}).
+lexicographic order as in a dictionary (e.g.\ \emph{aa} $<$ \emph{aaa} $<$ \emph{dog} $<$ \emph{door}).
 Let $A$ be the subset of $D$ containing the words whose
 first letter is `a' (e.g.\ \emph{a} $\in A$, \emph{abcd} $\in A$).
 Show that $A$ has a supremum and find what it is.
@@ -2219,7 +2225,9 @@ not seem like that at first sight.
 \begin{thm} \label{thm:arch}
 {\ }
 \begin{enumerate}[(i)]
-\item \label{thm:arch:i} \emph{(\myindex{Archimedean property})} If $x, y \in \R$ and
+\item \label{thm:arch:i} \emph{(\myindex{Archimedean property})}%
+\footnote{This property is Axiom V from Archimedes' ``On the Sphere and Cylinder'' 225 BC.}
+If $x, y \in \R$ and
 $x > 0$, then there exists an $n \in \N$ such that
 \begin{equation*}
 nx > y .
@@ -2290,7 +2298,7 @@ find a rational $q$ such that $-y < q < -x$.  Then take $r = -q$.
 \end{proof}
 
 Let us state and prove a simple but useful corollary of the
-\hyperref[thm:arch]{Archimedean property}.
+\hyperref[thm:arch:i]{Archimedean property}.
 
 \begin{cor}
 $\inf \{ \nicefrac{1}{n} : n \in \N \} = 0$.
@@ -2302,7 +2310,7 @@ Furthermore,
 $\nicefrac{1}{n} > 0$ and so 0 is a lower bound, and $b := \inf\, A$ exists.
 As 0 is a lower bound, then $b \geq 0$.
 Now take an arbitrary $a > 0$.  By the
-\hyperref[thm:arch]{Archimedean property} there exists an $n$ such that
+\hyperref[thm:arch:i]{Archimedean property} there exists an $n$ such that
 $na > 1$, or in other words $a > \nicefrac{1}{n} \in A$.  Therefore
 $a$ cannot be a lower bound for $A$.  Hence $b=0$.
 \end{proof}
@@ -2551,7 +2559,7 @@ a) Prove that given any $y \in \R$, we have $\sup \{ x \in \Q : x < y \} = y$.
 \\
 b) Let $A \subset \Q$ be a set that is bounded above such that whenever $x
 \in A$ and $t \in \Q$ with $t < x$, then $t \in A$.  Further suppose that
-$\sup A \not\in A$.  Show that there exists a $y \in \R$ such that
+$\sup\, A \not\in A$.  Show that there exists a $y \in \R$ such that
 $A = \{ x \in \Q : x < y \}$.  A set such as $A$ is called a
 \emph{\myindex{Dedekind cut}}.
 \\
@@ -3394,7 +3402,7 @@ and that
 $D_k < x \leq D_k + {10}^{-k}$, for $k=0,1,2,\ldots,n$.  We need to define $d_{n+1}$.
 
 By the 
-\hyperref[thm:arch]{Archimedean property} of the real numbers,
+\hyperref[thm:arch:i]{Archimedean property} of the real numbers,
 find an integer $j$ such that
 $x-D_n \leq j {10}^{-(n+1)}$.  Take the least such $j$ and obtain 
 \begin{equation} \label{eq:theDnjineq}
@@ -3813,7 +3821,7 @@ Claim: The sequence $\{ \nicefrac{1}{n} \}$ is convergent and
 \end{equation*}
 Proof: Given an $\epsilon > 0$, we find an $M \in \N$ such that
 $0 < \nicefrac{1}{M} < \epsilon$
-(\hyperref[thm:arch]{Archimedean property} at work).
+(\hyperref[thm:arch:i]{Archimedean property} at work).
 Then for all $n \geq M$ we have that
 \begin{equation*}
 \abs{x_n - 0} = \abs{\frac{1}{n}} = \frac{1}{n} \leq \frac{1}{M} < \epsilon .
@@ -4037,7 +4045,7 @@ obtain
 b^2 \leq \frac{1}{n} \qquad \text{for all $n \in \N$}.
 \end{equation*}
 We have seen before that this implies that $b^2 \leq 0$ (a consequence
-of the \hyperref[thm:arch]{Archimedean property}).  As we also have $b^2 \geq 0$, then $b^2 = 0$
+of the \hyperref[thm:arch:i]{Archimedean property}).  As we also have $b^2 \geq 0$, then $b^2 = 0$
 and so $b = 0$.
 Hence $b=0$ is the greatest lower bound, and $\lim \frac{1}{\sqrt{n}} = 0$.
 \end{example}
@@ -5047,7 +5055,7 @@ if you know it) we have Bernoulli's inequality (see also
 \begin{equation*}
 c^n = {(1+r)}^n \geq 1+nr .
 \end{equation*}
-By the \hyperref[thm:arch]{Archimedean property}
+By the \hyperref[thm:arch:i]{Archimedean property}
 of the real numbers, the sequence $\{ 1+nr \}$
 is unbounded (for any number $B$, we find an $n \in \N$ such that $nr \geq
 B-1$).  Therefore $c^n$ is unbounded.
@@ -6736,7 +6744,7 @@ s_{2^k} =
 1 + \sum_{j=1}^k \frac{1}{2} = 1 + \frac{k}{2} .
 \end{equation*}
 As $\{ \frac{k}{2} \}$ is unbounded by the
-\hyperref[thm:arch]{Archimedean property}, that means that
+\hyperref[thm:arch:i]{Archimedean property}, that means that
 $\{ s_{2^k} \}$ is unbounded, and therefore $\{ s_n \}$ is unbounded.
 Hence $\{ s_n \}$ diverges, and consequently $\sum \frac{1}{n}$ diverges.
 \end{example}
@@ -9464,7 +9472,7 @@ Now let $c$ be irrational, so $f(c) = 0$.  Take a sequence
 $\{ x_n \}$ in $(0,1)$ such that $\lim\, x_n = c$.
 Given $\epsilon > 0$, find $K \in \N$ such
 that $\nicefrac{1}{K} < \epsilon$
-by the \hyperref[thm:arch]{Archimedean property}.
+by the \hyperref[thm:arch:i]{Archimedean property}.
 If $\nicefrac{m}{k} \in (0,1)$ is in lowest terms
 (no common divisors), then $m < k$.
 So there are only finitely many rational numbers in $(0,1)$
@@ -15012,7 +15020,7 @@ By induction, \ref{it:log:iv} implies that for $n \in \N$
 L(2^n) = L(2) + L(2) + \cdots + L(2) = n L(2) .
 \end{equation*}
 Given any $y > 0$, 
-by the \hyperref[thm:arch]{Archimedean property} of the real numbers
+by the \hyperref[thm:arch:i]{Archimedean property} of the real numbers
 (notice $L(2) > 0$), there is an $n \in \N$ such that
 $L(2^n) > y$.  By the
 \hyperref[IVT:thm]{intermediate value theorem}
