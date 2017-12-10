@@ -16907,21 +16907,54 @@ $f(x) := h(a)$ for $x < a$ and $f(x) := h(b)$ for all $x > b$.  First show
 that $f \colon \R \to \R$ is continuous.
 Now let $f_n$ be
 the function $g$ from \exerciseref{exercise:smoothingout} with
-$\epsilon = \nicefrac{1}{n}$, defined on the interval $[a,b]$.  Show that $\{
-f_n \}$ converges uniformly to $h$ on $[a,b]$.
+$\epsilon = \nicefrac{1}{n}$, defined on the interval $[a,b]$.  That is,
+\begin{equation*}
+f_n(x) := \frac{n}{2} \int_{x-1/n}^{x+1/n} f .
+\end{equation*}
+Show that $\{ f_n \}$ converges uniformly to $h$ on $[a,b]$.
+\end{exercise}
+
+
+\begin{exercise}
+Prove that
+if $f_n \colon S \to \R$
+converge uniformly to a bounded function $f \colon S \to \R$,
+then there exists an $N$ such that for all $n \geq N$, the $f_n$
+are bounded.
 \end{exercise}
 
 \begin{exercise}
+Suppose there is a single constant $B$ and
+a sequence of functions
+$f_n \colon S \to \R$ that are bounded by $B$,
+that is $\abs{f_n(x)} \leq B$ for all $x \in S$.
+Suppose that $\{ f_n \}$ converges pointwise
+to $f \colon S \to \R$.
+Prove that $f$ is bounded.
+\end{exercise}
+
+\begin{exercise}[requires \sectionref{sec:moreonseries}]
 In \exampleref{exercise:geomsumptconv} we saw
 $\sum_{k=0}^\infty x^k$ converges pointwise to $\frac{1}{1-x}$ on
 $(-1,1)$.\\
-a) Show that for any $0 \leq a < 1$, the series
-$\sum_{k=0}^\infty x^k$ converges uniformly on $[-a,a]$.
+a) Show that for any $0 \leq c < 1$, the series
+$\sum_{k=0}^\infty x^k$ converges uniformly on $[-c,c]$.
 \\
 b) Show that the series $\sum_{k=0}^\infty x^k$ does not converge uniformly
 on $(-1,1)$.
 \end{exercise}
 
+\begin{exnote}
+In fact, all power series have this property of uniform convergence:
+\end{exnote}
+
+\begin{exercise}[requires \sectionref{sec:moreonseries}]
+Suppose that $0 < R < \infty$ is the radius of convergence of a
+power series $\sum_{k=0}^\infty c_k {(x-a)}^k$.
+Prove that for any $\delta > 0$, the
+series converges uniformly on $[a-R+\delta,a+R-\delta]$.
+Hint: Recall that on $(a-R,a+R)$ the series converges absolutely.
+\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -17492,6 +17525,16 @@ continuous functions, although this is difficult to show.
 Prove, however, that $f$ is a pointwise limit of functions that are themselves
 pointwise limits of
 continuous functions themselves.
+\end{exercise}
+
+\begin{exercise}
+a) Find a sequence of Lipschitz continuous functions on $[0,1]$
+whose uniform limit is $\sqrt{x}$, which is a non-Lipschitz function.
+b) On the other hand, show that if $f_n \colon S \to \R$ are Lipschitz
+with a uniform constant $L$ (meaning all of them satisfy the definition
+with the same constant) that converge pointwise to $f \colon S \to \R$,
+then the limit $f$ is a Lipschitz continuous function
+with Lipschitz constant $L$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
