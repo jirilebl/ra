@@ -1,0 +1,55 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+#include <string.h>
+#include <stdio.h>
+using namespace ePiX;
+
+const int N(8); // Number of rectangles
+
+// gather references to integrand
+double f(double t)
+{
+  return (-t*(t-2.6)*(t-3)/1.9+1.95)*0.4+0.9;
+}
+
+int main()
+{
+	int i;
+	double lower, upper;
+
+  picture(P(-0.3,-0.25), P(3.1,2.05), "3.6x1.5in");
+
+  begin();
+  //border();
+
+  lower = 0.8;
+  upper = 1.9;
+
+  rect(P(0.5,0.0),P(3.0,upper));
+
+  fill(Black(0.1));
+  rect(P(0.5,0.0),P(3.0,lower));
+  nofill();
+
+  h_axis(P(0,0),P(3,0),1);
+  v_axis(P(0,0),P(0,2.05),1);
+
+  bold();
+  plot(f, 0.5, 3.0, 40);
+  plain();
+
+  label (P(0.5,0.0), P(0,-4), "$a$", b);
+  label (P(3.0,0.0), P(0,-4), "$b$", b);
+
+  dashed();
+  line (P(0.5,lower), P(0,lower));
+  line (P(0.5,upper), P(0,upper));
+  solid();
+
+  label (P(-0.1,lower), P(0,0), "$m$", l);
+  label (P(-0.1,upper), P(0,0), "$M$", l);
+
+  tikz_format();
+  end();
+}
+

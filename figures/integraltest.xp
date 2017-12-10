@@ -1,0 +1,49 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+#include <string.h>
+#include <stdio.h>
+using namespace ePiX;
+
+
+// gather references to integrand
+double f(double t)
+{
+  return 2/(t);
+}
+
+int main()
+{
+	int i;
+	int N = 10;
+  picture(P(-0.3,-0.22), P(N+0.8,2), "3.6x1.8in");
+
+  begin();
+  //border();
+
+  //rect(P(-0.3,-0.2),P(3.1,2));
+
+  riemann_sum(f, 1, N, N-1, UPPER);
+
+  fill(Black(0.1));
+  riemann_sum(f, 1, N, N-1, LOWER);
+  nofill();
+
+  h_axis(P(0,0),P(N,0),1);
+  v_axis(P(0,0),P(0,2),1);
+
+  bold();
+  plot(f, 1, N, 40);
+  plain();
+
+  for (i=0; i <= N; i++) {
+	  char txt[20];
+	  snprintf (txt, 20, "$%d$", i);
+	  label (P(i,0.0), P(0,-4), txt, b);
+  }
+
+  label (P(N,0.1), P(4,0), "$\\cdots$", r);
+
+  tikz_format();
+  end();
+}
+

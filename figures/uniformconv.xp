@@ -1,0 +1,61 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+#include <string.h>
+#include <stdio.h>
+using namespace ePiX;
+
+
+double epsilon = 0.3;
+
+double f(double t)
+{
+  return (-t*(t-2.6)*(t-3)/1.9+1.95)*0.4+0.4;
+}
+double fu(double t)
+{
+  return f(t)+ epsilon;
+}
+double fl(double t)
+{
+  return f(t)-epsilon;
+}
+double fn(double t)
+{
+  return f(t)+0.9*epsilon*cos(10*t*sqrt(t));
+}
+
+int main()
+{
+	int i;
+  picture(P(-0.45,-0.03), P(3,1.6), "3.6x1.6in");
+
+  begin();
+
+  //border();
+  h_axis(P(0,0),P(3,0),1);
+  v_axis(P(0,0),P(0,1.6),1);
+
+  bold();
+  plot(f, 0.0, 3.0, 40);
+  plain();
+  plot(fn, 0.0, 3.0, 200);
+  dashed();
+  plot(fu, 0.0, 3.0, 40);
+  plot(fl, 0.0, 3.0, 40);
+  solid();
+
+  //label (P(0,0.0), P(0,-4), "$a$", b);
+  //label (P(3,0.0), P(0,-4), "$b$", b);
+
+  label (P(-0.1,fl(0)), P(0,0), "$f-\\epsilon$", l);
+  label (P(-0.1,f(0)), P(0,0), "$f$", l);
+  label (P(-0.1,fu(0)), P(0,0), "$f+\\epsilon$", l);
+
+  arrow_inset(0.9);
+  label (P(1.1,1.35), P(0,0), "$f_n$", r);
+  arrow (P(1.1,1.35),P(0.8,fn(0.8)));
+
+  tikz_format();
+  end();
+}
+

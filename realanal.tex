@@ -13362,7 +13362,7 @@ of $f$, or sometimes simply the \emph{integral} of $f$.
 
 By definition, any Riemann integrable function is bounded.
 By appealing to \propref{intulbound:prop} we immediately obtain
-the following proposition.
+the following proposition.  See also \figureref{fig:integralminmax}.
 
 \begin{prop} \label{intbound:prop}
 Let $f \colon [a,b] \to \R$ be a Riemann integrable function.
@@ -13374,6 +13374,15 @@ m(b-a) \leq
 \leq M(b-a) .
 \end{equation*}
 \end{prop}
+\begin{myfigureht}
+%\begin{center}
+% To get fonts right we have to use .eepic not .pdf
+\subimport*{figures/}{integralminmax.eepic}
+\caption{The area under the curve is bounded from above by
+the area of the entire rectangle, $M(b-a)$, and from below by
+the area of the shaded part, $m(b-a)$.\label{fig:integralminmax}}
+%\end{center}
+\end{myfigureht}
 
 Often we use a weaker form of this proposition.  That is, if
 $\abs{f(x)} \leq M$ for all $x \in [a,b]$, then
@@ -14256,6 +14265,8 @@ of $f$ to $[a_i,b_i]$ is integrable.  By additivity of the integral (and
 \hyperref[induction:thm]{induction}) $f$ is integrable on the union of the intervals.
 \end{proof}
 
+\subsection{More on integrable functions}
+
 Sometimes it is convenient (or necessary)
 to change certain values of a function and
 then integrate.  The next result says
@@ -14282,6 +14293,13 @@ all $x \in (a,b)$.  The proof follows by \lemmaref{lemma:boundedimpriemann},
 and is left as an exercise.
 \end{proof}
 
+Finally, monotone (increasing or decreasing) functions are always
+Riemann integrable.  The proof is left to the reader as
+\exerciseref{exercise:boundedvariationintegrable}.
+
+\begin{prop} \label{prop:monotoneintegrable}
+Let $f \colon [a,b] \to \R$ be a monotone function.  Then $f \in \sR[a,b]$.
+\end{prop}
 
 \subsection{Exercises}
 
@@ -14427,7 +14445,8 @@ on any interval $[a,b]$.  Furthermore, find the integral in terms of
 $a$, $b$, the endpoints of $I_k$ and the $\alpha_k$.
 \end{exercise}
 
-\begin{exercise} \label{exercise:boundedvariationintegrable}
+\begin{exercise}
+\label{exercise:boundedvariationintegrable}
 Let $f \colon [a,b] \to \R$ be increasing.  a) Show that $f$ is Riemann
 integrable.  Hint: Use a uniform partition; each subinterval of same length.
 b) Use part a to show that a decreasing function is Riemann
@@ -14903,11 +14922,12 @@ discontinuity)
 
 \begin{exercise}[uses \sectionref{sec:monotonefunc}]
 a) Suppose $f \colon [a,b] \to \R$ is increasing, by
-\exerciseref{exercise:boundedvariationintegrable},
+\propref{prop:monotoneintegrable},
+%\exerciseref{exercise:boundedvariationintegrable},
 $f$ is Riemann integrable.  Suppose $f$ has a discontinuity at $c \in
 (a,b)$, show that $F(x) := \int_a^x f$ is not differentiable at $c$.
 \\
-b) In \exerciseref{exercise:increasingfuncdiscatQ}, you have constructed an increasing
+b) In \exerciseref{exercise:increasingfuncdiscatQ}, you constructed an increasing
 function $f \colon [0,1] \to \R$ that is discontinuous at every
 $x \in [0,1] \cap \Q$.  Use this $f$ to construct a function $F(x)$ that is
 continuous on $[0,1]$, but not differentiable at every $x \in [0,1] \cap \Q$.
@@ -16157,8 +16177,22 @@ f(k)+
 \int_k^\infty f .
 \end{equation*}
 \end{prop}
-
-By \exerciseref{exercise:boundedvariationintegrable}, $f$ is integrable
+See \figureref{fig:integraltest}, for an illustration with $k=1$.
+\begin{myfigureht}
+%\begin{center}
+% To get fonts right we have to use .eepic not .pdf
+\subimport*{figures/}{integraltest.eepic}
+\caption{The area under the curve, 
+$\int_1^\infty f$, is bounded below
+by the area of the shaded rectangles,
+$f(2)+f(3)+f(4)+\cdots$, and bounded above
+by the area entire rectangles,
+$f(1)+f(2)+f(3)+\cdots$.\label{fig:integraltest}}
+%\end{center}
+\end{myfigureht}
+By \propref{prop:monotoneintegrable},
+%By \exerciseref{exercise:boundedvariationintegrable},
+$f$ is integrable
 on every interval $[k,b]$ for all $b > k$, so the statement of the theorem
 makes sense without additional hypotheses of integrability.
 
@@ -16584,9 +16618,22 @@ for all $n \geq N$ we have
 \end{defn}
 
 In uniform convergence $N$ cannot depend on $x$.  Given $\epsilon > 0$
-we must find an $N$ that works for all $x \in S$.  Because of
-\propref{ptwsconv:prop}, we see that uniform convergence
-implies pointwise convergence.
+we must find an $N$ that works for all $x \in S$.  See
+\figureref{fig:uniformconv} for an illustration.
+\begin{myfigureht}
+%\begin{center}
+% To get fonts right we have to use .eepic not .pdf
+\subimport*{figures/}{uniformconv.eepic}
+\caption{In uniform convergence,
+for $n \geq N$,
+the functions $f_n$ are within a strip of $\pm\epsilon$ from $f$.%
+\label{fig:uniformconv}}
+%\end{center}
+\end{myfigureht}
+
+Uniform convergence
+implies pointwise convergence, and the proof follows by
+\propref{ptwsconv:prop}:
 
 \begin{prop}
 Let $\{ f_n \}$ be a sequence of functions $f_n \colon S \to \R$.
