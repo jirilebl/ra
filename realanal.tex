@@ -16933,28 +16933,28 @@ to $f \colon S \to \R$.
 Prove that $f$ is bounded.
 \end{exercise}
 
-\begin{exercise}[requires \sectionref{sec:moreonseries}]
-In \exampleref{exercise:geomsumptconv} we saw
-$\sum_{k=0}^\infty x^k$ converges pointwise to $\frac{1}{1-x}$ on
-$(-1,1)$.\\
-a) Show that for any $0 \leq c < 1$, the series
-$\sum_{k=0}^\infty x^k$ converges uniformly on $[-c,c]$.
-\\
-b) Show that the series $\sum_{k=0}^\infty x^k$ does not converge uniformly
-on $(-1,1)$.
-\end{exercise}
+%\begin{exercise}[requires \sectionref{sec:moreonseries}]
+%In \exampleref{exercise:geomsumptconv} we saw
+%$\sum_{k=0}^\infty x^k$ converges pointwise to $\frac{1}{1-x}$ on
+%$(-1,1)$.\\
+%a) Show that for any $0 \leq c < 1$, the series
+%$\sum_{k=0}^\infty x^k$ converges uniformly on $[-c,c]$.
+%\\
+%b) Show that the series $\sum_{k=0}^\infty x^k$ does not converge uniformly
+%on $(-1,1)$.
+%\end{exercise}
 
-\begin{exnote}
-In fact, all power series have this property of uniform convergence:
-\end{exnote}
+%\begin{exnote}
+%In fact, all power series have this property of uniform convergence:
+%\end{exnote}
 
-\begin{exercise}[requires \sectionref{sec:moreonseries}]
-Suppose that $0 < R < \infty$ is the radius of convergence of a
-power series $\sum_{k=0}^\infty c_k {(x-a)}^k$.
-Prove that for any $\delta > 0$, the
-series converges uniformly on $[a-R+\delta,a+R-\delta]$.
-Hint: Recall that on $(a-R,a+R)$ the series converges absolutely.
-\end{exercise}
+%\begin{exercise}[requires \sectionref{sec:moreonseries}]
+%Suppose that $0 < R < \infty$ is the radius of convergence of a
+%power series $\sum_{k=0}^\infty c_k {(x-a)}^k$.
+%Prove that for any $\delta > 0$, the
+%series converges uniformly on $[a-R+\delta,a+R-\delta]$.
+%Hint: Recall that on $(a-R,a+R)$ the series converges absolutely.
+%\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -16962,7 +16962,8 @@ Hint: Recall that on $(a-R,a+R)$ the series converges absolutely.
 \section{Interchange of limits}
 \label{sec:liminter}
 
-\sectionnotes{1--1.5 lectures}
+\sectionnotes{1--2 lectures,
+subsection on power series requires \sectionref{sec:moreonseries}}
 
 Large parts of modern analysis deal mainly with the question of the
 interchange of two limiting operations.  When
@@ -17316,7 +17317,39 @@ which is unbounded.
 Let us remark that
 while uniform convergence is enough to swap limits with integrals, it is not,
 however, enough to swap limits with derivatives, unless you also have
-uniform convergence of the derivatives themselves.  See the exercises below.
+uniform convergence of the derivatives themselves.  See the exercises.
+
+\subsection{Convergence of power series}
+
+In \sectionref{sec:moreonseries} we saw that a power series converges
+absolutely inside its radius of convergence.
+By definition, it converges pointwise.
+Let us show that it also converges uniformly.
+
+\begin{prop}
+Let $\sum_{n=0} c_n {(x-a)}^n$ be a convergent power series with a radius
+of convergence $0 < R \leq \infty$.  Then the series converges uniformly
+in $[a-r,a+r]$ for any $0 < r < R$.
+\end{prop}
+
+\begin{proof}
+FIXME
+\end{proof}
+
+\begin{cor}
+Let $\sum_{n=0} c_n {(x-a)}^n$ be a convergent power series with a radius
+of convergence $0 < R \leq \infty$.  Let $I = (a-R,a+R)$ if $R < \infty$
+or $I = \R$ if $R= \infty$.  Then the series defines a continuous
+function of $x$ on $I$.
+\end{cor}
+
+\begin{proof}
+FIXME
+\end{proof}
+
+In fact more is true, but let us not worry about that.  A convergent power
+series is in fact also differentiable, and the derivative is a convergent
+power series.
 
 \subsection{Exercises}
 
@@ -17324,7 +17357,11 @@ uniform convergence of the derivatives themselves.  See the exercises below.
 While uniform convergence preserves continuity, it does not preserve
 differentiability.  Find an explicit example of a sequence of
 differentiable functions on $[-1,1]$ that converge uniformly to
-a function $f$ such that $f$ is not differentiable.  Hint: Consider
+a function $f$ such that $f$ is not differentiable.
+Hint: There are several possibilities
+FIXME
+
+Consider
 $\abs{x}^{1+1/n}$, show that these functions are differentiable,
 converge uniformly, and then show that the limit is not differentiable.
 \end{exercise}
