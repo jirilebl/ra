@@ -7970,7 +7970,7 @@ one of the three examples above.
 %The three examples show what happens for power series in general.
 
 \begin{prop}
-Let $\sum a_n {(x-x_0)}^n$ be a power series.
+Let $\sum_{n=0}^\infty a_n {(x-x_0)}^n$ be a power series.
 If the series is convergent, then either it converges at
 all $x \in \R$, or
 there exists a number $\rho$, such that
@@ -8033,7 +8033,7 @@ It may be useful to restate what we have learned in the proof
 as a separate proposition.
 
 \begin{prop}
-Let $\sum a_n {(x-x_0)}^n$ be a power series, and let
+Let $\sum_{n=0}^\infty a_n {(x-x_0)}^n$ be a power series, and let
 \begin{equation*}
 R := \limsup_{n\to\infty} \, {\abs{a_n}}^{1/n} .
 \end{equation*}
@@ -11599,13 +11599,42 @@ endpoint of an interval, but all the theory still works by allowing it, and
 it makes our work easier.
 
 \begin{example}
-Let $f(x) := x^2$ defined on the whole real line.  We find that
+Let $f(x) := x^2$ defined on the whole real line.  We find that if
+$x \not=c$,
 \begin{equation*}
+\frac{x^2-c^2}{x-c} =
+\frac{(x+c)(x-c)}{x-c} =
+(x+c) .
+\end{equation*}
+Therefore,
+\begin{equation*}
+f'(c) = 
 \lim_{x\to c} \frac{x^2-c^2}{x-c} =
-\lim_{x\to c} \frac{(x+c)(x-c)}{x-c} =
 \lim_{x\to c} (x+c) = 2c.
 \end{equation*}
-Therefore $f'(c) = 2c$.
+\end{example}
+
+\begin{example}
+The function $f(x) := \sqrt{x}$ is differentiable for $x > 0$.  Fix $c > 0$,
+and take $x \not= c$, $x > 0$,
+\begin{equation*}
+\frac{\sqrt{x}-\sqrt{c}}{x-c}
+=
+\frac{\sqrt{x}-\sqrt{c}}{(\sqrt{x}-\sqrt{c})(\sqrt{x}+\sqrt{c})}
+=
+\frac{1}{\sqrt{x}+\sqrt{c}} .
+\end{equation*}
+Therefore,
+\begin{equation*}
+f'(c) =
+\lim_{x\to c}
+\frac{\sqrt{x}-\sqrt{c}}{x-c}
+=
+\lim_{x\to c}
+\frac{1}{\sqrt{x}+\sqrt{c}}
+=
+\frac{1}{2\sqrt{c}} .
+\end{equation*}
 \end{example}
 
 \begin{example}
@@ -16933,17 +16962,18 @@ to $f \colon S \to \R$.
 Prove that $f$ is bounded.
 \end{exercise}
 
-%\begin{exercise}[requires \sectionref{sec:moreonseries}]
-%In \exampleref{exercise:geomsumptconv} we saw
-%$\sum_{k=0}^\infty x^k$ converges pointwise to $\frac{1}{1-x}$ on
-%$(-1,1)$.\\
-%a) Show that for any $0 \leq c < 1$, the series
-%$\sum_{k=0}^\infty x^k$ converges uniformly on $[-c,c]$.
-%\\
-%b) Show that the series $\sum_{k=0}^\infty x^k$ does not converge uniformly
-%on $(-1,1)$.
-%\end{exercise}
+\begin{exercise}[requires \sectionref{sec:moreonseries}]
+In \exampleref{exercise:geomsumptconv} we saw
+$\sum_{k=0}^\infty x^k$ converges pointwise to $\frac{1}{1-x}$ on
+$(-1,1)$.\\
+a) Show that for any $0 \leq c < 1$, the series
+$\sum_{k=0}^\infty x^k$ converges uniformly on $[-c,c]$.
+\\
+b) Show that the series $\sum_{k=0}^\infty x^k$ does not converge uniformly
+on $(-1,1)$.
+\end{exercise}
 
+%FIXME: we're redoing much more than this in the next section
 %\begin{exnote}
 %In fact, all power series have this property of uniform convergence:
 %\end{exnote}
@@ -16962,8 +16992,9 @@ Prove that $f$ is bounded.
 \section{Interchange of limits}
 \label{sec:liminter}
 
-\sectionnotes{1--2 lectures,
-subsection on power series requires \sectionref{sec:moreonseries}}
+\sectionnotes{1--2.5 lectures,
+subsections on derivatives and power series (which
+requires \sectionref{sec:moreonseries}) optional.}
 
 Large parts of modern analysis deal mainly with the question of the
 interchange of two limiting operations.  When
@@ -17314,42 +17345,269 @@ f(x) :=
 which is unbounded.
 \end{example}
 
-Let us remark that
-while uniform convergence is enough to swap limits with integrals, it is not,
+\subsection{Derivative of the limit}
+
+While uniform convergence is enough to swap limits with integrals, it is not,
 however, enough to swap limits with derivatives, unless you also have
-uniform convergence of the derivatives themselves.  See the exercises.
+uniform convergence of the derivatives themselves.
+See the exercises for some counterexamples.  Using the 
+the fundamental theorem of calculus we find an answer for continuously
+differentiable functions.  The following theorem is true even if 
+we do not assume continuity of the derivatives, but the proof is more
+difficult.
+
+\begin{thm} \label{thm:dersconverge}
+Let $I$ be a bounded interval and let
+$f_n \colon I \to \R$ be continuously differentiable functions.
+Suppose $\{ f_n' \}$ converges uniformly to $g \colon I \to \R$,
+and suppose $\{ f_n(c) \}_{n=1}^\infty$ is a
+convergent sequence for some $c \in I$.  Then $\{ f_n \}$ converges uniformly to 
+a continuously differentiable function $f \colon I \to \R$, and $f' = g$.
+\end{thm}
+
+\begin{proof}
+Define $f(c) := \lim_{n\to \infty} f_n(c)$.
+As $f_n'$ are continuous and hence Riemann integrable,
+then
+via the fundamental theorem of calculus, we find that for $x \in I$,
+\begin{equation*}
+f_n(x) = f_n(c) + \int_c^x f_n' .
+\end{equation*}
+As $\{ f_n' \}$ converges uniformly on $I$, it converges uniformly
+on $[c,x]$ (or $[x,c]$ if $x < c$).
+Therefore, we find that the limit on the right hand side exists.
+Let us define $f$ at the remaining points by this limit:
+\begin{equation*}
+f(x) :=
+\lim_{n\to\infty} f_n(c) + \lim_{n\to\infty} \int_c^x f_n'
+=
+f(c) + \int_c^x g .
+\end{equation*}
+The function $g$ is continuous, being the uniform limit of continuous
+functions.  Hence $f$ is differentiable and $f'(x) = g(x)$ for all $x \in I$
+by the second form of the fundamental theorem.
+
+It remains to prove
+uniform convergence.
+Suppose $I$ has a lower bound $a$ and upper bound $b$.
+Let $\epsilon > 0$ be given.  Take $M$
+such that for $n \geq M$ we have
+$\abs{f(c)-f_n(c)} < \nicefrac{\epsilon}{2}$,
+and
+$\abs{g(x)-f_n'(x)} < \nicefrac{\epsilon}{2(b-a)}$
+for all $x \in I$.  Then
+\begin{equation*}
+\begin{split}
+\abs{f(x) - f_n(x)} & =
+\abs{f(c) + \int_c^x g - f_n(c) - \int_c^x f_n'}
+\\
+& \leq
+\abs{f(c) - f_n(c)} + \abs{\int_c^x g - \int_c^x f_n'}
+\\
+& =
+\abs{f(c) - f_n(c)} + \abs{\int_c^x \bigl(g(s) - f_n'(s)\bigr) \, ds}
+\\
+& <
+\frac{\epsilon}{2}
++
+\frac{\epsilon}{2(b-a)}
+(b-a)
+=\epsilon. \qedhere
+\end{split}
+\end{equation*}
+\end{proof}
+
+The proof goes through without boundedness of $I$, except for the
+uniform convergence of $f_n$ to $f$.  As an example suppose $I = \R$ and let
+$f_n(x) := \nicefrac{x}{n}$.  Then $f_n'(x)=\nicefrac{1}{n}$, which
+converges uniformly to $0$.  However, $\{f_n\}$ converges to 0 only pointwise.
 
 \subsection{Convergence of power series}
 
 In \sectionref{sec:moreonseries} we saw that a power series converges
 absolutely inside its radius of convergence.
 By definition, it converges pointwise.
-Let us show that it also converges uniformly.
+Let us show that it also converges uniformly.  This fact will allow us to
+swap several types of limits.  Not only is the limit continuous,
+we can differentiate
+and integrate convergent power series term by term.
 
 \begin{prop}
-Let $\sum_{n=0} c_n {(x-a)}^n$ be a convergent power series with a radius
-of convergence $0 < R \leq \infty$.  Then the series converges uniformly
-in $[a-r,a+r]$ for any $0 < r < R$.
+Let $\sum_{n=0}^\infty c_n {(x-a)}^n$ be a convergent power series with a radius
+of convergence $0 < \rho \leq \infty$.
+Then the series converges uniformly
+in $[a-r,a+r]$ for any $0 < r < \rho$.
+
+In particular, the series defines a continuous function
+on $(a-\rho,a+\rho)$ (if $\rho < \infty$), or $\R$ (if $\rho = \infty$).
 \end{prop}
 
 \begin{proof}
-FIXME
+Let $I := (a-\rho,a+\rho)$ if $\rho < \infty$,
+or let $I := \R$ if $\rho= \infty$.
+Take $0 < r < \rho$.
+The series converges absolutely for any $x \in I$,
+in particular if $x = a+r$.
+Therefore $\sum_{n=0}^\infty \abs{c_n} r^n$ converges.
+Given $\epsilon >0$, find $M$ such that for all $k \geq M$,
+\begin{equation*}
+\sum_{n=k+1}^\infty \abs{c_n} {r}^n < \epsilon .
+\end{equation*}
+For any $x \in [a-r,a+r]$,
+\begin{equation*}
+\abs{\sum_{n=0}^\infty c_n {(x-a)}^n - 
+\sum_{n=0}^k c_n {(x-a)}^n}
+=
+\abs{\sum_{n=k+1}^\infty c_n {(x-a)}^n}
+\leq
+\sum_{n=k+1}^\infty \abs{c_n} {\abs{x-a}}^n
+\leq
+\sum_{n=k+1}^\infty \abs{c_n} {r}^n
+<\epsilon.
+\end{equation*}
+
+The partial sums converge uniformly on $[a-r,a+r]$, and hence the limit
+is a continuous function $[a-r,a+r]$.  As $r$ was arbitrary, the function
+is continuous on all of $I$.
 \end{proof}
 
+As we said, uniform convergence will allow us to differentiate
+and integrate a power series term by term.  The 
+differentiate or integrated series is again a power series,
+and we will show it has the same radius of convergence.
+Therefore, 
+any power series defines an infinitely differentiable function.
+
+We first prove that we can antidifferentiate, as integration only needs
+uniform limits.
+
 \begin{cor}
-Let $\sum_{n=0} c_n {(x-a)}^n$ be a convergent power series with a radius
-of convergence $0 < R \leq \infty$.  Let $I = (a-R,a+R)$ if $R < \infty$
-or $I = \R$ if $R= \infty$.  Then the series defines a continuous
-function of $x$ on $I$.
+Let $\sum_{n=0}^\infty c_n {(x-a)}^n$ be a convergent power series with a radius
+of convergence $0 < \rho \leq \infty$.
+Let $I := (a-\rho,a+\rho)$ if $\rho < \infty$
+or $I := \R$ if $\rho= \infty$.  Let $f \colon I \to \R$ be the limit.
+Then
+\begin{equation*}
+\int_a^x f = \sum_{n=1}^\infty \frac{c_{n-1}}{n} {(x-a)}^{n} ,
+\end{equation*}
+where the radius of convergence of this series is at least $\rho$.
 \end{cor}
 
 \begin{proof}
-FIXME
+Take $0 < r < \rho$.
+The partial sums $\sum_{n=0}^k c_n {(x-a)}^n$ converge uniformly on $[a-r,a+r]$.
+For any fixed $x \in [a-r,a+r]$, the convergence is also uniform
+on $[a,x]$ (or $[x,a]$ if $x < a$).
+%  The function $f$,
+%being the uniform limit of $\{ f_k \}$ is continuous and hence integrable.
+Hence,
+\begin{equation*}
+\int_a^x f =
+\int_a^x \lim_{k\to\infty} \sum_{n=0}^k c_n {(s-a)}^n \, ds
+=
+\lim_{k\to\infty}
+\int_a^x \sum_{n=0}^k c_n {(s-a)}^n \, ds
+=
+\lim_{k\to\infty}
+\sum_{n=1}^k \frac{c_{n-1}}{n} {(x-a)}^{n} . \qedhere
+\end{equation*}
 \end{proof}
 
-In fact more is true, but let us not worry about that.  A convergent power
-series is in fact also differentiable, and the derivative is a convergent
-power series.
+
+
+\begin{cor}
+Let $\sum_{n=0}^\infty c_n {(x-a)}^n$ be a convergent power series with a radius
+of convergence $0 < \rho \leq \infty$.
+Let $I := (a-\rho,a+\rho)$ if $\rho < \infty$
+or $I := \R$ if $\rho= \infty$.  Let $f \colon I \to \R$ be the limit.
+Then $f$ is a differentiable function, and
+\begin{equation*}
+f'(x) = \sum_{n=0}^\infty (n+1) c_{n+1} {(x-a)}^{n} ,
+\end{equation*}
+where the radius of convergence of this series is $\rho$.
+\end{cor}
+
+\begin{proof}
+Take $0 < r < \rho$.
+We have uniform convergence of of the series on $[a-r,a+r]$,
+but we need uniform convergence of the derivative.
+Let
+\begin{equation*}
+R := \limsup_{n \to \infty} \abs{c_n}^{1/n} .
+\end{equation*}
+As the series is convergent $R < \infty$, and
+the radius of convergence is $\nicefrac{1}{R}$ (or $\infty$ if $R=0$).
+
+Next let $\epsilon > 0$ be given.  As
+\begin{equation*}
+\lim_{n\to\infty}
+\frac{(n+1) / {(1+\epsilon)}^{n+1}}{n / {(1+\epsilon)}^{n}}
+=
+\lim_{n\to\infty}
+\frac{n+1}{n} \frac{1}{1+\epsilon}
+=
+\frac{1}{1+\epsilon} < 1 ,
+\end{equation*}
+the sequence $\frac{n}{{(1+\epsilon)}^n}$ converges to zero by the ratio
+test.  Hence there exists an $N$ such that for all $n \geq N$,
+$\frac{n}{{(1+\epsilon)}^n} < 1$.  In other words
+$n < {(1+\epsilon)}^n$, or 
+$n^{1/n} < 1+\epsilon$.
+
+So
+\begin{equation*}
+R = 
+\limsup_{n \to \infty}
+\abs{c_n}^{1/n}
+\leq
+\limsup_{n \to \infty}
+\abs{n c_n}^{1/n}
+\leq
+(1+\epsilon)
+\limsup_{n \to \infty}
+\abs{c_n}^{1/n}
+=
+(1+\epsilon)R .
+\end{equation*}
+As $\epsilon$ was arbitrary, $\limsup_{n \to \infty} \abs{n c_n}^{1/n} = R$.
+Therefore $\sum_{n=1}^\infty n c_{n} {(x-a)}^{n}$ has radius of
+convergence $\rho$, and by dividing by $(x-a)$ we find
+$\sum_{n=0}^\infty (n+1) c_{n+1} {(x-a)}^{n}$ has radius of convergence
+$\rho$ as well.
+
+Consequently, the partial sums 
+$\sum_{n=0}^k (n+1) c_{n+1} {(x-a)}^{n}$,
+which are derivatives of the partial sums
+$\sum_{n=0}^{k+1} c_{n} {(x-a)}^{n}$,
+converge uniformly on $[a-r,a+r]$.  Furthermore,
+the series clearly converges at $x=a$.
+We may thus apply \thmref{thm:dersconverge}, and
+we are done as $r < \rho$ was arbitrary.
+\end{proof}
+
+\begin{example}
+We could have used this result to define the exponential function.  That is
+the power series
+\begin{equation*}
+f(x) := \sum_{n=0}^\infty \frac{x^n}{n!}
+\end{equation*}
+has radius of convergence $\rho=\infty$.  By differentiating
+term by term we find that $f'(x) = f(x)$.
+\end{example}
+
+\begin{example}
+The series
+\begin{equation*}
+\sum_{n=1}^\infty n x^n
+\end{equation*}
+converges to $\frac{x}{{(1-x)}^2}$ on $(-1,1)$.
+
+Proof:
+We know that on $(-1,1)$, $\sum_{n=0}^\infty x^n$ converges to
+$\frac{1}{1-x}$.  The derivative $\sum_{n=1}^\infty n x^{n-1}$ then converges
+on the same interval to $\frac{1}{{(1-x)}^2}$.  Multiplying by $x$
+we obtain the result.
+\end{example}
 
 \subsection{Exercises}
 
@@ -17358,11 +17616,11 @@ While uniform convergence preserves continuity, it does not preserve
 differentiability.  Find an explicit example of a sequence of
 differentiable functions on $[-1,1]$ that converge uniformly to
 a function $f$ such that $f$ is not differentiable.
-Hint: There are several possibilities
-FIXME
-
-Consider
-$\abs{x}^{1+1/n}$, show that these functions are differentiable,
+Hint: There are several possibilities,
+simplest is perhaps to combine $\abs{x}$ and $\frac{n}{2}x^2 +
+\frac{1}{2n}$.
+Next possibility is to use $n \int_x^{x+1/n} \abs{s} \,ds$.
+Or perhaps $\sqrt{x^2+{(\nicefrac{1}{2})}^2}$.  Show that these functions are differentiable,
 converge uniformly, and then show that the limit is not differentiable.
 \end{exercise}
 
@@ -17572,6 +17830,14 @@ with a uniform constant $L$ (meaning all of them satisfy the definition
 with the same constant) that converge pointwise to $f \colon S \to \R$,
 then the limit $f$ is a Lipschitz continuous function
 with Lipschitz constant $L$.
+\end{exercise}
+
+\begin{exercise}[requires \sectionref{sec:moreonseries}]
+If $\sum_{n=0}^\infty c_n {(x-a)}^n$ has radius of convergence $\rho$,
+show that the term by term integral
+$\sum_{n=1}^\infty \frac{c_{n-1}}{n} {(x-a)}^n$ has radius of convergence
+$\rho$.  Note that we only proved above that the radius of convergence was
+at least $\rho$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
