@@ -1622,7 +1622,7 @@ b)~Use part a) to show that if $\abs{A} < \abs{\N}$, then $A$ is finite.
 \begin{exercise}[Challenging] \label{exercise:countsubsetbij}
 Suppose $A \subset S$, and $A$ is countable.
 Show that there exists a countable subset $B \subset S$ and
-a bijection bijection between $S \setminus B$ and $S$.
+a bijection between $S \setminus B$ and $S$.
 \end{exercise}
 
 
@@ -5212,6 +5212,35 @@ It is not hard to see that $\{ \frac{2}{n+1} \}$ converges to zero.
 The conclusion follows by the lemma.
 \end{example}
 
+\begin{example} \label{example:nto1overn}
+A more complicated (and useful) application of the above lemma is to prove 
+\begin{equation*}
+\lim_{n\to\infty} n^{1/n} = 1 .
+\end{equation*}
+
+Proof:
+Let $\epsilon > 0$ be given.  Consider the sequence
+$\{ \frac{n}{{(1+\epsilon)}^n} \}$.  Compute
+\begin{equation*}
+\frac{(n+1)/{(1+\epsilon)}^{n+1}}{n/{(1+\epsilon)}^{n}}
+=
+\frac{n+1}{n} \frac{1}{1+\epsilon} .
+\end{equation*}
+The limit of $\frac{n+1}{n} = 1+\frac{1}{n}$ as $n \to \infty$ is 1, and
+\begin{equation*}
+\lim_{n\to \infty} \frac{(n+1)/{(1+\epsilon)}^{n+1}}{n/{(1+\epsilon)}^{n}}
+=
+\frac{1}{1+\epsilon}  < 1 .
+\end{equation*}
+Therefore, $\{ \frac{n}{{(1+\epsilon)}^n} \}$ converges to 0.  In particular
+there exists an $N$ such that for $n \geq N$, we have
+$\frac{n}{{(1+\epsilon)}^n} < 1$, or 
+$n < {(1+\epsilon)}^n$, or 
+$n^{1/n} < 1+\epsilon$.  As $n \geq 1$, then $n^{1/n} \geq 1$, and
+so $0 \leq n^{1/n}-1 < \epsilon$. Consequently,
+$\lim\, n^{1/n} = 1$.
+\end{example}
+
 \subsection{Exercises}
 
 \begin{exercise}
@@ -6899,7 +6928,15 @@ Hence $\sum x_n$ is Cauchy and therefore it converges.
 
 Of course, if $\sum x_n$ converges absolutely, the limits of
 $\sum x_n$ and $\sum \abs{x_n}$ are different.  Computing one
-does not help us compute the other.
+does not help us compute the other.  However the computation above leads to
+a useful inequality for absolutely convergent series,
+a series version of the triangle inequality,
+a proof of which we leave as an exercise:
+\begin{equation*}
+\abs{ \sum_{j=1}^\infty x_j }
+\leq
+\sum_{j=1}^\infty \abs{x_j} .
+\end{equation*}
 
 Absolutely convergent series have many wonderful properties.
 For example, absolutely convergent
@@ -11310,7 +11347,7 @@ exist an $x \in I$ with $c < x < d$, and so $\lim_{x \to d^-} f(x) \geq b$.
 Hence the rational number we choose for $h(d)$ is different from $q$,
 since $q=h(c) < b$ and $h(d) > b$.
 Similarly if $d < c$.  So after making such a choice for
-every $c \in E$, we have a one
+every $c \in E$, we have a 
 one-to-one (injective) function into $\Q$.  Therefore, $E$ is countable.
 \end{proof}
 
@@ -12594,7 +12631,8 @@ such that $f(x) = g(x)$ for all $x \not= 0$.  Hint: \propref{context:prop} and
 \exerciseref{exercise:boundeddermeanslip}.
 \\
 b) Find an example where the $g$ is not differentiable at $x=0$.
-Hint: Consider $\sin(\ln x)$, and assume you know basic properties of
+Hint: Consider something based on $\sin(\ln x)$,
+and assume you know basic properties of
 $\sin$ and $\ln$ from calculus.
 \end{exercise}
 
@@ -17364,7 +17402,7 @@ which is unbounded.
 While uniform convergence is enough to swap limits with integrals, it is not,
 however, enough to swap limits with derivatives, unless you also have
 uniform convergence of the derivatives themselves.
-See the exercises for some counterexamples.  Using the 
+See the exercises for some counterexamples.  Using 
 the fundamental theorem of calculus we find an answer for continuously
 differentiable functions.  The following theorem is true even if 
 we do not assume continuity of the derivatives, but the proof is more
@@ -17467,27 +17505,35 @@ Given $\epsilon >0$, find $M$ such that for all $k \geq M$,
 \begin{equation*}
 \sum_{n=k+1}^\infty \abs{c_n} {r}^n < \epsilon .
 \end{equation*}
-For any $x \in [a-r,a+r]$,
-\begin{equation*}
-\abs{\sum_{n=0}^\infty c_n {(x-a)}^n - 
+For any $x \in [a-r,a+r]$ and any $m > k$
+\begin{multline*}
+\abs{\sum_{n=0}^m c_n {(x-a)}^n - 
 \sum_{n=0}^k c_n {(x-a)}^n}
 =
-\abs{\sum_{n=k+1}^\infty c_n {(x-a)}^n}
+\abs{\sum_{n=k+1}^m c_n {(x-a)}^n}
+\\
 \leq
-\sum_{n=k+1}^\infty \abs{c_n} {\abs{x-a}}^n
+\sum_{n=k+1}^m \abs{c_n} {\abs{x-a}}^n
+\leq
+\sum_{n=k+1}^m \abs{c_n} {r}^n
 \leq
 \sum_{n=k+1}^\infty \abs{c_n} {r}^n
 <\epsilon.
-\end{equation*}
+\end{multline*}
+The partial sums are therefore uniformly Cauchy on $[a-r,a+r]$ and
+hence converge uniformly on that set.
 
-The partial sums converge uniformly on $[a-r,a+r]$, and hence the limit
-is a continuous function $[a-r,a+r]$.  As $r$ was arbitrary, the function
+Moreover, the partial sums are polynomials, which are
+continuous, and their uniform limit on $[a-r,a+r]$
+is a continuous function.
+As $r < \rho$ was arbitrary, the limit function
 is continuous on all of $I$.
 \end{proof}
 
-As we said, uniform convergence will allow us to differentiate
-and integrate a power series term by term.  The 
-differentiate or integrated series is again a power series,
+As we said, we will show that
+power series can be differentiated and integrated
+term by term.  The 
+differentiated or integrated series is again a power series,
 and we will show it has the same radius of convergence.
 Therefore, 
 any power series defines an infinitely differentiable function.
@@ -17528,7 +17574,6 @@ Hence,
 \end{proof}
 
 
-
 \begin{cor}
 Let $\sum_{n=0}^\infty c_n {(x-a)}^n$ be a convergent power series with a radius
 of convergence $0 < \rho \leq \infty$.
@@ -17543,7 +17588,7 @@ where the radius of convergence of this series is $\rho$.
 
 \begin{proof}
 Take $0 < r < \rho$.
-We have uniform convergence of of the series on $[a-r,a+r]$,
+We have uniform convergence of the series on $[a-r,a+r]$,
 but we need uniform convergence of the derivative.
 Let
 \begin{equation*}
@@ -17552,20 +17597,9 @@ R := \limsup_{n \to \infty} \abs{c_n}^{1/n} .
 As the series is convergent $R < \infty$, and
 the radius of convergence is $\nicefrac{1}{R}$ (or $\infty$ if $R=0$).
 
-Next let $\epsilon > 0$ be given.  As
-\begin{equation*}
-\lim_{n\to\infty}
-\frac{(n+1) / {(1+\epsilon)}^{n+1}}{n / {(1+\epsilon)}^{n}}
-=
-\lim_{n\to\infty}
-\frac{n+1}{n} \frac{1}{1+\epsilon}
-=
-\frac{1}{1+\epsilon} < 1 ,
-\end{equation*}
-the sequence $\frac{n}{{(1+\epsilon)}^n}$ converges to zero by the ratio
-test.  Hence there exists an $N$ such that for all $n \geq N$,
-$\frac{n}{{(1+\epsilon)}^n} < 1$.  In other words
-$n < {(1+\epsilon)}^n$, or 
+Let $\epsilon > 0$ be given.  In \exampleref{example:nto1overn} 
+we saw $\lim\,n^{1/n} = 1$.
+Hence there exists an $N$ such that for all $n \geq N$, we have
 $n^{1/n} < 1+\epsilon$.
 
 So
@@ -17584,7 +17618,7 @@ R =
 (1+\epsilon)R .
 \end{equation*}
 As $\epsilon$ was arbitrary, $\limsup_{n \to \infty} \abs{n c_n}^{1/n} = R$.
-Therefore $\sum_{n=1}^\infty n c_{n} {(x-a)}^{n}$ has radius of
+Therefore, $\sum_{n=1}^\infty n c_{n} {(x-a)}^{n}$ has radius of
 convergence $\rho$, and by dividing by $(x-a)$ we find
 $\sum_{n=0}^\infty (n+1) c_{n+1} {(x-a)}^{n}$ has radius of convergence
 $\rho$ as well.
@@ -17630,11 +17664,11 @@ While uniform convergence preserves continuity, it does not preserve
 differentiability.  Find an explicit example of a sequence of
 differentiable functions on $[-1,1]$ that converge uniformly to
 a function $f$ such that $f$ is not differentiable.
-Hint: There are several possibilities,
+Hint:
+There are many possibilities,
 simplest is perhaps to combine $\abs{x}$ and $\frac{n}{2}x^2 +
-\frac{1}{2n}$.
-Next possibility is to use $n \int_x^{x+1/n} \abs{s} \,ds$.
-Or perhaps $\sqrt{x^2+{(\nicefrac{1}{2})}^2}$.  Show that these functions are differentiable,
+\frac{1}{2n}$, another is to
+consider $\sqrt{x^2+{(\nicefrac{1}{n})}^2}$.  Show that these functions are differentiable,
 converge uniformly, and then show that the limit is not differentiable.
 \end{exercise}
 
@@ -17852,6 +17886,20 @@ show that the term by term integral
 $\sum_{n=1}^\infty \frac{c_{n-1}}{n} {(x-a)}^n$ has radius of convergence
 $\rho$.  Note that we only proved above that the radius of convergence was
 at least $\rho$.
+\end{exercise}
+
+\begin{exercise}[requires \sectionref{sec:moreonseries} and \sectionref{sec:taylor}]
+Suppose $f(x) := \sum_{n=0}^\infty c_n {(x-a)}^n$ converges in $(a-\rho,a+\rho)$.
+\\
+a)
+Suppose that $f^{(k)}(a) = 0$ for all $k=0,1,2,3,\ldots$.  Prove that
+$c_n = 0$ for all $n$, or in other words, 
+$f(x) = 0$ for all $x \in (a-\rho,a+\rho)$.
+\\
+b) Using part a) prove a version of the so called ``identity
+theorem for analytic functions'':  If there exists an $\epsilon > 0$
+such that $f(x) = 0$ for all $x \in (a-\epsilon, a+\epsilon)$, then
+$f(x) = 0$ for all $x \in (a-\rho,a+\rho)$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
