@@ -1,0 +1,63 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+#include <stdio.h>
+
+double seqx[] =
+{
+	1.95,
+	1.3,
+	1.6,
+	0.3,
+	0.1,
+	0.50,
+	0.85,
+	1.0,
+	1.18,
+	0.85
+};
+
+double seqy[] =
+{
+	1.1,
+	1.2,
+	0.8,
+	1.43,
+	0.7,
+	0.90,
+	0.75,
+	1.3,
+	0.9,
+	1.15
+};
+
+
+int main() 
+{
+	int i;
+	picture(P(0.0,0.55), P(2.0,1.45), "2.429x1.093in");
+
+	begin();   
+
+	//border();
+
+	circle (P(1,1), 0.435);
+	arrow(P(1,1),P(1+0.43*Cos(1),1+0.43*Sin(1)));
+	label(P(1+0.22*Cos(1),1+0.22*Sin(1)),P(3,0),"$\\epsilon$",b);
+	dot_size(4);
+	ddot(P(1,1));
+	label(P(1, 1),P(0,-4),"$p$",b);
+
+	dot_size(3);
+	for (int i = 0; i < 10; i++) {
+		char num[10];
+		ddot(P(seqx[i], seqy[i]));
+		sprintf(num, "$x_{%d}$", i+1);
+		label(P(seqx[i], seqy[i]),P(0,-4),num,b);
+	}
+
+	tikz_format();
+	end();
+}
+

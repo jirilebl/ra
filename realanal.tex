@@ -1908,7 +1908,7 @@ generality suppose $x > 0$ and $y < 0$.  Multiply $y < 0$ by $x$ to get
 $xy < 0x = 0$.  The result follows by contrapositive.
 \end{proof}
 
-\begin{example}
+\begin{example} \label{example:complexfield}
 The reader may also know about the \emph{\myindex{complex numbers}},
 usually denoted by
 $\C$.  That is, $\C$ is the set of numbers of
@@ -18674,6 +18674,30 @@ because the square root is an increasing function.
 \end{example}
 
 \begin{example}
+The set of complex numbers $\C$ is the set of numbers $z = x+iy$, where $x$
+and $y$ are in $\R$.  By imposing $i^2 = -1$ we make $\C$ into a
+field.
+For the purposes of taking limits,
+the set $\C$ is regarded as the metric space $\R^2$, where $z=x+iy \in \C$
+corresponds to $(x,y) \in \R^2$.
+For any $z=x+iy$ define the \emph{\myindex{complex modulus}}\index{modulus},
+by $\sabs{z} := \sqrt{x^2+y^2}$.
+Then for any two complex numbers
+$z_1 = x_1 + iy_1$ and $z_2 = x_2 + iy_2$, the distance is
+\begin{equation*}
+d(z_1,z_2) = \sqrt{{(x_1-x_2)}^2+ {(y_1-y_2)}^2} = \sabs{z_1-z_2}.
+\end{equation*}
+Furthermore, when working with complex numbers
+it is often convenient to write the metric in the terms of
+the so called
+\emph{\myindex{complex conjugate}}: that is, the conjugate of $z=x+iy$
+is $\bar{z} := x-iy$.  Then 
+${\sabs{z}}^2 = x^2 +y^2 = z\bar{z}$, and so ${\sabs{z_1-z_2}}^2 =
+(z_1-z_2)\overline{(z_1-z_2)}$.
+
+\end{example}
+
+\begin{example}
 An example to keep in mind is the so-called \emph{\myindex{discrete
 metric}}.
 For any set $X$, define
@@ -19581,9 +19605,11 @@ the sequence $\{ x_{n_j} \}_{j=1}^\infty$ is said to be
 a \emph{\myindex{subsequence}} of $\{x_n \}$.
 \end{defn}
 
-Similarly we also define convergence.  Again, we will be cheating a little
-bit and we will use the definite article in front of the word \emph{limit}
+Similarly we define convergence.  Again, we cheat a little
+and use the definite article in front of the word \emph{limit}
 before we prove that the limit is unique.
+See \figureref{fig:sequence-convergence-metric}, for an idea of
+the definition.
 
 \begin{defn}
 A sequence $\{ x_n \}$ in a metric space $(X,d)$ is said
@@ -19597,16 +19623,25 @@ of $\{ x_n \}$.  We write
 \end{equation*}
 
 A sequence
-that converges is said to be \emph{convergent}\index{convergent sequence}.
-Otherwise, the sequence is said to be
+that converges is \emph{convergent}\index{convergent sequence}.
+Otherwise, the sequence is 
 \emph{divergent}\index{divergent sequence}.
+\begin{myfigureht}
+%\begin{center}
+% to get the fonts right input eepic
+\subimport*{figures/}{sequence-convergence-metric.eepic}
+\caption{Sequence converging to $p$.  The first 10 points 
+are shown and $M=7$ for this $\epsilon$.\label{fig:sequence-convergence-metric}}
+%\end{center}
+\end{myfigureht}
 \end{defn}
 
-Let us prove that the limit is unique.  Note that the proof is almost
+Let us prove that the limit is unique.  The proof is almost
 identical (word for word) to the proof of the same fact for sequences of
 real numbers,
 \propref{prop:limisunique}.
-Many results we know for sequences of real numbers can be proved in
+Proofs of many results we know for sequences of real numbers can be
+adapted to
 the more general settings of metric spaces.  We must replace $\abs{x-y}$
 with $d(x,y)$ in the proofs and apply the triangle inequality correctly.
 
@@ -19665,6 +19700,21 @@ converges to $p \in X$, then
  $\{ x_n \}$ converges to $p$.
 \end{enumerate}
 \end{prop}
+
+\begin{example}
+Take $C([0,1],\R)$ be the set of continuous functions with the metric being
+the uniform metric.  We saw that we obtain a metric space.
+If we look at the definition of convergence, we notice that it is identical
+to uniform convergence.  That is $\{ f_n \}$ converges uniformly if and only
+if it converges in the metric space sense.
+\end{example}
+
+\begin{remark}
+It is perhaps surprising that on the set of functions $f \colon [a,b] \to
+\R$ (continuous or not)
+there is no metric that gives pointwise convergence.  Although the proof of
+this fact is beyond the scope of this book.
+\end{remark}
 
 \subsection{Convergence in euclidean space}
 
@@ -19728,6 +19778,15 @@ d(y,x_j)
 \end{equation*}
 The sequence $\{ x_j \}$ converges to $y \in \R^n$ and we are done.
 \end{proof}
+
+\begin{example}
+As we said, the set $\C$ of complex numbers $z = x+iy$ is considered 
+as the metric space $\R^2$.  The proposition says that the
+sequence $\{ z_n \}_{n=1}^\infty = \{ x_n + iy_n \}_{n=1}^\infty$ converges
+to $z = x+iy$
+if and only if $\{ x_n \}$ converges to $x$ and 
+$\{ y_n \}$ converges to $y$.
+\end{example}
 
 \subsection{Convergence and topology}
 
@@ -20000,6 +20059,34 @@ A collection of open sets $\{ U_{\lambda} \}_{\lambda \in I}$ as above is
 said to be a \emph{\myindex{open cover}} of $K$.  So a way to say that
 $K$ is compact is to say that \emph{every open cover of $K$ has a finite
 \myindex{subcover}}.
+
+\begin{example}
+Let $\R$ be the metric space with the standard metric.
+
+The set $\R$ is not compact.  Proof: Take the sets $U_j := (-j,j)$.
+Any $x \in \R$ is in some $U_j$ (by the
+\hyperref[thm:arch:i]{Archimedean property}), so we have an open cover.
+Suppose we have a finite
+subcover $\R \subset U_{j_1} \cup U_{j_2} \cup \cdots \cup U_{j_k}$,
+and suppose $j_1 < j_2 < \cdots < j_k$.  Then $\R \subset U_{j_k}$, but that is
+a contradiction as $j_k \in \R$ on one hand and $j_k \notin U_{j_k}$ on the
+other.
+
+The set $(0,1) \subset \R$ is also not compact.  Proof:  Take the 
+sets $U_{j} := (\nicefrac{1}{j},1-\nicefrac{1}{j})$ for $j=3,4,5,\ldots$.
+As above $(0,1) = \bigcup_{j=3}^\infty U_j$.  And similarly as above,
+if there exists a finite subcover, then there is one $U_j$ such that $(0,1)
+\subset U_j$, which again leads to a contradiction.
+
+The set $\{ 0 \} \subset \R$ is compact.  Proof: Given any open cover $\{
+U_{\lambda} \}_{\lambda \in I}$, there must exist a $\lambda_0$ such that $0
+\in U_{\lambda_0}$ as it is a cover.  But then $U_{\lambda_0}$ gives a
+finite subcover.
+
+We will prove below that $[0,1]$, and in fact any closed and bounded
+interval $[a,b]$, is compact by proving
+that in $\R$, a closed and bounded set is compact.
+\end{example}
 
 \begin{prop}
 Let $(X,d)$ be a metric space.  A compact set $K \subset X$ is closed and
@@ -20478,10 +20565,33 @@ polynomial in $n$ variables is continuous.
 
 Be careful about taking limits separately.  In \exerciseref{exercise:dicontR2}
 you are asked to prove that the function defined by $f(x,y) := \frac{xy}{x^2+y^2}$
-outside the origin and $f(0,0) := 0$, is not continuous at the origin.
+outside the origin and $f(0,0) := 0$, is not continuous at the origin.  See
+\figureref{fig:xyxsqysq}.
 However, for any $y$, the function $g(x) := f(x,y)$ is
 continuous,
 and for any $x$, the function $h(y) := f(x,y)$ is continuous.
+\begin{myfigureht}
+%\begin{center}
+% to get the fonts right input eepic
+% But it's REALLY slow, so use the rendered .pdf version, and there is
+% not much text
+%\subimport*{figures/}{xyxsqysq.eepic}
+\includegraphics{figures/xyxsqysq}
+\caption{Graph of $\frac{xy}{x^2+y^2}$.\label{fig:xyxsqysq}}
+%\end{center}
+\end{myfigureht}
+
+\begin{example}
+Let $X$ be a metric space and take $f \colon X \to \C$ be a complex-valued
+function.  We write $f(p) = g(p) + i h(p)$, where $g \colon X \to \R$
+and $h \colon X \to \R$ are the real and imaginary parts of $f$.
+Then $f$ is continuous at $c \in X$ if and only its real
+and imaginary parts are continuous at $c$.  
+The proof follows because $\{ f(p_n) = g(p_n) + i h(p_n) \}_{n=1}^\infty$
+converges to $f(p) = g(p) + i h(p)$ if and only if
+$\{ g(p_n) \}$ converges to $g(p)$ and
+$\{ h(p_n) \}$ converges to $h(p)$.
+\end{example}
 
 \subsection{Compactness and continuity}
 
