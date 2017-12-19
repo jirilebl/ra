@@ -1094,7 +1094,8 @@ by assigning $f(0) := 2$, $f(1) := 2$, and $f(2) := 0$.  That is, a function $f
 \colon A \to B$ is
 a black box, into which we stick an element of $A$ and the function
 spits out an element of $B$.
-Sometimes $f$ is called a \emph{\myindex{mapping}}
+Sometimes $f$ is called a \emph{\myindex{mapping}} or a
+\emph{\myindex{map}},
 and we say $f$ \emph{maps $A$ to $B$}.
 
 
@@ -1401,8 +1402,9 @@ we define the \emph{\myindex{power set}} of $A$, denoted by $\sP(A)$, to be
 the set of all subsets of $A$.
 \end{defn}
 
-For example, if $A := \{ 1,2\}$, then $\sP(A) = \{ \emptyset, \{ 1 \}, \{ 2 \},
-\{ 1, 2 \} \}$.  For a finite set $A$ of cardinality $n$, the
+For example, if $A := \{ 1,2\}$,
+then $\sP(A) = \bigl\{ \emptyset, \{ 1 \}, \{ 2 \}, \{ 1, 2 \} \bigr\}$.
+For a finite set $A$ of cardinality $n$, the
 cardinality of $\sP(A)$ is $2^n$.  This fact is left as an exercise.  
 Hence, for finite sets
 the cardinality of $\sP(A)$ is strictly
@@ -1710,7 +1712,7 @@ Let $S := \{ a, b, c, d, e \}$ be ordered as $a < b < c < d < e$, and
 let $E := \{ a, c \}$.  Then $c$, $d$, or $e$ are upper bounds, and
 $c$ is the least upper bound or supremum of $E$.
 
-Notice that supremum (or infimum) is automatically unique (if it exists): If $b$ and
+Supremum (or infimum) is automatically unique (if it exists): If $b$ and
 $b'$ are suprema of $E$, then $b \leq b'$ and $b' \leq b$, because both
 $b$ and $b'$ are the least upper bounds, so $b=b'$.
 
@@ -2572,7 +2574,7 @@ Prove $\sup \{ x \in \Q : x^2 < 2 \} = \sup \{ x \in \R : x^2 < 2 \}$.
 a) Prove that given any $y \in \R$, we have $\sup \{ x \in \Q : x < y \} = y$.
 \\
 b) Let $A \subset \Q$ be a set that is bounded above such that whenever $x
-\in A$ and $t \in \Q$ with $t < x$, then $t \in A$.  Further suppose that
+\in A$ and $t \in \Q$ with $t < x$, then $t \in A$.  Further suppose 
 $\sup\, A \not\in A$.  Show that there exists a $y \in \R$ such that
 $A = \{ x \in \Q : x < y \}$.  A set such as $A$ is called a
 \emph{\myindex{Dedekind cut}}.
@@ -2595,7 +2597,7 @@ $x \geq 0$.
 Let us suppose we know $x^{1/n}$ exists for every $x > 0$ and every $n \in
 \N$ (see exercise above).  For integers $p$ and $q > 0$, define $x^{p/q} :=
 {(x^{1/q})}^p$.\\
-a) Show that the power is well defined, that is if $\nicefrac{p}{q} =
+a) Show that the power is well defined: if $\nicefrac{p}{q} =
 \nicefrac{m}{k}$ where $m$ and $k > 0$ are integers, then 
 ${(x^{1/q})}^p = {(x^{1/m})}^k$.
 \\
@@ -2754,7 +2756,7 @@ $\abs{b}-\abs{a} \leq \abs{b-a} = \abs{a-b}$.  Applying
 inequality.
 
 The second version of the triangle inequality is obtained from the standard
-one by just replacing $y$ with $-y$, and noting that $\abs{-y} =
+one by just replacing $y$ with $-y$, and noting $\abs{-y} =
 \abs{y}$.
 \end{proof}
 
@@ -3003,7 +3005,7 @@ a) Prove that if $f+g$ and $g$ are bounded, then $f$ is bounded.
 b) Find an example where $f$ and $g$ are both unbounded, but $f+g$ is
 bounded.
 \\
-c) Prove that is $f$ is bounded but $g$ is unbounded, then $f+g$ is
+c) Prove that if $f$ is bounded but $g$ is unbounded, then $f+g$ is
 unbounded.
 \\
 d) Find an example where $f$ is unbounded but $\alpha f$ is bounded.
@@ -3071,7 +3073,7 @@ the function $f(x) := \tan(x)$
 is a bijective map from $(-\nicefrac{\pi}{2},\nicefrac{\pi}{2})$ to $\R$.  Hence the bounded
 interval $(-\nicefrac{\pi}{2},\nicefrac{\pi}{2})$ has the same cardinality as $\R$.  It is not
 completely straightforward to construct a bijective map from $[0,1]$ to
-say $(0,1)$, but it is possible.
+$(0,1)$, but it is possible.
 
 And do not worry, there does exist a way to measure the ``size'' of subsets
 of real numbers that
@@ -3532,7 +3534,7 @@ e_n :=
 \end{cases}
 \end{equation*}
 Let $E_n$ be the $n$-digit truncation of $y = 0.e_1e_2e_3\ldots$.  Because
-all the digits are nonzero we get that $E_n < E_{n+1} \leq y$.  Therefore
+all the digits are nonzero we get $E_n < E_{n+1} \leq y$.  Therefore
 \begin{equation*}
 E_n < y \leq E_n + {10}^{-n} 
 \end{equation*}
@@ -3626,10 +3628,13 @@ The number
 \begin{equation*}
 x = 0.101001000100001000001\ldots,
 \end{equation*}
-is irrational.  That is, the digits are $n$ zeros, then a one, then $n+1$
-zeros, then a one, and so on and so forth.  The fact that $x$ is irrational follows from the
-proposition; the digits never start repeating.  For every $P$,
-if we go far enough, we find a 1 that is followed by at least $P+1$ zeros.
+is irrational.
+That is, the digits are $n$ zeros, then a one, then $n+1$
+zeros, then a one, and so on and so forth.
+The fact that $x$ is irrational follows from the
+proposition; the digits never start repeating.
+For every $P$,
+if we go far enough, we find a 1 followed by at least $P+1$ zeros.
 \end{example}
 
 \subsection{Exercises}
@@ -4755,14 +4760,15 @@ multiply it by the sequence $\{ x_n \}$ and apply item
 
 Proof of claim:  Let $\epsilon > 0$ be given.
 Let $y := \lim\, y_n$.
+As $\abs{y} \not= 0$, then
 Find an $M$ such that for all $n \geq M$
 we have
 \begin{equation*}
 \abs{y_n - y} < \min \left\{ \abs{y}^2\frac{\epsilon}{2}, \, \frac{\abs{y}}{2}
 \right\} .
 \end{equation*}
-Notice that we can make this claim as the right hand side is positive
-because $\abs{y} \not= 0$.  Therefore for all $n \geq M$ we have
+We can make this claim as the right hand side is positive
+because $\abs{y} \not= 0$.  For all $n \geq M$ we have
 $\abs{y - y_n} < \frac{\abs{y}}{2}$, and so
 \begin{equation*}
 \abs{y} = 
@@ -4788,7 +4794,7 @@ $\nicefrac{\abs{y}}{2} < \abs{y_n}$, or in other words,
 %\begin{equation*}
 %\frac{1}{\abs{y_n}} < \frac{2}{\abs{y}} .
 %\end{equation*}
-Now we finish the proof of the claim:
+We finish the proof of the claim:
 \begin{equation*}
 \begin{split}
 \abs{\frac{1}{y_n} - \frac{1}{y}} &=
@@ -4897,7 +4903,7 @@ Details are left to the reader.
 \end{proof}
 
 Let us see an example putting the above propositions together.  Since
-we know that $\lim \nicefrac{1}{n} = 0$, then
+$\lim \nicefrac{1}{n} = 0$, then
 \begin{equation*}
 \lim_{n\to \infty}
 \abs{\sqrt{1 + \nicefrac{1}{n}} - \nicefrac{100}{n^2}} =  
@@ -5220,7 +5226,7 @@ A more complicated (and useful) application of the above lemma is to prove
 
 Proof:
 Let $\epsilon > 0$ be given.  Consider the sequence
-$\{ \frac{n}{{(1+\epsilon)}^n} \}$.  Compute
+$\bigl\{ \frac{n}{{(1+\epsilon)}^n} \bigr\}$.  Compute
 \begin{equation*}
 \frac{(n+1)/{(1+\epsilon)}^{n+1}}{n/{(1+\epsilon)}^{n}}
 =
@@ -5232,7 +5238,8 @@ The limit of $\frac{n+1}{n} = 1+\frac{1}{n}$ as $n \to \infty$ is 1, and
 =
 \frac{1}{1+\epsilon}  < 1 .
 \end{equation*}
-Therefore, $\{ \frac{n}{{(1+\epsilon)}^n} \}$ converges to 0.  In particular
+Therefore, $\bigl \{ \frac{n}{{(1+\epsilon)}^n} \bigr\}$ converges to 0.
+In particular
 there exists an $N$ such that for $n \geq N$, we have
 $\frac{n}{{(1+\epsilon)}^n} < 1$, or 
 $n < {(1+\epsilon)}^n$, or 
@@ -9148,7 +9155,8 @@ show that this implies that $f|_A$ is continuous, although
 the converse does not hold.
 
 Continuity may be the most important definition to understand in analysis,
-and it is not an easy one.  See \figureref{fig:contigr}.  Note that $\delta$ not only
+and it is not an easy one.  See \figureref{fig:contigr}.
+Note that $\delta$ not only
 depends on $\epsilon$, but also on $c$;  we need not pick
 one $\delta$ for all $c \in S$.
 It is no accident 
@@ -19078,7 +19086,7 @@ sometimes just \emph{\myindex{neighborhood}}).
 Intuitively, an open set is a set that does not include its ``boundary,''
 wherever we are at in the set, we are allowed to ``wiggle'' a little bit and
 stay in the set.
-Note that not every set is either open or closed, in fact generally
+Not every set is either open or closed, in fact generally
 most subsets are neither.
 
 \begin{example}
@@ -19110,7 +19118,7 @@ is also open.  That is, union of open sets is open.
 \end{enumerate}
 \end{prop}
 
-Note that the index set in \ref{topology:openiii} is arbitrarily large.
+The index set in \ref{topology:openiii} can be arbitrarily large.
 By $\bigcup_{\lambda \in I} V_\lambda$ we simply mean the set of
 all $x$ such that $x \in V_\lambda$ for at least one $\lambda \in I$.
 
@@ -19197,16 +19205,16 @@ A useful way to think about an open set is as a union of open balls.  If $U$ is
 open, then for each $x \in U$, there is a $\delta_x > 0$ (depending on $x$) such that
 $B(x,\delta_x) \subset U$.  Then $U = \bigcup_{x\in U} B(x,\delta_x)$.
 
-The proof of the following proposition is left as an exercise.  Note that
-there are many other open and
-closed sets in $\R$.
-
 \begin{prop} \label{prop:topology:intervals:openclosed}
 Let $a < b$ be two real numbers.  Then $(a,b)$, $(a,\infty)$,
 and $(-\infty,b)$ are open in $\R$.
 Also $[a,b]$, $[a,\infty)$,
 and $(-\infty,b]$ are closed in $\R$.
 \end{prop}
+
+The proof is left as an exercise.  Also keep in mind that
+there are many other open and
+closed sets in $\R$.
 
 
 \subsection{Connected sets}
@@ -20087,7 +20095,7 @@ By \propref{prop:msconveuc} we have that $\{ x_j \}$ converges
 to $y \in \R^n$ and hence $\R^n$ is complete.
 \end{proof}
 
-Note that a subset of $\R^n$ with the subspace metric need not be
+A subset of $\R^n$ with the subspace metric need not be
 complete.  For example, $(0,1]$ with the subspace metric is not
 complete as $\{ \nicefrac{1}{n} \}$ is a Cauchy sequence in $(0,1]$
 with no limit in $(0,1]$.  But see also
@@ -20836,9 +20844,11 @@ d_Y\bigl(f(x),f(c)\bigr) \leq K d_X(x,c)
 \ \ \ \ \text{for all } x,c \in X.
 \end{equation*}
 It is not difficult to prove that Lipschitz implies uniformly continuous,
-just take $\delta = \nicefrac{\epsilon}{K}$.  And we already saw in the case
-of functions on the real line, a function can be uniformly continuous
-but not Lipschitz.
+just take $\delta = \nicefrac{\epsilon}{K}$.
+A function can be uniformly continuous
+but not Lipschitz,
+as we already saw in the case
+of functions on the real line.
 
 It is worth mentioning that,
 if a function is Lipschitz, it tends to be
