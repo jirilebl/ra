@@ -12723,6 +12723,19 @@ f(x_0)
 \end{equation*}
 \end{defn}
 
+See \figureref{fig:taylorsin} for
+the odd degree Taylor polynomials for the sin function at $x_0=0$.
+The even degree terms are all zero, as even derivatives 
+of sine are again a sine, which are zero at the origin.
+\begin{myfigureht}
+%\begin{center}
+% To get fonts right we have to use .eepic not .pdf
+\subimport*{figures/}{taylorsin.eepic}
+\caption{The odd degree Taylor polynomials for the sine
+function.\label{fig:taylorsin}}
+%\end{center}
+\end{myfigureht}
+
 Taylor's theorem says a function behaves like its $n$th
 Taylor polynomial.  The 
 \hyperref[thm:mvt]{mean value theorem} is really Taylor's theorem
@@ -12790,6 +12803,49 @@ ${(P_n^{x_0})}^{(k)}(x_0) = f^{(k)}(x_0)$ for $k=0,1,2,\ldots,n$.
 Therefore the Taylor polynomial has the same derivatives as $f$ at $x_0$
 up to the $n$th derivative.  That is why the Taylor polynomial is
 a good approximation to $f$.
+Notice that in \figureref{fig:taylorsin} the Taylor polynomials are
+reasonably good approximations to the sine near $x=0$.
+
+One does not necessarily get good Taylor polynomial approximations
+everywhere.  For example, if we start expanding the function $f(x) =
+\frac{x}{1-x}$ around 0, we get the graphs in
+\figureref{fig:taylorgeom}.  The dashed line is
+the 20th degree polynomial, and yet the approximation only seems to get
+better with the degree for $x > -1$, and for smaller $x$, it in fact gets worse.
+The polynomials
+are the partial sums of the geometric series $\sum_{n=1}^\infty x^n$,
+and the series only converges on $(-1,1)$.
+See the discussion of power series
+\sectionref{sec:moreonseries}.
+
+\begin{myfigureht}
+%\begin{center}
+% No fonts there so don't do the eepic, but do the pdf
+\includegraphics{figures/taylorgeom}
+\caption{The function $\frac{x}{1-x}$, and the Taylor polynomials
+$P_1^0$, $P_2^0$, $P_3^0$ (all dotted), and the polynomial $P_{20}^0$
+(dashed).\label{fig:taylorgeom}}
+%\end{center}
+\end{myfigureht}
+
+If $f$ is infinitely differentiable, that is, if $f$ can be
+differentiated any number of times, then 
+we define the \emph{\myindex{Taylor series}}:
+\begin{equation*}
+T^{x_0}(x)
+:=
+\sum_{k=0}^\infty
+\frac{f^{(k)}(x_0)}{k!}{(x-x_0)}^k .
+\end{equation*}
+However, there is no guarantee that this series converges for any
+$x \not= x_0$.  And even where it does converge, there is no guarantee
+that it converges to the function $f$.  Functions for which
+the Taylor series converges to the function at least in an interval
+around every point are called
+\emph{\myindex{analytic functions}}\index{analytic function}.
+Most functions one tends to see in practice are in fact analytic.
+See \exerciseref{exercise:nonanalytic}, for an example of a non-analytic
+function.
 
 The definition of derivative says that
 a function is
@@ -15449,7 +15505,7 @@ function defined on positive $x$ such that $L(xy) = L(x)+L(y)$
 and $L(e) = 1$.
 \end{exercise}
 
-\begin{exercise}[requires \sectionref{sec:taylor}]
+\begin{exercise}[requires \sectionref{sec:taylor}]\label{exercise:nonanalytic}
 Since $(e^x)' = e^x$, it is easy to see that $e^x$ is infinitely
 differentiable (that is, has infinitely many derivatives).  Define the function $f \colon \R \to \R$.
 \begin{equation*}

@@ -1,0 +1,79 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+double sin_n(double x, int n)     // Taylor polynomial of sin x
+{
+  const double sqx(-pow(x, 2)); // store -x^2 for efficiency
+  double val(x), summand(x);    // places to store results of evaluation
+
+  // step through odd numbers from 1 to n
+  for (int i=3; i <= n; i += 2) {
+      summand *= (sqx/((i)*(i-1)));
+      val += summand;
+  }
+
+  return val;
+}
+
+double f(double t)
+{
+  return Sin(t);
+}
+
+double f1(double t)
+{
+  return sin_n(t,1);
+}
+
+double f3(double t)
+{
+  return sin_n(t,3);
+}
+
+double f5(double t)
+{
+  return sin_n(t,5);
+}
+
+double f7(double t)
+{
+  return sin_n(t,7);
+}
+
+
+
+int main()
+{
+  picture(P(-7.0,-1.5), P(7.0,1.5), "4x2in");
+
+  begin();
+
+  h_axis(14);
+  v_axis(6);
+
+  clip_box(P(-7.0,-1.5),P(7.0,1.5));
+
+  bold();
+  plot(f, xmin(), xmax(), 150);
+
+
+  plain();
+  plot(f1, xmin(), xmax(), 150);
+  plot(f3, xmin(), xmax(), 150);
+  plot(f5, xmin(), xmax(), 150);
+  plot(f7, xmin(), xmax(), 150);
+
+  clip_box();
+
+  label (P(-4.5,1.2),P(0,0),"\\small $y = \\sin(x)$",l);
+  label (P(1.45,1.35),P(0,0),"\\small $y = P_1^0(x)$",r);
+  label (P(-2.8,1.4),P(0,0),"\\small $y = P_3^0(x)$",r);
+  label (P(-4,-1.4),P(0,0),"\\small $y = P_5^0(x)$",l);
+  label (P(4.15,-1.4),P(0,0),"\\small $y = P_7^0(x)$",r);
+
+  tikz_format();
+  end();
+}
+
+

@@ -1,0 +1,81 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+double geom_n(double x, int n)     // Taylor polynomial for geometric series
+{
+  double val = 0;
+  double xx = 1;
+
+  for (int i=1; i <= n; i ++) {
+	xx *= x;
+        val += xx;
+  }
+
+  return val;
+}
+
+double f(double t)
+{
+  return t/(1-t);
+}
+
+double f1(double t)
+{
+  return geom_n(t,1);
+}
+
+double f2(double t)
+{
+  return geom_n(t,2);
+}
+
+double f3(double t)
+{
+  return geom_n(t,3);
+}
+
+double f20(double t)
+{
+  return geom_n(t,20);
+}
+
+
+
+int main()
+{
+  picture(P(-2.0,-2.0), P(1.0,2.0), "4x2in");
+
+  begin();
+
+  h_axis(3);
+  v_axis(4);
+
+  clip_box(P(-2.0,-2),P(1.0,2));
+
+  bold();
+  plot(f, -2.0, 0.99, 150);
+
+
+  plain();
+  dotted();
+  plot(f1, -2, 1, 150);
+  plot(f2, -2, 1, 150);
+  plot(f3, -2, 1, 150);
+
+  dashed();
+  plot(f20, -1.1, 1, 150);
+
+  clip_box();
+
+  //label (P(-4.5,1.2),P(0,0),"\\small $y = \\sin(x)$",l);
+  //label (P(1.45,1.35),P(0,0),"\\small $y = P_1^0(x)$",r);
+  //label (P(-2.8,1.4),P(0,0),"\\small $y = P_3^0(x)$",r);
+  //label (P(-4,-1.4),P(0,0),"\\small $y = P_5^0(x)$",l);
+  //label (P(4.15,-1.4),P(0,0),"\\small $y = P_7^0(x)$",r);
+
+  tikz_format();
+  end();
+}
+
+
