@@ -18,8 +18,8 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsthm}
-\usepackage[pdftex]{graphicx}
-%\usepackage{color}
+\usepackage{graphicx}
+\usepackage{color}
 %\usepackage{graphics}
 \usepackage[headings]{fullpage}
 \usepackage{url}
@@ -27,7 +27,8 @@
 %\usepackage{floatflt}
 %\usepackage{wrapfig}
 \usepackage{makeidx}
-\usepackage[pdftex]{hyperref}
+\usepackage{hyperref} % do NOT set [ocgcolorlinks] here!
+\usepackage[ocgcolorlinks]{ocgx2} %perhaps run without for lulu/createspace
 \usepackage[all]{hypcap}
 \usepackage[shortalphabetic]{amsrefs}
 \usepackage[all]{xy}
@@ -165,14 +166,17 @@
 %\addtolength{\textheight}{2.13in}
 %\addtolength{\paperheight}{2.13in}
 
+\definecolor{mypersianblue}{rgb}{0.11, 0.22, 0.73}
+
 \hypersetup{
     %colorlinks,
-    pdfborderstyle={/S/U/W 0.5},
+    %breaklinks,
+    %pdfborderstyle={/S/U/W 0.5},
     %pdfborder={0 0 0},
-    %citecolor=black,
-    %filecolor=black,
-    %linkcolor=black,
-    %urlcolor=black,
+    citecolor=mypersianblue,
+    filecolor=mypersianblue,
+    linkcolor=mypersianblue,
+    urlcolor=mypersianblue,
     pdfkeywords={real analysis, Riemann integral, derivative, limit, sequence},
     pdfsubject={Real Analysis},
     pdftitle={Basic Analysis: Introduction to Real Analysis},

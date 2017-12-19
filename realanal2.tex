@@ -18,7 +18,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsthm}
-\usepackage[pdftex]{graphicx}
+\usepackage{graphicx}
 %\usepackage{color}
 %\usepackage{graphics}
 \usepackage[headings]{fullpage}
@@ -27,7 +27,8 @@
 %\usepackage{floatflt}
 %\usepackage{wrapfig}
 \usepackage{makeidx}
-\usepackage[pdftex]{hyperref}
+\usepackage{hyperref} % do NOT set [ocgcolorlinks] here!
+\usepackage[ocgcolorlinks]{ocgx2} %perhaps run without for lulu/createspace
 %\usepackage[all]{hypcap} %handled by caption
 \usepackage[shortalphabetic]{amsrefs}
 \usepackage[all]{xy}
@@ -165,15 +166,16 @@
 %\addtolength{\textheight}{2.13in}
 %\addtolength{\paperheight}{2.13in}
 
-% unfortunatley colorlinks prints, and ocgcolorlinks doesn't split links
-% or typeset all links well, etc..
+\definecolor{mypersianblue}{rgb}{0.11, 0.22, 0.73}
+
 \hypersetup{
-    %colorlinks,
-    pdfborderstyle={/S/U/W 0.5},
-    %citecolor=black,
-    %filecolor=black,
-    %linkcolor=black,
-    %urlcolor=black,
+    colorlinks,
+    breaklinks,
+    %pdfborderstyle={/S/U/W 0.5},
+    citecolor=mypersianblue,
+    filecolor=mypersianblue,
+    linkcolor=mypersianblue,
+    urlcolor=mypersianblue,
     pdfkeywords={real analysis, Riemann integral, derivative, limit, sequence},
     pdfsubject={Real Analysis},
     pdftitle={Basic Analysis II: Introduction to Real Analysis, Volume II},
