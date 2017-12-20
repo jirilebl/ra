@@ -4,6 +4,8 @@
 %\documentclass[12pt,openany]{book}
 %\documentclass[10pt,openany]{book}
 %\documentclass[8pt,openany]{extbook}
+%if using smaller font you should also rerun the figures,
+% that is in figures/ run run-all-xp.sh (must have epix installed)
 
 \usepackage[T1]{fontenc}
 
@@ -20,12 +22,9 @@
 \usepackage{amsthm}
 \usepackage{graphicx}
 \usepackage{color}
-%\usepackage{graphics}
 \usepackage[headings]{fullpage}
 \usepackage{url}
 \usepackage{varioref}
-%\usepackage{floatflt}
-%\usepackage{wrapfig}
 \usepackage{makeidx}
 \usepackage{hyperref} % do NOT set [ocgcolorlinks] here!
 
@@ -33,9 +32,8 @@
 %to comment out the next line:
 \usepackage[ocgcolorlinks]{ocgx2} %perhaps run without for lulu/createspace
 
-\usepackage[all]{hypcap}
+%\usepackage[all]{hypcap} %handled by caption
 \usepackage[shortalphabetic]{amsrefs}
-%\usepackage[all]{xy}
 \usepackage{nicefrac}
 \usepackage{microtype}
 \usepackage{import}
@@ -47,7 +45,6 @@
 
 \usepackage[margin=10pt,font=small,labelfont=bf,labelsep=colon,singlelinecheck=false]{caption}
 
-
 \usepackage{tikz}
 \usepackage{rotating}
 
@@ -58,6 +55,10 @@
 \end{figure}}
 
 
+%%%
+%NOTE: If changing fonts, also change fonts in figures/run-xp-topdf.sh
+% AND then rerun run-all-xp.sh (must have epix installed)
+%%%
 % Times
 %\usepackage{txfonts}
 % Times, but symbol/cm/ams math fonts
@@ -166,17 +167,14 @@
 
 % To allow skrinking to 5.5 x 8.5 inches without whitespaces
 % Make sure to rerun makeindex as well
-% Useful for printing on lilu.com and saving on paper
+% Useful for printing on lulu.com and saving on paper
 %\addtolength{\textheight}{2.13in}
 %\addtolength{\paperheight}{2.13in}
 
 \definecolor{mypersianblue}{rgb}{0.11, 0.22, 0.73}
 
 \hypersetup{
-    %colorlinks,
-    %breaklinks,
-    %pdfborderstyle={/S/U/W 0.5},
-    %pdfborder={0 0 0},
+    pdfborderstyle={/S/U/W 0.5}, %this just in case ocg isn't there
     citecolor=mypersianblue,
     filecolor=mypersianblue,
     linkcolor=mypersianblue,
@@ -300,7 +298,6 @@ by Ji{\v r}\'i Lebl\\[3ex]}
 
 \vspace*{\fill}
 
-%\begin{small} 
 \noindent
 Typeset in \LaTeX.
 
@@ -315,13 +312,10 @@ Copyright \copyright 2009--2017 Ji{\v r}\'i Lebl
 
 \bigskip
 
-%\begin{floatingfigure}{1.4in}
-%\vspace{-0.05in}
 \noindent
 \includegraphics[width=1.38in]{figures/license}
 \quad
 \includegraphics[width=1.38in]{figures/license2}
-%\end{floatingfigure}
 
 \bigskip
 
@@ -339,18 +333,10 @@ or
 or send a letter to
 Creative Commons
 PO Box 1866, Mountain View, CA 94042, USA.
-%\end{small}
 
 \bigskip
 
 \noindent
-%You can use, print, duplicate, share these notes as much as you want.  You can
-%base your own notes on these and reuse parts if you keep the license the
-%same.  If you plan to use these commercially (sell them for more than just
-%duplicating cost), then you need to contact me and we will work something out.
-%If you are printing a course pack for your students, then it is fine if the 
-%duplication service is charging a fee for printing and selling the printed
-%copy.  I consider that duplicating cost.
 You can use, print, duplicate, share this book as much as you want.  You can
 base your own notes on it and reuse parts if you keep the license the
 same.  You can assume the license is either the CC-BY-NC-SA or CC-BY-SA,
@@ -423,14 +409,12 @@ slower course such as UIUC 444:
 \S0.3, \S1.1--\S1.4, \S2.1--\S2.5, \S3.1--\S3.4, \S4.1--\S4.2,
 \S5.1--\S5.3, \S6.1--\S6.3
 \end{center}
-%\noindent
 For a more rigorous course covering metric spaces that runs quite a bit faster
 (such as UW 521):
 \begin{center}
 \S0.3, \S1.1--\S1.4, \S2.1--\S2.5, \S3.1--\S3.4, \S4.1--\S4.2,
 \S5.1--\S5.3, \S6.1--\S6.2, \S7.1--\S7.6
 \end{center}
-%\noindent
 It should also be possible to run a faster course without metric spaces
 covering all sections of chapters 0 through 6.  The approximate number of
 lectures given in the section notes through chapter 6 are a very rough
@@ -476,12 +460,8 @@ For those that wish to continue
 mathematics, Rudin is a fine investment.
 An inexpensive and somewhat simpler alternative to Rudin is
 Rosenlicht's \emph{Introduction to Analysis}~\cite{Rosenlicht}.
-%Rosenlicht
-%may not be as dry as Rudin for those just starting out in mathematics.
 There is also the freely downloadable \emph{Introduction to Real
 Analysis} by William Trench~\cite{Trench}.
-% for those that do not wish to
-%invest much money.
 
 \medskip
 
@@ -493,9 +473,6 @@ do so when the contrapositive statement seemed too awkward, or when
 contradiction follows rather quickly.  In my opinion,
 contradiction is more likely to get beginning students into trouble,
 as we are talking about objects that do not exist.
-%In a
-%direct proof or a contrapositive proof one can be guided by intuition, but in a contradiction
-%proof, intuition usually leads us astray.
 
 I try to avoid unnecessary formalism where it is unhelpful.
 Furthermore, the proofs and the language get slightly less formal as we
@@ -509,103 +486,6 @@ I use it even when the context is ``local,''
 that is, I may simply define a function $f(x) := x^2$
 for a single exercise or example.
 
-%\medskip
-%
-%It is possible to skip or skim some material in the book as it is not used
-%later on.  Some material that can safely be skipped is marked as such
-%in the notes that appear below every section title.
-%Section
-%\sectionref{sec:basicset} can usually be covered lightly, or left as
-%reading, depending on the prerequisites of the course.
-%The section on Taylor's theorem
-%(\sectionref{sec:taylor}) can safely be skipped as it is never used later.
-%Other parts are marked in the section notes for each section.
-%Uncountability of $\R$ in \sectionref{sec:intandsizeR} can safely be skipped.
-%The alternative proof of Bolzano--Weierstrass in \sectionref{sec:bw} can
-%safely be skipped.
-%And of course, the section on Picard's theorem can also
-%be skipped if there is no time at the end of the course, though I have not
-%marked the section optional.
-
-%It is possible to fill a semester with a course that ends with Picards
-%theorem in \sectionref{sec:picard} by skipping little.  On the other hand,
-%if metric spaces are covered, one might have to go a little faster and skip
-%some topics in the first six chapters.
-
-%\medskip
-%
-%Here is an approximate correspondence of the sections to \cite{BS}.  Note
-%that the material in this book and in \cite{BS} differs.  The correspondence
-%to other books is more complicated.
-%
-%FIXME: correspondence of new sections
-%
-%{\small
-%
-%\begin{center}
-%\begin{tabular}{l|l|}
-%Section
-%& Section in \cite{BS}
-%\\
-%\hline
-%\sectionref{sec:basicset} & \S1.1--\S1.3
-%\\
-%\sectionref{sec:basicpropsrn} & \S2.1 and \S2.3
-%\\
-%\sectionref{sec:setofreals} & \S2.3 and \S2.4
-%\\
-%\sectionref{sec:absval} & \S2.2
-%\\
-%\sectionref{sec:intandsizeR} & \S2.5
-%\\
-%\sectionref{sec:seqsandlims} & parts of \S3.1, \S3.2, \S3.3, \S3.4
-%\\
-%\sectionref{sec:factslimsseqs} & \S3.2
-%\\
-%\sectionref{sec:bw} & \S3.3 and \S3.4
-%\\
-%\sectionref{sec:cauchy} & \S3.5
-%\\
-%\sectionref{sec:series} & \S3.7
-%\\
-%\sectionref{sec:limoffunc} & \S4.1--\S4.2
-%\\
-%\sectionref{sec:cont} & \S5.1 and \S5.2
-%\end{tabular}
-%\begin{tabular}{|l|l}
-%Section
-%& Section in \cite{BS}
-%\\
-%\hline
-%\sectionref{sec:minmaxint} & \S5.3
-%\\
-%\sectionref{sec:unifcont} & \S5.4
-%\\
-%\sectionref{sec:der} & \S6.1
-%\\
-%\sectionref{sec:mvt} & \S6.2
-%\\
-%\sectionref{sec:taylor} & \S6.3
-%\\
-%\sectionref{sec:rint} & \S7.1, \S7.2
-%\\
-%\sectionref{sec:rintprop} & \S7.2
-%\\
-%\sectionref{sec:ftc} & \S7.3
-%\\
-%\sectionref{sec:puconv} & \S8.1
-%\\
-%\sectionref{sec:liminter} & \S8.2
-%\\
-%\sectionref{sec:picard} & Not in \cite{BS}
-%\\
-%\chapterref{ms:chapter} & partially \S11
-%\end{tabular}
-%\end{center}
-%}
-
-%\medskip
-%\hrule
 \medskip
 
 Finally, I would like to acknowledge Jana Ma\v{r}\'ikov\'a,
@@ -863,10 +743,8 @@ is $\N \setminus B$.  If ambiguity would ever arise, we will
 use the set difference notation $A \setminus B$.
 
 \begin{myfigureht}
-%\begin{center}
 \subimport*{figures/}{figsetop.pdf_t}
 \caption{Venn diagrams of set operations.\label{figsetop}}
-%\end{center}
 \end{myfigureht}
 We illustrate the operations on the
 \emph{Venn diagrams}\index{Venn diagram} in \figureref{figsetop}.
@@ -1177,7 +1055,6 @@ f^{-1}(D) := \{ x \in A : f(x) \in D \} .
 \end{equation*}
 \end{defn}
 \begin{myfigureht}
-%\begin{center}
 \parbox{2.5in}{\subimport*{figures/}{funcimags.pdf_t}}
 \parbox{2in}{%
 $f(\{1,2,3,4\}) = \{ b, c, d \}$\\[3pt]
@@ -1193,7 +1070,6 @@ $f(1) := b$,
 $f(2) := d$,
 $f(3) := c$,
 $f(4) := b$.\label{figfuncimags}}
-%\end{center}
 \end{myfigureht}
 
 \begin{example}
@@ -1391,15 +1267,9 @@ from the exercises.
 B$ and $B$ is countable, then $A$ is countable.}  The contrapositive of the
 statement is that if $A$ is
 uncountable, then $B$ is uncountable.
-%The proof is left as an exercise.
 As a consequence if $\abs{A} < \abs{\N}$ then $A$ is
 finite.
 Similarly, if $B$ is finite and $A \subset B$, then $A$ is finite.
-
-%  As we will not need this statement in
-%the sequel, and as the proof requires the
-%Cantor--Bernstein--Schr\"oder theorem mentioned above, we will not give it
-%here.
 
 We give the first truly striking result.  First, we need a notation for
 the set of all subsets of a set.
@@ -2094,9 +1964,6 @@ $n > 0$ for all $n \in \N$.
 Similarly we verify simple statements about rational numbers.
 For example, we proved that if $n > 0$, then $\nicefrac{1}{n} > 0$.
 Then $m < k$ implies $\nicefrac{m}{n} < \nicefrac{k}{n}$.
-%Similarly we can
-%verify all the statements we know about rational numbers and their
-%natural ordering.
 
 Let us prove one of the most basic but useful results about the real numbers.
 The following proposition is essentially how an analyst proves an
@@ -2109,8 +1976,6 @@ $\epsilon > 0$, then $x \leq 0$.
 \end{prop}
 
 \begin{proof}
-%If $x > 0$, then taking
-%$\epsilon = x$ we get the contradiction $x < x$.  Therefore $x=0$.
 If $x > 0$, then $0 < \nicefrac{x}{2} < x$ (why?).  Taking
 $\epsilon = \nicefrac{x}{2}$ obtains a contradiction.  Thus $x \leq 0$.
 \end{proof}
@@ -2154,8 +2019,6 @@ real number $r$ such that $r^2 = 2$.  We denote $r$ by $\sqrt{2}$.
 Take the set
 $A := \{ x \in \R : x^2 < 2 \}$.  First if $x^2 < 2$,
 then $x < 2$.  To see this fact, note that $x \geq 2$ implies $x^2 \geq 4$
-%(use \propref{prop:bordfield}, we will not explicitly
-%mention its use from now on),
 (see \exerciseref{exercise:squareineq}),
 hence any number $x$ such that $x \geq 2$
 is not in $A$.  Thus $A$ is bounded above.
@@ -2275,12 +2138,10 @@ Add one to obtain $m+1 > b$, contradicting $b$ being an
 upper bound.
 
 \begin{myfigureht}
-%\begin{center}
 \subimport*{figures/}{figdensofQ.pdf_t}
 \caption{Idea of the proof of the density of $\Q$: Find $n$ such that $y-x >
 \nicefrac{1}{n}$, then take the least $m$ such that $x >
 \nicefrac{m}{n}$.\label{figdensofQ}}
-%\end{center}
 \end{myfigureht}
 Let us tackle \ref{thm:arch:ii}.
 See \figureref{figdensofQ}
@@ -2306,12 +2167,10 @@ If $m=1$,
 then $m-1 = 0$, and $m-1 \leq nx$ still holds as $x \geq 0$.
 In other words,
 \begin{equation*}
-m-1 \leq nx \qquad \text{or} \qquad m \leq nx+1 . % < m .
+m-1 \leq nx \qquad \text{or} \qquad m \leq nx+1 .
 \end{equation*}
 On the other hand
 from $n(y-x) > 1$ we obtain $ny > 1+nx$.
-%  As $nx \geq m-1$ we get
-%that $1+nx \geq m$ and
 Hence $ny > 1+nx \geq m$, and therefore $y > \nicefrac{m}{n}$.
 Putting everything together we obtain $x < \nicefrac{m}{n} < y$.
 So let $r = \nicefrac{m}{n}$.
@@ -2832,11 +2691,8 @@ if we consider the same polynomial as a function on the whole real line $\R$,
 then it is not bounded.
 
 \begin{myfigureht}
-%\begin{center}
-% to get the fonts right input eepic
-\subimport*{figures/}{boundedfunc.eepic}
+\includegraphics{figures/boundedfunc}
 \caption{Example of a bounded function, a bound $M$, and its supremum and infimum.\label{boundedfuncfig}}
-%\end{center}
 \end{myfigureht}
 For a function $f \colon D \to \R$ we write (see \figureref{boundedfuncfig} for
 an example)
@@ -2856,8 +2712,6 @@ a little bit of calculus shows
 \end{equation*}
 
 
-
-%To illustrate some common issues, let us prove the following proposition.
 
 \begin{prop} \label{prop:funcsupinf}
 If $f \colon D \to \R$ and $g \colon D \to \R$ ($D$ nonempty) are
@@ -3179,14 +3033,6 @@ Using $f$, construct a
 bijection from $[-1,1]$ to $\R$.
 \end{exercise}
 
-%\begin{exercise}[Hard]
-%Show that the cardinality of $\R$ is the same as the cardinality of
-%$\sP(\N)$.  Hint: If you have a binary representation of a real number
-%in the interval $[0,1]$, then you have a sequence of $1$'s and $0$'s.  Use the
-%sequence to construct a subset of $\N$.  The tricky part is to notice
-%that some numbers have more than one binary representation.
-%\end{exercise}
-
 \begin{exercise} \label{exercise:intervaldef}
 Prove \propref{prop:intervaldef}.
 That is,
@@ -3442,12 +3288,14 @@ decimal digit.
 Since $D_{n+1} = D_n + d_{n+1} {10}^{-(n+1)}$
 add $D_n$ to the inequality
 \eqref{eq:theDnjineq} above:
-\begin{equation*}
-D_{n+1} = D_n + (j-1){10}^{-(n+1)} < x \leq
-%D_n + j {10}^{-(n+1)} =
+\begin{multline*}
+D_{n+1} = D_n + (j-1){10}^{-(n+1)} < x
+\leq
+D_n + j {10}^{-(n+1)} \\
+=
 D_n + (j-1) {10}^{-(n+1)} +
 {10}^{-(n+1)} = D_{n+1} + {10}^{-(n+1)} .
-\end{equation*}
+\end{multline*}
 And so
 $D_{n+1} < x \leq D_{n+1} + {10}^{-(n+1)}$ holds.
 We inductively
@@ -3500,12 +3348,6 @@ number $\nicefrac{1}{2}$ the method in the proof obtains the representation
 0.49999\ldots .
 \end{equation*}
 However, we also have the representation $0.50000\ldots$.
-%The key requirement that makes the representation in the proposition unique is
-%$D_n < x$ for all $n$.  The inequality
-%$x \leq D_n + {10}^{-n}$ is true for every representation
-%by the computation in the beginning of the proof.
-%In other words, 
-%$D_n \leq x \leq D_n + {10}^{-n}$ is true for every decimal representation.
 
 The only numbers that have nonunique
 representations are ones that end either in an infinite sequence of $0$s
@@ -3705,8 +3547,6 @@ Prove that if $b \in \N$ and $b \geq 2$, then for any $\epsilon > 0$,
 there is an $n \in \N$ such that 
 we have $b^{-n} < \epsilon$.  Hint:
 One possibility is to first prove that $b^n > n$ for all $n \in \N$ by induction.
-%May be easier to prove that $\{ b^n : n
-%\in \N \}$ is an unbounded subset of the natural numbers.
 \end{exercise}
 
 \begin{exercise}
@@ -3813,17 +3653,15 @@ $\N$.   Secondly we also plot it as a sequence of labeled points on the real
 line.
 
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{sequence-convergence.eepic}
+\includegraphics{figures/sequence-convergence}
 
 \vspace*{12pt}
 
-\hspace{13pt} \subimport*{figures/}{sequence-convergence-2.eepic}
+\hspace{13pt}
+\includegraphics{figures/sequence-convergence-2}
 \caption{Illustration of convergence.  On top, the first ten points of the sequence as a graph
 with $M$ and the interval around the limit $x$ marked.  On bottom, the points of the same sequence marked on the
 number line.\label{figsequenceconvergence}}
-%\end{center}
 \end{myfigureht}
 
 When we write $\lim\, x_n = x$ for some real number $x$, we are saying two
@@ -4001,12 +3839,9 @@ are shown in
 \figureref{figsequenceincreasing}.
 
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{sequence-increasing.eepic}
+\includegraphics{figures/sequence-increasing}
 \caption{First few terms of a monotone increasing sequence as a
 graph.\label{figsequenceincreasing}}
-%\end{center}
 \end{myfigureht}
 
 \begin{prop} \label{prop:monotoneconv}
@@ -4491,12 +4326,10 @@ at most $\nicefrac{\epsilon}{3}$ away from $x$, then $x_n$ must be at
 most $\epsilon$ away from $x$.  Let us follow through on this intuition
 rigorously.
 \begin{myfigureht}
-%\begin{center}
 \newcommand{\ltepsilon}{< \nicefrac{2\epsilon}{3} + \nicefrac{\epsilon}{3} =
 \epsilon}
 \subimport*{figures/}{figsqueeze.pdf_t}
 \caption{Squeeze lemma proof in picture.\label{figsqueeze}}
-%\end{center}
 \end{myfigureht}
 
 \begin{proof}
@@ -4586,9 +4419,6 @@ x-y < \epsilon .
 \end{equation*}
 Because $\epsilon > 0$ was arbitrary we obtain
 $x-y \leq 0$.
-%, as
-%we have seen that a nonnegative
-%number less than any positive $\epsilon$ is zero.
 Therefore $x \leq y$.
 \end{proof}
 
@@ -4788,20 +4618,6 @@ $\nicefrac{\abs{y}}{2} < \abs{y_n}$, or in other words,
 \begin{equation*}
 \frac{1}{\abs{y_n}} < \frac{2}{\abs{y}} .
 \end{equation*}
-%or in other words $\abs{y_n} \geq \abs{y} - \abs{y - y_n}$.
-%Now 
-%$\abs{y_n - y} < \frac{\abs{y}}{2}$ implies 
-%\begin{equation*}
-%\abs{y} - \abs{y_n - y} > \frac{\abs{y}}{2} .
-%\end{equation*}
-%Therefore
-%\begin{equation*}
-%\abs{y_n} \geq \abs{y} - \abs{y - y_n} > \frac{\abs{y}}{2} ,
-%\end{equation*}
-%and consequently
-%\begin{equation*}
-%\frac{1}{\abs{y_n}} < \frac{2}{\abs{y}} .
-%\end{equation*}
 We finish the proof of the claim:
 \begin{equation*}
 \begin{split}
@@ -5055,11 +4871,9 @@ we have
 
 As the proposition shows, to study when a sequence has a limit is 
 the same as studying when another sequence goes to zero.
-%However, it may not give us an easily applicable test for convergence.
 In general it may be hard to decide if a sequence converges, but
 for certain sequences there exist easy to apply tests that tell us
 if the sequence converges or not.  Let us see one such test.
-%For some special sequences we can test the convergence easily.
 First let
 us compute the limit of a very specific sequence.
 \begin{prop}
@@ -5108,8 +4922,9 @@ Let $\{ x_n \}$ be a sequence such that $x_n \not= 0$ for all $n$ and such that
 the limit
 \begin{equation*}
 L := \lim_{n\to\infty} \frac{\abs{x_{n+1}}}{\abs{x_n}}
+\qquad
+\text{exists.}
 \end{equation*}
-exists.
 \begin{enumerate}[(i)]
 \item
 If $L < 1$, then $\{ x_n \}$ converges and $\lim\, x_n = 0$.
@@ -5139,13 +4954,11 @@ while the sequence is not going to be less than $L$ eventually,
 it will eventually be less than $r$, which is still less than 1.
 The intuitive idea of the proof is illustrated in \figureref{figratseq}.
 \begin{myfigureht}
-%\begin{center}
 \subimport*{figures/}{figratseq.pdf_t}
 \caption{Proof of ratio test in picture.  The short lines represent the
 ratios 
 $\frac{\abs{x_{n+1}}}{\abs{x_n}}$
 approaching $L$.\label{figratseq}}
-%\end{center}
 \end{myfigureht}
 
 As $r-L > 0$, there exists an $M \in \N$ such that for
@@ -5418,9 +5231,6 @@ Let $\{ x_n \}$ be a bounded sequence.  Define the sequences $\{ a_n \}$
 and $\{ b_n \}$ by
 $a_n := \sup \{ x_k : k \geq n \}$ and
 $b_n := \inf \{ x_k : k \geq n \}$.  
-%The
-%sequence $\{ a_n \}$ is bounded monotone decreasing
-%and $\{ b_n \}$ is bounded monotone increasing (more on this point below).
 Define, if the limits exist,
 \begin{align*}
 \limsup_{n \to \infty} \, x_n & := \lim_{n \to \infty} a_n ,
@@ -5475,35 +5285,13 @@ Apply \lemmaref{limandineq:lemma} to obtain
 \begin{equation*}
 \lim_{n\to \infty} b_n \leq \lim_{n\to \infty} a_n.  \qedhere
 \end{equation*}
-%As $a_n$ is decreasing, then
-%for every $k \leq n$ we have
-%\begin{equation*}
-%b_n \leq a_n \leq a_k.
-%\end{equation*}
-%Similarly as $b_n$ is increasing, then for every $k \geq n$ we have
-%\begin{equation*}
-%b_k \leq b_n \leq a_n .
-%\end{equation*}
-%In other words, $b_k \leq a_n$ for any pair of natural numbers $k$ and $n$.
-%We have seen before that we can thus conclude that
-%\begin{equation*}
-%\sup \{ b_n : n \in \N \} \leq \sup \{ a_n : n \in \N \} .
-%\end{equation*}
-%By the first item of the proposition, we get
-%\begin{equation*}
-%\liminf_{n \to \infty} \, x_n \leq
-%\limsup_{n \to \infty} \, x_n .
-%\end{equation*}
 \end{proof}
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{sequence-limsupliminf_an_bn.eepic}
+\includegraphics{figures/sequence-limsupliminf_an_bn}
 \caption{First 50 terms of an example sequence.  Terms $x_n$ of the sequence are
 marked with dots (\raisebox{0.25ex}{\tiny$\bullet$}), $a_n$ are marked with
 circles ($\circ$), and
 $b_n$ are marked with diamonds ($\diamond$).\label{sequence-limsupliminf_an_bn}}
-%\end{center}
 \end{myfigureht}
 
 \begin{example} \label{example:liminfsupex}
@@ -5549,13 +5337,10 @@ We leave it to the reader to show that the limit is 1.  That is,
 \end{equation*}
 Do note that the sequence $\{ x_n \}$ is not a convergent sequence.
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{sequence-limsupliminf_an_bn-example.eepic}
+\includegraphics{figures/sequence-limsupliminf_an_bn-example}
 \caption{First 20 terms of the sequence in \exampleref{example:liminfsupex}.
 The marking is the same as in \figureref{sequence-limsupliminf_an_bn}.
 \label{sequence-limsupliminf_an_bn-example}}
-%\end{center}
 \end{myfigureht}
 \end{example}
 
@@ -5895,11 +5680,9 @@ that is,
 for every $K \in \R$, there is an $M \in \N$ such that $x_M < K$.
 By monotonicity $x_n \leq x_M < K$ for all $n \geq M$.   Therefore
 $\lim \, x_n = -\infty$.
-%Similarly when $\{ x_n \}$ is monotone decreasing and unbounded.
 \end{proof}
 
 \begin{example}
-%With this definition,
 \begin{equation*}
 \lim_{n\to \infty} n = \infty,
 \qquad 
@@ -6424,9 +6207,6 @@ any $j \in \N$ (confer \exerciseref{exercise:badnocauchy}).
 The key point in the definition of Cauchy is that $n$ and $k$
 vary independently and can be arbitrarily far apart.
 
-%The Cauchy criterion for convergence becomes very useful for series, which
-%we will discuss in the next section.
-
 \subsection{Exercises}
 
 \begin{exercise}
@@ -6567,8 +6347,6 @@ the series at an index different from 1.  That is, for example we can write
 \sum_{n=0}^\infty r^n = \sum_{n=1}^\infty r^{n-1} .
 \end{equation*}
 The left-hand side is more convenient to write.
-%The idea for the notation is the same as
-%the notation for the tail of a sequence.
 \end{remark}
 
 \begin{remark}
@@ -6645,7 +6423,6 @@ The proof consists of showing
 and then taking the limit as $k$ goes to $\infty$.
 Geometric series is one of the most important series, and in fact it is
 one of the few series for which we can so explicitly find the limit.
-%You will find it plays a central role in the theory.
 
 \medskip
 
@@ -6713,10 +6490,6 @@ and every $k > n$ we have
 \end{prop}
 
 \subsection{Basic properties}
-
-%A sequence is convergent if and only if it is Cauchy, and therefore
-%the same statement is true for series.
-%Proposition~\ref{prop:cachyser} has the following simple consequence.
 
 \begin{prop}
 Let $\sum x_n$ be a convergent series.  Then
@@ -7815,9 +7588,7 @@ also
 $\abs{B_m - B} < \epsilon$.  Finally,
 as $\sum a_n$ converges absolutely,
 make sure that $K$ is large enough such that
-for all $m \geq K$, % we have
-%Take $K$ large enough such that for all $n \geq K$
-%we have
+for all $m \geq K$,
 \begin{equation*}
 \sum_{n=K}^m \abs{a_n} < \epsilon .
 \end{equation*}
@@ -7827,10 +7598,8 @@ $B_{\text{max}} := \sup \{ \abs{ B_n - B } : n = 0,1,2,\ldots \}$
 is finite.  Take $m \geq 2K$, then in particular $m-K+1 > K$.  So
 \begin{equation*}
 \begin{split}
-%\left(
 \sum_{n=0}^m
   \abs{ B_n -  B } \abs{a_{m-n}}
-%\right)
 & =
 \left(
 \sum_{n=0}^{m-K}
@@ -7952,9 +7721,6 @@ is a series of the form
 A power series is really a function of $x$, and
 many important functions in analysis can be written
 as a power series.
-%That is, given $x$, $f(x)$ is given by a series of the form
-%Of course if we wish to define $f \colon U \subset \R \to \R$ using
-%such a series, we must have that the series converges for all $x \in U$.
 
 We say that a power series is
 \emph{convergent}\index{convergent power series} if
@@ -8033,7 +7799,6 @@ Therefore the series diverges for all $x \not= 0$.
 
 In fact, convergence of power series in general always works analogously to
 one of the three examples above.
-%The three examples show what happens for power series in general.
 
 \begin{prop}
 Let $\sum_{n=0}^\infty a_n {(x-x_0)}^n$ be a power series.
@@ -8054,10 +7819,8 @@ In \exampleref{ps:expex} the radius of convergence is $\rho=\infty$,
 and in \exampleref{ps:divergeex} the radius of convergence is $\rho=0$.
 
 \begin{myfigureht}
-%\begin{center}
 \subimport*{figures/}{ps-conv.pdf_t}
 \caption{Convergence of a power series.\label{ps:convfig}}
-%\end{center}
 \end{myfigureht}
 
 \begin{proof}
@@ -8233,19 +7996,6 @@ Therefore we get that for $\abs{x} < 1$,
 \end{equation*}
 The radius of convergence is at least 1.  We leave it to the reader to
 verify that the radius of convergence is exactly equal to 1.
-%We use the ratio test
-%\begin{equation*}
-%\lim_{n\to\infty}
-%\left\lvert \frac{a_{k+1}}{a_k} \right\rvert
-%=
-%\lim_{k\to\infty}
-%\left\lvert \frac{{(-1)}^{k+2} (k+1)}{{(-1)}^{k+1}k} \right\rvert
-%=
-%\lim_{k\to\infty}
-%\frac{k+1}{k}
-%= 1 .
-%\end{equation*}
-%So the radius of convergence is actually equal to 1.
 \end{example}
 
 You can use the method of partial fractions you know from calculus.
@@ -8259,17 +8009,6 @@ x + \sum_{n=0}^\infty {(-1)}^n x^n - \sum_{n=0}^\infty x^n .
 \end{equation*}
 
 \subsection{Exercises}
-
-%This kind of sucks as an exercise ....
-%\begin{exercise}
-%Strengthen the root test.  Suppose that
-%$\limsup_{n\to\infty} \, {\abs{x_n}}^{1/n} = 1$.
-%Find an easy condition
-%
-%but
-%that ${\abs{x_n}}^{1/n} \geq 1$ infinitely often, then show that
-%the series diverges.
-%\end{exercise}
 
 \begin{exercise}
 Decide the convergence or divergence of the following series.
@@ -8681,16 +8420,12 @@ $\displaystyle \lim_{x \to 0} \, x\sin( \nicefrac{1}{x} ) = 0$.
 See \figureref{figsin1x}.
 
 \begin{myfigureht}
-%\begin{center}
-%\includegraphics[width=3in]{figures/sin1x}
 \includegraphics{figures/sin1xfig}
 \qquad
-%\includegraphics[width=3in]{figures/xsin1x}
 \includegraphics{figures/xsin1xfig}
 \caption{Graphs of $\sin(\nicefrac{1}{x})$ and $x \sin(\nicefrac{1}{x})$.
 Note that the computer cannot properly graph $\sin(\nicefrac{1}{x})$
 near zero as it oscillates too fast.\label{figsin1x}}
-%\end{center}
 \end{myfigureht}
 
 Proof:
@@ -8843,7 +8578,6 @@ Then
 
 \subsection{Limits of restrictions and one-sided limits}
 
-%It is not necessary to always consider all of $S$.
 Sometimes we work with the function defined on a subset.
 
 \begin{defn}
@@ -8900,10 +8634,6 @@ For every $\epsilon > 0$
 there is a $\delta' > 0$ such that if $x \in A \setminus \{ c \}$
 and $\abs{x-c} < \delta'$, then $\bigl\lvert f|_A(x)-L \bigr\rvert < \epsilon$.
 Take $\delta := \min \{ \delta', \alpha \}$.
-%It is still true if $\delta$ is smaller, so ensure $\delta \leq \alpha$.
-%Without loss of generality assume $\delta \leq \alpha$.
-%If 
-%$\delta > \alpha$, then set $\delta := \alpha$.
 Now suppose $x \in S \setminus \{ c \}$ and
 $\abs{x-c} < \delta$.  As $\abs{x-c} < \alpha$, then $x \in A \setminus \{ c \}$,
 and as $\abs{x-c} < \delta'$, 
@@ -9151,10 +8881,8 @@ When $f \colon S \to \R$ is continuous at all $c \in S$, then we simply say
 $f$ is a \emph{\myindex{continuous function}}.
 \end{defn}
 \begin{myfigureht}
-%\begin{center}
 \subimport*{figures/}{contigr.pdf_t}
 \caption{For $\abs{x-c} < \delta$, $f(x)$ should be within the gray region.\label{fig:contigr}}
-%\end{center}
 \end{myfigureht}
 
 If $f$ is continuous for all $c \in A$, we say
@@ -9228,8 +8956,6 @@ such that $\abs{x-c} < \delta$ and $\abs{f(x)-f(c)} \geq \epsilon$.
 Let us define a sequence $\{ x_n \}$ as follows.
 Let $x_n \in S$ be such that $\abs{x_n-c} < \nicefrac{1}{n}$
 and $\abs{f(x_n)-f(c)} \geq \epsilon$.
-%As $f$ is not continuous at $c$,
-%we can do this.
 Now $\{ x_n \}$ is
 a sequence of numbers in $S$ such that
 $\lim\, x_n = c$ and such that
@@ -9419,13 +9145,11 @@ ${\bigl(\sin(\nicefrac{1}{x})\bigr)}^2$ is also continuous on $(0,\infty)$.
 
 \subsection{Discontinuous functions}
 
-%Let us spend a bit of time on discontinuous functions.
 When $f$ is not continuous at $c$, we
 say $f$ is \emph{\myindex{discontinuous}} at $c$, or that it has a
 \emph{\myindex{discontinuity}} at $c$.
 The following proposition is a useful test and follows immediately
 from third item of \propref{contbasic:prop}.
-%which is an easy to use test for discontinuities.
 
 \begin{prop}
 Let $f \colon S \to \R$ be a function and $c \in S$.  Suppose 
@@ -9457,12 +9181,9 @@ $\lim\, f(-\nicefrac{1}{n}) = -1$, but $f(0) = 1$.  See
 \figureref{fig:jumpdiscont}.
 
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{jumpdiscont.eepic}
+\includegraphics{figures/jumpdiscont}
 \caption{Graph of the jump discontinuity.  The values of
 $f(-\nicefrac{1}{n})$ and $f(0)$ are marked.\label{fig:jumpdiscont}}
-%\end{center}
 \end{myfigureht}
 
 Also notice that $f(\nicefrac{1}{n}) = 1$ for every $n$,
@@ -9523,10 +9244,8 @@ We claim that
 $f$ is continuous at all irrational $c$ and 
 discontinuous at all rational $c$.
 \begin{myfigureht}
-%\begin{center}
 \includegraphics{figures/popcornfig}
 \caption{Graph of the ``popcorn function.''\label{popcornfig}}
-%\end{center}
 \end{myfigureht}
 
 Proof:
@@ -9740,12 +9459,6 @@ not continuous.
 
 Continuous functions on closed and bounded intervals
 are quite well behaved.
-%have some interesting and very useful properties.
-%Let us now state and prove some very important results about continuous
-%functions defined on closed and bounded intervals of the real line.
-%In particular, on closed bounded
-%intervals of
-%the real line.
 
 \subsection{Min-max theorem}
 
@@ -9769,12 +9482,9 @@ By the \hyperref[thm:bwseq]{Bolzano--Weierstrass theorem},
 there is a convergent subsequence $\{ x_{n_i} \}$.  Let $x := \lim\, x_{n_i}$.
 Since $a \leq x_{n_i} \leq b$ for all $i$, then $a \leq x \leq b$.
 The sequence $\{ f(x_{n_i}) \}$ is not bounded 
-%$\lim\, f(x_{n_i})$ does
 as 
 $\abs{f(x_{n_i})} \geq n_i \geq i$.
 Thus $f$ is not continuous at $x$ as
-%so $\lim\, f(x_{n_i})$ does not exist.
-%On the other hand $f(x)$ is a finite number and
 \begin{equation*}
 f(x)
 =
@@ -9784,8 +9494,6 @@ f\Bigl( \lim_{i\to\infty} x_{n_i} \Bigr) ,
 \end{equation*}
 \end{proof}
 
-%In fact, for a continuous $f$, we will see that the minimum and
-%the maximum are actually achieved.
 Recall from calculus that $f \colon S \to \R$ achieves an
 \emph{\myindex{absolute minimum}} at $c \in S$ if
 \begin{equation*}
@@ -9801,12 +9509,9 @@ $f$ \emph{achieves an absolute minimum (resp.\ absolute maximum) on
 $S$}.
 %See \figureref{fig:minmax}.
 \begin{myfigureht}
-%\begin{center}
-% to get the fonts right input eepic
-\subimport*{figures/}{minmax.eepic}
+\includegraphics{figures/minmax}
 \caption{$f \colon [a,b] \to \R$ achieves an absolute maximum $f(c)$ at
 $c$, and an absolute minimum $f(d)$ at $d$.\label{fig:minmax}}
-%\end{center}
 \end{myfigureht}
 
 If $S$ is a closed
@@ -9928,11 +9633,8 @@ $b_{n+1} := \frac{a_n+b_n}{2}$.
 $b_{n+1} := b_n$.
 \end{enumerate}
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{bisect.eepic}
+\includegraphics{figures/bisect}
 \caption{Finding roots (bisection method).\label{bisectfig}}
-%\end{center}
 \end{myfigureht}
 See \figureref{bisectfig} for an example defining the first five steps.
 If $a_n < b_n$, then $a_n < \frac{a_n+b_n}{2} < b_n$.  So
@@ -9954,16 +9656,6 @@ By \hyperref[induction:thm]{induction},
 \begin{equation*}
 b_n - a_n = \frac{b_1-a_1}{2^{n-1}} = 2^{1-n} (b-a) .
 \end{equation*}
-%  As $a_n < b_n$ for all
-%$n$, then $c \leq d$.  Furthermore, as $a_n$ is increasing and $b_n$
-%is decreasing, $c$ is the supremum of $a_n$ and $d$ is the infimum
-%of the $b_n$.  Thus $d-c \leq b_n - a_n$ for all $n$.  So
-%\begin{equation*}
-%\abs{d-c} =
-%d-c \leq b_n - a_n = 2^{1-n} (b-a) 
-%\end{equation*}
-%for all $n$.  As $2^{1-n}(b-a) \to 0$ as $n \to \infty$, we see that
-%$c = d$.
 As $2^{1-n}(b-a)$ converges to zero, we take the limit as $n$ goes to
 infinity to get
 \begin{equation*}
@@ -10047,10 +9739,6 @@ The technique above is the simplest method of finding roots of polynomials,
 which is perhaps the most common problem in applied
 mathematics.  In general it is hard to do quickly, precisely,
 and automatically.
-%We can use the
-%technique
-%intermediate value theorem
-%to find roots for any continuous function, not just a polynomial.
 
 There are better and faster methods of finding roots of equations, such
 as Newton's method.  One advantage of the above method is its
@@ -10559,8 +10247,6 @@ is \emph{\myindex{Lipschitz continuous}}%
 \footnote{Named after the German mathematician
 \href{http://en.wikipedia.org/wiki/Rudolf_Lipschitz}{Rudolf Otto Sigismund Lipschitz}
 (1832--1903).}, if there exists a $K \in \R$, such that
-%be a function such that there exists a number $K$
-%such that for all $x$ and $y$ in $S$ we have
 \begin{equation*}
 \abs{f(x)-f(y)} \leq K \abs{x-y} 
 \qquad \text{for all $x$ and $y$ in $S$.}
@@ -10606,13 +10292,10 @@ continuous if and only if every line that intersects the graph of $f$ in at leas
 distinct
 points has slope less than or equal to $K$.  See \figureref{fig:lipschitz}.
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{lipschitzfig.eepic}
+\includegraphics{figures/lipschitzfig}
 \caption{The slope of a secant line.
 A function is Lipschitz if $\abs{\text{slope}} =
 \abs{\frac{f(x)-f(y)}{x-y}} \leq K$ for all $x$ and $y$.\label{fig:lipschitz}}
-%\end{center}
 \end{myfigureht}
 
 \begin{example}
@@ -10884,7 +10567,6 @@ while if $x = 2n+\nicefrac{3}{2}$ then $f(x)=-1$, so they cannot both be
 within a small $\epsilon$ of a single real number.
 
 We must be careful not to confuse continuous limits with limits of sequences.
-%For $f(x) = \sin(\pi x)$
 We could say
 \begin{equation*}
 \lim_{n \to \infty} \sin(\pi n) = 0, \qquad \text{but} \qquad
@@ -10910,11 +10592,10 @@ Suppose $f \colon S \to \R$ is a function, $\infty$ is a cluster
 point of $S \subset \R$, and $L \in \R$.  Then
 \begin{equation*}
 \lim_{x\to\infty} f(x) = L
-% \qquad \text{if and only if} \qquad
 \end{equation*}
 if and only if
 \begin{equation*}
-\lim_{n\to\infty} f(x_n) = L% ~~\text{for all sequences $\{ x_n \}$ such that $\lim\, x_n = \infty$} .
+\lim_{n\to\infty} f(x_n) = L
 \end{equation*}
 for all sequences $\{ x_n \}$ such that $\lim\limits_{n\to\infty} x_n = \infty$.
 \end{lemma}
@@ -11246,37 +10927,6 @@ to each other (and hence equal to $f(c)$).  See also
 See \figureref{fig:figinccont} to get an idea of a what a discontinuity
 looks like.
 
-%The proposition has an easy corollary, the proof of which we
-%leave to the reader.
-%
-%\begin{cor} \label{cor:contofmonotone}
-%Let $S \subset \R$ and $f \colon S \to \R$ be increasing.
-%If $c \in S$ is a cluster point of both 
-%$S \cap (-\infty,c)$ and
-%$S \cap (c,\infty)$, then
-%\begin{equation*}
-%\lim_{x \to c^-} f(x) \leq \lim_{x \to c^+} f(x) .
-%\end{equation*}
-%The function $f$ is continuous at $c$ if and only if equality is achieved above.
-%
-%If $c \in S$ is a cluster point of
-%$S \cap (-\infty,c)$ but not of $S \cap (c,\infty)$ then
-%\begin{equation*}
-%\lim_{x \to c^-} f(x) \leq f(c) .
-%\end{equation*}
-%
-%If $c \in S$ is a cluster point of
-%$S \cap (c,\infty)$ but not of $S \cap (-\infty,c)$ then
-%\begin{equation*}
-%f(c) \leq \lim_{x \to c^+} f(x) .
-%\end{equation*}
-%
-%The function $f$ is continuous at $c$ if and only if equality is achieved in
-%the inequalities above or if $c$ is not a cluster point of $S$.
-%
-%If $f$ is decreasing instead, the same result holds with
-%the inequality reversed.
-%\end{cor}
 
 \begin{cor} \label{cor:continterval}
 If $I \subset \R$ is an interval and $f \colon I \to \R$ is 
@@ -11299,8 +10949,6 @@ As $f$ is increasing then $x_1 < x_2$.  By the
 given any $y$ with $f(x_1) < y < f(x_2)$, we find
 a $c \in (x_1,x_2) \subset I$ such that $f(c) = y$, so $y \in f(I)$. 
 Hence, $f(I)$ is an interval.
-
-%See also \corref{cor:imageofinterval}.
 
 Let us prove the reverse direction by contrapositive.
 Suppose $f$ is not continuous at $c \in I$,
@@ -11326,11 +10974,9 @@ When $c \in I$ is an endpoint, the proof is similar and is left as an exercise.
 \end{proof}
 
 \begin{myfigureht}
-%\begin{center}
 \subimport*{figures/}{figinccont.pdf_t}
 \caption{Increasing function $f \colon I \to \R$ discontinuity at
 $c$.\label{fig:figinccont}}
-%\end{center}
 \end{myfigureht}
 
 A striking property of monotone functions is that they cannot have
@@ -11382,12 +11028,9 @@ has a discontinuity at all points $1-\nicefrac{1}{k}$ for $k \in \N$.  In partic
 there are countably many discontinuities, but the function is bounded and
 defined on a closed bounded interval.  See \figureref{fig:countdiscont}.
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{increasing-discont-fig.eepic}
+\includegraphics{figures/increasing-discont-fig}
 \caption{Increasing function with countably many
 discontinuities.\label{fig:countdiscont}}
-%\end{center}
 \end{myfigureht}
 
 Similarly one can find an example of a function discontinuous on a dense set
@@ -11475,24 +11118,6 @@ apply \corref{cor:continterval} to both $f$ and $f^{-1}$.  That is, if
 $f \colon I \to J$ is an onto strictly monotone function and $I$ and $J$ are intervals,
 then both $f$ and $f^{-1}$ are continuous.  Furthermore $f(I)$ is an
 interval precisely when $f$ is continuous.
-
-%\begin{cor} \label{cor:continterval}
-%If $I \subset \R$ is an interval and $f \colon I \to \R$ is 
-%strictly monotone, then $f(I)$ is an interval if and only if $f$
-%is continuous.
-%\end{cor}
-%
-%\begin{proof}
-%If $f$ is continuous then $f(I)$ is an interval is a consequence of
-%\hyperref[IVT:thm]{intermediate value theorem}.  See also
-%\exerciseref{exercise:imageofinterval}.
-%
-%For the reverse direction, suppose that $f(I)$ is an interval.  Let
-%$f^{-1} \colon f(I) \to I$ be
-%its inverse.
-%The function $f$ is the inverse of $f^{-1}$, which is itself strictly
-%monotone, and so $f$ is continuous by \propref{prop:invcont}.  
-%\end{proof}
 
 \subsection{Exercises}
 
@@ -11651,13 +11276,10 @@ at the point $c$ is the slope of the line tangent to the graph of $f$
 at the point $\bigl(c,f(c)\bigr)$.
 
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{derivdfig.eepic}
+\includegraphics{figures/derivdfig}
 \qquad
-\subimport*{figures/}{derivfig.eepic}
+\includegraphics{figures/derivfig}
 \caption{Graphical interpretation of the derivative.\label{derivfig}}
-%\end{center}
 \end{myfigureht}
 
 We allow $I$ to be a closed interval and we allow
@@ -11844,7 +11466,6 @@ f(x)\bigl( g(x) - g(c) \bigr)
 + \bigl( f(x) - f(c) \bigr) g(c)$,
 which is illustrated in \figureref{figprodrule}.
 \begin{myfigureht}
-%\begin{center}
 \subimport*{figures/}{figprodrule.pdf_t}
 \caption{The idea of product rule.  The area of the entire rectangle
 $f(x)g(x)$ differs from the area of the white rectangle $f(c)g(c)$
@@ -11853,7 +11474,6 @@ $f(x)\bigl( g(x) - g(c) \bigr)$ plus the darker shaded rectangle
 $\bigl( f(x) - f(c) \bigr) g(c)$.
 In other words $\Delta (f \cdot g)
 = f \cdot \Delta g + \Delta f \cdot g$.\label{figprodrule}}
-%\end{center}
 \end{myfigureht}
 
 
@@ -11941,12 +11561,6 @@ $\lim_{x \to c} v(x) = g'(c)$.
 That is, the functions $u$ and $v$
 are continuous at $d = g(c)$ and $c$ respectively.
 Furthermore the function $g$ is continuous at $c$.
-%We note that $\displaystyle \lim_{x\to c} v(x) = g'(c)$,
-%$g$ is continuous at $c$, that is
-%$\displaystyle \lim_{x\to c} g(x) = g(c)$,
-%and
-%finally that
-%$\displaystyle \lim_{y\to g(c)} u(y) = f'\bigl(g(c)\bigr)$.
 Hence the limit of
 the right-hand side of \eqref{eq:chainruleeq}
 as $x$ goes to $c$
@@ -12125,11 +11739,8 @@ and if $y < c$ we have
 \end{equation*}
 See \figureref{fig:critpt} for an illustration.
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{critpt.eepic}
+\includegraphics{figures/critpt}
 \caption{Slopes of secants at a relative maximum.\label{fig:critpt}}
-%\end{center}
 \end{myfigureht}
 
 As $a < c < b$, there exist
@@ -12173,12 +11784,9 @@ so-called Rolle's theorem%
 (1652--1719).}.
 
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{rollefig.eepic}
+\includegraphics{figures/rollefig}
 \caption{Point where tangent line is horizontal, that is $f'(c) =
 0$.\label{rollefig}}
-%\end{center}
 \end{myfigureht}
 
 \begin{thm}[Rolle] \label{thm:rolle}
@@ -12202,18 +11810,6 @@ $c \in (a,b)$ and we have that $f'(c) = 0$.  If there is no $x$ such that
 $f(x) > K$ or
 $f(x) < K$, then we have that $f(x) = K$ for all $x$ and then
 $f'(x) = 0$ for all $x \in [a,b]$, so any $c \in (a,b)$ works.
-%If it attains an absolute maximum at $c \in (a,b)$, then $c$
-%is also a relative maximum and we apply 
-%\lemmaref{relminmax:lemma} to find that $f'(c) = 0$.
-%If the absolute maximum is at $a$ or at $b$,
-%then we look for the absolute minimum.
-%If the absolute minimum is at $c \in (a,b)$,
-%then again we find that $f'(c) = 0$.  So suppose that the absolute
-%minimum is also at $a$ or $b$.  Write $k := f(a) = f(b)$.
-%Hence the absolute minimum is $k$ and
-%the absolute maximum is $k$, and the function is
-%identically $k$.  Thus $f'(x) = 0$ for all $x \in [a,b]$, so pick
-%an arbitrary $c \in (a,b)$.
 \end{proof}
 
 It is absolutely necessary for the derivative to exist for all $x
@@ -12252,11 +11848,8 @@ Then we are looking for a point where this new
 function has derivative zero.
 
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{mvtfig.eepic}
+\includegraphics{figures/mvtfig}
 \caption{Graphical interpretation of the mean value theorem.\label{mvtfig}}
-%\end{center}
 \end{myfigureht}
 
 
@@ -12421,8 +12014,6 @@ The converse of the proposition does not hold.  See
 
 Derivatives of functions satisfy an
 intermediate value property.
-%The result is usually
-%called \myindex{Darboux's theorem}.
 
 \begin{thm}[Darboux] \label{thm:darboux} \index{Darboux's theorem}
 Let $f \colon [a,b] \to \R$ be differentiable.  Suppose $y \in \R$ is such
@@ -12438,11 +12029,8 @@ decreasing at $b$, so it must attain a maximum inside $(a,b)$,
 where the derivative is zero.  See \figureref{darbouxthmfig}.
 
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{darbouxthmfig.eepic}
+\includegraphics{figures/darbouxthmfig}
 \caption{Idea of the proof of Darboux theorem.\label{darbouxthmfig}}
-%\end{center}
 \end{myfigureht}
 
 \begin{proof}
@@ -12498,13 +12086,11 @@ the origin.  Furthermore, $f$ has a minimum at 0, but the derivative
 changes sign infinitely often near the origin.
 See \figureref{fig:nonc1diff}.
 \begin{myfigureht}
-%\begin{center}
 \includegraphics{figures/nonc1difffig}
 \qquad
 \includegraphics{figures/nonc1diffderfig}
 \caption{A function with a discontinuous derivative. The function $f$ is on the left
 and $f'$ is on the right.  Notice that $f(x) \leq x^2$ on the left graph.\label{fig:nonc1diff}}
-%\end{center}
 \end{myfigureht}
 
 Proof: It is immediate from the definition that $f$ has an absolute
@@ -12744,12 +12330,9 @@ the odd degree Taylor polynomials for the sin function at $x_0=0$.
 The even degree terms are all zero, as even derivatives 
 of sine are again a sine, which are zero at the origin.
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{taylorsin.eepic}
+\includegraphics{figures/taylorsin}
 \caption{The odd degree Taylor polynomials for the sine
 function.\label{fig:taylorsin}}
-%\end{center}
 \end{myfigureht}
 
 Taylor's theorem says a function behaves like its $n$th
@@ -12786,7 +12369,6 @@ Define a function $g(s)$ by
 g(s) := f(s)-P_n^{x_0}(s)-M_{x,x_0}{(s-x_0)}^{n+1} .
 \end{equation*}
 We compute
-%A simple computation shows that 
 the $k$th derivative at $x_0$ of the Taylor polynomial
 ${(P_n^{x_0})}^{(k)}(x_0) = f^{(k)}(x_0)$ for
 $k=0,1,2,\ldots,n$ (the zeroth derivative of a function is the function
@@ -12835,13 +12417,10 @@ See the discussion of power series
 \sectionref{sec:moreonseries}.
 
 \begin{myfigureht}
-%\begin{center}
-% No fonts there so don't do the eepic, but do the pdf
 \includegraphics{figures/taylorgeom}
 \caption{The function $\frac{x}{1-x}$, and the Taylor polynomials
 $P_1^0$, $P_2^0$, $P_3^0$ (all dotted), and the polynomial $P_{20}^0$
 (dashed).\label{fig:taylorgeom}}
-%\end{center}
 \end{myfigureht}
 
 If $f$ is infinitely differentiable, that is, if $f$ can be
@@ -12995,14 +12574,11 @@ as $s$ goes to $y$, that is, the limit exists.  In other words,
 \end{equation*}
 See \figureref{inversefig} for the geometric idea.
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{inversefigA.eepic}
+\includegraphics{figures/inversefigA}
 \quad
-\subimport*{figures/}{inversefigB.eepic}
+\includegraphics{figures/inversefigB}
 \caption{Interpretation of the derivative of the inverse
 function.\label{inversefig}}
-%\end{center}
 \end{myfigureht}
 
 If both $f'$ and $g$ are continuous, $f'$ is nonzero at all $x$,
@@ -13084,11 +12660,8 @@ point is that $f'(0) = 0$.  See \figureref{cubecuberootfig} for a graph,
 notice the vertical tangent on the cube root at the origin.
 See also \exerciseref{exercise:oddroot}.
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{cubecuberoot.eepic}
+\includegraphics{figures/cubecuberoot}
 \caption{Graphs of $x^3$ and $x^{1/3}$.\label{cubecuberootfig}}
-%\end{center}
 \end{myfigureht}
 \end{example}
 
@@ -13101,17 +12674,6 @@ $f'(x) > 0$ for all $x$.  Show that $f$ is invertible on the interval $J =
 f(\R)$, the inverse is continuously differentiable, and ${(f^{-1})}'(y) >
 0$ for all $y \in f(\R)$.
 \end{exercise}
-
-%FIXME: we changed the lemma to be exactly this
-%\begin{exercise}
-%Prove the following version of the inverse function theorem:
-%Let $I,J \subset \R$ be intervals.
-%Let $f \colon I \to J$ be strictly monotone (hence one-to-one)
-%and onto.  Suppose $f$ is differentiable at $x_0$
-%and $f'(x_0) \not= 0$.  Then prove that the inverse
-%$f^{-1}$ is differentiable at $y_0 = f'(x_0)$ and
-%$(f^{-1})'(y_0) = \frac{1}{f'(x_0)}$.
-%\end{exercise}
 
 \begin{exercise}
 Suppose $I,J$ are intervals and a monotone onto $f \colon I \to J$ has an inverse $g \colon J \to I$.
@@ -13215,8 +12777,6 @@ We write
 \begin{equation*}
 \Delta x_i := x_i - x_{i-1} .
 \end{equation*}
-%"size" was never used
-%We say $P$ is of size $n$.
 
 \medskip
 
@@ -13243,11 +12803,8 @@ the height of the shaded rectangle is $m_i$ and the height
 of the entire rectangle is $M_i$.
 
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{darbouxfig.eepic}
+\includegraphics{figures/darbouxfig}
 \caption{Sample Darboux sums.\label{darbouxfig}}
-%\end{center}
 \end{myfigureht}
 
 \begin{prop} \label{sumulbound:prop}
@@ -13287,10 +12844,6 @@ M(b-a) .
 Hence we get \eqref{sumulbound:eq}.  In particular, the set of lower and
 upper sums are bounded sets.
 \end{proof}
-
-%FIXME: use the following snippet idea for upper and lower integrals
-%& \displaystyle{\int_{\mspace{-12mu} \underline{\mspace{10mu}} % \medspace
-%a}^{b} f(x) \, dx} \\
 
 \begin{defn}
 As the sets of lower and upper Darboux sums are bounded, we define
@@ -13395,7 +12948,6 @@ x_j - x_{j-1} =
 \sum_{p=k_{j-1}+1}^{k_j} \Delta \widetilde{x}_p .
 \end{equation*}
 \begin{myfigureht}
-%\begin{center}
 \subimport*{figures/}{figrefinement.pdf_t}
 \caption{Refinement of a subinterval.  Notice $\Delta x_j =
 \Delta \widetilde{x}_{p-2} +
@@ -13404,7 +12956,6 @@ x_j - x_{j-1} =
 and also
 $k_{j-1}+1 = p-2$ and
 $k_{j} = p$.\label{fig:refinement}}
-%\end{center}
 \end{myfigureht}
 
 Let $m_j$ be as before and correspond to the partition $P$.
@@ -13528,13 +13079,10 @@ m(b-a) \leq
 \end{equation*}
 \end{prop}
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{integralminmax.eepic}
+\includegraphics{figures/integralminmax}
 \caption{The area under the curve is bounded from above by
 the area of the entire rectangle, $M(b-a)$, and from below by
 the area of the shaded part, $m(b-a)$.\label{fig:integralminmax}}
-%\end{center}
 \end{myfigureht}
 
 Often we use a weaker form of this proposition.  That is, if
@@ -13598,13 +13146,10 @@ U(P,f) - L(P,f)
 \end{equation*}
 See \figureref{darbouxfigstep}.
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{darbouxfigstep.eepic}
+\includegraphics{figures/darbouxfigstep}
 \caption{Darboux sums for the step function.  $L(P,f)$ is the area of the
 shaded rectangle, $U(P,f)$ is the area of both rectangles, and
 $U(P,f)-L(P,f)$ is the area of the unshaded rectangle.\label{darbouxfigstep}}
-%\end{center}
 \end{myfigureht}
 By \propref{intulbound:prop} we have $\underline{\int_0^2} f \leq \overline{\int_0^2} f$.
 As $\epsilon$ was arbitrary we see 
@@ -14302,9 +13847,6 @@ Then $f \in \sR[a,b]$ and
 
 \begin{proof}
 Let $M > 0$ be a real number such that $\abs{f(x)} \leq M$.
-%Pick two
-%sequences of numbers $a < a_n < b_n < b$ such that $\lim\, a_n = a$
-%and $\lim\, b_n = b$.
 As $(b-a) \geq (b_n-a_n)$,
 \begin{equation*}
 -M(b-a) \leq
@@ -14385,7 +13927,6 @@ M\cdot 0
 Thus $\overline{\int_a^b} f = \underline{\int_a^b} f = L$
 and hence $f$ is Riemann integrable and $\int_a^b f = L$.
 In particular, no matter what
-%sequences $\{ a_n \}$ and $\{b_n\}$ we started with and what
 subsequence we chose,
 the $L$ is the same number.
 
@@ -14678,12 +14219,9 @@ three shaded rectangles is $F(x_{i+1})-F(x_{i-2})$.
 The idea is that by picking small enough subintervals
 we prove that this area is the integral of $f$.
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{fundthmfig.eepic}
+\includegraphics{figures/fundthmfig}
 \caption{Mean value theorem on subintervals of a partition
 approximating area under the curve.\label{fig:fundthmfig}}
-%\end{center}
 \end{myfigureht}
 
 Using the notation from the definition of the integral, we have
@@ -14762,8 +14300,6 @@ and $F'(c) = f(c)$.
 As $f$ is bounded, there is an $M > 0$
 such that $\abs{f(x)} \leq M$ for all $x \in [a,b]$.  Suppose $x,y \in [a,b]$
 with $x > y$.  Then
-%Then using
-%an exercise from an earlier section we note
 \begin{equation*}
 \abs{F(x)-F(y)} =
 \abs{\int_a^x f - \int_a^y f}
@@ -14832,7 +14368,7 @@ Let us look at what a simple discontinuity can do.  Take $f(x) := -1$ if $x
 < 0$, and $f(x) := 1$ if $x \geq 0$.  Let $F(x) := \int_0^x f$.  It is not
 difficult to see that $F(x) = \abs{x}$.  Notice that $f$ is discontinuous at
 $0$ and $F$ is not differentiable at $0$.  However, the converse does not
-hold.  %Let us do another quick example.
+hold.
 Let $g(x) := 0$ if $x \not= 0$, and $g(0) = 1$.  Letting $G(x) :=
 \int_0^x g$, we find that $G(x) = 0$ for all $x$.  So $g$ is discontinuous
 at $0$, but $G'(0)$ exists and is equal to 0.
@@ -14911,16 +14447,20 @@ f\bigl(g(x)\bigr) g'(x) .
 We note that $F\bigl(g(a)\bigr) = 0$ and we
 use the first form of the fundamental theorem
 to obtain
-\begin{equation*}
+\begin{multline*}
+\qquad %to center things more
 \int_{g(a)}^{g(b)} f(s)~ds = F\bigl(g(b)\bigr) = F\bigl(g(b)\bigr)-F\bigl(g(a)\bigr)
+\\
 =
 \int_a^b 
 \bigl( F \circ g \bigr)' (x) ~dx
 =
 \int_a^b 
 f\bigl(g(x)\bigr) g'(x)
-~dx .  %FIXME \qedhere
-\end{equation*}
+~dx .
+\qquad %to center things more
+\qedhere
+\end{multline*}
 \end{proof}
 
 The change of variables theorem is often used to solve integrals by changing them
@@ -15118,8 +14658,6 @@ It is not difficult to show
 we get the same number no matter what
 representation of $\nicefrac{n}{m}$ we use, so we do not need to use
 lowest terms.
-%See part a) of
-%\exerciseref{exercise:realpower}.
 
 However, what do we mean by $\sqrt{2}^{\sqrt{2}}$?  Or
 $x^y$ in general?  In particular, what is $e^x$ for all $x$?
@@ -15215,8 +14753,6 @@ as above that $L$ achieves all negative numbers.  And
 =  - \infty .
 \end{equation*}
 In the limits, note that only $x > 0$ are in the domain of $L$.
-%Once the two limits are proved, the fact that $L$ is onto follows by
-%\hyperref[IVT:thm]{intermediate value theorem}.
 
 Let us now prove \ref{it:log:v}.
 As above, \ref{it:log:iv} implies for $n \in \N$ we have
@@ -15442,7 +14978,6 @@ find the limit of the alternating harmonic series
 \begin{equation*}
 \sum_{n=1}^\infty \frac{{(-1)}^{n+1}}{n} = 1 - \nicefrac{1}{2} +
 \nicefrac{1}{3} - \nicefrac{1}{4} + \cdots
-% = \ln 2 .
 \end{equation*}
 
 \begin{exercise}
@@ -15458,7 +14993,6 @@ if 1 dollar was deposited initially at interest $x$
 and the interest was compounded $n$
 times during the year.  Therefore $e^x$ is the result of continuous
 compounding.
-%Oftentimes this limit with $x=1$ is used to define the number $e$.
 \end{exercise}
 
 \end{exercise}
@@ -15569,8 +15103,7 @@ that is Riemann integrable on $[a,c]$ for all $c < b$.  We define
 \begin{equation*}
 \int_a^b f := \lim_{c \to b^-} \int_a^{c} f ,
 \end{equation*}
-if the limit exists.%  Of course in the limit we are ``going up to'' $b$
-%as the integral is only defined when $c < b$.
+if the limit exists.
 
 Suppose $f \colon [a,\infty) \to \R$ is a function such that
 $f$ is Riemann integrable on $[a,c]$ for all $c < \infty$.  
@@ -15704,10 +15237,6 @@ If the supremum is infinite, then for every $M \in \R$
 we find $N$ such that $\int_a^N f \geq M$.  As $\int_a^x f$
 is increasing then $\int_a^x f \geq M$ for all $x \geq N$.  So
 $\int_a^\infty f$ diverges to infinity.
-%  Similarly if
-%$\int_a^\infty f$ diverges to infinity, then we can find
-%$x$ with $\int_a^x f$ arbitrarily large, so the supremum
-%is infinite.
 
 Next suppose the supremum is finite, say
 $A = \sup \left\{ \int_a^x f : x \geq a \right\}$.
@@ -15727,12 +15256,7 @@ proving the other direction.  Suppose $\{ x_n \}$ is such that $\lim\, x_n =
 \end{equation*}
 converges.  Given $\epsilon > 0$, pick $N$ such that for
 all $n \geq N$ we have
-%\begin{equation*}
-%\abs{\int_a^{x_n} f - A} < \epsilon .
-%\end{equation*}
-%\begin{equation*}
 $A - \epsilon < \int_a^{x_n} f < A + \epsilon$.
-%\end{equation*}
 Because $\int_a^x f$ is increasing as a function of $x$, we have that for all
 $x \geq x_N$
 \begin{equation*}
@@ -15745,21 +15269,6 @@ $x$, there is an $x_m$ such that $m \geq N$ and $x \leq x_m$.  Then
 \end{equation*}
 In particular, for all $x \geq x_N$ we have
 $\abs{\int_a^{x} f - A} < \epsilon$.
-%As $\{ x_n \}$ goes to infinity, we can pick
-%a subsequence $\{ x_{n_k} \}$ that is monotone increasing (why?).
-%Therefore
-%$\{ \int_a^{x_{n_k}} f \}$ is monotone increasing.
-%\begin{equation*}
-%A = \lim_{n\to\infty} \int_a^{x_n} f =
-%\lim_{k\to\infty} \int_a^{x_{n_k}} f
-%=
-%\sup_{k \in \N} \int_a^{x_{n_k}} f .
-%\end{equation*}
-%So $A \leq \sup \left\{ \int_a^x f : x \geq a \right\}$.  As for any $x$
-%there exists an $x_{n_k}$ such that $x \leq x_{n_k}$ and so
-%$\int_a^x f \leq \int_a^{x_{n_k}}$, we see that
-%So $A \geq \sup \left\{ \int_a^x f : x \geq a \right\}$.  We finish
-%by applying the first item.
 \end{proof}
 
 \begin{prop}[\myindex{Comparison test for improper integrals}]
@@ -15846,19 +15355,6 @@ Above we have shown that $\abs{\int_a^c f} \leq \int_a^c g$ for all $c > a$.
 By taking the limit $c \to \infty$, the first item is proved.
 
 The second item is simply a contrapositive of the first item.
-%Now suppose that $\int_a^\infty f$ diverges.  Applying the contrapositive
-%of the first item with $g(x) = \abs{f(x)}$ we conclude that $\int_a^\infty \abs{f(x)}$
-%must diverge.
-%Because $\abs{f(x)} \geq 0$, the sequence
-%$\{ \int_a^n \abs{f(x)}~dx \}_{n=1}^\infty$ is monotone increasing.  Since it diverges it must go to
-%infinity:  For any $M \in \R$, there exists an $N \in \N$
-%such that for all $n \geq N$, we have $\int_a^n \abs{f(x)}~dx > M$.
-%For such $n$ we have
-%\begin{equation*}
-%M < \int_a^n \abs{f(x)}~dx \leq \int_a^n g .
-%\end{equation*}
-%The sequence $\{ \int_a^n g \}_{n=1}^\infty$ diverges (to infinity), and therefore
-%the improper integral $\int_a^\infty g$ diverges.
 \end{proof}
 
 \begin{example}
@@ -16105,7 +15601,6 @@ a+b .
 For any fixed $a < 0$ the limit as $b \to \infty$ is infinite, so even
 the first limit does not exist, and hence the improper integral
 $\int_{-\infty}^\infty f$
-%of $f$ from $-\infty$ to $\infty$
 does not converge.  On the other hand if $a > 0$, then
 \begin{equation*}
 \int_{-a}^{a} f
@@ -16134,15 +15629,9 @@ in both pure and applied mathematics.  Define
 \end{cases}
 \end{equation*}
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{sincfig.eepic}
-%\includegraphics{figures/sincfig}
+\includegraphics{figures/sincfig}
 \caption{The sinc function.
-%The $x$ axis runs
-%from -15 to 15 and the $y$ axis from $\nicefrac{-1}{4}$ to 1.
 \label{figsinc}}
-%\end{center}
 \end{myfigureht}
 
 It is not difficult to show that
@@ -16235,15 +15724,12 @@ Adding the two together we find
 \end{equation*}
 See \figureref{fig:sincbound}.
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{sincbound.eepic}
+\includegraphics{figures/sincbound}
 \caption{Bound of $\int_{2\pi n}^{2\pi (n+1)} \frac{\sin(x)}{x} ~dx$ using
 the shaded integral (signed area
 $\frac{1}{\pi n} 
 +
 \frac{-1}{\pi (n+1)}$).\label{fig:sincbound}}
-%\end{center}
 \end{myfigureht}
 
 For $k \in \N$, 
@@ -16257,7 +15743,6 @@ For $k \in \N$,
 \frac{1}{\pi n(n+1)} .
 \end{equation*}
 We find the partial sums of a series with positive terms.
-%as $0 \leq \int_{2\pi n}^{2\pi (n+1)} \frac{\sin(x)}{x} ~dx$.
 The series
 converges as
 $\sum \frac{1}{\pi n (n+1)}$ is a convergent series.  Thus
@@ -16332,19 +15817,15 @@ f(k)+
 \end{prop}
 See \figureref{fig:integraltest}, for an illustration with $k=1$.
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{integraltest.eepic}
+\includegraphics{figures/integraltest}
 \caption{The area under the curve, 
 $\int_1^\infty f$, is bounded below
 by the area of the shaded rectangles,
 $f(2)+f(3)+f(4)+\cdots$, and bounded above
 by the area entire rectangles,
 $f(1)+f(2)+f(3)+\cdots$.\label{fig:integraltest}}
-%\end{center}
 \end{myfigureht}
 By \propref{prop:monotoneintegrable},
-%By \exerciseref{exercise:boundedvariationintegrable},
 $f$ is integrable
 on every interval $[k,b]$ for all $b > k$, so the statement of the theorem
 makes sense without additional hypotheses of integrability.
@@ -16674,12 +16155,9 @@ f(x) =
 See \figureref{x2nfig}.
 
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{x2nfig.eepic}
+\includegraphics{figures/x2nfig}
 \caption{Graphs of $f_1$, $f_2$, $f_3$, and $f_8$ for $f_n(x) :=
 x^{2n}$.\label{x2nfig}}
-%\end{center}
 \end{myfigureht}
 
 To see this is so, first take $x \in (-1,1)$.  Then 
@@ -16774,14 +16252,11 @@ In uniform convergence $N$ cannot depend on $x$.  Given $\epsilon > 0$
 we must find an $N$ that works for all $x \in S$.  See
 \figureref{fig:uniformconv} for an illustration.
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{uniformconv.eepic}
+\includegraphics{figures/uniformconv}
 \caption{In uniform convergence,
 for $n \geq N$,
 the functions $f_n$ are within a strip of $\pm\epsilon$ from $f$.%
 \label{fig:uniformconv}}
-%\end{center}
 \end{myfigureht}
 
 Uniform convergence
@@ -17097,19 +16572,6 @@ b) Show that the series $\sum_{k=0}^\infty x^k$ does not converge uniformly
 on $(-1,1)$.
 \end{exercise}
 
-%FIXME: we're redoing much more than this in the next section
-%\begin{exnote}
-%In fact, all power series have this property of uniform convergence:
-%\end{exnote}
-
-%\begin{exercise}[requires \sectionref{sec:moreonseries}]
-%Suppose that $0 < R < \infty$ is the radius of convergence of a
-%power series $\sum_{k=0}^\infty c_k {(x-a)}^k$.
-%Prove that for any $\delta > 0$, the
-%series converges uniformly on $[a-R+\delta,a+R-\delta]$.
-%Hint: Recall that on $(a-R,a+R)$ the series converges absolutely.
-%\end{exercise}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
@@ -17192,12 +16654,9 @@ f_n(x) :=
 See \figureref{contconvcntr:fig}.
 
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{contconvcntr.eepic}
+\includegraphics{figures/contconvcntr}
 \caption{Graph of $f_n(x)$.%
 \label{contconvcntr:fig}}
-%\end{center}
 \end{myfigureht}
 
 Each function $f_n$ is continuous.
@@ -17291,12 +16750,9 @@ n-n^2x &  \text{if $0 < x < \nicefrac{1}{n}$,}\\
 See \figureref{intconvcntr:fig}.
 
 \begin{myfigureht}
-%\begin{center}
-% To get fonts right we have to use .eepic not .pdf
-\subimport*{figures/}{intconvcntr.eepic}
+\includegraphics{figures/intconvcntr}
 \caption{Graph of $f_n(x)$.%
 \label{intconvcntr:fig}}
-%\end{center}
 \end{myfigureht}
 
 Each $f_n$ is Riemann integrable (it is continuous on $(0,1]$ and bounded),
@@ -17630,8 +17086,6 @@ Take $0 < r < \rho$.
 The partial sums $\sum_{n=0}^k c_n {(x-a)}^n$ converge uniformly on $[a-r,a+r]$.
 For any fixed $x \in [a-r,a+r]$, the convergence is also uniform
 on $[a,x]$ (or $[x,a]$ if $x < a$).
-%  The function $f$,
-%being the uniform limit of $\{ f_k \}$ is continuous and hence integrable.
 Hence,
 \begin{equation*}
 \int_a^x f =
@@ -18081,9 +17535,7 @@ Without loss of generality, suppose $x_0 = 0$ (exercise below).
 Another
 exercise tells us that $F$ is bounded as it is continuous.
 Therefore pick some $M > 0$ so that 
-%Let $M := \sup \{  \abs{F(x,y)} : (x,y) \in I\times J \}$.
 $\abs{F(x,y)} \leq M$ for all $(x,y) \in I\times J$.
-%Without loss of generality, we can assume $M > 0$ (why?).
 Pick $\alpha > 0$ such that
 $[-\alpha,\alpha] \subset I$ and $[y_0-\alpha, y_0 + \alpha] \subset J$.
 Define
@@ -18540,10 +17992,8 @@ $x$ to $y$ is the same as the distance from $y$ to $x$.  The triangle
 inequality \ref{metric:triang} has the interpretation given in
 \figureref{fig:mstriang}.
 \begin{myfigureht}
-%\begin{center}
 \subimport*{figures/}{ms-triang.pdf_t}
 \caption{Diagram of the triangle inequality in metric spaces.\label{fig:mstriang}}
-%\end{center}
 \end{myfigureht}
 
 For the purposes of drawing, it is convenient to draw figures and
@@ -18786,11 +18236,9 @@ finite set, we can draw a diagram, see for example
 Things become subtle when $X$ is an infinite set such
 as the real numbers.
 \begin{myfigureht}
-%\begin{center}
 \subimport*{figures/}{msdiscmetric.pdf_t}
 \caption{Sample discrete metric space $\{ a,b,c,d,e \}$, the distance
 between any two points is $1$.\label{fig:msdiscmetric}}
-%\end{center}
 \end{myfigureht}
 
 While this particular
@@ -18920,7 +18368,6 @@ why not.
 \begin{exercise}
 Suppose $(X,d)$ is a metric space and
 $\varphi \colon [0,\infty) \to \R$ is
-%an increasing
 a function such that 
 $\varphi(t) \geq 0$ for all $t$ and $\varphi(t) = 0$ if and only if
 $t=0$.  Also suppose $\varphi$ is \emph{\myindex{subadditive}},
@@ -19085,10 +18532,8 @@ sometimes just \emph{\myindex{neighborhood}}).
 \end{defn}
 
 \begin{myfigureht}
-%\begin{center}
 \subimport*{figures/}{msopenset.pdf_t}
 \caption{Open set in a metric space.  Note that $\delta$ depends on $x$.\label{fig:msopenset}}
-%\end{center}
 \end{myfigureht}
 
 Intuitively, an open set is a set that does not include its ``boundary,''
@@ -19699,12 +19144,9 @@ that converges is \emph{convergent}\index{convergent sequence}.
 Otherwise, the sequence is 
 \emph{divergent}\index{divergent sequence}.
 \begin{myfigureht}
-%\begin{center}
-% to get the fonts right input eepic
-\subimport*{figures/}{sequence-convergence-metric.eepic}
+\includegraphics{figures/sequence-convergence-metric}
 \caption{Sequence converging to $p$.  The first 10 points 
 are shown and $M=7$ for this $\epsilon$.\label{fig:sequence-convergence-metric}}
-%\end{center}
 \end{myfigureht}
 \end{defn}
 
@@ -19810,9 +19252,6 @@ x_j =
 \end{equation*}
 \end{prop}
 
-%For $\R = \R^1$ the result is immediate.
-%So let $n > 1$.
-
 \begin{proof}
 Let $\{ x_j \}_{j=1}^\infty$ be a convergent sequence
 in $\R^n$, where we write $x_j = \bigl(x_{j,1},x_{j,2},\ldots,x_{j,n}\bigr) \in \R^n$.
@@ -19899,11 +19338,6 @@ Suppose $\{ x_n \}$ is a sequence in $X$ that converges to $x \in E^c$.
 As $E^c$ is open, \propref{prop:msconvtopo} says there is
 an $M$ such that for all $n \geq M$,
 $x_n \in E^c$.  So $\{ x_n \}$  is not a sequence in $E$.
-%Let $\{ x_n \}$ be a sequence in $E$ that converges to some $x \in X$.
-%Take $y \in E^c$, as $E^c$ is open then there exists a $\delta > 0$
-%such that $B(y,\delta) \subset E^c$, or in particular $d(y,x_n) \geq \delta$
-%for all $n$ as $x_n \in E$.  In particular, $\lim\, x_n = x \not= y$, and so
-%$x \in E$.
 \end{proof}
 
 When we take a closure of a set $A$, we really throw in precisely 
@@ -19923,13 +19357,6 @@ exists a point $x_n \in B(x,\nicefrac{1}{n}) \cap A$.
 As $d(x,x_n) < \nicefrac{1}{n}$, we have $\lim\, x_n = x$.
 
 For the other direction, see \exerciseref{exercise:reverseclosedseq}.
-%Exercise
-%Now suppose
-%$\{x_n\}$ a sequence in $A$ convergent to some $x \in X$.
-%Take any closed $E$ such that $A \subset E$.  The sequence is
-%in $E$ and so by
-%\propref{prop:msclosedlim}, $x \in E$.  As $E$ was arbitrary, $x \in
-%\overline{A}$.
 \end{proof}
 
 \subsection{Exercises}
@@ -20076,7 +19503,6 @@ For $\R = \R^1$ completeness was proved in \chapterref{seq:chapter}.  The proof 
 the above proposition is a reduction to the one dimensional case.
 
 \begin{proof}
-%Take $n > 1$.
 Let $\{ x_j \}_{j=1}^\infty$ be a Cauchy sequence
 in $\R^n$, where we write $x_j = \bigl(x_{j,1},x_{j,2},\ldots,x_{j,n}\bigr) \in \R^n$.
 As the sequence is Cauchy, given $\epsilon > 0$, there exists an $M$ such that for all
@@ -20643,14 +20069,8 @@ However, for any $y$, the function $g(x) := f(x,y)$ is
 continuous,
 and for any $x$, the function $h(y) := f(x,y)$ is continuous.
 \begin{myfigureht}
-%\begin{center}
-% to get the fonts right input eepic
-% But it's REALLY slow, so use the rendered .pdf version, and there is
-% not much text
-%\subimport*{figures/}{xyxsqysq.eepic}
 \includegraphics{figures/xyxsqysq}
 \caption{Graph of $\frac{xy}{x^2+y^2}$.\label{fig:xyxsqysq}}
-%\end{center}
 \end{myfigureht}
 
 \begin{example}
@@ -21144,8 +20564,6 @@ As $I \times J$ is compact and
 $F(x,y)$ is continuous, it is bounded.
 So find an $M > 0$, such that
 $\abs{F(x,y)} \leq M$ for all $(x,y) \in I\times J$.
-%Let $M := \sup \{ \abs{F(x,y)} : (x,y) \in I\times J \}$, nah because we
-%want $M > 0$.
 Pick $\alpha > 0$ such that
 $[-\alpha,\alpha] \subset I$ and $[y_0-\alpha, y_0 + \alpha] \subset J$.
 Let
@@ -21154,18 +20572,12 @@ h := \min \left\{ \alpha, \frac{\alpha}{M+L\alpha} \right\} .
 \end{equation*}
 Note $[-h,h] \subset I$.  Define the set
 \begin{equation*}
-Y := \{ f \in C([-h,h],\R) : f([-h,h]) \subset J \} . % [y_0-\alpha,y_0+\alpha] \} .
+Y := \{ f \in C([-h,h],\R) : f([-h,h]) \subset J \} .
 \end{equation*}
 That is, $Y$ is the space of continuous functions on $[-h,h]$ with values in
 $J$, in other words,
 exactly those functions where $F\bigl(x,f(x)\bigr)$ makes sense.
 The metric used is the standard metric given above.
-%Here $C([-h,h],\R)$ is equipped with the standard metric $d(f,g) := 
-%\sup \{ \abs{f(x)-g(x)} : x \in [-h,h] \}$.  With this metric
-%you have shown in \exerciseref{exercise:CabRcomplete} that $C([-h,h],\R)$ is a complete metric space.
-%Here $C([-h,h],\R)$ is equipped with the standard metric $d(f,g) := 
-%\sup \{ \abs{f(x)-g(x)} : x \in [-h,h] \}$.  With this metric
-%you have shown in \exerciseref{exercise:CabRcomplete} that $C([-h,h],\R)$ is a complete metric space.
 
 \begin{exercise}
 Show that $Y \subset C([-h,h],\R)$ is closed.  Hint: $J$ is closed.
@@ -21235,12 +20647,6 @@ function whose derivative is
 $F\bigl(x,f(x)\bigr)$ and $T(f)(0) = y_0$.  Therefore $f$ is the unique
 solution of $f'(x) = F\bigl(x,f(x)\bigr)$ and $f(0) = y_0$.
 \end{proof}
-
-%\begin{exercise}
-%We have shown that $f$ is the unique function in $Y$.  Why is it the unique
-%continuous function $f \colon [-h,h] \to J$ that solves
-%\eqref{equation:msinteqpicard} above?
-%\end{exercise}
 
 \begin{exercise}
 Prove that the statement ``Without loss of generality assume $x_0 = 0$'' is
@@ -21365,7 +20771,6 @@ there exists a $c \in X$ such that $f(x) = c$ for all $x \in X$.
    date={1986},
    pages={viii+254},
    isbn={0-486-65038-3},
-   %review={\MR{851984 (87g:26001)}},
 }
 
 \bib{Rudin:baby}{book}{
@@ -21377,7 +20782,6 @@ there exists a $c \in X$ such that $f(x) = c$ for all $x \in X$.
    place={New York},
    date={1976},
    pages={x+342},
-   %review={\MR{0385023 (52 \#5893)}},
 }
 
 \bib{Trench}{book}{
