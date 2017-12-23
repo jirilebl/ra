@@ -3993,7 +3993,15 @@ implies
 and then we will show that
 \ref{prop:ktail:iii}
 implies
-\ref{prop:ktail:i}.  In the process we will also show that the limits are equal.
+\ref{prop:ktail:i}.  That is, 
+\begin{equation*}
+\begin{tikzcd}[row sep=0pt]
+& \text{\ref{prop:ktail:ii}} \ar[dr, Rightarrow] & \\
+\text{\ref{prop:ktail:i}} \ar[ur, Rightarrow, "\text{to prove}"] & &
+\text{\ref{prop:ktail:iii}} \ar[ll, Rightarrow, "\text{to prove}"] 
+\end{tikzcd}
+\end{equation*}
+In the process we will also show that the limits are equal.
 
 Let us start with \ref{prop:ktail:i} implies \ref{prop:ktail:ii}.
 Suppose $\{x_n \}$ converges to some $x \in \R$.
@@ -6389,7 +6397,7 @@ Proof: First we prove the following equality
 + \frac{1}{2^k}
 = 1 .
 \end{equation*}
-The equality is easy to see when $k=1$.  The proof for general $k$
+The equality is immediate when $k=1$.  The proof for general $k$
 follows by \hyperref[induction:thm]{induction}, which we leave to the
 reader.  See \figureref{figcutseries} for an illustration.
 \begin{myfigureht}
@@ -7890,7 +7898,7 @@ the understanding of what $\rho$ should be if $R = 0$ or $R =
 
 Convergent power series can be added and multiplied together, and multiplied
 by constants.
-The proposition has an easy proof using what we know about series
+The proposition has a straight forward proof using what we know about series
 in general, and power series in particular.  We leave the proof to the reader.
 
 \begin{prop}
@@ -12416,10 +12424,12 @@ a good approximation to $f$.
 Notice that in \figureref{fig:taylorsin} the Taylor polynomials are
 reasonably good approximations to the sine near $x=0$.
 
-One does not necessarily get good Taylor polynomial approximations
-everywhere.  For example, if we start expanding the function $f(x) =
+We do not necessarily get good approximations
+by the Taylor polynomial everywhere.
+For example, if we start expanding the function $f(x) =
 \frac{x}{1-x}$ around 0, we get the graphs in
-\figureref{fig:taylorgeom}.  The dashed line is
+\figureref{fig:taylorgeom}.  The dotted lines are the first, second, and
+third degree approximations.  The dashed line is
 the 20th degree polynomial, and yet the approximation only seems to get
 better with the degree for $x > -1$, and for smaller $x$, it in fact gets worse.
 The polynomials
@@ -12439,8 +12449,8 @@ If $f$ is infinitely differentiable, that is, if $f$ can be
 differentiated any number of times, then 
 we define the \emph{\myindex{Taylor series}}:
 \begin{equation*}
-T^{x_0}(x)
-:=
+%T^{x_0}(x)
+%:=
 \sum_{k=0}^\infty
 \frac{f^{(k)}(x_0)}{k!}{(x-x_0)}^k .
 \end{equation*}
@@ -12453,6 +12463,8 @@ around every point are called
 Most functions one tends to see in practice are in fact analytic.
 See \exerciseref{exercise:nonanalytic}, for an example of a non-analytic
 function.
+
+\medskip
 
 The definition of derivative says that
 a function is
@@ -12860,10 +12872,10 @@ upper sums are bounded sets.
 \begin{defn}
 As the sets of lower and upper Darboux sums are bounded, we define
 \begin{align*}
-& \underline{\int_a^b} f(x)~dx := \sup \{ L(P,f) : P \text{ a
-partition of $[a,b]$} \} , \\
-& \overline{\int_a^b} f(x)~dx := \inf \{ U(P,f) : P \text{ a
-partition of $[a,b]$} \} .
+& \underline{\int_a^b} f(x)~dx :=
+\sup \bigl\{ L(P,f) : P \text{ a partition of $[a,b]$} \bigr\} , \\
+& \overline{\int_a^b} f(x)~dx :=
+\inf \bigl\{ U(P,f) : P \text{ a partition of $[a,b]$} \bigr\} .
 \end{align*}
 We call $\underline{\int}$ the \emph{\myindex{lower Darboux integral}} and
 $\overline{\int}$ the \emph{\myindex{upper Darboux integral}}.
@@ -13042,9 +13054,9 @@ Recall \propref{infsupineq:prop}, and take the supremum and
 infimum over all partitions:
 \begin{equation*}
 \underline{\int_a^b} f = 
-\sup \{ L(P,f) : \text{$P$ a partition of $[a,b]$} \}
+\sup \bigl\{ L(P,f) : \text{$P$ a partition of $[a,b]$} \bigr\}
 \leq
-\inf \{ U(P,f) : \text{$P$ a partition of $[a,b]$} \}
+\inf \bigl\{ U(P,f) : \text{$P$ a partition of $[a,b]$} \bigr\}
 =
 \overline{\int_a^b} f . \qedhere
 \end{equation*}
