@@ -46,7 +46,8 @@
 \usepackage[margin=10pt,font=small,labelfont=bf,labelsep=colon,singlelinecheck=false]{caption}
 
 \usepackage{tikz}
-\usepackage{rotating}
+\usetikzlibrary{cd}
+%\usepackage{rotating}
 
 \newenvironment{myfigureht}{%
 \begin{figure}[h!t]
@@ -1249,16 +1250,27 @@ $(1,1)$, $(1,2)$, $(2,1)$, $(1,3)$, $(2,2)$, $(3,1)$, \ldots.  That is,
 always write down first all the elements whose two entries sum to $k$,
 then write down all the elements whose entries sum to $k+1$ and so on.
 Then define a bijection with $\N$ by letting 1 go to $(1,1)$,
-2 go to $(1,2)$ and so on.
+2 go to $(1,2)$ and so on.  See \figureref{fig:NcrossNcard}.
+\begin{myfigureht}
+\begin{tikzcd}[sep=10pt]%[cramped]%,sep=small]
+(1,1) \ar[r]     & (1,2) \ar[dl] & (1,3) \ar[dl] & (1,4) \ar[dl] \\
+(2,1) \ar[rru]   & (2,2) \ar[dl] & (2,3) \ar[dl] & \ddots \\
+(3,1) \ar[rrruu] & (3,2) \ar[dl] & \ddots \\
+(4,1) & \ddots
+\end{tikzcd}
+\caption{Showing $\N \times \N$ is countable.\label{fig:NcrossNcard}}
+\end{myfigureht}
 \end{example}
 
 \begin{example}
 The set of rational numbers is countable.  Proof: (informal)
 Follow the same procedure
-as in the previous example, writing $\nicefrac{1}{1}$, $\nicefrac{1}{2}$,
-$\nicefrac{2}{1}$, etc\ldots.  However,
+as in the previous example, writing
+$\nicefrac{1}{1}$, $\nicefrac{1}{2}$, $\nicefrac{2}{1}$, etc\ldots.  However,
 leave out any fraction (such as $\nicefrac{2}{2}$)
-that has already appeared.
+that has already appeared.  So the list would countinue:
+$\nicefrac{1}{3}$, $\nicefrac{3}{1}$, $\nicefrac{1}{4}$,
+$\nicefrac{2}{3}$, etc\ldots.
 \end{example}
 
 For completeness we mention the following statements
@@ -6714,7 +6726,7 @@ We apply the triangle inequality for a finite sum to obtain
 Hence $\sum x_n$ is Cauchy and therefore it converges.
 \end{proof}
 
-Of course, if $\sum x_n$ converges absolutely, the limits of
+If $\sum x_n$ converges absolutely, the limits of
 $\sum x_n$ and $\sum \abs{x_n}$ are different.  Computing one
 does not help us compute the other.  However the computation above leads to
 a useful inequality for absolutely convergent series,
@@ -6796,10 +6808,10 @@ y_n$ also diverges.
 
 A useful series to use with the comparison test is the
 $p$-series%
-\footnote{We have not really yet defined $x^p$ for $x > 0$ and
-an arbitrary $p \in \R$, the definition is $x^p := \exp ( p \ln x )$.
+\footnote{We have not yet defined $x^p$ for $x > 0$ and
+an arbitrary $p \in \R$.  The definition is $x^p := \exp ( p \ln x )$.
 We will define the logarithm and the exponential in \sectionref{sec:logandexp}.
-The proposition of course works for rational $p$
+For now you can just think of rational $p$
 where $x^{k/m} = {(x^{1/m})}^{k}$.  See also \exerciseref{exercise:realpower}.}.
 
 \begin{prop}[$p$-series or the $p$-test]\index{p-series}\index{p-test}
