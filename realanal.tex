@@ -2219,6 +2219,8 @@ $x \in \R$ define
 x + A & := \{ x+y \in \R : y \in A \} , \\
 xA & := \{ xy \in \R : y \in A \} .
 \end{align*}
+For example, if $A = \{ 1,2,3 \}$, then $5+A = \{ 6,7,8 \}$ and $3A = \{ 3,6,9
+\}$.
 
 \begin{prop} \label{prop:supinfalg}
 Let $A \subset \R$ be nonempty.
@@ -3601,7 +3603,7 @@ there exists a $B \in \R$ such that
 \end{equation*}
 In other words, the sequence $\{x_n\}$ is bounded whenever
 the set $\{ x_n : n \in \N \}$
-is bounded.
+is bounded, or equivalently when it is bounded as a function.
 \end{defn}
 
 When we need
@@ -3649,7 +3651,7 @@ is said to be the \emph{limit} of $\{ x_n \}$.  We write
 
 A sequence
 that converges is said to be \emph{convergent}\index{convergent sequence}.
-Otherwise, the sequence is said to be
+Otherwise, we say the sequence \emph{diverges}\index{diverge} or that it is
 \emph{divergent}\index{divergent sequence}.
 \end{defn}
 
@@ -3893,7 +3895,7 @@ The proof for monotone decreasing sequences is left as an exercise.
 \end{proof}
 
 \begin{example}
-Take the sequence $\{ \frac{1}{\sqrt{n}} \}$.
+Take the sequence $\bigl\{ \frac{1}{\sqrt{n}} \bigr\}$.
 
 First $\frac{1}{\sqrt{n}} > 0$ for all $n \in \N$, and hence the sequence is
 bounded from below.
@@ -3926,7 +3928,8 @@ Hence $b=0$ is the greatest lower bound, and $\lim \frac{1}{\sqrt{n}} = 0$.
 
 \begin{example}
 A word of caution:  We must show that a monotone sequence is bounded
-in order to use \propref{prop:monotoneconv}.  For
+in order to use \propref{prop:monotoneconv} to conclude a sequence converges.
+For
 example, 
 the sequence $\{ 1 + \nicefrac{1}{2} + \cdots + \nicefrac{1}{n} \}$
 is a monotone increasing
@@ -4005,8 +4008,8 @@ In the process we will also show that the limits are equal.
 
 Let us start with \ref{prop:ktail:i} implies \ref{prop:ktail:ii}.
 Suppose $\{x_n \}$ converges to some $x \in \R$.
-Let $K \in \N$ be arbitrary.
-Define $y_n := x_{n+K}$, we wish to show that $\{ y_n \}$ converges
+Let $K \in \N$ be arbitrary, and
+define $y_n := x_{n+K}$.  We wish to show that $\{ y_n \}$ converges
 to $x$.
 Given an $\epsilon > 0$, there exists an $M \in \N$ such that
 $\abs{x-x_n} < \epsilon$ for all $n \geq M$.
@@ -4757,6 +4760,20 @@ $\lim \nicefrac{1}{n} = 0$, then
 That is, the limit on the left hand side exists because the right hand
 side exists.  You really should read the above equality from right to left.
 
+On the other hand you must make sure to apply the propositions carefully.
+For example, by rewriting the expression with common denominator first
+we would find
+\begin{equation*}
+\lim_{n\to \infty} \left( \frac{n^2}{n+1} - n \right)
+= -1 .
+\end{equation*}
+However, 
+$\bigl\{ \frac{n^2}{n+1} \bigr\}$ and 
+$\{n\}$ are not convergent,
+so
+$\bigl(\lim\, \frac{n^2}{n+1}\bigr) -
+\bigl(\lim\, n\bigr)$ is nonsense.
+
 \subsection{Recursively defined sequences}
 
 Now that we know we can interchange limits and algebraic operations, we can
@@ -4775,7 +4792,7 @@ divide by zero.
 Then we must find out if the sequence converges.  Only then
 can we attempt to find the limit.
 
-First let us prove 
+So let us prove 
 $x_n$ exists and $x_n > 0$ for all $n$ (so the sequence is well defined
 and bounded below).
 Let us show this by \hyperref[induction:thm]{induction}.  We know that
@@ -4828,7 +4845,7 @@ Named after the English physicist and mathematician
 \href{http://en.wikipedia.org/wiki/Isaac_Newton}{Isaac Newton} (1642 --
 1726/7).}
 for finding the square root of 2.  This method comes up very often in
-practice and converges very rapidly.  Notice that we used the fact that
+practice and converges very rapidly.  We used the fact that
 $x_1^2 -2 >0$, although it was not strictly needed to show convergence by
 considering a tail of the sequence.
 In fact the sequence converges as long as $x_1 \not= 0$, although with a negative $x_1$
@@ -5060,7 +5077,7 @@ The conclusion follows by the lemma.
 \end{example}
 
 \begin{example} \label{example:nto1overn}
-A more complicated (and useful) application of the above lemma is to prove 
+A more complicated (and useful) application of the ratio test is to prove 
 \begin{equation*}
 \lim_{n\to\infty} n^{1/n} = 1 .
 \end{equation*}
@@ -5073,7 +5090,7 @@ $\bigl\{ \frac{n}{{(1+\epsilon)}^n} \bigr\}$.  Compute
 =
 \frac{n+1}{n} \frac{1}{1+\epsilon} .
 \end{equation*}
-The limit of $\frac{n+1}{n} = 1+\frac{1}{n}$ as $n \to \infty$ is 1, and
+The limit of $\frac{n+1}{n} = 1+\frac{1}{n}$ as $n \to \infty$ is 1, and so
 \begin{equation*}
 \lim_{n\to \infty} \frac{(n+1)/{(1+\epsilon)}^{n+1}}{n/{(1+\epsilon)}^{n}}
 =
