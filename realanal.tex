@@ -5315,7 +5315,7 @@ if $x_n$ is bounded, then $a_n$ and $b_n$ must be bounded.
 The second item in the proposition follows as the sequences
 $\{ a_n \}$ and $\{ b_n \}$ are monotone.
 
-For the third item, note that $b_n \leq a_n$, as the $\inf$ of a set
+For the third item, note that $b_n \leq a_n$, as the $\inf$ of a nonempty set
 is less than or equal to its $\sup$.  The sequences $\{ a_n \}$ and $\{ b_n \}$
 converge to the limsup and the liminf respectively.
 Apply \lemmaref{limandineq:lemma} to obtain
@@ -5346,9 +5346,9 @@ limit inferior:
 \begin{equation*}
 \liminf_{n\to\infty} \, x_n = 
 \lim_{n\to\infty}
-\left(
+\bigl(
 \inf \{ x_k : k \geq n \}
-\right)
+\bigr)
 =
 \lim_{n\to\infty} 0 = 0 .
 \end{equation*}
@@ -5356,9 +5356,9 @@ For the limit superior we write
 \begin{equation*}
 \limsup_{n\to\infty} \, x_n = 
 \lim_{n\to\infty}
-\left(
+\bigl(
 \sup \{ x_k : k \geq n \}
-\right) .
+\bigr) .
 \end{equation*}
 It is not hard to see that
 \begin{equation*}
@@ -5489,8 +5489,8 @@ Furthermore, if $\{ x_n \}$ converges, then
 \end{prop}
 
 \begin{proof}
-Define $a_n$ and $b_n$ as in \defnref{liminflimsup:def}.
-Note that
+Let $a_n$ and $b_n$ be as in \defnref{liminflimsup:def}.
+In particular, for all $n \in \N$,
 \begin{equation*}
 b_n \leq x_n \leq a_n .
 \end{equation*}
@@ -5673,7 +5673,7 @@ which is left as a challenging exercise.
 \subsection{Infinite limits}
 
 Just as for infima and suprema, it is possible to allow certain
-limits, be infinite.  That is, we write $\lim \, x_n = \infty$ or
+limits to be infinite.  That is, we write $\lim \, x_n = \infty$ or
 $\lim \, x_n = -\infty$ for certain divergent sequences.
 
 \begin{defn}
@@ -5711,7 +5711,7 @@ Suppose $\{ x_n \}$ is a monotone unbounded sequence.  Then
 
 \begin{proof}
 The case of monotone increasing follows from
-\exerciseref{exercise:infseqlimlims} part c).  Let us do
+\exerciseref{exercise:infseqlimlims} part c) below.  Let us do
 monotone decreasing.  Suppose $\{x_n\}$ is decreasing and unbounded,
 that is,
 for every $K \in \R$, there is an $M \in \N$ such that $x_M < K$.
@@ -19683,7 +19683,8 @@ space, but the closed unit ball $C(0,1)$ is not compact.  However, see
 \exerciseref{exercise:mstotbound}.
 
 A useful property of compact sets in a metric space is that every
-sequence has a convergent subsequence.  Such sets are sometimes called
+sequence has a convergent subsequence converging to a point in the set.
+Such sets are sometimes called
 \emph{\myindex{sequentially compact}}.  Let us prove that in the
 context of metric spaces, a set is compact if and only if it is sequentially
 compact.
