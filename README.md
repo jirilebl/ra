@@ -5,6 +5,7 @@ Volume I and II both in this directory
 
 * realanal.tex is Volume I
 * realanal2.tex is Volume II
+* The files above are just the "driver files", the actual contents are in the files ch-???.tex
 
 A free online textbook.  See http://www.jirka.org/ra/
 
