@@ -18515,8 +18515,11 @@ $d(x,y) := \sqrt{\sum_{j=1}^\infty {(x_j-y_j)}^2}$.
 
 \subsection{Topology}
 
-It is useful to define a so-called \emph{\myindex{topology}}.  That is
-we define closed and open sets in a metric space.  Before doing so,
+Before we get to convergence,
+we define the so-called \emph{\myindex{topology}}.
+That is,
+we define closed and open sets in a metric space.
+Before doing so,
 let us define two special sets.
 
 \begin{defn}
@@ -18526,7 +18529,7 @@ around $x$ as
 \begin{equation*}
 B(x,\delta) := \{ y \in X : d(x,y) < \delta \} .
 \end{equation*}
-Similarly we define the \emph{\myindex{closed ball}} as
+Similarly define the \emph{\myindex{closed ball}} as
 \begin{equation*}
 C(x,\delta) := \{ y \in X : d(x,y) \leq \delta \} .
 \end{equation*}
@@ -18538,7 +18541,7 @@ writing $B_X(x,\delta) := B(x,\delta)$ or $C_X(x,\delta) := C(x,\delta)$.
 
 \begin{example}
 Take the metric space $\R$ with the standard metric.  For
-$x \in \R$, and $\delta > 0$ we get 
+$x \in \R$ and $\delta > 0$,
 \begin{equation*}
 B(x,\delta) = (x-\delta,x+\delta) \qquad \text{and} \qquad
 C(x,\delta) = [x-\delta,x+\delta] .
@@ -18585,9 +18588,10 @@ most subsets are neither.
 
 \begin{example}
 The set $[0,1) \subset \R$ is neither open nor closed.  First,
-every ball in $\R$ around $0$, $(-\delta,\delta)$, contains negative
+every ball in $\R$ around $0$, $B(0,\delta) = (-\delta,\delta)$, contains negative
 numbers and hence is not contained in $[0,1)$ and so $[0,1)$ is not open.
-Second, every ball in $\R$ around $1$, $(1-\delta,1+\delta)$ contains
+Second, every ball in $\R$ around $1$,
+$B(1,\delta) = (1-\delta,1+\delta)$, contains
 numbers strictly less than 1 and greater than 0
 (e.g.\ $1-\nicefrac{\delta}{2}$ as long as $\delta < 2$).
 Thus $\R \setminus
@@ -18602,13 +18606,13 @@ Let $(X,d)$ be a metric space.
 \begin{equation*}
 \bigcap_{j=1}^k V_j
 \end{equation*}
-is also open.  That is, finite intersection of open sets is open.
+is also open.  That is, a finite intersection of open sets is open.
 \item \label{topology:openiii} If $\{ V_\lambda \}_{\lambda \in I}$ is
 an arbitrary collection of open sets, then
 \begin{equation*}
 \bigcup_{\lambda \in I} V_\lambda
 \end{equation*}
-is also open.  That is, union of open sets is open.
+is also open.  That is, a union of open sets is open.
 \end{enumerate}
 \end{prop}
 
@@ -18658,12 +18662,12 @@ an arbitrary collection of closed sets, then
 \begin{equation*}
 \bigcap_{\lambda \in I} E_\lambda
 \end{equation*}
-is also closed.  That is, intersection of closed sets is closed.
+is also closed.  That is, an intersection of closed sets is closed.
 \item \label{topology:closediii} If $E_1, E_2, \ldots, E_k$ are closed then
 \begin{equation*}
 \bigcup_{j=1}^k E_j
 \end{equation*}
-is also closed.  That is, finite union of closed sets is closed.
+is also closed.  That is, a finite union of closed sets is closed.
 \end{enumerate}
 \end{prop}
 
