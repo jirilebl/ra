@@ -1,0 +1,1137 @@
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+\markboth{INTRODUCTION}{INTRODUCTION}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{About this book}
+
+This first volume of this book is a one semester course in basic analysis.
+Together with the second volume it is a year-long course.
+It started its life
+as my lecture notes for teaching Math 444 at the
+University of Illinois at Urbana-Champaign (UIUC) in Fall semester 2009.
+Later I added the metric space chapter to teach Math 521 at University of
+Wisconsin--Madison (UW).
+Volume II was added to teach Math 4143/4153 at Oklahoma State University
+(OSU).
+A prerequisite for this course is a basic proof course,
+using 
+for example~\cite{Hammack}, \cite{GIAM}, or \cite{DW}.
+
+It should be possible to use the book for
+both a basic course for students who do not necessarily wish to
+go to graduate school (such as UIUC 444), but also as a more advanced one-semester
+course that also covers topics such as metric spaces (such as UW 521).
+Here are my suggestions for what to cover in a semester course.  For a
+slower course such as UIUC 444:
+\begin{center}
+\S0.3, \S1.1--\S1.4, \S2.1--\S2.5, \S3.1--\S3.4, \S4.1--\S4.2,
+\S5.1--\S5.3, \S6.1--\S6.3
+\end{center}
+For a more rigorous course covering metric spaces that runs quite a bit faster
+(such as UW 521):
+\begin{center}
+\S0.3, \S1.1--\S1.4, \S2.1--\S2.5, \S3.1--\S3.4, \S4.1--\S4.2,
+\S5.1--\S5.3, \S6.1--\S6.2, \S7.1--\S7.6
+\end{center}
+It should also be possible to run a faster course without metric spaces
+covering all sections of chapters 0 through 6.  The approximate number of
+lectures given in the section notes through chapter 6 are a very rough
+estimate and were designed for the slower course.
+The first few chapters of the book can be used in an introductory proofs
+course as is for example done at Iowa State University Math 201, where 
+this book is used in conjunction with Hammack's Book of Proof~\cite{Hammack}.
+
+With volume II one can run a year-long course that also covers multivariable
+topics.  When I teach this course at OSU, I leave
+metric spaces for the beginning of the
+second semester and cover essentially all topics in this
+first volume.
+
+The book normally used for the class at UIUC is Bartle and Sherbert,
+\emph{Introduction to Real Analysis} third edition
+\cite{BS}.
+The structure of the beginning of the book somewhat follows the
+standard syllabus of UIUC Math 444 and therefore has some similarities with
+\cite{BS}.
+A major difference is that we define the Riemann integral using
+Darboux sums and not tagged partitions.  The Darboux approach is far more
+appropriate for a course of this level.
+
+Our approach allows us to fit a course such as UIUC 444 within a semester
+and still spend some time on the interchange of limits and end with
+Picard's theorem on the existence and uniqueness of solutions of ordinary
+differential equations.
+This theorem is a wonderful example
+that uses many results proved in the book.  For more advanced students,
+material may be covered faster so that we arrive at metric spaces and
+prove Picard's theorem using the fixed point theorem as is usual.
+
+Other excellent books exist.  My favorite is 
+Rudin's excellent
+\emph{Principles of Mathematical Analysis}~\cite{Rudin:baby}
+or as it is commonly and lovingly called \emph{baby Rudin}
+(to distinguish it from his other great analysis textbook,
+\emph{big Rudin}).  I took a
+lot of inspiration and ideas from Rudin.  However, Rudin is a bit more
+advanced and ambitious than this present course.
+For those that wish to continue
+mathematics, Rudin is a fine investment.
+An inexpensive and somewhat simpler alternative to Rudin is
+Rosenlicht's \emph{Introduction to Analysis}~\cite{Rosenlicht}.
+There is also the freely downloadable \emph{Introduction to Real
+Analysis} by William Trench~\cite{Trench}.
+
+\medskip
+
+A note about the style of some of the proofs:  Many proofs
+traditionally done by contradiction, I prefer to do by
+a direct proof or by contrapositive.  While the book does include
+proofs by contradiction, I only
+do so when the contrapositive statement seemed too awkward, or when 
+contradiction follows rather quickly.  In my opinion,
+contradiction is more likely to get beginning students into trouble,
+as we are talking about objects that do not exist.
+
+I try to avoid unnecessary formalism where it is unhelpful.
+Furthermore, the proofs and the language get slightly less formal as we
+progress through the book, as more and more details are left out to avoid
+clutter.
+
+As a general rule, I use $:=$ instead of $=$ to define an
+object rather than to simply show equality.  I use this symbol rather more
+liberally than is usual for emphasis.
+I use it even when the context is ``local,''
+that is, I may simply define a function $f(x) := x^2$
+for a single exercise or example.
+
+\medskip
+
+Finally, I would like to acknowledge Jana Ma\v{r}\'ikov\'a,
+Glen Pugh, Paul Vojta, Frank Beatrous, S\"{o}nmez \c{S}ahuto\u{g}lu,
+Jim Brandt, Kenji Kozai, and Arthur Busch,
+for teaching with the book and giving me lots of useful feedback.
+Frank Beatrous wrote the University of Pittsburgh version extensions, which
+served as inspiration for many of the additions.
+I would also like to thank
+Dan Stoneham, Jeremy Sutter, Eliya Gwetta, Daniel Pimentel-Alarc\'on,
+Steve Hoerning, Yi Zhang, Nicole Caviris,
+Kristopher Lee, Baoyue Bi, Hannah Lund,
+Trevor Mannella, Mitchel Meyer, Gregory Beauregard,
+Chase Meadors, Andreas Giannopoulos, Nick Nelsen, Anton Petrunin,
+an anonymous reader, and in general all the students in my classes for suggestions and
+finding errors and typos.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{About analysis} \label{sec:aboutra}
+
+Analysis is the branch of mathematics that deals with inequalities and
+limits.  The present course deals with the most basic 
+concepts in analysis.  The goal of the course is to acquaint the reader
+with rigorous proofs in analysis and also to
+set a firm foundation for calculus of one variable.
+
+Calculus has prepared you, the student, for using mathematics without telling
+you why what you learned is true.  To use, or teach, mathematics
+effectively, you cannot simply know \emph{what} is true, you must know
+\emph{why} it is true.  This course shows you \emph{why} calculus
+is true.  It is here to give you a good understanding of the concept of a
+limit, the derivative, and the integral.
+
+Let us use an analogy.
+An auto mechanic that has learned to change the oil, fix broken headlights,
+and charge the battery, will only be able to do those simple tasks.  He
+will be unable to work independently to diagnose and fix problems.
+A high school teacher that does not understand the definition of the Riemann
+integral or the derivative may not be able to properly answer all the
+students' questions.
+To this day I remember several nonsensical statements I heard
+from my calculus teacher in high school, who simply did not understand
+the concept of the limit, though he could ``do'' all problems in calculus.
+
+\medskip
+
+We start with a discussion of the real number system, most importantly
+its completeness property, which is the basis for all that comes after.
+We then discuss the simplest form of a limit,
+the limit of a sequence.  Afterwards, we study
+functions of one variable, continuity, and the derivative.
+Next, we define the Riemann integral and prove the fundamental theorem of
+calculus.  We discuss sequences of functions and the
+interchange of limits.  Finally, we give an introduction to metric
+spaces.
+
+Let us give the most important difference between analysis and
+algebra.  In algebra, we prove equalities directly; we prove that
+an object, a number perhaps, is equal to another object.  In analysis,
+we usually prove inequalities.  To illustrate the point, consider the
+following statement.
+
+\medskip
+
+\emph{Let $x$ be a real number.  If $x < \epsilon$ is true for all
+real numbers
+$\epsilon > 0$, then $x \leq 0$}.
+
+\medskip
+
+This statement is the general idea of what we do in analysis.  First, to
+prove
+$x = 0$, we prove two inequalities: $x \leq 0$ and $x \geq 0$.  To
+prove the inequality
+$x \leq 0$, we prove 
+$x < \epsilon$ for all positive $\epsilon$.
+
+\medskip
+
+The term \emph{real analysis} is a little bit of a misnomer.  I prefer to
+use simply \emph{analysis}.  The other type of analysis, 
+\emph{complex analysis}, really builds up on the present material, rather than
+being distinct.  Furthermore, a more advanced course on real
+analysis would talk about complex numbers often.
+I suspect the nomenclature is
+historical baggage.
+
+\medskip
+
+Let us get on with the show\ldots
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Basic set theory} \label{sec:basicset}
+\index{set theory}
+
+\sectionnotes{1--3 lectures (some material can be skipped or covered lightly)}
+
+Before we start talking about analysis we need to fix some language.
+Modern\footnote{The term ``modern'' refers to late 19th century up to
+the present.}
+analysis uses the language of sets, and therefore that is where we start.
+We talk about sets in a rather informal way, using the so-called
+``\myindex{na\"ive set theory}.''  Do not worry, that is what majority of
+mathematicians use, and it is hard to get into trouble.
+We assume the reader has seen the very basics of set theory
+and proof writing before, and this section should be a quick refresher.
+
+\subsection{Sets}
+
+\begin{defn}
+A \emph{\myindex{set}} is a collection of objects called
+\emph{elements}\index{element} or \emph{members}\index{member}.  A set with
+no objects is called the \emph{\myindex{empty set}} and is denoted by
+$\emptyset$ (or sometimes by $\{ \}$).
+\end{defn}
+
+Think of a set as a club with a certain membership.  For
+example, the students who play chess are members of the chess club.  However,
+do not take the analogy too far.  A set is only defined by the members
+that form the set; two sets that have the same members are the same set.
+
+Most of the time we will consider sets
+of numbers.  For example, the set
+\begin{equation*}
+S := \{ 0, 1, 2 \}
+\end{equation*}
+is the set containing
+the three elements 0, 1, and 2.
+By ``$:=$'', we mean we are defining what $S$ is, rather than
+just showing equality.
+We write
+\begin{equation*}
+1 \in S
+\end{equation*}
+to denote that the number 1 belongs to the set $S$.  That is, 1 is a member
+of $S$.  Similarly we write
+\begin{equation*}
+7 \notin S
+\end{equation*}
+to denote that the number 7 is not in $S$.  That is, 7 is not a member of
+$S$.
+The elements of all sets under consideration come from some set we call the
+\emph{\myindex{universe}}.  For simplicity,
+we often consider the universe to be the set that contains only the elements
+we are interested in.
+The universe is generally understood from context
+and is not explicitly mentioned.  In this course, our universe will
+most often be the set of real numbers.
+
+While the elements of a set are often numbers,
+other objects, such as other sets, can be elements of a set.
+A set may also contain some of the same elements as another set.  For example,
+\begin{equation*}
+T := \{ 0, 2 \}
+\end{equation*}
+contains the numbers 0 and 2.  In this case all elements of $T$ also
+belong to $S$.  We write $T \subset S$.  More formally we make the
+following definition.
+
+\begin{defn}
+{\ }
+\begin{enumerate}[(i)]
+\item
+A set $A$ is a \emph{\myindex{subset}}
+of a set $B$ if $x \in A$ implies $x \in B$, and we write $A \subset B$.
+That is, all members of $A$ are also members of $B$.
+\item
+Two sets $A$ and $B$ are \emph{\myindex{equal}} if $A \subset B$ and $B
+\subset A$.  We write $A = B$.
+That is, $A$ and $B$ contain exactly the same elements.
+If it is not true that $A$ and $B$ are equal, then 
+we write $A \not= B$.
+\item
+A set $A$ is a \emph{\myindex{proper subset}} of $B$ if $A \subset B$
+and $A \not= B$.  We write $A \subsetneq B$.
+\end{enumerate}
+\end{defn}
+
+For example, for $S$ and $T$ defined above $T \subset S$, but
+$T \not= S$.  So $T$ is a proper subset of $S$.
+If $A = B$, then $A$ and $B$ are simply two names for the
+same exact set.
+Let us mention the
+\emph{\myindex{set building notation}},
+\begin{equation*}
+\{ x \in A : P(x) \} .
+\end{equation*}
+This notation refers to a subset of the set $A$ containing all elements
+of $A$ that satisfy the property $P(x)$.
+For example, using $S = \{ 0, 1, 2 \}$ as above, $\{ x \in S : x \not= 2 \}$
+is the set $\{ 0, 1 \}$.
+The notation is sometimes
+abbreviated, $A$ is not mentioned when understood from context.
+Furthermore, $x \in A$ is sometimes replaced with a formula to make the notation
+easier to read.  
+
+\begin{example}
+The following are sets including the standard notations.
+\begin{enumerate}[(i)]
+\item The set of \emph{\myindex{natural numbers}}, $\N := \{ 1, 2, 3, \ldots
+\}$.
+\item The set of \emph{\myindex{integers}}, $\Z := \{ 0, -1, 1, -2, 2, \ldots
+\}$.
+\item The set of \emph{\myindex{rational numbers}}, $\Q := \{ \frac{m}{n} :  m, n \in \Z
+\text{ and } n \not= 0 \}$.
+\item The set of even natural numbers, $\{  2m : m \in \N \}$.
+\item The set of real numbers, $\R$.
+\end{enumerate}
+
+Note that $\N \subset \Z \subset \Q \subset \R$.
+\end{example}
+
+There are many operations we want to do with sets.
+
+\begin{defn}
+{\ }
+\begin{enumerate}[(i)]
+\item
+A \emph{\myindex{union}} of two sets $A$ and $B$ is defined as
+\begin{equation*}
+A \cup B := \{ x : x \in A \text{ or } x \in B \} .
+\end{equation*}
+\item
+An \emph{\myindex{intersection}} of two sets $A$ and $B$ is defined as
+\begin{equation*}
+A \cap B := \{ x : x \in A \text{ and } x \in B \} .
+\end{equation*}
+\item
+A \emph{complement of $B$ relative to $A$\index{complement relative to}}
+(or \emph{\myindex{set-theoretic difference}} of $A$ and $B$) is defined as
+\begin{equation*}
+A \setminus B := \{ x : x \in A \text{ and } x \notin B \} .
+\end{equation*}
+\item
+We say
+\emph{\myindex{complement}} of $B$ and write $B^c$ instead of $A \setminus B$ if
+the set $A$ is either the entire universe or is the obvious
+set containing $B$, and is understood from context.
+\item
+We say sets $A$ and $B$ are \emph{\myindex{disjoint}} if $A \cap B =
+\emptyset$.
+\end{enumerate}
+\end{defn}
+
+The notation $B^c$ may be a little vague at this point.  If
+the set $B$ is a subset of the real numbers $\R$, then $B^c$ means
+$\R \setminus B$.  If $B$ is naturally a subset of the natural numbers,
+then $B^c$
+is $\N \setminus B$.  If ambiguity would ever arise, we will 
+use the set difference notation $A \setminus B$.
+
+\begin{myfigureht}
+\subimport*{figures/}{figsetop.pdf_t}
+\caption{Venn diagrams of set operations.\label{figsetop}}
+\end{myfigureht}
+We illustrate the operations on the
+\emph{Venn diagrams}\index{Venn diagram} in \figureref{figsetop}.
+Let us now establish one of most basic theorems about sets and logic.
+
+\begin{thm}[DeMorgan]\index{DeMorgan's theorem}
+Let $A, B, C$ be sets.  Then
+\begin{align*}
+{(B \cup C)}^c &= B^c \cap C^c , \\
+{(B \cap C)}^c &= B^c \cup C^c ,
+\end{align*}
+or, more generally,
+\begin{align*}
+A \setminus (B \cup C) &= (A \setminus B) \cap (A \setminus C) , \\
+A \setminus (B \cap C) &= (A \setminus B) \cup (A \setminus C) .
+\end{align*}
+\end{thm}
+
+\begin{proof}
+The first statement is proved by the second statement if we
+assume the set $A$ is our ``universe.''
+
+Let us prove $A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)$.
+Remember the definition of equality of sets.  First, we must show that
+if $x \in A \setminus (B \cup C)$, then
+$x \in (A \setminus B) \cap (A \setminus C)$.  Second, we must also show that
+if $x \in (A \setminus B) \cap (A \setminus C)$, then
+$x \in A \setminus (B \cup C)$.
+
+So let us assume $x \in A \setminus (B \cup C)$.  Then $x$ is in 
+$A$, but not in $B$ nor $C$.  Hence $x$ is in $A$ and not in $B$, that is,
+$x \in A \setminus B$.  Similarly $x \in A \setminus C$.  Thus
+$x \in (A \setminus B) \cap (A \setminus C)$.
+
+On the other hand suppose 
+$x \in (A \setminus B) \cap (A \setminus C)$.  In particular
+$x \in (A \setminus B)$, so 
+$x \in A$ and $x \notin B$.  Also as $x \in (A \setminus C)$, then $x \notin C$.
+Hence $x \in A \setminus (B \cup C)$.
+
+The proof of the other equality is left as an exercise.
+\end{proof}
+
+The result above we called a \emph{Theorem}, while most results we will call
+a \emph{Proposition}, and a few \emph{Lemma} (a result leading to another result) or
+\emph{Corollary} (a quick consequence of the preceeding result).  Do not read too much into
+the naming.  Some of it is traditional, some of it is stylistic choice.
+It is not necessarily true that a \emph{Theorem} is ``more important'' than a
+\emph{Proposition} or a \emph{Lemma}.
+
+We will also need to intersect or union several sets at once.  If there are
+only finitely many, then we simply apply the union or intersection operation
+several times.  However, suppose we have an infinite collection
+of sets (a set of sets)
+$\{ A_1, A_2, A_3, \ldots \}$.  We define
+\begin{align*}
+& \bigcup_{n=1}^\infty A_n := \{ x : x \in A_n \text{ for some $n \in \N$}
+\} , \\
+& \bigcap_{n=1}^\infty A_n := \{ x : x \in A_n \text{ for all $n \in \N$}
+\} .
+\end{align*}
+
+We can also have sets indexed by two integers.  For example, we can have
+the set of sets
+$\{ A_{1,1}, A_{1,2}, A_{2,1}, A_{1,3}, A_{2,2}, A_{3,1}, \ldots \}$.  Then
+we write 
+\begin{equation*}
+\bigcup_{n=1}^\infty \bigcup_{m=1}^\infty A_{n,m}
+=
+\bigcup_{n=1}^\infty \left( \bigcup_{m=1}^\infty A_{n,m} \right) .
+\end{equation*}
+And similarly with intersections.
+
+It is not hard to see that we can take the unions in any order.  However,
+switching the order of unions and intersections is not generally permitted without proof.
+For example:
+\begin{equation*}
+\bigcup_{n=1}^\infty
+\bigcap_{m=1}^\infty
+\{ k \in \N : mk < n \}
+=
+\bigcup_{n=1}^\infty \emptyset = \emptyset .
+\end{equation*}
+However,
+\begin{equation*}
+\bigcap_{m=1}^\infty
+\bigcup_{n=1}^\infty
+\{ k \in \N : mk < n \}
+=
+\bigcap_{m=1}^\infty
+\N
+=
+\N.
+\end{equation*}
+
+Sometimes, the index set is not the natural numbers.  In this case we need a
+more general notation.  Suppose $I$ is some set and for each $\iota \in
+I$, we have a set $A_\iota$.  Then we define
+\begin{equation*}
+\bigcup_{\iota \in I} A_\iota := \{ x : x \in A_\iota \text{ for some $\iota \in I$}
+\} 
+\qquad
+\bigcap_{\iota \in I} A_\iota := \{ x : x \in A_\iota \text{ for all $\iota \in I$}
+\} .
+\end{equation*}
+
+\subsection{Induction}
+
+When a statement includes an arbitrary natural number,
+a common method of proof is the principle of induction.  
+We start with the set of natural numbers $\N = \{ 1,2,3,\ldots \}$, and we
+give them their natural ordering, 
+that is, $1 < 2 < 3 < 4 < \cdots$.
+By $S \subset \N$ having a \emph{\myindex{least element}}, we mean that
+there exists an $x \in S$,
+such that for every
+$y \in S$, we have $x \leq y$.
+
+%\pagebreak[2]
+
+The natural numbers $\N$ ordered in the natural way
+possess the so-called \emph{\myindex{well ordering property}}.
+We take this property
+as an axiom; we simply assume it is true.
+
+\theoremstyle{plain}
+\newtheorem*{wellordprop}{Well ordering property of $\N$}
+\hypertarget{wop:link}{}%
+\begin{wellordprop}
+Every nonempty subset of $\N$ has a least (smallest) element.
+\end{wellordprop}
+
+The \emph{principle of \myindex{induction}}\index{principle of induction} is
+the following theorem, which is equivalent to the well ordering property of
+the natural numbers.
+
+\begin{thm}[Principle of induction] \label{induction:thm}
+Let $P(n)$ be a statement depending on a natural number $n$.  Suppose that
+\begin{enumerate}[(i)]
+\item \emph{(basis statement)} $P(1)$ is true,
+\item \emph{(induction step)} if $P(n)$ is true, then $P(n+1)$ is true.
+\end{enumerate}
+Then $P(n)$ is true for all $n \in \N$.
+\end{thm}
+
+\begin{proof}
+Suppose $S$ is the set of natural numbers $m$ for which $P(m)$ is
+not true.  Suppose
+$S$ is nonempty.  Then $S$ has a least element by the well ordering
+property.  Let us call $m$ the least element of $S$.  We know $1 \notin
+S$ by assumption.  Therefore $m > 1$ and $m-1$ is a natural number as well.
+Since $m$ was the least element of $S$, we know that $P(m-1)$ is true.
+But by the induction step we see that $P(m-1+1) = P(m)$ is true, 
+contradicting the statement that $m \in S$.  Therefore $S$ is empty and 
+$P(n)$ is true for all $n \in \N$.
+\end{proof}
+
+Sometimes it is convenient to start at a different number than 1, but 
+all that changes is the labeling.  The assumption that
+$P(n)$ is true in ``if $P(n)$ is true,
+then $P(n+1)$ is true''
+is usually called the \emph{\myindex{induction hypothesis}}.
+
+\begin{example}
+Let us prove that for all $n \in \N$,
+\begin{equation*}
+2^{n-1} \leq n! \qquad \text{(recall $n! = 1 \cdot 2 \cdot 3 \cdots n$)}.
+\end{equation*}
+We let $P(n)$ be the statement that
+$2^{n-1} \leq n!$ is true.  By plugging in $n=1$, we see that $P(1)$
+is true.
+
+Suppose $P(n)$ is true.  That is, suppose 
+$2^{n-1} \leq n!$ holds.  Multiply both sides by 2 to obtain
+\begin{equation*}
+2^n \leq 2(n!) .
+\end{equation*}
+As $2 \leq (n+1)$ when $n \in \N$, we have
+$2(n!) \leq (n+1)(n!) = (n+1)!$.  That is,
+\begin{equation*}
+2^n \leq 2(n!) \leq  (n+1)!,
+\end{equation*}
+and hence $P(n+1)$ is true.  By the principle of induction, we see that
+$P(n)$
+is true for all $n$, and hence
+$2^{n-1} \leq n!$ is true for all $n \in \N$.
+\end{example}
+
+\begin{example} \label{example:geometricsum}
+We claim that for all $c \not= 1$,
+\begin{equation*}
+1 + c + c^2 + \cdots + c^n = \frac{1-c^{n+1}}{1-c} .
+\end{equation*}
+
+Proof: It is easy to check that the equation holds with $n=1$.  Suppose 
+it is true for $n$.  Then
+\begin{equation*}
+\begin{split}
+1 + c + c^2 + \cdots + c^n + c^{n+1} & =
+( 1 + c + c^2 + \cdots + c^n ) + c^{n+1} \\
+& = \frac{1-c^{n+1}}{1-c}  + c^{n+1} \\
+& = \frac{1-c^{n+1}  + (1-c)c^{n+1}}{1-c} \\
+& = \frac{1-c^{n+2}}{1-c} .
+\end{split}
+\end{equation*}
+\end{example}
+
+Sometimes, it is easier to use in the inductive step
+that $P(k)$ is true for all $k = 1,2,\ldots,n$, not just for $k=n$.
+This principle is called \emph{\myindex{strong induction}} and is equivalent
+to the normal induction above.  The proof that
+equivalence is left as an exercise.
+
+\begin{thm}[Principle of strong induction]
+\index{principle of strong induction}\index{strong induction}
+Let $P(n)$ be a statement depending on a natural number $n$.  Suppose that
+\begin{enumerate}[(i)]
+\item \emph{(basis statement)} $P(1)$ is true,
+\item \emph{(induction step)} if $P(k)$ is true for all $k = 1,2,\ldots,n$, then $P(n+1)$ is true.
+\end{enumerate}
+Then $P(n)$ is true for all $n \in \N$.
+\end{thm}
+
+\subsection{Functions}
+
+Informally,
+a \emph{\myindex{set-theoretic function}}\index{function}
+$f$ taking a set $A$ to a set $B$
+is a mapping that to each $x \in A$ assigns a unique $y \in B$.  We write
+$f \colon A \to B$.  For example, we
+define a function $f \colon S \to T$ taking $S = \{ 0, 1, 2 \}$ to $T = \{ 0, 2 \}$
+by assigning $f(0) := 2$, $f(1) := 2$, and $f(2) := 0$.  That is, a function $f
+\colon A \to B$ is
+a black box, into which we stick an element of $A$ and the function
+spits out an element of $B$.
+Sometimes $f$ is called a \emph{\myindex{mapping}} or a
+\emph{\myindex{map}},
+and we say $f$ \emph{maps $A$ to $B$}.
+
+
+Often, functions are defined by some sort of
+formula, however, you should really think of a function as just a very big
+table of values.
+The subtle issue here is that a single function can have several different
+formulas, all giving the same function.  Also, for many functions, there is
+no formula that expresses its values.
+
+To define a function rigorously, first let us define the Cartesian product.
+
+\begin{defn}
+Let $A$ and $B$ be sets.  The \emph{\myindex{Cartesian product}}
+is the set of tuples defined as
+\begin{equation*}
+A \times B :=
+\{ (x,y) : x \in A, y \in B \} .
+\end{equation*}
+\end{defn}
+
+For example, the set $[0,1] \times [0,1]$ is a set in the plane
+bounded by a square with vertices $(0,0)$, $(0,1)$, $(1,0)$, and $(1,1)$.
+When $A$ and $B$ are the same set we sometimes use a superscript 2 to denote
+such a product.  For example $[0,1]^2 = 
+[0,1] \times [0,1]$, or $\R^2 = \R \times \R$ (the Cartesian plane).
+
+\begin{defn}
+A \emph{function} $f \colon A \to B$ is a subset $f$ of $A \times B$
+such that for each $x \in A$, there is a unique $(x,y) \in f$.  We then
+write $f(x) = y$.  Sometimes
+the set $f$ is called the \emph{\myindex{graph}} of the function rather than
+the function itself.
+
+The set $A$ is called the \emph{\myindex{domain}} of $f$ (and
+sometimes confusingly denoted $D(f)$).  The set
+\begin{equation*}
+R(f) := \{ y \in B : \text{there exists an $x$ such that
+%$(x,y) \in f$
+$f(x)=y$
+} \}
+\end{equation*}
+is called the \emph{\myindex{range}} of $f$.
+\end{defn}
+
+It is possible that the range $R(f)$ is a proper subset of $B$,
+while the domain of $f$ is always equal to $A$.  We usually 
+assume that the domain of $f$ is nonempty.
+
+\begin{example}
+From calculus, you are most familiar with functions taking real numbers to real
+numbers.  However, you saw some other types of functions as well.  For
+example, the derivative is a function mapping the set of
+differentiable functions to the set of all functions.
+Another example is the Laplace transform, which also
+takes functions to functions.  Yet another example is the function that takes
+a continuous function $g$ defined on the interval $[0,1]$ and returns the
+number $\int_0^1 g(x) dx$.
+\end{example}
+
+\begin{defn}
+Let $f \colon A \to B$ be a function, and $C \subset A$.  Define
+the \emph{\myindex{image}} (or \emph{\myindex{direct
+image}}) of $C$ as
+\begin{equation*}
+f(C) := \{ f(x) \in B : x \in C \} .
+\end{equation*}
+Let $D \subset B$.  Define the \emph{\myindex{inverse image}} as
+\begin{equation*}
+f^{-1}(D) := \{ x \in A : f(x) \in D \} .
+\end{equation*}
+\end{defn}
+\begin{myfigureht}
+\parbox{2.5in}{\subimport*{figures/}{funcimags.pdf_t}}
+\parbox{2in}{%
+$f(\{1,2,3,4\}) = \{ b, c, d \}$\\[3pt]
+$f(\{1,2,4\}) = \{ b, d \}$\\[3pt]
+$f(\{1\}) = \{ b \}$\\[3pt]
+$f^{-1}(\{a,b,c\}) = \{ 1, 3, 4 \}$\\[3pt]
+$f^{-1}(\{a\}) = \emptyset$\\[3pt]
+$f^{-1}(\{b\}) = \{ 1, 4 \}$
+}
+\caption{Example of direct and inverse images for the function $f \colon \{ 1,2,3,4 \} \to \{
+a,b,c,d \}$ defined by
+$f(1) := b$,
+$f(2) := d$,
+$f(3) := c$,
+$f(4) := b$.\label{figfuncimags}}
+\end{myfigureht}
+
+\begin{example}
+Define the function $f \colon \R \to \R$ by
+$f(x) := \sin(\pi x)$.  Then $f([0,\nicefrac{1}{2}]) = [0,1]$, 
+$f^{-1}(\{0\}) = \Z$, etc\ldots.
+\end{example}
+
+\begin{prop} \label{st:propinv}
+Let $f \colon A \to B$.  Let $C, D$ be subsets of $B$.  Then
+\begin{align*}
+& f^{-1}( C \cup D) = f^{-1} (C) \cup f^{-1} (D) , \\
+& f^{-1}( C \cap D) = f^{-1} (C) \cap f^{-1} (D) , \\
+& f^{-1}( C^c) = {\left( f^{-1} (C) \right)}^c .
+\end{align*}
+\end{prop}
+
+Read the last line as
+$f^{-1}( B \setminus C) = A \setminus f^{-1} (C)$.
+
+\begin{proof}
+Let us start with the union.  Suppose $x \in 
+f^{-1}( C \cup D)$.  That means 
+$x$ maps to $C$ or $D$.  Thus
+$f^{-1}( C \cup D) \subset f^{-1} (C) \cup f^{-1} (D)$.  Conversely
+if $x \in f^{-1}(C)$, then $x \in f^{-1}(C \cup D)$.  Similarly for
+$x \in f^{-1}(D)$.  Hence
+$f^{-1}( C \cup D) \supset f^{-1} (C) \cup f^{-1} (D)$, and we have
+equality.
+
+The rest of the proof is left as an exercise.
+\end{proof}
+
+The proposition does not hold for direct images.  We do have
+the following weaker result.
+
+\begin{prop} \label{st:propfor}
+Let $f \colon A \to B$.  Let $C, D$ be subsets of $A$.  Then
+\begin{align*}
+& f( C \cup D) = f (C) \cup f (D) , \\
+& f( C \cap D) \subset f (C) \cap f (D) .
+\end{align*}
+\end{prop}
+
+The proof is left as an exercise.
+
+\begin{defn}
+Let $f \colon A \to B$ be a function.
+The function $f$ is said to be
+\emph{\myindex{injective}} or
+\emph{\myindex{one-to-one}} if $f(x_1) = f(x_2)$ implies $x_1 = x_2$.  In
+other words,
+for all $y \in B$ the set
+$f^{-1}(\{y\})$ is empty or consists of a single element.
+We call such an $f$ an \emph{\myindex{injection}}.
+
+The function $f$ is said to be
+\emph{\myindex{surjective}} or
+\emph{\myindex{onto}} if $f(A) = B$.
+We call such an $f$ a \emph{\myindex{surjection}}.
+
+A function $f$ that is both an injection and a surjection is
+said to be \emph{\myindex{bijective}}, and we say $f$ is a
+\emph{\myindex{bijection}}.
+\end{defn}
+
+When $f \colon A \to B$ is a bijection, then $f^{-1}(\{y\})$ is always
+a unique element of $A$, and we can consider $f^{-1}$ as a function
+$f^{-1} \colon B \to A$.
+In this case, we call $f^{-1}$ the \emph{\myindex{inverse function}} of $f$.
+For example, for the bijection $f \colon \R \to \R$ defined by $f(x) := x^3$ we have
+$f^{-1}(x) = \sqrt[3]{x}$.
+
+A final piece of notation for functions that
+we need is the \emph{\myindex{composition of functions}}.
+
+\begin{defn}
+Let $f \colon A \to B$, $g \colon B \to C$.  The function 
+$g \circ f \colon A \to C$ is defined as
+\begin{equation*}
+(g \circ f)(x) := g\bigl(f(x)\bigr) .
+\end{equation*}
+\end{defn}
+
+\subsection{Cardinality}
+
+A subtle issue in set theory and one generating a considerable amount of
+confusion among students is that of cardinality, or ``size'' of sets.  The
+concept of cardinality is important in modern mathematics in general and
+in analysis in particular.  In this section, we will see the first really
+unexpected theorem.
+
+\begin{defn}
+Let $A$ and $B$ be sets.  We say $A$ and $B$ have the same
+\emph{\myindex{cardinality}}
+when there exists a bijection $f \colon A \to B$.  We denote
+by $\abs{A}$ the equivalence class of all sets with the same cardinality as
+$A$ and we simply call $\abs{A}$ the cardinality of $A$.
+\end{defn}
+
+For example $\{ 1,2,3 \}$ has the same cardinality as $\{ a,b,c \}$ by
+defining a bijection $f(1) := a$, $f(2) := b$, $f(3) := c$.  Clearly the
+bijection is not unique.
+
+A set $A$ has the same cardinality as the empty set if and only
+if $A$ itself is the empty set.  We then write $\abs{A} := 0$.
+
+\begin{defn}
+Suppose $A$ has the same cardinality as $\{ 1,2,3,\ldots,n \}$
+for some $n \in \N$.
+We then write $\abs{A} := n$.  If $A$ is empty we write $\abs{A} := 0$.
+In either case we say that $A$ is
+\emph{\myindex{finite}}.
+
+We say $A$ is \emph{\myindex{infinite}} or ``of infinite cardinality''
+if $A$ is not finite.
+\end{defn}
+
+That the notation $\abs{A} = n$ is justified we leave as an exercise.  That
+is, for each nonempty finite set $A$, there exists a unique natural number
+$n$ such that there exists a bijection from $A$ to $\{ 1,2,3,\ldots,n \}$.
+
+
+We can order sets by size.
+
+\begin{defn} \label{def:comparecards}
+We write
+\begin{equation*}
+\abs{A} \leq \abs{B}
+\end{equation*}
+if there exists an injection from $A$ to $B$.  We write $\abs{A} = \abs{B}$
+if $A$ and $B$ have the same cardinality.  We write $\abs{A} < \abs{B}$
+if $\abs{A} \leq \abs{B}$, but $A$ and $B$ do not have the same cardinality.
+\end{defn}
+
+We state without proof that
+$\abs{A} = \abs{B}$ have the same cardinality if and only if
+$\abs{A} \leq \abs{B}$ and
+$\abs{B} \leq \abs{A}$.  This is the so-called
+\myindex{Cantor--Bernstein--Schr\"oder} theorem.
+Furthermore, if $A$ and $B$ are any two sets,
+we can always write $\abs{A} \leq \abs{B}$ or
+$\abs{B} \leq \abs{A}$.  The issues surrounding this
+last statement are very subtle.  As we do not require either
+of these two statements, we omit proofs.
+
+The truly interesting cases of cardinality are infinite sets.  We start with the following
+definition.
+
+\begin{defn}
+If $\abs{A} = \abs{\N}$, then $A$ is said to be \emph{\myindex{countably
+infinite}}.  If $A$ is finite or countably infinite, then we say $A$
+is \emph{\myindex{countable}}.  If $A$ is not countable, then
+$A$ is said to be \emph{\myindex{uncountable}}.
+\end{defn}
+
+The cardinality of $\N$ is usually denoted as
+$\aleph_0$ (read as aleph-naught)\footnote{For the fans of the TV show
+\emph{Futurama}, there is a movie theater in one episode
+called an $\aleph_0$-plex.}.
+
+\begin{example}
+The set of even natural numbers has the same cardinality as $\N$.  Proof:
+Let $E \subset \N$ be the set of even natural numbers.
+Given $k \in E$, write $k=2n$ for some $n \in \N$.
+Then $f(n) := 2n$ defines a bijection $f \colon \N \to E$.
+\end{example}
+
+In fact, let us mention without proof the following characterization
+of infinite sets: \emph{A set is infinite if and only if it is in one-to-one
+correspondence with a proper subset of itself}.
+
+\begin{example}
+$\N \times \N$ is a countably infinite set.  Proof: Arrange the
+elements of $\N \times \N$ as follows
+$(1,1)$, $(1,2)$, $(2,1)$, $(1,3)$, $(2,2)$, $(3,1)$, \ldots.  That is,
+always write down first all the elements whose two entries sum to $k$,
+then write down all the elements whose entries sum to $k+1$ and so on.
+Then define a bijection with $\N$ by letting 1 go to $(1,1)$,
+2 go to $(1,2)$ and so on.  See \figureref{fig:NcrossNcard}.
+\begin{myfigureht}
+\begin{tikzcd}[sep=10pt]%[cramped]%,sep=small]
+(1,1) \ar[r]     & (1,2) \ar[dl] & (1,3) \ar[dl] & (1,4) \ar[dl] \\
+(2,1) \ar[rru]   & (2,2) \ar[dl] & (2,3) \ar[dl] & \ddots \\
+(3,1) \ar[rrruu] & (3,2) \ar[dl] & \ddots \\
+(4,1) & \ddots
+\end{tikzcd}
+\caption{Showing $\N \times \N$ is countable.\label{fig:NcrossNcard}}
+\end{myfigureht}
+\end{example}
+
+\begin{example}
+The set of rational numbers is countable.  Proof: (informal)
+Follow the same procedure
+as in the previous example, writing
+$\nicefrac{1}{1}$, $\nicefrac{1}{2}$, $\nicefrac{2}{1}$, etc\ldots.  However,
+leave out any fraction (such as $\nicefrac{2}{2}$)
+that has already appeared.  So the list would countinue:
+$\nicefrac{1}{3}$, $\nicefrac{3}{1}$, $\nicefrac{1}{4}$,
+$\nicefrac{2}{3}$, etc\ldots.
+\end{example}
+
+For completeness we mention the following statements
+from the exercises.
+\emph{If $A \subset
+B$ and $B$ is countable, then $A$ is countable.}  The contrapositive of the
+statement is that if $A$ is
+uncountable, then $B$ is uncountable.
+As a consequence if $\abs{A} < \abs{\N}$ then $A$ is
+finite.
+Similarly, if $B$ is finite and $A \subset B$, then $A$ is finite.
+
+We give the first truly striking result.  First, we need a notation for
+the set of all subsets of a set.
+
+\begin{defn}
+If $A$ is a set,
+we define the \emph{\myindex{power set}} of $A$, denoted by $\sP(A)$, to be
+the set of all subsets of $A$.
+\end{defn}
+
+For example, if $A := \{ 1,2\}$,
+then $\sP(A) = \bigl\{ \emptyset, \{ 1 \}, \{ 2 \}, \{ 1, 2 \} \bigr\}$.
+For a finite set $A$ of cardinality $n$, the
+cardinality of $\sP(A)$ is $2^n$.  This fact is left as an exercise.  
+Hence, for finite sets
+the cardinality of $\sP(A)$ is strictly
+larger than the
+cardinality of $A$.  What is an unexpected and
+striking fact is that this statement is still true for infinite sets.
+
+\begin{thm}[Cantor%
+\footnote{Named after the German mathematician
+\href{http://en.wikipedia.org/wiki/Georg_Cantor}{Georg Ferdinand Ludwig
+Philipp Cantor} (1845 -- 1918).}]
+\index{Cantor's theorem}
+\label{cantorspowersetthm}
+$\abs{A} < \abs{\sP(A)}$.  In particular, there exists no surjection from
+$A$ onto $\sP(A)$.
+\end{thm}
+
+\begin{proof}
+There exists an injection $f \colon A \to \sP(A)$.
+For any $x \in A$, define $f(x) := \{ x \}$.  Therefore
+$\abs{A} \leq \abs{\sP(A)}$.
+
+To finish the proof, we must show that
+no function $g \colon A \to \sP(A)$ is a surjection.
+Suppose 
+$g \colon A \to \sP(A)$ is a function.  So for $x \in A$,
+$g(x)$ is a subset of $A$.  Define the set
+\begin{equation*}
+B := \{ x \in A : x \notin g(x) \} .
+\end{equation*}
+We claim that $B$ is not in the range of $g$ and hence $g$ is not a
+surjection.  Suppose there exists an $x_0$ such that $g(x_0) = B$.
+Either $x_0 \in B$ or $x_0 \notin B$.  If $x_0 \in B$, then $x_0 \notin
+g(x_0) = B$, which is a contradiction.  If $x_0 \notin B$, then $x_0 \in
+g(x_0) = B$, which is again a contradiction.  Thus such an $x_0$ does not
+exist.  Therefore, $B$ is not in the range of $g$, and $g$ is not a
+surjection.  As $g$ was an arbitrary function, no surjection exists.
+\end{proof}
+
+One particular consequence of this 
+theorem is that there do exist uncountable sets,
+as $\sP(\N)$ must be uncountable.
+A related fact is that
+the set of real numbers (which we study in the next chapter) is uncountable.
+The existence of uncountable sets may seem unintuitive, and the theorem
+caused quite a controversy at the time
+it was announced.  The theorem not only says that uncountable sets exist,
+but that there in fact exist progressively larger
+and larger infinite sets $\N$, $\sP(\N)$,
+$\sP(\sP(\N))$, $\sP(\sP(\sP(\N)))$, etc\ldots.
+
+\subsection{Exercises}
+
+\begin{exercise}
+Show
+$A \setminus (B \cap C) = (A \setminus B) \cup (A \setminus C)$.
+\end{exercise}
+
+\begin{exercise}
+Prove that the principle of strong induction is equivalent to the standard
+induction.
+\end{exercise}
+
+\begin{exercise}
+Finish the proof of \propref{st:propinv}.
+\end{exercise}
+
+\begin{exercise}
+\begin{enumerate}[a)]
+\item
+Prove \propref{st:propfor}.
+\item
+Find an example for which equality of sets
+in 
+$f( C \cap D) \subset f (C) \cap f (D)$
+fails.  That is, find an $f$, $A$, $B$, $C$, and $D$ such that
+$f( C \cap D)$ is a proper subset of $f(C) \cap f(D)$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Tricky]
+Prove that if $A$ is nonempty and finite, then there exists a unique
+$n \in \N$ such
+that there exists a bijection between $A$ and $\{ 1, 2, 3, \ldots, n \}$.
+In other words, the notation $\abs{A} := n$ is justified.
+Hint: Show that if $n > m$, then there is no injection from
+$\{ 1, 2, 3, \ldots, n \}$ to
+$\{ 1, 2, 3, \ldots, m \}$.
+\end{exercise}
+
+
+\begin{exercise}
+Prove
+\begin{enumerate}[a)]
+\item $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+\item $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Let $A \Delta B$ denote the
+\emph{\myindex{symmetric difference}}, that is, the set of all elements that
+belong to either $A$ or $B$, but not to both $A$ and $B$.
+\begin{enumerate}[a)]
+\item
+Draw a Venn diagram for
+$A \Delta B$.
+\item
+Show $A \Delta B = (A \setminus B) \cup (B \setminus A)$.
+\item
+Show $A \Delta B = (A \cup B) \setminus ( A \cap B)$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+For each $n \in \N$, let $A_n := \{ (n+1)k : k \in \N \}$.
+\begin{enumerate}[a)]
+\item Find $A_1 \cap A_2$.
+\item Find $\bigcup_{n=1}^\infty A_n$.
+\item Find $\bigcap_{n=1}^\infty A_n$.
+\end{enumerate}
+\end{exercise}
+
+\begin{samepage}
+\begin{exercise}
+Determine $\sP(S)$ (the power set) for each of the following:
+\begin{enumerate}[a)]
+\item $S = \emptyset$,
+\item $S = \{1\}$,
+\item $S = \{1,2\}$,
+\item $S = \{1,2,3,4\}$.
+\end{enumerate}
+\end{exercise}
+\end{samepage}
+
+
+\begin{exercise}
+Let $f \colon A \to B$ and $g \colon B \to C$ be functions.
+\begin{enumerate}[a)]
+\item
+Prove that if $g \circ f$ is injective, then $f$ is injective.
+\item
+Prove that if $g \circ f$ is surjective, then $g$ is surjective.
+\item
+Find an explicit example where $g \circ f$ is bijective, but neither $f$
+nor $g$ are bijective.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Prove by induction that $n < 2^n$ for all $n \in \N$.
+\end{exercise}
+
+\begin{exercise}
+Show that for a finite set $A$ of cardinality $n$, the cardinality
+of $\sP(A)$ is $2^n$.
+\end{exercise}
+
+\begin{exercise}
+Prove $\frac{1}{1\cdot 2} + 
+\frac{1}{2\cdot 3} + \cdots + \frac{1}{n(n+1)} = \frac{n}{n+1}$
+for all $n \in \N$.
+\end{exercise}
+
+\begin{exercise}
+Prove $1^3 + 2^3 + \cdots + n^3 = {\left( \frac{n(n+1)}{2} \right)}^2$
+for all $n \in \N$.
+\end{exercise}
+
+\begin{exercise}
+Prove that $n^3 + 5n$ is divisible by $6$ for all $n \in \N$.
+\end{exercise}
+
+\begin{exercise}
+Find the smallest $n \in \N$ such that $2{(n+5)}^2 < n^3$ and call it $n_0$.
+Show that $2{(n+5)}^2 < n^3$ for all $n \geq n_0$.
+\end{exercise}
+
+\begin{exercise}
+Find all $n \in \N$ such that $n^2 < 2^n$.
+\end{exercise}
+
+\begin{exercise}
+Finish the proof that the \hyperref[induction:thm]{principle of induction}
+is equivalent to the
+\hyperlink{wop:link}{well ordering property} of $\N$.  That is,
+prove the well ordering property for $\N$ using the principle of
+induction.
+\end{exercise}
+
+
+\begin{exercise}
+Give an example of a countable collection of finite sets $A_1, A_2, \ldots$,
+whose union is not a finite set.
+\end{exercise}
+
+\begin{exercise}
+Give an example of a countable collection of infinite sets $A_1, A_2, \ldots$,
+with $A_j \cap A_k$ being infinite for all $j$ and $k$, such that
+$\bigcap_{j=1}^\infty A_j$
+is nonempty and finite.
+\end{exercise}
+
+\begin{exercise}
+Suppose $A \subset B$ and $B$ is finite. Prove that $A$ is finite.
+That is, if $A$ is nonempty, construct a bijection of $A$ to $\{ 1,2,\ldots,n \}$.
+\end{exercise}
+
+\begin{exercise}
+a) Suppose $A \subset B$ and $B$ is countably infinite.  By constructing a
+bijection, show that $A$ is
+countable (that is, $A$ is empty, finite, or countably infinite).
+\\
+b)~Use part a) to show that if $\abs{A} < \abs{\N}$, then $A$ is finite.
+\end{exercise}
+
+\begin{exercise}[Challenging] \label{exercise:countsubsetbij}
+Suppose $A \subset S$, and $A$ is countable.
+Show that there exists a countable subset $B \subset S$ and
+a bijection between $S \setminus B$ and $S$.
+\end{exercise}
