@@ -587,7 +587,7 @@ if for every $x \in V$, there exists a $\delta > 0$ such that
 $B(x,\delta) \subset V$.  See \figureref{fig:msopenset}.  A set $E \subset X$ is 
 \emph{closed}\index{closed set} if the complement $E^c = X \setminus E$ is open.
 When the ambient space $X$ is not clear from context we say
-$V$ is open in $X$ and $E$ is closed in $X$.
+\emph{$V$ is open in $X$} and \emph{$E$ is closed in $X$}.
 
 If $x \in V$ and $V$ is open, then we say 
 $V$ is an \emph{\myindex{open neighborhood}} of $x$ (or
@@ -599,11 +599,13 @@ sometimes just \emph{\myindex{neighborhood}}).
 \caption{Open set in a metric space.  Note that $\delta$ depends on $x$.\label{fig:msopenset}}
 \end{myfigureht}
 
-Intuitively, an open set is a set that does not include its ``boundary,''
-wherever we are at in the set, we are allowed to ``wiggle'' a little bit and
-stay in the set.
-Not every set is either open or closed, in fact generally
-most subsets are neither.
+Intuitively, an open set $V$ is a set that does not include its ``boundary.''
+Wherever we are in $V$,
+we are allowed to ``wiggle'' a little bit and
+stay in $V$.  Similarly, a set $E$ is closed if everything not in $E$
+is some distance away from $E$.
+
+Not every set is either open or closed.  Generally, most subsets are neither.
 
 \begin{example}
 The set $[0,1) \subset \R$ is neither open nor closed.  First,
@@ -756,7 +758,7 @@ $X_2$ whose union is $X$.  For subsets, we state this idea as a proposition.
 
 \begin{prop}
 Let $(X,d)$ be a metric space.
-A nonempty set $S \subset X$ is not connected if and only if
+A nonempty set $S \subset X$ is disconnected if and only if
 there exist open sets $U_1$ and
 $U_2$ in $X$, such that $U_1 \cap U_2 \cap S = \emptyset$,
 $U_1 \cap S \not= \emptyset$,
@@ -777,7 +779,7 @@ note that if $B_X(x,\delta) \subset U_j$, then as
 $B_S(x,\delta) = S \cap B_X(x,\delta)$,
 we have $B_S(x,\delta) \subset U_j \cap S$.
 So if $U_1$ and $U_2$ as above exist, then
-$X$ is disconnected based on the discussion above.
+$S$ is disconnected based on the discussion above.
 
 The proof of the other direction follows by using
 \exerciseref{exercise:mssubspace} to find $U_1$ and $U_2$ from two
@@ -786,7 +788,7 @@ open disjoint subsets of $S$.
 
 \begin{example}
 Let $S \subset \R$ be such that $x < z < y$ with $x,y \in S$
-and $z \notin S$.  Claim: $S$ is not connected.  Proof:  Notice
+and $z \notin S$.  Claim: $S$ is disconnected.  Proof:  Notice
 \begin{equation*}
 \bigl( (-\infty,z) \cap S \bigr)
 \cup
@@ -801,28 +803,30 @@ an interval or a single point.
 \end{prop}
 
 \begin{proof}
-Suppose $S$ is connected.  If $S$ is a single point
-then we are done.  So suppose $x < y$ and $x,y \in S$.  If $z$ is such
+Suppose $S$ is connected.  If $S$ is a single point,
+then we are done.  So suppose $x < y$ and $x,y \in S$.  If $z \in \R$ is such
 that $x < z < y$, then $(-\infty,z) \cap S$ is nonempty and $(z,\infty) \cap
 S$ is nonempty.  The two sets are disjoint.  As
 $S$ is connected, we must have they their union is not $S$, so $z \in S$.
+By \propref{prop:intervaldef}, $S$ is an interval.
 
-Suppose $S$ is bounded, connected, but not a single point.
-Let $\alpha := \inf \, S$ and
-$\beta := \sup \, S$ and note that $\alpha < \beta$.  Suppose $\alpha < z < \beta$.  As $\alpha$ is the
-infimum, then there is an $x \in S$ such that $\alpha \leq x < z$.  Similarly
-there is a $y \in S$ such that $\beta \geq y > z$. 
-We have shown above that $z \in S$, so $(\alpha,\beta) \subset S$.
-If $w < \alpha$, then $w \notin S$
-as $\alpha$ was the infimum,
-similarly if $w > \beta$ then $w \notin S$.  Therefore the only
-possibilities for $S$ are
-$(\alpha,\beta)$,
-$[\alpha,\beta)$,
-$(\alpha,\beta]$,
-$[\alpha,\beta]$.
-
-The proof that an unbounded connected $S$ is an interval is left as an exercise.
+%Suppose $S$ is bounded, connected, but not a single point.
+%Let $\alpha := \inf \, S$ and
+%$\beta := \sup \, S$, and note that $\alpha < \beta$.  Suppose $\alpha < z <
+%\beta$ for some $z \in \R$.  As $\alpha$ is the
+%infimum, then there is an $x \in S$ such that $\alpha \leq x < z$.  Similarly
+%there is a $y \in S$ such that $\beta \geq y > z$. 
+%We have shown above that $z \in S$, so $(\alpha,\beta) \subset S$.
+%If $w < \alpha$, then $w \notin S$
+%as $\alpha$ was the infimum,
+%similarly if $w > \beta$ then $w \notin S$.  Therefore the only
+%possibilities for $S$ are
+%$(\alpha,\beta)$,
+%$[\alpha,\beta)$,
+%$(\alpha,\beta]$,
+%$[\alpha,\beta]$.
+%
+%The proof that an unbounded connected $S$ is an interval is left as an exercise.
 
 On the other hand suppose $S$ is an interval.
 Suppose $U_1$ and $U_2$ are open subsets of $\R$,
@@ -883,13 +887,13 @@ is closed.  Furthermore if $A$ is closed then $\overline{A} = A$.
 \end{prop}
 
 \begin{proof}
-First, the closure is the intersection of closed sets, so it is closed.
-Second, if $A$ is closed, then take $E = A$, hence the intersection of all
-closed sets $E$ containing $A$ must be equal to $A$.
+The closure is the intersection of closed sets, so $\overline{A}$ is closed.
+If $A$ is closed, then $A$ is a closed set that contains $A$.
+So the intersection of all closed sets $E$ containing $A$ must be equal to $A$.
 \end{proof}
 
 \begin{example}
-The closure of $(0,1)$ in $\R$ is $[0,1]$.  Proof:  Simply notice that if
+The closure of $(0,1)$ in $\R$ is $[0,1]$.  Proof:  If
 $E$ is closed and contains $(0,1)$, then $E$ must contain $0$ and $1$ (why?).
 Thus $[0,1] \subset E$.  But $[0,1]$ is also closed.
 Therefore the closure $\overline{(0,1)} = [0,1]$.
@@ -947,14 +951,14 @@ The \emph{\myindex{boundary}} of $A$ is the set
 \end{defn}
 
 \begin{example}
-Suppose $A=(0,1]$ and $X = \R$.  Then it is not hard
+Suppose $A:=(0,1]$ and $X := \R$.  Then it is not hard
 to see that $\overline{A}=[0,1]$, $A^\circ = (0,1)$,
 and $\partial A = \{ 0, 1 \}$.
 \end{example}
 
 \begin{example}
-Suppose $X = \{ a, b \}$ with the discrete metric.
-Let $A = \{ a \}$, then $\overline{A} = A^\circ = A$ and $\partial A =
+Suppose $X := \{ a, b \}$ with the discrete metric.
+Let $A := \{ a \}$, then $\overline{A} = A^\circ = A$ and $\partial A =
 \emptyset$.
 \end{example}
 
@@ -965,11 +969,11 @@ and $\partial A$ is closed.
 \end{prop}
 
 \begin{proof}
-Given $x \in A^\circ$ we have $\delta > 0$ such that $B(x,\delta)
+Given $x \in A^\circ$, there is a $\delta > 0$ such that $B(x,\delta)
 \subset A$.  If $z \in B(x,\delta)$, then as open balls are open,
 there is an $\epsilon > 0$ such that $B(z,\epsilon) \subset B(x,\delta)
-\subset A$, so $z$ is in $A^\circ$.  Therefore $B(x,\delta) \subset
-A^\circ$ and so $A^\circ$ is open.
+\subset A$.  So $z \in A^\circ$.  Therefore $B(x,\delta) \subset
+A^\circ$, and $A^\circ$ is open.
 
 As $A^\circ$ is open, then
 $\partial A = \overline{A} \setminus A^\circ = \overline{A} \cap
@@ -1042,12 +1046,18 @@ that $X$ is connected if and only if it contains exactly one element.
 \end{exercise}
 
 \begin{exercise}
-Show that if $S \subset \R$ is a connected unbounded set, then it is an
-(unbounded) interval.
+%Show that if $S \subset \R$ is a connected unbounded set, then it is an
+%(unbounded) interval.
+Take $\Q$ with the standard metric, $d(x,y) = \abs{x-y}$, as our metric space.  Prove that $\Q$ is
+\emph{\myindex{completely disconnected}}, that is, show 
+that for every $x, y \in \Q$ with $x \not= y$, there exists an
+two open sets $U$ and $V$, such that $x \in U$, $y \in V$,
+$U \cap V = \emptyset$, and $U \cap V = \Q$.
 \end{exercise}
 
 \begin{exercise}
-Show that every open set can be written as a union of closed sets.
+Show that in any metric space,
+every open set can be written as a union of closed sets.
 \end{exercise}
 
 \begin{exercise}
@@ -2533,13 +2543,12 @@ d(x_m,x_n)
 = k^n d(x_1,x_0) \frac{1}{1-k} .
 \end{split}
 \end{equation*}
-In particular the sequence is Cauchy (why?).  Since $X$ is complete
+In particular the sequence is Cauchy (why?).  Since $X$ is complete,
 we let $x := \lim\, x_n$, and we claim that $x$
 is our unique fixed point.
 
-Fixed point?  The function $f$ is continuous as it is a contraction, so
-Lipschitz continuous.
-Hence
+Fixed point?  The function $f$ is a contraction,
+so it is Lipschitz continuous:
 \begin{equation*}
 f(x) = f( \lim \, x_n) = \lim\, f(x_n) = \lim\, x_{n+1} = x .
 \end{equation*}
@@ -2553,12 +2562,12 @@ proved.
 \end{proof}
 
 The proof is constructive.  Not only do we know 
-a unique fixed point exists.  We also know how to find it.  We start with
-any point $x_0 \in X$ and simply iterate $f(x_0)$,
+a unique fixed point exists.  We also know how to find it.  Start with
+any point $x_0 \in X$, and iterate $f(x_0)$,
 $f(f(x_0))$,
-$f(f(f(x_0)))$, etc\ldots  In fact, you can even find how far away
-from the fixed point you are, see the exercises.  The idea of the proof is
-therefore used in real world applications.
+$f(f(f(x_0)))$, etc\ldots.  We can even find how far away
+from the fixed point we are, see the exercises.  The idea of the proof is
+therefore used in real-world applications.
 
 \subsection{Picard's theorem}
 
@@ -2577,7 +2586,7 @@ words, uniform convergence.  Therefore, see
 
 Let us use the
 fixed point theorem
-to prove the classical Picard theorem on the existence and uniqueness of
+to prove the classical Picard's theorem on the existence and uniqueness of
 ordinary differential equations.
 Consider the equation
 \begin{equation*}
@@ -2588,19 +2597,20 @@ $f(x_0) = y_0$ and such that
 \begin{equation*}
 f'(x) = F\bigl(x,f(x)\bigr) .
 \end{equation*}
-To avoid having to come up with many names we often simply write $y' = F(x,y)$
+To avoid having to come up with many names, we often simply write $y' = F(x,y)$
+for the equation
 and $y(x)$ for the solution.
 
-The simplest example is for example the equation $y' = y$, $y(0) = 1$.
+The simplest example is the equation $y' = y$, $y(0) = 1$.
 The solution is the exponential $y(x) = e^x$.  A somewhat more complicated
 example is $y' = -2xy$, $y(0) = 1$, whose solution is the Gaussian
 $y(x) = e^{-x^2}$.
 
 There are some subtle issues, for example how long does the
 solution exist.
-Look at the equation $y' = y^2$, $y(0)=1$.  Then $y(x) = \frac{1}{1-x}$ is a
+Consider the equation $y' = y^2$, $y(0)=1$.  Then $y(x) = \frac{1}{1-x}$ is a
 solution.  While $F$ is a reasonably ``nice'' function and in particular
-exists for all $x$ and $y$, the solution ``blows up'' at $x=1$.
+it exists for all $x$ and $y$, the solution ``blows up'' at $x=1$.
 For more examples related to Picard's theorem see \sectionref{sec:picard}.
 
 \begin{thm}[Picard's theorem on existence and uniqueness]%
@@ -2637,7 +2647,7 @@ h := \min \left\{ \alpha, \frac{\alpha}{M+L\alpha} \right\} .
 \end{equation*}
 Note $[-h,h] \subset I$.  Define the set
 \begin{equation*}
-Y := \{ f \in C([-h,h],\R) : f([-h,h]) \subset J \} .
+Y := \bigl\{ f \in C([-h,h],\R) : f([-h,h]) \subset J \bigr\} .
 \end{equation*}
 That is, $Y$ is the space of continuous functions on $[-h,h]$ with values in
 $J$, in other words,
@@ -2707,9 +2717,12 @@ to find a unique $f \in Y$ such that $T(f) = f$, that is,
 \begin{equation*} %\label{equation:msinteqpicard}
 f(x) = y_0 + \int_0^x F\bigl(t,f(t)\bigr)~dt .
 \end{equation*}
-By the fundamental theorem of calculus, $T(f)$ is the unique differentiable 
+By the fundamental theorem of calculus,
+$T(f)$ is the unique differentiable 
 function whose derivative is
-$F\bigl(x,f(x)\bigr)$ and $T(f)(0) = y_0$.  Therefore $f$ is the unique
+$F\bigl(x,f(x)\bigr)$ and $T(f)(0) = y_0$
+(differentiable by \thmref{thm:FTCv2} and
+unique by \thmref{thm:FTCv1}).  Therefore $f$ is the unique
 solution of $f'(x) = F\bigl(x,f(x)\bigr)$ and $f(0) = y_0$.
 \end{proof}
 
