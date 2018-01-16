@@ -110,7 +110,7 @@ for a single exercise or example.
 
 Finally, I would like to acknowledge Jana Ma\v{r}\'ikov\'a,
 Glen Pugh, Paul Vojta, Frank Beatrous, S\"{o}nmez \c{S}ahuto\u{g}lu,
-Jim Brandt, Kenji Kozai, and Arthur Busch,
+Jim Brandt, Kenji Kozai, Arthur Busch, and Harold P.\ Boas
 for teaching with the book and giving me lots of useful feedback.
 Frank Beatrous wrote the University of Pittsburgh version extensions, which
 served as inspiration for many of the additions.
@@ -246,12 +246,17 @@ We write
 1 \in S
 \end{equation*}
 to denote that the number 1 belongs to the set $S$.  That is, 1 is a member
-of $S$.  Similarly we write
+of $S$.
+At times we want to say that two elements are in a set $S$, so we 
+write ``$1,2 \in S$'' as a shorthand for ``$1 \in S$ and $2 \in S$.''
+
+Similarly we write
 \begin{equation*}
 7 \notin S
 \end{equation*}
 to denote that the number 7 is not in $S$.  That is, 7 is not a member of
 $S$.
+
 The elements of all sets under consideration come from some set we call the
 \emph{\myindex{universe}}.  For simplicity,
 we often consider the universe to be the set that contains only the elements
@@ -276,7 +281,8 @@ following definition.
 \item
 A set $A$ is a \emph{\myindex{subset}}
 of a set $B$ if $x \in A$ implies $x \in B$, and we write $A \subset B$.
-That is, all members of $A$ are also members of $B$.
+That is, all members of $A$ are also members of $B$.  At times we
+write $B \supset A$ to mean the same thing.
 \item
 Two sets $A$ and $B$ are \emph{\myindex{equal}} if $A \subset B$ and $B
 \subset A$.  We write $A = B$.
@@ -868,8 +874,8 @@ elements of $\N \times \N$ as follows
 $(1,1)$, $(1,2)$, $(2,1)$, $(1,3)$, $(2,2)$, $(3,1)$, \ldots.  That is,
 always write down first all the elements whose two entries sum to $k$,
 then write down all the elements whose entries sum to $k+1$ and so on.
-Then define a bijection with $\N$ by letting 1 go to $(1,1)$,
-2 go to $(1,2)$ and so on.  See \figureref{fig:NcrossNcard}.
+Define a bijection with $\N$ by letting 1 go to $(1,1)$,
+2 go to $(1,2)$, and so on.  See \figureref{fig:NcrossNcard}.
 \begin{myfigureht}
 \begin{tikzcd}[sep=10pt]%[cramped]%,sep=small]
 (1,1) \ar[r]     & (1,2) \ar[dl] & (1,3) \ar[dl] & (1,4) \ar[dl] \\
@@ -906,8 +912,7 @@ We give the first truly striking result.  First, we need a notation for
 the set of all subsets of a set.
 
 \begin{defn}
-If $A$ is a set,
-we define the \emph{\myindex{power set}} of $A$, denoted by $\sP(A)$, to be
+The \emph{\myindex{power set}} of a set $A$, denoted by $\sP(A)$, is 
 the set of all subsets of $A$.
 \end{defn}
 
@@ -1059,7 +1064,7 @@ Prove that if $g \circ f$ is injective, then $f$ is injective.
 Prove that if $g \circ f$ is surjective, then $g$ is surjective.
 \item
 Find an explicit example where $g \circ f$ is bijective, but neither $f$
-nor $g$ are bijective.
+nor $g$ is bijective.
 \end{enumerate}
 \end{exercise}
 
