@@ -3314,28 +3314,28 @@ $\frac{1}{4^p} + \frac{1}{5^p} +
 s_{2^k-1}
 & =
 1+
-\sum_{j=1}^k
+\sum_{j=1}^{k-1}
 \left(
 \sum_{m=2^{j}}^{2^{j+1}-1} \frac{1}{m^p}
 \right) 
 \\
 & <
 1+
-\sum_{j=1}^k
+\sum_{j=1}^{k-1}
 \left(
 \sum_{m=2^{j}}^{2^{j+1}-1} \frac{1}{{(2^j)}^p}
 \right) 
 \\
 & =
 1+
-\sum_{j=1}^k
+\sum_{j=1}^{k-1}
 \left(
 \frac{2^j}{{(2^j)}^p}
 \right) 
 \\
 & =
 1+
-\sum_{j=1}^k
+\sum_{j=1}^{k-1}
 {\left(
 \frac{1}{2^{p-1}}
 \right)}^j .
@@ -3353,7 +3353,7 @@ converges.  Therefore
 \begin{equation*}
 s_{2^k-1} < 
 1+
-\sum_{j=1}^k
+\sum_{j=1}^{k-1}
 {\left(
 \frac{1}{2^{p-1}}
 \right)}^j 
@@ -3465,14 +3465,14 @@ For $k > M$ we write the partial sum as
 +
 \left(\sum_{n=M+1}^{k} \abs{x_n} \right)
 \\
-& \leq
+& <
 \left(\sum_{n=1}^{M} \abs{x_n} \right)
 +
 \left(\sum_{n=M+1}^{k} 
 (\abs{x_M} r^{-M}) r^n
 \right)
 \\
-& \leq
+& =
 \left(\sum_{n=1}^{M} \abs{x_n} \right)
 +
 (\abs{x_M} r^{-M})
@@ -3486,7 +3486,7 @@ limit as $k$ goes to infinity on the right-hand side above to obtain
 \begin{equation*}
 \begin{split}
 \sum_{n=1}^k \abs{x_n}
-& \leq
+& <
 \left(\sum_{n=1}^{M} \abs{x_n} \right)
 +
 (\abs{x_M} r^{-M})
@@ -3662,7 +3662,7 @@ $\displaystyle \lim_{n\to\infty} \abs{x_{n+k}-x_n} = 0$, yet $\{ x_n \}$ is not 
 
 \begin{exercise}
 Let $s_k$ be the $k$th partial sum of $\sum x_n$.\\
-a) Suppose that there exists a $m \in \N$ such that $\displaystyle \lim_{k\to\infty}
+a) Suppose that there exists an $m \in \N$ such that $\displaystyle \lim_{k\to\infty}
 s_{mk}$ exists and $\lim\, x_n = 0$.  Show that $\sum x_n$ converges.\\
 b) Find an example where $\displaystyle \lim_{k\to\infty} s_{2k}$ exists and
 $\lim\, x_n \not= 0$ (and therefore $\sum x_n$ diverges).\\

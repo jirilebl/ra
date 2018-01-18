@@ -438,7 +438,7 @@ U(P,f) - L(P,f) < \epsilon .
 \end{prop}
 
 \begin{proof}
-If for every $\epsilon > 0$, a $P$ exists we have:
+If for every $\epsilon > 0$ such a $P$ exists, then we have:
 \begin{equation*}
 0 \leq
 \overline{\int_a^b} f - 
@@ -1298,22 +1298,22 @@ a $c \in [a,b]$ such that $\int_a^b f = f(c)(b-a)$.
 \end{exercise}
 
 \begin{exercise}
-If $f \colon [a,b] \to \R$ is a continuous function such that $f(x) \geq 0$
+Let $f \colon [a,b] \to \R$ be a continuous function such that $f(x) \geq 0$
 for all $x \in [a,b]$ and $\int_a^b f = 0$.  Prove that $f(x) = 0$
 for all $x$.
 \end{exercise}
 
 \begin{exercise}
-If $f \colon [a,b] \to \R$ is a continuous function
-for all $x \in [a,b]$ and $\int_a^b f = 0$.  Prove that
+Let $f \colon [a,b] \to \R$ be a continuous function
+and $\int_a^b f = 0$.  Prove that
 there exists a $c \in [a,b]$ such that $f(c) = 0$ (Compare with the
 previous exercise).
 \end{exercise}
 
 \begin{exercise}
-If $f \colon [a,b] \to \R$ and $g \colon [a,b] \to \R$
-are continuous functions such that $\int_a^b f = \int_a^b g$.
-Then show that there exists a $c \in [a,b]$ such that $f(c) = g(c)$.
+Let $f \colon [a,b] \to \R$ and $g \colon [a,b] \to \R$
+be continuous functions such that $\int_a^b f = \int_a^b g$.
+Show that there exists a $c \in [a,b]$ such that $f(c) = g(c)$.
 \end{exercise}
 
 \begin{exercise}
@@ -1581,7 +1581,7 @@ $\abs{x-c} < \delta$ implies $\abs{f(x)-f(c)} < \epsilon$.
 In particular,
 for such $x$ we have
 \begin{equation*}
-f(c)-\epsilon \leq f(x) \leq f(c) + \epsilon.
+f(c)-\epsilon < f(x) < f(c) + \epsilon.
 \end{equation*}
 Thus if $x > c$, then
 \begin{equation*}
@@ -1767,10 +1767,12 @@ It may be tempting to take $g(x) := \ln \abs{x}$.  Then take $g'(x) =
 This ``solution'' is incorrect, and it does not say
 that we can solve the given integral.  First problem is that
 $\frac{\ln \abs{x}}{x}$ is not continuous on $[-1,1]$.
+It is not defined at 0, and cannot be made continuous by defining a value at
+0.
 Second, $\frac{\ln \abs{x}}{x}$ is not even Riemann integrable on $[-1,1]$
 (it is unbounded).
 The integral we wrote down simply does not make sense.
-Finally, $g$ is not even continuous 
+Finally, $g$ is not continuous 
 on $[-1,1]$, let alone continuously differentiable.
 \end{example}
 

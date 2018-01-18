@@ -516,8 +516,8 @@ minimum}} is analogous.
 
 \begin{lemma}\label{relminmax:lemma}
 Let $f \colon [a,b] \to \R$ be a function differentiable at $c \in (a,b)$,
-and $c$
-is a relative minimum or a relative maximum of $f$.  Then
+and $f$ has
+a relative minimum or a relative maximum at $c$.  Then
 $f'(c) = 0$.
 \end{lemma}
 
@@ -741,7 +741,7 @@ let $f \colon I \to \R$ be a differentiable function.
 
 \begin{proof}
 Let us prove the first item.  Suppose $f$ is increasing, then
-for all $x$ and $c$ in $I$ we have
+for all $x,c \in I$ with $x \neq c$ we have
 \begin{equation*}
 \frac{f(x)-f(c)}{x-c} \geq 0 .
 \end{equation*}
@@ -874,11 +874,11 @@ an $x > a$ such that
 \begin{equation*}
 \frac{g(x)-g(a)}{x-a} > 0 ,
 \end{equation*}
-or $g(x) > g(a)$.  Thus $a$
-cannot possibly be a maximum of $g$.  Similarly as $g'(b) < 0$,
+or $g(x) > g(a)$.  Thus $g$
+cannot possibly have a maximum at $a$.  Similarly as $g'(b) < 0$,
 we find an $x < b$ (a different $x$) such that
 $\frac{g(x)-g(b)}{x-b} < 0$ or that $g(x) > g(b)$, thus
-$b$ cannot possibly be a maximum.
+$g$ cannot possibly have a maximum at $b$.
 Therefore $c \in (a,b)$
 and \hyperref[thm:rolle]{Rolle's theorem} applies: As $g$ attains a maximum
 at $c$ we find $g'(c) = 0$
@@ -1372,6 +1372,19 @@ See
 \exerciseref{exercise:extendboundedder}.
 \\
 b) Find an example where the $g$ is not twice differentiable at $x=0$.
+\end{exercise}
+
+\begin{exercise}
+Prove the \emph{\myindex{$n$-th derivative test}}.  Suppose $n \in \N$,
+$c \in (a,b)$, and $f \colon (a,b) \to \R$ is $n$ times continuously
+differentiable, with $f^{(k)}(c) = 0$ for $k=1,2,\ldots,n-1$ and $f^{(n)}(c)
+\not= 0$.
+Prove\\
+a)~If $n$ is odd then $f$ does has neither a relative minimum,
+nor a maximum at $c$.
+\\
+b)~If $n$ is even then $f$ has a relative minimum at $c$ if $f^{(n)}(c) > 0$
+and a relative maximum at $c$ if $f^{(n)}(c) < 0$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
