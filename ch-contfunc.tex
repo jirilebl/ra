@@ -939,7 +939,7 @@ A composition of
 continuous functions is again
 continuous.
 
-\begin{prop}
+\begin{prop} \label{prop:compositioncont}
 Let $A, B \subset \R$ and $f \colon B \to \R$ and $g \colon A \to B$ be
 functions.  If $g$ is continuous at $c \in A$ and
 $f$ is continuous at $g(c)$, then $f \circ g \colon A \to \R$ is continuous
@@ -1200,7 +1200,7 @@ all rational numbers $r$, $f(r) = g(r)$.  Show that $f(x) = g(x)$ for all
 $x$.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:positivecontneigh}
 Let $f \colon \R \to \R$ be continuous.  Suppose $f(c) > 0$.  Show that
 there exists an $\alpha > 0$ such that for all $x \in (c-\alpha,c+\alpha)$
 we have $f(x) > 0$.
@@ -2927,13 +2927,20 @@ $(-\infty,0)\cup [1,\infty)$, not an interval.
 Then $f^{-1} \colon (-\infty,0)\cup [1,\infty)
 \to \R$ can be written as
 \begin{equation*}
-f^{-1}(x) =
+f^{-1}(y) =
 \begin{cases}
-x & \text{if $x < 0$}, \\
-x-1 & \text{if $x \geq 1$}. 
+y & \text{if $y < 0$}, \\
+y-1 & \text{if $y \geq 1$}. 
 \end{cases}
 \end{equation*}
-It is not difficult to see that $f^{-1}$ is a continuous function.
+It is not difficult to see that $f^{-1}$ is a continuous function.  See
+\figureref{invcontfig} for the graphs.
+\begin{myfigureht}
+\includegraphics{figures/invcontfigA}
+\qquad
+\includegraphics{figures/invcontfigB}
+\caption{Graph of $f$ on the left and $f^{-1}$ on the right.\label{invcontfig}}
+\end{myfigureht}
 \end{example}
 
 Notice what happens with the proposition if $f(I)$ is an interval.  In that case we could simply

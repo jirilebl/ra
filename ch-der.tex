@@ -64,7 +64,7 @@ endpoint of an interval, but all the theory still works by allowing it, and
 it makes our work easier.
 
 \begin{example}
-Let $f(x) := x^2$ defined on the whole real line.  We find that if
+Let $f(x) := x^2$ defined on the whole real line.  Let $c \in \R$ be arbitrary.  We find that if
 $x \not=c$,
 \begin{equation*}
 \frac{x^2-c^2}{x-c} =
@@ -80,8 +80,31 @@ f'(c) =
 \end{example}
 
 \begin{example}
-The function $f(x) := \sqrt{x}$ is differentiable for $x > 0$.  Fix $c > 0$,
-and take $x \not= c$, $x > 0$,
+Let $f(x) := ax + b$ for numbers $a, b \in \R$.
+Let $c \in \R$ be arbitrary.
+For $x \not=c$,
+\begin{equation*}
+\frac{f(x)-f(c)}{x-c} =
+\frac{a(x-c)}{x-c} = a .
+\end{equation*}
+Therefore,
+\begin{equation*}
+f'(c) =
+\lim_{x\to c} 
+\frac{f(x)-f(c)}{x-c} =
+\lim_{x\to c} 
+a = a.
+\end{equation*}
+In fact, every differentiable function ``infinitesimally'' behaves like
+the affine function $ax + b$.  You can guess many results
+and formulas for derivatives, if you work them out for affine functions
+first.
+\end{example}
+
+\begin{example}
+The function $f(x) := \sqrt{x}$ is differentiable for $x > 0$.  To see this
+fact, fix $c > 0$,
+and take $x \not= c$, $x > 0$.  Compute
 \begin{equation*}
 \frac{\sqrt{x}-\sqrt{c}}{x-c}
 =
@@ -738,18 +761,42 @@ $f$ is increasing.
 We leave the decreasing part to the reader as exercise.
 \end{proof}
 
-\begin{example}
 A similar but weaker statement is true for strictly increasing and
-decreasing functions.  If $f'(x) > 0$ for all $x \in I$, then
-$f$ is strictly increasing.  The proof is left as an exercise.
-The converse is not true.  For example,
+decreasing functions.
+
+\begin{prop} \label{incdecdiffstrictprop}
+Let $I$ be an interval and
+let $f \colon I \to \R$ be a differentiable function.
+\begin{enumerate}[(i)]
+\item
+\label{incdecdiffstrictprop:i}
+If $f'(x) > 0$ for all $x \in I$, then
+$f$ is strictly increasing.
+\item
+\label{incdecdiffstrictprop:ii}
+If $f'(x) < 0$ for all $x \in I$,
+then $f$ is strictly decreasing.
+\end{enumerate}
+\end{prop}
+
+The proof of
+\ref{incdecdiffstrictprop:i}
+is left as an exercise.
+Then \ref{incdecdiffstrictprop:ii}
+follows from 
+\ref{incdecdiffstrictprop:i} by considering $-f$
+instead.
+
+The converse of this proposition is not true.  For example,
 $f(x) := x^3$ is a strictly increasing function, but $f'(0) = 0$.
-\end{example}
+
+\medskip
 
 Another application of the \hyperref[thm:mvt]{mean value theorem} is the following result about
-location of extrema.  The theorem is stated for an absolute minimum and
-maximum, but the way it is applied to find relative minima
-and maxima is to restrict $f$ to an interval $(c-\delta,c+\delta)$.
+location of extrema, sometimes called the \emph{\myindex{first derivative
+test}}.  The theorem is stated for an absolute minimum and
+maximum. To apply it to find relative minima
+and maxima, restrict $f$ to an interval $(c-\delta,c+\delta)$.
 
 \begin{prop} \label{firstderminmaxtest}
 Let $f \colon (a,b) \to \R$ be continuous.  Let $c \in (a,b)$
@@ -945,7 +992,8 @@ at all points and compute the derivative.
 \end{exercise}
 
 \begin{exercise} \label{exercise:posderincr}
-Suppose $I$ is an interval and
+Finish the proof of \propref{incdecdiffstrictprop}.  That is,
+suppose $I$ is an interval and
 $f \colon I \to \R$ is a differentiable function.
 If $f'(x) > 0$ for all $x \in I$, show that $f$ is strictly increasing.
 \end{exercise}
@@ -1030,7 +1078,7 @@ Prove \thmref{thm:cauchymvt}.
 \section{Taylor's theorem}
 \label{sec:taylor}
 
-\sectionnotes{half a lecture (optional section)}
+\sectionnotes{less than a lecture (optional section)}
 
 \subsection{Derivatives of higher orders}
 
@@ -1210,7 +1258,7 @@ we define the \emph{\myindex{Taylor series}}:
 \sum_{k=0}^\infty
 \frac{f^{(k)}(x_0)}{k!}{(x-x_0)}^k .
 \end{equation*}
-However, there is no guarantee that this series converges for any
+There is no guarantee that this series converges for any
 $x \not= x_0$.  And even where it does converge, there is no guarantee
 that it converges to the function $f$.  Functions for which
 the Taylor series converges to the function at least in an interval
@@ -1233,6 +1281,34 @@ which we will neither state nor prove,
 saying that if a function is
 locally approximated in a certain way by a polynomial of degree $d$, then it
 has $d$ derivatives.
+
+\medskip
+
+Let us also give a quick application of Taylor's theorem you remember from
+calculus.
+
+\begin{prop}[Second derivative test]\index{second derivative test}
+Suppose $f \colon (a,b) \to \R$ is twice continuously differentiable,
+$x_0 \in (a,b)$, $f'(x_0) = 0$ and $f'(x_0) > 0$.  Then $f$ has a strict relative
+minimum at $x_0$.
+\end{prop}
+
+\begin{proof}
+As $f''$ is continuous, there exists a $\delta > 0$
+such that $f''(c) > 0$ for all $c \in (x_0-\delta,x_0+\delta)$,
+see \exerciseref{exercise:positivecontneigh}.
+Take $x \in (x_0-\delta,x_0+\delta)$, $x \not= x_0$.
+Taylor's theorem says that for some $c$ between $x_0$ and $x$,
+\begin{equation*}
+f(x) 
+=
+f(x_0) + f'(x_0) (x-x_0) +
+\frac{f''(c)}{2}{(x-x_0)}^{2} 
+=
+f(x_0) + \frac{f''(c)}{2}{(x-x_0)}^{2}  .
+\end{equation*}
+As $f''(c) > 0$, and ${(x-x)}^2 > 0$, then $f(x) > f(x_0)$.
+\end{proof}
 
 \subsection{Exercises}
 
@@ -1270,7 +1346,7 @@ $\lim\limits_{x\to x_0} \frac{R_n^{x_0}(x)}{{(x-x_0)}^n} = 0$.
 \begin{exercise}
 Suppose $f \colon [a,b] \to \R$ has $n+1$ continuous derivatives
 and $x_0 \in (a,b)$.
-Show that $f^{(k)}(x_0) = 0$ for all $k = 0, 1, 2, \ldots, n$
+Prove: $f^{(k)}(x_0) = 0$ for all $k = 0, 1, 2, \ldots, n$
 if and only if $g(x) := \frac{f(x)}{{(x-x_0)}^{n+1}}$ is continuous at $x_0$.
 \end{exercise}
 
@@ -1310,13 +1386,19 @@ b) Find an example where the $g$ is not twice differentiable at $x=0$.
 
 \subsection{Inverse function theorem}
 
+Let us start with a simple example.  Suppose a function $f(x) = a x$ for a
+number $a \not= 0$.  Then $f \colon \R \to \R$ is bijective, and the inverse
+is $f^{-1}(y) = \frac{1}{a} x$.  In particular, $f'(x) = a$ and 
+$(f^{-1})'(y) = \frac{1}{a}$.  As differentiable functions are
+``infinitesimally like'' linear functions, then we expect the same.
+
 The main idea of differentiating inverse functions is the following lemma.
 
 \begin{lemma} \label{lemma:ift}
 Let $I,J \subset \R$ be intervals.
 If $f \colon I \to J$ is strictly monotone (hence one-to-one),
 onto ($f(I) = J$),
-differentiable at $x$, and $f'(x) \not= 0$,
+differentiable at $x \in I$, and $f'(x) \not= 0$,
 then the inverse 
 $f^{-1}$ is differentiable at $y = f(x)$ and
 \begin{equation*}
@@ -1329,9 +1411,8 @@ is continuously differentiable.
 \begin{proof}
 By \propref{prop:invcont} $f$ has a continuous inverse.  Let us
 call the inverse $g \colon J \to I$ for convenience.
-Let $x,y$ be as in the statement, take $t \in I$ to be arbitrary
-and let $s := f(t)$.
-Then
+Let $x,y$ be as in the statement, take $t \in I$, $t \not= x$, to be arbitrary
+and let $s := f(t)$.  Then $s \not= y$, and
 \begin{equation*}
 \frac{g(s)-g(y)}{s-y} =
 \frac{g\bigl(f(t)\bigr)-g\bigl(f(x)\bigr)}{f(t)-f(x)} =
@@ -1339,7 +1420,12 @@ Then
 \end{equation*}
 As $f$ is differentiable at $x$ and $f'(x) \not= 0$, then 
 $\frac{t-x}{f(t)-f(x)} \to \nicefrac{1}{f'(x)}$ as $t \to x$.
-Because $g(s) \to g(y)$ as $s \to y$, we 
+As a function of $t$, the expression
+$\frac{t-x}{f(t)-f(x)}$ is continuous at $x$.
+As $g$ is continuous at $y$, and $g(y) = x$,
+the composition is continuous at $y$ by
+\propref{prop:compositioncont}.  That is, as
+$g(s) \to g(y)$ as $s \to y$, we 
 can plug in $g(s)$ for $t$, and $g(y)$ for $x$ and take the limit
 as $s$ goes to $y$, that is, the limit exists.  In other words,
 \begin{equation*}
@@ -1361,9 +1447,9 @@ See \figureref{inversefig} for the geometric idea.
 function.\label{inversefig}}
 \end{myfigureht}
 
-If both $f'$ and $g$ are continuous, $f'$ is nonzero at all $x$,
+If $f'$ are continuous and $f'$ is nonzero at all $x$,
 then the lemma applies at all points $x \in I$ and the resulting function $g'(y) =
-\frac{1}{f'\bigl(g(t)\bigr)}$ must be continuous.
+\frac{1}{f'\bigl(g(y)\bigr)}$ must be continuous.
 \end{proof}
 
 What is usually called the inverse function theorem is the following result.
@@ -1372,9 +1458,9 @@ What is usually called the inverse function theorem is the following result.
 Let $f \colon (a,b) \to \R$ be a continuously differentiable function,
 $x_0 \in (a,b)$ a point where $f'(x_0) \not= 0$.  Then there exists
 an interval $I \subset (a,b)$ with $x_0 \in I$, the
-restriction $f|_{I}$ is injective with an inverse
-$g \colon J \to I$ defined on $J := f(I)$,
-which is continuously differentiable and
+restriction $f|_{I}$ is injective with a continuously differentiable inverse
+$g \colon J \to I$ defined on an interval $J := f(I)$,
+and
 \begin{equation*}
 g'(y) = \frac{1}{f'\bigl( g(y) \bigr)} , \qquad \text{for all $y \in J$}.
 \end{equation*}
@@ -1385,7 +1471,7 @@ Without loss of generality, suppose $f'(x_0) > 0$.  As $f'$ is
 continuous, there must exist an interval $I$ with $x_0 \in I$
 such that $f'(x) > 0$ for all $x_0 \in I$.
 
-By \exerciseref{exercise:posderincr} $f$ is strictly increasing
+By \propref{incdecdiffstrictprop} $f$ is strictly increasing
 on $I$, and hence the restriction $f|_{I}$ bijective onto $J: = f(I)$.
 As $f$ is continuous, then by the
 \hyperref[IVT:thm]{intermediate value theorem}
@@ -1416,7 +1502,7 @@ For $x=0$ the existence of a unique root is trivial.
 
 Let $f(x) := x^n$.  Using product rule, $f$ is continuously differentiable
 and $f'(x) = nx^{n-1}$, see \exerciseref{exercise:diffofxn}.  For $x > 0$ the derivative $f'$ is strictly positive
-and so again by \exerciseref{exercise:posderincr}, $f$ is strictly
+and so again by \propref{incdecdiffstrictprop}, $f$ is strictly
 increasing (this can also be proved directly).  It is also easy to
 see that the image of $f$ is the entire interval $(0,\infty)$.  We 
 obtain a unique inverse $g$ and so the existence and uniqueness of positive
