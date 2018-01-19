@@ -1529,11 +1529,11 @@ Now apply \lemmaref{lemma:ift}.
 \end{proof}
 
 If you tried to prove the existence of roots directly as in
-\exampleref{example:sqrt2} you may have seen
+\exampleref{example:sqrt2} you saw
 how difficult that endeavor is.  However, with the machinery we have built
 for inverse functions it becomes
-an almost trivial exercise, and with and the inverse function theorem
-we prove far more than mere existence.
+an almost trivial exercise, and with the lemma above we prove
+far more than mere existence.
 
 \begin{cor}
 Given any $n \in \N$ and any $x \geq 0$ there exists a unique 
@@ -1558,12 +1558,14 @@ Given any $M > 1$, $f(M) = M^n \geq M$, and given any $1 > \epsilon > 0$,
 $f(\epsilon) = \epsilon^n \leq \epsilon$.  For any $x$ with $\epsilon < x <
 M$ we have by the
 \hyperref[IVT:thm]{intermediate value theorem} that $x \in
-f\bigl( (\epsilon,M) \bigr) \subset
+f\bigl( [\epsilon,M] \bigr) \subset
 f\bigl( (0,\infty) \bigr)$.  As $M$ and $\epsilon$ were arbitrary, $f$ is onto
 $(0,\infty)$, and hence $f$ is bijective.
 Let $g$ be the inverse of $f$ and we obtain
 the existence and uniqueness of positive
-$n$th roots.  We apply \lemmaref{lemma:ift} to obtain the derivative.
+$n$th roots.  \lemmaref{lemma:ift} says $g$ has a continuous
+derivative and $g'(x) =
+\frac{1}{f'\bigl(g(x)\bigr)} = \frac{1}{n {(x^{1/n})}^{n-1}}$.
 \end{proof}
 
 \begin{example}
@@ -1576,8 +1578,8 @@ no larger.
 
 \begin{example}
 Another useful example is $f(x) := x^3$.  The function $f \colon \R \to \R$ is
-one-to-one and onto, so $f^{-1}(x) = x^{1/3}$ exists on the entire real
-line including zero and negative $x$.  The function $f$ has
+one-to-one and onto, so $f^{-1}(y) = y^{1/3}$ exists on the entire real
+line including zero and negative $y$.  The function $f$ has
 a continuous derivative, but $f^{-1}$ has no derivative at the origin.  The
 point is that $f'(0) = 0$.  See \figureref{cubecuberootfig} for a graph,
 notice the vertical tangent on the cube root at the origin.
