@@ -1509,9 +1509,12 @@ such that $f'(x) > 0$ for all $x_0 \in I$.  See
 
 By \propref{incdecdiffstrictprop} $f$ is strictly increasing
 on $I$, and hence the restriction $f|_{I}$ bijective onto $J: = f(I)$.
-As $f$ is continuous, then by the
-\hyperref[IVT:thm]{intermediate value theorem}
-(see also \corref{cor:continterval}), $f(I)$ is in interval.
+As $f$ is continuous,
+then by the
+\corref{cor:continterval}
+(or directly via the
+\hyperref[IVT:thm]{intermediate value theorem})
+$f(I)$ is in interval.
 Now apply \lemmaref{lemma:ift}.
 \end{proof}
 
@@ -1539,9 +1542,15 @@ For $x=0$ the existence of a unique root is trivial.
 Let $f(x) := x^n$.  Using the product rule, $f$ is continuously differentiable
 and $f'(x) = nx^{n-1}$, see \exerciseref{exercise:diffofxn}.  For $x > 0$ the derivative $f'$ is strictly positive
 and so again by \propref{incdecdiffstrictprop}, $f$ is strictly
-increasing (this can also be proved directly).  It is also easy to
-see that the image of $f$ is the entire interval $(0,\infty)$.  We 
-obtain a unique inverse $g$ and with it the existence and uniqueness of positive
+increasing (this can also be proved directly), so $f$ is one-to-one.
+Given any $M > 1$, $f(M) = M^n \geq M$, and given any $1 > \epsilon > 0$,
+$f(\epsilon) = \epsilon^n \leq \epsilon$.  For any $y$ with $\epsilon < y <
+M$ we have by the
+\hyperref[IVT:thm]{intermediate value theorem} we find $y \in f\bigl(
+(0,\infty) \bigr)$.  As $M$ and $\epsilon$ were arbitrary, $f$ is onto
+$(0,\infty)$, and hence $f$ is bijective.
+Let $g$ be the inverse of $f$ and we obtain
+the existence and uniqueness of positive
 $n$th roots.  We apply \lemmaref{lemma:ift} to obtain the derivative.
 \end{proof}
 
