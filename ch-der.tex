@@ -1429,11 +1429,11 @@ The main idea of differentiating inverse functions is the following lemma.
 Let $I,J \subset \R$ be intervals.
 If $f \colon I \to J$ is strictly monotone (hence one-to-one),
 onto ($f(I) = J$),
-differentiable at $x \in I$, and $f'(x) \not= 0$,
+differentiable at $x_0 \in I$, and $f'(x_0) \not= 0$,
 then the inverse 
-$f^{-1}$ is differentiable at $y = f(x)$ and
+$f^{-1}$ is differentiable at $y_0 = f(x_0)$ and
 \begin{equation*}
-(f^{-1})'(y) = \frac{1}{f'\bigl( f^{-1}(y) \bigr)} = \frac{1}{f'(x)} .
+(f^{-1})'(y_0) = \frac{1}{f'\bigl( f^{-1}(y_0) \bigr)} = \frac{1}{f'(x_0)} .
 \end{equation*}
 If $f$ is continuously differentiable and $f'$ is never zero, then $f^{-1}$
 is continuously differentiable.
@@ -1442,35 +1442,12 @@ is continuously differentiable.
 \begin{proof}
 By \propref{prop:invcont}, $f$ has a continuous inverse.  For convenience
 call the inverse $g \colon J \to I$.
-Let $x,y$ be as in the statement.  Take an arbitrary $t \in I$, $t \not= x$, 
-and let $s := f(t)$.  Then $s \not= y$, and
+Let $x_0,y_0$ be as in the statement.  For any $x \in I$ write $y := f(x)$.
+If $x \not= x_0$ and so $y \not= y_0$, we find
 \begin{equation*}
-\frac{g(s)-g(y)}{s-y} =
-\frac{g\bigl(f(t)\bigr)-g\bigl(f(x)\bigr)}{f(t)-f(x)} =
-\frac{t-x}{f(t)-f(x)} .
-\end{equation*}
-Let $Q(t) := \frac{t-x}{f(t)-f(x)}$ for $t \neq x$, and
-$Q(x) := \nicefrac{1}{f'(x)}$ (notice that $f'(x) \neq 0$).
-Then as $f$ is differentiable at $x$, $Q$ is continuous at $x$.
-As $g(s)$ is continuous at $y$,
-%and $g(y) = x$,
-the composition $Q\bigl(g(s)\bigr) = \frac{g(s)-g(y)}{s-y}$
-is continuous at $y$ by
-\propref{prop:compositioncont}, and the limit is
-$Q\bigl(g(y)\bigr) = Q(x) = \nicefrac{1}{f'(x)}$.
-In other words,
-%as
-%$g(s) \to g(y)$ as $s \to y$,
-\begin{equation*}
-\lim_{s \to y}
-\frac{g(s)-g(y)}{s-y} 
-=
-\lim_{t \to x}
-\frac{t-x}{f(t)-f(x)} 
-=
-\frac{1}{f'(x)} 
-=
-\frac{1}{f'\bigl(g(y)\bigr)} .
+\frac{g(y)-g(y_0)}{y-y_0} =
+\frac{g\bigl(f(x)\bigr)-g\bigl(f(x_0)\bigr)}{f(x)-f(x_0)} =
+\frac{x-x_0}{f(x)-f(x_0)} .
 \end{equation*}
 See \figureref{inversefig} for the geometric idea.
 \begin{myfigureht}
@@ -1480,6 +1457,39 @@ See \figureref{inversefig} for the geometric idea.
 \caption{Interpretation of the derivative of the inverse
 function.\label{inversefig}}
 \end{myfigureht}
+
+Let
+\begin{equation*}
+Q(x) :=
+\begin{cases}
+\frac{x-x_0}{f(x)-f(x_0)} & \text{if $x \neq x_0$,} \\
+\frac{1}{f'(x_0)} & \text{if $x = x_0$ (notice that $f'(x_0) \neq 0$).}
+\end{cases}
+\end{equation*}
+As $f$ is differentiable at $x_0$, 
+we have
+\begin{equation*}
+\lim_{x \to x_0} Q(x) =
+\lim_{x \to x_0} 
+\frac{x-x_0}{f(x)-f(x_0)} 
+=
+\frac{1}{f'(x_0)}
+=
+Q(x_0) ,
+\end{equation*}
+that is, $Q$ is continuous at $x_0$.
+As $g(y)$ is continuous at $y_0$,
+the composition $Q\bigl(g(y)\bigr) = \frac{g(y)-g(y_0)}{y-y_0}$
+is continuous at $y_0$ by
+\propref{prop:compositioncont}.
+Therefore
+\begin{equation*}
+\frac{1}{f'\bigl(g(y_0)\bigr)}
+= Q\bigl(g(y_0)\bigr)
+= \lim_{y \to y_0} Q\bigl(g(y)\bigr)
+= \lim_{y \to y_0} \frac{g(y)-g(y_0)}{y-y_0} .
+\end{equation*}
+So $g$ is differentiable at $y_0$ and $g'(y_0) = \frac{1}{f'\bigl(g(y_0)\bigr)}$.
 
 If $f'$ is continuous and nonzero at all $x \in I$,
 then the lemma applies at all $x \in I$.  As $g$ is also
@@ -1492,7 +1502,7 @@ What is usually called the inverse function theorem is the following result.
 \begin{thm}[Inverse function theorem]\index{inverse function theorem}
 Let $f \colon (a,b) \to \R$ be a continuously differentiable function,
 $x_0 \in (a,b)$ a point where $f'(x_0) \not= 0$.  Then there exists
-an interval $I \subset (a,b)$ with $x_0 \in I$, the
+an open interval $I \subset (a,b)$ with $x_0 \in I$, the
 restriction $f|_{I}$ is injective with a continuously differentiable inverse
 $g \colon J \to I$ defined on an interval $J := f(I)$,
 and
@@ -1503,8 +1513,8 @@ g'(y) = \frac{1}{f'\bigl( g(y) \bigr)} , \qquad \text{for all $y \in J$}.
 
 \begin{proof}
 Without loss of generality, suppose $f'(x_0) > 0$.  As $f'$ is
-continuous, there must exist an interval $I$ with $x_0 \in I$
-such that $f'(x) > 0$ for all $x_0 \in I$.  See
+continuous, there must exist an open interval $I = (x_0-\delta,x_0+\delta)$ 
+such that $f'(x) > 0$ for all $x \in I$.  See
 \exerciseref{exercise:positivecontneigh}.
 
 By \propref{incdecdiffstrictprop} $f$ is strictly increasing
@@ -1533,21 +1543,23 @@ $g(x) := x^{1/n}$ is continuously differentiable and
 \begin{equation*}
 g'(x) = \frac{1}{nx^{(n-1)/n}} = \frac{1}{n} \, x^{(1-n)/n} ,
 \end{equation*}
-using the convention $x^{n/m} := {(x^{1/m})}^{n}$.
+using the convention $x^{m/n} := {(x^{1/n})}^{m}$.
 \end{cor}
 
 \begin{proof}
 For $x=0$ the existence of a unique root is trivial.
 
-Let $f(x) := x^n$.  Using the product rule, $f$ is continuously differentiable
-and $f'(x) = nx^{n-1}$, see \exerciseref{exercise:diffofxn}.  For $x > 0$ the derivative $f'$ is strictly positive
+Let $f \colon (0,\infty) \to (0,\infty)$ be defined by $f(y) := y^n$.
+The function $f$ is continuously differentiable
+and $f'(y) = ny^{n-1}$, see \exerciseref{exercise:diffofxn}.  For $y > 0$ the derivative $f'$ is strictly positive
 and so again by \propref{incdecdiffstrictprop}, $f$ is strictly
-increasing (this can also be proved directly), so $f$ is one-to-one.
+increasing (this can also be proved directly).
 Given any $M > 1$, $f(M) = M^n \geq M$, and given any $1 > \epsilon > 0$,
-$f(\epsilon) = \epsilon^n \leq \epsilon$.  For any $y$ with $\epsilon < y <
+$f(\epsilon) = \epsilon^n \leq \epsilon$.  For any $x$ with $\epsilon < x <
 M$ we have by the
-\hyperref[IVT:thm]{intermediate value theorem} we find $y \in f\bigl(
-(0,\infty) \bigr)$.  As $M$ and $\epsilon$ were arbitrary, $f$ is onto
+\hyperref[IVT:thm]{intermediate value theorem} that $x \in
+f\bigl( (\epsilon,M) \bigr) \subset
+f\bigl( (0,\infty) \bigr)$.  As $M$ and $\epsilon$ were arbitrary, $f$ is onto
 $(0,\infty)$, and hence $f$ is bijective.
 Let $g$ be the inverse of $f$ and we obtain
 the existence and uniqueness of positive

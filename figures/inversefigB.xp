@@ -42,19 +42,19 @@ int main()
   line(P(y,f(y)),P(y,0.0));
   solid();
 
-  label(P(x,0.0), P(0,-4), "$f(t)=s$", b);
-  label(P(y,0.0), P(0,-4), "$f(x)=y$", b);
+  label(P(x,0.0), P(0,-4), "$f(x)=y$", b);
+  label(P(y,0.0), P(0,-4), "$f(x_0)=y_0$", b);
 
   dashed();
   line(P(x,f(x)),P(0.0,f(x)));
   line(P(y,f(y)),P(0.0,f(y)));
   solid();
 
-  label(P(0.0,f(x)), P(-4,0), "$t=g(s)$", l);
-  label(P(0.0,f(y)), P(-4,0), "$x=g(y)$", l);
+  label(P(0.0,f(x)), P(-4,0), "$x=g(y)$", l);
+  label(P(0.0,f(y)), P(-4,0), "$x_0=g(y_0)$", l);
 
   masklabel(P(y+0.3,f(y)+0.3*slope), P(-15,0),
-	"{\\small slope $= \\frac{t-x}{f(t)-f(x)} = \\frac{g(s)-g(y)}{s-y}$}", l);
+	"{\\small slope $= \\frac{x-x_0}{f(x)-f(x_0)} = \\frac{g(y)-g(y_0)}{y-y_0}$}", l);
 
   bold();
   plot(f, 0.0, 2.0, 40);
