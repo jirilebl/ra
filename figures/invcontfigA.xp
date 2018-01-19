@@ -1,14 +1,9 @@
-/* slightly modified sample from epix samples gallery */
 #include "epix.h"
 #include <math.h>
 using namespace ePiX;
 
 int main()
 {
-  double slope;
-  double x,y;
-  double extra1,extra2;
-
   picture(P(-2,-2), P(2,2), "2.3x2.3in");
 
   begin();
@@ -24,7 +19,6 @@ int main()
   dot_size(3);
   dot(P(0,0));
   circ(P(0,1));
-
 
   tikz_format();
   end();
