@@ -1284,15 +1284,20 @@ has $d$ derivatives.
 
 \medskip
 
-Let us also give a quick application of Taylor's theorem you remember from
-calculus.  By a \emph{\myindex{strict relative minimum}} of $f$ at $c$,
+Taylor's theorem gives us a quick proof of a version of
+the second derivative test.
+By a \emph{\myindex{strict relative minimum}} of $f$ at $c$,
 we mean that there exists a $\delta > 0$ such that $f(x) > f(c)$ for
 all $x \in (c-\delta,c+\delta)$ where $x\not=c$.
 A \emph{\myindex{strict relative maximum}} is defined similarly.
+Continuity of the second derivative is not needed, but the proof is more
+difficult and is left as an exercise.  The proof also generalizes
+immediately into the $n$th derivative test, which is also left as
+an exercise.
 
 \begin{prop}[Second derivative test]\index{second derivative test}
 Suppose $f \colon (a,b) \to \R$ is twice continuously differentiable,
-$x_0 \in (a,b)$, $f'(x_0) = 0$ and $f'(x_0) > 0$.  Then $f$ has a strict relative
+$x_0 \in (a,b)$, $f'(x_0) = 0$ and $f''(x_0) > 0$.  Then $f$ has a strict relative
 minimum at $x_0$.
 \end{prop}
 
@@ -1378,16 +1383,26 @@ b) Find an example where the $g$ is not twice differentiable at $x=0$.
 \end{exercise}
 
 \begin{exercise}
-Prove the \emph{\myindex{$n$-th derivative test}}.  Suppose $n \in \N$,
-$c \in (a,b)$, and $f \colon (a,b) \to \R$ is $n$ times continuously
-differentiable, with $f^{(k)}(c) = 0$ for $k=1,2,\ldots,n-1$ and $f^{(n)}(c)
+Prove the \emph{\myindex{$n$th derivative test}}.  Suppose $n \in \N$,
+$x_0 \in (a,b)$, and $f \colon (a,b) \to \R$ is $n$ times continuously
+differentiable, with $f^{(k)}(x_0) = 0$ for $k=1,2,\ldots,n-1$, and
+$f^{(n)}(x_0)
 \not= 0$.
 Prove\\
 a)~If $n$ is odd then $f$ does has neither a relative minimum,
-nor a maximum at $c$.
+nor a maximum at $x_0$.
 \\
-b)~If $n$ is even then $f$ has a strict relative minimum at $c$ if $f^{(n)}(c) > 0$
-and a strict relative maximum at $c$ if $f^{(n)}(c) < 0$.
+b)~If $n$ is even then $f$ has a strict relative minimum at $x_0$ if
+$f^{(n)}(x_0) > 0$
+and a strict relative maximum at $x_0$ if $f^{(n)}(x_0) < 0$.
+\end{exercise}
+
+\begin{exercise}
+Prove the more general version of the second derivative test.
+Suppose $f \colon (a,b) \to \R$ is differentiable and $x_0 \in (a,b)$
+is such that $f''(x_0)$ exists and $f''(x_0) > 0$.
+Prove that $f$ has a strict relative
+minimum at $x_0$.  Hint: Consider the limit definition of $f''(x_0)$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
