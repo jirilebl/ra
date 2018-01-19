@@ -1417,12 +1417,12 @@ minimum at $x_0$.  Hint: Consider the limit definition of $f''(x_0)$.
 
 \subsection{Inverse function theorem}
 
-Let us start with a simple example.  Suppose a function $f(x) = a x$ for a
+Let us start with a simple example.  Consider a function $f(x) := a x$ for a
 number $a \not= 0$.  Then $f \colon \R \to \R$ is bijective, and the inverse
-is $f^{-1}(y) = \frac{1}{a} x$.  In particular, $f'(x) = a$ and 
+is $f^{-1}(y) = \frac{1}{a} y$.  In particular, $f'(x) = a$ and 
 $(f^{-1})'(y) = \frac{1}{a}$.  As differentiable functions are
-``infinitesimally like'' linear functions, then we expect the same.
-
+``infinitesimally like'' linear functions, then we expect the same
+behavior from the inverse function.
 The main idea of differentiating inverse functions is the following lemma.
 
 \begin{lemma} \label{lemma:ift}
@@ -1440,34 +1440,37 @@ is continuously differentiable.
 \end{lemma}
 
 \begin{proof}
-By \propref{prop:invcont} $f$ has a continuous inverse.  Let us
-call the inverse $g \colon J \to I$ for convenience.
-Let $x,y$ be as in the statement, take $t \in I$, $t \not= x$, to be arbitrary
+By \propref{prop:invcont}, $f$ has a continuous inverse.  For convenience
+call the inverse $g \colon J \to I$.
+Let $x,y$ be as in the statement.  Take an arbitrary $t \in I$, $t \not= x$, 
 and let $s := f(t)$.  Then $s \not= y$, and
 \begin{equation*}
 \frac{g(s)-g(y)}{s-y} =
 \frac{g\bigl(f(t)\bigr)-g\bigl(f(x)\bigr)}{f(t)-f(x)} =
 \frac{t-x}{f(t)-f(x)} .
 \end{equation*}
-As $f$ is differentiable at $x$ and $f'(x) \not= 0$, then 
-$\frac{t-x}{f(t)-f(x)} \to \nicefrac{1}{f'(x)}$ as $t \to x$.
-As a function of $t$, the expression
-$\frac{t-x}{f(t)-f(x)}$ is continuous at $x$.
-As $g$ is continuous at $y$, and $g(y) = x$,
-the composition is continuous at $y$ by
-\propref{prop:compositioncont}.  That is, as
-$g(s) \to g(y)$ as $s \to y$, we 
-can plug in $g(s)$ for $t$, and $g(y)$ for $x$ and take the limit
-as $s$ goes to $y$, that is, the limit exists.  In other words,
+Let $Q(t) := \frac{t-x}{f(t)-f(x)}$ for $t \neq x$, and
+$Q(x) := \nicefrac{1}{f'(x)}$ (notice that $f'(x) \neq 0$).
+Then as $f$ is differentiable at $x$, $Q$ is continuous at $x$.
+As $g(s)$ is continuous at $y$,
+%and $g(y) = x$,
+the composition $Q\bigl(g(s)\bigr) = \frac{g(s)-g(y)}{s-y}$
+is continuous at $y$ by
+\propref{prop:compositioncont}, and the limit is
+$Q\bigl(g(y)\bigr) = Q(x) = \nicefrac{1}{f'(x)}$.
+In other words,
+%as
+%$g(s) \to g(y)$ as $s \to y$,
 \begin{equation*}
 \lim_{s \to y}
 \frac{g(s)-g(y)}{s-y} 
 =
-\lim_{t \to x} \frac{t-x}{f(t)-f(x)} 
+\lim_{t \to x}
+\frac{t-x}{f(t)-f(x)} 
 =
 \frac{1}{f'(x)} 
 =
-\frac{1}{f'\bigl(g(y)\bigr)}
+\frac{1}{f'\bigl(g(y)\bigr)} .
 \end{equation*}
 See \figureref{inversefig} for the geometric idea.
 \begin{myfigureht}
@@ -1478,8 +1481,9 @@ See \figureref{inversefig} for the geometric idea.
 function.\label{inversefig}}
 \end{myfigureht}
 
-If $f'$ are continuous and $f'$ is nonzero at all $x$,
-then the lemma applies at all points $x \in I$ and the resulting function $g'(y) =
+If $f'$ is continuous and nonzero at all $x \in I$,
+then the lemma applies at all $x \in I$.  As $g$ is also
+continuous, the derivative $g'(y) =
 \frac{1}{f'\bigl(g(y)\bigr)}$ must be continuous.
 \end{proof}
 
@@ -1500,7 +1504,8 @@ g'(y) = \frac{1}{f'\bigl( g(y) \bigr)} , \qquad \text{for all $y \in J$}.
 \begin{proof}
 Without loss of generality, suppose $f'(x_0) > 0$.  As $f'$ is
 continuous, there must exist an interval $I$ with $x_0 \in I$
-such that $f'(x) > 0$ for all $x_0 \in I$.
+such that $f'(x) > 0$ for all $x_0 \in I$.  See
+\exerciseref{exercise:positivecontneigh}.
 
 By \propref{incdecdiffstrictprop} $f$ is strictly increasing
 on $I$, and hence the restriction $f|_{I}$ bijective onto $J: = f(I)$.
@@ -1531,12 +1536,12 @@ using the convention $x^{n/m} := {(x^{1/m})}^{n}$.
 \begin{proof}
 For $x=0$ the existence of a unique root is trivial.
 
-Let $f(x) := x^n$.  Using product rule, $f$ is continuously differentiable
+Let $f(x) := x^n$.  Using the product rule, $f$ is continuously differentiable
 and $f'(x) = nx^{n-1}$, see \exerciseref{exercise:diffofxn}.  For $x > 0$ the derivative $f'$ is strictly positive
 and so again by \propref{incdecdiffstrictprop}, $f$ is strictly
 increasing (this can also be proved directly).  It is also easy to
 see that the image of $f$ is the entire interval $(0,\infty)$.  We 
-obtain a unique inverse $g$ and so the existence and uniqueness of positive
+obtain a unique inverse $g$ and with it the existence and uniqueness of positive
 $n$th roots.  We apply \lemmaref{lemma:ift} to obtain the derivative.
 \end{proof}
 
