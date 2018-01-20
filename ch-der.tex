@@ -1489,12 +1489,13 @@ Therefore
 = \lim_{y \to y_0} Q\bigl(g(y)\bigr)
 = \lim_{y \to y_0} \frac{g(y)-g(y_0)}{y-y_0} .
 \end{equation*}
-So $g$ is differentiable at $y_0$ and $g'(y_0) = \frac{1}{f'\bigl(g(y_0)\bigr)}$.
+So $g$ is differentiable at $y_0$ and $g'(y_0) =
+\frac{1}{f'\left(\vphantom{1^1_1}g(y_0)\right)}$.
 
 If $f'$ is continuous and nonzero at all $x \in I$,
 then the lemma applies at all $x \in I$.  As $g$ is also
 continuous, the derivative $g'(y) =
-\frac{1}{f'\bigl(g(y)\bigr)}$ must be continuous.
+\frac{1}{f'\left(\vphantom{1^1_1}g(y)\right)}$ must be continuous.
 \end{proof}
 
 What is usually called the inverse function theorem is the following result.
@@ -1565,7 +1566,7 @@ Let $g$ be the inverse of $f$ and we obtain
 the existence and uniqueness of positive
 $n$th roots.  \lemmaref{lemma:ift} says $g$ has a continuous
 derivative and $g'(x) =
-\frac{1}{f'\bigl(g(x)\bigr)} = \frac{1}{n {(x^{1/n})}^{n-1}}$.
+\frac{1}{f'\left(\vphantom{1^1_1}g(x)\right)} = \frac{1}{n {(x^{1/n})}^{n-1}}$.
 \end{proof}
 
 \begin{example}
@@ -1604,7 +1605,7 @@ f(\R)$, the inverse is continuously differentiable, and ${(f^{-1})}'(y) >
 Suppose $I,J$ are intervals and a monotone onto $f \colon I \to J$ has an inverse $g \colon J \to I$.
 Suppose you already know that both $f$ and $g$ are differentiable
 everywhere and $f'$ is never zero.  Using chain rule but not \lemmaref{lemma:ift} prove the
-formula $g'(y) = \frac{1}{f'(g(y))}$. % \bigl( \bigr) are overly big here!
+formula $g'(y) = \frac{1}{f'\left(\vphantom{1_1^1}g(y)\right)}$. % \bigl( \bigr) are overly big here!
 \end{exercise}
 
 \begin{exercise}
