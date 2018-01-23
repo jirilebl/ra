@@ -1,0 +1,51 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+int main()
+{
+  double slope;
+  double c;
+  double x;
+
+  picture(P(-0.3,-0.3), P(1.3,1.3), "2x2in");
+
+  begin();
+  //border();
+
+  //line(P(-0.3,0),P(1.3,0));
+  //line(P(0,-0.3),P(0,1.3));
+  //h_axis(3);
+  //v_axis(3);
+
+
+  plain();
+  line_style(".");
+  dash_size(1);
+  line(P(0,1.3),P(0,1.15));
+
+  bold();
+  solid();
+  arrow(P(0,1.15),P(0,0));
+  arrow(P(0,0),P(1.15,0));
+
+  plain();
+  line_style(".");
+  dash_size(1);
+  line(P(1.3,0),P(1.15,0));
+
+  dot(P(0,1));
+  label(P(0,1.0), P(-6,0), "$t=-1$", l);
+  dot(P(0,0.25));
+  label(P(0,0.25), P(-6,0), "$t=-\\nicefrac{1}{2}$", l);
+  dot(P(0,0));
+  label(P(-0.05,-0.05), P(0,0), "$t=0$", bl);
+  dot(P(0.25,0));
+  label(P(0.25,0), P(0,-4), "$t=\\nicefrac{1}{2}$", br);
+  dot(P(1,0));
+  label(P(1.0,0), P(0,-4), "$t=1$", br);
+
+  tikz_format();
+  end();
+}
+

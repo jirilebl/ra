@@ -1,0 +1,48 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+P F(double x, double y)
+{
+  	return P(x, y, 2*Atan(y/(x+sqrt(x*x+y*y))));
+}
+
+P FF(double r, double th)
+{
+	double x = r*Cos(th);
+	double y = r*Sin(th);
+	return F(x,y);
+}
+
+double MAX(1.5), Bd(2);
+P pt1(-MAX,-MAX), pt2(MAX, MAX);
+domain R(pt1, pt2, mesh(30,30), mesh(90,90));
+
+domain RR(P(sqrt(0.5),-M_PI+0.00001), P(sqrt(2), M_PI-0.00001), mesh(4,40), mesh(8,80));
+
+int main()
+{
+  picture(P(-1.5,-M_PI*0.7), P(1.5,M_PI*0.7), "2.5x2.5in");
+
+  begin();
+  //border();
+
+  camera.at(P(4,-8,20));
+
+  arrow(P(0,0,0), P(2,0,0));
+  label(P(2,0), P(2,4), "$x$", r); 
+
+  arrow(P(0,0,0), P(0,2.5,0));
+  label(P(0,2.5), P( 2,-2), "$y$", br);
+
+  plain ();
+  fill(White());
+  //surface(F, R); // rectangular
+  surface(FF, RR); // polar
+
+  arrow(P(0, 0, 0), P(0,0,M_PI/2));
+  label(P(0,0,M_PI/2), P(0,4), "$z$", t);
+
+  tikz_format();
+  end();
+}

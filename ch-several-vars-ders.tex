@@ -2505,7 +2505,13 @@ $f(x,y)
 \sqrt{x^2+y^2}$.
 %\end{equation}
 Show that $f$ is not differentiable at the origin.
+See \figureref{fig:distfromorgfunc}.
 \end{exercise}
+
+\begin{myfigureht}
+\includegraphics{figures/distfromorgfunc}
+\caption{Graph of $\sqrt{x^2+y^2}$.\label{fig:distfromorgfunc}}
+\end{myfigureht}
 
 \begin{exercise}
 Using only the definition of the derivative, show that
@@ -2732,7 +2738,7 @@ M \snorm{y-x} . \qedhere
 If $U$ is not convex the proposition is not true.  To see this fact, take
 the set
 \begin{equation*}
-U = \{ (x,y) : 0.9 < x^2+y^2 < 1.1 \} \setminus \{ (x,0) : x < 0 \} .
+U = \{ (x,y) : 0.5 < x^2+y^2 < 1.5 \} \setminus \{ (x,0) : x < 0 \} .
 \end{equation*}
 Let $f(x,y)$ be the angle that the line from the origin to $(x,y)$
 makes with the positive $x$ axis.  You can even write the formula for $f$:
@@ -2744,6 +2750,8 @@ Think spiral staircase with room in the middle.  See
 
 \begin{myfigureht}
 \subimport*{figures/}{example-nonlip.pdf_t}
+\qquad
+\includegraphics{figures/nonlipgraph}
 \caption{A non-Lipschitz function with uniformly bounded
 derivative.\label{mv:fignonlip}}
 \end{myfigureht}
@@ -3385,6 +3393,7 @@ In other words, in the context of the theorem we have
 $m$ equations in $n+m$ unknowns.
 \begin{align*}
 & f_1 (x_1,\ldots,x_n,y_1,\ldots,y_m) = 0 \\
+& f_2 (x_1,\ldots,x_n,y_1,\ldots,y_m) = 0 \\
 & \qquad \qquad \qquad  \vdots \\
 & f_m (x_1,\ldots,x_n,y_1,\ldots,y_m) = 0
 \end{align*}
@@ -3394,12 +3403,22 @@ and are continuous), and the matrix
 \begin{equation*}
 \begin{bmatrix}
 \frac{\partial f_1}{\partial y_1}
+&
+\frac{\partial f_1}{\partial y_2}
 & \ldots &
 \frac{\partial f_1}{\partial y_m}
 \\
-\vdots & \ddots & \vdots
+\frac{\partial f_2}{\partial y_1}
+&
+\frac{\partial f_2}{\partial y_2}
+& \ldots &
+\frac{\partial f_2}{\partial y_m}
+\\
+\vdots & \vdots & \ddots & \vdots
 \\
 \frac{\partial f_m}{\partial y_1}
+&
+\frac{\partial f_m}{\partial y_2}
 & \ldots &
 \frac{\partial f_m}{\partial y_m}
 \end{bmatrix}
@@ -3526,6 +3545,7 @@ not locally invertible, that is, the inverse theorem does not work).\\
 d) Show that $f$ is not continuously differentiable.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}[Polar coordinates] \label{mv:exercise:polarcoordinates}
 Define a mapping $F(r,\theta) := \bigl(r \cos(\theta), r \sin(\theta) \bigr)$.
 \\
@@ -3541,6 +3561,7 @@ inverse function theorem.\\
 f) Show that $F|_{(0,\infty) \times [0,2\pi)}$ is one to one and onto
 $\R^2 \setminus \{ (0,0) \}$.
 \end{exercise}
+\end{samepage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

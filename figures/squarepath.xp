@@ -1,0 +1,37 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+int main()
+{
+  double slope;
+  double c;
+  double x;
+
+  picture(P(-0.3,-0.3), P(1.3,1.3), "2x2in");
+
+  begin();
+  //border();
+
+  line(P(-0.3,0),P(1.3,0));
+  line(P(0,-0.3),P(0,1.3));
+  //h_axis(3);
+  //v_axis(3);
+
+
+  bold();
+  arrow(P(0,0),P(1,0));
+  arrow(P(1,0),P(1,1));
+  arrow(P(1,1),P(0,1));
+  arrow(P(0,1),P(0,0));
+
+  label(P(0.05,0), P(0,-9), "$t=0$", r);
+  label(P(0.95,0), P(0,-9), "$t=1$", r);
+  label(P(1,1), P(0,4), "$t=2$", t);
+  label(P(0,1), P(-4,0), "$t=3$", l);
+  label(P(0,0.1), P(-4,0), "$t=4$", l);
+
+  tikz_format();
+  end();
+}
+
