@@ -1637,8 +1637,9 @@ invertible, then
 \end{equation*}
 \end{prop}
 
-Proof follows by noting
+The proof follows by noting
 $\det(B^{-1}AB) = 
+\det(B^{-1})\det(A)\det(B) =
 \frac{1}{\det(B)}\det(A)\det(B) = \det(A)$.
 If in one basis $A$ is the matrix representing a
 linear operator, then for another basis we can find a matrix $B$ such
@@ -1952,14 +1953,24 @@ an $A \in L(\R^n,\R^m)$ such that
 We write $Df(x) := A$, or $f'(x) := A$, and
 we say $A$ is the \emph{\myindex{derivative}} of $f$ at $x$.
 When $f$ is \emph{differentiable} at
-all $x \in U$, we say simply that $f$ is differentiable.
+all $x \in U$, we say simply that $f$ is differentiable.  See
+\figureref{fig:svder} for an illustration.
 \end{defn}
+
+\begin{myfigureht}
+\includegraphics{figures/svder}
+\caption{Illustration of a derivative for a function $f \colon \R^2 \to \R$.  The vector $h$ is shown
+in the $x_1x_2$-plane based at $(x_1,x_2)$, and the vector
+$Ah \in \R^1$ is shown along the $y$ direction.\label{fig:svder}}
+\end{myfigureht}
 
 For a differentiable function,
 the derivative of $f$ is a function from $U$ to $L(\R^n,\R^m)$.  Compare
 to the one dimensional case, where the derivative is a function
 from $U$ to $\R$, but we really want to think of $\R$ here as
-$L(\R^1,\R^1)$.
+$L(\R^1,\R^1)$.  As in one dimension, the idea is that a differentiable
+mappings is ``infinitesimally close'' to a linear mappings, and this
+linear mapping is the derivative.
 
 The norms above must be on the right spaces of course.  The norm in the
 numerator is on $\R^m$, and the norm in the denominator is on $\R^n$ where $h$
@@ -2087,6 +2098,12 @@ and goes to zero as $h \to 0$.  Therefore,
 $f(p+h)$ must go to $f(p)$ as $h \to 0$.  That is, $f$ is continuous at $p$.
 \end{proof}
 
+If $A \in L(X,Y)$ and $B \in L(Y,Z)$ are linear maps, then we
+saw that they are their own derivative.  The composition
+$BA \in L(X,Z)$ is therefore also its own derivative, and
+so the derivative of the composition is the composition
+of the derivatives.  As differentiable maps are ``infinitesimally close''
+to linear maps, they have the same property:
 
 %\textbf{Theorem 9.15 (Chain rule):}
 \begin{thm}[Chain rule]
@@ -2107,7 +2124,8 @@ Without the points where things are evaluated, this is sometimes written as
 $F' = {(f \circ g)}' = g' f'$.  The way to
 understand it is that the derivative of the composition $g \circ f$
 is the composition of the derivatives of $g$ and $f$.  That is, if
-$f'(p) = A$ and $g'\bigl(f(p)\bigr) = B$, then $F'(p) = BA$.
+$f'(p) = A$ and $g'\bigl(f(p)\bigr) = B$, then $F'(p) = BA$,
+just as it is for linear maps.
 
 \begin{proof}
 Let $A := f'(p)$ and $B := g'\bigl(f(p)\bigr)$.  Take $h \in \R^n$
@@ -2221,12 +2239,20 @@ We call
 $\frac{\partial f}{\partial x_j} (x)$ the \emph{\myindex{partial derivative}}
 of $f$
 with respect to $x_j$.  Sometimes we write $D_j f$ instead.
+See \figureref{fig:svpartder}.
 
 For a mapping $f \colon U \to \R^m$ we write
 $f = (f_1,f_2,\ldots,f_m)$, where $f_k$ are real-valued
 functions.  Then we define
 $\frac{\partial f_k}{\partial x_j}$ (or write it as $D_j f_k$).
 \end{defn}
+
+\begin{myfigureht}
+\includegraphics{figures/svpartder}
+\caption{Illustration of a partial derivative for a function $f \colon \R^2
+\to \R$.  The slope of the given line in the $yx_2$-plane is
+$\frac{\partial f}{\partial x_2}(x_1,x_2)$.\label{fig:svpartder}}
+\end{myfigureht}
 
 Partial derivatives are easier to compute with all the machinery of
 calculus, and they provide a way to compute the derivative of a
@@ -2511,12 +2537,18 @@ f(x,y)
 0 & \text{ if $(x,y) = (0,0)$}.
 \end{cases}
 \end{equation*}
+See \figureref{fig:xyxsqysqvol2}.\\
 a)~Show that partial derivatives 
 $\frac{\partial f}{\partial x}$ and
 $\frac{\partial f}{\partial y}$ exist at all points (including the origin).\\
 b)~Show that $f$ is not continuous at the origin (and hence not
 differentiable).
 \end{exercise}
+
+\begin{myfigureht}
+\includegraphics{figures/xyxsqysq}
+\caption{Graph of $\frac{xy}{x^2+y^2}$.\label{fig:xyxsqysqvol2}}
+\end{myfigureht}
 
 \begin{samepage}
 \begin{exercise}
@@ -2529,6 +2561,7 @@ f(x,y)
 0 & \text{ if $(x,y) = (0,0)$}.
 \end{cases}
 \end{equation*}
+See \figureref{fig:xsqyxsqysq}.\\
 a)~Show that partial derivatives 
 $\frac{\partial f}{\partial x}$ and
 $\frac{\partial f}{\partial y}$ exist at all points.\\
@@ -2538,6 +2571,11 @@ c)~Show that $f$ is continuous at the origin.\\
 d)~Show that $f$ is not differentiable at the origin.
 \end{exercise}
 \end{samepage}
+
+\begin{myfigureht}
+\includegraphics{figures/xsqyxsqysq}
+\caption{Graph of $\frac{x^2y}{x^2+y^2}$.\label{fig:xsqyxsqysq}}
+\end{myfigureht}
 
 \begin{exercise}
 Suppose $f \colon \R^n \to \R^n$ is one-to-one, onto, differentiable at all
