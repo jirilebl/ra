@@ -1,0 +1,34 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+int main()
+{
+  double slope;
+  double c;
+  double x;
+
+  picture(P(-1.3,-1.3), P(1.3,1.3), "2x2in");
+
+  begin();
+  //border();
+
+  //circle(P(0,0),1);
+  //pen(Black(0.35));
+  fill(Black(0.35));
+  circle(P(0,0),1);
+
+  pen(Black());
+
+  arrow_inset(0.9);
+  arrow(P(-1.2,0),P(1.2,0));
+  label(P(1.2,0),P(0,6),"$x$",t);
+  arrow(P(0,-1.2),P(0,1.2));
+  label(P(0,1.2),P(6,0),"$y$",r);
+
+
+
+  tikz_format();
+  end();
+}
+

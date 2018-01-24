@@ -1,0 +1,133 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+double
+fl(double x)
+{
+	double xx = x-0;
+
+	return xx*(xx-0.2)*(xx-1.0);
+}
+
+double
+ft(double x)
+{
+	double xx = x-0;
+
+	return 1.0-(xx-0.1)*(xx-0.7)*(xx-1.0);
+}
+
+double
+gl(double y)
+{
+	double yy = y-0;
+
+	return yy*(yy-0.2)*(yy-1.0)+1.5;
+}
+P glP(double y) { return P(gl(y),y); }
+
+double
+gt(double y)
+{
+	double yy = y-0;
+
+	return 1.0-2*(yy-0.1)*(yy-0.7)*(yy-1.0)+1.5;
+}
+P gtP(double y) { return P(gt(y),y); }
+
+double
+hl(double x)
+{
+	double xx = x-3.0;
+
+	return 0.5+1.9*xx*(xx-1.0);
+}
+
+double
+ht(double x)
+{
+	double xx = x-3.0;
+
+	return 0.5-exp(xx)*1.1*xx*(xx-1.0);
+}
+
+int main()
+{
+  int n;
+
+  picture(P(0.0,-0.5), P(4,1.2), "4x1.8in");
+
+  begin();
+  //border();
+
+  bold();
+  plot(fl,0.0,1.0,20);
+  plot(ft,0.0,1.0,20);
+
+  line(P(0,fl(0)),P(0,ft(0)));
+  line(P(1,fl(1)),P(1,ft(1)));
+
+  plain();
+  for (n=1; n<10; n++) {
+	  double x = n/10.0;
+	  line(P(x,fl(x)),P(x,ft(x)));
+  }
+
+  bold();
+  plot(glP,0.0,1.0,20);
+  plot(gtP,0.0,1.0,20);
+
+  line(P(gl(0),0),P(gt(0),0));
+  line(P(gl(1),1),P(gt(1),1));
+
+  plain();
+  for (n=1; n<10; n++) {
+	  double y = n/10.0;
+	  line(P(gl(y),y),P(gt(y),y));
+  }
+
+  bold();
+  plot(hl,3.0,4.0,20);
+  plot(ht,3.0,4.0,20);
+
+  line(P(3,hl(3)),P(3,ht(3)));
+  line(P(4,hl(4)),P(4,ht(4)));
+
+  plain();
+  for (n=1; n<10; n++) {
+	  double x = n/10.0+3.0;
+	  line(P(x,hl(x)),P(x,ht(x)));
+  }
+  for (n=1; n<10; n++) {
+	  double y = n/10.0;
+	  double x1,x2;
+	  if (n > 5) {
+		  for (x1 = 3.0;x1 <= 4.0;x1+= 0.001) {
+			  if (ht(x1) >= y) break;
+		  }
+		  for (x2 = x1+0.001;x2 <= 4.0;x2+= 0.001) {
+			  if (ht(x2) <= y) break;
+		  }
+	  } else if (n < 5) {
+		  for (x1 = 3.0;x1 <= 4.0;x1+= 0.001) {
+			  if (hl(x1) <= y) break;
+		  }
+		  for (x2 = x1+0.001;x2 <= 4.0;x2+= 0.001) {
+			  if (hl(x2) >= y) break;
+		  }
+	  } else {
+		  x1 = 3.0;
+		  x2 = 4.0;
+	  }
+	  line(P(x1,y),P(x2,y));
+  }
+
+  label(P(0.5,-0.2), P(0,0), "type I", b);
+  label(P(2,-0.2), P(0,0), "type II", b);
+  label(P(3.5,-0.2), P(0,0), "type III", b);
+
+  tikz_format();
+  end();
+}
+
