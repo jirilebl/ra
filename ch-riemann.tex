@@ -2143,13 +2143,22 @@ F(x)E(-x) - E(-x)F(x) = 0 .
 \end{equation*}
 Therefore by \propref{prop:derzeroconst},
 $F(x)E(-x) = F(0)E(-0) = 1$ for all $x \in \R$.
-Doing the computation with $F = E$,
-we obtain $E(x)E(-x) = 1$.  Then
+Next, $1 = E(0) = E(x-x) = E(x)E(-x)$.
+%Doing the computation with $F = E$,
+%we obtain $E(x)E(-x) = 1$.
+Then
 \begin{equation*}
 0 = 1-1 = F(x)E(-x) - E(x)E(-x) = \bigl(F(x)-E(x)\bigr) E(-x) .
 \end{equation*}
-Since $E(x)E(-x) = 1$, then $E(-x) \not= 0$ for
-all $x$.  So
+%Since $E(x)E(-x) = 1$,
+Finally, $E(-x) \not= 0$\footnote{%
+$E$ is a function into $(0,\infty)$ after all.
+However it also follows
+from $E(x)E(-x) = 1$.  Therefore we prove uniqueness of $E$ 
+given \ref{it:exp:i} and \ref{it:exp:ii}, even for functions $E \colon \R
+\to \R$.}
+for all $x \in \R$.
+So
 $F(x)-E(x) = 0$ for all $x$, and we are done.
 \end{proof}
 
