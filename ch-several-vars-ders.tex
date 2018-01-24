@@ -80,7 +80,7 @@ are not elements of $\R^n$ (vectors in the ``traditional'' sense).
 
 If $Y \subset X$ is a subset that is a vector space itself with the same
 operations, then $Y$ is called a \emph{\myindex{subspace}} or
-\emph{\myindex{vector subspace}} of $X$.
+a \emph{\myindex{vector subspace}} of $X$.
 \end{defn}
 
 %In short $X$ is an Abelian group with respect to the addition, and equipped
@@ -108,9 +108,11 @@ subsets of $\R^n$, but there are other vector spaces useful in
 analysis.  Let us give a couple of examples.
 
 \begin{example}
-A trivial example of a vector space (the smallest one in fact) is just
-$X = \{ 0 \}$.  The operations are defined in the obvious way.  You always
-need a zero vector to exist, so all vector spaces are nonempty sets.
+A trivial example of a vector space is just
+$X := \{ 0 \}$.  The operations are defined in the obvious way: $0 + 0 := 0$
+and $a0 := 0$.  A zero vector must always exist,
+so all vector spaces are nonempty sets, and this $X$ is in fact the smallest
+possible vector space.
 \end{example}
 
 \begin{example}
@@ -126,7 +128,8 @@ to check that all the vector space conditions are satisfied.
 
 \begin{example}
 The space of polynomials $c_0 + c_1 t + c_2 t^2 + \cdots + c_m t^m$
-is a vector space, let us denote it by $\R[t]$ (coefficients are real and
+(of arbitrary degree $m$) is a vector space.
+Let us denote it by $\R[t]$ (coefficients are real and
 the variable is $t$).  The operations are defined in the same way as for
 functions above.
 Suppose there are
@@ -147,11 +150,12 @@ a(c_0 + c_1 t + c_2 t^2 + \cdots + c_m t^m)
 (ac_0) + (ac_1) t + (ac_2) t^2 + \cdots + (ac_m) t^m  .
 \end{equation*}
 Despite what it looks like, $\R[t]$ is not equivalent to $\R^n$ for any $n$.  In
-particular, it is not ``finite dimensional'', we will make this notion
+particular, it is not ``finite dimensional''.  We will make this notion
 precise in just a little bit.  One can make a finite
 dimensional vector subspace by restricting the degree.  For example,
 if we say $\sP_n$ is the set of polynomials of degree $n$ or less,
-then $\sP_n$ is a finite dimensional vector space.
+then $\sP_n$ is a finite dimensional vector space, and we could in fact
+identify it with $\R^{n+1}$.
 
 The space $\R[t]$ can be thought of as a subspace of $C(\R,\R)$.  If we
 restrict the range of $t$ to $[0,1]$, $\R[t]$ can be identified with
@@ -213,8 +217,32 @@ a linear combination
 \end{example}
 
 A sum of two linear combinations is again a linear combination, and
-a scalar multiple of a linear combination is a linear combination,
-which proves the following proposition.
+a scalar multiple of a linear combination is a linear combination, that is,
+\begin{multline*}
+(a_1 x_1 + 
+a_2 x_2 +  \cdots
++ a_k x_k)
++
+(b_1 x_1 + 
+b_2 x_2 +  \cdots
++ b_k x_k)
+\\
+=
+(a_1 + b_1) x_1 + 
+(a_2 + b_2) x_2 +  \cdots
++ (a_k + b_k) x_k ,
+\end{multline*}
+and
+\begin{equation*}
+b (a_1 x_1 + 
+a_2 x_2 +  \cdots
++ a_k x_k)
+=
+b a_1  x_1 + 
+b a_2 x_2 +  \cdots
++ b a_k x_k .
+\end{equation*}
+We formalize this statement in a proposition.
 
 \begin{prop}
 Let $X$ be a vector space.  For any $Y \subset X$,
@@ -226,7 +254,13 @@ If $Y$ is already a vector space, then $\spn(Y) = Y$.
 
 \begin{defn}
 A set of vectors $\{ x_1, x_2, \ldots, x_k \} \subset X$ is 
-\emph{\myindex{linearly independent}}, if the only solution to
+\emph{\myindex{linearly independent}}\footnote{%
+For an infinite set $Y \subset X$, we would say $Y$ is linearly
+independent if every finite subset of $Y$ is linearly independent
+in the sense given.
+However, this situation only comes up in infinitely many dimensions and
+we will not require it.},
+if the only solution to
 \begin{equation} \label{eq:lincomb}
 a_1 x_1 + a_2 x_2 + \cdots + a_k x_k = 0
 \end{equation}
@@ -235,38 +269,49 @@ is the trivial solution $a_1 = a_2 = \cdots = a_k = 0$.
 A set that is not linearly independent, is
 \emph{\myindex{linearly dependent}}.
 
-A linearly independent set $B$ of vectors such that
+A linearly independent set of vectors $B$ such that
 $\spn(B) = X$ 
-is called a \emph{\myindex{basis}} of $X$.  For example the
-set $Y$ of the two vectors in
-\exampleref{example:vecspr2span} is a basis of $\R^2$.
+is called a \emph{\myindex{basis}} of $X$.
 
 If a vector space $X$ contains a linearly independent set of $d$ vectors,
 but no linearly independent set of $d+1$ vectors, then we say
 the \emph{\myindex{dimension}} or $\dim \, X := d$.  If for all $d \in \N$ the vector space
 $X$ contains a set of $d$ linearly independent vectors, we say
 $X$ is infinite dimensional and write $\dim \, X := \infty$.
+
+For the trivial vector space $\{ 0 \}$, we define $\dim \, \{ 0 \} := 0$.
 \end{defn}
 
-Clearly for the trivial vector space, $\dim \, \{ 0 \} = 0$.
-%So far we have not shown that any other vector space has a finite dimension.
+
+For example, the
+set $Y$ of the two vectors in
+\exampleref{example:vecspr2span} is a basis of $\R^2$, and we have
+that $\dim \, \R^2 \geq 2$.
 We will see in a moment that any vector subspace of $\R^n$
 has a finite dimension, and that dimension is less than or equal to $n$.
+It will follow that $\dim \, \R^2 = 2$.
 
 If a set is linearly dependent, then one of the
 vectors is a linear combination of the others.  In other words, in
 \eqref{eq:lincomb}
-if $a_j \not= 0$, then we solve for $x_j$
+if $a_j \not= 0$, then we solve for $x_j$:
 \begin{equation*}
-x_j = \frac{a_1}{a_j} x_1 + \cdots + 
-\frac{a_{j-1}}{a_j} x_{j-1} +
-\frac{a_{j+1}}{a_j} x_{j+1} +
+x_j = \frac{-a_1}{a_j} x_1 + \cdots + 
+\frac{-a_{j-1}}{a_j} x_{j-1} +
+\frac{-a_{j+1}}{a_j} x_{j+1} +
 \cdots + 
-\frac{a_k}{a_k} x_k .
+\frac{-a_k}{a_k} x_k .
 \end{equation*}
 The vector $x_j$ has at least two different representations
 as linear combinations of $\{ x_1,x_2,\ldots,x_k \}$. The one above and
 $x_j$ itself. 
+
+For example, the set $\{ (0,1), (2,3), (5,0) \}$ is linearly dependent:
+\begin{equation*}
+3(0,1) - (2,3) + 2(1,0) = 0 ,
+\qquad \text{so} \qquad
+(2,3) = 3(0,1) + 2(1,0) .
+\end{equation*}
 
 \begin{prop}
 If $B = \{ x_1, x_2, \ldots, x_k \}$ is a basis of a vector space $X$, then
@@ -456,7 +501,8 @@ It is not hard to see that $aA \in L(X,Y)$
 and $A+B \in L(X,Y)$, and that $AB \in L(X,Z)$.
 In particular, $L(X,Y)$ is a vector space.
 As the set $L(X)$ is not only a vector space, but also
-admits a product, it is often called an \emph{\myindex{algebra}}.
+admits a product (composition of operators),
+it is often called an \emph{\myindex{algebra}}.
 
 An immediate consequence of the definition of a linear mapping is: if
 $A$ is linear, then $A0 = 0$.
@@ -610,7 +656,8 @@ $(1-t)x+ty$ is in $U$ for all $t \in [0,1]$.  See \figureref{mv:convexcomb}.
 \caption{Convexity.\label{mv:convexcomb}}
 \end{myfigureht}
 
-Note that in $\R$, every connected interval is convex.  In $\R^2$ (or higher
+In $\R$, convex sets are precisely the intervals.
+In $\R^2$ (or higher
 dimensions) there are lots of nonconvex connected sets.  For example
 the set $\R^2 \setminus \{0\}$ is not convex but it is connected.  To see
 this simply take any $x \in \R^2 \setminus \{0\}$ and let $y:=-x$.
@@ -625,7 +672,8 @@ convex.
 \end{exercise}
 
 \begin{example}
-Any subspace $V$ of a vector space $X$ is convex.
+As a convex combination is in particular a linear combination,
+any subspace $V$ of a vector space $X$ is convex.
 \end{example}
 
 \begin{example}
@@ -709,11 +757,11 @@ Verify that $\R^n$ is a vector space.
 
 \begin{exercise}
 Let $X$ be a vector space.
-Prove that a finite set of vectors $\{ x_1,\ldots,x_n \} \subset X$ 
+Prove that a finite set of vectors $\{ x_1,x_2,\ldots,x_n \} \subset X$ 
 is linearly independent if and only if for every $j=1,2,\ldots,n$
 \begin{equation*}
 \spn( \{ x_1,\ldots,x_{j-1},x_{j+1},\ldots,x_n \}) \subsetneq
-\spn( \{ x_1,\ldots,x_n \}) .
+\spn( \{ x_1,x_2,\ldots,x_n \}) .
 \end{equation*}
 That is, the span of the set with one vector removed is strictly smaller.
 \end{exercise}
@@ -859,8 +907,10 @@ and $y=(y_1,y_2,\ldots,y_n) \in \R^n$, define
 x \cdot y := \sum_{j=1}^n x_j y_j .
 \end{equation*}
 It is easy to see that the dot product is linear in each variable
-separately, that is, it is a linear mapping when you keep one of the
-variables constant.
+separately.  That is,
+if $y$ is fixed the map $x \mapsto x \cdot y$ is linear map from
+$\R^n$ to $\R$.  Similarly, if $x$ is fixed, then
+$y \mapsto x \cdot y$ is also linear.
 The \emph{\myindex{Euclidean norm}} is defined as
 \begin{equation*}
 \snorm{x} := \snorm{x}_{\R^n} := \sqrt{x \cdot x} = \sqrt{(x_1)^2+(x_2)^2 + \cdots + (x_n)^2}.
@@ -913,7 +963,8 @@ Elementary algebra says that the discriminant must be negative:
 or in other words ${(x \cdot y)}^2 < \snorm{x}^2\snorm{y}^2$.
 \end{proof}
 
-Item \ref{defn:norm:iii}, the triangle inequality, follows via a simple computation:
+Item \ref{defn:norm:iii}, the triangle inequality in $\R^n$,
+follows via the following computation:
 \begin{equation*}
 \snorm{x+y}^2 
 =
@@ -926,11 +977,13 @@ x \cdot x + y \cdot y + 2 (x \cdot y)
 
 The distance
 $d(x,y) := \snorm{x-y}$ is the standard
-distance function on $\R^n$ that we used when we talked about metric spaces.
+distance (standard metric) on $\R^n$ that
+we used when we talked about metric spaces.
 
-In fact, on any vector space $X$, once we
+On any vector space $X$, once we
 have a norm (any norm),
-we define a distance $d(x,y) := \snorm{x-y}$ that makes $X$ into
+we define a distance $d(x,y) := \snorm{x-y}$, and this
+$d$ makes $X$ into
 a metric space (an easy exercise).
 
 %Let $A \in L(\R^n,\R^m)$.  Define
@@ -1584,8 +1637,9 @@ invertible, then
 \end{equation*}
 \end{prop}
 
-Proof follows by noting
+The proof follows by noting
 $\det(B^{-1}AB) = 
+\det(B^{-1})\det(A)\det(B) =
 \frac{1}{\det(B)}\det(A)\det(B) = \det(A)$.
 If in one basis $A$ is the matrix representing a
 linear operator, then for another basis we can find a matrix $B$ such
@@ -1880,9 +1934,12 @@ In other words, there was a number $a$ (the derivative of $f$ at $x$) such that
 = 0.
 \end{equation*}
 
-Multiplying by $a$ is a linear map in one dimension.  That is,
-we think of $a \in L(\R^1,\R^1)$ which is the best linear approximation of
-$f$ near $x$.  We use this definition
+Multiplying by $a$ is a linear map in one dimension:
+$h \mapsto ah$.
+That is,
+we think of $a \in L(\R^1,\R^1)$, 
+which is the best linear approximation of
+how $f$ changes near $x$.  We use this definition
 to extend differentiation to more variables.
 
 \begin{defn}
@@ -1896,14 +1953,24 @@ an $A \in L(\R^n,\R^m)$ such that
 We write $Df(x) := A$, or $f'(x) := A$, and
 we say $A$ is the \emph{\myindex{derivative}} of $f$ at $x$.
 When $f$ is \emph{differentiable} at
-all $x \in U$, we say simply that $f$ is differentiable.
+all $x \in U$, we say simply that $f$ is differentiable.  See
+\figureref{fig:svder} for an illustration.
 \end{defn}
+
+\begin{myfigureht}
+\includegraphics{figures/svder}
+\caption{Illustration of a derivative for a function $f \colon \R^2 \to \R$.  The vector $h$ is shown
+in the $x_1x_2$-plane based at $(x_1,x_2)$, and the vector
+$Ah \in \R^1$ is shown along the $y$ direction.\label{fig:svder}}
+\end{myfigureht}
 
 For a differentiable function,
 the derivative of $f$ is a function from $U$ to $L(\R^n,\R^m)$.  Compare
 to the one dimensional case, where the derivative is a function
 from $U$ to $\R$, but we really want to think of $\R$ here as
-$L(\R^1,\R^1)$.
+$L(\R^1,\R^1)$.  As in one dimension, the idea is that a differentiable
+mappings is ``infinitesimally close'' to a linear mappings, and this
+linear mapping is the derivative.
 
 The norms above must be on the right spaces of course.  The norm in the
 numerator is on $\R^m$, and the norm in the denominator is on $\R^n$ where $h$
@@ -1974,7 +2041,9 @@ $f'(x) = A$.  This is easily seen:
 
 \begin{example}
 Let $f \colon \R^2 \to \R^2$ be defined by
-$f(x,y) = \bigl(f_1(x,y),f_2(x,y)\bigr) := (1+x+2y+x^2,2x+3y+xy)$.
+\begin{equation*}
+f(x,y) = \bigl(f_1(x,y),f_2(x,y)\bigr) := (1+x+2y+x^2,2x+3y+xy).
+\end{equation*}
 Let us show that $f$ is differentiable at the origin and let us 
 compute the derivative,
 directly using the definition.  The derivative is in $L(\R^2,\R^2)$ so it can be
@@ -2029,6 +2098,13 @@ and goes to zero as $h \to 0$.  Therefore,
 $f(p+h)$ must go to $f(p)$ as $h \to 0$.  That is, $f$ is continuous at $p$.
 \end{proof}
 
+If $A \in L(X,Y)$ and $B \in L(Y,Z)$ are linear maps, then we
+saw that they are their own derivative.  The composition
+$BA \in L(X,Z)$ is therefore also its own derivative, and
+so the derivative of the composition is the composition
+of the derivatives.  As differentiable maps are ``infinitesimally close''
+to linear maps, they have the same property:
+
 %\textbf{Theorem 9.15 (Chain rule):}
 \begin{thm}[Chain rule]
 Let $U \subset \R^n$ be open and let $f \colon U \to \R^m$ be
@@ -2048,7 +2124,8 @@ Without the points where things are evaluated, this is sometimes written as
 $F' = {(f \circ g)}' = g' f'$.  The way to
 understand it is that the derivative of the composition $g \circ f$
 is the composition of the derivatives of $g$ and $f$.  That is, if
-$f'(p) = A$ and $g'\bigl(f(p)\bigr) = B$, then $F'(p) = BA$.
+$f'(p) = A$ and $g'\bigl(f(p)\bigr) = B$, then $F'(p) = BA$,
+just as it is for linear maps.
 
 \begin{proof}
 Let $A := f'(p)$ and $B := g'\bigl(f(p)\bigr)$.  Take $h \in \R^n$
@@ -2162,12 +2239,20 @@ We call
 $\frac{\partial f}{\partial x_j} (x)$ the \emph{\myindex{partial derivative}}
 of $f$
 with respect to $x_j$.  Sometimes we write $D_j f$ instead.
+See \figureref{fig:svpartder}.
 
 For a mapping $f \colon U \to \R^m$ we write
 $f = (f_1,f_2,\ldots,f_m)$, where $f_k$ are real-valued
 functions.  Then we define
 $\frac{\partial f_k}{\partial x_j}$ (or write it as $D_j f_k$).
 \end{defn}
+
+\begin{myfigureht}
+\includegraphics{figures/svpartder}
+\caption{Illustration of a partial derivative for a function $f \colon \R^2
+\to \R$.  The slope of the given line in the $yx_2$-plane is
+$\frac{\partial f}{\partial x_2}(x_1,x_2)$.\label{fig:svpartder}}
+\end{myfigureht}
 
 Partial derivatives are easier to compute with all the machinery of
 calculus, and they provide a way to compute the derivative of a
@@ -2420,7 +2505,13 @@ $f(x,y)
 \sqrt{x^2+y^2}$.
 %\end{equation}
 Show that $f$ is not differentiable at the origin.
+See \figureref{fig:distfromorgfunc}.
 \end{exercise}
+
+\begin{myfigureht}
+\includegraphics{figures/distfromorgfunc}
+\caption{Graph of $\sqrt{x^2+y^2}$.\label{fig:distfromorgfunc}}
+\end{myfigureht}
 
 \begin{exercise}
 Using only the definition of the derivative, show that
@@ -2452,12 +2543,18 @@ f(x,y)
 0 & \text{ if $(x,y) = (0,0)$}.
 \end{cases}
 \end{equation*}
+See \figureref{fig:xyxsqysqvol2}.\\
 a)~Show that partial derivatives 
 $\frac{\partial f}{\partial x}$ and
 $\frac{\partial f}{\partial y}$ exist at all points (including the origin).\\
 b)~Show that $f$ is not continuous at the origin (and hence not
 differentiable).
 \end{exercise}
+
+\begin{myfigureht}
+\includegraphics{figures/xyxsqysq}
+\caption{Graph of $\frac{xy}{x^2+y^2}$.\label{fig:xyxsqysqvol2}}
+\end{myfigureht}
 
 \begin{samepage}
 \begin{exercise}
@@ -2470,6 +2567,7 @@ f(x,y)
 0 & \text{ if $(x,y) = (0,0)$}.
 \end{cases}
 \end{equation*}
+See \figureref{fig:xsqyxsqysq}.\\
 a)~Show that partial derivatives 
 $\frac{\partial f}{\partial x}$ and
 $\frac{\partial f}{\partial y}$ exist at all points.\\
@@ -2479,6 +2577,11 @@ c)~Show that $f$ is continuous at the origin.\\
 d)~Show that $f$ is not differentiable at the origin.
 \end{exercise}
 \end{samepage}
+
+\begin{myfigureht}
+\includegraphics{figures/xsqyxsqysq}
+\caption{Graph of $\frac{x^2y}{x^2+y^2}$.\label{fig:xsqyxsqysq}}
+\end{myfigureht}
 
 \begin{exercise}
 Suppose $f \colon \R^n \to \R^n$ is one-to-one, onto, differentiable at all
@@ -2635,7 +2738,7 @@ M \snorm{y-x} . \qedhere
 If $U$ is not convex the proposition is not true.  To see this fact, take
 the set
 \begin{equation*}
-U = \{ (x,y) : 0.9 < x^2+y^2 < 1.1 \} \setminus \{ (x,0) : x < 0 \} .
+U = \{ (x,y) : 0.5 < x^2+y^2 < 1.5 \} \setminus \{ (x,0) : x < 0 \} .
 \end{equation*}
 Let $f(x,y)$ be the angle that the line from the origin to $(x,y)$
 makes with the positive $x$ axis.  You can even write the formula for $f$:
@@ -2647,6 +2750,8 @@ Think spiral staircase with room in the middle.  See
 
 \begin{myfigureht}
 \subimport*{figures/}{example-nonlip.pdf_t}
+\qquad
+\includegraphics{figures/nonlipgraph}
 \caption{A non-Lipschitz function with uniformly bounded
 derivative.\label{mv:fignonlip}}
 \end{myfigureht}
@@ -3288,6 +3393,7 @@ In other words, in the context of the theorem we have
 $m$ equations in $n+m$ unknowns.
 \begin{align*}
 & f_1 (x_1,\ldots,x_n,y_1,\ldots,y_m) = 0 \\
+& f_2 (x_1,\ldots,x_n,y_1,\ldots,y_m) = 0 \\
 & \qquad \qquad \qquad  \vdots \\
 & f_m (x_1,\ldots,x_n,y_1,\ldots,y_m) = 0
 \end{align*}
@@ -3297,12 +3403,22 @@ and are continuous), and the matrix
 \begin{equation*}
 \begin{bmatrix}
 \frac{\partial f_1}{\partial y_1}
+&
+\frac{\partial f_1}{\partial y_2}
 & \ldots &
 \frac{\partial f_1}{\partial y_m}
 \\
-\vdots & \ddots & \vdots
+\frac{\partial f_2}{\partial y_1}
+&
+\frac{\partial f_2}{\partial y_2}
+& \ldots &
+\frac{\partial f_2}{\partial y_m}
+\\
+\vdots & \vdots & \ddots & \vdots
 \\
 \frac{\partial f_m}{\partial y_1}
+&
+\frac{\partial f_m}{\partial y_2}
 & \ldots &
 \frac{\partial f_m}{\partial y_m}
 \end{bmatrix}
@@ -3429,6 +3545,7 @@ not locally invertible, that is, the inverse theorem does not work).\\
 d) Show that $f$ is not continuously differentiable.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}[Polar coordinates] \label{mv:exercise:polarcoordinates}
 Define a mapping $F(r,\theta) := \bigl(r \cos(\theta), r \sin(\theta) \bigr)$.
 \\
@@ -3444,6 +3561,7 @@ inverse function theorem.\\
 f) Show that $F|_{(0,\infty) \times [0,2\pi)}$ is one to one and onto
 $\R^2 \setminus \{ (0,0) \}$.
 \end{exercise}
+\end{samepage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

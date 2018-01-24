@@ -168,8 +168,9 @@ We need to figure out $g(1)$, knowing $g'(y) = \frac{1}{y+1}$ and $g(0) =
 \begin{exercise}
 Prove the two statements that were asserted in the example.\\
 a) Prove $\frac{x-1}{\ln(x)}$ extends to a continuous function of
-$[0,1]$.\\
-b) Prove $\frac{x^y-1}{\ln(x)}$ extends to be a continuous function
+$[0,1]$.  That is, there exists a continuous function on $[0,1]$
+that equals $\frac{x-1}{\ln(x)}$ on $(0,1)$.\\
+b) Prove $\frac{x^y-1}{\ln(x)}$ extends to a continuous function
 on $[0,1] \times [0,1]$.
 \end{exercise}
 
@@ -363,7 +364,7 @@ Let $\gamma \colon [0,4] \to \R^2$ be defined by
 \end{cases}
 \end{equation*}
 Then the reader can check that the path is the unit square traversed
-counterclockwise.  We can check that for example
+counterclockwise.  See \figureref{fig:squarepath}.  We can check that for example
 $\gamma|_{[1,2]}(t) = (1,t-1)$ and therefore
 $(\gamma|_{[1,2]})'(t) = (0,1) \not= 0$.  It is good to notice at this point
 that
@@ -372,6 +373,10 @@ $(\gamma|_{[0,1]})'(1) = (1,0)$, and
 $\gamma^{\:\prime}(1)$ does not exist.  That is, at the corners $\gamma$ is of course
 not differentiable, even though the restrictions are differentiable and the
 derivative depends on which restriction you take.
+\begin{myfigureht}
+\includegraphics{figures/squarepath}
+\caption{The path $\gamma$ traversing the unit square.\label{fig:squarepath}}
+\end{myfigureht}
 \end{example}
 
 \begin{example}
@@ -385,12 +390,18 @@ take the function
 (0,t^2) & \text{ if $t \geq 0$.}
 \end{cases}
 \end{equation*}
+See \figureref{fig:cornersmoothpath}.
 It is left for the reader to check that $\gamma$ is continuously
 differentiable, yet the image $\gamma(\R) = \{ (x,y) \in \R^2 : (x,y) =
 (s,0) \text{ or } (x,y) = (0,s) \text{ for some $s \geq 0$ } \}$ has a
 ``corner'' at the origin.  And that is because $\gamma^{\:\prime}(0) = (0,0)$.
 More complicated examples with even infinitely many corners exist,
 see the exercises.
+\begin{myfigureht}
+\includegraphics{figures/cornersmoothpath}
+\caption{Smooth path with zero derivative with a corner.  Several values of
+$t$ are marked with dots.\label{fig:cornersmoothpath}}
+\end{myfigureht}
 \end{example}
 
 The condition that $\gamma^{\:\prime}(t) \not= 0$ even at the endpoints guarantees
@@ -686,7 +697,13 @@ as $\beta(t) := \bigl(\cos(-t),\sin(-t)\bigr)$.  Then
 Now, $\alpha$ was an orientation preserving reparametrization of
 $\gamma$, and the integral was the same.  On the other hand $\beta$
 is an orientation reversing reparametrization and the integral was
-minus the original.
+minus the original.  See \figureref{fig:circlepathrepar}.
+\begin{myfigureht}
+\includegraphics{figures/circlepathrepar}
+\caption{Circular path reparametrized in two different ways. The arrow
+indicates orientation of $\gamma$ and $\alpha$. $\beta$ traverses in the
+opposite direction.\label{fig:circlepathrepar}}
+\end{myfigureht}
 \end{example}
 
 The previous example is not a fluke.
@@ -790,7 +807,17 @@ $\beta \colon [0,2\pi] \to \R^2$ is given by $\beta(t) :=
 $\gamma\bigl([0,2\pi]\bigr) = \beta\bigl([0,2\pi]\bigr)$, and we travel
 around the same curve, the unit circle.  But $\gamma$ goes around the unit
 circle once in the counter clockwise direction, and $\beta$ goes around the
-unit circle twice (in the same direction).  Then
+unit circle twice (in the same direction). 
+See \figureref{fig:circlepathrepar2}.
+\begin{myfigureht}
+\includegraphics{figures/circlepathrepar2}
+\caption{Circular path traversed once by
+$\gamma \colon [0,2\pi] \to \R^2$
+and twice by
+$\beta \colon [0,2\pi] \to \R^2$.\label{fig:circlepathrepar2}}
+\end{myfigureht}
+
+Then
 \begin{align*}
 & \int_{\gamma} -y\, dx + x\,dy
 =
@@ -949,6 +976,7 @@ $\gamma\bigl( [a,b] \bigr) = \Gamma$.  The we define the
 Let $x,y \in \R^n$ be two points and write $[x,y]$ as the straight line
 segment between the two points $x$ and $y$.  We parametrize
 $[x,y]$ by $\gamma(t) := (1-t)x + ty$ for $t$ running between $0$ and $1$.
+See \figureref{fig:straightpath}.
 We find $\gamma^{\:\prime}(t) = y-x$ and therefore
 \begin{equation*}
 \ell\bigl([x,y]\bigr)
@@ -961,6 +989,11 @@ We find $\gamma^{\:\prime}(t) = y-x$ and therefore
 \end{equation*}
 So the length of $[x,y]$ is the distance between $x$ and $y$ in the
 euclidean metric.
+\begin{myfigureht}
+\includegraphics{figures/straightpath}
+\caption{Straight path between $x$ and $y$ parametrized
+by $(1-t)x + ty$..\label{fig:straightpath}}
+\end{myfigureht}
 \end{example}
 
 A simple piecewise smooth path $\gamma \colon [0,r] \to \R^n$ is
@@ -1519,7 +1552,7 @@ However, there is no $f \colon \R^2 \setminus \{ 0 \} \to \R$ such that
 $df = \omega$.  We saw in 
 \exampleref{example:mv:irrotoneformint} if we integrate from $(1,0)$ to $(1,0)$
 along the unit circle, that is $\gamma(t) = \bigl(\cos(t),\sin(t)\bigr)$
-for $t \in [0,2\pi]$ we got $2\pi$ and not 0 as it should be if the integral
+for $t \in [0,2\pi]$ we get $2\pi$ and not 0 as it should be if the integral
 is path independent or in other words if there would exist an $f$ such that
 $df = \omega$.
 \end{example}

@@ -660,7 +660,36 @@ A function $f$ is said to have \emph{\myindex{compact support}}
 if $\supp(f)$ is a compact set.
 
 \begin{example}
-Suppose $B(0,1) \subset \R^2$ is the unit disc.
+The function $f \colon \R^2 \to \R$ defined by
+\begin{equation*}
+f(x,y) :=
+\begin{cases}
+-x{(x^2+y^2-1)}^2 & \text{if $\sqrt{x^2+y^2} \leq 1$}, \\
+0 & \text{else},
+\end{cases}
+\end{equation*}
+is continuous and its support is the closed unit disc
+$C(0,1) = \{ (x,y) : \sqrt{x^2 + y^2} \leq 1 \}$, which is a compact set, so $f$ has compact support.
+Do note that the function is zero on the entire $y$-axis
+and on the unit circle, but
+all points that lie in the closed unit disc are still within the support
+as they are in the closure of points where $f$ is nonzero.
+See \figureref{fig:compsup}.
+\begin{myfigureht}
+\includegraphics{figures/compsup}
+\qquad
+\includegraphics{figures/compsupsup}
+\caption{Function with compact support (left), the support
+is the closed unit disc (right).\label{fig:compsup}}
+\end{myfigureht}
+\end{example}
+
+If $U \not= \R^n$, then you must be careful to
+take the closure on the support in $U$.  Consider the following
+two examples.
+
+\begin{example}
+Consider the unit disc $B(0,1) \subset \R^2$.
 The function $f \colon B(0,1) \to \R$ defined by
 \begin{equation*}
 f(x,y) :=
@@ -2674,7 +2703,12 @@ $k \colon [c,d] \to \R$, such that
 U := \{ (x,y) \in \R^2 : c < y < d \text{ and } h(y) < x < k(y) \} .
 \end{equation*}
 Finally, $U \subset \R^2$ is of \emph{type III}\index{type III domain}
-if it is both of type I and type II.
+if it is both of type I and type II.  See \figureref{fig:greenstypes}.
+
+\begin{myfigureht}
+\includegraphics{figures/greenstypes}
+\caption{Domain types for Green's theorem.\label{fig:greenstypes}}
+\end{myfigureht}
 
 %If we have a type I domain, then
 %the paths given by the graphs of $f$ and $g$ together with the

@@ -1,0 +1,37 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+P F(double x, double y)
+{
+  	return P(x, y, sqrt(x*x+y*y));
+}
+
+double MAX(1.5), Bd(2);
+P pt1(-MAX,-MAX), pt2(MAX, MAX);
+domain R(pt1, pt2, mesh(20,20), mesh(40,40));
+
+int main()
+{
+  picture(P(-Bd,-Bd), P(Bd,Bd), "2.0x2.0in");
+
+  begin();
+
+  camera.at(P(6,2,3));
+
+  arrow(P(-Bd,0,0), P(Bd,0,0));
+  label(P(Bd,0), P(-4,-2), "$x$", l); 
+
+  arrow(P(0,-Bd,0), P(0,Bd,0));
+  label(P(0,Bd), P( 2,-2), "$y$", br);
+
+  plain ();
+  fill(White());
+  surface(F, R); // rectangular
+
+  arrow(P(0, 0, 1.1), P(0,0,1.95));
+  label(P(0,0,1.95), P(0,4), "$z$", t);
+
+  tikz_format();
+  end();
+}
