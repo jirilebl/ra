@@ -2737,7 +2737,7 @@ M \snorm{y-x} . \qedhere
 If $U$ is not convex the proposition is not true.  To see this fact, take
 the set
 \begin{equation*}
-U = \{ (x,y) : 0.5 < x^2+y^2 < 1.5 \} \setminus \{ (x,0) : x < 0 \} .
+U = \{ (x,y) : 0.5 < x^2+y^2 < 2 \} \setminus \{ (x,0) : x < 0 \} .
 \end{equation*}
 Let $f(x,y)$ be the angle that the line from the origin to $(x,y)$
 makes with the positive $x$ axis.  You can even write the formula for $f$:
@@ -2756,9 +2756,14 @@ derivative.\label{mv:fignonlip}}
 \end{myfigureht}
 
 The function is differentiable,
-and the derivative is bounded on $U$, which is not hard to see.   Thinking of
-what happens near where the negative $x$-axis cuts the annulus in half,
-we see that the conclusion of the proposition cannot hold.
+and the derivative is bounded on $U$, which is not hard to see.   Think of
+what happens near where the negative $x$-axis cuts the annulus in half.
+As we approach this cut from top (positive $y$), $f(x,y)$ approaches $\pi$.
+From the bottom (from negative $y$), $f(x,y)$ approaches $-\pi$.
+So for small $\epsilon > 0$, $\abs{f(-1,\epsilon)-f(-1,-\epsilon)}$
+approaches $2\pi$, but $\snorm{(-1,\epsilon)-(-1,-\epsilon)} = 2\epsilon$,
+which is arbitrarily small.  The conclusion of the proposition does not
+hold for this nonconvex $U$.
 %To see that the derivative is
 %bounded, we note that it is not hard to see that the derivative will not
 %depend on the rotation, so we can just do it at $y=0$, and we 
