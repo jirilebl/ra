@@ -1773,7 +1773,7 @@ a point in $K$.
 \end{thm}
 
 \begin{proof}
-Let $K \subset X$ be a set and
+Let $K \subset X$ be any subset of $X$ and
 $\{ x_n \}$ a sequence in $K$.  Suppose that for each $x \in K$,
 there is a ball $B(x,\alpha_x)$ for some $\alpha_x > 0$ such that
 $x_n \in B(x,\alpha_x)$ for only finitely many $n \in \N$.
@@ -2228,7 +2228,14 @@ Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
 A function $f \colon X \to Y$ is continuous at $c \in X$
 if and only if for every open neighborhood $U$ of $f(c)$ in $Y$, the set
 $f^{-1}(U)$ contains an open neighborhood of $c$ in $X$.
+See \figureref{fig:mscontfuncpt}.
 \end{lemma}
+
+\begin{myfigureht}
+\subimport*{figures/}{mscontfuncpt.pdf_t}
+\caption{For every neighborhood $U$ of $f(c)$, the set $f^{-1}(U)$ contains an open
+neighborhood $W$ of $c$.\label{fig:mscontfuncpt}}
+\end{myfigureht}
 
 \begin{proof}
 First suppose that $f$ is continuous at $c$.
