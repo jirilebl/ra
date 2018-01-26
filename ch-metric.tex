@@ -674,6 +674,8 @@ Wherever we are in $V$,
 we are allowed to ``wiggle'' a little bit and
 stay in $V$.  Similarly, a set $E$ is closed if everything not in $E$
 is some distance away from $E$.
+The open and closed balls are examples of open and closed sets
+(this must still be proved).
 
 Not every set is either open or closed.  Generally, most subsets are neither.
 
@@ -830,7 +832,9 @@ $X = X_1 \cup X_2$ where $X_1 \cap X_2 = \emptyset$ and $X_1$ and $X_2$ are
 open, then either $X_1 = \emptyset$ or $X_2 = \emptyset$.
 So to show $X$ is disconnected, we need to find nonempty
 disjoint open sets $X_1$ and
-$X_2$ whose union is $X$.  For subsets, we state this idea as a proposition.
+$X_2$ whose union is $X$.
+For subsets, we state this idea as a proposition.
+The proposition is illustrated in \figureref{fig:disconsubset}.
 
 \begin{prop}
 Let $(X,d)$ be a metric space.
@@ -846,6 +850,13 @@ S =
 \bigl( U_2 \cap S \bigr) .
 \end{equation*}
 \end{prop}
+
+\begin{myfigureht}
+\subimport*{figures/}{disconsubset.pdf_t}
+\caption{Disconnected subset.  Notice that $U_1 \cap U_2$ need
+not be empty, but $U_1 \cap U_2 \cap S = \emptyset$.\label{fig:disconsubset}}
+\end{myfigureht}
+
 
 \begin{proof}
 If $U_j$ is open in $X$,
@@ -1057,7 +1068,7 @@ $\partial A = \overline{A} \setminus A^\circ = \overline{A} \cap
 \end{proof}
 
 The boundary is the set of points that are close to both the set and its
-complement.  See \figureref{figmsboundary} for the a diagram
+complement.  See \figureref{fig:msboundary} for the a diagram
 of the next proposition.
 
 \begin{prop}
@@ -1070,7 +1081,7 @@ $B(x,\delta) \cap A^c$ are both nonempty.
 \begin{myfigureht}
 \subimport*{figures/}{msboundary.pdf_t}
 \caption{Boundary is the set where every ball contains points in the set and
-also its complement.\label{figmsboundary}}
+also its complement.\label{fig:msboundary}}
 \end{myfigureht}
 
 \begin{proof}

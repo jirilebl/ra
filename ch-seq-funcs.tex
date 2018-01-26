@@ -106,11 +106,17 @@ of the partial sums.
 \end{example}
 
 \begin{example}
-Let $f_n(x) := \sin(xn)$.  Then $f_n$ does not converge pointwise
+Let $f_n(x) := \sin(nx)$.  Then $f_n$ does not converge pointwise
 to any function on any interval.  It may converge at certain points, such
 as when $x=0$ or $x=\pi$.  It is left as an exercise that in any interval
 $[a,b]$, there exists an $x$ such that $\sin(xn)$ does not have a limit
-as $n$ goes to infinity.
+as $n$ goes to infinity.  See \figureref{fig:nonconvsinxn}.
+\begin{myfigureht}
+\includegraphics{figures/nonconvsinxn}
+\caption{Graphs of $\sin(nx)$ for
+$n=1,2,\ldots,10$, with higher $n$ in lighter gray.%
+\label{fig:nonconvsinxn}}
+\end{myfigureht}
 \end{example}
 
 Before we move to uniform convergence, let us reformulate pointwise
@@ -831,7 +837,23 @@ which is unbounded.
 While uniform convergence is enough to swap limits with integrals, it is not,
 however, enough to swap limits with derivatives, unless you also have
 uniform convergence of the derivatives themselves.
-See the exercises for some counterexamples.  Using 
+
+\begin{example}
+Let $f_n(x) := \frac{\sin(nx)}{n}$.  Then $f_n$ converges uniformly to
+0.  See \figureref{fig:conv1nsinxn}.
+The derivative of the limit is 0.  But $f_n'(x) = \cos(nx)$, which
+does not converge even pointwise, for
+example $f_n'(\pi) = {(-1)}^n$.  Furthermore,
+$f_n'(0) = 1$ for all $n$, which does converge, but not to 0.
+\begin{myfigureht}
+\includegraphics{figures/conv1nsinxn}
+\caption{Graphs of $\frac{\sin(nx)}{n}$ for
+$n=1,2,\ldots,10$, with higher $n$ in lighter gray.%
+\label{fig:conv1nsinxn}}
+\end{myfigureht}
+\end{example}
+
+See the exercises for more counterexamples.  Using 
 the fundamental theorem of calculus we find an answer for continuously
 differentiable functions.  The following theorem is true even if 
 we do not assume continuity of the derivatives, but the proof is more
