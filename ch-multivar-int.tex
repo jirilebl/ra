@@ -2592,32 +2592,41 @@ Then $U$ is called a
 in $\R^2$.
 \end{defn}
 
-The condition about points outside the closure means that locally $\partial U$
-separates $\R^2$ into ``inside'' and ``outside''.  The condition prevents
-$\partial U$ from being just a ``cut'' inside $U$.  Therefore as we travel
+The condition about points outside the closure says that locally $\partial U$
+separates $\R^2$ into an ``inside'' and an ``outside''.  The condition prevents
+$\partial U$ from being just a ``cut'' inside $U$.  As we travel
 along the path in a certain orientation,
-there is a well defined left and a right, and either it is $U$ on the left
-and the complement of $U$ on the right, or vice-versa.   Thus
-by orientation on $U$ we mean the direction along which we travel along the
-paths.  It is easy to switch orientation if needed by reparametrizing the
+there is a well-defined left and a right, and either $U$ is on the left
+and the complement of $U$ is on the right, or vice-versa.   
+The orientation on $U$ is the direction in which we travel along the
+paths.  We can switch orientation if needed by reparametrizing the
 path.
 
 \begin{defn}
-If $U \subset \R^2$ is a bounded domain with piecewise smooth boundary,
-let $\partial U$ be oriented 
-and $\gamma \colon [a,b] \to \R^2$ is a parametrization of $\partial U$
+Let $U \subset \R^2$ be a bounded domain with piecewise smooth boundary,
+let $\partial U$ be oriented ,
+and let $\gamma \colon [a,b] \to \R^2$ be a parametrization of $\partial U$
 giving the orientation.  Write $\gamma(t) = \big(x(t),y(t)\bigr)$.
 If the vector $n(t) := \bigl(-y'(t),x'(t)\bigr)$ points into the domain,
 that is, $\epsilon n(t) + \gamma(t)$ is in $U$ for all small enough
 $\epsilon > 0$, then $\partial U$ is
-\emph{\myindex{positively oriented}}.  Otherwise it is
-\emph{\myindex{negatively oriented}}.
+\emph{\myindex{positively oriented}}.  
+See \figureref{fig:positiveorient}.
+Otherwise it is \emph{\myindex{negatively oriented}}.
 \end{defn}
 
-The vector $n(t)$ turns $\gamma^{\:\prime}(t)$ counterclockwise by $90^\circ$, that is
-to the left.  A boundary is positively oriented, if when we travel
-along the boundary in the direction of its orientation, the domain is ``on
-our left''.
+\begin{myfigureht}
+\subimport*{figures/}{positiveorient.pdf_t}
+\caption{Positively oriented domain (left), and a positively oriented
+domain with a hole (right).\label{fig:positiveorient}}
+\end{myfigureht}
+
+
+The vector $n(t)$ turns $\gamma^{\:\prime}(t)$
+counterclockwise by $90^\circ$, that is to the left.
+When we travel along a positively oriented boundary
+in the direction of its orientation,
+the domain is ``on our left''.
 For example,
 if $U$ is a bounded domain with ``no holes'', that is $\partial U$
 is connected, then the positive orientation means we are travelling
@@ -2630,11 +2639,12 @@ $U$ is Jordan measurable.
 \end{prop}
 
 \begin{proof}
-We need that $\partial U$ is of measure zero.  As $\partial U$ is a finite
-union of simple piecewise smooth paths, which themselves
-are finite unions of smooth paths we need only show that 
-a smooth path is of measure zero in $\R^2$.
-
+We must show that
+$\partial U$ is a null set.  As $\partial U$ is a finite
+union of simple piecewise smooth paths, which 
+are finite unions of smooth paths, we need only show that 
+a smooth path in $\R^2$ is a null set.
+%
 Let $\gamma \colon [a,b] \to \R^2$ be a smooth path.
 %As $\gamma$ is
 %continuously differentiable, the derivative is bounded as $[a,b]$ is
@@ -2642,9 +2652,9 @@ Let $\gamma \colon [a,b] \to \R^2$ be a smooth path.
 %So there is some $M \in \R$ such that $\snorm{\gamma^{\:\prime}(t)} \leq M$
 %for all $t \in [a,b]$.
 It is enough to show that
-$\gamma\bigl((a,b)\bigr)$ is of measure zero, as adding two points,
-that is the points $\gamma(a)$ and $\gamma(b)$,
-to a measure zero set still results in a measure zero set.
+$\gamma\bigl((a,b)\bigr)$ is a null set, as adding 
+the points $\gamma(a)$ and $\gamma(b)$,
+to a null set still results in a null set.
 %We will use \propref{prop:imagenull}, for which
 %we need a mapping from an open set in $\R^2$.
 Define
@@ -2653,13 +2663,13 @@ f \colon (a,b) \times (-1,1) \to \R^2,
 \qquad \text{as} \qquad
 f(x,y) := \gamma(x) .
 \end{equation*}
-The set $(a,b) \times \{ 0 \}$ is of measure zero in $\R^2$ and
+The set $(a,b) \times \{ 0 \}$ is a null set in $\R^2$ and
 $\gamma\bigl((a,b)\bigr) = f\bigl( (a,b) \times \{ 0 \} \bigr)$.
-Hence by \propref{prop:imagenull}, 
-$\gamma\bigl((a,b)\bigr)$ is measure zero in $\R^2$
+By \propref{prop:imagenull}, 
+$\gamma\bigl((a,b)\bigr)$ is a null set in $\R^2$
 and so
-$\gamma\bigl([a,b]\bigr)$ is also measure zero, and 
-so finally $\partial U$ is also measure zero.
+$\gamma\bigl([a,b]\bigr)$ is a null set, and 
+so finally $\partial U$ is a null set.
 \end{proof}
 
 \begin{thm}[Green]\index{Green's theorem}
@@ -2764,14 +2774,15 @@ P\bigl(x,g(x)\bigr)
 \int_a^b P\bigl(x,f(x)\bigr) \, dx .
 \end{split}
 \end{equation*}
-Now we wish to integrate $P\,dx$ along the boundary.
-The one-form $P\,dx$ integrates to zero when integrating
-along the straight vertical lines in the boundary.  Therefore it only is
+We integrate $P\,dx$ along the boundary.
+The one-form $P\,dx$ integrates to zero 
+along the straight vertical lines in the boundary.  Therefore it is
+only
 integrated along the top and along the bottom.  As a parameter,
 $x$ runs from left to right.  If we use the parametrizations that take $x$
 to $\bigl(x,f(x)\bigr)$ and to
 $\bigl(x,g(x)\bigr)$ we recognize path integrals above.  However the second
-path integral is in the wrong direction, the top should be going right to
+path integral is in the wrong direction; the top should be going right to
 left, and so we must switch orientation.
 \begin{equation*}
 \int_{\partial U} P \, dx
