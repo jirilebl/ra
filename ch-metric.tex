@@ -217,8 +217,9 @@ following, note the use of the Cauchy--Schwarz inequality.
 \sum_{j=1}^n
 {(y_j-z_j)}^2 
 +
+2
 \sum_{j=1}^n
- 2(x_j-y_j)(y_j-z_j)
+(x_j-y_j)(y_j-z_j)
 \\
 & \leq
 \sum_{j=1}^n
@@ -347,6 +348,30 @@ spaces such as $C([a,b],\R)$ is really the meat of a large part of modern
 analysis.  Treating sets of functions as metric spaces allows us to
 abstract away a lot of the grubby detail and prove powerful results such as
 Picard's theorem with less work.
+\end{example}
+
+\begin{example}
+Another standard and useful example of a metric space is the sphere.
+Let $X$ be the unit sphere in $\R^3$,
+that is $X := \{ x \in \R^3 : x_1^2+x_2^2+x_3^2 = 1 \}$.
+Take $x$ and $y$ in $X$, and draw a line through the origin and $x$,
+and another line through the origin and $y$,
+and let $\theta$ be the angle that the two lines make.
+Then define $d(x,y) := \theta$.
+We can even find a formula with a little bit of vector calculus:
+$d(x,y) = \cos^{-1}(x_1y_1+x_2y_2+x_3y_3)$.
+It is relatively easy to see that this function satisfies the first three
+properties.  Triangle inequality is harder to prove, and requires a bit more
+trigonometry and linear algebra than we wish to indulge in right now, so let
+us leave it without proof.
+
+This distance is the shortest distance between points on a sphere if
+we are allowed to travel on the sphere only.  It is easy to
+generalize to arbitrary diameters.  If we take a sphere of radius
+$r$, you simply take $r \theta$ to find the distance.  This is then the
+standard distance you would use if you for example compute a distance on the
+surface of the earth, for example if computing the distance a plane travels from London to
+Los Angeles.
 \end{example}
 
 Oftentimes it is useful to consider a subset of a larger metric space
@@ -657,7 +682,7 @@ If $x \in \bigcup_{\lambda \in I} V_\lambda$, then $x \in V_\lambda$ for some
 $\lambda \in I$.
 As $V_\lambda$ is open, there exists a $\delta > 0$
 such that $B(x,\delta) \subset V_\lambda$.  But then
-$B(x,\delta) \subset \bigcup_{\lambda \in I} V_\lambda$
+$B(x,\delta) \subset \bigcup_{\lambda \in I} V_\lambda$,
 and so the union is open.
 \end{proof}
 
@@ -702,8 +727,8 @@ $C(x,\delta)$ is closed.
 \end{prop}
 
 \begin{proof}
-Let $y \in B(x,\delta)$.  Let $\alpha := \delta-d(x,y)$.  Of course $\alpha
-> 0$.  Now let $z \in B(y,\alpha)$.  Then
+Let $y \in B(x,\delta)$.  Let $\alpha := \delta-d(x,y)$.  As $\alpha
+> 0$, consider $z \in B(y,\alpha)$.  Then
 \begin{equation*}
 d(x,z) \leq d(x,y) + d(y,z) < d(x,y) + \alpha = d(x,y) + \delta-d(x,y) =
 \delta .
@@ -714,7 +739,7 @@ $B(x,\delta)$ is open.
 The proof that $C(x,\delta)$ is closed is left as an exercise.
 \end{proof}
 
-Again be careful about what is the ambient metric space.
+Again be careful about what is the metric space we are working in.
 As $[0,\nicefrac{1}{2})$ is
 an open ball in $[0,1]$, this means that $[0,\nicefrac{1}{2})$ is
 an open set in $[0,1]$.  On the other hand $[0,\nicefrac{1}{2})$
