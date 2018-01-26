@@ -281,8 +281,8 @@ ${\sabs{z}}^2 = x^2 +y^2 = z\bar{z}$, and so ${\sabs{z_1-z_2}}^2 =
 \end{example}
 
 \begin{example}
-An example to keep in mind is the so-called \emph{\myindex{discrete
-metric}}.
+An example to keep in mind is the so-called
+\emph{\myindex{discrete metric}}.
 For any set $X$, define
 \begin{equation*}
 d(x,y) :=
@@ -351,19 +351,26 @@ Picard's theorem with less work.
 \end{example}
 
 \begin{example}
-Another standard and useful example of a metric space is the sphere.
-Let $X$ be the unit sphere in $\R^3$,
-that is $X := \{ x \in \R^3 : x_1^2+x_2^2+x_3^2 = 1 \}$.
-Take $x$ and $y$ in $X$, and draw a line through the origin and $x$,
+Another standard and useful example of a metric space is the sphere,
+usually called the \emph{\myindex{great circle distance}}.
+Let $S^2$ be the \myindex{unit sphere}\index{sphere} in $\R^3$,
+that is $S^2 := \{ x \in \R^3 : x_1^2+x_2^2+x_3^2 = 1 \}$.
+Take $x$ and $y$ in $S^2$, and draw a line through the origin and $x$,
 and another line through the origin and $y$,
 and let $\theta$ be the angle that the two lines make.
-Then define $d(x,y) := \theta$.
+Then define $d(x,y) := \theta$.  See \figureref{fig:spheremetric}.
 We can even find a formula with a little bit of vector calculus:
-$d(x,y) = \cos^{-1}(x_1y_1+x_2y_2+x_3y_3)$.
+$d(x,y) = \arccos(x_1y_1+x_2y_2+x_3y_3)$.
 It is relatively easy to see that this function satisfies the first three
 properties.  Triangle inequality is harder to prove, and requires a bit more
 trigonometry and linear algebra than we wish to indulge in right now, so let
 us leave it without proof.
+
+\begin{myfigureht}
+\subimport*{figures/}{spheremetric.pdf_t}
+\caption{The great circle distance on the unit
+sphere.\label{fig:spheremetric}}
+\end{myfigureht}
 
 This distance is the shortest distance between points on a sphere if
 we are allowed to travel on the sphere only.  It is easy to
@@ -421,6 +428,19 @@ metric space of real numbers with the standard metric.
 On the other hand, if we take the real numbers with the discrete metric,
 then we obtain a bounded metric space.  In fact, any set with the
 discrete metric is bounded.
+
+There are other equivalent ways we could generalize boundedness,
+and are left as exercises:  $S \subset X$ is bounded if and only if
+\begin{enumerate}[(i)]
+\item 
+for every $p \in X$, there exists a $B > 0$ such that $d(p,x) \leq B$ for
+all $x \in S$.
+\item 
+$\operatorname{diam}(S) := \sup \{ d(x,y) : x,y \in S \} < \infty$.
+\end{enumerate}
+The quantity $\operatorname{diam}(S)$ is called the
+\emph{\myindex{diameter}} of a set and is usually only defined for
+a nonempty set.
 
 \subsection{Exercises}
 
@@ -512,14 +532,29 @@ c) Find a metric space $X$ and two different
 nonempty bounded subsets $A$ and $B$ such that $d_H(A,B) = 0$.
 \end{exercise}
 
-\begin{exercise} \label{exercise:C1ab}
-Let $C^1([a,b],\R)$ be the set of once continuously differentiable
-functions on $[a,b]$.
-Define
-\begin{equation*}
-d(f,g) := \snorm{f-g}_u + \snorm{f'-g'}_u,
-\end{equation*}
-where $\snorm{\cdot}_u$ is the uniform norm.  Prove that $d$ is a metric.
+\begin{exercise}
+Let $(X,d)$ be a metric space and $S \subset X$ a subset.  Prove:\\
+a)
+$S$ is bounded if and only if
+for every $p \in X$, there exists a $B > 0$ such that $d(p,x) \leq B$ for
+all $x \in S$.\\
+b)
+A nonempty $S$ is bounded if and only if
+$\operatorname{diam}(S) := \sup \{ d(x,y) : x,y \in S \} < \infty$.
+\end{exercise}
+
+\begin{exercise}
+a)
+Working in $\R$, compute $\operatorname{diam}\bigl([a,b]\bigr)$.\\
+b)
+Working in $\R^n$, for any $r > 0$, let $B_r := \{ x_1^2+x_2^2+\cdots+x_n^2
+< r^2 \}$.  Compute $\operatorname{diam}\bigl(B_r\bigr)$.\\
+c)
+Suppose $(X,d)$ is a metric space with at least two points,
+$d$ is the discrete metric, and $p \in X$.
+Compute
+$\operatorname{diam}(\{ p \})$ and $\operatorname{diam}(X)$,
+then conclude that $(X,d)$ is bounded.
 \end{exercise}
 
 \begin{exercise}
@@ -529,6 +564,16 @@ b) Find a metric $d$ on $\N$ that makes it into a bounded metric space.
 \\
 c) Find a metric $d$ on $\N$ such that for any $n \in \N$ and any $\epsilon > 0$
 there exists an $m \in \N$ such that $d(n,m) < \epsilon$.
+\end{exercise}
+
+\begin{exercise} \label{exercise:C1ab}
+Let $C^1([a,b],\R)$ be the set of once continuously differentiable
+functions on $[a,b]$.
+Define
+\begin{equation*}
+d(f,g) := \snorm{f-g}_u + \snorm{f'-g'}_u,
+\end{equation*}
+where $\snorm{\cdot}_u$ is the uniform norm.  Prove that $d$ is a metric.
 \end{exercise}
 
 \begin{exercise}
@@ -734,7 +779,13 @@ d(x,z) \leq d(x,y) + d(y,z) < d(x,y) + \alpha = d(x,y) + \delta-d(x,y) =
 \delta .
 \end{equation*}
 Therefore $z \in B(x,\delta)$ for every $z \in B(y,\alpha)$.  So $B(y,\alpha) \subset B(x,\delta)$ and
-$B(x,\delta)$ is open.
+$B(x,\delta)$ is open.  See \figureref{fig:ballisopen}.
+
+\begin{myfigureht}
+\subimport*{figures/}{ballisopen.pdf_t}
+\caption{Proof that $B(x,\delta)$ is open: $B(y,\alpha) \subset
+B(x,\delta)$ with the triangle inequality illustrated.\label{fig:ballisopen}}
+\end{myfigureht}
 
 The proof that $C(x,\delta)$ is closed is left as an exercise.
 \end{proof}
