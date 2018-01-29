@@ -355,14 +355,15 @@ Another standard and useful example of a metric space is the sphere,
 usually called the \emph{\myindex{great circle distance}}.
 Let $S^2$ be the \myindex{unit sphere}\index{sphere} in $\R^3$,
 that is $S^2 := \{ x \in \R^3 : x_1^2+x_2^2+x_3^2 = 1 \}$.
-Take $x$ and $y$ in $S^2$, and draw a line through the origin and $x$,
+Take $x$ and $y$ in $S^2$, draw a line through the origin and $x$,
 and another line through the origin and $y$,
 and let $\theta$ be the angle that the two lines make.
 Then define $d(x,y) := \theta$.  See \figureref{fig:spheremetric}.
-We can even find a formula with a little bit of vector calculus:
+The law of cosines from vector calculus says
 $d(x,y) = \arccos(x_1y_1+x_2y_2+x_3y_3)$.
 It is relatively easy to see that this function satisfies the first three
-properties.  Triangle inequality is harder to prove, and requires a bit more
+properties of a metric.
+Triangle inequality is harder to prove, and requires a bit more
 trigonometry and linear algebra than we wish to indulge in right now, so let
 us leave it without proof.
 
@@ -676,10 +677,13 @@ stay in $V$.  Similarly, a set $E$ is closed if everything not in $E$
 is some distance away from $E$.
 The open and closed balls are examples of open and closed sets
 (this must still be proved).
-
-Not every set is either open or closed.  Generally, most subsets are neither.
+But not every set is either open or closed.  Generally, most subsets are neither.
 
 \begin{example}
+The set $(0,1) \subset \R$ is open:  Given $x \in (0,1)$,
+let $\delta := \min \{ x, 1-x \}$.  Then $B(x,\delta) = (x-\delta,x+\delta)
+\subset (0,1)$.
+
 The set $[0,1) \subset \R$ is neither open nor closed.  First,
 every ball in $\R$ around $0$, $B(0,\delta) = (-\delta,\delta)$, contains negative
 numbers and hence is not contained in $[0,1)$ and so $[0,1)$ is not open.
@@ -823,7 +827,7 @@ only subsets of $X$ that are both open and closed are $\emptyset$ and $X$ itself
 If $(X,d)$ is not connected we say it is
 \emph{\myindex{disconnected}}.
 
-When we apply the term \emph{connected} to a nonempty subset $A \subset X$, we simply
+When we apply the term \emph{connected} to a nonempty subset $A \subset X$, we 
 mean that $A$ with the subspace topology is connected.
 \end{defn}
 
@@ -922,9 +926,10 @@ $S =
 \bigl( U_1 \cap S \bigr)
 \cup
 \bigl( U_2 \cap S \bigr)$.  We will show that $U_1 \cap S$
-and $U_2 \cap S$ contain a common point, so they are not disjoint,
-and hence $S$ must be connected.
-Suppose there is $x \in U_1 \cap S$
+and $U_2 \cap S$ contain a common point, so they are not disjoint.
+As $U_1$ and $U_2$ were arbitrary,
+$S$ must be connected.
+Suppose $x \in U_1 \cap S$
 and $y \in U_2 \cap S$.  Without loss of generality, assume $x < y$.  As $S$ is an interval
 $[x,y] \subset S$.  Let $z := \inf (U_2 \cap [x,y])$.
 If $z = x$, then $z
@@ -1175,9 +1180,9 @@ Show that $\bigcup_{i=1}^\infty S_i$ is connected.
 \end{exercise}
 
 \begin{exercise}
-Let $A$ be a connected set.
-a) \nolinebreak Is $\overline{A}$ connected?  Prove or find a counterexample.
-b) \nolinebreak Is $A^\circ$ connected?  Prove or find a counterexample.
+Let $A$ be a connected set in a metric space.\\
+a)~Is $\overline{A}$ connected?  Prove or find a counterexample.\\
+b)~Is $A^\circ$ connected?  Prove or find a counterexample.\\
 Hint: Think of sets in $\R^2$.
 \end{exercise}
 
@@ -1218,7 +1223,8 @@ Let $(X,d)$ be a metric space.\\
 a) Prove that for every $x \in X$, there either exists a $\delta > 0$ such that
 $B(x,\delta) = \{ x \}$, or $B(x,\delta)$ is infinite for every $\delta >  0$.
 \\
-b) Find an explicit example of $(X,d)$ where for every $\delta > 0$ and
+b) Find an explicit example of $(X,d)$, $X$ infinite, where
+for every $\delta > 0$ and
 every $x \in X$, the
 ball $B(x,\delta)$ is finite.
 \\
