@@ -30,12 +30,25 @@ analysis, it gets us very far indeed.
 \begin{defn}
 Let $X$ be a set, and let
 $d \colon X \times X \to \R$
-be a function such that
+be a function such that for all $x,y,z \in X$
 \begin{enumerate}[(i)]
-\item \label{metric:pos} $d(x,y) \geq 0$ for all $x, y$ in $X$,
-\item \label{metric:zero} $d(x,y) = 0$ if and only if $x = y$,
-\item \label{metric:com} $d(x,y) = d(y,x)$, 
-\item \label{metric:triang} $d(x,z) \leq d(x,y)+ d(y,z)$ \qquad (\emph{\myindex{triangle inequality}}).
+%
+\item \label{metric:pos}
+\makebox[2.8in][l]{$d(x,y) \geq 0$,}
+(nonegativity)
+%
+\item \label{metric:zero}
+\makebox[2.8in][l]{$d(x,y) = 0$ if and only if $x = y$,}
+%(identity) FIXME: that's not standard naming and "identity of indiscernibles"
+% is too much useless verbiage
+%
+\item \label{metric:com}
+\makebox[2.8in][l]{$d(x,y) = d(y,x)$,} 
+(symmetry)
+%
+\item \label{metric:triang}
+\makebox[2.8in][l]{$d(x,z) \leq d(x,y)+ d(y,z)$}
+(\emph{\myindex{triangle inequality}}).
 \end{enumerate}
 The pair $(X,d)$ is called a \emph{\myindex{metric space}}.  The
 function $d$ is called the \emph{\myindex{metric}} or the
@@ -698,7 +711,7 @@ Thus $\R \setminus
 \begin{prop} \label{prop:topology:open}
 Let $(X,d)$ be a metric space.
 \begin{enumerate}[(i)]
-\item \label{topology:openi} $\emptyset$ and $X$ are open in $X$.
+\item \label{topology:openi} $\emptyset$ and $X$ are open.
 \item \label{topology:openii} If $V_1, V_2, \ldots, V_k$ are open then
 \begin{equation*}
 \bigcap_{j=1}^k V_j
@@ -753,7 +766,7 @@ is left as an exercise.
 \begin{prop} \label{prop:topology:closed}
 Let $(X,d)$ be a metric space.
 \begin{enumerate}[(i)]
-\item \label{topology:closedi} $\emptyset$ and $X$ are closed in $X$.
+\item \label{topology:closedi} $\emptyset$ and $X$ are closed.
 \item \label{topology:closedii} If $\{ E_\lambda \}_{\lambda \in I}$ is
 an arbitrary collection of closed sets, then
 \begin{equation*}
@@ -802,10 +815,6 @@ an open ball in $[0,1]$, this means that $[0,\nicefrac{1}{2})$ is
 an open set in $[0,1]$.  On the other hand $[0,\nicefrac{1}{2})$
 is neither open nor closed in $\R$.
 
-A useful way to think about an open set is as a union of open balls.  If $U$ is
-open, then for each $x \in U$, there is a $\delta_x > 0$ (depending on $x$) such that
-$B(x,\delta_x) \subset U$.  Then $U = \bigcup_{x\in U} B(x,\delta_x)$.
-
 \begin{prop} \label{prop:topology:intervals:openclosed}
 Let $a < b$ be two real numbers.  Then $(a,b)$, $(a,\infty)$,
 and $(-\infty,b)$ are open in $\R$.
@@ -817,6 +826,36 @@ The proof is left as an exercise.  Also keep in mind that
 there are many other open and
 closed sets in $\R$.
 
+\begin{prop} \label{prop:topology:subspaceopen}
+Suppose $(X,d)$ is a metric space, and $Y \subset X$.  Then $U \subset Y$
+is open in $Y$ (i.e., in the subspace topology), if and only if
+there exists an open set $V \subset X$ (so open in $X$), such that
+$V \cap Y = U$.
+\end{prop}
+
+For example, let $X := \R$, $Y:=[0,1]$, $U := [0,\nicefrac{1}{2})$.
+We saw that $U$ is an open set in $Y$.
+We may take $V := (-\nicefrac{1}{2},\nicefrac{1}{2})$.
+
+\begin{proof}
+Suppose $V \subset X$ is open and $x \in V \cap Y$.
+Let $U := V \cap Y$.
+As $V$ is open, there
+exists a $\delta > 0$ such that $B_X(x,\delta) \subset V$.
+Then
+\begin{equation*}
+B_Y(x,\delta) = B_X(x,\delta) \cap Y \subset V \cap Y = U .
+\end{equation*}
+
+The proof of the opposite direction, that is, that if $U \subset Y$
+is open in the subspace topology there exists a $V$ is left as
+\exerciseref{exercise:mssubspace}.
+\end{proof}
+
+A hint for the exercise is that
+a useful way to think about an open set is as a union of open balls.  If $U$ is
+open, then for each $x \in U$, there is a $\delta_x > 0$ (depending on $x$) such that
+$B(x,\delta_x) \subset U$.  Then $U = \bigcup_{x\in U} B(x,\delta_x)$.
 
 \subsection{Connected sets}
 
@@ -863,18 +902,16 @@ not be empty, but $U_1 \cap U_2 \cap S = \emptyset$.\label{fig:disconsubset}}
 
 
 \begin{proof}
-If $U_j$ is open in $X$,
-then $U_j \cap S$ is open in $S$ in the subspace topology (with subspace
-metric).  To see this,
-note that if $B_X(x,\delta) \subset U_j$, then as
-$B_S(x,\delta) = S \cap B_X(x,\delta)$,
-we have $B_S(x,\delta) \subset U_j \cap S$.
-So if $U_1$ and $U_2$ as above exist, then
-$S$ is disconnected based on the discussion above.
+The proof follows by \propref{prop:topology:subspaceopen}.
+If $U_1$ and $U_2$ as in the statement are open in $X$,
+then $U_1 \cap S$ and $U_2 \cap S$ are open in $S$.
+From the discussion above it follows that $S$ is disconnected.
 
-The proof of the other direction follows by using
-\exerciseref{exercise:mssubspace} to find $U_1$ and $U_2$ from two
-open disjoint subsets of $S$.
+For the other direction start with nonempty disjoint $S_1$ and $S_2$ that are
+open in $S$ and such that $S = S_1 \cup S_2$.  Then use
+\propref{prop:topology:subspaceopen} again to find $U_1$ and $U_2$
+open in $X$ such that $U_1 \cap S = S_1$ and.
+$U_2 \cap S = S_2$.
 \end{proof}
 
 \begin{example}
@@ -1193,17 +1230,18 @@ we obtain the same topology by considering the subspace metric.
 \end{exnote}
 
 \begin{exercise} \label{exercise:mssubspace}
+Finish the proof of \propref{prop:topology:subspaceopen}.
 Suppose $(X,d)$ is a metric space and $Y \subset X$.  Show that
-with the subspace metric on $Y$, a set $U \subset Y$
-is open (in $Y$) whenever there exists an open set $V \subset X$ such
+with the subspace metric on $Y$, if a set $U \subset Y$
+is open (in $Y$) then there exists an open set $V \subset X$ such
 that $U = V \cap Y$.
 \end{exercise}
 
 \begin{exercise}
-Let $(X,d)$ be a metric space.
-a) For any $x \in X$ and $\delta > 0$, show
-$\overline{B(x,\delta)} \subset C(x,\delta)$.
-b) Is it always true that
+Let $(X,d)$ be a metric space.\\
+a)~For any $x \in X$ and $\delta > 0$, show
+$\overline{B(x,\delta)} \subset C(x,\delta)$.\\
+b)~Is it always true that
 $\overline{B(x,\delta)} = C(x,\delta)$?  Prove or find a counterexample.
 \end{exercise}
 
