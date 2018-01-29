@@ -656,7 +656,9 @@ Be careful when working on a subspace.  Suppose we take the
 metric space $[0,1]$ as a subspace of $\R$.  Then in $[0,1]$
 we get
 \begin{equation*}
-B(0,\nicefrac{1}{2}) = B_{[0,1]}(0,\nicefrac{1}{2}) = [0,\nicefrac{1}{2}) .
+B(0,\nicefrac{1}{2}) = B_{[0,1]}(0,\nicefrac{1}{2})
+= \{ y \in [0,1] : \abs{0-y} < \nicefrac{1}{2} \}
+= [0,\nicefrac{1}{2}) .
 \end{equation*}
 This is different from $B_{\R}(0,\nicefrac{1}{2}) =
 (-\nicefrac{1}{2},\nicefrac{1}{2})$.
@@ -665,13 +667,13 @@ in.
 \end{example}
 
 \begin{defn}
-Let $(X,d)$ be a metric space.  A set $V \subset X$
+Let $(X,d)$ be a metric space.  A subset $V \subset X$
 is \emph{open}\index{open set}
 if for every $x \in V$, there exists a $\delta > 0$ such that
-$B(x,\delta) \subset V$.  See \figureref{fig:msopenset}.  A set $E \subset X$ is 
+$B(x,\delta) \subset V$.  See \figureref{fig:msopenset}.  A subset $E \subset X$ is 
 \emph{closed}\index{closed set} if the complement $E^c = X \setminus E$ is open.
-When the ambient space $X$ is not clear from context we say
-\emph{$V$ is open in $X$} and \emph{$E$ is closed in $X$}.
+When the ambient space $X$ is not clear from context,
+we say \emph{$V$ is open in $X$} and \emph{$E$ is closed in $X$}.
 
 If $x \in V$ and $V$ is open, then we say 
 $V$ is an \emph{\myindex{open neighborhood}} of $x$ (or
@@ -693,19 +695,23 @@ The open and closed balls are examples of open and closed sets
 But not every set is either open or closed.  Generally, most subsets are neither.
 
 \begin{example}
-The set $(0,1) \subset \R$ is open:  Given $x \in (0,1)$,
-let $\delta := \min \{ x, 1-x \}$.  Then $B(x,\delta) = (x-\delta,x+\delta)
-\subset (0,1)$.
+The set $(0,\infty) \subset \R$ is open:  Given any $x \in (0,\infty)$,
+let $\delta := x$.  Then $B(x,\delta) = (0,2x) \subset (0,\infty)$.
+
+The set $[0,\infty) \subset \R$ is closed:  Given $x \in (-\infty,0) =
+[0,\infty)^c$,
+let $\delta := -x$.  Then $B(x,\delta) = (-2x,0) \subset
+(-\infty,0) = [0,\infty)^c$.
 
 The set $[0,1) \subset \R$ is neither open nor closed.  First,
 every ball in $\R$ around $0$, $B(0,\delta) = (-\delta,\delta)$, contains negative
-numbers and hence is not contained in $[0,1)$ and so $[0,1)$ is not open.
+numbers and hence is not contained in $[0,1)$.  So $[0,1)$ is not open.
 Second, every ball in $\R$ around $1$,
 $B(1,\delta) = (1-\delta,1+\delta)$, contains
 numbers strictly less than 1 and greater than 0
 (e.g.\ $1-\nicefrac{\delta}{2}$ as long as $\delta < 2$).
-Thus $\R \setminus
-[0,1)$ is not open, and so $[0,1)$ is not closed.
+Thus $[0,1)^c = \R \setminus
+[0,1)$ is not open, and $[0,1)$ is not closed.
 \end{example}
 
 \begin{prop} \label{prop:topology:open}
@@ -726,7 +732,7 @@ is also open.  That is, a union of open sets is open.
 \end{enumerate}
 \end{prop}
 
-The index set in \ref{topology:openiii} can be arbitrarily large.
+The index set $I$ in \ref{topology:openiii} can be arbitrarily large.
 By $\bigcup_{\lambda \in I} V_\lambda$ we simply mean the set of
 all $x$ such that $x \in V_\lambda$ for at least one $\lambda \in I$.
 
