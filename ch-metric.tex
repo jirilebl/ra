@@ -869,10 +869,13 @@ $B(x,\delta_x) \subset U$.  Then $U = \bigcup_{x\in U} B(x,\delta_x)$.
 A nonempty%
 \footnote{Some authors do not exclude the empty set from the definition,
 and the empty set would then be connected.
-We avoid the empty set for essentially the same reason that
-we do not consider 1 a prime number.}
+We avoid the empty set for essentially the same reason why
+1 is neither a prime nor a composite number:  Our connected sets have exactly
+two clopen subsets and disconnected sets have more than two.  The empty set
+has exactly one.}
 metric space $(X,d)$ is \emph{\myindex{connected}} if the
-only subsets of $X$ that are both open and closed are $\emptyset$ and $X$ itself.
+only subsets of $X$ that are both open and closed (so-called
+\emph{\myindex{clopen}} subsets) are $\emptyset$ and $X$ itself.
 If a nonempty $(X,d)$ is not connected we say it is
 \emph{\myindex{disconnected}}.
 
@@ -1478,10 +1481,13 @@ x_j =
 \end{prop}
 
 \begin{proof}
-Let $\{ x_j \}_{j=1}^\infty$ be a convergent sequence
-in $\R^n$, where we write $x_j = \bigl(x_{j,1},x_{j,2},\ldots,x_{j,n}\bigr) \in \R^n$.
-Let $y = (y_1,y_2,\ldots,y_n) \in \R^n$ be the limit.
-Given $\epsilon > 0$, there exists an $M$ such that for all
+%Let $\{ x_j \}_{j=1}^\infty$ be a convergent sequence
+%in $\R^n$, where we write $x_j = \bigl(x_{j,1},x_{j,2},\ldots,x_{j,n}\bigr) \in \R^n$.
+Suppose
+the sequence
+$\{ x_j \}_{j=1}^\infty$ converges to
+$y = (y_1,y_2,\ldots,y_n) \in \R^n$.
+Given $\epsilon > 0$, there exists an $M$, such that for all
 $j \geq M$ we have
 \begin{equation*}
 d(y,x_j) < \epsilon.
@@ -1497,9 +1503,9 @@ Fix some $k=1,2,\ldots,n$.  For $j \geq M$ we have
 \end{equation*}
 Hence the sequence $\{ x_{j,k} \}_{j=1}^\infty$ converges to $y_k$.
 
-For the other direction suppose 
+For the other direction, suppose 
 $\{ x_{j,k} \}_{j=1}^\infty$ converges to $y_k$ for every $k=1,2,\ldots,n$.
-Hence, given $\epsilon > 0$, pick an $M$, such that if $j \geq M$ then 
+Given $\epsilon > 0$, pick an $M$, such that if $j \geq M$ then 
 $\bigl\lvert y_k-x_{j,k} \bigr\rvert < \nicefrac{\epsilon}{\sqrt{n}}$ for all
 $k=1,2,\ldots,n$.  Then
 \begin{equation*}
@@ -1512,16 +1518,17 @@ d(y,x_j)
 \sqrt{\sum_{k=1}^n \frac{{\epsilon^2}}{n}}
 = \epsilon .
 \end{equation*}
-The sequence $\{ x_j \}$ converges to $y \in \R^n$ and we are done.
+That is, the sequence $\{ x_j \}$ converges to
+$y = (y_1,y_2,\ldots,y_n) \in \R^n$.
 \end{proof}
 
 \begin{example}
 As we said, the set $\C$ of complex numbers $z = x+iy$ is considered 
 as the metric space $\R^2$.  The proposition says that the
-sequence $\{ z_n \}_{n=1}^\infty = \{ x_n + iy_n \}_{n=1}^\infty$ converges
+sequence $\{ z_j \}_{j=1}^\infty = \{ x_j + iy_j \}_{j=1}^\infty$ converges
 to $z = x+iy$
-if and only if $\{ x_n \}$ converges to $x$ and 
-$\{ y_n \}$ converges to $y$.
+if and only if $\{ x_j \}$ converges to $x$ and 
+$\{ y_j \}$ converges to $y$.
 \end{example}
 
 \subsection{Convergence and topology}
@@ -1552,7 +1559,7 @@ words, $d(x,x_n) < \epsilon$.
 A set is closed when it contains the limits of its convergent sequences.
 
 \begin{prop} \label{prop:msclosedlim}
-Let $(X,d)$ be a metric space, $E \subset X$ a closed set
+Let $(X,d)$ be a metric space, $E \subset X$ a closed set,
 and $\{ x_n \}$ a sequence in $E$ that converges to some $x \in X$.
 Then $x \in E$.
 \end{prop}
@@ -1587,6 +1594,8 @@ For the other direction, see \exerciseref{exercise:reverseclosedseq}.
 \subsection{Exercises}
 
 \begin{exercise} \label{exercise:reverseclosedseq}
+Finish the proof of 
+\propref{prop:msclosureapprseq}.
 Let $(X,d)$ be a metric space and
 let $A \subset X$.  Let $E$ be the set of all $x \in X$ such that there
 exists a sequence $\{ x_n \}$ in $A$ that converges to $x$.  Show 
@@ -1867,9 +1876,11 @@ space, but the closed unit ball $C(0,1)$ is not compact.  However, see
 \exerciseref{exercise:mstotbound}.
 
 A useful property of compact sets in a metric space is that every
-sequence has a convergent subsequence converging to a point in the set.
-Such sets are sometimes called
-\emph{\myindex{sequentially compact}}.  Let us prove that in the
+sequence in the set has a convergent subsequence converging
+to a point in the set.
+Such sets are called
+\emph{\myindex{sequentially compact}}.
+Let us prove that in the
 context of metric spaces, a set is compact if and only if it is sequentially
 compact.
 First we prove a lemma.
@@ -2191,6 +2202,11 @@ if and only if $L=K$.
 \begin{exercise} \label{exercise:closedcomplete}
 Let $(X,d)$ be a complete metric space and $E \subset X$ a closed set.
 Show that $E$ with the subspace metric is a complete metric space.
+\end{exercise}
+
+\begin{exercise}
+Let $(X,d)$ be an incomplete metric space.  Show that there exists a
+closed and bounded set $E$ that is not compact.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
