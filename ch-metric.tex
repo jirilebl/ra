@@ -1887,7 +1887,7 @@ First we prove a lemma.
 
 \begin{lemma}[Lebesgue covering lemma%
 \footnote{Named after the French mathematician
-\href{http://en.wikipedia.org/wiki/Lebesgue}{Henri L\'eon Lebesgue}
+\href{http://en.wikipedia.org/wiki/Henri_Lebesgue}{Henri L\'eon Lebesgue}
 (1875 -- 1941).
 The number $\delta$ is sometimes called the \myindex{Lebesgue number} of the
 cover.}]\label{ms:lebesgue}
@@ -2689,7 +2689,11 @@ if $f(x)=x$.
 \end{defn}
 
 \begin{thm}%
-[\myindex{Contraction mapping principle} or \myindex{Fixed point theorem}]
+[\myindex{Contraction mapping principle}
+or \myindex{Banach fixed point theorem}%
+\footnote{Named after the Polish mathematician
+\href{http://en.wikipedia.org/wiki/Stefan_Banach}{Stefan Banach}
+(1892 -- 1945) who first stated the theorem in 1922.}]
 \label{thm:contr}
 Let $(X,d)$ be a nonempty complete metric space and $f \colon X \to X$ a
 contraction.
@@ -2972,4 +2976,15 @@ Suppose $f \colon X \to X$ is a contraction, and $(X,d)$ is a metric space
 with the discrete metric, that is $d(x,y) = 1$ whenever $x \not= y$.
 Show that $f$ is constant, that is,
 there exists a $c \in X$ such that $f(x) = c$ for all $x \in X$.
+\end{exercise}
+
+\begin{exercise}
+Suppose $(X,d)$ is a nonempty complete metric space,
+$f \colon X \to X$ is a mapping, and denote
+by $f^n$ the $n$th iterate of $f$.  Suppose
+for every $n$ there exists a $k_n > 0$ such that
+$d\bigl(f^n(x),f^n(y)\bigr) \leq k_n d(x,y)$
+for all $x,y \in X$,
+where $\sum_{j=1}^\infty k_n < \infty$.
+Prove that $f$ has a unique fixed point in $X$.
 \end{exercise}
