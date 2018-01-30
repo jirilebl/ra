@@ -866,10 +866,14 @@ $B(x,\delta_x) \subset U$.  Then $U = \bigcup_{x\in U} B(x,\delta_x)$.
 \subsection{Connected sets}
 
 \begin{defn}
-A nonempty
+A nonempty%
+\footnote{Some authors do not exclude the empty set from the definition,
+and the empty set would then be connected.
+We avoid the empty set for essentially the same reason that
+we do not consider 1 a prime number.}
 metric space $(X,d)$ is \emph{\myindex{connected}} if the
 only subsets of $X$ that are both open and closed are $\emptyset$ and $X$ itself.
-If $(X,d)$ is not connected we say it is
+If a nonempty $(X,d)$ is not connected we say it is
 \emph{\myindex{disconnected}}.
 
 When we apply the term \emph{connected} to a nonempty subset $A \subset X$, we 
@@ -969,9 +973,8 @@ $S =
 \bigl( U_1 \cap S \bigr)
 \cup
 \bigl( U_2 \cap S \bigr)$.  We will show that $U_1 \cap S$
-and $U_2 \cap S$ contain a common point, so they are not disjoint.
-As $U_1$ and $U_2$ were arbitrary,
-$S$ must be connected.
+and $U_2 \cap S$ contain a common point, so they are not disjoint,
+showing $S$ must be connected.
 Suppose $x \in U_1 \cap S$
 and $y \in U_2 \cap S$.  Without loss of generality, assume $x < y$.  As $S$ is an interval
 $[x,y] \subset S$.  Let $z := \inf (U_2 \cap [x,y])$.
@@ -988,7 +991,9 @@ As $z$ is the infimum of $U_2 \cap [x,y]$,
 there must exist some $w \in U_2 \cap [x,y]$
 such that $w \in [z,z+\delta) \subset B(z,\delta) \subset U_1$.
 Therefore $w \in U_1 \cap U_2 \cap [x,y]$.
-So $U_1 \cap S$ and $U_2 \cap S$ are not disjoint and hence $S$ is connected.
+So $U_1 \cap S$ and $U_2 \cap S$ are not disjoint, and
+$S$ is connected.
+%As $U_1$ and $U_2$ were arbitrary, $S$ is connected.
 \end{proof}
 
 \begin{example}
@@ -1012,9 +1017,11 @@ the \emph{\myindex{closure}} of $A$ is the set
 \overline{A} := \bigcap \{ E \subset X : \text{$E$ is closed and $A \subset
 E$} \} .
 \end{equation*}
-That is, $\overline{A}$ is the intersection of all closed sets that contain
-$A$.
 \end{defn}
+
+That is, $\overline{A}$ is the intersection of all closed sets that contain
+$A$.  There is at least one closed set containing every $A$, namely $X$
+itself.  So $A \subset \overline{A}$.
 
 \begin{prop}
 Let $(X,d)$ be a metric space and $A \subset X$.  The closure $\overline{A}$
@@ -1022,9 +1029,11 @@ is closed.  Furthermore if $A$ is closed then $\overline{A} = A$.
 \end{prop}
 
 \begin{proof}
-The closure is the intersection of closed sets, so $\overline{A}$ is closed.
-If $A$ is closed, then $A$ is a closed set that contains $A$.
-So the intersection of all closed sets $E$ containing $A$ must be equal to $A$.
+The closure is an intersection of closed sets, so $\overline{A}$ is closed.
+If $A$ is closed, then $A$ is a closed set that contains $A$,
+and so $\overline{A} \subset A$.  And since $A \subset \overline{A}$,
+we must have $A = \overline{A}$.
+%So the intersection of all closed sets $E$ containing $A$ must be equal to $A$.
 \end{proof}
 
 \begin{example}
@@ -1062,15 +1071,20 @@ $B(x,\delta) \subset \overline{A}^c$.  As $A \subset \overline{A}$ we
 see that $B(x,\delta) \subset A^c$ and hence
 $B(x,\delta) \cap A = \emptyset$.
 
-On the other hand suppose there is a $\delta > 0$ such that
-$B(x,\delta) \cap A = \emptyset$.  Then ${B(x,\delta)}^c$ is a closed set and we have
-that $A \subset {B(x,\delta)}^c$, but
-$x \notin {B(x,\delta)}^c$.  Thus as $\overline{A}$ is the intersection
+On the other hand, suppose there is a $\delta > 0$, such that
+$B(x,\delta) \cap A = \emptyset$. 
+In other words,
+$A \subset {B(x,\delta)}^c$.
+As 
+${B(x,\delta)}^c$ is a closed set, $x \not \in {B(x,\delta)}^c$,
+and $\overline{A}$ is the intersection
 of closed sets containing $A$, we have $x \notin \overline{A}$.
 \end{proof}
 
-We can also talk about what is in the interior of a set and what is on the
-boundary.
+We can also talk about what is in the interior of a set
+(points we cannot approach from the complement),
+and what is on the boundary (points we can
+approach both from the set and its complement).
 
 \begin{defn}
 Let $(X,d)$ be a metric space and $A \subset X$, then
@@ -1765,7 +1779,7 @@ K \subset \bigcup_{j=1}^k U_{\lambda_j} .
 \end{defn}
 
 A collection of open sets $\{ U_{\lambda} \}_{\lambda \in I}$ as above is
-said to be a \emph{\myindex{open cover}} of $K$.  So a way to say that
+said to be an \emph{\myindex{open cover}} of $K$.  So a way to say that
 $K$ is compact is to say that \emph{every open cover of $K$ has a finite
 \myindex{subcover}}.
 
