@@ -1686,7 +1686,7 @@ The proof also gives us the Picard iterates as approximations to the
 solution.  So the proof actually tells us how to obtain
 the solution, not just that the solution exists.
 
-\begin{example}
+\begin{example} \label{example:picardexponential}
 Consider
 \begin{equation*}
 f'(x) = f(x), \qquad f(0) = 1 .
@@ -1792,9 +1792,33 @@ A solution would have
 derivative $\varphi$, but $\varphi$ does not have the intermediate value property
 at any point (why?).  No solution exists by
 \hyperref[thm:darboux]{Darboux's theorem}.
-Therefore to obtain existence of a solution, some continuity hypothesis on
+Therefore to obtain existence of a solution, some sort of
+continuity hypothesis on
 $F$ is necessary.
 \end{example}
+
+\begin{remark}
+It is possible to weaken what we mean by ``solution to $y' = F(x,y)$''
+by focusing on the integral equation
+$f(x) = y_0 + \int_{x_0}^x F\bigl(t,f(t)\bigr) \, dt$.  For example,
+let $H$ be the
+Heaviside function%
+\footnote{Named
+for the English engineer, mathematician, and physicist
+\href{http://en.wikipedia.org/wiki/Oliver_Heaviside}{Oliver Heaviside}
+(1850--1825).},
+that is $H(t) := 0$ for $t < 0$ and $H(t) := 1$ for $t \geq 0$.
+Then
+$y' = H(t)$, $y(0) = 0$,
+is a common equation.
+The ``solution''
+is the ramp function $f(x) := 0$ if $x < 0$ and $f(x) := x$ if $x \geq 0$,
+since this function satisfies
+$f(x) = \int_0^x H(t)\, dt$.  Notice, however, that $f'(0)$ does not exist.
+To solve the equation from the previous example in this way, 
+we would require a more powerful integral, such as the Lebesgue integral.
+\end{remark}
+
 
 \subsection{Exercises}
 
@@ -1855,4 +1879,30 @@ factor formula for existence of $f$ (prove that it works):
 f(x) := e^{-\int_{x_0}^x p(s)\, ds} \left( \int_{x_0}^x e^{\int_{x_0}^t p(s)\, ds}
 q(t) ~dt + y_0 \right).
 \end{equation*}
+\end{exercise}
+
+\begin{exercise}
+Consider the equation $f'(x) = f(x)$,
+from \exampleref{example:picardexponential}.  Show that given any $x_0$
+and any $y_0$, and any positive $h < \nicefrac{1}{2}$, we can pick $\alpha >
+0$ large enough that the proof of Picard's theorem guarantees a solution
+for the initial condition $f(x_0) = y_0$ in the interval
+$[x_0-h,x_0+h]$.
+\end{exercise}
+
+\begin{exercise}
+Consider the equation $y' = y^{1/3}x$.\\
+a)~Show that for the initial condition $y(1)=1$, Picard's theorem applies.
+Find an $\alpha > 0$, $M$, $L$, and $h$ that would work in the proof.\\
+b)~Show that for the initial condition $y(1) = 0$, Picard's theorem
+does not apply.\\
+c)~Find a solution for $y(1) = 0$ anyway.
+\end{exercise}
+
+\begin{exercise}
+Consider the equation $x y' = 2y$.\\
+a)~Show that $y = Cx^2$ is a solution for any $C$.\\
+b)~Show that for any $x_0 \not= 0$, and any $y_0$, Picard's
+theorem applies for the initial condition $y(x_0) = y_0$.\\
+c)~Show that $y(0) = y_0$ is solvable if and only if $y_0 = 0$.
 \end{exercise}
