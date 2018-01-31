@@ -981,13 +981,13 @@ and $U_2 \cap S$ contain a common point, so they are not disjoint,
 proving that $S$ is connected.
 Suppose $x \in U_1 \cap S$
 and $y \in U_2 \cap S$.  Without loss of generality, assume $x < y$.
-As $S$ is an interval $[x,y] \subset S$.
+As $S$ is an interval, $[x,y] \subset S$.
 Note that $U_2 \cap [x,y] \not= \emptyset$, and
 let $z := \inf (U_2 \cap [x,y])$.
-First we wish to show that $z \in U_1$.
+We wish to show that $z \in U_1$.
 If $z = x$, then $z \in U_1$.
-So suppose $z > x$.
-Then for any $\delta > 0$ the ball $B(z,\delta) =
+If $z > x$,
+then for any $\delta > 0$ the ball $B(z,\delta) =
 (z-\delta,z+\delta)$ contains points of $[x,y]$ not in $U_2$,
 as $z$ is the infimum of such points.
 So $z \notin U_2$ as $U_2$ is open.
@@ -1001,8 +1001,14 @@ such that $w \in [z,z+\delta) \subset B(z,\delta) \subset U_1$.
 Therefore $w \in U_1 \cap U_2 \cap [x,y]$.
 So $U_1 \cap S$ and $U_2 \cap S$ are not disjoint, and
 $S$ is connected.
+See \figureref{fig:intervalcon}.
 %As $U_1$ and $U_2$ were arbitrary, $S$ is connected.
 \end{proof}
+
+\begin{myfigureht}
+\subimport*{figures/}{intervalcon.pdf_t}
+\caption{Proof that an interval is connected.\label{fig:intervalcon}}
+\end{myfigureht}
 
 \begin{example}
 In many cases a ball $B(x,\delta)$ is connected.  But this is not
@@ -1159,18 +1165,19 @@ also its complement.\label{fig:msboundary}}
 Suppose $x \in \partial A =  \overline{A} \setminus A^\circ$ and
 let $\delta > 0$ be arbitrary.
 By \propref{prop:msclosureappr}, $B(x,\delta)$ contains
-a point from $A$.  If $B(x,\delta)$ contained no points of $A^c$,
+a point of $A$.  If $B(x,\delta)$ contained no points of $A^c$,
 then $x$ would be in $A^\circ$.  Hence $B(x,\delta)$ contains a point of
 $A^c$ as well.
 
-Let us prove the other direction by contrapositive.
+Let us prove the other direction by contrapositive.  Suppose
+$x \notin \partial A$.
 If $x \notin \overline{A}$, then there is some $\delta > 0$ such that
 $B(x,\delta) \subset \overline{A}^c$ as $\overline{A}$ is closed.
 So $B(x,\delta)$ contains no points of $A$, because $\overline{A}^c \subset
 A^c$.
 
-Now suppose $x \in A^\circ$, then there exists a $\delta > 0$
-such that $B(x,\delta) \subset A$, but that means $B(x,\delta)$
+If $x \in A^\circ$, then there exists a $\delta > 0$
+such that $B(x,\delta) \subset A$.  But that means $B(x,\delta)$
 contains no points of $A^c$.
 \end{proof}
 
