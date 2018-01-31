@@ -969,28 +969,33 @@ By \propref{prop:intervaldef}, $S$ is an interval.
 %
 %The proof that an unbounded connected $S$ is an interval is left as an exercise.
 
-On the other hand suppose $S$ is an interval.
-Suppose $U_1$ and $U_2$ are open subsets of $\R$,
+If $S$ is a single point, it is connected.
+Therefore suppose $S$ is an interval.
+Consider open subsets $U_1$ and $U_2$ of $\R$, such that
 $U_1 \cap S$ and $U_2 \cap S$ are nonempty, and
 $S = 
 \bigl( U_1 \cap S \bigr)
 \cup
 \bigl( U_2 \cap S \bigr)$.  We will show that $U_1 \cap S$
 and $U_2 \cap S$ contain a common point, so they are not disjoint,
-showing $S$ must be connected.
+proving that $S$ is connected.
 Suppose $x \in U_1 \cap S$
-and $y \in U_2 \cap S$.  Without loss of generality, assume $x < y$.  As $S$ is an interval
-$[x,y] \subset S$.  Let $z := \inf (U_2 \cap [x,y])$.
-If $z = x$, then $z
-\in U_1$.  If $z > x$,
-then for any $\delta > 0$ the 
-ball $B(z,\delta) =
-(z-\delta,z+\delta)$ contains points of $S$ that are not
-in $U_2$, and so $z \notin U_2$ as $U_2$ is open.
-Therefore, $z \in U_1$.
-As $U_1$ is open, $B(z,\delta) \subset U_1$ for a small enough $\delta >
-0$.
-As $z$ is the infimum of $U_2 \cap [x,y]$, 
+and $y \in U_2 \cap S$.  Without loss of generality, assume $x < y$.
+As $S$ is an interval $[x,y] \subset S$.
+Note that $U_2 \cap [x,y] \not= \emptyset$, and
+let $z := \inf (U_2 \cap [x,y])$.
+First we wish to show that $z \in U_1$.
+If $z = x$, then $z \in U_1$.
+So suppose $z > x$.
+Then for any $\delta > 0$ the ball $B(z,\delta) =
+(z-\delta,z+\delta)$ contains points of $[x,y]$ not in $U_2$,
+as $z$ is the infimum of such points.
+So $z \notin U_2$ as $U_2$ is open.
+Therefore, $z \in U_1$ as every point of $[x,y]$ is in
+$U_1$ or $U_2$.
+As $U_1$ is open,
+$B(z,\delta) \subset U_1$ for a small enough $\delta > 0$.
+As $z$ is the infimum of the nonempty set $U_2 \cap [x,y]$, 
 there must exist some $w \in U_2 \cap [x,y]$
 such that $w \in [z,z+\delta) \subset B(z,\delta) \subset U_1$.
 Therefore $w \in U_1 \cap U_2 \cap [x,y]$.
@@ -1022,9 +1027,10 @@ E$} \} .
 \end{equation*}
 \end{defn}
 
-That is, $\overline{A}$ is the intersection of all closed sets that contain
-$A$.  There is at least one closed set containing every $A$, namely $X$
-itself.  So $A \subset \overline{A}$.
+That is,
+$\overline{A}$ is the intersection of all closed sets that contain $A$.
+There is at least one closed set containing every $A$, namely $X$ itself.
+And in particular, $A \subset \overline{A}$.
 
 \begin{prop}
 Let $(X,d)$ be a metric space and $A \subset X$.  The closure $\overline{A}$
@@ -1071,7 +1077,7 @@ a $\delta > 0$ such that $B(x,\delta) \cap A = \emptyset$.
 First suppose $x \notin \overline{A}$.  We know $\overline{A}$ is
 closed.  Thus there is a $\delta > 0$ such that
 $B(x,\delta) \subset \overline{A}^c$.  As $A \subset \overline{A}$ we
-see that $B(x,\delta) \subset A^c$ and hence
+see that $B(x,\delta) \subset \overline{A}^c \subset A^c$ and hence
 $B(x,\delta) \cap A = \emptyset$.
 
 On the other hand, suppose there is a $\delta > 0$, such that
@@ -1084,9 +1090,9 @@ and $\overline{A}$ is the intersection
 of closed sets containing $A$, we have $x \notin \overline{A}$.
 \end{proof}
 
-We can also talk about what is in the interior of a set
+We can also talk about the interior of a set
 (points we cannot approach from the complement),
-and what is on the boundary (points we can
+and the boundary of a set (points we can
 approach both from the set and its complement).
 
 \begin{defn}
