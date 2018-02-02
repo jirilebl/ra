@@ -1334,7 +1334,7 @@ U$.
 
 The notion of a sequence in a metric space is very similar to a sequence of
 real numbers.
-The definitions are essentially the same as those for real numbers
+The related definitions are essentially the same as those for real numbers
 in the sense of \chapterref{seq:chapter}, where $\R$ with
 the standard metric $d(x,y)=\abs{x-y}$ is replaced
 by an arbitrary metric space $(X,d)$.
@@ -1406,7 +1406,7 @@ A convergent sequence in a metric space has a unique limit.
 
 \begin{proof}
 %NOTE: should be word for word the same as 2.1.6
-Suppose the sequence $\{ x_n \}$ has the limit $x$ and the limit $y$.
+Suppose the sequence $\{ x_n \}$ has limits $x$ and $y$.
 Take an arbitrary $\epsilon > 0$.
 From the definition find an $M_1$ such that for all $n \geq M_1$,
 $d(x_n,x) < \nicefrac{\epsilon}{2}$.  Similarly find an $M_2$
@@ -1473,14 +1473,14 @@ this fact is beyond the scope of this book.
 
 \subsection{Convergence in euclidean space}
 
-It is useful to note what convergence means in the euclidean space
-$\R^n$.
+In the euclidean space $\R^n$, a sequence converges if and only if every
+component converges:
 
 \begin{prop} \label{prop:msconveuc}
 Let $\{ x_j \}_{j=1}^\infty$ be a sequence in $\R^n$,
 where we write $x_j = \bigl(x_{j,1},x_{j,2},\ldots,x_{j,n}\bigr) \in \R^n$.
 Then $\{ x_j \}_{j=1}^\infty$ converges if and only if
-$\{ x_{j,k} \}_{j=1}^\infty$ converges for every $k$, in which case
+$\{ x_{j,k} \}_{j=1}^\infty$ converges for every $k=1,2,\ldots,n$, in which case
 \begin{equation*}
 \lim_{j\to\infty}
 x_j =
@@ -1580,13 +1580,13 @@ Then $x \in E$.
 \begin{proof}
 Let us prove the contrapositive.
 Suppose $\{ x_n \}$ is a sequence in $X$ that converges to $x \in E^c$.
-As $E^c$ is open, \propref{prop:msconvtopo} says there is
+As $E^c$ is open, \propref{prop:msconvtopo} says that there is
 an $M$ such that for all $n \geq M$,
 $x_n \in E^c$.  So $\{ x_n \}$  is not a sequence in $E$.
 \end{proof}
 
-When we take a closure of a set $A$, we really throw in precisely 
-those points that are limits of sequences in $A$.
+To take a closure of a set $A$, we take $A$, and we throw in 
+points that are limits of sequences in $A$.
 
 \begin{prop} \label{prop:msclosureapprseq}
 Let $(X,d)$ be a metric space and $A \subset X$.
@@ -1841,7 +1841,8 @@ Any $x \in \R$ is in some $U_j$ (by the
 Suppose we have a finite
 subcover $\R \subset U_{j_1} \cup U_{j_2} \cup \cdots \cup U_{j_k}$,
 and suppose $j_1 < j_2 < \cdots < j_k$.  Then $\R \subset U_{j_k}$, but that is
-a contradiction as $j_k \in \R$ on one hand and $j_k \notin U_{j_k}$ on the
+a contradiction as $j_k \in \R$ on one hand and $j_k \notin U_{j_k} =
+(-j_k,j_k)$ on the
 other.
 
 The set $(0,1) \subset \R$ is also not compact.  Proof:  Take the 
@@ -1856,8 +1857,8 @@ U_{\lambda} \}_{\lambda \in I}$, there must exist a $\lambda_0$ such that $0
 finite subcover.
 
 We will prove below that $[0,1]$, and in fact any closed and bounded
-interval $[a,b]$, is compact by proving
-that in $\R$, a closed and bounded set is compact.
+interval $[a,b]$ is compact.
+% is compact by proving that in $\R$, a closed and bounded set is compact.
 \end{example}
 
 \begin{prop}
