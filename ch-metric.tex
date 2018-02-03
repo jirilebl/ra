@@ -487,7 +487,7 @@ why not.
 \begin{exercise}
 Suppose $(X,d)$ is a metric space and
 $\varphi \colon [0,\infty) \to \R$ is
-a function such that 
+an increasing function such that 
 $\varphi(t) \geq 0$ for all $t$ and $\varphi(t) = 0$ if and only if
 $t=0$.  Also suppose $\varphi$ is \emph{\myindex{subadditive}},
 that is, $\varphi(s+t) \leq \varphi(s)+\varphi(t)$.
@@ -1316,7 +1316,7 @@ $R(x,\delta) :=
 (x_1-\delta,x_1+\delta) \times
 (x_2-\delta,x_2+\delta) \times \cdots \times
 (x_n-\delta,x_n+\delta)$.  Show that these sets generate the same open
-sets as the balls.  That is show that a set $U \subset \R^n$
+sets as the balls in standard metric.  That is show that a set $U \subset \R^n$
 is open in the sense of the standard metric if and only if for every
 point $x \in U$, there exists a $\delta > 0$ such that $R(x,\delta) \subset
 U$.
@@ -1703,6 +1703,22 @@ Prove that $\{ x_n \}$ converges to $p \in X$
 if and only if
 every subsequence of $\{ x_n \}$ has a subsequence that
 converges to $p$.
+\end{exercise}
+
+\begin{exercise}
+Consider $\R^n$, and let $d$ be the standard euclidean metric.
+Let $d'(x,y) := \sum_{\ell=1}^n \abs{x_\ell-y_\ell}$
+and $d''(x,y) := \max \{ \abs{x_1-y_1},\abs{x_2-y_2},\cdots,\abs{x_n-y_n}
+\}$.\\
+a) Use \exerciseref{exercise:mscross}, to show that
+$(\R^n,d')$ and
+$(\R^n,d'')$ are metric spaces.\\
+b)
+Let $\{ x_j \}_{j=1}^\infty$ be a sequence in $\R^n$ and $p \in \R^n$.
+Prove that the following statements are equivalent:\\
+(1) $\{ x_j \}$ converges to $p$ in $(\R^n,d)$.\\
+(2) $\{ x_j \}$ converges to $p$ in $(\R^n,d')$.\\
+(3) $\{ x_j \}$ converges to $p$ in $(\R^n,d'')$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
