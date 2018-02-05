@@ -1665,7 +1665,7 @@ let $\{ x_n \}$ be a sequence in $X$ converging to $p \in X$.  Suppose
 $x_n \in E$ for infinitely many $n \in \N$.  Show $p \in E$.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:extendedrealsmetric}
 Take $\R^* = \{ -\infty \} \cup \R \cup \{ \infty \}$ be the extended reals.
 Define $d(x,y) := \bigl\lvert \frac{x}{1+\abs{x}} - \frac{y}{1+\abs{y}}
 \bigr\rvert$
@@ -1882,9 +1882,11 @@ As $K$ is contained in a ball, $K$ is bounded.
 Next, we show a set that is not closed is not compact.  Suppose 
 $\overline{K} \not= K$, that is, there is a point $x \in \overline{K}
 \setminus K$.
-If $y \not= x$, then for $n$
-with $\nicefrac{1}{n} < d(x,y)$ we have
-$y \notin C(x,\nicefrac{1}{n})$. Furthermore $x \notin K$, so
+If $y \not= x$, then
+$y \notin C(x,\nicefrac{1}{n})$
+for $n \in \N$
+such that $\nicefrac{1}{n} < d(x,y)$.
+Furthermore $x \notin K$, so
 \begin{equation*}
 K \subset \bigcup_{n=1}^\infty {C(x,\nicefrac{1}{n})}^c .
 \end{equation*}
@@ -1897,7 +1899,7 @@ finite collection of indices $n_1 < n_2 < \ldots < n_k$, then
 =
 {C(x,\nicefrac{1}{n_k})}^c 
 \end{equation*}
-As $x$ is in the closure,
+As $x$ is in the closure of $K$,
 $C(x,\nicefrac{1}{n_k}) \cap K \not= \emptyset$.  So there is no
 finite subcover and $K$ is not compact.
 \end{proof}
@@ -1909,11 +1911,12 @@ So closed bounded sets
 of $\R^n$ are examples of compact sets.
 It is not true that in every metric space, closed and bounded is equivalent
 to compact.  A simple example would be an incomplete metric space such as
-$(0,1)$ with the subspace metric.
-But there are many complete and very useful metric spaces where closed and bounded is not
+$(0,1)$ with the subspace metric from $\R$.
+But there are many complete and very useful metric spaces
+where closed and bounded is not
 enough to give compactness, see
 \exerciseref{exercise:msclbounnotcompt}: $C([a,b],\R)$ is a complete metric
-space, but the closed unit ball $C(0,1)$ is not compact.  However, see
+space, but the closed unit ball $C(0,1)$ is not compact.  However, see also
 \exerciseref{exercise:mstotbound}.
 
 A useful property of compact sets in a metric space is that every
@@ -1995,8 +1998,10 @@ $B(x,\delta)$ contains $x_k$ for infinitely many $k \in \N$.
 The ball $B(x,1)$ contains some $x_k$ so let $n_1 := k$.
 If $n_{j-1}$ is defined, then there must
 exist a $k > n_{j-1}$ such that $x_k \in B(x,\nicefrac{1}{j})$, so define
-$n_j := k$.  Notice that
-$d(x,x_{n_j}) < \nicefrac{1}{j}$.  By \propref{prop:msconvifa},
+$n_j := k$.
+We now posses a subsequence $\{ x_{n_k} \}$.
+Since
+$d(x,x_{n_j}) < \nicefrac{1}{j}$,  \propref{prop:msconvifa} says
 $\lim\, x_{n_j} = x$.
 
 For the other direction, suppose every sequence in $K$
@@ -2004,8 +2009,8 @@ has a
 subsequence converging in $K$.
 Take
 an open cover $\{ U_\lambda \}_{\lambda \in I}$ of $K$.
-Using the Lebesgue covering lemma above, we find a $\delta > 0$
-such that for every $x$, there is a $\lambda \in I$ with
+Using the Lebesgue covering lemma above, find a $\delta > 0$
+such that for every $x \in K$, there is a $\lambda \in I$ with
 $B(x,\delta) \subset U_\lambda$.
 
 Pick $x_1 \in K$ and find $\lambda_1 \in I$ such that $B(x_1,\delta) \subset
@@ -2138,6 +2143,14 @@ of these statements are either trivial or are relegated to the exercises
 below.
 \end{example}
 
+\begin{remark}
+A subtle issue with Cauchy sequences, completeness, compactness,
+and convergence is that compactness and convergence only depend on the
+topology, that is, on which sets are the open sets.  On the other hand,
+Cauchy sequences and completeness depend on the actual metric.
+See \exerciseref{exercise:cauchydepndsonmetric}.
+\end{remark}
+
 \subsection{Exercises}
 
 \begin{exercise}
@@ -2146,8 +2159,10 @@ Show that $A$ is compact.
 \end{exercise}
 
 \begin{exercise}
-Let $A = \{ \nicefrac{1}{n} : n \in \N \} \subset \R$.  a)~Show that $A$ is
-not compact directly using the definition.  b)~Show that $A \cup \{ 0 \}$ is
+Let $A = \{ \nicefrac{1}{n} : n \in \N \} \subset \R$.\\
+a)~Show that $A$ is
+not compact directly using the definition.\\
+b)~Show that $A \cup \{ 0 \}$ is
 compact directly using the definition.
 \end{exercise}
 
@@ -2248,6 +2263,31 @@ Show that $E$ with the subspace metric is a complete metric space.
 \begin{exercise}
 Let $(X,d)$ be an incomplete metric space.  Show that there exists a
 closed and bounded set $E$ that is not compact.
+\end{exercise}
+
+\begin{exercise} \label{exercise:cauchydepndsonmetric}
+Consider two metrics on $\R$.
+Let $d(x,y) := \abs{x-y}$ be the standard metric,
+and let
+$d'(x,y) := \bigl\lvert \frac{x}{1+\abs{x}} - \frac{y}{1+\abs{y}}
+\bigr\rvert$.\\
+a) Show that $(\R,d')$ is a metric space (if you have done
+\exerciseref{exercise:extendedrealsmetric} the computation is the same).\\
+b) Show that the topology is the same, that is, a set is open in
+$(\R,d)$ if and only if it is open in $(\R,d')$.\\
+c) Show that a set is compact in
+$(\R,d)$ if and only if it is compact in $(\R,d')$.\\
+d) Show that a sequence converges in $(\R,d)$ if and only if
+it converges in $(\R,d')$.\\
+e) Find a sequence of real numbers that is Cauchy
+in $(\R,d')$ but not Cauchy in $(\R,d)$.\\
+f) While $(\R,d)$ is complete, show that $(\R,d')$ is not complete.
+\end{exercise}
+
+\begin{exercise}
+Let $(X,d)$ be a metric space and $K \subset X$ a set.
+Prove that $K$ is compact as a subset of $(X,d)$ if and only if it is
+compact as a subset of itself with the subspace metric.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
