@@ -1878,6 +1878,7 @@ $n_1 < n_2 < \ldots < n_k$ such that
 K \subset \bigcup_{j=1}^k B(p,n_j) = B(p,n_k) .
 \end{equation*}
 As $K$ is contained in a ball, $K$ is bounded.
+See left hand side of \figureref{fig:compactbndclosed}.
 
 Next, we show a set that is not closed is not compact.  Suppose 
 $\overline{K} \not= K$, that is, there is a point $x \in \overline{K}
@@ -1890,8 +1891,8 @@ Furthermore $x \notin K$, so
 \begin{equation*}
 K \subset \bigcup_{n=1}^\infty {C(x,\nicefrac{1}{n})}^c .
 \end{equation*}
-As a closed ball is closed, ${C(x,\nicefrac{1}{n})}^c$ is open, and
-so we have an open cover.
+A closed ball is closed, so its complement ${C(x,\nicefrac{1}{n})}^c$ is open, and
+we have an open cover.
 If we take any
 finite collection of indices $n_1 < n_2 < \ldots < n_k$, then 
 \begin{equation*}
@@ -1900,9 +1901,18 @@ finite collection of indices $n_1 < n_2 < \ldots < n_k$, then
 {C(x,\nicefrac{1}{n_k})}^c 
 \end{equation*}
 As $x$ is in the closure of $K$,
+then
 $C(x,\nicefrac{1}{n_k}) \cap K \not= \emptyset$.  So there is no
 finite subcover and $K$ is not compact.
+See right hand side of \figureref{fig:compactbndclosed}.
 \end{proof}
+
+\begin{myfigureht}
+\subimport*{figures/}{compactbnd.pdf_t}
+\qquad \qquad
+\subimport*{figures/}{compactclosed.pdf_t}
+\caption{Proving compact set is bounded (left) and closed (right).\label{fig:compactbndclosed}}
+\end{myfigureht}
 
 We prove below that 
 in finite dimensional euclidean space
@@ -1910,9 +1920,9 @@ every closed bounded set is compact.
 So closed bounded sets
 of $\R^n$ are examples of compact sets.
 It is not true that in every metric space, closed and bounded is equivalent
-to compact.  A simple example would be an incomplete metric space such as
+to compact.  A simple example is an incomplete metric space such as
 $(0,1)$ with the subspace metric from $\R$.
-But there are many complete and very useful metric spaces
+There are many complete and very useful metric spaces
 where closed and bounded is not
 enough to give compactness, see
 \exerciseref{exercise:msclbounnotcompt}: $C([a,b],\R)$ is a complete metric
@@ -1967,10 +1977,18 @@ B(y,\nicefrac{1}{n}) \subset
 B(y,\nicefrac{1}{M}) \subset B(y,\nicefrac{\epsilon}{2}) \subset
 B(x,\epsilon) \subset U_\lambda .
 \end{equation*}
+See \figureref{fig:lebesguedelta}.
 In other words, for all $n \geq M$, $x_n \notin B(x,\nicefrac{\epsilon}{2})$. 
 Hence the sequence cannot have a subsequence converging to $x$.  As $x \in K$ was
 arbitrary we are done.
 \end{proof}
+
+\begin{myfigureht}
+\subimport*{figures/}{lebesguedelta.pdf_t}
+\caption{Proof of Lebesgue covering lemma.
+Note that $B(y,\nicefrac{\epsilon}{2}) \subset
+B(x,\epsilon)$ by triangle inequality.\label{fig:lebesguedelta}}
+\end{myfigureht}
 
 \begin{thm} \label{thm:mscompactisseqcpt}
 Let $(X,d)$ be a metric space.  Then $K \subset X$ is a compact set if
@@ -2035,6 +2053,20 @@ U_{\lambda_{n-1}}\bigr)$.
 Note that $d(x_n,x_j) \geq \delta$ for all $j = 1,2,\ldots,n-1$.
 Next, there must be some $\lambda_n \in I$
 such that $B(x_n,\delta) \subset U_{\lambda_n}$.
+See \figureref{fig:seqcompactiscompact}.
+
+\begin{myfigureht}
+\subimport*{figures/}{seqcompactiscompact.pdf_t}
+\caption{Covering $K$ by $U_{\lambda}$.  The points
+$x_1,x_2,x_3,x_4$, 
+the three sets 
+$U_{\lambda_1}$,
+$U_{\lambda_2}$,
+$U_{\lambda_2}$,
+and 
+the first three balls
+of radius $\delta$ are drawn.\label{fig:seqcompactiscompact}}
+\end{myfigureht}
 
 Either at some point we obtain a finite subcover of $K$
 or we obtain an
