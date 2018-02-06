@@ -366,10 +366,15 @@ notation for the nonstandard ordering such as $n \prec m$.
 \end{exercise}
 
 \begin{exercise}
-Let $F := \{ 0, 1, 2 \}$.  a)~Prove that there is
+Let $F := \{ 0, 1, 2 \}$.
+\begin{enumerate}[a)]
+\item
+Prove that there is
 exactly one way to define addition and multiplication so that $F$ is
 a field if $0$ and $1$ have their usual meaning of (A4) and (M4).
-b)~Show that $F$ cannot be an ordered field.
+\item
+Show that $F$ cannot be an ordered field.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{exercise:dominatingb}
@@ -391,13 +396,15 @@ Show that $A$ has a supremum and find what it is.
 
 \begin{exercise}
 Let $F$ be an ordered field and $x,y,z,w \in F$.
-\\
-a) Prove part \ref{prop:bordfield:vii} of \propref{prop:bordfield}.
+\begin{enumerate}[a)]
+\item
+Prove part \ref{prop:bordfield:vii} of \propref{prop:bordfield}.
 That is,
 if $x \leq y$ and $z \leq w$, then $x+z \leq y+w$.
-\\
-b) Prove that
+\item
+Prove that
 if $x < y$ and $z \leq w$, then $x+z < y+w$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -413,13 +420,18 @@ $\N_{\infty}$ (make sure to also handle the case of an empty set).
 \end{exercise}
 
 \begin{exercise}
-Let $S := \{ A_k : k \in \N \} \cup \{ B_k : k \in \N \}$, ordered such that
-$A_k < B_j$ for any $k$ and $j$,
-$A_k < A_m$ whenever $k < m$,
-and $B_k > B_m$ whenever $k < m$.\\
-a) Show that $S$ is an ordered set.\\
-b) Show that any subset of $S$ is bounded (both above and below).\\
-c) Find a bounded subset of $S$ which has no least upper bound.
+Let $S := \{ a_k : k \in \N \} \cup \{ b_k : k \in \N \}$, ordered such that
+$a_k < b_j$ for any $k$ and $j$,
+$a_k < a_m$ whenever $k < m$,
+and $b_k > b_m$ whenever $k < m$.
+\begin{enumerate}[a)]
+\item
+Show that $S$ is an ordered set.
+\item
+Show that any subset of $S$ is bounded (both above and below).
+\item
+Find a bounded subset of $S$ which has no least upper bound.
+\end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -903,7 +915,7 @@ Show that $C$ is a bounded set and that
 \end{equation*}
 \end{exercise}
 
-\begin{exercise}[Hard]
+\begin{exercise}[Hard] \label{exercise:rootexistshard}
 Given $x > 0$ and $n \in \N$, show that there exists a unique positive
 real number $r$ such that $x = r^n$.  Usually $r$ is denoted by $x^{1/n}$.
 \end{exercise}
@@ -927,16 +939,19 @@ Prove $\sup \{ x \in \Q : x^2 < 2 \} = \sup \{ x \in \R : x^2 < 2 \}$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:Dedekind}
-a) Prove that given any $y \in \R$, we have $\sup \{ x \in \Q : x < y \} = y$.
-\\
-b) Let $A \subset \Q$ be a set that is bounded above such that whenever $x
+{\ }
+\begin{enumerate}[a)]
+\item
+Prove that given any $y \in \R$, we have $\sup \{ x \in \Q : x < y \} = y$.
+\item
+Let $A \subset \Q$ be a set that is bounded above such that whenever $x
 \in A$ and $t \in \Q$ with $t < x$, then $t \in A$.  Further suppose 
 $\sup\, A \not\in A$.  Show that there exists a $y \in \R$ such that
 $A = \{ x \in \Q : x < y \}$.  A set such as $A$ is called a
 \emph{\myindex{Dedekind cut}}.
-\\
-c) Show that there is a bijection between $\R$ and Dedekind cuts.
-\\
+\item
+Show that there is a bijection between $\R$ and Dedekind cuts.
+\end{enumerate}
 Note: Dedekind used sets of the form from part b) in his construction of the
 real numbers.
 \end{exercise}
@@ -951,37 +966,39 @@ $x \geq 0$.
 
 \begin{exercise} \label{exercise:realpower}
 Let us suppose we know $x^{1/n}$ exists for every $x > 0$ and every $n \in
-\N$ (see exercise above).  For integers $p$ and $q > 0$, define $x^{p/q} :=
-{(x^{1/q})}^p$.\\
-a) Show that the power is well defined: if $\nicefrac{p}{q} =
+\N$ (see \exerciseref{exercise:rootexistshard} above).
+For integers $p$ and $q > 0$ where $\nicefrac{p}{q}$ is in lowest terms, define $x^{p/q} :=
+{(x^{1/q})}^p$.
+\begin{enumerate}[a)]
+\item
+Show that the power is well defined even
+if the fraction is not in lowest terms: if $\nicefrac{p}{q} =
 \nicefrac{m}{k}$ where $m$ and $k > 0$ are integers, then 
 ${(x^{1/q})}^p = {(x^{1/m})}^k$.
-\\
-b)
+\item
 Let $x$ and $y$ be two positive numbers and $r$ a rational number.
 Assuming $r > 0$, show
 $x < y$ if and only if $x^r < y^r$.  Then suppose $r < 0$ and show:
 $x < y$ if and only if $x^r > y^r$.
-\\
-c) 
+\item 
 Suppose $x > 1$ and $r,s$ are rational where $r < s$.
 Show $x^r < x^s$.  If $0 < x < 1$ and $r < s$, show that $x^r > x^s$.
 Hint: Write $r$ and $s$ with the same denominator.
-\\
-d)%
+\item
+(Challenging)%
 \footnote{In
 \sectionref{sec:logandexp}
 we will define exponential and the logarithm and
 define $x^z := \exp(z \ln x)$.  We will then have 
 sufficient machinery to make proofs of these assertions far easier.  At this
 point however, we do not yet have these tools.}
-(Challenging)
 For an irrational $z \in \R \setminus \Q$ and $x > 1$ define
 $x^z := \sup \{ x^r : r \leq z, r \in \Q \}$,
 for $x=1$ define $1^z = 1$,
 and for $0 < x < 1$ define
 $x^z := \inf \{ x^r : r \leq z, r \in \Q \}$.
 Prove the two assertions of part b) for all real $z$.
+\end{enumerate}
 \end{exercise}
 
 
@@ -1320,8 +1337,9 @@ numbers.
 \begin{exercise} \label{exercise:sumofsup}
 Let $D$ be a nonempty set.
 Suppose $f \colon D \to \R$ and $g \colon D \to \R$ are bounded functions.
-\\
-a)~Show 
+\begin{enumerate}[a)]
+\item
+Show 
 \begin{equation*}
 \sup_{x\in D} \bigl(f(x) + g(x) \bigr) \leq
 \sup_{x\in D} f(x)
@@ -1333,33 +1351,41 @@ a)~Show
 +
 \inf_{x\in D} g(x) .
 \end{equation*}
-b) Find examples where we obtain strict inequalities.
+\item
+Find examples where we obtain strict inequalities.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 Suppose $f \colon D \to \R$ and $g \colon D \to \R$ are bounded functions
 and
-$\alpha \in \R$.\\
-a) Show that $\alpha f \colon D \to \R$ defined by $(\alpha f) (x) := \alpha
+$\alpha \in \R$.
+\begin{enumerate}[a)]
+\item
+Show that $\alpha f \colon D \to \R$ defined by $(\alpha f) (x) := \alpha
 f(x)$ is a bounded function.\\
-b) Show that $f+g \colon D \to \R$ defined by $(f+g) (x) := f(x) + g(x)$
+\item
+Show that $f+g \colon D \to \R$ defined by $(f+g) (x) := f(x) + g(x)$
 is a bounded function.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 Let $f \colon D \to \R$ and $g \colon D \to \R$ be functions, $\alpha \in
 \R$, and
 recall what $f+g$ and $\alpha f$ means from the previous exercise.
-\\
-a) Prove that if $f+g$ and $g$ are bounded, then $f$ is bounded.
-\\
-b) Find an example where $f$ and $g$ are both unbounded, but $f+g$ is
+\begin{enumerate}[a)]
+\item
+Prove that if $f+g$ and $g$ are bounded, then $f$ is bounded.
+\item
+Find an example where $f$ and $g$ are both unbounded, but $f+g$ is
 bounded.
-\\
-c) Prove that if $f$ is bounded but $g$ is unbounded, then $f+g$ is
+\item
+Prove that if $f$ is bounded but $g$ is unbounded, then $f+g$ is
 unbounded.
-\\
-d) Find an example where $f$ is unbounded but $\alpha f$ is bounded.
+\item
+Find an example where $f$ is unbounded but $\alpha f$ is bounded.
+\end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1549,13 +1575,21 @@ Construct an explicit bijection from $[0,1]$ to $(0,1)$.
 \end{exercise}
 
 \begin{exercise}
-a) Show that every closed interval $[a,b]$ is the intersection
-of countably many open intervals.  b) Show that every open interval $(a,b)$
-is a countable union of closed intervals.  c) Show that an intersection
+{\ }
+\begin{enumerate}[a)]
+\item
+Show that every closed interval $[a,b]$ is the intersection
+of countably many open intervals.
+\item
+Show that every open interval $(a,b)$
+is a countable union of closed intervals.
+\item
+Show that an intersection
 of a possibly infinite family of bounded closed intervals,
 $\bigcap\limits_{\iota \in I} [a_\iota,b_\iota]$,
 is either empty, a single point,
 or a bounded closed interval.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1578,11 +1612,15 @@ explicit bijection.
 \begin{exercise}[Challenging]
 A number $x$ is \emph{algebraic}\index{algebraic number} if $x$ is a root of a polynomial with
 integer coefficients, in other words, $a_n x^n + a_{n-1} x^{n-1}  + \ldots
-+ a_1 x + a_0 = 0$ where all $a_n \in \Z$.\\
-a) Show that there are only
-countably many algebraic numbers.\\
-b) Show that there exist non-algebraic
-numbers (follow in the footsteps of Cantor, use uncountability of $\R$).\\
++ a_1 x + a_0 = 0$ where all $a_n \in \Z$.
+\begin{enumerate}[a)]
+\item
+Show that there are only
+countably many algebraic numbers.
+\item
+Show that there exist non-algebraic
+numbers (follow in the footsteps of Cantor, use uncountability of $\R$).
+\end{enumerate}
 Hint: Feel free to use the fact that a polynomial of degree $n$ has at most $n$ real
 roots.
 \end{exercise}
@@ -1953,11 +1991,11 @@ D_n \leq D_{n-1} + \frac{r_{n-1}}{10^{n} q} = \frac{p}{q} \leq D_n +
 By uniqueness we really have 
 the $n$th digit $d_n$ from the construction.
 
-The new digit depends only the remaineder from the previous
+The new digit depends only the remainder from the previous
 step.  There
 are at most $q$ possible remainders
-and hence at some step the process must start repeating itself.
-In fact, $P$ is at most $q$.
+and hence at some step the process must start repeating itself,
+and $P$ is at most $q$.
 \end{proof}
 
 The converse of the proposition is also true and is left as an exercise.
@@ -2028,7 +2066,8 @@ that $\N$ and the even natural numbers are bijective).
 
 \begin{exercise}
 Prove that if $x = \nicefrac{p}{q} \in (0,1]$ is a rational number, $q > 1$,
-then the period $P$ of repeating digits is in fact less then or equal to $q-1$.
+then the period $P$ of repeating digits in the decimal representation
+of $x$ is in fact less then or equal to $q-1$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:bnlimit}
