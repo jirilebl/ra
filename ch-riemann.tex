@@ -629,8 +629,12 @@ always monotone?  Yes/No: Prove or find a counterexample.
 For a bounded function $f \colon [0,1] \to \R$ let
 $R_n := (\nicefrac{1}{n})\sum_{j=1}^n f(\nicefrac{j}{n})$ (the
 uniform right hand rule).
-a) If $f$ is Riemann integrable show $\int_0^1 f = \lim \, R_n$.
-b) Find an $f$ that is not Riemann integrable, but $\lim \, R_n$ exists.
+\begin{enumerate}[a)]
+\item
+If $f$ is Riemann integrable show $\int_0^1 f = \lim \, R_n$.
+\item
+Find an $f$ that is not Riemann integrable, but $\lim \, R_n$ exists.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}[Challenging] \label{exercise:riemannintdarboux}
@@ -1404,12 +1408,19 @@ $a$, $b$, the endpoints of $I_k$ and the $\alpha_k$.
 
 \begin{exercise}
 \label{exercise:boundedvariationintegrable}
-Let $f \colon [a,b] \to \R$ be increasing.  a) Show that $f$ is Riemann
+Let $f \colon [a,b] \to \R$ be increasing.
+\begin{enumerate}[a)]
+\item
+Show that $f$ is Riemann
 integrable.  Hint: Use a uniform partition; each subinterval of same length.
-b) Use part a to show that a decreasing function is Riemann
-integrable.  c)  Suppose $h = f-g$ where $f$ and $g$ are increasing
-functions on $[a,b]$.  Show that $h$ is Riemann integrable%
-\footnote{Such an $h$ is said to be of \emph{\myindex{bounded variation}}.}.
+\item
+Use part a to show that a decreasing function is Riemann
+integrable.
+\item
+Suppose\footnote{Such an $h$ is said to be of \emph{\myindex{bounded variation}}.}
+$h = f-g$ where $f$ and $g$ are increasing
+functions on $[a,b]$.  Show that $h$ is Riemann integrable.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}[Challenging] \label{exercise:hardabsint}
@@ -1420,12 +1431,18 @@ Then show the same inequality as \exerciseref{exercise:easyabsint}.
 
 \begin{exercise}  \label{exercise:upperlowerlinineq}
 Suppose $f \colon [a,b] \to \R$ and $g \colon [a,b] \to \R$
-are bounded. a)~Show
+are bounded.
+\begin{enumerate}[a)]
+\item
+Show
 $\overline{\int_a^b} (f+g) \leq \overline{\int_a^b}f+\overline{\int_a^b}g$ and
 $\underline{\int_a^b} (f+g) \geq
-\underline{\int_a^b}f+\underline{\int_a^b}g$.  b)~Find example $f$ and $g$ where
+\underline{\int_a^b}f+\underline{\int_a^b}g$.
+\item
+Find example $f$ and $g$ where
 the inequality is strict.  Hint: $f$ and $g$ should not be Riemann
 integrable.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1844,13 +1861,16 @@ be a constant.  For $x \in [a+\epsilon,b-\epsilon]$, define
 \begin{equation*}
 g(x) := \frac{1}{2\epsilon} \int_{x-\epsilon}^{x+\epsilon} f .
 \end{equation*}
-a) Show that $g$ is differentiable and find the derivative.
-\\
-b) Let $f$ be differentiable and fix $x \in (a,b)$ (let $\epsilon$
+\begin{enumerate}[a)]
+\item
+Show that $g$ is differentiable and find the derivative.
+\item
+Let $f$ be differentiable and fix $x \in (a,b)$ (let $\epsilon$
 be small enough).  What happens to $g'(x)$ as $\epsilon$ gets smaller?
-\\
-c) Find $g$ for $f(x) := \abs{x}$, $\epsilon = 1$ (you can assume 
+\item
+Find $g$ for $f(x) := \abs{x}$, $\epsilon = 1$ (you can assume 
 $[a,b]$ is large enough).
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1865,31 +1885,47 @@ $\int_a^x f = 0$ for all rational $x$ in $[a,b]$.  Show that $f(x) = 0$
 for all $x \in [a,b]$.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 A function $f$ is an \emph{\myindex{odd function}} if $f(x) = -f(-x)$,
 and $f$ is an \emph{\myindex{even function}} if $f(x) = f(-x)$.  Let $a >
-0$.  Assume $f$ is continuous.  Prove: a)~If $f$ is odd, then $\int_{-a}^a f
-= 0$.  b)~If $f$ is even, then $\int_{-a}^a f = 2 \int_0^a f$.
+0$.  Assume $f$ is continuous.  Prove:
+\begin{enumerate}[a)]
+\item
+If $f$ is odd, then $\int_{-a}^a f = 0$.
+\item
+If $f$ is even, then $\int_{-a}^a f = 2 \int_0^a f$.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
-a) Show that $f(x) := \sin(\nicefrac{1}{x})$
+{\ }
+\begin{enumerate}[a)]
+\item
+Show that $f(x) := \sin(\nicefrac{1}{x})$
 is integrable on any interval (you can define $f(0)$ to be anything).
-b)~Compute $\int_{-1}^1 \sin(\nicefrac{1}{x})\,dx$.  (Mind the
+\item
+Compute $\int_{-1}^1 \sin(\nicefrac{1}{x})\,dx$.  (Mind the
 discontinuity)
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}[uses \sectionref{sec:monotonefunc}]
-a) Suppose $f \colon [a,b] \to \R$ is increasing, by
+{\ }
+\begin{enumerate}[a)]
+\item
+Suppose $f \colon [a,b] \to \R$ is increasing, by
 \propref{prop:monotoneintegrable},
 %\exerciseref{exercise:boundedvariationintegrable},
 $f$ is Riemann integrable.  Suppose $f$ has a discontinuity at $c \in
 (a,b)$, show that $F(x) := \int_a^x f$ is not differentiable at $c$.
-\\
-b) In \exerciseref{exercise:increasingfuncdiscatQ}, you constructed an increasing
+\item
+In \exerciseref{exercise:increasingfuncdiscatQ}, you constructed an increasing
 function $f \colon [0,1] \to \R$ that is discontinuous at every
 $x \in [0,1] \cap \Q$.  Use this $f$ to construct a function $F(x)$ that is
 continuous on $[0,1]$, but not differentiable at every $x \in [0,1] \cap \Q$.
+\end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2081,7 +2117,7 @@ $E(qx) = {E(x)}^q$.
 \end{prop}
 
 \begin{proof}
-Again, let us prove existence of such a function by defining a candidate,
+Again, we prove existence of such a function by defining a candidate,
 and prove that it satisfies all the properties.
 The $L$ defined above is invertible.  Let $E$ be the
 inverse function of $L$.  Property \ref{it:exp:i} is immediate.
@@ -2095,7 +2131,7 @@ E'(x) = \frac{1}{L'\bigl(E(x)\bigr)} = E(x) .
 \end{equation*}
 
 Let us look at property \ref{it:exp:iii}.
-The function $E$ is strictly increasing since $E(x) > 0$ and
+The function $E$ is strictly increasing since 
 $E'(x) = E(x) > 0$.  As $E$ is the inverse of $L$, it must also
 be bijective.  
 To find the limits, we use that 
@@ -2153,8 +2189,8 @@ Then
 %Since $E(x)E(-x) = 1$,
 Finally, $E(-x) \not= 0$\footnote{%
 $E$ is a function into $(0,\infty)$ after all.
-However it also follows
-from $E(x)E(-x) = 1$.  Therefore we prove uniqueness of $E$ 
+However, $E(-x) \neq 0$ also follows
+from $E(x)E(-x) = 1$.  Therefore we can prove uniqueness of $E$ 
 given \ref{it:exp:i} and \ref{it:exp:ii}, even for functions $E \colon \R
 \to \R$.}
 for all $x \in \R$.
@@ -2168,12 +2204,12 @@ Having proved $E$ is unique, we define the
 \exp(x) := E(x) .
 \end{equation*}
 
-We can now make sense of exponentiation $x^y$ for arbitrary numbers
-when $x > 0$.  First suppose $y \in \Q$.  Then
+If $y \in \Q$ and $x > 0$, then
 \begin{equation*}
 x^y = \exp\bigl(\ln(x^y)\bigr) = \exp\bigl(y\ln(x)\bigr) .
 \end{equation*}
-Therefore when $x > 0$ and $y$ is irrational let us define
+We can now make sense of exponentiation $x^y$ for arbitrary $y \in \R$;
+if $x > 0$ and $y$ is irrational, define
 \begin{equation*}
 x^y := \exp\bigl(y\ln(x)\bigr) .
 \end{equation*}
@@ -2182,19 +2218,18 @@ Therefore, we would
 obtain the same result had we taken a sequence of rational numbers $\{ y_n \}$
 approaching $y$ and defined $x^y = \lim\, x^{y_n}$.
 
-Define the number $e$ as
+Define the number $e$,
+sometimes called \emph{\myindex{Euler's number}} or
+the \emph{\myindex{base of the natural logarithm}}, as
 \begin{equation*}
 e := \exp(1) .
 \end{equation*}
-The number $e$ is sometimes called \emph{\myindex{Euler's number}} or
-the \emph{\myindex{base of the natural logarithm}}.
-We notice 
+Let us justify the notation $e^x$ for $\exp(x)$:
 \begin{equation*}
 e^x = \exp\bigl(x \ln(e) \bigr) = \exp(x) .
 \end{equation*}
-We have justified the notation $e^x$ for $\exp(x)$.
 
-Finally, let us extend properties of logarithm and exponential to
+Let us extend properties of logarithm and exponential to
 irrational powers.  The proof is immediate.
 
 \begin{prop}
@@ -2207,6 +2242,25 @@ If $x > 0$ then $\ln(x^y) = y \ln (x)$.
 \end{enumerate}
 \end{prop}
 
+\begin{remark}
+There are other equivalent ways to define the exponential and the logarithm.
+A common way is to define $E$ as the solution to the differential equation
+$E'(x) = E(x)$, $E(0) = 1$.  See \exampleref{example:picardexponential},
+for a sketch of that approach.  Yet another
+approach is to define the exponential function by
+power series, see \exampleref{example:exponentialbypowerseries}.
+\end{remark}
+
+\begin{remark}
+We have proved the uniqueness of the functions $L$ and $E$ from
+just the properties $L(1)=0$, $L'(x) = \nicefrac{1}{x}$
+and the equivalent condition for the exponential
+$E'(x) = E(x)$, $E(0) = 1$.  Existence in fact also follows
+from just these properties.
+Alternatively, uniqueness also follows
+from the laws of exponents, see the exercises.
+\end{remark}
+
 \subsection{Exercises}
 
 \begin{exercise}
@@ -2215,22 +2269,27 @@ and $g \colon \R \to \R$ as, $f(x) := x^y$ and $g(x) := b^x$.  Show that $f$
 and $g$ are differentiable and find their derivative.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
-Let $b > 0$, $b\neq 1$ be given.\\
-a) Show that for every $y > 0$, there exists a unique number $x$
+Let $b > 0$, $b\neq 1$ be given.
+\begin{enumerate}[a)]
+\item
+Show that for every $y > 0$, there exists a unique number $x$
 such that $y = b^x$.  Define
 the \emph{\myindex{logarithm base $b$}},
 $\log_b \colon (0,\infty) \to \R$, by
 $\log_b(y) := x$.
-\\
-b) Show that $\log_b(x) = \frac{\ln(x)}{\ln(b)}$.
-\\
-c) Prove that if $c > 0$, $c \neq 1$, then
+\item
+Show that $\log_b(x) = \frac{\ln(x)}{\ln(b)}$.
+\item
+Prove that if $c > 0$, $c \neq 1$, then
 $\log_b(x) = \frac{\log_c(x)}{\log_c(b)}$.
-\\
-d) Prove $\log_b(xy) =
+\item
+Prove $\log_b(xy) =
 \log_b(x)+\log_b(y)$, and $\log_b(x^y) = y \log_b(x)$.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}[requires \sectionref{sec:taylor}]
 Use \hyperref[thm:taylor]{Taylor's theorem} to study the remainder term and show that for
@@ -2257,6 +2316,7 @@ find the limit of the alternating harmonic series
 \sum_{n=1}^\infty \frac{{(-1)}^{n+1}}{n} = 1 - \nicefrac{1}{2} +
 \nicefrac{1}{3} - \nicefrac{1}{4} + \cdots
 \end{equation*}
+\end{exercise}
 
 \begin{exercise}
 Show 
@@ -2273,10 +2333,11 @@ times during the year.  Therefore $e^x$ is the result of continuous
 compounding.
 \end{exercise}
 
-\end{exercise}
-
+\begin{samepage}
 \begin{exercise}
-a)
+{\ }
+\begin{enumerate}[a)]
+\item
 Prove that for $n \in \N$ we have
 \begin{equation*}
 \sum_{k=2}^{n}
@@ -2287,8 +2348,8 @@ Prove that for $n \in \N$ we have
 \sum_{k=1}^{n-1}
 \frac{1}{k} .
 \end{equation*}
-\\
-b) Prove that the limit
+\item
+Prove that the limit
 \begin{equation*}
 \gamma := \lim_{n\to\infty}
 \left( \sum_{k=1}^{n}
@@ -2300,9 +2361,11 @@ exists.  This constant is known as the
 \href{http://en.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Paul Euler} (1707 -- 1783)
 and the Italian mathematician
 \href{http://en.wikipedia.org/wiki/Lorenzo_Mascheroni}{Lorenzo Mascheroni}
-(1750 -- 1800).}.  It is not known if this constant is rational or not,
-it is approximately $\gamma \approx 0.5772$.
+(1750 -- 1800).}.  It is not known if this constant is rational or not.
+It is approximately $\gamma \approx 0.5772$.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Show
@@ -2342,19 +2405,24 @@ e^{-1/x} & \text{if $x > 0$,} \\
 0 & \text{if $x \leq 0$}.
 \end{cases}
 \end{equation*}
-a)~Prove that for any $m \in \N$,
+\begin{enumerate}[a)]
+\item
+Prove that for any $m \in \N$,
 \begin{equation*}
 \lim_{x \to 0} \frac{e^x}{x^m} = 0 .
 \end{equation*}
-b)~Prove that $f$ is infinitely differentiable (it has derivatives of all
-orders).\\
-c)~Compute the Taylor series for $f$ at the origin, that is,
+\item
+Prove that $f$ is infinitely differentiable (it has derivatives of all
+orders).
+\item
+Compute the Taylor series for $f$ at the origin, that is,
 \begin{equation*}
 \sum_{k=0}^\infty
 \frac{f^{(k)}(0)}{k!}x^k .
 \end{equation*}
 Show that it converges, but show that it does not converge to $f(x)$
 for any $x > 0$.
+\end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3227,9 +3295,15 @@ When the series converges, find an upper bound for the sum.
 \end{exercise}
 
 \begin{exercise}
-a) Estimate $\sum\limits_{n=1}^\infty \frac{1}{n(n+1)}$ correct to within 0.01
-using the integral test.  b) Compute the limit of the series exactly
+{\ }
+\begin{enumerate}[a)]
+\item
+Estimate $\sum\limits_{n=1}^\infty \frac{1}{n(n+1)}$ correct to within 0.01
+using the integral test.
+\item
+Compute the limit of the series exactly
 and compare.  Hint: The sum telescopes.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -3283,9 +3357,13 @@ then $\abs{\int_a^b f} < \epsilon$.
 
 \begin{exercise}
 Suppose $f \colon [0,\infty) \to \R$ is nonnegative and
-\emph{decreasing}.
-a) Show that if $\int_0^\infty f < \infty$, then $\lim\limits_{x\to\infty} f(x) = 0$.
-b) Show that the converse does not hold.
+\emph{decreasing}.  Prove:
+\begin{enumerate}[a)]
+\item
+If $\int_0^\infty f < \infty$, then $\lim\limits_{x\to\infty} f(x) = 0$.
+\item
+The converse does not hold.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -3307,8 +3385,8 @@ make the function negative, on the other make the function positive.
 \end{exercise}
 
 \begin{exercise}
-Show that if $f \colon [1,\infty) \to \R$ is such that
-$g(x) := x^2 f(x)$ is a bounded function, then
+Suppose $f \colon [1,\infty) \to \R$ is such that
+$g(x) := x^2 f(x)$ is a bounded function. Prove that
 $\int_1^\infty f$ converges.
 \end{exercise}
 
@@ -3317,7 +3395,7 @@ It is sometimes desirable to assign a value to integrals that normally
 cannot be interpreted as even improper integrals,
 e.g.\ $\int_{-1}^1 \nicefrac{1}{x}~dx$.
 Suppose $f \colon [a,b] \to \R$ is a function and $a < c < b$,
-where $f$ is Riemann integrable on all intervals
+where $f$ is Riemann integrable on the intervals
 $[a,c-\epsilon]$ and $[c+\epsilon,b]$ for all $\epsilon > 0$.
 Define
 the \emph{\myindex{Cauchy principal value}} of $\int_a^b f$ as
@@ -3331,43 +3409,51 @@ p.v.\!\int_a^b f := \lim_{\epsilon\to 0^+}
 if the limit exists.
 \end{exnote}
 
+\begin{samepage}
 \begin{exercise}
-a) Compute $p.v.\!\int_{-1}^1 \nicefrac{1}{x}~dx$.
-\\
-b) Compute
+{\ }
+\begin{enumerate}[a)]
+\item
+Compute $p.v.\!\int_{-1}^1 \nicefrac{1}{x}~dx$.
+\item
+Compute
 $\lim_{\epsilon\to 0^+}
 ( \int_{-1}^{-\epsilon} \nicefrac{1}{x}~dx + 
 \int_{2\epsilon}^1 \nicefrac{1}{x}~dx )$ and show it is not equal
 to the principal value.
-\\
-c) Show that if $f$ is integrable on $[a,b]$, then
-$p.v.\!\int_a^b f = \int_a^b f$.
-\\
-d) Find an example of an $f$ with a singularity at $c$ as above
+\item
+Show that if $f$ is integrable on $[a,b]$, then
+$p.v.\!\int_a^b f = \int_a^b f$ (for an arbitrary $c \in (a,b)$).
+\item
+Find an example of an $f$ with a singularity at $c$ as above
 such that 
 $p.v.\!\int_a^b f$ exists, but the improper integrals
 $\int_a^c f$ and $\int_c^b f$ diverge.
-\\
-e) Suppose 
+\item
+Suppose 
 $f \colon [-1,1] \to \R$ is continuous.  Show that
 $p.v.\!\int_{-1}^1 \frac{f(x)}{x}~dx$ exists.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Let $f \colon \R \to \R$ and 
 $g \colon \R \to \R$ be continuous functions, where
 $g(x) = 0$ for all $x \notin [a,b]$ for some interval $[a,b]$.
-\\
-a) Show that the
+\begin{enumerate}[a)]
+\item
+Show that the
 \emph{\myindex{convolution}}
 \begin{equation*}
 (g * f)(x) := \int_{-\infty}^\infty f(t)g(x-t)~dt 
 \end{equation*}
 is well-defined for all $x \in \R$.
-\\
-b) Suppose $\int_{-\infty}^\infty \abs{f(x)}~dx < \infty$.  Prove that
+\item
+Suppose $\int_{-\infty}^\infty \abs{f(x)}~dx < \infty$.  Prove that
 \begin{equation*}
 \lim_{x \to -\infty} (g * f)(x) = 0, \qquad \text{and} \qquad
 \lim_{x \to \infty} (g * f)(x) = 0 .
 \end{equation*}
+\end{enumerate}
 \end{exercise}

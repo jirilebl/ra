@@ -496,13 +496,17 @@ metric space $(X,d')$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:mscross}
-Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.\\
-a) Show that $(X \times Y,d)$ with
+Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
+\begin{enumerate}[a)]
+\item
+Show that $(X \times Y,d)$ with
 $d\bigl( (x_1,y_1), (x_2,y_2) \bigr) := d_X(x_1,x_2) + d_Y(y_1,y_2)$ is
-a metric space. \\
-b) Show that $(X \times Y,d)$ with
+a metric space.
+\item
+Show that $(X \times Y,d)$ with
 $d\bigl( (x_1,y_1), (x_2,y_2) \bigr) := \max \{ d_X(x_1,x_2) , d_Y(y_1,y_2) \}$ is
 a metric space.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -514,7 +518,7 @@ d(f,g) := \int_0^1 \abs{f(x)-g(x)}\varphi(x)~dx .
 Show that $(X,d)$ is a metric space.
 \end{exercise}
 
-\pagebreak[2]
+%\pagebreak[2]
 
 \begin{exercise} \label{exercise:mshausdorffpseudo}
 Let $(X,d)$ be a metric space.  For nonempty bounded subsets $A$ and $B$ let
@@ -529,8 +533,9 @@ d_H(A,B) := \max \{ d(A,B) , d(B,A) \} .
 \end{equation*}
 Note: $d_H$ can be defined for arbitrary nonempty subsets if we allow the
 extended reals.
-\\
-a) Let $Y \subset \sP(X)$ be the set of bounded nonempty subsets.
+\begin{enumerate}[a)]
+\item
+Let $Y \subset \sP(X)$ be the set of bounded nonempty subsets.
 Prove that
 $(Y,d_H)$ is a so-called \emph{\myindex{pseudometric space}}:
 $d_H$ satisfies the metric properties
@@ -538,46 +543,56 @@ $d_H$ satisfies the metric properties
 \ref{metric:com}, 
 \ref{metric:triang}, and further
 $d_H(A,A) = 0$ for all $A \in Y$. 
-\\
-b) Show by example that $d$ itself is not symmetric, that is $d(A,B) \not=
+\item
+Show by example that $d$ itself is not symmetric, that is $d(A,B) \not=
 d(B,A)$.
-\\
-c) Find a metric space $X$ and two different
+\item
+Find a metric space $X$ and two different
 nonempty bounded subsets $A$ and $B$ such that $d_H(A,B) = 0$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Let $(X,d)$ be a metric space and $S \subset X$ a subset.  Prove:\\
-a)
+Let $(X,d)$ be a metric space and $S \subset X$ a subset.  Prove:
+\begin{enumerate}[a)]
+\item
 $S$ is bounded if and only if
 for every $p \in X$, there exists a $B > 0$ such that $d(p,x) \leq B$ for
-all $x \in S$.\\
-b)
+all $x \in S$.
+\item
 A nonempty $S$ is bounded if and only if
 $\operatorname{diam}(S) := \sup \{ d(x,y) : x,y \in S \} < \infty$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-a)
-Working in $\R$, compute $\operatorname{diam}\bigl([a,b]\bigr)$.\\
-b)
+{\ }
+\begin{enumerate}[a)]
+\item
+Working in $\R$, compute $\operatorname{diam}\bigl([a,b]\bigr)$.
+\item
 Working in $\R^n$, for any $r > 0$, let $B_r := \{ x_1^2+x_2^2+\cdots+x_n^2
-< r^2 \}$.  Compute $\operatorname{diam}\bigl(B_r\bigr)$.\\
-c)
+< r^2 \}$.  Compute $\operatorname{diam}\bigl(B_r\bigr)$.
+\item
 Suppose $(X,d)$ is a metric space with at least two points,
 $d$ is the discrete metric, and $p \in X$.
 Compute
 $\operatorname{diam}(\{ p \})$ and $\operatorname{diam}(X)$,
 then conclude that $(X,d)$ is bounded.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-a) Find a metric $d$ on $\N$ that makes it into an unbounded metric space.
-\\
-b) Find a metric $d$ on $\N$ that makes it into a bounded metric space.
-\\
-c) Find a metric $d$ on $\N$ such that for any $n \in \N$ and any $\epsilon > 0$
+{\ }
+\begin{enumerate}[a)]
+\item
+Find a metric $d$ on $\N$ that makes it into an unbounded metric space.
+\item
+Find a metric $d$ on $\N$ that makes it into a bounded metric space.
+\item
+Find a metric $d$ on $\N$ such that for any $n \in \N$ and any $\epsilon > 0$
 there exists an $m \in \N$ such that $d(n,m) < \epsilon$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{exercise:C1ab}
@@ -590,12 +605,14 @@ d(f,g) := \snorm{f-g}_u + \snorm{f'-g'}_u,
 where $\snorm{\cdot}_u$ is the uniform norm.  Prove that $d$ is a metric.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Consider $\ell^2$ the set of sequences $\{ x_n \}$
 of real numbers
 such that $\sum_{n=1}^\infty x_n^2 < \infty$.
-\\
-a) Prove the Cauchy--Schwarz inequality for two sequences
+\begin{enumerate}[a)]
+\item
+Prove the Cauchy--Schwarz inequality for two sequences
 $\{x_n \}$ and $\{ y_n \}$ in $\ell^2$:
 \begin{equation*}
 {\biggl( \sum_{j=1}^\infty x_j y_j \biggr)}^2
@@ -603,10 +620,12 @@ $\{x_n \}$ and $\{ y_n \}$ in $\ell^2$:
 \biggl(\sum_{j=1}^\infty x_j^2 \biggr)
 \biggl(\sum_{j=1}^\infty y_j^2 \biggr) .
 \end{equation*}
-\\
-b) Prove that $\ell^2$ is a metric space with the metric
+\item
+Prove that $\ell^2$ is a metric space with the metric
 $d(x,y) := \sqrt{\sum_{j=1}^\infty {(x_j-y_j)}^2}$.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -865,6 +884,12 @@ $B(x,\delta_x) \subset U$.  Then $U = \bigcup_{x\in U} B(x,\delta_x)$.
 
 \subsection{Connected sets}
 
+Let us generalize the idea of an interval to general metric spaces.  One of
+the main features of an interval in $\R$ is that it is connected,
+that we can continuously move from one point of it to another point without
+jumping.  On the real numbers we usually study functions on intervals,
+and in more general metric spaces we often study functions on connected sets.
+
 \begin{defn}
 A nonempty%
 \footnote{Some authors do not exclude the empty set from the definition,
@@ -1011,7 +1036,7 @@ See \figureref{fig:intervalcon}.
 \end{myfigureht}
 
 \begin{example}
-In many cases a ball $B(x,\delta)$ is connected.  But this is not
+Oftentimes a ball $B(x,\delta)$ is connected, but this is not
 necessarily true in every metric space.
 For a simplest example, take a two point space $\{ a,
 b\}$ with the discrete metric.  Then $B(a,2) = \{ a , b \}$, which is not
@@ -1225,15 +1250,27 @@ Show that in any metric space,
 every open set can be written as a union of closed sets.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
-a) Show that $E$ is closed if and only if $\partial E \subset E$.\\
-b) Show that $U$ is open if and only if $\partial U \cap U = \emptyset$.
+In any metric space, prove:
+\begin{enumerate}[a)]
+\item
+$E$ is closed if and only if $\partial E \subset E$.
+\item
+$U$ is open if and only if $\partial U \cap U = \emptyset$.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
-a) Show that $A$ is open if and only if $A^\circ = A$.\\
-b) Suppose that $U$ is an open set and $U \subset A$.  Show
+In any metric space, prove:
+\begin{enumerate}[a)]
+\item
+Show that $A$ is open if and only if $A^\circ = A$.
+\item
+Suppose that $U$ is an open set and $U \subset A$.  Show
 that $U \subset A^\circ$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1253,9 +1290,13 @@ Show that $\bigcup_{i=1}^\infty S_i$ is connected.
 \end{exercise}
 
 \begin{exercise}
-Let $A$ be a connected set in a metric space.\\
-a)~Is $\overline{A}$ connected?  Prove or find a counterexample.\\
-b)~Is $A^\circ$ connected?  Prove or find a counterexample.\\
+Let $A$ be a connected set in a metric space.
+\begin{enumerate}[a)]
+\item
+Is $\overline{A}$ connected?  Prove or find a counterexample.
+\item
+Is $A^\circ$ connected?  Prove or find a counterexample.
+\end{enumerate}
 Hint: Think of sets in $\R^2$.
 \end{exercise}
 
@@ -1274,11 +1315,15 @@ that $U = V \cap Y$.
 \end{exercise}
 
 \begin{exercise}
-Let $(X,d)$ be a metric space.\\
-a)~For any $x \in X$ and $\delta > 0$, show
-$\overline{B(x,\delta)} \subset C(x,\delta)$.\\
-b)~Is it always true that
+Let $(X,d)$ be a metric space.
+\begin{enumerate}[a)]
+\item
+For any $x \in X$ and $\delta > 0$, show
+$\overline{B(x,\delta)} \subset C(x,\delta)$.
+\item
+Is it always true that
 $\overline{B(x,\delta)} = C(x,\delta)$?  Prove or find a counterexample.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1292,23 +1337,28 @@ $d'$ such that $(X,d')$ has the same open sets, that is, the topology is
 the same.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
-Let $(X,d)$ be a metric space.\\
-a) Prove that for every $x \in X$, there either exists a $\delta > 0$ such that
+Let $(X,d)$ be a metric space.
+\begin{enumerate}[a)]
+\item
+Prove that for every $x \in X$, there either exists a $\delta > 0$ such that
 $B(x,\delta) = \{ x \}$, or $B(x,\delta)$ is infinite for every $\delta >  0$.
-\\
-b) Find an explicit example of $(X,d)$, $X$ infinite, where
+\item
+Find an explicit example of $(X,d)$, $X$ infinite, where
 for every $\delta > 0$ and
 every $x \in X$, the
 ball $B(x,\delta)$ is finite.
-\\
-c) Find an explicit example of $(X,d)$ where for every $\delta > 0$ and
+\item
+Find an explicit example of $(X,d)$ where for every $\delta > 0$ and
 every $x \in X$, the
 ball $B(x,\delta)$ is countably infinite.
-\\
-d) Prove that if $X = \R$, then no matter what the metric is, there exists
+\item
+Prove that if $X = \R$, then no matter what the metric is, there exists
 an $x \in X$ and a $\delta > 0$ such that $B(x,\delta)$ is uncountable.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 For every $x \in \R^n$ and every $\delta > 0$ define the rectangle
@@ -1616,13 +1666,17 @@ $E = \overline{A}$.
 \end{exercise}
 
 \begin{exercise}
-a)~Show that $d(x,y) := \min \{ 1, \abs{x-y} \}$ defines a metric on $\R$.
-\\
-b)~Show that a sequence converges in $(\R,d)$ if and only if it converges
+{\ }
+\begin{enumerate}[a)]
+\item
+Show that $d(x,y) := \min \{ 1, \abs{x-y} \}$ defines a metric on $\R$.
+\item
+Show that a sequence converges in $(\R,d)$ if and only if it converges
 in the standard metric.
-\\
-c)~Find a bounded sequence in $(\R,d)$ that
+\item
+Find a bounded sequence in $(\R,d)$ that
 contains no convergent subsequence.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1673,15 +1727,20 @@ if $x, y \in \R$,
 define $d(\infty,x) := \bigl\lvert 1 - \frac{x}{1+\abs{x}} \bigr\rvert$,
 $d(-\infty,x) := \bigl\lvert 1 + \frac{x}{1+\abs{x}} \bigr\rvert$
 for all $x \in \R$, and
-let $d(\infty,-\infty) := 2$.\\
-a)~Show that $(\R^*,d)$ is a metric space.\\
-b)~Suppose $\{ x_n \}$ is a sequence of real numbers such that
+let $d(\infty,-\infty) := 2$.
+\begin{enumerate}[a)]
+\item
+Show that $(\R^*,d)$ is a metric space.
+\item
+Suppose $\{ x_n \}$ is a sequence of real numbers such that
 for every $M \in \R$, there exists an $N$ such that
 $x_n \geq M$ for all $n \geq N$.  Show that $\lim\, x_n = \infty$ in
-$(\R^*,d)$.\\
-c)~Show that a sequence of real numbers converges to a real number
+$(\R^*,d)$.
+\item
+Show that a sequence of real numbers converges to a real number
 in $(\R^*,d)$ if and
 only if it converges in $\R$ with the standard metric.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1709,16 +1768,24 @@ converges to $p$.
 Consider $\R^n$, and let $d$ be the standard euclidean metric.
 Let $d'(x,y) := \sum_{\ell=1}^n \abs{x_\ell-y_\ell}$
 and $d''(x,y) := \max \{ \abs{x_1-y_1},\abs{x_2-y_2},\cdots,\abs{x_n-y_n}
-\}$.\\
-a) Use \exerciseref{exercise:mscross}, to show that
+\}$.
+\begin{enumerate}[a)]
+\item
+Use \exerciseref{exercise:mscross}, to show that
 $(\R^n,d')$ and
-$(\R^n,d'')$ are metric spaces.\\
-b)
+$(\R^n,d'')$ are metric spaces.
+\item
 Let $\{ x_j \}_{j=1}^\infty$ be a sequence in $\R^n$ and $p \in \R^n$.
-Prove that the following statements are equivalent:\\
-(1) $\{ x_j \}$ converges to $p$ in $(\R^n,d)$.\\
-(2) $\{ x_j \}$ converges to $p$ in $(\R^n,d')$.\\
-(3) $\{ x_j \}$ converges to $p$ in $(\R^n,d'')$.
+Prove that the following statements are equivalent:
+\begin{enumerate}[(1)]
+\item
+$\{ x_j \}$ converges to $p$ in $(\R^n,d)$.
+\item
+$\{ x_j \}$ converges to $p$ in $(\R^n,d')$.
+\item
+$\{ x_j \}$ converges to $p$ in $(\R^n,d'')$.
+\end{enumerate}
+\end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2191,24 +2258,37 @@ Show that $A$ is compact.
 \end{exercise}
 
 \begin{exercise}
-Let $A = \{ \nicefrac{1}{n} : n \in \N \} \subset \R$.\\
-a)~Show that $A$ is
-not compact directly using the definition.\\
-b)~Show that $A \cup \{ 0 \}$ is
+Let $A = \{ \nicefrac{1}{n} : n \in \N \} \subset \R$.
+\begin{enumerate}[a)]
+\item
+Show that $A$ is
+not compact directly using the definition.
+\item
+Show that $A \cup \{ 0 \}$ is
 compact directly using the definition.
+\end{enumerate}
 \end{exercise}
 
 
 \begin{exercise}
-Let $(X,d)$ be a metric space with the discrete metric.\\
-a)~Prove that $X$ is complete.\\
-b)~Prove that $X$ is compact if and only if $X$ is a finite set.
+Let $(X,d)$ be a metric space with the discrete metric.
+\begin{enumerate}[a)]
+\item
+Prove that $X$ is complete.
+\item
+Prove that $X$ is compact if and only if $X$ is a finite set.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-a)~Show that the union of finitely many compact sets is a compact set.\\
-b)~Find an example where the union of infinitely many compact sets is not
+{\ }
+\begin{enumerate}[a)]
+\item
+Show that the union of finitely many compact sets is a compact set.
+\item
+Find an example where the union of infinitely many compact sets is not
 compact.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -2308,18 +2388,26 @@ Consider two metrics on $\R$.
 Let $d(x,y) := \abs{x-y}$ be the standard metric,
 and let
 $d'(x,y) := \bigl\lvert \frac{x}{1+\abs{x}} - \frac{y}{1+\abs{y}}
-\bigr\rvert$.\\
-a) Show that $(\R,d')$ is a metric space (if you have done
-\exerciseref{exercise:extendedrealsmetric} the computation is the same).\\
-b) Show that the topology is the same, that is, a set is open in
-$(\R,d)$ if and only if it is open in $(\R,d')$.\\
-c) Show that a set is compact in
-$(\R,d)$ if and only if it is compact in $(\R,d')$.\\
-d) Show that a sequence converges in $(\R,d)$ if and only if
-it converges in $(\R,d')$.\\
-e) Find a sequence of real numbers that is Cauchy
-in $(\R,d')$ but not Cauchy in $(\R,d)$.\\
-f) While $(\R,d)$ is complete, show that $(\R,d')$ is not complete.
+\bigr\rvert$.
+\begin{enumerate}[a)]
+\item
+Show that $(\R,d')$ is a metric space (if you have done
+\exerciseref{exercise:extendedrealsmetric} the computation is the same).
+\item
+Show that the topology is the same, that is, a set is open in
+$(\R,d)$ if and only if it is open in $(\R,d')$.
+\item
+Show that a set is compact in
+$(\R,d)$ if and only if it is compact in $(\R,d')$.
+\item
+Show that a sequence converges in $(\R,d)$ if and only if
+it converges in $(\R,d')$.
+\item
+Find a sequence of real numbers that is Cauchy
+in $(\R,d')$ but not Cauchy in $(\R,d)$.
+\item
+While $(\R,d)$ is complete, show that $(\R,d')$ is not complete.
+\end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2650,27 +2738,39 @@ interested in knowing continuity.
 
 \begin{exercise}
 Consider $\N \subset \R$ with the standard metric.  Let $(X,d)$ be a
-metric space and $f \colon X \to \N$ a continuous function.\\
-a) Prove that if $X$ is connected,
-then $f$ is constant (the range of $f$ is a single value).\\
-b)~Find an example where $X$ is disconnected and $f$ is not constant.
+metric space and $f \colon X \to \N$ a continuous function.
+\begin{enumerate}[a)]
+\item
+Prove that if $X$ is connected,
+then $f$ is constant (the range of $f$ is a single value).
+\item
+Find an example where $X$ is disconnected and $f$ is not constant.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{exercise:dicontR2}
 Let $f \colon \R^2 \to \R$ be defined by $f(0,0) := 0$, and
-$f(x,y) := \frac{xy}{x^2+y^2}$ if $(x,y) \not= (0,0)$.\\
-a)~Show that for any fixed $x$,
+$f(x,y) := \frac{xy}{x^2+y^2}$ if $(x,y) \not= (0,0)$.
+\begin{enumerate}[a)]
+\item
+Show that for any fixed $x$,
 the function that takes $y$ to $f(x,y)$ is continuous.  Similarly
-for any fixed $y$, the function that takes $x$ to $f(x,y)$ is continuous.\\
-b)~Show that $f$ is not continuous.
+for any fixed $y$, the function that takes $x$ to $f(x,y)$ is continuous.
+\item
+Show that $f$ is not continuous.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise} 
 Suppose $(X,d_X)$, $(Y,d_Y)$ be metric spaces and
 $f \colon X \to Y$ is continuous.
-Let $A \subset X$.\\
-a)~Show that $f(\overline{A}) \subset \overline{f(A)}$.\\
-b)~Show that the subset can be proper.
+Let $A \subset X$.
+\begin{enumerate}[a)]
+\item
+Show that $f(\overline{A}) \subset \overline{f(A)}$.
+\item
+Show that the subset can be proper.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -2714,26 +2814,34 @@ Given $f \in C([0,1],\R)$ define
 \begin{equation*}
 \varphi_f(x) := \int_0^1 k(x,y) f(y) ~dy .
 \end{equation*}
-a) Show that $T(f) := \varphi_f$ defines a function $T \colon C([0,1],\R) \to
+\begin{enumerate}[a)]
+\item
+Show that $T(f) := \varphi_f$ defines a function $T \colon C([0,1],\R) \to
 C([0,1],\R)$.
-\\
-b) Show that $T$ is continuous.
+\item
+Show that $T$ is continuous.
+\end{enumerate}
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
-Let $(X,d)$ be a metric space.\\
-a) If $p \in X$,
+Let $(X,d)$ be a metric space.
+\begin{enumerate}[a)]
+\item
+If $p \in X$,
 show that $f \colon X \to \R$ defined
 by $f(x) := d(x,p)$ is continuous.
-\\
-b) Define a metric on $X \times X$ as in \exerciseref{exercise:mscross} part
+\item
+Define a metric on $X \times X$ as in \exerciseref{exercise:mscross} part
 b, and show that $g \colon X \times X \to \R$ defined by
 $g(x,y) := d(x,y)$ is continuous.
-\\
-c) Show that if $K_1$ and $K_2$ are compact subsets of $X$, then
+\item
+Show that if $K_1$ and $K_2$ are compact subsets of $X$, then
 there exists a $p \in K_1$ and $q \in K_2$ such that $d(p,q)$ is minimal,
 that is, $d(p,q) = \inf \{ (x,y) \colon x \in K_1, y \in K_2 \}$.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Let $(X,d)$ be a compact metric space, let $C(X,\R)$ be the set
@@ -2741,10 +2849,14 @@ of real-valued continuous functions.  Define
 \begin{equation*}
 d(f,g) := \snorm{f-g}_u := \sup_{x \in X} \abs{f(x)-g(x)} .
 \end{equation*}
-a) Show that $d$ makes $C(X,\R)$ into a metric space.\\
-b) Show that for any $x \in X$, the evaluation function
+\begin{enumerate}[a)]
+\item
+Show that $d$ makes $C(X,\R)$ into a metric space.
+\item
+Show that for any $x \in X$, the evaluation function
 $E_x \colon C(X,\R) \to \R$ defined by $E_x(f) := f(x)$
 is a continuous function.
+\end{enumerate}
 \end{exercise}
 
 \begin{samepage}
@@ -2762,14 +2874,17 @@ where $\snorm{\cdot}_u$ is the uniform norm.
 By \exampleref{example:msC01} and \exerciseref{exercise:C1ab} we know that
 $C([a,b],\R)$ with $d_C$ is a metric space and
 so is
-$C^1([a,b],\R)$ with $d_{C^1}$.\\
-a) Prove that the derivative operator $D \colon 
+$C^1([a,b],\R)$ with $d_{C^1}$.
+\begin{enumerate}[a)]
+\item
+Prove that the derivative operator $D \colon 
 C^1([a,b],\R) \to C([a,b],\R)$ defined by
 $D(f) := f'$ is continuous.
-\\
-b) On the other hand if we consider the metric $d_C$ on $C^1([a,b],\R)$,
+\item
+On the other hand if we consider the metric $d_C$ on $C^1([a,b],\R)$,
 then prove the derivative operator is no longer continuous.  Hint: Consider
 $\sin(n x)$.
+\end{enumerate}
 \end{exercise}
 \end{samepage}
 
@@ -3037,25 +3152,37 @@ For more exercises related to Picard's theorem see \sectionref{sec:picard}.
 
 \begin{exercise}
 Let $F \colon \R \to \R$ be defined by
-$F(x) := kx + b$ where $0 < k < 1$, $b \in \R$.\\
-a) Show that $F$ is a contraction.\\
-b) Find the fixed
-point and show directly that it is unique.
+$F(x) := kx + b$ where $0 < k < 1$, $b \in \R$.
+\begin{enumerate}[a)]
+\item
+Show that $F$ is a contraction.
+\item
+Find the fixed point and show directly that it is unique.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 Let $f \colon [0,\nicefrac{1}{4}] \to [0,\nicefrac{1}{4}]$ be defined by
-$f(x) := x^2$ is a contraction.\\
-a) Show that $f$
-is a contraction, and find the best (smallest) $k$ from the definition that works.\\
-b) Find the fixed point and show directly that it is unique.
+$f(x) := x^2$ is a contraction.
+\begin{enumerate}[a)]
+\item
+Show that $f$
+is a contraction, and find the best (smallest) $k$ from the definition that works.
+\item
+Find the fixed point and show directly that it is unique.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{exercise:nofixedpoint}
-a) Find an example of a contraction $f \colon X \to X$
+{\ }
+\begin{enumerate}[a)]
+\item
+Find an example of a contraction $f \colon X \to X$
 of non-complete metric space $X$ with no
 fixed point.
-b) Find a 1-Lipschitz map $f \colon X \to X$ of a complete metric space $X$ with no fixed point.
+\item
+Find a 1-Lipschitz map $f \colon X \to X$ of a complete metric space $X$ with no fixed point.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -3072,20 +3199,30 @@ prove that $\lim\limits_{n\to\infty}f_n(x) = \frac{1}{1-x}$.
 Suppose $f \colon X \to X$ is a contraction for $k < 1$.  Suppose you use the iteration
 procedure with $x_{n+1} := f(x_n)$ as in the proof of the fixed point theorem.
 Suppose $x$ is the fixed
-point of $f$.\\
-a) Show that $d(x,x_n) \leq k^n d(x_1,x_0) \frac{1}{1-k}$ for all $n \in \N$.\\
-b) Suppose $d(y_1,y_2) \leq 16$ for all $y_1,y_2 \in X$, and $k=
+point of $f$.
+{\ }
+\begin{enumerate}[a)]
+\item
+Show that $d(x,x_n) \leq k^n d(x_1,x_0) \frac{1}{1-k}$ for all $n \in \N$.\\
+\item
+Suppose $d(y_1,y_2) \leq 16$ for all $y_1,y_2 \in X$, and $k=
 \nicefrac{1}{2}$.  Find an $N$ such that starting at any point $x_0 \in X$, 
 $d(x,x_n) \leq 2^{-16}$ for all $n \geq N$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Let $f(x) := x-\frac{x^2-2}{2x}$. (You may recognize Newton's method for
-$\sqrt{2}$)\\
-a) Prove $f\bigl([1,\infty)\bigr) \subset [1,\infty)$.\\
-b) Prove that $f \colon [1,\infty) \to [1,\infty)$ is a contraction.\\
-c) Apply the fixed point theorem to find an $x \geq 1$ such that
+Let $f(x) := x-\frac{x^2-2}{2x}$ (you may recognize Newton's method for
+$\sqrt{2}$).
+\begin{enumerate}[a)]
+\item
+Prove $f\bigl([1,\infty)\bigr) \subset [1,\infty)$.
+\item
+Prove that $f \colon [1,\infty) \to [1,\infty)$ is a contraction.
+\item
+Apply the fixed point theorem to find an $x \geq 1$ such that
 $f(x) = x$, and show that $x = \sqrt{2}$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}

@@ -298,10 +298,11 @@ Then $\inf\, A$ exists.
 \end{prop}
 
 \begin{proof}
-Let $B := \{ -x : x \in A \}$. Let $b$ be a lower bound for $A$,
-that is if $x \in A$, then $x \geq b$, or $-x \leq -b$.  So $-b$
-is an upper bound for $B$, $c:=\sup\, B$ exists, and $c \leq -b$.
-Since $y \leq c$
+Let $B := \{ -x : x \in A \}$. Let $b \in F$ be a lower bound for $A$:
+if $x \in A$, then $x \geq b$. In other words, $-x \leq -b$.  So $-b$
+is an upper bound for $B$.
+Since $F$ has the least-upper-bound property, $c:=\sup\, B$ exists, and $c \leq -b$.
+As $y \leq c$
 for all $y \in B$, then $-c \leq x$ for all $x \in A$.
 So
 $-c$ is a lower bound for $A$.  As $-c \geq b$,
@@ -482,11 +483,11 @@ $\epsilon = \nicefrac{x}{2}$ obtains a contradiction.  Thus $x \leq 0$.
 
 Another useful version of this idea is the following equivalent
 statement for nonnegative numbers: \emph{If $x \geq 0$ is such that $x \leq \epsilon$ for all
-$\epsilon > 0$, then $x = 0$.}  From now on, when we say
-$x \geq 0$ or
-$\epsilon > 0$, we automatically mean that $x \in \R$ and $\epsilon \in \R$.
+$\epsilon > 0$, then $x = 0$.}
 And to prove that $x \geq 0$ in the first place, an analyst might prove
 that all $x \geq -\epsilon$ for all $\epsilon > 0$.
+From now on, when we say $x \geq 0$ or
+$\epsilon > 0$, we automatically mean that $x \in \R$ and $\epsilon \in \R$.
 
 A related simple fact is that 
 any time we have two real numbers $a < b$, then there is another
@@ -1586,7 +1587,7 @@ is a countable union of closed intervals.
 \item
 Show that an intersection
 of a possibly infinite family of bounded closed intervals,
-$\bigcap\limits_{\iota \in I} [a_\iota,b_\iota]$,
+$\bigcap\limits_{\lambda \in I} [a_\lambda,b_\lambda]$,
 is either empty, a single point,
 or a bounded closed interval.
 \end{enumerate}

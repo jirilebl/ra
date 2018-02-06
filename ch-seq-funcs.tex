@@ -358,15 +358,19 @@ Let $f$ and $g$ be bounded functions on $[a,b]$.  Prove
 \end{equation*}
 \end{exercise}
 
-%\pagebreak[2]
-
+\begin{samepage}
 \begin{exercise}
-a) Find the pointwise limit $\dfrac{e^{x/n}}{n}$ for $x \in \R$. \nopagebreak
-\\
-b) Is the limit uniform on $\R$?
-\\
-c) Is the limit uniform on $[0,1]$?
+{\ }
+\begin{enumerate}[a)]
+\item
+Find the pointwise limit $\dfrac{e^{x/n}}{n}$ for $x \in \R$.
+\item
+Is the limit uniform on $\R$?
+\item
+Is the limit uniform on $[0,1]$?
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Suppose $f_n \colon S \to \R$ are functions that converge uniformly
@@ -425,14 +429,14 @@ Suppose there exists a sequence of distinct numbers $x_n \in [0,1]$ such that
 f_n(x_n) = 1 .
 \end{equation*}
 Prove or disprove the following statements:
-\\
-a)
+\begin{enumerate}[a)]
+\item
 True or false: There exists $\{ f_n \}$ as above that converges to $0$
 pointwise.
-\\
-b)
+\item
 True or false: There exists $\{ f_n \}$ as above that converges to $0$
 uniformly on $[0,1]$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -471,12 +475,15 @@ Prove that $f$ is bounded.
 \begin{exercise}[requires \sectionref{sec:moreonseries}]
 In \exampleref{exercise:geomsumptconv} we saw
 $\sum_{k=0}^\infty x^k$ converges pointwise to $\frac{1}{1-x}$ on
-$(-1,1)$.\\
-a) Show that for any $0 \leq c < 1$, the series
+$(-1,1)$.
+\begin{enumerate}[a)]
+\item
+Show that for any $0 \leq c < 1$, the series
 $\sum_{k=0}^\infty x^k$ converges uniformly on $[-c,c]$.
-\\
-b) Show that the series $\sum_{k=0}^\infty x^k$ does not converge uniformly
+\item
+Show that the series $\sum_{k=0}^\infty x^k$ does not converge uniformly
 on $(-1,1)$.
+\end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1082,13 +1089,14 @@ We may thus apply \thmref{thm:dersconverge}, and
 we are done as $r < \rho$ was arbitrary.
 \end{proof}
 
-\begin{example}
+\begin{example} \label{example:exponentialbypowerseries}
 We could have used this result to define the exponential function.  That is
 the power series
 \begin{equation*}
 f(x) := \sum_{n=0}^\infty \frac{x^n}{n!}
 \end{equation*}
-has radius of convergence $\rho=\infty$.  By differentiating
+has radius of convergence $\rho=\infty$.  Furthermore,
+$f(0) = 1$, and by differentiating
 term by term we find that $f'(x) = f(x)$.
 \end{example}
 
@@ -1180,18 +1188,20 @@ function $f \colon [a,b] \to \R$.
 \end{exercise}
 
 \begin{exnote}
-For the following two exercises let us define for a Riemann integrable
-function $f \colon [0,1] \to
-\R$ the following number
+Suppose 
+$f \colon [0,1] \to \R$ is Riemann integrable.
+For the following two exercises define 
+the number
 \begin{equation*}
 \norm{f}_{L^1} := 
 \int_0^1 \abs{f(x)}~dx .
 \end{equation*}
 It is true that $\abs{f}$ is integrable whenever $f$ is, see
 \exerciseref{exercise:hardabsint}.
-This norm defines another very common type of
-convergence called the $L^1$-convergence, that is however a bit more
-subtle.
+The number is called the \myindex{\emph{$L^1$-norm}} and
+defines another very common type of
+convergence called the \myindex{\emph{$L^1$-convergence}}.
+It is however a bit more subtle.
 \end{exnote}
 
 \begin{exercise}
@@ -1204,8 +1214,8 @@ to $0$.  Show that
 \end{exercise}
 
 \begin{exercise}
-Find a sequence of Riemann integrable functions 
-$\{ f_n \}$ on $[0,1]$ that converges pointwise to $0$, but
+Find a sequence $\{ f_n \}$ of Riemann integrable functions 
+on $[0,1]$ converging pointwise to $0$, but
 \begin{equation*}
 \lim_{n\to\infty} \norm{f_n}_{L^1} \text{ does not exist (is $\infty$).}
 \end{equation*}
@@ -1234,8 +1244,12 @@ Show that the sequence $\{f_n\}$ converges uniformly.
 \begin{exercise}
 Find a sequence of Riemann integrable functions $f_n \colon [0,1] \to \R$ such
 that $\{ f_n \}$ converges to zero pointwise, and such that
-a) $\bigl\{ \int_0^1 f_n \bigr\}_{n=1}^\infty$ increases without bound,
-b) $\bigl\{ \int_0^1 f_n \bigr\}_{n=1}^\infty$ is the sequence $-1,1,-1,1,-1,1, \ldots$.
+\begin{enumerate}[a)]
+\item
+$\bigl\{ \int_0^1 f_n \bigr\}_{n=1}^\infty$ increases without bound,
+\item
+$\bigl\{ \int_0^1 f_n \bigr\}_{n=1}^\infty$ is the sequence $-1,1,-1,1,-1,1, \ldots$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exnote}
@@ -1258,7 +1272,7 @@ $\abs{x_{n,m} - L} < \epsilon$.
 \end{exnote}
 
 \begin{exercise}
-Suppose the joint limit of $\{ x_{n,m} \}$ is $L$, and suppose
+Suppose the joint limit (see above) of $\{ x_{n,m} \}$ is $L$, and suppose
 that for all $n$, $\lim\limits_{m \to \infty} x_{n,m}$ exists,
 and for all $m$, $\lim\limits_{n \to \infty} x_{n,m}$ exists.  Then show
 $\lim\limits_{n\to\infty}\lim\limits_{m \to \infty} x_{n,m}
@@ -1267,33 +1281,38 @@ $\lim\limits_{n\to\infty}\lim\limits_{m \to \infty} x_{n,m}
 \end{exercise}
 
 \begin{exercise}
-A joint limit does not mean the iterated limits even exist.
-Consider $x_{n,m} := \frac{{(-1)}^{n+m}}{\min \{n,m \}}$.\\
-a) Show that for no $n$ does
+A joint limit (see above) does not mean the iterated limits even exist.
+Consider $x_{n,m} := \frac{{(-1)}^{n+m}}{\min \{n,m \}}$.
+\begin{enumerate}[a)]
+\item
+Show that for no $n$ does
 $\lim\limits_{m \to \infty} x_{n,m}$ exist, and for no $m$
 does 
 $\lim\limits_{n \to \infty} x_{n,m}$ exist.  So neither
 $\lim\limits_{n\to\infty}\lim\limits_{m \to \infty} x_{n,m}$ nor
 $\lim\limits_{m\to\infty}\lim\limits_{n \to \infty} x_{n,m}$ makes any sense
-at all.\\
-b) Show that the joint limit of $\{ x_{n,m} \}$ exists and is 0.
+at all.
+\item
+Show that the joint limit of $\{ x_{n,m} \}$ exists and is 0.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 We say that a sequence of functions $f_n \colon \R \to \R$ converges
 in the \emph{\myindex{compact-open topology}} if for every $k \in \N$,
 the sequence $\{ f_n \}$ converges uniformly on $[-k,k]$.
-\\
-a) Prove that if $f_n \colon \R \to \R$ is a sequence of
+\begin{enumerate}[a)]
+\item
+Prove that if $f_n \colon \R \to \R$ is a sequence of
 continuous functions converging in the compact-open topology, then
 the limit is continuous.
-\\
-b) 
+\item 
 Prove that if $f_n \colon \R \to \R$ is a sequence of
 functions Riemann integrable on any closed and bounded interval,
 and converging in the compact-open topology to an $f \colon \R \to \R$,
 then for any interval $[a,b]$, we have $f \in \sR[a,b]$, and
 $\int_a^b f = \lim_{n\to\infty} \int_a^b f_n$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}[Challening]
@@ -1320,13 +1339,18 @@ continuous functions themselves.
 \end{exercise}
 
 \begin{exercise}
-a) Find a sequence of Lipschitz continuous functions on $[0,1]$
+{\ }
+\begin{enumerate}[a)]
+\item
+Find a sequence of Lipschitz continuous functions on $[0,1]$
 whose uniform limit is $\sqrt{x}$, which is a non-Lipschitz function.
-b) On the other hand, show that if $f_n \colon S \to \R$ are Lipschitz
-with a uniform constant $L$ (meaning all of them satisfy the definition
+\item
+On the other hand, show that if $f_n \colon S \to \R$ are Lipschitz
+with a uniform constant $K$ (meaning all of them satisfy the definition
 with the same constant) that converge pointwise to $f \colon S \to \R$,
 then the limit $f$ is a Lipschitz continuous function
-with Lipschitz constant $L$.
+with Lipschitz constant $K$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}[requires \sectionref{sec:moreonseries}]
@@ -1339,16 +1363,17 @@ at least $\rho$.
 
 \begin{exercise}[requires \sectionref{sec:moreonseries} and \sectionref{sec:taylor}]
 Suppose $f(x) := \sum_{n=0}^\infty c_n {(x-a)}^n$ converges in $(a-\rho,a+\rho)$.
-\\
-a)
+\begin{enumerate}[a)]
+\item
 Suppose that $f^{(k)}(a) = 0$ for all $k=0,1,2,3,\ldots$.  Prove that
 $c_n = 0$ for all $n$, or in other words, 
 $f(x) = 0$ for all $x \in (a-\rho,a+\rho)$.
-\\
-b) Using part a) prove a version of the so called ``identity
+\item
+Using part a) prove a version of the so called ``identity
 theorem for analytic functions'':  If there exists an $\epsilon > 0$
 such that $f(x) = 0$ for all $x \in (a-\epsilon, a+\epsilon)$, then
 $f(x) = 0$ for all $x \in (a-\rho,a+\rho)$.
+\end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1891,18 +1916,28 @@ $[x_0-h,x_0+h]$.
 \end{exercise}
 
 \begin{exercise}
-Consider the equation $y' = y^{1/3}x$.\\
-a)~Show that for the initial condition $y(1)=1$, Picard's theorem applies.
-Find an $\alpha > 0$, $M$, $L$, and $h$ that would work in the proof.\\
-b)~Show that for the initial condition $y(1) = 0$, Picard's theorem
-does not apply.\\
-c)~Find a solution for $y(1) = 0$ anyway.
+Consider the equation $y' = y^{1/3}x$.
+\begin{enumerate}[a)]
+\item
+Show that for the initial condition $y(1)=1$, Picard's theorem applies.
+Find an $\alpha > 0$, $M$, $L$, and $h$ that would work in the proof.
+\item
+Show that for the initial condition $y(1) = 0$, Picard's theorem
+does not apply.
+\item
+Find a solution for $y(1) = 0$ anyway.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Consider the equation $x y' = 2y$.\\
-a)~Show that $y = Cx^2$ is a solution for any $C$.\\
-b)~Show that for any $x_0 \not= 0$, and any $y_0$, Picard's
-theorem applies for the initial condition $y(x_0) = y_0$.\\
-c)~Show that $y(0) = y_0$ is solvable if and only if $y_0 = 0$.
+Consider the equation $x y' = 2y$.
+\begin{enumerate}[a)]
+\item
+Show that $y = Cx^2$ is a solution for any $C$.
+\item
+Show that for any $x_0 \not= 0$, and any $y_0$, Picard's
+theorem applies for the initial condition $y(x_0) = y_0$.
+\item
+Show that $y(0) = y_0$ is solvable if and only if $y_0 = 0$.
+\end{enumerate}
 \end{exercise}

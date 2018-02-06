@@ -166,11 +166,14 @@ calculus.  We discuss sequences of functions and the
 interchange of limits.  Finally, we give an introduction to metric
 spaces.
 
-Let us give the most important difference between analysis and
-algebra.  In algebra, we prove equalities directly; we prove that
-an object, a number perhaps, is equal to another object.  In analysis,
-we usually prove inequalities.  To illustrate the point, consider the
-following statement.
+\medskip
+
+Let us give the most important difference between analysis and algebra.
+In algebra, we prove equalities directly;
+we prove that an object, a number perhaps, is equal to another object.
+In analysis, we usually prove inequalities,
+and we prove those inequalities by estimating.
+To illustrate the point, consider the following statement.
 
 \medskip
 
@@ -180,12 +183,18 @@ $\epsilon > 0$, then $x \leq 0$}.
 
 \medskip
 
-This statement is the general idea of what we do in analysis.  First, to
-prove
-$x = 0$, we prove two inequalities: $x \leq 0$ and $x \geq 0$.  To
+This statement is the general idea of what we do in analysis.
+Suppose next we really wish to prove the equality
+$x = 0$.  In analysis we prove two inequalities:
+$x \leq 0$ and $x \geq 0$.
+To
 prove the inequality
 $x \leq 0$, we prove 
 $x < \epsilon$ for all positive $\epsilon$.
+To
+prove the inequality
+$x \geq 0$, we prove 
+$x > -\epsilon$ for all positive $\epsilon$.
 
 \medskip
 
@@ -420,7 +429,7 @@ The result above we called a \emph{Theorem}, while most results we will call
 a \emph{Proposition}, and a few \emph{Lemma} (a result leading to another result) or
 \emph{Corollary} (a quick consequence of the preceeding result).  Do not read too much into
 the naming.  Some of it is traditional, some of it is stylistic choice.
-It is not necessarily true that a \emph{Theorem} is ``more important'' than a
+It is not necessarily true that a \emph{Theorem} is always ``more important'' than a
 \emph{Proposition} or a \emph{Lemma}.
 
 We will also need to intersect or union several sets at once.  If there are
@@ -469,13 +478,13 @@ However,
 \end{equation*}
 
 Sometimes, the index set is not the natural numbers.  In this case we need a
-more general notation.  Suppose $I$ is some set and for each $\iota \in
-I$, we have a set $A_\iota$.  Then we define
+more general notation.  Suppose $I$ is some set and for each $\lambda \in
+I$, we have a set $A_\lambda$.  Then we define
 \begin{equation*}
-\bigcup_{\iota \in I} A_\iota := \{ x : x \in A_\iota \text{ for some $\iota \in I$}
-\} 
+\bigcup_{\lambda \in I} A_\lambda := \{ x : x \in A_\lambda \text{ for some $\lambda \in I$}
+\} ,
 \qquad
-\bigcap_{\iota \in I} A_\iota := \{ x : x \in A_\iota \text{ for all $\iota \in I$}
+\bigcap_{\lambda \in I} A_\lambda := \{ x : x \in A_\lambda \text{ for all $\lambda \in I$}
 \} .
 \end{equation*}
 
@@ -1016,10 +1025,10 @@ $\{ 1, 2, 3, \ldots, m \}$.
 
 
 \begin{exercise}
-Prove
+Prove:
 \begin{enumerate}[a)]
-\item $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
-\item $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
+\item $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.
+\item $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$.
 \end{enumerate}
 \end{exercise}
 

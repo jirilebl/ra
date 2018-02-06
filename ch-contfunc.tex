@@ -751,8 +751,8 @@ to $f(c)$.
 \begin{proof}
 Let us start with the first item.  Suppose $c$ is not a cluster point of
 $S$.  Then there exists a $\delta > 0$
-such that $S \cap (c-\delta,c+\delta) = \{
-c \}$.  Therefore, for any $\epsilon > 0$, simply pick this given delta.
+such that $S \cap (c-\delta,c+\delta) = \{ c \}$.
+Therefore, for any $\epsilon > 0$, simply pick this given delta.
 The only $x \in S$ such that $\abs{x-c} < \delta$ is $x=c$.  Then
 $\abs{f(x)-f(c)} = \abs{f(c)-f(c)} = 0 < \epsilon$.
 
@@ -1789,10 +1789,14 @@ continuous.
 
 \begin{exercise}
 Suppose $f \colon \R \to \R$ is continuous.
-a)~If there is a $c$ such that $f(c)f(-c) < 0$,
+\begin{enumerate}[a)]
+\item
+Prove that if there is a $c$ such that $f(c)f(-c) < 0$,
 then there is a $d$ such that $f(d) = 0$.
-b)~Find a continuous function $f$ such that
+\item
+Find a continuous function $f$ such that
 $f(\R) = \R$, but $f(x)f(-x) \geq 0$ for all $x \in \R$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -2097,19 +2101,18 @@ A Lipschitz continuous function is uniformly continuous.
 
 \begin{proof}
 Let $f \colon S \to \R$ be a function and let $K$ be a constant such that
-for all $x, y$ in $S$ we have
-$\abs{f(x)-f(y)} \leq K \abs{x-y}$.
-
+$\abs{f(x)-f(y)} \leq K \abs{x-y}$
+for all $x, y$ in $S$.
 Let $\epsilon > 0$ be given.  Take $\delta :=
 \nicefrac{\epsilon}{K}$.
 For any $x$ and $y$ in $S$ such that
 $\abs{x-y} < \delta$
-we have that
+we have 
 \begin{equation*}
 \abs{f(x)-f(y)} \leq K \abs{x-y} < K \delta = K \frac{\epsilon}{K} =
 \epsilon .
 \end{equation*}
-Therefore $f$ is uniformly continuous.
+Therefore, $f$ is uniformly continuous.
 \end{proof}
 
 We interpret Lipschitz continuity geometrically.  If $f$ is a Lipschitz
@@ -2213,16 +2216,22 @@ Show that $f \colon (0,\infty) \to \R$
 defined by $f(x) := \nicefrac{1}{x}$ is not Lipschitz continuous.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Let $A, B$ be intervals.
 Let $f \colon A \to \R$ and $g \colon B \to \R$ be uniformly continuous
 functions such that $f(x) = g(x)$ for $x \in A \cap B$.  Define
 the function $h \colon A \cup B \to \R$ by $h(x) := f(x)$ if
 $x \in A$ and $h(x) := g(x)$ if $x \in B \setminus A$.
-a) Prove that if $A \cap B \not= \emptyset$, then $h$ is uniformly continuous.
-b) Find an example where $A \cap B = \emptyset$ and $h$ is not even
+\begin{enumerate}[a)]
+\item
+Prove that if $A \cap B \not= \emptyset$, then $h$ is uniformly continuous.
+\item
+Find an example where $A \cap B = \emptyset$ and $h$ is not even
 continuous.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}[Challenging]
 Let $f \colon \R \to \R$ be a polynomial of degree 
@@ -2248,40 +2257,59 @@ such that $f(x) = \widetilde{f}(x)$ for all $x \in \Q$.
 \end{exercise}
 
 \begin{exercise}
-a) Find a continuous $f \colon (0,1) \to \R$ and a sequence $\{ x_n \}$ in
+{\ }
+\begin{enumerate}[a)]
+\item
+Find a continuous $f \colon (0,1) \to \R$ and a sequence $\{ x_n \}$ in
 $(0,1)$ that is Cauchy, but such that $\{ f(x_n) \}$ is not Cauchy.
-b) Prove that if $f \colon \R \to \R$ is continuous, and $\{ x_n \}$ is
+\item
+Prove that if $f \colon \R \to \R$ is continuous, and $\{ x_n \}$ is
 Cauchy, then $\{ f(x_n) \}$ is Cauchy.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-a) If $f \colon S \to \R$ and $g \colon S \to \R$ are uniformly continuous,
-then show that $h \colon S \to \R$ given by $h(x) := f(x) + g(x)$
-is uniformly continuous.\\
-b) If $f \colon S \to \R$ is uniformly continuous and $a \in \R$,
-then show that $h \colon S \to \R$ given by $h(x) := a f(x)$
+Prove:
+\begin{enumerate}[a)]
+\item
+If $f \colon S \to \R$ and $g \colon S \to \R$ are uniformly continuous,
+then $h \colon S \to \R$ given by $h(x) := f(x) + g(x)$
 is uniformly continuous.
+\item
+If $f \colon S \to \R$ is uniformly continuous and $a \in \R$,
+then $h \colon S \to \R$ given by $h(x) := a f(x)$
+is uniformly continuous.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-a) If $f \colon S \to \R$ and $g \colon S \to \R$ are Lipschitz,
-then show that $h \colon S \to \R$ given by $h(x) := f(x) + g(x)$
-is Lipschitz.\\
-b) If $f \colon S \to \R$ is Lipschitz and $a \in \R$,
-then show that $h \colon S \to \R$ given by $h(x) := a f(x)$
+Prove:
+\begin{enumerate}[a)]
+\item
+If $f \colon S \to \R$ and $g \colon S \to \R$ are Lipschitz,
+then $h \colon S \to \R$ given by $h(x) := f(x) + g(x)$
 is Lipschitz.
+\item
+If $f \colon S \to \R$ is Lipschitz and $a \in \R$,
+then $h \colon S \to \R$ given by $h(x) := a f(x)$
+is Lipschitz.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-a) If $f \colon [0,1] \to \R$ is given by $f(x) := x^m$ for an integer
+{\ }
+\begin{enumerate}[a)]
+\item
+If $f \colon [0,1] \to \R$ is given by $f(x) := x^m$ for an integer
 $m \geq 0$,
 show $f$ is Lipschitz and find the best (the smallest) Lipschitz constant
 $K$ (depending on $m$ of course).
 Hint: $(x-y)(x^{m-1} + x^{m-2}y + x^{m-3}y^2 + \cdots + x y^{m-2} + y^{m-1}) = x^m - y^m$.
-\\
-b) Using the previous exercise, show that if $f \colon [0,1] \to \R$
+\item
+Using the previous exercise, show that if $f \colon [0,1] \to \R$
 is a polynomial, that is, $f(x) := a_m x^m + a_{m-1} x^{m-1} + \cdots + a_0$,
 then $f$ is Lipschitz.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -2311,13 +2339,15 @@ Suppose $f \colon [a,b] \to \R$ is a function such that for every $c \in
 [a,b]$ there is a $K_c > 0$ and an $\epsilon_c > 0$ for which
 $\abs{f(x)-f(y)} \leq K_c \abs{x-y}$ for all $x$ and $y$ in
 $(c-\epsilon,c+\epsilon) \cap [a,b]$.  In other words, $f$ is ``locally Lipschitz.''
-\\
-a)~Prove that there exists a single $K > 0$ such that
+\begin{enumerate}[a)]
+\item
+Prove that there exists a single $K > 0$ such that
 $\abs{f(x)-f(y)} \leq K \abs{x-y}$ for all $x,y$ in $[a,b]$.
-\\
-b)~Find a counterexample to the above if the interval is open, that is,
+\item
+Find a counterexample to the above if the interval is open, that is,
 find an $f \colon (a,b) \to \R$ that is locally Lipschitz, but not
 Lipschitz.
+\end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2597,12 +2627,16 @@ as $x \to -\infty$, and as $x \to c$ for a finite $c \in \R$.
 
 \begin{exercise}
 Suppose $P(x) := x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$ is a \emph{\myindex{monic polynomial}}
-of degree $n \geq 1$ (monic means that the coefficient of $x^n$ is 1). a)
+of degree $n \geq 1$ (monic means that the coefficient of $x^n$ is 1).
+\begin{enumerate}[a)]
+\item
 Show that if $n$ is even then $\lim_{x\to\infty} P(x) = 
-\lim_{x\to-\infty} P(x) = \infty$.  b)
+\lim_{x\to-\infty} P(x) = \infty$.
+\item
 Show that if $n$ is odd then
 $\lim_{x\to\infty} P(x) = \infty$ and
 $\lim_{x\to-\infty} P(x) = -\infty$ (see previous exercise).
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -2635,16 +2669,19 @@ f(x)$ for all $x$.  Define $g \colon \R \to \R$ by
 \begin{equation*}
 g(x) := f\left(\frac{\sqrt{x^2+1}-1}{x}\right)
 \end{equation*}
-a)~Find the function $\varphi \colon (-1,1) \to \R$ such that
+\begin{enumerate}[a)]
+\item
+Find the function $\varphi \colon (-1,1) \to \R$ such that
 $g\bigl(\varphi(t)\bigr) = f(t)$, that is $\varphi^{-1}(x) = 
 \frac{\sqrt{x^2+1}-1}{x}$.
-\\
-b)~Show that $f$ is continuous if and only if $g$ is continuous and
+\item
+Show that $f$ is continuous if and only if $g$ is continuous and
 \begin{equation*}
 \lim_{x \to \infty} g(x) = 
 \lim_{x \to -\infty} g(x) = 
 f(1) = f(-1) .
 \end{equation*}
+\end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2985,16 +3022,22 @@ Prove the claims in \exampleref{example:countdiscont}.
 Finish the proof of \propref{prop:invcont}.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Suppose $S \subset \R$, and $f \colon S \to \R$ is an increasing
-function.
-a) If $c$ is a cluster point
-of $S \cap (c,\infty)$ show that 
+function.  Prove:
+\begin{enumerate}[a)]
+\item
+If $c$ is a cluster point
+of $S \cap (c,\infty)$, then
 $\lim\limits_{x\to c^+} f(x) < \infty$.
-b) If $c$ is a cluster point of $S \cap (-\infty,c)$
-and $\lim\limits_{x\to c^-} f(x) = \infty$, prove that 
+\item
+If $c$ is a cluster point of $S \cap (-\infty,c)$
+and $\lim\limits_{x\to c^-} f(x) = \infty$, then
 $S \subset (-\infty,c)$.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Suppose $I \subset \R$ is an interval and $f \colon I \to \R$ is a function
@@ -3017,11 +3060,16 @@ $g(x) = f(x)$ for all but countably many $x$.
 \end{exercise}
 
 \begin{exercise}
-a) Let $S \subset \R$ be any subset.  If $f \colon S \to \R$ is increasing,
+{\ }
+\begin{enumerate}[a)]
+\item
+Let $S \subset \R$ be any subset.  If $f \colon S \to \R$ is increasing,
 then show that there exists an increasing $F \colon \R \to \R$
 such that $f(x) = F(x)$ for all $x \in S$.
-b) Find an example of a strictly increasing $f \colon S \to \R$ such that
+\item
+Find an example of a strictly increasing $f \colon S \to \R$ such that
 an increasing $F$ as above is never strictly increasing.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}[Challenging] \label{exercise:increasingfuncdiscatQ}
