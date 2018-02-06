@@ -1614,12 +1614,18 @@ converges to $\sqrt{r}$ if $x_1 > 0$ and $-\sqrt{r}$ if $x_1 < 0$.
 \end{exercise}
 
 \begin{exercise}
-a) Suppose $\{ a_n \}$ is a bounded sequence and $\{ b_n \}$ is a sequence
-converging to 0. Show that $\{ a_n b_n \}$ converges to 0.\\
-b) Find an example where $\{ a_n \}$ is unbounded, $\{ b_n \}$ converges to
-0, and $\{ a_n b_n \}$ is not convergent.\\
-c) Find an example where $\{ a_n \}$ is bounded, $\{ b_n \}$ converges to
+{\ }
+\begin{enumerate}[a)]
+\item
+Suppose $\{ a_n \}$ is a bounded sequence and $\{ b_n \}$ is a sequence
+converging to 0. Show that $\{ a_n b_n \}$ converges to 0.
+\item
+Find an example where $\{ a_n \}$ is unbounded, $\{ b_n \}$ converges to
+0, and $\{ a_n b_n \}$ is not convergent.
+\item
+Find an example where $\{ a_n \}$ is bounded, $\{ b_n \}$ converges to
 some $x \not= 0$, and $\{ a_n b_n \}$ is not convergent.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}[Easy] \label{exercise:strongerratiotest1}
@@ -1627,20 +1633,22 @@ Prove the following stronger version of \lemmaref{seq:ratiotest}, the ratio
 test.  
 Suppose $\{ x_n \}$ is a sequence such that $x_n \not= 0$ for all
 $n$.
-\\
-a) Prove that if there exists an $r < 1$ and $M \in \N$ such that
+\begin{enumerate}[a)]
+\item
+Prove that if there exists an $r < 1$ and $M \in \N$ such that
 for all $n \geq M$ we have
 \begin{equation*}
-\frac{\abs{x_{n+1}}}{\abs{x_n}} < r ,
+\frac{\abs{x_{n+1}}}{\abs{x_n}} \leq r ,
 \end{equation*}
 then $\{ x_n \}$ converges to $0$.
-\\
-b) Prove that if there exists an $r > 1$ and $M \in \N$ such that
+\item
+Prove that if there exists an $r > 1$ and $M \in \N$ such that
 for all $n \geq M$ we have
 \begin{equation*}
-\frac{\abs{x_{n+1}}}{\abs{x_n}} > r ,
+\frac{\abs{x_{n+1}}}{\abs{x_n}} \geq r ,
 \end{equation*}
 then $\{ x_n \}$ is unbounded.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{exercise:convergentinitialvalues}
@@ -2251,6 +2259,7 @@ Prove \propref{seqconvsubseqconv:prop}.
 \end{exercise}
 
 \begin{exercise}
+{\ }
 \begin{enumerate}[a)]
 \item
 Let $x_n := \dfrac{{(-1)}^n}{n}$, find $\limsup \, x_n$ and $\liminf \, x_n$.
@@ -2355,59 +2364,79 @@ Hint: If $S$ is infinite, then $S$ contains a countably infinite subset.
 That is, there is a sequence $\{ x_n \}$ of distinct numbers in $S$.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}[Challenging]
-a)
+{\ }
+\begin{enumerate}[a)]
+\item
 Prove that any sequence contains a monotone subsequence.
 Hint: Call $n \in \N$ a \emph{peak} if $a_m \leq a_n$ for all $m \geq n$.  
 There are two possibilities: Either the sequence has at most finitely many
 peaks,
 or it has infinitely many peaks.
-\\ \nopagebreak
-b)~Conclude the Bolzano--Weierstrass theorem.
+\item
+Conclude the Bolzano--Weierstrass theorem.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Prove a stronger version of \propref{seqconvsubseqconv:prop}.
 Suppose $\{ x_n \}$ is a sequence such that every subsequence $\{
 x_{n_i} \}$ has a subsequence
-$\{ x_{n_{m_i}} \}$ that converges to $x$.\\
-a)~First show that $\{ x_n \}$ is
-bounded.\\
-b)~Now show that $\{ x_n \}$ converges to $x$.
+$\{ x_{n_{m_i}} \}$ that converges to $x$.
+\begin{enumerate}[a)]
+\item
+First show that $\{ x_n \}$ is
+bounded.
+\item
+Now show that $\{ x_n \}$ converges to $x$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 Let $\{x_n\}$ be a bounded sequence.
-\\
-a) Prove that there exists an $s$ such that for any $r > s$ there exists 
+\begin{enumerate}[a)]
+\item
+Prove that there exists an $s$ such that for any $r > s$ there exists 
 an $M \in \N$ such that for all $n \geq M$ we have
 $x_n < r$.
-\\
-b) If $s$ is a number as in a), then prove $\limsup \, x_n \leq s$.
-\\
-c) Show that if $S$ is the set of all $s$ as in a), then
+\item
+If $s$ is a number as in a), then prove $\limsup \, x_n \leq s$.
+\item
+Show that if $S$ is the set of all $s$ as in a), then
 $\limsup \, x_n = \inf \, S$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}[Easy] \label{exercise:infseqlimex}
 Suppose $\{ x_n \}$ is such that $\liminf \, x_n = -\infty$, $\limsup \, x_n
-= \infty$.\\
-a) Show that $\{ x_n \}$ is not convergent, and also
+= \infty$.
+\begin{enumerate}[a)]
+\item
+Show that $\{ x_n \}$ is not convergent, and also
 that neither $\lim \, x_n = \infty$ nor $\lim \, x_n =
 -\infty$
-is true.\\
-b) Find an example of such a sequence.
+is true.
+\item
+Find an example of such a sequence.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{exercise:infseqlimlims}
-Let $\{ x_n \}$ be a sequence.\\
-a) Show that
-$\lim \, x_n = \infty$ if and only if $\liminf \, x_n = \infty$.\\
-b) Then show that $\lim \, x_n = - \infty$ if and only if $\limsup \, x_n =
--\infty$.\\
-c) If $\{ x_n \}$ is monotone increasing, show that either
+Let $\{ x_n \}$ be a sequence.
+\begin{enumerate}[a)]
+\item
+Show that
+$\lim \, x_n = \infty$ if and only if $\liminf \, x_n = \infty$.
+\item
+Then show that $\lim \, x_n = - \infty$ if and only if $\limsup \, x_n =
+-\infty$.
+\item
+If $\{ x_n \}$ is monotone increasing, show that either
 $\lim \, x_n$ exists and is finite or $\lim \, x_n = \infty$.  In either
 case, $\lim \, x_n = \sup \{ x_n : n \in \N \}$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{exercise:strongerratiotest2}
@@ -2415,51 +2444,55 @@ Prove the following stronger version of \lemmaref{seq:ratiotest}, the ratio
 test.
 Suppose $\{ x_n \}$ is a sequence such that $x_n \not= 0$ for all
 $n$.
-\\
-a) Prove that if
+\begin{enumerate}[a)]
+\item
+Prove that if
 \begin{equation*}
 \limsup_{n \to \infty} \frac{\abs{x_{n+1}}}{\abs{x_n}} < 1 ,
 \end{equation*}
 then $\{ x_n \}$ converges to $0$.
-\\
-b) Prove that if
+\item
+Prove that if
 \begin{equation*}
 \liminf_{n \to \infty} \frac{\abs{x_{n+1}}}{\abs{x_n}} > 1 ,
 \end{equation*}
 then $\{ x_n \}$ is unbounded.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 Suppose $\{ x_n \}$ is a bounded sequence, $a_n := \sup \{ x_k : k \geq n \}$
-as before.  Suppose that for some $\ell \in \N$, $a_\ell \notin \{ x_n : n \in
-\N \}$.  Then show that $a_j = a_\ell$ for all $j \leq \ell$, and hence
-$\limsup x_n = a_\ell$.
+as before.  Suppose that for some $\ell \in \N$,
+$a_\ell \notin \{ x_k : k \geq \ell \}$.  Then show that $a_j = a_\ell$ for all $j \geq \ell$, and hence
+$\limsup\, x_n = a_\ell$.
 \end{exercise}
 
 \begin{exercise}
 Suppose $\{ x_n \}$ is a sequence,
 and $a_n := \sup \{ x_k : k \geq n \}$ and
 $b_n := \sup \{ x_k : k \geq n \}$ as before.
-\\
-a) Prove that if $a_\ell = \infty$ for some $\ell \in \N$, then 
-$\limsup x_n = \infty$.
-\\
-b) Prove that if $b_\ell = -\infty$ for some $\ell \in \N$, then 
-$\liminf x_n = -\infty$.
+\begin{enumerate}[a)]
+\item
+Prove that if $a_\ell = \infty$ for some $\ell \in \N$, then 
+$\limsup\, x_n = \infty$.
+\item
+Prove that if $b_\ell = -\infty$ for some $\ell \in \N$, then 
+$\liminf\, x_n = -\infty$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 Suppose $\{ x_n \}$ is a sequence
-such that both $\liminf x_n$ and
-$\limsup x_n$  are finite.  Prove that $\{ x_n \}$ is bounded.
+such that both $\liminf\, x_n$ and
+$\limsup\, x_n$  are finite.  Prove that $\{ x_n \}$ is bounded.
 \end{exercise}
 
 \begin{exercise}
 Suppose $\{ x_n \}$ is a bounded sequence, and $\epsilon > 0$ is given.
-Prove that there exists an $M$ such that for all $n \geq M$ we have
+Prove that there exists an $M$ such that for all $k \geq M$ we have
 \begin{equation*}
-x_n - \limsup x_n < \epsilon \qquad \text{and} \qquad
-\liminf x_n - x_n < \epsilon .
+x_k - \Bigl(\limsup_{n\to\infty}\, x_n\Bigr) < \epsilon \qquad \text{and} \qquad
+\Bigl(\liminf_{n\to\infty}\, x_n\Bigr) - x_k < \epsilon .
 \end{equation*}
 \end{exercise}
 
@@ -3523,7 +3556,7 @@ Therefore, the series converges absolutely by the ratio test.
 \subsection{Exercises}
 
 \begin{exercise}
-Suppose the $k$th partial sum of $\sum_{n=1}^\infty x_n$ is $s_k = \frac{k}{k+1}$.
+Suppose the $k$th partial sum of $\displaystyle \sum_{n=1}^\infty x_n$ is $s_k = \frac{k}{k+1}$.
 Find the series, that is find $x_n$, prove that the series converges, and
 then find the limit.
 \end{exercise}
@@ -3542,22 +3575,20 @@ Decide the convergence or divergence of the following series.
 \medskip
 
 \noindent
-\begin{tabular}{llllll}
 a)
 $\displaystyle \sum_{n=1}^\infty \frac{3}{9n+1}$
-& &
+\qquad
 b)
 $\displaystyle \sum_{n=1}^\infty \frac{1}{2n-1}$
-& &
+\qquad
 c)
 $\displaystyle \sum_{n=1}^\infty \frac{{(-1)}^n}{n^2}$
-\\
+\qquad
 d)
 $\displaystyle \sum_{n=1}^\infty \frac{1}{n(n+1)}$
-& &
+\qquad
 e)
 $\displaystyle \sum_{n=1}^\infty n e^{-n^2}$
-\end{tabular}
 \end{exercise}
 
 \begin{samepage}
@@ -3660,22 +3691,29 @@ we have
 $\displaystyle \lim_{n\to\infty} \abs{x_{n+k}-x_n} = 0$, yet $\{ x_n \}$ is not Cauchy.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
-Let $s_k$ be the $k$th partial sum of $\sum x_n$.\\
-a) Suppose that there exists an $m \in \N$ such that $\displaystyle \lim_{k\to\infty}
-s_{mk}$ exists and $\lim\, x_n = 0$.  Show that $\sum x_n$ converges.\\
-b) Find an example where $\displaystyle \lim_{k\to\infty} s_{2k}$ exists and
-$\lim\, x_n \not= 0$ (and therefore $\sum x_n$ diverges).\\
-c) (Challenging) Find an example where $\lim\, x_n = 0$, and there exists
+Let $s_k$ be the $k$th partial sum of $\sum x_n$.
+\begin{enumerate}[a)]
+\item
+Suppose that there exists an $m \in \N$ such that $\displaystyle \lim_{k\to\infty}
+s_{mk}$ exists and $\lim\, x_n = 0$.  Show that $\sum x_n$ converges.
+\item
+Find an example where $\displaystyle \lim_{k\to\infty} s_{2k}$ exists and
+$\lim\, x_n \not= 0$ (and therefore $\sum x_n$ diverges).
+\item
+(Challenging) Find an example where $\lim\, x_n = 0$, and there exists
 a subsequence $\{ s_{k_j} \}$ such that $\displaystyle \lim_{j\to\infty} s_{k_j}$ exists,
 but $\sum x_n$ still diverges.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise} \label{exercise:squareseriesconv}
 Suppose $\sum x_n$ converges and $x_n \geq 0$ for all $n$.  Prove that $\sum x_n^2$ converges.
 \end{exercise}
 
-\begin{exercise}[Challenging]
+\begin{exercise}[Challenging] \label{exercise:cauchycondensation}
 Suppose $\{ x_n\}$ is a decreasing sequence of positive numbers.
 The proof of convergence/divergence for the $p$-series generalizes.
 Prove the so-called 
@@ -3687,9 +3725,13 @@ Prove the so-called
 \end{exercise}
 
 \begin{exercise}
-Use the Cauchy Condensation Principle (see exercise above)
-to decide on the convergence of
-\\
+Use the Cauchy Condensation Principle
+(see \exerciseref{exercise:cauchycondensation})
+to decide the convergence of
+
+\medskip
+
+\noindent
 a) $\displaystyle \sum \frac{\ln n}{n^2}$
 \qquad
 b) $\displaystyle \sum \frac{1}{n \ln n}$
@@ -3697,7 +3739,10 @@ b) $\displaystyle \sum \frac{1}{n \ln n}$
 c) $\displaystyle \sum \frac{1}{n {(\ln n)}^2}$
 \qquad
 d) $\displaystyle \sum \frac{1}{n (\ln n ){(\ln \ln n)}^2}$
-\\
+
+\medskip
+
+\noindent
 Hint: Feel free to use the identity $\ln (2^n) = n \ln 2$.
 \end{exercise}
 
@@ -4478,19 +4523,17 @@ Decide the convergence or divergence of the following series.
 \medskip
 
 \noindent
-\begin{tabular}{lllllll}
 a)
 $\displaystyle \sum_{n=1}^\infty \frac{1}{2^{2n+1}}$
-& &
+\qquad
 b)
 $\displaystyle \sum_{n=1}^\infty \frac{{(-1)}^{n}(n-1)}{n}$
-& &
+\qquad
 c)
 $\displaystyle \sum_{n=1}^\infty \frac{{(-1)}^n}{n^{1/10}}$
-& &
+\qquad
 d)
 $\displaystyle \sum_{n=1}^\infty \frac{n^n}{{(n+1)}^{2n}}$
-\end{tabular}
 \end{exercise}
 
 \begin{exercise}
@@ -4509,15 +4552,21 @@ Hint: See \exampleref{example:harmonsumanything}.
 \end{exercise}
 
 \begin{exercise}
-a) Show that the alternating harmonic series $\sum
+{\ }
+\begin{enumerate}[a)]
+\item
+Show that the alternating harmonic series $\sum
 \frac{{(-1)}^{n+1}}{n}$ has a rearrangement
 such that for any $x < y$, there exists a partial sum $s_n$
 of the rearranged series such that $x < s_n < y$.
-b) Show that the rearrangement you found does not converge.
+\item
+Show that the rearrangement you found does not converge.
 See \exampleref{example:harmonsumanything}.
-c) Show that for any $x \in \R$, there exists a subsequence of
+\item
+Show that for any $x \in \R$, there exists a subsequence of
 partial sums $\{ s_{n_k} \}$ of your rearrangement such that 
 $\lim \, s_{n_k} = x$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -4546,9 +4595,13 @@ f) $\displaystyle \sum_{n=0}^\infty n! \, x^{n!}$
 
 \begin{exercise}
 Suppose $\sum a_n x^n$ converges for $x=1$.
-a) What can you say about the radius of convergence?
-b) If you further know that at $x=1$ the convergence is not absolute,
+\begin{enumerate}[a)]
+\item
+What can you say about the radius of convergence?
+\item
+If you further know that at $x=1$ the convergence is not absolute,
 what can you say?
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -4558,13 +4611,18 @@ of convergence.
 \end{exercise}
 
 \begin{exercise}
-a) Find an example where the radius of convergence of $\sum a_n x^n$ and
+{\ }
+\begin{enumerate}[a)]
+\item
+Find an example where the radius of convergence of $\sum a_n x^n$ and
 $\sum b_n x^n$ are 1, but the radius of convergence of
 the sum of the two series is infinite.
-b) (Trickier)
+\item
+(Trickier)
 Find an example where the radius of convergence of $\sum a_n x^n$ and
 $\sum b_n x^n$ are 1, but the radius of convergence of
 the product of the two series is infinite.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -4575,12 +4633,17 @@ Find the radius of convergence and prove your claim.
 \end{exercise}
 
 \begin{exercise}
-a) Prove that $\lim \, n^{1/n} = 1$.  Hint:  Write $n^{1/n} = 1+b_n$ and
+{\ }
+\begin{enumerate}[a)]
+\item
+Prove that $\lim \, n^{1/n} = 1$.  Hint:  Write $n^{1/n} = 1+b_n$ and
 note $b_n > 0$.  Then show that ${(1+b_n)}^n \geq 
-\frac{n(n-1)}{2}b_n^2$ and use this to show that $\lim \, b_n = 0$. b) Use
-the result of part a) to show that if $\sum a_n x^n$ is a convergent power series with
-radius of convergence $R$, then $\sum n a_n x^n$ is also convergent with the
-same radius of convergence.
+\frac{n(n-1)}{2}b_n^2$ and use this to show that $\lim \, b_n = 0$.
+\item
+Use the result of part a) to show that
+if $\sum a_n x^n$ is a convergent power series with radius of convergence $R$,
+then $\sum n a_n x^n$ is also convergent with the same radius of convergence.
+\end{enumerate}
 \end{exercise}
 
 \begin{exnote}
@@ -4599,16 +4662,22 @@ a = \lim_{n\to \infty} \frac{s_1 + s_2 + \cdots + s_n}{n} .
 \end{exnote}
 
 \begin{exercise}[Challenging]
-a) If $\sum a_n$ is convergent to $a$ (in the usual sense), show that
+{\ }
+\begin{enumerate}[a)]
+\item
+If $\sum a_n$ is convergent to $a$ (in the usual sense), show that
 $\sum a_n$ is Ces{\`a}ro summable to $a$.
-b) Show that in the sense of Ces{\`a}ro $\sum {(-1)}^n$ is summable to
+\item
+Show that in the sense of Ces{\`a}ro $\sum {(-1)}^n$ is summable to
 $\nicefrac{1}{2}$.
-c) Let $a_n := k$ when $n = k^3$ for some $k \in \N$,
+\item
+Let $a_n := k$ when $n = k^3$ for some $k \in \N$,
 $a_n := -k$ when $n = k^3+1$ for some $k \in \N$,
 otherwise
 let $a_n := 0$.  Show that $\sum a_n$ diverges in the usual sense,
 (partial sums are unbounded), but it is
 Ces{\`a}ro summable to 0 (seems a little paradoxical at first sight).
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}[Challenging]
