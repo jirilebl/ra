@@ -1603,7 +1603,9 @@ Suppose $f$ is a polynomial of odd degree $d$.  We write
 \begin{equation*}
 f(x) = a_d x^d + a_{d-1} x^{d-1} + \cdots + a_1 x + a_0 ,
 \end{equation*}
-where $a_d \not= 0$.  We divide by $a_d$ to obtain a polynomial
+where $a_d \not= 0$.  We divide by $a_d$ to obtain a 
+\emph{\myindex{monic polynomial}}\footnote{The word \emph{monic} means that
+the coefficient of $x^d$ is 1.}
 \begin{equation*}
 g(x) := x^d + b_{d-1} x^{d-1} + \cdots + b_1 x + b_0 ,
 \end{equation*}
@@ -1723,7 +1725,7 @@ there exists a $c \in (a,b)$ such that $f(c) = y$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $g(x)$ is a polynomial of odd degree $d$ such that
+Suppose $g(x)$ is a monic polynomial of odd degree $d$, that is,
 \begin{equation*}
 g(x) = x^d + b_{d-1} x^{d-1} + \cdots + b_1 x + b_0 ,
 \end{equation*}
@@ -1733,7 +1735,7 @@ $d$ is odd.  You will have to use that ${(-n)}^d = -(n^d)$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $g(x)$ is a polynomial of positive even degree $d$ such that
+Suppose $g(x)$ is a monic polynomial of positive even degree $d$, that is,
 \begin{equation*}
 g(x) = x^d + b_{d-1} x^{d-1} + \cdots + b_1 x + b_0 ,
 \end{equation*}
@@ -1800,10 +1802,11 @@ $f(\R) = \R$, but $f(x)f(-x) \geq 0$ for all $x \in \R$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $g(x)$ is a polynomial of even degree $d$ such that
+Suppose $g(x)$ is a monic polynomial of even degree $d$, that is,
 \begin{equation*}
 g(x) = x^d + b_{d-1} x^{d-1} + \cdots + b_1 x + b_0 ,
 \end{equation*}
+for some real numbers $b_{0}, b_1, \ldots, b_{d-1}$.
 Show that $g$ achieves an absolute minimum on $\R$.
 \end{exercise}
 
@@ -2338,7 +2341,7 @@ Prove that $f$ is uniformly continuous.
 Suppose $f \colon [a,b] \to \R$ is a function such that for every $c \in
 [a,b]$ there is a $K_c > 0$ and an $\epsilon_c > 0$ for which
 $\abs{f(x)-f(y)} \leq K_c \abs{x-y}$ for all $x$ and $y$ in
-$(c-\epsilon,c+\epsilon) \cap [a,b]$.  In other words, $f$ is ``locally Lipschitz.''
+$(c-\epsilon_c,c+\epsilon_c) \cap [a,b]$.  In other words, $f$ is ``locally Lipschitz.''
 \begin{enumerate}[a)]
 \item
 Prove that there exists a single $K > 0$ such that
