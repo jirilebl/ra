@@ -4304,7 +4304,7 @@ n \abs{x}
 Therefore the series diverges for all $x \not= 0$.
 \end{example}
 
-In fact, convergence of power series in general always works analogously to
+Convergence of power series in general works analogously to
 one of the three examples above.
 
 \begin{prop}
@@ -4319,6 +4319,9 @@ $(x_0-\rho,x_0+\rho)$ and diverges when $x < x_0-\rho$ or $x > x_0+\rho$.
 The number $\rho$ is called the \emph{\myindex{radius of convergence}} of the
 power series.  We write $\rho = \infty$ if the series converges for
 all $x$, and we write $\rho = 0$ if the series is divergent.
+At the endpoints, that is if $x = x_0+\rho$ or $x = x_0-\rho$,
+the proposition says nothing,
+and the series might or might not converge.
 See \figureref{ps:convfig}.
 In \exampleref{ps:1kex}
 the radius of convergence is $\rho=1$.
@@ -4630,6 +4633,7 @@ $R := \lim \, \frac{\abs{a_{n+1}}}{\abs{a_n}}$ exists or is $\infty$.
 Find the radius of convergence and prove your claim.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 {\ }
 \begin{enumerate}[a)]
@@ -4643,6 +4647,7 @@ if $\sum a_n x^n$ is a convergent power series with radius of convergence $R$,
 then $\sum n a_n x^n$ is also convergent with the same radius of convergence.
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exnote}
 There are different notions of summability (convergence)
