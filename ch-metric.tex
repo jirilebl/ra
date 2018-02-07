@@ -993,7 +993,7 @@ $U_2 \cap S = S_2$.
 
 \begin{example}
 Let $S \subset \R$ be such that $x < z < y$ with $x,y \in S$
-and $z \notin S$.  Claim: $S$ is disconnected.  Proof:  Notice
+and $z \notin S$.  Claim: \emph{$S$ is disconnected}.  Proof:  Notice
 \begin{equation*}
 \bigl( (-\infty,z) \cap S \bigr)
 \cup
@@ -2106,17 +2106,21 @@ a point in $K$.
 \end{thm}
 
 \begin{proof}
-Let $K \subset X$ be any subset of $X$ and
+Claim: \emph{Let $K \subset X$ be a subset of $X$ and
 $\{ x_n \}$ a sequence in $K$.  Suppose that for each $x \in K$,
 there is a ball $B(x,\alpha_x)$ for some $\alpha_x > 0$ such that
 $x_n \in B(x,\alpha_x)$ for only finitely many $n \in \N$.
-Then
+Then $K$ is not compact.}
+
+Proof of the claim:
+Notice
 \begin{equation*}
 K \subset \bigcup_{x \in K} B(x,\alpha_x) .
 \end{equation*}
 Any finite collection of these balls is going to contain only finitely many
 $x_n$.  Thus for any finite collection of such balls there is an $x_n \in K$
-that is not in the union.  Therefore, $K$ is not compact.
+that is not in the union.  Therefore, $K$ is not compact and the claim is
+proved.
 
 So suppose that $K$ is compact and $\{ x_n \}$ is a sequence in $K$.
 Then there exists an $x \in K$ such that
@@ -2207,7 +2211,7 @@ Let $(X,d)$ be a metric space and let $K \subset X$ be compact.  If
 $E \subset K$ is a closed set, then $E$ is compact.
 \end{prop}
 
-Notice that because $K$ is closed then $E$ is closed in $K$ if
+Because $K$ is closed then $E$ is closed in $K$ if
 and only if it is closed in $X$,
 see \propref{prop:topology:subspacesame}.
 
@@ -2286,7 +2290,7 @@ $X$ is an infinite set.  Then:
 e.g. $\delta = \nicefrac{1}{2}$, even for noncompact $K \subset X$.
 \end{enumerate}
 The proofs
-of these statements are either trivial or are relegated to the exercises
+of the statements above are either trivial or are relegated to the exercises
 below.
 \end{example}
 
