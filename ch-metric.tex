@@ -890,6 +890,37 @@ a useful way to think about an open set is as a union of open balls.  If $U$ is
 open, then for each $x \in U$, there is a $\delta_x > 0$ (depending on $x$) such that
 $B(x,\delta_x) \subset U$.  Then $U = \bigcup_{x\in U} B(x,\delta_x)$.
 
+In case of an open subset of an open subset or a closed subset of a closed
+subset, matters are even easier.
+
+\begin{prop} \label{prop:topology:subspacesame}
+Suppose $(X,d)$ is a metric space, $V \subset X$ is open
+and $E \subset X$ is closed.
+\begin{enumerate}[(i)]
+\item \label{prop:topology:subspacesame:i}
+$U \subset V$ is open in the subspace topology if and only if $U$ is open
+in $X$.
+\item \label{prop:topology:subspacesame:ii}
+$F \subset E$ is closed in the subspace topology if and only if $F$ is
+closed in $X$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Let us prove
+\ref{prop:topology:subspacesame:i}
+and leave 
+\ref{prop:topology:subspacesame:ii} to an exercise.
+
+If $U \subset V$ is open in the subspace topology, by
+\propref{prop:topology:subspaceopen}, there exists a set $W \subset X$
+open in $X$, such that $U = W \cap V$.  Intersection of two open sets
+is open so $U$ is open in $X$.
+
+Now suppose $U$ is open in $X$, then $U = U \cap V$. So
+$U$ is open in $V$ again by \propref{prop:topology:subspaceopen}.
+\end{proof}
+
 \subsection{Connected sets}
 
 Let us generalize the idea of an interval to general metric spaces.  One of
@@ -1336,6 +1367,10 @@ $\overline{B(x,\delta)} = C(x,\delta)$?  Prove or find a counterexample.
 \begin{exercise}
 Let $(X,d)$ be a metric space and $A \subset X$.  Show that
 $A^\circ = \bigcup \{ V : V \subset A \text{ is open} \}$.
+\end{exercise}
+
+\begin{exercise}
+Finish the proof of \propref{prop:topology:subspacesame}.
 \end{exercise}
 
 \begin{exercise}
@@ -2083,15 +2118,17 @@ Any finite collection of these balls is going to contain only finitely many
 $x_n$.  Thus for any finite collection of such balls there is an $x_n \in K$
 that is not in the union.  Therefore, $K$ is not compact.
 
-So if $K$ is compact,
-then there exists an $x \in K$ such that
+So suppose that $K$ is compact and $\{ x_n \}$ is a sequence in $K$.
+Then there exists an $x \in K$ such that
 for any $\delta > 0$,
 $B(x,\delta)$ contains $x_k$ for infinitely many $k \in \N$.
+We define the subsequence inductively.
 The ball $B(x,1)$ contains some $x_k$ so let $n_1 := k$.
-If $n_{j-1}$ is defined, then there must
-exist a $k > n_{j-1}$ such that $x_k \in B(x,\nicefrac{1}{j})$, so define
+Suppose $n_{j-1}$ is defined.
+There must exist a $k > n_{j-1}$
+such that $x_k \in B(x,\nicefrac{1}{j})$.  So define
 $n_j := k$.
-We now posses a subsequence $\{ x_{n_k} \}$.
+We now posses a subsequence $\{ x_{n_j} \}_{j=1}^\infty$.
 Since
 $d(x,x_{n_j}) < \nicefrac{1}{j}$,  \propref{prop:msconvifa} says
 $\lim\, x_{n_j} = x$.
@@ -2169,6 +2206,10 @@ preserve non-strict inequalities.  Hence a closed bounded interval $[a,b]
 Let $(X,d)$ be a metric space and let $K \subset X$ be compact.  If
 $E \subset K$ is a closed set, then $E$ is compact.
 \end{prop}
+
+Notice that because $K$ is closed then $E$ is closed in $K$ if
+and only if it is closed in $X$,
+see \propref{prop:topology:subspacesame}.
 
 \begin{proof}
 Let $\{ x_n \}$ be a sequence in $E$.  It is also a sequence in $K$.
@@ -2587,7 +2628,7 @@ and bounded.  In particular,
 $\sup f(X) \in f(X)$ and
 $\inf f(X) \in f(X)$, because both the sup and inf
 can be achieved by sequences in $f(X)$ and $f(X)$ is closed.
-Therefore there is some $x \in X$ such that $f(x) = \sup f(X)$
+Therefore, there is some $x \in X$ such that $f(x) = \sup f(X)$
 and some $y \in X$ such that $f(y) = \inf f(X)$.
 \end{proof}
 
