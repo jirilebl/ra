@@ -2398,7 +2398,7 @@ and $L(e) = 1$.
 
 \begin{exercise}[requires \sectionref{sec:taylor}]\label{exercise:nonanalytic}
 Since $(e^x)' = e^x$, it is easy to see that $e^x$ is infinitely
-differentiable (that is, has infinitely many derivatives).  Define the function $f \colon \R \to \R$.
+differentiable (has derivatives of all orders).  Define the function $f \colon \R \to \R$.
 \begin{equation*}
 f(x) := \begin{cases}
 e^{-1/x} & \text{if $x > 0$,} \\
@@ -2409,11 +2409,10 @@ e^{-1/x} & \text{if $x > 0$,} \\
 \item
 Prove that for any $m \in \N$,
 \begin{equation*}
-\lim_{x \to 0} \frac{e^x}{x^m} = 0 .
+\lim_{x \to 0^+} \frac{e^{-1/x}}{x^m} = 0 .
 \end{equation*}
 \item
-Prove that $f$ is infinitely differentiable (it has derivatives of all
-orders).
+Prove that $f$ is infinitely differentiable.
 \item
 Compute the Taylor series for $f$ at the origin, that is,
 \begin{equation*}
