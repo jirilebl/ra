@@ -141,7 +141,15 @@ simply write $0 \in \R^n$ to mean the point $(0,0,\ldots,0)$.  Before
 making $\R^n$ a metric space, let us prove an important inequality, the
 so-called Cauchy--Schwarz inequality.
 
-\begin{lemma}[\myindex{Cauchy--Schwarz inequality}]
+\begin{lemma}[\myindex{Cauchy--Schwarz inequality}%
+\footnote{%
+Sometimes it is called the Cauchy--Bunyakovsky--Schwarz inequality.
+\href{http://en.wikipedia.org/wiki/Hermann_Schwarz}{Karl Hermann Amandus
+Schwarz} (1843--1921) was a German mathematician and
+\href{http://en.wikipedia.org/wiki/Viktor_Bunyakovsky}{Viktor Yakovlevich
+Bunyakovsky} (1804--1889) was a Russian mathematician.  What we
+stated should really be called the Cauchy inequality, as
+Bunyakovsky and Schwarz provided proofs for infinite dimensional versions.}]
 Take $x =(x_1,x_2,\ldots,x_n) \in \R^n$ and $y =(y_1,y_2,\ldots,y_n) \in
 \R^n$.  Then
 \begin{equation*}
@@ -586,9 +594,9 @@ then conclude that $(X,d)$ is bounded.
 {\ }
 \begin{enumerate}[a)]
 \item
-Find a metric $d$ on $\N$ that makes it into an unbounded metric space.
+Find a metric $d$ on $\N$, such that $\N$ is an unbounded set in $(\N,d)$.
 \item
-Find a metric $d$ on $\N$ that makes it into a bounded metric space.
+Find a metric $d$ on $\N$, such that $\N$ is a bounded set in $(\N,d)$.
 \item
 Find a metric $d$ on $\N$ such that for any $n \in \N$ and any $\epsilon > 0$
 there exists an $m \in \N$ such that $d(n,m) < \epsilon$.
@@ -1236,10 +1244,9 @@ that $X$ is connected if and only if it contains exactly one element.
 \end{exercise}
 
 \begin{exercise}
-%Show that if $S \subset \R$ is a connected unbounded set, then it is an
-%(unbounded) interval.
-Take $\Q$ with the standard metric, $d(x,y) = \abs{x-y}$, as our metric space.  Prove that $\Q$ is
-\emph{\myindex{completely disconnected}}, that is, show 
+Take $\Q$ with the standard metric, $d(x,y) = \abs{x-y}$, as our metric space.
+Prove that $\Q$ is
+\emph{\myindex{totally disconnected}}, that is, show 
 that for every $x, y \in \Q$ with $x \not= y$, there exists an
 two open sets $U$ and $V$, such that $x \in U$, $y \in V$,
 $U \cap V = \emptyset$, and $U \cap V = \Q$.
@@ -1354,19 +1361,19 @@ Find an explicit example of $(X,d)$ where for every $\delta > 0$ and
 every $x \in X$, the
 ball $B(x,\delta)$ is countably infinite.
 \item
-Prove that if $X = \R$, then no matter what the metric is, there exists
+Prove that if $X$ is uncountable, then there exists
 an $x \in X$ and a $\delta > 0$ such that $B(x,\delta)$ is uncountable.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exercise}
-For every $x \in \R^n$ and every $\delta > 0$ define the rectangle
+For every $x \in \R^n$ and every $\delta > 0$ define the ``rectangle''
 $R(x,\delta) :=
 (x_1-\delta,x_1+\delta) \times
 (x_2-\delta,x_2+\delta) \times \cdots \times
 (x_n-\delta,x_n+\delta)$.  Show that these sets generate the same open
-sets as the balls in standard metric.  That is show that a set $U \subset \R^n$
+sets as the balls in standard metric.  That is, show that a set $U \subset \R^n$
 is open in the sense of the standard metric if and only if for every
 point $x \in U$, there exists a $\delta > 0$ such that $R(x,\delta) \subset
 U$.
@@ -2009,7 +2016,7 @@ First we prove a lemma.
 \begin{lemma}[Lebesgue covering lemma%
 \footnote{Named after the French mathematician
 \href{http://en.wikipedia.org/wiki/Henri_Lebesgue}{Henri L\'eon Lebesgue}
-(1875 -- 1941).
+(1875--1941).
 The number $\delta$ is sometimes called the \myindex{Lebesgue number} of the
 cover.}]\label{ms:lebesgue}
 \index{Lebesgue covering lemma}
@@ -2378,8 +2385,8 @@ closed and bounded set $E$ that is not compact.
 \end{exercise}
 
 \begin{exercise}
-Let $(X,d)$ be a metric space and $K \subset X$ a set.
-Prove that $K$ is compact as a subset of $(X,d)$ if and only if it is
+Let $(X,d)$ be a metric space and $K \subset X$.
+Prove that $K$ is compact as a subset of $(X,d)$ if and only if $K$ is
 compact as a subset of itself with the subspace metric.
 \end{exercise}
 
@@ -2925,7 +2932,7 @@ if $f(x)=x$.
 or \myindex{Banach fixed point theorem}%
 \footnote{Named after the Polish mathematician
 \href{http://en.wikipedia.org/wiki/Stefan_Banach}{Stefan Banach}
-(1892 -- 1945) who first stated the theorem in 1922.}]
+(1892--1945) who first stated the theorem in 1922.}]
 \label{thm:contr}
 Let $(X,d)$ be a nonempty complete metric space and $f \colon X \to X$ a
 contraction.

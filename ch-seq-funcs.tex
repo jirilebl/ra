@@ -456,7 +456,7 @@ Show that $\{ f_n \}$ converges uniformly to $h$ on $[a,b]$.
 
 \begin{exercise}
 Prove that
-if $f_n \colon S \to \R$
+if a sequence of functions $f_n \colon S \to \R$
 converge uniformly to a bounded function $f \colon S \to \R$,
 then there exists an $N$ such that for all $n \geq N$, the $f_n$
 are bounded.
@@ -1298,24 +1298,26 @@ Show that the joint limit of $\{ x_{n,m} \}$ exists and is 0.
 \end{exercise}
 
 \begin{exercise}
-We say that a sequence of functions $f_n \colon \R \to \R$ converges
-in the \emph{\myindex{compact-open topology}} if for every $k \in \N$,
+We say that a sequence of functions $f_n \colon \R \to \R$
+\emph{\myindex{converges uniformly on compact subsets}}
+\index{uniform convergence on compact subsets}
+if for every $k \in \N$,
 the sequence $\{ f_n \}$ converges uniformly on $[-k,k]$.
 \begin{enumerate}[a)]
 \item
 Prove that if $f_n \colon \R \to \R$ is a sequence of
-continuous functions converging in the compact-open topology, then
+continuous functions converging uniformly on compact subsets, then
 the limit is continuous.
 \item 
 Prove that if $f_n \colon \R \to \R$ is a sequence of
-functions Riemann integrable on any closed and bounded interval,
-and converging in the compact-open topology to an $f \colon \R \to \R$,
+functions Riemann integrable on any closed and bounded interval $[a,b]$,
+and converging uniformly on compact subsets to an $f \colon \R \to \R$,
 then for any interval $[a,b]$, we have $f \in \sR[a,b]$, and
 $\int_a^b f = \lim_{n\to\infty} \int_a^b f_n$.
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}[Challening]
+\begin{exercise}[Challenging]
 Find a sequence of continuous functions $f_n \colon [0,1] \to \R$ that
 converge to the popcorn function $f \colon [0,1] \to \R$, that is the
 function such that $f(\nicefrac{p}{q}) := \frac{1}{q}$ (if $\nicefrac{p}{q}$
@@ -1326,7 +1328,7 @@ So a pointwise limit of continuous functions can have a dense set of
 discontinuities.  See also the next exercise.
 \end{exercise}
 
-\begin{exercise}[Challening]
+\begin{exercise}[Challenging]
 The Dirichlet function
 $f \colon [0,1] \to \R$, that is the
 function such that $f(x) := 1$ if $x \in \Q$
@@ -1347,7 +1349,8 @@ whose uniform limit is $\sqrt{x}$, which is a non-Lipschitz function.
 \item
 On the other hand, show that if $f_n \colon S \to \R$ are Lipschitz
 with a uniform constant $K$ (meaning all of them satisfy the definition
-with the same constant) that converge pointwise to $f \colon S \to \R$,
+with the same constant) and $\{ f_n \}$ converges pointwise
+to $f \colon S \to \R$,
 then the limit $f$ is a Lipschitz continuous function
 with Lipschitz constant $K$.
 \end{enumerate}
