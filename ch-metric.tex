@@ -994,7 +994,7 @@ $U_2 \cap S = S_2$.
 
 \begin{example}
 Let $S \subset \R$ be such that $x < z < y$ with $x,y \in S$
-and $z \notin S$.  Claim: $S$ is disconnected.  Proof:  Notice
+and $z \notin S$.  Claim: \emph{$S$ is disconnected}.  Proof:  Notice
 \begin{equation*}
 \bigl( (-\infty,z) \cap S \bigr)
 \cup
@@ -1015,24 +1015,6 @@ that $x < z < y$, then $(-\infty,z) \cap S$ is nonempty and $(z,\infty) \cap
 S$ is nonempty.  The two sets are disjoint.  As
 $S$ is connected, we must have they their union is not $S$, so $z \in S$.
 By \propref{prop:intervaldef}, $S$ is an interval.
-
-%Suppose $S$ is bounded, connected, but not a single point.
-%Let $\alpha := \inf \, S$ and
-%$\beta := \sup \, S$, and note that $\alpha < \beta$.  Suppose $\alpha < z <
-%\beta$ for some $z \in \R$.  As $\alpha$ is the
-%infimum, then there is an $x \in S$ such that $\alpha \leq x < z$.  Similarly
-%there is a $y \in S$ such that $\beta \geq y > z$. 
-%We have shown above that $z \in S$, so $(\alpha,\beta) \subset S$.
-%If $w < \alpha$, then $w \notin S$
-%as $\alpha$ was the infimum,
-%similarly if $w > \beta$ then $w \notin S$.  Therefore the only
-%possibilities for $S$ are
-%$(\alpha,\beta)$,
-%$[\alpha,\beta)$,
-%$(\alpha,\beta]$,
-%$[\alpha,\beta]$.
-%
-%The proof that an unbounded connected $S$ is an interval is left as an exercise.
 
 If $S$ is a single point, it is connected.
 Therefore suppose $S$ is an interval.
@@ -1067,7 +1049,6 @@ Therefore $w \in U_1 \cap U_2 \cap [x,y]$.
 So $U_1 \cap S$ and $U_2 \cap S$ are not disjoint, and
 $S$ is connected.
 See \figureref{fig:intervalcon}.
-%As $U_1$ and $U_2$ were arbitrary, $S$ is connected.
 \end{proof}
 
 \begin{myfigureht}
@@ -1113,7 +1094,6 @@ The closure is an intersection of closed sets, so $\overline{A}$ is closed.
 If $A$ is closed, then $A$ is a closed set that contains $A$,
 and so $\overline{A} \subset A$.  And since $A \subset \overline{A}$,
 we must have $A = \overline{A}$.
-%So the intersection of all closed sets $E$ containing $A$ must be equal to $A$.
 \end{proof}
 
 \begin{example}
@@ -1587,8 +1567,6 @@ x_j =
 \end{prop}
 
 \begin{proof}
-%Let $\{ x_j \}_{j=1}^\infty$ be a convergent sequence
-%in $\R^n$, where we write $x_j = \bigl(x_{j,1},x_{j,2},\ldots,x_{j,n}\bigr) \in \R^n$.
 Suppose
 the sequence
 $\{ x_j \}_{j=1}^\infty$ converges to
@@ -1968,7 +1946,6 @@ finite subcover.
 
 We will prove below that $[0,1]$, and in fact any closed and bounded
 interval $[a,b]$ is compact.
-% is compact by proving that in $\R$, a closed and bounded set is compact.
 \end{example}
 
 \begin{prop}
@@ -2107,17 +2084,21 @@ a point in $K$.
 \end{thm}
 
 \begin{proof}
-Let $K \subset X$ be any subset of $X$ and
+Claim: \emph{Let $K \subset X$ be a subset of $X$ and
 $\{ x_n \}$ a sequence in $K$.  Suppose that for each $x \in K$,
 there is a ball $B(x,\alpha_x)$ for some $\alpha_x > 0$ such that
 $x_n \in B(x,\alpha_x)$ for only finitely many $n \in \N$.
-Then
+Then $K$ is not compact.}
+
+Proof of the claim:
+Notice
 \begin{equation*}
 K \subset \bigcup_{x \in K} B(x,\alpha_x) .
 \end{equation*}
 Any finite collection of these balls is going to contain only finitely many
 $x_n$.  Thus for any finite collection of such balls there is an $x_n \in K$
-that is not in the union.  Therefore, $K$ is not compact.
+that is not in the union.  Therefore, $K$ is not compact and the claim is
+proved.
 
 So suppose that $K$ is compact and $\{ x_n \}$ is a sequence in $K$.
 Then there exists an $x \in K$ such that
@@ -2208,7 +2189,7 @@ Let $(X,d)$ be a metric space and let $K \subset X$ be compact.  If
 $E \subset K$ is a closed set, then $E$ is compact.
 \end{prop}
 
-Notice that because $K$ is closed then $E$ is closed in $K$ if
+Because $K$ is closed then $E$ is closed in $K$ if
 and only if it is closed in $X$,
 see \propref{prop:topology:subspacesame}.
 
@@ -2287,7 +2268,7 @@ $X$ is an infinite set.  Then:
 e.g. $\delta = \nicefrac{1}{2}$, even for noncompact $K \subset X$.
 \end{enumerate}
 The proofs
-of these statements are either trivial or are relegated to the exercises
+of the statements above are either trivial or are relegated to the exercises
 below.
 \end{example}
 
@@ -2388,9 +2369,7 @@ Let $(X,d)$ be a complete metric space.
 Show that $K \subset X$ is compact if and only if $K$ is closed
 and such that for every $\epsilon > 0$
 there exists a finite set of points $x_1,x_2,\ldots,x_n$ with
-%\begin{equation*}
 $K \subset \bigcup_{j=1}^n B(x_j,\epsilon)$.
-%\end{equation*}
 Note: Such a set $K$ is said to be \emph{\myindex{totally bounded}},
 so in a complete metric space a set is compact if and only
 if it is closed and totally bounded.
