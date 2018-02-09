@@ -267,7 +267,7 @@
 
 
 % List of Symbols/Notation
-\newglossary[nlg]{notation}{not}{ntn}{Notation}
+\newglossary[nlg]{notation}{not}{ntn}{List of Notation}
 
 \makeglossaries
 
@@ -305,6 +305,18 @@
   type=notation,
   name={$\R$},
   description={the real numbers},
+}
+
+\newglossaryentry{not:complex}{
+  type=notation,
+  name={$\C$},
+  description={the complex numbers},
+}
+
+\newglossaryentry{not:euclidspace}{
+  type=notation,
+  name={$\R^n$},
+  description={the $n$ dimensional euclidean space},
 }
 
 \newglossaryentry{not:func}{
@@ -392,6 +404,13 @@ $\displaystyle \lim_{x \to -\infty} f(x)$},
   description={limit of a function},
 }
 
+\newglossaryentry{not:onesidedlim}{
+  type=notation,
+  name={$\displaystyle \lim_{x \to c^{+}} f(x)$,
+$\displaystyle \lim_{x \to c^{-}} f(x)$},
+  description={one sided limit of a function},
+}
+
 \newglossaryentry{not:limsupseq}{
   type=notation,
   name={$\limsup\, x_n$, $\displaystyle \limsup_{n\to\infty} x_n$},
@@ -402,6 +421,12 @@ $\displaystyle \lim_{x \to -\infty} f(x)$},
   type=notation,
   name={$\liminf\, x_n$, $\displaystyle \liminf_{n\to\infty} x_n$},
   description={limit inferior},
+}
+
+\newglossaryentry{not:finitesum}{
+  type=notation,
+  name={\rule[-15pt]{0pt}{32pt}$\displaystyle \sum_{n=1}^k a_n$},
+  description={sum $a_1 + a_2 + \cdots+ a_k$},
 }
 
 \newglossaryentry{not:series}{
@@ -469,6 +494,12 @@ $\displaystyle \lim_{x \to -\infty} f(x)$},
   description={set complement, elements not in $B$},
 }
 
+\newglossaryentry{not:cartprod}{
+  type=notation,
+  name={$A \times B$},
+  description={Cartesian product of $A$ and $B$},
+}
+
 \newglossaryentry{not:union}{
   type=notation,
   name={$A \cup B$},
@@ -521,6 +552,30 @@ $\displaystyle \lim_{x \to -\infty} f(x)$},
   type=notation,
   name={$C^1(S,\R)$},
   description={continuously differentiable functions $f \colon S \to \R$},
+}
+
+\newglossaryentry{not:derivative}{
+  type=notation,
+  name={$f'(x)$},
+  description={derivative of $f$},
+}
+
+\newglossaryentry{not:uniformnorm}{
+  type=notation,
+  name={$\norm{f}_u$},
+  description={uniform norm of $f$},
+}
+
+\newglossaryentry{not:openball}{
+  type=notation,
+  name={$B(p,\delta)$, $B_X(p,\delta)$},
+  description={open ball in a metric space},
+}
+
+\newglossaryentry{not:closedball}{
+  type=notation,
+  name={$C(p,\delta)$, $B_X(p,\delta)$},
+  description={closed ball in a metric space},
 }
 
 %\newglossaryentry{not:}{
