@@ -1076,6 +1076,7 @@ from the set.  This concept is called the closure.
 \begin{defn}
 Let $(X,d)$ be a metric space and $A \subset X$.  Then
 the \emph{\myindex{closure}} of $A$ is the set
+\glsadd{not:closure}
 \begin{equation*}
 \overline{A} := \bigcap \{ E \subset X : \text{$E$ is closed and $A \subset
 E$} \} .
@@ -1152,11 +1153,13 @@ approach both from the set and its complement).
 \begin{defn}
 Let $(X,d)$ be a metric space and $A \subset X$, then
 the \emph{\myindex{interior}} of $A$ is the set
+\glsadd{not:interior}
 \begin{equation*}
 A^\circ := \{ x \in A : \text{there exists a $\delta > 0$ such that
 $B(x,\delta) \subset A$} \} .
 \end{equation*}
 The \emph{\myindex{boundary}} of $A$ is the set
+\glsadd{not:boundary}
 \begin{equation*}
 \partial A := \overline{A}\setminus A^\circ.
 \end{equation*}
@@ -2751,15 +2754,15 @@ d_Y\bigl(f(c),f(x_2)\bigr)
 Useful examples of uniformly continuous functions are again the so-called
 \emph{Lipschitz continuous}%
 \index{Lipschitz continuous!in a metric space}%
-\index{function!Lipschitz continuous}%
-functions.  That is if
+\index{function!Lipschitz continuous}
+functions.  That is, if
 $(X,d_X)$ and $(Y,d_Y)$ are metric spaces, then $f \colon X \to Y$
 is called Lipschitz or $K$-Lipschitz if there exists a $K \in \R$ such that
 \begin{equation*}
 d_Y\bigl(f(x),f(c)\bigr) \leq K d_X(x,c)
 \ \ \ \ \text{for all } x,c \in X.
 \end{equation*}
-It is not difficult to prove that Lipschitz implies uniformly continuous,
+It is not difficult to prove that Lipschitz implies uniformly continuous:
 just take $\delta = \nicefrac{\epsilon}{K}$.
 A function can be uniformly continuous
 but not Lipschitz,
