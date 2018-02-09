@@ -356,43 +356,63 @@
 
 \newglossaryentry{not:sup}{
   type=notation,
-  name={$\sup$},
-  description={supremum},
+  name={$\sup\,E$},
+  description={supremum of $E$},
 }
 
 \newglossaryentry{not:inf}{
   type=notation,
-  name={$\inf$},
-  description={infimum},
+  name={$\inf\,E$},
+  description={infimum of $E$},
 }
 
-\newglossaryentry{not:lim}{
+\newglossaryentry{not:supf}{
   type=notation,
-  name={$\lim$},
-  description={limit},
+  name={$\displaystyle \sup_{x\in D} f(x)$},
+  description={supremum of $f(D)$},
 }
 
-\newglossaryentry{not:limsup}{
+\newglossaryentry{not:inff}{
   type=notation,
-  name={$\limsup$},
+  name={$\displaystyle \inf_{x\in D} f(x)$},
+  description={infimum of $f(D)$},
+}
+
+\newglossaryentry{not:limseq}{
+  type=notation,
+  name={$\lim\, x_n$, $\displaystyle \lim_{n\to\infty} x_n$},
+  description={limit of a sequence},
+}
+
+\newglossaryentry{not:limfunc}{
+  type=notation,
+  name={$\displaystyle \lim_{x \to c} f(x)$,
+$\displaystyle \lim_{x \to \infty} f(x)$,
+$\displaystyle \lim_{x \to -\infty} f(x)$},
+  description={limit of a function},
+}
+
+\newglossaryentry{not:limsupseq}{
+  type=notation,
+  name={$\limsup\, x_n$, $\displaystyle \limsup_{n\to\infty} x_n$},
   description={limit superior},
 }
 
-\newglossaryentry{not:liminf}{
+\newglossaryentry{not:liminfseq}{
   type=notation,
-  name={$\liminf$},
+  name={$\liminf\, x_n$, $\displaystyle \liminf_{n\to\infty} x_n$},
   description={limit inferior},
 }
 
 \newglossaryentry{not:series}{
   type=notation,
-  name={\rule[-12pt]{0pt}{32pt}$\displaystyle \sum a_n$,  $\displaystyle \sum_{n=1}^\infty a_n$},
+  name={\rule[-15pt]{0pt}{32pt}$\displaystyle \sum a_n$,  $\displaystyle \sum_{n=1}^\infty a_n$},
   description={series},
 }
 
 \newglossaryentry{not:riemannint}{
   type=notation,
-  name={\rule[-12pt]{0pt}{32pt}$\displaystyle \int_a^b f$, $\displaystyle \int_a^b f(x)\, dx$},
+  name={\rule[-12pt]{0pt}{30pt}$\displaystyle \int_a^b f$, $\displaystyle \int_a^b f(x)\, dx$},
   description={the Riemann integral of $f$ on $[a,b]$},
 }
 
@@ -455,15 +475,39 @@
   description={union of $A$ and $B$},
 }
 
+\newglossaryentry{not:infunion}{
+  type=notation,
+  name={\rule[-15pt]{0pt}{32pt}$\displaystyle \bigcup_{n=1}^\infty A_n$},
+  description={union of all $A_n$ for all $n \in \N$},
+}
+
+\newglossaryentry{not:arbitunion}{
+  type=notation,
+  name={\rule[-15pt]{0pt}{28pt}$\displaystyle \bigcup_{\lambda \in I} A_\lambda$},
+  description={union of all $A_\lambda$ for all $\lambda \in I$},
+}
+
+\newglossaryentry{not:infintersection}{
+  type=notation,
+  name={\rule[-15pt]{0pt}{32pt}$\displaystyle \bigcap_{n=1}^\infty A_n$},
+  description={intersection of all $A_n$ for all $n \in \N$},
+}
+
+\newglossaryentry{not:arbitintersection}{
+  type=notation,
+  name={\rule[-15pt]{0pt}{32pt}$\displaystyle \bigcup_{\lambda \in I} A_\lambda$},
+  description={intersection of all $A_\lambda$ for all $\lambda \in I$},
+}
+
 \newglossaryentry{not:lowerdarboux}{
   type=notation,
-  name={\rule[-14pt]{0pt}{36pt}$\displaystyle \underline{\int_a^b}f$},
+  name={\rule[-15pt]{0pt}{36pt}$\displaystyle \underline{\int_a^b}f$},
   description={lower Darboux integral},
 }
 
 \newglossaryentry{not:upperdarboux}{
   type=notation,
-  name={\rule[-14pt]{0pt}{36pt}$\displaystyle \overline{\int_a^b}f$},
+  name={\rule[-13pt]{0pt}{36pt}$\displaystyle \overline{\int_a^b}f$},
   description={upper Darboux integral},
 }
 
