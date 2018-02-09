@@ -143,7 +143,7 @@ so-called Cauchy--Schwarz inequality.
 
 \begin{lemma}[\myindex{Cauchy--Schwarz inequality}%
 \footnote{%
-Sometimes it is called the Cauchy--Bunyakovsky--Schwarz inequality.
+Sometimes it is called the \myindex{Cauchy--Bunyakovsky--Schwarz inequality}.
 \href{http://en.wikipedia.org/wiki/Hermann_Schwarz}{Karl Hermann Amandus
 Schwarz} (1843--1921) was a German mathematician and
 \href{http://en.wikipedia.org/wiki/Viktor_Bunyakovsky}{Viktor Yakovlevich
@@ -331,7 +331,7 @@ To show that $(X,d)$ is indeed a metric space is left as an exercise.
 \end{example}
 
 \begin{example} \label{example:msC01}
-Let $C([a,b],\R)$ be the set of continuous real-valued functions on the
+Let $C([a,b],\R)$\glsadd{not:contfuncs} be the set of continuous real-valued functions on the
 interval $[a,b]$.  Define the metric on $C([a,b],\R)$ as
 \begin{equation*}
 d(f,g) := \sup_{x \in [a,b]} \abs{f(x)-g(x)} .
@@ -604,7 +604,7 @@ there exists an $m \in \N$ such that $d(n,m) < \epsilon$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:C1ab}
-Let $C^1([a,b],\R)$ be the set of once continuously differentiable
+Let $C^1([a,b],\R)$\glsadd{not:contdifffuncs} be the set of once continuously differentiable
 functions on $[a,b]$.
 Define
 \begin{equation*}
@@ -620,7 +620,7 @@ of real numbers
 such that $\sum_{n=1}^\infty x_n^2 < \infty$.
 \begin{enumerate}[a)]
 \item
-Prove the Cauchy--Schwarz inequality for two sequences
+Prove the \myindex{Cauchy--Schwarz inequality} for two sequences
 $\{x_n \}$ and $\{ y_n \}$ in $\ell^2$:
 \begin{equation*}
 {\biggl( \sum_{j=1}^\infty x_j y_j \biggr)}^2
@@ -1417,6 +1417,7 @@ by an arbitrary metric space $(X,d)$.
 A \emph{\myindex{sequence}} in a metric space $(X,d)$ is a function
 $x \colon \N \to X$.  As before we write $x_n$ for the $n$th element in
 the sequence and use the notation $\{ x_n \}$, or more precisely
+\glsadd{not:sequence}
 \begin{equation*}
 \{ x_n \}_{n=1}^\infty .
 \end{equation*}
@@ -1432,7 +1433,8 @@ is bounded.
 
 If $\{ n_j \}_{j=1}^\infty$ is a sequence of natural numbers
 such that $n_{j+1} > n_j$ for all $j$, then
-the sequence $\{ x_{n_j} \}_{j=1}^\infty$ is said to be
+the sequence $\{ x_{n_j} \}_{j=1}^\infty$\glsadd{not:subsequence}
+is said to be
 a \emph{\myindex{subsequence}} of $\{x_n \}$.
 \end{defn}
 
@@ -1444,19 +1446,20 @@ the definition.
 
 \begin{defn}
 A sequence $\{ x_n \}$ in a metric space $(X,d)$ is said
-to \emph{\myindex{converge}} to a point
+to \emph{converge} to a point
 $p \in X$, if for every $\epsilon > 0$, there exists an $M \in \N$ such
 that $d(x_n,p) < \epsilon$ for all $n \geq M$.  The point $p$
-is said to be the \emph{limit}\index{limit of a sequence}
-of $\{ x_n \}$.  We write
+is said to be the \emph{limit}\index{limit!of a sequence in a metric space}
+of $\{ x_n \}$.  We write\glsadd{not:lim}
 \begin{equation*}
 \lim_{n\to \infty} x_n := p .
 \end{equation*}
 
 A sequence
-that converges is \emph{convergent}\index{convergent sequence}.
+that converges is \emph{convergent}\index{convergent!sequence in a metric
+space}.
 Otherwise, the sequence is 
-\emph{divergent}\index{divergent sequence}.
+\emph{divergent}\index{divergent!sequence in a metric space}.
 \begin{myfigureht}
 \includegraphics{figures/sequence-convergence-metric}
 \caption{Sequence converging to $p$.  The first 10 points 
@@ -2460,7 +2463,8 @@ $d_Y\bigl(f(x),f(c)\bigr) < \epsilon$.
 \medskip
 
 When $f \colon X \to Y$ is continuous at all $c \in X$, then we simply say
-that $f$ is a \emph{\myindex{continuous function}}.
+that $f$ is a \emph{continuous function}\index{continuous function!in a
+metric space}\index{function!continuous}.
 \end{defn}
 
 The definition agrees with the definition from \chapterref{lim:chapter} when
@@ -2697,7 +2701,7 @@ one $\delta$ for all points.
 \begin{defn}
 Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
 Then $f \colon X \to Y$ is
-\emph{uniformly continuous}\index{uniformly continuous!metric spaces}
+\emph{uniformly continuous}\index{uniformly continuous!in a metric space}
 if for every $\epsilon > 0$
 there is a $\delta > 0$ such that whenever $x,c \in X$ and $d_X(x,c) <
 \delta$, then
@@ -2742,7 +2746,8 @@ d_Y\bigl(f(c),f(x_2)\bigr)
 
 \begin{example}
 Useful examples of uniformly continuous functions are again the so-called
-\emph{\myindex{Lipschitz continuous}} functions.  That is if
+\emph{Lipschitz continuous}\index{Lipschitz continuous!in a metric space}
+functions.  That is if
 $(X,d_X)$ and $(Y,d_Y)$ are metric spaces, then $f \colon X \to Y$
 is called Lipschitz or $K$-Lipschitz if there exists a $K \in \R$ such that
 \begin{equation*}
@@ -2890,7 +2895,7 @@ is a continuous function.
 \begin{samepage}
 \begin{exercise}
 Let $C([a,b],\R)$ be the set of continuous functions and
-$C^1([a,b],\R)$ the set of once continuously differentiable
+$C^1([a,b],\R)$\glsadd{not:contdifffuncs} the set of once continuously differentiable
 functions on $[a,b]$.
 Define
 \begin{equation*}

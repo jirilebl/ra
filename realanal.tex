@@ -32,6 +32,9 @@
 %to comment out the next line:
 \usepackage[ocgcolorlinks]{ocgx2} %perhaps run without for lulu/createspace
 
+\usepackage[toc,nopostdot,sort=use]{glossaries}
+\setglossarystyle{long3colheader}
+
 %\usepackage[all]{hypcap} %handled by caption
 \usepackage[shortalphabetic]{amsrefs}
 \usepackage{nicefrac}
@@ -262,6 +265,228 @@
 \newcommand{\corref}[1]{\hyperref[#1]{Corollary~\ref*{#1}}}
 \newcommand{\defnref}[1]{\hyperref[#1]{Definition~\ref*{#1}}}
 
+
+% List of Symbols/Notation
+\newglossary[nlg]{notation}{not}{ntn}{Notation}
+
+\makeglossaries
+
+\newglossaryentry{not:def}{
+  type=notation,
+  name={$A := B$},
+  description={define $A$ to equal $B$},
+}
+
+\newglossaryentry{not:emptyset}{
+  type=notation,
+  name={$\emptyset$},
+  description={the empty set},
+}
+
+\newglossaryentry{not:natnums}{
+  type=notation,
+  name={$\N$},
+  description={the natural numbers: $1,2,3,\ldots$},
+}
+
+\newglossaryentry{not:ints}{
+  type=notation,
+  name={$\Z$},
+  description={the integers: $\ldots,-2,-1,0,1,2,\ldots$},
+}
+
+\newglossaryentry{not:rationals}{
+  type=notation,
+  name={$\Q$},
+  description={the rational numbers},
+}
+
+\newglossaryentry{not:reals}{
+  type=notation,
+  name={$\R$},
+  description={the real numbers},
+}
+
+\newglossaryentry{not:func}{
+  type=notation,
+  name={$f \colon A \to B$},
+  description={function with domain $A$ and codomain $B$},
+}
+
+\newglossaryentry{not:closedbdinterval}{
+  type=notation,
+  name={$[a,b]$},
+  description={closed bouned interval},
+}
+
+\newglossaryentry{not:openbdinterval}{
+  type=notation,
+  name={$(a,b)$},
+  description={open bounded interval},
+}
+
+\newglossaryentry{not:halfopenbdinterval}{
+  type=notation,
+  name={$(a,b]$,$[a,b)$},
+  description={half-open bounded interval},
+}
+
+\newglossaryentry{not:closedubdinterval}{
+  type=notation,
+  name={$[a,\infty)$,$(-\infty,b]$},
+  description={closed unbounded interval},
+}
+\newglossaryentry{not:openubdinterval}{
+  type=notation,
+  name={$(a,\infty)$,$(-\infty,b)$},
+  description={open unbounded interval},
+}
+
+\newglossaryentry{not:sequence}{
+  type=notation,
+  name={$\{ x_n \}$, $\{x_n\}_{n=1}^\infty$},
+  description={a sequence},
+}
+
+\newglossaryentry{not:subsequence}{
+  type=notation,
+  name={$\{ x_{n_j} \}$, $\{x_{n_j}\}_{j=1}^\infty$},
+  description={a subsequence},
+}
+
+\newglossaryentry{not:sup}{
+  type=notation,
+  name={$\sup$},
+  description={supremum},
+}
+
+\newglossaryentry{not:inf}{
+  type=notation,
+  name={$\inf$},
+  description={infimum},
+}
+
+\newglossaryentry{not:lim}{
+  type=notation,
+  name={$\lim$},
+  description={limit},
+}
+
+\newglossaryentry{not:limsup}{
+  type=notation,
+  name={$\limsup$},
+  description={limit superior},
+}
+
+\newglossaryentry{not:liminf}{
+  type=notation,
+  name={$\liminf$},
+  description={limit inferior},
+}
+
+\newglossaryentry{not:series}{
+  type=notation,
+  name={\rule[-12pt]{0pt}{32pt}$\displaystyle \sum a_n$,  $\displaystyle \sum_{n=1}^\infty a_n$},
+  description={series},
+}
+
+\newglossaryentry{not:riemannint}{
+  type=notation,
+  name={\rule[-12pt]{0pt}{32pt}$\displaystyle \int_a^b f$, $\displaystyle \int_a^b f(x)\, dx$},
+  description={the Riemann integral of $f$ on $[a,b]$},
+}
+
+\newglossaryentry{not:integrablefunc}{
+  type=notation,
+  name={$\sR[a,b]$},
+  description={the Riemann integrable functions on $[a,b]$},
+}
+
+\newglossaryentry{not:setbuilder}{
+  type=notation,
+  name={$\{ x \in S : P(x) \}$},
+  description={set building notation},
+}
+
+\newglossaryentry{not:subset}{
+  type=notation,
+  name={$A \subset B$},
+  description={$A$ is a subset of $B$},
+}
+
+\newglossaryentry{not:subsetneq}{
+  type=notation,
+  name={$A \subsetneq B$},
+  description={$A$ is a proper subset of $B$},
+}
+
+\newglossaryentry{not:eltof}{
+  type=notation,
+  name={$x \in S$},
+  description={$x$ is an element of $S$},
+}
+\newglossaryentry{not:noteltof}{
+  type=notation,
+  name={$x \notin S$},
+  description={$x$ is not an element of $S$},
+}
+
+\newglossaryentry{not:intersection}{
+  type=notation,
+  name={$A \cap B$},
+  description={intersection of $A$ and $B$},
+}
+
+\newglossaryentry{not:setminus}{
+  type=notation,
+  name={$A \setminus B$},
+  description={set minus, elements of $A$ not in $B$},
+}
+
+\newglossaryentry{not:complement}{
+  type=notation,
+  name={$B^c$},
+  description={set complement, elements not in $B$},
+}
+
+\newglossaryentry{not:union}{
+  type=notation,
+  name={$A \cup B$},
+  description={union of $A$ and $B$},
+}
+
+\newglossaryentry{not:lowerdarboux}{
+  type=notation,
+  name={\rule[-14pt]{0pt}{36pt}$\displaystyle \underline{\int_a^b}f$},
+  description={lower Darboux integral},
+}
+
+\newglossaryentry{not:upperdarboux}{
+  type=notation,
+  name={\rule[-14pt]{0pt}{36pt}$\displaystyle \overline{\int_a^b}f$},
+  description={upper Darboux integral},
+}
+
+\newglossaryentry{not:contfuncs}{
+  type=notation,
+  name={$C(S,\R)$},
+  description={continuous functions $f \colon S \to \R$},
+}
+
+\newglossaryentry{not:contdifffuncs}{
+  type=notation,
+  name={$C^1(S,\R)$},
+  description={continuously differentiable functions $f \colon S \to \R$},
+}
+
+%\newglossaryentry{not:}{
+%  type=notation,
+%  name={},
+%  description={},
+%}
+
+%\glsaddall
+
 \begin{document}
 
 \ifpdf
@@ -491,6 +716,16 @@ See \url{http://www.jirka.org/ra/} for more information
 
 \end{biblist}
 \end{bibchapter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\glspagelistwidth}{10em}
+\begingroup
+\renewcommand*{\arraystretch}{1.2}
+\printglossaries 
+\endgroup
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

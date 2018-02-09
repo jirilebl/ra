@@ -19,6 +19,7 @@ use the notation $\{ x_n \}$, or more precisely
 \begin{equation*}
 \{ x_n \}_{n=1}^\infty,
 \end{equation*}
+\glsadd{not:sequence}
 to denote a sequence.
 
 A sequence $\{ x_n \}$ is \emph{bounded}\index{bounded sequence} if
@@ -60,24 +61,27 @@ Another example of a sequence is the so-called \emph{\myindex{constant sequence}
 That is a sequence $\{ c \} = c,c,c,c,\ldots$ consisting of a single
 constant $c \in \R$ repeating indefinitely.
 
-We now get to the idea of a \emph{\myindex{limit of a sequence}}.  We will
+We now get to the idea of a
+\emph{limit of a sequence}\index{limit!of a sequence}.  We will
 see in \propref{prop:limisunique}
 that the notation below is well defined.  That is, if a limit exists, then
 it is unique.  So it makes sense to talk about \emph{the} limit of a sequence.
 
 \begin{defn}
-A sequence $\{ x_n \}$ is said to \emph{\myindex{converge}} to a number
+A sequence $\{ x_n \}$ is said to \emph{converge} to a number
 $x \in \R$, if for every $\epsilon > 0$, there exists an $M \in \N$ such
 that $\abs{x_n - x} < \epsilon$ for all $n \geq M$.  The number $x$
 is said to be the \emph{limit} of $\{ x_n \}$.  We write
+\glsadd{not:lim}
 \begin{equation*}
 \lim_{n\to \infty} x_n := x .
 \end{equation*}
 
 A sequence
-that converges is said to be \emph{convergent}\index{convergent sequence}.
-Otherwise, we say the sequence \emph{diverges}\index{diverge} or that it is
-\emph{divergent}\index{divergent sequence}.
+that converges is said to be \emph{convergent}\index{convergent!sequence}.
+Otherwise, we say the sequence \emph{diverges}
+or that it is
+\emph{divergent}\index{divergent!sequence}.
 \end{defn}
 
 It is good to know intuitively what a limit means.  It means that eventually
@@ -505,7 +509,7 @@ The sequence
 \begin{equation*}
 \{ x_{n_i} \}_{i=1}^\infty
 \end{equation*}
-is called 
+is called \glsadd{not:subsequence}
 a \emph{\myindex{subsequence}} of $\{ x_n \}$.
 \end{defn}
 
@@ -1688,8 +1692,8 @@ still compute certain limits with a bounded divergent sequence.
 
 There are ways of creating monotone sequences out of any sequence, and
 in this fashion we
-get the so-called \emph{\myindex{limit superior}} and
-\emph{\myindex{limit inferior}}.  These limits always exist for bounded
+get the so-called \emph{\myindex{limit superior}}\index{limsup} and
+\emph{\myindex{limit inferior}}\index{liminf}.  These limits always exist for bounded
 sequences.
 
 If a sequence $\{ x_n \}$ is bounded, then 
@@ -1701,7 +1705,7 @@ Let $\{ x_n \}$ be a bounded sequence.  Define the sequences $\{ a_n \}$
 and $\{ b_n \}$ by
 $a_n := \sup \{ x_k : k \geq n \}$ and
 $b_n := \inf \{ x_k : k \geq n \}$.  
-Define, if the limits exist,
+Define, if the limits exist,\glsadd{not:limsup}\glsadd{not:liminf}
 \begin{align*}
 \limsup_{n \to \infty} \, x_n & := \lim_{n \to \infty} a_n ,
 \\
@@ -2110,6 +2114,7 @@ limits to be infinite.  That is, we write $\lim \, x_n = \infty$ or
 $\lim \, x_n = -\infty$ for certain divergent sequences.
 
 \begin{defn}
+\index{infinite limit!of a sequence}\index{limit!infinite}
 We say
 $\{ x_n \}$ \emph{\myindex{diverges to infinity}}%
 \footnote{Sometimes it is said that $\{ x_n \}$ \emph{converges to infinity}.}
@@ -2178,7 +2183,9 @@ can take suprema and infima.
 Let $\{ x_n \}$ be an unbounded sequence of real numbers.  Define 
 sequences of extended real numbers by
 $a_n := \sup \{ x_k : k \geq n \}$ and
-$b_n := \inf \{ x_k : k \geq n \}$.  Define
+$b_n := \inf \{ x_k : k \geq n \}$.
+Define\glsadd{not:limsup}\glsadd{not:liminf}
+\index{limit inferior}\index{limit superior}\index{limsup}\index{liminf}
 \begin{equation*}
 \limsup_{n \to \infty} \, x_n := \inf \{ a_n : n \in \N \}, \qquad \text{and} \qquad
 \liminf_{n \to \infty} \, x_n := \sup \{ b_n : n \in \N \}.
@@ -2799,8 +2806,9 @@ Given a sequence $\{ x_n \}$, we write the formal object
 \qquad
 \sum x_n
 \end{equation*}
+\glsadd{not:series}
 and call it a \emph{\myindex{series}}.  A series
-\emph{converges}\index{convergent series}, if the sequence $\{ s_k \}$
+\emph{converges}\index{convergent!series}, if the sequence $\{ s_k \}$
 defined by
 \begin{equation*}
 s_k := \sum_{n=1}^k x_n = x_1 + x_2 + \cdots + x_k ,
@@ -2816,7 +2824,7 @@ In this case, we cheat a little and treat
 $\sum_{n=1}^\infty x_n$ as a number.
 
 If the sequence $\{ s_k \}$ diverges,
-we say the series is \emph{divergent}\index{divergent series}.
+we say the series is \emph{divergent}\index{divergent!series}.
 In this case, $\sum x_n$ is simply a formal object and not a number.
 \end{defn}
 
@@ -3296,7 +3304,8 @@ We will define the logarithm and the exponential in \sectionref{sec:logandexp}.
 For now you can just think of rational $p$
 where $x^{k/m} = {(x^{1/m})}^{k}$.  See also \exerciseref{exercise:realpower}.}.
 
-\begin{prop}[$p$-series or the $p$-test]\index{p-series}\index{p-test}
+\begin{prop}[$p$-series or the $p$-test]%
+\index{p-series@$p$-series}\index{p-test@$p$-test}
 For $p \in \R$, 
 the series
 \begin{equation*}
@@ -3717,7 +3726,7 @@ Suppose $\sum x_n$ converges and $x_n \geq 0$ for all $n$.  Prove that $\sum x_n
 Suppose $\{ x_n\}$ is a decreasing sequence of positive numbers.
 The proof of convergence/divergence for the $p$-series generalizes.
 Prove the so-called 
-\emph{\myindex{Cauchy Condensation Principle}}:
+\emph{\myindex{Cauchy condensation principle}}:
 \begin{equation*}
 \sum_{n=1}^\infty x_n \quad \text{ converges if and only if } \quad
 \sum_{n=1}^\infty 2^n x_{2^n} .
@@ -3725,7 +3734,7 @@ Prove the so-called
 \end{exercise}
 
 \begin{exercise}
-Use the Cauchy Condensation Principle
+Use the Cauchy condensation principle
 (see \exerciseref{exercise:cauchycondensation})
 to decide the convergence of
 
@@ -4230,12 +4239,12 @@ many important functions in analysis can be written
 as a power series.
 
 We say that a power series is
-\emph{convergent}\index{convergent power series} if
+\emph{convergent}\index{convergent!power series} if
 there is at least one $x \not= x_0$ that makes the series converge.
 If $x=x_0$ then the series always
 converges since all terms except the first are zero.
 If the series does not converge for any point $x \not= x_0$, we say that
-the series is \emph{divergent}\index{divergent power series}.
+the series is \emph{divergent}\index{divergent!power series}.
 
 \begin{example} \label{ps:expex}
 The series

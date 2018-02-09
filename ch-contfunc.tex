@@ -77,7 +77,7 @@ function as $x$ goes to $c$ can very well be different
 from $f(c)$.
 
 \begin{defn}
-\index{limit of a function}%
+\index{limit!of a function}%
 Let $f \colon S \to \R$ be a function and $c$ a cluster point of $S$.
 Suppose there exists an $L \in \R$ and for every $\epsilon > 0$,
 there exists a $\delta > 0$ such that whenever $x \in S \setminus \{ c \}$
@@ -85,9 +85,10 @@ and $\abs{x - c} < \delta$, then
 \begin{equation*}
 \abs{f(x) - L} < \epsilon .
 \end{equation*}
-In this case we say $f(x)$ \emph{\myindex{converges}} to $L$ as $x$ goes
-to $c$.  We say $L$ is the \emph{\myindex{limit}} of $f(x)$ as $x$
+In this case we say $f(x)$ \emph{converges}\index{converges!function} to $L$ as $x$ goes
+to $c$.  We say $L$ is the \emph{limit} of $f(x)$ as $x$
 goes to $c$.  We write
+\glsadd{not:lim}
 \begin{equation*}
 \lim_{x \to c} f(x) := L ,
 \end{equation*}
@@ -707,7 +708,7 @@ $\abs{f(x)-f(c)} < \epsilon$.
 %\medskip
 
 When $f \colon S \to \R$ is continuous at all $c \in S$, then we simply say
-$f$ is a \emph{\myindex{continuous function}}.
+$f$ is a \emph{\myindex{continuous function}}\index{function!continuous}.
 \end{defn}
 \begin{myfigureht}
 \subimport*{figures/}{contigr.pdf_t}
@@ -1298,7 +1299,8 @@ are quite well behaved.
 \subsection{Min-max theorem}
 
 Recall a function $f \colon [a,b] \to \R$ is
-\emph{bounded\index{bounded function}} if there exists a $B \in \R$ such that
+\emph{bounded}\index{bounded function}\index{function!bounded}
+if there exists a $B \in \R$ such that
 $\abs{f(x)} \leq B$ for all $x \in [a,b]$.  We have the following lemma.
 
 \begin{lemma}
@@ -1330,12 +1332,12 @@ f\Bigl( \lim_{i\to\infty} x_{n_i} \Bigr) ,
 \end{proof}
 
 Recall from calculus that $f \colon S \to \R$ achieves an
-\emph{\myindex{absolute minimum}} at $c \in S$ if
+\emph{\myindex{absolute minimum}}\index{minimum!absolute} at $c \in S$ if
 \begin{equation*}
 f(x) \geq f(c) \qquad \text{ for all $x \in S$.}
 \end{equation*}
 On the other hand, $f$ achieves an 
-\emph{\myindex{absolute maximum}} at $c \in S$ if
+\emph{\myindex{absolute maximum}}\index{maximum!absolute} at $c \in S$ if
 \begin{equation*}
 f(x) \leq f(c) \qquad \text{ for all $x \in S$.}
 \end{equation*}
@@ -2376,7 +2378,7 @@ $M \in \R$, there exists an $x \in S$ such that $x \geq M$.  Similarly
 $- \infty$ is a cluster point of $S \subset \R$, if for every
 $M \in \R$, there exists an $x \in S$ such that $x \leq M$.
 
-\index{limit of a function at infinity}%
+\index{limit!of a function at infinity}%
 Let $f \colon S \to \R$ be a function, where 
 $\infty$ is a cluster point of $S$.
 If there exists an $L \in \R$
@@ -2384,8 +2386,10 @@ such that for every $\epsilon > 0$, there is an $M \in \R$ such that
 \begin{equation*}
 \abs{f(x) - L} < \epsilon 
 \end{equation*}
-whenever $x \geq M$, then we say $f(x)$ \emph{\myindex{converges}} to $L$
-as $x$ goes to $\infty$.  We call $L$ the \emph{\myindex{limit}} and write
+whenever $x \geq M$, then we say $f(x)$
+\emph{converges}\index{converges!function} to $L$
+as $x$ goes to $\infty$.  We call $L$ the \emph{limit}
+and write
 \begin{equation*}
 \lim_{x \to \infty} f(x) := L .
 \end{equation*}
@@ -2506,7 +2510,7 @@ divergent sequences, and talk about limits being infinite
 almost as if the limits existed.
 
 \begin{defn}
-\index{infinite limit of a function}%
+\index{infinite limit!of a function}\index{limit!infinite}%
 Let $f \colon S \to \R$ be a function and suppose 
 $S$ has $\infty$ as a cluster point.
 We say $f(x)$
@@ -3098,7 +3102,8 @@ $g(0) = f(0)$, $f(x) \leq g(x)$ for all $x$, and $g(1)-f(1) < \epsilon$.
 \end{exercise}
 
 \begin{exercise}
-Prove that the Dirichlet function $f \colon [0,1] \to\R$ defined by $f(x) :=
+Prove that the \myindex{Dirichlet function}
+$f \colon [0,1] \to\R$ defined by $f(x) :=
 1$ if $x$ is rational and $f(x) := 0$ otherwise cannot be written as a
 difference of two increasing functions.  That is, there do not exist
 increasing $g$ and $h$ such that, $f(x) = g(x) - h(x)$.

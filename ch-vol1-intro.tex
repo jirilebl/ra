@@ -235,7 +235,7 @@ and proof writing before, and this section should be a quick refresher.
 A \emph{\myindex{set}} is a collection of objects called
 \emph{elements}\index{element} or \emph{members}\index{member}.  A set with
 no objects is called the \emph{\myindex{empty set}} and is denoted by
-$\emptyset$ (or sometimes by $\{ \}$).
+$\emptyset$\glsadd{not:emptyset} (or sometimes by $\{ \}$).
 \end{defn}
 
 Think of a set as a club with a certain membership.  For
@@ -250,9 +250,9 @@ S := \{ 0, 1, 2 \}
 \end{equation*}
 is the set containing
 the three elements 0, 1, and 2.
-By ``$:=$'', we mean we are defining what $S$ is, rather than
+By ``$:=$'',\glsadd{not:def} we mean we are defining what $S$ is, rather than
 just showing equality.
-We write
+We write\glsadd{not:eltof}
 \begin{equation*}
 1 \in S
 \end{equation*}
@@ -261,7 +261,7 @@ of $S$.
 At times we want to say that two elements are in a set $S$, so we 
 write ``$1,2 \in S$'' as a shorthand for ``$1 \in S$ and $2 \in S$.''
 
-Similarly we write
+Similarly we write\glsadd{not:noteltof}
 \begin{equation*}
 7 \notin S
 \end{equation*}
@@ -283,7 +283,7 @@ A set may also contain some of the same elements as another set.  For example,
 T := \{ 0, 2 \}
 \end{equation*}
 contains the numbers 0 and 2.  In this case all elements of $T$ also
-belong to $S$.  We write $T \subset S$.  More formally we make the
+belong to $S$.  We write $T \subset S$.\glsadd{not:subset}  More formally we make the
 following definition.
 
 \begin{defn}
@@ -302,7 +302,7 @@ If it is not true that $A$ and $B$ are equal, then
 we write $A \not= B$.
 \item
 A set $A$ is a \emph{\myindex{proper subset}} of $B$ if $A \subset B$
-and $A \not= B$.  We write $A \subsetneq B$.
+and $A \not= B$.  We write $A \subsetneq B$.\glsadd{not:subsetneq}
 \end{enumerate}
 \end{defn}
 
@@ -311,7 +311,7 @@ $T \not= S$.  So $T$ is a proper subset of $S$.
 If $A = B$, then $A$ and $B$ are simply two names for the
 same exact set.
 Let us mention the
-\emph{\myindex{set building notation}},
+\emph{\myindex{set building notation}},\glsadd{not:setbuilder}
 \begin{equation*}
 \{ x \in A : P(x) \} .
 \end{equation*}
@@ -327,14 +327,22 @@ easier to read.
 \begin{example}
 The following are sets including the standard notations.
 \begin{enumerate}[(i)]
-\item The set of \emph{\myindex{natural numbers}}, $\N := \{ 1, 2, 3, \ldots
+\item The set of \emph{\myindex{natural numbers}},
+\glsadd{not:natnums}
+$\N := \{ 1, 2, 3, \ldots
 \}$.
-\item The set of \emph{\myindex{integers}}, $\Z := \{ 0, -1, 1, -2, 2, \ldots
+\item The set of \emph{\myindex{integers}},
+\glsadd{not:ints} 
+$\Z := \{ 0, -1, 1, -2, 2, \ldots
 \}$.
-\item The set of \emph{\myindex{rational numbers}}, $\Q := \{ \frac{m}{n} :  m, n \in \Z
+\item The set of \emph{\myindex{rational numbers}},
+\glsadd{not:rationals} 
+$\Q := \{ \frac{m}{n} :  m, n \in \Z
 \text{ and } n \not= 0 \}$.
 \item The set of even natural numbers, $\{  2m : m \in \N \}$.
-\item The set of real numbers, $\R$.
+\item The set of real numbers,
+\glsadd{not:reals} 
+$\R$.
 \end{enumerate}
 
 Note that $\N \subset \Z \subset \Q \subset \R$.
@@ -347,23 +355,27 @@ There are many operations we want to do with sets.
 \begin{enumerate}[(i)]
 \item
 A \emph{\myindex{union}} of two sets $A$ and $B$ is defined as
+\glsadd{not:union}
 \begin{equation*}
 A \cup B := \{ x : x \in A \text{ or } x \in B \} .
 \end{equation*}
 \item
 An \emph{\myindex{intersection}} of two sets $A$ and $B$ is defined as
+\glsadd{not:intersection}
 \begin{equation*}
 A \cap B := \{ x : x \in A \text{ and } x \in B \} .
 \end{equation*}
 \item
 A \emph{complement of $B$ relative to $A$\index{complement relative to}}
 (or \emph{\myindex{set-theoretic difference}} of $A$ and $B$) is defined as
+\glsadd{not:setminus}
 \begin{equation*}
 A \setminus B := \{ x : x \in A \text{ and } x \notin B \} .
 \end{equation*}
 \item
 We say
-\emph{\myindex{complement}} of $B$ and write $B^c$ instead of $A \setminus B$ if
+\emph{\myindex{complement}} of $B$ and write $B^c$ \glsadd{not:complement}
+instead of $A \setminus B$ if
 the set $A$ is either the entire universe or is the obvious
 set containing $B$, and is understood from context.
 \item
@@ -611,7 +623,7 @@ Informally,
 a \emph{\myindex{set-theoretic function}}\index{function}
 $f$ taking a set $A$ to a set $B$
 is a mapping that to each $x \in A$ assigns a unique $y \in B$.  We write
-$f \colon A \to B$.  For example, we
+$f \colon A \to B$.\glsadd{not:func}  For example, we
 define a function $f \colon S \to T$ taking $S = \{ 0, 1, 2 \}$ to $T = \{ 0, 2 \}$
 by assigning $f(0) := 2$, $f(1) := 2$, and $f(2) := 0$.  That is, a function $f
 \colon A \to B$ is

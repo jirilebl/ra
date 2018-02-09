@@ -24,7 +24,8 @@ the limit
 \begin{equation*}
 L := \lim_{x \to c} \frac{f(x)-f(c)}{x-c} 
 \end{equation*}
-exists, then we say $f$ is \emph{\myindex{differentiable}} at
+exists, then we say $f$ is
+\emph{\myindex{differentiable}}\index{function!differentiable} at
 $c$, that $L$ is the \emph{\myindex{derivative}} of $f$ at $c$,
 and write $f'(c) := L$.
 
@@ -515,11 +516,12 @@ about peaks of individual mountains and bottoms of individual valleys.
 \begin{defn}
 Let $S \subset \R$ be a set and
 let $f \colon S \to \R$ be a function.  The function $f$ is said to have
-a \emph{\myindex{relative maximum}} at $c \in S$ if there exists a $\delta>0$
+a \emph{\myindex{relative maximum}}\index{minimum!relative}
+at $c \in S$ if there exists a $\delta>0$
 such that for all $x \in S$ where $\abs{x-c} < \delta$
 we have $f(x) \leq f(c)$.
 The definition of
-\emph{\myindex{relative minimum}}
+\emph{\myindex{relative minimum}}\index{minimum!relative}
 is analogous.
 \end{defn}
 
@@ -964,7 +966,8 @@ see also Exercises \ref{exercise:bndmuldiff} and
 It is sometimes useful to assume the derivative of a differentiable
 function is continuous.  If $f \colon I \to \R$ is differentiable and
 the derivative $f'$ is continuous on $I$, then we say $f$ is
-\emph{\myindex{continuously differentiable}}.  It is common to
+\emph{\myindex{continuously
+differentiable}}\index{differentiable!continuously}.  It is common to
 write $C^1(I)$ for the set of continuously differentiable functions on $I$.
 
 \subsection{Exercises}
@@ -1105,10 +1108,12 @@ We similarly obtain
 $f'''$, $f''''$, and so on.
 With a larger number of derivatives
 the notation would get out of hand; we denote
-by $f^{(n)}$ the \emph{$n$th derivative}\index{nth derivative} of $f$.
+by $f^{(n)}$ the
+\emph{$n$th derivative}\index{nth derivative@$n$th derivative} of $f$.
 
 When $f$ possesses $n$ derivatives, we say $f$ is
-\emph{$n$ times differentiable}\index{n times differentiable}.
+\emph{$n$ times differentiable}\index{n times differentiable@$n$ times
+differentiable}\index{differentiable!n times@$n$ times}.
 
 \subsection{Taylor's theorem}
 
@@ -1141,8 +1146,8 @@ ${(x-x_0)}^n$ is very small in a small interval around $x_0$.
 
 \begin{defn}
 For an $n$ times differentiable function $f$ defined near a point $x_0 \in \R$, define the
-$n$th \emph{\myindex{Taylor polynomial}}%
-\index{nth Taylor polynomial for f}
+$n$th order \emph{\myindex{Taylor polynomial}}%
+\index{nth order Taylor polynomial@$n$th order Taylor polynomial}
 for $f$ at $x_0$ as
 \begin{equation*}
 \begin{split}
@@ -1262,7 +1267,9 @@ $P_1^0$, $P_2^0$, $P_3^0$ (all dotted), and the polynomial $P_{20}^0$
 (dashed).\label{fig:taylorgeom}}
 \end{myfigureht}
 
-If $f$ is infinitely differentiable, that is, if $f$ can be
+If $f$ is \emph{\myindex{infinitely
+differentiable}}\index{differentiable!infinitely},
+that is, if $f$ can be
 differentiated any number of times, then 
 we define the \emph{\myindex{Taylor series}}:
 \begin{equation*}
@@ -1299,10 +1306,12 @@ has $d$ derivatives.
 
 Taylor's theorem gives us a quick proof of a version of
 the second derivative test.
-By a \emph{\myindex{strict relative minimum}} of $f$ at $c$,
+By a \emph{\myindex{strict relative minimum}}\index{minimum!strict relative}
+of $f$ at $c$,
 we mean that there exists a $\delta > 0$ such that $f(x) > f(c)$ for
 all $x \in (c-\delta,c+\delta)$ where $x\not=c$.
-A \emph{\myindex{strict relative maximum}} is defined similarly.
+A \emph{\myindex{strict relative maximum}}\index{minimum!strict relative}
+is defined similarly.
 Continuity of the second derivative is not needed, but the proof is more
 difficult and is left as an exercise.  The proof also generalizes
 immediately into the $n$th derivative test, which is also left as
@@ -1399,7 +1408,9 @@ Find an example where the $g$ is not twice differentiable at $x=0$.
 \end{exercise}
 
 \begin{exercise}
-Prove the \emph{\myindex{$n$th derivative test}}.  Suppose $n \in \N$,
+Prove the
+\emph{$n$th derivative test}\index{nth derivative test@$n$th derivative test}.
+Suppose $n \in \N$,
 $x_0 \in (a,b)$, and $f \colon (a,b) \to \R$ is $n$ times continuously
 differentiable, with $f^{(k)}(x_0) = 0$ for $k=1,2,\ldots,n-1$, and
 $f^{(n)}(x_0)

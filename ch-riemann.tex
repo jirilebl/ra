@@ -116,8 +116,10 @@ As the sets of lower and upper Darboux sums are bounded, we define
 & \overline{\int_a^b} f(x)~dx :=
 \inf \bigl\{ U(P,f) : P \text{ a partition of $[a,b]$} \bigr\} .
 \end{align*}
-We call $\underline{\int}$ the \emph{\myindex{lower Darboux integral}} and
-$\overline{\int}$ the \emph{\myindex{upper Darboux integral}}.
+We call $\underline{\int}$\glsadd{not:lowerdarboux}
+the \emph{\myindex{lower Darboux integral}}\index{Darboux integral!lower} and
+$\overline{\int}$\glsadd{not:upperdarboux} the
+\emph{\myindex{upper Darboux integral}}\index{Darboux integral!upper}.
 To avoid worrying about the variable of integration, 
 we often simply write
 \begin{equation*}
@@ -135,7 +137,8 @@ integrals should be the same number, as we want a single number to call
 some functions.
 
 \begin{example}
-Take the Dirichlet function $f \colon [0,1] \to \R$, where $f(x) := 1$ if
+Take the \myindex{Dirichlet function}
+$f \colon [0,1] \to \R$, where $f(x) := 1$ if
 $x \in \Q$ and $f(x) := 0$ if $x \notin \Q$.  Then
 \begin{equation*}
 \underline{\int_0^1} f = 0 \qquad \text{and} \qquad
@@ -314,7 +317,8 @@ Let $f \colon [a,b] \to \R$ be a bounded function such that
 \end{equation*}
 Then $f$ is said to be \emph{\myindex{Riemann integrable}}.
 The set of Riemann integrable functions on $[a,b]$ is denoted
-by $\sR[a,b]$.  When $f \in \sR[a,b]$ we define
+by $\sR[a,b]$.\glsadd{not:integrablefunc}
+When $f \in \sR[a,b]$ we define\glsadd{not:riemannint}
 \begin{equation*}
 \int_a^b f(x)~dx := 
 \underline{\int_a^b} f(x)~dx = \overline{\int_a^b} f(x)~dx .
@@ -2398,8 +2402,9 @@ and $L(e) = 1$.
 \end{exercise}
 
 \begin{exercise}[requires \sectionref{sec:taylor}]\label{exercise:nonanalytic}
-Since $(e^x)' = e^x$, it is easy to see that $e^x$ is infinitely
-differentiable (has derivatives of all orders).  Define the function $f \colon \R \to \R$.
+Since $(e^x)' = e^x$, it is easy to see that $e^x$ is
+\myindex{infinitely differentiable}\index{differentiable!infinitely}
+(has derivatives of all orders).  Define the function $f \colon \R \to \R$.
 \begin{equation*}
 f(x) := \begin{cases}
 e^{-1/x} & \text{if $x > 0$,} \\
@@ -2461,9 +2466,9 @@ We define
 if the limit exists.
 
 If the limit exists, we say the improper integral
-\emph{\myindex{converges}}\index{convergent improper integral}.
+\emph{converges}\index{convergent!improper integral}.
 If the limit does not exist, we say the improper integral
-\emph{\myindex{diverges}}\index{divergent improper integral}.
+\emph{diverges}\index{divergent!improper integral}.
 
 We similarly define improper integrals for the left-hand endpoint, we leave
 this to the reader.
@@ -2476,7 +2481,8 @@ we can apply this definition to unbounded functions.
 The following set of examples is
 so useful that we state it as a proposition.
 
-\begin{prop}[$p$-test for integrals]\index{p-test for integrals}
+\begin{prop}[$p$-test for integrals]%
+\index{p-test for integrals@$p$-test for integrals}
 \label{impropriemann:ptest}
 The improper integral
 \begin{equation*}

@@ -4,10 +4,12 @@ pdflatex realanal
 pdflatex realanal
 pdflatex realanal
 makeindex realanal
+makeglossaries realanal
 pdflatex realanal
 pdflatex realanal
 pdflatex realanal
 makeindex realanal
+makeglossaries realanal
 pdflatex realanal
 pdflatex realanal
 pdflatex realanal
