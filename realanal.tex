@@ -32,8 +32,9 @@
 %to comment out the next line:
 \usepackage[ocgcolorlinks]{ocgx2} %perhaps run without for lulu/createspace
 
+\usepackage{cellspace}
 \usepackage[toc,nopostdot,sort=use]{glossaries}
-\setglossarystyle{long3colheader}
+
 
 %\usepackage[all]{hypcap} %handled by caption
 \usepackage[shortalphabetic]{amsrefs}
@@ -271,10 +272,42 @@
 
 \makeglossaries
 
+%\newcommand{\mynot}[1]{\marginbox{0pt 5pt}{#1}}
+
 \newglossaryentry{not:def}{
   type=notation,
   name={$A := B$},
   description={define $A$ to equal $B$},
+}
+
+\newglossaryentry{not:set}{
+  type=notation,
+  name={$\{ 1,2,3\}$},
+  description={a set with the given elements},
+}
+
+\newglossaryentry{not:equal}{
+  type=notation,
+  name={$A = B$},
+  description={$A$ and $B$ are equal},
+}
+
+\newglossaryentry{not:composition}{
+  type=notation,
+  name={$f \circ g$},
+  description={composition of functions},
+}
+
+\newglossaryentry{not:cardinality}{
+  type=notation,
+  name={$\abs{A}$},
+  description={cardinality of a set $A$},
+}
+
+\newglossaryentry{not:powerset}{
+  type=notation,
+  name={$\sP(P)$},
+  description={power set of $A$},
 }
 
 \newglossaryentry{not:emptyset}{
@@ -328,19 +361,25 @@
 \newglossaryentry{not:dirimage}{
   type=notation,
   name={$f(A)$},
-  description={direct image},
+  description={direct image of $A$ by $f$},
 }
 
 \newglossaryentry{not:invimage}{
   type=notation,
   name={$f^{-1}(A)$},
-  description={inverse image},
+  description={inverse image of $A$ by $f$},
 }
 
 \newglossaryentry{not:invfunction}{
   type=notation,
   name={$f^{-1}$},
   description={inverse function},
+}
+
+\newglossaryentry{not:abs}{
+  type=notation,
+  name={$\abs{x}$},
+  description={absolute value},
 }
 
 \newglossaryentry{not:closedbdinterval}{
@@ -357,18 +396,18 @@
 
 \newglossaryentry{not:halfopenbdinterval}{
   type=notation,
-  name={$(a,b]$,$[a,b)$},
+  name={$(a,b]$, $[a,b)$},
   description={half-open bounded interval},
 }
 
 \newglossaryentry{not:closedubdinterval}{
   type=notation,
-  name={$[a,\infty)$,$(-\infty,b]$},
+  name={$[a,\infty)$, $(-\infty,b]$},
   description={closed unbounded interval},
 }
 \newglossaryentry{not:openubdinterval}{
   type=notation,
-  name={$(a,\infty)$,$(-\infty,b)$},
+  name={$(a,\infty)$, $(-\infty,b)$},
   description={open unbounded interval},
 }
 
@@ -396,6 +435,18 @@
   description={infimum of $E$},
 }
 
+\newglossaryentry{not:min}{
+  type=notation,
+  name={$\min\,E$},
+  description={minimum of $E$},
+}
+
+\newglossaryentry{not:max}{
+  type=notation,
+  name={$\max\,E$},
+  description={maximum of $E$},
+}
+
 \newglossaryentry{not:supf}{
   type=notation,
   name={$\displaystyle \sup_{x\in D} f(x)$},
@@ -408,6 +459,18 @@
   description={infimum of $f(D)$},
 }
 
+\newglossaryentry{not:extreal}{
+  type=notation,
+  name={$\R^*$},
+  description={extended real numbers},
+}
+
+\newglossaryentry{not:infinity}{
+  type=notation,
+  name={$\infty$},
+  description={infinity},
+}
+
 \newglossaryentry{not:limseq}{
   type=notation,
   name={$\lim\, x_n$, $\displaystyle \lim_{n\to\infty} x_n$},
@@ -416,10 +479,21 @@
 
 \newglossaryentry{not:limfunc}{
   type=notation,
-  name={$\displaystyle \lim_{x \to c} f(x)$,
-$\displaystyle \lim_{x \to \infty} f(x)$,
-$\displaystyle \lim_{x \to -\infty} f(x)$},
+  name={$\displaystyle \lim_{x \to c} f(x)$},
   description={limit of a function},
+}
+
+\newglossaryentry{not:limitasarrows}{
+  type=notation,
+  name={$f(x) \to L$ as $x \to c$},
+  description={$f(x)$ converges to $L$ as $x$ goes to $c$},
+}
+
+\newglossaryentry{not:limfuncinf}{
+  type=notation,
+  name={$\displaystyle \lim_{x \to \infty} f(x)$,
+$\displaystyle \lim_{x \to -\infty} f(x)$},
+  description={limit of a function at infinity},
 }
 
 \newglossaryentry{not:onesidedlim}{
@@ -443,19 +517,19 @@ $\displaystyle \lim_{x \to c^{-}} f(x)$},
 
 \newglossaryentry{not:finitesum}{
   type=notation,
-  name={\rule[-15pt]{0pt}{32pt}$\displaystyle \sum_{n=1}^k a_n$},
+  name={$\displaystyle \sum_{n=1}^k a_n$},
   description={sum $a_1 + a_2 + \cdots+ a_k$},
 }
 
 \newglossaryentry{not:series}{
   type=notation,
-  name={\rule[-15pt]{0pt}{32pt}$\displaystyle \sum a_n$,  $\displaystyle \sum_{n=1}^\infty a_n$},
+  name={$\displaystyle \sum a_n$,  $\displaystyle \sum_{n=1}^\infty a_n$},
   description={series},
 }
 
 \newglossaryentry{not:riemannint}{
   type=notation,
-  name={\rule[-12pt]{0pt}{30pt}$\displaystyle \int_a^b f$, $\displaystyle \int_a^b f(x)\, dx$},
+  name={$\displaystyle \int_a^b f$, $\displaystyle \int_a^b f(x)\, dx$},
   description={the Riemann integral of $f$ on $[a,b]$},
 }
 
@@ -526,38 +600,74 @@ $\displaystyle \lim_{x \to c^{-}} f(x)$},
 
 \newglossaryentry{not:infunion}{
   type=notation,
-  name={\rule[-15pt]{0pt}{32pt}$\displaystyle \bigcup_{n=1}^\infty A_n$},
+  name={$\displaystyle \bigcup_{n=1}^\infty A_n$},
   description={union of all $A_n$ for all $n \in \N$},
 }
 
 \newglossaryentry{not:arbitunion}{
   type=notation,
-  name={\rule[-15pt]{0pt}{28pt}$\displaystyle \bigcup_{\lambda \in I} A_\lambda$},
+  name={$\displaystyle \bigcup_{\lambda \in I} A_\lambda$},
   description={union of all $A_\lambda$ for all $\lambda \in I$},
 }
 
 \newglossaryentry{not:infintersection}{
   type=notation,
-  name={\rule[-15pt]{0pt}{32pt}$\displaystyle \bigcap_{n=1}^\infty A_n$},
+  name={$\displaystyle \bigcap_{n=1}^\infty A_n$},
   description={intersection of all $A_n$ for all $n \in \N$},
 }
 
 \newglossaryentry{not:arbitintersection}{
   type=notation,
-  name={\rule[-15pt]{0pt}{32pt}$\displaystyle \bigcup_{\lambda \in I} A_\lambda$},
+  name={$\displaystyle \bigcup_{\lambda \in I} A_\lambda$},
   description={intersection of all $A_\lambda$ for all $\lambda \in I$},
+}
+
+\newglossaryentry{not:lowerdarbouxsum}{
+  type=notation,
+  name={$L(P,f)$},
+  description={lower Darboux sum of $f$ over partition $P$},
+}
+
+\newglossaryentry{not:upperdarbouxsum}{
+  type=notation,
+  name={$U(P,f)$},
+  description={upper Darboux sum of $f$ over partition $P$},
 }
 
 \newglossaryentry{not:lowerdarboux}{
   type=notation,
-  name={\rule[-15pt]{0pt}{36pt}$\displaystyle \underline{\int_a^b}f$},
+  name={$\displaystyle \underline{\int_a^b}f$},
   description={lower Darboux integral},
 }
 
 \newglossaryentry{not:upperdarboux}{
   type=notation,
-  name={\rule[-13pt]{0pt}{36pt}$\displaystyle \overline{\int_a^b}f$},
+  name={$\displaystyle \overline{\int_a^b}f$},
   description={upper Darboux integral},
+}
+
+\newglossaryentry{not:exp}{
+  type=notation,
+  name={$\exp(x)$, $e^x$},
+  description={exponential function},
+}
+
+\newglossaryentry{not:ln}{
+  type=notation,
+  name={$\ln(x)$, $\log(x)$},
+  description={the natural logarithm function},
+}
+
+\newglossaryentry{not:pow}{
+  type=notation,
+  name={$x^y$},
+  description={exponentiation of $x > 0$ and $y \in \R$},
+}
+
+\newglossaryentry{not:e}{
+  type=notation,
+  name={$e$},
+  description={Euler's number, base of the natural logarithm},
 }
 
 \newglossaryentry{not:contfuncs}{
@@ -574,14 +684,63 @@ $\displaystyle \lim_{x \to c^{-}} f(x)$},
 
 \newglossaryentry{not:derivative}{
   type=notation,
-  name={$f'(x)$},
+  name={$f'(x)$, $\frac{df}{dx}$, $\frac{d}{dx}\bigl( f(x) \bigr)$},
   description={derivative of $f$},
+}
+
+\newglossaryentry{not:secondthirdfourthder}{
+  type=notation,
+  name={$f''$, $f'''$, $f''''$},
+  description={second, third, fourth derivative of $f$},
+}
+
+\newglossaryentry{not:nthder}{
+  type=notation,
+  name={$f^{(n)}$},
+  description={$n$th derivative of $f$},
+}
+
+\newglossaryentry{not:ordereq}{
+  type=notation,
+  name={$x = y$},
+  description={$x$ is equal to $y$},
+}
+
+\newglossaryentry{not:orderlt}{
+  type=notation,
+  name={$x < y$},
+  description={$x$ is less than $y$},
+}
+
+\newglossaryentry{not:orderleq}{
+  type=notation,
+  name={$x \leq y$},
+  description={$x$ is less than or equal to $y$},
+}
+
+\newglossaryentry{not:ordergt}{
+  type=notation,
+  name={$x > y$},
+  description={$x$ is greater than $y$},
+}
+
+
+\newglossaryentry{not:ordergeq}{
+  type=notation,
+  name={$x \geq y$},
+  description={$x$ is greater than or equal to $y$},
 }
 
 \newglossaryentry{not:uniformnorm}{
   type=notation,
   name={$\norm{f}_u$},
   description={uniform norm of $f$},
+}
+
+\newglossaryentry{not:diam}{
+  type=notation,
+  name={$\operatorname{diam}(S)$},
+  description={diameter of $S$},
 }
 
 \newglossaryentry{not:openball}{
@@ -592,7 +751,7 @@ $\displaystyle \lim_{x \to c^{-}} f(x)$},
 
 \newglossaryentry{not:closedball}{
   type=notation,
-  name={$C(p,\delta)$, $B_X(p,\delta)$},
+  name={$C(p,\delta)$, $C_X(p,\delta)$},
   description={closed ball in a metric space},
 }
 
@@ -856,10 +1015,19 @@ See \url{http://www.jirka.org/ra/} for more information
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\renewcommand{\glspagelistwidth}{4em}
 \begingroup
-\renewcommand*{\arraystretch}{1.2}
-\printglossaries 
+\renewcommand{\pagelistname}{Page}
+\setglossarystyle{long3colheader}
+% correctly set up with cellspace
+\renewenvironment{theglossary}%
+  {\setlength\cellspacetoplimit{4pt}
+   \setlength\cellspacebottomlimit{4pt}
+   \setlength\LTleft{0pt}
+   \setlength\LTright{0pt}
+   \markboth{LIST OF NOTATION}{LIST OF NOTATION}
+   \begin{longtable}{Sl @{\extracolsep{\fill}} Sl @{\extracolsep{\fill}} Sl}}%
+  {\end{longtable}}%
+\printglossary[type=notation] 
 \endgroup
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

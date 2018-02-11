@@ -25,6 +25,11 @@ $x < y$, $x=y$, or $y < x$ holds.
 \end{enumerate}
 We write $x \leq y$ if $x < y$ or $x=y$.  We define
 $>$ and $\geq$ in the obvious way.
+\glsadd{not:ordereq}
+\glsadd{not:orderlt}
+\glsadd{not:orderleq}
+\glsadd{not:ordergt}
+\glsadd{not:ordergeq}
 \end{defn}
 
 
@@ -803,7 +808,9 @@ Let $A \subset \R$ be a set.
 
 For convenience,  $\infty$ and $-\infty$ are sometimes treated as if they were
 numbers, except we do not allow arbitrary arithmetic with them.
-We make $\R^* := \R \cup \{ -\infty , \infty\}$ into an ordered set
+We make $\R^* := \R \cup \{ -\infty , \infty\}$
+\glsadd{not:extreal}\glsadd{not:infinity}
+into an ordered set
 by letting
 \begin{equation*}
 -\infty < \infty \quad \text{and} \quad
@@ -832,10 +839,11 @@ supremum or infimum.
 When a set $A$ of real numbers is bounded above,
 such that 
 $\sup\, A \in A$, then we can use the word
-\emph{\myindex{maximum}} and the notation $\max A$ to denote the supremum.
+\emph{\myindex{maximum}} and the notation $\max A$\glsadd{not:max} to denote the supremum.
 Similarly for infimum; when a set $A$ is bounded below
 and $\inf\, A \in A$, then we can use the
-word \emph{\myindex{minimum}} and the notation $\min\, A$.  For example,
+word \emph{\myindex{minimum}} and the notation $\min\, A$.\glsadd{not:min}
+For example,
 \begin{align*}
 & \max \{ 1,2.4,\pi,100 \} = 100 , \\
 & \min \{ 1,2.4,\pi,100 \} = 1 .
@@ -1015,6 +1023,7 @@ A concept we will encounter over and over is the concept of
 \emph{\myindex{absolute value}}.
 You want to think of the absolute value as the ``size'' of a real number.
 Let us give a formal definition.
+\glsadd{not:abs}
 \begin{equation*}
 \abs{x} :=
 \begin{cases}
