@@ -1895,9 +1895,8 @@ Fix some $k=1,2,\ldots,n$, for $i,j \geq M$ we have
 Hence the sequence $\{ x_{j,k} \}_{j=1}^\infty$ is Cauchy.  As $\R$ is
 complete the sequence converges; there exists an $y_k \in \R$ such that
 $y_k = \lim_{j\to\infty} x_{j,k}$.
-
 Write $y = (y_1,y_2,\ldots,y_n) \in \R^n$.
-By \propref{prop:msconveuc} we have that $\{ x_j \}$ converges
+By \propref{prop:msconveuc}, $\{ x_j \}$ converges
 to $y \in \R^n$ and hence $\R^n$ is complete.
 \end{proof}
 
@@ -1906,6 +1905,29 @@ complete.  For example, $(0,1]$ with the subspace metric is not
 complete as $\{ \nicefrac{1}{n} \}$ is a Cauchy sequence in $(0,1]$
 with no limit in $(0,1]$.  But see also
 \exerciseref{exercise:closedcomplete}.
+
+In the language of metric spaces,
+the results on continuity of section \sectionref{sec:liminter},
+say that the metric space
+$C([a,b],\R)$ of \exampleref{example:msC01} is complete.
+The proof follows by ``unrolling the definitions,'' 
+and is left as an exercise.
+
+\begin{prop} \label{prop:CabRcomplete}
+The space of continuous functions $C([a,b],\R)$ with the uniform
+norm as metric is a complete metric space.
+\end{prop}
+
+Once we have one complete metric space, any closed subspace is
+also a complete metric space.  After all, one way
+to think of a closed set is that it contains all points
+that can be reached from the set via a sequence.
+The proof is again an exercise.
+
+\begin{prop} \label{prop:closedcomplete}
+Suppose $(X,d)$ is a complete metric space and $E \subset X$
+is closed, then $E$ is a complete metric space with the subspace topology.
+\end{prop}
 
 \subsection{Compactness}
 
@@ -2021,9 +2043,9 @@ to compact.  A simple example is an incomplete metric space such as
 $(0,1)$ with the subspace metric from $\R$.
 There are many complete and very useful metric spaces
 where closed and bounded is not
-enough to give compactness, see
-\exerciseref{exercise:msclbounnotcompt}: $C([a,b],\R)$ is a complete metric
-space, but the closed unit ball $C(0,1)$ is not compact.  However, see also
+enough to give compactness: $C([a,b],\R)$ is a complete metric
+space, but the closed unit ball $C(0,1)$ is not compact, see
+\exerciseref{exercise:msclbounnotcompt}.  However, see also
 \exerciseref{exercise:mstotbound}.
 
 A useful property of compact sets in a metric space is that every
@@ -2050,33 +2072,32 @@ $\delta > 0$ such that for every $x \in K$, there exists a $\lambda \in I$
 with $B(x,\delta) \subset U_\lambda$.
 \end{lemma}
 
-It is important to recognize what the lemma says.  It says that given any
-cover there is a single $\delta > 0$.  The $\delta$ can depend on the cover,
-but of course it does not depend on $x$.
-
 \begin{proof}
-Let us prove the lemma by contrapositive.
+We prove the lemma by contrapositive.
 If the conclusion is not true, then
 there is
 an open cover $\{ U_\lambda \}_{\lambda \in I}$ of $K$ with
 the following property.
 For every $n \in \N$ there exists an $x_n \in K$ such that
 $B(x_n,\nicefrac{1}{n})$ is not a subset of any $U_\lambda$.
-Given any $x \in K$, there is
-a $\lambda \in I$ such that $x \in U_\lambda$.  Hence there
-is an $\epsilon > 0$ 
+Take any $x \in K$.  There is
+a $\lambda \in I$ such that $x \in U_\lambda$.  As $U_\lambda$ is open,
+there is an $\epsilon > 0$ 
 such that $B(x,\epsilon) \subset U_\lambda$.  Take $M$ such that
 $\nicefrac{1}{M} < \nicefrac{\epsilon}{2}$.  If $y \in 
-B(x,\nicefrac{\epsilon}{2})$ and $n \geq M$, then
-by triangle inequality
+B(x,\nicefrac{\epsilon}{2})$ and $n \geq M$, then 
 \begin{equation*}
 B(y,\nicefrac{1}{n}) \subset
-B(y,\nicefrac{1}{M}) \subset B(y,\nicefrac{\epsilon}{2}) \subset
-B(x,\epsilon) \subset U_\lambda .
+B(y,\nicefrac{1}{M}) \subset
+B(y,\nicefrac{\epsilon}{2}) \subset B(x,\epsilon)
+\subset U_\lambda ,
 \end{equation*}
+where 
+$B(y,\nicefrac{\epsilon}{2}) \subset B(x,\epsilon)$
+follows by triangle inequality.
 See \figureref{fig:lebesguedelta}.
 In other words, for all $n \geq M$, $x_n \notin B(x,\nicefrac{\epsilon}{2})$. 
-Hence the sequence cannot have a subsequence converging to $x$.  As $x \in K$ was
+The sequence cannot have a subsequence converging to $x$.  As $x \in K$ was
 arbitrary we are done.
 \end{proof}
 
@@ -2086,6 +2107,25 @@ arbitrary we are done.
 Note that $B(y,\nicefrac{\epsilon}{2}) \subset
 B(x,\epsilon)$ by triangle inequality.\label{fig:lebesguedelta}}
 \end{myfigureht}
+
+It is important to recognize what the lemma says.  It says that
+if $K$ is sequentially compact, then given any
+cover there is a single $\delta > 0$.  The $\delta$ depends on the cover,
+but of course it does not depend on $x$.
+
+For example, let $K := [-10,10]$ and for $n \in \Z$ let $U_n :=
+(n,n+2)$ define sets in an open cover.
+Take $x \in K$. There is an $n \in \Z$, 
+such that $n \leq x < n+1$.
+If $n \leq x < n+\nicefrac{1}{2}$, then
+$B\bigl(x,\nicefrac{1}{2}\bigr) \subset U_{n-1}$.  If
+If $n+ \nicefrac{1}{2} \leq x < n+1$, then
+$B\bigl(x,\nicefrac{1}{2}\bigr) \subset U_{n}$.  So $\delta =
+\nicefrac{1}{2}$.
+
+On the other hand, $\N \subset \R$ is not sequentially compact.
+It is an exercise to find a cover for which no $\delta > 0$ works.
+
 
 \begin{thm} \label{thm:mscompactisseqcpt}
 Let $(X,d)$ be a metric space.  Then $K \subset X$ is a compact set if
@@ -2406,7 +2446,8 @@ if and only if $L=K$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:closedcomplete}
-Let $(X,d)$ be a complete metric space and $E \subset X$ a closed set.
+Prove \propref{prop:closedcomplete}.  That is,
+let $(X,d)$ be a complete metric space and $E \subset X$ a closed set.
 Show that $E$ with the subspace metric is a complete metric space.
 \end{exercise}
 
@@ -2421,6 +2462,7 @@ Prove that $K$ is compact as a subset of $(X,d)$ if and only if $K$ is
 compact as a subset of itself with the subspace metric.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise} \label{exercise:cauchydepndsonmetric}
 Consider two metrics on $\R$.
 Let $d(x,y) := \abs{x-y}$ be the standard metric,
@@ -2447,6 +2489,7 @@ in $(\R,d')$ but not Cauchy in $(\R,d)$.
 While $(\R,d)$ is complete, show that $(\R,d')$ is not complete.
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2710,9 +2753,9 @@ Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
 Then $f \colon X \to Y$ is
 \emph{uniformly continuous}\index{uniformly continuous!in a metric space}
 if for every $\epsilon > 0$
-there is a $\delta > 0$ such that whenever $x,c \in X$ and $d_X(x,c) <
+there is a $\delta > 0$ such that whenever $p,q \in X$ and $d_X(p,q) <
 \delta$, then
-$d_Y\bigl(f(x),f(c)\bigr) < \epsilon$.
+$d_Y\bigl(f(p),f(q)\bigr) < \epsilon$.
 \end{defn}
 
 A uniformly continuous function is continuous, but not necessarily
@@ -2728,23 +2771,24 @@ $f$ is uniformly continuous.
 Let $\epsilon > 0$ be given.  For each $c \in X$, pick $\delta_c > 0$ such that
 $d_Y\bigl(f(x),f(c)\bigr) < \nicefrac{\epsilon}{2}$
 whenever
-$d_X(x,c) < \delta_c$.
+$x \in B(c,\delta_c)$.
+%$d_X(x,c) < \delta_c$.
 The balls
 $B(c,\delta_c)$ cover $X$, and the space $X$ is compact.  
 Apply the \hyperref[ms:lebesgue]{Lebesgue covering lemma} to obtain a 
 $\delta > 0$ such that for every $x \in X$, there is a $c \in X$
 for which $B(x,\delta) \subset B(c,\delta_c)$.
 
-If $x_1, x_2 \in X$ where $d_X(x_1,x_2) < \delta$,
-find a $c \in X$ such that $B(x_1,\delta) \subset B(c,\delta_c)$.
-Then $x_2 \in B(c,\delta_c)$.  By the triangle inequality
+If $p, q \in X$ where $d_X(p,q) < \delta$,
+find a $c \in X$ such that $B(p,\delta) \subset B(c,\delta_c)$.
+Then $q \in B(c,\delta_c)$.  By the triangle inequality
 and the definition of $\delta_c$ we have
 \begin{equation*}
-d_Y\bigl(f(x_1),f(x_2)\bigr)
+d_Y\bigl(f(p),f(q)\bigr)
 \leq
-d_Y\bigl(f(x_1),f(c)\bigr)
+d_Y\bigl(f(p),f(c)\bigr)
 +
-d_Y\bigl(f(c),f(x_2)\bigr)
+d_Y\bigl(f(c),f(q)\bigr)
 <
 \nicefrac{\epsilon}{2}+
 \nicefrac{\epsilon}{2} = \epsilon .  \qedhere
@@ -2760,8 +2804,8 @@ functions.  That is, if
 $(X,d_X)$ and $(Y,d_Y)$ are metric spaces, then $f \colon X \to Y$
 is called Lipschitz or $K$-Lipschitz if there exists a $K \in \R$ such that
 \begin{equation*}
-d_Y\bigl(f(x),f(c)\bigr) \leq K d_X(x,c)
-\ \ \ \ \text{for all } x,c \in X.
+d_Y\bigl(f(p),f(q)\bigr) \leq K d_X(p,q)
+\ \ \ \ \text{for all } p,q \in X.
 \end{equation*}
 It is not difficult to prove that Lipschitz implies uniformly continuous:
 just take $\delta = \nicefrac{\epsilon}{K}$.
@@ -2947,13 +2991,13 @@ smoother with metric spaces and the fixed point theorem.
 \subsection{Fixed point theorem}
 
 \begin{defn}
-Let $(X,d)$ and $(X',d')$ be metric spaces.
-$f \colon X \to X'$ is said to be a \emph{contraction}
+Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
+$f \colon X \to Y$ is said to be a \emph{contraction}
 (or a contractive map) if it is
 a $k$-Lipschitz map for some $k < 1$, i.e.\ if there exists a $k < 1$ such that
 \begin{equation*}
-d'\bigl(f(x),f(y)\bigr) \leq k d(x,y)
-\ \ \ \ \text{for all } x,y \in X.
+d_Y\bigl(f(p),f(q)\bigr) \leq k d_X(p,q)
+\ \ \ \ \text{for all } p,q \in X.
 \end{equation*}
 
 \medskip
@@ -3030,11 +3074,12 @@ applying the fixed point theorem to.  We will use the metric space
 $C([a,b],\R)$ of \exampleref{example:msC01}.  That is, $C([a,b],\R)$
 is the space of continuous functions $f \colon [a,b] \to \R$ with the metric
 \begin{equation*}
-d(f,g) = \sup_{x \in [a,b]} \abs{f(x)-g(x)} .
+d(f,g) := \snorm{f-g}_u = \sup_{x \in [a,b]} \abs{f(x)-g(x)} .
 \end{equation*}
 Convergence in this metric is convergence in uniform norm, or in other
-words, uniform convergence.  Therefore, see
-\exerciseref{exercise:CabRcomplete}, $C([a,b],\R)$ is a complete metric space.
+words, uniform convergence.  Therefore,
+$C([a,b],\R)$ is a complete metric space,
+see \propref{prop:CabRcomplete}.
 
 \medskip
 
@@ -3069,9 +3114,9 @@ For more examples related to Picard's theorem see \sectionref{sec:picard}.
 
 \begin{thm}[Picard's theorem on existence and uniqueness]%
 \index{existence and uniqueness theorem}\index{Picard's theorem}
-Let $I, J \subset \R$ be compact intervals, let $I_0$ and $J_0$
+Let $I, J \subset \R$ be compact intervals, let $I^\circ$ and $J^\circ$
 be their interiors, and 
-let $(x_0,y_0) \in I_0 \times J_0$.
+let $(x_0,y_0) \in I^\circ \times J^\circ$.
 Suppose $F \colon I \times J \to \R$ is continuous
 and Lipschitz in the second variable, that is, there exists
 an $L \in \R$ such that
@@ -3108,13 +3153,10 @@ $J$, in other words,
 exactly those functions where $F\bigl(x,f(x)\bigr)$ makes sense.
 The metric used is the standard metric given above.
 
-\begin{exercise}
-Show that $Y \subset C([-h,h],\R)$ is closed.  Hint: $J$ is closed.
-\end{exercise}
-
+It is left as an exercise to show that $Y$ is closed.
 The space $C([-h,h],\R)$ is complete, and
 a closed subset of a complete metric space is a complete metric space with
-the subspace metric, see \exerciseref{exercise:closedcomplete}.  So $Y$ with the subspace metric is
+the subspace metric, see \propref{prop:closedcomplete}.  So $Y$ with the subspace metric is
 complete.
 
 Define a mapping
@@ -3124,12 +3166,8 @@ T(f)(x)
 :=
 y_0 + \int_0^x F\bigl(t,f(t)\bigr)~dt .
 \end{equation*}
-
-\begin{exercise}
-Show that if $f \colon [-h,h] \to J$ is continuous then $F\bigl(t,f(t)\bigr)$
-is continuous on $[-h,h]$ as a function of $t$.  Use this to show that
-$T$ is well defined and that $T(f) \in C([-h,h],\R)$.
-\end{exercise}
+That $T$ is well defined, and that $T(f)$ really is in $C([-h,h],\R)$
+is left as an exercise.
 
 Let $f \in Y$ and $\abs{x} \leq h$.
 As $F$ is bounded by $M$ we have
@@ -3146,7 +3184,7 @@ $T(f) \in Y$.  In other words, $T(Y) \subset Y$.  We thus consider
 $T$ as a mapping of $Y$ to $Y$.
 
 We claim $T \colon Y \to Y$ is a contraction.  First, for $x \in [-h,h]$
-and $f,g \in Y$ we have
+and $f,g \in Y$, we have
 \begin{equation*}
 \abs{F\bigl(x,f(x)\bigr) - F\bigl(x,g(x)\bigr)} \leq
 L\abs{f(x)- g(x)} \leq L \, d(f,g) .
@@ -3171,26 +3209,47 @@ to find a unique $f \in Y$ such that $T(f) = f$, that is,
 \begin{equation*} %\label{equation:msinteqpicard}
 f(x) = y_0 + \int_0^x F\bigl(t,f(t)\bigr)~dt .
 \end{equation*}
-By the fundamental theorem of calculus,
-$T(f)$ is the unique differentiable 
-function whose derivative is
-$F\bigl(x,f(x)\bigr)$ and $T(f)(0) = y_0$
-(differentiable by \thmref{thm:FTCv2} and
-unique by \thmref{thm:FTCv1}).  Therefore $f$ is the unique
-solution of $f'(x) = F\bigl(x,f(x)\bigr)$ and $f(0) = y_0$.
+By the fundamental theorem of calculus (\thmref{thm:FTCv2}),
+$T(f) = f$ is differentiable, derivative is
+$F\bigl(x,f(x)\bigr)$ and $T(f)(0) = y_0$.
+Differentiable functions are continuous, so
+$f$ is the unique differentiable function $f \colon [-h,h] \to J$
+such that
+ $f'(x) = F\bigl(x,f(x)\bigr)$ and $f(0) = y_0$.
 \end{proof}
-
-\begin{exercise}
-Prove that the statement ``Without loss of generality assume $x_0 = 0$'' is
-justified.  That is, prove that if we know the theorem with $x_0 = 0$, the
-theorem is true as stated.
-\end{exercise}
 
 \subsection{Exercises}
 
 \begin{exnote}
 For more exercises related to Picard's theorem see \sectionref{sec:picard}.
 \end{exnote}
+
+\begin{exercise}
+Suppose $J$ is a closed and bounded interval, and let
+$Y := \bigl\{ f \in C([-h,h],\R) : f([-h,h]) \subset J \bigr\}$.
+Show that $Y \subset C([-h,h],\R)$ is closed.  Hint: $J$ is closed.
+\end{exercise}
+
+\begin{exercise}
+In the proof of Picard's theorem,
+show that if $f \colon [-h,h] \to J$ is continuous then $F\bigl(t,f(t)\bigr)$
+is continuous on $[-h,h]$ as a function of $t$.  Use this to show that
+\begin{equation*}
+T(f)(x)
+:=
+y_0 + \int_0^x F\bigl(t,f(t)\bigr)~dt
+\end{equation*}
+is well defined and that $T(f) \in C([-h,h],\R)$.
+\end{exercise}
+
+
+\begin{exercise}
+Prove that in the proof of Picard's theorem,
+the statement ``Without loss of generality assume $x_0 = 0$'' is
+justified.  That is, prove that if we know the theorem with $x_0 = 0$, the
+theorem is true as stated.
+\end{exercise}
+
 
 \begin{exercise}
 Let $F \colon \R \to \R$ be defined by
@@ -3215,6 +3274,7 @@ Find the fixed point and show directly that it is unique.
 \end{enumerate}
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise} \label{exercise:nofixedpoint}
 {\ }
 \begin{enumerate}[a)]
@@ -3226,6 +3286,7 @@ fixed point.
 Find a 1-Lipschitz map $f \colon X \to X$ of a complete metric space $X$ with no fixed point.
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Consider $y' =y^2$, $y(0)=1$.  Use the iteration scheme

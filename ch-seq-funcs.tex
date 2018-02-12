@@ -1452,8 +1452,10 @@ We say $F$ is continuous if it is continuous at all points in $U$.
 \begin{thm}[Picard's theorem on existence and uniqueness]%
 \index{existence and uniqueness theorem}\index{Picard's theorem}
 Let $I, J \subset \R$ be closed bounded intervals, 
-let $I_0$ and $J_0$ be their interiors, and
-let $(x_0,y_0) \in I_0 \times J_0$.
+let $I^\circ$ and $J^\circ$ be their interiors%
+\footnote{By interior of $[a,b]$ we mean $(a,b)$.},
+and
+let $(x_0,y_0) \in I^\circ \times J^\circ$.
 Suppose $F \colon I \times J \to \R$ is continuous
 and Lipschitz in the second variable, that is, there exists a number $L$
 such that
@@ -1723,7 +1725,11 @@ Consider
 f'(x) = f(x), \qquad f(0) = 1 .
 \end{equation*}
 That is, we let $F(x,y) = y$, and we are looking for a function 
-$f$ such that $f'(x) = f(x)$.  We pick any $I$ that contains 0
+$f$ such that $f'(x) = f(x)$.
+Let us forget for the moment that we solved this equation in 
+\sectionref{sec:logandexp}.
+
+We pick any $I$ that contains 0
 in the interior.
 We pick an arbitrary $J$ that contains 1 in its interior.  We can
 use $L = 1$.

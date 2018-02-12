@@ -1848,12 +1848,14 @@ Then we say $f$ is \emph{\myindex{uniformly continuous}}.
 It is not hard to see that a uniformly continuous function
 must be continuous.
 The only difference in the definitions
-is that in uniform continuity, for a given $\epsilon > 0$ we pick a $\delta > 0$ that
+is that in uniform continuity,
+for a given $\epsilon > 0$ we pick a $\delta > 0$ that
 works for all $c \in S$.  That is, $\delta$ can no longer depend on $c$,
 it only depends on $\epsilon$.  The domain of definition
 of the function makes a difference now.  A function that is not uniformly
 continuous on a larger set, may be uniformly continuous when restricted to a
-smaller set.
+smaller set.  Note that $x$ and $c$ are not treated any differently
+in the definition.
 
 \begin{example}
 $f \colon [0,1] \to \R$, defined by $f(x) := x^2$ is uniformly continuous.
@@ -1913,7 +1915,7 @@ have $\delta \leq xy \epsilon$ for all $x,y$ in $(0,1)$, but that would mean
 that $\delta \leq 0$.  Therefore there is no single $\delta > 0$.
 \end{example}
 
-We have seen that if $f$ is defined on an interval that is either not closed
+The examples show that if $f$ is defined on an interval that is either not closed
 or not bounded, then $f$ can be continuous, but not uniformly continuous.
 For a closed and bounded interval $[a,b]$, we can, however,
 make the following statement.
