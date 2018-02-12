@@ -32,10 +32,6 @@
 %to comment out the next line:
 \usepackage[ocgcolorlinks]{ocgx2} %perhaps run without for lulu/createspace
 
-\usepackage{cellspace}
-\usepackage[toc,nopostdot,sort=use,nomain]{glossaries}
-
-
 %\usepackage[all]{hypcap} %handled by caption
 \usepackage[shortalphabetic]{amsrefs}
 \usepackage{nicefrac}
@@ -52,6 +48,11 @@
 \usepackage{tikz}
 \usetikzlibrary{cd}
 %\usepackage{rotating}
+
+\usepackage{cellspace}
+\usepackage[toc,nopostdot,sort=use,nomain]{glossaries}
+
+
 
 \newenvironment{myfigureht}{%
 \begin{figure}[h!t]
@@ -271,8 +272,6 @@
 \newglossary[nlg]{notation}{not}{ntn}{List of Notation}
 
 \makeglossaries
-
-%\newcommand{\mynot}[1]{\marginbox{0pt 5pt}{#1}}
 
 \newglossaryentry{not:def}{
   type=notation,
@@ -772,14 +771,6 @@ $\displaystyle \lim_{x \to c^{-}} f(x)$},
   name={$\partial A$},
   description={boundary of $A$},
 }
-
-%\newglossaryentry{not:}{
-%  type=notation,
-%  name={},
-%  description={},
-%}
-
-%\glsaddall
 
 \begin{document}
 
