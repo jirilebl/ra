@@ -10,5 +10,5 @@ done
 pdflatex realanal
 # We are now using imakeidx and [automake] in glossaries
 # so no need to run these separately (FIXME: doesn't seem to work
-# on one of my machines, that's why the run above, I've added makeindex
+# reliably, that's why the run above, I've added makeindex
 # just for good measure there)

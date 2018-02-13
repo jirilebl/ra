@@ -217,7 +217,7 @@ Then prove that $F \colon U \to \R$ defined by
 F(y_1,y_2,\ldots,y_n) :=
 \int_0^1
 f(x,y_1,y_2,\ldots,y_n)
-\, dx
+~ dx
 \end{equation*}
 is continuously differentiable.
 \end{exercise}
@@ -234,7 +234,7 @@ f(x,y) :=
 a) Prove that for any fixed $y$ the function $x \mapsto f(x,y)$ is
 Riemann integrable on $[0,1]$ and
 \begin{equation*}
-g(y) = \int_0^1 f(x,y) \, dx = \frac{y}{2y^2+2} .
+g(y) = \int_0^1 f(x,y) ~ dx = \frac{y}{2y^2+2} .
 \end{equation*}
 Therefore $g'(y)$ exists and we get the continuous function
 \begin{equation*}
@@ -244,11 +244,11 @@ b) Prove $\frac{\partial f}{\partial y}$ exists at all $x$ and $y$ and
 compute it.\\
 c) Show that for all $y$
 \begin{equation*}
-\int_0^1 \frac{\partial f}{\partial y} (x,y) \, dx
+\int_0^1 \frac{\partial f}{\partial y} (x,y) ~ dx
 \end{equation*}
 exists but
 \begin{equation*}
-g'(0) \not= \int_0^1 \frac{\partial f}{\partial y} (x,0) \, dx .
+g'(0) \not= \int_0^1 \frac{\partial f}{\partial y} (x,0) ~ dx .
 \end{equation*}
 \end{exercise}
 
@@ -264,12 +264,12 @@ xy^2 \sin\bigl(\frac{1}{x^3y}\bigr) & \text{if $x\not=0$ and $y\not= 0$,}\\
 a) Prove $f$ is continuous on $[0,1] \times [a,b]$ for any interval
 $[a,b]$. Therefore the following function is well defined on $[a,b]$
 \begin{equation*}
-g(y) = \int_0^1 f(x,y) \, dx .
+g(y) = \int_0^1 f(x,y) ~ dx .
 \end{equation*}
 b) Prove $\frac{\partial f}{\partial y}$ exists for all $(x,y)$ in
 $[0,1] \times [a,b]$, but is not continuous.
 \\
-c) Show that $\int_0^1 \frac{\partial f}{\partial y}(x,y) \, dx$ does not
+c) Show that $\int_0^1 \frac{\partial f}{\partial y}(x,y) ~ dx$ does not
 exist if $y \not= 0$ even if we take improper integrals.
 \end{exercise}
 
@@ -277,12 +277,12 @@ exist if $y \not= 0$ even if we take improper integrals.
 %Suppose $f \colon \R^2 \to \R$ is a continuously differentiable function.
 %Define
 %\begin{equation*}
-%F(x,y) := \int_0^1 \bigl( x f(tx,ty) + y g(tx,ty) \bigr) \,dt .
+%F(x,y) := \int_0^1 \bigl( x f(tx,ty) + y g(tx,ty) \bigr) ~dt .
 %\end{equation*}
 %
-%F_x(x,y) := \int_0^1 f(tx,ty) +  tx f_x (tx,ty) + ty g_x(tx,ty) \,dt .
+%F_x(x,y) := \int_0^1 f(tx,ty) +  tx f_x (tx,ty) + ty g_x(tx,ty) ~dt .
 %
-%F_y(x,y) := \int_0^1 t f_y (tx,ty)\,dt .
+%F_y(x,y) := \int_0^1 t f_y (tx,ty)~dt .
 %
 %
 %
@@ -567,13 +567,13 @@ Define:
 \Bigl(
 \omega_1\bigl(\gamma(t)\bigr) \gamma_1^{\:\prime}(t) +
 \omega_2\bigl(\gamma(t)\bigr) \gamma_2^{\:\prime}(t) + \cdots +
-\omega_n\bigl(\gamma(t)\bigr) \gamma_n^{\:\prime}(t) \Bigr) \, dt
+\omega_n\bigl(\gamma(t)\bigr) \gamma_n^{\:\prime}(t) \Bigr) ~ dt
 \\
 &\phantom{:}=
 \int_a^b 
 \left(
 \sum_{j=1}^n
-\omega_j\bigl(\gamma(t)\bigr) \gamma_j^{\:\prime}(t) \right) \, dt .
+\omega_j\bigl(\gamma(t)\bigr) \gamma_j^{\:\prime}(t) \right) ~ dt .
 \end{split}
 \end{equation*}
 If $\gamma$ is piecewise smooth, take the corresponding partition
@@ -640,11 +640,11 @@ Then
 +
 \frac{\cos(t)}{{\bigl(\cos(t)\bigr)}^2+{\bigl(\sin(t)\bigr)}^2}
 \bigl(\cos(t)\bigr)
-\Biggr) \, dt
+\Biggr) ~ dt
 \\
 & =
 \int_0^{2\pi}
-1 \, dt
+1 ~ dt
 = 2\pi .
 \end{split}
 \end{equation*}
@@ -665,11 +665,11 @@ $\gamma$.  Then
 +
 \frac{\cos(2 \pi t)}{{\bigl(\cos(2 \pi t)\bigr)}^2+{\bigl(\sin(2 \pi t)\bigr)}^2}
 \bigl(2 \pi \cos(2 \pi t)\bigr)
-\Biggr) \, dt
+\Biggr) ~ dt
 \\
 & =
 \int_0^{1}
-2\pi \, dt
+2\pi ~ dt
 = 2\pi .
 \end{split}
 \end{equation*}
@@ -686,11 +686,11 @@ as $\beta(t) := \bigl(\cos(-t),\sin(-t)\bigr)$.  Then
 +
 \frac{\cos(-t)}{{\bigl(\cos(-t)\bigr)}^2+{\bigl(\sin(-t)\bigr)}^2}
 \bigl(-\cos(-t)\bigr)
-\Biggr) \, dt
+\Biggr) ~ dt
 \\
 & =
 \int_0^{2\pi}
-(-1) \, dt
+(-1) ~ dt
 = -2\pi .
 \end{split}
 \end{equation*}
@@ -739,33 +739,34 @@ formula for the Riemann integral,
 \left(
 \sum_{j=1}^n
 \omega_j\bigl(\gamma(t)\bigr) \gamma_j^{\:\prime}(t)
-\right) \, dt
+\right) ~ dt
 %\left(
 %\omega_1\bigl(\gamma(t)\bigr) \gamma_1^{\:\prime}(t) +
 %\omega_2\bigl(\gamma(t)\bigr) \gamma_2^{\:\prime}(t) + \cdots +
-%\omega_n\bigl(\gamma(t)\bigr) \gamma_n^{\:\prime}(t) \right) \, dt 
+%\omega_n\bigl(\gamma(t)\bigr) \gamma_n^{\:\prime}(t) \right) ~ dt 
 \\
 & =
 \int_c^d 
 \left(
 \sum_{j=1}^n
 \omega_j\Bigl(\gamma\bigl(h(\tau)\bigr)\Bigr) \gamma_j^{\:\prime}\bigl(h(\tau)\bigr)
-\right) h'(\tau) \, d\tau
+\right) h'(\tau) ~ d\tau
 %\left(
 %\omega_1\bigl(\gamma(h(\tau))\bigr) \gamma_1^{\:\prime}(h(\tau)) +
 %\omega_2\bigl(\gamma(h(\tau))\bigr) \gamma_2^{\:\prime}(h(\tau)) + \cdots +
-%\omega_n\bigl(\gamma(h(\tau))\bigr) \gamma_n^{\:\prime}(h(\tau)) \right) h'(\tau) \, d\tau 
+%\omega_n\bigl(\gamma(h(\tau))\bigr) \gamma_n^{\:\prime}(h(\tau)) \right)
+%h'(\tau) ~ d\tau 
 \\
 & =
 \int_c^d 
 \left(
 \sum_{j=1}^n
 \omega_j\Bigl(\gamma\bigl(h(\tau)\bigr)\Bigr) (\gamma_j \circ h)'(\tau)
-\right) \, d\tau
+\right) ~ d\tau
 %\left(
 %\omega_1\bigl(\gamma(h(\tau))\bigr) (\gamma_1 \circ h)'(\tau) +
 %\omega_2\bigl(\gamma(h(\tau))\bigr) (\gamma_2 \circ h)'(\tau) + \cdots +
-%\omega_n\bigl(\gamma(h(\tau))\bigr) (\gamma_n \circ h)'(\tau) \right) \, d\tau 
+%\omega_n\bigl(\gamma(h(\tau))\bigr) (\gamma_n \circ h)'(\tau) \right) ~ d\tau 
 %\\
 %& = 
 =
@@ -819,13 +820,13 @@ $\beta \colon [0,2\pi] \to \R^2$.\label{fig:circlepathrepar2}}
 
 Then
 \begin{align*}
-& \int_{\gamma} -y\, dx + x\,dy
+& \int_{\gamma} -y~ dx + x~dy
 =
 \int_0^{2\pi}
 \Bigl( \bigl(-\sin(t) \bigr) \bigl(-\sin(t) \bigr) + \cos(t) \cos(t) \Bigr) dt
 =
 2 \pi,\\
-& \int_{\beta} -y\, dx + x\,dy
+& \int_{\beta} -y~ dx + x~dy
 =
 \int_0^{2\pi}
 \Bigl( \bigl(-\sin(2t) \bigr) \bigl(-2\sin(2t) \bigr) + \cos(t)
@@ -843,7 +844,7 @@ We define
 \left(
 \sum_{j=1}^n
 \omega_j\bigl(\gamma(t)\bigr) \gamma_j^{\:\prime}(t)
-\right) \, dt 
+\right) ~ dt 
 \end{equation*}
 for any $\gamma$ which is continuously differentiable.  A 
 case which comes up naturally is when $\gamma$ is constant.  In this case
@@ -874,8 +875,8 @@ Suppose $\gamma \colon [a,b] \to \R^n$ is a smooth path, and $f$ is a
 continuous function defined on the image $\gamma\bigl([a,b]\bigr)$.  Then
 define
 \begin{equation*}
-\int_{\gamma} f \,ds :=
-\int_a^b f\bigl( \gamma(t) \bigr) \snorm{\gamma^{\:\prime}(t)} \, dt .
+\int_{\gamma} f ~ds :=
+\int_a^b f\bigl( \gamma(t) \bigr) \snorm{\gamma^{\:\prime}(t)} ~ dt .
 \end{equation*}
 
 The definition for a piecewise smooth path is similar as before and is left
@@ -893,7 +894,7 @@ $\gamma \circ h \colon [c,d] \to \R^n$ a piecewise smooth reparametrization.
 Suppose $f$ is a continuous function defined on the set
 $\gamma\bigl([a,b]\bigr)$.  Then
 \begin{equation*}
-\int_{\gamma \circ h} f\, ds = \int_{\gamma} f\, ds .
+\int_{\gamma \circ h} f~ ds = \int_{\gamma} f~ ds .
 \end{equation*}
 \end{prop}
 
@@ -902,25 +903,27 @@ Suppose first that $h$ is orientation preserving and $\gamma$ and $h$
 are both smooth.  Then as before
 \begin{equation*}
 \begin{split}
-\int_{\gamma} f \, ds
+\int_{\gamma} f ~ ds
 & =
 \int_a^b 
-f\bigl(\gamma(t)\bigr) \snorm{\gamma^{\:\prime}(t)} \, dt
+f\bigl(\gamma(t)\bigr) \snorm{\gamma^{\:\prime}(t)} ~ dt
 \\
 & =
 \int_c^d 
-f\Bigl(\gamma\bigl(h(\tau)\bigr)\Bigr) \snorm{\gamma^{\:\prime}\bigl(h(\tau)\bigr)} h'(\tau) \, d\tau
+f\Bigl(\gamma\bigl(h(\tau)\bigr)\Bigr)
+\snorm{\gamma^{\:\prime}\bigl(h(\tau)\bigr)} h'(\tau) ~ d\tau
 \\
 & =
 \int_c^d 
-f\Bigl(\gamma\bigl(h(\tau)\bigr)\Bigr) \snorm{\gamma^{\:\prime}\bigl(h(\tau)\bigr) h'(\tau)} \, d\tau
+f\Bigl(\gamma\bigl(h(\tau)\bigr)\Bigr)
+\snorm{\gamma^{\:\prime}\bigl(h(\tau)\bigr) h'(\tau)} ~ d\tau
 \\
 & =
 \int_c^d 
-f\bigl((\gamma \circ h)(\tau)\bigr) \snorm{(\gamma \circ h)'(\tau)} \, d\tau
+f\bigl((\gamma \circ h)(\tau)\bigr) \snorm{(\gamma \circ h)'(\tau)} ~ d\tau
 \\
 & = 
-\int_{\gamma \circ h} f \, ds .
+\int_{\gamma \circ h} f ~ ds .
 \end{split}
 \end{equation*}
 If $h$ is orientation reversing it will swap the order of the limits on the
@@ -935,7 +938,7 @@ if $\gamma$ is simple, it does not matter which
 parametrization we use.  Therefore, if $\Gamma = \gamma\bigl( [a,b] \bigr)$ we can
 simply write
 \begin{equation*}
-\int_\Gamma f\, ds .
+\int_\Gamma f~ ds .
 \end{equation*}
 In this case we also do not need to worry about orientation, either way we
 get the same thing.
@@ -944,20 +947,20 @@ get the same thing.
 Let $f(x,y) = x$.  Let $C \subset \R^2$ be half of the unit circle for $x
 \geq 0$.  We wish to compute
 \begin{equation*}
-\int_C f \, ds .
+\int_C f ~ ds .
 \end{equation*}
 Parametrize the curve $C$ via $\gamma \colon
 [\nicefrac{-\pi}{2},\nicefrac{\pi}{2}] \to \R^2$ defined as
 $\gamma(t) := \bigl(\cos(t),\sin(t)\bigr)$.
 Then $\gamma^{\:\prime}(t) = \bigl(-\sin(t),\cos(t)\bigr)$, and
 \begin{equation*}
-\int_C f \, ds =
-\int_\gamma f \, ds
+\int_C f ~ ds =
+\int_\gamma f ~ ds
 =
 \int_{-\pi/2}^{\pi/2} \cos(t) \sqrt{ {\bigl(-\sin(t)\bigr)}^2 +  
-{\bigl(\cos(t)\bigr)}^2 } \, dt
+{\bigl(\cos(t)\bigr)}^2 } ~ dt
 =
-\int_{-\pi/2}^{\pi/2} \cos(t) \, dt = 2.
+\int_{-\pi/2}^{\pi/2} \cos(t) ~ dt = 2.
 \end{equation*}
 \end{example}
 
@@ -968,7 +971,7 @@ $\gamma\bigl( [a,b] \bigr) = \Gamma$.  The we define the
 \emph{\myindex{length}}\index{length of a curve} by
 \begin{equation*}
 \ell(\Gamma) := \int_{\Gamma} ds = \int_{\gamma} ds = \int_a^b
-\snorm{\gamma^{\:\prime}(t)}\, dt .
+\snorm{\gamma^{\:\prime}(t)}~ dt .
 \end{equation*}
 \end{defn}
 
@@ -983,7 +986,7 @@ We find $\gamma^{\:\prime}(t) = y-x$ and therefore
 =
 \int_{[x,y]} ds
 =
-\int_0^1 \snorm{y-x} \, dt
+\int_0^1 \snorm{y-x} ~ dt
 =
 \snorm{y-x} .
 \end{equation*}
@@ -1001,7 +1004,7 @@ said to be an \emph{\myindex{arc-length parametrization}} if
 \begin{equation*}
 \ell\bigl( \gamma\bigl([0,t]\bigr) \bigr) = \int_0^t
 \snorm{\gamma^{\:\prime}(\tau)}
-\, d\tau  = t .
+~ d\tau  = t .
 \end{equation*}
 You can think of such a parametrization as moving around your curve at speed
 1.
@@ -1047,7 +1050,7 @@ and reparametrizations.
 \begin{exercise}
 Suppose $\gamma \colon [a,b] \to \R^n$ is a piecewise smooth path, and $f$ is a
 continuous function defined on the image $\gamma\bigl([a,b]\bigr)$.
-Provide a definition of $\int_{\gamma} f \,ds$.
+Provide a definition of $\int_{\gamma} f ~ds$.
 \end{exercise}
 
 \begin{exercise}
@@ -1234,18 +1237,18 @@ Let $\gamma \colon [0,1] \to \R^2$ be the path $\gamma(t) = (t,0)$
 going from $(0,0)$ to $(1,0)$.  Let $\beta \colon [0,1] \to \R^2$ be the path
 $\beta(t) = \bigl(t,(1-t)t\bigr)$ also going between the same points.  Then
 \begin{align*}
-& \int_\gamma y \, dx = 
-\int_0^1 \gamma_2(t) \gamma_1^{\:\prime}(t) \, dt
+& \int_\gamma y ~ dx = 
+\int_0^1 \gamma_2(t) \gamma_1^{\:\prime}(t) ~ dt
 =
-\int_0^1 0 (1) \, dt = 0 ,\\
-& \int_\beta y \, dx = 
-\int_0^1 \beta_2(t) \beta_1'(t) \, dt
+\int_0^1 0 (1) ~ dt = 0 ,\\
+& \int_\beta y ~ dx = 
+\int_0^1 \beta_2(t) \beta_1'(t) ~ dt
 =
-\int_0^1 (1-t)t(1) \, dt = \frac{1}{6} .
+\int_0^1 (1-t)t(1) ~ dt = \frac{1}{6} .
 \end{align*}
-So the integral of $y\,dx$ is not path independent.
+So the integral of $y~dx$ is not path independent.
 In particular,
-$\int_{(0,0)}^{(1,0)} y\,dx$ does not make sense.
+$\int_{(0,0)}^{(1,0)} y~dx$ does not make sense.
 \end{example}
 
 \begin{defn}
@@ -1253,9 +1256,9 @@ Let $U \subset \R^n$ be an open set and $f \colon U \to \R$ a
 continuously differentiable function.  Then the one-form
 \begin{equation*}
 df :=
-\frac{\partial f}{\partial x_1} \, dx_1 + 
-\frac{\partial f}{\partial x_2} \, dx_2 + \cdots +
-\frac{\partial f}{\partial x_n} \, dx_n 
+\frac{\partial f}{\partial x_1} ~ dx_1 + 
+\frac{\partial f}{\partial x_2} ~ dx_2 + \cdots +
+\frac{\partial f}{\partial x_n} ~ dx_n 
 \end{equation*}
 is called the \emph{\myindex{total derivative}} of $f$.
 
@@ -1326,9 +1329,9 @@ $h$.  Therefore
 =
 \frac{1}{h} \int_{\gamma} \omega 
 =
-\frac{1}{h} \int_0^1 \omega_j(x+the_j) h \, dt 
+\frac{1}{h} \int_0^1 \omega_j(x+the_j) h ~ dt 
 =
-\int_0^1 \omega_j(x+the_j) \, dt  .
+\int_0^1 \omega_j(x+the_j) ~ dt  .
 \end{equation*}
 We wish to take the limit as $h \to 0$.  The function $\omega_j$ is
 continuous.  So given $\epsilon > 0$, $h$ can be small enough so that
@@ -1337,9 +1340,9 @@ Therefore,
 $\abs{\omega_j(x+the_j)-\omega_j(x)} < \epsilon$ for all $t \in [0,1]$,
 and we estimate
 \begin{equation*}
-\abs{\int_0^1 \omega_j(x+the_j) \, dt  - \omega(x)}
+\abs{\int_0^1 \omega_j(x+the_j) ~ dt  - \omega(x)}
 =
-\abs{\int_0^1 \bigl( \omega_j(x+the_j) - \omega(x) \bigr) \, dt}
+\abs{\int_0^1 \bigl( \omega_j(x+the_j) - \omega(x) \bigr) ~ dt}
 \leq
 \epsilon .
 \end{equation*}
@@ -1365,11 +1368,11 @@ $\gamma(b) = y$, then
 \frac{\partial f}{\partial x_1}\bigl(\gamma(t)\bigr) \gamma_1^{\:\prime}(t)+
 \frac{\partial f}{\partial x_2}\bigl(\gamma(t)\bigr) \gamma_2^{\:\prime}(t)+ \cdots +
 \frac{\partial f}{\partial x_n}\bigl(\gamma(t)\bigr) \gamma_n^{\:\prime}(t)
-\biggr) \, dt
+\biggr) ~ dt
 \\
 & = 
 \int_a^b
-\frac{d}{dt} \left[ f\bigl(\gamma(t)\bigr) \right]\, dt
+\frac{d}{dt} \left[ f\bigl(\gamma(t)\bigr) \right]~ dt
 \\
 & = f(y)-f(x) .
 \end{split}
@@ -1495,7 +1498,7 @@ f(x) := \int_{\gamma} \omega
 \left(
 \sum_{k=1}^n
 \omega_k \bigl((1-t)y + tx \bigr) (x_k-y_k)
-\right) \, dt .
+\right) ~ dt .
 \end{equation*}
 We differentiate in $x_j$ under the integral.  We can do that since
 everything, including the partials themselves are continuous.
@@ -1512,7 +1515,7 @@ everything, including the partials themselves are continuous.
 +
 \omega_j \bigl((1-t)y + tx \bigr)
 \right)
- \, dt
+ ~ dt
 \\
 & = 
 \int_0^1
@@ -1524,7 +1527,7 @@ everything, including the partials themselves are continuous.
 \right)
 +
 \omega_j \bigl((1-t)y + tx \bigr)
-\right) \, dt
+\right) ~ dt
 \\
 & = 
 \int_0^1
@@ -1578,7 +1581,7 @@ the path integral of the vectorfield $v$ as
 \begin{equation*}
 \int_{\gamma} v \cdot d\gamma
 :=
-\int_a^b v\bigl(\gamma(t)\bigr) \cdot \gamma^{\:\prime}(t) \, dt ,
+\int_a^b v\bigl(\gamma(t)\bigr) \cdot \gamma^{\:\prime}(t) ~ dt ,
 \end{equation*}
 where the dot in the definition is the standard dot product.
 Again the definition of a piecewise smooth path is done by integrating over

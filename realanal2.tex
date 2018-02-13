@@ -4,6 +4,8 @@
 %\documentclass[12pt,openany]{book}
 %\documentclass[10pt,openany]{book}
 %\documentclass[8pt,openany]{extbook}
+%if using smaller font you should also rerun the figures,
+% that is in figures/ run run-all-xp.sh (must have epix installed)
 
 \usepackage[T1]{fontenc}
 
@@ -18,9 +20,13 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{graphicx}
+\usepackage{color}
 \usepackage[headings]{fullpage}
 \usepackage{varioref}
-\usepackage{makeidx}
+% if using [original] then makeglossaries doesn't get run
+% by glossaries automake unless \null is at the end and
+% then we add an extra page. UGH!
+\usepackage{imakeidx}
 \PassOptionsToPackage{hyphens}{url}
 \usepackage{hyperref} % do NOT set [ocgcolorlinks] here!
 
@@ -30,28 +36,32 @@
 
 %\usepackage[all]{hypcap} %handled by caption
 \usepackage[shortalphabetic]{amsrefs}
-%\usepackage[all]{xy}
 \usepackage{nicefrac}
 \usepackage{microtype}
 \usepackage{import}
 
+%\usepackage{draftwatermark}
+%\SetWatermarkText{DRAFT}
+%\SetWatermarkColor[gray]{0.95}
+%\SetWatermarkScale{1}
+
 \usepackage[margin=10pt,font=small,labelfont=bf,labelsep=colon,singlelinecheck=false]{caption}
 
 \usepackage{tikz}
-\usepackage{rotating}
+\usetikzlibrary{cd}
+%\usepackage{rotating}
+
+\usepackage{cellspace}
+\usepackage[toc,nopostdot,sort=use,nomain,automake]{glossaries}
 
 % This is really just for marking these
 %so that they are easy to find
 \newcommand{\volIref}[1]{#1}
 
-\newenvironment{myfigureht}{%
-\begin{figure}[h!t]
-\noindent\rule{\textwidth}{0.4pt}\vspace{12pt}\par\centering}%
-{\par\noindent\rule{\textwidth}{0.4pt}
-\end{figure}}
-
-
-
+%%%
+%NOTE: If changing fonts, also change fonts in figures/run-xp-topdf.sh
+% AND then rerun run-all-xp.sh (must have epix installed)
+%%%
 % Times
 %\usepackage{txfonts}
 % Times, but symbol/cm/ams math fonts
@@ -61,6 +71,12 @@
 
 %enumitem global options
 \setlist{leftmargin=*,itemsep=0.5\itemsep,parsep=0.5\parsep,topsep=0.5\topsep,partopsep=0.5\partopsep}
+
+\newenvironment{myfigureht}{%
+\begin{figure}[h!t]
+\noindent\rule{\textwidth}{0.4pt}\vspace{12pt}\par\centering}%
+{\par\noindent\rule{\textwidth}{0.4pt}
+\end{figure}}
 
 % useful
 \newcommand{\ignore}[1]{}
@@ -158,17 +174,15 @@
 %\renewcommand{\familydefault}{\sfdefault}
 
 % To allow skrinking to 5.5 x 8.5 inches without whitespaces
-% Make sure to rerun makeindex as well
-% Useful for printing on lilu.com and saving on paper
+% Make sure to rerun makeindex and makeglossaries as well
+% Useful for printing on lulu.com and saving on paper
 %\addtolength{\textheight}{2.13in}
 %\addtolength{\paperheight}{2.13in}
 
 \definecolor{mypersianblue}{rgb}{0.11, 0.22, 0.73}
 
 \hypersetup{
-    colorlinks,
-    breaklinks,
-    %pdfborderstyle={/S/U/W 0.5},
+    pdfborderstyle={/S/U/W 0.5}, %this just in case ocg isn't there
     citecolor=mypersianblue,
     filecolor=mypersianblue,
     linkcolor=mypersianblue,
@@ -180,6 +194,8 @@
 }
 
 % Set up our index
+% If we clear page, glossaries doesn't run makeglossaries (with automake)
+\indexsetup{noclearpage}
 \makeindex
 
 % Very simple indexing
@@ -247,12 +263,20 @@
 \newcommand{\Chapterref}[1]{\hyperref[#1]{Chapter~\ref*{#1}}}
 \newcommand{\sectionref}[1]{\hyperref[#1]{\S\ref*{#1}}}
 \newcommand{\exerciseref}[1]{\hyperref[#1]{Exercise~\ref*{#1}}}
+\newcommand{\remarkref}[1]{\hyperref[#1]{Remark~\ref*{#1}}}
 \newcommand{\exampleref}[1]{\hyperref[#1]{Example~\ref*{#1}}}
 \newcommand{\thmref}[1]{\hyperref[#1]{Theorem~\ref*{#1}}}
 \newcommand{\propref}[1]{\hyperref[#1]{Proposition~\ref*{#1}}}
 \newcommand{\lemmaref}[1]{\hyperref[#1]{Lemma~\ref*{#1}}}
 \newcommand{\corref}[1]{\hyperref[#1]{Corollary~\ref*{#1}}}
 \newcommand{\defnref}[1]{\hyperref[#1]{Definition~\ref*{#1}}}
+
+
+% List of Symbols/Notation
+\newglossary[nlg]{notation}{not}{ntn}{List of Notation}
+
+\loadglsentries{notations}
+\makeglossaries
 
 \begin{document}
 
@@ -310,24 +334,24 @@ by Ji{\v r}\'i Lebl\\[3ex]}
 
 \vspace*{\fill}
 
-%\begin{small} 
 \noindent
 Typeset in \LaTeX.
+
 
 \bigskip
 
 \noindent
 Copyright \copyright 2012--2018 Ji{\v r}\'i Lebl
 
+%\noindent
+%ISBN XXXX
+
 \bigskip
 
-%\begin{floatingfigure}{1.4in}
-%\vspace{-0.05in}
 \noindent
 \includegraphics[width=1.38in]{figures/license}
 \quad
 \includegraphics[width=1.38in]{figures/license2}
-%\end{floatingfigure}
 
 \bigskip
 
@@ -345,8 +369,6 @@ or
 or send a letter to
 Creative Commons
 PO Box 1866, Mountain View, CA 94042, USA.
-%Creative Commons, 171 Second Street, Suite 300, San Francisco, California,
-%94105, USA.
 
 \bigskip
 
@@ -356,11 +378,6 @@ base your own notes on it and reuse parts if you keep the license the
 same.  You can assume the license is either the CC-BY-NC-SA or CC-BY-SA,
 whichever is compatible with what you wish to do, your derivative works must
 use at least one of the licenses.
-%If you plan to use it commercially (sell it for more than just
-%duplicating cost), then you need to contact me and we will work something out.
-%If you are printing a course pack for your students, then it is fine if the 
-%duplication service is charging a fee for printing and selling the printed
-%copy.  I consider that duplicating cost.
 
 \bigskip
 
@@ -475,37 +492,6 @@ took option 2) above.
 \begin{bibchapter}[Further Reading]
 \begin{biblist}[\normalsize]
 
-%\bib{BS}{book}{
-%   author={Bartle, Robert G.},
-%   author={Sherbert, Donald R.},
-%   title={Introduction to real analysis},
-%   edition={3},
-%   publisher={John Wiley \& Sons Inc.},
-%   place={New York},
-%   date={2000},
-%}
-%
-%\bib{DW}{book}{
-%   author={D'Angelo, John P.},
-%   author={West, Douglas B.},
-%   title={Mathematical Thinking: Problem-Solving and Proofs},
-%   edition={2},
-%   publisher={Prentice Hall},
-%   date={1999},
-%}
-%
-%\bib{GIAM}{misc}{
-%   author={Fields, Joseph E.},
-%   title={A Gentle Introduction to the Art of Mathematics},
-%   note={Available at \url{http://ares.southernct.edu/~fields/GIAM/}},
-%}
-%
-%\bib{Hammack}{misc}{
-%   author={Hammack, Richard},
-%   title={Book of Proof},
-%   note={Available at \url{http://www.people.vcu.edu/~rhammack/BookOfProof/}},
-%}
-
 \bib{Rosenlicht}{book}{
    author={Rosenlicht, Maxwell},
    title={Introduction to analysis},
@@ -515,7 +501,6 @@ took option 2) above.
    date={1986},
    pages={viii+254},
    isbn={0-486-65038-3},
-   %review={\MR{851984 (87g:26001)}},
 }
 
 \bib{Rudin:baby}{book}{
@@ -527,7 +512,6 @@ took option 2) above.
    place={New York},
    date={1976},
    pages={x+342},
-   %review={\MR{0385023 (52 \#5893)}},
 }
 
 \bib{Trench}{book}{
@@ -547,10 +531,31 @@ took option 2) above.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cleardoublepage  
+\begingroup
+\renewcommand{\pagelistname}{Page}
+\setglossarystyle{long3colheader}
+% correctly set up with cellspace
+\renewenvironment{theglossary}%
+  {\setlength\cellspacetoplimit{4pt}
+   \setlength\cellspacebottomlimit{4pt}
+   \setlength\LTleft{0pt}
+   \setlength\LTright{0pt}
+   \markboth{LIST OF NOTATION}{LIST OF NOTATION}
+   \begin{longtable}{Sl @{\extracolsep{\fill}} Sl @{\extracolsep{\fill}} Sl}}%
+  {\end{longtable}}%
+\printglossary[type=notation] 
+\endgroup
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
 \phantomsection
 \addcontentsline{toc}{chapter}{\indexname}  
 \printindex
 
+% Adding \null here make automake glossaries work but adds a page,
+% see \indexsetup{noclearpage} above
 
 \end{document}

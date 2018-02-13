@@ -13,7 +13,6 @@
 % evil
 \usepackage[perpage,symbol*]{footmisc}
 
-%\usepackage{enumerate}
 \usepackage[shortlabels]{enumitem}
 \usepackage{ifpdf}
 \usepackage{amsmath}
@@ -24,7 +23,10 @@
 \usepackage{color}
 \usepackage[headings]{fullpage}
 \usepackage{varioref}
-\usepackage[original]{imakeidx}
+% if using [original] then makeglossaries doesn't get run
+% by glossaries automake unless \null is at the end and
+% then we add an extra page. UGH!
+\usepackage{imakeidx}
 \PassOptionsToPackage{hyphens}{url}
 \usepackage{hyperref} % do NOT set [ocgcolorlinks] here!
 
@@ -50,7 +52,7 @@
 %\usepackage{rotating}
 
 \usepackage{cellspace}
-\usepackage[makeindex,toc,nopostdot,sort=use,nomain,automake]{glossaries}
+\usepackage[toc,nopostdot,sort=use,nomain,automake]{glossaries}
 
 %%%
 %NOTE: If changing fonts, also change fonts in figures/run-xp-topdf.sh
@@ -168,7 +170,7 @@
 %\renewcommand{\familydefault}{\sfdefault}
 
 % To allow skrinking to 5.5 x 8.5 inches without whitespaces
-% Make sure to rerun makeindex as well
+% Make sure to rerun makeindex and makeglossaries as well
 % Useful for printing on lulu.com and saving on paper
 %\addtolength{\textheight}{2.13in}
 %\addtolength{\paperheight}{2.13in}
@@ -188,6 +190,8 @@
 }
 
 % Set up our index
+% If we clear page, glossaries doesn't run makeglossaries (with automake)
+\indexsetup{noclearpage}
 \makeindex
 
 % Very simple indexing
@@ -524,9 +528,12 @@ See \url{http://www.jirka.org/ra/} for more information
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cleardoublepage  
+\cleardoublepage
 \phantomsection
 \addcontentsline{toc}{chapter}{\indexname}  
 \printindex
+
+% Adding \null here make automake glossaries work but adds a page,
+% see \indexsetup{noclearpage} above
 
 \end{document}

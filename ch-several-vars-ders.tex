@@ -22,17 +22,15 @@ $\mathbf{x}$ for elements of $\R^n$,
 especially in the applied sciences,
 we use just plain $x$, which is common in mathematics.
 That is, $v \in \R^n$ is a \emph{\myindex{vector}}, which means 
-$v = (v_1,v_2,\ldots,v_n)$ is an $n$-tuple of
+$v = (v_1,v_2,\ldots,v_n)$\glsadd{not:vector} is an $n$-tuple of
 real numbers.\footnote{Subscripts are used for many purposes,
 so sometimes we may have several vectors that may also
 be identified by subscript, such as a finite or infinite sequence of
 vectors $y_1,y_2,\ldots$.}
-%For example, we can have vectors $x_1$ and $x_2$
-%in $\R^n$ and then $x_1 = (x_1^1,x_1^2,\ldots,x_1^n)$ and
-%$x_2 = (x_2^1,x_2^2,\ldots,x_2^n)$.
 
 It is common to write and treat vectors as
 \emph{\myindex{column vectors}}, that is, $n \times 1$ matrices:
+%\glsadd{not:vectorcol} FIXME: doesn't seem to work.
 \begin{equation*}
 v =
 (v_1,v_2,\ldots,v_n) =
@@ -42,8 +40,6 @@ v_1 \\ v_2 \\ \vdots \\ v_n
 \end{bmatrix}$ }.
 \end{equation*}
 We will do so when convenient.
-%We will use this notation with square
-%brackets and use round brackets for just an $n$-tuple of numbers.
 We call real numbers
 \emph{\myindex{scalars}} to distinguish them from vectors.
 
@@ -129,7 +125,7 @@ to check that all the vector space conditions are satisfied.
 \begin{example}
 The space of polynomials $c_0 + c_1 t + c_2 t^2 + \cdots + c_m t^m$
 (of arbitrary degree $m$) is a vector space.
-Let us denote it by $\R[t]$ (coefficients are real and
+Let us denote it by $\R[t]$\glsadd{not:realpoly} (coefficients are real and
 the variable is $t$).  The operations are defined in the same way as for
 functions above.
 Suppose there are
@@ -189,7 +185,7 @@ is called a \emph{\myindex{linear combination}} of the vectors $x_1, x_2,
 If $Y \subset X$ is a set, then the \emph{\myindex{span}} of $Y$, or in notation
 $\spn(Y)$, is the set of all linear combinations
 of all finite subsets of $Y$.  We also
-say $Y$ \emph{\myindex{spans}} $\spn(Y)$.
+say $Y$ \emph{\myindex{spans}} $\spn(Y)$\glsadd{not:span}.
 \end{defn}
 
 \begin{example}
@@ -343,7 +339,7 @@ e_1 := (1,0,0,\ldots,0) , \quad
 e_2 := (0,1,0,\ldots,0) , \quad \ldots, \quad
 e_n := (0,0,0,\ldots,1) ,
 \end{equation*}
-and call this the \emph{\myindex{standard basis}} of $\R^n$.
+and call this the \emph{\myindex{standard basis}} of $\R^n$.\glsadd{not:standardbasis}
 We use the same letters $e_j$ for any $\R^n$, and
 which space $\R^n$ we are working in is understood from context.
 A direct computation shows that $\{ e_1, e_2, \ldots, e_n \}$ is really
@@ -477,8 +473,8 @@ and we denote the inverse by $A^{-1}$.
 If $A \colon X \to X$ is linear, then we say $A$ is a
 \emph{\myindex{linear operator}} on $X$.
 
-We write $L(X,Y)$ for the set of all linear transformations from $X$ to
-$Y$, and just $L(X)$ for the set of linear operators on $X$.
+We write $L(X,Y)$\glsadd{not:LXY} for the set of all linear transformations from $X$ to
+$Y$, and just $L(X)$\glsadd{not:LX} for the set of linear operators on $X$.
 If $a \in \R$ and $A,B \in L(X,Y)$, define
 the transformations $aA$ and $A+B$ by
 \begin{equation*}
@@ -888,7 +884,8 @@ Let us start measuring distance.
 
 \begin{defn}
 If $X$ is a vector space, then we say
-a function $\snorm{\cdot} \colon X \to \R$ is a \emph{\myindex{norm}} if:
+a function $\snorm{\cdot} \colon X \to \R$ is a
+\emph{\myindex{norm}}\glsadd{not:norm} if:
 \begin{enumerate}[(i)]
 \item \label{defn:norm:i} $\snorm{x} \geq 0$, with $\snorm{x}=0$ if and only if $x=0$.
 \item \label{defn:norm:ii} $\snorm{cx} = \abs{c}\snorm{x}$ for all $c \in \R$ and $x \in X$.
@@ -901,7 +898,7 @@ Before defining the standard norm on $\R^n$, let us
 define the standard 
 scalar \emph{\myindex{dot product}} on $\R^n$.  For two vectors
 if $x=(x_1,x_2,\ldots,x_n) \in \R^n$
-and $y=(y_1,y_2,\ldots,y_n) \in \R^n$, define
+and $y=(y_1,y_2,\ldots,y_n) \in \R^n$, define\glsadd{not:dotprod}
 \begin{equation*}
 x \cdot y := \sum_{j=1}^n x_j y_j .
 \end{equation*}
@@ -910,7 +907,7 @@ separately.  That is,
 if $y$ is fixed the map $x \mapsto x \cdot y$ is linear map from
 $\R^n$ to $\R$.  Similarly, if $x$ is fixed, then
 $y \mapsto x \cdot y$ is also linear.
-The \emph{\myindex{Euclidean norm}} is defined as
+The \emph{\myindex{Euclidean norm}} is defined as\glsadd{not:normRn}
 \begin{equation*}
 \snorm{x} := \snorm{x}_{\R^n} := \sqrt{x \cdot x} = \sqrt{(x_1)^2+(x_2)^2 + \cdots + (x_n)^2}.
 \end{equation*}
@@ -995,7 +992,7 @@ Let $A \in L(X,Y)$.  Define
 The number $\snorm{A}$ is called the \emph{\myindex{operator norm}}.  We will see below
 that indeed it is a norm (at least for finite dimensional spaces).
 Again, when necessary to emphasize which norm we are talking about, we may
-write it as $\snorm{A}_{L(X,Y)}$.
+write it as $\snorm{A}_{L(X,Y)}$.\glsadd{not:normLXY}
 \end{defn}
 
 By linearity,
@@ -1429,7 +1426,7 @@ how the corresponding linear mapping stretches space.  In particular,
 this number, called the determinant, can be used to test for invertibility of a matrix.
 
 First define the symbol
-$\operatorname{sgn}(x)$ for a number is defined by
+$\operatorname{sgn}(x)$\glsadd{not:sgn} for a number is defined by
 \begin{equation*}
 \operatorname{sgn}(x)
 :=
@@ -1464,6 +1461,7 @@ Then note that the sign of $(1,2,\ldots,n)$ is 1.
 Let $S_n$  be the set of all permutations on $n$ elements (the
 \emph{\myindex{symmetric group}}).
 Let $A= [a_{i,j}]$ be a square $n \times n$ matrix.  Define the \emph{\myindex{determinant}} of $A$
+\glsadd{not:det}
 \begin{equation*}
 \det(A) := 
 \sum_{\sigma \in S_n}
@@ -3582,7 +3580,7 @@ then we note that it is also a function $\frac{\partial f}{\partial x_j}
 \colon U \to \R$.  Therefore it makes sense to talk about its partial
 derivatives.  We denote 
 the partial derivative of $\frac{\partial f}{\partial x_j}$ with respect to
-$x_k$ by
+$x_k$ by\glsadd{not:multivarpartder}
 \begin{equation*}
 \frac{\partial^2 f}{\partial x_k \partial x_j}
 :=
@@ -3609,7 +3607,7 @@ x_{j_{\ell-2}} \cdots \partial x_{j_1}} \bigr)}{\partial x_{j_{\ell}}} .
 Such a derivative is called a
 \emph{\myindex{partial derivative of order $\ell$}}.
 
-Remark that sometimes the notation $f_{x_j x_k}$ is used for
+Remark that sometimes the notation $f_{x_j x_k}$\glsadd{not:subpartder} is used for
 $\frac{\partial^2 f}{\partial x_k \partial x_j}$.  This notation
 swaps the order of derivatives, which may be important.
 %Also note that
@@ -3618,8 +3616,8 @@ swaps the order of derivatives, which may be important.
 \begin{defn}
 If $U \subset \R^n$ is an open set and
 $f \colon U \to \R$ a function.  We say $f$ is
-\emph{\myindex{$k$-times continuously differentiable function}}\index{continuously differentiable},
-or a $C^k$ function, if all partial derivatives of all orders up to and
+\emph{\myindex{k-times continuously differentiable function@$k$-times continuously differentiable function}}\index{continuously differentiable},
+or a $C^k$\glsadd{not:Ck} function, if all partial derivatives of all orders up to and
 including order $k$ exist and are continuous.
 \end{defn}
 
