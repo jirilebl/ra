@@ -36,4 +36,6 @@ On the scripts:
 
 *Note:* The tex sources require a very recent LaTeX.  If your latex does not
 have a recent enough ocgx2 package, you can simply comment out that line in
-the preamble.
+the preamble.  Another is the glossaries, which has a bug until very recently,
+to do with sorting.  If you are getting undefined errors while compiling,
+take out the "sort=use" option from the glossaries package.

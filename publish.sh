@@ -3,15 +3,6 @@
 pdflatex realanal
 pdflatex realanal
 pdflatex realanal
-makeindex realanal
-makeglossaries realanal
 pdflatex realanal
-pdflatex realanal
-pdflatex realanal
-makeindex realanal
-makeglossaries realanal
-pdflatex realanal
-pdflatex realanal
-pdflatex realanal
-#cp realanal.pdf ~/public_html/
-#scp realanal.pdf zinc.5z.com:/var/www/jirka/ra/
+# We are now using imakeidx and [automake] in glossaries
+# so no need to run these separately
