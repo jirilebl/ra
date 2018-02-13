@@ -342,8 +342,8 @@ $\abs{f(x)-g(x)}$ is a continuous function on a closed bounded interval
 $[a,b]$, and so is bounded.
 It is clear that $d(f,g) \geq 0$, 
 it is the supremum of nonnegative numbers.  If $f = g$
-then $\abs{f(x)-g(x)} = 0$ for all $x$ and hence $d(f,g) = 0$.  Conversely
-if $d(f,g) = 0$, then for any $x$ we have $\abs{f(x)-g(x)} \leq d(f,g) = 0$
+then $\abs{f(x)-g(x)} = 0$ for all $x$ and hence $d(f,g) = 0$.  Conversely,
+if $d(f,g) = 0$, then for any $x$ we have $\abs{f(x)-g(x)} \leq d(f,g) = 0$,
 and hence $f(x) = g(x)$ for all $x$ and $f=g$.  That $d(f,g) = d(g,f)$
 is equally trivial.  To show the triangle inequality we use the standard
 triangle inequality.
@@ -834,7 +834,7 @@ Let $y \in B(x,\delta)$.  Let $\alpha := \delta-d(x,y)$.  As $\alpha
 d(x,z) \leq d(x,y) + d(y,z) < d(x,y) + \alpha = d(x,y) + \delta-d(x,y) =
 \delta .
 \end{equation*}
-Therefore $z \in B(x,\delta)$ for every $z \in B(y,\alpha)$.  So $B(y,\alpha) \subset B(x,\delta)$ and
+Therefore, $z \in B(x,\delta)$ for every $z \in B(y,\alpha)$.  So $B(y,\alpha) \subset B(x,\delta)$ and
 $B(x,\delta)$ is open.  See \figureref{fig:ballisopen}.
 
 \begin{myfigureht}
@@ -859,7 +859,7 @@ Also $[a,b]$, $[a,\infty)$,
 and $(-\infty,b]$ are closed in $\R$.
 \end{prop}
 
-The proof is left as an exercise.  Also keep in mind that
+The proof is left as an exercise.  Keep in mind that
 there are many other open and
 closed sets in $\R$.
 
@@ -1021,7 +1021,7 @@ $S$ is connected, we must have they their union is not $S$, so $z \in S$.
 By \propref{prop:intervaldef}, $S$ is an interval.
 
 If $S$ is a single point, it is connected.
-Therefore suppose $S$ is an interval.
+Therefore, suppose $S$ is an interval.
 Consider open subsets $U_1$ and $U_2$ of $\R$, such that
 $U_1 \cap S$ and $U_2 \cap S$ are nonempty, and
 $S = 
@@ -1049,7 +1049,7 @@ $B(z,\delta) \subset U_1$ for a small enough $\delta > 0$.
 As $z$ is the infimum of the nonempty set $U_2 \cap [x,y]$, 
 there must exist some $w \in U_2 \cap [x,y]$
 such that $w \in [z,z+\delta) \subset B(z,\delta) \subset U_1$.
-Therefore $w \in U_1 \cap U_2 \cap [x,y]$.
+Therefore, $w \in U_1 \cap U_2 \cap [x,y]$.
 So $U_1 \cap S$ and $U_2 \cap S$ are not disjoint, and
 $S$ is connected.
 See \figureref{fig:intervalcon}.
@@ -1105,7 +1105,7 @@ we must have $A = \overline{A}$.
 The closure of $(0,1)$ in $\R$ is $[0,1]$.  Proof:  If
 $E$ is closed and contains $(0,1)$, then $E$ must contain $0$ and $1$ (why?).
 Thus $[0,1] \subset E$.  But $[0,1]$ is also closed.
-Therefore the closure $\overline{(0,1)} = [0,1]$.
+Therefore, the closure $\overline{(0,1)} = [0,1]$.
 \end{example}
 
 \begin{example}
@@ -1113,7 +1113,7 @@ Be careful to notice what ambient metric space you are working with.
 If $X = (0,\infty)$, then
 the closure of $(0,1)$ in $(0,\infty)$ is $(0,1]$.  Proof:  Similarly as
 above $(0,1]$ is closed in $(0,\infty)$ (why?).  Any closed set $E$
-that contains $(0,1)$ must contain 1 (why?).  Therefore $(0,1] \subset E$,
+that contains $(0,1)$ must contain 1 (why?).  Therefore, $(0,1] \subset E$,
 and hence $\overline{(0,1)} = (0,1]$ when working in $(0,\infty)$.
 \end{example}
 
@@ -1188,7 +1188,7 @@ and $\partial A$ is closed.
 Given $x \in A^\circ$, there is a $\delta > 0$ such that $B(x,\delta)
 \subset A$.  If $z \in B(x,\delta)$, then as open balls are open,
 there is an $\epsilon > 0$ such that $B(z,\epsilon) \subset B(x,\delta)
-\subset A$.  So $z \in A^\circ$.  Therefore $B(x,\delta) \subset
+\subset A$.  So $z \in A^\circ$.  Therefore, $B(x,\delta) \subset
 A^\circ$, and $A^\circ$ is open.
 
 As $A^\circ$ is open, then
@@ -2230,7 +2230,7 @@ which is a contradiction.
 The Bolzano--Weierstrass theorem for sequences of real numbers
 (\thmref{thm:bwseq})
 says that any bounded sequence in $\R$ has a convergent
-subsequence.  Therefore any sequence in a closed interval $[a,b] \subset \R$ has 
+subsequence.  Therefore, any sequence in a closed interval $[a,b] \subset \R$ has 
 a convergent subsequence.  The limit must also be in $[a,b]$ as limits
 preserve non-strict inequalities.  Hence a closed bounded interval $[a,b]
 \subset \R$ is compact.
@@ -2247,7 +2247,7 @@ see \propref{prop:topology:subspacesame}.
 
 \begin{proof}
 Let $\{ x_n \}$ be a sequence in $E$.  It is also a sequence in $K$.
-Therefore it has a convergent subsequence $\{ x_{n_j} \}$ that converges to
+Therefore, it has a convergent subsequence $\{ x_{n_j} \}$ that converges to
 some $x \in K$.  As $E$ is closed the limit of a sequence in $E$ is also in $E$
 and so $x \in E$.  Thus $E$ must be compact.
 \end{proof}
@@ -2726,7 +2726,7 @@ an exercise.
 \begin{example}
 Let $f \colon X \to Y$ be a continuous function.
 \thmref{thm:mstopocont} tells us that if $E \subset Y$ is closed, then 
-$f^{-1}(E) = X \setminus f^{-1}(E^c)$ is also closed.  Therefore if
+$f^{-1}(E) = X \setminus f^{-1}(E^c)$ is also closed.  Therefore, if
 we have a continuous
 function $f \colon X \to \R$, then the
 \emph{\myindex{zero set}} of $f$, that is, 
@@ -2801,7 +2801,7 @@ d_Y\bigl(f(c),f(q)\bigr)
 Useful examples of uniformly continuous functions are again the so-called
 \emph{Lipschitz continuous}%
 \index{Lipschitz continuous!in a metric space}%
-\index{function!Lipschitz continuous}
+\index{function!Lipschitz}
 functions.  That is, if
 $(X,d_X)$ and $(Y,d_Y)$ are metric spaces, then $f \colon X \to Y$
 is called Lipschitz or $K$-Lipschitz if there exists a $K \in \R$ such that
@@ -3043,7 +3043,7 @@ d(x_m,x_n)
 = k^n d(x_1,x_0) \frac{1}{1-k} .
 \end{split}
 \end{equation*}
-In particular the sequence is Cauchy (why?).  Since $X$ is complete,
+In particular, the sequence is Cauchy (why?).  Since $X$ is complete,
 we let $x := \lim\, x_n$, and we claim that $x$
 is our unique fixed point.
 
@@ -3155,11 +3155,11 @@ $J$, in other words,
 exactly those functions where $F\bigl(x,f(x)\bigr)$ makes sense.
 The metric used is the standard metric given above.
 
-It is left as an exercise to show that $Y$ is closed.
+It is left as an exercise to show that $Y$ is closed (because $J$ is closed).
 The space $C([-h,h],\R)$ is complete, and
 a closed subset of a complete metric space is a complete metric space with
-the subspace metric, see \propref{prop:closedcomplete}.  So $Y$ with the subspace metric is
-complete.
+the subspace metric, see \propref{prop:closedcomplete}.  So $Y$ with the
+subspace metric is a complete metric space.
 
 Define a mapping
 $T \colon Y \to C([-h,h],\R)$ by
@@ -3168,7 +3168,7 @@ T(f)(x)
 :=
 y_0 + \int_0^x F\bigl(t,f(t)\bigr)~dt .
 \end{equation*}
-That $T$ is well defined, and that $T(f)$ really is in $C([-h,h],\R)$
+That $T$ is well-defined, and that $T(f)$ really is in $C([-h,h],\R)$
 is left as an exercise.
 
 Let $f \in Y$ and $\abs{x} \leq h$.
@@ -3241,7 +3241,7 @@ T(f)(x)
 :=
 y_0 + \int_0^x F\bigl(t,f(t)\bigr)~dt
 \end{equation*}
-is well defined and that $T(f) \in C([-h,h],\R)$.
+is well-defined and that $T(f) \in C([-h,h],\R)$.
 \end{exercise}
 
 

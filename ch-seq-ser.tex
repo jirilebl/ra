@@ -40,8 +40,7 @@ For example, $\{ \nicefrac{1}{n} \}_{n=1}^\infty$, or simply $\{
 the sequence $1, \nicefrac{1}{2}, \nicefrac{1}{3}, \nicefrac{1}{4},
 \nicefrac{1}{5}, \ldots$.
 The sequence $\{ \nicefrac{1}{n} \}$
-is a bounded sequence ($B=1$ will
-suffice).  On the other hand the sequence $\{ n \}$ stands for
+is a bounded sequence ($B=1$ suffices).  On the other hand the sequence $\{ n \}$ stands for
 $1,2,3,4,\ldots$, and this sequence is not bounded (why?).
 
 While the notation for a sequence
@@ -64,7 +63,7 @@ constant $c \in \R$ repeating indefinitely.
 We now get to the idea of a
 \emph{limit of a sequence}\index{limit!of a sequence}.  We will
 see in \propref{prop:limisunique}
-that the notation below is well defined.  That is, if a limit exists, then
+that the notation below is well-defined.  That is, if a limit exists, then
 it is unique.  So it makes sense to talk about \emph{the} limit of a sequence.
 
 \begin{defn}
@@ -169,7 +168,7 @@ by arbitrarily small numbers.
 Suppose the sequence $\{ x_n \}$ has limits $x$ and $y$.
 Take an arbitrary $\epsilon > 0$.
 From the definition find an $M_1$ such that for all $n \geq M_1$,
-$\abs{x_n-x} < \nicefrac{\epsilon}{2}$.  Similarly find an $M_2$
+$\abs{x_n-x} < \nicefrac{\epsilon}{2}$.  Similarly, find an $M_2$
 such that for all $n \geq M_2$ we have
 $\abs{x_n-y} < \nicefrac{\epsilon}{2}$.
 Now take an $n$ such that $n \geq M_1$ and also $n \geq M_2$, and estimate
@@ -316,7 +315,7 @@ $x_n \geq x_{M}$ for all $n \geq M$.  Hence
 \begin{equation*}
 \abs{x_n-x} = x-x_n \leq x-x_{M} < \epsilon  .
 \end{equation*}
-Therefore the sequence converges to $x$.
+Therefore, the sequence converges to $x$.
 We already know that a convergent sequence is bounded, which completes the
 other direction of the implication.
 
@@ -326,8 +325,9 @@ The proof for monotone decreasing sequences is left as an exercise.
 \begin{example}
 Take the sequence $\bigl\{ \frac{1}{\sqrt{n}} \bigr\}$.
 
-First $\frac{1}{\sqrt{n}} > 0$ for all $n \in \N$, and hence the sequence is
-bounded from below.
+The sequence is
+bounded from below as
+$\frac{1}{\sqrt{n}} > 0$ for all $n \in \N$.
 Let us show that it is monotone decreasing.  We start with
 $\sqrt{n+1} \geq \sqrt{n}$ (why is that true?).  From this inequality
 we obtain
@@ -352,7 +352,7 @@ b^2 \leq \frac{1}{n} \qquad \text{for all $n \in \N$}.
 We have seen before that this implies that $b^2 \leq 0$ (a consequence
 of the \hyperref[thm:arch:i]{Archimedean property}).  As we also have $b^2 \geq 0$, then $b^2 = 0$
 and so $b = 0$.
-Hence $b=0$ is the greatest lower bound, and $\lim \frac{1}{\sqrt{n}} = 0$.
+Hence, $b=0$ is the greatest lower bound, and $\lim \frac{1}{\sqrt{n}} = 0$.
 \end{example}
 
 \begin{example}
@@ -517,10 +517,10 @@ For example, take the sequence $\{ \nicefrac{1}{n} \}$.  The sequence
 $\{ \nicefrac{1}{3n} \}$ is a subsequence.  To see how these two
 sequences fit in the definition, take $n_i := 3i$.  
 The numbers in the
-subsequence must come from the original sequence, so $1,0,\nicefrac{1}{3},0,
+subsequence must come from the original sequence.  So $1,0,\nicefrac{1}{3},0,
 \nicefrac{1}{5},\ldots$
-is not a subsequence of $\{ \nicefrac{1}{n} \}$.  Similarly order
-must be preserved, so
+is not a subsequence of $\{ \nicefrac{1}{n} \}$.  Similarly, order
+must be preserved.  So
 the sequence $1,\nicefrac{1}{3},\nicefrac{1}{2},\nicefrac{1}{5},\ldots$
 is not a subsequence of $\{ \nicefrac{1}{n} \}$.
 
@@ -1033,7 +1033,7 @@ B\frac{\epsilon}{2B} + \frac{\epsilon}{2(\abs{y}+1)}\abs{y}
 \end{split}
 \end{equation*}
 
-Finally let us tackle
+Finally, let us tackle
 \ref{prop:contalg:iv}.  Instead of proving 
 \ref{prop:contalg:iv} directly, we prove the following simpler claim:
 
@@ -1098,7 +1098,7 @@ c \left( \lim_{n \to \infty} x_n \right) \qquad
 \lim_{n \to \infty} (c + x_n) = 
 c + \lim_{n \to \infty} x_n .
 \end{equation*}
-Similarly with constant subtraction and division.
+Similarly, we find such equalities for constant subtraction and division.
 
 As we can take limits past multiplication we can show (exercise)
 that $\lim\, x_n^k = {(\lim\, x_n)}^k$ for all $k \in \N$.
@@ -1216,13 +1216,13 @@ Let $\{ x_n \}$ be defined by $x_1 := 2$ and
 \begin{equation*}
 x_{n+1} := x_n - \frac{x_n^2-2}{2x_n} .
 \end{equation*}
-We must first find out if this sequence is well defined; we must show we never
+We must first find out if this sequence is well-defined; we must show we never
 divide by zero.
 Then we must find out if the sequence converges.  Only then
 can we attempt to find the limit.
 
 So let us prove 
-$x_n$ exists and $x_n > 0$ for all $n$ (so the sequence is well defined
+$x_n$ exists and $x_n > 0$ for all $n$ (so the sequence is well-defined
 and bounded below).
 Let us show this by \hyperref[induction:thm]{induction}.  We know that
 $x_1 = 2 > 0$.  For the induction step, suppose $x_n > 0$.  Then
@@ -1337,7 +1337,7 @@ we have
 
 As the proposition shows, to study when a sequence has a limit is 
 the same as studying when another sequence goes to zero.
-In general it may be hard to decide if a sequence converges, but
+In general, it may be hard to decide if a sequence converges, but
 for certain sequences there exist easy to apply tests that tell us
 if the sequence converges or not.  Let us see one such test.
 First let
@@ -1405,7 +1405,7 @@ the sequence $\{ \nicefrac{1}{n} \}$ converges to zero, but $L=1$.
 The constant sequence $\{ 1 \}$ converges to 1, not zero, and 
 $L=1$.  The sequence $\{ {(-1)}^n \}$ does not converge at all, and $L=1$ as
 well.
-Finally the sequence $\{  n \}$ is unbounded, yet again $L=1$.
+Finally, the sequence $\{  n \}$ is unbounded, yet again $L=1$.
 The statement may be strengthened, see 
 exercises \ref{exercise:strongerratiotest1} and
 \ref{exercise:strongerratiotest2}.
@@ -1526,7 +1526,7 @@ The limit of $\frac{n+1}{n} = 1+\frac{1}{n}$ as $n \to \infty$ is 1, and so
 \frac{1}{1+\epsilon}  < 1 .
 \end{equation*}
 Therefore, $\bigl \{ \frac{n}{{(1+\epsilon)}^n} \bigr\}$ converges to 0.
-In particular
+In particular,
 there exists an $N$ such that for $n \geq N$, we have
 $\frac{n}{{(1+\epsilon)}^n} < 1$, or 
 $n < {(1+\epsilon)}^n$, or 
@@ -1670,7 +1670,7 @@ case it converges to 0.
 \sectionnotes{1--2 lectures, alternative proof of BW optional}
 
 In this section we study bounded sequences and their subsequences.
-In particular we define the so-called limit superior and limit inferior
+In particular, we define the so-called limit superior and limit inferior
 of a bounded sequence and talk about limits of subsequences.
 Furthermore, we prove the
 Bolzano--Weierstrass theorem%
@@ -1950,7 +1950,7 @@ that there exists a subsequence $\{ x_{n_k} \}$
 that converges to $\limsup \, x_n$.
 As $\{ x_n \}$ converges to $x$,
 every subsequence converges to $x$ and
-therefore $\limsup \, x_n = \lim\, x_{n_k} = x$.  Similarly $\liminf \, x_n = x$.
+therefore $\limsup \, x_n = \lim\, x_{n_k} = x$.  Similarly, $\liminf \, x_n = x$.
 \end{proof}
 
 Limit superior and limit inferior behave nicely
@@ -2003,7 +2003,7 @@ $\liminf \, x_{n_k} = \lim\, x_{n_k} = \limsup \, x_{n_k}$.  Therefore,
 \limsup_{n\to\infty} \, x_n .
 \end{equation*}
 
-Similarly we get the following useful test for convergence
+Similarly, we get the following useful test for convergence
 of a bounded sequence.  We leave the proof as an exercise.
 
 \begin{prop} \label{seqconvsubseqconv:prop}
@@ -2080,7 +2080,7 @@ such that $x_{n_{k+1}} \in [y,b_k]$.
 We now have the sequences defined.  What is left to prove is that
 $\lim\, a_i = \lim\, b_i$.  The limits exist as the sequences
 are monotone.  In the construction,
-$b_i - a_i$ is cut in half in each step.  Therefore
+$b_i - a_i$ is cut in half in each step.  Therefore,
 $b_{i+1} - a_{i+1} = \frac{b_i-a_i}{2}$.  By
 \hyperref[induction:thm]{induction},
 \begin{equation*}
@@ -2124,7 +2124,7 @@ K$.  In this case we write
 \begin{equation*}
 \lim_{n \to \infty} x_n := \infty .  
 \end{equation*}
-Similarly
+Similarly,
 if for every $K \in \R$ there exists an $M \in \N$ such that
 for all $n \geq M$ we have $x_n < K$, we say $\{ x_n \}$
 \emph{\myindex{diverges to minus infinity}} and we write
@@ -2153,7 +2153,7 @@ The case of monotone increasing follows from
 monotone decreasing.  Suppose $\{x_n\}$ is decreasing and unbounded,
 that is,
 for every $K \in \R$, there is an $M \in \N$ such that $x_M < K$.
-By monotonicity $x_n \leq x_M < K$ for all $n \geq M$.   Therefore
+By monotonicity $x_n \leq x_M < K$ for all $n \geq M$.   Therefore,
 $\lim \, x_n = -\infty$.
 \end{proof}
 
@@ -2172,7 +2172,7 @@ We may also allow $\liminf$ and $\limsup$ to take on
 the values $\infty$ and $-\infty$, so that
 we can apply $\liminf$ and $\limsup$
 to absolutely any sequence, not just
-a bounded one.   Unfortunately the sequences $\{ a_n \}$ and $\{ b_n \}$
+a bounded one.   Unfortunately, the sequences $\{ a_n \}$ and $\{ b_n \}$
 are not sequences of real numbers but of extended real numbers.  In
 particular, $a_n$ can equal $\infty$ for some $n$, and $b_n$ can equal
 $-\infty$.  So we have no definition for the limits.
@@ -2214,7 +2214,7 @@ a_{n+1}$.  So $\{ a_n \}$ is decreasing. Similarly, $\{ b_n \}$ is increasing.
 If the sequence $\{ a_n \}$ is a sequence of real numbers then
 $\lim a_n = \inf \{ a_n : n \in \N \}$.  This follows from
 \propref{prop:monotoneconv} if $\{ a_n \}$ is bounded and \propref{prop:unboundedmonotone} if $\{a_n \}$
-is unbounded.  Similarly we proceed for $\{ b_n \}$.
+is unbounded.  We proceed similarly with $\{ b_n \}$.
 \end{proof}
 
 The definition behaves as expected with
@@ -2542,7 +2542,7 @@ Proof:  Given $\epsilon > 0$, find $M$ such that
 $M > \nicefrac{2}{\epsilon}$.  Then for $n,k \geq M$
 we have that $\nicefrac{1}{n} < \nicefrac{\epsilon}{2}$
 and
-$\nicefrac{1}{k} < \nicefrac{\epsilon}{2}$.  Therefore for $n, k \geq M$
+$\nicefrac{1}{k} < \nicefrac{\epsilon}{2}$.  Therefore, for $n, k \geq M$
 we have
 \begin{equation*}
 \abs{\frac{1}{n} - \frac{1}{k}}
@@ -2559,7 +2559,7 @@ Proof:  Given $\epsilon > 0$, find $M$ such that
 $M > \nicefrac{2}{\epsilon}$.  Then for $n,k \geq M$
 we have that $\nicefrac{1}{n} < \nicefrac{\epsilon}{2}$
 and
-$\nicefrac{1}{k} < \nicefrac{\epsilon}{2}$.  Therefore for $n, k \geq M$
+$\nicefrac{1}{k} < \nicefrac{\epsilon}{2}$.  Therefore, for $n, k \geq M$
 we have
 \begin{equation*}
 \begin{split}
@@ -2837,8 +2837,8 @@ In other words, for a convergent series we have
 \sum_{n=1}^k x_n .
 \end{equation*}
 We only have this equality if the limit on
-the right actually exists.  That is, the right-hand side does not make
-sense (the limit does not exist) if the series does not converge.
+the right actually exists.  If the series does not converge, the right-hand
+side does not make sense (the limit does not exist).
 Therefore, be careful as 
 $\sum x_n$ means two different things (a notation for the series itself 
 or the limit of the partial sum), and you must use context
@@ -2965,7 +2965,7 @@ if the sequence of partial sums $\{ s_n \}$ is a Cauchy sequence.
 \end{defn}
 
 A sequence of real numbers converges if and only if it is
-Cauchy.  Therefore a series is convergent if and only if it is Cauchy.
+Cauchy.  Therefore, a series is convergent if and only if it is Cauchy.
 The series $\sum x_n$ is Cauchy if for every $\epsilon > 0$,
 there exists an $M \in \N$, such that for every $n \geq M$
 and $k \geq M$ we have
@@ -3066,7 +3066,7 @@ $\nicefrac{1}{5} + \nicefrac{1}{6} + \nicefrac{1}{7} + \nicefrac{1}{8}
 =
 (2^{k-1}) \frac{1}{2^k} = \frac{1}{2} .
 \end{equation*}
-Therefore
+Therefore,
 \begin{equation*}
 s_{2^k} = 
 1 + 
@@ -3244,7 +3244,7 @@ On the other hand we proved
 \begin{equation*}
 \sum_{n=1}^\infty \frac{1}{n}
 \end{equation*}
-diverges.  Therefore 
+diverges.  Therefore,
 $\sum \frac{{(-1)}^n}{n}$ is a conditionally convergent subsequence.
 
 \subsection{Comparison test and the \texorpdfstring{$p$}{p}-series}
@@ -3274,8 +3274,8 @@ satisfy for all $k$
 \begin{equation} \label{comptest:eq}
 \sum_{n=1}^k x_n \leq \sum_{n=1}^k y_n .
 \end{equation}
-If the series $\sum y_n$ converges the partial sums for the series
-are bounded.  Therefore the right-hand side of \eqref{comptest:eq}
+If the series $\sum y_n$ converges, the partial sums for the series
+are bounded.  Therefore, the right-hand side of \eqref{comptest:eq}
 is bounded for all $k$; there exists some $B \in \R$ such that
 $\sum_{n=1}^k y_n \leq B$ for all $k$, and so
 \begin{equation*}
@@ -3346,11 +3346,11 @@ Let $s_n$ denote the $n$th partial sum.
 Instead of estimating from below, we estimate from above.  In particular,
 as $p$ is positive, then $2^p < 3^p$, and hence
 $\frac{1}{2^p} + \frac{1}{3^p} <
-\frac{1}{2^p} + \frac{1}{2^p}$.  Similarly
+\frac{1}{2^p} + \frac{1}{2^p}$.  Similarly,
 $\frac{1}{4^p} + \frac{1}{5^p} +
 \frac{1}{6^p} + \frac{1}{7^p} <
 \frac{1}{4^p} + \frac{1}{4^p} +
-\frac{1}{4^p} + \frac{1}{4^p}$.  Therefore
+\frac{1}{4^p} + \frac{1}{4^p}$.  Therefore,
 \begin{equation*}
 \begin{split}
 s_{2^k-1}
@@ -3391,7 +3391,7 @@ As $p > 1$, then $\frac{1}{2^{p-1}} < 1$.
 \frac{1}{2^{p-1}}
 \right)}^j
 \end{equation*}
-converges.  Therefore
+converges.  Therefore,
 \begin{equation*}
 s_{2^k-1} < 
 1+
@@ -3838,7 +3838,7 @@ $\frac{r^{M+1}}{1-r}$.  As everything is positive we have
 \frac{r^{M+1}}{1-r} .
 \end{equation*}
 Thus the sequence of partial sums of $\sum \abs{x_n}$ is bounded, and
-the series converges.  Therefore $\sum x_n$ converges absolutely.
+the series converges.  Therefore, $\sum x_n$ converges absolutely.
 \end{proof}
 
 \subsection{Alternating series test}
@@ -3867,7 +3867,7 @@ s_{2n} =
 \end{equation*}
 The sequence $\{ x_k \}$ is decreasing and so $(-x_{2k-1}+x_{2k}) \leq 0$
 for all $k$.
-Therefore the subsequence $\{ s_{2n} \}$ of partial sums
+Therefore, the subsequence $\{ s_{2n} \}$ of partial sums
 is a decreasing sequence.  Similarly, $(x_{2k}-x_{2k+1}) \geq 0$, and so
 \begin{equation*}
 s_{2n} = - x_1 + ( x_2 - x_3 ) + \cdots + ( x_{2n-2} - x_{2n-1} ) + x_{2n}
@@ -4000,7 +4000,7 @@ defined $\sigma(n)$ for all $n \leq N$.  If
 then let $\sigma(N+1) := k$ be the smallest odd $k \in \N$
 that we have not used yet,
 that is $\sigma(n) \not= k$ for all $n \leq N$.
-Otherwise let $\sigma(N+1) := k$ 
+Otherwise, let $\sigma(N+1) := k$ 
 be the smallest even $k$ that we have not yet used.
 
 By construction $\sigma \colon \N \to \N$ is one-to-one.
@@ -4009,7 +4009,7 @@ eventually we pass $L$ and switch
 to the evens (resp.\ odds).  So we switch infinitely many times.
 
 Finally, let $N$ be the $N$ where we just pass $L$ and switch.
-For example suppose we have just switched from odd to even (so we start
+For example, suppose we have just switched from odd to even (so we start
 subtracting),
 and let $N' > N$ be where we first switch back from even to odd.  Then
 \begin{equation*}
@@ -4041,7 +4041,7 @@ As we have
 already mentioned,
 multiplication of series is somewhat harder than addition.
 If we have that at least one of the series converges
-absolutely, than we can use the following theorem.  For this result it is
+absolutely, then we can use the following theorem.  For this result it is
 convenient to start the series at 0, rather than at 1.
 
 \begin{thm}[\myindex{Mertens' theorem}\footnote{Proved by
@@ -4215,7 +4215,7 @@ c_n =
 {(-1)}^n
 \sum_{j=0}^n \frac{1}{\sqrt{(j+1)(n-j+1)}} .
 \end{equation*}
-Therefore
+Therefore,
 \begin{equation*}
 \abs{c_n} 
 =
@@ -4311,7 +4311,7 @@ diverges for all $x \not= 0$.  Let us apply the root test
 n \abs{x}
 = \infty .
 \end{equation*}
-Therefore the series diverges for all $x \not= 0$.
+Therefore, the series diverges for all $x \not= 0$.
 \end{example}
 
 Convergence of power series in general works analogously to
@@ -4356,7 +4356,7 @@ L = \limsup_{n\to\infty} \, {\abs{a_n {(x-x_0)}^n}}^{1/n}
 =
 \abs{x-x_0} R .
 \end{equation*}
-In particular if $R = \infty$, then $L=\infty$ for any $x \not= x_0$, and
+In particular, if $R = \infty$, then $L=\infty$ for any $x \not= x_0$, and
 the series diverges by the root test.  On the
 other hand if $R = 0$, then $L=0$ for any $x$, and the series 
 converges absolutely for all $x$.
@@ -4387,7 +4387,7 @@ Let $\sum_{n=0}^\infty a_n {(x-x_0)}^n$ be a power series, and let
 R := \limsup_{n\to\infty} \, {\abs{a_n}}^{1/n} .
 \end{equation*}
 If $R = \infty$, the power series is divergent.  If
-$R=0$, then the power series converges everywhere.   Otherwise
+$R=0$, then the power series converges everywhere.   Otherwise,
 the radius of convergence $\rho = \nicefrac{1}{R}$.
 \end{prop}
 
@@ -4508,7 +4508,7 @@ x \,
 \end{equation*}
 where using the formula for the product of series
 we obtain, $c_0 = 1$, $c_1 = -1 -1 = -2$, $c_2 = 1+1+1 = 3$, etc\ldots.
-Therefore we get that for $\abs{x} < 1$, 
+Therefore, we get that for $\abs{x} < 1$, 
 \begin{equation*}
 \frac{x}{1+2x+x^2}
 =
