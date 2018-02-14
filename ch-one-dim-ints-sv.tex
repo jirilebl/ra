@@ -533,9 +533,10 @@ left as an exercise that there exists a reparametrization.
 \begin{defn}
 If $(x_1,x_2,\ldots,x_n) \in \R^n$ are our coordinates, and
 given $n$ real-valued continuous functions $f_1,f_2,\ldots,f_n$ defined on some set $S \subset \R^n$ we
-define a so-called \emph{\myindex{one-form}}:
+define a so-called \emph{\myindex{one-form}}\index{differential one-form}:
+\glsadd{not:oneform}
 \begin{equation*}
-\omega = \omega_1 dx_1 + \omega_2 dx_2 + \cdots \omega_n dx_n .
+\omega = \omega_1 ~dx_1 + \omega_2 ~dx_2 + \cdots + \omega_n ~dx_n .
 \end{equation*}
 We could represent $\omega$ as a continuous function from $S$ to $\R^n$, although it is
 better to think of it as a different object.
@@ -544,7 +545,7 @@ better to think of it as a different object.
 \begin{example}
 For example,
 \begin{equation*}
-\omega(x,y) = \frac{-y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy
+\omega(x,y) = \frac{-y}{x^2+y^2} ~dx + \frac{x}{x^2+y^2} ~dy
 \end{equation*}
 is a one-form defined on $\R^2 \setminus \{ (0,0) \}$.
 \end{example}
@@ -553,7 +554,7 @@ is a one-form defined on $\R^2 \setminus \{ (0,0) \}$.
 Let $\gamma \colon [a,b] \to \R^n$ be a smooth path
 and
 \begin{equation*}
-\omega = \omega_1 dx_1 + \omega_2 dx_2 + \cdots \omega_n dx_n ,
+\omega = \omega_1 ~dx_1 + \omega_2 ~dx_2 + \cdots + \omega_n ~dx_n ,
 \end{equation*}
 a one-form defined on the direct image $\gamma\bigl([a,b]\bigr)$.
 Let $\gamma = (\gamma_1,\gamma_2,\ldots,\gamma_n)$ be the components of
@@ -624,7 +625,7 @@ of $\gamma$ we have
 \begin{example} \label{example:mv:irrotoneformint}
 Let the one-form $\omega$ and the path $\gamma \colon [0,2\pi] \to \R^2$ be defined by
 \begin{equation*}
-\omega(x,y) := \frac{-y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy,
+\omega(x,y) := \frac{-y}{x^2+y^2} ~dx + \frac{x}{x^2+y^2} ~dy,
 \qquad
 \gamma(t) := \bigl(\cos(t),\sin(t)\bigr) .
 \end{equation*}
@@ -830,7 +831,7 @@ Then
 =
 \int_0^{2\pi}
 \Bigl( \bigl(-\sin(2t) \bigr) \bigl(-2\sin(2t) \bigr) + \cos(t)
-\bigl(2\cos(t)\bigr) \Bigr) dt
+\bigl(2\cos(t)\bigr) \Bigr) ~dt
 =
 4 \pi.
 \end{align*}
@@ -839,6 +840,7 @@ Then
 It is sometimes convenient to define a path integral over $\gamma \colon
 [a,b] \to \R^n$ that is not a path.
 We define
+\glsadd{not:pathintegralomega}
 \begin{equation*}
 \int_{\gamma} \omega := \int_a^b
 \left(
@@ -868,12 +870,13 @@ $\int_{\gamma} \omega = 0$.
 \subsection{Line integral of a function}
 
 Sometimes we wish to simply integrate a function against the so-called
-arc-length measure.
+\emph{\myindex{arc-length measure}}.
 
 \begin{defn}
 Suppose $\gamma \colon [a,b] \to \R^n$ is a smooth path, and $f$ is a
 continuous function defined on the image $\gamma\bigl([a,b]\bigr)$.  Then
 define
+\glsadd{not:lineintegralf}
 \begin{equation*}
 \int_{\gamma} f ~ds :=
 \int_a^b f\bigl( \gamma(t) \bigr) \snorm{\gamma^{\:\prime}(t)} ~ dt .
@@ -1457,9 +1460,9 @@ Let $U \subset \R^n$ be a star shaped domain and $\omega$ a continuously
 differentiable one-form defined on $U$.  That is, if
 \begin{equation*}
 \omega =
-\omega_1 dx_1 +
-\omega_2 dx_2 + \cdots +
-\omega_n dx_n ,
+\omega_1 ~dx_1 +
+\omega_2 ~dx_2 + \cdots +
+\omega_n ~dx_n ,
 \end{equation*}
 then $\omega_1,\omega_2,\ldots,\omega_n$ are continuously differentiable
 functions.  Suppose that for every $j$ and $k$
@@ -1547,7 +1550,7 @@ And this is precisely what we wanted.
 \begin{example}
 Without some hypothesis on $U$ the theorem is not true.  Let
 \begin{equation*}
-\omega(x,y) := \frac{-y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy
+\omega(x,y) := \frac{-y}{x^2+y^2} ~dx + \frac{x}{x^2+y^2} ~dy
 \end{equation*}
 be defined on $\R^2 \setminus \{ 0 \}$.  It is easy to see that
 \begin{equation*}
@@ -1578,6 +1581,7 @@ A continuous function $v \colon U \to \R^n$ is called a
 Given a smooth path $\gamma \colon [a,b] \to \R^n$ with
 $\gamma\bigl([a,b]\bigr) \subset U$ we define
 the path integral of the vectorfield $v$ as
+\glsadd{not:pathintegralvecfield}
 \begin{equation*}
 \int_{\gamma} v \cdot d\gamma
 :=
@@ -1592,7 +1596,7 @@ If we unravel the definition we find that
 \begin{equation*}
 \int_{\gamma} v \cdot d\gamma
 =
-\int_{\gamma} v_1 dx_1 + v_2 dx_2 + \cdots + v_n dx_n .
+\int_{\gamma} v_1 ~dx_1 + v_2 ~dx_2 + \cdots + v_n ~dx_n .
 \end{equation*}
 Therefore what we know about integration of
 one-forms carries over to the integration of vector fields.

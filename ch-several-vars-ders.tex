@@ -1947,7 +1947,7 @@ an $A \in L(\R^n,\R^m)$ such that
 \lim_{\substack{h \to 0\\h\in \R^n}}
 \frac{\snorm{f(x+h)-f(x) - Ah}}{\snorm{h}} = 0 .
 \end{equation*}
-We write $Df(x) := A$, or $f'(x) := A$, and
+We write $Df(x) := A$, or $f'(x) := A$,\glsadd{not:mvder} and
 we say $A$ is the \emph{\myindex{derivative}} of $f$ at $x$.
 When $f$ is \emph{differentiable} at
 all $x \in U$, we say simply that $f$ is differentiable.  See
@@ -2226,6 +2226,7 @@ derivative.
 Let
 $f \colon U \to \R$ be a function on an open set $U \subset \R^n$.
 If the following limit exists we write
+\glsadd{not:partialder}
 \begin{equation*}
 \frac{\partial f}{\partial x_j} (x) := 
 \lim_{h\to 0}\frac{f(x_1,\ldots,x_{j-1},x_j+h,x_{j+1},\ldots,x_n)-f(x)}{h}
@@ -2354,6 +2355,7 @@ all the $\frac{\partial f_k}{\partial x_j}$ are continuous functions.
 Let $U \subset \R^n$ be open and $f \colon U \to \R$ is a differentiable
 function.  We define
 the \emph{\myindex{gradient}} as
+\glsadd{not:gradient}
 \begin{equation*}
 \nabla f (x) := \sum_{j=1}^n \frac{\partial f}{\partial x_j} (x)\, e_j .
 \end{equation*}
@@ -2417,6 +2419,7 @@ We also compute directly
 \end{equation*}
 We obtain the \emph{\myindex{directional derivative}},
 denoted by
+\glsadd{not:mvdirder}
 \begin{equation*}
 D_u f (x) := \frac{d}{dt}\Big|_{t=0} \bigl[ f(x+tu) \bigr] ,
 \end{equation*}
@@ -2448,6 +2451,7 @@ $f \colon U \to \R^n$ be a differentiable mapping.  Then define the
 is sometimes called the
 \emph{\myindex{Jacobian matrix}}.},
 of $f$ at $x$ as
+\glsadd{not:jacobdet}
 \begin{equation*}
 J_f(x) := \det\bigl( f'(x) \bigr) .
 \end{equation*}
@@ -2796,9 +2800,11 @@ we have that $U'' = \emptyset$.  So $f(x) = c$ for all $x \in U$.
 \subsection{Continuously differentiable functions}
 
 \begin{defn}
-We say $f \colon U \subset \R^n \to \R^m$ is
+Let $U \subset \R^n$ be open.
+We say $f \colon U \to \R^m$ is
 \emph{\myindex{continuously differentiable}},
-or $C^1(U)$ if $f$ is differentiable and $f' \colon U \to L(\R^n,\R^m)$
+or $C^1(U)$\glsadd{not:C1},
+if $f$ is differentiable and $f' \colon U \to L(\R^n,\R^m)$
 is continuous.
 \end{defn}
 
@@ -3029,12 +3035,12 @@ $\R^2$ (Hint: Think back to how did we construct a nowhere continuous function o
 To prove the inverse function theorem we use the contraction mapping
 principle we have seen in \chapterref{ms:chapter} and that we have used
 to prove Picard's theorem.
-Recall that a mapping $f \colon X \to X'$ between two metric
-spaces $(X,d)$ and $(X',d')$ is called a contraction 
+Recall that a mapping $f \colon X \to Y$ between two metric
+spaces $(X,d_X)$ and $(Y,d_Y)$ is called a contraction 
 if there exists a $k < 1$ such that
 \begin{equation*}
-d'\bigl(f(x),f(y)\bigr) \leq k d(x,y)
-\ \ \ \ \text{for all } x,y \in X.
+d_Y\bigl(f(p),f(q)\bigr) \leq k \, d_X(p,q)
+\ \ \ \ \text{for all } p,q \in X.
 \end{equation*}
 The contraction mapping principle says that if $f \colon X \to X$
 is a contraction and $X$ is a complete metric space,
