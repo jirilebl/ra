@@ -40,8 +40,9 @@ $R := (a_1,b_1) \times
 (a_n,b_n) \subset \R^n$,
 we define the
 \emph{$n$-dimensional volume}%
-\index{$n$-dimensional volume of rectangles}%
+\index{n-dimensional volume@$n$-dimensional volume!rectangles}%
 \index{volume of rectangles} by
+\glsadd{not:ndimvolume}
 \begin{equation*}
 V(R) :=
 (b_1-a_1)
@@ -97,7 +98,6 @@ V(R) = \sum_{j=1}^N V(R_j).
 subrectangles is not important.\label{mv:figrect}}
 \end{myfigureht}
 
-%We denote by $V(R_k)$ the $n$-dimensional volume of $R_k$.  That is,
 When
 \begin{equation*}
 R_k = [x_{1,j_1-1}~,~ x_{1,j_1}]
@@ -124,10 +124,12 @@ V(R_k) =
 
 Let $R \subset \R^n$ be a closed rectangle and
 let $f \colon R \to \R$ be a bounded function.  Let $P$ be a partition of
-$[a,b]$ and suppose that there are $N$ subrectangles $R_1,R_2,\ldots,R_N$.
+$R$ and suppose that there are $N$ subrectangles $R_1,R_2,\ldots,R_N$.
 %Let $R_i$ be a subrectangle of $P$.
 % that has $N$ subrectangles.
 Define
+\glsadd{not:lowerdarbouxsum}
+\glsadd{not:upperdarbouxsum}
 \begin{align*}
 & m_i := \inf \{ f(x) : x \in R_i \} , \\
 & M_i := \sup \{ f(x) : x \in R_i \} , \\
@@ -153,7 +155,7 @@ $P$ of $R$
 we have
 \begin{equation*}
 %\label{mv:sumulbound:eq}
-m V(R) \leq
+m \, V(R) \leq
 L(P,f) \leq U(P,f)
 \leq M\, V(R) .
 \end{equation*}
@@ -164,16 +166,16 @@ Let $P$ be a partition.  Then for all $i$ we have
 $m \leq m_i$ and $M_i \leq M$.  Also $m_i \leq M_i$ for all $i$.  Finally
 $\sum_{i=1}^N V(R_i) = V(R)$.  Therefore,
 \begin{multline*}
-m V(R) =
+m \, V(R) =
 m \left( \sum_{i=1}^N V(R_i) \right)
 =
-\sum_{i=1}^N m V(R_i)
+\sum_{i=1}^N m \, V(R_i)
 \leq
-\sum_{i=1}^N m_i V(R_i)
+\sum_{i=1}^N m_i \, V(R_i)
 \leq
 \\
 \leq
-\sum_{i=1}^N M_i V(R_i)
+\sum_{i=1}^N M_i \, V(R_i)
 \leq
 \sum_{i=1}^N M \,V(R_i)
 =
@@ -192,12 +194,17 @@ their infima and suprema.  As before, we now make the following definition.
 If $f \colon R \to \R$ is a bounded function on a closed rectangle $R \subset
 \R^n$.
 Define
+\glsadd{not:lowerdarbouxR}
+\glsadd{not:upperdarbouxR}
 \begin{equation*}
-\underline{\int_R} f := \sup \{ L(P,f) : P \text{ a partition of $R$} \} , 
+\underline{\int_R} f
+:= \sup \, \bigl\{ L(P,f) : P \text{ a partition of $R$} \bigr\} , 
 \qquad
-\overline{\int_R} f := \inf \{ U(P,f) : P \text{ a partition of $R$} \} .
+\overline{\int_R} f
+:= \inf \, \bigl\{ U(P,f) : P \text{ a partition of $R$} \bigr\} .
 \end{equation*}
-We call $\underline{\int}$ the \emph{\myindex{lower Darboux integral}} and
+We call $\underline{\int}$ the
+\emph{\myindex{lower Darboux integral}}\index{Darboux integral} and
 $\overline{\int}$ the \emph{\myindex{upper Darboux integral}}.
 \end{defn}
 
@@ -240,16 +247,16 @@ U(\widetilde{P},f) \leq U(P,f) .
 We prove the first inequality, the second follows similarly.
 Let $R_1,R_2,\ldots,R_N$ be the subrectangles of $P$
 and
-$\widetilde{R}_1,\widetilde{R}_2,\ldots,\widetilde{R}_{\widetilde{N}}$ be the subrectangles of
+$\widetilde{R}_1,\widetilde{R}_2,\ldots,\widetilde{R}_{\widetilde{N}}$ be the
+subrectangles of
 $\widetilde{R}$.
 Let $I_k$ be the set of all indices $j$ such that $\widetilde{R}_j \subset R_k$.
-For example, using the examples in figures \ref{mv:figrect} and
-\ref{mv:figrectpart}, $I_4 = \{ 6, 7, 8, 9 \}$ and
+For example, in figures \ref{mv:figrect} and
+\ref{mv:figrectpart}, $I_4 = \{ 6, 7, 8, 9 \}$ as
 $R_4 =
 \widetilde{R}_6 \cup \widetilde{R}_7 \cup
 \widetilde{R}_8 \cup \widetilde{R}_9$.
-We
-notice in general that
+Then,
 \begin{equation*}
 R_k = \bigcup_{j \in I_k} \widetilde{R}_j,
 \qquad
@@ -258,7 +265,7 @@ V(R_k) = \sum_{j \in I_k} V(\widetilde{R}_j).
 
 Let $m_j := \inf \{ f(x) : x \in R_j \}$, and
 $\widetilde{m}_j := \inf \{ f(x) : \in \widetilde{R}_j \}$ as usual.
-Notice also that if $j \in I_k$, then $m_k \leq \widetilde{m}_j$.  Then
+If $j \in I_k$, then $m_k \leq \widetilde{m}_j$.  Then
 \begin{equation*}
 L(P,f) =
 \sum_{k=1}^N m_k V(R_k)
@@ -281,7 +288,7 @@ $f \colon R \to \R$ a bounded function.  Let $m, M \in \R$ be
 such that for all $x \in R$ we have $m \leq f(x) \leq M$.  Then
 \begin{equation}
 \label{mv:intulbound:eq}
-m V(R) \leq
+m \, V(R) \leq
 \underline{\int_R} f \leq \overline{\int_R} f
 \leq M \, V(R).
 \end{equation}
@@ -293,10 +300,10 @@ For any partition $P$, via \propref{mv:sumulbound:prop},
 mV(R) \leq L(P,f) \leq U(P,f) \leq M\,V(R).
 \end{equation*}
 Taking supremum of $L(P,f)$ and infimum of $U(P,f)$ over all $P$,
-we obtain the first and the last inequality.
+we obtain the first and the last inequality in
+\eqref{mv:intulbound:eq}.
 
-The key inequality
-in
+The key inequality in
 \eqref{mv:intulbound:eq}
 is the middle one.
 Let $P=(P_1,P_2,\ldots,P_n)$ and
@@ -304,7 +311,7 @@ $Q=(Q_1,Q_2,\ldots,Q_n)$
 be partitions of $R$.  Define 
 $\widetilde{P} = ( \widetilde{P}_1,\widetilde{P}_2,\ldots,\widetilde{P}_n )$
 by letting
-$\widetilde{P}_k = P_k \cup Q_k$.
+$\widetilde{P}_k := P_k \cup Q_k$.
 Then $\widetilde{P}$ is a partition of $R$ as can easily be checked,
 and $\widetilde{P}$ is a refinement of $P$ and a refinement of $Q$.
 By \propref{mv:prop:refinement},
@@ -318,9 +325,9 @@ $L(P,f) \leq U(Q,f)$.
 Via \volIref{Proposition~1.2.7 from volume I}, %\propref{infsupineq:prop}
 we obtain
 \begin{equation*}
-\sup \{ L(P,f) : \text{$P$ a partition of $R$} \}
+\sup \, \bigl\{ L(P,f) : \text{$P$ a partition of $R$} \bigl\}
 \leq
-\inf \{ U(P,f) : \text{$P$ a partition of $R$} \} .
+\inf \, \bigl\{ U(P,f) : \text{$P$ a partition of $R$} \bigl\} .
 \end{equation*}
 In other words $\underline{\int_R} f \leq \overline{\int_R} f$.
 \end{proof}
@@ -342,8 +349,9 @@ Let $f \colon R \to \R$ be a bounded function such that
 Then $f$ is said to be \emph{\myindex{Riemann integrable}},
 and we sometimes say simply \emph{\myindex{integrable}}.
 The set of Riemann integrable functions on $R$ is denoted
-by $\sR(R)$.  When $f \in \sR(R)$ we define
+by $\sR(R)$.\glsadd{not:integrablefuncR}  When $f \in \sR(R)$ we define
 the \emph{\myindex{Riemann integral}}
+\glsadd{not:riemannintR}
 \begin{equation*}
 \int_R f := 
 \underline{\int_R} f = \overline{\int_R} f .
@@ -1498,6 +1506,7 @@ a slight detour.  We introduce a way of measuring the size of sets in $\R^n$.
 Let 
 $S \subset \R^n$ be a subset.  Define the \emph{\myindex{outer measure}}
 of $S$ as
+\glsadd{not:outermeasure}
 \begin{equation*}
 m^*(S)
 :=
@@ -2003,7 +2012,7 @@ Instead of just saying that $f$ is or is not continuous at
 a point $x \in S$,
 we need to be able to quantify how discontinuous $f$ is at a function is
 at $x$.  For any $\delta > 0$ define the oscillation of 
-$f$ on the $\delta$-ball in subset topology that is
+$f$ on the $\delta$-ball in subspace topology that is
 $B_S(x,\delta) = B_{\R^n}(x,\delta) \cap S$ as
 \begin{equation*}
 o(f,x,\delta) :=
@@ -2070,7 +2079,7 @@ The set $\{ x \in S : o(f,x) \geq \epsilon \}$ is closed.
 
 \begin{proof}
 Equivalently we want to show that
-$G = \{ x \in S : o(f,x) < \epsilon \}$ is open in the subset topology.
+$G = \{ x \in S : o(f,x) < \epsilon \}$ is open in the subspace topology.
 As $\inf_{\delta > 0} o(f,x,\delta) < \epsilon$, find a $\delta > 0$ such
 that
 \begin{equation*}
@@ -2086,7 +2095,7 @@ o(f,\xi,\nicefrac{\delta}{2}) =
 \epsilon .
 \end{equation*}
 So $o(f,\xi) < \epsilon$ as well.  As this is true for all $\xi \in
-B_S(x,\nicefrac{\delta}{2})$ we get that $G$ is open in the subset
+B_S(x,\nicefrac{\delta}{2})$ we get that $G$ is open in the subspace
 topology and $S \setminus G$ is closed as is claimed.
 \end{proof}
 
@@ -2301,6 +2310,7 @@ $f|_{R\setminus E}$ is continuous and $f \not\in \sR(R)$.
 
 Given a bounded set $S \subset \R^n$ its \emph{\myindex{characteristic
 function}} or \emph{\myindex{indicator function}} is
+\glsadd{not:indicatorfunction}
 \begin{equation*}
 \chi_S(x) :=
 \begin{cases}
@@ -2321,9 +2331,10 @@ and so $\chi_S \in \sR(R')$.  Thus
 \end{equation*}
 We define the
 \emph{$n$-dimensional volume}%
-\index{$n$-dimensional volume of a Jordan measurable set}%
+\index{n-dimensional volume@$n$-dimensional volume!Jordan measurable set}%
 \index{volume} of the
 bounded Jordan measurable set $S$ as
+\glsadd{not:ndimvolume}
 \begin{equation*}
 V(S) := \int_R \chi_S ,
 \end{equation*}
@@ -2377,7 +2388,7 @@ U(P,\chi_S) \leq \int_R \chi_S + \epsilon = V(S) + \epsilon
 \qquad \text{and} \qquad
 L(P,\chi_S) \geq \int_R \chi_S - \epsilon = V(S)-\epsilon.
 \end{equation*}
-Let $R_1,\ldots,R_k$ be all the subrectangles of $P$ such that $\chi_S$ is not
+Let $R_1,R_2,\ldots,R_k$ be all the subrectangles of $P$ such that $\chi_S$ is not
 identically zero on each $R_j$.  That is, there is some point $x \in R_j$ such
 that $x \in S$.  Let $O_j$ be an open rectangle such that $R_j \subset O_j$
 and $V(O_j) < V(R_j) + \nicefrac{\epsilon}{k}$.  Notice that $S \subset
@@ -2391,7 +2402,7 @@ $U(P,\chi_S) \leq V(S) + \epsilon$, then
 $m^*(S) - \epsilon \leq V(S) + \epsilon$, or in other words
 $m^*(S) \leq V(S)$.
 
-Let $R'_1,\ldots,R'_\ell$ be all the subrectangles of $P$ such that
+Let $R'_1,R'_2,\ldots,R'_\ell$ be all the subrectangles of $P$ such that
 $\chi_S$ is identically one on each $R'_j$.  In other words,
 these are the subrectangles contained in $S$.
   The interiors

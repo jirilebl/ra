@@ -79,9 +79,6 @@ operations, then $Y$ is called a \emph{\myindex{subspace}} or
 a \emph{\myindex{vector subspace}} of $X$.
 \end{defn}
 
-%In short $X$ is an Abelian group with respect to the addition, and equipped
-%with multiplication by scalars.
-
 \begin{example}
 An example vector space is $\R^n$, where addition
 and multiplication by a scalar is done componentwise:
@@ -178,9 +175,6 @@ a_2 x_2 +  \cdots
 \end{equation*}
 is called a \emph{\myindex{linear combination}} of the vectors $x_1, x_2,
 \ldots, x_k$.
-
-%Note that if $x_1, \ldots, x_k$ are in a vector space $X$, then
-%any linear combination of $x_1, \ldots, x_k$ is also in $X$.
 
 If $Y \subset X$ is a set, then the \emph{\myindex{span}} of $Y$, or in notation
 $\spn(Y)$, is the set of all linear combinations
@@ -438,7 +432,7 @@ vectors, neither can $Y$.
 
 For \ref{mv:dimprop:v} suppose $T$ is a set of $m$ vectors that is linearly dependent
 and spans $X$.  Then one of the
-vectors is a linear combination of the others.  Therefore if we remove it
+vectors is a linear combination of the others.  Therefore, if we remove it
 from $T$ we obtain a set of $m-1$ vectors that still span $X$ and hence
 $\dim \, X \leq m-1$ by \ref{mv:dimprop:i}.
 
@@ -704,7 +698,7 @@ is convex.
 \begin{proof}
 If $x, y \in C$, then $x,y \in C_\lambda$ for all
 $\lambda \in I$, and hence if $t \in [0,1]$, then $tx + (1-t)y \in
-C_\lambda$ for all $\lambda \in I$.  Therefore $tx + (1-t)y \in C$ and $C$
+C_\lambda$ for all $\lambda \in I$.  Therefore, $tx + (1-t)y \in C$ and $C$
 is convex.
 \end{proof}
 
@@ -867,8 +861,6 @@ the form $(x,0)$ in $K$ is the point $(0,0)$.  Further suppose that
 there $(0,1) \in K$ and $(1,1) \in K$.  Then show that if $(x,y) \in K$,
 then $y > 0$ unless $x=0$.
 \end{exercise}
-
-%FIXME
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1044,10 +1036,6 @@ topology it generates is the same.  For simplicity, we only prove the
 following proposition for the euclidean space, and the proof for a general
 finite dimensional space is left as an exercise.
 
-%Therefore, for simplicity we restrict our attention to $\R^n$ with the euclidean
-%norm.  The following propositions are stated for $\R^n$, but work in any
-%finite dimensional vector space.  See the exercises.
-
 \begin{prop} \label{prop:finitedimpropnormfin}
 Let $X$ and $Y$ be finite dimensional vector spaces with a norm.
 If $A \in L(X,Y)$, then $\snorm{A} < \infty$, and
@@ -1082,7 +1070,7 @@ Then
 The right hand side does not depend on $x$.  We found
 a finite upper bound independent of $x$, so $\snorm{A} < \infty$.
 
-Now for any vector spaces $X$ and $Y$, and $A \in L(X,Y)$, suppose that
+For any vector spaces $X$ and $Y$, and $A \in L(X,Y)$, suppose that
 $\snorm{A} < \infty$.
 For $v,w \in X$,
 \begin{equation*}
@@ -1145,11 +1133,6 @@ As a norm defines a metric,
 there is
 a metric space topology on $L(X,Y)$, so we can talk
 about open/closed sets, continuity, and convergence.
-%  Note that we 
-%defined a norm only on $\R^n$ and not on an arbitrary finite dimensional
-%vector space.  However, after picking bases, we can define a norm on any
-%vector space in the same way.  So we really have a topology on any $L(X,Y)$,
-%although the precise metric would depend on the basis picked.
 
 %\textbf{Theorem 9.8:}
 \begin{prop} \label{prop:finitedimpropinv}
@@ -1167,9 +1150,6 @@ $U$ is open and $A \mapsto A^{-1}$ is a continuous
 function on $U$.
 \end{enumerate}
 \end{prop}
-
-%The proposition says that $U$ is an open set and $A \mapsto A^{-1}$ is
-%continuous on $U$.
 
 Let us make sense of this on a simple example.
 Think back to $\R^1$, where linear operators are just
@@ -1898,14 +1878,12 @@ m \snorm{x}_1
 M \snorm{x}_1 .
 \end{equation*}
 %\\
-c) Now show that $U \subset X$ is open in the metric defined by
+c) Show that $U \subset X$ is open in the metric defined by
 $\norm{x-y}_1$ if and only if it is open in the metric defined by
-$\norm{x-y}_2$.  In other words, convergence of sequences, continuity
+$\norm{x-y}_2$.  In other words, convergence of sequences and continuity
 of functions is the same in either norm.
 \end{exercise}
 
-
-%FIXME
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2241,7 +2219,8 @@ See \figureref{fig:svpartder}.
 
 For a mapping $f \colon U \to \R^m$ we write
 $f = (f_1,f_2,\ldots,f_m)$, where $f_k$ are real-valued
-functions.  Then we define
+functions.  We then take partial derivatives of
+the components,
 $\frac{\partial f_k}{\partial x_j}$ (or write it as $D_j f_k$).
 \end{defn}
 
@@ -2359,7 +2338,7 @@ the \emph{\myindex{gradient}} as
 \begin{equation*}
 \nabla f (x) := \sum_{j=1}^n \frac{\partial f}{\partial x_j} (x)\, e_j .
 \end{equation*}
-Notice that the gradient gives us a way to represent the action of
+The gradient gives a way to represent the action of
 the derivative as a dot product: $f'(x)v = \nabla f(x) \cdot v$.
 
 Suppose $\gamma \colon (a,b) \subset \R \to \R^n$ is a differentiable
@@ -2398,13 +2377,13 @@ g'(t) = (\nabla f) \bigl(\gamma(t)\bigr) \cdot \gamma^{\:\prime}(t)
 
 We use this idea to define derivatives in a specific direction.  A direction
 is simply a vector pointing in that direction.  So pick a vector $u \in \R^n$
-such that $\snorm{u} = 1$.  Fix $x \in U$.
-Then define a curve
+such that $\snorm{u} = 1$, and fix $x \in U$.
+Then define the curve
 \begin{equation*}
 \gamma(t) := x + tu .
 \end{equation*}
-It is easy to compute that $\gamma^{\:\prime}(t) = u$ for all $t$.  
-By chain rule
+Then $\gamma^{\:\prime}(t) = u$ for all $t$.  
+By the chain rule
 \begin{equation*}
 \frac{d}{dt}\Big|_{t=0} \bigl[ f(x+tu) \bigr] =
 (\nabla f) (x) \cdot u ,
@@ -2473,9 +2452,8 @@ From the chain rule and the fact that $\det(AB) = \det(A)\det(B)$, it follows th
 J_{f \circ g} (x) = J_f\bigl(g(x)\bigr) J_g(x) .
 \end{equation*}
 
-As we mentioned
-the determinant tells us what happens to
-area/volume.
+The determinant of a linear mapping tells us what happens to
+area/volume under the mapping.
 Similarly, the Jacobian measures how much a differentiable mapping stretches
 things locally, and if it flips orientation.  In particular, if the Jacobian
 is non-zero than we would assume that locally the mapping is invertible (and
@@ -2640,9 +2618,6 @@ Define $f \colon \R^2 \to \R^2$ by $f(x,y) :=
 \bigl(x,y+\varphi(x)\bigr)$ for some differentiable function $\varphi$ of one
 variable.  Show $f$ is differentiable and find $f'$.
 \end{exercise}
-
-%FIXME: more
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3021,9 +2996,6 @@ b) Find an example of such an $f$ which is not continuous at every other point o
 $\R^2$ (Hint: Think back to how did we construct a nowhere continuous function on $[0,1]$).
 \end{exercise}
 
-
-%FIXME
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
@@ -3033,7 +3005,9 @@ $\R^2$ (Hint: Think back to how did we construct a nowhere continuous function o
 \sectionnotes{2--3 lectures}
 
 To prove the inverse function theorem we use the contraction mapping
-principle we have seen in \chapterref{ms:chapter} and that we have used
+principle from \volIref{chapter 7},
+%\chapterref{ms:chapter}
+we we used
 to prove Picard's theorem.
 Recall that a mapping $f \colon X \to Y$ between two metric
 spaces $(X,d_X)$ and $(Y,d_Y)$ is called a contraction 
@@ -3324,10 +3298,6 @@ g'(p) = -{(A_y)}^{-1}A_x .
 \end{equation*}
 \end{thm}
 
-%Near $(p,q)$, the set of points $\bigl(x,g(x)\bigr)$ are in fact all
-%the points where $f\bigl(x,g(x)\bigr) = 0$.
-% FIXME: Clear from the "unique"
-
 The condition
 $\frac{\partial(f_1,\ldots,f_m)}{\partial(y_1,\ldots,y_m)} (p,q) =
 \det(A_y)  \neq 0$
@@ -3366,7 +3336,7 @@ F\bigl(G_1(x,s),G_2(x,s)\bigr) = \bigl(G_1(x,s),f(G_1(x,s),G_2(x,s))\bigr)
 = (x,s) .
 \end{equation*}
 So $x = G_1(x,s)$ and $f\bigl(G_1(x,s),G_2(x,s)\bigr) = f\bigl(x,G_2(x,s)\bigr) = s$.
-Plugging in $s=0$ we obtain
+Plugging in $s=0$, we obtain
 \begin{equation*}
 f\bigl(x,G_2(x,0)\bigr) = 0 .
 \end{equation*}
@@ -3583,7 +3553,7 @@ Let $U \subset \R^n$ be an open set and $f \colon U \to \R$ a function.
 Denote by $x = (x_1,x_2,\ldots,x_n) \in \R^n$ our coordinates.
 Suppose $\frac{\partial f}{\partial x_j}$ exists everywhere in $U$,
 then we note that it is also a function $\frac{\partial f}{\partial x_j}
-\colon U \to \R$.  Therefore it makes sense to talk about its partial
+\colon U \to \R$.  Therefore, it makes sense to talk about its partial
 derivatives.  We denote 
 the partial derivative of $\frac{\partial f}{\partial x_j}$ with respect to
 $x_k$ by\glsadd{not:multivarpartder}
