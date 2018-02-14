@@ -47,8 +47,8 @@ Let $f \colon [a,b] \to \R$ be a bounded function.  Let $P$ be a partition of
 $[a,b]$.
 Define
 \begin{align*}
-& m_i := \inf \{ f(x) : x_{i-1} \leq x \leq x_i \} , \\
-& M_i := \sup \{ f(x) : x_{i-1} \leq x \leq x_i \} , \\
+& m_i := \inf \, \bigl\{ f(x) : x_{i-1} \leq x \leq x_i \bigr\} , \\
+& M_i := \sup \, \bigl\{ f(x) : x_{i-1} \leq x \leq x_i \bigr\} , \\
 & L(P,f) :=
 \sum_{i=1}^n m_i \Delta x_i , \\
 & U(P,f) :=
@@ -114,9 +114,9 @@ upper sums are bounded sets.
 As the sets of lower and upper Darboux sums are bounded, we define
 \begin{align*}
 & \underline{\int_a^b} f(x)~dx :=
-\sup \bigl\{ L(P,f) : P \text{ a partition of $[a,b]$} \bigr\} , \\
+\sup \, \bigl\{ L(P,f) : P \text{ a partition of $[a,b]$} \bigr\} , \\
 & \overline{\int_a^b} f(x)~dx :=
-\inf \bigl\{ U(P,f) : P \text{ a partition of $[a,b]$} \bigr\} .
+\inf \, \bigl\{ U(P,f) : P \text{ a partition of $[a,b]$} \bigr\} .
 \end{align*}
 We call $\underline{\int}$\glsadd{not:lowerdarboux}
 the \emph{\myindex{lower Darboux integral}}\index{Darboux integral!lower} and
@@ -298,9 +298,9 @@ Recall \propref{infsupineq:prop}, and take the supremum and
 infimum over all partitions:
 \begin{equation*}
 \underline{\int_a^b} f = 
-\sup \bigl\{ L(P,f) : \text{$P$ a partition of $[a,b]$} \bigr\}
+\sup \, \bigl\{ L(P,f) : \text{$P$ a partition of $[a,b]$} \bigr\}
 \leq
-\inf \bigl\{ U(P,f) : \text{$P$ a partition of $[a,b]$} \bigr\}
+\inf \, \bigl\{ U(P,f) : \text{$P$ a partition of $[a,b]$} \bigr\}
 =
 \overline{\int_a^b} f . \qedhere
 \end{equation*}
@@ -385,12 +385,12 @@ Proof: Let $0 < \epsilon < 1$ be arbitrary.
 Let $P := \{0, 1-\epsilon, 1+\epsilon, 2\}$ be a partition.  We use the notation from
 the definition of the Darboux sums.  Then
 \begin{align*}
-m_1 &= \inf \{ f(x) : x \in [0,1-\epsilon] \} = 1 , & 
-M_1 &= \sup \{ f(x) : x \in [0,1-\epsilon] \} = 1 , \\
-m_2 &= \inf \{ f(x) : x \in [1-\epsilon,1+\epsilon] \} = 0 , & 
-M_2 &= \sup \{ f(x) : x \in [1-\epsilon,1+\epsilon] \} = 1 , \\
-m_3 &= \inf \{ f(x) : x \in [1+\epsilon,2] \} = 0 , & 
-M_3 &= \sup \{ f(x) : x \in [1+\epsilon,2] \} = 0 .
+m_1 &= \inf \, \bigl\{ f(x) : x \in [0,1-\epsilon] \bigr\} = 1 , & 
+M_1 &= \sup \, \bigl\{ f(x) : x \in [0,1-\epsilon] \bigr\} = 1 , \\
+m_2 &= \inf \, \bigl\{ f(x) : x \in [1-\epsilon,1+\epsilon] \bigr\} = 0 , & 
+M_2 &= \sup \, \bigl\{ f(x) : x \in [1-\epsilon,1+\epsilon] \bigr\} = 1 , \\
+m_3 &= \inf \, \bigl\{ f(x) : x \in [1+\epsilon,2] \bigr\} = 0 , & 
+M_3 &= \sup \, \bigl\{ f(x) : x \in [1+\epsilon,2] \bigr\} = 0 .
 \end{align*}
 Furthermore, $\Delta x_1 = 1-\epsilon$, $\Delta x_2 = 2\epsilon$ and
 $\Delta x_3 = 1-\epsilon$.
@@ -741,19 +741,19 @@ to compute
 \begin{split}
 \underline{\int_a^c} f
 & =
-\sup \{ L(P,f) : \text{$P$ a partition of $[a,c]$} \}
+\sup \, \bigl\{ L(P,f) : \text{$P$ a partition of $[a,c]$} \bigr\}
 \\
 & =
-\sup \{ L(P,f) : \text{$P$ a partition of $[a,c]$, $b \in P$} \}
+\sup \, \bigl\{ L(P,f) : \text{$P$ a partition of $[a,c]$, $b \in P$} \bigr\}
 \\
 & =
-\sup \{ L(P_1,f) + L(P_2,f) :
-\text{$P_1$ a partition of $[a,b]$, $P_2$ a partition of $[b,c]$} \}
+\sup \, \bigl\{ L(P_1,f) + L(P_2,f) :
+\text{$P_1$ a partition of $[a,b]$, $P_2$ a partition of $[b,c]$} \bigr\}
 \\
 & =
-\sup \{ L(P_1,f) : \text{$P_1$ a partition of $[a,b]$} \}
+\sup \, \bigl\{ L(P_1,f) : \text{$P_1$ a partition of $[a,b]$} \bigr\}
 +
-\sup \{ L(P_2,f) : \text{$P_2$ a partition of $[b,c]$} \}
+\sup \, \bigl\{ L(P_2,f) : \text{$P_2$ a partition of $[b,c]$} \bigr\}
 \\
 &=
 \underline{\int_a^b} f + \underline{\int_b^c} f .
@@ -912,14 +912,14 @@ may move multiplication by $\alpha$ past the supremum.  Hence,
 \begin{equation*}
 \begin{split}
 \underline{\int_a^b} \alpha f(x)~dx & =
-\sup \{ L(P,\alpha f) : \text{$P$ a partition of $[a,b]$} \}
+\sup \, \bigl\{ L(P,\alpha f) : \text{$P$ a partition of $[a,b]$} \bigr\}
 \\
 & =
-\sup \{ \alpha L(P,f) : \text{$P$ a partition of $[a,b]$} \}
+\sup \, \bigl\{ \alpha L(P,f) : \text{$P$ a partition of $[a,b]$} \bigr\}
 \\
 & =
-\alpha
-\sup \{ L(P,f) : \text{$P$ a partition of $[a,b]$} \}
+\alpha \,
+\sup \, \bigl\{ L(P,f) : \text{$P$ a partition of $[a,b]$} \bigr\}
 \\
 & =
 \alpha
@@ -997,9 +997,9 @@ Moreover, if $f$ and $g$ are in $\sR[a,b]$, then
 Let $P = \{ x_0, x_1, \ldots, x_n \}$ be a partition of $[a,b]$.  Then
 let
 \begin{equation*}
-m_i := \inf \{ f(x) : x \in [x_{i-1},x_i] \}
+m_i := \inf \, \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\}
 \qquad \text{and} \qquad
-\widetilde{m}_i := \inf \{ g(x) : x \in [x_{i-1},x_i] \} .
+\widetilde{m}_i := \inf \, \bigl\{ g(x) : x \in [x_{i-1},x_i] \bigr\} .
 \end{equation*}
 As $f(x) \leq g(x)$, then $m_i \leq \widetilde{m}_i$.
 Therefore,
@@ -1130,11 +1130,11 @@ M(b_n-a_n) \leq
 M(b-a) .
 \end{equation*}
 Therefore, the sequence of numbers
-$\{ \int_{a_n}^{b_n} f \}_{n=1}^\infty$ is bounded and by
+$\bigl\{ \int_{a_n}^{b_n} f \bigr\}_{n=1}^\infty$ is bounded and by
 \hyperref[thm:bwseq]{Bolzano--Weierstrass}
 has a convergent subsequence indexed by $n_k$.  Let us call
 $L$ the limit of the subsequence
-$\{ \int_{a_{n_k}}^{b_{n_k}} f \}_{k=1}^\infty$.
+$\bigl\{ \int_{a_{n_k}}^{b_{n_k}} f \bigr\}_{k=1}^\infty$.
 
 \lemmaref{lemma:darbouxadd} says that
 the lower and upper integral are additive
@@ -1206,9 +1206,9 @@ the $L$ is the same number.
 To prove the final statement of the lemma we use 
 \propref{seqconvsubseqconv:prop}.  We have shown that every convergent
 subsequence
-$\{ \int_{a_{n_k}}^{b_{n_k}} f \}$ converges to $L = \int_a^b f$.
+$\bigl\{ \int_{a_{n_k}}^{b_{n_k}} f \bigr\}$ converges to $L = \int_a^b f$.
 Therefore, the sequence
-$\{ \int_{a_n}^{b_n} f \}$ is convergent and converges to $\int_a^b f$.
+$\bigl\{ \int_{a_n}^{b_n} f \bigr\}$ is convergent and converges to $\int_a^b f$.
 \end{proof}
 
 We say a function $f \colon [a,b] \to \R$ has \emph{\myindex{finitely many

@@ -2994,7 +2994,8 @@ smoother with metric spaces and the fixed point theorem.
 
 \begin{defn}
 Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
-$f \colon X \to Y$ is said to be a \emph{contraction}
+A mapping
+$f \colon X \to Y$ is said to be a \emph{\myindex{contraction}}
 (or a contractive map) if it is
 a $k$-Lipschitz map for some $k < 1$, i.e.\ if there exists a $k < 1$ such that
 \begin{equation*}
@@ -3004,13 +3005,14 @@ d_Y\bigl(f(p),f(q)\bigr) \leq k\, d_X(p,q)
 
 \medskip
 
-If $f \colon X \to X$ is a map, $x \in X$ is called a \emph{fixed point}
+If $f \colon X \to X$ is a map, $x \in X$ is called a
+\emph{\myindex{fixed point}}
 if $f(x)=x$.
 \end{defn}
 
 \begin{thm}%
 [\myindex{Contraction mapping principle}
-or \myindex{Banach fixed point theorem}%
+or \myindex{Banach fixed point theorem}\index{fixed point theorem}%
 \footnote{Named after the Polish mathematician
 \href{http://en.wikipedia.org/wiki/Stefan_Banach}{Stefan Banach}
 (1892--1945) who first stated the theorem in 1922.}]
@@ -3071,8 +3073,8 @@ therefore used in real-world applications.
 
 \subsection{Picard's theorem}
 
-Before we get to Picard, let us mention what metric space we will be
-applying the fixed point theorem to.  We will use the metric space
+Let us start with the metric space to which we will apply the
+fixed point theorem,
 $C([a,b],\R)$ of \exampleref{example:msC01}.  That is, $C([a,b],\R)$
 is the space of continuous functions $f \colon [a,b] \to \R$ with the metric
 \begin{equation*}
@@ -3085,11 +3087,11 @@ see \propref{prop:CabRcomplete}.
 
 \medskip
 
-Let us use the
-fixed point theorem
-to prove the classical Picard's theorem on the existence and uniqueness of
-ordinary differential equations.
-Consider the equation
+%Let us use the
+%fixed point theorem
+%to prove the classical Picard's theorem on the existence and uniqueness of
+%ordinary differential equations.
+Consider now the ordinary differential equation
 \begin{equation*}
 \frac{dy}{dx} = F(x,y) .
 \end{equation*}
@@ -3116,8 +3118,8 @@ For more examples related to Picard's theorem see \sectionref{sec:picard}.
 
 \begin{thm}[Picard's theorem on existence and uniqueness]%
 \index{existence and uniqueness theorem}\index{Picard's theorem}
-Let $I, J \subset \R$ be compact intervals, let $I^\circ$ and $J^\circ$
-be their interiors, and 
+Let $I, J \subset \R$ be closed and bounded intervals,
+let $I^\circ$ and $J^\circ$ be their interiors, and 
 let $(x_0,y_0) \in I^\circ \times J^\circ$.
 Suppose $F \colon I \times J \to \R$ is continuous
 and Lipschitz in the second variable, that is, there exists
@@ -3127,15 +3129,14 @@ an $L \in \R$ such that
 \ \ \ \text{ for all $y,z \in J$, $x \in I$} .
 \end{equation*}
 Then there exists an $h > 0$ and a unique differentiable
-function
-$f \colon [x_0 - h, x_0 + h] \to J \subset \R$, such that
+function $f \colon [x_0 - h, x_0 + h] \to J \subset \R$, such that
 \begin{equation*}
 f'(x) = F\bigl(x,f(x)\bigr) \qquad \text{and} \qquad f(x_0) = y_0.
 \end{equation*}
 \end{thm}
 
 \begin{proof}
-Without loss of generality assume $x_0 =0$.
+Without loss of generality assume $x_0 =0$ (exercise).
 As $I \times J$ is compact and
 $F(x,y)$ is continuous, it is bounded.
 So find an $M > 0$, such that
@@ -3146,7 +3147,7 @@ Let
 \begin{equation*}
 h := \min \left\{ \alpha, \frac{\alpha}{M+L\alpha} \right\} .
 \end{equation*}
-Note $[-h,h] \subset I$.  Define the set
+Note $[-h,h] \subset I$.  Let
 \begin{equation*}
 Y := \bigl\{ f \in C([-h,h],\R) : f([-h,h]) \subset J \bigr\} .
 \end{equation*}
@@ -3168,8 +3169,8 @@ T(f)(x)
 :=
 y_0 + \int_0^x F\bigl(t,f(t)\bigr)~dt .
 \end{equation*}
-That $T$ is well-defined, and that $T(f)$ really is in $C([-h,h],\R)$
-is left as an exercise.
+It is an exercise to check that
+$T$ is well-defined, and that $T(f)$ really is in $C([-h,h],\R)$.
 
 Let $f \in Y$ and $\abs{x} \leq h$.
 As $F$ is bounded by $M$ we have
@@ -3182,8 +3183,8 @@ As $F$ is bounded by $M$ we have
 \end{split}
 \end{equation*}
 So $T(f)([-h,h]) \subset [y_0-\alpha,y_0+\alpha] \subset J$, and
-$T(f) \in Y$.  In other words, $T(Y) \subset Y$.  We thus consider
-$T$ as a mapping of $Y$ to $Y$.
+$T(f) \in Y$.  In other words, $T(Y) \subset Y$.  From now on,
+we consider $T$ as a mapping of $Y$ to $Y$.
 
 We claim $T \colon Y \to Y$ is a contraction.  First, for $x \in [-h,h]$
 and $f,g \in Y$, we have
@@ -3212,7 +3213,7 @@ to find a unique $f \in Y$ such that $T(f) = f$, that is,
 f(x) = y_0 + \int_0^x F\bigl(t,f(t)\bigr)~dt .
 \end{equation*}
 By the fundamental theorem of calculus (\thmref{thm:FTCv2}),
-$T(f) = f$ is differentiable, derivative is
+$T(f) = f$ is differentiable, its derivative is
 $F\bigl(x,f(x)\bigr)$ and $T(f)(0) = y_0$.
 Differentiable functions are continuous, so
 $f$ is the unique differentiable function $f \colon [-h,h] \to J$
@@ -3342,7 +3343,7 @@ Suppose $(X,d)$ is a nonempty complete metric space,
 $f \colon X \to X$ is a mapping, and denote
 by $f^n$ the $n$th iterate of $f$.  Suppose
 for every $n$ there exists a $k_n > 0$ such that
-$d\bigl(f^n(x),f^n(y)\bigr) \leq k_n d(x,y)$
+$d\bigl(f^n(x),f^n(y)\bigr) \leq k_n \, d(x,y)$
 for all $x,y \in X$,
 where $\sum_{j=1}^\infty k_n < \infty$.
 Prove that $f$ has a unique fixed point in $X$.
