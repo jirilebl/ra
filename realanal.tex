@@ -23,9 +23,6 @@
 \usepackage{color}
 \usepackage[headings]{fullpage}
 \usepackage{varioref}
-% if using [original] then makeglossaries doesn't get run
-% by glossaries automake unless \null is at the end and
-% then we add an extra page. UGH!
 \usepackage{imakeidx}
 \PassOptionsToPackage{hyphens}{url}
 \usepackage{hyperref} % do NOT set [ocgcolorlinks] here!
@@ -190,8 +187,6 @@
 }
 
 % Set up our index
-% If we clear page, glossaries doesn't run makeglossaries (with automake)
-\indexsetup{noclearpage}
 \makeindex
 
 % Very simple indexing
@@ -509,6 +504,22 @@ See \url{http://www.jirka.org/ra/} for more information
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\indexname}  
+\printindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+% automake on glossaries doesn't work if the index is before the glossary.
+% That's why the List of Notation is last, no other reason.  Problem is
+% that printindex does a clearpage which screws up the delayed write18
+% that glossaries sets up
+%
+
 \begingroup
 \renewcommand{\pagelistname}{Page}
 \setglossarystyle{long3colheader}
@@ -521,19 +532,8 @@ See \url{http://www.jirka.org/ra/} for more information
    \markboth{LIST OF NOTATION}{LIST OF NOTATION}
    \begin{longtable}{Sl @{\extracolsep{\fill}} Sl @{\extracolsep{\fill}} Sl}}%
   {\end{longtable}}%
+\cleardoublepage
 \printglossary[type=notation] 
 \endgroup
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{\indexname}  
-\printindex
-
-% Adding \null here make automake glossaries work but adds a page,
-% see \indexsetup{noclearpage} above
 
 \end{document}
