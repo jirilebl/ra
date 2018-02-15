@@ -706,7 +706,7 @@ $x_n = x$.  Prove that $\{ x_n \}$ converges to $x$.
 \begin{exercise}
 Let $\{ x_n \}$ be a sequence and
 define a sequence $\{ y_n \}$ by
-$y_{2k} := x_{k^2}$ and $y_{2k-1} = x_k$ for all $k \in \N$.
+$y_{2k} := x_{k^2}$ and $y_{2k-1} := x_k$ for all $k \in \N$.
 Prove that $\{ x_n \}$ converges if and only if $\{ y_n \}$ converges.
 Furthermore, prove that if they converge, then
 $\lim\, x_n = \lim\, y_n$.
@@ -1002,34 +1002,40 @@ write $z_n := x_n y_n$.  Let $x := \lim\, x_n$,
 $y := \lim\, y_n$, and $z := xy$.
 
 Let $\epsilon > 0$ be given.
-As $\{ x_n \}$ is convergent, it is bounded.  Therefore, find
-a $B >0$ such that $\abs{x_n} \leq B$ for all $n \in \N$.
+Let $K := \max\{ \abs{x}, \abs{y}, \nicefrac{\epsilon}{3} \}$.
 Find an $M_1$ such that for all $n \geq M_1$
 we have
-$\abs{x_n - x} < \frac{\epsilon}{2(\abs{y}+1)}$.  
+$\abs{x_n - x} < \frac{\epsilon}{3K}$.
 Find an $M_2$ such that for all $n \geq M_2$
 we have
-$\abs{y_n - y} < \frac{\epsilon}{2B}$.  Take $M := \max \{ M_1, M_2 \}$.
+$\abs{y_n - y} < \frac{\epsilon}{3K}$.  Take $M := \max \{ M_1, M_2 \}$.
 For all $n \geq M$ we have
 \begin{equation*}
 \begin{split}
 \abs{z_n - z} &=
 \abs{(x_ny_n) - (xy)} \\
 & =
-\abs{x_ny_n - (x+x_n-x_n)y} \\
+\abs{(x_n-x+x)(y_n-y+y) - xy} \\
 & =
-\abs{x_n(y_n -y) + (x_n - x)y} \\
+\abs{(x_n-x)y + x(y_n-y) +(x_n-x)(y_n-y)} \\
 & \leq
-\abs{x_n(y_n -y)} + \abs{(x_n - x)y} \\
+\abs{(x_n-x)y} + \abs{x(y_n - y)} +
+\abs{(x_n-x)(y_n-y)} \\
 & =
-\abs{x_n}\abs{y_n -y} + \abs{x_n - x}\abs{y} \\
-& \leq
-B\abs{y_n -y} + \abs{x_n - x}\abs{y} \\
-& <
-B\frac{\epsilon}{2B} + \frac{\epsilon}{2(\abs{y}+1)}\abs{y}
+\abs{x_n -x}\abs{y} + 
+\abs{x}\abs{y_n -y} + 
+\abs{x_n -x}\abs{y_n -y}
 \\
 & <
-\frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon .
+\frac{\epsilon}{3K} K + 
+K \frac{\epsilon}{3K} + 
+\frac{\epsilon}{3K}
+\frac{\epsilon}{3K}
+\qquad \qquad \text{(now notice that $\tfrac{\epsilon}{3K} \leq 1$)}
+\\
+& \leq
+\frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3}
+ = \epsilon .
 \end{split}
 \end{equation*}
 
@@ -1077,7 +1083,7 @@ We finish the proof of the claim:
 \abs{\frac{y - y_n}{y y_n}} \\
 & =
 \frac{\abs{y - y_n}}{\abs{y} \abs{y_n}} \\
-& <
+& \leq
 \frac{\abs{y - y_n}}{\abs{y}} \, \frac{2}{\abs{y}} \\
 & <
 \frac{\abs{y}^2 \frac{\epsilon}{2}}{\abs{y}} \, \frac{2}{\abs{y}}
@@ -1356,25 +1362,20 @@ If $c > 1$, then $\{ c^n \}$ is unbounded.
 \end{prop}
 
 \begin{proof}
-First suppose $c > 1$.  Write
-$c = 1+r$ for some $r > 0$.  By \hyperref[induction:thm]{induction} (or using the binomial theorem
-if you know it) we have Bernoulli's inequality (see also
-\exerciseref{exercise:bernoulliineq}):
-\begin{equation*}
-c^n = {(1+r)}^n \geq 1+nr .
-\end{equation*}
-By the \hyperref[thm:arch:i]{Archimedean property}
-of the real numbers, the sequence $\{ 1+nr \}$
-is unbounded (for any number $B$, we find an $n \in \N$ such that $nr \geq
-B-1$).  Therefore $c^n$ is unbounded.
+First suppose $c < 1$.  As $c > 0$, then $c^n > 0$ for all $n \in \N$ by
+\hyperref[induction:thm]{induction}.  As $c < 1$, then $c^{n+1} < c^n$ for all $n$.  So we have
+a decreasing sequence that is bounded below.  Hence, it is convergent.
+Let $L := \lim\, c^n$.  The 1-tail $\{ c^{n+1} \}$
+also converges to $L$.  Taking the limit of both sides of $c^{n+1} = c \cdot
+c^n$, we obtain $L = cL$, or $(1-c)L=0$.  It follows that $L=0$ as $c \not= 1$.
 
-Now suppose $c < 1$.  Write $c = \frac{1}{1+r}$, where $r > 0$.  Then
+Now suppose $c > 1$. Suppose for contradiction that the sequence is bounded above by $B > 0$, that is,
+$c^n \leq B$ for all $n \in \N$.  Then for all $n$,
 \begin{equation*}
-c^n = \frac{1}{{(1+r)}^n} \leq
-\frac{1}{1+nr} \leq \frac{1}{r} \frac{1}{n} .
+{\left(\frac{1}{c}\right)}^n = \frac{1}{c^n} \geq \frac{1}{B} > 0 .
 \end{equation*}
-As $\{ \frac{1}{n} \}$ converges to zero, so does
-$\{ \frac{1}{r} \frac{1}{n} \}$.  Hence, $\{ c^n \}$ converges to zero.
+As $\nicefrac{1}{c} < 1$, then $\{ {(\nicefrac{1}{c})}^n \}$
+converges to 0, contradicts the bound above.
 \end{proof}
 
 If we look at the above proposition, we note that the
