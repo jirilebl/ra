@@ -768,15 +768,26 @@ Then $\{ x_n \}$ converges and
 \end{equation*}
 \end{lemma}
 
-The intuitive idea of the proof is illustrated in
-\figureref{figsqueeze}.
-If $x$ is the limit of $a_n$ and $b_n$, then if they are both within
-$\nicefrac{\epsilon}{3}$ of $x$, then the distance between $a_n$ and $b_n$
-is at most $\nicefrac{2\epsilon}{3}$.  As $x_n$ is between $a_n$ and $b_n$
-it is at most $\nicefrac{2\epsilon}{3}$ from $a_n$.  Since $a_n$ is
-at most $\nicefrac{\epsilon}{3}$ away from $x$, then $x_n$ must be at
-most $\epsilon$ away from $x$.  Let us follow through on this intuition
-rigorously.
+\begin{proof}
+Let $x := \lim\, a_n = \lim\, b_n$.
+Let $\epsilon > 0$ be given.
+Find an $M_1$ such that for all $n \geq M_1$ we have
+that $\abs{a_n-x} < \epsilon$, and an $M_2$
+such that for all $n \geq M_2$
+we have $\abs{b_n-x} < \epsilon$.  Set $M := \max \{M_1, M_2 \}$.
+Suppose $n \geq M$.
+In particular, we have
+$x - a_n < \epsilon$ or 
+$x - \epsilon < a_n$.  Similarly we have that $b_n < x + \epsilon$.
+Putting everything together we find
+\begin{equation*}
+x - \epsilon < a_n \leq x_n \leq b_n < x + \epsilon .
+\end{equation*}
+In other words, $-\epsilon < x_n-x < \epsilon$ or $\abs{x_n-x} < \epsilon$.
+So $\{x_n\}$ converges to $x$.
+See \figureref{figsqueeze}.
+\end{proof}
+
 \begin{myfigureht}
 \newcommand{\ltepsilon}{< \nicefrac{2\epsilon}{3} + \nicefrac{\epsilon}{3} =
 \epsilon}
@@ -784,42 +795,11 @@ rigorously.
 \caption{Squeeze lemma proof in picture.\label{figsqueeze}}
 \end{myfigureht}
 
-\begin{proof}
-Let $x := \lim\, a_n = \lim\, b_n$.
-Let $\epsilon > 0$ be given.
-
-Find an $M_1$ such that for all $n \geq M_1$ we have
-that $\abs{a_n-x} < \nicefrac{\epsilon}{3}$, and an $M_2$
-such that for all $n \geq M_2$
-we have $\abs{b_n-x} < \nicefrac{\epsilon}{3}$.  Set $M := \max \{M_1, M_2 \}$.
-Suppose $n \geq M$.  We compute
-\begin{equation*}
-\begin{split}
-\abs{x_n - a_n} = x_n-a_n & \leq b_n-a_n \\
-& = \abs{b_n - x + x - a_n} \\
-& \leq \abs{b_n - x} + \abs{x - a_n} \\
-& < \frac{\epsilon}{3} + \frac{\epsilon}{3} = \frac{2\epsilon}{3} .
-\end{split}
-\end{equation*}
-Armed with this information we estimate
-\begin{equation*}
-\begin{split}
-\abs{x_n - x}
-&= \abs{x_n - x + a_n - a_n}
-\\
-&\leq \abs{x_n - a_n} + \abs{a_n - x}
-\\
-& < \frac{2\epsilon}{3} +  \frac{\epsilon}{3} = \epsilon .
-\end{split}
-\end{equation*}
-And we are done.
-\end{proof}
-
 \begin{example}
 One application of
 the \hyperref[squeeze:lemma]{squeeze lemma} is to compute limits of 
-sequences using limits that are already known.  For example, suppose 
-we have the sequence $\{ \frac{1}{n\sqrt{n}} \}$.
+sequences using limits that we already know.  For example, consider
+the sequence $\{ \frac{1}{n\sqrt{n}} \}$.
 Since $\sqrt{n} \geq 1$ for all $n \in \N$, we have
 \begin{equation*}
 0 \leq \frac{1}{n\sqrt{n}} \leq \frac{1}{n}
@@ -865,13 +845,13 @@ y_n-x_n < y-x+ \epsilon .
 \end{equation*}
 Since $x_n \leq y_n$ we have
 $0 \leq y_n-x_n$ and hence $0 < y-x+ \epsilon$.
-In other words
+In other words,
 \begin{equation*}
 x-y < \epsilon .
 \end{equation*}
-Because $\epsilon > 0$ was arbitrary we obtain
+Because $\epsilon > 0$ was arbitrary, we obtain
 $x-y \leq 0$.
-Therefore $x \leq y$.
+Therefore, $x \leq y$.
 \end{proof}
 
 The following corollary is
@@ -1618,6 +1598,7 @@ x_{n+1} := x_n - \frac{x_n^2-r}{2x_n}
 converges to $\sqrt{r}$ if $x_1 > 0$ and $-\sqrt{r}$ if $x_1 < 0$.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 {\ }
 \begin{enumerate}[a)]
@@ -1632,6 +1613,7 @@ Find an example where $\{ a_n \}$ is bounded, $\{ b_n \}$ converges to
 some $x \not= 0$, and $\{ a_n b_n \}$ is not convergent.
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}[Easy] \label{exercise:strongerratiotest1}
 Prove the following stronger version of \lemmaref{seq:ratiotest}, the ratio
