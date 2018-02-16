@@ -34,8 +34,8 @@ be a function such that for all $x,y,z \in X$
 \begin{enumerate}[(i)]
 %
 \item \label{metric:pos}
-\makebox[2.8in][l]{$d(x,y) \geq 0$,}
-(nonegativity)
+\makebox[2.8in][l]{$d(x,y) \geq 0$}
+(nonegativity),
 %
 \item \label{metric:zero}
 \makebox[2.8in][l]{$d(x,y) = 0$ if and only if $x = y$,}
@@ -43,8 +43,8 @@ be a function such that for all $x,y,z \in X$
 % is too much useless verbiage
 %
 \item \label{metric:com}
-\makebox[2.8in][l]{$d(x,y) = d(y,x)$,} 
-(symmetry)
+\makebox[2.8in][l]{$d(x,y) = d(y,x)$} 
+(symmetry),
 %
 \item \label{metric:triang}
 \makebox[2.8in][l]{$d(x,z) \leq d(x,y)+ d(y,z)$}
@@ -2809,7 +2809,7 @@ is called Lipschitz or $K$-Lipschitz if there exists a $K \in \R$ such that
 d_Y\bigl(f(p),f(q)\bigr) \leq K d_X(p,q)
 \ \ \ \ \text{for all } p,q \in X.
 \end{equation*}
-It is not difficult to prove that Lipschitz implies uniformly continuous:
+A function that is Lipschitz is uniformly continuous:
 just take $\delta = \nicefrac{\epsilon}{K}$.
 A function can be uniformly continuous
 but not Lipschitz,
@@ -3115,6 +3115,19 @@ Consider the equation $y' = y^2$, $y(0)=1$.  Then $y(x) = \frac{1}{1-x}$ is a
 solution.  While $F$ is a reasonably ``nice'' function and in particular
 it exists for all $x$ and $y$, the solution ``blows up'' at $x=1$.
 For more examples related to Picard's theorem see \sectionref{sec:picard}.
+
+It may be strange that we are looking in $C([a,b],\R)$ for a differentiable
+function, but the idea is to consider the corresponding
+integral equation
+\begin{equation*}
+f(x)
+=
+y_0 + \int_0^x F\bigl(t,f(t)\bigr)~dt .
+\end{equation*}
+To solve this integral equation we only need a continuous function, and
+in some sense our task should be easier---we have more candidate functions
+to try.  This way of thinking is very typical when solving differential
+equations.
 
 \begin{thm}[Picard's theorem on existence and uniqueness]%
 \index{existence and uniqueness theorem}\index{Picard's theorem}
