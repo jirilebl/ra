@@ -1079,26 +1079,26 @@ Let $(X,d)$ be a metric space and $A \subset X$.  Then
 the \emph{\myindex{closure}} of $A$ is the set
 \glsadd{not:closure}
 \begin{equation*}
-\overline{A} := \bigcap \{ E \subset X : \text{$E$ is closed and $A \subset
+\widebar{A} := \bigcap \{ E \subset X : \text{$E$ is closed and $A \subset
 E$} \} .
 \end{equation*}
 \end{defn}
 
 That is,
-$\overline{A}$ is the intersection of all closed sets that contain $A$.
+$\widebar{A}$ is the intersection of all closed sets that contain $A$.
 There is at least one closed set containing every $A$, namely $X$ itself.
-And in particular, $A \subset \overline{A}$.
+And in particular, $A \subset \widebar{A}$.
 
 \begin{prop}
-Let $(X,d)$ be a metric space and $A \subset X$.  The closure $\overline{A}$
-is closed.  Furthermore if $A$ is closed then $\overline{A} = A$.
+Let $(X,d)$ be a metric space and $A \subset X$.  The closure $\widebar{A}$
+is closed.  Furthermore if $A$ is closed then $\widebar{A} = A$.
 \end{prop}
 
 \begin{proof}
-The closure is an intersection of closed sets, so $\overline{A}$ is closed.
+The closure is an intersection of closed sets, so $\widebar{A}$ is closed.
 If $A$ is closed, then $A$ is a closed set that contains $A$,
-and so $\overline{A} \subset A$.  And since $A \subset \overline{A}$,
-we must have $A = \overline{A}$.
+and so $\widebar{A} \subset A$.  And since $A \subset \widebar{A}$,
+we must have $A = \widebar{A}$.
 \end{proof}
 
 \begin{example}
@@ -1121,19 +1121,19 @@ Let us justify the statement that the closure is everything that we can
 ``approach'' from the set.
 
 \begin{prop} \label{prop:msclosureappr}
-Let $(X,d)$ be a metric space and $A \subset X$.  Then $x \in \overline{A}$
+Let $(X,d)$ be a metric space and $A \subset X$.  Then $x \in \widebar{A}$
 if and only if for every $\delta > 0$, $B(x,\delta) \cap A \not=\emptyset$.
 \end{prop}
 
 \begin{proof}
 Let us prove the two contrapositives.
-Let us show that $x \notin \overline{A}$ if and only if there exists
+Let us show that $x \notin \widebar{A}$ if and only if there exists
 a $\delta > 0$ such that $B(x,\delta) \cap A = \emptyset$.
 
-First suppose $x \notin \overline{A}$.  We know $\overline{A}$ is
+First suppose $x \notin \widebar{A}$.  We know $\widebar{A}$ is
 closed.  Thus there is a $\delta > 0$ such that
-$B(x,\delta) \subset \overline{A}^c$.  As $A \subset \overline{A}$ we
-see that $B(x,\delta) \subset \overline{A}^c \subset A^c$ and hence
+$B(x,\delta) \subset \widebar{A}^c$.  As $A \subset \widebar{A}$ we
+see that $B(x,\delta) \subset \widebar{A}^c \subset A^c$ and hence
 $B(x,\delta) \cap A = \emptyset$.
 
 On the other hand, suppose there is a $\delta > 0$, such that
@@ -1142,8 +1142,8 @@ In other words,
 $A \subset {B(x,\delta)}^c$.
 As 
 ${B(x,\delta)}^c$ is a closed set, $x \not \in {B(x,\delta)}^c$,
-and $\overline{A}$ is the intersection
-of closed sets containing $A$, we have $x \notin \overline{A}$.
+and $\widebar{A}$ is the intersection
+of closed sets containing $A$, we have $x \notin \widebar{A}$.
 \end{proof}
 
 We can also talk about the interior of a set
@@ -1162,19 +1162,19 @@ $B(x,\delta) \subset A$} \} .
 The \emph{\myindex{boundary}} of $A$ is the set
 \glsadd{not:boundary}
 \begin{equation*}
-\partial A := \overline{A}\setminus A^\circ.
+\partial A := \widebar{A}\setminus A^\circ.
 \end{equation*}
 \end{defn}
 
 \begin{example}
 Suppose $A:=(0,1]$ and $X := \R$.  Then it is not hard
-to see that $\overline{A}=[0,1]$, $A^\circ = (0,1)$,
+to see that $\widebar{A}=[0,1]$, $A^\circ = (0,1)$,
 and $\partial A = \{ 0, 1 \}$.
 \end{example}
 
 \begin{example}
 Suppose $X := \{ a, b \}$ with the discrete metric.
-Let $A := \{ a \}$, then $\overline{A} = A^\circ = A$ and $\partial A =
+Let $A := \{ a \}$, then $\widebar{A} = A^\circ = A$ and $\partial A =
 \emptyset$.
 \end{example}
 
@@ -1192,7 +1192,7 @@ there is an $\epsilon > 0$ such that $B(z,\epsilon) \subset B(x,\delta)
 A^\circ$, and $A^\circ$ is open.
 
 As $A^\circ$ is open, then
-$\partial A = \overline{A} \setminus A^\circ = \overline{A} \cap
+$\partial A = \widebar{A} \setminus A^\circ = \widebar{A} \cap
 {(A^\circ)}^c$ is closed.
 \end{proof}
 
@@ -1214,7 +1214,7 @@ also its complement.\label{fig:msboundary}}
 \end{myfigureht}
 
 \begin{proof}
-Suppose $x \in \partial A =  \overline{A} \setminus A^\circ$ and
+Suppose $x \in \partial A =  \widebar{A} \setminus A^\circ$ and
 let $\delta > 0$ be arbitrary.
 By \propref{prop:msclosureappr}, $B(x,\delta)$ contains
 a point of $A$.  If $B(x,\delta)$ contained no points of $A^c$,
@@ -1223,9 +1223,9 @@ $A^c$ as well.
 
 Let us prove the other direction by contrapositive.  Suppose
 $x \notin \partial A$.
-If $x \notin \overline{A}$, then there is some $\delta > 0$ such that
-$B(x,\delta) \subset \overline{A}^c$ as $\overline{A}$ is closed.
-So $B(x,\delta)$ contains no points of $A$, because $\overline{A}^c \subset
+If $x \notin \widebar{A}$, then there is some $\delta > 0$ such that
+$B(x,\delta) \subset \widebar{A}^c$ as $\widebar{A}$ is closed.
+So $B(x,\delta)$ contains no points of $A$, because $\widebar{A}^c \subset
 A^c$.
 
 If $x \in A^\circ$, then there exists a $\delta > 0$
@@ -1238,7 +1238,7 @@ simply apply \propref{prop:msclosureappr}.
 
 \begin{cor}
 Let $(X,d)$ be a metric space and $A \subset X$.
-Then $\partial A = \overline{A} \cap \overline{A^c}$.
+Then $\partial A = \widebar{A} \cap \widebar{A^c}$.
 \end{cor}
 
 \subsection{Exercises}
@@ -1319,7 +1319,7 @@ Show that $\bigcup_{i=1}^\infty S_i$ is connected.
 Let $A$ be a connected set in a metric space.
 \begin{enumerate}[a)]
 \item
-Is $\overline{A}$ connected?  Prove or find a counterexample.
+Is $\widebar{A}$ connected?  Prove or find a counterexample.
 \item
 Is $A^\circ$ connected?  Prove or find a counterexample.
 \end{enumerate}
@@ -1671,12 +1671,12 @@ points that are limits of sequences in $A$.
 
 \begin{prop} \label{prop:msclosureapprseq}
 Let $(X,d)$ be a metric space and $A \subset X$.
-Then $x \in \overline{A}$ if and only if there exists a sequence $\{ x_n \}$ of
+Then $x \in \widebar{A}$ if and only if there exists a sequence $\{ x_n \}$ of
 elements in $A$ such that $\lim\, x_n = x$.
 \end{prop}
 
 \begin{proof}
-Let $x \in \overline{A}$.  For every $n \in \N$,
+Let $x \in \widebar{A}$.  For every $n \in \N$,
 by
 \propref{prop:msclosureappr} there
 exists a point $x_n \in B(x,\nicefrac{1}{n}) \cap A$.
@@ -1693,7 +1693,7 @@ Finish the proof of
 Let $(X,d)$ be a metric space and
 let $A \subset X$.  Let $E$ be the set of all $x \in X$ such that there
 exists a sequence $\{ x_n \}$ in $A$ that converges to $x$.  Show 
-$E = \overline{A}$.
+$E = \widebar{A}$.
 \end{exercise}
 
 \begin{exercise}
@@ -2000,7 +2000,7 @@ As $K$ is contained in a ball, $K$ is bounded.
 See left hand side of \figureref{fig:compactbndclosed}.
 
 Next, we show a set that is not closed is not compact.  Suppose 
-$\overline{K} \not= K$, that is, there is a point $x \in \overline{K}
+$\widebar{K} \not= K$, that is, there is a point $x \in \widebar{K}
 \setminus K$.
 If $y \not= x$, then
 $y \notin C(x,\nicefrac{1}{n})$
@@ -2855,7 +2855,7 @@ $f \colon X \to Y$ is continuous.
 Let $A \subset X$.
 \begin{enumerate}[a)]
 \item
-Show that $f(\overline{A}) \subset \overline{f(A)}$.
+Show that $f(\widebar{A}) \subset \overline{f(A)}$.
 \item
 Show that the subset can be proper.
 \end{enumerate}
