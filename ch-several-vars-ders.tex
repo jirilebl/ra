@@ -30,7 +30,7 @@ vectors $y_1,y_2,\ldots$.}
 
 It is common to write and treat vectors as
 \emph{\myindex{column vectors}}, that is, $n \times 1$ matrices:
-%\glsadd{not:vectorcol} FIXME: doesn't seem to work.
+\glsadd{not:vectorcol}
 \begin{equation*}
 v =
 (v_1,v_2,\ldots,v_n) =
@@ -331,7 +331,7 @@ Every $y \in X$ is a linear combination of elements of $B$
 since $X$ is the span of $B$.  For uniqueness
 suppose
 \begin{equation*}
-y = \sum_{j=1}^k a_j x_j = \sum_{j=1}^k b_j x_j ,
+y = \sum_{j=1}^k a_j \, x_j = \sum_{j=1}^k b_j \, x_j ,
 \end{equation*}
 then
 \begin{equation*}
@@ -354,7 +354,7 @@ A direct computation shows that $\{ e_1, e_2, \ldots, e_n \}$ is really
 a basis of $\R^n$; it spans $\R^n$ and is
 linearly independent.  In fact,
 \begin{equation*}
-x = (x_1,x_2,\ldots,x_n) = \sum_{j=1}^n x_j e_j .
+x = (x_1,x_2,\ldots,x_n) = \sum_{j=1}^n x_j \, e_j .
 \end{equation*}
 
 \begin{prop} \label{mv:dimprop}
@@ -1267,7 +1267,7 @@ so the inverse operation is a continuous function at $A$.
 
 \subsection{Matrices}
 
-As we previously noted, once we fix a basis in a finite dimensional
+Once we fix a basis in a finite dimensional
 vector space $X$, we can represent a vector of $X$ as an $n$-tuple of
 numbers, that is a vector in $\R^n$.  The same thing
 can be done with $L(X,Y)$, which brings us to matrices,
@@ -1276,13 +1276,13 @@ finite-dimensional linear transformations.
 Suppose $\{ x_1, x_2, \ldots, x_n \}$ and $\{ y_1, y_2, \ldots, y_m \}$
 are bases for vector spaces $X$ and $Y$ respectively.  A linear operator is 
 determined by its values on the basis.  Given $A \in L(X,Y)$,
-$A x_j$ is an element of $Y$.  Therefore,
-define the numbers
-$\{ a_{i,j} \}$ as follows
+$A x_j$ is an element of $Y$.  Define the numbers
+$a_{i,j}$ as follows
 \begin{equation*}
 A x_j = \sum_{i=1}^m a_{i,j} \, y_i ,
 \end{equation*}
 and write them as a \emph{\myindex{matrix}}
+\glsadd{not:matrix}
 \begin{equation*}
 A =
 \begin{bmatrix}
@@ -1292,9 +1292,10 @@ a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
 a_{m,1} & a_{m,2} & \cdots & a_{m,n}
 \end{bmatrix} .
 \end{equation*}
-And we say $A$ is an $m$-by-$n$ matrix.
+We sometimes write $A$ as $[a_{i,j}]$.
+We say $A$ is an $m$-by-$n$ matrix.
 The \emph{\myindex{columns}} of the matrix are precisely the coefficients
-that represent $A x_j$.
+that represent $A x_j$, in terms of the basis $\{ y_1,y_2,\ldots,y_m \}$.
 Let us derive the familiar rule for matrix multiplication.
 %If we represent the basis vector $x_j$ as 
 %a column vector of $n$ numbers (an $n \times 1$ matrix)
@@ -1321,7 +1322,6 @@ Let us derive the familiar rule for matrix multiplication.
 %That is, we obtain a vector representing $Ax_j$ in 
 %terms of the basis $\{ y_1,y_2,\ldots,y_m \}$.
 
-%In general when
 When
 \begin{equation*}
 z = \sum_{j=1}^n c_j \, x_j ,
@@ -1338,9 +1338,9 @@ A z =
 which gives rise to the familiar rule for matrix multiplication.
 
 There is a one-to-one correspondence between matrices and linear operators in
-$L(X,Y)$.  That is, once we fix a basis in $X$ and in $Y$.  If we would
-choose a different basis, we would get different matrices.  This is
-important, the operator $A$ acts on elements of $X$, the matrix
+$L(X,Y)$, once we fix a basis in $X$ and in $Y$.  If we 
+choose a different basis, we get different matrices.  This is
+important distinction, the operator $A$ acts on elements of $X$, the matrix
 is something that works with $n$-tuples of numbers, that is, vectors of
 $\R^n$.
 
@@ -1395,15 +1395,16 @@ operator norm.  We proved the first part of:
 \begin{prop}
 If $f \colon S \to \R^{nm}$ is a continuous function
 for a metric space $S$,
-then taking the components of $f$ as the entries of a matrix,
+then considering the components of $f$ as the entries of a matrix,
 $f$ is a continuous mapping from $S$
 to $L(\R^n,\R^m)$.
-Conversely, if $f \colon S \to L(\R^n,\R^m)$ is a continuous
-function, then the entries of the matrix are continuous functions.
+Conversely,
+if $f \colon S \to L(\R^n,\R^m)$ is a continuous function,
+then the entries of the corresponding matrix are continuous functions.
 \end{prop}
 
-The proof of the second part is rather easy.  Take $f(x) e_j$ and note 
-that is a continuous function to $\R^m$ with standard Euclidean norm:
+The proof of the second part is rather easy.  Take $f(x) e_j$, which
+is a continuous function of $S$ to $\R^m$ with standard Euclidean norm:
 $\snorm{f(x) e_j - f(y) e_j} = 
 \snorm{\bigl(f(x)- f(y) \bigr) e_j} \leq
 \snorm{f(x)- f(y)}$, so as $x \to y$, then

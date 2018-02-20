@@ -613,12 +613,25 @@ $\frac{\partial(f_1,f_2,\ldots,f_n)}{\partial(x_1,x_2,\ldots,x_n)}$},
   description={continuously differentiable function/mapping},
 }
 
-%FIXME: matrices do not seem to work
-%\newglossaryentry{not:vectorcol}{
-  %type=notation,
-  %name={$\left[ \begin{smallmatrix}v_1\\\vdots\\v_n\end{smallmatrix} \right]$},
-  %description={vector (column vector)},
-%}
+\newcommand{\notsamplevectorcol}{$\left[
+\begin{smallmatrix}v_1\\\vdots\\v_n\end{smallmatrix} \right]$}
+\newglossaryentry{not:vectorcol}{
+  type=notation,
+  name={\protect\notsamplevectorcol},
+  description={vector (column vector)},
+}
+
+\newcommand{\notsamplematrix}{$\left[
+\begin{smallmatrix}
+a_{1,1} & \cdots & a_{1,n}\\
+\vdots & \ddots & \vdots \\
+a_{m,1} & \cdots & a_{m,n}
+\end{smallmatrix} \right]$}
+\newglossaryentry{not:matrix}{
+  type=notation,
+  name={\protect\notsamplematrix},
+  description={matrix},
+}
 
 \newglossaryentry{not:Ck}{
   type=notation,
