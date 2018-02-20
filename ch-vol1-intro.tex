@@ -15,7 +15,7 @@ Later I added the metric space chapter to teach Math 521 at University of
 Wisconsin--Madison (UW).
 Volume II was added to teach Math 4143/4153 at Oklahoma State University
 (OSU).
-A prerequisite for this course is a basic proof course,
+A prerequisite for these courses is usually a basic proof course,
 using 
 for example~\cite{Hammack}, \cite{GIAM}, or \cite{DW}.
 
@@ -134,7 +134,8 @@ Analysis is the branch of mathematics that deals with inequalities and
 limits.  The present course deals with the most basic 
 concepts in analysis.  The goal of the course is to acquaint the reader
 with rigorous proofs in analysis and also to
-set a firm foundation for calculus of one variable.
+set a firm foundation for calculus of one variable (and several variables if
+volume II is also considered).
 
 Calculus has prepared you, the student, for using mathematics without telling
 you why what you learned is true.  To use, or teach, mathematics
@@ -152,7 +153,8 @@ integral or the derivative may not be able to properly answer all the
 students' questions.
 To this day I remember several nonsensical statements I heard
 from my calculus teacher in high school, who simply did not understand
-the concept of the limit, though he could ``do'' all problems in calculus.
+the concept of the limit, though he could ``do'' the problems in in the
+textbook.
 
 \medskip
 
@@ -217,7 +219,8 @@ Let us get on with the show\ldots
 \section{Basic set theory} \label{sec:basicset}
 \index{set theory}
 
-\sectionnotes{1--3 lectures (some material can be skipped or covered lightly)}
+\sectionnotes{1--3 lectures (some material can be skipped, covered lightly,
+or left as reading)}
 
 Before we start talking about analysis, we need to fix some language.
 Modern\footnote{The term ``modern'' refers to late 19th century up to
@@ -226,7 +229,7 @@ analysis uses the language of sets, and therefore that is where we start.
 We talk about sets in a rather informal way, using the so-called
 ``\myindex{na\"ive set theory}.''  Do not worry, that is what majority of
 mathematicians use, and it is hard to get into trouble.
-We assume the reader has seen the very basics of set theory
+The reader has hopefully seen the very basics of set theory
 and proof writing before, and this section should be a quick refresher.
 
 \subsection{Sets}
@@ -813,6 +816,97 @@ $g \circ f \colon A \to C$ is defined as
 \end{equation*}
 \end{defn}
 
+\subsection{Relations and equivalence classes}
+
+We often compare two objects in some way.  We say $1 < 2$
+for natural numbers, or $\nicefrac{1}{2} = \nicefrac{2}{4}$ for rational
+numbers, or $\{ a,c \} \subset \{ a,b,c \}$ for sets.  These are examples of
+relations.
+
+\begin{defn}
+Given a set $A$, a \emph{\myindex{binary relation}}\index{relation} on $A$
+is a subset $\sR \subset A \times A$,
+which are those pairs where the relation is said to hold.
+Instead of $(a,b) \in \sR$, we write
+$a \, \sR \, b$.
+\end{defn}
+
+\begin{example}
+Take $A := \{ 1,2,3 \}$.
+
+First, let the relation be `$<$'.  Then the corresponding set 
+of pairs is $\{ (1,2), (1,3), (2,3) \}$.  So $1 < 2$ holds as $(1,2)$ is in
+the set, but $3 < 1$ does not hold as $(3,1)$ is not in the set.
+
+Similarly, the relation `$=$'
+is defined by the pairs $\{ (1,1), (2,2), (3,3) \}$.
+
+Any subset of $A \times A$ is a relation.  Let us define the relation
+$\dagger$ via $\{ (1,2), (2,1), (2,3), (3,1) \}$, then $1 \dagger 2$ and
+$3 \dagger 1$ are
+true, but $1 \dagger 3$ is not.
+\end{example}
+
+\begin{defn}
+Let $\sR$ be a relation on a set $A$.  Then $\sR$ is said to be
+\begin{enumerate}[(i)]
+\item
+\emph{reflexive}\index{reflexive relation} if $a\, \sR \, a$ for
+all $a \in A$.
+\item
+\emph{symmetric}\index{symmetric relation} if $a\, \sR \, b$ implies
+$b \, \sR \, a$.
+\item
+\emph{transitive}\index{transitive relation} if $a\, \sR \, b$ and
+$b \, \sR \, c$ implies $a\, \sR \, c$.
+\end{enumerate}
+If $\sR$ is reflexive, symmetric, and transitive, then it is said to be
+an \emph{\myindex{equivalence relation}}.
+\end{defn}
+
+\begin{example}
+Let $A := \{ 1,2,3 \}$ as above.
+The relation `$<$' is transitive, but neither reflexive nor symmetric.  The
+relation `$\leq$' defined by
+$\{ (1,1), (1,2), (1,3), (2,2), (2,3), (3,3) \}$
+is reflexive and transitive, but not symmetric.
+Finally, a relation `$\star$' defined by $\{ (1,1), (1,2), (2,1), (2,2), (3,3) \}$ is
+an equivalence relation.
+\end{example}
+
+Equivalence relations are useful in that they divide a set into sets of
+``equivalent'' elements.
+
+\begin{defn}
+Let $A$ be a set and $\sR$ an equivalence relation.
+An \emph{\myindex{equivalence class}} of $a \in A$, often denoted
+by $[a]$,\glsadd{not:equivclass} is the set $\{ x \in A : a\, \sR \, x \}$.
+\end{defn}
+
+For example for the relation `$\star$' above, the equivalence classes
+are $[1] = [2] = \{ 1,2 \}$ and $[3] = \{ 3 \}$.
+
+Reflexivity guarantees that $a \in [a]$.  Symmetry, guarantees
+that if $b \in [a]$, then $a \in [b]$.  Finally transitivity guarantees that
+if $a \in [b]$ and $b \in [c]$, then $a \in [c]$.
+In particular, we have the following proposition, whose proof is an
+exercise.
+
+\begin{prop} \label{prop:equivclasses}
+If $\sR$ is an equivalence relation on a set $A$,
+then every $a \in A$ is in exactly one
+equivalence class.  In particular, $a\, \sR \, b$ if and only $[a] = [b]$.
+\end{prop}
+
+\begin{example} \label{example:ratnums}
+The set of rational numbers can be defined as equivalence classes of
+a pair of an integer and a natural number,
+that is elements of $\Z \times \N$.  The relation
+is defined by $(a,b) \sim (c,d)$ whenever $ad = bc$.
+It is left as an exercise to prove that `$\sim$' is an equivalence relation,
+Usually the equivalence class $[(a,b)]$ is written as $\nicefrac{a}{b}$.
+\end{example}
+
 \subsection{Cardinality}
 
 A subtle issue in set theory and one generating a considerable amount of
@@ -943,7 +1037,8 @@ As a consequence if $\abs{A} < \abs{\N}$ then $A$ is
 finite.
 Similarly, if $B$ is finite and $A \subset B$, then $A$ is finite.
 
-We give the first truly striking result.  First, we need a notation for
+We give the first truly striking result.
+First, we need a notation for
 the set of all subsets of a set.
 
 \begin{defn}
@@ -953,8 +1048,11 @@ The \emph{\myindex{power set}} of a set $A$, denoted by $\sP(A)$,
 
 For example, if $A := \{ 1,2\}$,
 then $\sP(A) = \bigl\{ \emptyset, \{ 1 \}, \{ 2 \}, \{ 1, 2 \} \bigr\}$.
-For a finite set $A$ of cardinality $n$, the
-cardinality of $\sP(A)$ is $2^n$.  This fact is left as an exercise.  
+In particuarl note that $\abs{A} = 2$ and $\abs{\sP(A)} = 4 = 2^2$.
+In fact, in general,
+for a finite set $A$ of cardinality $n$, the
+cardinality of $\sP(A)$ is $2^n$.
+This fact is left as an exercise.  
 Hence, for finite sets
 the cardinality of $\sP(A)$ is strictly
 larger than the
@@ -1163,6 +1261,19 @@ is nonempty and finite.
 \begin{exercise}
 Suppose $A \subset B$ and $B$ is finite. Prove that $A$ is finite.
 That is, if $A$ is nonempty, construct a bijection of $A$ to $\{ 1,2,\ldots,n \}$.
+\end{exercise}
+
+\begin{exercise}
+Prove \propref{prop:equivclasses}.  That is, prove that if $\sR$ is an
+equivalence relation on a set $A$, then every $a \in A$ is in exactly one
+equivalence class.  Then prove that $a \, \sR \, b$ if and only if $[a] =
+[b]$.
+\end{exercise}
+
+\begin{exercise}
+Prove that the relation `$\sim$'
+in \exerciseref{example:ratnums} is an equivalence
+relation.
 \end{exercise}
 
 \begin{exercise}
