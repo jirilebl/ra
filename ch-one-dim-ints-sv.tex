@@ -130,14 +130,14 @@ f'(y) = \int_0^1 -2y\cos(x^2-y^2) ~dx .
 \end{equation*}
 \end{example}
 
-\begin{example}
+\begin{example} \label{example:counterexamplediffunder}
 Suppose we start with
 \begin{equation*}
 \int_0^{1} \frac{x-1}{\ln(x)} ~dx .
 \end{equation*}
 The function under the integral 
 extends to be continuous on $[0,1]$, and hence
-the integral exists, see exercise below.  Trouble is finding it.  Introduce a parameter $y$
+the integral exists, see \exerciseref{exercise:counterexamplediffunder}.  Trouble is finding it.  Introduce a parameter $y$
 and define a function:
 \begin{equation*}
 g(y) := \int_0^{1} \frac{x^y-1}{\ln(x)} ~dx .
@@ -165,16 +165,21 @@ We need to figure out $g(1)$, knowing $g'(y) = \frac{1}{y+1}$ and $g(0) =
 \end{equation*}
 \end{example}
 
-\begin{exercise}
-Prove the two statements that were asserted in the example.\\
-a) Prove $\frac{x-1}{\ln(x)}$ extends to a continuous function of
-$[0,1]$.  That is, there exists a continuous function on $[0,1]$
-that equals $\frac{x-1}{\ln(x)}$ on $(0,1)$.\\
-b) Prove $\frac{x^y-1}{\ln(x)}$ extends to a continuous function
-on $[0,1] \times [0,1]$.
-\end{exercise}
-
 \subsection{Exercises}
+
+\begin{exercise} \label{exercise:counterexamplediffunder}
+Prove the two statements that were asserted in
+\exampleref{example:counterexamplediffunder}:
+\begin{enumerate}[a)]
+\item
+Prove $\frac{x-1}{\ln(x)}$ extends to a continuous function of
+$[0,1]$.  That is, there exists a continuous function on $[0,1]$
+that equals $\frac{x-1}{\ln(x)}$ on $(0,1)$.
+\item
+Prove $\frac{x^y-1}{\ln(x)}$ extends to a continuous function
+on $[0,1] \times [0,1]$.
+\end{enumerate}
+\end{exercise}
 
 \begin{exercise}
 Suppose $h \colon \R \to \R$ is a continuous function.  Suppose $g
@@ -231,7 +236,9 @@ f(x,y) :=
 0 & \text{if $x=0$ and $y=0$.}
 \end{cases}
 \end{equation*}
-a) Prove that for any fixed $y$ the function $x \mapsto f(x,y)$ is
+\begin{enumerate}[a)]
+\item
+Prove that for any fixed $y$ the function $x \mapsto f(x,y)$ is
 Riemann integrable on $[0,1]$ and
 \begin{equation*}
 g(y) = \int_0^1 f(x,y) ~ dx = \frac{y}{2y^2+2} .
@@ -240,9 +247,11 @@ Therefore $g'(y)$ exists and we get the continuous function
 \begin{equation*}
 g'(y) = \frac{1-y^2}{2{(y^2+1)}^2} .
 \end{equation*}
-b) Prove $\frac{\partial f}{\partial y}$ exists at all $x$ and $y$ and
+\item
+Prove $\frac{\partial f}{\partial y}$ exists at all $x$ and $y$ and
 compute it.\\
-c) Show that for all $y$
+\item
+Show that for all $y$
 \begin{equation*}
 \int_0^1 \frac{\partial f}{\partial y} (x,y) ~ dx
 \end{equation*}
@@ -250,6 +259,7 @@ exists but
 \begin{equation*}
 g'(0) \not= \int_0^1 \frac{\partial f}{\partial y} (x,0) ~ dx .
 \end{equation*}
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -261,16 +271,20 @@ xy^2 \sin\bigl(\frac{1}{x^3y}\bigr) & \text{if $x\not=0$ and $y\not= 0$,}\\
 0 & \text{if $x=0$ or $y=0$.}
 \end{cases}
 \end{equation*}
-a) Prove $f$ is continuous on $[0,1] \times [a,b]$ for any interval
+\begin{enumerate}[a)]
+\item
+Prove $f$ is continuous on $[0,1] \times [a,b]$ for any interval
 $[a,b]$. Therefore the following function is well defined on $[a,b]$
 \begin{equation*}
 g(y) = \int_0^1 f(x,y) ~ dx .
 \end{equation*}
-b) Prove $\frac{\partial f}{\partial y}$ exists for all $(x,y)$ in
+\item
+Prove $\frac{\partial f}{\partial y}$ exists for all $(x,y)$ in
 $[0,1] \times [a,b]$, but is not continuous.
-\\
-c) Show that $\int_0^1 \frac{\partial f}{\partial y}(x,y) ~ dx$ does not
+\item
+Show that $\int_0^1 \frac{\partial f}{\partial y}(x,y) ~ dx$ does not
 exist if $y \not= 0$ even if we take improper integrals.
+\end{enumerate}
 \end{exercise}
 
 %\begin{exercise}
@@ -349,8 +363,6 @@ interested in, although how we parametrize it with $\gamma$ is also
 important to some degree.  We informally talk about a curve, and often
 we really mean the set $\gamma\bigl([a,b]\bigr)$, just as before depending
 on context.
-%defined the word curve to be any function $\gamma \colon [a,b] \to \R^n$
-%without the derivative condition.
 
 \begin{example} \label{mv:example:unitsquarepath}
 Let $\gamma \colon [0,4] \to \R^2$ be defined by
@@ -465,11 +477,6 @@ Since $h$ is bijective, it is either strictly increasing or
 strictly decreasing.  Therefore either $(h|_{[t_{j-1},t_j]})'(t) > 0$
 for all $t$ or $(h|_{[t_{j-1},t_j]})'(t) < 0$ for all $t$.
 
-%Let us remark that if $h$ is smooth since the function $h'$ is continuous and $h'(t) \not= 0$ for all $t
-%\in [c,d]$, then if $h'(t) < 0$ for one $t \in [c,d]$, then $h'(t) < 0$ for
-%all $t \in [c,d]$ by the intermediate value theorem.  That is, $h'(t)$ has
-%the same sign at every $t \in [c,d]$.
-
 \begin{prop} \label{prop:reparamapiecewisesmooth}
 If $\gamma \colon [a,b] \to \R^n$ is a piecewise smooth path,
 and $\gamma \circ h \colon [c,d] \to \R^n$ is
@@ -485,11 +492,6 @@ then for some partition
 $r_0 = c < r_1 < r_2 < \cdots < r_\ell = d$, we have
 $h|_{[t_{j-1},t_j]}$ is continuously differentiable with positive
 derivative.
-
-%, then 
-%$h'(t)$ has the same sign for all $t \in [c,d]$.  It is a bijective
-%mapping with a continuously differentiable inverse, it is either strictly
-%increasing or strictly decreasing.
 
 Let $t_0 = a < t_1 < t_2 < \cdots < t_k = b$ be the partition from the
 definition of piecewise smooth for $\gamma$ together with the 
@@ -519,12 +521,6 @@ Therefore $\gamma \circ h$ is a piecewise smooth path.  The case for an
 orientation reversing $h$ is left as an exercise.
 \end{proof}
 
-%One need not have the reparametrization be smooth at all points, it really
-%only needs to be again ``piecewise smooth,'' but the above definition will
-%suffice for us and it keeps matters simpler, the generalization is left as
-%an exercise.
-
-%Furthermore,
 If two paths are simple and their images are the same, it is
 left as an exercise that there exists a reparametrization.
 
@@ -854,19 +850,6 @@ $\gamma^{\:\prime}(t) = 0$ for all $t$ and $\gamma\bigl([a,b]\bigr)$ is a single
 point, which we regard as a ``curve'' of length zero.  Then,
 $\int_{\gamma} \omega = 0$.
 
-
-%We end with a definition.  A path $\gamma \colon [a,b] \to \R^n$ is
-%\emph{closed}\index{closed path}, if $\gamma(a) = \gamma(b)$.  It turns out
-%that for a closed path, it does not matter where the point is that we start
-%and end with is.  It only matters on the direction in which we traverse the
-%path.  See the exercises.
-
-%We end with a definition.  A path $\gamma \colon [a,b] \to \R^n$ is
-%\emph{closed}\index{closed path}, if $\gamma(a) = \gamma(b)$.  It turns out
-%that for a closed path, it does not matter where the point is that we start
-%and end with is.  It only matters on the direction in which we traverse the
-%path.  See the exercises.
-
 \subsection{Line integral of a function}
 
 Sometimes we wish to simply integrate a function against the so-called
@@ -1030,18 +1013,16 @@ reversing reparametrizations.
 Prove \propref{mv:prop:pathconcat}.
 \end{exercise}
 
-
-%\begin{exercise}
-%Show that if $h \colon [c,d] \to [a,b]$ is piecewise smooth bijective
-%function (same definition as for paths, in fact you could think of it as a
-%path into $\R$) and $\varphi \colon [a,b] \to \R^n$ is a piecewise smooth
-%path, then $\varphi \circ h$ is also a piecewise smooth path.
-%\end{exercise}
-
 \begin{exercise} \label{mv:exercise:pathpiece}
 Finish the proof of \propref{mv:prop:pathintrepararam}
-for a)~orientation reversing reparametrizations, and b)~piecewise smooth paths
+for
+\begin{enumerate}[a)]
+\item
+orientation reversing reparametrizations, and
+\item
+piecewise smooth paths
 and reparametrizations.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{mv:exercise:linepiece}
@@ -1057,15 +1038,18 @@ Provide a definition of $\int_{\gamma} f ~ds$.
 \end{exercise}
 
 \begin{exercise}
-Directly using the definitions compute:\\
-a)~the arc-length of the unit square from
+Directly using the definitions compute:
+\begin{enumerate}[a)]
+\item
+the arc-length of the unit square from
 \exampleref{mv:example:unitsquarepath} using the given parametrization.
-\\
-b)~the arc-length of the unit circle using the parametrization
+\item
+the arc-length of the unit circle using the parametrization
 $\gamma \colon [0,1] \to \R^2$, $\gamma(t) := \bigl(\cos(2\pi t),\sin(2\pi t)\bigr)$.
-\\
-c)~the arc-length of the unit circle using the parametrization
+\item
+the arc-length of the unit circle using the parametrization
 $\beta \colon [0,2\pi] \to \R^2$, $\beta(t) := \bigl(\cos(t),\sin(t)\bigr)$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1103,7 +1087,10 @@ of piecewise smooth path).
 \end{exercise}
 
 \begin{exercise}
-a)~Suppose $\gamma \colon [a,b] \to \R^n$ and $\alpha \colon [c,d] \to \R^n$
+{\ }
+\begin{enumerate}[a)]
+\item
+Suppose $\gamma \colon [a,b] \to \R^n$ and $\alpha \colon [c,d] \to \R^n$
 are two smooth paths which are one-to-one and
 $\gamma\bigl([a,b]\bigr) = \alpha\bigl([c,d]\bigr)$.  Then
 there exists a smooth reparametrization $h \colon [a,b] \to [c,d]$
@@ -1111,14 +1098,15 @@ such that $\gamma = \alpha \circ h$.  Hint: It should be not hard to find
 some $h$.  The trick is to show it is continuously differentiable
 with a nonvanishing derivative.  You will want to apply the implicit function
 theorem and it may at first seem the dimensions don't seem to work out.
-\\
-b) Prove the same thing as part a, but now for simple closed paths with the
+\item
+Prove the same thing as part a, but now for simple closed paths with the
 further assumption that $\gamma(a) = \gamma(b) = \alpha(c) = \alpha(d)$.
-\\
-c) Prove parts a) and b) but for piecewise smooth paths, obtaining
+\item
+Prove parts a) and b) but for piecewise smooth paths, obtaining
 piecewise smooth reparametrizations.  Hint: The trick is to find two
 partitions such that when restricted to a subinterval of the partition
 both paths have the same image and are smooth, see the above exercise.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise} 
@@ -1187,24 +1175,30 @@ Define $\gamma \colon [0,1] \to \R^2$ by
 $\gamma(t) := \Bigl( t^3 \sin(\nicefrac{1}{t}),
 t{\bigl(3t^2\sin(\nicefrac{1}{t})-t\cos(\nicefrac{1}{t})\bigr)}^2 \Bigr)$
 for
-$t \not= 0$ and $\gamma(0) = (0,0)$.  Show that:\\
-a) $\gamma$ is continuously differentiable on $[0,1]$.\\
-b) Show that there exists an infinite sequence $\{ t_n \}$ in $[0,1]$
+$t \not= 0$ and $\gamma(0) = (0,0)$.  Show that:
+\begin{enumerate}[a)]
+\item
+$\gamma$ is continuously differentiable on $[0,1]$.
+\item
+Show that there exists an infinite sequence $\{ t_n \}$ in $[0,1]$
 converging to 0, such that
-$\gamma^{\:\prime}(t_n) = (0,0)$. \\
-c) Show that the points $\gamma(t_n)$ lie on the line $y=0$ and such
+$\gamma^{\:\prime}(t_n) = (0,0)$.
+\item
+Show that the points $\gamma(t_n)$ lie on the line $y=0$ and such
 that the $x$-coordinate of $\gamma(t_n)$ alternates between positive and
 negative (if they do not alternate you only found a subsequence
-and you need to find them all).\\
-d) Show that there is no piecewise smooth $\alpha$ whose image equals
+and you need to find them all).
+\item
+Show that there is no piecewise smooth $\alpha$ whose image equals
 $\gamma\bigl([0,1]\bigr)$.  Hint: look at part c) and show that $\alpha'$
 must be zero where it reaches the origin.
-\\
-e) (Computer) if you know a plotting software that allows you to plot
+\item
+(Computer) if you know a plotting software that allows you to plot
 parametric curves, make a plot of the curve, but only for $t$ in the
 range $[0,0.1]$ otherwise you will not see the behavior.  In particular, you
 should notice that $\gamma\bigl([0,1]\bigr)$ has infinitely many ``corners''
 near the origin.
+\end{enumerate}
 \end{exercise}
 \end{samepage}
 
@@ -1673,17 +1667,20 @@ Hint 3: See previous exercise.
 \end{exercise}
 
 \begin{exercise}
-a)
+{\ }
+\begin{enumerate}[a)]
+\item
 Show that a connected open set is path connected.  Hint: Start with two
 points $x$ and $y$ in a connected set $U$, and let $U_x \subset U$ is the set of points that are
 reachable by a path from $x$ and similarly for $U_y$.  Show that both sets
 are open, since they are nonempty ($x \in U_x$ and $y \in U_y$) it must be
 that $U_x = U_y = U$.
-\\
-b) Prove the converse that is, a path connected set $U \subset \R^n$ is
+\item
+Prove the converse that is, a path connected set $U \subset \R^n$ is
 connected.  Hint: for contradiction assume there exist two open and disjoint nonempty open
 sets and then assume there is a piecewise smooth (and therefore continuous)
 path between a point in one to a point in the other.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}

@@ -701,12 +701,7 @@ this simply take any $x \in \R^2 \setminus \{0\}$ and let $y:=-x$.
 Then $(\nicefrac{1}{2})x + (\nicefrac{1}{2})y = 0$, which is not in the set.
 On the other hand, the ball $B(x,r) \subset \R^n$ (using the standard metric
 on $\R^n$)
-is convex by the triangle inequality.
-
-\begin{exercise}
-Show that in $\R^n$ any ball $B(x,r)$ for $x \in \R^n$ and $r > 0$ is
-convex.
-\end{exercise}
+is convex by the triangle inequality (exercise).
 
 \begin{example}
 As a convex combination is in particular a linear combination,
@@ -787,6 +782,12 @@ is convex, therefore it must be the convex hull.
 \end{example}
 
 \subsection{Exercises}
+
+\begin{exercise}
+Show that in $\R^n$ any ball $B(x,r)$ for $x \in \R^n$ and $r > 0$ is
+convex.
+\end{exercise}
+
 
 \begin{exercise}
 Verify that $\R^n$ is a vector space.
@@ -870,12 +871,15 @@ $A_{jk} x_\ell = 0$ if $\ell \not= j$.
 
 \begin{exercise}[Easy]
 Suppose $X$ and $Y$ are vector spaces and $A \in L(X,Y)$ is a linear
-operator.\\
-a) Show that the nullspace $N := \{ x \in X : Ax = 0 \}$ is a
+operator.
+\begin{enumerate}[a)]
+\item
+Show that the nullspace $N := \{ x \in X : Ax = 0 \}$ is a
 vectorspace.
-\\
-b) Show that the range $R := \{ y \in Y : Ax = y \text{ for some $x \in X$} \}$ is a
+\item
+Show that the range $R := \{ y \in Y : Ax = y \text{ for some $x \in X$} \}$ is a
 vectorspace.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}[Easy]
@@ -1761,10 +1765,14 @@ For $\R^n$ define
 \begin{equation*}
 \snorm{x}_{\infty} := \max \{ \abs{x_1}, \abs{x_2}, \ldots, \abs{x_n} \} ,
 \end{equation*}
-sometimes called the sup or the max norm.\\
-a) Show that $\snorm{\cdot}_\infty$ is a norm on $\R^n$ (defining a different
-distance).\\
-b) What is the unit ball $B(0,1)$ in this norm?
+sometimes called the sup or the max norm.
+\begin{enumerate}[a)]
+\item
+Show that $\snorm{\cdot}_\infty$ is a norm on $\R^n$ (defining a different
+distance).
+\item
+What is the unit ball $B(0,1)$ in this norm?
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1772,16 +1780,22 @@ For $\R^n$ define
 \begin{equation*}
 \snorm{x}_{1} := \sum_{j=1}^n \sabs{x_j},
 \end{equation*}
-sometimes called the $1$-norm (or $L^1$ norm).\\
-a) Show that $\snorm{\cdot}_1$ is a norm on $\R^n$ (defining a different
-distance, sometimes called the taxicab distance).\\
-b) What is the unit ball $B(0,1)$ in this norm?
+sometimes called the $1$-norm (or $L^1$ norm).
+\begin{enumerate}[a)]
+\item
+Show that $\snorm{\cdot}_1$ is a norm on $\R^n$ (defining a different
+distance, sometimes called the taxicab distance).
+\item
+What is the unit ball $B(0,1)$ in this norm?
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 Using the euclidean norm on $\R^2$.  Compute the operator norm of the
 operators in $L(\R^2)$ given by the matrices:
-\\
+
+\medskip
+\noindent
 a)
 $\left[
 \begin{smallmatrix}
@@ -1818,18 +1832,17 @@ $\left[
 
 \begin{exercise} \label{exercise:normonedim}
 Using the standard euclidean norm $\R^n$. Show
-\\
-a) Suppose $A \in L(\R,\R^n)$ is defined for $x \in \R$ by $Ax = xa$
+\begin{enumerate}[a)]
+\item
+Suppose $A \in L(\R,\R^n)$ is defined for $x \in \R$ by $Ax = xa$
 for a vector $a \in \R^n$.
 Then the operator norm $\snorm{A}_{L(\R,\R^n)} = \snorm{a}_{\R^n}$.
 (that is the operator norm of $A$ is the euclidean norm of $a$).
-%(where $\snorm{a}$ is the
-%euclidean norm).
-\\
-b) Suppose $B \in L(\R^n,\R)$ is defined for $x \in \R^n$ by $Bx = b \cdot x$
+\item
+Suppose $B \in L(\R^n,\R)$ is defined for $x \in \R^n$ by $Bx = b \cdot x$
 for a vector $b \in \R^n$.
-Then the operator norm $\snorm{B}_{L(\R^n,\R)} = \snorm{b}_{\R^n}$
-%(where $\snorm{b}$ is the euclidean norm).
+Then the operator norm $\snorm{B}_{L(\R^n,\R)} = \snorm{b}_{\R^n}$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1852,49 +1865,62 @@ elementary matrices.
 Prove \propref{prop:elemmatrixdecomp}.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
-a) Suppose $D = [d_{i,j}]$ is an $n$-by-$n$ \emph{\myindex{diagonal matrix}}, that is, $d_{i,j} = 0$ whenever $i
+{\ }
+\begin{enumerate}[a)]
+\item
+Suppose $D = [d_{i,j}]$ is an $n$-by-$n$ \emph{\myindex{diagonal matrix}}, that is, $d_{i,j} = 0$ whenever $i
 \not= j$.  Show that $\det(D) = d_{1,1}d_{2,2} \cdots d_{n,n}$.
-\\
-b) Suppose $A$ is a diagonalizable matrix.  That is, there exists a matrix
+\item
+Suppose $A$ is a diagonalizable matrix.  That is, there exists a matrix
 $B$ such that $B^{-1}AB = D$ for a diagonal matrix $D = [d_{i,j}]$.  Show
 that $\det(A) = d_{1,1}d_{2,2} \cdots d_{n,n}$.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Take the vectorspace of polynomials $\R[t]$ and the linear operator $D \in
 L(\R[t])$ that is
 the differentiation (we proved in an earlier exercise that $D$ is a linear
 operator).  Define the norm on $P(t) = c_0 + c_1 t + \cdots + c_n
-t^n$ as $\snorm{P} := \sup \{ \abs{c_j} : j = 0,1,\ldots,n \}$.\\
-a) Show that $\snorm{P}$ is a norm on $\R[t]$.\\
-b) Show that $D$ does not have bounded operator norm, that is $\snorm{D} =
+t^n$ as $\snorm{P} := \sup \{ \abs{c_j} : j = 0,1,\ldots,n \}$.
+\begin{enumerate}[a)]
+\item
+Show that $\snorm{P}$ is a norm on $\R[t]$.
+\item
+Show that $D$ does not have bounded operator norm, that is $\snorm{D} =
 \infty$.  Hint: consider the polynomials $t^n$ as $n$ tends to infinity.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 In this exercise we finish the proof of \propref{prop:finitedimpropnormfin}.
 Let $X$ be any finite dimensional vector space with a norm.  Let $\{ x_1,x_2,\ldots,x_n
-\}$ be a basis for $X$. \\
-a) Show that the function $f \colon \R^n \to \R$
+\}$ be a basis for $X$.
+\begin{enumerate}[a)]
+\item
+Show that the function $f \colon \R^n \to \R$
 \begin{equation*}
 f(c_1,c_2,\ldots,c_n) = 
 \snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n}
 \end{equation*}
 is continuous.
-\\
-b) Show that there exists numbers $m$ and $M$ such
+\item
+Show that there exists numbers $m$ and $M$ such
 that if $c = (c_1,c_2,\ldots,c_n) \in \R^n$ with
 $\snorm{c} = 1$ (standard euclidean norm), then 
 $m \leq \snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n} \leq M$ (here the
 norm is on $X$).
-\\
-c) Show that there exists a number $B$ such that if
+\item
+Show that there exists a number $B$ such that if
 $\snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n}=1$,
 then $\abs{c_j} \leq B$.
-\\
-d) Use part (c) to show that if $X$ and $Y$ are finite dimensional vector 
+\item
+Use part (c) to show that if $X$ and $Y$ are finite dimensional vector 
 spaces and $A \in L(X,Y)$, then $\snorm{A} < \infty$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1902,8 +1928,9 @@ Let $X$ be any finite dimensional vector space with a norm $\snorm{\cdot}$
 and basis $\{ x_1,x_2,\ldots,x_n
 \}$.  Let $c = (c_1,\ldots,c_n) \in \R^n$ and $\snorm{c}$ be the
 standard euclidean norm on $\R^n$.
-\\
-a) Find that there exist positive numbers $m,M > 0$ such that
+\begin{enumerate}[a)]
+\item
+Find that there exist positive numbers $m,M > 0$ such that
 for 
 \begin{equation*}
 m \snorm{c}
@@ -1913,8 +1940,8 @@ m \snorm{c}
 M \snorm{c} .
 \end{equation*}
 Hint: See previous exercise.
-\\
-b) Use part (a) to show that of
+\item
+Use part (a) to show that of
 $\snorm{\cdot}_1$ and
 $\snorm{\cdot}_2$ are two norms on $X$, then there exist positive
 numbers $m,M > 0$ (perhaps different than above) such that
@@ -1926,11 +1953,12 @@ m \snorm{x}_1
 \leq
 M \snorm{x}_1 .
 \end{equation*}
-%\\
-c) Show that $U \subset X$ is open in the metric defined by
+\item
+Show that $U \subset X$ is open in the metric defined by
 $\norm{x-y}_1$ if and only if it is open in the metric defined by
 $\norm{x-y}_2$.  In other words, convergence of sequences and continuity
 of functions is the same in either norm.
+\end{enumerate}
 \end{exercise}
 
 
@@ -2541,17 +2569,21 @@ See \figureref{fig:distfromorgfunc}.
 \caption{Graph of $\sqrt{x^2+y^2}$.\label{fig:distfromorgfunc}}
 \end{myfigureht}
 
+\begin{samepage}
 \begin{exercise}
 Using only the definition of the derivative, show that
 the following $f \colon \R^2 \to \R^2$ are differentiable at the origin and
 find their derivative.
-\\
-a) $f(x,y) := (1+x+xy,x)$,
-\\
-b) $f(x,y) := (y-y^{10},x)$,
-\\
-c) $f(x,y) := \bigl( (x+y+1)^2 , (x-y+2)^2 \bigr)$.
+\begin{enumerate}[a)]
+\item
+$f(x,y) := (1+x+xy,x)$,
+\item
+$f(x,y) := (y-y^{10},x)$,
+\item
+$f(x,y) := \bigl( (x+y+1)^2 , (x-y+2)^2 \bigr)$.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Suppose $f \colon \R \to \R$ and $g \colon \R \to \R$ are differentiable
@@ -2571,12 +2603,16 @@ f(x,y)
 0 & \text{ if $(x,y) = (0,0)$}.
 \end{cases}
 \end{equation*}
-See \figureref{fig:xyxsqysqvol2}.\\
-a)~Show that partial derivatives 
+See \figureref{fig:xyxsqysqvol2}.
+\begin{enumerate}[a)]
+\item
+Show that partial derivatives 
 $\frac{\partial f}{\partial x}$ and
-$\frac{\partial f}{\partial y}$ exist at all points (including the origin).\\
-b)~Show that $f$ is not continuous at the origin (and hence not
+$\frac{\partial f}{\partial y}$ exist at all points (including the origin).
+\item
+Show that $f$ is not continuous at the origin (and hence not
 differentiable).
+\end{enumerate}
 \end{exercise}
 
 \begin{myfigureht}
@@ -2595,14 +2631,20 @@ f(x,y)
 0 & \text{ if $(x,y) = (0,0)$}.
 \end{cases}
 \end{equation*}
-See \figureref{fig:xsqyxsqysq}.\\
-a)~Show that partial derivatives 
+See \figureref{fig:xsqyxsqysq}.
+\begin{enumerate}[a)]
+\item
+Show that partial derivatives 
 $\frac{\partial f}{\partial x}$ and
-$\frac{\partial f}{\partial y}$ exist at all points.\\
-b)~Show that for all $u \in \R^2$ with $\snorm{u}=1$, the directional
-derivative $D_u f$ exists at all points.\\
-c)~Show that $f$ is continuous at the origin.\\
-d)~Show that $f$ is not differentiable at the origin.
+$\frac{\partial f}{\partial y}$ exist at all points.
+\item
+Show that for all $u \in \R^2$ with $\snorm{u}=1$, the directional
+derivative $D_u f$ exists at all points.
+\item
+Show that $f$ is continuous at the origin.
+\item
+Show that $f$ is not differentiable at the origin.
+\end{enumerate}
 \end{exercise}
 \end{samepage}
 
@@ -2611,16 +2653,22 @@ d)~Show that $f$ is not differentiable at the origin.
 \caption{Graph of $\frac{x^2y}{x^2+y^2}$.\label{fig:xsqyxsqysq}}
 \end{myfigureht}
 
+\begin{samepage}
 \begin{exercise}
 Suppose $f \colon \R^n \to \R^n$ is one-to-one, onto, differentiable at all
-points, and such that $f^{-1}$ is also differentiable at all points.\\
-a) Show that $f'(p)$ is invertible at all points $p$ and compute
-${(f^{-1})}'\bigl(f(p)\bigr)$.  Hint: consider $p = f^{-1}\bigl(f(p)\bigr)$.\\
-b) Let $g \colon \R^n \to \R^n$ be a function differentiable at $q \in \R^n$
+points, and such that $f^{-1}$ is also differentiable at all points.
+\begin{enumerate}[a)]
+\item
+Show that $f'(p)$ is invertible at all points $p$ and compute
+${(f^{-1})}'\bigl(f(p)\bigr)$.  Hint: consider $p = f^{-1}\bigl(f(p)\bigr)$.
+\item
+Let $g \colon \R^n \to \R^n$ be a function differentiable at $q \in \R^n$
 and such that $g(q)=q$.  Suppose $f(p) = q$ for some $p \in \R^n$.
 Show $J_g(q) = J_{f^{-1} \circ g \circ f}(p)$ where $J_g$ is the Jacobian
 determinant.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Suppose $f \colon \R^2 \to \R$ is differentiable and such that
@@ -2646,14 +2694,19 @@ y}(x_0,y_0) = 0$.
 \end{exercise}
 
 \begin{exercise}[The \myindex{Peano surface}]
-Define $f(x,y) := ( x-y^2 ) ( 2 y^2 - x)$.  Show\\
-a) $(0,0)$ is a critical point, that is $f'(0,0) = 0$, that is the zero
-linear map in $L(\R^2,\R)$.\\
-b) For every direction, that is $(x,y)$ such that $x^2+y^2=1$ the
+Define $f(x,y) := ( x-y^2 ) ( 2 y^2 - x)$.  Show
+\begin{enumerate}[a)]
+\item
+$(0,0)$ is a critical point, that is $f'(0,0) = 0$, that is the zero
+linear map in $L(\R^2,\R)$.
+\item
+For every direction, that is $(x,y)$ such that $x^2+y^2=1$ the
 ``restriction of $f$ to the line containing the points $(0,0)$ and
 $(x,y)$'', that is a function $g(t) := f(tx,ty)$ has a local maximum at
-$t=0$.\\
-c) $f$ does not have a local maximum at $(0,0)$.
+$t=0$.
+\item
+$f$ does not have a local maximum at $(0,0)$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -3006,14 +3059,18 @@ such that $\abs{f(0,0)} \leq 1$,
 and 
 $\abs{\frac{\partial f}{\partial x}} \leq 1$ and
 $\abs{\frac{\partial f}{\partial y}} \leq 1$ for all
-points in $B(0,1)$.\\
-a) Find an $M \in \R$ such that $\snorm{f'(x,y)} \leq M$
+points in $B(0,1)$.
+\begin{enumerate}[a)]
+\item
+Find an $M \in \R$ such that $\snorm{f'(x,y)} \leq M$
 for all $(x,y) \in
-B(0,1)$.\\
-b) Find a $B \in \R$ such that
+B(0,1)$.
+\item
+Find a $B \in \R$ such that
 $\abs{f(x,y)} \leq B$
 for all $(x,y) \in
 B(0,1)$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -3040,10 +3097,14 @@ Let $f \colon \R^2 \to \R$ be a function and
 $M \in R$, such that
 for every $(x,y) \in \R^2$, the function $g(t) := f(xt,yt)$ is
 differentiable
-and $\abs{g'(t)} \leq M$. \\
-a) Show that $f$ is continuous at $(0,0)$.\\
-b) Find an example of such an $f$ which is not continuous at every other point of
+and $\abs{g'(t)} \leq M$.
+\begin{enumerate}[a)]
+\item
+Show that $f$ is continuous at $(0,0)$.
+\item
+Find an example of such an $f$ which is not continuous at every other point of
 $\R^2$ (Hint: Think back to how did we construct a nowhere continuous function on $[0,1]$).
+\end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3501,33 +3562,48 @@ continuous derivatives.
 \subsection{Exercises}
 
 \begin{exercise}
-Let $C = \bigl\{ (x,y) \in \R^2 : x^2+y^2 = 1 \bigr\}$. \\
-a) Solve for $y$ in terms of $x$ near $(0,1)$.\\
-b) Solve for $y$ in terms of $x$ near $(0,-1)$.\\
-c) Solve for $x$ in terms of $y$ near $(-1,0)$.
+Let $C = \bigl\{ (x,y) \in \R^2 : x^2+y^2 = 1 \bigr\}$.
+\begin{enumerate}[a)]
+\item
+Solve for $y$ in terms of $x$ near $(0,1)$.
+\item
+Solve for $y$ in terms of $x$ near $(0,-1)$.
+\item
+Solve for $x$ in terms of $y$ near $(-1,0)$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 Define $f \colon \R^2 \to \R^2$ by $f(x,y) :=
 \bigl(x,y+h(x)\bigr)$ for some continuously differentiable function $h$ of one
-variable.\\
-a) Show that $f$ is one-to-one and onto.\\
-b) Compute $f'$.\\
-c) Show that $f'$ is invertible at all points, and compute
+variable.
+\begin{enumerate}[a)]
+\item
+Show that $f$ is one-to-one and onto.
+\item
+Compute $f'$.
+\item
+Show that $f'$ is invertible at all points, and compute
 its inverse.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 Define $f \colon \R^2 \to \R^2 \setminus \bigl\{ (0,0) \bigr\}$ by $f(x,y) :=
-\bigl(e^x\cos(y),e^x\sin(y)\bigr)$.\\
-a) Show that $f$ is onto.\\
-b) Show that $f'$ is invertible at all points.\\
-c) Show that $f$ is not one-to-one, in fact for every $(a,b) \in \R^2
+\bigl(e^x\cos(y),e^x\sin(y)\bigr)$.
+\begin{enumerate}[a)]
+\item
+Show that $f$ is onto.
+\item
+Show that $f'$ is invertible at all points.
+\item
+Show that $f$ is not one-to-one, in fact for every $(a,b) \in \R^2
 \setminus \bigl\{ (0,0) \bigr\}$,
 there exist infinitely many different points $(x,y) \in \R^2$ such that 
 $f(x,y) = (a,b)$.\\
 Therefore, invertible derivative at every point does not mean that
 $f$ is invertible globally.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -3566,28 +3642,41 @@ f(x,y) :=
 (0,y) & \text{if $x=0$.}
 \end{cases}
 \end{equation*}
-a) Show that $f$ is differentiable everywhere.\\
-b) Show that $f'(0,0)$ is invertible.\\
-c) Show that $f$ is not one-to-one in any neighborhood of the origin (it is
-not locally invertible, that is, the inverse theorem does not work).\\
-d) Show that $f$ is not continuously differentiable.
+\begin{enumerate}[a)]
+\item
+Show that $f$ is differentiable everywhere.
+\item
+Show that $f'(0,0)$ is invertible.
+\item
+Show that $f$ is not one-to-one in any neighborhood of the origin (it is
+not locally invertible, that is, the inverse theorem does not work).
+\item
+Show that $f$ is not continuously differentiable.
+\end{enumerate}
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}[Polar coordinates] \label{mv:exercise:polarcoordinates}
 Define a mapping $F(r,\theta) := \bigl(r \cos(\theta), r \sin(\theta) \bigr)$.
-\\
-a) Show that $F$ is continuously differentiable (for all $(r,\theta) \in
-\R^2$).\\
-b) Compute $F'(0,\theta)$ for any $\theta$.\\
-c) Show that if $r \not= 0$, then $F'(r,\theta)$ is invertible, therefore an
-inverse of $F$ exists locally as long as $r \not= 0$.\\
-d) Show that $F \colon \R^2 \to \R^2$ is onto, and for each point $(x,y) \in
-\R^2$, the set $F^{-1}(x,y)$ is infinite.\\
-e) Show that $F \colon \R^2 \to \R^2$ is an open map, despite not satisfying the condition of the
-inverse function theorem.\\
-f) Show that $F|_{(0,\infty) \times [0,2\pi)}$ is one to one and onto
+\begin{enumerate}[a)]
+\item
+Show that $F$ is continuously differentiable (for all $(r,\theta) \in
+\R^2$).
+\item
+Compute $F'(0,\theta)$ for any $\theta$.
+\item
+Show that if $r \not= 0$, then $F'(r,\theta)$ is invertible, therefore an
+inverse of $F$ exists locally as long as $r \not= 0$.
+\item
+Show that $F \colon \R^2 \to \R^2$ is onto, and for each point $(x,y) \in
+\R^2$, the set $F^{-1}(x,y)$ is infinite.
+\item
+Show that $F \colon \R^2 \to \R^2$ is an open map, despite not satisfying the condition of the
+inverse function theorem.
+\item
+Show that $F|_{(0,\infty) \times [0,2\pi)}$ is one to one and onto
 $\R^2 \setminus \bigl\{ (0,0) \bigr\}$.
+\end{enumerate}
 \end{exercise}
 \end{samepage}
 
@@ -3760,14 +3849,18 @@ f(x,y) :=
 0 & \text{ if $(x,y) = (0,0)$.}
 \end{cases}
 \end{equation*}
-Show that\\
-a) The first order partial derivatives exist and are continuous.\\
-b) The partial derivatives
+Show that
+\begin{enumerate}[a)]
+\item
+The first order partial derivatives exist and are continuous.
+\item
+The partial derivatives
 $\frac{\partial^2 f}{\partial x \partial y}$ and
 $\frac{\partial^2 f}{\partial y \partial x}$ exist, but are not continuous
 at the origin, and 
 $\frac{\partial^2 f}{\partial x \partial y}(0,0) \not= 
 \frac{\partial^2 f}{\partial y \partial x}(0,0)$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}

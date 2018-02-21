@@ -125,8 +125,6 @@ V(R_k) =
 Let $R \subset \R^n$ be a closed rectangle and
 let $f \colon R \to \R$ be a bounded function.  Let $P$ be a partition of
 $R$ and suppose that there are $N$ subrectangles $R_1,R_2,\ldots,R_N$.
-%Let $R_i$ be a subrectangle of $P$.
-% that has $N$ subrectangles.
 Define
 \glsadd{not:lowerdarbouxsum}
 \glsadd{not:upperdarbouxsum}
@@ -154,7 +152,6 @@ such that for all $x \in R$ we have $m \leq f(x) \leq M$.  For any partition
 $P$ of $R$
 we have
 \begin{equation*}
-%\label{mv:sumulbound:eq}
 m \, V(R) \leq
 L(P,f) \leq U(P,f)
 \leq M\, V(R) .
@@ -722,21 +719,11 @@ $\{ (x,y) \in B(0,1) : x \geq 0 \}$.  In particular, $g$ is not compactly
 supported.
 \end{example}
 
-We will mostly consider the case when $U=\R^n$.  In light of the following
-exercise, this is not an oversimplification.
-
-\begin{exercise}
-Suppose $U \subset \R^n$ is open and $f \colon U \to \R$ is continuous and
-of compact support.  Show that the function $\widetilde{f} \colon \R^n \to \R$
-\begin{equation*}
-\widetilde{f}(x) :=
-\begin{cases}
-f(x) & \text{ if $x \in U$,} \\
-0 & \text{ otherwise,}
-\end{cases}
-\end{equation*}
-is continuous.
-\end{exercise}
+We will mostly consider the case when $U=\R^n$.  In light of
+\exerciseref{exercise:contcompactsupportRn}, which says any continuous
+function with compact support on $U \subset \R^n$ can be extended to a
+continuous function with compact support on $\R^n$,
+this is not an oversimplification.
 
 \begin{example}
 On the other hand for the unit disc $B(0,1) \subset \R^2$,
@@ -765,60 +752,7 @@ As $f$ is continuous, it is automatically integrable on the rectangles $R$, $S$,
 \cap S$.
 Then \exerciseref{mv:zerooutside} says
 $\int_S f = \int_{S \cap R} f = \int_R f$.
-%
-%The intersection of closed rectangles is again a closed rectangle (or empty).
-%Take $\widetilde{R} = R \cap S$.
-%As $\widetilde{R}^o = R^o \cap S^o$,
-%then $\operatorname{supp}(f) \subset \widetilde{R}^o$.
-%If $\widetilde{R}$ is the empty set, then
-%$\operatorname{supp}(f)$ is the empty set and $f$ is identically zero
-%and the proposition is trivial.  So suppose that $\widetilde{R}$ is nonempty.
-%As $\widetilde{R} \subset R$, we know that $f$ is integrable over
-%$\widetilde{R}$.
-%Furthermore $\widetilde{R} \subset S$.
-%Given $\epsilon > 0$, take $\widetilde{P}$ to be a partition of $\widetilde{R}$
-%such that
-%\begin{equation*}
-%U(\widetilde{P},f|_{\widetilde{R}})-
-%L(\widetilde{P},f|_{\widetilde{R}}) < \epsilon .
-%\end{equation*}
-%Add the endpoints of $S$ to $\widetilde{P}$ to create a new partition $P$ of
-%$S$.
-%The subrectangles of $\widetilde{P}$ are subrectangles of $P$ as well.
-%Let $R_1,R_2,\ldots,R_K$ be the subrectangles of $\widetilde{P}$
-%and $R_{K+1},\ldots,R_N$ the new subrectangles.  Since
-%%$\operatorname{supp}(f) \subset \widetilde{R}^o$, then 
-%for $k=K+1,\ldots,N$ we have $\operatorname{supp}(f) \cap R_k = \emptyset$,
-%as $\operatorname{supp}(f)$ does not intersect the boundary of $\tilde{R}$.
-%In other words, $f$ is identically zero on $R_k$.  In the notation
-%used previously
-%\begin{equation*}
-%\begin{split}
-%U(P,f|_S)-L(P,f|_S) & =
-%\sum_{k=1}^K (M_k-m_k) V(R_k)
-%+
-%\sum_{k=K+1}^N (M_k-m_k) V(R_k)
-%\\
-%& =
-%\sum_{k=1}^K (M_k-m_k) V(R_k)
-%+
-%\sum_{k=K+1}^N (0) V(R_k)
-%\\
-%& =
-%U(\widetilde{P},f|_{\widetilde{R}})-
-%L(\widetilde{P},f|_{\widetilde{R}}) < \epsilon .
-%\end{split}
-%\end{equation*}
-%Similarly,
-%$L(P,f|_S) = L(\widetilde{P},f_{\widetilde{R}})$
-%and therefore
-%\begin{equation*}
-%\int_S f = \int_{\widetilde{R}} f.
-%\end{equation*}
-%Since $\widetilde{R} \subset R$ we also get $\int_R f = \int_{\widetilde{R}} f$,
-%or in other words $\int_R f = \int_S f$.
 \end{proof}
-
 
 Because of this proposition, when $f \colon \R^n \to \R$ has compact support
 and is integrable over a rectangle $R$ containing the support we write
@@ -830,6 +764,20 @@ For example, if $f$ is continuous and of compact support, then
 $\int_{\R^n} f$ exists.
 
 \subsection{Exercises}
+
+\begin{exercise} \label{exercise:contcompactsupportRn}
+Suppose $U \subset \R^n$ is open and $f \colon U \to \R$ is continuous and
+of compact support.  Show that the function $\widetilde{f} \colon \R^n \to \R$
+\begin{equation*}
+\widetilde{f}(x) :=
+\begin{cases}
+f(x) & \text{ if $x \in U$,} \\
+0 & \text{ otherwise,}
+\end{cases}
+\end{equation*}
+is continuous.
+\end{exercise}
+
 
 \begin{exercise}
 Prove \propref{mv:intlinearity:prop}.
@@ -847,14 +795,6 @@ and suppose $S$ is a rectangle with $R \subset S$.  If $f$
 is a bounded function such that $f(x) = 0$ for $x \in R \setminus S$, show
 that $f \in \sR(R)$ and $\int_R f = 0$.
 \end{exercise}
-
-%FIXME
-
-%This is already a proposition
-%\begin{exercise} \label{mv:exersmallerset}
-%Suppose $R$ and $R'$ are two closed rectangles with $R' \subset R$.  Suppose
-%that $f \colon R \to \R$ is in $\sR(R)$.  Show that $f \in \sR(R')$.
-%\end{exercise}
 
 \begin{exercise}
 Suppose $f\colon \R^n \to \R$ is such that
@@ -881,17 +821,20 @@ Show that $f \in \sR(R)$ and
 \begin{equation*}
 \int_{R'} f = \int_R f .
 \end{equation*}
-Do this in the following steps.\\
-a)~First do the proof assuming that furthermore $f(x) = 0$ whenever $x
-\in \overline{R \setminus R'}$.\\
-b)~Write $f(x) = g(x) + h(x)$ where $g(x) = 0$ whenever $x
+Do this in the following steps.
+\begin{enumerate}[a)]
+\item
+First do the proof assuming that furthermore $f(x) = 0$ whenever $x
+\in \overline{R \setminus R'}$.
+\item
+Write $f(x) = g(x) + h(x)$ where $g(x) = 0$ whenever $x
 \in \overline{R \setminus R'}$, and $h(x)$ is zero except perhaps on
 $\partial R'$.
-%only 
-%if $x \in \bigl( \overline{R \setminus R'} \bigr) \cap R'$.
-Then show $\int_R h = \int_{R'} h = 0$ (see \exerciseref{mv:zeroinside}).\\
-c)~Show 
+Then show $\int_R h = \int_{R'} h = 0$ (see \exerciseref{mv:zeroinside}).
+\item
+Show 
 $\int_{R'} f = \int_R f$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -928,8 +871,10 @@ and compute $\int_S f$.  Hint: Consider $S \cap R$.
 
 \begin{samepage}
 \begin{exercise}
-Let $R = [0,1] \times [0,1] \subset \R^2$.\\
-a) Suppose $f \colon R \to \R$ is defined by
+Let $R = [0,1] \times [0,1] \subset \R^2$.
+\begin{enumerate}[a)]
+\item
+Suppose $f \colon R \to \R$ is defined by
 \begin{equation*}
 f(x,y) := 
 \begin{cases}
@@ -938,8 +883,8 @@ f(x,y) :=
 \end{cases}
 \end{equation*}
 Show that $f \in \sR(R)$ and compute $\int_R f$.
-\\
-b) Suppose $f \colon R \to \R$ is defined by
+\item
+Suppose $f \colon R \to \R$ is defined by
 \begin{equation*}
 f(x,y) := 
 \begin{cases}
@@ -949,6 +894,7 @@ f(x,y) :=
 \end{equation*}
 Show that $f \notin \sR(R)$.
 \end{exercise}
+\end{enumerate}
 \end{samepage}
 
 \begin{exercise}
@@ -1392,14 +1338,19 @@ x & \text{if $y \in \Q$,} \\
 0 & \text{else.} 
 \end{cases}
 \end{equation*}
-Show\\
-a) $\int_0^1 \int_{-1}^1 f(x,y) ~ dx ~ dy$ exists, but
-$\int_{-1}^1 \int_0^1 f(x,y) ~ dy ~ dx$ does not.\\
-b) Compute
+Show
+\begin{enumerate}[a)]
+\item
+$\int_0^1 \int_{-1}^1 f(x,y) ~ dx ~ dy$ exists, but
+$\int_{-1}^1 \int_0^1 f(x,y) ~ dy ~ dx$ does not.
+\item
+Compute
 $\int_{-1}^1 \overline{\int_0^1} f(x,y) ~ dy ~ dx$ and
-$\int_{-1}^1 \underline{\int_0^1} f(x,y) ~ dy ~ dx$.\\
-c) Show $f$ is not Riemann integrable on $[-1,1] \times [0,1]$ (use
+$\int_{-1}^1 \underline{\int_0^1} f(x,y) ~ dy ~ dx$.
+\item
+Show $f$ is not Riemann integrable on $[-1,1] \times [0,1]$ (use
 Fubini).
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1411,14 +1362,19 @@ f(x,y) :=
 0 & \text{else.} 
 \end{cases}
 \end{equation*}
-Show\\
-a) Show $f$ is Riemann integrable on $[0,1] \times [0,1]$.\\
-b) Find 
+Show
+\begin{enumerate}[a)]
+\item
+Show $f$ is Riemann integrable on $[0,1] \times [0,1]$.
+\item
+Find 
 $\overline{\int_0^1} f(x,y) ~ dx$ and
 $\underline{\int_0^1} f(x,y) ~ dx$ for all $y \in [0,1]$, and show they are unequal for all $y
-\in \Q$.\\
-c) $\int_0^1 \int_0^1 f(x,y) ~ dy ~ dx$ exists, but
-   $\int_0^1 \int_0^1 f(x,y) ~ dx ~ dy$ does not.\\
+\in \Q$.
+\item
+$\int_0^1 \int_0^1 f(x,y) ~ dy ~ dx$ exists, but
+   $\int_0^1 \int_0^1 f(x,y) ~ dx ~ dy$ does not.
+\end{enumerate}
 Note: By Fubini,
 $\int_0^1 \overline{\int_0^1} f(x,y) ~ dy ~ dx$ and 
 $\int_0^1 \underline{\int_0^1} f(x,y) ~ dy ~ dx$ do exist and equal the
@@ -1938,8 +1894,10 @@ $\widebar{S} = \R^n$.
 \end{exercise}
 
 \begin{exercise}
-Prove the general case of  \propref{prop:imagenull} without using compactness:\\
-a) Mimic the proof to first prove that the proposition holds if $E$ is
+Prove the general case of  \propref{prop:imagenull} without using compactness:
+\begin{enumerate}[a)]
+\item
+Mimic the proof to first prove that the proposition holds if $E$ is
 \emph{\myindex{relatively compact}}; a set $E \subset U$ is relatively
 compact if the closure of $E$ in the subspace topology on $U$ is compact,
 or in other words if there exists a compact set $K$ with $K \subset U$
@@ -1947,11 +1905,13 @@ and $E \subset K$.\\
 Hint: The bound on the size of the derivative still holds, but you need
 to use countably many balls in the second part of the proof.
 Be careful as the closure of $E$ need no
-longer be measure zero.\\
-b) Now prove it for any null set $E$.\\
+longer be measure zero.
+\item
+Now prove it for any null set $E$.\\
 Hint: First show that $\{ x \in U : d(x,y) \geq
 \nicefrac{1}{m} \text{ for all $y \notin U$ and } d(0,x) \leq m \}$ is a compact set for
 any $m > 0$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1985,15 +1945,17 @@ $\nicefrac{\delta}{r}$.
 
 \begin{exercise}
 Prove the statements of \exampleref{example:cantor}.  That is,
-prove:\\
-a) Each $C_k$ is a finite union of closed intervals, and so $C$ is closed.
-\\
-b) $m^*(C_k) =1 - \sum_{n=1}^k \frac{2^n}{3^{n+1}}$.
-\\
-c) $m^*(C) = 0$.
-\\
-d)
+prove:
+\begin{enumerate}[a)]
+\item
+Each $C_k$ is a finite union of closed intervals, and so $C$ is closed.
+\item
+$m^*(C_k) =1 - \sum_{n=1}^k \frac{2^n}{3^{n+1}}$.
+\item
+$m^*(C) = 0$.
+\item
 The set $C$ is in one to one correspondence with $[0,1]$.
+\end{enumerate}
 \end{exercise}
 
 
@@ -2286,16 +2248,17 @@ except for a closed set $E \subset R$ of measure zero.  Show that $\int_R f = \i
 
 \begin{exercise}
 Suppose $R \subset \R^n$ is a closed rectangle and
-$f \colon R \to \R$ is a bounded function.\\
-a)~Suppose there exists a closed set $E \subset R$ of measure zero such that
-$f|_{R\setminus E}$ is continuous.  Then $f \in \sR(R)$.\\
-b)~Find am example where $E \subset R$ is a set of measure zero (but not
+$f \colon R \to \R$ is a bounded function.
+\begin{enumerate}[a)]
+\item
+Suppose there exists a closed set $E \subset R$ of measure zero such that
+$f|_{R\setminus E}$ is continuous.  Then $f \in \sR(R)$.
+\item
+Find am example where $E \subset R$ is a set of measure zero (but not
 closed) such that
 $f|_{R\setminus E}$ is continuous and $f \not\in \sR(R)$.
+\end{enumerate}
 \end{exercise}
-
-%
-%FIXME:
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2550,12 +2513,16 @@ for all $x \in (a,b)$, $f(x) < g(x)$.  Let
 \begin{equation*}
 U := \{ (x,y) \in \R^2 : a < x < b \text{ and } f(x) < y < g(x) \} .
 \end{equation*}
-a) Show that $U$ is Jordan measurable.\\
-b) If $f \colon U \to \R$ is Riemann integrable on $U$, then
+\begin{enumerate}[a)]
+\item
+Show that $U$ is Jordan measurable.
+\item
+If $f \colon U \to \R$ is Riemann integrable on $U$, then
 \begin{equation*}
 \int_U f =
 \int_a^b \int_{g(x)}^{f(x)} f(x,y) ~ dy ~ dx .
 \end{equation*}
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -2565,14 +2532,18 @@ of all rational numbers in $(0,1)$.  Let $(a_j,b_j)$ be open intervals
 such that $(a_j,b_j) \subset (0,1)$ for all $j$, $r_j \in (a_j,b_j)$,
 and $\sum_{j=1}^\infty (b_j-a_j) < \nicefrac{1}{2}$.  Now let $U :=
 \bigcup_{j=1}^\infty (a_j,b_j)$.  Show that\\
-a) The open intervals $(a_j,b_j)$ as above actually exist.\\
-b)
-$\partial U = [0,1] \setminus U$.\\
-c)
-$\partial U$ is not of measure zero, and therefore $U$ is not Jordan measurable.\\
-d) Show that $W := \bigl( (0,1) \times (0,2) \bigr) \setminus \bigl( U
+\begin{enumerate}[a)]
+\item
+The open intervals $(a_j,b_j)$ as above actually exist.
+\item
+$\partial U = [0,1] \setminus U$.
+\item
+$\partial U$ is not of measure zero, and therefore $U$ is not Jordan measurable.
+\item
+Show that $W := \bigl( (0,1) \times (0,2) \bigr) \setminus \bigl( U
 \times [0,1] \bigr) \subset \R^2$ is a connected bounded open set in $\R^2$
 that is not Jordan measurable.
+\end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2951,14 +2922,21 @@ $\int_{\partial V}
 \frac{\partial f}{\partial y} dy = 0$.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 For a disc $B(p,r) \subset \R^2$, orient the boundary $\partial B(p,r)$
-positively:\\
-a) Compute $\displaystyle \int_{\partial B(p,r)} -y ~ dx$.\\
-b) Compute $\displaystyle \int_{\partial B(p,r)} x ~ dy$.\\
-c) Compute $\displaystyle \int_{\partial B(p,r)} \frac{-y}{2} ~ dy +
+positively:
+\begin{enumerate}[a)]
+\item
+Compute $\displaystyle \int_{\partial B(p,r)} -y ~ dx$.
+\item
+Compute $\displaystyle \int_{\partial B(p,r)} x ~ dy$.
+\item
+Compute $\displaystyle \int_{\partial B(p,r)} \frac{-y}{2} ~ dy +
 \frac{x}{2} ~ dy$.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Using Green's theorem show that the area of a triangle with
@@ -2979,13 +2957,19 @@ if $f$ attains a maximum at $p \in U$, then $f$ is constant.
 \end{exercise}
 
 \begin{exercise}
-Let $f(x,y) := \ln \sqrt{x^2+y^2}$.\\
-a) Show $f$ is harmonic where defined.\\
-b) Show $\lim_{(x,y) \to 0} f(x,y) = -\infty$.\\
-c) Using a circle $C_r$ of radius
+Let $f(x,y) := \ln \sqrt{x^2+y^2}$.
+\begin{enumerate}[a)]
+\item
+Show $f$ is harmonic where defined.
+\item
+Show $\lim_{(x,y) \to 0} f(x,y) = -\infty$.
+\item
+Using a circle $C_r$ of radius
 $r$ around the origin, compute $\frac{1}{2\pi r} \int_{\partial C_r} f ds$.
-What happens as $r \to 0$?\\
-d) Why can't you use Green's theorem?
+What happens as $r \to 0$?
+\item
+Why can't you use Green's theorem?
+\end{enumerate}
 \end{exercise}
 
 
