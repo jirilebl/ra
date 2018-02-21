@@ -57,24 +57,40 @@ and multiplication, $\cdot \colon \R \times X \to X$, (we usually write $ax$ ins
 \emph{\myindex{real vector space}})
 if the following conditions are satisfied:
 \begin{enumerate}[(i)]
-\item (Addition is associative) \quad If $u, v, w \in X$, then $u+(v+w) = (u+v)+w$.
-\item (Addition is commutative) \quad If $u, v \in X$, then $u+v = v+u$.
-\item (Additive identity) \quad There is a $0 \in X$ such that $v+0=v$ for all $v \in X$.
-\item (Additive inverse) \quad For every $v \in X$, there is a $-v \in X$,
+\item
+\makebox[2.1in][l]{(Addition is associative)}
+If $u, v, w \in X$, then $u+(v+w) = (u+v)+w$.
+\item
+\makebox[2.1in][l]{(Addition is commutative)}
+If $u, v \in X$, then $u+v = v+u$.
+\item
+\makebox[2.1in][l]{(Additive identity)}
+There is a $0 \in X$ such that $v+0=v$ for all $v \in X$.
+\item
+\makebox[2.1in][l]{(Additive inverse)}
+For every $v \in X$, there is a $-v \in X$,
 such that $v+(-v)=0$.
-\item (Distributive law) \quad If $a \in \R$, $u,v \in X$, then
+\item
+\makebox[2.1in][l]{(Distributive law)}
+If $a \in \R$, $u,v \in X$, then
 $a(u+v) = au+av$.
-\item (Distributive law) \quad If $a,b \in \R$, $v \in X$, then
+\item
+\makebox[2.1in][l]{(Distributive law)}
+If $a,b \in \R$, $v \in X$, then
 $(a+b)v = av+bv$.
-\item (Multiplication is associative) \quad If $a,b \in \R$, $v \in X$, then
+\item
+\makebox[2.1in][l]{(Multiplication is associative)}
+If $a,b \in \R$, $v \in X$, then
 $(ab)v = a(bv)$.
-\item (Multiplicative identity) \quad $1v = v$ for all $v \in X$.
+\item
+\makebox[2.1in][l]{(Multiplicative identity)}
+$1v = v$ for all $v \in X$.
 \end{enumerate}
 Elements of a vector space are usually called \emph{vectors}\index{vector},
 even if they
 are not elements of $\R^n$ (vectors in the ``traditional'' sense).
 
-If $Y \subset X$ is a subset that is a vector space itself with the same
+If $Y \subset X$ is a subset that is a vector space itself using the same
 operations, then $Y$ is called a \emph{\myindex{subspace}} or
 a \emph{\myindex{vector subspace}} of $X$.
 \end{defn}
@@ -153,12 +169,14 @@ if $\sP_n$ is the set of polynomials of degree $n$ or less,
 then $\sP_n$ is a finite dimensional vector space, and we could 
 identify it with $\R^{n+1}$.
 
-The space $\R[t]$ can be thought of as a subspace of $C(\R,\R)$.  If we
-restrict the range of $t$ to $[0,1]$, $\R[t]$ can be identified with
+In the above, the variable $t$ is really just a formal placeholder.
+By setting $t$ equal to a real number we obtain a function.
+So the space $\R[t]$ can be thought of as a subspace of $C(\R,\R)$.
+If we restrict the range of $t$ to $[0,1]$, $\R[t]$ can be identified with
 a subspace of $C([0,1],\R)$.
 \end{example}
 
-It is often better to think of even simpler ``finite dimensional''
+It is often better to think of even the simpler ``finite dimensional''
 vector spaces using the abstract notion rather than always as $\R^n$.
 It is possible to use other fields than $\R$ in the definition (for
 example it is common to use the complex numbers $\C$), but let us stick with
@@ -181,22 +199,22 @@ is called a \emph{\myindex{linear combination}} of the vectors $x_1, x_2,
 
 If $Y \subset X$ is a set, then the \emph{\myindex{span}} of $Y$, or in notation
 $\spn(Y)$, is the set of all linear combinations
-of all finite subsets of $Y$.  We also
-say $Y$ \emph{\myindex{spans}} $\spn(Y)$\glsadd{not:span}.
+of all finite subsets of $Y$.  We 
+say $Y$ \emph{spans} $\spn(Y)$\glsadd{not:span}.
 \end{defn}
 
 \begin{example}
-Let $Y := \{ (1,1) \} \subset \R^2$.  Then
+Let $Y := \bigl\{ (1,1) \bigr\} \subset \R^2$.  Then
 \begin{equation*}
 \spn(Y)
 =
-\{ (x,x) \in \R^2 : x \in \R \} .
+\bigl\{ (x,x) \in \R^2 : x \in \R \bigr\} .
 \end{equation*}
 That is, $\spn(Y)$ is the line through the origin and the point $(1,1)$.
 \end{example}
 
 \begin{example} \label{example:vecspr2span}
-Let $Y := \{ (1,1), (0,1) \} \subset \R^2$.  Then
+Let $Y := \bigl\{ (1,1), (0,1) \bigr\} \subset \R^2$.  Then
 \begin{equation*}
 \spn(Y)
 =
@@ -220,8 +238,16 @@ The span of $Y$ is all polynomials,
 The span of $E$ is the set of polynomials with even powers of $t$ only.
 \end{example}
 
-A sum of two linear combinations is again a linear combination, and
-a scalar multiple of a linear combination is a linear combination, that is,
+Suppose we have two linear combinations of vectors from $Y$.  One linear
+combination uses the vectors $\{ x_1,x_2,\ldots,x_k \}$, and the other uses
+$\{ \tilde{x}_1,\tilde{x}_2,\ldots,\tilde{x}_\ell \}$.  Then clearly we can write
+both linear combinations using vectors from the union
+$\{ x_1,x_2,\ldots,x_k \} \cup
+\{ \tilde{x}_1,\tilde{x}_2,\ldots,\tilde{x}_\ell \}$, by just taking zero
+multiples of the vectors we do not need.
+Suppose we have two linear combinations, we can without loss of
+generality write them as a linear combination of $x_1,x_2,\ldots,x_k$.
+Then their sum is also a linear combination of vectors from $Y$:
 \begin{multline*}
 (a_1 x_1 + 
 a_2 x_2 +  \cdots
@@ -234,9 +260,11 @@ b_2 x_2 +  \cdots
 =
 (a_1 + b_1) x_1 + 
 (a_2 + b_2) x_2 +  \cdots
-+ (a_k + b_k) x_k ,
++ (a_k + b_k) x_k .
 \end{multline*}
-and
+Similarly 
+a scalar multiple of a linear combination of vectors from $Y$
+is a linear combination of vectors from $Y$:
 \begin{equation*}
 b (a_1 x_1 + 
 a_2 x_2 +  \cdots
@@ -279,7 +307,7 @@ is called a \emph{\myindex{basis}} of $X$.
 
 If a vector space $X$ contains a linearly independent set of $d$ vectors,
 but no linearly independent set of $d+1$ vectors, then we say
-the \emph{\myindex{dimension}} or $\dim \, X := d$.  If for all $d \in \N$ the vector space
+the \emph{\myindex{dimension}} of $X$ is $d$, and we write $\dim \, X := d$.  If for all $d \in \N$ the vector space
 $X$ contains a set of $d$ linearly independent vectors, we say
 $X$ is infinite dimensional and write $\dim \, X := \infty$.
 
@@ -310,7 +338,7 @@ The vector $x_j$ has at least two different representations
 as linear combinations of $\{ x_1,x_2,\ldots,x_k \}$. The one above and
 $x_j$ itself. 
 
-For example, the set $\{ (0,1), (2,3), (5,0) \}$ is linearly dependent:
+For example, the set $\bigl\{ (0,1), (2,3), (5,0) \bigr\}$ in $\R^2$ is linearly dependent:
 \begin{equation*}
 3(0,1) - (2,3) + 2(1,0) = 0 ,
 \qquad \text{so} \qquad
@@ -354,7 +382,7 @@ A direct computation shows that $\{ e_1, e_2, \ldots, e_n \}$ is really
 a basis of $\R^n$; it spans $\R^n$ and is
 linearly independent.  In fact,
 \begin{equation*}
-x = (x_1,x_2,\ldots,x_n) = \sum_{j=1}^n x_j \, e_j .
+a = (a_1,a_2,\ldots,a_n) = \sum_{j=1}^n a_j \, e_j .
 \end{equation*}
 
 \begin{prop} \label{mv:dimprop}
@@ -434,13 +462,15 @@ then there must exist some linearly independent set of $d$ vectors $T$,
 and it must span $X$, otherwise we could choose a larger set of linearly
 independent vectors.  So we have a basis of $d$ vectors.
 On the other hand if we have a basis of $d$ vectors,
-it is linearly independent and spans $X$ by definition.  By \ref{mv:dimprop:i} we know
-there is no set of $d+1$ linearly independent vectors, so dimension must be $d$.
+it is linearly independent and spans $X$ by definition.
+By \ref{mv:dimprop:i} we know
+there is no set of $d+1$ linearly independent vectors,
+so dimension of $X$ must be $d$.
 
 For \ref{mv:dimprop:iii} notice that $\{ e_1, e_2, \ldots, e_n \}$ is a basis of $\R^n$.
 
 To see \ref{mv:dimprop:iv},
-suppose $Y$ is a vector space and $Y \subset X$,
+suppose $Y \subset X$ is a vector subspace,
 where $\dim \, X = d$.  As $X$ cannot contain $d+1$ linearly independent
 vectors, neither can $Y$.
 
@@ -469,8 +499,8 @@ rather than a \emph{function}.
 \begin{defn}
 A mapping $A \colon X \to Y$ of vector spaces $X$ and $Y$
 is \emph{\myindex{linear}} (or a
-\emph{\myindex{linear transformation}})
-if for every $a \in \R$ and every $x,y \in X$,
+\emph{\myindex{linear transformation}})\index{transformation, linear}
+if for all $a \in \R$ and all $x,y \in X$,
 \begin{equation*}
 A(a x) = a A(x), \qquad \text{and} \qquad A(x+y) = A(x)+A(y) .
 \end{equation*}
@@ -479,7 +509,7 @@ If $A$ is one-to-one and onto, then we say $A$ is
 \emph{invertible}\index{invertible linear transformation},
 and we denote the inverse by $A^{-1}$.
 If $A \colon X \to X$ is linear, then we say $A$ is a
-\emph{\myindex{linear operator}} on $X$.
+\emph{\myindex{linear operator}}\index{operator, linear} on $X$.
 
 We write $L(X,Y)$\glsadd{not:LXY} for the set of all linear transformations from $X$ to
 $Y$, and just $L(X)$\glsadd{not:LX} for the set of linear operators on $X$.
@@ -599,13 +629,13 @@ the only vector that is taken to 0 is 0 itself.
 Hence,
 \begin{equation*}
 0 =
-\sum_{j=1}^n c_j x_j
+\sum_{j=1}^n c_j \, x_j
 \end{equation*}
 and $c_j = 0$ for all $j$.
 So $\{ Ax_1, Ax_2, \ldots, Ax_n \}$ is a linearly independent set.
 By \propref{mv:dimprop}
 and the fact that the dimension is $n$, we conclude
-$\{ Ax_1, Ax_2, \ldots, Ax_n \}$ span $X$.  Any point $x \in X$
+$\{ Ax_1, Ax_2, \ldots, Ax_n \}$ spans $X$.  Any point $x \in X$
 can be written as
 \begin{equation*}
 x = \sum_{j=1}^n a_j \, Ax_j =
@@ -653,16 +683,19 @@ the correspondence
 A subset $U$ of a vector space is \emph{\myindex{convex}}
 if whenever $x,y \in U$, the line segment from
 $x$ to $y$ lies in $U$.  That is, if the \emph{\myindex{convex combination}}
-$(1-t)x+ty$ is in $U$ for all $t \in [0,1]$.  See \figureref{mv:convexcomb}.
+$(1-t)x+ty$ is in $U$ for all $t \in [0,1]$.
+Sometimes we write $[x,y]$ for this line segment.
+See \figureref{mv:convexcomb}.
 
 \begin{myfigureht}
 \subimport*{figures/}{convexset.pdf_t}
 \caption{Convexity.\label{mv:convexcomb}}
 \end{myfigureht}
 
-In $\R$, convex sets are precisely the intervals.
-In $\R^2$ (or higher
-dimensions) there are lots of nonconvex connected sets.  For example
+In $\R$, convex sets are precisely the intervals, which are
+also precisely the connected sets.
+In two or more dimensions
+there are lots of nonconvex connected sets.  For example
 the set $\R^2 \setminus \{0\}$ is not convex but it is connected.  To see
 this simply take any $x \in \R^2 \setminus \{0\}$ and let $y:=-x$.
 Then $(\nicefrac{1}{2})x + (\nicefrac{1}{2})y = 0$, which is not in the set.
@@ -696,7 +729,7 @@ then $t f(x) + (1-t) g(x) \geq 0$ for all $x$.  Furthermore
 t \int_0^1 f(x) ~dx
 + (1-t)\int_0^1 g(x) ~dx \leq 1 .
 \end{equation*}
-Note that $X$ is not a subspace of $C([0,1],\R)$.
+Note that $X$ is not a vector subspace of $C([0,1],\R)$.
 \end{example}
 
 \begin{prop}
@@ -850,12 +883,13 @@ Show by example that a union of convex sets need not be convex.
 \end{exercise}
 
 \begin{exercise}
-Compute the convex hull of the set of 3 points $\{ (0,0), (0,1), (1,1) \}$ in
-$\R^2$.
+Compute the convex hull of the set of 3 points
+$\bigl\{ (0,0), (0,1), (1,1) \bigr\}$
+in $\R^2$.
 \end{exercise}
 
 \begin{exercise}
-Show that the set $\{ (x,y) \in \R^2 : y > x^2 \}$ is a convex set.
+Show that the set $\bigl\{ (x,y) \in \R^2 : y > x^2 \bigr\}$ is a convex set.
 \end{exercise}
 
 \begin{exercise}
@@ -2729,7 +2763,8 @@ M \snorm{y-x} . \qedhere
 If $U$ is not convex the proposition is not true.  To see this fact, take
 the set
 \begin{equation*}
-U = \{ (x,y) : 0.5 < x^2+y^2 < 2 \} \setminus \{ (x,0) : x < 0 \} .
+U = \bigl\{ (x,y) : 0.5 < x^2+y^2 < 2 \bigr\} \setminus \bigl\{ (x,0) : x <
+0 \bigr\} .
 \end{equation*}
 Let $f(x,y)$ be the angle that the line from the origin to $(x,y)$
 makes with the positive $x$ axis.  You can even write the formula for $f$:
@@ -3213,8 +3248,8 @@ $f(V)$ is open.
 The theorem, and the corollary, is not true if $f'(x)$ is not invertible for
 some $x$.  For example,
 the map $f(x,y) = (x,xy)$, maps $\R^2$ onto the set
-$\R^2 \setminus \{ (0,y) : y \neq 0 \}$, which is neither open nor closed.
-In fact $f^{-1}(0,0) = \{ (0,y) : y \in \R \}$.  This bad behavior
+$\R^2 \setminus \bigl\{ (0,y) : y \neq 0 \bigr\}$, which is neither open nor closed.
+In fact $f^{-1}(0,0) = \bigl\{ (0,y) : y \in \R \bigr\}$.  This bad behavior
 only occurs on the $y$-axis, everywhere else the function is locally
 invertible.  If we avoid the $y$-axis, $f$ is even one-to-one.
 \end{example}
@@ -3466,7 +3501,7 @@ continuous derivatives.
 \subsection{Exercises}
 
 \begin{exercise}
-Let $C = \{ (x,y) \in \R^2 : x^2+y^2 = 1 \}$. \\
+Let $C = \bigl\{ (x,y) \in \R^2 : x^2+y^2 = 1 \bigr\}$. \\
 a) Solve for $y$ in terms of $x$ near $(0,1)$.\\
 b) Solve for $y$ in terms of $x$ near $(0,-1)$.\\
 c) Solve for $x$ in terms of $y$ near $(-1,0)$.
@@ -3483,12 +3518,12 @@ its inverse.
 \end{exercise}
 
 \begin{exercise}
-Define $f \colon \R^2 \to \R^2 \setminus \{ (0,0) \}$ by $f(x,y) :=
+Define $f \colon \R^2 \to \R^2 \setminus \bigl\{ (0,0) \bigr\}$ by $f(x,y) :=
 \bigl(e^x\cos(y),e^x\sin(y)\bigr)$.\\
 a) Show that $f$ is onto.\\
 b) Show that $f'$ is invertible at all points.\\
 c) Show that $f$ is not one-to-one, in fact for every $(a,b) \in \R^2
-\setminus \{ (0,0) \}$,
+\setminus \bigl\{ (0,0) \bigr\}$,
 there exist infinitely many different points $(x,y) \in \R^2$ such that 
 $f(x,y) = (a,b)$.\\
 Therefore, invertible derivative at every point does not mean that
@@ -3552,7 +3587,7 @@ d) Show that $F \colon \R^2 \to \R^2$ is onto, and for each point $(x,y) \in
 e) Show that $F \colon \R^2 \to \R^2$ is an open map, despite not satisfying the condition of the
 inverse function theorem.\\
 f) Show that $F|_{(0,\infty) \times [0,2\pi)}$ is one to one and onto
-$\R^2 \setminus \{ (0,0) \}$.
+$\R^2 \setminus \bigl\{ (0,0) \bigr\}$.
 \end{exercise}
 \end{samepage}
 
