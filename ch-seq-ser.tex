@@ -3967,11 +3967,11 @@ that $\sum \abs{x_{\sigma(n)}}$ converges.
 Let us show that the alternating harmonic series $\sum
 \frac{{(-1)}^{n+1}}{n}$, which does not converge absolutely, can be
 rearranged to converge to anything.
-The odd terms and the even terms both diverge to
-infinity (prove this!):
+The odd terms and the even terms diverge to
+infinity and minus infinity respectively (prove this!):
 \begin{equation*}
-\sum_{n=1}^\infty \frac{1}{2n-1} = \infty, \qquad \text{and} \qquad
-\sum_{n=1}^\infty \frac{1}{2n} = \infty .
+\sum_{m=1}^\infty \frac{1}{2m-1} = \infty, \qquad \text{and} \qquad
+\sum_{m=1}^\infty \frac{-1}{2m} = -\infty .
 \end{equation*}
 Let $a_n := \frac{{(-1)}^{n+1}}{n}$ for simplicity, 
 let an arbitrary number $L \in \R$ be given, and set $\sigma(1) := 1$.
@@ -4023,7 +4023,7 @@ At this point we are no more than $\nicefrac{1}{8}$ from the limit.
 As we have
 already mentioned,
 multiplication of series is somewhat harder than addition.
-If we have that at least one of the series converges
+If at least one of the series converges
 absolutely, then we can use the following theorem.  For this result it is
 convenient to start the series at 0, rather than at 1.
 
@@ -4111,7 +4111,7 @@ is finite.  Take $m \geq 2K$, then in particular $m-K+1 > K$.  So
   \abs{ B_n -  B } \abs{a_{m-n}}
 \right)
 \\
-& <
+& \leq
 \left(
 \sum_{n=K}^m
 \abs{a_{n}}
@@ -4123,7 +4123,7 @@ B_{\text{max}}
   \epsilon \abs{a_{n}}
 \right)
 \\
-& <
+& \leq
 \epsilon
 B_{\text{max}}
 +
@@ -4145,7 +4145,7 @@ Therefore, for $m \geq 2K$ we have
 +
 \abs{B}\abs{A_m - A}
 \\
-& <
+& \leq
 \epsilon
 B_{\text{max}}
 +
@@ -4235,8 +4235,8 @@ The series
 \begin{equation*}
 \sum_{n=0}^\infty \frac{1}{n!} x^n
 \end{equation*}
-is absolutely convergent for all $x \in \R$.  This can be seen using the ratio test:
-For any $x$ notice that
+is absolutely convergent for all $x \in \R$ using the ratio test:
+For any $x \in \R$
 \begin{equation*}
 \lim_{n \to \infty}
 \frac{\bigl(1/(n+1)!\bigr) \, x^{n+1}}{(1/n!) \, x^{n}}
@@ -4246,7 +4246,7 @@ For any $x$ notice that
 =
 0.
 \end{equation*}
-In fact, you may recall from calculus that this series converges to $e^x$.
+Recall from calculus that this series converges to $e^x$.
 \end{example}
 
 \begin{example} \label{ps:1kex}
