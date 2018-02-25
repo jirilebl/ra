@@ -32,7 +32,7 @@ On the scripts:
 
 * publish.sh compiles the volume I file to pdf
 * publish2.sh compiles the volume II file to pdf
-* make-tar.sh makes a tarball
+* resizetocrownquatro.sh resize a PDF to crown quatro size using ghostscript
 
 *Note:* The tex sources require a very recent LaTeX.  If your latex does not
 have a recent enough ocgx2 package, you can simply comment out that line in
