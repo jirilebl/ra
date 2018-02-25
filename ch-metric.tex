@@ -528,8 +528,6 @@ d(f,g) := \int_0^1 \abs{f(x)-g(x)}\varphi(x)~dx .
 Show that $(X,d)$ is a metric space.
 \end{exercise}
 
-%\pagebreak[2]
-
 \begin{exercise} \label{exercise:mshausdorffpseudo}
 Let $(X,d)$ be a metric space.  For nonempty bounded subsets $A$ and $B$ let
 \begin{equation*}
@@ -800,6 +798,9 @@ for example $\bigcap_{n=1}^\infty (-\nicefrac{1}{n},\nicefrac{1}{n}) = \{ 0
 The proof of the following analogous proposition for closed sets
 is left as an exercise.
 
+%FIXMEevillayouthack
+\pagebreak[2]
+
 \begin{prop} \label{prop:topology:closed}
 Let $(X,d)$ be a metric space.
 \begin{enumerate}[(i)]
@@ -861,7 +862,7 @@ and $(-\infty,b]$ are closed in $\R$.
 
 The proof is left as an exercise.  Keep in mind that
 there are many other open and
-closed sets in $\R$.
+closed sets in the set of real numbers. %$\R$.
 
 \begin{prop} \label{prop:topology:subspaceopen}
 Suppose $(X,d)$ is a metric space, and $Y \subset X$.  Then $U \subset Y$
@@ -1315,6 +1316,7 @@ there exists an $x \in X$ such that $x \in S_i$ for all $i \in \N$.
 Show that $\bigcup_{i=1}^\infty S_i$ is connected.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Let $A$ be a connected set in a metric space.
 \begin{enumerate}[a)]
@@ -1325,6 +1327,7 @@ Is $A^\circ$ connected?  Prove or find a counterexample.
 \end{enumerate}
 Hint: Think of sets in $\R^2$.
 \end{exercise}
+\end{samepage}
 
 \begin{exnote}
 The definition of open sets in the following exercise is usually called the
@@ -2339,6 +2342,7 @@ Let $(X,d)$ be a metric space and $A$ a finite subset of $X$.
 Show that $A$ is compact.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Let $A = \{ \nicefrac{1}{n} : n \in \N \} \subset \R$.
 \begin{enumerate}[a)]
@@ -2350,6 +2354,7 @@ Show that $A \cup \{ 0 \}$ is
 compact directly using the definition.
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 
 
 \begin{exercise}
@@ -2849,6 +2854,7 @@ Show that $f$ is not continuous.
 \end{enumerate}
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise} 
 Suppose $(X,d_X)$, $(Y,d_Y)$ be metric spaces and
 $f \colon X \to Y$ is continuous.
@@ -2860,6 +2866,7 @@ Show that $f(\widebar{A}) \subset \overline{f(A)}$.
 Show that the subset can be proper.
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Prove \thmref{thm:mstopocont}.  Hint: Use \lemmaref{lemma:mstopocontloc}.
@@ -3074,9 +3081,10 @@ therefore used in real-world applications.
 \subsection{Picard's theorem}
 
 Let us start with the metric space to which we will apply the
-fixed point theorem,
-$C([a,b],\R)$ of \exampleref{example:msC01}.  That is, $C([a,b],\R)$
-is the space of continuous functions $f \colon [a,b] \to \R$ with the metric
+fixed point theorem.
+That is, the
+space $C([a,b],\R)$ of \exampleref{example:msC01},
+the space of continuous functions $f \colon [a,b] \to \R$ with the metric
 \begin{equation*}
 d(f,g) := \snorm{f-g}_u = \sup_{x \in [a,b]} \abs{f(x)-g(x)} .
 \end{equation*}
@@ -3129,6 +3137,7 @@ in some sense our task should be easier---we have more candidate functions
 to try.  This way of thinking is very typical when solving differential
 equations.
 
+\begin{samepage}
 \begin{thm}[Picard's theorem on existence and uniqueness]%
 \index{existence and uniqueness theorem}\index{Picard's theorem}
 Let $I, J \subset \R$ be closed and bounded intervals,
@@ -3147,6 +3156,7 @@ function $f \colon [x_0 - h, x_0 + h] \to J \subset \R$, such that
 f'(x) = F\bigl(x,f(x)\bigr) \qquad \text{and} \qquad f(x_0) = y_0.
 \end{equation*}
 \end{thm}
+\end{samepage}
 
 \begin{proof}
 Without loss of generality assume $x_0 =0$ (exercise).
