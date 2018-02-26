@@ -610,8 +610,8 @@ For infinite dimensional spaces, the proof is essentially the same, but a
 little trickier to write, so let us stick with finitely many dimensions.
 
 \begin{proof}
-Let $\{ x_1, x_2, \ldots, x_n \}$ be a basis and suppose 
-$A x_j = y_j$.  Every $x \in X$ has a unique representation
+Let $\{ x_1, x_2, \ldots, x_n \}$ be a basis of $X$, and let 
+$y_j := A x_j$.  Every $x \in X$ has a unique representation
 \begin{equation*}
 x = \sum_{j=1}^n b_j \, x_j
 \end{equation*}
@@ -625,8 +625,10 @@ A\sum_{j=1}^n b_j x_j
 \sum_{j=1}^n b_j \, y_j .
 \end{equation*}
 The ``furthermore'' follows by setting $y_j := \widetilde{A}(x_j)$,
-and defining the extension as
-$Ax := \sum_{j=1}^n b_j y_j$.  The function is well defined by
+and then for 
+$x = \sum_{j=1}^n b_j \, x_j$,
+defining the extension as
+$Ax := \sum_{j=1}^n b_j \, y_j$.  The function is well defined by
 uniqueness of the representation of $x$.
 We leave it to the reader to check that $A$ is linear.
 \end{proof}
@@ -693,7 +695,8 @@ Finally let us note that we often identify a finite dimensional vector
 space $X$ of dimension $n$ with $\R^n$, provided we fix a basis $\{ x_1,
 x_2, \ldots, x_n \}$ in $X$.  That is, we define a bijective
 linear map $A \in L(X,\R^n)$ by
-$Ax_j = e_j$, where $\{ e_1, e_2, \ldots, e_n \}$.  Then we have
+$Ax_j := e_j$, where $\{ e_1, e_2, \ldots, e_n \}$ is the standard
+basis in $\R^n$.  Then we have
 the correspondence
 \begin{equation*}
 \sum_{j=1}^n c_j \, x_j \, \in X
