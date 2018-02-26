@@ -668,14 +668,15 @@ A\sum_{j=1}^n a_j \, x_j ,
 so $A$ is onto.
 
 Now suppose $A$ is onto.  As $A$ is determined by the action on
-the basis we see that every element of $X$ has to be in the span of
-$\{ Ax_1, Ax_2, \ldots, Ax_n \}$.  Suppose 
+the basis, every element of $X$ is in the span of
+$\{ Ax_1, Ax_2, \ldots, Ax_n \}$.  Suppose that for some
+$c_1,c_2,\ldots,c_n$,
 \begin{equation*}
 A\sum_{j=1}^n c_j \, x_j =
 \sum_{j=1}^n c_j \, Ax_j = 0 .
 \end{equation*}
 By \propref{mv:dimprop}
-as $\{ Ax_1, Ax_2, \ldots, Ax_n \}$ span $X$, the set is independent,
+as $\{ Ax_1, Ax_2, \ldots, Ax_n \}$ span $X$, the set is linearly independent,
 and hence $c_j = 0$ for all $j$.  In other words if $Ax = 0$, then $x=0$.  This means that
 $A$ is one-to-one:  If $Ax = Ay$, then $A(x-y) = 0$ and so
 $x=y$.
@@ -719,9 +720,9 @@ See \figureref{mv:convexcomb}.
 In $\R$, convex sets are precisely the intervals, which are
 also precisely the connected sets.
 In two or more dimensions
-there are lots of nonconvex connected sets.  For example
-the set $\R^2 \setminus \{0\}$ is not convex but it is connected.  To see
-this simply take any $x \in \R^2 \setminus \{0\}$ and let $y:=-x$.
+there are lots of nonconvex connected sets.  For example,
+the set $\R^2 \setminus \{0\}$ is not convex, but it is connected.  To see
+this, take any $x \in \R^2 \setminus \{0\}$ and let $y:=-x$.
 Then $(\nicefrac{1}{2})x + (\nicefrac{1}{2})y = 0$, which is not in the set.
 On the other hand, the ball $B(x,r) \subset \R^n$ (using the standard metric
 on $\R^n$)
@@ -938,6 +939,16 @@ there $(0,1) \in K$ and $(1,1) \in K$.  Then show that if $(x,y) \in K$,
 then $y > 0$ unless $x=0$.
 \end{exercise}
 
+\begin{exercise}
+Prove that an arbitrary intersection of vector subspaces
+is a vectorspace.
+That is, if $X$ is a vectorspace and
+$\{ V_\lambda \}_{\lambda \in I}$ is
+an arbitrary collection of vector subspaces of $X$,
+then
+$\bigcap_{\lambda \in I} V_\lambda$ is a vector subspace of $X$.
+\end{exercise}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
@@ -968,7 +979,7 @@ scalar \emph{\myindex{dot product}} on $\R^n$.  For two vectors
 if $x=(x_1,x_2,\ldots,x_n) \in \R^n$
 and $y=(y_1,y_2,\ldots,y_n) \in \R^n$, define\glsadd{not:dotprod}
 \begin{equation*}
-x \cdot y := \sum_{j=1}^n x_j y_j .
+x \cdot y := \sum_{j=1}^n x_j\, y_j .
 \end{equation*}
 It is easy to see that the dot product is linear in each variable
 separately.  That is,
@@ -1050,12 +1061,11 @@ we define a distance $d(x,y) := \snorm{x-y}$, and this
 $d$ makes $X$ into
 a metric space (an easy exercise).
 
-%Let $A \in L(\R^n,\R^m)$.  Define
 \begin{defn}
 Let $A \in L(X,Y)$.  Define
 \begin{equation*}
 \snorm{A} :=
-\sup \{ \snorm{Ax} : x \in X ~ \text{with} ~ \snorm{x} = 1 \} .
+\sup \bigl\{ \snorm{Ax} : x \in X ~ \text{with} ~ \snorm{x} = 1 \bigr\} .
 \end{equation*}
 The number $\snorm{A}$ is called the \emph{\myindex{operator norm}}.  We will see below
 that indeed it is a norm (at least for finite dimensional spaces).
@@ -3364,7 +3374,7 @@ that replacing $x$ and $y$ with $-x$ and $-y$ we obtain another solution.
 
 The invertibility of the derivative is not a necessary
 condition, just sufficient, for having a continuous inverse and being an open
-mapping.  For example the function $f(x) = x^3$ is an open mapping from $\R$
+mapping.  For example, the function $f(x) = x^3$ is an open mapping from $\R$
 to $\R$ and is globally one-to-one with a continuous inverse, although the
 inverse is not differentiable at $x=0$.
 
