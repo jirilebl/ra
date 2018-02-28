@@ -63,7 +63,7 @@ If $u, v, w \in X$, then $u+(v+w) = (u+v)+w$.
 \item
 \makebox[2.1in][l]{(Addition is commutative)}
 If $u, v \in X$, then $u+v = v+u$.
-\item
+\item \label{vecspacedefn:addidentity}
 \makebox[2.1in][l]{(Additive identity)}
 There is a $0 \in X$ such that $v+0=v$ for all $v \in X$.
 \item
@@ -102,8 +102,8 @@ One particular fact we will often use is that $0 v = 0$, where
 the zero on the left is $0 \in \R$ and the zero on the right is $0 \in X$.
 To see this start with
 $0v = (0+0)v = 0v + 0v$, and add $-(0v)$ to both sides
-to obtain $0 = 0v$.  Similarly $-v = -1v$, which follows by
-$-1v+v = -1v +1v = (-1+1)v = 0v = 0$.
+to obtain $0 = 0v$.  Similarly $-v = (-1)v$, which follows by
+$(-1)v+v = (-1)v + 1v = (-1+1)v = 0v = 0$.
 These algebraic facts which follow quickly from the definition we will take
 for granted from now on.
 
@@ -187,6 +187,28 @@ So the space $\R[t]$ can be thought of as a subspace of $C(\R,\R)$.
 If we restrict the range of $t$ to $[0,1]$, $\R[t]$ can be identified with
 a subspace of $C([0,1],\R)$.
 \end{example}
+
+\begin{remark}
+If $X$ is a vector space, to check that a subset $S \subset X$
+is a vector subspace, we only need
+\begin{enumerate}[1)]
+\item
+$0 \in S$,
+\item
+$S$ is closed under addition, adding two vectors in $S$ gets us a vector in
+$S$, and
+\item
+$S$ is closed under scalar multiplication, multiplying a vector in
+$S$ by a scalar gets us a vector in $S$.
+\end{enumerate}
+2) and 3)
+make sure that the addition and scalar multiplication are in fact defined on
+$S$.  1) is required
+to fullfill \ref{vecspacedefn:addidentity}.  Existence
+of additive inverse $-v$ follows because $-v = (-1)v$ and 3) says that
+$-v \in S$ if $v \in S$.  All other properties are certain equalities
+which are already satisfied in $X$ and thus must be satisfied in a subset.
+\end{remark}
 
 It is often better to think of even the simpler ``finite dimensional''
 vector spaces using the abstract notion rather than always as $\R^n$.
@@ -397,6 +419,7 @@ linearly independent.  In fact,
 a = (a_1,a_2,\ldots,a_n) = \sum_{j=1}^n a_j \, e_j .
 \end{equation*}
 
+\pagebreak[2]
 \begin{prop} \label{mv:dimprop}
 %(\textbf{(Theorems 9.2 and 9.3 in Rudin):})
 Let $X$ be a vector space and $d$ a nonnegative integer.
@@ -906,10 +929,10 @@ operator.
 \begin{enumerate}[a)]
 \item
 Show that the nullspace $N := \{ x \in X : Ax = 0 \}$ is a
-vectorspace.
+vector space.
 \item
 Show that the range $R := \{ y \in Y : Ax = y \text{ for some $x \in X$} \}$ is a
-vectorspace.
+vector space.
 \end{enumerate}
 \end{exercise}
 
@@ -947,8 +970,8 @@ then $y > 0$ unless $x=0$.
 
 \begin{exercise}
 Prove that an arbitrary intersection of vector subspaces
-is a vectorspace.
-That is, if $X$ is a vectorspace and
+is a vector subspace.
+That is, if $X$ is a vector space and
 $\{ V_\lambda \}_{\lambda \in I}$ is
 an arbitrary collection of vector subspaces of $X$,
 then
@@ -1343,7 +1366,7 @@ and
 2\snorm{A^{-1}}^2
 \snorm{A-B} .
 \end{equation*}
-Therefore, if as $B$ tends to $A$, $\snorm{B^{-1}-A^{-1}}$ tends to 0, and
+Therefore, as $B$ tends to $A$, $\snorm{B^{-1}-A^{-1}}$ tends to 0, and
 so the inverse operation is a continuous function at $A$.
 \end{proof}
 
@@ -1502,8 +1525,8 @@ A certain number can be assigned to square matrices that measures
 how the corresponding linear mapping stretches space.  In particular,
 this number, called the determinant, can be used to test for invertibility of a matrix.
 
-First define the symbol
-$\operatorname{sgn}(x)$\glsadd{not:sgn} for a number is defined by
+Define the symbol
+$\operatorname{sgn}(x)$\glsadd{not:sgn} for a number $x$ by
 \begin{equation*}
 \operatorname{sgn}(x)
 :=
@@ -1522,18 +1545,19 @@ a permutation \emph{even}\index{even permutation}
 (resp.\ \emph{odd})\index{odd permutation}
 if it takes an even (resp.\ odd) number of
 transpositions to get from $\sigma$ to $(1,2,\ldots,n)$.
-It can be shown
-that this is well defined (exercise).
-In fact, define
+Being even or odd is well defined:
+Let
 \begin{equation} \label{eq:sgndef}
 \operatorname{sgn}(\sigma) := \operatorname{sgn}(\sigma_1,\ldots,\sigma_n) = 
 \prod_{p < q} \operatorname{sgn}(\sigma_q-\sigma_p) .
 \end{equation}
-Then it can be shown that $\operatorname{sgn}(\sigma)$ 
-is $1$ if $\sigma$ is even and $-1$ if $\sigma$ is odd.
+Clearly $\operatorname{sgn}(\sigma)$ is well defined, and
+it can be shown (exercise) that $\operatorname{sgn}(\sigma)$ 
+is $1$ if $\sigma$ is even and $-1$ if $\sigma$ is odd,
+so being odd or even is well defined.
 This fact can be proved by noting that applying a transposition changes the
 sign.
-Then note that the sign of $(1,2,\ldots,n)$ is 1.
+Then note that $\operatorname{sgn}\bigl( (1,2,\ldots,n) \bigr) = 1$.
 
 Let $S_n$  be the set of all permutations on $n$ elements (the
 \emph{\myindex{symmetric group}}).
@@ -1546,15 +1570,15 @@ Let $A= [a_{i,j}]$ be a square $n \times n$ matrix.  Define the \emph{\myindex{d
 \end{equation*}
 
 %\textbf{Proposition (Theorem 9.34 and other observations):}
-%FIXMEevillayouthack
 \pagebreak[0]
 \begin{prop}
 {\ }
 %\nopagebreak
 \begin{enumerate}[(i)]
 \item \label{prop:det:i} $\det(I) = 1$.
-\item \label{prop:det:ii} $\det([x_1 ~~ x_2 ~~ \cdots ~~ x_n ])$ as a function of column vectors $x_j$
-is linear in each variable $x_j$ separately.
+\item \label{prop:det:ii} For every $j=1,2,\ldots,n$, the function $x_j
+\mapsto \det([x_1 ~~ x_2 ~~ \cdots ~~ x_n ])$
+is linear.
 \item \label{prop:det:iii} If two columns of a matrix are interchanged, then the determinant changes
 sign.
 \item \label{prop:det:iv} If two columns of $A$ are equal, then $\det(A) = 0$.
@@ -1570,16 +1594,17 @@ In fact, the determinant is the unique function that satisfies
 \ref{prop:det:ii}, and
 \ref{prop:det:iii}.
 But we digress.  By \ref{prop:det:ii}, we mean that if we fix all the vectors
-$x_1,\ldots,x_n$ except for $x_j$ and think of the determinant as function
-of $x_j$, it is a linear function.  That is, if $v,w \in \R^n$ are two vectors,
-and $a,b \in \R$ are scalars, then
+$x_1,\ldots,x_n$ except for $x_j$, and let
+$v,w \in \R^n$ be two vectors,
+and $a,b \in \R$ be scalars, then
 \begin{multline*}
-\det([x_1 ~~ \cdots ~~ x_{j-1} ~~ (av+bw) ~~ x_{j+1} ~~ \cdots ~~ x_n]) =
+\det\bigl([x_1 ~~ \cdots ~~ x_{j-1} ~~ (av+bw) ~~ x_{j+1} ~~ \cdots ~~
+x_n]\bigr) =
 \\
-a \det([x_1 ~~ \cdots ~~ x_{j-1} ~~ v ~~ x_{j+1} ~~ \cdots ~~ x_n])
+a \det\bigl([x_1 ~~ \cdots ~~ x_{j-1} ~~ v ~~ x_{j+1} ~~ \cdots ~~ x_n]\bigr)
 +
 b
-\det([x_1 ~~ \cdots ~~ x_{j-1} ~~ w ~~ x_{j+1} ~~ \cdots ~~ x_n]) .
+\det\bigl([x_1 ~~ \cdots ~~ x_{j-1} ~~ w ~~ x_{j+1} ~~ \cdots ~~ x_n]\bigr) .
 \end{multline*}
 
 \begin{proof}
@@ -1875,6 +1900,7 @@ $\left[
 \end{exercise}
 
 
+\begin{samepage}
 \begin{exercise} \label{exercise:normonedim}
 Using the standard euclidean norm $\R^n$. Show
 \begin{enumerate}[a)]
@@ -1889,16 +1915,21 @@ for a vector $b \in \R^n$.
 Then the operator norm $\snorm{B}_{L(\R^n,\R)} = \snorm{b}_{\R^n}$.
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Suppose $\sigma = (\sigma_1,\sigma_2,\ldots,\sigma_n)$ is a permutation of
-$(1,2,\ldots,n)$.\\
-a) Show that we can make a finite number of transpositions (switching of two
-elements) to get to $(1,2,\ldots,n)$.\\
-b) Using the definition \eqref{eq:sgndef}
+$(1,2,\ldots,n)$.
+\begin{enumerate}[a)]
+\item
+Show that we can make a finite number of transpositions (switching of two
+elements) to get to $(1,2,\ldots,n)$.
+\item
+Using the definition \eqref{eq:sgndef}
 show that $\sigma$ is even if $\operatorname{sgn}(\sigma) = 1$ and $\sigma$
 is odd if $\operatorname{sgn}(\sigma) = -1$.  In particular, showing that
 being odd or even is well defined.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1910,7 +1941,6 @@ elementary matrices.
 Prove \propref{prop:elemmatrixdecomp}.
 \end{exercise}
 
-\begin{samepage}
 \begin{exercise}
 {\ }
 \begin{enumerate}[a)]
@@ -1923,10 +1953,9 @@ $B$ such that $B^{-1}AB = D$ for a diagonal matrix $D = [d_{i,j}]$.  Show
 that $\det(A) = d_{1,1}d_{2,2} \cdots d_{n,n}$.
 \end{enumerate}
 \end{exercise}
-\end{samepage}
 
 \begin{exercise}
-Take the vectorspace of polynomials $\R[t]$ and the linear operator $D \in
+Take the vector space of polynomials $\R[t]$ and the linear operator $D \in
 L(\R[t])$ that is
 the differentiation (we proved in an earlier exercise that $D$ is a linear
 operator).  Define the norm on $P(t) = c_0 + c_1 t + \cdots + c_n
@@ -1968,6 +1997,7 @@ spaces and $A \in L(X,Y)$, then $\snorm{A} < \infty$.
 \end{enumerate}
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Let $X$ be any finite dimensional vector space with a norm $\snorm{\cdot}$
 and basis $\{ x_1,x_2,\ldots,x_n
@@ -2005,6 +2035,7 @@ $\norm{x-y}_2$.  In other words, convergence of sequences and continuity
 of functions is the same in either norm.
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2397,7 +2428,7 @@ f'(p) \, e_j =
 \sum_{k=1}^m
 \frac{\partial f_k}{\partial x_j}(p) \,e_k .
 \end{equation*}
-If $v = \sum_{j=1}^n c_j e_j = (c_1,c_2,\ldots,c_n)$, then
+If $v = \sum_{j=1}^n c_j\, e_j = (c_1,c_2,\ldots,c_n)$, then
 \begin{equation*}
 f'(p) \, v =
 \sum_{j=1}^n
@@ -2604,7 +2635,7 @@ F\bigl(\alpha(t)\bigr)
 Let $f \colon \R^2 \to \R$ be given by
 %\begin{equation}
 $f(x,y)
-=
+:=
 \sqrt{x^2+y^2}$.
 %\end{equation}
 Show that $f$ is not differentiable at the origin.
@@ -3060,11 +3091,9 @@ t \frac{\partial f_j}{\partial x_n}(x)\right)}^2} + \epsilon \snorm{h_1}
 \\
 & \leq \sqrt{m}\, \epsilon \sabs{t} + \epsilon \snorm{h_1}
 \\
-& \leq (\sqrt{m}+1)\epsilon \snorm{h} .
+& \leq (\sqrt{m}+1)\epsilon \snorm{h} . \qedhere
 \end{split}
 \end{equation*}
-%Where the last estimate follows from 
-%$\sabs{t} \leq \snorm{h}$ and $\snorm{h_1} \leq \snorm{h}$.
 \end{proof}
 
 \subsection{Exercises}
@@ -3332,12 +3361,14 @@ the left hand side also goes to 0.  And
 $B$ is precisely what we wanted $g'(y)$ to be.
 
 We have $g$ is differentiable, let us show it is $C^1(W)$.
-Now, $g \colon W \to V$ is continuous (it is differentiable),
+The function $g \colon W \to V$ is continuous (it is differentiable),
 $f'$ is a continuous function from $V$
-to $L(\R^n)$, and $X \to X^{-1}$ is a continuous function.  
+to $L(\R^n)$, and $X \mapsto X^{-1}$ is a continuous function on
+the set of invertible operators.
+As
 $g'(y) = {\bigl( f'\bigl(g(y)\bigr)\bigr)}^{-1}$ is the composition
 of these three
-continuous functions and hence is continuous.
+continuous functions, it is continuous.
 \end{proof}
 
 \begin{cor}
@@ -3370,7 +3401,7 @@ mean that $f$ is
 one-to-one globally.  It is ``locally'' one-to-one but perhaps not
 ``globally.''  For an
 example, take the map $f \colon \R^2 \setminus \{ 0 \} \to \R^2$ defined
-by $f(x,y) = (x^2-y^2,2xy)$.
+by $f(x,y) := (x^2-y^2,2xy)$.
   %Here we treat the map as if it went from $\R^2 \setminus
 %\{ 0 \}$ to $\R^2$.  For any nonzero complex number, there are always two square roots, so the map
 %is actually 2-to-1.
