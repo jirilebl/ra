@@ -977,6 +977,8 @@ a function $\snorm{\cdot} \colon X \to \R$ is a
 \item \label{defn:norm:iii} $\snorm{x+y} \leq \snorm{x}+\snorm{y}$ for all $x,y \in X$
 \qquad (Triangle inequality)\index{triangle inequality for norms}.
 \end{enumerate}
+A vector space equipped with a norm is called a
+\emph{\myindex{normed vector space}}.
 \end{defn}
 
 Before defining the standard norm on $\R^n$, let us
@@ -1054,9 +1056,9 @@ follows via the following computation:
 =
 x \cdot x + y \cdot y + 2 (x \cdot y)
 \leq
-\snorm{x}^2 + \snorm{y}^2 + 2 (\snorm{x} \,\snorm{y})
+\snorm{x}^2 + \snorm{y}^2 + 2 \bigl(\snorm{x} \,\snorm{y}\bigr)
 =
-{(\snorm{x} + \snorm{y})}^2 .
+{\bigl(\snorm{x} + \snorm{y}\bigr)}^2 .
 \end{equation*}
 
 The distance
@@ -1076,8 +1078,9 @@ Let $A \in L(X,Y)$.  Define
 \snorm{A} :=
 \sup \bigl\{ \snorm{Ax} : x \in X ~ \text{with} ~ \snorm{x} = 1 \bigr\} .
 \end{equation*}
-The number $\snorm{A}$ is called the \emph{\myindex{operator norm}}.  We will see below
-that indeed it is a norm (at least for finite dimensional spaces).
+The number $\snorm{A}$ (possibly $\infty$)
+is called the \emph{\myindex{operator norm}}.  We will see below
+that indeed it is a norm for finite dimensional spaces.
 Again, when necessary to emphasize which norm we are talking about, we may
 write it as $\snorm{A}_{L(X,Y)}$.\glsadd{not:normLXY}
 \end{defn}
@@ -1104,7 +1107,7 @@ This implies that
 It is not hard to see from the definition that $\snorm{A} = 0$ if and
 only if $A = 0$, that is, if $A$ takes every vector to the zero vector.
 
-It is also not difficult to compute the norm of the identity operator:
+It is also not difficult to compute the operator norm of the identity operator:
 \begin{equation*}
 \snorm{I} =
 \sup_{\substack{x \in X\\x\neq 0}} \frac{\snorm{Ix}}{\snorm{x}} 
@@ -1113,18 +1116,20 @@ It is also not difficult to compute the norm of the identity operator:
 = 1.
 \end{equation*}
 
-For finite dimensional spaces, $\snorm{A}$ is always finite as we prove
-below.  This also implies that $A$ is continuous.
-For infinite dimensional spaces neither statement needs to be true.  For a simple
-example,
+The operator norm is not always a norm on $L(X,Y)$, in particular,
+$\snorm{A}$ is not always finite for $A \in L(X,Y)$.
+We prove below that $\snorm{A}$ is finite when $X$ is finite dimensional.
+This also implies that $A$ is continuous.
+For infinite dimensional spaces neither statement needs to be true.
+For example,
 take the vector space of continuously differentiable functions on $[0,2\pi]$
 and as the norm use the uniform norm.  The functions
 $t \mapsto \sin(n t)$ have norm 1, but the derivatives have norm $n$.  So
 differentiation (which is a linear operator) has infinite operator norm on this
-space.  But let us stick to finite dimensional spaces now.
+space.  We will stick to finite dimensional spaces.
 
-When we talk about finite dimensional vector space, one often thinks of
-$\R^n$, although if we have a norm, the norm might perhaps not be
+When we talk about a finite dimensional vector space $X$, one often thinks of
+$\R^n$, although if we have a norm on $X$, the norm might not be
 the standard euclidean norm.  In the exercises, you can prove that
 every norm is ``equivalent'' to the euclidean norm in that the
 topology it generates is the same.  For simplicity, we only prove the
@@ -1132,14 +1137,15 @@ following proposition for the euclidean space, and the proof for a general
 finite dimensional space is left as an exercise.
 
 \begin{prop} \label{prop:finitedimpropnormfin}
-Let $X$ and $Y$ be finite dimensional vector spaces with a norm.
+Let $X$ and $Y$ be normed vector spaces.
+Suppose that $X$ is finite dimensional.
 If $A \in L(X,Y)$, then $\snorm{A} < \infty$, and
 $A$ is uniformly continuous (Lipschitz with constant $\snorm{A}$).
 \end{prop}
 
 \begin{proof}
 As we said we only prove the proposition for euclidean space so suppose
-that $X = \R^n$ and $Y=\R^m$ and the norm is the standard euclidean norm.
+that $X = \R^n$ and the norm is the standard euclidean norm.
 The general case is left as an exercise.
 
 Let $\{ e_1,e_2,\ldots,e_n \}$ be the standard basis of $\R^n$.
@@ -1165,7 +1171,7 @@ Then
 The right hand side does not depend on $x$.  We found
 a finite upper bound independent of $x$, so $\snorm{A} < \infty$.
 
-For any vector spaces $X$ and $Y$, and $A \in L(X,Y)$, suppose that
+For any normed vector spaces $X$ and $Y$, and $A \in L(X,Y)$, suppose that
 $\snorm{A} < \infty$.
 For $v,w \in X$,
 \begin{equation*}
@@ -1175,7 +1181,8 @@ As $\snorm{A} < \infty$, then this says $A$ is Lipschitz with constant $\snorm{A
 \end{proof}
 
 \begin{prop} \label{prop:finitedimpropnorm}
-Let $X$, $Y$, and $Z$ be finite dimensional vector spaces with a norm.
+Let $X$, $Y$, and $Z$ be normed vector
+spaces.
 {\ }
 %\textbf{Proposition (Theorem 9.7 in Rudin):}
 \begin{enumerate}[(i)]
@@ -1184,7 +1191,7 @@ If $A,B \in L(X,Y)$ and $c \in \R$, then
 \begin{equation*}
 \snorm{A+B} \leq \snorm{A}+\snorm{B}, \qquad \snorm{cA} = \sabs{c} \, \snorm{A} .
 \end{equation*}
-In particular, the operator norm is a norm on the vector space $L(X,Y)$.
+In particular, if $X$ is finite dimensional, the operator norm is a norm on the vector space $L(X,Y)$.
 \item \label{item:finitedimpropnorm:ii}
 If $A \in L(X,Y)$ and $B \in L(Y,Z)$, then
 \begin{equation*}
@@ -1216,6 +1223,8 @@ Thus $\snorm{cA} \leq \sabs{c} \, \snorm{A}$.  Next,
 \snorm{cAx} \leq \snorm{cA} \, \snorm{x} .
 \end{equation*}
 Hence $\sabs{c} \, \snorm{A} \leq \snorm{cA}$.
+If $X$ is finite dimensional, then $\snorm{A} < \infty$ for all $A \in
+L(X,Y)$, and therefore the operator norm is a norm.
 
 For \ref{item:finitedimpropnorm:ii} write
 \begin{equation*}
@@ -1226,12 +1235,13 @@ For \ref{item:finitedimpropnorm:ii} write
 
 As a norm defines a metric,
 there is
-a metric space topology on $L(X,Y)$, so we can talk
+a metric space topology on $L(X,Y)$ for finite dimensional vector spaces,
+so we can talk
 about open/closed sets, continuity, and convergence.
 
 %\textbf{Theorem 9.8:}
 \begin{prop} \label{prop:finitedimpropinv}
-Let $X$ be a finite dimensional vector space with a norm.
+Let $X$ be a finite dimensional normed vector space.
 Let $U \subset L(X)$ be the set of invertible linear operators.
 \begin{enumerate}[(i)]
 \item \label{finitedimpropinv:i}
@@ -1246,9 +1256,9 @@ function on $U$.
 \end{enumerate}
 \end{prop}
 
-Let us make sense of this on a simple example.
-Think back to $\R^1$, where linear operators are just
-numbers $a$ and the operator norm of $a$ is simply $\sabs{a}$.
+Let us make sense of this proposition on a simple example.
+Consider $X=\R^1$, where linear operators are just
+numbers $a$ and the operator norm of $a$ is $\sabs{a}$.
 The operator $a$ is invertible ($a^{-1} = \nicefrac{1}{a}$)
 whenever $a \not=0$.  The condition $\sabs{a-b} < \frac{1}{\sabs{a^{-1}}}$ does
 indeed imply that $b$ is not zero.  And $a \mapsto \nicefrac{1}{a}$ is a continuous
@@ -1284,8 +1294,8 @@ Using \eqref{eqcontineq} we obtain
 or in other words $\snorm{Bx} \not= 0$ for all nonzero $x$, and hence
 $Bx \not= 0$ for all nonzero $x$.  This is enough to see that
 $B$ is one-to-one (if $Bx = By$, then $B(x-y) = 0$, so $x=y$).
-As $B$ is one-to-one operator from $X$ to $X$ which is finite dimensional
-and hence is invertible.
+As $B$ is one-to-one operator from $X$ to $X$, which is finite dimensional,
+$B$ is invertible.
 
 Let us look at \ref{finitedimpropinv:ii}.  Fix some $A \in U$.  Let $B$ be invertible and near $A$,
 that is $\snorm{A-B} \, \snorm{A^{-1}} <  \nicefrac{1}{2}$.
@@ -1926,8 +1936,8 @@ Show that $D$ does not have bounded operator norm, that is $\snorm{D} =
 
 \begin{exercise}
 In this exercise we finish the proof of \propref{prop:finitedimpropnormfin}.
-Let $X$ be any finite dimensional vector space with a norm.  Let $\{ x_1,x_2,\ldots,x_n
-\}$ be a basis for $X$.
+Let $X$ be any finite dimensional normed vector space.
+Let $\{ x_1,x_2,\ldots,x_n \}$ be a basis for $X$.
 \begin{enumerate}[a)]
 \item
 Show that the function $f \colon \R^n \to \R$
@@ -1947,7 +1957,7 @@ Show that there exists a number $B$ such that if
 $\snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n}=1$,
 then $\sabs{c_j} \leq B$.
 \item
-Use part (c) to show that if $X$ and $Y$ are finite dimensional vector 
+Use part (c) to show that if $X$ is finite dimensional vector 
 spaces and $A \in L(X,Y)$, then $\snorm{A} < \infty$.
 \end{enumerate}
 \end{exercise}
