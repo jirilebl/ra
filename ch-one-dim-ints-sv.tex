@@ -1064,9 +1064,9 @@ differentiable function on $[0,1]$.
 \begin{exercise}
 Suppose $\gamma \colon [a,b] \to \R^n$ is a smooth path.
 Show that there exists an $\epsilon > 0$ and a smooth function
-$\tilde{\gamma} \colon (a-\epsilon,b+\epsilon) \to \R^n$
-with $\tilde{\gamma}(t) = \gamma(t)$ for all $t \in [a,b]$
-and $\tilde{\gamma}'(t) \not= 0$ for all $t \in 
+$\widetilde{\gamma} \colon (a-\epsilon,b+\epsilon) \to \R^n$
+with $\widetilde{\gamma}(t) = \gamma(t)$ for all $t \in [a,b]$
+and $\widetilde{\gamma}^{\:\prime}(t) \not= 0$ for all $t \in 
 (a-\epsilon,b+\epsilon)$.  That is, prove that a smooth path extends
 some small distance past the end points.
 \end{exercise}
@@ -1172,7 +1172,7 @@ Hint: same hint as the last exercise.
 \begin{samepage}
 \begin{exercise}
 Define $\gamma \colon [0,1] \to \R^2$ by
-$\gamma(t) := \Bigl( t^3 \sin(\nicefrac{1}{t}),
+$\gamma(t) := \Bigl( t^3 \sin(\nicefrac{1}{t}),\,
 t{\bigl(3t^2\sin(\nicefrac{1}{t})-t\cos(\nicefrac{1}{t})\bigr)}^2 \Bigr)$
 for
 $t \not= 0$ and $\gamma(0) = (0,0)$.  Show that:
@@ -1212,7 +1212,7 @@ near the origin.
 
 \subsection{Path independent integrals}
 
-Let $U \subset \R^n$ be a set and $\omega$ a one-form defined on $U$,
+Let $U \subset \R^n$ be a set and $\omega$ a one-form defined on $U$.
 The integral of $\omega$
 is said to be \emph{\myindex{path independent}}
 if for any two points $x,y \in U$ and
@@ -1227,7 +1227,7 @@ In this case we simply write
 \begin{equation*}
 \int_x^y \omega := \int_\gamma \omega = \int_\beta \omega .
 \end{equation*}
-Not every one-form gives a path independent integral.  In fact, most do not.
+Not every one-form gives a path independent integral.  Most do not.
 
 \begin{example}
 Let $\gamma \colon [0,1] \to \R^2$ be the path $\gamma(t) = (t,0)$
@@ -1243,14 +1243,14 @@ $\beta(t) = \bigl(t,(1-t)t\bigr)$ also going between the same points.  Then
 =
 \int_0^1 (1-t)t(1) ~ dt = \frac{1}{6} .
 \end{align*}
-So the integral of $y~dx$ is not path independent.
+The integral of $y~dx$ is not path independent.
 In particular,
 $\int_{(0,0)}^{(1,0)} y~dx$ does not make sense.
 \end{example}
 
 \begin{defn}
 Let $U \subset \R^n$ be an open set and $f \colon U \to \R$ a 
-continuously differentiable function.  Then the one-form
+continuously differentiable function.  The one-form
 \begin{equation*}
 df :=
 \frac{\partial f}{\partial x_1} ~ dx_1 + 
@@ -1266,15 +1266,15 @@ if for every two points $x$ and $y$ in $U$, there exists a piecewise smooth
 path starting at $x$ and ending at $y$.
 \end{defn}
 
-We will leave as an exercise that every connected open set is path
+We leave as an exercise that every connected open set is path
 connected.
 
 \begin{prop} \label{mv:prop:pathinddf}
 Let $U \subset \R^n$ be a path connected open set and $\omega$ a one-form
 defined on $U$.  Then
-\begin{equation*}
-\int_x^y \omega
-\end{equation*}
+%\begin{equation*}
+$\int_x^y \omega$
+%\end{equation*}
 is path independent (for all $x,y \in U$) if and only if there exists
 a continuously differentiable $f \colon U \to \R$ such that $\omega = df$.
 
@@ -1307,7 +1307,7 @@ Let $e_j$ be an arbitrary standard basis vector.  Compute
 which follows by \propref{mv:prop:pathconcat} and path indepdendence as 
 $\int_{p}^{x+he_j} \omega =
 \int_{p}^{x} \omega +
-\int_{x}^{x+he_j} \omega$, because we could have picked a path from $p$ to
+\int_{x}^{x+he_j} \omega$, because we pick a path from $p$ to
 $x+he_j$ that also happens to pass through $x$, and then cut this path in
 two.
 
@@ -1347,9 +1347,9 @@ That is,
 \begin{equation*}
 \lim_{h\to 0}\frac{f(x+h e_j) - f(x)}{h} = \omega_j(x) ,
 \end{equation*}
-which is what we wanted that is $df = \omega$.  As $\omega_j$ are
-continuous for all $j$, we find that $f$ has continuous partial derivatives and
-therefore is continuously differentiable.
+which is what we wanted: $df = \omega$.  As $\omega_j$ is
+continuous for every $j$, then $f$ has continuous partial derivatives and
+is thus continuously differentiable.
 
 For the other direction
 suppose $f$ exists such that $df = \omega$.  Suppose we take a smooth
@@ -1386,18 +1386,19 @@ Then $\omega = df$ for some continuously differentiable $f \colon U \to
 \R$ if and only if
 \begin{equation*}
 \int_{\gamma} \omega = 0
+\qquad
+\text{for every piecewise smooth closed path $\gamma \colon [a,b] \to U$.}
 \end{equation*}
-for every piecewise smooth closed path $\gamma \colon [a,b] \to U$.
 \end{prop}
 
 \begin{proof}
-Suppose first that $\omega = df$ and let $\gamma$ be a piecewise smooth
-closed path.  Then we
-from above we have that
+Suppose $\omega = df$ and let $\gamma$ be a piecewise smooth
+closed path.  
+Since $\gamma(a) = \gamma(b)$ for a closed path,
+the previous proposition says
 \begin{equation*}
-\int_{\gamma} \omega = f\bigl(\gamma(b)\bigr) - f\bigl(\gamma(a)\bigr) = 0 ,
+\int_{\gamma} \omega = f\bigl(\gamma(b)\bigr) - f\bigl(\gamma(a)\bigr) = 0 .
 \end{equation*}
-because $\gamma(a) = \gamma(b)$ for a closed path.
 
 Now suppose that for every piecewise smooth closed path $\gamma$, $\int_{\gamma} \omega = 0$.
 Let $x,y$ be two points in $U$ and let $\alpha \colon [0,1] \to U$ and
@@ -1421,15 +1422,16 @@ $\beta$ integral.  Thus the integral of $\omega$ on $U$ is path independent.
 \end{proof}
 
 There is a local criterion, a differential equation, that guarantees
-path independence.  That is, under the right condition there exists
-an \emph{antiderivative} $f$ whose total derivative is the given one-form
-$\omega$.  However, since the criterion is local, we only get the result
+path independence, on in other words an
+\emph{\myindex{antiderivative}}
+$f$ whose total derivative is the given one-form
+$\omega$.  Since the criterion is local, we only get the result
 locally.  We can define the antiderivative in any so-called
-\emph{simply connected} domain, which informally is a domain where
+\emph{\myindex{simply connected}} domain, which informally is a domain where
 any path between two points can be ``continuously deformed''
 into any other path
-between those two points.  To make matters simple, the usual way
-this result is proved is for so-called star-shaped domains.
+between those two points.  But to make matters simple, the usual way
+this result is proved is for so-called star shaped domains.
 
 \begin{defn}
 Let $U \subset \R^n$ be an open set and $p \in U$.  We say $U$ is
@@ -1600,7 +1602,7 @@ that
 \int_x^y v \cdot d\gamma
 \end{equation*}
 is path independent (so for any $\gamma$) if and only if 
-$v = \nabla f$, that is the gradient of a function.  The function $f$
+$v = \nabla f$, that is $v$ is the gradient of a function.  The function $f$
 is then called the \emph{\myindex{potential}} for $v$.
 
 A vector field $v$ whose path integrals are path independent is called

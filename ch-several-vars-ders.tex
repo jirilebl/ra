@@ -973,7 +973,7 @@ a function $\snorm{\cdot} \colon X \to \R$ is a
 \emph{\myindex{norm}}\glsadd{not:norm} if:
 \begin{enumerate}[(i)]
 \item \label{defn:norm:i} $\snorm{x} \geq 0$, with $\snorm{x}=0$ if and only if $x=0$.
-\item \label{defn:norm:ii} $\snorm{cx} = \sabs{c}\snorm{x}$ for all $c \in \R$ and $x \in X$.
+\item \label{defn:norm:ii} $\snorm{cx} = \sabs{c} \, \snorm{x}$ for all $c \in \R$ and $x \in X$.
 \item \label{defn:norm:iii} $\snorm{x+y} \leq \snorm{x}+\snorm{y}$ for all $x,y \in X$
 \qquad (Triangle inequality)\index{triangle inequality for norms}.
 \end{enumerate}
@@ -1010,7 +1010,7 @@ reprove a slightly stronger version using the notation of this chapter.
 \begin{thm}[\myindex{Cauchy--Schwarz inequality}]
 Let $x, y \in \R^n$, then
 \begin{equation*}
-\sabs{x \cdot y} \leq \snorm{x}\snorm{y} = \sqrt{x\cdot x}\, \sqrt{y\cdot y},
+\sabs{x \cdot y} \leq \snorm{x} \, \snorm{y} = \sqrt{x\cdot x}\, \sqrt{y\cdot y},
 \end{equation*}
 with equality if and only if the vectors are scalar multiples of each other.
 \end{thm}
@@ -1024,8 +1024,8 @@ $\lambda \in \R$, then the theorem holds with equality:
 \begin{equation*}
 \sabs{ x \cdot y } =
 \sabs{\lambda y \cdot y} = \sabs{\lambda} \, \sabs{y\cdot y} =
-\sabs{\lambda} \, \snorm{y}^2 = \snorm{\lambda y} \snorm{y} = \snorm{x}
-\snorm{y} .
+\sabs{\lambda} \, \snorm{y}^2 = \snorm{\lambda y} \, \snorm{y}
+= \snorm{x} \, \snorm{y} .
 \end{equation*}
 
 Next take $x+ty$, we find that
@@ -1054,7 +1054,7 @@ follows via the following computation:
 =
 x \cdot x + y \cdot y + 2 (x \cdot y)
 \leq
-\snorm{x}^2 + \snorm{y}^2 + 2 (\snorm{x}\snorm{y})
+\snorm{x}^2 + \snorm{y}^2 + 2 (\snorm{x} \,\snorm{y})
 =
 {(\snorm{x} + \snorm{y})}^2 .
 \end{equation*}
@@ -1089,7 +1089,7 @@ The vector $\frac{x}{\snorm{x}}$ is of norm 1.
 Therefore,
 \begin{equation*}
 \snorm{A} =
-\sup \{ \snorm{Ax} : x \in X ~ \text{with} ~ \snorm{x} = 1 \}
+\sup \bigl\{ \snorm{Ax} : x \in X ~ \text{with} ~ \snorm{x} = 1 \bigr\}
 =
 \sup_{\substack{x \in X\\x\neq 0}} \frac{\snorm{Ax}}{\snorm{x}} .
 \end{equation*}
@@ -1148,17 +1148,17 @@ Write $x \in \R^n$, with $\snorm{x} = 1$, as
 x = \sum_{j=1}^n c_j \, e_j .
 \end{equation*}
 Since $e_j \cdot e_\ell = 0$ whenever $j\not=\ell$ and $e_j \cdot e_j = 1$,
-then $c_j = x \cdot e_j$ and
+then $c_j = x \cdot e_j$ and by Cauchy--Schwarz
 \begin{equation*}
 \sabs{c_j} = \sabs{ x \cdot e_j }
-\leq \snorm{x} \snorm{e_j} = 1 .
+\leq \snorm{x} \, \snorm{e_j} = 1 .
 \end{equation*}
 Then
 \begin{equation*}
 \snorm{Ax} =
 \norm{\sum_{j=1}^n c_j \, Ae_j}
 \leq
-\sum_{j=1}^n \sabs{c_j} \snorm{Ae_j} 
+\sum_{j=1}^n \sabs{c_j} \, \snorm{Ae_j} 
 \leq
 \sum_{j=1}^n \snorm{Ae_j} .
 \end{equation*}
@@ -1169,7 +1169,7 @@ For any vector spaces $X$ and $Y$, and $A \in L(X,Y)$, suppose that
 $\snorm{A} < \infty$.
 For $v,w \in X$,
 \begin{equation*}
-\snorm{A(v-w)} \leq \snorm{A} \snorm{v-w} .
+\snorm{A(v-w)} \leq \snorm{A} \, \snorm{v-w} .
 \end{equation*}
 As $\snorm{A} < \infty$, then this says $A$ is Lipschitz with constant $\snorm{A}$.
 \end{proof}
@@ -1182,13 +1182,13 @@ Let $X$, $Y$, and $Z$ be finite dimensional vector spaces with a norm.
 \item \label{item:finitedimpropnorm:i}
 If $A,B \in L(X,Y)$ and $c \in \R$, then
 \begin{equation*}
-\snorm{A+B} \leq \snorm{A}+\snorm{B}, \qquad \snorm{cA} = \sabs{c}\snorm{A} .
+\snorm{A+B} \leq \snorm{A}+\snorm{B}, \qquad \snorm{cA} = \sabs{c} \, \snorm{A} .
 \end{equation*}
 In particular, the operator norm is a norm on the vector space $L(X,Y)$.
 \item \label{item:finitedimpropnorm:ii}
 If $A \in L(X,Y)$ and $B \in L(Y,Z)$, then
 \begin{equation*}
-\snorm{BA} \leq \snorm{B} \snorm{A} .
+\snorm{BA} \leq \snorm{B} \, \snorm{A} .
 \end{equation*}
 \end{enumerate}
 \end{prop}
@@ -1199,27 +1199,27 @@ For \ref{item:finitedimpropnorm:i},
 \snorm{(A+B)x} =
 \snorm{Ax+Bx} \leq
 \snorm{Ax}+\snorm{Bx} \leq
-\snorm{A} \snorm{x}+\snorm{B}\snorm{x} =
-(\snorm{A}+\snorm{B}) \snorm{x} .
+\snorm{A} \, \snorm{x}+\snorm{B} \,\snorm{x} =
+\bigl(\snorm{A}+\snorm{B}\bigr) \snorm{x} .
 \end{equation*}
 So $\snorm{A+B} \leq \snorm{A}+\snorm{B}$.
 
 Similarly,
 \begin{equation*}
 \snorm{(cA)x} =
-\sabs{c} \snorm{Ax} \leq (\sabs{c}\snorm{A}) \snorm{x} .
+\sabs{c} \, \snorm{Ax} \leq \bigl(\sabs{c} \,\snorm{A}\bigr) \snorm{x} .
 \end{equation*}
-Thus $\snorm{cA} \leq \sabs{c}\snorm{A}$.  Next,
+Thus $\snorm{cA} \leq \sabs{c} \, \snorm{A}$.  Next,
 \begin{equation*}
-\sabs{c} \snorm{Ax}
+\sabs{c} \,  \snorm{Ax}
 =
-\snorm{cAx} \leq \snorm{cA} \snorm{x} .
+\snorm{cAx} \leq \snorm{cA} \, \snorm{x} .
 \end{equation*}
-Hence $\sabs{c}\snorm{A} \leq \snorm{cA}$.
+Hence $\sabs{c} \, \snorm{A} \leq \snorm{cA}$.
 
 For \ref{item:finitedimpropnorm:ii} write
 \begin{equation*}
-\snorm{BAx} \leq \snorm{B} \snorm{Ax} \leq \snorm{B} \snorm{A} \snorm{x} .
+\snorm{BAx} \leq \snorm{B} \, \snorm{Ax} \leq \snorm{B} \, \snorm{A} \, \snorm{x} .
 \qedhere
 \end{equation*}
 \end{proof}
@@ -1273,28 +1273,13 @@ Therefore,
 \snorm{A^{-1} (A-B)x + A^{-1}Bx}
 \\
 & \leq
-\snorm{A^{-1}}\snorm{A-B} \snorm{x} + \snorm{A^{-1}}\snorm{Bx} .
+\snorm{A^{-1}}\,\snorm{A-B}\, \snorm{x} + \snorm{A^{-1}}\,\snorm{Bx} .
 \end{split}
 \end{equation*}
-% First a straight forward computation
-%\begin{equation*}
-%\begin{split}
-%\snorm{x} =
-%\snorm{A^{-1}Ax}
-%& \leq
-%\snorm{A^{-1}} \snorm{Ax}
-%\\
-%& \leq
-%\snorm{A^{-1}} ( \snorm{(A-B)x} + \snorm{Bx} )
-%\\
-%& \leq
-%\snorm{A^{-1}}\snorm{A-B} \snorm{x} + \snorm{A^{-1}}\snorm{Bx} .
-%\end{split}
-%\end{equation*}
 Now assume $x \neq 0$ and so $\snorm{x} \neq 0$.
 Using \eqref{eqcontineq} we obtain
 \begin{equation*}
-\snorm{x} < \snorm{x} + \snorm{A^{-1}}\snorm{Bx} ,
+\snorm{x} < \snorm{x} + \snorm{A^{-1}} \, \snorm{Bx} ,
 \end{equation*}
 or in other words $\snorm{Bx} \not= 0$ for all nonzero $x$, and hence
 $Bx \not= 0$ for all nonzero $x$.  This is enough to see that
@@ -1303,20 +1288,20 @@ As $B$ is one-to-one operator from $X$ to $X$ which is finite dimensional
 and hence is invertible.
 
 Let us look at \ref{finitedimpropinv:ii}.  Fix some $A \in U$.  Let $B$ be invertible and near $A$,
-that is $\snorm{A-B} \snorm{A^{-1}} <  \nicefrac{1}{2}$.
+that is $\snorm{A-B} \, \snorm{A^{-1}} <  \nicefrac{1}{2}$.
 Then \eqref{eqcontineq} is satisfied.
 We have shown above (using $B^{-1}y$ instead of $x$)
 \begin{equation*}
 \snorm{B^{-1}y} \leq 
-\snorm{A^{-1}}\snorm{A-B} \snorm{B^{-1}y} + \snorm{A^{-1}}\snorm{y}
+\snorm{A^{-1}} \, \snorm{A-B} \,  \snorm{B^{-1}y} + \snorm{A^{-1}} \, \snorm{y}
 \leq
-\nicefrac{1}{2} \snorm{B^{-1}y} + \snorm{A^{-1}}\snorm{y} ,
+\frac{1}{2} \snorm{B^{-1}y} + \snorm{A^{-1}}\,\snorm{y} ,
 \end{equation*}
 or
 \begin{equation*}
 \snorm{B^{-1}y} \leq 
 %\frac{1}{1- \snorm{A^{-1}}\snorm{A-B}) \snorm{A^{-1}}\snorm{y} .
-2\snorm{A^{-1}}\snorm{y} .
+2\snorm{A^{-1}}\,\snorm{y} .
 \end{equation*}
 So
 $
@@ -1334,7 +1319,7 @@ and
 \begin{equation*}
 \snorm{B^{-1}-A^{-1}} =
 \snorm{A^{-1}(A-B)B^{-1}} \leq
-\snorm{A^{-1}}\snorm{A-B}\snorm{B^{-1}}
+\snorm{A^{-1}}\,\snorm{A-B}\,\snorm{B^{-1}}
 \leq
 %\frac{\snorm{A^{-1}}^2}{1- \snorm{A^{-1}}\snorm{A-B})}
 %\snorm{A-B}
@@ -2023,8 +2008,8 @@ the derivative at $x$ as
 \end{equation*}
 In other words, there is a number $a$ (the derivative of $f$ at $x$) such that
 \begin{equation*}
-\lim_{h \to 0} \sabs{\frac{f(x+h)-f(x)}{h} - a} =
-\lim_{h \to 0} \sabs{\frac{f(x+h)-f(x) - ah}{h}}
+\lim_{h \to 0} \abs{\frac{f(x+h)-f(x)}{h} - a} =
+\lim_{h \to 0} \abs{\frac{f(x+h)-f(x) - ah}{h}}
 =
 \lim_{h \to 0} \frac{\sabs{f(x+h)-f(x) - ah}}{\sabs{h}}
 = 0.
@@ -2068,7 +2053,8 @@ $L(\R^1,\R^1)$.  As in one dimension, the idea is that a differentiable
 mappings is ``infinitesimally close'' to a linear mappings, and this
 linear mapping is the derivative.
 
-The norms above must be on the right spaces of course.  The norm in the
+Notice which norms are being used in the definition.
+The norm in the
 numerator is on $\R^m$, and the norm in the denominator is on $\R^n$ where $h$
 lives.
 Normally it is 
@@ -2142,7 +2128,8 @@ f(x,y) = \bigl(f_1(x,y),f_2(x,y)\bigr) := (1+x+2y+x^2,2x+3y+xy).
 \end{equation*}
 Let us show that $f$ is differentiable at the origin and let us 
 compute the derivative,
-directly using the definition.  The derivative is in $L(\R^2,\R^2)$ so it can be
+directly using the definition.  If the
+derivative exists, it is in $L(\R^2,\R^2)$, so it can be
 represented by a $2\times 2$ matrix
 $\left[\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right]$.  Suppose $h =
 (h_1,h_2)$.  We need the following expression to go to zero.
@@ -2302,7 +2289,7 @@ Finally
 \end{equation*}
 As $f$ is differentiable at $p$,
 for small enough $h$
-${\snorm{f(p+h)-f(p)-Ah}}
+${\snorm{f(p+h)-f(p)-Ah}} \,
 {\snorm{h}}$ is bounded.  Therefore the
 term
 $
@@ -2369,7 +2356,7 @@ $f'(p)$ is represented by the matrix
 \frac{\partial f_1}{\partial x_2}(p)
 & \ldots &
 \frac{\partial f_1}{\partial x_n}(p)
-\\
+\\[6pt]
 \frac{\partial f_2}{\partial x_1}(p)
 &
 \frac{\partial f_2}{\partial x_2}(p)
@@ -2737,6 +2724,7 @@ $\frac{\partial f}{\partial x}(x_0,y_0) = \frac{\partial f}{\partial
 y}(x_0,y_0) = 0$.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}[The \myindex{Peano surface}]
 Define $f(x,y) := ( x-y^2 ) ( 2 y^2 - x)$.  Show
 \begin{enumerate}[a)]
@@ -2752,6 +2740,7 @@ $t=0$.
 $f$ does not have a local maximum at $(0,0)$.
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Suppose $f \colon \R \to \R^n$ is differentiable and $\snorm{f(t)} = 1$ for
@@ -2814,7 +2803,7 @@ By Cauchy--Schwarz inequality
 (b-a)\bigl(\varphi(b)-\varphi(a) \bigr) \cdot \varphi'(t_0)
 \leq
 (b-a)
-\snorm{\varphi(b)-\varphi(a)} \snorm{\varphi'(t_0)} . \qedhere
+\snorm{\varphi(b)-\varphi(a)} \, \snorm{\varphi'(t_0)} . \qedhere
 \end{equation*}
 \end{proof}
 
@@ -2851,7 +2840,7 @@ some $t_0 \in (0,1)$
 \begin{equation*}
 \snorm{f(x)-f(y)} \leq
 \norm{\frac{d}{dt} \Big|_{t=t_0} \Bigl[ f\bigl((1-t)x+ty\bigr) \Bigr] } \leq
-\snorm{f'\bigl((1-t_0)x+t_0y\bigr)} \snorm{y-x} \leq
+\snorm{f'\bigl((1-t_0)x+t_0y\bigr)} \, \snorm{y-x} \leq
 M \snorm{y-x} . \qedhere
 \end{equation*}
 \end{proof}
@@ -2911,7 +2900,7 @@ This means that $f^{-1}(c)$ is open for any $c \in \R^m$.  Suppose
 $f^{-1}(c)$ is nonempty.  
 The two sets
 \begin{equation*}
-U' = f^{-1}(c), \qquad U'' = f^{-1}(\R^m\setminus\{c\}) =
+U' = f^{-1}(c), \qquad U'' = f^{-1}\bigl(\R^m\setminus\{c\}\bigr) =
 \bigcup_{\substack{a \in \R^m\\a\neq c}} f^{-1}(a)
 \end{equation*}
 are open disjoint, and further $U = U' \cup U''$.  So as $U'$ is nonempty,
@@ -3540,7 +3529,7 @@ and are continuous), and the matrix
 \frac{\partial f_1}{\partial y_2}
 & \ldots &
 \frac{\partial f_1}{\partial y_m}
-\\
+\\[6pt]
 \frac{\partial f_2}{\partial y_1}
 &
 \frac{\partial f_2}{\partial y_2}
