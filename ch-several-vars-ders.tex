@@ -252,11 +252,11 @@ The span of $E$ is the set of polynomials with even powers of $t$ only.
 
 Suppose we have two linear combinations of vectors from $Y$.  One linear
 combination uses the vectors $\{ x_1,x_2,\ldots,x_k \}$, and the other uses
-$\{ \tilde{x}_1,\tilde{x}_2,\ldots,\tilde{x}_\ell \}$.  Then clearly we can write
+$\{ \widetilde{x}_1,\widetilde{x}_2,\ldots,\widetilde{x}_\ell \}$.  Then clearly we can write
 both linear combinations using vectors from the union
 $\{ x_1,x_2,\ldots,x_k \} \cup
-\{ \tilde{x}_1,\tilde{x}_2,\ldots,\tilde{x}_\ell \}$, by just taking zero
-multiples of the vectors we do not need, e.g. $x_1 = x_1 + 0 \tilde{x}_1$.
+\{ \widetilde{x}_1,\widetilde{x}_2,\ldots,\widetilde{x}_\ell \}$, by just taking zero
+multiples of the vectors we do not need, e.g. $x_1 = x_1 + 0 \widetilde{x}_1$.
 Suppose we have two linear combinations, we can without loss of
 generality write them as a linear combination of $x_1,x_2,\ldots,x_k$.
 Then their sum is also a linear combination of vectors from $Y$:
@@ -812,7 +812,10 @@ is convex, therefore it must be the convex hull.
 \subsection{Exercises}
 
 \begin{exercise}
-Show that in $\R^n$ any ball $B(x,r)$ for $x \in \R^n$ and $r > 0$ is
+Show that in $\R^n$
+(with the standard euclidean metric)
+for any $x \in \R^n$ and any $r > 0$,
+the ball $B(x,r)$ is
 convex.
 \end{exercise}
 
@@ -970,7 +973,7 @@ a function $\snorm{\cdot} \colon X \to \R$ is a
 \emph{\myindex{norm}}\glsadd{not:norm} if:
 \begin{enumerate}[(i)]
 \item \label{defn:norm:i} $\snorm{x} \geq 0$, with $\snorm{x}=0$ if and only if $x=0$.
-\item \label{defn:norm:ii} $\snorm{cx} = \abs{c}\snorm{x}$ for all $c \in \R$ and $x \in X$.
+\item \label{defn:norm:ii} $\snorm{cx} = \sabs{c}\snorm{x}$ for all $c \in \R$ and $x \in X$.
 \item \label{defn:norm:iii} $\snorm{x+y} \leq \snorm{x}+\snorm{y}$ for all $x,y \in X$
 \qquad (Triangle inequality)\index{triangle inequality for norms}.
 \end{enumerate}
@@ -984,9 +987,10 @@ and $y=(y_1,y_2,\ldots,y_n) \in \R^n$, define\glsadd{not:dotprod}
 \begin{equation*}
 x \cdot y := \sum_{j=1}^n x_j\, y_j .
 \end{equation*}
-It is easy to see that the dot product is linear in each variable
-separately.  That is,
-if $y$ is fixed the map $x \mapsto x \cdot y$ is linear map from
+The dot product is linear in each variable
+separately, or in more fancy language it is \emph{\myindex{bilinear}}.
+That is,
+if $y$ is fixed, the map $x \mapsto x \cdot y$ is a linear map from
 $\R^n$ to $\R$.  Similarly, if $x$ is fixed, then
 $y \mapsto x \cdot y$ is also linear.
 The \emph{\myindex{Euclidean norm}} is defined as\glsadd{not:normRn}
@@ -1001,12 +1005,12 @@ It is easy to see that the Euclidean norm satisfies \ref{defn:norm:i} and
 that \ref{defn:norm:iii} holds, the key
 inequality is the so-called Cauchy--Schwarz inequality
 we saw before.  As this inequality is so important let us restate and
-reprove it using the notation of this chapter.
+reprove a slightly stronger version using the notation of this chapter.
 
 \begin{thm}[\myindex{Cauchy--Schwarz inequality}]
 Let $x, y \in \R^n$, then
 \begin{equation*}
-\abs{x \cdot y} \leq \snorm{x}\snorm{y} = \sqrt{x\cdot x}\, \sqrt{y\cdot y},
+\sabs{x \cdot y} \leq \snorm{x}\snorm{y} = \sqrt{x\cdot x}\, \sqrt{y\cdot y},
 \end{equation*}
 with equality if and only if the vectors are scalar multiples of each other.
 \end{thm}
@@ -1018,8 +1022,10 @@ So assume $x\not= 0$ and $y \not= 0$.
 If $x$ is a scalar multiple of $y$, that is $x = \lambda y$ for some
 $\lambda \in \R$, then the theorem holds with equality:
 \begin{equation*}
-\abs{\lambda y \cdot y} = \abs{\lambda} \, \abs{y\cdot y} =
-\abs{\lambda} \, \snorm{y}^2 = \snorm{\lambda y} \snorm{y} .
+\sabs{ x \cdot y } =
+\sabs{\lambda y \cdot y} = \sabs{\lambda} \, \sabs{y\cdot y} =
+\sabs{\lambda} \, \snorm{y}^2 = \snorm{\lambda y} \snorm{y} = \snorm{x}
+\snorm{y} .
 \end{equation*}
 
 Next take $x+ty$, we find that
@@ -1098,7 +1104,7 @@ This implies that
 It is not hard to see from the definition that $\snorm{A} = 0$ if and
 only if $A = 0$, that is, if $A$ takes every vector to the zero vector.
 
-It is also not difficult to see the norm of the identity operator:
+It is also not difficult to compute the norm of the identity operator:
 \begin{equation*}
 \snorm{I} =
 \sup_{\substack{x \in X\\x\neq 0}} \frac{\snorm{Ix}}{\snorm{x}} 
@@ -1111,10 +1117,10 @@ For finite dimensional spaces, $\snorm{A}$ is always finite as we prove
 below.  This also implies that $A$ is continuous.
 For infinite dimensional spaces neither statement needs to be true.  For a simple
 example,
-take the vector space of continuously differentiable functions on $[0,1]$
+take the vector space of continuously differentiable functions on $[0,2\pi]$
 and as the norm use the uniform norm.  The functions
-$\sin(nx)$ have norm 1, but the derivatives have norm $n$.  So
-differentiation (which is a linear operator) has unbounded norm on this
+$t \mapsto \sin(n t)$ have norm 1, but the derivatives have norm $n$.  So
+differentiation (which is a linear operator) has infinite operator norm on this
 space.  But let us stick to finite dimensional spaces now.
 
 When we talk about finite dimensional vector space, one often thinks of
@@ -1139,20 +1145,20 @@ The general case is left as an exercise.
 Let $\{ e_1,e_2,\ldots,e_n \}$ be the standard basis of $\R^n$.
 Write $x \in \R^n$, with $\snorm{x} = 1$, as
 \begin{equation*}
-x = \sum_{j=1}^n c_j e_j .
+x = \sum_{j=1}^n c_j \, e_j .
 \end{equation*}
 Since $e_j \cdot e_\ell = 0$ whenever $j\not=\ell$ and $e_j \cdot e_j = 1$,
 then $c_j = x \cdot e_j$ and
 \begin{equation*}
-\abs{c_j} = \abs{ x \cdot e_j }
+\sabs{c_j} = \sabs{ x \cdot e_j }
 \leq \snorm{x} \snorm{e_j} = 1 .
 \end{equation*}
 Then
 \begin{equation*}
 \snorm{Ax} =
-\norm{\sum_{j=1}^n c_j Ae_j}
+\norm{\sum_{j=1}^n c_j \, Ae_j}
 \leq
-\sum_{j=1}^n \abs{c_j} \snorm{Ae_j} 
+\sum_{j=1}^n \sabs{c_j} \snorm{Ae_j} 
 \leq
 \sum_{j=1}^n \snorm{Ae_j} .
 \end{equation*}
@@ -1176,7 +1182,7 @@ Let $X$, $Y$, and $Z$ be finite dimensional vector spaces with a norm.
 \item \label{item:finitedimpropnorm:i}
 If $A,B \in L(X,Y)$ and $c \in \R$, then
 \begin{equation*}
-\snorm{A+B} \leq \snorm{A}+\snorm{B}, \qquad \snorm{cA} = \abs{c}\snorm{A} .
+\snorm{A+B} \leq \snorm{A}+\snorm{B}, \qquad \snorm{cA} = \sabs{c}\snorm{A} .
 \end{equation*}
 In particular, the operator norm is a norm on the vector space $L(X,Y)$.
 \item \label{item:finitedimpropnorm:ii}
@@ -1201,15 +1207,15 @@ So $\snorm{A+B} \leq \snorm{A}+\snorm{B}$.
 Similarly,
 \begin{equation*}
 \snorm{(cA)x} =
-\abs{c} \snorm{Ax} \leq (\abs{c}\snorm{A}) \snorm{x} .
+\sabs{c} \snorm{Ax} \leq (\sabs{c}\snorm{A}) \snorm{x} .
 \end{equation*}
-Thus $\snorm{cA} \leq \abs{c}\snorm{A}$.  Next,
+Thus $\snorm{cA} \leq \sabs{c}\snorm{A}$.  Next,
 \begin{equation*}
-\abs{c} \snorm{Ax}
+\sabs{c} \snorm{Ax}
 =
 \snorm{cAx} \leq \snorm{cA} \snorm{x} .
 \end{equation*}
-Hence $\abs{c}\snorm{A} \leq \snorm{cA}$.
+Hence $\sabs{c}\snorm{A} \leq \snorm{cA}$.
 
 For \ref{item:finitedimpropnorm:ii} write
 \begin{equation*}
@@ -1242,9 +1248,9 @@ function on $U$.
 
 Let us make sense of this on a simple example.
 Think back to $\R^1$, where linear operators are just
-numbers $a$ and the operator norm of $a$ is simply $\abs{a}$.
+numbers $a$ and the operator norm of $a$ is simply $\sabs{a}$.
 The operator $a$ is invertible ($a^{-1} = \nicefrac{1}{a}$)
-whenever $a \not=0$.  The condition $\abs{a-b} < \frac{1}{\abs{a^{-1}}}$ does
+whenever $a \not=0$.  The condition $\sabs{a-b} < \frac{1}{\sabs{a^{-1}}}$ does
 indeed imply that $b$ is not zero.  And $a \mapsto \nicefrac{1}{a}$ is a continuous
 map.
 When $n > 1$, then there are other noninvertible operators than just zero,
@@ -1603,7 +1609,7 @@ determinant is exactly this number.  It says how the linear mapping
 ``stretches'' the space.  Similarly for $\R^2$ (and in fact for $\R^n$).
 Suppose $A \in L(\R^2)$ is a linear transformation.  It can be checked directly that
 the area of the image of the unit square $A([0,1]^2)$ is precisely
-$\abs{\det(A)}$.  The sign of the determinant tells us if the image is
+$\sabs{\det(A)}$.  The sign of the determinant tells us if the image is
 flipped or not.  This works with arbitrary figures, not just the unit
 square.  The determinant tells us the stretch in the area.  In $\R^3$ it
 will tell us about the 3 dimensional volume, and in $n$-dimensions about the
@@ -1801,7 +1807,7 @@ Show that for square matrices $A$ and $B$, $\det(AB) = \det(BA)$.
 \begin{exercise}
 For $\R^n$ define
 \begin{equation*}
-\snorm{x}_{\infty} := \max \{ \abs{x_1}, \abs{x_2}, \ldots, \abs{x_n} \} ,
+\snorm{x}_{\infty} := \max \{ \sabs{x_1}, \sabs{x_2}, \ldots, \sabs{x_n} \} ,
 \end{equation*}
 sometimes called the sup or the max norm.
 \begin{enumerate}[a)]
@@ -1923,7 +1929,7 @@ Take the vectorspace of polynomials $\R[t]$ and the linear operator $D \in
 L(\R[t])$ that is
 the differentiation (we proved in an earlier exercise that $D$ is a linear
 operator).  Define the norm on $P(t) = c_0 + c_1 t + \cdots + c_n
-t^n$ as $\snorm{P} := \sup \{ \abs{c_j} : j = 0,1,\ldots,n \}$.
+t^n$ as $\snorm{P} := \sup \bigl\{ \sabs{c_j} : j = 0,1,\ldots,n \bigr\}$.
 \begin{enumerate}[a)]
 \item
 Show that $\snorm{P}$ is a norm on $\R[t]$.
@@ -1946,7 +1952,7 @@ f(c_1,c_2,\ldots,c_n) =
 \end{equation*}
 is continuous.
 \item
-Show that there exists numbers $m$ and $M$ such
+Show that there exist numbers $m$ and $M$ such
 that if $c = (c_1,c_2,\ldots,c_n) \in \R^n$ with
 $\snorm{c} = 1$ (standard euclidean norm), then 
 $m \leq \snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n} \leq M$ (here the
@@ -1954,7 +1960,7 @@ norm is on $X$).
 \item
 Show that there exists a number $B$ such that if
 $\snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n}=1$,
-then $\abs{c_j} \leq B$.
+then $\sabs{c_j} \leq B$.
 \item
 Use part (c) to show that if $X$ and $Y$ are finite dimensional vector 
 spaces and $A \in L(X,Y)$, then $\snorm{A} < \infty$.
@@ -1964,12 +1970,12 @@ spaces and $A \in L(X,Y)$, then $\snorm{A} < \infty$.
 \begin{exercise}
 Let $X$ be any finite dimensional vector space with a norm $\snorm{\cdot}$
 and basis $\{ x_1,x_2,\ldots,x_n
-\}$.  Let $c = (c_1,\ldots,c_n) \in \R^n$ and $\snorm{c}$ be the
+\}$.  Let $c = (c_1,c_2,\ldots,c_n) \in \R^n$ and $\snorm{c}$ be the
 standard euclidean norm on $\R^n$.
 \begin{enumerate}[a)]
 \item
 Find that there exist positive numbers $m,M > 0$ such that
-for 
+for all $c \in \R^n$
 \begin{equation*}
 m \snorm{c}
 \leq
@@ -2017,10 +2023,10 @@ the derivative at $x$ as
 \end{equation*}
 In other words, there is a number $a$ (the derivative of $f$ at $x$) such that
 \begin{equation*}
-\lim_{h \to 0} \abs{\frac{f(x+h)-f(x)}{h} - a} =
-\lim_{h \to 0} \abs{\frac{f(x+h)-f(x) - ah}{h}}
+\lim_{h \to 0} \sabs{\frac{f(x+h)-f(x)}{h} - a} =
+\lim_{h \to 0} \sabs{\frac{f(x+h)-f(x) - ah}{h}}
 =
-\lim_{h \to 0} \frac{\abs{f(x+h)-f(x) - ah}}{\abs{h}}
+\lim_{h \to 0} \frac{\sabs{f(x+h)-f(x) - ah}}{\sabs{h}}
 = 0.
 \end{equation*}
 
@@ -2158,10 +2164,10 @@ If we choose $a=1$, $b=2$, $c=2$, $d=3$, the expression becomes
 \frac{\sqrt{
 h_1^4 + h_1^2h_2^2}}{\sqrt{h_1^2+h_2^2}}
 =
-\abs{h_1}
+\sabs{h_1}
 \frac{\sqrt{
 h_1^2 + h_2^2}}{\sqrt{h_1^2+h_2^2}}
-= \abs{h_1} .
+= \sabs{h_1} .
 \end{equation*}
 And this expression does indeed go to zero as $h \to 0$.  Therefore the
 function is differentiable at the origin and 
@@ -2522,7 +2528,7 @@ which can be computed by one of the methods above.
 Let us suppose $(\nabla f)(x) \neq 0$.
 By Cauchy--Schwarz inequality we have
 \begin{equation*}
-\abs{D_u f(x)} \leq \snorm{(\nabla f)(x)} .
+\sabs{D_u f(x)} \leq \snorm{(\nabla f)(x)} .
 \end{equation*}
 Equality is achieved when $u$ is a scalar multiple of
 $(\nabla f)(x)$.  That is, when
@@ -2616,9 +2622,9 @@ find their derivative.
 \item
 $f(x,y) := (1+x+xy,x)$,
 \item
-$f(x,y) := (y-y^{10},x)$,
+$f(x,y) := \bigl(y-y^{10},x \bigr)$,
 \item
-$f(x,y) := \bigl( (x+y+1)^2 , (x-y+2)^2 \bigr)$.
+$f(x,y) := \bigl( {(x+y+1)}^2 , {(x-y+2)}^2 \bigr)$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
@@ -2878,7 +2884,7 @@ and the derivative is bounded on $U$, which is not hard to see.   Think of
 what happens near where the negative $x$-axis cuts the annulus in half.
 As we approach this cut from top (positive $y$), $f(x,y)$ approaches $\pi$.
 From the bottom (from negative $y$), $f(x,y)$ approaches $-\pi$.
-So for small $\epsilon > 0$, $\abs{f(-1,\epsilon)-f(-1,-\epsilon)}$
+So for small $\epsilon > 0$, $\sabs{f(-1,\epsilon)-f(-1,-\epsilon)}$
 approaches $2\pi$, but $\snorm{(-1,\epsilon)-(-1,-\epsilon)} = 2\epsilon$,
 which is arbitrarily small.  The conclusion of the proposition does not
 hold for this nonconvex $U$.
@@ -3047,13 +3053,13 @@ So to finish the estimate
 x_n}(x+h_1+\theta_j e_n) -
 t \frac{\partial f_j}{\partial x_n}(x)\right)}^2} + \epsilon \snorm{h_1}
 \\
-& \leq \sqrt{m}\, \epsilon \abs{t} + \epsilon \snorm{h_1}
+& \leq \sqrt{m}\, \epsilon \sabs{t} + \epsilon \snorm{h_1}
 \\
 & \leq (\sqrt{m}+1)\epsilon \snorm{h} .
 \end{split}
 \end{equation*}
 %Where the last estimate follows from 
-%$\abs{t} \leq \snorm{h}$ and $\snorm{h_1} \leq \snorm{h}$.
+%$\sabs{t} \leq \snorm{h}$ and $\snorm{h_1} \leq \snorm{h}$.
 \end{proof}
 
 \subsection{Exercises}
@@ -3093,7 +3099,7 @@ continuous functions.
 Let $B(0,1) \subset \R^2$ be the unit ball (disc), that is, the set given by
 $x^2 + y^2 < 1$.
 Suppose $f \colon B(0,1) \to \R$ is a differentiable function
-such that $\abs{f(0,0)} \leq 1$,
+such that $\sabs{f(0,0)} \leq 1$,
 and 
 $\abs{\frac{\partial f}{\partial x}} \leq 1$ and
 $\abs{\frac{\partial f}{\partial y}} \leq 1$ for all
@@ -3105,7 +3111,7 @@ for all $(x,y) \in
 B(0,1)$.
 \item
 Find a $B \in \R$ such that
-$\abs{f(x,y)} \leq B$
+$\sabs{f(x,y)} \leq B$
 for all $(x,y) \in
 B(0,1)$.
 \end{enumerate}
@@ -3135,7 +3141,7 @@ Let $f \colon \R^2 \to \R$ be a function and
 $M \in R$, such that
 for every $(x,y) \in \R^2$, the function $g(t) := f(xt,yt)$ is
 differentiable
-and $\abs{g'(t)} \leq M$.
+and $\sabs{g'(t)} \leq M$.
 \begin{enumerate}[a)]
 \item
 Show that $f$ is continuous at $(0,0)$.
@@ -3800,8 +3806,8 @@ Fix a point $p \in U$, and let $e_j$ and $e_k$ be the standard basis
 vectors and let $s$ and $t$ be two small nonzero real numbers.  We pick $s$
 and $t$ small enough so that
 $p+s_0e_j +t_0e_k \in U$ for all $s_0$ and $t_0$ with
-$\abs{s_0} \leq \abs{s}$ and
-$\abs{t_0} \leq \abs{t}$.  This is possible since $U$ is open and so
+$\sabs{s_0} \leq \sabs{s}$ and
+$\sabs{t_0} \leq \sabs{t}$.  This is possible since $U$ is open and so
 contains a small ball (or a box if you wish).
 
 Using the mean value theorem on the partial derivative in $x_k$ of the
