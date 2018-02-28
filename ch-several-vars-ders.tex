@@ -995,6 +995,7 @@ That is,
 if $y$ is fixed, the map $x \mapsto x \cdot y$ is a linear map from
 $\R^n$ to $\R$.  Similarly, if $x$ is fixed, then
 $y \mapsto x \cdot y$ is also linear.
+It is also symmetric in the sense that $x \cdot y = y \cdot x$.
 The \emph{\myindex{Euclidean norm}} is defined as\glsadd{not:normRn}
 \begin{equation*}
 \snorm{x} := \snorm{x}_{\R^n} := \sqrt{x \cdot x} = \sqrt{(x_1)^2+(x_2)^2 + \cdots + (x_n)^2}.
@@ -1096,7 +1097,7 @@ Therefore,
 =
 \sup_{\substack{x \in X\\x\neq 0}} \frac{\snorm{Ax}}{\snorm{x}} .
 \end{equation*}
-This implies that
+This implies that, assuming $\snorm{A}$ is not infinity,
 \begin{equation*}
 \snorm{Ax} \leq \snorm{A}  \snorm{x} .
 \end{equation*}
@@ -1181,8 +1182,11 @@ As $\snorm{A} < \infty$, then this says $A$ is Lipschitz with constant $\snorm{A
 \end{proof}
 
 \begin{prop} \label{prop:finitedimpropnorm}
-Let $X$, $Y$, and $Z$ be normed vector
-spaces.
+Let $X$, $Y$, and $Z$ be finite dimensional normed vector
+spaces\footnote{If we strike the ``In particular'' part and interpret the
+algebra with infinite operator norms properly, namely decree that $0$ times
+$\infty$ is 0, then this result also holds for infinite
+dimensional spaces.}.
 {\ }
 %\textbf{Proposition (Theorem 9.7 in Rudin):}
 \begin{enumerate}[(i)]
@@ -1191,7 +1195,7 @@ If $A,B \in L(X,Y)$ and $c \in \R$, then
 \begin{equation*}
 \snorm{A+B} \leq \snorm{A}+\snorm{B}, \qquad \snorm{cA} = \sabs{c} \, \snorm{A} .
 \end{equation*}
-In particular, if $X$ is finite dimensional, the operator norm is a norm on the vector space $L(X,Y)$.
+In particular, the operator norm is a norm on the vector space $L(X,Y)$.
 \item \label{item:finitedimpropnorm:ii}
 If $A \in L(X,Y)$ and $B \in L(Y,Z)$, then
 \begin{equation*}
@@ -1201,6 +1205,9 @@ If $A \in L(X,Y)$ and $B \in L(Y,Z)$, then
 \end{prop}
 
 \begin{proof}
+First, since all the spaces are finite dimensional, then all the operator
+norms are finite, and the statements make sense to begin with.
+
 For \ref{item:finitedimpropnorm:i},
 \begin{equation*}
 \snorm{(A+B)x} =
@@ -1223,8 +1230,7 @@ Thus $\snorm{cA} \leq \sabs{c} \, \snorm{A}$.  Next,
 \snorm{cAx} \leq \snorm{cA} \, \snorm{x} .
 \end{equation*}
 Hence $\sabs{c} \, \snorm{A} \leq \snorm{cA}$.
-If $X$ is finite dimensional, then $\snorm{A} < \infty$ for all $A \in
-L(X,Y)$, and therefore the operator norm is a norm.
+
 
 For \ref{item:finitedimpropnorm:ii} write
 \begin{equation*}
