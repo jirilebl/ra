@@ -1338,9 +1338,9 @@ x & \text{if $y \in \Q$,} \\
 0 & \text{else.} 
 \end{cases}
 \end{equation*}
-Show
 \begin{enumerate}[a)]
 \item
+Show
 $\int_0^1 \int_{-1}^1 f(x,y) ~ dx ~ dy$ exists, but
 $\int_{-1}^1 \int_0^1 f(x,y) ~ dy ~ dx$ does not.
 \item
@@ -1362,7 +1362,6 @@ f(x,y) :=
 0 & \text{else.} 
 \end{cases}
 \end{equation*}
-Show
 \begin{enumerate}[a)]
 \item
 Show $f$ is Riemann integrable on $[0,1] \times [0,1]$.
@@ -1372,6 +1371,7 @@ $\overline{\int_0^1} f(x,y) ~ dx$ and
 $\underline{\int_0^1} f(x,y) ~ dx$ for all $y \in [0,1]$, and show they are unequal for all $y
 \in \Q$.
 \item
+Show
 $\int_0^1 \int_0^1 f(x,y) ~ dy ~ dx$ exists, but
    $\int_0^1 \int_0^1 f(x,y) ~ dx ~ dy$ does not.
 \end{enumerate}
@@ -1648,14 +1648,12 @@ and a countable union of measure zero sets is measure zero.
 \end{example}
 
 \begin{example}
-%A closed rectangle $R = [a_1,b_1] \times \cdots \times [a_n,b_n]$
-%where $a_j < b_j$ is never a measure zero set.
-If $a < b$, then $m^*([a,b]) = b-a$.
+If $a < b$, then $m^*\bigl([a,b]\bigr) = b-a$.
 
 \emph{Proof:}
 In the case of $\R$, open rectangles are open intervals.
 Since $[a,b] \subset (a-\epsilon,b+\epsilon)$ for all $\epsilon > 0$.
-Hence, $m^*([a,b]) \leq b-a$.
+Hence, $m^*\bigl([a,b]\bigr) \leq b-a$.
 
 Let us prove the other inequality.
 Suppose $\{ (a_j,b_j) \}$ are open intervals such that
@@ -1677,7 +1675,7 @@ we have that $a_1 < a_2 < b_1 < b_2$.  Similarly
 $a_j < a_{j+1} < b_j < b_{j+1}$.  Furthermore, $a_1 < a$ and $b_k > b$.
 Thus,
 \begin{equation*}
-m^*([a,b]) \geq
+m^*\bigl([a,b]\bigr) \geq
 \sum_{j=1}^k (b_j-a_j)
 \geq
 \sum_{j=1}^{k-1} (a_{j+1}-a_j)
@@ -2511,7 +2509,7 @@ Let $f \colon [a,b] \to \R$ and
 $g \colon [a,b] \to \R$ be continuous functions and such that
 for all $x \in (a,b)$, $f(x) < g(x)$.  Let
 \begin{equation*}
-U := \{ (x,y) \in \R^2 : a < x < b \text{ and } f(x) < y < g(x) \} .
+U := \bigl\{ (x,y) \in \R^2 : a < x < b \text{ and } f(x) < y < g(x) \bigr\} .
 \end{equation*}
 \begin{enumerate}[a)]
 \item

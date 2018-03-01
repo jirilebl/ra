@@ -98,7 +98,7 @@ a \emph{\myindex{vector subspace}} of $X$.
 Multiplication by scalars works as one would expect.
 For example, $2v = (1+1)v = 1v + 1v = v+v$, similarly $3v = v+v+v$, and
 so on.  
-One particular fact we will often use is that $0 v = 0$, where
+One particular fact we often use is that $0 v = 0$, where
 the zero on the left is $0 \in \R$ and the zero on the right is $0 \in X$.
 To see this start with
 $0v = (0+0)v = 0v + 0v$, and add $-(0v)$ to both sides
@@ -476,8 +476,6 @@ x_2 = \frac{1}{a_{2,2}} y_2 - \frac{a_{1,2}}{a_{2,2}} y_1 - \sum_{k=3}^d
 \end{equation*}
 In particular,
 $\{ y_1 , y_2, x_3, \ldots, x_d \}$ spans $X$.
-%The astute reader will think back to linear algebra and notice that we are
-%row-reducing a matrix.
 
 We continue this procedure.  If $m < d$, then we are done.  So suppose
 $m \geq d$.
@@ -1023,8 +1021,8 @@ The \emph{\myindex{Euclidean norm}} is defined as\glsadd{not:normRn}
 \begin{equation*}
 \snorm{x} := \snorm{x}_{\R^n} := \sqrt{x \cdot x} = \sqrt{(x_1)^2+(x_2)^2 + \cdots + (x_n)^2}.
 \end{equation*}
-We normally just use $\snorm{x}$, but sometimes it will be necessary to
-emphasize that we are talking about the euclidean norm and use
+We normally just use $\snorm{x}$, but sometimes it is necessary to
+emphasize that we are talking about the euclidean norm and we use
 $\snorm{x}_{\R^n}$.
 It is easy to see that the Euclidean norm satisfies \ref{defn:norm:i} and
 \ref{defn:norm:ii}.  To prove
@@ -1199,6 +1197,7 @@ For any normed vector spaces $X$ and $Y$, and $A \in L(X,Y)$, suppose that
 $\snorm{A} < \infty$.
 For $v,w \in X$,
 \begin{equation*}
+\snorm{Av - Aw} =
 \snorm{A(v-w)} \leq \snorm{A} \, \snorm{v-w} .
 \end{equation*}
 As $\snorm{A} < \infty$, then this says $A$ is Lipschitz with constant $\snorm{A}$.
@@ -1401,31 +1400,6 @@ We sometimes write $A$ as $[a_{i,j}]$.
 We say $A$ is an $m$-by-$n$ matrix.
 The \emph{\myindex{columns}} of the matrix are precisely the coefficients
 that represent $A x_j$, in terms of the basis $\{ y_1,y_2,\ldots,y_m \}$.
-Let us derive the familiar rule for matrix multiplication.
-%If we represent the basis vector $x_j$ as 
-%a column vector of $n$ numbers (an $n \times 1$ matrix)
-%with 1 in the $j$th position and zero elsewhere, then
-%\begin{equation*}
-%Ax_j ``=''
-%\begin{bmatrix}
-%a_1^1 & a_2^1 & \cdots & a_n^1 \\
-%a_1^2 & a_2^2 & \cdots & a_n^2 \\
-%\vdots & \vdots & \ddots & \vdots \\
-%a_1^m & a_2^m & \cdots & a_n^m
-%\end{bmatrix}
-%\begin{bmatrix}
-%0 \\ \vdots \\ 1 \\ \vdots \\ 0
-%\end{bmatrix}
-%=
-%\begin{bmatrix}
-%a_j^1 \\
-%a_j^2 \\
-%\vdots \\
-%a_j^m
-%\end{bmatrix} .
-%\end{equation*}
-%That is, we obtain a vector representing $Ax_j$ in 
-%terms of the basis $\{ y_1,y_2,\ldots,y_m \}$.
 
 When
 \begin{equation*}
@@ -1450,18 +1424,18 @@ is something that works with $n$-tuples of numbers, that is, vectors of
 $\R^n$.
 
 If $B$ is an $n$-by-$r$ matrix with entries $b_{j,k}$, then 
-the matrix for $C = AB$ is an $m$-by-$r$ matrix whose $i,k$th entry
+the matrix for $C = AB$ is an $m$-by-$r$ matrix whose $(i,k)$th entry
 $c_{i,k}$ is
 \begin{equation*}
 c_{i,k} =
 \sum_{j=1}^n a_{i,j}\,b_{j,k} .
 \end{equation*}
 A way to remember it is if you order the indices as we do, that is
-\emph{row,column}, and put the elements in the same order as the matrices,
+\emph{row, column}, and put the elements in the same order as the matrices,
 then it is the ``middle index'' that is ``summed-out.''
 
 A linear mapping changing one basis to another is a
-square matrix in which the columns represent basis elements
+square matrix in which the columns represent vectors
 of the second basis in terms of the first basis.  We call such a linear
 mapping an \emph{\myindex{change of basis}}.
 %Let us note how change of bases look as far as matrices are concerned.
@@ -1476,7 +1450,7 @@ Recall the Cauchy--Schwarz inequality and compute
 \begin{equation*}
 \snorm{Az}^2
 =
-\sum_{i=1}^m { \left(\sum_{j=1}^n a_{i,j} c_j \right)}^2
+\sum_{i=1}^m { \left(\sum_{j=1}^n a_{i,j} \, c_j \right)}^2
 \leq
 \sum_{i=1}^m { \left(\sum_{j=1}^n {(c_j)}^2 \right) \left(\sum_{j=1}^n
 {(a_{i,j})}^2 \right) }
@@ -1551,13 +1525,15 @@ Let
 \operatorname{sgn}(\sigma) := \operatorname{sgn}(\sigma_1,\ldots,\sigma_n) = 
 \prod_{p < q} \operatorname{sgn}(\sigma_q-\sigma_p) .
 \end{equation}
+Here $\prod$ stands for multiplication, similarly to how $\sum$ stands for
+summation.\glsadd{not:prod}
 Clearly $\operatorname{sgn}(\sigma)$ is well defined, and
 it can be shown (exercise) that $\operatorname{sgn}(\sigma)$ 
 is $1$ if $\sigma$ is even and $-1$ if $\sigma$ is odd,
 so being odd or even is well defined.
 This fact can be proved by noting that applying a transposition changes the
 sign.
-Then note that $\operatorname{sgn}\bigl( (1,2,\ldots,n) \bigr) = 1$.
+Then note that $\operatorname{sgn}(1,2,\ldots,n) = 1$.
 
 Let $S_n$  be the set of all permutations on $n$ elements (the
 \emph{\myindex{symmetric group}}).
@@ -1577,15 +1553,16 @@ Let $A= [a_{i,j}]$ be a square $n \times n$ matrix.  Define the \emph{\myindex{d
 \begin{enumerate}[(i)]
 \item \label{prop:det:i} $\det(I) = 1$.
 \item \label{prop:det:ii} For every $j=1,2,\ldots,n$, the function $x_j
-\mapsto \det([x_1 ~~ x_2 ~~ \cdots ~~ x_n ])$
+\mapsto \det\bigl([x_1 ~~ x_2 ~~ \cdots ~~ x_n ]\bigr)$
 is linear.
 \item \label{prop:det:iii} If two columns of a matrix are interchanged, then the determinant changes
 sign.
 \item \label{prop:det:iv} If two columns of $A$ are equal, then $\det(A) = 0$.
 \item \label{prop:det:v} If a column is zero, then $\det(A) = 0$.
 \item \label{prop:det:vi} $A \mapsto \det(A)$ is a continuous function.
-\item \label{prop:det:vii} $\det\left[\begin{smallmatrix} a & b \\ c &d \end{smallmatrix}\right]
-= ad-bc$, and $\det [a] = a$.
+\item \label{prop:det:vii} $\det\left( \left[\begin{smallmatrix} a & b \\ c
+&d \end{smallmatrix}\right] \right)
+= ad-bc$, and $\det \bigl( [a] \bigr) = a$.
 \end{enumerate}
 \end{prop}
 
@@ -1632,13 +1609,15 @@ Finally, part \ref{prop:det:vii} is a direct computation.
 The determinant tells us about areas and volumes, and how they change.
 For example, in the $1 \times 1$ case, a matrix is just a number, and the
 determinant is exactly this number.  It says how the linear mapping
-``stretches'' the space.  Similarly for $\R^2$ (and in fact for $\R^n$).
-Suppose $A \in L(\R^2)$ is a linear transformation.  It can be checked directly that
-the area of the image of the unit square $A([0,1]^2)$ is precisely
+``stretches'' the space.  Similarly for $\R^2$.
+Suppose $A \in L(\R^2)$ is a linear transformation.
+It can be checked directly that
+the area of the image of the unit square $A\bigl([0,1]^2\bigr)$ is precisely
 $\sabs{\det(A)}$.  The sign of the determinant tells us if the image is
-flipped or not.  This works with arbitrary figures, not just the unit
+flipped (changes orientation) or not.
+This works with arbitrary figures, not just the unit
 square.  The determinant tells us the stretch in the area.  In $\R^3$ it
-will tell us about the 3 dimensional volume, and in $n$-dimensions about the
+tells us about the 3 dimensional volume, and in $n$ dimensions about the
 $n$-dimensional volume.  We claim this without proof.
 
 %\textbf{Theorem 9.35+9.36:}
@@ -1662,19 +1641,19 @@ By linearity of the determinant as proved above we have
 \begin{equation*}
 \begin{split}
 \det(AB) & =  
-\det ([ Ab_1 \quad Ab_2 \quad  \cdots \quad  Ab_n ]) =
+\det \bigl([ Ab_1 \quad Ab_2 \quad  \cdots \quad  Ab_n ] \bigr) =
 \det \left(\left[ \sum_{j=1}^n b_{j,1} a_j \quad Ab_2 \quad  \cdots \quad  Ab_n \right]\right) \\
 & =
 \sum_{j=1}^n
 b_{j,1}
-\det ([ a_j \quad Ab_2 \quad  \cdots \quad  Ab_n ]) \\
+\det \bigl([ a_j \quad Ab_2 \quad  \cdots \quad  Ab_n ]\bigr) \\
 & =
 \sum_{1 \leq j_1,j_2,\ldots,j_n \leq n}
 b_{j_1,1}
 b_{j_2,2}
 \cdots
 b_{j_n,n}
-\det ([ a_{j_1} \quad a_{j_2} \quad  \cdots \quad  a_{j_n} ]) \\
+\det \bigl([ a_{j_1} \quad a_{j_2} \quad  \cdots \quad  a_{j_n} ]\bigr) \\
 & =
 \left(
 \sum_{(j_1,j_2,\ldots,j_n) \in S_n}
@@ -1684,7 +1663,7 @@ b_{j_2,2}
 b_{j_n,n}
 \operatorname{sgn}(j_1,j_2,\ldots,j_n)
 \right)
-\det ([ a_{1} \quad a_{2} \quad  \cdots \quad  a_{n} ]) .
+\det \bigl([ a_{1} \quad a_{2} \quad  \cdots \quad  a_{n} ]\bigr) .
 \end{split}
 \end{equation*}
 In the above, go from all integers between 1 and $n$,
@@ -1822,7 +1801,7 @@ and
 \subsection{Exercises}
 
 \begin{exercise}
-If $X$ is a vector space with a norm $\snorm{\cdot}$, then show that
+For a vector space $X$ with a norm $\snorm{\cdot}$, show that
 $d(x,y) := \snorm{x-y}$ makes $X$ a metric space.
 \end{exercise}
 
@@ -2924,9 +2903,6 @@ So for small $\epsilon > 0$, $\sabs{f(-1,\epsilon)-f(-1,-\epsilon)}$
 approaches $2\pi$, but $\snorm{(-1,\epsilon)-(-1,-\epsilon)} = 2\epsilon$,
 which is arbitrarily small.  The conclusion of the proposition does not
 hold for this nonconvex $U$.
-%To see that the derivative is
-%bounded, we note that it is not hard to see that the derivative will not
-%depend on the rotation, so we can just do it at $y=0$, and we 
 \end{example}
 
 Let us solve the differential equation $f' = 0$.
@@ -3822,7 +3798,7 @@ definition due to \propref{mv:prop:contdiffpartials}.  We
 could have required only that the $k$th order partial derivatives exist and
 are continuous, as the existence of lower order derivatives is clearly
 necessary to even define $k$th order partial derivatives,
-and these lower order derivatives will be continuous as they will be differentiable
+and these lower order derivatives are continuous as they are differentiable
 functions.
 
 When the partial derivatives are continuous, we can swap their order.
