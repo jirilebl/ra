@@ -1271,7 +1271,7 @@ Let $X$ be a finite dimensional normed vector space.
 Let $U \subset L(X)$ be the set of invertible linear operators.
 \begin{enumerate}[(i)]
 \item \label{finitedimpropinv:i}
-If $A \in U$ and $B \in L(X)$, and
+If $A \in U$, $B \in L(X)$, and
 \begin{equation} \label{eqcontineq}
 \snorm{A-B} <  \frac{1}{\snorm{A^{-1}}},
 \end{equation}
@@ -1294,8 +1294,8 @@ and in general things are a bit more difficult.
 
 \begin{proof}
 Let us prove \ref{finitedimpropinv:i}.   We know something about $A^{-1}$
-and something about $A-B$.  These are linear operators so let us
-apply them to a vector.
+and $A-B$.  These are linear operators so let us
+apply them to a vector:
 \begin{equation*}
 A^{-1}(A-B)x
 =
@@ -1324,7 +1324,7 @@ As $B$ is one-to-one operator from $X$ to $X$, which is finite dimensional,
 $B$ is invertible.
 
 Let us look at \ref{finitedimpropinv:ii}.  Fix some $A \in U$.  Let $B$ be invertible and near $A$,
-that is $\snorm{A-B} \, \snorm{A^{-1}} <  \nicefrac{1}{2}$.
+specifically $\snorm{A-B} < \frac{1}{2 \snorm{A^{-1}}}$.
 Then \eqref{eqcontineq} is satisfied.
 We have shown above (using $B^{-1}y$ instead of $x$)
 \begin{equation*}
@@ -1969,7 +1969,7 @@ Show that there exists a number $B$ such that if
 $\snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n}=1$,
 then $\sabs{c_j} \leq B$.
 \item
-Use part (c) to show that if $X$ is finite dimensional vector 
+Use part c) to show that if $X$ is finite dimensional vector 
 spaces and $A \in L(X,Y)$, then $\snorm{A} < \infty$.
 \end{enumerate}
 \end{exercise}
@@ -1993,7 +1993,7 @@ M \snorm{c} .
 \end{equation*}
 Hint: See previous exercise.
 \item
-Use part (a) to show that of
+Use part a) to show that of
 $\snorm{\cdot}_1$ and
 $\snorm{\cdot}_2$ are two norms on $X$, then there exist positive
 numbers $m,M > 0$ (perhaps different than above) such that
