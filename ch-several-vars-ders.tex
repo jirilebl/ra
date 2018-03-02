@@ -1432,19 +1432,21 @@ A way to remember it is if you order the indices as we do, that is
 \emph{row, column}, and put the elements in the same order as the matrices,
 then it is the ``middle index'' that is ``summed-out.''
 
-A linear mapping changing one basis to another is a
+A linear mapping changing one basis to another is represented by a
 square matrix in which the columns represent vectors
 of the second basis in terms of the first basis.  We call such a linear
-mapping an \emph{\myindex{change of basis}}.
-%Let us note how change of bases look as far as matrices are concerned.
-%If $A$ is a square matrix corresponding to a change of bases as above
-%and $B$ is another square matrix, than $A^{-1}BA$ is $B$ in the other basis.
-%Therefore if we wish to define a quantity independent of the choice of a
-%basis, it should also be independent under a change FIXME ... hmmmmm
+mapping a \emph{\myindex{change of basis}}.  So for two choices of a
+basis in an $n$-dimensional vector space, there is a linear mapping
+(a change of basis)
+taking one basis to the other, and this corresponds to an $n$-by-$n$
+matrix which does the corresponding operation on $\R^n$.
 
-Suppose all the bases are just the standard bases and
-$X=\R^n$ and $Y=\R^m$. 
-Recall the Cauchy--Schwarz inequality and compute
+\medskip
+
+Suppose
+$X=\R^n$, $Y=\R^m$, and
+all the bases are just the standard bases.
+Using the Cauchy--Schwarz inequality compute
 \begin{equation*}
 \snorm{Az}^2
 =
@@ -1498,7 +1500,7 @@ how the corresponding linear mapping stretches space.  In particular,
 this number, called the determinant, can be used to test for invertibility of a matrix.
 
 Define the symbol
-$\operatorname{sgn}(x)$\glsadd{not:sgn} for a number $x$ by
+$\operatorname{sgn}(x)$\glsadd{not:sgn} (read ``sign of $x$'') for a number $x$ by
 \begin{equation*}
 \operatorname{sgn}(x)
 :=
@@ -1511,26 +1513,26 @@ $\operatorname{sgn}(x)$\glsadd{not:sgn} for a number $x$ by
 Suppose 
 $\sigma = (\sigma_1,\sigma_2,\ldots,\sigma_n)$ is a \emph{\myindex{permutation}}
 of the integers $(1,2,\ldots,n)$, that is, a reordering of $(1,2,\ldots,n)$. 
+Let
+\begin{equation} \label{eq:sgndef}
+\operatorname{sgn}(\sigma) := \operatorname{sgn}(\sigma_1,\ldots,\sigma_n) := 
+\prod_{p < q} \operatorname{sgn}(\sigma_q-\sigma_p) .
+\end{equation}
+Here $\prod$ stands for multiplication, similarly to how $\sum$ stands for
+summation.\glsadd{not:prod}
+
 Any permutation can be obtained by
-a sequence of transpositions (switchings of two elements). Call
+a sequence of transpositions (switchings of two elements).
+We say a permutation is
 a permutation \emph{even}\index{even permutation}
 (resp.\ \emph{odd})\index{odd permutation}
 if it takes an even (resp.\ odd) number of
 transpositions to get from $\sigma$ to $(1,2,\ldots,n)$.
 Being even or odd is well defined:
-Let
-\begin{equation} \label{eq:sgndef}
-\operatorname{sgn}(\sigma) := \operatorname{sgn}(\sigma_1,\ldots,\sigma_n) = 
-\prod_{p < q} \operatorname{sgn}(\sigma_q-\sigma_p) .
-\end{equation}
-Here $\prod$ stands for multiplication, similarly to how $\sum$ stands for
-summation.\glsadd{not:prod}
-Clearly $\operatorname{sgn}(\sigma)$ is well defined, and
 it can be shown (exercise) that $\operatorname{sgn}(\sigma)$ 
-is $1$ if $\sigma$ is even and $-1$ if $\sigma$ is odd,
-so being odd or even is well defined.
-This fact can be proved by noting that applying a transposition changes the
-sign.
+is $1$ if $\sigma$ is even and $-1$ if $\sigma$ is odd.
+This fact can be proved by noting that applying
+a transposition changes the sign.
 Then note that $\operatorname{sgn}(1,2,\ldots,n) = 1$.
 
 Let $S_n$  be the set of all permutations on $n$ elements (the
