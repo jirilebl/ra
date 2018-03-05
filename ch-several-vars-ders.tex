@@ -29,7 +29,7 @@ be identified by subscript, such as a finite or infinite sequence of
 vectors $y_1,y_2,\ldots$.}
 
 It is common to write and treat vectors as
-\emph{\myindex{column vectors}}, that is, $n \times 1$ matrices:
+\emph{\myindex{column vectors}}, that is, $n$-by-$1$ matrices:
 \glsadd{not:vectorcol}
 \begin{equation*}
 v =
@@ -43,7 +43,23 @@ We will do so when convenient.
 We call real numbers
 \emph{\myindex{scalars}} to distinguish them from vectors.
 
-The set $\R^n$ has a so-called \emph{vector space} structure defined on it.
+In $\R^n$ we often think of vectors as direction and magnitude, and draw the
+vector as an arrow.  The vector $(v_1,v_2,\ldots,v_n)$ is represented
+by the arrow from the origin to the point $(v_1,v_2,\ldots,v_n)$, see
+\figureref{fig:vecasarrow} in the plane $\R^2$.
+When we do think of vectors as arrows, they are
+not based at the origin necessarily; a vector is then simply the direction and
+the magnitude, and it does not know where it starts.
+\begin{myfigureht}
+\subimport*{figures/}{vecasarrow.pdf_t}
+\caption{Vector as an arrow.\label{fig:vecasarrow}}
+\end{myfigureht}
+
+On the other hand, each
+vector also represents a point in $\R^n$.  Usually we think of $v \in \R^n$
+as a point if we are thinking of $\R^n$ as a metric space, and we think of
+it as arrow if we think of the so-called \emph{vector space structure} on
+$\R^n$.
 Let us define the abstract notion of the vector space, as there
 are many other vector spaces than just $\R^n$.
 
@@ -647,7 +663,7 @@ The ``furthermore'' follows by setting $y_j := \widetilde{A}(x_j)$,
 and then for 
 $x = \sum_{j=1}^n b_j \, x_j$,
 defining the extension as
-$Ax := \sum_{j=1}^n b_j \, y_j$.  The function is well defined by
+$Ax := \sum_{j=1}^n b_j \, y_j$.  The function is well-defined by
 uniqueness of the representation of $x$.
 We leave it to the reader to check that $A$ is linear.
 \end{proof}
@@ -716,7 +732,7 @@ x_2, \ldots, x_n \}$ in $X$.  That is, we define a bijective
 linear map $A \in L(X,\R^n)$ by
 $Ax_j := e_j$, where $\{ e_1, e_2, \ldots, e_n \}$ is the standard
 basis in $\R^n$.  Then we have
-the correspondence
+the correspondence \glsadd{not:mapsto}
 \begin{equation*}
 \sum_{j=1}^n c_j \, x_j \, \in X
 \quad
@@ -875,7 +891,7 @@ $L \colon C([0,1],\R) \to C([0,1],\R)$ defined by
 \begin{equation*}
 Lf(y) := \int_0^1 k(x,y)f(x)~dx
 \end{equation*}
-is a linear operator.  That is, show that $L$ is well defined (that
+is a linear operator.  That is, show that $L$ is well-defined (that
 $Lf$ is continuous), and that $L$ is linear.
 \end{exercise}
 
@@ -1268,17 +1284,17 @@ about open/closed sets, continuity, and convergence.
 %\textbf{Theorem 9.8:}
 \begin{prop} \label{prop:finitedimpropinv}
 Let $X$ be a finite dimensional normed vector space.
-Let $U \subset L(X)$ be the set of invertible linear operators.
+Let $GL(X) \subset L(X)$\glsadd{not:GLX} be the set of invertible linear operators.
 \begin{enumerate}[(i)]
 \item \label{finitedimpropinv:i}
-If $A \in U$, $B \in L(X)$, and
+If $A \in GL(X)$, $B \in L(X)$, and
 \begin{equation} \label{eqcontineq}
 \snorm{A-B} <  \frac{1}{\snorm{A^{-1}}},
 \end{equation}
 then $B$ is invertible.
 \item \label{finitedimpropinv:ii}
-$U$ is open and $A \mapsto A^{-1}$ is a continuous
-function on $U$.
+$GL(X)$ is an open subset, and $A \mapsto A^{-1}$ is a continuous
+function on $GL(X)$.
 \end{enumerate}
 \end{prop}
 
@@ -1323,9 +1339,9 @@ $B$ is one-to-one (if $Bx = By$, then $B(x-y) = 0$, so $x=y$).
 As $B$ is one-to-one operator from $X$ to $X$, which is finite dimensional,
 $B$ is invertible.
 
-Let us look at \ref{finitedimpropinv:ii}.  Fix some $A \in U$.  Let $B$ be invertible and near $A$,
+Let us prove \ref{finitedimpropinv:ii}.  Fix some $A \in GL(X)$.  Let $B$ be near $A$,
 specifically $\snorm{A-B} < \frac{1}{2 \snorm{A^{-1}}}$.
-Then \eqref{eqcontineq} is satisfied.
+Then \eqref{eqcontineq} is satisfied and $B$ is invertible.
 We have shown above (using $B^{-1}y$ instead of $x$)
 \begin{equation*}
 \snorm{B^{-1}y} \leq 
@@ -1482,7 +1498,7 @@ if $f \colon S \to L(\R^n,\R^m)$ is a continuous function,
 then the entries of the corresponding matrix are continuous functions.
 \end{prop}
 
-The proof of the second part is rather easy.  Take $f(x) e_j$, which
+Let us prove the second part.  Take $f(x) e_j$, which
 is a continuous function of $S$ to $\R^m$ with standard Euclidean norm:
 $\snorm{f(x) e_j - f(y) e_j} = 
 \snorm{\bigl(f(x)- f(y) \bigr) e_j} \leq
@@ -1528,7 +1544,9 @@ a permutation \emph{even}\index{even permutation}
 (resp.\ \emph{odd})\index{odd permutation}
 if it takes an even (resp.\ odd) number of
 transpositions to get from $\sigma$ to $(1,2,\ldots,n)$.
-Being even or odd is well defined:
+For example, $(2,4,3,1)$ is two transpositions away from 
+$(1,2,3,4)$ and is therefore even: $(1,2,3,4) \to (2,1,3,4) \to (2,4,3,1)$.
+Being even or odd is well-defined:
 it can be shown (exercise) that $\operatorname{sgn}(\sigma)$ 
 is $1$ if $\sigma$ is even and $-1$ if $\sigma$ is odd.
 This fact can be proved by noting that applying
@@ -1537,7 +1555,7 @@ Then note that $\operatorname{sgn}(1,2,\ldots,n) = 1$.
 
 Let $S_n$  be the set of all permutations on $n$ elements (the
 \emph{\myindex{symmetric group}}).
-Let $A= [a_{i,j}]$ be a square $n \times n$ matrix.  Define the \emph{\myindex{determinant}} of $A$
+Let $A= [a_{i,j}]$ be a square $n$-by-$n$ matrix.  Define the \emph{\myindex{determinant}} of $A$
 \glsadd{not:det}
 \begin{equation*}
 \det(A) := 
@@ -1559,7 +1577,8 @@ is linear.
 sign.
 \item \label{prop:det:iv} If two columns of $A$ are equal, then $\det(A) = 0$.
 \item \label{prop:det:v} If a column is zero, then $\det(A) = 0$.
-\item \label{prop:det:vi} $A \mapsto \det(A)$ is a continuous function.
+\item \label{prop:det:vi} $A \mapsto \det(A)$ is a continuous function on
+$L(\R^n)$.
 \item \label{prop:det:vii} $\det\left( \left[\begin{smallmatrix} a & b \\ c
 &d \end{smallmatrix}\right] \right)
 = ad-bc$, and $\det \bigl( [a] \bigr) = a$.
@@ -1600,30 +1619,33 @@ the same matrix back and so part \ref{prop:det:iii} says the determinant must ha
 Part \ref{prop:det:v} follows because the product in each term in the definition includes
 one element from the zero column.
 Part \ref{prop:det:vi} follows as $\det$ is a polynomial in the entries of the matrix
-and hence continuous.  We have seen that a function defined on
-matrices is continuous in the operator norm if it is 
+and hence continuous (in the entries of the matrix).  A function defined on
+matrices is continuous in the operator norm if and only if it is 
 continuous in the entries.
 Finally, part \ref{prop:det:vii} is a direct computation.
 \end{proof}
 
 The determinant tells us about areas and volumes, and how they change.
-For example, in the $1 \times 1$ case, a matrix is just a number, and the
+For example, in the $1$-by-$1$ case, a matrix is just a number, and the
 determinant is exactly this number.  It says how the linear mapping
 ``stretches'' the space.  Similarly for $\R^2$.
 Suppose $A \in L(\R^2)$ is a linear transformation.
 It can be checked directly that
 the area of the image of the unit square $A\bigl([0,1]^2\bigr)$ is precisely
-$\sabs{\det(A)}$.  The sign of the determinant tells us if the image is
-flipped (changes orientation) or not.
+$\sabs{\det(A)}$.
 This works with arbitrary figures, not just the unit
-square.  The determinant tells us the stretch in the area.  In $\R^3$ it
-tells us about the 3 dimensional volume, and in $n$ dimensions about the
+square:
+The absolute value of the determinant tells us the stretch in the area.
+The sign of the determinant tells us if the image is
+flipped (changes orientation) or not.
+In $\R^3$ it
+tells us about the 3-dimensional volume, and in $n$ dimensions about the
 $n$-dimensional volume.  We claim this without proof.
 
 %\textbf{Theorem 9.35+9.36:}
 \begin{prop}
-If $A$ and $B$ are $n\times n$ matrices, then $\det(AB) = \det(A)\det(B)$.
-In particular, $A$ is invertible if and only if $\det(A) \not= 0$ and in
+If $A$ and $B$ are $n$-by-$n$ matrices, then $\det(AB) = \det(A)\det(B)$.
+Furthermore, $A$ is invertible if and only if $\det(A) \not= 0$ and in
 this case, $\det(A^{-1}) = \frac{1}{\det(A)}$.
 \end{prop}
 
@@ -1666,14 +1688,15 @@ b_{j_n,n}
 \det \bigl([ a_{1} \quad a_{2} \quad  \cdots \quad  a_{n} ]\bigr) .
 \end{split}
 \end{equation*}
-In the above, go from all integers between 1 and $n$,
-to just elements of $S_n$ by noting that
+In the last equality we can sum over just the elements of $S_n$
+instead of all $n$-tuples for integers between 1 and $n$
+by noting that
 when two columns in the determinant are the same, then the
-determinant is zero.  We then reorder the columns to the
-original ordering and obtain the sgn.
+determinant is zero.  Then we reordered the columns to the
+original ordering to obtain the sgn.
 
 The conclusion that $\det(AB) = \det(A)\det(B)$
-follows by recognizing the determinant of $B$.  
+follows by recognizing above the determinant of $B$.  
 We obtain this by plugging in $A=I$.
 The expression we got for the determinant of $B$ has rows and columns
 swapped, so as a side note, we have also just proved that the determinant of
@@ -1681,9 +1704,9 @@ a matrix and its transpose are equal.
 
 To prove the second part of the theorem, suppose $A$ is invertible.
 Then $A^{-1}A = I$ and consequently $\det(A^{-1})\det(A) = \det(A^{-1}A) = \det(I) = 1$.
-If $A$ is not invertible, then the columns are linearly dependent.
-That is,
-suppose 
+If $A$ is not invertible, then there must be a nonzero vector that $A$ takes
+to zero as $A$ is not one-to-one.  In other words, the columns of $A$ are linearly dependent.
+Suppose 
 \begin{equation*}
 \sum_{j=1}^n \gamma_j a_j = 0 ,
 \end{equation*}
@@ -1724,9 +1747,7 @@ If in one basis $A$ is the matrix representing a
 linear operator, then for another basis we can find a matrix $B$ such
 that the matrix $B^{-1}AB$ takes us to the first basis, applies $A$ in the
 first basis, and takes us back to the basis we started with.
-%Therefore, the determinant can be defined as a function on the
-%space $L(X)$ for some finite dimensional metric space $X$, 
-%not just on matrices.
+Let $X$ be a finite dimensional vector space.
 We choose a basis on $X$, and we represent a linear mapping using
 a matrix with respect to this basis.  We obtain the
 same determinant as if we had used any other basis.
@@ -1736,58 +1757,61 @@ It follows that
 \end{equation*}
 is a well-defined function (not just on matrices).
 
-
+\medskip
 
 There are three types of so-called
-\emph{elementary matrices}\index{elementary matrix}.  Recall
-again that $e_j$ are the standard basis of $\R^n$.
-First for some $j =
+\emph{elementary matrices}\index{elementary matrix}.
+There are three types of elementary matrices.
+Let
+$e_1,e_2,\ldots,e_n$ be the standard basis on $\R^n$ as usual.
+
+First,
+for some $j =
 1,2,\ldots,n$ and
-some $\lambda \in \R$, $\lambda \neq 0$, an
-$n \times n$ matrix $E$ defined by
+some $\lambda \in \R$, $\lambda \neq 0$, define
+the first type of an elementary matrix,
+an
+$n$-by-$n$ matrix $E$ by
 \begin{equation*}
-Ee_i = 
+Ee_i := 
 \begin{cases}
 e_i & \text{if $i \neq j$} , \\
 \lambda e_i & \text{if $i = j$} .
 \end{cases}
 \end{equation*}
-Given any $n \times m$ matrix $M$ the matrix $EM$ is the same matrix as $M$
+Given any $n$-by-$m$ matrix $M$ the matrix $EM$ is the same matrix as $M$
 except with the $k$th row multiplied by $\lambda$.
 It is an easy computation (exercise) that $\det(E) = \lambda$.
 
-Second, for some $j$ and $k$ with $j\neq k$, and $\lambda \in \R$ an
-$n \times n$ matrix $E$ defined by
+Next, for some $j$ and $k$ with $j\neq k$, and $\lambda \in \R$,
+define the second type of an elementary matrix $E$ by
 \begin{equation*}
-Ee_i = 
+Ee_i := 
 \begin{cases}
 e_i & \text{if $i \neq j$} , \\
 e_i + \lambda e_k & \text{if $i = j$} .
 \end{cases}
 \end{equation*}
-Given any $n \times m$ matrix $M$ the matrix $EM$ is the same matrix as $M$
+Given any $n$-by-$m$ matrix $M$ the matrix $EM$ is the same matrix as $M$
 except with $\lambda$ times the $k$th row added to the $j$th row.
 It is an easy computation (exercise) that $\det(E) = 1$.
 
-Finally, for some $j$ and $k$ with $j\neq k$ an
-$n \times n$ matrix $E$ defined by
+Finally, for some $j$ and $k$ with $j\neq k$, define
+the third type of an elementary matrix $E$ by
 \begin{equation*}
-Ee_i = 
+Ee_i := 
 \begin{cases}
 e_i & \text{if $i \neq j$ and $i \neq k$} , \\
 e_k & \text{if $i = j$} , \\
 e_j & \text{if $i = k$} .
 \end{cases}
 \end{equation*}
-Given any $n \times m$ matrix $M$ the matrix $EM$ is the same matrix with
+Given any $n$-by-$m$ matrix $M$ the matrix $EM$ is the same matrix with
 $j$th and $k$th rows swapped.
 It is an easy computation (exercise) that $\det(E) = -1$.
 
-Elementary matrices are useful for computing the determinant.
-The proof of the following proposition is left as an exercise.
-
 \begin{prop} \label{prop:elemmatrixdecomp}
-Let $T$ be an $n \times n$ invertible matrix.  Then there exists a finite
+Let $T$ be an $n$-by-$n$ invertible matrix.  Then there exists a finite
 sequence of elementary matrices $E_1, E_2, \ldots, E_k$ such that
 \begin{equation*}
 T = E_1 E_2 \cdots E_k ,
@@ -1797,6 +1821,20 @@ and
 \det(T) = \det(E_1)\det(E_2)\cdots \det(E_k) .
 \end{equation*}
 \end{prop}
+
+The proof is left as an exercise.  The proposition says that we can compute
+the determinant by doing elementary row operations.  For computing the
+determinant one doesn't have to factor the matrix into a product of
+elementary matrices completely: usually one would only do row operations
+until we find an \emph{\myindex{upper triangular matrix}}, that is a matrix
+$[a_{i,j}]$ where $a_{i,j} = 0$ if $i > j$.  Computing their determinant is
+not difficult (exercise).
+
+Factorization into elementary matrices (or variations on elementary
+matrices) is useful in proofs involving an arbitrary linear operator, by
+reducing to a proof for an elementary matrix, similarly as the computation
+of the determinant.
+
 
 \subsection{Exercises}
 
@@ -1824,6 +1862,7 @@ What is the unit ball $B(0,1)$ in this norm?
 \end{enumerate}
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 For $\R^n$ define
 \begin{equation*}
@@ -1838,6 +1877,7 @@ distance, sometimes called the taxicab distance).
 What is the unit ball $B(0,1)$ in this norm?
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Using the euclidean norm on $\R^2$.  Compute the operator norm of the
@@ -1879,7 +1919,6 @@ $\left[
 \end{exercise}
 
 
-\begin{samepage}
 \begin{exercise} \label{exercise:normonedim}
 Using the standard euclidean norm $\R^n$. Show
 \begin{enumerate}[a)]
@@ -1894,7 +1933,6 @@ for a vector $b \in \R^n$.
 Then the operator norm $\snorm{B}_{L(\R^n,\R)} = \snorm{b}_{\R^n}$.
 \end{enumerate}
 \end{exercise}
-\end{samepage}
 
 \begin{exercise}
 Suppose $\sigma = (\sigma_1,\sigma_2,\ldots,\sigma_n)$ is a permutation of
@@ -1907,7 +1945,7 @@ elements) to get to $(1,2,\ldots,n)$.
 Using the definition \eqref{eq:sgndef}
 show that $\sigma$ is even if $\operatorname{sgn}(\sigma) = 1$ and $\sigma$
 is odd if $\operatorname{sgn}(\sigma) = -1$.  In particular, showing that
-being odd or even is well defined.
+being odd or even is well-defined.
 \end{enumerate}
 \end{exercise}
 
@@ -2016,6 +2054,71 @@ of functions is the same in either norm.
 \end{exercise}
 \end{samepage}
 
+\begin{exercise}
+Let $A$ be an upper triangular matrix.  Find a formula for the determinant
+of $A$ in terms of the diagonal entries, and prove that your formula works.
+\end{exercise}
+
+\begin{exercise}
+Given an $n$-by-$n$ matrix $A$, prove that
+$\abs{\det(A)} \leq \snorm{A}^n$ (the norm on $A$ is the operator norm).
+Hint: Note that you only need to show this for invertible matrices.  Then
+possibly reorder columns and factor $A$ into $n$ matrices each of
+which differs from the identity by one column.
+\end{exercise}
+
+\begin{exercise}
+Consider \propref{prop:finitedimpropinv} and let $A$ be invertible.
+\begin{enumerate}[a)]
+\item
+Prove that the estimate $\snorm{A-B} < \frac{1}{\snorm{A^{-1}}}$ is the
+best possible in the following sense: for any $A$ find a $B$ where equality is satisfied and $B$ is
+not invertible.
+\item
+Prove that in the set of $B$ such $\snorm{A-B} < \frac{1}{\snorm{A^{-1}}}$, $B$ is 
+invertible, but $\snorm{B^{-1}}$ is unbounded.
+\end{enumerate}
+\end{exercise}
+
+\begin{exnote}
+Let $A$ be an $n$-by-$n$ matrix.
+A (possibly complex) number $\lambda$ is called an \emph{\myindex{eigenvalue}} of $A$
+if there is a nonzero (possibly complex) vector $x$ such that $Ax = \lambda
+x$ (the multiplication by complex vectors is the same. In particular if $x =
+a+ib$ for real vectors $a$ and $b$, and $A$ is a real matrix, then $Ax = Aa + i Ab$).
+The number
+\begin{equation*}
+\rho(A) :=
+\sup \bigl\{ \abs{\lambda} : \lambda \text{ is an eigenvalue of $A$} \bigr\}
+\end{equation*}
+is called the \emph{\myindex{spectral radius}} of $A$.  Here $\abs{\lambda}$ is the complex
+modulus.  We state without proof that at least one eigenvalue always exists,
+and there are no more than $n$ distinct eigenvalues of $A$.  You can
+therefore assume that $0 \leq \rho(A) < \infty$.
+\end{exnote}
+
+\begin{exercise}
+Let $A,S$ be $n$-by-$n$ matrices, where $S$ is invertible.
+Prove that $\lambda$ is an eigenvalue of $A$, if and only
+if it is an eigenvalue of $S^{-1}AS$.  Then prove that
+$\rho(S^{-1}AS) = \rho(S)$.
+In particular, $\rho$ is a well defined function on $L(X)$ for
+any finite dimensional vector space $X$.
+\end{exercise}
+
+\begin{exercise}
+Let $A$ be an $n$-by-$n$ matrix $A$.
+\begin{enumerate}[a)]
+\item
+Prove $\rho(A) \leq \snorm{A}$.
+\item
+For any $k \in \N$, prove
+$\rho(A) \leq \snorm{A^k}^{1/k}$.
+\item
+Suppose $\displaystyle \lim_{k\to\infty} A^k = 0$ (limit in the operator norm).
+Prove that $\rho(A) < 1$.
+\end{enumerate}
+\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2060,7 +2163,7 @@ an $A \in L(\R^n,\R^m)$ such that
 We write $Df(x) := A$, or $f'(x) := A$,\glsadd{not:mvder} and
 we say $A$ is the \emph{\myindex{derivative}} of $f$ at $x$.
 When $f$ is \emph{differentiable} at
-all $x \in U$, we say simply that $f$ is differentiable.  See
+every $x \in U$, we say simply that $f$ is differentiable.  See
 \figureref{fig:svder} for an illustration.
 \end{defn}
 
@@ -2156,7 +2259,7 @@ Let us show that $f$ is differentiable at the origin and let us
 compute the derivative,
 directly using the definition.  If the
 derivative exists, it is in $L(\R^2,\R^2)$, so it can be
-represented by a $2\times 2$ matrix
+represented by a $2$-by-$2$ matrix
 $\left[\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right]$.  Suppose $h =
 (h_1,h_2)$.  We need the following expression to go to zero.
 \begin{multline*}
@@ -2373,7 +2476,7 @@ function.
 \begin{prop} \label{mv:prop:jacobianmatrix}
 Let $U \subset \R^n$ be open and let $f \colon U \to \R^m$ be
 differentiable at $p \in U$.  Then all the partial derivatives at $p$
-exist and in terms of the standard basis of $\R^n$ and $\R^m$,
+exist and in terms of the standard bases of $\R^n$ and $\R^m$,
 $f'(p)$ is represented by the matrix
 \begin{equation*}
 \begin{bmatrix}
@@ -2465,7 +2568,7 @@ all the $\frac{\partial f_k}{\partial x_j}$ are continuous functions.
 
 \subsection{Gradient and directional derivatives}
 
-Let $U \subset \R^n$ be open and $f \colon U \to \R$ is a differentiable
+Let $U \subset \R^n$ be open and $f \colon U \to \R$ a differentiable
 function.  We define
 the \emph{\myindex{gradient}} as
 \glsadd{not:gradient}
@@ -2479,6 +2582,13 @@ Suppose $\gamma \colon (a,b) \subset \R \to \R^n$ is a differentiable
 function and the image $\gamma\bigl((a,b)\bigr) \subset U$.
 Such a function and its image is sometimes called a \emph{\myindex{curve}},
 or a \emph{\myindex{differentiable curve}}.
+See \figureref{fig:difcurveder}.
+\begin{myfigureht}
+\subimport*{figures/}{diffcurveder.pdf_t}
+\caption{Differentiable curve and its derivative as a
+vector.\label{fig:difcurveder}}
+\end{myfigureht}
+
 Write $\gamma =
 (\gamma_1,\gamma_2,\ldots,\gamma_n)$.  Let
 \begin{equation*}
@@ -2501,8 +2611,8 @@ f'\bigl(\gamma(t)\bigr) \gamma^{\:\prime}(t)
 \frac{d\gamma_j}{dt} .
 \end{equation*}
 For convenience,
-we sometimes 
-leave out the points where we are evaluating as on the right hand side above.
+we often 
+leave out the points where we are evaluating, such as above on the right hand side.
 Let us rewrite this with the notation of the gradient and the dot product:
 \begin{equation*}
 g'(t) = (\nabla f) \bigl(\gamma(t)\bigr) \cdot \gamma^{\:\prime}(t)
@@ -2750,9 +2860,10 @@ $\frac{\partial f}{\partial x}(x_0,y_0) = \frac{\partial f}{\partial
 y}(x_0,y_0) = 0$.
 \end{exercise}
 
-\begin{samepage}
-\begin{exercise}[The \myindex{Peano surface}]
-Define $f(x,y) := ( x-y^2 ) ( 2 y^2 - x)$.  Show
+\begin{exercise}
+Define $f(x,y) := ( x-y^2 ) ( 2 y^2 - x)$.  The graph of $f$ is called
+the \emph{\myindex{Peano surface}}.
+Show
 \begin{enumerate}[a)]
 \item
 $(0,0)$ is a critical point, that is $f'(0,0) = 0$, that is the zero
@@ -2766,7 +2877,6 @@ $t=0$.
 $f$ does not have a local maximum at $(0,0)$.
 \end{enumerate}
 \end{exercise}
-\end{samepage}
 
 \begin{exercise}
 Suppose $f \colon \R \to \R^n$ is differentiable and $\snorm{f(t)} = 1$ for
@@ -2778,6 +2888,20 @@ all $t$, treating $f'$ as a vector we have, $f'(t) \cdot f(t) = 0$.
 Define $f \colon \R^2 \to \R^2$ by $f(x,y) :=
 \bigl(x,y+\varphi(x)\bigr)$ for some differentiable function $\varphi$ of one
 variable.  Show $f$ is differentiable and find $f'$.
+\end{exercise}
+
+\begin{exercise}
+Suppose $U \subset \R^n$ is open, $p \in U$, and
+$f \colon U \to \R$,
+$g \colon U \to \R$,
+$h \colon U \to \R$ are functions such that
+$f(p) = g(p) = h(p)$, $f$ and $h$ are differentiable at $p$,
+$f'(p) = h'(p)$, and
+\begin{equation*}
+f(x) \leq g(x) \leq h(x)
+\end{equation*}
+for all $x \in U$.  Show that $g$ is differentiable at $p$ and 
+$g'(p) = f'(p) = h'(p)$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3146,6 +3270,7 @@ $\abs{\frac{\partial f}{\partial y}} \leq M$ at all points.  Show that $f$
 is continuous.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Let $f \colon \R^2 \to \R$ be a function and
 $M \in R$, such that
@@ -3160,6 +3285,15 @@ Find an example of such an $f$ which is not continuous at every other point of
 $\R^2$ (Hint: Think back to how did we construct a nowhere continuous function on $[0,1]$).
 \end{enumerate}
 \end{exercise}
+\end{samepage}
+
+\begin{exercise}
+Suppose $g \colon \R^n \to L(\R^n,\R)$ is a continuous function.  Suppose
+that $f \colon \R^n \to \R$ and $h \colon \R^n \to \R$ are two 
+differentiable functions such that $f'(x) = g(x) = h'(x)$.  Prove that
+if $f(0) = h(0)$ then $f(x) = h(x)$ for all $x \in \R^n$.
+\end{exercise}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3713,6 +3847,7 @@ Show that $f$ is not continuously differentiable.
 
 \begin{samepage}
 \begin{exercise}[Polar coordinates] \label{mv:exercise:polarcoordinates}
+\index{polar coordinates}
 Define a mapping $F(r,\theta) := \bigl(r \cos(\theta), r \sin(\theta) \bigr)$.
 \begin{enumerate}[a)]
 \item
@@ -3943,7 +4078,7 @@ $\varphi(r,\theta) = \varphi(r,\theta+2\pi)$ for all $r,\theta \in \R$.
 Let $F(r,\theta) = \bigl(r \cos(\theta), r \sin(\theta) \bigr)$ from 
 \exerciseref{mv:exercise:polarcoordinates}.  Show that a function
 $g \colon \R^2 \to \R$, given
-$g(x,y) := \varphi \bigl(F^{-1}(x,y)\bigr)$ is well defined (notice that
+$g(x,y) := \varphi \bigl(F^{-1}(x,y)\bigr)$ is well-defined (notice that
 $F^{-1}(x,y)$ can only be defined locally), and
 when restricted to $\R^2 \setminus \{ 0 \}$ it is a $C^k$ function.
 \end{exercise}
