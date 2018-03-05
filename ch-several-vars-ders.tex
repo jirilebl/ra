@@ -557,8 +557,9 @@ rather than a \emph{function}.
 
 \begin{defn}
 A mapping $A \colon X \to Y$ of vector spaces $X$ and $Y$
-is \emph{\myindex{linear}} (or a
-\emph{\myindex{linear transformation}})\index{transformation, linear}
+is \emph{\myindex{linear}} (we also say $A$ is a
+\emph{\myindex{linear transformation}}\index{transformation, linear}
+or a \emph{\myindex{linear operator}}\index{operator, linear})
 if for all $a \in \R$ and all $x,y \in X$,
 \begin{equation*}
 A(a x) = a A(x), \qquad \text{and} \qquad A(x+y) = A(x)+A(y) .
@@ -568,7 +569,7 @@ If $A$ is one-to-one and onto, then we say $A$ is
 \emph{invertible}\index{invertible linear transformation},
 and we denote the inverse by $A^{-1}$.
 If $A \colon X \to X$ is linear, then we say $A$ is a
-\emph{\myindex{linear operator}}\index{operator, linear} on $X$.
+\emph{linear operator on $X$}.
 
 We write $L(X,Y)$\glsadd{not:LXY} for the set of all linear transformations from $X$ to
 $Y$, and just $L(X)$\glsadd{not:LX} for the set of linear operators on $X$.
@@ -927,7 +928,7 @@ Then prove that $A \colon X \to Y$ is linear.
 
 
 \begin{exercise}
-Prove \propref{prop:LXYfinitedim}.  Hint: A linear operator is determined by
+Prove \propref{prop:LXYfinitedim}.  Hint: A linear transformation is determined by
 its action on a basis.  So given two bases
 $\{ x_1,\ldots,x_n \}$ and
 $\{ y_1,\ldots,y_m \}$ for $X$ and $Y$ respectively, consider the linear
@@ -996,7 +997,7 @@ $\bigcap_{\lambda \in I} V_\lambda$ is a vector subspace of $X$.
 \section{Analysis with vector spaces}
 \label{sec:normsmatsdets}
 
-\sectionnotes{2-3 lectures}
+\sectionnotes{3 lectures}
 
 \subsection{Norms}
 
@@ -1050,7 +1051,8 @@ Let $x, y \in \R^n$, then
 \begin{equation*}
 \sabs{x \cdot y} \leq \snorm{x} \, \snorm{y} = \sqrt{x\cdot x}\, \sqrt{y\cdot y},
 \end{equation*}
-with equality if and only if the vectors are scalar multiples of each other.
+with equality if and only if $x = \lambda y$ or $y = \lambda x$ for some
+$\lambda \in \R$.
 \end{thm}
 
 \begin{proof}
@@ -1396,9 +1398,9 @@ are bases for vector spaces $X$ and $Y$ respectively.  A linear operator is
 determined by its values on the basis.  Given $A \in L(X,Y)$,
 $A x_j$ is an element of $Y$.  Define the numbers
 $a_{i,j}$ as follows
-\begin{equation*}
+\begin{equation} \label{eq:matrixrepresent}
 A x_j = \sum_{i=1}^m a_{i,j} \, y_i ,
-\end{equation*}
+\end{equation}
 and write them as a \emph{\myindex{matrix}}
 \glsadd{not:matrix}
 \begin{equation*}
@@ -1414,6 +1416,11 @@ We sometimes write $A$ as $[a_{i,j}]$.
 We say $A$ is an $m$-by-$n$ matrix.
 The \emph{\myindex{columns}} of the matrix are precisely the coefficients
 that represent $A x_j$, in terms of the basis $\{ y_1,y_2,\ldots,y_m \}$.
+If we know the numbers $a_{i,j}$, then via the formula
+\eqref{eq:matrixrepresent} we find the corresponding linear operator,
+as it is determined by the action on a basis.  Hence, once we fix
+a basis on $X$ and on $Y$ we have a one-to-one correspondence between
+$L(X,Y)$ and the $m$-by-$n$ matrices.
 
 When
 \begin{equation*}
@@ -1739,18 +1746,43 @@ invertible, then
 \end{equation*}
 \end{prop}
 
-The proof follows by noting
+The proof is to compute
 $\det(B^{-1}AB) = 
 \det(B^{-1})\det(A)\det(B) =
 \frac{1}{\det(B)}\det(A)\det(B) = \det(A)$.
+
 If in one basis $A$ is the matrix representing a
 linear operator, then for another basis we can find a matrix $B$ such
 that the matrix $B^{-1}AB$ takes us to the first basis, applies $A$ in the
 first basis, and takes us back to the basis we started with.
 Let $X$ be a finite dimensional vector space.
-We choose a basis on $X$, and we represent a linear mapping using
-a matrix with respect to this basis.  We obtain the
-same determinant as if we had used any other basis.
+Let $\Phi \in L(X,\R^n)$ take one basis $\{ x_1,\ldots,x_n \}$ to the
+standard basis $\{ e_1,\ldots,e_n \}$ and let $\Psi \in L(X,\R^n)$
+take another basis $\{ y_1, \ldots, y_n \}$ to the standard basis.
+Let $T \in L(X)$ be a linear operator and let $A$ represent the operator
+in the basis $\{ x_1,\ldots,x_n \}$.
+Then $B$ would be such that we have the following diagram\footnote{%
+This is a so-called \emph{\myindex{communtative diagram}}.
+Following arrows in any way should end up with the same result.}:
+\begin{equation*}
+\begin{tikzcd}[row sep=normal,column sep=large]
+\R^n \ar[r, "B^{-1}AB"]  \ar[dd, bend right=50, "B"'] &
+  \R^n \ar[d, "\Psi^{-1}"'] \\
+X \ar[r, "T"] \ar[u, "\Psi"'] \ar[d, "\Phi"]        &
+  X \\
+\R^n \ar[r, "A"]                                      &
+  \R^n \ar[u, "\Phi^{-1}"] \ar[uu, bend right=50, "B^{-1}"'] 
+\end{tikzcd}
+\end{equation*}
+The $\R^n$ on the bottom row represent
+$X$ in the first basis, and the $\R^n$ on top represent $X$ in the
+second
+basis.
+
+If we compute the determinant of the matrix $A$, we obtain
+the 
+same determinant as if we had used any other basis: in the other basis
+the matrix would be $B^{-1}AB$.
 It follows that
 \begin{equation*}
 \det \colon L(X) \to \R
@@ -2640,16 +2672,16 @@ We also compute directly
 \lim_{h\to 0}
 \frac{f(x+hu)-f(x)}{h} .
 \end{equation*}
-We obtain the \emph{\myindex{directional derivative}},
-denoted by
+Either way, we define the
+\emph{\myindex{directional derivative}} as
 \glsadd{not:mvdirder}
 \begin{equation*}
 D_u f (x) := \frac{d}{dt}\Big|_{t=0} \bigl[ f(x+tu) \bigr] ,
 \end{equation*}
 which can be computed by one of the methods above.
 
-Let us suppose $(\nabla f)(x) \neq 0$.
-By Cauchy--Schwarz inequality we have
+Suppose $(\nabla f)(x) \neq 0$.
+By Cauchy--Schwarz inequality,
 \begin{equation*}
 \sabs{D_u f(x)} \leq \snorm{(\nabla f)(x)} .
 \end{equation*}
