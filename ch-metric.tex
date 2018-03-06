@@ -113,12 +113,15 @@ Note that $d(x,y) = \varphi(\abs{x-y})$ where $\varphi(t) =
 (positive derivative).  Hence
 \begin{equation*}
 \begin{split}
-d(x,z) & = \varphi(\abs{x-z}) = 
-\varphi(\abs{x-y+y-z}) \leq
+d(x,z) & = \varphi(\abs{x-z})\\
+& = 
+\varphi(\abs{x-y+y-z}) \\
+& \leq
 \varphi(\abs{x-y}+\abs{y-z})
 \\
 & =
-\frac{\abs{x-y}+\abs{y-z}}{\abs{x-y}+\abs{y-z}+1} =
+\frac{\abs{x-y}+\abs{y-z}}{\abs{x-y}+\abs{y-z}+1} \\
+& =
 \frac{\abs{x-y}}{\abs{x-y}+\abs{y-z}+1} +
 \frac{\abs{y-z}}{\abs{x-y}+\abs{y-z}+1}
 \\
@@ -128,7 +131,8 @@ d(x,z) & = \varphi(\abs{x-z}) =
 d(x,y)+ d(y,z) .
 \end{split}
 \end{equation*}
-Here we have an example of a nonstandard metric on $\R$.  With this metric,
+The function $d$ is thus a metric, and we
+have an example of a nonstandard metric on $\R$.  With this metric,
 $d(x,y) < 1$ for all $x,y \in \R$.  That is,
 any two points are less than 1 unit apart.
 \end{example}
@@ -137,7 +141,10 @@ An important metric space is the
 $n$-dimensional \emph{\myindex{euclidean space}}
 \glsadd{not:euclidspace}
 $\R^n = \R \times \R \times \cdots \times \R$.   We use the following
-notation for points: $x =(x_1,x_2,\ldots,x_n) \in \R^n$.  We also
+notation for points: $x =(x_1,x_2,\ldots,x_n) \in \R^n$.  We will not write
+$\vec{x}$ nor $\mathbf{x}$ for a vector, we simply give it a name such as
+$x$ and we will remember that $x$ is a vector.
+We also
 simply write $0 \in \R^n$ to mean the point $(0,0,\ldots,0)$.  Before
 making $\R^n$ a metric space, let us prove an important inequality, the
 so-called Cauchy--Schwarz inequality.
@@ -428,9 +435,8 @@ the \emph{\myindex{subspace metric}} and $Y$ has the
 A subset of the real
 numbers is bounded whenever all its elements are at most some fixed distance
 from 0.
-We also define bounded sets in a metric space.
 When dealing with an arbitrary metric space there may not be some
-natural fixed point 0.  For the purposes of boundedness it does not matter.
+natural fixed point 0, but for the purposes of boundedness it does not matter.
 
 \begin{defn}
 Let $(X,d)$ be a metric space.  A subset $S \subset X$ is said to be
@@ -453,9 +459,10 @@ then we obtain a bounded metric space.  In fact, any set with the
 discrete metric is bounded.
 
 There are other equivalent ways we could generalize boundedness,
-and are left as exercises:  $S \subset X$ is bounded if and only if
+and are left as exercises.  Suppose $X$ is nonempty to avoid a technicality.
+Then $S \subset X$ is bounded if and only if
 \begin{enumerate}[(i)]
-\item 
+\item
 for every $p \in X$, there exists a $B > 0$ such that $d(p,x) \leq B$ for
 all $x \in S$.
 \item 
@@ -561,7 +568,7 @@ nonempty bounded subsets $A$ and $B$ such that $d_H(A,B) = 0$.
 \end{exercise}
 
 \begin{exercise}
-Let $(X,d)$ be a metric space and $S \subset X$ a subset.  Prove:
+Let $(X,d)$ be a nonempty metric space and $S \subset X$ a subset.  Prove:
 \begin{enumerate}[a)]
 \item
 $S$ is bounded if and only if
@@ -573,6 +580,7 @@ $\operatorname{diam}(S) := \sup \{ d(x,y) : x,y \in S \} < \infty$.
 \end{enumerate}
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 {\ }
 \begin{enumerate}[a)]
@@ -589,6 +597,7 @@ $\operatorname{diam}(\{ p \})$ and $\operatorname{diam}(X)$,
 then conclude that $(X,d)$ is bounded.
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 {\ }
@@ -2410,7 +2419,7 @@ Show that there exists a metric on $\R$ that makes $\R$ into a compact set.
 \begin{exercise}
 Suppose $(X,d)$ is complete and suppose we have a countably infinite
 collection of nonempty compact sets $E_1 \supset E_2 \supset E_3 \supset
-\cdots$ then prove $\bigcap_{j=1}^\infty E_j \not= \emptyset$.
+\cdots$.  Prove $\bigcap_{j=1}^\infty E_j \not= \emptyset$.
 \end{exercise}
 
 \begin{exercise}[Challenging]
@@ -3306,7 +3315,7 @@ Find the fixed point and show directly that it is unique.
 \begin{enumerate}[a)]
 \item
 Find an example of a contraction $f \colon X \to X$
-of non-complete metric space $X$ with no
+of a non-complete metric space $X$ with no
 fixed point.
 \item
 Find a 1-Lipschitz map $f \colon X \to X$ of a complete metric space $X$ with no fixed point.
