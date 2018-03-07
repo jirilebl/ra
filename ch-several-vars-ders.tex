@@ -2047,7 +2047,7 @@ spaces and $A \in L(X,Y)$, then $\snorm{A} < \infty$.
 \end{exercise}
 
 \begin{samepage}
-\begin{exercise}
+\begin{exercise} \label{exercise:allnormsequiv}
 Let $X$ be any finite dimensional vector space with a norm $\snorm{\cdot}$
 and basis $\{ x_1,x_2,\ldots,x_n
 \}$.  Let $c = (c_1,c_2,\ldots,c_n) \in \R^n$ and $\snorm{c}$ be the
@@ -2152,6 +2152,24 @@ $\rho(A) \leq \snorm{A^k}^{1/k}$.
 Suppose $\displaystyle \lim_{k\to\infty} A^k = 0$ (limit in the operator norm).
 Prove that $\rho(A) < 1$.
 \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+We say a set $C \subset \R^n$ is \emph{symmetric} if
+$x \in C$ implies $-x \in C$.
+\begin{enumerate}[a)]
+\item
+Let $\snorm{\cdot}$ be any norm on $\R^n$.  Show that the closed unit ball
+$C(0,1)$ (using the metric induced by this norm)
+is a compact symmetric convex set.
+\item (Challenging)
+Let $C \subset \R^n$ be a compact symmetric convex set and $0 \in C$.  Show that
+\begin{equation*}
+\snorm{x} := \inf \left\{ \lambda > 0 : \frac{x}{\lambda} \in C \right\}
+\end{equation*}
+is a norm on $\R^n$, and $C = C(0,1)$ in the metric induced by this norm.
+\end{enumerate}
+Hint: Feel free to the result of \exerciseref{exercise:allnormsequiv} part c).
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
