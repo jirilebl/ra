@@ -1665,8 +1665,9 @@ That is, the columns of $AB$ are
 $Ab_1,Ab_2,\ldots,Ab_n$.
 
 Let $b_{j,k}$ denote the elements of $B$ and
-$a_j$ the columns of $A$.  Note that $Ae_j = a_j$.
-By linearity of the determinant as proved above we have
+$a_j$ the columns of $A$.
+%Note that $Ae_j = a_j$.
+By linearity of the determinant,
 \begin{equation*}
 \begin{split}
 \det(AB) & =  
@@ -1715,7 +1716,7 @@ If $A$ is not invertible, then there must be a nonzero vector that $A$ takes
 to zero as $A$ is not one-to-one.  In other words, the columns of $A$ are linearly dependent.
 Suppose 
 \begin{equation*}
-\sum_{j=1}^n \gamma_j a_j = 0 ,
+\sum_{j=1}^n \gamma_j\, a_j = 0 ,
 \end{equation*}
 where not all $\gamma_j$ are equal to 0.
 Without loss of generality suppose $\gamma_1\neq 1$.
@@ -1730,7 +1731,7 @@ B :=
 \gamma_n & 0 & 0 & \cdots & 1
 \end{bmatrix} .
 \end{equation*}
-Applying the definition of the determinant
+Directly by the definition of the determinant
 we see $\det(B) = \gamma_1 \not= 0$.
 Then
 $\det(AB) = \det(A)\det(B) = \gamma_1\det(A)$.
@@ -1756,10 +1757,11 @@ linear operator, then for another basis we can find a matrix $B$ such
 that the matrix $B^{-1}AB$ takes us to the first basis, applies $A$ in the
 first basis, and takes us back to the basis we started with.
 Let $X$ be a finite dimensional vector space.
-Let $\Phi \in L(X,\R^n)$ take one basis $\{ x_1,\ldots,x_n \}$ to the
+Let $\Phi \in L(X,\R^n)$ take a basis $\{ x_1,\ldots,x_n \}$ to the
 standard basis $\{ e_1,\ldots,e_n \}$ and let $\Psi \in L(X,\R^n)$
 take another basis $\{ y_1, \ldots, y_n \}$ to the standard basis.
-Let $T \in L(X)$ be a linear operator and let $A$ represent the operator
+Let $T \in L(X)$ be a linear operator and let a matrix $A$
+represent the operator
 in the basis $\{ x_1,\ldots,x_n \}$.
 Then $B$ would be such that we have the following diagram\footnote{%
 This is a so-called \emph{\myindex{communtative diagram}}.
@@ -1780,9 +1782,8 @@ second
 basis.
 
 If we compute the determinant of the matrix $A$, we obtain
-the 
-same determinant as if we had used any other basis: in the other basis
-the matrix would be $B^{-1}AB$.
+the same determinant if we had used any other basis:
+in the other basis the matrix would be $B^{-1}AB$.
 It follows that
 \begin{equation*}
 \det \colon L(X) \to \R
@@ -2165,7 +2166,7 @@ is a compact symmetric convex set.
 \item (Challenging)
 Let $C \subset \R^n$ be a compact symmetric convex set and $0 \in C$.  Show that
 \begin{equation*}
-\snorm{x} := \inf \left\{ \lambda > 0 : \frac{x}{\lambda} \in C \right\}
+\snorm{x} := \inf \left\{ \lambda : \lambda > 0 \text{ and } \frac{x}{\lambda} \in C \right\}
 \end{equation*}
 is a norm on $\R^n$, and $C = C(0,1)$ in the metric induced by this norm.
 \end{enumerate}
@@ -2231,7 +2232,7 @@ the derivative of $f$ is a function from $U$ to $L(\R^n,\R^m)$.  Compare
 to the one dimensional case, where the derivative is a function
 from $U$ to $\R$, but we really want to think of $\R$ here as
 $L(\R^1,\R^1)$.  As in one dimension, the idea is that a differentiable
-mappings is ``infinitesimally close'' to a linear mappings, and this
+mappings is ``infinitesimally close'' to a linear mapping, and this
 linear mapping is the derivative.
 
 Notice which norms are being used in the definition.
@@ -2261,6 +2262,7 @@ Then $A=B$.
 \end{prop}
 
 \begin{proof}
+Suppose $h \in \R^n$, $h \not= 0$.  Compute
 \begin{equation*}
 \begin{split}
 \frac{\snorm{(A-B)h}}{\snorm{h}} & =
@@ -2272,7 +2274,7 @@ Bh}}{\snorm{h}} .
 \end{equation*}
 So 
 $\frac{\snorm{(A-B)h}}{\snorm{h}} \to 0$ as $h \to 0$.  That is, given
-$\epsilon > 0$, then for all $h$ in some $\delta$-ball around
+$\epsilon > 0$, then for all nonzero $h$ in some $\delta$-ball around
 the origin
 \begin{equation*}
 \epsilon > 
@@ -2287,7 +2289,7 @@ and $\frac{h}{\snorm{h}} = x$.
 So $\snorm{(A-B)x} < \epsilon$.  Taking the supremum over all $x$ with
 $\snorm{x} = 1$ we get the operator norm
 $\snorm{A-B} \leq \epsilon$.  As $\epsilon > 0$
-was arbitrary $\snorm{A-B} = 0$ or in other words $A = B$.
+was arbitrary, $\snorm{A-B} = 0$, or in other words $A = B$.
 \end{proof}
 
 \begin{example}
@@ -2337,9 +2339,9 @@ h_1^4 + h_1^2h_2^2}}{\sqrt{h_1^2+h_2^2}}
 h_1^2 + h_2^2}}{\sqrt{h_1^2+h_2^2}}
 = \sabs{h_1} .
 \end{equation*}
-And this expression does indeed go to zero as $h \to 0$.  Therefore the
-function is differentiable at the origin and 
-the derivative can be represented by the matrix
+And this expression does indeed go to zero as $h \to 0$.  The
+function $f$ is differentiable at the origin and 
+the derivative $f'(0)$ is represented by the matrix
 $\left[\begin{smallmatrix}1&2\\2&3\end{smallmatrix}\right]$.
 \end{example}
 
