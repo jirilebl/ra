@@ -399,6 +399,7 @@ The proofs of linearity and monotonicity are almost completely identical as
 the proofs from one variable.  We therefore leave it as an exercise to prove
 the next two propositions.
 
+\begin{samepage}
 \begin{prop}[Linearity] \label{mv:intlinearity:prop}
 \index{linearity of the integral}
 Let $R \subset \R^n$ be a closed rectangle and let
@@ -417,6 +418,7 @@ $f$ and $g$ be in $\sR(R)$ and $\alpha \in \R$.
 \end{equation*}
 \end{enumerate}
 \end{prop}
+\end{samepage}
 
 \begin{prop}[Monotonicity]
 \index{monotonicity of the integral}
@@ -580,7 +582,7 @@ The set $R$ is a closed and bounded subset of $\R^n$, and hence compact.  So
 $f$ is not just continuous, but in fact uniformly continuous 
 by \volIref{Theorem 7.5.11 from volume I}.
 Let $\epsilon > 0$ be given.  Find a $\delta > 0$ such that
-$\snorm{x-y} < \delta$ implies $\abs{f(x)-f(y)} < \frac{\epsilon}{V(R)}$.
+$\snorm{x-y} < \delta$ implies $\sabs{f(x)-f(y)} < \frac{\epsilon}{V(R)}$.
 
 Let $P$ be a partition of $R$, such that longest side of any subrectangle
 is strictly less than $\frac{\delta}{\sqrt{n}}$.
@@ -588,7 +590,7 @@ If $x, y \in R_k$ for some subrectangle $R_k$ of $P$ we have,
 by the proposition above,
 $\snorm{x-y} < \sqrt{n} \frac{\delta}{\sqrt{n}} = \delta$.  Therefore
 \begin{equation*}
-f(x)-f(y) \leq \abs{f(x)-f(y)} < \frac{\epsilon}{V(R)} .
+f(x)-f(y) \leq \sabs{f(x)-f(y)} < \frac{\epsilon}{V(R)} .
 \end{equation*}
 As $f$ is continuous on $R_k$, it attains a maximum and a minimum
 on this subrectangle.
@@ -674,7 +676,7 @@ f(x,y) :=
 \end{cases}
 \end{equation*}
 is continuous and its support is the closed unit disc
-$C(0,1) = \{ (x,y) : \sqrt{x^2 + y^2} \leq 1 \}$, which is a compact set, so $f$ has compact support.
+$C(0,1) = \bigl\{ (x,y) : \sqrt{x^2 + y^2} \leq 1 \bigr\}$, which is a compact set, so $f$ has compact support.
 Do note that the function is zero on the entire $y$-axis
 and on the unit circle, but
 all points that lie in the closed unit disc are still within the support
@@ -928,7 +930,7 @@ The Riemann integral in several variables
 is hard to compute from the definition.
 For one-dimensional Riemann integral we have the fundamental
 theorem of calculus
-%(FIXME)
+%(FIXME link?)
 and we can compute many integrals without
 having to appeal to the definition of the integral.
 We will rewrite 
@@ -1042,7 +1044,10 @@ f^y(x) := f(x,y)
 \end{equation*}
 when $y$ is fixed and we wish to speak of the function in terms of $x$.
 
-\begin{thm}[Fubini version A] \label{mv:fubinivA}
+\begin{thm}[Fubini version A%
+\footnote{Named after the Italian mathematician
+\href{http://en.wikipedia.org/wiki/Guido_Fubini}{Guido Fubini}
+(1879--1943).}] \label{mv:fubinivA}
 Let $R \times S \subset \R^n \times \R^m$ be a closed rectangle and
 $f \colon R \times S \to \R$ be integrable.
 The functions $g \colon R \to \R$ and $h \colon R \to \R$ defined by
@@ -1187,7 +1192,8 @@ that $\int_R h = \int_{R \times S} f$.
 \end{proof}
 
 We can also do the iterated integration in opposite order.
-The proof of this version is almost identical to version A, and
+The proof of this version is almost identical to version A
+(or follows quickly from version A), and
 we leave it as an exercise to the reader.
 
 \begin{thm}[Fubini version B]\label{mv:fubinivB}
@@ -1623,13 +1629,14 @@ a fixed constant $c \in \R$.  Then $P$ is of measure zero.
 \emph{Proof:}
 First fix $s$ and let us prove that
 \begin{equation*}
-P_s := \{ x \in \R^n : x_k = c, \abs{x_j} \leq s \text{ for all $j\not=k$} \}
+P_s := \bigl\{ x \in \R^n : x_k = c, \sabs{x_j} \leq s \text{ for all
+$j\not=k$} \bigr\}
 \end{equation*}
 is of measure zero.
 Given any $\epsilon > 0$ define the open rectangle
 \begin{equation*}
-R := \{ x \in \R^n : c-\epsilon < x_k < c+\epsilon, \abs{x_j} < s+1
-\text{ for all $j\not=k$} \} .
+R := \bigl\{ x \in \R^n : c-\epsilon < x_k < c+\epsilon, \sabs{x_j} < s+1
+\text{ for all $j\not=k$} \bigr\} .
 \end{equation*}
 It is clear that $P_s \subset R$.  Furthermore
 \begin{equation*}
@@ -1656,7 +1663,7 @@ Since $[a,b] \subset (a-\epsilon,b+\epsilon)$ for all $\epsilon > 0$.
 Hence, $m^*\bigl([a,b]\bigr) \leq b-a$.
 
 Let us prove the other inequality.
-Suppose $\{ (a_j,b_j) \}$ are open intervals such that
+Suppose $\bigl\{ (a_j,b_j) \bigr\}$ are open intervals such that
 \begin{equation*}
 [a,b] \subset \bigcup_{j=1}^\infty (a_j,b_j) .
 \end{equation*}
@@ -1752,6 +1759,8 @@ Clearly,
 \begin{equation*}
 C = \bigcap_{k=1}^\infty C_k .
 \end{equation*}
+
+\pagebreak[2]
 We leave as an exercise to prove that:
 \begin{enumerate}[(i)]
 \item Each $C_k$ is a finite union of closed intervals.  It is obtained by
@@ -2004,7 +2013,7 @@ $f \colon S \to \R$ is continuous at $x \in S$ if and only if $o(f,x) = 0$.
 \begin{proof}
 First suppose that $f$ is continuous at $x \in S$.  Then given any $\epsilon > 0$,
 there exists a $\delta > 0$ such that for $y \in B_S(x,\delta)$
-we have $\abs{f(x)-f(y)} < \epsilon$.  Therefore if $y_1,y_2 \in
+we have $\sabs{f(x)-f(y)} < \epsilon$.  Therefore if $y_1,y_2 \in
 B_S(x,\delta)$, then
 \begin{equation*}
 f(y_1)-f(y_2) =
@@ -2023,7 +2032,7 @@ On the other hand suppose that $o(x,f) = 0$.  Given any $\epsilon > 0$,
 find a $\delta > 0$ such that $o(f,x,\delta) < \epsilon$.  If
 $y \in B_S(x,\delta)$, then
 \begin{equation*}
-\abs{f(x)-f(y)}
+\sabs{f(x)-f(y)}
 \leq
 \sup_{y_1,y_2 \in B_S(x,\delta)} \bigl(f(y_1)-f(y_2)\bigr)
 =
@@ -2124,7 +2133,7 @@ of $f$
 over $R_j$ as before.
 If $R_j \subset T_\ell$ for some $\ell$, then $(M_j-m_j) < 2 \epsilon$.
 Let $B \in \R$ be such that
-$\abs{f(x)} \leq B$ for all $x \in R$, so $(M_j-m_j) < 2B$ over all
+$\sabs{f(x)} \leq B$ for all $x \in R$, so $(M_j-m_j) < 2B$ over all
 rectangles. Then
 \begin{equation*}
 \begin{split}
@@ -2279,7 +2288,10 @@ function}} or \emph{\myindex{indicator function}} is
 0 & \text{ if $x \notin S$}.
 \end{cases}
 \end{equation*}
-A bounded set $S$ is \emph{\myindex{Jordan measurable}}
+A bounded set $S$ is \emph{\myindex{Jordan measurable}}\footnote{Named after
+the French mathematician
+\href{http://en.wikipedia.org/wiki/Camille_Jordan}{Marie Ennemond Camille Jordan}
+(1838--1922).}
 if for some closed rectangle $R$ such that $S \subset R$, the function
 $\chi_S$ is in $\sR(R)$.
 Take two closed rectangles $R$ and $R'$ 
@@ -2504,6 +2516,7 @@ Prove that a bounded convex set is Jordan measurable.  Hint: induction on
 dimension.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise} \label{exercise:intovertypeIset}
 Let $f \colon [a,b] \to \R$ and
 $g \colon [a,b] \to \R$ be continuous functions and such that
@@ -2522,6 +2535,7 @@ If $f \colon U \to \R$ is Riemann integrable on $U$, then
 \end{equation*}
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Let us construct an example of a non-Jordan measurable open set.  For
@@ -2529,7 +2543,7 @@ simplicity we work first in one dimension.  Let $\{ r_j \}$ be an enumeration
 of all rational numbers in $(0,1)$.  Let $(a_j,b_j)$ be open intervals
 such that $(a_j,b_j) \subset (0,1)$ for all $j$, $r_j \in (a_j,b_j)$,
 and $\sum_{j=1}^\infty (b_j-a_j) < \nicefrac{1}{2}$.  Now let $U :=
-\bigcup_{j=1}^\infty (a_j,b_j)$.  Show that\\
+\bigcup_{j=1}^\infty (a_j,b_j)$.  Show that
 \begin{enumerate}[a)]
 \item
 The open intervals $(a_j,b_j)$ as above actually exist.
@@ -2555,7 +2569,10 @@ that is not Jordan measurable.
 One of the most important theorems of analysis in several variables is the
 so-called generalized Stokes' theorem, a generalization of the
 fundamental theorem of calculus.  Perhaps the most often used version is the
-version in two dimensions, called Green's theorem, which we 
+version in two dimensions, called Green's theorem%
+\footnote{Named after the British mathematical physicist
+\href{http://en.wikipedia.org/wiki/George_Green_(mathematician)}{George Green}
+(1793--1841).}, which we 
 prove here.
 
 \begin{defn}
@@ -2942,7 +2959,7 @@ vertices
 $(x_1,y_1)$,
 $(x_2,y_2)$,
 $(x_3,y_3)$ is
-$\frac{1}{2}\abs{x_1y_2 + x_2 y_3 + x_3 y_1 - y_1x_2 - y_2x_3 - y_3x_1}$.
+$\frac{1}{2}\sabs{x_1y_2 + x_2 y_3 + x_3 y_1 - y_1x_2 - y_2x_3 - y_3x_1}$.
 Hint: see previous exercise.
 \end{exercise}
 
@@ -2993,23 +3010,23 @@ the definition of integral from this chapter, then we do not have the notion
 of $\int_a^b$ versus $\int_b^a$.  We are simply integrating over an
 interval $[a,b]$.  With this notation, the change of variables becomes
 \begin{equation*}
-\int_{[a,b]} f\bigl(g(x)\bigr) \abs{g'(x)}~ dx = 
+\int_{[a,b]} f\bigl(g(x)\bigr) \sabs{g'(x)}~ dx = 
 \int_{g([a,b])} f(x) ~ dx .
 \end{equation*}
 In this section we will try to obtain an analogue in this form.
 
-First we wish to see what plays the role of $\abs{g'(x)}$.  If we think about it,
+First we wish to see what plays the role of $\sabs{g'(x)}$.  If we think about it,
 the $g'(x)$ is a scaling of $dx$.  The integral measures volumes, so in one
 dimension it measures length.  If our $g$ is linear, that is, $g(x)=Lx$, then
 $g'(x) = L$.  Then the length of the interval $g([a,b])$ is simply
-$\abs{L}(b-a)$.  That is because $g([a,b])$ is either $[La,Lb]$ or
-$[Lb,La]$.  This property holds in higher dimension with $\abs{L}$ replaced
+$\sabs{L}(b-a)$.  That is because $g([a,b])$ is either $[La,Lb]$ or
+$[Lb,La]$.  This property holds in higher dimension with $\sabs{L}$ replaced
 by absolute value of the determinant.
 
 \begin{prop} \label{prop:volrectdet}
 Suppose $R \subset \R^n$ is a rectangle
 and $T \colon \R^n \to \R^n$ is linear.  Then
-$T(R)$ is Jordan measurable and $V\bigl(T(R)\bigr) = \abs{\det T} V(R)$.
+$T(R)$ is Jordan measurable and $V\bigl(T(R)\bigr) = \sabs{\det T} V(R)$.
 \end{prop}
 
 \begin{proof}
@@ -3028,7 +3045,7 @@ $g \colon U \to \R^n$ is a one-to-one
 continuously differentiable mapping such that
 there exist $0 < m < M < \infty$ and
 \begin{equation*}
-m \leq \abs{J_g(x)} \leq M
+m \leq \sabs{J_g(x)} \leq M
 \end{equation*}
 for all $x \in R$.
 Then
@@ -3055,19 +3072,19 @@ Then
 \begin{equation*}
 V\bigl(g(S)\bigr)
 =
-\int_S \abs{J_g(x)} ~ dx .
+\int_S \sabs{J_g(x)} ~ dx .
 \end{equation*}
 \end{lemma}
 
 \begin{proof}
 The left hand side is $\int_{R'} \chi_{g(S)}$, where the integral is taken over a
 large enough rectangle $R'$ that contains $g(S)$.
-The right hand side is $\int_{R} \abs{J_g} \chi_S$ for
+The right hand side is $\int_{R} \sabs{J_g} \chi_S$ for
 a large enough rectangle $R$ that contains $S$.  Let $\epsilon > 0$ be
 given.
 
 %For each $x \in S$ we can take a rectangle $R_{x}$ such that
-%$\abs{J_g(y)-J_g(z)} < \epsilon$ for any $y,z \in R_{x}$.  By compactness
+%$\sabs{J_g(y)-J_g(z)} < \epsilon$ for any $y,z \in R_{x}$.  By compactness
 %of $S$, we only need finitely many such rectangles
 
 FIXME: by compactness choose a partition (subrectangles) $R_1,\ldots,R_N$ such that these cover $S$
@@ -3103,14 +3120,14 @@ subrectangles, denote
 by $R_1,R_2,\ldots,R_K$ those subrectangles that intersect $S$.
 Suppose the partition is fine enough such that
 \begin{equation*}
-\epsilon + \int_S \abs{J_g(x)} ~ dx \geq
-\sum_{j=1}^N \Bigl(\sup_{x \in S \cap R_j} \abs{J_g(x)} \Bigr) V(R_j)
+\epsilon + \int_S \sabs{J_g(x)} ~ dx \geq
+\sum_{j=1}^N \Bigl(\sup_{x \in S \cap R_j} \sabs{J_g(x)} \Bigr) V(R_j)
 \end{equation*}
 ...
 \begin{equation*}
-\sum_{j=1}^N \Bigl(\sup_{x \in S \cap R_j} \abs{J_g(x)} \Bigr) V(R_j)
+\sum_{j=1}^N \Bigl(\sup_{x \in S \cap R_j} \sabs{J_g(x)} \Bigr) V(R_j)
 \geq
-\sum_{j=1}^N \abs{J_g(x_j)}  V(R_j)
+\sum_{j=1}^N \sabs{J_g(x_j)}  V(R_j)
 =
 \sum_{j=1}^N V\bigl(Dg(x_j) R_j\bigr)
 \end{equation*}
@@ -3138,7 +3155,7 @@ FIXME
 %\begin{equation*}
 %V\bigl(g(S)\bigr)
 %=
-%\int_S \abs{J_g(x)} ~ dx .
+%\int_S \sabs{J_g(x)} ~ dx .
 %\end{equation*}
 %\end{lemma}
 
@@ -3147,7 +3164,7 @@ FIXME
 \begin{proof}
 The left hand side is $\int_{R'} \chi_{g(S)}$, where the integral is taken over a
 large enough rectangle $R'$ that contains $g(S)$.
-The right hand side is $\int_{R} \abs{J_g} \chi_S$ for
+The right hand side is $\int_{R} \sabs{J_g} \chi_S$ for
 a large enough rectangle $R$ that contains $S$.  Let $\epsilon > 0$ be
 given.
 
@@ -3170,14 +3187,14 @@ subrectangles, denote
 by $R_1,R_2,\ldots,R_K$ those subrectangles that intersect $S$.
 Suppose the partition is fine enough such that
 \begin{equation*}
-\epsilon + \int_S \abs{J_g(x)} ~ dx \geq
-\sum_{j=1}^N \Bigl(\sup_{x \in S \cap R_j} \abs{J_g(x)} \Bigr) V(R_j)
+\epsilon + \int_S \sabs{J_g(x)} ~ dx \geq
+\sum_{j=1}^N \Bigl(\sup_{x \in S \cap R_j} \sabs{J_g(x)} \Bigr) V(R_j)
 \end{equation*}
 ...
 \begin{equation*}
-\sum_{j=1}^N \Bigl(\sup_{x \in S \cap R_j} \abs{J_g(x)} \Bigr) V(R_j)
+\sum_{j=1}^N \Bigl(\sup_{x \in S \cap R_j} \sabs{J_g(x)} \Bigr) V(R_j)
 \geq
-\sum_{j=1}^N \abs{J_g(x_j)}  V(R_j)
+\sum_{j=1}^N \sabs{J_g(x_j)}  V(R_j)
 =
 \sum_{j=1}^N V\bigl(Dg(x_j) R_j\bigr)
 \end{equation*}
@@ -3196,7 +3213,7 @@ Let
 FIXME
 \end{proof}
 
-So $\abs{J_g(x)}$ is the replacement of $\abs{g'(x)}$ for multiple
+So $\sabs{J_g(x)}$ is the replacement of $\sabs{g'(x)}$ for multiple
 dimensions.  Note that the following theorem holds in more generality,
 but this statement is sufficient for many uses.
 
@@ -3210,7 +3227,7 @@ Suppose $f \colon g(S) \to \R$ is Riemann
 integrable.  Then $f \circ g$ is Riemann integrable on $S$ and
 \begin{equation*}
 \int_{g(S)} f(x) ~ dx = 
-\int_S f\bigl(g(x)\bigr) \abs{J_g(x)} ~ dx .
+\int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx .
 \end{equation*}
 \end{thm}
 
