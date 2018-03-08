@@ -394,7 +394,7 @@ you have been warned.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Sequences and series of functions} \label{seqser:chapter}
+\chapter{Sequences and series of functions revisited} \label{seqserrev:chapter}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -403,13 +403,19 @@ you have been warned.
 
 \sectionnotes{FIXME4 lectures}
 
+In this chapter we look at some of the sequences and series we have seen
+already and extend the results to a more general setting, and we will look
+at some completely new results.  In particular, we will extend everything to
+complex valued functions.  We gave complex numbers as examples before, but
+let us start from scratch and properly define the complex number field.
+
 A complex number is just a pair $(x,y) \in \R^2$ on which we define
-multiplication below.
-We call the set of complex numbers $\C$.
+multiplication (see below).
+We call the set the complex numbers and denote it by $\C$.
 We identify $x \in \R$ with $(x,0) \in \C$.
-The $x$-axis is then called the \emph{real axis} and the $y$-axis is
-called the \emph{imaginary axis}.  The set $\C$ is sometimes called the
-\emph{complex plane}.
+The $x$-axis is then called the \emph{\myindex{real axis}} and the $y$-axis is
+called the \emph{\myindex{imaginary axis}}.  The set $\C$ is sometimes called the
+\emph{\myindex{complex plane}}.
 
 %\bnote{DRAW complex plane}
 %\textbf{FIXME: DRAW complex plane}
@@ -420,13 +426,9 @@ Define
 & (x,y) (s,t) := (xs-yt,xt+ys)
 \end{align*}
 Under the identification above we have $0 = (0,0)$ and $1 = (1,0)$.  These
-properties then give a field.
+properties then give a field (exercise).
 
-\begin{exercise}
-Check that these give a field.
-\end{exercise}
-
-Generally, we write complex number $(x,y)$ as $x+iy$, where we
+Generally, we write a complex number $(x,y)$ as $x+iy$, where we
 define\footnote{Note that engineers use $j$ instead of $i$.}
 \begin{equation*}
 i := (0,1) .
@@ -448,8 +450,8 @@ Define
 the \emph{\myindex{real part}} of $z$ as $x$, and the
 the \emph{\myindex{imaginary part}} of $z$ as $y$.  We write
 \begin{align*}
-& \Re z := x , \\
-& \Im z := y .
+& \Re\, z := x , \\
+& \Im\, z := y .
 \end{align*}
 Define the
 \emph{\myindex{complex conjugate}} as
@@ -458,7 +460,7 @@ Define the
 \end{equation*}
 Similarly define \emph{\myindex{modulus}} as
 \begin{equation*}
-\abs{z} := \sqrt{x^2+y^2} .
+\sabs{z} := \sqrt{x^2+y^2} .
 \end{equation*}
 \end{defn}
 
@@ -469,30 +471,27 @@ the equation
 \begin{equation*}
 z = \bar{z} .
 \end{equation*}
-That is, real numbers are precisely those numbers fixed by the reflection.
 
 As $\C$ is really $\R^2$, we let the metric on $\C$ be the standard
 euclidean metric on $\R^2$.
 In particular,
 \begin{equation*}
-\abs{z} = d(z,0) , \qquad 
+\sabs{z} = d(z,0) , \qquad 
 \text{and also} \qquad 
-\abs{z-w} = d(z,w) .
+\sabs{z-w} = d(z,w) .
 \end{equation*}
-We therefore think of $\abs{z-w}$ as our metric, and the topology on $\C$ is
-the same topology we get on $\R^2$ with the euclidean metric.
-We therefore immediately get
-
-\begin{prop}[Triangle inequality]
+So the topology on $\C$ is
+the same exact topology we get on $\R^2$ with the euclidean metric,
+and $\sabs{z}$ is in fact equal to the euclidean norm on $\R^2$.
+In particular, we get the triangle inequality:
 \begin{align*}
-\abs{z+w} & \leq \abs{z}+\abs{w} \\
-\big\lvert \abs{z}-\abs{w} \big\rvert & \leq \abs{z-w}
+\sabs{z+w} & \leq \sabs{z}+\sabs{w} \\
+\big\lvert \sabs{z}-\sabs{w} \big\rvert & \leq \sabs{z-w}
 \end{align*}
-\end{prop}
 
 The complex conjugate and the modulus are even more intimately related:
 \begin{equation*}
-\abs{z}^2 =
+\sabs{z}^2 =
 x^2+y^2 =
 (x+iy)(x-iy) =
 z \bar{z} .
@@ -505,69 +504,77 @@ Ordering is one of the major things we lose when we go from real to complex
 numbers.
 \end{remark}
 
-
-Most things that we proved about real numbers that did not require
-the ordering carries over.  Also, the standard topology on $\C$ is
-just the standard topology on $\R^2$, using the modulus for our distance
-as above.  Hence we can carry over all that we know about the metric
-space $\R^2$ to $\C$.  In particular we know what limits of
-sequences mean, we know about complex-valued functions and their continuity,
-we know that $\C$ is a \textbf{complete metric space},
-etc...
-
 It is also not hard to show that the algebraic operations are
 continuous.  This is because convergence in 
 $\R^2$ is the same as convergence for each component.  So for example:
 let $z_n = x_n + iy_n$ and
 $w_n = s_n + it_n$ and suppose that
 $\lim z_n = z = x+iy$ and $\lim w_n = w = s+it$.
-Let us show that
-$$
+Let us show
+\begin{equation*}
 \lim_{n\to\infty} z_n w_n = zw
-$$
-Note that as topology on $\C$ is the same as on $\R^2$, then
+\end{equation*}
+As topology on $\C$ is the same as on $\R^2$, then
 $x_n \to x$, $y_n \to y$, $s_n \to s$, and $t_n \to t$.  Then
-$$
-z_n w_n = (x_ns_n-y_nt_n) + i(x_nt_n+y_ns_n)
-$$
-now 
+\begin{equation*}
+z_n w_n = (x_ns_n-y_nt_n) + i(x_nt_n+y_ns_n) .
+\end{equation*}
+Now 
 $\lim (x_ns_n-y_nt_n) = xs-yt$ and
 $\lim (x_nt_n+y_ns_n) = xt+ys$ and
 $(xs-yt)+i(xt+ys) = zw$ so
-$$
-\lim_{n\to\infty} z_n w_n = zw
-$$
-The rest is left to student.  
+\begin{equation*}
+\lim_{n\to\infty} z_n w_n = zw .
+\end{equation*}
+The rest is left to the reader as exercise (FIXME(.
 
 Similarly the modulus, and complex conjugate are continuous functions.
+FIXME: exercise
 
 FIXME: the above should be a proposition.
 
-It is often useful to extend the definition of the exponential to complex
-numbers.  We define the \emph{\myindex{complex exponential}} as
-\begin{equation*}
-e^{x+iy} := e^x \bigl( \cos(y) + i \sin(y) \bigr) .
-\end{equation*}
-It should be noted that at this point we assume that cosine and sine
-have been somehow defined.  We will get to rigorously
-construct cosine and sine later using power series.  In fact,
-the way we will define cosine and sine is to define 
-$e^{x+iy}$ for all complex numbers using power series and then simply
-extract cosine and sine out of it.
+%It is often useful to extend the definition of the exponential to complex
+%numbers.  We define the \emph{\myindex{complex exponential}} as
+%\begin{equation*}
+%e^{x+iy} := e^x \bigl( \cos(y) + i \sin(y) \bigr) .
+%\end{equation*}
+%It should be noted that at this point we assume that cosine and sine
+%have been somehow defined.  We will get to rigorously
+%construct cosine and sine later using power series.  In fact,
+%the way we will define cosine and sine is to define 
+%$e^{x+iy}$ for all complex numbers using power series and then simply
+%extract cosine and sine out of it.
 
-With this notation you can write complex number in polar coordinates
-as
-\begin{equation*}
-x+iy = r e^{i\theta} .
-\end{equation*}
-Here, $r \geq 0$ is the modulus of $x+iy$ and $\theta$ is what is called
-the \emph{\myindex{argument}}.
+%With this notation you can write complex number in polar coordinates
+%as
+%\begin{equation*}
+%x+iy = r e^{i\theta} .
+%\end{equation*}
+%Here, $r \geq 0$ is the modulus of $x+iy$ and $\theta$ is what is called
+%the \emph{\myindex{argument}}.
 
 FIXME
 
 FIXME: convergence of series
 
-FIXME: integration of complex valued functions
+It often comes up to integrate a complex valued function.  Suppose
+$f \colon [a,b] \to \C$ is a function.  Write
+$f = u+iv$ for real valued functions $u$ and $v$.  We will say
+that $f$ is Riemann integrable if and only if $u$ and $v$ are Riemann
+integrable, and in this case we define
+\begin{equation*}
+\int_a^b f := \int_a^b u + i \int_a^b v .
+\end{equation*}
+We make the same definition for every other type of integral (improper,
+multivarible, etc\ldots).
+
+\subsection{Exercises}
+
+\begin{exercise}
+Check that $\C$ is a field.
+\end{exercise}
+
+FIXME
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -593,11 +600,11 @@ If $f_n$ are all continuous, is $f$ continuous?  Differentiable?
 Integrable?  What are the derivatives or integrals of $f$?
 
 For example for continuity of the pointwise limitwe are asking if
-\begin{equation}
+\begin{equation*}
 \lim_{x\to x_0} \lim_{n\to\infty} f_n(x)
 \overset{?}{=}
 \lim_{n\to\infty} \lim_{x\to x_0} f_n(x)
-\end{equation}
+\end{equation*}
 We don't even know a priory if both sides exist, let alone equal each other.
 
 \begin{example}
@@ -607,7 +614,7 @@ f_n(x) := \frac{1}{1+nx^2}
 \end{equation*}
 converge pointwise to
 \begin{equation*}
-f(x) = 
+f(x) := 
 \begin{cases}
 1 & \text{ if $x=0$} \\
 0 & \text{ else}
@@ -631,7 +638,7 @@ $\{f_n\}$ \emph{converges uniformly} to $f$ if
 for every $\epsilon > 0$, there exists an $M$ such that
 for all $n \geq M$ and all $x \in X$ we have
 \begin{equation*}
-d\bigl(f_n(x),f(x)\bigr) < \epsilon
+d\bigl(f_n(x),f(x)\bigr) < \epsilon .
 \end{equation*}
 If we are dealing with complex-valued functions then
 \begin{equation*}
@@ -772,10 +779,8 @@ $$
 \sum_{k=n+1}^m \abs{f_k(x)} \leq
 \sum_{k=n+1}^m M_k < \epsilon .
 $$
-And we are done by Theorem 7.8.
+And we are done by FIXME:Theorem 7.8.
 \end{proof}
-
-\textbf{Examples:}
 
 \begin{example}
 The series
@@ -810,7 +815,7 @@ and
 \begin{equation*}
 \sum_{n=1}^\infty \frac{r^n}{n!}
 \end{equation*}
-converges by the quotient rule
+converges by the ratio test
 \begin{equation*}
 \frac{r^{n+1} ~ / ~ (n+1)!}{r^{n} ~ / ~ n!}
 =
@@ -933,7 +938,7 @@ $m \geq N$ we have
 <
 \nicefrac{\epsilon}{3} +
 \nicefrac{\epsilon}{3} +
-\nicefrac{\epsilon}{3} = \epsilon .
+\nicefrac{\epsilon}{3} = \epsilon . \qedhere
 \end{equation*}
 \end{proof}
 
@@ -959,6 +964,10 @@ A combination of FIXME:7.8 and FIXME:7.12 shows that for a compact $X$, $C(X,\C)
 complete metric space.  By FIXME:7.8 we have that a Cauchy sequence in $C(X,\C)$
 converges uniformly to a function that is continuous by FIXME:7.12.
 %This is Theorem 7.15 in Rudin.
+
+FIXME: maybe cut from here.  The Fourier series should be sent to the
+Fourier series section.  Dini's theorem perhaps isn't needed, plus isn't it
+an exercise earlier?
 
 \begin{example}
 We have seen that the example Fourier series 
@@ -1110,11 +1119,13 @@ for all $x$.
 Now find $M$ such that $\abs{f_n(x)} \leq M$ for all $x$.
 By reverse triangle inequality
 \begin{equation*}
-\abs{f(x)} < 1+ \abs{f_n(x)} \leq 1+M .
+\abs{f(x)} < 1+ \abs{f_n(x)} \leq 1+M . \qedhere
 \end{equation*}
 \end{proof}
 
 \medskip
+
+FIXME: in the complex number section?
 
 We have seen Riemann integrals of real-valued functions.  For complex-valued
 function $f \colon [a,b] \to \C$, we write $f(x) = u(x) + iv(x)$
@@ -1283,6 +1294,8 @@ f'(x) = \lim_{n\to\infty} f_n'(x) \qquad \text{for all $x \in [a,b]$.}
 \end{equation*}
 \end{thm}
 
+FIXME: just apply previous proof
+
 \begin{proof}
 Let $\epsilon > 0$ be given.
 We have that $\{ f_n(x_0) \}$ is Cauchy so there is an $N$ such that
@@ -1379,7 +1392,8 @@ done by fundamental theorem of calculus, and the passing of limit under the
 integral.  The trick above is that we have no
 such assumption.
 
-
+FIXME: This should go to the Fourier series section we don't have complex
+exponential quite yet.
 \begin{example}
 Let us see what this means for Fourier series
 $$
@@ -1520,6 +1534,10 @@ differentiable functions but actually it is the uniform limit of
 polynomials.
 \end{example}
 
+\subsection{Exercises}
+
+FIXME
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
@@ -1555,12 +1573,10 @@ $$
 \abs{f_n(x)} \leq M \qquad \text{for all $n \in \N$ and all $x \in X$}
 $$
 
-\medskip
 
 Note that uniform boundedness is the same as boundedness in the metric space
 $C(X,\C)$ (assuming that $X$ is compact)
 
-\medskip
 
 We don't have the machinery yet to easily exhibit
 a sequence of continuous functions
@@ -1568,24 +1584,21 @@ on $[0,1]$ that is uniformly bounded but contains no subsequence converging
 even pointwise.  Let us just state that $f_n(x) = \sin (2\pi n x)$ is one
 such sequence.
 
-\medskip
 
 We also of course have that $f_n(x)=x^n$ is a sequence that is uniformly
 bounded, but contains no sequence that converges uniformly (it does converge
 pointwise though).
 
-\medskip
 
 When the domain is countable, matters are easier.  We will also use the
 following theorem as a lemma later.  It will use a very common and useful
 diagonal argument.
 
-\medskip
-
-\textbf{Theorem 7.23:}
+\begin{thm}
 Let $X$ be countable and $f_n \colon X \to \C$ give a pointwise bounded
 sequence of functions, then $\{ f_n \}$ has a subsequence that converges
 pointwise.
+\end{thm}
 
 \begin{proof}
 Let $\{ x_k \}$ be an enumeration of the elements of $X$.
@@ -1628,46 +1641,43 @@ interesting case is when $\sF$ is an infinite family such as a sequence of
 functions.  Equicontinuity of a sequence
 is closely related to uniform convergence.
 
-\medskip
+%\medskip
+%
+%First a proposition, that we have proved for compact intervals before.
+%
+%\medskip
+%
+%\textbf{Proposition:}
+%If $X$ is compact and $f \colon X \to \C$ is continuous, then
+%$f$ is uniformly continuous.
+%
+%\medskip
+%
+%\begin{proof}
+%Let $\epsilon > 0$ be given.
+%If we take all $z \in \C$,
+%the open sets of the form $f^{-1}\bigl(B(z,\nicefrac{\epsilon}{2})\bigr)$
+%cover $X$.
+%By the Lebesgue covering lemma as $X$ is compact,
+%there exists a $\delta > 0$
+%such that for any $x \in X$, $B(x,\delta)$ lies in some member of the cover,
+%in other words there is some $z \in \C$ such that
+%$$
+%B(x,\delta) \subset f^{-1}\bigl(B(z,\nicefrac{\epsilon}{2})\bigr)
+%$$
+%Now since $f(x) \in B(z,\nicefrac{\epsilon}{2})$,
+%then by triangle inequality we have
+%$B(z,\nicefrac{\epsilon}{2}) \subset B\bigl(f(x),\epsilon\bigr)$ and so
+%$$
+%B(x,\delta) \subset f^{-1}\bigl(B(f(x),\epsilon)\bigr)
+%$$
+%But that is precisely what it means for $f$ to be uniformly continuous.
+%\end{proof}
 
-First a proposition, that we have proved for compact intervals before.
-
-\medskip
-
-\textbf{Proposition:}
-If $X$ is compact and $f \colon X \to \C$ is continuous, then
-$f$ is uniformly continuous.
-
-\medskip
-
-\begin{proof}
-Let $\epsilon > 0$ be given.
-If we take all $z \in \C$,
-the open sets of the form $f^{-1}\bigl(B(z,\nicefrac{\epsilon}{2})\bigr)$
-cover $X$.
-By the Lebesgue covering lemma as $X$ is compact,
-there exists a $\delta > 0$
-such that for any $x \in X$, $B(x,\delta)$ lies in some member of the cover,
-in other words there is some $z \in \C$ such that
-$$
-B(x,\delta) \subset f^{-1}\bigl(B(z,\nicefrac{\epsilon}{2})\bigr)
-$$
-Now since $f(x) \in B(z,\nicefrac{\epsilon}{2})$,
-then by triangle inequality we have
-$B(z,\nicefrac{\epsilon}{2}) \subset B\bigl(f(x),\epsilon\bigr)$ and so
-$$
-B(x,\delta) \subset f^{-1}\bigl(B(f(x),\epsilon)\bigr)
-$$
-But that is precisely what it means for $f$ to be uniformly continuous.
-\end{proof}
-
-\medskip
-
-\textbf{Theorem 7.24:}
+\begin{thm}
 If $X$ is compact, $f_n \in C(X,\C)$, and $\{ f_n \}$
 converges uniformly, then $\{ f_n \}$ is equicontinuous.
-
-\medskip
+\end{thm}
 
 \begin{proof}
 Let $\epsilon > 0$ be given.
@@ -1676,6 +1686,7 @@ all $n \geq N$ we have
 $$
 \abs{f_n(x)-f_N(x)} < \nicefrac{\epsilon}{3} \qquad \text{for all $x \in X$}.
 $$
+FIXME: on compact continuous means uniformly continuous, ref.
 Now $\{ f_1,f_2,\ldots,f_N \}$ is a finite set of uniformly continuous
 functions and so as we mentioned above an equicontinuous family.  Hence
 there is a $\delta > 0$ such that
@@ -1857,26 +1868,28 @@ so $\{ f_n \}$ is uniformly bounded.
 We can now apply Arzel\`a-Ascoli to find the subsequence.
 \end{proof}
 
-\medskip
-
 A consequence of the above corollary and the Fundamental Theorem of Calculus
 is that given some fixed $g \in
 C([0,1],\C)$,
 the set of functions
-$$
-\{ F \in C([0,1],\C) : F(x) = \int_0^x g(t) f(t)\,dt,~ f \in C([0,1],\C),~
-\snorm{f}_u \leq 1 \}
-$$
+\begin{equation*}
+\left\{
+F \in C([0,1],\C) : F(x) = \int_0^x g(t) f(t)\,dt,~ f \in C([0,1],\C),~
+\snorm{f}_u \leq 1
+\right\}
+\end{equation*}
 has compact closure (\emph{relatively compact}).
 That is, the \emph{operator} $T \colon C([0,1],\C) \to C([0,1],\C)$ given by
-$$
+\begin{equation*}
 T\bigl(f\bigr) (x) = F(x) = \int_0^x g(t) f(t)\,dt
-$$
+\end{equation*}
 takes the unit ball centered at 0 in $C([0,1],\C)$ into a relatively compact set.  We often
 say that this means that the operator is compact, and such operators are very
 important (and very useful).
 
-\medskip
+\subsection{Exercises}
+
+FIXME
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -4854,15 +4867,19 @@ product.
 So
 %Next let $M$ be such that $\abs{g(x)} \leq M$ for all $x$,
 %($g$ is Riemann integrable so bounded)
-$$
+\begin{equation*}
+\begin{split}
 \abs{\int_{-\pi}^\pi f\bar{g} - \int_{-\pi}^\pi s_N(f)g}
-=
-\abs{\int_{-\pi}^\pi (f- s_N(f))g}
-\leq
-\int_{-\pi}^\pi \abs{f- s_N(f)}\, \abs{g}
-\leq
+& =
+\abs{\int_{-\pi}^\pi (f- s_N(f))g} \\
+& \leq
+\int_{-\pi}^\pi \abs{f- s_N(f)}\, \abs{g} \\
+& \leq
 {\left(\int_{-\pi}^\pi \abs{f- s_N(f)}^2 \right)}^{1/2}
 {\left( \int_{-\pi}^\pi \abs{g}^2 \right)}^{1/2} .
+\end{split}
+\end{equation*}
+$$
 $$
 Now the right hand side goes to 0 as $N$ goes to infinity.
 \end{proof}
