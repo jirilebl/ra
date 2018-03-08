@@ -861,6 +861,25 @@ $n=1,2,\ldots,10$, with higher $n$ in lighter gray.%
 \end{myfigureht}
 \end{example}
 
+\begin{example} \label{exercise:badconvergenceder}
+Let $f_n(x) := \frac{1}{1+nx^2}$.
+If $x \not= 0$, then $\lim_{n \to \infty} f_n(x) = 0$
+and $\lim_{n \to \infty} f_n(0) = 1$.
+Hence $\{ f_n \}$ converges pointwise to a function that is not continuous
+at $0$.
+We compute
+\begin{equation*}
+f_n'(x) %= \frac{d}{dx} \frac{1}{1+n x^2}
+= \frac{-2 n x}{(1+ n x^2)^2} .
+\end{equation*}
+No matter what $x$ is $\lim_{n\to\infty} f_n'(x) = 0$, so the derivatives
+converge pointwise to 0,
+but the reader can check that the convergence is not uniform on any closed
+interval containing 0.
+The limit of $f_n$ is not differentiable at 0, it is not even
+continuous at 0.
+\end{example}
+
 See the exercises for more counterexamples.  Using 
 the fundamental theorem of calculus we find an answer for continuously
 differentiable functions.  The following theorem is true even if 

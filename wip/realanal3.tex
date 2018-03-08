@@ -21,7 +21,13 @@
 \usepackage[pdftex]{graphicx}
 %\usepackage{color}
 %\usepackage{graphics}
+% Remove page numbers on chapter opens
+% must come before fullpage
+\usepackage{nopageno}
 \usepackage[headings]{fullpage}
+% smaller margins top/bottom margins
+\addtolength{\textheight}{0.8in}
+\addtolength{\topmargin}{-0.3in}
 %\usepackage{url}
 \usepackage{varioref}
 %\usepackage{floatflt}
@@ -39,6 +45,10 @@
 \usepackage{rotating}
 
 
+% This is really just for marking these
+%so that they are easy to find
+\newcommand{\volIref}[1]{#1}
+\newcommand{\volIIref}[1]{#1}
 
 % Times
 %\usepackage{txfonts}
@@ -401,7 +411,7 @@ you have been warned.
 \section{Complex numbers}
 \label{sec:complexnums}
 
-\sectionnotes{FIXME4 lectures}
+\sectionnotes{half a lecture}
 
 In this chapter we look at some of the sequences and series we have seen
 already and extend the results to a more general setting, and we will look
@@ -463,6 +473,8 @@ Similarly define \emph{\myindex{modulus}} as
 \sabs{z} := \sqrt{x^2+y^2} .
 \end{equation*}
 \end{defn}
+The modulus acts like an absolute value.  For example,
+$\sabs{zw} = \sabs{z} \sabs{w}$ (exercise).
 
 Think of the complex conjugate as a reflection across the real axis.
 We note that the real numbers are precisely those for which the imaginary
@@ -483,7 +495,11 @@ In particular,
 So the topology on $\C$ is
 the same exact topology we get on $\R^2$ with the euclidean metric,
 and $\sabs{z}$ is in fact equal to the euclidean norm on $\R^2$.
-In particular, we get the triangle inequality:
+An important remark is that since $\R^2$ is a complete metric space, then
+so is $\C$.
+
+Since $\sabs{z}$ is the euclidean norm on $\R^2$ we have the
+\emph{triangle inequality}\index{triangle inequality!complex numbers}:
 \begin{align*}
 \sabs{z+w} & \leq \sabs{z}+\sabs{w} \\
 \big\lvert \sabs{z}-\sabs{w} \big\rvert & \leq \sabs{z-w}
@@ -526,36 +542,70 @@ $(xs-yt)+i(xt+ys) = zw$ so
 \begin{equation*}
 \lim_{n\to\infty} z_n w_n = zw .
 \end{equation*}
-The rest is left to the reader as exercise (FIXME(.
+Similarly the modulus, and complex conjugate are continuous functions.  We
+leave the proof of the following proposition as an exercise.
 
-Similarly the modulus, and complex conjugate are continuous functions.
-FIXME: exercise
+\begin{prop} \label{prop:continuityofcomplex}
+Suppose $\{ z_n \}$, $\{ w_n \}$ are sequences of complex numbers converging
+to $z$ and $w$ respectively.  Then
+\begin{enumerate}[(i)]
+\item
+$\displaystyle \lim_{n\to \infty} z_n + w_n = z + w$,
+\item
+$\displaystyle \lim_{n\to \infty} z_n w_n = z w$,
+\item
+assuming $w_n \not= 0$ for all $n$ and $w\not= 0$,
+$\displaystyle \lim_{n\to \infty} \frac{z_n}{w_n} = \frac{z}{w}$,
+\item
+$\displaystyle \lim_{n\to \infty} \sabs{z_n} = \sabs{z}$,
+\item
+$\displaystyle \lim_{n\to \infty} \bar{z}_n = \bar{z}$.
+\end{enumerate}
+\end{prop}
 
-FIXME: the above should be a proposition.
+We also need to extend convergence of complex series.  Let $z_n$ be complex
+numbers, then we say the series
+\begin{equation*}
+\sum_{n=1}^\infty z_n
+\end{equation*}
+\emph{converges}\index{converges!complex series} if the limit of partial sums converges, that is, if
+\begin{equation*}
+\lim_{k\to\infty} \sum_{n=1}^k z_n \qquad \text{exists.}
+\end{equation*}
+As before we sometimes write $\sum z_n$ for the series.
+We say a series \emph{converges absolutely}\index{converges
+absolutely!complex series} if $\sum \abs{z_n}$ converges.
 
-%It is often useful to extend the definition of the exponential to complex
-%numbers.  We define the \emph{\myindex{complex exponential}} as
-%\begin{equation*}
-%e^{x+iy} := e^x \bigl( \cos(y) + i \sin(y) \bigr) .
-%\end{equation*}
-%It should be noted that at this point we assume that cosine and sine
-%have been somehow defined.  We will get to rigorously
-%construct cosine and sine later using power series.  In fact,
-%the way we will define cosine and sine is to define 
-%$e^{x+iy}$ for all complex numbers using power series and then simply
-%extract cosine and sine out of it.
+We say a series
+is \emph{Cauchy}\index{Cauchy!complex series}
+if the sequence of partial sums is Cauchy.  The following two
+propositions have essentially the same proofs as for real series and we
+leave them as exercises.
 
-%With this notation you can write complex number in polar coordinates
-%as
-%\begin{equation*}
-%x+iy = r e^{i\theta} .
-%\end{equation*}
-%Here, $r \geq 0$ is the modulus of $x+iy$ and $\theta$ is what is called
-%the \emph{\myindex{argument}}.
+\begin{prop} \label{prop:cachysercomplex}
+The complex series $\sum z_n$ is Cauchy if for every $\epsilon > 0$, 
+there exists an $M \in \N$ such that for every $n \geq M$
+and every $k > n$ we have
+\begin{equation*}
+\abs{ \sum_{j={n+1}}^k z_j }
+< \epsilon .
+\end{equation*}
+\end{prop}
 
-FIXME
+\begin{prop} \label{prop:absconvmeansconv}
+If the complex series $\sum z_n$ converges absolutely, then it converges.
+\end{prop}
 
-FIXME: convergence of series
+Notice that the series $\sum \sabs{z_n}$ is a real series.  All the
+convergence tests (ratio test, root test, etc\ldots) that talk about
+absolute convergence work with the numbers $\sabs{z_n}$, that is, they
+are really talking about convergence of series of nonnegative real
+number.
+Therefore you
+can directly apply them without needing to reporve anything for complex
+series.
+
+\medskip
 
 It often comes up to integrate a complex valued function.  Suppose
 $f \colon [a,b] \to \C$ is a function.  Write
@@ -574,16 +624,35 @@ multivarible, etc\ldots).
 Check that $\C$ is a field.
 \end{exercise}
 
+\begin{exercise}
+Prove that for $z,w \in \C$, we have
+$\sabs{zw} = \sabs{z} \sabs{w}$.
+\end{exercise}
+
+\begin{exercise}
+Finish the proof of \propref{prop:continuityofcomplex}.
+\end{exercise}
+
+\begin{exercise}
+Prove \propref{prop:cachysercomplex}.
+\end{exercise}
+
+\begin{exercise}
+Prove \propref{prop:absconvmeansconv}.
+\end{exercise}
+
 FIXME
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Continuity of limits}
+\section{Continuity, derivative, and integrals of limits}
 \label{sec:FIXME}
 
-\sectionnotes{FIXME4 lectures}
+\sectionnotes{2 lectures}
+
+\subsection{Continuity}
 
 Let us get back to swapping on limits.  Let $\{ f_n \}$ be a sequence
 of functions $f_n \colon X \to Y$ for a set $X$ and a metric space $Y$.
@@ -599,7 +668,7 @@ Question is:
 If $f_n$ are all continuous, is $f$ continuous?  Differentiable?
 Integrable?  What are the derivatives or integrals of $f$?
 
-For example for continuity of the pointwise limitwe are asking if
+For example for continuity of the pointwise limit we are asking if
 \begin{equation*}
 \lim_{x\to x_0} \lim_{n\to\infty} f_n(x)
 \overset{?}{=}
@@ -645,7 +714,7 @@ If we are dealing with complex-valued functions then
 \abs{f_n(x)-f(x)} < \epsilon .
 \end{equation*}
 
-Similarly a series of functions converges uniformly if the sequence of
+A series of functions converges uniformly if the sequence of
 partial sums converges uniformly, that is for every $\epsilon > 0$
 there exists an $M$ such that
 for all $n \geq M$ and all $x \in X$ we have
@@ -653,66 +722,95 @@ for all $n \geq M$ and all $x \in X$ we have
 \abs{\left(\sum_{k=1}^nf_k(x)\right)-f(x)} < \epsilon .
 \end{equation*}
 
-Again recall from chapter FIXME that this is stronger than pointwise
-convergence.  Pointwise convergence can be stated as:
-$\{f_n\}$ \emph{\myindex{converges pointwise}} to $f$ if
-for every $x \in X$ and
-every $\epsilon > 0$, there exists an $M$ such that
-for all $n \geq M$ we have
-\begin{equation*}
-d\bigl(f_n(x),f(x)\bigr) < \epsilon .
-\end{equation*}
+%Again recall from chapter FIXME that this is stronger than pointwise
+%convergence.  Pointwise convergence can be stated as:
+%$\{f_n\}$ \emph{\myindex{converges pointwise}} to $f$ if
+%for every $x \in X$ and
+%every $\epsilon > 0$, there exists an $M$ such that
+%for all $n \geq M$ we have
+%\begin{equation*}
+%d\bigl(f_n(x),f(x)\bigr) < \epsilon .
+%\end{equation*}
+%
+%Note that for uniform convergence $M$ does not depend on $x$.  We need to
+%have one $M$ that works for all $M$.
 
-Note that for uniform convergence $M$ does not depend on $x$.  We need to
-have one $M$ that works for all $M$.
+The simplest property that is preserved by uniform convergence is
+boundedness.  We leave the proof of the following proposition as an
+exercise.  It is almost identical to the proof for real valued functions.
 
-\begin{thm}
-%\medskip
+\begin{prop} \label{prop:uniformconvbounded}
+Let $X$ be any set and $Y$ any metric space.
+If $f_n \colon X \to Y$ are bounded functions and converge uniformly to $f
+\colon X \to Y$, then $f$ is bounded.
+\end{prop}
+
+%\begin{proof}
+%There must exist an $n$ such that
+%\begin{equation*}
+%\abs{f_n(x)-f(x)} < 1
+%\end{equation*}
+%for all $x$.
+%Now find $M$ such that $\abs{f_n(x)} \leq M$ for all $x$.
+%By reverse triangle inequality
+%\begin{equation*}
+%\abs{f(x)} < 1+ \abs{f_n(x)} \leq 1+M . \qedhere
+%\end{equation*}
+%\end{proof}
+
+
+We also have a notion of \emph{\myindex{uniformly Cauchy}} as for real
+valued functions.  The proof of the following proposition is
+again essentially the same as for the real valued functions and so
+we leave it as an exercise.
+
+\begin{prop} \label{prop:unifcauchymetric}
 %\textbf{Theorem 7.8:}
-Let $f_n \colon X \to \C$ be functions.  Then $\{ f_n \}$ converges
+Let $X$ be any set and let $(Y,d)$ be a Cauchy complete metric space.
+Let $f_n \colon X \to Y$ be functions.  Then $\{ f_n \}$ converges
 uniformly if and only if for every $\epsilon > 0$, there is an $M$ such that
 for all $n, m \geq M$, and all $x \in X$ we have
 \begin{equation*}
-\abs{f_n(x)-f_m(x)} < \epsilon .
+d\bigl(f_n(x),f_m(x)\bigr) < \epsilon .
 \end{equation*}
-\end{thm}
+\end{prop}
 
-\begin{proof}
-Suppose that $\{f_n\}$ converges uniformly to some $f \colon X \to \C$.  Then 
-find $M$ such that for all $n \geq M$ we have
-\begin{equation*}
-\abs{f_n(x)-f(x)} < \frac{\epsilon}{2} \qquad \text{for all $x \in X$.}
-\end{equation*}
-Then for all $m,n \geq M$ we have
-\begin{equation*}
-\abs{f_n(x)-f_m(x)}
-\leq
-\abs{f_n(x)-f(x)} + \abs{f(x)-f_m(x)} < \frac{\epsilon}{2} + \frac{\epsilon}{2}
-= \epsilon .
-\end{equation*}
-
-For the other direction, first fix $x$.
-The sequence
-of complex numbers $\{ f_n(x) \}$ is Cauchy and so has a limit
-$f(x)$.
-
-Given $\epsilon > 0$ find an $M$ such that
-for all $n, m \geq M$, and all $x \in X$ we have
-\begin{equation*}
-\abs{f_n(x)-f_m(x)} < \epsilon
-\end{equation*}
-We know that $\lim f_m(x) = f(x)$, so
-as compositions of continuous functions are continuous
-and algebraic operations and the modulus are continuous we have
-\begin{equation*}
-\abs{f_n(x)-f(x)} \leq \epsilon .
-\end{equation*}
-The nonstrict inequality is no trouble.
-\end{proof}
+%\begin{proof}
+%Suppose that $\{f_n\}$ converges uniformly to some $f \colon X \to \C$.  Then 
+%find $M$ such that for all $n \geq M$ we have
+%\begin{equation*}
+%\abs{f_n(x)-f(x)} < \frac{\epsilon}{2} \qquad \text{for all $x \in X$.}
+%\end{equation*}
+%Then for all $m,n \geq M$ we have
+%\begin{equation*}
+%\abs{f_n(x)-f_m(x)}
+%\leq
+%\abs{f_n(x)-f(x)} + \abs{f(x)-f_m(x)} < \frac{\epsilon}{2} + \frac{\epsilon}{2}
+%= \epsilon .
+%\end{equation*}
+%
+%For the other direction, first fix $x$.
+%The sequence
+%of complex numbers $\{ f_n(x) \}$ is Cauchy and so has a limit
+%$f(x)$.
+%
+%Given $\epsilon > 0$ find an $M$ such that
+%for all $n, m \geq M$, and all $x \in X$ we have
+%\begin{equation*}
+%\abs{f_n(x)-f_m(x)} < \epsilon
+%\end{equation*}
+%We know that $\lim f_m(x) = f(x)$, so
+%as compositions of continuous functions are continuous
+%and algebraic operations and the modulus are continuous we have
+%\begin{equation*}
+%\abs{f_n(x)-f(x)} \leq \epsilon .
+%\end{equation*}
+%The nonstrict inequality is no trouble.
+%\end{proof}
 
 Sometimes we write for $f \colon X \to \C$
 \begin{equation*}
-\snorm{f}_u = \sup_{x \in X} \abs{f(x)} .
+\snorm{f}_u := \sup_{x \in X} \abs{f(x)} .
 \end{equation*}
 This is the \emph{\myindex{supremum norm}} or \emph{\myindex{uniform norm}}.
 Then we have that
@@ -720,47 +818,56 @@ $f_n \colon X \to \C$ converge to $f$ if and only if
 \begin{equation*}
 \lim_{n\to \infty} \snorm{f_n-f}_u = 0
 \end{equation*}
-That is if
-\begin{equation*}
-\lim_{n\to \infty} \left( \sup_{x \in X} \abs{f_n(x)-f(x)} \right) = 0
-\end{equation*}
+%That is if
+%\begin{equation*}
+%\lim_{n\to \infty} \left( \sup_{x \in X} \abs{f_n(x)-f(x)} \right) = 0 .
+%\end{equation*}
 
-The supermum norm satisfies the triangle inequality:
+The supermum norm satisfies the triangle inequality: For any $x \in X$
 \begin{equation*}
 \abs{f(x)+g(x)} \leq
 \abs{f(x)}+\abs{g(x)} \leq
-\snorm{f(x)}_u+\snorm{g(x)}_u .
+\snorm{f}_u+\snorm{g}_u .
 \end{equation*}
 Now take a supremum on the left to get
 \begin{equation*}
-\snorm{f(x)+g(x)}_u \leq
-\snorm{f(x)}_u+\snorm{g(x)}_u .
+\snorm{f+g}_u \leq
+\snorm{f}_u+\snorm{g}_u .
 \end{equation*}
 
 For a compact $X$,
 the uniform norm is a norm on the vector space $C(X,\C)$.
-If $f \colon X \to \C$ is continuous and $X$ is compact then $f$
-is bounded and so $\snorm{f}_u < \infty$.
-So we can also think of $C(X,\C)$ as a metric space with the
-metric $d(f,g) = \snorm{f-g}_u$.
+While we will not need it $C(X,\C)$ is in fact a complex
+vector space, that is in the definition of a vector space can be taken to be
+complex numbers.
+We leave it as
+an exercise.
+%If $f \colon X \to \C$ is continuous and $X$ is compact then $f$
+%is bounded and so $\snorm{f}_u < \infty$.
+%So we can also think of $C(X,\C)$ as a metric space with the
+%metric $d(f,g) = \snorm{f-g}_u$.
 Convergence in the metric space $C(X,\C)$ is
 uniform convergence.
 
-\begin{thm}[\myindex{Weierstrass M-test}]
-%\medskip
+We will study several types of series of functions, and
+a very useful test for uniform convergence of a series is the 
+so called \emph{\myindex{Weierstrass $M$-test}}.
+
+\begin{thm}[Weierstrass $M$-test] \label{thm:weiermtest}
 %\textbf{Theorem 7.10} (Weierstrass M-test)
-Suppose that $f_n \colon X \to \C$ are functions,
-$$
-\abs{f_n(x)}\leq M_n
-$$
-and
-$$
+Suppose that $f_n \colon X \to \C$ are functions, $M_n > 0$ numbers such
+that
+\begin{equation*}
+\abs{f_n(x)}\leq M_n \quad \text{for all $x \in X$},
+\qquad \text{and} \quad
 \sum_{n=1}^\infty M_n
-$$
-converges.
+\quad \text{converges}.
+\end{equation*}
 Then
-$$\sum_{n=1}^\infty f_n(x)$$
-converges uniformly.
+\begin{equation*}
+\sum_{n=1}^\infty f_n(x)
+\quad \text{converges uniformly}.
+\end{equation*}
 \end{thm}
 
 Note that the converse of this theorem is not true.
@@ -769,17 +876,17 @@ Note that the converse of this theorem is not true.
 Suppose that $\sum M_n$ converges.  Given $\epsilon > 0$,
 we have that the partial sums of $\sum M_n$ are Cauchy so for
 there is an $N$ such that for all $m, n \geq N$ with $m \geq n$ we have
-$$
+\begin{equation*}
 \sum_{k=n+1}^m M_k < \epsilon
-$$
+\end{equation*}
 Now let us look at a Cauchy difference of the partial
 sums of the functions
-$$
+\begin{equation*}
 \abs{\sum_{k=n+1}^m f_k(x)} \leq
 \sum_{k=n+1}^m \abs{f_k(x)} \leq
 \sum_{k=n+1}^m M_k < \epsilon .
-$$
-And we are done by FIXME:Theorem 7.8.
+\end{equation*}
+And we are done by \propref{prop:cachysercomplex}.
 \end{proof}
 
 \begin{example}
@@ -801,28 +908,19 @@ converges.
 \end{example}
 
 \begin{example}
+The series
 \begin{equation*}
 \sum_{n=0}^\infty \frac{1}{n!} x^n
 \end{equation*}
-converges uniformly on any bounded interval.  For
-example take the interval $[-r,r] \subset \R$  (any bounded interval
-is in such an interval)
+converges uniformly on any bounded interval.
+Take the interval $[-r,r] \subset \R$ (any bounded interval
+is contained in such an interval)
 \begin{equation*}
 \abs{\frac{1}{n!} x^n} \leq 
 \frac{r^n}{n!}
 \end{equation*}
-and
-\begin{equation*}
-\sum_{n=1}^\infty \frac{r^n}{n!}
-\end{equation*}
-converges by the ratio test
-\begin{equation*}
-\frac{r^{n+1} ~ / ~ (n+1)!}{r^{n} ~ / ~ n!}
-=
-\frac{r}{n+1}
-\to 0
-\quad \text{as} \quad n \to \infty
-\end{equation*}
+and we have seen before that
+$\sum_{n=1}^\infty \frac{r^n}{n!}$ converges, for example by the ratio test.
 \end{example}
 
 Now we would love to say something about the limit.  For example, is it
@@ -855,15 +953,7 @@ continuous?
 %The condition can be stated as saying that if $x \not= x_0$ is such 
 %that $d(x,x_0) < \delta$ then $d(f(x),y) < \epsilon$.
 
-\medskip
-
-The following theorem would work with an arbitrary complete metric space
-rather than just the complex numbers.  We use complex numbers for
-simplicity.
-
-\medskip
-
-\begin{thm}
+\begin{prop} \label{prop:uniformswitch}
 %\textbf{Theorem 7.11:}
 %Let $f_n \colon X \to Y$ be functions and $X$, $Y$ metric spaces.
 %Suppose that $\{ f_n \}$ converges uniformly to $f \colon X \to Y$.  
@@ -876,10 +966,11 @@ simplicity.
 %\begin{equation*}
 %\lim_{x \to x_0} f(x) = \lim_{n\to\infty} a_n
 %\end{equation*}
-Let $X$ be a metric space and
-$f_n \colon X \to \C$ be functions.
+Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces, and let
+$f_n \colon X \to Y$ be functions.
+Suppose $Y$ is complete metric space.
 Suppose that $\{ f_n \}$ converges uniformly to $f \colon X \to \C$.  
-Let $\{ x_k \}$ be a sequence in $X$ and $x = \lim x_k$.  Suppose
+Let $\{ x_k \}$ be a sequence in $X$ and $x = \lim \, x_k$.  Suppose
 that
 \begin{equation*}
 a_n = \lim_{k \to \infty} f_n(x_k)
@@ -889,52 +980,53 @@ $\{a_n\}$ converges and
 \begin{equation*}
 \lim_{k \to \infty} f(x_k) = \lim_{n\to\infty} a_n
 \end{equation*}
-\end{thm}
+\end{prop}
 
 In other words
 \begin{equation*}
 \lim_{k \to \infty} \lim_{n\to\infty} f_n(x_k) =
-\lim_{n \to \infty} \lim_{k\to\infty} f_n(x_k)
+\lim_{n \to \infty} \lim_{k\to\infty} f_n(x_k) .
 \end{equation*}
 
 \begin{proof}
-First we have to show that $\{ a_n \}$ converges.  We know that
-$\{ f_n \}$ is uniformly Cauchy (Theorem 7.8). 
+First we have to show that $\{ a_n \}$ converges.  As
+$\{ f_n \}$ converges uniformly it is uniformly Cauchy. 
 Let $\epsilon > 0$ be given.  There is
 an $M$ such that for all $m,n \geq M$ we have
 \begin{equation*}
-\abs{f_n(x_k)-f_m(x_k)} < \epsilon \qquad \text{for all $k$} .
+d_Y\bigl(f_n(x_k),f_m(x_k)\bigr) < \epsilon \qquad \text{for all $k$} .
 \end{equation*}
-Letting $k \to \infty$ we obtain that
-$$
-\abs{a_n-a_m} \leq \epsilon .
-$$
-Hence $\{a_n\}$ is Cauchy and hence converges.  Let us
-write
-$$
-a = \lim_{n\to\infty} a_n .
-$$
-
-Now find a $k \in \N$ such that
+As a metric is automatically continuous we can let $k$ go to infinity
+to find
 \begin{equation*}
-\abs{f_k(y)-f(y)} < \nicefrac{\epsilon}{3}
+d_Y(a_n,a_m) \leq \epsilon .
 \end{equation*}
-for all $y \in X$.  We can assume that $k$ is large enough
+Hence $\{a_n\}$ is Cauchy and converges since $Y$ is complete.  Write
+$a := \lim_{n\to\infty} a_n$.
+
+Find a $k \in \N$ such that
+\begin{equation*}
+d_Y\bigl(f_k(p),f(p)\bigr) < \nicefrac{\epsilon}{3}
+\end{equation*}
+for all $p \in X$.  Assume $k$ is large enough
 so that
 \begin{equation*}
-\abs{a_k-a} < \nicefrac{\epsilon}{3}  .
+d_Y(a_k,a) < \nicefrac{\epsilon}{3}  .
 \end{equation*}
-We find an $N \in \N$ such that for $m \geq N$
-we have 
+Find an $N \in \N$ such that for $m \geq N$,
 \begin{equation*}
-\abs{f_k(x_m)-a_k} < \nicefrac{\epsilon}{3}  .
+d_Y\bigl(f_k(x_m),a_k\bigr) < \nicefrac{\epsilon}{3}  .
 \end{equation*}
 Then for
-$m \geq N$ we have
+$m \geq N$,
 \begin{equation*}
-\abs{f(x_m)-a}
+d_Y\bigl(f(x_m),a\bigr)
 \leq
-\abs{f(x_m)-f_k(x_m)}+ \abs{f_k(x_m)-a_k}+ \abs{a_k-a}
+d_Y\bigl(f(x_m),f_k(x_m)\bigr)
++
+d_Y\bigl(f_k(x_m),a_k\bigr)
++
+d_Y\bigl(a_k,a\bigr)
 <
 \nicefrac{\epsilon}{3} +
 \nicefrac{\epsilon}{3} +
@@ -942,206 +1034,47 @@ $m \geq N$ we have
 \end{equation*}
 \end{proof}
 
-\begin{thm}
-%\textbf{Theorem 7.12:}
-Let $f_n \colon X \to \C$ be continuous functions
-such that
-$\{ f_n \}$ converges uniformly to $f \colon X \to \C$.  
-Then $f$ is continuous.
-\end{thm}
+Immediately we obtain a corollary about continuity.
 
-Proof is immediate application of FIXME(7.11).  Note that the theorem also holds
-for an arbitrary target metric space rather than just the complex numbers,
-although that would have to be
-proved directly.
+\begin{cor} \label{cor:metricuniformcontinuous}
+%\textbf{Theorem 7.12:}
+Let $X$ and $Y$ be metric spaces such that $Y$ is Cauchy complete.
+Let $f_n \colon X \to Y$ be continuous functions
+such that
+$\{ f_n \}$ converges uniformly to $f \colon X \to Y$.  
+Then $f$ is continuous.
+\end{cor}
 
 Converse is not true.  Just because the limit is continuous doesn't mean
 that the convergence is uniform.  For example:
 $f_n \colon (0,1) \to \R$ defined by $f_n(x) = x^n$ converge to
-the zero function, but not uniformly.
+the zero function, but not uniformly.  However, if we add extra conditions
+on the sequence can obtain a partial converse such as Dini's theorem,
+\volIref{see Exercise 6.2.10 from volume I}.
 
-A combination of FIXME:7.8 and FIXME:7.12 shows that for a compact $X$, $C(X,\C)$ is a
-complete metric space.  By FIXME:7.8 we have that a Cauchy sequence in $C(X,\C)$
-converges uniformly to a function that is continuous by FIXME:7.12.
-%This is Theorem 7.15 in Rudin.
+Assuming the exercise that for a compact $X$, $C(X,\C)$ is a metric space with
+the uniform norm (actually a normed vector space).  We have just shown that
+it is Cauchy complete.  \propref{prop:unifcauchymetric} says that a Cauchy
+sequence in $C(X,\C)$ converges to some function,
+and \corref{cor:metricuniformcontinuous} shows that the limit is in fact
+continuous and hence in $C(X,\C)$.
 
-FIXME: maybe cut from here.  The Fourier series should be sent to the
-Fourier series section.  Dini's theorem perhaps isn't needed, plus isn't it
-an exercise earlier?
+\begin{cor}
+Let $(X,d)$ be a compact metric space, then $C(X,\C)$ is a Cauchy
+complete metric space.
+\end{cor}
 
 \begin{example}
 We have seen that the example Fourier series 
 \begin{equation*}
 \sum_{n=1}^\infty \frac{\sin(nx)}{n^2}
 \end{equation*}
-converges uniformly and hence is continuous by 7.12.  We note that this
-can be extended to show that if there is a constant $C$ such that
-if $\alpha > 1$
-\begin{equation*}
-\abs{a_n} \leq \frac{C}{\abs{n}^\alpha}
-\end{equation*}
-for nonzero $n \in \Z$, then the general Fourier series
-\begin{equation*}
-\sum_{n=-\infty}^\infty a_n e^{inx}
-\end{equation*}
-is a continuous function on $\R$.
-(Note that $e^{ix} = \cos(x)+i\sin(x)$ to write the series in terms of sines
-and cosines.  The condition on those coefficients is the same).
-Also note that the standard way to sum a series with two infinite limits
-is
-\begin{equation*}
-\sum_{n=-\infty}^\infty c_n
-=
-\left(
-\lim_{N \to \infty}
-\sum_{n=1}^{N} c_{-n}
-\right)
-+
-\left(
-\lim_{N \to \infty}
-\sum_{n=0}^N c_n
-\right) ,
-\end{equation*}
-although for Fourier series we often sum it as
-\begin{equation*}
-\lim_{N\to\infty}
-\sum_{n=-N}^N a_n e^{inx} .
-\end{equation*}
-When the series converges absolutely it does not matter how we sum it.
+converges uniformly and hence is continuous.
 \end{example}
-
-Let us see that we can have extra conditions when a converse of FIXME:7.12 works.
-
-\begin{thm}[Dini's theorem]
-%\textbf{Theorem 7.13:} (Dini's theorem)
-Suppose that $X$ is compact and $f_n \colon X \to \R$ is a sequence of
-continuous functions converging pointwise to a continuous $f \colon X \to
-\R$ and such that
-\begin{equation*}
-f_n(x) \geq f_{n+1}(x).
-\end{equation*}
-Then
-$\{ f_n \}$ converges to $f$ uniformly.
-\end{thm}
-
-\begin{proof}
-Let $g_n = f_n-f$.  The $g_n$ are continuous, go to 0 pointwise, and
-$g_n(x) \geq g_{n+1}(x) \geq 0$.  If we show that $\{ g_n \}$ converges
-uniformly to 0, then $\{ f_n \}$ converges uniformly.
-
-Let $\epsilon > 0$ be given.
-Take the set
-\begin{equation*}
-U_n = \{ x \in X : g_n(x) < \epsilon \} =
-g_n^{-1}\bigl((-\infty,\epsilon)\bigr).
-\end{equation*}
-$U_n$ are open (inverse image of open sets by a continuous function).  Now for every $x \in X$,
-since $\{g_n\}$ converges pointwise to 0, there must be some $n$ such that
-$g_n(x) < \epsilon$ or in other words $x \in U_n$.  Therefore, $\{ U_n \}$
-are an open cover, so there is a finite subcover.
-$$
-X = U_{n_1} \cup U_{n_2} \cup \cdots \cup U_{n_k}
-$$
-for some $n_1 < n_2 < \cdots < n_k$.  As $\{g_n\}$ is decreasing
-we get that $U_n \subset U_{n+1}$ so
-$$
-X = U_{n_1} \cup U_{n_2} \cup \cdots \cup U_{n_k} = U_{n_k} .
-$$
-Write $N = n_k$.  Hence
-$g_N(x) < \epsilon$ for all $x$.  As $\{ g_n(x) \}$ is always
-decreasing we have that for all $n \geq N$ we have for all $x \in X$
-\begin{equation*}
-\abs{g_n(x) - 0}
-=
-g_n(x) \leq g_N(x) < \epsilon .
-\end{equation*}
-So $\{ g_n \}$ goes to 0 uniformly.
-\end{proof}
-
-Compactness is necessary.  For example,
-\begin{equation*}
-f_n(x) = \abs{\frac{x}{n}}
-\end{equation*}
-are all continuous on $\R$, monotonically converge to 0 as above, but
-the convergence is of course not uniform.
-
-If $f_n$'s are not continuous the theorem doesn't hold either.  For example,
-if $f_n \colon [0,1] \to \R$
-\begin{equation*}
-f_n(x) = \begin{cases}
-x^2 & \text{ if $x < 1$}\\
-0 & \text{ else}
-\end{cases}
-\end{equation*}
-then $\{f_n\}$ goes monotonically pointwise to 0, and the domain is compact, but the convergence is not
-uniform (Exercise: see where the proof breaks).
-
-Finally,
-\begin{equation*}
-f_n(x) = \frac{nx}{1+n^2x^2}
-\end{equation*}
-are continuous, they go to zero pointwise (but not monotonically).  If we
-take $X=[0,1]$ then the domain is compact, yet the convergence is not uniform
-since
-\begin{equation*}
-f_n(\nicefrac{1}{n}) = \nicefrac{1}{2} \qquad \text{for all $n$.}
-\end{equation*}
-
-\subsection{Exercises}
-
-\begin{exercise}
-FIXME
-\end{exercise}
-
-FIXME
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\sectionnewpage
-\section{Integration and differentiation}
-\label{sec:FIXME}
-
-\sectionnotes{FIXME4 lectures}
 
 \subsection{Integration}
 
-\begin{prop}
-If $f_n \colon X \to \C$ are bounded functions and converge uniformly to $f
-\colon X \to \C$, then $f$ is bounded.
-\end{prop}
-
-\begin{proof}
-There must exist an $n$ such that
-\begin{equation*}
-\abs{f_n(x)-f(x)} < 1
-\end{equation*}
-for all $x$.
-Now find $M$ such that $\abs{f_n(x)} \leq M$ for all $x$.
-By reverse triangle inequality
-\begin{equation*}
-\abs{f(x)} < 1+ \abs{f_n(x)} \leq 1+M . \qedhere
-\end{equation*}
-\end{proof}
-
-\medskip
-
-FIXME: in the complex number section?
-
-We have seen Riemann integrals of real-valued functions.  For complex-valued
-function $f \colon [a,b] \to \C$, we write $f(x) = u(x) + iv(x)$
-where $u$ and $v$ are real-valued.  We say $f$ is Riemann integrable
-if both $u$ and $v$ are, in which case
-$$
-\int_a^b f = \int_a^b u + i \int_a^b v
-$$
-So most statements about real-valued Riemann integrable functions just
-carry over immediately to complex-valued functions.
-
-%We will not do Riemann-Stieltjes integration like Rudin, just Riemann.
-
-%\medskip
-
-\begin{thm}
+\begin{prop} \label{prop:complexlimitswapintegral}
 %\textbf{Theorem 7.16:}
 Suppose that $f_n \colon [a,b] \to \C$
 are Riemann integrable and suppose that $\{ f_n \}$ converges
@@ -1150,11 +1083,12 @@ and
 \begin{equation*}
 \int_a^b f = \lim_{n\to \infty} \int_a^b f_n
 \end{equation*}
-\end{thm}
+\end{prop}
 
-%\medskip
-
-FIXME: apply previous theorem for proof.
+Since the integral of a complex valued function is just the integral of
+the real and imaginary parts separately,
+the proof follows directly by the results of \volIref{chapter 6 of volume I}.  We
+leave the details as an exercise.
 
 %\begin{proof}
 %Without loss of generality suppose that $f_n$, and hence $f$, are all real-valued.
@@ -1233,7 +1167,6 @@ and
 
 \begin{example}
 Let us show how to integrate a Fourier series.
-used for convenience.
 \begin{equation*}
 \int_{0}^x \sum_{n=1}^\infty \frac{\cos(nt)}{n^2} \,dt
 =
@@ -1246,189 +1179,154 @@ which we have proved before using the $M$ test.
 \end{example}
 
 Note that we can swap integrals and limits under far less stringent hypotheses,
-but for that we would need a stronger integral than Riemann integral.  E.g.\
-the Lebesgue integral.
+but for that we would need a stronger integral than the Riemann integral.
+E.g.\ the Lebesgue integral.
 
 \subsection{Differentiation}
 
-\begin{example}
-Let $f_n(x) = \frac{1}{1+nx^2}$.  We know this converges
-pointwise to a function that is zero except at the origin.
-Now note that
-\begin{equation*}
-f_n'(x) %= \frac{d}{dx} \frac{1}{1+n x^2}
-= \frac{-2 n x}{(1+ n x^2)^2}
-\end{equation*}
-No matter what $x$ is $\lim_{n\to\infty} f_n'(x) = 0$.  So the derivatives
-converge pointwise to 0 (not uniformly on any closed interval containing 0),
-while the limit of $f_n$ is not even differentiable at 0 (not even
-continuous).
-\end{example}
-
-
-\begin{example}
-Let $f_n(x) = \frac{\sin(n^2x)}{n}$, then
-$f_n \to 0$ uniformly on $\R$ (easy).  However
-\begin{equation*}
-f_n'(x) = n\cos(n^2x)
-\end{equation*}
-And for example at $x=0$, this doesn't even converge.  So we need something
-stronger than uniform convergence of $f_n$.
-\end{example}
-
-For complex-valued functions, again, the derivative of $f \colon [a,b] \to
+For complex-valued functions, we define the
+\emph{derivative}\index{derivative!complex valued function}
+of $f \colon [a,b] \to
 \C$ where $f(x) = u(x)+iv(x)$ is
 \begin{equation*}
-f'(x) = u'(x)+iv'(x) .
+f'(x) := u'(x)+iv'(x) .
 \end{equation*}
+This definition is consistent with the definition for vector valued
+functions as the complex number that is the derivative of $f$ gives rise to
+a real-linear operator on $\R^2$.
 
-\begin{thm}
-%\textbf{Theorem 7.17:}
-Suppose $f_n \colon [a,b] \to \C$ are differentiable on $[a,b]$.
-Suppose that there is some point $x_0 \in [a,b]$ such that $\{ f_n(x_0) \}$
-converges, and such that $\{ f_n' \}$ converge uniformly.
-Then there is a differentiable function $f$ such that
-$\{ f_n \}$ converges uniformly to $f$, and furthermore
-\begin{equation*}
-f'(x) = \lim_{n\to\infty} f_n'(x) \qquad \text{for all $x \in [a,b]$.}
-\end{equation*}
+The proof of the following theorem is to apply the corresponding theorem for
+real functions to $u$ and $v$.
+
+\begin{thm} \label{thm:dersconvergecomplex}
+Let $I \subset \R$ be a bounded interval and let
+$f_n \colon I \to \C$ be continuously differentiable functions.
+Suppose $\{ f_n' \}$ converges uniformly to $g \colon I \to \C$,
+and suppose $\{ f_n(c) \}_{n=1}^\infty$ is a
+convergent sequence for some $c \in I$.  Then $\{ f_n \}$ converges uniformly to 
+a continuously differentiable function $f \colon I \to \C$, and $f' = g$.
 \end{thm}
 
-FIXME: just apply previous proof
+%\begin{thm}
+%%\textbf{Theorem 7.17:}
+%Suppose $f_n \colon [a,b] \to \C$ are differentiable on $[a,b]$.
+%Suppose that there is some point $x_0 \in [a,b]$ such that $\{ f_n(x_0) \}$
+%converges, and such that $\{ f_n' \}$ converge uniformly.
+%Then there is a differentiable function $f$ such that
+%$\{ f_n \}$ converges uniformly to $f$, and furthermore
+%\begin{equation*}
+%f'(x) = \lim_{n\to\infty} f_n'(x) \qquad \text{for all $x \in [a,b]$.}
+%\end{equation*}
+%\end{thm}
+%
+%FIXME: just apply previous proof
+%
+%\begin{proof}
+%Let $\epsilon > 0$ be given.
+%We have that $\{ f_n(x_0) \}$ is Cauchy so there is an $N$ such that
+%for $n,m \geq N$ we have
+%\begin{equation*}
+%\abs{f_n(x_0)-f_m(x_0)} < \nicefrac{\epsilon}{2}
+%\end{equation*}
+%We also that that $\{ f_n' \}$ converge uniformly and hence is
+%uniformly Cauchy, so also assume that for all $x$ we have
+%\begin{equation*}
+%\abs{f_n'(x)-f_m'(x)} < \frac{\epsilon}{2(b-a)}
+%\end{equation*}
+%
+%Now we have the mean value theorem (for complex-valued function just apply
+%the theorem on both real and imaginary parts separately)
+%for the differentiable function
+%$f_n-f_m$, so for $x_0, x$ in $[a,b]$ there is a $t$ between $x_0$ and $x$
+%such that
+%\begin{equation*}
+%\bigl(f_n(x_0)-f_m(x_0)\bigr)-\bigl(f_n(x)-f_m(x)\bigr) =
+%\bigl(f_n'(t)-f_m'(t)\bigr)(x_0-x) .
+%\end{equation*}
+%So
+%\begin{equation*}
+%\abs{\bigl(f_n(x_0)-f_m(x_0)\bigr)-\bigl(f_n(x)-f_m(x)\bigr)} =
+%\abs{f_n'(t)-f_m'(t)}\, \abs{x_0-x}
+%<
+%\frac{\epsilon}{2(b-a)}\, \abs{x_0-x}
+%\leq
+%\frac{\epsilon}{2} .
+%\end{equation*}
+%By inverse triangle inequality
+%\begin{equation*}
+%\abs{f_n(x)-f_m(x)} \leq
+%\abs{\bigl(f_n(x_0)-f_m(x_0)\bigr)-\bigl(f_n(x)-f_m(x)\bigr)} + 
+%\abs{f_n(x_0)-f_m(x_0)}
+%<
+%\frac{\epsilon}{2}
+%+
+%\frac{\epsilon}{2}
+%=\epsilon .
+%\end{equation*}
+%This was true for all $x \in [a,b]$ so
+%$\{f_n\}$ is uniformly Cauchy and so the sequence
+%converges uniformly to some $f \colon [a,b] \to \C$.
+%
+%So what we are still missing is that $f$ is differentiable and 
+%that its derivative is the right thing.
+%
+%Call $g \colon [a,b] \to \C$ the limit of $\{ f_n' \}$. 
+%Fix $x \in [a,b]$ and take the functions
+%$$
+%\varphi_n(t) =
+%\begin{cases}
+%\frac{f_n(x)-f_n(t)}{x-t} & \text{if $t \not= x$,}\\
+%f_n'(x) & \text{if $t = x$,}
+%\end{cases}
+%$$
+%$$
+%\varphi(t) =
+%\begin{cases}
+%\frac{f(x)-f(t)}{x-t} & \text{if $t \not= x$,}\\
+%g(x) & \text{if $t = x$.}
+%\end{cases}
+%$$
+%The functions $\varphi_n(t)$ are continuous (in particular continuous at $x$).
+%Given an $\epsilon > 0$ we get that
+%there is some $N$ such that for $m,n \geq N$ we have that
+%$\abs{f_n'(y) - f_m'(y)} < \epsilon$ for all $y \in [a,b]$.
+%Then by the same logic as above
+%using the mean value theorem we get for all $t$
+%\begin{equation*}
+%\abs{\bigl(f_n(x)-f_n(t)\bigr) - \bigl(f_m(x)-f_m(t)\bigr)} = 
+%\abs{\bigl(f_n(x)-f_m(x)\bigr) - \bigl(f_n(t)-f_m(t)\bigr)}
+%<
+%\epsilon \abs{x-t}
+%\end{equation*}
+%Or in other words
+%$$
+%\abs{\varphi_n(t) - \varphi_m(t)} < \epsilon \qquad \text{ for all $t$}.
+%$$
+%So $\{ \varphi_n \}$ converges uniformly.  The limit is therefore
+%a continuous function.  It is easy to see that for a fixed $t \not= x$,
+%$\lim \varphi_n(t) = \varphi(t)$ and since $g$ is the limit of $\{ f_n' \}$
+%also $\lim \varphi_n(x) = \varphi(x)$.  Therefore, $\varphi$ is the limit
+%and is therefore continuous.  This means that $f$ is differentiable at $x$
+%and that $f'(x) = g(x)$.  As $x$ was arbitrary we are done.
+%\end{proof}
+%
+%\medskip
 
-\begin{proof}
-Let $\epsilon > 0$ be given.
-We have that $\{ f_n(x_0) \}$ is Cauchy so there is an $N$ such that
-for $n,m \geq N$ we have
-\begin{equation*}
-\abs{f_n(x_0)-f_m(x_0)} < \nicefrac{\epsilon}{2}
-\end{equation*}
-We also that that $\{ f_n' \}$ converge uniformly and hence is
-uniformly Cauchy, so also assume that for all $x$ we have
-\begin{equation*}
-\abs{f_n'(x)-f_m'(x)} < \frac{\epsilon}{2(b-a)}
-\end{equation*}
+%Note that continuity of $f_n'$ would make the proof far easier and could be
+%done by fundamental theorem of calculus, and the passing of limit under the
+%integral.  The trick above is that we have no
+%such assumption.
 
-Now we have the mean value theorem (for complex-valued function just apply
-the theorem on both real and imaginary parts separately)
-for the differentiable function
-$f_n-f_m$, so for $x_0, x$ in $[a,b]$ there is a $t$ between $x_0$ and $x$
-such that
-\begin{equation*}
-\bigl(f_n(x_0)-f_m(x_0)\bigr)-\bigl(f_n(x)-f_m(x)\bigr) =
-\bigl(f_n'(t)-f_m'(t)\bigr)(x_0-x) .
-\end{equation*}
-So
-\begin{equation*}
-\abs{\bigl(f_n(x_0)-f_m(x_0)\bigr)-\bigl(f_n(x)-f_m(x)\bigr)} =
-\abs{f_n'(t)-f_m'(t)}\, \abs{x_0-x}
-<
-\frac{\epsilon}{2(b-a)}\, \abs{x_0-x}
-\leq
-\frac{\epsilon}{2} .
-\end{equation*}
-By inverse triangle inequality
-\begin{equation*}
-\abs{f_n(x)-f_m(x)} \leq
-\abs{\bigl(f_n(x_0)-f_m(x_0)\bigr)-\bigl(f_n(x)-f_m(x)\bigr)} + 
-\abs{f_n(x_0)-f_m(x_0)}
-<
-\frac{\epsilon}{2}
-+
-\frac{\epsilon}{2}
-=\epsilon .
-\end{equation*}
-This was true for all $x \in [a,b]$ so
-$\{f_n\}$ is uniformly Cauchy and so the sequence
-converges uniformly to some $f \colon [a,b] \to \C$.
-
-So what we are still missing is that $f$ is differentiable and 
-that its derivative is the right thing.
-
-Call $g \colon [a,b] \to \C$ the limit of $\{ f_n' \}$. 
-Fix $x \in [a,b]$ and take the functions
-$$
-\varphi_n(t) =
-\begin{cases}
-\frac{f_n(x)-f_n(t)}{x-t} & \text{if $t \not= x$,}\\
-f_n'(x) & \text{if $t = x$,}
-\end{cases}
-$$
-$$
-\varphi(t) =
-\begin{cases}
-\frac{f(x)-f(t)}{x-t} & \text{if $t \not= x$,}\\
-g(x) & \text{if $t = x$.}
-\end{cases}
-$$
-The functions $\varphi_n(t)$ are continuous (in particular continuous at $x$).
-Given an $\epsilon > 0$ we get that
-there is some $N$ such that for $m,n \geq N$ we have that
-$\abs{f_n'(y) - f_m'(y)} < \epsilon$ for all $y \in [a,b]$.
-Then by the same logic as above
-using the mean value theorem we get for all $t$
-\begin{equation*}
-\abs{\bigl(f_n(x)-f_n(t)\bigr) - \bigl(f_m(x)-f_m(t)\bigr)} = 
-\abs{\bigl(f_n(x)-f_m(x)\bigr) - \bigl(f_n(t)-f_m(t)\bigr)}
-<
-\epsilon \abs{x-t}
-\end{equation*}
-Or in other words
-$$
-\abs{\varphi_n(t) - \varphi_m(t)} < \epsilon \qquad \text{ for all $t$}.
-$$
-So $\{ \varphi_n \}$ converges uniformly.  The limit is therefore
-a continuous function.  It is easy to see that for a fixed $t \not= x$,
-$\lim \varphi_n(t) = \varphi(t)$ and since $g$ is the limit of $\{ f_n' \}$
-also $\lim \varphi_n(x) = \varphi(x)$.  Therefore, $\varphi$ is the limit
-and is therefore continuous.  This means that $f$ is differentiable at $x$
-and that $f'(x) = g(x)$.  As $x$ was arbitrary we are done.
-\end{proof}
-
-\medskip
-
-Note that continuity of $f_n'$ would make the proof far easier and could be
-done by fundamental theorem of calculus, and the passing of limit under the
-integral.  The trick above is that we have no
-such assumption.
-
-FIXME: This should go to the Fourier series section we don't have complex
-exponential quite yet.
-\begin{example}
-Let us see what this means for Fourier series
-$$
-\sum_{n=-\infty}^\infty
-a_n e^{inx}
-$$
-and suppose that for some $C$ and some $\alpha > 2$ that for all nonzero $n \in \Z$ we have
-$$
-\abs{a_n} \leq \frac{C}{\abs{n}^\alpha} .
-$$
-Not only does the series converge, but it is also
-continuously differentiable, and the derivative is obtained by 
-differentiation termwise.
-
-The trick to this is that 1) At $x=0$ we converge (duh!).  2) If we
-differentiate the partial sums the resulting partial sums converge
-absolutely as we are looking at sums such as
-$$
-\sum_{n=m}^{M}
-i n a_n e^{inx}
-$$
-where we are letting $m$ go to $-\infty$ and $M$ go to $\infty$.
-So for the coefficients we have $$\abs{ina_n} \leq \frac{C}{\abs{n}^{\alpha-1}}$$ and
-the differentiated series will converge uniformly by the M-test.
-\end{example}
-
+FIXME: an example perhaps definitely using complex
 
 \begin{example}
-Let us construct a continuous nowhere differentiable function.  (Theorem 7.18)
+Let us construct a continuous nowhere differentiable function.
 
 Define
-$$
-\varphi(x) =\abs{x} \qquad \text{for $x \in [-1,1]$}
-$$
-we can extend the definition to all of $\R$ by making $\varphi$ 2-periodic
+\begin{equation*}
+\varphi(x) :=\sabs{x} \qquad \text{for $x \in [-1,1]$} .
+\end{equation*}
+We can extend the definition to all of $\R$ by making $\varphi$ 2-periodic
 ($\varphi(x) = \varphi(x+2)$).  $\varphi \colon \R \to \R$
 is continuous as $\abs{\varphi(x)-\varphi(y)} \leq \abs{x-y}$ (not hard to
 prove).
@@ -1443,9 +1341,9 @@ converges uniformly and hence is continuous.
 
 Fix $x$ and
 define
-$$
-\delta_m = \pm \frac{1}{2} 4^{-m}
-$$
+\begin{equation*}
+\delta_m := \pm \frac{1}{2} 4^{-m}
+\end{equation*}
 where the sign is chosen in such a way so that there is no integer
 between $4^m x$ and $4^m(x+\delta_m)$, which can be done
 since $4^m\abs{\delta_m} = \frac{1}{2}$.
@@ -1536,66 +1434,89 @@ polynomials.
 
 \subsection{Exercises}
 
+\begin{exercise}
+Prove \propref{prop:uniformconvbounded}.
+\end{exercise}
+
+\begin{exercise}
+Prove \propref{prop:unifcauchymetric}.
+\end{exercise}
+
+\begin{exercise}
+Suppose $(X,d)$ is a compact metric space.
+Prove that $\snorm{\cdot}_u$ is a norm on the vector space of
+continuous complex valued functions $C(X,\C)$.
+\end{exercise}
+
+\begin{exercise}
+Prove \thmref{thm:dersconvergecomplex}.
+\end{exercise}
+
+\begin{exercise}
+Prove \propref{prop:complexlimitswapintegral} by reducing to the real
+result.
+\end{exercise}
+
 FIXME
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Equicontinuity and the Arzel{\` a}-Ascoli theorem}
+\section{Equicontinuity and the Arzel{\` a}--Ascoli theorem}
 \label{sec:FIXME}
 
 \sectionnotes{FIXME4 lectures}
 
-\medskip
+We would like an analogue of Bolzano-Weierstrass.  Something to the tune of
+``every bounded
+sequence of functions (with some property) has a convergent subsequence''.
+Matters are not
+as simple even for continuous functions. 
+Not every bounded sequence in the metric space $C([0,1],\R)$ has
+a convergent subsequence (see below).
 
-We would like an analogue of Bolzano-Weierstrass, that is every bounded
-sequence of functions has a convergent subsequence.  Matters will not
-be as simple of course even for continuous functions.  Recall from last
-semester that not every bounded set in the metric space $C(X,\R)$ was compact,
-so a bounded sequence in the metric space $C(X,\R)$ may not have a
-convergent subsequence.
-
-\medskip
-
-Definition:
-Let $f_n \colon X \to \C$ be a sequence.  We say that
+\begin{defn}
+Let $X$ be any set.
+Let $f_n \colon X \to \C$ be functions in a sequence.  We say that
 $\{ f_n \}$
-is \emph{pointwise bounded} if for every $x \in X$, there is an $M_x \in \R$
+is \emph{\myindex{pointwise bounded}} if for every $x \in X$, there is an $M_x \in \R$
 such that
-$$
-\abs{f_n(x)} \leq M_x \qquad \text{for all $n \in \N$}
-$$
+\begin{equation*}
+\sabs{f_n(x)} \leq M_x \qquad \text{for all $n \in \N$} .
+\end{equation*}
 We say that
 $\{ f_n \}$
-is \emph{uniformly bounded} if there is an $M \in \R$
+is \emph{\myindex{uniformly bounded}} if there is an $M \in \R$
 such that
-$$
-\abs{f_n(x)} \leq M \qquad \text{for all $n \in \N$ and all $x \in X$}
-$$
-
+\begin{equation*}
+\sabs{f_n(x)} \leq M \qquad \text{for all $n \in \N$ and all $x \in X$}.
+\end{equation*}
+\end{defn}
 
 Note that uniform boundedness is the same as boundedness in the metric space
-$C(X,\C)$ (assuming that $X$ is compact)
+$C(X,\C)$ (here $X$ is a compact metric space).
 
-
-We don't have the machinery yet to easily exhibit
-a sequence of continuous functions
-on $[0,1]$ that is uniformly bounded but contains no subsequence converging
-even pointwise.  Let us just state that $f_n(x) = \sin (2\pi n x)$ is one
+\begin{example}
+There exist sequences of 
+continuous functions
+on $[0,1]$ that are uniformly bounded but contain no subsequence converging
+even pointwise.  Let us state without proof that $f_n(x) := \sin (2\pi n x)$ is one
 such sequence.
+\end{example}
 
-
-We also of course have that $f_n(x)=x^n$ is a sequence that is uniformly
-bounded, but contains no sequence that converges uniformly (it does converge
-pointwise though).
-
+\begin{example}
+We also have that $f_n(x) := x^n$ is a sequence of functions on $[0,1]$
+that is uniformly bounded, but contains no sequence that converges
+uniformly,
+although the sequence converges pointwise.
+\end{example}
 
 When the domain is countable, matters are easier.  We will also use the
 following theorem as a lemma later.  It will use a very common and useful
 diagonal argument.
 
 \begin{thm}
-Let $X$ be countable and $f_n \colon X \to \C$ give a pointwise bounded
+Let $X$ be a countable set and $f_n \colon X \to \C$ give a pointwise bounded
 sequence of functions, then $\{ f_n \}$ has a subsequence that converges
 pointwise.
 \end{thm}
@@ -1607,32 +1528,36 @@ we have a subsequence which we will denote by
 $f_{1,k}$ such that $\{ f_{1,k}(x_1) \}$ converges.
 Next $\{ f_{1,k}(x_2) \}$ has a subsequence that converges and
 we denote that subsequence by
-$\{ f_{2,k}(x_2) \}$.  In general we will have a sequence $\{ f_{m,k} \}_k$
-that makes $\{ f_{m,k}(x_j) \}_k$ converge for all $j \leq m$ and we will
-let $\{ f_{m+1,k} \}_k$ be the subsequence of $\{ f_{m,k} \}_k$
+$\{ f_{2,k}(x_2) \}$.  In general we will have a sequence $\{ f_{m,k}
+\}_{k=1}^\infty$
+that makes $\{ f_{m,k}(x_j) \}_{k=1}^\infty$ converge for all $j \leq m$ and we will
+let $\{ f_{m+1,k} \}_{k=1}^\infty$ be the subsequence of $\{ f_{m,k}
+\}_{k=1}^\infty$
 such that
-$\{ f_{m+1,k}(x_{m+1}) \}_k$ converges (and hence it converges for all
+$\{ f_{m+1,k}(x_{m+1}) \}_{k=1}^\infty$ converges (and hence it converges for all
 $x_j$ for $j=1,\ldots,m+1$) and we can rinse and repeat.
 
 Finally pick the sequence
 $\{ f_{k,k} \}$.  This is a subsequence of the original sequence $\{ f_n \}$
 of course.  Also for any $m$,
-except for the first $m$ terms $\{ f_k,k \}$ is a subsequence of $\{ f_{m,k} \}_k$
-and hence for any $m$ the sequence $\{ f_{k,k}(x_m) \}_k$ converges.
+except for the first $m$ terms $\{ f_k,k \}$ is a subsequence of $\{ f_{m,k}
+\}_{k=1}^\infty$
+and hence for any $m$ the sequence $\{ f_{k,k}(x_m) \}_{k=1}^\infty$ converges.
 \end{proof}
-
-\medskip
 
 For larger than countable sets,
 we need the functions of the sequence to be related.  We look at
 continuous functions, and the concept we need is equicontinuity.
 
-Definition: a family $\sF$ of functions $f \colon X \to \C$ is said to be
-equicontinuous on $X$ if for every $\epsilon > 0$, there is a $\delta > 0$
+\begin{defn}
+Let $X$ be a metric space.
+A family $\sF$ of functions $f \colon X \to \C$ is said to be
+\emph{\myindex{equicontinuous}} on $X$ if for every $\epsilon > 0$, there is a $\delta > 0$
 such that if $x, y \in X$ with $d(x,y) < \delta$ we have
-$$
-\abs{f(x)-f(y)} < \epsilon \qquad \text{ for all $f \in \sF$} .
-$$
+\begin{equation*}
+\sabs{f(x)-f(y)} < \epsilon \qquad \text{ for all $f \in \sF$} .
+\end{equation*}
+\end{defn}
 
 One obvious fact is that if $\sF$ is equicontinuous, then every element of
 $f$ is uniformly continuous.  Also obvious is that any finite set of
@@ -1674,43 +1599,45 @@ is closely related to uniform convergence.
 %But that is precisely what it means for $f$ to be uniformly continuous.
 %\end{proof}
 
-\begin{thm}
-If $X$ is compact, $f_n \in C(X,\C)$, and $\{ f_n \}$
+\begin{prop}
+Suppose $X$ is a compact metric space,
+$f_n \in C(X,\C)$, and $\{ f_n \}$
 converges uniformly, then $\{ f_n \}$ is equicontinuous.
-\end{thm}
+\end{prop}
 
 \begin{proof}
 Let $\epsilon > 0$ be given.
 As $f_n$ converge uniformly, there is an integer $N$ such that for
 all $n \geq N$ we have
-$$
-\abs{f_n(x)-f_N(x)} < \nicefrac{\epsilon}{3} \qquad \text{for all $x \in X$}.
-$$
-FIXME: on compact continuous means uniformly continuous, ref.
-Now $\{ f_1,f_2,\ldots,f_N \}$ is a finite set of uniformly continuous
-functions and so as we mentioned above an equicontinuous family.  Hence
+\begin{equation*}
+\sabs{f_n(x)-f_N(x)} < \nicefrac{\epsilon}{3} \qquad \text{for all $x \in X$}.
+\end{equation*}
+As $X$ is compact and so continuous means
+uniformly continuous,
+$\{ f_1,f_2,\ldots,f_N \}$ is a finite set of uniformly continuous
+functions.  And so, as we mentioned above, it is an equicontinuous family.  Hence
 there is a $\delta > 0$ such that
-$$
+\begin{equation*}
 \abs{f_j(x)-f_j(y)} < \nicefrac{\epsilon}{3} < \epsilon
-$$
+\end{equation*}
 whenever $d(x,y) < \delta$ and $1 \leq j \leq N$.
 
 Now take $n > N$.  Then for $d(x,y) < \delta$ we have
 \begin{equation*}
-\abs{f_n(x)-f_n(y)}
+\sabs{f_n(x)-f_n(y)}
 \leq
-\abs{f_n(x)-f_N(x)}
+\sabs{f_n(x)-f_N(x)}
 +
-\abs{f_N(x)-f_N(y)}
+\sabs{f_N(x)-f_N(y)}
 +
-\abs{f_N(y)-f_n(y)}
+\sabs{f_N(y)-f_n(y)}
 <
 \nicefrac{\epsilon}{3}
 +
 \nicefrac{\epsilon}{3}
 +
 \nicefrac{\epsilon}{3}
-=\epsilon .
+=\epsilon . \qedhere
 \end{equation*}
 \end{proof}
 
@@ -1736,10 +1663,10 @@ $$
 Hence $x \in \overline{S}$, so $\overline{S} = X$ and $S$ is dense.
 \end{proof}
 
-We can now prove the very useful Arzel\`a-Ascoli theorem about existence
-of convergent subsequences.
+We are now ready for the main result of this section,
+the Arzel\`a--Ascoli theorem about existence of convergent subsequences.
 
-\begin{thm}[Arzel\`a-Ascoli]
+\begin{thm}[Arzel\`a--Ascoli]\index{Arzel\`a--Ascoli theorem}
 %\textbf{Theorem 7.25:} (Arzel\`a-Ascoli)
 Let $X$ be compact, $f_n \in C(X,\C)$, and let $\{ f_n \}$
 be pointwise bounded and equicontinuous.  Then
@@ -1757,30 +1684,30 @@ Let us first show that the sequence is uniformly bounded.
 
 By equicontinuity we have that there is a $\delta > 0$
 such that for all $x \in X$
-$$
-B(x,\delta) \subset f_n^{-1}\bigl(B(f_n(x),1)\bigr)
-$$
+\begin{equation*}
+B(x,\delta) \subset f_n^{-1}\bigl(B(f_n(x),1)\bigr) .
+\end{equation*}
 Now $X$ is compact, so there exists $x_1,x_2,\ldots,x_k$
 such that
-$$
+\begin{equation*}
 X = \bigcup_{j=1}^k B(x_j,\delta)
-$$
+\end{equation*}
 As $\{ f_n \}$ is pointwise bounded there exist $M_1,\ldots,M_k$
 such that for $j=1,\ldots,k$ we have
-$$
+\begin{equation*}
 \abs{f_n(x_j)} \leq M_j
-$$
+\end{equation*}
 for all $n$.  Let $M = 1+ \max \{ M_1,\ldots,M_k \}$.  Now given any
 $x \in X$, there is a $j$ such that $x \in B(x_j,\delta)$.  Therefore,
 for all $n$ we have
 $x \in f_n^{-1}\bigl(B(f_n(x_j),1)\bigr)$ or in other words
-$$
-\abs{f_n(x)-f_n(x_j)} < 1
-$$
+\begin{equation*}
+\abs{f_n(x)-f_n(x_j)} < 1 .
+\end{equation*}
 By reverse triangle inequality,
-$$
-\abs{f_n(x)} < 1+ \abs{f_n(x_j)} \leq 1+M_j \leq M
-$$
+\begin{equation*}
+\abs{f_n(x)} < 1+ \abs{f_n(x_j)} \leq 1+M_j \leq M .
+\end{equation*}
 And as $x$ was arbitrary, $\{f_n\}$ is uniformly bounded.
 
 
@@ -1791,16 +1718,16 @@ equicontinuous.
 
 Let $\epsilon > 0$ be given, then pick $\delta > 0$
 such that for all $x \in X$
-$$
-B(x,\delta) \subset g_n^{-1}\bigl(B(g_n(x),\nicefrac{\epsilon}{3})\bigr)
-$$
+\begin{equation*}
+B(x,\delta) \subset g_n^{-1}\bigl(B(g_n(x),\nicefrac{\epsilon}{3})\bigr).
+\end{equation*}
 By density of $S$, every $x \in X$ is in some $B(y,\delta)$
 for some $y \in S$, and by compactness of $X$,
 there is a finite subset $\{ x_1,\ldots,x_k \}$ of $S$
 such that
-$$
+\begin{equation*}
 X = \bigcup_{j=1}^k B(x_j,\delta) .
-$$
+\end{equation*}
 Now as there are finitely many points and we know that $\{ g_n \}$
 converges pointwise on $S$, there exists a single $N$ such that for 
 all $n,m \geq N$ we have for all $j=1,\ldots,k$
@@ -1810,19 +1737,19 @@ all $n,m \geq N$ we have for all $j=1,\ldots,k$
 
 Let $x \in X$ be arbitrary.  There is some $j$ such that
 $x \in B(x_j,\delta)$ and so we have for all $i \in \N$
-$$
-\abs{g_i(x)-g_i(x_j)} < \nicefrac{\epsilon}{3}
-$$
+\begin{equation*}
+\abs{g_i(x)-g_i(x_j)} < \nicefrac{\epsilon}{3},
+\end{equation*}
 and so $n,m \geq N$ that
-$$
+\begin{equation*}
 \abs{g_n(x)-g_m(x)} \leq
 \abs{g_n(x)-g_n(x_j)} +
 \abs{g_n(x_j)-g_m(x_j)} +
 \abs{g_m(x_j)-g_m(x)} <
 \nicefrac{\epsilon}{3} +
 \nicefrac{\epsilon}{3} +
-\nicefrac{\epsilon}{3} = \epsilon .
-$$
+\nicefrac{\epsilon}{3} = \epsilon . \qedhere
+\end{equation*}
 \end{proof}
 
 \begin{cor}
@@ -1834,11 +1761,9 @@ Then $S$ is compact.
 The theorem says that $S$
 is sequentially compact and we know that means
 compact in a metric space.
-
-Last semester we have seen that in $C([0,1],\C)$ (well actually we had real
-valued functions but the idea is exactly the same), the closed unit ball
-$C(0,1)$ in $C([0,1],\C)$ was not compact.  Hence it cannot be an
-equicontinuous set.
+Recall that the closed unit ball in $C([0,1],\R)$ (and therefore also in
+$C([0,1],\C)$) is not compact.
+Hence it cannot be an equicontinuous set.
 
 \begin{cor}
 Suppose that $\{ f_n \}$ is a sequence of differentiable functions on $[a,b]$,
@@ -1852,9 +1777,9 @@ subsequence $\{ f_{n_j} \}$.
 The trick is to use the mean value theorem.  If $M$ is the uniform bound on
 $\{ f_n' \}$, then we have by the mean value theorem
 \begin{equation*}
-\abs{f_n(x)-f_n(y)} \leq M \abs{x-y}
+\abs{f_n(x)-f_n(y)} \leq M \abs{x-y} .
 \end{equation*}
-So all the $f_n$'s are Lipschitz with the same constant and hence
+So all the $f_n$ are Lipschitz with the same constant and hence
 equicontinuous.
 
 Now suppose that $\abs{f_n(x_0)} \leq M_0$ for all $n$.
@@ -1865,7 +1790,7 @@ $$
 $$
 so $\{ f_n \}$ is uniformly bounded.
 
-We can now apply Arzel\`a-Ascoli to find the subsequence.
+We can now apply Arzel\`a--Ascoli to find the subsequence.
 \end{proof}
 
 A consequence of the above corollary and the Fundamental Theorem of Calculus
@@ -1894,21 +1819,14 @@ FIXME
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{The Stone-Weierstrass theorem}
+\section{The Stone--Weierstrass theorem}
 \label{sec:FIXME}
 
 \sectionnotes{FIXME4 lectures}
 
-\medskip
-
 Perhaps surprisingly, even a very badly behaving continuous function is really
 just a uniform limit of polynomials.  We cannot really get any ``nicer'' as
 a function than a polynomial.
-%So this means that in general, continuity (and related
-%properties) is essentially the only property that gets preserved under
-%uniform convergence of continuous functions.
-
-%\medskip
 
 \begin{thm}[Weierstrass approximation theorem]
 %\textbf{Theorem 7.26} (Weierstrass approximation theorem)
@@ -1916,8 +1834,6 @@ If $f \colon [a,b] \to \C$ is continuous, then there exists a sequence $\{
 p_n \}$ of polynomials converging to $f$ uniformly on $[a,b]$.
 Furthermore, if $f$ is real-valued, we can find real-valued $p_n$.
 \end{thm}
-
-%\medskip
 
 \begin{proof}
 For $x \in [0,1]$ define
@@ -2058,7 +1974,8 @@ $\int_{-1}^1 q_n(t)\,dt = 1$ and $q_n(x) \geq 0$ on $[-1,1]$ so
 \int_{-1}^{-\delta} \abs{g(t+x)-g(x)} q_n(t)\,dt
 +
 \int_{-\delta}^{\delta} \abs{g(t+x)-g(x)} q_n(t)\,dt
-+
+\\
+& \phantom{\leq} +
 \int_{\delta}^1 \abs{g(t+x)-g(x)} q_n(t)\,dt \\
 & \leq
 2M
@@ -2079,7 +1996,7 @@ $\int_{-1}^1 q_n(t)\,dt = 1$ and $q_n(x) \geq 0$ on $[-1,1]$ so
 4M\sqrt{n}{(1-\delta^2)}^n
 +
 \frac{\epsilon}{2}
-< \epsilon .
+< \epsilon . \qedhere
 \end{split}
 \end{equation*}
 \end{proof}
@@ -2091,16 +2008,13 @@ then it must be true for all continuous functions.
 Let us note an immediate application of the Weierstrass theorem.  We have
 already seen that countable dense subsets can be very useful.
 
-\medskip
-
-\textbf{Corollary:}
+\begin{cor}
 The metric space $C([a,b],\C)$ contains a countable dense subset.
-
-\medskip
+\end{cor}
 
 \begin{proof}
 Without loss of generality suppose that we are dealing with $C([a,b],\R)$
-(why can we?).
+(why?).
 The real polynomials are dense in $C([a,b],\R)$.  If we can show that
 any real polynomial can be approximated by polynomials with rational
 coefficients, we are done.  This is because there are only countably many
@@ -2109,17 +2023,17 @@ rational coefficients (a countable union of countable sets is still
 countable).
 
 Further without loss of generality, suppose that $[a,b]=[0,1]$.  Let
-$$
+\begin{equation*}
 p(x) = \sum_{k=0}^n a_k x^k
-$$
+\end{equation*}
 be a polynomial of degree $n$ where $a_k \in \R$.  Given $\epsilon > 0$, pick $b_k \in \Q$
 such that $\abs{a_k-b_k} < \frac{\epsilon}{n+1}$.  Then
 if we let
-$$
+\begin{equation*}
 q(x) = \sum_{k=0}^n b_k x^k
-$$
+\end{equation*}
 we have
-$$
+\begin{equation*}
 \abs{p(x)-q(x)}
 =
 \abs{\sum_{k=0}^n (a_k-b_k) x^k}
@@ -2128,8 +2042,8 @@ $$
 \leq
 \sum_{k=0}^n \abs{a_k-b_k}
 <
-\sum_{k=0}^n \frac{\epsilon}{n+1} = \epsilon
-$$
+\sum_{k=0}^n \frac{\epsilon}{n+1} = \epsilon . \qedhere
+\end{equation*}
 \end{proof}
 
 \begin{remark}
@@ -2143,14 +2057,14 @@ set of continuous functions is a very tiny subset of the set of all
 functions.
 \end{remark}
 
-Next thing we do is that we will want to abstract away what is not really
+Next thing we do is that we want to abstract away what is not really
 necessary and prove a general version of this theorem.
 We have shown that the polynomials are dense in the space of continuous
 functions on a compact interval.  So what kind of families of
 functions are also dense?  Furthermore, what if we let the domain be an
 arbitrary metric space, then we no longer have polynomials.
 
-The resulting theorem is the Stone-Weierstrass theorem.  We will need a
+The resulting theorem is the Stone--Weierstrass theorem.  We will need a
 special case of the Weierstrass theorem though.
 
 \begin{cor}
@@ -2174,14 +2088,14 @@ $\lim \widetilde{p}_n(0) = 0$.  Given $\epsilon > 0$, let $N$ be such that
 for $n \geq N$ we have $\abs{\widetilde{p}_n(0)} < \nicefrac{\epsilon}{2}$
 and also that $\bigl\lvert\widetilde{p}_n(x)-\abs{x}\big\rvert < \nicefrac{\epsilon}{2}$.
 Now
-$$
+\begin{equation*}
 \bigl\lvert p_n(x)-\abs{x} \bigr\rvert
 =
 \bigl\lvert \widetilde{p}_n(x) - \widetilde{p}_n(0) - \abs{x} \bigr\rvert
 \leq
 \bigl\lvert \widetilde{p}_n(x) - \abs{x} \bigr\rvert + \abs{\widetilde{p}_n(0)} < 
-\nicefrac{\epsilon}{2} + \nicefrac{\epsilon}{2} = \epsilon .
-$$
+\nicefrac{\epsilon}{2} + \nicefrac{\epsilon}{2} = \epsilon . \qedhere
+\end{equation*}
 \end{proof}
 
 Following the proof of the theorem,
@@ -2215,8 +2129,6 @@ in $C(X,\C)$, of course.
 For example, the set $\sP$ of all polynomials is an algebra in $C(X,\C)$, and we
 have shown that its uniform closure is all of $C(X,\C)$.
 
-%\medskip
-
 %%
 %% FIXME: only need this in a metric space setting, should really whack this
 %% Really only need this for algebras in $C(X,\C)$ for compact X.
@@ -2227,8 +2139,6 @@ have shown that its uniform closure is all of $C(X,\C)$.
 Let $\sA$ be an algebra of bounded functions on a set $X$, and let $\sB$
 be its uniform closure.  Then $\sB$ is a uniformly closed algebra.
 \end{thm}
-
-%\medskip
 
 \begin{proof}
 Let $f, g \in \sB$ and $c \in \C$.  Then there are uniformly convergent
@@ -2270,12 +2180,12 @@ M \abs{g_n(x)-g(x)}
 \end{split}
 \end{equation*}
 
-$$
-\abs{cf_n(x)-cf(x)}
+\begin{equation*}
+\sabs{cf_n(x)-cf(x)}
 =
-\abs{c}\,
-\abs{f_n(x)-f(x)}
-$$
+\sabs{c}\,
+\sabs{f_n(x)-f(x)}
+\end{equation*}
 Hence $f+g \in \sB$, $fg \in \sB$ and $cf \in \sB$.
 
 Next we want to show that $\sB$ is uniformly closed.
@@ -2284,42 +2194,38 @@ uniformly to some function $f \colon X \to \C$.
 As $\sB$ is the closure of $\sA$ we find a $g_n \in \sA$ for
 every $n$ such that for all $x \in X$ we have
 $$
-\abs{f_n(x)-g_n(x)} < \nicefrac{1}{n}
+\sabs{f_n(x)-g_n(x)} < \nicefrac{1}{n}
 $$
 So given $\epsilon > 0$ find $N$ such that for all $n \geq N$
 we have $\abs{f_n(x)-f(x)} < \nicefrac{\epsilon}{2}$ and
 also such that $\nicefrac{1}{n} < \nicefrac{\epsilon}{2}$.  Then
-$$
+\begin{equation*}
 \abs{g_n(x)-f(x)}
 \leq
 \abs{g_n(x)-f_n(x)}
 +
 \abs{f_n(x)-f(x)}
-< \nicefrac{1}{n} + \nicefrac{\epsilon}{2} < \epsilon
-$$
-
-Or if we had shown that the set of bounded functions on $X$ is a metric
-space, then the last assertion would follow directly as in a metric space
-closure of a closed set is the set itself. (Rudin does this).
+< \nicefrac{1}{n} + \nicefrac{\epsilon}{2} < \epsilon .  \qedhere
+\end{equation*}
 \end{proof}
+%
+%Or if we had shown that the set of bounded functions on $X$ is a metric
+%space, then the last assertion would follow directly as in a metric space
+%closure of a closed set is the set itself. (Rudin does this).
 
-\medskip
-
-Now let us distill the right properties of polynomials that were sufficient
+Let us distill the properties of polynomials that were sufficient
 for an approximation theorem.
 
 \begin{defn}
 Let $\sA$ be a family of complex-valued functions defined on a set $X$.
 
-We say $\sA$ \emph{separates points}
+We say $\sA$ \emph{\myindex{separates points}}
 if for every $x,y \in X$, with $x \not= y$ there is a function $f \in \sA$ such that
 $f(x) \not= f(y)$.
 
-We say $\sA$ \emph{vanishes at no point} if for every $x \in X$
+We say $\sA$ \emph{\myindex{vanishes at no point}} if for every $x \in X$
 there is an $f \in \sA$ such that $f(x) \not= 0$.
 \end{defn}
-
-\textbf{Examples:}
 
 \begin{example}
 The set $\sP$ of polynomials separates points and vanishes at no point
@@ -2343,7 +2249,7 @@ The set of polynomials with no constant term vanishes at the origin.
 
 \begin{thm}
 %\textbf{Theorem 7.31:}
-Suppose that $\sA$ is an algebra of functions on $X$, that separates points
+Suppose that $\sA$ is an algebra of functions on a set $X$, that separates points
 and vanishes at no point.  Suppose $x,y$ are distinct points of $X$ and
 $c,d \in \C$.  Then there is an $f \in \sA$ such that
 \begin{equation*}
@@ -2355,11 +2261,11 @@ If $\sA$ is a real algebra, the theorem holds as well when $c,d$ are real.
 \begin{proof}
 There must exist an $g,h,k \in \sA$
 such that 
-$$
+\begin{equation*}
 g(x) \not= g(y), \quad h(x) \not= 0, \quad k(y) \not= 0 .
-$$
+\end{equation*}
 write
-$$
+\begin{equation*}
 f = 
 c
 \frac{\bigl(g - g(y)\bigr)h}{\bigl(g(x)-g(y)\bigr)h(x) } + 
@@ -2370,15 +2276,13 @@ c
 \frac{gh - g(y)h}{g(x)h(x)-g(y)h(x) } + 
 d
 \frac{gk - g(x)k}{g(y)k(y)-g(x)k(y)}
-$$
+\end{equation*}
 Do note that we are not dividing by zero (clear from the first formula).
 Also from the first formula we see that $f(x) = c$ and $f(y) = d$.
 By the second formula we see that $f \in \sA$ (as $\sA$ is an algebra).
 \end{proof}
 
-\medskip
-
-\begin{thm}[Stone-Weierstrass, real version]
+\begin{thm}[Stone--Weierstrass, real version]
 %\textbf{Theorem 7.32:} (Stone-Weierstrass, real version)
 Let $X$ be a compact metric space and $\sA$ an algebra of real-valued
 continuous functions on $X$, such that $\sA$ separates points and vanishes at
@@ -2390,7 +2294,8 @@ closure of $\sA$.  We wish to show that $\sB = C(X,\R)$.
 
 \medskip
 
-\textbf{Claim 1:} If $f \in \sB$ then $\abs{f} \in \sB$.
+\noindent
+\textbf{Claim 1:} \emph{If $f \in \sB$ then $\abs{f} \in \sB$.}
 
 \begin{proof}
 $f$ is bounded (continuous on a compact set) for example $\abs{f(x)} \leq M$
@@ -2421,13 +2326,15 @@ So $\abs{f}$ is in the closure of $\sB$, which is closed, so $\abs{f} \in
 
 \medskip
 
-\textbf{Claim 2:} If $f \in \sB$ and $g \in \sB$ then
+\noindent
+\textbf{Claim 2:} \emph{If $f \in \sB$ and $g \in \sB$ then
 $\max(f,g) \in \sB$ and
 $\min(f,g) \in \sB$, where
-$$
+}
+\begin{equation*}
 \bigl(\max(f,g)\bigr) (x) = \max \{ f(x), g(x) \} \qquad
-\bigl(\min(f,g)\bigr) (x) = \min \{ f(x), g(x) \}
-$$
+\bigl(\min(f,g)\bigr) (x) = \min \{ f(x), g(x) \} .
+\end{equation*}
 
 \begin{proof}
 Write:
@@ -2446,11 +2353,13 @@ collection of functions as well.
 
 \medskip
 
-\textbf{Claim 3:} Given $f \in C(X,\R)$, $x \in X$ and $\epsilon > 0$
+\noindent
+\textbf{Claim 3:} \emph{Given $f \in C(X,\R)$, $x \in X$ and $\epsilon > 0$
 there exists a $g_x \in \sB$ with $g_x(x) = f(x)$ and
-$$
+}
+\begin{equation*}
 g_x(t) > f(t)-\epsilon \qquad \text{for all $t \in X$}.
-$$
+\end{equation*}
 
 \begin{proof}
 %Since $\sA$ is a subalgebra of $\sB$, we have that $\sB$ separates points and
@@ -2491,11 +2400,12 @@ $g_x(x) = f(x)$.
 
 \medskip
 
-\textbf{Claim 4:} If $f \in C(X,\R)$ and $\epsilon > 0$ is given then there
-exists an $h \in \sB$ such that
-$$
-\abs{f(x) - h(x)} < \epsilon
-$$
+\noindent
+\textbf{Claim 4:} \emph{If $f \in C(X,\R)$ and $\epsilon > 0$ is given then there
+exists an $h \in \sB$ such that}
+\begin{equation*}
+\abs{f(x) - h(x)} < \epsilon .
+\end{equation*}
 
 \begin{proof}
 For any $x$ find function $g_x$ as in Claim 3.
@@ -2529,24 +2439,20 @@ Therefore, for all $t$
 which is the desired conclusion.
 \end{proof}
 
-The conclusion follows from Claim 4.  The claim states that an
+The proof of the theorem follows from Claim 4.  The claim states that an
 arbitrary continuous function is in the closure of $\sB$ which itself is
-closed.
-Claim 4 is the conclusion of the theorem.  So the theorem is proved.
-
-%\medskip
+closed.  So the theorem is proved.
 
 \begin{example}
 The functions of the form
 \begin{equation*}
-f(t) = \sum_{j=1}^n c_j e^{jt},
+f(t) = \sum_{j=1}^n c_j \, e^{jt},
 \end{equation*}
 for $c_j \in \R$,
 are dense in $C([a,b],\R)$.  We need to note that such functions are a real
 algebra, which follows from $e^{jt} e^{kt} = e^{(j+k)t}$.  They separate
 points as $e^t$ is one-to-one, and $e^t > 0$ for all $t$ so the algebra
-does not vanish at any point (we will prove all these properties of exponential
-in the next chapter). 
+does not vanish at any point.
 \end{example}
 
 In general if we have a family of functions that separates points and does
@@ -2565,7 +2471,7 @@ $$
 $$
 is an algebra (you would have to use some trig identities to show this).
 When considered on for example $[0,\pi]$, the
-algebra separates points and vanishes nowhere so Stone-Weierstrass applies.
+algebra separates points and vanishes nowhere so Stone--Weierstrass applies.
 You \emph{do not} want to conclude from this that every continuous
 function on $[0,\pi]$ has a uniformly convergent
 Fourier cosine series.  That is not true.
@@ -2574,14 +2480,14 @@ whose Fourier series does not converge even pointwise.  We do have formulas
 for the coefficients, but those coefficients will not give us a convergent
 series.  The
 trick is that the sequence of functions in the algebra that we obtain
-by Stone-Weierstrass
+by Stone--Weierstrass
 is not necessarily the sequence of partial sums of a series.
 
 Same warning applies to polynomials as well.  Just because a function is a
 uniform limit of polynomials doesn't mean that it is a uniform limit of a
 power series (which we will see in the next chapter).  
 
-If we wish to have Stone-Weierstrass to hold for complex algebras, we must
+If we wish to have Stone--Weierstrass to hold for complex algebras, we must
 make an extra assumption.
 
 \begin{defn}
@@ -2590,13 +2496,13 @@ $\bar{f}$ defined by $\bar{f}(x) := \overline{f(x)}$ is in $\sA$, where by the
 bar we mean the complex conjugate.
 \end{defn}
 
-\begin{defn}[Stone-Weierstrass, complex version]
+\begin{thm}[Stone--Weierstrass, complex version]
 %\textbf{Theorem 7.32:} (Stone-Weierstrass, complex version)
 Let $X$ be a compact metric space and $\sA$ an algebra of complex-valued
 continuous functions on $X$, such that $\sA$ separates points, vanishes at
 no point, and is self-adjoint.  Then the uniform closure of $\sA$ is all of
 $C(X,\C)$.
-\end{defn}
+\end{thm}
 
 \begin{proof}
 Suppose that $\sA_\R \subset \sA$ is the set of the real-valued elements of
@@ -2617,7 +2523,7 @@ Similarly, for any $x$ find $f \in \sA$ such that $f(x) \not= 0$.  If $f
 So $\sA_\R$ vanishes at no point.
 
 Obviously $\sA_\R$ is a real algebra, and satisfies the hypotheses of the
-real Stone-Weierstrass theorem.  So given any $f = u+iv \in C(X,\C)$,
+real Stone--Weierstrass theorem.  So given any $f = u+iv \in C(X,\C)$,
 we can find $g,h \in \sA_\R$ such that
 $\abs{u(t)-g(t)} < \nicefrac{\epsilon}{2}$ and
 $\abs{v(t)-h(t)} < \nicefrac{\epsilon}{2}$ and so
@@ -2631,6 +2537,7 @@ So $\sA$ is dense in $C(X,\C)$.
 \end{proof}
 
 FIXME: An example of why we need the self-adjoint will be in the homework.
+?? FIXME: add exercise
 
 Here is an interesting application.  We'll do it for the complex version, but
 the same thing can be done with the real version.  It turns out when working
@@ -2650,8 +2557,14 @@ where $f_j \colon [0,1] \to \C$ and $g_j \colon [0,1] \to \C$ are continuous.
 It is not hard to see that the functions of the above form are a complex
 algebra.  It is equally easy to show that they vanish nowhere, separate
 points, and the algebra is self-adjoint.  As $[0,1] \times [0,1]$ is compact
-we can apply Stone-Weierstrass to obtain the result.
+we can apply Stone--Weierstrass to obtain the result.
 \end{example}
+
+\subsection{Exercises}
+
+\begin{exercise}
+FIXME
+\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2661,19 +2574,27 @@ we can apply Stone-Weierstrass to obtain the result.
 
 \sectionnotes{FIXME4 lectures}
 
-Let us talk about analytic functions.  That is functions of a complex $z$ that have a power
-series,
-$$
-f(z) = \sum_{k=0}^\infty c_k z^k ,
-$$
-or perhaps for some fixed $a \in \C$
-$$
-\sum_{k=0}^\infty c_k {(z-a)}^k .
-$$
+A (complex) power series is a series of the form
+\begin{equation*}
+\sum_{n=0}^\infty c_n {(z-a)}^n
+\end{equation*}
+for $c_n, z, a \in \C$.  We say the series
+\emph{converges}\index{converges!power series} if the series converges for
+any $z \not= a$.
 
-We will sometimes let $z$ be complex and sometimes we will talk about real
-power series, in which case we will use $x$.  I will always mention which
-case we are working with.
+Let $U \subset \C$ be an open set and
+a function $f \colon U \to \C$ be a function such that
+for every $a \in U$ there exists a $\delta > 0$ and a power
+series convergent to the function:
+\begin{equation*}
+f(z) = \sum_{n=0}^\infty c_n {(z-a)}^n
+\end{equation*}
+for all $z \in B(a,\delta)$.
+Then we say $f$ is an \emph{\myindex{analytic}} function.
+
+As we will sometimes talk about real and sometimes about complex power
+series we will use $z$ to denote a complex number and $x$ a real number, but
+we will always mention which case we are working with.
 
 An analytic function can have a different expansion around different
 points.  Also the convergence does not automatically happen on the entire
@@ -2684,176 +2605,103 @@ domain of the function.  For example, we know that if $\abs{z} < 1$, then
 While the left hand side exists on all of $z \not= 1$, the right hand side
 happens to converge only if $\abs{z} < 1$.
 
-\medskip
+We proved several results for power series of a real variable in
+\volIref{section 2.6 of volume I}.   For the most part the convergence
+properties of power series deal with the series $\sum \sabs{c_k}
+\sabs{z-a}^k$ and so we have already proved many results about complex power
+series.  In particular, we compute the so-called
+\emph{\myindex{radius of convergence}} of a power series.
 
-Before we delve into power series, let us prove the root test which we
-haven't done last semester.
-
-\medskip
-
-\textbf{Theorem:} (Root test)
-Let $\sum a_k$ be a series of complex numbers and write
-\begin{equation*}
-\alpha = \limsup_{k\to\infty} \sqrt[k]{\abs{a_k}}
-\end{equation*}
-Then if $\alpha < 1$, the series converges absolutely.  If $\alpha > 1$ then 
-the series diverges.
-
-\medskip
-
-The test is similar to the ratio test (we have used limit rather than limsup
-for the ratio test before, but the proof with limsup is also not difficult).
-If $\alpha = 1$ we get no information.
+\begin{prop}
+Let $\sum_{n=0}^\infty c_n {(z-a)}^n$ be a power series.
+If the series is convergent, then either it converges at
+all $z \in \C$, or
+there exists a number $\rho$, such that
+the series converges absolutely on $B(z,\rho)$
+and diverges when $\sabs{z-a} > \rho$.
+\end{prop}
 
 \begin{proof}
-Obviously $\alpha \geq 0$.
-Suppose that $\alpha < 1$, then there must be some $\beta$ with $\alpha <
-\beta < 1$.  Since $\beta - \alpha > 0$, then by definition of limsup,
-there must exist some $N$ such that
-for all $n \geq N$ we have
-$$
-\sqrt[n]{\abs{a_n}} < \beta .
-$$
-In other words
-$\abs{a_n} < \beta^n$ and
-$\sum \beta^n$ converges as $0 < \beta < 1$.
-A series converges if and only if its tail converges and we have by
-comparison test that
-$$
-\sum_{k=N}^\infty \abs{a_n}
-$$
-converges.  Therefore $\sum \abs{a_n}$ converges and so $\sum a_n$ converges
-absolutely.
-
-Next suppose that $\alpha > 1$.  We note that this means that for infinitely
-many $n$ we have
-$\sqrt[n]{\abs{a_n}} > 1$ and hence
-$\abs{a_n} > 1$.  As for a convergent series we have to have
-$a_n \to 0$, the series
-$\sum a_n$ cannot converge.
+We use the real version of this proposition,
+\volIref{Proposition 2.6.10 in volume I}.
+Let
+\begin{equation*}
+R := \limsup_{n\to\infty} \sqrt[n]{\sabs{c_n}} .
+\end{equation*}
+If $R = 0$, then
+$\sum_{n=0}^\infty \sabs{c_n} \sabs{(z-a)}^n$ converges for all $z$.
+If $R = \infty$, then
+$\sum_{n=0}^\infty \sabs{c_n} \sabs{(z-a)}^n$ converges only at $z=a$.
+Otherwise, let $\rho := \nicefrac{1}{R}$ and
+$\sum_{n=0}^\infty \sabs{c_n} \sabs{(z-a)}^n$ converges when
+$\sabs{z-a} < \rho$, and diverges (in fact the terms of the series
+do not go to zero) when $\sabs{z-a} > \rho$.
+The theorem follows.
 \end{proof}
 
-Using the root test we can find the so-called \emph{radius of convergence} of
-a power series.
+The number $\rho$ is called the \emph{\myindex{radius of convergence}}.
+We define $\rho$ even in cases when $R=0$ or $R= \infty$.  If $R=0$, we say
+$\rho = \infty$ and if $R=\infty$ we say $\rho=0$.
+The radius of convergence gives us a disk around $a$ where the series converges.  A power series
+is convergent if $\rho > 0$.
 
-\medskip
+FIXME: picture
 
-\textbf{Theorem 3.39 + (part of 8.1):} Let $$\sum c_k {(z-a)}^k$$ be a power series.  Let
-$$
-\alpha = \limsup_{k\to\infty} \sqrt[k]{\abs{c_k}}
-$$
-If $\alpha = 0$ let $R=\infty$, if $\alpha = \infty$ let $R = 0$, and 
-otherwise let $R = \nicefrac{1}{\alpha}$.  Then the power series converges
-absolutely if $\abs{z-a} < R$ and diverges when $\abs{z-a} > R$.
-
-Furthermore, if $R > 0$ then the series converges uniformly on $B(a,r)$ for
-any positive $r < R$.
-
-\medskip
-
-\begin{proof}
-Write
-$$
-\limsup_{k\to\infty} \sqrt[k]{\abs{c_k {(z-a)}^k}}
-=
-\abs{z-a}
-\limsup_{k\to\infty} \sqrt[k]{\abs{c_k}}
-=
-\alpha \abs{z-a}
-$$
-Note that this calculation makes sense even if $\alpha = \infty$ when
-when we decree that $\infty x = \infty$ if $x > 0$.  We assume
-that $\abs{z-a} \not= 0$.  Since the series of course always converges if
-$z=a$.
-
-Now the series converges absolutely if
-$\alpha \abs{z-a} < 1$ and diverges if
-$\alpha \abs{z-a} > 1$.  We notice that this is precisely the conclusion of the theorem.
-
-For the ``Furthermore'' part of the theorem, suppose that $R > 0$ and pick
-a positive $r < R$.  Then if $z \in B(a,r)$ then $\abs{z-a} < r$ then
-\begin{equation*}
-\abs{c_k{(z-a)}^k} \leq \abs{c_k} r^k
-\end{equation*}
-Notice that since the series converges absolutely at any point in $B(a,R)$
-the series $\sum \abs{c_k} r^k$ must converge, it is therefore Cauchy.
-As for any $m < n$ we have
-\begin{equation*}
-\sum_{k=m+1}^n\abs{c_k{(z-a)}^k} \leq \sum_{k=m+1}^n \abs{c_k} r^k
-\end{equation*}
-the original series is uniformly Cauchy on $B(a,r)$ and hence uniformly
-convergent on $B(a,r)$.
-\end{proof}
-
-\medskip
-
-The number $R$ is called the \emph{radius of convergence}.  It gives us a disk
-around $a$ where the series converges.  We say that the series is
-\emph{convergent} if $R > 0$, in other words, if the series converges for
-some point not equal to $a$.
-
-Note that it is trivial to see that if $\sum c_k {(z-a)}^k$ converges
+It is trivial to see that if $\sum c_n {(z-a)}^n$ converges
 for some $z$, then
-$$\sum c_k {(w-a)}^k$$
-must converge absolutely whenever $\abs{w-a} < \abs{z-a}$.  This follows
-from the computation of the radius of convergence.
+\begin{equation*}
+\sum c_n {(w-a)}^n
+\end{equation*}
+must converge absolutely whenever $\abs{w-a} < \abs{z-a}$.
 Conversely if the series diverges at $z$, then it must diverge at $w$
 whenever $\abs{w-a} > \abs{z-a}$.
-
 This means that to show
 that the radius of convergence is at least some number, we simply need to
 show convergence at some point by any method we know.
 
-\medskip
+\begin{example}
+Let us list some series we already know:
+\begin{align*}
+& &
+& \sum_{n=0}^\infty z^n
+& & \text{has radius of convergence $1$.}
+& &
+\\
+& &
+& \sum_{n=0}^\infty \frac{1}{n!} z^n
+& & \text{has radius of convergence $\infty$.}
+& &
+\\
+& &
+& \sum_{n=0}^\infty n^n z^n
+& & \text{has radius of convergence $0$.}
+& &
+\end{align*}
+\end{example}
 
-Examples:
-$$
-\sum_{k=0}^\infty z^k
-$$
-has radius of convergence $1$.
-
-$$
-\sum_{k=0}^\infty \frac{1}{n^n} z^k
-$$
-has radius of convergence $\infty$.  Similarly
-$$
-\sum_{k=0}^\infty \frac{1}{n!} z^k
-$$
-has radius of convergence $\infty$.  Although in this case it is easier to
-apply the ratio test to the series to note that the series converges
-absolutely at all $z \in \C$.
-
-On the other hand,
-$$
-\sum_{k=0}^\infty n^n z^k
-$$
-has radius of convergence 0, so it converges only if $z=0$.
-
-\medskip
-
-Do note the difference between $\frac{1}{1-z}$ and its power series.  Let us
+Note the difference between $\frac{1}{1-z}$ and its power series.  Let us
 expand $\frac{1}{1-z}$ as power series around any point $a \not= 1$.
 Let $c = \frac{1}{1-a}$, then we can write
-$$
+\begin{equation*}
 \frac{1}{1-z} = 
 \frac{c}{1-c(z-a)}
 =
 c
-\sum_{k=0}^\infty c^{k} {(z-a)}^k
+\sum_{n=0}^\infty c^{n} {(z-a)}^n
 =
-\sum_{k=0}^\infty \left( \frac{1}{{(1-a)}^{k+1}} \right) {(z-a)}^k
-$$
-Then we notice that $\sum c^k {(z-a)}^k$ converges if and only if 
+\sum_{n=0}^\infty \left( \frac{1}{{(1-a)}^{n+1}} \right) {(z-a)}^n .
+\end{equation*}
+Then notice that $\sum c^n {(z-a)}^n$ converges if and only if 
 the power series on the right hand side converges and
-$$
+\begin{equation*}
 \limsup_{k\to\infty}
 \sqrt[k]{c^k} = c
 = \frac{1}{\abs{1-a}}
-$$
+\end{equation*}
 So radius of convergence of the power series is $\abs{1-a}$, that is the
 distance of $a$ from $1$.  In particular the function has a power series
-representation around every $a$ not equal to 1.  This is what we usually call
-analytic.  Notice that the domain of the function is bigger than the region
+representation around every $a$ not equal to 1 and so is analytic.
+Notice that the domain of the function is bigger than the region
 of convergence of any power series representing the function at any point.
 
 It turns out that 
@@ -2862,13 +2710,15 @@ on some ball,
 then it has a representation at every point in the ball.  We will prove this
 result later.
 
-\medskip
-
-\textbf{Corollary:}
-If $$f(z) = \sum c_k {(z-a)}^k$$ is convergent in $B(a,R)$ for some $R > 0$, then
+\begin{prop}
+If
+\begin{equation*}
+f(z) := \sum c_n {(z-a)}^n
+\end{equation*}
+is convergent in $B(a,R)$ for some $R > 0$, then
 $f \colon B(a,R) \to \C$ is continuous.
-
-\medskip
+In particular, analytic functions are continuous.
+\end{prop}
 
 \begin{proof}
 For any $z_0 \in B(a,R)$ pick $r < R$ such that $z_0 \in B(a,r)$.  If we show
@@ -2879,143 +2729,99 @@ partial sums converge uniformly by the theorem and so the limit is
 continuous.
 \end{proof}
 
-\medskip
-
 Note that we can always apply an affine transformation $z \mapsto z+a$ which
-would convert the series to a series at the origin.  Therefore it is usually
-sufficient to just prove results about power series at the origin.
+converts the series to a series at the origin.  Therefore it is usually
+sufficient to prove results about power series at the origin.
+Therefore, from now on, let us assume $a=0$ for simplicity.
 
 \medskip
 
-Let us look at derivatives.  We will prove the following only for 
-power series of real variable $x$.  We will allow coefficients to be complex valued, but
-we will only consider the power series on the real axis.
-Therefore we will consider $x$ a real variable and we will consider
-convergence an interval $(-R,R)$.
-
-\medskip
-
-\textbf{Theorem (rest of 8.1):}
-Let
-$$
-f(x) = \sum_{k=0}^\infty a_k x^k
-$$
-be a power series converging in $(-R,R)$ for some $R > 0$.  Then $f$ is
-differentiable on $(-R,R)$ and
-$$
+In \volIref{Corollary 6.2.11 of volume I} we proved that we can
+differentiate real power series term by term.  That is
+we proved that if
+\begin{equation*}
+f(x) := \sum_{n=0}^\infty c_n x^n
+\end{equation*}
+converged in some interval around $0$, then we could differentiate
+term by term and obtain a series
+\begin{equation*}
 f'(x) =
-\sum_{k=1}^\infty ka_k x^{k-1}
+\sum_{n=1}^\infty n c_n {x}^{n-1}
 =
-\sum_{k=0}^\infty (k+1)a_{k+1} x^{k} .
-$$
-
-\medskip
-
-\begin{proof}
-First notice that
-$$
-\lim_{k\to\infty} \sqrt[k]{k}  = 1
-$$
-(exercise LTS).  Therefore
-$$
-\limsup_{k\to\infty} \sqrt[k]{\abs{ka_k}} = 
-\limsup_{k\to\infty} \sqrt[k]{k} \sqrt[k]{\abs{a_k}} = 
-\limsup_{k\to\infty} \sqrt[k]{\abs{a_k}} .
-$$
-So $\sum_{k=1}^\infty ka_k x^{k-1}$ has the same radius of convergence
-as the series for $f$.
-
-For any positive $r < R$, we have that both series converge uniformly
-in $[-r,r]$ by a theorem above.  Now for any partial sum
-$$
-\frac{d}{dx} \left( \sum_{k=0}^n a_k x^k \right)
+\sum_{n=0}^\infty (n+1)c_{n+1} {x}^{n} 
+\end{equation*}
+with the same radius of convergence.
+We only proved this theorem when $c_n$ were real, however writing
+$c_n = a_n + i b_n$ we only need to apply the theorem to the real and
+imaginary part as
+\begin{equation*}
+\sum_{n=0}^\infty c_n x^n
 =
-\sum_{k=1}^n k a_k x^{k-1}
-$$
-So by Theorem 7.17 $f'(x)$ is equal to the limit of the differentiated series
-as advertised on $[-r,r]$.  As this was true for any $r < R$, we have it on
-$(-R,R)$.
-\end{proof}
+\sum_{n=0}^\infty a_n x^n
++
+i
+\sum_{n=0}^\infty b_n x^n .
+\end{equation*}
 
-In fact, if one derivative then by iterating the theorem we obtain that an
-analytic function is infinitely differentiable.
-
-\medskip
-
-\textbf{Corollary:}
-Let
-$$
-f(x) = \sum_{k=0}^\infty a_k x^k
-$$
-be a power series converging in $(-R,R)$ for some $R > 0$.  Then $f$ is
-infinitely differentiable on $(-R,R)$ and
-$$
-f^{(n)}(x) =
-\sum_{k=n}^\infty k(k-1)\cdots(k-n+1)a_k x^{k-n}
+By iterating this theorem we find that an
+analytic function is infinitely differentiable:
+\begin{equation*}
+f^{(\ell)}(x) =
+\sum_{n=\ell}^\infty n(n-1)\cdots(n-\ell+1)c_k {(x-a)}^{n-\ell}
 =
-\sum_{k=0}^\infty (k+n)(k+n-1)\cdots (k+1) a_{k+n} x^{k} .
-$$
+\sum_{n=0}^\infty (n+\ell)(n+\ell-1)\cdots (n+1) c_{n+\ell} {(x-a)}^{n} .
+\end{equation*}
 In particular,
-$$
-f^{(n)}(0) = n! a_n .
-$$
-
-\medskip
-
-Note that the coefficients are determined by the derivatives of the
-function.  This in particular means that once we have a function defined in
-a neighborhood, the coefficients are unique.  Also, if we have two power
-series convergent in $(-R,R)$ such that for all $x \in (-R,R)$ we have
-$$
-\sum_{k=0}^\infty a_k x^k
+\begin{equation*}
+f^{(\ell)}(a) = \ell! \, c_\ell .
+\end{equation*}
+So the coefficients are determined by the derivatives of the
+function.  In particular, once we have a function defined in
+a neighborhood, the coefficients are unique:  If we have two power
+series convergent in $(-\rho,\rho)$ such that for all $x \in (-\rho,\rho)$
+\begin{equation*}
+\sum_{n=0}^\infty c_n x^n
 =
-\sum_{k=0}^\infty b_k x^k
-$$
-then $a_k = b_k$ for all $k$.
-
-\medskip
+\sum_{n=0}^\infty c'_n x^n
+\end{equation*}
+then $c_n = c'_n$ for all $n$.
 
 On the other hand, just because we have an infinitely differentiable
-function doesn't mean that the numbers $c_k$ obtained by
+function doesn't mean that the numbers $c_n$ obtained by
 $c_n = \frac{f^{(n)}(0)}{n!}$ give a convergent power series.  In fact,
 there is a theorem, which we will not prove,
 that given an arbitrary sequence $\{ c_n \}$, there exists an
 infinitely differentiable function $f$ such that
 $c_n = \frac{f^{(n)}(0)}{n!}$.  Finally, even if the obtained series
-converges it may not converge to the function we started with.  This
-counterexample will be in the homework.
+converges it may not converge to the function we started with.
 
-\medskip
-
-(We will skip Theorem 8.2)
+FIXME: This counterexample should be an exercise
 
 \medskip
 
 We will need a theorem on swapping limits of series.  This is sometimes
 called Fubini's theorem for sums.
 
-\medskip
-
-\textbf{Theorem 8.3:}  Let $\{ a_{ij} \}_{i=1,j=1}^\infty$ be a double
+\begin{thm}[Fubini for sums]
+%\textbf{Theorem 8.3:}
+Let $\{ a_{ij} \}_{i=1,j=1}^\infty$ be a double
 sequence of complex numbers and suppose that for every $i$ the series
-$$
-\sum_{j=1}^\infty \abs{a_{ij}}
-$$
-converges and furthermore that
-$$
+\begin{equation*}
+\sum_{j=1}^\infty \abs{a_{ij}} \qquad \text{converges}
+\end{equation*}
+and furthermore that
+\begin{equation*}
 \sum_{i=1}^\infty \left( \sum_{j=1}^\infty \abs{a_{ij}} \right)
-$$
-converges as well.  Then
-$$
+\qquad \text{converges}.
+\end{equation*}
+Then
+\begin{equation*}
 \sum_{i=1}^\infty \left( \sum_{j=1}^\infty a_{ij} \right)
 =
 \sum_{j=1}^\infty \left( \sum_{i=1}^\infty a_{ij} \right) ,
-$$
+\end{equation*}
 where all the series involved converge.
-
-\medskip
-
-Rudin has a very slick proof of this.
+\end{thm}
 
 \begin{proof}
 Let $E$ be the set $\{ \nicefrac{1}{n} : n \in \N \} \cup \{ 0 \}$,
@@ -3059,7 +2865,7 @@ So
 &= 
 \lim_{n\to\infty}\sum_{j=1}^n \sum_{i=1}^\infty a_{ij}
 = 
-\sum_{j=1}^\infty \left( \sum_{i=1}^\infty a_{ij} \right) .
+\sum_{j=1}^\infty \left( \sum_{i=1}^\infty a_{ij} \right) . \qedhere
 \end{split}
 \end{equation*}
 \end{proof}
@@ -3067,9 +2873,8 @@ So
 Now we can prove that once we have a series converging to a function
 in some interval, we can expand the function around any point.
 
-\medskip
-
-\textbf{Theorem 8.4:} (Taylor's theorem for real-analytic functions)
+\begin{thm}[Taylor's theorem for real-analytic functions]
+%\textbf{Theorem 8.4:} (Taylor's theorem for real-analytic functions)
 Let
 $$
 f(x) = \sum_{k=0}^\infty a_k x^k
@@ -3081,8 +2886,7 @@ $$
 f(x) =
 \sum_{k=0}^\infty \frac{f^{(k)}(a)}{k!} {(x-a)}^{k} .
 $$
-
-\medskip
+\end{thm}
 
 The power series at $a$ could of course converge in a larger interval, but
 the one above is guaranteed.  It is the largest symmetric interval about
@@ -3133,20 +2937,15 @@ And we are done.  The formula in terms of derivatives at $a$ follows by the
 corollary of Theorem 8.1.
 \end{proof}
 
-\medskip
-
 Note that if a series converges for $x \in (-R,R)$ it also converges
 for all complex numbers in $B(0,R)$.
 We have the following corollary.
 
-\medskip
-
-\textbf{Corollary:}
+\begin{cor}
 If $\sum c_k {(z-a)}^k$ converges to $f(z)$ in $B(a,R)$ and $b \in B(a,R)$,
 then there exists a power series
 $\sum d_k {(z-b)}^k$ that converges to $f(z)$ in $B(b,R-\abs{b-a})$.
-
-\medskip
+\end{cor}
 
 \begin{proof}
 WLOG assume that $a=0$.  We can also rotate to assume that $b$ is real, but
@@ -3185,8 +2984,6 @@ $\bigl\lvert \alpha z-\abs{b}\bigr\rvert < R-\abs{b}$
 or $\abs{z - b} < R-\abs{b}$, which is the conclusion of the theorem.
 \end{proof}
 
-\medskip
-
 Let us define rigorously what an analytic function is.
 Let $U \subset \C$ be an open set.  A function $f \colon U \to \C$
 is said to be \emph{analytic} if near every point $a \in U$, $f$ has a
@@ -3202,7 +2999,7 @@ Similarly if we have an interval $(a,b)$, we will say that $f \colon (a,b)
 (a,b)$ there is a power series around $c$ that converges in some $(c-R,c+R)$
 for some $R > 0$.
 
-We have proved above that a convergent power series is an
+We proved above that a convergent power series is an
 analytic function where it converges.  We have also shown before that
 $\frac{1}{1-z}$ is analytic outside of $z=1$.
 
@@ -3216,14 +3013,12 @@ happens to be real analytic.  It is pretty easy to show this (exercise).  A powe
 series around the origin converging to $f$ can have a radius of convergence at most $1$,
 actually it does happen to be exactly 1.  Can you see why? (exercise).
 
-\medskip
-
-\textbf{Lemma (part of 8.5):}
+\begin{lemma}
+%\textbf{Lemma (part of 8.5):}
 Suppose that $f(z) = \sum a_k z^k$ is a convergent power series and
 $\{ z_n \}$ is a sequence of nonzero complex numbers converging to 0,
 such that $f(z_n) = 0$ for all $n$.  Then $a_k = 0$ for every $k$.
-
-\medskip
+\end{lemma}
 
 \begin{proof}
 By continuity we know $f(0) = 0$ so $a_0 = 0$.
@@ -3242,19 +3037,17 @@ $f(z) = 0$ is when $z=0$, but this contradicts the assumption
 that $f(z_n) = 0$ for all $n$.
 \end{proof}
 
-\medskip
-
-In a metric space $X$, a \emph{cluster point}
+Recall that in a metric space $X$, a \emph{cluster point}
 (or sometimes \emph{limit point}) of a set
 $E$ is a point $p \in X$ such that
-$B(p,\epsilon) \setminus \{ p \}$ contains points of $E$ for all $\epsilon >
-0$.
+$B(p,\epsilon) \setminus \{ p \}$ contains points of $E$
+for all $\epsilon > 0$.
 
 \begin{thm}[Identity theorem]
 %\textbf{Theorem (better than 8.5):} (Identity theorem)
 Let $U \subset \C$ be an open connected set.  If $f \colon U \to \C$
 and $g \colon U \to \C$ are analytic functions that are
-equal on a set $E \subset U$, and $E$ has a cluster point (a limit point)
+equal on a set $E \subset U$, and $E$ has a cluster point
 in $U$, then $f(z) = g(z)$ for all $z \in U$.
 \end{thm}
 
@@ -3292,10 +3085,16 @@ theorem for connected open subsets of $\R$, which are just open intervals.
 %a set that has a cluster point in $(a,b)$, then the two power series are
 %the same.
 
+\subsection{Exercises}
+
+\begin{exercise}
+FIXME
+\end{exercise}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{The exponential and trigonometric functions}
+\section{The complex exponential and the trigonometric functions}
 \label{sec:FIXME}
 
 \sectionnotes{FIXME4 lectures}
@@ -3304,37 +3103,24 @@ theorem for connected open subsets of $\R$, which are just open intervals.
 
 Define
 \begin{equation*}
-E(z) = \sum_{k=0}^\infty \frac{1}{k!} z^k .
+E(z) := \sum_{n=0}^\infty \frac{1}{n!} z^n .
 \end{equation*}
-This will turn out to be the exponential, but let us call it something else
-for now.
-We have shown that this series converges everywhere.
-We notice that $E(0) = 1$.
-
-By direct calculation we notice that if we restrict to real $x$ we get
+This series converges for all $z \in \C$.   We notice that $E(0) = 1$,
+and that for $z=x \in \R$, $E(x) \in \R$.  Keeping $x$ real, we find
 \begin{equation*}
-\frac{d}{dx} \bigl( E(x) \bigr) = E(x) .
+\frac{d}{dx} \bigl( E(x) \bigr) = E(x)
 \end{equation*}
-In chapter FIXME we have shown that for real $x$
-a function satisfying this differential
-equation with $E(0) = 1$ is the exponential.
+by direct calculation.
+In \volIref{section 5.4 of volume I (or by Picard's theorem)}, we proved that
+the unique function satisfying $E' = E$ and
+$E(0) = 1$ is the exponential.  In other words for $x \in \R$, $e^x = E(x)$.
 
 For complex numbers $z$ we define
 \begin{equation*}
 e^z := E(z) = 
 \sum_{k=0}^\infty \frac{1}{k!} z^k .
 \end{equation*}
-On the real line the two definitions agree.
-
-We have previously cheated a little bit when we wrote
-\begin{equation*}
-e^{x+iy} = e^x \bigl( \cos(y) + i \sin(y) \bigr) .
-\end{equation*}
-In fact, at that point we did not have any definition for sine and cosine.
-What we will do is to define sine and cosine precisely so that this equality
-holds.
-
-Let us start with extending the power rule for exponentials.
+And on the real line the two definitions agree.
 
 \begin{prop}
 Let $z,w \in \C$ be complex numbers.  Then
@@ -3653,17 +3439,20 @@ for all $z,w \in \C$.
 %
 %\medskip
 
-\subsection{Trigonometric functions}
+\subsection{Trigonometric functions and $\pi$}
 
-%\medskip
-
-We define the trigonometric functions:
+We can now finally define \emph{\myindex{sine}} and \emph{\myindex{cosine}}
+by the equation
+\begin{equation*}
+e^{x+iy} = e^x \bigl( \cos(y) + i \sin(y) \bigr) .
+\end{equation*}
+In fact, we define sine and cosine for all complex $z$:
 \begin{equation*}
 \cos(z) := \frac{e^{iz} + e^{-iz}}{2}
 \qquad\text{and}\qquad
 \sin(z) := \frac{e^{iz} - e^{-iz}}{2i} .
 \end{equation*}
-Immediately we obtain
+Immediately we obtain the so called \emph{\myindex{Euler's formula}}:
 \begin{equation*}
 e^{iz} = \cos(z) + i\sin(z) .
 \end{equation*}
@@ -3686,16 +3475,16 @@ $\sin(z) = -\sin(-z)$ for all $z \in \C$.
 
 We will prove that this definition has the geometric properties we usually
 associate with sin and cos.  Let $x$ be real and compute
-$$
-1 =  e^{ix} e^{-ix} = \abs{e^{ix}}^2 = {\bigl( \cos(x) \bigr)}^2 + {\bigl( \sin(x) \bigr)}^2 .
-$$
+\begin{equation*}
+1 =  e^{ix} e^{-ix} = \sabs{e^{ix}}^2 = {\bigl( \cos(x) \bigr)}^2 + {\bigl( \sin(x) \bigr)}^2 .
+\end{equation*}
 We see that $e^{ix}$ is unimodular, the values lie on the unit circle.  By
 noting that a square is always positive we notice that
 $$
 {\bigl(\sin(x)\bigr)}^2 = 1-{\bigl(\cos(x)\bigr)}^2 \leq 1
 $$
-so $\abs{\sin(x)} \leq 1$ and similarly we show
-$\abs{\cos(x)} \leq 1$.  A fact we have often used in examples.
+so $\sabs{\sin(x)} \leq 1$ and similarly we show
+$\sabs{\cos(x)} \leq 1$.  A fact we have often used in examples.
 
 From the definition we get that $\cos(0) = 1$ and $\sin(0) = 0$.  By direct
 computation (left to reader) from the definition we also obtain:
@@ -3744,8 +3533,6 @@ So $f$ is nondecreasing and
 furthermore $f(0) = 0$.  So $f$ must be nonnegative when $x \geq 0$, which is
 precisely what we wanted to prove.
 
-\medskip
-
 We claim that there exists a positive $x$ such that $\cos(x) = 0$.
 As $\cos(0) = 1 > 0$, then cosine is definitely positive at least
 for some $x$ near 0.
@@ -3753,38 +3540,40 @@ Suppose that on $[0,y)$ we have $\cos(x) > 0$, then $\sin(x)$ is strictly
 increasing on $[0,y)$ and as $\sin(0) = 0$, then
 $\sin(x) > 0$ for $x \in (0,y)$.  Take $a \in (0,y)$.  Then
 for some $c \in (a,y)$
-$$
-2 \geq \cos(a)-\cos(y) = \sin(c)(y-a) \geq \sin(a)(y-a)
-$$
+\begin{equation*}
+2 \geq \cos(a)-\cos(y) = \sin(c)(y-a) \geq \sin(a)(y-a) .
+\end{equation*}
 As $a > 0$, then $\sin(a) > 0$ and so
 $$
 y \leq \frac{2}{\sin(a)} + a
 $$
 Hence there is some largest $y$ such that $\cos(x) > 0$ in $[0,y)$.  By
 continuity, for that $y$,
-$\cos(y) = 0$.  In fact, $y$ is the
+$\cos(y) = 0$.
+In fact, $y$ is the
 smallest positive $y$ such that $\cos(y) = 0$.  We can now define
-$$
-\pi = 2y .
-$$
+\begin{equation*}
+\pi := 2y .
+\end{equation*}
+
 And we obtain that $\cos(\pi/2) = 0$ and so $\bigl(\sin(\pi/2)\bigr)^2 = 1$.
 As $\sin$ was positive on $(0,y)$ we have
 $\sin(\pi/2) = 1$.
 
 Hence
 $$
-\exp(i \pi /2) = i
+e^{i \pi /2} = i
 $$
 and by the addition formula we get
 $$
-\exp(i \pi) = -1
+e^{i \pi} = -1
 \qquad 
-\exp(i 2\pi) = 1
+e^{i 2\pi} = 1
 $$
-So $\exp(i2\pi) = 1 = \exp(0)$.  The addition formula now says
+So $e^{i2\pi} = 1 = e^0$.  The addition formula now says
 that
 $$
-\exp(z+i2\pi) = \exp(z)
+e^{z+i2\pi} = e^z
 $$
 for all $z \in \C$.  Therefore, we also obtain that
 $$
@@ -3794,17 +3583,17 @@ $$
 $$
 So $\sin$ and $\cos$ are $2\pi$-periodic.
 We claim that $\sin$ and $\cos$ are not periodic with a smaller period.  It
-would be enough to show that if $\exp(ix) = 1$ for the
+would be enough to show that if $e^{ix} = 1$ for the
 smallest positive $x$, then
 $x = 2\pi$.
 Well let $x$ be the smallest positive $x$ such that
-$\exp(ix) = 1$.
+$e^{ix} = 1$.
 Of course, $x \leq 2\pi$.
 Then by the addition formula
 \begin{equation*}
-{\bigl(\exp(ix/4)\bigr)}^4 = 1  .
+{\bigl(e^{ix/4}\bigr)}^4 = 1  .
 \end{equation*}
-If $\exp(ix/4) = a+ib$, then
+If $e^{ix/4} = a+ib$, then
 \begin{equation*}
 {(a+ib)}^4
 =a^4-6a^2b^2+b^4 + i\bigl(4ab(a^2-b^2)\bigr)
@@ -3816,14 +3605,14 @@ $x/4 = \pi/2$ or $a^2 = b^2$.  But if $a^2=b^2$, then
 $a^4-6a^2b^2+b^4 = -4a^4 < 0$ and in particular not equal to 1.
 Therefore $a=0$ in which case $x/4 = \pi/2$.
 
-Therefore $2\pi$ is the smallest period we could choose for $\exp(ix)$
+Therefore $2\pi$ is the smallest period we could choose for $e^{ix}$
 and hence $\cos$ and $\sin$.
 
-Finally we also wish to show that $\exp(ix)$ is 1-to-1 and onto
+Finally we also wish to show that $e^{ix}$ is 1-to-1 and onto
 from the set $[0,2\pi)$ to the set of $z \in \C$ such that
-$\abs{z} = 1$.  First suppose that $\exp(ix) = \exp(iy)$ and assume that
+$\abs{z} = 1$.  First suppose that $e^{ix} = e^{iy}$ and assume that
 $x > y$ then
-$\exp\bigl(i(x-y)\bigr) = 1$, which means that $x-y$ is a multiple of $2\pi$ and hence
+$e^{i(x-y)} = 1$, which means that $x-y$ is a multiple of $2\pi$ and hence
 only one of them can live in $[0,2\pi)$.
 To show onto, pick $(a,b) \in \R^2$ such that $a^2+b^2 = 1$.
 If $a,b \geq 0$, then there must exist an $x \in [0,\pi/2]$ such that
@@ -3834,36 +3623,44 @@ and $\cos(-x) = \cos(x)$ then $\sin(x) < 0$ for $x \in [-\pi/2,0)$.
 Then using the same reasoning we obtain that if
 if $a > 0$ and $b \leq 0$, we can find an $x \in [-\pi/2,0)$,
 or in other words in $[3\pi/2,2\pi)$
-As multiplying by $-1$ is the same as multiplying by $\exp(i\pi)$ or
-$\exp(-i\pi)$
+As multiplying by $-1$ is the same as multiplying by $e^{i\pi}$ or
+$e^{-i\pi}$
 we can always assume that $a \geq 0$ (details left to student).
 
-While we haven't looked at arclength, let us just state without
-further discussion that
-the arclength of a curve parametrized by $\gamma \colon [a,b] \to \C$ is given
+The arclength of a curve parametrized by $\gamma \colon [a,b] \to \C$ is given
 by
-$$
-\int_a^b \abs{\gamma'(t)} \, dt .
-$$
-We have that $\exp(it)$ parametrizes the circle for $t$ in $[0,2\pi)$.
-As $\frac{d}{dt} ( \exp(it) ) = i\exp(it)$ and so the circumference of the
+\begin{equation*}
+\int_a^b \sabs{\gamma'(t)} ~ dt .
+\end{equation*}
+We have that $e^{it}$ parametrizes the circle for $t$ in $[0,2\pi)$.
+$\frac{d}{dt} \bigl( e^{it} \bigr) = ie^{it}$ and so the circumference of the
 circle is
-$$
-\int_0^{2\pi} \abs{i \exp(it)} \, dt
+\begin{equation*}
+\int_0^{2\pi} \sabs{i e^{it}} \, dt
 =
 \int_0^{2\pi} 1 \, dt  = 2\pi .
-$$
+\end{equation*}
 
-More generally we notice that $\exp(it)$ parametrizes the circle by arclength.
+More generally we notice that $e^{it}$ parametrizes the circle by arclength.
 That is, $t$ measures the arclength, and hence a circle of radius 1 by
 the angle in radians.  Hence the definitions of $\sin$ and $\cos$ we have
 used above agree with the standard geometric definitions.
+
+\subsection{Exercises}
+
+\begin{exercise}
+Derive the power series for $\sin(z)$ and $\cos(z)$ at the origin.
+\end{exercise}
+
+FIXME
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
 \section{Fundamental theorem of algebra}
 \label{sec:FIXME}
+
+\sectionnotes{FIXME lectures}
 
 Let us prove the fundamental theorem of algebra, that is the algebraic
 completeness of the complex field, any polynomial has a root.  We will first
@@ -4007,8 +3804,6 @@ Let $p(z)$ be complex polynomial, then there exists a $z_0 \in \C$
 such that $p(z_0) = 0$.
 \end{thm}
 
-%\medskip
-
 \begin{proof}
 Let $\mu = \inf \abs{p(z)}$.  Find an $R$ such that
 for all $z$ with $\abs{z} \geq R$ we have $\abs{p(z)} \geq \mu+1$.
@@ -4020,10 +3815,14 @@ be $\mu$.  So there is a $z_0 \in C(0,R)$ such that $\abs{p(z_0)} = \mu$.
 As that is a minimum of $\abs{p(z)}$ on $\C$, then by a lemma above we have that $\abs{p(z_0)} = 0$.
 \end{proof}
 
-%\medskip
-
 The theorem doesn't generalize to analytic functions either.  For example
-$\exp(z)$ is an analytic function on $\C$ with no zeros.
+$e^{z}$ is an analytic function on $\C$ with no zeros.
+
+\section{Exercises}
+
+\begin{exercise}
+FIXME
+\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -4031,16 +3830,16 @@ $\exp(z)$ is an analytic function on $\C$ with no zeros.
 \section{Fourier series}
 \label{sec:FIXME}
 
-Now that we have trigonometric functions, let us cover Fourier series
-in more detail.  We have seen Fourier series in examples, but let us start
-at the beginning. 
+\sectionnotes{FIXME lectures}
 
-\medskip
+Fourier series is perhaps the most important of the series that we cover in
+this book.  We have seen a few in examples before, but let us start
+at the beginning.
 
-A \emph{trigonometric polynomial} is an expression of the form
-$$
+A \emph{\myindex{trigonometric polynomial}} is an expression of the form
+\begin{equation*}
 a_0 + \sum_{n=1}^N \bigl(a_n \cos(nx) + b_n \sin(nx) \bigr),
-$$
+\end{equation*}
 or equivalently, thanks to Euler's formula:
 $$
 \sum_{n=-N}^N c_n e^{inx} .
@@ -4094,13 +3893,12 @@ We therefore have a way of computing the coefficients $c_m$ by an integral
 of $f$.  Of course if $\abs{m} > N$ the integral is just 0.  We might as
 well have included enough zero coefficients to make $\abs{m} \leq N$.
 
-\medskip
-
-\textbf{Proposition:}
-Trigonometric polynomial $f(x)$ is real-valued for real $x$ if
+\begin{prop}
+A trigonometric polynomial
+$f(x) = \sum_{n=-N}^N c_n e^{inx}$
+is real-valued for real $x$ if
 and only if $c_{-m} = \overline{c_m}$ for all $m=-N,\ldots,N$.
-
-\medskip
+\end{prop}
 
 \begin{proof}
 If $f(x)$ is real-valued, that is $\overline{f(x)} = f(x)$, then
@@ -4134,37 +3932,28 @@ We also have that $c_0 = \overline{c_0}$.
 So by pairing up the terms we obtain that $f$ has to be real-valued.
 \end{proof}
 
-\medskip
-
 In fact, the above could also follow from the linear independence of the
 functions $e^{inx}$, which we can now prove.
 
-\medskip
-
-\textbf{Proposition:}
+\begin{prop}
 If
-$$
+\begin{equation*}
 \sum_{n=-N}^N c_n e^{inx} = 0
-$$
-for all $x$, then $c_n = 0$ for all $n$.
-
-\medskip
+\end{equation*}
+for all $x \in \R$, then $c_n = 0$ for all $n$.
+\end{prop}
 
 \begin{proof}
 Proof follows immediately from the integral formula for $c_n$.
 \end{proof}
 
-\medskip
-
 We now take limits.  We call the series
-$$
+\begin{equation*}
 \sum_{n=-\infty}^\infty c_n e^{inx}
-$$
-the \emph{Fourier series}.  The numbers $c_n$
-we call \emph{Fourier coefficients}.  We could also develop everything with
+\end{equation*}
+the \emph{\myindex{Fourier series}}.  The numbers $c_n$
+we call \emph{\myindex{Fourier coefficients}}.  We could also develop everything with
 sines and cosines, but it is equivalent and slightly more messy.
-
-\medskip
 
 Several questions arise.  What functions are expressible as 
 Fourier series?  Obviously, they have to be $2\pi$-periodic, but not every
@@ -4208,17 +3997,66 @@ for the coefficients.
 %We will be interested in the convergence of the sequence $\{ s_N(f,x)
 %\}_{N=1}^\infty$.
 
-\medskip
+We have seen that the example Fourier series 
+\begin{equation*}
+\sum_{n=1}^\infty \frac{\sin(nx)}{n^2}
+\end{equation*}
+converges uniformly and hence is continuous.  This 
+example can be extended to a more general criterion.
 
-We have seen in examples that if
-$$
+\begin{prop}
+Let $\sum_{n=-\infty}^\infty c_n e^{inx}$ be a Fourier series,
+and there exist constants $C$ and $\alpha > 1$ such that
+\begin{equation*}
+\abs{c_n} \leq \frac{C}{\abs{n}^\alpha}
+\qquad \text{for all $n \in \Z \setminus \{ 0 \}$}.
+\end{equation*}
+Then the series converges (absolutely and uniformly) to a continuous function on $\R$.
+\end{prop}
+
+The proof is to apply the Weierstrass $M$-test (\thmref{thm:weiermtest}) and
+the $p$-series test, to find that the series converges uniformly and hence
+to a continuous function.
+We can also take derivatives.
+
+\begin{prop}
+Let $\sum_{n=-\infty}^\infty c_n e^{inx}$ be a Fourier series,
+and there exist constants $C$ and $\alpha > 2$ such that
+\begin{equation*}
+\abs{c_n} \leq \frac{C}{\abs{n}^\alpha}
+\qquad \text{for all $n \in \Z \setminus \{ 0 \}$}.
+\end{equation*}
+Then the series converges to a continuously differentiable function on $\R$.
+\end{prop}
+
+The trick is to first notice that the series converges first to a continuous
+function by the previous proposition, so in particular it converges at some
+point.  Then differentiate the partial sums
+\begin{equation*}
+\sum_{n=-N}^{N}
+i n c_n e^{inx}
+\end{equation*}
+and notice that 
+\begin{equation*}
+\abs{ina_n} \leq \frac{C}{\abs{n}^{\alpha-1}} .
+\end{equation*}
+The differentiated series converge uniformly by the $M$-test again.  Since
+the derivatives converge uniformly, we find that the series converges 
+to a continuously differentiable function.
+
+In fact, by iterating the same reasoning we find that if
+for some $C$ and $\alpha > k$ ($k \in \N$) we have
+\begin{equation*}
 \abs{c_n} 
 \leq \frac{C}{\abs{n}^\alpha}
-$$
-for some $C$ and some $\alpha > 1$, then the Fourier series
-converges absolutely and uniformly to a continuous function.
-If $\alpha > 2$, then we had that the series converged to a differentiable
-function.
+\end{equation*}
+for all nonzero integers $n$.  Then 
+the Fourier series converges to a $k$-times continuously differentiable
+function.  Therefore, the faster the coefficients go to zero, the more
+regular the limit is.
+
+\medskip
+
 %  Furthermore
 %it does not matter how we take the limits since the convergence is absolute.
 %FIXME: we should make this precise somewhere earlier I think
@@ -4233,32 +4071,29 @@ function.
 Let us now investigate convergence of Fourier series from the other side.
 Given properties of $f$, what can we say about the series.
 
-\medskip
-
-Let us first prove some general results about so called \emph{orthonormal}
-systems.  Let us fix an interval $[a,b]$.  We will define an \emph{inner
-product} for the space of functions.  We will restrict our attention
-to Riemann integrable functions since we do not yet have the Lebesgue
+Let us first prove some general results about so called
+\emph{orthonormal systems}.
+Let us fix an interval $[a,b]$.  We define an
+\emph{\myindex{inner product}} for the space of functions.  We restrict our attention
+to Riemann integrable functions since we do not have the Lebesgue
 integral, which
 would be the natural choice.  Let $f$ and $g$ be complex-valued 
-Riemann integrable functions on $[a,b]$ and define
-$$
-\langle f , g \rangle =
+Riemann integrable functions on $[a,b]$ and define the inner product
+\begin{equation*}
+\langle f , g \rangle :=
 \int_a^b f(x) \overline{g(x)} \, dx
-$$
-For those that have seen Hermitian inner products in linear algebra, this
+\end{equation*}
+If you have seen Hermitian inner products in linear algebra, this
 is precisely such a product.  We have to put in the conjugate as we are
 working with complex numbers.  We then have the ``size'', that is the
 $L^2$ norm $\snorm{f}_2$ by (defining the square)
-$$
-\snorm{f}_2^2 =
+\begin{equation*}
+\snorm{f}_2^2 :=
 \langle f , f \rangle =
 \int_a^b \abs{f(x)}^2 \, dx .
-$$
+\end{equation*}
 
-\medskip
-
-\textbf{Remark:}
+\begin{remark}
 Notice the similarity to finite dimensions.  For $z = (z_1,z_2,\ldots,z_n) \in 
 \C^n$ we define 
 $$
@@ -4273,17 +4108,15 @@ $$
 \sum_{k=1}^n \abs{z_k}^2
 $$
 This is just the euclidean distance to the origin in $\C^n$.
-
-\medskip
+\end{remark}
 
 Let us get back to function spaces.  We will assume all functions are
 Riemann integrable in the following.
 
-\medskip
-
-\textbf{Definition:}
+\begin{defn}
 Let $\{ \varphi_n \}$ be a sequence of complex-valued
-functions on $[a,b]$.  We will say that this is an \emph{orthonormal system} if
+functions on $[a,b]$.  We will say that this is an
+\emph{\myindex{orthonormal system}} if
 $$
 \langle \varphi_n , \varphi_m \rangle
 =
@@ -4298,16 +4131,13 @@ Notice that the above says that $\snorm{\varphi_n}_2 = 1$ for all $n$.  If we
 only require that 
 $\langle \varphi_n , \varphi_m \rangle = 0$ for $m\not= n$ then
 the system would be just an \emph{orthogonal system}.
-
-\medskip
+\end{defn}
 
 We have noticed above that for example
 $$
 \left\{ \frac{1}{\sqrt{2\pi}} \, e^{inx} \right\}
 $$
 is an orthonormal system.  The factor out in front is to make the norm be 1.
-
-\medskip
 
 Having an orthonormal system $\{ \varphi_n \}$ on $[a,b]$ and an integrable function $f$
 on $[a,b]$, we can write
@@ -4331,9 +4161,9 @@ Notice the similarity to the expression for the orthogonal
 projection of a vector onto a subspace from linear algebra.  We are
 in fact doing just that, but in a space of functions.
 
-\medskip
-
-\textbf{Theorem 8.11:}
+\begin{thm}
+%\textbf{Theorem 8.11:}
+(FIXME: we need $f$ Riemann integrable)
 Let $\{ \varphi_n \}$ be an orthonormal system on $[a,b]$ and
 suppose
 $$
@@ -4351,8 +4181,7 @@ $$
 \snorm{f-t_n}_2^2 = \int_a^b \abs{f(x)-t_n(x)}^2 \, dx .
 $$
 with equality only if $d_k = c_k$ for all $k=1,\ldots,n$.
-
-\medskip
+\end{thm}
 
 In other words the partial sums of the Fourier series are the best approximation with respect to the
 $L^2$ norm.
@@ -4441,24 +4270,26 @@ $$
 \sum_{k=1}^n \abs{c_k}^2 = \snorm{s_n}_2^2
 $$
 by the above calculation.
-We can take a limit to obtain
+We can take a limit to obtain the so called
+\emph{\myindex{Bessel's inequality}}.
 
-\medskip
-
-\textbf{Theorem 8.12:} (Bessel's inequality)
-$$
+\begin{thm}[Bessel's inequality]
+FIXME: setup
+%\textbf{Theorem 8.12:} (Bessel's inequality)
+\begin{equation*}
 \sum_{k=1}^\infty \abs{c_k}^2
 \leq
 \int_a^b \abs{f}^2
-= \snorm{f}_2^2
-$$
+= \snorm{f}_2^2 .
+\end{equation*}
+\end{thm}
 
-\medskip
+In particular (given a Riemann integrable function satisfies
+$\int_a^b \abs{f}^2 < \infty$), we get that
+\begin{equation*}
+\lim_{k \to \infty} c_k = 0 .
+\end{equation*}
 
-In particular (as for a Riemann integrable function
-$\int_a^b \abs{f}^2 < \infty$), we get that $\lim c_k = 0$.
-
-\medskip
 
 Let us return to the trigonometric Fourier series.  Here we note that the
 system $\{ e^{inx} \}$ is orthogonal, but not orthonormal if we simply
@@ -4609,9 +4440,8 @@ we have not really defined the delta function, no a Fourier series of
 whatever kind object it is.
 
 
-\medskip
-
-\textbf{Theorem 8.14:}
+\begin{thm}
+%\textbf{Theorem 8.14:}
 Let $x$ be fixed and let $f$ be Riemann integrable on $[-\pi,\pi]$.  Suppose that there exist $\delta > 0$ and $M$ such that
 $$
 \abs{f(x+t)-f(x)} \leq M \abs{t}
@@ -4620,8 +4450,7 @@ for all $t \in (-\delta,\delta)$, then
 $$
 \lim_{N \to \infty} s_N(f;x) = f(x) .
 $$
-
-\medskip
+\end{thm}
 
 In other words, if for example $f$ is differentiable at $x$
 then we obtain convergence.  Generally what the result implies is
@@ -4632,8 +4461,6 @@ is continuous and periodic so $f(-\pi) = f(\pi)$ and furthermore
 that there are points $x_0 = -\pi < x_1 < \cdots < x_k = \pi$
 such that $f$ restricted to $[x_j,x_{j+1}]$
 is continuously differentiable (up to the endpoints) for all $j$.
-
-\medskip
 
 \begin{proof}
 We notice that for all $N$ we get
@@ -4708,17 +4535,12 @@ with respect to the same inner product.
 Hence $s_N(f;x)-f(x)$ goes to 0 and so $s_N(f;x)$ goes to $f(x)$.
 \end{proof}
 
-\medskip
-
 In particular this has the following corollary:
 
-\medskip
-
-\textbf{Corollary:}
+\begin{cor}
 If $f(x) = 0$ on an entire open interval $J$, then $\lim s_N(f;x) = 0$
 for all $x \in J$.
-
-\medskip
+\end{cor}
 
 In other words, if two functions $f$ and $g$
 are equal on an open interval $J$, then the
@@ -4726,31 +4548,24 @@ points on $J$ where $\{ s_N(f;x) \}$ and $\{ s_N(g;x) \}$ converge are the same.
 convergence at $x$ is only dependent on the values of the function
 near $x$.
 
-\medskip
-
-We have seen Theorem 8.15 as an example for Stone-Weierstrass theorem.
+We have seen FIXME:Theorem 8.15 as an example for Stone--Weierstrass theorem.
 That is, any continuous function on $[-\pi,\pi]$ can be uniformly approximated
 by trigonometric polynomials.  However, these trigonometric polynomials need
 not be the partial sums $s_N$.  On the other hand, (exercise 15) they can be
 explicitly constructed from $s_N$.
-
-\medskip
 
 We have that the convergence always happens in the $L^2$ sense and
 furthermore that formal operations on the (infinite) vectors of
 Fourier coefficients is the same as the operations using the integral
 inner product.
 
-\medskip
-
-We will mostly sketch out the proof and leave some details to the reader
+FIXME? We will mostly sketch out the proof and leave some details to the reader
 as exercises.  Some of these are exercises in Rudin.
 
 %FIXME: Should we prove $L^2$ triang and CS?  This is just formal nonsense
 
-\medskip
-
-\textbf{Theorem 8.16:} (Parseval)
+\begin{thm}[Parseval]
+%\textbf{Theorem 8.16:} (Parseval)
 Let $f$ and $g$ be Riemann integrable $2\pi$-periodic functions
 with
 $$
@@ -4788,10 +4603,7 @@ $$
 =
 \sum_{n=-\infty}^\infty \abs{c_n}^2.
 $$
-
-\medskip
-
-We will skip the proof in lecture.
+\end{thm}
 
 \begin{proof}
 It is not hard too prove (Exercise 12 in chapter 6) that there is
@@ -4883,6 +4695,12 @@ $$
 $$
 Now the right hand side goes to 0 as $N$ goes to infinity.
 \end{proof}
+
+\subsection{Exercises}
+
+\begin{exercise}
+FIXME
+\end{exercise}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -7523,7 +7341,90 @@ $$
 \lim_{n\to \infty} \int_{-\infty}^\infty \frac{f_n(x)}{1+x^2} \, dx = 0.
 $$
 
+\chapter{To move to Fourier...}
 
+
+\chapter{Rejects...}
+
+Do we really need Dini?  We don't use it I don't think, and it's actually an
+exercise earlier.  Perhaps we can mention it with a reference..
+
+Let us see that we can have extra conditions when a converse of FIXME:7.12 works.
+
+\begin{thm}[Dini's theorem]
+%\textbf{Theorem 7.13:} (Dini's theorem)
+Suppose that $X$ is compact and $f_n \colon X \to \R$ is a sequence of
+continuous functions converging pointwise to a continuous $f \colon X \to
+\R$ and such that
+\begin{equation*}
+f_n(x) \geq f_{n+1}(x).
+\end{equation*}
+Then
+$\{ f_n \}$ converges to $f$ uniformly.
+\end{thm}
+
+\begin{proof}
+Let $g_n = f_n-f$.  The $g_n$ are continuous, go to 0 pointwise, and
+$g_n(x) \geq g_{n+1}(x) \geq 0$.  If we show that $\{ g_n \}$ converges
+uniformly to 0, then $\{ f_n \}$ converges uniformly.
+
+Let $\epsilon > 0$ be given.
+Take the set
+\begin{equation*}
+U_n = \{ x \in X : g_n(x) < \epsilon \} =
+g_n^{-1}\bigl((-\infty,\epsilon)\bigr).
+\end{equation*}
+$U_n$ are open (inverse image of open sets by a continuous function).  Now for every $x \in X$,
+since $\{g_n\}$ converges pointwise to 0, there must be some $n$ such that
+$g_n(x) < \epsilon$ or in other words $x \in U_n$.  Therefore, $\{ U_n \}$
+are an open cover, so there is a finite subcover.
+$$
+X = U_{n_1} \cup U_{n_2} \cup \cdots \cup U_{n_k}
+$$
+for some $n_1 < n_2 < \cdots < n_k$.  As $\{g_n\}$ is decreasing
+we get that $U_n \subset U_{n+1}$ so
+$$
+X = U_{n_1} \cup U_{n_2} \cup \cdots \cup U_{n_k} = U_{n_k} .
+$$
+Write $N = n_k$.  Hence
+$g_N(x) < \epsilon$ for all $x$.  As $\{ g_n(x) \}$ is always
+decreasing we have that for all $n \geq N$ we have for all $x \in X$
+\begin{equation*}
+\abs{g_n(x) - 0}
+=
+g_n(x) \leq g_N(x) < \epsilon .
+\end{equation*}
+So $\{ g_n \}$ goes to 0 uniformly.
+\end{proof}
+
+Compactness is necessary.  For example,
+\begin{equation*}
+f_n(x) = \abs{\frac{x}{n}}
+\end{equation*}
+are all continuous on $\R$, monotonically converge to 0 as above, but
+the convergence is of course not uniform.
+
+If $f_n$'s are not continuous the theorem doesn't hold either.  For example,
+if $f_n \colon [0,1] \to \R$
+\begin{equation*}
+f_n(x) = \begin{cases}
+x^2 & \text{ if $x < 1$}\\
+0 & \text{ else}
+\end{cases}
+\end{equation*}
+then $\{f_n\}$ goes monotonically pointwise to 0, and the domain is compact, but the convergence is not
+uniform (Exercise: see where the proof breaks).
+
+Finally,
+\begin{equation*}
+f_n(x) = \frac{nx}{1+n^2x^2}
+\end{equation*}
+are continuous, they go to zero pointwise (but not monotonically).  If we
+take $X=[0,1]$ then the domain is compact, yet the convergence is not uniform
+since
+\begin{equation*}
+f_n(\nicefrac{1}{n}) = \nicefrac{1}{2} \qquad \text{for all $n$.}
+\end{equation*}
 
 
 \end{document}
