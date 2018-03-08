@@ -2513,7 +2513,7 @@ While $(\R,d)$ is complete, show that $(\R,d')$ is not complete.
 \section{Continuous functions}
 \label{sec:metcont}
 
-\sectionnotes{1 lecture}
+\sectionnotes{1-1.5 lectures}
 
 \subsection{Continuity}
 
@@ -2836,6 +2836,85 @@ easiest to simply show it is Lipschitz even if we are only
 interested in knowing continuity.
 \end{example}
 
+\subsection{Cluster points and limits of functions}
+
+While we haven't started the discussion of continuity with them and we won't
+need them until volume II, let us also
+translate the idea of a limit of a function from the real line to metric
+spaces.
+Again we need to start with cluster points.
+
+\begin{defn}
+Let $(X,d)$ be a metric space and
+$S \subset X$. A point $p \in X$ is called
+a \emph{cluster point}\index{cluster point!in a metric space} of $S$
+if for every $\epsilon > 0$, the set $B(p,\epsilon) \cap S
+\setminus \{ p \}$ is not empty.
+\end{defn}
+
+It is not just that $p$ is in the closure of $S$, but an equivalent
+definition is that $p$ is in the closure of $S \setminus \{ p \}$ (exercise).
+Therefore, $p$ is a cluster point if and only if there exists a sequence in $S \setminus
+\{ p \}$ that converges to $p$.
+
+\begin{defn}
+\index{limit!of a function in a metric space}%
+Let $(X,d_X)$, $(Y,d_Y)$ be a metric space, $S \subset X$, $p$ a cluster point of $S$,
+and $f \colon S \to Y$ a function.
+Suppose there exists an $L \in Y$ and for every $\epsilon > 0$,
+there exists a $\delta > 0$ such that whenever $x \in S \setminus \{ p \}$
+and $d_X(x,p) < \delta$, then
+\begin{equation*}
+d_Y\bigl(f(x),L\bigr) < \epsilon .
+\end{equation*}
+In this case we say $f(x)$
+\emph{converges}\index{converges!function in a metric space} to $L$ as $x$ goes
+to $p$.  We say $L$ is the \emph{limit} of $f(x)$ as $x$
+goes to $p$.  We write
+\glsadd{not:limfunc}
+\begin{equation*}
+\lim_{x \to p} f(x) := L .
+\end{equation*}
+Otherwise we say $f$
+\emph{diverges}\index{diverges!function in a metric space} at $p$.
+\end{defn}
+
+And as usual, we have used the definite article without showing that the
+limit is unique.  The proof is a direct translation of the proof
+from \chapterref{lim:chapter}, so we leave it as an exercise.
+
+\begin{prop} \label{prop:mslimitisunique}
+Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces, $S \subset X$, $p \in X$
+a cluster point of $S$, and let $f \colon S \to Y$ be a function
+such that $f(x)$ converges as $x$ goes to $p$.  Then
+the limit of $f(x)$ as $x$ goes to $p$ is unique.
+\end{prop}
+
+In any metric space, just like in $\R$ continuous limits may be
+replaced by sequential limits.  The proof is again a direct translation
+of the proof from \chapterref{lim:chapter}, and we leave that as an
+exercise.  The upshot is that if we really only need to prove things for
+sequential limits.
+
+\begin{lemma}\label{ms:seqflimit:lemma}
+Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces, $S \subset X$, $p \in X$
+a cluster point of $S$, and let $f \colon S \to Y$ be a function.
+
+Then
+$f(x)$ converges to $L \in Y$ as $x$ goes to $p$ if and only if for every sequence $\{ x_n \}$
+in $S \setminus \{p\}$
+such that $\lim\, x_n = p$,
+the sequence $\{ f(x_n) \}$ converges to $L$.
+\end{lemma}
+
+By applying \propref{prop:contiscont} or the definition directly we find
+(exercise) as in \chapterref{lim:chapter}, that for cluster points $p$ of $S
+\subset X$, the function
+$f \colon S \to Y$ is continuous at $p$ if and only if
+\begin{equation*}
+\lim_{x \to p} f(x) = f(p) .
+\end{equation*}
+
 \subsection{Exercises}
 
 \begin{exercise}
@@ -2991,6 +3070,30 @@ $\sin(n x)$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
+
+\begin{exercise}
+Let $(X,d)$ be a metric space, $S \subset X$, and $p \in X$.  Prove that
+$p$ is a cluster point of $S$ if and only if $p \in \overline{S \setminus \{
+p \}}$.
+\end{exercise}
+
+\begin{exercise}
+Prove \propref{prop:mslimitisunique}.
+\end{exercise}
+
+\begin{exercise}
+Prove \lemmaref{ms:seqflimit:lemma}.
+\end{exercise}
+
+\begin{exercise}
+Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces, $S \subset X$, $p \in X$
+a cluster point of $S$, and let $f \colon S \to Y$ be a function.
+Prove that
+$f \colon S \to Y$ is continuous at $p$ if and only if
+\begin{equation*}
+\lim_{x \to p} f(x) = f(p) .
+\end{equation*}
+\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
