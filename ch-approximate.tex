@@ -26,9 +26,6 @@ The $x$-axis is then called the \emph{\myindex{real axis}} and the $y$-axis is
 called the \emph{\myindex{imaginary axis}}.  The set $\C$ is sometimes called the
 \emph{\myindex{complex plane}}.
 
-%\bnote{DRAW complex plane}
-%\textbf{FIXME: DRAW complex plane}
-
 Define
 \begin{align*}
 & (x,y) + (s,t) := (x+s,y+t) \\
@@ -48,6 +45,12 @@ So we have a solution to the polynomial equation
 z^2+1=0 .
 \end{equation*}
 From now on, we will not use the notation $(x,y)$ and use only $x+iy$.
+See \figureref{fig:complexplane}.
+\begin{myfigureht}
+\includegraphics{figures/complexplane}
+\caption{The points $1$, $i$, $x$, $iy$, and $x+iy$ in the complex
+plane.\label{fig:complexplane}}
+\end{myfigureht}
 
 We generally use $x,y,r,s,t$ for real values and $z,w,\xi,\zeta$
 for complex values, although that is not a hard and fast rule.  In
@@ -650,8 +653,12 @@ Define
 We extend the definition to all of $\R$ by making $\varphi$ 2-periodic,
 that is, we decree that
 $\varphi(x) = \varphi(x+2)$.  The function $\varphi \colon \R \to \R$
-is continuous as $\sabs{\varphi(x)-\varphi(y)} \leq \sabs{x-y}$ (not hard to
-prove).
+is continuous,in fact $\sabs{\varphi(x)-\varphi(y)} \leq \sabs{x-y}$ (why?).
+See \figureref{fig:triangwave}.
+\begin{myfigureht}
+\includegraphics{figures/triangwave}
+\caption{The 2-periodic function $\varphi$.\label{fig:triangwave}}
+\end{myfigureht}
 
 As $\sum {\left(\frac{3}{4}\right)}^n$ converges and $\sabs{\varphi(x)} \leq
 1$ for all $x$, we have by the M-test that
@@ -665,7 +672,7 @@ See \figureref{fig:nowherediff}.
 
 \begin{myfigureht}
 \includegraphics{figures/nowherediff}
-\caption{Plot of the nowhere differentiable function $f(x)$.\label{fig:nowherediff}}
+\caption{Plot of the nowhere differentiable function $f$.\label{fig:nowherediff}}
 \end{myfigureht}
 
 Fix $x$ and
@@ -796,7 +803,7 @@ result.
 \section{Equicontinuity and the Arzel{\` a}--Ascoli theorem}
 \label{sec:arzelaascoli}
 
-\sectionnotes{FIXME4 lectures}
+\sectionnotes{2 lectures}
 
 We would like an analogue of Bolzano-Weierstrass.  Something to the tune of
 ``every bounded
@@ -1119,7 +1126,7 @@ FIXME
 \section{The Stone--Weierstrass theorem}
 \label{sec:stoneweier}
 
-\sectionnotes{FIXME4 lectures}
+\sectionnotes{2 lectures}
 
 \subsection{Weierstrass approximation}
 
@@ -1911,7 +1918,7 @@ does not converge uniformly.
 \section{Power series and analytic functions}
 \label{sec:analfuncs}
 
-\sectionnotes{FIXME4 lectures}
+\sectionnotes{2--3 lectures}
 
 \subsection{Analytic functions}
 
@@ -1990,12 +1997,15 @@ The theorem follows.
 \end{proof}
 
 The number $\rho$ is called the \emph{\myindex{radius of convergence}}.
+See \figureref{fig:radiusconvcomplex}.
 We define $\rho$ even in cases when $R=0$ or $R= \infty$.  If $R=0$, we say
 $\rho := \infty$ and if $R=\infty$ we say $\rho:=0$.
 The radius of convergence gives us a disk around $a$ where the series converges.  A power series
 is convergent if $\rho > 0$.
-
-FIXME: picture
+\begin{myfigureht}
+\subimport*{figures/}{radiusconvcomplex.pdf_t}
+\caption{Radius of convergence.\label{fig:radiusconvcomplex}}
+\end{myfigureht}
 
 It is trivial to see that if $\sum c_n {(z-a)}^n$ converges
 for some $z$, then
@@ -2046,7 +2056,7 @@ the power series on the right hand side converges and
 \begin{equation*}
 \limsup_{k\to\infty}
 \sqrt[k]{c^k} = c
-= \frac{1}{\sabs{1-a}}
+= \frac{1}{\sabs{1-a}} .
 \end{equation*}
 So radius of convergence of the power series is $\sabs{1-a}$, that is the
 distance of $a$ from $1$.  In particular the function has a power series
@@ -2147,15 +2157,26 @@ that given an arbitrary sequence $\{ c_n \}$, there exists an
 infinitely differentiable function $f$ such that
 $c_n = \frac{f^{(n)}(0)}{n!}$.  Finally, even if the obtained series
 converges it may not converge to the function we started with.
-
-FIXME: This counterexample should be an exercise
+For a simpler example,
+see \volIref{Exercise 5.4.11 in volume I}.  That is the
+function
+\begin{equation*}
+f(x) :=
+\begin{cases}
+e^{-1/x} & \text{if $x > 0$,}\\
+0 & \text{if $x \leq 0$,}
+\end{cases}
+\end{equation*}
+is infinitely differentiable, and all derivatives at the origin are zero, so
+its series at the origin would be just the zero series, and while that
+series converges, it does not converge to $f$ for $x > 0$.
 
 \subsection{Power series as analytic functions}
 
-We need a theorem on swapping limits of series.  This is sometimes
-called Fubini's theorem for sums.
+We need a theorem on swapping limits of series, that is, 
+Fubini's theorem for sums.
 
-\begin{thm}[Fubini for sums] \label{thm:fubiniforsums}
+\begin{thm}[\myindex{Fubini for sums}] \label{thm:fubiniforsums}
 Let $\{ a_{ij} \}_{i=1,j=1}^\infty$ be a double
 sequence of complex numbers and suppose that for every $i$ the series
 \begin{equation*}
@@ -2422,7 +2443,36 @@ theorem for connected open subsets of $\R$, which are just open intervals.
 \subsection{Exercises}
 
 \begin{exercise}
-FIXME
+Let $f(x) := \frac{1}{1+x^2}$.  Prove that the radius of convergence of
+the power series for $f$ at the origin is 1.
+\end{exercise}
+
+
+\begin{exercise}
+Suppose $f \colon \C \to \C$ is an analytic function.  Show that for each
+$n$, there are at most finitely many zeros of $f$ in $B(0,n)$, that is
+$f^{-1}(0) \cap B(0,n)$ is finite for each $n$.
+\end{exercise}
+
+\begin{exercise}
+Suppose $U \subset \C$ is a connected open set, $0 \in U$, and $f \colon U
+\to \C$ is an analytic function.  Treating $f$ as a function of a real $x$
+at the origin, suppose $f^{(n)}(0) = 0$ for all $n$.  Show that $f(z) = 0$
+for all $z \in U$.
+\end{exercise}
+
+\begin{exercise}
+Suppose $U \subset \C$ is a connected open set, $0 \in U$, and $f \colon U
+\to \C$ is an analytic function.  Let $h(x) := f(x)$ and $g(y) := -i \, f(iy)$.
+Show that $h$ and $g$ are infinitely differentiable at the origin and
+$h'(0) = g'(0)$.
+\end{exercise}
+
+\begin{exercise}
+Suppose $f(z) := \sum c_n z^n$ with a radius of convergence 1.  Suppose $f(0)
+= 0$.  Show that there exists a $k \in \N$ and a convergent
+power series $g(z) := \sum d_n z^k$ with radius of convergence 1
+such that $f(z) = z^k g(z)$ for all $z \in B(0,1)$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2605,8 +2655,6 @@ principle for analytic functions}}: \emph{If $U \subset \C$ is open and connecte
 $f \colon U \to \C$ is analytic, and $\sabs{f(z)}$ attains a relative
 maximum at $z_0 \in U$.  Then $f$ is constant.}
 \end{exercise}
-
-FIXME
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2855,14 +2903,13 @@ used above agree with the standard geometric definitions.
 Derive the power series for $\sin(z)$ and $\cos(z)$ at the origin.
 \end{exercise}
 
-FIXME
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
 \section{Fourier series}
 \label{sec:fourier}
 
-\sectionnotes{FIXME lectures}
+\sectionnotes{3--4 lectures}
 
 Fourier series is perhaps the most important of the series that we cover in
 this book.  We have seen a few in examples before, but let us start

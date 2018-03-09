@@ -1,0 +1,39 @@
+#include "epix.h"
+using namespace ePiX;
+
+int main()
+{
+  picture(P(-1,-1), P(3,2), "2.5x1.5in");
+
+  begin();
+  h_axis(4);
+  v_axis(3);
+
+  double x = 1.6;
+  double y = 1.4;
+
+  //dot_size(1);
+  dot(P(x,y));
+
+  label(P(x,y), P(0,6), "$x+iy$ or $(x,y)$", t);
+
+  dot(P(0,y));
+  dot(P(x,0));
+  label(P(x,0), P(0,-6), "$x$", b);
+  label(P(0,y), P(-6,0), "$iy$", l);
+
+  dot(P(0,1));
+  dot(P(1,0));
+
+  label(P(1,0), P(0,-6), "$1$", b);
+  label(P(0,1), P(-6,0), "$i$", l);
+
+  dashed();
+
+
+  line(P(x,0),P(x,y));
+  line(P(0,y),P(x,y));
+
+  tikz_format();
+  end();
+}

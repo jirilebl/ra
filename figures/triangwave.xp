@@ -1,0 +1,43 @@
+#include "epix.h"
+using namespace ePiX;
+
+double phi(double t)
+{
+	if (t > 1) {
+		t = -1.0 + fmod(t+1,2.0);
+	} else if (t < -1) {
+		t = 1.0 - fmod(1-t,2.0);
+	}
+	return fabs(t);
+}
+
+int main()
+{
+  picture(P(-8,0), P(8,1), "3.5x0.3in");
+
+  begin();
+  //border();
+
+  bold();
+  //plot(phi, xmin(), xmax(), 100);
+  int n;
+  line(P(-8.5,0.5),P(-8,0));
+  for (n=-8; n < 8; n+= 2) {
+	  line(P(n,0),P(n+1,1));
+	  line(P(n+1,1),P(n+2,0));
+  }
+  line(P(8.5,0.5),P(8,0));
+  plain();
+
+
+  font_size("footnotesize");
+  axis Ax(P(xmin(), ymin()), P(xmax(), ymin()), 8, P(0,-8), b);
+  Ax.align(b).draw();
+
+  axis Ay(P(xmin(), ymin()), P(xmin(), ymax()), 1, P(-8,0), l);
+  Ay.align(l).draw();
+
+  tikz_format();
+  end();
+}
+
