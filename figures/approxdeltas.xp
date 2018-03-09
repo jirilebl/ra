@@ -1,0 +1,41 @@
+#include "epix.h"
+using namespace ePiX;
+
+double D5(double t)
+{
+  return sin((5+0.5)*t)/sin(0.5*t);
+}
+
+double D20(double t)
+{
+  return sin((20+0.5)*t)/sin(0.5*t);
+}
+
+int main()
+{
+  int n;
+  picture(P(-4,-10), P(4,40), "3.5x2in");
+
+  begin();
+  //border();
+
+  bold();
+  // The added delta avoids division by zeros
+  pen(Black(0.5));
+  plot(D5, xmin()+0.0000001, xmax(), 200);
+  pen(Black());
+  plot(D20, xmin()+0.0000001, xmax(), 900);
+  plain();
+
+
+  font_size("footnotesize");
+  axis Ax(P(xmin(), ymin()), P(xmax(), ymin()), 8, P(0,-8), b);
+  Ax.align(b).draw();
+
+  axis Ay(P(xmin(), ymin()), P(xmin(), ymax()), 10, P(-8,0), l);
+  Ay.align(l).draw();
+
+  tikz_format();
+  end();
+}
+
