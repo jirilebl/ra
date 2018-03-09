@@ -58,10 +58,10 @@ Let $z= x+iy$.
 Define
 the \emph{\myindex{real part}} of $z$ as $x$, and the
 the \emph{\myindex{imaginary part}} of $z$ as $y$.  We write
-\begin{align*}
-& \Re\, z := x , \\
-& \Im\, z := y .
-\end{align*}
+\begin{equation*}
+\Re\, z := x , \qquad
+\Im\, z := y .
+\end{equation*}
 Define the
 \emph{\myindex{complex conjugate}} as
 \begin{equation*}
@@ -73,7 +73,7 @@ Similarly define \emph{\myindex{modulus}} as
 \end{equation*}
 \end{defn}
 The modulus acts like an absolute value.  For example,
-$\sabs{zw} = \sabs{z} \sabs{w}$ (exercise).
+$\sabs{zw} = \sabs{z} \, \sabs{w}$ (exercise).
 
 Think of the complex conjugate as a reflection across the real axis.
 We note that the real numbers are precisely those for which the imaginary
@@ -98,11 +98,12 @@ An important remark is that since $\R^2$ is a complete metric space, then
 so is $\C$.
 
 Since $\sabs{z}$ is the euclidean norm on $\R^2$ we have the
-\emph{triangle inequality}\index{triangle inequality!complex numbers}:
-\begin{align*}
-\sabs{z+w} & \leq \sabs{z}+\sabs{w} \\
-\big\lvert \sabs{z}-\sabs{w} \big\rvert & \leq \sabs{z-w}
-\end{align*}
+\emph{triangle inequality}\index{triangle inequality!complex numbers}
+of both flavors:
+\begin{equation*}
+\sabs{z+w} \leq \sabs{z}+\sabs{w} \qquad \text{and} \qquad
+\big\lvert \sabs{z}-\sabs{w} \big\rvert \leq \sabs{z-w} .
+\end{equation*}
 
 The complex conjugate and the modulus are even more intimately related:
 \begin{equation*}
@@ -192,7 +193,7 @@ and every $k > n$ we have
 \end{prop}
 
 \begin{prop} \label{prop:absconvmeansconv}
-If the complex series $\sum z_n$ converges absolutely, then it converges.
+If a complex series $\sum z_n$ converges absolutely, then it converges.
 \end{prop}
 
 Notice that the series $\sum \sabs{z_n}$ is a real series.  All the
@@ -225,7 +226,7 @@ Check that $\C$ is a field.
 
 \begin{exercise}
 Prove that for $z,w \in \C$, we have
-$\sabs{zw} = \sabs{z} \sabs{w}$.
+$\sabs{zw} = \sabs{z} \, \sabs{w}$.
 \end{exercise}
 
 \begin{exercise}
@@ -240,14 +241,12 @@ Prove \propref{prop:cachysercomplex}.
 Prove \propref{prop:absconvmeansconv}.
 \end{exercise}
 
-FIXME
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
 \section{Swapping limits}
-\label{sec:FIXME}
+\label{sec:swaplim}
 
 \sectionnotes{2 lectures}
 
@@ -260,8 +259,8 @@ function and for every $x \in X$ suppose that
 \begin{equation*}
 f(x) = \lim_{n\to \infty} f_n(x) .
 \end{equation*}
-We say the sequence $\{ f_n \}$ \emph{converges pointwise} to
-$f$.
+We say the sequence $\{ f_n \}$
+\emph{\myindex{converges pointwise}}\index{pointwise convergence} to $f$.
 
 Question is:
 If $f_n$ are all continuous, is $f$ continuous?  Differentiable?
@@ -291,50 +290,39 @@ f(x) :=
 which is not continuous of course.
 \end{example}
 
-Similarly if $Y=\C$, we can have a pointwise convergence of a series,
-for every $x \in X$ we can have
+Suppose $Y=\C$, a series
+\emph{converges pointwise}\index{converges pointwise!complex series}\index{pointwise convergence!complex series} if
+for every $x \in X$ we have
 \begin{equation*}
 f(x) = \lim_{n\to \infty} \sum_{k=1}^n f_k(x) =
 \sum_{k=1}^\infty f_k(x) .
 \end{equation*}
 
-We saw continuity is preserved if we require a stronger convergence,
-that is, we require uniform convergence.
+Pointwise convergence is not enough to preserve continuity (nor even
+boundedness).  For that, we need uniform convergence.
 
 Let $f_n \colon X \to Y$ be functions.  Then
-$\{f_n\}$ \emph{converges uniformly} to $f$ if
+$\{f_n\}$ \emph{\myindex{converges uniformly}}\index{uniform convergence}
+to $f$ if
 for every $\epsilon > 0$, there exists an $M$ such that
 for all $n \geq M$ and all $x \in X$ we have
 \begin{equation*}
 d\bigl(f_n(x),f(x)\bigr) < \epsilon .
 \end{equation*}
-If we are dealing with complex-valued functions then
-\begin{equation*}
-\sabs{f_n(x)-f(x)} < \epsilon .
-\end{equation*}
+%If we are dealing with complex-valued functions then
+%\begin{equation*}
+%\sabs{f_n(x)-f(x)} < \epsilon .
+%\end{equation*}
 
-A series of functions converges uniformly if the sequence of
+A series of complex valued functions converges uniformly if the sequence of
 partial sums converges uniformly, that is for every $\epsilon > 0$
 there exists an $M$ such that
 for all $n \geq M$ and all $x \in X$ we have
 \begin{equation*}
-\abs{\left(\sum_{k=1}^nf_k(x)\right)-f(x)} < \epsilon .
+\abs{\left(\sum_{k=1}^n f_k(x)\right)-f(x)} < \epsilon .
 \end{equation*}
 
-%Again recall from chapter FIXME that this is stronger than pointwise
-%convergence.  Pointwise convergence can be stated as:
-%$\{f_n\}$ \emph{\myindex{converges pointwise}} to $f$ if
-%for every $x \in X$ and
-%every $\epsilon > 0$, there exists an $M$ such that
-%for all $n \geq M$ we have
-%\begin{equation*}
-%d\bigl(f_n(x),f(x)\bigr) < \epsilon .
-%\end{equation*}
-%
-%Note that for uniform convergence $M$ does not depend on $x$.  We need to
-%have one $M$ that works for all $M$.
-
-The simplest property that is preserved by uniform convergence is
+The simplest property preserved by uniform convergence is
 boundedness.  We leave the proof of the following proposition as an
 exercise.  It is almost identical to the proof for real valued functions.
 
@@ -344,24 +332,10 @@ If $f_n \colon X \to Y$ are bounded functions and converge uniformly to $f
 \colon X \to Y$, then $f$ is bounded.
 \end{prop}
 
-%\begin{proof}
-%There must exist an $n$ such that
-%\begin{equation*}
-%\sabs{f_n(x)-f(x)} < 1
-%\end{equation*}
-%for all $x$.
-%Now find $M$ such that $\sabs{f_n(x)} \leq M$ for all $x$.
-%By reverse triangle inequality
-%\begin{equation*}
-%\sabs{f(x)} < 1+ \sabs{f_n(x)} \leq 1+M . \qedhere
-%\end{equation*}
-%\end{proof}
-
-
-We also have a notion of \emph{\myindex{uniformly Cauchy}} as for real
+We have a notion of \emph{\myindex{uniformly Cauchy}} as for real
 valued functions.  The proof of the following proposition is
-again essentially the same as for the real valued functions and so
-we leave it as an exercise.
+again essentially the same as for the real valued functions and 
+is left as an exercise.
 
 \begin{prop} \label{prop:unifcauchymetric}
 Let $X$ be any set and let $(Y,d)$ be a Cauchy complete metric space.
@@ -373,53 +347,17 @@ d\bigl(f_n(x),f_m(x)\bigr) < \epsilon .
 \end{equation*}
 \end{prop}
 
-%\begin{proof}
-%Suppose that $\{f_n\}$ converges uniformly to some $f \colon X \to \C$.  Then 
-%find $M$ such that for all $n \geq M$ we have
-%\begin{equation*}
-%\sabs{f_n(x)-f(x)} < \frac{\epsilon}{2} \qquad \text{for all $x \in X$.}
-%\end{equation*}
-%Then for all $m,n \geq M$ we have
-%\begin{equation*}
-%\sabs{f_n(x)-f_m(x)}
-%\leq
-%\sabs{f_n(x)-f(x)} + \sabs{f(x)-f_m(x)} < \frac{\epsilon}{2} + \frac{\epsilon}{2}
-%= \epsilon .
-%\end{equation*}
-%
-%For the other direction, first fix $x$.
-%The sequence
-%of complex numbers $\{ f_n(x) \}$ is Cauchy and so has a limit
-%$f(x)$.
-%
-%Given $\epsilon > 0$ find an $M$ such that
-%for all $n, m \geq M$, and all $x \in X$ we have
-%\begin{equation*}
-%\sabs{f_n(x)-f_m(x)} < \epsilon
-%\end{equation*}
-%We know that $\lim f_m(x) = f(x)$, so
-%as compositions of continuous functions are continuous
-%and algebraic operations and the modulus are continuous we have
-%\begin{equation*}
-%\sabs{f_n(x)-f(x)} \leq \epsilon .
-%\end{equation*}
-%The nonstrict inequality is no trouble.
-%\end{proof}
-
-Sometimes we write for $f \colon X \to \C$
+For $f \colon X \to \C$, we write
 \begin{equation*}
 \snorm{f}_u := \sup_{x \in X} \sabs{f(x)} .
 \end{equation*}
-This is the \emph{\myindex{supremum norm}} or \emph{\myindex{uniform norm}}.
-Then we have that
-$f_n \colon X \to \C$ converge to $f$ if and only if
+We call $\snorm{\cdot}_u$
+the \emph{\myindex{supremum norm}} or \emph{\myindex{uniform norm}}.
+Then 
+$f_n \colon X \to \C$ converge uniformly to $f$ if and only if
 \begin{equation*}
 \lim_{n\to \infty} \snorm{f_n-f}_u = 0
 \end{equation*}
-%That is if
-%\begin{equation*}
-%\lim_{n\to \infty} \left( \sup_{x \in X} \sabs{f_n(x)-f(x)} \right) = 0 .
-%\end{equation*}
 
 The supermum norm satisfies the triangle inequality: For any $x \in X$
 \begin{equation*}
@@ -438,12 +376,7 @@ the uniform norm is a norm on the vector space $C(X,\C)$.
 While we will not need it $C(X,\C)$ is in fact a complex
 vector space, that is in the definition of a vector space can be taken to be
 complex numbers.
-We leave it as
-an exercise.
-%If $f \colon X \to \C$ is continuous and $X$ is compact then $f$
-%is bounded and so $\snorm{f}_u < \infty$.
-%So we can also think of $C(X,\C)$ as a metric space with the
-%metric $d(f,g) = \snorm{f-g}_u$.
+We leave it as an exercise.
 Convergence in the metric space $C(X,\C)$ is
 uniform convergence.
 
@@ -605,7 +538,7 @@ Then $f$ is continuous.
 
 Converse is not true.  Just because the limit is continuous doesn't mean
 that the convergence is uniform.  For example:
-$f_n \colon (0,1) \to \R$ defined by $f_n(x) = x^n$ converge to
+$f_n \colon (0,1) \to \R$ defined by $f_n(x) := x^n$ converge to
 the zero function, but not uniformly.  However, if we add extra conditions
 on the sequence can obtain a partial converse such as Dini's theorem,
 \volIref{see Exercise 6.2.10 from volume I}.
@@ -681,10 +614,10 @@ E.g.\ the Lebesgue integral.
 
 \subsection{Differentiation}
 
-For complex-valued functions, we define the
+For complex-valued functions, define the
 \emph{derivative}\index{derivative!complex valued function}
 of $f \colon [a,b] \to
-\C$ where $f(x) = u(x)+iv(x)$ is
+\C$ where $f(x) = u(x)+iv(x)$ as
 \begin{equation*}
 f'(x) := u'(x)+iv'(x) .
 \end{equation*}
@@ -693,7 +626,7 @@ functions as the complex number that is the derivative of $f$ gives rise to
 a real-linear operator on $\R^2$.
 
 The proof of the following theorem is to apply the corresponding theorem for
-real functions to $u$ and $v$.
+real functions to $u$ and $v$, and is left as an exercise.
 
 \begin{thm} \label{thm:dersconvergecomplex}
 Let $I \subset \R$ be a bounded interval and let
@@ -714,18 +647,26 @@ Define
 \begin{equation*}
 \varphi(x) :=\sabs{x} \qquad \text{for $x \in [-1,1]$} .
 \end{equation*}
-We can extend the definition to all of $\R$ by making $\varphi$ 2-periodic
-($\varphi(x) = \varphi(x+2)$).  $\varphi \colon \R \to \R$
+We extend the definition to all of $\R$ by making $\varphi$ 2-periodic,
+that is, we decree that
+$\varphi(x) = \varphi(x+2)$.  The function $\varphi \colon \R \to \R$
 is continuous as $\sabs{\varphi(x)-\varphi(y)} \leq \sabs{x-y}$ (not hard to
 prove).
 
 As $\sum {\left(\frac{3}{4}\right)}^n$ converges and $\sabs{\varphi(x)} \leq
 1$ for all $x$, we have by the M-test that
 \begin{equation*}
-f(x) = \sum_{n=0}^\infty 
+f(x) := \sum_{n=0}^\infty 
 {\left(\frac{3}{4}\right)}^n \varphi(4^n x)
 \end{equation*}
-converges uniformly and hence is continuous.
+converges uniformly and hence is continuous.  We claim that this $f \colon
+\R \to \R$ is nowhere differentiable.
+See \figureref{fig:nowherediff}.
+
+\begin{myfigureht}
+\includegraphics{figures/nowherediff}
+\caption{Plot of the nowhere differentiable function $f(x)$.\label{fig:nowherediff}}
+\end{myfigureht}
 
 Fix $x$ and
 define
@@ -734,18 +675,20 @@ define
 \end{equation*}
 where the sign is chosen in such a way so that there is no integer
 between $4^m x$ and $4^m(x+\delta_m)$, which can be done
-since $4^m\sabs{\delta_m} = \frac{1}{2}$.
+since $4^m\sabs{\delta_m} = \frac{1}{2}$.  Fix $m$ for a moment.
 
-If $n > m$, then as $4^n\delta_m$ is an even integer.  Then as $\varphi$
-is 2-periodic we get that
+Let
 \begin{equation*}
-\gamma_n =
-\frac{\varphi\bigl(4^n(x+\delta_m)\bigr)-\varphi(4^nx)}{\delta_m} = 0
+\gamma_{n} :=
+\frac{\varphi\bigl(4^n(x+\delta_m)\bigr)-\varphi(4^nx)}{\delta_m} .
 \end{equation*}
-Furthermore, because there is no integer between 
-$4^mx\pm\nicefrac{1}{2}$ and $4^mx$ we have that
+If $n > m$, then $4^n\delta_m$ is an even integer.  As $\varphi$
+is 2-periodic we get that $\gamma_n = 0$.
+
+There is no integer between 
+$4^mx\pm\nicefrac{1}{2}$ and $4^mx$, so
 $\abs{\varphi(4^mx\pm\nicefrac{1}{2})-\varphi(4^mx)} =
-\abs{4^mx\pm\nicefrac{1}{2})-4^mx} = \nicefrac{1}{2}$.  Therefore
+\abs{4^mx\pm\nicefrac{1}{2}-4^mx} = \nicefrac{1}{2}$.  Therefore
 \begin{equation*}
 \sabs{\gamma_m} =
 \abs{
@@ -753,13 +696,15 @@ $\abs{\varphi(4^mx\pm\nicefrac{1}{2})-\varphi(4^mx)} =
 }
 = 4^m .
 \end{equation*}
-Similarly, if $n < m$ we, since $\sabs{\varphi(s) -\varphi(t)} \leq \sabs{s-t}$
+Similarly, if $n < m$ we, since $\sabs{\varphi(s) -\varphi(t)} \leq
+\sabs{s-t}$,
 \begin{equation*}
 \sabs{\gamma_n} =
 \abs{\frac{\varphi\bigl(4^nx\pm(\nicefrac{1}{2})4^{n-m}\bigr)-\varphi(4^nx)}{\pm
 (\nicefrac{1}{2}) 4^{-m}}}
 \leq
 \abs{\frac{\pm(\nicefrac{1}{2})4^{n-m}}{\pm (\nicefrac{1}{2}) 4^{-m}}} = 4^n
+.
 \end{equation*}
 
 And so
@@ -809,7 +754,7 @@ And so
 -
 \frac{3^{m}-1}{3-1}
 =
-\frac{3^m +1}{2}
+\frac{3^m +1}{2} .
 \end{split}
 \end{equation*}
 It is obvious that $\delta_m \to 0$ as $m \to \infty$, but $\frac{3^m+1}{2}$
@@ -845,13 +790,11 @@ Prove \propref{prop:complexlimitswapintegral} by reducing to the real
 result.
 \end{exercise}
 
-FIXME
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
 \section{Equicontinuity and the Arzel{\` a}--Ascoli theorem}
-\label{sec:FIXME}
+\label{sec:arzelaascoli}
 
 \sectionnotes{FIXME4 lectures}
 
@@ -1153,12 +1096,13 @@ C([0,1],\C)$,
 the set of functions
 \begin{equation*}
 \left\{
-F \in C([0,1],\C) : F(x) = \int_0^x g(t) f(t)\,dt,~ f \in C([0,1],\C),~
+F \in C([0,1],\C) : F(x) = \int_0^x g(t) f(t)~dt,~ f \in C([0,1],\C),~
 \snorm{f}_u \leq 1
 \right\}
 \end{equation*}
-has compact closure (\emph{relatively compact}).
-That is, the \emph{operator} $T \colon C([0,1],\C) \to C([0,1],\C)$ given by
+has compact closure (usually called
+\emph{\myindex{relatively compact}}).
+That is, the operator $T \colon C([0,1],\C) \to C([0,1],\C)$ given by
 \begin{equation*}
 T\bigl(f\bigr) (x) = F(x) = \int_0^x g(t) f(t)\,dt
 \end{equation*}
@@ -1174,7 +1118,7 @@ FIXME
 
 \sectionnewpage
 \section{The Stone--Weierstrass theorem}
-\label{sec:FIXME}
+\label{sec:stoneweier}
 
 \sectionnotes{FIXME4 lectures}
 
@@ -1191,7 +1135,7 @@ Furthermore, if $f$ is real-valued, we can find real-valued $p_n$.
 \begin{proof}
 For $x \in [0,1]$ define
 \begin{equation*}
-g(x) = f\bigl((b-a)x+a\bigr)-f(a) - x\bigl(f(b)-f(a)\bigr) .
+g(x) := f\bigl((b-a)x+a\bigr)-f(a) - x\bigl(f(b)-f(a)\bigr) .
 \end{equation*}
 If we can prove the theorem for $g$ and find the $\{ p_n \}$ for $g$,
 we can prove it for $f$ since we simply
@@ -1201,7 +1145,7 @@ $p_n$, to obtain polynomials approximating $f$.
 
 So $g$ is defined on $[0,1]$ and $g(0)=g(1)=0$.  We can now assume that
 $g$ is defined on the whole real line for simplicity by defining
-$g(x) = 0$ if $x < 0$ or $x > 1$.
+$g(x) := 0$ if $x < 0$ or $x > 1$.
 
 Let
 \begin{equation*}
@@ -1209,15 +1153,23 @@ c_n = {\left( \int_{-1}^1 {(1-x^2)}^n\,dx \right)}^{-1}
 \end{equation*}
 Then define
 \begin{equation*}
-q_n(x) = c_n (1-x^2)^n
+q_n(x) := c_n (1-x^2)^n
 \end{equation*}
 so that $\int_{-1}^1 q_n(x)\,dx = 1$.
+See \figureref{fig:weierqn}.
 
-We note that $q_n$ are peaks around 0 (ignoring what happens outside
-of $[-1,1]$) that get narrower and narrower.
-You should plot a few of these
-to see what is happening.  A classic approximation idea
-is to do a \emph{\myindex{convolution}} integral with peaks like this.  That is we will
+\begin{myfigureht}
+\includegraphics{figures/weierqn}
+\caption{Plot of the approximate delta functions $q_n$ on $[-1,1]$ for
+$n=5,10,15,20,\ldots,100$ with higher $n$ in lighter shade.\label{fig:weierqn}}
+\end{myfigureht}
+
+The functions $q_n$ are peaks around 0 (ignoring what happens outside
+of $[-1,1]$) that get narrower and narrower, but the area underneath is
+always 1.
+A classic approximation idea
+is to do a \emph{\myindex{convolution}} integral with peaks like this.
+That is we 
 write for $x \in [0,1]$,
 \begin{equation*}
 p_n(x) = \int_{0}^1 g(t)q_n(t-x) \,dt \quad \left( = \int_{-\infty}^\infty
@@ -1454,7 +1406,7 @@ have a fixed value at one point, so it works not just for $\sabs{x}$.
 
 \begin{defn}
 A family $\sA$ of complex-valued functions $f \colon X \to \C$ is said to be an 
-\emph{algebra} (sometimes complex algebra or algebra over $\C$) if for all $f, g \in \sA$ and $c \in \C$ we have
+\emph{\myindex{algebra}} (sometimes complex algebra or algebra over $\C$) if for all $f, g \in \sA$ and $c \in \C$ we have
 \begin{enumerate}[(i)]
 \item $f+g \in \sA$,
 \item $fg \in \sA$, and
@@ -1465,10 +1417,11 @@ If we talk of an algebra of real-valued functions
 (sometimes real algebra or algebra over $\R$), then of course we only
 need the above to hold for $c \in \R$.
 
-We say that $\sA$ is \emph{uniformly closed} if the limit of every uniformly
+We say that $\sA$ is \emph{\myindex{uniformly closed}}
+if the limit of every uniformly
 convergent sequence in $\sA$ is also in $\sA$.
 Similarly, a set $\sB$ of all uniform limits of uniformly convergent
-sequences in $\sA$ is said to be the \emph{uniform closure} of $\sA$.
+sequences in $\sA$ is said to be the \emph{\myindex{uniform closure}} of $\sA$.
 \end{defn}
 
 If $X$ is a compact metric space and $\sA$ is a subset of the metric space
@@ -1803,7 +1756,9 @@ does not vanish at any point.
 \end{example}
 
 In general if we have a family of functions that separates points and does
-not vanish at any point, we can let these function \emph{generate} an algebra
+not vanish at any point, we can let these function
+\emph{generate}\index{generate an algebra}
+an algebra
 by considering all the linear combinations of arbitrary multiples of such
 functions.  That is we basically consider all real polynomials of such
 functions (where the polynomials have no constant term).  For example above,
@@ -1916,9 +1871,11 @@ FIXME
 
 \sectionnewpage
 \section{Power series and analytic functions}
-\label{sec:FIXME}
+\label{sec:analfuncs}
 
 \sectionnotes{FIXME4 lectures}
+
+\subsection{Analytic functions}
 
 A (complex) power series is a series of the form
 \begin{equation*}
@@ -1930,13 +1887,20 @@ any $z \not= a$.
 
 Let $U \subset \C$ be an open set and
 a function $f \colon U \to \C$ be a function such that
-for every $a \in U$ there exists a $\delta > 0$ and a power
+for every $a \in U$ there exists a $\rho > 0$ and a power
 series convergent to the function:
 \begin{equation*}
 f(z) = \sum_{n=0}^\infty c_n {(z-a)}^n
 \end{equation*}
-for all $z \in B(a,\delta)$.
+for all $z \in B(a,\rho)$.
 Then we say $f$ is an \emph{\myindex{analytic}} function.
+
+Similarly if we have an interval $(a,b)$, we will say that $f \colon (a,b)
+\to \C$ is analytic or perhaps \emph{\myindex{real-analytic}}
+if for each point $c \in
+(a,b)$ there is a power series around $c$ that converges in some
+$(c-\rho,c+\rho)$
+for some $\rho > 0$.
 
 As we will sometimes talk about real and sometimes about complex power
 series we will use $z$ to denote a complex number and $x$ a real number, but
@@ -1950,6 +1914,8 @@ domain of the function.  For example, we know that if $\sabs{z} < 1$, then
 \end{equation*}
 While the left hand side exists on all of $z \not= 1$, the right hand side
 happens to converge only if $\sabs{z} < 1$.
+
+\subsection{Convergence of power series}
 
 We proved several results for power series of a real variable in
 \volIref{\S2.6 of volume I}.   For the most part the convergence
@@ -1987,7 +1953,7 @@ The theorem follows.
 
 The number $\rho$ is called the \emph{\myindex{radius of convergence}}.
 We define $\rho$ even in cases when $R=0$ or $R= \infty$.  If $R=0$, we say
-$\rho = \infty$ and if $R=\infty$ we say $\rho=0$.
+$\rho := \infty$ and if $R=\infty$ we say $\rho:=0$.
 The radius of convergence gives us a disk around $a$ where the series converges.  A power series
 is convergent if $\rho > 0$.
 
@@ -2055,6 +2021,8 @@ if a function has a power series representation converging to the function
 on some ball,
 then it has a representation at every point in the ball.  We will prove this
 result later.
+
+\subsection{Properties of analytic functions}
 
 \begin{prop}
 If
@@ -2143,7 +2111,7 @@ converges it may not converge to the function we started with.
 
 FIXME: This counterexample should be an exercise
 
-\medskip
+\subsection{Power series as analytic functions}
 
 We will need a theorem on swapping limits of series.  This is sometimes
 called Fubini's theorem for sums.
@@ -2174,9 +2142,9 @@ and treat it as a metric space with the metric inherited from $\R$.
 Define the sequence of functions $f_i \colon E \to \C$
 by
 \begin{equation*}
-f_i(\nicefrac{1}{n}) = \sum_{j=1}^n a_{ij}
+f_i(\nicefrac{1}{n}) := \sum_{j=1}^n a_{ij}
 \qquad
-f_i(0) = \sum_{j=1}^\infty a_{ij}
+f_i(0) := \sum_{j=1}^\infty a_{ij}
 \end{equation*}
 As the series converge we get that each $f_i$ is continuous at $0$
 (since 0 is the only cluster point, they are continuous everywhere, but
@@ -2192,7 +2160,7 @@ $x$), we know that for any $x \in E$
 \end{equation*}
 converges uniformly.  So define
 \begin{equation*}
-g(x) = \sum_{i=1}^\infty f_i(x) ,
+g(x) := \sum_{i=1}^\infty f_i(x) ,
 \end{equation*}
 which is therefore a continuous function at $0$.
 So
@@ -2215,18 +2183,18 @@ So
 \end{equation*}
 \end{proof}
 
-Now we can prove that once we have a series converging to a function
+Now we prove that once we have a series converging to a function
 in some interval, we can expand the function around any point.
 
 \begin{thm}[Taylor's theorem for real-analytic functions]
 \label{thm:tayloranal}
 Let
 \begin{equation*}
-f(x) = \sum_{k=0}^\infty a_k x^k
+f(x) := \sum_{k=0}^\infty a_k x^k
 \end{equation*}
-be a power series converging in $(-R,R)$ for some $R > 0$.  Given any $a \in
-(-R,R)$, we obtain
-for $x$ such that $\sabs{x-a} < R-\sabs{a}$ that
+be a power series converging in $(-\rho,\rho)$ for some $\rho > 0$.  Given any $a \in
+(-\rho,\rho)$, we obtain
+for $x$ such that $\sabs{x-a} < \rho-\sabs{a}$ that
 \begin{equation*}
 f(x) =
 \sum_{k=0}^\infty \frac{f^{(k)}(a)}{k!} {(x-a)}^{k} .
@@ -2235,7 +2203,7 @@ f(x) =
 
 The power series at $a$ could of course converge in a larger interval, but
 the one above is guaranteed.  It is the largest symmetric interval about
-$a$ that fits in $(-R,R)$.
+$a$ that fits in $(-\rho,\rho)$.
 
 \begin{proof}
 Write
@@ -2247,7 +2215,7 @@ f(x) &= \sum_{k=0}^\infty a_k {\bigl((x-a)+a\bigr)}^k \\
 %a^{k-m} \right) {(x-a)}^m
 \end{split}
 \end{equation*}
-We define $c_{k,m} = a_k \binom{k}{m} a^{k-m}$ if $m \leq k$ and $0$ if $m >
+We define $c_{k,m} := a_k \binom{k}{m} a^{k-m}$ if $m \leq k$ and $0$ if $m >
 k$, then we have
 \begin{equation} \label{eq:tsproof}
 f(x) = \sum_{k=0}^\infty \, \sum_{m=0}^\infty c_{k,m} {(x-a)}^m
@@ -2266,11 +2234,11 @@ coefficients.
 \end{split}
 \end{equation*}
 and this converges as long as 
-$(\sabs{x-a}+\sabs{a}) < R$ or in other words if
-$\sabs{x-a} < R-\sabs{a}$.
+$(\sabs{x-a}+\sabs{a}) < \rho$ or in other words if
+$\sabs{x-a} < \rho-\sabs{a}$.
 
 Now we swap the order of summation in \eqref{eq:tsproof}, and 
-the following converges when $\sabs{x-a} < R-\sabs{a}$:
+the following converges when $\sabs{x-a} < \rho-\sabs{a}$:
 \begin{equation*}
 f(x) =
 \sum_{k=0}^\infty \, \sum_{m=0}^\infty c_{k,m} {(x-a)}^m
@@ -2283,14 +2251,15 @@ And we are done.  The formula in terms of derivatives at $a$ follows by
 differentiating the series to obtain \eqref{eq:formulaforpscoeffs}.
 \end{proof}
 
-Note that if a series converges for $x \in (-R,R)$ it also converges
-for all complex numbers in $B(0,R)$.
+Note that if a series converges for $x \in (-\rho,\rho)$ it also converges
+for all complex numbers in $B(0,\rho)$.
 We have the following corollary.
 
 \begin{cor}
-If $\sum c_k {(z-a)}^k$ converges to $f(z)$ in $B(a,R)$ and $b \in B(a,R)$,
+If $\sum c_k {(z-a)}^k$ converges to $f(z)$ in $B(a,\rho)$ and $b \in
+B(a,\rho)$,
 then there exists a power series
-$\sum d_k {(z-b)}^k$ that converges to $f(z)$ in $B(b,R-\sabs{b-a})$.
+$\sum d_k {(z-b)}^k$ that converges to $f(z)$ in $B(b,\rho-\sabs{b-a})$.
 \end{cor}
 
 \begin{proof}
@@ -2307,43 +2276,28 @@ Notice that
 %}
 = 1 .
 \end{equation*}
-Therefore the series converges in $B(0,R)$
+Therefore the series converges in $B(0,\rho)$
 if we replace $z$ with $\nicefrac{z}{\alpha}$.
 We apply \thmref{thm:tayloranal} at $\sabs{b}$ and get that a series that converges
-to $f(\nicefrac{z}{\alpha})$ on $B(\sabs{b},R-\sabs{b})$.
+to $f(\nicefrac{z}{\alpha})$ on $B(\sabs{b},\rho-\sabs{b})$.
 That is, there are some coefficients $a_k$ such that
 \begin{equation*}
 f(\nicefrac{z}{\alpha}) =
-\sum_{k=0}^\infty a_k {(z - \sabs{b})}^k .
+\sum_{k=0}^\infty a_k {\bigl(z - \sabs{b}\bigr)}^k .
 \end{equation*}
 Notice that $\alpha b = \sabs{b}$.
 \begin{equation*}
 f(z) = f(\nicefrac{\alpha z}{\alpha}) =
 \sum_{k=0}^\infty a_k {(\alpha z - \sabs{b})}^k 
 =
-\sum_{k=0}^\infty a_k\alpha^k {(z - \nicefrac{\sabs{b}}{\alpha})}^k
+\sum_{k=0}^\infty a_k\alpha^k {\bigl(z - \nicefrac{\sabs{b}}{\alpha}\bigr)}^k
 =
 \sum_{k=0}^\infty a_k\alpha^k {(z - b)}^k ,
 \end{equation*}
 and this converges for all $z$ such that
-$\bigl\lvert \alpha z-\sabs{b}\bigr\rvert < R-\sabs{b}$
-or $\sabs{z - b} < R-\sabs{b}$, which is the conclusion of the theorem.
+$\bigl\lvert \alpha z-\sabs{b}\bigr\rvert < \rho-\sabs{b}$
+or $\sabs{z - b} < \rho-\sabs{b}$, which is the conclusion of the theorem.
 \end{proof}
-
-Let us define rigorously what an analytic function is.
-Let $U \subset \C$ be an open set.  A function $f \colon U \to \C$
-is said to be \emph{analytic} if near every point $a \in U$, $f$ has a
-convergent power series expansion.  That is, for every $a \in U$ if there exists an $R > 0$
-and numbers $c_k$ such that
-\begin{equation*}
-f(z) = \sum_{k=0}^\infty c_k {(z-a)}^k
-\end{equation*}
-for all $z \in B(a,R)$.
-
-Similarly if we have an interval $(a,b)$, we will say that $f \colon (a,b)
-\to \C$ is analytic or perhaps \emph{real-analytic} if for each point $c \in
-(a,b)$ there is a power series around $c$ that converges in some $(c-R,c+R)$
-for some $R > 0$.
 
 We proved above that a convergent power series is an
 analytic function where it converges.  We have also shown before that
@@ -2358,6 +2312,8 @@ f(x) = \frac{1}{1+x^2}
 happens to be real analytic.  It is pretty easy to show this (exercise).  A power
 series around the origin converging to $f$ can have a radius of convergence at most $1$,
 actually it does happen to be exactly 1.  Can you see why? (exercise).
+
+\subsection{Identity theorem for analytic functions}
 
 \begin{lemma}
 Suppose that $f(z) = \sum a_k z^k$ is a convergent power series and
@@ -2408,15 +2364,15 @@ f(z) = \sum_{k=0}^\infty a_k {z}^k
 \qquad
 g(z) = \sum_{k=0}^\infty b_k {z}^k ,
 \end{equation*}
-which converge in some ball $B(0,R)$.  Therefore the series
+which converge in some ball $B(0,\rho)$.  Therefore the series
 \begin{equation*}
 0 = f(z)-g(z) = 
 \sum_{k=0}^\infty (a_k-b_k) z^k
 \end{equation*}
-converges in $B(0,R)$.  As $0$ is a cluster point of $E$, then there
+converges in $B(0,\rho)$.  As $0$ is a cluster point of $E$, then there
 is a sequence of nonzero points $\{ z_n \}$ such that
 $f(z_n) -g(z_n) = 0$.  Therefore by the lemma above we have
-that $a_k = b_k$ for all $k$.  And therefore $B(0,R) \subset E$.
+that $a_k = b_k$ for all $k$.  And therefore $B(0,\rho) \subset E$.
 
 This means that $E$ is open.  As $E$ is also closed, and $U$ is connected, we conclude that $E = U$.
 \end{proof}
@@ -2617,7 +2573,7 @@ FIXME
 
 \sectionnewpage
 \section{The complex exponential and the trigonometric functions}
-\label{sec:FIXME}
+\label{sec:complexexp}
 
 \sectionnotes{1 lecture}
 
@@ -2865,7 +2821,7 @@ FIXME
 
 \sectionnewpage
 \section{Fourier series}
-\label{sec:FIXME}
+\label{sec:fourier}
 
 \sectionnotes{FIXME lectures}
 
@@ -3117,7 +3073,7 @@ $L^2$ norm $\snorm{f}_2$ by (defining the square)
 Notice the similarity to finite dimensions.  For $z = (z_1,z_2,\ldots,z_n) \in 
 \C^n$ we define 
 \begin{equation*}
-\langle z , w \rangle =
+\langle z , w \rangle :=
 \sum_{k=1}^n z_k \overline{w_k}
 \end{equation*}
 and then the norm is (usually this is just denoted by $\snorm{z}$ rather than
@@ -3150,7 +3106,7 @@ functions on $[a,b]$.  We will say that this is an
 Notice that the above says that $\snorm{\varphi_n}_2 = 1$ for all $n$.  If we
 only require that 
 $\langle \varphi_n , \varphi_m \rangle = 0$ for $m\not= n$ then
-the system would be just an \emph{orthogonal system}.
+the system would be just an \emph{\myindex{orthogonal system}}.
 \end{defn}
 
 We have noticed above that for example
@@ -3340,7 +3296,7 @@ suppose
 that $f$ is a function defined on all of $\R$ and is $2\pi$ periodic.
 Let
 \begin{equation*}
-c_n = 
+c_n := 
 \frac{1}{2\pi} \int_{-\pi}^\pi
 f(x) e^{-inx} ~ dx .
 \end{equation*}

@@ -1,0 +1,47 @@
+#include "epix.h"
+using namespace ePiX;
+
+int n;
+double cn[1000];
+
+double g(double t)
+{
+	return pow(1-t*t,n);
+}
+
+double qn(double t)
+{
+  return cn[n]*g(t);
+}
+
+int main()
+{
+  picture(P(-1,0), P(1,6), "3.5x2in");
+
+  begin();
+  //border();
+
+  for (n=1; n <= 100; n++) {
+	  double ci = Integral(g,-1).eval(1);
+	  cn[n] = 1/ci;
+  }
+
+  //bold();
+  for (n=100; n > 0; n-=5) {
+	  pen(Black(1-0.8*((double)n)/100.0));
+	  plot(qn, xmin(), xmax(), 50+n*3);
+  }
+  //plain();
+
+
+  font_size("footnotesize");
+  axis Ax(P(xmin(), ymin()), P(xmax(), ymin()), 2, P(0,-8), b);
+  Ax.align(b).draw();
+
+  axis Ay(P(xmin(), ymin()), P(xmin(), ymax()), 6, P(-8,0), l);
+  Ay.align(l).draw();
+
+  tikz_format();
+  end();
+}
+

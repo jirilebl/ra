@@ -1,0 +1,49 @@
+#include "epix.h"
+using namespace ePiX;
+
+double phi(double t)
+{
+	if (t > 1) {
+		t = -1.0 + fmod(t+1,2.0);
+	} else if (t < -1) {
+		t = 1.0 - fmod(1-t,2.0);
+	}
+	return fabs(t);
+}
+
+double f(double t)
+{
+	double s = 0;
+	int n;
+
+	//fprintf (stderr, "t %g\n", t);
+
+	for (n=0; n < 40; n++) {
+		s += pow(0.75,n)*phi(pow(4.0,n)*t);
+	}
+	return s;
+}
+
+int main()
+{
+  picture(P(0,0), P(2,3.1), "3.5x2in");
+
+  begin();
+  //border();
+
+  //bold();
+  plot(f, xmin(), xmax(), 2000);
+  //plain();
+
+
+  font_size("footnotesize");
+  axis Ax(P(xmin(), ymin()), P(xmax(), ymin()), 2, P(0,-8), b);
+  Ax.align(b).draw();
+
+  axis Ay(P(xmin(), ymin()), P(xmin(), 3), 3, P(-8,0), l);
+  Ay.align(l).draw();
+
+  tikz_format();
+  end();
+}
+
