@@ -1,0 +1,40 @@
+#include "epix.h"
+using namespace ePiX;
+
+double f(double t)
+{
+	double s = 0;
+	int n;
+
+	//fprintf (stderr, "t %g\n", t);
+
+	for (n=1; n < 60; n++) {
+		double p = pow(2,n);
+		s += sin(p*t)/p;
+	}
+	return s;
+}
+
+int main()
+{
+  picture(P(-4,-0.8), P(4,0.8), "2.5x1.5in");
+
+  begin();
+  //border();
+
+  bold();
+  plot(f, xmin(), xmax(), 1000);
+  plain();
+
+
+  font_size("footnotesize");
+  axis Ax(P(xmin(), ymin()), P(xmax(), ymin()), 4, P(0,-8), b);
+  Ax.align(b).draw();
+
+  axis Ay(P(xmin(), ymin()), P(xmin(), ymax()), 4, P(-8,0), l);
+  Ay.align(l).draw();
+
+  tikz_format();
+  end();
+}
+
