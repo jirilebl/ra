@@ -2433,6 +2433,189 @@ FIXME
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
+\section{Fundamental theorem of algebra}
+\label{sec:fundalgeb}
+
+\sectionnotes{half a lecture}
+
+In this section we will study first the local behaviour of polynomials
+and the growth of polynomials as $z$ goes to infinity.  As an application
+we will prove the fundamental theorem of algebra, that any polynomial
+has a complex root.
+
+\begin{lemma} \label{lemma:polyalwaysgetssmaller}
+Let $p(z)$ be complex polynomial.  If $p(z_0) \not= 0$, then there
+exist $w \in \C$ such that $\sabs{p(w)} < \sabs{p(z_0)}$.  In fact,
+we can pick $w$ to be arbitrarily close to $z_0$.
+\end{lemma}
+
+\begin{proof}
+Without loss of generality assume that $z_0 = 0$ and $p(0) = 1$.  Then write
+\begin{equation*}
+p(z) = 1+a_kz^k + a_{k+1}z^{k+1} + \cdots + a_d z^d
+\end{equation*}
+where $a_k \not= 0$.  Pick $t$ such that $a_k e^{ikt} = -\sabs{a_k}$ which
+we can do by the discussion on trigonometric functions.  Then for
+any $r > 0$ small enough such that
+$1-r^k \sabs{a_k} > 0$ we have
+\begin{equation*}
+p(r e^{it}) =
+1-r^k \sabs{a_k} + r^{k+1}a_{k+1}e^{i(k+1)t} + \cdots + r^{d}a_{d}e^{idt} .
+\end{equation*}
+So
+\begin{equation*}
+\begin{split}
+\abs{
+p(r e^{it}) } - \abs{
+r^{k+1}a_{k+1}e^{i(k+1)t} + \cdots + r^{d}a_{d}e^{idt}
+}
+& \leq
+\abs{
+p(r e^{it}) 
+- r^{k+1}a_{k+1}e^{i(k+1)t} - \cdots - r^{d}a_{d}e^{idt}
+}
+\\
+& =
+\abs{
+1-r^k \sabs{a_k}
+}
+=
+1-r^k \sabs{a_k}
+\end{split}
+\end{equation*}
+In other words
+\begin{equation*}
+\abs{
+p(r e^{it}) }
+\leq
+1-r^k \left( \sabs{a_k}
+-
+r
+\abs{
+a_{k+1}e^{i(k+1)t} + \cdots + r^{d-k-1}a_{d}e^{idt}
+}
+\right)
+\end{equation*}
+For a small enough $r$ the expression the parentheses is positive
+as $\sabs{a_k} > 0$.  And then $\abs{p(re^{it})} < 1 = p(0)$.
+\end{proof}
+
+\begin{remark}
+The above lemma holds essentially with an unchanged proof for (complex) analytic
+functions.  A proof of this generalization is left as an exercise to the reader.
+What the lemma
+says is that the only minima the modulus of analytic functions (polynomials)
+has are precisely at the zeros.
+\end{remark}
+
+\begin{remark}
+The lemma does not hold if we restrict to real numbers.  For
+example, $x^2+1$ has a minimum at $x=0$, but no zero there.  The thing is that
+there is a $w$ arbitrarily close to $0$ such that $\sabs{w^2+1} < 1$, but this
+$w$ will necessarily not be real.  Letting $w = i\epsilon$ for small
+$\epsilon > 0$ will work.
+\end{remark}
+
+The moral of the story is that if $p(0) = 1$, then very close to 0, the
+polynomial
+looks like $1+az^k$ and this has no minimum at the origin.  All the higher
+powers of $z$ are too small to make a difference.
+
+\begin{lemma}
+Let $p(z)$ be complex polynomial.  Then for any $M$ there exists
+an $R$ such that if $\sabs{z} \geq R$ then $\sabs{p(z)} \geq M$.
+\end{lemma}
+
+\begin{proof}
+Write $p(z) = a_0 + a_1 z + \cdots + a_d z^d$ and suppose that
+$a_d \not= 0$.
+Suppose that $\sabs{z} \geq R$ (so also $\sabs{z}^{-1} \leq R^{-1}$).
+We estimate:
+\begin{equation*}
+\begin{split}
+\sabs{p(z)}
+& \geq
+\sabs{a_d z^d} -
+\sabs{a_0} - \sabs{a_1 z} - \cdots - \sabs{a_{d-1} z^{d-1} }
+\\
+& =
+\sabs{z}^d \bigl(
+\sabs{a_d} -
+\sabs{a_0} \sabs{z}^{-d} -
+\sabs{a_1} \sabs{z}^{-d+1} - \cdots - \sabs{a_{d-1}} \sabs{z}^{-1}
+\bigr)
+\\
+& \geq
+R^d \bigl(\sabs{a_d} -
+\sabs{a_0}R^{-d} - \sabs{a_1}R^{1-d} - \cdots - \sabs{a_{d-1}}R^{-1} \bigr)
+.
+\end{split}
+\end{equation*}
+Then the expression in parentheses is eventually positive for large enough
+$R$.  In particular, for large enough $R$ we get that it is greater than
+$\frac{\sabs{a_d}}{2}$ and so
+\begin{equation*}
+\sabs{p(z)}
+\geq
+R^d \frac{\sabs{a_d}}{2} .
+\end{equation*}
+Therefore,
+we can pick $R$ large enough to be bigger than a given $M$.
+\end{proof}
+
+The above lemma does \emph{not} generalize to analytic
+functions, even those defined in all of $\C$.  The function
+$\cos(z)$ is an obvious counterexample.
+Note that we had to look
+at the term with the largest degree, and we only have such a term for
+a polynomial.  In fact, something that we will not prove is that
+an analytic function defined on all of $\C$ satisfying the conclusion
+of the lemma
+must be a polynomial.
+
+The moral of the story here is that for very large $\sabs{z}$ (far away from
+the origin) a polynomial of degree $d$ really looks like a constant multiple
+of $z^d$.
+
+\begin{thm}[Fundamental theorem of algebra]
+Let $p(z)$ be complex polynomial, then there exists a $z_0 \in \C$
+such that $p(z_0) = 0$.
+\end{thm}
+
+\begin{proof}
+Let $\mu = \inf \sabs{p(z)}$.  Find an $R$ such that
+for all $z$ with $\sabs{z} \geq R$ we have $\sabs{p(z)} \geq \mu+1$.
+Therefore, any $z$ with $\sabs{p(z)}$ close to $\mu$ must be in the
+closed ball $C(0,R) = \bigl\{ z : \sabs{z} \leq R \bigr\}$.  As $\sabs{p(z)}$
+is a continuous real-valued function, it achieves its minimum
+on the compact set $C(0,R)$ (closed and bounded) and this minimum must
+be $\mu$.  So there is a $z_0 \in C(0,R)$ such that $\sabs{p(z_0)} = \mu$.
+As that is a minimum of $\sabs{p(z)}$ on $\C$, then by a lemma above we have
+that $\sabs{p(z_0)} = 0$.
+\end{proof}
+
+The theorem doesn't generalize to analytic functions either.  For example
+$e^{z}$ is an analytic function on $\C$ with no zeros.
+
+\subsection{Exercises}
+
+\begin{exercise} \label{exercise:minprinciple}
+Prove \lemmaref{lemma:polyalwaysgetssmaller} for an analytic function.  That
+is, suppose that $p(z)$ is not a polynomial but a power series around $z_0$.
+\end{exercise}
+
+\begin{exercise}
+Use \exerciseref{exercise:minprinciple} to prove the \emph{\myindex{maximum
+principle for analytic functions}}: \emph{If $U \subset \C$ is open and connected,
+$f \colon U \to \C$ is analytic, and $\sabs{f(z)}$ attains a relative
+maximum at $z_0 \in U$.  Then $f$ is constant.}
+\end{exercise}
+
+FIXME
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
 \section{The complex exponential and the trigonometric functions}
 \label{sec:FIXME}
 
@@ -2678,190 +2861,6 @@ Derive the power series for $\sin(z)$ and $\cos(z)$ at the origin.
 \end{exercise}
 
 FIXME
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\sectionnewpage
-\section{Fundamental theorem of algebra}
-\label{sec:growthofpoly}
-
-\sectionnotes{half a lecture}
-
-In this section we will study first the local behaviour of polynomials
-and the growth of polynomials as $z$ goes to infinity.  As an application
-we will prove the fundamental theorem of algebra, that any polynomial
-has a complex root.
-
-\begin{lemma} \label{lemma:polyalwaysgetssmaller}
-Let $p(z)$ be complex polynomial.  If $p(z_0) \not= 0$, then there
-exist $w \in \C$ such that $\sabs{p(w)} < \sabs{p(z_0)}$.  In fact,
-we can pick $w$ to be arbitrarily close to $z_0$.
-\end{lemma}
-
-\begin{proof}
-Without loss of generality assume that $z_0 = 0$ and $p(0) = 1$.  Then write
-\begin{equation*}
-p(z) = 1+a_kz^k + a_{k+1}z^{k+1} + \cdots + a_d z^d
-\end{equation*}
-where $a_k \not= 0$.  Pick $t$ such that $a_k e^{ikt} = -\sabs{a_k}$ which
-we can do by the discussion on trigonometric functions.  Then for
-any $r > 0$ small enough such that
-$1-r^k \sabs{a_k} > 0$ we have
-\begin{equation*}
-p(r e^{it}) =
-1-r^k \sabs{a_k} + r^{k+1}a_{k+1}e^{i(k+1)t} + \cdots + r^{d}a_{d}e^{idt} .
-\end{equation*}
-So
-\begin{equation*}
-\begin{split}
-\abs{
-p(r e^{it}) } - \abs{
-r^{k+1}a_{k+1}e^{i(k+1)t} + \cdots + r^{d}a_{d}e^{idt}
-}
-& \leq
-\abs{
-p(r e^{it}) 
-- r^{k+1}a_{k+1}e^{i(k+1)t} - \cdots - r^{d}a_{d}e^{idt}
-}
-\\
-& =
-\abs{
-1-r^k \sabs{a_k}
-}
-=
-1-r^k \sabs{a_k}
-\end{split}
-\end{equation*}
-In other words
-\begin{equation*}
-\abs{
-p(r e^{it}) }
-\leq
-1-r^k \left( \sabs{a_k}
--
-r
-\abs{
-a_{k+1}e^{i(k+1)t} + \cdots + r^{d-k-1}a_{d}e^{idt}
-}
-\right)
-\end{equation*}
-For a small enough $r$ the expression the parentheses is positive
-as $\sabs{a_k} > 0$.  And then $\abs{p(re^{it})} < 1 = p(0)$.
-\end{proof}
-
-\begin{remark}
-The above lemma holds essentially with an unchanged proof for (complex) analytic
-functions.  A proof of this generalization is left as an exercise to the reader.
-What the lemma
-says is that the only minima the modulus of analytic functions (polynomials)
-has are precisely at the zeros.
-\end{remark}
-
-\begin{remark}
-The lemma does not hold if we restrict to real numbers.  For
-example, $x^2+1$ has a minimum at $x=0$, but no zero there.  The thing is that
-there is a $w$ arbitrarily close to $0$ such that $\sabs{w^2+1} < 1$, but this
-$w$ will necessarily not be real.  Letting $w = i\epsilon$ for small
-$\epsilon > 0$ will work.
-\end{remark}
-
-The moral of the story is that if $p(0) = 1$, then very close to 0, the
-polynomial
-looks like $1+az^k$ and this has no minimum at the origin.  All the higher
-powers of $z$ are too small to make a difference.
-
-\begin{lemma}
-Let $p(z)$ be complex polynomial.  Then for any $M$ there exists
-an $R$ such that if $\sabs{z} \geq R$ then $\sabs{p(z)} \geq M$.
-\end{lemma}
-
-\begin{proof}
-Write $p(z) = a_0 + a_1 z + \cdots + a_d z^d$ and suppose that
-$a_d \not= 0$.
-Suppose that $\sabs{z} \geq R$ (so also $\sabs{z}^{-1} \leq R^{-1}$).
-We estimate:
-\begin{equation*}
-\begin{split}
-\sabs{p(z)}
-& \geq
-\sabs{a_d z^d} -
-\sabs{a_0} - \sabs{a_1 z} - \cdots - \sabs{a_{d-1} z^{d-1} }
-\\
-& =
-\sabs{z}^d \bigl(
-\sabs{a_d} -
-\sabs{a_0} \sabs{z}^{-d} -
-\sabs{a_1} \sabs{z}^{-d+1} - \cdots - \sabs{a_{d-1}} \sabs{z}^{-1}
-\bigr)
-\\
-& \geq
-R^d \bigl(\sabs{a_d} -
-\sabs{a_0}R^{-d} - \sabs{a_1}R^{1-d} - \cdots - \sabs{a_{d-1}}R^{-1} \bigr)
-.
-\end{split}
-\end{equation*}
-Then the expression in parentheses is eventually positive for large enough
-$R$.  In particular, for large enough $R$ we get that it is greater than
-$\frac{\sabs{a_d}}{2}$ and so
-\begin{equation*}
-\sabs{p(z)}
-\geq
-R^d \frac{\sabs{a_d}}{2} .
-\end{equation*}
-Therefore,
-we can pick $R$ large enough to be bigger than a given $M$.
-\end{proof}
-
-The above lemma does \emph{not} generalize to analytic
-functions, even those defined in all of $\C$.  The function
-$\cos(z)$ is an obvious counterexample.
-Note that we had to look
-at the term with the largest degree, and we only have such a term for
-a polynomial.  In fact, something that we will not prove is that
-an analytic function defined on all of $\C$ satisfying the conclusion
-of the lemma
-must be a polynomial.
-
-The moral of the story here is that for very large $\sabs{z}$ (far away from
-the origin) a polynomial of degree $d$ really looks like a constant multiple
-of $z^d$.
-
-\begin{thm}[Fundamental theorem of algebra]
-Let $p(z)$ be complex polynomial, then there exists a $z_0 \in \C$
-such that $p(z_0) = 0$.
-\end{thm}
-
-\begin{proof}
-Let $\mu = \inf \sabs{p(z)}$.  Find an $R$ such that
-for all $z$ with $\sabs{z} \geq R$ we have $\sabs{p(z)} \geq \mu+1$.
-Therefore, any $z$ with $\sabs{p(z)}$ close to $\mu$ must be in the
-closed ball $C(0,R) = \bigl\{ z : \sabs{z} \leq R \bigr\}$.  As $\sabs{p(z)}$
-is a continuous real-valued function, it achieves its minimum
-on the compact set $C(0,R)$ (closed and bounded) and this minimum must
-be $\mu$.  So there is a $z_0 \in C(0,R)$ such that $\sabs{p(z_0)} = \mu$.
-As that is a minimum of $\sabs{p(z)}$ on $\C$, then by a lemma above we have
-that $\sabs{p(z_0)} = 0$.
-\end{proof}
-
-The theorem doesn't generalize to analytic functions either.  For example
-$e^{z}$ is an analytic function on $\C$ with no zeros.
-
-\subsection{Exercises}
-
-\begin{exercise} \label{exercise:minprinciple}
-Prove \lemmaref{lemma:polyalwaysgetssmaller} for an analytic function.  That
-is, suppose that $p(z)$ is not a polynomial but a power series around $z_0$.
-\end{exercise}
-
-\begin{exercise}
-Use \exerciseref{exercise:minprinciple} to prove the \emph{\myindex{maximum
-principle for analytic functions}}: \emph{If $U \subset \C$ is open and connected,
-$f \colon U \to \C$ is analytic, and $\sabs{f(z)}$ attains a relative
-maximum at $z_0 \in U$.  Then $f$ is constant.}
-\end{exercise}
-
-FIXME
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
@@ -2878,7 +2877,8 @@ A \emph{\myindex{trigonometric polynomial}} is an expression of the form
 \begin{equation*}
 a_0 + \sum_{n=1}^N \bigl(a_n \cos(nx) + b_n \sin(nx) \bigr),
 \end{equation*}
-or equivalently, thanks to Euler's formula:
+or equivalently, thanks to Euler's formula ($e^{i\theta} = \cos(\theta) + i
+\sin(\theta)$):
 \begin{equation*}
 \sum_{n=-N}^N c_n e^{inx} .
 \end{equation*}
@@ -3069,7 +3069,7 @@ i n c_n e^{inx}
 \end{equation*}
 and notice that 
 \begin{equation*}
-\sabs{ina_n} \leq \frac{C}{\sabs{n}^{\alpha-1}} .
+\sabs{in c_n} \leq \frac{C}{\sabs{n}^{\alpha-1}} .
 \end{equation*}
 The differentiated series converge uniformly by the $M$-test again.  Since
 the derivatives converge uniformly, we find that the series converges 
