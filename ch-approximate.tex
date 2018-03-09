@@ -640,8 +640,7 @@ convergent sequence for some $c \in I$.  Then $\{ f_n \}$ converges uniformly to
 a continuously differentiable function $f \colon I \to \C$, and $f' = g$.
 \end{thm}
 
-
-FIXME: an example perhaps definitely using complex
+%FIXME: an example perhaps definitely using complex
 
 \begin{example}
 Let us construct a continuous nowhere differentiable function.
@@ -995,7 +994,7 @@ such that
 \begin{equation*}
 X = \bigcup_{j=1}^k B(x_j,\delta)
 \end{equation*}
-As $\{ f_n \}$ is pointwise bounded there exist $M_1,\ldots,M_k$
+As $\{ f_n \}$ is pointwise bounded there exist $M_1,M_2,\ldots,M_k$
 such that for $j=1,\ldots,k$ we have
 \begin{equation*}
 \sabs{f_n(x_j)} \leq M_j
@@ -1118,7 +1117,19 @@ important (and very useful).
 
 \subsection{Exercises}
 
-FIXME
+\begin{exercise}
+Let $(X,d)$ be a metric space, $C > 0$, $0 < \alpha \leq 1$, and
+suppose $f_n \colon X \to \R$ are functions such as
+$\abs{f_n(x)-f(y)} \leq C {d(x,y)}^\alpha$ for all $x,y \in X$ and
+$n \in \N$.
+Show that $\{ f_n \}$ is an equicontinuous family.
+\end{exercise}
+
+\begin{exercise}
+Suppose $f_n \colon [0,1] \to \R$ are differentiable functions, $B \in \R$
+such that $\abs{f_n'(x)} \leq B$ for all $x \in [0,1]$ and all $n \in \N$.
+Show that $\{ f_n \}$ is an equicontinuous family.
+\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1871,7 +1882,7 @@ So $\overline{\sA} = C(X,\C)$.
 \end{proof}
 
 %FIXME: An example of why we need the self-adjoint will be in the homework.
-%?? FIXME: add exercise
+%?? FIXME: add exercise this requires Cauchy integral, so perhaps not
 
 Here is an interesting application.  We'll do it for the complex version, but
 the same thing can be done with the real version.  It turns out when working
