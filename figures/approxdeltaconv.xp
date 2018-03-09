@@ -1,0 +1,89 @@
+#include "epix.h"
+using namespace ePiX;
+
+int n;
+double cn[1000];
+double x = 0.3;
+
+double phi(double t)
+{
+	if (t > 1) {
+		t = -1.0 + fmod(t+1,2.0);
+	} else if (t < -1) {
+		t = 1.0 - fmod(1-t,2.0);
+	}
+	return fabs(t);
+}
+
+double f(double t)
+{
+	return 5.3*t*(1-t)-phi(24*t);
+	//if (t < 0.1) return 1;
+	//if (t >= 0.1 && t < 0.7) return t+4*t*t - (0.1+0.1*0.1) + 1;
+	//if (t >= 0.7) return -t + 0.7 + 2.08;
+}
+
+
+double gg(double t)
+{
+	return pow(1-t*t,n);
+}
+
+double qn(double t)
+{
+  return cn[n]*gg(t);
+}
+
+double qnshift(double t)
+{
+  return qn(x-t);
+}
+
+double prod(double t)
+{
+	return qn(x-t)*f(t);
+}
+
+int main()
+{
+  picture(P(0,-1), P(1,6), "3.5x2in");
+
+  begin();
+  //border();
+
+  n=100;
+
+  {
+	  double ci = Integral(gg,-1).eval(1);
+	  cn[n] = 1/ci;
+  }
+
+  //bold();
+  pen(Black(0.3));
+  plot(qnshift, xmin(), xmax(), 400);
+  pen(Black(0.6));
+  plot(f, xmin(), xmax(), 400);
+
+  bold();
+  pen(Black());
+  plot(prod, xmin(), xmax(), 400);
+  plain();
+
+
+  font_size("footnotesize");
+  line(P(0,0),P(0.5,0));
+  axis Ax(P(0.5, 0), P(xmax(), 0), 1, P(0,-8), b);
+  Ax.align(b).draw();
+
+  axis Ay(P(xmin(), ymin()), P(xmin(), ymax()), 7, P(-8,0), l);
+  Ay.align(l).draw();
+
+  dashed();
+  line(P(x,ymin()+0.3),P(x,ymax()));
+  label(P(x,ymin()),P(0,0),"$x$",c);
+
+
+  tikz_format();
+  end();
+}
+

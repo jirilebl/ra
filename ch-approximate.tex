@@ -14,8 +14,8 @@
 In this chapter we look at some of the sequences and series of functions
 we already saw and extend the results to a somewhat more general setting,
 and we will look at some completely new results.
-In particular, we will extend everything to
-complex valued functions.  We gave complex numbers as examples before, but
+In particular, we consider complex-valued functions.
+We gave complex numbers as examples before, but
 let us start from scratch and properly define the complex number field.
 
 A complex number is just a pair $(x,y) \in \R^2$ on which we define
@@ -65,7 +65,7 @@ the \emph{\myindex{imaginary part}} of $z$ as $y$.  We write
 Define the
 \emph{\myindex{complex conjugate}} as
 \begin{equation*}
-\bar{z} := x-iy .
+\widebar{z} := x-iy .
 \end{equation*}
 Similarly define \emph{\myindex{modulus}} as
 \begin{equation*}
@@ -80,7 +80,7 @@ We note that the real numbers are precisely those for which the imaginary
 part $y=0$.  In particular they are precisely those numbers which satisfy
 the equation
 \begin{equation*}
-z = \bar{z} .
+z = \widebar{z} .
 \end{equation*}
 
 As $\C$ is really $\R^2$, we let the metric on $\C$ be the standard
@@ -110,7 +110,7 @@ The complex conjugate and the modulus are even more intimately related:
 \sabs{z}^2 =
 x^2+y^2 =
 (x+iy)(x-iy) =
-z \bar{z} .
+z \widebar{z} .
 \end{equation*}
 
 \begin{remark}
@@ -159,7 +159,7 @@ $\displaystyle \lim_{n\to \infty} \frac{z_n}{w_n} = \frac{z}{w}$,
 \item
 $\displaystyle \lim_{n\to \infty} \sabs{z_n} = \sabs{z}$,
 \item
-$\displaystyle \lim_{n\to \infty} \bar{z}_n = \bar{z}$.
+$\displaystyle \lim_{n\to \infty} \widebar{z}_n = \widebar{z}$.
 \end{enumerate}
 \end{prop}
 
@@ -207,9 +207,9 @@ series.
 
 \medskip
 
-It often comes up to integrate a complex valued function.  Suppose
+It often comes up to integrate a complex-valued function.  Suppose
 $f \colon [a,b] \to \C$ is a function.  Write
-$f = u+iv$ for real valued functions $u$ and $v$.  We will say
+$f = u+iv$ for real-valued functions $u$ and $v$.  We say
 that $f$ is Riemann integrable if and only if $u$ and $v$ are Riemann
 integrable, and in this case we define
 \begin{equation*}
@@ -314,7 +314,7 @@ d\bigl(f_n(x),f(x)\bigr) < \epsilon .
 %\sabs{f_n(x)-f(x)} < \epsilon .
 %\end{equation*}
 
-A series of complex valued functions converges uniformly if the sequence of
+A series of complex-valued functions converges uniformly if the sequence of
 partial sums converges uniformly, that is for every $\epsilon > 0$
 there exists an $M$ such that
 for all $n \geq M$ and all $x \in X$ we have
@@ -324,7 +324,7 @@ for all $n \geq M$ and all $x \in X$ we have
 
 The simplest property preserved by uniform convergence is
 boundedness.  We leave the proof of the following proposition as an
-exercise.  It is almost identical to the proof for real valued functions.
+exercise.  It is almost identical to the proof for real-valued functions.
 
 \begin{prop} \label{prop:uniformconvbounded}
 Let $X$ be any set and $Y$ any metric space.
@@ -332,9 +332,9 @@ If $f_n \colon X \to Y$ are bounded functions and converge uniformly to $f
 \colon X \to Y$, then $f$ is bounded.
 \end{prop}
 
-We have a notion of \emph{\myindex{uniformly Cauchy}} as for real
-valued functions.  The proof of the following proposition is
-again essentially the same as for the real valued functions and 
+We have a notion of \emph{\myindex{uniformly Cauchy}} as for
+real-valued functions.  The proof of the following proposition is
+again essentially the same as for the real-valued functions and 
 is left as an exercise.
 
 \begin{prop} \label{prop:unifcauchymetric}
@@ -373,7 +373,7 @@ Now take a supremum on the left to get
 
 For a compact $X$,
 the uniform norm is a norm on the vector space $C(X,\C)$.
-While we will not need it $C(X,\C)$ is in fact a complex
+While we will not need it, $C(X,\C)$ is in fact a complex
 vector space, that is in the definition of a vector space can be taken to be
 complex numbers.
 We leave it as an exercise.
@@ -385,7 +385,7 @@ a very useful test for uniform convergence of a series is the
 so called \emph{\myindex{Weierstrass $M$-test}}.
 
 \begin{thm}[Weierstrass $M$-test] \label{thm:weiermtest}
-Suppose that $f_n \colon X \to \C$ are functions, $M_n > 0$ numbers such
+Suppose $f_n \colon X \to \C$ are functions, $M_n > 0$ numbers such
 that
 \begin{equation*}
 \sabs{f_n(x)}\leq M_n \quad \text{for all $x \in X$},
@@ -403,7 +403,7 @@ Then
 Note that the converse of this theorem is not true.
 
 \begin{proof}
-Suppose that $\sum M_n$ converges.  Given $\epsilon > 0$,
+Suppose $\sum M_n$ converges.  Given $\epsilon > 0$,
 we have that the partial sums of $\sum M_n$ are Cauchy so for
 there is an $N$ such that for all $m, n \geq N$ with $m \geq n$ we have
 \begin{equation*}
@@ -461,7 +461,7 @@ continuous?
 Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces, and let
 $f_n \colon X \to Y$ be functions.
 Suppose $Y$ is complete metric space.
-Suppose that $\{ f_n \}$ converges uniformly to $f \colon X \to \C$.  
+Suppose $\{ f_n \}$ converges uniformly to $f \colon X \to \C$.  
 Let $\{ x_k \}$ be a sequence in $X$ and $x = \lim \, x_k$.  Suppose
 that
 \begin{equation*}
@@ -566,7 +566,7 @@ converges uniformly and hence is continuous.
 \subsection{Integration}
 
 \begin{prop} \label{prop:complexlimitswapintegral}
-Suppose that $f_n \colon [a,b] \to \C$
+Suppose $f_n \colon [a,b] \to \C$
 are Riemann integrable and suppose that $\{ f_n \}$ converges
 uniformly to $f \colon [a,b] \to \C$.  Then $f$ is Riemann integrable
 and
@@ -575,13 +575,13 @@ and
 \end{equation*}
 \end{prop}
 
-Since the integral of a complex valued function is just the integral of
+Since the integral of a complex-valued function is just the integral of
 the real and imaginary parts separately,
 the proof follows directly by the results of \volIref{chapter 6 of volume I}.  We
 leave the details as an exercise.
 
 \begin{cor}
-Suppose that $f_n \colon [a,b] \to \C$
+Suppose $f_n \colon [a,b] \to \C$
 are Riemann integrable and suppose that
 \begin{equation*}
 \sum_{n=1}^\infty f_n(x)
@@ -589,18 +589,18 @@ are Riemann integrable and suppose that
 converges uniformly.  Then the series is Riemann integrable on $[a,b]$
 and
 \begin{equation*}
-\int_a^b \sum_{n=1}^\infty f_n(x) \,dx
+\int_a^b \sum_{n=1}^\infty f_n(x) ~dx
 =
-\sum_{n=1}^\infty \int_a^b f_n(x) \,dx
+\sum_{n=1}^\infty \int_a^b f_n(x) ~dx
 \end{equation*}
 \end{cor}
 
 \begin{example}
 Let us show how to integrate a Fourier series.
 \begin{equation*}
-\int_{0}^x \sum_{n=1}^\infty \frac{\cos(nt)}{n^2} \,dt
+\int_{0}^x \sum_{n=1}^\infty \frac{\cos(nt)}{n^2} ~dt
 =
-\sum_{n=1}^\infty \int_{0}^x \frac{\cos(nt)}{n^2}\,dt
+\sum_{n=1}^\infty \int_{0}^x \frac{\cos(nt)}{n^2}~dt
 =
 \sum_{n=1}^\infty \frac{\sin(nx)}{n^3}
 \end{equation*}
@@ -615,7 +615,7 @@ E.g.\ the Lebesgue integral.
 \subsection{Differentiation}
 
 For complex-valued functions, define the
-\emph{derivative}\index{derivative!complex valued function}
+\emph{derivative}\index{derivative!complex-valued function}
 of $f \colon [a,b] \to
 \C$ where $f(x) = u(x)+iv(x)$ as
 \begin{equation*}
@@ -778,7 +778,7 @@ Prove \propref{prop:unifcauchymetric}.
 \begin{exercise}
 Suppose $(X,d)$ is a compact metric space.
 Prove that $\snorm{\cdot}_u$ is a norm on the vector space of
-continuous complex valued functions $C(X,\C)$.
+continuous complex-valued functions $C(X,\C)$.
 \end{exercise}
 
 \begin{exercise}
@@ -842,9 +842,8 @@ uniformly,
 although the sequence converges pointwise.
 \end{example}
 
-When the domain is countable, matters are easier.  We will also use the
-following theorem as a lemma later.  It will use a very common and useful
-diagonal argument.
+When the domain is countable, matters are easier.   The proof uses
+a very common and useful diagonal argument.
 
 \begin{thm} \label{thm:subsequenceoncountableX}
 Let $X$ be a countable set and $f_n \colon X \to \C$ give a pointwise bounded
@@ -855,13 +854,13 @@ pointwise.
 \begin{proof}
 Let $\{ x_k \}$ be an enumeration of the elements of $X$.
 The sequence $\{ f_n(x_1) \}_{n=1}^\infty$ is bounded and hence
-we have a subsequence which we will denote by
+we have a subsequence which we denote by
 $f_{1,k}$ such that $\{ f_{1,k}(x_1) \}$ converges.
 Next $\{ f_{1,k}(x_2) \}$ has a subsequence that converges and
 we denote that subsequence by
-$\{ f_{2,k}(x_2) \}$.  In general we will have a sequence $\{ f_{m,k}
+$\{ f_{2,k}(x_2) \}$.  In general we have a sequence $\{ f_{m,k}
 \}_{k=1}^\infty$
-that makes $\{ f_{m,k}(x_j) \}_{k=1}^\infty$ converge for all $j \leq m$ and we will
+that makes $\{ f_{m,k}(x_j) \}_{k=1}^\infty$ converge for all $j \leq m$ and we 
 let $\{ f_{m+1,k} \}_{k=1}^\infty$ be the subsequence of $\{ f_{m,k}
 \}_{k=1}^\infty$
 such that
@@ -1063,7 +1062,7 @@ $C([0,1],\C)$) is not compact.
 Hence it cannot be an equicontinuous set.
 
 \begin{cor}
-Suppose that $\{ f_n \}$ is a sequence of differentiable functions on $[a,b]$,
+Suppose $\{ f_n \}$ is a sequence of differentiable functions on $[a,b]$,
 $\{ f_n' \}$ is uniformly bounded, and there is an
 $x_0 \in [a,b]$ such that $\{ f_n(x_0) \}$ is bounded.
 Then there exists a uniformly convergent
@@ -1104,7 +1103,7 @@ has compact closure (usually called
 \emph{\myindex{relatively compact}}).
 That is, the operator $T \colon C([0,1],\C) \to C([0,1],\C)$ given by
 \begin{equation*}
-T\bigl(f\bigr) (x) = F(x) = \int_0^x g(t) f(t)\,dt
+T\bigl(f\bigr) (x) = F(x) = \int_0^x g(t) f(t)~dt
 \end{equation*}
 takes the unit ball centered at 0 in $C([0,1],\C)$ into a relatively compact set.  We often
 say that this means that the operator is compact, and such operators are very
@@ -1121,6 +1120,8 @@ FIXME
 \label{sec:stoneweier}
 
 \sectionnotes{FIXME4 lectures}
+
+\subsection{Weierstrass approximation}
 
 Perhaps surprisingly, even a very badly behaving continuous function is really
 just a uniform limit of polynomials.  We cannot really get any ``nicer'' as
@@ -1143,19 +1144,17 @@ composed with an invertible affine function and added an affine
 function to $f$, so we can easily reverse the process and apply that to our
 $p_n$, to obtain polynomials approximating $f$.
 
-So $g$ is defined on $[0,1]$ and $g(0)=g(1)=0$.  We can now assume that
+So $g$ is defined on $[0,1]$ and $g(0)=g(1)=0$.  We now assume that
 $g$ is defined on the whole real line for simplicity by defining
 $g(x) := 0$ if $x < 0$ or $x > 1$.
 
-Let
+Define
 \begin{equation*}
-c_n = {\left( \int_{-1}^1 {(1-x^2)}^n\,dx \right)}^{-1}
-\end{equation*}
-Then define
-\begin{equation*}
+c_n := {\left( \int_{-1}^1 {(1-x^2)}^n~dx \right)}^{-1} ,
+\qquad
 q_n(x) := c_n (1-x^2)^n
 \end{equation*}
-so that $\int_{-1}^1 q_n(x)\,dx = 1$.
+so that $\int_{-1}^1 q_n(x)~dx = 1$.
 See \figureref{fig:weierqn}.
 
 \begin{myfigureht}
@@ -1172,26 +1171,25 @@ is to do a \emph{\myindex{convolution}} integral with peaks like this.
 That is we 
 write for $x \in [0,1]$,
 \begin{equation*}
-p_n(x) = \int_{0}^1 g(t)q_n(t-x) \,dt \quad \left( = \int_{-\infty}^\infty
-g(t)q_n(t-x) \,dt \right) .
+p_n(x) = \int_{0}^1 g(t)q_n(x-t) ~dt \quad \left( = \int_{-\infty}^\infty
+g(t)q_n(x-t) ~dt \right) .
 \end{equation*}
-Because $q_n$ is a polynomial we can write
-\begin{equation*}
-q_n(t-x) = a_0(t) + a_1(t)x + \cdots + a_{2n}(t) x^{2n}
-\end{equation*}
-for some functions $a_k(t)$.
-Since the integral is in terms of $t$, the $x$s just pop out
-by linearity of the integral,
-and so we obtain that $p_n$ is a polynomial in $x$.
-Finally if $g(t)$ is real-valued then the functions $g(t)a_j(t)$ are real
-valued and hence $p_n$ has real coefficients (so the ``furthermore'' part of the
-theorem will hold).
+The idea of this convolution is that we do a ``weighted average'' of the
+function $g$ around the point $x$ using $q_n$ as the weight.
+See \figureref{fig:approxdeltaconv}.
 
-As $q_n$ is a peak, the integral
+\begin{myfigureht}
+\includegraphics{figures/approxdeltaconv}
+\caption{For $x=0.3$, the plot of $q_{100}(x-t)$ (light gray peak centered
+at $x$), some continuous function
+$g(t)$ (the jagged line) and the product $g(t)q_{100}(x-t)$ (the bold line).\label{fig:approxdeltaconv}}
+\end{myfigureht}
+
+As $q_n$ is a narrow peak, the integral
 only sees the values of $g$ that are
-very close to $x$ and it does a sort of average of them.
-When the peak gets narrower, we do this average closer to $x$
-and hence we expect to get close to the value of $g(x)$.  Really we are
+close to $x$ and it does the weighted average of them.
+When the peak gets narrower, we compute this average closer to $x$
+and we expect the result to get closer to the value of $g(x)$.  Really we are
 approximating what is called a delta function\footnote{which is not actually
 a function} (don't worry if you have not
 heard of this concept),
@@ -1202,92 +1200,102 @@ near zero.  This just happens to be the simplest one.
 We only need this behavior on $[-1,1]$ as the convolution sees nothing
 further than this as $g$ is zero outside $[0,1]$.
 
-We still need to prove that this works.  First we need some handle on the
-size of $c_n$.  Note that for $x \in [0,1]$
+Because $q_n$ is a polynomial we can write
+\begin{equation*}
+q_n(x-t) = a_0(t) + a_1(t)x + \cdots + a_{2n}(t) x^{2n}
+\end{equation*}
+for some functions $a_k(t)$.
+Since the integral is in terms of $t$, the $x$s just pop out
+by linearity of the integral,
+and so we obtain that $p_n$ is a polynomial in $x$.
+Finally if $g(t)$ is real-valued then the functions $g(t)a_j(t)$ are
+real-valued and hence $p_n$ has real coefficients
+(proving the ``furthermore'' part of the theorem).
+
+We still need to prove that the limit of the $p_n$ is $g$.  First we need
+to get some handle on the
+size of $c_n$.  For $x \in [0,1]$,
 \begin{equation*}
 {(1-x^2)}^n \geq (1-nx^2) .
 \end{equation*}
-This fact can be proved with a tiny bit of calculus as the two expressions are
-equal at $x=0$ and 
+This fact is an application of Bernoulli's inequality or can be 
+prove directly:
+the two expressions are equal at $x=0$ and 
 $\frac{d}{dx}\left({(1-x^2)}^n - (1-nx^2)\right)
 =-2nx{(1-x^2)}^{n-1}+2nx$, which is nonnegative for $x \in [0,1]$.
 Furthermore $1-nx^2 \geq 0$ for $x \in [0,\nicefrac{1}{\sqrt{n}}]$.
-\begin{equation*}
-\begin{split}
-c_n^{-1} & = \int_{-1}^1 {(1-x^2)}^n\,dx \\
-& = 2\int_0^1 {(1-x^2)}^n\,dx \\
-& \geq 2\int_0^{1/\sqrt{n}} {(1-x^2)}^n\,dx \\
-& \geq 2\int_0^{1/\sqrt{n}} (1-nx^2) \,dx \\
-& = \frac{4}{3\sqrt{n}}
+\begin{multline*}
+c_n^{-1}  = \int_{-1}^1 {(1-x^2)}^n ~ dx
+= 2\int_0^1 {(1-x^2)}^n ~ dx \\
+\geq 2\int_0^{1/\sqrt{n}} {(1-x^2)}^n ~ dx
+\geq 2\int_0^{1/\sqrt{n}} (1-nx^2)  ~ dx
+= \frac{4}{3\sqrt{n}}
 > \frac{1}{\sqrt{n}} .
-\end{split}
-\end{equation*}
+\end{multline*}
 so $c_n < \sqrt{n}$.
 
 Let's see how small $g$ is if we ignore some small bit around the origin,
 which is where the peak is.
 Given any $\delta > 0$, $\delta < 1$, we have for $\delta \leq \sabs{x} \leq
-1$ that
+1$
 \begin{equation*}
 q_n(x) \leq \sqrt{n}{(1-\delta^2)}^n .
 \end{equation*}
-Then it is easy to see  (e.g. by the ratio test) that
+Then it is easy to see (e.g.\ by the ratio test) that
 $\sqrt{n}{(1-\delta^2)}^n$ goes to 0 as $n$ goes to infinity.
-For $x \in [0,1]$ we note
+The function $q_n$ is even, $q_n(t) = q_n(-t)$, and $g$
+is zero outside of $[0,1]$.
+So for $x \in [0,1]$,
 \begin{equation*}
 p_n(x) = 
-\int_{0}^1 g(t)q_n(t-x) \,dt
+\int_{0}^1 g(t)q_n(x-t)  ~ dt
 =
-\int_{-x}^{1-x} g(t+x)q_n(t) \,dt
+\int_{-x}^{1-x} g(t+x)q_n(-t)  ~ dt
 =
-\int_{-1}^{1} g(t+x)q_n(t) \,dt
+\int_{-1}^{1} g(t+x)q_n(t)  ~ dt .
 \end{equation*}
-the second equality follows by assuming that $g$ is zero outside of
-$[0,1]$.
 
 Let $\epsilon > 0$ be given.
-As $[0,1]$ is compact, we have that $g$ is uniformly continuous.
-Pick $\delta > 0$ such that if $\sabs{x-y} < \delta$ then
+As $[-1,2]$ is compact and $g$ is continuous on $[-1,2]$, we have that $g$ is uniformly continuous.
+Pick $0 < \delta < 1$ such that if
+$\sabs{x-y} < \delta$ (and $x,y \in [-1,2]$) then
 \begin{equation*}
 \sabs{g(x)-g(y)} < \frac{\epsilon}{2} .
 \end{equation*}
-This actually works for all $x,y \in \R$ because $g$ is just zero outside
-of $[0,1]$
 
-Let $M$ be such that $\sabs{g(x)} \leq M$ for all $x$.  Furthermore pick $N$
-such that for all $n \geq N$
-we have
+Let $M$ be such that $\sabs{g(x)} \leq M$ for all $x$.  Let $N$ be
+such that for all $n \geq N$,
 \begin{equation*}
 4M\sqrt{n}{(1-\delta^2)}^n < \frac{\epsilon}{2} .
 \end{equation*}
 
 Note that 
-$\int_{-1}^1 q_n(t)\,dt = 1$ and $q_n(x) \geq 0$ on $[-1,1]$ so
+$\int_{-1}^1 q_n(t) ~ dt = 1$ and $q_n(x) \geq 0$ on $[-1,1]$ so
 \begin{equation*}
 \begin{split}
 \sabs{p_n(x)-g(x)} & =
-\abs{\int_{-1}^1 g(t+x)q_n(t)\,dt
--g(x)\int_{-1}^1 q_n(t)\,dt} \\
+\abs{\int_{-1}^1 g(t+x)q_n(t) ~ dt
+-g(x)\int_{-1}^1 q_n(t) ~ dt} \\
 & =
-\abs{\int_{-1}^1 \bigl(g(t+x)-g(x)\bigr)q_n(t)\,dt} \\
+\abs{\int_{-1}^1 \bigl(g(t+x)-g(x)\bigr)q_n(t) ~ dt} \\
 & \leq
-\int_{-1}^1 \sabs{g(t+x)-g(x)} q_n(t)\,dt \\
+\int_{-1}^1 \sabs{g(t+x)-g(x)} q_n(t) ~ dt \\
 & =
-\int_{-1}^{-\delta} \sabs{g(t+x)-g(x)} q_n(t)\,dt
+\int_{-1}^{-\delta} \sabs{g(t+x)-g(x)} q_n(t) ~ dt
 +
-\int_{-\delta}^{\delta} \sabs{g(t+x)-g(x)} q_n(t)\,dt
+\int_{-\delta}^{\delta} \sabs{g(t+x)-g(x)} q_n(t) ~ dt
 \\
 & \phantom{\leq} +
-\int_{\delta}^1 \sabs{g(t+x)-g(x)} q_n(t)\,dt \\
+\int_{\delta}^1 \sabs{g(t+x)-g(x)} q_n(t) ~ dt \\
 & \leq
 2M
-\int_{-1}^{-\delta} q_n(t)\,dt
+\int_{-1}^{-\delta} q_n(t) ~ dt
 +
 \frac{\epsilon}{2}
-\int_{-\delta}^{\delta} q_n(t)\,dt
+\int_{-\delta}^{\delta} q_n(t) ~ dt
 +
 2M
-\int_{\delta}^1 q_n(t)\,dt \\
+\int_{\delta}^1 q_n(t) ~ dt \\
 & \leq
 2M\sqrt{n}{(1-\delta^2)}^n(1-\delta)
 +
@@ -1303,9 +1311,9 @@ $\int_{-1}^1 q_n(t)\,dt = 1$ and $q_n(x) \geq 0$ on $[-1,1]$ so
 \end{equation*}
 \end{proof}
 
-Think about the consequences of the theorem.  If you have any property that
-gets preserved under uniform convergence and it is true for polynomials,
-then it must be true for all continuous functions.
+%Think about the consequences of the theorem.  If you have any property that
+%gets preserved under uniform convergence and it is true for polynomials,
+%then it must be true for all continuous functions.
 
 Let us note an immediate application of the Weierstrass theorem.  We have
 already seen that countable dense subsets can be very useful.
@@ -1317,14 +1325,14 @@ The metric space $C([a,b],\C)$ contains a countable dense subset.
 \begin{proof}
 Without loss of generality suppose that we are dealing with $C([a,b],\R)$
 (why?).
-The real polynomials are dense in $C([a,b],\R)$.  If we can show that
+The real polynomials are dense in $C([a,b],\R)$.  If we show that
 any real polynomial can be approximated by polynomials with rational
 coefficients, we are done.  This is because there are only countably many
 rational numbers and so there are only countably many polynomials with
 rational coefficients (a countable union of countable sets is still
 countable).
 
-Further without loss of generality, suppose that $[a,b]=[0,1]$.  Let
+Further without loss of generality, suppose $[a,b]=[0,1]$.  Let
 \begin{equation*}
 p(x) = \sum_{k=0}^n a_k x^k
 \end{equation*}
@@ -1350,8 +1358,8 @@ we have
 
 \begin{remark}
 %\textbf{Funky remark:}
-While we will not prove this, we note that the above corollary implies that
-$C([a,b],\C)$ has the same cardinality as the real numbers, which may be a
+While we will not prove this, the above corollary implies that
+$C([a,b],\C)$ has the same cardinality as $\R$, which may be a
 bit surprising.  The set of all functions $[a,b] \to \C$ has
 cardinality that is strictly greater than the cardinality of $\R$, it has the
 cardinality of the power set of $\R$.  So the
@@ -1359,14 +1367,16 @@ set of continuous functions is a very tiny subset of the set of all
 functions.
 \end{remark}
 
+\subsection{Stone-Weierstrass approximation}
+
 Next thing we do is that we want to abstract away what is not really
 necessary and prove a general version of this theorem.
-We have shown that the polynomials are dense in the space of continuous
+The polynomials are dense in the space of continuous
 functions on a compact interval.  So what kind of families of
 functions are also dense?  Furthermore, what if we let the domain be an
 arbitrary metric space, then we no longer have polynomials.
 
-The resulting theorem is the Stone--Weierstrass theorem.  We will need a
+The resulting theorem is the Stone--Weierstrass theorem.  We need a
 special case of the Weierstrass theorem though.
 
 \begin{cor}
@@ -1406,133 +1416,147 @@ have a fixed value at one point, so it works not just for $\sabs{x}$.
 
 \begin{defn}
 A family $\sA$ of complex-valued functions $f \colon X \to \C$ is said to be an 
-\emph{\myindex{algebra}} (sometimes complex algebra or algebra over $\C$) if for all $f, g \in \sA$ and $c \in \C$ we have
+\emph{\myindex{algebra}} (sometimes
+\emph{\myindex{complex algebra}} or \emph{algebra over $\C$}) if for all $f, g \in \sA$ and $c \in \C$ we have
 \begin{enumerate}[(i)]
 \item $f+g \in \sA$,
 \item $fg \in \sA$, and
 \item $cg \in \sA$.
 \end{enumerate}
-
-If we talk of an algebra of real-valued functions
-(sometimes real algebra or algebra over $\R$), then of course we only
-need the above to hold for $c \in \R$.
-
-We say that $\sA$ is \emph{\myindex{uniformly closed}}
-if the limit of every uniformly
-convergent sequence in $\sA$ is also in $\sA$.
-Similarly, a set $\sB$ of all uniform limits of uniformly convergent
-sequences in $\sA$ is said to be the \emph{\myindex{uniform closure}} of $\sA$.
+A \emph{\myindex{real algebra}} or an
+\emph{algebra over $\R$} is a family of real-valued
+functions that satisfies the three properties above for $c \in \R$
 \end{defn}
 
-If $X$ is a compact metric space and $\sA$ is a subset of the metric space
-$C(X,\C)$, then the uniform closure of $\sA$ is just the metric space closure
-$\overline{\sA}$
-in $C(X,\C)$, of course.
+We are interested in the case when
+$X$ is a compact metric space.  Then
+we have that $C(X,\C)$ and $C(X,\R)$ are metric spaces.
+Given a set $\sA \subset C(X,\C)$, the set of all uniform
+limits is the metric space closure $\overline{\sA}$.
+When we talk about closure of an algebra
+from now on we will mean the closure in $C(X,\C)$
+as a metric space.  Same for $C(X,\R)$.
 
-For example, the set $\sP$ of all polynomials is an algebra in $C(X,\C)$, and we
-have shown that its uniform closure is all of $C(X,\C)$.
+The set $\sP$ of all polynomials is an algebra in
+$C([a,b],\C)$, and we
+have shown that its closure $\overline{\sP} = C([a,b],\C)$.
+That is, it is dense.  That is the sort of result that we wish to prove.
+
+We leave the following proposition as an exercise.
+
+\begin{prop} \label{prop:closureofalgebra}
+Suppose $X$ is a compact metric space.
+If $\sA \subset C(X,\C)$ an algebra, then the closure $\overline{\sA}$ is also an algebra.
+Similarly for a real algebra in $C(X,\R)$.
+\end{prop}
+
 
 %%
 %% FIXME: only need this in a metric space setting, should really whack this
 %% Really only need this for algebras in $C(X,\C)$ for compact X.
+%% It's what the above Proposition does.
 %%
-
-\begin{thm}
-Let $\sA$ be an algebra of bounded functions on a set $X$, and let $\sB$
-be its uniform closure.  Then $\sB$ is a uniformly closed algebra.
-\end{thm}
-
-\begin{proof}
-Let $f, g \in \sB$ and $c \in \C$.  Then there are uniformly convergent
-sequences of functions $\{ f_n \}$, $\{ g_n \}$ in $\sA$ such that
-$f$ is the uniform limit of $\{ f_n \}$ and
-$g$ is the uniform limit of $\{ g_n \}$.
-
-What we want is to show that $f_n+g_n$ converges uniformly to $f+g$,
-$f_ng_n$ converges uniformly to $fg$, and
-$cf_n$ converges uniformly to $cf$.  As $f$ and $g$ are bounded, then
-we have seen that $\{ f_n \}$ and $\{ g_n \}$ are also uniformly bounded.
-Therefore there is a single number $M$ such that for all $x \in X$ we have
-\begin{equation*}
-\sabs{f_n(x)} \leq M, \qquad
-\sabs{g_n(x)} \leq M, \qquad
-\sabs{f(x)} \leq M, \qquad
-\sabs{g(x)} \leq M.
-\end{equation*}
-
-The following estimates are enough to show uniform convergence.
-\begin{equation*}
-\abs{\bigl(f_n(x)+g_n(x)\bigr)
--\bigl(f(x)+g(x)\bigr)}
-\leq
-\sabs{f_n(x)-f(x)}
-+\sabs{g_n(x)-g(x)}
-\end{equation*}
-
-\begin{equation*}
-\begin{split}
-\sabs{f_n(x)g_n(x)-f(x)g(x)}
-& \leq
-\sabs{f_n(x)g_n(x)-f_n(x)g(x)}
-+\sabs{f_n(x)g(x)-f(x)g(x)}
-\\
-& \leq
-M \sabs{g_n(x)-g(x)}
-+M \sabs{f_n(x)-f(x)}
-\end{split}
-\end{equation*}
-
-\begin{equation*}
-\sabs{cf_n(x)-cf(x)}
-=
-\sabs{c}\,
-\sabs{f_n(x)-f(x)}
-\end{equation*}
-Hence $f+g \in \sB$, $fg \in \sB$ and $cf \in \sB$.
-
-Next we want to show that $\sB$ is uniformly closed.
-Suppose that $\{ f_n \}$ is a sequence in $\sB$ converging
-uniformly to some function $f \colon X \to \C$.
-As $\sB$ is the closure of $\sA$ we find a $g_n \in \sA$ for
-every $n$ such that for all $x \in X$ we have
-\begin{equation*}
-\sabs{f_n(x)-g_n(x)} < \nicefrac{1}{n}
-\end{equation*}
-So given $\epsilon > 0$ find $N$ such that for all $n \geq N$
-we have $\sabs{f_n(x)-f(x)} < \nicefrac{\epsilon}{2}$ and
-also such that $\nicefrac{1}{n} < \nicefrac{\epsilon}{2}$.  Then
-\begin{equation*}
-\sabs{g_n(x)-f(x)}
-\leq
-\sabs{g_n(x)-f_n(x)}
-+
-\sabs{f_n(x)-f(x)}
-< \nicefrac{1}{n} + \nicefrac{\epsilon}{2} < \epsilon .  \qedhere
-\end{equation*}
-\end{proof}
+%
+%\begin{thm}
+%Let $\sA$ be an algebra of bounded functions on a set $X$, and let $\sB$
+%be its uniform closure.  Then $\sB$ is a uniformly closed algebra.
+%\end{thm}
+%
+%\begin{proof}
+%Let $f, g \in \sB$ and $c \in \C$.  Then there are uniformly convergent
+%sequences of functions $\{ f_n \}$, $\{ g_n \}$ in $\sA$ such that
+%$f$ is the uniform limit of $\{ f_n \}$ and
+%$g$ is the uniform limit of $\{ g_n \}$.
+%
+%What we want is to show that $f_n+g_n$ converges uniformly to $f+g$,
+%$f_ng_n$ converges uniformly to $fg$, and
+%$cf_n$ converges uniformly to $cf$.  As $f$ and $g$ are bounded, then
+% $\{ f_n \}$ and $\{ g_n \}$ are also uniformly bounded.
+%Hence there is a single number $M$ such that for all $x \in X$ and all $n
+%\in \N$,
+%\begin{equation*}
+%\sabs{f_n(x)} \leq M, \qquad
+%\sabs{g_n(x)} \leq M, \qquad
+%\sabs{f(x)} \leq M, \qquad \text{and} \qquad
+%\sabs{g(x)} \leq M.
+%\end{equation*}
+%
+%The following estimates are enough to show uniform convergence.
+%\begin{equation*}
+%\abs{\bigl(f_n(x)+g_n(x)\bigr)
+%-\bigl(f(x)+g(x)\bigr)}
+%\leq
+%\sabs{f_n(x)-f(x)}
+%+\sabs{g_n(x)-g(x)}
+%\end{equation*}
+%and
+%\begin{equation*}
+%\begin{split}
+%\sabs{f_n(x)g_n(x)-f(x)g(x)}
+%& \leq
+%\sabs{f_n(x)g_n(x)-f_n(x)g(x)}
+%+\sabs{f_n(x)g(x)-f(x)g(x)}
+%\\
+%& \leq
+%M \sabs{g_n(x)-g(x)}
+%+M \sabs{f_n(x)-f(x)}
+%\end{split}
+%\end{equation*}
+%and
+%\begin{equation*}
+%\sabs{cf_n(x)-cf(x)}
+%=
+%\sabs{c}\,
+%\sabs{f_n(x)-f(x)} .
+%\end{equation*}
+%Hence $f+g \in \sB$, $fg \in \sB$ and $cf \in \sB$.
+%
+%Next we want to show that $\sB$ is uniformly closed.
+%Suppose $\{ f_n \}$ is a sequence in $\sB$ converging
+%uniformly to some function $f \colon X \to \C$.
+%As $\sB$ is the closure of $\sA$ we find a $g_n \in \sA$ for
+%every $n$ such that for all $x \in X$ we have
+%\begin{equation*}
+%\sabs{f_n(x)-g_n(x)} < \nicefrac{1}{n}
+%\end{equation*}
+%So given $\epsilon > 0$ find $N$ such that for all $n \geq N$
+%we have $\sabs{f_n(x)-f(x)} < \nicefrac{\epsilon}{2}$ and
+%also such that $\nicefrac{1}{n} < \nicefrac{\epsilon}{2}$.  Then
+%\begin{equation*}
+%\sabs{g_n(x)-f(x)}
+%\leq
+%\sabs{g_n(x)-f_n(x)}
+%+
+%\sabs{f_n(x)-f(x)}
+%< \nicefrac{1}{n} + \nicefrac{\epsilon}{2} < \epsilon .  \qedhere
+%\end{equation*}
+%\end{proof}
 %
 %Or if we had shown that the set of bounded functions on $X$ is a metric
 %space, then the last assertion would follow directly as in a metric space
 %closure of a closed set is the set itself. (Rudin does this).
+
+
 
 Let us distill the properties of polynomials that were sufficient
 for an approximation theorem.
 
 \begin{defn}
 Let $\sA$ be a family of complex-valued functions defined on a set $X$.
-
-We say $\sA$ \emph{\myindex{separates points}}
+\begin{enumerate}[(i)]
+\item $\sA$ \emph{\myindex{separates points}}
 if for every $x,y \in X$, with $x \not= y$ there is a function $f \in \sA$ such that
 $f(x) \not= f(y)$.
-
-We say $\sA$ \emph{\myindex{vanishes at no point}} if for every $x \in X$
+\item 
+$\sA$ \emph{\myindex{vanishes at no point}} if for every $x \in X$
 there is an $f \in \sA$ such that $f(x) \not= 0$.
+\end{enumerate}
 \end{defn}
 
 \begin{example}
 The set $\sP$ of polynomials separates points and vanishes at no point
 on $\R$.  That is, $1 \in \sP$ so it vanishes at no point.  And for $x,y \in
-\R$, $x\not= y$, just take $f(t) = (t-x)$, then $f(x) = 0$ and $f(y) = y-x
+\R$, $x\not= y$, just take $f(t) := t-x$: $f(x) = 0$ and $f(y) = y-x
 \not= 0$.
 \end{example}
 
@@ -1541,8 +1565,10 @@ The set of functions of the form
 \begin{equation*}
 f(t) = C + \sum_{n=1}^k \cos(nt)
 \end{equation*}
-does not separate points if we let the domain be any interval of the form
-$[-a,a]$.  That's because $f(-x) = f(x)$ for all $x$.
+does not separate points if the domain is any interval of the form
+$[-a,a]$, because $f(-t) = f(t)$ for all $t$.
+It does separate points if the domain is $[0,\pi]$, as $\cos(t)$
+is one-to-one on that set.
 \end{example}
 
 \begin{example}
@@ -1550,7 +1576,7 @@ The set of polynomials with no constant term vanishes at the origin.
 \end{example}
 
 \begin{prop} \label{prop:SWinterpolate}
-Suppose that $\sA$ is an algebra of functions on a set $X$, that separates points
+Suppose $\sA$ is an algebra of functions on a set $X$, that separates points
 and vanishes at no point.  Suppose $x,y$ are distinct points of $X$ and
 $c,d \in \C$.  Then there is an $f \in \sA$ such that
 \begin{equation*}
@@ -1565,7 +1591,7 @@ such that
 \begin{equation*}
 g(x) \not= g(y), \quad h(x) \not= 0, \quad k(y) \not= 0 .
 \end{equation*}
-write
+Write
 \begin{equation*}
 f = 
 c
@@ -1586,30 +1612,30 @@ By the second formula we see that $f \in \sA$ (as $\sA$ is an algebra).
 \begin{thm}[Stone--Weierstrass, real version]
 Let $X$ be a compact metric space and $\sA$ an algebra of real-valued
 continuous functions on $X$, such that $\sA$ separates points and vanishes at
-no point.  Then the uniform closure of $\sA$ is all of $C(X,\R)$.
+no point.  Then the closure $\overline{\sA} = C(X,\R)$.
 \end{thm}
 
-The proof is divided into several claims.  Write $\sB$ for the uniform
-closure of $\sA$.  We wish to show that $\sB = C(X,\R)$.
+The proof is divided into several claims.
 
 \medskip
 
 \noindent
-\textbf{Claim 1:} \emph{If $f \in \sB$ then $\sabs{f} \in \sB$.}
+\textbf{Claim 1:} \emph{If $f \in \overline{\sA}$ then $\sabs{f} \in
+\overline{\sA}$.}
 
 \begin{proof}
-$f$ is bounded (continuous on a compact set) for example $\sabs{f(x)} \leq M$
-for all $x \in X$.
+The function $f$ is bounded (continuous on a compact set), so there is an $M$
+such that $\sabs{f(x)} \leq M$ for all $x \in X$.
 
-Let $\epsilon > 0$ be given.  By the corollary to Weierstrass theorem there
+Let $\epsilon > 0$ be given.  By the corollary to the Weierstrass theorem there
 exists a real polynomial $c_1 y + c_2 y^2 + \cdots+ c_n y^n$ (vanishing at
 $y=0$) such that
 \begin{equation*}
 \abs{\sabs{y} - \sum_{j=1}^N c_j y^j} < \epsilon
 \end{equation*}
 for all $y \in [-M,M]$.
-Because $\sA$ is an algebra (note there is no constant term in the polynomial)
-we have that
+Because $\sA$ is an algebra (there is no constant term in the polynomial)
+we have
 \begin{equation*}
 g = \sum_{j=1}^N c_j f^j \in \sA .
 \end{equation*}
@@ -1620,16 +1646,16 @@ As $\sabs{f(x)} \leq M$ we have that
 \abs{\sabs{f(x)} - \sum_{j=1}^N c_j {\bigl(f(x)\bigr)}^j}
 < \epsilon .
 \end{equation*}
-So $\sabs{f}$ is in the closure of $\sB$, which is closed, so $\sabs{f} \in
-\sB$.
+So $\sabs{f}$ is in the closure of $\overline{\sA}$, which is closed, so $\sabs{f} \in
+\overline{\sA}$.
 \end{proof}
 
 \medskip
 
 \noindent
-\textbf{Claim 2:} \emph{If $f \in \sB$ and $g \in \sB$ then
-$\max(f,g) \in \sB$ and
-$\min(f,g) \in \sB$, where
+\textbf{Claim 2:} \emph{If $f \in \overline{\sA}$ and $g \in \overline{\sA}$ then
+$\max(f,g) \in \overline{\sA}$ and
+$\min(f,g) \in \overline{\sA}$, where
 }
 \begin{equation*}
 \bigl(\max(f,g)\bigr) (x) = \max \{ f(x), g(x) \} \qquad
@@ -1645,30 +1671,28 @@ and
 \begin{equation*}
 \min(f,g) = \frac{f+g}{2} - \frac{\sabs{f-g}}{2} .
 \end{equation*}
-As $\sB$ is an algebra we are done.
+As $\overline{\sA}$ is an algebra we are done.
 \end{proof}
 
-The claim is of course true for the minimum or maximum of any finite
+The claim is true for the minimum or maximum of any finite
 collection of functions as well.
 
 \medskip
 
 \noindent
 \textbf{Claim 3:} \emph{Given $f \in C(X,\R)$, $x \in X$ and $\epsilon > 0$
-there exists a $g_x \in \sB$ with $g_x(x) = f(x)$ and
+there exists a $g_x \in \overline{\sA}$ with $g_x(x) = f(x)$ and
 }
 \begin{equation*}
 g_x(t) > f(t)-\epsilon \qquad \text{for all $t \in X$}.
 \end{equation*}
 
 \begin{proof}
-%Since $\sA$ is a subalgebra of $\sB$, we have that $\sB$ separates points and
-%vanishes nowhere.
 Let $x \in X$ be fixed.
 By \propref{prop:SWinterpolate}, for every $y \in X$ we find an $h_y \in
 \sA$ such that
 \begin{equation*}
-h_y(x) = f(x), \qquad h_y(y)=f(y)
+h_y(x) = f(x), \qquad h_y(y)=f(y) .
 \end{equation*}
 As $h_y$ and $f$ are continuous, the set
 \begin{equation*}
@@ -1677,7 +1701,7 @@ J_y = \{ t \in X : h_y(t) > f(t) -\epsilon \}
 is open (it is the inverse image of an open set by a continuous function).
 Furthermore $y \in J_y$.  So the sets $J_y$ cover $X$.
 
-Now $X$ is compact so there exist finitely many points $y_1,\ldots,y_n$ such
+Now $X$ is compact so there exist finitely many points $y_1,y_2,\ldots,y_n$ such
 that
 \begin{equation*}
 X = \bigcup_{j=1}^n J_{y_j}  .
@@ -1686,7 +1710,7 @@ Let
 \begin{equation*}
 g_x = \max(h_{y_1},h_{y_2},\ldots,h_{y_n})
 \end{equation*}
-By Claim 2, $g_x$ is in $\sB$.
+By Claim 2, $g_x$ is in $\overline{\sA}$.
 It is easy to see that
 \begin{equation*}
 g_x(t) > f(t) -\epsilon
@@ -1702,7 +1726,7 @@ $g_x(x) = f(x)$.
 
 \noindent
 \textbf{Claim 4:} \emph{If $f \in C(X,\R)$ and $\epsilon > 0$ is given then there
-exists an $h \in \sB$ such that}
+exists an $h \in \overline{\sA}$ such that}
 \begin{equation*}
 \sabs{f(x) - h(x)} < \epsilon .
 \end{equation*}
@@ -1712,12 +1736,12 @@ For any $x$ find function $g_x$ as in Claim 3.
 
 Let
 \begin{equation*}
-V_x = \{ t \in X : g_x(t) < f(t) + \epsilon \}.
+V_x = \bigl\{ t \in X : g_x(t) < f(t) + \epsilon \bigr\}.
 \end{equation*}
 The sets $V_x$ are open as $g_x$ and $f$ are continuous.
 Furthermore as $g_x(x) = f(x)$, $x \in V_x$, and so the sets $V_x$ cover $X$.  Thus
 there
-are finitely many points $x_1,\ldots,x_n$ such that
+are finitely many points $x_1,x_2,\ldots,x_n$ such that
 \begin{equation*}
 X = \bigcup_{j=1}^n V_{x_j} .
 \end{equation*}
@@ -1725,7 +1749,7 @@ Now let
 \begin{equation*}
 h = \min(g_{x_1},g_{x_2},\ldots,g_{x_n}) .
 \end{equation*}
-we see that $h \in \sB$ by Claim 2.  Similarly as before (same argument as in
+we see that $h \in \overline{\sA}$ by Claim 2.  Similarly as before (same argument as in
 Step 3) we have that for all
 $t \in X$
 \begin{equation*}
@@ -1740,7 +1764,8 @@ which is the desired conclusion.
 \end{proof}
 
 The proof of the theorem follows from Claim 4.  The claim states that an
-arbitrary continuous function is in the closure of $\sB$ which itself is
+arbitrary continuous function is in the closure of $\overline{\sA}$,
+which itself is
 closed.  So the theorem is proved.
 
 \begin{example}
@@ -1772,14 +1797,14 @@ You could similarly show that the set of all functions of the form
 \sum_{n=1}^N a_n \cos(nt)
 \end{equation*}
 is an algebra (you would have to use some trig identities to show this).
-When considered on for example $[0,\pi]$, the
+When considered on $[0,\pi]$, the
 algebra separates points and vanishes nowhere so Stone--Weierstrass applies.
 You \emph{do not} want to conclude from this that every continuous
 function on $[0,\pi]$ has a uniformly convergent
 Fourier cosine series.  That is not true.
 In fact there exist continuous functions
 whose Fourier series does not converge even pointwise.  We do have formulas
-for the coefficients, but those coefficients will not give us a convergent
+for the coefficients, but those coefficients not give us a convergent
 series.  The
 trick is that the sequence of functions in the algebra that we obtain
 by Stone--Weierstrass
@@ -1787,30 +1812,29 @@ is not necessarily the sequence of partial sums of a series.
 
 Same warning applies to polynomials as well.  Just because a function is a
 uniform limit of polynomials doesn't mean that it is a uniform limit of a
-power series (which we will see in the next chapter).  
+power series.
 
-If we wish to have Stone--Weierstrass to hold for complex algebras, we must
+To obtain Stone--Weierstrass for complex algebras, we must
 make an extra assumption.
 
 \begin{defn}
 An algebra $\sA$ is self-adjoint, if for all $f \in \sA$, the function
-$\bar{f}$ defined by $\bar{f}(x) := \overline{f(x)}$ is in $\sA$, where by the
+$\widebar{f}$ defined by $\widebar{f}(x) := \overline{f(x)}$ is in $\sA$, where by the
 bar we mean the complex conjugate.
 \end{defn}
 
 \begin{thm}[Stone--Weierstrass, complex version]
 Let $X$ be a compact metric space and $\sA$ an algebra of complex-valued
 continuous functions on $X$, such that $\sA$ separates points, vanishes at
-no point, and is self-adjoint.  Then the uniform closure of $\sA$ is all of
-$C(X,\C)$.
+no point, and is self-adjoint.  Then the closure $\overline{\sA} = C(X,\C)$.
 \end{thm}
 
 \begin{proof}
-Suppose that $\sA_\R \subset \sA$ is the set of the real-valued elements of
-$\sA$.  If $f = u+iv$ where $u$ and $v$ are real-valued, then we note that
+Suppose $\sA_\R \subset \sA$ is the set of the real-valued elements of
+$\sA$.  If $f = u+iv$ where $u$ and $v$ are real-valued, then
 \begin{equation*}
-u = \frac{f+\bar{f}}{2}, \qquad
-v = \frac{f-\bar{f}}{2i} .
+u = \frac{f+\widebar{f}}{2}, \qquad
+v = \frac{f-\widebar{f}}{2i} .
 \end{equation*}
 So $u, v \in \sA$ as $\sA$ is a self-adjoint algebra, and since they are
 real-valued we get that $u, v \in \sA_\R$.
@@ -1823,22 +1847,24 @@ Similarly, for any $x$ find $f \in \sA$ such that $f(x) \not= 0$.  If $f
 = u+iv$, then either $u(x) \not= 0$ or $v(x) \not= 0$.
 So $\sA_\R$ vanishes at no point.
 
-Obviously $\sA_\R$ is a real algebra, and satisfies the hypotheses of the
+The set $\sA_\R$ is a real algebra, and satisfies the hypotheses of the
 real Stone--Weierstrass theorem.  So given any $f = u+iv \in C(X,\C)$,
-we can find $g,h \in \sA_\R$ such that
+we find $g,h \in \sA_\R$ such that
 $\sabs{u(t)-g(t)} < \nicefrac{\epsilon}{2}$ and
-$\sabs{v(t)-h(t)} < \nicefrac{\epsilon}{2}$ and so
-\begin{equation*}
+$\sabs{v(t)-h(t)} < \nicefrac{\epsilon}{2}$ for all $t \in X$.  So
+\begin{multline*}
 \abs{f(t) - \bigl(g(t)+ih(t)\bigr)} = 
-\abs{u(t)+iv(t) - \bigl(g(t)+ih(t)\bigr)} \leq
+\abs{u(t)+iv(t) - \bigl(g(t)+ih(t)\bigr)} \\
+\leq
 \sabs{u(t)-g(t)}+\sabs{v(t)-h(t)} < \nicefrac{\epsilon}{2} +
 \nicefrac{\epsilon}{2} = \epsilon.
-\end{equation*}
-So $\sA$ is dense in $C(X,\C)$.
+\end{multline*}
+for all $t \in X$.
+So $\overline{\sA} = C(X,\C)$.
 \end{proof}
 
-FIXME: An example of why we need the self-adjoint will be in the homework.
-?? FIXME: add exercise
+%FIXME: An example of why we need the self-adjoint will be in the homework.
+%?? FIXME: add exercise
 
 Here is an interesting application.  We'll do it for the complex version, but
 the same thing can be done with the real version.  It turns out when working
@@ -1864,8 +1890,20 @@ we can apply Stone--Weierstrass to obtain the result.
 \subsection{Exercises}
 
 \begin{exercise}
-FIXME
+Prove \propref{prop:closureofalgebra}.
+Hint: If $\{ f_n \}$ is a sequence in $C(X,\R)$
+converging to $f$, then as $f$ is bounded, you can show
+that $f_n$ is uniformly bounded, that is, there exists a
+single bound for all $f_n$ (and $f$).
 \end{exercise}
+
+\begin{exercise}
+Suppose $X := \R$ (not compact in particular).
+Construct a sequence of
+functions $f_n \in C(X,\R)$, such that $f_n^2$
+does not converge uniformly.
+\end{exercise}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1895,7 +1933,7 @@ f(z) = \sum_{n=0}^\infty c_n {(z-a)}^n
 for all $z \in B(a,\rho)$.
 Then we say $f$ is an \emph{\myindex{analytic}} function.
 
-Similarly if we have an interval $(a,b)$, we will say that $f \colon (a,b)
+Similarly if we have an interval $(a,b)$, we say that $f \colon (a,b)
 \to \C$ is analytic or perhaps \emph{\myindex{real-analytic}}
 if for each point $c \in
 (a,b)$ there is a power series around $c$ that converges in some
@@ -2029,17 +2067,18 @@ If
 \begin{equation*}
 f(z) := \sum c_n {(z-a)}^n
 \end{equation*}
-is convergent in $B(a,R)$ for some $R > 0$, then
-$f \colon B(a,R) \to \C$ is continuous.
+is convergent in $B(a,\rho)$ for some $\rho > 0$, then
+$f \colon B(a,\rho) \to \C$ is continuous.
 In particular, analytic functions are continuous.
 \end{prop}
 
 \begin{proof}
-For any $z_0 \in B(a,R)$ pick $r < R$ such that $z_0 \in B(a,r)$.  If we show
+For any $z_0 \in B(a,\rho)$ pick $r < \rho$ such that $z_0 \in B(a,r)$.
+If we show
 that $f$ restricted to $B(a,r)$ is continuous then $f$ is continuous at
-$z_0$.  This can be easily seen since for example any sequence converging to
-$z_0$ will have some tail that is completely in the open ball $B(a,r)$.  On $B(a,r)$ the
-partial sums converge uniformly by the theorem and so the limit is
+$z_0$.  This can be easily seen since any sequence converging to
+$z_0$ has some tail that is completely in the open ball $B(a,r)$.  On $B(a,r)$ the
+partial sums converge uniformly and so the limit is
 continuous.
 \end{proof}
 
@@ -2113,7 +2152,7 @@ FIXME: This counterexample should be an exercise
 
 \subsection{Power series as analytic functions}
 
-We will need a theorem on swapping limits of series.  This is sometimes
+We need a theorem on swapping limits of series.  This is sometimes
 called Fubini's theorem for sums.
 
 \begin{thm}[Fubini for sums] \label{thm:fubiniforsums}
@@ -2265,13 +2304,13 @@ $\sum d_k {(z-b)}^k$ that converges to $f(z)$ in $B(b,\rho-\sabs{b-a})$.
 \begin{proof}
 Without loss of generality assume that $a=0$.  We can also rotate to assume that $b$ is real, but
 since that is harder to picture, let us do it explicitly.
-Let $\alpha = \frac{\bar{b}}{\sabs{b}}$.
+Let $\alpha = \frac{\widebar{b}}{\sabs{b}}$.
 Notice that
 \begin{equation*}
-\abs{\nicefrac{1}{\alpha}} = \sabs{\alpha} %= \abs{\frac{\bar{b}}{\sabs{b}}}
+\abs{\nicefrac{1}{\alpha}} = \sabs{\alpha} %= \abs{\frac{\widebar{b}}{\sabs{b}}}
 %=
 %\sqrt{
-%\frac{\bar{b}}{\sabs{b}}
+%\frac{\widebar{b}}{\sabs{b}}
 %\frac{b}{\sabs{b}}
 %}
 = 1 .
@@ -2316,14 +2355,14 @@ actually it does happen to be exactly 1.  Can you see why? (exercise).
 \subsection{Identity theorem for analytic functions}
 
 \begin{lemma}
-Suppose that $f(z) = \sum a_k z^k$ is a convergent power series and
+Suppose $f(z) = \sum a_k z^k$ is a convergent power series and
 $\{ z_n \}$ is a sequence of nonzero complex numbers converging to 0,
 such that $f(z_n) = 0$ for all $n$.  Then $a_k = 0$ for every $k$.
 \end{lemma}
 
 \begin{proof}
 By continuity we know $f(0) = 0$ so $a_0 = 0$.
-Suppose that there exists some nonzero $a_k$.
+Suppose there exists some nonzero $a_k$.
 Let $m$ be the smallest $m$ such that $a_m \not= 0$.  Then
 \begin{equation*}
 f(z) = \sum_{k=m}^\infty a_k z^k = 
@@ -2355,7 +2394,7 @@ in $U$, then $f(z) = g(z)$ for all $z \in U$.
 Without loss of generality suppose $E$ is the set of all points $z \in U$ such that
 $g(z)=f(z)$.  Note that $E$ must be closed as $f$ and $g$ are continuous.
 
-Suppose that $E$ has a cluster point.  Without loss of generality assume that $0$ is the cluster point.  Near 0,
+Suppose $E$ has a cluster point.  Without loss of generality assume that $0$ is the cluster point.  Near 0,
 we have the expansions
 \begin{equation*}
 f(z) = \sum_{k=0}^\infty a_k {z}^k 
@@ -2394,9 +2433,9 @@ FIXME
 
 \sectionnotes{half a lecture}
 
-In this section we will study first the local behaviour of polynomials
+In this section we study first the local behaviour of polynomials
 and the growth of polynomials as $z$ goes to infinity.  As an application
-we will prove the fundamental theorem of algebra, that any polynomial
+we prove the fundamental theorem of algebra: any polynomial
 has a complex root.
 
 \begin{lemma} \label{lemma:polyalwaysgetssmaller}
@@ -2468,8 +2507,8 @@ has are precisely at the zeros.
 The lemma does not hold if we restrict to real numbers.  For
 example, $x^2+1$ has a minimum at $x=0$, but no zero there.  The thing is that
 there is a $w$ arbitrarily close to $0$ such that $\sabs{w^2+1} < 1$, but this
-$w$ will necessarily not be real.  Letting $w = i\epsilon$ for small
-$\epsilon > 0$ will work.
+$w$ is necessarily not real.  Letting $w = i\epsilon$ for small
+$\epsilon > 0$ works.
 \end{remark}
 
 The moral of the story is that if $p(0) = 1$, then very close to 0, the
@@ -2485,7 +2524,7 @@ an $R$ such that if $\sabs{z} \geq R$ then $\sabs{p(z)} \geq M$.
 \begin{proof}
 Write $p(z) = a_0 + a_1 z + \cdots + a_d z^d$ and suppose that
 $a_d \not= 0$.
-Suppose that $\sabs{z} \geq R$ (so also $\sabs{z}^{-1} \leq R^{-1}$).
+Suppose $\sabs{z} \geq R$ (so also $\sabs{z}^{-1} \leq R^{-1}$).
 We estimate:
 \begin{equation*}
 \begin{split}
@@ -2639,7 +2678,7 @@ Immediately we obtain the so called \emph{\myindex{Euler's formula}}:
 e^{iz} = \cos(z) + i\sin(z) .
 \end{equation*}
 From the definition of $e^z$ we notice that
-$\overline{(e^z)} = e^{\bar{z}}$ and so
+$\overline{(e^z)} = e^{\widebar{z}}$ and so
 if $x$ is real then
 \begin{equation*}
 \overline{(e^{ix})} = e^{-ix} .
@@ -2697,7 +2736,7 @@ So $f$ is nondecreasing and
 furthermore $f(0) = 0$.  So $f$ must be nonnegative when $x \geq 0$, which is
 precisely what we wanted to prove.
 
-We claim that there exists a positive $x$ such that $\cos(x) = 0$.
+We claim there exists a positive $x$ such that $\cos(x) = 0$.
 As $\cos(0) = 1 > 0$, then cosine is definitely positive at least
 for some $x$ near 0.
 Suppose that on $[0,y)$ we have $\cos(x) > 0$, then $\sin(x)$ is strictly
@@ -2800,9 +2839,9 @@ We have that $e^{it}$ parametrizes the circle for $t$ in $[0,2\pi)$.
 $\frac{d}{dt} \bigl( e^{it} \bigr) = ie^{it}$ and so the circumference of the
 circle is
 \begin{equation*}
-\int_0^{2\pi} \sabs{i e^{it}} \, dt
+\int_0^{2\pi} \sabs{i e^{it}}  ~  dt
 =
-\int_0^{2\pi} 1 \, dt  = 2\pi .
+\int_0^{2\pi} 1  ~  dt  = 2\pi .
 \end{equation*}
 
 More generally we notice that $e^{it}$ parametrizes the circle by arclength.
@@ -2829,6 +2868,8 @@ Fourier series is perhaps the most important of the series that we cover in
 this book.  We have seen a few in examples before, but let us start
 at the beginning.
 
+\subsection{Trigonometric polynomials}
+
 A \emph{\myindex{trigonometric polynomial}} is an expression of the form
 \begin{equation*}
 a_0 + \sum_{n=1}^N \bigl(a_n \cos(nx) + b_n \sin(nx) \bigr),
@@ -2847,7 +2888,8 @@ $\sabs{z}=1$ we can write $z = e^{ix}$, and so
 so a trigonometric polynomial is really a rational function (do note that
 we are allowing negative powers) evaluated on the unit circle.  There is
 a wonderful connection between power series (actually Laurent series) and
-Fourier series because of this observation, but we will not investigate this further.
+Fourier series because of this observation,
+but we will not investigate this further.
 
 Notice that all the functions are $2\pi$-periodic and hence the trig
 polynomials are also $2\pi$-periodic.
@@ -2856,7 +2898,7 @@ same, so we will stick with the above scale.
 We compute that the antiderivative of $e^{inx}$ is $\frac{e^{inx}}{in}$ and
 so
 \begin{equation*}
-\int_{-\pi}^\pi e^{inx}\,dx =
+\int_{-\pi}^\pi e^{inx} ~ dx =
 \begin{cases}
 2\pi & \text{if $n=0$,} \\
 0 & \text{otherwise.}
@@ -2872,14 +2914,14 @@ and for $m=-N,\ldots,N$ compute
 f(x) e^{-imx} ~ dx
 =
 \frac{1}{2\pi} \int_{-\pi}^\pi
-\left(\sum_{n=-N}^N c_n e^{i(n-m)x}\right)\,dx
+\left(\sum_{n=-N}^N c_n e^{i(n-m)x}\right) ~ dx
 =
 \sum_{n=-N}^N
 c_n
 \frac{1}{2\pi}
 \int_{-\pi}^\pi
 e^{i(n-m)x}
-\,dx
+ ~ dx
 =
 c_m .
 \end{equation*}
@@ -2941,6 +2983,8 @@ for all $x \in \R$, then $c_n = 0$ for all $n$.
 Proof follows immediately from the integral formula for $c_n$.
 \end{proof}
 
+\subsection{Fourier series}
+
 We now take limits.  We call the series
 \begin{equation*}
 \sum_{n=-\infty}^\infty c_n e^{inx}
@@ -2961,7 +3005,7 @@ talk about the following limit:
 \sum_{n=-N}^N c_n e^{inx} .
 \end{equation*}
 There are other ways we can sum the series that can get convergence in more
-situations, but we will refrain from discussion those.
+situations, but we refrain from discussing those.
 
 For any function integrable on $[-\pi,\pi]$ we call the numbers
 \begin{equation*}
@@ -2970,12 +3014,12 @@ c_n =
 f(x) e^{-inx} ~ dx
 \end{equation*}
 its Fourier coefficients.  Often these numbers are
-written as $\hat{f}(n)$ (For those that have seen the Fourier transform,
+written as $\hat{f}(n)$\footnote{If you have seen the Fourier transform,
 the similarity is not just
-coincidental, we are really taking a type of Fourier transform here).
-We can then formally write down a Fourier series.
+coincidental, we are really taking a type of Fourier transform here}.
+We then formally write down a Fourier series.
 As you might imagine such a series might not even converge.
-We will write
+We write
 \begin{equation*}
 f(x) \sim
 \sum_{n=-\infty}^\infty c_n e^{inx}
@@ -2993,7 +3037,7 @@ example can be extended to a more general criterion.
 
 \begin{prop}
 Let $\sum_{n=-\infty}^\infty c_n e^{inx}$ be a Fourier series,
-and there exist constants $C$ and $\alpha > 1$ such that
+and $C$, $\alpha > 1$ constants such that
 \begin{equation*}
 \sabs{c_n} \leq \frac{C}{\sabs{n}^\alpha}
 \qquad \text{for all $n \in \Z \setminus \{ 0 \}$}.
@@ -3008,7 +3052,7 @@ We can also take derivatives.
 
 \begin{prop}
 Let $\sum_{n=-\infty}^\infty c_n e^{inx}$ be a Fourier series,
-and there exist constants $C$ and $\alpha > 2$ such that
+and $C$, $\alpha > 2$ constants such that
 \begin{equation*}
 \sabs{c_n} \leq \frac{C}{\sabs{n}^\alpha}
 \qquad \text{for all $n \in \Z \setminus \{ 0 \}$}.
@@ -3042,7 +3086,7 @@ the Fourier series converges to a $k$-times continuously differentiable
 function.  Therefore, the faster the coefficients go to zero, the more
 regular the limit is.
 
-\medskip
+\subsection{Orthonormal systems}
 
 Let us now investigate convergence of Fourier series from the other side.
 Given properties of $f$, what can we say about the series.
@@ -3086,12 +3130,12 @@ $\snorm{z}_2$)
 This is just the euclidean distance to the origin in $\C^n$.
 \end{remark}
 
-Let us get back to function spaces.  We will assume all functions are
+Let us get back to function spaces.  We assume all functions are
 Riemann integrable in the following.
 
 \begin{defn}
 Let $\{ \varphi_n \}$ be a sequence of integrable complex-valued
-functions on $[a,b]$.  We will say that this is an
+functions on $[a,b]$.  We say that this is an
 \emph{\myindex{orthonormal system}} if
 \begin{equation*}
 \langle \varphi_n , \varphi_m \rangle
@@ -3122,7 +3166,7 @@ a Fourier series relative to $\{ \varphi_n \}$.  We let
 c_n =
 \langle f , \varphi_n \rangle
 =
-\int_a^b f(x) \overline{\varphi_n(x)}\,dx ,
+\int_a^b f(x) \overline{\varphi_n(x)} ~ dx ,
 \end{equation*}
 and write
 \begin{equation*}
@@ -3271,6 +3315,7 @@ converges and hence
 \lim_{k \to \infty} c_k = 0 .
 \end{equation*}
 
+\subsection{The Dirichlet kernel and approximate delta functions}
 
 Let us return to the trigonometric Fourier series.  Here we note that the
 system $\{ e^{inx} \}$ is orthogonal, but not orthonormal if we simply
@@ -3305,9 +3350,9 @@ Write
 f(x) \sim
 \sum_{n=-\infty}^\infty c_n e^{inx} .
 \end{equation*}
-We will look at the symmetric partial sums
+We define at the \emph{\myindex{symmetric partial sums}}
 \begin{equation*}
-s_N(x) = s_N(f;x) = 
+s_N(x) = s_N(f;x) := 
 \sum_{n=-N}^N c_n e^{inx} .
 \end{equation*}
 The inequality leading up to Bessel now reads:
@@ -3386,19 +3431,19 @@ The claim follows.
 We expand the definition of $s_N$
 \begin{equation*}
 s_N(x) = 
-\sum_{n=-N}^N \frac{1}{2\pi} \int_{-\pi}^\pi f(t) e^{-int} \, dt \, e^{inx}
+\sum_{n=-N}^N \frac{1}{2\pi} \int_{-\pi}^\pi f(t) e^{-int}  ~  dt ~ e^{inx}
 =
-\frac{1}{2\pi} \int_{-\pi}^\pi f(t) \sum_{n=-N}^N e^{in(x-t)} \, dt
+\frac{1}{2\pi} \int_{-\pi}^\pi f(t) \sum_{n=-N}^N e^{in(x-t)} ~ dt
 =
-\frac{1}{2\pi} \int_{-\pi}^\pi f(t) D_N(x-t) \, dt .
+\frac{1}{2\pi} \int_{-\pi}^\pi f(t) D_N(x-t) ~ dt .
 \end{equation*}
 Convolution strikes again!
 As $D_N$ and $f$ are $2\pi$-periodic we can also change variables and write 
 \begin{equation*}
 s_N(x) = 
-\frac{1}{2\pi} \int_{x-\pi}^{x+\pi} f(x-t) D_N(t) \, dt
+\frac{1}{2\pi} \int_{x-\pi}^{x+\pi} f(x-t) D_N(t) ~ dt
 =
-\frac{1}{2\pi} \int_{-\pi}^\pi f(x-t) D_N(t) \, dt
+\frac{1}{2\pi} \int_{-\pi}^\pi f(x-t) D_N(t) ~ dt
 \end{equation*}
 See \figureref{fig:approxdeltas} for a plot of $D_N$ for $N=5$ and $N=20$.
 
@@ -3422,9 +3467,11 @@ people write
 although we have not really defined the delta function (and it is not a
 function), nor a Fourier series of whatever kind object it is.
 
+\subsection{Localization}
 
 \begin{thm}
-Let $x$ be fixed and let $f$ be Riemann integrable on $[-\pi,\pi]$.  Suppose that there exist $\delta > 0$ and $M$ such that
+Let $x$ be fixed and let $f$ be Riemann integrable on $[-\pi,\pi]$.  Suppose
+there exist $\delta > 0$ and $M$ such that
 \begin{equation*}
 \sabs{f(x+t)-f(x)} \leq M \sabs{t}
 \end{equation*}
@@ -3435,7 +3482,8 @@ for all $t \in (-\delta,\delta)$, then
 \end{thm}
 
 In other words, if for example $f$ is differentiable at $x$
-then we obtain convergence.  Generally what the result implies is
+then we obtain convergence.  A useful consequence of
+the result is
 that if the function is continuous
 piecewise smooth, then the Fourier series converges
 (pointwise).   By continuous piecewise smooth we mean that $f$
@@ -3453,17 +3501,17 @@ Write
 \begin{equation*}
 \begin{split}
 s_N(f;x)-f(x) & =
-\frac{1}{2\pi} \int_{-\pi}^\pi f(x-t) D_N(t) \, dt 
+\frac{1}{2\pi} \int_{-\pi}^\pi f(x-t) D_N(t) ~ dt 
 -
 f(x)
-\frac{1}{2\pi} \int_{-\pi}^\pi D_N(t) \, dt
+\frac{1}{2\pi} \int_{-\pi}^\pi D_N(t) ~ dt
 \\
 & = 
-\frac{1}{2\pi} \int_{-\pi}^\pi \bigl( f(x-t) - f(x) \bigr) D_N(t) \, dt 
+\frac{1}{2\pi} \int_{-\pi}^\pi \bigl( f(x-t) - f(x) \bigr) D_N(t) ~ dt 
 \\
 & = 
 \frac{1}{2\pi} \int_{-\pi}^\pi \frac{f(x-t) - f(x)}{\sin(t/2)} \sin\bigl(
-(N+\nicefrac{1}{2})t \bigr) \, dt 
+(N+\nicefrac{1}{2})t \bigr) ~ dt 
 \end{split}
 \end{equation*}
 Now by the hypotheses we obtain that
@@ -3493,16 +3541,16 @@ so
 \begin{equation*}
 \begin{split}
 \frac{1}{2\pi} \int_{-\pi}^\pi \frac{f(x-t) - f(x)}{\sin(t/2)} \sin\bigl(
-(N+\nicefrac{1}{2})t \bigr) \, dt 
+(N+\nicefrac{1}{2})t \bigr) ~ dt 
 =
 &
 \frac{1}{2\pi} \int_{-\pi}^\pi
 \left( \frac{f(x-t) - f(x)}{\sin(t/2)}
-\cos (t/2) \right) \sin (Nt) \, dt
+\cos (t/2) \right) \sin (Nt) ~ dt
 \\
 & +
 \frac{1}{2\pi} \int_{-\pi}^\pi \bigl( f(x-t) - f(x) \bigr)
-\cos (Nt) \, dt
+\cos (Nt) ~ dt
 \end{split}
 \end{equation*}
 Now 
@@ -3537,13 +3585,15 @@ by trigonometric polynomials.  However, these trigonometric polynomials need
 not be the partial sums $s_N$.  On the other hand, they can be
 explicitly constructed from $s_N$.
 
+\subsection{Parseval's theorem}
+
 We have that the convergence always happens in the $L^2$ sense and
 furthermore that formal operations on the (infinite) vectors of
 Fourier coefficients is the same as the operations using the integral
 inner product.
 
-FIXME? We will mostly sketch out the proof and leave some details to the reader
-as exercises.  Some of these are exercises in Rudin.
+%FIXME? We will mostly sketch out the proof and leave some details to the reader
+%as exercises.  Some of these are exercises in Rudin.
 
 %FIXME: Should we prove $L^2$ triang and CS?  This is just formal nonsense
 
@@ -3588,7 +3638,7 @@ and
 \end{thm}
 
 \begin{proof}
-It is not hard too prove (FIXME: Exercise) that there is
+It is not hard too prove (exercise) that there is
 a continuous $2\pi$-periodic function $h$ such that
 \begin{equation*}
 \snorm{f-h}_2 < \epsilon .
@@ -3606,16 +3656,16 @@ If $P$ is of degree $N_0$ then for all $N \geq N_0$ we have
 \snorm{h-s_N(h)}_2 \leq \snorm{h-P}_2 \leq \epsilon
 \end{equation*}
 as $s_N(h)$ is the best approximation for $h$ in $L^2$ (\thmref{thm:l2bestapprox}).
-Next by the inequality leading up to Bessel we have
+By the inequality leading up to Bessel we have
 \begin{equation*}
 \snorm{s_N(h)-s_N(f)}_2
 =
 \snorm{s_N(h-f)}_2
 \leq
-\snorm{h-f}_2 \leq \epsilon
+\snorm{h-f}_2 \leq \epsilon .
 \end{equation*}
 It is not difficult to show the triangle
-inequality for the $L^2$ norm (FIXME: exercise), that is
+inequality for the $L^2$ norm (exercise), then
 \begin{equation*}
 \snorm{f-s_N(f)}_2
 \leq
@@ -3648,9 +3698,9 @@ c_k
 \overline{d_k}
 \end{equation*}
 Next we need the Schwarz (or Cauchy--Schwarz or Cauchy--Bunyakovsky--Schwarz)
-inequality (FIXME: left as exercise), that is
+inequality, that is
 \begin{equation*}
-{\abs{\int_a^b f\bar{g}}}^2
+{\abs{\int_a^b f\widebar{g}}}^2
 \leq
 \left( \int_a^b \sabs{f}^2 \right)
 \left( \int_a^b \sabs{g}^2 \right)
@@ -3663,7 +3713,7 @@ So
 %($g$ is Riemann integrable so bounded)
 \begin{equation*}
 \begin{split}
-\abs{\int_{-\pi}^\pi f\bar{g} - \int_{-\pi}^\pi s_N(f)g}
+\abs{\int_{-\pi}^\pi f\widebar{g} - \int_{-\pi}^\pi s_N(f)g}
 & =
 \abs{\int_{-\pi}^\pi (f- s_N(f))g} \\
 & \leq
@@ -3679,7 +3729,29 @@ Now the right hand side goes to 0 as $N$ goes to infinity.
 \subsection{Exercises}
 
 \begin{exercise}
-FIXME
+Given a $2\pi$-periodic function $f \colon \R \to \C$ Riemann integrable on
+$[-\pi,\pi]$,
+and $\epsilon > 0$.
+Show that there exists a continuous $2\pi$-periodic function $g \colon \R
+\to \C$ such that $\snorm{f-g}_2 < \epsilon$.
 \end{exercise}
 
+\begin{exercise}
+Prove the Cauchy-Bunyakovsky-Schwarz inequality
+for Riemann integrable functions:
+\begin{equation*}
+{\abs{\int_a^b f\widebar{g}}}^2
+\leq
+\left( \int_a^b \sabs{f}^2 \right)
+\left( \int_a^b \sabs{g}^2 \right) .
+\end{equation*}
+\end{exercise}
+
+\begin{exercise}
+Prove the $L^2$ triangle inequality for
+for Riemann integrable functions:
+\begin{equation*}
+\snorm{f+g}_2 \leq \snorm{f}_2 + \snorm{g}_2 .
+\end{equation*}
+\end{exercise}
 
