@@ -2225,7 +2225,7 @@ the derivative of $f$ is a function from $U$ to $L(\R^n,\R^m)$.  Compare
 to the one dimensional case, where the derivative is a function
 from $U$ to $\R$, but we really want to think of $\R$ here as
 $L(\R^1,\R^1)$.  As in one dimension, the idea is that a differentiable
-mappings is ``infinitesimally close'' to a linear mapping, and this
+mapping is ``infinitesimally close'' to a linear mapping, and this
 linear mapping is the derivative.
 
 Notice which norms are being used in the definition.
@@ -2287,7 +2287,7 @@ was arbitrary, $\snorm{A-B} = 0$, or in other words $A = B$.
 
 \begin{example}
 If $f(x) = Ax$ for a linear mapping $A$, then
-$f'(x) = A$.  This is easily seen:
+$f'(x) = A$:
 \begin{equation*}
 \frac{\snorm{f(x+h)-f(x) - Ah}}{\snorm{h}}
 =
@@ -2357,9 +2357,9 @@ and goes to zero as $h \to 0$.  Therefore,
 $f(p+h)$ must go to $f(p)$ as $h \to 0$.  That is, $f$ is continuous at $p$.
 \end{proof}
 
-If $A \in L(X,Y)$ and $B \in L(Y,Z)$ are linear maps, then we
-saw that they are their own derivative.  The composition
-$BA \in L(X,Z)$ is therefore also its own derivative, and
+If $A \in L(X,Y)$ and $B \in L(Y,Z)$ are linear maps, then 
+they are their own derivative.  The composition
+$BA \in L(X,Z)$ is also its own derivative, and
 so the derivative of the composition is the composition
 of the derivatives.  As differentiable maps are ``infinitesimally close''
 to linear maps, they have the same property:
@@ -2381,9 +2381,9 @@ F'(p) = g'\bigl(f(p)\bigr) f'(p) .
 Without the points where things are evaluated, this is sometimes written as
 $F' = {(f \circ g)}' = g' f'$.  The way to
 understand it is that the derivative of the composition $g \circ f$
-is the composition of the derivatives of $g$ and $f$.  That is, if
+is the composition of the derivatives of $g$ and $f$.  If
 $f'(p) = A$ and $g'\bigl(f(p)\bigr) = B$, then $F'(p) = BA$,
-just as it is for linear maps.
+just as for linear maps.
 
 \begin{proof}
 Let $A := f'(p)$ and $B := g'\bigl(f(p)\bigr)$.  Take $h \in \R^n$
@@ -2391,7 +2391,8 @@ and write $q = f(p)$, $k = f(p+h)-f(p)$.  Let
 \begin{equation*}
 r(h) := f(p+h)-f(p) - A h . %= k - Ah.
 \end{equation*}
-Then $r(h) = k-Ah$ or $Ah = k-r(h)$.  We look at the quantity we need to go
+Then $r(h) = k-Ah$ or $Ah = k-r(h)$, and $f(p+h) = q+k$.
+We look at the quantity we need to go
 to zero:
 \begin{equation*}
 \begin{split}
@@ -2463,7 +2464,7 @@ Finally
 \snorm{A} .
 \end{equation*}
 As $f$ is differentiable at $p$,
-for small enough $h$
+for small enough $h$, the quantity
 ${\snorm{f(p+h)-f(p)-Ah}} \,
 {\snorm{h}}$ is bounded.  Therefore the
 term
@@ -2574,17 +2575,17 @@ f'(p) \, v =
 Fix a $j$ and note that
 \begin{equation*}
 \begin{split}
-\norm{\frac{f(p+h e_j)-f(p)}{h} - f'(p) e_j} & = 
-\norm{\frac{f(p+h e_j)-f(p) - f'(p) h e_j}{h}} \\
+\norm{\frac{f(p+h e_j)-f(p)}{h} - f'(p) \, e_j} & = 
+\norm{\frac{f(p+h e_j)-f(p) - f'(p) \, h e_j}{h}} \\
 & =
-\frac{\snorm{f(p+h e_j)-f(p) - f'(p) h e_j}}{\snorm{h e_j}} .
+\frac{\snorm{f(p+h e_j)-f(p) - f'(p) \, h e_j}}{\snorm{h e_j}} .
 \end{split}
 \end{equation*}
 As $h$ goes to 0, the right hand side goes to zero by
 differentiability of $f$, and hence
 \begin{equation*}
 \lim_{h \to 0}
-\frac{f(p+h e_j)-f(p)}{h} = f'(p) e_j  .
+\frac{f(p+h e_j)-f(p)}{h} = f'(p) \, e_j  .
 \end{equation*}
 Note that $f$ is vector valued.  So represent $f$ by components
 $f = (f_1,f_2,\ldots,f_m)$, and note that taking a limit in $\R^m$
@@ -2598,7 +2599,7 @@ the partial derivative
 \frac{f_k(p+h e_j)-f_k(p)}{h}
 \end{equation*}
 exists and 
-is equal to the $k$th component of $f'(p) e_j$, and we are done.
+is equal to the $k$th component of $f'(p)\, e_j$, and we are done.
 \end{proof}
 
 The converse of the proposition is not true.  Just because the partial
@@ -2621,7 +2622,7 @@ the \emph{\myindex{gradient}} as
 \nabla f (x) := \sum_{j=1}^n \frac{\partial f}{\partial x_j} (x)\, e_j .
 \end{equation*}
 The gradient gives a way to represent the action of
-the derivative as a dot product: $f'(x)v = \nabla f(x) \cdot v$.
+the derivative as a dot product: $f'(x)\,v = \nabla f(x) \cdot v$.
 
 Suppose $\gamma \colon (a,b) \subset \R \to \R^n$ is a differentiable
 function and the image $\gamma\bigl((a,b)\bigr) \subset U$.
@@ -2665,36 +2666,35 @@ g'(t) = (\nabla f) \bigl(\gamma(t)\bigr) \cdot \gamma^{\:\prime}(t)
 \end{equation*}
 
 We use this idea to define derivatives in a specific direction.  A direction
-is simply a vector pointing in that direction.  So pick a vector $u \in \R^n$
+is simply a vector pointing in that direction.  Pick a vector $u \in \R^n$
 such that $\snorm{u} = 1$, and fix $x \in U$.
-Then define the curve
+We define the
+\emph{\myindex{directional derivative}} as
+\glsadd{not:mvdirder}
+\begin{equation*}
+D_u f (x) := \frac{d}{dt}\Big|_{t=0} \bigl[ f(x+tu) \bigr] =
+\lim_{h\to 0}
+\frac{f(x+hu)-f(x)}{h} ,
+\end{equation*}
+where the notation
+$\frac{d}{dt}\big|_{t=0}$ represents the derivative evaluated at $t=0$.
+
+Define the curve
 \begin{equation*}
 \gamma(t) := x + tu .
 \end{equation*}
 Then $\gamma^{\:\prime}(t) = u$ for all $t$.  
-By the chain rule
+By the computation above:
 \begin{equation*}
+D_u f (x) =
 \frac{d}{dt}\Big|_{t=0} \bigl[ f(x+tu) \bigr] =
-(\nabla f) (x) \cdot u ,
+(\nabla f) \bigl(\gamma(0)\bigr) \cdot \gamma^{\:\prime}(0)
+=
+(\nabla f) (x) \cdot u .
 \end{equation*}
-where the notation
-$\frac{d}{dt}\big|_{t=0}$ represents the derivative evaluated at $t=0$.
-We also compute directly
-\begin{equation*}
-\frac{d}{dt}\Big|_{t=0} \bigl[ f(x+tu) \bigr] =
-\lim_{h\to 0}
-\frac{f(x+hu)-f(x)}{h} .
-\end{equation*}
-Either way, we define the
-\emph{\myindex{directional derivative}} as
-\glsadd{not:mvdirder}
-\begin{equation*}
-D_u f (x) := \frac{d}{dt}\Big|_{t=0} \bigl[ f(x+tu) \bigr] ,
-\end{equation*}
-which can be computed by one of the methods above.
 
 Suppose $(\nabla f)(x) \neq 0$.
-By Cauchy--Schwarz inequality,
+By the Cauchy--Schwarz inequality,
 \begin{equation*}
 \sabs{D_u f(x)} \leq \snorm{(\nabla f)(x)} .
 \end{equation*}
@@ -2712,8 +2712,8 @@ function grows fastest, in other words, in the direction in which $D_u f(x)$ is 
 
 \begin{defn}
 Let $U \subset \R^n$ and
-$f \colon U \to \R^n$ be a differentiable mapping.  Then define the
-\emph{\myindex{Jacobian}}, or 
+$f \colon U \to \R^n$ be a differentiable mapping.  Define the
+\emph{\myindex{Jacobian}}, or the
 \emph{\myindex{Jacobian determinant}}%
 \footnote{The matrix from \propref{mv:prop:jacobianmatrix} representing $f'(x)$
 is sometimes called the
@@ -2723,7 +2723,7 @@ of $f$ at $x$ as
 \begin{equation*}
 J_f(x) := \det\bigl( f'(x) \bigr) .
 \end{equation*}
-Sometimes this is written as
+Sometimes $J_f$ is written as
 \begin{equation*}
 \frac{\partial(f_1,f_2,\ldots,f_n)}{\partial(x_1,x_2,\ldots,x_n)} .
 \end{equation*}
@@ -2905,6 +2905,7 @@ $\frac{\partial f}{\partial x}(x_0,y_0) = \frac{\partial f}{\partial
 y}(x_0,y_0) = 0$.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Define $f(x,y) := ( x-y^2 ) ( 2 y^2 - x)$.  The graph of $f$ is called
 the \emph{\myindex{Peano surface}}%
@@ -2925,6 +2926,7 @@ $t=0$.
 $f$ does not have a local maximum at $(0,0)$.
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Suppose $f \colon \R \to \R^n$ is differentiable and $\snorm{f(t)} = 1$ for
