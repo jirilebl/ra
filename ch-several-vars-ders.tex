@@ -2511,7 +2511,8 @@ $\frac{\partial f_k}{\partial x_j}$ (or write it as $D_j f_k$).
 \begin{myfigureht}
 \includegraphics{figures/svpartder}
 \caption{Illustration of a partial derivative for a function $f \colon \R^2
-\to \R$.  The slope of the given line in the $yx_2$-plane is
+\to \R$.  The $yx_2$-plane where $x_1$ is fixed is marked in dotted line,
+and the slope of the tangent line in the $yx_2$-plane is
 $\frac{\partial f}{\partial x_2}(x_1,x_2)$.\label{fig:svpartder}}
 \end{myfigureht}
 
@@ -2587,10 +2588,10 @@ differentiability of $f$, and hence
 \lim_{h \to 0}
 \frac{f(p+h e_j)-f(p)}{h} = f'(p) \, e_j  .
 \end{equation*}
-Note that $f$ is vector valued.  So represent $f$ by components
-$f = (f_1,f_2,\ldots,f_m)$, and note that taking a limit in $\R^m$
-is the same as taking the limit in each component separately.  Therefore
-for any $k$
+As $f$ is vector valued, represent $f$ by components
+$f = (f_1,f_2,\ldots,f_m)$. Taking a limit in $\R^m$
+is the same as taking the limit in each component separately.  
+For any $k$
 the partial derivative
 \begin{equation*}
 \frac{\partial f_k}{\partial x_j} (p)

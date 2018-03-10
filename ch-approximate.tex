@@ -36,6 +36,7 @@ properties then give a field (exercise).
 
 Generally, we write a complex number $(x,y)$ as $x+iy$, where we
 define\footnote{Note that engineers use $j$ instead of $i$.}
+\glsadd{not:imaginary}
 \begin{equation*}
 i := (0,1) .
 \end{equation*}
@@ -61,15 +62,18 @@ Let $z= x+iy$.
 Define
 the \emph{\myindex{real part}} of $z$ as $x$, and the
 the \emph{\myindex{imaginary part}} of $z$ as $y$.  We write
+\glsadd{not:realpart}\glsadd{not:imagpart}
 \begin{equation*}
 \Re\, z := x , \qquad
 \Im\, z := y .
 \end{equation*}
 Define the
+\glsadd{not:conj}
 \emph{\myindex{complex conjugate}} as
 \begin{equation*}
 \widebar{z} := x-iy .
 \end{equation*}
+\glsadd{not:modulus}
 Similarly define \emph{\myindex{modulus}} as
 \begin{equation*}
 \sabs{z} := \sqrt{x^2+y^2} .
@@ -350,7 +354,7 @@ d\bigl(f_n(x),f_m(x)\bigr) < \epsilon .
 \end{equation*}
 \end{prop}
 
-For $f \colon X \to \C$, we write
+For $f \colon X \to \C$, we write\glsadd{not:uniformnorm}
 \begin{equation*}
 \snorm{f}_u := \sup_{x \in X} \sabs{f(x)} .
 \end{equation*}
@@ -376,10 +380,10 @@ Now take a supremum on the left to get
 
 For a compact $X$,
 the uniform norm is a norm on the vector space $C(X,\C)$.
-While we will not need it, $C(X,\C)$ is in fact a complex
-vector space, that is in the definition of a vector space can be taken to be
-complex numbers.
 We leave it as an exercise.
+While we will not need it, $C(X,\C)$ is in fact a complex
+vector space, that is in the definition of a vector space replace
+$\R$ with $\C$.
 Convergence in the metric space $C(X,\C)$ is
 uniform convergence.
 
@@ -497,7 +501,7 @@ an $M$ such that for all $m,n \geq M$ we have
 \begin{equation*}
 d_Y\bigl(f_n(x_k),f_m(x_k)\bigr) < \epsilon \qquad \text{for all $k$} .
 \end{equation*}
-As a metric is automatically continuous we can let $k$ go to infinity
+As a metric is automatically continuous we let $k$ go to infinity
 to find
 \begin{equation*}
 d_Y(a_n,a_m) \leq \epsilon .
@@ -549,7 +553,7 @@ Converse is not true.  Just because the limit is continuous doesn't mean
 that the convergence is uniform.  For example:
 $f_n \colon (0,1) \to \R$ defined by $f_n(x) := x^n$ converge to
 the zero function, but not uniformly.  However, if we add extra conditions
-on the sequence can obtain a partial converse such as Dini's theorem,
+on the sequence, we can obtain a partial converse such as Dini's theorem,
 \volIref{see Exercise 6.2.10 from volume I}.
 
 Assuming the exercise that for a compact $X$, $C(X,\C)$ is a metric space with
@@ -627,7 +631,7 @@ E.g.\ the Lebesgue integral.
 For complex-valued functions, define the
 \emph{derivative}\index{derivative!complex-valued function}
 of $f \colon [a,b] \to
-\C$ where $f(x) = u(x)+iv(x)$ as
+\C$ where $f(x) = u(x)+iv(x)$ as\glsadd{not:mvder}
 \begin{equation*}
 f'(x) := u'(x)+iv'(x) .
 \end{equation*}
@@ -880,7 +884,7 @@ let $\{ f_{m+1,k} \}_{k=1}^\infty$ be the subsequence of $\{ f_{m,k}
 \}_{k=1}^\infty$
 such that
 $\{ f_{m+1,k}(x_{m+1}) \}_{k=1}^\infty$ converges (and hence it converges for all
-$x_j$ for $j=1,\ldots,m+1$) and we can rinse and repeat.
+$x_j$ for $j=1,\ldots,m+1$) and we rinse and repeat.
 
 If $X$ is finite we are done.  If $X$ is countably infinite,
 we pick the sequence
@@ -1116,7 +1120,7 @@ F \in C([0,1],\C) : F(x) = \int_0^x g(t) f(t)~dt,~ f \in C([0,1],\C),~
 \end{equation*}
 has compact closure, usually called
 \emph{\myindex{relatively compact}} (exercise).
-That is, the operator $T \colon C([0,1],\C) \to C([0,1],\C)$ given by
+In other words, the operator $T \colon C([0,1],\C) \to C([0,1],\C)$ given by
 \begin{equation*}
 T\bigl(f\bigr) (x) := F(x) = \int_0^x g(t) f(t)~dt
 \end{equation*}
@@ -1248,7 +1252,7 @@ near zero.  This just happens to be the simplest one.
 We only need this behavior on $[-1,1]$ as the convolution sees nothing
 further than this as $g$ is zero outside $[0,1]$.
 
-Because $q_n$ is a polynomial we can write
+Because $q_n$ is a polynomial we write
 \begin{equation*}
 q_n(x-t) = a_0(t) + a_1(t)x + \cdots + a_{2n}(t) x^{2n}
 \end{equation*}
@@ -1267,7 +1271,7 @@ size of $c_n$.  For $x \in [0,1]$,
 {(1-x^2)}^n \geq (1-nx^2) .
 \end{equation*}
 This fact is an application of Bernoulli's inequality or can be 
-prove directly:
+proved directly:
 the two expressions are equal at $x=0$ and 
 $\frac{d}{dx}\left({(1-x^2)}^n - (1-nx^2)\right)
 =-2nx{(1-x^2)}^{n-1}+2nx$, which is nonnegative for $x \in [0,1]$.
@@ -1439,7 +1443,7 @@ on $[-a,a]$ we definitely have some
 real polynomials $\widetilde{p}_n$ that converge to $f$.
 Let
 \begin{equation*}
-p_n(x) = \widetilde{p}_n(x) - \widetilde{p}_n(0)
+p_n(x) = \widetilde{p}_n(x) - \widetilde{p}_n(0) .
 \end{equation*}
 Obviously $p_n(0) = 0$.
 
@@ -1829,12 +1833,12 @@ does not vanish at any point.
 \end{example}
 
 In general if we have a family of functions that separates points and does
-not vanish at any point, we can let these function
+not vanish at any point, we can let these functions
 \emph{generate}\index{generate an algebra}
 an algebra
 by considering all the linear combinations of arbitrary multiples of such
-functions.  That is we basically consider all real polynomials of such
-functions (where the polynomials have no constant term).  For example above,
+functions.  That is, we consider all real polynomials without constant term
+of such functions.  For example above,
 the algebra is generated by $e^t$, we simply
 consider polynomials in $e^t$.
 
@@ -1932,7 +1936,7 @@ where $f_j \colon [0,1] \to \C$ and $g_j \colon [0,1] \to \C$ are continuous.
 It is not hard to see that the functions of the above form are a complex
 algebra.  It is equally easy to show that they vanish nowhere, separate
 points, and the algebra is self-adjoint.  As $[0,1] \times [0,1]$ is compact
-we can apply Stone--Weierstrass to obtain the result.
+we apply Stone--Weierstrass to obtain the result.
 \end{example}
 
 \subsection{Exercises}
@@ -1992,7 +1996,7 @@ As we will sometimes talk about real and sometimes about complex power
 series we will use $z$ to denote a complex number and $x$ a real number, but
 we will always mention which case we are working with.
 
-An analytic function can have a different expansion around different
+An analytic function has different expansions around different
 points.  Also the convergence does not automatically happen on the entire
 domain of the function.  For example, we know that if $\sabs{z} < 1$, then
 \begin{equation*}
@@ -2002,7 +2006,7 @@ While the left hand side exists on all of $z \not= 1$, the right hand side
 happens to converge only if $\sabs{z} < 1$.  See a graphs
 of a small piece of $\frac{1}{1-z}$ in \figureref{fig:1over1mz}.
 Notice that we can't graph the
-function itself, we can only graph its real or imaginary parts for lack
+function itself, we only graph its real or imaginary parts for lack
 of dimensions in our universe.
 
 \begin{myfigureht}
@@ -2094,7 +2098,7 @@ Let us list some series we already know:
 
 Note the difference between $\frac{1}{1-z}$ and its power series.  Let us
 expand $\frac{1}{1-z}$ as power series around any point $a \not= 1$.
-Let $c = \frac{1}{1-a}$, then we can write
+Let $c = \frac{1}{1-a}$, then we write
 \begin{equation*}
 \frac{1}{1-z} = 
 \frac{c}{1-c(z-a)}
@@ -2334,7 +2338,7 @@ k$, then we have
 f(x) = \sum_{k=0}^\infty \, \sum_{m=0}^\infty c_{k,m} {(x-a)}^m
 \end{equation}
 If we show that the double sum converges absolutely as in \thmref{thm:fubiniforsums} we
-are done.  We can swap the order of the summations and obtain the desired
+are done.  We swap the order of the summations and obtain the desired
 coefficients.
 \begin{equation*}
 \begin{split}
@@ -2376,7 +2380,7 @@ $\sum d_k {(z-b)}^k$ that converges to $f(z)$ in $B(b,\rho-\sabs{b-a})$.
 \end{cor}
 
 \begin{proof}
-Without loss of generality assume that $a=0$.  We can also rotate to assume that $b$ is real, but
+Without loss of generality assume that $a=0$.  We rotate to assume that $b$ is real, but
 since that is harder to picture, let us do it explicitly.
 Let $\alpha = \frac{\widebar{b}}{\sabs{b}}$.
 Notice that
@@ -2733,7 +2737,7 @@ In \volIref{\S5.4 of volume I (or by Picard's theorem)}, we proved that
 the unique function satisfying $E' = E$ and
 $E(0) = 1$ is the exponential.  In other words for $x \in \R$, $e^x = E(x)$.
 
-For complex numbers $z$ we define
+For complex numbers $z$ we define\glsadd{not:complexexp}
 \begin{equation*}
 e^z := E(z) = 
 \sum_{k=0}^\infty \frac{1}{k!} z^k .
@@ -2769,6 +2773,7 @@ by the equation
 e^{x+iy} = e^x \bigl( \cos(y) + i \sin(y) \bigr) .
 \end{equation*}
 In fact, we define sine and cosine for all complex $z$:
+\glsadd{not:sin}\glsadd{not:cos}
 \begin{equation*}
 \cos(z) := \frac{e^{iz} + e^{-iz}}{2}
 \qquad\text{and}\qquad
@@ -2856,6 +2861,7 @@ continuity, for that $y$,
 $\cos(y) = 0$.
 In fact, $y$ is the
 smallest positive $y$ such that $\cos(y) = 0$.  We can now define
+\glsadd{not:pi}
 \begin{equation*}
 \pi := 2y .
 \end{equation*}
@@ -2980,7 +2986,7 @@ or equivalently, thanks to Euler's formula ($e^{i\theta} = \cos(\theta) + i
 \sum_{n=-N}^N c_n e^{inx} .
 \end{equation*}
 The second form is usually more convenient.  Note that if
-$\sabs{z}=1$ we can write $z = e^{ix}$, and so
+$\sabs{z}=1$ we write $z = e^{ix}$, and so
 \begin{equation*}
 \sum_{n=-N}^N c_n e^{inx} = 
 \sum_{n=-N}^N c_n z^n ,
@@ -3119,7 +3125,7 @@ the similarity is not just
 coincidental, we are really taking a type of Fourier transform here}.
 We then formally write down a Fourier series.
 As you might imagine such a series might not even converge.
-We write
+We write\glsadd{not:FS}
 \begin{equation*}
 f(x) \sim
 \sum_{n=-\infty}^\infty c_n e^{inx}
@@ -3169,7 +3175,7 @@ i n c_n e^{inx}
 \end{equation*}
 and notice that 
 \begin{equation*}
-\sabs{in c_n} \leq \frac{C}{\sabs{n}^{\alpha-1}} .
+\sabs{i n c_n} \leq \frac{C}{\sabs{n}^{\alpha-1}} .
 \end{equation*}
 The differentiated series converge uniformly by the $M$-test again.  Since
 the derivatives converge uniformly, we find that the series converges 
@@ -3199,6 +3205,7 @@ to Riemann integrable functions since we do not have the Lebesgue
 integral, which
 would be the natural choice.  Let $f$ and $g$ be complex-valued 
 Riemann integrable functions on $[a,b]$ and define the inner product
+\glsadd{not:L2innprod}
 \begin{equation*}
 \langle f , g \rangle :=
 \int_a^b f(x) \overline{g(x)} ~ dx
@@ -3207,6 +3214,7 @@ If you have seen Hermitian inner products in linear algebra, this
 is precisely such a product.  We have to put in the conjugate as we are
 working with complex numbers.  We then have the ``size'', that is the
 $L^2$ norm $\snorm{f}_2$ by (defining the square)
+\glsadd{not:L2norm}
 \begin{equation*}
 \snorm{f}_2^2 :=
 \langle f , f \rangle =
@@ -3389,7 +3397,7 @@ for all $n$.  Note that
 \sum_{k=1}^n \sabs{c_k}^2 = \snorm{s_n}_2^2
 \end{equation*}
 by the above calculation.
-We can take a limit to obtain the so called
+We take a limit to obtain the so called
 \emph{\myindex{Bessel's inequality}}.
 
 \begin{thm}[Bessel's inequality] \label{thm:bessels}
@@ -3451,14 +3459,15 @@ f(x) \sim
 \sum_{n=-\infty}^\infty c_n e^{inx} .
 \end{equation*}
 We define at the \emph{\myindex{symmetric partial sums}}
+\glsadd{not:FSsympartsum}
 \begin{equation*}
-s_N(x) = s_N(f;x) := 
+s_N(f;x) := 
 \sum_{n=-N}^N c_n e^{inx} .
 \end{equation*}
 The inequality leading up to Bessel now reads:
 \begin{equation*}
 \frac{1}{2\pi} \int_{-\pi}^\pi
-\sabs{s_N(x)}^2 ~ dx =
+\sabs{s_N(f;x)}^2 ~ dx =
 \sum_{n=-N}^N \sabs{c_n}^2
 \leq
 \frac{1}{2\pi} \int_{-\pi}^\pi
@@ -3529,21 +3538,22 @@ The claim follows.
 %types of arguments from now on and I will only mention them in passing.
 
 We expand the definition of $s_N$
-\begin{equation*}
-s_N(x) = 
+\begin{multline*}
+s_N(f;x) = 
 \sum_{n=-N}^N \frac{1}{2\pi} \int_{-\pi}^\pi f(t) e^{-int}  ~  dt ~ e^{inx}
 =
 \frac{1}{2\pi} \int_{-\pi}^\pi f(t) \sum_{n=-N}^N e^{in(x-t)} ~ dt
+\\
 =
 \frac{1}{2\pi} \int_{-\pi}^\pi f(t) D_N(x-t) ~ dt .
-\end{equation*}
+\end{multline*}
 Convolution strikes again!
-As $D_N$ and $f$ are $2\pi$-periodic we can also change variables and write 
+As $D_N$ and $f$ are $2\pi$-periodic we change variables and write 
 \begin{equation*}
-s_N(x) = 
+s_N(f;x) = 
 \frac{1}{2\pi} \int_{x-\pi}^{x+\pi} f(x-t) D_N(t) ~ dt
 =
-\frac{1}{2\pi} \int_{-\pi}^\pi f(x-t) D_N(t) ~ dt
+\frac{1}{2\pi} \int_{-\pi}^\pi f(x-t) D_N(t) ~ dt .
 \end{equation*}
 See \figureref{fig:approxdeltas} for a plot of $D_N$ for $N=5$ and $N=20$.
 
@@ -3637,21 +3647,17 @@ also Riemann integrable.  Now we use a trigonometric identity
 \sin(\nicefrac{t}{2}) \cos(Nt) ,
 \end{equation*}
 so
-\begin{equation*}
-\begin{split}
+\begin{multline*}
 \frac{1}{2\pi} \int_{-\pi}^\pi \frac{f(x-t) - f(x)}{\sin(\nicefrac{t}{2})} \sin\bigl(
 (N+\nicefrac{1}{2})t \bigr) ~ dt 
-=
-&
+= \\
 \frac{1}{2\pi} \int_{-\pi}^\pi
 \left( \frac{f(x-t) - f(x)}{\sin(\nicefrac{t}{2})}
 \cos (\nicefrac{t}{2}) \right) \sin (Nt) ~ dt
-\\
-& +
++
 \frac{1}{2\pi} \int_{-\pi}^\pi \bigl( f(x-t) - f(x) \bigr)
 \cos (Nt) ~ dt .
-\end{split}
-\end{equation*}
+\end{multline*}
 Now 
 $\frac{f(x-t) - f(x)}{\sin(\nicefrac{t}{2})} \cos (\nicefrac{t}{2})$
 and
@@ -3659,7 +3665,7 @@ $\bigl( f(x-t) - f(x) \bigr)$ are bounded Riemann integrable functions
 and so their Fourier coefficients go to zero by \thmref{thm:bessels}.  So the two
 integrals on the right hand side, which compute the Fourier coefficients
 for the real version of the Fourier series go to 0 as $N$ goes to infinity.
-This is because $\sin(Nt)$ and $\cos(Nt)$ are also orthonormal systems.
+This is because $\sin(Nt)$ and $\cos(Nt)$ are also orthonormal systems
 with respect to the same inner product.
 Hence $s_N(f;x)-f(x)$ goes to 0 and so $s_N(f;x)$ goes to $f(x)$.
 \end{proof}

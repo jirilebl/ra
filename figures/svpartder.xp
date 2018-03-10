@@ -28,8 +28,9 @@ P DF(double x, double y)
 }
 
 double Bd(2);
-P pt1(-0.5,-0.5), pt2(1.5, 1.5);
+P pt1(-0.5,-0.5), pt2(1.5, 1.5), pt3(2.0,2.0);
 domain R(pt1, pt2, mesh(15,15), mesh(30,30));
+domain R2(pt1, pt3, mesh(15,15), mesh(30,30));
 
 domain DR(P(derx-0.5,dery-0.5), P(derx+0.5,dery+0.5), mesh(8,8), mesh(8,8));
 
@@ -59,11 +60,25 @@ int main()
   line(P(derx,dery,0),P(derx,dery,thef(derx,dery)));
   dot(P(derx,dery,0));
 
+  plain();
+  dotted();
+  dash_size(6);
+  line(P(derx,0,0),P(derx,-0.5,0));
+  line(P(derx,-0.5,0),P(derx,-0.5,1.95));
+  line(P(derx,-0.5,1.95),P(derx,2.0,1.95));
+  line(P(derx,dery,0.0),P(derx,2.0,0.0));
+  line(P(derx,2.0,0.0),P(derx,2.0,1.95));
+  dash_size(12);
   solid();
+
+  label_pad("0pt");
 
   plain ();
   fill(White());
   surface(F, R);
+
+  bold();
+  plot(F,R2.slice1(derx));
 
   arrow(P(0, 0, thef(0,0)), P(0,0,1.7));
   label(P(0,0,1.7), P(0,4), "$y$", t);
@@ -74,13 +89,16 @@ int main()
 
   label(P(derx,dery,0), P(0,-4), "$(x_1,x_2)$", b);
 
-  label(P(0,1.3,1.5), P(0,4), "$y=f(x_1,x_2)$", t);
+  masklabel(P(0,1.3,1.5), P(0,4), "$y=f(x_1,x_2)$", t);
+
+
 
   bold();
 
   line(P(derx,-0.5, thedf(derx,-0.5)), P(derx,2.0, thedf (derx,2.0)));
 
-  label(P(derx,1.8, thedf (derx,1.8)), P(0,8), "$\\text{slope} = \\tfrac{\\partial f}{\\partial x_2}(x_1,x_2)$", r);
+
+  masklabel(P(derx,1.8, thedf (derx,1.8)), P(0,12), "$\\text{slope} = \\tfrac{\\partial f}{\\partial x_2}(x_1,x_2)$", r);
   //arrow(P(derx+0.3, dery+0.3, 0), P(0.95*derx,0.95*1.85, 0.95*thedf (derx,1.85)));
 
   //double hx = 0.25;
