@@ -651,6 +651,8 @@ a continuously differentiable function $f \colon I \to \C$, and $f' = g$.
 
 \begin{example}
 Let us construct a continuous nowhere differentiable function.
+Such functions are often called Weierstrass functions, although this
+particular one is a different example than what Weierstrass gave.
 
 Define
 \begin{equation*}
@@ -880,10 +882,11 @@ such that
 $\{ f_{m+1,k}(x_{m+1}) \}_{k=1}^\infty$ converges (and hence it converges for all
 $x_j$ for $j=1,\ldots,m+1$) and we can rinse and repeat.
 
-Finally pick the sequence
+If $X$ is finite we are done.  If $X$ is countably infinite,
+we pick the sequence
 $\{ f_{k,k} \}$.  This is a subsequence of the original sequence $\{ f_n \}$
 of course.  Also for any $m$,
-except for the first $m$ terms $\{ f_k,k \}$ is a subsequence of $\{ f_{m,k}
+except for the first $m$ terms $\{ f_{k,k} \}$ is a subsequence of $\{ f_{m,k}
 \}_{k=1}^\infty$
 and hence for any $m$ the sequence $\{ f_{k,k}(x_m) \}_{k=1}^\infty$ converges.
 \end{proof}
@@ -910,7 +913,7 @@ functions.  Equicontinuity of a sequence
 is closely related to uniform convergence.
 
 \begin{prop}
-Suppose $X$ is a compact metric space,
+Suppose $(X,d)$ is a compact metric space,
 $f_n \in C(X,\C)$, and $\{ f_n \}$
 converges uniformly, then $\{ f_n \}$ is equicontinuous.
 \end{prop}
@@ -977,7 +980,7 @@ We are now ready for the main result of this section,
 the Arzel\`a--Ascoli theorem about existence of convergent subsequences.
 
 \begin{thm}[Arzel\`a--Ascoli]\index{Arzel\`a--Ascoli theorem}
-Let $X$ be compact, $f_n \in C(X,\C)$, and let $\{ f_n \}$
+Let $(X,d)$ be a compact metric space, $f_n \in C(X,\C)$, and let $\{ f_n \}$
 be pointwise bounded and equicontinuous.  Then
 $\{f_n\}$ is uniformly bounded and $\{ f_n \}$ contains a uniformly
 convergent subsequence.
@@ -1111,8 +1114,8 @@ F \in C([0,1],\C) : F(x) = \int_0^x g(t) f(t)~dt,~ f \in C([0,1],\C),~
 \snorm{f}_u \leq 1
 \right\}
 \end{equation*}
-has compact closure (usually called
-\emph{\myindex{relatively compact}}).
+has compact closure, usually called
+\emph{\myindex{relatively compact}} (exercise).
 That is, the operator $T \colon C([0,1],\C) \to C([0,1],\C)$ given by
 \begin{equation*}
 T\bigl(f\bigr) (x) := F(x) = \int_0^x g(t) f(t)~dt
@@ -1123,13 +1126,38 @@ important (and very useful).
 
 \subsection{Exercises}
 
-%FIXME: maybe too trivial
 \begin{exercise}
-Let $(X,d)$ be a metric space, $C > 0$, $0 < \alpha \leq 1$, and
-suppose $f_n \colon X \to \R$ are functions such as
-$\abs{f_n(x)-f(y)} \leq C {d(x,y)}^\alpha$ for all $x,y \in X$ and
-$n \in \N$.
-Show that $\{ f_n \}$ is an equicontinuous family.
+Let $(X,d)$ be a compact metric space, $C > 0$, $0 < \alpha \leq 1$, and
+suppose $f_n \colon X \to \C$ are functions such as
+$\abs{f_n(x)-f_n(y)} \leq C {d(x,y)}^\alpha$ for all $x,y \in X$ and
+$n \in \N$.  Suppose also that there is a point $p \in X$ such that
+$f_n(p) = 0$.
+Show that there exists a uniformly convergent subsequence converging to
+an $f \colon X \to \C$ that also satisfies $f(p) = 0$ and
+$\abs{f(x)-f(y)} \leq C {d(x,y)}^\alpha$.
+\end{exercise}
+
+\begin{exercise}
+Show that the operator $T \colon C([0,1],\C) \to C([0,1],\C)$ given by
+\begin{equation*}
+T\bigl(f\bigr) (x) := F(x) = \int_0^x g(t) f(t)~dt
+\end{equation*}
+takes the unit ball centered at 0 in $C([0,1],\C)$ into a
+relatively compact set.
+\end{exercise}
+
+\begin{exercise}
+Suppose $S^1 \subset \C$ is the unit circle, that is the set where
+$\sabs{z}=1$.  Suppose the continuous functions
+$f_n \colon S^1 \to \C$ are uniformly bounded.
+Let $\gamma \colon [0,1] \to \S^1$ be a parametrization of $S^1$,
+and $g(z,w)$ a continuous function on $C(0,1) \times S^1$.  Define
+the functions $F_n \colon C(0,1) \to \C$ by
+the path integral (See \sectionref{sec:pathintegral})
+\begin{equation*}
+F_n(z) : = \int_\gamma f_n(w)\, g(z,w) ~ ds(w) . 
+\end{equation*}
+Show that $\{ F_n \}$ has a uniformly convergent subsequence.
 \end{exercise}
 
 
@@ -3806,7 +3834,12 @@ Take the Fourier series
 \end{equation*}
 Show that the series converges uniformly and absolutely to a continuous
 function.  Note: This is another example of a nowhere differentiable
-function (you do not have to prove that).  See \figureref{fig:fourierserweier}.
+function (you do not have to prove that)\footnote{%
+See
+G.\ H.\ Hardy, \emph{Weierstrass's Non-Differentiable Function},
+Transactions of the American Mathematical Society,
+\textbf{17}, No. 3 (Jul., 1916), pp.\ 301--325.}.
+See \figureref{fig:fourierserweier}.
 \end{exercise}
 
 \begin{myfigureht}
