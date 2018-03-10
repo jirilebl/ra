@@ -1091,15 +1091,14 @@ $\{ f_n' \}$, then we have by the mean value theorem
 So all the $f_n$ are Lipschitz with the same constant and hence
 equicontinuous.
 
-Now suppose that $\sabs{f_n(x_0)} \leq M_0$ for all $n$.
-By inverse triangle inequality we have for all $x$
+Suppose $\sabs{f_n(x_0)} \leq M_0$ for all $n$.
+By the inverse triangle inequality, for all $x \in [a,b]$
 \begin{equation*}
 \sabs{f_n(x)} \leq \sabs{f_n(x_0)}+ \sabs{f_n(x)-f_n(x_0)} \leq M_0+ M \sabs{x-x_0}
-\leq M_0 + M(b-a)
+\leq M_0 + M(b-a) .
 \end{equation*}
-so $\{ f_n \}$ is uniformly bounded.
-
-We can now apply Arzel\`a--Ascoli to find the subsequence.
+So $\{ f_n \}$ is uniformly bounded.
+We apply Arzel\`a--Ascoli to find the subsequence.
 \end{proof}
 
 A consequence of the above corollary and the fundamental theorem of calculus
@@ -1116,7 +1115,7 @@ has compact closure (usually called
 \emph{\myindex{relatively compact}}).
 That is, the operator $T \colon C([0,1],\C) \to C([0,1],\C)$ given by
 \begin{equation*}
-T\bigl(f\bigr) (x) = F(x) = \int_0^x g(t) f(t)~dt
+T\bigl(f\bigr) (x) := F(x) = \int_0^x g(t) f(t)~dt
 \end{equation*}
 takes the unit ball centered at 0 in $C([0,1],\C)$ into a relatively compact set.  We often
 say that this means that the operator is compact, and such operators are very
@@ -1124,6 +1123,7 @@ important (and very useful).
 
 \subsection{Exercises}
 
+%FIXME: maybe too trivial
 \begin{exercise}
 Let $(X,d)$ be a metric space, $C > 0$, $0 < \alpha \leq 1$, and
 suppose $f_n \colon X \to \R$ are functions such as
@@ -1132,11 +1132,6 @@ $n \in \N$.
 Show that $\{ f_n \}$ is an equicontinuous family.
 \end{exercise}
 
-\begin{exercise}
-Suppose $f_n \colon [0,1] \to \R$ are differentiable functions, $B \in \R$
-such that $\abs{f_n'(x)} \leq B$ for all $x \in [0,1]$ and all $n \in \N$.
-Show that $\{ f_n \}$ is an equicontinuous family.
-\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1772,10 +1767,10 @@ X = \bigcup_{j=1}^n V_{x_j} .
 \end{equation*}
 Now let
 \begin{equation*}
-h = \min(g_{x_1},g_{x_2},\ldots,g_{x_n}) .
+h := \min(g_{x_1},g_{x_2},\ldots,g_{x_n}) .
 \end{equation*}
-we see that $h \in \overline{\sA}$ by Claim 2.  Similarly as before (same argument as in
-Step 3) we have that for all
+By Claim 2, $h \in \overline{\sA}$.  Similarly as before (same argument as in
+Claim 3) we have that for all
 $t \in X$
 \begin{equation*}
 h(t) < f(t) + \epsilon .
@@ -2555,7 +2550,7 @@ p(r e^{it})
 1-r^k \sabs{a_k}
 }
 =
-1-r^k \sabs{a_k}
+1-r^k \sabs{a_k} .
 \end{split}
 \end{equation*}
 In other words
@@ -2658,10 +2653,10 @@ such that $p(z_0) = 0$.
 \end{thm}
 
 \begin{proof}
-Let $\mu = \inf \sabs{p(z)}$.  Find an $R$ such that
+Let $\mu := \inf \bigl\{ \sabs{p(z)} : z \in \C \bigr\}$.  Find an $R$ such that
 for all $z$ with $\sabs{z} \geq R$ we have $\sabs{p(z)} \geq \mu+1$.
 Therefore, any $z$ with $\sabs{p(z)}$ close to $\mu$ must be in the
-closed ball $C(0,R) = \bigl\{ z : \sabs{z} \leq R \bigr\}$.  As $\sabs{p(z)}$
+closed ball $C(0,R) = \bigl\{ z \in \C : \sabs{z} \leq R \bigr\}$.  As $\sabs{p(z)}$
 is a continuous real-valued function, it achieves its minimum
 on the compact set $C(0,R)$ (closed and bounded) and this minimum must
 be $\mu$.  So there is a $z_0 \in C(0,R)$ such that $\sabs{p(z_0)} = \mu$.
@@ -2787,11 +2782,11 @@ $\sabs{\cos(x)} \leq 1$.  A fact we have often used in examples.
 
 From the definition we get that $\cos(0) = 1$ and $\sin(0) = 0$.  By direct
 computation (left to reader) from the definition we also obtain:
-\begin{align*}
-\cos(z) &= \sum_{k=0}^\infty \frac{{(-1)}^k}{(2k)!} z^{2k}
-\\
-\sin(z) &= \sum_{k=0}^\infty \frac{{(-1)}^k}{(2k+1)!} z^{2k+1}
-\end{align*}
+\begin{equation*}
+\cos(z) = \sum_{k=0}^\infty \frac{{(-1)}^k}{(2k)!} z^{2k} ,
+\qquad
+\sin(z) = \sum_{k=0}^\infty \frac{{(-1)}^k}{(2k+1)!} z^{2k+1} .
+\end{equation*}
 
 Again by direct calculation (again left to reader) we obtain
 for real $x$
@@ -2837,19 +2832,19 @@ smallest positive $y$ such that $\cos(y) = 0$.  We can now define
 \pi := 2y .
 \end{equation*}
 
-And we obtain that $\cos(\pi/2) = 0$ and so $\bigl(\sin(\pi/2)\bigr)^2 = 1$.
+And we obtain that $\cos(\frac{\pi}{2}) = 0$ and so
+${\bigl(\sin(\frac{\pi}{2})\bigr)}^2 = 1$.
 As $\sin$ was positive on $(0,y)$ we have
-$\sin(\pi/2) = 1$.
-
+$\sin(\frac{\pi}{2}) = 1$.
 Hence
 \begin{equation*}
-e^{i \pi /2} = i
+e^{i \pi /2} = i ,
 \end{equation*}
 and by the addition formula we get
 \begin{equation*}
-e^{i \pi} = -1
+e^{i \pi} = -1 ,
 \qquad 
-e^{i 2\pi} = 1
+e^{i 2\pi} = 1 .
 \end{equation*}
 So $e^{i2\pi} = 1 = e^0$.  The addition formula now says
 that
@@ -2872,7 +2867,7 @@ $e^{ix} = 1$.
 Of course, $x \leq 2\pi$.
 Then by the addition formula
 \begin{equation*}
-{\bigl(e^{ix/4}\bigr)}^4 = 1  .
+{\bigl(e^{ix/4}\bigr)}^4 = 1 .
 \end{equation*}
 If $e^{ix/4} = a+ib$, then
 \begin{equation*}
@@ -2880,11 +2875,11 @@ If $e^{ix/4} = a+ib$, then
 =a^4-6a^2b^2+b^4 + i\bigl(4ab(a^2-b^2)\bigr)
 =1 .
 \end{equation*}
-As $x/4 \leq \pi/2$, then $a = \cos(x/4) \geq 0$ and
-$0 < b = \sin(x/4)$.  Then either $a = 0$, in which case
-$x/4 = \pi/2$ or $a^2 = b^2$.  But if $a^2=b^2$, then
+As $\nicefrac{x}{4} \leq \nicefrac{\pi}{2}$, then $a = \cos(\nicefrac{x}{4}) \geq 0$ and
+$0 < b = \sin(\nicefrac{x}{4})$.  Then either $a = 0$, in which case
+$\nicefrac{x}{4} = \nicefrac{\pi}{2}$ or $a^2 = b^2$.  But if $a^2=b^2$, then
 $a^4-6a^2b^2+b^4 = -4a^4 < 0$ and in particular not equal to 1.
-Therefore $a=0$ in which case $x/4 = \pi/2$.
+Therefore $a=0$ in which case $\nicefrac{x}{4} = \nicefrac{\pi}{2}$.
 
 Therefore $2\pi$ is the smallest period we could choose for $e^{ix}$
 and hence $\cos$ and $\sin$.
@@ -2896,14 +2891,14 @@ $x > y$ then
 $e^{i(x-y)} = 1$, which means that $x-y$ is a multiple of $2\pi$ and hence
 only one of them can live in $[0,2\pi)$.
 To show onto, pick $(a,b) \in \R^2$ such that $a^2+b^2 = 1$.
-If $a,b \geq 0$, then there must exist an $x \in [0,\pi/2]$ such that
+If $a,b \geq 0$, then there must exist an $x \in [0,\nicefrac{\pi}{2}]$ such that
 $\cos(x) = a$, and hence $b^2 = \bigl(\sin(x)\bigr)^2$ and since
 $b$ and $\sin(x)$ are positive we have $b = \sin(x)$.
 Note that since $-\sin(x)$ is the derivative of $\cos(x)$
-and $\cos(-x) = \cos(x)$ then $\sin(x) < 0$ for $x \in [-\pi/2,0)$.
+and $\cos(-x) = \cos(x)$ then $\sin(x) < 0$ for $x \in [\nicefrac{-\pi}{2},0)$.
 Then using the same reasoning we obtain that if
-if $a > 0$ and $b \leq 0$, we can find an $x \in [-\pi/2,0)$,
-or in other words in $[3\pi/2,2\pi)$
+if $a > 0$ and $b \leq 0$, we can find an $x \in [\nicefrac{-\pi}{2},0)$,
+or in other words in $[\nicefrac{3\pi}{2},2\pi)$
 As multiplying by $-1$ is the same as multiplying by $e^{i\pi}$ or
 $e^{-i\pi}$
 we can always assume that $a \geq 0$ (details left to student).
@@ -3547,7 +3542,8 @@ function), nor a Fourier series of whatever kind object it is.
 \subsection{Localization}
 
 \begin{thm}
-Let $x$ be fixed and let $f$ be Riemann integrable on $[-\pi,\pi]$.  Suppose
+Let $x$ be fixed and let $f$ be a $2\pi$-periodic function
+Riemann integrable on $[-\pi,\pi]$.  Suppose
 there exist $\delta > 0$ and $M$ such that
 \begin{equation*}
 \sabs{f(x+t)-f(x)} \leq M \sabs{t}
@@ -3587,51 +3583,49 @@ f(x)
 \frac{1}{2\pi} \int_{-\pi}^\pi \bigl( f(x-t) - f(x) \bigr) D_N(t) ~ dt 
 \\
 & = 
-\frac{1}{2\pi} \int_{-\pi}^\pi \frac{f(x-t) - f(x)}{\sin(t/2)} \sin\bigl(
+\frac{1}{2\pi} \int_{-\pi}^\pi \frac{f(x-t) - f(x)}{\sin(\frac{t}{2})} \sin\bigl(
 (N+\nicefrac{1}{2})t \bigr) ~ dt 
 \end{split}
 \end{equation*}
 Now by the hypotheses we obtain that
 for small nonzero $t$ we get
 \begin{equation*}
-\abs{ \frac{f(x-t) - f(x)}{\sin(t/2)} }
+\abs{ \frac{f(x-t) - f(x)}{\sin(\frac{t}{2})} }
 \leq
-\frac{M\sabs{t}}{\sabs{\sin(t/2)}}
+\frac{M\sabs{t}}{\sabs{\sin(\frac{t}{2})}}
 \end{equation*}
 As $\sin(t) = t + h(t)$ where $\frac{h(t)}{t} \to 0$ as $t \to 0$,
 we notice that
-$\frac{M\sabs{t}}{\sabs{\sin(t/2)}}$ is continuous at the origin
+$\frac{M\sabs{t}}{\sabs{\sin(\frac{t}{2})}}$ is continuous at the origin
 and hence 
-$\frac{f(x-t) - f(x)}{\sin(t/2)}$ must be bounded near the origin.
+$\frac{f(x-t) - f(x)}{\sin(\frac{t}{2})}$ must be bounded near the origin.
 As $t=0$ is the only place on $[-\pi,\pi]$ where the denominator vanishes,
 it is the only place where there could be a problem.  The function is
 also Riemann integrable.  Now we use a trigonometric identity
-that follows from the definition (and you've seen it on the homework
-actually) that 
 \begin{equation*}
 \sin\bigl( (N+\nicefrac{1}{2})t \bigr)
 =
-\cos(t/2) \sin(Nt) + 
-\sin(t/2) \cos(Nt)
+\cos(\nicefrac{t}{2}) \sin(Nt) + 
+\sin(\nicefrac{t}{2}) \cos(Nt) ,
 \end{equation*}
 so
 \begin{equation*}
 \begin{split}
-\frac{1}{2\pi} \int_{-\pi}^\pi \frac{f(x-t) - f(x)}{\sin(t/2)} \sin\bigl(
+\frac{1}{2\pi} \int_{-\pi}^\pi \frac{f(x-t) - f(x)}{\sin(\nicefrac{t}{2})} \sin\bigl(
 (N+\nicefrac{1}{2})t \bigr) ~ dt 
 =
 &
 \frac{1}{2\pi} \int_{-\pi}^\pi
-\left( \frac{f(x-t) - f(x)}{\sin(t/2)}
-\cos (t/2) \right) \sin (Nt) ~ dt
+\left( \frac{f(x-t) - f(x)}{\sin(\nicefrac{t}{2})}
+\cos (\nicefrac{t}{2}) \right) \sin (Nt) ~ dt
 \\
 & +
 \frac{1}{2\pi} \int_{-\pi}^\pi \bigl( f(x-t) - f(x) \bigr)
-\cos (Nt) ~ dt
+\cos (Nt) ~ dt .
 \end{split}
 \end{equation*}
 Now 
-$\frac{f(x-t) - f(x)}{\sin(t/2)} \cos (t/2)$
+$\frac{f(x-t) - f(x)}{\sin(\nicefrac{t}{2})} \cos (\nicefrac{t}{2})$
 and
 $\bigl( f(x-t) - f(x) \bigr)$ are bounded Riemann integrable functions
 and so their Fourier coefficients go to zero by \thmref{thm:bessels}.  So the two
