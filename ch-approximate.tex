@@ -1058,9 +1058,9 @@ all $n,m \geq N$ we have for all $j=1,2,\ldots,k$
 \end{equation*}
 
 Let $x \in X$ be arbitrary.  There is some $j$ such that
-$x \in B(x_j,\delta)$ and so we have for all $i \in \N$
+$x \in B(x_j,\delta)$ and so we have for all $k \in \N$
 \begin{equation*}
-\sabs{g_i(x)-g_i(x_j)} < \nicefrac{\epsilon}{3},
+\sabs{g_k(x)-g_k(x_j)} < \nicefrac{\epsilon}{3},
 \end{equation*}
 and so $n,m \geq N$ that
 \begin{equation*}
@@ -2252,21 +2252,21 @@ We need a theorem on swapping limits of series, that is,
 Fubini's theorem for sums.
 
 \begin{thm}[\myindex{Fubini for sums}] \label{thm:fubiniforsums}
-Let $\{ a_{ij} \}_{i=1,j=1}^\infty$ be a double
-sequence of complex numbers and suppose that for every $i$ the series
+Let $\{ a_{kj} \}_{k=1,j=1}^\infty$ be a double
+sequence of complex numbers and suppose that for every $k$ the series
 \begin{equation*}
-\sum_{j=1}^\infty \sabs{a_{ij}} \qquad \text{converges}
+\sum_{j=1}^\infty \sabs{a_{kj}} \qquad \text{converges}
 \end{equation*}
 and furthermore that
 \begin{equation*}
-\sum_{i=1}^\infty \left( \sum_{j=1}^\infty \sabs{a_{ij}} \right)
+\sum_{k=1}^\infty \left( \sum_{j=1}^\infty \sabs{a_{kj}} \right)
 \qquad \text{converges}.
 \end{equation*}
 Then
 \begin{equation*}
-\sum_{i=1}^\infty \left( \sum_{j=1}^\infty a_{ij} \right)
+\sum_{k=1}^\infty \left( \sum_{j=1}^\infty a_{kj} \right)
 =
-\sum_{j=1}^\infty \left( \sum_{i=1}^\infty a_{ij} \right) ,
+\sum_{j=1}^\infty \left( \sum_{k=1}^\infty a_{kj} \right) ,
 \end{equation*}
 where all the series involved converge.
 \end{thm}
@@ -2274,46 +2274,46 @@ where all the series involved converge.
 \begin{proof}
 Let $E$ be the set $\{ \nicefrac{1}{n} : n \in \N \} \cup \{ 0 \}$,
 and treat it as a metric space with the metric inherited from $\R$.
-Define the sequence of functions $f_i \colon E \to \C$
+Define the sequence of functions $f_k \colon E \to \C$
 by
 \begin{equation*}
-f_i(\nicefrac{1}{n}) := \sum_{j=1}^n a_{ij}
+f_k(\nicefrac{1}{n}) := \sum_{j=1}^n a_{kj}
 \qquad
-f_i(0) := \sum_{j=1}^\infty a_{ij}
+f_k(0) := \sum_{j=1}^\infty a_{kj}
 \end{equation*}
-As the series converge we get that each $f_i$ is continuous at $0$
+As the series converge we get that each $f_k$ is continuous at $0$
 (since 0 is the only cluster point, they are continuous everywhere, but
 we don't need that).
 For all $x \in E$ we have
 \begin{equation*}
-\sabs{f_i(x)} \leq \sum_{j=1}^\infty \sabs{a_{ij}}
+\sabs{f_k(x)} \leq \sum_{j=1}^\infty \sabs{a_{kj}}
 \end{equation*}
-By knowing that $\sum_i \sum_j \sabs{a_{ij}}$ converges (does not depend on
+By knowing that $\sum_k \sum_j \sabs{a_{kj}}$ converges (does not depend on
 $x$), we know that for any $x \in E$
 \begin{equation*}
-\sum_{i=1}^n f_i(x)
+\sum_{k=1}^n f_k(x)
 \end{equation*}
 converges uniformly.  So define
 \begin{equation*}
-g(x) := \sum_{i=1}^\infty f_i(x) ,
+g(x) := \sum_{k=1}^\infty f_k(x) ,
 \end{equation*}
 which is therefore a continuous function at $0$.
 So
 \begin{equation*}
 \begin{split}
-\sum_{i=1}^\infty \left( \sum_{j=1}^\infty a_{ij} \right)
+\sum_{k=1}^\infty \left( \sum_{j=1}^\infty a_{kj} \right)
 & =
-\sum_{i=1}^\infty f_i(0)
+\sum_{k=1}^\infty f_k(0)
 = g(0)
 = \lim_{n\to\infty} g(\nicefrac{1}{n}) \\
 &= 
-\lim_{n\to\infty}\sum_{i=1}^\infty f_i(\nicefrac{1}{n})
+\lim_{n\to\infty}\sum_{k=1}^\infty f_k(\nicefrac{1}{n})
 = 
-\lim_{n\to\infty}\sum_{i=1}^\infty \sum_{j=1}^n a_{ij} \\
+\lim_{n\to\infty}\sum_{k=1}^\infty \sum_{j=1}^n a_{kj} \\
 &= 
-\lim_{n\to\infty}\sum_{j=1}^n \sum_{i=1}^\infty a_{ij}
+\lim_{n\to\infty}\sum_{j=1}^n \sum_{k=1}^\infty a_{kj}
 = 
-\sum_{j=1}^\infty \left( \sum_{i=1}^\infty a_{ij} \right) . \qedhere
+\sum_{j=1}^\infty \left( \sum_{k=1}^\infty a_{kj} \right) . \qedhere
 \end{split}
 \end{equation*}
 \end{proof}
