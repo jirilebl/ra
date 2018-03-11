@@ -585,7 +585,7 @@ are Riemann integrable and suppose that $\{ f_n \}$ converges
 uniformly to $f \colon [a,b] \to \C$.  Then $f$ is Riemann integrable
 and
 \begin{equation*}
-\int_a^b f = \lim_{n\to \infty} \int_a^b f_n
+\int_a^b f = \lim_{n\to \infty} \int_a^b f_n .
 \end{equation*}
 \end{prop}
 
@@ -2557,6 +2557,30 @@ $f(x) = 0$ for all $x \in U \cap \R$.  Show that $f(z) = 0$ for all $z \in
 U$.
 \end{exercise}
 
+\begin{exercise}
+For $\alpha \in \C$, define
+\begin{equation*}
+\binom{\alpha}{k} := \frac{\alpha(\alpha-1)\cdots(\alpha-k)}{k!} .
+\end{equation*}
+\begin{enumerate}[a)]
+\item
+Show that the series
+\begin{equation*}
+f(z) := \sum_{k=0}^\infty \binom{\alpha}{k} z^k
+\end{equation*}
+has radius of converges for all $\abs{z} < 1$.
+In fact, prove that for $\alpha = 0,1,2,3,\ldots$ the radius of
+convergence is $\infty$ for other $\alpha$
+the radius of convergence is 1.
+\item
+Show that for $x \in \R$, $\abs{x} < 1$, we have
+\begin{equation*}
+(1+x) f'(x) = \alpha f(x) ,
+\end{equation*}
+meaning that $f(x) = (1+x)^\alpha$.
+\end{enumerate}
+\end{exercise}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
@@ -2737,6 +2761,78 @@ principle for analytic functions}}: \emph{If $U \subset \C$ is open and connecte
 $f \colon U \to \C$ is analytic, and $\sabs{f(z)}$ attains a relative
 maximum at $z_0 \in U$.  Then $f$ is constant.}
 \end{exercise}
+
+\begin{exercise}
+Let $U \subset \C$ be open and $z_0 \in U$.
+Suppose $f \colon U \to \C$ is analytic and $f(z_0) = 0$.  Show that
+there exists an $\epsilon > 0$ such that either
+$f(z) \not= 0$ for all $z$ with $0 < \sabs{z} < \epsilon$
+or $f(z) = 0$ for all $z \in B(z_0,\epsilon)$.
+In other words zeros of analytic functions are isolated.
+Of course, same holds for polynomials.
+\end{exercise}
+
+\begin{exnote}
+A \emph{\myindex{rational function}} is a function
+$f(z) := \frac{p(z)}{q(z)}$
+where $p$ and $q$ are polynomials and $q$ is not identically zero.
+A point $z_0 \in \C$ where $f(z_0) = 0$ (and therefore $p(z_0) = 0$)
+is called a \emph{zero}\index{zero of a function}.
+A point $z_0 \in \C$ is called an \emph{\myindex{singularity}} of
+$f$ if $q(z_0) = 0$.  As all zeros are isolated and so
+all singularities of rational functions are isolated
+and so are called
+an \emph{\myindex{isolated singularity}}.
+An isolated singularity is called
+\emph{removable}\index{removable singularity}
+if $\lim_{z \mapsto z_0} f(z)$ exists.
+An isolated singularity is called a \emph{\myindex{pole}} if 
+$\lim_{z \mapsto z_0} \sabs{f(z)} = \infty$.
+We say $f$ has pole at $\infty$ if
+\begin{equation*}
+\lim_{z \to \infty} \sabs{f(z)} = \infty ,
+\end{equation*}
+that is, if for every $M > 0$ there exists an $R > 0$ such that
+$\sabs{f(z)} > M$ for all $z$ with $\sabs{z} > R$.
+\end{exnote}
+
+\begin{exercise}
+Show that a rational function which is not identically
+zero has at most finitely many zeros and
+singularities.  In fact, show that if $p$ is a polynomial of 
+degree $n > 0$ it has at most $n$ zeros.
+\\
+Hint: If $z_0$ is a zero of $p$, without loss of generality assume $z_0 =
+0$, then use induction.
+\end{exercise}
+
+\begin{exercise}
+Prove that if $z_0$ is a removable singularity of a rational
+function $f(z) := \frac{p(z)}{q(z)}$, show that there exist
+polynomials $\widetilde{p}$ and $\widetilde{q}$ such that
+$\widetilde{q}(z_0) \not= 0$ and $f(z) =
+\frac{\widetilde{p}(z)}{\widetilde{q}(z)}$.
+\\
+Hint: Without loss of generality assume $z_0 = 0$.
+\end{exercise}
+
+\begin{exercise}
+Given a rational function $f$ and an isolated singularity $z_0$,
+show that $z_0$ is either removable or a pole.
+\\
+Hint: See the previous exercise.
+\end{exercise}
+
+\begin{exercise}
+Let $f$ be a rational function and $S \subset \C$ is the 
+set of the singularities of $f$.
+Prove that $f$ is equal to a polynomial on $\C \setminus S$
+if and only if
+$f$ has a pole at infinity and all the singularities are removable.
+\\
+Hint: See previous exercises.
+\end{exercise}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3025,7 +3121,40 @@ from $\R$ to $\R$.
 ${\bigl(\cosh(x)\bigr)}^2 = 1 + {\bigl(\sinh(x)\bigr)}^2$ for all
 $x$.
 \end{enumerate}
+\end{exercise}
 
+\begin{exercise}
+Define $\tan(x) := \frac{\sin(x)}{\cos(x)}$ as usual.
+\begin{enumerate}[a)]
+\item
+Show that for $x \in (\nicefrac{-\pi}{2},\nicefrac{\pi}{2})$
+both $\sin$ and $\tan$ are strictly increasing, and hence $\sin^{-1}$
+and $\tan^{-1}$ exist when we restrict to that interval.
+\item
+Show that $\sin^{-1}$ and $\tan^{-1}$ are differentiable
+and
+that
+$\frac{d}{dx} \sin^{-1}(x) = \frac{1}{\sqrt{1-x^2}}$ and
+$\frac{d}{dx} \tan^{-1}(x) = \frac{1}{1+x^2}$.
+\item
+Using the finite geometric sum formula show
+\begin{equation*}
+\tan^{-1}(x) = \int_0^x \frac{1}{1+t^s} dt
+=
+\sum_{k=0}^\infty \frac{{(-1)}^k}{2k+1} x^{2k+1}
+\end{equation*}
+converges for all $-1 \leq x \leq 1$ (including the end points).
+Hint: integrate the finite sum, not the series.
+\item
+Use this to show that
+\begin{equation*}
+1 - \frac{1}{3} + \frac{1}{5} - \cdots
+=
+\sum_{k=0}^\infty \frac{{(-1)}^k}{2k+1}
+=
+\frac{\pi}{4} .
+\end{equation*}
+\end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
