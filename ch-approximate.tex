@@ -823,7 +823,7 @@ sequence of functions (with some property) has a convergent subsequence''.
 Matters are not
 as simple even for continuous functions. 
 Not every bounded sequence in the metric space $C([0,1],\R)$ has
-a convergent subsequence (see below).
+a convergent subsequence.
 
 \begin{defn}
 Let $X$ be any set.
@@ -884,7 +884,7 @@ let $\{ f_{m+1,k} \}_{k=1}^\infty$ be the subsequence of $\{ f_{m,k}
 \}_{k=1}^\infty$
 such that
 $\{ f_{m+1,k}(x_{m+1}) \}_{k=1}^\infty$ converges (and hence it converges for all
-$x_j$ for $j=1,\ldots,m+1$) and we rinse and repeat.
+$x_j$ for $j=1,2,\ldots,m+1$) and we rinse and repeat.
 
 If $X$ is finite we are done.  If $X$ is countably infinite,
 we pick the sequence
@@ -963,14 +963,14 @@ A compact metric space $X$ contains a countable dense subset.
 \end{prop}
 
 \begin{proof}
-For each $n \in \N$ we have that there are finitely many
+For each $n \in \N$ there are finitely many
 balls of radius $\nicefrac{1}{n}$ that cover $X$ (as $X$ is compact). That is,
 for every $n$, there exists
 a finite set of points $x_{n,1},x_{n,2},\ldots,x_{n,k_n}$ such that
 \begin{equation*}
 X= \bigcup_{j=1}^{k_n} B(x_{n,j},\nicefrac{1}{n})
 \end{equation*}
-So consider the set $S$ of all the points $x_{n,j}$.  As $S$ is a countable
+Let $S$ be the set of all the points $x_{n,j}$.  The set $S$ is a countable
 union of finite sets and therefore countable.  For every $x \in X$
 and every $\epsilon > 0$, there exists an $n$ such that
 $\nicefrac{1}{n} < \epsilon$ and an $x_{n,j} \in S$ such that
@@ -981,9 +981,15 @@ Hence $x \in \overline{S}$, so $\overline{S} = X$ and $S$ is dense.
 \end{proof}
 
 We are now ready for the main result of this section,
-the Arzel\`a--Ascoli theorem about existence of convergent subsequences.
+the Arzel\`a--Ascoli theorem\footnote{%
+Named after the Italian mathematicians
+\href{http://en.wikipedia.org/wiki/Cesare_Arzel\%C3\%A0}{Cesare Arzel\`a}
+(1847--1912), and
+\href{http://en.wikipedia.org/wiki/Giulio_Ascoli}{Giulio Ascoli}
+(1843--1896).} about existence of convergent subsequences.
 
 \begin{thm}[Arzel\`a--Ascoli]\index{Arzel\`a--Ascoli theorem}
+\label{thm:arzelaascoli}
 Let $(X,d)$ be a compact metric space, $f_n \in C(X,\C)$, and let $\{ f_n \}$
 be pointwise bounded and equicontinuous.  Then
 $\{f_n\}$ is uniformly bounded and $\{ f_n \}$ contains a uniformly
@@ -1009,11 +1015,11 @@ such that
 X = \bigcup_{j=1}^k B(x_j,\delta)
 \end{equation*}
 As $\{ f_n \}$ is pointwise bounded there exist $M_1,M_2,\ldots,M_k$
-such that for $j=1,\ldots,k$ we have
+such that for $j=1,2,\ldots,k$ we have
 \begin{equation*}
 \sabs{f_n(x_j)} \leq M_j
 \end{equation*}
-for all $n$.  Let $M = 1+ \max \{ M_1,\ldots,M_k \}$.  Now given any
+for all $n$.  Let $M = 1+ \max \{ M_1,M_2,\ldots,M_k \}$.  Now given any
 $x \in X$, there is a $j$ such that $x \in B(x_j,\delta)$.  Therefore,
 for all $n$ we have
 $x \in f_n^{-1}\bigl(B(f_n(x_j),1)\bigr)$ or in other words
@@ -1039,14 +1045,14 @@ B(x,\delta) \subset g_n^{-1}\bigl(B(g_n(x),\nicefrac{\epsilon}{3})\bigr).
 \end{equation*}
 By density of $S$, every $x \in X$ is in some $B(y,\delta)$
 for some $y \in S$, and by compactness of $X$,
-there is a finite subset $\{ x_1,\ldots,x_k \}$ of $S$
+there is a finite subset $\{ x_1,x_2,\ldots,x_k \}$ of $S$
 such that
 \begin{equation*}
 X = \bigcup_{j=1}^k B(x_j,\delta) .
 \end{equation*}
 Now as there are finitely many points and we know that $\{ g_n \}$
 converges pointwise on $S$, there exists a single $N$ such that for 
-all $n,m \geq N$ we have for all $j=1,\ldots,k$
+all $n,m \geq N$ we have for all $j=1,2,\ldots,k$
 \begin{equation*}
 \sabs{g_n(x_j)-g_m(x_j)} < \nicefrac{\epsilon}{3} .
 \end{equation*}
@@ -1105,7 +1111,7 @@ By the inverse triangle inequality, for all $x \in [a,b]$
 \leq M_0 + M(b-a) .
 \end{equation*}
 So $\{ f_n \}$ is uniformly bounded.
-We apply Arzel\`a--Ascoli to find the subsequence.
+We apply \hyperref[thm:arzelaascoli]{Arzel\`a--Ascoli} to find the subsequence.
 \end{proof}
 
 A consequence of the above corollary and the fundamental theorem of calculus
@@ -1270,7 +1276,8 @@ size of $c_n$.  For $x \in [0,1]$,
 \begin{equation*}
 {(1-x^2)}^n \geq (1-nx^2) .
 \end{equation*}
-This fact is an application of Bernoulli's inequality or can be 
+This fact is an application of Bernoulli's inequality (\volIref{Exercise
+1.2.13 of volume I}) or can be 
 proved directly:
 the two expressions are equal at $x=0$ and 
 $\frac{d}{dx}\left({(1-x^2)}^n - (1-nx^2)\right)
@@ -1428,7 +1435,13 @@ functions on a compact interval.  So what kind of families of
 functions are also dense?  Furthermore, what if we let the domain be an
 arbitrary metric space, then we no longer have polynomials.
 
-The resulting theorem is the Stone--Weierstrass theorem.  We need a
+The resulting theorem is the Stone--Weierstrass theorem\footnote{%
+Named after the American mathematician
+\href{http://en.wikipedia.org/wiki/Marshall_Harvey_Stone}{Marshall Harvey Stone}
+(1903--1989), and the German mathematician
+\href{http://en.wikipedia.org/wiki/Karl_Weierstrass}{Karl Theodor Wilhelm Weierstrass}
+(1815--1897).}.
+We need a
 special case of the Weierstrass theorem though.
 
 \begin{cor}
@@ -1662,6 +1675,8 @@ By the second formula we see that $f \in \sA$ (as $\sA$ is an algebra).
 \end{proof}
 
 \begin{thm}[Stone--Weierstrass, real version]
+\label{thm:SWreal}
+\index{Stone--Weierstrass!real version}
 Let $X$ be a compact metric space and $\sA$ an algebra of real-valued
 continuous functions on $X$, such that $\sA$ separates points and vanishes at
 no point.  Then the closure $\overline{\sA} = C(X,\R)$.
@@ -1850,7 +1865,8 @@ You could similarly show that the set of all functions of the form
 \end{equation*}
 is an algebra (you would have to use some trig identities to show this).
 When considered on $[0,\pi]$, the
-algebra separates points and vanishes nowhere so Stone--Weierstrass applies.
+algebra separates points and vanishes nowhere so
+\hyperref[thm:SWreal]{Stone--Weierstrass} applies.
 You \emph{do not} want to conclude from this that every continuous
 function on $[0,\pi]$ has a uniformly convergent
 Fourier cosine series.  That is not true.
@@ -1876,6 +1892,8 @@ bar we mean the complex conjugate.
 \end{defn}
 
 \begin{thm}[Stone--Weierstrass, complex version]
+\label{thm:SWcomplex}
+\index{Stone--Weierstrass!complex version}
 Let $X$ be a compact metric space and $\sA$ an algebra of complex-valued
 continuous functions on $X$, such that $\sA$ separates points, vanishes at
 no point, and is self-adjoint.  Then the closure $\overline{\sA} = C(X,\C)$.
@@ -1900,7 +1918,7 @@ Similarly, for any $x$ find $f \in \sA$ such that $f(x) \not= 0$.  If $f
 So $\sA_\R$ vanishes at no point.
 
 The set $\sA_\R$ is a real algebra, and satisfies the hypotheses of the
-real Stone--Weierstrass theorem.  So given any $f = u+iv \in C(X,\C)$,
+\hyperref[thm:SWreal]{real Stone--Weierstrass theorem}.  So given any $f = u+iv \in C(X,\C)$,
 we find $g,h \in \sA_\R$ such that
 $\sabs{u(t)-g(t)} < \nicefrac{\epsilon}{2}$ and
 $\sabs{v(t)-h(t)} < \nicefrac{\epsilon}{2}$ for all $t \in X$.  So
@@ -1936,7 +1954,7 @@ where $f_j \colon [0,1] \to \C$ and $g_j \colon [0,1] \to \C$ are continuous.
 It is not hard to see that the functions of the above form are a complex
 algebra.  It is equally easy to show that they vanish nowhere, separate
 points, and the algebra is self-adjoint.  As $[0,1] \times [0,1]$ is compact
-we apply Stone--Weierstrass to obtain the result.
+we apply \hyperref[thm:SWcomplex]{Stone--Weierstrass} to obtain the result.
 \end{example}
 
 \subsection{Exercises}
@@ -2000,7 +2018,7 @@ An analytic function has different expansions around different
 points.  Also the convergence does not automatically happen on the entire
 domain of the function.  For example, we know that if $\sabs{z} < 1$, then
 \begin{equation*}
-\frac{1}{1-z} = \sum_{k=0}^\infty z^k .
+\frac{1}{1-z} = \sum_{n=0}^\infty z^n .
 \end{equation*}
 While the left hand side exists on all of $z \not= 1$, the right hand side
 happens to converge only if $\sabs{z} < 1$.  See a graphs
@@ -2202,20 +2220,20 @@ series convergent in $(-\rho,\rho)$ such that for all $x \in (-\rho,\rho)$
 \begin{equation*}
 \sum_{n=0}^\infty c_n x^n
 =
-\sum_{n=0}^\infty c'_n x^n
+\sum_{n=0}^\infty d_n x^n
 \end{equation*}
-then $c_n = c'_n$ for all $n$.
+then $c_n = d_n$ for all $n$.
 
 On the other hand, just because we have an infinitely differentiable
 function doesn't mean that the numbers $c_n$ obtained by
-$c_n = \frac{f^{(n)}(0)}{n!}$ give a convergent power series.  In fact,
-there is a theorem, which we will not prove,
+$c_n = \frac{f^{(n)}(0)}{n!}$ give a convergent power series.
+There is a theorem, which we will not prove,
 that given an arbitrary sequence $\{ c_n \}$, there exists an
 infinitely differentiable function $f$ such that
 $c_n = \frac{f^{(n)}(0)}{n!}$.  Finally, even if the obtained series
 converges it may not converge to the function we started with.
 For a simpler example,
-see \volIref{Exercise 5.4.11 in volume I}.  That is the
+see \volIref{Exercise 5.4.11 in volume I}:  The
 function
 \begin{equation*}
 f(x) :=
@@ -2528,8 +2546,15 @@ $h'(0) = g'(0)$.
 \begin{exercise}
 Suppose $f(z) := \sum c_n z^n$ with a radius of convergence 1.  Suppose $f(0)
 = 0$.  Show that there exists a $k \in \N$ and a convergent
-power series $g(z) := \sum d_n z^k$ with radius of convergence 1
+power series $g(z) := \sum d_n z^n$ with radius of convergence 1
 such that $f(z) = z^k g(z)$ for all $z \in B(0,1)$.
+\end{exercise}
+
+\begin{exercise}
+Suppose $U \subset \C$ is open and connected.  Suppose that
+$f \colon U \to \C$ is analytic, $U \cap \R \not= \emptyset$ and
+$f(x) = 0$ for all $x \in U \cap \R$.  Show that $f(z) = 0$ for all $z \in
+U$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2643,8 +2668,8 @@ We estimate:
 & =
 \sabs{z}^d \bigl(
 \sabs{a_d} -
-\sabs{a_0} \sabs{z}^{-d} -
-\sabs{a_1} \sabs{z}^{-d+1} - \cdots - \sabs{a_{d-1}} \sabs{z}^{-1}
+\sabs{a_0} \, \sabs{z}^{-d} -
+\sabs{a_1} \, \sabs{z}^{-d+1} - \cdots - \sabs{a_{d-1}} \, \sabs{z}^{-1}
 \bigr)
 \\
 & \geq
@@ -2962,6 +2987,47 @@ used above agree with the standard geometric definitions.
 Derive the power series for $\sin(z)$ and $\cos(z)$ at the origin.
 \end{exercise}
 
+\begin{exercise}
+We showed
+${\bigl( \cos(x) \bigr)}^2 + {\bigl( \sin(x) \bigr)}^2 = 1$
+for all $x \in \R$.
+Prove that
+${\bigl( \cos(z) \bigr)}^2 + {\bigl( \sin(z) \bigr)}^2 = 1$
+for all $z \in \C$.
+\end{exercise}
+
+\begin{exnote}
+Define the \emph{\myindex{hyperbolic sine}} and
+\emph{\myindex{hyperbolic cosine}} by
+\begin{equation*}
+\sinh(z) := \frac{e^z-e^{-z}}{2}, \qquad
+\cosh(z) := \frac{e^z+e^{-z}}{2}.
+\end{equation*}
+\end{exnote}
+
+\begin{exercise}
+Derive the power series for the hyperbolic sine and cosine.
+\end{exercise}
+
+\begin{exercise}
+Show
+\begin{enumerate}[a)]
+\item
+$\sinh(0) = 0$, $\cosh(0) = 1$.
+\item
+$\frac{d}{dx} \bigl[ \sinh(x) \bigr] = \cosh(x)$ and
+$\frac{d}{dx} \bigl[ \cosh(x) \bigr] = \sinh(x)$.
+\item
+$\cosh(x) > 0$ for all $x \in \R$ and show that
+$\sinh(x)$ is strictly increasing and bijective
+from $\R$ to $\R$.
+\item
+${\bigl(\cosh(x)\bigr)}^2 = 1 + {\bigl(\sinh(x)\bigr)}^2$ for all
+$x$.
+\end{enumerate}
+
+\end{exercise}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
@@ -2970,7 +3036,10 @@ Derive the power series for $\sin(z)$ and $\cos(z)$ at the origin.
 
 \sectionnotes{3--4 lectures}
 
-Fourier series is perhaps the most important of the series that we cover in
+Fourier series\footnote{%
+Named after the French mathematician
+\href{http://en.wikipedia.org/wiki/Joseph_Fourier}{Jean-Baptiste Joseph Fourier}
+(1768--1830).} is perhaps the most important of the series that we cover in
 this book.  We have seen a few in examples before, but let us start
 at the beginning.
 
@@ -3238,8 +3307,8 @@ $\snorm{z}_2$)
 This is just the euclidean distance to the origin in $\C^n$.
 \end{remark}
 
-Let us get back to function spaces.  We assume all functions are
-Riemann integrable in the following.
+Let us get back to function spaces.  In what follows, we assume all functions are
+Riemann integrable.
 
 \begin{defn}
 Let $\{ \varphi_n \}$ be a sequence of integrable complex-valued
@@ -3400,7 +3469,10 @@ by the above calculation.
 We take a limit to obtain the so called
 \emph{\myindex{Bessel's inequality}}.
 
-\begin{thm}[Bessel's inequality] \label{thm:bessels}
+\begin{thm}[Bessel's inequality\footnote{%
+Named after the German astronomer, mathematician, physicist, and geodesist
+\href{http://en.wikipedia.org/wiki/Friedrich_Bessel}{Friedrich Wilhelm Bessel}
+(1784--1846).}] \label{thm:bessels}
 Suppose $f$ is a Riemann integrable function on $[a,b]$.
 Let $\{ \varphi_n \}$ be an orthonormal system on $[a,b]$ and
 suppose
@@ -3622,7 +3694,7 @@ f(x)
 \\
 & = 
 \frac{1}{2\pi} \int_{-\pi}^\pi \frac{f(x-t) - f(x)}{\sin(\frac{t}{2})} \sin\bigl(
-(N+\nicefrac{1}{2})t \bigr) ~ dt 
+(N+\nicefrac{1}{2})t \bigr) ~ dt .
 \end{split}
 \end{equation*}
 Now by the hypotheses we obtain that
@@ -3630,7 +3702,7 @@ for small nonzero $t$ we get
 \begin{equation*}
 \abs{ \frac{f(x-t) - f(x)}{\sin(\frac{t}{2})} }
 \leq
-\frac{M\sabs{t}}{\sabs{\sin(\frac{t}{2})}}
+\frac{M\sabs{t}}{\sabs{\sin(\frac{t}{2})}} .
 \end{equation*}
 As $\sin(t) = t + h(t)$ where $\frac{h(t)}{t} \to 0$ as $t \to 0$,
 we notice that
@@ -3684,7 +3756,8 @@ convergence at $x$ is only dependent on the values of the function
 near $x$.
 
 There is a somewhat subtle difference between the corollary and what can be
-achieved by the Stone--Weierstrass theorem.  By Stone--Weierstrass, 
+achieved by the \hyperref[thm:SWcomplex]{Stone--Weierstrass theorem}.
+By Stone--Weierstrass, 
 any continuous function on $[-\pi,\pi]$ can be uniformly approximated
 by trigonometric polynomials.  However, these trigonometric polynomials need
 not be the partial sums $s_N$.  On the other hand, they can be
@@ -3702,8 +3775,13 @@ inner product.
 
 %FIXME: Should we prove $L^2$ triang and CS?  This is just formal nonsense
 
-\begin{thm}[Parseval]
-Let $f$ and $g$ be Riemann integrable $2\pi$-periodic functions
+\begin{thm}[Parseval\footnote{%
+Named after the French mathematician
+\href{http://en.wikipedia.org/wiki/Marc-Antoine_Parseval}{Marc-Antoine
+Parseval}
+(1755--1836).}] \index{Parseval's theorem}
+Let $f$ and $g$ be $2\pi$-periodic functions, Riemann integrable 
+on $[-\pi,\pi]$
 with
 \begin{equation*}
 f(x) \sim
@@ -3748,7 +3826,7 @@ a continuous $2\pi$-periodic function $h$ such that
 \begin{equation*}
 \snorm{f-h}_2 < \epsilon .
 \end{equation*}
-Now we know that we can approximate $h$ with a trigonometric polynomial
+We can approximate $h$ with a trigonometric polynomial
 uniformly, that is there is a trigonometric polynomial $P(x)$
 such that
 $\sabs{h(x) - P(x)} < \epsilon$ for all $x$.
@@ -3756,7 +3834,7 @@ Hence
 \begin{equation*}
 \snorm{h-P}_2 \leq \epsilon.
 \end{equation*}
-If $P$ is of degree $N_0$ then for all $N \geq N_0$ we have
+If $P$ is of degree $N_0$, then for all $N \geq N_0$ we have
 \begin{equation*}
 \snorm{h-s_N(h)}_2 \leq \snorm{h-P}_2 \leq \epsilon
 \end{equation*}
@@ -3779,9 +3857,9 @@ inequality for the $L^2$ norm (exercise), then
 \snorm{h-s_N(h)}_2
 +
 \snorm{s_N(h)-s_N(f)}_2
-\leq 3\epsilon .
+\leq 3\epsilon ,
 \end{equation*}
-For all $N \geq N_0$.
+for all $N \geq N_0$.
 
 Next
 \begin{equation*}
@@ -3800,7 +3878,7 @@ e^{ikx}
 =
 \sum_{k=-N}^N
 c_k 
-\overline{d_k}
+\overline{d_k} .
 \end{equation*}
 Next we need the Schwarz (or Cauchy--Schwarz or Cauchy--Bunyakovsky--Schwarz)
 inequality, that is
@@ -3808,7 +3886,7 @@ inequality, that is
 {\abs{\int_a^b f\widebar{g}}}^2
 \leq
 \left( \int_a^b \sabs{f}^2 \right)
-\left( \int_a^b \sabs{g}^2 \right)
+\left( \int_a^b \sabs{g}^2 \right) .
 \end{equation*}
 This is left as an exercise.  It actually follows by purely formal
 linear algebra using simple the idea that the integral gives an inner
@@ -3881,3 +3959,27 @@ for Riemann integrable functions:
 \end{equation*}
 \end{exercise}
 
+\begin{exercise}
+Suppose for some $C$ and $\alpha > 1$, we have
+a real sequence $\{ a_n \}$ with
+$\abs{a_n} \leq \frac{C}{n^\alpha}$ for all $n$.
+Let
+\begin{equation*}
+g(x) := \sum_{n=1}^\infty a_n \sin(n x) .
+\end{equation*}
+\begin{enumerate}[a)]
+\item
+Show that $g$ is continuous.
+\item
+Find a solution to the differential equation
+\begin{equation*}
+y''+ 2 y = g(x)
+\end{equation*}
+of the form
+\begin{equation*}
+y(x) = \sum_{n=1}^\infty b_n \sin(n x) .
+\end{equation*}
+\item
+Then show that this solution $y$ is twice differentiable.
+\end{enumerate}
+\end{exercise}
