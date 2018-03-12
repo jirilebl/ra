@@ -43,12 +43,12 @@ We will do so when convenient.
 We call real numbers
 \emph{\myindex{scalars}} to distinguish them from vectors.
 
-In $\R^n$ we often think of vectors as direction and magnitude, and draw the
+In $\R^n$ we often think of vectors as a direction and a magnitude, and draw the
 vector as an arrow.  The vector $(v_1,v_2,\ldots,v_n)$ is represented
 by the arrow from the origin to the point $(v_1,v_2,\ldots,v_n)$, see
 \figureref{fig:vecasarrow} in the plane $\R^2$.
 When we do think of vectors as arrows, they are
-not based at the origin necessarily; a vector is then simply the direction and
+not based at the origin necessarily; a vector is simply the direction and
 the magnitude, and it does not know where it starts.
 \begin{myfigureht}
 \subimport*{figures/}{vecasarrow.pdf_t}
@@ -772,7 +772,7 @@ any subspace $V$ of a vector space $X$ is convex.
 
 \begin{example}
 A somewhat more complicated example is given by the following.  Let
-$C([0,1],\R)$ be the vector space of continuous real valued functions on $\R$.
+$C([0,1],\R)$ be the vector space of continuous real-valued functions on $\R$.
 Let $X \subset C([0,1],\R)$ be the set of those $f$ such that
 \begin{equation*}
 \int_0^1 f(x)~dx \leq 1 \qquad \text{and} \qquad
@@ -2589,7 +2589,7 @@ differentiability of $f$, and hence
 \frac{f(p+h e_j)-f(p)}{h} = f'(p) \, e_j  .
 \end{equation*}
 Let us represent $f$ by components
-$f = (f_1,f_2,\ldots,f_m)$, since it is vector valued.
+$f = (f_1,f_2,\ldots,f_m)$, since it is vector-valued.
 Taking a limit in $\R^m$
 is the same as taking the limit in each component separately.  
 For any $k$
@@ -2627,9 +2627,27 @@ The gradient gives a way to represent the action of
 the derivative as a dot product: $f'(x)\,v = \nabla f(x) \cdot v$.
 
 Suppose $\gamma \colon (a,b) \subset \R \to \R^n$ is a differentiable
-function and the image $\gamma\bigl((a,b)\bigr) \subset U$.
+function.
 Such a function and its image is sometimes called a \emph{\myindex{curve}},
 or a \emph{\myindex{differentiable curve}}.
+Write $\gamma =
+(\gamma_1,\gamma_2,\ldots,\gamma_n)$.
+For the purposes of computation
+we identify $L(\R^1)$ and $\R$ as we did when we defined the
+derivative in one variable.
+We also identify $L(\R^1,\R^n)$ with $\R^n$.
+We treat $\gamma^{\:\prime}(t)$ both as an operator in
+$L(\R^1,\R^n)$ and the vector
+$\bigl(\gamma_1^{\:\prime}(t),
+\gamma_2^{\:\prime}(t),\ldots,\gamma_n^{\:\prime}(t)\bigr)$
+in $\R^n$.
+Using \propref{mv:prop:jacobianmatrix},
+if $v\in \R^n$ is $\gamma^{\:\prime}(t)$ acting as a vector,
+then $h \mapsto h \, v$ (for $h \in \R^1 = \R$) is
+$\gamma^{\:\prime}(t)$ acting as an operator
+in $L(\R^1,\R^n)$.
+We often use this 
+slight abuse of notation when dealing with curves.
 See \figureref{fig:difcurveder}.
 \begin{myfigureht}
 \subimport*{figures/}{diffcurveder.pdf_t}
@@ -2637,15 +2655,12 @@ See \figureref{fig:difcurveder}.
 vector.\label{fig:difcurveder}}
 \end{myfigureht}
 
-Write $\gamma =
-(\gamma_1,\gamma_2,\ldots,\gamma_n)$.  Let
+Suppose $\gamma\bigl((a,b)\bigr) \subset U$ and let
 \begin{equation*}
 g(t) := f\bigl(\gamma(t)\bigr) .
 \end{equation*}
 The function
-$g$ is differentiable.  For purposes of computation we 
-identify $L(\R^1)$ with $\R$, and hence $g'(t)$ can be computed as
-a number:
+$g$ is differentiable. Treating $g'(t)$ as a number:
 \begin{equation*}
 g'(t) =
 f'\bigl(\gamma(t)\bigr) \gamma^{\:\prime}(t)
@@ -2660,11 +2675,13 @@ f'\bigl(\gamma(t)\bigr) \gamma^{\:\prime}(t)
 \end{equation*}
 For convenience,
 we often 
-leave out the points where we are evaluating, such as above on the right hand side.
-Let us rewrite this with the notation of the gradient and the dot product:
+leave out the points where we are evaluating,
+such as above on the right hand side.
+Let us rewrite this equation
+with the notation of the gradient and the dot product.
 \begin{equation*}
 g'(t) = (\nabla f) \bigl(\gamma(t)\bigr) \cdot \gamma^{\:\prime}(t)
-= \nabla f \cdot \gamma^{\:\prime} .
+= \nabla f \cdot \gamma^{\:\prime}.
 \end{equation*}
 
 We use this idea to define derivatives in a specific direction.  A direction
@@ -2680,6 +2697,9 @@ D_u f (x) := \frac{d}{dt}\Big|_{t=0} \bigl[ f(x+tu) \bigr] =
 \end{equation*}
 where the notation
 $\frac{d}{dt}\big|_{t=0}$ represents the derivative evaluated at $t=0$.
+Notice that $\frac{\partial f}{\partial x_j} = D_{e_j} f$.
+For this reason, sometimes the notation $\frac{\partial f}{\partial u}$
+is used instead of $D_u f$.
 
 Let $\gamma$ be defined by
 \begin{equation*}
@@ -2715,7 +2735,11 @@ function grows fastest, in other words, in the direction in which $D_u f(x)$ is 
 \begin{defn}
 Let $U \subset \R^n$ and
 $f \colon U \to \R^n$ be a differentiable mapping.  Define the
-\emph{\myindex{Jacobian}}, or the
+\emph{\myindex{Jacobian}}%
+\footnote{Named after the Italian mathematician
+\href{https://en.wikipedia.org/wiki/Carl_Gustav_Jacob_Jacobi}{Carl Gustav Jacob Jacobi}
+(1804--1851).},
+or the
 \emph{\myindex{Jacobian determinant}}%
 \footnote{The matrix from \propref{mv:prop:jacobianmatrix} representing $f'(x)$
 is sometimes called the
@@ -2732,10 +2756,11 @@ Sometimes $J_f$ is written as
 \end{defn}
 
 This last piece of notation may seem somewhat confusing,
-but it is useful when you need to specify
-the exact variables and function components used.
+but it is quite useful when we need to specify
+the exact variables and function components used,
+for example in the implicit function theorem.
 
-The Jacobian $J_f$ is a real valued function, and when $n=1$ it is simply the
+The Jacobian $J_f$ is a real-valued function, and when $n=1$ it is simply the
 derivative.
 %When $f$ is $C^1$, then $J_f$ is a continuous function.
 From the chain rule and the fact that $\det(AB) = \det(A)\det(B)$, it follows that:
@@ -2769,13 +2794,11 @@ F\bigl(\alpha(t)\bigr)
 
 \begin{exercise}
 Let $f \colon \R^2 \to \R$ be given by
-%\begin{equation}
 $f(x,y)
 :=
-\sqrt{x^2+y^2}$.
-%\end{equation}
+\sqrt{x^2+y^2}$,
+see \figureref{fig:distfromorgfunc}.
 Show that $f$ is not differentiable at the origin.
-See \figureref{fig:distfromorgfunc}.
 \end{exercise}
 
 \begin{myfigureht}
@@ -2809,6 +2832,7 @@ derivative at any point $(x,y)$.
 
 \begin{exercise} \label{exercise:noncontpartialsexist}
 Define a function $f \colon \R^2 \to \R$ by
+(see \figureref{fig:xyxsqysqvol2})
 \begin{equation*}
 f(x,y)
 :=
@@ -2817,7 +2841,6 @@ f(x,y)
 0 & \text{ if $(x,y) = (0,0)$}.
 \end{cases}
 \end{equation*}
-See \figureref{fig:xyxsqysqvol2}.
 \begin{enumerate}[a)]
 \item
 Show that partial derivatives 
@@ -2837,6 +2860,7 @@ differentiable).
 \begin{samepage}
 \begin{exercise}
 Define a function $f \colon \R^2 \to \R$ by
+(see \figureref{fig:xsqyxsqysq})
 \begin{equation*}
 f(x,y)
 :=
@@ -2845,7 +2869,6 @@ f(x,y)
 0 & \text{ if $(x,y) = (0,0)$}.
 \end{cases}
 \end{equation*}
-See \figureref{fig:xsqyxsqysq}.
 \begin{enumerate}[a)]
 \item
 Show that partial derivatives 
@@ -2966,7 +2989,7 @@ $g'(p) = f'(p) = h'(p)$.
 
 \subsection{Bounding the derivative}
 
-Let us prove a ``mean value theorem'' for vector valued functions.
+Let us prove a ``mean value theorem'' for vector-valued functions.
 
 \begin{lemma}
 If $\varphi \colon [a,b] \to \R^n$ is differentiable on $(a,b)$ and
@@ -2977,19 +3000,21 @@ continuous on $[a,b]$, then there exists a $t_0 \in (a,b)$ such that
 \end{lemma}
 
 \begin{proof}
-By mean value theorem on the function
-$\bigl(\varphi(b)-\varphi(a) \bigr) \cdot \varphi(t)$
-(the dot is the scalar dot product again) we obtain
+By mean value theorem on the scalar-valued function
+$t \mapsto \bigl(\varphi(b)-\varphi(a) \bigr) \cdot \varphi(t)$,
+where the dot is the dot product, we obtain
+that
 there is a $t_0 \in (a,b)$ such that
 \begin{equation*}
-\bigl(\varphi(b)-\varphi(a) \bigr) \cdot \varphi(b) - 
-\bigl(\varphi(b)-\varphi(a) \bigr) \cdot \varphi(a)  = 
 \snorm{\varphi(b)-\varphi(a)}^2
 =
+\bigl(\varphi(b)-\varphi(a) \bigr) \cdot \varphi(b) - 
+\bigl(\varphi(b)-\varphi(a) \bigr) \cdot \varphi(a)
+= 
 (b-a)
-\bigl(\varphi(b)-\varphi(a) \bigr) \cdot \varphi'(t_0)
+\bigl(\varphi(b)-\varphi(a) \bigr) \cdot \varphi'(t_0) ,
 \end{equation*}
-where we treat $\varphi'$ as a simply a column vector of numbers by abuse of
+where we treat $\varphi'$ as a simply a vector in $\R^n$ by abuse of
 notation.  Note that
 in this case, if we think of $\varphi'(t)$ as simply a vector, then by
 \exerciseref{exercise:normonedim},
@@ -2997,7 +3022,7 @@ $\snorm{\varphi'(t)}_{L(\R,\R^n)} = \snorm{\varphi'(t)}_{\R^n}$.
 That is, the euclidean norm of the vector is the same as the operator norm
 of $\varphi'(t)$.
 
-By Cauchy--Schwarz inequality
+By the Cauchy--Schwarz inequality
 \begin{equation*}
 \snorm{\varphi(b)-\varphi(a)}^2
 =
@@ -3036,11 +3061,11 @@ Next
 f'\bigl((1-t)x+ty\bigr) (y-x) .
 \end{equation*}
 By the mean value theorem above we get for
-some $t_0 \in (0,1)$
+some $t_0 \in (0,1)$,
 \begin{equation*}
 \snorm{f(x)-f(y)} \leq
 \norm{\frac{d}{dt} \Big|_{t=t_0} \Bigl[ f\bigl((1-t)x+ty\bigr) \Bigr] } \leq
-\snorm{f'\bigl((1-t_0)x+t_0y\bigr)} \, \snorm{y-x} \leq
+\norm{f'\bigl((1-t_0)x+t_0y\bigr)} \, \snorm{y-x} \leq
 M \snorm{y-x} . \qedhere
 \end{equation*}
 \end{proof}
@@ -3145,7 +3170,7 @@ continuous.
 Let us do induction on dimension.  First let us note that
 the conclusion is true when $n=1$.  In this case the derivative
 is just the regular derivative (exercise: you should check that the fact
-that the function is vector valued is not a problem).
+that the function is vector-valued is not a problem).
 
 Suppose the conclusion is true for $\R^{n-1}$,
 that is,
