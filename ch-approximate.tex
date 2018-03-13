@@ -1160,7 +1160,7 @@ relatively compact set.
 Suppose $S^1 \subset \C$ is the unit circle, that is the set where
 $\sabs{z}=1$.  Suppose the continuous functions
 $f_n \colon S^1 \to \C$ are uniformly bounded.
-Let $\gamma \colon [0,1] \to \S^1$ be a parametrization of $S^1$,
+Let $\gamma \colon [0,1] \to S^1$ be a parametrization of $S^1$,
 and $g(z,w)$ a continuous function on $C(0,1) \times S^1$.  Define
 the functions $F_n \colon C(0,1) \to \C$ by
 the path integral (See \sectionref{sec:pathintegral})
@@ -1168,6 +1168,12 @@ the path integral (See \sectionref{sec:pathintegral})
 F_n(z) : = \int_\gamma f_n(w)\, g(z,w) ~ ds(w) . 
 \end{equation*}
 Show that $\{ F_n \}$ has a uniformly convergent subsequence.
+\end{exercise}
+
+\begin{exercise}
+Suppose $(X,d)$ is a compact metric space, $\{ f_n \}$ an equicontinuous
+sequence of functions in $C(X,\C)$.  Suppose $\{ f_n \}$ converges
+pointwise.  Show that it converges uniformly.
 \end{exercise}
 
 
@@ -1974,6 +1980,22 @@ functions $f_n \in C(X,\R)$, such that $f_n^2$
 does not converge uniformly.
 \end{exercise}
 
+\begin{exercise}
+Suppose $f \colon [0,1] \to \R$ is continuous and
+$\int_0^1 f(x) x^n ~dx = 0$ for all $n = 0,1,2,\ldots$.
+Show that $f(x) = 0$ for all $x \in [0,1]$.
+Hint: approximate by polynomials to show that $\int_0^1 {\bigl( f(x)
+\bigr)}^2 ~ dx = 0$.
+\end{exercise}
+
+\begin{exercise}
+Suppose $I \colon C([0,1],\R) \to \R$ is 
+a linear continuous function such that
+$I(x^n) = \frac{1}{n+1}$
+for all $n=0,1,2,3,\ldots$.
+Prove that $I(f) = \int_0^1 f$ for all $f \in C([0,1],\R)$.
+\end{exercise}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2518,6 +2540,35 @@ theorem for connected open subsets of $\R$, which are just open intervals.
 \subsection{Exercises}
 
 \begin{exercise}
+Let
+\begin{equation*}
+a_{kj} :=
+\begin{cases}
+1 & \text{if $k=j$,}\\
+-2^{k-j} & \text{if $k<j$,}\\
+0 & \text{else.}
+\end{cases}
+\end{equation*}
+Compute (or show the limit doesn't exist):
+\\
+a) $\displaystyle \sum_{j=1}^\infty \sabs{a_{kj}}~$ for any $k$,
+\hspace{\fill}
+b) $\displaystyle \sum_{k=1}^\infty \sabs{a_{kj}}~$ for any $j$,
+\hspace{\fill}
+c)
+$\displaystyle \sum_{k=1}^\infty \sum_{j=1}^\infty \sabs{a_{kj}}$,
+\hspace{\fill}
+d) $\displaystyle \sum_{k=1}^\infty \sum_{j=1}^\infty a_{kj}$,
+\hspace{\fill}
+e)
+$\displaystyle \sum_{j=1}^\infty \sum_{k=1}^\infty a_{kj}$.
+\\
+Hint: Fubini for sums does not apply, in fact, answers to
+d) and e) are different.
+\end{exercise}
+
+
+\begin{exercise}
 Let $f(x) := \frac{1}{1+x^2}$.  Prove that the radius of convergence of
 the power series for $f$ at the origin is 1.
 \end{exercise}
@@ -2746,7 +2797,7 @@ that $\sabs{p(z_0)} = 0$.
 \end{proof}
 
 The theorem doesn't generalize to analytic functions either.  For example
-$e^{z}$ is an analytic function on $\C$ with no zeros.
+$e^{z}$ is an analytic function on $\C$ with no zeros, see the next section.
 
 \subsection{Exercises}
 
@@ -2900,127 +2951,174 @@ In fact, we define sine and cosine for all complex $z$:
 \qquad\text{and}\qquad
 \sin(z) := \frac{e^{iz} - e^{-iz}}{2i} .
 \end{equation*}
-Immediately we obtain the so called \emph{\myindex{Euler's formula}}:
-\begin{equation*}
-e^{iz} = \cos(z) + i\sin(z) .
-\end{equation*}
-From the definition of $e^z$ we notice that
-$\overline{(e^z)} = e^{\widebar{z}}$ and so
-if $x$ is real then
-\begin{equation*}
-\overline{(e^{ix})} = e^{-ix} .
-\end{equation*}
-Therefore when $x$ is real then we note that from the definition
-\begin{equation*}
-\cos(x) = \Re (e^{ix})
-\qquad\text{and}\qquad
-\sin(x) = \Im (e^{ix}) .
-\end{equation*}
-In other words, sine and cosine are real-valued when we plug in real $x$.
 
-Also direct from the definition is that $\cos(-z) = \cos(z)$ and
-$\sin(z) = -\sin(-z)$ for all $z \in \C$.
+Let us see that our definition has the common properties we usually
+associate with sine and cosine.  In the process we also define the
+number $\pi$.
 
-We will prove that this definition has the geometric properties we usually
-associate with sin and cos.  Let $x$ be real and compute
+\pagebreak[2]
+\begin{prop}
+The sine and cosine functions have the following properties:
+\begin{enumerate}[(i)]
+\item For all $z \in \C$,
 \begin{equation*}
-1 =  e^{ix} e^{-ix} = \sabs{e^{ix}}^2 = {\bigl( \cos(x) \bigr)}^2 + {\bigl( \sin(x) \bigr)}^2 .
+e^{iz} = \cos(z) + i\sin(z) \qquad
+\text{(\myindex{Euler's formula})}.
 \end{equation*}
-We see that $e^{ix}$ is unimodular, the values lie on the unit circle.  By
-noting that a square is always positive we notice that
+\item $\cos(0) = 1$, $\sin(0) = 0$.
+\item For all $z \in \C$,
 \begin{equation*}
-{\bigl(\sin(x)\bigr)}^2 = 1-{\bigl(\cos(x)\bigr)}^2 \leq 1
+\cos(-z) = \cos(z), \qquad
+\sin(-z) = -\sin(z).
 \end{equation*}
-so $\sabs{\sin(x)} \leq 1$ and similarly we show
-$\sabs{\cos(x)} \leq 1$.  A fact we have often used in examples.
-
-From the definition we get that $\cos(0) = 1$ and $\sin(0) = 0$.  By direct
-computation (left to reader) from the definition we also obtain:
+\item For all $z \in \C$,
 \begin{equation*}
 \cos(z) = \sum_{k=0}^\infty \frac{{(-1)}^k}{(2k)!} z^{2k} ,
 \qquad
 \sin(z) = \sum_{k=0}^\infty \frac{{(-1)}^k}{(2k+1)!} z^{2k+1} .
 \end{equation*}
-
-Again by direct calculation (again left to reader) we obtain
-for real $x$
+\item For all $x \in \R$
 \begin{equation*}
-\frac{d}{dx} \bigl( \cos(x) \bigr) = -\sin(x)
-\qquad \text{and} \qquad
-\frac{d}{dx} \bigl( \sin(x) \bigr) = \cos(x) .
+\cos(x) = \Re (e^{ix})
+\qquad\text{and}\qquad
+\sin(x) = \Im (e^{ix}) .
 \end{equation*}
-
-Another fact that we have often used in examples was that $\sin(x) \leq x$
-for $x \geq 0$.  Let us look at
-$f(x) = x-\sin(x)$ and differentiate:
+\item For all $x \in \R$,
 \begin{equation*}
-f'(x) = \frac{d}{dx} \bigl( x - \sin(x) \bigr)
+{\bigl( \cos(x) \bigr)}^2 + {\bigl( \sin(x) \bigr)}^2 = 1 .
+\end{equation*}
+\item For all $x \in \R$,
+\begin{equation*}
+\sabs{\sin(x)} \leq 1, \qquad \sabs{\cos(x)} \leq 1 .
+\end{equation*}
+\item For real $x$
+\begin{equation*}
+\frac{d}{dx} \bigl[ \cos(x) \bigr] = -\sin(x)
+\qquad \text{and} \qquad
+\frac{d}{dx} \bigl[ \sin(x) \bigr] = \cos(x) .
+\end{equation*}
+\item For all $x \geq 0$,
+\begin{equation*}
+\sin(x) \leq x .
+\end{equation*}
+\item
+There exists an $x > 0$ such that $\cos(x) = 0$.  We define
+\glsadd{not:pi}
+\begin{equation*}
+\pi := 2 \inf \{ x > 0 : \cos(x) = 0 \} .
+\end{equation*}
+\item
+For all $z \in \C$, 
+\begin{equation*}
+e^{2\pi i} = 0, \qquad \text{and} \qquad e^{z + i 2\pi} = e^z.
+\end{equation*}
+\item
+Sine and cosine are $2\pi$-periodic and not periodic with any smaller
+period.  That is $2\pi$ is the smallest number such that for all $z \in \C$,
+\begin{equation*}
+\sin(z+2\pi) = \sin(z)
+\qquad \text{and} \qquad
+\cos(z+2\pi) = \cos(z) .
+\end{equation*}
+\item
+The function $x \mapsto e^{ix}$ is a bijective map from $[0,2\pi)$
+onto the set of $z \in \C$ such that $\sabs{z} = 1$.
+\end{enumerate}
+\end{prop}
+
+Notice that the proposition also implies that $\sin(x)$ and $\cos(x)$ are 
+real when $x$ is real.
+
+\begin{proof}
+The first three items follow immediately from the definition.
+The computation of the power series for both is left as an exercise.
+
+As complex conjugate is a continuous function, then the definition
+of $e^z$ implies
+$\overline{(e^z)} = e^{\widebar{z}}$.  If
+$x$ is real,
+\begin{equation*}
+\overline{(e^{ix})} = e^{-ix} .
+\end{equation*}
+Thus for real $x$,
+$\cos(x) = \Re (e^{ix})$ and $\sin(x) = \Im (e^{ix})$.
+
+For real $x$ we compute
+\begin{equation*}
+1 =  e^{ix} e^{-ix} = \sabs{e^{ix}}^2 = {\bigl( \cos(x) \bigr)}^2 + {\bigl( \sin(x) \bigr)}^2 .
+\end{equation*}
+In particular, is $e^{ix}$ is unimodular, the values lie on the unit circle.
+A square is always nonnegative:
+\begin{equation*}
+{\bigl(\sin(x)\bigr)}^2 = 1-{\bigl(\cos(x)\bigr)}^2 \leq 1 .
+\end{equation*}
+So $\sabs{\sin(x)} \leq 1$ and similarly 
+$\sabs{\cos(x)} \leq 1$.
+
+We leave the computation of the derivatives to the reader as exercises.
+
+Let us now prove that $\sin(x) \leq x$ for $x \geq 0$.
+Consider
+$f(x) := x-\sin(x)$ and differentiate:
+\begin{equation*}
+f'(x) = \frac{d}{dx} \bigl[ x - \sin(x) \bigr]
 =
 1 -\cos(x) \geq 0 ,
 \end{equation*}
 for all $x$ as $\sabs{\cos(x)} \leq 1$.
-So $f$ is nondecreasing and
-furthermore $f(0) = 0$.  So $f$ must be nonnegative when $x \geq 0$, which is
-precisely what we wanted to prove.
+In other words, $f$ is increasing and $f(0) = 0$.
+So $f$ must be nonnegative when $x \geq 0$.
 
 We claim there exists a positive $x$ such that $\cos(x) = 0$.
-As $\cos(0) = 1 > 0$, then cosine is definitely positive at least
-for some $x$ near 0.
-Suppose that on $[0,y)$ we have $\cos(x) > 0$, then $\sin(x)$ is strictly
-increasing on $[0,y)$ and as $\sin(0) = 0$, then
-$\sin(x) > 0$ for $x \in (0,y)$.  Take $a \in (0,y)$.  Then
-for some $c \in (a,y)$
+As $\cos(0) = 1 > 0$, $\cos(x) > 0$
+for $x$ near 0.
+Suppose that $\cos(x) > 0$ on $[0,y)$, then $\sin(x)$ is strictly
+increasing on $[0,y)$.  As $\sin(0) = 0$, then
+$\sin(x) > 0$ for $x \in (0,y)$.  Take $a \in (0,y)$.  By
+the mean value theorem there is a $c \in (a,y)$ such that
 \begin{equation*}
 2 \geq \cos(a)-\cos(y) = \sin(c)(y-a) \geq \sin(a)(y-a) .
 \end{equation*}
-As $a > 0$, then $\sin(a) > 0$ and so
+As $a \in (0,y)$, then $\sin(a) > 0$ and so
 \begin{equation*}
-y \leq \frac{2}{\sin(a)} + a
+y \leq \frac{2}{\sin(a)} + a .
 \end{equation*}
-Hence there is some largest $y$ such that $\cos(x) > 0$ in $[0,y)$.  By
-continuity, for that $y$,
-$\cos(y) = 0$.
+Hence there is some largest $y$ such that $\cos(x) > 0$ in $[0,y)$,
+and let $y$ be the largest such number.
+By continuity, $\cos(y) = 0$.
 In fact, $y$ is the
-smallest positive $y$ such that $\cos(y) = 0$.  We can now define
-\glsadd{not:pi}
-\begin{equation*}
-\pi := 2y .
-\end{equation*}
+smallest positive $y$ such that $\cos(y) = 0$.  As mentioned
+$\pi$ is defined to be $2y$.
 
-And we obtain that $\cos(\frac{\pi}{2}) = 0$ and so
-${\bigl(\sin(\frac{\pi}{2})\bigr)}^2 = 1$.
+As $\cos(\nicefrac{\pi}{2}) = 0$ then
+${\bigl(\sin(\nicefrac{\pi}{2})\bigr)}^2 = 1$.
 As $\sin$ was positive on $(0,y)$ we have
-$\sin(\frac{\pi}{2}) = 1$.
+$\sin(\nicefrac{\pi}{2}) = 1$.
 Hence
 \begin{equation*}
 e^{i \pi /2} = i ,
 \end{equation*}
-and by the addition formula we get
+and by the addition formula 
 \begin{equation*}
 e^{i \pi} = -1 ,
 \qquad 
 e^{i 2\pi} = 1 .
 \end{equation*}
-So $e^{i2\pi} = 1 = e^0$.  The addition formula now says
-that
+So $e^{i2\pi} = 1 = e^0$.  The addition formula says
 \begin{equation*}
 e^{z+i2\pi} = e^z
 \end{equation*}
-for all $z \in \C$.  Therefore, we also obtain that
-\begin{equation*}
-\cos(z+2\pi) = \cos(z)
-\qquad\text{and}\qquad
-\sin(z+2\pi) = \sin(z) .
-\end{equation*}
+for all $z \in \C$.  Immediately we also obtain
+$\cos(z+2\pi) = \cos(z)$ and $\sin(z+2\pi) = \sin(z)$.
 So $\sin$ and $\cos$ are $2\pi$-periodic.
+
 We claim that $\sin$ and $\cos$ are not periodic with a smaller period.  It
 would be enough to show that if $e^{ix} = 1$ for the
 smallest positive $x$, then
-$x = 2\pi$.
-Well let $x$ be the smallest positive $x$ such that
+$x = 2\pi$.  So let $x$ be the smallest positive $x$ such that
 $e^{ix} = 1$.
 Of course, $x \leq 2\pi$.
-Then by the addition formula
+By the addition formula
 \begin{equation*}
 {\bigl(e^{ix/4}\bigr)}^4 = 1 .
 \end{equation*}
@@ -3031,37 +3129,41 @@ If $e^{ix/4} = a+ib$, then
 =1 .
 \end{equation*}
 As $\nicefrac{x}{4} \leq \nicefrac{\pi}{2}$, then $a = \cos(\nicefrac{x}{4}) \geq 0$ and
-$0 < b = \sin(\nicefrac{x}{4})$.  Then either $a = 0$, in which case
-$\nicefrac{x}{4} = \nicefrac{\pi}{2}$ or $a^2 = b^2$.  But if $a^2=b^2$, then
+$0 < b = \sin(\nicefrac{x}{4})$.  Then either $a = 0$ or
+or $a^2 = b^2$.  If $a^2=b^2$, then
 $a^4-6a^2b^2+b^4 = -4a^4 < 0$ and in particular not equal to 1.
 Therefore $a=0$ in which case $\nicefrac{x}{4} = \nicefrac{\pi}{2}$.
+Hence $2\pi$ is the smallest period we could choose for $e^{ix}$
+and so also for $\cos$ and $\sin$.
 
-Therefore $2\pi$ is the smallest period we could choose for $e^{ix}$
-and hence $\cos$ and $\sin$.
-
-Finally we also wish to show that $e^{ix}$ is 1-to-1 and onto
+Finally we also wish to show that $e^{ix}$ is one-to-one and onto
 from the set $[0,2\pi)$ to the set of $z \in \C$ such that
-$\sabs{z} = 1$.  First suppose that $e^{ix} = e^{iy}$ and assume that
-$x > y$ then
-$e^{i(x-y)} = 1$, which means that $x-y$ is a multiple of $2\pi$ and hence
+$\sabs{z} = 1$.  Suppose $e^{ix} = e^{iy}$ and 
+$x > y$.  Then
+$e^{i(x-y)} = 1$, meaning $x-y$ is a multiple of $2\pi$ and hence
 only one of them can live in $[0,2\pi)$.
 To show onto, pick $(a,b) \in \R^2$ such that $a^2+b^2 = 1$.
-If $a,b \geq 0$, then there must exist an $x \in [0,\nicefrac{\pi}{2}]$ such that
+If $a,b \geq 0$, then by intermediate value theorem
+there must exist an $x \in [0,\nicefrac{\pi}{2}]$ such that
 $\cos(x) = a$, and hence $b^2 = \bigl(\sin(x)\bigr)^2$ and since
-$b$ and $\sin(x)$ are positive we have $b = \sin(x)$.
-Note that since $-\sin(x)$ is the derivative of $\cos(x)$
+$b$ and $\sin(x)$ are nonnegative we have $b = \sin(x)$.
+Since $-\sin(x)$ is the derivative of $\cos(x)$
 and $\cos(-x) = \cos(x)$ then $\sin(x) < 0$ for $x \in [\nicefrac{-\pi}{2},0)$.
-Then using the same reasoning we obtain that if
-if $a > 0$ and $b \leq 0$, we can find an $x \in [\nicefrac{-\pi}{2},0)$,
-or in other words in $[\nicefrac{3\pi}{2},2\pi)$
-As multiplying by $-1$ is the same as multiplying by $e^{i\pi}$ or
-$e^{-i\pi}$
-we can always assume that $a \geq 0$ (details left to student).
+Using the same reasoning we obtain that
+if $a > 0$ and $b \leq 0$, we can find an $x$ in $[\nicefrac{-\pi}{2},0)$,
+and by periodicity,
+$x \in [\nicefrac{3\pi}{2},2\pi)$ such that $\cos(x) = a$ and $\sin(x)=b$.
+Multiplying by $-1$ is the same as multiplying by $e^{i\pi}$ or
+$e^{-i\pi}$.  So we can always assume that $a \geq 0$ (details are left
+as exercise).
+\end{proof}
+
+\subsection{The unit circle and polar coordinates}
 
 The arclength of a curve parametrized by $\gamma \colon [a,b] \to \C$ is given
 by
 \begin{equation*}
-\int_a^b \sabs{\gamma'(t)} ~ dt .
+\int_a^b \sabs{\gamma^{\:\prime}(t)} ~ dt .
 \end{equation*}
 We have that $e^{it}$ parametrizes the circle for $t$ in $[0,2\pi)$.
 $\frac{d}{dt} \bigl( e^{it} \bigr) = ie^{it}$ and so the circumference of the
@@ -3077,10 +3179,46 @@ That is, $t$ measures the arclength, and hence a circle of radius 1 by
 the angle in radians.  Hence the definitions of $\sin$ and $\cos$ we have
 used above agree with the standard geometric definitions.
 
+All the points on the unit circle can be achieved by
+$e^{it}$ for some $t$.
+Therefore,
+we can write
+any complex number $z \in \C$
+(in so-called \emph{\myindex{polar coordinates}}) as
+\begin{equation*}
+z = r e^{i\theta}
+\end{equation*}
+for some $r \geq 0$ and $\theta \in \R$.  The $\theta$ is of course
+not unique as $\theta$ or $\theta+2\pi$ will give the same number.
+The formula $e^{a+b} = e^a e^b$ leads to a useful formula for powers
+and products
+\begin{equation*}
+z^n = r^n e^{i n \theta} ,
+\qquad
+(r e^{i\theta})
+(s e^{i\gamma})
+=
+rs e^{i(\theta+\gamma)} .
+\end{equation*}
+
+
 \subsection{Exercises}
 
 \begin{exercise}
 Derive the power series for $\sin(z)$ and $\cos(z)$ at the origin.
+\end{exercise}
+
+\begin{exercise}
+Using the power series, show that for $x$ real we have
+$\frac{d}{dx} \bigl[ \sin(x)\bigr] = \cos(x)$ and
+$\frac{d}{dx} \bigl[ \cos(x)\bigr] = -\sin(x)$.
+\end{exercise}
+
+\begin{exercise}
+Finish the proof of the argument that $x \mapsto e^{ix}$ from
+$[0,2\pi)$ is onto the unit circle.  In particular, assume that
+we get all points of the form $(a,b)$ where $a^2+b^2=1$ for $a \geq 0$.
+By multiplying by $e^{i\pi}$ or $e^{-i\pi}$ show that we get everything.
 \end{exercise}
 
 \begin{exercise}
@@ -3793,16 +3931,20 @@ for all $t \in (-\delta,\delta)$, then
 \end{equation*}
 \end{thm}
 
-In other words, if for example $f$ is differentiable at $x$
-then we obtain convergence.  A useful consequence of
+In other words, if for example $f$ is continuously
+differentiable at $x$
+then we obtain convergence (exercise).  A useful consequence of
 the result is
 that if the function is continuous
 piecewise smooth, then the Fourier series converges
-(pointwise).   By continuous piecewise smooth we mean that $f$
+(pointwise). 
+By \emph{\myindex{continuous piecewise smooth}}\index{piecewise smooth}
+we mean that $f$
 is continuous and periodic so $f(-\pi) = f(\pi)$ and furthermore
 that there are points $x_0 = -\pi < x_1 < \cdots < x_k = \pi$
 such that $f$ restricted to $[x_j,x_{j+1}]$
 is continuously differentiable (up to the endpoints) for all $j$.
+Again, proof of that statement is left as an exercise.
 
 \begin{proof}
 We notice that for all $N$ we get
@@ -3874,7 +4016,7 @@ Hence $s_N(f;x)-f(x)$ goes to 0 and so $s_N(f;x)$ goes to $f(x)$.
 In particular this has the following corollary:
 
 \begin{cor}
-If $f(x) = 0$ on an entire open interval $J$, then $\lim s_N(f;x) = 0$
+If $f(x) = 0$ on an entire open interval $J$, then $\lim\, s_N(f;x) = 0$
 for all $x \in J$.
 \end{cor}
 
@@ -4062,6 +4204,20 @@ $\sum_{n=1}^\infty \frac{1}{2^n} \sin(2^n x)$.\label{fig:fourierserweier}}
 \end{myfigureht}
 
 \begin{exercise}
+Suppose that a $2\pi$-periodic function that is Riemann integrable
+on $[-\pi,\pi]$, and such that $f$ is continuously differentiable
+on some open interval $(a,b)$.  Prove that
+for every $x \in (a,b)$, we have $\lim\, s_N(f;x) = f(x)$.
+\end{exercise}
+
+\begin{exercise}
+Suppose that a $2\pi$-periodic function is continuous piecewise
+smooth function.  Prove that
+for every $x$, we have $\lim\, s_N(f;x) = f(x)$.  Hint: See the previous
+exercise.
+\end{exercise}
+
+\begin{exercise}
 Given a $2\pi$-periodic function $f \colon \R \to \C$ Riemann integrable on
 $[-\pi,\pi]$,
 and $\epsilon > 0$.
@@ -4111,4 +4267,44 @@ y(x) = \sum_{n=1}^\infty b_n \sin(n x) .
 \item
 Then show that this solution $y$ is twice differentiable.
 \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Let $f$ be a $2\pi$-periodic  function such
+that $f(x) = x$ for $0 < x < 2\pi$.
+Use Parseval's theorem to find
+\begin{equation*}
+\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6} .
+\end{equation*}
+\end{exercise}
+
+\begin{exercise}
+Suppose that $c_n = 0$ for all $n < 0$ and $\sum_{n=0}^\infty \sabs{c_n}$
+converges.  Let $\D = B(0,1) \subset \C$ be the unit disc,
+and $\overline{\D} = C(0,1)$ be the closed unit disc.
+Show that there exists a continuous function
+$f \colon \overline{\D} \to \C$ which is analytic on $\D$
+and such that on the boundary of $\D$ we have
+$f(e^{i\theta}) = \sum_{n=0}^\infty c_n e^{i\theta}$.\\
+Hint: if $z=re^{i\theta}$ then $z^n = r^n e^{in\theta}$.
+\end{exercise}
+
+\begin{exercise}
+Show that
+\begin{equation*}
+\sum_{n=1}^\infty e^{-1/n} \sin(n x)
+\end{equation*}
+converges to an infinitely differentiable function.
+\end{exercise}
+
+\begin{exercise}
+Let $f$ be a $2\pi$-periodic such that $f(x) = f(0) + \int_0^x g$
+for a function $g$ that is Riemann integrable on any interval.
+Suppose
+\begin{equation*}
+f(x) \sim
+\sum_{n=-\infty}^\infty c_n e^{inx} .
+\end{equation*}
+Show that there exists a $C > 0$ such that
+$\sabs{c_n} \leq \frac{C}{\sabs{n}}$.
 \end{exercise}
