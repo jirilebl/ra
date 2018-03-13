@@ -2930,8 +2930,7 @@ $\frac{\partial f}{\partial x}(x_0,y_0) = \frac{\partial f}{\partial
 y}(x_0,y_0) = 0$.
 \end{exercise}
 
-\begin{samepage}
-\begin{exercise}
+\begin{exercise} \label{exercise:peano}
 Define $f(x,y) := ( x-y^2 ) ( 2 y^2 - x)$.  The graph of $f$ is called
 the \emph{\myindex{Peano surface}}%
 \footnote{Named after the Italian mathematician
@@ -2951,7 +2950,6 @@ $t=0$.
 $f$ does not have a local maximum at $(0,0)$.
 \end{enumerate}
 \end{exercise}
-\end{samepage}
 
 \begin{exercise}
 Suppose $f \colon \R \to \R^n$ is differentiable and $\snorm{f(t)} = 1$ for
@@ -3362,10 +3360,29 @@ $\R^2$ (Hint: Think back to how did we construct a nowhere continuous function o
 \end{samepage}
 
 \begin{exercise}
-Suppose $g \colon \R^n \to L(\R^n,\R)$ is a continuous function.  Suppose
-that $f \colon \R^n \to \R$ and $h \colon \R^n \to \R$ are two 
-differentiable functions such that $f'(x) = g(x) = h'(x)$.  Prove that
+Suppose $f \colon \R^n \to \R$ and $h \colon \R^n \to \R$ are two 
+differentiable functions such that $f'(x) = h'(x)$ for all $x \in \R^n$.
+Prove that
 if $f(0) = h(0)$ then $f(x) = h(x)$ for all $x \in \R^n$.
+\end{exercise}
+
+\begin{exercise}
+Prove the assertion about the base case
+in the proof of \propref{mv:prop:contdiffpartials}.  That is, prove that
+if $n=1$ and the
+the partials exist and are continuous, the function is continuously
+differentiable.
+\end{exercise}
+
+\begin{exercise}
+Suppose $g \colon \R \to \R$ is continuously differentiable and
+$h \colon \R^2 \to \R$ is continuous.  Show that
+\begin{equation*}
+F(x,y) := g(x) + \int_0^y h(x,s) ~ds
+\end{equation*}
+is continuously differentiable, and that it is the solution of 
+the partial differential equation $\frac{\partial F}{\partial y} = h$,
+with the initial condition $F(x,0) = g(x)$ for all $x \in \R$.
 \end{exercise}
 
 
@@ -3437,7 +3454,7 @@ $y-f(x) = 0$, or in other words $f(x)=y$.  Using chain rule we obtain
 \end{equation*}
 So for $x \in V$ we have
 \begin{equation*}
-\snorm{\varphi_y'(x)} \leq \snorm{A^{-1}} \snorm{A-f'(x)} < \nicefrac{1}{2} .
+\snorm{\varphi_y'(x)} \leq \snorm{A^{-1}} \, \snorm{A-f'(x)} < \nicefrac{1}{2} .
 \end{equation*}
 As $V$ is a ball it is convex, and hence
 \begin{equation*}
@@ -3476,7 +3493,7 @@ C(x_1,r)$, then
 \snorm{A^{-1}(y-y_1)} \\
 & \leq
 \frac{1}{2}r +
-\snorm{A^{-1}}\snorm{y-y_1} \\
+\snorm{A^{-1}} \, \snorm{y-y_1} \\
 & <
 \frac{1}{2}r +
 \snorm{A^{-1}}
@@ -3509,7 +3526,7 @@ So
 By the inverse triangle inequality $\snorm{h} - \snorm{A^{-1}k} \leq
 \frac{1}{2}\snorm{h}$ so
 \begin{equation*}
-\snorm{h} \leq 2 \snorm{A^{-1}k} \leq 2 \snorm{A^{-1}} \snorm{k}.
+\snorm{h} \leq 2 \snorm{A^{-1}k} \leq 2 \snorm{A^{-1}} \, \snorm{k}.
 \end{equation*}
 In particular, as $k$ goes to 0, so does $h$.
 
@@ -3534,7 +3551,7 @@ $g$ at $y$ is.  Then
 \frac{\snorm{f(x+h)-f(x)-f'(x)h}}{\snorm{h}}
 \\
 & \leq
-2\snorm{B}\snorm{A^{-1}}
+2\snorm{B} \, \snorm{A^{-1}}
 \frac{\snorm{f(x+h)-f(x)-f'(x)h}}{\snorm{h}} .
 \end{split}
 \end{equation*}
@@ -3916,7 +3933,6 @@ Show that $f$ is not continuously differentiable.
 \end{enumerate}
 \end{exercise}
 
-\begin{samepage}
 \begin{exercise}[Polar coordinates] \label{mv:exercise:polarcoordinates}
 \index{polar coordinates}
 Define a mapping $F(r,\theta) := \bigl(r \cos(\theta), r \sin(\theta) \bigr)$.
@@ -3940,7 +3956,21 @@ Show that $F|_{(0,\infty) \times [0,2\pi)}$ is one to one and onto
 $\R^2 \setminus \bigl\{ (0,0) \bigr\}$.
 \end{enumerate}
 \end{exercise}
-\end{samepage}
+
+\begin{exercise}
+Let $H := \bigl\{ (x,y) \in \R^2 : y > 0 \}$, and for $(x,y) \in H$
+define
+\begin{equation*}
+F(x,y) := \left(
+\frac{x^2+y^2-1}{x^2+2y+y^2+1}
+,~
+\frac{-2x}{x^2+2y+y^2+1}
+\right) .
+\end{equation*}
+Prove that $F$ is a bijective mapping from $H$ to $B(0,1)$, it is
+continuously differentiable on $H$, and its inverse is also continuously
+differentiable.
+\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3993,7 +4023,8 @@ swaps the order of derivatives, which may be important.
 \begin{defn}
 If $U \subset \R^n$ is an open set and
 $f \colon U \to \R$ a function.  We say $f$ is
-\emph{\myindex{k-times continuously differentiable function@$k$-times continuously differentiable function}}\index{continuously differentiable},
+\emph{$k$-times continuously differentiable function}%
+\index{k-times continuously differentiable function@$k$-times continuously differentiable function}\index{continuously differentiable},
 or a $C^k$\glsadd{not:Ck} function, if all partial derivatives of all orders up to and
 including order $k$ exist and are continuous.
 \end{defn}
@@ -4154,22 +4185,45 @@ $F^{-1}(x,y)$ can only be defined locally), and
 when restricted to $\R^2 \setminus \{ 0 \}$ it is a $C^k$ function.
 \end{exercise}
 
-%\begin{exercise}
-%Follow the strategy below to
-%prove the following simple version of the second derivative test for
-%functions defined on $\R^2$ (using $(x,y)$ as coordinates):  \emph{Suppose $f \colon \R^2
-%\to \R$ is a twice continuously differentiable function with a
-%critical point at the origin, $f'(0,0) = 0$.  If
-%\begin{equation*}
-%\frac{\partial^2 f}{\partial x^2} (0,0) > 0 \qquad \text{and} \qquad
-%\frac{\partial^2 f}{\partial x^2} (0,0) \frac{\partial^2 f}{\partial y^2}
-%(0,0) -
-%{\left(\frac{\partial^2 f}{\partial x \partial y} (0,0) \right)}^2 > 0 ,
-%\end{equation*}
-%then $f$ has a (strict) local minimum at $(0,0)$.}
-%Use the following technique:\\
-%a) Prove that there exists an $A \in L(\R^2)$ such that $g = f \circ A$ is
-%such that $\left(\frac{\partial^2 g}{\partial x \partial y} (0,0) \right)}^2
-%= 0$
-%FIXME
-%\end{exercise}
+\begin{exercise}
+Suppose $f \colon \R^2 \to \R$ is a function such that
+all first and second order partial derivatives exist.  Furthermore,
+suppose that all second order partial derivatives are bounded functions.
+Prove that $f$ is continuously differentiable.
+\end{exercise}
+
+\begin{exercise}
+Follow the strategy below to
+prove the following simple version of the second derivative test for
+functions defined on $\R^2$ (using $(x,y)$ as coordinates):  \emph{Suppose $f \colon \R^2
+\to \R$ is a twice continuously differentiable function with a
+critical point at the origin, $f'(0,0) = 0$.  If
+\begin{equation*}
+\frac{\partial^2 f}{\partial x^2} (0,0) > 0 \qquad \text{and} \qquad
+\frac{\partial^2 f}{\partial x^2} (0,0) \frac{\partial^2 f}{\partial y^2}
+(0,0) -
+{\left(\frac{\partial^2 f}{\partial x \partial y} (0,0) \right)}^2 > 0 ,
+\end{equation*}
+then $f$ has a (strict) local minimum at $(0,0)$.}
+Use the following technique:  First suppose without loss of generality
+that $f(0,0) = 0$.  Then prove:
+\begin{enumerate}[a)]
+\item
+There exists an $A \in L(\R^2)$ such that $g = f \circ A$ is
+such that $\frac{\partial^2 g}{\partial x \partial y} (0,0) = 0$, and
+$\frac{\partial^2 g}{\partial x^2} (0,0) =
+\frac{\partial^2 g}{\partial y^2} (0,0) = 1$.
+\item
+For any $\epsilon > 0$ there exists a $\delta > 0$
+such that 
+$\abs{g(x,y) - x^2 - y^2} < \epsilon (x^2+y^2)$ for all
+$(x,y) \in B\bigl((0,0),\delta\bigr)$.\\
+Hint: You can use Taylor's theorem in one variable can be used.
+\item
+This means that $g$, and therefore $f$, has a strict local
+minimum at $(0,0)$.
+\end{enumerate}
+Note: You must avoid the temptation to just
+apply the one variable second derivative test along lines through the
+origin, see \exerciseref{exercise:peano}.
+\end{exercise}
