@@ -3013,8 +3013,8 @@ there is a $t_0 \in (a,b)$ such that
 \bigl(\varphi(b)-\varphi(a) \bigr) \cdot \varphi'(t_0) ,
 \end{equation*}
 where we treat $\varphi'$ as a simply a vector in $\R^n$ by abuse of
-notation.  Note that
-in this case, if we think of $\varphi'(t)$ as simply a vector, then by
+notation we mentioned before.
+If we think of $\varphi'(t)$ as a vector, then by
 \exerciseref{exercise:normonedim},
 $\snorm{\varphi'(t)}_{L(\R,\R^n)} = \snorm{\varphi'(t)}_{\R^n}$.
 That is, the euclidean norm of the vector is the same as the operator norm
@@ -3069,13 +3069,14 @@ M \snorm{y-x} . \qedhere
 \end{proof}
 
 \begin{example}
-If $U$ is not convex the proposition is not true.  To see this fact, take
+If $U$ is not convex the proposition is not true: Consider
 the set
 \begin{equation*}
-U = \bigl\{ (x,y) : 0.5 < x^2+y^2 < 2 \bigr\} \setminus \bigl\{ (x,0) : x <
+U := \bigl\{ (x,y) : 0.5 < x^2+y^2 < 2 \bigr\} \setminus \bigl\{ (x,0) : x <
 0 \bigr\} .
 \end{equation*}
-Let $f(x,y)$ be the angle that the line from the origin to $(x,y)$
+For $(x,y) \in U$,
+let $f(x,y)$ be the angle that the line from the origin to $(x,y)$
 makes with the positive $x$ axis.  You can even write the formula for $f$:
 \begin{equation*}
 f(x,y) = 2 \operatorname{arctan}\left( \frac{y}{x+\sqrt{x^2+y^2}}\right) .
@@ -3092,10 +3093,11 @@ derivative.\label{mv:fignonlip}}
 \end{myfigureht}
 
 The function is differentiable,
-and the derivative is bounded on $U$, which is not hard to see.   Think of
+and the derivative is bounded on $U$, which is not hard to see.   Now
+think of
 what happens near where the negative $x$-axis cuts the annulus in half.
-As we approach this cut from top (positive $y$), $f(x,y)$ approaches $\pi$.
-From the bottom (from negative $y$), $f(x,y)$ approaches $-\pi$.
+As we approach this cut from positive $y$, $f(x,y)$ approaches $\pi$.
+From negative $y$, $f(x,y)$ approaches $-\pi$.
 So for small $\epsilon > 0$, $\sabs{f(-1,\epsilon)-f(-1,-\epsilon)}$
 approaches $2\pi$, but $\snorm{(-1,\epsilon)-(-1,-\epsilon)} = 2\epsilon$,
 which is arbitrarily small.  The conclusion of the proposition does not
@@ -3120,10 +3122,10 @@ This means that $f^{-1}(c)$ is open for any $c \in \R^m$.  Suppose
 $f^{-1}(c)$ is nonempty.  
 The two sets
 \begin{equation*}
-U' = f^{-1}(c), \qquad U'' = f^{-1}\bigl(\R^m\setminus\{c\}\bigr) =
-\bigcup_{\substack{a \in \R^m\\a\neq c}} f^{-1}(a)
+U' = f^{-1}(c), \qquad U'' = f^{-1}\bigl(\R^m\setminus\{c\}\bigr)
+%= \bigcup_{\substack{a \in \R^m\\a\neq c}} f^{-1}(a)
 \end{equation*}
-are open disjoint, and further $U = U' \cup U''$.  So as $U'$ is nonempty,
+are open and disjoint, and further $U = U' \cup U''$.  So as $U'$ is nonempty,
 and $U$ is connected,
 we have that $U'' = \emptyset$.  So $f(x) = c$ for all $x \in U$.
 \end{proof}
@@ -3161,23 +3163,25 @@ continuous, hence the partial derivatives are continuous.
 To prove the opposite direction,
 suppose the partial derivatives exist and are continuous.
 Fix $x \in U$.  If we show that $f'(x)$ exists we are done, because
-the entries of the matrix $f'(x)$ are then the partial derivatives and if
+the entries of the matrix $f'(x)$ are the partial derivatives and if
 the entries are continuous functions, the matrix valued function $f'$ is
 continuous.
 
 Let us do induction on dimension.  First let us note that
 the conclusion is true when $n=1$.  In this case the derivative
-is just the regular derivative (exercise: you should check that the fact
-that the function is vector-valued is not a problem).
+is just the regular derivative (exercise: check this, and note
+that $f$ is vector-valued).
 
 Suppose the conclusion is true for $\R^{n-1}$,
 that is,
-if we restrict to the first $n-1$ variables, the conclusion is true.
+if we restrict to the first $n-1$ variables, the function is differentiable.
 It is easy to see that the first $n-1$
 partial derivatives of $f$ restricted to the set where the last coordinate is
 fixed are the same as those for $f$.
 In the following
 we think of $\R^{n-1}$ as a subset of $\R^n$, that is the set in $\R^n$ where $x_n = 0$.
+In other words, we will identify the vectors $(x_1,x_2,\ldots,x_{n-1})$ and
+$(x_1,x_2,\ldots,x_{n-1},0)$.
 Let
 \begin{equation*}
 A = 
@@ -3216,7 +3220,8 @@ v =
 \frac{\partial f_m}{\partial x_n}(x)
 \end{bmatrix} .
 \end{equation*}
-Let $\epsilon > 0$ be given.  Let $\delta > 0$ be such that
+Let $\epsilon > 0$ be given.  By the induction hypothesis, there
+is a $\delta > 0$ such that
 for any $k \in \R^{n-1}$ with $\snorm{k} < \delta$ we have
 \begin{equation*}
 \frac{\snorm{f(x+k) - f(x) - A_1k}}{\snorm{k}} < \epsilon .
@@ -3227,7 +3232,7 @@ enough so that
 \abs{\frac{\partial f_j}{\partial x_n}(x+h)
       - \frac{\partial f_j}{\partial x_n}(x)} < \epsilon ,
 \end{equation*}
-for all $j$ and all $h$ with $\snorm{h} < \delta$.
+for all $j$ and all $h \in \R^n$ with $\snorm{h} < \delta$.
 
 Let $h = h_1 + t e_n$ be a vector in $\R^n$ where $h_1 \in \R^{n-1}$ such that
 $\snorm{h} < \delta$.  Then $\snorm{h_1} \leq \snorm{h} < \delta$.

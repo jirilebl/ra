@@ -248,6 +248,31 @@ Prove \propref{prop:cachysercomplex}.
 Prove \propref{prop:absconvmeansconv}.
 \end{exercise}
 
+\begin{exercise}
+Considering the definition of complex multiplication, given $x +iy$
+define the matrix
+$\left[ \begin{smallmatrix} x & -y \\ y & x \end{smallmatrix} \right]$.
+Prove that
+\begin{enumerate}[a)]
+\item
+The action of this matrix on a vector $(s,t)$ is the same
+as the action of multiplying $(x+iy)(s+it)$.
+\item
+Multiplying two such matrices is the same multiplying the underlying complex
+numbers and then getting the corresponding matrix for the product.
+In other words, we can think of the field $\C$ as also a subset of
+the two by two matrices.
+\item
+Show that 
+$\left[ \begin{smallmatrix} x & -y \\ y & x \end{smallmatrix} \right]$
+has eigenvalues $x+iy$ and $x-iy$.  Recall that $\lambda$ is
+an eigenvalue of a matrix $A$ if $A-\lambda I$ (a complex matrix in our case)
+is not invertible, or in other words
+if it has linearly dependent rows: That is, one row is a (complex) multiple
+of the other
+\end{enumerate}
+\end{exercise}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1996,6 +2021,23 @@ for all $n=0,1,2,3,\ldots$.
 Prove that $I(f) = \int_0^1 f$ for all $f \in C([0,1],\R)$.
 \end{exercise}
 
+\begin{exercise}
+Suppose we already know the complex exponential $e^{it} = \cos(t) + i \sin
+(t)$, that
+${\bigl(e^{it}\bigr)}^n = {\bigl(e^{int}\bigr)}^n$
+and that
+$\overline{e^{it}} = e^{-it}$ (all things
+we will prove in \sectionref{sec:complexexp}).
+Show that for complex numbers $c_j$, the set of functions
+of $x$ on $[-\pi,\pi]$
+of the form
+\begin{equation*}
+\sum_{k=-n}^n c_k e^{ik x}
+\end{equation*}
+satisfies the hypotheses of the complex Stone-Weierstrass theorem
+and therefore such functions are dense in the $C([-\pi,\pi],\C)$.
+\end{exercise}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3219,6 +3261,10 @@ Finish the proof of the argument that $x \mapsto e^{ix}$ from
 $[0,2\pi)$ is onto the unit circle.  In particular, assume that
 we get all points of the form $(a,b)$ where $a^2+b^2=1$ for $a \geq 0$.
 By multiplying by $e^{i\pi}$ or $e^{-i\pi}$ show that we get everything.
+\end{exercise}
+
+\begin{exercise}
+Prove that there is no $z \in \C$ such that $e^z = 0$.
 \end{exercise}
 
 \begin{exercise}
