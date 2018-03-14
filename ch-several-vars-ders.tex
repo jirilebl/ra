@@ -2614,7 +2614,7 @@ is differentiable on $U$, then $f' \colon U \to
 L(\R^n,\R^m)$ is a continuous function if and only if
 all the $\frac{\partial f_k}{\partial x_j}$ are continuous functions.
 
-\subsection{Gradient and directional derivatives}
+\subsection{Gradients, curves, and directional derivatives}
 
 Let $U \subset \R^n$ be open and $f \colon U \to \R$ a differentiable
 function.  We define
@@ -3004,16 +3004,24 @@ where the dot is the dot product, we obtain
 that
 there is a $t_0 \in (a,b)$ such that
 \begin{equation*}
+\begin{split}
 \snorm{\varphi(b)-\varphi(a)}^2
-=
+& =
+\bigl( \varphi(b)-\varphi(a) \bigr)
+\cdot
+\bigl( \varphi(b)-\varphi(a) \bigr)
+\\
+& =
 \bigl(\varphi(b)-\varphi(a) \bigr) \cdot \varphi(b) - 
 \bigl(\varphi(b)-\varphi(a) \bigr) \cdot \varphi(a)
-= 
+\\
+& = 
 (b-a)
 \bigl(\varphi(b)-\varphi(a) \bigr) \cdot \varphi'(t_0) ,
+\end{split}
 \end{equation*}
-where we treat $\varphi'$ as a simply a vector in $\R^n$ by abuse of
-notation we mentioned before.
+where we treat $\varphi'$ as a vector in $\R^n$ by the abuse of
+notation we mentioned in the previous section.
 If we think of $\varphi'(t)$ as a vector, then by
 \exerciseref{exercise:normonedim},
 $\snorm{\varphi'(t)}_{L(\R,\R^n)} = \snorm{\varphi'(t)}_{\R^n}$.
@@ -3040,12 +3048,14 @@ Let $U \subset \R^n$ be a convex open set, $f \colon U \to \R^m$
 a differentiable function, and an $M$ such that
 \begin{equation*}
 \snorm{f'(x)} \leq M
+\qquad \text{for all $x \in U$.}
 \end{equation*}
-for all $x \in U$.  Then $f$ is Lipschitz with constant $M$, that is
+Then $f$ is Lipschitz with constant $M$, that is
 \begin{equation*}
 \snorm{f(x)-f(y)} \leq M \snorm{x-y}
+\qquad
+\text{for all $x,y \in U$.}
 \end{equation*}
-for all $x,y \in U$.
 \end{prop}
 
 \begin{proof}
@@ -3061,10 +3071,14 @@ f'\bigl((1-t)x+ty\bigr) (y-x) .
 By the mean value theorem above we get for
 some $t_0 \in (0,1)$,
 \begin{equation*}
-\snorm{f(x)-f(y)} \leq
-\norm{\frac{d}{dt} \Big|_{t=t_0} \Bigl[ f\bigl((1-t)x+ty\bigr) \Bigr] } \leq
+\begin{split}
+\snorm{f(x)-f(y)} & \leq
+\norm{\frac{d}{dt} \Big|_{t=t_0} \Bigl[ f\bigl((1-t)x+ty\bigr) \Bigr] }
+\\
+& \leq
 \norm{f'\bigl((1-t_0)x+t_0y\bigr)} \, \snorm{y-x} \leq
 M \snorm{y-x} . \qedhere
+\end{split}
 \end{equation*}
 \end{proof}
 
@@ -3077,11 +3091,11 @@ U := \bigl\{ (x,y) : 0.5 < x^2+y^2 < 2 \bigr\} \setminus \bigl\{ (x,0) : x <
 \end{equation*}
 For $(x,y) \in U$,
 let $f(x,y)$ be the angle that the line from the origin to $(x,y)$
-makes with the positive $x$ axis.  You can even write the formula for $f$:
+makes with the positive $x$ axis.  We even have a formula for $f$:
 \begin{equation*}
 f(x,y) = 2 \operatorname{arctan}\left( \frac{y}{x+\sqrt{x^2+y^2}}\right) .
 \end{equation*}
-Think spiral staircase with room in the middle.  See
+Think a spiral staircase with room in the middle.  See
 \figureref{mv:fignonlip}.
 
 \begin{myfigureht}
@@ -3154,22 +3168,22 @@ in fact, $f$ may not even be continuous.  See the exercises
 for the last section and also for this section.
 
 \begin{proof}
-We have seen that if $f$ is differentiable, then
-the partial derivatives exist.  Furthermore, the partial
-derivatives are the entries of the matrix of $f'(x)$.  So if
+We proved that if $f$ is differentiable, then
+the partial derivatives exist.  The partial
+derivatives are the entries of the matrix of $f'(x)$.  If
 $f' \colon U \to L(\R^n,\R^m)$ is continuous, then the entries are
-continuous, hence the partial derivatives are continuous.
+continuous, and hence the partial derivatives are continuous.
 
 To prove the opposite direction,
 suppose the partial derivatives exist and are continuous.
 Fix $x \in U$.  If we show that $f'(x)$ exists we are done, because
 the entries of the matrix $f'(x)$ are the partial derivatives and if
-the entries are continuous functions, the matrix valued function $f'$ is
+the entries are continuous functions, the matrix-valued function $f'$ is
 continuous.
 
-Let us do induction on dimension.  First let us note that
+We do induction on dimension.  First,
 the conclusion is true when $n=1$.  In this case the derivative
-is just the regular derivative (exercise: check this, and note
+is just the regular derivative (exercise, noting
 that $f$ is vector-valued).
 
 Suppose the conclusion is true for $\R^{n-1}$,
@@ -3178,9 +3192,9 @@ if we restrict to the first $n-1$ variables, the function is differentiable.
 It is easy to see that the first $n-1$
 partial derivatives of $f$ restricted to the set where the last coordinate is
 fixed are the same as those for $f$.
-In the following
+In the following, by a slight abuse of notation,
 we think of $\R^{n-1}$ as a subset of $\R^n$, that is the set in $\R^n$ where $x_n = 0$.
-In other words, we will identify the vectors $(x_1,x_2,\ldots,x_{n-1})$ and
+In other words, we identify the vectors $(x_1,x_2,\ldots,x_{n-1})$ and
 $(x_1,x_2,\ldots,x_{n-1},0)$.
 Let
 \begin{equation*}
