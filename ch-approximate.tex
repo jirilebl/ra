@@ -304,7 +304,7 @@ For example for continuity of the pointwise limit we are asking if
 \overset{?}{=}
 \lim_{n\to\infty} \lim_{x\to x_0} f_n(x)
 \end{equation*}
-We don't even know a priory if both sides exist, let alone equal each other.
+We don't even know a priory if both sides exist, let alone if they are equal each other.
 
 \begin{example}
 The functions $f_n \colon \R \to \R$,
@@ -474,16 +474,16 @@ the first 8 partial sums in various shades of gray.\label{fig:fouriersern2}}
 \begin{example}
 The series
 \begin{equation*}
-\sum_{n=0}^\infty \frac{1}{n!} x^n
+\sum_{n=0}^\infty \frac{x^n}{n!} 
 \end{equation*}
 converges uniformly on any bounded interval.
 Take the interval $[-r,r] \subset \R$ (any bounded interval
 is contained in such an interval)
 \begin{equation*}
-\abs{\frac{1}{n!} x^n} \leq 
+\abs{\frac{x^n}{n!} } \leq 
 \frac{r^n}{n!}
 \end{equation*}
-and we have seen before that
+and 
 $\sum_{n=1}^\infty \frac{r^n}{n!}$ converges, for example by the ratio test.
 \end{example}
 
@@ -672,6 +672,12 @@ convergent sequence for some $c \in I$.  Then $\{ f_n \}$ converges uniformly to
 a continuously differentiable function $f \colon I \to \C$, and $f' = g$.
 \end{thm}
 
+Uniform limits of the functions themselves are not enough, and can make
+matters even worse.  In \sectionref{sec:stoneweier} we will prove that
+continuous functions are uniform limits of polynomials, yet as the following
+example demonstrates, a continuous function need not have a derivative
+anywhere.
+
 \begin{example}
 Let us construct a continuous nowhere differentiable function.
 Such functions are often called Weierstrass functions, although this
@@ -712,8 +718,8 @@ define
 \delta_m := \pm \frac{1}{2} 4^{-m}
 \end{equation*}
 where the sign is chosen in such a way so that there is no integer
-between $4^m x$ and $4^m(x+\delta_m)$, which can be done
-since $4^m\sabs{\delta_m} = \frac{1}{2}$.  Fix $m$ for a moment.
+between $4^m x$ and $4^m(x+\delta_m) = 4^m x \pm \frac{1}{2}$.
+Fix $m$ for a moment.
 
 Let
 \begin{equation*}
@@ -797,10 +803,6 @@ And so
 \end{equation*}
 It is obvious that $\delta_m \to 0$ as $m \to \infty$, but $\frac{3^m+1}{2}$
 goes to infinity.  Hence $f$ cannot be differentiable at $x$.
-
-We will see later that such an $f$ is a uniform limit of not just
-differentiable functions but actually it is the uniform limit of
-polynomials.
 \end{example}
 
 \subsection{Exercises}
@@ -2138,6 +2140,9 @@ Use this to show that
 
 \sectionnotes{2 lectures}
 
+%FIXME: should this be for a complete metric space as target?  Right now it
+%is $\C$
+
 We would like an analogue of Bolzano-Weierstrass.  Something to the tune of
 ``every bounded
 sequence of functions (with some property) has a convergent subsequence''.
@@ -2185,11 +2190,11 @@ although the sequence converges pointwise.
 When the domain is countable, matters are easier.   The proof uses
 a very common and useful diagonal argument.
 
-\begin{thm} \label{thm:subsequenceoncountableX}
+\begin{prop} \label{prop:subsequenceoncountableX}
 Let $X$ be a countable set and $f_n \colon X \to \C$ give a pointwise bounded
 sequence of functions, then $\{ f_n \}$ has a subsequence that converges
 pointwise.
-\end{thm}
+\end{prop}
 
 \begin{proof}
 Let $\{ x_k \}$ be an enumeration of the elements of $X$.
@@ -2354,7 +2359,7 @@ By reverse triangle inequality,
 And as $x$ was arbitrary, $\{f_n\}$ is uniformly bounded.
 
 
-Next, pick a countable dense set $S$.  By \thmref{thm:subsequenceoncountableX}, we find
+Next, pick a countable dense set $S$.  By \propref{prop:subsequenceoncountableX}, we find
 a subsequence $\{ f_{n_j} \}$ that converges pointwise on $S$.
 Write $g_j = f_{n_j}$ for simplicity.  Note that $\{ g_n \}$ is 
 equicontinuous.
@@ -2391,8 +2396,11 @@ and so $n,m \geq N$ that
 \sabs{g_m(x_j)-g_m(x)} <
 \nicefrac{\epsilon}{3} +
 \nicefrac{\epsilon}{3} +
-\nicefrac{\epsilon}{3} = \epsilon . \qedhere
+\nicefrac{\epsilon}{3} = \epsilon .
 \end{equation*}
+Therefore, the sequence is uniformly Cauchy and by completeness of $\C$,
+%FIXME: reference?
+it is uniformly convergent.
 \end{proof}
 
 \begin{cor}
@@ -2455,6 +2463,14 @@ takes the unit ball centered at 0 in $C([0,1],\C)$ into a relatively compact set
 say that this means that the operator is compact, and such operators are very
 important (and very useful).
 
+\medskip
+
+A related classic application of the above corollary to Arzel\`a--Ascoli
+in the theory of differential
+equations is to prove the Peano existence
+theorem, that is, the existence of solutions to ordinary differential
+equations.  See \exerciseref{exercise:peanoexistence} below.
+
 \subsection{Exercises}
 
 \begin{exercise}
@@ -2505,6 +2521,50 @@ sequence of functions in $C(X,\C)$.  Suppose $\{ f_n \}$ converges
 pointwise.  Show that it converges uniformly.
 \end{exercise}
 
+\begin{exercise}
+Suppose that $\{ f_n \}$ is an equicontinuous uniformly bounded sequence of
+$2\pi$-periodic functions $f_n \colon \R \to \R$.  Show that there is a
+uniformly convergent subsequence.
+\end{exercise}
+
+\begin{exercise}
+Define $f_n \colon [0,1] \to \C$ by $f_n(t) := e^{i(2\pi t + n)}$.
+This is an equicontinuous uniformly bounded sequence.  Prove more than just
+the conclusion of Arzel\`a--Ascoli for this sequence.  Let $\gamma \in \R$
+be given,
+and define $g(t) := e^{i(2\pi t + \gamma)}$.  Show that there exists 
+a subsequence of $\{ f_n \}$ converging uniformly to $g$.
+\\
+Hint: Feel free to use the \emph{\myindex{Kronecker density theorem}}\footnote{%
+Named after the German mathematician
+\href{http://en.wikipedia.org/wiki/Leopold_Kronecker}{Leopold Kronecker}
+(1823--1891).}:
+The sequence $\{ e^{in} \}_{n=1}^\infty$ is dense in the unit circle.
+\end{exercise}
+
+\begin{exercise} \label{exercise:peanoexistence}
+Prove the \emph{\myindex{Peano existence theorem}}:
+
+\textbf{Theorem:} \emph{Suppose $F \colon I \times J \to \R$ is 
+continuous function where $I$ and $J$ are 
+Let $I, J \subset \R$ be closed bounded intervals, 
+let $I^\circ$ and $J^\circ$ be their interiors,
+and
+let $(x_0,y_0) \in I^\circ \times J^\circ$.
+Suppose $F \colon I \times J \to \R$ is continuous.
+Then there exists an $h > 0$ and a unique differentiable
+function $f \colon [x_0 - h, x_0 + h] \to J \subset \R$, such that}
+\begin{equation*}
+f'(x) = F\bigl(x,f(x)\bigr) \qquad \text{and} \qquad f(x_0) = y_0.
+\end{equation*}
+
+Hint: Define the Picard iterates, that is,
+set $f_0(x) := y_0$, and define
+\begin{equation*} \label{picard:inteq}
+f_{n+1}(x) = y_0 + \int_{x_0}^x F\bigl(t,f_n(t)\bigr)~dt .
+\end{equation*}
+First you have to prove that there is an $h > 0$ such that all $f_n \in C([x_0-h,x_0+h],\R)$.
+\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
