@@ -341,10 +341,6 @@ for all $n \geq M$ and all $x \in X$ we have
 \begin{equation*}
 d\bigl(f_n(x),f(x)\bigr) < \epsilon .
 \end{equation*}
-%If we are dealing with complex-valued functions then
-%\begin{equation*}
-%\sabs{f_n(x)-f(x)} < \epsilon .
-%\end{equation*}
 
 A series of complex-valued functions converges uniformly if the sequence of
 partial sums converges uniformly, that is for every $\epsilon > 0$
@@ -676,8 +672,6 @@ convergent sequence for some $c \in I$.  Then $\{ f_n \}$ converges uniformly to
 a continuously differentiable function $f \colon I \to \C$, and $f' = g$.
 \end{thm}
 
-%FIXME: an example perhaps definitely using complex
-
 \begin{example}
 Let us construct a continuous nowhere differentiable function.
 Such functions are often called Weierstrass functions, although this
@@ -833,1313 +827,6 @@ Prove \thmref{thm:dersconvergecomplex}.
 Prove \propref{prop:complexlimitswapintegral} by reducing to the real
 result.
 \end{exercise}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\sectionnewpage
-\section{Equicontinuity and the Arzel{\`a}--Ascoli theorem}
-\label{sec:arzelaascoli}
-
-\sectionnotes{2 lectures}
-
-We would like an analogue of Bolzano-Weierstrass.  Something to the tune of
-``every bounded
-sequence of functions (with some property) has a convergent subsequence''.
-Matters are not
-as simple even for continuous functions. 
-Not every bounded sequence in the metric space $C([0,1],\R)$ has
-a convergent subsequence.
-
-\begin{defn}
-Let $X$ be any set.
-Let $f_n \colon X \to \C$ be functions in a sequence.  We say that
-$\{ f_n \}$
-is \emph{\myindex{pointwise bounded}} if for every $x \in X$, there is an $M_x \in \R$
-such that
-\begin{equation*}
-\sabs{f_n(x)} \leq M_x \qquad \text{for all $n \in \N$} .
-\end{equation*}
-We say that
-$\{ f_n \}$
-is \emph{\myindex{uniformly bounded}} if there is an $M \in \R$
-such that
-\begin{equation*}
-\sabs{f_n(x)} \leq M \qquad \text{for all $n \in \N$ and all $x \in X$}.
-\end{equation*}
-\end{defn}
-
-Note that uniform boundedness is the same as boundedness in the metric space
-$C(X,\C)$ (here $X$ is a compact metric space).
-
-\begin{example}
-There exist sequences of 
-continuous functions
-on $[0,1]$ that are uniformly bounded but contain no subsequence converging
-even pointwise.  Let us state without proof that $f_n(x) := \sin (2\pi n x)$ is one
-such sequence.
-\end{example}
-
-\begin{example}
-We also have that $f_n(x) := x^n$ is a sequence of functions on $[0,1]$
-that is uniformly bounded, but contains no sequence that converges
-uniformly,
-although the sequence converges pointwise.
-\end{example}
-
-When the domain is countable, matters are easier.   The proof uses
-a very common and useful diagonal argument.
-
-\begin{thm} \label{thm:subsequenceoncountableX}
-Let $X$ be a countable set and $f_n \colon X \to \C$ give a pointwise bounded
-sequence of functions, then $\{ f_n \}$ has a subsequence that converges
-pointwise.
-\end{thm}
-
-\begin{proof}
-Let $\{ x_k \}$ be an enumeration of the elements of $X$.
-The sequence $\{ f_n(x_1) \}_{n=1}^\infty$ is bounded and hence
-we have a subsequence which we denote by
-$f_{1,k}$ such that $\{ f_{1,k}(x_1) \}$ converges.
-Next $\{ f_{1,k}(x_2) \}$ has a subsequence that converges and
-we denote that subsequence by
-$\{ f_{2,k}(x_2) \}$.  In general we have a sequence $\{ f_{m,k}
-\}_{k=1}^\infty$
-that makes $\{ f_{m,k}(x_j) \}_{k=1}^\infty$ converge for all $j \leq m$ and we 
-let $\{ f_{m+1,k} \}_{k=1}^\infty$ be the subsequence of $\{ f_{m,k}
-\}_{k=1}^\infty$
-such that
-$\{ f_{m+1,k}(x_{m+1}) \}_{k=1}^\infty$ converges (and hence it converges for all
-$x_j$ for $j=1,2,\ldots,m+1$) and we rinse and repeat.
-
-If $X$ is finite we are done.  If $X$ is countably infinite,
-we pick the sequence
-$\{ f_{k,k} \}$.  This is a subsequence of the original sequence $\{ f_n \}$
-of course.  Also for any $m$,
-except for the first $m$ terms $\{ f_{k,k} \}$ is a subsequence of $\{ f_{m,k}
-\}_{k=1}^\infty$
-and hence for any $m$ the sequence $\{ f_{k,k}(x_m) \}_{k=1}^\infty$ converges.
-\end{proof}
-
-For larger than countable sets,
-we need the functions of the sequence to be related.  We look at
-continuous functions, and the concept we need is equicontinuity.
-
-\begin{defn}
-Let $X$ be a metric space.
-A family $\sF$ of functions $f \colon X \to \C$ is said to be
-\emph{\myindex{equicontinuous}} on $X$ if for every $\epsilon > 0$, there is a $\delta > 0$
-such that if $x, y \in X$ with $d(x,y) < \delta$ we have
-\begin{equation*}
-\sabs{f(x)-f(y)} < \epsilon \qquad \text{ for all $f \in \sF$} .
-\end{equation*}
-\end{defn}
-
-One obvious fact is that if $\sF$ is equicontinuous, then every element of
-$f$ is uniformly continuous.  Also obvious is that any finite set of
-uniformly continuous functions is an equicontinuous family.  Of course the
-interesting case is when $\sF$ is an infinite family such as a sequence of
-functions.  Equicontinuity of a sequence
-is closely related to uniform convergence.
-
-\begin{prop}
-Suppose $(X,d)$ is a compact metric space,
-$f_n \in C(X,\C)$, and $\{ f_n \}$
-converges uniformly, then $\{ f_n \}$ is equicontinuous.
-\end{prop}
-
-\begin{proof}
-Let $\epsilon > 0$ be given.
-As $f_n$ converge uniformly, there is an integer $N$ such that for
-all $n \geq N$ we have
-\begin{equation*}
-\sabs{f_n(x)-f_N(x)} < \nicefrac{\epsilon}{3} \qquad \text{for all $x \in X$}.
-\end{equation*}
-As $X$ is compact and so continuous means
-uniformly continuous,
-$\{ f_1,f_2,\ldots,f_N \}$ is a finite set of uniformly continuous
-functions.  And so, as we mentioned above, it is an equicontinuous family.  Hence
-there is a $\delta > 0$ such that
-\begin{equation*}
-\sabs{f_j(x)-f_j(y)} < \nicefrac{\epsilon}{3} < \epsilon
-\end{equation*}
-whenever $d(x,y) < \delta$ and $1 \leq j \leq N$.
-
-Now take $n > N$.  Then for $d(x,y) < \delta$ we have
-\begin{equation*}
-\sabs{f_n(x)-f_n(y)}
-\leq
-\sabs{f_n(x)-f_N(x)}
-+
-\sabs{f_N(x)-f_N(y)}
-+
-\sabs{f_N(y)-f_n(y)}
-<
-\nicefrac{\epsilon}{3}
-+
-\nicefrac{\epsilon}{3}
-+
-\nicefrac{\epsilon}{3}
-=\epsilon . \qedhere
-\end{equation*}
-\end{proof}
-
-\begin{prop}
-A compact metric space $X$ contains a countable dense subset.
-\end{prop}
-
-\begin{proof}
-For each $n \in \N$ there are finitely many
-balls of radius $\nicefrac{1}{n}$ that cover $X$ (as $X$ is compact). That is,
-for every $n$, there exists
-a finite set of points $x_{n,1},x_{n,2},\ldots,x_{n,k_n}$ such that
-\begin{equation*}
-X= \bigcup_{j=1}^{k_n} B(x_{n,j},\nicefrac{1}{n})
-\end{equation*}
-Let $S$ be the set of all the points $x_{n,j}$.  The set $S$ is a countable
-union of finite sets and therefore countable.  For every $x \in X$
-and every $\epsilon > 0$, there exists an $n$ such that
-$\nicefrac{1}{n} < \epsilon$ and an $x_{n,j} \in S$ such that
-\begin{equation*}
-x \in B(x_{n,j},\nicefrac{1}{n}) \subset B(x_{n,j},\epsilon) .
-\end{equation*}
-Hence $x \in \overline{S}$, so $\overline{S} = X$ and $S$ is dense.
-\end{proof}
-
-We are now ready for the main result of this section,
-the Arzel\`a--Ascoli theorem\footnote{%
-Named after the Italian mathematicians
-\href{http://en.wikipedia.org/wiki/Cesare_Arzel\%C3\%A0}{Cesare Arzel\`a}
-(1847--1912), and
-\href{http://en.wikipedia.org/wiki/Giulio_Ascoli}{Giulio Ascoli}
-(1843--1896).} about existence of convergent subsequences.
-
-\begin{thm}[Arzel\`a--Ascoli]\index{Arzel\`a--Ascoli theorem}
-\label{thm:arzelaascoli}
-Let $(X,d)$ be a compact metric space, $f_n \in C(X,\C)$, and let $\{ f_n \}$
-be pointwise bounded and equicontinuous.  Then
-$\{f_n\}$ is uniformly bounded and $\{ f_n \}$ contains a uniformly
-convergent subsequence.
-\end{thm}
-
-Basically, an equicontinuous sequence in the metric space
-$C(X,\C)$ that is pointwise bounded
-is bounded (in $C(X,\C)$) and furthermore contains a convergent
-subsequence in $C(X,\C)$.
-
-\begin{proof}
-Let us first show that the sequence is uniformly bounded.
-
-By equicontinuity we have that there is a $\delta > 0$
-such that for all $x \in X$
-\begin{equation*}
-B(x,\delta) \subset f_n^{-1}\bigl(B(f_n(x),1)\bigr) .
-\end{equation*}
-Now $X$ is compact, so there exists $x_1,x_2,\ldots,x_k$
-such that
-\begin{equation*}
-X = \bigcup_{j=1}^k B(x_j,\delta)
-\end{equation*}
-As $\{ f_n \}$ is pointwise bounded there exist $M_1,M_2,\ldots,M_k$
-such that for $j=1,2,\ldots,k$ we have
-\begin{equation*}
-\sabs{f_n(x_j)} \leq M_j
-\end{equation*}
-for all $n$.  Let $M = 1+ \max \{ M_1,M_2,\ldots,M_k \}$.  Now given any
-$x \in X$, there is a $j$ such that $x \in B(x_j,\delta)$.  Therefore,
-for all $n$ we have
-$x \in f_n^{-1}\bigl(B(f_n(x_j),1)\bigr)$ or in other words
-\begin{equation*}
-\sabs{f_n(x)-f_n(x_j)} < 1 .
-\end{equation*}
-By reverse triangle inequality,
-\begin{equation*}
-\sabs{f_n(x)} < 1+ \sabs{f_n(x_j)} \leq 1+M_j \leq M .
-\end{equation*}
-And as $x$ was arbitrary, $\{f_n\}$ is uniformly bounded.
-
-
-Next, pick a countable dense set $S$.  By \thmref{thm:subsequenceoncountableX}, we find
-a subsequence $\{ f_{n_j} \}$ that converges pointwise on $S$.
-Write $g_j = f_{n_j}$ for simplicity.  Note that $\{ g_n \}$ is 
-equicontinuous.
-
-Let $\epsilon > 0$ be given, then pick $\delta > 0$
-such that for all $x \in X$
-\begin{equation*}
-B(x,\delta) \subset g_n^{-1}\bigl(B(g_n(x),\nicefrac{\epsilon}{3})\bigr).
-\end{equation*}
-By density of $S$, every $x \in X$ is in some $B(y,\delta)$
-for some $y \in S$, and by compactness of $X$,
-there is a finite subset $\{ x_1,x_2,\ldots,x_k \}$ of $S$
-such that
-\begin{equation*}
-X = \bigcup_{j=1}^k B(x_j,\delta) .
-\end{equation*}
-Now as there are finitely many points and we know that $\{ g_n \}$
-converges pointwise on $S$, there exists a single $N$ such that for 
-all $n,m \geq N$ we have for all $j=1,2,\ldots,k$
-\begin{equation*}
-\sabs{g_n(x_j)-g_m(x_j)} < \nicefrac{\epsilon}{3} .
-\end{equation*}
-
-Let $x \in X$ be arbitrary.  There is some $j$ such that
-$x \in B(x_j,\delta)$ and so we have for all $k \in \N$
-\begin{equation*}
-\sabs{g_k(x)-g_k(x_j)} < \nicefrac{\epsilon}{3},
-\end{equation*}
-and so $n,m \geq N$ that
-\begin{equation*}
-\sabs{g_n(x)-g_m(x)} \leq
-\sabs{g_n(x)-g_n(x_j)} +
-\sabs{g_n(x_j)-g_m(x_j)} +
-\sabs{g_m(x_j)-g_m(x)} <
-\nicefrac{\epsilon}{3} +
-\nicefrac{\epsilon}{3} +
-\nicefrac{\epsilon}{3} = \epsilon . \qedhere
-\end{equation*}
-\end{proof}
-
-\begin{cor}
-Let $X$ be a compact metric space.
-Let $S \subset C(X,\C)$ be a closed, bounded and equicontinuous set.
-Then $S$ is compact.
-\end{cor}
-
-The theorem says that $S$
-is sequentially compact and we know that means
-compact in a metric space.
-Recall that the closed unit ball in $C([0,1],\R)$ (and therefore also in
-$C([0,1],\C)$) is not compact.
-Hence it cannot be an equicontinuous set.
-
-\begin{cor}
-Suppose $\{ f_n \}$ is a sequence of differentiable functions on $[a,b]$,
-$\{ f_n' \}$ is uniformly bounded, and there is an
-$x_0 \in [a,b]$ such that $\{ f_n(x_0) \}$ is bounded.
-Then there exists a uniformly convergent
-subsequence $\{ f_{n_j} \}$.
-\end{cor}
-
-\begin{proof}
-The trick is to use the mean value theorem.  If $M$ is the uniform bound on
-$\{ f_n' \}$, then we have by the mean value theorem
-\begin{equation*}
-\sabs{f_n(x)-f_n(y)} \leq M \sabs{x-y} .
-\end{equation*}
-So all the $f_n$ are Lipschitz with the same constant and hence
-equicontinuous.
-
-Suppose $\sabs{f_n(x_0)} \leq M_0$ for all $n$.
-By the inverse triangle inequality, for all $x \in [a,b]$
-\begin{equation*}
-\sabs{f_n(x)} \leq \sabs{f_n(x_0)}+ \sabs{f_n(x)-f_n(x_0)} \leq M_0+ M \sabs{x-x_0}
-\leq M_0 + M(b-a) .
-\end{equation*}
-So $\{ f_n \}$ is uniformly bounded.
-We apply \hyperref[thm:arzelaascoli]{Arzel\`a--Ascoli} to find the subsequence.
-\end{proof}
-
-A consequence of the above corollary and the fundamental theorem of calculus
-is that given some fixed $g \in
-C([0,1],\C)$,
-the set of functions
-\begin{equation*}
-\left\{
-F \in C([0,1],\C) : F(x) = \int_0^x g(t) f(t)~dt,~ f \in C([0,1],\C),~
-\snorm{f}_u \leq 1
-\right\}
-\end{equation*}
-has compact closure, usually called
-\emph{\myindex{relatively compact}} (exercise).
-In other words, the operator $T \colon C([0,1],\C) \to C([0,1],\C)$ given by
-\begin{equation*}
-T\bigl(f\bigr) (x) := F(x) = \int_0^x g(t) f(t)~dt
-\end{equation*}
-takes the unit ball centered at 0 in $C([0,1],\C)$ into a relatively compact set.  We often
-say that this means that the operator is compact, and such operators are very
-important (and very useful).
-
-\subsection{Exercises}
-
-\begin{exercise}
-Let $(X,d)$ be a compact metric space, $C > 0$, $0 < \alpha \leq 1$, and
-suppose $f_n \colon X \to \C$ are functions such as
-$\abs{f_n(x)-f_n(y)} \leq C {d(x,y)}^\alpha$ for all $x,y \in X$ and
-$n \in \N$.  Suppose also that there is a point $p \in X$ such that
-$f_n(p) = 0$.
-Show that there exists a uniformly convergent subsequence converging to
-an $f \colon X \to \C$ that also satisfies $f(p) = 0$ and
-$\abs{f(x)-f(y)} \leq C {d(x,y)}^\alpha$.
-\end{exercise}
-
-\begin{exercise}
-Show that the operator $T \colon C([0,1],\C) \to C([0,1],\C)$ given by
-\begin{equation*}
-T\bigl(f\bigr) (x) := F(x) = \int_0^x g(t) f(t)~dt
-\end{equation*}
-takes the unit ball centered at 0 in $C([0,1],\C)$ into a
-relatively compact set.
-\end{exercise}
-
-\begin{exercise}
-Define $f_n(x) := \frac{1}{{(x-n)}^2+1}$.  Prove that
-this sequence is uniformly bounded, equicontinuous, the sequence
-converges pointwise to zero, yet there is no
-subsequence that converges uniformly.  Which hypothesis of Arzel{\`a}--Ascoli
-is not satisfied?
-\end{exercise}
-
-\begin{exercise}
-Suppose $S^1 \subset \C$ is the unit circle, that is the set where
-$\sabs{z}=1$.  Suppose the continuous functions
-$f_n \colon S^1 \to \C$ are uniformly bounded.
-Let $\gamma \colon [0,1] \to S^1$ be a parametrization of $S^1$,
-and $g(z,w)$ a continuous function on $C(0,1) \times S^1$.  Define
-the functions $F_n \colon C(0,1) \to \C$ by
-the path integral (See \sectionref{sec:pathintegral})
-\begin{equation*}
-F_n(z) : = \int_\gamma f_n(w)\, g(z,w) ~ ds(w) . 
-\end{equation*}
-Show that $\{ F_n \}$ has a uniformly convergent subsequence.
-\end{exercise}
-
-\begin{exercise}
-Suppose $(X,d)$ is a compact metric space, $\{ f_n \}$ an equicontinuous
-sequence of functions in $C(X,\C)$.  Suppose $\{ f_n \}$ converges
-pointwise.  Show that it converges uniformly.
-\end{exercise}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\sectionnewpage
-\section{The Stone--Weierstrass theorem}
-\label{sec:stoneweier}
-
-\sectionnotes{2 lectures}
-
-\subsection{Weierstrass approximation}
-
-Perhaps surprisingly, even a very badly behaving continuous function is really
-just a uniform limit of polynomials.  We cannot really get any ``nicer'' as
-a function than a polynomial.
-
-\begin{thm}[Weierstrass approximation theorem]
-If $f \colon [a,b] \to \C$ is continuous, then there exists a sequence $\{
-p_n \}$ of polynomials converging to $f$ uniformly on $[a,b]$.
-Furthermore, if $f$ is real-valued, we can find real-valued $p_n$.
-\end{thm}
-
-\begin{proof}
-For $x \in [0,1]$ define
-\begin{equation*}
-g(x) := f\bigl((b-a)x+a\bigr)-f(a) - x\bigl(f(b)-f(a)\bigr) .
-\end{equation*}
-If we can prove the theorem for $g$ and find the $\{ p_n \}$ for $g$,
-we can prove it for $f$ since we simply
-composed with an invertible affine function and added an affine
-function to $f$, so we can easily reverse the process and apply that to our
-$p_n$, to obtain polynomials approximating $f$.
-
-So $g$ is defined on $[0,1]$ and $g(0)=g(1)=0$.  We now assume that
-$g$ is defined on the whole real line for simplicity by defining
-$g(x) := 0$ if $x < 0$ or $x > 1$.
-
-Define
-\begin{equation*}
-c_n := {\left( \int_{-1}^1 {(1-x^2)}^n~dx \right)}^{-1} ,
-\qquad
-q_n(x) := c_n (1-x^2)^n
-\end{equation*}
-so that $\int_{-1}^1 q_n(x)~dx = 1$.
-See \figureref{fig:weierqn}.
-
-\begin{myfigureht}
-\includegraphics{figures/weierqn}
-\caption{Plot of the approximate delta functions $q_n$ on $[-1,1]$ for
-$n=5,10,15,20,\ldots,100$ with higher $n$ in lighter shade.\label{fig:weierqn}}
-\end{myfigureht}
-
-The functions $q_n$ are peaks around 0 (ignoring what happens outside
-of $[-1,1]$) that get narrower and narrower, but the area underneath is
-always 1.
-A classic approximation idea
-is to do a \emph{\myindex{convolution}} integral with peaks like this.
-That is we 
-write for $x \in [0,1]$,
-\begin{equation*}
-p_n(x) = \int_{0}^1 g(t)q_n(x-t) ~dt \quad \left( = \int_{-\infty}^\infty
-g(t)q_n(x-t) ~dt \right) .
-\end{equation*}
-The idea of this convolution is that we do a ``weighted average'' of the
-function $g$ around the point $x$ using $q_n$ as the weight.
-See \figureref{fig:approxdeltaconv}.
-
-\begin{myfigureht}
-\includegraphics{figures/approxdeltaconv}
-\caption{For $x=0.3$, the plot of $q_{100}(x-t)$ (light gray peak centered
-at $x$), some continuous function
-$g(t)$ (the jagged line) and the product $g(t)q_{100}(x-t)$ (the bold line).\label{fig:approxdeltaconv}}
-\end{myfigureht}
-
-As $q_n$ is a narrow peak, the integral
-only sees the values of $g$ that are
-close to $x$ and it does the weighted average of them.
-When the peak gets narrower, we compute this average closer to $x$
-and we expect the result to get closer to the value of $g(x)$.  Really we are
-approximating what is called a delta function\footnote{which is not actually
-a function} (don't worry if you have not
-heard of this concept),
-and functions like $q_n$ are often called
-\emph{approximate delta functions}\index{approximate delta function}.
-We could really do this with any polynomial that looks like a little peak
-near zero.  This just happens to be the simplest one.
-We only need this behavior on $[-1,1]$ as the convolution sees nothing
-further than this as $g$ is zero outside $[0,1]$.
-
-Because $q_n$ is a polynomial we write
-\begin{equation*}
-q_n(x-t) = a_0(t) + a_1(t)x + \cdots + a_{2n}(t) x^{2n}
-\end{equation*}
-for some functions $a_k(t)$.
-Since the integral is in terms of $t$, the $x$s just pop out
-by linearity of the integral,
-and so we obtain that $p_n$ is a polynomial in $x$.
-Finally if $g(t)$ is real-valued then the functions $g(t)a_j(t)$ are
-real-valued and hence $p_n$ has real coefficients
-(proving the ``furthermore'' part of the theorem).
-
-We still need to prove that the limit of the $p_n$ is $g$.  First we need
-to get some handle on the
-size of $c_n$.  For $x \in [0,1]$,
-\begin{equation*}
-{(1-x^2)}^n \geq (1-nx^2) .
-\end{equation*}
-This fact is an application of Bernoulli's inequality (\volIref{Exercise
-1.2.13 of volume I}) or can be 
-proved directly:
-the two expressions are equal at $x=0$ and 
-$\frac{d}{dx}\left({(1-x^2)}^n - (1-nx^2)\right)
-=-2nx{(1-x^2)}^{n-1}+2nx$, which is nonnegative for $x \in [0,1]$.
-Furthermore $1-nx^2 \geq 0$ for $x \in [0,\nicefrac{1}{\sqrt{n}}]$.
-\begin{multline*}
-c_n^{-1}  = \int_{-1}^1 {(1-x^2)}^n ~ dx
-= 2\int_0^1 {(1-x^2)}^n ~ dx \\
-\geq 2\int_0^{1/\sqrt{n}} {(1-x^2)}^n ~ dx
-\geq 2\int_0^{1/\sqrt{n}} (1-nx^2)  ~ dx
-= \frac{4}{3\sqrt{n}}
-> \frac{1}{\sqrt{n}} .
-\end{multline*}
-so $c_n < \sqrt{n}$.
-
-Let's see how small $g$ is if we ignore some small bit around the origin,
-which is where the peak is.
-Given any $\delta > 0$, $\delta < 1$, we have for $\delta \leq \sabs{x} \leq
-1$
-\begin{equation*}
-q_n(x) \leq \sqrt{n}{(1-\delta^2)}^n .
-\end{equation*}
-Then it is easy to see (e.g.\ by the ratio test) that
-$\sqrt{n}{(1-\delta^2)}^n$ goes to 0 as $n$ goes to infinity.
-The function $q_n$ is even, $q_n(t) = q_n(-t)$, and $g$
-is zero outside of $[0,1]$.
-So for $x \in [0,1]$,
-\begin{equation*}
-p_n(x) = 
-\int_{0}^1 g(t)q_n(x-t)  ~ dt
-=
-\int_{-x}^{1-x} g(t+x)q_n(-t)  ~ dt
-=
-\int_{-1}^{1} g(t+x)q_n(t)  ~ dt .
-\end{equation*}
-
-Let $\epsilon > 0$ be given.
-As $[-1,2]$ is compact and $g$ is continuous on $[-1,2]$, we have that $g$ is uniformly continuous.
-Pick $0 < \delta < 1$ such that if
-$\sabs{x-y} < \delta$ (and $x,y \in [-1,2]$) then
-\begin{equation*}
-\sabs{g(x)-g(y)} < \frac{\epsilon}{2} .
-\end{equation*}
-
-Let $M$ be such that $\sabs{g(x)} \leq M$ for all $x$.  Let $N$ be
-such that for all $n \geq N$,
-\begin{equation*}
-4M\sqrt{n}{(1-\delta^2)}^n < \frac{\epsilon}{2} .
-\end{equation*}
-
-Note that 
-$\int_{-1}^1 q_n(t) ~ dt = 1$ and $q_n(x) \geq 0$ on $[-1,1]$ so
-\begin{equation*}
-\begin{split}
-\sabs{p_n(x)-g(x)} & =
-\abs{\int_{-1}^1 g(t+x)q_n(t) ~ dt
--g(x)\int_{-1}^1 q_n(t) ~ dt} \\
-& =
-\abs{\int_{-1}^1 \bigl(g(t+x)-g(x)\bigr)q_n(t) ~ dt} \\
-& \leq
-\int_{-1}^1 \sabs{g(t+x)-g(x)} q_n(t) ~ dt \\
-& =
-\int_{-1}^{-\delta} \sabs{g(t+x)-g(x)} q_n(t) ~ dt
-+
-\int_{-\delta}^{\delta} \sabs{g(t+x)-g(x)} q_n(t) ~ dt
-\\
-& \phantom{\leq} +
-\int_{\delta}^1 \sabs{g(t+x)-g(x)} q_n(t) ~ dt \\
-& \leq
-2M
-\int_{-1}^{-\delta} q_n(t) ~ dt
-+
-\frac{\epsilon}{2}
-\int_{-\delta}^{\delta} q_n(t) ~ dt
-+
-2M
-\int_{\delta}^1 q_n(t) ~ dt \\
-& \leq
-2M\sqrt{n}{(1-\delta^2)}^n(1-\delta)
-+
-\frac{\epsilon}{2}
-+
-2M\sqrt{n}{(1-\delta^2)}^n(1-\delta) \\
-& <
-4M\sqrt{n}{(1-\delta^2)}^n
-+
-\frac{\epsilon}{2}
-< \epsilon . \qedhere
-\end{split}
-\end{equation*}
-\end{proof}
-
-%Think about the consequences of the theorem.  If you have any property that
-%gets preserved under uniform convergence and it is true for polynomials,
-%then it must be true for all continuous functions.
-
-Let us note an immediate application of the Weierstrass theorem.  We have
-already seen that countable dense subsets can be very useful.
-
-\begin{cor}
-The metric space $C([a,b],\C)$ contains a countable dense subset.
-\end{cor}
-
-\begin{proof}
-Without loss of generality suppose that we are dealing with $C([a,b],\R)$
-(why?).
-The real polynomials are dense in $C([a,b],\R)$.  If we show that
-any real polynomial can be approximated by polynomials with rational
-coefficients, we are done.  This is because there are only countably many
-rational numbers and so there are only countably many polynomials with
-rational coefficients (a countable union of countable sets is still
-countable).
-
-Further without loss of generality, suppose $[a,b]=[0,1]$.  Let
-\begin{equation*}
-p(x) = \sum_{k=0}^n a_k x^k
-\end{equation*}
-be a polynomial of degree $n$ where $a_k \in \R$.  Given $\epsilon > 0$, pick $b_k \in \Q$
-such that $\sabs{a_k-b_k} < \frac{\epsilon}{n+1}$.  Then
-if we let
-\begin{equation*}
-q(x) = \sum_{k=0}^n b_k x^k
-\end{equation*}
-we have
-\begin{equation*}
-\sabs{p(x)-q(x)}
-=
-\abs{\sum_{k=0}^n (a_k-b_k) x^k}
-\leq
-\sum_{k=0}^n \sabs{a_k-b_k} x^k
-\leq
-\sum_{k=0}^n \sabs{a_k-b_k}
-<
-\sum_{k=0}^n \frac{\epsilon}{n+1} = \epsilon . \qedhere
-\end{equation*}
-\end{proof}
-
-\begin{remark}
-%\textbf{Funky remark:}
-While we will not prove this, the above corollary implies that
-$C([a,b],\C)$ has the same cardinality as $\R$, which may be a
-bit surprising.  The set of all functions $[a,b] \to \C$ has
-cardinality that is strictly greater than the cardinality of $\R$, it has the
-cardinality of the power set of $\R$.  So the
-set of continuous functions is a very tiny subset of the set of all
-functions.
-\end{remark}
-
-\subsection{Stone-Weierstrass approximation}
-
-Next thing we do is that we want to abstract away what is not really
-necessary and prove a general version of this theorem.
-The polynomials are dense in the space of continuous
-functions on a compact interval.  So what kind of families of
-functions are also dense?  Furthermore, what if we let the domain be an
-arbitrary metric space, then we no longer have polynomials.
-
-The resulting theorem is the Stone--Weierstrass theorem\footnote{%
-Named after the American mathematician
-\href{http://en.wikipedia.org/wiki/Marshall_Harvey_Stone}{Marshall Harvey Stone}
-(1903--1989), and the German mathematician
-\href{http://en.wikipedia.org/wiki/Karl_Weierstrass}{Karl Theodor Wilhelm Weierstrass}
-(1815--1897).}.
-We need a
-special case of the Weierstrass theorem though.
-
-\begin{cor}
-Let $[-a,a]$ be an interval.  Then there is a sequence of real polynomials
-$\{ p_n \}$ that converges uniformly to $\sabs{x}$ on $[-a,a]$ and such that
-$p_n(0) = 0$ for all $n$.
-\end{cor}
-
-\begin{proof}
-As $f(x) = \sabs{x}$ is continuous and real-valued
-on $[-a,a]$ we definitely have some
-real polynomials $\widetilde{p}_n$ that converge to $f$.
-Let
-\begin{equation*}
-p_n(x) = \widetilde{p}_n(x) - \widetilde{p}_n(0) .
-\end{equation*}
-Obviously $p_n(0) = 0$.
-
-We know
-$\lim \widetilde{p}_n(0) = 0$.  Given $\epsilon > 0$, let $N$ be such that
-for $n \geq N$ we have $\sabs{\widetilde{p}_n(0)} < \nicefrac{\epsilon}{2}$
-and also that $\bigl\lvert\widetilde{p}_n(x)-\sabs{x}\big\rvert < \nicefrac{\epsilon}{2}$.
-Now
-\begin{equation*}
-\bigl\lvert p_n(x)-\sabs{x} \bigr\rvert
-=
-\bigl\lvert \widetilde{p}_n(x) - \widetilde{p}_n(0) - \sabs{x} \bigr\rvert
-\leq
-\bigl\lvert \widetilde{p}_n(x) - \sabs{x} \bigr\rvert + \sabs{\widetilde{p}_n(0)} < 
-\nicefrac{\epsilon}{2} + \nicefrac{\epsilon}{2} = \epsilon . \qedhere
-\end{equation*}
-\end{proof}
-
-Following the proof of the theorem,
-we see that we can always make the polynomials from the Weierstrass theorem
-have a fixed value at one point, so it works not just for $\sabs{x}$.
-
-\begin{defn}
-A family $\sA$ of complex-valued functions $f \colon X \to \C$ is said to be an 
-\emph{\myindex{algebra}} (sometimes
-\emph{\myindex{complex algebra}} or \emph{algebra over $\C$}) if for all $f, g \in \sA$ and $c \in \C$ we have
-\begin{enumerate}[(i)]
-\item $f+g \in \sA$,
-\item $fg \in \sA$, and
-\item $cg \in \sA$.
-\end{enumerate}
-A \emph{\myindex{real algebra}} or an
-\emph{algebra over $\R$} is a family of real-valued
-functions that satisfies the three properties above for $c \in \R$
-\end{defn}
-
-We are interested in the case when
-$X$ is a compact metric space.  Then
-we have that $C(X,\C)$ and $C(X,\R)$ are metric spaces.
-Given a set $\sA \subset C(X,\C)$, the set of all uniform
-limits is the metric space closure $\overline{\sA}$.
-When we talk about closure of an algebra
-from now on we will mean the closure in $C(X,\C)$
-as a metric space.  Same for $C(X,\R)$.
-
-The set $\sP$ of all polynomials is an algebra in
-$C([a,b],\C)$, and we
-have shown that its closure $\overline{\sP} = C([a,b],\C)$.
-That is, it is dense.  That is the sort of result that we wish to prove.
-
-We leave the following proposition as an exercise.
-
-\begin{prop} \label{prop:closureofalgebra}
-Suppose $X$ is a compact metric space.
-If $\sA \subset C(X,\C)$ an algebra, then the closure $\overline{\sA}$ is also an algebra.
-Similarly for a real algebra in $C(X,\R)$.
-\end{prop}
-
-
-%%
-%% FIXME: only need this in a metric space setting, should really whack this
-%% Really only need this for algebras in $C(X,\C)$ for compact X.
-%% It's what the above Proposition does.
-%%
-%
-%\begin{thm}
-%Let $\sA$ be an algebra of bounded functions on a set $X$, and let $\sB$
-%be its uniform closure.  Then $\sB$ is a uniformly closed algebra.
-%\end{thm}
-%
-%\begin{proof}
-%Let $f, g \in \sB$ and $c \in \C$.  Then there are uniformly convergent
-%sequences of functions $\{ f_n \}$, $\{ g_n \}$ in $\sA$ such that
-%$f$ is the uniform limit of $\{ f_n \}$ and
-%$g$ is the uniform limit of $\{ g_n \}$.
-%
-%What we want is to show that $f_n+g_n$ converges uniformly to $f+g$,
-%$f_ng_n$ converges uniformly to $fg$, and
-%$cf_n$ converges uniformly to $cf$.  As $f$ and $g$ are bounded, then
-% $\{ f_n \}$ and $\{ g_n \}$ are also uniformly bounded.
-%Hence there is a single number $M$ such that for all $x \in X$ and all $n
-%\in \N$,
-%\begin{equation*}
-%\sabs{f_n(x)} \leq M, \qquad
-%\sabs{g_n(x)} \leq M, \qquad
-%\sabs{f(x)} \leq M, \qquad \text{and} \qquad
-%\sabs{g(x)} \leq M.
-%\end{equation*}
-%
-%The following estimates are enough to show uniform convergence.
-%\begin{equation*}
-%\abs{\bigl(f_n(x)+g_n(x)\bigr)
-%-\bigl(f(x)+g(x)\bigr)}
-%\leq
-%\sabs{f_n(x)-f(x)}
-%+\sabs{g_n(x)-g(x)}
-%\end{equation*}
-%and
-%\begin{equation*}
-%\begin{split}
-%\sabs{f_n(x)g_n(x)-f(x)g(x)}
-%& \leq
-%\sabs{f_n(x)g_n(x)-f_n(x)g(x)}
-%+\sabs{f_n(x)g(x)-f(x)g(x)}
-%\\
-%& \leq
-%M \sabs{g_n(x)-g(x)}
-%+M \sabs{f_n(x)-f(x)}
-%\end{split}
-%\end{equation*}
-%and
-%\begin{equation*}
-%\sabs{cf_n(x)-cf(x)}
-%=
-%\sabs{c}\,
-%\sabs{f_n(x)-f(x)} .
-%\end{equation*}
-%Hence $f+g \in \sB$, $fg \in \sB$ and $cf \in \sB$.
-%
-%Next we want to show that $\sB$ is uniformly closed.
-%Suppose $\{ f_n \}$ is a sequence in $\sB$ converging
-%uniformly to some function $f \colon X \to \C$.
-%As $\sB$ is the closure of $\sA$ we find a $g_n \in \sA$ for
-%every $n$ such that for all $x \in X$ we have
-%\begin{equation*}
-%\sabs{f_n(x)-g_n(x)} < \nicefrac{1}{n}
-%\end{equation*}
-%So given $\epsilon > 0$ find $N$ such that for all $n \geq N$
-%we have $\sabs{f_n(x)-f(x)} < \nicefrac{\epsilon}{2}$ and
-%also such that $\nicefrac{1}{n} < \nicefrac{\epsilon}{2}$.  Then
-%\begin{equation*}
-%\sabs{g_n(x)-f(x)}
-%\leq
-%\sabs{g_n(x)-f_n(x)}
-%+
-%\sabs{f_n(x)-f(x)}
-%< \nicefrac{1}{n} + \nicefrac{\epsilon}{2} < \epsilon .  \qedhere
-%\end{equation*}
-%\end{proof}
-%
-%Or if we had shown that the set of bounded functions on $X$ is a metric
-%space, then the last assertion would follow directly as in a metric space
-%closure of a closed set is the set itself. (Rudin does this).
-
-
-
-Let us distill the properties of polynomials that were sufficient
-for an approximation theorem.
-
-\begin{defn}
-Let $\sA$ be a family of complex-valued functions defined on a set $X$.
-\begin{enumerate}[(i)]
-\item $\sA$ \emph{\myindex{separates points}}
-if for every $x,y \in X$, with $x \not= y$ there is a function $f \in \sA$ such that
-$f(x) \not= f(y)$.
-\item 
-$\sA$ \emph{\myindex{vanishes at no point}} if for every $x \in X$
-there is an $f \in \sA$ such that $f(x) \not= 0$.
-\end{enumerate}
-\end{defn}
-
-\begin{example}
-The set $\sP$ of polynomials separates points and vanishes at no point
-on $\R$.  That is, $1 \in \sP$ so it vanishes at no point.  And for $x,y \in
-\R$, $x\not= y$, just take $f(t) := t-x$: $f(x) = 0$ and $f(y) = y-x
-\not= 0$.
-\end{example}
-
-\begin{example}
-The set of functions of the form
-\begin{equation*}
-f(t) = C + \sum_{n=1}^k \cos(nt)
-\end{equation*}
-does not separate points if the domain is any interval of the form
-$[-a,a]$, because $f(-t) = f(t)$ for all $t$.
-It does separate points if the domain is $[0,\pi]$, as $\cos(t)$
-is one-to-one on that set.
-\end{example}
-
-\begin{example}
-The set of polynomials with no constant term vanishes at the origin.
-\end{example}
-
-\begin{prop} \label{prop:SWinterpolate}
-Suppose $\sA$ is an algebra of functions on a set $X$, that separates points
-and vanishes at no point.  Suppose $x,y$ are distinct points of $X$ and
-$c,d \in \C$.  Then there is an $f \in \sA$ such that
-\begin{equation*}
-f(x) = c, \qquad f(y) = d .
-\end{equation*}
-If $\sA$ is a real algebra, the conclusion also holds for $c,d \in \R$.
-\end{prop}
-
-\begin{proof}
-There must exist an $g,h,k \in \sA$
-such that 
-\begin{equation*}
-g(x) \not= g(y), \quad h(x) \not= 0, \quad k(y) \not= 0 .
-\end{equation*}
-Write
-\begin{equation*}
-f = 
-c
-\frac{\bigl(g - g(y)\bigr)h}{\bigl(g(x)-g(y)\bigr)h(x) } + 
-d
-\frac{\bigl(g - g(x)\bigr)k}{\bigl(g(y)-g(x)\bigr)k(y)}
-=
-c
-\frac{gh - g(y)h}{g(x)h(x)-g(y)h(x) } + 
-d
-\frac{gk - g(x)k}{g(y)k(y)-g(x)k(y)} .
-\end{equation*}
-Do note that we are not dividing by zero (clear from the first formula).
-Also from the first formula we see that $f(x) = c$ and $f(y) = d$.
-By the second formula we see that $f \in \sA$ (as $\sA$ is an algebra).
-\end{proof}
-
-\begin{thm}[Stone--Weierstrass, real version]
-\label{thm:SWreal}
-\index{Stone--Weierstrass!real version}
-Let $X$ be a compact metric space and $\sA$ an algebra of real-valued
-continuous functions on $X$, such that $\sA$ separates points and vanishes at
-no point.  Then the closure $\overline{\sA} = C(X,\R)$.
-\end{thm}
-
-The proof is divided into several claims.
-
-\medskip
-
-\noindent
-\textbf{Claim 1:} \emph{If $f \in \overline{\sA}$ then $\sabs{f} \in
-\overline{\sA}$.}
-
-\begin{proof}
-The function $f$ is bounded (continuous on a compact set), so there is an $M$
-such that $\sabs{f(x)} \leq M$ for all $x \in X$.
-
-Let $\epsilon > 0$ be given.  By the corollary to the Weierstrass theorem there
-exists a real polynomial $c_1 y + c_2 y^2 + \cdots+ c_n y^n$ (vanishing at
-$y=0$) such that
-\begin{equation*}
-\abs{\sabs{y} - \sum_{j=1}^N c_j y^j} < \epsilon
-\end{equation*}
-for all $y \in [-M,M]$.
-Because $\sA$ is an algebra (there is no constant term in the polynomial)
-we have
-\begin{equation*}
-g = \sum_{j=1}^N c_j f^j \in \sA .
-\end{equation*}
-As $\sabs{f(x)} \leq M$ we have that
-\begin{equation*}
-\bigl\lvert\sabs{f(x)} - g(x)\bigr\rvert
-=
-\abs{\sabs{f(x)} - \sum_{j=1}^N c_j {\bigl(f(x)\bigr)}^j}
-< \epsilon .
-\end{equation*}
-So $\sabs{f}$ is in the closure of $\overline{\sA}$, which is closed, so $\sabs{f} \in
-\overline{\sA}$.
-\end{proof}
-
-\medskip
-
-\noindent
-\textbf{Claim 2:} \emph{If $f \in \overline{\sA}$ and $g \in \overline{\sA}$ then
-$\max(f,g) \in \overline{\sA}$ and
-$\min(f,g) \in \overline{\sA}$, where
-}
-\begin{equation*}
-\bigl(\max(f,g)\bigr) (x) = \max \{ f(x), g(x) \} \qquad
-\bigl(\min(f,g)\bigr) (x) = \min \{ f(x), g(x) \} .
-\end{equation*}
-
-\begin{proof}
-Write:
-\begin{equation*}
-\max(f,g) = \frac{f+g}{2} + \frac{\sabs{f-g}}{2} ,
-\end{equation*}
-and
-\begin{equation*}
-\min(f,g) = \frac{f+g}{2} - \frac{\sabs{f-g}}{2} .
-\end{equation*}
-As $\overline{\sA}$ is an algebra we are done.
-\end{proof}
-
-The claim is true for the minimum or maximum of any finite
-collection of functions as well.
-
-\medskip
-
-\noindent
-\textbf{Claim 3:} \emph{Given $f \in C(X,\R)$, $x \in X$ and $\epsilon > 0$
-there exists a $g_x \in \overline{\sA}$ with $g_x(x) = f(x)$ and
-}
-\begin{equation*}
-g_x(t) > f(t)-\epsilon \qquad \text{for all $t \in X$}.
-\end{equation*}
-
-\begin{proof}
-Let $x \in X$ be fixed.
-By \propref{prop:SWinterpolate}, for every $y \in X$ we find an $h_y \in
-\sA$ such that
-\begin{equation*}
-h_y(x) = f(x), \qquad h_y(y)=f(y) .
-\end{equation*}
-As $h_y$ and $f$ are continuous, the set
-\begin{equation*}
-J_y = \{ t \in X : h_y(t) > f(t) -\epsilon \}
-\end{equation*}
-is open (it is the inverse image of an open set by a continuous function).
-Furthermore $y \in J_y$.  So the sets $J_y$ cover $X$.
-
-Now $X$ is compact so there exist finitely many points $y_1,y_2,\ldots,y_n$ such
-that
-\begin{equation*}
-X = \bigcup_{j=1}^n J_{y_j}  .
-\end{equation*}
-Let 
-\begin{equation*}
-g_x = \max(h_{y_1},h_{y_2},\ldots,h_{y_n})
-\end{equation*}
-By Claim 2, $g_x$ is in $\overline{\sA}$.
-It is easy to see that
-\begin{equation*}
-g_x(t) > f(t) -\epsilon
-\end{equation*}
-for all $t \in X$, since for any $t$ there was at least one $h_{y_j}$ for
-which this was true.
-
-Furthermore $h_y(x) = f(x)$ for all $y \in X$, so
-$g_x(x) = f(x)$.
-\end{proof}
-
-\medskip
-
-\noindent
-\textbf{Claim 4:} \emph{If $f \in C(X,\R)$ and $\epsilon > 0$ is given then there
-exists an $h \in \overline{\sA}$ such that}
-\begin{equation*}
-\sabs{f(x) - h(x)} < \epsilon .
-\end{equation*}
-
-\begin{proof}
-For any $x$ find function $g_x$ as in Claim 3.
-
-Let
-\begin{equation*}
-V_x = \bigl\{ t \in X : g_x(t) < f(t) + \epsilon \bigr\}.
-\end{equation*}
-The sets $V_x$ are open as $g_x$ and $f$ are continuous.
-Furthermore as $g_x(x) = f(x)$, $x \in V_x$, and so the sets $V_x$ cover $X$.  Thus
-there
-are finitely many points $x_1,x_2,\ldots,x_n$ such that
-\begin{equation*}
-X = \bigcup_{j=1}^n V_{x_j} .
-\end{equation*}
-Now let
-\begin{equation*}
-h := \min(g_{x_1},g_{x_2},\ldots,g_{x_n}) .
-\end{equation*}
-By Claim 2, $h \in \overline{\sA}$.  Similarly as before (same argument as in
-Claim 3) we have that for all
-$t \in X$
-\begin{equation*}
-h(t) < f(t) + \epsilon .
-\end{equation*}
-Since all the $g_x$ satisfy $g_x(t) > f(t) - \epsilon$ for all $t \in X$, so does $h$.
-Therefore, for all $t$
-\begin{equation*}
--\epsilon < h(t) - f(t) < \epsilon ,
-\end{equation*}
-which is the desired conclusion.
-\end{proof}
-
-The proof of the theorem follows from Claim 4.  The claim states that an
-arbitrary continuous function is in the closure of $\overline{\sA}$,
-which itself is
-closed.  So the theorem is proved.
-
-\begin{example}
-The functions of the form
-\begin{equation*}
-f(t) = \sum_{j=1}^n c_j \, e^{jt},
-\end{equation*}
-for $c_j \in \R$,
-are dense in $C([a,b],\R)$.  We need to note that such functions are a real
-algebra, which follows from $e^{jt} e^{kt} = e^{(j+k)t}$.  They separate
-points as $e^t$ is one-to-one, and $e^t > 0$ for all $t$ so the algebra
-does not vanish at any point.
-\end{example}
-
-In general if we have a family of functions that separates points and does
-not vanish at any point, we can let these functions
-\emph{generate}\index{generate an algebra}
-an algebra
-by considering all the linear combinations of arbitrary multiples of such
-functions.  That is, we consider all real polynomials without constant term
-of such functions.  For example above,
-the algebra is generated by $e^t$, we simply
-consider polynomials in $e^t$.
-
-Warning!
-You could similarly show that the set of all functions of the form
-\begin{equation*}
-\frac{a_0}{2} +
-\sum_{n=1}^N a_n \cos(nt)
-\end{equation*}
-is an algebra (you would have to use some trig identities to show this).
-When considered on $[0,\pi]$, the
-algebra separates points and vanishes nowhere so
-\hyperref[thm:SWreal]{Stone--Weierstrass} applies.
-You \emph{do not} want to conclude from this that every continuous
-function on $[0,\pi]$ has a uniformly convergent
-Fourier cosine series.  That is not true.
-In fact there exist continuous functions
-whose Fourier series does not converge even pointwise.  We do have formulas
-for the coefficients, but those coefficients not give us a convergent
-series.  The
-trick is that the sequence of functions in the algebra that we obtain
-by Stone--Weierstrass
-is not necessarily the sequence of partial sums of a series.
-
-Same warning applies to polynomials as well.  Just because a function is a
-uniform limit of polynomials doesn't mean that it is a uniform limit of a
-power series.
-
-To obtain Stone--Weierstrass for complex algebras, we must
-make an extra assumption.
-
-\begin{defn}
-An algebra $\sA$ is self-adjoint, if for all $f \in \sA$, the function
-$\bar{f}$ defined by $\bar{f}(x) := \overline{f(x)}$ is in $\sA$, where by the
-bar we mean the complex conjugate.
-\end{defn}
-
-\begin{thm}[Stone--Weierstrass, complex version]
-\label{thm:SWcomplex}
-\index{Stone--Weierstrass!complex version}
-Let $X$ be a compact metric space and $\sA$ an algebra of complex-valued
-continuous functions on $X$, such that $\sA$ separates points, vanishes at
-no point, and is self-adjoint.  Then the closure $\overline{\sA} = C(X,\C)$.
-\end{thm}
-
-\begin{proof}
-Suppose $\sA_\R \subset \sA$ is the set of the real-valued elements of
-$\sA$.  If $f = u+iv$ where $u$ and $v$ are real-valued, then
-\begin{equation*}
-u = \frac{f+\bar{f}}{2}, \qquad
-v = \frac{f-\bar{f}}{2i} .
-\end{equation*}
-So $u, v \in \sA$ as $\sA$ is a self-adjoint algebra, and since they are
-real-valued we get that $u, v \in \sA_\R$.
-
-If $x \not= y$, then find an $f \in \sA$ such that $f(x) \not= f(y)$.  If $f
-= u+iv$, then it is obvious that either $u(x) \not= u(y)$ or $v(x) \not=
-v(y)$.  So $\sA_\R$ separates points.
-
-Similarly, for any $x$ find $f \in \sA$ such that $f(x) \not= 0$.  If $f
-= u+iv$, then either $u(x) \not= 0$ or $v(x) \not= 0$.
-So $\sA_\R$ vanishes at no point.
-
-The set $\sA_\R$ is a real algebra, and satisfies the hypotheses of the
-\hyperref[thm:SWreal]{real Stone--Weierstrass theorem}.  So given any $f = u+iv \in C(X,\C)$,
-we find $g,h \in \sA_\R$ such that
-$\sabs{u(t)-g(t)} < \nicefrac{\epsilon}{2}$ and
-$\sabs{v(t)-h(t)} < \nicefrac{\epsilon}{2}$ for all $t \in X$.  So
-\begin{multline*}
-\abs{f(t) - \bigl(g(t)+ih(t)\bigr)} = 
-\abs{u(t)+iv(t) - \bigl(g(t)+ih(t)\bigr)} \\
-\leq
-\sabs{u(t)-g(t)}+\sabs{v(t)-h(t)} < \nicefrac{\epsilon}{2} +
-\nicefrac{\epsilon}{2} = \epsilon.
-\end{multline*}
-for all $t \in X$.
-So $\overline{\sA} = C(X,\C)$.
-\end{proof}
-
-The self-adjoint requirement is necessary although it is not so obvious to
-see it.  For an example see \exerciseref{exercise:selfadjointSW}.
-
-%FIXME: An example of why we need the self-adjoint will be in the homework.
-%?? FIXME: add exercise this requires Cauchy integral, so perhaps not
-
-Here is an interesting application.  We'll do it for the complex version, but
-the same thing can be done with the real version.  It turns out when working
-with functions of two variables, one would really like to work with functions
-of the form $f(x)g(y)$ rather than $F(x,y)$.  We can't quite do that, but we
-do have the following.
-
-\begin{example}
-Any continuous function $F \colon [0,1] \times [0,1] \to \C$ can be
-approximated uniformly by functions of the form
-\begin{equation*}
-\sum_{j=1}^n f_j(x) g_j(y)
-\end{equation*}
-where $f_j \colon [0,1] \to \C$ and $g_j \colon [0,1] \to \C$ are continuous.
-
-\emph{Proof:}
-It is not hard to see that the functions of the above form are a complex
-algebra.  It is equally easy to show that they vanish nowhere, separate
-points, and the algebra is self-adjoint.  As $[0,1] \times [0,1]$ is compact
-we apply \hyperref[thm:SWcomplex]{Stone--Weierstrass} to obtain the result.
-\end{example}
-
-\subsection{Exercises}
-
-\begin{exercise}
-Prove \propref{prop:closureofalgebra}.
-Hint: If $\{ f_n \}$ is a sequence in $C(X,\R)$
-converging to $f$, then as $f$ is bounded, you can show
-that $f_n$ is uniformly bounded, that is, there exists a
-single bound for all $f_n$ (and $f$).
-\end{exercise}
-
-\begin{exercise}
-Suppose $X := \R$ (not compact in particular).
-Show that $f(t) := e^t$ is not possible to uniformly approximate
-by polynomials on $X$.  Hint: Consider $\abs{\frac{e^t}{t^n}}$
-as $t \to \infty$.
-\end{exercise}
-
-\begin{exercise}
-Suppose $f \colon [0,1] \to \C$ is a uniform limit of a sequence of polynomials
-of degree at most $d$, then the limit is a polynomial of degree at most $d$.
-Conclude that to approximate a function which is not a polynomial, we
-need the degree of the approximations to go to infinity.\\
-Hint: Consider a uniformly Cauchy sequence of polynomials of degree at most
-$d$.  Show that the coefficients are are Cauchy sequences.
-\end{exercise}
-
-\begin{exercise}
-Suppose $f \colon [0,1] \to \R$ is continuous and
-$\int_0^1 f(x) x^n ~dx = 0$ for all $n = 0,1,2,\ldots$.
-Show that $f(x) = 0$ for all $x \in [0,1]$.
-Hint: approximate by polynomials to show that $\int_0^1 {\bigl( f(x)
-\bigr)}^2 ~ dx = 0$.
-\end{exercise}
-
-\begin{exercise}
-Suppose $I \colon C([0,1],\R) \to \R$ is 
-a linear continuous function such that
-$I(x^n) = \frac{1}{n+1}$
-for all $n=0,1,2,3,\ldots$.
-Prove that $I(f) = \int_0^1 f$ for all $f \in C([0,1],\R)$.
-\end{exercise}
-
-\begin{exercise}
-Let $\sA$ be the collection of real polynomials in $x^2$,
-that is polynomials of the form
-$c_0 + c_1 x^2 + c_2 x^4 + \cdots + c_d x^{2d}$.
-\begin{enumerate}[a)]
-\item
-Show that every $f \in C([0,1],\R)$ is a uniform limit of
-polynomials from $\sA$.
-\item
-Find an $f \in  C([-1,1],\R)$ that is not a
-uniform limit of
-polynomials from $\sA$.
-\item
-Which hypothesis of the real Stone-Weierstrass is not satisfied
-for the domain $[-1,1]$?
-\end{enumerate}
-\end{exercise}
-
-\begin{exercise}
-Let $\sabs{z}=1$ define the unit circle $S^1 \subset \C$.
-\begin{enumerate}[a)]
-\item
-Show that functions of the form
-\begin{equation*}
-\sum_{k=-n}^n c_k z^k
-\end{equation*}
-are dense in $C(S^1,\C)$.  Notice the negative powers.
-\item 
-Show that functions of the form
-\begin{equation*}
-c_0
-+
-\sum_{k=1}^n c_k z^k
-+
-\sum_{k=1}^n d_k \bar{z}^k
-\end{equation*}
-are dense in $C(S^1,\C)$.  These are so-called harmonic polynomials,
-and this approximation leads for example to the solution of the
-steady state heat problem.
-\end{enumerate}
-Hint: A good way to write the equation for $S^1$ is $z \bar{z} = 1$.
-\end{exercise}
-
-\begin{exercise}
-Suppose we already know the complex exponential
-$e^{it} = \cos(t) + i \sin
-(t)$, that
-${\bigl(e^{it}\bigr)}^n = e^{int}$,
-and that
-$\overline{e^{it}} = e^{-it}$ (all things
-we will prove in \sectionref{sec:complexexp}).
-Show that for complex numbers $c_j$, the set of functions
-of $x$ on $[-\pi,\pi]$
-of the form
-\begin{equation*}
-\sum_{k=-n}^n c_k e^{ik x}
-\end{equation*}
-satisfies the hypotheses of the complex Stone-Weierstrass theorem
-and therefore such functions are dense in the $C([-\pi,\pi],\C)$.
-\end{exercise}
-
-
-\begin{samepage}
-\begin{exercise} \label{exercise:selfadjointSW}
-Again suppose we already know the complex exponential
-$e^{it} = \cos(t) + i \sin (t)$, that
-${\bigl(e^{it}\bigr)}^n = e^{int}$, that
-$\overline{e^{it}} = e^{-it}$, and that
-$e^{z+w} = e^z e^w$ (all things
-we will prove in \sectionref{sec:complexexp}).
-Let $S^1 \subset \C$ be the unit circle, that is the set where
-$\sabs{z} = 1$.  Orient this set counterclockwise.
-Let $\gamma(t) := e^{it}$.
-For the one-form $f(z)~dz$ we write\footnote{%
-One could also define $dz := dx + i \, dy$ and then
-extend the path integral from \chapterref{path:chapter} to complex-valued
-one-forms.}
-\begin{equation*}
-\int_{S^1} f(z) ~dz := \int_0^{2\pi} f(e^{it}) \, i e^{it} ~ dt . 
-\end{equation*}
-\begin{enumerate}[a)]
-\item
-Prove that for all nonnegative integers $k = 0,1,2,3,\ldots$ we have
-$\int_{S^1} z^k ~ dz = 0$.
-\item
-Prove that if
-$P(z) = \sum_{k=0}^n c_k z^k$ is any
-polynomial in $z$, then
-$\int_{S^1} P(z) ~ dz = 0$.
-\item
-Prove
-$\int_{S^1} \bar{z} ~ dz \not= 0$.
-\item
-Conclude that polynomials in $z$ (this algebra of functions is
-not self-adjoint) are not dense in $C(S^1,\C)$.
-\end{enumerate}
-\end{exercise}
-\end{samepage}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3442,6 +2129,1310 @@ Use this to show that
 \end{equation*}
 \end{enumerate}
 \end{exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Equicontinuity and the Arzel{\`a}--Ascoli theorem}
+\label{sec:arzelaascoli}
+
+\sectionnotes{2 lectures}
+
+We would like an analogue of Bolzano-Weierstrass.  Something to the tune of
+``every bounded
+sequence of functions (with some property) has a convergent subsequence''.
+Matters are not
+as simple even for continuous functions. 
+Not every bounded sequence in the metric space $C([0,1],\R)$ has
+a convergent subsequence.
+
+\begin{defn}
+Let $X$ be any set.
+Let $f_n \colon X \to \C$ be functions in a sequence.  We say that
+$\{ f_n \}$
+is \emph{\myindex{pointwise bounded}} if for every $x \in X$, there is an $M_x \in \R$
+such that
+\begin{equation*}
+\sabs{f_n(x)} \leq M_x \qquad \text{for all $n \in \N$} .
+\end{equation*}
+We say that
+$\{ f_n \}$
+is \emph{\myindex{uniformly bounded}} if there is an $M \in \R$
+such that
+\begin{equation*}
+\sabs{f_n(x)} \leq M \qquad \text{for all $n \in \N$ and all $x \in X$}.
+\end{equation*}
+\end{defn}
+
+Note that uniform boundedness is the same as boundedness in the metric space
+$C(X,\C)$ (here $X$ is a compact metric space).
+
+\begin{example}
+There exist sequences of 
+continuous functions
+on $[0,1]$ that are uniformly bounded but contain no subsequence converging
+even pointwise.  Let us state without proof that $f_n(x) := \sin (2\pi n x)$ is one
+such sequence.
+\end{example}
+
+\begin{example}
+We also have that $f_n(x) := x^n$ is a sequence of functions on $[0,1]$
+that is uniformly bounded, but contains no sequence that converges
+uniformly,
+although the sequence converges pointwise.
+\end{example}
+
+When the domain is countable, matters are easier.   The proof uses
+a very common and useful diagonal argument.
+
+\begin{thm} \label{thm:subsequenceoncountableX}
+Let $X$ be a countable set and $f_n \colon X \to \C$ give a pointwise bounded
+sequence of functions, then $\{ f_n \}$ has a subsequence that converges
+pointwise.
+\end{thm}
+
+\begin{proof}
+Let $\{ x_k \}$ be an enumeration of the elements of $X$.
+The sequence $\{ f_n(x_1) \}_{n=1}^\infty$ is bounded and hence
+we have a subsequence which we denote by
+$f_{1,k}$ such that $\{ f_{1,k}(x_1) \}$ converges.
+Next $\{ f_{1,k}(x_2) \}$ has a subsequence that converges and
+we denote that subsequence by
+$\{ f_{2,k}(x_2) \}$.  In general we have a sequence $\{ f_{m,k}
+\}_{k=1}^\infty$
+that makes $\{ f_{m,k}(x_j) \}_{k=1}^\infty$ converge for all $j \leq m$ and we 
+let $\{ f_{m+1,k} \}_{k=1}^\infty$ be the subsequence of $\{ f_{m,k}
+\}_{k=1}^\infty$
+such that
+$\{ f_{m+1,k}(x_{m+1}) \}_{k=1}^\infty$ converges (and hence it converges for all
+$x_j$ for $j=1,2,\ldots,m+1$) and we rinse and repeat.
+
+If $X$ is finite we are done.  If $X$ is countably infinite,
+we pick the sequence
+$\{ f_{k,k} \}$.  This is a subsequence of the original sequence $\{ f_n \}$
+of course.  Also for any $m$,
+except for the first $m$ terms $\{ f_{k,k} \}$ is a subsequence of $\{ f_{m,k}
+\}_{k=1}^\infty$
+and hence for any $m$ the sequence $\{ f_{k,k}(x_m) \}_{k=1}^\infty$ converges.
+\end{proof}
+
+For larger than countable sets,
+we need the functions of the sequence to be related.  We look at
+continuous functions, and the concept we need is equicontinuity.
+
+\begin{defn}
+Let $X$ be a metric space.
+A family $\sF$ of functions $f \colon X \to \C$ is said to be
+\emph{\myindex{equicontinuous}} on $X$ if for every $\epsilon > 0$, there is a $\delta > 0$
+such that if $x, y \in X$ with $d(x,y) < \delta$ we have
+\begin{equation*}
+\sabs{f(x)-f(y)} < \epsilon \qquad \text{ for all $f \in \sF$} .
+\end{equation*}
+\end{defn}
+
+One obvious fact is that if $\sF$ is equicontinuous, then every element of
+$f$ is uniformly continuous.  Also obvious is that any finite set of
+uniformly continuous functions is an equicontinuous family.  Of course the
+interesting case is when $\sF$ is an infinite family such as a sequence of
+functions.  Equicontinuity of a sequence
+is closely related to uniform convergence.
+
+\begin{prop}
+Suppose $(X,d)$ is a compact metric space,
+$f_n \in C(X,\C)$, and $\{ f_n \}$
+converges uniformly, then $\{ f_n \}$ is equicontinuous.
+\end{prop}
+
+\begin{proof}
+Let $\epsilon > 0$ be given.
+As $f_n$ converge uniformly, there is an integer $N$ such that for
+all $n \geq N$ we have
+\begin{equation*}
+\sabs{f_n(x)-f_N(x)} < \nicefrac{\epsilon}{3} \qquad \text{for all $x \in X$}.
+\end{equation*}
+As $X$ is compact and so continuous means
+uniformly continuous,
+$\{ f_1,f_2,\ldots,f_N \}$ is a finite set of uniformly continuous
+functions.  And so, as we mentioned above, it is an equicontinuous family.  Hence
+there is a $\delta > 0$ such that
+\begin{equation*}
+\sabs{f_j(x)-f_j(y)} < \nicefrac{\epsilon}{3} < \epsilon
+\end{equation*}
+whenever $d(x,y) < \delta$ and $1 \leq j \leq N$.
+
+Now take $n > N$.  Then for $d(x,y) < \delta$ we have
+\begin{equation*}
+\sabs{f_n(x)-f_n(y)}
+\leq
+\sabs{f_n(x)-f_N(x)}
++
+\sabs{f_N(x)-f_N(y)}
++
+\sabs{f_N(y)-f_n(y)}
+<
+\nicefrac{\epsilon}{3}
++
+\nicefrac{\epsilon}{3}
++
+\nicefrac{\epsilon}{3}
+=\epsilon . \qedhere
+\end{equation*}
+\end{proof}
+
+\begin{prop}
+A compact metric space $X$ contains a countable dense subset.
+\end{prop}
+
+\begin{proof}
+For each $n \in \N$ there are finitely many
+balls of radius $\nicefrac{1}{n}$ that cover $X$ (as $X$ is compact). That is,
+for every $n$, there exists
+a finite set of points $x_{n,1},x_{n,2},\ldots,x_{n,k_n}$ such that
+\begin{equation*}
+X= \bigcup_{j=1}^{k_n} B(x_{n,j},\nicefrac{1}{n})
+\end{equation*}
+Let $S$ be the set of all the points $x_{n,j}$.  The set $S$ is a countable
+union of finite sets and therefore countable.  For every $x \in X$
+and every $\epsilon > 0$, there exists an $n$ such that
+$\nicefrac{1}{n} < \epsilon$ and an $x_{n,j} \in S$ such that
+\begin{equation*}
+x \in B(x_{n,j},\nicefrac{1}{n}) \subset B(x_{n,j},\epsilon) .
+\end{equation*}
+Hence $x \in \overline{S}$, so $\overline{S} = X$ and $S$ is dense.
+\end{proof}
+
+We are now ready for the main result of this section,
+the Arzel\`a--Ascoli theorem\footnote{%
+Named after the Italian mathematicians
+\href{http://en.wikipedia.org/wiki/Cesare_Arzel\%C3\%A0}{Cesare Arzel\`a}
+(1847--1912), and
+\href{http://en.wikipedia.org/wiki/Giulio_Ascoli}{Giulio Ascoli}
+(1843--1896).} about existence of convergent subsequences.
+
+\begin{thm}[Arzel\`a--Ascoli]\index{Arzel\`a--Ascoli theorem}
+\label{thm:arzelaascoli}
+Let $(X,d)$ be a compact metric space, $f_n \in C(X,\C)$, and let $\{ f_n \}$
+be pointwise bounded and equicontinuous.  Then
+$\{f_n\}$ is uniformly bounded and $\{ f_n \}$ contains a uniformly
+convergent subsequence.
+\end{thm}
+
+Basically, an equicontinuous sequence in the metric space
+$C(X,\C)$ that is pointwise bounded
+is bounded (in $C(X,\C)$) and furthermore contains a convergent
+subsequence in $C(X,\C)$.
+
+\begin{proof}
+Let us first show that the sequence is uniformly bounded.
+
+By equicontinuity we have that there is a $\delta > 0$
+such that for all $x \in X$
+\begin{equation*}
+B(x,\delta) \subset f_n^{-1}\bigl(B(f_n(x),1)\bigr) .
+\end{equation*}
+Now $X$ is compact, so there exists $x_1,x_2,\ldots,x_k$
+such that
+\begin{equation*}
+X = \bigcup_{j=1}^k B(x_j,\delta)
+\end{equation*}
+As $\{ f_n \}$ is pointwise bounded there exist $M_1,M_2,\ldots,M_k$
+such that for $j=1,2,\ldots,k$ we have
+\begin{equation*}
+\sabs{f_n(x_j)} \leq M_j
+\end{equation*}
+for all $n$.  Let $M = 1+ \max \{ M_1,M_2,\ldots,M_k \}$.  Now given any
+$x \in X$, there is a $j$ such that $x \in B(x_j,\delta)$.  Therefore,
+for all $n$ we have
+$x \in f_n^{-1}\bigl(B(f_n(x_j),1)\bigr)$ or in other words
+\begin{equation*}
+\sabs{f_n(x)-f_n(x_j)} < 1 .
+\end{equation*}
+By reverse triangle inequality,
+\begin{equation*}
+\sabs{f_n(x)} < 1+ \sabs{f_n(x_j)} \leq 1+M_j \leq M .
+\end{equation*}
+And as $x$ was arbitrary, $\{f_n\}$ is uniformly bounded.
+
+
+Next, pick a countable dense set $S$.  By \thmref{thm:subsequenceoncountableX}, we find
+a subsequence $\{ f_{n_j} \}$ that converges pointwise on $S$.
+Write $g_j = f_{n_j}$ for simplicity.  Note that $\{ g_n \}$ is 
+equicontinuous.
+
+Let $\epsilon > 0$ be given, then pick $\delta > 0$
+such that for all $x \in X$
+\begin{equation*}
+B(x,\delta) \subset g_n^{-1}\bigl(B(g_n(x),\nicefrac{\epsilon}{3})\bigr).
+\end{equation*}
+By density of $S$, every $x \in X$ is in some $B(y,\delta)$
+for some $y \in S$, and by compactness of $X$,
+there is a finite subset $\{ x_1,x_2,\ldots,x_k \}$ of $S$
+such that
+\begin{equation*}
+X = \bigcup_{j=1}^k B(x_j,\delta) .
+\end{equation*}
+Now as there are finitely many points and we know that $\{ g_n \}$
+converges pointwise on $S$, there exists a single $N$ such that for 
+all $n,m \geq N$ we have for all $j=1,2,\ldots,k$
+\begin{equation*}
+\sabs{g_n(x_j)-g_m(x_j)} < \nicefrac{\epsilon}{3} .
+\end{equation*}
+
+Let $x \in X$ be arbitrary.  There is some $j$ such that
+$x \in B(x_j,\delta)$ and so we have for all $k \in \N$
+\begin{equation*}
+\sabs{g_k(x)-g_k(x_j)} < \nicefrac{\epsilon}{3},
+\end{equation*}
+and so $n,m \geq N$ that
+\begin{equation*}
+\sabs{g_n(x)-g_m(x)} \leq
+\sabs{g_n(x)-g_n(x_j)} +
+\sabs{g_n(x_j)-g_m(x_j)} +
+\sabs{g_m(x_j)-g_m(x)} <
+\nicefrac{\epsilon}{3} +
+\nicefrac{\epsilon}{3} +
+\nicefrac{\epsilon}{3} = \epsilon . \qedhere
+\end{equation*}
+\end{proof}
+
+\begin{cor}
+Let $X$ be a compact metric space.
+Let $S \subset C(X,\C)$ be a closed, bounded and equicontinuous set.
+Then $S$ is compact.
+\end{cor}
+
+The theorem says that $S$
+is sequentially compact and we know that means
+compact in a metric space.
+Recall that the closed unit ball in $C([0,1],\R)$ (and therefore also in
+$C([0,1],\C)$) is not compact.
+Hence it cannot be an equicontinuous set.
+
+\begin{cor}
+Suppose $\{ f_n \}$ is a sequence of differentiable functions on $[a,b]$,
+$\{ f_n' \}$ is uniformly bounded, and there is an
+$x_0 \in [a,b]$ such that $\{ f_n(x_0) \}$ is bounded.
+Then there exists a uniformly convergent
+subsequence $\{ f_{n_j} \}$.
+\end{cor}
+
+\begin{proof}
+The trick is to use the mean value theorem.  If $M$ is the uniform bound on
+$\{ f_n' \}$, then we have by the mean value theorem
+\begin{equation*}
+\sabs{f_n(x)-f_n(y)} \leq M \sabs{x-y} .
+\end{equation*}
+So all the $f_n$ are Lipschitz with the same constant and hence
+equicontinuous.
+
+Suppose $\sabs{f_n(x_0)} \leq M_0$ for all $n$.
+By the inverse triangle inequality, for all $x \in [a,b]$
+\begin{equation*}
+\sabs{f_n(x)} \leq \sabs{f_n(x_0)}+ \sabs{f_n(x)-f_n(x_0)} \leq M_0+ M \sabs{x-x_0}
+\leq M_0 + M(b-a) .
+\end{equation*}
+So $\{ f_n \}$ is uniformly bounded.
+We apply \hyperref[thm:arzelaascoli]{Arzel\`a--Ascoli} to find the subsequence.
+\end{proof}
+
+A consequence of the above corollary and the fundamental theorem of calculus
+is that given some fixed $g \in
+C([0,1],\C)$,
+the set of functions
+\begin{equation*}
+\left\{
+F \in C([0,1],\C) : F(x) = \int_0^x g(t) f(t)~dt,~ f \in C([0,1],\C),~
+\snorm{f}_u \leq 1
+\right\}
+\end{equation*}
+has compact closure, usually called
+\emph{\myindex{relatively compact}} (exercise).
+In other words, the operator $T \colon C([0,1],\C) \to C([0,1],\C)$ given by
+\begin{equation*}
+T\bigl(f\bigr) (x) := F(x) = \int_0^x g(t) f(t)~dt
+\end{equation*}
+takes the unit ball centered at 0 in $C([0,1],\C)$ into a relatively compact set.  We often
+say that this means that the operator is compact, and such operators are very
+important (and very useful).
+
+\subsection{Exercises}
+
+\begin{exercise}
+Let $(X,d)$ be a compact metric space, $C > 0$, $0 < \alpha \leq 1$, and
+suppose $f_n \colon X \to \C$ are functions such as
+$\abs{f_n(x)-f_n(y)} \leq C {d(x,y)}^\alpha$ for all $x,y \in X$ and
+$n \in \N$.  Suppose also that there is a point $p \in X$ such that
+$f_n(p) = 0$.
+Show that there exists a uniformly convergent subsequence converging to
+an $f \colon X \to \C$ that also satisfies $f(p) = 0$ and
+$\abs{f(x)-f(y)} \leq C {d(x,y)}^\alpha$.
+\end{exercise}
+
+\begin{exercise}
+Show that the operator $T \colon C([0,1],\C) \to C([0,1],\C)$ given by
+\begin{equation*}
+T\bigl(f\bigr) (x) := F(x) = \int_0^x g(t) f(t)~dt
+\end{equation*}
+takes the unit ball centered at 0 in $C([0,1],\C)$ into a
+relatively compact set.
+\end{exercise}
+
+\begin{exercise}
+Define $f_n \colon \R \to \R$ by $f_n(x) := \frac{1}{{(x-n)}^2+1}$.  Prove that
+this sequence is uniformly bounded, equicontinuous, the sequence
+converges pointwise to zero, yet there is no
+subsequence that converges uniformly.  Which hypothesis of Arzel{\`a}--Ascoli
+is not satisfied?
+\end{exercise}
+
+\begin{exercise}
+Suppose $S^1 \subset \C$ is the unit circle, that is the set where
+$\sabs{z}=1$.  Suppose the continuous functions
+$f_n \colon S^1 \to \C$ are uniformly bounded.
+Let $\gamma \colon [0,1] \to S^1$ be a parametrization of $S^1$,
+and $g(z,w)$ a continuous function on $C(0,1) \times S^1$.  Define
+the functions $F_n \colon C(0,1) \to \C$ by
+the path integral (See \sectionref{sec:pathintegral})
+\begin{equation*}
+F_n(z) : = \int_\gamma f_n(w)\, g(z,w) ~ ds(w) . 
+\end{equation*}
+Show that $\{ F_n \}$ has a uniformly convergent subsequence.
+\end{exercise}
+
+\begin{exercise}
+Suppose $(X,d)$ is a compact metric space, $\{ f_n \}$ an equicontinuous
+sequence of functions in $C(X,\C)$.  Suppose $\{ f_n \}$ converges
+pointwise.  Show that it converges uniformly.
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{The Stone--Weierstrass theorem}
+\label{sec:stoneweier}
+
+\sectionnotes{2 lectures}
+
+\subsection{Weierstrass approximation}
+
+Perhaps surprisingly, even a very badly behaving continuous function is really
+just a uniform limit of polynomials.  We cannot really get any ``nicer'' as
+a function than a polynomial.
+
+\begin{thm}[Weierstrass approximation theorem]
+If $f \colon [a,b] \to \C$ is continuous, then there exists a sequence $\{
+p_n \}$ of polynomials converging to $f$ uniformly on $[a,b]$.
+Furthermore, if $f$ is real-valued, we can find real-valued $p_n$.
+\end{thm}
+
+\begin{proof}
+For $x \in [0,1]$ define
+\begin{equation*}
+g(x) := f\bigl((b-a)x+a\bigr)-f(a) - x\bigl(f(b)-f(a)\bigr) .
+\end{equation*}
+If we can prove the theorem for $g$ and find the $\{ p_n \}$ for $g$,
+we can prove it for $f$ since we simply
+composed with an invertible affine function and added an affine
+function to $f$, so we can easily reverse the process and apply that to our
+$p_n$, to obtain polynomials approximating $f$.
+
+So $g$ is defined on $[0,1]$ and $g(0)=g(1)=0$.  We now assume that
+$g$ is defined on the whole real line for simplicity by defining
+$g(x) := 0$ if $x < 0$ or $x > 1$.
+
+Define
+\begin{equation*}
+c_n := {\left( \int_{-1}^1 {(1-x^2)}^n~dx \right)}^{-1} ,
+\qquad
+q_n(x) := c_n (1-x^2)^n
+\end{equation*}
+so that $\int_{-1}^1 q_n(x)~dx = 1$.
+See \figureref{fig:weierqn}.
+
+\begin{myfigureht}
+\includegraphics{figures/weierqn}
+\caption{Plot of the approximate delta functions $q_n$ on $[-1,1]$ for
+$n=5,10,15,20,\ldots,100$ with higher $n$ in lighter shade.\label{fig:weierqn}}
+\end{myfigureht}
+
+The functions $q_n$ are peaks around 0 (ignoring what happens outside
+of $[-1,1]$) that get narrower and narrower, but the area underneath is
+always 1.
+A classic approximation idea
+is to do a \emph{\myindex{convolution}} integral with peaks like this.
+That is we 
+write for $x \in [0,1]$,
+\begin{equation*}
+p_n(x) = \int_{0}^1 g(t)q_n(x-t) ~dt \quad \left( = \int_{-\infty}^\infty
+g(t)q_n(x-t) ~dt \right) .
+\end{equation*}
+The idea of this convolution is that we do a ``weighted average'' of the
+function $g$ around the point $x$ using $q_n$ as the weight.
+See \figureref{fig:approxdeltaconv}.
+
+\begin{myfigureht}
+\includegraphics{figures/approxdeltaconv}
+\caption{For $x=0.3$, the plot of $q_{100}(x-t)$ (light gray peak centered
+at $x$), some continuous function
+$g(t)$ (the jagged line) and the product $g(t)q_{100}(x-t)$ (the bold line).\label{fig:approxdeltaconv}}
+\end{myfigureht}
+
+As $q_n$ is a narrow peak, the integral
+only sees the values of $g$ that are
+close to $x$ and it does the weighted average of them.
+When the peak gets narrower, we compute this average closer to $x$
+and we expect the result to get closer to the value of $g(x)$.  Really we are
+approximating what is called a delta function\footnote{which is not actually
+a function} (don't worry if you have not
+heard of this concept),
+and functions like $q_n$ are often called
+\emph{approximate delta functions}\index{approximate delta function}.
+We could really do this with any polynomial that looks like a little peak
+near zero.  This just happens to be the simplest one.
+We only need this behavior on $[-1,1]$ as the convolution sees nothing
+further than this as $g$ is zero outside $[0,1]$.
+
+Because $q_n$ is a polynomial we write
+\begin{equation*}
+q_n(x-t) = a_0(t) + a_1(t)x + \cdots + a_{2n}(t) x^{2n}
+\end{equation*}
+for some functions $a_k(t)$.
+Since the integral is in terms of $t$, the $x$s just pop out
+by linearity of the integral,
+and so we obtain that $p_n$ is a polynomial in $x$.
+Finally if $g(t)$ is real-valued then the functions $g(t)a_j(t)$ are
+real-valued and hence $p_n$ has real coefficients
+(proving the ``furthermore'' part of the theorem).
+
+We still need to prove that the limit of the $p_n$ is $g$.  First we need
+to get some handle on the
+size of $c_n$.  For $x \in [0,1]$,
+\begin{equation*}
+{(1-x^2)}^n \geq (1-nx^2) .
+\end{equation*}
+This fact is an application of Bernoulli's inequality (\volIref{Exercise
+1.2.13 of volume I}) or can be 
+proved directly:
+the two expressions are equal at $x=0$ and 
+$\frac{d}{dx}\left({(1-x^2)}^n - (1-nx^2)\right)
+=-2nx{(1-x^2)}^{n-1}+2nx$, which is nonnegative for $x \in [0,1]$.
+Furthermore $1-nx^2 \geq 0$ for $x \in [0,\nicefrac{1}{\sqrt{n}}]$.
+\begin{multline*}
+c_n^{-1}  = \int_{-1}^1 {(1-x^2)}^n ~ dx
+= 2\int_0^1 {(1-x^2)}^n ~ dx \\
+\geq 2\int_0^{1/\sqrt{n}} {(1-x^2)}^n ~ dx
+\geq 2\int_0^{1/\sqrt{n}} (1-nx^2)  ~ dx
+= \frac{4}{3\sqrt{n}}
+> \frac{1}{\sqrt{n}} .
+\end{multline*}
+so $c_n < \sqrt{n}$.
+
+Let's see how small $g$ is if we ignore some small bit around the origin,
+which is where the peak is.
+Given any $\delta > 0$, $\delta < 1$, we have for $\delta \leq \sabs{x} \leq
+1$
+\begin{equation*}
+q_n(x) \leq \sqrt{n}{(1-\delta^2)}^n .
+\end{equation*}
+Then it is easy to see (e.g.\ by the ratio test) that
+$\sqrt{n}{(1-\delta^2)}^n$ goes to 0 as $n$ goes to infinity.
+The function $q_n$ is even, $q_n(t) = q_n(-t)$, and $g$
+is zero outside of $[0,1]$.
+So for $x \in [0,1]$,
+\begin{equation*}
+p_n(x) = 
+\int_{0}^1 g(t)q_n(x-t)  ~ dt
+=
+\int_{-x}^{1-x} g(t+x)q_n(-t)  ~ dt
+=
+\int_{-1}^{1} g(t+x)q_n(t)  ~ dt .
+\end{equation*}
+
+Let $\epsilon > 0$ be given.
+As $[-1,2]$ is compact and $g$ is continuous on $[-1,2]$, we have that $g$ is uniformly continuous.
+Pick $0 < \delta < 1$ such that if
+$\sabs{x-y} < \delta$ (and $x,y \in [-1,2]$) then
+\begin{equation*}
+\sabs{g(x)-g(y)} < \frac{\epsilon}{2} .
+\end{equation*}
+
+Let $M$ be such that $\sabs{g(x)} \leq M$ for all $x$.  Let $N$ be
+such that for all $n \geq N$,
+\begin{equation*}
+4M\sqrt{n}{(1-\delta^2)}^n < \frac{\epsilon}{2} .
+\end{equation*}
+
+Note that 
+$\int_{-1}^1 q_n(t) ~ dt = 1$ and $q_n(x) \geq 0$ on $[-1,1]$ so
+\begin{equation*}
+\begin{split}
+\sabs{p_n(x)-g(x)} & =
+\abs{\int_{-1}^1 g(t+x)q_n(t) ~ dt
+-g(x)\int_{-1}^1 q_n(t) ~ dt} \\
+& =
+\abs{\int_{-1}^1 \bigl(g(t+x)-g(x)\bigr)q_n(t) ~ dt} \\
+& \leq
+\int_{-1}^1 \sabs{g(t+x)-g(x)} q_n(t) ~ dt \\
+& =
+\int_{-1}^{-\delta} \sabs{g(t+x)-g(x)} q_n(t) ~ dt
++
+\int_{-\delta}^{\delta} \sabs{g(t+x)-g(x)} q_n(t) ~ dt
+\\
+& \phantom{\leq} +
+\int_{\delta}^1 \sabs{g(t+x)-g(x)} q_n(t) ~ dt \\
+& \leq
+2M
+\int_{-1}^{-\delta} q_n(t) ~ dt
++
+\frac{\epsilon}{2}
+\int_{-\delta}^{\delta} q_n(t) ~ dt
++
+2M
+\int_{\delta}^1 q_n(t) ~ dt \\
+& \leq
+2M\sqrt{n}{(1-\delta^2)}^n(1-\delta)
++
+\frac{\epsilon}{2}
++
+2M\sqrt{n}{(1-\delta^2)}^n(1-\delta) \\
+& <
+4M\sqrt{n}{(1-\delta^2)}^n
++
+\frac{\epsilon}{2}
+< \epsilon . \qedhere
+\end{split}
+\end{equation*}
+\end{proof}
+
+Let us note an immediate application of the Weierstrass theorem.  We have
+already seen that countable dense subsets can be very useful.
+
+\begin{cor}
+The metric space $C([a,b],\C)$ contains a countable dense subset.
+\end{cor}
+
+\begin{proof}
+Without loss of generality suppose that we are dealing with $C([a,b],\R)$
+(why?).
+The real polynomials are dense in $C([a,b],\R)$.  If we show that
+any real polynomial can be approximated by polynomials with rational
+coefficients, we are done.  This is because there are only countably many
+rational numbers and so there are only countably many polynomials with
+rational coefficients (a countable union of countable sets is still
+countable).
+
+Further without loss of generality, suppose $[a,b]=[0,1]$.  Let
+\begin{equation*}
+p(x) = \sum_{k=0}^n a_k x^k
+\end{equation*}
+be a polynomial of degree $n$ where $a_k \in \R$.  Given $\epsilon > 0$, pick $b_k \in \Q$
+such that $\sabs{a_k-b_k} < \frac{\epsilon}{n+1}$.  Then
+if we let
+\begin{equation*}
+q(x) = \sum_{k=0}^n b_k x^k
+\end{equation*}
+we have
+\begin{equation*}
+\sabs{p(x)-q(x)}
+=
+\abs{\sum_{k=0}^n (a_k-b_k) x^k}
+\leq
+\sum_{k=0}^n \sabs{a_k-b_k} x^k
+\leq
+\sum_{k=0}^n \sabs{a_k-b_k}
+<
+\sum_{k=0}^n \frac{\epsilon}{n+1} = \epsilon . \qedhere
+\end{equation*}
+\end{proof}
+
+\begin{remark}
+%\textbf{Funky remark:}
+While we will not prove this, the above corollary implies that
+$C([a,b],\C)$ has the same cardinality as $\R$, which may be a
+bit surprising.  The set of all functions $[a,b] \to \C$ has
+cardinality that is strictly greater than the cardinality of $\R$, it has the
+cardinality of the power set of $\R$.  So the
+set of continuous functions is a very tiny subset of the set of all
+functions.
+\end{remark}
+
+\subsection{Stone-Weierstrass approximation}
+
+Next thing we do is that we want to abstract away what is not really
+necessary and prove a general version of this theorem.
+The polynomials are dense in the space of continuous
+functions on a compact interval.  So what kind of families of
+functions are also dense?  Furthermore, what if we let the domain be an
+arbitrary metric space, then we no longer have polynomials.
+
+The resulting theorem is the Stone--Weierstrass theorem\footnote{%
+Named after the American mathematician
+\href{http://en.wikipedia.org/wiki/Marshall_Harvey_Stone}{Marshall Harvey Stone}
+(1903--1989), and the German mathematician
+\href{http://en.wikipedia.org/wiki/Karl_Weierstrass}{Karl Theodor Wilhelm Weierstrass}
+(1815--1897).}.
+We need a
+special case of the Weierstrass theorem though.
+
+\begin{cor}
+Let $[-a,a]$ be an interval.  Then there is a sequence of real polynomials
+$\{ p_n \}$ that converges uniformly to $\sabs{x}$ on $[-a,a]$ and such that
+$p_n(0) = 0$ for all $n$.
+\end{cor}
+
+\begin{proof}
+As $f(x) = \sabs{x}$ is continuous and real-valued
+on $[-a,a]$ we definitely have some
+real polynomials $\widetilde{p}_n$ that converge to $f$.
+Let
+\begin{equation*}
+p_n(x) = \widetilde{p}_n(x) - \widetilde{p}_n(0) .
+\end{equation*}
+Obviously $p_n(0) = 0$.
+
+We know
+$\lim \widetilde{p}_n(0) = 0$.  Given $\epsilon > 0$, let $N$ be such that
+for $n \geq N$ we have $\sabs{\widetilde{p}_n(0)} < \nicefrac{\epsilon}{2}$
+and also that $\bigl\lvert\widetilde{p}_n(x)-\sabs{x}\big\rvert < \nicefrac{\epsilon}{2}$.
+Now
+\begin{equation*}
+\bigl\lvert p_n(x)-\sabs{x} \bigr\rvert
+=
+\bigl\lvert \widetilde{p}_n(x) - \widetilde{p}_n(0) - \sabs{x} \bigr\rvert
+\leq
+\bigl\lvert \widetilde{p}_n(x) - \sabs{x} \bigr\rvert + \sabs{\widetilde{p}_n(0)} < 
+\nicefrac{\epsilon}{2} + \nicefrac{\epsilon}{2} = \epsilon . \qedhere
+\end{equation*}
+\end{proof}
+
+Following the proof of the theorem,
+we see that we can always make the polynomials from the Weierstrass theorem
+have a fixed value at one point, so it works not just for $\sabs{x}$.
+
+\begin{defn}
+A family $\sA$ of complex-valued functions $f \colon X \to \C$ is said to be an 
+\emph{\myindex{algebra}} (sometimes
+\emph{\myindex{complex algebra}} or \emph{algebra over $\C$}) if for all $f, g \in \sA$ and $c \in \C$ we have
+\begin{enumerate}[(i)]
+\item $f+g \in \sA$,
+\item $fg \in \sA$, and
+\item $cg \in \sA$.
+\end{enumerate}
+A \emph{\myindex{real algebra}} or an
+\emph{algebra over $\R$} is a family of real-valued
+functions that satisfies the three properties above for $c \in \R$
+\end{defn}
+
+We are interested in the case when
+$X$ is a compact metric space.  Then
+we have that $C(X,\C)$ and $C(X,\R)$ are metric spaces.
+Given a set $\sA \subset C(X,\C)$, the set of all uniform
+limits is the metric space closure $\overline{\sA}$.
+When we talk about closure of an algebra
+from now on we will mean the closure in $C(X,\C)$
+as a metric space.  Same for $C(X,\R)$.
+
+The set $\sP$ of all polynomials is an algebra in
+$C([a,b],\C)$, and we
+have shown that its closure $\overline{\sP} = C([a,b],\C)$.
+That is, it is dense.  That is the sort of result that we wish to prove.
+
+We leave the following proposition as an exercise.
+
+\begin{prop} \label{prop:closureofalgebra}
+Suppose $X$ is a compact metric space.
+If $\sA \subset C(X,\C)$ an algebra, then the closure $\overline{\sA}$ is also an algebra.
+Similarly for a real algebra in $C(X,\R)$.
+\end{prop}
+
+
+%%
+%% FIXME: only need this in a metric space setting, should really whack this
+%% Really only need this for algebras in $C(X,\C)$ for compact X.
+%% It's what the above Proposition does.
+%%
+%
+%\begin{thm}
+%Let $\sA$ be an algebra of bounded functions on a set $X$, and let $\sB$
+%be its uniform closure.  Then $\sB$ is a uniformly closed algebra.
+%\end{thm}
+%
+%\begin{proof}
+%Let $f, g \in \sB$ and $c \in \C$.  Then there are uniformly convergent
+%sequences of functions $\{ f_n \}$, $\{ g_n \}$ in $\sA$ such that
+%$f$ is the uniform limit of $\{ f_n \}$ and
+%$g$ is the uniform limit of $\{ g_n \}$.
+%
+%What we want is to show that $f_n+g_n$ converges uniformly to $f+g$,
+%$f_ng_n$ converges uniformly to $fg$, and
+%$cf_n$ converges uniformly to $cf$.  As $f$ and $g$ are bounded, then
+% $\{ f_n \}$ and $\{ g_n \}$ are also uniformly bounded.
+%Hence there is a single number $M$ such that for all $x \in X$ and all $n
+%\in \N$,
+%\begin{equation*}
+%\sabs{f_n(x)} \leq M, \qquad
+%\sabs{g_n(x)} \leq M, \qquad
+%\sabs{f(x)} \leq M, \qquad \text{and} \qquad
+%\sabs{g(x)} \leq M.
+%\end{equation*}
+%
+%The following estimates are enough to show uniform convergence.
+%\begin{equation*}
+%\abs{\bigl(f_n(x)+g_n(x)\bigr)
+%-\bigl(f(x)+g(x)\bigr)}
+%\leq
+%\sabs{f_n(x)-f(x)}
+%+\sabs{g_n(x)-g(x)}
+%\end{equation*}
+%and
+%\begin{equation*}
+%\begin{split}
+%\sabs{f_n(x)g_n(x)-f(x)g(x)}
+%& \leq
+%\sabs{f_n(x)g_n(x)-f_n(x)g(x)}
+%+\sabs{f_n(x)g(x)-f(x)g(x)}
+%\\
+%& \leq
+%M \sabs{g_n(x)-g(x)}
+%+M \sabs{f_n(x)-f(x)}
+%\end{split}
+%\end{equation*}
+%and
+%\begin{equation*}
+%\sabs{cf_n(x)-cf(x)}
+%=
+%\sabs{c}\,
+%\sabs{f_n(x)-f(x)} .
+%\end{equation*}
+%Hence $f+g \in \sB$, $fg \in \sB$ and $cf \in \sB$.
+%
+%Next we want to show that $\sB$ is uniformly closed.
+%Suppose $\{ f_n \}$ is a sequence in $\sB$ converging
+%uniformly to some function $f \colon X \to \C$.
+%As $\sB$ is the closure of $\sA$ we find a $g_n \in \sA$ for
+%every $n$ such that for all $x \in X$ we have
+%\begin{equation*}
+%\sabs{f_n(x)-g_n(x)} < \nicefrac{1}{n}
+%\end{equation*}
+%So given $\epsilon > 0$ find $N$ such that for all $n \geq N$
+%we have $\sabs{f_n(x)-f(x)} < \nicefrac{\epsilon}{2}$ and
+%also such that $\nicefrac{1}{n} < \nicefrac{\epsilon}{2}$.  Then
+%\begin{equation*}
+%\sabs{g_n(x)-f(x)}
+%\leq
+%\sabs{g_n(x)-f_n(x)}
+%+
+%\sabs{f_n(x)-f(x)}
+%< \nicefrac{1}{n} + \nicefrac{\epsilon}{2} < \epsilon .  \qedhere
+%\end{equation*}
+%\end{proof}
+%
+%Or if we had shown that the set of bounded functions on $X$ is a metric
+%space, then the last assertion would follow directly as in a metric space
+%closure of a closed set is the set itself. (Rudin does this).
+
+
+
+Let us distill the properties of polynomials that were sufficient
+for an approximation theorem.
+
+\begin{defn}
+Let $\sA$ be a family of complex-valued functions defined on a set $X$.
+\begin{enumerate}[(i)]
+\item $\sA$ \emph{\myindex{separates points}}
+if for every $x,y \in X$, with $x \not= y$ there is a function $f \in \sA$ such that
+$f(x) \not= f(y)$.
+\item 
+$\sA$ \emph{\myindex{vanishes at no point}} if for every $x \in X$
+there is an $f \in \sA$ such that $f(x) \not= 0$.
+\end{enumerate}
+\end{defn}
+
+\begin{example}
+The set $\sP$ of polynomials separates points and vanishes at no point
+on $\R$.  That is, $1 \in \sP$ so it vanishes at no point.  And for $x,y \in
+\R$, $x\not= y$, just take $f(t) := t-x$: $f(x) = 0$ and $f(y) = y-x
+\not= 0$.
+\end{example}
+
+\begin{example}
+The set of functions of the form
+\begin{equation*}
+f(t) = C + \sum_{n=1}^k \cos(nt)
+\end{equation*}
+does not separate points if the domain is any interval of the form
+$[-a,a]$, because $f(-t) = f(t)$ for all $t$.
+It does separate points if the domain is $[0,\pi]$, as $\cos(t)$
+is one-to-one on that set.
+\end{example}
+
+\begin{example}
+The set of polynomials with no constant term vanishes at the origin.
+\end{example}
+
+\begin{prop} \label{prop:SWinterpolate}
+Suppose $\sA$ is an algebra of functions on a set $X$, that separates points
+and vanishes at no point.  Suppose $x,y$ are distinct points of $X$ and
+$c,d \in \C$.  Then there is an $f \in \sA$ such that
+\begin{equation*}
+f(x) = c, \qquad f(y) = d .
+\end{equation*}
+If $\sA$ is a real algebra, the conclusion also holds for $c,d \in \R$.
+\end{prop}
+
+\begin{proof}
+There must exist an $g,h,k \in \sA$
+such that 
+\begin{equation*}
+g(x) \not= g(y), \quad h(x) \not= 0, \quad k(y) \not= 0 .
+\end{equation*}
+Write
+\begin{equation*}
+f = 
+c
+\frac{\bigl(g - g(y)\bigr)h}{\bigl(g(x)-g(y)\bigr)h(x) } + 
+d
+\frac{\bigl(g - g(x)\bigr)k}{\bigl(g(y)-g(x)\bigr)k(y)}
+=
+c
+\frac{gh - g(y)h}{g(x)h(x)-g(y)h(x) } + 
+d
+\frac{gk - g(x)k}{g(y)k(y)-g(x)k(y)} .
+\end{equation*}
+Do note that we are not dividing by zero (clear from the first formula).
+Also from the first formula we see that $f(x) = c$ and $f(y) = d$.
+By the second formula we see that $f \in \sA$ (as $\sA$ is an algebra).
+\end{proof}
+
+\begin{thm}[Stone--Weierstrass, real version]
+\label{thm:SWreal}
+\index{Stone--Weierstrass!real version}
+Let $X$ be a compact metric space and $\sA$ an algebra of real-valued
+continuous functions on $X$, such that $\sA$ separates points and vanishes at
+no point.  Then the closure $\overline{\sA} = C(X,\R)$.
+\end{thm}
+
+The proof is divided into several claims.
+
+\medskip
+
+\noindent
+\textbf{Claim 1:} \emph{If $f \in \overline{\sA}$ then $\sabs{f} \in
+\overline{\sA}$.}
+
+\begin{proof}
+The function $f$ is bounded (continuous on a compact set), so there is an $M$
+such that $\sabs{f(x)} \leq M$ for all $x \in X$.
+
+Let $\epsilon > 0$ be given.  By the corollary to the Weierstrass theorem there
+exists a real polynomial $c_1 y + c_2 y^2 + \cdots+ c_n y^n$ (vanishing at
+$y=0$) such that
+\begin{equation*}
+\abs{\sabs{y} - \sum_{j=1}^N c_j y^j} < \epsilon
+\end{equation*}
+for all $y \in [-M,M]$.
+Because $\sA$ is an algebra (there is no constant term in the polynomial)
+we have
+\begin{equation*}
+g = \sum_{j=1}^N c_j f^j \in \sA .
+\end{equation*}
+As $\sabs{f(x)} \leq M$ we have that
+\begin{equation*}
+\bigl\lvert\sabs{f(x)} - g(x)\bigr\rvert
+=
+\abs{\sabs{f(x)} - \sum_{j=1}^N c_j {\bigl(f(x)\bigr)}^j}
+< \epsilon .
+\end{equation*}
+So $\sabs{f}$ is in the closure of $\overline{\sA}$, which is closed, so $\sabs{f} \in
+\overline{\sA}$.
+\end{proof}
+
+\medskip
+
+\noindent
+\textbf{Claim 2:} \emph{If $f \in \overline{\sA}$ and $g \in \overline{\sA}$ then
+$\max(f,g) \in \overline{\sA}$ and
+$\min(f,g) \in \overline{\sA}$, where
+}
+\begin{equation*}
+\bigl(\max(f,g)\bigr) (x) = \max \{ f(x), g(x) \} \qquad
+\bigl(\min(f,g)\bigr) (x) = \min \{ f(x), g(x) \} .
+\end{equation*}
+
+\begin{proof}
+Write:
+\begin{equation*}
+\max(f,g) = \frac{f+g}{2} + \frac{\sabs{f-g}}{2} ,
+\end{equation*}
+and
+\begin{equation*}
+\min(f,g) = \frac{f+g}{2} - \frac{\sabs{f-g}}{2} .
+\end{equation*}
+As $\overline{\sA}$ is an algebra we are done.
+\end{proof}
+
+The claim is true for the minimum or maximum of any finite
+collection of functions as well.
+
+\medskip
+
+\noindent
+\textbf{Claim 3:} \emph{Given $f \in C(X,\R)$, $x \in X$ and $\epsilon > 0$
+there exists a $g_x \in \overline{\sA}$ with $g_x(x) = f(x)$ and
+}
+\begin{equation*}
+g_x(t) > f(t)-\epsilon \qquad \text{for all $t \in X$}.
+\end{equation*}
+
+\begin{proof}
+Let $x \in X$ be fixed.
+By \propref{prop:SWinterpolate}, for every $y \in X$ we find an $h_y \in
+\sA$ such that
+\begin{equation*}
+h_y(x) = f(x), \qquad h_y(y)=f(y) .
+\end{equation*}
+As $h_y$ and $f$ are continuous, the set
+\begin{equation*}
+J_y = \{ t \in X : h_y(t) > f(t) -\epsilon \}
+\end{equation*}
+is open (it is the inverse image of an open set by a continuous function).
+Furthermore $y \in J_y$.  So the sets $J_y$ cover $X$.
+
+Now $X$ is compact so there exist finitely many points $y_1,y_2,\ldots,y_n$ such
+that
+\begin{equation*}
+X = \bigcup_{j=1}^n J_{y_j}  .
+\end{equation*}
+Let 
+\begin{equation*}
+g_x = \max(h_{y_1},h_{y_2},\ldots,h_{y_n})
+\end{equation*}
+By Claim 2, $g_x$ is in $\overline{\sA}$.
+It is easy to see that
+\begin{equation*}
+g_x(t) > f(t) -\epsilon
+\end{equation*}
+for all $t \in X$, since for any $t$ there was at least one $h_{y_j}$ for
+which this was true.
+
+Furthermore $h_y(x) = f(x)$ for all $y \in X$, so
+$g_x(x) = f(x)$.
+\end{proof}
+
+\medskip
+
+\noindent
+\textbf{Claim 4:} \emph{If $f \in C(X,\R)$ and $\epsilon > 0$ is given then there
+exists an $h \in \overline{\sA}$ such that}
+\begin{equation*}
+\sabs{f(x) - h(x)} < \epsilon .
+\end{equation*}
+
+\begin{proof}
+For any $x$ find function $g_x$ as in Claim 3.
+
+Let
+\begin{equation*}
+V_x = \bigl\{ t \in X : g_x(t) < f(t) + \epsilon \bigr\}.
+\end{equation*}
+The sets $V_x$ are open as $g_x$ and $f$ are continuous.
+Furthermore as $g_x(x) = f(x)$, $x \in V_x$, and so the sets $V_x$ cover $X$.  Thus
+there
+are finitely many points $x_1,x_2,\ldots,x_n$ such that
+\begin{equation*}
+X = \bigcup_{j=1}^n V_{x_j} .
+\end{equation*}
+Now let
+\begin{equation*}
+h := \min(g_{x_1},g_{x_2},\ldots,g_{x_n}) .
+\end{equation*}
+By Claim 2, $h \in \overline{\sA}$.  Similarly as before (same argument as in
+Claim 3) we have that for all
+$t \in X$
+\begin{equation*}
+h(t) < f(t) + \epsilon .
+\end{equation*}
+Since all the $g_x$ satisfy $g_x(t) > f(t) - \epsilon$ for all $t \in X$, so does $h$.
+Therefore, for all $t$
+\begin{equation*}
+-\epsilon < h(t) - f(t) < \epsilon ,
+\end{equation*}
+which is the desired conclusion.
+\end{proof}
+
+The proof of the theorem follows from Claim 4.  The claim states that an
+arbitrary continuous function is in the closure of $\overline{\sA}$,
+which itself is
+closed.  So the theorem is proved.
+
+\begin{example}
+The functions of the form
+\begin{equation*}
+f(t) = \sum_{j=1}^n c_j \, e^{jt},
+\end{equation*}
+for $c_j \in \R$,
+are dense in $C([a,b],\R)$.  We need to note that such functions are a real
+algebra, which follows from $e^{jt} e^{kt} = e^{(j+k)t}$.  They separate
+points as $e^t$ is one-to-one, and $e^t > 0$ for all $t$ so the algebra
+does not vanish at any point.
+\end{example}
+
+In general if we have a family of functions that separates points and does
+not vanish at any point, we can let these functions
+\emph{generate}\index{generate an algebra}
+an algebra
+by considering all the linear combinations of arbitrary multiples of such
+functions.  That is, we consider all real polynomials without constant term
+of such functions.  For example above,
+the algebra is generated by $e^t$, we simply
+consider polynomials in $e^t$.
+
+Warning!
+You could similarly show that the set of all functions of the form
+\begin{equation*}
+\frac{a_0}{2} +
+\sum_{n=1}^N a_n \cos(nt)
+\end{equation*}
+is an algebra (you would have to use some trig identities to show this).
+When considered on $[0,\pi]$, the
+algebra separates points and vanishes nowhere so
+\hyperref[thm:SWreal]{Stone--Weierstrass} applies.
+You \emph{do not} want to conclude from this that every continuous
+function on $[0,\pi]$ has a uniformly convergent
+Fourier cosine series.  That is not true.
+In fact there exist continuous functions
+whose Fourier series does not converge even pointwise.  We do have formulas
+for the coefficients, but those coefficients not give us a convergent
+series.  The
+trick is that the sequence of functions in the algebra that we obtain
+by Stone--Weierstrass
+is not necessarily the sequence of partial sums of a series.
+
+Same warning applies to polynomials as well.  Just because a function is a
+uniform limit of polynomials doesn't mean that it is a uniform limit of a
+power series.
+
+To obtain Stone--Weierstrass for complex algebras, we must
+make an extra assumption.
+
+\begin{defn}
+An algebra $\sA$ is self-adjoint, if for all $f \in \sA$, the function
+$\bar{f}$ defined by $\bar{f}(x) := \overline{f(x)}$ is in $\sA$, where by the
+bar we mean the complex conjugate.
+\end{defn}
+
+\begin{thm}[Stone--Weierstrass, complex version]
+\label{thm:SWcomplex}
+\index{Stone--Weierstrass!complex version}
+Let $X$ be a compact metric space and $\sA$ an algebra of complex-valued
+continuous functions on $X$, such that $\sA$ separates points, vanishes at
+no point, and is self-adjoint.  Then the closure $\overline{\sA} = C(X,\C)$.
+\end{thm}
+
+\begin{proof}
+Suppose $\sA_\R \subset \sA$ is the set of the real-valued elements of
+$\sA$.  If $f = u+iv$ where $u$ and $v$ are real-valued, then
+\begin{equation*}
+u = \frac{f+\bar{f}}{2}, \qquad
+v = \frac{f-\bar{f}}{2i} .
+\end{equation*}
+So $u, v \in \sA$ as $\sA$ is a self-adjoint algebra, and since they are
+real-valued we get that $u, v \in \sA_\R$.
+
+If $x \not= y$, then find an $f \in \sA$ such that $f(x) \not= f(y)$.  If $f
+= u+iv$, then it is obvious that either $u(x) \not= u(y)$ or $v(x) \not=
+v(y)$.  So $\sA_\R$ separates points.
+
+Similarly, for any $x$ find $f \in \sA$ such that $f(x) \not= 0$.  If $f
+= u+iv$, then either $u(x) \not= 0$ or $v(x) \not= 0$.
+So $\sA_\R$ vanishes at no point.
+
+The set $\sA_\R$ is a real algebra, and satisfies the hypotheses of the
+\hyperref[thm:SWreal]{real Stone--Weierstrass theorem}.  So given any $f = u+iv \in C(X,\C)$,
+we find $g,h \in \sA_\R$ such that
+$\sabs{u(t)-g(t)} < \nicefrac{\epsilon}{2}$ and
+$\sabs{v(t)-h(t)} < \nicefrac{\epsilon}{2}$ for all $t \in X$.  So
+\begin{multline*}
+\abs{f(t) - \bigl(g(t)+ih(t)\bigr)} = 
+\abs{u(t)+iv(t) - \bigl(g(t)+ih(t)\bigr)} \\
+\leq
+\sabs{u(t)-g(t)}+\sabs{v(t)-h(t)} < \nicefrac{\epsilon}{2} +
+\nicefrac{\epsilon}{2} = \epsilon.
+\end{multline*}
+for all $t \in X$.
+So $\overline{\sA} = C(X,\C)$.
+\end{proof}
+
+The self-adjoint requirement is necessary although it is not so obvious to
+see it.  For an example see \exerciseref{exercise:selfadjointSW}.
+
+%FIXME: An example of why we need the self-adjoint will be in the homework.
+%?? FIXME: add exercise this requires Cauchy integral, so perhaps not
+
+Here is an interesting application.  We'll do it for the complex version, but
+the same thing can be done with the real version.  It turns out when working
+with functions of two variables, one would really like to work with functions
+of the form $f(x)g(y)$ rather than $F(x,y)$.  We can't quite do that, but we
+do have the following.
+
+\begin{example}
+Any continuous function $F \colon [0,1] \times [0,1] \to \C$ can be
+approximated uniformly by functions of the form
+\begin{equation*}
+\sum_{j=1}^n f_j(x) g_j(y)
+\end{equation*}
+where $f_j \colon [0,1] \to \C$ and $g_j \colon [0,1] \to \C$ are continuous.
+
+\emph{Proof:}
+It is not hard to see that the functions of the above form are a complex
+algebra.  It is equally easy to show that they vanish nowhere, separate
+points, and the algebra is self-adjoint.  As $[0,1] \times [0,1]$ is compact
+we apply \hyperref[thm:SWcomplex]{Stone--Weierstrass} to obtain the result.
+\end{example}
+
+\subsection{Exercises}
+
+\begin{exercise}
+Prove \propref{prop:closureofalgebra}.
+Hint: If $\{ f_n \}$ is a sequence in $C(X,\R)$
+converging to $f$, then as $f$ is bounded, you can show
+that $f_n$ is uniformly bounded, that is, there exists a
+single bound for all $f_n$ (and $f$).
+\end{exercise}
+
+\begin{exercise}
+Suppose $X := \R$ (not compact in particular).
+Show that $f(t) := e^t$ is not possible to uniformly approximate
+by polynomials on $X$.  Hint: Consider $\abs{\frac{e^t}{t^n}}$
+as $t \to \infty$.
+\end{exercise}
+
+\begin{exercise}
+Suppose $f \colon [0,1] \to \C$ is a uniform limit of a sequence of polynomials
+of degree at most $d$, then the limit is a polynomial of degree at most $d$.
+Conclude that to approximate a function which is not a polynomial, we
+need the degree of the approximations to go to infinity.\\
+Hint: Consider a uniformly Cauchy sequence of polynomials of degree at most
+$d$.  Show that the coefficients are are Cauchy sequences.
+\end{exercise}
+
+\begin{exercise}
+Suppose $f \colon [0,1] \to \R$ is continuous and
+$\int_0^1 f(x) x^n ~dx = 0$ for all $n = 0,1,2,\ldots$.
+Show that $f(x) = 0$ for all $x \in [0,1]$.
+Hint: approximate by polynomials to show that $\int_0^1 {\bigl( f(x)
+\bigr)}^2 ~ dx = 0$.
+\end{exercise}
+
+\begin{exercise}
+Suppose $I \colon C([0,1],\R) \to \R$ is 
+a linear continuous function such that
+$I(x^n) = \frac{1}{n+1}$
+for all $n=0,1,2,3,\ldots$.
+Prove that $I(f) = \int_0^1 f$ for all $f \in C([0,1],\R)$.
+\end{exercise}
+
+\begin{exercise}
+Let $\sA$ be the collection of real polynomials in $x^2$,
+that is polynomials of the form
+$c_0 + c_1 x^2 + c_2 x^4 + \cdots + c_d x^{2d}$.
+\begin{enumerate}[a)]
+\item
+Show that every $f \in C([0,1],\R)$ is a uniform limit of
+polynomials from $\sA$.
+\item
+Find an $f \in  C([-1,1],\R)$ that is not a
+uniform limit of
+polynomials from $\sA$.
+\item
+Which hypothesis of the real Stone-Weierstrass is not satisfied
+for the domain $[-1,1]$?
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Let $\sabs{z}=1$ define the unit circle $S^1 \subset \C$.
+\begin{enumerate}[a)]
+\item
+Show that functions of the form
+\begin{equation*}
+\sum_{k=-n}^n c_k z^k
+\end{equation*}
+are dense in $C(S^1,\C)$.  Notice the negative powers.
+\item 
+Show that functions of the form
+\begin{equation*}
+c_0
++
+\sum_{k=1}^n c_k z^k
++
+\sum_{k=1}^n d_k \bar{z}^k
+\end{equation*}
+are dense in $C(S^1,\C)$.  These are so-called harmonic polynomials,
+and this approximation leads for example to the solution of the
+steady state heat problem.
+\end{enumerate}
+Hint: A good way to write the equation for $S^1$ is $z \bar{z} = 1$.
+\end{exercise}
+
+\begin{exercise}
+%Suppose we already know the complex exponential
+%$e^{it} = \cos(t) + i \sin
+%(t)$, that
+%${\bigl(e^{it}\bigr)}^n = e^{int}$,
+%and that
+%$\overline{e^{it}} = e^{-it}$ (all things
+%we will prove in \sectionref{sec:complexexp}).
+Show that for complex numbers $c_j$, the set of functions
+of $x$ on $[-\pi,\pi]$
+of the form
+\begin{equation*}
+\sum_{k=-n}^n c_k e^{ik x}
+\end{equation*}
+satisfies the hypotheses of the complex Stone-Weierstrass theorem
+and therefore such functions are dense in the $C([-\pi,\pi],\C)$.
+\end{exercise}
+
+
+\begin{samepage}
+\begin{exercise} \label{exercise:selfadjointSW}
+%Again suppose we already know the complex exponential
+%$e^{it} = \cos(t) + i \sin (t)$, that
+%${\bigl(e^{it}\bigr)}^n = e^{int}$, that
+%$\overline{e^{it}} = e^{-it}$, and that
+%$e^{z+w} = e^z e^w$ (all things
+%we will prove in \sectionref{sec:complexexp}).
+Let $S^1 \subset \C$ be the unit circle, that is the set where
+$\sabs{z} = 1$.  Orient this set counterclockwise.
+Let $\gamma(t) := e^{it}$.
+For the one-form $f(z)~dz$ we write\footnote{%
+One could also define $dz := dx + i \, dy$ and then
+extend the path integral from \chapterref{path:chapter} to complex-valued
+one-forms.}
+\begin{equation*}
+\int_{S^1} f(z) ~dz := \int_0^{2\pi} f(e^{it}) \, i e^{it} ~ dt . 
+\end{equation*}
+\begin{enumerate}[a)]
+\item
+Prove that for all nonnegative integers $k = 0,1,2,3,\ldots$ we have
+$\int_{S^1} z^k ~ dz = 0$.
+\item
+Prove that if
+$P(z) = \sum_{k=0}^n c_k z^k$ is any
+polynomial in $z$, then
+$\int_{S^1} P(z) ~ dz = 0$.
+\item
+Prove
+$\int_{S^1} \bar{z} ~ dz \not= 0$.
+\item
+Conclude that polynomials in $z$ (this algebra of functions is
+not self-adjoint) are not dense in $C(S^1,\C)$.
+\end{enumerate}
+\end{exercise}
+\end{samepage}
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
