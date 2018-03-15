@@ -71,7 +71,7 @@ Define the
 \glsadd{not:conj}
 \emph{\myindex{complex conjugate}} as
 \begin{equation*}
-\widebar{z} := x-iy .
+\bar{z} := x-iy .
 \end{equation*}
 \glsadd{not:modulus}
 Similarly define \emph{\myindex{modulus}} as
@@ -87,7 +87,7 @@ We note that the real numbers are precisely those for which the imaginary
 part $y=0$.  In particular they are precisely those numbers which satisfy
 the equation
 \begin{equation*}
-z = \widebar{z} .
+z = \bar{z} .
 \end{equation*}
 
 As $\C$ is really $\R^2$, we let the metric on $\C$ be the standard
@@ -117,7 +117,7 @@ The complex conjugate and the modulus are even more intimately related:
 \sabs{z}^2 =
 x^2+y^2 =
 (x+iy)(x-iy) =
-z \widebar{z} .
+z \bar{z} .
 \end{equation*}
 
 \begin{remark}
@@ -166,7 +166,7 @@ $\displaystyle \lim_{n\to \infty} \frac{z_n}{w_n} = \frac{z}{w}$,
 \item
 $\displaystyle \lim_{n\to \infty} \sabs{z_n} = \sabs{z}$,
 \item
-$\displaystyle \lim_{n\to \infty} \widebar{z}_n = \widebar{z}$.
+$\displaystyle \lim_{n\to \infty} \bar{z}_n = \bar{z}$.
 \end{enumerate}
 \end{prop}
 
@@ -837,7 +837,7 @@ result.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Equicontinuity and the Arzel{\` a}--Ascoli theorem}
+\section{Equicontinuity and the Arzel{\`a}--Ascoli theorem}
 \label{sec:arzelaascoli}
 
 \sectionnotes{2 lectures}
@@ -1179,6 +1179,14 @@ T\bigl(f\bigr) (x) := F(x) = \int_0^x g(t) f(t)~dt
 \end{equation*}
 takes the unit ball centered at 0 in $C([0,1],\C)$ into a
 relatively compact set.
+\end{exercise}
+
+\begin{exercise}
+Define $f_n(x) := \frac{1}{{(x-n)}^2+1}$.  Prove that
+this sequence is uniformly bounded, equicontinuous, the sequence
+converges pointwise to zero, yet there is no
+subsequence that converges uniformly.  Which hypothesis of Arzel{\`a}--Ascoli
+is not satisfied?
 \end{exercise}
 
 \begin{exercise}
@@ -1918,7 +1926,7 @@ make an extra assumption.
 
 \begin{defn}
 An algebra $\sA$ is self-adjoint, if for all $f \in \sA$, the function
-$\widebar{f}$ defined by $\widebar{f}(x) := \overline{f(x)}$ is in $\sA$, where by the
+$\bar{f}$ defined by $\bar{f}(x) := \overline{f(x)}$ is in $\sA$, where by the
 bar we mean the complex conjugate.
 \end{defn}
 
@@ -1934,8 +1942,8 @@ no point, and is self-adjoint.  Then the closure $\overline{\sA} = C(X,\C)$.
 Suppose $\sA_\R \subset \sA$ is the set of the real-valued elements of
 $\sA$.  If $f = u+iv$ where $u$ and $v$ are real-valued, then
 \begin{equation*}
-u = \frac{f+\widebar{f}}{2}, \qquad
-v = \frac{f-\widebar{f}}{2i} .
+u = \frac{f+\bar{f}}{2}, \qquad
+v = \frac{f-\bar{f}}{2i} .
 \end{equation*}
 So $u, v \in \sA$ as $\sA$ is a self-adjoint algebra, and since they are
 real-valued we get that $u, v \in \sA_\R$.
@@ -1963,6 +1971,9 @@ $\sabs{v(t)-h(t)} < \nicefrac{\epsilon}{2}$ for all $t \in X$.  So
 for all $t \in X$.
 So $\overline{\sA} = C(X,\C)$.
 \end{proof}
+
+The self-adjoint requirement is necessary although it is not so obvious to
+see it.  For an example see \exerciseref{exercise:selfadjointSW}.
 
 %FIXME: An example of why we need the self-adjoint will be in the homework.
 %?? FIXME: add exercise this requires Cauchy integral, so perhaps not
@@ -2000,9 +2011,18 @@ single bound for all $f_n$ (and $f$).
 
 \begin{exercise}
 Suppose $X := \R$ (not compact in particular).
-Construct a sequence of
-functions $f_n \in C(X,\R)$, such that $f_n^2$
-does not converge uniformly.
+Show that $f(t) := e^t$ is not possible to uniformly approximate
+by polynomials on $X$.  Hint: Consider $\abs{\frac{e^t}{t^n}}$
+as $t \to \infty$.
+\end{exercise}
+
+\begin{exercise}
+Suppose $f \colon [0,1] \to \C$ is a uniform limit of a sequence of polynomials
+of degree at most $d$, then the limit is a polynomial of degree at most $d$.
+Conclude that to approximate a function which is not a polynomial, we
+need the degree of the approximations to go to infinity.\\
+Hint: Consider a uniformly Cauchy sequence of polynomials of degree at most
+$d$.  Show that the coefficients are are Cauchy sequences.
 \end{exercise}
 
 \begin{exercise}
@@ -2022,9 +2042,53 @@ Prove that $I(f) = \int_0^1 f$ for all $f \in C([0,1],\R)$.
 \end{exercise}
 
 \begin{exercise}
-Suppose we already know the complex exponential $e^{it} = \cos(t) + i \sin
+Let $\sA$ be the collection of real polynomials in $x^2$,
+that is polynomials of the form
+$c_0 + c_1 x^2 + c_2 x^4 + \cdots + c_d x^{2d}$.
+\begin{enumerate}[a)]
+\item
+Show that every $f \in C([0,1],\R)$ is a uniform limit of
+polynomials from $\sA$.
+\item
+Find an $f \in  C([-1,1],\R)$ that is not a
+uniform limit of
+polynomials from $\sA$.
+\item
+Which hypothesis of the real Stone-Weierstrass is not satisfied
+for the domain $[-1,1]$?
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Let $\sabs{z}=1$ define the unit circle $S^1 \subset \C$.
+\begin{enumerate}[a)]
+\item
+Show that functions of the form
+\begin{equation*}
+\sum_{k=-n}^n c_k z^k
+\end{equation*}
+are dense in $C(S^1,\C)$.  Notice the negative powers.
+\item 
+Show that functions of the form
+\begin{equation*}
+c_0
++
+\sum_{k=1}^n c_k z^k
++
+\sum_{k=1}^n d_k \bar{z}^k
+\end{equation*}
+are dense in $C(S^1,\C)$.  These are so-called harmonic polynomials,
+and this approximation leads for example to the solution of the
+steady state heat problem.
+\end{enumerate}
+Hint: A good way to write the equation for $S^1$ is $z \bar{z} = 1$.
+\end{exercise}
+
+\begin{exercise}
+Suppose we already know the complex exponential
+$e^{it} = \cos(t) + i \sin
 (t)$, that
-${\bigl(e^{it}\bigr)}^n = {\bigl(e^{int}\bigr)}^n$
+${\bigl(e^{it}\bigr)}^n = e^{int}$,
 and that
 $\overline{e^{it}} = e^{-it}$ (all things
 we will prove in \sectionref{sec:complexexp}).
@@ -2037,6 +2101,44 @@ of the form
 satisfies the hypotheses of the complex Stone-Weierstrass theorem
 and therefore such functions are dense in the $C([-\pi,\pi],\C)$.
 \end{exercise}
+
+
+\begin{samepage}
+\begin{exercise} \label{exercise:selfadjointSW}
+Again suppose we already know the complex exponential
+$e^{it} = \cos(t) + i \sin (t)$, that
+${\bigl(e^{it}\bigr)}^n = e^{int}$, that
+$\overline{e^{it}} = e^{-it}$, and that
+$e^{z+w} = e^z e^w$ (all things
+we will prove in \sectionref{sec:complexexp}).
+Let $S^1 \subset \C$ be the unit circle, that is the set where
+$\sabs{z} = 1$.  Orient this set counterclockwise.
+Let $\gamma(t) := e^{it}$.
+For the one-form $f(z)~dz$ we write\footnote{%
+One could also define $dz := dx + i \, dy$ and then
+extend the path integral from \chapterref{path:chapter} to complex-valued
+one-forms.}
+\begin{equation*}
+\int_{S^1} f(z) ~dz := \int_0^{2\pi} f(e^{it}) \, i e^{it} ~ dt . 
+\end{equation*}
+\begin{enumerate}[a)]
+\item
+Prove that for all nonnegative integers $k = 0,1,2,3,\ldots$ we have
+$\int_{S^1} z^k ~ dz = 0$.
+\item
+Prove that if
+$P(z) = \sum_{k=0}^n c_k z^k$ is any
+polynomial in $z$, then
+$\int_{S^1} P(z) ~ dz = 0$.
+\item
+Prove
+$\int_{S^1} \bar{z} ~ dz \not= 0$.
+\item
+Conclude that polynomials in $z$ (this algebra of functions is
+not self-adjoint) are not dense in $C(S^1,\C)$.
+\end{enumerate}
+\end{exercise}
+\end{samepage}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2464,13 +2566,13 @@ $\sum d_k {(z-b)}^k$ that converges to $f(z)$ in $B(b,\rho-\sabs{b-a})$.
 \begin{proof}
 Without loss of generality assume that $a=0$.  We rotate to assume that $b$ is real, but
 since that is harder to picture, let us do it explicitly.
-Let $\alpha = \frac{\widebar{b}}{\sabs{b}}$.
+Let $\alpha = \frac{\bar{b}}{\sabs{b}}$.
 Notice that
 \begin{equation*}
-\abs{\nicefrac{1}{\alpha}} = \sabs{\alpha} %= \abs{\frac{\widebar{b}}{\sabs{b}}}
+\abs{\nicefrac{1}{\alpha}} = \sabs{\alpha} %= \abs{\frac{\bar{b}}{\sabs{b}}}
 %=
 %\sqrt{
-%\frac{\widebar{b}}{\sabs{b}}
+%\frac{\bar{b}}{\sabs{b}}
 %\frac{b}{\sabs{b}}
 %}
 = 1 .
@@ -2680,7 +2782,7 @@ meaning that $f(x) = (1+x)^\alpha$.
 \section{Fundamental theorem of algebra}
 \label{sec:fundalgeb}
 
-\sectionnotes{half a lecture}
+\sectionnotes{half a lecture, optional}
 
 In this section we study first the local behaviour of polynomials
 and the growth of polynomials as $z$ goes to infinity.  As an application
@@ -3077,7 +3179,7 @@ The computation of the power series for both is left as an exercise.
 
 As complex conjugate is a continuous function, then the definition
 of $e^z$ implies
-$\overline{(e^z)} = e^{\widebar{z}}$.  If
+$\overline{(e^z)} = e^{\bar{z}}$.  If
 $x$ is real,
 \begin{equation*}
 \overline{(e^{ix})} = e^{-ix} .
@@ -3340,6 +3442,7 @@ Use this to show that
 \end{equation*}
 \end{enumerate}
 \end{exercise}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -4200,7 +4303,7 @@ c_k
 Next we need the Schwarz (or Cauchy--Schwarz or Cauchy--Bunyakovsky--Schwarz)
 inequality, that is
 \begin{equation*}
-{\abs{\int_a^b f\widebar{g}}}^2
+{\abs{\int_a^b f\bar{g}}}^2
 \leq
 \left( \int_a^b \sabs{f}^2 \right)
 \left( \int_a^b \sabs{g}^2 \right) .
@@ -4213,7 +4316,7 @@ So
 %($g$ is Riemann integrable so bounded)
 \begin{equation*}
 \begin{split}
-\abs{\int_{-\pi}^\pi f\widebar{g} - \int_{-\pi}^\pi s_N(f)g}
+\abs{\int_{-\pi}^\pi f\bar{g} - \int_{-\pi}^\pi s_N(f)g}
 & =
 \abs{\int_{-\pi}^\pi (f- s_N(f))g} \\
 & \leq
@@ -4275,7 +4378,7 @@ Show that there exists a continuous $2\pi$-periodic function $g \colon \R
 Prove the Cauchy-Bunyakovsky-Schwarz inequality
 for Riemann integrable functions:
 \begin{equation*}
-{\abs{\int_a^b f\widebar{g}}}^2
+{\abs{\int_a^b f\bar{g}}}^2
 \leq
 \left( \int_a^b \sabs{f}^2 \right)
 \left( \int_a^b \sabs{g}^2 \right) .
