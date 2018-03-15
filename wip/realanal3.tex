@@ -396,8 +396,8 @@ interval $[a,b]$.  With this notation, the change of variables becomes
 \end{equation*}
 In this section we will try to obtain an analogue in this form.
 
-First we wish to see what plays the role of $\sabs{g'(x)}$.  If we think about it,
-the $g'(x)$ is a scaling of $dx$.  The integral measures volumes, so in one
+First we wish to see what plays the role of $\sabs{g'(x)}$.  
+The $g'(x)$ is a scaling of $dx$.  The integral measures volumes, so in one
 dimension it measures length.  If our $g$ is linear, that is, $g(x)=Lx$, then
 $g'(x) = L$.  Then the length of the interval $g([a,b])$ is simply
 $\sabs{L}(b-a)$.  That is because $g([a,b])$ is either $[La,Lb]$ or
@@ -427,11 +427,11 @@ continuously differentiable mapping such that
 there exist $0 < m < M < \infty$ and
 \begin{equation*}
 m \leq \sabs{J_g(x)} \leq M
+\qquad \text{for all $x \in R$.}
 \end{equation*}
-for all $x \in R$.
 Then
 \begin{equation*}
-m \, V(R) \leq V\bigl(g(R)\bigr) \leq M \, V(R)
+m \, V(R) \leq V\bigl(g(R)\bigr) \leq M \, V(R) .
 \end{equation*}
 \end{lemma}
 
@@ -439,8 +439,7 @@ m \, V(R) \leq V\bigl(g(R)\bigr) \leq M \, V(R)
 FIXME
 \end{proof}
 
-
-  That is, we have
+Summing things up, we have
 the following lemma.
 
 \begin{lemma}
@@ -456,6 +455,9 @@ V\bigl(g(S)\bigr)
 \int_S \sabs{J_g(x)} ~ dx .
 \end{equation*}
 \end{lemma}
+
+The set $g(S)$ is Jordan measurable by FIXME:ref, so the left hand side does
+make sense.
 
 \begin{proof}
 The left hand side is $\int_{R'} \chi_{g(S)}$, where the integral is taken over a
@@ -504,16 +506,16 @@ Suppose the partition is fine enough such that
 \epsilon + \int_S \sabs{J_g(x)} ~ dx \geq
 \sum_{j=1}^N \Bigl(\sup_{x \in S \cap R_j} \sabs{J_g(x)} \Bigr) V(R_j)
 \end{equation*}
-...
+As $S$ and $R_j$ are all compact, then for each $j$ there exists an $x_j$
+where the supremum is achieved, that is
 \begin{equation*}
 \sum_{j=1}^N \Bigl(\sup_{x \in S \cap R_j} \sabs{J_g(x)} \Bigr) V(R_j)
-\geq
+=
 \sum_{j=1}^N \sabs{J_g(x_j)}  V(R_j)
 =
-\sum_{j=1}^N V\bigl(Dg(x_j) R_j\bigr)
+\sum_{j=1}^N V\bigl(g'(x_j) (R_j)\bigr)
 \end{equation*}
-... FIXME ... must pick $x_j$ correctly?
-
+FIXME
 
 
 
@@ -571,10 +573,11 @@ Suppose the partition is fine enough such that
 \epsilon + \int_S \sabs{J_g(x)} ~ dx \geq
 \sum_{j=1}^N \Bigl(\sup_{x \in S \cap R_j} \sabs{J_g(x)} \Bigr) V(R_j)
 \end{equation*}
-...
+As $S$ and $R_j$ are all compact, then for each $j$ there exists an $x_j$
+where the supremum is achieved, that is
 \begin{equation*}
 \sum_{j=1}^N \Bigl(\sup_{x \in S \cap R_j} \sabs{J_g(x)} \Bigr) V(R_j)
-\geq
+=
 \sum_{j=1}^N \sabs{J_g(x_j)}  V(R_j)
 =
 \sum_{j=1}^N V\bigl(Dg(x_j) R_j\bigr)
@@ -599,10 +602,11 @@ dimensions.  Note that the following theorem holds in more generality,
 but this statement is sufficient for many uses.
 
 \begin{thm}
-Suppose $S \subset \R^n$ is an open bounded Jordan measurable set, and
-$g \colon S \to \R^n$ is a one-to-one
+Suppose $S \subset \R^n$ is a closed bounded Jordan measurable set,
+and $S \subset U$ for an open set $U \subset \R^n$.  If
+$g \colon U \to \R^n$ is a one-to-one
 continuously differentiable mapping such that
-$g(S)$ is Jordan measurable and $J_g$ is never zero on $S$.
+$J_g$ is never zero on $S$.
 
 Suppose $f \colon g(S) \to \R$ is Riemann
 integrable.  Then $f \circ g$ is Riemann integrable on $S$ and
