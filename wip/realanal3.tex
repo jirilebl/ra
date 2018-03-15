@@ -442,19 +442,24 @@ FIXME
 Summing things up, we have
 the following lemma.
 
-\begin{lemma}
+So $\sabs{J_g(x)}$ is the replacement of $\sabs{g'(x)}$ for multiple
+dimensions.  Note that the following theorem holds in more generality,
+but this statement is sufficient for many uses.
+
+\begin{thm}
 Suppose $S \subset \R^n$ is a closed bounded Jordan measurable set,
 and $S \subset U$ for an open set $U \subset \R^n$.  If
 $g \colon U \to \R^n$ is a one-to-one
 continuously differentiable mapping such that
 $J_g$ is never zero on $S$.
-Then
+
+Suppose $f \colon g(S) \to \R$ is Riemann
+integrable.  Then $f \circ g$ is Riemann integrable on $S$ and
 \begin{equation*}
-V\bigl(g(S)\bigr)
-=
-\int_S \sabs{J_g(x)} ~ dx .
+\int_{g(S)} f(x) ~ dx = 
+\int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx .
 \end{equation*}
-\end{lemma}
+\end{thm}
 
 The set $g(S)$ is Jordan measurable by FIXME:ref, so the left hand side does
 make sense.
@@ -465,6 +470,46 @@ large enough rectangle $R'$ that contains $g(S)$.
 The right hand side is $\int_{R} \sabs{J_g} \chi_S$ for
 a large enough rectangle $R$ that contains $S$.  Let $\epsilon > 0$ be
 given.
+
+First suppose that $f(y) \geq 0$ for all $y \in g(S)$.
+
+Divide $R$ into
+subrectangles, denote
+by $R_1,R_2,\ldots,R_K$ those subrectangles that intersect $S$.
+Suppose the partition is fine enough such that
+\begin{equation*}
+\epsilon + \int_S \sabs{J_g(x)} ~ dx \geq
+\sum_{j=1}^N \Bigl(\sup_{x \in S \cap R_j} \sabs{J_g(x)} \Bigr) V(R_j)
+\end{equation*}
+By the lemma above, and since $g(S) \subset \cup_j g(R_j)$ we have
+\begin{equation*}
+\sum_{j=1}^N \Bigl(\sup_{x \in S \cap R_j} \sabs{J_g(x)} \Bigr) V(R_j)
+\geq
+\sum_{j=1}^N V\bigl(g(R_j)\bigr)
+\geq \int_{g(S)} 1 = V\bigl(g(S)\bigr) .
+\end{equation*}
+As $\epsilon > 0$ is arbitrary we have
+$\int_S \sabs{J_g(x)} ~ dx \geq V\bigl(g(S)\bigr)$.
+
+
+FIXME: Now need
+
+$\int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx \geq \int_{g(S)} f$
+
+
+Next, $g$ is invertible
+so
+\begin{equation*}
+\int_{g^{-1}(g(S)} f\bigl(g(g^{-1}(y))\bigr) \sabs{J_g(g^{-1}(y))} ~ dx
+.... FIXME something like that
+\end{equation*}
+
+Suppose $f \geq 0$ for all $x \in g(S)$.  Then
+
+
+
+
+FIXME
 
 %For each $x \in S$ we can take a rectangle $R_{x}$ such that
 %$\sabs{J_g(y)-J_g(z)} < \epsilon$ for any $y,z \in R_{x}$.  By compactness
@@ -513,6 +558,8 @@ where the supremum is achieved, that is
 =
 \sum_{j=1}^N \sabs{J_g(x_j)}  V(R_j)
 =
+\sum_{j=1}^N V\bigl(g'(x_j) (R_j)\bigr)
+\geq
 \sum_{j=1}^N V\bigl(g'(x_j) (R_j)\bigr)
 \end{equation*}
 FIXME
