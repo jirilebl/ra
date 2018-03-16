@@ -2505,7 +2505,7 @@ Finally, images of Jordan measurable sets are Jordan measurable under
 nice enough mappings.  For simplicity, let us assume that the Jacobian
 never vanishes.
 
-\begin{prop}
+\begin{prop} \label{prop:imagejordanmeas}
 Suppose $S \subset \R^n$ is a closed bounded Jordan measurable set,
 and $S \subset U$ for an open set $U \subset \R^n$.
 Suppose
@@ -3045,3 +3045,266 @@ Why can't you use Green's theorem?
 \end{exercise}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Change of variables}
+\label{sec:mvchangeofvars}
+
+\sectionnotes{1 lecture}
+
+In one variable, we have the familiar change of variables
+\begin{equation*}
+\int_a^b f\bigl(g(x)\bigr) g'(x)~ dx = 
+\int_{g(a)}^{g(b)} f(x) ~ dx .
+\end{equation*}
+It may be surprising that the analogue in higher dimensions is quite
+a bit more complicated.  The first complication is orientation.  If we use
+the definition of integral from this chapter, then we do not have the notion
+of $\int_a^b$ versus $\int_b^a$.  We are simply integrating over an
+interval $[a,b]$.  With this notation, the change of variables becomes
+\begin{equation*}
+\int_{[a,b]} f\bigl(g(x)\bigr) \sabs{g'(x)}~ dx = 
+\int_{g([a,b])} f(x) ~ dx .
+\end{equation*}
+In this section we will try to obtain an analogue in this form.
+
+First we wish to see what plays the role of $\sabs{g'(x)}$.  
+The $g'(x)$ is a scaling of $dx$.  The integral measures volumes, so in one
+dimension it measures length.  If our $g$ is linear, that is, $g(x)=Lx$, then
+$g'(x) = L$.  Then the length of the interval $g([a,b])$ is simply
+$\sabs{L}(b-a)$.  That is because $g([a,b])$ is either $[La,Lb]$ or
+$[Lb,La]$.  This property holds in higher dimension with $\sabs{L}$ replaced
+by absolute value of the determinant.
+
+\begin{prop} \label{prop:volrectdet}
+Suppose $R \subset \R^n$ is a rectangle
+and $A \colon \R^n \to \R^n$ is linear.  Then
+$A(R)$ is Jordan measurable and $V\bigl(A(R)\bigr) = \sabs{\det (A)} V(R)$.
+\end{prop}
+
+\begin{proof}
+It is enough to prove for elementary matrices.  The proof is left as an
+exercise.
+\end{proof}
+
+Let us prove that
+$\sabs{J_g(x)}$ is the replacement of $\sabs{g'(x)}$ for multiple
+dimensions.  Note that the following theorem holds in more generality,
+but this statement is sufficient for many uses.
+
+\begin{thm}
+Suppose $S \subset \R^n$ is a closed bounded Jordan measurable set,
+and $S \subset U$ for an open set $U \subset \R^n$.  If
+$g \colon U \to \R^n$ is a one-to-one
+continuously differentiable mapping such that
+$J_g$ is never zero on $S$.
+
+Suppose $f \colon g(S) \to \R$ is Riemann
+integrable.  Then $f \circ g$ is Riemann integrable on $S$ and
+\begin{equation*}
+\int_{g(S)} f(x) ~ dx = 
+\int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx .
+\end{equation*}
+\end{thm}
+
+The set $g(S)$ is Jordan measurable by \propref{prop:imagejordanmeas},
+so the left hand side does make sense.
+
+\begin{proof}
+The left hand side is $\int_{R'} f \chi_{g(S)}$, where the integral
+is taken over a
+large enough rectangle $R'$ that contains $g(S)$.
+The right hand side is $\int_{R} f\bigl(g(x)\bigr) \sabs{J_g} \chi_S$ for
+a large enough rectangle $R$ that contains $S$.
+
+The set $S$ can be covered by finitely many closed rectangles
+$P_1,P_2,\ldots,P_k$, whose
+interiors do not overlap such that each $P_j \subset U$.
+(exercise).
+Proving the theorem for $P_j \cap S$ instead of $S$ is enough
+Furthermore, for $y \notin g(S)$ write $f(y) := 0$.
+We therefore assume that $S$ is equal to the rectangle $R$.
+
+By writing $f = f_+ - f_-$ for two positive functions $f_+$ and $f_-$
+(exercise), if we prove the theorem for a nonnegative $f$
+we obtain the theorem for arbitrary $f$.
+Therefore, let us also suppose that 
+$f(y) \geq 0$ for all $y$.
+
+Let $\epsilon > 0$ be given.
+For every $x \in R$, let
+\begin{equation*}
+W_x := \bigl\{ y \in U : \snorm{g'(x)-g'(y)} < \nicefrac{\epsilon}{2} \bigr\} .
+\end{equation*}
+We leave it as an exercise to prove that $W_x$ is open.
+As $x \in W_x$ for every $x$, we find an open cover.  Therefore
+by the Lebesgue covering lemma, there exists a $\delta > 0$ such that
+for every $y \in R$, there is an $x$ such that $B(y,\delta) \subset W_x$.
+In other words, if $P$ is a rectangle $P$ of maximum side length less
+than $\frac{\delta}{\sqrt{n}}$ and such that $y \subset P$, then $P \subset
+B(y,\delta) \subset W_x$.  By triangle inequality
+$\snorm{g'(\xi)-g'(\eta)} < \epsilon$ for all $\xi, \eta \in P$.
+
+So let $R_1,R_2,\ldots,R_N$ be subrectangles partitioning $R$ such that
+the maximum side of any $R_j$ is less than
+$\frac{\delta}{\sqrt{n}}$.
+We also make sure that the minimum side length is at least
+$\frac{\delta}{2\sqrt{n}}$, which we can do if $\delta$ is 
+sufficiently small compared to the sides of $R$ (exercise).
+
+Consider $R_j$ and some fixed $x_j \in R_j$.
+First suppose $x_j=0$ and $g'(0) = I$.
+Then for any $y \in R_j$, with $t = \snorm{y}$.
+\begin{equation*}
+\snorm{g(y)-y} =
+\norm{\int_0^1 \bigl(g'(ty) y - y\bigr) ~dt} \leq
+\int_0^1 \snorm{g'(ty) y - y} ~dt \leq
+\snorm{y} \int_0^1 \snorm{g'(ty) - I} ~dt
+\leq
+\delta \epsilon .
+\end{equation*}
+Therefore, $g(R_j) \subset \widetilde{R}_j$, where
+$\widetilde{R}_j$ has each side extended by $\delta \epsilon$ on each side. 
+That is if the sides were $s_1,s_2,\ldots,s_n$, that is
+$V(R_j) = s_1 s_2 \cdots s_n$.   We also have that
+$\delta \leq 2\sqrt{n} \, s_j$.  Thus
+\begin{multline*}
+V(\widetilde{R}_j) =
+(s_1+\delta \epsilon )
+(s_2+\delta \epsilon )
+\cdots
+(s_n+\delta \epsilon )
+\\
+\leq
+(s_1+2 \sqrt{n}\,s_1 \epsilon )
+(s_2+2 \sqrt{n}\,s_n \epsilon )
+\cdots
+(s_n+2 \sqrt{n}\,s_n \epsilon )
+=
+V(R_j) (1+2\sqrt{n} \, \epsilon) .
+\end{multline*}
+In other words,
+\begin{equation*}
+V\bigl(g(R_j)\bigr) \leq V(R_j) (1+2\sqrt{n} \, \epsilon) .
+\end{equation*}
+Next, let us suppose that $A := g'(0)$ is not the identity.
+Writing $g = A \circ \tilde{g}$ where $\tilde{g}'(0) = I$.
+By \propref{prop:volrectdet},
+we know that $V\bigl(A(R_j)\bigr) = \sabs{\det(A)}V(R_j)$, and hence
+\begin{equation*}
+V\bigl(g(R_j)\bigr) \leq
+\sabs{\det(A)} V(R_j) (1+2\sqrt{n} \, \epsilon)
+=
+\sabs{J_g(0)} V(R_j) (1+2\sqrt{n} \, \epsilon) .
+\end{equation*}
+Finally, translation does not change volume, and therefore
+for any $R_j$, and $x_j \in R_j$ including when $x_j \not= 0$ we find
+\begin{equation*}
+V\bigl(g(R_j)\bigr) \leq
+\sabs{J_g(x_j)} V(R_j) (1+2\sqrt{n} \, \epsilon) .
+\end{equation*}
+
+Let us first assume that $f(y) \geq 0$ for all $y \in R$.
+
+Suppose that $\delta > 0$ was chosen small enough such that
+\begin{equation*}
+\begin{split}
+\epsilon + \int_R f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx
+& \geq
+\sum_{j=1}^N \biggl(\sup_{x \in R_j} f\bigl(g(x)\bigr) \sabs{J_g(x)} \biggr) V(R_j)
+\\
+& \geq
+\sum_{j=1}^N \biggl(\sup_{x \in R_j} f\bigl(g(x)\bigr) \biggr) \sabs{J_g(x_j)} V(R_j)
+\\
+& \geq
+\sum_{j=1}^N \biggl(\sup_{y \in g(R_j)} f(y) \biggr)
+V\bigl(g(R_j)\bigr)
+(1+2\sqrt{n} \, \epsilon)
+\\
+& \geq
+\sum_{j=1}^N \left(\int_{g(R_j)}f(y) ~dy \right)
+(1+2\sqrt{n} \, \epsilon)
+\\
+& =
+(1+2\sqrt{n} \, \epsilon)
+\int_{g(R)} f(y) ~dy
+\end{split}
+\end{equation*}
+Letting $\epsilon$ go to zero we find
+\begin{equation*}
+\int_R f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx \geq \int_{g(R)} f(y) ~dy .
+\end{equation*}
+
+By adding this result for several rectangles covering an $S$ we obtain the
+result for an arbitrary bounded Jordan measurable $S \subset U$,
+and any nonnegative integrable function $f$:
+\begin{equation*}
+\int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx \geq \int_{g(S)} f(y) ~dy .
+\end{equation*}
+
+Next, recall that $g^{-1}$ exists, and $g^{-1}\bigl(g(S)\bigr) = S$.
+Also $1 = J_{g\circ g^{-1}} = J_g(g^{-1}(y))J_{g^{-1}}(y)$ for $y \in g(S)$.
+So
+\begin{multline*}
+\int_{g(S)} f(y) ~ dy
+=
+\int_{g(S)} f\bigl(g\bigl(g^{-1}(y)\bigr)\bigr)
+\sabs{J_g\bigl(g^{-1}(y)\bigr)} \, \sabs{J_{g^{-1}}(y)} ~ dy
+\\
+\geq
+\int_{g^{-1}(g(S))} f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx
+=
+\int_{S} f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx .
+\end{multline*}
+
+Therefore, we have the conclusion for all nonnegative $f$ and hence as we
+said for all Riemann integrable $f$.
+\end{proof}
+
+\subsection{Exercises}
+
+\begin{exercise}
+Prove \propref{prop:volrectdet}.
+\end{exercise}
+
+\begin{exercise}
+Suppose $S \subset \R^n$ is a closed bounded Jordan measurable set,
+and $S \subset U$ for an open set $U \subset \R^n$.
+Show that there exist finitely many closed bounded rectangles
+$P_1,P_2, \ldots, P_k$ such that $P_j \subset U$,
+$S \subset P_1 \cup P_2 \cup \cdots \cup P_k$, and
+the interiors are mutually disjoint, that is
+$P_j^\circ \cap P^\circ_\ell = \emptyset$ whenever $j \not= \ell$.
+\end{exercise}
+
+\begin{exercise}
+Suppose $S \subset \R^n$ is a closed bounded Jordan measurable set
+and $f \colon S \to \R$ a Riemann integrable function.
+Let
+\begin{equation*}
+f_+(x) := \max \{ f(x) , 0 \} ,
+\qquad
+f_-(x) := \max \{ -f(x) , 0 \} ,
+\end{equation*}
+such that $f = f_+ - f_-$.  Show that $f_+$ and $f_-$ are Riemann
+integrable.
+\end{exercise}
+
+\begin{exercise}
+Suppose $U \subset \R^n$ is an open set, $x \in U$,
+$g \colon U \to \R^n$ a continuously differentiable mapping.
+For any $\epsilon$, show that
+\begin{equation*}
+W_x := \bigl\{ y \in U : \snorm{g'(x)-g'(y)} < \nicefrac{\epsilon}{2} \bigr\}
+\end{equation*}
+from the proof of the theorem is an open set.
+\end{exercise}
+
+\begin{exercise}
+Suppose $R \subset \R^n$ is a closed bounded rectangle.
+Show that if $\delta' > 0$ is sufficiently small compared
+to the sides of $R$, then $R$ can be partitioned
+into subrectangles where each side of any subrectangle
+is between $\frac{\delta'}{2}$ and $\delta'$.
+\end{exercise}
