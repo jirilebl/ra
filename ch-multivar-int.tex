@@ -3154,7 +3154,7 @@ $\frac{\delta}{2\sqrt{n}}$, which we can do if $\delta$ is
 sufficiently small compared to the sides of $R$ (exercise).
 
 Consider $R_j$ and some fixed $x_j \in R_j$.
-First suppose $x_j=0$ and $g'(0) = I$.
+First suppose $x_j=0$, $g(x_j) = 0$, and $g'(0) = I$.
 Then for any $y \in R_j$, with $t = \snorm{y}$.
 \begin{equation*}
 \snorm{g(y)-y} =
@@ -3165,10 +3165,10 @@ Then for any $y \in R_j$, with $t = \snorm{y}$.
 \delta \epsilon .
 \end{equation*}
 Therefore, $g(R_j) \subset \widetilde{R}_j$, where
-$\widetilde{R}_j$ has each side extended by $\delta \epsilon$ on each side. 
-That is if the sides were $s_1,s_2,\ldots,s_n$, that is
-$V(R_j) = s_1 s_2 \cdots s_n$.   We also have that
-$\delta \leq 2\sqrt{n} \, s_j$.  Thus
+$\widetilde{R}_j$ is $R_j$ with each side extended by
+$\delta \epsilon$ on each side. 
+If the sides are $s_1,s_2,\ldots,s_n$ then
+$V(R_j) = s_1 s_2 \cdots s_n$.   Recall $\delta \leq 2\sqrt{n} \, s_j$.  Thus
 \begin{multline*}
 V(\widetilde{R}_j) =
 (s_1+\delta \epsilon )
@@ -3199,7 +3199,8 @@ V\bigl(g(R_j)\bigr) \leq
 \sabs{J_g(0)} V(R_j) (1+2\sqrt{n} \, \epsilon) .
 \end{equation*}
 Finally, translation does not change volume, and therefore
-for any $R_j$, and $x_j \in R_j$ including when $x_j \not= 0$ we find
+for any $R_j$, and $x_j \in R_j$ including when $x_j \not= 0$ and $g(x_j)
+\not= 0$, we find
 \begin{equation*}
 V\bigl(g(R_j)\bigr) \leq
 \sabs{J_g(x_j)} V(R_j) (1+2\sqrt{n} \, \epsilon) .
@@ -3228,9 +3229,13 @@ V\bigl(g(R_j)\bigr)
 \\
 & =
 (1+2\sqrt{n} \, \epsilon)
-\int_{g(R)} f(y) ~dy
+\int_{g(R)} f(y) ~dy .
 \end{split}
 \end{equation*}
+Where the last equality follows because the overlaps of the rectangles
+are their boundaries which are of measure zero, and hence the image
+of their boundaries is also measure zero.
+
 Letting $\epsilon$ go to zero we find
 \begin{equation*}
 \int_R f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx \geq \int_{g(R)} f(y) ~dy .

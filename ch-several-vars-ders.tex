@@ -3205,7 +3205,7 @@ In other words, we identify the vectors $(x_1,x_2,\ldots,x_{n-1})$ and
 $(x_1,x_2,\ldots,x_{n-1},0)$.
 Let
 \begin{equation*}
-A = 
+A := 
 \begin{bmatrix}
 \frac{\partial f_1}{\partial x_1}(x)
 & \ldots &
@@ -3218,7 +3218,7 @@ A =
 \frac{\partial f_m}{\partial x_n}(x)
 \end{bmatrix} ,
 \qquad
-A_1 = 
+A' := 
 \begin{bmatrix}
 \frac{\partial f_1}{\partial x_1}(x)
 & \ldots &
@@ -3231,7 +3231,7 @@ A_1 =
 \frac{\partial f_m}{\partial x_{n-1}}(x)
 \end{bmatrix} ,
 \qquad
-v = 
+v := 
 %\frac{\partial f}{\partial x_n}(x) =
 \begin{bmatrix}
 \frac{\partial f_1}{\partial x_n}(x)
@@ -3245,7 +3245,7 @@ Let $\epsilon > 0$ be given.  By the induction hypothesis, there
 is a $\delta > 0$ such that
 for any $k \in \R^{n-1}$ with $\snorm{k} < \delta$ we have
 \begin{equation*}
-\frac{\snorm{f(x+k) - f(x) - A_1k}}{\snorm{k}} < \epsilon .
+\frac{\snorm{f(x+k) - f(x) - A' k}}{\snorm{k}} < \epsilon .
 \end{equation*}
 By continuity of the partial derivatives, suppose $\delta$ is small
 enough so that
@@ -3255,39 +3255,40 @@ enough so that
 \end{equation*}
 for all $j$ and all $h \in \R^n$ with $\snorm{h} < \delta$.
 
-Let $h = h_1 + t e_n$ be a vector in $\R^n$ where $h_1 \in \R^{n-1}$ such that
-$\snorm{h} < \delta$.  Then $\snorm{h_1} \leq \snorm{h} < \delta$.
-Note that $Ah = A_1h_1 + tv$.
+Suppose $h = k + t e_n$ is a vector in $\R^n$, where $k \in \R^{n-1}$, $t
+\in \R$, such that
+$\snorm{h} < \delta$.  Then $\snorm{k} \leq \snorm{h} < \delta$.
+Note that $Ah = A' k + tv$.
 \begin{equation*}
 \begin{split}
 \snorm{f(x+h) - f(x) - Ah}
-& = \snorm{f(x+h_1 + t e_n) - f(x+h_1) - tv + f(x+h_1) - f(x) - A_1h_1}
+& = \snorm{f(x+k + t e_n) - f(x+k) - tv + f(x+k) - f(x) - A' k}
 \\
-& \leq \snorm{f(x+h_1 + t e_n) - f(x+h_1) -tv} + \snorm{f(x+h_1) - f(x) -
-A_1h_1}
+& \leq \snorm{f(x+k + t e_n) - f(x+k) -tv} + \snorm{f(x+k) - f(x) -
+A' k}
 \\
-& \leq \snorm{f(x+h_1 + t e_n) - f(x+h_1) -tv} + \epsilon \snorm{h_1} .
+& \leq \snorm{f(x+k + t e_n) - f(x+k) -tv} + \epsilon \snorm{k} .
 \end{split}
 \end{equation*}
 As all the partial derivatives exist, by the mean value theorem,
 for each $j$ there is some $\theta_j \in [0,t]$ (or $[t,0]$ if $t < 0$), such that
 \begin{equation*}
-f_j(x+h_1 + t e_n) - f_j(x+h_1) =
-t \frac{\partial f_j}{\partial x_n}(x+h_1+\theta_j e_n).
+f_j(x+k + t e_n) - f_j(x+k) =
+t \frac{\partial f_j}{\partial x_n}(x+k+\theta_j e_n).
 \end{equation*}
-Note that if $\snorm{h} < \delta$, then $\snorm{h_1+\theta_j e_n} \leq \snorm{h}
+Note that if $\snorm{h} < \delta$, then $\snorm{k+\theta_j e_n} \leq \snorm{h}
 < \delta$.
 So to finish the estimate
 \begin{equation*}
 \begin{split}
 \snorm{f(x+h) - f(x) - Ah}
-& \leq \snorm{f(x+h_1 + t e_n) - f(x+h_1) -tv} + \epsilon \snorm{h_1}
+& \leq \snorm{f(x+k + t e_n) - f(x+k) -tv} + \epsilon \snorm{k}
 \\
 & \leq \sqrt{\sum_{j=1}^m {\left(t\frac{\partial f_j}{\partial
-x_n}(x+h_1+\theta_j e_n) -
-t \frac{\partial f_j}{\partial x_n}(x)\right)}^2} + \epsilon \snorm{h_1}
+x_n}(x+k+\theta_j e_n) -
+t \frac{\partial f_j}{\partial x_n}(x)\right)}^2} + \epsilon \snorm{k}
 \\
-& \leq \sqrt{m}\, \epsilon \sabs{t} + \epsilon \snorm{h_1}
+& \leq \sqrt{m}\, \epsilon \sabs{t} + \epsilon \snorm{k}
 \\
 & \leq (\sqrt{m}+1)\epsilon \snorm{h} . \qedhere
 \end{split}
@@ -3423,7 +3424,7 @@ with the initial condition $F(x,0) = g(x)$ for all $x \in \R$.
 To prove the inverse function theorem we use the contraction mapping
 principle from \volIref{chapter 7},
 %\chapterref{ms:chapter}
-we we used
+we used
 to prove Picard's theorem.
 Recall that a mapping $f \colon X \to Y$ between two metric
 spaces $(X,d_X)$ and $(Y,d_Y)$ is called a contraction 
@@ -3470,11 +3471,11 @@ Note that $f'(x)$ is invertible for all $x \in V$.
 
 Given $y \in \R^n$ we define $\varphi_y \colon C \to \R^n$
 \begin{equation*}
-\varphi_y (x) = x + A^{-1}\bigl(y-f(x)\bigr) .
+\varphi_y (x) := x + A^{-1}\bigl(y-f(x)\bigr) .
 \end{equation*}
 As $A^{-1}$ is one-to-one,
 then $\varphi_y(x) = x$ ($x$ is a fixed point) if only if
-$y-f(x) = 0$, or in other words $f(x)=y$.  Using chain rule we obtain
+$y-f(x) = 0$, or in other words $f(x)=y$.  Using the chain rule we obtain
 \begin{equation*}
 \varphi_y'(x) = I - A^{-1} f'(x) = A^{-1} \bigl( A-f'(x) \bigr) .
 \end{equation*}
@@ -3482,7 +3483,7 @@ So for $x \in V$ we have
 \begin{equation*}
 \snorm{\varphi_y'(x)} \leq \snorm{A^{-1}} \, \snorm{A-f'(x)} < \nicefrac{1}{2} .
 \end{equation*}
-As $V$ is a ball it is convex, and hence
+As $V$ is a ball, it is convex.  Hence
 \begin{equation*}
 \snorm{\varphi_y(x_1)-\varphi_y(x_2)} \leq \frac{1}{2} \snorm{x_1-x_2} 
 \qquad
@@ -3491,7 +3492,7 @@ As $V$ is a ball it is convex, and hence
 In other words $\varphi_y$ is a contraction defined on $V$, though we so far
 do not know what is the range of $\varphi_y$.  We cannot apply the fixed
 point theorem, but we can say that $\varphi_y$ 
-has at most one fixed point (note proof of uniqueness in the contraction
+has at most one fixed point (see the proof of uniqueness in the contraction
 mapping principle).  That is, there exists at most one $x \in V$
 such that $f(x) = y$, and so $f|_V$ is one-to-one.
 
@@ -3506,7 +3507,8 @@ Suppose $y$ is such that
 \frac{r}{2\snorm{A^{-1}}} .
 \end{equation*}
 If we show that $y \in W$, then we have shown that $W$ is open.
-Define $\varphi_y(x) = x+A^{-1}\bigl(y-f(x)\bigr)$ as before.  If $x \in
+%Recall $\varphi_y(x) = x+A^{-1}\bigl(y-f(x)\bigr)$.
+If $x \in
 C(x_1,r)$, then
 \begin{equation*}
 \begin{split}
@@ -3535,11 +3537,12 @@ f\bigl(C(x_1,r)\bigr) \subset f(V) = W$.  Therefore $W$ is open.
 
 Next we need to show that $g$ is continuously differentiable and compute
 its derivative.  First let us show that it is differentiable.
-Let $y \in W$ and $k \in \R^n$, $k\not= 0$, such that $y+k \in W$.  Then
+Let $y \in W$ and $k \in \R^n$, $k\not= 0$, such that $y+k \in W$.
+Because $f|_V$ is a one-to-one and onto mapping of $V$ onto $W$,
 there are unique
 $x \in V$ and $h \in \R^n$, $h \not= 0$ and $x+h \in V$, such that
-$f(x) = y$ and $f(x+h) = y+k$ as $f|_V$ is a one-to-one and onto mapping of $V$
-onto $W$.  In other words, $g(y) = x$ and $g(y+k) = x+h$.  We can still
+$f(x) = y$ and $f(x+h) = y+k$.
+In other words, $g(y) = x$ and $g(y+k) = x+h$.  We can still
 squeeze some information from the fact that $\varphi_y$ is a contraction.
 \begin{equation*}
 \varphi_y(x+h)-\varphi_y(x) = h + A^{-1} \bigl( f(x)-f(x+h) \bigr) = h - A^{-1} k .
@@ -3614,7 +3617,7 @@ $f(V)$ is open.
 \begin{example}
 The theorem, and the corollary, is not true if $f'(x)$ is not invertible for
 some $x$.  For example,
-the map $f(x,y) = (x,xy)$, maps $\R^2$ onto the set
+the map $f(x,y) := (x,xy)$, maps $\R^2$ onto the set
 $\R^2 \setminus \bigl\{ (0,y) : y \neq 0 \bigr\}$, which is neither open nor closed.
 In fact $f^{-1}(0,0) = \bigl\{ (0,y) : y \in \R \bigr\}$.  This bad behavior
 only occurs on the $y$-axis, everywhere else the function is locally
@@ -3645,7 +3648,7 @@ that replacing $x$ and $y$ with $-x$ and $-y$ we obtain another solution.
 
 The invertibility of the derivative is not a necessary
 condition, just sufficient, for having a continuous inverse and being an open
-mapping.  For example, the function $f(x) = x^3$ is an open mapping from $\R$
+mapping.  For example, the function $f(x) := x^3$ is an open mapping from $\R$
 to $\R$ and is globally one-to-one with a continuous inverse, although the
 inverse is not differentiable at $x=0$.
 
@@ -3937,6 +3940,7 @@ In other words, the set
 $f\bigl((a,b)\bigr)$ is a graph of $g$.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Define $f \colon \R^2 \to \R^2$
 \begin{equation*}
@@ -3958,6 +3962,7 @@ not locally invertible, that is, the inverse theorem does not work).
 Show that $f$ is not continuously differentiable.
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}[Polar coordinates] \label{mv:exercise:polarcoordinates}
 \index{polar coordinates}
