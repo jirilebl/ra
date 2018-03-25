@@ -969,6 +969,7 @@ Let us list some series we already know:
 \end{align*}
 \end{example}
 
+\begin{example}
 Note the difference between $\frac{1}{1-z}$ and its power series.  Let us
 expand $\frac{1}{1-z}$ as power series around any point $a \not= 1$.
 Let $c = \frac{1}{1-a}$, then we write
@@ -981,18 +982,21 @@ c
 =
 \sum_{n=0}^\infty \left( \frac{1}{{(1-a)}^{n+1}} \right) {(z-a)}^n .
 \end{equation*}
-Then notice that $\sum c^n {(z-a)}^n$ converges if and only if 
-the power series on the right hand side converges and
+The series $\sum c^n {(z-a)}^n$ converges if and only if 
+the series on the right hand side converges and
 \begin{equation*}
 \limsup_{k\to\infty}
 \sqrt[k]{c^k} = c
 = \frac{1}{\sabs{1-a}} .
 \end{equation*}
 So radius of convergence of the power series is $\sabs{1-a}$, that is the
-distance of $a$ from $1$.  In particular the function has a power series
-representation around every $a$ not equal to 1 and so is analytic.
-Notice that the domain of the function is bigger than the region
+distance from $1$ to $a$.  The function $\frac{1}{1-z}$
+has a power series
+representation around every $a\not= 1$ and so is analytic in $\C \setminus
+\{ 1 \}$.
+The domain of the function is bigger than the region
 of convergence of any power series representing the function at any point.
+\end{example}
 
 It turns out that 
 if a function has a power series representation converging to the function
@@ -1005,7 +1009,7 @@ result later.
 \begin{prop}
 If
 \begin{equation*}
-f(z) := \sum c_n {(z-a)}^n
+f(z) := \sum_{n=0}^\infty c_n {(z-a)}^n
 \end{equation*}
 is convergent in $B(a,\rho)$ for some $\rho > 0$, then
 $f \colon B(a,\rho) \to \C$ is continuous.
@@ -1770,6 +1774,9 @@ $e^{z+w} = e^z e^w$
 for all $z,w \in \C$.
 \end{proof}
 
+A simple consequence is that $e^z\not=0$ for all $z \in \C$,
+as $e^z e^{-z} = e^{z-z} = 1$.
+
 \subsection{Trigonometric functions and $\pi$}
 
 We can now finally define \emph{\myindex{sine}} and \emph{\myindex{cosine}}
@@ -1838,12 +1845,12 @@ e^{iz} = \cos(z) + i\sin(z) \qquad
 There exists an $x > 0$ such that $\cos(x) = 0$.  We define
 \glsadd{not:pi}
 \begin{equation*}
-\pi := 2 \inf \{ x > 0 : \cos(x) = 0 \} .
+\pi := 2 \, \inf \{ x > 0 : \cos(x) = 0 \} .
 \end{equation*}
 \item
 For all $z \in \C$, 
 \begin{equation*}
-e^{2\pi i} = 0, \qquad \text{and} \qquad e^{z + i 2\pi} = e^z.
+e^{2\pi i} = 1, \qquad \text{and} \qquad e^{z + i 2\pi} = e^z.
 \end{equation*}
 \item
 Sine and cosine are $2\pi$-periodic and not periodic with any smaller
@@ -2577,8 +2584,9 @@ First you have to prove that there is an $h > 0$ such that all $f_n \in C([x_0-h
 \subsection{Weierstrass approximation}
 
 Perhaps surprisingly, even a very badly behaving continuous function is really
-just a uniform limit of polynomials.  We cannot really get any ``nicer'' as
-a function than a polynomial.
+just a uniform limit of polynomials.
+And we cannot really get any ``nicer''
+function than a polynomial.
 
 \begin{thm}[Weierstrass approximation theorem]
 If $f \colon [a,b] \to \C$ is continuous, then there exists a sequence $\{
@@ -2784,13 +2792,13 @@ countable).
 
 Further without loss of generality, suppose $[a,b]=[0,1]$.  Let
 \begin{equation*}
-p(x) = \sum_{k=0}^n a_k x^k
+p(x) := \sum_{k=0}^n a_k\,  x^k
 \end{equation*}
 be a polynomial of degree $n$ where $a_k \in \R$.  Given $\epsilon > 0$, pick $b_k \in \Q$
 such that $\sabs{a_k-b_k} < \frac{\epsilon}{n+1}$.  Then
 if we let
 \begin{equation*}
-q(x) = \sum_{k=0}^n b_k x^k
+q(x) := \sum_{k=0}^n b_k \, x^k ,
 \end{equation*}
 we have
 \begin{equation*}
@@ -2819,20 +2827,21 @@ functions.
 
 \subsection{Stone-Weierstrass approximation}
 
-Next thing we do is that we want to abstract away what is not really
-necessary and prove a general version of this theorem.
+We want to abstract away what is not really
+necessary and prove a general version of the Weierstrass theorem.
 The polynomials are dense in the space of continuous
-functions on a compact interval.  So what kind of families of
-functions are also dense?  Furthermore, what if we let the domain be an
+functions on a compact interval.  What other kind of families of
+functions are also dense?  If the domain is an
 arbitrary metric space, then we no longer have polynomials.
 
-The resulting theorem is the Stone--Weierstrass theorem\footnote{%
+The theorem we will prove is the Stone--Weierstrass theorem\footnote{%
 Named after the American mathematician
 \href{http://en.wikipedia.org/wiki/Marshall_Harvey_Stone}{Marshall Harvey Stone}
 (1903--1989), and the German mathematician
 \href{http://en.wikipedia.org/wiki/Karl_Weierstrass}{Karl Theodor Wilhelm Weierstrass}
 (1815--1897).}.
-We need a
+First,
+we need a very
 special case of the Weierstrass theorem though.
 
 \begin{cor}
@@ -2844,10 +2853,11 @@ $p_n(0) = 0$ for all $n$.
 \begin{proof}
 As $f(x) = \sabs{x}$ is continuous and real-valued
 on $[-a,a]$ we definitely have some
-real polynomials $\widetilde{p}_n$ that converge to $f$.
+real polynomials $\widetilde{p}_n$ that converge to $f$
+uniformly on $[-a,a]$.
 Let
 \begin{equation*}
-p_n(x) = \widetilde{p}_n(x) - \widetilde{p}_n(0) .
+p_n(x) := \widetilde{p}_n(x) - \widetilde{p}_n(0) .
 \end{equation*}
 Obviously $p_n(0) = 0$.
 
@@ -3019,8 +3029,10 @@ on $\R$.  That is, $1 \in \sP$ so it vanishes at no point.  And for $x,y \in
 \begin{example}
 The set of functions of the form
 \begin{equation*}
-f(t) = C + \sum_{n=1}^k \cos(nt)
+f(t) = a_0 + \sum_{n=1}^k a_n \cos(nt)
 \end{equation*}
+is an algebra (some trig identities need to be used to show this), but
+it
 does not separate points if the domain is any interval of the form
 $[-a,a]$, because $f(-t) = f(t)$ for all $t$.
 It does separate points if the domain is $[0,\pi]$, as $\cos(t)$
@@ -3248,30 +3260,42 @@ of such functions.  For example above,
 the algebra is generated by $e^t$, we simply
 consider polynomials in $e^t$.
 
-Warning!
-You could similarly show that the set of all functions of the form
+\textbf{Warning!}
+We mentioned that the set of all functions of the form
 \begin{equation*}
-\frac{a_0}{2} +
+a_0 +
 \sum_{n=1}^N a_n \cos(nt)
 \end{equation*}
-is an algebra (you would have to use some trig identities to show this).
-When considered on $[0,\pi]$, the
-algebra separates points and vanishes nowhere so
+is an algebra.
+When considered on $[0,\pi]$, 
+it separates points and vanishes nowhere so
 \hyperref[thm:SWreal]{Stone--Weierstrass} applies.
-You \emph{do not} want to conclude from this that every continuous
+You \emph{do not} want to conclude that every continuous
 function on $[0,\pi]$ has a uniformly convergent
-Fourier cosine series.  That is not true.
-In fact there exist continuous functions
-whose Fourier series does not converge even pointwise.  We do have formulas
-for the coefficients, but those coefficients not give us a convergent
-series.  The
+Fourier cosine series, that is, that every continuous
+function can be written as
+\begin{equation*}
+a_0 +
+\sum_{n=1}^\infty a_n \cos(nt) .
+\end{equation*}
+That is \emph{not true}!
+There exist continuous functions
+whose Fourier series does not converge even pointwise
+let alone uniformly.
+%We do have formulas
+%for the coefficients, but those coefficients not give us a convergent
+%series.
+The
 trick is that the sequence of functions in the algebra that we obtain
 by Stone--Weierstrass
 is not necessarily the sequence of partial sums of a series.
 
-Same warning applies to polynomials as well.  Just because a function is a
+Same warning applies to polynomials and analytic functions.
+Just because a function is a
 uniform limit of polynomials doesn't mean that it is a uniform limit of a
-power series.
+power series.  That is, while every continuous function on an interval
+$[a,b]$ is a uniform limit of polynomials, not every continuous
+function is analytic.
 
 To obtain Stone--Weierstrass for complex algebras, we must
 make an extra assumption.

@@ -2219,6 +2219,38 @@ and a countable union of measure zero sets is of measure zero,
 $S$ is of measure zero.
 \end{proof}
 
+\begin{cor} \label{cor:closednessofriemannintegrable}
+Let $R \subset \R^n$ be a closed rectangle.  Let $\sR(R)$ be the set
+of Riemann integrable functions on $R$.  Then
+\begin{enumerate}[(i)]
+\item
+$\sR(R)$ is a real algebra:
+if $f,g \in \sR(R)$ and $a \in \R$, then $af \in \sR(R)$, $f+g \in \sR(R)$
+and $fg \in \sR(R)$.
+\item
+If $f,g \in \sR(R)$ and
+\begin{equation*}
+\varphi(x) := \max \{ f(x) , g(x) \} ,
+\qquad
+\psi(x) := \min \{ f(x) , g(x) \} ,
+\end{equation*}
+then $\varphi, \psi \in \sR(R)$.
+\item
+If $f \in \sR(R)$, then $\sabs{f} \in \sR(R)$, where $\sabs{f}(x) :=
+\sabs{f(x)}$.
+\item
+If $R' \subset \R^m$ is another closed rectangle,
+$U \subset \R^n$ and $U' \subset \R^m$ are open sets such that
+$R \subset U$ and $R' \subset U'$,
+$g \colon U \to U'$ is continuously differentiable, bijective,
+$g^{-1}$ is continuously differentiable,
+and $f \in \sR(R')$,
+then the composition $f \circ g$ is Riemann integrable on $R$.
+\end{enumerate}
+\end{cor}
+
+The proof is contained in the exercises.
+
 %FIXME
 %
 %\begin{example}
@@ -2270,6 +2302,47 @@ $f|_{R\setminus E}$ is continuous and $f \not\in \sR(R)$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
+
+\begin{exercise}
+Suppose $R \subset \R^n$ is a closed rectangle
+and $f \colon R \to \R$ and $g \colon R \to \R$ 
+are Riemann integrable functions.
+Show that
+\begin{equation*}
+\varphi(x) := \max \{ f(x) , g(x) \} ,
+\qquad
+\psi(x) := \min \{ f(x) , g(x) \} ,
+\end{equation*}
+are Riemann integrable.
+\end{exercise}
+
+\begin{exercise}
+Suppose $R \subset \R^n$ is a closed rectangle
+and $f \colon R \to \R$ a Riemann integrable function.
+Show that $\sabs{f}$ is Riemann integrable.
+Hint: Define
+$f_+(x) := \max \{ f(x) , 0 \}$ and
+$f_-(x) := \max \{ -f(x) , 0 \}$, and then write $\sabs{f}$
+in terms of $f_+$ and $f_-$.
+\end{exercise}
+
+\begin{exercise}
+{\ }
+\begin{enumerate}[a)]
+\item
+Suppose $R \subset \R^n$ and
+$R' \subset \R^m$ are closed rectangles,
+$U \subset \R^n$ and $U' \subset \R^m$ are open sets such that
+$R \subset U$ and $R' \subset U'$,
+$g \colon U \to U'$ is continuously differentiable, bijective,
+$g^{-1}$ is continuously differentiable, and
+$f \in \sR(R')$, 
+then the composition $f \circ g$ is Riemann integrable on $R$.
+\item
+Find a counterexample when $g$ is not one-to-one.
+Hint: Try $g(x,y) := (x,0)$ and $R=R'=[0,1] \times [0,1]$.
+\end{enumerate}
+\end{exercise}
 
 \begin{exercise}
 Suppose 
@@ -2613,6 +2686,11 @@ Find an example where $S\subset \R^n$ is bounded and Jordan measurable,
 $T \subset \R^n$ is bounded and of measure zero, and
 neither $T$ nor $S \setminus T$ is Jordan measurable.
 \end{enumerate}
+\end{exercise}
+
+\begin{exercise} \label{exercise:closednessofriemannintegrable}
+Prove \corref{cor:closednessofriemannintegrable} replacing all closed
+rectangles with bounded Jordan measurable sets.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3090,7 +3168,7 @@ exercise.
 
 Let us prove that
 $\sabs{J_g(x)}$ is the replacement of $\sabs{g'(x)}$ for multiple
-dimensions.  Note that the following theorem holds in more generality,
+dimensions.  The following theorem holds in more generality,
 but this statement is sufficient for many uses.
 
 \begin{thm}
@@ -3110,24 +3188,33 @@ integrable.  Then $f \circ g$ is Riemann integrable on $S$ and
 
 The set $g(S)$ is Jordan measurable by \propref{prop:imagejordanmeas},
 so the left hand side does make sense.
+That the right hand side makes sense follows by
+\corref{cor:closednessofriemannintegrable} (actually
+\exerciseref{exercise:closednessofriemannintegrable}).
 
 \begin{proof}
-The left hand side is $\int_{R'} f \chi_{g(S)}$, where the integral
-is taken over a
-large enough rectangle $R'$ that contains $g(S)$.
-The right hand side is $\int_{R} f\bigl(g(x)\bigr) \sabs{J_g} \chi_S$ for
-a large enough rectangle $R$ that contains $S$.
+%The left hand side is $\int_{R'} f \chi_{g(S)}$, where the integral
+%is taken over a
+%large enough rectangle $R'$ that contains $g(S)$.
+%The right hand side is $\int_{R} f\bigl(g(x)\bigr) \sabs{J_g} \chi_S$ for
+%a large enough rectangle $R$ that contains $S$.
 
 The set $S$ can be covered by finitely many closed rectangles
 $P_1,P_2,\ldots,P_k$, whose
-interiors do not overlap such that each $P_j \subset U$.
+interiors do not overlap such that each $P_j \subset U$
 (exercise).
 Proving the theorem for $P_j \cap S$ instead of $S$ is enough
 Furthermore, for $y \notin g(S)$ write $f(y) := 0$.
-We therefore assume that $S$ is equal to the rectangle $R$.
+We therefore assume that $S$ is equal to a rectangle $R$.
 
-By writing $f = f_+ - f_-$ for two positive functions $f_+$ and $f_-$
-(exercise), if we prove the theorem for a nonnegative $f$
+We can write any Riemann integrable function $f$ as
+$f = f_+ - f_-$ for two nonnegative Riemann integrable
+functions $f_+$ and $f_-$:
+\begin{equation*}
+f_+(x) := \max \{ f(x) , 0 \}, \qquad
+f_-(x) := \max \{ -f(x) , 0 \} .
+\end{equation*}
+So, if we prove the theorem for a nonnegative $f$
 we obtain the theorem for arbitrary $f$.
 Therefore, let us also suppose that 
 $f(y) \geq 0$ for all $y$.
@@ -3153,9 +3240,14 @@ We also make sure that the minimum side length is at least
 $\frac{\delta}{2\sqrt{n}}$, which we can do if $\delta$ is 
 sufficiently small compared to the sides of $R$ (exercise).
 
-Consider $R_j$ and some fixed $x_j \in R_j$.
+Consider some $R_j$ and some fixed $x_j \in R_j$.
 First suppose $x_j=0$, $g(x_j) = 0$, and $g'(0) = I$.
-Then for any $y \in R_j$, with $t = \snorm{y}$.
+For any $y \in R_j$,
+apply the fundamental theorem of calculus
+to the function $t \mapsto g(ty)$ to find
+$g(y) = \int_0^1 g'(ty)y ~dt$.  As the
+side of $R_j$ is at most $\frac{\delta}{\sqrt{n}}$
+then $\snorm{y} \leq \delta$.  So
 \begin{equation*}
 \snorm{g(y)-y} =
 \norm{\int_0^1 \bigl(g'(ty) y - y\bigr) ~dt} \leq
@@ -3165,38 +3257,60 @@ Then for any $y \in R_j$, with $t = \snorm{y}$.
 \delta \epsilon .
 \end{equation*}
 Therefore, $g(R_j) \subset \widetilde{R}_j$, where
-$\widetilde{R}_j$ is $R_j$ with each side extended by
-$\delta \epsilon$ on each side. 
+$\widetilde{R}_j$ is a rectangle obtained from
+$R_j$ by extending by
+$\delta \epsilon$ on all sides.  See \figureref{changeofvarssq:fig}.
+
+\begin{myfigureht}
+\subimport*{figures/}{changeofvarssq.pdf_t}
+\caption{Image of $R_j$ under $g$ lies inside
+$\widetilde{R}_j$.  A sample point $y \in R_j$ (on the boundary of $R_j$ in fact) is marked
+and $g(y)$ must lie within with a radius of $\delta\epsilon$
+(also marked).\label{changeofvarssq:fig}}
+\end{myfigureht}
+
+
 If the sides are $s_1,s_2,\ldots,s_n$ then
 $V(R_j) = s_1 s_2 \cdots s_n$.   Recall $\delta \leq 2\sqrt{n} \, s_j$.  Thus
-\begin{multline*}
-V(\widetilde{R}_j) =
-(s_1+\delta \epsilon )
-(s_2+\delta \epsilon )
+\begin{equation*}
+\begin{split}
+V(\widetilde{R}_j) & =
+(s_1+2\delta \epsilon )
+(s_2+2\delta \epsilon )
 \cdots
-(s_n+\delta \epsilon )
+(s_n+2\delta \epsilon )
 \\
-\leq
-(s_1+2 \sqrt{n}\,s_1 \epsilon )
-(s_2+2 \sqrt{n}\,s_n \epsilon )
+& \leq
+(s_1+4 \sqrt{n}\,s_1 \epsilon )
+(s_2+4 \sqrt{n}\,s_2 \epsilon )
 \cdots
-(s_n+2 \sqrt{n}\,s_n \epsilon )
+(s_n+4 \sqrt{n}\,s_n \epsilon )
+\\
+& =
+s_1 (1+4 \sqrt{n}\, \epsilon )
+\,
+s_2 (1+4 \sqrt{n}\, \epsilon )
+\cdots
+s_n (1+4 \sqrt{n}\, \epsilon )
 =
-V(R_j) (1+2\sqrt{n} \, \epsilon) .
-\end{multline*}
+V(R_j) (1+4\sqrt{n} \, \epsilon) .
+\end{split}
+\end{equation*}
 In other words,
 \begin{equation*}
-V\bigl(g(R_j)\bigr) \leq V(R_j) (1+2\sqrt{n} \, \epsilon) .
+V\bigl(g(R_j)\bigr) \leq V(R_j) (1+4\sqrt{n} \, \epsilon) .
 \end{equation*}
 Next, let us suppose that $A := g'(0)$ is not the identity.
-Writing $g = A \circ \tilde{g}$ where $\tilde{g}'(0) = I$.
+Write $g = A \circ \widetilde{g}$ where $\widetilde{g}'(0) = I$.
 By \propref{prop:volrectdet},
 we know that $V\bigl(A(R_j)\bigr) = \sabs{\det(A)}V(R_j)$, and hence
 \begin{equation*}
-V\bigl(g(R_j)\bigr) \leq
-\sabs{\det(A)} V(R_j) (1+2\sqrt{n} \, \epsilon)
-=
-\sabs{J_g(0)} V(R_j) (1+2\sqrt{n} \, \epsilon) .
+\begin{split}
+V\bigl(g(R_j)\bigr) & \leq
+\sabs{\det(A)} V(R_j) (1+4\sqrt{n} \, \epsilon) \\
+& =
+\sabs{J_g(0)} V(R_j) (1+4\sqrt{n} \, \epsilon) .
+\end{split}
 \end{equation*}
 Finally, translation does not change volume, and therefore
 for any $R_j$, and $x_j \in R_j$ including when $x_j \not= 0$ and $g(x_j)
@@ -3206,9 +3320,8 @@ V\bigl(g(R_j)\bigr) \leq
 \sabs{J_g(x_j)} V(R_j) (1+2\sqrt{n} \, \epsilon) .
 \end{equation*}
 
-Let us first assume that $f(y) \geq 0$ for all $y \in R$.
-
-Suppose that $\delta > 0$ was chosen small enough such that
+First assume that $f(y) \geq 0$ for all $y \in R$.
+Suppose $\delta > 0$ was chosen small enough such that
 \begin{equation*}
 \begin{split}
 \epsilon + \int_R f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx
@@ -3221,14 +3334,14 @@ Suppose that $\delta > 0$ was chosen small enough such that
 & \geq
 \sum_{j=1}^N \biggl(\sup_{y \in g(R_j)} f(y) \biggr)
 V\bigl(g(R_j)\bigr)
-(1+2\sqrt{n} \, \epsilon)
+(1+4\sqrt{n} \, \epsilon)
 \\
 & \geq
 \sum_{j=1}^N \left(\int_{g(R_j)}f(y) ~dy \right)
-(1+2\sqrt{n} \, \epsilon)
+(1+4\sqrt{n} \, \epsilon)
 \\
 & =
-(1+2\sqrt{n} \, \epsilon)
+(1+4\sqrt{n} \, \epsilon)
 \int_{g(R)} f(y) ~dy .
 \end{split}
 \end{equation*}
@@ -3240,7 +3353,6 @@ Letting $\epsilon$ go to zero we find
 \begin{equation*}
 \int_R f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx \geq \int_{g(R)} f(y) ~dy .
 \end{equation*}
-
 By adding this result for several rectangles covering an $S$ we obtain the
 result for an arbitrary bounded Jordan measurable $S \subset U$,
 and any nonnegative integrable function $f$:
@@ -3248,23 +3360,26 @@ and any nonnegative integrable function $f$:
 \int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx \geq \int_{g(S)} f(y) ~dy .
 \end{equation*}
 
-Next, recall that $g^{-1}$ exists, and $g^{-1}\bigl(g(S)\bigr) = S$.
+Next, recall that $g^{-1}$ exists, and that $g^{-1}\bigl(g(S)\bigr) = S$.
 Also $1 = J_{g\circ g^{-1}} = J_g(g^{-1}(y))J_{g^{-1}}(y)$ for $y \in g(S)$.
 So
-\begin{multline*}
+\begin{equation*}
+\begin{split}
 \int_{g(S)} f(y) ~ dy
-=
+& =
 \int_{g(S)} f\bigl(g\bigl(g^{-1}(y)\bigr)\bigr)
 \sabs{J_g\bigl(g^{-1}(y)\bigr)} \, \sabs{J_{g^{-1}}(y)} ~ dy
 \\
-\geq
+& \geq
 \int_{g^{-1}(g(S))} f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx
 =
 \int_{S} f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx .
-\end{multline*}
+\end{split}
+\end{equation*}
 
-Therefore, we have the conclusion for all nonnegative $f$ and hence as we
-said for all Riemann integrable $f$.
+The conclusion of the theorem holds
+for all nonnegative $f$ and as we
+mentioned above, it thus holds for all Riemann integrable $f$.
 \end{proof}
 
 \subsection{Exercises}
@@ -3281,19 +3396,6 @@ $P_1,P_2, \ldots, P_k$ such that $P_j \subset U$,
 $S \subset P_1 \cup P_2 \cup \cdots \cup P_k$, and
 the interiors are mutually disjoint, that is
 $P_j^\circ \cap P^\circ_\ell = \emptyset$ whenever $j \not= \ell$.
-\end{exercise}
-
-\begin{exercise}
-Suppose $S \subset \R^n$ is a closed bounded Jordan measurable set
-and $f \colon S \to \R$ a Riemann integrable function.
-Let
-\begin{equation*}
-f_+(x) := \max \{ f(x) , 0 \} ,
-\qquad
-f_-(x) := \max \{ -f(x) , 0 \} ,
-\end{equation*}
-such that $f = f_+ - f_-$.  Show that $f_+$ and $f_-$ are Riemann
-integrable.
 \end{exercise}
 
 \begin{exercise}
