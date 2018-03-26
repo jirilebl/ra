@@ -3453,12 +3453,18 @@ Also suppose $p \in U$, $f(p) = q$, and $f'(p)$ is invertible
 (that is, $J_f(p) \not=0$).
 Then there exist open sets $V, W \subset \R^n$ such that
 $p \in V \subset U$, $f(V) = W$ and $f|_V \colon V \to W$ is one-to-one and onto.  
+See \figureref{fig:inversefuncRn}.
 Furthermore, the inverse $g(y) := (f|_V)^{-1}(y)$ is continuously differentiable
 and 
 \begin{equation*}
 g'(y) = {\bigl(f'(x)\bigr)}^{-1}, \qquad \text{ for all $x \in V$, $y = f(x)$.}
 \end{equation*}
 \end{thm}
+
+\begin{myfigureht}
+\subimport*{figures/}{inversefuncRn.pdf_t}
+\caption{Setup of the inverse function theorem in $\R^n$.\label{fig:inversefuncRn}}
+\end{myfigureht}
 
 \begin{proof}
 Write $A = f'(p)$.  As $f'$ is continuous, there exists an open ball
@@ -3547,7 +3553,14 @@ Because $f|_V$ is a one-to-one and onto mapping of $V$ onto $W$,
 there are unique
 $x \in V$ and $h \in \R^n$, $h \not= 0$ and $x+h \in V$, such that
 $f(x) = y$ and $f(x+h) = y+k$.
-In other words, $g(y) = x$ and $g(y+k) = x+h$.  We can still
+In other words, $g(y) = x$ and $g(y+k) = x+h$.  See
+\figureref{fig:inversefuncRn2}.
+\begin{myfigureht}
+\subimport*{figures/}{inversefuncRn2.pdf_t}
+\caption{Proving that $g$ is differentiable.\label{fig:inversefuncRn2}}
+\end{myfigureht}
+
+We can still
 squeeze some information from the fact that $\varphi_y$ is a contraction.
 \begin{equation*}
 \varphi_y(x+h)-\varphi_y(x) = h + A^{-1} \bigl( f(x)-f(x+h) \bigr) = h - A^{-1} k .
@@ -3701,10 +3714,16 @@ $A_y$ is invertible.  If $B = - {(A_y)}^{-1} A_x$, then
 \begin{equation*}
 0 = A ( x, Bx) = A_x x + A_y Bx .
 \end{equation*}
+Furthermore, $Bx$ is the unique $y \in \R^m$ such that $A(x,y) = 0$.
 \end{prop}
 
-The proof is obvious.  We simply solve and obtain $y = Bx$.  Let us
-show that the same can be done for $C^1$ functions.
+The proof is obvious.  We simply solve and obtain $y = Bx$.
+Another way to solve is to ``complete the basis'' that is, add
+rows to the matrix until we have an invertible matrix.  In this case,
+we construct a mapping $(x,y) \mapsto (x,A_x x + A_y y)$, and
+find that this operator in $L(\R^{n+m})$ is invertible, and the map $B$
+can be read off from the inverse.
+Let us show that the same can be done for $C^1$ functions.
 
 \begin{thm}[Implicit function theorem]\index{implicit function theorem}
 \label{thm:implicit}
@@ -3954,7 +3973,8 @@ $z^2 + xz + y =0$.  Do you recognize the expression $D$ from algebra?
 
 \begin{exercise}
 Suppose $f \colon (a,b) \to \R^2$ is continuously differentiable and
-$\frac{\partial f}{\partial x}(t) \not= 0$ for all $t \in (a,b)$.
+the first component (the $x$ component) of $\nabla f(t)$ is not equal to 0
+for all $t \in (a,b)$.
 Prove that there exists an interval $(c,d)$ and
 a continuously differentiable function $g \colon (c,d) \to \R$
 such that 
@@ -4024,6 +4044,30 @@ F(x,y) := \left(
 Prove that $F$ is a bijective mapping from $H$ to $B(0,1)$, it is
 continuously differentiable on $H$, and its inverse is also continuously
 differentiable.
+\end{exercise}
+
+\begin{exercise}
+Suppose $U \subset \R^2$ is an open set and $f \colon U \to \R$ is
+a $C^1$ function such
+that $\nabla f(x,y) \not= 0$ for all $(x,y) \in U$.  Show that every
+level set is a $C^1$ smooth curve.  That is,
+for every
+$(x,y) \in U$, there exists a $C^1$ function $\gamma \colon (-\delta,\delta)
+\to \R^2$ with $\gamma^{\:\prime}(0) \not= 0$ such that
+$f\bigl(\gamma(t)\bigr)$ is constant for all $t \in (-\delta,\delta)$.
+\end{exercise}
+
+\begin{exercise}
+Suppose $U \subset \R^2$ is an open set and $f \colon U \to \R$ is
+a $C^1$ function such
+that $\nabla f(x,y) \not= 0$ for all $(x,y) \in U$.
+Show that for every $(x,y)$ there exists a neighborhood $V$ of $(x,y)$
+an open set $W \subset \R^2$, a bijective $C^1$ function with
+a $C^1$ inverse $g \colon W \to V$ such that
+the level sets of $f \circ g$ are horizontal lines in $W$, that is,
+the set given by $(f \circ g) (s,t) = c$ for a constant $c$ is a set of the form
+$\bigl\{ (s,t_0) \in \R^2 : s \in \R, (s,t_0) \in W \bigr\}$, where $t_0$ is fixed.
+That is, the level curves can be locally ``straightened.''
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

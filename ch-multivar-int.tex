@@ -2687,6 +2687,12 @@ neither $T$ nor $S \setminus T$ is Jordan measurable.
 \end{enumerate}
 \end{exercise}
 
+\begin{exercise}
+Suppose $U \subset \R^n$ is open and $K \subset U$ is compact.
+Find a compact Jordan measurable set $S$ such that $S \subset U$
+and $K \subset S^\circ$ ($K$ is in the interior of $S$).
+\end{exercise}
+
 \begin{exercise} \label{exercise:closednessofriemannintegrable}
 Prove \corref{cor:closednessofriemannintegrable} replacing all closed
 rectangles with bounded Jordan measurable sets.
@@ -3144,15 +3150,15 @@ interval $[a,b]$.  With this notation, the change of variables becomes
 \int_{[a,b]} f\bigl(g(x)\bigr) \sabs{g'(x)}~ dx = 
 \int_{g([a,b])} f(x) ~ dx .
 \end{equation*}
-In this section we will try to obtain an analogue in this form.
+In this section we will obtain the several-variable analogue of this form.
 
 First we wish to see what plays the role of $\sabs{g'(x)}$.  
-The $g'(x)$ is a scaling of $dx$.  The integral measures volumes, so in one
+The $g'(x)$ is a scaling of $dx$.  The integral measures volumes in general, so in one
 dimension it measures length.  If our $g$ is linear, that is, $g(x)=Lx$, then
 $g'(x) = L$.  Then the length of the interval $g([a,b])$ is simply
 $\sabs{L}(b-a)$.  That is because $g([a,b])$ is either $[La,Lb]$ or
 $[Lb,La]$.  This property holds in higher dimension with $\sabs{L}$ replaced
-by absolute value of the determinant.
+by the absolute value of the determinant.
 
 \begin{prop} \label{prop:volrectdet}
 Suppose $R \subset \R^n$ is a rectangle
@@ -3413,4 +3419,39 @@ Show that if $\delta' > 0$ is sufficiently small compared
 to the sides of $R$, then $R$ can be partitioned
 into subrectangles where each side of any subrectangle
 is between $\frac{\delta'}{2}$ and $\delta'$.
+\end{exercise}
+
+\begin{exercise}
+Prove the following version of the theorem:
+\emph{Suppose $f \colon \R^n \to \R$ is a Riemann integrable
+compactly supported function.  Suppose $K \subset \R^n$
+is the support of $f$, $S$ is a compact set,
+and $g \colon \R^n \to \R^n$ is
+a function that when restricted to a neighborhood $U$ of
+$S$ is one-to-one and continuously differentiable,
+$g(S) = K$ and $J_g$ is never zero on $S$ (in the formula 
+assume $J_g(x) = 0$ if $g$ not differentiable at $x$, that is when $x \notin
+U$).  Then}
+\begin{equation*}
+\int_{\R^{n}} f(x) ~ dx = 
+\int_{\R^n} f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx .
+\end{equation*}
+\end{exercise}
+
+\begin{exercise}
+Prove the following version of the theorem:
+\emph{Suppose $S \subset \R^n$ is an open bounded Jordan measurable set,
+$g \colon S \to \R^n$ is a one-to-one
+continuously differentiable mapping such that
+$J_g$ is never zero on $S$, and such that $g(S)$ is bounded and
+Jordan measurable (it is also open).
+Suppose $f \colon g(S) \to \R$ is Riemann
+integrable.  Then $f \circ g$ is Riemann integrable on $S$ and}
+\begin{equation*}
+\int_{g(S)} f(x) ~ dx = 
+\int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx .
+\end{equation*}
+Hint: Write $S$ as an increasing union of closed bounded Jordan measurable
+sets, then apply the theorem of the section to those.  Then prove that you
+can take the limit.
 \end{exercise}
