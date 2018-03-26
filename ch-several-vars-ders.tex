@@ -3453,7 +3453,7 @@ Also suppose $p \in U$, $f(p) = q$, and $f'(p)$ is invertible
 (that is, $J_f(p) \not=0$).
 Then there exist open sets $V, W \subset \R^n$ such that
 $p \in V \subset U$, $f(V) = W$ and $f|_V \colon V \to W$ is one-to-one and onto.  
-Furthermore, the inverse $g(y) = (f|_V)^{-1}(y)$ is continuously differentiable
+Furthermore, the inverse $g(y) := (f|_V)^{-1}(y)$ is continuously differentiable
 and 
 \begin{equation*}
 g'(y) = {\bigl(f'(x)\bigr)}^{-1}, \qquad \text{ for all $x \in V$, $y = f(x)$.}
@@ -3657,27 +3657,37 @@ mapping.  For example, the function $f(x) := x^3$ is an open mapping from $\R$
 to $\R$ and is globally one-to-one with a continuous inverse, although the
 inverse is not differentiable at $x=0$.
 
+\medskip
+
+As a side note, there is a related famous, and as yet unsolved problem,
+called the \emph{\myindex{Jacobian conjecture}}.  If $F \colon \R^n \to
+\R^n$ is polynomial (each component is a polynomial) and $J_F$ is a nonzero
+constant, does $F$ have a polynomial inverse?
+The inverse function theorem gives a local $C^1$ inverse, but can one always
+find a global polynomial inverse is the question.
+
 \subsection{Implicit function theorem}
 
 The inverse function theorem is really a special case of the implicit
-function theorem which we prove next.  Although somewhat ironically we 
+function theorem, which we prove next.  Although somewhat ironically we 
 prove the implicit function theorem using the inverse function theorem.
 In the inverse function theorem we showed that
 the equation $x-f(y) = 0$ is solvable for $y$ in terms of $x$ if the derivative
 in terms of $y$ is invertible, that is if $f'(y)$ is invertible.
-That is there is locally a
+Then there is (locally) a
 function $g$ such that $x-f\bigl(g(x)\bigr) = 0$.
 
-OK, so how about we look at the equation $f(x,y) = 0$.  Obviously this is
+OK, so how about the equation $f(x,y) = 0$.  This equation is
 not solvable for $y$ in terms of $x$ in every case.  For example,
+there is no solution
 when $f(x,y)$ does not actually depend on $y$.  For a slightly more
 complicated example, notice that $x^2+y^2-1 = 0$ defines the unit circle, and
 we can locally solve for $y$ in terms of $x$ when 1) we are near
-a point which lies on the unit circle and 2) when we are not at a point
+a point that lies on the unit circle and 2) when we are not at a point
 where the circle has a vertical tangency, or in other words where
 $\frac{\partial f}{\partial y} = 0$.
 
-To make things simple we fix some notation.  We let $(x,y) \in
+To make things simple, we fix some notation.  We let $(x,y) \in
 \R^{n+m}$ denote the coordinates $(x_1,\ldots,x_n,y_1,\ldots,y_m)$.  A
 linear transformation $A \in L(\R^{n+m},\R^m)$ can then 
 be written as
@@ -3763,17 +3773,17 @@ Plugging in $s=0$, we obtain
 \begin{equation*}
 f\bigl(x,G_2(x,0)\bigr) = 0 .
 \end{equation*}
-The set $G(V)$ contains a whole neighborhood of the point $(p,q)$
-and therefore there are some open
-The set $V$ is open and hence there exist some open sets
+%The set $G(V)$ contains a whole neighborhood of the point $(p,q)$.
+The set $G(V)$ contains a whole neighborhood of the point $(p,q)$.
+Hence there exist some open sets
 $\widetilde{W}$ and $W'$ such that $\widetilde{W} \times W' \subset G(V)$ with $p
 \in \widetilde{W}$ and
 $q \in W'$.
-Then take $W = \{ x \in \widetilde{W} : G_2(x,0) \in W' \}$.
+Take $W := \{ x \in \widetilde{W} : G_2(x,0) \in W' \}$.
 The function that takes $x$ to $G_2(x,0)$ is continuous and therefore $W$
 is open.
-We define
-$g \colon W \to \R^m$ by $g(x) := G_2(x,0)$ which is the $g$ in the theorem.
+Define
+$g \colon W \to \R^m$ by $g(x) := G_2(x,0)$, which is the $g$ in the theorem.
 The fact that $g(x)$ is the unique point in $W'$ follows because $W \times
 W' \subset G(V)$ and $G$ is one-to-one and onto $G(V)$.
 
@@ -3782,12 +3792,14 @@ Next differentiate
 x\mapsto f\bigl(x,g(x)\bigr) ,
 \end{equation*}
 at $p$,
-which should be the zero map.  The derivative is done in the same way as
-above.  We get that for all $h \in \R^{n}$
+which should be the zero map.
+%The derivative is done in the same way as above.
+Applying the chain rule,
+we get that for all $h \in \R^{n}$
 \begin{equation*}
 0 = A\bigl(h,g'(p)h\bigr) = A_xh + A_yg'(p)h ,
 \end{equation*}
-and we obtain the desired derivative for $g$ as well.
+and we obtain the desired derivative for $g$.
 \end{proof}
 
 In other words, in the context of the theorem we have
@@ -3865,6 +3877,10 @@ it just tells us they exist.
 In other words, near the origin the set of solutions is a
 smooth curve in $\R^3$ that goes through the origin.
 \end{example}
+
+An interesting observation from the proof is that we solved the equation
+$f\bigl(x,g(x)\bigr) = s$ for all $s$ in some neighborhood of $0$, not just
+$s=0$.
 
 \begin{remark}
 There are versions of the theorem for arbitrarily many derivatives.
