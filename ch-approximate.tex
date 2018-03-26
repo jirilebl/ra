@@ -3698,7 +3698,7 @@ We have seen that the example Fourier series
 \begin{equation*}
 \sum_{n=1}^\infty \frac{\sin(nx)}{n^2}
 \end{equation*}
-converges uniformly and hence is continuous.  This 
+converges uniformly and is hence continuous.  This 
 example can be extended to a more general criterion.
 
 \begin{prop}
@@ -3788,7 +3788,7 @@ Notice the similarity to finite dimensions.  For $z = (z_1,z_2,\ldots,z_n) \in
 \langle z , w \rangle :=
 \sum_{k=1}^n z_k \overline{w_k}
 \end{equation*}
-and then the norm is (usually this is just denoted by $\snorm{z}$ rather than
+and then the norm is (usually it is denoted by simply $\snorm{z}$ rather than
 $\snorm{z}_2$)
 \begin{equation*}
 \snorm{z}^2 = 
@@ -3798,8 +3798,8 @@ $\snorm{z}_2$)
 This is just the euclidean distance to the origin in $\C^n$.
 \end{remark}
 
-Let us get back to function spaces.  In what follows, we assume all functions are
-Riemann integrable.
+Let us get back to function spaces.  In what follows, we will
+assume all functions are Riemann integrable.
 
 \begin{defn}
 Let $\{ \varphi_n \}$ be a sequence of integrable complex-valued
@@ -3808,14 +3808,14 @@ functions on $[a,b]$.  We say that this is an
 \begin{equation*}
 \langle \varphi_n , \varphi_m \rangle
 =
-\int_a^b \varphi_n(x) \overline{\varphi_m(x)} ~ dx
+\int_a^b \varphi_n(x) \, \overline{\varphi_m(x)} ~ dx
 = 
 \begin{cases}
 1 & \text{if $n=m$,} \\
 0 & \text{otherwise.}
 \end{cases}
 \end{equation*}
-Notice that the above says that $\snorm{\varphi_n}_2 = 1$ for all $n$.  If we
+In particular, $\snorm{\varphi_n}_2 = 1$ for all $n$.  If we
 only require that 
 $\langle \varphi_n , \varphi_m \rangle = 0$ for $m\not= n$ then
 the system would be just an \emph{\myindex{orthogonal system}}.
@@ -3858,14 +3858,14 @@ f(x) \sim \sum_{n=1}^\infty c_n \varphi_n(x) .
 \end{equation*}
 If
 \begin{equation*}
-s_n (x) = \sum_{k=1}^n c_k \varphi_k(x)
+s_n (x) := \sum_{k=1}^n c_k \varphi_k(x)
 \quad\text{and}\quad
-t_n (x) = \sum_{k=1}^n d_k \varphi_k(x) .
+p_n (x) := \sum_{k=1}^n d_k \varphi_k(x) .
 \end{equation*}
 for some other sequence $\{ d_k \}$, then
 \begin{equation*}
 \int_a^b \sabs{f(x)-s_n(x)}^2 ~ dx = \snorm{f-s_n}_2^2 \leq
-\snorm{f-t_n}_2^2 = \int_a^b \sabs{f(x)-t_n(x)}^2 ~ dx .
+\snorm{f-p_n}_2^2 = \int_a^b \sabs{f(x)-p_n(x)}^2 ~ dx .
 \end{equation*}
 with equality only if $d_k = c_k$ for all $k=1,2,\ldots,n$.
 \end{thm}
@@ -3876,19 +3876,19 @@ $L^2$ norm.
 \begin{proof}
 Let us write
 \begin{equation*}
-\int_a^b \sabs{f-t_n}^2
+\int_a^b \sabs{f-p_n}^2
 =
 \int_a^b \sabs{f}^2
 -
-\int_a^b f \overline{t_n}
+\int_a^b f \overline{p_n}
 -
-\int_a^b \overline{f} t_n
+\int_a^b \overline{f} p_n
 +
-\int_a^b \sabs{t_n}^2 .
+\int_a^b \sabs{p_n}^2 .
 \end{equation*}
 Now
 \begin{equation*}
-\int_a^b f \overline{t_n}
+\int_a^b f \overline{p_n}
 =
 \int_a^b f \sum_{k=1}^n \overline{d_k} \overline{\varphi_k}
 =
@@ -3898,7 +3898,7 @@ Now
 \end{equation*}
 and
 \begin{equation*}
-\int_a^b \sabs{t_n}^2
+\int_a^b \sabs{p_n}^2
 =
 \int_a^b
 \sum_{k=1}^n d_k \varphi_k
@@ -3917,7 +3917,7 @@ d_k
 \end{equation*}
 So
 \begin{equation*}
-\int_a^b \sabs{f-t_n}^2
+\int_a^b \sabs{f-p_n}^2
 =
 \int_a^b \sabs{f}^2
 -
@@ -4130,19 +4130,22 @@ The central peak will get taller and taller with $N$ being larger,
 and the side peaks will stay small (but oscillate wildly).
 We are convolving (again) with approximate delta functions,
 although these have
-all these oscillations away from zero which do not go away.  So we expect that
-$s_N$ goes to $f$.  Things are not so simple, but under some conditions on
-$f$, such a conclusion holds.  For this reason
+all these oscillations away from zero, which do not go away.  So we expect that
+$s_N(f)$ goes to $f$.  Things are not always so simple,
+but under some conditions on $f$, such a conclusion holds.  For this reason
 people write
 \begin{equation*}
 \delta(x) \sim \sum_{n=\infty}^\infty e^{inx}
 \end{equation*}
 although we have not really defined the delta function (and it is not a
-function), nor a Fourier series of whatever kind object it is.
+function), nor a Fourier series of whatever kind of object it is.
 
 \subsection{Localization}
 
-\begin{thm}
+If $f$ satisfies a Lipschitz condition at a point, then
+the Fourier series converges at that point.
+
+\begin{thm} \label{thm:fourierlocalization}
 Let $x$ be fixed and let $f$ be a $2\pi$-periodic function
 Riemann integrable on $[-\pi,\pi]$.  Suppose
 there exist $\delta > 0$ and $M$ such that
@@ -4155,24 +4158,32 @@ for all $t \in (-\delta,\delta)$, then
 \end{equation*}
 \end{thm}
 
-In particular, if $f$ is continuously
+In particular,
+if $f$ is continuously
 differentiable at $x$
 then we obtain convergence (exercise).
-A useful and often used consequence of
-the result is
-that if the function is continuous
-piecewise smooth, then the Fourier series converges
-(pointwise). 
-By \emph{\myindex{continuous piecewise smooth}}\index{piecewise smooth}
-we mean that $f$
-is continuous and periodic so $f(-\pi) = f(\pi)$ and furthermore
-that there are points $x_0 = -\pi < x_1 < \cdots < x_k = \pi$
+We state the more often used version of this corollary.
+A function $f \colon [a,b] \to \C$ is
+\emph{\myindex{continuous piecewise smooth}}\index{piecewise smooth}
+if it is continuous and there exist points
+$x_0 = a < x_1 < x_2 < \cdots < x_k = b$
 such that $f$ restricted to $[x_j,x_{j+1}]$
 is continuously differentiable (up to the endpoints) for all $j$.
-Again, proof of that statement is left as an exercise.
 
-\begin{proof}
-We notice that for all $N$ we get
+\begin{cor} \label{cor:fourierpiecewisesmooth}
+Let $f$ be a $2\pi$-periodic function
+Riemann integrable on $[-\pi,\pi]$.  Suppose
+there exist $x\in \R$ and $\delta > 0$ such that $f$ is continuous piecewise
+smooth on $[x-\delta,x+\delta]$, then
+\begin{equation*}
+\lim_{N \to \infty} s_N(f;x) = f(x) .
+\end{equation*}
+\end{cor}
+
+The proof of the corollary is left as an exercise.
+
+\begin{proof}[Proof of \thmref{thm:fourierlocalization}]
+For all $N$,
 \begin{equation*}
 \frac{1}{2\pi} \int_{-\pi}^\pi D_N = 1 .
 \end{equation*}
@@ -4189,25 +4200,25 @@ f(x)
 \frac{1}{2\pi} \int_{-\pi}^\pi \bigl( f(x-t) - f(x) \bigr) D_N(t) ~ dt 
 \\
 & = 
-\frac{1}{2\pi} \int_{-\pi}^\pi \frac{f(x-t) - f(x)}{\sin(\frac{t}{2})} \sin\bigl(
+\frac{1}{2\pi} \int_{-\pi}^\pi \frac{f(x-t) - f(x)}{\sin(\nicefrac{t}{2})} \sin\bigl(
 (N+\nicefrac{1}{2})t \bigr) ~ dt .
 \end{split}
 \end{equation*}
-Now by the hypotheses we obtain that
+By the hypotheses,
 for small nonzero $t$ we get
 \begin{equation*}
-\abs{ \frac{f(x-t) - f(x)}{\sin(\frac{t}{2})} }
+\abs{ \frac{f(x-t) - f(x)}{\sin(\nicefrac{t}{2})} }
 \leq
-\frac{M\sabs{t}}{\sabs{\sin(\frac{t}{2})}} .
+\frac{M\sabs{t}}{\sabs{\sin(\nicefrac{t}{2})}} .
 \end{equation*}
 As $\sin(t) = t + h(t)$ where $\frac{h(t)}{t} \to 0$ as $t \to 0$,
 we notice that
-$\frac{M\sabs{t}}{\sabs{\sin(\frac{t}{2})}}$ is continuous at the origin
+$\frac{M\sabs{t}}{\sabs{\sin(\nicefrac{t}{2})}}$ is continuous at the origin
 and hence 
-$\frac{f(x-t) - f(x)}{\sin(\frac{t}{2})}$ must be bounded near the origin.
+$\frac{f(x-t) - f(x)}{\sin(\nicefrac{t}{2})}$ must be bounded near the origin.
 As $t=0$ is the only place on $[-\pi,\pi]$ where the denominator vanishes,
 it is the only place where there could be a problem.  The function is
-also Riemann integrable.  Now we use a trigonometric identity
+also Riemann integrable.  We use a trigonometric identity
 \begin{equation*}
 \sin\bigl( (N+\nicefrac{1}{2})t \bigr)
 =
@@ -4235,24 +4246,30 @@ integrals on the right hand side, which compute the Fourier coefficients
 for the real version of the Fourier series go to 0 as $N$ goes to infinity.
 This is because $\sin(Nt)$ and $\cos(Nt)$ are also orthonormal systems
 with respect to the same inner product.
-Hence $s_N(f;x)-f(x)$ goes to 0 and so $s_N(f;x)$ goes to $f(x)$.
+Hence $s_N(f;x)-f(x)$ goes to 0, that is, $s_N(f;x)$ goes to $f(x)$.
 \end{proof}
 
-In particular this has the following corollary:
+The theorem also says that convergence depends only on local behavior.
 
 \begin{cor}
 Suppose $f$ is a $2\pi$-periodic function, Riemann integrable on $[-\pi,\pi]$.
 If $J$ is an open interval and $f(x) = 0$ for all $x \in J$,
 then $\lim\, s_N(f;x) = 0$ for all $x \in J$.
+
+In particular, if $f$ and $g$ are $2\pi$-periodic functions,
+Riemann integrable on $[-\pi,\pi]$, $J$ an open interval, and $f(x) = g(x)$
+for all $x \in J$, then for all $x \in J$,
+the sequence
+$\{ s_N(f;x) \}$ converges if and only if $\{ s_N(g;x) \}$ converges.
 \end{cor}
 
-In other words, if two functions $f$ and $g$
-are equal on an open interval $J$, then the
-points on $J$ where $\{ s_N(f;x) \}$ and $\{ s_N(g;x) \}$ converge are the same.  That is,
-convergence at $x$ is only dependent on the values of the function
-near $x$.
+That is, convergence at $x$ is only dependent on the values of the function
+near $x$.  The proof of the first claim is to take $M=0$ in the theorem.
+The ``In particular'' follows by considering the function $f-g$, which
+is zero on $J$ and $s_N(f-g) = s_N(f) - s_N(g)$.
 
-There is a somewhat subtle difference between the corollary and what can be
+As we hinted at before,
+there is a subtle difference between the corollary and what can be
 achieved by the \hyperref[thm:SWcomplex]{Stone--Weierstrass theorem}.
 By Stone--Weierstrass, 
 any continuous function on $[-\pi,\pi]$ can be uniformly approximated
@@ -4262,9 +4279,10 @@ explicitly constructed from $s_N$.
 
 \subsection{Parseval's theorem}
 
-We have that the convergence always happens in the $L^2$ sense and
+We next prove that
+convergence always happens in the $L^2$ sense and
 furthermore that formal operations on the (infinite) vectors of
-Fourier coefficients is the same as the operations using the integral
+Fourier coefficients are the same as the operations using the integral
 inner product.
 
 %FIXME? We will mostly sketch out the proof and leave some details to the reader
@@ -4318,18 +4336,28 @@ and
 \end{thm}
 
 \begin{proof}
-It is not hard too prove (exercise) that there is
+There exists (exercise)
 a continuous $2\pi$-periodic function $h$ such that
 \begin{equation*}
 \snorm{f-h}_2 < \epsilon .
 \end{equation*}
-We can approximate $h$ with a trigonometric polynomial
-uniformly, that is there is a trigonometric polynomial $P(x)$
+Via \hyperref[thm:SWcomplex]{Stone--Weierstrass},
+approximate $h$ with a trigonometric polynomial
+uniformly.  That is, there is a trigonometric polynomial $P(x)$
 such that
 $\sabs{h(x) - P(x)} < \epsilon$ for all $x$.
 Hence
 \begin{equation*}
-\snorm{h-P}_2 \leq \epsilon.
+\snorm{h-P}_2
+=
+\sqrt{
+\frac{1}{2\pi}
+\int_{-\pi}^{\pi}
+\sabs{h(x)-P(x)}^2
+~
+dx
+}
+\leq \epsilon.
 \end{equation*}
 If $P$ is of degree $N_0$, then for all $N \geq N_0$ we have
 \begin{equation*}
@@ -4344,8 +4372,8 @@ By the inequality leading up to Bessel we have
 \leq
 \snorm{h-f}_2 \leq \epsilon .
 \end{equation*}
-It is not difficult to show the triangle
-inequality for the $L^2$ norm (exercise), then
+The $L^2$ norm satisfies the triangle inequality (exercise).
+Thus, for all $N \geq N_0$,
 \begin{equation*}
 \snorm{f-s_N(f)}_2
 \leq
@@ -4354,11 +4382,11 @@ inequality for the $L^2$ norm (exercise), then
 \snorm{h-s_N(h)}_2
 +
 \snorm{s_N(h)-s_N(f)}_2
-\leq 3\epsilon ,
+\leq 3\epsilon .
 \end{equation*}
-for all $N \geq N_0$.
+Hence, the first claim follows.
 
-Next
+Next,
 \begin{equation*}
 \langle s_N(f) , g \rangle
 =
@@ -4377,7 +4405,7 @@ e^{ikx}
 c_k 
 \overline{d_k} .
 \end{equation*}
-Next we need the Schwarz (or Cauchy--Schwarz or Cauchy--Bunyakovsky--Schwarz)
+We need the Schwarz (or Cauchy--Schwarz or Cauchy--Bunyakovsky--Schwarz)
 inequality, that is
 \begin{equation*}
 {\abs{\int_a^b f\bar{g}}}^2
@@ -4385,9 +4413,8 @@ inequality, that is
 \left( \int_a^b \sabs{f}^2 \right)
 \left( \int_a^b \sabs{g}^2 \right) .
 \end{equation*}
-This is left as an exercise.  It actually follows by purely formal
-linear algebra using simple the idea that the integral gives an inner
-product.
+This is left as an exercise.  The proof is not really that
+different from the finite dimensional version.
 So
 %Next let $M$ be such that $\sabs{g(x)} \leq M$ for all $x$,
 %($g$ is Riemann integrable so bounded)
@@ -4403,7 +4430,12 @@ So
 {\left( \int_{-\pi}^\pi \sabs{g}^2 \right)}^{1/2} .
 \end{split}
 \end{equation*}
-Now the right hand side goes to 0 as $N$ goes to infinity.
+The right hand side goes to 0 as $N$ goes to infinity by the first
+claim of the theorem.
+That is, as $N$ goes to infinity, $\langle s_N(f),g \rangle$
+goes to $\langle f,g \rangle$, and
+the second claim is proved.  The last claim in the theorem follows by using
+$g=f$.
 \end{proof}
 
 \subsection{Exercises}
@@ -4437,9 +4469,9 @@ for every $x \in (a,b)$, we have $\lim\, s_N(f;x) = f(x)$.
 \end{exercise}
 
 \begin{exercise}
-Suppose that a $2\pi$-periodic function is continuous piecewise
-smooth function.  Prove that
-for every $x$, we have $\lim\, s_N(f;x) = f(x)$.  Hint: See the previous
+Prove \corref{cor:fourierpiecewisesmooth}, that is,
+Suppose a $2\pi$-periodic function is continuous piecewise
+smooth near a point $x$, then $\lim\, s_N(f;x) = f(x)$.  Hint: See the previous
 exercise.
 \end{exercise}
 
@@ -4524,7 +4556,8 @@ converges to an infinitely differentiable function.
 \end{exercise}
 
 \begin{exercise}
-Let $f$ be a $2\pi$-periodic such that $f(x) = f(0) + \int_0^x g$
+Let $f$ be a $2\pi$-periodic function
+such that $f(x) = f(0) + \int_0^x g$
 for a function $g$ that is Riemann integrable on any interval.
 Suppose
 \begin{equation*}
@@ -4533,4 +4566,36 @@ f(x) \sim
 \end{equation*}
 Show that there exists a $C > 0$ such that
 $\sabs{c_n} \leq \frac{C}{\sabs{n}}$.
+\end{exercise}
+
+\begin{exercise}
+{\ }
+\begin{enumerate}[a)]
+\item
+Let $\varphi$ be the $2\pi$-periodic function 
+defined by $\varphi(x) := 0$ if $x \in (-\pi,0)$,
+and $\varphi(x) := 1$ if $x \in (0,\pi)$,
+letting $\varphi(0)$ and $\varphi(\pi)$ be arbitrary.  Show
+that $\lim \, s_N(\varphi;0) = \nicefrac{1}{2}$.
+\item
+Let $f$ be a $2\pi$-periodic function
+Riemann integrable on $[-\pi,\pi]$, 
+$x \in \R$, $\delta > 0$, and
+there are continuously differentiable
+$g \colon [x-\delta,x] \to \C$
+and $h \colon [x,x+\delta] \to \C$
+where $f(t) = g(t)$ for all $t \in [x-\delta,x)$
+and
+where $f(t) = h(t)$ for all $t \in (x,x+\delta]$.
+Then
+$\lim\, s_N(f;x) = \frac{g(x)+h(x)}{2}$, or in other words:
+\begin{equation*}
+\lim_{N \to \infty} s_N(f;x) =
+\frac{1}{2}
+\left(
+\lim_{t \to x^-} f(t) +
+\lim_{t \to x^+} f(t)
+\right) .
+\end{equation*}
+\end{enumerate}
 \end{exercise}

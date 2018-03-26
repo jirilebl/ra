@@ -3490,14 +3490,19 @@ As $V$ is a ball, it is convex.  Hence
 \text{for all $x_1,x_2 \in V$}.
 \end{equation*}
 In other words $\varphi_y$ is a contraction defined on $V$, though we so far
-do not know what is the range of $\varphi_y$.  We cannot apply the fixed
+do not know what is the range of $\varphi_y$.  We cannot yet
+apply the fixed
 point theorem, but we can say that $\varphi_y$ 
-has at most one fixed point (see the proof of uniqueness in the contraction
-mapping principle).  That is, there exists at most one $x \in V$
+has at most one fixed point in $V$:
+If $\varphi_y(x_1) = x_1$ and
+$\varphi_y(x_2) = x_2$, then
+$\snorm{x_1-x_2} = \snorm{\varphi_y(x_1)-\varphi_y(x_2)} \leq
+\frac{1}{2} \snorm{x_1-x_2}$, so $x_1 = x_2$.
+That is, there exists at most one $x \in V$
 such that $f(x) = y$, and so $f|_V$ is one-to-one.
 
-Let $W = f(V)$.  We need to show that $W$ is open.  Take a $y_1 \in W$,
-then there is a unique $x_1 \in V$ such that $f(x_1) = y_1$.
+Let $W := f(V)$.  We need to show that $W$ is open.  Take a $y_1 \in W$.
+There is a unique $x_1 \in V$ such that $f(x_1) = y_1$.
 Let $r > 0$ be small enough such that the closed ball $C(x_1,r) \subset V$
 (such $r > 0$ exists as $V$ is open).
 
@@ -3532,7 +3537,7 @@ So $\varphi_y$ takes $C(x_1,r)$ into $B(x_1,r) \subset C(x_1,r)$.  It is a
 contraction on $C(x_1,r)$ and $C(x_1,r)$ is complete (closed subset of $\R^n$
 is complete).
 Apply the contraction mapping principle to obtain a fixed point $x$,
-i.e.\ $\varphi_y(x) = x$.  That is $f(x) = y$.  So $y \in
+i.e.\ $\varphi_y(x) = x$.  That is, $f(x) = y$, and $y \in
 f\bigl(C(x_1,r)\bigr) \subset f(V) = W$.  Therefore $W$ is open.
 
 Next we need to show that $g$ is continuously differentiable and compute
@@ -3553,7 +3558,7 @@ So
 \frac{1}{2}\snorm{x+h-x} = \frac{\snorm{h}}{2}.
 \end{equation*}
 By the inverse triangle inequality $\snorm{h} - \snorm{A^{-1}k} \leq
-\frac{1}{2}\snorm{h}$ so
+\frac{1}{2}\snorm{h}$, so
 \begin{equation*}
 \snorm{h} \leq 2 \snorm{A^{-1}k} \leq 2 \snorm{A^{-1}} \, \snorm{k}.
 \end{equation*}
@@ -3741,16 +3746,16 @@ k)}}{\snorm{(h,k)}}
 So the derivative of $F$ at $(p,q)$ takes $(h,k)$ to $(h,A_x h+A_y k)$.  If 
 $(h,A_x h+A_y k) = (0,0)$, then $h=0$, and so $A_y k = 0$.  As $A_y$ is
 one-to-one, then $k=0$.  Therefore $F'(p,q)$ is one-to-one or in other
-words invertible and we apply the inverse function theorem.
+words invertible, and we apply the inverse function theorem.
 
-That is, there exists some open set $V \subset \R^{n+m}$ with $(p,0) \in V$, and an inverse
-mapping $G \colon V \to \R^{n+m}$, that is $F\bigl(G(x,s)\bigr) = (x,s)$ for
-all $(x,s) \in V$ (where
-$x \in \R^n$ and $s \in \R^m$).
+That is, there exists an open set $V \subset \R^{n+m}$ with $(p,0) \in V$,
+and a 
+mapping $G \colon V \to \R^{n+m}$, such that $F\bigl(G(x,s)\bigr) = (x,s)$ for
+all $(x,s) \in V$. % (where $x \in \R^n$ and $s \in \R^m$).
 Write $G = (G_1,G_2)$ (the first $n$ and the second $m$ components of $G$).
 Then
 \begin{equation*}
-F\bigl(G_1(x,s),G_2(x,s)\bigr) = \bigl(G_1(x,s),f(G_1(x,s),G_2(x,s))\bigr)
+F\bigl(G_1(x,s),G_2(x,s)\bigr) = \Bigl(G_1(x,s),f\bigl(G_1(x,s),G_2(x,s) \bigr)\Bigr)
 = (x,s) .
 \end{equation*}
 So $x = G_1(x,s)$ and $f\bigl(G_1(x,s),G_2(x,s)\bigr) = f\bigl(x,G_2(x,s)\bigr) = s$.
@@ -3786,12 +3791,12 @@ and we obtain the desired derivative for $g$ as well.
 \end{proof}
 
 In other words, in the context of the theorem we have
-$m$ equations in $n+m$ unknowns.
+$m$ equations in $n+m$ unknowns:
 \begin{align*}
-& f_1 (x_1,\ldots,x_n,y_1,\ldots,y_m) = 0 \\
-& f_2 (x_1,\ldots,x_n,y_1,\ldots,y_m) = 0 \\
+& f_1 (x_1,\ldots,x_n,y_1,\ldots,y_m) = 0 , \\
+& f_2 (x_1,\ldots,x_n,y_1,\ldots,y_m) = 0 , \\
 & \qquad \qquad \qquad  \vdots \\
-& f_m (x_1,\ldots,x_n,y_1,\ldots,y_m) = 0
+& f_m (x_1,\ldots,x_n,y_1,\ldots,y_m) = 0 .
 \end{align*}
 And the condition guaranteeing a solution is that this is a $C^1$ mapping (that all the components are
 $C^1$, or in other words all the partial derivatives exist
@@ -3861,9 +3866,11 @@ In other words, near the origin the set of solutions is a
 smooth curve in $\R^3$ that goes through the origin.
 \end{example}
 
-We remark that there are versions of the theorem for arbitrarily many derivatives.
+\begin{remark}
+There are versions of the theorem for arbitrarily many derivatives.
 If $f$ has $k$ continuous derivatives, then the solution also has $k$
-continuous derivatives.
+continuous derivatives.  See also the next section.
+\end{remark}
 
 
 \subsection{Exercises}

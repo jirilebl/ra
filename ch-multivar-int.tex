@@ -2526,8 +2526,8 @@ Therefore $m^*(S) \geq V(S)$ as well.
 
 \subsection{Integration over Jordan measurable sets}
 
-In one variable there is really only one type of reasonable set to integrate over:
-an interval.   In several variables we have many common types of sets we might
+In $\R$ there is only one reasonable type of set to integrate over:
+an interval.   In $\R^n$ there are many common types of sets we 
 want to integrate over and these are not described so easily.
 
 \begin{defn}
@@ -2535,9 +2535,9 @@ Let $S \subset \R^n$ be a bounded Jordan measurable set.
 A bounded function $f \colon S \to \R$
 is said to be Riemann integrable on $S$, or $f \in \sR(S)$, if for a closed
 rectangle $R$ such that $S \subset R$, the function $\widetilde{f} \colon R
-\to \R$ defined  by
+\to \R$ defined by
 \begin{equation*}
-\widetilde{f}(x) =
+\widetilde{f}(x) :=
 \begin{cases}
 f(x) & \text{ if $x \in S$}, \\
 0 & \text{ otherwise},
@@ -2558,7 +2558,7 @@ a Jordan measurable subset, then
 \end{equation*}
 
 \begin{prop}
-If $S \subset \R^n$ is a Jordan measurable set and $f \colon S \to \R$
+If $S \subset \R^n$ is a bounded Jordan measurable set and $f \colon S \to \R$
 is a bounded continuous function, then $f$ is integrable on $S$.
 \end{prop}
 
@@ -2585,29 +2585,28 @@ Suppose
 $g \colon U \to \R^n$ is a one-to-one
 continuously differentiable mapping such that
 $J_g$ is never zero on $S$.
-Then $g(S)$ is Jordan measurable.
+Then $g(S)$ is bounded and Jordan measurable.
 \end{prop}
 
 \begin{proof}
-Let $T = g(S)$.
-We claim that the boundary $\partial T$ is contained in the
-set $g(\partial S)$.  Suppose the claim is proved.
+Let $T := g(S)$.  As $S \subset \R^n$ is closed and bounded it is compact.
+By 
+\volIref{Lemma 7.5.5 from volume I},
+%\lemmaref{lemma:continuouscompact}, 
+the set
+$T$ is also compact and so closed and bounded.
+We claim $\partial T \subset g(\partial S)$.  Suppose the claim is proved.
 As $S$ is Jordan measurable, then
 $\partial S$ is measure zero.  Then  $g(\partial S)$ is measure
 zero by \propref{prop:imagenull}.  As $\partial T \subset g(\partial
 S)$, then $T$ is Jordan measurable.
 
-It is therefore left to prove the claim.  First, $S$ is closed and bounded
-and hence compact.  By 
-\volIref{Lemma 7.5.5 from volume I},
-%\lemmaref{lemma:continuouscompact}, 
-$T = g(S)$ is
-also compact and therefore closed.  In particular, $\partial T \subset T$.
+It is therefore left to prove the claim.
+As $T$ is closed, $\partial T \subset T$.
 Suppose $y \in \partial T$, then there must exist an
 $x \in S$
 such that $g(x) = y$, and by hypothesis $J_g(x) \not= 0$.
-
-We now use the inverse function theorem \thmref{thm:inverse}.  We find 
+We use the inverse function theorem (\thmref{thm:inverse}).  We find 
 a neighborhood $V \subset U$ of $x$ and an open set $W$ such that
 the restriction $f|_V$ is a one-to-one and onto function from $V$ to $W$
 with a continuously differentiable inverse.  In particular, $g(x) = y \in W$.
@@ -3214,7 +3213,7 @@ functions $f_+$ and $f_-$:
 f_+(x) := \max \{ f(x) , 0 \}, \qquad
 f_-(x) := \max \{ -f(x) , 0 \} .
 \end{equation*}
-So, if we prove the theorem for a nonnegative $f$
+So, if we prove the theorem for a nonnegative $f$,
 we obtain the theorem for arbitrary $f$.
 Therefore, let us also suppose that 
 $f(y) \geq 0$ for all $y$.
@@ -3317,7 +3316,7 @@ for any $R_j$, and $x_j \in R_j$ including when $x_j \not= 0$ and $g(x_j)
 \not= 0$, we find
 \begin{equation*}
 V\bigl(g(R_j)\bigr) \leq
-\sabs{J_g(x_j)} V(R_j) (1+2\sqrt{n} \, \epsilon) .
+\sabs{J_g(x_j)} V(R_j) (1+4\sqrt{n} \, \epsilon) .
 \end{equation*}
 
 First assume that $f(y) \geq 0$ for all $y \in R$.
