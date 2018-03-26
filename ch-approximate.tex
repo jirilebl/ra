@@ -60,7 +60,7 @@ particular $z$ is often just used as a third real variable in $\R^3$.
 \begin{defn}
 Let $z= x+iy$.
 Define
-the \emph{\myindex{real part}} of $z$ as $x$, and the
+the \emph{\myindex{real part}} of $z$ as $x$, and 
 the \emph{\myindex{imaginary part}} of $z$ as $y$.  We write
 \glsadd{not:realpart}\glsadd{not:imagpart}
 \begin{equation*}
@@ -1969,7 +1969,7 @@ If $e^{ix/4} = a+ib$, then
 =1 .
 \end{equation*}
 As $\nicefrac{x}{4} \leq \nicefrac{\pi}{2}$, then $a = \cos(\nicefrac{x}{4}) \geq 0$ and
-$0 < b = \sin(\nicefrac{x}{4})$.  Then either $a = 0$ or
+$0 < b = \sin(\nicefrac{x}{4})$.  Then either $a = 0$ 
 or $a^2 = b^2$.  If $a^2=b^2$, then
 $a^4-6a^2b^2+b^4 = -4a^4 < 0$ and in particular not equal to 1.
 Therefore $a=0$ in which case $\nicefrac{x}{4} = \nicefrac{\pi}{2}$.
@@ -3398,7 +3398,7 @@ of degree at most $d$, then the limit is a polynomial of degree at most $d$.
 Conclude that to approximate a function which is not a polynomial, we
 need the degree of the approximations to go to infinity.\\
 Hint: Consider a uniformly Cauchy sequence of polynomials of degree at most
-$d$.  Show that the coefficients are are Cauchy sequences.
+$d$.  Show that the coefficients are Cauchy sequences.
 \end{exercise}
 
 \begin{exercise}
@@ -3754,8 +3754,8 @@ regular the limit is.
 
 \subsection{Orthonormal systems}
 
-Let us now investigate convergence of Fourier series from the other side.
-Given properties of $f$, what can we say about the series.
+Let us now investigate convergence of Fourier series from the other side:
+Given $f$, what can we say about the series?
 
 Let us first prove some general results about so called
 \emph{orthonormal systems}.
@@ -3999,7 +3999,7 @@ $\{ e^{inx} \}$ orthonormal.  That is, if we replace
 \end{equation*}
 (we are just rescaling the $dx$ really)\footnote{%
 In fact, this leads some authors to simplify matters by
-making a tounge-in-cheek definition that $1=2\pi$.}
+making a tongue-in-cheek definition that $1=2\pi$.}
 then everything works and we obtain that the system $\{ e^{inx} \}$
 is orthonormal with respect to the inner product
 \begin{equation*}
@@ -4007,9 +4007,9 @@ is orthonormal with respect to the inner product
 \frac{1}{2\pi} \int_{-\pi}^\pi f(x) \, \overline{g(x)} ~ dx .
 \end{equation*}
 
-So suppose we have an integrable function $f$ on $[-\pi,\pi]$.  In fact
-suppose
-that $f$ is a function defined on all of $\R$ and is $2\pi$ periodic.
+So suppose $f$ is an integrable function on $[-\pi,\pi]$,
+further suppose
+that $f$ is defined on all of $\R$ and is $2\pi$-periodic.
 Let
 \begin{equation*}
 c_n := 
@@ -4155,9 +4155,10 @@ for all $t \in (-\delta,\delta)$, then
 \end{equation*}
 \end{thm}
 
-In other words, if for example $f$ is continuously
+In particular, if $f$ is continuously
 differentiable at $x$
-then we obtain convergence (exercise).  A useful consequence of
+then we obtain convergence (exercise).
+A useful and often used consequence of
 the result is
 that if the function is continuous
 piecewise smooth, then the Fourier series converges
@@ -4240,8 +4241,9 @@ Hence $s_N(f;x)-f(x)$ goes to 0 and so $s_N(f;x)$ goes to $f(x)$.
 In particular this has the following corollary:
 
 \begin{cor}
-If $f(x) = 0$ on an entire open interval $J$, then $\lim\, s_N(f;x) = 0$
-for all $x \in J$.
+Suppose $f$ is a $2\pi$-periodic function, Riemann integrable on $[-\pi,\pi]$.
+If $J$ is an open interval and $f(x) = 0$ for all $x \in J$,
+then $\lim\, s_N(f;x) = 0$ for all $x \in J$.
 \end{cor}
 
 In other words, if two functions $f$ and $g$
@@ -4461,8 +4463,8 @@ for Riemann integrable functions:
 \end{exercise}
 
 \begin{exercise}
-Prove the $L^2$ triangle inequality for
-for Riemann integrable functions:
+Prove the $L^2$ triangle inequality 
+for Riemann integrable functions on $[-\pi,\pi]$:
 \begin{equation*}
 \snorm{f+g}_2 \leq \snorm{f}_2 + \snorm{g}_2 .
 \end{equation*}
