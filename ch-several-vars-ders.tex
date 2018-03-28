@@ -877,21 +877,22 @@ that $\int_0^1 f = 0$ is a vector subspace.
 \begin{exercise}[Challenging]
 Prove $C([0,1],\R)$ is an infinite dimensional vector space
 where the operations are defined in the obvious way:
-$s=f+g$ and $m=fg$ are defined as
+$s=f+g$ and $m=af$ are defined as
 $s(x) := f(x)+g(x)$ and
-$m(x) := f(x)g(x)$.
-Hint: for the dimension, think of functions that are only nonzero
+$m(x) := a f(x)$.
+Hint: For the dimension, think of functions that are only nonzero
 on the interval $(\nicefrac{1}{n+1},\nicefrac{1}{n})$.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise}[Challenging]
 Let $k \colon [0,1]^2 \to \R$ be continuous.  Show that
 $L \colon C([0,1],\R) \to C([0,1],\R)$ defined by
 \begin{equation*}
 Lf(y) := \int_0^1 k(x,y)f(x)~dx
 \end{equation*}
-is a linear operator.  That is, show that $L$ is well-defined (that
-$Lf$ is continuous), and that $L$ is linear.
+is a linear operator.  That is, first show that $L$ is well-defined by
+showing that $Lf$ is continuous whenever $f$ is, and
+then showing that $L$ is linear.
 \end{exercise}
 
 \begin{exercise}
@@ -934,6 +935,7 @@ operators $A_{jk}$ that send $A_{jk} x_j = y_k$, and
 $A_{jk} x_\ell = 0$ if $\ell \not= j$.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}[Easy]
 Suppose $X$ and $Y$ are vector spaces and $A \in L(X,Y)$ is a linear
 operator.
@@ -946,6 +948,7 @@ Show that the range $R := \{ y \in Y : Ax = y \text{ for some $x \in X$} \}$ is 
 vector space.
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}[Easy]
 Show by example that a union of convex sets need not be convex.
@@ -3165,8 +3168,9 @@ is continuous.
 \begin{prop} \label{mv:prop:contdiffpartials}
 Let $U \subset \R^n$ be open and
 $f \colon U \to \R^m$.  The function
-$f$ is continuously differentiable if and only if all
-the partial derivatives exist and are continuous.
+$f$ is continuously differentiable if and only if 
+the partial derivatives $\frac{\partial f_j}{\partial x_\ell}$
+exist for all $j$ and $\ell$ and are continuous.
 \end{prop}
 
 Without continuity the theorem does not hold.  Just because
@@ -3438,10 +3442,10 @@ is a contraction and $X$ is a complete metric space,
 then there exists a unique fixed point, that is,
 there exists a unique $x \in X$ such that $f(x) = x$.
 
-Intuitively if a function is differentiable, then it
+Intuitively if a function is continuously differentiable, then it
 locally ``behaves like'' the derivative (which is a linear function).
 The idea of the inverse function theorem is that if a function is
-differentiable and the derivative is invertible, the function is
+continuously differentiable and the derivative is invertible, the function is
 (locally) invertible.
 
 
@@ -3473,14 +3477,15 @@ $V$ around $p$ such that
 \snorm{A-f'(x)} < \frac{1}{2\snorm{A^{-1}}}
 \qquad \text{for all $x \in V$.}
 \end{equation*}
-Note that $f'(x)$ is invertible for all $x \in V$.
+Note that $f'(x)$ is invertible for all $x \in V$
+by \propref{prop:finitedimpropinv}.
 
-Given $y \in \R^n$ we define $\varphi_y \colon C \to \R^n$
+Given $y \in \R^n$ we define $\varphi_y \colon C \to \R^n$ by
 \begin{equation*}
 \varphi_y (x) := x + A^{-1}\bigl(y-f(x)\bigr) .
 \end{equation*}
 As $A^{-1}$ is one-to-one,
-then $\varphi_y(x) = x$ ($x$ is a fixed point) if only if
+$\varphi_y(x) = x$ ($x$ is a fixed point) if only if
 $y-f(x) = 0$, or in other words $f(x)=y$.  Using the chain rule we obtain
 \begin{equation*}
 \varphi_y'(x) = I - A^{-1} f'(x) = A^{-1} \bigl( A-f'(x) \bigr) .
@@ -3507,44 +3512,44 @@ $\snorm{x_1-x_2} = \snorm{\varphi_y(x_1)-\varphi_y(x_2)} \leq
 That is, there exists at most one $x \in V$
 such that $f(x) = y$, and so $f|_V$ is one-to-one.
 
-Let $W := f(V)$.  We need to show that $W$ is open.  Take a $y_1 \in W$.
-There is a unique $x_1 \in V$ such that $f(x_1) = y_1$.
-Let $r > 0$ be small enough such that the closed ball $C(x_1,r) \subset V$
+Let $W := f(V)$.  We need to show that $W$ is open.  Take a $y_0 \in W$.
+There is a unique $x_0 \in V$ such that $f(x_0) = y_0$.
+Let $r > 0$ be small enough such that the closed ball $C(x_0,r) \subset V$
 (such $r > 0$ exists as $V$ is open).
 
 Suppose $y$ is such that
 \begin{equation*}
-\snorm{y-y_1} <
+\snorm{y-y_0} <
 \frac{r}{2\snorm{A^{-1}}} .
 \end{equation*}
 If we show that $y \in W$, then we have shown that $W$ is open.
 %Recall $\varphi_y(x) = x+A^{-1}\bigl(y-f(x)\bigr)$.
 If $x \in
-C(x_1,r)$, then
+C(x_0,r)$, then
 \begin{equation*}
 \begin{split}
-\snorm{\varphi_y(x)-x_1}
+\snorm{\varphi_y(x)-x_0}
 & \leq
-\snorm{\varphi_y(x)-\varphi_y(x_1)} +
-\snorm{\varphi_y(x_1)-x_1} \\
+\snorm{\varphi_y(x)-\varphi_y(x_0)} +
+\snorm{\varphi_y(x_0)-x_0} \\
 & \leq
-\frac{1}{2}\snorm{x-x_1} +
-\snorm{A^{-1}(y-y_1)} \\
+\frac{1}{2}\snorm{x-x_0} +
+\snorm{A^{-1}(y-y_0)} \\
 & \leq
 \frac{1}{2}r +
-\snorm{A^{-1}} \, \snorm{y-y_1} \\
+\snorm{A^{-1}} \, \snorm{y-y_0} \\
 & <
 \frac{1}{2}r +
 \snorm{A^{-1}}
 \frac{r}{2\snorm{A^{-1}}} = r .
 \end{split}
 \end{equation*}
-So $\varphi_y$ takes $C(x_1,r)$ into $B(x_1,r) \subset C(x_1,r)$.  It is a
-contraction on $C(x_1,r)$ and $C(x_1,r)$ is complete (closed subset of $\R^n$
+So $\varphi_y$ takes $C(x_0,r)$ into $B(x_0,r) \subset C(x_0,r)$.  It is a
+contraction on $C(x_0,r)$ and $C(x_0,r)$ is complete (closed subset of $\R^n$
 is complete).
 Apply the contraction mapping principle to obtain a fixed point $x$,
 i.e.\ $\varphi_y(x) = x$.  That is, $f(x) = y$, and $y \in
-f\bigl(C(x_1,r)\bigr) \subset f(V) = W$.  Therefore $W$ is open.
+f\bigl(C(x_0,r)\bigr) \subset f(V) = W$.  Therefore $W$ is open.
 
 Next we need to show that $g$ is continuously differentiable and compute
 its derivative.  First let us show that it is differentiable.
@@ -4000,7 +4005,7 @@ Show that $f$ is differentiable everywhere.
 Show that $f'(0,0)$ is invertible.
 \item
 Show that $f$ is not one-to-one in any neighborhood of the origin (it is
-not locally invertible, that is, the inverse theorem does not work).
+not locally invertible, that is, the inverse function theorem does not work).
 \item
 Show that $f$ is not continuously differentiable.
 \end{enumerate}
@@ -4316,7 +4321,7 @@ For any $\epsilon > 0$ there exists a $\delta > 0$
 such that 
 $\abs{g(x,y) - x^2 - y^2} < \epsilon (x^2+y^2)$ for all
 $(x,y) \in B\bigl((0,0),\delta\bigr)$.\\
-Hint: You can use Taylor's theorem in one variable can be used.
+Hint: You can use Taylor's theorem in one variable.
 \item
 This means that $g$, and therefore $f$, has a strict local
 minimum at $(0,0)$.
