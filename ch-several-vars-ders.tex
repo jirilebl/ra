@@ -3933,7 +3933,8 @@ continuous derivatives.  See also the next section.
 Let $C = \bigl\{ (x,y) \in \R^2 : x^2+y^2 = 1 \bigr\}$.
 \begin{enumerate}[a)]
 \item
-Solve for $y$ in terms of $x$ near $(0,1)$.
+Solve for $y$ in terms of $x$ near $(0,1)$ (that is, find the function $g$
+from the implicit function theorem for a neighbourhood of the point $(p,q) = (0,1)$).
 \item
 Solve for $y$ in terms of $x$ near $(0,-1)$.
 \item
@@ -3968,10 +3969,11 @@ Show that $f'$ is invertible at all points.
 Show that $f$ is not one-to-one, in fact for every $(a,b) \in \R^2
 \setminus \bigl\{ (0,0) \bigr\}$,
 there exist infinitely many different points $(x,y) \in \R^2$ such that 
-$f(x,y) = (a,b)$.\\
+$f(x,y) = (a,b)$.
+\end{enumerate}
 Therefore, invertible derivative at every point does not mean that
 $f$ is invertible globally.
-\end{enumerate}
+Hint: Feel free to use what you know about sine and cosine from calculus.
 \end{exercise}
 
 \begin{exercise}
@@ -4023,6 +4025,7 @@ not locally invertible, that is, the inverse function theorem does not work).
 \item
 Show that $f$ is not continuously differentiable.
 \end{enumerate}
+Hint: Feel free to use what you know about sine and cosine from calculus.
 \end{exercise}
 \end{samepage}
 
@@ -4048,6 +4051,7 @@ inverse function theorem.
 Show that $F|_{(0,\infty) \times [0,2\pi)}$ is one to one and onto
 $\R^2 \setminus \bigl\{ (0,0) \bigr\}$.
 \end{enumerate}
+Hint: Feel free to use what you know about sine and cosine from calculus.
 \end{exercise}
 
 \begin{exercise}
@@ -4202,6 +4206,14 @@ g(s,t) :=
 =
 \frac{\partial^2 f}{\partial x_j \partial x_k}(p + s_0 e_j + t_0 e_k) .
 \end{equation*}
+
+\begin{myfigureht}
+\subimport*{figures/}{der2orderflip.pdf_t}
+\caption{Using mean value theorem to estimate a second order partial derivative by a
+certain difference quotient.\label{fig:der2orderflip}}
+\end{myfigureht}
+
+See \figureref{fig:der2orderflip}.
 The $s_0$ and $t_0$ depend on $s$ and $t$,
 but $s_0$ is 
 between $0$ and $s$ and
@@ -4310,12 +4322,23 @@ when restricted to $\R^2 \setminus \{ 0 \}$ it is a $C^k$ function.
 \end{exercise}
 
 \begin{exercise}
+Suppose $f \colon \R^2 \to \R$ is a $C^2$ function.
+For any $(x,y) \in \R^2$ compute
+\begin{equation*}
+\lim_{t \to 0}
+\frac{f(x+t,y)+f(x-t,y)+f(x,y+t)+f(x,y-t) - 4f(x,y)}{t^2}
+\end{equation*}
+in terms of the partial derivatives of $f$.
+\end{exercise}
+
+\begin{exercise}
 Suppose $f \colon \R^2 \to \R$ is a function such that
 all first and second order partial derivatives exist.  Furthermore,
 suppose that all second order partial derivatives are bounded functions.
 Prove that $f$ is continuously differentiable.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Follow the strategy below to
 prove the following simple version of the second derivative test for
@@ -4351,3 +4374,4 @@ Note: You must avoid the temptation to just
 apply the one variable second derivative test along lines through the
 origin, see \exerciseref{exercise:peano}.
 \end{exercise}
+\end{samepage}
