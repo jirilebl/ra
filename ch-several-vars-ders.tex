@@ -3626,7 +3626,8 @@ continuous functions, it is continuous.
 \begin{cor}
 Suppose $U \subset \R^n$ is open and $f \colon U \to \R^n$ is a continuously
 differentiable mapping such that $f'(x)$ is invertible for all $x \in U$.  Then
-given any open set $V \subset U$, $f(V)$ is open.  ($f$ is an open mapping).
+given any open set $V \subset U$, $f(V)$ is open ($f$ is said to be an
+\emph{\myindex{open mapping}}).
 \end{cor}
 
 \begin{proof}
@@ -3719,7 +3720,7 @@ $A_y$ is invertible.  If $B = - {(A_y)}^{-1} A_x$, then
 \begin{equation*}
 0 = A ( x, Bx) = A_x x + A_y Bx .
 \end{equation*}
-Furthermore, $Bx$ is the unique $y \in \R^m$ such that $A(x,y) = 0$.
+Furthermore, $y=Bx$ is the unique $y \in \R^m$ such that $A(x,y) = 0$.
 \end{prop}
 
 The proof is obvious.  We simply solve and obtain $y = Bx$.
@@ -3758,7 +3759,9 @@ g'(p) = -{(A_y)}^{-1}A_x .
 The condition
 $\frac{\partial(f_1,\ldots,f_m)}{\partial(y_1,\ldots,y_m)} (p,q) =
 \det(A_y)  \neq 0$
-simply means that $A_y$ is invertible.
+simply means that $A_y$ is invertible.  If $n=m=1$, the condition then
+becomes $\frac{\partial f}{\partial y}(p,q) \not= 0$, $W$ and $W'$ are then
+open intervals.
 
 \begin{proof}
 Define $F \colon U \to \R^{n+m}$ by $F(x,y) := \bigl(x,f(x,y)\bigr)$.
@@ -3782,10 +3785,11 @@ $(h,A_x h+A_y k) = (0,0)$, then $h=0$, and so $A_y k = 0$.  As $A_y$ is
 one-to-one, then $k=0$.  Therefore $F'(p,q)$ is one-to-one or in other
 words invertible, and we apply the inverse function theorem.
 
-That is, there exists an open set $V \subset \R^{n+m}$ with $(p,0) \in V$,
-and a 
+That is, there exists an open set $V \subset \R^{n+m}$ with
+$F(p,q) = (p,0) \in V$,
+and a  $C^1$
 mapping $G \colon V \to \R^{n+m}$, such that $F\bigl(G(x,s)\bigr) = (x,s)$ for
-all $(x,s) \in V$. % (where $x \in \R^n$ and $s \in \R^m$).
+all $(x,s) \in V$, $G$ is one-to-one, and $G(V)$ is open. % (where $x \in \R^n$ and $s \in \R^m$).
 Write $G = (G_1,G_2)$ (the first $n$ and the second $m$ components of $G$).
 Then
 \begin{equation*}
@@ -3797,32 +3801,30 @@ Plugging in $s=0$, we obtain
 \begin{equation*}
 f\bigl(x,G_2(x,0)\bigr) = 0 .
 \end{equation*}
-%The set $G(V)$ contains a whole neighborhood of the point $(p,q)$.
-The set $G(V)$ contains a whole neighborhood of the point $(p,q)$.
-Hence there exist some open sets
+As the set $G(V)$ is open and $(p,q) \in G(V)$,
+there exist some open sets
 $\widetilde{W}$ and $W'$ such that $\widetilde{W} \times W' \subset G(V)$ with $p
 \in \widetilde{W}$ and
 $q \in W'$.
-Take $W := \{ x \in \widetilde{W} : G_2(x,0) \in W' \}$.
+Take $W := \bigl\{ x \in \widetilde{W} : G_2(x,0) \in W' \bigr\}$.
 The function that takes $x$ to $G_2(x,0)$ is continuous and therefore $W$
 is open.
 Define
 $g \colon W \to \R^m$ by $g(x) := G_2(x,0)$, which is the $g$ in the theorem.
 The fact that $g(x)$ is the unique point in $W'$ follows because $W \times
-W' \subset G(V)$ and $G$ is one-to-one and onto $G(V)$.
+W' \subset G(V)$ and $G$ is one-to-one.
 
 Next differentiate
 \begin{equation*}
 x\mapsto f\bigl(x,g(x)\bigr) ,
 \end{equation*}
 at $p$,
-which should be the zero map.
-%The derivative is done in the same way as above.
-Applying the chain rule,
-we get that for all $h \in \R^{n}$
+which is the zero map, so its derivative is zero.
+Using the chain rule,
 \begin{equation*}
 0 = A\bigl(h,g'(p)h\bigr) = A_xh + A_yg'(p)h ,
 \end{equation*}
+for all $h \in \R^{n}$,
 and we obtain the desired derivative for $g$.
 \end{proof}
 
@@ -4164,7 +4166,10 @@ contains a small ball (or a box if you wish).
 
 Using the mean value theorem on the partial derivative in $x_k$ of the
 function $f(p+se_j)-f(p)$,
-we find a $t_0$ between $0$ and $t$ such that
+for each $s$
+we find a $t_0$ between $0$ and $t$
+(note that $t_0$ is a function of both $s$ and $t$)
+such that
 \begin{equation*}
 \frac{f(p+se_j + te_k)- f(p+t e_k) - f(p+s e_j)+f(p)}{t}
 =
@@ -4172,7 +4177,9 @@ we find a $t_0$ between $0$ and $t$ such that
 -
 \frac{\partial f}{\partial x_k}(p + t_0 e_k) .
 \end{equation*}
-Next there exists a number $s_0$ between $0$ and $s$ such that
+Next there exists a number $s_0$ between $0$ and $s$ (again
+$s_0$ is a function of $s$ and $t_0$, and hence a function
+of $s$ and $t$) such that
 \begin{equation*}
 \frac{\frac{\partial f}{\partial x_k}(p + s e_j + t_0 e_k)
 -
@@ -4187,11 +4194,11 @@ g(s,t) :=
 =
 \frac{\partial^2 f}{\partial x_j \partial x_k}(p + s_0 e_j + t_0 e_k) .
 \end{equation*}
-Taking a limit as $(s,t) \in \R^2$ goes to zero we find that $(s_0,t_0)$
-also goes to zero and by continuity of the second partial derivatives we
+Taking the limit as $(s,t) \in \R^2$ goes to zero we find that $(s_0,t_0)$
+also goes to zero.  By continuity of the second partial derivatives we
 find that
 \begin{equation*}
-\lim_{(s,t) \to 0} g(s,t) = 
+\lim_{(s,t) \to (0,0)} g(s,t) = 
 \frac{\partial^2 f}{\partial x_j \partial x_k}(p) .
 \end{equation*}
 We now reverse the ordering, starting with
@@ -4211,10 +4218,10 @@ And we find a $t_1$ between $0$ and $t$
 =
 \frac{\partial^2 f}{\partial x_k \partial x_j}(p + t_1 e_k + s_1 e_j) .
 \end{equation*}
-Again we find that $g(s,t) = \frac{\partial^2 f}{\partial x_k \partial
+And we find that $g(s,t) = \frac{\partial^2 f}{\partial x_k \partial
 x_j}(p + t_1 e_k + s_1 e_j)$ and therefore
 \begin{equation*}
-\lim_{(s,t) \to 0} g(s,t) = 
+\lim_{(s,t) \to (0,0)} g(s,t) = 
 \frac{\partial^2 f}{\partial x_k \partial x_j}(p) .
 \end{equation*}
 And therefore the two partial derivatives are equal.
