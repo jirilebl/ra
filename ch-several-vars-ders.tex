@@ -3761,7 +3761,12 @@ $\frac{\partial(f_1,\ldots,f_m)}{\partial(y_1,\ldots,y_m)} (p,q) =
 \det(A_y)  \neq 0$
 simply means that $A_y$ is invertible.  If $n=m=1$, the condition then
 becomes $\frac{\partial f}{\partial y}(p,q) \not= 0$, $W$ and $W'$ are then
-open intervals.
+open intervals.  See \figureref{fig:implicitfunc}.
+\begin{myfigureht}
+\subimport*{figures/}{implicitfunc.pdf_t}
+\caption{Implicit function theorem for $f(x,y) = x^2+y^2-1$ in $U=\R^2$ and
+$(p,q)$ in the first quadrant.\label{fig:implicitfunc}}
+\end{myfigureht}
 
 \begin{proof}
 Define $F \colon U \to \R^{n+m}$ by $F(x,y) := \bigl(x,f(x,y)\bigr)$.
@@ -3775,14 +3780,21 @@ Let us compute the derivative.  We know that
 goes to zero as $\snorm{(h,k)} = \sqrt{\snorm{h}^2+\snorm{k}^2}$ goes to zero.
 But then so does
 \begin{equation*}
+\begin{split}
+\frac{\snorm{F(p+h,q+k)-F(p,q) - (h,A_x h+A_y k)}}{\snorm{(h,k)}}
+& =
 \frac{\snorm{\bigl(h,f(p+h,q+k)-f(p,q)\bigr) - (h,A_x h+A_y
 k)}}{\snorm{(h,k)}}
-=
+\\
+& =
 \frac{\snorm{f(p+h,q+k) - f(p,q) - A_x h - A_y k}}{\snorm{(h,k)}} .
+\end{split}
 \end{equation*}
-So the derivative of $F$ at $(p,q)$ takes $(h,k)$ to $(h,A_x h+A_y k)$.  If 
+So the derivative of $F$ at $(p,q)$ takes $(h,k)$ to $(h,A_x h+A_y k)$.
+In block matrix form it is
+$\left[\begin{smallmatrix}I & 0\\A_x & A_y\end{smallmatrix}\right]$.  If 
 $(h,A_x h+A_y k) = (0,0)$, then $h=0$, and so $A_y k = 0$.  As $A_y$ is
-one-to-one, then $k=0$.  Therefore $F'(p,q)$ is one-to-one or in other
+one-to-one, $k=0$.  Thus $F'(p,q)$ is one-to-one or in other
 words invertible, and we apply the inverse function theorem.
 
 That is, there exists an open set $V \subset \R^{n+m}$ with
@@ -4166,9 +4178,7 @@ contains a small ball (or a box if you wish).
 
 Using the mean value theorem on the partial derivative in $x_k$ of the
 function $f(p+se_j)-f(p)$,
-for each $s$
 we find a $t_0$ between $0$ and $t$
-(note that $t_0$ is a function of both $s$ and $t$)
 such that
 \begin{equation*}
 \frac{f(p+se_j + te_k)- f(p+t e_k) - f(p+s e_j)+f(p)}{t}
@@ -4177,9 +4187,7 @@ such that
 -
 \frac{\partial f}{\partial x_k}(p + t_0 e_k) .
 \end{equation*}
-Next there exists a number $s_0$ between $0$ and $s$ (again
-$s_0$ is a function of $s$ and $t_0$, and hence a function
-of $s$ and $t$) such that
+Next there exists a number $s_0$ between $0$ and $s$ such that
 \begin{equation*}
 \frac{\frac{\partial f}{\partial x_k}(p + s e_j + t_0 e_k)
 -
@@ -4194,8 +4202,14 @@ g(s,t) :=
 =
 \frac{\partial^2 f}{\partial x_j \partial x_k}(p + s_0 e_j + t_0 e_k) .
 \end{equation*}
-Taking the limit as $(s,t) \in \R^2$ goes to zero we find that $(s_0,t_0)$
-also goes to zero.  By continuity of the second partial derivatives we
+The $s_0$ and $t_0$ depend on $s$ and $t$,
+but $s_0$ is 
+between $0$ and $s$ and
+$t_0$ is 
+between $0$ and $t$.
+Therefore
+as $(s,t) \in \R^2$ goes to zero, $(s_0,t_0)$ also goes to zero.
+By continuity of the second partial derivatives we
 find that
 \begin{equation*}
 \lim_{(s,t) \to (0,0)} g(s,t) = 
