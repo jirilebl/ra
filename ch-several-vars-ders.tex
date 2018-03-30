@@ -3303,6 +3303,45 @@ t \frac{\partial f_j}{\partial x_n}(x)\right)}^2} + \epsilon \snorm{k}
 \end{equation*}
 \end{proof}
 
+A common application is to prove that a certain function is
+differentiable.  For example, let us show that all polynomials
+are differentiable, and in fact continuously differentiable
+by computing the partial derivatives.
+
+\begin{cor}
+A polynomial $p \colon \R^n \to \R$ in several variables
+\begin{equation*}
+p(x_1,x_2,\ldots,x_n)
+=
+\sum_{0 \leq j_1+j_2+\cdots+j_n \leq d}
+c_{j_1,j_2,\ldots,j_n}
+\,
+x_1^{j_1}
+x_2^{j_2}
+\cdots
+x_n^{j_n}
+\end{equation*}
+is continuously differentiable.
+\end{cor}
+
+\begin{proof}
+Consider the partial derivative of $p$ in the $x_n$ variable.
+Write $p$ as
+\begin{equation*}
+p(x) = \sum_{j=0}^d p_j(x_1,\ldots,x_{n-1}) \, x_n^j ,
+\end{equation*}
+where $p_j$ are polynomials in one less variable.
+Then
+\begin{equation*}
+\frac{\partial p}{\partial x_n}(x)
+= \sum_{j=1}^d p_j(x_1,\ldots,x_{n-1}) \, j x_n^{j-1} ,
+\end{equation*}
+which is again a polynomial.
+So the partial derivatives of polynomials exist and are again polynomials.
+By the continuity of algebraic operations, polynomials are continuous functions.
+Therefore $p$ is continuously differentiable.
+\end{proof}
+
 \subsection{Exercises}
 
 \begin{exercise}
@@ -3389,10 +3428,19 @@ and $\sabs{g'(t)} \leq M$.
 Show that $f$ is continuous at $(0,0)$.
 \item
 Find an example of such an $f$ which is not continuous at every other point of
-$\R^2$ (Hint: Think back to how did we construct a nowhere continuous function on $[0,1]$).
+$\R^2$\\
+Hint: Think back to how we constructed a nowhere continuous function on $[0,1]$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
+
+\begin{exercise}
+Suppose $r \colon \R^n \setminus X \to \R$ is a rational function, that is,
+let $p \colon \R^n \to \R$ and
+$q \colon \R^n \to \R$ be polynomials, let $X = q^{-1}(0)$, and
+$r = \frac{p}{q}$.
+Show that $r$ is continuously differentiable.
+\end{exercise}
 
 \begin{exercise}
 Suppose $f \colon \R^n \to \R$ and $h \colon \R^n \to \R$ are two 
