@@ -761,9 +761,13 @@ there are lots of nonconvex connected sets.  For example,
 the set $\R^2 \setminus \{0\}$ is not convex, but it is connected.  To see
 this, take any $x \in \R^2 \setminus \{0\}$ and let $y:=-x$.
 Then $(\nicefrac{1}{2})x + (\nicefrac{1}{2})y = 0$, which is not in the set.
-On the other hand, the ball $B(x,r) \subset \R^n$ (using the standard metric
-on $\R^n$)
-is convex (exercise).
+Balls in $\R^n$ are convex.  We use this result often enough we state
+it as a proposition, and leave the proof as an exercise.
+
+\begin{prop}
+Let $x \in \R^n$ and $r > 0$.  The ball $B(x,r) \subset \R^n$ (using the
+standard metric on $\R^n$) is convex.
+\end{prop}
 
 \begin{example}
 As a convex combination is in particular a linear combination,
@@ -2164,7 +2168,7 @@ Let $C \subset \R^n$ be a compact symmetric convex set and $0 \in C$.  Show that
 \begin{equation*}
 \snorm{x} := \inf \left\{ \lambda : \lambda > 0 \text{ and } \frac{x}{\lambda} \in C \right\}
 \end{equation*}
-is a norm on $\R^n$, and $C = C(0,1)$ in the metric induced by this norm.
+is a norm on $\R^n$, and $C = C(0,1)$ (the closed unit ball) in the metric induced by this norm.
 \end{enumerate}
 Hint: Feel free to the result of \exerciseref{exercise:allnormsequiv} part c).
 \end{exercise}
