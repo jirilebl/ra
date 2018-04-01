@@ -3507,14 +3507,16 @@ continuously differentiable and the derivative is invertible, the function is
 
 \begin{thm}[Inverse function theorem]\index{inverse function theorem}
 \label{thm:inverse}
-Let $U \subset \R^n$ be a set and let
+Let $U \subset \R^n$ be an open set and let
 $f \colon U \to \R^n$ be a continuously differentiable function.
 Also suppose $p \in U$, $f(p) = q$, and $f'(p)$ is invertible
 (that is, $J_f(p) \not=0$).
 Then there exist open sets $V, W \subset \R^n$ such that
-$p \in V \subset U$, $f(V) = W$ and $f|_V \colon V \to W$ is one-to-one and onto.  
+$p \in V \subset U$, $f(V) = W$ and $f|_V$ is one-to-one.  
+And hence a $g \colon W \to V$ exists such that
+$g(y) := (f|_V)^{-1}(y)$.
 See \figureref{fig:inversefuncRn}.
-Furthermore, the inverse $g(y) := (f|_V)^{-1}(y)$ is continuously differentiable
+Furthermore, $g$ is continuously differentiable
 and 
 \begin{equation*}
 g'(y) = {\bigl(f'(x)\bigr)}^{-1}, \qquad \text{ for all $x \in V$, $y = f(x)$.}
