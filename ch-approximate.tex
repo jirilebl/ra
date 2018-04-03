@@ -11,37 +11,39 @@
 
 \sectionnotes{half a lecture}
 
-In this chapter we look at some of the sequences and series of functions
-we already saw and extend the results to a somewhat more general setting,
-and we will look at some completely new results.
+In this chapter we consider approximation of functions, or in other words
+functions as limits of sequences and series.
+We will extend some results we already saw to a somewhat more
+general setting, and we will look at some completely new results.
 In particular, we consider complex-valued functions.
 We gave complex numbers as examples before, but
 let us start from scratch and properly define the complex number field.
 
 A complex number is just a pair $(x,y) \in \R^2$ on which we define
 multiplication (see below).
-We call the set the complex numbers and denote it by $\C$.
+We call the set the \emph{complex numbers}\index{complex number}
+and denote it by $\C$.
 We identify $x \in \R$ with $(x,0) \in \C$.
 The $x$-axis is then called the \emph{\myindex{real axis}} and the $y$-axis is
 called the \emph{\myindex{imaginary axis}}.  The set $\C$ is sometimes called the
 \emph{\myindex{complex plane}}.
 
-Define
+Define:
 \begin{align*}
-& (x,y) + (s,t) := (x+s,y+t) \\
-& (x,y) (s,t) := (xs-yt,xt+ys)
+& (x,y) + (s,t) := (x+s,y+t) , \\
+& (x,y) (s,t) := (xs-yt,xt+ys) .
 \end{align*}
 Under the identification above we have $0 = (0,0)$ and $1 = (1,0)$.  These
-properties then give a field (exercise).
+two operations make the plane into a field (exercise).
 
-Generally, we write a complex number $(x,y)$ as $x+iy$, where we
+We write a complex number $(x,y)$ as $x+iy$, where we
 define\footnote{Note that engineers use $j$ instead of $i$.}
 \glsadd{not:imaginary}
 \begin{equation*}
 i := (0,1) .
 \end{equation*}
 Notice that $i^2 = (0,1)(0,1) = (0-1,0+0) = -1$.
-So we have a solution to the polynomial equation
+That is, $i$ is a solution to the polynomial equation
 \begin{equation*}
 z^2+1=0 .
 \end{equation*}
@@ -55,13 +57,14 @@ plane.\label{fig:complexplane}}
 
 We generally use $x,y,r,s,t$ for real values and $z,w,\xi,\zeta$
 for complex values, although that is not a hard and fast rule.  In
-particular $z$ is often just used as a third real variable in $\R^3$.
+particular, $z$ is often just used as a third real variable in $\R^3$.
 
 \begin{defn}
 Let $z= x+iy$.
-Define
-the \emph{\myindex{real part}} of $z$ as $x$, and 
-the \emph{\myindex{imaginary part}} of $z$ as $y$.  We write
+We call $x$ 
+the \emph{\myindex{real part}} of $z$, and 
+we call $y$
+the \emph{\myindex{imaginary part}} of $z$.  We write
 \glsadd{not:realpart}\glsadd{not:imagpart}
 \begin{equation*}
 \Re\, z := x , \qquad
@@ -73,8 +76,8 @@ Define the
 \begin{equation*}
 \bar{z} := x-iy .
 \end{equation*}
-\glsadd{not:modulus}
 Similarly define \emph{\myindex{modulus}} as
+\glsadd{not:modulus}
 \begin{equation*}
 \sabs{z} := \sqrt{x^2+y^2} .
 \end{equation*}
@@ -82,9 +85,9 @@ Similarly define \emph{\myindex{modulus}} as
 The modulus acts like an absolute value.  For example,
 $\sabs{zw} = \sabs{z} \, \sabs{w}$ (exercise).
 
-Think of the complex conjugate as a reflection across the real axis.
-We note that the real numbers are precisely those for which the imaginary
-part $y=0$.  In particular they are precisely those numbers which satisfy
+The complex conjugate is a reflection of the plane across the real axis.
+The real numbers are precisely those numbers for which the imaginary
+part $y=0$.  In particular, they are precisely those numbers which satisfy
 the equation
 \begin{equation*}
 z = \bar{z} .
@@ -99,9 +102,10 @@ In particular,
 \sabs{z-w} = d(z,w) .
 \end{equation*}
 So the topology on $\C$ is
-the same exact topology we get on $\R^2$ with the euclidean metric,
+the same exact topology as the standard topology on $\R^2$
+with the euclidean metric,
 and $\sabs{z}$ is in fact equal to the euclidean norm on $\R^2$.
-An important remark is that since $\R^2$ is a complete metric space, then
+Importantly, since $\R^2$ is a complete metric space, then
 so is $\C$.
 
 Since $\sabs{z}$ is the euclidean norm on $\R^2$ we have the
@@ -121,13 +125,14 @@ z \bar{z} .
 \end{equation*}
 
 \begin{remark}
-It is good to notice that there is no natural ordering on the complex numbers.
-Definitely no ordering that makes the complex numbers into an ordered field.
-Ordering is one of the major things we lose when we go from real to complex
+There is no natural ordering on the complex numbers.
+In particular,
+no ordering that makes the complex numbers into an ordered field.
+Ordering is one of the things we lose when we go from real to complex
 numbers.
 \end{remark}
 
-It is also not hard to show that the algebraic operations are
+It is not hard to show that the algebraic operations are
 continuous.  This is because convergence in 
 $\R^2$ is the same as convergence for each component.  So for example:
 let $z_n = x_n + iy_n$ and
@@ -137,15 +142,19 @@ Let us show
 \begin{equation*}
 \lim_{n\to\infty} z_n w_n = zw
 \end{equation*}
-As topology on $\C$ is the same as on $\R^2$, then
-$x_n \to x$, $y_n \to y$, $s_n \to s$, and $t_n \to t$.  Then
+First,
 \begin{equation*}
 z_n w_n = (x_ns_n-y_nt_n) + i(x_nt_n+y_ns_n) .
 \end{equation*}
-Now 
-$\lim (x_ns_n-y_nt_n) = xs-yt$ and
-$\lim (x_nt_n+y_ns_n) = xt+ys$ and
-$(xs-yt)+i(xt+ys) = zw$ so
+As topology on $\C$ is the same as on $\R^2$, then
+$x_n \to x$, $y_n \to y$, $s_n \to s$, and $t_n \to t$.
+So
+\begin{equation*}
+\lim_{n\to\infty} (x_ns_n-y_nt_n) = xs-yt \qquad \text{and} \qquad
+\lim_{n\to\infty} (x_nt_n+y_ns_n) = xt+ys .
+\end{equation*}
+As
+$(xs-yt)+i(xt+ys) = zw$, then
 \begin{equation*}
 \lim_{n\to\infty} z_n w_n = zw .
 \end{equation*}
@@ -203,21 +212,24 @@ and every $k > n$ we have
 If a complex series $\sum z_n$ converges absolutely, then it converges.
 \end{prop}
 
-Notice that the series $\sum \sabs{z_n}$ is a real series.  All the
+The series $\sum \sabs{z_n}$ is a real series.  All the
 convergence tests (ratio test, root test, etc\ldots) that talk about
 absolute convergence work with the numbers $\sabs{z_n}$, that is, they
 are really talking about convergence of series of nonnegative real
-number.
+numbers.
 Therefore you
-can directly apply them without needing to reporve anything for complex
+can directly apply these tests
+them without needing to reprove anything for complex
 series.
 
 \medskip
 
-It often comes up to integrate a complex-valued function.  Suppose
-$f \colon [a,b] \to \C$ is a function.  Write
-$f = u+iv$ for real-valued functions $u$ and $v$.  We say
-that $f$ is Riemann integrable if and only if $u$ and $v$ are Riemann
+We often wish to integrate a complex-valued function.
+Suppose $f \colon [a,b] \to \C$ is a function.
+Write $f = u+iv$ for real-valued functions $u$ and $v$.
+We say that $f$ is \emph{Riemann integrable}\index{Riemann
+integrable!complex-valued function}
+if and only if $u$ and $v$ are Riemann
 integrable, and in this case we define
 \begin{equation*}
 \int_a^b f := \int_a^b u + i \int_a^b v .
@@ -640,7 +652,8 @@ Let us show how to integrate a Fourier series.
 \sum_{n=1}^\infty \frac{\sin(nx)}{n^3}
 \end{equation*}
 The swapping of integral and sum is possible because of uniform convergence,
-which we have proved before using the $M$ test.
+which we have proved before using the Weierstrass $M$-test
+(\thmref{thm:weiermtest}).
 \end{example}
 
 Note that we can swap integrals and limits under far less stringent hypotheses,
@@ -687,10 +700,11 @@ Define
 \begin{equation*}
 \varphi(x) :=\sabs{x} \qquad \text{for $x \in [-1,1]$} .
 \end{equation*}
-We extend the definition to all of $\R$ by making $\varphi$ 2-periodic,
-that is, we decree that
+We extend the definition of $\varphi$ to all of $\R$ by making it
+2-periodic:
+we decree that
 $\varphi(x) = \varphi(x+2)$.  The function $\varphi \colon \R \to \R$
-is continuous,in fact $\sabs{\varphi(x)-\varphi(y)} \leq \sabs{x-y}$ (why?).
+is continuous, in fact $\sabs{\varphi(x)-\varphi(y)} \leq \sabs{x-y}$ (why?).
 See \figureref{fig:triangwave}.
 \begin{myfigureht}
 \includegraphics{figures/triangwave}
@@ -698,7 +712,8 @@ See \figureref{fig:triangwave}.
 \end{myfigureht}
 
 As $\sum {\left(\frac{3}{4}\right)}^n$ converges and $\sabs{\varphi(x)} \leq
-1$ for all $x$, we have by the M-test that
+1$ for all $x$, we have by the $M$-test
+(\thmref{thm:weiermtest}) that
 \begin{equation*}
 f(x) := \sum_{n=0}^\infty 
 {\left(\frac{3}{4}\right)}^n \varphi(4^n x)
@@ -871,15 +886,15 @@ we will always mention which case we are working with.
 
 An analytic function has different expansions around different
 points.  Also the convergence does not automatically happen on the entire
-domain of the function.  For example, we know that if $\sabs{z} < 1$, then
+domain of the function.  For example, if $\sabs{z} < 1$, then
 \begin{equation*}
 \frac{1}{1-z} = \sum_{n=0}^\infty z^n .
 \end{equation*}
 While the left hand side exists on all of $z \not= 1$, the right hand side
-happens to converge only if $\sabs{z} < 1$.  See a graphs
+happens to converge only if $\sabs{z} < 1$.  See a graph
 of a small piece of $\frac{1}{1-z}$ in \figureref{fig:1over1mz}.
 Notice that we can't graph the
-function itself, we only graph its real or imaginary parts for lack
+function itself, we can only graph its real or imaginary parts for lack
 of dimensions in our universe.
 
 \begin{myfigureht}
@@ -972,7 +987,7 @@ Let us list some series we already know:
 \begin{example}
 Note the difference between $\frac{1}{1-z}$ and its power series.  Let us
 expand $\frac{1}{1-z}$ as power series around any point $a \not= 1$.
-Let $c = \frac{1}{1-a}$, then we write
+Let $c = \frac{1}{1-a}$, then
 \begin{equation*}
 \frac{1}{1-z} = 
 \frac{c}{1-c(z-a)}
@@ -989,7 +1004,7 @@ the series on the right hand side converges and
 \sqrt[k]{c^k} = c
 = \frac{1}{\sabs{1-a}} .
 \end{equation*}
-So radius of convergence of the power series is $\sabs{1-a}$, that is the
+The radius of convergence of the power series is $\sabs{1-a}$, that is the
 distance from $1$ to $a$.  The function $\frac{1}{1-z}$
 has a power series
 representation around every $a\not= 1$ and so is analytic in $\C \setminus
