@@ -4231,15 +4231,17 @@ function, and $j$ and $k$ are two integers from $1$ to $n$.  Then
 
 \begin{proof}
 Fix a $p \in U$, and let $e_j$ and $e_k$ be the standard basis vectors.
-Pick two nonzero numbers $s$ and $t$ small enough so that
-$p+s_0e_j +t_0e_k \in U$ for all $s_0$ and $t_0$ with
-$\sabs{s_0} \leq \sabs{s}$ and
-$\sabs{t_0} \leq \sabs{t}$.  This can be done as $U$ is open and so
+Pick two positive numbers $s$ and $t$ small enough so that
+$p+s_0e_j +t_0e_k \in U$ whenever
+$0 < s_0 \leq s$ and $0 < t_0 \leq t$.  This can be done as $U$ is open and so
 contains a small open ball (or a box if you wish) around $p$.
 
-Using the mean value theorem on the partial derivative in $x_k$ of the
-function $f(x+se_j)-f(x)$,
-we find a $t_0$ between $0$ and $t$
+Use the mean value theorem on the function
+\begin{equation*}
+\tau \mapsto f(p+se_j + \tau e_k)-f(x + \tau e_k) ,
+\end{equation*}
+on the interval $[0,t]$
+to find a $t_0 \in (0,t)$
 such that
 \begin{equation*}
 \frac{f(p+se_j + te_k)- f(p+t e_k) - f(p+s e_j)+f(p)}{t}
@@ -4248,7 +4250,7 @@ such that
 -
 \frac{\partial f}{\partial x_k}(p + t_0 e_k) .
 \end{equation*}
-Next there exists a number $s_0$ between $0$ and $s$ such that
+Next there exists a number $s_0 \in (0,s)$
 \begin{equation*}
 \frac{\frac{\partial f}{\partial x_k}(p + s e_j + t_0 e_k)
 -
@@ -4273,19 +4275,22 @@ a certain difference quotient.\label{fig:der2orderflip}}
 
 See \figureref{fig:der2orderflip}.
 The $s_0$ and $t_0$ depend on $s$ and $t$,
-but $s_0$ is 
-between $0$ and $s$ and
-$t_0$ is 
-between $0$ and $t$.
-Therefore
-as $(s,t) \in \R^2$ goes to zero, $(s_0,t_0)$ also goes to zero.
+but $0 < s_0 < s$ and
+$0 < t_0 < t$.
+Denote by $\R_+^2$ the set of $(s,t)$ where $s > 0$ and $t > 0$.
+The set $\R_+^2$ is the domain of $g$, and $(0,0)$ is a cluster
+point of $\R_+^2$.
+As $(s,t) \in \R_+^2$ goes to $(0,0)$, $(s_0,t_0) \in \R_+^2$ also goes to
+$(0,0)$.
 By continuity of the second partial derivatives,
 \begin{equation*}
 \lim_{(s,t) \to (0,0)} g(s,t) = 
 \frac{\partial^2 f}{\partial x_j \partial x_k}(p) .
 \end{equation*}
-Now reverse the ordering, starting with
-the function $f(p+te_k)-f(p)$ find an $s_1$ between $0$ and $s$ such that
+
+Now reverse the ordering.  Start with
+the function $\sigma \mapsto f(p+\sigma e_j + te_k)-f(p + \sigma e_j)$
+find an $s_1 \in (0,s)$ such that
 \begin{equation*}
 \frac{f(p+te_k + se_j)- f(p+s e_j) - f(p+t e_k)+f(p)}{s}
 =
@@ -4293,7 +4298,7 @@ the function $f(p+te_k)-f(p)$ find an $s_1$ between $0$ and $s$ such that
 -
 \frac{\partial f}{\partial x_j}(p + s_1 e_j) .
 \end{equation*}
-Find a $t_1$ between $0$ and $t$ such that
+Find a $t_1 \in (0,t)$ such that
 \begin{equation*}
 \frac{\frac{\partial f}{\partial x_j}(p + t e_k + s_1 e_j)
 -

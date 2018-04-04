@@ -12,8 +12,9 @@ Let $f(x,y)$ be a function of two variables and define
 \begin{equation*}
 g(y) := \int_a^b f(x,y) ~dx .
 \end{equation*}
-If $f$ is continuous on a rectangle $[a,b] \times [c,d]$, then
-\volIref{Proposition 7.5.12 from volume I} says that $g$ is continuous on $[c,d]$.
+If $f$ is continuous on the compact rectangle $[a,b] \times [c,d]$, then
+\volIref{Proposition 7.5.12 from volume I}
+says that $g$ is continuous on $[c,d]$.
 
 Now suppose $f$ is differentiable in $y$.  The main question we want to
 ask is when can we ``differentiate under the integral'', that is,
@@ -38,7 +39,7 @@ such that $\frac{\partial f}{\partial y}$ exists for all $(x,y) \in [a,b]
 \begin{equation*}
 g(y) := \int_a^b f(x,y) ~dx .
 \end{equation*}
-Then $g \colon [c,d] \to \R$ is differentiable and
+Then $g \colon [c,d] \to \R$ is continuously differentiable and
 \begin{equation*}
 g'(y) = \int_a^b \frac{\partial f}{\partial y}(x,y) ~dx .
 \end{equation*}
@@ -97,9 +98,9 @@ x \mapsto \frac{\partial f}{\partial y}(x,y)
 \text{as $h \to 0$} .
 \end{equation*}
 We only defined uniform convergence for sequences although the idea is the
-same.  If you wish you can replace $h$ with $\nicefrac{1}{n}$ or
-$\nicefrac{-1}{n}$ above and let
-$n \to \infty$.
+same.  If you wish you can replace $h$ with a sequence of nonzero 
+number $\{ h_n \}$
+converging to 0 and let $n \to \infty$.
 
 Consider the difference quotient of $g$,
 \begin{equation*}
@@ -121,8 +122,10 @@ So
 \frac{f(x,y+h)-f(x,y)}{h} ~dx 
 =
 \int_a^b 
-\frac{\partial f}{\partial y}(x,y) ~dx . \qedhere
+\frac{\partial f}{\partial y}(x,y) ~dx .
 \end{equation*}
+Then $g'$ is continuous on $[c,d]$ by
+\volIref{Proposition 7.5.12 from volume I} mentioned above.
 \end{proof}
 
 \begin{example}
