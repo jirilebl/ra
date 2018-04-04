@@ -8,6 +8,7 @@ Volume I and II are both in this directory
 * realanal.tex is Volume I
 * realanal2.tex is Volume II
 * The files above are just the "driver files", the actual contents are in the files ch-???.tex
+* realanal.tex must be complied first as realanal2.tex uses the realanal.aux file
 
 Notes on figures:
 
