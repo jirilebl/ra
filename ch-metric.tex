@@ -2513,7 +2513,7 @@ While $(\R,d)$ is complete, show that $(\R,d')$ is not complete.
 \section{Continuous functions}
 \label{sec:metcont}
 
-\sectionnotes{2 lectures}
+\sectionnotes{1.5--2 lectures}
 
 \subsection{Continuity}
 
@@ -2820,9 +2820,9 @@ Question is, is $g$ is continuous?
 We are really asking when do two limiting operations commute,
 which is not always possible, so some extra hypothesis
 is necessary.  A useful sufficient (but not
-necessary) condition is that $f$ is continuous up to the end points.
+necessary) condition is that $f$ is continuous on a closed rectangle.
 
-\begin{prop}
+\begin{prop} \label{prop:integralcontcont}
 If $f \colon [a,b] \times [c,d] \to \R$ is a continuous function,
 then $g \colon [c,d] \to \R$ defined by
 \begin{equation*}
@@ -2844,12 +2844,16 @@ If we let $h_n(x):= f(x,y_n)$ and $h(x) := f(x,y)$,
 we have just shown that
 $h_n \colon [a,b] \to \R$ converges uniformly 
 to
-$h \colon [a,b] \to \R$.
+$h \colon [a,b] \to \R$ as $n$ goes to $\infty$.
 Uniform convergence implies the limit can be taken underneath the integral.
 So
 \begin{equation*}
 \lim_{n\to \infty}
 g(y_n)
+=
+\lim_{n\to \infty}
+\int_a^b 
+f(x,y_n) ~dx 
 = 
 \int_a^b 
 \lim_{n\to \infty}
@@ -2859,6 +2863,11 @@ f(x,y_n) ~dx
 f(x,y) ~dx = g(y) . \qedhere
 \end{equation*}
 \end{proof}
+
+In applications, if we are interested in continuity at $y_0$, we just
+need to apply the proposition in $[a,b] \times [y_0-\epsilon,y_0+\epsilon]$
+for some small $\epsilon > 0$.  So for example if $f$ is continuous in
+$[a,b] \times \R$, then $g$ is continuous on $\R$.
 
 \begin{example}
 Useful examples of uniformly continuous functions are again the so-called
