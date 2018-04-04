@@ -4221,7 +4221,7 @@ When the partial derivatives are continuous, we can swap their order.
 
 \begin{prop} \label{mv:prop:swapders}
 Suppose $U \subset \R^n$ is open and $f \colon U \to \R$ is a $C^2$
-function, and $j$ and $k$ are two integers between $1$ and $n$.  Then
+function, and $j$ and $k$ are two integers from $1$ to $n$.  Then
 \begin{equation*}
 \frac{\partial^2 f}{\partial x_k \partial x_j}
 =
@@ -4230,16 +4230,15 @@ function, and $j$ and $k$ are two integers between $1$ and $n$.  Then
 \end{prop}
 
 \begin{proof}
-Fix a point $p \in U$, and let $e_j$ and $e_k$ be the standard basis
-vectors and let $s$ and $t$ be two small nonzero real numbers.  We pick $s$
-and $t$ small enough so that
+Fix a $p \in U$, and let $e_j$ and $e_k$ be the standard basis vectors.
+Pick two nonzero numbers $s$ and $t$ small enough so that
 $p+s_0e_j +t_0e_k \in U$ for all $s_0$ and $t_0$ with
 $\sabs{s_0} \leq \sabs{s}$ and
-$\sabs{t_0} \leq \sabs{t}$.  This is possible since $U$ is open and so
-contains a small ball (or a box if you wish).
+$\sabs{t_0} \leq \sabs{t}$.  This can be done as $U$ is open and so
+contains a small open ball (or a box if you wish) around $p$.
 
 Using the mean value theorem on the partial derivative in $x_k$ of the
-function $f(p+se_j)-f(p)$,
+function $f(x+se_j)-f(x)$,
 we find a $t_0$ between $0$ and $t$
 such that
 \begin{equation*}
@@ -4280,14 +4279,13 @@ $t_0$ is
 between $0$ and $t$.
 Therefore
 as $(s,t) \in \R^2$ goes to zero, $(s_0,t_0)$ also goes to zero.
-By continuity of the second partial derivatives we
-find that
+By continuity of the second partial derivatives,
 \begin{equation*}
 \lim_{(s,t) \to (0,0)} g(s,t) = 
 \frac{\partial^2 f}{\partial x_j \partial x_k}(p) .
 \end{equation*}
-We now reverse the ordering, starting with
-the function $f(p+te_k)-f(p)$ we find an $s_1$ between $0$ and $s$ such that
+Now reverse the ordering, starting with
+the function $f(p+te_k)-f(p)$ find an $s_1$ between $0$ and $s$ such that
 \begin{equation*}
 \frac{f(p+te_k + se_j)- f(p+s e_j) - f(p+t e_k)+f(p)}{s}
 =
@@ -4295,7 +4293,7 @@ the function $f(p+te_k)-f(p)$ we find an $s_1$ between $0$ and $s$ such that
 -
 \frac{\partial f}{\partial x_j}(p + s_1 e_j) .
 \end{equation*}
-And we find a $t_1$ between $0$ and $t$
+Find a $t_1$ between $0$ and $t$ such that
 \begin{equation*}
 \frac{\frac{\partial f}{\partial x_j}(p + t e_k + s_1 e_j)
 -
@@ -4303,18 +4301,18 @@ And we find a $t_1$ between $0$ and $t$
 =
 \frac{\partial^2 f}{\partial x_k \partial x_j}(p + t_1 e_k + s_1 e_j) .
 \end{equation*}
-And we find that $g(s,t) = \frac{\partial^2 f}{\partial x_k \partial
-x_j}(p + t_1 e_k + s_1 e_j)$ and therefore
+So $g(s,t) = \frac{\partial^2 f}{\partial x_k \partial
+x_j}(p + t_1 e_k + s_1 e_j)$ for the same $g$ as above.  And as before
 \begin{equation*}
 \lim_{(s,t) \to (0,0)} g(s,t) = 
 \frac{\partial^2 f}{\partial x_k \partial x_j}(p) .
 \end{equation*}
-And therefore the two partial derivatives are equal.
+Therefore the two partial derivatives are equal.
 \end{proof}
 
 The proposition does not hold if the derivatives are not
 continuous.  See the exercises.
-Notice also that we did not really need a $C^2$ function we only needed the
+Notice also that we did not really need a $C^2$ function, we only needed the
 two second order partial derivatives involved to be continuous functions.
 
 \subsection{Exercises}
