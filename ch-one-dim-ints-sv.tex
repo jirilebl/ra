@@ -12,65 +12,8 @@ Let $f(x,y)$ be a function of two variables and define
 \begin{equation*}
 g(y) := \int_a^b f(x,y) ~dx .
 \end{equation*}
-
-First question is, is $g$ is continuous?
-We are really asking when do two limiting operations commute.
-As we have seen this is not always possible, so some extra hypothesis
-is necessary.
-A useful sufficient (but not
-necessary) condition is that $f$ is continuous up to the end points.
-
-FIXME: this really belongs in 7.5 as application of uniform continuity
-perhaps.  It might give a nice application, though it makes 7.5.9 part a) easier,
-though perhaps it was quite challenging before, and main part is part b).
-
-FIXME: exercise 7.5.9 overlaps with 8.1.6, but perhaps that's ok.
-If we add the proposition to 7.5, then
-8.1.6 should be ``unmarked'' as challenging.
-
-\begin{prop}
-If $f \colon [a,b] \times [c,d] \to \R$ is a continuous function,
-then $g \colon [c,d] \to \R$ defined by
-\begin{equation*}
-g(y) := \int_a^b f(x,y) ~dx  \qquad \text{is continuous}.
-\end{equation*}
-\end{prop}
-
-\begin{proof}
-Fix $y \in [c,d]$ and let $\epsilon > 0$ be given.
-As $f$ is continuous on $[a,b] \times [c,d]$ which is compact it
-is uniformly continuous.  In particular, there exists $\delta > 0$ such that
-whenever $y+h \in [c,d]$ with
-$\abs{(y+h)-y} = \abs{h} < \delta$ and all $x \in [a,b]$ we have
-$\abs{f(x,y+h)-f(x,y)} < \epsilon$.
-In particular,
-\begin{equation*}
-x \mapsto f(x,y+h)
-\qquad
-\text{converges uniformly to}
-\qquad
-x \mapsto f(x,y)
-\qquad
-\text{as $h \to 0$} .
-\end{equation*}
-We only defined uniform convergence for sequences although the idea is the
-same.  If you wish you can replace $h$ with $\nicefrac{1}{n}$ or
-$\nicefrac{-1}{n}$ above and let $n \to \infty$.
-
-Uniform convergence implies the limit can be taken underneath the integral.
-So
-\begin{equation*}
-\lim_{h\to 0}
-g(y+h)
-= 
-\int_a^b 
-\lim_{h\to 0}
-f(x,y+h) ~dx 
-= 
-\int_a^b 
-f(x,y) ~dx = g(y) . \qedhere
-\end{equation*}
-\end{proof}
+If $f$ is continuous on a rectangle $[a,b] \times [c,d]$, then
+\volIref{Proposition 7.5.12 from volume I} says that $g$ is continuous on $[c,d]$.
 
 Now suppose $f$ is differentiable in $y$.  The main question we want to
 ask is when can we ``differentiate under the integral'', that is,

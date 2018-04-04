@@ -2811,6 +2811,55 @@ d_Y\bigl(f(c),f(q)\bigr)
 \end{equation*}
 \end{proof}
 
+As an application of uniform continuity, let us prove a useful criterion for
+continuity of functions defined by integrals.  Let $f(x,y)$ be a function of two variables and define
+\begin{equation*}
+g(y) := \int_a^b f(x,y) ~dx .
+\end{equation*}
+Question is, is $g$ is continuous?
+We are really asking when do two limiting operations commute,
+which is not always possible, so some extra hypothesis
+is necessary.  A useful sufficient (but not
+necessary) condition is that $f$ is continuous up to the end points.
+
+\begin{prop}
+If $f \colon [a,b] \times [c,d] \to \R$ is a continuous function,
+then $g \colon [c,d] \to \R$ defined by
+\begin{equation*}
+g(y) := \int_a^b f(x,y) ~dx  \qquad \text{is continuous}.
+\end{equation*}
+\end{prop}
+
+\begin{proof}
+Fix $y \in [c,d]$, and let $\{ y_n \}$ be a sequence in $[c,d]$
+converging to $y$.
+Let $\epsilon > 0$ be given.
+As $f$ is continuous on $[a,b] \times [c,d]$, which is compact, $f$
+is uniformly continuous.  
+In particular, there exists $\delta > 0$ such that
+whenever $\widetilde{y} \in [c,d]$ with
+$\abs{\widetilde{y}-y} < \delta$ and all $x \in [a,b]$ we have
+$\abs{f(x,\widetilde{y})-f(x,y)} < \epsilon$.
+If we let $h_n(x):= f(x,y_n)$ and $h(x) := f(x,y)$,
+we have just shown that
+$h_n \colon [a,b] \to \R$ converges uniformly 
+to
+$h \colon [a,b] \to \R$.
+Uniform convergence implies the limit can be taken underneath the integral.
+So
+\begin{equation*}
+\lim_{n\to \infty}
+g(y_n)
+= 
+\int_a^b 
+\lim_{n\to \infty}
+f(x,y_n) ~dx 
+= 
+\int_a^b 
+f(x,y) ~dx = g(y) . \qedhere
+\end{equation*}
+\end{proof}
+
 \begin{example}
 Useful examples of uniformly continuous functions are again the so-called
 \emph{Lipschitz continuous}%
