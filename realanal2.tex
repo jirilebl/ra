@@ -14,6 +14,7 @@
 %if using smaller font you should also rerun the figures,
 % that is in figures/ run run-all-xp.sh (must have epix installed)
 
+
 \usepackage[T1]{fontenc}
 
 % Footnotes should use symbols, not numbers.  Numbered footnotes are
@@ -58,6 +59,7 @@
 \usepackage{varioref}
 \usepackage{imakeidx}
 \PassOptionsToPackage{hyphens}{url}
+\usepackage{xr}
 \usepackage{hyperref} % do NOT set [ocgcolorlinks] here!
 
 %If you have an older tex installation you might need
@@ -88,10 +90,6 @@
 \usepackage[toc,nopostdot,sort=use,nomain,automake]{glossaries}
 
 \usepackage{vogtwidebar}
-
-% This is really just for marking these
-%so that they are easy to find
-\newcommand{\volIref}[1]{#1}
 
 %%%
 %NOTE: If changing fonts, also change fonts in figures/run-xp-topdf.sh
@@ -228,6 +226,15 @@
     pdfauthor={Jiri Lebl}
 }
 
+% This is really just for marking these
+%so that they are easy to find
+\newcommand{\volIref}[1]{#1}
+
+% xr is loaded before hyperref
+\externaldocument[vI-]{realanal}
+
+
+
 % Set up our index
 \makeindex
 
@@ -289,20 +296,35 @@
 \theoremstyle{example}
 \newtheorem{example}[thm]{Example}
 
+\usepackage{suffix}
+
 % referencing
 \newcommand{\figureref}[1]{\hyperref[#1]{Figure~\ref*{#1}}}
+\WithSuffix\newcommand\figureref*[1]{Figure~\ref*{#1}}
 \newcommand{\tableref}[1]{\hyperref[#1]{Table~\ref*{#1}}}
+\WithSuffix\newcommand\tableref*[1]{Table~\ref*{#1}}
 \newcommand{\chapterref}[1]{\hyperref[#1]{chapter~\ref*{#1}}}
+\WithSuffix\newcommand\chapterref*[1]{chapter~\ref*{#1}}
 \newcommand{\Chapterref}[1]{\hyperref[#1]{Chapter~\ref*{#1}}}
+\WithSuffix\newcommand\Chapterref*[1]{Chapter~\ref*{#1}}
 \newcommand{\sectionref}[1]{\hyperref[#1]{\S\ref*{#1}}}
+\WithSuffix\newcommand\sectionref*[1]{\S\ref*{#1}}
 \newcommand{\exerciseref}[1]{\hyperref[#1]{Exercise~\ref*{#1}}}
+\WithSuffix\newcommand\exerciseref*[1]{Exercise~\ref*{#1}}
 \newcommand{\remarkref}[1]{\hyperref[#1]{Remark~\ref*{#1}}}
+\WithSuffix\newcommand\remarkref*[1]{Remark~\ref*{#1}}
 \newcommand{\exampleref}[1]{\hyperref[#1]{Example~\ref*{#1}}}
+\WithSuffix\newcommand\exampleref*[1]{Example~\ref*{#1}}
 \newcommand{\thmref}[1]{\hyperref[#1]{Theorem~\ref*{#1}}}
+\WithSuffix\newcommand\thmref*[1]{Theorem~\ref*{#1}}
 \newcommand{\propref}[1]{\hyperref[#1]{Proposition~\ref*{#1}}}
+\WithSuffix\newcommand\propref*[1]{Proposition~\ref*{#1}}
 \newcommand{\lemmaref}[1]{\hyperref[#1]{Lemma~\ref*{#1}}}
+\WithSuffix\newcommand\lemmaref*[1]{Lemma~\ref*{#1}}
 \newcommand{\corref}[1]{\hyperref[#1]{Corollary~\ref*{#1}}}
+\WithSuffix\newcommand\corref*[1]{Corollary~\ref*{#1}}
 \newcommand{\defnref}[1]{\hyperref[#1]{Definition~\ref*{#1}}}
+\WithSuffix\newcommand\defnref*[1]{Definition~\ref*{#1}}
 
 
 % List of Symbols/Notation
