@@ -2364,6 +2364,41 @@ and goes to zero as $h \to 0$.  Therefore,
 $f(p+h)$ must go to $f(p)$ as $h \to 0$.  That is, $f$ is continuous at $p$.
 \end{proof}
 
+The derivative is itself a linear operator on the space of differentiable
+functions.
+
+\begin{prop}
+Suppose $U \subset \R^n$ is open,
+$f \colon U \to \R^m$ and
+$g \colon U \to \R^m$ are differentiable at $p$,
+and $\alpha \in \R$.  Then the functions $f+g$ and $\alpha f$
+are differentiable at $p$ and
+\begin{equation*}
+(f+g)'(p) = f'(p) + g'(p) , \qquad \text{and} \qquad (\alpha f)'(p) = \alpha
+f'(p) .
+\end{equation*}
+\end{prop}
+
+\begin{proof}
+Let $h \in \R^n$, $h \not= 0$.  Then
+\begin{multline*}
+\frac{\norm{f(p+h)+g(p+h)-\bigl(f(p)+g(p)\bigr) - \bigl(f'(p) + g'(p)\bigr)h}}{\snorm{h}}
+\\
+\leq
+\frac{\norm{f(p+h)-f(p) - f'(p)h}}{\snorm{h}}
++
+\frac{\norm{g(p+h)-g(p) - g'(p)h}}{\snorm{h}} ,
+\end{multline*}
+and
+\begin{equation*}
+\frac{\norm{\alpha f(p+h) - \alpha f(p) - \alpha f'(p)h}}{\snorm{h}}
+=
+\sabs{\alpha} \frac{\norm{f(p+h))-f(p) - f'(p)h}}{\snorm{h}} .
+\end{equation*}
+The limits as $h$ goes to zero of the right hand sides as are zero by
+hypothesis.  The conclusion follows.
+\end{proof}
+
 If $A \in L(X,Y)$ and $B \in L(Y,Z)$ are linear maps, then 
 they are their own derivative.  The composition
 $BA \in L(X,Z)$ is also its own derivative, and
@@ -2704,7 +2739,8 @@ D_u f (x) := \frac{d}{dt}\Big|_{t=0} \bigl[ f(x+tu) \bigr] =
 \end{equation*}
 where the notation
 $\frac{d}{dt}\big|_{t=0}$ represents the derivative evaluated at $t=0$.
-Notice that $\frac{\partial f}{\partial x_j} = D_{e_j} f$.
+Taking the standard basis vector $e_j$ we find
+$\frac{\partial f}{\partial x_j} = D_{e_j} f$.
 For this reason, sometimes the notation $\frac{\partial f}{\partial u}$
 is used instead of $D_u f$.
 
@@ -2735,7 +2771,8 @@ u =
 \end{equation*}
 we get $D_u f(x) = \snorm{(\nabla f)(x)}$.
 The gradient points in the direction in which the
-function grows fastest, in other words, in the direction in which $D_u f(x)$ is maximal.
+function grows fastest, in other words,
+in the direction in which $D_u f(x)$ is maximal.
 
 \subsection{The Jacobian}
 
@@ -2765,7 +2802,7 @@ Sometimes $J_f$ is written as
 This last piece of notation may seem somewhat confusing,
 but it is quite useful when we need to specify
 the exact variables and function components used,
-for example in the implicit function theorem.
+as will for example do in the implicit function theorem.
 
 The Jacobian $J_f$ is a real-valued function, and when $n=1$ it is simply the
 derivative.
@@ -2921,6 +2958,7 @@ Prove that $f(x,y) > 0$ whenever $y > 0$, and
 $f(x,y) < 0$ whenever $y < 0$.
 \end{exercise}
 
+\pagebreak[2]
 \begin{exnote}
 As for functions of one variable, $f \colon U \to \R$ has a
 \emph{\myindex{relative maximum}} at $p \in U$ if there exists
