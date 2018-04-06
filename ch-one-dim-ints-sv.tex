@@ -16,8 +16,8 @@ If $f$ is continuous on the compact rectangle $[a,b] \times [c,d]$, then
 \volIref{\propref*{vI-prop:integralcontcont} from volume I}
 says that $g$ is continuous on $[c,d]$.
 
-Now suppose $f$ is differentiable in $y$.  The main question we want to
-ask is when can we ``differentiate under the integral'', that is,
+Suppose $f$ is differentiable in $y$.  The main question we want to
+ask is when can we ``differentiate under the integral,'' that is,
 when is it true that $g$ is differentiable and its derivative is
 \begin{equation*}
 g'(y) \overset{?}{=} \int_a^b \frac{\partial f}{\partial y}(x,y) ~dx .
@@ -28,9 +28,10 @@ This is not always possible and some extra hypothesis is
 necessary.  In particular, the first
 question we would face is the integrability of
 $\frac{\partial f}{\partial y}$, but the formula can fail even if
-$\frac{\partial f}{\partial y}$ is integrable in $x$ for every $y$.
+$\frac{\partial f}{\partial y}$ is integrable as a function of $x$ for every
+fixed $y$.
 
-Let us prove a simple, but the most useful version of this theorem.
+Let us prove a simple, but perhaps the most useful version of this theorem.
 
 \begin{thm}[\myindex{Leibniz integral rule}]
 Suppose $f \colon [a,b] \times [c,d] \to \R$ is a continuous function,
@@ -45,9 +46,9 @@ g'(y) = \int_a^b \frac{\partial f}{\partial y}(x,y) ~dx .
 \end{equation*}
 \end{thm}
 
-The continuity requirements for $f$ and
-$\frac{\partial f}{\partial y}$ can be
-weakened, but not dropped outright.
+The hypotheses on $f$ and $\frac{\partial f}{\partial y}$ can be
+weakened, see e.g.\ \exerciseref{exercise:strongerleibniz},
+but not dropped outright.
 The main point in the proof is for
 $\frac{\partial f}{\partial y}$ to exist and be continuous for a small
 interval in the $y$ direction.  In applications, we often make $[c,d]$ be a
@@ -65,7 +66,7 @@ $\abs{y_1-y} < \delta$ and all $x \in [a,b]$ we have
 
 Suppose $h$ is such that $y+h \in [c,d]$ and $\abs{h} < \delta$.
 Fix $x$ for a moment
-and apply mean value theorem to find a $y_1$ between $y$ and $y+h$ such that
+and apply the mean value theorem to find a $y_1$ between $y$ and $y+h$ such that
 \begin{equation*}
 \frac{f(x,y+h)-f(x,y)}{h}
 =
@@ -97,10 +98,10 @@ x \mapsto \frac{\partial f}{\partial y}(x,y)
 \qquad
 \text{as $h \to 0$} .
 \end{equation*}
-We only defined uniform convergence for sequences although the idea is the
-same.  If you wish you can replace $h$ with a sequence of nonzero 
-number $\{ h_n \}$
-converging to 0 and let $n \to \infty$.
+We defined uniform convergence for sequences although the idea is the
+same.  You may replace $h$ with a sequence of nonzero 
+numbers $\{ h_n \}$
+converging to 0 such that $y+h_n \in [c,d]$ and let $n \to \infty$.
 
 Consider the difference quotient of $g$,
 \begin{equation*}
@@ -297,6 +298,24 @@ exist if $y \not= 0$ even if we take improper integrals.
 Note: Feel free to use what you know about sine and cosine from calculus.
 \end{exercise}
 
+\pagebreak[1]
+\begin{exercise} \label{exercise:strongerleibniz}
+Strengthen the Leibniz integral rule in the following way.
+Suppose $f \colon (a,b) \times (c,d) \to \R$ is a bounded continuous function,
+such that $\frac{\partial f}{\partial y}$ exists for all $(x,y) \in (a,b)
+\times (c,d)$ and is continuous and bounded.  Define
+\begin{equation*}
+g(y) := \int_a^b f(x,y) ~dx .
+\end{equation*}
+Then $g \colon (c,d) \to \R$ is continuously differentiable and
+\begin{equation*}
+g'(y) = \int_a^b \frac{\partial f}{\partial y}(x,y) ~dx .
+\end{equation*}
+Hint: See also \volIref{\exerciseref{vI-exercise:integralcontcontextra} and
+\thmref{vI-thm:dersconverge} from
+volume I}.
+\end{exercise}
+
 %\begin{exercise}
 %Suppose $f \colon \R^2 \to \R$ is a continuously differentiable function.
 %Define
@@ -326,7 +345,7 @@ Note: Feel free to use what you know about sine and cosine from calculus.
 
 \begin{defn}
 A continuously differentiable function $\gamma \colon [a,b] \to \R^n$ is
-a \emph{\myindex{smooth path}}
+called a \emph{\myindex{smooth path}}
 or a
 \emph{\myindex{continuously differentiable path}}\footnote{The
 word ``smooth'' is used
@@ -336,15 +355,16 @@ if
 $\gamma$ is continuously differentiable and
 $\gamma^{\:\prime}(t) \not= 0$ for all $t \in [a,b]$.
 
-The function $\gamma \colon [a,b] \to \R^n$ is a
+The function $\gamma \colon [a,b] \to \R^n$ is called a
 \emph{\myindex{piecewise smooth path}} or a
 \emph{\myindex{piecewise continuously differentiable path}}
 if there exist finitely many points
 $t_0 = a < t_1 < t_2 < \cdots < t_k = b$ such that
 the restriction of the function $\gamma|_{[t_{j-1},t_j]}$ is smooth path.
 
-A path $\gamma$ is a \emph{\myindex{simple path}} if $\gamma|_{(a,b)}$ is
+A path $\gamma$ is said to be a \emph{\myindex{simple path}} if $\gamma|_{(a,b)}$ is
 a one-to-one function.  A path $\gamma$ is 
+called
 a \emph{\myindex{closed path}} if $\gamma(a) = \gamma(b)$, that is
 if the path starts and ends in the same point.
 \end{defn}
@@ -417,10 +437,10 @@ take the function
 \end{equation*}
 See \figureref{fig:cornersmoothpath}.
 It is left for the reader to check that $\gamma$ is continuously
-differentiable, yet the image $\gamma(\R) = \{ (x,y) \in \R^2 : (x,y) =
-(s,0) \text{ or } (x,y) = (0,s) \text{ for some $s \geq 0$ } \}$ has a
+differentiable, yet the image $\gamma(\R) = \bigl\{ (x,y) \in \R^2 : (x,y) =
+(s,0) \text{ or } (x,y) = (0,s) \text{ for some $s \geq 0$} \bigr\}$ has a
 ``corner'' at the origin.  And that is because $\gamma^{\:\prime}(0) = (0,0)$.
-More complicated examples with even infinitely many corners exist,
+More complicated examples with, say, infinitely many corners exist,
 see the exercises.
 \begin{myfigureht}
 \includegraphics{figures/cornersmoothpath}
@@ -450,9 +470,9 @@ $\alpha \colon [0,1] \to \R^2$ be defined by
 \alpha(t) := \bigl((1-t)a+tb,f((1-t)a+tb)\bigr) .
 \end{equation*}
 Then
-$\alpha'(t) = \bigl( b-a , (b-a)f'((1-t)a+tb) \bigr)$, which is never zero.
-Furthermore as sets $\alpha\bigl([0,1]\bigr) = \gamma\bigl([a,b]\bigr)
-= \{ (x,y) \in \R^2 : x \in [a,b] \text{ and } f(x) = y \}$,
+$\alpha'(t) = \bigl( b-a ,~ (b-a)f'((1-t)a+tb) \bigr)$, which is never zero.
+Furthermore, as sets, $\alpha\bigl([0,1]\bigr) = \gamma\bigl([a,b]\bigr)
+= \bigl\{ (x,y) \in \R^2 : x \in [a,b] \text{ and } f(x) = y \bigr\}$,
 which is just the graph of $f$.
 \end{example}
 
@@ -463,7 +483,7 @@ Let $\gamma \colon [a,b] \to \R^n$ be a smooth path and
 $h \colon [c,d] \to [a,b]$ a continuously differentiable bijective function
 such that $h'(t) \not= 0$ for all $t \in [c,d]$.  Then
 the composition
-$\gamma \circ h$ is a
+$\gamma \circ h$ is called a
 \emph{\myindex{smooth reparametrization}}\index{reparametrization}
 of $\gamma$.
 
@@ -503,7 +523,7 @@ increasing.
 If $h \colon [c,d] \to [a,b]$ gives a piecewise smooth reparametrization,
 then for some partition
 $r_0 = c < r_1 < r_2 < \cdots < r_\ell = d$, we have
-$h|_{[t_{j-1},t_j]}$ is continuously differentiable with positive
+$h|_{[r_{j-1},r_j]}$ is continuously differentiable with positive
 derivative.
 
 Let $t_0 = a < t_1 < t_2 < \cdots < t_k = b$ be the partition from the
@@ -513,7 +533,7 @@ Let $s_j := h^{-1}(t_j)$.  Then
 $s_0 = c < s_1 < s_2 < \cdots < s_k = d$.
 For $t \in [s_{j-1},s_j]$ notice that $h(t) \in [t_{j-1},t_j]$,
 $h|_{[s_{j-1},s_j]}$ is continuously differentiable, and
-$\varphi|_{[t_{j-1},t_j]}$ is also continuously differentiable.
+$\gamma|_{[t_{j-1},t_j]}$ is also continuously differentiable.
 Then
 \begin{equation*}
 (\gamma \circ h)|_{[s_{j-1},s_{j}]} (t)
@@ -530,7 +550,7 @@ by the chain rule
 \bigl( \gamma|_{[t_{j-1},t_{j}]} \bigr)' \bigl( h(t) \bigr)
 (h|_{[s_{j-1},s_j]})'(t) \not= 0 .
 \end{equation*}
-Therefore $\gamma \circ h$ is a piecewise smooth path.  The case for an
+Consequently, $\gamma \circ h$ is a piecewise smooth path.  The case of an
 orientation reversing $h$ is left as an exercise.
 \end{proof}
 
