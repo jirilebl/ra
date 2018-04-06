@@ -326,7 +326,7 @@ Note: Feel free to use what you know about sine and cosine from calculus.
 
 \begin{defn}
 A continuously differentiable function $\gamma \colon [a,b] \to \R^n$ is
-called a \emph{\myindex{smooth path}}
+a \emph{\myindex{smooth path}}
 or a
 \emph{\myindex{continuously differentiable path}}\footnote{The
 word ``smooth'' is used
@@ -336,28 +336,29 @@ if
 $\gamma$ is continuously differentiable and
 $\gamma^{\:\prime}(t) \not= 0$ for all $t \in [a,b]$.
 
-The function $\gamma \colon [a,b] \to \R^n$ is called a
+The function $\gamma \colon [a,b] \to \R^n$ is a
 \emph{\myindex{piecewise smooth path}} or a
 \emph{\myindex{piecewise continuously differentiable path}}
 if there exist finitely many points
 $t_0 = a < t_1 < t_2 < \cdots < t_k = b$ such that
 the restriction of the function $\gamma|_{[t_{j-1},t_j]}$ is smooth path.
 
-We say $\gamma$ is a \emph{\myindex{simple path}} if $\gamma|_{(a,b)}$ is
-a one-to-one function.  A $\gamma$ is 
+A path $\gamma$ is a \emph{\myindex{simple path}} if $\gamma|_{(a,b)}$ is
+a one-to-one function.  A path $\gamma$ is 
 a \emph{\myindex{closed path}} if $\gamma(a) = \gamma(b)$, that is
 if the path starts and ends in the same point.
 \end{defn}
 
 Since $\gamma$ is a function of one variable,
-we have seen before that treating $\gamma^{\:\prime}(t)$ as a matrix is equivalent
-to treating it as a vector since it is an $n \times 1$ matrix, that is,
+then as we have seen, we can treat
+$\gamma^{\:\prime}(t)$ either as a matrix (a linear operator) or
+a vector as it is an $n \times 1$ matrix, that is,
 a column vector.
-In fact, by an earlier exercise, even the operator norm of
+By an earlier exercise, even the operator norm of
 $\gamma^{\:\prime}(t)$ is equal to
-the euclidean norm.  Therefore, we will write $\gamma^{\:\prime}(t)$ as a vector
-as is usual, and then $\gamma^{\:\prime}(t)$ is just the vector of the derivatives
-of its components, so if $\gamma(t) =
+the euclidean norm of the corresponding vector.
+Then $\gamma^{\:\prime}(t)$ is a vector of the derivatives of the components
+of $\gamma$.  If $\gamma(t) =
 \bigl( \gamma_1(t), \gamma_2(t), \ldots, \gamma_n(t) \bigr)$, then
 $\gamma^{\:\prime}(t) =
 \bigl( \gamma_1^{\:\prime}(t), \gamma_2^{\:\prime}(t), \ldots,
@@ -368,10 +369,10 @@ One can mostly get by with smooth paths, but for computations, the simplest
 paths to write down are often piecewise smooth.
 Note that a piecewise smooth function (or path) is automatically continuous (exercise).
 
-Generally, it is the direct image $\gamma\bigl([a,b]\bigr)$ that is what we are
-interested in, although how we parametrize it with $\gamma$ is also
-important to some degree.  We informally talk about a curve, and often
-we really mean the set $\gamma\bigl([a,b]\bigr)$, just as before depending
+Generally, we are interested in the direct image $\gamma\bigl([a,b]\bigr)$,
+rather than the specific parametrization, although that is also
+important to some degree.  When we informally talk about a path or a curve,
+we often mean the set $\gamma\bigl([a,b]\bigr)$, depending
 on context.
 
 \begin{example} \label{mv:example:unitsquarepath}
@@ -385,20 +386,22 @@ Let $\gamma \colon [0,4] \to \R^2$ be defined by
 (0,4-t) & \text{if $t \in (3,4]$.}
 \end{cases}
 \end{equation*}
-Then the reader can check that the path is the unit square traversed
-counterclockwise.  See \figureref{fig:squarepath}.  We can check that for example
-$\gamma|_{[1,2]}(t) = (1,t-1)$ and therefore
-$(\gamma|_{[1,2]})'(t) = (0,1) \not= 0$.  It is good to notice at this point
-that
-$(\gamma|_{[1,2]})'(1) = (0,1)$,
-$(\gamma|_{[0,1]})'(1) = (1,0)$, and
-$\gamma^{\:\prime}(1)$ does not exist.  That is, at the corners $\gamma$ is of course
-not differentiable, even though the restrictions are differentiable and the
-derivative depends on which restriction you take.
 \begin{myfigureht}
 \includegraphics{figures/squarepath}
 \caption{The path $\gamma$ traversing the unit square.\label{fig:squarepath}}
 \end{myfigureht}
+
+The reader can check that the path is the unit square traversed
+counterclockwise.  See \figureref{fig:squarepath}.  For example,
+$\gamma|_{[1,2]}(t) = (1,t-1)$ and therefore
+$(\gamma|_{[1,2]})'(t) = (0,1) \not= 0$.  Similarly for the other sides.
+Notice
+that
+$(\gamma|_{[1,2]})'(1) = (0,1)$,
+$(\gamma|_{[0,1]})'(1) = (1,0)$, but
+$\gamma^{\:\prime}(1)$ does not exist.  That is, at the corners $\gamma$ is 
+not differentiable. The restrictions are differentiable and the
+derivative is different for each restriction.
 \end{example}
 
 \begin{example}
@@ -460,7 +463,7 @@ Let $\gamma \colon [a,b] \to \R^n$ be a smooth path and
 $h \colon [c,d] \to [a,b]$ a continuously differentiable bijective function
 such that $h'(t) \not= 0$ for all $t \in [c,d]$.  Then
 the composition
-$\gamma \circ h$ is called a
+$\gamma \circ h$ is a
 \emph{\myindex{smooth reparametrization}}\index{reparametrization}
 of $\gamma$.
 
