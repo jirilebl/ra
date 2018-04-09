@@ -1,0 +1,61 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+double gamma_x(double t)
+{
+	return cos(2*t)+0.3;
+}
+
+P gamma_z(double t, double z)
+{
+  	return P(gamma_x(t),t,z);
+}
+
+
+double MAX(1.5), Bd(1.7);
+
+int main()
+{
+  double tt;
+  picture(P(-Bd,-Bd), P(Bd,Bd), "2.5x2.5in");
+
+  begin();
+
+  //camera.at(P(6,2,5));
+  camera.at(P(6,2,3));
+
+  arrow(P(0,0,0), P(Bd,0,0));
+  label(P(Bd,0), P(-4,-2), "$x$", l); 
+
+  arrow(P(0,0,0), P(0,Bd,0));
+  label(P(0,Bd), P( 2,-2), "$y$", br);
+
+  arrow(P(0, 0, 0), P(0,0,1.2));
+  label(P(0,0,1.2), P(0,4), "$z$", t);
+
+
+  for (tt=-0.2; tt < 1.7; tt+= 0.06) {
+	  double t0 = tt-0.06;
+	  plain ();
+	  double slope = (gamma_x(tt)-gamma_x(t0))/0.06;
+	  /* This is probalby not correct shading but it
+	   * looks ok */
+	  fill(Black(0.9*(atan(slope)+1.5708)/3.1416));
+	  quad (
+		gamma_z(t0,0),
+		gamma_z(t0,0.5*sin(t0*t0)+0.7),
+		gamma_z(tt,0.5*sin(tt*tt)+0.7),
+		gamma_z(tt,0));
+	  bold();
+	  line (gamma_z(t0,0),
+		gamma_z(tt,0));
+  }
+
+  plain();
+
+  label(gamma_z(0.6,0), P(0,-4), "$\\gamma$", b);
+
+  tikz_format();
+  end();
+}

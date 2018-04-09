@@ -370,11 +370,11 @@ if the path starts and ends in the same point.
 \end{defn}
 
 Since $\gamma$ is a function of one variable,
-then as we have seen, we can treat
+we can treat
 $\gamma^{\:\prime}(t)$ either as a matrix (a linear operator) or
 a vector as it is an $n \times 1$ matrix, that is,
 a column vector.
-By an earlier exercise, even the operator norm of
+By \exerciseref{exercise:normonedim}, the operator norm of
 $\gamma^{\:\prime}(t)$ is equal to
 the euclidean norm of the corresponding vector.
 Then $\gamma^{\:\prime}(t)$ is a vector of the derivatives of the components
@@ -384,10 +384,11 @@ $\gamma^{\:\prime}(t) =
 \bigl( \gamma_1^{\:\prime}(t), \gamma_2^{\:\prime}(t), \ldots,
 \gamma_n^{\:\prime}(t) \bigr)$.
 
-
-One can mostly get by with smooth paths, but for computations, the simplest
+The definition of piecewise smooth path as we have given it above implies
+continuity (exercise).  Note that some authors allow also finitely many
+discontinuities.
+One could mostly get by with smooth paths, but for computations, the simplest
 paths to write down are often piecewise smooth.
-Note that a piecewise smooth function (or path) is automatically continuous (exercise).
 
 Generally, we are interested in the direct image $\gamma\bigl([a,b]\bigr)$,
 rather than the specific parametrization, although that is also
@@ -411,9 +412,10 @@ Let $\gamma \colon [0,4] \to \R^2$ be defined by
 \caption{The path $\gamma$ traversing the unit square.\label{fig:squarepath}}
 \end{myfigureht}
 
-The reader can check that the path is the unit square traversed
-counterclockwise.  See \figureref{fig:squarepath}.  For example,
-$\gamma|_{[1,2]}(t) = (1,t-1)$ and therefore
+The path is the unit square traversed
+counterclockwise.  See \figureref{fig:squarepath}.  Let us check it is
+a piecewise smooth path.  For example,
+$\gamma|_{[1,2]}(t) = (1,t-1)$ and so
 $(\gamma|_{[1,2]})'(t) = (0,1) \not= 0$.  Similarly for the other sides.
 Notice
 that
@@ -426,8 +428,8 @@ derivative is different for each restriction.
 
 \begin{example}
 The condition that $\gamma^{\:\prime}(t) \not= 0$ means that the image of $\gamma$
-has no ``corners'' where $\gamma$ is continuously differentiable.  For example,
-take the function
+has no ``corners'' where $\gamma$ is continuously differentiable.
+Consider the function
 \begin{equation*}
 \gamma(t) :=
 \begin{cases}
@@ -450,28 +452,29 @@ $t$ are marked with dots.\label{fig:cornersmoothpath}}
 \end{example}
 
 The condition that $\gamma^{\:\prime}(t) \not= 0$ even at the endpoints guarantees
-not only no corners, but also that the path ends nicely, that is, can
+not only no corners, but also that the path ends nicely, that is, it can
 extend a little bit past the endpoints.  Again, see the exercises.
 
 \begin{example}
 A graph of a continuously differentiable function $f \colon [a,b] \to \R$ is a smooth path.
-That is, define $\gamma \colon [a,b] \to \R^2$ by
+Define $\gamma \colon [a,b] \to \R^2$ by
 \begin{equation*}
 \gamma(t) := \bigl(t,f(t)\bigr) .
 \end{equation*}
-Then $\gamma^{\:\prime}(t) = \bigl( 1 , f'(t) \bigr)$, which is never zero.
+Then $\gamma^{\:\prime}(t) = \bigl( 1 , f'(t) \bigr)$, which is never zero,
+and $\gamma\bigl([a,b]\bigr)$ is the graph of $f$.
 
-There are other ways of parametrizing the path.  That is, having a
-different path with the same image.  For example,
-the function that takes $t$ to 
-$(1-t)a+tb$, takes the interval $[0,1]$ to $[a,b]$.  So let
-$\alpha \colon [0,1] \to \R^2$ be defined by
+There are other ways of parametrizing the path.  That is, there are
+different paths with the same image.  For example,
+the function $t \mapsto (1-t)a+tb$, takes the interval $[0,1]$ to $[a,b]$.
+Define
+$\alpha \colon [0,1] \to \R^2$ by
 \begin{equation*}
 \alpha(t) := \bigl((1-t)a+tb,f((1-t)a+tb)\bigr) .
 \end{equation*}
 Then
 $\alpha'(t) = \bigl( b-a ,~ (b-a)f'((1-t)a+tb) \bigr)$, which is never zero.
-Furthermore, as sets, $\alpha\bigl([0,1]\bigr) = \gamma\bigl([a,b]\bigr)
+As sets, $\alpha\bigl([0,1]\bigr) = \gamma\bigl([a,b]\bigr)
 = \bigl\{ (x,y) \in \R^2 : x \in [a,b] \text{ and } f(x) = y \bigr\}$,
 which is just the graph of $f$.
 \end{example}
@@ -522,8 +525,8 @@ Let us assume that $h$ preserves orientation, that is, $h$ is strictly
 increasing.
 If $h \colon [c,d] \to [a,b]$ gives a piecewise smooth reparametrization,
 then for some partition
-$r_0 = c < r_1 < r_2 < \cdots < r_\ell = d$, we have
-$h|_{[r_{j-1},r_j]}$ is continuously differentiable with positive
+$r_0 = c < r_1 < r_2 < \cdots < r_\ell = d$, the restriction
+$h|_{[r_{j-1},r_j]}$ is continuously differentiable with a positive
 derivative.
 
 Let $t_0 = a < t_1 < t_2 < \cdots < t_k = b$ be the partition from the
@@ -531,7 +534,7 @@ definition of piecewise smooth for $\gamma$ together with the
 points $\{ h(r_0), h(r_1), h(r_2), \ldots, h(r_\ell) \}$.
 Let $s_j := h^{-1}(t_j)$.  Then
 $s_0 = c < s_1 < s_2 < \cdots < s_k = d$.
-For $t \in [s_{j-1},s_j]$ notice that $h(t) \in [t_{j-1},t_j]$,
+If $t \in [s_{j-1},s_j]$, then $h(t) \in [t_{j-1},t_j]$, so
 $h|_{[s_{j-1},s_j]}$ is continuously differentiable, and
 $\gamma|_{[t_{j-1},t_j]}$ is also continuously differentiable.
 Then
@@ -550,8 +553,8 @@ by the chain rule
 \bigl( \gamma|_{[t_{j-1},t_{j}]} \bigr)' \bigl( h(t) \bigr)
 (h|_{[s_{j-1},s_j]})'(t) \not= 0 .
 \end{equation*}
-Consequently, $\gamma \circ h$ is a piecewise smooth path.  The case of an
-orientation reversing $h$ is left as an exercise.
+Consequently, $\gamma \circ h$ is a piecewise smooth path.
+Orientation reversing $h$ is left as an exercise.
 \end{proof}
 
 If two paths are simple and their images are the same, it is
@@ -560,34 +563,34 @@ left as an exercise that there exists a reparametrization.
 \subsection{Path integral of a one-form}
 
 \begin{defn}
-If $(x_1,x_2,\ldots,x_n) \in \R^n$ are our coordinates, and
-given $n$ real-valued continuous functions $f_1,f_2,\ldots,f_n$ defined on some set $S \subset \R^n$ we
-define a so-called \emph{\myindex{one-form}}\index{differential one-form}:
+Let $(x_1,x_2,\ldots,x_n) \in \R^n$ be our coordinates.
+Given $n$ real-valued continuous functions
+$\omega_1,\omega_2,\ldots,\omega_n$ defined on a set $S \subset \R^n$,
+we define a \emph{\myindex{one-form}}\index{differential one-form}
+to be an object of the form
 \glsadd{not:oneform}
 \begin{equation*}
 \omega = \omega_1 ~dx_1 + \omega_2 ~dx_2 + \cdots + \omega_n ~dx_n .
 \end{equation*}
-We could represent $\omega$ as a continuous function from $S$ to $\R^n$, although it is
-better to think of it as a different object.
+We could represent $\omega$ as a continuous function from $S$ to $\R^n$,
+although it is better to think of it as a different object.
 \end{defn}
 
 \begin{example}
-For example,
 \begin{equation*}
-\omega(x,y) = \frac{-y}{x^2+y^2} ~dx + \frac{x}{x^2+y^2} ~dy
+\omega(x,y) := \frac{-y}{x^2+y^2} ~dx + \frac{x}{x^2+y^2} ~dy
 \end{equation*}
 is a one-form defined on $\R^2 \setminus \{ (0,0) \}$.
 \end{example}
 
 \begin{defn}
 Let $\gamma \colon [a,b] \to \R^n$ be a smooth path
-and
+and let
 \begin{equation*}
 \omega = \omega_1 ~dx_1 + \omega_2 ~dx_2 + \cdots + \omega_n ~dx_n ,
 \end{equation*}
-a one-form defined on the direct image $\gamma\bigl([a,b]\bigr)$.
-Let $\gamma = (\gamma_1,\gamma_2,\ldots,\gamma_n)$ be the components of
-$\gamma$.
+be a one-form defined on the direct image $\gamma\bigl([a,b]\bigr)$.
+Write $\gamma = (\gamma_1,\gamma_2,\ldots,\gamma_n)$.
 Define:
 \begin{equation*}
 \begin{split}
@@ -606,11 +609,17 @@ Define:
 \omega_j\bigl(\gamma(t)\bigr) \gamma_j^{\:\prime}(t) \right) ~ dt .
 \end{split}
 \end{equation*}
+To remember the definition note that $x_j$ is $\gamma_j(t)$, so
+$dx_j$ becomes  $\gamma_j^{\:\prime}(t) \, dt$.
+
 If $\gamma$ is piecewise smooth, take the corresponding partition
-$t_0 = a < t_1 < t_2 < \ldots < t_k = b$, where we assume the partition is
-the minimal one, that is $\gamma$ is not differentiable
-at $t_2,t_3,\ldots,t_{k-1}$.  Each $\gamma|_{[t_{j-1},t_j]}$ is
-a smooth path and we define
+$t_0 = a < t_1 < t_2 < \ldots < t_k = b$, and assume the partition is
+minimal
+%\footnote{This restriction is not strictly necessary, but it 
+%makes the integral immediately well-defined.}
+in the sense that $\gamma$ is not differentiable
+at $t_1,t_2,\ldots,t_{k-1}$.  As each $\gamma|_{[t_{j-1},t_j]}$ is
+a smooth path, define
 \begin{equation*}
 \int_{\gamma} \omega
 :=
@@ -631,18 +640,18 @@ if $x_j(t) = \gamma_j(t)$, then $dx_j = \gamma_j^{\:\prime}(t) dt$.
 
 Paths can be cut up or concatenated as follows.  The proof is a direct application
 of the additivity of the Riemann integral, and is left as an exercise.
-The proposition also justifies why we defined the integral over a piecewise
-smooth path in the way we did, and it further justifies that we may as well
+The proposition justifies why we defined the integral over a piecewise
+smooth path in the way we did, and it justifies that we may as well
 have taken any partition not just the minimal one in the definition.
 
 \begin{prop} \label{mv:prop:pathconcat}
-Let $\gamma \colon [a,c] \to \R^n$ be a piecewise smooth path.
-For some $b \in (a,c)$,
-define the piecewise smooth paths
-$\alpha = \gamma|_{[a,b]}$ and
-$\beta = \gamma|_{[b,c]}$.
-For a one-form $\omega$ defined on the image
-of $\gamma$ we have
+Let $\gamma \colon [a,c] \to \R^n$ be a piecewise smooth path,
+and $b \in (a,c)$.
+Define the piecewise smooth paths
+$\alpha := \gamma|_{[a,b]}$ and
+$\beta := \gamma|_{[b,c]}$.
+Let $\omega$ be a one-form defined on the image
+of $\gamma$.  Then
 \begin{equation*}
 \int_{\gamma} \omega =
 \int_{\alpha} \omega +
@@ -724,14 +733,15 @@ as $\beta(t) := \bigl(\cos(-t),\sin(-t)\bigr)$.  Then
 = -2\pi .
 \end{split}
 \end{equation*}
-Now, $\alpha$ is an orientation preserving reparametrization of
-$\gamma$, and the integrals are the same.  On the other hand, $\beta$
-is an orientation reversing reparametrization and the integral is
+The path $\alpha$ is an orientation preserving reparametrization of
+$\gamma$, and the integrals are the same.  The path $\beta$
+is an orientation reversing reparametrization of $\gamma$ and the integral is
 minus the original.  See \figureref{fig:circlepathrepar}.
 \begin{myfigureht}
 \includegraphics{figures/circlepathrepar}
-\caption{Circular path reparametrized in two different ways. The arrow
-indicates orientation of $\gamma$ and $\alpha$. $\beta$ traverses in the
+\caption{A circular path reparametrized in two different ways. The arrow
+indicates the orientation of $\gamma$ and $\alpha$. The path $\beta$ traverses
+the circle in the
 opposite direction.\label{fig:circlepathrepar}}
 \end{myfigureht}
 \end{example}
@@ -756,11 +766,10 @@ Suppose $\omega$ is a one-form defined on the set $\gamma\bigl([a,b]\bigr)$.  Th
 
 \begin{proof}
 Assume first that $\gamma$ and $h$ are both smooth.
-Write the one-form  as $\omega = \omega_1 dx_1 + \omega_2 dx_2 + \cdots +
+Write $\omega = \omega_1 dx_1 + \omega_2 dx_2 + \cdots +
 \omega_n dx_n$.
-Suppose first that $h$ is orientation preserving.  Using
-the definition of the path integral and the change of variables
-formula for the Riemann integral,
+Suppose that $h$ is orientation preserving.  Using
+the change of variables formula for the Riemann integral,
 \begin{equation*}
 \begin{split}
 \int_{\gamma} \omega
@@ -804,16 +813,15 @@ formula for the Riemann integral,
 \end{split}
 \end{equation*}
 If $h$ is orientation reversing, it swaps the order of the limits on the
-integral introducing a minus sign.
+integral and introduces a minus sign.
 The details, along with finishing the proof for piecewise smooth
-paths is left to the reader as \exerciseref{mv:exercise:pathpiece}.
+paths, is left as \exerciseref{mv:exercise:pathpiece}.
 \end{proof}
 
 Due to this proposition (and the exercises), if $\Gamma
 \subset \R^n$ is the image of a simple piecewise smooth path
 $\gamma\bigl([a,b]\bigr)$, then if we somehow indicate the orientation, that
-is, in which direction we traverse the curve, or in other words where we start and
-where we finish, then we can just write
+is, the direction in which we traverse the curve, then we can write
 \begin{equation*}
 \int_{\Gamma} \omega ,
 \end{equation*}
@@ -822,7 +830,7 @@ Furthermore, for a simple closed path, it does not even matter where we
 start the parametrization.  See the exercises.
 
 Recall that \emph{simple} means that $\gamma$ restricted to $(a,b)$ is
-one-to-one, that is, it is one-to-one except perhaps at the endpoints.
+one-to-one, that is, $\gamma$ is one-to-one except perhaps at the endpoints.
 We also often relax the simple path condition a little bit.
 For example, as long as
 $\gamma \colon [a,b] \to \R^n$ is one-to-one except at finitely many points.  That
@@ -833,7 +841,7 @@ problem is illustrated by the following example.
 
 \begin{example}
 Suppose $\gamma \colon [0,2\pi] \to \R^2$ is given by $\gamma(t) :=
-\bigl(\cos(t),\sin(t)\bigr)$ and
+\bigl(\cos(t),\sin(t)\bigr)$, and
 $\beta \colon [0,2\pi] \to \R^2$ is given by $\beta(t) :=
 \bigl(\cos(2t),\sin(2t)\bigr)$.  Notice that
 $\gamma\bigl([0,2\pi]\bigr) = \beta\bigl([0,2\pi]\bigr)$, and we travel
@@ -849,7 +857,7 @@ and twice by
 $\beta \colon [0,2\pi] \to \R^2$.\label{fig:circlepathrepar2}}
 \end{myfigureht}
 
-Then
+Compute
 \begin{align*}
 & \int_{\gamma} -y~ dx + x~dy
 =
@@ -869,7 +877,7 @@ Then
 
 It is sometimes convenient to define a path integral over $\gamma \colon
 [a,b] \to \R^n$ that is not a path.
-We define
+Define
 \glsadd{not:pathintegralomega}
 \begin{equation*}
 \int_{\gamma} \omega := \int_a^b
@@ -878,16 +886,24 @@ We define
 \omega_j\bigl(\gamma(t)\bigr) \gamma_j^{\:\prime}(t)
 \right) ~ dt 
 \end{equation*}
-for any $\gamma$ which is continuously differentiable.  A 
-case which comes up naturally is when $\gamma$ is constant.  In this case
-$\gamma^{\:\prime}(t) = 0$ for all $t$ and $\gamma\bigl([a,b]\bigr)$ is a single
+for any continuously differentiable $\gamma$.  A 
+case that comes up naturally is when $\gamma$ is constant.  Then
+$\gamma^{\:\prime}(t) = 0$ for all $t$, and $\gamma\bigl([a,b]\bigr)$ is a single
 point, which we regard as a ``curve'' of length zero.  Then,
-$\int_{\gamma} \omega = 0$.
+$\int_{\gamma} \omega = 0$ for any $\omega$.
 
 \subsection{Line integral of a function}
 
-Sometimes we wish to simply integrate a function against the so-called
-\emph{\myindex{arc-length measure}}.
+Next we integrate a function against the so-called
+\emph{\myindex{arc-length measure}} $ds$.  The geometric picture we have in mind
+is the area under the graph of the function over a path.
+See \figureref{fig:fenceintegral}.
+\begin{myfigureht}
+\includegraphics{figures/fenceintegral}
+\caption{A path $\gamma \colon [a,b] \to \R^2$ in the $xy$-plane (bold curve), and a function
+$z=f(x,y)$ graphed above it in the $z$ direction.  The integral is the
+shaded area depicted.\label{fig:fenceintegral}}
+\end{myfigureht}
 
 \begin{defn}
 Suppose $\gamma \colon [a,b] \to \R^n$ is a smooth path, and $f$ is a
@@ -907,8 +923,8 @@ The definition for a piecewise smooth path is similar as before and is left
 to the reader.
 \end{defn}
 
-The geometric idea of this integral is to find the ``area under the
-graph of a function'' as we move around the path $\gamma$.
+%The geometric idea of this integral is to find the ``area under the
+%graph of a function'' as we move around the path $\gamma$.
 The line integral of a function is also independent of the parametrization,
 and in this case, the orientation does not matter.
 
@@ -965,10 +981,10 @@ simply write
 \int_\Gamma f~ ds .
 \end{equation*}
 In this case we also do not need to worry about orientation, either way we
-get the same thing.
+get the same integral.
 
 \begin{example}
-Let $f(x,y) = x$.  Let $C \subset \R^2$ be half of the unit circle for $x
+Let $f(x,y) := x$.  Let $C \subset \R^2$ be half of the unit circle for $x
 \geq 0$.  We wish to compute
 \begin{equation*}
 \int_C f ~ ds .
@@ -1001,10 +1017,10 @@ $\gamma\bigl( [a,b] \bigr) = \Gamma$.  The we define the
 
 \begin{example}
 Let $x,y \in \R^n$ be two points and write $[x,y]$ as the straight line
-segment between the two points $x$ and $y$.  We parametrize
+segment between the two points $x$ and $y$.  Parametrize
 $[x,y]$ by $\gamma(t) := (1-t)x + ty$ for $t$ running between $0$ and $1$.
 See \figureref{fig:straightpath}.
-We find $\gamma^{\:\prime}(t) = y-x$ and therefore
+Then $\gamma^{\:\prime}(t) = y-x$, and therefore
 \begin{equation*}
 \ell\bigl([x,y]\bigr)
 =
@@ -1014,12 +1030,11 @@ We find $\gamma^{\:\prime}(t) = y-x$ and therefore
 =
 \snorm{y-x} .
 \end{equation*}
-So the length of $[x,y]$ is the distance between $x$ and $y$ in the
-euclidean metric.
+So the length of $[x,y]$ is the standard euclidean distance between $x$ and $y$.
 \begin{myfigureht}
 \includegraphics{figures/straightpath}
 \caption{Straight path between $x$ and $y$ parametrized
-by $(1-t)x + ty$..\label{fig:straightpath}}
+by $(1-t)x + ty$.\label{fig:straightpath}}
 \end{myfigureht}
 \end{example}
 
@@ -1065,8 +1080,14 @@ and reparametrizations.
 
 \begin{exercise} \label{mv:exercise:linepiece}
 Finish the proof of \propref{mv:prop:lineintrepararam}
-for a)~orientation reversing reparametrizations, and b)~piecewise smooth paths
+for
+\begin{enumerate}[a)]
+\item
+orientation reversing reparametrizations, and
+\item
+piecewise smooth paths
 and reparametrizations.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1225,8 +1246,8 @@ $\gamma^{\:\prime}(t_n) = (0,0)$.
 \item
 Show that the points $\gamma(t_n)$ lie on the line $y=0$ and such
 that the $x$-coordinate of $\gamma(t_n)$ alternates between positive and
-negative (if they do not alternate you only found a subsequence
-and you need to find them all).
+negative (if they do not alternate you only found a subsequence,
+you need to find them all).
 \item
 Show that there is no piecewise smooth $\alpha$ whose image equals
 $\gamma\bigl([0,1]\bigr)$.  Hint: Look at part c) and show that $\alpha'$
