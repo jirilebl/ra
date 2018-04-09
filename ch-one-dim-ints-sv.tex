@@ -50,7 +50,8 @@ The hypotheses on $f$ and $\frac{\partial f}{\partial y}$ can be
 weakened, see e.g.\ \exerciseref{exercise:strongerleibniz},
 but not dropped outright.
 The main point in the proof is for
-$\frac{\partial f}{\partial y}$ to exist and be continuous for a small
+$\frac{\partial f}{\partial y}$ to exist and be continuous for all $x$
+up to the ends, but we only need a small
 interval in the $y$ direction.  In applications, we often make $[c,d]$ be a
 small interval around the point where we need to differentiate.
 
@@ -348,9 +349,8 @@ A continuously differentiable function $\gamma \colon [a,b] \to \R^n$ is
 called a \emph{\myindex{smooth path}}
 or a
 \emph{\myindex{continuously differentiable path}}\footnote{The
-word ``smooth'' is used
-sometimes for continuously differentiable and sometimes for infinitely
-differentiable functions in the literature.}
+word ``smooth'' can sometimes mean
+``infinitely differentiable'' in the literature.}
 if
 $\gamma$ is continuously differentiable and
 $\gamma^{\:\prime}(t) \not= 0$ for all $t \in [a,b]$.
@@ -372,8 +372,7 @@ if the path starts and ends in the same point.
 Since $\gamma$ is a function of one variable,
 we can treat
 $\gamma^{\:\prime}(t)$ either as a matrix (a linear operator) or
-a vector as it is an $n \times 1$ matrix, that is,
-a column vector.
+a vector, as it is an $n \times 1$ matrix---a column vector.
 By \exerciseref{exercise:normonedim}, the operator norm of
 $\gamma^{\:\prime}(t)$ is equal to
 the euclidean norm of the corresponding vector.
@@ -413,7 +412,7 @@ Let $\gamma \colon [0,4] \to \R^2$ be defined by
 \end{myfigureht}
 
 The path is the unit square traversed
-counterclockwise.  See \figureref{fig:squarepath}.  Let us check it is
+counterclockwise.  See \figureref{fig:squarepath}.  It is
 a piecewise smooth path.  For example,
 $\gamma|_{[1,2]}(t) = (1,t-1)$ and so
 $(\gamma|_{[1,2]})'(t) = (0,1) \not= 0$.  Similarly for the other sides.
@@ -421,15 +420,17 @@ Notice
 that
 $(\gamma|_{[1,2]})'(1) = (0,1)$,
 $(\gamma|_{[0,1]})'(1) = (1,0)$, but
-$\gamma^{\:\prime}(1)$ does not exist.  That is, at the corners $\gamma$ is 
-not differentiable. The restrictions are differentiable and the
-derivative is different for each restriction.
+$\gamma^{\:\prime}(1)$ does not exist.  At the corners $\gamma$ is 
+not differentiable.
+%The restrictions are differentiable and the
+%derivative is different for each restriction.
 \end{example}
 
 \begin{example}
-The condition that $\gamma^{\:\prime}(t) \not= 0$ means that the image of $\gamma$
-has no ``corners'' where $\gamma$ is continuously differentiable.
-Consider the function
+The condition $\gamma^{\:\prime}(t) \not= 0$ means that the image
+$\gamma\bigl([a,b]\bigr)$
+has no ``corners'' where $\gamma$ is smooth.
+Consider 
 \begin{equation*}
 \gamma(t) :=
 \begin{cases}
@@ -451,7 +452,7 @@ $t$ are marked with dots.\label{fig:cornersmoothpath}}
 \end{myfigureht}
 \end{example}
 
-The condition that $\gamma^{\:\prime}(t) \not= 0$ even at the endpoints guarantees
+The condition $\gamma^{\:\prime}(t) \not= 0$ even at the endpoints guarantees
 not only no corners, but also that the path ends nicely, that is, it can
 extend a little bit past the endpoints.  Again, see the exercises.
 
@@ -1053,7 +1054,7 @@ You can think of such a parametrization as moving around your curve at speed
 \subsection{Exercises}
 
 \begin{exercise}
-Show that if $\varphi \colon [a,b] \to \R^n$ is piecewise smooth as we
+Show that if $\varphi \colon [a,b] \to \R^n$ is a piecewise smooth path as we
 defined it, then $\varphi$ is a continuous function.
 \end{exercise}
 
