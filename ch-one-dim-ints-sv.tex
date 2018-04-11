@@ -611,7 +611,7 @@ Define:
 \end{split}
 \end{equation*}
 To remember the definition note that $x_j$ is $\gamma_j(t)$, so
-$dx_j$ becomes  $\gamma_j^{\:\prime}(t) \, dt$.
+$dx_j$ becomes  $\gamma_j^{\:\prime}(t) ~ dt$.
 
 If $\gamma$ is piecewise smooth, take the corresponding partition
 $t_0 = a < t_1 < t_2 < \ldots < t_k = b$, and assume the partition is
@@ -631,7 +631,7 @@ a smooth path, define
 \int_{\gamma|_{[t_1,t_2]}} \omega
 \,
 + \, \cdots \, + \,
-\int_{\gamma|_{[t_{n-1},t_n]}} \omega .
+\int_{\gamma|_{[t_{k-1},t_k]}} \omega .
 \end{equation*}
 \end{defn}
 
@@ -639,7 +639,7 @@ The notation makes sense from the formula you remember from calculus,
 let us state it somewhat informally:
 if $x_j(t) = \gamma_j(t)$, then $dx_j = \gamma_j^{\:\prime}(t) dt$.
 
-Paths can be cut up or concatenated as follows.  The proof is a direct application
+Paths can be cut up or concatenated.  The proof is a direct application
 of the additivity of the Riemann integral, and is left as an exercise.
 The proposition justifies why we defined the integral over a piecewise
 smooth path in the way we did, and it justifies that we may as well
@@ -651,8 +651,8 @@ and $b \in (a,c)$.
 Define the piecewise smooth paths
 $\alpha := \gamma|_{[a,b]}$ and
 $\beta := \gamma|_{[b,c]}$.
-Let $\omega$ be a one-form defined on the image
-of $\gamma$.  Then
+Let $\omega$ be a one-form defined on
+$\gamma\bigl([a,c]\bigr)$.  Then
 \begin{equation*}
 \int_{\gamma} \omega =
 \int_{\alpha} \omega +
@@ -1011,10 +1011,21 @@ piecewise smooth path $\gamma \colon [a,b] \to \R^n$, that is
 $\gamma\bigl( [a,b] \bigr) = \Gamma$.  The we define the
 \emph{\myindex{length}}\index{length of a curve} by
 \begin{equation*}
-\ell(\Gamma) := \int_{\Gamma} ds = \int_{\gamma} ds = \int_a^b
-\snorm{\gamma^{\:\prime}(t)}~ dt .
+\ell(\Gamma) := \int_{\Gamma} ds = \int_{\gamma} ds .
 \end{equation*}
 \end{defn}
+
+So if $\gamma$ is smooth we have
+\begin{equation*}
+\ell(\Gamma) = 
+\int_a^b
+\snorm{\gamma^{\:\prime}(t)}~ dt .
+\end{equation*}
+This may be a good time to mention that it is common to write
+$\int_a^b
+\snorm{\gamma^{\:\prime}(t)}~ dt$ even if the path is only piecewise smooth.
+That is because $\snorm{\gamma^{\:\prime}(t)}$ has only finitely many
+discontinuities and is bounded, and so the integral exists.
 
 \begin{example}
 Let $x,y \in \R^n$ be two points and write $[x,y]$ as the straight line
@@ -1041,15 +1052,26 @@ by $(1-t)x + ty$.\label{fig:straightpath}}
 
 A simple piecewise smooth path $\gamma \colon [0,r] \to \R^n$ is
 said to be an \emph{\myindex{arc-length parametrization}} if
+for all $t \in [0,r]$ we have
 \begin{equation*}
-\ell\bigl( \gamma\bigl([0,t]\bigr) \bigr) = \int_0^t
-\snorm{\gamma^{\:\prime}(\tau)}
-~ d\tau  = t .
+\ell\bigl( \gamma\bigl([0,t]\bigr) \bigr) = t .
 \end{equation*}
-You can think of such a parametrization as moving around your curve at speed
-1.
-
-%FIXME:
+If $\gamma$ is smooth, then
+\begin{equation*}
+\int_0^t d\tau =
+t = \ell\bigl( \gamma\bigl([0,t]\bigr) \bigr) =
+\int_0^t
+\snorm{\gamma^{\:\prime}(\tau)}
+~ d\tau
+\end{equation*}
+for all $t$,
+which means that $\snorm{\gamma^{\:\prime}(t)} = 1$ for all $t$.
+Similarly for piecewise smooth we get
+$\snorm{\gamma^{\:\prime}(t)} = 1$ for all $t$ where the derivative exists.
+So you can think of such a parametrization as moving around your curve at speed
+1.  If $\gamma \colon [0,r] \to \R^n$ is arclength parametrization, it is
+common then to use $s$ as the variable as then we have $\int_\gamma f ~ds
+= \int_0^r f\bigl(\gamma(s)\bigr) ~ds$.
 
 \subsection{Exercises}
 
@@ -1170,6 +1192,7 @@ both paths have the same image and are smooth, see the above exercise.
 \end{enumerate}
 \end{exercise}
 
+\pagebreak[1]
 \begin{exercise} 
 Suppose $\alpha \colon [a,b] \to \R^n$ and
 $\beta \colon [b,c] \to \R^n$ are piecewise smooth paths with
@@ -1190,6 +1213,7 @@ one-form defined on the curve given by $\gamma$, then
 \end{equation*}
 \end{exercise}
 
+\pagebreak[1]
 \begin{exercise} \label{mv:exercise:closedcurveintegral}
 Suppose $\gamma \colon [a,b] \to \R^n$ and
 $\beta \colon [c,d] \to \R^n$ are two simple piecewise smooth closed paths.
@@ -1230,7 +1254,6 @@ the direction in which the integral is evaluated.
 Hint: Same hint as the last exercise.
 \end{exercise}
 
-\begin{samepage}
 \begin{exercise}
 Define $\gamma \colon [0,1] \to \R^2$ by
 $\gamma(t) := \Bigl( t^3 \sin(\nicefrac{1}{t}),\,
@@ -1262,7 +1285,6 @@ near the origin.
 \end{enumerate}
 Note: Feel free to use what you know about sine and cosine from calculus.
 \end{exercise}
-\end{samepage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
