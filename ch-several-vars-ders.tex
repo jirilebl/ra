@@ -1731,11 +1731,12 @@ B :=
 \gamma_n & 0 & 0 & \cdots & 1
 \end{bmatrix} .
 \end{equation*}
-Directly by the definition of the determinant
-we see $\det(B) = \gamma_1 \not= 0$.
+Using the definition of the determinant (there is only a single
+permutation $\sigma$ for which $\prod_{i=1}^n b_{i,\sigma_i}$ is nonzero)
+we find $\det(B) = \gamma_1 \not= 0$.
 Then
 $\det(AB) = \det(A)\det(B) = \gamma_1\det(A)$.
-The first column of $AB$ is zero, and hence $\det(AB) = 0$.  Thus
+The first column of $AB$ is zero, and hence $\det(AB) = 0$.  We conclude
 $\det(A) = 0$.
 \end{proof}
 
@@ -1895,7 +1896,6 @@ What is the unit ball $B(0,1)$ in this norm?
 \end{enumerate}
 \end{exercise}
 
-\begin{samepage}
 \begin{exercise}
 For $\R^n$ define
 \begin{equation*}
@@ -1910,7 +1910,6 @@ distance, sometimes called the taxicab distance).
 What is the unit ball $B(0,1)$ in this norm?
 \end{enumerate}
 \end{exercise}
-\end{samepage}
 
 \begin{exercise}
 Using the euclidean norm on $\R^2$, compute the operator norm of the
@@ -2004,6 +2003,7 @@ that $\det(A) = d_{1,1}d_{2,2} \cdots d_{n,n}$.
 \end{enumerate}
 \end{exercise}
 
+\pagebreak[1]
 \begin{exercise}
 Take the vector space of polynomials $\R[t]$ and the linear operator $D \in
 L(\R[t])$ that is
@@ -2019,6 +2019,7 @@ Show that $D$ does not have bounded operator norm, that is $\snorm{D} =
 \end{enumerate}
 \end{exercise}
 
+\pagebreak[1]
 \begin{exercise}
 In this exercise we finish the proof of \propref{prop:finitedimpropnormfin}.
 Let $X$ be any finite dimensional normed vector space.
@@ -2047,7 +2048,6 @@ spaces and $A \in L(X,Y)$, then $\snorm{A} < \infty$.
 \end{enumerate}
 \end{exercise}
 
-\begin{samepage}
 \begin{exercise} \label{exercise:allnormsequiv}
 Let $X$ be any finite dimensional vector space with a norm $\snorm{\cdot}$
 and basis $\{ x_1,x_2,\ldots,x_n
@@ -2085,7 +2085,6 @@ $\norm{x-y}_2$.  In other words, convergence of sequences and continuity
 of functions is the same in either norm.
 \end{enumerate}
 \end{exercise}
-\end{samepage}
 
 \begin{exercise}
 Let $A$ be an upper triangular matrix.  Find a formula for the determinant

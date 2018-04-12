@@ -701,9 +701,9 @@ Define
 \begin{equation*}
 \varphi(x) :=\sabs{x} \qquad \text{for $x \in [-1,1]$} .
 \end{equation*}
-We extend the definition of $\varphi$ to all of $\R$ by making it
+Extend the definition of $\varphi$ to all of $\R$ by making it
 2-periodic:
-we decree that
+Decree that
 $\varphi(x) = \varphi(x+2)$.  The function $\varphi \colon \R \to \R$
 is continuous, in fact $\sabs{\varphi(x)-\varphi(y)} \leq \sabs{x-y}$ (why?).
 See \figureref{fig:triangwave}.
@@ -731,9 +731,9 @@ See \figureref{fig:nowherediff}.
 Fix $x$ and
 define
 \begin{equation*}
-\delta_m := \pm \frac{1}{2} 4^{-m}
+\delta_m := \pm \frac{1}{2} 4^{-m} ,
 \end{equation*}
-where the sign is chosen in such a way so that there is no integer
+where the sign is chosen so that there is no integer
 between $4^m x$ and $4^m(x+\delta_m) = 4^m x \pm \frac{1}{2}$.
 Fix $m$ for a moment.
 
@@ -745,18 +745,20 @@ Let
 If $n > m$, then $4^n\delta_m$ is an even integer.  As $\varphi$
 is 2-periodic we get that $\gamma_n = 0$.
 
-There is no integer between 
-$4^mx\pm\nicefrac{1}{2}$ and $4^mx$, so
-$\abs{\varphi(4^mx\pm\nicefrac{1}{2})-\varphi(4^mx)} =
+As there is no integer between 
+$4^m(x+\delta_m) = 4^m x\pm\nicefrac{1}{2}$ and $4^m x$, then on this interval
+$\varphi(t) = \pm t + \ell$ for some integer $\ell$.
+In particular,
+$\abs{\varphi\bigl(4^m(x+ \delta_m)\bigr)-\varphi(4^mx)} =
 \abs{4^mx\pm\nicefrac{1}{2}-4^mx} = \nicefrac{1}{2}$.  Therefore
 \begin{equation*}
 \sabs{\gamma_m} =
 \abs{
-\frac{\varphi(4^mx\pm\nicefrac{1}{2})-\varphi(4^mx)}{\pm (\nicefrac{1}{2}) 4^{-m}}
+\frac{\varphi\bigl(4^m(x+\delta_m)\bigr)-\varphi(4^mx)}{\pm (\nicefrac{1}{2}) 4^{-m}}
 }
 = 4^m .
 \end{equation*}
-Similarly, if $n < m$ we, since $\sabs{\varphi(s) -\varphi(t)} \leq
+Similarly, suppose $n < m$.  Since $\sabs{\varphi(s) -\varphi(t)} \leq
 \sabs{s-t}$,
 \begin{equation*}
 \sabs{\gamma_n} =
@@ -817,7 +819,8 @@ And so
 \frac{3^m +1}{2} .
 \end{split}
 \end{equation*}
-It is obvious that $\delta_m \to 0$ as $m \to \infty$, but $\frac{3^m+1}{2}$
+As $m \to \infty$ we have
+$\delta_m \to 0$, but $\frac{3^m+1}{2}$
 goes to infinity.  Hence $f$ cannot be differentiable at $x$.
 \end{example}
 
@@ -1677,6 +1680,7 @@ In other words zeros of analytic functions are isolated.
 Of course, same holds for polynomials.
 \end{exercise}
 
+\pagebreak[1]
 \begin{exnote}
 A \emph{\myindex{rational function}} is a function
 $f(z) := \frac{p(z)}{q(z)}$
