@@ -266,7 +266,7 @@ Show that for all $y$
 \begin{equation*}
 \int_0^1 \frac{\partial f}{\partial y} (x,y) ~ dx
 \end{equation*}
-exists but
+exists, but
 \begin{equation*}
 g'(0) \not= \int_0^1 \frac{\partial f}{\partial y} (x,0) ~ dx .
 \end{equation*}
@@ -278,23 +278,26 @@ Work out the following counterexample:  Let
 \begin{equation*}
 f(x,y) :=
 \begin{cases}
-xy^2 \sin\bigl(\frac{1}{x^3y}\bigr) & \text{if $x\not=0$ and $y\not= 0$,}\\
-0 & \text{if $x=0$ or $y=0$.}
+x \,\sin \left(\frac{y}{x^2+y^2}\right) & \text{if $(x,y) \not= (0,0)$,}\\
+0 & \text{if $(x,y)=(0,0)$.}
 \end{cases}
 \end{equation*}
 \begin{enumerate}[a)]
 \item
-Prove $f$ is continuous on $[0,1] \times [a,b]$ for any interval
-$[a,b]$. Therefore the following function is well defined on $[a,b]$
+Prove $f$ is continuous on all of $\R^2$.
+Therefore the following function is well defined for every $y \in \R$:
 \begin{equation*}
 g(y) := \int_0^1 f(x,y) ~ dx .
 \end{equation*}
 \item
-Prove $\frac{\partial f}{\partial y}$ exists for all $(x,y)$ in
-$[0,1] \times [a,b]$, but is not continuous.
+Prove $\frac{\partial f}{\partial y}$ exists for all $(x,y)$,
+but is not continuous at $(0,0)$.
 \item
-Show that $\int_0^1 \frac{\partial f}{\partial y}(x,y) ~ dx$ does not
-exist if $y \not= 0$ even if we take improper integrals.
+Show that $\int_0^1 \frac{\partial f}{\partial y}(x,0) ~ dx$ does not
+exist even if we take improper integrals, that is,
+that the limit
+$\lim\limits_{h \to 0^+} \int_h^1 \frac{\partial f}{\partial y}(x,0) ~ dx$
+does not exist.
 \end{enumerate}
 Note: Feel free to use what you know about sine and cosine from calculus.
 \end{exercise}
@@ -1375,8 +1378,9 @@ In other words if we fix $p \in U$, then $f(x) = C + \int_{p}^x \omega$
 for some constant $C$.
 
 \begin{proof}
-First suppose that the integral is path independent.  Pick $p \in U$
-and define
+First suppose that the integral is path independent.  Pick $p \in U$.  Since
+$U$ is path connected, there exists a path from $p$ to any $x \in U$.
+Define
 \begin{equation*}
 f(x) := \int_{p}^x \omega .
 \end{equation*}
@@ -1393,12 +1397,18 @@ number.  Compute
 =
 \frac{1}{h} \int_{x}^{x+he_j} \omega ,
 \end{equation*}
-which follows by \propref{mv:prop:pathconcat} and path indepdendence as 
+which follows by \propref{mv:prop:pathconcat} and path independence as 
 $\int_{p}^{x+he_j} \omega =
 \int_{p}^{x} \omega +
 \int_{x}^{x+he_j} \omega$, because we pick a path from $p$ to
-$x+he_j$ that also happens to pass through $x$, and then cut this path in
-two.
+$x+he_j$ that also happens to pass through $x$, and then we cut this path in
+two, see \figureref{fig:pathindantider}.
+
+\begin{myfigureht}
+\subimport*{figures/}{pathindantider.pdf_t}
+\caption{Using path indepedence in computing the partial
+derivative.\label{fig:pathindantider}}
+\end{myfigureht}
 
 
 Since $U$ is open, suppose $h$ is so small so that all points of distance
