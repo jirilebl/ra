@@ -1,0 +1,42 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+P F(double x, double y)
+{
+	if (x < 0.00001) 
+		return P(x, y, 0.0);
+	else if (x > 0.99999)
+		return P(x, y, y);
+	else
+		return P(x, y, (exp(y*log(x))-1)/log(x));
+}
+
+domain R1(P(0,0), P(1.0/10.0,1), mesh(2,20), mesh(30,20));
+domain R2(P(1.0/10.0,0), P(1,1), mesh(18,20), mesh(18,20));
+
+int main()
+{
+  picture(P(-0.1,-0.1), P(1.7,1.7), "2.5x2.5in");
+
+  begin();
+
+  camera.at(P(-3,-6,3));
+
+  arrow(P(-0.1,0,0), P(1.3,0,0));
+  label(P(1.3,0), P(0,-4), "$x$", b); 
+
+  arrow(P(0,-0.1,0), P(0,1.3,0));
+  label(P(0,1.3), P( -4,0), "$y$", l);
+
+  plain ();
+  fill(White());
+  surface(F, R1); // rectangular
+  surface(F, R2); // rectangular
+
+  arrow(P(0, 0, 0), P(0,0,1.2));
+  label(P(0,0,1.2), P(-4,0), "$z$", l);
+
+  tikz_format();
+  end();
+}

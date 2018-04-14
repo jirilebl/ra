@@ -156,7 +156,14 @@ g(y) := \int_0^{1} \frac{x^y-1}{\ln(x)} ~dx .
 The function
 $\frac{x^y-1}{\ln(x)}$
 also extends to a continuous function of $x$ and $y$
-for $(x,y) \in [0,1] \times [0,1]$ (see the same exercise).
+for $(x,y) \in [0,1] \times [0,1]$ (also in the exercise).
+See \figureref{fig:diffunderexample}.
+\begin{myfigureht}
+\includegraphics{figures/diffunderexample}
+\caption{Graph $z= \frac{x^y-1}{\ln(x)}$ on $[0,1] \times [0,1]$.\label{fig:diffunderexample}}
+\end{myfigureht}
+
+
 Therefore
 $g$ is a continuous function of on $[0,1]$, and $g(0) = 0$.
 For any $\epsilon > 0$, the $y$ derivative of the integrand, $x^y$,
@@ -273,6 +280,7 @@ g'(0) \not= \int_0^1 \frac{\partial f}{\partial y} (x,0) ~ dx .
 \end{enumerate}
 \end{exercise}
 
+\pagebreak[2]
 \begin{exercise}
 Work out the following counterexample:  Let
 \begin{equation*}
@@ -302,7 +310,6 @@ does not exist.
 Note: Feel free to use what you know about sine and cosine from calculus.
 \end{exercise}
 
-\pagebreak[1]
 \begin{exercise} \label{exercise:strongerleibniz}
 Strengthen the Leibniz integral rule in the following way.
 Suppose $f \colon (a,b) \times (c,d) \to \R$ is a bounded continuous function,
@@ -1649,10 +1656,12 @@ Without some hypothesis on $U$ the theorem is not true.  Let
 \begin{equation*}
 \omega(x,y) := \frac{-y}{x^2+y^2} ~dx + \frac{x}{x^2+y^2} ~dy
 \end{equation*}
-be defined on $\R^2 \setminus \{ 0 \}$.  It is easy to see that
+be defined on $\R^2 \setminus \{ 0 \}$.  Then
 \begin{equation*}
 \frac{\partial}{\partial y} \left[ 
 \frac{-y}{x^2+y^2} \right] =
+\frac{y^2-x^2}{{(x^2+y^2)}^2}
+=
 \frac{\partial}{\partial x} \left[ 
 \frac{x}{x^2+y^2} \right] .
 \end{equation*}
@@ -1660,8 +1669,8 @@ However, there is no $f \colon \R^2 \setminus \{ 0 \} \to \R$ such that
 $df = \omega$.  We saw in 
 \exampleref{example:mv:irrotoneformint} if we integrate from $(1,0)$ to $(1,0)$
 along the unit circle, that is $\gamma(t) = \bigl(\cos(t),\sin(t)\bigr)$
-for $t \in [0,2\pi]$ we get $2\pi$ and not 0 as it should be if the integral
-is path independent or in other words if there would exist an $f$ such that
+for $t \in [0,2\pi]$, we get $2\pi$ and not 0 as it should be if the integral
+is path independent, or in other words if there would exist an $f$ such that
 $df = \omega$.
 \end{example}
 
@@ -1722,7 +1731,7 @@ ye^{x^2+y^2} dy$.
 Find an $\omega_2 \colon \R^2 \to \R$ such that
 there exists a continuously differentiable $f \colon \R^2 \to \R$
 for which
-$df = e^{xy} dx + \omega_2 dy$.
+$df = e^{xy} ~dx + \omega_2 ~dy$.
 \end{exercise}
 
 \begin{exercise}
@@ -1742,7 +1751,7 @@ $U$ is star shaped with respect to $(x_0,y_0)$.
 
 \begin{exercise}
 Suppose $U_1$ and $U_2$ are two open sets in $\R^n$ with $U_1 \cap U_2$
-nonempty and connected.
+nonempty and path connected.
 Suppose there exists an $f_1 \colon U_1 \to \R$ and
 $f_2 \colon U_2 \to \R$, both twice continuously differentiable
 such that $d f_1 = d f_2$ on $U_1 \cap U_2$.
@@ -1773,11 +1782,12 @@ Hint 3: See previous exercise.
 {\ }
 \begin{enumerate}[a)]
 \item
-Show that a connected open set is path connected.  Hint: Start with two
-points $x$ and $y$ in a connected set $U$, and let $U_x \subset U$ is the set of points that are
-reachable by a path from $x$ and similarly for $U_y$.  Show that both sets
-are open, since they are nonempty ($x \in U_x$ and $y \in U_y$) it must be
-that $U_x = U_y = U$.
+Show that a connected open set $U \subset \R^n$ is path connected.
+Hint: Start with a
+point $x \in U$, and let $U_x \subset U$ is the set of points that are
+reachable by a path from $x$.  Show that $U_x$ and $U \setminus U_x$
+are both open, and since $U_x$ is nonempty ($x \in U_x$) it must be
+that $U_x = U$.
 \item
 Prove the converse that is, a path connected set $U \subset \R^n$ is
 connected.  Hint: For contradiction assume there exist two open and disjoint nonempty open

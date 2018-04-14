@@ -60,7 +60,7 @@ a finite set of
 partitions $P_1,P_2,\ldots,P_n$ of the intervals
 $[a_1,b_1], [a_2,b_2],\ldots, [a_n,b_n]$.
 We write $P=(P_1,P_2,\ldots,P_n)$.
-That is, for every $k$ there is an integer $\ell_k$ and the finite set
+That is, for every $k=1,2,\ldots,n$ there is an integer $\ell_k$ and the finite set
 of numbers
 $P_k = \{ x_{k,0},x_{k,1},x_{k,2},\ldots,x_{k,\ell_k} \}$ such that
 \begin{equation*}
@@ -88,8 +88,8 @@ subrectangles.  See \figureref{mv:figrect}.  It is not difficult to see that
 these subrectangles cover our original $R$, and their
 volume sums to that of $R$.  That is,
 \begin{equation*}
-R= \bigcup_{j=1}^N R_j , \qquad \text{and} \qquad
-V(R) = \sum_{j=1}^N V(R_j).
+R= \bigcup_{k=1}^N R_k , \qquad \text{and} \qquad
+V(R) = \sum_{k=1}^N V(R_k).
 \end{equation*}
 
 \begin{myfigureht}
@@ -100,7 +100,7 @@ subrectangles is not important.\label{mv:figrect}}
 
 When
 \begin{equation*}
-R_k = [x_{1,j_1-1}~,~ x_{1,j_1}]
+R_i = [x_{1,j_1-1}~,~ x_{1,j_1}]
 \times
 [x_{2,j_2-1}~,~ x_{2,j_2}]
 \times
@@ -110,7 +110,7 @@ R_k = [x_{1,j_1-1}~,~ x_{1,j_1}]
 \end{equation*}
 then
 \begin{equation*}
-V(R_k) = 
+V(R_i) = 
 \Delta x_{1,j_1}
 \Delta x_{2,j_2}
 \cdots
@@ -129,8 +129,8 @@ Define
 \glsadd{not:lowerdarbouxsum}
 \glsadd{not:upperdarbouxsum}
 \begin{align*}
-& m_i := \inf \{ f(x) : x \in R_i \} , \\
-& M_i := \sup \{ f(x) : x \in R_i \} , \\
+& m_i := \inf \bigl\{ f(x) : x \in R_i \bigr\} , \\
+& M_i := \sup \bigl\{ f(x) : x \in R_i \bigr\} , \\
 & L(P,f) :=
 \sum_{i=1}^N m_i V(R_i) , \\
 & U(P,f) :=
@@ -294,7 +294,7 @@ m \, V(R) \leq
 \begin{proof}
 For any partition $P$, via \propref{mv:sumulbound:prop},
 \begin{equation*}
-mV(R) \leq L(P,f) \leq U(P,f) \leq M\,V(R).
+m\,V(R) \leq L(P,f) \leq U(P,f) \leq M\,V(R).
 \end{equation*}
 Taking supremum of $L(P,f)$ and infimum of $U(P,f)$ over all $P$,
 we obtain the first and the last inequality in
@@ -371,7 +371,7 @@ write
 \int_R f(x)~dA .
 \end{equation*}
 
-\propref{mv:intulbound:prop} implies immediately the following
+\propref{mv:intulbound:prop} immediately implies the following
 proposition.
 
 \begin{prop} \label{mv:intbound:prop}
@@ -380,7 +380,7 @@ on a closed rectangle $R \subset \R^n$.
 Let $m, M \in \R$ be 
 such that $m \leq f(x) \leq M$ for all $x \in R$.  Then
 \begin{equation*}
-m V(R) \leq
+m \, V(R) \leq
 \int_{R} f
 \leq M \, V(R) .
 \end{equation*}
@@ -390,9 +390,9 @@ m V(R) \leq
 A constant function is Riemann integrable.  Suppose
 $f(x) = c$ for all $x$ on $R$.  Then
 \begin{equation*}
-c V(R) \leq \underline{\int_R} f \leq \overline{\int_R} f \leq cV(R) .
+c \, V(R) \leq \underline{\int_R} f \leq \overline{\int_R} f \leq c\, V(R) .
 \end{equation*}
-So $f$ is integrable, and furthermore $\int_R f = cV(R)$.
+So $f$ is integrable, and furthermore $\int_R f = c\,V(R)$.
 \end{example}
 
 The proofs of linearity and monotonicity are almost completely identical as
@@ -599,7 +599,7 @@ where $f$ attains the minimum.  Then $f(x) = M_k$
 and $f(y) = m_k$ in the notation from the definition of the integral.
 Therefore,
 \begin{equation*}
-M_i-m_i = f(x)-f(y) < 
+M_k-m_k = f(x)-f(y) < 
 \frac{\epsilon}{V(R)} .
 \end{equation*}
 And so
@@ -649,15 +649,15 @@ $f \colon U \to \R$ be a function.  We say the
 } ,
 \end{equation*}
 where the closure is with respect to the subspace topology on $U$.
-Recall that taking the closure with respect to the subspace
+Taking the closure with respect to the subspace
 topology is the same as 
 $\overline{
 \{ x \in U : f(x) \not= 0 \}
-} \cap U$, now taking the closure with respect to the ambient euclidean space
+} \cap U$, where the closure is with respect to the ambient euclidean space
 $\R^n$.
 In particular,
 $\operatorname{supp} (f) \subset U$.
-That is, the support is the closure (in $U$) of the set of points where the
+The support is the closure (in $U$) of the set of points where the
 function is nonzero.  Its complement in $U$ is open.
 If $x \in U$ and $x$ is not in the support of $f$,
 then
@@ -692,7 +692,7 @@ is the closed unit disc (right).\label{fig:compsup}}
 \end{example}
 
 If $U \not= \R^n$, then you must be careful to
-take the closure on the support in $U$.  Consider the following
+take the closure in $U$.  Consider the following
 two examples.
 
 \begin{example}
@@ -708,7 +708,7 @@ f(x,y) :=
 is continuous on $B(0,1)$ and its support is the smaller closed ball
 $C(0,\nicefrac{1}{2})$.  As that is a compact set, $f$ has compact support.
 
-Similarly $g \colon B(0,1) \to \R$ defined by
+The function $g \colon B(0,1) \to \R$ defined by
 \begin{equation*}
 g(x,y) :=
 \begin{cases}
@@ -717,11 +717,11 @@ x & \text{if $x > 0$},
 \end{cases}
 \end{equation*}
 is continuous on $B(0,1)$, but its support is the set
-$\{ (x,y) \in B(0,1) : x \geq 0 \}$.  In particular, $g$ is not compactly
+$\bigl\{ (x,y) \in B(0,1) : x \geq 0 \bigr\}$.  In particular, $g$ is not compactly
 supported.
 \end{example}
 
-We will mostly consider the case when $U=\R^n$.  In light of
+We mostly consider the case when $U=\R^n$.  In light of
 \exerciseref{exercise:contcompactsupportRn}, which says any continuous
 function with compact support on $U \subset \R^n$ can be extended to a
 continuous function with compact support on $\R^n$,
@@ -732,7 +732,7 @@ On the other hand for the unit disc $B(0,1) \subset \R^2$,
 the function continuous $f \colon B(0,1) \to \R$ defined by $f(x,y) :=
 \sin\bigl(\frac{1}{1-x^2-y^2}\bigr)$, does not have compact support; as
 $f$ is not constantly zero on neighborhood of any point in $B(0,1)$,
-we know that the support is the entire disc $B(0,1)$.  The function clearly
+we know that the support is the entire disc $B(0,1)$.  The function 
 does not extend as above to a continuous function.  In fact it is not
 difficult to show that it cannot be extended in any way whatsoever to be
 continuous on all of $\R^2$ (the boundary of the disc is the problem).

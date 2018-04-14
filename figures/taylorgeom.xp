@@ -54,17 +54,19 @@ int main()
   clip_box(P(-2.0,-2),P(1.0,2));
 
   bold();
-  plot(f, -2.0, 0.99, 150);
+  plot(f, -2.0, 0, 5);
+  plot(f, -0.0, 0.99, 25);
 
 
   plain();
   dotted();
-  plot(f1, -2, 1, 150);
-  plot(f2, -2, 1, 150);
-  plot(f3, -2, 1, 150);
+  dash_size(1);
+  plot(f1, -2, 1, 1);
+  plot(f2, -2, 1, 25);
+  plot(f3, -2, 1, 40);
 
   dashed();
-  plot(f20, -1.1, 1, 150);
+  plot(f20, -1.1, 1, 80);
 
   clip_box();
 
