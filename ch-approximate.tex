@@ -1399,7 +1399,7 @@ $E$ is a point $p \in X$ such that
 $B(p,\epsilon) \setminus \{ p \}$ contains points of $E$
 for all $\epsilon > 0$.
 
-\begin{thm}[Identity theorem]
+\begin{thm}[Identity theorem] \label{thm:identityanalytic}
 Let $U \subset \C$ be an open connected set.  If $f \colon U \to \C$
 and $g \colon U \to \C$ are analytic functions that are
 equal on a set $E \subset U$, and $E$ has a cluster point
@@ -1571,7 +1571,7 @@ For complex numbers $z$ we define\glsadd{not:complexexp}
 e^z := E(z) = 
 \sum_{k=0}^\infty \frac{1}{k!} z^k .
 \end{equation*}
-And on the real line the two definitions agree.
+And on the real line this new definition agrees with our previous one.
 
 \begin{prop}
 Let $z,w \in \C$ be complex numbers.  Then
@@ -1586,10 +1586,10 @@ $e^{x+y} = e^x e^y$ is true for
 real numbers $x$ and $y$.
 
 Now for any fixed $y \in \R$, we get by the
-identity theorem (since the real numbers have a cluster point in $\C$) that
+identity theorem (\thmref{thm:identityanalytic}) that
 $e^{z+y} = e^ze^y$ for all $z \in \C$.  Fixing an arbitrary $z \in \C$
 and we get
-$e^{z+y} = e^ze^y$ for all $y \in \R$, and hence again by identity theorem we obtain
+$e^{z+y} = e^ze^y$ for all $y \in \R$, and again by the identity theorem 
 $e^{z+w} = e^z e^w$
 for all $z,w \in \C$.
 \end{proof}
@@ -1612,7 +1612,7 @@ In fact, we define sine and cosine for all complex $z$:
 \sin(z) := \frac{e^{iz} - e^{-iz}}{2i} .
 \end{equation*}
 
-Let us see that our definition has the common properties we usually
+Let us use our definition to prove the common properties we usually
 associate with sine and cosine.  In the process we also define the
 number $\pi$.
 
@@ -1651,7 +1651,7 @@ e^{iz} = \cos(z) + i\sin(z) \qquad
 \begin{equation*}
 \sabs{\sin(x)} \leq 1, \qquad \sabs{\cos(x)} \leq 1 .
 \end{equation*}
-\item For real $x$
+\item For all $x \in \R$
 \begin{equation*}
 \frac{d}{dx} \bigl[ \cos(x) \bigr] = -\sin(x)
 \qquad \text{and} \qquad
@@ -1686,11 +1686,11 @@ onto the set of $z \in \C$ such that $\sabs{z} = 1$.
 \end{enumerate}
 \end{prop}
 
-Notice that the proposition also implies that $\sin(x)$ and $\cos(x)$ are 
-real when $x$ is real.
+The proposition immediately implies that $\sin(x)$ and $\cos(x)$ are 
+real whenever $x$ is real.
 
 \begin{proof}
-The first three items follow immediately from the definition.
+The first three items follow directly from the definition.
 The computation of the power series for both is left as an exercise.
 
 As complex conjugate is a continuous function, then the definition
@@ -1803,9 +1803,9 @@ $x > y$.  Then
 $e^{i(x-y)} = 1$, meaning $x-y$ is a multiple of $2\pi$ and hence
 only one of them can live in $[0,2\pi)$.
 To show onto, pick $(a,b) \in \R^2$ such that $a^2+b^2 = 1$.
-If $a,b \geq 0$, then by intermediate value theorem
+Suppose first that $a,b \geq 0$.  By the intermediate value theorem
 there must exist an $x \in [0,\nicefrac{\pi}{2}]$ such that
-$\cos(x) = a$, and hence $b^2 = \bigl(\sin(x)\bigr)^2$ and since
+$\cos(x) = a$, and hence $b^2 = \bigl(\sin(x)\bigr)^2$.  As
 $b$ and $\sin(x)$ are nonnegative we have $b = \sin(x)$.
 Since $-\sin(x)$ is the derivative of $\cos(x)$
 and $\cos(-x) = \cos(x)$ then $\sin(x) < 0$ for $x \in [\nicefrac{-\pi}{2},0)$.
@@ -1848,12 +1848,13 @@ any complex number $z \in \C$
 \begin{equation*}
 z = r e^{i\theta}
 \end{equation*}
-for some $r \geq 0$ and $\theta \in \R$.  The $\theta$ is of course
+for some $r \geq 0$ and $\theta \in \R$.  The $\theta$ is, of course,
 not unique as $\theta$ or $\theta+2\pi$ gives the same number.
 The formula $e^{a+b} = e^a e^b$ leads to a useful formula for powers
-and products
+and products of complex numbers in polar coordinates:
 \begin{equation*}
-z^n = r^n e^{i n \theta} ,
+{(r e^{i\theta})}^n
+= r^n e^{i n \theta} ,
 \qquad
 (r e^{i\theta})
 (s e^{i\gamma})
