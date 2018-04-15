@@ -868,7 +868,7 @@ for $c_n, z, a \in \C$.  We say the series
 any $z \not= a$.
 
 Let $U \subset \C$ be an open set and
-a function $f \colon U \to \C$ be a function such that
+suppose $f \colon U \to \C$ is a function such that
 for every $a \in U$ there exists a $\rho > 0$ and a power
 series convergent to the function:
 \begin{equation*}
@@ -877,7 +877,7 @@ f(z) = \sum_{n=0}^\infty c_n {(z-a)}^n
 for all $z \in B(a,\rho)$.
 Then we say $f$ is an \emph{\myindex{analytic}} function.
 
-Similarly if we have an interval $(a,b)$, we say that $f \colon (a,b)
+Similarly if we have an interval $(a,b) \subset \R$, we say that $f \colon (a,b)
 \to \C$ is analytic or perhaps \emph{\myindex{real-analytic}}
 if for each point $c \in
 (a,b)$ there is a power series around $c$ that converges in some
@@ -906,7 +906,8 @@ of dimensions in our universe.
 \qquad
 \includegraphics{figures/imag1over1mz}
 \caption{Graphs of the real and imaginary parts of $z=x+iy \mapsto \frac{1}{1-z}$
-in the square $[-0.8,0.8]^2$.\label{fig:1over1mz}}
+in the square $[-0.8,0.8]^2$.  The singularity at $z=1$ is marked with a
+vertical dashed line.\label{fig:1over1mz}}
 \end{myfigureht}
 
 \subsection{Convergence of power series}
@@ -915,17 +916,24 @@ We proved several results for power series of a real variable in
 \volIref{\sectionref*{vI-sec:moreonseries} of volume I}.   For the most part the convergence
 properties of power series deal with the series
 $\sum \sabs{c_k} \, \sabs{z-a}^k$ and so we have already proved many results about complex power
-series.  In particular, we compute the so-called
-\emph{\myindex{radius of convergence}} of a power series.
+series.  In particular, we computed the so-called
+\emph{radius of convergence} of a power series.
 
+\begin{samepage}
 \begin{prop}
 Let $\sum_{n=0}^\infty c_n {(z-a)}^n$ be a power series.
-If the series is convergent, then either it converges at
-all $z \in \C$, or
-there exists a number $\rho$, such that
-the series converges absolutely on $B(z,\rho)$
+There exists a $\rho \in [0,\infty]$ such that
+\begin{enumerate}[(i)]
+\item the series diverges and $\rho = 0$,
+\item the series converges for all $z \in \C$ and $\rho = \infty$,
+\item $0 < \rho < \infty$ and the
+series converges absolutely on $B(a,\rho)$,
 and diverges when $\sabs{z-a} > \rho$.
+\end{enumerate}
+Furthermore, if $0 < r < \rho$ then
+the series converges uniformly on the closed ball $C(a,r)$.
 \end{prop}
+\end{samepage}
 
 \begin{proof}
 We use the real version of this proposition,
@@ -935,20 +943,30 @@ Let
 R := \limsup_{n\to\infty} \sqrt[n]{\sabs{c_n}} .
 \end{equation*}
 If $R = 0$, then
-$\sum_{n=0}^\infty \sabs{c_n} \, \sabs{(z-a)}^n$ converges for all $z$.
+$\sum_{n=0}^\infty \sabs{c_n} \, \sabs{z-a}^n$ converges for all $z$.
 If $R = \infty$, then
-$\sum_{n=0}^\infty \sabs{c_n} \, \sabs{(z-a)}^n$ converges only at $z=a$.
+$\sum_{n=0}^\infty \sabs{c_n} \, \sabs{z-a}^n$ converges only at $z=a$.
 Otherwise, let $\rho := \nicefrac{1}{R}$ and
-$\sum_{n=0}^\infty \sabs{c_n} \, \sabs{(z-a)}^n$ converges when
+$\sum_{n=0}^\infty \sabs{c_n} \, \sabs{z-a}^n$ converges when
 $\sabs{z-a} < \rho$, and diverges (in fact the terms of the series
 do not go to zero) when $\sabs{z-a} > \rho$.
-The theorem follows.
+
+To prove the furthermore suppose
+$0 < r < \rho$ and $z \in C(a,r)$.  Then
+consider the partial sums
+\begin{equation*}
+\abs{\sum_{n=0}^k c_n {(z-a)}^n}
+\leq
+\sum_{n=0}^k \sabs{c_n} \sabs{z-a}^n
+\leq
+\sum_{n=0}^k \sabs{c_n} r^n . \qedhere
+\end{equation*}
 \end{proof}
 
 The number $\rho$ is called the \emph{\myindex{radius of convergence}}.
 See \figureref{fig:radiusconvcomplex}.
-We define $\rho$ even in cases when $R=0$ or $R= \infty$.  If $R=0$, we say
-$\rho := \infty$ and if $R=\infty$ we say $\rho:=0$.
+%We define $\rho$ even when $R=0$ or $R= \infty$.  If $R=0$, we say
+%$\rho := \infty$ and if $R=\infty$ we say $\rho:=0$.
 The radius of convergence gives us a disk around $a$ where the series converges.  A power series
 is convergent if $\rho > 0$.
 \begin{myfigureht}
@@ -956,12 +974,11 @@ is convergent if $\rho > 0$.
 \caption{Radius of convergence.\label{fig:radiusconvcomplex}}
 \end{myfigureht}
 
-It is trivial to see that if $\sum c_n {(z-a)}^n$ converges
-for some $z$, then
+If $\sum c_n {(z-a)}^n$ converges for some $z$, then
 \begin{equation*}
 \sum c_n {(w-a)}^n
 \end{equation*}
-must converge absolutely whenever $\sabs{w-a} < \sabs{z-a}$.
+converges absolutely whenever $\sabs{w-a} < \sabs{z-a}$.
 Conversely if the series diverges at $z$, then it must diverge at $w$
 whenever $\sabs{w-a} > \sabs{z-a}$.
 This means that to show
@@ -991,7 +1008,7 @@ Let us list some series we already know:
 \begin{example}
 Note the difference between $\frac{1}{1-z}$ and its power series.  Let us
 expand $\frac{1}{1-z}$ as power series around any point $a \not= 1$.
-Let $c = \frac{1}{1-a}$, then
+Let $c := \frac{1}{1-a}$, then
 \begin{equation*}
 \frac{1}{1-z} = 
 \frac{c}{1-c(z-a)}
@@ -1004,8 +1021,8 @@ c
 The series $\sum c^n {(z-a)}^n$ converges if and only if 
 the series on the right hand side converges and
 \begin{equation*}
-\limsup_{k\to\infty}
-\sqrt[k]{c^k} = c
+\limsup_{n\to\infty}
+\sqrt[n]{\sabs{c^n}} = \sabs{c}
 = \frac{1}{\sabs{1-a}} .
 \end{equation*}
 The radius of convergence of the power series is $\sabs{1-a}$, that is the
@@ -1014,13 +1031,13 @@ has a power series
 representation around every $a\not= 1$ and so is analytic in $\C \setminus
 \{ 1 \}$.
 The domain of the function is bigger than the region
-of convergence of any power series representing the function at any point.
+of convergence of the power series representing the function at any point.
 \end{example}
 
 It turns out that 
 if a function has a power series representation converging to the function
 on some ball,
-then it has a representation at every point in the ball.  We will prove this
+then it has a power series representation at every point in the ball.  We will prove this
 result later.
 
 \subsection{Properties of analytic functions}
@@ -1037,47 +1054,45 @@ In particular, analytic functions are continuous.
 
 \begin{proof}
 For any $z_0 \in B(a,\rho)$ pick $r < \rho$ such that $z_0 \in B(a,r)$.
-If we show
-that $f$ restricted to $B(a,r)$ is continuous then $f$ is continuous at
-$z_0$.  This can be easily seen since any sequence converging to
-$z_0$ has some tail that is completely in the open ball $B(a,r)$.  On $B(a,r)$ the
-partial sums converge uniformly and so the limit is
-continuous.
+%If we show
+%that $f$ restricted to $B(a,r)$ is continuous then $f$ is continuous at
+%$z_0$.
+On $B(a,r)$ the
+partial sums (which are continuous) converge uniformly,
+and so the limit $f|_{B(a,r)}$ is continuous.
+Any sequence converging to
+$z_0$ has some tail that is completely in the open ball $B(a,r)$,
+hence $f$ is continuous at $z_0$.
 \end{proof}
-
-Note that we can always apply an affine transformation $z \mapsto z+a$ which
-converts the series to a series at the origin.  Therefore it is usually
-sufficient to prove results about power series at the origin.
-Therefore, from now on, let us assume $a=0$ for simplicity.
-
-\medskip
 
 In \volIref{\corref*{vI-cor:differentiatepowerser} of volume I} we proved that we can
 differentiate real power series term by term.  That is
 we proved that if
 \begin{equation*}
-f(x) := \sum_{n=0}^\infty c_n x^n
+f(x) := \sum_{n=0}^\infty c_n {(x-a)}^n
 \end{equation*}
-converged in some interval around $0$, then we could differentiate
+converges for real $x$ in an interval around $a \in \R$, then we can differentiate
 term by term and obtain a series
 \begin{equation*}
 f'(x) =
-\sum_{n=1}^\infty n c_n {x}^{n-1}
+\sum_{n=1}^\infty n c_n {(x-a)}^{n-1}
 =
-\sum_{n=0}^\infty (n+1)c_{n+1} {x}^{n} 
+\sum_{n=0}^\infty (n+1)c_{n+1} {(x-a)}^{n} 
 \end{equation*}
 with the same radius of convergence.
-We only proved this theorem when $c_n$ were real, however writing
-$c_n = a_n + i b_n$ we only need to apply the theorem to the real and
-imaginary part as
+We only proved this theorem when $c_n$ is real, however, for complex $c_n$,
+we write
+$c_n = s_n + i t_n$, and as $x$ and $a$ are real
 \begin{equation*}
-\sum_{n=0}^\infty c_n x^n
+\sum_{n=0}^\infty c_n {(x-a)}^n
 =
-\sum_{n=0}^\infty a_n x^n
+\sum_{n=0}^\infty s_n {(x-a)}^n
 +
 i
-\sum_{n=0}^\infty b_n x^n .
+\sum_{n=0}^\infty t_n {(x-a)}^n .
 \end{equation*}
+We apply the theorem to the real and
+imaginary part.
 
 By iterating this theorem we find that an
 analytic function is infinitely differentiable:
@@ -1091,16 +1106,19 @@ In particular,
 \begin{equation} \label{eq:formulaforpscoeffs}
 f^{(\ell)}(a) = \ell! \, c_\ell .
 \end{equation}
-So the coefficients are determined by the derivatives of the
-function.  In particular, once we have a function defined in
-a neighborhood, the coefficients are unique:  If we have two power
-series convergent in $(-\rho,\rho)$ such that for all $x \in (-\rho,\rho)$
-\begin{equation*}
-\sum_{n=0}^\infty c_n x^n
-=
-\sum_{n=0}^\infty d_n x^n
-\end{equation*}
-then $c_n = d_n$ for all $n$.
+So the coefficients are uniquely determined by the derivatives of the
+function, and vice versa.
+
+%FIXME: we have the identity theorem later written in more generality
+%  In particular, once we have a function defined in
+%a neighborhood, the coefficients are unique:  If we have two power
+%series convergent in $(a-\rho,a+\rho)$ such that for all $x \in (a-\rho,a+\rho)$
+%\begin{equation*}
+%\sum_{n=0}^\infty c_n {(x-a)}^n
+%=
+%\sum_{n=0}^\infty d_n {(x-a)}^n
+%\end{equation*}
+%then $c_n = d_n$ for all $n$.
 
 On the other hand, just because we have an infinitely differentiable
 function doesn't mean that the numbers $c_n$ obtained by
@@ -1120,9 +1138,24 @@ e^{-1/x} & \text{if $x > 0$,}\\
 0 & \text{if $x \leq 0$,}
 \end{cases}
 \end{equation*}
-is infinitely differentiable, and all derivatives at the origin are zero, so
+is infinitely differentiable, and all derivatives at the origin are zero.
+So
 its series at the origin would be just the zero series, and while that
 series converges, it does not converge to $f$ for $x > 0$.
+
+\medskip
+
+Note that we can always apply an affine transformation $z \mapsto z+a$ that
+converts a power series to a series at the origin.
+That is, if
+\begin{equation*}
+f(z) = \sum_{n=0}^\infty c_n {(z-a)}^n,
+\qquad \text{we consider} \qquad
+f(z+a) = \sum_{n=0}^\infty c_n {z}^n.
+\end{equation*}
+Therefore it is usually
+sufficient to prove results about power series at the origin.
+From now on, we often assume $a=0$ for simplicity.
 
 \subsection{Power series as analytic functions}
 
@@ -1206,8 +1239,8 @@ Let
 f(x) := \sum_{k=0}^\infty a_k x^k
 \end{equation*}
 be a power series converging in $(-\rho,\rho)$ for some $\rho > 0$.  Given any $a \in
-(-\rho,\rho)$, we obtain
-for $x$ such that $\sabs{x-a} < \rho-\sabs{a}$ that
+(-\rho,\rho)$,
+and $x$ such that $\sabs{x-a} < \rho-\sabs{a}$ we obtain
 \begin{equation*}
 f(x) =
 \sum_{k=0}^\infty \frac{f^{(k)}(a)}{k!} {(x-a)}^{k} .
@@ -1219,7 +1252,8 @@ the one above is guaranteed.  It is the largest symmetric interval about
 $a$ that fits in $(-\rho,\rho)$.
 
 \begin{proof}
-Write
+Given $a$ and $x$ as in the theorem,
+write
 \begin{equation*}
 \begin{split}
 f(x) &= \sum_{k=0}^\infty a_k {\bigl((x-a)+a\bigr)}^k \\
@@ -1228,14 +1262,16 @@ f(x) &= \sum_{k=0}^\infty a_k {\bigl((x-a)+a\bigr)}^k \\
 %a^{k-m} \right) {(x-a)}^m
 \end{split}
 \end{equation*}
-We define $c_{k,m} := a_k \binom{k}{m} a^{k-m}$ if $m \leq k$ and $0$ if $m >
-k$, then we have
+Define $c_{k,m} := a_k \binom{k}{m} a^{k-m}$ if $m \leq k$ and $0$ if $m >
+k$.  Then 
 \begin{equation} \label{eq:tsproof}
-f(x) = \sum_{k=0}^\infty \, \sum_{m=0}^\infty c_{k,m} {(x-a)}^m
+f(x) = \sum_{k=0}^\infty \, \sum_{m=0}^\infty c_{k,m} {(x-a)}^m .
 \end{equation}
-If we show that the double sum converges absolutely as in \thmref{thm:fubiniforsums} we
-are done.  We swap the order of the summations and obtain the desired
-coefficients.
+Let us show that the double sum converges absolutely.
+% as in
+%\thmref{thm:fubiniforsums}.
+%We can then swap the order of the summations and obtain the desired
+%coefficients.
 \begin{equation*}
 \begin{split}
 \sum_{k=0}^\infty \, \sum_{m=0}^\infty \abs{ c_{k,m} {(x-a)}^m}
@@ -1243,15 +1279,16 @@ coefficients.
 \\
 & = \sum_{k=0}^\infty \sabs{a_k} \sum_{m=0}^k \binom{k}{m} \sabs{a}^{k-m}
 {\sabs{x-a}}^m  \\
-& = \sum_{k=0}^\infty \sabs{a_k} {\bigl(\sabs{x-a}+\sabs{a}\bigr)}^k
+& = \sum_{k=0}^\infty \sabs{a_k} {\bigl(\sabs{x-a}+\sabs{a}\bigr)}^k ,
 \end{split}
 \end{equation*}
-and this converges as long as 
+and this series converges as long as 
 $(\sabs{x-a}+\sabs{a}) < \rho$ or in other words if
 $\sabs{x-a} < \rho-\sabs{a}$.
 
-Now we swap the order of summation in \eqref{eq:tsproof}, and 
-the following converges when $\sabs{x-a} < \rho-\sabs{a}$:
+Using \thmref{thm:fubiniforsums},
+swap the order of summation in \eqref{eq:tsproof}, and 
+the following series converges when $\sabs{x-a} < \rho-\sabs{a}$:
 \begin{equation*}
 f(x) =
 \sum_{k=0}^\infty \, \sum_{m=0}^\infty c_{k,m} {(x-a)}^m
@@ -1260,12 +1297,12 @@ f(x) =
 \left( \sum_{k=0}^\infty
 c_{k,m} \right) {(x-a)}^m .
 \end{equation*}
-And we are done.  The formula in terms of derivatives at $a$ follows by
+The formula in terms of derivatives at $a$ follows by
 differentiating the series to obtain \eqref{eq:formulaforpscoeffs}.
 \end{proof}
 
-Note that if a series converges for $x \in (-\rho,\rho)$ it also converges
-for all complex numbers in $B(0,\rho)$.
+Note that if a series converges for real $x \in (a-\rho,a+\rho)$ it also converges
+for all complex numbers in $B(a,\rho)$.
 We have the following corollary.
 
 \begin{cor}
@@ -1276,7 +1313,7 @@ $\sum d_k {(z-b)}^k$ that converges to $f(z)$ in $B(b,\rho-\sabs{b-a})$.
 \end{cor}
 
 \begin{proof}
-Without loss of generality assume that $a=0$.  We rotate to assume that $b$ is real, but
+Without loss of generality assume that $a=0$.  We can rotate to assume that $b$ is real, but
 since that is harder to picture, let us do it explicitly.
 Let $\alpha = \frac{\bar{b}}{\sabs{b}}$.
 Notice that
@@ -1289,16 +1326,20 @@ Notice that
 %}
 = 1 .
 \end{equation*}
-Therefore the series converges in $B(0,\rho)$
-if we replace $z$ with $\nicefrac{z}{\alpha}$.
-We apply \thmref{thm:tayloranal} at $\sabs{b}$ and get that a series that converges
+Therefore the series
+$\sum c_k {(\nicefrac{z}{\alpha})}^k = 
+\sum c_k \alpha^{-k} {z}^k$
+converges to $f(\nicefrac{z}{\alpha})$ in $B(0,\rho)$.
+When $z=x$ is real
+we apply \thmref{thm:tayloranal} at $\sabs{b}$ and get
+a series that converges
 to $f(\nicefrac{z}{\alpha})$ on $B(\sabs{b},\rho-\sabs{b})$.
-That is, there are some coefficients $a_k$ such that
+That is, there is a convergent series
 \begin{equation*}
 f(\nicefrac{z}{\alpha}) =
 \sum_{k=0}^\infty a_k {\bigl(z - \sabs{b}\bigr)}^k .
 \end{equation*}
-Notice that $\alpha b = \sabs{b}$.
+Using $\alpha b = \sabs{b}$, we find
 \begin{equation*}
 f(z) = f(\nicefrac{\alpha z}{\alpha}) =
 \sum_{k=0}^\infty a_k {(\alpha z - \sabs{b})}^k 
@@ -1307,9 +1348,9 @@ f(z) = f(\nicefrac{\alpha z}{\alpha}) =
 =
 \sum_{k=0}^\infty a_k\alpha^k {(z - b)}^k ,
 \end{equation*}
-and this converges for all $z$ such that
+and this series converges for all $z$ such that
 $\bigl\lvert \alpha z-\sabs{b}\bigr\rvert < \rho-\sabs{b}$
-or $\sabs{z - b} < \rho-\sabs{b}$, which is the conclusion of the theorem.
+or $\sabs{z - b} < \rho-\sabs{b}$.
 \end{proof}
 
 We proved above that a convergent power series is an
@@ -1317,14 +1358,15 @@ analytic function where it converges.  We have also shown before that
 $\frac{1}{1-z}$ is analytic outside of $z=1$.
 
 Note that just because a real analytic function is analytic on the
-real line it doesn't necessarily mean that it has a power series
+entire real line it does not necessarily mean that it has a power series
 representation that converges everywhere.  For example, the function
 \begin{equation*}
 f(x) = \frac{1}{1+x^2}
 \end{equation*}
-happens to be real analytic.  It is pretty easy to show this (exercise).  A power
-series around the origin converging to $f$ can have a radius of convergence at most $1$,
-actually it does happen to be exactly 1.  Can you see why? (exercise).
+happens to be real analytic function on $\R$ (exercise).  A power
+series around the origin converging to $f$
+has a radius of convergence of exactly $1$.
+Can you see why? (exercise)
 
 \subsection{Identity theorem for analytic functions}
 
@@ -1363,6 +1405,8 @@ and $g \colon U \to \C$ are analytic functions that are
 equal on a set $E \subset U$, and $E$ has a cluster point
 in $U$, then $f(z) = g(z)$ for all $z \in U$.
 \end{thm}
+
+In most common applications of this theorem $E$ is an open set or perhaps a curve.
 
 \begin{proof}
 Without loss of generality suppose $E$ is the set of all points $z \in U$ such that
@@ -1426,8 +1470,15 @@ d) and e) are different.
 
 
 \begin{exercise}
-Let $f(x) := \frac{1}{1+x^2}$.  Prove that the radius of convergence of
+Let $f(x) := \frac{1}{1+x^2}$.  Prove that
+\begin{enumerate}[a)]
+\item
+$f$ is analytic function on all of $\R$
+by finding a power series for $f$ at every $a \in \R$,
+\item
+the radius of convergence of
 the power series for $f$ at the origin is 1.
+\end{enumerate}
 \end{exercise}
 
 
@@ -1446,16 +1497,18 @@ for all $z \in U$.
 
 \begin{exercise}
 Suppose $U \subset \C$ is a connected open set, $0 \in U$, and $f \colon U
-\to \C$ is an analytic function.  Let $h(x) := f(x)$ and $g(y) := -i \, f(iy)$.
+\to \C$ is an analytic function.  For real $x$ and $y$,
+let $h(x) := f(x)$ and $g(y) := -i \, f(iy)$.
 Show that $h$ and $g$ are infinitely differentiable at the origin and
 $h'(0) = g'(0)$.
 \end{exercise}
 
 \begin{exercise}
 Suppose $f(z) := \sum c_n z^n$ with a radius of convergence 1.  Suppose $f(0)
-= 0$.  Show that there exists a $k \in \N$ and a convergent
+= 0$, but $f$ is not the zero function.
+Show that there exists a $k \in \N$ and a convergent
 power series $g(z) := \sum d_n z^n$ with radius of convergence 1
-such that $f(z) = z^k g(z)$ for all $z \in B(0,1)$.
+such that $f(z) = z^k g(z)$ for all $z \in B(0,1)$, and $g(0) \not= 0$.
 \end{exercise}
 
 \begin{exercise}
@@ -1466,7 +1519,7 @@ U$.
 \end{exercise}
 
 \begin{exercise}
-For $\alpha \in \C$, define
+For $\alpha \in \C$ and $k=0,1,2,3\ldots$, define
 \begin{equation*}
 \binom{\alpha}{k} := \frac{\alpha(\alpha-1)\cdots(\alpha-k)}{k!} .
 \end{equation*}
@@ -1476,9 +1529,9 @@ Show that the series
 \begin{equation*}
 f(z) := \sum_{k=0}^\infty \binom{\alpha}{k} z^k
 \end{equation*}
-has radius of converges for all $\abs{z} < 1$.
+converges whenever $\abs{z} < 1$.
 In fact, prove that for $\alpha = 0,1,2,3,\ldots$ the radius of
-convergence is $\infty$ for other $\alpha$
+convergence is $\infty$, and for all other $\alpha$
 the radius of convergence is 1.
 \item
 Show that for $x \in \R$, $\abs{x} < 1$, we have
@@ -1488,260 +1541,6 @@ Show that for $x \in \R$, $\abs{x} < 1$, we have
 meaning that $f(x) = (1+x)^\alpha$.
 \end{enumerate}
 \end{exercise}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\sectionnewpage
-\section{Fundamental theorem of algebra}
-\label{sec:fundalgeb}
-
-\sectionnotes{half a lecture, optional}
-
-In this section we study first the local behaviour of polynomials
-and the growth of polynomials as $z$ goes to infinity.  As an application
-we prove the fundamental theorem of algebra: any polynomial
-has a complex root.
-
-\begin{lemma} \label{lemma:polyalwaysgetssmaller}
-Let $p(z)$ be complex polynomial.  If $p(z_0) \not= 0$, then there
-exist $w \in \C$ such that $\sabs{p(w)} < \sabs{p(z_0)}$.  In fact,
-we can pick $w$ to be arbitrarily close to $z_0$.
-\end{lemma}
-
-\begin{proof}
-Without loss of generality assume that $z_0 = 0$ and $p(0) = 1$.  Then write
-\begin{equation*}
-p(z) = 1+a_kz^k + a_{k+1}z^{k+1} + \cdots + a_d z^d
-\end{equation*}
-where $a_k \not= 0$.  Pick $t$ such that $a_k e^{ikt} = -\sabs{a_k}$ which
-we can do by the discussion on trigonometric functions.  Then for
-any $r > 0$ small enough such that
-$1-r^k \sabs{a_k} > 0$ we have
-\begin{equation*}
-p(r e^{it}) =
-1-r^k \sabs{a_k} + r^{k+1}a_{k+1}e^{i(k+1)t} + \cdots + r^{d}a_{d}e^{idt} .
-\end{equation*}
-So
-\begin{equation*}
-\begin{split}
-\abs{
-p(r e^{it}) } - \abs{
-r^{k+1}a_{k+1}e^{i(k+1)t} + \cdots + r^{d}a_{d}e^{idt}
-}
-& \leq
-\abs{
-p(r e^{it}) 
-- r^{k+1}a_{k+1}e^{i(k+1)t} - \cdots - r^{d}a_{d}e^{idt}
-}
-\\
-& =
-\abs{
-1-r^k \sabs{a_k}
-}
-=
-1-r^k \sabs{a_k} .
-\end{split}
-\end{equation*}
-In other words
-\begin{equation*}
-\abs{
-p(r e^{it}) }
-\leq
-1-r^k \left( \sabs{a_k}
--
-r
-\abs{
-a_{k+1}e^{i(k+1)t} + \cdots + r^{d-k-1}a_{d}e^{idt}
-}
-\right)
-\end{equation*}
-For a small enough $r$ the expression the parentheses is positive
-as $\sabs{a_k} > 0$.  And then $\abs{p(re^{it})} < 1 = p(0)$.
-\end{proof}
-
-\begin{remark}
-The above lemma holds essentially with an unchanged proof for (complex) analytic
-functions.  A proof of this generalization is left as an exercise to the reader.
-What the lemma
-says is that the only minima the modulus of analytic functions (polynomials)
-has are precisely at the zeros.
-\end{remark}
-
-\begin{remark}
-The lemma does not hold if we restrict to real numbers.  For
-example, $x^2+1$ has a minimum at $x=0$, but no zero there.  The thing is that
-there is a $w$ arbitrarily close to $0$ such that $\sabs{w^2+1} < 1$, but this
-$w$ is necessarily not real.  Letting $w = i\epsilon$ for small
-$\epsilon > 0$ works.
-\end{remark}
-
-The moral of the story is that if $p(0) = 1$, then very close to 0, the
-polynomial
-looks like $1+az^k$ and this has no minimum at the origin.  All the higher
-powers of $z$ are too small to make a difference.
-
-\begin{lemma}
-Let $p(z)$ be complex polynomial.  Then for any $M$ there exists
-an $R$ such that if $\sabs{z} \geq R$ then $\sabs{p(z)} \geq M$.
-\end{lemma}
-
-\begin{proof}
-Write $p(z) = a_0 + a_1 z + \cdots + a_d z^d$ and suppose that
-$a_d \not= 0$.
-Suppose $\sabs{z} \geq R$ (so also $\sabs{z}^{-1} \leq R^{-1}$).
-We estimate:
-\begin{equation*}
-\begin{split}
-\sabs{p(z)}
-& \geq
-\sabs{a_d z^d} -
-\sabs{a_0} - \sabs{a_1 z} - \cdots - \sabs{a_{d-1} z^{d-1} }
-\\
-& =
-\sabs{z}^d \bigl(
-\sabs{a_d} -
-\sabs{a_0} \, \sabs{z}^{-d} -
-\sabs{a_1} \, \sabs{z}^{-d+1} - \cdots - \sabs{a_{d-1}} \, \sabs{z}^{-1}
-\bigr)
-\\
-& \geq
-R^d \bigl(\sabs{a_d} -
-\sabs{a_0}R^{-d} - \sabs{a_1}R^{1-d} - \cdots - \sabs{a_{d-1}}R^{-1} \bigr)
-.
-\end{split}
-\end{equation*}
-Then the expression in parentheses is eventually positive for large enough
-$R$.  In particular, for large enough $R$ we get that it is greater than
-$\frac{\sabs{a_d}}{2}$ and so
-\begin{equation*}
-\sabs{p(z)}
-\geq
-R^d \frac{\sabs{a_d}}{2} .
-\end{equation*}
-Therefore,
-we can pick $R$ large enough to be bigger than a given $M$.
-\end{proof}
-
-The above lemma does \emph{not} generalize to analytic
-functions, even those defined in all of $\C$.  The function
-$\cos(z)$ is an obvious counterexample.
-Note that we had to look
-at the term with the largest degree, and we only have such a term for
-a polynomial.  In fact, something that we will not prove is that
-an analytic function defined on all of $\C$ satisfying the conclusion
-of the lemma
-must be a polynomial.
-
-The moral of the story here is that for very large $\sabs{z}$ (far away from
-the origin) a polynomial of degree $d$ really looks like a constant multiple
-of $z^d$.
-
-\begin{thm}[Fundamental theorem of algebra]
-Let $p(z)$ be complex polynomial, then there exists a $z_0 \in \C$
-such that $p(z_0) = 0$.
-\end{thm}
-
-\begin{proof}
-Let $\mu := \inf \bigl\{ \sabs{p(z)} : z \in \C \bigr\}$.  Find an $R$ such that
-for all $z$ with $\sabs{z} \geq R$ we have $\sabs{p(z)} \geq \mu+1$.
-Therefore, any $z$ with $\sabs{p(z)}$ close to $\mu$ must be in the
-closed ball $C(0,R) = \bigl\{ z \in \C : \sabs{z} \leq R \bigr\}$.  As $\sabs{p(z)}$
-is a continuous real-valued function, it achieves its minimum
-on the compact set $C(0,R)$ (closed and bounded) and this minimum must
-be $\mu$.  So there is a $z_0 \in C(0,R)$ such that $\sabs{p(z_0)} = \mu$.
-As that is a minimum of $\sabs{p(z)}$ on $\C$, then by a lemma above we have
-that $\sabs{p(z_0)} = 0$.
-\end{proof}
-
-The theorem doesn't generalize to analytic functions either.  For example
-$e^{z}$ is an analytic function on $\C$ with no zeros, see the next section.
-
-\subsection{Exercises}
-
-\begin{exercise} \label{exercise:minprinciple}
-Prove \lemmaref{lemma:polyalwaysgetssmaller} for an analytic function.  That
-is, suppose that $p(z)$ is not a polynomial but a power series around $z_0$.
-\end{exercise}
-
-\begin{exercise}
-Use \exerciseref{exercise:minprinciple} to prove the \emph{\myindex{maximum
-principle for analytic functions}}: \emph{If $U \subset \C$ is open and connected,
-$f \colon U \to \C$ is analytic, and $\sabs{f(z)}$ attains a relative
-maximum at $z_0 \in U$.  Then $f$ is constant.}
-\end{exercise}
-
-\begin{exercise}
-Let $U \subset \C$ be open and $z_0 \in U$.
-Suppose $f \colon U \to \C$ is analytic and $f(z_0) = 0$.  Show that
-there exists an $\epsilon > 0$ such that either
-$f(z) \not= 0$ for all $z$ with $0 < \sabs{z} < \epsilon$
-or $f(z) = 0$ for all $z \in B(z_0,\epsilon)$.
-In other words zeros of analytic functions are isolated.
-Of course, same holds for polynomials.
-\end{exercise}
-
-\pagebreak[1]
-\begin{exnote}
-A \emph{\myindex{rational function}} is a function
-$f(z) := \frac{p(z)}{q(z)}$
-where $p$ and $q$ are polynomials and $q$ is not identically zero.
-A point $z_0 \in \C$ where $f(z_0) = 0$ (and therefore $p(z_0) = 0$)
-is called a \emph{zero}\index{zero of a function}.
-A point $z_0 \in \C$ is called an \emph{\myindex{singularity}} of
-$f$ if $q(z_0) = 0$.  As all zeros are isolated and so
-all singularities of rational functions are isolated
-and so are called
-an \emph{\myindex{isolated singularity}}.
-An isolated singularity is called
-\emph{removable}\index{removable singularity}
-if $\lim_{z \mapsto z_0} f(z)$ exists.
-An isolated singularity is called a \emph{\myindex{pole}} if 
-$\lim_{z \mapsto z_0} \sabs{f(z)} = \infty$.
-We say $f$ has pole at $\infty$ if
-\begin{equation*}
-\lim_{z \to \infty} \sabs{f(z)} = \infty ,
-\end{equation*}
-that is, if for every $M > 0$ there exists an $R > 0$ such that
-$\sabs{f(z)} > M$ for all $z$ with $\sabs{z} > R$.
-\end{exnote}
-
-\begin{exercise}
-Show that a rational function which is not identically
-zero has at most finitely many zeros and
-singularities.  In fact, show that if $p$ is a polynomial of 
-degree $n > 0$ it has at most $n$ zeros.
-\\
-Hint: If $z_0$ is a zero of $p$, without loss of generality assume $z_0 =
-0$, then use induction.
-\end{exercise}
-
-\begin{exercise}
-Prove that if $z_0$ is a removable singularity of a rational
-function $f(z) := \frac{p(z)}{q(z)}$, show that there exist
-polynomials $\widetilde{p}$ and $\widetilde{q}$ such that
-$\widetilde{q}(z_0) \not= 0$ and $f(z) =
-\frac{\widetilde{p}(z)}{\widetilde{q}(z)}$.
-\\
-Hint: Without loss of generality assume $z_0 = 0$.
-\end{exercise}
-
-\begin{exercise}
-Given a rational function $f$ and an isolated singularity $z_0$,
-show that $z_0$ is either removable or a pole.
-\\
-Hint: See the previous exercise.
-\end{exercise}
-
-\begin{exercise}
-Let $f$ be a rational function and $S \subset \C$ is the 
-set of the singularities of $f$.
-Prove that $f$ is equal to a polynomial on $\C \setminus S$
-if and only if
-$f$ has a pole at infinity and all the singularities are removable.
-\\
-Hint: See previous exercises.
-\end{exercise}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2158,6 +1957,261 @@ Use this to show that
 \end{equation*}
 \end{enumerate}
 \end{exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Fundamental theorem of algebra}
+\label{sec:fundalgeb}
+
+\sectionnotes{half a lecture, optional}
+
+In this section we study the local behaviour of polynomials
+and the growth of polynomials as $z$ goes to infinity.  As an application
+we prove the fundamental theorem of algebra: any polynomial
+has a complex root.
+
+\begin{lemma} \label{lemma:polyalwaysgetssmaller}
+Let $p(z)$ be complex polynomial.  If $p(z_0) \not= 0$, then there
+exist $w \in \C$ such that $\sabs{p(w)} < \sabs{p(z_0)}$.  In fact,
+we can pick $w$ to be arbitrarily close to $z_0$.
+\end{lemma}
+
+\begin{proof}
+Without loss of generality assume that $z_0 = 0$ and $p(0) = 1$.  Write
+\begin{equation*}
+p(z) = 1+a_kz^k + a_{k+1}z^{k+1} + \cdots + a_d z^d ,
+\end{equation*}
+where $a_k \not= 0$.  Pick $t$ such that $a_k e^{ikt} = -\sabs{a_k}$, which
+we can do by the discussion on trigonometric functions.  Suppose
+$r > 0$ is small enough such that
+$1-r^k \sabs{a_k} > 0$.  We have
+\begin{equation*}
+p(r e^{it}) =
+1-r^k \sabs{a_k} + r^{k+1}a_{k+1}e^{i(k+1)t} + \cdots + r^{d}a_{d}e^{idt} .
+\end{equation*}
+So
+\begin{equation*}
+\begin{split}
+\abs{
+p(r e^{it}) } - \abs{
+r^{k+1}a_{k+1}e^{i(k+1)t} + \cdots + r^{d}a_{d}e^{idt}
+}
+& \leq
+\abs{
+p(r e^{it}) 
+- r^{k+1}a_{k+1}e^{i(k+1)t} - \cdots - r^{d}a_{d}e^{idt}
+}
+\\
+& =
+\abs{
+1-r^k \sabs{a_k}
+}
+=
+1-r^k \sabs{a_k} .
+\end{split}
+\end{equation*}
+In other words,
+\begin{equation*}
+\abs{
+p(r e^{it}) }
+\leq
+1-r^k \left( \sabs{a_k}
+-
+r
+\abs{
+a_{k+1}e^{i(k+1)t} + \cdots + r^{d-k-1}a_{d}e^{idt}
+}
+\right) .
+\end{equation*}
+For small enough $r$ the expression the parentheses is positive
+as $\sabs{a_k} > 0$.  Then $\abs{p(re^{it})} < 1 = p(0)$.
+\end{proof}
+
+\begin{remark}
+The above lemma holds essentially with an unchanged proof for (complex) analytic
+functions.  A proof of this generalization is left as an exercise to the reader.
+What the lemma
+says is that the only minima the modulus of analytic functions (polynomials)
+has are precisely at the zeros.
+\end{remark}
+
+\begin{remark}
+The lemma does not hold if we restrict to real numbers.  For
+example, $x^2+1$ has a minimum at $x=0$, but no zero there.  The thing is that
+there is a $w$ arbitrarily close to $0$ such that $\sabs{w^2+1} < 1$, but this
+$w$ is necessarily not real.  Letting $w = i\epsilon$ for small
+$\epsilon > 0$ works.
+\end{remark}
+
+The moral of the story is that if $p(0) = 1$, then very close to 0, the
+polynomial
+looks like $1+az^k$ and this has no minimum at the origin.  All the higher
+powers of $z$ are too small to make a difference.  We find similar behavior
+at infinity.
+
+\begin{lemma}
+Let $p(z)$ be complex polynomial.  Then for any $M$ there exists
+an $R$ such that if $\sabs{z} \geq R$ then $\sabs{p(z)} \geq M$.
+\end{lemma}
+
+\begin{proof}
+Write $p(z) = a_0 + a_1 z + \cdots + a_d z^d$ and suppose that
+$a_d \not= 0$.
+Suppose $\sabs{z} \geq R$ (so also $\sabs{z}^{-1} \leq R^{-1}$).
+We estimate:
+\begin{equation*}
+\begin{split}
+\sabs{p(z)}
+& \geq
+\sabs{a_d z^d} -
+\sabs{a_0} - \sabs{a_1 z} - \cdots - \sabs{a_{d-1} z^{d-1} }
+\\
+& =
+\sabs{z}^d \bigl(
+\sabs{a_d} -
+\sabs{a_0} \, \sabs{z}^{-d} -
+\sabs{a_1} \, \sabs{z}^{-d+1} - \cdots - \sabs{a_{d-1}} \, \sabs{z}^{-1}
+\bigr)
+\\
+& \geq
+R^d \bigl(\sabs{a_d} -
+\sabs{a_0}R^{-d} - \sabs{a_1}R^{1-d} - \cdots - \sabs{a_{d-1}}R^{-1} \bigr)
+.
+\end{split}
+\end{equation*}
+Then the expression in parentheses is eventually positive for large enough
+$R$.  In particular, for large enough $R$ we get that it is greater than
+$\frac{\sabs{a_d}}{2}$ and so
+\begin{equation*}
+\sabs{p(z)}
+\geq
+R^d \frac{\sabs{a_d}}{2} .
+\end{equation*}
+Therefore,
+we can pick $R$ large enough to be bigger than a given $M$.
+\end{proof}
+
+The above lemma does \emph{not} generalize to analytic
+functions, even those defined in all of $\C$.  The function
+$\cos(z)$ is an obvious counterexample.
+Note that we had to look
+at the term with the largest degree, and we only have such a term for
+a polynomial.  In fact, something that we will not prove is that
+an analytic function defined on all of $\C$ satisfying the conclusion
+of the lemma must be a polynomial.
+
+The moral of the story here is that for very large $\sabs{z}$ (far away from
+the origin) a polynomial of degree $d$ really looks like a constant multiple
+of $z^d$.
+
+\begin{thm}[Fundamental theorem of algebra]
+Let $p(z)$ be complex polynomial, then there exists a $z_0 \in \C$
+such that $p(z_0) = 0$.
+\end{thm}
+
+\begin{proof}
+Let $\mu := \inf \bigl\{ \sabs{p(z)} : z \in \C \bigr\}$.  Find an $R$ such that
+for all $z$ with $\sabs{z} \geq R$ we have $\sabs{p(z)} \geq \mu+1$.
+Therefore, any $z$ with $\sabs{p(z)}$ close to $\mu$ must be in the
+closed ball $C(0,R) = \bigl\{ z \in \C : \sabs{z} \leq R \bigr\}$.  As $\sabs{p(z)}$
+is a continuous real-valued function, it achieves its minimum
+on the compact set $C(0,R)$ (closed and bounded) and this minimum must
+be $\mu$.  So there is a $z_0 \in C(0,R)$ such that $\sabs{p(z_0)} = \mu$.
+As that is a minimum of $\sabs{p(z)}$ on $\C$, then by the first lemma above we have
+that $\sabs{p(z_0)} = 0$.
+\end{proof}
+
+The theorem doesn't generalize to analytic functions either.  For example
+$e^{z}$ is an analytic function on $\C$ with no zeros.
+
+\subsection{Exercises}
+
+\begin{exercise} \label{exercise:minprinciple}
+Prove \lemmaref{lemma:polyalwaysgetssmaller} for an analytic function.  That
+is, suppose that $p(z)$ is not a polynomial but a power series around $z_0$.
+\end{exercise}
+
+\begin{exercise}
+Use \exerciseref{exercise:minprinciple} to prove the \emph{\myindex{maximum
+principle for analytic functions}}: \emph{If $U \subset \C$ is open and connected,
+$f \colon U \to \C$ is analytic, and $\sabs{f(z)}$ attains a relative
+maximum at $z_0 \in U$.  Then $f$ is constant.}
+\end{exercise}
+
+\begin{exercise}
+Let $U \subset \C$ be open and $z_0 \in U$.
+Suppose $f \colon U \to \C$ is analytic and $f(z_0) = 0$.  Show that
+there exists an $\epsilon > 0$ such that either
+$f(z) \not= 0$ for all $z$ with $0 < \sabs{z} < \epsilon$
+or $f(z) = 0$ for all $z \in B(z_0,\epsilon)$.
+In other words zeros of analytic functions are isolated.
+Of course, same holds for polynomials.
+\end{exercise}
+
+\pagebreak[1]
+\begin{exnote}
+A \emph{\myindex{rational function}} is a function
+$f(z) := \frac{p(z)}{q(z)}$
+where $p$ and $q$ are polynomials and $q$ is not identically zero.
+A point $z_0 \in \C$ where $f(z_0) = 0$ (and therefore $p(z_0) = 0$)
+is called a \emph{zero}\index{zero of a function}.
+A point $z_0 \in \C$ is called an \emph{\myindex{singularity}} of
+$f$ if $q(z_0) = 0$.  As all zeros are isolated and so
+all singularities of rational functions are isolated
+and so are called
+an \emph{\myindex{isolated singularity}}.
+An isolated singularity is called
+\emph{removable}\index{removable singularity}
+if $\lim_{z \mapsto z_0} f(z)$ exists.
+An isolated singularity is called a \emph{\myindex{pole}} if 
+$\lim_{z \mapsto z_0} \sabs{f(z)} = \infty$.
+We say $f$ has pole at $\infty$ if
+\begin{equation*}
+\lim_{z \to \infty} \sabs{f(z)} = \infty ,
+\end{equation*}
+that is, if for every $M > 0$ there exists an $R > 0$ such that
+$\sabs{f(z)} > M$ for all $z$ with $\sabs{z} > R$.
+\end{exnote}
+
+\begin{exercise}
+Show that a rational function which is not identically
+zero has at most finitely many zeros and
+singularities.  In fact, show that if $p$ is a polynomial of 
+degree $n > 0$ it has at most $n$ zeros.
+\\
+Hint: If $z_0$ is a zero of $p$, without loss of generality assume $z_0 =
+0$, then use induction.
+\end{exercise}
+
+\begin{exercise}
+Prove that if $z_0$ is a removable singularity of a rational
+function $f(z) := \frac{p(z)}{q(z)}$, show that there exist
+polynomials $\widetilde{p}$ and $\widetilde{q}$ such that
+$\widetilde{q}(z_0) \not= 0$ and $f(z) =
+\frac{\widetilde{p}(z)}{\widetilde{q}(z)}$.
+\\
+Hint: Without loss of generality assume $z_0 = 0$.
+\end{exercise}
+
+\begin{exercise}
+Given a rational function $f$ and an isolated singularity $z_0$,
+show that $z_0$ is either removable or a pole.
+\\
+Hint: See the previous exercise.
+\end{exercise}
+
+\begin{exercise}
+Let $f$ be a rational function and $S \subset \C$ is the 
+set of the singularities of $f$.
+Prove that $f$ is equal to a polynomial on $\C \setminus S$
+if and only if
+$f$ has a pole at infinity and all the singularities are removable.
+\\
+Hint: See previous exercises.
+\end{exercise}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
