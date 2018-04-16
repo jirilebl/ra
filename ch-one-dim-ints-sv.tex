@@ -1437,9 +1437,9 @@ $h$.  Therefore
 \int_0^1 \omega_j(x+the_j) ~ dt  .
 \end{equation*}
 We wish to take the limit as $h \to 0$.  The function $\omega_j$ is
-continuous at $x$.  So given $\epsilon > 0$, $h$ can be small enough so that
+continuous at $x$.  Given $\epsilon > 0$, suppose $h$ is small enough so that
 $\abs{\omega(x)-\omega(y)} < \epsilon$, whenever $\snorm{x-y} \leq \abs{h}$.
-Therefore,
+Hence,
 $\abs{\omega_j(x+the_j)-\omega_j(x)} < \epsilon$ for all $t \in [0,1]$,
 and we estimate
 \begin{equation*}
@@ -1486,6 +1486,9 @@ path taken.  Therefore the integral is path independent.
 We leave checking this fact for a piecewise smooth path as an exercise.
 \end{proof}
 
+Path independence can be stated more neatly in terms of integrals over
+closed paths.
+
 \begin{prop}
 Let $U \subset \R^n$ be a path connected open set and $\omega$
 a 1-form defined on $U$.
@@ -1528,8 +1531,11 @@ the second part is $\beta$ travelled backwards so that we get minus the
 $\beta$ integral.  Thus the integral of $\omega$ on $U$ is path independent.
 \end{proof}
 
+However one states path independence, it is often a difficult criterion to
+check, you have to check something ``for all paths.''
+
 There is a local criterion, a differential equation, that guarantees
-path independence, on in other words an
+path independence, or in other words an
 \emph{\myindex{antiderivative}}
 $f$ whose total derivative is the given one-form
 $\omega$.  Since the criterion is local, we generally only get the result
@@ -1538,29 +1544,28 @@ locally.  We can find the antiderivative in any so-called
 any path between two points can be ``continuously deformed''
 into any other path
 between those two points.  To make matters simple, the usual way
-this result is proved is for so-called star shaped domains.
-As balls are star shaped we have the result locally.
+this result is proved is for so-called star-shaped domains.
+As balls are star-shaped we have the result locally.
 
 \begin{defn}
 Let $U \subset \R^n$ be an open set and $p \in U$.  We say $U$ is
-a \emph{\myindex{star shaped domain}}
+a \emph{\myindex{star-shaped domain}}
 with respect to $p$ if for any other point $x \in U$,
 the line segment $[p,x]$ is in $U$, that is, if
 $(1-t)p + tx \in U$ for all $t \in [0,1]$.
-If we say simply \emph{star shaped}, then $U$ is star shaped with respect to
+If we say simply \emph{star-shaped}, then $U$ is star-shaped with respect to
 some $p \in U$.  See \figureref{fig:starshaped}.
-\end{defn}
-
 \begin{myfigureht}
 \subimport*{figures/}{starshaped.pdf_t}
-\caption{A star shaped domain with respect to $p$.\label{fig:starshaped}}
+\caption{A star-shaped domain with respect to $p$.\label{fig:starshaped}}
 \end{myfigureht}
+\end{defn}
 
-Notice the difference between star shaped and convex.  A convex domain is
-star shaped, but a star shaped domain need not be convex.
+Notice the difference between star-shaped and convex.  A convex domain is
+star-shaped, but a star-shaped domain need not be convex.
 
 \begin{thm}[\myindex{Poincar\`e lemma}]
-Let $U \subset \R^n$ be a star shaped domain and $\omega$ a continuously
+Let $U \subset \R^n$ be a star-shaped domain and $\omega$ a continuously
 differentiable one-form defined on $U$.  That is, if
 \begin{equation*}
 \omega =
@@ -1591,10 +1596,10 @@ and $f$ is twice continuously differentiable, then
 \frac{\partial \omega_k}{\partial x_j} .
 \end{equation*}
 The condition is clearly necessary.  The Poincar\`e lemma says that it is
-sufficient for a star shaped $U$.
+sufficient for a star-shaped $U$.
 
 \begin{proof}
-Suppose $U$ is star shaped with respect to $y=(y_1,y_2,\ldots,y_n) \in U$.
+Suppose $U$ is star-shaped with respect to $y=(y_1,y_2,\ldots,y_n) \in U$.
 
 Given $x = (x_1,x_2,\ldots,x_n) \in U$, define the path $\gamma \colon [0,1] \to U$ as
 $\gamma(t) := (1-t)y + tx$, so $\gamma^{\:\prime}(t) = x-y$.  Then let
@@ -1607,8 +1612,8 @@ f(x) := \int_{\gamma} \omega
 \omega_k \bigl((1-t)y + tx \bigr) (x_k-y_k)
 \right) ~ dt .
 \end{equation*}
-We differentiate in $x_j$ under the integral, which can be done as
-everything, including the partials themselves, is continuous.
+We differentiate in $x_j$ under the integral, which is allowed as
+everything, including the partials, is continuous.
 \begin{equation*}
 \begin{split}
 \frac{\partial f}{\partial x_j}(x) & =
@@ -1666,18 +1671,20 @@ be defined on $\R^2 \setminus \{ 0 \}$.  Then
 \frac{x}{x^2+y^2} \right] .
 \end{equation*}
 However, there is no $f \colon \R^2 \setminus \{ 0 \} \to \R$ such that 
-$df = \omega$.  We saw in 
-\exampleref{example:mv:irrotoneformint} if we integrate from $(1,0)$ to $(1,0)$
-along the unit circle, that is $\gamma(t) = \bigl(\cos(t),\sin(t)\bigr)$
-for $t \in [0,2\pi]$, we get $2\pi$ and not 0 as it should be if the integral
-is path independent, or in other words if there would exist an $f$ such that
+$df = \omega$.  In
+\exampleref{example:mv:irrotoneformint} we integrated from $(1,0)$ to $(1,0)$
+along the unit circle counterclockwise,
+that is $\gamma(t) = \bigl(\cos(t),\sin(t)\bigr)$
+for $t \in [0,2\pi]$, and we found the integral to be $2\pi$.  We would have
+gotten 0 if
+the integral was independent,
+or in other words if there would exist an $f$ such that
 $df = \omega$.
 \end{example}
 
 \subsection{Vector fields}
 
-A common object to integrate is a so-called vector field.  That is an
-assignment of a vector at each point of a domain.
+A common object to integrate is a so-called vector field.
 
 \begin{defn}
 Let $U \subset \R^n$ be a set.
@@ -1706,14 +1713,14 @@ If we unravel the definition we find that
 \end{equation*}
 Therefore what we know about integration of
 one-forms carries over to the integration of vector fields.
-For example path independence for integration of vector fields is simply
+For example, path independence for integration of vector fields is simply
 that
 \begin{equation*}
 \int_x^y v \cdot d\gamma
 \end{equation*}
-is path independent (so for any $\gamma$) if and only if 
+is path independent if and only if 
 $v = \nabla f$, that is $v$ is the gradient of a function.  The function $f$
-is then called the \emph{\myindex{potential}} for $v$.
+is then called a \emph{\myindex{potential}} for $v$.
 
 A vector field $v$ whose path integrals are path independent is called
 a \emph{\myindex{conservative vector field}}.  The naming comes from the
@@ -1740,13 +1747,13 @@ second direction for a smooth path, not a piecewise smooth path.
 \end{exercise}
 
 \begin{exercise}
-Show that a star shaped domain $U \subset \R^n$ is path connected.
+Show that a star-shaped domain $U \subset \R^n$ is path connected.
 \end{exercise}
 
 \begin{exercise}
 Show that $U := \R^2 \setminus \{ (x,y) \in \R^2 : x \leq 0, y=0 \}$ is
-star shaped and find all points $(x_0,y_0) \in U$ such that
-$U$ is star shaped with respect to $(x_0,y_0)$.
+star-shaped and find all points $(x_0,y_0) \in U$ such that
+$U$ is star-shaped with respect to $(x_0,y_0)$.
 \end{exercise}
 
 \begin{exercise}
@@ -1814,7 +1821,8 @@ Take
 defined on $\R^2 \setminus \{ (0,0) \}$.  Let $\gamma \colon [a,b] \to \R^2
 \setminus \{ (0,0) \}$ be a closed piecewise smooth path.
 Let $R:=\{ (x,y) \in \R^2 : x \leq 0 \text{ and } y=0 \}$.
-Suppose $R \cap \gamma\bigl([a,b]\bigr)$ is a finite set of $k$ points.  Then
+Suppose $R \cap \gamma\bigl([a,b]\bigr)$ is a finite set of $k$ points.
+Prove that
 \begin{equation*}
 \int_{\gamma} \omega = 2 \pi \ell 
 \end{equation*}
@@ -1823,7 +1831,7 @@ Hint 1: First prove that for a path $\beta$ that starts and end on $R$ but
 does not intersect it otherwise, you find that $\int_{\beta} \omega$
 is $-2\pi$, 0, or $2\pi$.
 \\
-Hint 2: You proved above that $\R^2 \setminus R$ is star shaped.
+Hint 2: You proved above that $\R^2 \setminus R$ is star-shaped.
 \\
 Note: The number $\ell$ is called the \emph{\myindex{winding number}} it measures how many
 times does $\gamma$ wind around the origin in the clockwise direction.
