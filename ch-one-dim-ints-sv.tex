@@ -393,18 +393,6 @@ $\gamma^{\:\prime}(t) =
 \bigl( \gamma_1^{\:\prime}(t), \gamma_2^{\:\prime}(t), \ldots,
 \gamma_n^{\:\prime}(t) \bigr)$.
 
-The definition of piecewise smooth path as we have given it above implies
-continuity (exercise).  Note that some authors allow also finitely many
-discontinuities.
-One could mostly get by with smooth paths, but for computations, the simplest
-paths to write down are often piecewise smooth.
-
-Generally, we are interested in the direct image $\gamma\bigl([a,b]\bigr)$,
-rather than the specific parametrization, although that is also
-important to some degree.  When we informally talk about a path or a curve,
-we often mean the set $\gamma\bigl([a,b]\bigr)$, depending
-on context.
-
 \begin{example} \label{mv:example:unitsquarepath}
 Let $\gamma \colon [0,4] \to \R^2$ be defined by
 \begin{equation*}
@@ -432,9 +420,26 @@ $(\gamma|_{[1,2]})'(1) = (0,1)$,
 $(\gamma|_{[0,1]})'(1) = (1,0)$, but
 $\gamma^{\:\prime}(1)$ does not exist.  At the corners $\gamma$ is 
 not differentiable.
+The path $\gamma$ is a simple closed path, as $\gamma|_{(0,4)}$ is
+one-to-one and $\gamma(0)=\gamma(4)$.
 %The restrictions are differentiable and the
 %derivative is different for each restriction.
 \end{example}
+
+The definition of a piecewise smooth path as we have given it implies
+continuity (exercise).  For general functions, many authors also
+allow finitely many discontinuities, when they use the term \emph{piecewise
+smooth}, and so one may say that we defined a piecewise smooth path
+to be a \emph{\myindex{continuous piecewise smooth}} function.
+While one may get by with smooth paths, for computations, the simplest
+paths to write down are often piecewise smooth.
+
+Generally, we are interested in the direct image $\gamma\bigl([a,b]\bigr)$,
+rather than the specific parametrization, although that is also
+important to some degree.  When we informally talk about a path or a curve,
+we often mean the set $\gamma\bigl([a,b]\bigr)$, depending
+on context.
+
 
 \begin{example}
 The condition $\gamma^{\:\prime}(t) \not= 0$ means that the image
@@ -544,25 +549,30 @@ Let $t_0 = a < t_1 < t_2 < \cdots < t_k = b$ be the partition from the
 definition of piecewise smooth for $\gamma$ together with the 
 points $\{ h(r_0), h(r_1), h(r_2), \ldots, h(r_\ell) \}$.
 Let $s_j := h^{-1}(t_j)$.  Then
-$s_0 = c < s_1 < s_2 < \cdots < s_k = d$.
-If $t \in [s_{j-1},s_j]$, then $h(t) \in [t_{j-1},t_j]$, so
-$h|_{[s_{j-1},s_j]}$ is continuously differentiable, and
+$s_0 = c < s_1 < s_2 < \cdots < s_k = d$
+is a partition that includes (is a refinement of) the
+$\{ r_0,r_1,\ldots,r_\ell \}$.
+If $\tau \in [s_{j-1},s_j]$, then $h(\tau) \in [t_{j-1},t_j]$
+since $h(s_{j-1}) = t_{j-1}$,
+$h(s_{j}) = t_j$, and
+$h$ is strictly increasing.
+Also $h|_{[s_{j-1},s_j]}$ is continuously differentiable, and
 $\gamma|_{[t_{j-1},t_j]}$ is also continuously differentiable.
 Then
 \begin{equation*}
-(\gamma \circ h)|_{[s_{j-1},s_{j}]} (t)
+(\gamma \circ h)|_{[s_{j-1},s_{j}]} (\tau)
 =
-\gamma|_{[t_{j-1},t_{j}]} \bigl( h|_{[s_{j-1},s_j]}(t) \bigr) .
+\gamma|_{[t_{j-1},t_{j}]} \bigl( h|_{[s_{j-1},s_j]}(\tau) \bigr) .
 \end{equation*}
 The function 
 $(\gamma \circ h)|_{[s_{j-1},s_{j}]}$ is therefore continuously
 differentiable and
 by the chain rule
 \begin{equation*}
-\bigl( (\gamma \circ h)|_{[s_{j-1},s_{j}]} \bigr) ' (t)
+\bigl( (\gamma \circ h)|_{[s_{j-1},s_{j}]} \bigr) ' (\tau)
 =
-\bigl( \gamma|_{[t_{j-1},t_{j}]} \bigr)' \bigl( h(t) \bigr)
-(h|_{[s_{j-1},s_j]})'(t) \not= 0 .
+\bigl( \gamma|_{[t_{j-1},t_{j}]} \bigr)' \bigl( h(\tau) \bigr)
+(h|_{[s_{j-1},s_j]})'(\tau) \not= 0 .
 \end{equation*}
 Consequently, $\gamma \circ h$ is a piecewise smooth path.
 Orientation reversing $h$ is left as an exercise.
@@ -1491,7 +1501,7 @@ closed paths.
 
 \begin{prop}
 Let $U \subset \R^n$ be a path connected open set and $\omega$
-a 1-form defined on $U$.
+a one-form defined on $U$.
 Then $\omega = df$ for some continuously differentiable $f \colon U \to
 \R$ if and only if
 \begin{equation*}
@@ -1513,8 +1523,13 @@ the previous proposition says
 Now suppose that for every piecewise smooth closed path $\gamma$, $\int_{\gamma} \omega = 0$.
 Let $x,y$ be two points in $U$ and let $\alpha \colon [0,1] \to U$ and
 $\beta \colon [0,1] \to U$ be two piecewise smooth paths with $\alpha(0) = \beta(0) = x$
-and $\alpha(1) = \beta(1) = y$.  Then let $\gamma \colon [0,2] \to U$
-be defined by
+and $\alpha(1) = \beta(1) = y$.  See \figureref{fig:twopaths}.
+\begin{myfigureht}
+\subimport*{figures/}{twopaths.pdf_t}
+\caption{Two paths from $x$ to $y$.\label{fig:twopaths}}
+\end{myfigureht}
+
+Define $\gamma \colon [0,2] \to U$ by
 \begin{equation*}
 \gamma(t) :=
 \begin{cases}
@@ -1522,7 +1537,12 @@ be defined by
 \beta(2-t) & \text{if $t \in (1,2]$.}
 \end{cases}
 \end{equation*}
-This is a piecewise smooth closed path and so 
+This path is piecewise smooth.  This is due to the fact that
+$\gamma|_{[0,1]}(t) = \alpha(t)$ and
+$\gamma|_{[1,2]}(t) = \beta(2-t)$ (note especially $\gamma(1) = \alpha(1) =
+\beta(2-1)$).
+It is also closed as $\gamma(0) = \alpha(0) = \beta(0) = \gamma(2)$.
+So 
 \begin{equation*}
 0 = \int_{\gamma} \omega = \int_{\alpha} \omega - \int_{\beta} \omega .
 \end{equation*}
@@ -1785,6 +1805,7 @@ so that the $k$th ball only intersects the $(k-1)$th ball.\\
 Hint 3: See previous exercise.
 \end{exercise}
 
+\pagebreak[2]
 \begin{exercise}
 {\ }
 \begin{enumerate}[a)]
