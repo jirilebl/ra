@@ -354,6 +354,27 @@ volume I}.
 
 \subsection{Piecewise smooth paths}
 
+Let $\gamma \colon [a,b] \to \R^n$ be a function and write
+$\gamma = (\gamma_1,\gamma_2,\ldots,\gamma_n)$. 
+Then $\gamma$ is said to be
+\emph{continuously differentiable}
+whenever $\gamma_j$ is a continuously differentiable function
+for every $j=1,2,\ldots,n$, that is
+$\gamma_j^{\:\prime}(t) = \lim_{h \to 0} \frac{\gamma(t+h)-\gamma(t)}{h}$
+exists for all $t \in [a,b]$, and is continuous.
+This definition is a straightforward 
+extension of the definition of the derivative on an open set.
+As before we treat
+$\gamma^{\:\prime}(t)$ either as an $n \times 1$ matrix (a linear operator) or
+a vector, as it is a column vector.
+By \exerciseref{exercise:normonedim}, the operator norm of
+the operator $\gamma^{\:\prime}(t)$ is equal to
+the euclidean norm of the corresponding vector.
+So as a vector, then
+$\gamma^{\:\prime}(t) =
+\bigl( \gamma_1^{\:\prime}(t), \gamma_2^{\:\prime}(t), \ldots,
+\gamma_n^{\:\prime}(t) \bigr)$.
+
 \begin{defn}
 A continuously differentiable function $\gamma \colon [a,b] \to \R^n$ is
 called a \emph{\myindex{smooth path}}
@@ -379,19 +400,6 @@ a \emph{\myindex{closed path}} if $\gamma(a) = \gamma(b)$, that is
 if the path starts and ends in the same point.
 \end{defn}
 
-Since $\gamma$ is a function of one variable,
-we can treat
-$\gamma^{\:\prime}(t)$ either as a matrix (a linear operator) or
-a vector, as it is an $n \times 1$ matrix---a column vector.
-By \exerciseref{exercise:normonedim}, the operator norm of
-$\gamma^{\:\prime}(t)$ is equal to
-the euclidean norm of the corresponding vector.
-Then $\gamma^{\:\prime}(t)$ is a vector of the derivatives of the components
-of $\gamma$.  If $\gamma(t) =
-\bigl( \gamma_1(t), \gamma_2(t), \ldots, \gamma_n(t) \bigr)$, then
-$\gamma^{\:\prime}(t) =
-\bigl( \gamma_1^{\:\prime}(t), \gamma_2^{\:\prime}(t), \ldots,
-\gamma_n^{\:\prime}(t) \bigr)$.
 
 \begin{example} \label{mv:example:unitsquarepath}
 Let $\gamma \colon [0,4] \to \R^2$ be defined by
