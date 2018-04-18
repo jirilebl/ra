@@ -358,22 +358,24 @@ Let $\gamma \colon [a,b] \to \R^n$ be a function and write
 $\gamma = (\gamma_1,\gamma_2,\ldots,\gamma_n)$. 
 Then $\gamma$ is said to be
 \emph{continuously differentiable}
-whenever $\gamma_j$ is a continuously differentiable function
-for every $j=1,2,\ldots,n$, that is
-$\gamma_j^{\:\prime}(t) = \lim_{h \to 0} \frac{\gamma(t+h)-\gamma(t)}{h}$
-exists for all $t \in [a,b]$, and is continuous.
-This definition is a straightforward 
-extension of the definition of the derivative on an open set.
+whenever there exists a continuous function $\gamma^{\:\prime} \colon [a,b]
+\to \R^n$ such that for every $t \in [a,b]$, we have
+$\lim\limits_{h \to 0}
+\frac{\snorm{\gamma(t+h)-\gamma(t) - \gamma^{\:\prime}(t) \, h}}{\sabs{h}} = 0$.
 As before we treat
-$\gamma^{\:\prime}(t)$ either as an $n \times 1$ matrix (a linear operator) or
+$\gamma^{\:\prime}(t)$ either as a linear operator (an $n \times 1$ matrix) or
 a vector, as it is a column vector.
-By \exerciseref{exercise:normonedim}, the operator norm of
-the operator $\gamma^{\:\prime}(t)$ is equal to
-the euclidean norm of the corresponding vector.
-So as a vector, then
+As a vector,
 $\gamma^{\:\prime}(t) =
 \bigl( \gamma_1^{\:\prime}(t), \gamma_2^{\:\prime}(t), \ldots,
-\gamma_n^{\:\prime}(t) \bigr)$.
+\gamma_n^{\:\prime}(t) \bigr)$,
+and the definition is the same as
+$\gamma_j$ being a continuously differentiable function on $[a,b]$
+for every $j=1,2,\ldots,n$.
+By \exerciseref{exercise:normonedim}, the operator norm of
+the operator $\gamma^{\:\prime}(t)$ is equal to
+the euclidean norm of the corresponding vector, so there is no
+confusion when writing $\snorm{\gamma^{\:\prime}(t)}$.
 
 \begin{defn}
 A continuously differentiable function $\gamma \colon [a,b] \to \R^n$ is
@@ -1627,17 +1629,17 @@ The condition is clearly necessary.  The Poincar\`e lemma says that it is
 sufficient for a star-shaped $U$.
 
 \begin{proof}
-Suppose $U$ is star-shaped with respect to $y=(y_1,y_2,\ldots,y_n) \in U$.
+Suppose $U$ is star-shaped with respect to $p=(p_1,p_2,\ldots,p_n) \in U$.
 
 Given $x = (x_1,x_2,\ldots,x_n) \in U$, define the path $\gamma \colon [0,1] \to U$ as
-$\gamma(t) := (1-t)y + tx$, so $\gamma^{\:\prime}(t) = x-y$.  Then let
+$\gamma(t) := (1-t)p + tx$, so $\gamma^{\:\prime}(t) = x-p$.  Then let
 \begin{equation*}
 f(x) := \int_{\gamma} \omega
 =
 \int_0^1
 \left(
 \sum_{k=1}^n
-\omega_k \bigl((1-t)y + tx \bigr) (x_k-y_k)
+\omega_k \bigl((1-t)p + tx \bigr) (x_k-p_k)
 \right) ~ dt .
 \end{equation*}
 We differentiate in $x_j$ under the integral, which is allowed as
@@ -1649,11 +1651,11 @@ everything, including the partials, is continuous.
 \left(
 \left(
 \sum_{k=1}^n
-\frac{\partial \omega_k}{\partial x_j} \bigl((1-t)y + tx \bigr) t
-(x_k-y_k)
+\frac{\partial \omega_k}{\partial x_j} \bigl((1-t)p + tx \bigr) t
+(x_k-p_k)
 \right)
 +
-\omega_j \bigl((1-t)y + tx \bigr)
+\omega_j \bigl((1-t)p + tx \bigr)
 \right)
  ~ dt
 \\
@@ -1662,18 +1664,18 @@ everything, including the partials, is continuous.
 \left(
 \left(
 \sum_{k=1}^n
-\frac{\partial \omega_j}{\partial x_k} \bigl((1-t)y + tx \bigr) t
-(x_k-y_k)
+\frac{\partial \omega_j}{\partial x_k} \bigl((1-t)p + tx \bigr) t
+(x_k-p_k)
 \right)
 +
-\omega_j \bigl((1-t)y + tx \bigr)
+\omega_j \bigl((1-t)p + tx \bigr)
 \right) ~ dt
 \\
 & = 
 \int_0^1
 \frac{d}{dt}
 \Bigl[
-t \omega_j\bigl((1-t)y + tx \bigr)
+t \omega_j\bigl((1-t)p + tx \bigr)
 \Bigr]
 \,
 dt
