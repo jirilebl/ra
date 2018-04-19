@@ -3696,7 +3696,7 @@ but we will not investigate this further.
 Notice that all the functions are $2\pi$-periodic and hence the trig
 polynomials are also $2\pi$-periodic.
 We could rescale $x$ to make the period different, but the theory is the
-same, so we will stick with the above scale.
+same, so we will stick with the period of $2\pi$.
 We compute that the antiderivative of $e^{inx}$ is $\frac{e^{inx}}{in}$ and
 so
 \begin{equation*}
@@ -3708,7 +3708,7 @@ so
 \end{equation*}
 Let us take
 \begin{equation*}
-f(x) = \sum_{n=-N}^N c_n e^{inx} ,
+f(x) := \sum_{n=-N}^N c_n e^{inx} ,
 \end{equation*}
 and for $m=-N,\ldots,N$ compute
 \begin{equation*}
@@ -3733,7 +3733,7 @@ well have included enough zero coefficients to make $\sabs{m} \leq N$.
 
 \begin{prop}
 A trigonometric polynomial
-$f(x) = \sum_{n=-N}^N c_n e^{inx}$
+$f(x) = \sum_{n=-N}^N c_n\, e^{inx}$
 is real-valued for real $x$ if
 and only if $c_{-m} = \overline{c_m}$ for all $m=-N,\ldots,N$.
 \end{prop}
@@ -3760,11 +3760,11 @@ The complex conjugate goes inside the integral because the integral is
 done on real and imaginary parts separately.  On the other hand if 
 $c_{-m} = \overline{c_m}$, then we notice that
 \begin{equation*}
-\overline{c_{-m} e^{-imx}+ c_{m} e^{imx}}
+\overline{c_{-m}\, e^{-imx}+ c_{m}\, e^{imx}}
 =
-\overline{c_{-m}} e^{imx}+ \overline{c_{m}} e^{-imx}
+\overline{c_{-m}}\, e^{imx}+ \overline{c_{m}}\, e^{-imx}
 =
-c_{m} e^{imx}+ c_{-m} e^{-imx} .
+c_{m}\, e^{imx}+ c_{-m}\, e^{-imx} .
 \end{equation*}
 We also have that $c_0 = \overline{c_0}$.
 So by pairing up the terms we obtain that $f$ has to be real-valued.
@@ -3776,7 +3776,7 @@ functions $e^{inx}$, which we can now prove.
 \begin{prop}
 If
 \begin{equation*}
-\sum_{n=-N}^N c_n e^{inx} = 0
+\sum_{n=-N}^N c_n \, e^{inx} = 0
 \end{equation*}
 for all $x \in \R$, then $c_n = 0$ for all $n$.
 \end{prop}
@@ -3789,7 +3789,7 @@ Proof follows immediately from the integral formula for $c_n$.
 
 We now take limits.  We call the series
 \begin{equation*}
-\sum_{n=-\infty}^\infty c_n e^{inx}
+\sum_{n=-\infty}^\infty c_n \, e^{inx}
 \end{equation*}
 the \emph{\myindex{Fourier series}}.  The numbers $c_n$
 we call \emph{\myindex{Fourier coefficients}}.  We could also develop everything with
@@ -3816,29 +3816,30 @@ c_n =
 f(x) e^{-inx} ~ dx
 \end{equation*}
 its Fourier coefficients.  Often these numbers are
-written as $\hat{f}(n)$\footnote{If you have seen the Fourier transform,
-the similarity is not just
-coincidental, we are really taking a type of Fourier transform here}.
+written as $\hat{f}(n)$\footnote{The notation seems similar
+to Fourier transform for those readers that have seen it.
+The similarity is not just
+coincidental, we are taking a type of Fourier transform here.}.
 We then formally write down a Fourier series.
 As you might imagine such a series might not even converge.
 We write\glsadd{not:FS}
 \begin{equation*}
 f(x) \sim
-\sum_{n=-\infty}^\infty c_n e^{inx}
+\sum_{n=-\infty}^\infty c_n \, e^{inx}
 \end{equation*}
 although the $\sim$ doesn't imply anything about the two sides being equal
 in any way.  It is simply that we created a formal series using the formula
 for the coefficients.
 
-We have seen that the example Fourier series 
+We proved that the Fourier series 
 \begin{equation*}
 \sum_{n=1}^\infty \frac{\sin(nx)}{n^2}
 \end{equation*}
-converges uniformly and is hence continuous.  This 
-example can be extended to a more general criterion.
+converges uniformly and hence converges to a continuous function.  This 
+example and its proof can be extended to a more general criterion.
 
 \begin{prop}
-Let $\sum_{n=-\infty}^\infty c_n e^{inx}$ be a Fourier series,
+Let $\sum_{n=-\infty}^\infty c_n\, e^{inx}$ be a Fourier series,
 and $C$, $\alpha > 1$ constants such that
 \begin{equation*}
 \sabs{c_n} \leq \frac{C}{\sabs{n}^\alpha}
@@ -3853,7 +3854,7 @@ to a continuous function.
 We can also take derivatives.
 
 \begin{prop}
-Let $\sum_{n=-\infty}^\infty c_n e^{inx}$ be a Fourier series,
+Let $\sum_{n=-\infty}^\infty c_n\, e^{inx}$ be a Fourier series,
 and $C$, $\alpha > 2$ constants such that
 \begin{equation*}
 \sabs{c_n} \leq \frac{C}{\sabs{n}^\alpha}
@@ -3867,7 +3868,7 @@ function by the previous proposition, so in particular it converges at some
 point.  Then differentiate the partial sums
 \begin{equation*}
 \sum_{n=-N}^{N}
-i n c_n e^{inx}
+i n c_n \,e^{inx}
 \end{equation*}
 and notice that 
 \begin{equation*}
@@ -4155,13 +4156,13 @@ f(x) e^{-inx} ~ dx .
 Write
 \begin{equation*}
 f(x) \sim
-\sum_{n=-\infty}^\infty c_n e^{inx} .
+\sum_{n=-\infty}^\infty c_n \,e^{inx} .
 \end{equation*}
 We define at the \emph{\myindex{symmetric partial sums}}
 \glsadd{not:FSsympartsum}
 \begin{equation*}
 s_N(f;x) := 
-\sum_{n=-N}^N c_n e^{inx} .
+\sum_{n=-N}^N c_n \,e^{inx} .
 \end{equation*}
 The inequality leading up to Bessel now reads:
 \begin{equation*}
@@ -4436,10 +4437,10 @@ on $[-\pi,\pi]$
 with
 \begin{equation*}
 f(x) \sim
-\sum_{n=-\infty}^\infty c_n e^{inx}
+\sum_{n=-\infty}^\infty c_n \,e^{inx}
 \qquad \text{and} \qquad
 g(x) \sim
-\sum_{n=-\infty}^\infty d_n e^{inx} .
+\sum_{n=-\infty}^\infty d_n \,e^{inx} .
 \end{equation*}
 Then
 \begin{equation*}
@@ -4698,7 +4699,7 @@ for a function $g$ that is Riemann integrable on any interval.
 Suppose
 \begin{equation*}
 f(x) \sim
-\sum_{n=-\infty}^\infty c_n e^{inx} .
+\sum_{n=-\infty}^\infty c_n \,e^{inx} .
 \end{equation*}
 Show that there exists a $C > 0$ such that
 $\sabs{c_n} \leq \frac{C}{\sabs{n}}$.
