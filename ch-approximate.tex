@@ -3030,6 +3030,27 @@ set of continuous functions is a very tiny subset of the set of all
 functions.
 \end{remark}
 
+\textbf{Warning!}
+The fact that every continuous function $f \colon [-1,1] \to \C$ (or any
+interval $[a,b]$) can be uniformly
+approximated by polynomials
+\begin{equation*}
+\sum_{k=0}^n a_k\,  x^k
+\end{equation*}
+does not mean that that any continuous $f$ is analytic, that it is equal to the
+series
+\begin{equation*}
+\sum_{k=0}^\infty c_k\,  x^k .
+\end{equation*}
+An analytic function is infinitely differentiable, so the function
+$\sabs{x}$ provides a counterexample.
+
+The key distinction is that
+the polynomials coming from the Weierstrass theorem are not the partial
+sums of any series.  For each one, the coefficients $a_k$ above can be
+completely different, they do not need to come from a single sequence $\{
+c_k \}$.
+
 \subsection{Stone-Weierstrass approximation}
 
 We want to abstract away what is not really
@@ -3057,8 +3078,8 @@ $p_n(0) = 0$ for all $n$.
 
 \begin{proof}
 As $f(x) = \sabs{x}$ is continuous and real-valued
-on $[-a,a]$ we definitely have some
-real polynomials $\widetilde{p}_n$ that converge to $f$
+on $[-a,a]$, the Weierstrass theorem gives a sequence of
+real polynomials $\{ \widetilde{p}_n \}$ that converges to $f$
 uniformly on $[-a,a]$.
 Let
 \begin{equation*}
@@ -3069,8 +3090,9 @@ Obviously $p_n(0) = 0$.
 We know
 $\lim \widetilde{p}_n(0) = 0$.  Given $\epsilon > 0$, let $N$ be such that
 for $n \geq N$ we have $\sabs{\widetilde{p}_n(0)} < \nicefrac{\epsilon}{2}$
-and also that $\bigl\lvert\widetilde{p}_n(x)-\sabs{x}\big\rvert < \nicefrac{\epsilon}{2}$.
-Now
+and also that $\bigl\lvert\widetilde{p}_n(x)-\sabs{x}\big\rvert <
+\nicefrac{\epsilon}{2}$ for all $x \in [-a,a]$.
+Then
 \begin{equation*}
 \bigl\lvert p_n(x)-\sabs{x} \bigr\rvert
 =
@@ -3083,7 +3105,8 @@ Now
 
 Following the proof of the theorem,
 we see that we can always make the polynomials from the Weierstrass theorem
-have a fixed value at one point, so it works not just for $\sabs{x}$.
+have a fixed value at one point, so it works not just for $\sabs{x}$, but
+that's the one we will need.
 
 \begin{defn}
 A set $\sA$ of complex-valued functions $f \colon X \to \C$ is said to be an 
@@ -3250,7 +3273,7 @@ The set of polynomials with no constant term vanishes at the origin.
 
 \begin{prop} \label{prop:SWinterpolate}
 Suppose $\sA$ is an algebra of functions on a set $X$, that separates points
-and vanishes at no point.  Suppose $x,y$ are distinct points of $X$ and
+and vanishes at no point.  Suppose $x,y$ are distinct points of $X$, and
 $c,d \in \C$.  Then there is an $f \in \sA$ such that
 \begin{equation*}
 f(x) = c, \qquad f(y) = d .
@@ -3264,9 +3287,9 @@ such that
 \begin{equation*}
 g(x) \not= g(y), \quad h(x) \not= 0, \quad k(y) \not= 0 .
 \end{equation*}
-Write
+Let
 \begin{equation*}
-f = 
+f := 
 c
 \frac{\bigl(g - g(y)\bigr)h}{\bigl(g(x)-g(y)\bigr)h(x) } + 
 d
@@ -3312,12 +3335,13 @@ for all $y \in [-M,M]$.
 Because $\sA$ is an algebra (there is no constant term in the polynomial)
 we have
 \begin{equation*}
-g = \sum_{j=1}^N c_j f^j \in \sA .
+%g :=
+\sum_{j=1}^N c_j f^j \in \sA .
 \end{equation*}
-As $\sabs{f(x)} \leq M$ we have that
+As $\sabs{f(x)} \leq M$ we have that for all $x \in X$
 \begin{equation*}
-\bigl\lvert\sabs{f(x)} - g(x)\bigr\rvert
-=
+%\bigl\lvert\sabs{f(x)} - g(x)\bigr\rvert
+%=
 \abs{\sabs{f(x)} - \sum_{j=1}^N c_j {\bigl(f(x)\bigr)}^j}
 < \epsilon .
 \end{equation*}
@@ -3371,7 +3395,7 @@ h_y(x) = f(x), \qquad h_y(y)=f(y) .
 \end{equation*}
 As $h_y$ and $f$ are continuous, the set
 \begin{equation*}
-J_y = \{ t \in X : h_y(t) > f(t) -\epsilon \}
+J_y := \{ t \in X : h_y(t) > f(t) -\epsilon \}
 \end{equation*}
 is open (it is the inverse image of an open set by a continuous function).
 Furthermore $y \in J_y$.  So the sets $J_y$ cover $X$.
@@ -3383,17 +3407,17 @@ X = \bigcup_{j=1}^n J_{y_j}  .
 \end{equation*}
 Let 
 \begin{equation*}
-g_x = \max(h_{y_1},h_{y_2},\ldots,h_{y_n})
+g_x := \max(h_{y_1},h_{y_2},\ldots,h_{y_n})
 \end{equation*}
 By Claim 2, $g_x$ is in $\overline{\sA}$.
-It is easy to see that
+Furthermore,
 \begin{equation*}
 g_x(t) > f(t) -\epsilon
 \end{equation*}
 for all $t \in X$, since for any $t$ there was at least one $h_{y_j}$ for
-which this was true.
+which $h_{y_j}(t) > f(t) -\epsilon$.
 
-Furthermore $h_y(x) = f(x)$ for all $y \in X$, so
+Finally $h_y(x) = f(x)$ for all $y \in X$, so
 $g_x(x) = f(x)$.
 \end{proof}
 
@@ -3407,11 +3431,11 @@ exists an $h \in \overline{\sA}$ such that}
 \end{equation*}
 
 \begin{proof}
-For any $x$ find function $g_x$ as in Claim 3.
+For any $x$ find the function $g_x$ as in Claim 3.
 
 Let
 \begin{equation*}
-V_x = \bigl\{ t \in X : g_x(t) < f(t) + \epsilon \bigr\}.
+V_x := \bigl\{ t \in X : g_x(t) < f(t) + \epsilon \bigr\}.
 \end{equation*}
 The sets $V_x$ are open as $g_x$ and $f$ are continuous.
 Furthermore as $g_x(x) = f(x)$, $x \in V_x$, and so the sets $V_x$ cover $X$.  Thus
@@ -3420,7 +3444,7 @@ are finitely many points $x_1,x_2,\ldots,x_n$ such that
 \begin{equation*}
 X = \bigcup_{j=1}^n V_{x_j} .
 \end{equation*}
-Now let
+Let
 \begin{equation*}
 h := \min(g_{x_1},g_{x_2},\ldots,g_{x_n}) .
 \end{equation*}
@@ -3465,9 +3489,7 @@ of such functions.  For example above,
 the algebra is generated by $e^t$, we simply
 consider polynomials in $e^t$.
 
-\medskip
-
-\textbf{Warning!}
+\begin{example}
 We mentioned that the set of all functions of the form
 \begin{equation*}
 a_0 +
@@ -3477,7 +3499,7 @@ is an algebra.
 When considered on $[0,\pi]$, 
 it separates points and vanishes nowhere so
 \hyperref[thm:SWreal]{Stone--Weierstrass} applies.
-You \emph{do not} want to conclude that every continuous
+As for polynomials, you \emph{do not} want to conclude that every continuous
 function on $[0,\pi]$ has a uniformly convergent
 Fourier cosine series, that is, that every continuous
 function can be written as
@@ -3489,20 +3511,7 @@ That is \emph{not true}!
 There exist continuous functions
 whose Fourier series does not converge even pointwise
 let alone uniformly.
-%We do have formulas
-%for the coefficients, but those coefficients not give us a convergent
-%series.
-The
-trick is that the sequence of functions in the algebra that we obtain
-by Stone--Weierstrass
-is not necessarily the sequence of partial sums of a series.
-
-Same warning applies to polynomials and analytic functions.
-Just because a function is a
-uniform limit of polynomials doesn't mean that it is a uniform limit of a
-power series.  That is, while every continuous function on an interval
-$[a,b]$ is a uniform limit of polynomials, not every continuous
-function is analytic.
+\end{example}
 
 To obtain Stone--Weierstrass for complex algebras, we must
 make an extra assumption.
@@ -3543,7 +3552,8 @@ The set $\sA_\R$ is a real algebra, and satisfies the hypotheses of the
 \hyperref[thm:SWreal]{real Stone--Weierstrass theorem}.  So given any $f = u+iv \in C(X,\C)$,
 we find $g,h \in \sA_\R$ such that
 $\sabs{u(t)-g(t)} < \nicefrac{\epsilon}{2}$ and
-$\sabs{v(t)-h(t)} < \nicefrac{\epsilon}{2}$ for all $t \in X$.  So
+$\sabs{v(t)-h(t)} < \nicefrac{\epsilon}{2}$ for all $t \in X$.
+Next, $g+i h \in \sA$, and
 \begin{multline*}
 \abs{f(t) - \bigl(g(t)+ih(t)\bigr)} = 
 \abs{u(t)+iv(t) - \bigl(g(t)+ih(t)\bigr)} \\
@@ -3558,12 +3568,9 @@ So $\overline{\sA} = C(X,\C)$.
 The self-adjoint requirement is necessary although it is not so obvious to
 see it.  For an example see \exerciseref{exercise:selfadjointSW}.
 
-%FIXME: An example of why we need the self-adjoint will be in the homework.
-%?? FIXME: add exercise this requires Cauchy integral, so perhaps not
-
-Here is an interesting application.  We'll do it for the complex version, but
-the same thing can be done with the real version.  It turns out when working
-with functions of two variables, one would really like to work with functions
+Here is an interesting application.  We will do it for the complex version, but
+the same thing can be done with the real version.  When working
+with functions of two variables, it may be useful to work with functions
 of the form $f(x)g(y)$ rather than $F(x,y)$.  We can't quite do that, but we
 do have the following.
 
@@ -3642,6 +3649,7 @@ for the domain $[-1,1]$?
 \end{enumerate}
 \end{exercise}
 
+\pagebreak[2]
 \begin{exercise}
 Let $\sabs{z}=1$ define the unit circle $S^1 \subset \C$.
 \begin{enumerate}[a)]
@@ -3667,14 +3675,8 @@ steady state heat problem.
 Hint: A good way to write the equation for $S^1$ is $z \bar{z} = 1$.
 \end{exercise}
 
+\pagebreak[1]
 \begin{exercise}
-%Suppose we already know the complex exponential
-%$e^{it} = \cos(t) + i \sin
-%(t)$, that
-%${\bigl(e^{it}\bigr)}^n = e^{int}$,
-%and that
-%$\overline{e^{it}} = e^{-it}$ (all things
-%we will prove in \sectionref{sec:complexexp}).
 Show that for complex numbers $c_j$, the set of functions
 of $x$ on $[-\pi,\pi]$
 of the form
@@ -3686,14 +3688,7 @@ and therefore such functions are dense in the $C([-\pi,\pi],\C)$.
 \end{exercise}
 
 
-\begin{samepage}
 \begin{exercise} \label{exercise:selfadjointSW}
-%Again suppose we already know the complex exponential
-%$e^{it} = \cos(t) + i \sin (t)$, that
-%${\bigl(e^{it}\bigr)}^n = e^{int}$, that
-%$\overline{e^{it}} = e^{-it}$, and that
-%$e^{z+w} = e^z e^w$ (all things
-%we will prove in \sectionref{sec:complexexp}).
 Let $S^1 \subset \C$ be the unit circle, that is the set where
 $\sabs{z} = 1$.  Orient this set counterclockwise.
 Let $\gamma(t) := e^{it}$.
@@ -3721,7 +3716,6 @@ Conclude that polynomials in $z$ (this algebra of functions is
 not self-adjoint) are not dense in $C(S^1,\C)$.
 \end{enumerate}
 \end{exercise}
-\end{samepage}
 
 
 
