@@ -2742,7 +2742,7 @@ functions than polynomials.
 \begin{thm}[Weierstrass approximation theorem]
 If $f \colon [a,b] \to \C$ is continuous, then there exists a sequence $\{
 p_n \}$ of polynomials converging to $f$ uniformly on $[a,b]$.
-Furthermore, if $f$ is real-valued, we can find real-valued $p_n$.
+Furthermore, if $f$ is real-valued, we can find $p_n$ with real coefficients.
 \end{thm}
 
 \begin{proof}
@@ -2753,12 +2753,12 @@ g(x) := f\bigl((b-a)x+a\bigr)-f(a) - x\bigl(f(b)-f(a)\bigr) .
 If we can prove the theorem for $g$ and find the $\{ p_n \}$ for $g$,
 we can prove it for $f$ since we simply
 composed with an invertible affine function and added an affine
-function to $f$, so we can easily reverse the process and apply that to our
+function to $f$.  So we can reverse the process and apply that to our
 $p_n$, to obtain polynomials approximating $f$.
 
-So $g$ is defined on $[0,1]$ and $g(0)=g(1)=0$.  We now assume that
+The function $g$ is defined on $[0,1]$ and $g(0)=g(1)=0$.  Assume that
 $g$ is defined on the whole real line for simplicity by defining
-$g(x) := 0$ if $x < 0$ or $x > 1$.
+$g(x) := 0$ if $x < 0$ or $x > 1$.  This extended $g$ is continuous.
 
 Define
 \begin{equation*}
@@ -2776,12 +2776,12 @@ $n=5,10,15,20,\ldots,100$ with higher $n$ in lighter shade.\label{fig:weierqn}}
 \end{myfigureht}
 
 The functions $q_n$ are peaks around 0 (ignoring what happens outside
-of $[-1,1]$) that get narrower and narrower, but the area underneath is
-always 1.
+of $[-1,1]$) that get narrower and taller as $n$ increases,
+while the area underneath is always 1.
 A classic approximation idea
-is to do a \emph{\myindex{convolution}} integral with peaks like this.
-That is we 
-write for $x \in [0,1]$,
+is to do a \emph{\myindex{convolution}} integral with peaks like this:
+For
+for $x \in [0,1]$, let
 \begin{equation*}
 p_n(x) := \int_{0}^1 g(t)q_n(x-t) ~dt \quad \left( = \int_{-\infty}^\infty
 g(t)q_n(x-t) ~dt \right) .
@@ -2817,46 +2817,91 @@ Because $q_n$ is a polynomial we write
 q_n(x-t) = a_0(t) + a_1(t)x + \cdots + a_{2n}(t) x^{2n}
 \end{equation*}
 for some functions $a_k(t)$.
-Since the integral is in terms of $t$, the $x$s just pop out
-by linearity of the integral,
-and so we obtain that $p_n$ is a polynomial in $x$.
-Finally if $g(t)$ is real-valued then the functions $g(t)a_j(t)$ are
-real-valued and hence $p_n$ has real coefficients
-(proving the ``furthermore'' part of the theorem).
-
-We still need to prove that the limit of the $p_n$ is $g$.  First we need
-to get some handle on the
-size of $c_n$.  For $x \in [0,1]$,
+So
 \begin{equation*}
-{(1-x^2)}^n \geq (1-nx^2) .
+\begin{split}
+p_n(x) & =
+\int_{0}^1 g(t)q_n(x-t) ~dt
+\\
+&=
+\left(
+\int_0^1
+g(t)
+a_0(t)~dt
+\right)
++
+\left(
+\int_0^1
+g(t)
+a_1(t)~dt
+\right)
+\,
+x
++
+\cdots
++
+\left(
+\int_0^1
+g(t)
+a_{2n}(t)~dt
+\right)
+\,
+x^{2n} .
+\end{split}
 \end{equation*}
-This fact is an application of Bernoulli's inequality
-(\volIref{\exerciseref*{vI-exercise:bernoulliineq} of volume I})
-that says or can be 
-proved directly:
-the two expressions are equal at $x=0$ and 
-$\frac{d}{dx}\left({(1-x^2)}^n - (1-nx^2)\right)
-=-2nx{(1-x^2)}^{n-1}+2nx$, which is nonnegative for $x \in [0,1]$.
-Furthermore $1-nx^2 \geq 0$ for $x \in [0,\nicefrac{1}{\sqrt{n}}]$.
-\begin{multline*}
-c_n^{-1}  = \int_{-1}^1 {(1-x^2)}^n ~ dx
-= 2\int_0^1 {(1-x^2)}^n ~ dx \\
-\geq 2\int_0^{1/\sqrt{n}} {(1-x^2)}^n ~ dx
-\geq 2\int_0^{1/\sqrt{n}} (1-nx^2)  ~ dx
-= \frac{4}{3\sqrt{n}}
-> \frac{1}{\sqrt{n}} .
-\end{multline*}
-so $c_n < \sqrt{n}$.
+In other words, $p_n$ is a polynomial in $x$.
+If $g(t)$ is real-valued then the functions $g(t)a_j(t)$ are
+real-valued and hence $p_n$ has real coefficients,
+proving the ``furthermore'' part of the theorem.
 
-Let's see how small $g$ is if we ignore some small bit around the origin,
+We still need to prove that $p_n$ converge to $g$.  First let us
+get some handle on the size of $c_n$.
+%For $x \in [0,1]$,
+%\begin{equation*}
+%{(1-x^2)}^n \geq (1-nx^2) .
+%\end{equation*}
+%This fact follows from Bernoulli's inequality
+%(\volIref{\exerciseref*{vI-exercise:bernoulliineq} of volume I})
+%or it can be 
+%proved directly:
+%the two expressions are equal at $x=0$ and 
+%$\frac{d}{dx}\left({(1-x^2)}^n - (1-nx^2)\right)
+%=-2nx{(1-x^2)}^{n-1}+2nx$, which is nonnegative for $x \in [0,1]$.
+%Furthermore $1-nx^2 \geq 0$ for $x \in [0,\nicefrac{1}{\sqrt{n}}]$.
+%\begin{equation*}
+%\begin{split}
+%c_n^{-1}   = \int_{-1}^1 {(1-x^2)}^n ~ dx
+%& = 2\int_0^1 {(1-x^2)}^n ~ dx \\
+%& \geq 2\int_0^{1/\sqrt{n}} {(1-x^2)}^n ~ dx
+%\\
+%& \geq 2\int_0^{1/\sqrt{n}} (1-nx^2)  ~ dx
+%\\
+%& = \frac{4}{3\sqrt{n}}
+%> \frac{1}{\sqrt{n}} .
+%\end{split}
+%\end{equation*}
+%So $c_n < \sqrt{n}$.
+%
+For $x \in [0,1]$, we have that $1-x \leq 1-x^2$.  Therefore
+\begin{equation*}
+\begin{split}
+c_n^{-1}   = \int_{-1}^1 {(1-x^2)}^n ~ dx
+& = 2\int_0^1 {(1-x^2)}^n ~ dx \\
+& \geq 2\int_0^{1} {(1-x)}^n ~ dx
+= \frac{2}{n+1} .
+\end{split}
+\end{equation*}
+So $c_n \leq \frac{n+1}{2} \leq n$.
+
+Let us see how small $q_n$ is if we ignore some small interval around the origin,
 which is where the peak is.
-Given any $\delta > 0$, $\delta < 1$, we have for $\delta \leq \sabs{x} \leq
-1$
+Given any $\delta > 0$, $\delta < 1$, for
+$x$ such that $\delta \leq \sabs{x} \leq 1$, we have
 \begin{equation*}
-q_n(x) \leq \sqrt{n}{(1-\delta^2)}^n .
+q_n(x) \leq n{(1-\delta^2)}^n .
 \end{equation*}
-Then it is easy to see (e.g.\ by the ratio test) that
-$\sqrt{n}{(1-\delta^2)}^n$ goes to 0 as $n$ goes to infinity.
+By the ratio test, 
+$n{(1-\delta^2)}^n$ goes to 0 as $n$ goes to infinity.
 The function $q_n$ is even, $q_n(t) = q_n(-t)$, and $g$
 is zero outside of $[0,1]$.
 So for $x \in [0,1]$,
@@ -2864,9 +2909,9 @@ So for $x \in [0,1]$,
 p_n(x) = 
 \int_{0}^1 g(t)q_n(x-t)  ~ dt
 =
-\int_{-x}^{1-x} g(t+x)q_n(-t)  ~ dt
+\int_{-x}^{1-x} g(x+t)q_n(-t)  ~ dt
 =
-\int_{-1}^{1} g(t+x)q_n(t)  ~ dt .
+\int_{-1}^{1} g(x+t)q_n(t)  ~ dt .
 \end{equation*}
 
 Let $\epsilon > 0$ be given.
@@ -2880,7 +2925,7 @@ $\sabs{x-y} < \delta$ (and $x,y \in [-1,2]$) then
 Let $M$ be such that $\sabs{g(x)} \leq M$ for all $x$.  Let $N$ be
 such that for all $n \geq N$,
 \begin{equation*}
-4M\sqrt{n}{(1-\delta^2)}^n < \frac{\epsilon}{2} .
+4M n{(1-\delta^2)}^n < \frac{\epsilon}{2} .
 \end{equation*}
 
 Note that 
@@ -2888,36 +2933,44 @@ $\int_{-1}^1 q_n(t) ~ dt = 1$ and $q_n(x) \geq 0$ on $[-1,1]$ so
 \begin{equation*}
 \begin{split}
 \sabs{p_n(x)-g(x)} & =
-\abs{\int_{-1}^1 g(t+x)q_n(t) ~ dt
+\abs{\int_{-1}^1 g(x+t)q_n(t) ~ dt
 -g(x)\int_{-1}^1 q_n(t) ~ dt} \\
 & =
-\abs{\int_{-1}^1 \bigl(g(t+x)-g(x)\bigr)q_n(t) ~ dt} \\
+\abs{\int_{-1}^1 \bigl(g(x+t)-g(x)\bigr)q_n(t) ~ dt} \\
 & \leq
-\int_{-1}^1 \sabs{g(t+x)-g(x)} q_n(t) ~ dt \\
+\int_{-1}^1 \sabs{g(x+t)-g(x)} q_n(t) ~ dt \\
 & =
-\int_{-1}^{-\delta} \sabs{g(t+x)-g(x)} q_n(t) ~ dt
-+
-\int_{-\delta}^{\delta} \sabs{g(t+x)-g(x)} q_n(t) ~ dt
+\int_{-1}^{-\delta} \sabs{g(x+t)-g(x)} q_n(t) ~ dt
+\quad +
+\int_{-\delta}^{\delta} \sabs{g(x+t)-g(x)} q_n(t) ~ dt
 \\
 & \phantom{\leq} +
-\int_{\delta}^1 \sabs{g(t+x)-g(x)} q_n(t) ~ dt \\
+\int_{\delta}^1 \sabs{g(x+t)-g(x)} q_n(t) ~ dt \\
 & \leq
 2M
 \int_{-1}^{-\delta} q_n(t) ~ dt
+\quad
 +
+\quad
 \frac{\epsilon}{2}
 \int_{-\delta}^{\delta} q_n(t) ~ dt
+\quad
 +
+\quad
 2M
 \int_{\delta}^1 q_n(t) ~ dt \\
 & \leq
-2M\sqrt{n}{(1-\delta^2)}^n(1-\delta)
+2M n{(1-\delta^2)}^n(1-\delta)
+\quad
 +
+\quad
 \frac{\epsilon}{2}
+\quad
 +
-2M\sqrt{n}{(1-\delta^2)}^n(1-\delta) \\
+\quad
+2M n{(1-\delta^2)}^n(1-\delta) \\
 & <
-4M\sqrt{n}{(1-\delta^2)}^n
+4M n{(1-\delta^2)}^n
 +
 \frac{\epsilon}{2}
 < \epsilon . \qedhere
