@@ -1047,7 +1047,7 @@ $\gamma\bigl( [a,b] \bigr) = \Gamma$.  We define the
 \end{equation*}
 \end{defn}
 
-So if $\gamma$ is smooth we have
+If $\gamma$ is smooth,
 \begin{equation*}
 \ell(\Gamma) = 
 \int_a^b
@@ -1099,11 +1099,11 @@ t = \ell\bigl( \gamma\bigl([0,t]\bigr) \bigr) =
 \end{equation*}
 for all $t$,
 which means that $\snorm{\gamma^{\:\prime}(t)} = 1$ for all $t$.
-Similarly for piecewise smooth we get
+Similarly for piecewise smooth $\gamma$, we get
 $\snorm{\gamma^{\:\prime}(t)} = 1$ for all $t$ where the derivative exists.
 So you can think of such a parametrization as moving around your curve at speed
-1.  If $\gamma \colon [0,r] \to \R^n$ is arclength parametrization, it is
-common then to use $s$ as the variable as then we have $\int_\gamma f ~ds
+1.  If $\gamma \colon [0,r] \to \R^n$ is an arclength parametrization, it is
+common to use $s$ as the variable as $\int_\gamma f ~ds
 = \int_0^r f\bigl(\gamma(s)\bigr) ~ds$.
 
 \subsection{Exercises}
@@ -1210,16 +1210,19 @@ Suppose $\gamma \colon [a,b] \to \R^n$ and $\alpha \colon [c,d] \to \R^n$
 are two smooth paths which are one-to-one and
 $\gamma\bigl([a,b]\bigr) = \alpha\bigl([c,d]\bigr)$.  Then
 there exists a smooth reparametrization $h \colon [a,b] \to [c,d]$
-such that $\gamma = \alpha \circ h$.  Hint: It should be not hard to find
-some $h$.  The trick is to show it is continuously differentiable
-with a nonvanishing derivative.  You will want to apply the implicit function
-theorem and it may at first seem the dimensions don't seem to work out.
+such that $\gamma = \alpha \circ h$.\\
+Hint 1: It is not hard to show $h$ exists.
+The trick is to prove it is continuously differentiable
+with a nonzero derivative.  Apply the implicit function
+theorem though it may at first seem the dimensions are wrong.\\
+Hint 2: Worry about derivative of $h$ in $(a,b)$ first.
 \item
 Prove the same thing as part a, but now for simple closed paths with the
 further assumption that $\gamma(a) = \gamma(b) = \alpha(c) = \alpha(d)$.
 \item
 Prove parts a) and b) but for piecewise smooth paths, obtaining
-piecewise smooth reparametrizations.  Hint: The trick is to find two
+piecewise smooth reparametrizations.\\
+Hint: The trick is to find two
 partitions such that when restricted to a subinterval of the partition
 both paths have the same image and are smooth, see the above exercise.
 \end{enumerate}
@@ -1838,7 +1841,7 @@ path between a point in one to a point in the other.
 Usually path connectedness is defined using just continuous paths rather
 than piecewise smooth paths.  Prove that the definitions are equivalent, in
 other words prove the following statement:\\
-Suppose $U \subset \R^n$ is such that for any $x,y \in U$, there exists a continuous function
+Suppose $U \subset \R^n$ is open is such that for any $x,y \in U$, there exists a continuous function
 $\gamma \colon [a,b] \to U$ such that $\gamma(a) = x$ and $\gamma(b) = y$.
 Then $U$ is path connected (in other words, then there exists a piecewise
 smooth path).

@@ -2274,8 +2274,29 @@ uniformly,
 although the sequence converges pointwise to a discontinuous function.
 \end{example}
 
-When the domain is countable, matters are easier.   The proof uses
-a very common and useful diagonal argument.
+\begin{example}
+The sequence $\{ f_n \}$ of functions in $C([0,1],\R)$ given by $f_n(x) := n^2(1-x)x^n$
+converges pointwise to the zero function (use the ratio test for
+$x < 1$).  As for each $x$, $\{f_n(x)\}$ converges to 0, it is bounded
+so $\{ f_n \}$ is pointwise bounded.
+
+By calculus we find that the maximum of each $f_n$ on
+$[0,1]$ is at the critical point at $x=\frac{n}{n+1}$, and
+\begin{equation*}
+\snorm{f_n}_u
+=
+f_n\left(\frac{n}{n+1}\right)
+= n \, {\left(\frac{n}{n+1}\right)}^{n+1} .
+\end{equation*}
+It is left to the reader to check that
+$\lim\, {\left(\frac{n}{n+1}\right)}^{n+1} = e^{-1}$, and so
+$\lim\, \snorm{f_n}_u = \infty$, or in other words,
+this sequence is not uniformly bounded.
+\end{example}
+
+When the domain is countable, we can always guarantee at least pointwise
+convergence.
+The proof uses a very common and useful diagonal argument.
 
 \begin{prop} \label{prop:subsequenceoncountableX}
 Let $X$ be a countable set and $f_n \colon X \to \C$ give a pointwise bounded
@@ -4421,9 +4442,6 @@ convergence always happens in the $L^2$ sense and
 furthermore that formal operations on the (infinite) vectors of
 Fourier coefficients are the same as the operations using the integral
 inner product.
-
-%FIXME? We will mostly sketch out the proof and leave some details to the reader
-%as exercises.  Some of these are exercises in Rudin.
 
 %FIXME: Should we prove $L^2$ triang and CS?  This is just formal nonsense
 

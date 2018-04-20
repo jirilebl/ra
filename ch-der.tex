@@ -846,6 +846,30 @@ $x \in (a,b)$.
 The converse of the proposition does not hold.  See
 \exampleref{baddifffunc:example} below.
 
+\medskip
+
+Another often used application of the mean value theorem you have possibly
+seen in calculus is the following result on differentiability at the
+end points of an interval.  The proof is
+\exerciseref{exercise:endpointderivative}.
+
+\begin{prop} \label{prop:endpointderivative}
+{\ }
+\begin{enumerate}[(i)]
+\item
+Suppose $f \colon [a,b) \to \R$ is continuous, differentiable in $(a,b)$,
+and $\lim_{x \to a} f'(x) = L$.  Then $f$ is differentiable at $a$ and
+$f'(a) = L$.
+\item
+Suppose $f \colon (a,b] \to \R$ is continuous, differentiable in $(a,b)$,
+and $\lim_{x \to b} f'(x) = L$.  Then $f$ is differentiable at $b$ and
+$f'(b) = L$.
+\end{enumerate}
+\end{prop}
+
+In fact, using the extension result \propref{context:prop}, you do not need to assume
+that $f$ is defined at the end point.  See \exerciseref{exercise:extendboundedder}.
+
 \subsection{Continuity of derivatives and the intermediate value theorem}
 
 Derivatives of functions satisfy an
@@ -988,6 +1012,7 @@ function such that $f'$ is a bounded function.  Prove
 $f$ is a Lipschitz continuous function.
 \end{exercise}
 
+\pagebreak[1]
 \begin{exercise}
 Suppose $f \colon [a,b] \to \R$ is differentiable and $c \in [a,b]$.
 Then show there exists a sequence $\{ x_n \}$ converging to $c$, $x_n
@@ -998,6 +1023,7 @@ f'(c) = \lim_{n\to \infty} f'(x_n).
 Do note this does \emph{not} imply that $f'$ is continuous (why?).
 \end{exercise}
 
+\pagebreak[1]
 \begin{exercise}
 Suppose $f \colon \R \to \R$ is a function such that
 $\abs{f(x)-f(y)} \leq \abs{x-y}^2$ for all $x$ and $y$.  Show that
@@ -1064,26 +1090,39 @@ $f'(x) = a$ for all $x$, and $f(0) = b$.  Find $f$ and prove that
 it is the unique differentiable function with this property.
 \end{exercise}
 
+\begin{exercise} \label{exercise:endpointderivative}
+{\ }
+\begin{enumerate}[a)]
+\item
+Prove \propref{prop:endpointderivative}.
+\item 
+Suppose $f \colon (a,b) \to \R$ is continuous, and suppose $f$ is differentiable everywhere except at $c \in
+(a,b)$ and $\lim_{x \to c} f'(x) = L$.
+Prove that $f$ is differentiable at
+$c$ and $f'(c) = L$.
+\end{enumerate}
+\end{exercise}
+
 \begin{exercise} \label{exercise:extendboundedder}
 Suppose $f \colon (0,1) \to \R$ is differentiable and $f'$
 is bounded.
 \begin{enumerate}[a)]
 \item
 Show that there exists a continuous function $g \colon [0,1) \to \R$
-such that $f(x) = g(x)$ for all $x \not= 0$.  Hint: \propref{context:prop} and
+such that $f(x) = g(x)$ for all $x \not= 0$.\\
+Hint: \propref{context:prop} and
 \exerciseref{exercise:boundeddermeanslip}.
 \item
 Find an example where the $g$ is not differentiable at $x=0$.
+\\
 Hint: Consider something based on $\sin(\ln x)$,
 and assume you know basic properties of
 $\sin$ and $\ln$ from calculus.
+\item
+Instead of assuming that $f'$ is bounded, assume that $\lim_{x \to 0} f'(x)
+= L$.  Prove that not only does $g$ exist but it is differentiable at $0$
+and $g'(0) = L$.
 \end{enumerate}
-\end{exercise}
-
-\begin{exercise}
-Suppose $f \colon (a,b) \to \R$ is differentiable everywhere except at $c \in
-(a,b)$ and $\lim_{x \to c} f'(x) = L$.  Show that $f$ is differentiable at
-$c$ and $f'(c) = L$.
 \end{exercise}
 
 \begin{exercise}
