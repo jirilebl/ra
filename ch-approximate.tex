@@ -2262,7 +2262,8 @@ on $[0,1]$ that are uniformly bounded but contain no subsequence converging
 even pointwise.
 Let us state without proof that $f_n(x) := \sin (2\pi n x)$ is one
 such sequence.
-Below we will show that there must always a subsequence converging at countably
+Below we will show that there must always exist
+a subsequence converging at countably
 many points, but $[0,1]$ is uncountable.
 \end{example}
 
@@ -2283,9 +2284,9 @@ pointwise.
 \end{prop}
 
 \begin{proof}
-Let $\{ x_n \}$ be an enumeration of the elements of $X$.
+Let $\{ x_n \}_{n=1}^{\infty}$ be an enumeration of the elements of $X$.
 The sequence $\{ f_n(x_1) \}_{n=1}^\infty$ is bounded and hence
-we have a subsequence of $\{ f_n \}$, which we denote by
+we have a subsequence of $\{ f_n \}_{n=1}^{\infty}$, which we denote by
 $\{ f_{1,k} \}_{k=1}^\infty$
 such that
 $\{ f_{1,k}(x_1) \}_{k=1}^\infty$ converges.
@@ -2308,9 +2309,8 @@ If $X$ is finite we are done as the process stops at some point.
 If $X$ is countably infinite,
 we pick the sequence
 $\{ f_{k,k} \}_{k=1}^\infty$.
-This is a subsequence of the original sequence $\{ f_n \}_{n=1}^\infty$
-of course.  Also for any $m$,
-except for the first $m$ terms $\{ f_{k,k} \}_{k=1}^\infty$ is a subsequence of $\{ f_{m,k}
+This is a subsequence of the original sequence $\{ f_n \}_{n=1}^\infty$.
+For any $m$ the tail $\{ f_{k,k} \}_{k=m}^\infty$ is a subsequence of $\{ f_{m,k}
 \}_{k=1}^\infty$
 and hence for any $m$ the sequence $\{ f_{k,k}(x_m) \}_{k=1}^\infty$ converges.
 \end{proof}
@@ -2543,14 +2543,14 @@ subsequence $\{ f_{n_j} \}$.
 The trick is to use the mean value theorem.  If $M$ is the uniform bound on
 $\{ f_n' \}$, then by the mean value theorem
 \begin{equation*}
-\sabs{f_n(x)-f_n(y)} \leq M \sabs{x-y} .
+\sabs{f_n(x)-f_n(y)} \leq M \sabs{x-y} \qquad \text{for all $x,y \in X$}.
 \end{equation*}
 All the $f_n$ are Lipschitz with the same constant and hence
 the sequence is
 uniformly equicontinuous.
 
 Suppose $\sabs{f_n(x_0)} \leq M_0$ for all $n$.
-By the inverse triangle inequality, for all $x \in [a,b]$
+For all $x \in [a,b]$
 \begin{equation*}
 \sabs{f_n(x)} \leq \sabs{f_n(x_0)}+ \sabs{f_n(x)-f_n(x_0)} \leq M_0+ M \sabs{x-x_0}
 \leq M_0 + M(b-a) .
