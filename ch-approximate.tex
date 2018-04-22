@@ -11,6 +11,8 @@
 
 \sectionnotes{half a lecture}
 
+\subsection{The complex plane}
+
 In this chapter we consider approximation of functions, or in other words
 functions as limits of sequences and series.
 We will extend some results we already saw to a somewhat more
@@ -132,6 +134,8 @@ Ordering is one of the things we lose when we go from real to complex
 numbers.
 \end{remark}
 
+\subsection{Complex numbers and limits}
+
 It is not hard to show that the algebraic operations are
 continuous.  This is because convergence in 
 $\R^2$ is the same as convergence for each component.  So for example:
@@ -229,7 +233,7 @@ can directly apply these tests
 them without needing to reprove anything for complex
 series.
 
-\medskip
+\subsection{Complex-valued functions}
 
 When we deal with complex valued functions
 $f \colon X \to \C$, what we often do is to write
@@ -254,9 +258,17 @@ $f = u+iv$.  Thinking of $\C$ as $\R^2$ we find that $f$ is differentiable
 if $u$ and $v$ are differentiable.  For such a function the derivative
 was represented by a vector in $\R^2$.  Now a vector in $\R^2$ is a complex
 number.  In other words
+we write
+the
+\emph{derivative}\index{derivative!complex-valued function}
+as
+\glsadd{not:mvder}
 \begin{equation*}
-f'(t) = u'(t) + i \, v'(t) .
+f'(t) := u'(t) + i \, v'(t) .
 \end{equation*}
+The linear operator representing the derivative is the multiplication by
+the complex number $f'(t)$, so nothing is lost in this identification.
+
 
 \subsection{Exercises}
 
@@ -393,7 +405,7 @@ for all $n \geq M$ and all $x \in X$ we have
 d\bigl(f_n(x),f(x)\bigr) < \epsilon .
 \end{equation*}
 
-A series of complex-valued functions converges uniformly if the sequence of
+A series $\sum f_n$ of complex-valued functions converges uniformly if the sequence of
 partial sums converges uniformly, that is for every $\epsilon > 0$
 there exists an $M$ such that
 for all $n \geq M$ and all $x \in X$
@@ -432,8 +444,8 @@ For $f \colon X \to \C$, we write\glsadd{not:uniformnorm}
 \end{equation*}
 We call $\snorm{\cdot}_u$
 the \emph{\myindex{supremum norm}} or \emph{\myindex{uniform norm}}.
-Then 
-$f_n \colon X \to \C$ converge uniformly to $f$ if and only if
+Then a sequence of functions
+$f_n \colon X \to \C$ converges uniformly to $f \colon X \to \C$ if and only if
 \begin{equation*}
 \lim_{n\to \infty} \snorm{f_n-f}_u = 0 .
 \end{equation*}
@@ -549,10 +561,10 @@ Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces, and let
 $f_n \colon X \to Y$ be functions.
 Suppose $Y$ is complete metric space.
 Suppose $\{ f_n \}$ converges uniformly to $f \colon X \to \C$.  
-Let $\{ x_k \}$ be a sequence in $X$ and $x = \lim \, x_k$.  Suppose
+Let $\{ x_k \}$ be a sequence in $X$ and $x := \lim \, x_k$.  Suppose
 that
 \begin{equation*}
-a_n = \lim_{k \to \infty} f_n(x_k)
+a_n := \lim_{k \to \infty} f_n(x_k)
 \end{equation*}
 exists for all $n$.  Then
 $\{a_n\}$ converges and 
@@ -568,7 +580,7 @@ In other words
 \end{equation*}
 
 \begin{proof}
-First we have to show that $\{ a_n \}$ converges.  As
+First we show that $\{ a_n \}$ converges.  As
 $\{ f_n \}$ converges uniformly it is uniformly Cauchy. 
 Let $\epsilon > 0$ be given.  There is
 an $M$ such that for all $m,n \geq M$ we have
@@ -581,7 +593,7 @@ to find
 d_Y(a_n,a_m) \leq \epsilon .
 \end{equation*}
 Hence $\{a_n\}$ is Cauchy and converges since $Y$ is complete.  Write
-$a := \lim_{n\to\infty} a_n$.
+$a := \lim \, a_n$.
 
 Find a $k \in \N$ such that
 \begin{equation*}
@@ -632,7 +644,7 @@ on the sequence, we can obtain a partial converse such as Dini's theorem,
 
 Assuming the exercise that for a compact $X$, $C(X,\C)$ is a metric space with
 the uniform norm (actually a normed vector space).  We have just shown that
-it is Cauchy complete.  \propref{prop:unifcauchymetric} says that a Cauchy
+it is Cauchy complete:  \propref{prop:unifcauchymetric} says that a Cauchy
 sequence in $C(X,\C)$ converges to some function,
 and \corref{cor:metricuniformcontinuous} shows that the limit is in fact
 continuous and hence in $C(X,\C)$.
@@ -704,16 +716,16 @@ E.g.\ the Lebesgue integral.
 
 \subsection{Differentiation}
 
-For complex-valued functions, define the
-\emph{derivative}\index{derivative!complex-valued function}
-of $f \colon [a,b] \to
-\C$ where $f(x) = u(x)+iv(x)$ as\glsadd{not:mvder}
+Recall that a complex-valued function
+$f \colon [a,b] \to \C$ where $f(x) = u(x)+i\,v(x)$
+is differentiable, if $u$ and $v$ are differentiable
+and the derivative is
 \begin{equation*}
-f'(x) := u'(x)+iv'(x) .
+f'(x) = u'(x)+i\,v'(x) .
 \end{equation*}
-This definition is consistent with the definition for vector valued
-functions as the complex number that is the derivative of $f$ gives rise to
-a real-linear operator on $\R^2$.
+%This definition is consistent with the definition for vector valued
+%functions as the complex number that is the derivative of $f$ gives rise to
+%a real-linear operator on $\R^2$.
 
 The proof of the following theorem is to apply the corresponding theorem for
 real functions to $u$ and $v$, and is left as an exercise.
@@ -888,6 +900,35 @@ Prove \thmref{thm:dersconvergecomplex}.
 \begin{exercise}
 Prove \propref{prop:complexlimitswapintegral} by reducing to the real
 result.
+\end{exercise}
+
+\begin{exercise}
+Work out the following counterexample to the converse of
+the Weierstrass $M$-test (\thmref{thm:weiermtest}).  Define
+$f_n \colon [0,1] \to \R$ by
+\begin{equation*}
+f_n(x) :=
+\begin{cases}
+\frac{1}{n} & \text{if $\frac{1}{n+1} < x < \frac{1}{n}$,}\\
+0	& \text{else.}
+\end{cases}
+\end{equation*}
+Then prove that $\sum f_n$ converges uniformly, but $\sum \snorm{f_n}_u$
+does not.
+\end{exercise}
+
+\begin{exercise}
+Suppose $f_n \colon [0,1] \to \R$ are monotone increasing functions and
+suppose that $\sum f_n$ converges pointwise.  Prove that $\sum f_n$
+converges uniformly.
+\end{exercise}
+
+\begin{exercise}
+Prove that
+\begin{equation*}
+\sum_{n=1}^\infty e^{-nx}
+\end{equation*}
+converges for all $x > 0$ to a differentiable function.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3728,8 +3769,9 @@ Then $\overline{\sA} = C(X,\R)$.
 Fourier series\footnote{%
 Named after the French mathematician
 \href{http://en.wikipedia.org/wiki/Joseph_Fourier}{Jean-Baptiste Joseph Fourier}
-(1768--1830).} is perhaps the most important of the series that we cover in
-this book.  We have seen a few in examples before, but let us start
+(1768--1830).} is perhaps the most important (and most difficult to
+understand) of the series that we cover in
+this book.  We have seen it in a few examples before, but let us start
 at the beginning.
 
 \subsection{Trigonometric polynomials}
@@ -3747,19 +3789,40 @@ The second form is usually more convenient.  Note that if
 $\sabs{z}=1$ we write $z = e^{ix}$, and so
 \begin{equation*}
 \sum_{n=-N}^N c_n e^{inx} = 
-\sum_{n=-N}^N c_n z^n ,
+\sum_{n=-N}^N c_n z^n .
 \end{equation*}
-so a trigonometric polynomial is really a rational function (do note that
+So a trigonometric polynomial is really a rational function (do note that
 we are allowing negative powers) evaluated on the unit circle.  There is
-a wonderful connection between power series (actually Laurent series) and
+a wonderful connection between power series (actually Laurent series because
+of the native powers) and
 Fourier series because of this observation,
 but we will not investigate this further.
 
-Notice that all the functions are $2\pi$-periodic and hence the trig
+\medskip
+
+Another reason why Fourier series are important and come up in so many
+applications is that the functions are eigenfunctions%
+\footnote{Eigenfunction is like an eigenvector for a matrix, but for a linear
+operator on a vector space of functions.} of various
+differential operators.  For example,
+\begin{equation*}
+\frac{d}{dx} \bigl[ e^{ikx} \bigr] = (ik) e^{ikx}, \qquad
+\frac{d^2}{dx^2} \bigl[ e^{ikx} \bigr] = (-k^2) e^{ikx} .
+\end{equation*}
+That is, they are the functions whose derivative is a scalar (the
+eigenvalue) times itself.
+Just as eigenvalues and eigenvectors are important in studying matrices,
+eigenvalues and eigenfunctions are important when studying linear
+differential equations.
+
+\medskip
+
+The functions $\cos (nx)$, $\sin (nx)$, and $e^{inx}$ are $2\pi$-periodic
+and hence trigonometric
 polynomials are also $2\pi$-periodic.
 We could rescale $x$ to make the period different, but the theory is the
-same, so we will stick with the period of $2\pi$.
-We compute that the antiderivative of $e^{inx}$ is $\frac{e^{inx}}{in}$ and
+same, so let us stick with the period of $2\pi$.
+The antiderivative of $e^{inx}$ is $\frac{e^{inx}}{in}$ and
 so
 \begin{equation*}
 \int_{-\pi}^\pi e^{inx} ~ dx =
@@ -3768,7 +3831,7 @@ so
 0 & \text{otherwise.}
 \end{cases}
 \end{equation*}
-Let us take
+Consider
 \begin{equation*}
 f(x) := \sum_{n=-N}^N c_n e^{inx} ,
 \end{equation*}
@@ -3789,8 +3852,8 @@ e^{i(n-m)x}
 =
 c_m .
 \end{equation*}
-We therefore have a way of computing the coefficients $c_m$ by an integral
-of $f$.  Of course if $\sabs{m} > N$ the integral is just 0.  We might as
+We just found a way of computing the coefficients $c_m$ using an integral
+of $f$.  If $\sabs{m} > N$ the integral is just 0: We might as
 well have included enough zero coefficients to make $\sabs{m} \leq N$.
 
 \begin{prop}
@@ -3819,28 +3882,30 @@ f(x) e^{imx} ~ dx
 = c_{-m} .
 \end{equation*}
 The complex conjugate goes inside the integral because the integral is
-done on real and imaginary parts separately.  On the other hand if 
-$c_{-m} = \overline{c_m}$, then we notice that
+done on real and imaginary parts separately.
+
+On the other hand if 
+$c_{-m} = \overline{c_m}$, then
 \begin{equation*}
 \overline{c_{-m}\, e^{-imx}+ c_{m}\, e^{imx}}
 =
 \overline{c_{-m}}\, e^{imx}+ \overline{c_{m}}\, e^{-imx}
 =
-c_{m}\, e^{imx}+ c_{-m}\, e^{-imx} .
+c_{m}\, e^{imx}+ c_{-m}\, e^{-imx} ,
 \end{equation*}
-We also have that $c_0 = \overline{c_0}$.
+which is real valued.  Also $c_0 = \overline{c_0}$, so
+$c_0$ is real.
 So by pairing up the terms we obtain that $f$ has to be real-valued.
 \end{proof}
 
-In fact, the above could also follow from the linear independence of the
-functions $e^{inx}$, which we can now prove.
+The functions $e^{inx}$ are also linearly independent.
 
 \begin{prop}
 If
 \begin{equation*}
 \sum_{n=-N}^N c_n \, e^{inx} = 0
 \end{equation*}
-for all $x \in \R$, then $c_n = 0$ for all $n$.
+for all $x \in [-\pi,\pi]$, then $c_n = 0$ for all $n$.
 \end{prop}
 
 \begin{proof}
@@ -3860,8 +3925,8 @@ sines and cosines, but it is equivalent and slightly more messy.
 Several questions arise.  What functions are expressible as 
 Fourier series?  Obviously, they have to be $2\pi$-periodic, but not every
 periodic function is expressible with the series.  Furthermore, if we do have
-a Fourier series, where does it converge (if at all)?  Does it converge
-absolutely?  Uniformly (and where)?  Also note that the series has two
+a Fourier series, where does it converge (where and if at all)?  Does it converge
+absolutely?  Uniformly?  Also note that the series has two
 limits.  When talking about Fourier series convergence, we often
 talk about the following limit:
 \begin{equation*}
@@ -3871,13 +3936,16 @@ talk about the following limit:
 There are other ways we can sum the series that can get convergence in more
 situations, but we refrain from discussing those.
 
-For any function integrable on $[-\pi,\pi]$ we call the numbers
+\medskip
+
+Conversely, we start with any integrable function $f \colon [-\pi,\pi] \to
+\C$, and we call the numbers
 \begin{equation*}
-c_n = 
+c_n := 
 \frac{1}{2\pi} \int_{-\pi}^\pi
 f(x) e^{-inx} ~ dx
 \end{equation*}
-its Fourier coefficients.  Often these numbers are
+its \emph{Fourier coefficients}.  Often these numbers are
 written as $\hat{f}(n)$\footnote{The notation seems similar
 to Fourier transform for those readers that have seen it.
 The similarity is not just
@@ -3893,7 +3961,7 @@ although the $\sim$ doesn't imply anything about the two sides being equal
 in any way.  It is simply that we created a formal series using the formula
 for the coefficients.
 
-We proved that the Fourier series 
+A few sections ago, we proved that the Fourier series 
 \begin{equation*}
 \sum_{n=1}^\infty \frac{\sin(nx)}{n^2}
 \end{equation*}
@@ -3936,12 +4004,15 @@ and notice that
 \begin{equation*}
 \sabs{i n c_n} \leq \frac{C}{\sabs{n}^{\alpha-1}} .
 \end{equation*}
-The differentiated series converge uniformly by the $M$-test again.  Since
-the derivatives converge uniformly, we find that the series converges 
-to a continuously differentiable function.
+The differentiated series converges uniformly by the $M$-test again.  Since
+the differentiated series
+converges uniformly, we find that the original series $\sum c_n\,e^{inx}$
+converges 
+to a continuously differentiable function, whose derivative is
+the differentiated series.
 
-In fact, by iterating the same reasoning we find that if
-for some $C$ and $\alpha > k$ ($k \in \N$) we have
+By iterating the same reasoning we find that if
+for some $C$ and $\alpha > k+1$ ($k \in \N$) we have
 \begin{equation*}
 \sabs{c_n} 
 \leq \frac{C}{\sabs{n}^\alpha}
@@ -3953,11 +4024,13 @@ regular the limit is.
 
 \subsection{Orthonormal systems}
 
-Let us now investigate convergence of Fourier series from the other side:
-Given $f$, what can we say about the series?
+%Let us now investigate convergence of Fourier series from the other side:
+%Given $f$, what can we say about the series?
 
-Let us first prove some general results about so called
-\emph{orthonormal systems}.
+Let us abstract away some of the properties of the exponentials, and
+study a more general series for a function.
+One fundamental property of the exponentials that make Fourier series what it is
+is that the exponentials are a so-called \emph{orthonormal system}.
 Let us fix an interval $[a,b]$.  We define an
 \emph{\myindex{inner product}} for the space of functions.  We restrict our attention
 to Riemann integrable functions since we do not have the Lebesgue
@@ -3967,7 +4040,7 @@ Riemann integrable functions on $[a,b]$ and define the inner product
 \glsadd{not:L2innprod}
 \begin{equation*}
 \langle f , g \rangle :=
-\int_a^b f(x) \overline{g(x)} ~ dx
+\int_a^b f(x) \overline{g(x)} ~ dx .
 \end{equation*}
 If you have seen Hermitian inner products in linear algebra, this
 is precisely such a product.  We have to put in the conjugate as we are
@@ -3994,7 +4067,8 @@ $\snorm{z}_2$)
 \langle z , z \rangle =
 \sum_{k=1}^n \sabs{z_k}^2 .
 \end{equation*}
-This is just the euclidean distance to the origin in $\C^n$.
+This is just the euclidean distance to the origin in $\C^n$ (same as
+$\R^{2n}$).
 \end{remark}
 
 Let us get back to function spaces.  In what follows, we will
@@ -4020,7 +4094,7 @@ $\langle \varphi_n , \varphi_m \rangle = 0$ for $m\not= n$ then
 the system would be just an \emph{\myindex{orthogonal system}}.
 \end{defn}
 
-We have noticed above that for example
+We noticed above that
 \begin{equation*}
 \left\{ \frac{1}{\sqrt{2\pi}} \, e^{inx} \right\}
 \end{equation*}
@@ -4030,7 +4104,7 @@ Having an orthonormal system $\{ \varphi_n \}$ on $[a,b]$ and an integrable func
 on $[a,b]$, we can write
 a Fourier series relative to $\{ \varphi_n \}$.  We let
 \begin{equation*}
-c_n =
+c_n :=
 \langle f , \varphi_n \rangle
 =
 \int_a^b f(x) \overline{\varphi_n(x)} ~ dx ,
@@ -4220,7 +4294,7 @@ Write
 f(x) \sim
 \sum_{n=-\infty}^\infty c_n \,e^{inx} .
 \end{equation*}
-We define at the \emph{\myindex{symmetric partial sums}}
+We define the \emph{\myindex{symmetric partial sums}}
 \glsadd{not:FSsympartsum}
 \begin{equation*}
 s_N(f;x) := 
@@ -4249,55 +4323,19 @@ D_N(x) =
 \frac{\sin\bigl( (N+\nicefrac{1}{2})x \bigr)}{\sin(\nicefrac{x}{2})} ,
 \end{equation*}
 at least for $x$ such that $\sin(x/2) \not= 0$.  We know that the left hand
-side is continuous and hence the right hand side extends continuously as well.
-  %As we are only interested
-%in this function on $[-\pi,\pi]$ we simply need to worry about $x=0$.
-%We claim that when $x=0$ the right
-%hand side is continuous (and its limit equals $D_N(x)$).
+side is continuous and hence the right hand side extends continuously to
+all of $\R$ as well.
 To show the claim
 we use a familiar trick:
 \begin{equation*}
 (e^{ix}-1) D_N(x) = e^{i(N+1)x} - e^{-iNx} .
 \end{equation*}
-And multiply by $e^{-ix/2}$
+Multiply by $e^{-ix/2}$
 \begin{equation*}
 (e^{ix/2}-e^{-ix/2}) D_N(x) = e^{i(N+\nicefrac{1}{2})x} -
 e^{-i(N+\nicefrac{1}{2})x} .
 \end{equation*}
 The claim follows.
-%The claim follows at least when $\sin(x/2) \not=0$.
-%Let us prove continuity at $0$.
-%From the Taylor expansion of $\sin$ we know that
-%$\sin(x) = x+x^2 g(x)$ for a continuous function $g(x)$.
-%%Next we have the following useful
-%%fact that follows from the taylor expansion of $\sin$.
-%%We have that
-%%inequalities for $x$ near the origin.
-%%$$
-%%\frac{\sabs{x}}{2} \leq \sabs{\sin(x)} \leq \sabs{x}
-%%$$
-%%The proof is left to the reader.  Using these inequalities we 
-%Hence
-%$$
-%\frac{\sin\bigl( (N+\nicefrac{1}{2})x \bigr)}{\sin(\nicefrac{x}{2})}
-%=
-%\frac{(N+\nicefrac{1}{2})x  + {((N+\nicefrac{1}{2})x)}^2
-%g((N+\nicefrac{1}{2})x)}{\nicefrac{x}{2}  + {(\nicefrac{x}{2})}^2
-%g(\nicefrac{x}{2})}
-%=
-%\frac{(N+\nicefrac{1}{2})  + {(N+\nicefrac{1}{2})}^2x
-%g((N+\nicefrac{1}{2})x)}{\nicefrac{1}{2}  + \nicefrac{x}{4}
-%g(\nicefrac{x}{2})}
-%$$
-%Which is continuous at the origin.  Now when
-%$x/2 = \pi k$, then
-%$(N+\nicefrac{1}{2})x =
-%(N+\nicefrac{1}{2})2\pi k
-%=
-%(2N+1)\pi k$, so the numerator of the expression also vanishes and same
-%argument shows that the expression is continuous.
-%Really you should be able to do these
-%types of arguments from now on and I will only mention them in passing.
 
 We expand the definition of $s_N$
 \begin{multline*}
@@ -4310,7 +4348,7 @@ s_N(f;x) =
 \frac{1}{2\pi} \int_{-\pi}^\pi f(t) D_N(x-t) ~ dt .
 \end{multline*}
 Convolution strikes again!
-As $D_N$ and $f$ are $2\pi$-periodic we change variables and write 
+As $D_N$ and $f$ are $2\pi$-periodic we may also change variables and write 
 \begin{equation*}
 s_N(f;x) = 
 \frac{1}{2\pi} \int_{x-\pi}^{x+\pi} f(x-t) D_N(t) ~ dt
@@ -4473,19 +4511,21 @@ achieved by the \hyperref[thm:SWcomplex]{Stone--Weierstrass theorem}.
 By Stone--Weierstrass, 
 any continuous function on $[-\pi,\pi]$ can be uniformly approximated
 by trigonometric polynomials.  However, these trigonometric polynomials need
-not be the partial sums $s_N$.  On the other hand, they can be
-explicitly constructed from $s_N$.
+not be the partial sums $s_N$.
+%On the other hand, they can be
+%explicitly constructed from $s_N$.
 
 \subsection{Parseval's theorem}
 
-We next prove that
+Next we prove that
 convergence always happens in the $L^2$ sense and
-furthermore that formal operations on the (infinite) vectors of
+that operations on the (infinite) vectors of
 Fourier coefficients are the same as the operations using the integral
 inner product.
 
 %FIXME: Should we prove $L^2$ triang and CS?  This is just formal nonsense
 
+\begin{samepage}
 \begin{thm}[Parseval\footnote{%
 Named after the French mathematician
 \href{http://en.wikipedia.org/wiki/Marc-Antoine_Parseval}{Marc-Antoine
@@ -4530,6 +4570,7 @@ and
 \sum_{n=-\infty}^\infty \sabs{c_n}^2.
 \end{equation*}
 \end{thm}
+\end{samepage}
 
 \begin{proof}
 There exists (exercise)
@@ -4698,6 +4739,7 @@ for Riemann integrable functions on $[-\pi,\pi]$:
 \end{equation*}
 \end{exercise}
 
+\pagebreak[2]
 \begin{exercise}
 Suppose for some $C$ and $\alpha > 1$, we have
 a real sequence $\{ a_n \}$ with
@@ -4710,7 +4752,9 @@ g(x) := \sum_{n=1}^\infty a_n \sin(n x) .
 \item
 Show that $g$ is continuous.
 \item
-Find a solution to the differential equation
+Formally (that is, suppose you can differentiate under the sum)
+find a solution (formal solution, that is, do not yet worry about convergence)
+to the differential equation
 \begin{equation*}
 y''+ 2 y = g(x)
 \end{equation*}
@@ -4719,7 +4763,8 @@ of the form
 y(x) = \sum_{n=1}^\infty b_n \sin(n x) .
 \end{equation*}
 \item
-Then show that this solution $y$ is twice differentiable.
+Then show that this solution $y$ is twice continuously differentiable,
+and in fact solves the equation.
 \end{enumerate}
 \end{exercise}
 
