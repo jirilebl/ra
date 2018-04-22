@@ -57,10 +57,10 @@ plane.\label{fig:complexplane}}
 
 We generally use $x,y,r,s,t$ for real values and $z,w,\xi,\zeta$
 for complex values, although that is not a hard and fast rule.  In
-particular, $z$ is often just used as a third real variable in $\R^3$.
+particular, $z$ is often used as a third real variable in $\R^3$.
 
 \begin{defn}
-Let $z= x+iy$.
+Suppose $z= x+iy$.
 We call $x$ 
 the \emph{\myindex{real part}} of $z$, and 
 we call $y$
@@ -70,7 +70,7 @@ the \emph{\myindex{imaginary part}} of $z$.  We write
 \Re\, z := x , \qquad
 \Im\, z := y .
 \end{equation*}
-Define the
+Define 
 \glsadd{not:conj}
 \emph{\myindex{complex conjugate}} as
 \begin{equation*}
@@ -82,7 +82,7 @@ Similarly define \emph{\myindex{modulus}} as
 \sabs{z} := \sqrt{x^2+y^2} .
 \end{equation*}
 \end{defn}
-The modulus acts like an absolute value.  For example,
+Modulus acts like absolute value.  For example,
 $\sabs{zw} = \sabs{z} \, \sabs{w}$ (exercise).
 
 The complex conjugate is a reflection of the plane across the real axis.
@@ -179,7 +179,14 @@ $\displaystyle \lim_{n\to \infty} \bar{z}_n = \bar{z}$.
 \end{enumerate}
 \end{prop}
 
-We also need to extend convergence of complex series.  Let $z_n$ be complex
+As we have seen above, convergence in $\C$ is the same as convergence in
+$\R^2$.  In particular, a sequence in $\C$ converges if and only if
+the real and imaginary parts converge.  Therefore, feel free to apply
+everything you have learned about convergence in $\R^2$, as well as
+applying results about real numbers to the real and imaginary parts.
+
+We also need to extend convergence of complex series.  Let $\{ z_n \}$ be a
+sequence of complex
 numbers, then the series
 \begin{equation*}
 \sum_{n=1}^\infty z_n
@@ -213,21 +220,26 @@ If a complex series $\sum z_n$ converges absolutely, then it converges.
 \end{prop}
 
 The series $\sum \sabs{z_n}$ is a real series.  All the
-convergence tests (ratio test, root test, etc\ldots) that talk about
+convergence tests (ratio test, root test, etc\ldots)\ that talk about
 absolute convergence work with the numbers $\sabs{z_n}$, that is, they
 are really talking about convergence of series of nonnegative real
 numbers.
-Therefore you
+You
 can directly apply these tests
 them without needing to reprove anything for complex
 series.
 
 \medskip
 
-We often wish to integrate a complex-valued function.
-Suppose $f \colon [a,b] \to \C$ is a function.
-Write $f = u+iv$ for real-valued functions $u$ and $v$.
-We say that $f$ is \emph{Riemann integrable}\index{Riemann
+When we deal with complex valued functions
+$f \colon X \to \C$, what we often do is to write
+$f = u+iv$ for real-valued functions $u \colon X \to \R$ and $v \colon X \to
+\R$.
+
+On thing we often wish to do is to integrate
+$f \colon [a,b] \to \C$.  What we do is to write
+$f = u+iv$ for real valued $u$ and $v$.
+We then define that $f$ is \emph{Riemann integrable}\index{Riemann
 integrable!complex-valued function}
 if and only if $u$ and $v$ are Riemann
 integrable, and in this case we define
@@ -236,6 +248,15 @@ integrable, and in this case we define
 \end{equation*}
 We make the same definition for every other type of integral (improper,
 multivarible, etc\ldots).
+
+Similarly when we differentiate, write $f \colon [a,b] \to \C$ as
+$f = u+iv$.  Thinking of $\C$ as $\R^2$ we find that $f$ is differentiable
+if $u$ and $v$ are differentiable.  For such a function the derivative
+was represented by a vector in $\R^2$.  Now a vector in $\R^2$ is a complex
+number.  In other words
+\begin{equation*}
+f'(t) = u'(t) + i \, v'(t) .
+\end{equation*}
 
 \subsection{Exercises}
 
@@ -260,6 +281,7 @@ Prove \propref{prop:cachysercomplex}.
 Prove \propref{prop:absconvmeansconv}.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Considering the definition of complex multiplication, given $x +iy$
 define the matrix
@@ -284,7 +306,21 @@ if it has linearly dependent rows: That is, one row is a (complex) multiple
 of the other
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 
+\begin{exercise}
+Prove the Bolzano-Weierstrass theorem for complex sequences.
+Suppose $\{ z_n \}$ is a bounded sequence of complex numbers, that
+is, there exists an $M$ such that $\sabs{z_n} \leq M$ for all $n$.  Prove
+that there exists a subsequence $\{ z_{n_k} \}$ that converges to some $z
+\in \C$.
+\end{exercise}
+
+\begin{exercise}
+Prove that there is no simple mean value theorem for complex valued
+functions:  Find a differentiable function $f \colon [0,1] \to \C$ such that
+$f(0) = f(1) = 0$, but $f'(t) \not= 0$ for all $t \in [0,1]$.
+\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -296,7 +332,7 @@ of the other
 
 \subsection{Continuity}
 
-Let us get back to swapping on limits.  Let $\{ f_n \}$ be a sequence
+Let us get back to swapping limits.  Let $\{ f_n \}$ be a sequence
 of functions $f_n \colon X \to Y$ for a set $X$ and a metric space $Y$.
 Let $f \colon X \to Y$ be a
 function and for every $x \in X$ suppose that
@@ -306,17 +342,28 @@ f(x) = \lim_{n\to \infty} f_n(x) .
 We say the sequence $\{ f_n \}$
 \emph{\myindex{converges pointwise}}\index{pointwise convergence} to $f$.
 
-Question is:
+Suppose $Y=\C$, a series
+\emph{converges pointwise}\index{converges pointwise!complex series}\index{pointwise convergence!complex series} if
+for every $x \in X$ we have
+\begin{equation*}
+f(x) = \lim_{n\to \infty} \sum_{k=1}^n f_k(x) =
+\sum_{k=1}^\infty f_k(x) .
+\end{equation*}
+
+\medskip
+
+The question is:
 If $f_n$ are all continuous, is $f$ continuous?  Differentiable?
 Integrable?  What are the derivatives or integrals of $f$?
 
-For example for continuity of the pointwise limit we are asking if
+For example, for continuity of the pointwise limit of a sequence $\{ f_n
+\}$, we are asking if
 \begin{equation*}
 \lim_{x\to x_0} \lim_{n\to\infty} f_n(x)
 \overset{?}{=}
-\lim_{n\to\infty} \lim_{x\to x_0} f_n(x)
+\lim_{n\to\infty} \lim_{x\to x_0} f_n(x) .
 \end{equation*}
-We don't even know a priory if both sides exist, let alone if they are equal each other.
+We don't even a priory know if both sides exist, let alone if they are equal each other.
 
 \begin{example}
 The functions $f_n \colon \R \to \R$,
@@ -334,14 +381,6 @@ f(x) :=
 which is not continuous of course.
 \end{example}
 
-Suppose $Y=\C$, a series
-\emph{converges pointwise}\index{converges pointwise!complex series}\index{pointwise convergence!complex series} if
-for every $x \in X$ we have
-\begin{equation*}
-f(x) = \lim_{n\to \infty} \sum_{k=1}^n f_k(x) =
-\sum_{k=1}^\infty f_k(x) .
-\end{equation*}
-
 Pointwise convergence is not enough to preserve continuity (nor even
 boundedness).  For that, we need uniform convergence.
 
@@ -357,7 +396,7 @@ d\bigl(f_n(x),f(x)\bigr) < \epsilon .
 A series of complex-valued functions converges uniformly if the sequence of
 partial sums converges uniformly, that is for every $\epsilon > 0$
 there exists an $M$ such that
-for all $n \geq M$ and all $x \in X$ we have
+for all $n \geq M$ and all $x \in X$
 \begin{equation*}
 \abs{\left(\sum_{k=1}^n f_k(x)\right)-f(x)} < \epsilon .
 \end{equation*}
@@ -405,13 +444,13 @@ The supermum norm satisfies the triangle inequality: For any $x \in X$
 \sabs{f(x)}+\sabs{g(x)} \leq
 \snorm{f}_u+\snorm{g}_u .
 \end{equation*}
-Now take a supremum on the left to get
+Take a supremum on the left to get
 \begin{equation*}
 \snorm{f+g}_u \leq
 \snorm{f}_u+\snorm{g}_u .
 \end{equation*}
 
-For a compact $X$,
+For a compact metric space $X$,
 the uniform norm is a norm on the vector space $C(X,\C)$.
 We leave it as an exercise.
 While we will not need it, $C(X,\C)$ is in fact a complex
@@ -420,9 +459,9 @@ $\R$ with $\C$.
 Convergence in the metric space $C(X,\C)$ is
 uniform convergence.
 
-We will study several types of series of functions, and
-a very useful test for uniform convergence of a series is the 
-so called \emph{\myindex{Weierstrass $M$-test}}.
+We will study a couple of types of series of functions, and
+a useful test for uniform convergence of a series is the 
+so-called \emph{\myindex{Weierstrass $M$-test}}.
 
 \begin{thm}[Weierstrass $M$-test] \label{thm:weiermtest}
 Suppose $f_n \colon X \to \C$ are functions, $M_n > 0$ numbers such
@@ -440,6 +479,8 @@ Then
 \end{equation*}
 \end{thm}
 
+Another way to state the theorem is to say that if
+$\sum \snorm{f_n}_u$ converges, then $\sum f_n$ converges uniformly.
 Note that the converse of this theorem is not true.
 
 \begin{proof}
@@ -516,7 +557,7 @@ a_n = \lim_{k \to \infty} f_n(x_k)
 exists for all $n$.  Then
 $\{a_n\}$ converges and 
 \begin{equation*}
-\lim_{k \to \infty} f(x_k) = \lim_{n\to\infty} a_n
+\lim_{k \to \infty} f(x_k) = \lim_{n\to\infty} a_n .
 \end{equation*}
 \end{prop}
 
