@@ -1488,13 +1488,12 @@ The theory of measures on $\R^n$ is a very complicated subject.
 We will only require measure-zero sets and so we focus on these.
 The set $S$ is of measure zero if
 for every $\epsilon > 0$
-there exist a sequence of open rectangles $\{ R_j \}$ such that
+there exists a sequence of open rectangles $\{ R_j \}$ such that
 \begin{equation} \label{mv:eq:nullR}
 S \subset \bigcup_{j=1}^\infty R_j \qquad \text{and} \qquad
 \sum_{j=1}^\infty V(R_j) < \epsilon.
 \end{equation}
-Furthermore, 
-if $S$ is of measure zero and $S' \subset S$, then
+If $S$ is of measure zero and $S' \subset S$, then
 $S'$ is of measure zero.  We can use the same exact rectangles.
 
 It is sometimes more convenient to use balls instead of rectangles.
@@ -1517,11 +1516,12 @@ S \subset \bigcup_{j=1}^\infty B_j \qquad \text{and} \qquad
 Note that the ``volume'' of $B_j$ is proportional to $r_j^n$.
 
 \begin{proof}
-If $R$ is a (closed or open) cube (rectangle with all sides
+If $C$ is a (closed or open) cube (rectangle with all sides
 equal) of side $s$, then $R$ is contained in a closed ball of radius
 $\sqrt{n}\, s$ by \propref{prop:diameterrectangle}, and therefore
 in an open ball of size $2 \sqrt{n}\, s$.
 
+Suppose $R$ is a (closed or open) rectangle.
 Let $s$ be a number that is less than the smallest side of $R$ and also
 so that $2\sqrt{n} \, s < \delta$.
 We claim $R$ is contained in
@@ -1554,15 +1554,16 @@ Covering $C_k$ with balls $B_k$ of radius $r_k = 2\sqrt{n} \, s_k$ we obtain
 And as $S \subset\bigcup_{j} R_j \subset \bigcup_{k} C_k \subset \bigcup_{k}
 B_k$, we are finished.
 
-Suppose we have the ball condition above for some $\epsilon > 0$.
-Without loss of generality assume that all $r_j < 1$.
+For the other direction, suppose $S$ is covered by balls $B_j$
+of radii $r_j$, such that $\sum r_j^n < \epsilon$,
+as in the statement of the proposition.
 Each $B_j$ is contained a in a cube $R_j$ of side $2r_j$.
-So $V(R_j) = {(2 r_j)}^n < 2^n r_j$.  Therefore 
+So $V(R_j) = {(2 r_j)}^n = 2^n r_j^n$.  Therefore 
 \begin{equation*}
 S \subset \bigcup_{j=1}^\infty R_j \qquad \text{and} \qquad
 \sum_{j=1}^\infty V(R_j)
-<
-\sum_{j=1}^\infty 2^n r_j < 2^n \epsilon. \qedhere
+\leq
+\sum_{j=1}^\infty 2^n r_j^n < 2^n \epsilon. \qedhere
 \end{equation*}
 \end{proof}
 
@@ -1642,12 +1643,13 @@ It is clear that $P_s \subset R$.  Furthermore
 \begin{equation*}
 V(R) = 2\epsilon {\bigl(2(s+1)\bigr)}^{n-1} .
 \end{equation*}
-As $s$ is fixed, we can
+As $s$ is fixed, we
 make $V(R)$
 arbitrarily small by
 picking $\epsilon$ small enough.
+So $P_s$ is measure zero.
 
-Next we note that
+Next 
 \begin{equation*}
 P = \bigcup_{j=1}^\infty P_j
 \end{equation*}
@@ -1668,16 +1670,17 @@ Suppose $\bigl\{ (a_j,b_j) \bigr\}$ are open intervals such that
 [a,b] \subset \bigcup_{j=1}^\infty (a_j,b_j) .
 \end{equation*}
 We wish to bound $\sum (b_j-a_j)$ from below.
-Since $[a,b]$ is compact, then there are only finitely many open intervals
-that still cover $[a,b]$.  As throwing out some of the intervals only makes the
-sum smaller, we only need to take the finite number of intervals
+Since $[a,b]$ is compact, then finitely many of the open intervals
+still cover $[a,b]$.  As throwing out some of the intervals only makes the
+sum smaller, we only need to consider the finite number of intervals
 still covering $[a,b]$.
 If $(a_i,b_i) \subset (a_j,b_j)$, then we can throw out
-$(a_i,b_i)$ as well.
-Therefore we have
+$(a_i,b_i)$ as well, in other words the intervals that are left
+have distinct left endpoints.
+Therefore 
 $[a,b] \subset \bigcup_{j=1}^k (a_j,b_j)$ for some $k$, and
 we assume that the intervals are sorted such that $a_1 < a_2 < \cdots <
-a_k$.  Note that since $(a_2,b_2)$ is not contained in $(a_1,b_1)$
+a_k$.  Since $(a_2,b_2)$ is not contained in $(a_1,b_1)$
 we have that $a_1 < a_2 < b_1 < b_2$.  Similarly
 $a_j < a_{j+1} < b_j < b_{j+1}$.  Furthermore, $a_1 < a$ and $b_k > b$.
 Thus,
@@ -1767,13 +1770,13 @@ We leave as an exercise to prove that:
 \item Each $C_k$ is a finite union of closed intervals.  It is obtained by
 taking $C_{k-1}$, and from each closed interval removing the ``middle
 third''.
-\item Therefore, each $C_k$ is closed.
+\item Therefore, each $C_k$ is closed, and so $C$ is closed.
 \item Furthermore,
 $m^*(C_k) =1 - \sum_{n=1}^k \frac{2^n}{3^{n+1}}$.
 \item Hence,
 $m^*(C) = 0$.
-\item The set $C$ is in one to one correspondence with $[0,1]$, in other
-words,
+\item The set $C$ is in one-to-one correspondence with $[0,1]$, in other
+words, it is
 uncountable.
 \end{enumerate}
 \begin{myfigureht}
@@ -1800,14 +1803,14 @@ Then $f(B) \subset B'$, where $B'$ is an open (resp.\ closed) ball of radius at 
 Without loss of generality assume $B$ is a closed ball.
 The ball $B$ is convex, and hence via
 \propref{mv:prop:convexlip},
-that $\snorm{f(x)-f(y)} \leq M \snorm{x-y}$
+$\snorm{f(x)-f(y)} \leq M \snorm{x-y}$
 for all $x,y$ in $B$.  In particular, suppose $B = C(y,r)$,
 then $f(B) \subset C\bigl(f(y),M r \bigr)$.
 \end{proof}
 
 The image of a measure zero set using a continuous map is not necessarily
 a measure zero set.  However if we assume the mapping is continuously
-differentiable, then the mapping cannot ``stretch'' the set too much.
+differentiable, then the mapping cannot ``stretch'' the set that much.
 
 \begin{prop} \label{prop:imagenull}
 Suppose $U \subset \R^n$ is an open set and $f \colon U \to \R^n$
@@ -1817,9 +1820,9 @@ measure zero set, then $f(E)$ is measure zero.
 
 \begin{proof}
 We leave the proof for a general measure zero set as an exercise, and we
-now prove the proposition for a compact measure zero set.  Therefore let us 
-suppose $E$ is compact.
+now prove the proposition for a compact measure zero set.
 
+Suppose $E$ is compact.
 First let us replace $U$ by a smaller open set to make $\snorm{f'(x)}$ bounded.
 At each point $x \in
 E$ pick an open ball $B(x,r_x)$ such that the closed ball $C(x,r_x) \subset
@@ -1850,6 +1853,7 @@ E \subset B_1 \cup B_2 \cup \cdots \cup B_k
 \qquad \text{and} \qquad
 \sum_{j=1}^k r_j^n < \epsilon.
 \end{equation*}
+The balls are are contained in $U$.
 Suppose $B_1', B_2', \ldots, B_k'$ are the balls of radius
 $Mr_1, Mr_2, \ldots, Mr_k$ from
 \lemmaref{lemma:ballmapder}, such that $f(B_j) \subset B_j'$ for all $j$.
@@ -2702,7 +2706,7 @@ rectangles with bounded Jordan measurable sets.
 \section{Green's theorem}
 \label{sec:mvgreenstheorem}
 
-\sectionnotes{1 lecture}
+\sectionnotes{1 lecture, requires \chapterref{path:chapter}}
 
 One of the most important theorems of analysis in several variables is the
 so-called generalized Stokes' theorem, a generalization of the
