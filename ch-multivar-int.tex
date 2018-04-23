@@ -2090,7 +2090,9 @@ the set of discontinuities of $f$ is of measure zero (a null set).
 
 \begin{proof}
 Let $S \subset R$ be the set of discontinuities of $f$.  That is
-$S = \{ x \in R : o(f,x) > 0 \}$.  The trick to this proof is to isolate the
+$S = \{ x \in R : o(f,x) > 0 \}$.
+Suppose that $m^*(S) = 0$, that is, $S$ is a measure zero set.
+The trick to this proof is to isolate the
 bad set into a small set of subrectangles of a partition.  There are only
 finitely many subrectangles of a partition, so we will wish to use
 compactness.  If $S$ is closed, then it would be compact and we could cover
@@ -2171,8 +2173,10 @@ U(P,f)-L(P,f)
 2B \epsilon = \epsilon \bigl(2V(R)+2B\bigr) .
 \end{split}
 \end{equation*}
-Clearly, we can make the right hand side as small as we want
+We can make the right hand side as small as we want,
 and hence $f$ is integrable.
+
+\medskip
 
 For the other direction, suppose $f$ is Riemann integrable
 over $R$.

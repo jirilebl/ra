@@ -2504,7 +2504,7 @@ a finite set of points $x_{n,1},x_{n,2},\ldots,x_{n,k_n}$ such that
 \begin{equation*}
 X= \bigcup_{j=1}^{k_n} B(x_{n,j},\nicefrac{1}{n})
 \end{equation*}
-Let $D$ be the set of all the points $x_{n,j}$.
+Let $D := \bigcup_{n=1}^\infty \{ x_{n,1},x_{n,2},\ldots,x_{n,k_n} \}$.
 The set $D$ is countable as it is a countable union of finite sets.
 For every $x \in X$
 and every $\epsilon > 0$, there exists an $n$ such that
@@ -2547,7 +2547,7 @@ Let us first show that the sequence is uniformly bounded.
 By uniform equicontinuity we have that
 there is a $\delta > 0$
 such that
-for all $x \in X$
+for all $x \in X$ and all $n \in \N$
 \begin{equation*}
 B(x,\delta) \subset f_n^{-1}\bigl(B(f_n(x),1)\bigr) .
 \end{equation*}
@@ -2582,7 +2582,7 @@ Write $g_j := f_{n_j}$ for simplicity.
 The sequence $\{ g_n \}$ is 
 uniformly equicontinuous.
 Let $\epsilon > 0$ be given, then there exists a $\delta > 0$
-such that for all $x \in X$
+such that for all $x \in X$ and all $n \in N$
 \begin{equation*}
 B(x,\delta) \subset g_n^{-1}\bigl(B(g_n(x),\nicefrac{\epsilon}{3})\bigr).
 \end{equation*}
