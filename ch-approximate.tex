@@ -2212,7 +2212,7 @@ $e^{z}$ is an analytic function on $\C$ with no zeros.
 
 \begin{exercise} \label{exercise:minprinciple}
 Prove \lemmaref{lemma:polyalwaysgetssmaller} for an analytic function.  That
-is, suppose that $p(z)$ is not a polynomial but a power series around $z_0$.
+is, suppose that $p(z)$ is a power series around $z_0$.
 \end{exercise}
 
 \begin{exercise}
@@ -2718,7 +2718,7 @@ Let $(X,d)$ be a compact metric space, $C > 0$, $0 < \alpha \leq 1$, and
 suppose $f_n \colon X \to \C$ are functions such as
 $\abs{f_n(x)-f_n(y)} \leq C {d(x,y)}^\alpha$ for all $x,y \in X$ and
 $n \in \N$.  Suppose also that there is a point $p \in X$ such that
-$f_n(p) = 0$.
+$f_n(p) = 0$ for all $n$.
 Show that there exists a uniformly convergent subsequence converging to
 an $f \colon X \to \C$ that also satisfies $f(p) = 0$ and
 $\abs{f(x)-f(y)} \leq C {d(x,y)}^\alpha$.
@@ -3687,7 +3687,7 @@ Let $\sabs{z}=1$ define the unit circle $S^1 \subset \C$.
 \item
 Show that functions of the form
 \begin{equation*}
-\sum_{k=-n}^n c_k z^k
+\sum_{k=-n}^n c_k\, z^k
 \end{equation*}
 are dense in $C(S^1,\C)$.  Notice the negative powers.
 \item 
@@ -3695,9 +3695,9 @@ Show that functions of the form
 \begin{equation*}
 c_0
 +
-\sum_{k=1}^n c_k z^k
+\sum_{k=1}^n c_k \, z^k
 +
-\sum_{k=1}^n d_k \bar{z}^k
+\sum_{k=1}^n c_{-k}\, \bar{z}^k
 \end{equation*}
 are dense in $C(S^1,\C)$.  These are so-called harmonic polynomials,
 and this approximation leads for example to the solution of the
@@ -3712,7 +3712,7 @@ Show that for complex numbers $c_j$, the set of functions
 of $x$ on $[-\pi,\pi]$
 of the form
 \begin{equation*}
-\sum_{k=-n}^n c_k e^{ik x}
+\sum_{k=-n}^n c_k \, e^{ik x}
 \end{equation*}
 satisfies the hypotheses of the complex Stone-Weierstrass theorem
 and therefore such functions are dense in the $C([-\pi,\pi],\C)$.
@@ -3762,6 +3762,27 @@ suppose $\sA \subset C(X,\R)$ is a real algebra.
 Suppose that for each $y \in X$ the closure $\overline{\sA}$
 contains the function $\varphi_y(x) := d(y,x)$.
 Then $\overline{\sA} = C(X,\R)$.
+\end{exercise}
+
+\begin{exercise}
+{\ }
+\begin{enumerate}[a)]
+\item
+Suppose $f \colon [a,b] \to \C$ is continuously 
+differentiable.  Show that there exists a sequence of polynomials
+$\{ p_n \}$
+that converges in the $C^1$ norm to $f$, that is
+$\snorm{f - p_n}_u + \snorm{f'-p_n'}_u \to 0$ as $n \to \infty$.
+\item
+Suppose $f \colon [a,b] \to \C$ is $k$ times continuously 
+differentiable.  Show that there exists a sequence of polynomials
+$\{ p_n \}$
+that converges in the $C^k$ norm to $f$, that is
+\begin{equation*}
+\sum_{j=0}^k \snorm{f^{(j)} - p_n^{(j)}}_u \to 0 \qquad \text{as} \qquad
+n \to \infty.
+\end{equation*}
+\end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
