@@ -329,10 +329,20 @@ that there exists a subsequence $\{ z_{n_k} \}$ that converges to some $z
 \end{exercise}
 
 \begin{exercise}
+{\ }
+\begin{enumerate}[a)]
+\item
 Prove that there is no simple mean value theorem for complex valued
 functions:  Find a differentiable function $f \colon [0,1] \to \C$ such that
 $f(0) = f(1) = 0$, but $f'(t) \not= 0$ for all $t \in [0,1]$.
+\item
+However, we have the weaker form of the mean value theorem as we do for vector valued
+functions.  Prove: If $f \colon [a,b] \to \C$ is continuous and differentiable in
+$(a,b)$, and for some $M$, $\sabs{f'(x)} \leq M$ for all $x \in (a,b)$, then
+$\sabs{f(x)-f(y)} \leq M \sabs{x-y}$.
+\end{enumerate}
 \end{exercise}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3091,11 +3101,11 @@ $\int_{-1}^1 q_n(t) ~ dt = 1$ and $q_n(t) \geq 0$ on $[-1,1]$.  So for $n
 \end{equation*}
 \end{proof}
 
-A convolution often inherits properties of the functions we are convolving
-with.  In our case the convolution $p_n$ inherited the property of being a
+A convolution often inherits some property of the functions we are convolving.
+In our case the convolution $p_n$ inherited the property of being a
 polynomial from $q_n$.  The same idea of the proof is often used 
-to get other properties.  If $q_n$ is infinitely differentiable, so is $p_n$.
-If $q_n$ is a solution to a linear differential equation so is the $p_n$.
+to get other properties.  If $q_n$ or $g$ is infinitely differentiable, so is $p_n$.
+If $q_n$ or $g$ is a solution to a linear differential equation so is $p_n$.
 Etc\ldots
 
 Let us note an immediate application of the Weierstrass theorem.  We have
