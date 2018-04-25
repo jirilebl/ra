@@ -1395,71 +1395,7 @@ integral of $f$ on $R$.
 
 \sectionnotes{2 lectures}
 
-%\subsection{Content zero sets}
-%
-%\begin{defn}
-%A set $S \subset \R^n$ is a \emph{\myindex{content zero set}}
-%if for every $\epsilon > 0$
-%there exist a finite set of open rectangles $R_1, R_2, \ldots, R_k$ such that
-%\begin{equation*}
-%S \subset R_1 \cup R_2 \cup \ldots R_k \qquad \text{and} \qquad
-%V(R_1) + V(R_2) + \cdots + V(R_k) < \epsilon.
-%\end{equation*}
-%\end{defn}
-%
-%Obviously if $S$ is content zero and $S' \subset S$, then
-%$S'$ is of content zero.  We can in fact use the same exact rectangles.
-%
-%\begin{example}
-%A finite set is of content zero.
-%
-%\emph{Proof:}
-%FIXME
-%\end{example}
-%
-%\begin{example}
-%An open rectangle is not of content zero.
-%
-%\emph{Proof:}
-%FIXME
-%\end{example}
-%
-%\begin{example}
-%The set $\Q^n \subset \R^n$ is not of content zero.
-%
-%\emph{Proof:}
-%FIXME
-%\end{example}
-
 \subsection{Outer measure and null sets}
-
-%FIXME
-%
-%\begin{defn}
-%Let $(a_1,a_2,\ldots,a_n)$ and
-%$(b_1,b_2,\ldots,b_n)$ be such that $a_k < b_k$ for all $k$.
-%A set of the form
-%$(a_1,b_1) \times
-%(a_2,b_2) \times \cdots \times
-%(a_n,b_n)$ is called an \emph{\myindex{open rectangle}}
-%
-%For an open rectangle
-%$R := (a_1,b_1) \times
-%(a_2,b_2) \times \cdots \times
-%(a_n,b_n) \subset \R^n$ we define the
-%\emph{$n$-dimensional volume}%
-%\index{$n$-dimensional volume of rectangles}%
-%\index{volume of rectangles} by
-%\begin{equation*}
-%V(R) :=
-%(b_1-a_1)
-%(b_2-a_2)
-%\cdots
-%(b_n-a_n) .
-%\end{equation*}
-%\end{defn}
-%
-%FIXME
 
 Before we characterize all Riemann integrable functions, we need to make
 a slight detour.  We introduce a way of measuring the size of sets in $\R^n$.
@@ -1477,15 +1413,23 @@ m^*(S)
 \end{equation*}
 where the infimum is taken over all sequences
 $\{ R_j \}$ of open rectangles such that
-%\begin{equation*}
 $S \subset \bigcup_{j=1}^\infty R_j$.
-%\end{equation*}
+See \figureref{fig:outermeasure}.
 In particular, $S$ is of \emph{\myindex{measure zero}} or
 a \emph{\myindex{null set}} if $m^*(S) = 0$.
 \end{defn}
 
-An immediate and useful consequence (exercise) is that if $A \subset B$
+\begin{myfigureht}
+\subimport*{figures/}{outermeasure.pdf_t}
+\caption{Outer measure construction, in this case $S \subset R_1 \cup R_2
+\cup R_3 \cup \cdots$, so $m^*(S) \leq V(R_1) + V(R_2)+V(R_3) + \cdots$.\label{fig:outermeasure}}
+\end{myfigureht}
+
+An immediate and useful consequence (exercise) of the definition is that if $A \subset B$
 then $m^*(A) \leq m^*(B)$.
+It is also not difficult to show (exercise) that we obtain the same number
+$m^*(S)$ if we also allow both finite and infinite sequences
+of rectangles in the definition.
 
 The theory of measures on $\R^n$ is a very complicated subject.
 We will only require measure-zero sets and so we focus on these.
@@ -1773,8 +1717,8 @@ Clearly,
 \begin{equation*}
 C = \bigcap_{k=1}^\infty C_k .
 \end{equation*}
+See \figureref{fig:cantor}.
 
-\pagebreak[2]
 We leave as an exercise to prove that:
 \begin{enumerate}[(i)]
 \item Each $C_k$ is a finite union of closed intervals.  It is obtained by
@@ -1793,7 +1737,6 @@ uncountable.
 \subimport*{figures/}{cantorfig.pdf_t}
 \caption{Cantor set construction.\label{fig:cantor}}
 \end{myfigureht}
-See \figureref{fig:cantor}.
 \end{example}
 
 
@@ -1819,7 +1762,7 @@ then $f(B) \subset C\bigl(f(y),M r \bigr)$.
 \end{proof}
 
 The image of a measure zero set using a continuous map is not necessarily
-a measure zero set, although this is not easy to see.
+a measure zero set, although this is not easy to show (see the exercises).
 However, if the mapping is continuously
 differentiable, then the mapping cannot ``stretch'' the set that much.
 
@@ -1914,7 +1857,6 @@ set $S \subset \R^n$ that is of measure zero, but whose closure
 $\widebar{S} = \R^n$.
 \end{exercise}
 
-\begin{samepage}
 \begin{exercise}
 Prove the general case of  \propref{prop:imagenull} without using compactness:
 \begin{enumerate}[a)]
@@ -1935,7 +1877,6 @@ Hint: First show that $\{ x \in U : d(x,y) \geq
 any $m > 0$.
 \end{enumerate}
 \end{exercise}
-\end{samepage}
 
 \begin{exercise}
 Let $U \subset \R^n$ be an open set
@@ -1966,7 +1907,7 @@ Note that you can find $k$ that really only depends on $n$ and the ratio
 $\nicefrac{\delta}{r}$.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise}[Challenging]
 Prove the statements of \exampleref{example:cantor}.  That is,
 prove:
 \begin{enumerate}[a)]
@@ -1979,6 +1920,66 @@ $m^*(C) = 0$.
 \item
 The set $C$ is in one to one correspondence with $[0,1]$.
 \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Prove that the Cantor set of \exampleref{example:cantor} contains no
+interval.  That is, whenever $a < b$, there exists a point $x \notin C$
+such that $a < x < b$.
+\\
+Note the consequence of this statement.  While we proved that an open set in
+$\R$ is a countable disjoint union of intervals, a closed set (even though
+it is just the complement of an open set) need not be a union of intervals.
+\end{exercise}
+
+\begin{samepage}
+\begin{exercise}[Challenging]
+Let us construct the so called \emph{\myindex{Cantor function}} or the 
+\emph{\myindex{Devil's staircase}}.  Let $C$ be the Cantor set and
+let $C_k$ be as in \exampleref{example:cantor}.
+Write $x \in [0,1]$ in ternary representation $x = \sum_{n=1} d_n 3^{-n}$.
+If $d_n \not= 1$ for all $n$, then let $c_n := \frac{d_n}{2}$ for all $n$.
+Otherwise, let $k$ be the smallest integer such that $d_k = 1$.  Then
+let $c_n := \frac{d_n}{2}$ if $n < k$, $c_k := 1$, and $c_n := 0$ if $n >
+k$.  Then define
+\begin{equation*}
+\varphi(x) := \sum_{n=1}^\infty c_n \, 2^{-n} .
+\end{equation*}
+\begin{enumerate}[a)]
+\item
+Prove that $\varphi$ is continuous and increasing (See
+\figureref{fig:cantor}).
+\item
+Prove that for $x \notin C$, $\varphi$ is differentiable at $x$ and
+$\varphi'(x) = 0$.  (Notice that $\varphi'$ exists and is zero except for a set of measure zero,
+yet the function manages to climb from $0$ to $1$).
+\item
+Define $\psi \colon [0,1] \to [0,2]$ by
+$\psi(x) := \varphi(x) + x$.
+Show that $\psi$ is continuous, strictly increasing, and in fact bijective.
+\item
+Prove that while $m^*(C) = 0$, $m^*\bigl(\psi(C)\bigr) \not= 0$.  That is,
+continuous functions need take measure zero sets to measure zero sets.
+Hint: $m^*\bigl(\psi([0,1] \setminus C)\bigr) = 1$, but
+$m^*\bigl([0,2]\bigr) = 2$.
+\end{enumerate}
+\end{exercise}
+\end{samepage}
+
+\begin{myfigureht}
+\includegraphics{figures/cantorfunction}
+\caption{Cantor's function or Devil's staircase (the function $\varphi$ from
+the exercise).\label{fig:cantorfunction}}
+\end{myfigureht}
+
+\begin{exercise}
+Prove that we obtain the same outer measure if we allow both finite and
+infinite sequences in
+the definition.  That is, define $\mu^*(S) := \inf\, \sum_{j \in I} V(R_j)$
+where the infimum is taken over all countable (finite or infinite) sets of
+open rectangles $\{ R_j \}_{j\in I}$ such that $S \subset
+\bigcup_{j \in I} R_j$.  Prove that for every $S \subset \R^n$,
+$\mu^*(S) = m^*(S)$.
 \end{exercise}
 
 
@@ -2412,8 +2413,10 @@ Compute $o(f,x)$ for all $x \in [0,1]$.
 
 \subsection{Volume and Jordan measurable sets}
 
-Given a bounded set $S \subset \R^n$ its \emph{\myindex{characteristic
-function}} or \emph{\myindex{indicator function}} is
+Given a bounded set
+$S \subset \R^n$, its \emph{\myindex{characteristic function}}
+or \emph{\myindex{indicator function}} $\chi_S \colon \R^n \to \R$
+is defined by
 \glsadd{not:indicatorfunction}
 \begin{equation*}
 \chi_S(x) :=

@@ -1743,7 +1743,8 @@ a $K \in \N$ such that for all $n \geq K$ we have $x_n = x_K$.
 \end{exercise}
 
 \begin{exercise}
-A set $S \subset X$ is said to be dense in $X$ if for every $x \in X$,
+A set $S \subset X$ is said to be \emph{\myindex{dense}} in $X$ if
+$X \subset \widebar{S}$ or in other words if for every $x \in X$,
 there exists a sequence $\{ x_n \}$ in $S$ that converges to $x$.  Prove
 that $\R^n$ contains a countable dense subset.
 \end{exercise}
@@ -2478,7 +2479,6 @@ Prove that $K$ is compact as a subset of $(X,d)$ if and only if $K$ is
 compact as a subset of itself with the subspace metric.
 \end{exercise}
 
-\begin{samepage}
 \begin{exercise} \label{exercise:cauchydepndsonmetric}
 Consider two metrics on $\R$.
 Let $d(x,y) := \abs{x-y}$ be the standard metric,
@@ -2505,7 +2505,15 @@ in $(\R,d')$ but not Cauchy in $(\R,d)$.
 While $(\R,d)$ is complete, show that $(\R,d')$ is not complete.
 \end{enumerate}
 \end{exercise}
-\end{samepage}
+
+\begin{exercise} \label{exercise:relativelycompactseq}
+Let $(X,d)$ be a complete metric space.
+We say a set $S$ is \emph{\myindex{relatively compact}}
+if the closure $\overline{S}$ is compact.
+Prove that $S \subset X$ is relatively compact if and only if
+given any sequence $\{ x_n \}$ in $S$, there exists a subsequence
+$\{ x_{n_k} \}$ that converges (in $X$).
+\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

@@ -1,0 +1,75 @@
+#include "epix.h"
+using namespace ePiX;
+
+#define N 150
+
+void
+ternary(double x, int *t) {
+	double fx;
+	int k;
+	for (k = 0; k < N; k++) {
+		x = x*3;
+		fx = floor(x);
+		x = x-fx;
+		t[k] = (int)lrint(fx);
+	}
+}
+
+double
+cantor(double x)
+{
+	int k;
+	int i;
+	int t[N];
+	double sum;
+	if (x >= 1.0) return 1;
+	if (x <= 0.0) return 0;
+	ternary (x, t);
+
+	k = N;
+	for (i = 0; i < N; i++) {
+		if (t[i] == 1) {
+			k = i;
+			break;
+		}
+	}
+
+	sum = pow(2.0,-(k+1));
+
+	for (i = 0; i < k; i++) {
+		sum += t[i] * pow (2.0, -(i+2));
+	}
+
+	return sum;
+}
+
+int main()
+{
+  picture(P(0,0), P(1,1), "2.2x1.5in");
+
+  begin();
+  //border();
+
+  //bold();
+  //plot(cantor, xmin(), xmax(), 500);
+  plot(cantor, 0.0, 1.0/9.0, 100);
+  plot(cantor, 1.0/9.0, 2.0/9.0, 1);
+  plot(cantor, 2.0/9.0, 1.0/3.0, 100);
+  plot(cantor, 1.0/3.0, 2.0/3.0, 1);
+  plot(cantor, 2.0/3.0, 7.0/9.0, 100);
+  plot(cantor, 7.0/9.0, 8.0/9.0, 1);
+  plot(cantor, 8.0/9.0, 1.0, 100);
+  //plain();
+
+
+  font_size("footnotesize");
+  axis Ax(P(xmin(), ymin()), P(xmax(), ymin()), 2, P(0,-8), b);
+  Ax.align(b).draw();
+
+  axis Ay(P(xmin(), ymin()), P(xmin(), xmax()), 2, P(-8,0), l);
+  Ay.align(l).draw();
+
+  tikz_format();
+  end();
+}
+

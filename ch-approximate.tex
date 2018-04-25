@@ -336,10 +336,10 @@ Prove that there is no simple mean value theorem for complex valued
 functions:  Find a differentiable function $f \colon [0,1] \to \C$ such that
 $f(0) = f(1) = 0$, but $f'(t) \not= 0$ for all $t \in [0,1]$.
 \item
-However, we have the weaker form of the mean value theorem as we do for vector valued
+However, we have the weaker form of the mean value theorem as we do for vector-valued
 functions.  Prove: If $f \colon [a,b] \to \C$ is continuous and differentiable in
 $(a,b)$, and for some $M$, $\sabs{f'(x)} \leq M$ for all $x \in (a,b)$, then
-$\sabs{f(x)-f(y)} \leq M \sabs{x-y}$.
+$\sabs{f(b)-f(a)} \leq M \sabs{b-a}$.
 \end{enumerate}
 \end{exercise}
 
@@ -2503,7 +2503,8 @@ Take $n > N$.  For $d(x,y) < \delta$ we have
 \end{proof}
 
 \begin{prop}
-A compact metric space $X$ contains a countable dense subset.
+A compact metric space $X$ contains a countable dense subset,
+that is, there exists a countable $D \subset X$ such that $\overline{D} = X$.
 \end{prop}
 
 \begin{proof}
@@ -2747,7 +2748,8 @@ the fundamental theorem of calculus).
 \item
 Show that $T$ takes the unit ball centered at 0 in $C([0,1],\C)$ into a
 relatively compact set (a set with compact closure).
-That is, $T$ is a compact operator.
+That is, $T$ is a compact operator.\\
+Hint: See \volIref{\exerciseref*{vI-exercise:relativelycompactseq} in Volume I}.
 \item
 Let $C \subset C([0,1],\C)$ the closed unit ball,
 prove that
@@ -2755,6 +2757,7 @@ the image $T(C)$ is not closed (though it is relatively compact).
 \end{enumerate}
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Let $k \in C([0,1]\times [0,1],\C)$ be fixed.
 Let $T \colon C([0,1],\C) \to C([0,1],\C)$ be the operator
@@ -2764,8 +2767,10 @@ T\bigl(f\bigr)(x) :=  \int_0^1 f(t) \, k(x,t)~dt .
 \end{equation*}
 Show that $T$ takes the unit ball centered at 0 in $C([0,1],\C)$ into a
 relatively compact set (a set with compact closure).
-That is, $T$ is a compact operator.
+That is, $T$ is a compact operator.\\
+Hint: See \volIref{\exerciseref*{vI-exercise:relativelycompactseq} in Volume I}.
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Suppose $S^1 \subset \C$ is the unit circle, that is the set where
