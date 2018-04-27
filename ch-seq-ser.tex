@@ -1463,7 +1463,7 @@ r r \cdots r = \abs{x_M} r^{n-M} = (\abs{x_M} r^{-M}) r^n .
 \end{equation*}
 The sequence $\{ r^n \}$ is unbounded (since $r > 1$), and therefore
 $\{x_n\}$ cannot be bounded (if $\abs{x_n} \leq B$ for all $n$, then
-$r^n < \frac{B}{\abs{x_M}} r^{M}$ for all $n$, which is impossible).
+$r^n < \frac{B}{\abs{x_M}} r^{\:M}$ for all $n$, which is impossible).
 Consequently, $\{ x_n \}$ cannot converge.
 \end{proof}
 
@@ -1644,6 +1644,17 @@ then $\{ x_n \}$ is unbounded.
 Suppose $x_1 := c$ and $x_{n+1} := x_n^2+x_n$.
 Show that $\{ x_n \}$ converges if and only if $-1 \leq c \leq 0$, in which
 case it converges to 0.
+\end{exercise}
+
+\begin{exercise}
+Prove $\lim\limits_{n \to \infty} {(n^2+1)}^{1/n} = 1$.
+\end{exercise}
+
+\begin{exercise}
+Prove that $\bigl\{ {(n!)}^{1/n} \bigr\}$
+is unbounded.
+Hint: Show that $\left\{ \frac{C^n}{n!} \right\}$ converges to zero
+for any $C > 0$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3936,7 +3947,7 @@ $n \leq M$, there exists $k \leq K$ such that $\sigma(k) = n$.
 In other words
 $\{ 1,2,\ldots,M \} \subset \sigma\bigl(\{ 1,2,\ldots,K \} \bigr)$.
 
-Then for any $N \geq K$, let $Q := \max \sigma(\{ 1,2,\ldots,K \})$
+Then for any $N \geq K$, let $Q := \max \sigma(\{ 1,2,\ldots,N \})$
 and compute
 \begin{equation*}
 \begin{split}
@@ -4440,7 +4451,7 @@ $2x^2-3x+4$ as a power series around $x_0 = 1$ is
 \end{equation*}
 
 We can also expand
-\emph{\myindex{rational functions}}, that is, ratios of polynomials
+\emph{\myindex{rational functions}} (that is, ratios of polynomials)
 as power series, although we will not completely prove this fact here.
 Notice that a series for a rational function only defines the function
 on an interval even if the function is defined elsewhere.  For example, for

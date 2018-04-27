@@ -394,6 +394,14 @@ M_3 &= \sup \, \bigl\{ f(x) : x \in [1+\epsilon,2] \bigr\} = 0 .
 \end{align*}
 Furthermore, $\Delta x_1 = 1-\epsilon$, $\Delta x_2 = 2\epsilon$ and
 $\Delta x_3 = 1-\epsilon$.
+See \figureref{darbouxfigstep}.
+\begin{myfigureht}
+\includegraphics{figures/darbouxfigstep}
+\caption{Darboux sums for the step function.  $L(P,f)$ is the area of the
+shaded rectangle, $U(P,f)$ is the area of both rectangles, and
+$U(P,f)-L(P,f)$ is the area of the unshaded rectangle.\label{darbouxfigstep}}
+\end{myfigureht}
+
 We compute
 \begin{align*}
 & L(P,f) = \sum_{i=1}^3 m_i \Delta x_i =
@@ -413,13 +421,6 @@ U(P,f) - L(P,f)
 (1+\epsilon)
 - (1-\epsilon) = 2 \epsilon .
 \end{equation*}
-See \figureref{darbouxfigstep}.
-\begin{myfigureht}
-\includegraphics{figures/darbouxfigstep}
-\caption{Darboux sums for the step function.  $L(P,f)$ is the area of the
-shaded rectangle, $U(P,f)$ is the area of both rectangles, and
-$U(P,f)-L(P,f)$ is the area of the unshaded rectangle.\label{darbouxfigstep}}
-\end{myfigureht}
 By \propref{intulbound:prop} we have $\underline{\int_0^2} f \leq \overline{\int_0^2} f$.
 As $\epsilon$ was arbitrary we see 
 $\overline{\int_0^2} f = \underline{\int_0^2} f$.  So $f$ is Riemann
@@ -886,6 +887,7 @@ Let $f$ and $g$ be in $\sR[a,b]$ and $\alpha \in \R$.
 \end{enumerate}
 \end{prop}
 
+\pagebreak[2]
 \begin{proof}
 Let us prove the first item for $\alpha \geq 0$. 
 Let $P$ be a partition of $[a,b]$.
