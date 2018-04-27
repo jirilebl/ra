@@ -2522,7 +2522,7 @@ Take $n > N$.  For $d(x,y) < \delta$ we have
 
 \begin{prop}
 A compact metric space $X$ contains a countable dense subset,
-that is, there exists a countable $D \subset X$ such that $\overline{D} = X$.
+that is, there exists a countable $D \subset X$ such that $\widebar{D} = X$.
 \end{prop}
 
 \begin{proof}
@@ -2541,7 +2541,7 @@ $\nicefrac{1}{n} < \epsilon$ and an $x_{n,j} \in D$ such that
 \begin{equation*}
 x \in B(x_{n,j},\nicefrac{1}{n}) \subset B(x_{n,j},\epsilon) .
 \end{equation*}
-Hence $x \in \overline{D}$, so $\overline{D} = X$ and $D$ is dense.
+Hence $x \in \widebar{D}$, so $\widebar{D} = X$ and $D$ is dense.
 \end{proof}
 
 We are now ready for the main result of this section,
@@ -2993,7 +2993,11 @@ a_{2n}(t)~dt
 x^{2n} .
 \end{split}
 \end{equation*}
-In other words, $p_n$ is a polynomial in $x$.
+In other words, $p_n$ is a polynomial%
+\footnote{%
+Do note that the functions $a_j$ depend on $n$, so the coefficients of $p_n$
+change as $n$ changes.}
+ in $x$.
 If $g(t)$ is real-valued then the functions $g(t)a_j(t)$ are
 real-valued and hence $p_n$ has real coefficients,
 proving the ``furthermore'' part of the theorem.
@@ -3042,8 +3046,9 @@ which is where the peak is.
 Given any $\delta > 0$, $\delta < 1$, for
 $x$ such that $\delta \leq \sabs{x} \leq 1$, we have
 \begin{equation*}
-q_n(x) \leq n{(1-\delta^2)}^n .
+q_n(x) \leq c_n {(1-\delta^2)}^n \leq  n{(1-\delta^2)}^n ,
 \end{equation*}
+because $q_n$ is increasing on $[-1,0]$ and decreasing on $[0,1]$.
 By the ratio test, 
 $n{(1-\delta^2)}^n$ goes to 0 as $n$ goes to infinity.
 
@@ -3230,7 +3235,7 @@ $p_n(0) = 0$ for all $n$.
 \end{cor}
 
 \begin{proof}
-As $f(x) = \sabs{x}$ is continuous and real-valued
+As $f(x) := \sabs{x}$ is continuous and real-valued
 on $[-a,a]$, the Weierstrass theorem gives a sequence of
 real polynomials $\{ \widetilde{p}_n \}$ that converges to $f$
 uniformly on $[-a,a]$.
@@ -3256,8 +3261,8 @@ Then
 \end{equation*}
 \end{proof}
 
-Following the proof of the theorem,
-we see that we can always make the polynomials from the Weierstrass theorem
+Following the proof of the corollary,
+we can always make the polynomials from the Weierstrass theorem
 have a fixed value at one point, so it works not just for $\sabs{x}$, but
 that's the one we will need.
 
@@ -3279,21 +3284,21 @@ We are interested in the case when
 $X$ is a compact metric space.  Then
 we have that $C(X,\C)$ and $C(X,\R)$ are metric spaces.
 Given a set $\sA \subset C(X,\C)$, the set of all uniform
-limits is the metric space closure $\overline{\sA}$.
+limits is the metric space closure $\widebar{\sA}$.
 When we talk about closure of an algebra
 from now on we will mean the closure in $C(X,\C)$
 as a metric space.  Same for $C(X,\R)$.
 
 The set $\sP$ of all polynomials is an algebra in
 $C([a,b],\C)$, and we
-have shown that its closure $\overline{\sP} = C([a,b],\C)$.
+have shown that its closure $\widebar{\sP} = C([a,b],\C)$.
 That is, it is dense.  That is the sort of result that we wish to prove.
 
 We leave the following proposition as an exercise.
 
 \begin{prop} \label{prop:closureofalgebra}
 Suppose $X$ is a compact metric space.
-If $\sA \subset C(X,\C)$ is an algebra, then the closure $\overline{\sA}$ is also an algebra.
+If $\sA \subset C(X,\C)$ is an algebra, then the closure $\widebar{\sA}$ is also an algebra.
 Similarly for a real algebra in $C(X,\R)$.
 \end{prop}
 
@@ -3375,7 +3380,7 @@ By the second formula we see that $f \in \sA$ (as $\sA$ is an algebra).
 \index{Stone--Weierstrass!real version}
 Let $X$ be a compact metric space and $\sA$ an algebra of real-valued
 continuous functions on $X$, such that $\sA$ separates points and vanishes at
-no point.  Then the closure $\overline{\sA} = C(X,\R)$.
+no point.  Then the closure $\widebar{\sA} = C(X,\R)$.
 \end{thm}
 
 The proof is divided into several claims.
@@ -3383,8 +3388,8 @@ The proof is divided into several claims.
 \medskip
 
 \noindent
-\textbf{Claim 1:} \emph{If $f \in \overline{\sA}$ then $\sabs{f} \in
-\overline{\sA}$.}
+\textbf{Claim 1:} \emph{If $f \in \widebar{\sA}$ then $\sabs{f} \in
+\widebar{\sA}$.}
 
 \begin{proof}
 The function $f$ is bounded (continuous on a compact set), so there is an $M$
@@ -3410,16 +3415,16 @@ As $\sabs{f(x)} \leq M$ we have that for all $x \in X$
 \abs{\sabs{f(x)} - \sum_{j=1}^N c_j {\bigl(f(x)\bigr)}^j}
 < \epsilon .
 \end{equation*}
-So $\sabs{f}$ is in the closure of $\overline{\sA}$, which is closed, so $\sabs{f} \in
-\overline{\sA}$.
+So $\sabs{f}$ is in the closure of $\widebar{\sA}$, which is closed, so $\sabs{f} \in
+\widebar{\sA}$.
 \end{proof}
 
 \medskip
 
 \noindent
-\textbf{Claim 2:} \emph{If $f \in \overline{\sA}$ and $g \in \overline{\sA}$ then
-$\max(f,g) \in \overline{\sA}$ and
-$\min(f,g) \in \overline{\sA}$, where
+\textbf{Claim 2:} \emph{If $f \in \widebar{\sA}$ and $g \in \widebar{\sA}$ then
+$\max(f,g) \in \widebar{\sA}$ and
+$\min(f,g) \in \widebar{\sA}$, where
 }
 \begin{equation*}
 \bigl(\max(f,g)\bigr) (x) = \max \{ f(x), g(x) \} \qquad
@@ -3435,7 +3440,7 @@ and
 \begin{equation*}
 \min(f,g) = \frac{f+g}{2} - \frac{\sabs{f-g}}{2} .
 \end{equation*}
-As $\overline{\sA}$ is an algebra we are done.
+As $\widebar{\sA}$ is an algebra we are done.
 \end{proof}
 
 The claim is true for the minimum or maximum of any finite
@@ -3445,7 +3450,7 @@ collection of functions as well.
 
 \noindent
 \textbf{Claim 3:} \emph{Given $f \in C(X,\R)$, $x \in X$ and $\epsilon > 0$
-there exists a $g_x \in \overline{\sA}$ with $g_x(x) = f(x)$ and
+there exists a $g_x \in \widebar{\sA}$ with $g_x(x) = f(x)$ and
 }
 \begin{equation*}
 g_x(t) > f(t)-\epsilon \qquad \text{for all $t \in X$}.
@@ -3474,7 +3479,7 @@ Let
 \begin{equation*}
 g_x := \max(h_{y_1},h_{y_2},\ldots,h_{y_n})
 \end{equation*}
-By Claim 2, $g_x$ is in $\overline{\sA}$.
+By Claim 2, $g_x$ is in $\widebar{\sA}$.
 Furthermore,
 \begin{equation*}
 g_x(t) > f(t) -\epsilon
@@ -3490,7 +3495,7 @@ $g_x(x) = f(x)$.
 
 \noindent
 \textbf{Claim 4:} \emph{If $f \in C(X,\R)$ and $\epsilon > 0$ is given then there
-exists an $h \in \overline{\sA}$ such that}
+exists an $h \in \widebar{\sA}$ such that}
 \begin{equation*}
 \sabs{f(x) - h(x)} < \epsilon .
 \end{equation*}
@@ -3513,7 +3518,7 @@ Let
 \begin{equation*}
 h := \min(g_{x_1},g_{x_2},\ldots,g_{x_n}) .
 \end{equation*}
-By Claim 2, $h \in \overline{\sA}$.  Similarly as before (same argument as in
+By Claim 2, $h \in \widebar{\sA}$.  Similarly as before (same argument as in
 Claim 3) we have that for all
 $t \in X$
 \begin{equation*}
@@ -3528,7 +3533,7 @@ which is the desired conclusion.
 \end{proof}
 
 The proof of the theorem follows from Claim 4.  The claim states that an
-arbitrary continuous function is in the closure of $\overline{\sA}$,
+arbitrary continuous function is in the closure of $\widebar{\sA}$,
 which itself is
 closed.  So the theorem is proved.
 
@@ -3592,7 +3597,7 @@ bar we mean the complex conjugate.
 \index{Stone--Weierstrass!complex version}
 Let $X$ be a compact metric space and $\sA$ an algebra of complex-valued
 continuous functions on $X$, such that $\sA$ separates points, vanishes at
-no point, and is self-adjoint.  Then the closure $\overline{\sA} = C(X,\C)$.
+no point, and is self-adjoint.  Then the closure $\widebar{\sA} = C(X,\C)$.
 \end{thm}
 
 \begin{proof}
@@ -3627,7 +3632,7 @@ Next, $g+i h \in \sA$, and
 \nicefrac{\epsilon}{2} = \epsilon.
 \end{multline*}
 for all $t \in X$.
-So $\overline{\sA} = C(X,\C)$.
+So $\widebar{\sA} = C(X,\C)$.
 \end{proof}
 
 The self-adjoint requirement is necessary although it is not so obvious to
@@ -3803,9 +3808,9 @@ of functions from $\sA$.
 \begin{exercise}
 Let $(X,d)$ be a compact metric space and
 suppose $\sA \subset C(X,\R)$ is a real algebra.
-Suppose that for each $y \in X$ the closure $\overline{\sA}$
+Suppose that for each $y \in X$ the closure $\widebar{\sA}$
 contains the function $\varphi_y(x) := d(y,x)$.
-Then $\overline{\sA} = C(X,\R)$.
+Then $\widebar{\sA} = C(X,\R)$.
 \end{exercise}
 
 \begin{exercise}
@@ -4224,19 +4229,19 @@ Let us write
 =
 \int_a^b \sabs{f}^2
 -
-\int_a^b f \overline{p_n}
+\int_a^b f \widebar{p_n}
 -
-\int_a^b \overline{f} p_n
+\int_a^b \widebar{f} p_n
 +
 \int_a^b \sabs{p_n}^2 .
 \end{equation*}
 Now
 \begin{equation*}
-\int_a^b f \overline{p_n}
+\int_a^b f \widebar{p_n}
 =
 \int_a^b f \sum_{k=1}^n \overline{d_k} \overline{\varphi_k}
 =
- \sum_{k=1}^n \overline{d_k} \int_a^b f \overline{\varphi_k}
+ \sum_{k=1}^n \overline{d_k} \int_a^b f \, \overline{\varphi_k}
 =
  \sum_{k=1}^n \overline{d_k} c_k ,
 \end{equation*}
