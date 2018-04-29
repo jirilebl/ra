@@ -6,7 +6,7 @@
 
 \section{About this book}
 
-This first volume of this book is a one semester course in basic analysis.
+This first volume is a one semester course in basic analysis.
 Together with the second volume it is a year-long course.
 It started its life
 as my lecture notes for teaching Math 444 at the
@@ -44,10 +44,9 @@ course as is for example done at Iowa State University Math 201, where
 this book is used in conjunction with Hammack's Book of Proof~\cite{Hammack}.
 
 With volume II one can run a year-long course that also covers multivariable
-topics.  When I teach this course at OSU, I leave
-metric spaces for the beginning of the
-second semester and cover essentially all topics in this
-first volume.
+topics.  It may make sense in this case to cover most of the first volume
+in the first semester while leaving metric spaces for the beginning of the
+second semester.
 
 The book normally used for the class at UIUC is Bartle and Sherbert,
 \emph{Introduction to Real Analysis} third edition
@@ -71,7 +70,7 @@ prove Picard's theorem using the fixed point theorem as is usual.
 Other excellent books exist.  My favorite is 
 Rudin's excellent
 \emph{Principles of Mathematical Analysis}~\cite{Rudin:baby}
-or as it is commonly and lovingly called \emph{baby Rudin}
+or, as it is commonly and lovingly called, \emph{baby Rudin}
 (to distinguish it from his other great analysis textbook,
 \emph{big Rudin}).  I took a
 lot of inspiration and ideas from Rudin.  However, Rudin is a bit more
@@ -114,7 +113,7 @@ Jim Brandt, Kenji Kozai, Arthur Busch,  Anton Petrunin,
 Mark Meilstrup, Harold P.\ Boas, and Atilla Y{\i}lmaz
 for teaching with the book and giving me lots of useful feedback.
 Frank Beatrous wrote the University of Pittsburgh version extensions, which
-served as inspiration for many of the additions.
+served as inspiration for many more recent additions.
 I would also like to thank
 Dan Stoneham, Jeremy Sutter, Eliya Gwetta, Daniel Pimentel-Alarc\'on,
 Steve Hoerning, Yi Zhang, Nicole Caviris,
@@ -287,8 +286,15 @@ A set may also contain some of the same elements as another set.  For example,
 T := \{ 0, 2 \}
 \end{equation*}
 contains the numbers 0 and 2.  In this case all elements of $T$ also
-belong to $S$.  We write $T \subset S$.\glsadd{not:subset}  More formally we make the
-following definition.
+belong to $S$.  We write $T \subset S$.\glsadd{not:subset}
+See \figureref{fig:sets} for a diagram.
+%More formally we make the
+%following definition.
+
+\begin{myfigureht}
+\subimport*{figures/}{sets.pdf_t}
+\caption{A diagram of the example sets $S$ and its subset $T$.\label{fig:sets}}
+\end{myfigureht}
 
 %FIXMEevillayouthack
 \pagebreak[2]
@@ -319,7 +325,7 @@ same exact set.
 Let us mention the
 \emph{\myindex{set building notation}},\glsadd{not:setbuilder}
 \begin{equation*}
-\{ x \in A : P(x) \} .
+\bigl\{ x \in A : P(x) \bigr\} .
 \end{equation*}
 This notation refers to a subset of the set $A$ containing all elements
 of $A$ that satisfy the property $P(x)$.
@@ -399,7 +405,8 @@ use the set difference notation $A \setminus B$.
 
 \begin{myfigureht}
 \subimport*{figures/}{figsetop.pdf_t}
-\caption{Venn diagrams of set operations.\label{figsetop}}
+\caption{Venn diagrams of set operations, the result of the operation is
+shaded.\label{figsetop}}
 \end{myfigureht}
 We illustrate the operations on the
 \emph{Venn diagrams}\index{Venn diagram} in \figureref{figsetop}.
@@ -706,12 +713,12 @@ Let $f \colon A \to B$ be a function, and $C \subset A$.  Define
 the \emph{\myindex{image}} (or \emph{\myindex{direct image}}) of $C$ as
 \glsadd{not:dirimage}
 \begin{equation*}
-f(C) := \{ f(x) \in B : x \in C \} .
+f(C) := \bigl\{ f(x) \in B : x \in C \bigr\} .
 \end{equation*}
-Let $D \subset B$.  Define the \emph{\myindex{inverse image}} as
+Let $D \subset B$.  Define the \emph{\myindex{inverse image}} of $D$ as
 \glsadd{not:invimage}
 \begin{equation*}
-f^{-1}(D) := \{ x \in A : f(x) \in D \} .
+f^{-1}(D) := \bigl\{ x \in A : f(x) \in D \bigr\} .
 \end{equation*}
 \end{defn}
 \begin{myfigureht}
@@ -747,7 +754,7 @@ Let $f \colon A \to B$.  Let $C, D$ be subsets of $B$.  Then
 \end{align*}
 \end{prop}
 
-Read the last line as
+Read the last line of the proposition as
 $f^{-1}( B \setminus C) = A \setminus f^{-1} (C)$.
 
 \begin{proof}
@@ -835,18 +842,20 @@ $a \, \sR \, b$.
 Take $A := \{ 1,2,3 \}$.
 
 First, let the relation be `$<$'.  Then the corresponding set 
-of pairs is $\{ (1,2), (1,3), (2,3) \}$.  So $1 < 2$ holds as $(1,2)$ is in
+of pairs is $\bigl\{ (1,2), (1,3), (2,3) \bigr\}$.  So $1 < 2$ holds as $(1,2)$ is in
 the set, but $3 < 1$ does not hold as $(3,1)$ is not in the set.
 
 Similarly, the relation `$=$'
-is defined by the pairs $\{ (1,1), (2,2), (3,3) \}$.
+is defined by the pairs $\bigl\{ (1,1), (2,2), (3,3) \big\}$.
 
 Any subset of $A \times A$ is a relation.  Let us define the relation
-$\dagger$ via $\{ (1,2), (2,1), (2,3), (3,1) \}$, then $1 \dagger 2$ and
+$\dagger$ via $\bigl\{ (1,2), (2,1), (2,3), (3,1) \bigr\}$, then $1 \dagger 2$ and
 $3 \dagger 1$ are
 true, but $1 \dagger 3$ is not.
 \end{example}
 
+%FIXMEevillayouthack
+\pagebreak[2]
 \begin{defn}
 Let $\sR$ be a relation on a set $A$.  Then $\sR$ is said to be
 \begin{enumerate}[(i)]
@@ -868,9 +877,10 @@ an \emph{\myindex{equivalence relation}}.
 Let $A := \{ 1,2,3 \}$ as above.
 The relation `$<$' is transitive, but neither reflexive nor symmetric.  The
 relation `$\leq$' defined by
-$\{ (1,1), (1,2), (1,3), (2,2), (2,3), (3,3) \}$
+$\bigl\{ (1,1), (1,2), (1,3), (2,2), (2,3), (3,3) \bigr\}$
 is reflexive and transitive, but not symmetric.
-Finally, a relation `$\star$' defined by $\{ (1,1), (1,2), (2,1), (2,2), (3,3) \}$ is
+Finally, a relation `$\star$' defined by
+$\bigl\{ (1,1), (1,2), (2,1), (2,2), (3,3) \bigr\}$ is
 an equivalence relation.
 \end{example}
 
@@ -883,11 +893,11 @@ An \emph{\myindex{equivalence class}} of $a \in A$, often denoted
 by $[a]$,\glsadd{not:equivclass} is the set $\{ x \in A : a\, \sR \, x \}$.
 \end{defn}
 
-For example for the relation `$\star$' above, the equivalence classes
+For example, for the relation `$\star$' above, the equivalence classes
 are $[1] = [2] = \{ 1,2 \}$ and $[3] = \{ 3 \}$.
 
-Reflexivity guarantees that $a \in [a]$.  Symmetry, guarantees
-that if $b \in [a]$, then $a \in [b]$.  Finally transitivity guarantees that
+Reflexivity guarantees that $a \in [a]$.  Symmetry guarantees
+that if $b \in [a]$, then $a \in [b]$.  Finally, transitivity guarantees that
 if $a \in [b]$ and $b \in [c]$, then $a \in [c]$.
 In particular, we have the following proposition, whose proof is an
 exercise.
@@ -969,8 +979,8 @@ $\abs{B} \leq \abs{A}$.  The issues surrounding this
 last statement are very subtle.  As we do not require either
 of these two statements, we omit proofs.
 
-The truly interesting cases of cardinality are infinite sets.  We start with the following
-definition.
+The truly interesting cases of cardinality are infinite sets.
+We will distinguish two types of infinite cardinality.
 
 \begin{defn}
 If $\abs{A} = \abs{\N}$, then $A$ is said to be
@@ -1037,6 +1047,8 @@ As a consequence if $\abs{A} < \abs{\N}$ then $A$ is
 finite.
 Similarly, if $B$ is finite and $A \subset B$, then $A$ is finite.
 
+%FIXMEevillayouthack
+\pagebreak[2]
 We give the first truly striking result.
 First, we need a notation for
 the set of all subsets of a set.
@@ -1272,7 +1284,7 @@ equivalence class.  Then prove that $a \, \sR \, b$ if and only if $[a] =
 
 \begin{exercise}
 Prove that the relation `$\sim$'
-in \exerciseref{example:ratnums} is an equivalence
+in \exampleref{example:ratnums} is an equivalence
 relation.
 \end{exercise}
 

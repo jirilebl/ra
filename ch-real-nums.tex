@@ -63,7 +63,7 @@ is a \emph{\myindex{lower bound}} of $E$.
 $b$ is any upper bound for $E$ we have $b_0 \leq b$, then $b_0$
 is called the \emph{\myindex{least upper bound}} or
 the \emph{\myindex{supremum}}
-of $E$.  We write\glsadd{not:sup}
+of $E$.  See \figureref{fig:lub}.  We write\glsadd{not:sup}
 \begin{equation*}
 \sup\, E := b_0  .
 \end{equation*}
@@ -80,8 +80,14 @@ When a set $E$ is both bounded above and bounded below, we say simply that
 $E$ is \emph{bounded}\index{bounded set}.
 \end{defn}
 
+\begin{myfigureht}
+\subimport*{figures/}{lub.pdf_t}
+\caption{A set $E$ bounded above and the least upper bound of $E$.\label{fig:lub}}
+\end{myfigureht}
+
+A simple example:
 Let $S := \{ a, b, c, d, e \}$ be ordered as $a < b < c < d < e$, and
-let $E := \{ a, c \}$.  Then $c$, $d$, or $e$ are upper bounds, and
+let $E := \{ a, c \}$.  Then $c$, $d$, and $e$ are upper bounds of $E$, and
 $c$ is the least upper bound or supremum of $E$.
 
 Supremum (or infimum) is automatically unique (if it exists): If $b$ and
@@ -1656,7 +1662,7 @@ roots.
 Let $F$ be the set of all functions $f \colon \R \to \R$.
 Prove $\abs{\R} < \abs{F}$
 using Cantor's \thmref{cantorspowersetthm}.\footnote{Interestingly,
-if $C$ would be the set of continuous functions then $\abs{\R} = \abs{C}$.}
+if $C$ is the set of continuous functions then $\abs{\R} = \abs{C}$.}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
