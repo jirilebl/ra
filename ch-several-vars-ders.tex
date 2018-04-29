@@ -2100,15 +2100,21 @@ which differs from the identity by one column.
 \end{exercise}
 
 \begin{exercise}
-Consider \propref{prop:finitedimpropinv} and let $A$ be invertible.
+Consider \propref{prop:finitedimpropinv}, for any $n$.
 \begin{enumerate}[a)]
 \item
 Prove that the estimate $\snorm{A-B} < \frac{1}{\snorm{A^{-1}}}$ is the
-best possible in the following sense: for any $A$ find a $B$ where equality is satisfied and $B$ is
+best possible in the following sense: for any invertible
+$A \in GL(\R^n)$ find a $B$ where equality is satisfied and $B$ is
 not invertible.
 \item
-Prove that in the set of $B$ such $\snorm{A-B} < \frac{1}{\snorm{A^{-1}}}$, $B$ is 
-invertible, but $\snorm{B^{-1}}$ is unbounded.
+For any fixed invertible $A \in GL(\R^n)$,
+let $\sM$ denote the set of matrices
+$B$ such that
+$\snorm{A-B} < \frac{1}{\snorm{A^{-1}}}$.
+Prove that while $B \in \sM$ is 
+always invertible, $\snorm{B^{-1}}$ is unbounded
+as a function of $B$ on $\sM$.
 \end{enumerate}
 \end{exercise}
 
@@ -3478,7 +3484,7 @@ Hint: Think back to how we constructed a nowhere continuous function on $[0,1]$.
 \begin{exercise}
 Suppose $r \colon \R^n \setminus X \to \R$ is a rational function, that is,
 let $p \colon \R^n \to \R$ and
-$q \colon \R^n \to \R$ be polynomials, let $X = q^{-1}(0)$, and
+$q \colon \R^n \to \R$ be polynomials, where $X = q^{-1}(0)$, and
 $r = \frac{p}{q}$.
 Show that $r$ is continuously differentiable.
 \end{exercise}
