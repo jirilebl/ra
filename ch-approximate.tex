@@ -2777,9 +2777,9 @@ the image $T(C)$ is not closed (though it is relatively compact).
 
 \begin{samepage}
 \begin{exercise}
-Let $k \in C([0,1]\times [0,1],\C)$ be fixed.
-Let $T \colon C([0,1],\C) \to C([0,1],\C)$ be the operator
-given by
+Given $k \in C([0,1]\times [0,1],\C)$,
+let $T \colon C([0,1],\C) \to C([0,1],\C)$ be the operator
+defined by
 \begin{equation*}
 T\bigl(f\bigr)(x) :=  \int_0^1 f(t) \, k(x,t)~dt .
 \end{equation*}
@@ -2787,6 +2787,9 @@ Show that $T$ takes the unit ball centered at 0 in $C([0,1],\C)$ into a
 relatively compact set (a set with compact closure).
 That is, $T$ is a compact operator.\\
 Hint: See \volIref{\exerciseref*{vI-exercise:relativelycompactseq} in Volume I}.
+\\
+Note: That $T$ is a well-defined linear operator was proved in
+\exerciseref{exercise:continuouskernel}.
 \end{exercise}
 \end{samepage}
 
@@ -2855,12 +2858,31 @@ function $f \colon [x_0 - h, x_0 + h] \to J \subset \R$, such that}
 f'(x) = F\bigl(x,f(x)\bigr) \qquad \text{and} \qquad f(x_0) = y_0.
 \end{equation*}
 
-Hint: Define the Picard iterates, that is,
-set $f_0(x) := y_0$, and define
+Use the following outline:
+\begin{enumerate}[a)]
+\item
+We wish to define the Picard iterates, that is,
+set $f_0(x) := y_0$, and 
 \begin{equation*} \label{picard:inteq}
 f_{n+1}(x) := y_0 + \int_{x_0}^x F\bigl(t,f_n(t)\bigr)~dt .
 \end{equation*}
-First you have to prove that there is an $h > 0$ such that all $f_n \in C([x_0-h,x_0+h],\R)$.
+Prove that there exists an $h > 0$ such that
+$f_n \colon [x_0 - h, x_0 + h] \to \C$ is well-defined
+for all $n$.  Hint: $F$ is bounded (why?).
+\item
+Show that $\{ f_n \}$ is equicontinuous and bounded, in fact it is
+Lipshitz with a uniform Lipshitz constant.  Arzel\`a--Ascoli
+then says that there exists a
+uniformly convergent subsequence $\{ f_{n_k} \}$.
+\item
+Prove 
+$\bigl\{ F\bigl(x,f_{n_k}(x)\bigr) \bigr\}_{k=1}^\infty$ converges uniformly
+on $[x_0-h,x_0+h]$.
+Hint: $F$ is uniformly continuous (why?).
+\item
+Finish the proof of the theorem by taking the limit under the integral
+and applying the fundamental theorem of calculus.
+\end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
