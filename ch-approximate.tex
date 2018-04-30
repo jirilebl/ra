@@ -2891,7 +2891,7 @@ and applying the fundamental theorem of calculus.
 \section{The Stone--Weierstrass theorem}
 \label{sec:stoneweier}
 
-\sectionnotes{2 lectures}
+\sectionnotes{3 lectures}
 
 \subsection{Weierstrass approximation}
 
@@ -3344,8 +3344,8 @@ there is an $f \in \sA$ such that $f(x) \not= 0$.
 \begin{example}
 The set $\sP$ of polynomials separates points and vanishes at no point
 on $\R$.  That is, $1 \in \sP$ so it vanishes at no point.  And for $x,y \in
-\R$, $x\not= y$, take $f(t) := t-x$: $f(x) = 0$ and $f(y) = y-x
-\not= 0$.  So $\sP$ separates points.
+\R$, $x\not= y$, take $f(t) := t$: $f(x) = x \not= y = f(y)$.
+So $\sP$ separates points.
 \end{example}
 
 \begin{example}
@@ -3353,8 +3353,11 @@ The set of functions of the form
 \begin{equation*}
 f(t) = a_0 + \sum_{n=1}^k a_n \cos(nt)
 \end{equation*}
-is an algebra (some trig identities need to be used to show this), but
-it
+is an algebra,
+which follows by the identity $\cos(mt)\cos(nt) = 
+\frac{\cos((n+m) t)}{2}+
+\frac{\cos((n-m) t)}{2}$.
+The algebra
 does not separate points if the domain is any interval of the form
 $[-a,a]$, because $f(-t) = f(t)$ for all $t$.
 It does separate points if the domain is $[0,\pi]$, as $\cos(t)$
