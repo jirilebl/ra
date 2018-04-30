@@ -3168,7 +3168,7 @@ The metric space $C([a,b],\C)$ contains a countable dense subset.
 \begin{proof}
 Without loss of generality suppose that we are dealing with $C([a,b],\R)$
 (why?).
-The real polynomials are dense in $C([a,b],\R)$.  If we show that
+The real polynomials are dense in $C([a,b],\R)$ by Weierstrass.  If we show that
 any real polynomial can be approximated by polynomials with rational
 coefficients, we are done.  This is because there are only countably many
 rational numbers and so there are only countably many polynomials with
@@ -3237,8 +3237,9 @@ We want to abstract away what is not really
 necessary and prove a general version of the Weierstrass theorem.
 The polynomials are dense in the space of continuous
 functions on a compact interval.  What other kind of families of
-functions are also dense?  If the domain is an
-arbitrary metric space, then we no longer have polynomials.
+functions are also dense?  And if the domain is an
+arbitrary metric space, then we no longer have polynomials
+to begin with.
 
 The theorem we will prove is the Stone--Weierstrass theorem\footnote{%
 Named after the American mathematician
@@ -3267,12 +3268,13 @@ p_n(x) := \widetilde{p}_n(x) - \widetilde{p}_n(0) .
 \end{equation*}
 Obviously $p_n(0) = 0$.
 
-We know
-$\lim \widetilde{p}_n(0) = 0$.  Given $\epsilon > 0$, let $N$ be such that
-for $n \geq N$ we have $\sabs{\widetilde{p}_n(0)} < \nicefrac{\epsilon}{2}$
-and also that $\bigl\lvert\widetilde{p}_n(x)-\sabs{x}\big\rvert <
+Given $\epsilon > 0$, let $N$ be such that
+for $n \geq N$ we have
+$\bigl\lvert\widetilde{p}_n(x)-\sabs{x}\big\rvert <
 \nicefrac{\epsilon}{2}$ for all $x \in [-a,a]$.
-Then
+In particular,
+$\sabs{\widetilde{p}_n(0)} < \nicefrac{\epsilon}{2}$.
+Then for $n \geq N$,
 \begin{equation*}
 \bigl\lvert p_n(x)-\sabs{x} \bigr\rvert
 =
@@ -3299,16 +3301,16 @@ A set $\sA$ of complex-valued functions $f \colon X \to \C$ is said to be an
 \end{enumerate}
 A \emph{\myindex{real algebra}} or an
 \emph{algebra over $\R$} is a set of real-valued
-functions that satisfies the three properties above for $c \in \R$
+functions that satisfies the three properties above for $c \in \R$.
 \end{defn}
 
 We are interested in the case when
 $X$ is a compact metric space.  Then
-we have that $C(X,\C)$ and $C(X,\R)$ are metric spaces.
+$C(X,\C)$ and $C(X,\R)$ are metric spaces.
 Given a set $\sA \subset C(X,\C)$, the set of all uniform
 limits is the metric space closure $\widebar{\sA}$.
 When we talk about closure of an algebra
-from now on we will mean the closure in $C(X,\C)$
+from now on we mean the closure in $C(X,\C)$
 as a metric space.  Same for $C(X,\R)$.
 
 The set $\sP$ of all polynomials is an algebra in
@@ -3342,8 +3344,8 @@ there is an $f \in \sA$ such that $f(x) \not= 0$.
 \begin{example}
 The set $\sP$ of polynomials separates points and vanishes at no point
 on $\R$.  That is, $1 \in \sP$ so it vanishes at no point.  And for $x,y \in
-\R$, $x\not= y$, just take $f(t) := t-x$: $f(x) = 0$ and $f(y) = y-x
-\not= 0$.
+\R$, $x\not= y$, take $f(t) := t-x$: $f(x) = 0$ and $f(y) = y-x
+\not= 0$.  So $\sP$ separates points.
 \end{example}
 
 \begin{example}
@@ -3364,13 +3366,13 @@ The set of polynomials with no constant term vanishes at the origin.
 \end{example}
 
 \begin{prop} \label{prop:SWinterpolate}
-Suppose $\sA$ is an algebra of functions on a set $X$, that separates points
+Suppose $\sA$ is an algebra of complex-valued functions on a set $X$, that separates points
 and vanishes at no point.  Suppose $x,y$ are distinct points of $X$, and
 $c,d \in \C$.  Then there is an $f \in \sA$ such that
 \begin{equation*}
 f(x) = c, \qquad f(y) = d .
 \end{equation*}
-If $\sA$ is a real algebra, the conclusion also holds for $c,d \in \R$.
+If $\sA$ is a real algebra, the conclusion holds for $c,d \in \R$.
 \end{prop}
 
 \begin{proof}
@@ -3424,11 +3426,11 @@ $y=0$) such that
 \abs{\sabs{y} - \sum_{j=1}^N c_j y^j} < \epsilon
 \end{equation*}
 for all $y \in [-M,M]$.
-Because $\sA$ is an algebra (there is no constant term in the polynomial)
-we have
+Because $\widebar{\sA}$ is an algebra and because there is no constant term in the
+polynomial,
 \begin{equation*}
 %g :=
-\sum_{j=1}^N c_j f^j \in \sA .
+\sum_{j=1}^N c_j f^j \in \widebar{\sA} .
 \end{equation*}
 As $\sabs{f(x)} \leq M$ we have that for all $x \in X$
 \begin{equation*}
@@ -3449,8 +3451,9 @@ $\max(f,g) \in \widebar{\sA}$ and
 $\min(f,g) \in \widebar{\sA}$, where
 }
 \begin{equation*}
-\bigl(\max(f,g)\bigr) (x) = \max \{ f(x), g(x) \} \qquad
-\bigl(\min(f,g)\bigr) (x) = \min \{ f(x), g(x) \} .
+\bigl(\max(f,g)\bigr) (x) := \max \bigl\{ f(x), g(x) \bigr\} , \qquad
+\text{and} \qquad
+\bigl(\min(f,g)\bigr) (x) := \min \bigl\{ f(x), g(x) \bigr\} .
 \end{equation*}
 
 \begin{proof}
@@ -3479,29 +3482,34 @@ g_x(t) > f(t)-\epsilon \qquad \text{for all $t \in X$}.
 \end{equation*}
 
 \begin{proof}
-Let $x \in X$ be fixed.
+Fix $f$, $x$, and $\epsilon$.
 By \propref{prop:SWinterpolate}, for every $y \in X$ we find an $h_y \in
 \sA$ such that
 \begin{equation*}
 h_y(x) = f(x), \qquad h_y(y)=f(y) .
 \end{equation*}
-As $h_y$ and $f$ are continuous, the set
+As $h_y$ and $f$ are continuous, the function $h_y-f$ is continuous,
+and the set
 \begin{equation*}
-J_y := \{ t \in X : h_y(t) > f(t) -\epsilon \}
+J_y :=
+\bigl\{ t \in X : h_y(t) > f(t) -\epsilon \bigr\}
+=
+{(h_y-f)}^{-1} \bigl( (-\epsilon,\infty) \bigr)
 \end{equation*}
 is open (it is the inverse image of an open set by a continuous function).
 Furthermore $y \in J_y$.  So the sets $J_y$ cover $X$.
 
-Now $X$ is compact so there exist finitely many points $y_1,y_2,\ldots,y_n$ such
+The space $X$ is compact so there exist finitely many
+points $y_1,y_2,\ldots,y_n$ in $X$ such
 that
 \begin{equation*}
 X = \bigcup_{j=1}^n J_{y_j}  .
 \end{equation*}
 Let 
 \begin{equation*}
-g_x := \max(h_{y_1},h_{y_2},\ldots,h_{y_n})
+g_x := \max(h_{y_1},h_{y_2},\ldots,h_{y_n}) .
 \end{equation*}
-By Claim 2, $g_x$ is in $\widebar{\sA}$.
+By Claim 2, $g_x \in \widebar{\sA}$.
 Furthermore,
 \begin{equation*}
 g_x(t) > f(t) -\epsilon
@@ -3624,7 +3632,9 @@ no point, and is self-adjoint.  Then the closure $\widebar{\sA} = C(X,\C)$.
 
 \begin{proof}
 Suppose $\sA_\R \subset \sA$ is the set of the real-valued elements of
-$\sA$.  If $f = u+iv$ where $u$ and $v$ are real-valued, then
+$\sA$.
+For any $f \in \sA$, write $f = u+iv$ where $u$ and $v$ are real-valued.
+Then
 \begin{equation*}
 u = \frac{f+\bar{f}}{2}, \qquad
 v = \frac{f-\bar{f}}{2i} .
@@ -3641,7 +3651,8 @@ Similarly, for any $x$ find $f \in \sA$ such that $f(x) \not= 0$.  If $f
 So $\sA_\R$ vanishes at no point.
 
 The set $\sA_\R$ is a real algebra, and satisfies the hypotheses of the
-\hyperref[thm:SWreal]{real Stone--Weierstrass theorem}.  So given any $f = u+iv \in C(X,\C)$,
+\hyperref[thm:SWreal]{real Stone--Weierstrass theorem}.
+Given any $f = u+iv \in C(X,\C)$,
 we find $g,h \in \sA_\R$ such that
 $\sabs{u(t)-g(t)} < \nicefrac{\epsilon}{2}$ and
 $\sabs{v(t)-h(t)} < \nicefrac{\epsilon}{2}$ for all $t \in X$.
