@@ -2,7 +2,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\sectionnewpage
 \section{Differentiation under the integral}
 \label{sec:diffunderint}
 
@@ -327,23 +326,6 @@ Hint: See also \volIref{\exerciseref*{vI-exercise:integralcontcontextra} and
 volume I}.
 \end{exercise}
 
-%\begin{exercise}
-%Suppose $f \colon \R^2 \to \R$ is a continuously differentiable function.
-%Define
-%\begin{equation*}
-%F(x,y) := \int_0^1 \bigl( x f(tx,ty) + y g(tx,ty) \bigr) ~dt .
-%\end{equation*}
-%
-%F_x(x,y) := \int_0^1 f(tx,ty) +  tx f_x (tx,ty) + ty g_x(tx,ty) ~dt .
-%
-%F_y(x,y) := \int_0^1 t f_y (tx,ty)~dt .
-%
-%
-%
-%\end{exercise}
-
-%FIXME
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
@@ -432,8 +414,6 @@ $\gamma^{\:\prime}(1)$ does not exist.  At the corners $\gamma$ is
 not differentiable.
 The path $\gamma$ is a simple closed path, as $\gamma|_{(0,4)}$ is
 one-to-one and $\gamma(0)=\gamma(4)$.
-%The restrictions are differentiable and the
-%derivative is different for each restriction.
 \end{example}
 
 The definition of a piecewise smooth path as we have given it implies
@@ -810,10 +790,6 @@ the change of variables formula for the Riemann integral,
 \sum_{j=1}^n
 \omega_j\bigl(\gamma(t)\bigr) \gamma_j^{\:\prime}(t)
 \right) ~ dt
-%\left(
-%\omega_1\bigl(\gamma(t)\bigr) \gamma_1^{\:\prime}(t) +
-%\omega_2\bigl(\gamma(t)\bigr) \gamma_2^{\:\prime}(t) + \cdots +
-%\omega_n\bigl(\gamma(t)\bigr) \gamma_n^{\:\prime}(t) \right) ~ dt 
 \\
 & =
 \int_c^d 
@@ -821,11 +797,6 @@ the change of variables formula for the Riemann integral,
 \sum_{j=1}^n
 \omega_j\Bigl(\gamma\bigl(h(\tau)\bigr)\Bigr) \gamma_j^{\:\prime}\bigl(h(\tau)\bigr)
 \right) h'(\tau) ~ d\tau
-%\left(
-%\omega_1\bigl(\gamma(h(\tau))\bigr) \gamma_1^{\:\prime}(h(\tau)) +
-%\omega_2\bigl(\gamma(h(\tau))\bigr) \gamma_2^{\:\prime}(h(\tau)) + \cdots +
-%\omega_n\bigl(\gamma(h(\tau))\bigr) \gamma_n^{\:\prime}(h(\tau)) \right)
-%h'(\tau) ~ d\tau 
 \\
 & =
 \int_c^d 
@@ -833,12 +804,6 @@ the change of variables formula for the Riemann integral,
 \sum_{j=1}^n
 \omega_j\Bigl(\gamma\bigl(h(\tau)\bigr)\Bigr) (\gamma_j \circ h)'(\tau)
 \right) ~ d\tau
-%\left(
-%\omega_1\bigl(\gamma(h(\tau))\bigr) (\gamma_1 \circ h)'(\tau) +
-%\omega_2\bigl(\gamma(h(\tau))\bigr) (\gamma_2 \circ h)'(\tau) + \cdots +
-%\omega_n\bigl(\gamma(h(\tau))\bigr) (\gamma_n \circ h)'(\tau) \right) ~ d\tau 
-%\\
-%& = 
 =
 \int_{\gamma \circ h} \omega .
 \end{split}
@@ -956,8 +921,6 @@ The definition for a piecewise smooth path is similar as before and is left
 to the reader.
 \end{defn}
 
-%The geometric idea of this integral is to find the ``area under the
-%graph of a function'' as we move around the path $\gamma$.
 The line integral of a function is also independent of the parametrization,
 and in this case, the orientation does not matter.
 
@@ -1392,9 +1355,7 @@ connected.
 \begin{prop} \label{mv:prop:pathinddf}
 Let $U \subset \R^n$ be a path connected open set and $\omega$ a one-form
 defined on $U$.  Then
-%\begin{equation*}
 $\int_x^y \omega$
-%\end{equation*}
 is path independent (for all $x,y \in U$) if and only if there exists
 a continuously differentiable $f \colon U \to \R$ such that $\omega = df$.
 

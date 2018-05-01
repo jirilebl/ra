@@ -733,9 +733,6 @@ and the derivative is
 \begin{equation*}
 f'(x) = u'(x)+i\,v'(x) .
 \end{equation*}
-%This definition is consistent with the definition for vector valued
-%functions as the complex number that is the derivative of $f$ gives rise to
-%a real-linear operator on $\R^2$.
 
 The proof of the following theorem is to apply the corresponding theorem for
 real functions to $u$ and $v$, and is left as an exercise.
@@ -1057,8 +1054,6 @@ consider the partial sums
 
 The number $\rho$ is called the \emph{\myindex{radius of convergence}}.
 See \figureref{fig:radiusconvcomplex}.
-%We define $\rho$ even when $R=0$ or $R= \infty$.  If $R=0$, we say
-%$\rho := \infty$ and if $R=\infty$ we say $\rho:=0$.
 The radius of convergence gives us a disk around $a$ where the series converges.  A power series
 is convergent if $\rho > 0$.
 \begin{myfigureht}
@@ -1146,9 +1141,6 @@ In particular, analytic functions are continuous.
 
 \begin{proof}
 For any $z_0 \in B(a,\rho)$ pick $r < \rho$ such that $z_0 \in B(a,r)$.
-%If we show
-%that $f$ restricted to $B(a,r)$ is continuous then $f$ is continuous at
-%$z_0$.
 On $B(a,r)$ the
 partial sums (which are continuous) converge uniformly,
 and so the limit $f|_{B(a,r)}$ is continuous.
@@ -1200,17 +1192,6 @@ f^{(\ell)}(a) = \ell! \, c_\ell .
 \end{equation}
 So the coefficients are uniquely determined by the derivatives of the
 function, and vice versa.
-
-%FIXME: we have the identity theorem later written in more generality
-%  In particular, once we have a function defined in
-%a neighborhood, the coefficients are unique:  If we have two power
-%series convergent in $(a-\rho,a+\rho)$ such that for all $x \in (a-\rho,a+\rho)$
-%\begin{equation*}
-%\sum_{n=0}^\infty c_n {(x-a)}^n
-%=
-%\sum_{n=0}^\infty d_n {(x-a)}^n
-%\end{equation*}
-%then $c_n = d_n$ for all $n$.
 
 On the other hand, just because we have an infinitely differentiable
 function doesn't mean that the numbers $c_n$ obtained by
@@ -1350,8 +1331,6 @@ write
 \begin{split}
 f(x) &= \sum_{k=0}^\infty a_k {\bigl((x-a)+a\bigr)}^k \\
 &= \sum_{k=0}^\infty a_k \sum_{m=0}^k \binom{k}{m} a^{k-m} {(x-a)}^m %\\
-%&= \sum_{m=0}^\infty \left( \sum_{k=0}^\infty a_k \sum_{m=0}^k \binom{k}{m}
-%a^{k-m} \right) {(x-a)}^m
 \end{split}
 \end{equation*}
 Define $c_{k,m} := a_k \binom{k}{m} a^{k-m}$ if $m \leq k$ and $0$ if $m >
@@ -1360,10 +1339,6 @@ k$.  Then
 f(x) = \sum_{k=0}^\infty \, \sum_{m=0}^\infty c_{k,m} {(x-a)}^m .
 \end{equation}
 Let us show that the double sum converges absolutely.
-% as in
-%\thmref{thm:fubiniforsums}.
-%We can then swap the order of the summations and obtain the desired
-%coefficients.
 \begin{equation*}
 \begin{split}
 \sum_{k=0}^\infty \, \sum_{m=0}^\infty \abs{ c_{k,m} {(x-a)}^m}
@@ -1410,12 +1385,7 @@ since that is harder to picture, let us do it explicitly.
 Let $\alpha = \frac{\bar{b}}{\sabs{b}}$.
 Notice that
 \begin{equation*}
-\abs{\nicefrac{1}{\alpha}} = \sabs{\alpha} %= \abs{\frac{\bar{b}}{\sabs{b}}}
-%=
-%\sqrt{
-%\frac{\bar{b}}{\sabs{b}}
-%\frac{b}{\sabs{b}}
-%}
+\abs{\nicefrac{1}{\alpha}} = \sabs{\alpha}
 = 1 .
 \end{equation*}
 Therefore the series
@@ -2332,9 +2302,6 @@ Hint: See previous exercises.
 
 \sectionnotes{2 lectures}
 
-%FIXME: should this be for a complete metric space as target?  Right now it
-%is $\C$
-
 We would like an analogue of Bolzano-Weierstrass.  Something to the tune of
 ``every bounded
 sequence of functions (with some property) has a convergent subsequence.''
@@ -3026,32 +2993,6 @@ proving the ``furthermore'' part of the theorem.
 
 We still need to prove that $\{ p_n \}$ converges to $g$.  First let us
 get some handle on the size of $c_n$.
-%For $x \in [0,1]$,
-%\begin{equation*}
-%{(1-x^2)}^n \geq (1-nx^2) .
-%\end{equation*}
-%This fact follows from Bernoulli's inequality
-%(\volIref{\exerciseref*{vI-exercise:bernoulliineq} of volume I})
-%or it can be 
-%proved directly:
-%the two expressions are equal at $x=0$ and 
-%$\frac{d}{dx}\left({(1-x^2)}^n - (1-nx^2)\right)
-%=-2nx{(1-x^2)}^{n-1}+2nx$, which is nonnegative for $x \in [0,1]$.
-%Furthermore $1-nx^2 \geq 0$ for $x \in [0,\nicefrac{1}{\sqrt{n}}]$.
-%\begin{equation*}
-%\begin{split}
-%c_n^{-1}   = \int_{-1}^1 {(1-x^2)}^n ~ dx
-%& = 2\int_0^1 {(1-x^2)}^n ~ dx \\
-%& \geq 2\int_0^{1/\sqrt{n}} {(1-x^2)}^n ~ dx
-%\\
-%& \geq 2\int_0^{1/\sqrt{n}} (1-nx^2)  ~ dx
-%\\
-%& = \frac{4}{3\sqrt{n}}
-%> \frac{1}{\sqrt{n}} .
-%\end{split}
-%\end{equation*}
-%So $c_n < \sqrt{n}$.
-%
 For $x \in [0,1]$, we have that $1-x \leq 1-x^2$.  We estimate
 \begin{equation*}
 \begin{split}
@@ -3200,7 +3141,6 @@ we have
 \end{proof}
 
 \begin{remark}
-%\textbf{Funky remark:}
 While we will not prove this, the above corollary implies that
 $C([a,b],\C)$ has the same cardinality as $\R$, which may be a
 bit surprising.  The set of all functions $[a,b] \to \C$ has
@@ -3432,13 +3372,10 @@ for all $y \in [-M,M]$.
 Because $\widebar{\sA}$ is an algebra and because there is no constant term in the
 polynomial,
 \begin{equation*}
-%g :=
 \sum_{j=1}^N c_j f^j \in \widebar{\sA} .
 \end{equation*}
 As $\sabs{f(x)} \leq M$ we have that for all $x \in X$
 \begin{equation*}
-%\bigl\lvert\sabs{f(x)} - g(x)\bigr\rvert
-%=
 \abs{\sabs{f(x)} - \sum_{j=1}^N c_j {\bigl(f(x)\bigr)}^j}
 < \epsilon .
 \end{equation*}
@@ -3722,13 +3659,9 @@ converges uniformly to the zero function, then
 the coefficients converge to zero.
 One way to do this is linear algebra: Consider a polynomial $p$
 evaluated at $d+1$ points
-%e.g.\ $0, \nicefrac{1}{d}, \nicefrac{2}{d}, \ldots, 1$,
 to be a linear operator taking the
 coefficients of $p$ to the values of $p$
 (an operator in $L(\R^{d+1})$).
-%Then consider a Cauchy sequence of polynomials.
-%Consider a uniformly Cauchy sequence of polynomials of degree at most
-%$d$.  Show that the coefficients are Cauchy sequences.
 \end{exercise}
 
 \begin{exercise}
@@ -4135,9 +4068,6 @@ function.  Therefore, the faster the coefficients go to zero, the more
 regular the limit is.
 
 \subsection{Orthonormal systems}
-
-%Let us now investigate convergence of Fourier series from the other side:
-%Given $f$, what can we say about the series?
 
 Let us abstract away some of the properties of the exponentials, and
 study a more general series for a function.
@@ -4624,8 +4554,6 @@ By Stone--Weierstrass,
 any continuous function on $[-\pi,\pi]$ can be uniformly approximated
 by trigonometric polynomials.  However, these trigonometric polynomials need
 not be the partial sums $s_N$.
-%On the other hand, they can be
-%explicitly constructed from $s_N$.
 
 \subsection{Parseval's theorem}
 
@@ -4634,8 +4562,6 @@ convergence always happens in the $L^2$ sense and
 that operations on the (infinite) vectors of
 Fourier coefficients are the same as the operations using the integral
 inner product.
-
-%FIXME: Should we prove $L^2$ triang and CS?  This is just formal nonsense
 
 \begin{samepage}
 \begin{thm}[Parseval\footnote{%
@@ -4765,8 +4691,6 @@ inequality, that is
 This is left as an exercise.  The proof is not really that
 different from the finite dimensional version.
 So
-%Next let $M$ be such that $\sabs{g(x)} \leq M$ for all $x$,
-%($g$ is Riemann integrable so bounded)
 \begin{equation*}
 \begin{split}
 \abs{\int_{-\pi}^\pi f\bar{g} - \int_{-\pi}^\pi s_N(f)g}

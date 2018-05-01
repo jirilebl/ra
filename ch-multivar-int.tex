@@ -630,11 +630,6 @@ V(R_k)
 \end{equation*}
 Via application of \propref{mv:prop:upperlowerepsilon} we find that $f \in
 \sR(R)$.
-%As $\epsilon > 0$ was arbitrary,
-%\begin{equation*}
-%\overline{\int_a^b} f = \underline{\int_a^b} f ,
-%\end{equation*}
-%and $f$ is Riemann integrable on $R$.
 \end{proof}
 
 \subsection{Integration of functions with compact support}
@@ -915,7 +910,6 @@ integrable function such $f(x) = -f(-x)$.  Using the definition prove
 \begin{equation*}
 \int_{[-1,1] \times [-1,1]} f = 0 .
 \end{equation*}
-%Hint: You can add points to make the partition ``symmetric''.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1089,15 +1083,9 @@ as $(P,P') = (P_1,P_2,\ldots,P_n,P'_1,P'_2,\ldots,P'_m)$,
 where
 $P = (P_1,P_2,\ldots,P_n)$ and
 $P' = (P'_1,P'_2,\ldots,P'_m)$ are partitions of $R$ and $S$ respectively.
-%Let $P$ be a partition of $R$ and $P'$ be a partition of $S$.
 Let
 $R_1,R_2,\ldots,R_N$ be the subrectangles of $P$ and
 $R'_1,R'_2,\ldots,R'_K$ be the subrectangles of $P'$.
-%Then
-%if we concatenate the two partitions as $(P,P')$, that is
-%if $P = (P_1,P_2,\ldots,P_n)$ and
-%$P' = (P'_1,P'_2,\ldots,P'_m)$, we write
-%$(P,P') = (P_1,P_2,\ldots,P_n,P'_1,P'_2,\ldots,P'_m)$.
 Then the subrectangles of $(P,P')$ are
 $R_j \times R'_k$ where $1 \leq j \leq N$ and $1 \leq k \leq K$.
 
@@ -1308,14 +1296,6 @@ $h \colon [a,b] \to \R$.  Prove
 \end{equation*}
 \end{exercise}
 
-%\begin{exercise}
-%Compute
-%\begin{equation*}
-%FIXME: this one doesn't work
-%\int_0^1 \int_0^1 x e^{y^2 + x^2} ~ dy ~ dx
-%\end{equation*}
-%\end{exercise}
-
 \begin{exercise}
 Compute
 \begin{equation*}
@@ -1446,8 +1426,6 @@ $S'$ is of measure zero.  We can use the same exact rectangles.
 It is sometimes more convenient to use balls instead of rectangles.
 Furthermore, we can
 choose balls no bigger than a fixed radius.
-%  The proof of the following proposition is left
-%as an exercise (see \exerciseref{mv:exercise:ballsnull}).
 
 \begin{prop} \label{mv:prop:ballsnull}
 Let $\delta > 0$ be given.
@@ -1816,21 +1794,11 @@ f(E) \subset f(B_1) \cup f(B_2) \cup \cdots \cup f(B_k)
 \subset B_1' \cup B_2' \cup \cdots \cup B_k'
 \qquad \text{and} \qquad
 \sum_{j=1}^k Mr_j^n
-%=
-%M
-%\sum_{j=1}^k Mr_j^n
  < M \epsilon. \qedhere
 \end{equation*}
 \end{proof}
 
 \subsection{Exercises}
-
-%FIXME:
-
-%\begin{exercise} \label{mv:exercise:ballsnull}
-%Prove \propref{mv:prop:ballsnull}.  Hint \propref{prop:diameterrectangle}
-%for one direction.  For the other direction
-%\end{exercise}
 
 \begin{exercise}
 Finish the proof of \propref{mv:prop:compactnull}, that is, show that you
@@ -2271,12 +2239,6 @@ then the composition $f \circ g$ is Riemann integrable on $R$.
 
 The proof is contained in the exercises.
 
-%FIXME
-%
-%\begin{example}
-%FIXME: The popcorn-like example.
-%\end{example}
-
 \subsection{Exercises}
 
 \begin{exercise}
@@ -2531,9 +2493,6 @@ m^*(S) \geq
 m^*\Bigl(\bigcup_{j=1}^\ell R'_j\Bigr)
 \geq
 m^*\Bigl(\bigcup_{j=1}^\ell R'^\circ_j\Bigr)
-%=
-%\sum_{j=1}^\ell
-%m^*(R'^\circ_j)
 =
 \sum_{j=1}^\ell
 V(R'^\circ_j)
@@ -2801,19 +2760,11 @@ $\partial U$ is a null set.  As $\partial U$ is a finite
 union of simple piecewise smooth paths, which 
 are finite unions of smooth paths, we need only show that 
 a smooth path in $\R^2$ is a null set.
-%
 Let $\gamma \colon [a,b] \to \R^2$ be a smooth path.
-%As $\gamma$ is
-%continuously differentiable, the derivative is bounded as $[a,b]$ is
-%compact.
-%So there is some $M \in \R$ such that $\snorm{\gamma^{\:\prime}(t)} \leq M$
-%for all $t \in [a,b]$.
 It is enough to show that
 $\gamma\bigl((a,b)\bigr)$ is a null set, as adding 
 the points $\gamma(a)$ and $\gamma(b)$,
 to a null set still results in a null set.
-%We will use \propref{prop:imagenull}, for which
-%we need a mapping from an open set in $\R^2$.
 Define
 \begin{equation*}
 f \colon (a,b) \times (-1,1) \to \R^2,
@@ -2841,7 +2792,6 @@ P ~ dx + Q~  dy
 \int_{U}
 \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)
 .
-%dx dy .
 \end{equation*}
 \end{thm}
 
@@ -2877,34 +2827,7 @@ if it is both of type I and type II.  See \figureref{fig:greenstypes}.
 \caption{Domain types for Green's theorem.\label{fig:greenstypes}}
 \end{myfigureht}
 
-%If we have a type I domain, then
-%the paths given by the graphs of $f$ and $g$ together with the
-%straight line segments between $g(a)$ and $f(a)$, and also between
-%$g(b)$ and $f(b)$ give the boundary as a piecewise smooth path.  Similarly
-%for type II, and hence for type II.  Therefore such domains are domains with
-%piecewise smooth boundary.
-
-%Let us state the version which we will prove.
 We will only prove Green's theorem for type III domains.
-
-%\begin{samepage}
-%\begin{thm}[Green]
-%Let $U \subset \R^2$ be a bounded domain with piecewise smooth boundary
-%that is of type III.
-%Suppose $P$ and $Q$ are continuously
-%differentiable functions defined on some open set that contains the closure
-%$\widebar{U}$ and suppose that $\partial U$ is positively oriented.  Then
-%\begin{equation*}
-%\int_{\partial U}
-%P~ dx + Q~ dy
-%=
-%\int_{U}
-%\left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)
-%%~ dx ~ dy .
-%.
-%\end{equation*}
-%\end{thm}
-%\end{samepage}
 
 \begin{proof}[Proof of Green's theorem for $U$ of type III]
 Let $f,g,h,k$ be the functions defined above.
@@ -3221,12 +3144,6 @@ That the right hand side makes sense follows by
 \exerciseref{exercise:closednessofriemannintegrable}).
 
 \begin{proof}
-%The left hand side is $\int_{R'} f \chi_{g(S)}$, where the integral
-%is taken over a
-%large enough rectangle $R'$ that contains $g(S)$.
-%The right hand side is $\int_{R} f\bigl(g(x)\bigr) \sabs{J_g} \chi_S$ for
-%a large enough rectangle $R$ that contains $S$.
-
 The set $S$ can be covered by finitely many closed rectangles
 $P_1,P_2,\ldots,P_k$, whose
 interiors do not overlap such that each $P_j \subset U$

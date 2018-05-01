@@ -345,7 +345,6 @@ if the only solution to
 a_1 x_1 + a_2 x_2 + \cdots + a_k x_k = 0
 \end{equation}
 is the trivial solution $a_1 = a_2 = \cdots = a_k = 0$.
-%Here 0 is the vector of all zeros.
 A set that is not linearly independent, is
 \emph{\myindex{linearly dependent}}.
 
@@ -550,9 +549,6 @@ They must span $X$ otherwise we could add yet another vector.
 A function $f \colon X \to Y$, when $Y$ is not $\R$, is often called a
 \emph{\myindex{mapping}} or a \emph{\myindex{map}}
 rather than a \emph{function}.
-%  The word
-%function is then usually reserved for the case $Y=\R$.
-
 
 \begin{defn}
 A mapping $A \colon X \to Y$ of vector spaces $X$ and $Y$
@@ -1143,9 +1139,6 @@ This implies that, assuming $\snorm{A}$ is not infinity,
 \begin{equation*}
 \snorm{Ax} \leq \snorm{A}  \snorm{x} .
 \end{equation*}
-%although the inequality may be strict.  For example,
-%Suppose that on $\R^2$, $A(1,0) = (0,0)$ and
-%$A(0,1) = (0,1)$.  Then it is not hard to FIXME?
 
 It is not hard to see from the definition that $\snorm{A} = 0$ if and
 only if $A = 0$, that is, if $A$ takes every vector to the zero vector.
@@ -1357,13 +1350,11 @@ We have shown above (using $B^{-1}y$ instead of $x$)
 or
 \begin{equation*}
 \snorm{B^{-1}y} \leq 
-%\frac{1}{1- \snorm{A^{-1}}\snorm{A-B}) \snorm{A^{-1}}\snorm{y} .
 2\snorm{A^{-1}}\,\snorm{y} .
 \end{equation*}
 So
 $
 \snorm{B^{-1}} \leq 2 \snorm{A^{-1}}
-%\frac{\snorm{A^{-1}}}{1- \snorm{A^{-1}}\snorm{A-B})} .
 $.
 
 Now
@@ -1378,9 +1369,6 @@ and
 \snorm{A^{-1}(A-B)B^{-1}} \leq
 \snorm{A^{-1}}\,\snorm{A-B}\,\snorm{B^{-1}}
 \leq
-%\frac{\snorm{A^{-1}}^2}{1- \snorm{A^{-1}}\snorm{A-B})}
-%\snorm{A-B}
-%\leq
 2\snorm{A^{-1}}^2
 \snorm{A-B} .
 \end{equation*}
@@ -1666,7 +1654,6 @@ $Ab_1,Ab_2,\ldots,Ab_n$.
 
 Let $b_{j,k}$ denote the elements of $B$ and
 $a_j$ the columns of $A$.
-%Note that $Ae_j = a_j$.
 By linearity of the determinant,
 \begin{equation*}
 \begin{split}
@@ -2287,7 +2274,6 @@ the origin
 =
 \norm{(A-B)\frac{h}{\snorm{h}}} .
 \end{equation*}
-%But $\frac{h}{\snorm{h}}$ is of norm 1.  
 For any $x$ with $\snorm{x}=1$,
 let $h = (\nicefrac{\delta}{2}) \, x$, then $\snorm{h} < \delta$
 and $\frac{h}{\snorm{h}} = x$.
@@ -2450,14 +2436,6 @@ to zero:
 & =
 \frac{\snorm{g(q+k)-g(q) - B\bigl(k-r(h)\bigr)}}{\snorm{h}}
 \\
-%& =
-%\frac
-%{\snorm{g(q+k)-g(q) - B\bigl(k-r(h)\bigr)}}
-%{\snorm{k}}
-%\frac
-%{\snorm{f(p+h)-f(p)}}
-%{\snorm{h}}
-%\\
 & \leq
 \frac
 {\snorm{g(q+k)-g(q) - Bk}}
@@ -2811,7 +2789,6 @@ as will for example do in the implicit function theorem.
 
 The Jacobian $J_f$ is a real-valued function, and when $n=1$ it is simply the
 derivative.
-%When $f$ is $C^1$, then $J_f$ is a continuous function.
 From the chain rule and the fact that $\det(AB) = \det(A)\det(B)$, it follows that:
 \begin{equation*}
 J_{f \circ g} (x) = J_f\bigl(g(x)\bigr) J_g(x) .
@@ -3196,7 +3173,6 @@ $f^{-1}(c)$ is nonempty.
 The two sets
 \begin{equation*}
 U' = f^{-1}(c), \qquad U'' = f^{-1}\bigl(\R^m\setminus\{c\}\bigr)
-%= \bigcup_{\substack{a \in \R^m\\a\neq c}} f^{-1}(a)
 \end{equation*}
 are open and disjoint, and further $U = U' \cup U''$.  So as $U'$ is nonempty,
 and $U$ is connected,
@@ -3285,7 +3261,6 @@ A' :=
 \end{bmatrix} ,
 \qquad
 v := 
-%\frac{\partial f}{\partial x_n}(x) =
 \begin{bmatrix}
 \frac{\partial f_1}{\partial x_n}(x)
 \\
@@ -3623,7 +3598,6 @@ Suppose $y$ is such that
 \frac{r}{2\snorm{A^{-1}}} .
 \end{equation*}
 If we show that $y \in W$, then we have shown that $W$ is open.
-%Recall $\varphi_y(x) = x+A^{-1}\bigl(y-f(x)\bigr)$.
 If $x \in
 C(x_0,r)$, then
 \begin{equation*}
@@ -3755,9 +3729,6 @@ one-to-one globally.  It is ``locally'' one-to-one but perhaps not
 ``globally.''  For an
 example, take the map $f \colon \R^2 \setminus \{ 0 \} \to \R^2$ defined
 by $f(x,y) := (x^2-y^2,2xy)$.
-  %Here we treat the map as if it went from $\R^2 \setminus
-%\{ 0 \}$ to $\R^2$.  For any nonzero complex number, there are always two square roots, so the map
-%is actually 2-to-1.
 It is left to student to show that $f$ is
 differentiable and the derivative is invertible
 
@@ -3766,8 +3737,6 @@ $(a,b)$ that is not the origin, there are exactly two
 solutions to $x^2-y^2=a$ and $2xy=b$.  We leave it to the student
 to show that there is at least one solution, and then notice
 that replacing $x$ and $y$ with $-x$ and $-y$ we obtain another solution.
-%(Hint: Let $z = x+iy$ and write down what the real an
-%imaginary part of $f$ is in terms if $x$ and $y$).
 \end{example}
 
 The invertibility of the derivative is not a necessary
@@ -4236,11 +4205,9 @@ x_{j_{\ell-2}} \cdots \partial x_{j_1}} \bigr)}{\partial x_{j_{\ell}}} .
 Such a derivative is called a
 \emph{\myindex{partial derivative of order $\ell$}}.
 
-Remark that sometimes the notation $f_{x_j x_k}$\glsadd{not:subpartder} is used for
+Sometimes the notation $f_{x_j x_k}$\glsadd{not:subpartder} is used for
 $\frac{\partial^2 f}{\partial x_k \partial x_j}$.  This notation
-swaps the order of derivatives, which may be important.
-%Also note that
-%since the subscript is often used for other things, it may be confusing.
+swaps the order in which we write the derivatives, which may be important.
 
 \begin{defn}
 If $U \subset \R^n$ is an open set and
