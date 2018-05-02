@@ -3454,8 +3454,9 @@ Furthermore,
 \begin{equation*}
 g_x(t) > f(t) -\epsilon
 \end{equation*}
-for all $t \in X$, since for any $t$ there was at least one $h_{y_j}$ for
-which $h_{y_j}(t) > f(t) -\epsilon$.
+for all $t \in X$, since for any $t$ there is a $y_j$ such that 
+$t \in J_{y_j}$ and so 
+$h_{y_j}(t) > f(t) -\epsilon$.
 
 Finally $h_y(x) = f(x)$ for all $y \in X$, so
 $g_x(x) = f(x)$.
@@ -3465,9 +3466,9 @@ $g_x(x) = f(x)$.
 
 \noindent
 \textbf{Claim 4:} \emph{If $f \in C(X,\R)$ and $\epsilon > 0$ is given then there
-exists an $h \in \widebar{\sA}$ such that}
+exists an $\varphi \in \widebar{\sA}$ such that}
 \begin{equation*}
-\sabs{f(x) - h(x)} < \epsilon .
+\sabs{f(x) - \varphi(x)} < \epsilon .
 \end{equation*}
 
 \begin{proof}
@@ -3480,24 +3481,25 @@ V_x := \bigl\{ t \in X : g_x(t) < f(t) + \epsilon \bigr\}.
 The sets $V_x$ are open as $g_x$ and $f$ are continuous.
 As $g_x(x) = f(x)$, $x \in V_x$.  So the sets $V_x$ cover $X$.  Thus
 there
-are finitely many points $x_1,x_2,\ldots,x_n$ such that
+are finitely many points $x_1,x_2,\ldots,x_k$ such that
 \begin{equation*}
-X = \bigcup_{j=1}^n V_{x_j} .
+X = \bigcup_{j=1}^k V_{x_j} .
 \end{equation*}
 Let
 \begin{equation*}
-h := \min(g_{x_1},g_{x_2},\ldots,g_{x_n}) .
+\varphi := \min(g_{x_1},g_{x_2},\ldots,g_{x_k}) .
 \end{equation*}
-By Claim 2, $h \in \widebar{\sA}$.  Similarly as before (same argument as in
+By Claim 2, $\varphi \in \widebar{\sA}$.  Similarly as before (same argument as in
 Claim 3) we have that for all
 $t \in X$
 \begin{equation*}
-h(t) < f(t) + \epsilon .
+\varphi(t) < f(t) + \epsilon .
 \end{equation*}
-Since all the $g_x$ satisfy $g_x(t) > f(t) - \epsilon$ for all $t \in X$, so does $h$.
+Since all the $g_x$ satisfy $g_x(t) > f(t) - \epsilon$ for all $t \in X$,
+$\varphi(t) > f(t) - \epsilon$ as well.
 Therefore, for all $t$
 \begin{equation*}
--\epsilon < h(t) - f(t) < \epsilon ,
+-\epsilon < \varphi(t) - f(t) < \epsilon ,
 \end{equation*}
 which is the desired conclusion.
 \end{proof}
@@ -3611,8 +3613,8 @@ So $\widebar{\sA} = C(X,\C)$.
 The self-adjoint requirement is necessary although it is not so obvious to
 see it.  For an example see \exerciseref{exercise:selfadjointSW}.
 
-Here is an interesting application.  We will do it for the complex version, but
-the same example works with real-valued functions.  When working
+Here is an interesting application.
+When working
 with functions of two variables, it may be useful to work with functions
 of the form $f(x)g(y)$ rather than $F(x,y)$.  For example, they are easier
 to integrate.  We have the following.
@@ -4543,16 +4545,18 @@ $\{ s_N(f;x) \}$ converges if and only if $\{ s_N(g;x) \}$ converges.
 \end{cor}
 
 That is, convergence at $x$ is only dependent on the values of the function
-near $x$.  The proof of the first claim is to take $M=0$ in the theorem.
+near $x$.  To prove the first claim, take $M=0$ in the theorem.
 The ``In particular'' follows by considering the function $f-g$, which
 is zero on $J$ and $s_N(f-g) = s_N(f) - s_N(g)$.
+On the other hand, we have seen that the rate of convergence,
+that is how fast does $s_N(f)$
+converge to $f$, depends on global behavior of the function.
 
-As we hinted at before,
-there is a subtle difference between the corollary and what can be
+There is a subtle difference between the corollary and what can be
 achieved by the \hyperref[thm:SWcomplex]{Stone--Weierstrass theorem}.
-By Stone--Weierstrass, 
-any continuous function on $[-\pi,\pi]$ can be uniformly approximated
-by trigonometric polynomials.  However, these trigonometric polynomials need
+%By Stone--Weierstrass, 
+Any continuous function on $[-\pi,\pi]$ can be uniformly approximated
+by trigonometric polynomials, but these trigonometric polynomials need
 not be the partial sums $s_N$.
 
 \subsection{Parseval's theorem}
