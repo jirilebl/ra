@@ -3431,19 +3431,19 @@ h_y(x) = f(x), \qquad h_y(y)=f(y) .
 As $h_y$ and $f$ are continuous, the function $h_y-f$ is continuous,
 and the set
 \begin{equation*}
-J_y :=
+U_y :=
 \bigl\{ t \in X : h_y(t) > f(t) -\epsilon \bigr\}
 =
 {(h_y-f)}^{-1} \bigl( (-\epsilon,\infty) \bigr)
 \end{equation*}
 is open (it is the inverse image of an open set by a continuous function).
-Furthermore $y \in J_y$.  So the sets $J_y$ cover $X$.
+Furthermore $y \in U_y$.  So the sets $U_y$ cover $X$.
 
 The space $X$ is compact so there exist finitely many
 points $y_1,y_2,\ldots,y_n$ in $X$ such
 that
 \begin{equation*}
-X = \bigcup_{j=1}^n J_{y_j}  .
+X = \bigcup_{j=1}^n U_{y_j}  .
 \end{equation*}
 Let 
 \begin{equation*}
@@ -3455,7 +3455,7 @@ Furthermore,
 g_x(t) > f(t) -\epsilon
 \end{equation*}
 for all $t \in X$, since for any $t$ there is a $y_j$ such that 
-$t \in J_{y_j}$ and so 
+$t \in U_{y_j}$ and so 
 $h_{y_j}(t) > f(t) -\epsilon$.
 
 Finally $h_y(x) = f(x)$ for all $y \in X$, so
@@ -3479,7 +3479,8 @@ Let
 V_x := \bigl\{ t \in X : g_x(t) < f(t) + \epsilon \bigr\}.
 \end{equation*}
 The sets $V_x$ are open as $g_x$ and $f$ are continuous.
-As $g_x(x) = f(x)$, $x \in V_x$.  So the sets $V_x$ cover $X$.  Thus
+As $g_x(x) = f(x)$, then $x \in V_x$.  So the sets $V_x$ cover $X$.
+By compactness of $X$,
 there
 are finitely many points $x_1,x_2,\ldots,x_k$ such that
 \begin{equation*}
