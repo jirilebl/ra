@@ -343,6 +343,13 @@ $\sabs{f(b)-f(a)} \leq M \sabs{b-a}$.
 \end{enumerate}
 \end{exercise}
 
+\begin{exercise}
+Prove that there is no simple mean value theorem for integrals
+for complex valued
+functions:  Find a continuous function $f \colon [0,1] \to \C$ such that
+$\int_0^1 f = 0$ but $f(t) \not= 0$ for all $t \in [0,1]$.
+\end{exercise}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -486,6 +493,7 @@ a useful test for uniform convergence of a series is the
 so-called \emph{\myindex{Weierstrass $M$-test}}.
 
 \begin{thm}[Weierstrass $M$-test] \label{thm:weiermtest}
+Let $X$ be any set.
 Suppose $f_n \colon X \to \C$ are functions, $M_n > 0$ numbers such
 that
 \begin{equation*}
@@ -898,6 +906,30 @@ Prove \propref{prop:unifcauchymetric}.
 Suppose $(X,d)$ is a compact metric space.
 Prove that $\snorm{\cdot}_u$ is a norm on the vector space of
 continuous complex-valued functions $C(X,\C)$.
+\end{exercise}
+
+\begin{exercise}
+{\ }
+\begin{enumerate}[a)]
+\item
+Prove that
+$f_n(x) := 2^{-n} \sin(2^n x)$
+converge uniformly to zero, but there exists a dense set $D \subset \R$
+such that $\lim_{n\to\infty} f_n'(x) = 1$ for all $x \in D$.
+\item
+Prove that
+$\sum_{n=1}^\infty 2^{-n} \sin(2^n x)$
+converges uniformly to a continuous function,
+and there exists a dense set $D \subset \R$
+where the derivatives of the partial sums do not converge.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Suppose $(X,d)$ is a compact metric space.
+Prove that $\snorm{f}_{C^1} := \snorm{f}_u+\snorm{f'}_u$
+is a norm on the vector space of
+continuously differentiable complex-valued functions $C^1(X,\C)$.
 \end{exercise}
 
 \begin{exercise}
@@ -1530,7 +1562,6 @@ Hint: Fubini for sums does not apply, in fact, answers to
 d) and e) are different.
 \end{exercise}
 
-
 \begin{exercise}
 Let $f(x) := \frac{1}{1+x^2}$.  Prove that
 \begin{enumerate}[a)]
@@ -1563,6 +1594,13 @@ Suppose $U \subset \C$ is a connected open set, $0 \in U$, and $f \colon U
 let $h(x) := f(x)$ and $g(y) := -i \, f(iy)$.
 Show that $h$ and $g$ are infinitely differentiable at the origin and
 $h'(0) = g'(0)$.
+\end{exercise}
+
+\begin{exercise}
+Suppose at least in some neighborhood of the origin
+$f$ is analytic.  Suppose further that there exists an $M$
+such that $\sabs{f^{(n)}(0)} \leq M$ for all $n$.
+Prove that the series of $f$ at the origin converges for all $z \in \C$.
 \end{exercise}
 
 \begin{exercise}
@@ -1602,6 +1640,20 @@ Show that for $x \in \R$, $\abs{x} < 1$, we have
 \end{equation*}
 meaning that $f(x) = (1+x)^\alpha$.
 \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Suppose $f \colon \C \to \C$ is analytic and suppose that for some
+open interval $(a,b) \subset \R$, $f$ is real valued on $(a,b)$.  Show
+that $f$ is real-valued on $\R$.
+\end{exercise}
+
+\begin{exercise}
+Let $\D = B(0,1)$ be the unit disc.  Suppose
+$f \colon \D \to \C$ is analytic with power series
+$\sum c_n z^n$.  Suppose $\sabs{c_n} \leq 1$ for all $n$.  Prove that for
+all $z \in \D$ we have
+$\sabs{f(z)} \leq \frac{1}{1-\sabs{z}}$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1965,6 +2017,11 @@ Prove that there is no $z \in \C$ such that $e^z = 0$.
 \end{exercise}
 
 \begin{exercise}
+Prove that for every $w \not= 0$ and every $\epsilon > 0$,
+there exists a $z \in \C$, $\sabs{z} < \epsilon$ such that $e^{1/z} = w$.
+\end{exercise}
+
+\begin{exercise}
 We showed
 ${\bigl( \cos(x) \bigr)}^2 + {\bigl( \sin(x) \bigr)}^2 = 1$
 for all $x \in \R$.
@@ -1973,6 +2030,19 @@ ${\bigl( \cos(z) \bigr)}^2 + {\bigl( \sin(z) \bigr)}^2 = 1$
 for all $z \in \C$.
 \end{exercise}
 
+\begin{exercise}
+Prove the identities
+$\sin(z + w) = \sin(z) \cos(w) + \cos(z) \sin(w)$ and
+$\cos(z + w) = \cos(z) \cos(w) - \sin(z) \sin(w)$ for all $z,w \in \C$.
+\end{exercise}
+
+\begin{exercise}
+Define $\operatorname{sinc}(z) := \frac{\sin(z)}{z}$ for $z \not=0$ and
+$\operatorname{sinc}(0) := 1$.
+Show that sinc is analytic and compute its power series at zero.
+\end{exercise}
+
+\pagebreak[2]
 \begin{exnote}
 Define the \emph{\myindex{hyperbolic sine}} and
 \emph{\myindex{hyperbolic cosine}} by
@@ -1986,7 +2056,6 @@ Define the \emph{\myindex{hyperbolic sine}} and
 Derive the power series for the hyperbolic sine and cosine.
 \end{exercise}
 
-\pagebreak[2]
 \begin{exercise}
 Show
 \begin{enumerate}[a)]
@@ -3803,6 +3872,20 @@ that converges in the $C^k$ norm to $f$, that is
 \sum_{j=0}^k \snorm{f^{(j)} - p_n^{(j)}}_u \to 0 \qquad \text{as} \qquad
 n \to \infty.
 \end{equation*}
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+{\ }
+\begin{enumerate}[a)]
+\item
+Show that an even function $f \colon [-1,1] \to \R$ is a uniform
+limit of polynomials with even powers only, that is, polynomials
+of the form $a_0 + a_1 x^2 + a_2 x^4 + \cdots + a_k x^{2k}$.
+\item
+Show that an odd function $f \colon [-1,1] \to \R$ is a uniform
+limit of polynomials with odd powers only, that is, polynomials
+of the form $b_1 x + b_2 x^3 + b_3 x^5 + \cdots + b_k x^{2k-1}$.
 \end{enumerate}
 \end{exercise}
 
