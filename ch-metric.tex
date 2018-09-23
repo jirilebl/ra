@@ -2143,7 +2143,7 @@ It is an exercise to find a cover for which no $\delta > 0$ works.
 
 
 \begin{thm} \label{thm:mscompactisseqcpt}
-Let $(X,d)$ be a metric space.  Then $K \subset X$ is a compact set if
+Let $(X,d)$ be a metric space.  Then $K \subset X$ is compact if
 and only if every sequence in $K$ has a subsequence converging to
 a point in $K$.
 \end{thm}
@@ -2226,11 +2226,11 @@ the first three balls
 of radius $\delta$ are drawn.\label{fig:seqcompactiscompact}}
 \end{myfigureht}
 
-Either at some point we obtain a finite subcover of $K$
+Either at some point we obtain a finite subcover of $K$,
 or we obtain an
 infinite
 sequence $\{ x_n \}$ as above.
-For contradiction suppose that
+For contradiction, suppose that
 there is no finite subcover and we have the sequence $\{ x_n \}$.
 For all $n$ and $k$, $n \not= k$, 
 we have $d(x_n,x_k) \geq \delta$,
@@ -2281,7 +2281,7 @@ So subsets of $\R^n$ are compact if and only if they are closed and bounded,
 a condition that is much easier to check.
 Let us reiterate that the Heine--Borel theorem only holds for $\R^n$ and not
 for metric spaces in general.  In general, compact implies closed and
-bounded, but not vice versa.
+bounded, but not vice-versa.
 
 \begin{proof}
 For $\R = \R^1$ if $K \subset \R$ is closed and bounded, then
@@ -2297,7 +2297,7 @@ $B=[a,b]\times[c,d] \subset \R^2$ such that $K \subset B$.  We will show
 that $B$ is compact.  Then $K$, being a closed subset of a compact $B$, is
 also compact.  
 
-Let $\{ (x_k,y_k) \}_{k=1}^\infty$ be a sequence in $B$.  That is,
+Let $\bigl\{ (x_k,y_k) \bigr\}_{k=1}^\infty$ be a sequence in $B$.  That is,
 $a \leq x_k \leq b$ and
 $c \leq y_k \leq d$ for all $k$.  A bounded sequence of real numbers
 has a convergent
@@ -2508,7 +2508,7 @@ While $(\R,d)$ is complete, show that $(\R,d')$ is not complete.
 
 \begin{exercise} \label{exercise:relativelycompactseq}
 Let $(X,d)$ be a complete metric space.
-We say a set $S$ is \emph{\myindex{relatively compact}}
+We say a set $S \subset X$ is \emph{\myindex{relatively compact}}
 if the closure $\widebar{S}$ is compact.
 Prove that $S \subset X$ is relatively compact if and only if
 given any sequence $\{ x_n \}$ in $S$, there exists a subsequence
@@ -2680,11 +2680,11 @@ $f$ achieves an absolute minimum and an absolute maximum on $X$.
 \end{thm}
 
 \begin{proof}
-As $X$ is compact and $f$ is continuous, we have
-that $f(X) \subset \R$ is compact.  Hence $f(X)$ is closed
+As $X$ is compact and $f$ is continuous, then
+$f(X) \subset \R$ is compact.  Hence $f(X)$ is closed
 and bounded.  In particular,
 $\sup f(X) \in f(X)$ and
-$\inf f(X) \in f(X)$, because both the sup and inf
+$\inf f(X) \in f(X)$, because both the sup and the inf
 can be achieved by sequences in $f(X)$ and $f(X)$ is closed.
 Therefore, there is some $x \in X$ such that $f(x) = \sup f(X)$
 and some $y \in X$ such that $f(y) = \inf f(X)$.
@@ -2787,7 +2787,7 @@ vice-versa as we have seen.
 
 \begin{thm} \label{thm:Xcompactfunifcont}
 Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
-Suppose $f \colon X \to Y$ is continuous and $X$ compact.  Then
+Suppose $f \colon X \to Y$ is continuous and $X$ is compact.  Then
 $f$ is uniformly continuous.
 \end{thm}
 
@@ -2874,7 +2874,7 @@ f(x,y) ~dx = g(y) . \qedhere
 
 In applications, if we are interested in continuity at $y_0$, we just
 need to apply the proposition in $[a,b] \times [y_0-\epsilon,y_0+\epsilon]$
-for some small $\epsilon > 0$.  So for example if $f$ is continuous in
+for some small $\epsilon > 0$.  For example, if $f$ is continuous in
 $[a,b] \times \R$, then $g$ is continuous on $\R$.
 
 \begin{example}
@@ -2918,14 +2918,15 @@ if for every $\epsilon > 0$, the set $B(p,\epsilon) \cap S
 \setminus \{ p \}$ is not empty.
 \end{defn}
 
-It is not just that $p$ is in the closure of $S$, but an equivalent
-definition is that $p$ is in the closure of $S \setminus \{ p \}$ (exercise).
-Therefore, $p$ is a cluster point if and only if there exists a sequence in $S \setminus
+It is not enough that $p$ is in the closure of $S$,
+it must be in the closure of
+$S \setminus \{ p \}$ (exercise).
+So, $p$ is a cluster point if and only if there exists a sequence in $S \setminus
 \{ p \}$ that converges to $p$.
 
 \begin{defn}
 \index{limit!of a function in a metric space}%
-Let $(X,d_X)$, $(Y,d_Y)$ be a metric space, $S \subset X$, $p$ a cluster point of $S$,
+Let $(X,d_X)$, $(Y,d_Y)$ be metric spaces, $S \subset X$, $p \in X$ a cluster point of $S$,
 and $f \colon S \to Y$ a function.
 Suppose there exists an $L \in Y$ and for every $\epsilon > 0$,
 there exists a $\delta > 0$ such that whenever $x \in S \setminus \{ p \}$
@@ -2933,9 +2934,9 @@ and $d_X(x,p) < \delta$, then
 \begin{equation*}
 d_Y\bigl(f(x),L\bigr) < \epsilon .
 \end{equation*}
-In this case we say $f(x)$
+Then we say $f(x)$
 \emph{converges}\index{converges!function in a metric space} to $L$ as $x$ goes
-to $p$.  We say $L$ is the \emph{limit} of $f(x)$ as $x$
+to $p$, and $L$ is the \emph{limit} of $f(x)$ as $x$
 goes to $p$.  We write
 \glsadd{not:limfunc}
 \begin{equation*}
@@ -2945,7 +2946,7 @@ Otherwise we say $f$
 \emph{diverges}\index{diverges!function in a metric space} at $p$.
 \end{defn}
 
-And as usual, we have used the definite article without showing that the
+As usual, we used the definite article without showing that the
 limit is unique.  The proof is a direct translation of the proof
 from \chapterref{lim:chapter}, so we leave it as an exercise.
 
@@ -2956,10 +2957,10 @@ such that $f(x)$ converges as $x$ goes to $p$.  Then
 the limit of $f(x)$ as $x$ goes to $p$ is unique.
 \end{prop}
 
-In any metric space, just like in $\R$ continuous limits may be
+In any metric space, just like in $\R$, continuous limits may be
 replaced by sequential limits.  The proof is again a direct translation
-of the proof from \chapterref{lim:chapter}, and we leave that as an
-exercise.  The upshot is that if we really only need to prove things for
+of the proof from \chapterref{lim:chapter}, and we leave it as an
+exercise.  The upshot is that we really only need to prove things for
 sequential limits.
 
 \begin{lemma}\label{ms:seqflimit:lemma}
