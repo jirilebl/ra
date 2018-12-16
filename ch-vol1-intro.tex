@@ -827,7 +827,8 @@ $g \circ f \colon A \to C$ is defined as
 
 We often compare two objects in some way.  We say $1 < 2$
 for natural numbers, or $\nicefrac{1}{2} = \nicefrac{2}{4}$ for rational
-numbers, or $\{ a,c \} \subset \{ a,b,c \}$ for sets.  These are examples of
+numbers, or $\{ a,c \} \subset \{ a,b,c \}$ for sets.  The `$<$', `$=$', and
+`$\subset$' are examples of
 relations.
 
 \begin{defn}
@@ -841,12 +842,13 @@ $a \, \sR \, b$.
 \begin{example}
 Take $A := \{ 1,2,3 \}$.
 
-First, let the relation be `$<$'.  Then the corresponding set 
-of pairs is $\bigl\{ (1,2), (1,3), (2,3) \bigr\}$.  So $1 < 2$ holds as $(1,2)$ is in
-the set, but $3 < 1$ does not hold as $(3,1)$ is not in the set.
+Consider the relation `$<$'.  The corresponding set 
+of pairs is $\bigl\{ (1,2), (1,3), (2,3) \bigr\}$.  So $1 < 2$ holds as $(1,2)$
+is in the corresponding set of pairs, but $3 < 1$ does not hold as $(3,1)$ is
+not in the set.
 
 Similarly, the relation `$=$'
-is defined by the pairs $\bigl\{ (1,1), (2,2), (3,3) \big\}$.
+is defined by the set of pairs $\bigl\{ (1,1), (2,2), (3,3) \big\}$.
 
 Any subset of $A \times A$ is a relation.  Let us define the relation
 $\dagger$ via $\bigl\{ (1,2), (2,1), (2,3), (3,1) \bigr\}$, then $1 \dagger 2$ and
@@ -913,7 +915,7 @@ The set of rational numbers can be defined as equivalence classes of
 a pair of an integer and a natural number,
 that is elements of $\Z \times \N$.  The relation
 is defined by $(a,b) \sim (c,d)$ whenever $ad = bc$.
-It is left as an exercise to prove that `$\sim$' is an equivalence relation,
+It is left as an exercise to prove that `$\sim$' is an equivalence relation.
 Usually the equivalence class $[(a,b)]$ is written as $\nicefrac{a}{b}$.
 \end{example}
 
