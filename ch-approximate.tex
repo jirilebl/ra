@@ -243,9 +243,9 @@ $f = u+iv$ for real-valued functions $u \colon X \to \R$ and $v \colon X \to
 On thing we often wish to do is to integrate
 $f \colon [a,b] \to \C$.  What we do is to write
 $f = u+iv$ for real-valued $u$ and $v$.
-We then define that $f$ is \emph{Riemann integrable}\index{Riemann
+We say that $f$ is \emph{Riemann integrable}\index{Riemann
 integrable!complex-valued function}
-if and only if $u$ and $v$ are Riemann
+if $u$ and $v$ are Riemann
 integrable, and in this case we define
 \begin{equation*}
 \int_a^b f := \int_a^b u + i \int_a^b v .
@@ -305,7 +305,7 @@ The action of this matrix on a vector $(s,t)$ is the same
 as the action of multiplying $(x+iy)(s+it)$.
 \item
 Multiplying two such matrices is the same multiplying the underlying complex
-numbers and then getting the corresponding matrix for the product.
+numbers and then finding the corresponding matrix for the product.
 In other words, we can think of the field $\C$ as also a subset of
 the two by two matrices.
 \item
@@ -321,7 +321,7 @@ of the other
 \end{samepage}
 
 \begin{exercise}
-Prove the Bolzano-Weierstrass theorem for complex sequences.
+Prove the Bolzano--Weierstrass theorem for complex sequences.
 Suppose $\{ z_n \}$ is a bounded sequence of complex numbers, that
 is, there exists an $M$ such that $\sabs{z_n} \leq M$ for all $n$.  Prove
 that there exists a subsequence $\{ z_{n_k} \}$ that converges to some $z
@@ -1053,7 +1053,7 @@ There exists a $\rho \in [0,\infty]$ such that
 series converges absolutely on $B(a,\rho)$,
 and diverges when $\sabs{z-a} > \rho$.
 \end{enumerate}
-Furthermore, if $0 < r < \rho$ then
+Furthermore, if $0 < r < \rho$, then
 the series converges uniformly on the closed ball $C(a,r)$.
 \end{prop}
 \end{samepage}
@@ -1484,7 +1484,7 @@ z^m \sum_{k=0}^\infty a_{k+m} z^{k} .
 Write $g(z) = \sum_{k=0}^\infty a_{k+m} z^{k}$ (this series converges in
 on the same set as $f$).  $g$ is continuous and $g(0) = a_m \not= 0$.  Thus
 there exists some $\delta > 0$ such that $g(z) \not= 0$ for all $z \in
-B(0,\delta)$.  As $f(z) = z^m g(z)$, then the only point in $B(0,\delta)$ where
+B(0,\delta)$.  As $f(z) = z^m g(z)$, the only point in $B(0,\delta)$ where
 $f(z) = 0$ is when $z=0$, but this contradicts the assumption
 that $f(z_n) = 0$ for all $n$.
 \end{proof}
@@ -1523,15 +1523,15 @@ which converge in some ball $B(0,\rho)$.  Therefore the series
 0 = f(z)-g(z) = 
 \sum_{k=0}^\infty (a_k-b_k) z^k
 \end{equation*}
-converges in $B(0,\rho)$.  As $0$ is a cluster point of $E$, then there
+converges in $B(0,\rho)$.  As $0$ is a cluster point of $E$, there
 is a sequence of nonzero points $\{ z_n \}$ such that
-$f(z_n) -g(z_n) = 0$.  Therefore by the lemma above we have
-that $a_k = b_k$ for all $k$.  And therefore $B(0,\rho) \subset E$.
+$f(z_n) -g(z_n) = 0$.  Hence, by the lemma above 
+$a_k = b_k$ for all $k$.  Therefore, $B(0,\rho) \subset E$.
 
 This means that $E$ is open.  As $E$ is also closed, and $U$ is connected, we conclude that $E = U$.
 \end{proof}
 
-By restricting our attention to real $x$ we obtain the same
+By restricting our attention to real $x$, we obtain the same
 theorem for connected open subsets of $\R$, which are just open intervals.
 
 \subsection{Exercises}
@@ -1826,7 +1826,7 @@ real whenever $x$ is real.
 The first three items follow directly from the definition.
 The computation of the power series for both is left as an exercise.
 
-As complex conjugate is a continuous function, then the definition
+As complex conjugate is a continuous function, the definition
 of $e^z$ implies
 $\overline{(e^z)} = e^{\bar{z}}$.  If
 $x$ is real,
@@ -1864,8 +1864,10 @@ So $f$ must be nonnegative when $x \geq 0$.
 
 We claim there exists a positive $x$ such that $\cos(x) = 0$.
 As $\cos(0) = 1 > 0$, $\cos(x) > 0$
-for $x$ near 0.
-Suppose that $\cos(x) > 0$ on $[0,y)$, then $\sin(x)$ is strictly
+for $x$ near 0.  In other words
+there is some
+$y > 0$, such that $\cos(x) > 0$ on $[0,y)$.
+Then $\sin(x)$ is strictly
 increasing on $[0,y)$.  As $\sin(0) = 0$, then
 $\sin(x) > 0$ for $x \in (0,y)$.  Take $a \in (0,y)$.  By
 the mean value theorem there is a $c \in (a,y)$ such that
@@ -1941,7 +1943,7 @@ there must exist an $x \in [0,\nicefrac{\pi}{2}]$ such that
 $\cos(x) = a$, and hence $b^2 = \bigl(\sin(x)\bigr)^2$.  As
 $b$ and $\sin(x)$ are nonnegative we have $b = \sin(x)$.
 Since $-\sin(x)$ is the derivative of $\cos(x)$
-and $\cos(-x) = \cos(x)$ then $\sin(x) < 0$ for $x \in [\nicefrac{-\pi}{2},0)$.
+and $\cos(-x) = \cos(x)$, then $\sin(x) < 0$ for $x \in [\nicefrac{-\pi}{2},0)$.
 Using the same reasoning we obtain that
 if $a > 0$ and $b \leq 0$, we can find an $x$ in $[\nicefrac{-\pi}{2},0)$,
 and by periodicity,
@@ -2198,13 +2200,14 @@ $\epsilon > 0$ works.
 
 The moral of the story is that if $p(0) = 1$, then very close to 0, the
 polynomial
-looks like $1+az^k$ and this has no minimum at the origin.  All the higher
+looks like $1+az^k$, and $1+az^k$ has no minimum at the origin.  All the higher
 powers of $z$ are too small to make a difference.  We find similar behavior
 at infinity.
 
 \begin{lemma}
-Let $p(z)$ be complex polynomial.  Then for any $M$ there exists
-an $R$ such that if $\sabs{z} \geq R$ then $\sabs{p(z)} \geq M$.
+Let $p(z)$ be complex polynomial.  Then for any $M > 0$ there exists
+an $R > 0$ such that
+$\sabs{p(z)} \geq M$ whenever $\sabs{z} \geq R$.
 \end{lemma}
 
 \begin{proof}
@@ -2233,8 +2236,9 @@ R^d \bigl(\sabs{a_d} -
 \end{split}
 \end{equation*}
 Then the expression in parentheses is eventually positive for large enough
-$R$.  In particular, for large enough $R$ we get that it is greater than
-$\frac{\sabs{a_d}}{2}$ and so
+$R$.  In particular, for large enough $R$ we get that this expression
+is greater than
+$\frac{\sabs{a_d}}{2}$, and so
 \begin{equation*}
 \sabs{p(z)}
 \geq
@@ -2373,7 +2377,7 @@ Hint: See previous exercises.
 
 \sectionnotes{2 lectures}
 
-We would like an analogue of Bolzano-Weierstrass.  Something to the tune of
+We would like an analogue of Bolzano--Weierstrass.  Something to the tune of
 ``every bounded
 sequence of functions (with some property) has a convergent subsequence.''
 Matters are not
@@ -3005,8 +3009,8 @@ mostly sees the values of $g$ that are
 close to $x$ and it does the weighted average of them.
 When the peak gets narrower, we compute this average closer to $x$
 and we expect the result to get closer to the value of $g(x)$.  Really we are
-approximating what is called a delta function\footnote{which is not actually
-a function} (don't worry if you have not
+approximating what is called a delta function\footnote{The delta function
+is not actually a function.} (don't worry if you have not
 heard of this concept),
 and functions like $q_n$ are often called
 \emph{approximate delta functions}\index{approximate delta function}.
@@ -3058,7 +3062,7 @@ In other words, $p_n$ is a polynomial%
 Do note that the functions $a_j$ depend on $n$, so the coefficients of $p_n$
 change as $n$ changes.}
  in $x$.
-If $g(t)$ is real-valued then the functions $g(t)a_j(t)$ are
+If $g(t)$ is real-valued, then the functions $g(t)a_j(t)$ are
 real-valued and hence $p_n$ has real coefficients,
 proving the ``furthermore'' part of the theorem.
 
@@ -3101,7 +3105,7 @@ p_n(x) =
 Let $\epsilon > 0$ be given.
 As $[-1,2]$ is compact and $g$ is continuous on $[-1,2]$, we have that $g$ is uniformly continuous.
 Pick $0 < \delta < 1$ such that if
-$\sabs{x-y} < \delta$ (and $x,y \in [-1,2]$) then
+$\sabs{x-y} < \delta$ (and $x,y \in [-1,2]$), then
 \begin{equation*}
 \sabs{g(x)-g(y)} < \frac{\epsilon}{2} .
 \end{equation*}
@@ -3242,7 +3246,7 @@ sums of any series.  For each one, the coefficients $a_k$ above can be
 completely different, they do not need to come from a single sequence $\{
 c_k \}$.
 
-\subsection{Stone-Weierstrass approximation}
+\subsection{Stone--Weierstrass approximation}
 
 We want to abstract away what is not really
 necessary and prove a general version of the Weierstrass theorem.
@@ -3426,7 +3430,7 @@ The proof is divided into several claims.
 \medskip
 
 \noindent
-\textbf{Claim 1:} \emph{If $f \in \widebar{\sA}$ then $\sabs{f} \in
+\textbf{Claim 1:} \emph{If $f \in \widebar{\sA}$, then $\sabs{f} \in
 \widebar{\sA}$.}
 
 \begin{proof}
@@ -3457,7 +3461,7 @@ So $\sabs{f}$ is in the closure of $\widebar{\sA}$, which is closed, so $\sabs{f
 \medskip
 
 \noindent
-\textbf{Claim 2:} \emph{If $f \in \widebar{\sA}$ and $g \in \widebar{\sA}$ then
+\textbf{Claim 2:} \emph{If $f \in \widebar{\sA}$ and $g \in \widebar{\sA}$, then
 $\max(f,g) \in \widebar{\sA}$ and
 $\min(f,g) \in \widebar{\sA}$, where
 }
@@ -3536,7 +3540,7 @@ $g_x(x) = f(x)$.
 \medskip
 
 \noindent
-\textbf{Claim 4:} \emph{If $f \in C(X,\R)$ and $\epsilon > 0$ is given then there
+\textbf{Claim 4:} \emph{If $f \in C(X,\R)$ and $\epsilon > 0$ is given, then there
 exists an $\varphi \in \widebar{\sA}$ such that}
 \begin{equation*}
 \sabs{f(x) - \varphi(x)} < \epsilon .
@@ -3767,7 +3771,7 @@ Find an $f \in  C([-1,1],\R)$ that is not a
 uniform limit of
 polynomials from $\sA$.
 \item
-Which hypothesis of the real Stone-Weierstrass is not satisfied
+Which hypothesis of the real Stone--Weierstrass is not satisfied
 for the domain $[-1,1]$?
 \end{enumerate}
 \end{exercise}
@@ -3806,7 +3810,7 @@ of the form
 \begin{equation*}
 \sum_{k=-n}^n c_k \, e^{ik x}
 \end{equation*}
-satisfies the hypotheses of the complex Stone-Weierstrass theorem
+satisfies the hypotheses of the complex Stone--Weierstrass theorem
 and therefore such functions are dense in the $C([-\pi,\pi],\C)$.
 \end{exercise}
 
@@ -4220,8 +4224,8 @@ functions on $[a,b]$.  We say that this is an
 \end{equation*}
 In particular, $\snorm{\varphi_n}_2 = 1$ for all $n$.  If we
 only require that 
-$\langle \varphi_n , \varphi_m \rangle = 0$ for $m\not= n$ then
-the system would be just an \emph{\myindex{orthogonal system}}.
+$\langle \varphi_n , \varphi_m \rangle = 0$ for $m\not= n$, then
+the system would be called an \emph{\myindex{orthogonal system}}.
 \end{defn}
 
 We noticed above that
@@ -4398,7 +4402,7 @@ and hence the inner product to make
 $\{ e^{inx} \}$ orthonormal.  That is, if we replace
 \begin{equation*}
 \int_a^b \qquad \text{with} \qquad
-\frac{1}{2\pi} \int_{-\pi}^\pi
+\frac{1}{2\pi} \int_{-\pi}^\pi,
 \end{equation*}
 (we are just rescaling the $dx$ really)\footnote{%
 Mathematicians in this field sometimes simplify matters by
@@ -4527,7 +4531,7 @@ for all $t \in (-\delta,\delta)$, then
 
 In particular,
 if $f$ is continuously
-differentiable at $x$
+differentiable at $x$,
 then we obtain convergence (exercise).
 We state the more often used version of this corollary.
 A function $f \colon [a,b] \to \C$ is
@@ -4847,7 +4851,7 @@ Show that there exists a continuous $2\pi$-periodic function $g \colon \R
 \end{exercise}
 
 \begin{exercise}
-Prove the Cauchy-Bunyakovsky-Schwarz inequality
+Prove the Cauchy--Bunyakovsky--Schwarz inequality
 for Riemann integrable functions:
 \begin{equation*}
 {\abs{\int_a^b f\bar{g}}}^2
@@ -4911,7 +4915,7 @@ Show that there exists a continuous function
 $f \colon \overline{\D} \to \C$ which is analytic on $\D$
 and such that on the boundary of $\D$ we have
 $f(e^{i\theta}) = \sum_{n=0}^\infty c_n e^{i\theta}$.\\
-Hint: if $z=re^{i\theta}$ then $z^n = r^n e^{in\theta}$.
+Hint: if $z=re^{i\theta}$, then $z^n = r^n e^{in\theta}$.
 \end{exercise}
 
 \begin{exercise}
