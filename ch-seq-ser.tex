@@ -982,7 +982,7 @@ write $z_n := x_n y_n$.  Let $x := \lim\, x_n$,
 $y := \lim\, y_n$, and $z := xy$.
 
 Let $\epsilon > 0$ be given.
-Let $K := \max\{ \abs{x}, \abs{y}, \nicefrac{\epsilon}{3} \}$.
+Let $K := \max\{ \abs{x}, \abs{y}, \nicefrac{\epsilon}{3} , 1 \}$.
 Find an $M_1$ such that for all $n \geq M_1$
 we have
 $\abs{x_n - x} < \frac{\epsilon}{3K}$.
@@ -1011,7 +1011,7 @@ For all $n \geq M$ we have
 K \frac{\epsilon}{3K} + 
 \frac{\epsilon}{3K}
 \frac{\epsilon}{3K}
-\qquad \qquad \text{(now notice that $\tfrac{\epsilon}{3K} \leq 1$)}
+\qquad \qquad \text{(now notice that $\tfrac{\epsilon}{3K} \leq 1$ and $K \geq 1$)}
 \\
 & \leq
 \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3}
