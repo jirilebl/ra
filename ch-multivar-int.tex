@@ -1405,15 +1405,16 @@ a \emph{\myindex{null set}} if $m^*(S) = 0$.
 \cup R_3 \cup \cdots$, so $m^*(S) \leq V(R_1) + V(R_2)+V(R_3) + \cdots$.\label{fig:outermeasure}}
 \end{myfigureht}
 
-An immediate and useful consequence (exercise) of the definition is that if $A \subset B$
+An immediate consequence (exercise) of the definition is that if $A \subset B$
 then $m^*(A) \leq m^*(B)$.
 It is also not difficult to show (exercise) that we obtain the same number
 $m^*(S)$ if we also allow both finite and infinite sequences
-of rectangles in the definition.
+of rectangles in the definition.  It is not enough, however, to allow only
+finite sequences.
 
 The theory of measures on $\R^n$ is a very complicated subject.
 We will only require measure-zero sets and so we focus on these.
-The set $S$ is of measure zero if
+A set $S$ is of measure zero if
 for every $\epsilon > 0$
 there exists a sequence of open rectangles $\{ R_j \}$ such that
 \begin{equation} \label{mv:eq:nullR}
@@ -1429,9 +1430,9 @@ choose balls no bigger than a fixed radius.
 
 \begin{prop} \label{mv:prop:ballsnull}
 Let $\delta > 0$ be given.
-A set $S \subset \R^n$ is measure zero if and only if for every $\epsilon >
+A set $S \subset \R^n$ is of measure zero if and only if for every $\epsilon >
 0$, there exists a sequence of open balls $\{ B_j \}$, where the radius of
-$B_j$ is $r_j < \delta$ such that
+$B_j$ is $r_j < \delta$, and such that
 \begin{equation*}
 S \subset \bigcup_{j=1}^\infty B_j \qquad \text{and} \qquad
 \sum_{j=1}^\infty r_j^n < \epsilon.
@@ -1462,7 +1463,8 @@ and then doing the same for every side, we obtain a new larger
 rectangle of volume at most $2^n$ times larger, but whose sides are
 multiples of $s$.
 
-So suppose that there exist $\{ R_j \}$ as in the definition such that
+So suppose that $S$ is a null set and
+there exist $\{ R_j \}$ whose union contains $S$ and such that
 \eqref{mv:eq:nullR} is true.  As we have seen above, we can choose closed
 cubes $\{ C_k \}$ with $C_k$ of side $s_k$ as above that cover all the rectangles $\{ R_j \}$
 and so that
@@ -1475,8 +1477,11 @@ and so that
 Covering $C_k$ with balls $B_k$ of radius $r_k = 2\sqrt{n} \, s_k < \delta$
 we obtain 
 \begin{equation*}
-\sum_{k=1}^\infty r_k^n <
-2^{2n} n \epsilon .
+\sum_{k=1}^\infty r_k^n
+=
+\sum_{k=1}^\infty {(2\sqrt{n})}^n s_k^n
+<
+{(4\sqrt{n})}^n \epsilon .
 \end{equation*}
 And as $S \subset\bigcup_{j} R_j \subset \bigcup_{k} C_k \subset \bigcup_{k}
 B_k$, we are finished.
@@ -1494,8 +1499,9 @@ S \subset \bigcup_{j=1}^\infty R_j \qquad \text{and} \qquad
 \end{equation*}
 \end{proof}
 
-The definition of outer measure could have been done with open balls
-as well, not just null sets.  We leave this generalization to the reader.
+The definition of outer measure (not just null sets)
+could have been done with open balls
+as well.  We leave this generalization to the reader.
 
 \subsection{Examples and basic properties}
 
