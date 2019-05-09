@@ -2637,7 +2637,7 @@ then $\{ x_n \}$ must be convergent by \propref{liminfsupconv:prop}.
 
 Define $a := \limsup \, x_n$ and
 $b := \liminf \, x_n$.
-By \propref{seqconvsubseqconv:prop}, there exist subsequences
+By \thmref{subseqlimsupinf:thm}, there exist subsequences
 $\{ x_{n_i} \}$ and
 $\{ x_{m_i} \}$, such that
 \begin{equation*}
@@ -3214,7 +3214,7 @@ Hence $\sum x_n$ is Cauchy and therefore it converges.
 \end{proof}
 
 If $\sum x_n$ converges absolutely, the limits of
-$\sum x_n$ and $\sum \abs{x_n}$ are different.  Computing one
+$\sum x_n$ and $\sum \abs{x_n}$ may be different.  Computing one
 does not help us compute the other.  However the computation above leads to
 a useful inequality for absolutely convergent series,
 a series version of the triangle inequality,
@@ -3241,7 +3241,7 @@ On the other hand we proved
 \sum_{n=1}^\infty \frac{1}{n}
 \end{equation*}
 diverges.  Therefore,
-$\sum \frac{{(-1)}^n}{n}$ is a conditionally convergent subsequence.
+$\sum \frac{{(-1)}^n}{n}$ is a conditionally convergent series.
 
 \subsection{Comparison test and the \texorpdfstring{$p$}{p}-series}
 
@@ -3464,7 +3464,8 @@ If $L > 1$, then $\sum x_n$ diverges.
 \end{prop}
 
 \begin{proof}
-From \lemmaref{seq:ratiotest} we note that if $L > 1$, then $x_n$
+If $L > 1$, then
+\lemmaref{seq:ratiotest} says that the sequence $\{ x_n \}$
 diverges.  Since it is a necessary condition for the convergence of series
 that the terms go to zero, we know that $\sum x_n$ must diverge.
 

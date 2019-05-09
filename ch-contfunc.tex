@@ -2397,7 +2397,7 @@ such that for every $\epsilon > 0$, there is an $M \in \R$ such that
 \begin{equation*}
 \abs{f(x) - L} < \epsilon 
 \end{equation*}
-whenever $x \geq M$, then we say $f(x)$
+whenever $x \in S$ and $x \geq M$, then we say $f(x)$
 \emph{converges}\index{converges!function} to $L$
 as $x$ goes to $\infty$.  We call $L$ the \emph{limit}
 and write
@@ -2414,7 +2414,7 @@ such that for every $\epsilon > 0$, there is an $M \in \R$ such that
 \begin{equation*}
 \abs{f(x) - L} < \epsilon 
 \end{equation*}
-whenever $x \leq M$, then we say $f(x)$ \emph{converges} to $L$
+whenever $x \in S$ and $x \leq M$, then we say $f(x)$ \emph{converges} to $L$
 as $x$ goes to $-\infty$.  We call $L$ the \emph{limit} and write
 \begin{equation*}
 \lim_{x \to -\infty} f(x) := L .
@@ -2481,7 +2481,7 @@ if and only if
 \begin{equation*}
 \lim_{n\to\infty} f(x_n) = L
 \end{equation*}
-for all sequences $\{ x_n \}$ such that $\lim\limits_{n\to\infty} x_n = \infty$.
+for all sequences $\{ x_n \}$ in $S$ such that $\lim\limits_{n\to\infty} x_n = \infty$.
 \end{lemma}
 
 The lemma holds for the limit as $x \to -\infty$.
@@ -2500,8 +2500,8 @@ $\abs{f(x_n)-L} < \epsilon$.
 We prove the converse by contrapositive.  Suppose $f(x)$ does
 not go to $L$ as $x \to \infty$.
 This means that there exists an $\epsilon > 0$,
-such that for every $M \in \N$, there exists an $x \in S$, $x \geq M$, let
-us call it $x_M$, such that $\abs{f(x_M)-L} \geq \epsilon$.
+such that for every $n \in \N$, there exists an $x \in S$, $x \geq n$, let
+us call it $x_n$, such that $\abs{f(x_n)-L} \geq \epsilon$.
 Consider the sequence $\{ x_n \}$.  Clearly 
 $\{ f(x_n) \}$ does not converge to $L$.  It remains to note
 that $\lim\, x_n = \infty$, because $x_n \geq n$ for all $n$.
@@ -2805,7 +2805,7 @@ with $\abs{x-c} < \delta$,
 we have $\abs{f(x)-a} < \epsilon$.
 \end{proof}
 
-Suppose $f \colon S \to \R$, $c \in S$, and
+Suppose $f \colon S \to \R$ is increasing, $c \in S$, and
 that both one-sided limits exist.
 Since $f(x) \leq f(c) \leq f(y)$
 whenever $x < c < y$, taking the limits we obtain
@@ -3084,11 +3084,12 @@ $g(x) = f(x)$ for all but countably many $x$.
 {\ }
 \begin{enumerate}[a)]
 \item
-Let $S \subset \R$ be any subset.  If $f \colon S \to \R$ is increasing,
+Let $S \subset \R$ be any subset.  If $f \colon S \to \R$ is increasing and
+bounded,
 then show that there exists an increasing $F \colon \R \to \R$
 such that $f(x) = F(x)$ for all $x \in S$.
 \item
-Find an example of a strictly increasing $f \colon S \to \R$ such that
+Find an example of a strictly increasing bounded $f \colon S \to \R$ such that
 an increasing $F$ as above is never strictly increasing.
 \end{enumerate}
 \end{exercise}
