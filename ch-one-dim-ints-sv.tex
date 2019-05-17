@@ -648,7 +648,7 @@ a smooth path, define
 
 The notation makes sense from the formula you remember from calculus,
 let us state it somewhat informally:
-if $x_j(t) = \gamma_j(t)$, then $dx_j = \gamma_j^{\:\prime}(t) dt$.
+If $x_j(t) = \gamma_j(t)$, then $dx_j = \gamma_j^{\:\prime}(t) dt$.
 
 Paths can be cut up or concatenated.  The proof is a direct application
 of the additivity of the Riemann integral, and is left as an exercise.
@@ -778,10 +778,10 @@ Suppose $\omega$ is a one-form defined on the set $\gamma\bigl([a,b]\bigr)$.  Th
 
 \begin{proof}
 Assume first that $\gamma$ and $h$ are both smooth.
-Write $\omega = \omega_1 dx_1 + \omega_2 dx_2 + \cdots +
-\omega_n dx_n$.
-Suppose that $h$ is orientation preserving.  Using
-the change of variables formula for the Riemann integral,
+Write $\omega = \omega_1 \, dx_1 + \omega_2 \, dx_2 + \cdots +
+\omega_n \, dx_n$.
+Suppose that $h$ is orientation preserving.  Use
+the change of variables formula for the Riemann integral:
 \begin{equation*}
 \begin{split}
 \int_{\gamma} \omega
@@ -817,8 +817,8 @@ paths, is left as \exerciseref{mv:exercise:pathpiece}.
 
 Due to this proposition (and the exercises), if $\Gamma
 \subset \R^n$ is the image of a simple piecewise smooth path
-$\gamma\bigl([a,b]\bigr)$, then if we somehow indicate the orientation, that
-is, the direction in which we traverse the curve, then we can write
+$\gamma\bigl([a,b]\bigr)$, then as long as we somehow indicate the orientation, that
+is, the direction in which we traverse the curve, we can write
 \begin{equation*}
 \int_{\Gamma} \omega ,
 \end{equation*}
@@ -828,8 +828,8 @@ start the parametrization.  See the exercises.
 
 Recall that \emph{simple} means that $\gamma$ restricted to $(a,b)$ is
 one-to-one, that is, $\gamma$ is one-to-one except perhaps at the endpoints.
-We also often relax the simple path condition a little bit.
-For example, as long as
+We may relax the condition that the path is simple a little bit.
+For example, it is enough to suppose that
 $\gamma \colon [a,b] \to \R^n$ is one-to-one except at finitely many points.  That
 is, there are only finitely many points $p \in \R^n$ such that
 $\gamma^{-1}(p)$ is more than one point.  See the exercises.  The issue about the
@@ -1376,7 +1376,7 @@ Define
 \begin{equation*}
 f(x) := \int_{p}^x \omega .
 \end{equation*}
-Write $\omega = \omega_1 ~dx_1 + \omega_2 ~dx_2 + \cdots + \omega_n ~dx_n$.
+Write $\omega = \omega_1 \,dx_1 + \omega_2 \,dx_2 + \cdots + \omega_n \,dx_n$.
 We wish to show that for every $j = 1,2,\ldots,n$, the
 partial derivative $\frac{\partial f}{\partial x_j}$ exists
 and is equal to $\omega_j$.
@@ -1533,7 +1533,8 @@ There is a local criterion, a differential equation, that guarantees
 path independence, or in other words an
 \emph{\myindex{antiderivative}}
 $f$ whose total derivative is the given one-form
-$\omega$.  Since the criterion is local, we generally only get the result
+$\omega$.  Since the criterion is local, we generally only find the
+function $f$ 
 locally.  We can find the antiderivative in any so-called
 \emph{\myindex{simply connected}} domain, which informally is a domain where
 any path between two points can be ``continuously deformed''
@@ -1564,9 +1565,9 @@ Let $U \subset \R^n$ be a star-shaped domain and $\omega$ a continuously
 differentiable one-form defined on $U$.  That is, if
 \begin{equation*}
 \omega =
-\omega_1 ~dx_1 +
-\omega_2 ~dx_2 + \cdots +
-\omega_n ~dx_n ,
+\omega_1 \,dx_1 +
+\omega_2 \,dx_2 + \cdots +
+\omega_n \,dx_n ,
 \end{equation*}
 then $\omega_1,\omega_2,\ldots,\omega_n$ are continuously differentiable
 functions.  Suppose that for every $j$ and $k$
@@ -1725,8 +1726,8 @@ where a certain quantity, the energy is conserved.
 \subsection{Exercises}
 
 \begin{exercise}
-Find an $f \colon \R^2 \to \R$ such that $df = xe^{x^2+y^2} dx +
-ye^{x^2+y^2} dy$.
+Find an $f \colon \R^2 \to \R$ such that $df = xe^{x^2+y^2}\, dx +
+ye^{x^2+y^2} \, dy$.
 \end{exercise}
 
 \begin{exercise}
@@ -1812,7 +1813,7 @@ smooth path).
 \begin{exercise}[Hard]
 Take
 \begin{equation*}
-\omega(x,y) = \frac{-y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy
+\omega(x,y) = \frac{-y}{x^2+y^2} \, dx + \frac{x}{x^2+y^2} \, dy
 \end{equation*}
 defined on $\R^2 \setminus \{ (0,0) \}$.  Let $\gamma \colon [a,b] \to \R^2
 \setminus \{ (0,0) \}$ be a closed piecewise smooth path.
