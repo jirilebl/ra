@@ -1473,18 +1473,18 @@ and uniqueness.
 
 \subsection{The theorem}
 
-We need a definition of continuity in two variables.  First, a point in the
+We need a definition of continuity in two variables.  A point in the
 plane $\R^2 = \R \times \R$ is denoted by an ordered pair $(x,y)$.
-To make matters simple, let
-us give the following sequential definition of continuity.
+For simplicity,
+we give the following sequential definition of continuity.
 
 \begin{defn}
-Let $U \subset \R^2$ be a set and $F \colon U \to \R$ be a function.
-Let $(x,y) \in U$ be a point.  The function $F$ is \emph{continuous}
+Let $U \subset \R^2$ be a set, $F \colon U \to \R$ a function,
+and $(x,y) \in U$ a point.  The function $F$ is \emph{continuous}
 \index{continuous function of two variables}
 at $(x,y)$ if 
 for every sequence
-$\{ (x_n,y_n) \}_{n=1}^\infty$ of points in $U$ such that
+$\bigl\{ (x_n,y_n) \bigr\}_{n=1}^\infty$ of points in $U$ such that
 $\lim\, x_n = x$ and 
 $\lim\, y_n = y$, we have 
 \begin{equation*}
@@ -1509,9 +1509,10 @@ an $L \in \R$ such that
 \ \ \ \text{ for all $y,z \in J$, $x \in I$} .
 \end{equation*}
 Then there exists an $h > 0$ and a unique differentiable
-function $f \colon [x_0 - h, x_0 + h] \to J \subset \R$, such that
+function $f \colon [x_0 - h, x_0 + h] \to J \subset \R$, so that
 \begin{equation} \label{picard:diffeq}
 f'(x) = F\bigl(x,f(x)\bigr) \qquad \text{and} \qquad f(x_0) = y_0.
+\pagebreak[2]
 \end{equation}
 \end{thm}
 
