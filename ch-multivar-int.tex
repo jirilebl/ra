@@ -216,20 +216,21 @@ be partitions of $R$.  We say $\widetilde{P}$ a
 if, as sets, $P_k \subset \widetilde{P}_k$ for all $k = 1,2,\ldots,n$.
 \end{defn}
 
-It is not difficult to see that if $\widetilde{P}$ is a refinement of $P$,
+If $\widetilde{P}$ is a refinement of $P$,
 then subrectangles of $P$ are unions of subrectangles of $\widetilde{P}$.
-Simply put, in a refinement we take the subrectangles of $P$,
-and we cut them into smaller subrectangles.  See \figureref{mv:figrectpart}.
+Simply put, in a refinement, we take the subrectangles of $P$,
+and we cut them into smaller subrectangles and call that $\widetilde{P}$.
+See \figureref{mv:figrectpart}.
 
 \begin{myfigureht}
 \subimport*{figures/}{figrectpart.pdf_t}
 \caption{Example refinement of a partition.  New ``cuts'' are marked in
-dashed lines.  Do note that the exact order of the new subrectangles does not
+dashed lines.  The exact order of the new subrectangles does not
 matter.\label{mv:figrectpart}}
 \end{myfigureht}
 
 \begin{prop} \label{mv:prop:refinement}
-Suppose $R \subset \R^n$ is a closed rectangle, $P$ is a partition of $R$
+Suppose $R \subset \R^n$ is a closed rectangle, $P$ is a partition of $R$,
 and $\widetilde{P}$ is a refinement of $P$.
 If $f \colon R \to \R$ be a bounded function,
 then
@@ -241,7 +242,7 @@ U(\widetilde{P},f) \leq U(P,f) .
 \end{prop}
 
 \begin{proof}
-We prove the first inequality, the second follows similarly.
+We prove the first inequality, and the second follows similarly.
 Let $R_1,R_2,\ldots,R_N$ be the subrectangles of $P$
 and
 $\widetilde{R}_1,\widetilde{R}_2,\ldots,\widetilde{R}_{\widetilde{N}}$ be the
@@ -296,7 +297,7 @@ For any partition $P$, via \propref{mv:sumulbound:prop},
 \begin{equation*}
 m\,V(R) \leq L(P,f) \leq U(P,f) \leq M\,V(R).
 \end{equation*}
-Taking supremum of $L(P,f)$ and infimum of $U(P,f)$ over all $P$,
+Taking supremum of $L(P,f)$ and infimum of $U(P,f)$ over all partitions $P$,
 we obtain the first and the last inequality in
 \eqref{mv:intulbound:eq}.
 
@@ -338,15 +339,16 @@ integral is only defined on a certain class of functions, called the
 Riemann integrable functions.
 
 \begin{defn}
-Let $R \subset \R^n$ be a closed rectangle.
-Let $f \colon R \to \R$ be a bounded function such that
+Let $R \subset \R^n$ be a closed rectangle and
+$f \colon R \to \R$ a bounded function such that
 \begin{equation*}
 \underline{\int_R} f(x)~dx = \overline{\int_R} f(x)~dx .
 \end{equation*}
 Then $f$ is said to be \emph{\myindex{Riemann integrable}},
 and we sometimes say simply \emph{\myindex{integrable}}.
 The set of Riemann integrable functions on $R$ is denoted
-by $\sR(R)$.\glsadd{not:integrablefuncR}  When $f \in \sR(R)$ we define
+by $\sR(R)$.\glsadd{not:integrablefuncR}
+For $f \in \sR(R)$ define
 the \emph{\myindex{Riemann integral}}
 \glsadd{not:riemannintR}
 \begin{equation*}
@@ -355,7 +357,7 @@ the \emph{\myindex{Riemann integral}}
 \end{equation*}
 \end{defn}
 
-When the variable $x \in \R^n$ needs to be emphasized we write
+When the variable $x \in \R^n$ needs to be emphasized, we write
 \begin{equation*}
 \int_R f(x)~dx,
 \qquad
@@ -365,7 +367,7 @@ When the variable $x \in \R^n$ needs to be emphasized we write
 \qquad
 \int_R f(x)~dV .
 \end{equation*}
-If $R \subset \R^2$, then often instead of volume we say area, and hence
+If $R \subset \R^2$, then we often say area instead of volume, and we
 write
 \begin{equation*}
 \int_R f(x)~dA .
@@ -467,8 +469,9 @@ every $\epsilon > 0$, we conclude
 $\overline{\int_R} f = \underline{\int_R} f$ and $f \in \sR(R)$.
 \end{proof}
 
-For simplicity if $f \colon S \to \R$ is a function and $R \subset S$
-is a closed rectangle, then if the restriction $f|_R$ is integrable we
+Suppose $f \colon S \to \R$ is a function and $R \subset S$
+is a closed rectangle.  If the restriction $f|_R$ is integrable,
+then for simplicity we
 say $f$ is integrable on $R$, or $f \in \sR(R)$ and we
 write
 \begin{equation*}
@@ -476,9 +479,9 @@ write
 \end{equation*}
 
 \begin{prop} \label{mv:prop:integralsmallerset}
-For a closed rectangle $S \subset \R^n$,
-if $f \colon S \to \R$ is integrable and $R \subset S$
-is a closed rectangle, then $f$ is integrable over $R$.
+Let $S \subset \R^n$ be a closed rectangle.
+If $f \colon S \to \R$ is integrable and $R \subset S$
+is a closed rectangle, then $f$ is integrable on $R$.
 \end{prop}
 
 \begin{proof}
@@ -752,7 +755,7 @@ $\int_S f = \int_{S \cap R} f = \int_R f$.
 \end{proof}
 
 Because of this proposition, when $f \colon \R^n \to \R$ has compact support
-and is integrable over a rectangle $R$ containing the support we write
+and is integrable on a rectangle $R$ containing the support we write
 \begin{equation*}
 \int f := \int_R f \qquad \text{or} \qquad 
 \int_{\R^n} f := \int_R f .
@@ -852,9 +855,9 @@ Suppose $f \colon \R^n \to \R$ be a function with compact support but not
 necessarily continuous.
 Prove that
 if $R$ is a closed rectangle such that $\operatorname{supp}(f) \subset R$
-and $f$ is integrable over $R$, then for any other closed rectangle
+and $f$ is integrable on $R$, then for any other closed rectangle
 $S$ with $\operatorname{supp}(f) \subset S$,
-the function $f$ is integrable over $S$ and
+the function $f$ is integrable on $S$ and
 $\int_S f = \int_R f$.
 Hint:~See \exerciseref{mv:zerooutside}.
 \end{exercise}
@@ -862,7 +865,7 @@ Hint:~See \exerciseref{mv:zerooutside}.
 \begin{exercise}
 Suppose $R$ and $S$ are closed rectangles of $\R^n$.
 Define $f \colon \R^n \to \R$ as $f(x) := 1$ if 
-$x \in R$, and $f(x) := 0$ otherwise.  Prove $f$ is integrable over $S$
+$x \in R$, and $f(x) := 0$ otherwise.  Prove $f$ is integrable on $S$
 and compute $\int_S f$.  Hint: Consider $S \cap R$.
 \end{exercise}
 
@@ -1050,7 +1053,7 @@ g(x) := \underline{\int_S} f_x \qquad
 \text{and} \qquad
 h(x) := \overline{\int_S} f_x 
 \end{equation*}
-are integrable over $R$ and
+are integrable on $R$ and
 \begin{equation*}
 \int_R g = \int_R h = \int_{R \times S} f .
 \end{equation*}
@@ -1193,7 +1196,7 @@ g(y) := \underline{\int_R} f^y \qquad
 \text{and} \qquad
 h(y) := \overline{\int_R} f^y 
 \end{equation*}
-are integrable over $S$ and
+are integrable on $S$ and
 \begin{equation*}
 \int_S g = \int_S h = \int_{R \times S} f .
 \end{equation*}
@@ -1212,8 +1215,8 @@ That is we also have
 \right) ~ dy .
 \end{equation*}
 
-Next suppose that $f_x$ and $f^y$ are integrable for simplicity.
-For example, suppose that $f$ is continuous.  Then by
+Next suppose $f_x$ and $f^y$ are integrable.
+For example, suppose $f$ is continuous.  By
 putting the two versions together we obtain the familiar
 \begin{equation*}
 \int_{R \times S} f
@@ -1234,8 +1237,9 @@ states that
 =
 \int_c^d \int_a^b f(x,y) ~dx~dy .
 \end{equation*}
-And the Fubini theorem is commonly thought of as the theorem that allows us
-to swap the order of iterated integrals.
+The Fubini theorem is commonly thought of as \emph{the} theorem that allows us
+to swap the order of iterated integrals, although there are many variations
+on Fubini, and we have seen but two of them.
 
 Repeatedly applying Fubini theorem gets us the following
 corollary:
@@ -1257,9 +1261,10 @@ dx_{n-1}
 dx_1 .
 \end{equation*}
 
-Clearly we can also switch the order of integration to any order we please.
-We can also relax the continuity requirement by making sure that all the
-intermediate functions are integrable, or by using upper or lower integrals.
+Clearly we may switch the order of integration to any order we please.
+We may also relax the continuity requirement by making sure that all the
+intermediate functions are integrable, or by using upper or lower integrals
+appropriately.
 
 \subsection{Exercises}
 
@@ -2165,10 +2170,11 @@ and hence $f$ is integrable.
 \medskip
 
 For the other direction, suppose $f$ is Riemann integrable
-over $R$.
-Let $S$ be the set of discontinuities again and now let
+on $R$.
+Let $S$ be the set of discontinuities again.  Consider
+the sequence of sets
 \begin{equation*}
-S_k := \{ x \in R : o(f,x) \geq \nicefrac{1}{k} \}.
+S_{1/k} = \bigl\{ x \in R : o(f,x) \geq \nicefrac{1}{k} \bigr\}.
 \end{equation*}
 Fix a $k \in \N$.
 Given an $\epsilon > 0$, find a partition $P$ with subrectangles
@@ -2179,12 +2185,12 @@ U(P,f)-L(P,f) =
 < \epsilon
 \end{equation*}
 Suppose $R_1,R_2,\ldots,R_p$ are ordered so that
-the interiors of $R_1,R_2,\ldots,R_{q}$ intersect $S_k$,
+the interiors of $R_1,R_2,\ldots,R_{q}$ intersect $S_{1/k}$,
 while the interiors of $R_{q+1},R_{q+2},\ldots,R_p$
-are disjoint from $S_k$.  If $x \in R_j \cap S_k$
+are disjoint from $S_{1/k}$.  If $x \in R_j \cap S_{1/k}$
 and $x$ is in the interior of $R_j$ so
 sufficiently small balls are completely inside $R_j$,
-then by definition of $S_k$ we have
+then by definition of $S_{1/k}$ we have
 $M_j-m_j \geq \nicefrac{1}{k}$.
 Then
 \begin{equation*}
@@ -2196,18 +2202,18 @@ Then
 \frac{1}{k}
 \sum_{j=1}^q V(R_j)
 \end{equation*}
-In other words
+In other words,
 $\sum_{j=1}^q V(R_j) < k \epsilon$.
 Let $G$ be the set of all boundaries of all the subrectangles
 of $P$.  The set $G$ is of measure zero (see \exampleref{mv:example:planenull}).
 Let $R_j^\circ$ denote the interior of $R_j$, then
 \begin{equation*}
-S_k \subset R_1^\circ \cup R_2^\circ \cup \cdots \cup R_q^\circ \cup G .
+S_{1/k} \subset R_1^\circ \cup R_2^\circ \cup \cdots \cup R_q^\circ \cup G .
 \end{equation*}
 As $G$ can be covered by open rectangles arbitrarily small volume,
-$S_k$ must be of measure zero.  As
+$S_{1/k}$ must be of measure zero.  As
 \begin{equation*}
-S = \bigcup_{k=1}^\infty S_k
+S = \bigcup_{k=1}^\infty S_{1/k}
 \end{equation*}
 and a countable union of measure zero sets is of measure zero, 
 $S$ is of measure zero.

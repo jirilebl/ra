@@ -1506,10 +1506,10 @@ and Lipschitz in the second variable, that is, there exists
 an $L \in \R$ such that
 \begin{equation*}
 \abs{F(x,y) - F(x,z)} \leq L \abs{y-z}
-\ \ \ \text{ for all $y,z \in J$, $x \in I$} .
+\qquad \text{ for all $y,z \in J$, $x \in I$} .
 \end{equation*}
 Then there exists an $h > 0$ and a unique differentiable
-function $f \colon [x_0 - h, x_0 + h] \to J \subset \R$, so that
+function $f \colon [x_0 - h, x_0 + h] \to J \subset \R$, such that
 \begin{equation} \label{picard:diffeq}
 f'(x) = F\bigl(x,f(x)\bigr) \qquad \text{and} \qquad f(x_0) = y_0.
 \pagebreak[2]
@@ -1644,8 +1644,8 @@ As $C < 1$, $\{f_n\}$ is uniformly Cauchy and by
 \propref{prop:uniformcauchy} we obtain that $\{ f_n \}$
 converges uniformly on $[-h,h]$ to some function $f \colon [-h,h] \to \R$.
 The function $f$ is the uniform limit of continuous functions and therefore
-continuous.  Furthermore since all the $f_n([-h,h]) \subset
-[y_0-\alpha,y_0+\alpha]$, then $f([-h,h]) \subset [y_0-\alpha,y_0+\alpha]$
+continuous.  Furthermore, since $f_n([-h,h]) \subset
+[y_0-\alpha,y_0+\alpha]$ for all $n$, then $f([-h,h]) \subset [y_0-\alpha,y_0+\alpha]$
 (why?).
 
 
@@ -1819,7 +1819,7 @@ We recognize the beginning of the Taylor series for the exponential.
 \end{example}
 
 \begin{example}
-Suppose we have the equation
+Consider the equation
 \begin{equation*}
 f'(x) = {\bigl(f(x)\bigr)}^2 \qquad \text{and} \qquad f(0)=1.
 \end{equation*}
@@ -1840,6 +1840,7 @@ theorem with $x_0$ close to 1 and $y_0 = \frac{1}{1-x_0}$ we find
 that the $h$ that the proof guarantees is smaller and smaller as $x_0$
 approaches 1.
 
+The $h$ from the proof is not the best $h$.
 By picking $\alpha$ correctly, the proof of the theorem guarantees
 $h=1-\nicefrac{\sqrt{3}}{2} \approx 0.134$ (we omit the
 calculation) for $x_0=0$ and $y_0=1$, even though
@@ -1875,7 +1876,7 @@ A solution would have
 derivative $\varphi$, but $\varphi$ does not have the intermediate value property
 at any point (why?).  No solution exists by
 \hyperref[thm:darboux]{Darboux's theorem}.
-Therefore to obtain existence of a solution, some sort of
+Thus to obtain existence of a solution, some sort of
 continuity hypothesis on
 $F$ is necessary.
 \end{example}
