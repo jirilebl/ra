@@ -1913,9 +1913,17 @@ or
 \begin{equation*}
 \abs{x-y} < xy \epsilon .
 \end{equation*}
-Therefore, to satisfy the definition of uniform continuity we would have to
-have $\delta \leq xy \epsilon$ for all $x,y$ in $(0,1)$, but that would mean
-that $\delta \leq 0$.  Therefore, there is no single $\delta > 0$.
+Suppose $\epsilon < 1$, and we wish to see if a 
+small $\delta > 0$ would work.
+If $x \in (0,1)$ and 
+$y = x+\nicefrac{\delta}{2} \in (0,1)$,
+then $\abs{x-y} = \nicefrac{\delta}{2} < \delta$.
+We plug that into the inequality to get $\nicefrac{\delta}{2} <
+x \bigl( x+\nicefrac{\delta}{2} \bigr) \epsilon$.
+The inequality implies $\nicefrac{\delta}{2} < x$.
+If the definition of uniform continuity is satisfied, then
+the inequality holds for all $x > 0$.   But then $\delta \leq 0$.
+Therefore, there is no single $\delta > 0$.
 \end{example}
 
 The examples show that if $f$ is defined on an interval that is either not closed
