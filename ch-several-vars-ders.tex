@@ -1039,14 +1039,14 @@ if $y$ is fixed, the map $x \mapsto x \cdot y$ is a linear map from
 $\R^n$ to $\R$.  Similarly, if $x$ is fixed, then
 $y \mapsto x \cdot y$ is also linear.
 It is also symmetric in the sense that $x \cdot y = y \cdot x$.
-The \emph{\myindex{Euclidean norm}} is defined as\glsadd{not:normRn}
+The \emph{\myindex{euclidean norm}} is defined as\glsadd{not:normRn}
 \begin{equation*}
 \snorm{x} := \snorm{x}_{\R^n} := \sqrt{x \cdot x} = \sqrt{(x_1)^2+(x_2)^2 + \cdots + (x_n)^2}.
 \end{equation*}
 We normally just use $\snorm{x}$, but sometimes it is necessary to
 emphasize that we are talking about the euclidean norm and we use
 $\snorm{x}_{\R^n}$.
-It is easy to see that the Euclidean norm satisfies \ref{defn:norm:i} and
+It is easy to see that the euclidean norm satisfies \ref{defn:norm:i} and
 \ref{defn:norm:ii}.  To prove
 that \ref{defn:norm:iii} holds, the key
 inequality is the so-called Cauchy--Schwarz inequality
@@ -1497,7 +1497,7 @@ then the entries of the corresponding matrix are continuous functions.
 \end{prop}
 
 Let us prove the second part.  Take $f(x) e_j$, which
-is a continuous function of $S$ to $\R^m$ with standard Euclidean norm:
+is a continuous function of $S$ to $\R^m$ with standard euclidean norm:
 $\snorm{f(x) e_j - f(y) e_j} = 
 \snorm{\bigl(f(x)- f(y) \bigr) e_j} \leq
 \snorm{f(x)- f(y)}$, so as $x \to y$, then
@@ -2109,7 +2109,8 @@ as a function of $B$ on $\sM$.
 Let $A$ be an $n$-by-$n$ matrix.
 A (possibly complex) number $\lambda \in \C$ is called an \emph{\myindex{eigenvalue}} of $A$
 if there is a nonzero (possibly complex) vector $x \in \C^n$ such that $Ax = \lambda
-x$ (the multiplication by complex vectors is the same as for real vectors. In particular if $x =
+x$ (the multiplication by complex vectors is the same as for real vectors.
+In particular, if $x =
 a+ib$ for real vectors $a$ and $b$, and $A$ is a real matrix, then $Ax = Aa + i Ab$).
 The number
 \begin{equation*}
@@ -2460,15 +2461,15 @@ to zero:
 {\snorm{h}} .
 \end{split}
 \end{equation*}
-First, $\snorm{B}$ is constant and $f$ is differentiable at $p$,
+First, $\snorm{B}$ is a constant and $f$ is differentiable at $p$,
 so
 the term $\snorm{B}\frac{\snorm{r(h)}}{\snorm{h}}$ goes to 0.
-Next as $f$ is continuous at $p$, we have that as 
-$h$ goes to 0, then $k$ goes to 0.  Therefore
+Next because $f$ is continuous at $p$, then as
+$h$ goes to 0, so $k$ goes to 0.  Thus
 $\frac
 {\snorm{g(q+k)-g(q) - Bk}}
-{\snorm{k}}$ goes to 0 because $g$ is differentiable at $q$.
-Finally 
+{\snorm{k}}$ goes to 0, because $g$ is differentiable at $q$.
+Finally,
 \begin{equation*}
 \frac
 {\snorm{f(p+h)-f(p)}}
@@ -2490,8 +2491,7 @@ Finally
 \end{equation*}
 As $f$ is differentiable at $p$,
 for small enough $h$, the quantity
-${\snorm{f(p+h)-f(p)-Ah}} \,
-{\snorm{h}}$ is bounded.  Therefore the
+$\frac{\snorm{f(p+h)-f(p)-Ah}}{\snorm{h}}$ is bounded.  Therefore the
 term
 $
 \frac
@@ -3081,7 +3081,7 @@ $x$ to $y$ lies in $U$.
 
 \begin{prop} \label{mv:prop:convexlip}
 Let $U \subset \R^n$ be a convex open set, $f \colon U \to \R^m$
-a differentiable function, and an $M$ such that
+a differentiable function, and an $M$ be such that
 \begin{equation*}
 \snorm{f'(x)} \leq M
 \qquad \text{for all $x \in U$.}
@@ -3157,8 +3157,9 @@ hold for this nonconvex $U$.
 Let us solve the differential equation $f' = 0$.
 
 \begin{cor}
-If $U \subset \R^n$ is connected and $f \colon U \to \R^m$ is differentiable
-and $f'(x) = 0$, for all $x \in U$, then $f$ is constant.
+If $U \subset \R^n$ is open and connected, $f \colon U \to \R^m$ is
+differentiable,
+and $f'(x) = 0$ for all $x \in U$, then $f$ is constant.
 \end{cor}
 
 \begin{proof}
@@ -3174,9 +3175,9 @@ The two sets
 \begin{equation*}
 U' = f^{-1}(c), \qquad U'' = f^{-1}\bigl(\R^m\setminus\{c\}\bigr)
 \end{equation*}
-are open and disjoint, and further $U = U' \cup U''$.  So as $U'$ is nonempty,
-and $U$ is connected,
-we have that $U'' = \emptyset$.  So $f(x) = c$ for all $x \in U$.
+are open and disjoint, and further $U = U' \cup U''$.  As $U'$ is nonempty
+and $U$ is connected, then
+$U'' = \emptyset$.  So $f(x) = c$ for all $x \in U$.
 \end{proof}
 
 \subsection{Continuously differentiable functions}
