@@ -348,7 +348,7 @@ Let us check the properties.  First, $d(f,g)$ is finite as
 $\abs{f(x)-g(x)}$ is a continuous function on a closed bounded interval
 $[a,b]$, and so is bounded.
 It is clear that $d(f,g) \geq 0$, 
-it is the supremum of nonnegative numbers.  If $f = g$
+it is the supremum of nonnegative numbers.  If $f = g$,
 then $\abs{f(x)-g(x)} = 0$ for all $x$ and hence $d(f,g) = 0$.  Conversely,
 if $d(f,g) = 0$, then for any $x$ we have $\abs{f(x)-g(x)} \leq d(f,g) = 0$,
 and hence $f(x) = g(x)$ for all $x$ and $f=g$.  That $d(f,g) = d(g,f)$
@@ -756,7 +756,7 @@ Thus $[0,1)^c = \R \setminus
 Let $(X,d)$ be a metric space.
 \begin{enumerate}[(i)]
 \item \label{topology:openi} $\emptyset$ and $X$ are open.
-\item \label{topology:openii} If $V_1, V_2, \ldots, V_k$ are open then
+\item \label{topology:openii} If $V_1, V_2, \ldots, V_k$ are open, then
 \begin{equation*}
 \bigcap_{j=1}^k V_j
 \end{equation*}
@@ -820,7 +820,7 @@ an arbitrary collection of closed sets, then
 \bigcap_{\lambda \in I} E_\lambda
 \end{equation*}
 is also closed.  That is, an intersection of closed sets is closed.
-\item \label{topology:closediii} If $E_1, E_2, \ldots, E_k$ are closed then
+\item \label{topology:closediii} If $E_1, E_2, \ldots, E_k$ are closed, then
 \begin{equation*}
 \bigcup_{j=1}^k E_j
 \end{equation*}
@@ -1101,7 +1101,7 @@ And in particular, $A \subset \widebar{A}$.
 
 \begin{prop}
 Let $(X,d)$ be a metric space and $A \subset X$.  The closure $\widebar{A}$
-is closed.  Furthermore if $A$ is closed then $\widebar{A} = A$.
+is closed.  Furthermore, if $A$ is closed, then $\widebar{A} = A$.
 \end{prop}
 
 \begin{proof}
@@ -1348,7 +1348,7 @@ we obtain the same topology by considering the subspace metric.
 Finish the proof of \propref{prop:topology:subspaceopen}.
 Suppose $(X,d)$ is a metric space and $Y \subset X$.  Show that
 with the subspace metric on $Y$, if a set $U \subset Y$
-is open (in $Y$) then there exists an open set $V \subset X$ such
+is open (in $Y$), then there exists an open set $V \subset X$ such
 that $U = V \cap Y$.
 \end{exercise}
 
@@ -1611,7 +1611,7 @@ Hence the sequence $\{ x_{j,k} \}_{j=1}^\infty$ converges to $y_k$.
 
 For the other direction, suppose 
 $\{ x_{j,k} \}_{j=1}^\infty$ converges to $y_k$ for every $k=1,2,\ldots,n$.
-Given $\epsilon > 0$, pick an $M$, such that if $j \geq M$ then 
+Given $\epsilon > 0$, pick an $M$, such that if $j \geq M$, then 
 $\bigl\lvert y_k-x_{j,k} \bigr\rvert < \nicefrac{\epsilon}{\sqrt{n}}$ for all
 $k=1,2,\ldots,n$.  Then
 \begin{equation*}
@@ -2131,7 +2131,7 @@ For example, let $K := [-10,10]$ and for $n \in \Z$ let $U_n :=
 Take $x \in K$. There is an $n \in \Z$, 
 such that $n \leq x < n+1$.
 If $n \leq x < n+\nicefrac{1}{2}$, then
-$B\bigl(x,\nicefrac{1}{2}\bigr) \subset U_{n-1}$.  If
+$B\bigl(x,\nicefrac{1}{2}\bigr) \subset U_{n-1}$.
 If $n+ \nicefrac{1}{2} \leq x < n+1$, then
 $B\bigl(x,\nicefrac{1}{2}\bigr) \subset U_{n}$.  So $\delta =
 \nicefrac{1}{2}$.  If instead we let $U'_n :=
@@ -2254,7 +2254,7 @@ Let $(X,d)$ be a metric space and let $K \subset X$ be compact.  If
 $E \subset K$ is a closed set, then $E$ is compact.
 \end{prop}
 
-Because $K$ is closed then $E$ is closed in $K$ if
+Because $K$ is closed, then $E$ is closed in $K$ if
 and only if it is closed in $X$,
 see \propref{prop:topology:subspacesame}.
 
@@ -2458,7 +2458,7 @@ Let $X$ be a metric space and
 $C \subset \sP(X)$ the set of nonempty compact subsets of $X$.
 Using the Hausdorff metric from \exerciseref{exercise:mshausdorffpseudo},
 show that $(C,d_H)$ is a metric space.  That is, show that
-if $L$ and $K$ are nonempty compact subsets then $d_H(L,K) = 0$
+if $L$ and $K$ are nonempty compact subsets, then $d_H(L,K) = 0$
 if and only if $L=K$.
 \end{exercise}
 
@@ -2732,7 +2732,7 @@ such that
 \begin{equation*}
 B_X(c,\delta) \subset W \subset f^{-1}\bigl(B_Y\bigl(f(c),\epsilon\bigr)\bigr) .
 \end{equation*}
-That means precisely that if $d_X(x,c) < \delta$ then $d_Y\bigl(f(x),f(c)\bigr)
+That means precisely that if $d_X(x,c) < \delta$, then $d_Y\bigl(f(x),f(c)\bigr)
 < \epsilon$, and so $f$ is continuous at $c$.
 \end{proof}
 
@@ -3470,7 +3470,7 @@ Show that $Y \subset C([-h,h],\R)$ is closed.  Hint: $J$ is closed.
 
 \begin{exercise}
 In the proof of Picard's theorem,
-show that if $f \colon [-h,h] \to J$ is continuous then $F\bigl(t,f(t)\bigr)$
+show that if $f \colon [-h,h] \to J$ is continuous, then $F\bigl(t,f(t)\bigr)$
 is continuous on $[-h,h]$ as a function of $t$.  Use this to show that
 \begin{equation*}
 T(f)(x)

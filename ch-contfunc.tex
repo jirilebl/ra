@@ -617,7 +617,7 @@ a cluster point of $B \subset \R$.  Suppose
 $f \colon A \to B$ and $g \colon B \to \R$ are functions
 such that
 $f(x) \to c_2$ as $x \to c_1$ and
-$g(y) \to L$ as $y \to c_2$.  If $c_2 \in B$ also suppose that $g(c_2) = L$.  Let $h(x) := g\bigl(f(x)\bigr)$ and show
+$g(y) \to L$ as $y \to c_2$.  If $c_2 \in B$, also suppose that $g(c_2) = L$.  Let $h(x) := g\bigl(f(x)\bigr)$ and show
 $h(x) \to L$ as $x \to c_1$.
 Hint: Note that $f(x)$ could equal $c_2$ for many $x \in A$,
 see also
@@ -1663,7 +1663,7 @@ $b_{d-1} {(-K)}^{d-1} + \cdots + b_1 (-K) + b_0 < K^d$
 and therefore $g(-K) < 0$ (why?).
 In the
 proof make sure you use the fact that $d$ is odd.  In particular, 
-if $d$ is odd then ${(-n)}^d = -(n^d)$.
+if $d$ is odd, then ${(-n)}^d = -(n^d)$.
 
 We appeal to the intermediate value theorem to find a
 $c \in [-K,M]$, such that $g(c) = 0$.  As $g(x) = \frac{f(x)}{a_d}$,
@@ -1689,7 +1689,7 @@ Proof is left as an exercise.
 \end{example}
 
 The intermediate value theorem says that if $f \colon [a,b] \to \R$ is
-continuous then $f([a,b])$ contains all the values between $f(a)$ and
+continuous, then $f([a,b])$ contains all the values between $f(a)$ and
 $f(b)$.  In fact, more is true.  Combining all the results of this section
 we can prove the following useful corollary whose proof is left as an exercise.
 
@@ -2137,7 +2137,7 @@ we have
 Therefore, $f$ is uniformly continuous.
 \end{proof}
 
-We interpret Lipschitz continuity geometrically.  If $f$ is a Lipschitz
+We interpret Lipschitz continuity geometrically.  Let $f$ be a Lipschitz
 continuous function with some constant $K$.  We rewrite the inequality 
 to say that for $x \not=y$ we have
 \begin{equation*}
@@ -2454,8 +2454,9 @@ The proof for $-\infty$ is left to the reader.
 
 \begin{example}
 Let $f(x) := \sin(\pi x)$.  Then $\lim_{x\to\infty} f(x)$ does not exist.
-To prove this fact note that if $x = 2n+\nicefrac{1}{2}$ for some $n \in \N$ then $f(x)=1$,
-while if $x = 2n+\nicefrac{3}{2}$ then $f(x)=-1$, so they cannot both be
+To prove this fact note that if $x = 2n+\nicefrac{1}{2}$ for some $n \in
+\N$, then $f(x)=1$,
+while if $x = 2n+\nicefrac{3}{2}$, then $f(x)=-1$.  So they cannot both be
 within a small $\epsilon$ of a single real number.
 
 We must be careful not to confuse continuous limits with limits of sequences.
@@ -2659,10 +2660,10 @@ Suppose $P(x) := x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$ is a \emph{\myind
 of degree $n \geq 1$ (monic means that the coefficient of $x^n$ is 1).
 \begin{enumerate}[a)]
 \item
-Show that if $n$ is even then $\lim_{x\to\infty} P(x) = 
+Show that if $n$ is even, then $\lim_{x\to\infty} P(x) = 
 \lim_{x\to-\infty} P(x) = \infty$.
 \item
-Show that if $n$ is odd then
+Show that if $n$ is odd, then
 $\lim_{x\to\infty} P(x) = \infty$ and
 $\lim_{x\to-\infty} P(x) = -\infty$ (see previous exercise).
 \end{enumerate}
@@ -2732,9 +2733,9 @@ We define
 \emph{\myindex{strictly decreasing}} in the same way by switching the
 inequalities for $f$.
 
-If a function is either increasing or decreasing we say it is
+If a function is either increasing or decreasing, we say it is
 \emph{monotone}\index{monotone function}.  If it is
-strictly increasing or strictly decreasing we say it is
+strictly increasing or strictly decreasing, we say it is
 \emph{strictly monotone}\index{strictly monotone function}.
 \end{defn}
 
@@ -2843,7 +2844,7 @@ Without loss of generality suppose $f$ is increasing.
 
 First suppose $f$ is continuous.  Take two points
 $f(x_1) < f(x_2)$ in $f(I)$.
-As $f$ is increasing then $x_1 < x_2$.  By the
+As $f$ is increasing, then $x_1 < x_2$.  By the
 \hyperref[IVT:thm]{intermediate value theorem},
 given any $y$ with $f(x_1) < y < f(x_2)$, we find
 a $c \in (x_1,x_2) \subset I$ such that $f(c) = y$, so $y \in f(I)$. 
@@ -2941,7 +2942,7 @@ such as the rational numbers.  See the exercises.
 
 
 A strictly monotone function $f$ is one-to-one (injective).  To see this
-notice that if $x \not= y$ then we can assume $x < y$.  Then either $f(x) <
+notice that if $x \not= y$, then we can assume $x < y$.  Then either $f(x) <
 f(y)$ if $f$ is strictly increasing or $f(x) > f(y)$ if $f$ is strictly
 decreasing, so $f(x) \not= f(y)$.
 Hence, it
@@ -2949,7 +2950,7 @@ must have an inverse $f^{-1}$ defined on its range.
 
 \begin{prop} \label{prop:invcont}
 If $I \subset \R$ is an interval and $f \colon I \to \R$ is strictly
-monotone.  Then the inverse $f^{-1} \colon f(I) \to I$ is continuous.
+monotone, then the inverse $f^{-1} \colon f(I) \to I$ is continuous.
 \end{prop}
 
 \begin{proof}
@@ -2983,7 +2984,7 @@ The infimum of the left hand set is $x_0$, and the infimum of the right hand
 set is $x_1$, so we obtain $x_0 \geq x_1$.
 So $x_1 = x_0$, and $f^{-1}$ is continuous at $c$.
 
-If one of the one-sided limits does not exist the argument is similar
+If one of the one-sided limits does not exist, the argument is similar
 and is left as an exercise.
 \end{proof}
 
@@ -3035,7 +3036,7 @@ Suppose $f \colon [0,1] \to \R$ is monotone.  Prove $f$ is bounded.
 
 \begin{exercise}
 Finish the proof of \propref{prop:monotlimits}.
-Hint: You can halve your work by noticing that if $g$ is decreasing
+Hint: You can halve your work by noticing that if $g$ is decreasing,
 then $-g$ is increasing.
 \end{exercise}
 

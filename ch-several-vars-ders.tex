@@ -534,7 +534,7 @@ $\dim \, X \leq m-1$ by \ref{mv:dimprop:i}.
 
 For \ref{mv:dimprop:vi} suppose $T = \{ x_1, x_2, \ldots, x_m \}$ is
 a linearly independent set.  Firstly, $m \leq d$.
-If $m=d$ we are done.  Otherwise,
+If $m=d$, we are done.  Otherwise,
 we follow the procedure above in the proof of
 \ref{mv:dimprop:ii}
 to add a vector $v$ not in the span of $T$.  The set
@@ -3468,13 +3468,13 @@ Show that $r$ is continuously differentiable.
 Suppose $f \colon \R^n \to \R$ and $h \colon \R^n \to \R$ are two 
 differentiable functions such that $f'(x) = h'(x)$ for all $x \in \R^n$.
 Prove that
-if $f(0) = h(0)$ then $f(x) = h(x)$ for all $x \in \R^n$.
+if $f(0) = h(0)$, then $f(x) = h(x)$ for all $x \in \R^n$.
 \end{exercise}
 
 \begin{exercise}
 Prove the assertion about the base case
 in the proof of \propref{mv:prop:contdiffpartials}.  That is, prove that
-if $n=1$ and the
+if $n=1$ and 
 the partials exist and are continuous, the function is continuously
 differentiable.
 \end{exercise}
@@ -3792,7 +3792,7 @@ $A_y$ is invertible.  If $B = - {(A_y)}^{-1} A_x$, then
 Furthermore, $y=Bx$ is the unique $y \in \R^m$ such that $A(x,y) = 0$.
 \end{prop}
 
-The proof is obvious.  We simply solve and obtain $y = Bx$.
+The proof is immediate: We solve and obtain $y = Bx$.
 Another way to solve is to ``complete the basis'' that is, add
 rows to the matrix until we have an invertible matrix.  In this case,
 we construct a mapping $(x,y) \mapsto (x,A_x x + A_y y)$, and
@@ -3828,8 +3828,8 @@ g'(p) = -{(A_y)}^{-1}A_x .
 The condition
 $\frac{\partial(f_1,\ldots,f_m)}{\partial(y_1,\ldots,y_m)} (p,q) =
 \det(A_y)  \neq 0$
-simply means that $A_y$ is invertible.  If $n=m=1$, the condition then
-becomes $\frac{\partial f}{\partial y}(p,q) \not= 0$, $W$ and $W'$ are then
+simply means that $A_y$ is invertible.  If $n=m=1$, the condition 
+becomes $\frac{\partial f}{\partial y}(p,q) \not= 0$, $W$ and $W'$ are 
 open intervals.  See \figureref{fig:implicitfunc}.
 \begin{myfigureht}
 \subimport*{figures/}{implicitfunc.pdf_t}
@@ -4210,8 +4210,8 @@ $\frac{\partial^2 f}{\partial x_k \partial x_j}$.  This notation
 swaps the order in which we write the derivatives, which may be important.
 
 \begin{defn}
-If $U \subset \R^n$ is an open set and
-$f \colon U \to \R$ a function.  We say $f$ is
+Suppose $U \subset \R^n$ is an open set and
+$f \colon U \to \R$ is a function.  We say $f$ is
 \emph{$k$-times continuously differentiable function}%
 \index{k-times continuously differentiable function@$k$-times continuously differentiable function}\index{continuously differentiable},
 or a $C^k$\glsadd{not:Ck} function, if all partial derivatives of all orders up to and

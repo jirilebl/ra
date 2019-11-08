@@ -188,7 +188,7 @@ By \propref{mv:sumulbound:prop} the set of upper and lower Darboux sums are boun
 their infima and suprema.  As before, we now make the following definition.
 
 \begin{defn}
-If $f \colon R \to \R$ is a bounded function on a closed rectangle $R \subset
+Let $f \colon R \to \R$ be a bounded function on a closed rectangle $R \subset
 \R^n$.
 Define
 \glsadd{not:lowerdarbouxR}
@@ -529,7 +529,7 @@ We say a rectangle $R = [a_1,b_1] \times
 $b_k-a_k \leq \alpha$ for all $k=1,2,\ldots,n$.
 
 \begin{prop} \label{prop:diameterrectangle}
-If a rectangle $R \subset \R^n$ has longest side at most $\alpha$.  Then
+If a rectangle $R \subset \R^n$ has longest side at most $\alpha$, then
 for any $x,y \in R$,
 \begin{equation*}
 \snorm{x-y} \leq \sqrt{n} \, \alpha .
@@ -1410,7 +1410,8 @@ a \emph{\myindex{null set}} if $m^*(S) = 0$.
 \cup R_3 \cup \cdots$, so $m^*(S) \leq V(R_1) + V(R_2)+V(R_3) + \cdots$.\label{fig:outermeasure}}
 \end{myfigureht}
 
-An immediate consequence (exercise) of the definition is that if $A \subset B$
+An immediate consequence (exercise) of the definition is that
+if $A \subset B$,
 then $m^*(A) \leq m^*(B)$.
 It is also not difficult to show (exercise) that we obtain the same number
 $m^*(S)$ if we also allow both finite and infinite sequences
@@ -1796,7 +1797,7 @@ E \subset B_1 \cup B_2 \cup \cdots \cup B_k
 \qquad \text{and} \qquad
 \sum_{j=1}^k r_j^n < \epsilon.
 \end{equation*}
-The balls are are contained in $U$.
+The balls are contained in $U$.
 Suppose $B_1', B_2', \ldots, B_k'$ are the balls of radius
 $Mr_1, Mr_2, \ldots, Mr_k$ from
 \lemmaref{lemma:ballmapder}, such that $f(B_j) \subset B_j'$ for all $j$.
@@ -3136,13 +3137,13 @@ but this statement is sufficient for many uses.
 
 \begin{thm}
 Suppose $S \subset \R^n$ is a closed bounded Jordan measurable set,
-and $S \subset U$ for an open set $U \subset \R^n$.  If
+$S \subset U$ for an open set $U \subset \R^n$, and
 $g \colon U \to \R^n$ is a one-to-one
-continuously differentiable mapping such that
+continuously differentiable mapping, such that
 $J_g$ is never zero on $S$.
 
-Suppose $f \colon g(S) \to \R$ is Riemann
-integrable.  Then $f \circ g$ is Riemann integrable on $S$ and
+If $f \colon g(S) \to \R$ is Riemann integrable,
+then $f \circ g$ is Riemann integrable on $S$ and
 \begin{equation*}
 \int_{g(S)} f(x) ~ dx = 
 \int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx .
@@ -3203,7 +3204,7 @@ For any $y \in R_j$,
 apply the fundamental theorem of calculus
 to the function $t \mapsto g(ty)$ to find
 $g(y) = \int_0^1 g'(ty)y ~dt$.  As the
-side of $R_j$ is at most $\frac{\delta}{\sqrt{n}}$
+side of $R_j$ is at most $\frac{\delta}{\sqrt{n}}$,
 then $\snorm{y} \leq \delta$.  So
 \begin{equation*}
 \snorm{g(y)-y} =
@@ -3227,8 +3228,9 @@ and $g(y)$ must lie within with a radius of $\delta\epsilon$
 \end{myfigureht}
 
 
-If the sides are $s_1,s_2,\ldots,s_n$ then
-$V(R_j) = s_1 s_2 \cdots s_n$.   Recall $\delta \leq 2\sqrt{n} \, s_j$.  Thus
+If the sides are $s_1,s_2,\ldots,s_n$, then
+$V(R_j) = s_1 s_2 \cdots s_n$.   Recall $\delta \leq 2\sqrt{n} \, s_j$.
+Thus,
 \begin{equation*}
 \begin{split}
 V(\widetilde{R}_j) & =
