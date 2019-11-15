@@ -761,11 +761,13 @@ example demonstrates, a continuous function need not be differentiable
 anywhere.
 
 \begin{example}
-Let us construct a continuous nowhere differentiable function.
+There exist continuous nowhere differentiable functions.
 Such functions are often called
 \emph{Weierstrass functions}\index{Weierstrass function},
 although this
-particular one is a different example than what Weierstrass gave.
+particular one, essentially due to
+Takagi\footnote{\href{https://en.wikipedia.org/wiki/Teiji_Takagi}{Teiji
+Takagi} (1875--1960) was a Japanese mathematician.}, is a different example than what Weierstrass gave.
 
 Define
 \begin{equation*}
@@ -789,8 +791,7 @@ As $\sum {\left(\frac{3}{4}\right)}^n$ converges and $\sabs{\varphi(x)} \leq
 f(x) := \sum_{n=0}^\infty 
 {\left(\frac{3}{4}\right)}^n \varphi(4^n x)
 \end{equation*}
-converges uniformly and hence is continuous.  We claim that this $f \colon
-\R \to \R$ is nowhere differentiable.
+converges uniformly and hence is continuous.
 See \figureref{fig:nowherediff}.
 
 \begin{myfigureht}
@@ -798,16 +799,17 @@ See \figureref{fig:nowherediff}.
 \caption{Plot of the nowhere differentiable function $f$.\label{fig:nowherediff}}
 \end{myfigureht}
 
-Fix $x$ and
-define
+We claim $f \colon
+\R \to \R$ is nowhere differentiable.
+Fix $x$, and we will show $f$ is not differentiable at $x$.
+Define
 \begin{equation*}
 \delta_m := \pm \frac{1}{2} 4^{-m} ,
 \end{equation*}
 where the sign is chosen so that there is no integer
 between $4^m x$ and $4^m(x+\delta_m) = 4^m x \pm \frac{1}{2}$.
-Fix $m$ for a moment.
 
-Let
+Fix $m$ for a moment.  Let
 \begin{equation*}
 \gamma_{n} :=
 \frac{\varphi\bigl(4^n(x+\delta_m)\bigr)-\varphi(4^nx)}{\delta_m} .
@@ -820,7 +822,7 @@ $4^m(x+\delta_m) = 4^m x\pm\nicefrac{1}{2}$ and $4^m x$, then on this interval
 $\varphi(t) = \pm t + \ell$ for some integer $\ell$.
 In particular,
 $\abs{\varphi\bigl(4^m(x+ \delta_m)\bigr)-\varphi(4^mx)} =
-\abs{4^mx\pm\nicefrac{1}{2}-4^mx} = \nicefrac{1}{2}$.  Therefore
+\abs{4^mx\pm\nicefrac{1}{2}-4^mx} = \nicefrac{1}{2}$.  Therefore,
 \begin{equation*}
 \sabs{\gamma_m} =
 \abs{
