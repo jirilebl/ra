@@ -378,7 +378,7 @@ if there exist finitely many points
 $t_0 = a < t_1 < t_2 < \cdots < t_k = b$ such that
 the restriction of the function $\gamma|_{[t_{j-1},t_j]}$ is smooth path.
 
-A path $\gamma$ is said to be a \emph{\myindex{simple path}} if $\gamma|_{(a,b)}$ is
+A path $\gamma$ is said to be a \emph{\myindex{simple path}} if $\gamma|_{[a,b)}$ is
 a one-to-one function.  A path $\gamma$ is 
 called
 a \emph{\myindex{closed path}} if $\gamma(a) = \gamma(b)$, that is
@@ -413,7 +413,7 @@ $(\gamma|_{[1,2]})'(1) = (0,1)$,
 $(\gamma|_{[0,1]})'(1) = (1,0)$, but
 $\gamma^{\:\prime}(1)$ does not exist.  At the corners $\gamma$ is 
 not differentiable.
-The path $\gamma$ is a simple closed path, as $\gamma|_{(0,4)}$ is
+The path $\gamma$ is a simple closed path, as $\gamma|_{[0,4)}$ is
 one-to-one and $\gamma(0)=\gamma(4)$.
 \end{example}
 
@@ -826,7 +826,7 @@ without mentioning the specific $\gamma$.
 Furthermore, for a simple closed path, it does not even matter where we
 start the parametrization.  See the exercises.
 
-Recall that \emph{simple} means that $\gamma$ restricted to $(a,b)$ is
+Recall that \emph{simple} means that $\gamma$ restricted to $[a,b)$ is
 one-to-one, that is, $\gamma$ is one-to-one except perhaps at the endpoints.
 We may relax the condition that the path is simple a little bit.
 For example, it is enough to suppose that
@@ -889,7 +889,7 @@ $\gamma^{\:\prime}(t) = 0$ for all $t$, and $\gamma\bigl([a,b]\bigr)$ is a singl
 point, which we regard as a ``curve'' of length zero.  Then,
 $\int_{\gamma} \omega = 0$ for any $\omega$.
 
-\subsection{Line integral of a function}
+\subsection{Path integral of a function}
 
 Next we integrate a function against the so-called
 \emph{\myindex{arc-length measure}} $ds$.  The geometric picture we have in mind
@@ -922,7 +922,7 @@ The definition for a piecewise smooth path is similar as before and is left
 to the reader.
 \end{defn}
 
-The line integral of a function is also independent of the parametrization,
+The path integral of a function is also independent of the parametrization,
 and in this case, the orientation does not matter.
 
 \begin{prop} \label{mv:prop:lineintrepararam}
@@ -970,9 +970,10 @@ The details, along with finishing the proof for piecewise smooth
 paths is left to the reader as \exerciseref{mv:exercise:linepiece}.
 \end{proof}
 
-Similarly as before, because of this proposition (and the exercises),
+As before,
+due to this proposition (and the exercises),
 if $\gamma$ is simple, it does not matter which
-parametrization we use.  Therefore, if $\Gamma = \gamma\bigl( [a,b] \bigr)$ we can
+parametrization we use.  Therefore, if $\Gamma = \gamma\bigl( [a,b] \bigr)$, we can
 simply write
 \begin{equation*}
 \int_\Gamma f~ ds .
@@ -1218,7 +1219,7 @@ one-form defined on the curve given by $\gamma$, then
 Suppose $\gamma \colon [a,b] \to \R^n$ and
 $\beta \colon [c,d] \to \R^n$ are two simple piecewise smooth closed paths.
 That is $\gamma(a)=\gamma(b)$ and $\beta(c) = \beta(d)$ and
-the restrictions $\gamma|_{(a,b)}$ and $\beta|_{(c,d)}$ are one-to-one.
+the restrictions $\gamma|_{[a,b)}$ and $\beta|_{[c,d)}$ are one-to-one.
 Suppose $\Gamma = \gamma\bigl([a,b]\bigr) = \beta\bigl([c,d]\bigr)$ and
 $\omega$ is a one-form defined on $\Gamma \subset \R^n$.  Show that either
 \begin{equation*}
