@@ -1,0 +1,59 @@
+.main #content {
+ max-width: 800px !important; text-align: justify !important;
+}
+#masthead.smallbuttons {
+ max-width: 1104px !important;
+}
+.container.has-sidebar-left, .has-sidebar-left .container {
+ max-width: 1104px !important;
+}
+/*.MJXc-display, (this is already in mainline) */
+.figure-like {
+ background-image: 
+ linear-gradient(to right, white, white),
+ linear-gradient(to right, white, white),
+ linear-gradient(to right, rgba(0,0,0,.25), rgba(255,255,255,0)),
+ linear-gradient(to left, rgba(0,0,0,.25), rgba(255,255,255,0));   
+
+ background-position: left center, right center, left center, right center;
+ background-repeat: no-repeat;
+ background-color: white;
+ background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
+ 
+ background-attachment: local, local, scroll, scroll;
+}
+/*.knowl .MJXc-display, (this is already in mainline) */
+.knowl .figure-like {
+ background-image: 
+ linear-gradient(to right, #f5f5ff, #f5f5ff),
+ linear-gradient(to right, #f5f5ff, #f5f5ff),
+ linear-gradient(to right, rgba(0,0,0,.25), rgba(255,255,255,0)),
+ linear-gradient(to left, rgba(0,0,0,.25), rgba(255,255,255,0));   
+
+ background-position: left center, right center, left center, right center;
+ background-repeat: no-repeat;
+ background-color: #f5f5ff;
+ background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
+ 
+ background-attachment: local, local, scroll, scroll;
+}
+
+ol.lower-roman > li::marker { content: "(" counter(list-item, lower-roman) ")"; }
+ol.lower-alpha > li::marker { content: counter(list-item, lower-alpha) ")"; }
+ol.decimal > li::marker { content: counter(list-item, decimal) ")"; }
+li { display: list-item; }
+
+.raimg { margin:auto; vertical-align:middle; }
+
+@media (min-width: 600px) {
+  .rafloatright { float:right; margin-left:15px!important;}
+  .rafloatleft { float:left; margin-right:15px!important;}
+}
+
+/* in mainline now, but doesn't seem to work */
+@media print {
+	.navbar { display:none; }
+	.sidebar { display:none; }
+	.searchwrapper { display:none; }
+	.has-sidebar-left.mathbook-loaded.sidebar-left-open .main { margin-left:0px!important; left:auto!important; }
+}
