@@ -658,14 +658,11 @@ while(1)
 		open_subsubsection("",$name);
 
 	# this assumes sectionnotes come in their own $para
-	} elsif ($para =~ s/^\\sectionnotes\{(.*)\}[ \n\t]*//s) {
-		my $secnotes = do_line_subs($1);
-		$secnotes =~ s|\\cite\{([^}]*)\}|<xref ref=\"biblio-$1\"/>|g;
-		$secnotes =~ s|\\BDref\{([^}]*)\}|$1|g;
-		$secnotes =~ s|\\EPref\{([^}]*)\}|$1|g;
-		print "(secnotes $secnotes)\n";
-		print "(cite $secnotes)\n";
-		print $out "<p><em>Note: $secnotes</em></p>\n"; 
+	} elsif ($para =~ s/^\\sectionnotes\{//s) {
+		print "(SECTIONNOTES start)\n";
+		open_paragraph_if_not_open ();
+		print $out "<em>Note: "; 
+		push @cltags, "sectionnotes";
 
 	} elsif ($para =~ s/^\\setcounter\{exercise\}\{(.*?)\}[ \n\t]*//s) {
 		$exercise_num=$1;
@@ -800,6 +797,10 @@ while(1)
 		print "(unitfrac $txt $unitnum/$unitden)\n";
 		open_paragraph_if_not_open ();
 		print $out "$txt <m>\\nicefrac{\\text{$unitnum}}{\\text{$unitden}}</m>"; 
+
+	#FIXME: no notation index in HTML version yet
+	} elsif ($para =~ s/^\\glsadd\{(.*?)\}//s) {
+		print "(glsadd $1)\n";
 
 	} elsif ($para =~ s/^\\begin\{align\*\}[ \n]*//) {
 		print "(ALIGN*)\n";
@@ -1303,6 +1304,14 @@ while(1)
 	#FIXME: are there instances of "proof of blah"
 	} elsif ($para =~ s/^\\begin\{proof\}[ \n]*//) {
 		close_paragraph();
+
+		if ($para =~ s/^\[(.*?)\][ \n]*//s) {
+			my $note = $1;
+			# stick the note into brackets
+			$para = "\\emph{($note)} " . $para;
+		}
+
+
 		print $out "<proof>\n";
 		open_paragraph();
 		
@@ -1310,8 +1319,7 @@ while(1)
 		close_paragraph();
 		print $out "</proof>\n";
 
-	#FIXME: the notes must be updated!
-	} elsif ($para =~ s/^\\begin\{exercise\}\[(easy|challenging|tricky|computer project|project|little harder|harder|more challenging)\][ \n]*//) {
+	} elsif ($para =~ s/^\\begin\{exercise\}\[(.*?)\][ \n]*//) {
 		my $note = $1;
 		close_paragraph();
 		$exercise_num = $exercise_num+1;
@@ -1325,34 +1333,36 @@ while(1)
 			print $out "<exercise number=\"$the_num\">\n<statement>\n";
 		}
 
-		open_paragraph();
-		print $out "<em>($note)</em><nbsp/><nbsp/>\n";
+		# stick the note into brackets
+		$para = "\\emph{($note)}\\enspace " . $para;
 
-	} elsif ($para =~ s/^\\begin\{exercise\}\[(.*?)\][ \n]*//s) {
-		my $title = $1;
-		$title =~ s|\$(.*?)\$|<m>$1</m>|sg;
-		my $index = "";
-		if ($title =~ s/\\myindex\{(.*?)\}/$1/) {
-			$index = $1;
-		}
-		close_paragraph();
-		$exercise_num = $exercise_num+1;
-		my $the_num = get_exercise_number ();
-		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
-			$theid = modify_id($1);
-			print "(exercise start title >$title< id >$theid< $the_num)\n";
-			print $out "<exercise xml:id=\"$theid\" number=\"$the_num\">\n";
-			print $out "<title>$title</title>\n";
-		} else {
-			print "(exercise start title >$title< $the_num)\n";
-			print $out "<exercise number=\"$the_num\">\n";
-			print $out "<title>$title</title>\n";
-		}
-		if ($index ne "") {
-			print $out "<idx>$index</idx>\n";
-		}
-		print $out "<statement>\n";
 		open_paragraph();
+
+#	} elsif ($para =~ s/^\\begin\{exercise\}\[(.*?)\][ \n]*//s) {
+#		my $title = $1;
+#		$title =~ s|\$(.*?)\$|<m>$1</m>|sg;
+#		my $index = "";
+#		if ($title =~ s/\\myindex\{(.*?)\}/$1/) {
+#			$index = $1;
+#		}
+#		close_paragraph();
+#		$exercise_num = $exercise_num+1;
+#		my $the_num = get_exercise_number ();
+#		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
+#			$theid = modify_id($1);
+#			print "(exercise start title >$title< id >$theid< $the_num)\n";
+#			print $out "<exercise xml:id=\"$theid\" number=\"$the_num\">\n";
+#			print $out "<title>$title</title>\n";
+#		} else {
+#			print "(exercise start title >$title< $the_num)\n";
+#			print $out "<exercise number=\"$the_num\">\n";
+#			print $out "<title>$title</title>\n";
+#		}
+#		if ($index ne "") {
+#			print $out "<idx>$index</idx>\n";
+#		}
+#		print $out "<statement>\n";
+#		open_paragraph();
 
 
 	} elsif ($para =~ s/^\\begin\{exercise\}[ \n]*\\begin\{samepage\}[ \n]*// ||
@@ -1376,6 +1386,16 @@ while(1)
 		print "(exercise end)\n";
 		close_paragraph();
 		print $out "</statement>\n</exercise>\n";
+
+	} elsif ($para =~ s/^\\begin\{exnote\}[ \n]*//) {
+		#exnote is just like normal text
+		open_paragraph();
+		print "(begin exnote)";
+
+	} elsif ($para =~ s/^\\end\{exnote\}[ \n]*//) {
+		#exnote is just like normal text
+		close_paragraph();
+		print "(end exnote)";
 
 	} elsif ($para =~ s/^\\begin\{center\}[ \n]*//) {
 		#FIXME: no centering yet
@@ -1567,6 +1587,9 @@ while(1)
 		} elsif ($tagtoclose eq "footnote") {
 			#FIXME: nested paragraphs??  Does this work?
 			print $out "</fn>";
+		} elsif ($tagtoclose eq "sectionnotes") {
+			print $out "</em>";
+			close_paragraph();
 		} else {
 			print "\n\nHUH???\n\nNo (or unknown =\"$tagtoclose\") tag to close\n\n";
 			$num_errors++;

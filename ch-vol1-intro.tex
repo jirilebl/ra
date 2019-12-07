@@ -300,7 +300,7 @@ See \figureref{fig:sets} for a diagram.
 %FIXMEevillayouthack
 \pagebreak[2]
 \begin{defn}
-{\ }
+\leavevmode
 \begin{enumerate}[(i)]
 \item
 A set $A$ is a \emph{\myindex{subset}}
@@ -364,7 +364,7 @@ Note that $\N \subset \Z \subset \Q \subset \R$.
 There are many operations we want to do with sets.
 
 \begin{defn}
-{\ }
+\leavevmode
 \begin{enumerate}[(i)]
 \item
 A \emph{\myindex{union}} of two sets $A$ and $B$ is defined as
@@ -467,9 +467,9 @@ $\{ A_1, A_2, A_3, \ldots \}$.  We define
 \glsadd{not:infunion}
 \glsadd{not:infintersection}
 \begin{align*}
-& \bigcup_{n=1}^\infty A_n := \{ x : x \in A_n \text{ for some $n \in \N$}
+& \bigcup_{n=1}^\infty A_n := \{ x : x \in A_n \text{ for some } n \in \N
 \} , \\
-& \bigcap_{n=1}^\infty A_n := \{ x : x \in A_n \text{ for all $n \in \N$}
+& \bigcap_{n=1}^\infty A_n := \{ x : x \in A_n \text{ for all } n \in \N
 \} .
 \end{align*}
 
@@ -512,10 +512,12 @@ I$, we have a set $A_\lambda$.  Then we define
 \glsadd{not:arbitunion}
 \glsadd{not:arbitintersection}
 \begin{equation*}
-\bigcup_{\lambda \in I} A_\lambda := \{ x : x \in A_\lambda \text{ for some $\lambda \in I$}
+\bigcup_{\lambda \in I} A_\lambda := \{ x : x \in A_\lambda \text{ for some }
+\lambda \in I
 \} ,
 \qquad
-\bigcap_{\lambda \in I} A_\lambda := \{ x : x \in A_\lambda \text{ for all $\lambda \in I$}
+\bigcap_{\lambda \in I} A_\lambda := \{ x : x \in A_\lambda \text{ for all }
+\lambda \in I
 \} .
 \end{equation*}
 
@@ -577,7 +579,7 @@ is usually called the \emph{\myindex{induction hypothesis}}.
 \begin{example}
 Let us prove that for all $n \in \N$,
 \begin{equation*}
-2^{n-1} \leq n! \qquad \text{(recall $n! = 1 \cdot 2 \cdot 3 \cdots n$)}.
+2^{n-1} \leq n! \qquad \text{(recall } n! = 1 \cdot 2 \cdot 3 \cdots n\text{)}.
 \end{equation*}
 We let $P(n)$ be the statement that
 $2^{n-1} \leq n!$ is true.  By plugging in $n=1$, we see that $P(1)$
@@ -686,10 +688,8 @@ the function itself.
 The set $A$ is called the \emph{\myindex{domain}} of $f$ (and
 sometimes confusingly denoted $D(f)$).  The set
 \begin{equation*}
-R(f) := \{ y \in B : \text{there exists an $x$ such that
-%$(x,y) \in f$
-$f(x)=y$
-} \}
+R(f) := \{ y \in B : \text{there exists an } x \text{ such that }
+f(x)=y \}
 \end{equation*}
 is called the \emph{\myindex{range}} of $f$.
 \end{defn}
@@ -1134,7 +1134,7 @@ Finish the proof of \propref{st:propinv}.
 \end{exercise}
 
 \begin{exercise}
-{\ }
+\leavevmode
 \begin{enumerate}[a)]
 \item
 Prove \propref{st:propfor}.
@@ -1291,7 +1291,7 @@ relation.
 \end{exercise}
 
 \begin{exercise}
-{\ }
+\leavevmode
 \begin{enumerate}[a)]
 \item
 Suppose $A \subset B$ and $B$ is countably infinite.  By constructing a
