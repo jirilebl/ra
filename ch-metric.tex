@@ -315,8 +315,8 @@ For any set $X$, define
 \begin{equation*}
 d(x,y) :=
 \begin{cases}
-1 & \text{if $x \not= y$}, \\
-0 & \text{if $x = y$}.
+1 & \text{if } x \not= y, \\
+0 & \text{if } x = y.
 \end{cases}
 \end{equation*}
 That is, all points are equally distant from each other.  When $X$ is a
@@ -442,7 +442,7 @@ Let $(X,d)$ be a metric space.  A subset $S \subset X$ is said to be
 \emph{bounded}\index{bounded set} if there exists a $p \in X$ and a
 $B \in \R$ such that
 \begin{equation*}
-d(p,x) \leq B \quad \text{for all $x \in S$}.
+d(p,x) \leq B \quad \text{for all } x \in S.
 \end{equation*}
 We say $(X,d)$ is bounded if $X$ itself is a bounded subset.
 \end{defn}
@@ -1088,8 +1088,8 @@ Let $(X,d)$ be a metric space and $A \subset X$.  Then
 the \emph{\myindex{closure}} of $A$ is the set
 \glsadd{not:closure}
 \begin{equation*}
-\widebar{A} := \bigcap \{ E \subset X : \text{$E$ is closed and $A \subset
-E$} \} .
+\widebar{A} := \bigcap \{ E \subset X : E \text{ is closed and } A \subset
+E \} .
 \end{equation*}
 \end{defn}
 
@@ -1165,8 +1165,8 @@ Let $(X,d)$ be a metric space and $A \subset X$, then
 the \emph{\myindex{interior}} of $A$ is the set
 \glsadd{not:interior}
 \begin{equation*}
-A^\circ := \{ x \in A : \text{there exists a $\delta > 0$ such that
-$B(x,\delta) \subset A$} \} .
+A^\circ := \{ x \in A : \text{there exists a } \delta > 0
+\text{ such that } B(x,\delta) \subset A \} .
 \end{equation*}
 The \emph{\myindex{boundary}} of $A$ is the set
 \glsadd{not:boundary}
@@ -1443,7 +1443,7 @@ the sequence and use the notation $\{ x_n \}$, or more precisely
 A sequence $\{ x_n \}$ is \emph{bounded}\index{bounded sequence} if
 there exists a point $p \in X$ and $B \in \R$ such that
 \begin{equation*}
-d(p,x_n) \leq B \qquad \text{for all $n \in \N$.}
+d(p,x_n) \leq B \qquad \text{for all } n \in \N.
 \end{equation*}
 In other words, the sequence $\{x_n\}$ is bounded whenever
 the set $\{ x_n : n \in \N \}$
@@ -1531,7 +1531,7 @@ A sequence $\{ x_n \}$ in a metric space $(X,d)$ converges to $p \in X$
 if and only
 if there exists a sequence $\{ a_n \}$ of real numbers such that
 \begin{equation*}
-d(x_n,p) \leq a_n \quad \text{for all $n \in \N$},
+d(x_n,p) \leq a_n \quad \text{for all } n \in \N,
 \end{equation*}
 and
 \begin{equation*}
@@ -2663,12 +2663,12 @@ a point in $f(K)$, and $f(K)$ is compact by \thmref{thm:mscompactisseqcpt}.
 As before, $f \colon X \to \R$ achieves an
 \emph{\myindex{absolute minimum}} at $c \in X$ if
 \begin{equation*}
-f(x) \geq f(c) \qquad \text{ for all $x \in X$.}
+f(x) \geq f(c) \qquad \text{for all } x \in X.
 \end{equation*}
 On the other hand, $f$ achieves an 
 \emph{\myindex{absolute maximum}} at $c \in X$ if
 \begin{equation*}
-f(x) \leq f(c) \qquad \text{ for all $x \in X$.}
+f(x) \leq f(c) \qquad \text{for all } x \in X.
 \end{equation*}
 
 \begin{thm}
@@ -2886,7 +2886,7 @@ $(X,d_X)$ and $(Y,d_Y)$ are metric spaces, then $f \colon X \to Y$
 is called Lipschitz or $K$-Lipschitz if there exists a $K \in \R$ such that
 \begin{equation*}
 d_Y\bigl(f(p),f(q)\bigr) \leq K d_X(p,q)
-\ \ \ \ \text{for all } p,q \in X.
+\qquad \text{for all } p,q \in X.
 \end{equation*}
 A Lipschitz function is uniformly continuous:
 Take $\delta = \nicefrac{\epsilon}{K}$.
@@ -3166,8 +3166,8 @@ Define
 \begin{equation*}
 f(x,y) :=
 \begin{cases}
-\frac{2xy}{x^4+y^2} & \text{if $(x,y) \not= (0,0)$} \\
-0 & \text{if $(x,y) = (0,0)$} .
+\frac{2xy}{x^4+y^2} & \text{if } (x,y) \not= (0,0) \\
+0 & \text{if } (x,y) = (0,0) .
 \end{cases}
 \end{equation*}
 \begin{enumerate}[a)]
@@ -3219,7 +3219,7 @@ $f \colon X \to Y$ is said to be a \emph{\myindex{contraction}}
 a $k$-Lipschitz map for some $k < 1$, i.e.\ if there exists a $k < 1$ such that
 \begin{equation*}
 d_Y\bigl(f(p),f(q)\bigr) \leq k\, d_X(p,q)
-\ \ \ \ \text{for all } p,q \in X.
+\qquad \text{for all } p,q \in X.
 \end{equation*}
 
 \medskip
@@ -3359,7 +3359,7 @@ and Lipschitz in the second variable, that is, there exists
 an $L \in \R$ such that
 \begin{equation*}
 \abs{F(x,y) - F(x,z)} \leq L \abs{y-z}
-\qquad \text{ for all $y,z \in J$, $x \in I$} .
+\qquad \text{for all } y,z \in J, x \in I .
 \end{equation*}
 Then there exists an $h > 0$ and a unique differentiable
 function $f \colon [x_0 - h, x_0 + h] \to J \subset \R$, such that

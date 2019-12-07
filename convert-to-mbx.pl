@@ -96,7 +96,7 @@ $equation_num = 0;
 $list_level = 0;
 $list_start = 1;
 
-print $out $commands;
+#print $out $commands;
 
 sub close_paragraph {
 	if ($inparagraph) {
@@ -316,6 +316,9 @@ sub do_line_subs {
 	}
 	if ($line =~ s|--|&#x2013;|g) {
 		print "substituted endashes\n";
+	}
+	if ($line =~ s|\\texorpdfstring\{([^}]*)\}\{([^}]*)\}|$1|g) {
+		print "substituted texorpdfstring\n";
 	}
 	##FIXME: should we do this?
 	#if ($line =~ s|-|&#x2010;|g) {
@@ -595,67 +598,58 @@ while(1)
 		open_paragraph_if_not_open ();
 		print $out "<m>$line</m>";
 
-	} elsif ($para =~ s/^\\chapter\*\{([^}]*)\}[\n ]*\\label\{([^}]*)\}[ \n]*//) {
+	} elsif ($para =~ s/^\\chapter\*\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}[ \n]*//) {
 		#FIXME: un-numbered
 		my $name = do_line_subs($1);
-		my $theid = modify_id($2);
+		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
+			my $theid = modify_id($1);
+		} else {
+			my $theid = "";
+		}
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		$chapter_num = $chapter_num-1; #hack
 		open_chapter($theid);
 		print "(chapter >$name< label >$theid<)\n";
 		print $out "<title>$name</title>\n"; 
 		print "PARA:>$para<\n";
-	} elsif ($para =~ s/^\\chapter\*\{([^}]*)\}[ \n]*//) {
-		#FIXME: un-numbered
+	} elsif ($para =~ s/^\\chapter\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}[ \n]*//) {
 		my $name = do_line_subs($1);
-		$chapter_num = $chapter_num-1; #hack
-		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
-		open_chapter("");
-		print "(chapter >$name<)\n";
-		print $out "<title>$name</title>\n"; 
-	} elsif ($para =~ s/^\\chapter\{([^}]*)\}[\n ]*\\label\{([^}]*)\}[ \n]*//) {
-		my $name = do_line_subs($1);
-		my $theid = modify_id($2);
+		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
+			my $theid = modify_id($1);
+		} else {
+			my $theid = "";
+		}
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_chapter($theid);
 		print "(chapter >$name< label >$theid<)\n";
 		print $out "<title>$name</title>\n"; 
-	} elsif ($para =~ s/^\\chapter\{([^}]*)\}[ \n]*//) {
+	} elsif ($para =~ s/^\\section\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}[ \n]*//) {
 		my $name = do_line_subs($1);
-		open_chapter("");
-		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
-		print "(chapter >$name<)\n";
-		print $out "<title>$name</title>\n"; 
-	} elsif ($para =~ s/^\\section\{([^}]*)\}[ \n]*\\label\{([^}]*)\}[ \n]*//) {
-		my $name = do_line_subs($1);
-		my $theid = modify_id($2);
+		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
+			my $theid = modify_id($1);
+		} else {
+			my $theid = "";
+		}
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_section($theid,$name);
-	} elsif ($para =~ s/^\\section\{([^}]*)\}[ \n]*//) {
+	} elsif ($para =~ s/^\\subsection\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}[ \n]*//) {
 		my $name = do_line_subs($1);
-		my $theid = modify_id($2);
-		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
-		open_section("",$name);
-	} elsif ($para =~ s/^\\subsection\{([^}]*)\}[ \n]*\\label\{([^}]*)\}[ \n]*//) {
-		my $name = do_line_subs($1);
-		my $theid = modify_id($2);
+		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
+			my $theid = modify_id($1);
+		} else {
+			my $theid = "";
+		}
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_subsection($theid,$name);
-	} elsif ($para =~ s/^\\subsection\{([^}]*)\}[ \n]*//) {
+	} elsif ($para =~ s/^\\subsubsection\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}[ \n]*//) {
 		my $name = do_line_subs($1);
-		my $theid = modify_id($2);
-		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
-		open_subsection("",$name);
-	} elsif ($para =~ s/^\\subsubsection\{([^}]*)\}[ \n]*\\label\{([^}]*)\}[ \n]*//) {
-		my $name = do_line_subs($1);
-		my $theid = modify_id($2);
+		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
+			my $theid = modify_id($1);
+		} else {
+			my $theid = "";
+		}
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_subsubsection($theid,$name);
-	} elsif ($para =~ s/^\\subsubsection\{([^}]*)\}[ \n]*//) {
-		my $name = do_line_subs($1);
-		my $theid = modify_id($2);
-		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
-		open_subsubsection("",$name);
 
 	# this assumes sectionnotes come in their own $para
 	} elsif ($para =~ s/^\\sectionnotes\{//s) {

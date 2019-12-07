@@ -114,9 +114,9 @@ upper sums are bounded sets.
 As the sets of lower and upper Darboux sums are bounded, we define
 \begin{align*}
 & \underline{\int_a^b} f(x)~dx :=
-\sup \, \bigl\{ L(P,f) : P \text{ a partition of $[a,b]$} \bigr\} , \\
+\sup \, \bigl\{ L(P,f) : P \text{ a partition of } [a,b] \bigr\} , \\
 & \overline{\int_a^b} f(x)~dx :=
-\inf \, \bigl\{ U(P,f) : P \text{ a partition of $[a,b]$} \bigr\} .
+\inf \, \bigl\{ U(P,f) : P \text{ a partition of } [a,b] \bigr\} .
 \end{align*}
 We call $\underline{\int}$\glsadd{not:lowerdarboux}
 the \emph{\myindex{lower Darboux integral}} and
@@ -298,9 +298,9 @@ Recall \propref{infsupineq:prop}, and take the supremum and
 infimum over all partitions:
 \begin{equation*}
 \underline{\int_a^b} f = 
-\sup \, \bigl\{ L(P,f) : \text{$P$ a partition of $[a,b]$} \bigr\}
+\sup \, \bigl\{ L(P,f) : P \text{ a partition of } [a,b] \bigr\}
 \leq
-\inf \, \bigl\{ U(P,f) : \text{$P$ a partition of $[a,b]$} \bigr\}
+\inf \, \bigl\{ U(P,f) : P \text{ a partition of } [a,b] \bigr\}
 =
 \overline{\int_a^b} f . \qedhere
 \end{equation*}
@@ -374,9 +374,9 @@ Let $f \colon [0,2] \to \R$ be defined by
 \begin{equation*}
 f(x) :=
 \begin{cases}
-1 & \text{ if $x < 1$,}\\
-\nicefrac{1}{2} & \text{ if $x = 1$,}\\
-0 & \text{ if $x > 1$.}
+1               & \text{if } x < 1,\\
+\nicefrac{1}{2} & \text{if } x = 1,\\
+0               & \text{if } x > 1.
 \end{cases}
 \end{equation*}
 We claim $f$ is Riemann integrable and $\int_0^2 f = 1$.
@@ -569,8 +569,8 @@ Suppose $f \colon [-1,1] \to \R$ is defined as
 \begin{equation*}
 f(x) :=
 \begin{cases}
-1 & \text{ if $x > 0$,} \\
-0 & \text{ if $x \leq 0$.}
+1 & \text{if } x > 0, \\
+0 & \text{if } x \leq 0.
 \end{cases}
 \end{equation*}
 Prove that $f \in \sR[-1,1]$ and
@@ -586,8 +586,8 @@ Define $f \colon [a,b] \to \R$ as
 \begin{equation*}
 f(x) :=
 \begin{cases}
-d & \text{ if $x = c$,} \\
-0 & \text{ if $x \not= c$.}
+d & \text{if } x = c, \\
+0 & \text{if } x \not= c.
 \end{cases}
 \end{equation*}
 Prove that $f \in \sR[a,b]$ and
@@ -742,19 +742,19 @@ to compute
 \begin{split}
 \underline{\int_a^c} f
 & =
-\sup \, \bigl\{ L(P,f) : \text{$P$ a partition of $[a,c]$} \bigr\}
+\sup \, \bigl\{ L(P,f) : P \text{ a partition of } [a,c] \bigr\}
 \\
 & =
-\sup \, \bigl\{ L(P,f) : \text{$P$ a partition of $[a,c]$, $b \in P$} \bigr\}
+\sup \, \bigl\{ L(P,f) : P \text{ a partition of } [a,c], $b \in P \bigr\}
 \\
 & =
 \sup \, \bigl\{ L(P_1,f) + L(P_2,f) :
-\text{$P_1$ a partition of $[a,b]$, $P_2$ a partition of $[b,c]$} \bigr\}
+P_1 \text{ a partition of } [a,b], P_2 \text{ a partition of } [b,c] \bigr\}
 \\
 & =
-\sup \, \bigl\{ L(P_1,f) : \text{$P_1$ a partition of $[a,b]$} \bigr\}
+\sup \, \bigl\{ L(P_1,f) : P_1 \text{ a partition of } [a,b] \bigr\}
 +
-\sup \, \bigl\{ L(P_2,f) : \text{$P_2$ a partition of $[b,c]$} \bigr\}
+\sup \, \bigl\{ L(P_2,f) : P_2 \text{ a partition of } [b,c] \bigr\}
 \\
 &=
 \underline{\int_a^b} f + \underline{\int_b^c} f .
@@ -914,14 +914,14 @@ may move multiplication by $\alpha$ past the supremum.  Hence,
 \begin{equation*}
 \begin{split}
 \underline{\int_a^b} \alpha f(x)~dx & =
-\sup \, \bigl\{ L(P,\alpha f) : \text{$P$ a partition of $[a,b]$} \bigr\}
+\sup \, \bigl\{ L(P,\alpha f) : P \text{ a partition of } [a,b] \bigr\}
 \\
 & =
-\sup \, \bigl\{ \alpha L(P,f) : \text{$P$ a partition of $[a,b]$} \bigr\}
+\sup \, \bigl\{ \alpha L(P,f) : P \text{ a partition of } [a,b] \bigr\}
 \\
 & =
 \alpha \,
-\sup \, \bigl\{ L(P,f) : \text{$P$ a partition of $[a,b]$} \bigr\}
+\sup \, \bigl\{ L(P,f) : P \text{ a partition of } [a,b] \bigr\}
 \\
 & =
 \alpha
@@ -1366,9 +1366,9 @@ define $f \colon [0,1] \to \R$ by
 \begin{equation*}
 f(x) := 
 \begin{cases}
-\nicefrac{1}{k} & \text{ if $x=\nicefrac{m}{k}$ where $m,k \in \N$
-and $m$ and $k$ have no common divisors,} \\
-0 & \text{ if $x$ is irrational}.
+\nicefrac{1}{k} & \text{if } x=\nicefrac{m}{k} \text{ where }
+m,k \in \N \text{ and } m \text{ and } k \text{ have no common divisors,} \\
+0               & \text{if } x \text{ is irrational.}
 \end{cases}
 \end{equation*}
 Show $\int_0^1 f = 0$.
@@ -1381,7 +1381,7 @@ the function
 \begin{equation*}
 \varphi_I(x) :=
 \begin{cases}
-1 & \text{if $x \in I$,} \\
+1 & \text{if } x \in I, \\
 0 & \text{otherwise,}
 \end{cases}
 \end{equation*}
@@ -1953,7 +1953,7 @@ logarithm that you know from calculus so well.
 First, we have a good idea of what $x^n$ means as long as
 $n$ is a positive integer.  Simply,
 \begin{equation*}
-x^n := \underbrace{x \cdot x \cdot \cdots \cdot x}_{\text{$n$ times}} .
+x^n := \underbrace{x \cdot x \cdot \cdots \cdot x}_{n \text{times}} .
 \end{equation*}
 It makes sense to define $x^0 := 1$.
 For negative integers we define $x^{-n} := \nicefrac{1}{x^n}$.
@@ -2415,8 +2415,8 @@ Since $(e^x)' = e^x$, it is easy to see that $e^x$ is
 (has derivatives of all orders).  Define the function $f \colon \R \to \R$.
 \begin{equation*}
 f(x) := \begin{cases}
-e^{-1/x} & \text{if $x > 0$,} \\
-0 & \text{if $x \leq 0$}.
+e^{-1/x} & \text{if } x > 0, \\
+0 & \text{if } x \leq 0.
 \end{cases}
 \end{equation*}
 \begin{enumerate}[a)]
@@ -2985,8 +2985,8 @@ in both pure and applied mathematics.  Define
 \begin{equation*}
 \operatorname{sinc}(x) =
 \begin{cases}
-\frac{\sin(x)}{x} & \text{if $x \not= 0$} , \\
-1 & \text{if $x = 0$} .
+\frac{\sin(x)}{x} & \text{if } x \not= 0 , \\
+1 & \text{if } x = 0 .
 \end{cases}
 \end{equation*}
 \begin{myfigureht}

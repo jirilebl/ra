@@ -195,10 +195,10 @@ Define
 \glsadd{not:upperdarbouxR}
 \begin{equation*}
 \underline{\int_R} f
-:= \sup \, \bigl\{ L(P,f) : P \text{ a partition of $R$} \bigr\} , 
+:= \sup \, \bigl\{ L(P,f) : P \text{ a partition of } R \bigr\} , 
 \qquad
 \overline{\int_R} f
-:= \inf \, \bigl\{ U(P,f) : P \text{ a partition of $R$} \bigr\} .
+:= \inf \, \bigl\{ U(P,f) : P \text{ a partition of } R \bigr\} .
 \end{equation*}
 We call $\underline{\int}$ the
 \emph{\myindex{lower Darboux integral}}\index{Darboux integral} and
@@ -323,9 +323,9 @@ $L(P,f) \leq U(Q,f)$.
 Via \volIref{\propref*{vI-infsupineq:prop} from volume I},
 we obtain
 \begin{equation*}
-\sup \, \bigl\{ L(P,f) : \text{$P$ a partition of $R$} \bigl\}
+\sup \, \bigl\{ L(P,f) : P \text{ a partition of } R \bigl\}
 \leq
-\inf \, \bigl\{ U(P,f) : \text{$P$ a partition of $R$} \bigl\} .
+\inf \, \bigl\{ U(P,f) : P \text{ a partition of } R \bigl\} .
 \end{equation*}
 In other words, $\underline{\int_R} f \leq \overline{\int_R} f$.
 \end{proof}
@@ -669,8 +669,8 @@ The function $f \colon \R^2 \to \R$ defined by
 \begin{equation*}
 f(x,y) :=
 \begin{cases}
--x{(x^2+y^2-1)}^2 & \text{if $\sqrt{x^2+y^2} \leq 1$}, \\
-0 & \text{else},
+-x{(x^2+y^2-1)}^2 & \text{if } \sqrt{x^2+y^2} \leq 1, \\
+0                 & \text{else},
 \end{cases}
 \end{equation*}
 is continuous and its support is the closed unit disc
@@ -699,8 +699,8 @@ The function $f \colon B(0,1) \to \R$ defined by
 \begin{equation*}
 f(x,y) :=
 \begin{cases}
-0 & \text{if $\sqrt{x^2+y^2} > \nicefrac{1}{2}$}, \\
-\nicefrac{1}{2} - \sqrt{x^2+y^2} & \text{if $\sqrt{x^2+y^2} \leq \nicefrac{1}{2}$},
+0                                & \text{if } \sqrt{x^2+y^2} > \nicefrac{1}{2}, \\
+\nicefrac{1}{2} - \sqrt{x^2+y^2} & \text{if } \sqrt{x^2+y^2} \leq \nicefrac{1}{2},
 \end{cases}
 \end{equation*}
 is continuous on $B(0,1)$ and its support is the smaller closed ball
@@ -710,8 +710,8 @@ The function $g \colon B(0,1) \to \R$ defined by
 \begin{equation*}
 g(x,y) :=
 \begin{cases}
-0 & \text{if $x \leq 0$}, \\
-x & \text{if $x > 0$},
+0 & \text{if } x \leq 0, \\
+x & \text{if } x > 0,
 \end{cases}
 \end{equation*}
 is continuous on $B(0,1)$, but its support is the set
@@ -771,8 +771,8 @@ of compact support.  Show that the function $\widetilde{f} \colon \R^n \to \R$
 \begin{equation*}
 \widetilde{f}(x) :=
 \begin{cases}
-f(x) & \text{ if $x \in U$,} \\
-0 & \text{ otherwise,}
+f(x) & \text{if } x \in U, \\
+0 & \text{otherwise,}
 \end{cases}
 \end{equation*}
 is continuous.
@@ -878,8 +878,8 @@ Suppose $f \colon R \to \R$ is defined by
 \begin{equation*}
 f(x,y) := 
 \begin{cases}
-1 & \text{ if $x = y$,} \\
-0 & \text{ else.}
+1 & \text{if } x = y, \\
+0 & \text{else.}
 \end{cases}
 \end{equation*}
 Show that $f \in \sR(R)$ and compute $\int_R f$.
@@ -888,8 +888,8 @@ Suppose $f \colon R \to \R$ is defined by
 \begin{equation*}
 f(x,y) := 
 \begin{cases}
-1 & \text{ if $x \in \Q$ or $y \in \Q$,} \\
-0 & \text{ else.}
+1 & \text{if } x \in \Q \text{ or } y \in \Q, \\
+0 & \text{else.}
 \end{cases}
 \end{equation*}
 Show that $f \notin \sR(R)$.
@@ -950,8 +950,8 @@ Define
 \begin{equation*}
 f(x,y) := 
 \begin{cases}
-1 & \text{ if $x=\nicefrac{1}{2}$ and $y \in \Q$,} \\
-0 & \text{ otherwise.}
+1 & \text{if } x=\nicefrac{1}{2} \text{ and } y \in \Q, \\
+0 & \text{otherwise.}
 \end{cases}
 \end{equation*}
 Then $f$ is Riemann integrable on $R := [0,1]^2$ and $\int_R f = 0$.
@@ -1325,7 +1325,7 @@ Define $f \colon [-1,1] \times [0,1] \to \R$ by
 \begin{equation*}
 f(x,y) :=
 \begin{cases}
-x & \text{if $y \in \Q$,} \\
+x & \text{if } y \in \Q, \\
 0 & \text{else.} 
 \end{cases}
 \end{equation*}
@@ -1349,8 +1349,9 @@ Define $f \colon [0,1] \times [0,1] \to \R$ by
 \begin{equation*}
 f(x,y) :=
 \begin{cases}
-\nicefrac{1}{q} & \text{if $x \in \Q$, $y \in \Q$, and $y=\nicefrac{p}{q}$ in lowest terms,} \\
-0 & \text{else.} 
+\nicefrac{1}{q} & \text{if } x \in \Q, y \in \Q, \text{ and }
+  y=\nicefrac{p}{q} \text{ in lowest terms,} \\
+0               & \text{else.} 
 \end{cases}
 \end{equation*}
 \begin{enumerate}[a)]
@@ -1569,14 +1570,14 @@ a fixed constant $c \in \R$.  Then $P$ is of measure zero.
 \emph{Proof:}
 First fix $s$ and let us prove that
 \begin{equation*}
-P_s := \bigl\{ x \in \R^n : x_k = c, \sabs{x_j} \leq s \text{ for all
-$j\not=k$} \bigr\}
+P_s := \bigl\{ x \in \R^n : x_k = c, \sabs{x_j} \leq s
+\text{ for all } j\not=k \bigr\}
 \end{equation*}
 is of measure zero.
 Given any $\epsilon > 0$ define the open rectangle
 \begin{equation*}
 R := \bigl\{ x \in \R^n : c-\epsilon < x_k < c+\epsilon, \sabs{x_j} < s+1
-\text{ for all $j\not=k$} \bigr\} .
+\text{ for all } j\not=k \bigr\} .
 \end{equation*}
 It is clear that $P_s \subset R$.  Furthermore
 \begin{equation*}
@@ -1686,22 +1687,22 @@ For any $x \in [0,1]$ write the
 representation in ternary notation
 \begin{equation*}
 x = \sum_{n=1}^\infty d_n 3^{-n} ,
-\qquad \text{where $d_n=0$, $1$, or $2$}.
+\qquad \text{where } d_n=0, 1, \text{ or } 2.
 \end{equation*}
 See \volIref{\sectionref*{vI-sec:decimals} in volume I\@, in particular
 \exerciseref*{vI-exercise:decimalpropbaseb}}.
 Define the \emph{\myindex{Cantor set}} $C$ as
 \begin{equation*}
-C := \Bigl\{ x \in [0,1] : x = \sum_{n=1}^\infty d_n 3^{-n}, \text{ where $d_n =
-0$ or $d_n = 2$ for all $n$} \Bigr\} .
+C := \Bigl\{ x \in [0,1] : x = \sum_{n=1}^\infty d_n 3^{-n},
+\text{ where } d_n = 0 \text{ or } d_n = 2 \text{ for all } n \Bigr\} .
 \end{equation*}
 That is, $x$ is in $C$ if it has a ternary expansion in only $0$'s and
 $2$'s.  If $x$ has two expansions, as long as one of them does not have any
 $1$'s, then $x$ is in $C$.
 Define $C_0 := [0,1]$ and
 \begin{equation*}
-C_k := \Bigl\{ x \in [0,1] : x = \sum_{n=1}^\infty d_n 3^{-n}, \text{ where $d_n =
-0$ or $d_n = 2$ for all $n=1,2,\ldots,k$} \Bigr\} .
+C_k := \Bigl\{ x \in [0,1] : x = \sum_{n=1}^\infty d_n 3^{-n},
+\text{ where } d_n = 0 \text{ or } d_n = 2 \text{ for all } n=1,2,\ldots,k \Bigr\} .
 \end{equation*}
 Clearly,
 \begin{equation*}
@@ -1853,8 +1854,8 @@ longer be measure zero.
 \item
 Now prove it for any null set $E$.\\
 Hint: First show that $\{ x \in U : d(x,y) \geq
-\nicefrac{1}{m} \text{ for all $y \notin U$ and } d(0,x) \leq m \}$ is a compact set for
-any $m > 0$.
+\nicefrac{1}{m} \text{ for all } y \notin U \text{ and } d(0,x) \leq m \}$
+is a compact set for any $m > 0$.
 \end{enumerate}
 \end{exercise}
 
@@ -2345,9 +2346,9 @@ $f \colon [0,1]^2 \to \R$ is defined by
 \begin{equation*}
 f(x,y) :=
 \begin{cases}
-\frac{1}{kq} & \text{if $x,y \in \Q$ and $x = \frac{\ell}{k}$ and
-$y=\frac{p}{q}$ in lowest terms,} \\
-0 & \text{else.}
+\frac{1}{kq} & \text{if } x,y \in \Q \text{ and } x = \frac{\ell}{k}
+\text{ and } y=\frac{p}{q} \text{ in lowest terms,} \\
+0            & \text{else.}
 \end{cases}
 \end{equation*}
 Show that $f \in \sR\bigl({[0,1]}^2\bigr)$.
@@ -2359,8 +2360,8 @@ for the function
 \begin{equation*}
 f(x,y) :=
 \begin{cases}
-\frac{xy}{x^2+y^2} & \text{if $(x,y) \not= (0,0)$,} \\
-0 & \text{else.}
+\frac{xy}{x^2+y^2} & \text{if } (x,y) \not= (0,0), \\
+0                  & \text{if } (x,y) = (0,0) .
 \end{cases}
 \end{equation*}
 \end{exercise}
@@ -2370,8 +2371,9 @@ For the popcorn function $f \colon [0,1] \to \R$
 \begin{equation*}
 f(x) :=
 \begin{cases}
-\frac{1}{q} & \text{if $x \in \Q$ and $x = \frac{p}{q}$,} \\
-0 & \text{else.}
+\frac{1}{q} & \text{if } x \in \Q \text{ and } x = \frac{p}{q}
+ \text{ in lowest terms,} \\
+0           & \text{else.}
 \end{cases}
 \end{equation*}
 Compute $o(f,x)$ for all $x \in [0,1]$.
@@ -2396,8 +2398,8 @@ is defined by
 \begin{equation*}
 \chi_S(x) :=
 \begin{cases}
-1 & \text{ if $x \in S$}, \\
-0 & \text{ if $x \notin S$}.
+1 & \text{if } x \in S, \\
+0 & \text{if } x \notin S.
 \end{cases}
 \end{equation*}
 A bounded set $S$ is \emph{\myindex{Jordan measurable}}\footnote{Named after
@@ -2533,8 +2535,8 @@ rectangle $R$ such that $S \subset R$, the function $\widetilde{f} \colon R
 \begin{equation*}
 \widetilde{f}(x) :=
 \begin{cases}
-f(x) & \text{ if $x \in S$}, \\
-0 & \text{ otherwise},
+f(x) & \text{if } x \in S, \\
+0 & \text{otherwise},
 \end{cases}
 \end{equation*}
 is in $\sR(R)$.  In this case we write

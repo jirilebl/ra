@@ -25,7 +25,7 @@ to denote a sequence.
 A sequence $\{ x_n \}$ is \emph{bounded}\index{bounded sequence} if
 there exists a $B \in \R$ such that
 \begin{equation*}
-\abs{x_n} \leq B \qquad \text{for all $n \in \N$.}
+\abs{x_n} \leq B \qquad \text{for all } n \in \N.
 \end{equation*}
 In other words, the sequence $\{x_n\}$ is bounded whenever
 the set $\{ x_n : n \in \N \}$
@@ -347,7 +347,7 @@ We already know that the infimum is greater than or equal to 0, as
 that $b \leq \frac{1}{\sqrt{n}}$ for all $n$.  We square both sides to
 obtain
 \begin{equation*}
-b^2 \leq \frac{1}{n} \qquad \text{for all $n \in \N$}.
+b^2 \leq \frac{1}{n} \qquad \text{for all } n \in \N.
 \end{equation*}
 We have seen before that this implies that $b^2 \leq 0$ (a consequence
 of the \hyperref[thm:arch:i]{Archimedean property}).  As we also have $b^2 \geq 0$, then $b^2 = 0$
@@ -663,8 +663,8 @@ Let $\{x_n\}$ be a sequence defined by
 \begin{equation*}
 x_n := 
 \begin{cases}
-n & \text{if $n$ is odd} , \\
-\nicefrac{1}{n} & \text{if $n$ is even} .
+n               & \text{if } n \text{ is odd} , \\
+\nicefrac{1}{n} & \text{if } n \text{ is even} .
 \end{cases}
 \end{equation*}
 \begin{enumerate}[a)]
@@ -750,7 +750,7 @@ Let $\{ a_n \}$,
 $\{ b_n \}$, and 
 $\{ x_n \}$ be sequences such that
 \begin{equation*}
-a_n \leq x_n \leq b_n \quad \text{ for all $n \in \N$} .
+a_n \leq x_n \leq b_n \quad \text{for all } n \in \N.
 \end{equation*}
 Suppose $\{ a_n \}$ and $\{ b_n \}$ converge and
 \begin{equation*}
@@ -1011,7 +1011,9 @@ For all $n \geq M$ we have
 K \frac{\epsilon}{3K} + 
 \frac{\epsilon}{3K}
 \frac{\epsilon}{3K}
-\qquad \qquad \text{(now notice that $\tfrac{\epsilon}{3K} \leq 1$ and $K \geq 1$)}
+\qquad \qquad \text{(now notice that } \tfrac{\epsilon}{3K} \leq 1
+\text{ and }
+K \geq 1\text{)}
 \\
 & \leq
 \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3}
@@ -1769,8 +1771,8 @@ Let $\{ x_n \}$ be defined by
 \begin{equation*}
 x_n :=
 \begin{cases}
-\frac{n+1}{n} & \text{ if $n$ is odd,} \\
-0 & \text{ if $n$ is even.}
+\frac{n+1}{n} & \text{if } n \text{ is odd,} \\
+0             & \text{if } n \text{ is even.}
 \end{cases}
 \end{equation*}
 Let us compute the $\liminf$ and $\limsup$ of this sequence.  See also
@@ -1797,8 +1799,8 @@ It is not hard to see that
 \begin{equation*}
 \sup \{ x_k : k \geq n \} =
 \begin{cases}
-\frac{n+1}{n} & \text{ if $n$ is odd,} \\
-\frac{n+2}{n+1} & \text{ if $n$ is even.}
+\frac{n+1}{n}   & \text{if } n \text{ is odd,} \\
+\frac{n+2}{n+1} & \text{if } n \text{ is even.}
 \end{cases}
 \end{equation*}
 We leave it to the reader to show that the limit is 1.  That is,
@@ -2137,8 +2139,8 @@ Suppose $\{ x_n \}$ is a monotone unbounded sequence.  Then
 \begin{equation*}
 \lim_{n \to \infty} x_n =
 \begin{cases}
-\infty & \text{ if $\{x_n \}$ is increasing,} \\
--\infty & \text{ if $\{x_n \}$ is decreasing.}
+\infty  & \text{if } \{ x_n \} \text{ is increasing,} \\
+-\infty & \text{if } \{ x_n \} \text{ is decreasing.}
 \end{cases}
 \end{equation*}
 \end{prop}
@@ -3727,7 +3729,8 @@ The proof of convergence/divergence for the $p$-series generalizes.
 Prove the so-called 
 \emph{\myindex{Cauchy condensation principle}}:
 \begin{equation*}
-\sum_{n=1}^\infty x_n \quad \text{ converges if and only if } \quad
+\sum_{n=1}^\infty x_n
+\qquad \text{converges if and only if} \qquad
 \sum_{n=1}^\infty 2^n x_{2^n} .
 \end{equation*}
 \end{exercise}

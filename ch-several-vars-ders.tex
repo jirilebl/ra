@@ -777,7 +777,7 @@ $C([0,1],\R)$ be the vector space of continuous real-valued functions on $\R$.
 Let $X \subset C([0,1],\R)$ be the set of those $f$ such that
 \begin{equation*}
 \int_0^1 f(x)~dx \leq 1 \qquad \text{and} \qquad
-f(x) \geq 0 \text{ for all $x \in [0,1]$} .
+f(x) \geq 0 \enspace \text{for all } x \in [0,1] .
 \end{equation*}
 Then $X$ is convex.  Take $t \in [0,1]$, and note that if $f,g \in X$,
 then $t f(x) + (1-t) g(x) \geq 0$ for all $x$.  Furthermore
@@ -832,7 +832,7 @@ For completeness, a very useful construction is the
 space, define the convex hull of $S$, by
 \begin{equation*}
 \operatorname{co}(S) :=
-\bigcap \{ C \subset V : S \subset C, \text{ and $C$ is convex} \} .
+\bigcap \{ C \subset V : S \subset C, \text{ and } C \text{ is convex} \} .
 \end{equation*}
 That is, the convex hull is the smallest convex set containing $S$.  
 By a proposition above, the intersection of convex sets is convex and
@@ -945,7 +945,7 @@ operator.
 Show that the nullspace $N := \{ x \in X : Ax = 0 \}$ is a
 vector space.
 \item
-Show that the range $R := \{ y \in Y : Ax = y \text{ for some $x \in X$} \}$ is a
+Show that the range $R := \{ y \in Y : Ax = y \text{ for some } x \in X \}$ is a
 vector space.
 \end{enumerate}
 \end{exercise}
@@ -1115,7 +1115,7 @@ we used when we talked about metric spaces.
 Let $A \in L(X,Y)$.  Define
 \begin{equation*}
 \snorm{A} :=
-\sup \bigl\{ \snorm{Ax} : x \in X ~ \text{with} ~ \snorm{x} = 1 \bigr\} .
+\sup \bigl\{ \snorm{Ax} : x \in X \text{ with } \snorm{x} = 1 \bigr\} .
 \end{equation*}
 The number $\snorm{A}$ (possibly $\infty$)
 is called the \emph{\myindex{operator norm}}.  We will see below
@@ -1131,7 +1131,7 @@ The vector $\frac{x}{\snorm{x}}$ is of norm 1.
 Therefore,
 \begin{equation*}
 \snorm{A} =
-\sup \bigl\{ \snorm{Ax} : x \in X ~ \text{with} ~ \snorm{x} = 1 \bigr\}
+\sup \bigl\{ \snorm{Ax} : x \in X \text{ with } \snorm{x} = 1 \bigr\}
 =
 \sup_{\substack{x \in X\\x\neq 0}} \frac{\snorm{Ax}}{\snorm{x}} .
 \end{equation*}
@@ -1518,9 +1518,9 @@ $\operatorname{sgn}(x)$\glsadd{not:sgn} (read ``sign of $x$'') for a number $x$ 
 \operatorname{sgn}(x)
 :=
 \begin{cases}
--1 & \text{ if $x < 0$} , \\
-0 & \text{ if $x = 0$} , \\
-1 & \text{ if $x > 0$} .
+-1 & \text{if } x < 0 , \\
+0  & \text{if } x = 0 , \\
+1  & \text{if } x > 0 .
 \end{cases}
 \end{equation*}
 Suppose 
@@ -1795,8 +1795,8 @@ $n$-by-$n$ matrix $E$ by
 \begin{equation*}
 Ee_i := 
 \begin{cases}
-e_i & \text{if $i \neq j$} , \\
-\lambda e_i & \text{if $i = j$} .
+e_i & \text{if } i \neq j , \\
+\lambda e_i & \text{if } i = j .
 \end{cases}
 \end{equation*}
 Given any $n$-by-$m$ matrix $M$ the matrix $EM$ is the same matrix as $M$
@@ -1808,8 +1808,8 @@ define the second type of an elementary matrix $E$ by
 \begin{equation*}
 Ee_i := 
 \begin{cases}
-e_i & \text{if $i \neq j$} , \\
-e_i + \lambda e_k & \text{if $i = j$} .
+e_i               & \text{if } i \neq j , \\
+e_i + \lambda e_k & \text{if } i = j .
 \end{cases}
 \end{equation*}
 Given any $n$-by-$m$ matrix $M$ the matrix $EM$ is the same matrix as $M$
@@ -1821,9 +1821,9 @@ the third type of an elementary matrix $E$ by
 \begin{equation*}
 Ee_i := 
 \begin{cases}
-e_i & \text{if $i \neq j$ and $i \neq k$} , \\
-e_k & \text{if $i = j$} , \\
-e_j & \text{if $i = k$} .
+e_i & \text{if } i \neq j \text{ and } i \neq k , \\
+e_k & \text{if } i = j , \\
+e_j & \text{if } i = k .
 \end{cases}
 \end{equation*}
 Given any $n$-by-$m$ matrix $M$ the matrix $EM$ is the same matrix with
@@ -2114,7 +2114,7 @@ a+ib$ for real vectors $a$ and $b$, and $A$ is a real matrix, then $Ax = Aa + i 
 The number
 \begin{equation*}
 \rho(A) :=
-\sup \bigl\{ \abs{\lambda} : \lambda \text{ is an eigenvalue of $A$} \bigr\}
+\sup \bigl\{ \abs{\lambda} : \lambda \text{ is an eigenvalue of } A \bigr\}
 \end{equation*}
 is called the \emph{\myindex{spectral radius}} of $A$.  Here $\abs{\lambda}$ is the complex
 modulus.  We state without proof that at least one eigenvalue always exists,
@@ -2862,8 +2862,8 @@ Define a function $f \colon \R^2 \to \R$ by
 f(x,y)
 :=
 \begin{cases}
-\frac{xy}{x^2+y^2} & \text{ if $(x,y) \not= (0,0)$}, \\
-0 & \text{ if $(x,y) = (0,0)$}.
+\frac{xy}{x^2+y^2} & \text{if } (x,y) \not= (0,0), \\
+0                  & \text{if } (x,y) = (0,0).
 \end{cases}
 \end{equation*}
 \begin{enumerate}[a)]
@@ -2890,8 +2890,8 @@ Define a function $f \colon \R^2 \to \R$ by
 f(x,y)
 :=
 \begin{cases}
-\frac{x^2y}{x^2+y^2} & \text{ if $(x,y) \not= (0,0)$}, \\
-0 & \text{ if $(x,y) = (0,0)$}.
+\frac{x^2y}{x^2+y^2} & \text{if } (x,y) \not= (0,0), \\
+0                    & \text{if } (x,y) = (0,0).
 \end{cases}
 \end{equation*}
 \begin{enumerate}[a)]
@@ -3083,13 +3083,13 @@ Let $U \subset \R^n$ be a convex open set, $f \colon U \to \R^m$
 a differentiable function, and an $M$ be such that
 \begin{equation*}
 \snorm{f'(x)} \leq M
-\qquad \text{for all $x \in U$.}
+\qquad \text{for all } x \in U.
 \end{equation*}
 Then $f$ is Lipschitz with constant $M$, that is
 \begin{equation*}
 \snorm{f(x)-f(y)} \leq M \snorm{x-y}
 \qquad
-\text{for all $x,y \in U$.}
+\text{for all } x,y \in U.
 \end{equation*}
 \end{prop}
 
@@ -3369,9 +3369,8 @@ Define $f \colon \R^2 \to \R$ as
 \begin{equation*}
 f(x,y) :=
 \begin{cases}
-(x^2+y^2)\sin\bigl({(x^2+y^2)}^{-1}\bigr) & \text{if $(x,y)
-\not= (0,0)$,} \\
-0 & \text{else.}
+(x^2+y^2)\sin\bigl({(x^2+y^2)}^{-1}\bigr) & \text{if } (x,y) \not= (0,0), \\
+0                                         & \text{else.}
 \end{cases}
 \end{equation*}
 Show that $f$ is differentiable at the origin, but that it is not 
@@ -3387,8 +3386,8 @@ Let $f \colon \R^2 \to \R$ be the function from
 f(x,y)
 :=
 \begin{cases}
-\frac{xy}{x^2+y^2} & \text{ if $(x,y) \not= (0,0)$}, \\
-0 & \text{ if $(x,y) = (0,0)$}.
+\frac{xy}{x^2+y^2} & \text{if } (x,y) \not= (0,0), \\
+0                  & \text{if } (x,y) = (0,0).
 \end{cases}
 \end{equation*}
 Compute the partial derivatives 
@@ -3508,7 +3507,7 @@ spaces $(X,d_X)$ and $(Y,d_Y)$ is called a contraction
 if there exists a $k < 1$ such that
 \begin{equation*}
 d_Y\bigl(f(p),f(q)\bigr) \leq k \, d_X(p,q)
-\ \ \ \ \text{for all } p,q \in X.
+\qquad \text{for all } p,q \in X.
 \end{equation*}
 The contraction mapping principle says that if $f \colon X \to X$
 is a contraction and $X$ is a complete metric space,
@@ -3536,7 +3535,7 @@ See \figureref{fig:inversefuncRn}.
 Furthermore, $g$ is continuously differentiable
 and 
 \begin{equation*}
-g'(y) = {\bigl(f'(x)\bigr)}^{-1}, \qquad \text{ for all $x \in V$, $y = f(x)$.}
+g'(y) = {\bigl(f'(x)\bigr)}^{-1}, \qquad \text{for all } x \in V, y = f(x).
 \end{equation*}
 \end{thm}
 
@@ -3550,7 +3549,7 @@ Write $A = f'(p)$.  As $f'$ is continuous, there exists an open ball
 $V$ around $p$ such that
 \begin{equation*}
 \snorm{A-f'(x)} < \frac{1}{2\snorm{A^{-1}}}
-\qquad \text{for all $x \in V$.}
+\qquad \text{for all } x \in V.
 \end{equation*}
 Note that $f'(x)$ is invertible for all $x \in V$
 by \propref{prop:finitedimpropinv}.
@@ -3573,7 +3572,7 @@ As $V$ is a ball, it is convex.  Hence
 \begin{equation*}
 \snorm{\varphi_y(x_1)-\varphi_y(x_2)} \leq \frac{1}{2} \snorm{x_1-x_2} 
 \qquad
-\text{for all $x_1,x_2 \in V$}.
+\text{for all } x_1,x_2 \in V.
 \end{equation*}
 In other words $\varphi_y$ is a contraction defined on $V$, though we so far
 do not know what is the range of $\varphi_y$.  We cannot yet
@@ -4079,8 +4078,8 @@ Define $f \colon \R^2 \to \R^2$
 \begin{equation*}
 f(x,y) :=
 \begin{cases}
-(x^2 \sin \bigl(\nicefrac{1}{x}\bigr) + \frac{x}{2} , y ) & \text{if $x \not= 0$,} \\
-(0,y) & \text{if $x=0$.}
+(x^2 \sin \bigl(\nicefrac{1}{x}\bigr) + \frac{x}{2} , y ) & \text{if } x \not= 0, \\
+(0,y)                                                     & \text{if } x=0.
 \end{cases}
 \end{equation*}
 \begin{enumerate}[a)]
@@ -4346,8 +4345,8 @@ Define
 \begin{equation*}
 f(x,y) :=
 \begin{cases}
-\frac{xy(x^2-y^2)}{x^2+y^2} & \text{ if $(x,y) \not= (0,0)$,}\\
-0 & \text{ if $(x,y) = (0,0)$.}
+\frac{xy(x^2-y^2)}{x^2+y^2} & \text{if } (x,y) \not= (0,0),\\
+0                           & \text{if } (x,y) = (0,0).
 \end{cases}
 \end{equation*}
 Show that

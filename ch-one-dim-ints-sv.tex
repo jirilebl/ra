@@ -96,7 +96,7 @@ x \mapsto \frac{f(x,y+h)-f(x,y)}{h}
 \qquad
 x \mapsto \frac{\partial f}{\partial y}(x,y)
 \qquad
-\text{as $h \to 0$} .
+\text{as } h \to 0 .
 \end{equation*}
 We defined uniform convergence for sequences although the idea is the
 same.  You may replace $h$ with a sequence of nonzero 
@@ -250,8 +250,8 @@ Work out the following counterexample:  Let
 \begin{equation*}
 f(x,y) :=
 \begin{cases}
-\frac{xy^3}{{(x^2+y^2)}^2} & \text{if $x\not=0$ or $y\not= 0$,}\\
-0 & \text{if $x=0$ and $y=0$.}
+\frac{xy^3}{{(x^2+y^2)}^2} & \text{if } x\not=0 \text{ or } y\not= 0, \\
+0                          & \text{if } x=0 \text{ and } y=0.
 \end{cases}
 \end{equation*}
 \begin{enumerate}[a)]
@@ -286,8 +286,8 @@ Work out the following counterexample:  Let
 \begin{equation*}
 f(x,y) :=
 \begin{cases}
-x \,\sin \left(\frac{y}{x^2+y^2}\right) & \text{if $(x,y) \not= (0,0)$,}\\
-0 & \text{if $(x,y)=(0,0)$.}
+x \,\sin \left(\frac{y}{x^2+y^2}\right) & \text{if } (x,y) \not= (0,0),\\
+0                                       & \text{if } (x,y)=(0,0).
 \end{cases}
 \end{equation*}
 \begin{enumerate}[a)]
@@ -391,10 +391,10 @@ Let $\gamma \colon [0,4] \to \R^2$ be defined by
 \begin{equation*}
 \gamma(t) :=
 \begin{cases}
-(t,0) & \text{if $t \in [0,1]$,}\\
-(1,t-1) & \text{if $t \in (1,2]$,}\\
-(3-t,1) & \text{if $t \in (2,3]$,}\\
-(0,4-t) & \text{if $t \in (3,4]$.}
+(t,0)   & \text{if } t \in [0,1],\\
+(1,t-1) & \text{if } t \in (1,2],\\
+(3-t,1) & \text{if } t \in (2,3],\\
+(0,4-t) & \text{if } t \in (3,4].
 \end{cases}
 \end{equation*}
 \begin{myfigureht}
@@ -440,14 +440,14 @@ Consider
 \begin{equation*}
 \gamma(t) :=
 \begin{cases}
-(t^2,0) & \text{ if $t < 0$,}\\
-(0,t^2) & \text{ if $t \geq 0$.}
+(t^2,0) & \text{if } t < 0,\\
+(0,t^2) & \text{if } t \geq 0.
 \end{cases}
 \end{equation*}
 See \figureref{fig:cornersmoothpath}.
 It is left for the reader to check that $\gamma$ is continuously
 differentiable, yet the image $\gamma(\R) = \bigl\{ (x,y) \in \R^2 : (x,y) =
-(s,0) \text{ or } (x,y) = (0,s) \text{ for some $s \geq 0$} \bigr\}$ has a
+(s,0) \text{ or } (x,y) = (0,s) \text{ for some } s \geq 0 \bigr\}$ has a
 ``corner'' at the origin.  And that is because $\gamma^{\:\prime}(0) = (0,0)$.
 More complicated examples with, say, infinitely many corners exist,
 see the exercises.
@@ -770,8 +770,8 @@ Suppose $\omega$ is a one-form defined on the set $\gamma\bigl([a,b]\bigr)$.  Th
 \begin{equation*}
 \int_{\gamma \circ h} \omega =
 \begin{cases}
-\int_{\gamma} \omega & \text{ if $h$ preserves orientation,}\\
--\int_{\gamma} \omega & \text{ if $h$ reverses orientation.}
+\int_{\gamma} \omega  & \text{if } h \text{ preserves orientation,}\\
+-\int_{\gamma} \omega & \text{if } h \text{ reverses orientation.}
 \end{cases}
 \end{equation*}
 \end{prop}
@@ -1201,8 +1201,8 @@ $\alpha(b)=\beta(b)$.  Let $\gamma \colon [a,c] \to \R^n$ be defined by
 \begin{equation*}
 \gamma(t) :=
 \begin{cases}
-\alpha(t) & \text{ if $t \in [a,b]$,} \\
-\beta(t) & \text{ if $t \in (b,c]$.}
+\alpha(t) & \text{if } t \in [a,b], \\
+\beta(t)  & \text{if } t \in (b,c].
 \end{cases}
 \end{equation*}
 Show that $\gamma$ is a piecewise smooth path, and that if $\omega$ is a
@@ -1483,7 +1483,7 @@ Then $\omega = df$ for some continuously differentiable $f \colon U \to
 \begin{equation*}
 \int_{\gamma} \omega = 0
 \qquad
-\text{for every piecewise smooth closed path $\gamma \colon [a,b] \to U$.}
+\text{for every piecewise smooth closed path } \gamma \colon [a,b] \to U.
 \end{equation*}
 \end{prop}
 
@@ -1509,8 +1509,8 @@ Define $\gamma \colon [0,2] \to U$ by
 \begin{equation*}
 \gamma(t) :=
 \begin{cases}
-\alpha(t) & \text{if $t \in [0,1]$,} \\
-\beta(2-t) & \text{if $t \in (1,2]$.}
+\alpha(t)  & \text{if } t \in [0,1], \\
+\beta(2-t) & \text{if } t \in (1,2].
 \end{cases}
 \end{equation*}
 This path is piecewise smooth.  This is due to the fact that

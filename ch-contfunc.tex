@@ -166,8 +166,8 @@ Define $f \colon [0,1) \to \R$ by
 \begin{equation*}
 f(x) := 
 \begin{cases}
-x & \text{if $x > 0$} , \\
-1 & \text{if $x = 0$} .
+x & \text{if } x > 0 , \\
+1 & \text{if } x = 0 .
 \end{cases}
 \end{equation*}
 Then
@@ -300,7 +300,7 @@ Let $S \subset \R$ and $c$ be a cluster point of $S$.  Let $f \colon S \to
 Suppose the limits of $f(x)$ and $g(x)$ as $x$ goes to $c$ both exist,
 and that
 \begin{equation*}
-f(x) \leq g(x) \qquad \text{for all $x \in S$}.
+f(x) \leq g(x) \qquad \text{for all } x \in S.
 \end{equation*}
 Then
 \begin{equation*}
@@ -330,7 +330,7 @@ Let $S \subset \R$ and $c$ be a cluster point of $S$.  Let $f \colon S \to
 exists.
 Suppose there are two real numbers $a$ and $b$ such that
 \begin{equation*}
-a \leq f(x) \leq b \qquad \text{for all $x \in S$}.
+a \leq f(x) \leq b \qquad \text{for all } x \in S.
 \end{equation*}
 Then
 \begin{equation*}
@@ -346,7 +346,7 @@ Let $S \subset \R$ and $c$ be a cluster point of $S$.  Let $f \colon S \to
 \R$,
 $g \colon S \to \R$, and $h \colon S \to \R$ be functions.  Suppose 
 \begin{equation*}
-f(x) \leq g(x) \leq h(x) \qquad \text{for all $x \in S$},
+f(x) \leq g(x) \leq h(x) \qquad \text{for all } x \in S,
 \end{equation*}
 and the limits of $f(x)$ and $h(x)$ as $x$ goes to $c$ both exist, and
 \begin{equation*}
@@ -409,7 +409,7 @@ Sometimes we work with the function defined on a subset.
 Let $f \colon S \to \R$ be a function.  Let $A \subset S$.  Define the
 function $f|_A \colon A \to \R$ by
 \begin{equation*}
-f|_A (x) := f(x)  \qquad \text{for $x \in A$}.
+f|_A (x) := f(x)  \qquad \text{for } x \in A.
 \end{equation*}
 The function
 $f|_A$ is called the \emph{\myindex{restriction}} of $f$ to $A$.
@@ -1000,8 +1000,8 @@ The function $f \colon \R \to \R$ defined by
 \begin{equation*}
 f(x) := 
 \begin{cases}
--1 & \text{ if $x < 0$,} \\
-1 & \text{ if $x \geq 0$,}
+-1 & \text{if } x < 0, \\
+1 & \text{if } x \geq 0,
 \end{cases}
 \end{equation*}
 is not continuous at 0.
@@ -1040,8 +1040,8 @@ Dirichlet}
 \begin{equation*}
 f(x) :=
 \begin{cases}
-1 & \text{ if $x$ is rational,} \\
-0 & \text{ if $x$ is irrational.}
+1 & \text{if } x \text{ is rational,} \\
+0 & \text{if } x \text{ is irrational.}
 \end{cases}
 \end{equation*}
 The function $f$ is discontinuous at all $c \in \R$.
@@ -1070,9 +1070,9 @@ Let $f \colon (0,1) \to \R$ be defined by
 \begin{equation*}
 f(x) := 
 \begin{cases}
-\nicefrac{1}{k} & \text{ if $x=\nicefrac{m}{k}$, where $m,k \in \N$
-and $m$ and $k$ have no common divisors,} \\
-0 & \text{ if $x$ is irrational}.
+\nicefrac{1}{k} & \text{if } x=\nicefrac{m}{k}, \text{ where } m,k \in \N
+\text{ and } m \text{ and } k \text{ have no common divisors,} \\
+0 & \text{if } x \text{ is irrational.}
 \end{cases}
 \end{equation*}
 See the graph of $f$
@@ -1148,8 +1148,8 @@ Let $f \colon \R \to \R$ be defined by
 \begin{equation*}
 f(x) :=
 \begin{cases}
-x & \text{ if $x$ is rational,} \\
-x^2 & \text{ if $x$ is irrational.}
+x & \text{if } x \text{ is rational,} \\
+x^2 & \text{if } x \text{ is irrational.}
 \end{cases}
 \end{equation*}
 Using the definition of continuity directly prove that
@@ -1162,8 +1162,8 @@ defined by
 \begin{equation*}
 f(x) :=
 \begin{cases}
-\sin(\nicefrac{1}{x}) & \text{ if $x \not= 0$,} \\
-0 & \text{ if $x=0$.}
+\sin(\nicefrac{1}{x}) & \text{if } x \not= 0, \\
+0 & \text{if } x=0.
 \end{cases}
 \end{equation*}
 Is $f$ continuous?  Prove your assertion.
@@ -1175,8 +1175,8 @@ defined by
 \begin{equation*}
 f(x) :=
 \begin{cases}
-x \sin(\nicefrac{1}{x}) & \text{ if $x \not= 0$,} \\
-0 & \text{ if $x=0$.}
+x \sin(\nicefrac{1}{x}) & \text{if } x \not= 0, \\
+0 & \text{if } x=0.
 \end{cases}
 \end{equation*}
 Is $f$ continuous?  Prove your assertion.
@@ -1331,20 +1331,20 @@ Thus $f$ is not continuous at $x$ as
 f(x)
 =
 f\Bigl( \lim_{i\to\infty} x_{n_i} \Bigr) ,
-\qquad\text{but}\qquad
-\lim_{i\to\infty} f(x_{n_i}) ~~\text{does not exist.} \qedhere
+\qquad \text{but} \qquad
+\lim_{i\to\infty} f(x_{n_i}) \enspace \text{does not exist.} \qedhere
 \end{equation*}
 \end{proof}
 
 Recall from calculus that $f \colon S \to \R$ achieves an
 \emph{\myindex{absolute minimum}}\index{minimum!absolute} at $c \in S$ if
 \begin{equation*}
-f(x) \geq f(c) \qquad \text{ for all $x \in S$.}
+f(x) \geq f(c) \qquad \text{for all } x \in S.
 \end{equation*}
 On the other hand, $f$ achieves an 
 \emph{\myindex{absolute maximum}}\index{maximum!absolute} at $c \in S$ if
 \begin{equation*}
-f(x) \leq f(c) \qquad \text{ for all $x \in S$.}
+f(x) \leq f(c) \qquad \text{for all } x \in S.
 \end{equation*}
 If such a $c \in S$ exists, then 
 $f$ \emph{achieves an absolute minimum (resp.\ absolute maximum) on
@@ -1677,8 +1677,8 @@ The function
 \begin{equation*}
 f(x) :=
 \begin{cases}
-\sin(\nicefrac{1}{x}) & \text{ if $x \not= 0$,} \\
-0 & \text{ if $x=0$,}
+\sin(\nicefrac{1}{x}) & \text{if } x \not= 0, \\
+0 & \text{if } x=0,
 \end{cases}
 \end{equation*}
 is not continuous at 0, however, it has the intermediate value property.
@@ -1723,8 +1723,8 @@ Let
 \begin{equation*}
 f(x) :=
 \begin{cases}
-\sin(\nicefrac{1}{x}) & \text{ if $x \not= 0$,} \\
-0 & \text{ if $x=0$.}
+\sin(\nicefrac{1}{x}) & \text{if } x \not= 0, \\
+0 & \text{if } x=0.
 \end{cases}
 \end{equation*}
 Show that $f$ has the intermediate value property.
@@ -2028,9 +2028,9 @@ defined by
 \begin{equation*}
 \widetilde{f}(x) :=
 \begin{cases}
-f(x) & \text{ if $x \in (a,b)$,} \\
-L_a & \text{ if $x = a$,} \\
-L_b & \text{ if $x = b$,}
+f(x) & \text{if } x \in (a,b), \\
+L_a & \text{if } x = a, \\
+L_b & \text{if } x = b,
 \end{cases}
 \end{equation*}
 is continuous.
@@ -2108,7 +2108,7 @@ is \emph{\myindex{Lipschitz continuous}}\index{function!Lipschitz}%
 (1832--1903).}, if there exists a $K \in \R$, such that
 \begin{equation*}
 \abs{f(x)-f(y)} \leq K \abs{x-y} 
-\qquad \text{for all $x$ and $y$ in $S$.}
+\qquad \text{for all } x \text{ and } y \text{ in } S.
 \end{equation*}
 \end{defn}
 
@@ -2463,7 +2463,7 @@ We must be careful not to confuse continuous limits with limits of sequences.
 We could say
 \begin{equation*}
 \lim_{n \to \infty} \sin(\pi n) = 0, \qquad \text{but} \qquad
-\lim_{x \to \infty} \sin(\pi x) ~ \text{does not exist}.
+\lim_{x \to \infty} \sin(\pi x) \enspace \text{does not exist}.
 \end{equation*}
 Of course the notation is ambiguous:  Are we thinking of the
 sequence $\{ \sin (\pi n) \}_{n=1}^\infty$ or the function $\sin(\pi x)$
@@ -2688,8 +2688,8 @@ or $c = -\infty$.  Let $f \colon S \to \R$ be a function and let
 $L = \infty$ or $L = -\infty$.  Show that
 \begin{equation*}
 \lim_{x\to c} f(x) = L \qquad \text{if and only if} \qquad
-\lim_{n\to\infty} f(x_n) = L ~~\text{for all sequences $\{ x_n \}$ such that $\lim\, x_n =
-c$} .
+\lim_{n\to\infty} f(x_n) = L \enspace \text{for all sequences } \{ x_n \}
+\text{ such that } \lim\, x_n = c .
 \end{equation*}
 \end{exercise}
 
@@ -2994,8 +2994,8 @@ $f \colon \R \to \R$
 \begin{equation*}
 f(x) :=
 \begin{cases}
-x & \text{if $x < 0$}, \\
-x+1 & \text{if $x \geq 0$}. \\
+x & \text{if } x < 0, \\
+x+1 & \text{if } x \geq 0. \\
 \end{cases}
 \end{equation*}
 The function $f$ is not continuous at $0$.
@@ -3006,8 +3006,8 @@ Then $f^{-1} \colon (-\infty,0)\cup [1,\infty)
 \begin{equation*}
 f^{-1}(y) =
 \begin{cases}
-y & \text{if $y < 0$}, \\
-y-1 & \text{if $y \geq 1$}. 
+y & \text{if } y < 0, \\
+y-1 & \text{if } y \geq 1. 
 \end{cases}
 \end{equation*}
 It is not difficult to see that $f^{-1}$ is a continuous function.  See

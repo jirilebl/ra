@@ -403,8 +403,8 @@ converge pointwise to
 \begin{equation*}
 f(x) := 
 \begin{cases}
-1 & \text{ if $x=0$,} \\
-0 & \text{ else,}
+1 & \text{if } x=0, \\
+0 & \text{else,}
 \end{cases}
 \end{equation*}
 which is not continuous of course.
@@ -497,7 +497,7 @@ Let $X$ be any set.
 Suppose $f_n \colon X \to \C$ are functions, $M_n > 0$ numbers such
 that
 \begin{equation*}
-\sabs{f_n(x)}\leq M_n \quad \text{for all $x \in X$},
+\sabs{f_n(x)}\leq M_n \quad \text{for all } x \in X,
 \qquad \text{and} \quad
 \sum_{n=1}^\infty M_n
 \quad \text{converges}.
@@ -603,7 +603,7 @@ $\{ f_n \}$ converges uniformly it is uniformly Cauchy.
 Let $\epsilon > 0$ be given.  There is
 an $M$ such that for all $m,n \geq M$ we have
 \begin{equation*}
-d_Y\bigl(f_n(x_k),f_m(x_k)\bigr) < \epsilon \qquad \text{for all $k$} .
+d_Y\bigl(f_n(x_k),f_m(x_k)\bigr) < \epsilon \qquad \text{for all } k .
 \end{equation*}
 As a metric is automatically continuous we let $k$ go to infinity
 to find
@@ -771,7 +771,7 @@ Takagi} (1875--1960) was a Japanese mathematician.}, is a different example than
 
 Define
 \begin{equation*}
-\varphi(x) :=\sabs{x} \qquad \text{for $x \in [-1,1]$} .
+\varphi(x) :=\sabs{x} \qquad \text{for } x \in [-1,1] .
 \end{equation*}
 Extend the definition of $\varphi$ to all of $\R$ by making it
 2-periodic:
@@ -952,8 +952,8 @@ $f_n \colon [0,1] \to \R$ by
 \begin{equation*}
 f_n(x) :=
 \begin{cases}
-\frac{1}{n} & \text{if $\frac{1}{n+1} < x < \frac{1}{n}$,}\\
-0	& \text{else.}
+\frac{1}{n} & \text{if } \frac{1}{n+1} < x < \frac{1}{n},\\
+0	    & \text{else.}
 \end{cases}
 \end{equation*}
 Then prove that $\sum f_n$ converges uniformly, but $\sum \snorm{f_n}_u$
@@ -1113,17 +1113,17 @@ Let us list some series we already know:
 \begin{align*}
 & &
 & \sum_{n=0}^\infty z^n
-& & \text{has radius of convergence $1$.}
+& & \text{has radius of convergence } 1.
 & &
 \\
 & &
 & \sum_{n=0}^\infty \frac{1}{n!} z^n
-& & \text{has radius of convergence $\infty$.}
+& & \text{has radius of convergence } \infty.
 & &
 \\
 & &
 & \sum_{n=0}^\infty n^n z^n
-& & \text{has radius of convergence $0$.}
+& & \text{has radius of convergence } 0.
 & &
 \end{align*}
 \end{example}
@@ -1243,8 +1243,8 @@ function
 \begin{equation*}
 f(x) :=
 \begin{cases}
-e^{-1/x} & \text{if $x > 0$,}\\
-0 & \text{if $x \leq 0$,}
+e^{-1/x} & \text{if } x > 0,\\
+0        & \text{if } x \leq 0,
 \end{cases}
 \end{equation*}
 is infinitely differentiable, and all derivatives at the origin are zero.
@@ -1543,9 +1543,9 @@ Let
 \begin{equation*}
 a_{kj} :=
 \begin{cases}
-1 & \text{if $k=j$,}\\
--2^{k-j} & \text{if $k<j$,}\\
-0 & \text{else.}
+1        & \text{if } k=j,\\
+-2^{k-j} & \text{if } k<j,\\
+0        & \text{if } k>j.
 \end{cases}
 \end{equation*}
 Compute (or show the limit doesn't exist):
@@ -1755,10 +1755,10 @@ number $\pi$.
 \begin{prop}
 The sine and cosine functions have the following properties:
 \begin{enumerate}[(i)]
-\item For all $z \in \C$,
+\item For all $z \in \C$,\index{Euler's formula}
 \begin{equation*}
 e^{iz} = \cos(z) + i\sin(z) \qquad
-\text{(\myindex{Euler's formula})}.
+\text{(Euler's formula)}.
 \end{equation*}
 \item $\cos(0) = 1$, $\sin(0) = 0$.
 \item For all $z \in \C$,
@@ -2394,14 +2394,14 @@ $\{ f_n \}$
 is \emph{\myindex{pointwise bounded}} if for every $x \in X$, there is an $M_x \in \R$
 such that
 \begin{equation*}
-\sabs{f_n(x)} \leq M_x \qquad \text{for all $n \in \N$} .
+\sabs{f_n(x)} \leq M_x \qquad \text{for all } n \in \N .
 \end{equation*}
 We say that
 $\{ f_n \}$
 is \emph{\myindex{uniformly bounded}} if there is an $M \in \R$
 such that
 \begin{equation*}
-\sabs{f_n(x)} \leq M \qquad \text{for all $n \in \N$ and all $x \in X$}.
+\sabs{f_n(x)} \leq M \qquad \text{for all } n \in \N \text{ and all } x \in X.
 \end{equation*}
 \end{defn}
 
@@ -2502,7 +2502,7 @@ $f \colon X \to \C$ is said to be
 if for every $\epsilon > 0$, there is a $\delta > 0$
 such that if $x,y \in X$ with $d(x,y) < \delta$ we have
 \begin{equation*}
-\sabs{f(x)-f(y)} < \epsilon \qquad \text{ for all $f \in S$} .
+\sabs{f(x)-f(y)} < \epsilon \qquad \text{for all } f \in S .
 \end{equation*}
 \end{defn}
 
@@ -2534,7 +2534,7 @@ Let $\epsilon > 0$ be given.
 As $\{ f_n \}$ converges uniformly, there is an $N \in \N$ such that for
 all $n \geq N$
 \begin{equation*}
-\sabs{f_n(x)-f_N(x)} < \nicefrac{\epsilon}{3} \qquad \text{for all $x \in X$}.
+\sabs{f_n(x)-f_N(x)} < \nicefrac{\epsilon}{3} \qquad \text{for all } x \in X.
 \end{equation*}
 As $X$ is compact, any continuous function is uniformly continuous.
 So $\{ f_1,f_2,\ldots,f_N \}$ is a finite set of uniformly continuous
@@ -2632,7 +2632,7 @@ X = \bigcup_{j=1}^k B(x_j,\delta) .
 As $\{ f_n \}$ is pointwise bounded there exist $M_1,M_2,\ldots,M_k$
 such that for $j=1,2,\ldots,k$ we have
 \begin{equation*}
-\sabs{f_n(x_j)} \leq M_j \qquad \text{for all $n$.}
+\sabs{f_n(x_j)} \leq M_j \qquad \text{for all } n.
 \end{equation*}
 Let $M := 1+ \max \{ M_1,M_2,\ldots,M_k \}$.  Given any
 $x \in X$, there is a $j$ such that $x \in B(x_j,\delta)$.  Therefore,
@@ -2671,7 +2671,7 @@ converges pointwise on $D$, there exists a single $N$ such that for
 all $n,m \geq N$ we have
 \begin{equation*}
 \sabs{g_n(x_j)-g_m(x_j)} < \nicefrac{\epsilon}{3}
- \qquad \text{for all $j=1,2,\ldots,k$.}
+ \qquad \text{for all } j=1,2,\ldots,k.
 \end{equation*}
 
 Let $x \in X$ be arbitrary.  There is some $j$ such that
@@ -2719,7 +2719,7 @@ subsequence $\{ f_{n_j} \}$.
 The trick is to use the mean value theorem.  If $M$ is the uniform bound on
 $\{ f_n' \}$, then by the mean value theorem for any $n$
 \begin{equation*}
-\sabs{f_n(x)-f_n(y)} \leq M \sabs{x-y} \qquad \text{for all $x,y \in X$}.
+\sabs{f_n(x)-f_n(y)} \leq M \sabs{x-y} \qquad \text{for all } x,y \in X.
 \end{equation*}
 All the $f_n$ are Lipschitz with the same constant and hence
 the sequence is
@@ -3495,7 +3495,7 @@ collection of functions as well.
 there exists a $g_x \in \widebar{\sA}$ with $g_x(x) = f(x)$ and
 }
 \begin{equation*}
-g_x(t) > f(t)-\epsilon \qquad \text{for all $t \in X$}.
+g_x(t) > f(t)-\epsilon \qquad \text{for all } t \in X.
 \end{equation*}
 
 \begin{proof}
@@ -3966,8 +3966,8 @@ so
 \begin{equation*}
 \int_{-\pi}^\pi e^{inx} ~ dx =
 \begin{cases}
-2\pi & \text{if $n=0$,} \\
-0 & \text{otherwise.}
+2\pi & \text{if } n=0, \\
+0    & \text{otherwise.}
 \end{cases}
 \end{equation*}
 Consider
@@ -4112,7 +4112,7 @@ Let $\sum_{n=-\infty}^\infty c_n\, e^{inx}$ be a Fourier series,
 and $C$, $\alpha > 1$ constants such that
 \begin{equation*}
 \sabs{c_n} \leq \frac{C}{\sabs{n}^\alpha}
-\qquad \text{for all $n \in \Z \setminus \{ 0 \}$}.
+\qquad \text{for all } n \in \Z \setminus \{ 0 \}.
 \end{equation*}
 Then the series converges (absolutely and uniformly) to a continuous function on $\R$.
 \end{prop}
@@ -4127,7 +4127,7 @@ Let $\sum_{n=-\infty}^\infty c_n\, e^{inx}$ be a Fourier series,
 and $C$, $\alpha > 2$ constants such that
 \begin{equation*}
 \sabs{c_n} \leq \frac{C}{\sabs{n}^\alpha}
-\qquad \text{for all $n \in \Z \setminus \{ 0 \}$}.
+\qquad \text{for all } n \in \Z \setminus \{ 0 \}.
 \end{equation*}
 Then the series converges to a continuously differentiable function on $\R$.
 \end{prop}
@@ -4220,7 +4220,7 @@ functions on $[a,b]$.  We say that this is an
 \int_a^b \varphi_n(x) \, \overline{\varphi_m(x)} ~ dx
 = 
 \begin{cases}
-1 & \text{if $n=m$,} \\
+1 & \text{if } n=m, \\
 0 & \text{otherwise.}
 \end{cases}
 \end{equation*}
