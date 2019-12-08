@@ -508,7 +508,8 @@ sub read_paragraph {
 			print $out "$thembxline\n";
 		} elsif ($line =~ m/^\\documentclass/ ||
 			$line =~ m/^\\usepackage/ ||
-			$line =~ m/^\\addcontentsline/) {
+			$line =~ m/^\\addcontentsline/ ||
+			$line =~ m/^\\markboth/) {
 			# do nothing
 			;
 		} elsif ($line =~ m/^%mbxCLOSECHAPTER/) {
@@ -601,10 +602,11 @@ while(1)
 	} elsif ($para =~ s/^\\chapter\*\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}[ \n]*//) {
 		#FIXME: un-numbered
 		my $name = do_line_subs($1);
+		my $theid;
 		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
-			my $theid = modify_id($1);
+			$theid = modify_id($1);
 		} else {
-			my $theid = "";
+			$theid = "";
 		}
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		$chapter_num = $chapter_num-1; #hack
@@ -614,10 +616,11 @@ while(1)
 		print "PARA:>$para<\n";
 	} elsif ($para =~ s/^\\chapter\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}[ \n]*//) {
 		my $name = do_line_subs($1);
+		my $theid;
 		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
-			my $theid = modify_id($1);
+			$theid = modify_id($1);
 		} else {
-			my $theid = "";
+			$theid = "";
 		}
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_chapter($theid);
@@ -625,28 +628,31 @@ while(1)
 		print $out "<title>$name</title>\n"; 
 	} elsif ($para =~ s/^\\section\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}[ \n]*//) {
 		my $name = do_line_subs($1);
+		my $theid;
 		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
-			my $theid = modify_id($1);
+			$theid = modify_id($1);
 		} else {
-			my $theid = "";
+			$theid = "";
 		}
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_section($theid,$name);
 	} elsif ($para =~ s/^\\subsection\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}[ \n]*//) {
 		my $name = do_line_subs($1);
+		my $theid;
 		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
-			my $theid = modify_id($1);
+			$theid = modify_id($1);
 		} else {
-			my $theid = "";
+			$theid = "";
 		}
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_subsection($theid,$name);
 	} elsif ($para =~ s/^\\subsubsection\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}[ \n]*//) {
 		my $name = do_line_subs($1);
+		my $theid;
 		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
-			my $theid = modify_id($1);
+			$theid = modify_id($1);
 		} else {
-			my $theid = "";
+			$theid = "";
 		}
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_subsubsection($theid,$name);
