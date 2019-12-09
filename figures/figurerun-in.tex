@@ -1,0 +1,61 @@
+%\documentclass[preview]{standalone}
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amsfonts}
+\usepackage[psamsfonts]{amssymb}
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+\usepackage{graphics}
+\usepackage{tikz-cd}
+\usepackage{units}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[margin=0in]{geometry}
+\usepackage{cancel}
+
+% Times
+\usepackage[theoremfont]{newtxtext}
+\usepackage[vvarbb]{newtxmath}
+
+% Palatino
+%\usepackage[theoremfont]{newpxtext}
+%\usepackage[vvarbb]{newpxmath}
+
+% San Serif fonts
+%\renewcommand{\familydefault}{\sfdefault}
+
+% To allow skrinking to 5.5 x 8.5 inches without whitespaces
+% Make sure to rerun makeindex as well
+% Useful for printing on lilu.com and saving on paper
+%\addtolength{\textheight}{2.13in}
+%\addtolength{\paperheight}{2.13in}
+
+%\newenvironment{emptyenv}{}{}
+
+\usepackage[pdftex,active,tightpage]{preview}
+\PreviewEnvironment{emptyenv}
+\usepackage{amsmath}
+\begin{document}
+\pagestyle{empty}
+%
+\begin{emptyenv}
+%\hspace*{1cm}
+%\noindent
+
+\vspace*{\fill}
+
+\begin{center}
+
+\input THEFILE.pdf_t
+
+\end{center}
+
+\vspace*{\fill}
+
+%\hspace*{1cm}
+\end{emptyenv}
+\end{document}

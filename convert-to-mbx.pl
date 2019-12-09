@@ -1178,38 +1178,20 @@ while(1)
 				print $out "<figure xml:id=\"$theid\">\n";
 				print $out "  <caption>$caption</caption>\n";
 
-				if ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*$/) {
-					my $thesize = $1;
-					my $thefile = "figures/$2";
-					$thesize =~ s/width=//g;
+				if ($fig =~ m/^[ \n]*\\includegraphics\[(width=[^]]*)\]\{([^}]*?)\}[ \n]*$/) {
+					my $thesizestr = "$1";
+					my $thefile = "$2";
 					ensure_mbx_svg_version ($thefile);
-					#ensure_mbx_png_version ($thefile);
-					print $out "  <raimage source=\"$thefile-mbx\" width=\"100\%\" background-color=\"white\" maxwidth=\"$thesize\" />\n";
-					#if ($thesize ne "") {
-					#print $out "  <raimage source=\"$thefile-mbx\" width=\"$thesize\" />\n";
-					#} else {
-					#$thesizestr = get_size_of_svg("$thefile-mbx.svg");
-					#print $out "  <raimage source=\"$thefile-mbx\" $thesizestr />\n";
-					#}
-				} elsif ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*\\\\(\[[0-9]*pt\])?[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*$/) {
-					my $thesize1 = $1;
-					my $thefile1 = "figures/$2";
-					my $thesize2 = $4;
-					my $thefile2 = "figures/$5";
-					$thesize1 =~ s/width=//g;
-					$thesize2 =~ s/width=//g;
-					ensure_mbx_svg_version ($thefile1);
-					ensure_mbx_svg_version ($thefile2);
-					#ensure_mbx_png_version ($thefile1);
-					#ensure_mbx_png_version ($thefile2);
-					#FIXME: what about maxwidth?
-					print $out "  <raimage source=\"$thefile1-mbx\" width=\"100\%\" background-color=\"white\" maxwidth=\"$thesize1\" />\n";
-					print $out "  <raimage source=\"$thefile2-mbx\" width=\"100\%\" background-color=\"white\" maxwidth=\"$thesize2\" />\n";
-
-				} elsif ($fig =~ m/^[ \n]*\\inputpdft\{(.*?)\}[ \n]*$/) {
+					print $out "  <raimage source=\"$thefile-mbx\" background-color=\"white\" $thesizestr />\n";
+				} elsif ($fig =~ m/^[ \n]*\\includegraphics\{([^}]*?)\}[ \n]*$/) {
+					my $thefile = "$2";
+					ensure_mbx_svg_version ($thefile);
+					my $thesizestr = get_size_of_svg("$thefile-mbx.svg");
+					print $out "  <raimage source=\"$thefile-mbx\" background-color=\"white\" $thesizestr />\n";
+				} elsif ($fig =~ m/^[ \n]*\\subimport\*\{figures\/\}\{(.*?)\.pdf_t\}[ \n]*$/) {
 					my $thefile = "figures/$1";
-					my $thesizestr = get_size_of_svg("$thefile-tex4ht.svg");
-					print $out "<raimage source=\"$thefile-tex4ht\" $thesizestr />\n";
+					my $thesizestr = get_size_of_svg("$thefile-mbxpdft.svg");
+					print $out "<raimage source=\"$thefile-mbxpdft\" $thesizestr />\n";
 				} else {
 					print "\n\n\nHUH?\n\n\nFigure too complicated!\n\nFIG=>$fig<\n\n";
 					$num_errors++;

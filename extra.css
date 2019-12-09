@@ -38,6 +38,11 @@
  background-attachment: local, local, scroll, scroll;
 }
 
+/* get rid of boldness in definitions */
+.pretext-content .definition-like p > em {
+	font-weight:normal;
+}
+
 ol.lower-roman > li::marker { content: "(" counter(list-item, lower-roman) ")"; }
 ol.lower-alpha > li::marker { content: counter(list-item, lower-alpha) ")"; }
 ol.decimal > li::marker { content: counter(list-item, decimal) ")"; }

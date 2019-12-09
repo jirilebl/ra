@@ -13,7 +13,7 @@ echo
 echo The option --add-track will add my google tracking, this is probably
 echo only for me.
 echo
-echo To rerun all figures first do \"rm "*-mbx.*" "*-tex4ht.*"\", or run
+echo To rerun all figures first do \"rm "*-mbx.*" "*-mbxpdft.*"\", or run
 echo this script with --kill-generated.
 echo
 
@@ -54,7 +54,7 @@ while [ "$1" != "" ]; do
 	    echo "OPTION (kill-generated) Killing generated figures and exiting."
 	    cd figures
 	    rm *-mbx.(svg|png)
-	    rm *-tex4ht.(svg|png)
+	    rm *-mbxpdft.(svg|png)
 	    cd ..
 	    exit
 	    ;;
@@ -70,15 +70,15 @@ done
 # wait for enter or ^C
 read
 
-#if [ "$PDFT" = "yes" ] ; then
-#	echo
-#	echo RUNNING FIGURES...
-#	echo
-#
-#	cd figures
-#	./figurerun.sh 192
-#	cd ..
-#fi
+if [ "$PDFT" = "yes" ] ; then
+	echo
+	echo RUNNING FIGURES...
+	echo
+
+	cd figures
+	./figurerun.sh 192
+	cd ..
+fi
 
 echo
 echo RUNNING convert-to-mbx.pl ...
