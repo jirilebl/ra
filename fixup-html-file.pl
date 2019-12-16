@@ -47,7 +47,8 @@ while($line = <STDIN>)
 	}
 	if ($line =~ m/<\/body>/) {
 		print "<span class=\"print-pdf-warning\">\n";
-		print " <em>For a higher quality printout use the PDF version: <tt>https://www.jirka.org/ra/realanal.pdf</tt></em>\n";
+		print " <em>For a higher quality printout use the PDF versions: <tt>https://www.jirka.org/ra/realanal.pdf</tt>";
+		print " or <tt>https://www.jirka.org/ra/realanal2.pdf</tt></em>\n";
 		print "</span>\n";
 	}
 	$line =~ s/>Authored in PreTeXt</>Created with PreTeXt</;
