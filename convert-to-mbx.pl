@@ -328,6 +328,28 @@ sub do_line_subs {
 	return $line;
 }
 
+sub do_more_subs {
+	my $line = do_line_subs(shift);
+
+	while ($line =~ s!\\ref\{([^}]*)\}!<xref ref="%MBXID%" text="global"/>!s) {
+		my $theid = modify_id($1);
+		$line =~ s!%MBXID%!$theid!;
+	}
+
+	while ($line =~ s!\\(chapter|Chapter|appendix|Appendix|section|subsection|thm|lemma|prop|cor|defn|remark|table|figure|example|exercise)v?ref\{([^}]*)\}!<xref ref="%MBXID%" text="type-global"/>!s) {
+		my $theid = modify_id($2);
+		$line =~ s!%MBXID%!$theid!;
+	}
+
+	$line =~ s|\$(.*?)\$|<m>$1</m>|gs;
+	$line =~ s|\\myquote\{(.*?)\}|<q>$1</q>|sg;
+
+	$line =~ s|\\myindex\{([^}]*)\}|$1<idx>$1</idx>|gs;
+
+	return $line;
+}
+
+
 sub print_line {
 	my $line = shift;
 
@@ -342,14 +364,14 @@ sub print_line {
 sub do_thmtitle_subs {
 	my $title = shift;
 
-	$title =~ s|\\href\{(.*?)\}\{(.*?)\}|<url href=\"$1\">$2</url>|s;
+	$title =~ s|\\href\{(.*?)\}\{(.*?)\}|<url href=\"$1\">$2</url>|gs;
 
 	#FIXME: should check if multiple footnotes work
-	while ($title =~ s|\\footnote\{(.*?)\}|<fn>$1</fn>|s) {
+	while ($title =~ s!\\footnote\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}!<fn>$1</fn>!s) {
 		;
 	}
 
-	$title = do_line_subs($title);
+	$title = do_more_subs($title);
 
 	return $title;
 }
@@ -616,7 +638,7 @@ while(1)
 	} elsif ($para =~ s/^([ \n\r\t])//) {
 		print $out "$1";
 
-	} elsif ($para =~ s/^\\mbx[ \t](.*?)%ENDOFLINE%//) {
+	} elsif ($para =~ s/^\\mbx[ \t](.*?)%ENDOFLINE%[ \n]*//) {
 		my $thembxline = $1;
 		$thembxline =~ s/%MBXGT%/>/g;
 		$thembxline =~ s/%MBXLT%/</g;
@@ -740,7 +762,7 @@ while(1)
 		$index =~ s|\$(.*?)\$|<m>$1</m>|sg;
 		print $out "$index<idx>$index</idx>"; 
 
-	} elsif ($para =~ s/^\\volIref\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}[ \n]*/$3/) {
+	} elsif ($para =~ s/^\\volIref\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}/$3/) {
 		printf "volIref using \"$3\"\n";
 		#this just replaces this with the second argument
 
@@ -772,6 +794,10 @@ while(1)
 		$para =~ s/^\\propvref\{([^}]*)\}// ||
 		$para =~ s/^\\corref\{([^}]*)\}// ||
 		$para =~ s/^\\corvref\{([^}]*)\}// ||
+		$para =~ s/^\\remarkref\{([^}]*)\}// ||
+		$para =~ s/^\\remarkvref\{([^}]*)\}// ||
+		$para =~ s/^\\defnref\{([^}]*)\}// ||
+		$para =~ s/^\\defnvref\{([^}]*)\}// ||
 		$para =~ s/^\\tableref\{([^}]*)\}// ||
 		$para =~ s/^\\tablevref\{([^}]*)\}// ||
 		$para =~ s/^\\figureref\{([^}]*)\}// ||
@@ -785,7 +811,7 @@ while(1)
 		print "(named ref $theid)\n";
 		print $out "<xref ref=\"$theid\" text=\"type-global\"/>";
 	} elsif ($para =~ s/^\\hyperref\[([^[]*)\]\{([^}]*)\}//) {
-		my $name = $2;
+		my $name = do_line_subs($2);
 		my $theid = modify_id($1);
 		open_paragraph_if_not_open ();
 		print "(hyperref $theid $name)\n";
@@ -1022,8 +1048,7 @@ while(1)
 			if ($table =~ s/\\caption\{(.*?)[ \n]*\\label\{(.*?)\}\}[ \n]*//s) {
 				$caption = $1;
 				$theid = modify_id($2);
-				$caption =~ s|\\myquote\{(.*?)\}|<q>$1</q>|sg;
-				$caption =~ s|\$(.*?)\$|<m>$1</m>|sg;
+				$caption = do_more_subs($caption);
 			} else {
 				print "\n\n\nHUH?\n\n\nNo caption/label!\n\n$para\n\n";
 				$num_errors++;
@@ -1198,9 +1223,7 @@ while(1)
 
 					print "figure id $theid\n";
 			
-					# FIXME possibly not ok within math?
-					$caption =~ s|~|<nbsp/>|g;
-			
+					$caption = do_more_subs($caption);
 					$caption =~ s|\\myquote\{(.*?)\}|<q>$1</q>|sg;
 					$caption =~ s|\$(.*?)\$|<m>$1</m>|sg;
 				} else {
@@ -1223,7 +1246,7 @@ while(1)
 					ensure_mbx_svg_version ($thefile);
 					print $out "  <raimage source=\"$thefile-mbx\" background-color=\"white\" $thesizestr />\n";
 				} elsif ($fig =~ m/^[ \n]*\\includegraphics\{([^}]*?)\}[ \n]*$/) {
-					my $thefile = "$2";
+					my $thefile = "$1";
 					ensure_mbx_svg_version ($thefile);
 					my $thesizestr = get_size_of_svg("$thefile-mbx.svg");
 					print $out "  <raimage source=\"$thefile-mbx\" background-color=\"white\" $thesizestr />\n";
