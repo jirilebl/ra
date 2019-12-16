@@ -19,10 +19,13 @@ while($line = <STDIN>)
 		print " class=\"index-button toolbar-item button\" href=\"https://www.jirka.org/ra/\" title=\"Home\" alt=\"Book Home\">Home</a>\n";
 
 		print "<a onclick=\"gtag('event','download',{'event_category': 'PDF', 'event_action': 'Download', 'event_label': 'PTXhtml(top) /ra/realanal.pdf'});\"\n";
-		print " class=\"index-button toolbar-item button\" href=\"https://www.jirka.org/ra/realanal.pdf\" title=\"PDF\">PDF</a>\n";
+		print " class=\"index-button toolbar-item button\" href=\"https://www.jirka.org/ra/realanal.pdf\" title=\"PDF\">PDF(I)</a>\n";
+		print "<a onclick=\"gtag('event','download',{'event_category': 'PDF', 'event_action': 'Download', 'event_label': 'PTXhtml(top) /ra/realanal.pdf'});\"\n";
+		print " class=\"index-button toolbar-item button\" href=\"https://www.jirka.org/ra/realanal2.pdf\" title=\"PDF\">PDF(II)</a>\n";
 
-		print "<a onclick=\"gtag('event','download',{'event_category': 'amazon', 'event_action': 'Link', 'event_label': 'PTXhtml(top) ra'});\"\n";
-		print " class=\"index-button toolbar-item button\" style=\"width:100px;\" href=\"https://smile.amazon.com/dp/1706230230\" title=\"Paperback\" alt=\"Buy Paperback\">Paperback</a>\n";
+		##FIXME: add paperback buttons
+		#print "<a onclick=\"gtag('event','download',{'event_category': 'amazon', 'event_action': 'Link', 'event_label': 'PTXhtml(top) ra'});\"\n";
+		#print " class=\"index-button toolbar-item button\" style=\"width:100px;\" href=\"https://smile.amazon.com/dp/1706230230\" title=\"Paperback\" alt=\"Buy Paperback\">Paperback</a>\n";
 	}
 	if ($line =~ m/<\/head>/) {
 		# Fast preview doesn't seem worth it and it could be confusing since it's not quite right so disable it

@@ -584,6 +584,7 @@ sub read_paragraph {
 	#Do simple substitutions, (these are incomplete, just the ones I actually used at some point)
 	$para =~ s/\\"\{o\}/ö/g;
 	$para =~ s/\\"o/ö/g;
+	$para =~ s/\\\^o/ô/g;
 	$para =~ s/\\"i/ï/g;
 	$para =~ s/\\c\{S\}/Ş/g;
 	$para =~ s/\\u\{g\}/ğ/g;
@@ -810,11 +811,17 @@ while(1)
 		open_paragraph_if_not_open ();
 		print "(named ref $theid)\n";
 		print $out "<xref ref=\"$theid\" text=\"type-global\"/>";
-	} elsif ($para =~ s/^\\hyperref\[([^[]*)\]\{([^}]*)\}//) {
+	} elsif ($para =~ s/^\\hyperref\[(.*?)\]\{(.*?)\}//) {
 		my $name = do_line_subs($2);
 		my $theid = modify_id($1);
 		open_paragraph_if_not_open ();
 		print "(hyperref $theid $name)\n";
+		print $out "<xref ref=\"$theid\" text=\"title\">$name</xref>";
+	} elsif ($para =~ s/^\\hyperlink\{(.*?)\}\{(.*?)\}//) {
+		my $name = do_line_subs($2);
+		my $theid = modify_id($1);
+		open_paragraph_if_not_open ();
+		print "(hyperlink $theid $name)\n";
 		print $out "<xref ref=\"$theid\" text=\"title\">$name</xref>";
 	} elsif ($para =~ s/^\\emph\{//) {
 		print "(em start)\n";
@@ -1181,86 +1188,57 @@ while(1)
 			$figure =~ s/\\capstart[ \n]*//g;
 			$figure =~ s/\\noindent[ \n]*//g;
 			
-			my @figs = ();
-
 			#print "FIGFIG2 >$figure<\n";
 
-			#FIXME: this is really my own particular usage!
-			if ($figure =~ m/\\parbox/) {
-				$foundsome = 0;
-				print "found figure boxes\n";
-				while ($figure =~ s/\\parbox\[t\]\{(.*?)\}\{(.*?)\n *\}//sm ||
-				       $figure =~ s/\\parbox\{(.*?)\}\{(.*?)\n *\}//sm) {
-					#print "FIGI >$1< >$2<\n";
-					push @figs, $2;
-					$foundsome = 1;
-					print "got figure\n";
-				}
-				if (not $foundsome) {
-					print "\n\n\nHUH?\n\n\nNo figure parboxes!\n\nFIG=$figure";
-					$num_errors++;
-				}
-				if ($figure =~ m/\\parbox/) {
-					print "\n\n\nHUH?\n\n\nFigure parboxes left over!\n\nFIG=$figure";
-					$num_errors++;
-				}
+			#print "FIGFIG3 >$figure<\n";
+			
+			my $caption = "";
+			my $theid = "";
+			if ($figure =~ s/\\caption(\[.*?\])?\{(.*?)[ \n]*\\label\{(.*?)\}\}[ \n]*//s) {
+				$caption = $2;
+				$theid = modify_id($3);
+
+				print "figure id $theid\n";
+		
+				$caption = do_more_subs($caption);
+				$caption =~ s|\\myquote\{(.*?)\}|<q>$1</q>|sg;
+				$caption =~ s|\$(.*?)\$|<m>$1</m>|sg;
 			} else {
-				@figs = ($figure);
+				print "\n\n\nHUH?\n\n\nNo caption/label!\n\nFIG=>$figure<\n\n";
+				$num_errors++;
 			}
 
-			#print @figs;
+			close_paragraph ();
+			$figure =~ s/\\quad[ \n]*//g;
+			$figure =~ s/\\qquad[ \n]*//g;
+			$figure =~ s/\\(med|big|small)skip[ \n]*//g;
+			$figure =~ s/\\par[ \n]*//g;
 
-			foreach (@figs) {
-				my $fig = $_;
+			print $out "<figure xml:id=\"$theid\">\n";
+			print $out "  <caption>$caption</caption>\n";
 
-				#print "FIGFIG3 >$fig<\n";
-				
-				my $caption = "";
-				my $theid = "";
-				if ($fig =~ s/\\caption(\[.*?\])?\{(.*?)[ \n]*\\label\{(.*?)\}\}[ \n]*//s) {
-					$caption = $2;
-					$theid = modify_id($3);
-
-					print "figure id $theid\n";
-			
-					$caption = do_more_subs($caption);
-					$caption =~ s|\\myquote\{(.*?)\}|<q>$1</q>|sg;
-					$caption =~ s|\$(.*?)\$|<m>$1</m>|sg;
-				} else {
-					print "\n\n\nHUH?\n\n\nNo caption/label!\n\nFIG=>$fig<\n\n";
-					$num_errors++;
-				}
-
-				close_paragraph ();
-				$fig =~ s/\\quad[ \n]*//g;
-				$fig =~ s/\\qquad[ \n]*//g;
-				$fig =~ s/\\(med|big|small)skip[ \n]*//g;
-				$fig =~ s/\\par[ \n]*//g;
-
-				print $out "<figure xml:id=\"$theid\">\n";
-				print $out "  <caption>$caption</caption>\n";
-
-				if ($fig =~ m/^[ \n]*\\includegraphics\[(width=[^]]*)\]\{([^}]*?)\}[ \n]*$/) {
+			do {
+				if ($figure =~ s/^[ \n]*\\includegraphics\[(width=[^]]*)\]\{([^}]*?)\}[ \n]*//) {
 					my $thesizestr = "$1";
 					my $thefile = "$2";
 					ensure_mbx_svg_version ($thefile);
 					print $out "  <raimage source=\"$thefile-mbx\" background-color=\"white\" $thesizestr />\n";
-				} elsif ($fig =~ m/^[ \n]*\\includegraphics\{([^}]*?)\}[ \n]*$/) {
-					my $thefile = "$1";
+				} elsif ($figure =~ s/^[ \n]*\\includegraphics(\[align=t\])?\{([^}]*?)\}[ \n]*//) {
+					my $thefile = "$2";
 					ensure_mbx_svg_version ($thefile);
 					my $thesizestr = get_size_of_svg("$thefile-mbx.svg");
 					print $out "  <raimage source=\"$thefile-mbx\" background-color=\"white\" $thesizestr />\n";
-				} elsif ($fig =~ m/^[ \n]*\\subimport\*\{figures\/\}\{(.*?)\.pdf_t\}[ \n]*$/) {
+				} elsif ($figure =~ s/^[ \n]*\\subimport\*\{figures\/\}\{(.*?)\.pdf_t\}[ \n]*//) {
 					my $thefile = "figures/$1";
 					my $thesizestr = get_size_of_svg("$thefile-mbxpdft.svg");
 					print $out "<raimage source=\"$thefile-mbxpdft\" $thesizestr />\n";
-				} else {
-					print "\n\n\nHUH?\n\n\nFigure too complicated!\n\nFIG=>$fig<\n\n";
+				} elsif (not $figure eq "") {
+					print "\n\n\nHUH?\n\n\nFigure too complicated!\n\nFIG(whatsleft)=>$figure<\n\n";
+					$figure = "";
 					$num_errors++;
 				}
-				print $out "</figure>\n";
-
-			}
+			} while (not $figure eq "");
+			print $out "</figure>\n";
 		} else {
 			print "\n\n\nHUH?\n\n\nNo end figure!\n\n$para\n\n";
 			$num_errors++;

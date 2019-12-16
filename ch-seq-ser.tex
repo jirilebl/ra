@@ -95,12 +95,7 @@ $\N$.   Secondly we also plot it as a sequence of labeled points on the real
 line.
 
 \begin{myfigureht}
-\includegraphics{figures/sequence-convergence}
-
-\vspace*{12pt}
-
-\hspace{13pt}
-\includegraphics{figures/sequence-convergence-2}
+\subimport*{figures/}{sequence-convergence_full.pdf_t}
 \caption{Illustration of convergence.  On top, the first ten points of the sequence as a graph
 with $M$ and the interval around the limit $x$ marked.  On bottom, the points of the same sequence marked on the
 number line.\label{figsequenceconvergence}}
@@ -789,8 +784,6 @@ See \figureref{figsqueeze}.
 \end{proof}
 
 \begin{myfigureht}
-\newcommand{\ltepsilon}{< \nicefrac{2\epsilon}{3} + \nicefrac{\epsilon}{3} =
-\epsilon}
 \subimport*{figures/}{figsqueeze.pdf_t}
 \caption{Squeeze lemma proof in picture.\label{figsqueeze}}
 \end{myfigureht}
@@ -4670,12 +4663,12 @@ then $\sum n a_n x^n$ is also convergent with the same radius of convergence.
 There are different notions of summability (convergence)
 of a series
 than just the one we have seen.
-A common one is \emph{\myindex{Ces{\`a}ro summability}}%
+A common one is \emph{\myindex{Ces\`aro summability}}%
 \footnote{Named for the Italian mathematician
-\href{https://en.wikipedia.org/wiki/Ernesto_Ces\%C3\%A0ro}{Ernesto Ces{\`a}ro}
+\href{https://en.wikipedia.org/wiki/Ernesto_Ces\%C3\%A0ro}{Ernesto Ces\`aro}
 (1859--1906).}.  Let $\sum a_n$ be a series
 and let $s_n$ be the $n$th partial sum.  The series is said to
-be Ces{\`a}ro summable to $a$ if
+be Ces\`aro summable to $a$ if
 \begin{equation*}
 a = \lim_{n\to \infty} \frac{s_1 + s_2 + \cdots + s_n}{n} .
 \end{equation*}
@@ -4686,9 +4679,9 @@ a = \lim_{n\to \infty} \frac{s_1 + s_2 + \cdots + s_n}{n} .
 \begin{enumerate}[a)]
 \item
 If $\sum a_n$ is convergent to $a$ (in the usual sense), show that
-$\sum a_n$ is Ces{\`a}ro summable to $a$.
+$\sum a_n$ is Ces\`aro summable (see above) to $a$.
 \item
-Show that in the sense of Ces{\`a}ro $\sum {(-1)}^n$ is summable to
+Show that in the sense of Ces\`aro $\sum {(-1)}^n$ is summable to
 $\nicefrac{1}{2}$.
 \item
 Let $a_n := k$ when $n = k^3$ for some $k \in \N$,
@@ -4696,7 +4689,7 @@ $a_n := -k$ when $n = k^3+1$ for some $k \in \N$,
 otherwise
 let $a_n := 0$.  Show that $\sum a_n$ diverges in the usual sense,
 (partial sums are unbounded), but it is
-Ces{\`a}ro summable to 0 (seems a little paradoxical at first sight).
+Ces\`aro summable to 0 (seems a little paradoxical at first sight).
 \end{enumerate}
 \end{exercise}
 
