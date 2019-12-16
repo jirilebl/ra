@@ -3,8 +3,11 @@
 <!-- Identify as a stylesheet -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
-  <!-- Import the usual html conversion templates            -->
-  <xsl:import href="/home/jirka/mathbook/xsl/mathbook-html.xsl"/>
+  <!-- Import the usual html conversion templates                -->
+  <!-- ********************************************************* -->
+  <!-- This requires editing the path based on your installation -->
+  <!-- ********************************************************* -->
+  <xsl:import href="../../mathbook/xsl/mathbook-html.xsl"/>
 
   <!-- Intend output for rendering by html -->
   <!--<xsl:output method="html" />-->
@@ -141,6 +144,6 @@
 
   <xsl:param name="html.css.extra" select="'extra.css'"/>
 
-  <xsl:param name="html.google-search" select="'006490116505509195242:1mxn4dbgh8e'"/>
+  <xsl:param name="publisher" select="'realanal-publisher.xml'"/>
 
 </xsl:stylesheet>
