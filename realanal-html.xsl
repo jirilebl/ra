@@ -11,7 +11,7 @@
 
   <!-- apply-imports applies also the original, apply-templates ignores the original-->
   <!-- need hardcoded numbers on everything, so nonstandard mathbookxml -->
-  <xsl:template match="men|mrow|exercise|example|remark|theorem|chapter|appendix|section|subsection|subsubsection" mode="number">
+  <xsl:template match="men|mrow|exercise|example|remark|theorem|lemma|proposition|corollary|principle|axiom|chapter|appendix|section|subsection|subsubsection" mode="number">
     <xsl:choose>
       <xsl:when test="@number">
         <xsl:value-of select="@number"/>

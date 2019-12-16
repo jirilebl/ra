@@ -493,20 +493,37 @@ sub read_paragraph {
 				 $in = pop @ins;
 			 }
 
-		#This will only work right if the paragraphs are separated, that is if it is
-		#in the middle of a paragraph it put the %mbx line in the wrong place
-		} elsif ($line =~ m/^%mbx[ \t](.*)$/) {
-			my $thembxline = $1;
-			#FIXME: this is a terrible hack, but the only way I can get this
-			#hardcoded number stuff to work
+		} elsif ($line =~ s/^%mbx[ \t](.*)$/\\mbx ${1}%ENDOFLINE%/) {
+			#do nothing here, will deal with this later
+			
+			#protect the xml thingies from us
+			$line =~ s/>/%MBXGT%/g;
+			$line =~ s/</%MBXLT%/g;
+			$line =~ s/&/%MBXAMP%/g;
+			$para = $para . $line . "\n";
+			
+			#FIXME: if it would be here it wouldn't work in the middle
+			#of a paragraph:
 			#This will only work right if the paragraphs are separated, that is if it is
-			#in the middle of a paragraph it will get the numbers wrong.
-			while ($thembxline =~ m/%MBXEQNNUMBER%/) {
-				$equation_num = $equation_num+1;
-				$the_num = get_equation_number ();
-				$thembxline =~ s/%MBXEQNNUMBER%/$the_num/;
-			}
-			print $out "$thembxline\n";
+			#in the middle of a paragraph it put the %mbx line in the wrong place
+		
+			#my $thembxline = $1;
+			##FIXME: this is a terrible hack, but the only way I can get
+			##hardcoded number stuff to work
+			##This will only work right if the paragraphs are separated, that is if it is
+			##in the middle of a paragraph it will get the numbers wrong.
+			#while ($thembxline =~ m/%MBXEQNNUMBER%/) {
+			#$equation_num = $equation_num+1;
+			#$the_num = get_equation_number ();
+			#$thembxline =~ s/%MBXEQNNUMBER%/$the_num/;
+			#}
+			#print $out "$thembxline\n";
+		} elsif ($line =~ s/^%mbxCLOSEPARAGRAPH[ \t]*$/\\mbxCLOSEPARAGRAPH/) {
+			#do nothing here, will deal with this later
+			$para = $para . $line . "\n";
+		} elsif ($line =~ s/^%mbxCLOSEITEM[ \t]*$/\\mbxCLOSEITEM/) {
+			#do nothing here, will deal with this later
+			$para = $para . $line . "\n";
 		} elsif ($line =~ m/^\\documentclass/ ||
 			$line =~ m/^\\usepackage/ ||
 			$line =~ m/^\\addcontentsline/ ||
@@ -598,6 +615,18 @@ while(1)
 	#copy whitespace
 	} elsif ($para =~ s/^([ \n\r\t])//) {
 		print $out "$1";
+
+	} elsif ($para =~ s/^\\mbx[ \t](.*?)%ENDOFLINE%//) {
+		my $thembxline = $1;
+		$thembxline =~ s/%MBXGT%/>/g;
+		$thembxline =~ s/%MBXLT%/</g;
+		$thembxline =~ s/%MBXAMP%/&/g;
+		print $out "$thembxline\n";
+
+	} elsif ($para =~ s/^\\mbxCLOSEPARAGRAPH[ \n]*//) {
+		close_paragraph();
+	} elsif ($para =~ s/^\\mbxCLOSEITEM[ \n]*//) {
+		close_item();
 
 	} elsif ($para =~ s/^\$([^\$]+)\$//) {
 		my $line = $1;
@@ -1499,7 +1528,10 @@ while(1)
 		print "(item)\n";
 		$list_start++;
 		open_item();
-		open_paragraph();
+
+		# a paragraph will open automatically, but this way we can
+		# insert some xml before it does
+		#open_paragraph();
 
 	} elsif ($para =~ s/^\\begin\{tasks\}\[counter-format=tsk\[1\]\)\][ \n]*//) {
 		close_paragraph();
