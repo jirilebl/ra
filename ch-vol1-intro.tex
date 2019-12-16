@@ -6,6 +6,14 @@
 
 \section{About this book}
 
+%mbxSTARTIGNORE
+\VolOneIntroExtrahead
+%mbxENDIGNORE
+% pretext (mbx) is always the two volume set
+%mbxlatex
+%mbxlatex \subsection{About Volume I}
+%mbxlatex 
+
 This first volume is a one semester course in basic analysis.
 Together with the second volume it is a year-long course.
 It started its life
@@ -101,7 +109,7 @@ clutter.
 As a general rule, I use $:=$ instead of $=$ to define an
 object rather than to simply show equality.  I use this symbol rather more
 liberally than is usual for emphasis.
-I use it even when the context is ``local,''
+I use it even when the context is \myquote{local,}
 that is, I may simply define a function $f(x) := x^2$
 for a single exercise or example.
 
@@ -124,6 +132,17 @@ Chase Meadors, Andreas Giannopoulos, Nick Nelsen,
 Ru Wang, Trevor Fancher,
 an anonymous reader, and in general all the students in my classes for suggestions and
 finding errors and typos.
+
+% if in the two volume set then this will expand to the intro for vol II
+%mbxSTARTIGNORE
+\VolTwoIntro
+%mbxENDIGNORE
+% pretext (mbx) is always the two volume set
+%mbxlatex
+%mbxlatex \subsection{About Volume II}
+%mbxlatex 
+%mbxlatex \input frag-vol2-intro.tex
+%mbxlatex 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -153,7 +172,7 @@ integral or the derivative may not be able to properly answer all the
 students' questions.
 To this day I remember several nonsensical statements I heard
 from my calculus teacher in high school, who simply did not understand
-the concept of the limit, though he could ``do'' the problems in the
+the concept of the limit, though he could \myquote{do} the problems in the
 textbook.
 
 \medskip
@@ -223,11 +242,11 @@ Let us get on with the show\ldots
 or left as reading)}
 
 Before we start talking about analysis, we need to fix some language.
-Modern\footnote{The term ``modern'' refers to late 19th century up to
+Modern\footnote{The term \myquote{modern} refers to late 19th century up to
 the present.}
 analysis uses the language of sets, and therefore that is where we start.
 We talk about sets in a rather informal way, using the so-called
-``\myindex{na\"ive set theory}.''  Do not worry, that is what majority of
+\myquote{\myindex{na\"ive set theory}.}  Do not worry, that is what majority of
 mathematicians use, and it is hard to get into trouble.
 The reader has hopefully seen the very basics of set theory
 and proof writing before, and this section should be a quick refresher.
@@ -254,7 +273,7 @@ S := \{ 0, 1, 2 \}
 \end{equation*}
 is the set containing
 the three elements 0, 1, and 2.
-By ``$:=$'',\glsadd{not:def} we mean we are defining what $S$ is, rather than
+By \myquote{$:=$},\glsadd{not:def} we mean we are defining what $S$ is, rather than
 just showing equality.
 We write\glsadd{not:eltof}
 \begin{equation*}
@@ -263,7 +282,8 @@ We write\glsadd{not:eltof}
 to denote that the number 1 belongs to the set $S$.  That is, 1 is a member
 of $S$.
 At times we want to say that two elements are in a set $S$, so we 
-write ``$1,2 \in S$'' as a shorthand for ``$1 \in S$ and $2 \in S$.''
+write \myquote{$1,2 \in S$} as a shorthand for
+\myquote{$1 \in S$ and $2 \in S$.}
 
 Similarly, we write\glsadd{not:noteltof}
 \begin{equation*}
@@ -428,7 +448,7 @@ A \setminus (B \cap C) &= (A \setminus B) \cup (A \setminus C) .
 
 \begin{proof}
 The first statement is proved by the second statement if we
-assume the set $A$ is our ``universe.''
+assume the set $A$ is our \myquote{universe.}
 
 Let us prove $A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)$.
 Remember the definition of equality of sets.  First, we must show that
@@ -456,7 +476,8 @@ a \emph{Proposition}, and a few we call a \emph{Lemma} (a result leading to anot
 \emph{Corollary} (a quick consequence of the preceding result).
 Do not read too much into
 the naming.  Some of it is traditional, some of it is stylistic choice.
-It is not necessarily true that a \emph{Theorem} is always ``more important'' than a
+It is not necessarily true that a \emph{Theorem} is always
+\myquote{more important} than a
 \emph{Proposition} or a \emph{Lemma}.
 
 We will also need to intersect or union several sets at once.  If there are
@@ -572,8 +593,8 @@ $P(n)$ is true for all $n \in \N$.
 
 Sometimes it is convenient to start at a different number than 1, but 
 all that changes is the labeling.  The assumption that
-$P(n)$ is true in ``if $P(n)$ is true,
-then $P(n+1)$ is true''
+$P(n)$ is true in \myquote{if $P(n)$ is true,
+then $P(n+1)$ is true}
 is usually called the \emph{\myindex{induction hypothesis}}.
 
 \begin{example}
@@ -888,7 +909,7 @@ an equivalence relation.
 \end{example}
 
 Equivalence relations are useful in that they divide a set into sets of
-``equivalent'' elements.
+\myquote{equivalent} elements.
 
 \begin{defn}
 Let $A$ be a set and $\sR$ an equivalence relation.
@@ -923,7 +944,7 @@ Usually the equivalence class $[(a,b)]$ is written as $\nicefrac{a}{b}$.
 \subsection{Cardinality}
 
 A subtle issue in set theory and one generating a considerable amount of
-confusion among students is that of cardinality, or ``size'' of sets.  The
+confusion among students is that of cardinality, or \myquote{size} of sets.  The
 concept of cardinality is important in modern mathematics in general and
 in analysis in particular.  In this section, we will see the first really
 unexpected theorem.
@@ -950,7 +971,7 @@ We then write $\abs{A} := n$.  If $A$ is empty, we write $\abs{A} := 0$.
 In either case, we say that $A$ is
 \emph{\myindex{finite}}.
 
-We say $A$ is \emph{\myindex{infinite}} or ``of infinite cardinality''
+We say $A$ is \emph{\myindex{infinite}} or \myquote{of infinite cardinality}
 if $A$ is not finite.
 \end{defn}
 

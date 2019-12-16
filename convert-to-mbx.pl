@@ -13,7 +13,7 @@ my @ins;
 
 # FIXME: same script should be used for realanal.tex and realanal2.tex, perhaps both volumes all at once?
  
-open(my $in,'<', "realanal.tex") or die $!; 
+open(my $in,'<', "realanal12.tex") or die $!; 
 open(my $out, '>' ,"realanal-out.xml") or die $!; 
  
 $mbxignore = 0;
@@ -555,7 +555,10 @@ sub read_paragraph {
 	$para =~ s/\\`\{e\}/è/g;
 	$para =~ s/\\`a/à/g;
 	$para =~ s/\\`\{a\}/à/g;
+	$para =~ s/\\'a/á/g;
+	$para =~ s/\\'o/ó/g;
 	$para =~ s/\\'i/í/g;
+	$para =~ s/\{\\i\}/ı/g;
 	$para =~ s/\\'\{i\}/í/g;
 	$para =~ s/\\'E/É/g;
 	$para =~ s/\\'\{E\}/É/g;
@@ -706,6 +709,10 @@ while(1)
 		my $index = do_line_subs($1);
 		$index =~ s|\$(.*?)\$|<m>$1</m>|sg;
 		print $out "$index<idx>$index</idx>"; 
+
+	} elsif ($para =~ s/^\\volIref\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}[ \n]*/$3/) {
+		printf "volIref using \"$3\"\n";
+		#this just replaces this with the second argument
 
 	} elsif ($para =~ s/^\\eqref\{([^}]*)\}//) {
 		open_paragraph_if_not_open ();

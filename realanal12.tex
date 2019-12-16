@@ -14,7 +14,6 @@
 %if using smaller font you should also rerun the figures,
 % that is in figures/ run run-all-xp.sh (must have epix installed)
 
-
 \usepackage[T1]{fontenc}
 
 % Footnotes should use symbols, not numbers.  Numbered footnotes are
@@ -41,6 +40,10 @@
 \addtolength{\textheight}{0.8in}
 \addtolength{\topmargin}{-0.3in}
 
+% 6x9 version?
+%\addtolength{\textheight}{1.2in}
+%\addtolength{\paperheight}{1.2in}
+
 %PRINT
 %First offset even/odd pages a bit
 % not for the coil bound full letter size one
@@ -61,7 +64,6 @@
 \usepackage{varioref}
 \usepackage{imakeidx}
 \PassOptionsToPackage{hyphens}{url}
-\usepackage{xr}
 \usepackage{hyperref} % do NOT set [ocgcolorlinks] here!
 
 %If you have an older tex installation you might need
@@ -76,7 +78,7 @@
 \usepackage{import}
 
 %\usepackage{draftwatermark}
-%\SetWatermarkText{Draft of v2.0 as of \today. May change substantially!}
+%\SetWatermarkText{Draft of v5.0 as of \today. May change substantially!}
 %\SetWatermarkAngle{90}
 %\SetWatermarkHorCenter{0.5in}
 %\SetWatermarkColor[gray]{0.7}
@@ -226,19 +228,14 @@
     urlcolor=mypersianblue,
     pdfkeywords={real analysis, Riemann integral, derivative, limit, sequence},
     pdfsubject={Real Analysis},
-    pdftitle={Basic Analysis II: Introduction to Real Analysis, Volume II},
+    pdftitle={Basic Analysis: Introduction to Real Analysis},
     pdfauthor={Jiri Lebl}
 }
 
 % This is really just for marking these
-% so that they are easy to find
-% the second argument is the reference if they are in the same book
-\newcommand{\volIref}[2]{#1\@}
-
-% xr is loaded before hyperref
-\externaldocument[vI-]{realanal}
-
-
+%so that they are easy to find
+% The second argument is the thing for the both volumes together thing
+\newcommand{\volIref}[2]{#2\@}
 
 % Set up our index
 \makeindex
@@ -259,7 +256,7 @@
 
 \author{Ji\v{r}\'i Lebl}
 
-\title{Basic Analysis II: Introduction to Real Analysis, Volume II}
+\title{Basic Analysis: Introduction to Real Analysis}
 
 % Don't include subsections
 \setcounter{tocdepth}{1}
@@ -304,35 +301,20 @@
 \theoremstyle{example}
 \newtheorem{example}[thm]{Example}
 
-\usepackage{suffix}
-
 % referencing
 \newcommand{\figureref}[1]{\hyperref[#1]{Figure~\ref*{#1}}}
-\WithSuffix\newcommand\figureref*[1]{Figure~\ref*{#1}}
 \newcommand{\tableref}[1]{\hyperref[#1]{Table~\ref*{#1}}}
-\WithSuffix\newcommand\tableref*[1]{Table~\ref*{#1}}
 \newcommand{\chapterref}[1]{\hyperref[#1]{chapter~\ref*{#1}}}
-\WithSuffix\newcommand\chapterref*[1]{chapter~\ref*{#1}}
 \newcommand{\Chapterref}[1]{\hyperref[#1]{Chapter~\ref*{#1}}}
-\WithSuffix\newcommand\Chapterref*[1]{Chapter~\ref*{#1}}
 \newcommand{\sectionref}[1]{\hyperref[#1]{\S\ref*{#1}}}
-\WithSuffix\newcommand\sectionref*[1]{\S\ref*{#1}}
 \newcommand{\exerciseref}[1]{\hyperref[#1]{Exercise~\ref*{#1}}}
-\WithSuffix\newcommand\exerciseref*[1]{Exercise~\ref*{#1}}
 \newcommand{\remarkref}[1]{\hyperref[#1]{Remark~\ref*{#1}}}
-\WithSuffix\newcommand\remarkref*[1]{Remark~\ref*{#1}}
 \newcommand{\exampleref}[1]{\hyperref[#1]{Example~\ref*{#1}}}
-\WithSuffix\newcommand\exampleref*[1]{Example~\ref*{#1}}
 \newcommand{\thmref}[1]{\hyperref[#1]{Theorem~\ref*{#1}}}
-\WithSuffix\newcommand\thmref*[1]{Theorem~\ref*{#1}}
 \newcommand{\propref}[1]{\hyperref[#1]{Proposition~\ref*{#1}}}
-\WithSuffix\newcommand\propref*[1]{Proposition~\ref*{#1}}
 \newcommand{\lemmaref}[1]{\hyperref[#1]{Lemma~\ref*{#1}}}
-\WithSuffix\newcommand\lemmaref*[1]{Lemma~\ref*{#1}}
 \newcommand{\corref}[1]{\hyperref[#1]{Corollary~\ref*{#1}}}
-\WithSuffix\newcommand\corref*[1]{Corollary~\ref*{#1}}
 \newcommand{\defnref}[1]{\hyperref[#1]{Definition~\ref*{#1}}}
-\WithSuffix\newcommand\defnref*[1]{Definition~\ref*{#1}}
 
 
 % List of Symbols/Notation
@@ -341,26 +323,100 @@
 \loadglsentries{notations}
 \makeglossaries
 
+%mbx <!--BEFORE book-->
+
+%mbxdocinfo    <website>
+%mbxdocinfo        <title>www.jirka.org/ra/</title>
+%mbxdocinfo        <url>https://www.jirka.org/ra/</url>
+%mbxdocinfo    </website>
+%mbxdocinfo
+%mbxdocinfo    <brandlogo source="logo.png" url="https://www.jirka.org/ra/" />
+%mbxdocinfo
+%mbxdocinfo    <rename element="inlineexercise">Exercise</rename>
+%mbxdocinfo    <rename element="divisionalexercise">Exercise</rename>
+%mbxdocinfo
+%mbxdocinfo    <latex-preamble>
+%mbxdocinfo        <package>cancel</package>
+%mbxdocinfo    </latex-preamble>
+%mbxdocinfo
+%mbxdocinfo    <initialism>RA</initialism>
+
+
+%mbxmacro \newcommand{\nicefrac}[2]{{{}^{#1}}\!/\!{{}_{#2}}}
+%mbxmacro \newcommand{\unitfrac}[3][\!\!]{#1 \,\, {{}^{#2}}\!/\!{{}_{#3}}}
+%mbxmacro \newcommand{\unit}[2][\!\!]{#1 \,\, #2}
+%mbxmacro \newcommand{\noalign}[1]{}
+%mbxmacro \newcommand{\qed}{\qquad \Box}
+%mbxmacro \newcommand{\qedhere}{}
+%mbxmacro \newcommand{\widebar}[1]{\overline{#1}}
+
 \begin{document}
 
-\setcounter{chapter}{0}
-\refstepcounter{chapter}
-\label{rn:chapter}
-\refstepcounter{chapter}
-\label{seq:chapter}
-\refstepcounter{chapter}
-\label{lim:chapter}
-\refstepcounter{chapter}
-\label{der:chapter}
-\refstepcounter{chapter}
-\label{int:chapter}
-\refstepcounter{chapter}
-\label{fs:chapter}
-\refstepcounter{chapter}
-\label{ms:chapter}
+%mbx <title>Basic Analysis I and II</title>
+%mbx <subtitle>Introduction to Real Analysis, Volumes I and II</subtitle>
+%mbx
+%mbx <frontmatter>
+%mbx   <titlepage>
+%mbx
+%mbx     <author>
+%mbx       <personname>Jiří Lebl</personname>
+%mbx       <department>Department of Mathematics</department>
+%mbx       <institution>Oklahoma State University</institution>
+%mbx       <email>jiri.lebl@gmail.com</email>
+%mbx     </author>
+%mbx
+%mbx     <date><today /></date>
+%mbx
+%mbx   </titlepage>
+%mbx
+%mbx   <colophon>
+%mbx
+%mbx     <copyright>
+%mbx       <year>2009<ndash />2019</year>
+%mbx       <holder>Jiří Lebl</holder>
+%mbx       <minilicense>Creative Commons Attribution-Non-commercial-Share Alike 4.0 International License and the Creative Commons Attribution-Share Alike 4.0 International License</minilicense>
+%mbx       <shortlicense>
+%mbx         This work is dual licensed under the Creative Commons Attribution-Non-commercial-Share Alike 4.0 International License and
+%mbx         the Creative Commons Attribution-Share Alike 4.0 International License.  To view a copy of these licenses, visit
+%mbx         <url href="https://creativecommons.org/licenses/by-nc-sa/4.0/">https://creativecommons.org/licenses/by-nc-sa/4.0/</url> or
+%mbx         <url href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</url>
+%mbx         or send a letter to Creative Commons PO Box 1866, Mountain View, CA 94042, USA.
+%mbx       </shortlicense>
+%mbx     </copyright>
+%mbx     <p>
+%mbx        Version 5.2 (volume I) and 2.2 (volume II)
+%mbx     </p>
+%mbx     <p>
+%mbx       You can use, print, duplicate, share this book as much as you want.  You can
+%mbx       base your own notes on it and reuse parts if you keep the license the
+%mbx       same.  You can assume the license is either the CC-BY-NC-SA or CC-BY-SA,
+%mbx       whichever is compatible with what you wish to do, your derivative works must
+%mbx       use at least one of the licenses.
+%mbx       Derivative works must be prominently marked as such.
+%mbx     </p>
+%mbx     <p>
+%mbx       During the writing of this book, 
+%mbx       the author was in part supported by NSF grant DMS-0900885 and
+%mbx       DMS-1362337.
+%mbx     </p>
+%mbx     <p>
+%mbx       The date is the main identifier of version.  The major version / edition
+%mbx       number is raised only if there have been substantial changes.
+%mbx       Each volume has its own version number.  Edition number started at 4,
+%mbx       that is, version 4.0, as it was not kept track of before.
+%mbx     </p>
+%mbx     <p>
+%mbx       See <url href="https://www.jirka.org/ra/">https://www.jirka.org/ra/</url>
+%mbx       for more information
+%mbx       (including contact information).
+%mbx       The LaTeX source for the book is available for possible modification and customization
+%mbx       at github: <url href="https://github.com/jirilebl/ra">https://github.com/jirilebl/ra</url>
+%mbx     </p>
+%mbx
+%mbx   </colophon>
+%mbx </frontmatter>
 
-%\let\oldchapter\chapter
-%\renewcommand*{\chapter}[1]{\oldchapter[#1]{#1 \hspace{\fill} {\rm \normalsize \today}}}
+%mbxSTARTIGNORE
 
 \ifpdf
   \pdfbookmark{Title Page}{title}
@@ -373,9 +429,9 @@
 \vspace*{\stretch{1}}
 \noindent\hspace*{\centeroffset}\makebox[0pt][l]{\begin{minipage}{\textwidth}
 \flushright
-{\Huge\bfseries \sffamily Basic Analysis II }
+{\Huge\bfseries \sffamily Basic Analysis I and II}
 \noindent\rule[-1ex]{\textwidth}{5pt}\\[2.5ex]
-\hfill\emph{\Large \sffamily Introduction to Real Analysis, Volume II}
+\hfill\emph{\Large \sffamily Introduction to Real Analysis, Volumes I and II}
 \end{minipage}}
 
 \vspace{\stretch{1}}
@@ -385,8 +441,8 @@
 by Ji{\v r}\'i Lebl\\[3ex]} 
 \today
 \\
-(version 2.2)
-% --- 2nd edition, 2nd update)
+(version 5.2 and 2.2)
+% --- 5th edition, 2nd update)
 \end{minipage}}
 
 %\addtolength{\textwidth}{\centeroffset}
@@ -404,24 +460,22 @@ Typeset in \LaTeX.
 \bigskip
 
 \noindent
-Copyright \copyright 2012--2019 Ji{\v r}\'i Lebl
+Copyright \copyright 2009--2019 Ji{\v r}\'i Lebl
 
 %PRINT
 % not for lulu
 %\noindent
-%ISBN-13: 978-1718865488
+%ISBN-13: 978-1718862401
 %
 %\noindent
-%ISBN-10: 1718865481
-
+%ISBN-10: 1718862407
 
 %PRINT
 % not for lulu
 %\medskip
 %\noindent
-%Cover image: Tree by the sugarcane fields on Baldwin Avenue, Maui, Hawaii,
-%\copyright 2008 Ji{\v r}\'i Lebl, all rights reserved.
-%Cover image cannot be reused in derivative works.
+%Cover image: Hana Highway, Maui, Hawaii, \copyright 2008 Ji{\v r}\'i Lebl, all rights reserved.  Cover
+%image cannot be reused in derivative works.
 
 \bigskip
 
@@ -464,15 +518,18 @@ Derivative works must be prominently marked as such.
 \bigskip
 
 \noindent
-During the writing of these notes, 
-the author was in part supported by NSF grant DMS-1362337.
+During the writing of this book, 
+the author was in part supported by NSF grants DMS-0900885 and
+DMS-1362337.
 
 \bigskip
 
 \noindent
 The date is the main identifier of version.  The major version / edition
 number is raised only if there have been substantial changes.  Each
-volume has its own version number.
+volume has its own version number.  Edition
+number started at 4 for volume I, that is, version 4.0, as it was not kept track of
+before.  %The edition given with the ISBN number is the major version.
 
 \bigskip
 
@@ -497,23 +554,64 @@ at github: \url{https://github.com/jirilebl/ra}
 
 \newpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%mbxENDIGNORE
 
-\chapter*{Introduction}
-\addcontentsline{toc}{chapter}{Introduction}
-\markboth{INTRODUCTION}{INTRODUCTION}
+%mbx <!--HERE IS WHERE WE ADD MBX PREAMBLE AFTER book-->
+%mbx <!--HERE IS WHERE WE ADD MBX PREAMBLE 2-->
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{About this book}
+%mbxSTARTIGNORE
+\newcommand{\VolOneIntroExtrahead}{
+\subsection{About Volume I}
+}
+
+\newcommand{\VolTwoIntro}{
+\subsection{About Volume II}
 
 \input frag-vol2-intro.tex
+}
+%mbxENDIGNORE
 
 
+% Introduction to Volume 1
+\input ch-vol1-intro.tex
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Real Numbers chapter
+\input ch-real-nums.tex
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Sequences and Series chapter
+\input ch-seq-ser.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Continuous Functions chapter
+\input ch-contfunc.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The Derivative chapter
+\input ch-der.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The Riemann Integral chapter
+\input ch-riemann.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Sequences of Functions chapter
+\input ch-seq-funcs.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Metric Spaces chapter
+\input ch-metric.tex
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Several Variables and Partial Derivatives chapter
@@ -534,17 +632,54 @@ at github: \url{https://github.com/jirilebl/ra}
 % Approximating functions chapter
 \input ch-approximate.tex
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%must be in separate "paragraph" (empty lines before and after)
+% This closes the chapters/appedices above and starts actual backmatter
+%mbxCLOSECHAPTER
+
+%mbx <backmatter>
+
+%mbxSTARTIGNORE
 \cleardoublepage  
 \phantomsection
 \addcontentsline{toc}{chapter}{Further Reading}
 \markboth{FURTHER READING}{FURTHER READING}
 \begin{bibchapter}[Further Reading]
 \begin{biblist}[\normalsize]
+
+\bib{BS}{book}{
+   author={Bartle, Robert G.},
+   author={Sherbert, Donald R.},
+   title={Introduction to real analysis},
+   edition={3},
+   publisher={John Wiley \& Sons Inc.},
+   place={New York},
+   date={2000},
+}
+
+\bib{DW}{book}{
+   author={D'Angelo, John P.},
+   author={West, Douglas B.},
+   title={Mathematical Thinking: Problem-Solving and Proofs},
+   edition={2},
+   publisher={Prentice Hall},
+   date={1999},
+}
+
+\bib{GIAM}{misc}{
+   author={Fields, Joseph E.},
+   title={A Gentle Introduction to the Art of Mathematics},
+   note={Available at \url{http://giam.southernct.edu/GIAM/}},
+}
+
+\bib{Hammack}{misc}{
+   author={Hammack, Richard},
+   title={Book of Proof},
+   note={Available at \url{http://www.people.vcu.edu/~rhammack/BookOfProof/}},
+}
 
 \bib{Rosenlicht}{book}{
    author={Rosenlicht, Maxwell},
@@ -576,21 +711,40 @@ at github: \url{https://github.com/jirilebl/ra}
    note={\url{http://ramanujan.math.trinity.edu/wtrench/texts/TRENCH_REAL_ANALYSIS.PDF}},
 }
 
-
-
 \end{biblist}
 \end{bibchapter}
+%mbxENDIGNORE
+
+%FIXME: add mbx version of the Further reading
+
+%mbx <references xml:id="furtherreading_chapter">
+%mbx   <title>Further Reading</title>
+%mbx
+%mbx   <biblio type="raw" xml:id="biblio-BM" tag="BM">FIXME and FIXME
+%mbx     <title><url href="https://books.google.com/books?id=FIXME"
+%mbx     >FIXME</url></title>,
+%mbx     FIXME</biblio>
+%mbx
+%mbx </references>
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%mbxSTARTIGNORE
 \cleardoublepage
 \phantomsection
 \addcontentsline{toc}{chapter}{\indexname}  
 \microtypesetup{protrusion=false}
 \printindex
 \microtypesetup{protrusion=true}
+%mbxENDIGNORE
+
+%mbx   <index>
+%mbx     <title>Index</title>
+%mbx     <index-list />
+%mbx   </index>
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -602,7 +756,9 @@ at github: \url{https://github.com/jirilebl/ra}
 % that printindex does a clearpage which screws up the delayed write18
 % that glossaries sets up
 %
+%FIXME: MBX version of notation list?
 
+%mbxSTARTIGNORE
 \begingroup
 \renewcommand{\pagelistname}{Page}
 \setglossarystyle{long3colheader}
@@ -615,10 +771,14 @@ at github: \url{https://github.com/jirilebl/ra}
    \markboth{LIST OF NOTATION}{LIST OF NOTATION}
    \begin{longtable}{Sl @{\extracolsep{\fill}} Sl @{\extracolsep{\fill}} Sl}}%
   {\end{longtable}}%
+\cleardoublepage
 \microtypesetup{protrusion=false}
 \printglossary[type=notation] 
 \microtypesetup{protrusion=true}
 \endgroup
+%mbxENDIGNORE
 
+%mbx </backmatter>
 
 \end{document}
+
