@@ -542,9 +542,10 @@ sub read_paragraph {
 		}
 	}
 
-	#Do simple substitutions
+	#Do simple substitutions, (these are incomplete, just the ones I actually used at some point)
 	$para =~ s/\\"\{o\}/ö/g;
 	$para =~ s/\\"o/ö/g;
+	$para =~ s/\\"i/ï/g;
 	$para =~ s/\\c\{S\}/Ş/g;
 	$para =~ s/\\u\{g\}/ğ/g;
 	$para =~ s/\\v\{r\}/ř/g;
@@ -992,6 +993,7 @@ while(1)
 			if ($table =~ s/\\caption\{(.*?)[ \n]*\\label\{(.*?)\}\}[ \n]*//s) {
 				$caption = $1;
 				$theid = modify_id($2);
+				$caption =~ s|\\myquote\{(.*?)\}|<q>$1</q>|sg;
 				$caption =~ s|\$(.*?)\$|<m>$1</m>|sg;
 			} else {
 				print "\n\n\nHUH?\n\n\nNo caption/label!\n\n$para\n\n";
@@ -1170,6 +1172,7 @@ while(1)
 					# FIXME possibly not ok within math?
 					$caption =~ s|~|<nbsp/>|g;
 			
+					$caption =~ s|\\myquote\{(.*?)\}|<q>$1</q>|sg;
 					$caption =~ s|\$(.*?)\$|<m>$1</m>|sg;
 				} else {
 					print "\n\n\nHUH?\n\n\nNo caption/label!\n\nFIG=>$fig<\n\n";
