@@ -331,12 +331,17 @@ sub do_line_subs {
 sub do_more_subs {
 	my $line = do_line_subs(shift);
 
-	while ($line =~ s!\\ref\{([^}]*)\}!<xref ref="%MBXID%" text="global"/>!s) {
+	while ($line =~ s!\\eqref\{(.*?)\}!<xref ref="%MBXID%" text="global"/>!s) {
 		my $theid = modify_id($1);
 		$line =~ s!%MBXID%!$theid!;
 	}
 
-	while ($line =~ s!\\(chapter|Chapter|appendix|Appendix|section|subsection|thm|lemma|prop|cor|defn|remark|table|figure|example|exercise)v?ref\{([^}]*)\}!<xref ref="%MBXID%" text="type-global"/>!s) {
+	while ($line =~ s!\\ref\{(.*?)\}!<xref ref="%MBXID%" text="global"/>!s) {
+		my $theid = modify_id($1);
+		$line =~ s!%MBXID%!$theid!;
+	}
+
+	while ($line =~ s!\\(chapter|Chapter|appendix|Appendix|section|subsection|thm|lemma|prop|cor|defn|remark|table|figure|example|exercise)v?ref\{(.*?)\}!<xref ref="%MBXID%" text="type-global"/>!s) {
 		my $theid = modify_id($2);
 		$line =~ s!%MBXID%!$theid!;
 	}
@@ -734,8 +739,9 @@ while(1)
 		print $out "<url>$1</url>"; 
 	} elsif ($para =~ s/^\\cite\{([^}]*)\}//) {
 		open_paragraph_if_not_open ();
-		print "(cite $1)\n";
-		print $out "<xref ref=\"biblio-$1\"/>"; 
+		$id=modify_id($1);
+		print "(cite $id ($1))\n";
+		print $out "<xref ref=\"biblio-$id\"/>"; 
 
 	} elsif ($para =~ s/^\\index\{([^}]*)\}//) {
 		open_paragraph_if_not_open ();
@@ -1243,6 +1249,12 @@ while(1)
 			print "\n\n\nHUH?\n\n\nNo end figure!\n\n$para\n\n";
 			$num_errors++;
 		}
+
+	# FIXME: This is really a hack
+	} elsif ($para =~ s/^\\begin\{center\}[ \n]*\\subimport\*\{figures\/\}\{(.*?)\.pdf_t\}[ \n]*\\end\{center\}[ \n]*//) {
+		my $thefile = "figures/$1";
+		my $thesizestr = get_size_of_svg("$thefile-mbxpdft.svg");
+		print $out "<raimage source=\"$thefile-mbxpdft\" $thesizestr />\n";
 
 	} elsif ($para =~ s/^\\begin\{(thm|lemma|prop|cor|defn)\}[ \n]*//) {
 		close_paragraph();
