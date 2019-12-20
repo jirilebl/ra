@@ -87,8 +87,7 @@ $in_appendix = 0;
 
 $exercise_num = 0;
 $thm_num = 0;
-$remark_num = 0;
-$example_num = 0;
+$figure_num = 0;
 
 #FIXME: equation counter implement
 $equation_num = 0;
@@ -246,8 +245,6 @@ sub open_section {
 
 	$exercise_num = 0;
 	$thm_num = 0;
-	$remark_num = 0;
-	$example_num = 0;
 
 	my $ch = get_chapter_num();
 
@@ -275,8 +272,7 @@ sub open_chapter {
 
 	$exercise_num = 0;
 	$thm_num = 0;
-	$remark_num = 0;
-	$example_num = 0;
+	$efigure_num = 0;
 
 	$equation_num = 0;
 
@@ -403,30 +399,22 @@ sub get_thm_number {
 	}
 }
 
-sub get_remark_number {
+sub get_figure_number {
 	my $ch = get_chapter_num();
-	if ($insection) {
-		return "$ch.$section_num.$remark_num";
-	} elsif ($inchapter) {
-		return "$ch.$remark_num";
+	if ($inchapter and not $ch eq "0") {
+		return "$ch.$figure_num";
 	} else {
-		return "$remark_num";
-	}
-}
-
-sub get_example_number {
-	my $ch = get_chapter_num();
-	if ($insection) {
-		return "$ch.$section_num.$example_num";
-	} elsif ($inchapter) {
-		return "$ch.$example_num";
-	} else {
-		return "$example_num";
+		return "$figure_num";
 	}
 }
 
 sub get_equation_number {
-	return "$equation_num";
+	my $ch = get_chapter_num();
+	if ($inchapter and not $ch eq "0") {
+		return "$ch.$equation_num";
+	} else {
+		return "$equation_num";
+	}
 }
 
 sub get_size_of_svg {
@@ -1220,7 +1208,9 @@ while(1)
 			$figure =~ s/\\(med|big|small)skip[ \n]*//g;
 			$figure =~ s/\\par[ \n]*//g;
 
-			print $out "<figure xml:id=\"$theid\">\n";
+			$figure_num = $figure_num+1;
+			$the_num = get_figure_number ();
+			print $out "<figure xml:id=\"$theid\" number=\"$the_num\">\n";
 			print $out "  <caption>$caption</caption>\n";
 
 			do {
@@ -1406,8 +1396,8 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{example\}(\[(.*?)\])?[ \n]*//) {
 		my $note = $2;
 		close_paragraph();
-		$example_num = $example_num+1;
-		my $the_num = get_example_number ();
+		$thm_num = $thm_num+1;
+		my $the_num = get_thm_number ();
 		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
 			$theid = modify_id($1);
 			print "(example start >$theid<)\n";
@@ -1431,8 +1421,8 @@ while(1)
 
 	} elsif ($para =~ s/^\\begin\{remark\}[ \n]*//) {
 		close_paragraph();
-		$remark_num = $remark_num+1;
-		my $the_num = get_remark_number ();
+		$thm_num = $thm_num+1;
+		my $the_num = get_thm_number ();
 		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
 			$theid = modify_id($1);
 			print "(remark start >$theid<)\n";
