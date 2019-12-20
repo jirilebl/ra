@@ -1342,54 +1342,9 @@ while(1)
 		close_paragraph();
 		print $out "</proof>\n";
 
-	} elsif ($para =~ s/^\\begin\{exercise\}\[(.*?)\][ \n]*//) {
-		my $note = $1;
-		close_paragraph();
-		$exercise_num = $exercise_num+1;
-		my $the_num = get_exercise_number ();
-		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
-			$theid = modify_id($1);
-			print "(exercise start note >$note< id >$theid< $the_num)\n";
-			print $out "<exercise xml:id=\"$theid\" number=\"$the_num\">\n<statement>\n";
-		} else {
-			print "(exercise start note >$note< $the_num)\n";
-			print $out "<exercise number=\"$the_num\">\n<statement>\n";
-		}
-
-		# stick the note into brackets
-		$para = "\\emph{($note)}\\enspace " . $para;
-
-		open_paragraph();
-
-#	} elsif ($para =~ s/^\\begin\{exercise\}\[(.*?)\][ \n]*//s) {
-#		my $title = $1;
-#		$title =~ s|\$(.*?)\$|<m>$1</m>|sg;
-#		my $index = "";
-#		if ($title =~ s/\\myindex\{(.*?)\}/$1/) {
-#			$index = $1;
-#		}
-#		close_paragraph();
-#		$exercise_num = $exercise_num+1;
-#		my $the_num = get_exercise_number ();
-#		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
-#			$theid = modify_id($1);
-#			print "(exercise start title >$title< id >$theid< $the_num)\n";
-#			print $out "<exercise xml:id=\"$theid\" number=\"$the_num\">\n";
-#			print $out "<title>$title</title>\n";
-#		} else {
-#			print "(exercise start title >$title< $the_num)\n";
-#			print $out "<exercise number=\"$the_num\">\n";
-#			print $out "<title>$title</title>\n";
-#		}
-#		if ($index ne "") {
-#			print $out "<idx>$index</idx>\n";
-#		}
-#		print $out "<statement>\n";
-#		open_paragraph();
-
-
-	} elsif ($para =~ s/^\\begin\{exercise\}[ \n]*\\begin\{samepage\}[ \n]*// ||
-		$para =~ s/^\\begin\{exercise\}[ \n]*//) {
+	} elsif ($para =~ s/^\\begin\{exercise\}(\[(.*?)\])?[ \n]*\\begin\{samepage\}[ \n]*// ||
+		$para =~ s/^\\begin\{exercise\}(\[(.*?)\])?[ \n]*//) {
+		$note = $2;
 		close_paragraph();
 		$exercise_num = $exercise_num+1;
 		my $the_num = get_exercise_number ();
@@ -1403,6 +1358,12 @@ while(1)
 			print $out "<exercise number=\"$the_num\">\n";
 			print $out "<statement>\n";
 		}
+
+		if (not $note eq "") {
+			# stick the note into brackets
+			$para = "\\emph{($note)}\\enspace " . $para;
+		}
+
 		open_paragraph();
 
 	} elsif ($para =~ s/^\\end\{exercise\}[ \n]*//) {
@@ -1430,7 +1391,8 @@ while(1)
 		close_paragraph();
 		print "(end center)";
 
-	} elsif ($para =~ s/^\\begin\{example\}[ \n]*//) {
+	} elsif ($para =~ s/^\\begin\{example\}(\[(.*?)\])?[ \n]*//) {
+		my $note = $2;
 		close_paragraph();
 		$example_num = $example_num+1;
 		my $the_num = get_example_number ();
@@ -1444,6 +1406,12 @@ while(1)
 			print $out "<example number=\"$the_num\">\n";
 			print $out "<statement>\n";
 		}
+		
+		if (not $note eq "") {
+			# stick the note into brackets
+			$para = "\\emph{($note)}\\enspace " . $para;
+		}
+
 		open_paragraph();
 	} elsif ($para =~ s/^\\end\{example\}[ \n]*//) {
 		close_paragraph();
@@ -1705,16 +1673,16 @@ while(1)
 		print $out "<fn>"; 
 		push @cltags, "footnote";
 
-	} elsif ($para =~ s/^\\begin\{samepage\}//) {
+	} elsif ($para =~ s/^\\begin\{samepage\}[ \n]*//) {
 		print "(begin samepage} do nothing)\n";
 
-	} elsif ($para =~ s/^\\end\{samepage\}//) {
+	} elsif ($para =~ s/^\\end\{samepage\}[ \n]*//) {
 		print "(end{samepage} do nothing)\n";
 
-	} elsif ($para =~ s/^\\begin\{mysamepage\}//) {
+	} elsif ($para =~ s/^\\begin\{mysamepage\}[ \n]*//) {
 		print "(begin mysamepage} do nothing)\n";
 
-	} elsif ($para =~ s/^\\end\{mysamepage\}//) {
+	} elsif ($para =~ s/^\\end\{mysamepage\}[ \n]*//) {
 		print "(end{mysamepage} do nothing)\n";
 
 	} elsif ($para =~ s/^\\@//) {
