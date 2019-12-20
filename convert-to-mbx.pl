@@ -275,6 +275,7 @@ sub open_chapter {
 	$efigure_num = 0;
 
 	$equation_num = 0;
+	$figure_num = 0;
 
 	my $ch = get_chapter_num();
 
