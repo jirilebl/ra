@@ -353,9 +353,7 @@ Hence, $b=0$ is the greatest lower bound, and $\lim \frac{1}{\sqrt{n}} = 0$.
 \begin{example}
 A word of caution:  We must show that a monotone sequence is bounded
 in order to use \propref{prop:monotoneconv} to conclude a sequence converges.
-For
-example, 
-the sequence $\{ 1 + \nicefrac{1}{2} + \cdots + \nicefrac{1}{n} \}$
+The sequence $\{ 1 + \nicefrac{1}{2} + \cdots + \nicefrac{1}{n} \}$
 is a monotone increasing
 sequence that grows very slowly.  We will see, once we get to series,
 that this sequence has no upper bound and so does not converge.  It is not
@@ -391,7 +389,7 @@ the sequence is the sequence starting at $K+1$, usually written as
 For example, the $4$-tail of $\{ \nicefrac{1}{n} \}$ is
 $\nicefrac{1}{5}, \nicefrac{1}{6}, \nicefrac{1}{7}, \nicefrac{1}{8},
 \ldots$.  The $0$-tail of a sequence is the sequence itself.
-The main result about the tail of a sequence is the following proposition.
+The convergence and the limit of a sequence only depends on its tail.
 
 \begin{prop}
 Let $\{ x_n \}_{n=1}^\infty$ be a sequence.  Then the following
@@ -463,7 +461,7 @@ Therefore $\{ x_n \}$ converges to $x$.
 \end{proof}
 
 Essentially, the limit does not care about how the sequence begins, it only
-cares about the tail of the sequence.  That is, the beginning of the sequence
+cares about the tail of the sequence.  The beginning of the sequence
 may be arbitrary.
 
 For example, the sequence defined by $x_n := \frac{n}{n^2+16}$ is decreasing
@@ -497,7 +495,7 @@ is monotone and bounded below by zero, it is convergent, and therefore the seque
 
 \subsection{Subsequences}
 
-A very useful concept related to sequences is that of a subsequence.
+It is useful to sometimes consider only some terms of a sequence.
 A subsequence of $\{ x_n \}$ is a sequence that contains
 only some of the numbers from $\{ x_n \}$ in the same order.
 
@@ -513,7 +511,7 @@ is called \glsadd{not:subsequence}
 a \emph{\myindex{subsequence}} of $\{ x_n \}$.
 \end{defn}
 
-For example, take the sequence $\{ \nicefrac{1}{n} \}$.  The sequence
+Consider the sequence $\{ \nicefrac{1}{n} \}$.  The sequence
 $\{ \nicefrac{1}{3n} \}$ is a subsequence.  To see how these two
 sequences fit in the definition, take $n_i := 3i$.  
 The numbers in the
@@ -1259,7 +1257,7 @@ You may have seen the sequence above before.  It is the
 Named after the English physicist and mathematician
 \href{https://en.wikipedia.org/wiki/Isaac_Newton}{Isaac Newton}
 (1642--1726/7).}
-for finding the square root of 2.  This method comes up very often in
+for finding the square root of 2.  This method comes up often in
 practice and converges very rapidly.  We used the fact that
 $x_1^2 -2 >0$, although it was not strictly needed to show convergence by
 considering a tail of the sequence.
@@ -1326,8 +1324,8 @@ the same as studying when another sequence goes to zero.
 In general, it may be hard to decide if a sequence converges, but
 for certain sequences there exist easy to apply tests that tell us
 if the sequence converges or not.  Let us see one such test.
-First let
-us compute the limit of a very specific sequence.
+First, let
+us compute the limit of a certain specific sequence.
 \begin{prop}
 Let $c > 0$.
 \begin{enumerate}[(i)]
@@ -1358,7 +1356,7 @@ As $\nicefrac{1}{c} < 1$, then $\{ {(\nicefrac{1}{c})}^n \}$
 converges to 0, contradicts the bound above.
 \end{proof}
 
-If we look at the proposition above, we note that the
+In the proposition above, the
 ratio of the $(n+1)$th term and the $n$th term is $c$.  We 
 generalize this simple result to a larger class of sequences.
 The following lemma will come up again once we get to series.
@@ -2270,9 +2268,11 @@ Prove \propref{seqconvsubseqconv:prop}.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Let $x_n := \dfrac{{(-1)}^n}{n}$, find $\limsup \, x_n$ and $\liminf \, x_n$.
+Let $x_n := \dfrac{{(-1)}^n}{n}$.
+Find $\limsup \, x_n$ and $\liminf \, x_n$.
 \item
-Let $x_n := \dfrac{(n-1){(-1)}^n}{n}$, find $\limsup \, x_n$ and $\liminf \, x_n$.
+Let $x_n := \dfrac{(n-1){(-1)}^n}{n}$.
+Find $\limsup \, x_n$ and $\liminf \, x_n$.
 \end{enumerate}
 \end{exercise}
 
@@ -2531,7 +2531,7 @@ for all $n \geq M$ and all $k \geq M$ we have
 \end{equation*}
 \end{defn}
 
-Intuitively what it means is that the terms of the sequence are eventually
+Intuitively it means that the terms of the sequence are eventually
 arbitrarily close to each other.  We would expect such a sequence to be
 convergent.  It turns out that is true because $\R$ has the
 \hyperref[defn:lub]{least-upper-bound property}.  First, let us look at some examples.
@@ -2792,7 +2792,7 @@ $\abs{x_{n+1}-x_n}
 
 A fundamental object in mathematics is that of a series.  In fact, when
 the foundations of analysis were being developed, the motivation was to
-understand series.  Understanding series is very important in applications
+understand series.  Understanding series is important in applications
 of analysis.  For example, solving differential equations often includes
 series, and differential equations are the basis for understanding
 almost all of modern science.
@@ -3902,9 +3902,9 @@ to check the situation for $s_{2n+1}$:
 \end{equation*}
 \end{proof}
 
-In particular, there exist conditionally convergent series
+Notably, there exist conditionally convergent series
 where the absolute values of the terms go to zero arbitrarily slowly.
-For example,
+The series
 \begin{equation*}
 \sum_{n=1}^\infty \frac{{(-1)}^n}{n^p}
 \end{equation*}
@@ -3913,14 +3913,13 @@ absolutely when $p \leq 1$.
 
 \subsection{Rearrangements}
 
-Generally,
-absolutely convergent series behave as we imagine they should.  For example,
+Absolutely convergent series behave as we imagine they should.  For example,
 absolutely convergent series can be summed in any order whatsoever.  Nothing
 of the sort holds for conditionally convergent series
 (see \exampleref{example:harmonsumanything}
 and \exerciseref{exercise:seriesconvergestoanything}).
 
-Take a series
+Consider a series
 \begin{equation*}
 \sum_{n=1}^\infty x_n .
 \end{equation*}
