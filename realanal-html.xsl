@@ -144,6 +144,7 @@
 
   <xsl:param name="html.css.extra" select="'extra.css'"/>
 
-  <xsl:param name="publisher" select="'realanal-publisher.xml'"/>
+  <!--<xsl:param name="publisher" select="'./realanal-publisher.xml'"/>-->
+  <xsl:param name="html.google-search" select="'006490116505509195242:bj7la1eakgo'"/>
 
 </xsl:stylesheet>
