@@ -492,7 +492,7 @@ We will study a couple of types of series of functions, and
 a useful test for uniform convergence of a series is the 
 so-called \emph{\myindex{Weierstrass $M$-test}}.
 
-\begin{thm}[Weierstrass $M$-test] \label{thm:weiermtest}
+\begin{thm}[\myindex{Weierstrass $M$-test}] \label{thm:weiermtest}
 Let $X$ be any set.
 Suppose $f_n \colon X \to \C$ are functions, $M_n > 0$ numbers such
 that
@@ -1340,6 +1340,7 @@ Now we prove that once we have a series converging to a function
 in some interval, we can expand the function around any point.
 
 \begin{thm}[Taylor's theorem for real-analytic functions]
+\index{Taylor's theorem!real-analytic}%
 \label{thm:tayloranal}
 Let
 \begin{equation*}
@@ -1495,7 +1496,9 @@ $E$ is a point $p \in X$ such that
 $B(p,\epsilon) \setminus \{ p \}$ contains points of $E$
 for all $\epsilon > 0$.
 
-\begin{thm}[Identity theorem] \label{thm:identityanalytic}
+\begin{thm}[Identity theorem]
+\label{thm:identityanalytic}%
+\index{identity theorem}%
 Let $U \subset \C$ be an open connected set.  If $f \colon U \to \C$
 and $g \colon U \to \C$ are analytic functions that are
 equal on a set $E \subset U$, and $E$ has a cluster point
@@ -2270,6 +2273,7 @@ the origin) a polynomial of degree $d$ really looks like a constant multiple
 of $z^d$.
 
 \begin{thm}[Fundamental theorem of algebra]
+\index{fundamental theorem of algebra}%
 Let $p(z)$ be complex polynomial, then there exists a $z_0 \in \C$
 such that $p(z_0) = 0$.
 \end{thm}
@@ -2297,8 +2301,9 @@ is, suppose that $p(z)$ is a power series around $z_0$.
 \end{exercise}
 
 \begin{exercise}
-Use \exerciseref{exercise:minprinciple} to prove the \emph{\myindex{maximum
-principle for analytic functions}}: \emph{If $U \subset \C$ is open and connected,
+Use \exerciseref{exercise:minprinciple} to prove the \emph{maximum
+principle for analytic functions}\index{maximum principle!analytic functions}:
+\emph{If $U \subset \C$ is open and connected,
 $f \colon U \to \C$ is analytic, and $\sabs{f(z)}$ attains a relative
 maximum at $z_0 \in U$.  Then $f$ is constant.}
 \end{exercise}
@@ -2954,6 +2959,7 @@ The idea of the proof is a very common approximation or \myquote{smoothing} idea
 far beyond pure mathematics.
 
 \begin{thm}[Weierstrass approximation theorem]
+\index{Weierstrass approximation theorem}
 If $f \colon [a,b] \to \C$ is continuous, then there exists a sequence $\{
 p_n \}$ of polynomials converging to $f$ uniformly on $[a,b]$.
 Furthermore, if $f$ is real-valued, we can find $p_n$ with real coefficients.
@@ -3426,8 +3432,8 @@ By the second formula we see that $f \in \sA$ (as $\sA$ is an algebra).
 \end{proof}
 
 \begin{thm}[Stone--Weierstrass, real version]
-\label{thm:SWreal}
-\index{Stone--Weierstrass!real version}
+\label{thm:SWreal}%
+\index{Stone--Weierstrass!real version}%
 Let $X$ be a compact metric space and $\sA$ an algebra of real-valued
 continuous functions on $X$, such that $\sA$ separates points and vanishes at
 no point.  Then the closure $\widebar{\sA} = C(X,\R)$.
@@ -3649,8 +3655,8 @@ bar we mean the complex conjugate.
 \end{defn}
 
 \begin{thm}[Stone--Weierstrass, complex version]
-\label{thm:SWcomplex}
-\index{Stone--Weierstrass!complex version}
+\label{thm:SWcomplex}%
+\index{Stone--Weierstrass!complex version}%
 Let $X$ be a compact metric space and $\sA$ an algebra of complex-valued
 continuous functions on $X$, such that $\sA$ separates points, vanishes at
 no point, and is self-adjoint.  Then the closure $\widebar{\sA} = C(X,\C)$.

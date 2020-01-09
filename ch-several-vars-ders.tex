@@ -34,10 +34,11 @@ It is common to write and treat vectors as
 \begin{equation*}
 v =
 (v_1,v_2,\ldots,v_n) =
-{\scriptsize
-\begin{bmatrix}
+{ \left[
+\begin{smallmatrix}
 v_1 \\ v_2 \\ \vdots \\ v_n
-\end{bmatrix}
+\end{smallmatrix}
+\right]
 }
 \end{equation*}
 We will do so when convenient.
@@ -48,7 +49,7 @@ In $\R^n$ we often think of vectors as a direction and a magnitude and draw the
 vector as an arrow.  The vector $(v_1,v_2,\ldots,v_n)$ is represented
 by the arrow from the origin to the point $(v_1,v_2,\ldots,v_n)$, see
 \figureref{fig:vecasarrow} in the plane $\R^2$.
-When we do think of vectors as arrows, they are
+When we think of vectors as arrows, they are
 not based at the origin necessarily; a vector is simply the direction and
 the magnitude, and it does not know where it starts.
 \begin{myfigureht}
@@ -125,7 +126,7 @@ $(ab)v = a(bv)$.
 %mbxlatex (Multiplicative identity) \quad
 $1v = v$ for all $v \in X$.
 \end{enumerate}
-Elements of a vector space are usually called \emph{vectors}\index{vector},
+Elements of a vector space are usually called \emph{vectors},
 even if they
 are not elements of $\R^n$ (vectors in the \myquote{traditional} sense).
 
@@ -1038,7 +1039,7 @@ a function $\snorm{\cdot} \colon X \to \R$ is a
 \item \label{defn:norm:i} $\snorm{x} \geq 0$, with $\snorm{x}=0$ if and only if $x=0$.
 \item \label{defn:norm:ii} $\snorm{cx} = \sabs{c} \, \snorm{x}$ for all $c \in \R$ and $x \in X$.
 \item \label{defn:norm:iii} $\snorm{x+y} \leq \snorm{x}+\snorm{y}$ for all $x,y \in X$
-\qquad (Triangle inequality)\index{triangle inequality for norms}.
+\qquad (Triangle inequality)\index{triangle inequality!norms}.
 \end{enumerate}
 A vector space equipped with a norm is called a
 \emph{\myindex{normed vector space}}.
@@ -2428,7 +2429,7 @@ of the derivatives.  As differentiable maps are
 \myquote{infinitesimally close}
 to linear maps, they have the same property:
 
-\begin{thm}[Chain rule]
+\begin{thm}[Chain rule] \index{chain rule}
 Let $U \subset \R^n$ be open and let $f \colon U \to \R^m$ be
 differentiable at $p \in U$.  Let $V \subset \R^m$ be open,
 $f(U) \subset V$ and let $g \colon V \to \R^\ell$ be differentiable
