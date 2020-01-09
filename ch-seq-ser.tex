@@ -1251,7 +1251,7 @@ both sides to obtain
 or $x^2 = 2$.  As $x_n > 0$ for all $n$ we get $x \geq 0$, and therefore $x = \sqrt{2}$.
 \end{example}
 
-You may have seen the sequence above before.  It is the
+You may have seen the sequence above before.  It is
 \emph{Newton's method}%
 \footnote{%
 Named after the English physicist and mathematician
@@ -1261,7 +1261,7 @@ for finding the square root of 2.  This method comes up often in
 practice and converges very rapidly.  We used the fact that
 $x_1^2 -2 >0$, although it was not strictly needed to show convergence by
 considering a tail of the sequence.
-In fact the sequence converges as long as $x_1 \not= 0$, although with a negative $x_1$
+The sequence converges as long as $x_1 \not= 0$, although with a negative $x_1$
 we would arrive at $x=-\sqrt{2}$.  By replacing the 2 in the numerator we 
 obtain the square root of any positive number.  These statements are left as
 an exercise.
@@ -1993,8 +1993,8 @@ which is the desired conclusion.
 
 Limit superior and limit inferior
 are the largest and smallest
-subsequential limits.  If the subsequence in the previous
-proposition is convergent, then we have that
+subsequential limits.  If the subsequence $\{ x_{n_k} \}$ in the previous
+proposition is convergent, then
 $\liminf \, x_{n_k} = \lim\, x_{n_k} = \limsup \, x_{n_k}$.  Therefore,
 \begin{equation*}
 \liminf_{n\to\infty} \, x_n \leq
@@ -2591,14 +2591,13 @@ A Cauchy sequence is bounded.
 
 \begin{proof}
 Suppose $\{ x_n \}$ is Cauchy.  Pick $M$ such that for all
-$n,k \geq M$ we have $\abs{x_n-x_k} < 1$.  In particular, we have
-that for all $n \geq M$
+$n,k \geq M$ we have $\abs{x_n-x_k} < 1$.  In particular, 
+for all $n \geq M$,
 \begin{equation*}
 \abs{x_n - x_M} < 1 .
 \end{equation*}
-Or by the reverse triangle inequality,
-$\abs{x_n} - \abs{x_M} \leq \abs{x_n - x_M} < 1$.  Hence for $n \geq M$
-we have
+By the reverse triangle inequality,
+$\abs{x_n} - \abs{x_M} \leq \abs{x_n - x_M} < 1$.  Hence for $n \geq M$,
 \begin{equation*}
 \abs{x_n} < 1 + \abs{x_M}.
 \end{equation*}
@@ -2616,11 +2615,11 @@ A sequence of real numbers is Cauchy if and only if it converges.
 \begin{proof}
 Let $\epsilon > 0$ be given and
 suppose $\{ x_n \}$ converges to $x$.  Then there 
-exists an $M$ such that for $n \geq M$ we have
+exists an $M$ such that for $n \geq M$,
 \begin{equation*}
 \abs{x_n - x} < \frac{\epsilon}{2} .
 \end{equation*}
-Hence for $n \geq M$ and $k \geq M$ we have
+Hence for $n \geq M$ and $k \geq M$,
 \begin{equation*}
 \abs{x_n - x_k} = 
 \abs{x_n - x + x - x_k}
