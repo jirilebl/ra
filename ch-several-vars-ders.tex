@@ -1794,8 +1794,8 @@ X \ar[r, "T"] \ar[u, "\Psi"'] \ar[d, "\Phi"]        &
 %mbxlatex \begin{center}
 %mbxlatex \subimport*{figures/}{change_of_basis_cd.pdf_t}
 %mbxlatex \end{center}
-The $\R^n$ on the bottom row represent
-$X$ in the first basis, and the $\R^n$ on top represent $X$ in the
+The two $\R^n$s on the bottom row represent
+$X$ in the first basis, and the $\R^n$s on top represent $X$ in the
 second
 basis.
 
@@ -1817,9 +1817,9 @@ Let
 $e_1,e_2,\ldots,e_n$ be the standard basis on $\R^n$ as usual.
 
 First,
-for some $j =
+for $j =
 1,2,\ldots,n$ and
-some $\lambda \in \R$, $\lambda \neq 0$, define
+$\lambda \in \R$, $\lambda \neq 0$, define
 the first type of an elementary matrix,
 an
 $n$-by-$n$ matrix $E$ by
@@ -1834,7 +1834,7 @@ Given any $n$-by-$m$ matrix $M$ the matrix $EM$ is the same matrix as $M$
 except with the $k$th row multiplied by $\lambda$.
 It is an easy computation (exercise) that $\det(E) = \lambda$.
 
-Next, for some $j$ and $k$ with $j\neq k$, and $\lambda \in \R$,
+Next, for $j$ and $k$ with $j\neq k$, and $\lambda \in \R$,
 define the second type of an elementary matrix $E$ by
 \begin{equation*}
 Ee_i := 
@@ -1847,7 +1847,7 @@ Given any $n$-by-$m$ matrix $M$ the matrix $EM$ is the same matrix as $M$
 except with $\lambda$ times the $k$th row added to the $j$th row.
 It is an easy computation (exercise) that $\det(E) = 1$.
 
-Finally, for some $j$ and $k$ with $j\neq k$, define
+Finally, for $j$ and $k$ with $j\neq k$, define
 the third type of an elementary matrix $E$ by
 \begin{equation*}
 Ee_i := 
@@ -1876,10 +1876,10 @@ and
 The proof is left as an exercise.  The proposition says that we can compute
 the determinant by doing elementary row operations.  For computing the
 determinant one doesn't have to factor the matrix into a product of
-elementary matrices completely.  Usually one would only do row operations
-until we find an \emph{\myindex{upper triangular matrix}}, that is a matrix
-$[a_{i,j}]$ where $a_{i,j} = 0$ if $i > j$.  Computing their determinant is
-not difficult (exercise).
+elementary matrices completely.  One only does row operations
+until one finds an \emph{\myindex{upper triangular matrix}}, that is a matrix
+$[a_{i,j}]$ where $a_{i,j} = 0$ if $i > j$.  Computing determinant of such a
+matrix is not difficult (exercise).
 
 Factorization into elementary matrices (or variations on elementary
 matrices) is useful in proofs involving an arbitrary linear operator, by
@@ -2137,7 +2137,8 @@ as a function of $B$ on $\sM$.
 
 \begin{exnote}
 Let $A$ be an $n$-by-$n$ matrix.
-A (possibly complex) number $\lambda \in \C$ is called an \emph{\myindex{eigenvalue}} of $A$
+A number $\lambda \in \C$ (possibly complex even for a real matrix)
+is called an \emph{\myindex{eigenvalue}} of $A$
 if there is a nonzero (possibly complex) vector $x \in \C^n$ such that $Ax = \lambda
 x$ (the multiplication by complex vectors is the same as for real vectors.
 In particular, if $x =
@@ -2222,10 +2223,10 @@ In other words, there is a number $a$ (the derivative of $f$ at $x$) such that
 
 Multiplying by $a$ is a linear map in one dimension:
 $h \mapsto ah$.
-That is,
+Namely,
 we think of $a \in L(\R^1,\R^1)$, 
 which is the best linear approximation of
-how $f$ changes near $x$.  We use this definition
+how $f$ changes near $x$.  We use this interpretation
 to extend differentiation to more variables.
 
 \begin{defn}
@@ -2361,7 +2362,7 @@ h_1^4 + h_1^2h_2^2}}{\sqrt{h_1^2+h_2^2}}
 h_1^2 + h_2^2}}{\sqrt{h_1^2+h_2^2}}
 = \sabs{h_1} .
 \end{equation*}
-And this expression does indeed go to zero as $h \to 0$.  The
+This expression does indeed go to zero as $h \to 0$.  The
 function $f$ is differentiable at the origin and 
 the derivative $f'(0)$ is represented by the matrix
 $\left[\begin{smallmatrix}1&2\\2&3\end{smallmatrix}\right]$.
