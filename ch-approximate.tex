@@ -1531,7 +1531,11 @@ is a sequence of nonzero points $\{ z_n \}$ such that
 $f(z_n) -g(z_n) = 0$.  Hence, by the lemma above 
 $a_k = b_k$ for all $k$.  Therefore, $B(0,\rho) \subset E$.
 
-This means that $E$ is open.  As $E$ is also closed, and $U$ is connected, we conclude that $E = U$.
+Thus the set of cluster points of $E$ is open.  The set of cluster points
+of $E$ is also closed: A limit of cluster points of $E$ is in $E$
+as it is closed, and it is clearly a cluster point of $E$.
+As $U$ is connected, the set of cluster points of $E$
+is equal to $U$, or in other words $E = U$.
 \end{proof}
 
 By restricting our attention to real $x$, we obtain the same
@@ -2586,7 +2590,7 @@ balls of radius $\nicefrac{1}{n}$ that cover $X$ (as $X$ is compact). That is,
 for every $n$, there exists
 a finite set of points $x_{n,1},x_{n,2},\ldots,x_{n,k_n}$ such that
 \begin{equation*}
-X= \bigcup_{j=1}^{k_n} B(x_{n,j},\nicefrac{1}{n})
+X= \bigcup_{j=1}^{k_n} B(x_{n,j},\nicefrac{1}{n}) .
 \end{equation*}
 Let $D := \bigcup_{n=1}^\infty \{ x_{n,1},x_{n,2},\ldots,x_{n,k_n} \}$.
 The set $D$ is countable as it is a countable union of finite sets.
@@ -2737,7 +2741,7 @@ the sequence is
 uniformly equicontinuous.
 
 Suppose $\sabs{f_n(x_0)} \leq M_0$ for all $n$.
-For all $x \in [a,b]$
+For all $x \in [a,b]$,
 \begin{equation*}
 \sabs{f_n(x)} \leq \sabs{f_n(x_0)}+ \sabs{f_n(x)-f_n(x_0)} \leq M_0+ M \sabs{x-x_0}
 \leq M_0 + M(b-a) .
