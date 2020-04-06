@@ -2444,22 +2444,23 @@ although the sequence converges pointwise to a discontinuous function.
 \end{example}
 
 \begin{example}
-The sequence $\{ f_n \}$ of functions in $C([0,1],\R)$ given by $f_n(x) := n^2(1-x)x^n$
-converges pointwise to the zero function (use the ratio test for
-$x < 1$).  As for each $x$, $\{f_n(x)\}$ converges to 0, it is bounded
+The sequence $\{ f_n \}$ of functions in $C([0,1],\R)$ given by $f_n(x) :=
+\frac{n^3x}{1+n^4x^2}$
+converges pointwise to the zero function (obvious at $x=0$, and for $x > 0$
+we have $\frac{n^3x}{1+n^4x^2} \leq \frac{1}{nx}$).
+As for each $x$, $\{f_n(x)\}$ converges to 0, it is bounded
 so $\{ f_n \}$ is pointwise bounded.
 
-By calculus we find that the maximum of each $f_n$ on
-$[0,1]$ is at the critical point at $x=\frac{n}{n+1}$, and
+By calculus, we maximize $f_n$ on
+$[0,1]$, and we find the maximum occurs at the critical point
+$x=\nicefrac{1}{n^2}$:
 \begin{equation*}
 \snorm{f_n}_u
 =
-f_n\left(\frac{n}{n+1}\right)
-= n \, {\left(\frac{n}{n+1}\right)}^{n+1} .
+f_n\left(\nicefrac{1}{n^2}\right)
+= \nicefrac{n}{2} .
 \end{equation*}
-It is left to the reader to check that
-$\lim\, {\left(\frac{n}{n+1}\right)}^{n+1} = e^{-1}$, and so
-$\lim\, \snorm{f_n}_u = \infty$, or in other words,
+So $\lim\, \snorm{f_n}_u = \infty$, or in other words,
 this sequence is not uniformly bounded.
 \end{example}
 
@@ -2474,7 +2475,7 @@ pointwise.
 \end{prop}
 
 \begin{proof}
-Let $\{ x_n \}_{n=1}^{\infty}$ be an enumeration of the elements of $X$.
+Let $x_1,x_2,x_3,\ldots$ be an enumeration of the elements of $X$.
 The sequence $\{ f_n(x_1) \}_{n=1}^\infty$ is bounded and hence
 we have a subsequence of $\{ f_n \}_{n=1}^{\infty}$, which we denote by
 $\{ f_{1,k} \}_{k=1}^\infty$,
@@ -2486,21 +2487,21 @@ $\{ f_{2,k} \}_{k=1}^\infty$ such that
 $\{ f_{2,k}(x_2) \}_{k=1}^\infty$ converges.  Note that
 $\{ f_{2,k}(x_1) \}_{k=1}^\infty$ is still convergent.
 
-In general, we have a sequence $\{ f_{m,k}
-\}_{k=1}^\infty$
-that makes $\{ f_{m,k}(x_j) \}_{k=1}^\infty$ converge for all $j \leq m$ and we 
-let $\{ f_{m+1,k} \}_{k=1}^\infty$ be the subsequence of $\{ f_{m,k}
-\}_{k=1}^\infty$
+In general, we have a sequence $\{ f_{m,k} \}_{k=1}^\infty$,
+which is a subsequence of $\{ f_{m-1,k} \}_{k=1}^\infty$,
+such that $\{ f_{m,k}(x_j) \}_{k=1}^\infty$ converges for $j=1,2,\ldots, m$.
+We let $\{ f_{m+1,k} \}_{k=1}^\infty$ be a subsequence of
+$\{ f_{m,k} \}_{k=1}^\infty$
 such that
 $\{ f_{m+1,k}(x_{m+1}) \}_{k=1}^\infty$ converges (and hence it converges for all
-$x_j$ for $j=1,2,\ldots,m+1$) and we rinse and repeat.
+$x_j$ for $j=1,2,\ldots,m+1$).  Rinse and repeat.
 
 If $X$ is finite, we are done as the process stops at some point.
 If $X$ is countably infinite,
 we pick the sequence
 $\{ f_{k,k} \}_{k=1}^\infty$.
 This is a subsequence of the original sequence $\{ f_n \}_{n=1}^\infty$.
-For any $m$ the tail $\{ f_{k,k} \}_{k=m}^\infty$ is a subsequence of $\{ f_{m,k}
+For any $m$, the tail $\{ f_{k,k} \}_{k=m}^\infty$ is a subsequence of $\{ f_{m,k}
 \}_{k=1}^\infty$
 and hence for any $m$ the sequence $\{ f_{k,k}(x_m) \}_{k=1}^\infty$ converges.
 \end{proof}
@@ -2786,8 +2787,9 @@ integration tend to be compact.
 
 \begin{exercise}
 Let $f_n \colon [-1,1] \to \R$ be given by $f_n(x) := \frac{nx}{1+{(nx)}^2}$.
-Prove that the sequence is uniformly bounded, converges pointwise to 0, but
-does not converge uniformly to 0.
+Prove that the sequence is uniformly bounded, converges pointwise to 0,
+yet there is no
+subsequence that converges uniformly.
 Which hypothesis of Arzel\`a--Ascoli
 is not satisfied?  Prove your assertion.
 \end{exercise}
