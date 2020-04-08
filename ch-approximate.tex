@@ -2581,7 +2581,7 @@ Take $n > N$.  For $d(x,y) < \delta$ we have
 \end{proof}
 
 \begin{prop}
-A compact metric space $X$ contains a countable dense subset,
+A compact metric space $(X,d)$ contains a countable dense subset,
 that is, there exists a countable $D \subset X$ such that $\widebar{D} = X$.
 \end{prop}
 
@@ -2671,7 +2671,7 @@ Write $g_j := f_{n_j}$ for simplicity.
 The sequence $\{ g_n \}$ is 
 uniformly equicontinuous.
 Let $\epsilon > 0$ be given, then there exists a $\delta > 0$
-such that for all $x \in X$ and all $n \in N$
+such that for all $x \in X$ and all $n \in \N$
 \begin{equation*}
 B(x,\delta) \subset g_n^{-1}\bigl(B(g_n(x),\nicefrac{\epsilon}{3})\bigr).
 \end{equation*}
@@ -2684,18 +2684,18 @@ X = \bigcup_{j=1}^k B(x_j,\delta) .
 \end{equation*}
 As there are finitely many points and $\{ g_n \}$
 converges pointwise on $D$, there exists a single $N$ such that for 
-all $n,m \geq N$ we have
+all $n,m \geq N$, we have
 \begin{equation*}
 \sabs{g_n(x_j)-g_m(x_j)} < \nicefrac{\epsilon}{3}
  \qquad \text{for all } j=1,2,\ldots,k.
 \end{equation*}
 
 Let $x \in X$ be arbitrary.  There is some $j$ such that
-$x \in B(x_j,\delta)$ and so we have for all $\ell \in \N$
+$x \in B(x_j,\delta)$ and so for all $\ell \in \N$,
 \begin{equation*}
-\sabs{g_\ell(x)-g_\ell(x_j)} < \nicefrac{\epsilon}{3},
+\sabs{g_\ell(x)-g_\ell(x_j)} < \nicefrac{\epsilon}{3}.
 \end{equation*}
-and so $n,m \geq N$ that
+So for $n,m \geq N$,
 \begin{equation*}
 \sabs{g_n(x)-g_m(x)} \leq
 \sabs{g_n(x)-g_n(x_j)} +
@@ -2711,7 +2711,7 @@ it is uniformly convergent.
 \end{proof}
 
 \begin{cor}
-Let $X$ be a compact metric space.
+Let $(X,d)$ be a compact metric space.
 Let $S \subset C(X,\C)$ be a closed, bounded and uniformly equicontinuous set.
 Then $S$ is compact.
 \end{cor}
