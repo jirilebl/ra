@@ -3846,7 +3846,7 @@ the series converges.  Therefore, $\sum x_n$ converges absolutely.
 
 \subsection{Alternating series test}
 
-The tests we have so far only addressed absolute convergence.  The
+The tests we have seen so far only addressed absolute convergence.  The
 following test gives a large supply of conditionally convergent series.
 
 \begin{prop}[Alternating series]
@@ -3941,7 +3941,7 @@ a rearrangement of an absolutely convergent series converges (absolutely)
 to the same number.
 
 \begin{proof}
-Let $\epsilon > 0$ be given.  Then take $M$ to be such that
+Let $\epsilon > 0$ be given.  As $\sum x_n$ is absolutely convergent, take $M$ such that
 \begin{equation*}
 \abs{\left(\sum_{n=1}^M x_n \right) - x} < \frac{\epsilon}{2}
 \qquad \text{and} \qquad
@@ -3953,8 +3953,8 @@ $n \leq M$, there exists $k \leq K$ such that $\sigma(k) = n$.
 In other words
 $\{ 1,2,\ldots,M \} \subset \sigma\bigl(\{ 1,2,\ldots,K \} \bigr)$.
 
-Then for any $N \geq K$, let $Q := \max \sigma(\{ 1,2,\ldots,N \})$
-and compute
+For any $N \geq K$, let $Q := \max \sigma(\{ 1,2,\ldots,N \})$.
+Compute
 \begin{equation*}
 \begin{split}
 \abs{\left( \sum_{n=1}^N x_{\sigma(n)} \right) - x}
@@ -3987,7 +3987,7 @@ Let us show that the alternating harmonic series $\sum
 \frac{{(-1)}^{n+1}}{n}$, which does not converge absolutely, can be
 rearranged to converge to anything.
 The odd terms and the even terms diverge to
-infinity and minus infinity respectively (prove this!):
+plus infinity and minus infinity respectively (prove this!):
 \begin{equation*}
 \sum_{m=1}^\infty \frac{1}{2m-1} = \infty, \qquad \text{and} \qquad
 \sum_{m=1}^\infty \frac{-1}{2m} = -\infty .
@@ -4043,7 +4043,7 @@ As we have
 already mentioned,
 multiplication of series is somewhat harder than addition.
 If at least one of the series converges
-absolutely, then we can use the following theorem.  For this result it is
+absolutely, then we can use the following theorem.  For this result, it is
 convenient to start the series at 0, rather than at 1.
 
 \begin{thm}[\myindex{Mertens' theorem}\footnote{Proved by
