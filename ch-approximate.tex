@@ -1297,14 +1297,16 @@ by
 \begin{equation*}
 f_k(\nicefrac{1}{n}) := \sum_{j=1}^n a_{kj}
 \qquad
-f_k(0) := \sum_{j=1}^\infty a_{kj}
+\text{and}
+\qquad
+f_k(0) := \sum_{j=1}^\infty a_{kj} .
 \end{equation*}
-As the series converge we get that each $f_k$ is continuous at $0$
+As the series converges, each $f_k$ is continuous at $0$
 (since 0 is the only cluster point, they are continuous everywhere, but
 we don't need that).
 For all $x \in E$ we have
 \begin{equation*}
-\sabs{f_k(x)} \leq \sum_{j=1}^\infty \sabs{a_{kj}}
+\sabs{f_k(x)} \leq \sum_{j=1}^\infty \sabs{a_{kj}} .
 \end{equation*}
 By knowing that $\sum_k \sum_j \sabs{a_{kj}}$ converges (does not depend on
 $x$), we know that for any $x \in E$
@@ -1365,7 +1367,7 @@ write
 \begin{equation*}
 \begin{split}
 f(x) &= \sum_{k=0}^\infty a_k {\bigl((x-a)+a\bigr)}^k \\
-&= \sum_{k=0}^\infty a_k \sum_{m=0}^k \binom{k}{m} a^{k-m} {(x-a)}^m %\\
+&= \sum_{k=0}^\infty a_k \sum_{m=0}^k \binom{k}{m} a^{k-m} {(x-a)}^m .
 \end{split}
 \end{equation*}
 Define $c_{k,m} := a_k \binom{k}{m} a^{k-m}$ if $m \leq k$ and $0$ if $m >
@@ -1699,7 +1701,7 @@ In \volIref{\sectionref*{vI-sec:logandexp} of volume I}{\sectionref{sec:logandex
 the unique function satisfying $E' = E$ and
 $E(0) = 1$ is the exponential.  In other words for $x \in \R$, $e^x = E(x)$.
 
-For complex numbers $z$ we define\glsadd{not:complexexp}
+For complex numbers $z$, we define\glsadd{not:complexexp}
 \begin{equation*}
 e^z := E(z) = 
 \sum_{k=0}^\infty \frac{1}{k!} z^k .
@@ -1735,9 +1737,9 @@ real numbers $x$ and $y$.
 
 Now for any fixed $y \in \R$, we get by the
 identity theorem (\thmref{thm:identityanalytic}) that
-$e^{z+y} = e^ze^y$ for all $z \in \C$.  Fixing an arbitrary $z \in \C$
-and we get
-$e^{z+y} = e^ze^y$ for all $y \in \R$, and again by the identity theorem 
+$e^{z+y} = e^ze^y$ for all $z \in \C$.  Fixing an arbitrary $z \in \C$,
+we get
+$e^{z+y} = e^ze^y$ for all $y \in \R$.  Again by the identity theorem 
 $e^{z+w} = e^z e^w$
 for all $z,w \in \C$.
 \end{proof}
@@ -2294,7 +2296,7 @@ As that is a minimum of $\sabs{p(z)}$ on $\C$, then by the first lemma above we 
 that $\sabs{p(z_0)} = 0$.
 \end{proof}
 
-The theorem doesn't generalize to analytic functions either.  For example
+The theorem doesn't generalize to analytic functions either.  For example,
 $e^{z}$ is an analytic function on $\C$ with no zeros.
 
 \subsection{Exercises}
@@ -2976,14 +2978,15 @@ For $x \in [0,1]$ define
 \begin{equation*}
 g(x) := f\bigl((b-a)x+a\bigr)-f(a) - x\bigl(f(b)-f(a)\bigr) .
 \end{equation*}
-If we can prove the theorem for $g$ and find the sequence $\{ p_n \}$ for $g$,
-we prove it for $f$ as we simply
+If we prove the theorem for $g$ and find the sequence $\{ p_n \}$ for $g$,
+it is proved for $f$ as we simply
 composed with an invertible affine function and added an affine
-function to $f$.  We can reverse the process and apply that to our
+function to $f$:  We reverse the process and apply that to our
 $p_n$, to obtain polynomials approximating $f$.
 
-The function $g$ is defined on $[0,1]$ and $g(0)=g(1)=0$.  Assume that
-$g$ is defined on the whole real line for simplicity by defining
+The function $g$ is defined on $[0,1]$ and $g(0)=g(1)=0$.
+For simplicity, assume that
+$g$ is defined on the whole real line by letting
 $g(x) := 0$ if $x < 0$ or $x > 1$.  This extended $g$ is continuous.
 
 Define
@@ -3942,16 +3945,16 @@ or equivalently, thanks to Euler's formula ($e^{i\theta} = \cos(\theta) + i
 \begin{equation*}
 \sum_{n=-N}^N c_n e^{inx} .
 \end{equation*}
-The second form is usually more convenient.  Note that if
+The second form is usually more convenient.  If
 $\sabs{z}=1$ we write $z = e^{ix}$, and so
 \begin{equation*}
 \sum_{n=-N}^N c_n e^{inx} = 
 \sum_{n=-N}^N c_n z^n .
 \end{equation*}
-So a trigonometric polynomial is really a rational function (do note that
-we are allowing negative powers) evaluated on the unit circle.  There is
+So a trigonometric polynomial is really a rational function
+(we are allowing negative powers) evaluated on the unit circle.  There is
 a wonderful connection between power series (actually Laurent series because
-of the native powers) and
+of the negative powers) and
 Fourier series because of this observation,
 but we will not investigate this further.
 
@@ -4103,16 +4106,16 @@ c_n :=
 f(x) e^{-inx} ~ dx
 \end{equation*}
 its \emph{Fourier coefficients}.  Often these numbers are
-written as $\hat{f}(n)$\footnote{The notation seems similar
+written as $\hat{f}(n)$.\footnote{The notation seems similar
 to Fourier transform for those readers that have seen it.
 The similarity is not just
-coincidental, we are taking a type of Fourier transform here.}.
+coincidental, we are taking a type of Fourier transform here.}
 We then formally write down a Fourier series.
 As you might imagine such a series might not even converge.
 We write\glsadd{not:FS}
 \begin{equation*}
 f(x) \sim
-\sum_{n=-\infty}^\infty c_n \, e^{inx}
+\sum_{n=-\infty}^\infty c_n \, e^{inx} ,
 \end{equation*}
 although the $\sim$ doesn't imply anything about the two sides being equal
 in any way.  It is simply that we created a formal series using the formula

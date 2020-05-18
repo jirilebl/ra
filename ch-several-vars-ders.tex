@@ -10,24 +10,24 @@
 \subsection{Vector spaces}
 
 The euclidean space $\R^n$ has already made an appearance in the metric
-space chapter.  In this chapter, we will extend the differential calculus
+space chapter.  In this chapter, we extend the differential calculus
 we created for one variable to several variables.  The key idea in
-differential calculus is to approximate functions by lines and linear
-functions.  In several variables, we must introduce a little bit of linear
-algebra before we can move on.  So
-let us start with vector spaces and linear functions on vector spaces.
+differential calculus is to approximate functions linear
+functions (approximating the graph by a straight line).
+In several variables, we must introduce a little bit of linear
+algebra before we can move on.
+We start with vector spaces and linear mappings on vector spaces.
 
-While it is common to use $\vec{x}$ or the bold
-$\mathbf{x}$ for elements of $\R^n$,
+While it is common to use $\vec{v}$ or the bold
+$\mathbf{v}$ for elements of $\R^n$,
 especially in the applied sciences,
-we use just plain $x$, which is common in mathematics.
+we use just plain old $v$, which is common in mathematics.
 That is, $v \in \R^n$ is a \emph{\myindex{vector}}, which means 
 $v = (v_1,v_2,\ldots,v_n)$\glsadd{not:vector} is an $n$-tuple of
 real numbers.\footnote{Subscripts are used for many purposes,
 so sometimes we may have several vectors that may also
 be identified by subscript, such as a finite or infinite sequence of
 vectors $y_1,y_2,\ldots$.}
-
 It is common to write and treat vectors as
 \emph{\myindex{column vectors}}, that is, $n$-by-$1$ matrices:
 \glsadd{not:vectorcol}
@@ -45,9 +45,9 @@ We will do so when convenient.
 We call real numbers
 \emph{\myindex{scalars}} to distinguish them from vectors.
 
-In $\R^n$ we often think of vectors as a direction and a magnitude and draw the
+We often think of vectors as a direction and a magnitude and draw the
 vector as an arrow.  The vector $(v_1,v_2,\ldots,v_n)$ is represented
-by the arrow from the origin to the point $(v_1,v_2,\ldots,v_n)$, see
+by an arrow from the origin to the point $(v_1,v_2,\ldots,v_n)$, see
 \figureref{fig:vecasarrow} in the plane $\R^2$.
 When we think of vectors as arrows, they are
 not based at the origin necessarily; a vector is simply the direction and
@@ -61,8 +61,8 @@ On the other hand, each
 vector also represents a point in $\R^n$.  Usually, we think of $v \in \R^n$
 as a point if we are thinking of $\R^n$ as a metric space, and we think of
 it as an arrow if we think of the so-called \emph{vector space structure} on
-$\R^n$.
-Let us define the abstract notion of the vector space, as there
+$\R^n$ (addition and scalar multiplication).
+Let us define the abstract notion of a vector space, as there
 are many other vector spaces than just $\R^n$.
 
 \begin{defn}
@@ -164,7 +164,7 @@ a (v_1,v_2,\ldots,v_n) =
 \end{align*}
 \end{example}
 
-In this book we mostly deal with vector spaces that can be often regarded as
+In this book, we mostly deal with vector spaces that can be often regarded as
 subsets of $\R^n$, but there are other vector spaces useful in
 analysis.  Let us give a couple of examples.
 
@@ -172,7 +172,7 @@ analysis.  Let us give a couple of examples.
 A trivial example of a vector space is just
 $X := \{ 0 \}$.  The operations are defined in the obvious way: $0 + 0 := 0$
 and $a0 := 0$.  A zero vector must always exist,
-so all vector spaces are nonempty sets, and this $X$ is in fact the smallest
+so all vector spaces are nonempty sets, and this $X$ is the smallest
 possible vector space.
 \end{example}
 
@@ -3548,7 +3548,7 @@ is a contraction and $X$ is a complete metric space,
 then there exists a unique fixed point, that is,
 there exists a unique $x \in X$ such that $f(x) = x$.
 
-Intuitively if a function is continuously differentiable, then it
+Intuitively, if a function is continuously differentiable, then it
 locally \myquote{behaves like} the derivative (which is a linear function).
 The idea of the inverse function theorem is that if a function is
 continuously differentiable and the derivative is invertible, the function is
@@ -3563,7 +3563,7 @@ Suppose $p \in U$ and $f'(p)$ is invertible
 (that is, $J_f(p) \not=0$).
 Then there exist open sets $V, W \subset \R^n$ such that
 $p \in V \subset U$, $f(V) = W$ and $f|_V$ is one-to-one.  
-And hence a $g \colon W \to V$ exists such that
+Hence a function $g \colon W \to V$ exists such that
 $g(y) := (f|_V)^{-1}(y)$.
 See \figureref{fig:inversefuncRn}.
 Furthermore, $g$ is continuously differentiable
@@ -3585,10 +3585,10 @@ $V$ around $p$ such that
 \snorm{A-f'(x)} < \frac{1}{2\snorm{A^{-1}}}
 \qquad \text{for all } x \in V.
 \end{equation*}
-Note that $f'(x)$ is invertible for all $x \in V$
+Consequently, the derivative $f'(x)$ is invertible for all $x \in V$
 by \propref{prop:finitedimpropinv}.
 
-Given $y \in \R^n$ we define $\varphi_y \colon V \to \R^n$ by
+Given $y \in \R^n$, we define $\varphi_y \colon V \to \R^n$ by
 \begin{equation*}
 \varphi_y (x) := x + A^{-1}\bigl(y-f(x)\bigr) .
 \end{equation*}
@@ -3682,8 +3682,9 @@ So
 \snorm{h-A^{-1}k} = \snorm{\varphi_y(x+h)-\varphi_y(x)} \leq
 \frac{1}{2}\snorm{x+h-x} = \frac{\snorm{h}}{2}.
 \end{equation*}
-By the inverse triangle inequality $\snorm{h} - \snorm{A^{-1}k} \leq
-\frac{1}{2}\snorm{h}$, so
+By the inverse triangle inequality, $\snorm{h} - \snorm{A^{-1}k} \leq
+\frac{1}{2}\snorm{h}$.
+So
 \begin{equation*}
 \snorm{h} \leq 2 \snorm{A^{-1}k} \leq 2 \snorm{A^{-1}} \, \snorm{k}.
 \end{equation*}
@@ -3765,7 +3766,7 @@ by $f(x,y) := (x^2-y^2,2xy)$.
 It is left to student to show that $f$ is
 differentiable and the derivative is invertible.
 
-On the other hand, the mapping is 2-to-1 globally.  For every
+On the other hand, the mapping $f$ is 2-to-1 globally.  For every
 $(a,b)$ that is not the origin, there are exactly two
 solutions to $x^2-y^2=a$ and $2xy=b$.  We leave it to the student
 to show that there is at least one solution, and then notice
