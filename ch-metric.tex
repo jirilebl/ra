@@ -372,7 +372,7 @@ d(f,g) & =
 \sup_{x \in [a,b]} \abs{f(x)-h(x)+h(x)-g(x)}
 \\
 & \leq
-\sup_{x \in [a,b]} ( \abs{f(x)-h(x)}+\abs{h(x)-g(x)} )
+\sup_{x \in [a,b]} \bigl( \abs{f(x)-h(x)}+\abs{h(x)-g(x)} \bigr)
 \\
 & \leq
 \sup_{x \in [a,b]} \abs{f(x)-h(x)}+
@@ -532,7 +532,8 @@ $d\bigl( (x_1,y_1), (x_2,y_2) \bigr) := d_X(x_1,x_2) + d_Y(y_1,y_2)$ is
 a metric space.
 \item
 Show that $(X \times Y,d)$ with
-$d\bigl( (x_1,y_1), (x_2,y_2) \bigr) := \max \{ d_X(x_1,x_2) , d_Y(y_1,y_2) \}$ is
+$d\bigl( (x_1,y_1), (x_2,y_2) \bigr) := \max \bigl\{ d_X(x_1,x_2) ,
+d_Y(y_1,y_2) \bigr\}$ is
 a metric space.
 \end{enumerate}
 \end{exercise}
@@ -549,13 +550,13 @@ Show that $(X,d)$ is a metric space.
 \begin{exercise} \label{exercise:mshausdorffpseudo}
 Let $(X,d)$ be a metric space.  For nonempty bounded subsets $A$ and $B$ let
 \begin{equation*}
-d(x,B) := \inf \{ d(x,b) : b \in B \}
+d(x,B) := \inf \bigl\{ d(x,b) : b \in B \bigl\}
 \qquad \text{and} \qquad
-d(A,B) := \sup \{ d(a,B) : a \in A \} .
+d(A,B) := \sup \bigl\{ d(a,B) : a \in A \bigr\} .
 \end{equation*}
 Now define the \emph{\myindex{Hausdorff metric}} as
 \begin{equation*}
-d_H(A,B) := \max \{ d(A,B) , d(B,A) \} .
+d_H(A,B) := \max \bigl\{ d(A,B) , d(B,A) \bigr\} .
 \end{equation*}
 Note: $d_H$ can be defined for arbitrary nonempty subsets if we allow the
 extended reals.
@@ -643,14 +644,14 @@ such that $\sum_{n=1}^\infty x_n^2 < \infty$.
 Prove the \myindex{Cauchy--Schwarz inequality} for two sequences
 $\{x_n \}$ and $\{ y_n \}$ in $\ell^2$:
 \begin{equation*}
-{\biggl( \sum_{j=1}^\infty x_j y_j \biggr)}^2
+{\biggl( \sum_{n=1}^\infty x_n y_n \biggr)}^2
 \leq
-\biggl(\sum_{j=1}^\infty x_j^2 \biggr)
-\biggl(\sum_{j=1}^\infty y_j^2 \biggr) .
+\biggl(\sum_{n=1}^\infty x_n^2 \biggr)
+\biggl(\sum_{n=1}^\infty y_n^2 \biggr) .
 \end{equation*}
 \item
 Prove that $\ell^2$ is a metric space with the metric
-$d(x,y) := \sqrt{\sum_{j=1}^\infty {(x_j-y_j)}^2}$.
+$d(x,y) := \sqrt{\sum_{n=1}^\infty {(x_n-y_n)}^2}$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
