@@ -1505,14 +1505,16 @@ while(1)
 		# insert some xml before it does
 		#open_paragraph();
 
-	} elsif ($para =~ s/^\\begin\{tasks\}\[counter-format=tsk\[1\]\)\][ \n]*//) {
+	} elsif ($para =~ s/^\\begin\{tasks\}\[counter-format=tsk\[1\]\)\][ \n]*// ||
+		 $para =~ s/^\\begin\{tasks\}\[label=\\arabic\*\)\][ \n]*//) {
 		close_paragraph();
 		print "(begin tasks enumerate label 1)<)\n";
 		print $out "<ol label=\"1)\">\n";
 		$list_start=1;
 		$list_level++;
 		$initem=0;
-	} elsif ($para =~ s/^\\begin\{tasks\}\[counter-format=tsk\[1\]\)\]\((.*?)\)[ \n]*//) {
+	} elsif ($para =~ s/^\\begin\{tasks\}\[counter-format=tsk\[1\]\)\]\((.*?)\)[ \n]*// ||
+		 $para =~ s/^\\begin\{tasks\}\[label=\\arabic\*\)\]\((.*?)\)[ \n]*//) {
 		close_paragraph();
 		print "(begin tasks enumerate label 1) cols=$1<)\n";
 		print $out "<ol label=\"1)\" cols=\"$1\">\n";
