@@ -989,9 +989,12 @@ discontinuous at $c$.
 \end{prop}
 
 Again, 
-$\{ f(x_n) \}$ may or may not converge, but
-if it does, it definitely does not converge to
-$f(c)$.
+saying that 
+$\{ f(x_n) \}$ does not converge to $f(c)$
+means that it
+either does not converge
+at all, or it converges to something
+other than $f(c)$.
 
 \begin{example} \label{example:jumpdiscont}
 The function $f \colon \R \to \R$ defined by
@@ -1024,7 +1027,7 @@ for some specific
 sequence $\{ x_n \}$ going to 0,
 despite the function being discontinuous at 0.
 
-Finally, consider $f\bigl(\frac{{(-1)}^n}{n}\bigr) = {(-1)}^n$.
+Finally, consider $f\Bigl(\frac{{(-1)}^n}{n}\Bigr) = {(-1)}^n$.
 This sequence diverges.
 \end{example}
 
@@ -2005,7 +2008,7 @@ $\{ x_n \}$ be a Cauchy sequence in $S$.  Then $\{ f(x_n) \}$ is Cauchy.
 
 \begin{proof}
 Let $\epsilon > 0$ be given.  There is a $\delta > 0$ such that
-$\abs{f(x)-f(y)} < \epsilon$ whenever $\abs{x-y} < \delta$.  Find an $M
+$\abs{f(x)-f(y)} < \epsilon$ whenever $x,y \in S$ and $\abs{x-y} < \delta$.  Find an $M
 \in \N$ such that for all $n, k \geq M$ we have $\abs{x_n-x_k} < \delta$.
 Then for all $n, k \geq M$ we have $\abs{f(x_n)-f(x_k)} < \epsilon$.
 \end{proof}

@@ -339,10 +339,11 @@ and $A \not= B$.  We write $A \subsetneq B$.\glsadd{not:subsetneq}
 \end{enumerate}
 \end{defn}
 
-For example, for $S$ and $T$ defined above $T \subset S$, but
+For $S$ and $T$ defined above $T \subset S$, but
 $T \not= S$.  So $T$ is a proper subset of $S$.
 If $A = B$, then $A$ and $B$ are simply two names for the
 same exact set.
+
 Let us mention the
 \emph{\myindex{set building notation}},\glsadd{not:setbuilder}
 \begin{equation*}
@@ -350,10 +351,10 @@ Let us mention the
 \end{equation*}
 This notation refers to a subset of the set $A$ containing all elements
 of $A$ that satisfy the property $P(x)$.
-For example, using $S = \{ 0, 1, 2 \}$ as above, $\{ x \in S : x \not= 2 \}$
+Using $S = \{ 0, 1, 2 \}$ as above, $\{ x \in S : x \not= 2 \}$
 is the set $\{ 0, 1 \}$.
 The notation is sometimes
-abbreviated, $A$ is not mentioned when understood from context.
+abbreviated as $\bigl\{ x : P(x) \bigr\}$, that is, $A$ is not mentioned when understood from context.
 Furthermore, $x \in A$ is sometimes replaced with a formula to make the notation
 easier to read.  
 
@@ -370,8 +371,7 @@ $\Z := \{ 0, -1, 1, -2, 2, \ldots
 \}$.
 \item The set of \emph{\myindex{rational numbers}},
 \glsadd{not:rationals} 
-$\Q := \{ \frac{m}{n} :  m, n \in \Z
-\text{ and } n \not= 0 \}$.
+$\Q := \bigl\{ \frac{m}{n} :  m, n \in \Z \text{ and } n \not= 0 \bigr\}$.
 \item The set of even natural numbers, $\{  2m : m \in \N \}$.
 \item The set of real numbers,
 \glsadd{not:reals} 
@@ -671,8 +671,9 @@ Informally,
 a \emph{\myindex{set-theoretic function}}\index{function}
 $f$ taking a set $A$ to a set $B$
 is a mapping that to each $x \in A$ assigns a unique $y \in B$.  We write
-$f \colon A \to B$.\glsadd{not:func}  For example, we
-define a function $f \colon S \to T$ taking $S = \{ 0, 1, 2 \}$ to $T = \{ 0, 2 \}$
+$f \colon A \to B$.\glsadd{not:func}  An example function 
+$f \colon S \to T$ taking $S := \{ 0, 1, 2 \}$ to $T := \{ 0, 2 \}$
+can be defined
 by assigning $f(0) := 2$, $f(1) := 2$, and $f(2) := 0$.  That is, a function $f
 \colon A \to B$ is
 a black box, into which we stick an element of $A$ and the function
@@ -697,15 +698,15 @@ is the set of tuples defined as
 \glsadd{not:cartprod}
 \begin{equation*}
 A \times B :=
-\{ (x,y) : x \in A, y \in B \} .
+\bigl\{ (x,y) : x \in A, y \in B \bigr\} .
 \end{equation*}
 \end{defn}
 
-For example, the set $[0,1] \times [0,1]$ is a set in the plane
+For instance, the set $[0,1] \times [0,1]$ is a set in the plane
 bounded by a square with vertices $(0,0)$, $(0,1)$, $(1,0)$, and $(1,1)$.
 When $A$ and $B$ are the same set we sometimes use a superscript 2 to denote
-such a product.  For example $[0,1]^2 = 
-[0,1] \times [0,1]$, or $\R^2 = \R \times \R$ (the Cartesian plane).
+such a product.  For example, $[0,1]^2 = 
+[0,1] \times [0,1]$ or $\R^2 = \R \times \R$ (the Cartesian plane).
 
 \begin{defn}
 A \emph{function} $f \colon A \to B$ is a subset $f$ of $A \times B$
