@@ -798,8 +798,8 @@ any subspace $V$ of a vector space $X$ is convex.
 \end{example}
 
 \begin{example}
-A somewhat more complicated example is given by the following.  Let
-$C([0,1],\R)$ be the vector space of continuous real-valued functions on $\R$.
+%A somewhat more complicated example is given by the following.
+Let $C([0,1],\R)$ be the vector space of continuous real-valued functions on $\R$.
 Let $X \subset C([0,1],\R)$ be the set of those $f$ such that
 \begin{equation*}
 \int_0^1 f(x)~dx \leq 1 \qquad \text{and} \qquad
@@ -813,7 +813,8 @@ then $t f(x) + (1-t) g(x) \geq 0$ for all $x$.  Furthermore
 t \int_0^1 f(x) ~dx
 + (1-t)\int_0^1 g(x) ~dx \leq 1 .
 \end{equation*}
-Note that $X$ is not a vector subspace of $C([0,1],\R)$.
+Note that $X$ is not a vector subspace of $C([0,1],\R)$.  The function
+$f(x):=1$ is in $X$, but $2f$ and $-f$ is not.
 \end{example}
 
 \begin{prop}
@@ -935,8 +936,8 @@ Show that $D$ is a linear operator.
 
 \begin{exercise}
 Let us show that \propref{mv:prop:lin11onto} only works in finite
-dimensions.  Take $\R[t]$ and define the operator $A \colon \R[t] \to \R[t]$
-by $A\bigl(P(t)\bigr) = tP(t)$.  Show that $A$ is linear and one-to-one, but
+dimensions.  Take the space of polynomials $\R[t]$ and define the operator $A \colon \R[t] \to \R[t]$
+by $A\bigl(P(t)\bigr) := tP(t)$.  Show that $A$ is linear and one-to-one, but
 show that it is not onto.
 \end{exercise}
 
@@ -1063,7 +1064,7 @@ separately, or in more fancy language it is \emph{\myindex{bilinear}}.
 That is,
 if $y$ is fixed, the map $x \mapsto x \cdot y$ is a linear map from
 $\R^n$ to $\R$.  Similarly, if $x$ is fixed, then
-$y \mapsto x \cdot y$ is also linear.
+$y \mapsto x \cdot y$ is linear.
 It is also symmetric in the sense that $x \cdot y = y \cdot x$.
 The \emph{\myindex{euclidean norm}} is defined as\glsadd{not:normRn}
 \begin{equation*}
@@ -1145,7 +1146,7 @@ Let $A \in L(X,Y)$.  Define
 \end{equation*}
 The number $\snorm{A}$ (possibly $\infty$)
 is called the \emph{\myindex{operator norm}}.  We will see below
-that indeed it is a norm for finite dimensional spaces.
+that it is indeed a norm for finite dimensional spaces.
 Again, when necessary to emphasize which norm we are talking about, we may
 write it as $\snorm{A}_{L(X,Y)}$.\glsadd{not:normLXY}
 \end{defn}
@@ -1431,7 +1432,7 @@ a_{m,1} & a_{m,2} & \cdots & a_{m,n}
 We sometimes write $A$ as $[a_{i,j}]$.
 We say $A$ is an $m$-by-$n$ matrix.
 The \emph{\myindex{columns}} of the matrix are precisely the coefficients
-that represent $A x_j$, in terms of the basis $\{ y_1,y_2,\ldots,y_m \}$.
+that represent $A x_j$ in terms of the basis $\{ y_1,y_2,\ldots,y_m \}$.
 If we know the numbers $a_{i,j}$, then via the formula
 \eqref{eq:matrixrepresent} we find the corresponding linear operator,
 as it is determined by the action on a basis.  Hence, once we fix

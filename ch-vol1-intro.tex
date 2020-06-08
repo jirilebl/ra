@@ -725,13 +725,13 @@ is called the \emph{\myindex{range}} of $f$.
 \end{defn}
 
 It is possible that the range $R(f)$ is a proper subset of $B$,
-while the domain of $f$ is always equal to $A$.  We usually 
+while the domain of $f$ is always equal to $A$.  We generally 
 assume that the domain of $f$ is nonempty.
 
 \begin{example}
 From calculus, you are most familiar with functions taking real numbers to real
-numbers.  However, you saw some other types of functions as well.  For
-example, the derivative is a function mapping the set of
+numbers.  However, you saw some other types of functions as well.
+The derivative is a function mapping the set of
 differentiable functions to the set of all functions.
 Another example is the Laplace transform, which also
 takes functions to functions.  Yet another example is the function that takes
@@ -740,7 +740,7 @@ number $\int_0^1 g(x) ~dx$.
 \end{example}
 
 \begin{defn}
-Let $f \colon A \to B$ be a function, and $C \subset A$.  Define
+Consider a function $f \colon A \to B$ and $C \subset A$.  Define
 the \emph{\myindex{image}} (or \emph{\myindex{direct image}}) of $C$ as
 \glsadd{not:dirimage}
 \begin{equation*}
@@ -752,6 +752,10 @@ Let $D \subset B$.  Define the \emph{\myindex{inverse image}} of $D$ as
 f^{-1}(D) := \bigl\{ x \in A : f(x) \in D \bigr\} .
 \end{equation*}
 \end{defn}
+
+Notice in particular that $R(f) = f(A)$, the range is the direct image of
+$A$.
+
 \begin{myfigureht}
 \subimport*{figures/}{funcimags_full.pdf_t}
 \caption{Example of direct and inverse images for the function
@@ -769,7 +773,7 @@ $f^{-1}(\{0\}) = \Z$, etc.
 \end{example}
 
 \begin{prop} \label{st:propinv}
-Let $f \colon A \to B$.  Let $C, D$ be subsets of $B$.  Then
+Consider $f \colon A \to B$.  Let $C, D$ be subsets of $B$.  Then
 \begin{align*}
 & f^{-1}( C \cup D) = f^{-1} (C) \cup f^{-1} (D) , \\
 & f^{-1}( C \cap D) = f^{-1} (C) \cap f^{-1} (D) , \\
@@ -797,7 +801,7 @@ The proposition does not hold for direct images.  We do have
 the following weaker result.
 
 \begin{prop} \label{st:propfor}
-Let $f \colon A \to B$.  Let $C, D$ be subsets of $A$.  Then
+Consider $f \colon A \to B$.  Let $C, D$ be subsets of $A$.  Then
 \begin{align*}
 & f( C \cup D) = f (C) \cup f (D) , \\
 & f( C \cap D) \subset f (C) \cap f (D) .
@@ -816,35 +820,42 @@ for all $y \in B$ the set
 $f^{-1}(\{y\})$ is empty or consists of a single element.
 We call such an $f$ an \emph{\myindex{injection}}.
 
-The function $f$ is said to be
+If $f(A) = B$, then we say $f$ is
 \emph{\myindex{surjective}} or
-\emph{\myindex{onto}} if $f(A) = B$.
+\emph{\myindex{onto}}.
 We call such an $f$ a \emph{\myindex{surjection}}.
 
-A function $f$ that is both an injection and a surjection is
-said to be \emph{\myindex{bijective}}, and we say $f$ is a
+If $f$ is both an surjective and injective, then
+we say $f$ is \emph{\myindex{bijective}} or that $f$ is a
 \emph{\myindex{bijection}}.
 \end{defn}
 
-When $f \colon A \to B$ is a bijection, then $f^{-1}(\{y\})$ is always
-a unique element of $A$, and we can consider $f^{-1}$ as a function
+When $f \colon A \to B$ is a bijection, then the inverse image of a single
+element, $f^{-1}(\{y\})$, is always
+a unique element of $A$, and we consider $f^{-1}$ as a function
 \glsadd{not:invfunction}
-$f^{-1} \colon B \to A$.
+$f^{-1} \colon B \to A$ and we write simply $f^{-1}(y)$.
 In this case, we call $f^{-1}$ the \emph{\myindex{inverse function}} of $f$.
-For example, for the bijection $f \colon \R \to \R$ defined by $f(x) := x^3$ we have
+For instance, for the bijection $f \colon \R \to \R$ defined by $f(x) :=
+x^3$, we have
 $f^{-1}(x) = \sqrt[3]{x}$.
 
-A final piece of notation for functions that
-we need is the \emph{\myindex{composition of functions}}.
+%A final piece of notation for functions that
+%we need is the \emph{\myindex{composition of functions}}.
 
 \begin{defn}
-Let $f \colon A \to B$, $g \colon B \to C$.  The function 
-$g \circ f \colon A \to C$ is defined as
+Consider $f \colon A \to B$ and $g \colon B \to C$.  The
+\emph{composition}\index{composition of functions}
+of the functions $f$ and $g$ is the function
+$g \circ f \colon A \to C$ defined as
 \glsadd{not:composition}
 \begin{equation*}
 (g \circ f)(x) := g\bigl(f(x)\bigr) .
 \end{equation*}
 \end{defn}
+
+For example, if $f \colon \R \to \R$ is $f(x):=x^3$ and $g \colon \R \to \R$
+is $g(y) = \sin(y)$, then $(g \circ f)(x) = \sin(x^3)$.
 
 \subsection{Relations and equivalence classes}
 
@@ -918,8 +929,8 @@ An \emph{\myindex{equivalence class}} of $a \in A$, often denoted
 by $[a]$,\glsadd{not:equivclass} is the set $\{ x \in A : a\, \sR \, x \}$.
 \end{defn}
 
-For example, for the relation `$\star$' above, the equivalence classes
-are $[1] = [2] = \{ 1,2 \}$ and $[3] = \{ 3 \}$.
+For example, given the relation `$\star$' above, there are two equivalence classes,
+$[1] = [2] = \{ 1,2 \}$ and $[3] = \{ 3 \}$.
 
 Reflexivity guarantees that $a \in [a]$.  Symmetry guarantees
 that if $b \in [a]$, then $a \in [b]$.  Finally, transitivity guarantees that
@@ -958,12 +969,19 @@ by $\abs{A}$ \glsadd{not:cardinality} the equivalence class of all sets with the
 $A$ and we simply call $\abs{A}$ the cardinality of $A$.
 \end{defn}
 
-For example $\{ 1,2,3 \}$ has the same cardinality as $\{ a,b,c \}$ by
+For example, $\{ 1,2,3 \}$ has the same cardinality as $\{ a,b,c \}$ by
 defining a bijection $f(1) := a$, $f(2) := b$, $f(3) := c$.  Clearly the
 bijection is not unique.
 
+The existence of a bijection really is an equivalence relation.
+The identity, $f(x) := x$, is a bijection showing reflexivity.
+If $f$ is a bijection then so is $f^{-1}$ showing symmetricity.
+If $f \colon A \to B$ and $g \colon B \to C$ are bijections, then
+$g \circ f$ is a bijection of $A$ and $C$ showing transitivity.
 A set $A$ has the same cardinality as the empty set if and only
-if $A$ itself is the empty set.  We then write $\abs{A} := 0$.
+if $A$ itself is the empty set:  If $B$ is nonempty, then
+no function $f \colon B \to \emptyset$ can exist.
+In particular, there is no bijection of $B$ and $\emptyset$.
 
 \begin{defn}
 Suppose $A$ has the same cardinality as $\{ 1,2,3,\ldots,n \}$
@@ -993,7 +1011,7 @@ if $\abs{A} \leq \abs{B}$, but $A$ and $B$ do not have the same cardinality.
 \end{defn}
 
 We state without proof that
-$\abs{A} = \abs{B}$ have the same cardinality if and only if
+$A$ and $B$ have the same cardinality if and only if
 $\abs{A} \leq \abs{B}$ and
 $\abs{B} \leq \abs{A}$.  This is the so-called
 \myindex{Cantor--Bernstein--Schr\"oder} theorem.
