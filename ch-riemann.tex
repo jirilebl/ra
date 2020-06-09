@@ -1953,7 +1953,7 @@ logarithm that you know from calculus so well.
 First, we have a good idea of what $x^n$ means as long as
 $n$ is a positive integer.  Simply,
 \begin{equation*}
-x^n := \underbrace{x \cdot x \cdot \cdots \cdot x}_{n \text{times}} .
+x^n := \underbrace{x \cdot x \cdot \cdots \cdot x}_{n \text{ times}} .
 \end{equation*}
 It makes sense to define $x^0 := 1$.
 For negative integers we define $x^{-n} := \nicefrac{1}{x^n}$.
@@ -2268,7 +2268,7 @@ power series, see \exampleref{example:exponentialbypowerseries}.
 We have proved the uniqueness of the functions $L$ and $E$ from
 just the properties $L(1)=0$, $L'(x) = \nicefrac{1}{x}$
 and the equivalent condition for the exponential
-$E'(x) = E(x)$, $E(0) = 1$.  Existence in fact also follows
+$E'(x) = E(x)$, $E(0) = 1$.  Existence of course also follows
 from just these properties.
 Alternatively, uniqueness also follows
 from the laws of exponents, see the exercises.
@@ -2530,7 +2530,7 @@ As $p > 1$, then $p-1 > 0$.  Take the limit as $b \to \infty$
 to obtain that $\frac{1}{b^{p-1}}$ goes to 0.  The result follows.
 \end{proof}
 
-We state the following proposition for just one type
+We state the following proposition on \myquote{tails} for just one type
 of improper integral, though the proof is straight
 forward and the same for other types of improper integrals.
 
@@ -2591,16 +2591,16 @@ In the first item we allow for the value of $\infty$ in the
 supremum indicating that the integral diverges to infinity.
 
 \begin{proof}
-Let us start with the first item.
-Notice that as $f$ is nonnegative,
-then $\int_a^x f$ is increasing as a function of $x$.
+We start with the first item.
+As $f$ is nonnegative,
+$\int_a^x f$ is increasing as a function of $x$.
 If the supremum is infinite, then for every $M \in \R$
 we find $N$ such that $\int_a^N f \geq M$.  As $\int_a^x f$
-is increasing, then $\int_a^x f \geq M$ for all $x \geq N$.  So
+is increasing, $\int_a^x f \geq M$ for all $x \geq N$.  So
 $\int_a^\infty f$ diverges to infinity.
 
 Next suppose the supremum is finite, say
-$A = \sup \left\{ \int_a^x f : x \geq a \right\}$.
+$A := \sup \left\{ \int_a^x f : x \geq a \right\}$.
 For every $\epsilon > 0$, we find an $N$ such that
 $A - \int_a^N f < \epsilon$.  As $\int_a^x f$ is increasing,
 then
@@ -2737,11 +2737,16 @@ For $x \geq 1$ we obtain
 \end{equation*}
 Then
 \begin{equation*}
-3 \int_1^\infty \frac{1}{x^2}~dx
+\int_1^\infty \frac{3}{x^2}~dx
 =
-\lim_{c\to\infty} \int_1^c \frac{3}{x^2} ~dx.
+3 \int_1^\infty \frac{1}{x^2}~dx
+%=
+%\lim_{c\to\infty} \int_1^c \frac{3}{x^2} ~dx
+=
+3 .
 \end{equation*}
-So the integral converges.
+So using the comparison test and the tail test, the original
+integral converges.
 \end{example}
 
 \begin{example}
