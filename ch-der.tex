@@ -1486,7 +1486,7 @@ minimum at $x_0$.  Hint: Consider the limit definition of $f''(x_0)$.
 
 \subsection{Inverse function theorem}
 
-Let us start with a simple example.  Consider a function $f(x) := a x$ for a
+Let us start with a simple example.  Consider the function $f(x) := a x$ for a
 number $a \not= 0$.  Then $f \colon \R \to \R$ is bijective, and the inverse
 is $f^{-1}(y) = \frac{1}{a} y$.  In particular, $f'(x) = a$ and 
 $(f^{-1})'(y) = \frac{1}{a}$.  As differentiable functions are
@@ -1562,7 +1562,7 @@ So $g$ is differentiable at $y_0$ and $g'(y_0) =
 
 If $f'$ is continuous and nonzero at all $x \in I$,
 then the lemma applies at all $x \in I$.  As $g$ is also
-continuous, the derivative $g'(y) =
+continuous (it is differentiable), the derivative $g'(y) =
 \frac{1}{f'\left(\vphantom{1^1_1}g(y)\right)}$ must be continuous.
 \end{proof}
 
@@ -1576,7 +1576,7 @@ restriction $f|_{I}$ is injective with a continuously differentiable inverse
 $g \colon J \to I$ defined on an interval $J := f(I)$,
 and
 \begin{equation*}
-g'(y) = \frac{1}{f'\bigl( g(y) \bigr)} , \qquad \text{for all } y \in J.
+g'(y) = \frac{1}{f'\bigl( g(y) \bigr)} \qquad \text{for all } y \in J.
 \end{equation*}
 \end{thm}
 
@@ -1587,7 +1587,7 @@ such that $f'(x) > 0$ for all $x \in I$.  See
 \exerciseref{exercise:positivecontneigh}.
 
 By \propref{incdecdiffstrictprop} $f$ is strictly increasing
-on $I$, and hence the restriction $f|_{I}$ bijective onto $J: = f(I)$.
+on $I$, and hence the restriction $f|_{I}$ is bijective onto $J: = f(I)$.
 As $f$ is continuous,
 then by the
 \corref{cor:continterval}
@@ -1625,7 +1625,7 @@ and so again by \propref{incdecdiffstrictprop}, $f$ is strictly
 increasing (this can also be proved directly).
 Given any $M > 1$, $f(M) = M^n \geq M$, and given any $1 > \epsilon > 0$,
 $f(\epsilon) = \epsilon^n \leq \epsilon$.  For any $x$ with $\epsilon < x <
-M$ we have by the
+M$, we have by the
 \hyperref[IVT:thm]{intermediate value theorem} that $x \in
 f\bigl( [\epsilon,M] \bigr) \subset
 f\bigl( (0,\infty) \bigr)$.  As $M$ and $\epsilon$ were arbitrary, $f$ is onto
@@ -1700,7 +1700,7 @@ derivatives.
 
 \begin{exercise}
 Let $f(x) := x + 2 x^2 \sin(\nicefrac{1}{x})$ for $x \not= 0$ and
-$f(0) = 0$.  Show that $f$ is differentiable at all $x$, that $f'(0) > 0$,
+$f(0) := 0$.  Show that $f$ is differentiable at all $x$, that $f'(0) > 0$,
 but that $f$ is not invertible
 on any open interval containing the origin.
 \end{exercise}
