@@ -811,13 +811,13 @@ while(1)
 		my $theid = modify_id($1);
 		open_paragraph_if_not_open ();
 		print "(hyperref $theid $name)\n";
-		print $out "<xref ref=\"$theid\" text=\"title\">$name</xref>";
+		print $out "<xref ref=\"$theid\" text=\"custom\">$name</xref>";
 	} elsif ($para =~ s/^\\hyperlink\{(.*?)\}\{(.*?)\}//) {
 		my $name = do_line_subs($2);
 		my $theid = modify_id($1);
 		open_paragraph_if_not_open ();
 		print "(hyperlink $theid $name)\n";
-		print $out "<xref ref=\"$theid\" text=\"title\">$name</xref>";
+		print $out "<xref ref=\"$theid\" text=\"custom\">$name</xref>";
 	} elsif ($para =~ s/^\\emph\{//) {
 		print "(em start)\n";
 		open_paragraph_if_not_open();
@@ -1211,7 +1211,7 @@ while(1)
 
 			$figure_num = $figure_num+1;
 			$the_num = get_figure_number ();
-			print $out "<figure xml:id=\"$theid\" number=\"$the_num\">\n";
+			print $out "<rahr/><figure xml:id=\"$theid\" number=\"$the_num\">\n";
 			print $out "  <caption>$caption</caption>\n";
 
 			do {
@@ -1235,7 +1235,7 @@ while(1)
 					$num_errors++;
 				}
 			} while (not $figure eq "");
-			print $out "</figure>\n";
+			print $out "</figure><rahr/>\n";
 		} else {
 			print "\n\n\nHUH?\n\n\nNo end figure!\n\n$para\n\n";
 			$num_errors++;

@@ -9,6 +9,8 @@ Volume I and II are both in this directory
 * realanal2.tex is Volume II
 * The files above are just the "driver files", the actual contents are in the files ch-???.tex
 * realanal.tex must be complied first as realanal2.tex uses the realanal.aux file
+* The file realanal12.tex does both volumes together, currently that is only used
+  for the HTML conversion
 
 Notes on figures:
 
@@ -34,6 +36,8 @@ On the scripts:
 * publish.sh compiles the volume I file to pdf
 * publish2.sh compiles the volume II file to pdf
 * resizetocrownquatro.sh resize a PDF to crown quatro size using ghostscript
+* convert-to-mbx.sh (runs convert-to-mbx.pl) does the conversion to HTML through
+  PreTeXt, this is the only place that realanal12.tex is currently used.
 
 *Note:* The tex sources require a very recent LaTeX.  If your latex does not
 have a recent enough ocgx2 package, you can simply comment out that line in

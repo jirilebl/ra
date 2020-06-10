@@ -7,13 +7,13 @@
   <!-- ********************************************************* -->
   <!-- This requires editing the path based on your installation -->
   <!-- ********************************************************* -->
-  <xsl:import href="../../mathbook/xsl/mathbook-html.xsl"/>
+  <xsl:import href="../../mathbook/xsl/pretext-html.xsl"/>
 
   <!-- Intend output for rendering by html -->
   <!--<xsl:output method="html" />-->
 
   <!-- apply-imports applies also the original, apply-templates ignores the original-->
-  <!-- need hardcoded numbers on everything, so nonstandard mathbookxml -->
+  <!-- need hardcoded numbers on everything, so nonstandard pretext -->
   <xsl:template match="men|mrow|exercise|example|remark|theorem|lemma|proposition|corollary|principle|axiom|definition|chapter|appendix|section|subsection|subsubsection|figure" mode="number">
     <xsl:choose>
       <xsl:when test="@number">
@@ -25,7 +25,7 @@
     </xsl:choose>
   </xsl:template>
 
-  <!-- Want hardcoded reference labels so nonstandard mathbookxml -->
+  <!-- Want hardcoded reference labels so nonstandard pretext -->
   <xsl:template match="biblio" mode="serial-number">
     <xsl:choose>
       <xsl:when test="@tag">
@@ -59,9 +59,14 @@
     </xsl:if>
   </xsl:template>
 
-  <!-- need break, so nonstandard mathbookxml -->
+  <!-- need break, so nonstandard pretext -->
   <xsl:template match="rabr">
     <br/>
+  </xsl:template>
+
+  <!-- need hr (so far only using to separate figures) so nonstandard pretext -->
+  <xsl:template match="rahr">
+    <hr/>
   </xsl:template>
 
   <!-- need inline image, custom width, maxwidth, etc.., so nonstandard -->
