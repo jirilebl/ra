@@ -3249,10 +3249,10 @@ hand side.
 \begin{example}
 Let us show $\sum_{n=1}^\infty \frac{1}{n^2}$ exists and let us
 estimate its sum to within 0.01.  As this series is the $p$-series for
-$p=2$, we already proved it converges, but we have only roughly
+$p=2$, we already proved it converges, but we only roughly
 estimated its sum.
 
-Using fundamental theorem of calculus we find that for $k \in \N$
+Using the fundamental theorem of calculus we find that for $k \in \N$
 we have
 \begin{equation*}
 \int_{k}^\infty \frac{1}{x^2}~dx = \frac{1}{k} .
@@ -3397,7 +3397,7 @@ integral over this interval is less than say $2^{-k}$.
 \begin{exercise}[More challenging]
 Find an example of a function $f \colon [0,\infty) \to \R$ integrable on all
 intervals such that $\lim_{n\to\infty} \int_0^n f$ converges as a
-limit of a sequence, but such that
+limit of a sequence (so $n \in \N$), but such that
 $\int_0^\infty f$ does not exist.
 Hint: For all $n\in \N$, divide $[n,n+1]$ into two halves.  In one half
 make the function negative, on the other make the function positive.
@@ -3444,13 +3444,14 @@ to the principal value.
 Show that if $f$ is integrable on $[a,b]$, then
 $p.v.\!\int_a^b f = \int_a^b f$ (for an arbitrary $c \in (a,b)$).
 \item
-Find an example of an $f$ with a singularity at $c$ as above
-such that 
-$p.v.\!\int_a^b f$ exists, but the improper integrals
-$\int_a^c f$ and $\int_c^b f$ diverge.
+Suppose $f \colon [-1,1] \to \R$
+is an odd function ($f(-x)=-f(x)$), that is integrable on
+$[-1,-\epsilon]$ and $[\epsilon,1]$ for all $\epsilon >0$.
+Prove that 
+$p.v.\!\int_{-1}^1 f = 0$
 \item
 Suppose 
-$f \colon [-1,1] \to \R$ is continuous.  Show that
+$f \colon [-1,1] \to \R$ is continuous and differentiable at 0.  Show that
 $p.v.\!\int_{-1}^1 \frac{f(x)}{x}~dx$ exists.
 \end{enumerate}
 \end{exercise}
