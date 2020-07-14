@@ -1097,8 +1097,8 @@ Sometimes we wish to take a set and throw in everything that we can approach
 from the set.  This concept is called the closure.
 
 \begin{defn}
-Let $(X,d)$ be a metric space and $A \subset X$.  Then
-the \emph{\myindex{closure}} of $A$ is the set
+Let $(X,d)$ be a metric space and $A \subset X$.
+The \emph{\myindex{closure}} of $A$ is the set
 \glsadd{not:closure}
 \begin{equation*}
 \widebar{A} := \bigcap \{ E \subset X : E \text{ is closed and } A \subset
@@ -1108,19 +1108,20 @@ E \} .
 
 That is,
 $\widebar{A}$ is the intersection of all closed sets that contain $A$.
-There is at least one closed set containing every $A$, namely $X$ itself.
-And in particular, $A \subset \widebar{A}$.
+
 
 \begin{prop}
 Let $(X,d)$ be a metric space and $A \subset X$.  The closure $\widebar{A}$
-is closed.  Furthermore, if $A$ is closed, then $\widebar{A} = A$.
+is closed, and $A \subset \widebar{A}$.
+Furthermore, if $A$ is closed, then $\widebar{A} = A$.
 \end{prop}
 
 \begin{proof}
 The closure is an intersection of closed sets, so $\widebar{A}$ is closed.
-If $A$ is closed, then $A$ is a closed set that contains $A$,
-and so $\widebar{A} \subset A$.  And since $A \subset \widebar{A}$,
-we must have $A = \widebar{A}$.
+There is at least one closed set containing $A$, namely $X$ itself,
+so $A \subset \widebar{A}$.
+If $A$ is closed, then $A$ is a closed set that contains $A$.
+So $\widebar{A} \subset A$, and thus $A = \widebar{A}$.
 \end{proof}
 
 \begin{example}
@@ -1174,8 +1175,8 @@ and the boundary of a set (points we can
 approach both from the set and its complement).
 
 \begin{defn}
-Let $(X,d)$ be a metric space and $A \subset X$, then
-the \emph{\myindex{interior}} of $A$ is the set
+Let $(X,d)$ be a metric space and $A \subset X$.
+The \emph{\myindex{interior}} of $A$ is the set
 \glsadd{not:interior}
 \begin{equation*}
 A^\circ := \{ x \in A : \text{there exists a } \delta > 0
@@ -1195,8 +1196,8 @@ and $\partial A = \{ 0, 1 \}$.
 \end{example}
 
 \begin{example}
-Suppose $X := \{ a, b \}$ with the discrete metric.
-Let $A := \{ a \}$, then $\widebar{A} = A^\circ = A$ and $\partial A =
+Consider $X := \{ a, b \}$ with the discrete metric,
+and let $A := \{ a \}$.  Then $\widebar{A} = A^\circ = A$ and $\partial A =
 \emptyset$.
 \end{example}
 
@@ -1243,16 +1244,16 @@ a point of $A$.  If $B(x,\delta)$ contained no points of $A^c$,
 then $x$ would be in $A^\circ$.  Hence $B(x,\delta)$ contains a point of
 $A^c$ as well.
 
-Let us prove the other direction by contrapositive.  Suppose
-$x \notin \partial A$.
-If $x \notin \widebar{A}$, then there is some $\delta > 0$ such that
-$B(x,\delta) \subset \widebar{A}^c$ as $\widebar{A}$ is closed.
-So $B(x,\delta)$ contains no points of $A$, because $\widebar{A}^c \subset
+Let us prove the other direction by contrapositive.  
+Suppose $x \notin \partial A$, so $x \notin \widebar{A}$ or $x \in A^\circ$.
+If $x \notin \widebar{A}$, then
+$B(x,\delta) \subset \widebar{A}^c$
+for some $\delta > 0$ as $\widebar{A}$ is closed.
+So $B(x,\delta) \cap A$ is empty, because $\widebar{A}^c \subset
 A^c$.
-
-If $x \in A^\circ$, then there exists a $\delta > 0$
-such that $B(x,\delta) \subset A$.  But that means $B(x,\delta)$
-contains no points of $A^c$.
+If $x \in A^\circ$, then
+$B(x,\delta) \subset A$ for some $\delta > 0$,
+so $B(x,\delta) \cap A^c$ is empty.
 \end{proof}
 
 We obtain the following immediate corollary about closures of $A$ and $A^c$.  We
@@ -1331,9 +1332,9 @@ That is, the topologies of $(X,d)$ and $(X,d')$ are the same.
 
 
 \begin{exercise}
-Suppose $\{ S_i \}$, $i \in \N$
-is a collection of connected subsets of a metric space $(X,d)$.  Suppose
-there exists an $x \in X$ such that $x \in S_i$ for all $i \in \N$.
+Suppose $\{ S_i \}$, $i \in \N$,
+is a collection of connected subsets of a metric space $(X,d)$,
+and there exists an $x \in X$ such that $x \in S_i$ for all $i \in \N$.
 Show that $\bigcup_{i=1}^\infty S_i$ is connected.
 \end{exercise}
 
@@ -1371,7 +1372,7 @@ $\overline{B(x,\delta)} = C(x,\delta)$?  Prove or find a counterexample.
 
 \begin{exercise}
 Let $(X,d)$ be a metric space and $A \subset X$.  Show that
-$A^\circ = \bigcup \{ V : V \subset A \text{ is open} \}$.
+$A^\circ = \bigcup \{ V : V \text{ is open and } V \subset A \}$.
 \end{exercise}
 
 \begin{exercise}
