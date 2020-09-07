@@ -1014,7 +1014,7 @@ From the discussion above it follows that $S$ is disconnected.
 For the other direction start with nonempty disjoint $S_1$ and $S_2$ that are
 open in $S$ and such that $S = S_1 \cup S_2$.  Then use
 \propref{prop:topology:subspaceopen} again to find $U_1$ and $U_2$
-open in $X$ such that $U_1 \cap S = S_1$ and.
+open in $X$ such that $U_1 \cap S = S_1$ and
 $U_2 \cap S = S_2$.
 \end{proof}
 
@@ -1645,7 +1645,7 @@ $\{ y_j \}$ converges to $y$.
 
 \subsection{Convergence and topology}
 
-The topology, that is, the set of open sets of a space encodes which
+The topology---the set of open sets of a space---encodes which
 sequences converge.
 
 \begin{prop} \label{prop:msconvtopo}
@@ -1656,19 +1656,19 @@ we have $x_n \in U$.
 \end{prop}
 
 \begin{proof}
-First suppose $\{ x_n \}$ converges.  Let $U$ be an open neighborhood
+Suppose $\{ x_n \}$ converges to $x$.  Let $U$ be an open neighborhood
 of $x$, then there exists an $\epsilon > 0$ such that $B(x,\epsilon) \subset
 U$.  As the sequence converges, find an $M \in \N$ such that for all $n \geq
-M$ we have $d(x,x_n) < \epsilon$ or in other words $x_n \in B(x,\epsilon)
+M$ we have $d(x,x_n) < \epsilon$, or in other words $x_n \in B(x,\epsilon)
 \subset U$.
 
-Let us prove the other direction.  Given $\epsilon > 0$ let $U :=
+Let us prove the other direction.  Given $\epsilon > 0$, let $U :=
 B(x,\epsilon)$ be the neighborhood of $x$.  Then there is an $M \in \N$
 such that for $n \geq M$ we have $x_n \in U = B(x,\epsilon)$ or in other
 words, $d(x,x_n) < \epsilon$.
 \end{proof}
 
-A set is closed when it contains the limits of its convergent sequences.
+A closed set contains the limits of its convergent sequences.
 
 \begin{prop} \label{prop:msclosedlim}
 Let $(X,d)$ be a metric space, $E \subset X$ a closed set,
@@ -1743,7 +1743,7 @@ $\{ x_{f(n)} \}_{n=1}^\infty$ converges to $x$.
 \end{exercise}
 
 \begin{exercise}
-If $(X,d)$ is a metric space where $d$ is the discrete metric.  Suppose 
+Let $(X,d)$ be a metric space where $d$ is the discrete metric.  Suppose 
 $\{ x_n \}$ is a convergent sequence in $X$.  Show that there exists
 a $K \in \N$ such that for all $n \geq K$ we have $x_n = x_K$.
 \end{exercise}
@@ -1794,9 +1794,9 @@ only if it converges in $\R$ with the standard metric.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ V_n \}_{n=1}^\infty$ is a collection of open sets
+Suppose $\{ V_n \}_{n=1}^\infty$ is a sequence of open sets
 in $(X,d)$
-such that $V_{n+1} \supset V_n$.  Let $\{ x_n \}$ be a sequence
+such that $V_{n+1} \supset V_n$ for all $n$.  Let $\{ x_n \}$ be a sequence
 such that $x_n \in V_{n+1} \setminus V_n$ and suppose 
 $\{ x_n \}$ converges to $p \in X$.  Show that $p \in \partial V$
 where $V = \bigcup_{n=1}^\infty V_n$.
@@ -1872,7 +1872,7 @@ A convergent sequence in a metric space is Cauchy.
 
 \begin{proof}
 Suppose $\{ x_n \}$ converges to $x$.
-Given $\epsilon > 0$ there is an $M$ such that for $n \geq M$
+Given $\epsilon > 0$, there is an $M$ such that for $n \geq M$
 we have $d(x,x_n) < \nicefrac{\epsilon}{2}$.  Hence
 for all $n,k \geq M$ we have
 $d(x_n,x_k) \leq d(x_n,x) + d(x,x_k) < \nicefrac{\epsilon}{2} +
@@ -1897,12 +1897,12 @@ the proposition above is a reduction to the one dimensional case.
 Let $\{ x_j \}_{j=1}^\infty$ be a Cauchy sequence
 in $\R^n$, where we write $x_j = \bigl(x_{j,1},x_{j,2},\ldots,x_{j,n}\bigr) \in \R^n$.
 As the sequence is Cauchy, given $\epsilon > 0$, there exists an $M$ such that for all
-$i,j \geq M$ we have
+$i,j \geq M$,
 \begin{equation*}
 d(x_i,x_j) < \epsilon.
 \end{equation*}
 
-Fix some $k=1,2,\ldots,n$, for $i,j \geq M$ we have
+Fix some $k=1,2,\ldots,n$.  For $i,j \geq M$,
 \begin{equation*}
 \bigl\lvert x_{i,k} - x_{j,k} \bigr\rvert
 =
@@ -1912,11 +1912,11 @@ Fix some $k=1,2,\ldots,n$, for $i,j \geq M$ we have
 = d(x_i,x_j) < \epsilon .
 \end{equation*}
 Hence the sequence $\{ x_{j,k} \}_{j=1}^\infty$ is Cauchy.  As $\R$ is
-complete the sequence converges; there exists an $y_k \in \R$ such that
+complete the sequence converges; there exists a $y_k \in \R$ such that
 $y_k = \lim_{j\to\infty} x_{j,k}$.
 Write $y = (y_1,y_2,\ldots,y_n) \in \R^n$.
 By \propref{prop:msconveuc}, $\{ x_j \}$ converges
-to $y \in \R^n$ and hence $\R^n$ is complete.
+to $y \in \R^n$, and hence $\R^n$ is complete.
 \end{proof}
 
 A subset of $\R^n$ with the subspace metric need not be
@@ -2051,7 +2051,7 @@ See right hand side of \figureref{fig:compactbndclosed}.
 \end{myfigureht}
 
 We prove below that 
-in finite dimensional euclidean space
+in a finite dimensional euclidean space
 every closed bounded set is compact.
 So closed bounded sets
 of $\R^n$ are examples of compact sets.
@@ -2492,7 +2492,7 @@ $d'(x,y) := \bigl\lvert \frac{x}{1+\abs{x}} - \frac{y}{1+\abs{y}}
 \begin{enumerate}[a)]
 \item
 Show that $(\R,d')$ is a metric space (if you have done
-\exerciseref{exercise:extendedrealsmetric} the computation is the same).
+\exerciseref{exercise:extendedrealsmetric}, the computation is the same).
 \item
 Show that the topology is the same, that is, a set is open in
 $(\R,d)$ if and only if it is open in $(\R,d')$.
