@@ -1813,7 +1813,6 @@ is a well-defined function (not just on matrices).
 
 There are three types of so-called
 \emph{elementary matrices}\index{elementary matrix}.
-There are three types of elementary matrices.
 Let
 $e_1,e_2,\ldots,e_n$ be the standard basis on $\R^n$ as usual.
 
@@ -2040,8 +2039,8 @@ Show that $D$ does not have bounded operator norm, that is $\snorm{D} =
 \pagebreak[1]
 \begin{exercise}
 In this exercise we finish the proof of \propref{prop:finitedimpropnormfin}.
-Let $X$ be any finite dimensional normed vector space.
-Let $\{ x_1,x_2,\ldots,x_n \}$ be a basis for $X$.
+Let $X$ be a finite dimensional normed vector space with basis
+$\{ x_1,x_2,\ldots,x_n \}$.
 \begin{enumerate}[a)]
 \item
 Show that the function $f \colon \R^n \to \R$
@@ -2524,7 +2523,7 @@ Finally,
 \end{equation*}
 As $f$ is differentiable at $p$,
 for small enough $h$, the quantity
-$\frac{\snorm{f(p+h)-f(p)-Ah}}{\snorm{h}}$ is bounded.  Therefore the
+$\frac{\snorm{f(p+h)-f(p)-Ah}}{\snorm{h}}$ is bounded.  Hence, the
 term
 $
 \frac
@@ -3404,7 +3403,7 @@ Define $f \colon \R^2 \to \R$ as
 f(x,y) :=
 \begin{cases}
 (x^2+y^2)\sin\bigl({(x^2+y^2)}^{-1}\bigr) & \text{if } (x,y) \not= (0,0), \\
-0                                         & \text{else.}
+0                                         & \text{if } (x,y) = (0,0).
 \end{cases}
 \end{equation*}
 Show that $f$ is differentiable at the origin, but that it is not 
@@ -3505,11 +3504,11 @@ if $f(0) = h(0)$, then $f(x) = h(x)$ for all $x \in \R^n$.
 \end{exercise}
 
 \begin{exercise}
-Prove the assertion about the base case
-in the proof of \propref{mv:prop:contdiffpartials}.  That is, prove that
+Prove the base case
+in \propref{mv:prop:contdiffpartials}.  That is, prove that
 if $n=1$ and 
-the partials exist and are continuous, the function is continuously
-differentiable.
+``the partials exist and are continuous,'' then the function is continuously
+differentiable.  Note that $f$ is vector-valued.
 \end{exercise}
 
 \begin{exercise}
