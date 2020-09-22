@@ -346,6 +346,7 @@ sub do_more_subs {
 	$line =~ s|\$(.*?)\$|<m>$1</m>|gs;
 	$line =~ s|\\myquote\{(.*?)\}|<q>$1</q>|sg;
 
+	$line =~ s|\\index\{([^}]*)\}|<idx>$1</idx>|gs;
 	$line =~ s|\\myindex\{([^}]*)\}|$1<idx>$1</idx>|gs;
 
 	return $line;
