@@ -116,7 +116,9 @@
 \end{figure}}
 
 % useful
+%mbxSTARTIGNORE
 \newcommand{\ignore}[1]{}
+%mbxENDIGNORE
 
 % analysis/geometry stuff
 \newcommand{\ann}{\operatorname{ann}}
@@ -235,10 +237,14 @@
 % This is really just for marking these
 %so that they are easy to find
 % The second argument is the thing for the both volumes together thing
+%mbxSTARTIGNORE
 \newcommand{\volIref}[2]{#2\@}
+%mbxENDIGNORE
 
 % Set up our index
 \makeindex
+
+%mbxSTARTIGNORE
 
 % Very simple indexing
 \newcommand{\myindex}[1]{#1\index{#1}}
@@ -253,6 +259,8 @@
 % save some paper
 \newcommand{\sectionnewpage}{\clearpage}
 %\newcommand{\sectionnewpage}{}
+
+%mbxENDIGNORE
 
 \author{Ji\v{r}\'i Lebl}
 
@@ -302,6 +310,7 @@
 \newtheorem{example}[thm]{Example}
 
 % referencing
+%mbxSTARTIGNORE
 \newcommand{\figureref}[1]{\hyperref[#1]{Figure~\ref*{#1}}}
 \newcommand{\tableref}[1]{\hyperref[#1]{Table~\ref*{#1}}}
 \newcommand{\chapterref}[1]{\hyperref[#1]{chapter~\ref*{#1}}}
@@ -315,6 +324,7 @@
 \newcommand{\lemmaref}[1]{\hyperref[#1]{Lemma~\ref*{#1}}}
 \newcommand{\corref}[1]{\hyperref[#1]{Corollary~\ref*{#1}}}
 \newcommand{\defnref}[1]{\hyperref[#1]{Definition~\ref*{#1}}}
+%mbxENDIGNORE
 
 
 % List of Symbols/Notation
