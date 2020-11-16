@@ -24,13 +24,13 @@ g'(y) \overset{?}{=} \int_a^b \frac{\partial f}{\partial y}(x,y) ~dx .
 Differentiation is a limit and therefore we are really asking when do the
 two limiting operations of integration and differentiation commute.
 This is not always possible and some extra hypothesis is
-necessary.  In particular, the first
+necessary.  The first
 question we would face is the integrability of
-$\frac{\partial f}{\partial y}$, but the formula can fail even if
+$\frac{\partial f}{\partial y}$, but the formula above can fail even if
 $\frac{\partial f}{\partial y}$ is integrable as a function of $x$ for every
 fixed $y$.
 
-Let us prove a simple, but perhaps the most useful version of this theorem.
+We prove a simple, but perhaps the most useful version of this kind of result.
 
 \begin{thm}[\myindex{Leibniz integral rule}]
 Suppose $f \colon [a,b] \times [c,d] \to \R$ is a continuous function,
@@ -48,10 +48,10 @@ g'(y) = \int_a^b \frac{\partial f}{\partial y}(x,y) ~dx .
 The hypotheses on $f$ and $\frac{\partial f}{\partial y}$ can be
 weakened, see e.g.\ \exerciseref{exercise:strongerleibniz},
 but not dropped outright.
-The main point in the proof is for
-$\frac{\partial f}{\partial y}$ to exist and be continuous for all $x$
-up to the ends, but we only need a small
-interval in the $y$ direction.  In applications, we often make $[c,d]$ be a
+The main point in the proof requires that
+$\frac{\partial f}{\partial y}$ exists and is continuous for all $x$
+up to the endpoints, but we only need a small
+interval in the $y$ direction.  In applications, we often make $[c,d]$ a
 small interval around the point where we need to differentiate.
 
 \begin{proof}
@@ -141,7 +141,7 @@ f'(y) = \int_0^1 -2y\cos(x^2-y^2) ~dx .
 \end{example}
 
 \begin{example} \label{example:counterexamplediffunder}
-Suppose we start with
+Consider
 \begin{equation*}
 \int_0^{1} \frac{x-1}{\ln(x)} ~dx .
 \end{equation*}
@@ -163,11 +163,11 @@ See \figureref{fig:diffunderexample}.
 \end{myfigureht}
 
 
-Therefore
-$g$ is a continuous function of on $[0,1]$, and $g(0) = 0$.
+Hence,
+$g$ is a continuous function on $[0,1]$ and $g(0) = 0$.
 For any $\epsilon > 0$, the $y$ derivative of the integrand, $x^y$,
 is continuous on $[0,1] \times [\epsilon,1]$.  Therefore,
-for $y >0$ we may differentiate under the integral sign
+for $y >0$, we may differentiate under the integral sign
 \begin{equation*}
 g'(y) =
 \int_0^{1} \frac{\ln(x) x^y}{\ln(x)} ~dx 
@@ -175,8 +175,9 @@ g'(y) =
 \int_0^{1} x^y ~dx =
 \frac{1}{y+1} .
 \end{equation*}
-We need to figure out $g(1)$, knowing $g'(y) = \frac{1}{y+1}$ and $g(0) =
-0$.  By elementary calculus we find $g(1) = \int_0^1 g'(y)~dy = \ln(2)$.  Therefore
+We need to figure out $g(1)$ given that $g'(y) = \frac{1}{y+1}$ and $g(0) =
+0$.  Elementary calculus says that $g(1) = \int_0^1 g'(y)~dy = \ln(2)$.
+Thus,
 \begin{equation*}
 \int_0^{1} \frac{x-1}{\ln(x)} ~dx  = \ln(2).
 \end{equation*}
@@ -259,11 +260,14 @@ f(x,y) :=
 Prove that for any fixed $y$ the function $x \mapsto f(x,y)$ is
 Riemann integrable on $[0,1]$ and
 \begin{equation*}
-g(y) = \int_0^1 f(x,y) ~ dx = \frac{y}{2y^2+2} .
+g(y) := \int_0^1 f(x,y) ~ dx = \frac{y}{2y^2+2} .
 \end{equation*}
-Therefore $g'(y)$ exists and we get the continuous function
+Therefore, $g'(y)$ exists and its derivative is the continuous function
 \begin{equation*}
-g'(y) = \frac{1-y^2}{2{(y^2+1)}^2} .
+g'(y) =
+\frac{d}{dy} \int_0^1 f(x,y) ~ dx
+=
+\frac{1-y^2}{2{(y^2+1)}^2} .
 \end{equation*}
 \item
 Prove $\frac{\partial f}{\partial y}$ exists at all $x$ and $y$ and
@@ -293,7 +297,7 @@ x \,\sin \left(\frac{y}{x^2+y^2}\right) & \text{if } (x,y) \not= (0,0),\\
 \begin{enumerate}[a)]
 \item
 Prove $f$ is continuous on all of $\R^2$.
-Therefore the following function is well defined for every $y \in \R$:
+Therefore the following function is well-defined for every $y \in \R$:
 \begin{equation*}
 g(y) := \int_0^1 f(x,y) ~ dx .
 \end{equation*}
@@ -340,21 +344,22 @@ volume I}{\exerciseref{exercise:integralcontcontextra} and
 
 Let $\gamma \colon [a,b] \to \R^n$ be a function and write
 $\gamma = (\gamma_1,\gamma_2,\ldots,\gamma_n)$. 
-Then $\gamma$ is said to be
-\emph{continuously differentiable}
-whenever there exists a continuous function $\gamma^{\:\prime} \colon [a,b]
+Suppose $\gamma$ is 
+\emph{continuously differentiable},
+that is,
+it is differentiable and the derivative is continuous.
+In other words, there exists a continuous function $\gamma^{\:\prime} \colon [a,b]
 \to \R^n$ such that for every $t \in [a,b]$, we have
 $\lim\limits_{h \to 0}
 \frac{\snorm{\gamma(t+h)-\gamma(t) - \gamma^{\:\prime}(t) \, h}}{\sabs{h}} = 0$.
-As before we treat
+We treat
 $\gamma^{\:\prime}(t)$ either as a linear operator (an $n \times 1$ matrix) or
-a vector, as it is a column vector.
-As a vector,
+a vector,
 $\gamma^{\:\prime}(t) =
 \bigl( \gamma_1^{\:\prime}(t), \gamma_2^{\:\prime}(t), \ldots,
-\gamma_n^{\:\prime}(t) \bigr)$,
-and the definition is the same as
-$\gamma_j$ being a continuously differentiable function on $[a,b]$
+\gamma_n^{\:\prime}(t) \bigr)$.
+Equivalently, we require
+$\gamma_j$ to be a continuously differentiable function on $[a,b]$
 for every $j=1,2,\ldots,n$.
 By \exerciseref{exercise:normonedim}, the operator norm of
 the operator $\gamma^{\:\prime}(t)$ is equal to
