@@ -358,8 +358,8 @@ a vector,
 $\gamma^{\:\prime}(t) =
 \bigl( \gamma_1^{\:\prime}(t), \gamma_2^{\:\prime}(t), \ldots,
 \gamma_n^{\:\prime}(t) \bigr)$.
-Equivalently, we require
-$\gamma_j$ to be a continuously differentiable function on $[a,b]$
+Equivalently, 
+$\gamma_j$ is a continuously differentiable function on $[a,b]$
 for every $j=1,2,\ldots,n$.
 By \exerciseref{exercise:normonedim}, the operator norm of
 the operator $\gamma^{\:\prime}(t)$ is equal to
@@ -382,7 +382,7 @@ The function $\gamma \colon [a,b] \to \R^n$ is called a
 \emph{\myindex{piecewise continuously differentiable path}}
 if there exist finitely many points
 $t_0 = a < t_1 < t_2 < \cdots < t_k = b$ such that
-the restriction of the function $\gamma|_{[t_{j-1},t_j]}$ is smooth path.
+the restriction $\gamma|_{[t_{j-1},t_j]}$ is smooth path.
 
 A path $\gamma$ is said to be a \emph{\myindex{simple path}} if $\gamma|_{[a,b)}$ is
 a one-to-one function.  A path $\gamma$ is 
@@ -408,11 +408,11 @@ Let $\gamma \colon [0,4] \to \R^2$ be defined by
 \caption{The path $\gamma$ traversing the unit square.\label{fig:squarepath}}
 \end{myfigureht}
 
-The path is the unit square traversed
+The path $\gamma$ is the unit square traversed
 counterclockwise.  See \figureref{fig:squarepath}.  It is
 a piecewise smooth path.  For example,
 $\gamma|_{[1,2]}(t) = (1,t-1)$ and so
-$(\gamma|_{[1,2]})'(t) = (0,1) \not= 0$.  Similarly for the other sides.
+$(\gamma|_{[1,2]})'(t) = (0,1) \not= 0$.  Similarly for the other 3 sides.
 Notice
 that
 $(\gamma|_{[1,2]})'(1) = (0,1)$,
@@ -503,9 +503,10 @@ $\gamma \circ h$ is called a
 \emph{\myindex{smooth reparametrization}}\index{reparametrization}
 of $\gamma$.
 
-Let $\gamma$ be a piecewise smooth path,
-and $h$ be a piecewise smooth bijective function.  Then
-the composition
+Let $\gamma$ be a piecewise smooth path, and
+$h$ a piecewise smooth bijective function with
+nonzero one-sided limits of $h'$.
+The composition
 $\gamma \circ h$ is called a
 \emph{\myindex{piecewise smooth reparametrization}} of $\gamma$.
 
@@ -518,12 +519,12 @@ A reparametrization is another path for the same set.  That is,
 $(\gamma \circ h)\bigl([c,d]\bigr) =
 \gamma \bigl([a,b]\bigr)$.
 
-Let us remark that for $h$, piecewise smooth means that there is
-some partition $t_0 = c < t_1 < t_2 < \cdots < t_k = d$,
+The conditions on the piecewise smooth $h$ mean that
+there is some partition $t_0 = c < t_1 < t_2 < \cdots < t_k = d$,
 such that $h|_{[t_{j-1},t_j]}$ is continuously differentiable
 and $(h|_{[t_{j-1},t_j]})'(t) \not= 0$ for all $t \in [t_{j-1},t_j]$.
 Since $h$ is bijective, it is either strictly increasing or
-strictly decreasing.  Therefore either $(h|_{[t_{j-1},t_j]})'(t) > 0$
+strictly decreasing.  So either $(h|_{[t_{j-1},t_j]})'(t) > 0$
 for all $t$ or $(h|_{[t_{j-1},t_j]})'(t) < 0$ for all $t$.
 
 \begin{prop} \label{prop:reparamapiecewisesmooth}
@@ -534,7 +535,7 @@ is a piecewise smooth path.
 \end{prop}
 
 \begin{proof}
-Let us assume that $h$ preserves orientation, that is, $h$ is strictly
+Assume that $h$ preserves orientation, that is, $h$ is strictly
 increasing.
 If $h \colon [c,d] \to [a,b]$ gives a piecewise smooth reparametrization,
 then for some partition
@@ -618,13 +619,13 @@ Define:
 \Bigl(
 \omega_1\bigl(\gamma(t)\bigr) \gamma_1^{\:\prime}(t) +
 \omega_2\bigl(\gamma(t)\bigr) \gamma_2^{\:\prime}(t) + \cdots +
-\omega_n\bigl(\gamma(t)\bigr) \gamma_n^{\:\prime}(t) \Bigr) ~ dt
+\omega_n\bigl(\gamma(t)\bigr) \gamma_n^{\:\prime}(t) \Bigr) dt
 \\
 &\phantom{:}=
 \int_a^b 
 \left(
 \sum_{j=1}^n
-\omega_j\bigl(\gamma(t)\bigr) \gamma_j^{\:\prime}(t) \right) ~ dt .
+\omega_j\bigl(\gamma(t)\bigr) \gamma_j^{\:\prime}(t) \right) dt .
 \end{split}
 \end{equation*}
 To remember the definition note that $x_j$ is $\gamma_j(t)$, so
@@ -654,7 +655,7 @@ a smooth path, define
 
 The notation makes sense from the formula you remember from calculus,
 let us state it somewhat informally:
-If $x_j(t) = \gamma_j(t)$, then $dx_j = \gamma_j^{\:\prime}(t) dt$.
+If $x_j(t) = \gamma_j(t)$, then $dx_j = \gamma_j^{\:\prime}(t) \, dt$.
 
 Paths can be cut up or concatenated.  The proof is a direct application
 of the additivity of the Riemann integral, and is left as an exercise.
@@ -796,7 +797,7 @@ the change of variables formula for the Riemann integral:
 \left(
 \sum_{j=1}^n
 \omega_j\bigl(\gamma(t)\bigr) \gamma_j^{\:\prime}(t)
-\right) ~ dt
+\right) dt
 \\
 & =
 \int_c^d 
@@ -810,7 +811,7 @@ the change of variables formula for the Riemann integral:
 \left(
 \sum_{j=1}^n
 \omega_j\Bigl(\gamma\bigl(h(\tau)\bigr)\Bigr) (\gamma_j \circ h)'(\tau)
-\right) ~ d\tau
+\right) d\tau
 =
 \int_{\gamma \circ h} \omega .
 \end{split}
@@ -872,7 +873,7 @@ Compute
 =
 \int_0^{2\pi}
 \Bigl( \bigl(-\sin(2t) \bigr) \bigl(-2\sin(2t) \bigr) + \cos(t)
-\bigl(2\cos(t)\bigr) \Bigr) ~dt
+\bigl(2\cos(t)\bigr) \Bigr) dt
 =
 4 \pi.
 \end{align*}
@@ -887,7 +888,7 @@ Define
 \left(
 \sum_{j=1}^n
 \omega_j\bigl(\gamma(t)\bigr) \gamma_j^{\:\prime}(t)
-\right) ~ dt 
+\right) dt 
 \end{equation*}
 for any continuously differentiable $\gamma$.  A 
 case that comes up naturally is when $\gamma$ is constant.  Then
@@ -1127,13 +1128,13 @@ Provide a definition of $\int_{\gamma} f ~ds$.
 Directly using the definitions compute:
 \begin{enumerate}[a)]
 \item
-the arc-length of the unit square from
+The arc-length of the unit square from
 \exampleref{mv:example:unitsquarepath} using the given parametrization.
 \item
-the arc-length of the unit circle using the parametrization
+The arc-length of the unit circle using the parametrization
 $\gamma \colon [0,1] \to \R^2$, $\gamma(t) := \bigl(\cos(2\pi t),\sin(2\pi t)\bigr)$.
 \item
-the arc-length of the unit circle using the parametrization
+The arc-length of the unit circle using the parametrization
 $\beta \colon [0,2\pi] \to \R^2$, $\beta(t) := \bigl(\cos(t),\sin(t)\bigr)$.
 \end{enumerate}
 Note: Feel free to use what you know about sine and cosine from calculus.
@@ -1315,7 +1316,7 @@ and $\gamma(b) = \beta(d) = y$ we have
 \begin{equation*}
 \int_\gamma \omega = \int_\beta \omega .
 \end{equation*}
-In this case we simply write
+In this case, we simply write
 \begin{equation*}
 \int_x^y \omega := \int_\gamma \omega = \int_\beta \omega .
 \end{equation*}
@@ -1614,7 +1615,7 @@ f(x) := \int_{\gamma} \omega
 \left(
 \sum_{k=1}^n
 \omega_k \bigl((1-t)p + tx \bigr) (x_k-p_k)
-\right) ~ dt .
+\right) dt .
 \end{equation*}
 We differentiate in $x_j$ under the integral, which is allowed as
 everything, including the partials, is continuous.
@@ -1631,7 +1632,7 @@ everything, including the partials, is continuous.
 +
 \omega_j \bigl((1-t)p + tx \bigr)
 \right)
- ~ dt
+ dt
 \\
 & = 
 \int_0^1
@@ -1643,7 +1644,7 @@ everything, including the partials, is continuous.
 \right)
 +
 \omega_j \bigl((1-t)p + tx \bigr)
-\right) ~ dt
+\right) dt
 \\
 & = 
 \int_0^1
