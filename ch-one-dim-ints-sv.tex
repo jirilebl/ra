@@ -1802,7 +1802,10 @@ reachable by a path from $x$.  Show that $U_x$ and $U \setminus U_x$
 are both open, and since $U_x$ is nonempty ($x \in U_x$) it must be
 that $U_x = U$.
 \item
-Prove the converse that is, a path connected set $U \subset \R^n$ is
+Prove the converse, that is, a open\footnote{If the
+definition of \myquote{path connected} is as in the next exercise,
+\myquote{open} would not be needed for this part.}
+path connected set $U \subset \R^n$ is
 connected.  Hint: For contradiction assume there exist two open and disjoint nonempty open
 sets and then assume there is a piecewise smooth (and therefore continuous)
 path between a point in one to a point in the other.
@@ -1810,13 +1813,14 @@ path between a point in one to a point in the other.
 \end{exercise}
 
 \begin{exercise}
-Usually path connectedness is defined using just continuous paths rather
-than piecewise smooth paths.  Prove that the definitions are equivalent, in
-other words prove the following statement:\\
-Suppose $U \subset \R^n$ is open is such that for any $x,y \in U$, there exists a continuous function
+Usually path connectedness is defined using continuous paths rather
+than piecewise smooth paths.  Prove that for open subsets of $\R^n$
+the definitions are equivalent, in
+other words prove:\\
+Suppose $U \subset \R^n$ is open and for any $x,y \in U$, there exists a continuous function
 $\gamma \colon [a,b] \to U$ such that $\gamma(a) = x$ and $\gamma(b) = y$.
-Then $U$ is path connected (in other words, then there exists a piecewise
-smooth path).
+Then $U$ is path connected, that is, there is a piecewise smooth path in $U$ from
+$x$ to $y$.
 \end{exercise}
 
 \begin{exercise}[Hard]

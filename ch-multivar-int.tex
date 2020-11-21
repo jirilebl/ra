@@ -79,14 +79,14 @@ the
 \times
 [x_{n,j_n-1}~,~ x_{n,j_n}] .
 \end{equation*}
-For simplicity, we order the subrectangles somehow and
+We order the subrectangles somehow and
 we say $\{R_1,R_2,\ldots,R_N\}$ are the subrectangles corresponding
-to the partition $P$ of $R$.  More simply, we say they are the subrectangles of
+to the partition $P$ of $R$, or more simply, subrectangles of
 $P$.
 In other words, we subdivided the original rectangle into many smaller
 subrectangles.  See \figureref{mv:figrect}.  It is not difficult to see that
 these subrectangles cover our original $R$, and their
-volume sums to that of $R$.  That is,
+volumes sum to that of $R$.  That is,
 \begin{equation*}
 R= \bigcup_{k=1}^N R_k , \qquad \text{and} \qquad
 V(R) = \sum_{k=1}^N V(R_k).
@@ -124,7 +124,7 @@ V(R_i) =
 
 Let $R \subset \R^n$ be a closed rectangle and
 let $f \colon R \to \R$ be a bounded function.  Let $P$ be a partition of
-$R$ and suppose that there are $N$ subrectangles $R_1,R_2,\ldots,R_N$.
+$R$ with $N$ subrectangles $R_1,R_2,\ldots,R_N$.
 Define
 \glsadd{not:lowerdarbouxsum}
 \glsadd{not:upperdarbouxsum}
@@ -140,9 +140,9 @@ We call $L(P,f)$ the \emph{\myindex{lower Darboux sum}} and
 $U(P,f)$ the \emph{\myindex{upper Darboux sum}}\index{Darboux sum}.
 \end{defn}
 
-The indexing in the definition may be complicated, but fortunately we generally
+The indexing in the definition may be complicated, but fortunately we
 do not need to go back directly to the definition often.
-We start proving facts about the Darboux sums analogous to the one-variable
+We start by proving facts about the Darboux sums analogous to the one-variable
 results.
 
 \begin{prop} \label{mv:sumulbound:prop}
@@ -159,7 +159,7 @@ L(P,f) \leq U(P,f)
 \end{prop}
 
 \begin{proof}
-Let $P$ be a partition.  Then for all $i$ we have
+Let $P$ be a partition.  For all $i$ we have
 $m \leq m_i$ and $M_i \leq M$.  Also $m_i \leq M_i$ for all $i$.  Finally
 $\sum_{i=1}^N V(R_i) = V(R)$.  Therefore,
 \begin{multline*}
@@ -185,7 +185,7 @@ M \,V(R) .  \qedhere
 \subsection{Upper and lower integrals}
 
 By \propref{mv:sumulbound:prop} the set of upper and lower Darboux sums are bounded sets and we can take
-their infima and suprema.  As before, we now make the following definition.
+their infima and suprema.  As in one variable, we make the following definition.
 
 \begin{defn}
 Let $f \colon R \to \R$ be a bounded function on a closed rectangle $R \subset
@@ -205,7 +205,7 @@ We call $\underline{\int}$ the
 $\overline{\int}$ the \emph{\myindex{upper Darboux integral}}.
 \end{defn}
 
-As in one dimension we have refinements of partitions.
+And as in one dimension, we define refinements of partitions.
 
 \begin{defn}
 Let $R \subset \R^n$ be a closed rectangle.
@@ -224,7 +224,8 @@ See \figureref{mv:figrectpart}.
 
 \begin{myfigureht}
 \subimport*{figures/}{figrectpart.pdf_t}
-\caption{Example refinement of a partition.  New \myquote{cuts} are marked in
+\caption{Example refinement of the partition from \figureref{mv:figrect}.
+New \myquote{cuts} are marked in
 dashed lines.  The exact order of the new subrectangles does not
 matter.\label{mv:figrectpart}}
 \end{myfigureht}
@@ -518,9 +519,9 @@ Therefore, $f|_R$ is integrable.
 
 \subsection{Integrals of continuous functions}
 
-Although later we will prove a much more general result, it is useful to start
+Although later we will prove a more general result, it is useful to start
 with integrability of continuous functions.
-First we wish to measure the fineness of partitions.  In one variable we
+First we wish to measure the fineness of partitions.  In one variable, we
 measured the length of a subinterval, in several variables, we similarly
 measure the sides of a subrectangle.
 We say a rectangle $R = [a_1,b_1] \times
@@ -591,7 +592,7 @@ Let $P$ be a partition of $R$, such that longest side of any subrectangle
 is strictly less than $\frac{\delta}{\sqrt{n}}$.
 If $x, y \in R_k$ for some subrectangle $R_k$ of $P$ we have,
 by the proposition above,
-$\snorm{x-y} < \sqrt{n} \frac{\delta}{\sqrt{n}} = \delta$.  Therefore
+$\snorm{x-y} < \sqrt{n} \frac{\delta}{\sqrt{n}} = \delta$.  Therefore,
 \begin{equation*}
 f(x)-f(y) \leq \sabs{f(x)-f(y)} < \frac{\epsilon}{V(R)} .
 \end{equation*}
