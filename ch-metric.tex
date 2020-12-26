@@ -911,7 +911,7 @@ is open in the subspace topology there exists a $V$ is left as
 \exerciseref{exercise:mssubspace}.
 \end{proof}
 
-A hint for the exercise is that
+A hint for finshing the proof (the exercise) is that
 a useful way to think about an open set is as a union of open balls.  If $U$ is
 open, then for each $x \in U$, there is a $\delta_x > 0$ (depending on $x$) such that
 $B(x,\delta_x) \subset U$.  Then $U = \bigcup_{x\in U} B(x,\delta_x)$.
@@ -1006,16 +1006,17 @@ not be empty, but $U_1 \cap U_2 \cap S = \emptyset$.\label{fig:disconsubset}}
 
 
 \begin{proof}
-The proof follows by \propref{prop:topology:subspaceopen}.
-If $U_1$ and $U_2$ as in the statement are open in $X$,
-then $U_1 \cap S$ and $U_2 \cap S$ are open in $S$.
-From the discussion above it follows that $S$ is disconnected.
-
-For the other direction start with nonempty disjoint $S_1$ and $S_2$ that are
-open in $S$ and such that $S = S_1 \cup S_2$.  Then use
-\propref{prop:topology:subspaceopen} again to find $U_1$ and $U_2$
-open in $X$ such that $U_1 \cap S = S_1$ and
+First suppose $S$ is disconnected: there are
+nonempty disjoint $S_1$ and $S_2$ that are
+open in $S$ and $S = S_1 \cup S_2$.
+\propref{prop:topology:subspaceopen} says there exist $U_1$ and $U_2$
+that are open in $X$ such that $U_1 \cap S = S_1$ and
 $U_2 \cap S = S_2$.
+
+For the other direction start with the $U_1$ and $U_2$.
+Then $U_1 \cap S$ and $U_2 \cap S$ are open in $S$ by
+\propref{prop:topology:subspaceopen}.
+Via the discussion before the proposition, $S$ is disconnected.
 \end{proof}
 
 \begin{example}

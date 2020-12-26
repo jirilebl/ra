@@ -874,7 +874,7 @@ We compute
 f_n'(x) %= \frac{d}{dx} \frac{1}{1+n x^2}
 = \frac{-2 n x}{(1+ n x^2)^2} .
 \end{equation*}
-No matter what $x$ is $\lim_{n\to\infty} f_n'(x) = 0$, so the derivatives
+For every $x$, $\lim_{n\to\infty} f_n'(x) = 0$, so the derivatives
 converge pointwise to 0,
 but the reader can check that the convergence is not uniform on any closed
 interval containing 0.
@@ -957,12 +957,12 @@ converges uniformly to $0$.  However, $\{f_n\}$ converges to 0 only pointwise.
 \subsection{Convergence of power series}
 
 In \sectionref{sec:moreonseries} we saw that a power series converges
-absolutely inside its radius of convergence.
-By definition, it converges pointwise.
-Let us show that it also converges uniformly.  This fact allows us to
+absolutely inside its radius of convergence, so it converges pointwise.
+Let us show that it (and all its derivatives) also converges uniformly.
+This fact allows us to
 swap several types of limits.  Not only is the limit continuous,
-we can differentiate
-and integrate convergent power series term by term.
+we can
+integrate and even differentiate convergent power series term by term.
 
 \begin{prop}
 Let $\sum_{n=0}^\infty c_n {(x-a)}^n$ be a convergent power series with a radius
@@ -1004,7 +1004,7 @@ The partial sums are therefore uniformly Cauchy on $[a-r,a+r]$ and
 hence converge uniformly on that set.
 
 Moreover, the partial sums are polynomials, which are
-continuous, and their uniform limit on $[a-r,a+r]$
+continuous, and so their uniform limit on $[a-r,a+r]$
 is a continuous function.
 As $r < \rho$ was arbitrary, the limit function
 is continuous on all of $I$.
@@ -1066,7 +1066,8 @@ where the radius of convergence of this series is $\rho$.
 
 \begin{proof}
 Take $0 < r < \rho$.
-We have uniform convergence of the series on $[a-r,a+r]$,
+The series converges uniformly on
+$[a-r,a+r]$,
 but we need uniform convergence of the derivative.
 Let
 \begin{equation*}
@@ -1112,7 +1113,7 @@ we are done as $r < \rho$ was arbitrary.
 \end{proof}
 
 \begin{example} \label{example:exponentialbypowerseries}
-We could have used this result to define the exponential function.  That is
+We could have used this result to define the exponential function.  That is,
 the power series
 \begin{equation*}
 f(x) := \sum_{n=0}^\infty \frac{x^n}{n!}
@@ -1130,10 +1131,10 @@ The series
 converges to $\frac{x}{{(1-x)}^2}$ on $(-1,1)$.
 
 Proof:
-We know that on $(-1,1)$, $\sum_{n=0}^\infty x^n$ converges to
+On $(-1,1)$, $\sum_{n=0}^\infty x^n$ converges to
 $\frac{1}{1-x}$.  The derivative $\sum_{n=1}^\infty n x^{n-1}$ then converges
 on the same interval to $\frac{1}{{(1-x)}^2}$.  Multiplying by $x$
-we obtain the result.
+obtains the result.
 \end{example}
 
 \subsection{Exercises}
@@ -1316,7 +1317,7 @@ $\lim\limits_{n\to\infty}\lim\limits_{m \to \infty} x_{n,m}$ nor
 $\lim\limits_{m\to\infty}\lim\limits_{n \to \infty} x_{n,m}$ makes any sense
 at all.
 \item
-Show that the joint limit of $\{ x_{n,m} \}$ exists and is 0.
+Show that the joint limit of $\{ x_{n,m} \}$ exists and equals 0.
 \end{enumerate}
 \end{exercise}
 
