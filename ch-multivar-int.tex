@@ -184,7 +184,7 @@ M \,V(R) .  \qedhere
 
 \subsection{Upper and lower integrals}
 
-By \propref{mv:sumulbound:prop} the set of upper and lower Darboux sums are bounded sets and we can take
+By \propref{mv:sumulbound:prop}, the set of upper and lower Darboux sums are bounded sets and we can take
 their infima and suprema.  As in one variable, we make the following definition.
 
 \begin{defn}
@@ -450,9 +450,9 @@ U(P,f) - L(P,f) < \epsilon .
 \end{prop}
 
 \begin{proof}
-First, if $f$ is integrable, then clearly the supremum of $L(P,f)$ and
-infimum of $U(P,f)$ must be equal and hence the
-infimum of $U(P,f)-L(P,f)$ is zero.  Therefore for
+First, if $f$ is integrable, then the supremum of $L(P,f)$ and
+infimum of $U(P,f)$ are equal and hence the
+infimum of $U(P,f)-L(P,f)$ is zero.  Therefore, for
 every $\epsilon > 0$ there must be some partition $P$ such that 
 $U(P,f) - L(P,f) < \epsilon$.
 
@@ -473,7 +473,8 @@ $\overline{\int_R} f = \underline{\int_R} f$ and $f \in \sR(R)$.
 Suppose $f \colon S \to \R$ is a function and $R \subset S$
 is a closed rectangle.  If the restriction $f|_R$ is integrable,
 then for simplicity we
-say $f$ is integrable on $R$, or $f \in \sR(R)$ and we
+say $f$ is \emph{integrable on $R$}, or
+$f \in \sR(R)$ and we
 write
 \begin{equation*}
 \int_R f := \int_R f|_R .
@@ -519,7 +520,7 @@ Therefore, $f|_R$ is integrable.
 
 \subsection{Integrals of continuous functions}
 
-Although later we will prove a more general result, it is useful to start
+Although we will prove a more general result later, it is useful to start
 with integrability of continuous functions.
 First we wish to measure the fineness of partitions.  In one variable, we
 measured the length of a subinterval, in several variables, we similarly
@@ -632,14 +633,14 @@ V(R_k)
 = \epsilon.
 \end{split}
 \end{equation*}
-Via application of \propref{mv:prop:upperlowerepsilon} we find that $f \in
+Via application of \propref{mv:prop:upperlowerepsilon}, we find that $f \in
 \sR(R)$.
 \end{proof}
 
 \subsection{Integration of functions with compact support}
 
 Let $U \subset \R^n$ be an open set and
-$f \colon U \to \R$ be a function.  We say the
+$f \colon U \to \R$ be a function.  The
 \emph{\myindex{support}} of $f$ is the set
 \begin{equation*}
 \operatorname{supp} (f) :=
@@ -718,19 +719,19 @@ $\bigl\{ (x,y) \in B(0,1) : x \geq 0 \bigr\}$.  In particular, $g$ is not compac
 supported.
 \end{example}
 
-We mostly consider the case when $U=\R^n$.  In light of
+We really only need to consider the case when $U=\R^n$.  In light of
 \exerciseref{exercise:contcompactsupportRn}, which says any continuous
-function with compact support on $U \subset \R^n$ can be extended to a
+function on an open $U \subset \R^n$ with compact support can be extended to a
 continuous function with compact support on $\R^n$,
 this is not an oversimplification.
 
 \begin{example}
-On the other hand for the unit disc $B(0,1) \subset \R^2$,
-the function continuous $f \colon B(0,1) \to \R$ defined by $f(x,y) :=
+%On the other hand for the unit disc $B(0,1) \subset \R^2$,
+The continuous function $f \colon B(0,1) \to \R$ defined by $f(x,y) :=
 \sin\bigl(\frac{1}{1-x^2-y^2}\bigr)$, does not have compact support; as
 $f$ is not constantly zero on neighborhood of any point in $B(0,1)$,
-we know that the support is the entire disc $B(0,1)$.  The function 
-does not extend as above to a continuous function.  In fact it is not
+the support is the entire disc $B(0,1)$.  The function 
+does not extend as above to a continuous function on $\R^2$.  In fact, it is not
 difficult to show that it cannot be extended in any way whatsoever to be
 continuous on all of $\R^2$ (the boundary of the disc is the problem).
 \end{example}
@@ -962,10 +963,10 @@ However
 does not exist, so we cannot even write $\int_0^1 \int_0^1 f(x,y) ~ dy ~ dx$.
 
 Proof:
-Let us start with integrability of $f$.  We simply take the partition
+Let us start with integrability of $f$.  Consider the partition
 of $[0,1]^2$ where the partition in the $x$ direction is
 $\{ 0, \nicefrac{1}{2}-\epsilon,
-\nicefrac{1}{2}+\epsilon,1\}$ and in the $y$ direction $\{ 0, 1 \}$ .
+\nicefrac{1}{2}+\epsilon,1\}$ and in the $y$ direction $\{ 0, 1 \}$.
 The subrectangles of the partition are
 \begin{equation*}
 R_1 := [0,
@@ -1007,11 +1008,11 @@ M_3 V(R_3)
 +
 0 (\nicefrac{1}{2}-\epsilon) = 2 \epsilon .
 \end{equation*}
-The upper and lower sum are arbitrarily close and the lower sum is always
+The upper and lower sums are arbitrarily close and the lower sum is always
 zero, so the function is integrable and $\int_R f = 0$.
 
 For any $y$, the function that takes $x$ to $f(x,y)$ is zero except
-perhaps at a single point $x=\nicefrac{1}{2}$.  We know that such a
+perhaps at a single point $x=\nicefrac{1}{2}$.  Such a
 function is integrable and $\int_0^1 f(x,y) ~ dx = 0$.  Therefore,
 $\int_0^1 \int_0^1 f(x,y) ~ dx ~ dy = 0$.
 
@@ -1021,20 +1022,20 @@ $f(\nicefrac{1}{2},y)$ is the nonintegrable function that is
 See \volIref{\exampleref*{vI-example:dirichletfunc} from volume I}{\exampleref{example:dirichletfunc}}.
 \end{example}
 
-We will solve this problem of undefined inside integrals
+We solve this problem of undefined inside integrals
 by using the upper and lower integrals, which are always defined.
 
 \medskip
 
-We split the coordinates of $\R^{n+m}$ into two parts.  That is,
-we write the coordinates on $\R^{n+m} = \R^n \times \R^m$ as
+Split the coordinates of $\R^{n+m}$ into two parts:
+write the coordinates on $\R^{n+m} = \R^n \times \R^m$ as
 $(x,y)$ where $x \in \R^n$ and $y \in \R^m$.  For a function $f(x,y)$
-we write
+write
 \begin{equation*}
 f_x(y) := f(x,y)
 \end{equation*}
 when $x$ is fixed and we wish to speak of the function in terms of $y$.
-We write
+Write
 \begin{equation*}
 f^y(x) := f(x,y)
 \end{equation*}
@@ -1496,7 +1497,7 @@ For the other direction, suppose $S$ is covered by balls $B_j$
 of radii $r_j$, such that $\sum r_j^n < \epsilon$,
 as in the statement of the proposition.
 Each $B_j$ is contained a in a cube $R_j$ of side $2r_j$.
-So $V(R_j) = {(2 r_j)}^n = 2^n r_j^n$.  Therefore 
+So $V(R_j) = {(2 r_j)}^n = 2^n r_j^n$.  Therefore,
 \begin{equation*}
 S \subset \bigcup_{j=1}^\infty R_j \qquad \text{and} \qquad
 \sum_{j=1}^\infty V(R_j)
@@ -1682,7 +1683,7 @@ exercise.
 So that the reader is not under the impression that there are only very few
 measure zero sets and that these are simple,
 let us give an uncountable, compact, measure zero subset in $[0,1]$.
-For any $x \in [0,1]$ write the
+For any $x \in [0,1]$, write the
 representation in ternary notation
 \begin{equation*}
 x = \sum_{n=1}^\infty d_n 3^{-n} ,
@@ -1731,7 +1732,7 @@ uncountable.
 \end{example}
 
 
-\subsection{Images of null sets}
+\subsection{Images of null sets under differentiable functions}
 
 Before we look at images of measure zero sets, let us see what a
 continuously differentiable function does to a ball.
@@ -1744,12 +1745,17 @@ Then $f(B) \subset B'$, where $B'$ is an open (resp.\ closed) ball of radius at 
 \end{lemma}
 
 \begin{proof}
-Without loss of generality assume $B$ is a closed ball.
-The ball $B$ is convex, and hence via
+First suppose $B$ is closed.
+The ball $B$ is convex, and so via
 \propref{mv:prop:convexlip},
 $\snorm{f(x)-f(y)} \leq M \snorm{x-y}$
 for all $x,y$ in $B$.  In particular, suppose $B = C(y,r)$,
 then $f(B) \subset C\bigl(f(y),M r \bigr)$.
+If $B$ is open, let $C = C(y,r-\epsilon)$ for $\epsilon > 0$
+be a closed ball.
+Then $f(C) \subset C\bigl(f(y),M(r-\epsilon)\bigr) \subset B\bigl(f(y),Mr\bigr)$.
+As every $x \in B$ is in $C$ for some $\epsilon > 0$,
+$f(B) \subset  B\bigl(f(y),Mr\bigr)$.
 \end{proof}
 
 The image of a measure zero set using a continuous map is not necessarily
@@ -1783,13 +1789,14 @@ there exists an $M > 0$ such that $\snorm{f'(x)} \leq M$ for all $x \in K$.
 So without loss of generality we may replace $U$ by $U'$ and from now on
 suppose that $\snorm{f'(x)} \leq M$ for all $x \in U$.
 
-At each point $x \in E$ pick a ball $B(x,\delta_x)$ of maximum radius 
-so that $B(x,\delta_x) \subset U$.  Let $\delta = \inf_{x\in E} \delta_x$.
+At each $x \in E$ take the maximum radius $\delta_x$
+such that $B(x,\delta_x) \subset U$ (we may assume $U \not= \R^n$).
+Let $\delta = \inf_{x\in E} \delta_x$.
 Take a sequence $\{ x_j \} \subset E$ so that $\delta_{x_j} \to \delta$.
 As $E$ is compact, we can pick the sequence to be convergent to some $y \in
 E$.  Once $\snorm{x_j-y} < \frac{\delta_y}{2}$, then
 $\delta_{x_j} > \frac{\delta_y}{2}$ by the triangle inequality.
-Therefore $\delta > 0$.
+Thus, $\delta > 0$.
 
 Given $\epsilon > 0$, there exist balls $B_1,B_2,\ldots,B_k$ of radii
 $r_1,r_2,\ldots,r_k < \delta$ such that
@@ -1802,6 +1809,7 @@ The balls are contained in $U$.
 Suppose $B_1', B_2', \ldots, B_k'$ are the balls of radius
 $Mr_1, Mr_2, \ldots, Mr_k$ from
 \lemmaref{lemma:ballmapder}, such that $f(B_j) \subset B_j'$ for all $j$.
+Then,
 \begin{equation*}
 f(E) \subset f(B_1) \cup f(B_2) \cup \cdots \cup f(B_k)
 \subset B_1' \cup B_2' \cup \cdots \cup B_k'
@@ -1899,7 +1907,7 @@ $m^*(C_k) =1 - \sum_{n=1}^k \frac{2^n}{3^{n+1}}$.
 \item
 $m^*(C) = 0$.
 \item
-The set $C$ is in one to one correspondence with $[0,1]$.
+The set $C$ is in one-to-one correspondence with $[0,1]$.
 \end{enumerate}
 \end{exercise}
 
@@ -1908,7 +1916,7 @@ Prove that the Cantor set of \exampleref{example:cantor} contains no
 interval.  That is, whenever $a < b$, there exists a point $x \notin C$
 such that $a < x < b$.
 \\
-Note the consequence of this statement.  While we proved that an open set in
+Note a consequence of this statement.  While any open set in
 $\R$ is a countable disjoint union of intervals, a closed set (even though
 it is just the complement of an open set) need not be a union of intervals.
 \end{exercise}
@@ -2529,7 +2537,9 @@ want to integrate over and these are not described so easily.
 \begin{defn}
 Let $S \subset \R^n$ be a bounded Jordan measurable set.
 A bounded function $f \colon S \to \R$
-is said to be Riemann integrable on $S$, or $f \in \sR(S)$, if for a closed
+is said to be
+\emph{\myindex{Riemann integrable on $S$}}\index{integrable on $S$},
+or\glsadd{not:integrablefuncR} $f \in \sR(S)$, if for a closed
 rectangle $R$ such that $S \subset R$, the function $\widetilde{f} \colon R
 \to \R$ defined by
 \begin{equation*}
@@ -2540,6 +2550,7 @@ f(x) & \text{if } x \in S, \\
 \end{cases}
 \end{equation*}
 is in $\sR(R)$.  In this case we write
+\glsadd{not:riemannintR}%
 \begin{equation*}
 \int_S f := \int_R \widetilde{f}.
 \end{equation*}
@@ -2846,7 +2857,7 @@ We will only prove Green's theorem for type III domains.
 
 \begin{proof}[Proof of Green's theorem for $U$ of type III]
 Let $f,g,h,k$ be the functions defined above.
-By \exerciseref{exercise:intovertypeIset},
+Using \exerciseref{exercise:intovertypeIset},
 $U$ is Jordan measurable and as $U$ is of type I\@, then
 \begin{equation*}
 \begin{split}
