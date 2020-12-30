@@ -2268,13 +2268,14 @@ The proof is contained in the exercises.
 Suppose $f \colon (a,b) \times (c,d) \to \R$ is a bounded continuous
 function.  Show that the integral of $f$ over $R = [a,b] \times [c,d]$ makes sense
 and is uniquely defined.  That is, set $f$ to be anything on the boundary of
-$R$ and compute the integral.
+$R$ and compute the integral, showing that the values on the boundary are
+irrelevant.
 \end{exercise}
 
 \begin{exercise}
 Suppose $R \subset \R^n$ is a closed rectangle.  Show that $\sR(R)$, the set
 of Riemann integrable functions, is an algebra.  That is, show that
-if $f,g \in \sR(R)$ and $a \in \R$, then $af \in \sR(R)$, $f+g \in \sR(R)$
+if $f,g \in \sR(R)$ and $a \in \R$, then $af \in \sR(R)$, $f+g \in \sR(R)$,
 and $fg \in \sR(R)$.
 \end{exercise}
 
@@ -2452,7 +2453,7 @@ If $x$ is either in the interior of $S$ or in the complement of the closure
 $\widebar{S}$, then $\chi_S$ is either identically 1 or identically 0
 in a whole neighborhood of $x$ and hence $\chi_S$ is continuous at $x$.
 Therefore, the set of discontinuities of $\chi_S$ is precisely the
-boundary $\partial S$.  The proposition then follows.
+boundary $\partial S$.  The proposition follows.
 \end{proof}
 
 \begin{prop} \label{prop:jordanmeas}
@@ -2480,9 +2481,9 @@ Given $\epsilon > 0$,
 let $R$ be a closed rectangle that contains $S$.  Let $P$ be a partition
 of $R$ such that 
 \begin{equation*}
-U(P,\chi_S) \leq \int_R \chi_S + \epsilon = V(S) + \epsilon
+U(P,\chi_S) \leq \left( \int_R \chi_S \right) + \epsilon = V(S) + \epsilon
 \qquad \text{and} \qquad
-L(P,\chi_S) \geq \int_R \chi_S - \epsilon = V(S)-\epsilon.
+L(P,\chi_S) \geq \left( \int_R \chi_S \right) - \epsilon = V(S)-\epsilon.
 \end{equation*}
 Let $R_1,R_2,\ldots,R_k$ be all the subrectangles of $P$ such that $\chi_S$ is not
 identically zero on each $R_j$.  That is, there is some point $x \in R_j$ such
@@ -2532,8 +2533,8 @@ Therefore $m^*(S) \geq V(S)$ as well.
 \subsection{Integration over Jordan measurable sets}
 
 In $\R$ there is only one reasonable type of set to integrate over:
-an interval.   In $\R^n$ there are many common types of sets we 
-want to integrate over and these are not described so easily.
+an interval.   In $\R^n$ there are many kinds of sets.  The ones
+that work with the Riemann integral are the Jordan measurable sets.
 
 \begin{defn}
 Let $S \subset \R^n$ be a bounded Jordan measurable set.
@@ -2673,8 +2674,9 @@ $\partial U = [0,1] \setminus U$.
 \item
 $\partial U$ is not of measure zero, and therefore $U$ is not Jordan measurable.
 \item
-Show that $W := \bigl( (0,1) \times (0,2) \bigr) \setminus \bigl( U
-\times [0,1] \bigr) \subset \R^2$ is a connected bounded open set in $\R^2$
+Show that $W :=
+\bigl( U \times (0,2) \bigr) \cup \bigl( (0,1) \times (1,2) \bigr)$
+is a connected bounded open set in $\R^2$
 that is not Jordan measurable.
 \end{enumerate}
 \end{exercise}
@@ -2701,7 +2703,7 @@ and $K \subset S^\circ$ ($K$ is in the interior of $S$).
 \end{exercise}
 
 \begin{exercise} \label{exercise:closednessofriemannintegrable}
-Prove \corref{cor:closednessofriemannintegrable} replacing all closed
+Prove a version of \corref{cor:closednessofriemannintegrable}, replacing all closed
 rectangles with bounded Jordan measurable sets.
 \end{exercise}
 
