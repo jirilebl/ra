@@ -2081,7 +2081,7 @@ topology and $S \setminus G$ is closed as is claimed.
 We have seen that continuous functions are Riemann integrable, but we also
 know that certain kinds of discontinuities are allowed.
 It turns out that as long as the discontinuities happen on a set of measure
-zero, the function is integrable and vice versa.
+zero, the function is integrable, and vice versa.
 
 \begin{thm}[Riemann--Lebesgue]\index{Riemann--Lebesgue theorem}
 Let $R \subset \R^n$ be a closed rectangle and $f \colon R \to \R$
@@ -2090,9 +2090,9 @@ the set of discontinuities of $f$ is of measure zero (a null set).
 \end{thm}
 
 \begin{proof}
-Let $S \subset R$ be the set of discontinuities of $f$.  That is
+Let $S \subset R$ be the set of discontinuities of $f$, that is,
 $S = \{ x \in R : o(f,x) > 0 \}$.
-Suppose that $m^*(S) = 0$, that is, $S$ is a measure zero set.
+Suppose $S$ is a measure zero set: $m^*(S) = 0$.
 The trick to this proof is to isolate the
 bad set into a small set of subrectangles of a partition.  There are only
 finitely many subrectangles of a partition, so we will wish to use
@@ -2104,27 +2104,28 @@ For every $\epsilon > 0$, define
 \begin{equation*}
 S_\epsilon := \{ x \in R : o(f,x) \geq \epsilon \} .
 \end{equation*}
-By \propref{prop:seclosed} $S_\epsilon$ is closed and as it is a subset of
+By \propref{prop:seclosed}, $S_\epsilon$ is closed and as it is a subset of
 $R$,
 which is bounded, $S_\epsilon$ is compact.  Furthermore,
-$S_\epsilon \subset S$ and $S$ is of measure zero.
-Via \propref{mv:prop:compactnull} there are finitely many open rectangles
-$O_1,O_2,\ldots,O_k$ that cover $S_\epsilon$ and
+$S_\epsilon \subset S$ and $S$ is of measure zero, so $S_\epsilon$ is
+measure zero.
+Via \propref{mv:prop:compactnull} finitely many open rectangles
+$O_1,O_2,\ldots,O_k$ cover $S_\epsilon$ and
 $\sum V(O_j) < \epsilon$.  
 
 The set $T = R \setminus ( O_1 \cup \cdots \cup O_k )$ is closed, bounded,
-and therefore compact.  Furthermore for $x \in T$, we have $o(f,x) <
-\epsilon$.  Hence for each $x \in T$, there exists a small closed rectangle
+and therefore compact.  Furthermore, $o(f,x) < \epsilon$ for all $x \in T$.
+Hence for each $x \in T$, there exists a small closed rectangle
 $T_x$ with $x$ in the interior of $T_x$, such that
 \begin{equation*}
 \sup_{y\in T_x} f(y) - \inf_{y\in T_x} f(y) < 2\epsilon.
 \end{equation*}
-The interiors of the rectangles $T_x$ cover $T$.  As $T$ is compact
-there exist finitely many such rectangles $T_1, T_2, \ldots, T_m$
-that cover $T$.
+The interiors of the rectangles $T_x$ cover $T$.  As $T$ is compact,
+finitely many such rectangles $T_1, T_2, \ldots, T_m$
+cover $T$.
 
 Take the rectangles $T_1,T_2,\ldots,T_m$ and $O_1,O_2,\ldots,O_k$
-and construct a partition out of their endpoints.  That is construct
+and construct a partition out of their endpoints.  That is, construct
 a partition $P$ of $R$ with subrectangles $R_1,R_2,\ldots,R_p$
 such that every $R_j$ is contained in $T_\ell$ for some $\ell$
 or the closure of $O_\ell$ for some $\ell$.  Order
@@ -2161,17 +2162,17 @@ U(P,f)-L(P,f)
 \\
 & \leq
 \left(
-\sum_{j=1}^q 2\epsilon V(R_j)
+\sum_{j=1}^q 2\epsilon\, V(R_j)
 \right)
 +
 \left(
-\sum_{j=q+1}^p 2 B V(R_j)
+\sum_{j=q+1}^p 2 B\, V(R_j)
 \right)
 \\
 & \leq
-2 \epsilon V(R)
+2 \epsilon\, V(R)
 +
-2B \epsilon = \epsilon \bigl(2V(R)+2B\bigr) .
+2B \epsilon = \epsilon \bigl(2\, V(R)+2B\bigr) .
 \end{split}
 \end{equation*}
 We can make the right hand side as small as we want,
