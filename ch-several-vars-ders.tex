@@ -701,7 +701,7 @@ If $X$ is a finite dimensional vector space and $A \in L(X)$, then $A$ is one-to
 
 \begin{proof}
 Let $\{ x_1,x_2,\ldots,x_n \}$ be a basis for $X$.
-Suppose $A$ is one-to-one.  Now suppose
+First suppose $A$ is one-to-one.  Let $c_1,c_2,\ldots,c_n$ be such that
 \begin{equation*}
 \sum_{j=1}^n c_j \, Ax_j =
 A\sum_{j=1}^n c_j \, x_j =
@@ -726,7 +726,7 @@ A\sum_{j=1}^n a_j \, x_j ,
 \end{equation*}
 so $A$ is onto.
 
-Now suppose $A$ is onto.  As $A$ is determined by the action on
+For the other direction, suppose $A$ is onto.  As $A$ is determined by the action on
 the basis, every element of $X$ is in the span of
 $\{ Ax_1, Ax_2, \ldots, Ax_n \}$.  Suppose that for some
 $c_1,c_2,\ldots,c_n$,
@@ -748,7 +748,7 @@ If $X$ and $Y$ are finite dimensional vector spaces, then $L(X,Y)$
 is also finite dimensional.
 \end{prop}
 
-Finally let us note that we often identify a finite dimensional vector
+We often identify a finite dimensional vector
 space $X$ of dimension $n$ with $\R^n$, provided we fix a basis $\{ x_1,
 x_2, \ldots, x_n \}$ in $X$.  That is, we define a bijective
 linear map $A \in L(X,\R^n)$ by
@@ -793,8 +793,8 @@ standard metric on $\R^n$) is convex.
 \end{prop}
 
 \begin{example}
-As a convex combination is in particular a linear combination,
-any subspace $V$ of a vector space $X$ is convex.
+As a convex combination is in particular a linear combination.
+So any subspace $V$ of a vector space $X$ is convex.
 \end{example}
 
 \begin{example}
@@ -855,8 +855,9 @@ T\bigl(tx+(1-t)y\bigr)
 \end{proof}
 
 For completeness, a very useful construction is the
-\emph{\myindex{convex hull}}.  Given any set $S \subset V$ of a vector
-space, define the convex hull of $S$, by
+\emph{\myindex{convex hull}}.  Given any subset $S \subset V$ of a vector
+space, define the convex hull of $S$ as the intersection of all convex sets
+containing $S$:
 \begin{equation*}
 \operatorname{co}(S) :=
 \bigcap \{ C \subset V : S \subset C, \text{ and } C \text{ is convex} \} .
@@ -866,9 +867,11 @@ By a proposition above, the intersection of convex sets is convex and
 hence, the convex hull is convex.
 
 \begin{example}
-The convex hull of 0 and 1 in $\R$ is $[0,1]$.  Proof:
-Any convex set containing 0 and 1 must contain $[0,1]$.  The set $[0,1]$
-is convex, therefore it must be the convex hull.
+The convex hull of $\{ 0, 1 \}$ in $\R$ is $[0,1]$.  Proof:
+Any convex set containing 0 and 1 must contain $[0,1]$, so
+$[0,1] \subset \operatorname{co}(\{0,1\})$.
+The set $[0,1]$ is convex and contains $\{0,1\}$, so
+$\operatorname{co}(\{0,1\}) \subset [0,1]$.
 \end{example}
 
 \subsection{Exercises}
@@ -891,8 +894,8 @@ Let $X$ be a vector space.
 Prove that a finite set of vectors $\{ x_1,x_2,\ldots,x_n \} \subset X$ 
 is linearly independent if and only if for every $j=1,2,\ldots,n$
 \begin{equation*}
-\spn( \{ x_1,\ldots,x_{j-1},x_{j+1},\ldots,x_n \}) \subsetneq
-\spn( \{ x_1,x_2,\ldots,x_n \}) .
+\spn\bigl( \{ x_1,\ldots,x_{j-1},x_{j+1},\ldots,x_n \}\bigr) \subsetneq
+\spn\bigl( \{ x_1,x_2,\ldots,x_n \}\bigr) .
 \end{equation*}
 That is, the span of the set with one vector removed is strictly smaller.
 \end{exercise}
@@ -1102,8 +1105,9 @@ $\lambda \in \R$, then the theorem holds with equality:
 = \snorm{x} \, \snorm{y} .
 \end{equation*}
 
-Next take $x+ty$, we find that
-$\snorm{x+ty}^2$ is a quadratic polynomial in $t$:
+Fixing $x$ and $y$,
+as a function of $t$, 
+$\snorm{x+ty}^2$ is a quadratic polynomial:
 \begin{equation*}
 \snorm{x+ty}^2 =
 (x+ty) \cdot (x+ty) =
@@ -1118,11 +1122,11 @@ Elementary algebra says that the discriminant must be negative:
 \begin{equation*}
 4 {(x \cdot y)}^2 - 4 \snorm{x}^2\snorm{y}^2 < 0,
 \end{equation*}
-or in other words ${(x \cdot y)}^2 < \snorm{x}^2\snorm{y}^2$.
+or in other words, ${(x \cdot y)}^2 < \snorm{x}^2\snorm{y}^2$.
 \end{proof}
 
 Item \ref{defn:norm:iii}, the triangle inequality in $\R^n$,
-follows via the following computation:
+follows from:
 \begin{equation*}
 \snorm{x+y}^2 
 =
@@ -1628,23 +1632,23 @@ b
 \begin{proof}
 We go through the proof quickly, as you have likely seen this before.
 
-\ref{prop:det:i} is trivial.  For \ref{prop:det:ii}, notice that each term in the definition of the
+Item \ref{prop:det:i} is trivial.  For \ref{prop:det:ii}, notice that each term in the definition of the
 determinant contains exactly one factor from each column.
 
-Part \ref{prop:det:iii} follows by noting that switching two columns is like switching the
+Item \ref{prop:det:iii} follows by noting that switching two columns is like switching the
 two corresponding numbers in every element in $S_n$.  Hence all the signs
 are changed.
-Part \ref{prop:det:iv} follows because if two columns are equal and we switch them we get
-the same matrix back and so part \ref{prop:det:iii} says the determinant must have been
+Item \ref{prop:det:iv} follows because if two columns are equal and we switch them we get
+the same matrix back and so item \ref{prop:det:iii} says the determinant must have been
 0.
 
-Part \ref{prop:det:v} follows because the product in each term in the definition includes
+Item \ref{prop:det:v} follows because the product in each term in the definition includes
 one element from the zero column.
-Part \ref{prop:det:vi} follows as $\det$ is a polynomial in the entries of the matrix
+Item \ref{prop:det:vi} follows as $\det$ is a polynomial in the entries of the matrix
 and hence continuous (in the entries of the matrix).  A function defined on
 matrices is continuous in the operator norm if and only if it is 
 continuous in the entries.
-Finally, part \ref{prop:det:vii} is a direct computation.
+Finally, item \ref{prop:det:vii} is a direct computation.
 \end{proof}
 
 The determinant tells us about areas and volumes, and how they change.
@@ -1803,7 +1807,7 @@ basis.
 If we compute the determinant of the matrix $A$, we obtain
 the same determinant if we use any other basis:
 In the other basis the matrix would be $B^{-1}AB$.
-It follows that
+Consequently,
 \begin{equation*}
 \det \colon L(X) \to \R
 \end{equation*}
@@ -1901,7 +1905,8 @@ Show that for square matrices $A$ and $B$, $\det(AB) = \det(BA)$.
 \begin{exercise}
 For $\R^n$ define
 \begin{equation*}
-\snorm{x}_{\infty} := \max \{ \sabs{x_1}, \sabs{x_2}, \ldots, \sabs{x_n} \} ,
+\snorm{x}_{\infty} :=
+\max \bigl\{ \sabs{x_1}, \sabs{x_2}, \ldots, \sabs{x_n} \bigr\} ,
 \end{equation*}
 sometimes called the sup or the max norm.
 \begin{enumerate}[a)]
@@ -2263,8 +2268,8 @@ Notice which norms are being used in the definition.
 The norm in the
 numerator is on $\R^m$, and the norm in the denominator is on $\R^n$ where $h$
 lives.
-Normally it is 
-understood that $h \in \R^n$ from context.
+Normally it is understood that $h \in \R^n$ from context
+(the formula makes no sense otherwise).
 We will not explicitly say so from now on.
 
 We have again cheated somewhat and said that $A$
@@ -2544,7 +2549,7 @@ derivative.
 \begin{defn}
 Let
 $f \colon U \to \R$ be a function on an open set $U \subset \R^n$.
-If the following limit exists we write
+If the following limit exists, we write
 \glsadd{not:partialder}
 \begin{equation*}
 \frac{\partial f}{\partial x_j} (x) := 
@@ -2557,6 +2562,7 @@ $\frac{\partial f}{\partial x_j} (x)$ the \emph{\myindex{partial derivative}}
 of $f$
 with respect to $x_j$.  Sometimes we write $D_j f$ instead.
 See \figureref{fig:svpartder}.
+Here $h$ is a number not a vector.
 
 For a mapping $f \colon U \to \R^m$ we write
 $f = (f_1,f_2,\ldots,f_m)$, where $f_k$ are real-valued
@@ -2717,7 +2723,7 @@ Suppose $\gamma\bigl((a,b)\bigr) \subset U$ and let
 g(t) := f\bigl(\gamma(t)\bigr) .
 \end{equation*}
 The function
-$g$ is differentiable. Treating $g'(t)$ as a number:
+$g$ is differentiable. Treating $g'(t)$ as a number,
 \begin{equation*}
 g'(t) =
 f'\bigl(\gamma(t)\bigr) \gamma^{\:\prime}(t)
@@ -2733,9 +2739,9 @@ f'\bigl(\gamma(t)\bigr) \gamma^{\:\prime}(t)
 For convenience,
 we often 
 leave out the points where we are evaluating,
-such as above on the right hand side.
-Let us rewrite this equation
-with the notation of the gradient and the dot product.
+such as above on the far right hand side.
+With the notation of the gradient and the dot product
+the equation becomes
 \begin{equation*}
 g'(t) = (\nabla f) \bigl(\gamma(t)\bigr) \cdot \gamma^{\:\prime}(t)
 = \nabla f \cdot \gamma^{\:\prime}.
@@ -2989,8 +2995,9 @@ $L(\R^n,\R)$.  That is $p$ is a
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon \R^2 \to \R$ is differentiable and suppose that
-whenever $x^2+y^2 = 1$, then $f(x,y) = 0$.  Prove that there exists at least
+Suppose $f \colon \R^2 \to \R$ is differentiable and 
+$f(x,y) = 0$ whenever $x^2+y^2 = 1$.
+Prove that there exists at least
 one point $(x_0,y_0)$ such that
 $\frac{\partial f}{\partial x}(x_0,y_0) = \frac{\partial f}{\partial
 y}(x_0,y_0) = 0$.
@@ -3339,7 +3346,7 @@ t \frac{\partial f_j}{\partial x_n}(x+k+\theta_j e_n).
 \end{equation*}
 Note that if $\snorm{h} < \delta$, then $\snorm{k+\theta_j e_n} \leq \snorm{h}
 < \delta$.
-So to finish the estimate
+We finish the estimate
 \begin{equation*}
 \begin{split}
 \snorm{f(x+h) - f(x) - Ah}
@@ -3435,8 +3442,8 @@ $x^2 + y^2 < 1$.
 Suppose $f \colon B(0,1) \to \R$ is a differentiable function
 such that $\sabs{f(0,0)} \leq 1$,
 and 
-$\abs{\frac{\partial f}{\partial x}} \leq 1$ and
-$\abs{\frac{\partial f}{\partial y}} \leq 1$ for all
+$\babs{\frac{\partial f}{\partial x}} \leq 1$ and
+$\babs{\frac{\partial f}{\partial y}} \leq 1$ for all
 points in $B(0,1)$.
 \begin{enumerate}[a)]
 \item
@@ -3465,8 +3472,8 @@ $\frac{\partial f}{\partial x}$ and
 $\frac{\partial f}{\partial y}$ exist at all points and there exists an $M
 \in \R$
 such that 
-$\abs{\frac{\partial f}{\partial x}} \leq M$ and
-$\abs{\frac{\partial f}{\partial y}} \leq M$ at all points.  Show that $f$
+$\babs{\frac{\partial f}{\partial x}} \leq M$ and
+$\babs{\frac{\partial f}{\partial y}} \leq M$ at all points.  Show that $f$
 is continuous.
 \end{exercise}
 
@@ -3481,8 +3488,8 @@ and $\sabs{g'(t)} \leq M$.
 \item
 Show that $f$ is continuous at $(0,0)$.
 \item
-Find an example of such an $f$ which is not continuous at every other point of
-$\R^2$\\
+Find an example of such an $f$ that is discontinuous at every other point of
+$\R^2$.\\
 Hint: Think back to how we constructed a nowhere continuous function on $[0,1]$.
 \end{enumerate}
 \end{exercise}
@@ -3491,7 +3498,9 @@ Hint: Think back to how we constructed a nowhere continuous function on $[0,1]$.
 \begin{exercise}
 Suppose $r \colon \R^n \setminus X \to \R$ is a rational function, that is,
 let $p \colon \R^n \to \R$ and
-$q \colon \R^n \to \R$ be polynomials, where $X = q^{-1}(0)$, and
+$q \colon \R^n \to \R$ be polynomials,
+$q$ not identically zero,
+where $X = q^{-1}(0)$, and
 $r = \frac{p}{q}$.
 Show that $r$ is continuously differentiable.
 \end{exercise}
@@ -3507,7 +3516,7 @@ if $f(0) = h(0)$, then $f(x) = h(x)$ for all $x \in \R^n$.
 Prove the base case
 in \propref{mv:prop:contdiffpartials}.  That is, prove that
 if $n=1$ and 
-``the partials exist and are continuous,'' then the function is continuously
+\myquote{the partials exist and are continuous,} then the function is continuously
 differentiable.  Note that $f$ is vector-valued.
 \end{exercise}
 
@@ -3876,7 +3885,7 @@ Define $F \colon U \to \R^{n+m}$ by $F(x,y) := \bigl(x,f(x,y)\bigr)$.
 It is clear that $F$ is $C^1$, and we want to show that the derivative
 at $(p,q)$ is invertible.
 
-Let us compute the derivative.  We know that
+Let us compute the derivative.  The quotient
 \begin{equation*}
 \frac{\snorm{f(p+h,q+k) - f(p,q) - A_x h - A_y k}}{\snorm{(h,k)}}
 \end{equation*}
@@ -3980,13 +3989,13 @@ and are continuous), and the matrix
 is invertible at $(p,q)$.
 
 \begin{example}
-Consider the set $x^2+y^2-{(z+1)}^3 = -1$, $e^x+e^y+e^z = 3$
+Consider the set given by $x^2+y^2-{(z+1)}^3 = -1$ and $e^x+e^y+e^z = 3$
 near the point $(0,0,0)$.
-The function we are looking at is
+It is the zero set of the function
 \begin{equation*}
-f(x,y,z) = (x^2+y^2-{(z+1)}^3+1,e^x+e^y+e^z-3) .
+f(x,y,z) = \bigl(x^2+y^2-{(z+1)}^3+1,e^x+e^y+e^z-3\bigr) ,
 \end{equation*}
-We find that
+whose derivative is
 \begin{equation*}
 f' =
 \begin{bmatrix}
@@ -4006,7 +4015,7 @@ e^0 & e^0
 1 & 1
 \end{bmatrix}
 \end{equation*}
-is invertible.  Hence near $(0,0,0)$ we can find $y$ and $z$
+is invertible.  Hence near $(0,0,0)$ we can solve for $y$ and $z$
 as $C^1$ functions of $x$ such that for $x$ near 0 we have
 \begin{equation*}
 x^2+y(x)^2-{\bigl(z(x)+1\bigr)}^3 = -1,
@@ -4113,7 +4122,7 @@ Define $f \colon \R^2 \to \R^2$
 \begin{equation*}
 f(x,y) :=
 \begin{cases}
-\bigl(x^2 \sin \bigl(\nicefrac{1}{x}\bigr) + \nicefrac{x}{2} , y \bigr) &
+\bigl(x^2 \sin (\nicefrac{1}{x}) + \nicefrac{x}{2} , y \bigr) &
  \text{if } x \not= 0, \\
 (0,y) &
  \text{if } x=0.
