@@ -1948,20 +1948,20 @@ continuous on $[0,1]$, but not differentiable at every $x \in [0,1] \cap \Q$.
 \sectionref{sec:monotonefunc},
 \sectionref{sec:ift})}
 
-We now have all that is required to finally properly define the exponential
+We now have the tools required to properly define the exponential
 and the
-logarithm that you know from calculus so well.
-First, we have a good idea of what $x^n$ means as long as
-$n$ is a positive integer.  Simply,
+logarithm that you know from calculus so well.  We start with
+exponentiation.
+If $n$ is a positive integer, it is obvious to define
 \begin{equation*}
 x^n := \underbrace{x \cdot x \cdot \cdots \cdot x}_{n \text{ times}} .
 \end{equation*}
 It makes sense to define $x^0 := 1$.
-For negative integers we define $x^{-n} := \nicefrac{1}{x^n}$.
-If $x > 0$,
-we defined $x^{1/n}$ as
+For negative integers, let $x^{-n} := \nicefrac{1}{x^n}$.
+If $x > 0$, define
+$x^{1/n}$ as
 the unique positive $n$th root.  Finally, for a rational
-number $\nicefrac{n}{m}$ (in lowest terms), we define
+number $\nicefrac{n}{m}$ (in lowest terms), define
 \begin{equation*}
 x^{n/m} := {\bigl(x^{1/m}\bigr)}^n .
 \end{equation*}
@@ -1978,7 +1978,7 @@ This section answers these questions and more.
 \subsection{The logarithm}
 \index{logarithm}
 
-It is convenient to start with the logarithm.  
+It is convenient to define the logarithm first.
 Let us show that
 a unique function with the right properties exists, and only then will
 we call it \emph{the} logarithm.
@@ -2005,13 +2005,13 @@ $L(x^q) = q L(x)$.
 \end{prop}
 
 \begin{proof}
-To prove existence, let us define a candidate and show it satisfies
-all the properties.  Define
+To prove existence, we define a candidate and show it satisfies
+all the properties.  Let
 \begin{equation*}
 L(x) := \int_1^x \frac{1}{t}~dt .
 \end{equation*}
 
-Obviously \ref{it:log:i} holds.  Property \ref{it:log:ii} holds
+Obviously, \ref{it:log:i} holds.  Property \ref{it:log:ii} holds
 via the second form of the fundamental theorem of calculus
 (\thmref{thm:FTCv2}).
 
@@ -2079,7 +2079,7 @@ L(x) = L\Bigl({(x^{1/m})}^m\Bigr) = m L\bigl(x^{1/m}\bigr) .
 Putting everything together for $n \in \Z$ and $m \in \N$ we have
 $L(x^{n/m}) = n L(x^{1/m}) = (\nicefrac{n}{m}) L(x)$.
 
-Finally for uniqueness, let us use properties \ref{it:log:i} and
+Uniqueness follow using properties \ref{it:log:i} and
 \ref{it:log:ii}.  Via the first form of the
 fundamental theorem of calculus (\thmref{thm:FTCv1}),
 \begin{equation*}
@@ -2096,8 +2096,10 @@ we simply define the \emph{\myindex{logarithm}} or sometimes called the
 \begin{equation*}
 \ln(x) := L(x) .
 \end{equation*}
-Often mathematicians write $\log(x)$ instead of $\ln(x)$, which is
-more familiar to calculus students.
+
+Mathematicians usually write $\log(x)$ instead of $\ln(x)$, which is
+more familiar to calculus students.  Really, there is only one logarithm:
+the natural logarithm.  See \exerciseref{exercise:otherlogbases}.
 
 \subsection{The exponential}
 \index{exponential}
@@ -2175,7 +2177,7 @@ E(qx) = E\bigl(qL(a)\bigr)
 E\bigl(L(a^q)\bigr) = a^q = {E(x)}^q .
 \end{equation*}
 
-Finally, uniqueness follows from
+Uniqueness follows from
 \ref{it:exp:i} and
 \ref{it:exp:ii}.
 Let $E$ and $F$
@@ -2284,7 +2286,7 @@ and $g$ are differentiable and find their derivative.
 \end{exercise}
 
 \begin{samepage}
-\begin{exercise}
+\begin{exercise} \label{exercise:otherlogbases}
 Let $b > 0$, $b\neq 1$ be given.
 \begin{enumerate}[a)]
 \item
@@ -2366,8 +2368,7 @@ Prove that for $n \in \N$ we have
 Prove that the limit
 \begin{equation*}
 \gamma := \lim_{n\to\infty}
-\left( \sum_{k=1}^{n}
-\frac{1}{k} - \ln (n) \right)
+\left( \left( \sum_{k=1}^{n} \frac{1}{k} \right) - \ln (n) \right)
 \end{equation*}
 exists.  This constant is known as the
 \emph{\myindex{Euler--Mascheroni constant}}%
@@ -2451,11 +2452,12 @@ requires the optional \sectionref{sec:limitatinf})}
 
 Often it is necessary to integrate over the
 entire real line, or a unbounded interval of the form $[a,\infty)$ or
-$(-\infty,b]$.  Also, we may wish to integrate unbounded functions
+$(-\infty,b]$.  We may also wish to integrate unbounded functions
 defined on a open bounded interval $(a,b)$.
-Such functions are not Riemann integrable, but we may want to write down
+For such intervals or functions, the Riemann integral is not defined,
+but we will write down
 the integral anyway in the spirit of \lemmaref{lemma:boundedimpriemann}.
-These integrals are called \emph{\myindex{improper integrals}},
+These integrals are called \emph{\myindex{improper integrals}}
 and are limits
 of integrals rather than integrals themselves.
 
@@ -2484,9 +2486,9 @@ We similarly define improper integrals for the left-hand endpoint, we leave
 this to the reader.
 \end{defn}
 
-For a finite endpoint $b$,
-using \lemmaref{lemma:boundedimpriemann} we see that if
-$f$ is bounded, then we defined nothing new.  What is new is that
+For a finite endpoint $b$, if $f$ is bounded,
+then
+\lemmaref{lemma:boundedimpriemann} says that we defined nothing new.  What is new is that
 we can apply this definition to unbounded functions.
 The following set of examples is
 so useful that we state it as a proposition.
@@ -2565,7 +2567,7 @@ as the following proposition demonstrates.
 The exercises will show that this proposition
 holds only for nonnegative functions.
 Analogues of this proposition
-exist for all the other types of improper limits are left to the
+exist for all the other types of improper limits and are left to the
 student.
 
 \begin{prop} \label{impropriemann:possimp}
