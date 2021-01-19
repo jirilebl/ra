@@ -1770,15 +1770,15 @@ measure zero set, then $f(E)$ is measure zero.
 \end{prop}
 
 \begin{proof}
-We leave the proof for a general measure zero set as an exercise, and we
-now prove the proposition for a compact measure zero set.
+We prove the proposition for a compact $E$ and leave the general case as
+an exercise.
 
-Suppose $E$ is compact.
-First let us replace $U$ by a smaller open set to make $\snorm{f'(x)}$ bounded.
+Suppose $E$ is compact and of measure zero.
+First, we replace $U$ by a smaller open set to make $\snorm{f'(x)}$ bounded.
 At each point $x \in
 E$ pick an open ball $B(x,r_x)$ such that the closed ball $C(x,r_x) \subset
 U$.  By compactness we only need to take finitely
-many points $x_1,x_2,\ldots,x_q$ to still cover $E$.  Define
+many points $x_1,x_2,\ldots,x_q$ to cover $E$ we the balls $B(x_j,r_{x_j})$.  Define
 \begin{equation*}
 U' := \bigcup_{j=1}^q B(x_j,r_{x_j}), \qquad
 K := \bigcup_{j=1}^q C(x_j,r_{x_j}).
@@ -2096,9 +2096,9 @@ Suppose $S$ is a measure zero set: $m^*(S) = 0$.
 The trick to this proof is to isolate the
 bad set into a small set of subrectangles of a partition.  There are only
 finitely many subrectangles of a partition, so we will wish to use
-compactness.  If $S$ is closed, then it would be compact and we could cover
-it by small rectangles as it is of measure zero.  Unfortunately, in general $S$
-is not closed so we need to work a little harder.
+compactness.  If $S$ were closed, then it would be compact and we could cover
+it by finitely many small rectangles as it is of measure zero.  Unfortunately, $S$
+is not closed in general, so we need to work a little harder.
 
 For every $\epsilon > 0$, define
 \begin{equation*}
@@ -2400,7 +2400,7 @@ Compute $o(f,x)$ for all $x \in [0,1]$.
 
 \subsection{Volume and Jordan measurable sets}
 
-Given a bounded set
+Given a set
 $S \subset \R^n$, its \emph{\myindex{characteristic function}}
 or \emph{\myindex{indicator function}} $\chi_S \colon \R^n \to \R$
 is defined by
@@ -2417,7 +2417,7 @@ the French mathematician
 \href{https://en.wikipedia.org/wiki/Camille_Jordan}{Marie Ennemond Camille Jordan}
 (1838--1922).}
 if for some closed rectangle $R$ such that $S \subset R$, the function
-$\chi_S$ is in $\sR(R)$.
+$\chi_S$ is Riemann integrable, that is, $\chi_S \in \sR(R)$.
 Take two closed rectangles $R$ and $R'$ 
 with $S \subset R$ and $S \subset R'$, then $R \cap R'$ is a closed rectangle
 also containing $S$.  By \propref{mv:prop:integralsmallerset}

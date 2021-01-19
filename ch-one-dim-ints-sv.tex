@@ -382,7 +382,8 @@ The function $\gamma \colon [a,b] \to \R^n$ is called a
 \emph{\myindex{piecewise continuously differentiable path}}
 if there exist finitely many points
 $t_0 = a < t_1 < t_2 < \cdots < t_k = b$ such that
-the restriction $\gamma|_{[t_{j-1},t_j]}$ is smooth path.
+the restriction $\gamma|_{[t_{j-1},t_j]}$ is smooth path for every
+$j=1,2,\ldots,k$.
 
 A path $\gamma$ is 
 a \emph{\myindex{closed path}} if $\gamma(a) = \gamma(b)$, that is
@@ -480,8 +481,8 @@ Then $\gamma^{\:\prime}(t) = \bigl( 1 , f'(t) \bigr)$, which is never zero,
 and $\gamma\bigl([a,b]\bigr)$ is the graph of $f$.
 
 There are other ways of parametrizing the path.  That is, there are
-different paths with the same image.  For example,
-the function $t \mapsto (1-t)a+tb$, takes the interval $[0,1]$ to $[a,b]$.
+different paths with the same image.
+The function $t \mapsto (1-t)a+tb$, takes the interval $[0,1]$ to $[a,b]$.
 Define
 $\alpha \colon [0,1] \to \R^2$ by
 \begin{equation*}
@@ -580,6 +581,7 @@ Orientation reversing $h$ is left as an exercise.
 
 If two paths are simple and their images are the same, it is
 left as an exercise that there exists a reparametrization.
+Here is where our assumption that $\gamma'$ is never zero is important.
 
 \subsection{Path integral of a one-form}
 
@@ -1619,7 +1621,7 @@ f(x) := \int_{\gamma} \omega
 \int_0^1
 \left(
 \sum_{k=1}^n
-\omega_k \bigl((1-t)p + tx \bigr) (x_k-p_k)
+\omega_k \bigl((1-t)p + tx \bigr) \, (x_k-p_k)
 \right) dt .
 \end{equation*}
 We differentiate in $x_j$ under the integral, which is allowed as
@@ -1631,7 +1633,7 @@ everything, including the partials, is continuous.
 \left(
 \left(
 \sum_{k=1}^n
-\frac{\partial \omega_k}{\partial x_j} \bigl((1-t)p + tx \bigr) t
+\frac{\partial \omega_k}{\partial x_j} \bigl((1-t)p + tx \bigr) \, t
 (x_k-p_k)
 \right)
 +
@@ -1644,7 +1646,7 @@ everything, including the partials, is continuous.
 \left(
 \left(
 \sum_{k=1}^n
-\frac{\partial \omega_j}{\partial x_k} \bigl((1-t)p + tx \bigr) t
+\frac{\partial \omega_j}{\partial x_k} \bigl((1-t)p + tx \bigr) \, t
 (x_k-p_k)
 \right)
 +
@@ -1735,7 +1737,7 @@ is then called a \emph{\myindex{potential}} for $v$.
 A vector field $v$ whose path integrals are path independent is called
 a \emph{\myindex{conservative vector field}}.  The rationale for the naming
 is that such vector fields arise in physical systems
-where a certain quantity, the energy is conserved.
+where a certain quantity, the energy, is conserved.
 
 \subsection{Exercises}
 
