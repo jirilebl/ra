@@ -2650,29 +2650,29 @@ U := \bigl\{ (x,y) \in \R^2 : a < x < b \text{ and } f(x) < y < g(x) \bigr\} .
 \item
 Show that $U$ is Jordan measurable.
 \item
-If $f \colon U \to \R$ is Riemann integrable on $U$, then
+If $\varphi \colon U \to \R$ is Riemann integrable on $U$, then
 \begin{equation*}
-\int_U f =
-\int_a^b \int_{g(x)}^{f(x)} f(x,y) ~ dy ~ dx .
+\int_U \varphi =
+\int_a^b \int_{g(x)}^{f(x)} \varphi(x,y) ~ dy ~ dx .
 \end{equation*}
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exercise}
-Let us construct an example of a non-Jordan measurable open set.  For
-simplicity we work first in one dimension.  Let $\{ r_j \}$ be an enumeration
+Let us construct an example of a non-Jordan measurable open set.
+Start in one dimension.  Let $\{ r_j \}$ be an enumeration
 of all rational numbers in $(0,1)$.  Let $(a_j,b_j)$ be open intervals
 such that $(a_j,b_j) \subset (0,1)$ for all $j$, $r_j \in (a_j,b_j)$,
 and $\sum_{j=1}^\infty (b_j-a_j) < \nicefrac{1}{2}$.  Now let $U :=
-\bigcup_{j=1}^\infty (a_j,b_j)$.  Show that
+\bigcup_{j=1}^\infty (a_j,b_j)$.
 \begin{enumerate}[a)]
 \item
-The open intervals $(a_j,b_j)$ as above actually exist.
+Show the open intervals $(a_j,b_j)$ as above actually exist.
 \item
-$\partial U = [0,1] \setminus U$.
+Prove $\partial U = [0,1] \setminus U$.
 \item
-$\partial U$ is not of measure zero, and therefore $U$ is not Jordan measurable.
+Prove $\partial U$ is not of measure zero, and therefore $U$ is not Jordan measurable.
 \item
 Show that $W :=
 \bigl( U \times (0,2) \bigr) \cup \bigl( (0,1) \times (1,2) \bigr)$
@@ -2690,8 +2690,8 @@ If $K$ is bounded, prove that $K$ is Jordan measurable.
 If $S \subset \R^n$ is bounded and Jordan measurable, prove that
 $S \setminus K$ is Jordan measurable.
 \item
-Find an example where $S\subset \R^n$ is bounded and Jordan measurable,
-$T \subset \R^n$ is bounded and of measure zero, and
+Construct a bounded Jordan measurable $S \subset \R^n$
+and a bounded $T \subset \R^n$ of measure zero, such that
 neither $T$ nor $S \setminus T$ is Jordan measurable.
 \end{enumerate}
 \end{exercise}
@@ -2942,7 +2942,7 @@ Putting the two together we obtain
 \end{equation*}
 \end{proof}
 
-Let us illustrate the usefulness of Green's theorem on a fundamental result
+We illustrate the usefulness of Green's theorem on a fundamental result
 about harmonic functions.
 
 \begin{example}
@@ -3055,14 +3055,14 @@ $\int_{\partial V}
 \begin{samepage}
 \begin{exercise}
 For a disc $B(p,r) \subset \R^2$, orient the boundary $\partial B(p,r)$
-positively:
+positively.
 \begin{enumerate}[a)]
 \item
 Compute $\displaystyle \int_{\partial B(p,r)} -y ~ dx$.
 \item
 Compute $\displaystyle \int_{\partial B(p,r)} x ~ dy$.
 \item
-Compute $\displaystyle \int_{\partial B(p,r)} \frac{-y}{2} ~ dy +
+Compute $\displaystyle \int_{\partial B(p,r)} \frac{-y}{2} ~ dx +
 \frac{x}{2} ~ dy$.
 \end{enumerate}
 \end{exercise}
@@ -3117,7 +3117,7 @@ In one variable, we have the familiar change of variables
 \int_a^b f\bigl(g(x)\bigr) g'(x)~ dx = 
 \int_{g(a)}^{g(b)} f(x) ~ dx .
 \end{equation*}
-It may be surprising that the analogue in higher dimensions is quite
+The analogue in higher dimensions is quite
 a bit more complicated.  The first complication is orientation.  If we use
 the definition of integral from this chapter, then we do not have the notion
 of $\int_a^b$ versus $\int_b^a$.  We are simply integrating over an
@@ -3128,10 +3128,12 @@ interval $[a,b]$.  With this notation, the change of variables becomes
 \end{equation*}
 In this section we will obtain the several-variable analogue of this form.
 
-First we wish to see what plays the role of $\sabs{g'(x)}$.  
-The $g'(x)$ is a scaling of $dx$.  The integral measures volumes in general, so in one
-dimension it measures length.  If our $g$ is linear, that is, $g(x)=Lx$, then
-$g'(x) = L$.  Then the length of the interval $g([a,b])$ is simply
+Let us remark the role of $\sabs{g'(x)}$ in the formula. 
+The integral measures volumes in general, so in one dimension it measures length.
+Notice that $\sabs{g'(x)}$ scales the $dx$ and
+so it scales the lengths.
+If our $g$ is linear, that is, $g(x)=Lx$, then
+$g'(x) = L$ and the length of the interval $g([a,b])$ is simply
 $\sabs{L}(b-a)$.  That is because $g([a,b])$ is either $[La,Lb]$ or
 $[Lb,La]$.  This property holds in higher dimension with $\sabs{L}$ replaced
 by the absolute value of the determinant.
@@ -3177,43 +3179,35 @@ That the right hand side makes sense follows by
 The set $S$ can be covered by finitely many closed rectangles
 $P_1,P_2,\ldots,P_k$, whose
 interiors do not overlap such that each $P_j \subset U$
-(exercise).
-Proving the theorem for $P_j \cap S$ instead of $S$ is enough
-Furthermore, for $y \notin g(S)$ write $f(y) := 0$.
+(\exerciseref{mv:changeofvarcoverbyrects}).
+Proving the theorem for $P_j \cap S$ instead of $S$ is enough.
+Define $f(y) := 0$ for all $y \notin g(S)$.
+The new $f$ is still Riemann integrable since $g(S)$ is Jordan measurable.
+We can now replace the integrals over $S$ with integrals over the whole
+rectangle.
 We therefore assume that $S$ is equal to a rectangle $R$.
-
-We can write any Riemann integrable function $f$ as
-$f = f_+ - f_-$ for two nonnegative Riemann integrable
-functions $f_+$ and $f_-$:
-\begin{equation*}
-f_+(x) := \max \{ f(x) , 0 \}, \qquad
-f_-(x) := \max \{ -f(x) , 0 \} .
-\end{equation*}
-So, if we prove the theorem for a nonnegative $f$,
-we obtain the theorem for arbitrary $f$.
-Therefore, let us also suppose that 
-$f(y) \geq 0$ for all $y$.
 
 Let $\epsilon > 0$ be given.
 For every $x \in R$, let
 \begin{equation*}
 W_x := \bigl\{ y \in U : \snorm{g'(x)-g'(y)} < \nicefrac{\epsilon}{2} \bigr\} .
 \end{equation*}
-We leave it as an exercise to prove that $W_x$ is open.
-As $x \in W_x$ for every $x$, we find an open cover.  Therefore
-by the Lebesgue covering lemma, there exists a $\delta > 0$ such that
+By \exerciseref{mv:changeofvarWxopen},
+$W_x$ is open.
+As $x \in W_x$ for every $x$, it is an open cover.
+By the Lebesgue covering lemma, there exists a $\delta > 0$ such that
 for every $y \in R$, there is an $x$ such that $B(y,\delta) \subset W_x$.
 In other words, if $P$ is a rectangle $P$ of maximum side length less
-than $\frac{\delta}{\sqrt{n}}$ and such that $y \subset P$, then $P \subset
+than $\frac{\delta}{\sqrt{n}}$ and $y \in P$, then $P \subset
 B(y,\delta) \subset W_x$.  By triangle inequality
 $\snorm{g'(\xi)-g'(\eta)} < \epsilon$ for all $\xi, \eta \in P$.
 
-So let $R_1,R_2,\ldots,R_N$ be subrectangles partitioning $R$ such that
+Let $R_1,R_2,\ldots,R_N$ be subrectangles partitioning $R$ such that
 the maximum side of any $R_j$ is less than
 $\frac{\delta}{\sqrt{n}}$.
 We also make sure that the minimum side length is at least
 $\frac{\delta}{2\sqrt{n}}$, which we can do if $\delta$ is 
-sufficiently small compared to the sides of $R$ (exercise).
+sufficiently small compared to the sides of $R$ (\exerciseref{mv:changeofvarrectside}).
 
 Consider some $R_j$ and some fixed $x_j \in R_j$.
 First suppose $x_j=0$, $g(x_j) = 0$, and $g'(0) = I$.
@@ -3245,7 +3239,7 @@ and $g(y)$ must lie within with a radius of $\delta\epsilon$
 \end{myfigureht}
 
 
-If the sides are $s_1,s_2,\ldots,s_n$, then
+If the sides of $R_j$ are $s_1,s_2,\ldots,s_n$, then
 $V(R_j) = s_1 s_2 \cdots s_n$.   Recall $\delta \leq 2\sqrt{n} \, s_j$.
 Thus,
 \begin{equation*}
@@ -3269,35 +3263,47 @@ s_2 (1+4 \sqrt{n}\, \epsilon )
 \cdots
 s_n (1+4 \sqrt{n}\, \epsilon )
 =
-V(R_j) (1+4\sqrt{n} \, \epsilon) .
+V(R_j) {(1+4\sqrt{n} \, \epsilon)}^n .
 \end{split}
 \end{equation*}
 In other words,
 \begin{equation*}
-V\bigl(g(R_j)\bigr) \leq V(R_j) (1+4\sqrt{n} \, \epsilon) .
+V\bigl(g(R_j)\bigr) \leq V(\widetilde{R}_j) \leq V(R_j) {(1+4\sqrt{n} \, \epsilon)}^n .
 \end{equation*}
-Next, let us suppose that $A := g'(0)$ is not the identity.
+Next, suppose $A := g'(0)$ is not necessarily the identity.
 Write $g = A \circ \widetilde{g}$ where $\widetilde{g}'(0) = I$.
 By \propref{prop:volrectdet},
-we know that $V\bigl(A(R_j)\bigr) = \sabs{\det(A)}V(R_j)$, and hence
+$V\bigl(A(R_j)\bigr) = \sabs{\det(A)}V(R_j)$, and hence
 \begin{equation*}
 \begin{split}
 V\bigl(g(R_j)\bigr) & \leq
-\sabs{\det(A)} V(R_j) (1+4\sqrt{n} \, \epsilon) \\
+\sabs{\det(A)} V(R_j) {(1+4\sqrt{n} \, \epsilon)}^n \\
 & =
-\sabs{J_g(0)} V(R_j) (1+4\sqrt{n} \, \epsilon) .
+\sabs{J_g(0)} V(R_j) {(1+4\sqrt{n} \, \epsilon)}^n .
 \end{split}
 \end{equation*}
-Finally, translation does not change volume, and therefore
+Translation does not change volume, and therefore
 for any $R_j$, and $x_j \in R_j$ including when $x_j \not= 0$ and $g(x_j)
 \not= 0$, we find
 \begin{equation*}
 V\bigl(g(R_j)\bigr) \leq
-\sabs{J_g(x_j)} V(R_j) (1+4\sqrt{n} \, \epsilon) .
+\sabs{J_g(x_j)} V(R_j) {(1+4\sqrt{n} \, \epsilon)}^n .
 \end{equation*}
 
-First assume that $f(y) \geq 0$ for all $y \in R$.
-Suppose $\delta > 0$ was chosen small enough such that
+Write $f$ as
+$f = f_+ - f_-$ for two nonnegative Riemann integrable
+functions $f_+$ and $f_-$:
+\begin{equation*}
+f_+(x) := \max \{ f(x) , 0 \}, \qquad
+f_-(x) := \max \{ -f(x) , 0 \} .
+\end{equation*}
+So, if we prove the theorem for a nonnegative $f$,
+we obtain the theorem for arbitrary $f$.
+Therefore, suppose that 
+$f(y) \geq 0$ for all $y \in R$.
+
+For a small enough
+$\delta > 0$ we have
 \begin{equation*}
 \begin{split}
 \epsilon + \int_R f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx
@@ -3310,22 +3316,21 @@ Suppose $\delta > 0$ was chosen small enough such that
 & \geq
 \sum_{j=1}^N \biggl(\sup_{y \in g(R_j)} f(y) \biggr)
 V\bigl(g(R_j)\bigr)
-(1+4\sqrt{n} \, \epsilon)
+\frac{1}{{(1+4\sqrt{n} \, \epsilon)}^n}
 \\
 & \geq
 \sum_{j=1}^N \left(\int_{g(R_j)}f(y) ~dy \right)
-(1+4\sqrt{n} \, \epsilon)
+\frac{1}{{(1+4\sqrt{n} \, \epsilon)}^n}
 \\
 & =
-(1+4\sqrt{n} \, \epsilon)
+\frac{1}{{(1+4\sqrt{n} \, \epsilon)}^n}
 \int_{g(R)} f(y) ~dy .
 \end{split}
 \end{equation*}
-Where the last equality follows because the overlaps of the rectangles
-are their boundaries which are of measure zero, and hence the image
+The last equality follows because the overlaps of the rectangles
+are their boundaries, which are of measure zero, and hence the image
 of their boundaries is also measure zero.
-
-Letting $\epsilon$ go to zero we find
+Let $\epsilon$ go to zero to find
 \begin{equation*}
 \int_R f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx \geq \int_{g(R)} f(y) ~dy .
 \end{equation*}
@@ -3336,7 +3341,7 @@ and any nonnegative integrable function $f$:
 \int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx \geq \int_{g(S)} f(y) ~dy .
 \end{equation*}
 
-Next, recall that $g^{-1}$ exists, and that $g^{-1}\bigl(g(S)\bigr) = S$.
+Recall that $g^{-1}$ exists and $g^{-1}\bigl(g(S)\bigr) = S$.
 Also $1 = J_{g\circ g^{-1}} = J_g(g^{-1}(y))J_{g^{-1}}(y)$ for $y \in g(S)$.
 So
 \begin{equation*}
@@ -3364,7 +3369,7 @@ mentioned above, it thus holds for all Riemann integrable $f$.
 Prove \propref{prop:volrectdet}.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{mv:changeofvarcoverbyrects}
 Suppose $S \subset \R^n$ is a closed bounded Jordan measurable set,
 and $S \subset U$ for an open set $U \subset \R^n$.
 Show that there exist finitely many closed bounded rectangles
@@ -3374,17 +3379,17 @@ the interiors are mutually disjoint, that is
 $P_j^\circ \cap P^\circ_\ell = \emptyset$ whenever $j \not= \ell$.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{mv:changeofvarWxopen}
 Suppose $U \subset \R^n$ is an open set, $x \in U$,
 $g \colon U \to \R^n$ a continuously differentiable mapping.
-For any $\epsilon$, show that
+For any $\epsilon > 0$, show that
 \begin{equation*}
 W_x := \bigl\{ y \in U : \snorm{g'(x)-g'(y)} < \nicefrac{\epsilon}{2} \bigr\}
 \end{equation*}
-from the proof of the theorem is an open set.
+is an open set.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{mv:changeofvarrectside}
 Suppose $R \subset \R^n$ is a closed bounded rectangle.
 Show that if $\delta' > 0$ is sufficiently small compared
 to the sides of $R$, then $R$ can be partitioned
