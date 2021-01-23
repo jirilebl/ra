@@ -3195,11 +3195,13 @@ W_x := \bigl\{ y \in U : \snorm{g'(x)-g'(y)} < \nicefrac{\epsilon}{2} \bigr\} .
 By \exerciseref{mv:changeofvarWxopen},
 $W_x$ is open.
 As $x \in W_x$ for every $x$, it is an open cover.
-By the Lebesgue covering lemma, there exists a $\delta > 0$ such that
+By the Lebesgue covering lemma
+(\volIref{\lemmaref*{vI-ms:lebesgue} from volume I}{\lemmaref{ms:lebesgue}}),
+there exists a $\delta > 0$ such that
 for every $y \in R$, there is an $x$ such that $B(y,\delta) \subset W_x$.
-In other words, if $P$ is a rectangle $P$ of maximum side length less
+In other words, if $P$ is a rectangle of maximum side length less
 than $\frac{\delta}{\sqrt{n}}$ and $y \in P$, then $P \subset
-B(y,\delta) \subset W_x$.  By triangle inequality
+B(y,\delta) \subset W_x$.  By triangle inequality,
 $\snorm{g'(\xi)-g'(\eta)} < \epsilon$ for all $\xi, \eta \in P$.
 
 Let $R_1,R_2,\ldots,R_N$ be subrectangles partitioning $R$ such that
@@ -3210,7 +3212,7 @@ $\frac{\delta}{2\sqrt{n}}$, which we can do if $\delta$ is
 sufficiently small compared to the sides of $R$ (\exerciseref{mv:changeofvarrectside}).
 
 Consider some $R_j$ and some fixed $x_j \in R_j$.
-First suppose $x_j=0$, $g(x_j) = 0$, and $g'(0) = I$.
+First suppose $x_j=0$, $g(0) = 0$, and $g'(0) = I$.
 For any $y \in R_j$,
 apply the fundamental theorem of calculus
 to the function $t \mapsto g(ty)$ to find
