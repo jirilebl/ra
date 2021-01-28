@@ -76,17 +76,19 @@ Define
 \glsadd{not:conj}
 \emph{\myindex{complex conjugate}} as
 \begin{equation*}
-\bar{z} := x-iy .
+\bar{z} := x-iy ,
 \end{equation*}
-Similarly define \emph{\myindex{modulus}} as
+and define \emph{\myindex{modulus}} as
 \glsadd{not:modulus}
 \begin{equation*}
 \sabs{z} := \sqrt{x^2+y^2} .
 \end{equation*}
 \end{defn}
-Modulus acts like absolute value.  For example,
-$\sabs{zw} = \sabs{z} \, \sabs{w}$ (exercise).
 
+Modulus is the complex analogue of the absolute value and
+has similar properties.
+For example,
+$\sabs{zw} = \sabs{z} \, \sabs{w}$ (exercise).
 The complex conjugate is a reflection of the plane across the real axis.
 The real numbers are precisely those numbers for which the imaginary
 part $y=0$.  In particular, they are precisely those numbers which satisfy
@@ -138,21 +140,22 @@ numbers.
 
 It is not hard to show that the algebraic operations are
 continuous.  This is because convergence in 
-$\R^2$ is the same as convergence for each component.  For example,
+$\R^2$ is the same as convergence for each component and we already know
+that the real algebraic operations are continuous.  For example,
 write $z_n = x_n + i\,y_n$ and
 $w_n = s_n + i\,t_n$, and suppose that
 $\lim \, z_n = z = x+i\,y$ and $\lim \, w_n = w = s+i\,t$.
 Let us show
 \begin{equation*}
-\lim_{n\to\infty} z_n w_n = zw
+\lim_{n\to\infty} z_n w_n = zw .
 \end{equation*}
 First,
 \begin{equation*}
 z_n w_n = (x_ns_n-y_nt_n) + i(x_nt_n+y_ns_n) .
 \end{equation*}
-As topology on $\C$ is the same as on $\R^2$, then
+The topology on $\C$ is the same as on $\R^2$, and so
 $x_n \to x$, $y_n \to y$, $s_n \to s$, and $t_n \to t$.
-So
+Hence,
 \begin{equation*}
 \lim_{n\to\infty} (x_ns_n-y_nt_n) = xs-yt \qquad \text{and} \qquad
 \lim_{n\to\infty} (x_nt_n+y_ns_n) = xt+ys .
@@ -162,7 +165,7 @@ $(xs-yt)+i(xt+ys) = zw$, then
 \begin{equation*}
 \lim_{n\to\infty} z_n w_n = zw .
 \end{equation*}
-Similarly the modulus, and complex conjugate are continuous functions.  We
+Similarly the modulus and the complex conjugate are continuous functions.  We
 leave the proof of the following proposition as an exercise.
 
 \begin{prop} \label{prop:continuityofcomplex}
@@ -189,9 +192,9 @@ the real and imaginary parts converge.  Therefore, feel free to apply
 everything you have learned about convergence in $\R^2$, as well as
 applying results about real numbers to the real and imaginary parts.
 
-We also need to extend convergence of complex series.  Let $\{ z_n \}$ be a
+We also need convergence of complex series.  Let $\{ z_n \}$ be a
 sequence of complex
-numbers, then the series
+numbers. The series
 \begin{equation*}
 \sum_{n=1}^\infty z_n
 \end{equation*}
@@ -307,7 +310,7 @@ as the action of multiplying $(x+iy)(s+it)$.
 Multiplying two such matrices is the same multiplying the underlying complex
 numbers and then finding the corresponding matrix for the product.
 In other words, we can think of the field $\C$ as also a subset of
-the two by two matrices.
+the 2-by-2 matrices.
 \item
 Show that 
 $\left[ \begin{smallmatrix} x & -y \\ y & x \end{smallmatrix} \right]$
@@ -373,7 +376,7 @@ We say the sequence $\{ f_n \}$
 
 Suppose $Y=\C$, a series
 \emph{converges pointwise}\index{converges pointwise!complex series}\index{pointwise convergence!complex series} if
-for every $x \in X$ we have
+for every $x \in X$, we have
 \begin{equation*}
 f(x) = \lim_{n\to \infty} \sum_{k=1}^n f_k(x) =
 \sum_{k=1}^\infty f_k(x) .
@@ -399,7 +402,7 @@ The functions $f_n \colon \R \to \R$,
 \begin{equation*}
 f_n(x) := \frac{1}{1+nx^2}
 \end{equation*}
-converge pointwise to
+are continuous and converge pointwise to
 \begin{equation*}
 f(x) := 
 \begin{cases}
@@ -407,10 +410,10 @@ f(x) :=
 0 & \text{else,}
 \end{cases}
 \end{equation*}
-which is not continuous of course.
+which is not continuous.
 \end{example}
 
-Pointwise convergence is not enough to preserve continuity (nor even
+So pointwise convergence is not enough to preserve continuity (nor even
 boundedness).  For that, we need uniform convergence.
 
 Let $f_n \colon X \to Y$ be functions.  Then
