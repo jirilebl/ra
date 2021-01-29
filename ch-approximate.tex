@@ -1410,10 +1410,12 @@ differentiating the series to obtain \eqref{eq:formulaforpscoeffs}.
 
 Note that if a series converges for real $x \in (a-\rho,a+\rho)$ it also converges
 for all complex numbers in $B(a,\rho)$.
-We have the following corollary.
+We have the following corollary, which says that functions defined
+by power series are analytic.
 
-\begin{cor}
-If $\sum c_k {(z-a)}^k$ converges to $f(z)$ in $B(a,\rho)$ and $b \in
+\begin{cor} \label{cor:powerseranalytic}
+For any $a \in \C$,
+if $\sum c_k {(z-a)}^k$ converges to $f(z)$ in $B(a,\rho)$ and $b \in
 B(a,\rho)$,
 then there exists a power series
 $\sum d_k {(z-b)}^k$ that converges to $f(z)$ in $B(b,\rho-\sabs{b-a})$.
@@ -1504,7 +1506,7 @@ for all $\epsilon > 0$.
 \begin{thm}[Identity theorem]
 \label{thm:identityanalytic}%
 \index{identity theorem}%
-Let $U \subset \C$ be an open connected set.  If $f \colon U \to \C$
+Let $U \subset \C$ be open and connected.  If $f \colon U \to \C$
 and $g \colon U \to \C$ are analytic functions that are
 equal on a set $E \subset U$, and $E$ has a cluster point
 in $U$, then $f(z) = g(z)$ for all $z \in U$.
@@ -1600,29 +1602,29 @@ the power series for $f$ at the origin is 1.
 
 
 \begin{exercise}
-Suppose $f \colon \C \to \C$ is an analytic function.  Show that for each
-$n$, there are at most finitely many zeros of $f$ in $B(0,n)$, that is
+Suppose $f \colon \C \to \C$ is analytic.  Show that for each
+$n$, there are at most finitely many zeros of $f$ in $B(0,n)$, that is,
 $f^{-1}(0) \cap B(0,n)$ is finite for each $n$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $U \subset \C$ is a connected open set, $0 \in U$, and $f \colon U
-\to \C$ is an analytic function.  Treating $f$ as a function of a real $x$
+Suppose $U \subset \C$ is open and connected, $0 \in U$, and $f \colon U
+\to \C$ is analytic.  Treating $f$ as a function of a real $x$
 at the origin, suppose $f^{(n)}(0) = 0$ for all $n$.  Show that $f(z) = 0$
 for all $z \in U$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $U \subset \C$ is a connected open set, $0 \in U$, and $f \colon U
-\to \C$ is an analytic function.  For real $x$ and $y$,
+Suppose $U \subset \C$ is open and connected, $0 \in U$, and $f \colon U
+\to \C$ is analytic.  For real $x$ and $y$,
 let $h(x) := f(x)$ and $g(y) := -i \, f(iy)$.
 Show that $h$ and $g$ are infinitely differentiable at the origin and
 $h'(0) = g'(0)$.
 \end{exercise}
 
 \begin{exercise}
-Suppose at least in some neighborhood of the origin
-$f$ is analytic.  Suppose further that there exists an $M$
+Suppose a function $f$ is analytic in some neighborhood of the origin,
+and that there exists an $M$
 such that $\sabs{f^{(n)}(0)} \leq M$ for all $n$.
 Prove that the series of $f$ at the origin converges for all $z \in \C$.
 \end{exercise}
@@ -1692,9 +1694,10 @@ $\sabs{f(z)} \leq \frac{1}{1-\sabs{z}}$.
 
 Define
 \begin{equation*}
-E(z) := \sum_{n=0}^\infty \frac{1}{n!} z^n .
+E(z) := \sum_{k=0}^\infty \frac{1}{k!} z^k .
 \end{equation*}
-This series converges for all $z \in \C$.   We notice that $E(0) = 1$,
+This series converges for all $z \in \C$ and so by
+\corref{cor:powerseranalytic}, $E$ is analytic on $\C$.   We notice that $E(0) = 1$,
 and that for $z=x \in \R$, $E(x) \in \R$.  Keeping $x$ real, we find
 \begin{equation*}
 \frac{d}{dx} \bigl( E(x) \bigr) = E(x)
@@ -1702,7 +1705,7 @@ and that for $z=x \in \R$, $E(x) \in \R$.  Keeping $x$ real, we find
 by direct calculation.
 In \volIref{\sectionref*{vI-sec:logandexp} of volume I}{\sectionref{sec:logandexp}} (or by Picard's theorem), we proved that
 the unique function satisfying $E' = E$ and
-$E(0) = 1$ is the exponential.  In other words for $x \in \R$, $e^x = E(x)$.
+$E(0) = 1$ is the exponential.  In other words, for $x \in \R$, $e^x = E(x)$.
 
 For complex numbers $z$, we define\glsadd{not:complexexp}
 \begin{equation*}
@@ -1720,9 +1723,9 @@ the graph behaves like the real exponential, and in the $y$ direction
 \caption{Graphs of the real part (left) and imaginary part (right)
 of the complex exponential $e^z = e^{x+iy}$.  The $x$-axis goes from $-4$ to
 $4$, the $y$-axis goes from $-6$ to $6$, and the vertical axis goes from
-$-e^{6} \approx -54.6$
+$-e^{4} \approx -54.6$
 to
-$e^{6} \approx 54.6$.  The plot of the real exponential ($y=0$)
+$e^{4} \approx 54.6$.  The plot of the real exponential ($y=0$)
 is marked in a bold line.\label{fig:complexexpgraphs}}
 \end{myfigureht}
 
@@ -1734,21 +1737,25 @@ e^{z+w} = e^z e^w.
 \end{prop}
 
 \begin{proof}
-We know
-$e^{x+y} = e^x e^y$ is true for
+We already know that
+the equality
+$e^{x+y} = e^x e^y$ holds for all
 real numbers $x$ and $y$.
-
-Now for any fixed $y \in \R$, we get by the
-identity theorem (\thmref{thm:identityanalytic}) that
+For any fixed $y \in \R$, consider the expressions as
+functions of $x$ and apply the identity theorem
+(\thmref{thm:identityanalytic}) to get that
 $e^{z+y} = e^ze^y$ for all $z \in \C$.  Fixing an arbitrary $z \in \C$,
 we get
 $e^{z+y} = e^ze^y$ for all $y \in \R$.  Again by the identity theorem 
 $e^{z+w} = e^z e^w$
-for all $z,w \in \C$.
+for all $w \in \C$.
 \end{proof}
 
 A simple consequence is that $e^z\not=0$ for all $z \in \C$,
-as $e^z e^{-z} = e^{z-z} = 1$.
+as $e^z e^{-z} = e^{z-z} = 1$.  A more complicated consequence is that we
+can easily compute the power series for the exponential at any point $a \in
+\C$:
+$e^z = e^a e^{z-a} = \sum \frac{e^a}{k!} {(z-a)}^k$.
 
 \subsection{Trigonometric functions and $\pi$}
 
@@ -1933,7 +1940,7 @@ smallest positive $x$, then
 $x = 2\pi$.  So let $x$ be the smallest positive $x$ such that
 $e^{ix} = 1$.
 Of course, $x \leq 2\pi$.
-By the addition formula
+By the addition formula,
 \begin{equation*}
 {\bigl(e^{ix/4}\bigr)}^4 = 1 .
 \end{equation*}
@@ -1981,8 +1988,8 @@ by
 \int_a^b \sabs{\gamma^{\:\prime}(t)} ~ dt .
 \end{equation*}
 We have that $e^{it}$ parametrizes the circle for $t$ in $[0,2\pi)$.
-$\frac{d}{dt} \bigl( e^{it} \bigr) = ie^{it}$ and so the circumference of the
-circle is
+As $\frac{d}{dt} \bigl( e^{it} \bigr) = ie^{it}$, the circumference of the
+circle (the arclength) is
 \begin{equation*}
 \int_0^{2\pi} \sabs{i e^{it}}  ~  dt
 =
@@ -2077,7 +2084,7 @@ Define the \emph{\myindex{hyperbolic sine}} and
 \end{exnote}
 
 \begin{exercise}
-Derive the power series for the hyperbolic sine and cosine.
+Derive the power series at the origin for the hyperbolic sine and cosine.
 \end{exercise}
 
 \begin{exercise}
@@ -2270,7 +2277,7 @@ we can pick $R$ large enough to be bigger than a given $M$.
 
 The lemma above does \emph{not} generalize to analytic
 functions, even those defined in all of $\C$.  The function
-$\cos(z)$ is an obvious counterexample.
+$\cos(z)$ is a counterexample.
 Note that we had to look
 at the term with the largest degree, and we only have such a term for
 a polynomial.  In fact, something that we will not prove is that
@@ -2299,7 +2306,7 @@ As that is a minimum of $\sabs{p(z)}$ on $\C$, then by the first lemma above we 
 that $\sabs{p(z_0)} = 0$.
 \end{proof}
 
-The theorem doesn't generalize to analytic functions either.  For example,
+The fundamental theorem also does not generalize to analytic functions.  For example,
 $e^{z}$ is an analytic function on $\C$ with no zeros.
 
 \subsection{Exercises}

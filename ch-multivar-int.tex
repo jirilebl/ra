@@ -1722,7 +1722,7 @@ $m^*(C_k) =1 - \sum_{n=1}^k \frac{2^n}{3^{n+1}}$.
 \item Hence,
 $m^*(C) = 0$.
 \item The set $C$ is in one-to-one correspondence with $[0,1]$, in other
-words, it is
+words, $C$ is
 uncountable.
 \end{enumerate}
 \begin{myfigureht}
@@ -2717,12 +2717,12 @@ rectangles with bounded Jordan measurable sets.
 
 One of the most important theorems of analysis in several variables is the
 so-called generalized Stokes' theorem, a generalization of the
-fundamental theorem of calculus.  Perhaps the most often used version is the
-version in two dimensions, called Green's theorem%
+fundamental theorem of calculus.  The two-dimensional
+version is called Green's theorem%
 \footnote{Named after the British mathematical physicist
 \href{https://en.wikipedia.org/wiki/George_Green_(mathematician)}{George Green}
-(1793--1841).}, which we 
-prove here.
+(1793--1841).}.  We will state the theorem in general, but
+we will only prove a special, but important, case.
 
 \begin{defn}
 Let $U \subset \R^2$ be a bounded connected open set.
@@ -2856,6 +2856,8 @@ if it is both of type I and type II\@.  See \figureref{fig:greenstypes}.
 \caption{Domain types for Green's theorem.\label{fig:greenstypes}}
 \end{myfigureht}
 
+Common domains to apply Green's theorem to are rectangles and discs, and
+these are type III domains.
 We will only prove Green's theorem for type III domains.
 
 \begin{proof}[Proof of Green's theorem for $U$ of type III]
@@ -2946,12 +2948,12 @@ We illustrate the usefulness of Green's theorem on a fundamental result
 about harmonic functions.
 
 \begin{example}
-Suppose $U \subset \R^2$ is an open set and
+Suppose $U \subset \R^2$ is open and
 $f \colon U \to \R$ is harmonic, that is, $f$ is twice continuously
 differentiable and
 $\frac{\partial^2 f}{\partial x^2} +
 \frac{\partial^2 f}{\partial y^2} = 0$.
-We will prove one of the most fundamental properties of Harmonic functions.
+We will prove one of the most fundamental properties of harmonic functions.
 
 Let $D_r = B(p,r)$ be closed disc such that its closure $C(p,r) \subset U$.  Write
 $p = (x_0,y_0)$.  We orient

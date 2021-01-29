@@ -367,14 +367,14 @@ independent if every finite subset of $Y$ is linearly independent
 in the sense given.
 However, this situation only comes up in infinitely many dimensions and
 we will not require it.},
-if the only solution to
+if the equation
 \begin{equation} \label{eq:lincomb}
 a_1 x_1 + a_2 x_2 + \cdots + a_k x_k = 0
 \end{equation}
-is the trivial solution $a_1 = a_2 = \cdots = a_k = 0$.
+has only the trivial solution $a_1 = a_2 = \cdots = a_k = 0$.
 A set that is not linearly independent, is
 \emph{\myindex{linearly dependent}}.
-
+%
 A linearly independent set of vectors $B$ such that
 $\spn(B) = X$ 
 is called a \emph{\myindex{basis}} of $X$.
@@ -384,18 +384,23 @@ but no linearly independent set of $d+1$ vectors, then we say
 the \emph{\myindex{dimension}} of $X$ is $d$, and we write $\dim \, X := d$.  If for all $d \in \N$ the vector space
 $X$ contains a set of $d$ linearly independent vectors, we say
 $X$ is infinite dimensional and write $\dim \, X := \infty$.
-
+%
 For the trivial vector space $\{ 0 \}$, we define $\dim \, \{ 0 \} := 0$.
 \end{defn}
 
+A subset of a linear independent set is clearly linearly independent,
+so in the definition of dimension, notice that if a set does not have $d+1$
+linearly independent vectors, no set of more than $d+1$ vectors is linearly
+independent either.
 
-For example, the
+As an example, the
 set $Y$ of the two vectors in
-\exampleref{example:vecspr2span} is a basis of $\R^2$, and we have
-that $\dim \, \R^2 \geq 2$.
+\exampleref{example:vecspr2span} is a basis of $\R^2$, and so
+$\dim \, \R^2 \geq 2$.
 We will see in a moment that any vector subspace of $\R^n$
 has a finite dimension, and that dimension is less than or equal to $n$.
-It will follow that $\dim \, \R^2 = 2$.
+So every set of 3 vectors in $\R^2$ is linearly dependent, and
+$\dim \, \R^2 = 2$.
 
 If a set is linearly dependent, then one of the
 vectors is a linear combination of the others.  In other words, in
@@ -411,7 +416,6 @@ x_j = \frac{-a_1}{a_j} x_1 + \cdots +
 The vector $x_j$ has at least two different representations
 as linear combinations of $\{ x_1,x_2,\ldots,x_k \}$. The one above and
 $x_j$ itself. 
-
 For example, the set $\bigl\{ (0,1), (2,3), (5,0) \bigr\}$ in $\R^2$ is linearly dependent:
 \begin{equation*}
 3(0,1) - (2,3) + 2(1,0) = 0 ,
@@ -420,8 +424,9 @@ For example, the set $\bigl\{ (0,1), (2,3), (5,0) \bigr\}$ in $\R^2$ is linearly
 \end{equation*}
 
 \begin{prop}
-If $B = \{ x_1, x_2, \ldots, x_k \}$ is a basis of a vector space $X$, then
-every point $y \in X$ has a unique representation of the form
+Suppose a vector space $X$ has basis 
+$B = \{ x_1, x_2, \ldots, x_k \}$.  Then
+every $y \in X$ has a unique representation of the form
 \begin{equation*}
 y = \sum_{j=1}^k a_j \, x_j
 \end{equation*}
@@ -429,27 +434,28 @@ for some scalars $a_1, a_2, \ldots, a_k$.
 \end{prop}
 
 \begin{proof}
-Every $y \in X$ is a linear combination of elements of $B$
-since $X$ is the span of $B$.  For uniqueness
-suppose
+As $X$ is the span of $B$,
+every $y \in X$ is a linear combination of elements of $B$.
+Suppose
 \begin{equation*}
-y = \sum_{j=1}^k a_j \, x_j = \sum_{j=1}^k b_j \, x_j ,
+y = \sum_{j=1}^k a_j \, x_j = \sum_{j=1}^k b_j \, x_j .
 \end{equation*}
-then
+Then
 \begin{equation*}
 \sum_{j=1}^k (a_j-b_j) x_j = 0 .
 \end{equation*}
-By linear independence of the basis $a_j = b_j$ for all $j$.
+By linear independence of the basis $a_j = b_j$ for all $j$, and so
+the representation is unique.
 \end{proof}
 
 For $\R^n$
 we define
+the \emph{\myindex{standard basis}} of $\R^n$:\glsadd{not:standardbasis}
 \begin{equation*}
 e_1 := (1,0,0,\ldots,0) , \quad
 e_2 := (0,1,0,\ldots,0) , \quad \ldots, \quad
 e_n := (0,0,0,\ldots,1) ,
 \end{equation*}
-and call this the \emph{\myindex{standard basis}} of $\R^n$.\glsadd{not:standardbasis}
 We use the same letters $e_j$ for any $\R^n$, and
 which space $\R^n$ we are working in is understood from context.
 A direct computation shows that $\{ e_1, e_2, \ldots, e_n \}$ is really
@@ -602,14 +608,12 @@ the transformations $aA$ and $A+B$ by
 \qquad
 (A+B)(x) := Ax + Bx .
 \end{equation*}
-
 If $A \in L(Y,Z)$ and $B \in L(X,Y)$, define the
 transformation $AB$ as the composition $A \circ B$, that is,
 \begin{equation*}
 ABx := A(Bx) .
 \end{equation*}
-
-Finally denote by $I \in L(X)$ the \emph{\myindex{identity}}: 
+Finally, denote by $I \in L(X)$ the \emph{\myindex{identity}}: 
 the linear operator such that $Ix = x$ for all $x$.
 \end{defn}
 
@@ -1597,7 +1601,7 @@ Let $A= [a_{i,j}]$ be a square $n$-by-$n$ matrix.  Define the \emph{\myindex{det
 \begin{enumerate}[(i)]
 \item \label{prop:det:i} $\det(I) = 1$.
 \item \label{prop:det:ii} For every $j=1,2,\ldots,n$, the function $x_j
-\mapsto \det\bigl([x_1 ~~ x_2 ~~ \cdots ~~ x_n ]\bigr)$
+\mapsto \det\bigl([x_1 ~~~ x_2 ~~~ \cdots ~~~ x_n ]\bigr)$
 is linear.
 \item \label{prop:det:iii} If two columns of a matrix are interchanged, then the determinant changes
 sign.
@@ -1620,13 +1624,15 @@ $x_1,\ldots,x_n$ except for $x_j$, and let
 $v,w \in \R^n$ be two vectors,
 and $a,b \in \R$ be scalars, then
 \begin{multline*}
-\det\bigl([x_1 ~~ \cdots ~~ x_{j-1} ~~ (av+bw) ~~ x_{j+1} ~~ \cdots ~~
-x_n]\bigr) =
+\det\bigl([x_1 ~~~ \cdots ~~~ x_{j-1} ~~~ (av+bw) ~~~ x_{j+1} ~~~
+\cdots ~~~ x_n]\bigr) =
 \\
-a \det\bigl([x_1 ~~ \cdots ~~ x_{j-1} ~~ v ~~ x_{j+1} ~~ \cdots ~~ x_n]\bigr)
+a \det\bigl([x_1 ~~~ \cdots ~~~ x_{j-1} ~~~ v ~~~ x_{j+1} ~~~
+\cdots ~~~ x_n]\bigr)
 +
 b
-\det\bigl([x_1 ~~ \cdots ~~ x_{j-1} ~~ w ~~ x_{j+1} ~~ \cdots ~~ x_n]\bigr) .
+\det\bigl([x_1 ~~~ \cdots ~~~ x_{j-1} ~~~ w ~~~ x_{j+1} ~~~ \cdots
+~~~ x_n]\bigr) .
 \end{multline*}
 
 \begin{proof}
@@ -2235,7 +2241,7 @@ how $f$ changes near $x$.  We use this interpretation
 to extend differentiation to more variables.
 
 \begin{defn}
-Let $U \subset \R^n$ be an open subset and $f \colon U \to \R^m$ a function.  We
+Let $U \subset \R^n$ be open and $f \colon U \to \R^m$ a function.  We
 say $f$ is \emph{\myindex{differentiable}} at $x \in U$ if there exists
 an $A \in L(\R^n,\R^m)$ such that
 \begin{equation*}
