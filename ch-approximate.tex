@@ -533,14 +533,14 @@ sums of the functions
 And we are done by \propref{prop:cachysercomplex}.
 \end{proof}
 
-\begin{example}
+\begin{example} \label{example:sinnsqfourier}
 The series
 \begin{equation*}
 \sum_{n=1}^\infty \frac{\sin(nx)}{n^2}
 \end{equation*}
 converges uniformly on $\R$.  See \figureref{fig:fouriersern2}.
 This is a Fourier series,
-we will see more of these in a later section.  It converges because
+we will see more of these in a later section.  It converges uniformly because
 \begin{equation*}
 \abs{\frac{\sin(nx)}{n^2}} \leq 
 \frac{1}{n^2}
@@ -676,11 +676,12 @@ complete metric space.
 \end{cor}
 
 \begin{example}
-We have seen that the example Fourier series 
+By \exampleref{example:sinnsqfourier}
+the Fourier series 
 \begin{equation*}
 \sum_{n=1}^\infty \frac{\sin(nx)}{n^2}
 \end{equation*}
-converges uniformly and hence is continuous (as is visible
+converges uniformly and hence is continuous by \corref{cor:metricuniformcontinuous} (as is visible
 in \figureref{fig:fouriersern2}).
 \end{example}
 
@@ -1236,9 +1237,9 @@ $c_n = \frac{f^{(n)}(0)}{n!}$ give a convergent power series.
 There is a theorem, which we will not prove,
 that given an arbitrary sequence $\{ c_n \}$, there exists an
 infinitely differentiable function $f$ such that
-$c_n = \frac{f^{(n)}(0)}{n!}$.  Finally, even if the obtained series
+$c_n = \frac{f^{(n)}(0)}{n!}$.  Moreover, even if the obtained series
 converges it may not converge to the function we started with.
-For a simpler example,
+For an example,
 see \volIref{\exerciseref*{vI-exercise:nonanalytic} in volume I}{\exerciseref{exercise:nonanalytic}}:  The
 function
 \begin{equation*}
@@ -2916,7 +2917,8 @@ The sequence $\{ e^{in} \}_{n=1}^\infty$ is dense in the unit circle.
 \end{exercise}
 
 \begin{exercise} \label{exercise:peanoexistence}
-Prove the \emph{\myindex{Peano existence theorem}} (note the lack of
+Prove the \emph{\myindex{Peano existence theorem}} (note the weaker
+hypotheses than Picard, but also the lack of
 uniqueness in this theorem):
 
 \textbf{Theorem:} \emph{Suppose $F \colon I \times J \to \R$ is 
@@ -3732,7 +3734,7 @@ to integrate.  We have the following.
 Any continuous function $F \colon [0,1] \times [0,1] \to \C$ can be
 approximated uniformly by functions of the form
 \begin{equation*}
-\sum_{j=1}^n f_j(x) g_j(y)
+\sum_{j=1}^n f_j(x) g_j(y) ,
 \end{equation*}
 where $f_j \colon [0,1] \to \C$ and $g_j \colon [0,1] \to \C$ are continuous.
 
@@ -3829,7 +3831,7 @@ c_0
 \sum_{k=1}^n c_{-k}\, \bar{z}^k
 \end{equation*}
 are dense in $C(S^1,\C)$.  These are so-called harmonic polynomials,
-and this approximation leads for example to the solution of the
+and this approximation leads to, for example, the solution of the
 steady state heat problem.
 \end{enumerate}
 Hint: A good way to write the equation for $S^1$ is $z \bar{z} = 1$.
