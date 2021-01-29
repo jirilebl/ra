@@ -739,7 +739,7 @@ E.g.\ the Lebesgue integral.
 \subsection{Differentiation}
 
 Recall that a complex-valued function
-$f \colon [a,b] \to \C$ where $f(x) = u(x)+i\,v(x)$
+$f \colon [a,b] \to \C$, where $f(x) = u(x)+i\,v(x)$,
 is differentiable, if $u$ and $v$ are differentiable
 and the derivative is
 \begin{equation*}
@@ -1306,8 +1306,8 @@ f_k(\nicefrac{1}{n}) := \sum_{j=1}^n a_{kj}
 f_k(0) := \sum_{j=1}^\infty a_{kj} .
 \end{equation*}
 As the series converges, each $f_k$ is continuous at $0$
-(since 0 is the only cluster point, they are continuous everywhere, but
-we don't need that).
+(since 0 is the only cluster point, they are continuous at every point of
+$E$, but we don't need that).
 For all $x \in E$ we have
 \begin{equation*}
 \sabs{f_k(x)} \leq \sum_{j=1}^\infty \sabs{a_{kj}} .
@@ -2154,7 +2154,7 @@ we prove the fundamental theorem of algebra: Any polynomial
 has a complex root.
 
 \begin{lemma} \label{lemma:polyalwaysgetssmaller}
-Let $p(z)$ be complex polynomial.  If $p(z_0) \not= 0$, then there
+Let $p(z)$ be a nonconstant complex polynomial.  If $p(z_0) \not= 0$, then there
 exist $w \in \C$ such that $\sabs{p(w)} < \sabs{p(z_0)}$.  In fact,
 we can pick $w$ to be arbitrarily close to $z_0$.
 \end{lemma}
@@ -2233,14 +2233,14 @@ powers of $z$ are too small to make a difference.  We find similar behavior
 at infinity.
 
 \begin{lemma}
-Let $p(z)$ be complex polynomial.  Then for any $M > 0$ there exists
+Let $p(z)$ be a nonconstant complex polynomial.  Then for any $M > 0$ there exists
 an $R > 0$ such that
 $\sabs{p(z)} \geq M$ whenever $\sabs{z} \geq R$.
 \end{lemma}
 
 \begin{proof}
-Write $p(z) = a_0 + a_1 z + \cdots + a_d z^d$ and suppose that
-$a_d \not= 0$.
+Write $p(z) = a_0 + a_1 z + \cdots + a_d z^d$ and suppose that $d \geq 1$
+and $a_d \not= 0$.
 Suppose $\sabs{z} \geq R$ (so also $\sabs{z}^{-1} \leq R^{-1}$).
 We estimate:
 \begin{equation*}
@@ -2291,7 +2291,7 @@ of $z^d$.
 
 \begin{thm}[Fundamental theorem of algebra]
 \index{fundamental theorem of algebra}%
-Let $p(z)$ be complex polynomial, then there exists a $z_0 \in \C$
+Let $p(z)$ be a nonconstant complex polynomial, then there exists a $z_0 \in \C$
 such that $p(z_0) = 0$.
 \end{thm}
 
