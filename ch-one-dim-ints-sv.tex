@@ -1545,20 +1545,21 @@ $\beta$ integral.  Thus the integral of $\omega$ on $U$ is path independent.
 
 However one states path independence, it is often a difficult criterion to
 check, you have to check something \myquote{for all paths.}
-
 There is a local criterion, a differential equation, that guarantees
-path independence, or in other words an
+path independence, or in other words it guarantees an
 \emph{\myindex{antiderivative}}
 $f$ whose total derivative is the given one-form
 $\omega$.  Since the criterion is local, we generally only find the
-function $f$ 
-locally.  We can find the antiderivative in any so-called
+function $f$ locally.
+We can find the antiderivative in any so-called
 \emph{\myindex{simply connected}} domain, which informally is a domain where
 any path between two points can be \myquote{continuously deformed}
 into any other path
-between those two points.  To make matters simple, the usual way
-this result is proved is for so-called star-shaped domains.
-As balls are star-shaped we have the result locally.
+between those two points.  But to make matters simple, we prove
+the result for so-called star-shaped domains, which is often good enough.
+As a bonus the proof in the star-shaped case constructs
+the antiderivative explicitly.
+As balls are star-shaped we then have the result locally.
 
 \begin{defn}
 Let $U \subset \R^n$ be an open set and $p \in U$.  We say $U$ is
@@ -1613,7 +1614,6 @@ sufficient for a star-shaped $U$.
 
 \begin{proof}
 Suppose $U$ is star-shaped with respect to $p=(p_1,p_2,\ldots,p_n) \in U$.
-
 Given $x = (x_1,x_2,\ldots,x_n) \in U$, define the path $\gamma \colon [0,1] \to U$ as
 $\gamma(t) := (1-t)p + tx$, so $\gamma^{\:\prime}(t) = x-p$.  Then let
 \begin{equation*}
@@ -1626,7 +1626,7 @@ f(x) := \int_{\gamma} \omega
 \right) dt .
 \end{equation*}
 We differentiate in $x_j$ under the integral, which is allowed as
-everything, including the partials, is continuous.
+everything, including the partials, is continuous:
 \begin{equation*}
 \begin{split}
 \frac{\partial f}{\partial x_j}(x) & =
@@ -1690,7 +1690,7 @@ along the unit circle counterclockwise,
 that is $\gamma(t) = \bigl(\cos(t),\sin(t)\bigr)$
 for $t \in [0,2\pi]$, and we found the integral to be $2\pi$.  We would have
 gotten $0$ if
-the integral was independent,
+the integral was path independent,
 or in other words if there would exist an $f$ such that
 $df = \omega$.
 \end{example}

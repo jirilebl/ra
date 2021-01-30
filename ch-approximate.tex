@@ -2150,7 +2150,7 @@ Use this to show that
 
 In this section we study the local behavior of polynomials
 and the growth of polynomials as $z$ goes to infinity.  As an application
-we prove the fundamental theorem of algebra: Any polynomial
+we prove the fundamental theorem of algebra: Any nonconstant polynomial
 has a complex root.
 
 \begin{lemma} \label{lemma:polyalwaysgetssmaller}
@@ -2206,8 +2206,8 @@ a_{k+1}e^{i(k+1)t} + \cdots + r^{d-k-1}a_{d}e^{idt}
 }
 \right) .
 \end{equation*}
-For small enough $r$ the expression the parentheses is positive
-as $\sabs{a_k} > 0$.  Then $\abs{p(re^{it})} < 1 = p(0)$.
+For small enough $r$, the expression in the parentheses is positive
+as $\sabs{a_k} > 0$.  Hence, $\abs{p(re^{it})} < 1 = p(0)$.
 \end{proof}
 
 \begin{remark}
@@ -2322,7 +2322,7 @@ Use \exerciseref{exercise:minprinciple} to prove the \emph{maximum
 principle for analytic functions}\index{maximum principle!analytic functions}:
 \emph{If $U \subset \C$ is open and connected,
 $f \colon U \to \C$ is analytic, and $\sabs{f(z)}$ attains a relative
-maximum at $z_0 \in U$.  Then $f$ is constant.}
+maximum at $z_0 \in U$, then $f$ is constant.}
 \end{exercise}
 
 \begin{exercise}
@@ -2367,7 +2367,7 @@ singularities.  In fact, show that if $p$ is a polynomial of
 degree $n > 0$ it has at most $n$ zeros.
 \\
 Hint: If $z_0$ is a zero of $p$, without loss of generality assume $z_0 =
-0$, then use induction.
+0$.  Then use induction.
 \end{exercise}
 
 \begin{exercise}
@@ -2970,8 +2970,8 @@ and applying the fundamental theorem of calculus.
 
 \subsection{Weierstrass approximation}
 
-Perhaps surprisingly, even a very badly behaving continuous function is really
-just a uniform limit of polynomials.
+Perhaps surprisingly, even a very badly behaved continuous function is
+a uniform limit of polynomials.
 And we cannot really get any \myquote{nicer}
 functions than polynomials.
 The idea of the proof is a very common approximation or \myquote{smoothing} idea
