@@ -486,7 +486,7 @@ For a compact metric space $X$,
 the uniform norm is a norm on the vector space $C(X,\C)$.
 We leave it as an exercise.
 While we will not need it, $C(X,\C)$ is in fact a complex
-vector space, that is in the definition of a vector space replace
+vector space, that is, in the definition of a vector space we can replace
 $\R$ with $\C$.
 Convergence in the metric space $C(X,\C)$ is
 uniform convergence.
@@ -501,7 +501,7 @@ Suppose $f_n \colon X \to \C$ are functions, $M_n > 0$ numbers such
 that
 \begin{equation*}
 \sabs{f_n(x)}\leq M_n \quad \text{for all } x \in X,
-\qquad \text{and} \quad
+\qquad \text{and} \qquad
 \sum_{n=1}^\infty M_n
 \quad \text{converges}.
 \end{equation*}
@@ -523,14 +523,14 @@ there is an $N$ such that for all $m, n \geq N$ with $m \geq n$ we have
 \begin{equation*}
 \sum_{k=n+1}^m M_k < \epsilon
 \end{equation*}
-Now let us look at a Cauchy difference of the partial
+We estimate a Cauchy difference of the partial
 sums of the functions
 \begin{equation*}
 \abs{\sum_{k=n+1}^m f_k(x)} \leq
 \sum_{k=n+1}^m \sabs{f_k(x)} \leq
 \sum_{k=n+1}^m M_k < \epsilon .
 \end{equation*}
-And we are done by \propref{prop:cachysercomplex}.
+We are done by \propref{prop:cachysercomplex}.
 \end{proof}
 
 \begin{example} \label{example:sinnsqfourier}
@@ -563,14 +563,14 @@ The series
 \sum_{n=0}^\infty \frac{x^n}{n!} 
 \end{equation*}
 converges uniformly on any bounded interval.
-Take the interval $[-r,r] \subset \R$ (any bounded interval
-is contained in such an interval)
+Proof: Take the interval $[-r,r] \subset \R$ (any bounded interval
+is contained in such an interval).  Then
 \begin{equation*}
 \abs{\frac{x^n}{n!} } \leq 
 \frac{r^n}{n!}
 \end{equation*}
 and 
-$\sum_{n=1}^\infty \frac{r^n}{n!}$ converges, for example by the ratio test.
+$\sum_{n=1}^\infty \frac{r^n}{n!}$ converges by the ratio test.
 \end{example}
 
 Now we would love to say something about the limit.  For example, is it
@@ -646,7 +646,7 @@ d_Y\bigl(a_k,a\bigr)
 \end{equation*}
 \end{proof}
 
-Immediately we obtain a corollary about continuity.
+We obtain an immediate corollary about continuity.
 
 \begin{cor} \label{cor:metricuniformcontinuous}
 Let $X$ and $Y$ be metric spaces such that $Y$ is Cauchy complete.
@@ -656,23 +656,24 @@ $\{ f_n \}$ converges uniformly to $f \colon X \to Y$.
 Then $f$ is continuous.
 \end{cor}
 
-Converse is not true.  Just because the limit is continuous doesn't mean
+The converse is not true.  Just because the limit is continuous doesn't mean
 that the convergence is uniform.  For example:
 $f_n \colon (0,1) \to \R$ defined by $f_n(x) := x^n$ converge to
 the zero function, but not uniformly.  However, if we add extra conditions
 on the sequence, we can obtain a partial converse such as Dini's theorem,
 \volIref{see \exerciseref*{vI-exercise:dinisthm} from volume I}{see \exerciseref{exercise:dinisthm}}.
 
-Assuming the exercise that for a compact $X$, $C(X,\C)$ is a metric space with
-the uniform norm (actually a normed vector space).  We have just shown that
-it is Cauchy complete:  \propref{prop:unifcauchymetric} says that a Cauchy
+In \exerciseref{exercise:CXCnormedspace} the reader is asked to prove
+that for a compact $X$, $C(X,\C)$ is a normed vector space
+with the uniform norm, and hence a metric space.  We have just shown that
+$C(X,\C)$ is Cauchy complete:  \propref{prop:unifcauchymetric} says that a Cauchy
 sequence in $C(X,\C)$ converges to some function,
-and \corref{cor:metricuniformcontinuous} shows that the limit is in fact
+and \corref{cor:metricuniformcontinuous} shows that the limit is
 continuous and hence in $C(X,\C)$.
 
 \begin{cor}
-Let $(X,d)$ be a compact metric space, then $C(X,\C)$ is a Cauchy
-complete metric space.
+Let $(X,d)$ be a compact metric space.
+Then $C(X,\C)$ is a Cauchy complete metric space.
 \end{cor}
 
 \begin{example}
@@ -732,7 +733,7 @@ which we have proved before using the Weierstrass $M$-test
 (\thmref{thm:weiermtest}).
 \end{example}
 
-Note that we can swap integrals and limits under far less stringent hypotheses,
+We remark that we can swap integrals and limits under far less stringent hypotheses,
 but for that we would need a stronger integral than the Riemann integral.
 E.g.\ the Lebesgue integral.
 
@@ -910,7 +911,7 @@ Prove \propref{prop:uniformconvbounded}.
 Prove \propref{prop:unifcauchymetric}.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:CXCnormedspace}
 Suppose $(X,d)$ is a compact metric space.
 Prove that $\snorm{\cdot}_u$ is a norm on the vector space of
 continuous complex-valued functions $C(X,\C)$.
@@ -2331,7 +2332,7 @@ Suppose $f \colon U \to \C$ is analytic and $f(z_0) = 0$.  Show that
 there exists an $\epsilon > 0$ such that either
 $f(z) \not= 0$ for all $z$ with $0 < \sabs{z} < \epsilon$
 or $f(z) = 0$ for all $z \in B(z_0,\epsilon)$.
-In other words zeros, of analytic functions are isolated.
+In other words, zeros of analytic functions are isolated.
 Of course, same holds for polynomials.
 \end{exercise}
 
@@ -2453,7 +2454,7 @@ many points, but $[0,1]$ is uncountable.
 The sequence $f_n(x) := x^n$ of functions on $[0,1]$
 is uniformly bounded, but contains no subsequence that converges
 uniformly,
-although the sequence converges pointwise to a discontinuous function.
+although the sequence converges pointwise (to a discontinuous function).
 \end{example}
 
 \begin{example}
@@ -2473,7 +2474,7 @@ $x=\nicefrac{1}{n^2}$:
 f_n\left(\nicefrac{1}{n^2}\right)
 = \nicefrac{n}{2} .
 \end{equation*}
-So $\lim\, \snorm{f_n}_u = \infty$, or in other words,
+So $\lim\, \snorm{f_n}_u = \infty$, and
 this sequence is not uniformly bounded.
 \end{example}
 
@@ -3144,13 +3145,11 @@ $\sabs{x-y} < \delta$ (and $x,y \in [-1,2]$), then
 \begin{equation*}
 \sabs{g(x)-g(y)} < \frac{\epsilon}{2} .
 \end{equation*}
-
 Let $M$ be such that $\sabs{g(x)} \leq M$ for all $x$.  Let $N$ be
 such that for all $n \geq N$,
 \begin{equation*}
 4M n{(1-\delta^2)}^n < \frac{\epsilon}{2} .
 \end{equation*}
-
 Note that 
 $\int_{-1}^1 q_n(t) ~ dt = 1$ and $q_n(t) \geq 0$ on $[-1,1]$.  So for $n
 \geq N$ and any $x \in [0,1]$,
@@ -3267,8 +3266,8 @@ approximated by polynomials
 \begin{equation*}
 \sum_{k=0}^n a_k\,  x^k
 \end{equation*}
-does not mean that any continuous $f$ is analytic, that it is equal to the
-series
+does not mean that any continuous $f$ is analytic, that is, equal to a
+power series
 \begin{equation*}
 \sum_{k=0}^\infty c_k\,  x^k .
 \end{equation*}
@@ -3278,7 +3277,7 @@ $\sabs{x}$ provides a counterexample.
 The key distinction is that
 the polynomials coming from the Weierstrass theorem are not the partial
 sums of any series.  For each one, the coefficients $a_k$ above can be
-completely different, they do not need to come from a single sequence $\{
+completely different---they do not need to come from a single sequence $\{
 c_k \}$.
 
 \subsection{Stone--Weierstrass approximation}
@@ -4067,7 +4066,7 @@ c_{m}\, e^{imx}+ c_{-m}\, e^{-imx} ,
 \end{equation*}
 which is real valued.  Also $c_0 = \overline{c_0}$, so
 $c_0$ is real.
-So by pairing up the terms we obtain that $f$ has to be real-valued.
+By pairing up the terms we obtain that $f$ has to be real-valued.
 \end{proof}
 
 The functions $e^{inx}$ are also linearly independent.
@@ -4081,7 +4080,7 @@ for all $x \in [-\pi,\pi]$, then $c_n = 0$ for all $n$.
 \end{prop}
 
 \begin{proof}
-Proof follows immediately from the integral formula for $c_n$.
+The result follows immediately from the integral formula for $c_n$.
 \end{proof}
 
 \subsection{Fourier series}
@@ -4091,8 +4090,12 @@ We now take limits.  We call the series
 \sum_{n=-\infty}^\infty c_n \, e^{inx}
 \end{equation*}
 the \emph{\myindex{Fourier series}}.  The numbers $c_n$
-we call \emph{\myindex{Fourier coefficients}}.  We could also develop everything with
-sines and cosines, but it is equivalent and slightly more messy.
+are called \emph{\myindex{Fourier coefficients}}.  Using
+Euler's formula $e^{i\theta} = \cos(\theta) + i \sin (\theta)$,
+we could also develop everything with
+sines and cosines, that is, as the series
+$a_0 + \sum_{n=1}^\infty a_n \cos(nx) + b_n \sin(nx)$,
+but it is equivalent and slightly more messy.
 
 Several questions arise.  What functions are expressible as 
 Fourier series?  Obviously, they have to be $2\pi$-periodic, but not every
@@ -4449,9 +4452,8 @@ is orthonormal with respect to the inner product
 \frac{1}{2\pi} \int_{-\pi}^\pi f(x) \, \overline{g(x)} ~ dx .
 \end{equation*}
 
-So suppose $f$ is an integrable function on $[-\pi,\pi]$,
-further suppose
-that $f$ is defined on all of $\R$ and is $2\pi$-periodic.
+Suppose $f \colon \R \to \C$ is $2\pi$-periodic and integrable
+on $[-\pi,\pi]$.
 Let
 \begin{equation*}
 c_n := 
@@ -4510,9 +4512,9 @@ We expand the definition of $s_N$
 \begin{multline*}
 s_N(f;x) = 
 \sum_{n=-N}^N \frac{1}{2\pi} \int_{-\pi}^\pi f(t) e^{-int}  ~  dt ~ e^{inx}
+\\
 =
 \frac{1}{2\pi} \int_{-\pi}^\pi f(t) \sum_{n=-N}^N e^{in(x-t)} ~ dt
-\\
 =
 \frac{1}{2\pi} \int_{-\pi}^\pi f(t) D_N(x-t) ~ dt .
 \end{multline*}
@@ -4763,12 +4765,12 @@ dx
 }
 \leq \epsilon.
 \end{equation*}
-If $P$ is of degree $N_0$, then for all $N \geq N_0$ we have
+If $P$ is of degree $N_0$, then for all $N \geq N_0$
 \begin{equation*}
-\snorm{h-s_N(h)}_2 \leq \snorm{h-P}_2 \leq \epsilon
+\snorm{h-s_N(h)}_2 \leq \snorm{h-P}_2 \leq \epsilon ,
 \end{equation*}
 as $s_N(h)$ is the best approximation for $h$ in $L^2$ (\thmref{thm:l2bestapprox}).
-By the inequality leading up to Bessel we have
+By the inequality leading up to Bessel, we have
 \begin{equation*}
 \snorm{s_N(h)-s_N(f)}_2
 =
@@ -4810,14 +4812,14 @@ c_k
 \overline{d_k} .
 \end{equation*}
 We need the Schwarz (or Cauchy--Schwarz or Cauchy--Bunyakovsky--Schwarz)
-inequality, that is
+inequality, that is,
 \begin{equation*}
 {\abs{\int_a^b f\bar{g}}}^2
 \leq
 \left( \int_a^b \sabs{f}^2 \right)
 \left( \int_a^b \sabs{g}^2 \right) .
 \end{equation*}
-This is left as an exercise.  The proof is not really that
+This is left as an exercise.  The proof is not really
 different from the finite dimensional version.
 So
 \begin{equation*}
