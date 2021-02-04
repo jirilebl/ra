@@ -2054,7 +2054,7 @@ The set $\{ x \in S : o(f,x) \geq \epsilon \}$ is closed.
 \end{prop}
 
 \begin{proof}
-Equivalently we want to show that
+Equivalently, we want to show that
 $G = \{ x \in S : o(f,x) < \epsilon \}$ is open in the subspace topology.
 As $\inf_{\delta > 0} o(f,x,\delta) < \epsilon$, find a $\delta > 0$ such
 that
@@ -2584,16 +2584,16 @@ and we are finished.
 \subsection{Images of Jordan measurable subsets}
 
 Finally, images of Jordan measurable sets are Jordan measurable under
-nice enough mappings.  For simplicity, let us assume that the Jacobian
-never vanishes.
+nice enough mappings.  For simplicity, we assume that the Jacobian
+determinant never vanishes.
 
 \begin{prop} \label{prop:imagejordanmeas}
-Suppose $S \subset \R^n$ is a closed bounded Jordan measurable set,
-and $S \subset U$ for an open set $U \subset \R^n$.
+Suppose $U \subset \R^n$ is open and
+$S \subset U$ is a closed bounded Jordan measurable set.
 Suppose
 $g \colon U \to \R^n$ is a one-to-one
 continuously differentiable mapping such that
-$J_g$ is never zero on $S$.
+the Jacobian determinant $J_g$ is never zero on $S$.
 Then $g(S)$ is bounded and Jordan measurable.
 \end{prop}
 
@@ -3152,19 +3152,21 @@ exercise.
 \end{proof}
 
 Let us prove that
-$\sabs{J_g(x)}$ is the replacement of $\sabs{g'(x)}$ for multiple
-dimensions.  The following theorem holds in more generality,
+absolute value of the Jacobian determinant
+$\sabs{J_g(x)} = \babs{\det \bigl(g'(x)\bigr)}$
+is the replacement of $\sabs{g'(x)}$ for multiple
+dimensions in the change of variables formula.
+The following theorem holds in more generality,
 but this statement is sufficient for many uses.
 
 \begin{thm}
-Suppose $S \subset \R^n$ is a closed bounded Jordan measurable set,
-$S \subset U$ for an open set $U \subset \R^n$, and
+Suppose $U \subset \R^n$ is open,
+$S \subset U$ is a closed bounded Jordan measurable set, and
 $g \colon U \to \R^n$ is a one-to-one
 continuously differentiable mapping, such that
 $J_g$ is never zero on $S$.
-
-If $f \colon g(S) \to \R$ is Riemann integrable,
-then $f \circ g$ is Riemann integrable on $S$ and
+Suppose $f \colon g(S) \to \R$ is Riemann integrable.
+Then $f \circ g$ is Riemann integrable on $S$ and
 \begin{equation*}
 \int_{g(S)} f(x) ~ dx = 
 \int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx .
@@ -3211,7 +3213,7 @@ the maximum side of any $R_j$ is less than
 $\frac{\delta}{\sqrt{n}}$.
 We also make sure that the minimum side length is at least
 $\frac{\delta}{2\sqrt{n}}$, which we can do if $\delta$ is 
-sufficiently small compared to the sides of $R$ (\exerciseref{mv:changeofvarrectside}).
+sufficiently small relative to the sides of $R$ (\exerciseref{mv:changeofvarrectside}).
 
 Consider some $R_j$ and some fixed $x_j \in R_j$.
 First suppose $x_j=0$, $g(0) = 0$, and $g'(0) = I$.
@@ -3374,8 +3376,8 @@ Prove \propref{prop:volrectdet}.
 \end{exercise}
 
 \begin{exercise} \label{mv:changeofvarcoverbyrects}
-Suppose $S \subset \R^n$ is a closed bounded Jordan measurable set,
-and $S \subset U$ for an open set $U \subset \R^n$.
+Suppose $U \subset \R^n$ is open
+and $S \subset U$ is a closed bounded Jordan measurable set.
 Show that there exist finitely many closed bounded rectangles
 $P_1,P_2, \ldots, P_k$ such that $P_j \subset U$,
 $S \subset P_1 \cup P_2 \cup \cdots \cup P_k$, and
@@ -3384,8 +3386,8 @@ $P_j^\circ \cap P^\circ_\ell = \emptyset$ whenever $j \not= \ell$.
 \end{exercise}
 
 \begin{exercise} \label{mv:changeofvarWxopen}
-Suppose $U \subset \R^n$ is an open set, $x \in U$,
-$g \colon U \to \R^n$ a continuously differentiable mapping.
+Suppose $U \subset \R^n$ is open, $x \in U$,
+and $g \colon U \to \R^n$ is a continuously differentiable mapping.
 For any $\epsilon > 0$, show that
 \begin{equation*}
 W_x := \bigl\{ y \in U : \snorm{g'(x)-g'(y)} < \nicefrac{\epsilon}{2} \bigr\}
@@ -3395,7 +3397,7 @@ is an open set.
 
 \begin{exercise} \label{mv:changeofvarrectside}
 Suppose $R \subset \R^n$ is a closed bounded rectangle.
-Show that if $\delta' > 0$ is sufficiently small compared
+Show that if $\delta' > 0$ is sufficiently small relative
 to the sides of $R$, then $R$ can be partitioned
 into subrectangles where each side of any subrectangle
 is between $\frac{\delta'}{2}$ and $\delta'$.
