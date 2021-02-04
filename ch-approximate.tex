@@ -4465,7 +4465,7 @@ Write
 f(x) \sim
 \sum_{n=-\infty}^\infty c_n \,e^{inx} .
 \end{equation*}
-We define the \emph{\myindex{symmetric partial sums}}
+Define the \emph{\myindex{symmetric partial sums}}
 \glsadd{not:FSsympartsum}
 \begin{equation*}
 s_N(f;x) := 
@@ -4482,7 +4482,7 @@ The inequality leading up to Bessel now reads:
 ~ dx .
 \end{equation*}
 
-Let us now define the \emph{\myindex{Dirichlet kernel}}
+The \emph{\myindex{Dirichlet kernel}} is the sum
 \begin{equation*}
 D_N(x) := \sum_{n=-N}^N e^{inx} .
 \end{equation*}
@@ -4493,7 +4493,7 @@ D_N(x) =
 =
 \frac{\sin\bigl( (N+\nicefrac{1}{2})x \bigr)}{\sin(\nicefrac{x}{2})} ,
 \end{equation*}
-at least for $x$ such that $\sin(x/2) \not= 0$.  We know that the left hand
+at least for $x$ such that $\sin(\nicefrac{x}{2}) \not= 0$.  We know that the left hand
 side is continuous and hence the right hand side extends continuously to
 all of $\R$ as well.
 To show the claim
@@ -4535,11 +4535,14 @@ See \figureref{fig:approxdeltas} for a plot of $D_N$ for $N=5$ and $N=20$.
 \end{myfigureht}
 
 The central peak gets taller and taller as $N$ gets larger,
-and the side peaks stay small (but oscillate wildly).
+and the side peaks stay small.
 We are convolving (again) with approximate delta functions,
-although these have
-all these oscillations away from zero, which do not go away.  So we expect that
-$s_N(f)$ goes to $f$.  Things are not always so simple,
+although these functions have
+all these oscillations away from zero.  The oscillations on the side do not go away
+but they are eventually so fast that we expect the integral to just sort of
+cancel itself out there.
+Overall, we expect that
+$s_N(f)$ goes to $f$.  Things are not always simple,
 but under some conditions on $f$, such a conclusion holds.  For this reason
 people write
 \begin{equation*}
@@ -4570,7 +4573,7 @@ In particular,
 if $f$ is continuously
 differentiable at $x$,
 then we obtain convergence (exercise).
-We state the more often used version of this corollary.
+We state an often used version of this corollary.
 A function $f \colon [a,b] \to \C$ is
 \emph{\myindex{continuous piecewise smooth}}\index{piecewise smooth}
 if it is continuous and there exist points
@@ -4588,7 +4591,8 @@ smooth on $[x-\delta,x+\delta]$, then
 \end{equation*}
 \end{cor}
 
-The proof of the corollary is left as an exercise.
+The proof of the corollary is left as an exercise.  Let us prove the
+theorem.
 
 \begin{proof}[Proof of \thmref{thm:fourierlocalization}]
 For all $N$,
