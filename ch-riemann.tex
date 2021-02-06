@@ -2848,7 +2848,7 @@ $[a,b]$.
 Then 
 \begin{equation*}
 \lim_{a \to -\infty} \, \lim_{b \to \infty} \, \int_a^b f
-\quad \text{converges if and only if} \qquad
+\quad \text{converges} \qquad \text{if and only if} \qquad
 \lim_{b \to \infty}
 \,
 \lim_{a \to -\infty}
@@ -3164,12 +3164,12 @@ of the absolute value of the sinc function diverges---as an exercise.
 The fundamental theorem 
 of calculus can be used in proving a series is summable and to estimate its sum.
 
-\begin{prop}
+\begin{prop}[Integral test]\index{integral test for series}
 Suppose $f \colon [k,\infty) \to \R$ is a decreasing nonnegative
 function where $k \in \Z$.  Then
 \begin{equation*}
 \sum_{n=k}^\infty f(n)
-\quad \text{converges if and only if}
+\quad \text{converges} \qquad \text{if and only if}
 \qquad
 \int_k^\infty f
 \quad \text{converges}.
@@ -3185,6 +3185,10 @@ f(k)+
 \end{equation*}
 \end{prop}
 See \figureref{fig:integraltest}, for an illustration with $k=1$.
+By \propref{prop:monotoneintegrable},
+$f$ is integrable
+on every interval $[k,b]$ for all $b > k$, so the statement of the theorem
+makes sense without additional hypotheses of integrability.
 \begin{myfigureht}
 \includegraphics{figures/integraltest}
 \caption{The area under the curve, 
@@ -3194,16 +3198,11 @@ $f(2)+f(3)+f(4)+\cdots$, and bounded above
 by the area entire rectangles,
 $f(1)+f(2)+f(3)+\cdots$.\label{fig:integraltest}}
 \end{myfigureht}
-By \propref{prop:monotoneintegrable},
-$f$ is integrable
-on every interval $[k,b]$ for all $b > k$, so the statement of the theorem
-makes sense without additional hypotheses of integrability.
 
 \begin{proof}
-Let $\epsilon > 0$ be given.  And suppose $\int_k^\infty f$ converges.
 Let $\ell, m \in \Z$ be such that $m > \ell \geq k$.
-Because $f$ is decreasing we have
-$\int_{n}^{n+1} f \leq f(n) \leq \int_{n-1}^{n} f$.  Therefore
+Because $f$ is decreasing, we have
+$\int_{n}^{n+1} f \leq f(n) \leq \int_{n-1}^{n} f$.  Therefore,
 \begin{equation} \label{impropriemann:eqseries}
 \int_\ell^m f
 =
@@ -3217,13 +3216,17 @@ f(\ell) +
 f(\ell)+
 \int_\ell^{m-1} f .
 \end{equation}
+
+Suppose first that $\int_k^\infty f$ converges and
+let $\epsilon > 0$ be given.
 As before, since $f$ is positive, then there exists
 an $L \in \N$ such that if $\ell \geq L$, then
 $\int_\ell^{m} f < \nicefrac{\epsilon}{2}$ for all $m \geq \ell$.
-We note 
-$f$ must decrease to zero (why?).  So let us also suppose
-that for $\ell \geq L$ we have $f(\ell) < \nicefrac{\epsilon}{2}$.
-For such $\ell$ and $m$ we have via \eqref{impropriemann:eqseries}
+The function 
+$f$ must decrease to zero (why?), so make $L$ large enough so that
+for $\ell \geq L$ we have $f(\ell) < \nicefrac{\epsilon}{2}$.
+Thus, for $m > \ell \geq L$, we have
+via \eqref{impropriemann:eqseries},
 \begin{equation*}
 \sum_{n=\ell}^{m} f(n)
 \leq
@@ -3234,12 +3237,12 @@ The series is therefore Cauchy and thus converges.  The estimate in the
 proposition is obtained by letting $m$ go to infinity in
 \eqref{impropriemann:eqseries} with $\ell = k$.
 
-Conversely suppose $\int_k^\infty f$ diverges.  
+Conversely, suppose $\int_k^\infty f$ diverges.  
 As $f$ is positive, then by
 \propref{impropriemann:possimp},
 the sequence $\{ \int_k^m f \}_{m=k}^\infty$ diverges to infinity.
 Using
-\eqref{impropriemann:eqseries} with $\ell = k$ we find
+\eqref{impropriemann:eqseries} with $\ell = k$, we find
 \begin{equation*}
 \int_k^m f
 \leq
@@ -3250,17 +3253,19 @@ hand side.
 \end{proof}
 
 \begin{example}
-Let us show $\sum_{n=1}^\infty \frac{1}{n^2}$ exists and let us
+The integral test can be used not only to show that a series converges, but to
+estimate its sum to arbitrary precision.
+Let us show $\sum_{n=1}^\infty \frac{1}{n^2}$ exists and
 estimate its sum to within 0.01.  As this series is the $p$-series for
-$p=2$, we already proved it converges, but we only roughly
-estimated its sum.
+$p=2$, we already proved it converges (let us pretend we do not know that),
+but we only roughly estimated its sum.
 
-Using the fundamental theorem of calculus we find that for $k \in \N$
+The fundamental theorem of calculus says that for $k \in \N$
 we have
 \begin{equation*}
 \int_{k}^\infty \frac{1}{x^2}~dx = \frac{1}{k} .
 \end{equation*}
-In particular, the series must converge.  But we also have that
+In particular, the series must converge.  But we also have
 \begin{equation*}
 \frac{1}{k} = \int_k^\infty \frac{1}{x^2}~dx
 \leq
