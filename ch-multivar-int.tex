@@ -148,9 +148,8 @@ results.
 \begin{prop} \label{mv:sumulbound:prop}
 Suppose $R \subset \R^n$ is a closed rectangle
 and $f \colon R \to \R$ is a bounded function.  Let $m, M \in \R$ be 
-such that for all $x \in R$ we have $m \leq f(x) \leq M$.  For any partition
-$P$ of $R$
-we have
+such that for all $x \in R$ we have $m \leq f(x) \leq M$.  Then for any partition
+$P$ of $R$,
 \begin{equation*}
 m \, V(R) \leq
 L(P,f) \leq U(P,f)
@@ -159,9 +158,8 @@ L(P,f) \leq U(P,f)
 \end{prop}
 
 \begin{proof}
-Let $P$ be a partition.  For all $i$ we have
-$m \leq m_i$ and $M_i \leq M$.  Also $m_i \leq M_i$ for all $i$.  Finally
-$\sum_{i=1}^N V(R_i) = V(R)$.  Therefore,
+Let $P$ be a partition of $R$.  For all $i$, we have
+$m \leq m_i \leq M_i \leq M$.  Also $\sum_{i=1}^N V(R_i) = V(R)$.  Therefore,
 \begin{multline*}
 m \, V(R) =
 m \left( \sum_{i=1}^N V(R_i) \right)
@@ -233,7 +231,7 @@ matter.\label{mv:figrectpart}}
 \begin{prop} \label{mv:prop:refinement}
 Suppose $R \subset \R^n$ is a closed rectangle, $P$ is a partition of $R$,
 and $\widetilde{P}$ is a refinement of $P$.
-If $f \colon R \to \R$ be a bounded function,
+If $f \colon R \to \R$ is bounded,
 then
 \begin{equation*}
 L(P,f) \leq L(\widetilde{P},f) 
@@ -576,13 +574,12 @@ for any $x,y \in R$,
 
 
 \begin{thm} \label{mv:thm:contintrect}
-Let $R \subset \R^n$ be a closed rectangle and
-$f \colon R \to \R$ a continuous function,
-then $f \in \sR(R)$.
+Let $R \subset \R^n$ be a closed rectangle.
+If $f \colon R \to \R$ is continuous, then $f \in \sR(R)$.
 \end{thm}
 
 \begin{proof}
-The proof is analogous to the one variable proof with some complications.
+The proof is analogous to the one-variable proof with some complications.
 The set $R$ is a closed and bounded subset of $\R^n$, and hence compact.  So
 $f$ is not just continuous, but in fact uniformly continuous 
 by \volIref{\thmref*{vI-thm:Xcompactfunifcont} from volume I}{\thmref{thm:Xcompactfunifcont}}.
@@ -1945,7 +1942,7 @@ yet the function manages to climb from $0$ to $1$).
 \item
 Define $\psi \colon [0,1] \to [0,2]$ by
 $\psi(x) := \varphi(x) + x$.
-Show that $\psi$ is continuous, strictly increasing, and in fact bijective.
+Show that $\psi$ is continuous, strictly increasing, and bijective.
 \item
 Prove that while $m^*(C) = 0$, $m^*\bigl(\psi(C)\bigr) \not= 0$.  That is,
 continuous functions need take measure zero sets to measure zero sets.
