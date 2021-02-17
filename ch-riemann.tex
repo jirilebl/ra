@@ -26,7 +26,7 @@ definition as done by Riemann.
 \subsection{Partitions and lower and upper integrals}
 
 We want to integrate a bounded function defined on an interval $[a,b]$.
-We first define two auxiliary integrals that can be defined for all
+We first define two auxiliary integrals that are defined for all
 bounded functions.  Only then can we talk about the Riemann integral and
 the Riemann integrable functions.
 
@@ -135,7 +135,7 @@ we often simply write
 
 If integration is to make sense, then the lower and upper Darboux
 integrals should be the same number, as we want a single number to call
-\emph{the integral}.  However, these two integrals may in fact differ for
+\emph{the integral}.  However, these two integrals may differ for
 some functions.
 
 \begin{example} \label{example:dirichletfunc}
@@ -1400,13 +1400,14 @@ endpoints of $I$.
 \end{exercise}
 
 \begin{exnote}
-When a function $f$ can be written as
+A function $f$ is called a
+\emph{\myindex{step function}} if it
+can be written as
 \begin{equation*}
 f(x) = \sum_{k=1}^n \alpha_k \varphi_{I_k} (x)
 \end{equation*}
 for some real numbers $\alpha_1,\alpha_2, \ldots, \alpha_n$
-and some bounded intervals $I_1,I_2,\ldots,I_n$, then 
-$f$ is called a \emph{\myindex{step function}}.
+and some bounded intervals $I_1,I_2,\ldots,I_n$.
 \end{exnote}
 
 \begin{exercise}
@@ -2067,11 +2068,13 @@ as above that $L$ achieves all negative numbers.  And
 \end{equation*}
 In the limits, note that only $x > 0$ are in the domain of $L$.
 
-Let us now prove \ref{it:log:v}.
-As above, \ref{it:log:iv} implies for $n \in \N$ we have
-$L(x^n) = n L(x)$.
-We already saw that
-$L(x) = - L(\nicefrac{1}{x})$
+Let us prove \ref{it:log:v}.
+Fix $x > 0$.
+As above, \ref{it:log:iv} implies
+$L(x^n) = n L(x)$
+for all $n \in \N$.
+We already found that
+$L(x) = - L(\nicefrac{1}{x})$,
 so $L(x^{-n}) = - L(x^n) = -n L(x)$.  Then for $m \in \N$
 \begin{equation*}
 L(x) = L\Bigl({(x^{1/m})}^m\Bigr) = m L\bigl(x^{1/m}\bigr) .
@@ -2079,7 +2082,7 @@ L(x) = L\Bigl({(x^{1/m})}^m\Bigr) = m L\bigl(x^{1/m}\bigr) .
 Putting everything together for $n \in \Z$ and $m \in \N$ we have
 $L(x^{n/m}) = n L(x^{1/m}) = (\nicefrac{n}{m}) L(x)$.
 
-Uniqueness follow using properties \ref{it:log:i} and
+Uniqueness follows using properties \ref{it:log:i} and
 \ref{it:log:ii}.  Via the first form of the
 fundamental theorem of calculus (\thmref{thm:FTCv1}),
 \begin{equation*}
@@ -2089,7 +2092,7 @@ is the unique function such that $L(1) = 0$ and $L'(x) = \nicefrac{1}{x}$.
 \end{proof}
 
 Having proved
-that there is a unique function with these properties
+that there is a unique function with these properties,
 we simply define the \emph{\myindex{logarithm}} or sometimes called the
 \emph{\myindex{natural logarithm}}:
 \glsadd{not:ln}
@@ -2098,7 +2101,7 @@ we simply define the \emph{\myindex{logarithm}} or sometimes called the
 \end{equation*}
 
 Mathematicians usually write $\log(x)$ instead of $\ln(x)$, which is
-more familiar to calculus students.  Really, there is only one logarithm:
+more familiar to calculus students.  For all practical purposes, there is only one logarithm:
 the natural logarithm.  See \exerciseref{exercise:otherlogbases}.
 
 \subsection{The exponential}
@@ -2129,9 +2132,9 @@ $E(qx) = {E(x)}^q$.
 \end{prop}
 
 \begin{proof}
-Again, we prove existence of such a function by defining a candidate,
-and prove that it satisfies all the properties.
-The $L$ defined above is invertible.  Let $E$ be the
+Again, we prove existence of such a function by defining a candidate
+and proving that it satisfies all the properties.
+The $L = \ln$ defined above is invertible.  Let $E$ be the
 inverse function of $L$.  Property \ref{it:exp:i} is immediate.
 
 Property \ref{it:exp:ii} follows
@@ -2159,7 +2162,7 @@ Therefore,
 \lim_{n\to \infty} E(x) = \infty .
 \end{equation*}
 
-To prove property \ref{it:exp:iv} we use the corresponding
+To prove property \ref{it:exp:iv}, we use the corresponding
 property for the logarithm.
 Take $x, y \in \R$.
 As $L$ is bijective, find $a$ and $b$ such that $x = L(a)$ and $y = L(b)$.  Then
@@ -2245,7 +2248,7 @@ Let us justify the notation $e^x$ for $\exp(x)$:
 e^x = \exp\bigl(x \ln(e) \bigr) = \exp(x) .
 \end{equation*}
 
-Let us extend properties of logarithm and exponential to
+The properties of the logarithm and the exponential extend to
 irrational powers.  The proof is immediate.
 
 \begin{prop}
@@ -2268,10 +2271,10 @@ power series, see \exampleref{example:exponentialbypowerseries}.
 \end{remark}
 
 \begin{remark}
-We have proved the uniqueness of the functions $L$ and $E$ from
+We proved the uniqueness of the functions $L$ and $E$ from
 just the properties $L(1)=0$, $L'(x) = \nicefrac{1}{x}$
 and the equivalent condition for the exponential
-$E'(x) = E(x)$, $E(0) = 1$.  Existence of course also follows
+$E'(x) = E(x)$, $E(0) = 1$.  Existence also follows
 from just these properties.
 Alternatively, uniqueness also follows
 from the laws of exponents, see the exercises.
@@ -2354,7 +2357,7 @@ compounding.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Prove that for $n \in \N$ we have
+Prove that for $n \in \N$,
 \begin{equation*}
 \sum_{k=2}^{n}
 \frac{1}{k}
@@ -3379,7 +3382,7 @@ Furthermore, show that $F^s$ and $F^c$ are bounded functions.
 Suppose $f \colon [0,\infty) \to \R$ is Riemann integrable on every interval
 $[0,b]$.  Show that  $\int_0^\infty f$ converges if and only if
 for every $\epsilon > 0$ there exists an $M$ such that if $M \leq a < b$,
-then $\abs{\int_a^b f} < \epsilon$.
+then $\babs{\int_a^b f} < \epsilon$.
 \end{exercise}
 
 \begin{exercise}
@@ -3396,7 +3399,7 @@ The converse does not hold.
 \begin{exercise}
 Find an example of an \emph{unbounded} continuous function $f \colon
 [0,\infty) \to \R$ that is nonnegative and such that $\int_0^\infty f < \infty$.
-Note that this means that $\lim_{x\to\infty} f(x)$ does not exist; compare
+Note that $\lim_{x\to\infty} f(x)$ will not exist; compare
 previous exercise.
 Hint: On each interval $[k,k+1]$, $k \in \N$, define a function whose
 integral over this interval is less than say $2^{-k}$.
@@ -3407,7 +3410,7 @@ Find an example of a function $f \colon [0,\infty) \to \R$ integrable on all
 intervals such that $\lim_{n\to\infty} \int_0^n f$ converges as a
 limit of a sequence (so $n \in \N$), but such that
 $\int_0^\infty f$ does not exist.
-Hint: For all $n\in \N$, divide $[n,n+1]$ into two halves.  In one half
+Hint: For all $n\in \N$, divide $[n,n+1]$ into two halves.  On one half
 make the function negative, on the other make the function positive.
 \end{exercise}
 
@@ -3419,7 +3422,7 @@ $\int_1^\infty f$ converges.
 
 \begin{exnote}
 It is sometimes desirable to assign a value to integrals that normally
-cannot be interpreted as even improper integrals,
+cannot be interpreted even as improper integrals,
 e.g.\ $\int_{-1}^1 \nicefrac{1}{x}~dx$.
 Suppose $f \colon [a,b] \to \R$ is a function and $a < c < b$,
 where $f$ is Riemann integrable on the intervals
@@ -3453,7 +3456,7 @@ Show that if $f$ is integrable on $[a,b]$, then
 $p.v.\!\int_a^b f = \int_a^b f$ (for an arbitrary $c \in (a,b)$).
 \item
 Suppose $f \colon [-1,1] \to \R$
-is an odd function ($f(-x)=-f(x)$), that is integrable on
+is an odd function ($f(-x)=-f(x)$) that is integrable on
 $[-1,-\epsilon]$ and $[\epsilon,1]$ for all $\epsilon >0$.
 Prove that 
 $p.v.\!\int_{-1}^1 f = 0$
