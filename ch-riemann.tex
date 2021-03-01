@@ -517,7 +517,7 @@ then define
 \begin{equation*}
 \int_a^b f := - \int_b^a f .
 \end{equation*}
-For any function $f$ we define
+For any function $f$, define
 \begin{equation*}
 \int_a^a f := 0 .
 \end{equation*}
@@ -1245,7 +1245,7 @@ many points, the integral does not change.
 
 \begin{prop}
 Let $f \colon [a,b] \to \R$ be Riemann integrable.  Let $g \colon [a,b] \to
-\R$ be a function such that $f(x) = g(x)$ for all $x \in [a,b] \setminus S$,
+\R$ be such that $f(x) = g(x)$ for all $x \in [a,b] \setminus S$,
 where $S$ is a finite set.  Then $g$ is a Riemann integrable function
 and
 \begin{equation*}
@@ -1260,7 +1260,7 @@ endpoints (details are left to the reader).
 
 Therefore, without loss of generality suppose $f(x) = g(x)$ for
 all $x \in (a,b)$.  The proof follows by \lemmaref{lemma:boundedimpriemann},
-and is left as an exercise.
+and is left as \exerciseref{exercise:changeendpointsintegral}.
 \end{proof}
 
 Finally, monotone (increasing or decreasing) functions are always
@@ -1295,9 +1295,9 @@ such that $U(P,f)-L(P,f) < \nicefrac{\epsilon}{2}$ and
 $U(P,g)-L(P,g) < \nicefrac{\epsilon}{2}$.
 \end{exercise}
 
-\begin{exercise}
-Let $f \colon [a,b] \to \R$ be Riemann integrable.  Let $g \colon [a,b] \to
-\R$ be a function such that $f(x) = g(x)$ for all $x \in (a,b)$.
+\begin{exercise} \label{exercise:changeendpointsintegral}
+Let $f \colon [a,b] \to \R$ be Riemann integrable, and $g \colon [a,b] \to \R$
+be such that $f(x) = g(x)$ for all $x \in (a,b)$.
 Prove that $g$ is Riemann integrable and that
 \begin{equation*}
 \int_a^b g = \int_a^b f.
@@ -1305,8 +1305,8 @@ Prove that $g$ is Riemann integrable and that
 \end{exercise}
 
 \begin{exercise}
-Prove the \emph{\myindex{mean value theorem for integrals}}.  That is,
-prove that if $f \colon [a,b] \to \R$ is continuous, then there exists
+Prove the \emph{\myindex{mean value theorem for integrals}}:
+if $f \colon [a,b] \to \R$ is continuous, then there exists
 a $c \in [a,b]$ such that $\int_a^b f = f(c)(b-a)$.
 \end{exercise}
 
@@ -1389,7 +1389,7 @@ the function
 is called an \emph{\myindex{elementary step function}}.
 \end{exnote}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:stepfunctionintegrable}
 Let $I$ be an arbitrary bounded interval (you should consider all types
 of intervals: closed, open, half-open) and $a < b$, then
 using only the definition of the integral
@@ -1411,7 +1411,7 @@ and some bounded intervals $I_1,I_2,\ldots,I_n$.
 \end{exnote}
 
 \begin{exercise}
-Using the previous exercise, show that a step function is integrable
+Using \exerciseref{exercise:stepfunctionintegrable}, show that a step function is integrable
 on any interval $[a,b]$.  Furthermore, find the integral in terms of
 $a$, $b$, the endpoints of $I_k$ and the $\alpha_k$.
 \end{exercise}
