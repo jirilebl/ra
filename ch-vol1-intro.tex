@@ -604,7 +604,7 @@ contradicting the statement that $m \in S$.  Therefore, $S$ is empty and
 $P(n)$ is true for all $n \in \N$.
 \end{proof}
 
-Sometimes it is convenient to start at a different number than 1, but 
+Sometimes it is convenient to start at a different number than 1,
 all that changes is the labeling.  The assumption that
 $P(n)$ is true in \myquote{if $P(n)$ is true,
 then $P(n+1)$ is true}
@@ -657,7 +657,7 @@ it is true for $n$.  Then
 Sometimes, it is easier to use in the inductive step
 that $P(k)$ is true for all $k = 1,2,\ldots,n$, not just for $k=n$.
 This principle is called \emph{\myindex{strong induction}} and is equivalent
-to the normal induction above.  The proof that
+to the normal induction above.  The proof of that
 equivalence is left as an exercise.
 
 \begin{thm}[Principle of strong induction]
@@ -759,7 +759,7 @@ f^{-1}(D) := \bigl\{ x \in A : f(x) \in D \bigr\} .
 \end{defn}
 
 Notice in particular that $R(f) = f(A)$, the range is the direct image of
-$A$.
+the domain $A$.
 
 \begin{myfigureht}
 \subimport*{figures/}{funcimags_full.pdf_t}
@@ -773,8 +773,8 @@ $f(4) := b$.\label{figfuncimags}}
 
 \begin{example}
 Define the function $f \colon \R \to \R$ by
-$f(x) := \sin(\pi x)$.  Then $f([0,\nicefrac{1}{2}]) = [0,1]$, 
-$f^{-1}(\{0\}) = \Z$, etc.
+$f(x) := \sin(\pi x)$.  Then $f\bigl([0,\nicefrac{1}{2}]\bigr) = [0,1]$, 
+$f^{-1}\bigl(\{0\}\bigr) = \Z$, etc.
 \end{example}
 
 \begin{prop} \label{st:propinv}
@@ -782,7 +782,7 @@ Consider $f \colon A \to B$.  Let $C, D$ be subsets of $B$.  Then
 \begin{align*}
 & f^{-1}( C \cup D) = f^{-1} (C) \cup f^{-1} (D) , \\
 & f^{-1}( C \cap D) = f^{-1} (C) \cap f^{-1} (D) , \\
-& f^{-1}( C^c) = {\left( f^{-1} (C) \right)}^c .
+& f^{-1}( C^c) = {\bigl( f^{-1} (C) \bigr)}^c .
 \end{align*}
 \end{prop}
 
@@ -791,8 +791,8 @@ $f^{-1}( B \setminus C) = A \setminus f^{-1} (C)$.
 
 \begin{proof}
 Let us start with the union.  Suppose $x \in 
-f^{-1}( C \cup D)$.  That means 
-$x$ maps to $C$ or $D$.  Thus
+f^{-1}( C \cup D)$, meaning that
+$x$ is taken to $C$ or $D$.  Thus
 $f^{-1}( C \cup D) \subset f^{-1} (C) \cup f^{-1} (D)$.  Conversely
 if $x \in f^{-1}(C)$, then $x \in f^{-1}(C \cup D)$.  Similarly for
 $x \in f^{-1}(D)$.  Hence
@@ -821,7 +821,7 @@ The function $f$ is said to be
 \emph{\myindex{injective}} or
 \emph{\myindex{one-to-one}} if $f(x_1) = f(x_2)$ implies $x_1 = x_2$.  In
 other words,
-for all $y \in B$ the set
+for all $y \in B$, the set
 $f^{-1}(\{y\})$ is empty or consists of a single element.
 We call such an $f$ an \emph{\myindex{injection}}.
 
@@ -837,7 +837,7 @@ we say $f$ is \emph{\myindex{bijective}} or that $f$ is a
 
 When $f \colon A \to B$ is a bijection, then the inverse image of a single
 element, $f^{-1}(\{y\})$, is always
-a unique element of $A$, and we consider $f^{-1}$ as a function
+a unique element of $A$.  We then consider $f^{-1}$ as a function
 \glsadd{not:invfunction}
 $f^{-1} \colon B \to A$ and we write simply $f^{-1}(y)$.
 In this case, we call $f^{-1}$ the \emph{\myindex{inverse function}} of $f$.
@@ -902,10 +902,10 @@ Let $\sR$ be a relation on a set $A$.  Then $\sR$ is said to be
 \begin{enumerate}[(i)]
 \item
 \emph{reflexive}\index{reflexive relation} if $a\, \sR \, a$ for
-all $a \in A$.
+all $a \in A$,
 \item
 \emph{symmetric}\index{symmetric relation} if $a\, \sR \, b$ implies
-$b \, \sR \, a$.
+$b \, \sR \, a$,
 \item
 \emph{transitive}\index{transitive relation} if $a\, \sR \, b$ and
 $b \, \sR \, c$ implies $a\, \sR \, c$.
@@ -955,7 +955,7 @@ a pair of an integer and a natural number,
 that is elements of $\Z \times \N$.  The relation
 is defined by $(a,b) \sim (c,d)$ whenever $ad = bc$.
 It is left as an exercise to prove that `$\sim$' is an equivalence relation.
-Usually the equivalence class $[(a,b)]$ is written as $\nicefrac{a}{b}$.
+Usually the equivalence class $\bigl[(a,b)\bigr]$ is written as $\nicefrac{a}{b}$.
 \end{example}
 
 \subsection{Cardinality}
@@ -980,7 +980,7 @@ bijection is not unique.
 
 The existence of a bijection really is an equivalence relation.
 The identity, $f(x) := x$, is a bijection showing reflexivity.
-If $f$ is a bijection then so is $f^{-1}$ showing symmetricity.
+If $f$ is a bijection, then so is $f^{-1}$ showing symmetricity.
 If $f \colon A \to B$ and $g \colon B \to C$ are bijections, then
 $g \circ f$ is a bijection of $A$ and $C$ showing transitivity.
 A set $A$ has the same cardinality as the empty set if and only
@@ -1137,7 +1137,7 @@ $g(x)$ is a subset of $A$.  Define the set
 B := \bigl\{ x \in A : x \notin g(x) \bigr\} .
 \end{equation*}
 We claim that $B$ is not in the range of $g$ and hence $g$ is not a
-surjection.  Suppose there exists an $x_0$ such that $g(x_0) = B$.
+surjection.  Suppose for contradiction that there exists an $x_0$ such that $g(x_0) = B$.
 Either $x_0 \in B$ or $x_0 \notin B$.  If $x_0 \in B$, then $x_0 \notin
 g(x_0) = B$, which is a contradiction.  If $x_0 \notin B$, then $x_0 \in
 g(x_0) = B$, which is again a contradiction.  Thus such an $x_0$ does not
