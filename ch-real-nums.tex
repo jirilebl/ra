@@ -544,20 +544,19 @@ $\epsilon > 0$, we automatically mean that $x \in \R$ and $\epsilon \in \R$.
 A related simple fact is that 
 any time we have two real numbers $a < b$, then there is another
 real number $c$ such that
-$a < c < b$.  Just take for example $c = \frac{a+b}{2}$ (why?).  In fact,
+$a < c < b$.  Take, for example, $c = \frac{a+b}{2}$ (why?).  In fact,
 there are infinitely many real numbers between $a$ and $b$.
 
 The most useful property of $\R$ for analysts
 is not just that it is an ordered field, but that it has the
-\hyperref[defn:lub]{least-upper-bound property}.  Essentially we want $\Q$, but we also
+\hyperref[defn:lub]{least-upper-bound property}.  Essentially, we want $\Q$, but we also
 want to take suprema (and infima) willy-nilly.  So what we do is 
 take $\Q$ and
 throw in enough numbers to obtain $\R$.
 
-
-
-We mentioned already that $\R$ must contain elements that are not in $\Q$
-because of the \hyperref[defn:lub]{least-upper-bound property}.
+We mentioned already that $\R$ contains elements that are not in $\Q$
+because of the \hyperref[defn:lub]{least-upper-bound property}.  Let us
+prove it.
 We saw there is no
 rational square root of two.  The set
 $\{ x \in \Q : x^2 < 2 \}$ implies the existence of the real number
@@ -566,18 +565,17 @@ $\sqrt{2}$, although this fact requires a bit of work.  See also
 
 \begin{example} \label{example:sqrt2}
 Claim: \emph{There exists a unique positive
-real number $r$ such that $r^2 = 2$.  We denote $r$ by $\sqrt{2}$.}
+$r \in \R$ such that $r^2 = 2$.  We denote $r$ by $\sqrt{2}$.}
 
 \begin{proof}
 Take the set
-$A := \{ x \in \R : x^2 < 2 \}$.  First if $x^2 < 2$,
-then $x < 2$.  To see this fact, note that $x \geq 2$ implies $x^2 \geq 4$
-(see \exerciseref{exercise:squareineq}),
-hence any number $x$ such that $x \geq 2$
-is not in $A$.  Thus $A$ is bounded above.
-On the other hand, $1 \in A$, so $A$ is nonempty.
+$A := \{ x \in \R : x^2 < 2 \}$.  We first show that it is bounded above and
+nonempty.  The equation $x \geq 2$ implies $x^2 \geq 4$
+(see \exerciseref{exercise:squareineq}), so
+if $x^2 < 2$, then $x < 2$, and $A$ is bounded above.
+As $1 \in A$, the set $A$ is nonempty.  We can therefore find the supremum.
 
-Let us define $r := \sup\, A$.  We will show that $r^2 = 2$ by showing
+Let $r := \sup\, A$.  We will show that $r^2 = 2$ by showing
 that $r^2 \geq 2$ and $r^2 \leq 2$.  This is the way analysts show
 equality, by showing two inequalities.
 We already know that $r \geq 1 > 0$.
@@ -752,9 +750,9 @@ Let $A := \{ \nicefrac{1}{n} : n \in \N \}$.  Obviously $A$ is not empty.
 Furthermore,
 $\nicefrac{1}{n} > 0$ and so 0 is a lower bound, and $b := \inf\, A$ exists.
 As 0 is a lower bound, then $b \geq 0$.
-Now take an arbitrary $a > 0$.  By the
+Take an arbitrary $a > 0$.  By the
 \hyperref[thm:arch:i]{Archimedean property} there exists an $n$ such that
-$na > 1$, or in other words $a > \nicefrac{1}{n} \in A$.  Therefore
+$na > 1$, or in other words $a > \nicefrac{1}{n} \in A$.  Therefore,
 $a$ cannot be a lower bound for $A$.  Hence $b=0$.
 \end{proof}
 
@@ -806,7 +804,7 @@ So $b-x$ is an upper bound for $A$.  If $b =
 \begin{equation*}
 \sup\, A \leq b-x = \sup (x+A) -x .
 \end{equation*}
-And the result follows.
+The result follows.
 \end{proof}
 
 Sometimes we need to apply supremum or infimum twice.  Here is an example.
@@ -881,12 +879,12 @@ We refrain from
 using this arithmetic,
 it leads to easy mistakes as $\R^*$ is not a field.
 Now we can take suprema and infima without fear of emptiness or
-unboundedness.  In this book we mostly avoid
+unboundedness.  In this book, we mostly avoid
 using $\R^*$ outside of exercises, and leave such generalizations to the interested reader.
 
 \subsection{Maxima and minima}
 
-By \exerciseref{exercise:finitesethasminmax} we know 
+By \exerciseref{exercise:finitesethasminmax},
 a finite set of numbers always has a supremum or an infimum that is contained
 in the set itself.  In this case we usually do not use the words
 supremum or infimum.
@@ -1016,7 +1014,7 @@ $A = \{ x \in \Q : x < y \}$.  A set such as $A$ is called a
 \item
 Show that there is a bijection between $\R$ and Dedekind cuts.
 \end{enumerate}
-Note: Dedekind used sets of the form from part b) in his construction of the
+Note: Dedekind used sets as in part b) in his construction of the
 real numbers.
 \end{exercise}
 
@@ -1192,7 +1190,7 @@ triangle inequality to obtain
 or $\abs{a}-\abs{b} \leq \abs{a-b}$.  Switching the roles of $a$ and $b$
 we find 
 $\abs{b}-\abs{a} \leq \abs{b-a} = \abs{a-b}$.  Applying
-\propref{prop:absbas} again we obtain the reverse triangle
+\propref{prop:absbas}, we obtain the reverse triangle
 inequality.
 
 The second version of the triangle inequality is obtained from the standard
@@ -1258,7 +1256,7 @@ if there exists a number $M$
 such that $\abs{f(x)} \leq M$ for all $x \in D$.
 \end{defn}
 
-In the example we proved $x^2-9x+1$ is bounded when considered as a
+In the example, we proved $x^2-9x+1$ is bounded when considered as a
 function on $D = \{ x : -1 \leq x \leq 5 \}$.   On the other hand,
 if we consider the same polynomial as a function on the whole real line $\R$,
 then it is not bounded.
@@ -1267,7 +1265,7 @@ then it is not bounded.
 \includegraphics{figures/boundedfunc}
 \caption{Example of a bounded function, a bound $M$, and its supremum and infimum.\label{boundedfuncfig}}
 \end{myfigureht}
-For a function $f \colon D \to \R$ we write
+For a function $f \colon D \to \R$, we write
 (see \figureref{boundedfuncfig} for
 an example)
 \glsadd{not:supf}\glsadd{not:inff}
@@ -1317,7 +1315,7 @@ Taking the least upper bound we get that for all $x \in D$
 \begin{equation*}
 f(x) \leq \sup_{y \in D} g(y) .
 \end{equation*}
-Therefore
+Therefore,
 $\sup_{y \in D} g(y)$ is an upper bound for $f(D)$ and thus greater than or
 equal to the least upper bound of $f(D)$.
 \begin{equation*}
