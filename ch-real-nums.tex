@@ -686,13 +686,13 @@ $x < r < y$.
 \end{thm}
 
 \begin{proof}
-Let us prove \ref{thm:arch:i}.  Divide through by $x$ and then 
-\ref{thm:arch:i} says that for any real number $t:= \nicefrac{y}{x}$,
-we can find natural number $n$ such that $n > t$.  In other words,
+Let us prove \ref{thm:arch:i}.  Divide through by $x$.
+Then \ref{thm:arch:i} says that for any real number $t:= \nicefrac{y}{x}$,
+we can find $n \in \N$ such that $n > t$.  In other words,
 \ref{thm:arch:i} says that $\N \subset \R$ is not bounded above.
 Suppose for contradiction that $\N$ is bounded above.  Let $b := \sup \N$.
 The number $b-1$ cannot possibly be an upper bound for $\N$ as it is strictly
-less than $b$ (the supremum).  Thus there exists an $m \in \N$ such that $m > b-1$.
+less than $b$ (the least upper bound).  Thus there exists an $m \in \N$ such that $m > b-1$.
 Add one to obtain $m+1 > b$, contradicting $b$ being an
 upper bound.
 
@@ -1739,7 +1739,7 @@ We write $x = d_K d_{K-1} \cdots d_1 d_0 \, . \, d_{-1} d_{-2} \cdots d_{-M}$.
 Not every real number has such a representation, even the simple
 rational number $\nicefrac{1}{3}$ does not.  The irrational number $\sqrt{2}$ 
 does not have such a representation either.  To get a representation for
-all real numbers we must allow infinitely many digits.
+all real numbers, we must allow infinitely many digits.
 
 Let us consider only real numbers in the interval $(0,1]$.  If
 we find a representation for these, adding 
@@ -1794,7 +1794,7 @@ D_n < x \leq D_n+\frac{1}{{10}^n} \qquad \text{for all } n \in \N.
 \end{prop}
 
 \begin{proof}
-Let us start with the first item.  Take an arbitrary infinite sequence of
+We start with the first item.  Take an arbitrary infinite sequence of
 digits $0.d_1d_2d_3\ldots$.  Use the geometric sum formula to write
 \begin{equation*}
 \begin{split}
@@ -1912,7 +1912,7 @@ As the inequality holds for all $n$ and
 ${10}^{-n}$ can be made arbitrarily small (see
 \exerciseref{exercise:bnlimit}) we have $x \leq 
 \sup \{ D_m : m \in \N \}$.
-Therefore
+Therefore,
 $\sup \{ D_m : m \in \N \} = x$.
 
 What is left to show is the uniqueness.

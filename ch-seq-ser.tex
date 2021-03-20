@@ -13,7 +13,8 @@ We have already seen sequences used informally.  Let us give the formal
 definition.
 
 \begin{defn}
-A \emph{\myindex{sequence}} (of real numbers) is a function $x \colon \N \to \R$.  Instead of $x(n)$ we 
+A \emph{\myindex{sequence}} (of real numbers) is a function $x \colon \N \to
+\R$.  Instead of $x(n)$, we 
 usually denote the $n$th element in the sequence by $x_n$.  We 
 use the notation $\{ x_n \}$, or more precisely
 \begin{equation*}
@@ -622,14 +623,14 @@ convergent?  If so, what is the limit?
 
 \begin{exercise}
 Show that the sequence
-$\left\{ \dfrac{1}{\sqrt[3]{n}} \right\}$ is monotone, bounded, and use
+$\left\{ \dfrac{1}{\sqrt[3]{n}} \right\}$ is monotone and bounded.  Then use
 \propref{prop:monotoneconv} to find the limit.
 \end{exercise}
 
 \begin{exercise}
 Show that the sequence
 $\left\{ \dfrac{n+1}{n} \right\}$
-is monotone, bounded, and use
+is monotone and bounded.  Then use
 \propref{prop:monotoneconv} to find the limit.
 \end{exercise}
 
@@ -1691,7 +1692,7 @@ get the so-called \emph{\myindex{limit superior}}\index{limsup} and
 sequences.
 
 If a sequence $\{ x_n \}$ is bounded, then 
-the set $\{ x_k : k \in \N \}$ is bounded.  Then for every $n$
+the set $\{ x_k : k \in \N \}$ is bounded.  Then for every $n$,
 the set $\{ x_k : k \geq n \}$ is also bounded (as it is a subset).
 
 \begin{defn} \label{liminflimsup:def}
@@ -1840,8 +1841,8 @@ $\{ x_{m_k} \}$ such that
 \begin{proof}
 Define $a_n := \sup \{ x_k : k \geq n \}$.
 Write
-$x := \limsup \, x_n = \lim\, a_n$.  Define the subsequence as follows.
-Pick $n_1 := 1$ and work inductively.  Suppose we have
+$x := \limsup \, x_n = \lim\, a_n$.  We define the subsequence inductively.
+Pick $n_1 := 1$ and suppose we have
 defined the subsequence until $n_k$ for some $k$.  Now pick some $m > n_k$
 such that
 \begin{equation*}
