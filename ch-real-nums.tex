@@ -1302,16 +1302,18 @@ then
 \end{equation}
 \end{prop}
 
-You should be careful with the variables.  The $x$ on the left side of
+Be careful with the variables.  The $x$ on the left side of
 the inequality in \eqref{prop:funcsupinf:eq}
 is different from the $x$ on the right.  You
-should really think of the first inequality as
+should really think of, say, the first inequality as
 \begin{equation*}
 \sup_{x \in D} f(x) \leq \sup_{y \in D} g(y) .
 \end{equation*}
 Let us prove this inequality.  If $b$ is an upper bound for $g(D)$, then
-$f(x) \leq g(x) \leq b$ for all $x \in D$, and hence $b$ is an upper bound for $f(D)$.
-Taking the least upper bound we get that for all $x \in D$
+$f(x) \leq g(x) \leq b$ for all $x \in D$, and hence $b$ is also an upper
+bound for $f(D)$,
+or $f(x) \leq b$ for all $x \in D$.
+Take the least upper bound of $g(D)$ to get that for all $x \in D$
 \begin{equation*}
 f(x) \leq \sup_{y \in D} g(y) .
 \end{equation*}
@@ -1321,7 +1323,8 @@ equal to the least upper bound of $f(D)$.
 \begin{equation*}
 \sup_{x \in D} f(x) \leq \sup_{y \in D} g(y) .
 \end{equation*}
-The second inequality (the statement about the inf) is left as an exercise.
+The second inequality (the statement about the inf) is left as an exercise
+(\exerciseref{exercise:finishfuncsupinf}).
 
 \medskip
 
@@ -1335,7 +1338,8 @@ inequality we need the stronger hypothesis
 \begin{equation*}
 f(x) \leq g(y) \qquad \text{for all } x \in D \text{ and } y \in D.
 \end{equation*}
-The proof as well as a counterexample is left as an exercise.
+The proof as well as a counterexample is left as an exercise
+(\exerciseref{exercise:supinffuncineq}).
 
 \subsection{Exercises}
 
@@ -1362,7 +1366,7 @@ Find a number $M$ such that $\sabs{x^3-x^2+8x} \leq M$ for all $-2 \leq x \leq
 10$.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:finishfuncsupinf}
 Finish the proof of \propref{prop:funcsupinf}.
 That is, prove that
 given any set $D$,
@@ -1374,7 +1378,7 @@ such that $f(x) \leq g(x)$ for all $x \in D$, then
 \end{equation*}
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:supinffuncineq}
 Let 
 $f \colon D \to \R$ and $g \colon D \to \R$ be functions ($D$ nonempty).
 \begin{enumerate}[a)]
