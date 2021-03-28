@@ -716,8 +716,9 @@ $f$ is a \emph{\myindex{continuous function}}\index{function!continuous}.
 \end{myfigureht}
 
 If $f$ is continuous for all $c \in A$, we say
-$f$ is continuous on $A \subset S$.  It is left as an easy exercise to
-show that this implies that $f|_A$ is continuous, although
+$f$ is \emph{continuous on $A \subset S$}.  A straightforward
+exercise (\exerciseref{exercise:restrictioncontinuous})
+shows that this implies that $f|_A$ is continuous, although
 the converse does not hold.
 
 Continuity may be the most important definition to understand in analysis,
@@ -859,7 +860,7 @@ $f$ is continuous.
 \end{proof}
 
 By similar reasoning, or by appealing to \corref{falg:cor},
-we can prove the following.  The details of the proof are left as an
+we can prove the following proposition.  The proof is left as an
 exercise.
 
 \begin{prop} \label{contalg:prop}
@@ -1187,7 +1188,7 @@ Is $f$ continuous?  Prove your assertion.
 Prove \propref{contalg:prop}.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:restrictioncontinuous}
 Prove the following statement.
 Let $S \subset \R$ and $A \subset S$.  Let $f \colon S \to \R$
 be a continuous function.
@@ -1643,7 +1644,7 @@ We first compare the highest order term with the rest:
 \bigl(\abs{b_{d-1}} + \cdots + \abs{b_1} + \abs{b_0}\bigr) .
 \end{split}
 \end{equation*}
-Therefore
+Therefore,
 \begin{equation*}
 \lim_{n\to\infty} \frac{b_{d-1} n^{d-1} + \cdots + b_1 n + b_0}{n^d}
 = 0 .
@@ -1658,10 +1659,10 @@ which implies
 \end{equation*}
 Therefore, $g(M) > 0$.
 
-Next we look at $g(-n)$ for $n \in \N$.  By a similar argument (exercise)
-we find that there exists some $K \in \N$ such that
+Next, consider $g(-n)$ for $n \in \N$.  By a similar argument,
+there exists a $K \in \N$ such that
 $b_{d-1} {(-K)}^{d-1} + \cdots + b_1 (-K) + b_0 < K^d$
-and therefore $g(-K) < 0$ (why?).
+and therefore $g(-K) < 0$ (see \exerciseref{exercise:odddegnegativeK}).
 In the
 proof make sure you use the fact that $d$ is odd.  In particular, 
 if $d$ is odd, then ${(-n)}^d = -(n^d)$.
@@ -1686,7 +1687,7 @@ is not continuous at 0, however, it has the intermediate value property.
 That is, for any $a < b$, and any $y$ such that $f(a) < y < f(b)$
 or $f(a) > y > f(b)$,
 there exists a $c$ such that $f(y) = c$.
-Proof is left as an exercise.
+Proof is left as \exerciseref{exercise:meanvaluepropsin1x}.
 \end{example}
 
 The intermediate value theorem says that if $f \colon [a,b] \to \R$ is
@@ -1719,7 +1720,7 @@ $f$ achieves either an absolute minimum or an absolute maximum on $(0,1)$
 (but perhaps not both).
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:meanvaluepropsin1x}
 Let
 \begin{equation*}
 f(x) :=
@@ -1734,7 +1735,7 @@ or $f(a) > y > f(b)$, then
 there exists a $c \in (a,b)$ such that $f(c) = y$.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:odddegnegativeK}
 Suppose $g(x)$ is a monic polynomial of odd degree $d$, that is,
 \begin{equation*}
 g(x) = x^d + b_{d-1} x^{d-1} + \cdots + b_1 x + b_0 ,
