@@ -1408,10 +1408,11 @@ a \emph{\myindex{null set}} if $m^*(S) = 0$.
 \cup R_3 \cup \cdots$, so $m^*(S) \leq V(R_1) + V(R_2)+V(R_3) + \cdots$.\label{fig:outermeasure}}
 \end{myfigureht}
 
-An immediate consequence (exercise) of the definition is that
-if $A \subset B$,
+An immediate consequence (\exerciseref{exercise:outermeasuremono})
+of the definition is that if $A \subset B$,
 then $m^*(A) \leq m^*(B)$.
-It is also not difficult to show (exercise) that we obtain the same number
+It is also not difficult to show (\exerciseref{exercise:allowfiniteseqsinoutermeasure})
+that we obtain the same number
 $m^*(S)$ if we also allow both finite and infinite sequences
 of rectangles in the definition.  It is not enough, however, to allow only
 finite sequences.
@@ -1646,7 +1647,7 @@ E \subset R_1 \cup R_2 \cup \cdots \cup R_k
 \qquad \text{and} \qquad
 \sum_{j=1}^k V(R_j) < \epsilon.
 \end{equation*}
-Also for any $\delta > 0$,
+Moreover, for any $\delta > 0$,
 there exist finitely many open balls $B_1,B_2,\ldots,B_k$ of radii
 $r_1,r_2,\ldots,r_k < \delta$ such that
 \begin{equation*}
@@ -1657,7 +1658,8 @@ E \subset B_1 \cup B_2 \cup \cdots \cup B_k
 \end{prop}
 
 \begin{proof}
-Find a sequence of open rectangles $\{ R_j \}$ such that 
+As $E$ is of measure zero,
+there exists a sequence of open rectangles $\{ R_j \}$ such that 
 \begin{equation*}
 E \subset \bigcup_{j=1}^\infty R_j
 \qquad \text{and} \qquad
@@ -1823,7 +1825,7 @@ Finish the proof of \propref{mv:prop:compactnull}, that is, show that you
 can use balls instead of rectangles.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:outermeasuremono}
 If $A \subset B$, then $m^*(A) \leq m^*(B)$.
 \end{exercise}
 
@@ -1958,7 +1960,7 @@ $m^*\bigl([0,2]\bigr) = 2$.
 the exercise).\label{fig:cantorfunction}}
 \end{myfigureht}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:allowfiniteseqsinoutermeasure}
 Prove that we obtain the same outer measure if we allow both finite and
 infinite sequences in
 the definition.  That is, define $\mu^*(S) := \inf\, \sum_{j \in I} V(R_j)$
@@ -1983,8 +1985,8 @@ Let $S \subset \R^n$ be a set and $f \colon S \to \R$ a function.
 Instead of just saying that $f$ is or is not continuous at
 a point $x \in S$,
 we want to quantify how discontinuous $f$ is 
-at $x$.  For any $\delta > 0$ define the \emph{oscillation} of 
-$f$ on the $\delta$-ball in subspace topology, that is
+at $x$.  For any $\delta > 0$, define the \emph{oscillation} of 
+$f$ on the $\delta$-ball in subspace topology,
 $B_S(x,\delta) = B_{\R^n}(x,\delta) \cap S$, as
 \glsadd{not:oscillation}
 \begin{equation*}
@@ -1999,8 +2001,8 @@ That is, $o(f,x,\delta)$ is the length of the smallest interval
 that contains the image $f\bigl(B_S(x,\delta)\bigr)$.
 Clearly $o(f,x,\delta) \geq 0$ and
 $o(f,x,\delta) \leq o(f,x,\delta')$ whenever $\delta < \delta'$.
-Therefore, the limit as $\delta \to 0$ from the right exists and
-we define the \emph{\myindex{oscillation}} of a function $f$
+Therefore, the limit as $\delta \to 0$ from the right exists, and
+we define the \emph{\myindex{oscillation}} of $f$
 at $x$ as
 \begin{equation*}
 o(f,x) :=
@@ -2011,6 +2013,7 @@ o(f,x,\delta) .
 \end{equation*}
 
 \begin{prop}
+A function
 $f \colon S \to \R$ is continuous at $x \in S$ if and only if $o(f,x) = 0$.
 \end{prop}
 
