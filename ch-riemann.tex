@@ -1668,15 +1668,15 @@ A common misunderstanding of the integral for calculus students is to
 think of integrals whose solution cannot be given in closed-form as somehow
 deficient.  This is not the case.  Most integrals we write down are not
 computable in closed-form.  Even some integrals that we consider
-in closed-form are not really such.  For example, how does a computer find
-the value of $\ln x$?  One way to do it is to note that
-we define the natural log as the antiderivative of $\nicefrac{1}{x}$
-such that $\ln 1 = 0$.
-Therefore,
+in closed-form are not really such.  We define
+the natural logarithm as the antiderivative of $\nicefrac{1}{x}$
+such that $\ln 1 = 0$:
 \begin{equation*}
 \ln x := \int_1^x \nicefrac{1}{s}~ds .
 \end{equation*}
-Then we can numerically approximate the integral.  Morally,
+So for example, how does a computer find
+the value of $\ln x$?  One way to do it is to numerically approximate this integral.
+Morally,
 we did not really \myquote{simplify} $\int_1^x \nicefrac{1}{s}~ds$ by
 writing down $\ln x$.  We simply gave the integral a name.
 If we require numerical answers,
@@ -1686,8 +1686,8 @@ In the next section, we even define the exponential using
 the logarithm, which we define in terms of the integral.
 
 Another common function defined by an integral that cannot
-be evaluated symbolically
-is the erf function, defined as
+be evaluated symbolically in terms of elementary functions
+is the $\operatorname{erf}$ function, defined as
 \begin{equation*}
 \operatorname{erf}(x) := \frac{2}{\sqrt{\pi}} \int_0^x e^{-s^2} ~ds .
 \end{equation*}

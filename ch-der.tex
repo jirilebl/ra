@@ -8,10 +8,10 @@
 \sectionnotes{1 lecture}
 
 The idea of a derivative is the following.
-Let us suppose a graph of a function looks locally like a straight line.
-We can then talk about the slope of this line.  The slope tells us 
-the rate at which 
-the value of the function changing at the particular point.
+If the graph of a function looks locally like a straight line,
+then we can then talk about the slope of this line.
+The slope tells us the rate at which 
+the value of the function is changing at that particular point.
 Of course, we are leaving out any function that has corners or
 discontinuities.  Let us be precise.
 
@@ -297,8 +297,9 @@ Again the proof is left as an exercise.
 
 \subsection{Chain rule}
 
-A useful rule for computing derivatives 
-is the chain rule.
+More complicated functions are often obtained by composition,
+which is differentiated via the chain rule.  The rule also tells us
+how a derivative changes if we change variables.
 
 \begin{prop}[Chain Rule]
 \index{chain rule}
@@ -320,26 +321,28 @@ h'(c) = f'\bigl(g(c)\bigr)g'(c) .
 \begin{proof}
 Let $d := g(c)$.  Define
 $u \colon I_2 \to \R$ and $v \colon I_1 \to \R$ by
-\begin{align*}
-& u(y) :=
+\begin{equation*}
+u(y) :=
 \begin{cases}
  \frac{f(y) - f(d)}{y-d}  & \text{if } y \not=d, \\
  f'(d)                    & \text{if } y = d,
 \end{cases}
-\\
-& v(x) :=
+\qquad
+v(x) :=
 \begin{cases}
  \frac{g(x) - g(c)}{x-c} & \text{if } x \not=c, \\
  g'(c)                   & \text{if } x = c.
 \end{cases}
-\end{align*}
-We note that
+\end{equation*}
+Because $f$ is differentiable at $d = g(c)$, we find that
+$u$ is continuous at $d$.  Similarly, $v$ is continuous at $c$.
+Note that for any $x$ and $y$,
 \begin{equation*}
 f(y)-f(d) = u(y) (y-d)
 \qquad \text{and} \qquad
 g(x)-g(c) = v(x) (x-c) .
 \end{equation*}
-We plug in to obtain
+Plug in to obtain
 \begin{equation*}
 h(x)-h(c)
 =
@@ -349,18 +352,17 @@ u\bigl( g(x) \bigr) \bigl(g(x)-g(c)\bigr)
 =
 u\bigl( g(x) \bigr) \bigl(v(x) (x-c)\bigr) .
 \end{equation*}
-Therefore,
+Therefore, if $x \not= c$,
 \begin{equation} \label{eq:chainruleeq}
 \frac{h(x)-h(c)}{x-c}
 =
 u\bigl( g(x) \bigr) v(x) .
 \end{equation}
-We compute the limits $\lim_{y \to d} u(y)
+By continuity of $u$ and $v$ at $d$ and $c$ respectively, we find
+$\lim_{y \to d} u(y)
 = f'(d) = f'\bigl(g(c)\bigr)$ and
 $\lim_{x \to c} v(x) = g'(c)$.
-That is, the functions $u$ and $v$
-are continuous at $d = g(c)$ and $c$ respectively.
-Furthermore the function $g$ is continuous at $c$.
+The function $g$ is continuous at $c$, and so $\lim_{x \to c} g(x) = g(c)$.
 Hence the limit of
 the right-hand side of \eqref{eq:chainruleeq}
 as $x$ goes to $c$
@@ -372,7 +374,7 @@ is differentiable at $c$ and the limit is $f'\bigl(g(c)\bigr)g'(c)$.
 
 \begin{exercise}
 Prove the product rule.
-Hint: Use
+Hint: Prove and use
 $f(x) g(x) - f(c) g(c) = f(x)\bigl( g(x) - g(c) \bigr) + \bigl( f(x) -
 f(c) \bigr) g(c)$.
 \end{exercise}
@@ -409,12 +411,12 @@ except $0$.
 \end{exercise}
 
 \begin{exercise}
-Assume the inequality $\abs{x-\sin(x)} \leq x^2$.  Prove that sin is
+Assume the inequality $\abs{x-\sin(x)} \leq x^2$.  Prove that $\sin$ is
 differentiable at $0$, and find the derivative at $0$.
 \end{exercise}
 
 \begin{exercise}
-Using the previous exercise, prove that sin is differentiable at all $x$
+Using the previous exercise, prove that $\sin$ is differentiable at all $x$
 and that the derivative is $\cos(x)$.  Hint: Use the sum-to-product
 trigonometric identity as we did before.
 \end{exercise}
@@ -1207,7 +1209,7 @@ f(x_0)
 \end{defn}
 
 See \figureref{fig:taylorsin} for
-the odd degree Taylor polynomials for the sin function at $x_0=0$.
+the odd degree Taylor polynomials for the sine function at $x_0=0$.
 The even degree terms are all zero, as even derivatives 
 of sine are again a sine, which are zero at the origin.
 \begin{myfigureht}

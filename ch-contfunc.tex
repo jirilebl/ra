@@ -78,14 +78,15 @@ from $f(c)$.
 
 \begin{defn}
 \index{limit!of a function}%
-Let $f \colon S \to \R$ be a function and $c$ a cluster point of $S$.
+Let $f \colon S \to \R$ be a function and $c$ a cluster point of
+$S \subset \R$.
 Suppose there exists an $L \in \R$ and for every $\epsilon > 0$,
 there exists a $\delta > 0$ such that whenever $x \in S \setminus \{ c \}$
-and $\abs{x - c} < \delta$, then
+and $\abs{x - c} < \delta$, we have
 \begin{equation*}
 \abs{f(x) - L} < \epsilon .
 \end{equation*}
-In this case, we say $f(x)$ \emph{converges}\index{converges!function} to $L$ as $x$ goes
+We then say $f(x)$ \emph{converges}\index{converges!function} to $L$ as $x$ goes
 to $c$.  We say $L$ is the \emph{limit} of $f(x)$ as $x$
 goes to $c$.  We write
 \glsadd{not:limfunc}
@@ -102,7 +103,7 @@ that $f$ \emph{\myindex{diverges}} at $c$.
 \end{defn}
 
 Again the notation and language we are using above assumes the limit
-is unique even though we have not yet proved that.
+is unique even though we have not yet proved uniqueness.
 Let us do that now.
 
 \begin{prop}
@@ -929,7 +930,7 @@ and $\abs{\sin(x)} \leq 1$.
 \end{split}
 \end{equation*}
 
-The claim that sin and cos are continuous follows by taking an
+The claim that $\sin$ and $\cos$ are continuous follows by taking an
 arbitrary sequence $\{ x_n \}$ converging to $c$, or by applying the
 definition of continuity directly.  Details are left to the
 reader.
@@ -969,7 +970,7 @@ Proof: First note that $\nicefrac{1}{x}$ is a continuous function on
 $(0,\infty)$ and $\sin(x)$ is a continuous function on $(0,\infty)$ (actually
 on all of $\R$, but $(0,\infty)$ is the range for $\nicefrac{1}{x}$).
 Hence the composition $\sin(\nicefrac{1}{x})$ is continuous.  We also
-know that $x^2$ is continuous on the interval $(-1,1)$ (the range of sin).  Thus
+know that $x^2$ is continuous on the interval $(-1,1)$ (the range of $\sin$).  Thus
 the composition
 ${\bigl(\sin(\nicefrac{1}{x})\bigr)}^2$ is also continuous on $(0,\infty)$.
 \end{example}
@@ -1303,7 +1304,7 @@ not continuous.
 Continuous functions on closed and bounded intervals
 are quite well behaved.
 
-\subsection{Min-max theorem}
+\subsection{Min-max or extreme value theorem}
 
 Recall a function $f \colon [a,b] \to \R$ is
 \emph{bounded}\index{bounded function}\index{function!bounded}
@@ -1311,7 +1312,7 @@ if there exists a $B \in \R$ such that
 $\abs{f(x)} \leq B$ for all $x \in [a,b]$.  We have the following lemma.
 
 \begin{lemma}
-Let $f \colon [a,b] \to \R$ be a continuous function.  Then $f$ is bounded.
+A continuous function $f \colon [a,b] \to \R$ is bounded.
 \end{lemma}
 
 \begin{proof}
@@ -1363,10 +1364,12 @@ and bounded interval, then a continuous $f$
 must achieve an absolute minimum and an absolute
 maximum on $S$.
 
-\begin{thm}[Minimum-maximum theorem]
+\begin{thm}[Minimum-maximum theorem / Extreme value theorem]
 \index{minimum-maximum theorem}%
 \index{maximum-minimum theorem}%
-Let $f \colon [a,b] \to \R$ be a continuous function.  Then $f$
+\index{extreme value theorem}%
+A continuous function $f \colon [a,b] \to \R$ on a closed and bounded
+interval $[a,b]$ 
 achieves both an absolute minimum and an absolute maximum on $[a,b]$.
 \end{thm}
 
@@ -1581,7 +1584,7 @@ sufficient precision.  In fact, the root is at $c \approx 1.7549$.
 
 The technique above is the simplest method of finding roots of polynomials,
 which is perhaps the most common problem in applied
-mathematics.  In general it is hard to do quickly, precisely,
+mathematics.  In general finding roots is hard to do quickly, precisely,
 and automatically.
 
 There are better and faster methods of finding roots of equations, such
@@ -2169,7 +2172,7 @@ In \exampleref{sincos:example} we have seen the following two inequalities.
 \leq \abs{x-y} .
 \end{equation*}
 
-Hence sin and cos are Lipschitz continuous with $K=1$.
+Hence sine and cosine are Lipschitz continuous with $K=1$.
 \end{example}
 
 \begin{example}
@@ -3070,23 +3073,24 @@ $S \subset (-\infty,c)$.
 \end{samepage}
 
 \begin{exercise}
-Suppose $I \subset \R$ is an interval and $f \colon I \to \R$ is a function
-such that for each $c \in I$, there exist $a, b \in \R$ with
+Let $I \subset \R$ be an interval and $f \colon I \to \R$ a function.
+Suppose that for each $c \in I$, there exist $a, b \in \R$ with
 $a > 0$ such that $f(x) \geq a x + b$ for all $x \in I$
 and $f(c) = a c + b$.  Show that $f$ is strictly increasing.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon I \to J$ is a continuous, bijective (one-to-one and onto)
-function for two intervals $I$ and $J$.  Show that $f$ is strictly monotone.
+Suppose $I$ and $J$ are intervals and
+$f \colon I \to J$ is a continuous, bijective (one-to-one and onto)
+function.  Show that $f$ is strictly monotone.
 \end{exercise}
 
 \begin{exercise}
 Consider a monotone function $f \colon I \to \R$ on an interval $I$.  Prove that there exists
 a function $g \colon I \to \R$ such that
-$\lim\limits_{x \to c^-} g(x) = g(c)$ for all $c \in I$, except the
+$\lim\limits_{x \to c^-} g(x) = g(c)$ for all $c$ in $I$ except the
 smaller (left) endpoint of $I$, and such that
-$g(x) = f(x)$ for all but countably many $x$.
+$g(x) = f(x)$ for all but countably many $x \in I$.
 \end{exercise}
 
 \begin{exercise}
