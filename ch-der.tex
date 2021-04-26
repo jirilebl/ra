@@ -142,9 +142,8 @@ and when $x < 0$ we have
 
 A famous example of Weierstrass shows that there exists a continuous
 function that is not differentiable at \emph{any} point.  The construction
-of this function is beyond the scope of this book.  On the other hand,
-a differentiable function
-is always continuous.
+of this function is beyond the scope of this chapter.  On the other hand,
+a differentiable function is always continuous.
 
 \begin{prop}
 Let $f \colon I \to \R$ be differentiable at $c \in I$,
@@ -443,8 +442,8 @@ to find a formula for $g'\bigl(f(c)\bigr)$ (in terms of $f'(c)$).
 \end{exercise}
 
 \begin{exercise} \label{exercise:bndmuldiff}
-Suppose $f \colon I \to \R$ is bounded and $g \colon I \to
-\R$ is differentiable at $c \in I$ and $g(c) = g'(c) = 0$.  Show
+Suppose $f \colon I \to \R$ is bounded, $g \colon I \to
+\R$ is differentiable at $c \in I$, and $g(c) = g'(c) = 0$.  Show
 that $h(x) := f(x) g(x)$ is differentiable at $c$.  Hint: You
 cannot apply the product rule.
 \end{exercise}
@@ -528,7 +527,7 @@ is analogous.
 \end{defn}
 
 \begin{lemma}\label{relminmax:lemma}
-Let $f \colon [a,b] \to \R$ be a function differentiable at $c \in (a,b)$,
+Suppose $f \colon [a,b] \to \R$ is differentiable at $c \in (a,b)$,
 and $f$ has
 a relative minimum or a relative maximum at $c$.  Then
 $f'(c) = 0$.
@@ -612,10 +611,11 @@ Then there exists a $c \in (a,b)$ such that $f'(c) = 0$.
 As $f$ is continuous on $[a,b]$ it attains an absolute minimum and an
 absolute 
 maximum in $[a,b]$.  We wish to apply \lemmaref{relminmax:lemma} and
-so we need a minimum or maximum at some $c \in (a,b)$.
+so we need to find some $c \in (a,b)$ where $f$ attains a minimum or a
+maximum.
 Write $K := f(a) = f(b)$.
 If there exists an $x$ such that $f(x) > K$, then the absolute
-maximum is bigger than $K$ and hence occurs at $c \in (a,b)$, and
+maximum is bigger than $K$ and hence occurs at some $c \in (a,b)$, and
 therefore we get $f'(c) = 0$.  On the other hand if there exists an $x$
 such that $f(x) < K$, then the absolute minimum occurs at some
 $c \in (a,b)$ and we have that $f'(c) = 0$.  If there is no $x$ such that
@@ -684,7 +684,7 @@ $f'(c)(b-a) = f(b)-f(a)$.
 
 The proof generalizes.  By considering
 $g(x) :=
-f(x)-f(b)-\frac{f(b)-f(a)}{\varphi(b)-\varphi(a)}\bigl(\varphi(x)-\varphi(b)\bigr)$
+f(x)-f(b)-\frac{f(b)-f(a)}{\varphi(b)-\varphi(a)}\bigl(\varphi(x)-\varphi(b)\bigr)$,
 one can prove the following version.  We leave the proof as an exercise.
 
 \begin{thm}[Cauchy's mean value theorem] \label{thm:cauchymvt}
@@ -728,7 +728,7 @@ Therefore, there is a $c \in (x,y)$ such that
 \begin{equation*}
 f(y)-f(x) = f'(c)(y-x).
 \end{equation*}
-as $f'(c) = 0$, we have $f(y) = f(x)$.  Therefore,
+as $f'(c) = 0$, we have $f(y) = f(x)$.  Hence,
 the function is constant.
 \end{proof}
 
@@ -1013,7 +1013,7 @@ $f$ is a Lipschitz continuous function.
 \pagebreak[1]
 \begin{exercise}
 Suppose $f \colon [a,b] \to \R$ is differentiable and $c \in [a,b]$.
-Then show there exists a sequence $\{ x_n \}$ converging to $c$, $x_n
+Show there exists a sequence $\{ x_n \}$ converging to $c$, $x_n
 \not= c$ for all $n$, such that
 \begin{equation*}
 f'(c) = \lim_{n\to \infty} f'(x_n).
