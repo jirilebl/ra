@@ -2047,19 +2047,17 @@ The following proof generalizes more easily to different contexts.
 \begin{proof}[Alternate proof of Bolzano--Weierstrass]
 As the sequence is bounded, then there exist two numbers $a_1 < b_1$
 such that $a_1 \leq x_n \leq b_1$ for all $n \in \N$.
-
 We will define a subsequence $\{ x_{n_i} \}$ and two
 sequences $\{ a_i \}$ and $\{ b_i \}$, such that
 $\{ a_i \}$ is monotone increasing, $\{ b_i \}$ is monotone decreasing,
 $a_i \leq x_{n_i} \leq b_i$ and such that $\lim\, a_i = \lim\, b_i$.   That
-$x_{n_i}$ converges follows by the \hyperref[squeeze:lemma]{squeeze lemma}.
+$x_{n_i}$ converges then follows by the \hyperref[squeeze:lemma]{squeeze lemma}.
 
 We define the sequences inductively.  We will always have that $a_i < b_i$,
 and that $x_n \in [a_i,b_i]$ for infinitely many
 $n \in \N$.
 We have already defined $a_1$ and $b_1$.  We take $n_1 := 1$, that is
 $x_{n_1} = x_1$.
-
 Suppose that up to some $k \in \N$
 we have defined the subsequence $x_{n_1}, x_{n_2}, \ldots,
 x_{n_k}$, and the sequences $a_1,a_2,\ldots,a_k$
@@ -2092,7 +2090,7 @@ Let $x := \lim\, a_i$.  As $\{ a_i \}$ is monotone,
 x = \sup \{ a_i : i \in \N \} .
 \end{equation*}
 Let $y := \lim\, b_i = \inf \{ b_i : i \in \N \}$.  Since $a_i < b_i$ for
-all $i$, then $y \leq x$.
+all $i$, then $x \leq y$.
 As the sequences are monotone, then
 for any $i$ we have (why?)
 \begin{equation*}
