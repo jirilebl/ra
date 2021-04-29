@@ -810,7 +810,7 @@ squeeze lemma, we conclude
 \end{equation*}
 \end{example}
 
-Limits also preserve inequalities.
+Limits, when they exist, preserve non-strict inequalities.
 
 \begin{lemma} \label{limandineq:lemma}
 Let $\{ x_n \}$ and $\{ y_n \}$ be
@@ -851,8 +851,7 @@ $x-y \leq 0$.
 Therefore, $x \leq y$.
 \end{proof}
 
-The following corollary is
-proved
+The next corollary follows by
 using constant sequences in
 \lemmaref{limandineq:lemma}.  The proof is left as an exercise.
 
@@ -885,7 +884,7 @@ strict inequalities.  For example,
 let $x_n := \nicefrac{-1}{n}$ and $y_n := \nicefrac{1}{n}$.
 Then $x_n < y_n$, $x_n < 0$,
 and $y_n > 0$ for all $n$.  However, these inequalities are
-not preserved by the limit operation as we have
+not preserved by the limit operation as
 $\lim\, x_n = \lim\, y_n = 0$.
 The moral of this example is that strict inequalities may become non-strict
 inequalities when limits are applied; if we know
@@ -1341,19 +1340,19 @@ If $c > 1$, then $\{ c^n \}$ is unbounded.
 \end{prop}
 
 \begin{proof}
-First suppose $c < 1$.  As $c > 0$, then $c^n > 0$ for all $n \in \N$ by
+First consider $c < 1$.  As $c > 0$, then $c^n > 0$ for all $n \in \N$ by
 \hyperref[induction:thm]{induction}.  As $c < 1$, then $c^{n+1} < c^n$ for all $n$.  So we have
 a decreasing sequence that is bounded below.  Hence, it is convergent.
 Let $L := \lim\, c^n$.  The 1-tail $\{ c^{n+1} \}$
 also converges to $L$.  Taking the limit of both sides of $c^{n+1} = c \cdot
 c^n$, we obtain $L = cL$, or $(1-c)L=0$.  It follows that $L=0$ as $c \not= 1$.
 
-Now suppose $c > 1$. Suppose for contradiction that the sequence is bounded above by $B > 0$, that is,
+Now consider $c > 1$. Suppose for contradiction that the sequence is bounded above by $B > 0$, that is,
 $c^n \leq B$ for all $n \in \N$.  Then for all $n$,
 \begin{equation*}
 {\left(\frac{1}{c}\right)}^n = \frac{1}{c^n} \geq \frac{1}{B} > 0 .
 \end{equation*}
-As $\nicefrac{1}{c} < 1$, then $\{ {(\nicefrac{1}{c})}^n \}$
+As $\nicefrac{1}{c} < 1$, then $\bigl\{ {(\nicefrac{1}{c})}^n \bigr\}$
 converges to 0, contradicts the bound above.
 \end{proof}
 
@@ -1481,7 +1480,7 @@ Compute
 =
 \frac{2}{n+1} .
 \end{equation*}
-It is not hard to see that $\{ \frac{2}{n+1} \}$ converges to zero.
+It is not hard to see that $\bigl\{ \frac{2}{n+1} \bigr\}$ converges to zero.
 The conclusion follows by the lemma.
 \end{example}
 
@@ -1505,7 +1504,7 @@ The limit of $\frac{n+1}{n} = 1+\frac{1}{n}$ as $n \to \infty$ is 1, and so
 =
 \frac{1}{1+\epsilon}  < 1 .
 \end{equation*}
-Therefore, $\bigl \{ \frac{n}{{(1+\epsilon)}^n} \bigr\}$ converges to 0.
+Therefore, $\bigl\{ \frac{n}{{(1+\epsilon)}^n} \bigr\}$ converges to 0.
 In particular,
 there exists an $N$ such that for $n \geq N$, we have
 $\frac{n}{{(1+\epsilon)}^n} < 1$, or 
@@ -2042,7 +2041,7 @@ with pretty much the exact same statement.
 
 As the theorem is so important to analysis, we present an explicit
 proof.
-The following proof generalizes more easily to different contexts.
+The idea of the following proof also generalizes to different contexts.
 
 \begin{proof}[Alternate proof of Bolzano--Weierstrass]
 As the sequence is bounded, then there exist two numbers $a_1 < b_1$
@@ -2533,7 +2532,8 @@ for all $n \geq M$ and all $k \geq M$ we have
 Intuitively it means that the terms of the sequence are eventually
 arbitrarily close to each other.  We would expect such a sequence to be
 convergent.  It turns out that is true because $\R$ has the
-\hyperref[defn:lub]{least-upper-bound property}.  First, let us look at some examples.
+\hyperref[defn:lub]{least-upper-bound property}.  Before we prove this,
+let us look at some examples.
 
 \begin{example}
 The sequence $\{ \nicefrac{1}{n} \}$ is a Cauchy sequence.
@@ -2602,7 +2602,7 @@ $\abs{x_n} - \abs{x_M} \leq \abs{x_n - x_M} < 1$.  Hence for $n \geq M$,
 \end{equation*}
 Let
 \begin{equation*}
-B := \max \{ \abs{x_1}, \abs{x_2}, \ldots, \abs{x_{M-1}}, 1+ \abs{x_M} \} .
+B := \max \bigl\{ \abs{x_1}, \abs{x_2}, \ldots, \abs{x_{M-1}}, 1+ \abs{x_M} \bigr\} .
 \end{equation*}
 Then $\abs{x_n} \leq B$ for all $n \in \N$.
 \end{proof}
@@ -2693,7 +2693,7 @@ The resulting field has the
 least-upper-bound property.
 The advantage of using Cauchy
 sequences to define completeness is that this idea generalizes to
-more abstract settings.
+more abstract settings such as metric spaces, see \chapterref{ms:chapter}.
 \end{remark}
 
 The Cauchy criterion is stronger than 
@@ -2841,12 +2841,12 @@ the right actually exists.  If the series does not converge, the right-hand
 side does not make sense (the limit does not exist).
 Therefore, be careful as 
 $\sum x_n$ means two different things (a notation for the series itself 
-or the limit of the partial sum), and you must use context
+or the limit of the partial sums), and you must use context
 to distinguish.
 
 \begin{remark}
-Before going further, let us remark that it is sometimes convenient to start
-the series at an index different from 1.  That is, for example we can write
+It is sometimes convenient to start
+the series at an index different from 1.  For instance, we can write
 \begin{equation*}
 \sum_{n=0}^\infty r^n = \sum_{n=1}^\infty r^{n-1} .
 \end{equation*}
@@ -2859,8 +2859,8 @@ It is common to write the series $\sum x_n$ as
 x_1 + x_2 + x_3 + \cdots
 \end{equation*}
 with the understanding that the ellipsis indicates a series and
-not a simple sum.  We do not use this notation as it often leads to 
-mistakes in proofs.
+not a simple sum.  We do not use this notation as it is the sort of informal
+notation that leads to mistakes in proofs.
 \end{remark}
 
 \begin{example}
@@ -2906,7 +2906,8 @@ Let $s_k$ be the partial sum.  We write
 \abs{\frac{1}{2^k}} = 
 \frac{1}{2^k} .
 \end{equation*}
-The sequence $\{ \frac{1}{2^k} \}$ and therefore $\{ \abs{1-s_k} \}$
+The sequence $\bigl\{ \frac{1}{2^k} \bigr\}$, and
+therefore $\bigl\{ \abs{1-s_k} \bigr\}$,
 converges to zero.  So, $\{ s_k \}$ converges to 1.
 \end{example}
 
@@ -2952,7 +2953,7 @@ We look at partial sums of the two series (for $k \geq M$)
 \sum_{n=M}^{k} x_n .
 \end{equation*}
 Note that 
-$\sum_{n=1}^{M-1} x_n$ is a fixed number.  Now use
+$\sum_{n=1}^{M-1} x_n$ is a fixed number.  Use
 \propref{prop:contalg} to finish the proof.
 \end{proof}
 
@@ -3030,7 +3031,7 @@ Let us give an example.
 The series $\sum \frac{1}{n}$ diverges (despite the fact that $\lim
 \frac{1}{n} = 0$).  This is the famous \emph{\myindex{harmonic series}}%
 \footnote{The divergence of the harmonic series was known 
-before the theory of series was made rigorous.  In fact the proof we
+long before the theory of series was made rigorous.  The proof we
 give is the earliest proof and was given by
 \href{https://en.wikipedia.org/wiki/Oresme}{Nicole Oresme}
 (1323?--1382).}.
@@ -3421,8 +3422,8 @@ The sequence of partial sums is bounded and hence converges.
 
 Neither the $p$-series test nor the comparison test 
 tell us what the sum converges to.  They only tell us that a limit
-of the partial sums exists.  For example, while we know that
-$\sum \nicefrac{1}{n^2}$ converges it is far harder to
+of the partial sums exists.  For instance, while we know that
+$\sum \nicefrac{1}{n^2}$ converges, it is far harder to
 find\footnote{Demonstration of this fact is
 what made the Swiss mathematician
 \href{https://en.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Paul Euler}
@@ -3815,7 +3816,7 @@ Now suppose $L < 1$.  Pick $r$ such that $L < r < 1$.
 By definition of limit supremum,
 pick $M$ such that for all $n \geq M$ we have 
 \begin{equation*}
-\sup \{ {\abs{x_k}}^{1/k} : k \geq n \} < r .
+\sup \bigl\{ {\abs{x_k}}^{1/k} : k \geq n \bigr\} < r .
 \end{equation*}
 Therefore, for all $n \geq M$ we have
 \begin{equation*}
@@ -3952,7 +3953,7 @@ $n \leq M$, there exists $k \leq K$ such that $\sigma(k) = n$.
 In other words
 $\{ 1,2,\ldots,M \} \subset \sigma\bigl(\{ 1,2,\ldots,K \} \bigr)$.
 
-For any $N \geq K$, let $Q := \max \sigma(\{ 1,2,\ldots,N \})$.
+For any $N \geq K$, let $Q := \max \sigma\bigl(\{ 1,2,\ldots,N \}\bigr)$.
 Compute
 \begin{equation*}
 \begin{split}
