@@ -2451,7 +2451,7 @@ many points, but $[0,1]$ is uncountable.
 \end{example}
 
 \begin{example}
-The sequence $f_n(x) := x^n$ of functions on $[0,1]$
+The sequence $f_n(x) := x^n$ of continuous functions on $[0,1]$
 is uniformly bounded, but contains no subsequence that converges
 uniformly,
 although the sequence converges pointwise (to a discontinuous function).
@@ -2478,8 +2478,8 @@ So $\lim\, \snorm{f_n}_u = \infty$, and
 this sequence is not uniformly bounded.
 \end{example}
 
-When the domain is countable, we can always guarantee at least pointwise
-convergence.
+When the domain is countable, we can locate a subsequence
+converging at least pointwise.
 The proof uses a very common and useful diagonal argument.
 
 \begin{prop} \label{prop:subsequenceoncountableX}
@@ -2521,8 +2521,8 @@ and hence for any $m$ the sequence $\{ f_{k,k}(x_m) \}_{k=1}^\infty$ converges.
 \end{proof}
 
 For larger than countable sets,
-we need the functions of the sequence to be related.  We look at
-continuous functions, and the concept we need is equicontinuity.
+we need the functions of the sequence to be related.  When we look at
+continuous functions, the concept we need is equicontinuity.
 
 \begin{defn}
 Let $(X,d)$ be a metric space.
@@ -2536,7 +2536,7 @@ such that if $x,y \in X$ with $d(x,y) < \delta$ we have
 \end{equation*}
 \end{defn}
 
-Notice the functions in a uniformly equicontinuous sequence are
+Notice that functions in a uniformly equicontinuous sequence are
 all uniformly continuous.  It is 
 not hard to show that a finite set of uniformly continuous functions
 is uniformly equicontinuous.  The definition is really interesting
