@@ -1691,8 +1691,9 @@ get the so-called \emph{\myindex{limit superior}}\index{limsup} and
 sequences.
 
 If a sequence $\{ x_n \}$ is bounded, then 
-the set $\{ x_k : k \in \N \}$ is bounded.  Then for every $n$,
-the set $\{ x_k : k \geq n \}$ is also bounded (as it is a subset).
+the set $\{ x_k : k \in \N \}$ is bounded.  For every $n$,
+the set $\{ x_k : k \geq n \}$ is also bounded (as it is a subset), so we
+take its supremum and infimum.
 
 \begin{defn} \label{liminflimsup:def}
 Let $\{ x_n \}$ be a bounded sequence.  Define the sequences $\{ a_n \}$
@@ -1739,9 +1740,9 @@ an upper bound for the subset $\{ x_k : k \geq (n+1) \}$.  Therefore
 $a_{n+1}$, the least upper bound for
 $\{ x_k : k \geq (n+1) \}$, has to be less than or equal to $a_n$,
 that is,
-$a_n \geq a_{n+1}$.  Similarly (an exercise), $b_n$ is an increasing
+$a_n \geq a_{n+1}$.  Similarly (an exercise), $\{ b_n \}$ is an increasing
 sequence.  It is left as an exercise to show that
-if $x_n$ is bounded, then $a_n$ and $b_n$ must be bounded.
+if $\{ x_n \}$ is bounded, then $\{ a_n \}$ and $\{ b_n \}$ must be bounded.
 
 The second item in the proposition follows as the sequences
 $\{ a_n \}$ and $\{ b_n \}$ are monotone.
@@ -1788,7 +1789,7 @@ limit inferior:
 =
 \lim_{n\to\infty} 0 = 0 .
 \end{equation*}
-For the limit superior we write
+For the limit superior, we write
 \begin{equation*}
 \limsup_{n\to\infty} \, x_n = 
 \lim_{n\to\infty}
@@ -1932,7 +1933,8 @@ b_n \leq x_n \leq a_n .
 \end{equation*}
 If 
 $\liminf \, x_n = \limsup \, x_n$, then we know that $\{ a_n \}$ and $\{ b_n \}$
-have limits and that these two limits are the same.  By the squeeze lemma
+both converge to the same limit.
+By the squeeze lemma
 (\lemmaref{squeeze:lemma}), $\{ x_n \}$ converges and
 \begin{equation*}
 \lim_{n\to \infty} b_n
@@ -1976,7 +1978,7 @@ $a_j := \sup \{ x_k : k \geq j \}$
 as usual.
 Also define
 $c_j := \sup \{ x_{n_k} : k \geq j \}$.
-It is not true that $c_j$ is necessarily a subsequence of $a_j$.  However,
+It is not true that $\{ c_j \}$ is necessarily a subsequence of $\{ a_j \}$.  However,
 as $n_k \geq k$ for all $k$, we have that
 $\{ x_{n_k} : k \geq j \} \subset \{ x_k : k \geq j \}$.
 A supremum of a subset is less than or equal to the supremum of the
@@ -1984,7 +1986,7 @@ set and therefore
 \begin{equation*}
 c_j \leq a_j .
 \end{equation*}
-We apply \lemmaref{limandineq:lemma} to conclude 
+\lemmaref{limandineq:lemma} gives
 \begin{equation*}
 \lim_{j\to\infty} c_j \leq \lim_{j\to\infty} a_j ,
 \end{equation*}
@@ -2530,10 +2532,10 @@ for all $n \geq M$ and all $k \geq M$ we have
 \end{defn}
 
 Intuitively it means that the terms of the sequence are eventually
-arbitrarily close to each other.  We would expect such a sequence to be
-convergent.  It turns out that is true because $\R$ has the
+all arbitrarily close to each other.  We might expect such a sequence to be
+convergent, and it turns out that we would be correct because $\R$ has the
 \hyperref[defn:lub]{least-upper-bound property}.  Before we prove this,
-let us look at some examples.
+we look at some examples.
 
 \begin{example}
 The sequence $\{ \nicefrac{1}{n} \}$ is a Cauchy sequence.
