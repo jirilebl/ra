@@ -253,7 +253,8 @@ near zero as it oscillates too fast.\label{figsin1x}}
 \end{myfigureht}
 
 Proof:
-We start with $\sin(\nicefrac{1}{x})$.  Define the sequence
+We start with $\sin(\nicefrac{1}{x})$.  Define a sequence
+by
 $x_n := \frac{1}{\pi n + \nicefrac{\pi}{2}}$.  It is not hard to see
 that $\lim\, x_n = 0$.  Furthermore,
 \begin{equation*}
@@ -262,12 +263,12 @@ that $\lim\, x_n = 0$.  Furthermore,
 \sin (\pi n + \nicefrac{\pi}{2})
 = {(-1)}^n .
 \end{equation*}
-Therefore, $\{ \sin ( \nicefrac{1}{x_n} ) \}$ does not converge.
-Thus, by
+Therefore, $\bigl\{ \sin ( \nicefrac{1}{x_n} ) \bigr\}$ does not converge.
+By
 \lemmaref{seqflimit:lemma}, 
 $\lim_{x \to 0} \, \sin( \nicefrac{1}{x} )$ does not exist.
 
-Now let us look at $x\sin(\nicefrac{1}{x})$.  Let $x_n$ be a sequence
+Now consider $x\sin(\nicefrac{1}{x})$.  Let $\{ x_n \}$ be a sequence
 such that $x_n \not= 0$ for all $n$, and such that $\lim\, x_n = 0$.
 Notice that $\abs{\sin(t)} \leq 1$ for any $t \in \R$.  Therefore,
 \begin{equation*}
@@ -278,15 +279,17 @@ Notice that $\abs{\sin(t)} \leq 1$ for any $t \in \R$.  Therefore,
 \abs{x_n} .
 \end{equation*}
 As $x_n$ goes to 0, then $\abs{x_n}$ goes to zero, and hence
-$\{ x_n\sin(\nicefrac{1}{x_n}) \}$ converges to zero.  By
+$\bigl\{ x_n\sin(\nicefrac{1}{x_n}) \bigr\}$ converges to zero.  By
 \lemmaref{seqflimit:lemma}, 
 $\displaystyle \lim_{x \to 0} \, x\sin( \nicefrac{1}{x} ) = 0$.
 \end{example}
 
 Keep in mind the phrase \myquote{for every sequence} in the lemma.
-For example, take $\sin(\nicefrac{1}{x})$ and the sequence $x_n = \nicefrac{1}{\pi n}$.
-Then $\{ \sin (\nicefrac{1}{x_n}) \}$ is the constant zero sequence, and
-therefore converges to zero.
+For example, take $\sin(\nicefrac{1}{x})$ and the sequence given by
+$x_n := \nicefrac{1}{\pi n}$.
+Then $\bigl\{ \sin (\nicefrac{1}{x_n}) \bigr\}$ is the constant zero sequence, and
+therefore converges to zero, but the limit of 
+$\sin(\nicefrac{1}{x})$ as $x \to 0$ does not exist.
 
 Using \lemmaref{seqflimit:lemma}, 
 we can start applying everything we know about
@@ -294,10 +297,12 @@ sequential limits to limits of functions.  Let us give a few important
 examples.
 
 \begin{cor}
-Let $S \subset \R$ and $c$ be a cluster point of $S$.  Let $f \colon S \to
-\R$ and $g \colon S \to \R$ be functions.
-Suppose the limits of $f(x)$ and $g(x)$ as $x$ goes to $c$ both exist,
-and that
+Let $S \subset \R$ and let $c$ be a cluster point of $S$.  
+Suppose $f \colon S \to
+\R$ and $g \colon S \to \R$ are functions
+such that
+the limits of $f(x)$ and $g(x)$ as $x$ goes to $c$ both exist,
+and
 \begin{equation*}
 f(x) \leq g(x) \qquad \text{for all } x \in S.
 \end{equation*}
@@ -324,8 +329,8 @@ By applying constant functions, we get the following corollary.  The
 proof is left as an exercise.
 
 \begin{cor} \label{fconstineq:cor}
-Let $S \subset \R$ and $c$ be a cluster point of $S$.  Let $f \colon S \to
-\R$ be a function.  And suppose the limit of $f(x)$ as $x$ goes to $c$
+Let $S \subset \R$ and let $c$ be a cluster point of $S$.  Suppose $f \colon S \to
+\R$ is a function such that the limit of $f(x)$ as $x$ goes to $c$
 exists.
 Suppose there are two real numbers $a$ and $b$ such that
 \begin{equation*}
@@ -341,13 +346,13 @@ Using \lemmaref{seqflimit:lemma} in the same way as above, we also get
 the following corollaries, whose proofs are again left as exercises.
 
 \begin{cor} \label{fsqueeze:cor}
-Let $S \subset \R$ and $c$ be a cluster point of $S$.  Let $f \colon S \to
-\R$,
-$g \colon S \to \R$, and $h \colon S \to \R$ be functions.  Suppose 
+Let $S \subset \R$ and let $c$ be a cluster point of $S$.
+Suppose $f \colon S \to \R$,
+$g \colon S \to \R$, and $h \colon S \to \R$ are functions such that
 \begin{equation*}
-f(x) \leq g(x) \leq h(x) \qquad \text{for all } x \in S,
+f(x) \leq g(x) \leq h(x) \qquad \text{for all } x \in S.
 \end{equation*}
-and the limits of $f(x)$ and $h(x)$ as $x$ goes to $c$ both exist, and
+Suppose the limits of $f(x)$ and $h(x)$ as $x$ goes to $c$ both exist, and
 \begin{equation*}
 \lim_{x\to c} f(x) = \lim_{x\to c} h(x) .
 \end{equation*}
@@ -359,10 +364,11 @@ Then the limit of $g(x)$ as $x$ goes to $c$ exists and
 \end{cor}
 
 \begin{cor} \label{falg:cor}
-Let $S \subset \R$ and $c$ be a cluster point of $S$.  Let $f \colon S \to
-\R$ and
-$g \colon S \to \R$ be functions. 
-Suppose limits of $f(x)$ and $g(x)$ as $x$ goes to $c$ both exist.
+Let $S \subset \R$ and let $c$ be a cluster point of $S$.  
+Suppose $f \colon S \to \R$ and
+$g \colon S \to \R$ are functions
+such that 
+the limits of $f(x)$ and $g(x)$ as $x$ goes to $c$ both exist.
 Then
 \begin{enumerate}[(i)]
 \item
@@ -391,8 +397,9 @@ and $g(x) \not= 0$ for all $x \in S \setminus \{ c \}$, then
 \end{cor}
 
 \begin{cor} \label{fabs:cor}
-Let $S \subset \R$ and $c$ be a cluster point of $S$.  Let $f \colon S \to
-\R$ be a function and suppose the limit of $f(x)$ as $x$ goes to $c$ exists.
+Let $S \subset \R$ and let $c$ be a cluster point of $S$.
+Suppose $f \colon S \to \R$ is a function such that the limit of $f(x)$ as $x$ goes to $c$
+exists.
 Then
 \begin{equation*}
 \lim_{x\to c} \abs{f(x)} =
@@ -405,7 +412,7 @@ Then
 Sometimes we work with the function defined on a subset.
 
 \begin{defn}
-Let $f \colon S \to \R$ be a function.  Let $A \subset S$.  Define the
+Let $f \colon S \to \R$ be a function and $A \subset S$.  Define the
 function $f|_A \colon A \to \R$ by
 \begin{equation*}
 f|_A (x) := f(x)  \qquad \text{for } x \in A.
@@ -513,7 +520,7 @@ We have the following replacement.
 
 
 \begin{prop} \label{prop:onesidedlimits}
-Let $S \subset \R$ be a set such that $c$ is a cluster point
+Let $S \subset \R$ be such that $c$ is a cluster point
 of both $S \cap (-\infty,c)$ and $S \cap (c,\infty)$, and let
 $f \colon S \to \R$ be a function.  Then $c$ is a cluster point of $S$ and
 \begin{equation*}
@@ -776,7 +783,8 @@ be a sequence such that $x_n \in S$ and $\lim\, x_n = c$.  Let $\epsilon > 0$
 be given.  Find a $\delta > 0$ such that $\abs{f(x)-f(c)} < \epsilon$
 for all $x \in S$ where $\abs{x-c} < \delta$.  Find an $M \in \N$
 such that for $n \geq M$ we have $\abs{x_n-c} < \delta$.  Then for
-$n \geq M$ we have that $\abs{f(x_n)-f(c)} < \epsilon$, so $\{ f(x_n) \}$
+$n \geq M$ we have that $\abs{f(x_n)-f(c)} < \epsilon$,
+so $\bigl\{ f(x_n) \bigr\}$
 converges to $f(c)$.
 
 Let us prove the other direction of the third item by contrapositive.
@@ -956,8 +964,8 @@ at $c$.
 
 \begin{proof}
 Let $\{ x_n \}$ be a sequence in $A$ such that $\lim\, x_n = c$.
-As $g$ is continuous at $c$, then $\{ g(x_n) \}$ converges to $g(c)$.
-As $f$ is continuous at $g(c)$, then $\{ f\bigl(g(x_n)\bigr) \}$ converges
+As $g$ is continuous at $c$, then $\bigl\{ g(x_n) \bigr\}$ converges to $g(c)$.
+As $f$ is continuous at $g(c)$, then $\bigl\{ f\bigl(g(x_n)\bigr) \bigr\}$ converges
 to $f\bigl(g(c)\bigr)$.
 Thus $f \circ g$ is continuous at $c$.
 \end{proof}
@@ -986,13 +994,13 @@ from third item of \propref{contbasic:prop}.
 \begin{prop}
 Let $f \colon S \to \R$ be a function and $c \in S$.  Suppose 
 there exists a sequence $\{ x_n \}$, $x_n \in S$, and $\lim\, x_n = c$
-such that $\{ f(x_n) \}$ does not converge to $f(c)$.  Then $f$ is 
+such that $\bigl\{ f(x_n) \bigr\}$ does not converge to $f(c)$.  Then $f$ is 
 discontinuous at $c$.
 \end{prop}
 
 Again, 
 saying that 
-$\{ f(x_n) \}$ does not converge to $f(c)$
+$\bigl\{ f(x_n) \bigr\}$ does not converge to $f(c)$
 means that it
 either does not converge
 at all, or it converges to something
@@ -1024,7 +1032,7 @@ $f(-\nicefrac{1}{n})$ and $f(0)$ are marked.\label{fig:jumpdiscont}}
 
 Notice that $f(\nicefrac{1}{n}) = 1$ for all $n \in \N$.
 Hence, $\lim \, f(\nicefrac{1}{n}) = f(0) = 1$.  So
-$\{ f(x_n) \}$ may converge to $f(0)$
+$\bigl\{ f(x_n) \bigr\}$ may converge to $f(0)$
 for some specific
 sequence $\{ x_n \}$ going to 0,
 despite the function being discontinuous at 0.
