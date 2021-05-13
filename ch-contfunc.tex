@@ -1027,7 +1027,7 @@ not continuous at 0.  See
 \begin{myfigureht}
 \includegraphics{figures/jumpdiscont}
 \caption{Graph of the jump discontinuity.  The values of
-$f(-\nicefrac{1}{n})$ and $f(0)$ are marked.\label{fig:jumpdiscont}}
+$f(-\nicefrac{1}{n})$ and $f(0)$ are marked as black dots.\label{fig:jumpdiscont}}
 \end{myfigureht}
 
 Notice that $f(\nicefrac{1}{n}) = 1$ for all $n \in \N$.
@@ -1077,7 +1077,7 @@ mathematician
 \emph{\myindex{popcorn function}}.
 
 \begin{example} \label{popcornfunction:example}
-Let $f \colon (0,1) \to \R$ be defined by
+Define $f \colon (0,1) \to \R$ as
 \begin{equation*}
 f(x) := 
 \begin{cases}
@@ -1128,16 +1128,17 @@ $g \colon \R \to \R$ by $g(x) := 0$ if $x \not= 0$ and
 $g(0) := 1$.  Then $g$ is not continuous at zero, but continuous everywhere else (why?).
 The point $x=0$ is called a \emph{\myindex{removable discontinuity}}.  That
 is because if we would change the definition of $g$, by insisting that
-$g(0)$ be $0$, we would obtain a continuous function.  On the other hand
-let $f$ be the function of example \exampleref{example:jumpdiscont}.
+$g(0)$ be $0$, we would obtain a continuous function.  On the other hand,
+let $f$ be the function of \exampleref{example:jumpdiscont}.
 Then $f$ does not have a
 removable discontinuity at $0$.  No matter how we would define $f(0)$ the function
 would still fail to be continuous.  The difference is that 
 $\lim_{x\to 0} g(x)$ exists while
 $\lim_{x\to 0} f(x)$ does not.
 
-Let us stay with this example but show another phenomenon.  Let $A = \{ 0
+Let us stay with this example but show another phenomenon.  Let $A := \{ 0
 \}$, then $g|_A$ is continuous (why?), while $g$ is not continuous on $A$.
+Similarly, if $B := \R \setminus \{0 \}$, then $g|_B$ is also continuous.
 \end{example}
 
 \subsection{Exercises}
@@ -1205,9 +1206,9 @@ Then the restriction $f|_A$ is continuous.
 \end{exercise}
 
 \begin{exercise}
-Suppose $S \subset \R$.  Suppose for some $c \in \R$
-and $\alpha > 0$, we have $A=(c-\alpha,c+\alpha) \subset S$.
-Let $f \colon S \to \R$ be a function.  Prove that
+Suppose $S \subset \R$, such that $(c-\alpha,c+\alpha) \subset S$ for some $c \in \R$
+and $\alpha > 0$.
+Let $f \colon S \to \R$ be a function and $A:=(c-\alpha,c+\alpha)$.  Prove that
 if $f|_A$ is continuous at $c$, then $f$ is continuous at $c$.
 \end{exercise}
 
@@ -1383,15 +1384,15 @@ achieves both an absolute minimum and an absolute maximum on $[a,b]$.
 
 \begin{proof}
 The lemma says that $f$ is bounded, and thus
-the set $f([a,b]) = \{ f(x) : x \in [a,b] \}$ has a supremum and an infimum.
+the set $f\bigl([a,b]\bigr) = \bigl\{ f(x) : x \in [a,b] \bigr\}$ has a supremum and an infimum.
 There exist sequences
-in the set $f([a,b])$ that approach its supremum and its infimum.
+in the set $f\bigl([a,b]\bigr)$ that approach its supremum and its infimum.
 That is, there are sequences
-$\{ f(x_n) \}$ and $\{ f(y_n) \}$, where $x_n, y_n$ are in $[a,b]$,
+$\bigl\{ f(x_n) \bigr\}$ and $\bigl\{ f(y_n) \bigr\}$, where $x_n, y_n$ are in $[a,b]$,
 such that
 \begin{equation*}
-\lim_{n\to\infty} f(x_n) = \inf f([a,b]) \qquad \text{and} \qquad
-\lim_{n\to\infty} f(y_n) = \sup f([a,b]).
+\lim_{n\to\infty} f(x_n) = \inf f\bigl([a,b]\bigr) \qquad \text{and} \qquad
+\lim_{n\to\infty} f(y_n) = \sup f\bigl([a,b]\bigr).
 \end{equation*}
 We are not done yet, we need to find where the minima and the maxima are.
 The problem is that the sequences $\{ x_n \}$ and $\{ y_n \}$ need not
@@ -1437,7 +1438,7 @@ to be $[-10,10]$, then $x=2$ would no longer be a maximum of $f$.  Instead
 the maximum would be achieved at either $x=10$ or $x=-10$.
 \end{example}
 
-Let us show by examples that the different hypotheses of the theorem are
+We show by examples that the different hypotheses of the theorem are
 truly needed.
 
 \begin{example}
@@ -1554,19 +1555,19 @@ The theorem says that a continuous function on a closed interval
 achieves all the values between the values at the endpoints.
 
 \begin{proof}
-If $f(a) < y < f(b)$, then define $g(x) := f(x)-y$.  Then we see
-that $g(a) < 0$ and $g(b) > 0$ and we apply \lemmaref{IVT:lemma}
+If $f(a) < y < f(b)$, then define $g(x) := f(x)-y$.  Then 
+$g(a) < 0$ and $g(b) > 0$, and we apply \lemmaref{IVT:lemma}
 to $g$ to find $c$.  If $g(c) = 0$, then $f(c) = y$.
 
 Similarly, if $f(a) > y > f(b)$, then define $g(x) := y-f(x)$.  Then
-again $g(a) < 0$ and $g(b) > 0$ and we apply \lemmaref{IVT:lemma} to
+again $g(a) < 0$ and $g(b) > 0$, and we apply \lemmaref{IVT:lemma} to
 find $c$.
-Again if $g(c) = 0$, then $f(c) = y$.
+Again, if $g(c) = 0$, then $f(c) = y$.
 \end{proof}
 
 If a function is continuous, then the restriction
-to a subset is continuous.  So if $f \colon S \to \R$ is continuous and
-$[a,b] \subset S$, then $f|_{[a,b]}$ is also continuous.  Hence, we generally
+to a subset is continuous; if $f \colon S \to \R$ is continuous and
+$[a,b] \subset S$, then $f|_{[a,b]}$ is also continuous.  We generally
 apply the theorem to a function continuous on some large set $S$,
 but we restrict attention to an interval.
 
@@ -1592,10 +1593,10 @@ sufficient precision.  In fact, the root is at $c \approx 1.7549$.
 
 The technique above is the simplest method of finding roots of polynomials,
 which is perhaps the most common problem in applied
-mathematics.  In general finding roots is hard to do quickly, precisely,
+mathematics.  In general, finding roots is hard to do quickly, precisely,
 and automatically.
 
-There are better and faster methods of finding roots of equations, such
+There are often better and faster methods of finding roots of equations, such
 as Newton's method.  One advantage of the method above is its
 simplicity.  The
 moment we find an initial interval where the intermediate value theorem
@@ -1612,8 +1613,8 @@ one such root.  We need to work harder to find any other roots.
 
 \medskip
 
-Polynomials of even degree may not have any real roots.  For example,
-there is no real number $x$ such that $x^2+1 = 0$.  Odd polynomials, on the
+Polynomials of even degree may not have any real roots.
+There is no real number $x$ such that $x^2+1 = 0$.  Odd polynomials, on the
 other hand, always have at least one real root.
 
 \begin{prop}
@@ -1684,7 +1685,8 @@ then $f(c) = 0$, and the proof is done.
 \end{proof}
 
 \begin{example}
-An interesting fact is that there do exist discontinuous functions that have
+Interestingly,
+there do exist discontinuous functions that have
 the intermediate value property.
 The function
 \begin{equation*}
@@ -1702,9 +1704,9 @@ Proof is left as \exerciseref{exercise:meanvaluepropsin1x}.
 \end{example}
 
 The intermediate value theorem says that if $f \colon [a,b] \to \R$ is
-continuous, then $f([a,b])$ contains all the values between $f(a)$ and
+continuous, then $f\bigl([a,b]\bigr)$ contains all the values between $f(a)$ and
 $f(b)$.  In fact, more is true.  Combining all the results of this section
-we can prove the following useful corollary whose proof is left as an exercise.
+one can prove the following useful corollary whose proof is left as an exercise.
 
 \begin{cor} \label{cor:imageofinterval}
 If $f \colon [a,b] \to \R$ is continuous, then the direct image $f([a,b])$
@@ -2126,7 +2128,7 @@ is \emph{\myindex{Lipschitz continuous}}\index{function!Lipschitz}%
 A large class of functions is Lipschitz continuous.  Be careful, just as
 for uniformly continuous functions, the
 domain of definition of the function is important.  See the examples below
-and the exercises.  First we justify the use of the word \emph{continuous}.
+and the exercises.  First, we justify the use of the word \emph{continuous}.
 
 \begin{prop}
 A Lipschitz continuous function is uniformly continuous.
@@ -2295,10 +2297,10 @@ such that $f(x) = \widetilde{f}(x)$ for all $x \in \Q$.
 \begin{enumerate}[a)]
 \item
 Find a continuous $f \colon (0,1) \to \R$ and a sequence $\{ x_n \}$ in
-$(0,1)$ that is Cauchy, but such that $\{ f(x_n) \}$ is not Cauchy.
+$(0,1)$ that is Cauchy, but such that $\bigl\{ f(x_n) \bigr\}$ is not Cauchy.
 \item
 Prove that if $f \colon \R \to \R$ is continuous, and $\{ x_n \}$ is
-Cauchy, then $\{ f(x_n) \}$ is Cauchy.
+Cauchy, then $\bigl\{ f(x_n) \bigr\}$ is Cauchy.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
@@ -2367,7 +2369,8 @@ is uniformly continuous.
 \begin{exercise}
 Suppose $f \colon S \to \R$ and $g \colon [0,\infty) \to [0,\infty)$
 are functions, $g$ is continuous at $0$, $g(0) = 0$, and
-whenever $x$ and $y$ are in $S$ we have $\abs{f(x)-f(y)} \leq g(\abs{x-y})$.
+whenever $x$ and $y$ are in $S$ we have $\abs{f(x)-f(y)} \leq
+g\bigl(\abs{x-y}\bigr)$.
 Prove that $f$ is uniformly continuous.
 \end{exercise}
 
@@ -2696,7 +2699,7 @@ the other one, and in this case they are equal.
 \begin{exercise}
 Extend \lemmaref{seqflimitinf:lemma} as follows.
 Suppose $S \subset \R$ has a cluster point $c \in \R$, $c = \infty$,
-or $c = -\infty$.  Let $f \colon S \to \R$ be a function and let
+or $c = -\infty$.  Let $f \colon S \to \R$ be a function and suppose
 $L = \infty$ or $L = -\infty$.  Show that
 \begin{equation*}
 \lim_{x\to c} f(x) = L \qquad \text{if and only if} \qquad
@@ -2978,19 +2981,19 @@ automatically.  So let $c$ be a cluster point of $f(I)$.
 Suppose both of the following one-sided limits exist:
 \begin{align*}
 x_0 & := \lim_{y \to c^-} f^{-1}(y) =
-\sup \{ f^{-1}(y) : y < c, y \in f(I) \}
+\sup \bigl\{ f^{-1}(y) : y < c, y \in f(I) \bigr\}
 =
-\sup \{ x \in I : f(x) < c \} , \\
+\sup \bigl\{ x \in I : f(x) < c \bigr\} , \\
 x_1 & := \lim_{y \to c^+} f^{-1}(y) =
-\inf \{ f^{-1}(y) : y > c, y \in f(I) \}
+\inf \bigl\{ f^{-1}(y) : y > c, y \in f(I) \bigr\}
 =
-\inf \{ x \in I : f(x) > c \} .
+\inf \bigl\{ x \in I : f(x) > c \bigr\} .
 \end{align*}
 We have $x_0 \leq x_1$ as $f^{-1}$ is increasing.
 For all $x > x_0$ with $x \in I$, we have $f(x) \geq c$.  As $f$ is strictly increasing,
 we must have $f(x) > c$ for all $x > x_0$, $x \in I$.  Therefore,
 \begin{equation*}
-\{ x \in I : x > x_0 \} \subset \{ x \in I : f(x) > c \}.
+\{ x \in I : x > x_0 \} \subset \bigl\{ x \in I : f(x) > c \bigr\}.
 \end{equation*}
 The infimum of the left hand set is $x_0$, and the infimum of the right hand
 set is $x_1$, so we obtain $x_0 \geq x_1$.
