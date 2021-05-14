@@ -7,8 +7,8 @@
 
 \sectionnotes{1.5 lectures}
 
-We now get to the fundamental concept of integration.  There is
-often confusion among students of
+An integral is a way to \myquote{sum} the values of a function.
+There is often confusion among students of
 calculus between \emph{integral} and \emph{antiderivative}.
 The integral is (informally) the area under the curve, nothing else.
 That we can compute an antiderivative using the integral is a nontrivial
@@ -21,7 +21,7 @@ using the Darboux integral%
 \footnote{Named after the French mathematician
 \href{https://en.wikipedia.org/wiki/Darboux}{Jean-Gaston Darboux} (1842--1917).},
 which is technically simpler than (but equivalent to) the traditional
-definition as done by Riemann.
+definition of Riemann.
 
 \subsection{Partitions and lower and upper integrals}
 
@@ -499,6 +499,16 @@ $\frac{b^2}{n(b+1)} < \epsilon$ the proposition is satisfied, and the
 function is integrable.
 \end{example}
 
+\begin{remark}
+A way of thinking of the integral is that it adds up (integrates) lots of
+local information---it sums $f(x)~dx$ over all $x$.
+The integral sign was chosen by Leibniz to be the long S, to mean summation.
+Unlike derivatives, which are \myquote{local,} 
+integrals show up in applications when
+one wants a \myquote{global} answer: total distance travelled, average
+temperature, total charge, etc.
+\end{remark}
+
 \subsection{More notation}
 
 When $f \colon S \to \R$ is defined on a larger set $S$ and
@@ -532,7 +542,7 @@ use a different letter.  For example,
 \subsection{Exercises}
 
 \begin{exercise}
-Let $f \colon [0,1] \to \R$ be defined by $f(x) := x^3$
+Define $f \colon [0,1] \to \R$ by $f(x) := x^3$
 and let $P := \{ 0, 0.1, 0.4, 1 \}$.  Compute $L(P,f)$ and $U(P,f)$.
 \end{exercise}
 
@@ -690,8 +700,10 @@ discontinuities can safely be skipped}
 
 \subsection{Additivity}
 
-The next result we prove is usually referred to as the
-\myindex{additive property of the integral}.  First we prove the additivity
+Adding a bunch of things in two parts and then adding those two parts
+should be the same as adding everything all at once.
+The corresponding property for integral is called the
+\myindex{additive property of the integral}.  First, we prove the additivity
 property for the lower and upper Darboux integrals.
 
 \begin{lemma} \label{lemma:darbouxadd}
@@ -818,7 +830,7 @@ $\overline{\int_a^c} f =
  =
 \int_a^c f .
 \end{equation*}
-Thus the inequality is an equality and
+Thus the inequality is an equality,
 \begin{equation*}
 \underline{\int_a^b} f + \underline{\int_b^c} f
 =
@@ -841,8 +853,8 @@ conclude
 Thus $f$ is Riemann integrable on $[a,b]$ and $[b,c]$ and the desired formula
 holds.
 
-Now assume the restrictions of $f$ to $[a,b]$ and to $[b,c]$
-are Riemann integrable.  We again apply the lemma to get
+Now assume $f$ is Riemann integrable on $[a,b]$ and on $[b,c]$.
+Again apply the lemma to get
 \begin{equation*}
 \underline{\int_a^c} f
 =
@@ -869,8 +881,10 @@ the restriction $f|_{[c,d]}$ is in $\sR[c,d]$.
 
 \subsection{Linearity and monotonicity}
 
+A sum is a linear function of the summands.  So is the integral.
+
 \begin{prop}[Linearity]
-\index{linearity of the integral}
+\index{linearity of the integral}\label{prop:integrallinear}
 Let $f$ and $g$ be in $\sR[a,b]$ and $\alpha \in \R$.
 \begin{enumerate}[(i)]
 \item $\alpha f$ is in $\sR[a,b]$ and
@@ -899,7 +913,7 @@ past the infimum,
 =
 \alpha \inf \{ f(x) : x \in [x_{i-1},x_i] \} = \alpha m_i .
 \end{equation*}
-Therefore
+Therefore,
 \begin{equation*}
 L(P,\alpha f) =
 \sum_{i=1}^n \alpha m_i \Delta x_i = \alpha \sum_{i=1}^n m_i \Delta x_i = \alpha
@@ -943,13 +957,18 @@ $\int_a^b - f(x)~dx =
 -
 \int_a^b f(x)~dx$.  The proof of this fact is left as an exercise.
 
-The proof of the second item in the proposition is also left as an exercise.
+The proof of the second item in the proposition is also left as
+\exerciseref{exercise:proofoflinproppartii}.
 It is not as
 trivial as it may appear at first glance.
 \end{proof}
 
 The second item in the proposition does not hold with
 equality for the Darboux integrals, but we do obtain inequalities.
+The proof of the following proposition is \exerciseref{exercise:upperlowerlinineq}.
+It follows for upper and lower sums on a fixed partition by \exerciseref{exercise:sumofsup},
+that is, supremum of a sum is less than or equal to the sum of
+suprema and similarly for infima.
 
 \begin{prop} \label{prop:upperlowerlinineq}
 Let $f \colon [a,b] \to \R$ and $g \colon [a,b] \to \R$ be bounded
@@ -969,10 +988,8 @@ functions.  Then
 \end{equation*}
 \end{prop}
 
-The proof of the proposition above is \exerciseref{exercise:upperlowerlinineq}.
-It follows for upper and lower sums on a fixed partition by \exerciseref{exercise:sumofsup},
-that is, supremum of a sum is less than or equal to the sum of
-suprema and similarly for infima.
+Adding up smaller numbers should give us a smaller result.
+That is true for an integral as well.
 
 \begin{prop}[Monotonicity]
 \index{monotonicity of the integral}
@@ -1240,7 +1257,7 @@ of $f$ to $[a_i,b_i]$ is integrable.  By additivity of the integral (and
 Sometimes it is convenient (or necessary)
 to change certain values of a function and
 then integrate.  The next result says
-that if we change the values only at finitely
+that if we change the values at finitely
 many points, the integral does not change.
 
 \begin{prop}
@@ -1264,7 +1281,7 @@ and is left as \exerciseref{exercise:changeendpointsintegral}.
 \end{proof}
 
 Finally, monotone (increasing or decreasing) functions are always
-Riemann integrable.  The proof is left to the reader as
+Riemann integrable.  The proof is left to the reader as part of
 \exerciseref{exercise:boundedvariationintegrable}.
 
 \begin{prop} \label{prop:monotoneintegrable}
@@ -1274,6 +1291,7 @@ Let $f \colon [a,b] \to \R$ be a monotone function.  Then $f \in \sR[a,b]$.
 \subsection{Exercises}
 
 \begin{exercise}
+Finish the proof of the first part of \propref{prop:integrallinear}.
 Let $f$ be in $\sR[a,b]$.  Prove that
 $-f$ is in $\sR[a,b]$ and 
 \begin{equation*}
@@ -1281,7 +1299,8 @@ $-f$ is in $\sR[a,b]$ and
 \end{equation*}
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:proofoflinproppartii}
+Prove the second part of \propref{prop:integrallinear}.
 Let $f$ and $g$ be in $\sR[a,b]$.
 Prove, without using \propref{prop:upperlowerlinineq}, that $f+g$ is in $\sR[a,b]$ and
 \begin{equation*}
@@ -1418,13 +1437,13 @@ $a$, $b$, the endpoints of $I_k$ and the $\alpha_k$.
 
 \begin{exercise}
 \label{exercise:boundedvariationintegrable}
-Let $f \colon [a,b] \to \R$ be increasing.
+Let $f \colon [a,b] \to \R$ be a function.
 \begin{enumerate}[a)]
 \item
-Show that $f$ is Riemann
+Show that if $f$ is increasing, then it is Riemann
 integrable.  Hint: Use a uniform partition; each subinterval of same length.
 \item
-Use part a to show that a decreasing function is Riemann
+Use part a) to show that if $f$ is decreasing, then it is Riemann
 integrable.
 \item
 Suppose\footnote{Such an $h$ is said to be of \emph{\myindex{bounded variation}}.}

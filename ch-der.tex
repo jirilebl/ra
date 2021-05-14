@@ -13,7 +13,8 @@ then we can then talk about the slope of this line.
 The slope tells us the rate at which 
 the value of the function is changing at that particular point.
 Of course, we are leaving out any function that has corners or
-discontinuities.  Let us be precise.
+discontinuities.  
+Let us be precise.
 
 \subsection{Definition and basic properties}
 
@@ -128,12 +129,12 @@ f'(c) =
 
 \begin{example}
 The function $f(x) := \abs{x}$ is not differentiable
-at the origin.  When $x > 0$, then
+at the origin.  When $x > 0$,
 \begin{equation*}
 \frac{\abs{x}-\abs{0}}{x-0} =
 \frac{x-0}{x-0} = 1 ,
 \end{equation*}
-and when $x < 0$ we have
+When $x < 0$,
 \begin{equation*}
 \frac{\abs{x}-\abs{0}}{x-0} =
 \frac{-x-0}{x-0} = -1 .
@@ -199,7 +200,7 @@ $h'(c) =  f'(c) + g'(c)$.
 
 \begin{proof}
 First, let $h(x) := \alpha f(x)$.
-For $x \in I$, $x \not= c$ we have
+For $x \in I$, $x \not= c$,
 \begin{equation*}
 \frac{h(x)-h(c)}{x-c} =
 \frac{\alpha f(x) - \alpha f(c)}{x-c}
@@ -335,7 +336,7 @@ v(x) :=
 \end{equation*}
 Because $f$ is differentiable at $d = g(c)$, we find that
 $u$ is continuous at $d$.  Similarly, $v$ is continuous at $c$.
-Note that for any $x$ and $y$,
+For any $x$ and $y$,
 \begin{equation*}
 f(y)-f(d) = u(y) (y-d)
 \qquad \text{and} \qquad
@@ -511,8 +512,11 @@ that the limit of $\nicefrac{f'(x)}{g'(x)}$ as $x$ goes to $c$ exists.  Show tha
 \subsection{Relative minima and maxima}
 
 We talked about absolute maxima and minima.  These are the tallest peaks and
-lowest valleys in the whole mountain range.  We also want to talk
-about peaks of individual mountains and bottoms of individual valleys.
+lowest valleys in the whole mountain range.  What
+about peaks of individual mountains and bottoms of individual valleys?
+The derivative, being a local concept, is like walking around in a fog; it can't
+tell you if you're on the highest peak, but it can help you find all the
+individual peaks.
 
 \begin{defn}
 Let $S \subset \R$ be a set and
@@ -1007,7 +1011,7 @@ Finish the proof of \propref{firstderminmaxtest}.
 \begin{exercise} \label{exercise:boundeddermeanslip}
 Suppose $f \colon \R \to \R$ is a differentiable
 function such that $f'$ is a bounded function.  Prove
-$f$ is a Lipschitz continuous function.
+that $f$ is a Lipschitz continuous function.
 \end{exercise}
 
 \pagebreak[1]
@@ -1032,8 +1036,9 @@ at all points and compute the derivative.
 \begin{exercise} \label{exercise:posderincr}
 Finish the proof of \propref{incdecdiffstrictprop}.  That is,
 suppose $I$ is an interval and
-$f \colon I \to \R$ is a differentiable function.
-If $f'(x) > 0$ for all $x \in I$, show that $f$ is strictly increasing.
+$f \colon I \to \R$ is a differentiable function such that
+$f'(x) > 0$ for all $x \in I$.
+Show that $f$ is strictly increasing.
 \end{exercise}
 
 \begin{exercise}
@@ -1055,7 +1060,7 @@ then show that there exists a constant $C$ such that $f(x) = g(x) + C$.
 Prove the following version of \myindex{L'H\^opital's rule}\index{L'Hospital's rule}.
 Suppose 
 $f \colon (a,b) \to \R$ and $g \colon (a,b) \to \R$ are differentiable
-functions.  Suppose that at $c \in (a,b)$, $f(c) = 0$, $g(c)=0$,
+functions and $c \in (a,b)$.  Suppose that $f(c) = 0$, $g(c)=0$,
 $g'(x) \not= 0$ when $x \not= c$, and
 that the limit of $\nicefrac{f'(x)}{g'(x)}$ as $x$ goes to $c$ exists.  Show that
 \begin{equation*}
@@ -1289,8 +1294,8 @@ reasonably good approximations to the sine near $x=0$.
 
 We do not necessarily get good approximations
 by the Taylor polynomial everywhere.
-For example, if we start expanding the function $f(x) =
-\frac{x}{1-x}$ around 0, we get the graphs in
+Consider expanding the function $f(x) :=
+\frac{x}{1-x}$ around 0, for $x < 1$, we get the graphs in
 \figureref{fig:taylorgeom}.  The dotted lines are the first, second, and
 third degree approximations.  The dashed line is
 the 20th degree polynomial, and yet the approximation only seems to get
@@ -1488,11 +1493,11 @@ minimum at $x_0$.  Hint: Consider the limit definition of $f''(x_0)$.
 
 \subsection{Inverse function theorem}
 
-Let us start with a simple example.  Consider the function $f(x) := a x$ for a
+We start with a simple example.  Consider the function $f(x) := a x$ for a
 number $a \not= 0$.  Then $f \colon \R \to \R$ is bijective, and the inverse
 is $f^{-1}(y) = \frac{1}{a} y$.  In particular, $f'(x) = a$ and 
 $(f^{-1})'(y) = \frac{1}{a}$.  As differentiable functions are
-\myquote{infinitesimally like} linear functions, then we expect the same
+\myquote{infinitesimally like} linear functions, we expect the same
 behavior from the inverse function.
 The main idea of differentiating inverse functions is the following lemma.
 
@@ -1537,7 +1542,6 @@ f'(x_0) \neq 0 \text{)}.
 \end{cases}
 \end{equation*}
 As $f$ is differentiable at $x_0$, 
-we have
 \begin{equation*}
 \lim_{x \to x_0} Q(x) =
 \lim_{x \to x_0} 
@@ -1552,7 +1556,7 @@ As $g(y)$ is continuous at $y_0$,
 the composition $Q\bigl(g(y)\bigr) = \frac{g(y)-g(y_0)}{y-y_0}$
 is continuous at $y_0$ by
 \propref{prop:compositioncont}.
-Therefore
+Therefore,
 \begin{equation*}
 \frac{1}{f'\bigl(g(y_0)\bigr)}
 = Q\bigl(g(y_0)\bigr)
