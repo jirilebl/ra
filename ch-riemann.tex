@@ -1535,7 +1535,7 @@ approximating area under the curve.\label{fig:fundthmfig}}
 \end{myfigureht}
 
 Using the notation from the definition of the integral, we have
-$m_i \leq f(c_i) \leq M_i$ and so
+$m_i \leq f(c_i) \leq M_i$, and so
 \begin{equation*}
 m_i \Delta x_i \leq F(x_i) - F(x_{i-1}) \leq M_i \Delta x_i .
 \end{equation*}
@@ -1692,7 +1692,7 @@ in closed-form are not really such.  We define
 the natural logarithm as the antiderivative of $\nicefrac{1}{x}$
 such that $\ln 1 = 0$:
 \begin{equation*}
-\ln x := \int_1^x \nicefrac{1}{s}~ds .
+\ln x := \int_1^x \frac{1}{s}~ds .
 \end{equation*}
 So for example, how does a computer find
 the value of $\ln x$?  One way to do it is to numerically approximate this integral.
@@ -1721,7 +1721,8 @@ numerically approximate the integral.
 \subsection{Change of variables}
 
 A theorem often used in calculus to solve integrals is the change of
-variables theorem.  Let us prove it now.  Recall 
+variables theorem, you may have called it \emph{$u$-substitution}.
+Let us prove it now.  Recall 
 a function is continuously differentiable if
 it is differentiable and the derivative is continuous.
 
@@ -1729,7 +1730,7 @@ it is differentiable and the derivative is continuous.
 \index{change of variables theorem}
 Let $g \colon [a,b] \to \R$ be a continuously differentiable function,
 let $f \colon [c,d] \to \R$ be continuous, and suppose
-$g([a,b]) \subset [c,d]$.  Then
+$g\bigl([a,b]\bigr) \subset [c,d]$.  Then
 \begin{equation*}
 \int_a^b f\bigl(g(x)\bigr)\, g'(x)~ dx =
 \int_{g(a)}^{g(b)} f(s)~ ds .
@@ -1806,7 +1807,7 @@ Suppose we write down
 \int_{-1}^{1} \frac{\ln \abs{x}}{x} ~dx .
 \end{equation*}
 It may be tempting to take $g(x) := \ln \abs{x}$.  Then take $g'(x) =
-\frac{1}{x}$ and try to write
+\nicefrac{1}{x}$ and try to write
 \begin{equation*}
 \int_{g(-1)}^{g(1)} s ~ds = 
 \int_{0}^{0} s ~ds = 0. 
@@ -2474,7 +2475,7 @@ for any $x > 0$.
 requires the optional \sectionref{sec:limitatinf})}
 
 Often it is necessary to integrate over the
-entire real line, or a unbounded interval of the form $[a,\infty)$ or
+entire real line, or an unbounded interval of the form $[a,\infty)$ or
 $(-\infty,b]$.  We may also wish to integrate unbounded functions
 defined on a open bounded interval $(a,b)$.
 For such intervals or functions, the Riemann integral is not defined,
@@ -2533,12 +2534,14 @@ converges to $\frac{1}{1-p}$ if $0 < p < 1$ and diverges if $p \geq 1$.
 \end{prop}
 
 \begin{proof}
-The proof follows by application of the fundamental theorem of calculus.
+The proof follows by application of the
+\hyperref[thm:FTCv1]{fundamental theorem of calculus}.
 Let us do the proof for $p > 1$ for the infinite right endpoint and
 leave the rest to the reader.  Hint: You should handle $p=1$
 separately.
 
 Suppose $p > 1$.  Then
+using the fundamental theorem,
 \begin{equation*}
 \int_1^b \frac{1}{x^p} ~dx
 =
@@ -2685,20 +2688,20 @@ $-g(x) \leq f(x) \leq g(x)$, and so
 In other words, $\abs{\int_b^c f} \leq \int_b^c g$.
 
 Let $\epsilon > 0$ be given.  Because
-of \propref{impropriemann:tail} we have
+of \propref{impropriemann:tail},
 \begin{equation*}
 \int_a^\infty g =
 \int_a^b g +
 \int_b^\infty g .
 \end{equation*}
 As $\int_a^b g$ goes to
-$\int_a^\infty g$ as $b$ goes to infinity, then
+$\int_a^\infty g$ as $b$ goes to infinity,
 $\int_b^\infty g$ goes to 0 as $b$ goes to infinity.  Choose $B$
 such that
 \begin{equation*}
 \int_B^\infty g < \epsilon .
 \end{equation*}
-As $g$ is nonnegative, then if $B \leq b < c$, then
+As $g$ is nonnegative, if $B \leq b < c$, then
 $\int_b^c g < \epsilon$ as well.
 Let $\{ x_n \}$ be a sequence going to infinity.  Let $M$ be such that
 $x_n \geq B$ for all $n \geq M$.  Take $n, m \geq M$,
@@ -2751,7 +2754,7 @@ The improper integral
 \end{equation*}
 converges.
 
-Proof:  First observe we simply need to show
+Proof:  Observe we simply need to show
 that the integral converges when going from 1 to infinity.
 For $x \geq 1$ we obtain
 \begin{equation*}
@@ -2778,11 +2781,11 @@ integral converges.
 \begin{example}
 You should be careful when doing formal manipulations with improper
 integrals.
-For example,
+The integral
 \begin{equation*}
 \int_2^\infty \frac{2}{x^2-1}~dx
 \end{equation*}
-converges via the comparison test again using $\frac{1}{x^2}$.  However, if you
+converges via the comparison test using $\nicefrac{1}{x^2}$ again.  However, if you
 succumb to the temptation to write
 \begin{equation*}
 \frac{2}{x^2-1} = 
@@ -2813,12 +2816,12 @@ integral in two; you cannot split the limit.
 \end{split}
 \end{equation*}
 The last line in the computation does not even make sense.  Both of the
-integrals there diverge to infinity since we can
+integrals there diverge to infinity, since we can
 apply the comparison test appropriately with
 $\nicefrac{1}{x}$.  We get $\infty - \infty$.
 \end{example}
 
-Now let us suppose that we need to take limits at both endpoints.
+Now suppose we need to take limits at both endpoints.
 
 \begin{defn}
 Suppose $f \colon (a,b) \to \R$ is a function
