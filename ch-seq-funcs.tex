@@ -1449,8 +1449,9 @@ theorem%
 (1856--1941).}
 on existence and uniqueness of a solution to an ordinary differential equation.
 Both the statement and the proof are beautiful examples of what one can do
-with all we have learned.  It is also a good example of how analysis is
-applied as differential equations are indispensable in science.
+with the material we mastered so far.  It is also a good example of how analysis is
+applied as differential equations are indispensable in science of every
+stripe.
 
 \subsection{First order ordinary differential equation}
 
@@ -1463,7 +1464,8 @@ the so-called \emph{\myindex{first order ordinary differential equation}}
 \begin{equation*}
 y' = F(x,y) .
 \end{equation*}
-Generally we also specify $y(x_0)=y_0$.  The solution of
+Generally we also specify an \emph{\myindex{initial condition}}
+$y(x_0)=y_0$.  The solution of
 the equation is a function $y(x)$ such that 
 $y(x_0)=y_0$ and $y'(x) = F\bigl(x,y(x)\bigr)$.
 
@@ -1836,9 +1838,9 @@ we are able to use $h < 1$, but never a larger $h$.
 The function that takes $y$ to $y^2$ is
 not Lipschitz as a function on all of $\R$.
 As we approach $x=1$ from the left, the solution becomes larger
-and larger.  The derivative of the solution grows as $y^2$, and therefore
+and larger.  The derivative of the solution grows as $y^2$, and so
 the $L$ required has to be larger and larger as $y_0$ grows.
-Thus if we apply the
+If we apply the
 theorem with $x_0$ close to 1 and $y_0 = \frac{1}{1-x_0}$ we find
 that the $h$ that the proof guarantees is smaller and smaller as $x_0$
 approaches 1.
@@ -1873,16 +1875,20 @@ A solution exists, but is not unique.
 \begin{example}
 Consider $y' = \varphi(x)$ where $\varphi(x) := 0$ if $x \in \Q$ and
 $\varphi(x):=1$ if $x
-\not\in \Q$.  The equation has no solution regardless of the initial
+\not\in \Q$.  In other words, the $F(x,y) = \varphi(x)$ is discontinuous.
+The equation has no solution regardless of the initial
 conditions.
 A solution would have
 derivative $\varphi$, but $\varphi$ does not have the intermediate value property
 at any point (why?).  No solution exists by
 \hyperref[thm:darboux]{Darboux's theorem}.
-Thus to obtain existence of a solution, some sort of
-continuity hypothesis on
-$F$ is necessary.
 \end{example}
+
+The examples show that without the Lipschitz condition, a solution might
+exist but not be a unique, and without continuity of $F$, we may not
+have a solution at all.
+It is in fact a theorem, the Peano existence theorem, that if $F$ is
+continuous a solution exists (but may not be unique).
 
 \begin{remark}
 It is possible to weaken what we mean by \myquote{solution to $y' = F(x,y)$}
