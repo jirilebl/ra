@@ -156,8 +156,8 @@ notation for points: $x =(x_1,x_2,\ldots,x_n) \in \R^n$.  We will not write
 $\vec{x}$ nor $\mathbf{x}$ for a vector, we simply give it a name such as
 $x$ and we will remember that $x$ is a vector.
 We also
-simply write $0 \in \R^n$ to mean the point $(0,0,\ldots,0)$.  Before
-making $\R^n$ a metric space, let us prove an important inequality, the
+write simply $0 \in \R^n$ to mean the point $(0,0,\ldots,0)$.  Before
+making $\R^n$ a metric space, we prove an important inequality, the
 so-called Cauchy--Schwarz inequality.
 
 \begin{lemma}[\myindex{Cauchy--Schwarz inequality}%
@@ -230,8 +230,9 @@ d(x,y) :=
 {(x_j-y_j)}^2 
 } .
 \end{equation*}
-For $n=1$, the real line, this metric agrees with what we did above.  Again,
-the only tricky part of the definition to check is the triangle inequality.
+For $n=1$, the real line, this metric agrees with what we did above.
+For $n > 1$,
+the only tricky part of the definition to check, as before, is the triangle inequality.
 It is less messy to work with the square of the metric.  In the
 following estimate, note the use of the Cauchy--Schwarz inequality.
 \begin{equation*}
@@ -292,8 +293,9 @@ following estimate, note the use of the Cauchy--Schwarz inequality.
 {\bigl( d(x,y) + d(y,z) \bigr)}^2 .
 \end{split}
 \end{equation*}
-Taking the square root of both sides we obtain the correct inequality,
-because the square root is an increasing function.
+Because the square root is an increasing function, the
+inequality is preserved when we 
+take the square root of both sides, and we obtain the triangle inequality.
 \end{example}
 
 \begin{example}
@@ -332,7 +334,8 @@ d(x,y) :=
 \end{equation*}
 That is, all points are equally distant from each other.  When $X$ is a
 finite set, we can draw a diagram, see for example
-\figureref{fig:msdiscmetric}.
+\figureref{fig:msdiscmetric}.  Of course, in the diagram the distances 
+are not the normal euclidean distances in the plane.
 Things become subtle when $X$ is an infinite set such
 as the real numbers.
 \begin{myfigureht}
@@ -386,7 +389,7 @@ This example may seem esoteric at first, but it turns out that working with
 spaces such as $C([a,b],\R)$ is really the meat of a large part of modern 
 analysis.  Treating sets of functions as metric spaces allows us to
 abstract away a lot of the grubby detail and prove powerful results such as
-Picard's theorem with less work.
+\hyperref[thm:fs:picard]{Picard's theorem} with less work.
 \end{example}
 
 \begin{example}
@@ -415,9 +418,9 @@ sphere.\label{fig:spheremetric}}
 This distance is the shortest distance between points on a sphere if
 we are allowed to travel on the sphere only.  It is easy to
 generalize to arbitrary diameters.  If we take a sphere of radius
-$r$, you simply take $r \theta$ to find the distance.  This is then the
-standard distance you would use if you for example compute a distance on the
-surface of the earth, for example if computing the distance a plane travels from London to
+$r$, we let the distance be $d(x,y) := r \theta$.  As an example, this is the
+standard distance you would use if you compute a distance on the
+surface of the earth, such as computing the distance a plane travels from London to
 Los Angeles.
 \end{example}
 
@@ -470,14 +473,14 @@ discrete metric is bounded.
 
 There are other equivalent ways we could generalize boundedness,
 and are left as exercises.  Suppose $X$ is nonempty to avoid a technicality.
-Then $S \subset X$ is bounded if and only if
+Then $S \subset X$ being bounded is equivalent to either
 \begin{enumerate}[(i)]
 \item
-for every $p \in X$, there exists a $B > 0$ such that $d(p,x) \leq B$ for
+For every $p \in X$, there exists a $B > 0$ such that $d(p,x) \leq B$ for
 all $x \in S$.
-\item 
-\glsadd{not:diam}
-$\operatorname{diam}(S) := \sup \{ d(x,y) : x,y \in S \} < \infty$.
+\item
+\glsadd{not:diam}%
+$\operatorname{diam}(S) := \sup \bigl\{ d(x,y) : x,y \in S \bigr\} < \infty$.
 \end{enumerate}
 The quantity $\operatorname{diam}(S)$ is called the
 \emph{\myindex{diameter}} of a set and is usually only defined for
@@ -599,7 +602,7 @@ $\operatorname{diam}(S) := \sup \{ d(x,y) : x,y \in S \} < \infty$.
 Working in $\R$, compute $\operatorname{diam}\bigl([a,b]\bigr)$.
 \item
 Working in $\R^n$, for any $r > 0$, let $B_r := \{ x_1^2+x_2^2+\cdots+x_n^2
-< r^2 \}$.  Compute $\operatorname{diam}\bigl(B_r\bigr)$.
+< r^2 \}$.  Compute $\operatorname{diam}(B_r)$.
 \item
 Suppose $(X,d)$ is a metric space with at least two points,
 $d$ is the discrete metric, and $p \in X$.
@@ -673,22 +676,22 @@ Before doing so,
 let us define two special sets.
 
 \begin{defn}
-Let $(X,d)$ be a metric space, $x \in X$ and $\delta > 0$.  Then define
-the \emph{\myindex{open ball}} or simply \emph{\myindex{ball}} of radius $\delta$
+Let $(X,d)$ be a metric space, $x \in X$, and $\delta > 0$.  Define
+the \emph{\myindex{open ball}}, or simply \emph{\myindex{ball}}, of radius $\delta$
 around $x$ as
 \glsadd{not:openball}
 \begin{equation*}
-B(x,\delta) := \{ y \in X : d(x,y) < \delta \} .
+B(x,\delta) := \bigl\{ y \in X : d(x,y) < \delta \bigr\} .
 \end{equation*}
-Similarly define the \emph{\myindex{closed ball}} as
+Define the \emph{\myindex{closed ball}} as
 \glsadd{not:closedball}
 \begin{equation*}
-C(x,\delta) := \{ y \in X : d(x,y) \leq \delta \} .
+C(x,\delta) := \bigl\{ y \in X : d(x,y) \leq \delta \bigr\} .
 \end{equation*}
 \end{defn}
 
-When we are dealing with different metric spaces, it is sometimes 
-convenient to emphasize which metric space the ball is in.  We do this by
+When dealing with different metric spaces, it is sometimes 
+vital to emphasize which metric space the ball is in.  We do this by
 writing $B_X(x,\delta) := B(x,\delta)$ or $C_X(x,\delta) := C(x,\delta)$.
 
 \begin{example}
@@ -701,12 +704,11 @@ C(x,\delta) = [x-\delta,x+\delta] .
 \end{example}
 
 \begin{example}
-Be careful when working on a subspace.  Suppose we take the
-metric space $[0,1]$ as a subspace of $\R$.  Then in $[0,1]$
-we get
+Be careful when working on a subspace.  Consider the
+metric space $[0,1]$ as a subspace of $\R$.  Then in $[0,1]$,
 \begin{equation*}
 B(0,\nicefrac{1}{2}) = B_{[0,1]}(0,\nicefrac{1}{2})
-= \{ y \in [0,1] : \abs{0-y} < \nicefrac{1}{2} \}
+= \bigl\{ y \in [0,1] : \abs{0-y} < \nicefrac{1}{2} \bigr\}
 = [0,\nicefrac{1}{2}) .
 \end{equation*}
 This is different from $B_{\R}(0,\nicefrac{1}{2}) =
@@ -839,8 +841,9 @@ is also closed.  That is, a finite union of closed sets is closed.
 \end{enumerate}
 \end{prop}
 
-We have not yet shown that the open ball is open and the closed ball is
-closed.  Let us show this fact now to justify the terminology.
+Despite the naming,
+we have not yet shown that the open ball is open and the closed ball is
+closed.  Let us show these facts now to justify the terminology.
 
 \begin{prop} \label{prop:topology:ballsopenclosed}
 Let $(X,d)$ be a metric space, $x \in X$, and $\delta > 0$.  Then
@@ -886,7 +889,7 @@ closed sets in the set of real numbers. %$\R$.
 
 \begin{prop} \label{prop:topology:subspaceopen}
 Suppose $(X,d)$ is a metric space, and $Y \subset X$.  Then $U \subset Y$
-is open in $Y$ (i.e., in the subspace topology), if and only if
+is open in $Y$ (in the subspace topology), if and only if
 there exists an open set $V \subset X$ (so open in $X$), such that
 $V \cap Y = U$.
 \end{prop}
