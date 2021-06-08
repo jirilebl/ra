@@ -133,7 +133,7 @@
     <xsl:value-of select="false()" />
   </xsl:template>
 
-  <xsl:param name="html.knowl.theorem" select="'no'"/>
+  <!--<xsl:param name="html.knowl.theorem" select="'no'"/>
   <xsl:param name="html.knowl.proof" select="'no'"/>
   <xsl:param name="html.knowl.definition" select="'no'"/>
   <xsl:param name="html.knowl.example" select="'no'"/>
@@ -143,13 +143,13 @@
   <xsl:param name="html.knowl.table" select="'no'"/>
   <xsl:param name="html.knowl.listing" select="'no'"/>
   <xsl:param name="html.knowl.exercise.inline" select="'no'"/>
-  <xsl:param name="html.knowl.exercise.sectional" select="'no'"/>
+  <xsl:param name="html.knowl.exercise.sectional" select="'no'"/>-->
 
   <xsl:param name="debug.datedfiles" select="'no'"/>
 
   <xsl:param name="html.css.extra" select="'extra.css'"/>
 
   <!--<xsl:param name="publisher" select="'./realanal-publisher.xml'"/>-->
-  <xsl:param name="html.google-search" select="'006490116505509195242:bj7la1eakgo'"/>
+  <!--<xsl:param name="html.google-search" select="'006490116505509195242:bj7la1eakgo'"/>-->
 
 </xsl:stylesheet>

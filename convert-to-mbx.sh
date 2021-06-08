@@ -3,7 +3,7 @@ echo Conversion to HTML through PreTeXt.  It is still beta quality and work in
 echo progress.  The realanal-html.xsl assumes a fixed location for the PreTeXt
 echo xsl file.  You need to edit this first.
 echo Do ^C to get out.
-echo 
+echo
 echo You should first run with --runpdft --optimize-svg which
 echo runs the pdft figures and then also optimizes svgs.  Without
 echo --runpdft some figures will be missing.  You can also use --full
@@ -89,15 +89,15 @@ perl convert-to-mbx.pl
 
 #xmllint --format -o realanal-out2.xml realanal-out.xml
 
-#if [ "$OPTSVG" = "yes" ] ; then
-#	echo
-#	echo OPTIMIZING SVG...
-#	echo
-#
-#	cd figures
-#	./optimize-svgs.sh
-#	cd ..
-#fi
+if [ "$OPTSVG" = "yes" ] ; then
+	echo
+	echo OPTIMIZING SVG...
+	echo
+
+	cd figures
+	./optimize-svgs.sh
+	cd ..
+fi
 
 echo
 echo MOVING OLD html, CREATING NEW html, COPYING figures/ in there
@@ -116,7 +116,7 @@ echo
 echo RUNNING xsltproc
 echo
 
-xsltproc ../realanal-html.xsl ../realanal-out.xml
+xsltproc -stringparam publisher realanal-publisher.xml ../realanal-html.xsl ../realanal-out.xml
 
 echo
 echo FIXING UP HTML ...

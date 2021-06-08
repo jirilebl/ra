@@ -1306,15 +1306,16 @@ while(1)
 		if ($title ne "") {
 			print $out "<title>$title</title>\n";
 		}
-		if ($footnote ne "") {
-			print $out "$footnote\n";
-		}
 		if ($indexo ne "") {
 			print $out "$indexo\n";
 		}
 		print $out "<statement>\n";
 
 		open_paragraph();
+
+		if ($footnote ne "") {
+			print $out "$footnote\n";
+		}
 
 	} elsif ($para =~ s/^\\end\{(thm|lemma|prop|cor|defn)\}[ \n]*//) {
 		close_paragraph();
