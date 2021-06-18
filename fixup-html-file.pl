@@ -77,7 +77,9 @@ while($line = <STDIN>)
 		print "</span>\n";
 	}
 	$line =~ s/>Authored in PreTeXt</>Created with PreTeXt</;
-	$line =~ s/tex-chtml[.]js/tex-svg.js/;
+	
+	# In case chtml is broken again
+	#$line =~ s/tex-chtml[.]js/tex-svg.js/;
 
 	#print line
 	print $line;
