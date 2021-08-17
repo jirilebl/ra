@@ -414,7 +414,7 @@ A \setminus B := \{ x : x \in A \text{ and } x \notin B \} .
 We say
 \emph{\myindex{complement}} of $B$ and write $B^c$ \glsadd{not:complement}
 instead of $A \setminus B$ if
-the set $A$ is either the entire universe or is the obvious
+the set $A$ is either the entire universe or if it is the obvious
 set containing $B$, and is understood from context.
 \item
 We say sets $A$ and $B$ are \emph{\myindex{disjoint}} if $A \cap B =
@@ -596,7 +596,7 @@ Then $P(n)$ is true for all $n \in \N$.
 \end{thm}
 
 \begin{proof}
-Suppose $S$ is the set of natural numbers $m$ for which $P(m)$ is
+Let $S$ be the set of natural numbers $m$ for which $P(m)$ is
 not true.  Suppose
 $S$ is nonempty.  Then $S$ has a least element by the well ordering
 property.  Let us call $m$ the least element of $S$.  We know $1 \notin
@@ -634,7 +634,7 @@ $2(n!) \leq (n+1)(n!) = (n+1)!$.  That is,
 \end{equation*}
 and hence $P(n+1)$ is true.  By the principle of induction,
 $P(n)$
-is true for all $n$, and hence
+is true for all $n \in \N$.  In other words,
 $2^{n-1} \leq n!$ is true for all $n \in \N$.
 \end{example}
 
@@ -726,13 +726,14 @@ the function itself.
 The set $A$ is called the \emph{\myindex{domain}} of $f$ (and
 sometimes confusingly denoted $D(f)$).  The set
 \begin{equation*}
-R(f) := \{ y \in B : \text{there exists an } x \text{ such that }
+R(f) := \{ y \in B : \text{there exists an } x \in A \text{ such that }
 f(x)=y \}
 \end{equation*}
 is called the \emph{\myindex{range}} of $f$.
+The set $B$ is called the \emph{\myindex{codomain}} of $f$.
 \end{defn}
 
-It is possible that the range $R(f)$ is a proper subset of $B$,
+It is possible that the range $R(f)$ is a proper subset of the codomain $B$,
 while the domain of $f$ is always equal to $A$.  We generally 
 assume that the domain of $f$ is nonempty.
 
@@ -748,20 +749,22 @@ number $\int_0^1 g(x) ~dx$.
 \end{example}
 
 \begin{defn}
-Consider a function $f \colon A \to B$ and $C \subset A$.  Define
-the \emph{\myindex{image}} (or \emph{\myindex{direct image}}) of $C$ as
+Consider a function $f \colon A \to B$.  Define
+the \emph{\myindex{image}} (or \emph{\myindex{direct image}}) of a subset
+$C \subset A$ as
 \glsadd{not:dirimage}
 \begin{equation*}
 f(C) := \bigl\{ f(x) \in B : x \in C \bigr\} .
 \end{equation*}
-Let $D \subset B$.  Define the \emph{\myindex{inverse image}} of $D$ as
+Define the \emph{\myindex{inverse image}} of a subset $D
+\subset B$ as
 \glsadd{not:invimage}
 \begin{equation*}
 f^{-1}(D) := \bigl\{ x \in A : f(x) \in D \bigr\} .
 \end{equation*}
 \end{defn}
 
-Notice in particular that $R(f) = f(A)$, the range is the direct image of
+In particular, $R(f) = f(A)$, the range is the direct image of
 the domain $A$.
 
 \begin{myfigureht}
@@ -793,9 +796,9 @@ Read the last line of the proposition as
 $f^{-1}( B \setminus C) = A \setminus f^{-1} (C)$.
 
 \begin{proof}
-Let us start with the union.  Suppose $x \in 
-f^{-1}( C \cup D)$, meaning that
-$x$ is taken to $C$ or $D$.  Thus
+We start with the union.  If $x \in 
+f^{-1}( C \cup D)$, then 
+$x$ is taken to $C$ or $D$, that is, $f(x) \in C$ or $f(x) \in D$.  Thus
 $f^{-1}( C \cup D) \subset f^{-1} (C) \cup f^{-1} (D)$.  Conversely
 if $x \in f^{-1}(C)$, then $x \in f^{-1}(C \cup D)$.  Similarly for
 $x \in f^{-1}(D)$.  Hence
@@ -1073,13 +1076,19 @@ Define a bijection with $\N$ by letting 1 go to $(1,1)$,
 
 \begin{example}
 The set of rational numbers is countable.  Proof: (informal)
-Follow the same procedure
+For positive rational numbers follow the same procedure
 as in the previous example, writing
 $\nicefrac{1}{1}$, $\nicefrac{1}{2}$, $\nicefrac{2}{1}$, etc.  However,
 leave out any fraction (such as $\nicefrac{2}{2}$)
 that has already appeared.  So the list would continue:
 $\nicefrac{1}{3}$, $\nicefrac{3}{1}$, $\nicefrac{1}{4}$,
 $\nicefrac{2}{3}$, etc.
+For all rational numbers include $0$ and the negative numbers:
+$0$,
+$\nicefrac{1}{1}$,
+$\nicefrac{-1}{1}$,
+$\nicefrac{1}{2}$,
+$\nicefrac{-1}{2}$, etc.
 \end{example}
 
 For completeness, we mention the following statements
