@@ -600,7 +600,7 @@ Let $S$ be the set of natural numbers $m$ for which $P(m)$ is
 not true.  Suppose
 $S$ is nonempty.  Then $S$ has a least element by the well ordering
 property.  Let us call $m$ the least element of $S$.  We know $1 \notin
-S$ by assumption.  So $m > 1$ and $m-1$ is a natural number as well.
+S$ by hypothesis.  So $m > 1$ and $m-1$ is a natural number as well.
 Since $m$ is the least element of $S$, we know that $P(m-1)$ is true.
 But by the induction step we see that $P(m-1+1) = P(m)$ is true, 
 contradicting the statement that $m \in S$.  Therefore, $S$ is empty and 
@@ -710,16 +710,20 @@ A \times B :=
 \end{equation*}
 \end{defn}
 
-For instance, the set $[0,1] \times [0,1]$ is a set in the plane
-bounded by a square with vertices $(0,0)$, $(0,1)$, $(1,0)$, and $(1,1)$.
+For instance, $\{ a,b \} \times \{ c , d\} =
+\bigl\{
+(a,c), (a,d), (b,c), (b,d)
+\bigr\}$.
+A more complicated example is the set $[0,1] \times [0,1]$: a subset of the
+plane bounded by a square with vertices $(0,0)$, $(0,1)$, $(1,0)$, and $(1,1)$.
 When $A$ and $B$ are the same set we sometimes use a superscript 2 to denote
 such a product.  For example, $[0,1]^2 = 
 [0,1] \times [0,1]$ or $\R^2 = \R \times \R$ (the Cartesian plane).
 
 \begin{defn}
 A \emph{function} $f \colon A \to B$ is a subset $f$ of $A \times B$
-such that for each $x \in A$, there is a unique $(x,y) \in f$.  We then
-write $f(x) = y$.  Sometimes
+such that for each $x \in A$, there exists a unique $y \in B$ for which $(x,y) \in f$.
+We write $f(x) = y$.  Sometimes
 the set $f$ is called the \emph{\myindex{graph}} of the function rather than
 the function itself.
 
