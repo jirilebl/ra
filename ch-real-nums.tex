@@ -80,6 +80,13 @@ When a set $E$ is both bounded above and bounded below, we say simply that
 $E$ is \emph{bounded}\index{bounded set}.
 \end{defn}
 
+The notation $\sup E$ and $\inf E$ is justified as
+the
+supremum (or infimum) is unique (if it exists): If $b$ and
+$b'$ are suprema of $E$, then $b \leq b'$ and $b' \leq b$, because both
+$b$ and $b'$ are the least upper bounds, so $b=b'$.
+
+
 \begin{myfigureht}
 \subimport*{figures/}{lub.pdf_t}
 \caption{A set $E$ bounded above and the least upper bound of $E$.\label{fig:lub}}
@@ -90,11 +97,7 @@ Let $S := \{ a, b, c, d, e \}$ be ordered as $a < b < c < d < e$, and
 let $E := \{ a, c \}$.  Then $c$, $d$, and $e$ are upper bounds of $E$, and
 $c$ is the least upper bound or supremum of $E$.
 
-Supremum (or infimum) is automatically unique (if it exists): If $b$ and
-$b'$ are suprema of $E$, then $b \leq b'$ and $b' \leq b$, because both
-$b$ and $b'$ are the least upper bounds, so $b=b'$.
-
-A supremum or infimum for $E$ (even if they exist) need not be
+A supremum or infimum for $E$ (even if it exists) need not be
 in $E$.  For example, the set $E := \{ x \in \Q : x < 1 \}$ has a least upper
 bound of 1, but 1 is not in the set $E$ itself.
 The set 
@@ -1548,66 +1551,72 @@ claim here.
 $\R$ is uncountable.
 \end{thm}
 
-We give a modified version of
+We give a version of
 Cantor's original proof from
 1874 as this proof requires the least setup.  Normally this proof is stated
-as a contradiction proof, but a proof by contrapositive is easier to
+as a contradiction, but a proof by contrapositive is easier to
 understand.
 
 \begin{proof}
 Let $X \subset \R$ be a countably infinite
 subset such that for any two real numbers
 $a < b$, there is an $x \in X$ such that $a < x < b$.  Were $\R$ countable,
-then we could take $X = \R$.  If we show that $X$ is necessarily
-a proper subset, then $X$ cannot equal $\R$, and $\R$ must be
+then we could take $X = \R$.  We will show that $X$ is necessarily
+a proper subset, and so $X$ cannot equal $\R$, and $\R$ must be
 uncountable.
 
 As $X$ is countably infinite, 
-there is a bijection from $\N$ to $X$.  Consequently, we write $X$ as
+there is a bijection from $\N$ to $X$.  We write $X$ as
 a sequence of real numbers $x_1, x_2, x_3,\ldots$, such that
 each number in $X$
 is given by $x_j$ for some $j \in \N$.
 
-Let us inductively
+We inductively
 construct two sequences of real numbers $a_1,a_2,a_3,\ldots$ and
 $b_1,b_2,b_3,\ldots$.  Let
-$a_1 := x_1$ and $b_1 := x_1+1$.  Note that $a_1 < b_1$ and
+$a_1 := x_1$ and $b_1 := x_1+1$.
+Note that $a_1 < b_1$ and
 $x_1 \notin (a_1,b_1)$.
-For $k > 1$, suppose $a_{k-1}$ and $b_{k-1}$ have been defined.
-Let us also suppose $(a_{k-1},b_{k-1})$ does not contain any $x_j$
-for any $j=1,\ldots,k-1$.
+For some $k > 1$,
+suppose $a_{j}$ and $b_{j}$ have been defined
+for $j=1,2,\ldots,k-1$,
+they are such that
+the open interval $(a_{j},b_{j})$ does not contain any $x_\ell$
+for any $\ell=1,2,\ldots,j$, and
+$a_1 < a_2 < \cdots < a_{k-1} < b_{k-1} < \cdots < b_2 < b_1$.
 \begin{enumerate}[(i)]
 \item Define $a_k := x_j$, where $j$ is the smallest $j \in \N$
 such that $x_j \in (a_{k-1},b_{k-1})$.  Such an $x_j$ exists by our
-assumption on $X$.  
-\item Next, define $b_k := x_j$ where $j$ is the smallest $j \in \N$
-such that $x_j \in (a_{k},b_{k-1})$.
+assumption on $X$, and $j \geq k$ by the assumption on $(a_{k-1},b_{k-1})$.
+\item Next, define $b_k := x_j$, where $j$ is the smallest $j \in \N$
+such that $x_j \in (a_{k},b_{k-1})$.  Again, $j \geq k$.
 \end{enumerate}
 Notice that $a_k < b_k$ and $a_{k-1} < a_k < b_k < b_{k-1}$.
 Also notice that $(a_{k},b_{k})$ does not contain $x_k$ and hence
-does not contain any $x_j$ for $j=1,\ldots,k$.
+does not contain any $x_j$ for $j=1,2,\ldots,k$.
+The two sequences are now defined.
 
-Claim: \emph{$a_j < b_k$ for all $j$ and $k$ in $\N$.}  Let us first
-assume $j < k$.  Then $a_j < a_{j+1} < \cdots < a_{k-1} < a_k < b_k$.
-Similarly for $j > k$.  The claim follows.
+Claim: \emph{$a_n < b_m$ for all $n$ and $m$ in $\N$.}  Let us first
+assume $n < m$.  Then $a_n < a_{n+1} < \cdots < a_{m-1} < a_m < b_m$.
+Similarly for $n > m$.  The claim follows.
 
-Let $A = \{ a_j : j \in \N \}$ and $B = \{ b_j : j \in \N \}$.
+Let $A := \{ a_n : n \in \N \}$ and $B := \{ b_n : n \in \N \}$.
 By \propref{infsupineq:prop} and the claim above we have
 \begin{equation*}
 \sup\, A \leq \inf\, B .
 \end{equation*}
-Define $y := \sup\, A$.  The number $y$ cannot be a member of $A$.  If $y = a_j$
-for some $j$, then $y < a_{j+1}$, which is impossible.
+Define $y := \sup\, A$.  The number $y$ cannot be a member of $A$.  If $y = a_n$
+for some $n$, then $y < a_{n+1}$, which is impossible.
 Similarly, $y$ cannot be a member of $B$.  Therefore,
-$a_j < y$ for all $j\in \N$
-and $y < b_j$ for all $j\in \N$.
-In other words $y \in (a_j,b_j)$ for all $j\in \N$.
+$a_n < y$ for all $n\in \N$
+and $y < b_n$ for all $n\in \N$.
+In other words, $y \in (a_n,b_n)$ for all $n\in \N$.
+By the construction of the sequence, we have that $x_n \not\in (a_n,b_n)$,
+and so $y \not= x_n$.  As this was true for all $n \in \N$, we have that $y
+\not\in X$.
 
-Finally, we must show that $y \notin X$.  If we do so, then we will have
-constructed a real number not in $X$ showing that $X$ must have been a
-proper subset.  Take any $x_k \in X$.  By the construction above
-$x_k \notin (a_k,b_k)$, so $x_k \not= y$ as $y \in (a_k,b_k)$.
-
+Thus we have constructed a real number $y$ that is not in $X$, and thus $X$
+is a proper subset of $\R$.
 Therefore, the sequence $x_1,x_2,\ldots$ cannot contain all elements of $\R$
 and thus $\R$ is uncountable.
 \end{proof}
