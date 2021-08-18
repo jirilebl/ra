@@ -3,7 +3,41 @@ HTML/PreTeXt:
 * Check everything.
 * https://pretextbook.org/doc/guide/html/processing-directory-management.html
 
-Possibilities in the long term (possibly next possibly other edition):
+Strong contenders for next edition:
+
+* Vol I: uniqueness of least upper bound should be a proposition.
+
+* Change notation for uniform norm, perhaps $||f||_K$ if max is over
+  $K$?  That would mesh well with the other books.  It very slightly
+  conflicts with the alternative notation for euclidean norm $||x||_{\R^n}$
+  in chapter 8, perhaps that's not an issue.
+
+* Move to palatino to reduce line length and improve readability.
+  Currently it is a bit too long for readability.  It seems like it wouldn't
+  actually add too many pages to push it down by increasing left/right margins
+  to about 80-85 cpl.  newpx as in diffyqs pushes it down to 85-90.
+
+* Vol II: Explicitly add "mean value theorem" for functions of several
+  variables along a straight line, it has a nice useful statement.  Proof can
+  be left as exercise, should come around the definition of gradient.
+
+* Vol II: Add full proof of Green's.  Perhaps to best fit within the current
+  framework would be to cut the domain with a rectengular grid.  Under the
+  extra assumption that only finitely many points on the boundary have
+  horizontal or vertical tangents, a fine enough grid (cutting at all these
+  critical points and corners and perhaps at more points to get at most one
+  curve in each cell seems like it should make for an easy proof).
+
+* Vol II:  Expand on 11.5, make it more about maximum principle.  Proof of the
+  lemma 11.5 for analytic functions can still be left as an exercise.  Proof
+  of the maximum principle is also an exercise, but state both, and maybe
+  state one or two consequences of the principle other than fundamental
+  theorem of calculus.
+
+* Vol I: In 7.6, add an exercise for Picard with parameters, either
+  continuous or C^1 perhaps that could use 6.2
+
+MAYBEs (possibly next, possibly other edition, possibly never):
 
 * Vol I: Add another example for computing limits using the theorems to
   subsection 2.2.2?  Perhaps not needed, but might be good.
@@ -42,44 +76,11 @@ Possibilities in the long term (possibly next possibly other edition):
 
 * Add appendix to Vol I on construction of the reals.  Perhaps start
   with construction of $\Q$ and then finish with Dedekind cuts.
-
-For next edition:
-
-* Vol I: uniqueness of least upper bound should be a proposition.
+  This could also just be section 1.6?
 
 * Vol I: Perhaps change "Min-max theorem" to "Extreme value theorem"?
   Already give both names, perhaps drop the rather less standard Min-max
   completely?
-
-* Change notation for uniform norm, perhaps $||f||_K$ if max is over
-  $K$?  That would mesh well with the other books.  It very slightly
-  conflicts with the alternative notation for euclidean norm $||x||_{\R^n}$
-  in chapter 8, perhaps that's not an issue.
-
-* Move to palatino to reduce line length and improve readability.
-  Currently it is a bit too long for readability.  It seems like it wouldn't
-  actually add too many pages to push it down by increasing left/right margins
-  to about 80-85 cpl.  newpx as in diffyqs pushes it down to 85-90.
-
-* Vol II: Explicitly add "mean value theorem" for functions of several
-  variables along a straight line, it has a nice useful statement.  Proof can
-  be left as exercise, should come around the definition of gradient.
-
-* Vol II: Add full proof of Green's.  Perhaps to best fit within the current
-  framework would be to cut the domain with a rectengular grid.  Under the
-  extra assumption that only finitely many points on the boundary have
-  horizontal or vertical tangents, a fine enough grid (cutting at all these
-  critical points and corners and perhaps at more points to get at most one
-  curve in each cell seems like it should make for an easy proof).
-
-* Vol II:  Expand on 11.5, make it more about maximum principle.  Proof of the
-  lemma 11.5 for analytic functions can still be left as an exercise.  Proof
-  of the maximum principle is also an exercise, but state both, and maybe
-  state one or two consequences of the principle other than fundamental
-  theorem of calculus.
-
-* Vol I: In 7.6, add an exercise for Picard with parameters, either
-  continuous or C^1 perhaps that could use 6.2
 
 * Vol I:
 Suggestion from Arthur Busch for theorem 3.4.4:
@@ -96,17 +97,11 @@ One thing that Strichartz did that I liked (and wasn't in your book as far as I 
 * Mark better optional sections / subsections.  Perhaps "*" in subsection
   title, but then make sure it is really not required elsewhere.
 
-Not so necessary but nice to haves
-
-* Add appendix to Vol I on logic and formal proof writing similar to the Pitt
-  one
-
-MAYBEs:
-
 * Maybe mark examples that are used in the sequel somehow. (This may be a
   daunting task, and more imprecise than one imagines, as what does "use"
   mean: What if it is used in a later example that isn't used otherwise?
   What if it is used in an optional section?  What if it appears in an
   offhand remark?)
+
 * Maybe mark exercises whose proof is used in the text later.  Same issues
   as above.
