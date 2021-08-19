@@ -270,32 +270,32 @@ Note that \ref{prop:bordfield:iv} implies in particular that $1 > 0$.
 
 \begin{proof}
 Let us prove \ref{prop:bordfield:i}.  The inequality $x > 0$ implies by item
-\ref{defn:ordfield:i} of definition of ordered field that
-$x + (-x) > 0 + (-x)$.  Now apply the algebraic properties of fields to
+\ref{defn:ordfield:i} of definition of ordered fields that
+$x + (-x) > 0 + (-x)$.  Apply the algebraic properties of fields to
 obtain $0 > -x$.  The \myquote{vice versa} follows by similar calculation.
 
-For \ref{prop:bordfield:ii}, first notice that $y < z$ implies
-$0 < z - y$ by applying 
+For \ref{prop:bordfield:ii}, notice that $y < z$ implies
+$0 < z - y$ by
 item \ref{defn:ordfield:i} of the definition of ordered fields.  
-Now apply item 
+Apply item 
 \ref{defn:ordfield:ii} of the definition of ordered fields to obtain
-$0 < x(z-y)$.  By algebraic properties we get $0 < xz - xy$,
-and again applying item
-\ref{defn:ordfield:i} of the definition we obtain $xy < xz$.
+$0 < x(z-y)$.  By algebraic properties, $0 < xz - xy$.
+Again by item
+\ref{defn:ordfield:i} of the definition, $xy < xz$.
 
 Part \ref{prop:bordfield:iii} is left as an exercise.
 
-To prove part \ref{prop:bordfield:iv} first suppose $x > 0$.  Then
-by item 
-\ref{defn:ordfield:ii} of the definition of ordered fields we obtain
-that $x^2 > 0$ (use $y=x$).  If $x < 0$, we use 
-part \ref{prop:bordfield:iii} of this proposition.  Plug in $y=x$ and
+To prove part \ref{prop:bordfield:iv} first suppose $x > 0$.
+By item 
+\ref{defn:ordfield:ii} of the definition of ordered fields,
+$x^2 > 0$ (use $y=x$).  If $x < 0$, we use 
+part \ref{prop:bordfield:iii} of this proposition, where we plug in $y=x$ and
 $z=0$.
 
-Finally, to prove part \ref{prop:bordfield:v}, notice that
+To prove part \ref{prop:bordfield:v}, notice that
 $\nicefrac{1}{x}$ cannot be equal to zero (why?).
 Suppose $\nicefrac{1}{x} < 0$,
-then $\nicefrac{-1}{x} > 0$ by \ref{prop:bordfield:i}.  Then apply
+then $\nicefrac{-1}{x} > 0$ by \ref{prop:bordfield:i}.  Apply
 part \ref{prop:bordfield:ii} (as $x > 0$) to obtain
 $x(\nicefrac{-1}{x}) > 0x$ or $-1 > 0$, which contradicts $1 > 0$ by using part
 \ref{prop:bordfield:i} again.  Hence $\nicefrac{1}{x} > 0$.
@@ -312,22 +312,22 @@ exercises.
 
 The product of two positive numbers (elements of an ordered field) is positive.
 However, it is not true that if the product is positive, then each of the two
-factors must be positive.
+factors must be positive.  For instance, $(-1)(-1) = 1 > 0$.
 
 \begin{prop}
-Let $x,y \in F$ where $F$ is an ordered field.  Suppose 
-$xy > 0$.  Then either both $x$ and $y$ are positive, or both are negative.
+Let $x,y \in F$, where $F$ is an ordered field.  If
+$xy > 0$, then either both $x$ and $y$ are positive, or both are negative.
 \end{prop}
 
 \begin{proof}
-Clearly both of the conclusions can happen.  If either
-$x$ and $y$ are zero, then $xy$ is zero and hence not positive.
-Hence we assume that $x$ and $y$ are nonzero,
-and we simply need to show that if they have opposite signs, then
+If either
+$x$ or $y$ are zero, then $xy$ is zero and hence not positive.
+Hence assume that $x$ and $y$ are nonzero,
+and we show the contrapositive: If $x$ and $y$ have opposite signs, then
 $xy < 0$.
 Without loss of
 generality suppose $x > 0$ and $y < 0$.  Multiply $y < 0$ by $x$ to get
-$xy < 0x = 0$.  The result follows by contrapositive.
+$xy < 0x = 0$.
 \end{proof}
 
 \begin{example} \label{example:complexfield}
@@ -354,7 +354,7 @@ Then $\inf\, A$ exists.
 
 \begin{proof}
 Let $B := \{ -x : x \in A \}$. Let $b \in F$ be a lower bound for $A$:
-if $x \in A$, then $x \geq b$. In other words, $-x \leq -b$.  So $-b$
+If $x \in A$, then $x \geq b$. In other words, $-x \leq -b$.  So $-b$
 is an upper bound for $B$.
 Since $F$ has the least-upper-bound property, $c:=\sup\, B$ exists, and $c \leq -b$.
 As $y \leq c$
@@ -573,7 +573,7 @@ $r \in \R$ such that $r^2 = 2$.  We denote $r$ by $\sqrt{2}$.}
 
 \begin{proof}
 Take the set
-$A := \{ x \in \R : x^2 < 2 \}$.  We first show that it is bounded above and
+$A := \{ x \in \R : x^2 < 2 \}$.  We first show that $A$ is bounded above and
 nonempty.  The equation $x \geq 2$ implies $x^2 \geq 4$
 (see \exerciseref{exercise:squareineq}), so
 if $x^2 < 2$, then $x < 2$, and $A$ is bounded above.
