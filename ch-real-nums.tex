@@ -98,7 +98,7 @@ let $E := \{ a, c \}$.  Then $c$, $d$, and $e$ are upper bounds of $E$, and
 $c$ is the least upper bound or supremum of $E$.
 
 A supremum or infimum for $E$ (even if it exists) need not be
-in $E$.  For example, the set $E := \{ x \in \Q : x < 1 \}$ has a least upper
+in $E$.  The set $E := \{ x \in \Q : x < 1 \}$ has a least upper
 bound of 1, but 1 is not in the set $E$ itself.
 The set 
 $G := \{ x \in \Q : x \leq 1 \}$ also has an upper bound of 1,
@@ -404,8 +404,8 @@ that $b = \sup\, A$.
 \end{exercise}
 
 \begin{exercise}
-Let $S$ be an ordered set.  Let $A \subset S$ be a nonempty subset
-that is bounded above.
+Let $S$ be an ordered set.  Let $A \subset S$ be nonempty and
+bounded above.
 Suppose $\sup\, A$ exists and
 $\sup\, A \notin A$.
 Show that $A$ contains a countably infinite
@@ -843,8 +843,8 @@ often used elementary fact is left to the reader.
 A similar statement holds for infima.
 
 \begin{prop} \label{prop:existsxepsfromsup}
-If $S \subset \R$ is a nonempty set, bounded above,
-then for every $\epsilon > 0$ there exists $x \in S$ such
+If $S \subset \R$ is nonempty and bounded above,
+then for every $\epsilon > 0$ there exists an $x \in S$ such
 that $(\sup\, S) - \epsilon < x \leq \sup\, S$.
 \end{prop}
 
@@ -1097,7 +1097,7 @@ value as a proposition.
 \begin{prop} \label{prop:absbas}
 \leavevmode
 \begin{enumerate}[(i)]
-\item \label{prop:absbas:i} $\abs{x} \geq 0$, and $\abs{x}=0$ if and only if $x = 0$.
+\item \label{prop:absbas:i} $\abs{x} \geq 0$, moreover $\abs{x}=0$ if and only if $x = 0$.
 \item \label{prop:absbas:ii} $\abs{-x} = \abs{x}$ for all $x \in \R$.
 \item \label{prop:absbas:iii} $\abs{xy} = \abs{x}\abs{y}$ for all $x,y \in \R$.
 \item \label{prop:absbas:iv} $\abs{x}^2 = x^2$ for all $x \in \R$.
@@ -1108,7 +1108,7 @@ value as a proposition.
 
 \begin{proof}
 \ref{prop:absbas:i}:
-If $x \geq 0$, then $\abs{x} = x \geq 0$.  Also $\abs{x} = x = 0$ if and only
+If $x \geq 0$, then $\abs{x} = x \geq 0$.  Also, $\abs{x} = x = 0$ if and only
 if $x=0$.
 If $x < 0$, then $\abs{x} = -x > 0$, which is never zero.
 
