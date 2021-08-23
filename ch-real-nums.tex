@@ -320,11 +320,12 @@ $xy > 0$, then either both $x$ and $y$ are positive, or both are negative.
 \end{prop}
 
 \begin{proof}
+We show the contrapositive: If either one of $x$ or $y$ is zero, or
+if $x$ and $y$ have opposite signs, then $xy$ is not positive.
 If either
-$x$ or $y$ are zero, then $xy$ is zero and hence not positive.
-Hence assume that $x$ and $y$ are nonzero,
-and we show the contrapositive: If $x$ and $y$ have opposite signs, then
-$xy < 0$.
+$x$ or $y$ is zero, then $xy$ is zero and hence not positive.
+Hence assume that $x$ and $y$ are nonzero and have
+opposite signs.
 Without loss of
 generality suppose $x > 0$ and $y < 0$.  Multiply $y < 0$ by $x$ to get
 $xy < 0x = 0$.
@@ -606,7 +607,7 @@ Furthermore, we assume $h < 1$.
  & < 2-s^2 & & \quad \bigl(\text{since } h < \tfrac{2-s^2}{2s+1} \bigr) .
 \end{aligned}
 \end{equation*}
-Therefore, ${(s+h)}^2 < 2$.  Hence $s+h \in A$, but as $h > 0$
+Therefore, ${(s+h)}^2 < 2$.  Hence $s+h \in A$, but as $h > 0$,
 we have $s+h > s$.  So $s < r = \sup\, A$.  As $s$ was an arbitrary
 positive number such that $s^2 < 2$, it follows that $r^2 \geq 2$.
 
@@ -616,7 +617,7 @@ Now take a positive number $s$ such that
 $s^2 > 2$.  We wish to find an $h > 0$ such that
 ${(s-h)}^2 > 2$.
 As 
-$s^2-2 > 0$ we have $\frac{s^2-2}{2s} > 0$.
+$s^2-2 > 0$, we have $\frac{s^2-2}{2s} > 0$.
 Let $h := \frac{s^2-2}{2s}$.
 \begin{equation*}
 \begin{aligned}
@@ -731,7 +732,7 @@ In other words,
 \begin{equation*}
 m-1 \leq nx \qquad \text{or} \qquad m \leq nx+1 .
 \end{equation*}
-On the other hand
+On the other hand,
 from $n(y-x) > 1$ we obtain $ny > 1+nx$.
 Hence $ny > 1+nx \geq m$, and therefore $y > \nicefrac{m}{n}$.
 Putting everything together we obtain $x < \nicefrac{m}{n} < y$.
@@ -800,7 +801,7 @@ bound for $x+A$.  In particular, if $b = \sup\, A$, then
 \sup (x+A) \leq x+b = x+ \sup\, A .
 \end{equation*}
 
-The other direction is similar.  If $b$ is an upper bound for $x+A$,
+The opposite inequality is similar.  If $b$ is an upper bound for $x+A$,
 then $x+y \leq b$
 for all $y \in A$ and so $y \leq b-x$ for all $y \in A$.
 So $b-x$ is an upper bound for $A$.  If $b =
