@@ -622,8 +622,8 @@ Let $h := \frac{s^2-2}{2s}$.
 \begin{equation*}
 \begin{aligned}
 s^2 - {(s-h)}^2 & = 2sh - h^2 \\
- & < 2sh & & \quad \bigl( \text{since } h > 0 \text{ so } h^2 > 0 \bigr)  \\
- & \leq s^2-2 & & \quad \bigl( \text{since } h = \tfrac{s^2-2}{2s} \bigr) .
+ & < 2sh & & \quad \bigl( \text{since } h^2 > 0 \text{ as } h \not= 0 \bigr)  \\
+ & = s^2-2 & & \quad \bigl( \text{since } h = \tfrac{s^2-2}{2s} \bigr) .
 \end{aligned}
 \end{equation*}
 By subtracting $s^2$ from both sides and multiplying by $-1$, we find
@@ -648,7 +648,7 @@ $0 < r < s$ implies $r^2 < s^2$.  Hence $s = r$.
 The number $\sqrt{2} \notin \Q$.  The set
 $\R \setminus \Q$ is called the set of
 \emph{\myindex{irrational}} numbers.  We just saw that $\R \setminus \Q$
-is nonempty.  Not only is it nonempty, we will see later that is it very
+is nonempty.  Not only is it nonempty, we will see later that it is very
 large indeed.
 
 Using the same technique as above, we can show that a positive real
@@ -1098,7 +1098,7 @@ value as a proposition.
 \begin{prop} \label{prop:absbas}
 \leavevmode
 \begin{enumerate}[(i)]
-\item \label{prop:absbas:i} $\abs{x} \geq 0$, moreover $\abs{x}=0$ if and only if $x = 0$.
+\item \label{prop:absbas:i} $\abs{x} \geq 0$, moreover, $\abs{x}=0$ if and only if $x = 0$.
 \item \label{prop:absbas:ii} $\abs{-x} = \abs{x}$ for all $x \in \R$.
 \item \label{prop:absbas:iii} $\abs{xy} = \abs{x}\abs{y}$ for all $x,y \in \R$.
 \item \label{prop:absbas:iv} $\abs{x}^2 = x^2$ for all $x \in \R$.
@@ -1109,13 +1109,14 @@ value as a proposition.
 
 \begin{proof}
 \ref{prop:absbas:i}:
-If $x \geq 0$, then $\abs{x} = x \geq 0$.  Also, $\abs{x} = x = 0$ if and only
+First suppose $x \geq 0$.
+Then $\abs{x} = x \geq 0$.  Also, $\abs{x} = x = 0$ if and only
 if $x=0$.
-If $x < 0$, then $\abs{x} = -x > 0$, which is never zero.
+On the other hand, if $x < 0$, then $\abs{x} = -x > 0$, and $\abs{x}$ is never zero.
 
 \medskip
 
-\ref{prop:absbas:ii}: Suppose $x > 0$, then $\abs{-x} = -(-x) = x =
+\ref{prop:absbas:ii}: If $x > 0$, then $\abs{-x} = -(-x) = x =
 \abs{x}$.  Similarly when $x < 0$, or $x = 0$.
 
 \medskip
@@ -1159,19 +1160,19 @@ A property used frequently enough to give it a name is the so-called
 \emph{\myindex{triangle inequality}}.
 
 \begin{prop}[Triangle Inequality]
-$\abs{x+y} \leq \abs{x}+\abs{y}$
+$\sabs{x+y} \leq \sabs{x}+\sabs{y}$
 for all $x, y \in \R$.
 \end{prop}
 
 \begin{proof}
 \propref{prop:absbas} gives
-$- \abs{x} \leq x \leq \abs{x}$ and
-$- \abs{y} \leq y \leq \abs{y}$.  Add these two inequalities to obtain
+$- \sabs{x} \leq x \leq \sabs{x}$ and
+$- \sabs{y} \leq y \leq \sabs{y}$.  Add these two inequalities to obtain
 \begin{equation*}
-- (\abs{x}+\abs{y}) \leq x+y \leq \abs{x}+ \abs{y} .
+- \bigl(\sabs{x}+\sabs{y}\bigr) \leq x+y \leq \sabs{x}+ \sabs{y} .
 \end{equation*}
 Apply \propref{prop:absbas} again to find
-$\abs{x+y} \leq \abs{x}+\abs{y}$.
+$\sabs{x+y} \leq \sabs{x}+\sabs{y}$.
 \end{proof}
 
 There are other often applied versions of the triangle inequality.
