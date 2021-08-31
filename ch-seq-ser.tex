@@ -112,7 +112,7 @@ The definition above is one of the most important definitions in analysis,
 and it is necessary to understand it perfectly.  The key point in the
 definition is that given \emph{any} $\epsilon > 0$, we can find an $M$.  The
 $M$ can depend on $\epsilon$, so we only pick an $M$ once we know
-$\epsilon$.  Let us illustrate this concept on a few examples.
+$\epsilon$.  Let us illustrate convergence on a few examples.
 
 \begin{example}
 The constant sequence $1,1,1,1,\ldots$ is convergent and the limit is 1.  For
@@ -268,8 +268,9 @@ A sequence $\{ x_n \}$ is \emph{monotone decreasing}\index{monotone
 decreasing sequence} if $x_n \geq x_{n+1}$ for all $n \in \N$.  
 %
 If a sequence is either monotone increasing or monotone decreasing, we
-can simply say the sequence is \emph{monotone}\index{monotone sequence}.  Some
-authors also use the word \emph{monotonic}\index{monotonic sequence}.
+can simply say the sequence is \emph{monotone}\index{monotone
+sequence}.\footnote{Some
+authors use the word \emph{monotonic}\index{monotonic sequence}.}
 \end{defn}
 
 For example, $\{ \nicefrac{1}{n} \}$ is monotone decreasing,
@@ -299,10 +300,12 @@ If $\{ x_n \}$ is monotone decreasing and bounded, then
 \end{prop}
 
 \begin{proof}
-Let us suppose the sequence is monotone increasing.  Suppose 
-the sequence is bounded, so there exists a $B$
-such that $x_n \leq B$ for all $n$, that is the set
-$\{ x_n : n \in  \N \}$ is bounded above.  Let
+Consider a monotone increasing sequence $\{ x_n \}$.  Suppose 
+the sequence is bounded,
+that is,
+%so there exists a $B$
+%such that $x_n \leq B$ for all $n$, that is
+the set $\{ x_n : n \in  \N \}$ is bounded.  Let
 \begin{equation*}
 x := \sup \{ x_n : n \in \N \} .
 \end{equation*}
@@ -314,9 +317,10 @@ $x_n \geq x_{M}$ for all $n \geq M$.  Hence
 \begin{equation*}
 \abs{x_n-x} = x-x_n \leq x-x_{M} < \epsilon  .
 \end{equation*}
-Therefore, the sequence converges to $x$.
-We already know that a convergent sequence is bounded, which completes the
-other direction of the implication.
+Therefore, the sequence converges to $x$, so a bounded monotone increasing
+sequence converges.
+For the other direction, we have already proved that a convergent sequence
+is bounded.
 
 The proof for monotone decreasing sequences is left as an exercise.
 \end{proof}
@@ -334,8 +338,8 @@ we obtain
 \frac{1}{\sqrt{n+1}} \leq \frac{1}{\sqrt{n}} .
 \end{equation*}
 So the sequence is monotone decreasing and bounded below (hence
-bounded).  We apply the theorem to note that the sequence is
-convergent and in fact
+bounded).  \propref{prop:monotoneconv} says that that the sequence is
+convergent and
 \begin{equation*}
 \lim_{n\to \infty} \frac{1}{\sqrt{n}}
 =
@@ -349,7 +353,8 @@ obtain
 b^2 \leq \frac{1}{n} \qquad \text{for all } n \in \N.
 \end{equation*}
 We have seen before that this implies that $b^2 \leq 0$ (a consequence
-of the \hyperref[thm:arch:i]{Archimedean property}).  As we also have $b^2 \geq 0$, then $b^2 = 0$
+of the \hyperref[thm:arch:i]{Archimedean property}).  As $b^2 \geq 0$ as
+well, we have $b^2 = 0$
 and so $b = 0$.
 Hence, $b=0$ is the greatest lower bound, and $\lim \frac{1}{\sqrt{n}} = 0$.
 \end{example}
@@ -381,10 +386,10 @@ $\{ x_n \}$ and $\{ y_n \}$ such that $x_n, y_n \in S$ and
 
 \begin{defn}
 For a sequence $\{ x_n \}$,
-the \emph{$K$-tail} (where $K \in \N$)
+the \emph{$K$-tail} (where $K \in \N$),
 or just the
-\emph{tail}\index{tail of a sequence} of
-the sequence is the sequence starting at $K+1$, usually written as
+\emph{tail},\index{tail of a sequence} of
+$\{ x_n \}$ is the sequence starting at $K+1$, usually written as
 \begin{equation*}
 \{ x_{n+K} \}_{n=1}^\infty
 \qquad \text{or} \qquad \{ x_n \}_{n=K+1}^\infty .
@@ -461,10 +466,10 @@ Thus, whenever $n \geq M$ we have
 \begin{equation*}
 \abs{x-x_n} = \abs{x-y_{n-K}} < \epsilon.
 \end{equation*}
-Therefore $\{ x_n \}$ converges to $x$.
+Therefore, $\{ x_n \}$ converges to $x$.
 \end{proof}
 
-Essentially, the limit does not care about how the sequence begins, it only
+At the end of the day, the limit does not care about how the sequence begins, it only
 cares about the tail of the sequence.  The beginning of the sequence
 may be arbitrary.
 
@@ -539,14 +544,14 @@ then any subsequence $\{ x_{n_i} \}$ is also convergent and
 \end{prop}
 
 \begin{proof}
-Suppose $\lim_{n\to \infty} x_n = x$.  That means that for every
-$\epsilon > 0$ we have an $M \in \N$ such that for all $n \geq M$
+Suppose $\lim_{n\to \infty} x_n = x$.  So for every
+$\epsilon > 0$ there is an $M \in \N$ such that for all $n \geq M$,
 \begin{equation*}
 \abs{x_n - x} < \epsilon .
 \end{equation*}
 It is not hard to prove (do it!) by \hyperref[induction:thm]{induction} that
 $n_i \geq i$.  Hence $i \geq M$ implies $n_i \geq M$.  Thus,
-for all $i \geq M$ we have
+for all $i \geq M$,
 \begin{equation*}
 \abs{x_{n_i} - x} < \epsilon ,
 \end{equation*}
