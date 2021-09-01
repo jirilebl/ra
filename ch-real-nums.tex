@@ -1592,8 +1592,7 @@ $a_1 < a_2 < \cdots < a_{k-1} < b_{k-1} < \cdots < b_2 < b_1$.
 \item Define $a_k := x_n$, where $n$ is the smallest $n \in \N$
 such that $x_n \in (a_{k-1},b_{k-1})$.  Such an $x_n$ exists by our
 assumption on $X$, and $n \geq k$ by the assumption on $(a_{k-1},b_{k-1})$.
-\item Next, define $b_k := x_n$, where $n$ is the smallest $n \in \N$
-such that $x_n \in (a_{k},b_{k-1})$.  Again, $n \geq k$.
+\item Next, define $b_k$ to be any real number in $(a_{k},b_{k-1})$.
 \end{enumerate}
 Notice that %$a_k < b_k$ and
 $a_{k-1} < a_k < b_k < b_{k-1}$.
@@ -1610,7 +1609,7 @@ By \propref{infsupineq:prop} and the claim above,
 \begin{equation*}
 \sup\, A \leq \inf\, B .
 \end{equation*}
-Define $y := \sup\, A$.  The number $y$ cannot be a member of $A$.  If $y = a_n$
+Define $y := \sup\, A$.  The number $y$ cannot be a member of $A$:  If $y = a_n$
 for some $n$, then $y < a_{n+1}$, which is impossible.
 Similarly, $y$ cannot be a member of $B$.  Therefore,
 $a_n < y$ for all $n\in \N$
