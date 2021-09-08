@@ -272,7 +272,9 @@ sequence}.\footnote{Some
 authors use the word \emph{monotonic}\index{monotonic sequence}.}
 \end{defn}
 
-For example, $\{ \nicefrac{1}{n} \}$ is monotone decreasing,
+For example,
+$\{ n \}$ is monotone increasing,
+$\{ \nicefrac{1}{n} \}$ is monotone decreasing,
 the constant sequence $\{ 1 \}$ is both monotone increasing and monotone
 decreasing, and $\{ {(-1)}^n \}$ is not monotone.
 First few terms of a sample monotone increasing sequence
@@ -312,7 +314,7 @@ Let $\epsilon > 0$ be arbitrary.  As $x$ is the supremum, then
 there must be at least one $M \in \N$ such that $x_{M} > x-\epsilon$
 (because $x$ is the supremum).  As $\{ x_n \}$ is monotone increasing,
 then it is easy to see (by \hyperref[induction:thm]{induction}) that
-$x_n \geq x_{M}$ for all $n \geq M$.  Hence
+$x_n \geq x_{M}$ for all $n \geq M$.  Hence for all $n \geq M$,
 \begin{equation*}
 \abs{x_n-x} = x-x_n \leq x-x_{M} < \epsilon  .
 \end{equation*}
@@ -510,7 +512,7 @@ only some of the numbers from $\{ x_n \}$ in the same order.
 \begin{defn}
 Let $\{ x_n \}$ be a sequence.
 Let $\{ n_i \}$ be a strictly increasing sequence of natural
-numbers, that is $n_i < n_{i+1}$ for all $i$ (in other words $n_1 < n_2 < n_3 < \cdots$).  
+numbers, that is, $n_i < n_{i+1}$ for all $i$ (in other words $n_1 < n_2 < n_3 < \cdots$).  
 The sequence
 \begin{equation*}
 \{ x_{n_i} \}_{i=1}^\infty
