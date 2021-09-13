@@ -214,11 +214,11 @@ a(c_0 + c_1 t + c_2 t^2 + \cdots + c_m t^m)
 (ac_0) + (ac_1) t + (ac_2) t^2 + \cdots + (ac_m) t^m  .
 \end{equation*}
 Despite what it looks like, $\R[t]$ is not equivalent to $\R^n$ for any $n$.  In
-particular, it is not \myquote{finite dimensional.}  We will make this notion
-precise in just a little bit.  One can make a finite
-dimensional vector subspace by restricting the degree.  For example,
+particular, it is not \myquote{finite-dimensional.}  We will make this notion
+precise in just a little bit.  One can make a
+finite-dimensional vector subspace by restricting the degree.  For example,
 if $\sP_n$ is the set of polynomials of degree $n$ or less,
-then $\sP_n$ is a finite dimensional vector space, and we could 
+then $\sP_n$ is a finite-dimensional vector space, and we could 
 identify it with $\R^{n+1}$.
 
 In the above, the variable $t$ is really just a formal placeholder.
@@ -242,7 +242,7 @@ $S$ is closed under scalar multiplication, multiplying a vector in
 $S$ by a scalar gets us a vector in $S$.
 \end{enumerate}
 Items 2) and 3)
-make sure that the addition and scalar multiplication are in fact defined on
+make sure that the addition and scalar multiplication are indeed defined on
 $S$.  Item 1) is required
 to fulfill item \ref{vecspacedefn:addidentity} from the definition of vector
 space.  Existence
@@ -251,7 +251,7 @@ $-v \in S$ if $v \in S$.  All other properties are certain equalities
 which are already satisfied in $X$ and thus must be satisfied in a subset.
 \end{remark}
 
-It is often better to think of even the simpler \myquote{finite dimensional}
+It is often better to think of even the simpler \myquote{finite-dimensional}
 vector spaces using the abstract notion rather than always as $\R^n$.
 It is possible to use other fields than $\R$ in the definition (for
 example it is common to use the complex numbers $\C$), but let us stick with
@@ -383,7 +383,7 @@ If a vector space $X$ contains a linearly independent set of $d$ vectors,
 but no linearly independent set of $d+1$ vectors, then we say
 the \emph{\myindex{dimension}} of $X$ is $d$, and we write $\dim \, X := d$.  If for all $d \in \N$ the vector space
 $X$ contains a set of $d$ linearly independent vectors, we say
-$X$ is infinite dimensional and write $\dim \, X := \infty$.
+$X$ is infinite-dimensional and write $\dim \, X := \infty$.
 %
 For the trivial vector space $\{ 0 \}$, we define $\dim \, \{ 0 \} := 0$.
 \end{defn}
@@ -666,9 +666,9 @@ then any function $\widetilde{A} \colon B \to Y$ extends to a linear
 function on $X$.
 \end{prop}
 
-We will only prove this proposition for finite dimensional spaces, as we do
-not need infinite dimensional spaces.
-For infinite dimensional spaces, the proof is essentially the same, but a
+We will only prove this proposition for finite-dimensional spaces, as we do
+not need infinite-dimensional spaces.
+For infinite-dimensional spaces, the proof is essentially the same, but a
 little trickier to write, so let us stick with finitely many dimensions.
 
 \begin{proof}
@@ -695,12 +695,12 @@ uniqueness of the representation of $x$.
 We leave it to the reader to check that $A$ is linear.
 \end{proof}
 
-The next proposition only works for finite dimensional vector spaces.
+The next proposition only works for finite-dimensional vector spaces.
 It is a special case of the so-called rank-nullity theorem from linear
 algebra.
 
 \begin{prop} \label{mv:prop:lin11onto}
-If $X$ is a finite dimensional vector space and $A \in L(X)$, then $A$ is one-to-one if and only if it is onto.
+If $X$ is a finite-dimensional vector space and $A \in L(X)$, then $A$ is one-to-one if and only if it is onto.
 \end{prop}
 
 \begin{proof}
@@ -748,11 +748,11 @@ $x=y$.
 We leave the proof of the next proposition as an exercise.
 
 \begin{prop} \label{prop:LXYfinitedim}
-If $X$ and $Y$ are finite dimensional vector spaces, then $L(X,Y)$
-is also finite dimensional.
+If $X$ and $Y$ are finite-dimensional vector spaces, then $L(X,Y)$
+is also finite-dimensional.
 \end{prop}
 
-We often identify a finite dimensional vector
+We often identify a finite-dimensional vector
 space $X$ of dimension $n$ with $\R^n$, provided we fix a basis $\{ x_1,
 x_2, \ldots, x_n \}$ in $X$.  That is, we define a bijective
 linear map $A \in L(X,\R^n)$ by
@@ -910,7 +910,7 @@ that $\int_0^1 f = 0$ is a vector subspace.
 \end{exercise}
 
 \begin{exercise}[Challenging]
-Prove $C([0,1],\R)$ is an infinite dimensional vector space
+Prove $C([0,1],\R)$ is an infinite-dimensional vector space
 where the operations are defined in the obvious way:
 $s=f+g$ and $m=af$ are defined as
 $s(x) := f(x)+g(x)$ and
@@ -949,7 +949,7 @@ show that it is not onto.
 \end{exercise}
 
 \begin{exercise}
-Finish the proof of \propref{mv:lindefonbasis} in the finite dimensional case.
+Finish the proof of \propref{mv:lindefonbasis} in the finite-dimensional case.
 That is, suppose,
 $\{ x_1, x_2,\ldots x_n \}$ is a basis of $X$,
 $\{ y_1, y_2,\ldots y_n \} \subset Y$ and we define a
@@ -1037,7 +1037,7 @@ $\bigcap_{\lambda \in I} V_\lambda$ is a vector subspace of $X$.
 
 \subsection{Norms}
 
-Let us start measuring distance.
+Let us start measuring the size of vectors and hence distance.
 
 \begin{defn}
 If $X$ is a vector space, then we say
@@ -1057,7 +1057,7 @@ A vector space equipped with a norm is called a
 Given a norm (any norm) on a vector space $X$,
 we define a distance $d(x,y) := \snorm{x-y}$, and this
 $d$ makes $X$ into a metric space (exercise).
-
+So everything you know about metric spaces applies to normed vector spaces.
 
 Before defining the standard norm on $\R^n$, let us
 define the standard 
@@ -1078,14 +1078,14 @@ The \emph{\myindex{euclidean norm}} is defined as\glsadd{not:normRn}
 \begin{equation*}
 \snorm{x} := \snorm{x}_{\R^n} := \sqrt{x \cdot x} = \sqrt{(x_1)^2+(x_2)^2 + \cdots + (x_n)^2}.
 \end{equation*}
-We normally just use $\snorm{x}$, but sometimes it is necessary to
-emphasize that we are talking about the euclidean norm and we use
+We normally just use $\snorm{x}$, only in the rare instance when it is necessary to
+emphasize that we are talking about the euclidean norm will we use
 $\snorm{x}_{\R^n}$.
 It is easy to see that the euclidean norm satisfies \ref{defn:norm:i} and
 \ref{defn:norm:ii}.  To prove
 that \ref{defn:norm:iii} holds, the key
 inequality is the so-called Cauchy--Schwarz inequality
-we saw before.  As this inequality is so important let us restate and
+we saw before.  As this inequality is so important, we restate and
 reprove a slightly stronger version using the notation of this chapter.
 
 \begin{thm}[\myindex{Cauchy--Schwarz inequality}]
@@ -1155,7 +1155,7 @@ Let $A \in L(X,Y)$.  Define
 \end{equation*}
 The number $\snorm{A}$ (possibly $\infty$)
 is called the \emph{\myindex{operator norm}}.  We will see below
-that it is indeed a norm for finite dimensional spaces.
+that it is indeed a norm for finite-dimensional spaces.
 Again, when necessary to emphasize which norm we are talking about, we may
 write it as $\snorm{A}_{L(X,Y)}$.\glsadd{not:normLXY}
 \end{defn}
@@ -1190,27 +1190,27 @@ It is also not difficult to compute the operator norm of the identity operator:
 
 The operator norm is not always a norm on $L(X,Y)$, in particular,
 $\snorm{A}$ is not always finite for $A \in L(X,Y)$.
-We prove below that $\snorm{A}$ is finite when $X$ is finite dimensional.
-This also implies that $A$ is continuous.
-For infinite dimensional spaces, neither statement needs to be true.
-For example,
-take the vector space of continuously differentiable functions on $[0,2\pi]$
-and as the norm use the uniform norm.  The functions
-$t \mapsto \sin(n t)$ have norm 1, but the derivatives have norm $n$.  So
-differentiation (which is a linear operator) has infinite operator norm on this
-space.  We will stick to finite dimensional spaces.
+We prove below that $\snorm{A}$ is finite when $X$ is finite-dimensional.
+The operator norm being finite is equivalent to $A$ being continuous.
+For infinite-dimensional spaces, neither statement needs to be true.
+For an example,
+consider the vector space of continuously differentiable functions on
+$[0,2\pi]$ using the uniform norm.  The functions
+$t \mapsto \sin(n t)$ have norm 1, but their derivatives have norm $n$.  So
+differentiation, which is a linear operator, has infinite operator norm on this
+space.  We will stick to finite-dimensional spaces.
 
-When we talk about a finite dimensional vector space $X$, one often thinks of
+When we talk about a finite-dimensional vector space $X$, we often think of
 $\R^n$, although if we have a norm on $X$, the norm might not be
 the standard euclidean norm.  In the exercises, you can prove that
 every norm is \myquote{equivalent} to the euclidean norm in that the
 topology it generates is the same.  For simplicity, we only prove the
 following proposition for the euclidean space, and the proof for a general
-finite dimensional space is left as an exercise.
+finite-dimensional space is left as an exercise.
 
 \begin{prop} \label{prop:finitedimpropnormfin}
 Let $X$ and $Y$ be normed vector spaces.
-Suppose that $X$ is finite dimensional.
+Suppose that $X$ is finite-dimensional.
 If $A \in L(X,Y)$, then $\snorm{A} < \infty$, and
 $A$ is uniformly continuous (Lipschitz with constant $\snorm{A}$).
 \end{prop}
@@ -1240,7 +1240,7 @@ Then
 \leq
 \sum_{j=1}^n \snorm{Ae_j} .
 \end{equation*}
-The right hand side does not depend on $x$.  We found
+The right-hand side does not depend on $x$.  We found
 a finite upper bound independent of $x$, so $\snorm{A} < \infty$.
 
 For any normed vector spaces $X$ and $Y$, and $A \in L(X,Y)$, suppose that
@@ -1254,11 +1254,10 @@ As $\snorm{A} < \infty$, then this says $A$ is Lipschitz with constant $\snorm{A
 \end{proof}
 
 \begin{prop} \label{prop:finitedimpropnorm}
-Let $X$, $Y$, and $Z$ be finite dimensional normed vector
+Let $X$, $Y$, and $Z$ be finite-dimensional normed vector
 spaces\footnote{If we strike the \myquote{In particular} part and interpret the
 algebra with infinite operator norms properly, namely decree that $0$ times
-$\infty$ is 0, then this result also holds for infinite
-dimensional spaces.}.
+$\infty$ is 0, then this result also holds for infinite-dimensional spaces.}.
 \begin{enumerate}[(i)]
 \item \label{item:finitedimpropnorm:i}
 If $A,B \in L(X,Y)$ and $c \in \R$, then
@@ -1275,7 +1274,7 @@ If $A \in L(X,Y)$ and $B \in L(Y,Z)$, then
 \end{prop}
 
 \begin{proof}
-First, since all the spaces are finite dimensional, then all the operator
+First, since all the spaces are finite-dimensional, then all the operator
 norms are finite, and the statements make sense to begin with.
 
 For \ref{item:finitedimpropnorm:i},
@@ -1311,12 +1310,12 @@ For \ref{item:finitedimpropnorm:ii} write
 
 As a norm defines a metric,
 there is
-a metric space topology on $L(X,Y)$ for finite dimensional vector spaces,
+a metric space topology on $L(X,Y)$ for finite-dimensional vector spaces,
 so we can talk
 about open/closed sets, continuity, and convergence.
 
 \begin{prop} \label{prop:finitedimpropinv}
-Let $X$ be a finite dimensional normed vector space.
+Let $X$ be a finite-dimensional normed vector space.
 Let $GL(X) \subset L(X)$\glsadd{not:GLX} be the set of invertible linear operators.
 \begin{enumerate}[(i)]
 \item \label{finitedimpropinv:i}
@@ -1369,7 +1368,7 @@ Using \eqref{eqcontineq} we obtain
 or in other words $\snorm{Bx} \not= 0$ for all nonzero $x$, and hence
 $Bx \not= 0$ for all nonzero $x$.  This is enough to see that
 $B$ is one-to-one (if $Bx = By$, then $B(x-y) = 0$, so $x=y$).
-As $B$ is one-to-one operator from $X$ to $X$, which is finite dimensional,
+As $B$ is one-to-one operator from $X$ to $X$, which is finite-dimensional,
 $B$ is invertible.
 
 Let us prove \ref{finitedimpropinv:ii}.  Fix some $A \in GL(X)$.  Let $B$ be near $A$,
@@ -1413,7 +1412,7 @@ so the inverse operation is a continuous function at $A$.
 
 \subsection{Matrices}
 
-Once we fix a basis in a finite dimensional
+Once we fix a basis in a finite-dimensional
 vector space $X$, we can represent a vector of $X$ as an $n$-tuple of
 numbers, that is a vector in $\R^n$.  The same thing
 can be done with $L(X,Y)$, which brings us to matrices,
@@ -1466,7 +1465,7 @@ which gives rise to the familiar rule for matrix multiplication.
 There is a one-to-one correspondence between matrices and linear operators in
 $L(X,Y)$, once we fix a basis in $X$ and in $Y$.  If we 
 choose a different basis, we get different matrices.  This is
-important distinction, the operator $A$ acts on elements of $X$, the matrix
+an important distinction, the operator $A$ acts on elements of $X$, the matrix
 is something that works with $n$-tuples of numbers, that is, vectors of
 $\R^n$.
 
@@ -1539,7 +1538,7 @@ $\snorm{f(x) e_j - f(y) e_j} =
 $\snorm{f(x)- f(y)} \to 0$ and so 
 $\snorm{f(x) e_j - f(y) e_j} \to 0$.
 Such a
-function is continuous if and only if its components are continuous
+function is continuous if and only if its components are continuous,
 and these are the entries of the $j$th column of the matrix $f(x)$.
 
 \subsection{Determinants}
@@ -1643,11 +1642,11 @@ Item \ref{prop:det:i} is trivial.  For \ref{prop:det:ii}, notice that each term 
 determinant contains exactly one factor from each column.
 
 Item \ref{prop:det:iii} follows by noting that switching two columns is like switching the
-two corresponding numbers in every element in $S_n$.  Hence all the signs
+two corresponding numbers in every element in $S_n$.  Hence, all the signs
 are changed.
-Item \ref{prop:det:iv} follows because if two columns are equal and we switch them we get
-the same matrix back and so item \ref{prop:det:iii} says the determinant must have been
-0.
+Item \ref{prop:det:iv} follows because if two columns are equal, and we
+switch them, we get
+the same matrix back.  So item \ref{prop:det:iii} says the determinant must be 0.
 
 Item \ref{prop:det:v} follows because the product in each term in the definition includes
 one element from the zero column.
@@ -1720,7 +1719,7 @@ b_{j_n,n}
 \det \bigl([ a_{1} \quad a_{2} \quad  \cdots \quad  a_{n} ]\bigr) .
 \end{split}
 \end{equation*}
-In the last equality we can sum over just the elements of $S_n$
+In the last equality, we can sum over just the elements of $S_n$
 instead of all $n$-tuples for integers between 1 and $n$
 by noting that
 when two columns in the determinant are the same, then the
@@ -1781,7 +1780,7 @@ If in one basis $A$ is the matrix representing a
 linear operator, then for another basis we can find a matrix $B$ such
 that the matrix $B^{-1}AB$ takes us to the first basis, applies $A$ in the
 first basis, and takes us back to the basis we started with.
-Let $X$ be a finite dimensional vector space.
+Let $X$ be a finite-dimensional vector space.
 Let $\Phi \in L(X,\R^n)$ take a basis $\{ x_1,\ldots,x_n \}$ to the
 standard basis $\{ e_1,\ldots,e_n \}$ and let $\Psi \in L(X,\R^n)$
 take another basis $\{ y_1, \ldots, y_n \}$ to the standard basis.
@@ -1886,9 +1885,9 @@ and
 
 The proof is left as an exercise.  The proposition says that we can compute
 the determinant by doing elementary row operations.  For computing the
-determinant one doesn't have to factor the matrix into a product of
+determinant, one does not have to factor the matrix into a product of
 elementary matrices completely.  One only does row operations
-until one finds an \emph{\myindex{upper triangular matrix}}, that is a matrix
+until one finds an \emph{\myindex{upper triangular matrix}}, that is, a matrix
 $[a_{i,j}]$ where $a_{i,j} = 0$ if $i > j$.  Computing determinant of such a
 matrix is not difficult (exercise).
 
@@ -2050,8 +2049,8 @@ Show that $D$ does not have bounded operator norm, that is $\snorm{D} =
 
 \pagebreak[1]
 \begin{exercise}
-In this exercise we finish the proof of \propref{prop:finitedimpropnormfin}.
-Let $X$ be a finite dimensional normed vector space with basis
+In this exercise, we finish the proof of \propref{prop:finitedimpropnormfin}.
+Let $X$ be a finite-dimensional normed vector space with basis
 $\{ x_1,x_2,\ldots,x_n \}$.
 \begin{enumerate}[a)]
 \item
@@ -2072,13 +2071,13 @@ Show that there exists a number $B$ such that if
 $\snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n}=1$,
 then $\sabs{c_j} \leq B$.
 \item
-Use part c) to show that if $X$ is finite dimensional vector 
+Use part c) to show that if $X$ is finite-dimensional vector 
 spaces and $A \in L(X,Y)$, then $\snorm{A} < \infty$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{exercise:allnormsequiv}
-Let $X$ be any finite dimensional vector space with a norm $\snorm{\cdot}$
+Let $X$ be any finite-dimensional vector space with a norm $\snorm{\cdot}$
 and basis $\{ x_1,x_2,\ldots,x_n
 \}$.  Let $c = (c_1,c_2,\ldots,c_n) \in \R^n$ and $\snorm{c}$ be the
 standard euclidean norm on $\R^n$.
@@ -2098,7 +2097,7 @@ Hint: See previous exercise.
 Use part a) to show that of
 $\snorm{\cdot}_1$ and
 $\snorm{\cdot}_2$ are two norms on $X$, then there exist positive
-numbers $m,M > 0$ (perhaps different than above) such that
+numbers $m,M > 0$ (perhaps different from above) such that
 for all $x \in X$ we have
 \begin{equation*}
 m \snorm{x}_1
@@ -2124,7 +2123,7 @@ of $A$ in terms of the diagonal entries, and prove that your formula works.
 Given an $n$-by-$n$ matrix $A$, prove that
 $\abs{\det(A)} \leq \snorm{A}^n$ (the norm on $A$ is the operator norm).
 Hint: Note that you only need to show this for invertible matrices.  Then
-possibly reorder columns and factor $A$ into $n$ matrices each of
+possibly reorder columns and factor $A$ into $n$ matrices, each of
 which differs from the identity by one column.
 \end{exercise}
 
@@ -2134,8 +2133,8 @@ Consider \propref{prop:finitedimpropinv}, for any $n$.
 \item
 Prove that the estimate $\snorm{A-B} < \frac{1}{\snorm{A^{-1}}}$ is the
 best possible in the following sense: For any invertible
-$A \in GL(\R^n)$ find a $B$ where equality is satisfied and $B$ is
-not invertible.
+$A \in GL(\R^n)$,
+find a $B$ where equality is satisfied and $B$ is not invertible.
 \item
 For any fixed invertible $A \in GL(\R^n)$,
 let $\sM$ denote the set of matrices
@@ -2173,8 +2172,8 @@ Let $A,S$ be $n$-by-$n$ matrices, where $S$ is invertible.
 Prove that $\lambda$ is an eigenvalue of $A$, if and only
 if it is an eigenvalue of $S^{-1}AS$.  Then prove that
 $\rho(S^{-1}AS) = \rho(S)$.
-In particular, $\rho$ is a well defined function on $L(X)$ for
-any finite dimensional vector space $X$.
+In particular, $\rho$ is a well-defined function on $L(X)$ for
+any finite-dimensional vector space $X$.
 \end{exercise}
 
 \begin{exercise}
@@ -2265,7 +2264,7 @@ $Ah \in \R^1$ is shown along the $y$ direction.\label{fig:svder}}
 
 For a differentiable function,
 the derivative of $f$ is a function from $U$ to $L(\R^n,\R^m)$.  Compare
-to the one dimensional case, where the derivative is a function
+to the one-dimensional case, where the derivative is a function
 from $U$ to $\R$, but we really want to think of $\R$ here as
 $L(\R^1,\R^1)$.  As in one dimension, the idea is that a differentiable
 mapping is \myquote{infinitesimally close} to a linear mapping, and this
@@ -2393,7 +2392,7 @@ r(h) := f(p+h)-f(p) - f'(p) h ,
 and $\frac{\snorm{r(h)}}{\snorm{h}}$ must go to zero as $h \to 0$.
 So
 $r(h)$ itself must go to zero.  The mapping $h \mapsto f'(p) h$
-is a linear mapping between finite dimensional spaces, it is
+is a linear mapping between finite-dimensional spaces, it is
 therefore continuous
 and goes to zero as $h \to 0$.  Therefore,
 $f(p+h)$ must go to $f(p)$ as $h \to 0$.  That is, $f$ is continuous at $p$.
@@ -2430,7 +2429,7 @@ and
 =
 \sabs{\alpha} \frac{\norm{f(p+h))-f(p) - f'(p)h}}{\snorm{h}} .
 \end{equation*}
-The limits as $h$ goes to zero of the right hand sides as are zero by
+The limits as $h$ goes to zero of the right-hand sides as are zero by
 hypothesis.  The conclusion follows.
 \end{proof}
 
@@ -2652,7 +2651,7 @@ Fix a $j$ and note that
 \frac{\snorm{f(p+h e_j)-f(p) - f'(p) \, h e_j}}{\snorm{h e_j}} .
 \end{split}
 \end{equation*}
-As $h$ goes to 0, the right hand side goes to zero by
+As $h$ goes to 0, the right-hand side goes to zero by
 differentiability of $f$, and hence
 \begin{equation*}
 \lim_{h \to 0}
@@ -2746,7 +2745,7 @@ f'\bigl(\gamma(t)\bigr) \gamma^{\:\prime}(t)
 For convenience,
 we often 
 leave out the points where we are evaluating,
-such as above on the far right hand side.
+such as above on the far right-hand side.
 With the notation of the gradient and the dot product
 the equation becomes
 \begin{equation*}
@@ -3731,9 +3730,9 @@ $g$ at $y$ is.  Then
 \frac{\snorm{f(x+h)-f(x)-f'(x)h}}{\snorm{h}} .
 \end{split}
 \end{equation*}
-As $k$ goes to 0, so does $h$.  So the right hand side goes to 0 as $f$ is
+As $k$ goes to 0, so does $h$.  So the right-hand side goes to 0 as $f$ is
 differentiable, and hence
-the left hand side also goes to 0.  And
+the left-hand side also goes to 0.  And
 $B$ is precisely what we wanted $g'(y)$ to be.
 
 We have $g$ is differentiable, let us show it is $C^1(W)$.
