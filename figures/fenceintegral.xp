@@ -35,9 +35,13 @@ int main()
   label(P(0,0,1.2), P(0,4), "$z$", t);
 
 
+  int drawt0 = 1;
+  path thecurve;
+
+  plain ();
+
   for (tt=-0.2; tt < 1.7; tt+= 0.06) {
 	  double t0 = tt-0.06;
-	  plain ();
 	  double slope = (gamma_x(tt)-gamma_x(t0))/0.06;
 	  /* This is probalby not correct shading but it
 	   * looks ok */
@@ -47,10 +51,16 @@ int main()
 		gamma_z(t0,0.5*sin(t0*t0)+0.7),
 		gamma_z(tt,0.5*sin(tt*tt)+0.7),
 		gamma_z(tt,0));
-	  bold();
-	  line (gamma_z(t0,0),
-		gamma_z(tt,0));
+
+	  if (drawt0) {
+		  thecurve.pt(gamma_z(t0,0));
+		  drawt0 = 0;
+	  }
+	  thecurve.pt(gamma_z(tt,0));
   }
+
+  pen(2.0);
+  thecurve.draw();
 
   plain();
 
