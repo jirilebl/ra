@@ -2522,6 +2522,14 @@ x_k - \Bigl(\limsup_{n\to\infty}\, x_n\Bigr) < \epsilon \qquad \text{and} \qquad
 \end{equation*}
 \end{exercise}
 
+\begin{exercise} \label{exercise:extendsubseqlimsupinf}
+Extend \thmref{subseqlimsupinf:thm} to unbounded sequences.  Suppose that $\{
+x_n \}$ is a sequence.  If $\limsup\, x_n = \infty$, then prove that
+there exists a subsequence $\{ x_{n_i} \}$ converging to $\infty$.
+Then prove the same result for $-\infty$, and then prove both statements for
+$\liminf$.
+\end{exercise}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3478,8 +3486,8 @@ the tail of a series to the geometric series.
 Let $\sum x_n$ be a series, $x_n \not= 0$ for all $n$, and such that
 \begin{equation*}
 L := \lim_{n\to\infty} \frac{\abs{x_{n+1}}}{\abs{x_n}}
+\qquad \text{exists.}
 \end{equation*}
-exists.  Then
 \begin{enumerate}[(i)]
 \item
 If $L < 1$, then $\sum x_n$ converges absolutely.
@@ -3487,6 +3495,9 @@ If $L < 1$, then $\sum x_n$ converges absolutely.
 If $L > 1$, then $\sum x_n$ diverges.
 \end{enumerate}
 \end{prop}
+
+Although the test as stated is often sufficient, it can be strengthened a
+bit, see \exerciseref{exercise:strongerratiotest}.
 
 \begin{proof}
 If $L > 1$, then
@@ -3644,11 +3655,11 @@ Find an explicit example where the converse does not hold.
 
 \begin{exercise}
 For $j=1,2,\ldots,n$, let $\{ x_{j,k} \}_{k=1}^\infty$ denote $n$
-sequences.  Suppose that for each $j$
+sequences.  Suppose that for each $j \in \N$,
 \begin{equation*}
 \sum_{k=1}^\infty x_{j,k}
 \end{equation*}
-is convergent.  Then show
+is convergent.  Prove
 \begin{equation*}
 \sum_{j=1}^n \left( \sum_{k=1}^\infty x_{j,k} \right)
 =
@@ -3656,29 +3667,28 @@ is convergent.  Then show
 \end{equation*}
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:strongerratiotest}
 Prove the following stronger version of the ratio test:
 Let $\sum x_n$ be a series.
 \begin{enumerate}[a)]
 \item
-If there is an $N$ and a $\rho < 1$ such that for
-all $n \geq N$ we have
-$\frac{\abs{x_{n+1}}}{\abs{x_n}} < \rho$, then
-the series converges absolutely.
+If there is an $N$ and a $\rho < 1$ such that
+$\frac{\abs{x_{n+1}}}{\abs{x_n}} < \rho$ for all $n \geq N$,
+then the series converges absolutely.
 %FIXME how to add this in without changing the exercise much?
-%(Equivalently the condition can be stated as
-%$\limsup \frac{\abs{x_{n+1}}}{\abs{x_n}} < 1$.)
+(Remark: Equivalently the condition can be stated as
+$\limsup_{n\to\infty} \frac{\abs{x_{n+1}}}{\abs{x_n}} < 1$.)
 \item
-If there is an $N$ such that for
-all $n \geq N$ we have
-$\frac{\abs{x_{n+1}}}{\abs{x_n}} \geq 1$, then
-the series diverges. 
+If there is an $N$ such that
+$\frac{\abs{x_{n+1}}}{\abs{x_n}} \geq 1$
+for all $n \geq N$,
+then the series diverges. 
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[Challenging]
-Let $\{ x_n \}$ be a decreasing sequence such that $\sum x_n$ converges.  Show
-that $\displaystyle \lim_{n\to\infty} n x_n = 0$.
+Suppose $\{ x_n \}$ is a decreasing sequence and $\sum x_n$ converges.
+Prove $\displaystyle \lim_{n\to\infty} n x_n = 0$.
 \end{exercise}
 
 \begin{exercise}
@@ -3700,8 +3710,8 @@ not multiplied term-by-term.
 \end{exercise}
 
 \begin{exercise}
-Prove the triangle inequality for series, that is
-if $\sum x_n$ converges absolutely, then
+Prove the triangle inequality for series:
+If $\sum x_n$ converges absolutely, then
 \begin{equation*}
 \abs{\sum_{n=1}^\infty x_n} \leq
 \sum_{n=1}^\infty \abs{x_n} .
@@ -3811,9 +3821,8 @@ Again, the idea is to generalize what happens for the geometric series.
 \begin{prop}[Root test]
 Let $\sum x_n$ be a series and let
 \begin{equation*}
-L := \limsup_{n\to\infty} \, {\abs{x_n}}^{1/n} .
+L := \limsup_{n\to\infty} \, {\sabs{x_n}}^{1/n} .
 \end{equation*}
-Then
 \begin{enumerate}[(i)]
 \item If $L < 1$, then $\sum x_n$ converges absolutely.
 \item If $L > 1$, then $\sum x_n$ diverges.
@@ -3821,28 +3830,35 @@ Then
 \end{prop}
 
 \begin{proof}
-If $L > 1$, then there exists a subsequence $\{ x_{n_k} \}$ such that
+%If $L=\infty$, then
+%$\bigl\{ {\abs{x_{n_k}}}^{1/n_k} \bigr\}$ is unbounded and therefore so is
+%$\{ x_n \}$, and so the series diverges.
+If $L > 1$, then there exists\footnote{%
+In case $L=\infty$, see \exerciseref{exercise:extendsubseqlimsupinf}.
+Alternatively, note that if $L=\infty$, then $\bigl\{ {\abs{x_{n}}}^{1/n} \bigr\}$
+and thus $\{ x_n \}$ is unbounded.}
+a subsequence $\{ x_{n_k} \}$ such that
 $L = \lim_{k\to\infty} \, {\abs{x_{n_k}}}^{1/n_k}$.  Let
 $r$ be such that $L > r > 1$.  There exists an $M$ such
 that for all $k \geq M$, we have 
 ${\abs{x_{n_k}}}^{1/n_k} > r > 1$, or in other words
-$\abs{x_{n_k}} > r^{n_k} > 1$.  The
-subsequence 
+$\abs{x_{n_k}} > r^{n_k} > 1$.
+The subsequence 
 $\{ \abs{x_{n_k}} \}$, and therefore also
-$\{ \abs{x_{n}} \}$, cannot possibly converge to zero, and so the series
-diverges.
+$\{ \abs{x_{n}} \}$,
+cannot possibly converge to zero, and so the series diverges.
 
 Now suppose $L < 1$.  Pick $r$ such that $L < r < 1$.
 By definition of limit supremum,
-pick $M$ such that for all $n \geq M$ we have 
+there is an $M$ such that for all $n \geq M$,
 \begin{equation*}
 \sup \bigl\{ {\abs{x_k}}^{1/k} : k \geq n \bigr\} < r .
 \end{equation*}
-Therefore, for all $n \geq M$ we have
+Therefore, for all $n \geq M$,
 \begin{equation*}
 {\abs{x_n}}^{1/n} < r , \qquad \text{or in other words} \qquad \abs{x_n} < r^n .
 \end{equation*}
-Let $k > M$, and let us estimate the $k$th partial sum
+Let $k > M$, and estimate the $k$th partial sum:
 \begin{equation*}
 \sum_{n=1}^k \abs{x_n} = 
 \left( \sum_{n=1}^M \abs{x_n} \right) + 
@@ -3853,7 +3869,7 @@ Let $k > M$, and let us estimate the $k$th partial sum
 \end{equation*}
 As $0 < r < 1$,
 the geometric series $\sum_{n=M+1}^\infty r^n$ converges to
-$\frac{r^{M+1}}{1-r}$.  As everything is positive we have
+$\frac{r^{M+1}}{1-r}$.  As everything is positive,
 \begin{equation*}
 \sum_{n=1}^k \abs{x_n} 
 \leq
