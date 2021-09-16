@@ -69,7 +69,7 @@ it is unique.  So it makes sense to talk about \emph{the} limit of a sequence.
 
 \begin{defn}
 A sequence $\{ x_n \}$ is said to \emph{converge} to a number
-$x \in \R$, if for every $\epsilon > 0$, there exists an $M \in \N$ such
+$x \in \R$ if for every $\epsilon > 0$, there exists an $M \in \N$ such
 that $\abs{x_n - x} < \epsilon$ for all $n \geq M$.  The number $x$
 is said to be the \emph{limit} of $\{ x_n \}$.  We write
 \glsadd{not:limseq}
@@ -168,7 +168,7 @@ Suppose the sequence $\{ x_n \}$ has limits $x$ and $y$.
 Take an arbitrary $\epsilon > 0$.
 From the definition find an $M_1$ such that for all $n \geq M_1$,
 $\abs{x_n-x} < \nicefrac{\epsilon}{2}$.  Similarly, find an $M_2$
-such that for all $n \geq M_2$ we have
+such that for all $n \geq M_2$, we have
 $\abs{x_n-y} < \nicefrac{\epsilon}{2}$.
 Now take an $n$ such that $n \geq M_1$ and also $n \geq M_2$, and estimate
 \begin{equation*}
@@ -192,7 +192,7 @@ A convergent sequence $\{ x_n \}$ is bounded.
 
 \begin{proof}
 Suppose $\{ x_n \}$ converges to $x$.  Thus there exists an $M \in \N$
-such that for all $n \geq M$ we have
+such that for all $n \geq M$, we have
 $\abs{x_n - x} < 1$.  Let $B_1 := \abs{x}+1$ and note that for $n \geq M$,
 \begin{equation*}
 \begin{split}
@@ -396,6 +396,7 @@ $\{ x_n \}$ is the sequence starting at $K+1$, usually written as
 \qquad \text{or} \qquad \{ x_n \}_{n=K+1}^\infty .
 \end{equation*}
 \end{defn}
+
 For example, the $4$-tail of $\{ \nicefrac{1}{n} \}$ is
 $\nicefrac{1}{5}, \nicefrac{1}{6}, \nicefrac{1}{7}, \nicefrac{1}{8},
 \ldots$.  The $0$-tail of a sequence is the sequence itself.
@@ -451,7 +452,7 @@ to $x$.
 Given an $\epsilon > 0$, there exists an $M \in \N$ such that
 $\abs{x-x_n} < \epsilon$ for all $n \geq M$.
 Note that $n \geq M$ implies $n+K \geq M$.  Therefore, for
-all $n \geq M$ we have that 
+all $n \geq M$, we have
 \begin{equation*}
 \abs{x-y_n} = \abs{x-x_{n+K}} < \epsilon .
 \end{equation*}
@@ -463,7 +464,7 @@ $y_n := x_{n+K}$, and suppose that $\{ y_n \}$ converges to $x \in \R$.
 That is, given an $\epsilon > 0$, there exists an $M' \in \N$ such that
 $\abs{x-y_n} < \epsilon$ for all $n \geq M'$.
 Let $M := M'+K$.  Then $n \geq M$ implies $n-K \geq M'$.
-Thus, whenever $n \geq M$ we have
+Thus, whenever $n \geq M$, we have
 \begin{equation*}
 \abs{x-x_n} = \abs{x-y_{n-K}} < \epsilon.
 \end{equation*}
@@ -785,14 +786,14 @@ Then $\{ x_n \}$ converges and
 \begin{proof}
 Let $x := \lim\, a_n = \lim\, b_n$.
 Let $\epsilon > 0$ be given.
-Find an $M_1$ such that for all $n \geq M_1$ we have
+Find an $M_1$ such that for all $n \geq M_1$, we have
 that $\abs{a_n-x} < \epsilon$, and an $M_2$
-such that for all $n \geq M_2$
+such that for all $n \geq M_2$,
 we have $\abs{b_n-x} < \epsilon$.  Set $M := \max \{M_1, M_2 \}$.
 Suppose $n \geq M$.
-In particular, we have
-$x - a_n < \epsilon$ or 
-$x - \epsilon < a_n$.  Similarly we have that $b_n < x + \epsilon$.
+In particular,
+$x - a_n < \epsilon$, or 
+$x - \epsilon < a_n$.  Similarly, $b_n < x + \epsilon$.
 Putting everything together, we find
 \begin{equation*}
 x - \epsilon < a_n \leq x_n \leq b_n < x + \epsilon .
@@ -843,11 +844,11 @@ for all $n \in \N$.  Then
 \begin{proof}
 Let $x := \lim\, x_n$ and $y := \lim\, y_n$. 
 Let 
-$\epsilon > 0$ be given.  Find an $M_1$ such that for all $n \geq M_1$
+$\epsilon > 0$ be given.  Find an $M_1$ such that for all $n \geq M_1$,
 we have $\abs{x_n-x} < \nicefrac{\epsilon}{2}$.  Find an $M_2$ such that
-for all $n \geq M_2$ we have
+for all $n \geq M_2$, we have
 $\abs{y_n-y} < \nicefrac{\epsilon}{2}$.  In particular,
-for some $n \geq \max\{ M_1, M_2 \}$ we have
+for some $n \geq \max\{ M_1, M_2 \}$, we have
 $x-x_n < \nicefrac{\epsilon}{2}$ and
 $y_n-y < \nicefrac{\epsilon}{2}$.  We add these inequalities to
 obtain
@@ -855,7 +856,7 @@ obtain
 y_n-x_n+x-y < \epsilon, \qquad \text{or} \qquad
 y_n-x_n < y-x+ \epsilon .
 \end{equation*}
-Since $x_n \leq y_n$ we have
+Since $x_n \leq y_n$, we have
 $0 \leq y_n-x_n$ and hence $0 < y-x+ \epsilon$.
 In other words,
 \begin{equation*}
@@ -961,13 +962,13 @@ write $z_n := x_n + y_n$.  Let $x := \lim\, x_n$,
 $y := \lim\, y_n$, and $z := x+y$.
 
 Let $\epsilon > 0$ be given.  
-Find an $M_1$ such that for all $n \geq M_1$
+Find an $M_1$ such that for all $n \geq M_1$,
 we have
 $\abs{x_n - x} < \nicefrac{\epsilon}{2}$.  
-Find an $M_2$ such that for all $n \geq M_2$
+Find an $M_2$ such that for all $n \geq M_2$,
 we have
 $\abs{y_n - y} < \nicefrac{\epsilon}{2}$.  Take $M := \max \{ M_1, M_2 \}$.
-For all $n \geq M$ we have
+For all $n \geq M$, we have
 \begin{equation*}
 \begin{split}
 \abs{z_n - z} &=
@@ -994,13 +995,13 @@ $y := \lim\, y_n$, and $z := xy$.
 
 Let $\epsilon > 0$ be given.
 Let $K := \max\{ \abs{x}, \abs{y}, \nicefrac{\epsilon}{3} , 1 \}$.
-Find an $M_1$ such that for all $n \geq M_1$
+Find an $M_1$ such that for all $n \geq M_1$,
 we have
 $\abs{x_n - x} < \frac{\epsilon}{3K}$.
-Find an $M_2$ such that for all $n \geq M_2$
+Find an $M_2$ such that for all $n \geq M_2$,
 we have
 $\abs{y_n - y} < \frac{\epsilon}{3K}$.  Take $M := \max \{ M_1, M_2 \}$.
-For all $n \geq M$ we have
+For all $n \geq M$, we have
 \begin{equation*}
 \begin{split}
 \abs{z_n - z} &=
@@ -1051,13 +1052,13 @@ Proof of claim:  Let $\epsilon > 0$ be given.
 Let $y := \lim\, y_n$.
 As $\abs{y} \not= 0$, then
 $\min \left\{ \abs{y}^2\frac{\epsilon}{2}, \, \frac{\abs{y}}{2} \right\} > 0$.
-Find an $M$ such that for all $n \geq M$
+Find an $M$ such that for all $n \geq M$,
 we have
 \begin{equation*}
 \abs{y_n - y} < \min \left\{ \abs{y}^2\frac{\epsilon}{2}, \, \frac{\abs{y}}{2}
 \right\} .
 \end{equation*}
-For all $n \geq M$ we have
+For all $n \geq M$, we have
 $\abs{y - y_n} < \nicefrac{\abs{y}}{2}$, and so
 \begin{equation*}
 \abs{y} = 
@@ -1126,7 +1127,7 @@ Let $\{ x_n \}$ be a convergent sequence and let $x := \lim\, x_n$.
 As we just mentioned, $x \geq 0$.
 
 First suppose $x=0$.  Let $\epsilon > 0$ be given.
-Then there is an $M$ such that for all $n \geq M$ we have
+Then there is an $M$ such that for all $n \geq M$, we have
 $x_n = \abs{x_n} < \epsilon^2$, or in other words, $\sqrt{x_n} < \epsilon$.
 Hence,
 \begin{equation*}
@@ -1238,7 +1239,7 @@ $x_n > 0$, then $\frac{x_n^2+2}{2x_n} > 0$ and hence $x_{n+1} > 0$.
 Next let us
 show that the sequence is monotone decreasing.  If we show that
 $x_n^2-2 \geq 0$ for all $n$, then $x_{n+1} \leq x_n$ for all $n$.
-Obviously $x_1^2-2 = 4-2 = 2 > 0$.  For an arbitrary $n$ we have 
+Obviously $x_1^2-2 = 4-2 = 2 > 0$.  For an arbitrary $n$, we have 
 \begin{equation*}
 x_{n+1}^2-2 =
 {\left( \frac{x_n^2+2}{2x_n} \right)}^2 - 2
@@ -1329,8 +1330,8 @@ Then $\{ x_n \}$ converges and $\lim\, x_n = x$.
 \begin{proof}
 Let $\epsilon > 0$ be given.  Note that $a_n \geq 0$
 for all $n$.  Find an $M \in \N$ such that for
-all $n \geq M$ we have
-$a_n = \abs{a_n - 0} < \epsilon$.  Then, for all $n \geq M$
+all $n \geq M$, we have
+$a_n = \abs{a_n - 0} < \epsilon$.  Then, for all $n \geq M$,
 we have
 \begin{equation*}
 \abs{x_n - x} \leq a_n < \epsilon . \qedhere
@@ -1359,7 +1360,8 @@ If $c > 1$, then $\{ c^n \}$ is unbounded.
 
 \begin{proof}
 First consider $c < 1$.  As $c > 0$, then $c^n > 0$ for all $n \in \N$ by
-\hyperref[induction:thm]{induction}.  As $c < 1$, then $c^{n+1} < c^n$ for all $n$.  So we have
+\hyperref[induction:thm]{induction}.  As $c < 1$, then $c^{n+1} < c^n$ for all $n$.
+So $\{ c^n \}$ is
 a decreasing sequence that is bounded below.  Hence, it is convergent.
 Let $L := \lim\, c^n$.  The 1-tail $\{ c^{n+1} \}$
 also converges to $L$.  Taking the limit of both sides of $c^{n+1} = c \cdot
@@ -1425,7 +1427,7 @@ approaching $L$.\label{figratseq}}
 \end{myfigureht}
 
 As $r-L > 0$, there exists an $M \in \N$ such that for
-all $n \geq M$ we have
+all $n \geq M$, we have
 \begin{equation*}
 \abs{\frac{\abs{x_{n+1}}}{\abs{x_n}} - L} < r-L .
 \end{equation*}
@@ -1640,14 +1642,14 @@ $n$.
 \begin{enumerate}[a)]
 \item
 Prove that if there exists an $r < 1$ and $M \in \N$ such that
-for all $n \geq M$ we have
+for all $n \geq M$, we have
 \begin{equation*}
 \frac{\abs{x_{n+1}}}{\abs{x_n}} \leq r ,
 \end{equation*}
 then $\{ x_n \}$ converges to $0$.
 \item
 Prove that if there exists an $r > 1$ and $M \in \N$ such that
-for all $n \geq M$ we have
+for all $n \geq M$, we have
 \begin{equation*}
 \frac{\abs{x_{n+1}}}{\abs{x_n}} \geq r ,
 \end{equation*}
@@ -1874,7 +1876,7 @@ need to prove that it converges and has the right limit.
 
 Note that
 $a_{(n_{k-1}+1)} \geq a_{n_k}$ (why?) and that $a_{n_{k}} \geq x_{n_k}$.
-Therefore, for every $k \geq 2$ we have
+Therefore, for every $k \geq 2$, we have
 \begin{equation*}
 \begin{split}
 \abs{a_{n_k} - x_{n_k}} & = 
@@ -1892,7 +1894,7 @@ Note that the subsequence need not be monotone.  Let $\epsilon > 0$ be given.
 As $\{ a_n \}$ converges to $x$, then the subsequence
 $\{ a_{n_k} \}$ converges to $x$.
 Thus there exists an $M_1 \in \N$
-such that for all $k \geq M_1$ we have
+such that for all $k \geq M_1$, we have
 \begin{equation*}
 \abs{a_{n_k} - x} < \frac{\epsilon}{2} .
 \end{equation*}
@@ -1900,7 +1902,7 @@ Find an $M_2 \in \N$ such that
 \begin{equation*}
 \frac{1}{M_2} \leq \frac{\epsilon}{2}.
 \end{equation*}
-Take $M := \max \{M_1 , M_2 , 2 \}$ and compute.  For all $k \geq M$
+Take $M := \max \{M_1 , M_2 , 2 \}$ and compute.  For all $k \geq M$,
 we have
 \begin{equation*}
 \begin{split}
@@ -2077,7 +2079,7 @@ and that $x_n \in [a_i,b_i]$ for infinitely many
 $n \in \N$.
 We have already defined $a_1$ and $b_1$.  We take $n_1 := 1$, that is
 $x_{n_1} = x_1$.
-Suppose that up to some $k \in \N$
+Suppose that up to some $k \in \N$,
 we have defined the subsequence $x_{n_1}, x_{n_2}, \ldots,
 x_{n_k}$, and the sequences $a_1,a_2,\ldots,a_k$
 and $b_1,b_2,\ldots,b_k$.
@@ -2111,7 +2113,7 @@ x = \sup \{ a_i : i \in \N \} .
 Let $y := \lim\, b_i = \inf \{ b_i : i \in \N \}$.  Since $a_i < b_i$ for
 all $i$, then $x \leq y$.
 As the sequences are monotone, then
-for any $i$ we have (why?)
+for any $i$, we have (why?)
 \begin{equation*}
 y-x \leq b_i-a_i = \frac{b_1-a_1}{2^{i-1}} .
 \end{equation*}
@@ -2136,14 +2138,14 @@ We say
 $\{ x_n \}$ \emph{\myindex{diverges to infinity}}%
 \footnote{Sometimes it is said that $\{ x_n \}$ \emph{converges to infinity}.}
 if for every $K \in
-\R$, there exists an $M \in \N$ such that for all $n \geq M$ we have $x_n >
+\R$, there exists an $M \in \N$ such that for all $n \geq M$, we have $x_n >
 K$.  In this case we write
 \begin{equation*}
 \lim_{n \to \infty} x_n := \infty .  
 \end{equation*}
 Similarly,
 if for every $K \in \R$ there exists an $M \in \N$ such that
-for all $n \geq M$ we have $x_n < K$, we say $\{ x_n \}$
+for all $n \geq M$, we have $x_n < K$, we say $\{ x_n \}$
 \emph{\myindex{diverges to minus infinity}} and we write
 \begin{equation*}
 \lim_{n \to \infty} x_n := -\infty .  
@@ -2425,7 +2427,7 @@ Let $\{x_n\}$ be a bounded sequence.
 \begin{enumerate}[a)]
 \item
 Prove that there exists an $s$ such that for any $r > s$ there exists 
-an $M \in \N$ such that for all $n \geq M$ we have
+an $M \in \N$ such that for all $n \geq M$, we have
 $x_n < r$.
 \item
 If $s$ is a number as in a), then prove $\limsup \, x_n \leq s$.
@@ -2515,7 +2517,7 @@ $\limsup\, x_n$  are finite.  Prove that $\{ x_n \}$ is bounded.
 
 \begin{exercise}
 Suppose $\{ x_n \}$ is a bounded sequence, and $\epsilon > 0$ is given.
-Prove that there exists an $M$ such that for all $k \geq M$ we have
+Prove that there exists an $M$ such that for all $k \geq M$,
 \begin{equation*}
 x_k - \Bigl(\limsup_{n\to\infty}\, x_n\Bigr) < \epsilon \qquad \text{and} \qquad
 \Bigl(\liminf_{n\to\infty}\, x_n\Bigr) - x_k < \epsilon .
@@ -2567,7 +2569,7 @@ we look at some examples.
 The sequence $\{ \nicefrac{1}{n} \}$ is a Cauchy sequence.
 
 Proof:  Given $\epsilon > 0$, find $M$ such that
-$M > \nicefrac{2}{\epsilon}$.  Then for $n,k \geq M$
+$M > \nicefrac{2}{\epsilon}$.  Then for $n,k \geq M$,
 we have that $\nicefrac{1}{n} < \nicefrac{\epsilon}{2}$
 and
 $\nicefrac{1}{k} < \nicefrac{\epsilon}{2}$.  Therefore, for $n, k \geq M$,
@@ -2618,7 +2620,7 @@ A Cauchy sequence is bounded.
 
 \begin{proof}
 Suppose $\{ x_n \}$ is Cauchy.  Pick $M$ such that for all
-$n,k \geq M$ we have $\abs{x_n-x_k} < 1$.  In particular, 
+$n,k \geq M$, we have $\abs{x_n-x_k} < 1$.  In particular, 
 for all $n \geq M$,
 \begin{equation*}
 \abs{x_n - x_M} < 1 .
@@ -2677,11 +2679,11 @@ $\{ x_{m_i} \}$, such that
 \lim_{i\to\infty} x_{m_i} = b.
 \end{equation*}
 Given an $\epsilon > 0$,
-there exists an $M_1$ such that for all $i \geq M_1$
+there exists an $M_1$ such that for all $i \geq M_1$,
 we have $\abs{x_{n_i} - a} < \nicefrac{\epsilon}{3}$ and
-an $M_2$ such that for all $i \geq M_2$ we have
+an $M_2$ such that for all $i \geq M_2$, we have
 $\abs{x_{m_i} - b} < \nicefrac{\epsilon}{3}$.  There also exists an $M_3$
-such that for all $n,k \geq M_3$ we have
+such that for all $n,k \geq M_3$, we have
 $\abs{x_n-x_k} < \nicefrac{\epsilon}{3}$.  Let $M := \max \{ M_1, M_2, M_3 \}$.
 If $i \geq M$, then $n_i \geq M$ and $m_i \geq M$.  Hence,
 \begin{equation*}
@@ -2764,7 +2766,7 @@ that is: Whenever $x,y \in F$ are such that $x < y$,
 then there exists a $q \in \Q$ such that $x < q < y$.
 Say a sequence $\{ x_n \}_{n=1}^\infty$ of rational numbers is Cauchy
 if given any $\epsilon \in \Q$ with $\epsilon > 0$, there exists
-an $M$ such that for all $n,k \geq M$ we have $\abs{x_n-x_k} < \epsilon$.
+an $M$ such that for all $n,k \geq M$, we have $\abs{x_n-x_k} < \epsilon$.
 Suppose any Cauchy sequence of rational numbers has a limit in $F$.
 Prove that $F$ has the \hyperref[defn:lub]{least-upper-bound property}.
 \end{exercise}
@@ -2773,7 +2775,7 @@ Prove that $F$ has the \hyperref[defn:lub]{least-upper-bound property}.
 Let $\{ x_n \}$ and $\{ y_n \}$ be sequences such
 that $\lim\, y_n =0$.  Suppose that for all $k \in \N$
 and
-for all $m \geq k$ we have
+for all $m \geq k$, we have
 \begin{equation*}
 \abs{x_m-x_k} \leq y_k .
 \end{equation*}
@@ -2802,7 +2804,7 @@ that $\lim\, x_n = c$.
 \begin{exercise}
 True or false, prove or find a counterexample:  If $\{ x_n \}$ is a Cauchy
 sequence, then there exists an $M$
-such that for all $n \geq M$ we have
+such that for all $n \geq M$, we have
 $\abs{x_{n+1}-x_n}
 \leq
 \abs{x_{n}-x_{n-1}}$.
@@ -2837,7 +2839,7 @@ Given a sequence $\{ x_n \}$, we write the formal object
 \end{equation*}
 \glsadd{not:series}
 and call it a \emph{\myindex{series}}.  A series
-\emph{converges}\index{convergent!series}, if the sequence $\{ s_k \}$
+\emph{converges}\index{convergent!series} if the sequence $\{ s_k \}$
 defined by
 \glsadd{not:finitesum}
 \begin{equation*}
@@ -2858,7 +2860,7 @@ we say the series is \emph{divergent}\index{divergent!series}.
 In this case, $\sum x_n$ is simply a formal object and not a number.
 \end{defn}
 
-In other words, for a convergent series we have
+In other words, for a convergent series, we have
 \begin{equation*}
 \sum_{n=1}^\infty x_n
 =
@@ -2990,7 +2992,7 @@ $\sum_{n=1}^{M-1} x_n$ is a fixed number.  Use
 
 \begin{defn}
 A series $\sum x_n$ is said to be \emph{Cauchy} or a
-\emph{Cauchy series}\index{Cauchy series},
+\emph{Cauchy series}\index{Cauchy series}
 if the sequence of partial sums $\{ s_n \}$ is a Cauchy sequence.
 \end{defn}
 
@@ -2998,7 +3000,7 @@ A sequence of real numbers converges if and only if it is
 Cauchy.  Therefore, a series is convergent if and only if it is Cauchy.
 The series $\sum x_n$ is Cauchy if for every $\epsilon > 0$,
 there exists an $M \in \N$, such that for every $n \geq M$
-and $k \geq M$ we have
+and $k \geq M$, we have
 \begin{equation*}
 \abs{ \left( \sum_{j=1}^k x_j \right) - \left( \sum_{j=1}^n x_j \right) }
 < \epsilon .
@@ -3015,7 +3017,7 @@ We have proved the following simple proposition.
 \begin{prop} \label{prop:cachyser}
 The series $\sum x_n$ is Cauchy if for every $\epsilon > 0$, 
 there exists an $M \in \N$ such that for every $n \geq M$
-and every $k > n$ we have
+and every $k > n$, we have
 \begin{equation*}
 \abs{ \sum_{j={n+1}}^k x_j }
 < \epsilon .
@@ -3034,14 +3036,14 @@ the sequence $\{ x_n \}$ is convergent and
 
 \begin{proof}
 Let $\epsilon > 0$ be given.  As $\sum x_n$ is convergent, it is Cauchy.
-Thus we find an $M$ such that for every $n \geq M$ we have
+Thus we find an $M$ such that for every $n \geq M$, we have
 \begin{equation*}
 \epsilon > 
 \abs{ \sum_{j={n+1}}^{n+1} x_j }
 =
 \abs{ x_{n+1} } .
 \end{equation*}
-Hence for every $n \geq M+1$ we have $\abs{x_{n}} < \epsilon$.
+Hence for every $n \geq M+1$, we have $\abs{x_{n}} < \epsilon$.
 \end{proof}
 
 \begin{example}
@@ -3228,7 +3230,7 @@ If the series $\sum x_n$ converges absolutely, then it converges.
 \begin{proof}
 A series is convergent if and only if it is Cauchy.  Hence
 suppose $\sum \abs{x_n}$ is Cauchy.  That is, for every $\epsilon > 0$,
-there exists an $M$ such that for all $k \geq M$ and all $n > k$ we have 
+there exists an $M$ such that for all $k \geq M$ and all $n > k$, we have 
 \begin{equation*}
 \sum_{j=k+1}^n \abs{x_j} 
 =
@@ -3729,8 +3731,8 @@ then either $\sum a_n$ and $\sum b_n$ both converge or both diverge.
 \end{exercise}
 
 \begin{exercise} \label{exercise:badnocauchy}
-Let $x_n = \sum_{j=1}^n \nicefrac{1}{j}$.  Show that for every $k$
-we have
+Let $x_n = \sum_{j=1}^n \nicefrac{1}{j}$.  Show that for every $k$,
+we get
 $\displaystyle \lim_{n\to\infty} \abs{x_{n+k}-x_n} = 0$, yet $\{ x_n \}$ is not Cauchy.
 \end{exercise}
 
@@ -4138,7 +4140,7 @@ We rearrange the $m$th partial sum of $\sum c_n$:
 \end{equation*}
 We can surely make the second term on the right-hand side go to zero.
 The trick is to handle the first term.
-Pick $K$ such that for all $m \geq K$ we have 
+Pick $K$ such that for all $m \geq K$, we have 
 $\abs{A_m - A} < \epsilon$ and
 also
 $\abs{B_m - B} < \epsilon$.  Finally,
@@ -4189,7 +4191,7 @@ B_{\text{max}}
 \right) .
 \end{split}
 \end{equation*}
-Therefore, for $m \geq 2K$ we have
+Therefore, for $m \geq 2K$, we have
 \begin{equation*}
 \begin{split}
 \abs{\left(\sum_{n=0}^m c_n \right) - AB}
@@ -4499,7 +4501,7 @@ We can also expand
 as power series, although we will not completely prove this fact here.
 Notice that a series for a rational function only defines the function
 on an interval even if the function is defined elsewhere.  For example, for
-the \emph{\myindex{geometric series}} we have that for
+the \emph{\myindex{geometric series}}, we have that for
 $x \in (-1,1)$
 \begin{equation*}
 \frac{1}{1-x} =

@@ -26,8 +26,8 @@ notions of a limit of a sequence of functions.
 For every $n \in \N$
 let $f_n \colon S \to \R$ be a function.  We say the sequence
 $\{ f_n \}_{n=1}^\infty$
-\emph{\myindex{converges pointwise}} to $f \colon S \to \R$, if for every $x
-\in S$
+\emph{\myindex{converges pointwise}} to $f \colon S \to \R$ if for every $x
+\in S$,
 we have
 \begin{equation*}
 f(x) =
@@ -130,7 +130,7 @@ Let $f_n \colon S \to \R$ and $f \colon S \to \R$ be functions.
 Then $\{ f_n \}$ converges pointwise to $f$ if and only if
 for every $x \in S$, and every $\epsilon > 0$, there exists
 an $N \in \N$ such that for all
-$n \geq N$ we have
+$n \geq N$, we have
 \begin{equation*}
 \abs{f_n(x)-f(x)} < \epsilon .
 \end{equation*}
@@ -148,9 +148,9 @@ uniform convergence.
 Let $f_n \colon S \to \R$
 and $f \colon S \to \R$
 be functions.  We say the sequence $\{ f_n \}$
-\emph{\myindex{converges uniformly}} to $f$, if for
+\emph{\myindex{converges uniformly}} to $f$ if for
 every $\epsilon > 0$ there exists an $N \in \N$ such that 
-for all $n \geq N$ we have
+for all $n \geq N$, we have
 \begin{equation*}
 \abs{f_n(x) - f(x)} < \epsilon \qquad \text{for all } x \in S.
 \end{equation*}
@@ -185,9 +185,9 @@ even though they converge pointwise.  To see this, suppose for contradiction
 that the convergence is uniform.  For $\epsilon := \nicefrac{1}{2}$, there would have
 to exist an $N$ such that $x^{2N} = \abs{x^{2N} - 0} < \nicefrac{1}{2}$ for all $x \in
 (-1,1)$ (as $f_n(x)$ converges to 0 on $(-1,1)$).  But that means that
-for any sequence $\{ x_k \}$ in $(-1,1)$ such that $\lim\, x_k = 1$
-we have $x_k^{2N} < \nicefrac{1}{2}$ for all $k$.  On the other hand
-$x^{2N}$ is a continuous function of $x$ (it is a polynomial), therefore
+for any sequence $\{ x_k \}$ in $(-1,1)$ such that $\lim\, x_k = 1$,
+we have $x_k^{2N} < \nicefrac{1}{2}$ for all $k$.  On the other hand,
+$x^{2N}$ is a continuous function of $x$ (it is a polynomial).  Therefore,
 we obtain a contradiction
 \begin{equation*}
 1 = 1^{2N}  = \lim_{k\to\infty} x_k^{2N} \leq \nicefrac{1}{2} .
@@ -197,7 +197,7 @@ However, if we restrict our domain to $[-a,a]$ where $0 < a < 1$, then
 $\{ f_n \}$ converges uniformly to 0 on $[-a,a]$.  First note
 that $a^{2n} \to 0$ as $n \to \infty$.  Thus given $\epsilon > 0$,
 pick $N \in \N$ such that
-$a^{2n} < \epsilon$ for all $n \geq N$.  Then for any $x \in [-a,a]$
+$a^{2n} < \epsilon$ for all $n \geq N$.  Then for any $x \in [-a,a]$,
 we have $\abs{x} \leq a$.  Therefore, for $n \geq N$
 \begin{equation*}
 \abs{x^{2n}} = \abs{x}^{2n} \leq a^{2n} < \epsilon .
@@ -249,8 +249,8 @@ uniformly to $f \colon S \to \R$, if and only if
 First suppose 
 $\lim \norm{f_n - f}_u = 0$.  Let $\epsilon > 0$ be
 given.  Then there exists an $N$ such that
-for $n \geq N$ we have $\norm{f_n - f}_u < \epsilon$.  As $\norm{f_n-f}_u$
-is the supremum of $\abs{f_n(x)-f(x)}$, we see that for all $x \in S$
+for $n \geq N$, we have $\norm{f_n - f}_u < \epsilon$.  As $\norm{f_n-f}_u$
+is the supremum of $\abs{f_n(x)-f(x)}$, we see that for all $x \in S$,
 we have $\abs{f_n(x)-f(x)} \leq \norm{f_n - f}_u < \epsilon$.
 
 On the other hand, suppose $\{ f_n \}$ converges uniformly to $f$.
@@ -294,7 +294,7 @@ Let $f_n \colon S \to \R$ be bounded functions.
 The sequence is \emph{\myindex{Cauchy in the uniform norm}}
 or \emph{\myindex{uniformly Cauchy}}
 if for every $\epsilon > 0$, there exists an $N \in \N$ such
-that for $m,k \geq N$ we have
+that for all $m,k \geq N$,
 \begin{equation*}
 \norm{f_m-f_k}_u < \epsilon .
 \end{equation*}
@@ -324,22 +324,22 @@ f(x) := \lim_{n \to \infty} f_n(x) .
 The sequence
 $\{ f_n \}$ converges pointwise to $f$.  To show that the convergence
 is uniform, let $\epsilon > 0$ be given.  Find an $N$ such that
-for $m, k \geq N$ we have
+for all $m, k \geq N$, we have
 $\norm{f_m-f_k}_u < \nicefrac{\epsilon}{2}$.  In other words for
-all $x$ we have
+all $x$, we have
 $\abs{f_m(x)-f_k(x)} < \nicefrac{\epsilon}{2}$.  We take the limit
 as $k$ goes to infinity.  Then $\abs{f_m(x)-f_k(x)}$
 goes to $\abs{f_m(x)-f(x)}$.
-Consequently for all $x$ we get
+Consequently for all $x$,
 \begin{equation*}
 \abs{f_m(x)-f(x)} \leq \nicefrac{\epsilon}{2} < \epsilon .
 \end{equation*}
 And hence $\{ f_n \}$ converges uniformly.
 
 For the other direction, suppose $\{ f_n \}$ converges uniformly to
-$f$.  Given $\epsilon > 0$, find $N$ such that for all $n \geq N$
+$f$.  Given $\epsilon > 0$, find $N$ such that for all $n \geq N$,
 we have $\abs{f_n(x)-f(x)} < \nicefrac{\epsilon}{4}$ for all $x \in S$.
-Therefore for all $m, k \geq N$ we have
+Therefore for all $m, k \geq N$,
 \begin{equation*}
 \abs{f_m(x)-f_k(x)} = 
 \abs{f_m(x)-f(x)+f(x)-f_k(x)} \leq
@@ -577,7 +577,7 @@ See \figureref{contconvcntr:fig}.
 
 Each function $f_n$ is continuous.
 Fix an $x \in (0,1]$.  If $n \geq \nicefrac{1}{x}$,
-then $x \geq \nicefrac{1}{n}$.  Therefore for $n \geq \nicefrac{1}{x}$
+then $x \geq \nicefrac{1}{n}$.  Therefore for $n \geq \nicefrac{1}{x}$,
 we have $f_n(x) = 0$, and so
 \begin{equation*}
 \lim_{n \to \infty} f_n(x) = 0.
@@ -618,13 +618,12 @@ As $\{ f_k \}$ converges uniformly to $f$, we find a $k \in \N$ such that
 \abs{f_k(y)-f(y)} < \nicefrac{\epsilon}{3}
 \end{equation*}
 for all $y \in S$.  As $f_k$ is continuous at $x$,
-we find an $N \in \N$ such that for $m \geq N$
-we have 
+we find an $N \in \N$ such that for all $m \geq N$,
 \begin{equation*}
 \abs{f_k(x_m)-f_k(x)} < \nicefrac{\epsilon}{3} .
 \end{equation*}
-Thus for
-$m \geq N$ we have
+Thus for all
+$m \geq N$,
 \begin{equation*}
 \begin{split}
 \abs{f(x_m)-f(x)}
@@ -677,7 +676,7 @@ and it is easy to see
 \int_0^{\nicefrac{1}{n}} (n-n^2x)~dx = \nicefrac{1}{2} .
 \end{equation*}
 Let us compute the pointwise limit of $\{ f_n \}$.
-Fix an $x \in (0,1]$.  For $n \geq \nicefrac{1}{x}$
+Fix an $x \in (0,1]$.  For $n \geq \nicefrac{1}{x}$,
 we have $x \geq \nicefrac{1}{n}$ and so $f_n(x) = 0$.  Therefore,
 \begin{equation*}
 \lim_{n \to \infty} f_n(x) = 0.
@@ -707,7 +706,7 @@ Let $\{ f_n \}$ be a sequence of Riemann integrable
 functions
 $f_n \colon [a,b] \to \R$
 converging uniformly to $f \colon [a,b]
-\to \R$.  Then $f$ is Riemann integrable and
+\to \R$.  Then $f$ is Riemann integrable, and
 \begin{equation*}
 \int_a^b f = \lim_{n\to\infty} \int_a^b f_n .
 \end{equation*}
@@ -716,11 +715,11 @@ converging uniformly to $f \colon [a,b]
 \begin{proof}
 Let $\epsilon > 0$ be given.
 As $f_n$ goes to $f$ uniformly, we find an $M \in \N$ such that
-for all $n \geq M$ we have 
+for all $n \geq M$, we have 
 $\abs{f_n(x)-f(x)} < \frac{\epsilon}{2(b-a)}$ for all $x \in [a,b]$.
-In particular, by reverse triangle inequality
-$\abs{f(x)} < \frac{\epsilon}{2(b-a)} + \abs{f_n(x)}$ for all $x$,
-hence $f$ is bounded
+In particular, by reverse triangle inequality,
+$\abs{f(x)} < \frac{\epsilon}{2(b-a)} + \abs{f_n(x)}$ for all $x$.
+Hence $f$ is bounded,
 as $f_n$ is bounded.
 Note that $f_n$ is integrable and compute
 \begin{equation*}
@@ -755,12 +754,12 @@ Note that $f_n$ is integrable and compute
 \end{equation*}
 The first inequality is \propref{prop:upperlowerlinineq}.
 The second inequality follows from \propref{intulbound:prop} and 
-the fact that for all $x \in [a,b]$ we have
+the fact that for all $x \in [a,b]$, we have
 $\frac{-\epsilon}{2(b-a)} < f(x)-f_n(x) < \frac{\epsilon}{2(b-a)}$.
 As $\epsilon > 0$ was arbitrary, $f$ is Riemann integrable.
 
 Finally we compute $\int_a^b f$.  We apply \propref{intbound:prop}
-in the calculation.  Again, for $n \geq M$ (where $M$ is the same as above) we have
+in the calculation.  Again, for all $n \geq M$ (where $M$ is the same as above),
 \begin{equation*}
 \begin{split}
 \abs{\int_a^b f - \int_a^b f_n} & = 
@@ -770,7 +769,7 @@ in the calculation.  Again, for $n \geq M$ (where $M$ is the same as above) we h
 \frac{\epsilon}{2(b-a)} (b-a) = \frac{\epsilon}{2} < \epsilon .
 \end{split}
 \end{equation*}
-Therefore $\{ \int_a^b f_n \}$ converges to $\int_a^b f$.
+Therefore, $\{ \int_a^b f_n \}$ converges to $\int_a^b f$.
 \end{proof}
 
 \begin{example}
@@ -921,7 +920,7 @@ It remains to prove
 uniform convergence.
 Suppose $I$ has a lower bound $a$ and upper bound $b$.
 Let $\epsilon > 0$ be given.  Take $M$
-such that for $n \geq M$ we have
+such that for all $n \geq M$, we have
 $\abs{f(c)-f_n(c)} < \nicefrac{\epsilon}{2}$,
 and
 $\abs{g(x)-f_n'(x)} < \nicefrac{\epsilon}{2(b-a)}$
@@ -1200,7 +1199,7 @@ For a continuously differentiable function $f \colon [a,b] \to \R$, define
 \end{equation*}
 Suppose $\{ f_n \}$ is a sequence of continuously differentiable
 functions such that for every $\epsilon >0$, there exists an $M$
-such that for all $n,k \geq M$ we have
+such that for all $n,k \geq M$, we have
 \begin{equation*}
 \norm{f_n-f_k}_{C^1} < \epsilon .
 \end{equation*}
@@ -1587,7 +1586,7 @@ to show that it converges to a function $f$ that solves
 the equation \eqref{picard:inteq} and therefore \eqref{picard:diffeq}.
 
 We wish to show that the sequence $\{ f_k \}$ converges uniformly
-to some function on $[-h,h]$.  First, for $t \in [-h,h]$
+to some function on $[-h,h]$.  First, for $t \in [-h,h]$,
 we have the following
 useful bound
 \begin{equation*}
@@ -1633,7 +1632,7 @@ suppose $n \geq k$.  Then by \hyperref[induction:thm]{induction} we can show
 \begin{equation*}
 \norm{f_n-f_k}_u \leq C^{k} \norm{f_{n-k}-f_{0}}_u .
 \end{equation*}
-For $x \in [-h,h]$ we have
+For $x \in [-h,h]$, we have
 \begin{equation*}
 \abs{f_{n-k}(x)-f_{0}(x)}
 =

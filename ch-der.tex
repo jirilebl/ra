@@ -217,7 +217,7 @@ Therefore, $h$ is differentiable at $c$,
 and the derivative is computed as given.
 
 Next, define $h(x) := f(x)+g(x)$.
-For $x \in I$, $x \not= c$ we have
+For $x \in I$, $x \not= c$, we have
 \begin{equation*}
 \frac{h(x)-h(c)}{x-c} =
 \frac{\bigl(f(x) + g(x)\bigr) - \bigl(f(c) + g(c)\bigr)}{x-c}
@@ -523,7 +523,7 @@ Let $S \subset \R$ be a set and
 let $f \colon S \to \R$ be a function.  The function $f$ is said to have
 a \emph{\myindex{relative maximum}}\index{maximum!relative}
 at $c \in S$ if there exists a $\delta>0$
-such that for all $x \in S$ where $\abs{x-c} < \delta$
+such that for all $x \in S$ where $\abs{x-c} < \delta$,
 we have $f(x) \leq f(c)$.
 The definition of
 \emph{\myindex{relative minimum}}\index{minimum!relative}
@@ -542,13 +542,13 @@ We prove the statement for a maximum.  For a minimum the statement
 follows by considering the function $-f$.
 
 Let $c$ be a relative maximum of $f$.  In particular, as long
-as $\abs{x-c} < \delta$ we have $f(x)-f(c) \leq 0$.
+as $\abs{x-c} < \delta$, we have $f(x)-f(c) \leq 0$.
 Then we look at the difference
 quotient.  If $x > c$ we note that
 \begin{equation*}
 \frac{f(x)-f(c)}{x-c} \leq 0 ,
 \end{equation*}
-and if $y < c$ we have
+and if $y < c$, we have
 \begin{equation*}
 \frac{f(y)-f(c)}{y-c} \geq 0 .
 \end{equation*}
@@ -612,19 +612,19 @@ Then there exists a $c \in (a,b)$ such that $f'(c) = 0$.
 \end{thm}
 
 \begin{proof}
-As $f$ is continuous on $[a,b]$ it attains an absolute minimum and an
+As $f$ is continuous on $[a,b]$, it attains an absolute minimum and an
 absolute 
-maximum in $[a,b]$.  We wish to apply \lemmaref{relminmax:lemma} and
+maximum in $[a,b]$.  We wish to apply \lemmaref{relminmax:lemma}, and
 so we need to find some $c \in (a,b)$ where $f$ attains a minimum or a
 maximum.
 Write $K := f(a) = f(b)$.
 If there exists an $x$ such that $f(x) > K$, then the absolute
 maximum is bigger than $K$ and hence occurs at some $c \in (a,b)$, and
-therefore we get $f'(c) = 0$.  On the other hand if there exists an $x$
+therefore $f'(c) = 0$.  On the other hand, if there exists an $x$
 such that $f(x) < K$, then the absolute minimum occurs at some
-$c \in (a,b)$ and we have that $f'(c) = 0$.  If there is no $x$ such that
+$c \in (a,b)$, and so $f'(c) = 0$.  If there is no $x$ such that
 $f(x) > K$ or
-$f(x) < K$, then we have that $f(x) = K$ for all $x$ and then
+$f(x) < K$, then $f(x) = K$ for all $x$ and then
 $f'(x) = 0$ for all $x \in [a,b]$, so any $c \in (a,b)$ works.
 \end{proof}
 
@@ -758,7 +758,7 @@ let $f \colon I \to \R$ be a differentiable function.
 
 \begin{proof}
 Let us prove the first item.  Suppose $f$ is increasing, then
-for all $x,c \in I$ with $x \neq c$ we have
+for all $x,c \in I$ with $x \neq c$, we have
 \begin{equation*}
 \frac{f(x)-f(c)}{x-c} \geq 0 .
 \end{equation*}
@@ -963,16 +963,16 @@ and
 the derivative 
 is $2 \sin (\nicefrac{1}{x}) \bigl( x \sin (\nicefrac{1}{x}) -
 \cos(\nicefrac{1}{x}) \bigr)$.
-As an exercise show that for $x_n = \frac{4}{(8n+1)\pi}$
+As an exercise, show that for $x_n = \frac{4}{(8n+1)\pi}$,
 we have
 $\lim\, f'(x_n) = -1$, and for
-$y_n = \frac{4}{(8n+3)\pi}$  we have
+$y_n = \frac{4}{(8n+3)\pi}$, we have
 $\lim\, f'(y_n) = 1$.  Hence if $f'$ exists at $0$,
 then it cannot be continuous.
 
 Let us show that $f'$ exists at 0.  We claim that the derivative is zero.
 In other words $\abs{\frac{f(x)-f(0)}{x-0} - 0}$ goes to zero
-as $x$ goes to zero.  For $x \not= 0$ we have
+as $x$ goes to zero.  For $x \not= 0$, we have
 \begin{equation*}
 \abs{\frac{f(x)-f(0)}{x-0} - 0}
 =
@@ -1284,12 +1284,12 @@ Plugging in $c$ for $s$ we obtain $M_{x,x_0} = \frac{f^{(n+1)}(c)}{(n+1)!}$, and
 we are done.
 \end{proof}
 
-In the proof we have computed 
+In the proof, we have computed 
 ${(P_n^{x_0})}^{(k)}(x_0) = f^{(k)}(x_0)$ for $k=0,1,2,\ldots,n$.
 Therefore, the Taylor polynomial has the same derivatives as $f$ at $x_0$
 up to the $n$th derivative.  That is why the Taylor polynomial is
 a good approximation to $f$.
-Notice that in \figureref{fig:taylorsin} the Taylor polynomials are
+Notice how in \figureref{fig:taylorsin} the Taylor polynomials are
 reasonably good approximations to the sine near $x=0$.
 
 We do not necessarily get good approximations

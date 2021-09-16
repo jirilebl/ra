@@ -74,8 +74,8 @@ of the entire rectangle is $M_i$.
 
 \begin{prop} \label{sumulbound:prop}
 Let $f \colon [a,b] \to \R$ be a bounded function.  Let $m, M \in \R$ be 
-such that for all $x$ we have $m \leq f(x) \leq M$.  For any partition $P$ of $[a,b]$
-we have
+such that for all $x$, we have $m \leq f(x) \leq M$.  Then for any partition $P$
+of $[a,b]$,
 \begin{equation}
 \label{sumulbound:eq}
 m(b-a) \leq
@@ -85,8 +85,8 @@ L(P,f) \leq U(P,f)
 \end{prop}
 
 \begin{proof}
-Let $P$ be a partition.  Then note that $m \leq m_i$ for all $i$ and
-$M_i \leq M$ for all $i$.  Also $m_i \leq M_i$ for all $i$.  Finally
+Let $P$ be a partition.  Note that $m \leq m_i$ for all $i$ and
+$M_i \leq M$ for all $i$.  Also $m_i \leq M_i$ for all $i$.  Finally,
 $\sum_{i=1}^n \Delta x_i = (b-a)$.  Therefore,
 \begin{multline*}
 m(b-a) =
@@ -146,7 +146,7 @@ $x \in \Q$ and $f(x) := 0$ if $x \notin \Q$.  Then
 \underline{\int_0^1} f = 0 \qquad \text{and} \qquad
 \overline{\int_0^1} f = 1 .
 \end{equation*}
-The reason is that for every $i$ we have 
+The reason is that for every $i$, we have 
 $m_i = \inf \{ f(x) : x \in [x_{i-1},x_i] \} = 0$  and
 $M_i = \sup \{ f(x) : x \in [x_{i-1},x_i] \} = 1$.  Thus
 \begin{align*}
@@ -261,7 +261,7 @@ integral.
 
 \begin{prop} \label{intulbound:prop}
 Let $f \colon [a,b] \to \R$ be a bounded function.  Let $m, M \in \R$ be 
-such that for all $x \in [a,b]$ we have $m \leq f(x) \leq M$.  Then
+such that for all $x \in [a,b]$, we have $m \leq f(x) \leq M$.  Then
 \begin{equation}
 \label{intulbound:eq}
 m(b-a) \leq
@@ -271,7 +271,7 @@ m(b-a) \leq
 \end{prop}
 
 \begin{proof}
-By \propref{sumulbound:prop} we have for any partition $P$
+By \propref{sumulbound:prop}, for any partition $P$,
 \begin{equation*}
 m(b-a) \leq L(P,f) \leq U(P,f) \leq M(b-a).
 \end{equation*}
@@ -421,7 +421,7 @@ U(P,f) - L(P,f)
 (1+\epsilon)
 - (1-\epsilon) = 2 \epsilon .
 \end{equation*}
-By \propref{intulbound:prop} we have $\underline{\int_0^2} f \leq \overline{\int_0^2} f$.
+By \propref{intulbound:prop}, we have $\underline{\int_0^2} f \leq \overline{\int_0^2} f$.
 As $\epsilon$ was arbitrary we see 
 $\overline{\int_0^2} f = \underline{\int_0^2} f$.  So $f$ is Riemann
 integrable.  Finally,
@@ -430,7 +430,7 @@ integrable.  Finally,
 1+\epsilon.
 \end{equation*}
 Hence, $\bigl\lvert \int_0^2 f - 1 \bigr\rvert \leq \epsilon$.  As $\epsilon$ was arbitrary,
-we have $\int_0^2 f = 1$.
+we conclude $\int_0^2 f = 1$.
 \end{example}
 
 It may be worthwhile to extract part of the technique of the example into a
@@ -445,7 +445,7 @@ U(P,f) - L(P,f) < \epsilon .
 \end{prop}
 
 \begin{proof}
-If for every $\epsilon > 0$ such a $P$ exists, then we have:
+If for every $\epsilon > 0$ such a $P$ exists, then
 \begin{equation*}
 0 \leq
 \overline{\int_a^b} f - 
@@ -473,7 +473,7 @@ m_j = \inf \left\{ \frac{1}{1+x} : x \in [x_{j-1},x_j] \right\} = \frac{1}{1+x_j
 M_j = \sup \left\{ \frac{1}{1+x} : x \in [x_{j-1},x_j] \right\} =
 \frac{1}{1+x_{j-1}} .
 \end{equation*}
-Then we have
+Then
 \begin{multline*}
 U(P,f)-L(P,f)
 =
@@ -630,7 +630,7 @@ that $g$ is Riemann integrable on $I$.
 
 \begin{exercise}
 Suppose $f \colon [0,1] \to \R$ and $g \colon [0,1] \to \R$
-are such that for all $x \in (0,1]$
+are such that for all $x \in (0,1]$,
 we have $f(x) = g(x)$.  Suppose $f$ is Riemann integrable. 
 Prove $g$ is Riemann integrable and $\int_{0}^1 f = \int_{0}^1 g$.
 \end{exercise}
@@ -1065,10 +1065,10 @@ $\abs{x-y} < \delta$ implies $\abs{f(x)-f(y)} < \frac{\epsilon}{b-a}$.
 Let $P = \{ x_0, x_1, \ldots, x_n \}$
 be a partition of $[a,b]$ such that $\Delta x_i < \delta$ for all $i = 1,2,
 \ldots, n$.  For example,
-take $n$ such that $\frac{b-a}{n} < \delta$ and
+take $n$ such that $\frac{b-a}{n} < \delta$, and
 let $x_i := \frac{i}{n}(b-a) + a$.
-Then for all $x, y \in [x_{i-1},x_i]$ we have 
-$\abs{x-y} \leq \Delta x_i < \delta$ and so
+Then for all $x, y \in [x_{i-1},x_i]$, we have 
+$\abs{x-y} \leq \Delta x_i < \delta$, and so
 \begin{equation*}
 f(x)-f(y) \leq \abs{f(x)-f(y)} < \frac{\epsilon}{b-a} .
 \end{equation*}
@@ -1626,7 +1626,7 @@ Let $\epsilon > 0$ be given.  Let $\delta > 0$ be such that
 for $x \in [a,b]$,
 $\abs{x-c} < \delta$ implies $\abs{f(x)-f(c)} < \epsilon$.
 In particular,
-for such $x$ we have
+for such $x$, we have
 \begin{equation*}
 f(c)-\epsilon < f(x) < f(c) + \epsilon.
 \end{equation*}
@@ -2100,7 +2100,7 @@ so $L(x^{-n}) = - L(x^n) = -n L(x)$.  Then for $m \in \N$
 \begin{equation*}
 L(x) = L\Bigl({(x^{1/m})}^m\Bigr) = m L\bigl(x^{1/m}\bigr) .
 \end{equation*}
-Putting everything together for $n \in \Z$ and $m \in \N$ we have
+Putting everything together for $n \in \Z$ and $m \in \N$, we have
 $L(x^{n/m}) = n L(x^{1/m}) = (\nicefrac{n}{m}) L(x)$.
 
 Uniqueness follows using properties \ref{it:log:i} and
@@ -2645,7 +2645,7 @@ proving the other direction.  Suppose $\{ x_n \}$ is such that $\lim\, x_n =
 \lim_{n\to\infty} \int_a^{x_n} f = A
 \end{equation*}
 converges.  Given $\epsilon > 0$, pick $N$ such that for
-all $n \geq N$ we have
+all $n \geq N$, we have
 $A - \epsilon < \int_a^{x_n} f < A + \epsilon$.
 Because $\int_a^x f$ is increasing as a function of $x$, we have that for all
 $x \geq x_N$
@@ -2657,7 +2657,7 @@ $x$, there is an $x_m$ such that $m \geq N$ and $x \leq x_m$.  Then
 \begin{equation*}
 \int_a^{x} f \leq \int_a^{x_m} f < A + \epsilon .
 \end{equation*}
-In particular, for all $x \geq x_N$ we have
+In particular, for all $x \geq x_N$, we have
 $\abs{\int_a^{x} f - A} < \epsilon$.
 \end{proof}
 
@@ -2666,7 +2666,7 @@ Let
 $f \colon [a,\infty) \to \R$ and
 $g \colon [a,\infty) \to \R$ be functions
 that are Riemann integrable on $[a,b]$ for all $b > a$.   Suppose
-that for all $x \geq a$ we have
+that for all $x \geq a$,
 \begin{equation*}
 \abs{f(x)} \leq g(x) .
 \end{equation*}
@@ -2679,7 +2679,7 @@ $\abs{\int_a^\infty f} \leq \int_a^\infty g$.
 \end{prop}
 
 \begin{proof}
-Let us start with the first item.
+We start with the first item.
 For any $b$ and $c$, such that $a \leq b \leq c$, we have 
 $-g(x) \leq f(x) \leq g(x)$, and so
 \begin{equation*}
@@ -3151,7 +3151,7 @@ as a sequence,
 
 Let $M > 2\pi$ be arbitrary, and let $k \in \N$
 be the largest integer such that $2k\pi \leq M$.
-For $x \in [2k\pi,M]$ we have 
+For $x \in [2k\pi,M]$, we have 
 $\frac{-1}{2k\pi} \leq \frac{\sin(x)}{x} \leq \frac{1}{2k\pi}$, and so
 \begin{equation*}
 \abs{\int_{2k\pi}^{M} \frac{\sin(x)}{x} ~dx }  \leq
@@ -3250,7 +3250,7 @@ an $L \in \N$ such that if $\ell \geq L$, then
 $\int_\ell^{m} f < \nicefrac{\epsilon}{2}$ for all $m \geq \ell$.
 The function 
 $f$ must decrease to zero (why?), so make $L$ large enough so that
-for $\ell \geq L$ we have $f(\ell) < \nicefrac{\epsilon}{2}$.
+for $\ell \geq L$, we have $f(\ell) < \nicefrac{\epsilon}{2}$.
 Thus, for $m > \ell \geq L$, we have
 via \eqref{impropriemann:eqseries},
 \begin{equation*}
@@ -3286,8 +3286,7 @@ estimate its sum to within 0.01.  As this series is the $p$-series for
 $p=2$, we already proved it converges (let us pretend we do not know that),
 but we only roughly estimated its sum.
 
-The fundamental theorem of calculus says that for $k \in \N$
-we have
+The fundamental theorem of calculus says that for all $k \in \N$,
 \begin{equation*}
 \int_{k}^\infty \frac{1}{x^2}~dx = \frac{1}{k} .
 \end{equation*}

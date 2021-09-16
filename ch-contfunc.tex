@@ -209,7 +209,7 @@ We wish to show that $\{ f(x_n) \}$ converges to $L$.
 Let $\epsilon > 0$ be given.  Find a $\delta > 0$ such that
 if $x \in S \setminus \{c\}$ and $\abs{x-c} < \delta$, then
 $\abs{f(x) - L} < \epsilon$.  As
-$\{ x_n \}$  converges to $c$, find an $M$ such that for $n \geq M$
+$\{ x_n \}$  converges to $c$, find an $M$ such that for $n \geq M$,
 we have that $\abs{x_n - c} < \delta$.  Therefore, for $n \geq M$,
 \begin{equation*}
 \abs{f(x_n) - L} < \epsilon .
@@ -605,7 +605,7 @@ Note the difference from
 
 \begin{exercise}
 Find an example of a function $f \colon [-1,1] \to \R$, where for
-$A:=[0,1]$ we have
+$A:=[0,1]$, we have
 $f|_A(x) \to 0$ as $x \to 0$, but the limit of $f(x)$ as $x \to 0$
 does not exist.  Note why you cannot apply
 \propref{prop:limrest}.
@@ -773,7 +773,7 @@ and $\abs{x-c} < \delta$, then $\abs{f(x)-f(c)} < \epsilon$.
 Also $\abs{f(c)-f(c)} = 0 < \epsilon$, so the definition of continuity at
 $c$ is satisfied.  On the other hand, suppose $f$ is continuous
 at $c$.  For every $\epsilon > 0$, there exists a $\delta > 0$
-such that for $x \in S$ where $\abs{x-c} < \delta$ we have
+such that for $x \in S$ where $\abs{x-c} < \delta$, we have
 $\abs{f(x)-f(c)} < \epsilon$.  Then the statement is, of course, still true if
 $x \in S \setminus \{ c \} \subset S$.  Therefore, $\lim_{x\to c} f(x) =
 f(c)$.
@@ -782,8 +782,8 @@ For the third item, first suppose $f$ is continuous at $c$.  Let $\{ x_n \}$
 be a sequence such that $x_n \in S$ and $\lim\, x_n = c$.  Let $\epsilon > 0$
 be given.  Find a $\delta > 0$ such that $\abs{f(x)-f(c)} < \epsilon$
 for all $x \in S$ where $\abs{x-c} < \delta$.  Find an $M \in \N$
-such that for $n \geq M$ we have $\abs{x_n-c} < \delta$.  Then for
-$n \geq M$ we have that $\abs{f(x_n)-f(c)} < \epsilon$,
+such that for $n \geq M$, we have $\abs{x_n-c} < \delta$.  Then for
+$n \geq M$, we have that $\abs{f(x_n)-f(c)} < \epsilon$,
 so $\bigl\{ f(x_n) \bigr\}$
 converges to $f(c)$.
 
@@ -1228,7 +1228,7 @@ $x$.
 
 \begin{exercise} \label{exercise:positivecontneigh}
 Let $f \colon \R \to \R$ be continuous.  Suppose $f(c) > 0$.  Show that
-there exists an $\alpha > 0$ such that for all $x \in (c-\alpha,c+\alpha)$
+there exists an $\alpha > 0$ such that for all $x \in (c-\alpha,c+\alpha)$,
 we have $f(x) > 0$.
 \end{exercise}
 
@@ -1520,7 +1520,7 @@ d-c = \lim_{n\to\infty} (b_n - a_n) =
 \end{equation*}
 In other words $d=c$.
 
-By construction, for all $n$ we have
+By construction, for all $n$, we have
 \begin{equation*}
 f(a_n) < 0
 \qquad \text{and} \qquad
@@ -2025,8 +2025,8 @@ $\{ x_n \}$ be a Cauchy sequence in $S$.  Then $\{ f(x_n) \}$ is Cauchy.
 \begin{proof}
 Let $\epsilon > 0$ be given.  There is a $\delta > 0$ such that
 $\abs{f(x)-f(y)} < \epsilon$ whenever $x,y \in S$ and $\abs{x-y} < \delta$.  Find an $M
-\in \N$ such that for all $n, k \geq M$ we have $\abs{x_n-x_k} < \delta$.
-Then for all $n, k \geq M$ we have $\abs{f(x_n)-f(x_k)} < \epsilon$.
+\in \N$ such that for all $n, k \geq M$, we have $\abs{x_n-x_k} < \delta$.
+Then for all $n, k \geq M$, we have $\abs{f(x_n)-f(x_k)} < \epsilon$.
 \end{proof}
 
 An application of the lemma above is the following extension result.  It says that
@@ -2071,7 +2071,7 @@ we get $L_2 := \lim\, f(y_n)$.  If we show that $L_1 = L_2$, then
 the limit $L_a = \lim_{x\to a} f(x)$ exists.  Let $\epsilon > 0$ be given.
 Find $\delta > 0$ such that $\abs{x-y} < \delta$ implies $\abs{f(x)-f(y)} <
 \nicefrac{\epsilon}{3}$.  Find $M \in \N$ such that for
-$n \geq M$ we have $\abs{a-x_n} < \nicefrac{\delta}{2}$,
+$n \geq M$, we have $\abs{a-x_n} < \nicefrac{\delta}{2}$,
 $\abs{a-y_n} < \nicefrac{\delta}{2}$,
 $\abs{f(x_n)-L_1} < \nicefrac{\epsilon}{3}$, and
 $\abs{f(y_n)-L_2} < \nicefrac{\epsilon}{3}$.  Then for $n \geq M$,
@@ -2156,7 +2156,7 @@ Therefore, $f$ is uniformly continuous.
 
 We interpret Lipschitz continuity geometrically.  Let $f$ be a Lipschitz
 continuous function with some constant $K$.  We rewrite the inequality 
-to say that for $x \not=y$ we have
+to say that for $x \not=y$, we have
 \begin{equation*}
 \abs{\frac{f(x)-f(y)}{x-y}} \leq K .
 \end{equation*}
@@ -2356,7 +2356,7 @@ then $f$ is Lipschitz.
 \end{exercise}
 
 \begin{exercise}
-Suppose for $f \colon [0,1] \to \R$ we have $\abs{f(x)-f(y)} \leq K
+Suppose for $f \colon [0,1] \to \R$, we have $\abs{f(x)-f(y)} \leq K
 \abs{x-y}$ for all $x,y$ in $[0,1]$,
 and $f(0) = f(1) = 0$.
 Prove that $\abs{f(x)} \leq \nicefrac{K}{2}$ for all $x \in [0,1]$.  Further show by example that
@@ -2373,7 +2373,7 @@ is uniformly continuous.
 \begin{exercise}
 Suppose $f \colon S \to \R$ and $g \colon [0,\infty) \to [0,\infty)$
 are functions, $g$ is continuous at $0$, $g(0) = 0$, and
-whenever $x$ and $y$ are in $S$ we have $\abs{f(x)-f(y)} \leq
+whenever $x$ and $y$ are in $S$, we have $\abs{f(x)-f(y)} \leq
 g\bigl(\abs{x-y}\bigr)$.
 Prove that $f$ is uniformly continuous.
 \end{exercise}
@@ -2411,9 +2411,9 @@ As for sequences, a continuous variable can also approach infinity.  Let
 us make this notion precise.
 
 \begin{defn}
-We say $\infty$ is a cluster point of $S \subset \R$, if for every
+We say $\infty$ is a \emph{\myindex{cluster point}} of $S \subset \R$ if for every
 $M \in \R$, there exists an $x \in S$ such that $x \geq M$.  Similarly,
-$- \infty$ is a cluster point of $S \subset \R$, if for every
+$- \infty$ is a \emph{cluster point} of $S \subset \R$ if for every
 $M \in \R$, there exists an $x \in S$ such that $x \leq M$.
 
 \index{limit!of a function at infinity}%
@@ -2518,11 +2518,11 @@ is left as an exercise.
 
 \begin{proof}
 First suppose $f(x) \to L$ as $x \to \infty$.
-Given an $\epsilon > 0$, there exists an $M$ such that for all $x \geq M$
+Given an $\epsilon > 0$, there exists an $M$ such that for all $x \geq M$,
 we have $\abs{f(x)-L} < \epsilon$.
 Let $\{ x_n \}$
 be a sequence in $S$ such that $\lim \, x_n = \infty$.  Then there exists an
-$N$ such that for all $n \geq N$ we have $x_n \geq M$.  And thus
+$N$ such that for all $n \geq N$, we have $x_n \geq M$.  And thus
 $\abs{f(x_n)-L} < \epsilon$.
 
 We prove the converse by contrapositive.  Suppose $f(x)$ does
@@ -2581,7 +2581,7 @@ We can again use sequential limits, and an analogue of
 \begin{example}
 Let us show that $\lim_{x \to \infty} \frac{1+x^2}{1+x} = \infty$.
 
-Proof: For $x \geq 1$ we have
+Proof: For $x \geq 1$, we have
 \begin{equation*}
 \frac{1+x^2}{1+x} \geq 
 \frac{x^2}{x+x}  = 

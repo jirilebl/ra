@@ -363,7 +363,7 @@ $[a,b]$, and so is bounded.
 It is clear that $d(f,g) \geq 0$, 
 it is the supremum of nonnegative numbers.  If $f = g$,
 then $\abs{f(x)-g(x)} = 0$ for all $x$ and hence $d(f,g) = 0$.  Conversely,
-if $d(f,g) = 0$, then for any $x$ we have $\abs{f(x)-g(x)} \leq d(f,g) = 0$,
+if $d(f,g) = 0$, then for any $x$, we have $\abs{f(x)-g(x)} \leq d(f,g) = 0$,
 and hence $f(x) = g(x)$ for all $x$ and $f=g$.  That $d(f,g) = d(g,f)$
 is equally trivial.  To show the triangle inequality we use the standard
 triangle inequality.
@@ -1515,7 +1515,7 @@ Suppose the sequence $\{ x_n \}$ has limits $x$ and $y$.
 Take an arbitrary $\epsilon > 0$.
 From the definition find an $M_1$ such that for all $n \geq M_1$,
 $d(x_n,x) < \nicefrac{\epsilon}{2}$.  Similarly find an $M_2$
-such that for all $n \geq M_2$ we have
+such that for all $n \geq M_2$, we have
 $d(x_n,y) < \nicefrac{\epsilon}{2}$.  Now take an $n$ such that
 $n \geq M_1$ and also $n \geq M_2$, and estimate
 \begin{equation*}
@@ -1604,11 +1604,11 @@ the sequence
 $\{ x_j \}_{j=1}^\infty$ converges to
 $y = (y_1,y_2,\ldots,y_n) \in \R^n$.
 Given $\epsilon > 0$, there exists an $M$, such that for all
-$j \geq M$ we have
+$j \geq M$, we have
 \begin{equation*}
 d(y,x_j) < \epsilon.
 \end{equation*}
-Fix some $k=1,2,\ldots,n$.  For $j \geq M$ we have
+Fix some $k=1,2,\ldots,n$.  For all $j \geq M$,
 \begin{equation*}
 \bigl\lvert y_k - x_{j,k} \bigr\rvert
 =
@@ -1655,7 +1655,7 @@ sequences converge.
 \begin{prop} \label{prop:msconvtopo}
 Let $(X,d)$ be a metric space and $\{x_n\}$ a sequence in $X$.  Then
 $\{ x_n \}$ converges to $x \in X$ if and only if for every open neighborhood
-$U$ of $x$, there exists an $M \in \N$ such that for all $n \geq M$
+$U$ of $x$, there exists an $M \in \N$ such that for all $n \geq M$,
 we have $x_n \in U$.
 \end{prop}
 
@@ -1663,12 +1663,12 @@ we have $x_n \in U$.
 Suppose $\{ x_n \}$ converges to $x$.  Let $U$ be an open neighborhood
 of $x$, then there exists an $\epsilon > 0$ such that $B(x,\epsilon) \subset
 U$.  As the sequence converges, find an $M \in \N$ such that for all $n \geq
-M$ we have $d(x,x_n) < \epsilon$, or in other words $x_n \in B(x,\epsilon)
+M$, we have $d(x,x_n) < \epsilon$, or in other words $x_n \in B(x,\epsilon)
 \subset U$.
 
 Let us prove the other direction.  Given $\epsilon > 0$, let $U :=
 B(x,\epsilon)$ be the neighborhood of $x$.  Then there is an $M \in \N$
-such that for $n \geq M$ we have $x_n \in U = B(x,\epsilon)$ or in other
+such that for $n \geq M$, we have $x_n \in U = B(x,\epsilon)$ or in other
 words, $d(x,x_n) < \epsilon$.
 \end{proof}
 
@@ -1749,7 +1749,7 @@ $\{ x_{f(n)} \}_{n=1}^\infty$ converges to $x$.
 \begin{exercise}
 Let $(X,d)$ be a metric space where $d$ is the discrete metric.  Suppose 
 $\{ x_n \}$ is a convergent sequence in $X$.  Show that there exists
-a $K \in \N$ such that for all $n \geq K$ we have $x_n = x_K$.
+a $K \in \N$ such that for all $n \geq K$, we have $x_n = x_K$.
 \end{exercise}
 
 \begin{exercise}
@@ -1858,7 +1858,7 @@ Just like with sequences of real numbers we define Cauchy sequences.
 Let $(X,d)$ be a metric space.
 A sequence $\{ x_n \}$ in $X$ is a \emph{\myindex{Cauchy sequence}} if
 for every $\epsilon > 0$ there exists an $M \in \N$ such that
-for all $n \geq M$ and all $k \geq M$ we have
+for all $n \geq M$ and all $k \geq M$, we have
 \begin{equation*}
 d(x_n, x_k) < \epsilon .
 \end{equation*}
@@ -1876,9 +1876,9 @@ A convergent sequence in a metric space is Cauchy.
 
 \begin{proof}
 Suppose $\{ x_n \}$ converges to $x$.
-Given $\epsilon > 0$, there is an $M$ such that for $n \geq M$
+Given $\epsilon > 0$, there is an $M$ such that for all $n \geq M$,
 we have $d(x,x_n) < \nicefrac{\epsilon}{2}$.  Hence
-for all $n,k \geq M$ we have
+for all $n,k \geq M$, we have
 $d(x_n,x_k) \leq d(x_n,x) + d(x,x_k) < \nicefrac{\epsilon}{2} +
 \nicefrac{\epsilon}{2} = \epsilon$.
 \end{proof}
@@ -2598,7 +2598,7 @@ for some $d \in \N$ (the degree) and $a_{jk} \in \R$.  Then we claim
 $f$ is continuous.  Let $\{ (x_n,y_n) \}_{n=1}^\infty$ be a sequence
 in $\R^2$ that converges to $(x,y) \in \R^2$.  We proved that this
 means $\lim\, x_n = x$ and $\lim\, y_n = y$.
-By \propref{prop:contalg} we have
+By \propref{prop:contalg}, we have
 \begin{equation*}
 \lim_{n\to\infty}
 f(x_n,y_n) =
@@ -2814,7 +2814,7 @@ for which $B(x,\delta) \subset B(c,\delta_c)$.
 If $p, q \in X$ where $d_X(p,q) < \delta$,
 find a $c \in X$ such that $B(p,\delta) \subset B(c,\delta_c)$.
 Then $q \in B(c,\delta_c)$.  By the triangle inequality
-and the definition of $\delta_c$ we have
+and the definition of $\delta_c$, we have
 \begin{equation*}
 d_Y\bigl(f(p),f(q)\bigr)
 \leq
@@ -2854,7 +2854,7 @@ As $f$ is continuous on $[a,b] \times [c,d]$, which is compact, $f$
 is uniformly continuous.  
 In particular, there exists a $\delta > 0$ such that
 whenever $\widetilde{y} \in [c,d]$ and
-$\abs{\widetilde{y}-y} < \delta$ we have
+$\abs{\widetilde{y}-y} < \delta$, we have
 $\abs{f(x,\widetilde{y})-f(x,y)} < \epsilon$ for all $x \in [a,b]$.
 If we let $h_n(x):= f(x,y_n)$ and $h(x) := f(x,y)$,
 we have just shown that
@@ -3416,7 +3416,7 @@ It is an exercise to check that
 $T$ is well-defined, and that $T(f)$ really is in $C([-h,h],\R)$.
 
 Let $f \in Y$ and $\abs{x} \leq h$.
-As $F$ is bounded by $M$ we have
+As $F$ is bounded by $M$, we have
 \begin{equation*}
 \begin{split}
 \abs{T(f)(x) - y_0}
