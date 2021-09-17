@@ -1965,9 +1965,8 @@ By the squeeze lemma
 \end{equation*}
 
 Now suppose $\{ x_n \}$ converges to $x$.
-We know by
-\thmref{subseqlimsupinf:thm}
-that there exists a subsequence $\{ x_{n_k} \}$
+By \thmref{subseqlimsupinf:thm},
+there exists a subsequence $\{ x_{n_k} \}$
 that converges to $\limsup \, x_n$.
 As $\{ x_n \}$ converges to $x$,
 every subsequence converges to $x$ and
@@ -2041,7 +2040,7 @@ Bolzano--Weierstrass theorem tells us that we can at least find a convergent
 subsequence.
 The version of Bolzano--Weierstrass 
 that we present in this section is the Bolzano--Weierstrass for
-sequences.
+sequences of real numbers.
 
 \begin{thm}[Bolzano--Weierstrass]\index{Bolzano--Weierstrass theorem}\label{thm:bwseq}
 Suppose a sequence $\{ x_n \}$ of real numbers is bounded.
@@ -2570,7 +2569,7 @@ The sequence $\{ \nicefrac{1}{n} \}$ is a Cauchy sequence.
 
 Proof:  Given $\epsilon > 0$, find $M$ such that
 $M > \nicefrac{2}{\epsilon}$.  Then for $n,k \geq M$,
-we have that $\nicefrac{1}{n} < \nicefrac{\epsilon}{2}$
+we have $\nicefrac{1}{n} < \nicefrac{\epsilon}{2}$
 and
 $\nicefrac{1}{k} < \nicefrac{\epsilon}{2}$.  Therefore, for $n, k \geq M$,
 we have
@@ -2587,7 +2586,7 @@ The sequence $\{ \frac{n+1}{n} \}$ is a Cauchy sequence.
 
 Proof:  Given $\epsilon > 0$, find $M$ such that
 $M > \nicefrac{2}{\epsilon}$.  Then for $n,k \geq M$,
-we have that $\nicefrac{1}{n} < \nicefrac{\epsilon}{2}$
+we have $\nicefrac{1}{n} < \nicefrac{\epsilon}{2}$
 and
 $\nicefrac{1}{k} < \nicefrac{\epsilon}{2}$.  Therefore, for $n, k \geq M$,
 we have
@@ -2619,7 +2618,7 @@ A Cauchy sequence is bounded.
 \end{prop}
 
 \begin{proof}
-Suppose $\{ x_n \}$ is Cauchy.  Pick $M$ such that for all
+Suppose $\{ x_n \}$ is Cauchy.  Pick an $M$ such that for all
 $n,k \geq M$, we have $\abs{x_n-x_k} < 1$.  In particular, 
 for all $n \geq M$,
 \begin{equation*}
@@ -2679,12 +2678,15 @@ $\{ x_{m_i} \}$, such that
 \lim_{i\to\infty} x_{m_i} = b.
 \end{equation*}
 Given an $\epsilon > 0$,
-there exists an $M_1$ such that for all $i \geq M_1$,
-we have $\abs{x_{n_i} - a} < \nicefrac{\epsilon}{3}$ and
-an $M_2$ such that for all $i \geq M_2$, we have
-$\abs{x_{m_i} - b} < \nicefrac{\epsilon}{3}$.  There also exists an $M_3$
-such that for all $n,k \geq M_3$, we have
-$\abs{x_n-x_k} < \nicefrac{\epsilon}{3}$.  Let $M := \max \{ M_1, M_2, M_3 \}$.
+there exists an $M_1$ such that
+$\abs{x_{n_i} - a} < \nicefrac{\epsilon}{3}$ for all $i \geq M_1$
+and an $M_2$ such that
+$\abs{x_{m_i} - b} < \nicefrac{\epsilon}{3}$ for all $i \geq M_2$.
+There also exists an $M_3$
+such that
+$\abs{x_n-x_k} < \nicefrac{\epsilon}{3}$
+for all $n,k \geq M_3$.
+Let $M := \max \{ M_1, M_2, M_3 \}$.
 If $i \geq M$, then $n_i \geq M$ and $m_i \geq M$.  Hence,
 \begin{equation*}
 \begin{split}
