@@ -224,7 +224,7 @@ Let us show the sequence $\left\{ \frac{n^2+1}{n^2+n} \right\}$ converges and
 \end{equation*}
 
 Given $\epsilon > 0$,
-find $M \in \N$ such that $\frac{1}{M} < \epsilon$.  Then for any $n \geq
+find $M \in \N$ such that $\frac{1}{M} < \epsilon$.  Then for all $n \geq
 M$,
 \begin{equation*}
 \begin{split}
@@ -413,7 +413,7 @@ The $K$-tail $\{ x_{n+K} \}_{n=1}^\infty$ converges for all $K \in \N$.
 \item \label{prop:ktail:iii}
 The $K$-tail $\{ x_{n+K} \}_{n=1}^\infty$ converges for some $K \in \N$.
 \end{enumerate}
-Furthermore, if any (and hence all) of the limits exist, then for any $K \in \N$
+Furthermore, if any (and hence all) of the limits exist, then for all $K \in \N$
 \begin{equation*}
 \lim_{n\to \infty} x_n = \lim_{n \to \infty} x_{n+K} .
 \end{equation*}
@@ -538,7 +538,7 @@ subsequence, we have the following proposition about convergence.
 
 \begin{prop} \label{prop:seqtosubseq}
 If $\{ x_n \}$ is a convergent sequence,
-then any subsequence $\{ x_{n_i} \}$ is also convergent and
+then every subsequence $\{ x_{n_i} \}$ is also convergent, and
 \begin{equation*}
 \lim_{n\to \infty} x_n = 
 \lim_{i\to \infty} x_{n_i} .
@@ -696,14 +696,15 @@ using \propref{prop:seqtosubseq}.
 \end{exercise}
 
 \begin{exercise}[Tricky]
-Find a sequence $\{ x_n \}$ such that for any $y \in \R$, there exists a
+Find a sequence $\{ x_n \}$ such that for every $y \in \R$, there exists a
 subsequence $\{ x_{n_i} \}$ converging to $y$.
 \end{exercise}
 
 \begin{exercise}[Easy]
 Let $\{ x_n \}$ be a sequence and $x \in \R$.
-Suppose for any $\epsilon > 0$, there is an $M$ such that for
-all $n \geq M$, $\abs{x_n-x} \leq \epsilon$.  Show that $\lim\, x_n = x$.
+Suppose for every $\epsilon > 0$, there is an $M$ such that
+$\abs{x_n-x} \leq \epsilon$ for all $n \geq M$.
+Show that $\lim\, x_n = x$.
 \end{exercise}
 
 \begin{exercise}[Easy]
@@ -1250,7 +1251,7 @@ x_{n+1}^2-2 =
 =
 \frac{{\left( x_n^2-2 \right)}^2}{4x_n^2} .
 \end{equation*}
-Since any square is nonnegative,
+Since squares are nonnegative,
 $x_{n+1}^2-2 \geq 0$ for all $n$.  Therefore,
 $\{ x_n \}$ is monotone decreasing and bounded ($x_n > 0$ for all $n$), and 
 so the limit exists.  It remains to find the limit.
@@ -1608,7 +1609,7 @@ Hint: Find an expression $q$ such that $\frac{x_n^{1/k}-x^{1/k}}{x_n-x} =
 \end{exercise}
 
 \begin{exercise}
-Let $r > 0$.  Show that starting with any $x_1 \not= 0$, the sequence
+Let $r > 0$.  Show that starting with an arbitrary $x_1 \not= 0$, the sequence
 defined by
 \begin{equation*}
 x_{n+1} := x_n - \frac{x_n^2-r}{2x_n}
@@ -1672,7 +1673,7 @@ Prove $\lim\limits_{n \to \infty} {(n^2+1)}^{1/n} = 1$.
 Prove that $\bigl\{ {(n!)}^{1/n} \bigr\}$
 is unbounded.
 Hint: Show that $\left\{ \frac{C^n}{n!} \right\}$ converges to zero
-for any $C > 0$.
+for all $C > 0$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1878,7 +1879,7 @@ of the sequence arbitrarily close (or even possibly equal) to the supremum.
 Set $n_{k+1} :=  m$.  The subsequence $\{ x_{n_k} \}$ is defined.  Next we
 need to prove that it converges and has the right limit.
 
-For any $k \geq 2$, we have
+For all $k \geq 2$, we have
 $a_{(n_{k-1}+1)} \geq a_{n_k}$ (why?) and $a_{n_{k}} \geq x_{n_k}$.
 Therefore, for every $k \geq 2$,
 \begin{equation*}
@@ -2116,7 +2117,7 @@ x = \sup \{ a_i : i \in \N \} .
 Let $y := \lim\, b_i = \inf \{ b_i : i \in \N \}$.  Since $a_i < b_i$ for
 all $i$, then $x \leq y$.
 As the sequences are monotone, then
-for any $i$, we have (why?)
+for all $i$, we have (why?)
 \begin{equation*}
 y-x \leq b_i-a_i = \frac{b_1-a_1}{2^{i-1}} .
 \end{equation*}
@@ -2246,10 +2247,10 @@ and \ref{exercise:infseqlimlims}.
 \begin{example}
 Suppose 
 $x_n := 0$ for odd $n$ and $x_n := n$ for even $n$.
-Then $a_n = \infty$ for every $n$, since for any $M$,
+Then $a_n = \infty$ for all $n$, since for every $M$,
 there exists an even $k$ such that $x_k = k \geq M$.
 On the other hand, $b_n = 0$ for all $n$, as
-for any $n$,
+for every $n$, the set
 $\{ b_k : k \geq n \}$ consists of $0$ and nonnegative numbers.
 So,
 \begin{equation*}
@@ -2400,7 +2401,7 @@ That is, there is a sequence $\{ x_n \}$ of distinct numbers in $S$.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Prove that any sequence contains a monotone subsequence.
+Prove that every sequence contains a monotone subsequence.
 Hint: Call $n \in \N$ a \emph{peak} if $a_m \leq a_n$ for all $m \geq n$.  
 There are two possibilities: Either the sequence has at most finitely many
 peaks,
@@ -2429,7 +2430,7 @@ Now show that $\{ x_n \}$ converges to $x$.
 Let $\{x_n\}$ be a bounded sequence.
 \begin{enumerate}[a)]
 \item
-Prove that there exists an $s$ such that for any $r > s$ there exists 
+Prove that there exists an $s$ such that for every $r > s$, there exists 
 an $M \in \N$ such that for all $n \geq M$, we have
 $x_n < r$.
 \item
@@ -2741,7 +2742,7 @@ infinity.  When we get to the partial sums of the harmonic series
 a sequence such that $x_{n+1}-x_n = \nicefrac{1}{n}$, yet $\{ x_n \}$ is
 divergent.  In fact, for that sequence,
 $\lim_{n\to\infty} \abs{x_{n+j}-x_n} = 0$ for
-any $j \in \N$ (confer \exerciseref{exercise:badnocauchy}).
+every $j \in \N$ (confer \exerciseref{exercise:badnocauchy}).
 The key point in the definition of Cauchy is that $n$ and $k$
 vary independently and can be arbitrarily far apart.
 
@@ -2771,9 +2772,9 @@ $\Q$, such that $\Q$ is dense,
 that is: Whenever $x,y \in F$ are such that $x < y$,
 then there exists a $q \in \Q$ such that $x < q < y$.
 Say a sequence $\{ x_n \}_{n=1}^\infty$ of rational numbers is Cauchy
-if given any $\epsilon \in \Q$ with $\epsilon > 0$, there exists
+if given every $\epsilon \in \Q$ with $\epsilon > 0$, there exists
 an $M$ such that for all $n,k \geq M$, we have $\abs{x_n-x_k} < \epsilon$.
-Suppose any Cauchy sequence of rational numbers has a limit in $F$.
+Suppose every Cauchy sequence of rational numbers has a limit in $F$.
 Prove that $F$ has the \hyperref[defn:lub]{least-upper-bound property}.
 \end{exercise}
 
@@ -3326,7 +3327,7 @@ they are convergent.  The first item is thus proved.
 On the other hand if $\sum x_n$ diverges, the sequence of partial sums
 must be unbounded since it is monotone increasing.  That is, the partial
 sums for $\sum x_n$ are eventually bigger than any real number.  Putting this
-together with \eqref{comptest:eq} we see that for any $B \in
+together with \eqref{comptest:eq} we see that for every $B \in
 \R$, there is a $k$ such that 
 \begin{equation*}
 B \leq \sum_{n=1}^k x_n \leq \sum_{n=1}^k y_n .
@@ -3998,7 +3999,7 @@ $n \leq M$, there exists $k \leq K$ such that $\sigma(k) = n$.
 In other words
 $\{ 1,2,\ldots,M \} \subset \sigma\bigl(\{ 1,2,\ldots,K \} \bigr)$.
 
-For any $N \geq K$, let $Q := \max \sigma\bigl(\{ 1,2,\ldots,N \}\bigr)$.
+For $N \geq K$, let $Q := \max \sigma\bigl(\{ 1,2,\ldots,N \}\bigr)$.
 Compute
 \begin{equation*}
 \begin{split}
@@ -4404,10 +4405,11 @@ L = \limsup_{n\to\infty} \, {\abs{a_n {(x-x_0)}^n}}^{1/n}
 =
 \abs{x-x_0} R .
 \end{equation*}
-In particular, if $R = \infty$, then $L=\infty$ for any $x \not= x_0$, and
-the series diverges by the root test.  On the
-other hand if $R = 0$, then $L=0$ for any $x$, and the series 
-converges absolutely for all $x$.
+In particular, if $R = \infty$, then $L=\infty$ for every $x \not= x_0$, and
+the series diverges by the root test.
+On the other hand,
+if $R = 0$, then $L=0$ for every $x$,
+and the series converges absolutely for all $x$.
 
 Suppose $0 < R < \infty$.
 The series
@@ -4606,7 +4608,7 @@ $c_n = a_0 b_n + a_1 b_{n-1} + \cdots + a_n b_0$, also converges absolutely.
 
 \begin{exercise}[Challenging] \label{exercise:seriesconvergestoanything}
 Let $\sum a_n$ be conditionally convergent.
-Show that given any number $x$
+Show that given an arbitrary $x \in \R$
 there exists a rearrangement of $\sum a_n$
 such that the rearranged series converges to $x$.
 Hint: See \exampleref{example:harmonsumanything}.
@@ -4618,13 +4620,13 @@ Hint: See \exampleref{example:harmonsumanything}.
 \item
 Show that the alternating harmonic series $\sum
 \frac{{(-1)}^{n+1}}{n}$ has a rearrangement
-such that for any $x < y$, there exists a partial sum $s_n$
+such that whenever $x < y$, there exists a partial sum $s_n$
 of the rearranged series such that $x < s_n < y$.
 \item
 Show that the rearrangement you found does not converge.
 See \exampleref{example:harmonsumanything}.
 \item
-Show that for any $x \in \R$, there exists a subsequence of
+Show that for every $x \in \R$, there exists a subsequence of
 partial sums $\{ s_{n_k} \}$ of your rearrangement such that 
 $\lim \, s_{n_k} = x$.
 \end{enumerate}
@@ -4696,7 +4698,7 @@ Find the radius of convergence and prove your claim.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Prove that $\lim \, n^{1/n} = 1$.  Hint:  Write $n^{1/n} = 1+b_n$ and
+Prove that $\lim \, n^{1/n} = 1$ using the following procedure:  Write $n^{1/n} = 1+b_n$ and
 note $b_n > 0$.  Then show that ${(1+b_n)}^n \geq 
 \frac{n(n-1)}{2}b_n^2$ and use this to show that $\lim \, b_n = 0$.
 \item
@@ -4754,7 +4756,7 @@ Hint: Compare \exerciseref{exercise:squareseriesconv}.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ c_n \}$ is any sequence.  Prove that for any $r \in (0,1)$
+Suppose $\{ c_n \}$ is a sequence.  Prove that for every $r \in (0,1)$,
 there exists a strictly increasing sequence $\{ n_k \}$ of natural numbers ($n_{k+1} > n_k$) such that
 \begin{equation*}
 \sum_{k=1}^\infty c_k x^{n_k}
