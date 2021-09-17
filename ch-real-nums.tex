@@ -19,9 +19,10 @@ a relation $<$ such that
 %\begin{enumerate}[(i),itemsep=0.5\itemsep,parsep=0.5\parsep,topsep=0.5\topsep,partopsep=0.5\partopsep]
 %\begin{enumerate}[(i),nolistsep]
 \begin{enumerate}[(i)]
-\item \emph{(\myindex{trichotomy})} For any $x, y \in S$, exactly one of
+\item \emph{(\myindex{trichotomy})} For all $x, y \in S$, exactly one of
 $x < y$, $x=y$, or $y < x$ holds.
-\item \emph{(transitivity)} If $x < y$ and $y < z$, then $x < z$.
+\item \emph{(transitivity)} If $x,y,z \in S$ are such that $x < y$ and $y
+< z$, then $x < z$.
 \end{enumerate}
 We write $x \leq y$ if $x < y$ or $x=y$.  We define
 $>$ and $\geq$ in the obvious way.
@@ -60,7 +61,7 @@ is an \emph{\myindex{upper bound}} of $E$.
 then we say $E$ is \emph{\myindex{bounded below}} and $b$
 is a \emph{\myindex{lower bound}} of $E$.
 \item If there exists an upper bound $b_0$ of $E$ such that whenever
-$b$ is any upper bound for $E$ we have $b_0 \leq b$, then $b_0$
+$b$ is an upper bound for $E$ we have $b_0 \leq b$, then $b_0$
 is called the \emph{\myindex{least upper bound}} or
 the \emph{\myindex{supremum}}
 of $E$.  See \figureref{fig:lub}.  We write\glsadd{not:sup}
@@ -68,7 +69,7 @@ of $E$.  See \figureref{fig:lub}.  We write\glsadd{not:sup}
 \sup\, E := b_0  .
 \end{equation*}
 \item Similarly, if there exists a lower bound $b_0$ of $E$ such that whenever
-$b$ is any lower bound for $E$ we have $b_0 \geq b$, then $b_0$
+$b$ is a lower bound for $E$ we have $b_0 \geq b$, then $b_0$
 is called the \emph{\myindex{greatest lower bound}} or
 the \emph{\myindex{infimum}}
 of $E$.  We write\glsadd{not:inf}
@@ -340,7 +341,7 @@ imaginary number, a number such that $i^2 = -1$.  The reader may
 remember from algebra that $\C$ is also a field, however, it is not an
 ordered field.  While one can make $\C$ into an ordered set in some way,
 it is not possible to put an
-order on $\C$ that would make it an ordered field: In any ordered field
+order on $\C$ that would make it an ordered field: In every ordered field,
 $-1 < 0$ and $x^2 > 0$ for all nonzero $x$, but in $\C$, $i^2 = -1$.
 \end{example}
 
@@ -478,16 +479,16 @@ $\N_{\infty}$ (make sure to also handle the case of an empty set).
 
 \begin{exercise}
 Let $S := \{ a_k : k \in \N \} \cup \{ b_k : k \in \N \}$, ordered such that
-$a_k < b_j$ for any $k$ and $j$,
+$a_k < b_j$ for every $k$ and $j$,
 $a_k < a_m$ whenever $k < m$,
 and $b_k > b_m$ whenever $k < m$.
 \begin{enumerate}[a)]
 \item
 Show that $S$ is an ordered set.
 \item
-Show that any subset of $S$ is bounded (both above and below).
+Show that every subset of $S$ is bounded (both above and below).
 \item
-Find a bounded subset of $S$ which has no least upper bound.
+Find a bounded subset of $S$ that has no least upper bound.
 \end{enumerate}
 \end{exercise}
 
@@ -693,7 +694,7 @@ $x < r < y$.
 
 \begin{proof}
 Let us prove \ref{thm:arch:i}.  Divide through by $x$.
-Then \ref{thm:arch:i} says that for any real number $t:= \nicefrac{y}{x}$,
+Then \ref{thm:arch:i} says that for every real number $t:= \nicefrac{y}{x}$,
 we can find $n \in \N$ such that $n > t$.  In other words,
 \ref{thm:arch:i} says that $\N \subset \R$ is not bounded above.
 Suppose for contradiction that $\N$ is bounded above.  Let $b := \sup \N$.
@@ -954,7 +955,7 @@ Furthermore, equality occurs if and only if $x=y$.
 \end{exercise}
 
 \begin{exercise}
-Show that for any two real numbers $x$ and $y$ such that $x < y$, there
+Show that for every pair of real numbers $x$ and $y$ such that $x < y$, there
 exists an irrational number $s$ such that $x < s < y$.  Hint:
 Apply the density of $\Q$ to $\dfrac{x}{\sqrt{2}}$ and
 $\dfrac{y}{\sqrt{2}}$.
@@ -1010,7 +1011,7 @@ Prove $\sup \{ x \in \Q : x^2 < 2 \} = \sup \{ x \in \R : x^2 < 2 \}$.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Prove that given any $y \in \R$, we have $\sup \{ x \in \Q : x < y \} = y$.
+Prove that given $y \in \R$, we have $\sup \{ x \in \Q : x < y \} = y$.
 \item
 Let $A \subset \Q$ be a set that is bounded above such that whenever $x
 \in A$ and $t \in \Q$ with $t < x$, then $t \in A$.  Further suppose 
@@ -1376,7 +1377,7 @@ Find a number $M$ such that $\sabs{x^3-x^2+8x} \leq M$ for all $-2 \leq x \leq
 \begin{exercise} \label{exercise:finishfuncsupinf}
 Finish the proof of \propref{prop:funcsupinf}.
 That is, prove that
-given any set $D$,
+given a set $D$,
 and two bounded functions
 $f \colon D \to \R$ and $g \colon D \to \R$ 
 such that $f(x) \leq g(x)$ for all $x \in D$, then 
@@ -1521,7 +1522,7 @@ $I$ contains at least 2 points and
 for all $a,c \in I$ and $b \in \R$ such that $a < b < c$, we have $b \in I$.
 \end{prop}
 
-We have already seen that any open interval $(a,b)$ (where $a < b$ of course)
+We have already seen that every open interval $(a,b)$ (where $a < b$ of course)
 must be nonempty.  For example, it contains the number $\frac{a+b}{2}$.
 An unexpected fact is that from a set-theoretic perspective,
 all intervals have the same \myquote{size,} that is, they all have
@@ -1563,7 +1564,7 @@ understand.
 
 \begin{proof}
 Let $X \subset \R$ be a countably infinite
-subset such that for any two real numbers
+subset such that for every pair of real numbers
 $a < b$, there is an $x \in X$ such that $a < x < b$.  Were $\R$ countable,
 we could take $X = \R$.  We will show that $X$ is necessarily
 a proper subset, and so $X$ cannot equal $\R$, and $\R$ must be
@@ -1585,20 +1586,20 @@ For some $k > 1$,
 suppose $a_{j}$ and $b_{j}$ have been defined
 for $j=1,2,\ldots,k-1$,
 suppose
-the open interval $(a_{j},b_{j})$ does not contain any $x_\ell$
-for any $\ell=1,2,\ldots,j$, and
+the open interval $(a_{j},b_{j})$ does not contain $x_\ell$
+for $\ell=1,2,\ldots,j$, and
 suppose
 $a_1 < a_2 < \cdots < a_{k-1} < b_{k-1} < \cdots < b_2 < b_1$.
 \begin{enumerate}[(i)]
 \item Define $a_k := x_n$, where $n$ is the smallest $n \in \N$
 such that $x_n \in (a_{k-1},b_{k-1})$.  Such an $x_n$ exists by our
 assumption on $X$, and $n \geq k$ by the assumption on $(a_{k-1},b_{k-1})$.
-\item Next, define $b_k$ to be any real number in $(a_{k},b_{k-1})$.
+\item Next, define $b_k$ to be some real number in $(a_{k},b_{k-1})$.
 \end{enumerate}
 Notice that %$a_k < b_k$ and
 $a_{k-1} < a_k < b_k < b_{k-1}$.
 Also notice that $(a_{k},b_{k})$ does not contain $x_k$ and hence
-does not contain any $x_j$ for $j=1,2,\ldots,k$.
+does not contain $x_j$ for $j=1,2,\ldots,k$.
 The two sequences are now defined.
 
 Claim: \emph{$a_n < b_m$ for all $n$ and $m$ in $\N$.} Proof: Let us first
@@ -1615,7 +1616,7 @@ for some $n$, then $y < a_{n+1}$, which is impossible.
 Similarly, $y$ cannot be a member of $B$.  Therefore,
 $a_n < y$ for all $n\in \N$
 and $y < b_n$ for all $n\in \N$.
-In other words, for any $n \in \N$, we have $y \in (a_n,b_n)$.
+In other words, for every $n \in \N$, we have $y \in (a_n,b_n)$.
 By the construction of the sequence, $x_n \not\in (a_n,b_n)$,
 and so $y \not= x_n$.  As this was true for all $n \in \N$, we have that $y
 \not\in X$.
@@ -1881,7 +1882,7 @@ x - D_n
 We move on to the
 second item.  Take any $x \in (0,1]$.
 First let us tackle the existence.
-For convenience let $D_0 := 0$.
+For convenience, let $D_0 := 0$.
 Then,
 $D_0 < x \leq D_0 + {10}^{-0}$.
 Suppose we defined the digits $d_1,d_2,\ldots,d_n$,
@@ -2149,7 +2150,7 @@ of $x$ is in fact less than or equal to $q-1$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:bnlimit}
-Prove that if $b \in \N$ and $b \geq 2$, then for any $\epsilon > 0$,
+Prove that if $b \in \N$ and $b \geq 2$, then for every $\epsilon > 0$,
 there is an $n \in \N$ such that 
 $b^{-n} < \epsilon$.  Hint:
 One possibility is to first prove that $b^n > n$ for all $n \in \N$ by induction.

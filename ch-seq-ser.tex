@@ -1693,13 +1693,14 @@ Named after the Czech mathematician
 \href{https://en.wikipedia.org/wiki/Bernard_Bolzano}{Bernhard Placidus Johann Nepomuk Bolzano}
 (1781--1848), and the German mathematician
 \href{https://en.wikipedia.org/wiki/Karl_Weierstrass}{Karl Theodor Wilhelm Weierstrass}
-(1815--1897).}, which is an
-indispensable tool in analysis.
+(1815--1897).}, an
+indispensable tool in analysis, showing the existence of convergent
+subsequences.
 
 We have seen that every convergent sequence is bounded,
 although there exist many bounded divergent sequences.  For example,
 the sequence $\{ {(-1)}^n \}$ is bounded,
-but it is divergent.  All is not lost however and we can
+but divergent.  All is not lost, however, and we can
 still compute certain limits with a bounded divergent sequence.
 
 \subsection{Upper and lower limits}
@@ -1730,7 +1731,8 @@ Define, if the limits exist,\glsadd{not:limsupseq}\glsadd{not:liminfseq}
 
 For a bounded sequence, liminf and limsup always exist (see below).  It is possible
 to define liminf and limsup for unbounded sequences if we allow $\infty$
-and $-\infty$.  It is not hard to generalize the following results to
+and $-\infty$, and we do so later in this section.
+It is not hard to generalize the following results to
 include unbounded sequences, however, we first restrict our attention to
 bounded ones.
 
@@ -1759,13 +1761,15 @@ bound for $\{ x_k : k \geq n \}$, it is also
 an upper bound for the subset $\{ x_k : k \geq (n+1) \}$.  Therefore
 $a_{n+1}$, the least upper bound for
 $\{ x_k : k \geq (n+1) \}$, has to be less than or equal to $a_n$,
-that is,
-$a_n \geq a_{n+1}$.  Similarly (an exercise), $\{ b_n \}$ is an increasing
+the least upper bound for
+$\{ x_k : k \geq n) \}$.
+That is,
+$a_n \geq a_{n+1}$ for all $n$.  Similarly (an exercise), $\{ b_n \}$ is an increasing
 sequence.  It is left as an exercise to show that
 if $\{ x_n \}$ is bounded, then $\{ a_n \}$ and $\{ b_n \}$ must be bounded.
 
-The second item in the proposition follows as the sequences
-$\{ a_n \}$ and $\{ b_n \}$ are monotone.
+The second item follows as the sequences
+$\{ a_n \}$ and $\{ b_n \}$ are monotone and bounded.
 
 For the third item, note that $b_n \leq a_n$, as the $\inf$ of a nonempty set
 is less than or equal to its $\sup$.  The sequences $\{ a_n \}$ and $\{ b_n \}$
@@ -1862,8 +1866,8 @@ $\{ x_{m_k} \}$ such that
 Define $a_n := \sup \{ x_k : k \geq n \}$.
 Write
 $x := \limsup \, x_n = \lim\, a_n$.  We define the subsequence inductively.
-Pick $n_1 := 1$ and suppose we have
-defined the subsequence until $n_k$ for some $k$.  Now pick some $m > n_k$
+Let $n_1 := 1$ and suppose we have
+defined the subsequence until $n_k$ for some $k$.  Pick some $m > n_k$
 such that
 \begin{equation*}
 a_{(n_k+1)} - x_m < \frac{1}{k+1} .
@@ -1874,9 +1878,9 @@ of the sequence arbitrarily close (or even possibly equal) to the supremum.
 Set $n_{k+1} :=  m$.  The subsequence $\{ x_{n_k} \}$ is defined.  Next we
 need to prove that it converges and has the right limit.
 
-Note that
-$a_{(n_{k-1}+1)} \geq a_{n_k}$ (why?) and that $a_{n_{k}} \geq x_{n_k}$.
-Therefore, for every $k \geq 2$, we have
+For any $k \geq 2$, we have
+$a_{(n_{k-1}+1)} \geq a_{n_k}$ (why?) and $a_{n_{k}} \geq x_{n_k}$.
+Therefore, for every $k \geq 2$,
 \begin{equation*}
 \begin{split}
 \abs{a_{n_k} - x_{n_k}} & = 
@@ -1891,7 +1895,7 @@ a_{(n_{k-1}+1)} - x_{n_k}
 
 Let us show that $\{ x_{n_k} \}$ converges to $x$.
 Note that the subsequence need not be monotone.  Let $\epsilon > 0$ be given.
-As $\{ a_n \}$ converges to $x$, then the subsequence
+As $\{ a_n \}$ converges to $x$, the subsequence
 $\{ a_{n_k} \}$ converges to $x$.
 Thus there exists an $M_1 \in \N$
 such that for all $k \geq M_1$, we have
@@ -2003,7 +2007,7 @@ $\{ x_{n_k} : k \geq j \} \subset \{ x_k : k \geq j \}$.
 A supremum of a subset is less than or equal to the supremum of the
 set and therefore
 \begin{equation*}
-c_j \leq a_j .
+c_j \leq a_j \qquad \text{for all  $j$}.
 \end{equation*}
 \lemmaref{limandineq:lemma} gives
 \begin{equation*}
