@@ -148,7 +148,7 @@ results.
 \begin{prop} \label{mv:sumulbound:prop}
 Suppose $R \subset \R^n$ is a closed rectangle
 and $f \colon R \to \R$ is a bounded function.  Let $m, M \in \R$ be 
-such that for all $x \in R$ we have $m \leq f(x) \leq M$.  Then for any partition
+such that for all $x \in R$, we have $m \leq f(x) \leq M$.  Then for any partition
 $P$ of $R$,
 \begin{equation*}
 m \, V(R) \leq
@@ -282,7 +282,7 @@ integral.
 \begin{prop} \label{mv:intulbound:prop}
 Let $R \subset \R^n$ be a closed rectangle and
 $f \colon R \to \R$ a bounded function.  Let $m, M \in \R$ be 
-such that for all $x \in R$ we have $m \leq f(x) \leq M$.  Then
+such that for all $x \in R$, we have $m \leq f(x) \leq M$.  Then
 \begin{equation}
 \label{mv:intulbound:eq}
 m \, V(R) \leq
@@ -317,7 +317,7 @@ $U(\widetilde{P},f) \leq U(Q,f)$.  Therefore,
 \begin{equation*}
 L(P,f) \leq L(\widetilde{P},f) \leq U(\widetilde{P},f) \leq U(Q,f) .
 \end{equation*}
-In other words, for two arbitrary partitions $P$ and $Q$ we have
+In other words, for two arbitrary partitions $P$ and $Q$, we have
 $L(P,f) \leq U(Q,f)$.  
 Via \volIref{\propref*{vI-infsupineq:prop} from volume I}{\propref{infsupineq:prop}},
 we obtain
@@ -588,7 +588,7 @@ $\snorm{x-y} < \delta$ implies $\sabs{f(x)-f(y)} < \frac{\epsilon}{V(R)}$.
 
 Let $P$ be a partition of $R$, such that longest side of any subrectangle
 is strictly less than $\frac{\delta}{\sqrt{n}}$.
-If $x, y \in R_k$ for some subrectangle $R_k$ of $P$ we have,
+If $x, y \in R_k$ for some subrectangle $R_k$ of $P$, then,
 by the proposition above,
 $\snorm{x-y} < \sqrt{n} \frac{\delta}{\sqrt{n}} = \delta$.  Therefore,
 \begin{equation*}
@@ -921,9 +921,9 @@ integrable function such $f(x) = -f(-x)$.  Using the definition prove
 \sectionnotes{1--2 lectures}
 
 The Riemann integral in several variables
-is hard to compute from the definition.
-For one-dimensional Riemann integral we have the fundamental
-theorem of calculus
+is hard to compute by the definition.
+For one-dimensional Riemann integral, we have the fundamental
+theorem of calculus,
 %(FIXME link?)
 and we can compute many integrals without
 having to appeal to the definition of the integral.
@@ -1111,14 +1111,14 @@ If we let
 \begin{equation*}
 m_k(x) := \inf_{y \in R'_k} f(x,y) = \inf_{y \in R'_k} f_x(y) ,
 \end{equation*}
-then of course if $x \in R_j$, then $m_{j,k} \leq m_k(x)$.  Therefore
+then of course if $x \in R_j$, then $m_{j,k} \leq m_k(x)$.  Therefore,
 \begin{equation*}
 \sum_{k=1}^K
 m_{j,k} \, V(R'_k)
 \leq \sum_{k=1}^K m_k(x) \, V(R'_k) = L(P',f_x) \leq
 \underline{\int_S} f_x = g(x) .
 \end{equation*}
-As we have the inequality for all $x \in R_j$ we have
+As we have the inequality for all $x \in R_j$, we have
 \begin{equation*}
 \sum_{k=1}^K
 m_{j,k} \, V(R'_k)
@@ -1137,7 +1137,7 @@ L\bigl((P,P'),f\bigr)
 Similarly $U\bigl((P,P'),f) \geq U(P,h)$, and the proof of this inequality is
 left as an exercise.
 
-Putting this together we have
+Putting this together, we have
 \begin{equation*}
 L\bigl((P,P'),f\bigr)
 \leq
@@ -1155,8 +1155,8 @@ L\bigl((P,P'),f\bigr) ,
 \end{equation*}
 and we can make the right-hand side arbitrarily small.
 As for any partition we have 
-$L\bigl((P,P'),f\bigr) \leq L(P,g) \leq U\bigl((P,P'),f\bigr)$ we must have
-that $\int_R g = \int_{R \times S} f$.
+$L\bigl((P,P'),f\bigr) \leq L(P,g) \leq U\bigl((P,P'),f\bigr)$, we must have
+$\int_R g = \int_{R \times S} f$.
 
 Similarly,
 \begin{equation*}
@@ -2021,7 +2021,7 @@ $f \colon S \to \R$ is continuous at $x \in S$ if and only if $o(f,x) = 0$.
 
 \begin{proof}
 First suppose that $f$ is continuous at $x \in S$.  Given any $\epsilon > 0$,
-there exists a $\delta > 0$ such that for $y \in B_S(x,\delta)$
+there exists a $\delta > 0$ such that for $y \in B_S(x,\delta)$,
 we have $\sabs{f(x)-f(y)} < \epsilon$.  Therefore, if $y_1,y_2 \in
 B_S(x,\delta)$, then
 \begin{equation*}
@@ -2202,8 +2202,8 @@ Suppose $R_1,R_2,\ldots,R_p$ are ordered so that
 the interiors of $R_1,R_2,\ldots,R_{q}$ intersect $S_{1/k}$,
 while the interiors of $R_{q+1},R_{q+2},\ldots,R_p$
 are disjoint from $S_{1/k}$.  If $x \in R_j \cap S_{1/k}$
-and $x$ is in the interior of $R_j$ so
-sufficiently small balls are completely inside $R_j$,
+and $x$ is in the interior of $R_j$,
+%so sufficiently small balls are completely inside $R_j$,
 then by definition of $S_{1/k}$ we have
 $M_j-m_j \geq \nicefrac{1}{k}$.
 Then
@@ -3312,7 +3312,7 @@ Therefore, suppose that
 $f(y) \geq 0$ for all $y \in R$.
 
 For a small enough
-$\delta > 0$ we have
+$\delta > 0$, we have
 \begin{equation*}
 \begin{split}
 \epsilon + \int_R f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx

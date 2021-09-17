@@ -35,7 +35,7 @@ Define:
 & (x,y) + (s,t) := (x+s,y+t) , \\
 & (x,y) (s,t) := (xs-yt,xt+ys) .
 \end{align*}
-Under the identification above we have $0 = (0,0)$ and $1 = (1,0)$.  These
+Under the identification above, we have $0 = (0,0)$ and $1 = (1,0)$.  These
 two operations make the plane into a field (exercise).
 
 We write a complex number $(x,y)$ as $x+iy$, where we
@@ -112,7 +112,7 @@ and $\sabs{z}$ is equal to the euclidean norm on $\R^2$.
 Importantly, since $\R^2$ is a complete metric space, then
 so is $\C$.
 
-Since $\sabs{z}$ is the euclidean norm on $\R^2$ we have the
+Since $\sabs{z}$ is the euclidean norm on $\R^2$, we have the
 \emph{triangle inequality}\index{triangle inequality!complex numbers}
 of both flavors:
 \begin{equation*}
@@ -420,7 +420,7 @@ Let $f_n \colon X \to Y$ be functions.  Then
 $\{f_n\}$ \emph{\myindex{converges uniformly}}\index{uniform convergence}
 to $f$ if
 for every $\epsilon > 0$, there exists an $M$ such that
-for all $n \geq M$ and all $x \in X$ we have
+for all $n \geq M$ and all $x \in X$, we have
 \begin{equation*}
 d\bigl(f_n(x),f(x)\bigr) < \epsilon .
 \end{equation*}
@@ -452,7 +452,7 @@ is left as an exercise.
 Let $X$ be any set and let $(Y,d)$ be a Cauchy complete metric space.
 Let $f_n \colon X \to Y$ be functions.  Then $\{ f_n \}$ converges
 uniformly if and only if for every $\epsilon > 0$, there is an $M$ such that
-for all $n, m \geq M$, and all $x \in X$ we have
+for all $n, m \geq M$ and all $x \in X$, we have
 \begin{equation*}
 d\bigl(f_n(x),f_m(x)\bigr) < \epsilon .
 \end{equation*}
@@ -519,9 +519,9 @@ Note that the converse of this theorem is not true.
 \begin{proof}
 Suppose $\sum M_n$ converges.  Given $\epsilon > 0$,
 we have that the partial sums of $\sum M_n$ are Cauchy so for
-there is an $N$ such that for all $m, n \geq N$ with $m \geq n$ we have
+there is an $N$ such that for all $m, n \geq N$ with $m \geq n$, we have
 \begin{equation*}
-\sum_{k=n+1}^m M_k < \epsilon
+\sum_{k=n+1}^m M_k < \epsilon .
 \end{equation*}
 We estimate a Cauchy difference of the partial
 sums of the functions
@@ -543,7 +543,7 @@ This is a Fourier series,
 we will see more of these in a later section.  It converges uniformly because
 \begin{equation*}
 \abs{\frac{\sin(nx)}{n^2}} \leq 
-\frac{1}{n^2}
+\frac{1}{n^2} ,
 \end{equation*}
 and
 $\sum_{n=1}^\infty \frac{1}{n^2}$
@@ -604,7 +604,7 @@ In other words,
 First we show that $\{ a_n \}$ converges.  As
 $\{ f_n \}$ converges uniformly it is uniformly Cauchy. 
 Let $\epsilon > 0$ be given.  There is
-an $M$ such that for all $m,n \geq M$ we have
+an $M$ such that for all $m,n \geq M$, we have
 \begin{equation*}
 d_Y\bigl(f_n(x_k),f_m(x_k)\bigr) < \epsilon \qquad \text{for all } k .
 \end{equation*}
@@ -896,7 +896,7 @@ And so
 \frac{3^m +1}{2} .
 \end{split}
 \end{equation*}
-As $m \to \infty$ we have
+As $m \to \infty$, we have
 $\delta_m \to 0$, but $\frac{3^m+1}{2}$
 goes to infinity.  Hence $f$ cannot be differentiable at $x$.
 \end{example}
@@ -1309,12 +1309,12 @@ f_k(0) := \sum_{j=1}^\infty a_{kj} .
 As the series converges, each $f_k$ is continuous at $0$
 (since 0 is the only cluster point, they are continuous at every point of
 $E$, but we don't need that).
-For all $x \in E$ we have
+For all $x \in E$, we have
 \begin{equation*}
 \sabs{f_k(x)} \leq \sum_{j=1}^\infty \sabs{a_{kj}} .
 \end{equation*}
 By knowing that $\sum_k \sum_j \sabs{a_{kj}}$ converges (does not depend on
-$x$), we know that for any $x \in E$
+$x$), we know that for any $x \in E$,
 \begin{equation*}
 \sum_{k=1}^n f_k(x)
 \end{equation*}
@@ -1355,7 +1355,7 @@ f(x) := \sum_{k=0}^\infty a_k x^k
 \end{equation*}
 be a power series converging in $(-\rho,\rho)$ for some $\rho > 0$.  Given any $a \in
 (-\rho,\rho)$,
-and $x$ such that $\sabs{x-a} < \rho-\sabs{a}$ we obtain
+and $x$ such that $\sabs{x-a} < \rho-\sabs{a}$, we obtain
 \begin{equation*}
 f(x) =
 \sum_{k=0}^\infty \frac{f^{(k)}(a)}{k!} {(x-a)}^{k} .
@@ -1680,7 +1680,7 @@ that $f$ is real-valued on $\R$.
 Let $\D = B(0,1)$ be the unit disc.  Suppose
 $f \colon \D \to \C$ is analytic with power series
 $\sum c_n z^n$.  Suppose $\sabs{c_n} \leq 1$ for all $n$.  Prove that for
-all $z \in \D$ we have
+all $z \in \D$, we have
 $\sabs{f(z)} \leq \frac{1}{1-\sabs{z}}$.
 \end{exercise}
 
@@ -1970,7 +1970,7 @@ To show onto, pick $(a,b) \in \R^2$ such that $a^2+b^2 = 1$.
 Suppose first that $a,b \geq 0$.  By the intermediate value theorem
 there must exist an $x \in [0,\nicefrac{\pi}{2}]$ such that
 $\cos(x) = a$, and hence $b^2 = \bigl(\sin(x)\bigr)^2$.  As
-$b$ and $\sin(x)$ are nonnegative we have $b = \sin(x)$.
+$b$ and $\sin(x)$ are nonnegative, we have $b = \sin(x)$.
 Since $-\sin(x)$ is the derivative of $\cos(x)$
 and $\cos(-x) = \cos(x)$, then $\sin(x) < 0$ for $x \in [\nicefrac{-\pi}{2},0)$.
 Using the same reasoning we obtain that
@@ -2033,7 +2033,7 @@ Derive the power series for $\sin(z)$ and $\cos(z)$ at the origin.
 \end{exercise}
 
 \begin{exercise}
-Using the power series, show that for $x$ real we have
+Using the power series, show that for $x$ real, we have
 $\frac{d}{dx} \bigl[ \sin(x)\bigr] = \cos(x)$ and
 $\frac{d}{dx} \bigl[ \cos(x)\bigr] = -\sin(x)$.
 \end{exercise}
@@ -2298,14 +2298,14 @@ such that $p(z_0) = 0$.
 
 \begin{proof}
 Let $\mu := \inf \bigl\{ \sabs{p(z)} : z \in \C \bigr\}$.  Find an $R$ such that
-for all $z$ with $\sabs{z} \geq R$ we have $\sabs{p(z)} \geq \mu+1$.
+for all $z$ with $\sabs{z} \geq R$, we have $\sabs{p(z)} \geq \mu+1$.
 Therefore, any $z$ with $\sabs{p(z)}$ close to $\mu$ must be in the
 closed ball $C(0,R) = \bigl\{ z \in \C : \sabs{z} \leq R \bigr\}$.  As $\sabs{p(z)}$
 is a continuous real-valued function, it achieves its minimum
 on the compact set $C(0,R)$ (closed and bounded) and this minimum must
 be $\mu$.  So there is a $z_0 \in C(0,R)$ such that $\sabs{p(z_0)} = \mu$.
-As that is a minimum of $\sabs{p(z)}$ on $\C$, then by the first lemma above we have
-that $\sabs{p(z_0)} = 0$.
+As that is a minimum of $\sabs{p(z)}$ on $\C$, then by the first lemma
+above, we have $\sabs{p(z_0)} = 0$.
 \end{proof}
 
 The fundamental theorem also does not generalize to analytic functions.  For example,
@@ -2460,7 +2460,7 @@ although the sequence converges pointwise (to a discontinuous function).
 \begin{example}
 The sequence $\{ f_n \}$ of functions in $C([0,1],\R)$ given by $f_n(x) :=
 \frac{n^3x}{1+n^4x^2}$
-converges pointwise to the zero function (obvious at $x=0$, and for $x > 0$
+converges pointwise to the zero function (obvious at $x=0$, and for $x > 0$,
 we have $\frac{n^3x}{1+n^4x^2} \leq \frac{1}{nx}$).
 As for each $x$, $\{f_n(x)\}$ converges to 0, it is bounded
 so $\{ f_n \}$ is pointwise bounded.
@@ -2530,7 +2530,7 @@ A set $S$ of functions
 $f \colon X \to \C$ is 
 \emph{\myindex{uniformly equicontinuous}}
 if for every $\epsilon > 0$, there is a $\delta > 0$
-such that if $x,y \in X$ with $d(x,y) < \delta$ we have
+such that if $x,y \in X$ with $d(x,y) < \delta$, we have
 \begin{equation*}
 \sabs{f(x)-f(y)} < \epsilon \qquad \text{for all } f \in S .
 \end{equation*}
@@ -2545,7 +2545,7 @@ if $S$ is infinite.
 Just as for continuity, one can define equicontinuity at a point.
 That is, $S$ is \emph{\myindex{equicontinuous}} at $x \in X$
 if for every $\epsilon > 0$, there is a $\delta > 0$
-such that if $y \in X$ with $d(x,y) < \delta$ we have
+such that for $y \in X$ with $d(x,y) < \delta$, we have
 $\sabs{f(x)-f(y)} < \epsilon$ for all $f \in S$.
 We will only deal with compact $X$ here, and
 one can prove (exercise) that for a compact metric space $X$,
@@ -2575,7 +2575,7 @@ Hence there is a $\delta > 0$ such that
 \end{equation*}
 whenever $d(x,y) < \delta$ and $1 \leq j \leq N$.
 
-Take $n > N$.  For $d(x,y) < \delta$ we have
+Take $n > N$.  For $d(x,y) < \delta$, we have
 \begin{equation*}
 \sabs{f_n(x)-f_n(y)}
 \leq
@@ -2647,10 +2647,10 @@ uniform equicontinuity is automatic via an exercise.
 \begin{proof}
 Let us first show that the sequence is uniformly bounded.
 
-By uniform equicontinuity we have that
+By uniform equicontinuity,
 there is a $\delta > 0$
 such that
-for all $x \in X$ and all $n \in \N$
+for all $x \in X$ and all $n \in \N$,
 \begin{equation*}
 B(x,\delta) \subset f_n^{-1}\bigl(B(f_n(x),1)\bigr) .
 \end{equation*}
@@ -2660,13 +2660,13 @@ such that
 X = \bigcup_{j=1}^k B(x_j,\delta) .
 \end{equation*}
 As $\{ f_n \}$ is pointwise bounded there exist $M_1,M_2,\ldots,M_k$
-such that for $j=1,2,\ldots,k$ we have
+such that for $j=1,2,\ldots,k$, we have
 \begin{equation*}
 \sabs{f_n(x_j)} \leq M_j \qquad \text{for all } n.
 \end{equation*}
 Let $M := 1+ \max \{ M_1,M_2,\ldots,M_k \}$.  Given any
 $x \in X$, there is a $j$ such that $x \in B(x_j,\delta)$.  Therefore,
-for all $n$ we have
+for all $n$, we have
 $x \in f_n^{-1}\bigl(B(f_n(x_j),1)\bigr)$, or in other words
 \begin{equation*}
 \sabs{f_n(x)-f_n(x_j)} < 1 .
@@ -3318,7 +3318,7 @@ p_n(x) := \widetilde{p}_n(x) - \widetilde{p}_n(0) .
 Obviously $p_n(0) = 0$.
 
 Given $\epsilon > 0$, let $N$ be such that
-for $n \geq N$ we have
+for $n \geq N$, we have
 $\bigl\lvert\widetilde{p}_n(x)-\sabs{x}\big\rvert <
 \nicefrac{\epsilon}{2}$ for all $x \in [-a,a]$.
 In particular,
@@ -3342,7 +3342,8 @@ that's the one we will need.
 \begin{defn}
 A set $\sA$ of complex-valued functions $f \colon X \to \C$ is said to be an 
 \emph{\myindex{algebra}} (sometimes
-\emph{\myindex{complex algebra}} or \emph{algebra over $\C$}) if for all $f, g \in \sA$ and $c \in \C$ we have
+\emph{\myindex{complex algebra}} or \emph{algebra over $\C$}) if for all $f,
+g \in \sA$ and $c \in \C$, we have
 \begin{enumerate}[(i)]
 \item $f+g \in \sA$.
 \item $fg \in \sA$.
@@ -3600,14 +3601,13 @@ Let
 \varphi := \min(g_{x_1},g_{x_2},\ldots,g_{x_k}) .
 \end{equation*}
 By Claim 2, $\varphi \in \widebar{\sA}$.  Similarly as before (same argument as in
-Claim 3) we have that for all
-$t \in X$
+Claim 3), for all $t \in X$,
 \begin{equation*}
 \varphi(t) < f(t) + \epsilon .
 \end{equation*}
 Since all the $g_x$ satisfy $g_x(t) > f(t) - \epsilon$ for all $t \in X$,
 $\varphi(t) > f(t) - \epsilon$ as well.
-Therefore, for all $t$
+Therefore, for all $t$,
 \begin{equation*}
 -\epsilon < \varphi(t) - f(t) < \epsilon ,
 \end{equation*}
@@ -3669,7 +3669,7 @@ To obtain Stone--Weierstrass for complex algebras, we must
 make an extra assumption.
 
 \begin{defn}
-An algebra $\sA$ is self-adjoint, if for all $f \in \sA$, the function
+An algebra $\sA$ is \emph{\myindex{self-adjoint}} if for all $f \in \sA$, the function
 $\bar{f}$ defined by $\bar{f}(x) := \overline{f(x)}$ is in $\sA$, where by the
 bar we mean the complex conjugate.
 \end{defn}
@@ -3862,7 +3862,7 @@ one-forms.}
 \end{equation*}
 \begin{enumerate}[a)]
 \item
-Prove that for all nonnegative integers $k = 0,1,2,3,\ldots$ we have
+Prove that for all nonnegative integers $k = 0,1,2,3,\ldots$, we have
 $\int_{S^1} z^k ~ dz = 0$.
 \item
 Prove that if
@@ -4187,12 +4187,12 @@ to a continuously differentiable function, whose derivative is
 the differentiated series.
 
 By iterating the same reasoning we find that if
-for some $C$ and $\alpha > k+1$ ($k \in \N$) we have
+for some $C$ and $\alpha > k+1$ ($k \in \N$), we have
 \begin{equation*}
 \sabs{c_n} 
 \leq \frac{C}{\sabs{n}^\alpha}
 \end{equation*}
-for all nonzero integers $n$.  Then 
+for all nonzero integers $n$, then 
 the Fourier series converges to a $k$-times continuously differentiable
 function.  Therefore, the faster the coefficients go to zero, the more
 regular the limit is.
@@ -4953,7 +4953,7 @@ Suppose that $c_n = 0$ for all $n < 0$ and $\sum_{n=0}^\infty \sabs{c_n}$
 converges.  Let $\D = B(0,1) \subset \C$ be the unit disc,
 and $\overline{\D} = C(0,1)$ be the closed unit disc.
 Show that there exists a continuous function
-$f \colon \overline{\D} \to \C$ which is analytic on $\D$
+$f \colon \overline{\D} \to \C$ that is analytic on $\D$
 and such that on the boundary of $\D$ we have
 $f(e^{i\theta}) = \sum_{n=0}^\infty c_n e^{i\theta}$.\\
 Hint: If $z=re^{i\theta}$, then $z^n = r^n e^{in\theta}$.
