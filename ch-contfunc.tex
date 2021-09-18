@@ -51,9 +51,9 @@ $x_n \not= x$ and $x_n \in S$ for all $n$, and $\lim\, x_n = x$.
 
 \begin{proof}
 First suppose $x$ is a cluster point of $S$.
-For any $n \in \N$, we pick $x_n$ to be an arbitrary point of
+For every $n \in \N$, pick $x_n$ to be an arbitrary point of
 $(x-\nicefrac{1}{n},x+\nicefrac{1}{n}) \cap S \setminus \{x\}$, which
-we know is nonempty because $x$ is a cluster point of $S$.
+is nonempty because $x$ is a cluster point of $S$.
 Then
 $x_n$ is within $\nicefrac{1}{n}$ of $x$, that is,
 \begin{equation*}
@@ -270,7 +270,7 @@ $\lim_{x \to 0} \, \sin( \nicefrac{1}{x} )$ does not exist.
 
 Now consider $x\sin(\nicefrac{1}{x})$.  Let $\{ x_n \}$ be a sequence
 such that $x_n \not= 0$ for all $n$, and such that $\lim\, x_n = 0$.
-Notice that $\abs{\sin(t)} \leq 1$ for any $t \in \R$.  Therefore,
+Notice that $\abs{\sin(t)} \leq 1$ for all $t \in \R$.  Therefore,
 \begin{equation*}
 \abs{x_n\sin(\nicefrac{1}{x_n})-0}
 =
@@ -556,7 +556,7 @@ $, for $c \geq 0$
 b)
 $\displaystyle
 \lim_{x\to c} x^2+x+1
-$, for any $c \in \R$
+$, for $c \in \R$
 & &
 c)
 $\displaystyle
@@ -761,7 +761,7 @@ to $f(c)$.
 Let us start with the first item.  Suppose $c$ is not a cluster point of
 $S$.  Then there exists a $\delta > 0$
 such that $S \cap (c-\delta,c+\delta) = \{ c \}$.
-Therefore, for any $\epsilon > 0$, simply pick this given delta.
+Therefore, for any $\epsilon > 0$, simply pick this given $\delta$.
 The only $x \in S$ such that $\abs{x-c} < \delta$ is $x=c$.  Then
 $\abs{f(x)-f(c)} = \abs{f(c)-f(c)} = 0 < \epsilon$.
 
@@ -1697,7 +1697,7 @@ f(x) :=
 \end{cases}
 \end{equation*}
 is not continuous at 0, however, it has the intermediate value property.
-That is, for any $a < b$, and any $y$ such that $f(a) < y < f(b)$
+That is, whenever $a < b$ and $y$ is such that $f(a) < y < f(b)$
 or $f(a) > y > f(b)$,
 there exists a $c$ such that $f(y) = c$.
 Proof is left as \exerciseref{exercise:meanvaluepropsin1x}.
@@ -1743,7 +1743,7 @@ f(x) :=
 \end{cases}
 \end{equation*}
 Show that $f$ has the intermediate value property.
-That is, for any $a < b$, if there exists a $y$ such that $f(a) < y < f(b)$
+That is, whenever $a < b$, if there exists a $y$ such that $f(a) < y < f(b)$
 or $f(a) > y > f(b)$, then
 there exists a $c \in (a,b)$ such that $f(c) = y$.
 \end{exercise}
@@ -1856,7 +1856,7 @@ give a name to this concept.
 
 \begin{defn}
 Let $S \subset \R$, and let $f \colon S \to \R$ be a function.
-Suppose for any $\epsilon > 0$ there exists a $\delta > 0$
+Suppose for every $\epsilon > 0$ there exists a $\delta > 0$
 such that whenever $x, c \in S$ and
 $\abs{x-c} < \delta$, then $\abs{f(x)-f(c)} < \epsilon$.
 Then we say $f$ is \emph{\myindex{uniformly continuous}}.
@@ -2144,7 +2144,7 @@ $\abs{f(x)-f(y)} \leq K \abs{x-y}$
 for all $x, y$ in $S$.
 Let $\epsilon > 0$ be given.  Take $\delta :=
 \nicefrac{\epsilon}{K}$.
-For any $x$ and $y$ in $S$ such that
+For all $x$ and $y$ in $S$ such that
 $\abs{x-y} < \delta$,
 we have 
 \begin{equation*}
@@ -2866,7 +2866,7 @@ First suppose $f$ is continuous.  Take two points
 $f(x_1) < f(x_2)$ in $f(I)$.
 As $f$ is increasing, then $x_1 < x_2$.  By the
 \hyperref[IVT:thm]{intermediate value theorem},
-given any $y$ with $f(x_1) < y < f(x_2)$, we find
+given $y$ with $f(x_1) < y < f(x_2)$, we find
 a $c \in (x_1,x_2) \subset I$ such that $f(c) = y$, so $y \in f(I)$. 
 Hence, $f(I)$ is an interval.
 
@@ -3111,7 +3111,7 @@ $g(x) = f(x)$ for all but countably many $x \in I$.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Let $S \subset \R$ be any subset.  If $f \colon S \to \R$ is increasing and
+Let $S \subset \R$ be a subset.  If $f \colon S \to \R$ is increasing and
 bounded,
 then show that there exists an increasing $F \colon \R \to \R$
 such that $f(x) = F(x)$ for all $x \in S$.
@@ -3135,7 +3135,7 @@ Show that $\R \setminus f(I)$ is a countable union of disjoint intervals.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [0,1] \to (0,1)$ is increasing.  Show that for any
+Suppose $f \colon [0,1] \to (0,1)$ is increasing.  Show that for every
 $\epsilon > 0$, there exists
 a strictly increasing $g \colon [0,1] \to (0,1)$ such that
 $g(0) = f(0)$, $f(x) \leq g(x)$ for all $x$, and $g(1)-f(1) < \epsilon$.

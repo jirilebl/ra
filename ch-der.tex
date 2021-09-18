@@ -765,8 +765,8 @@ for all $x,c \in I$ with $x \neq c$, we have
 Taking a limit as $x$ goes to $c$ we see that $f'(c) \geq 0$.
 
 For the other direction, suppose $f'(x) \geq 0$ for all $x \in I$.
-Take any $x, y \in I$ where $x < y$.  By the \hyperref[thm:mvt]{mean value theorem}
-there is some $c \in
+Take any $x, y \in I$ where $x < y$.  By the \hyperref[thm:mvt]{mean value
+theorem}, there is some $c \in
 (x,y)$ such that
 \begin{equation*}
 f(y)-f(x) = f'(c)(y-x) .
@@ -1393,7 +1393,7 @@ Compute the $n$th Taylor Polynomial at $0$ for the exponential function.
 \end{exercise}
 
 \begin{exercise}
-Suppose $p$ is a polynomial of degree $d$.  Given any $x_0 \in \R$,
+Suppose $p$ is a polynomial of degree $d$.  Given $x_0 \in \R$,
 show that
 the $(d+1)$th Taylor polynomial for $p$ at $x_0$ is equal to $p$.
 \end{exercise}
@@ -1405,7 +1405,7 @@ but show that $f^{(3)}(0)$ does not exist.
 
 \begin{exercise}
 Suppose $f \colon \R \to \R$ has $n$ continuous derivatives.  Show
-that for any $x_0 \in \R$,
+that for every $x_0 \in \R$,
 there exist polynomials $P$ and $Q$ of degree $n$ and 
 an $\epsilon > 0$ such that $P(x) \leq f(x) \leq Q(x)$ for all $x \in
 [x_0,x_0+\epsilon]$  and
@@ -1518,7 +1518,7 @@ is continuously differentiable.
 \begin{proof}
 By \propref{prop:invcont}, $f$ has a continuous inverse.  For convenience
 call the inverse $g \colon J \to I$.
-Let $x_0,y_0$ be as in the statement.  For any $x \in I$ write $y := f(x)$.
+Let $x_0,y_0$ be as in the statement.  For $x \in I$ write $y := f(x)$.
 If $x \not= x_0$ and so $y \not= y_0$, we find
 \begin{equation*}
 \frac{g(y)-g(y_0)}{y-y_0} =
@@ -1611,7 +1611,7 @@ an almost trivial exercise, and with the lemma above we prove
 far more than mere existence.
 
 \begin{cor}
-Given any $n \in \N$ and any $x \geq 0$ there exists a unique 
+Given $n \in \N$ and $x \geq 0$ there exists a unique 
 number $y \geq 0$ (denoted $x^{1/n} := y$), such that $y^n = x$.  Furthermore,
 the function $g \colon (0,\infty) \to (0,\infty)$ defined by
 $g(x) := x^{1/n}$ is continuously differentiable and
@@ -1630,13 +1630,13 @@ and $f'(y) = ny^{n-1}$, see \exerciseref{exercise:diffofxn}.  For $y > 0$ the de
 and so again by \propref{incdecdiffstrictprop}, $f$ is strictly
 increasing (this can also be proved directly).
 Given any $M > 1$, $f(M) = M^n \geq M$, and given any $1 > \epsilon > 0$,
-$f(\epsilon) = \epsilon^n \leq \epsilon$.  For any $x$ with $\epsilon < x <
-M$, we have by the
-\hyperref[IVT:thm]{intermediate value theorem} that $x \in
+$f(\epsilon) = \epsilon^n \leq \epsilon$.  For every $x$ with $\epsilon < x <
+M$, we have, by the
+\hyperref[IVT:thm]{intermediate value theorem}, that $x \in
 f\bigl( [\epsilon,M] \bigr) \subset
 f\bigl( (0,\infty) \bigr)$.  As $M$ and $\epsilon$ were arbitrary, $f$ is onto
 $(0,\infty)$, and hence $f$ is bijective.
-Let $g$ be the inverse of $f$ and we obtain
+Let $g$ be the inverse of $f$, and we obtain
 the existence and uniqueness of positive
 $n$th roots.  \lemmaref{lemma:ift} says $g$ has a continuous
 derivative and $g'(x) =
