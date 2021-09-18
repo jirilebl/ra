@@ -74,7 +74,7 @@ of the entire rectangle is $M_i$.
 
 \begin{prop} \label{sumulbound:prop}
 Let $f \colon [a,b] \to \R$ be a bounded function.  Let $m, M \in \R$ be 
-such that for all $x$, we have $m \leq f(x) \leq M$.  Then for any partition $P$
+such that for all $x$, we have $m \leq f(x) \leq M$.  Then for every partition $P$
 of $[a,b]$,
 \begin{equation}
 \label{sumulbound:eq}
@@ -271,13 +271,13 @@ m(b-a) \leq
 \end{prop}
 
 \begin{proof}
-By \propref{sumulbound:prop}, for any partition $P$,
+By \propref{sumulbound:prop}, for every partition $P$,
 \begin{equation*}
 m(b-a) \leq L(P,f) \leq U(P,f) \leq M(b-a).
 \end{equation*}
 The inequality
 $m(b-a) \leq L(P,f)$ implies $m(b-a) \leq \underline{\int_a^b} f$.
-Also
+The inequality
 $U(P,f) \leq M(b-a)$ implies $\overline{\int_a^b} f \leq M(b-a)$.
 
 The middle inequality in
@@ -333,8 +333,8 @@ The number $\int_a^b f$ is called the \emph{\myindex{Riemann integral}}
 of $f$, or sometimes simply the \emph{integral} of $f$.
 \end{defn}
 
-By definition, any Riemann integrable function is bounded.
-By appealing to \propref{intulbound:prop} we immediately obtain
+By definition, a Riemann integrable function is bounded.
+Appealing to \propref{intulbound:prop}, we immediately obtain
 the following proposition.  See also \figureref{fig:integralminmax}.
 
 \begin{prop} \label{intbound:prop}
@@ -458,15 +458,15 @@ $\overline{\int_a^b} f = \underline{\int_a^b} f$, and $f$ is integrable.
 \end{proof}
 
 \begin{example}
-Let us show $\frac{1}{1+x}$ is integrable on $[0,b]$ for any $b > 0$.
-We will see later that all continuous functions are integrable, but let us
+Let us show $\frac{1}{1+x}$ is integrable on $[0,b]$ for all $b > 0$.
+We will see later that continuous functions are integrable, but let us
 demonstrate how we do it directly.
 
 Let $\epsilon > 0$ be given.  Take $n \in \N$ and
 pick $x_j := \nicefrac{jb}{n}$, to form the 
 partition $P := \{ x_0,x_1,\ldots,x_n \}$ of $[0,b]$.
 We have $\Delta x_j = \nicefrac{b}{n}$ for all $j$.  
-As $f$ is decreasing, for any subinterval $[x_{j-1},x_j]$ we obtain
+As $f$ is decreasing, for every subinterval $[x_{j-1},x_j]$, we obtain
 \begin{equation*}
 m_j = \inf \left\{ \frac{1}{1+x} : x \in [x_{j-1},x_j] \right\} = \frac{1}{1+x_j} ,
 \qquad
@@ -612,9 +612,9 @@ feel free to use the propositions of this section).
 Suppose $f \colon [a,b] \to \R$ is Riemann integrable.  Let $\epsilon
 > 0$ be given.  Then show that there exists a partition $P = \{ x_0, x_1,
 \ldots, x_n \}$
-such that if we
-pick any set of numbers $\{ c_1, c_2, \ldots, c_n \}$ with
-$c_k \in [x_{k-1},x_k]$ for all $k$, then
+such that for every
+set of numbers $\{ c_1, c_2, \ldots, c_n \}$ with
+$c_k \in [x_{k-1},x_k]$ for all $k$, we have
 \begin{equation*}
 \abs{\int_a^b f - \sum_{k=1}^n f(c_k) \Delta x_k} < \epsilon .
 \end{equation*}
@@ -675,7 +675,7 @@ such that for every $\epsilon > 0$ there exists
 a $\delta > 0$ such that if $P = \{ x_0,x_1,\ldots,x_n \}$
 is a partition with $\Delta x_i < \delta$
 for all $i$, then
-$\abs{\sum_{i=1}^n f(c_i) \Delta x_i - I} < \epsilon$ for any set
+$\abs{\sum_{i=1}^n f(c_i) \Delta x_i - I} < \epsilon$ for every set
 $\{ c_1,c_2,\ldots,c_n \}$ with $c_i \in [x_{i-1},x_i]$.
 If $f \in \sR[a,b]$, then $I = \int_a^b f$.
 \end{exercise}
@@ -743,7 +743,7 @@ L(P_1,f) + L(P_2,f) .
 \end{equation*}
 When we take the supremum of the right-hand side over all $P_1$ and $P_2$,
 we are taking a supremum of the left-hand side
-over all partitions $P$ of $[a,c]$ that contain $b$.  If $Q$ is any partition
+over all partitions $P$ of $[a,c]$ that contain $b$.  If $Q$ is a partition
 of $[a,c]$ and $P = Q \cup \{ b \}$, then $P$ is a refinement of $Q$
 and so $L(Q,f) \leq L(P,f)$.  Therefore, taking a supremum only over the $P$
 that contain $b$ is sufficient to find the supremum of $L(P,f)$
@@ -786,7 +786,7 @@ U(P_1,f) + U(P_2,f) .
 \end{equation*}
 We wish to take the infimum on the right
 over all $P_1$ and $P_2$, and so we are taking the infimum
-over all partitions $P$ of $[a,c]$ that contain $b$.  If $Q$ is any partition
+over all partitions $P$ of $[a,c]$ that contain $b$.  If $Q$ is a partition
 of $[a,c]$ and $P = Q \cup \{ b \}$, then $P$ is a refinement of $Q$
 and so $U(Q,f) \geq U(P,f)$.  Therefore, taking an infimum only over the $P$
 that contain $b$ is sufficient to find the infimum of $U(P,f)$ for
@@ -1432,7 +1432,7 @@ and some bounded intervals $I_1,I_2,\ldots,I_n$.
 
 \begin{exercise}
 Using \exerciseref{exercise:stepfunctionintegrable}, show that a step function is integrable
-on any interval $[a,b]$.  Furthermore, find the integral in terms of
+on every interval $[a,b]$.  Furthermore, find the integral in terms of
 $a$, $b$, the endpoints of $I_k$ and the $\alpha_k$.
 \end{exercise}
 
@@ -1740,7 +1740,7 @@ $g\bigl([a,b]\bigr) \subset [c,d]$.  Then
 \begin{proof}
 As $g$, $g'$, and $f$ are continuous, we know $f\bigl(g(x)\bigr)\,g'(x)$
 is a continuous function on $[a,b]$, therefore it is Riemann integrable.
-Similarly, $f$ is integrable on any subinterval of $[c,d]$.
+Similarly, $f$ is integrable on every subinterval of $[c,d]$.
 
 Define 
 \begin{equation*}
@@ -1935,7 +1935,7 @@ If $f$ is even, then $\int_{-a}^a f = 2 \int_0^a f$.
 \begin{enumerate}[a)]
 \item
 Show that $f(x) := \sin(\nicefrac{1}{x})$
-is integrable on any interval (you can define $f(0)$ to be anything).
+is integrable on every interval (you can define $f(0)$ to be anything).
 \item
 Compute $\int_{-1}^1 \sin(\nicefrac{1}{x})~dx$.  (Mind the
 discontinuity.)
@@ -2065,7 +2065,7 @@ By induction, \ref{it:log:iv} implies that for $n \in \N$
 \begin{equation*}
 L(2^n) = L(2) + L(2) + \cdots + L(2) = n L(2) .
 \end{equation*}
-Given any $y > 0$, 
+Given $y > 0$, 
 by the \hyperref[thm:arch:i]{Archimedean property} of the real numbers
 (notice $L(2) > 0$), there is an $n \in \N$ such that
 $L(2^n) > y$.  By the
@@ -2304,8 +2304,8 @@ from the laws of exponents, see the exercises.
 \subsection{Exercises}
 
 \begin{exercise}
-Let $y$ be any real number and $b > 0$.  Define $f \colon (0,\infty) \to \R$
-and $g \colon \R \to \R$ as, $f(x) := x^y$ and $g(x) := b^x$.  Show that $f$
+Given a real number $y$ and $b > 0$, define $f \colon (0,\infty) \to \R$
+and $g \colon \R \to \R$ as $f(x) := x^y$ and $g(x) := b^x$.  Show that $f$
 and $g$ are differentiable and find their derivative.
 \end{exercise}
 
@@ -2448,7 +2448,7 @@ e^{-1/x} & \text{if } x > 0, \\
 \end{equation*}
 \begin{enumerate}[a)]
 \item
-Prove that for any $m \in \N$,
+Prove that for every $m \in \N$,
 \begin{equation*}
 \lim_{x \to 0^+} \frac{e^{-1/x}}{x^m} = 0 .
 \end{equation*}
@@ -2461,7 +2461,7 @@ Compute the Taylor series for $f$ at the origin, that is,
 \frac{f^{(k)}(0)}{k!}x^k .
 \end{equation*}
 Show that it converges, but show that it does not converge to $f(x)$
-for any $x > 0$.
+for any given $x > 0$.
 \end{enumerate}
 \end{exercise}
 
@@ -2566,7 +2566,7 @@ forward and the same for other types of improper integrals.
 \begin{prop} \label{impropriemann:tail}
 Let $f \colon [a,\infty) \to \R$ be a function
 that is Riemann integrable on $[a,b]$ for all $b > a$.
-Given any $b > a$,
+For every $b > a$, the integral
 $\int_b^\infty f$ converges if and only if $\int_a^\infty f$
 converges, in which case
 \begin{equation*}
@@ -2680,7 +2680,7 @@ $\abs{\int_a^\infty f} \leq \int_a^\infty g$.
 
 \begin{proof}
 We start with the first item.
-For any $b$ and $c$, such that $a \leq b \leq c$, we have 
+For every $b$ and $c$, such that $a \leq b \leq c$, we have 
 $-g(x) \leq f(x) \leq g(x)$, and so
 \begin{equation*}
 \int_b^c -g \leq \int_b^c f \leq \int_b^c g  .
@@ -2994,10 +2994,10 @@ If $a < 0$ and $b > 0$, then
 =
 a+b .
 \end{equation*}
-For any fixed $a < 0$ the limit as $b \to \infty$ is infinite, so even
-the first limit does not exist, and hence the improper integral
-$\int_{-\infty}^\infty f$
-does not converge.  On the other hand if $a > 0$, then
+For every fixed $a < 0$, the limit as $b \to \infty$ is infinite.
+So even the first limit does not exist,
+and the improper integral $\int_{-\infty}^\infty f$ does not converge.
+On the other hand, if $a > 0$, then
 \begin{equation*}
 \int_{-a}^{a} f
 =
@@ -3053,7 +3053,7 @@ enough to show that
 converges.  We
 also avoid $x=0$ this way to make our life simpler.
 
-For any $n \in \N$, we have that for $x \in [\pi 2n, \pi (2n+1)]$
+For every $n \in \N$, we have that for $x \in [\pi 2n, \pi (2n+1)]$,
 \begin{equation*}
 \frac{\sin(x)}{\pi (2n+1)}
 \leq
@@ -3061,7 +3061,7 @@ For any $n \in \N$, we have that for $x \in [\pi 2n, \pi (2n+1)]$
 \leq
 \frac{\sin(x)}{\pi 2n} ,
 \end{equation*}
-as $\sin(x) \geq 0$.  On $x \in [\pi (2n+1), \pi (2n+2)]$
+as $\sin(x) \geq 0$.  For $x \in [\pi (2n+1), \pi (2n+2)]$,
 \begin{equation*}
 \frac{\sin(x)}{\pi (2n+1)}
 \leq
