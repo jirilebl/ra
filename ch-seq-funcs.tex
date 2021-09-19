@@ -185,7 +185,7 @@ even though they converge pointwise.  To see this, suppose for contradiction
 that the convergence is uniform.  For $\epsilon := \nicefrac{1}{2}$, there would have
 to exist an $N$ such that $x^{2N} = \abs{x^{2N} - 0} < \nicefrac{1}{2}$ for all $x \in
 (-1,1)$ (as $f_n(x)$ converges to 0 on $(-1,1)$).  But that means that
-for any sequence $\{ x_k \}$ in $(-1,1)$ such that $\lim\, x_k = 1$,
+for every sequence $\{ x_k \}$ in $(-1,1)$ such that $\lim\, x_k = 1$,
 we have $x_k^{2N} < \nicefrac{1}{2}$ for all $k$.  On the other hand,
 $x^{2N}$ is a continuous function of $x$ (it is a polynomial).  Therefore,
 we obtain a contradiction
@@ -197,8 +197,9 @@ However, if we restrict our domain to $[-a,a]$ where $0 < a < 1$, then
 $\{ f_n \}$ converges uniformly to 0 on $[-a,a]$.  First note
 that $a^{2n} \to 0$ as $n \to \infty$.  Thus given $\epsilon > 0$,
 pick $N \in \N$ such that
-$a^{2n} < \epsilon$ for all $n \geq N$.  Then for any $x \in [-a,a]$,
-we have $\abs{x} \leq a$.  Therefore, for $n \geq N$
+$a^{2n} < \epsilon$ for all $n \geq N$.
+Then $\abs{x} \leq a$ for all $x \in [-a,a]$.
+Therefore, for $n \geq N$,
 \begin{equation*}
 \abs{x^{2n}} = \abs{x}^{2n} \leq a^{2n} < \epsilon .
 \end{equation*}
@@ -222,7 +223,7 @@ Let $f \colon S \to \R$ be a bounded function.  Define
 \norm{f}_u :=
 \sup \bigl\{ \abs{f(x)} : x \in S \bigr\} .
 \end{equation*}
-$\norm{\cdot}_u$ is called the \emph{\myindex{uniform norm}}.
+We call $\norm{\cdot}_u$ the \emph{\myindex{uniform norm}}.
 \end{defn}
 
 To use this notation%
@@ -268,7 +269,7 @@ says that the two notions are the same thing.
 
 \begin{example}
 Let $f_n \colon [0,1] \to \R$ be defined by $f_n(x) := \frac{nx+ \sin(nx^2)}{n}$.
-Then we claim $\{ f_n \}$ converges uniformly to $f(x) := x$.  Let us compute:
+We claim $\{ f_n \}$ converges uniformly to $f(x) := x$.  Let us compute:
 \begin{equation*}
 \begin{split}
 \norm{f_n-f}_u
@@ -481,7 +482,7 @@ $\sum_{k=0}^\infty x^k$ converges pointwise to $\frac{1}{1-x}$ on
 $(-1,1)$.
 \begin{enumerate}[a)]
 \item
-Show that for any $0 \leq c < 1$, the series
+Show that whenever $0 \leq c < 1$, the series
 $\sum_{k=0}^\infty x^k$ converges uniformly on $[-c,c]$.
 \item
 Show that the series $\sum_{k=0}^\infty x^k$ does not converge uniformly
@@ -851,7 +852,7 @@ Let $f_n(x) := \frac{\sin(nx)}{n}$.  Then $f_n$ converges uniformly to
 The derivative of the limit is 0.  But $f_n'(x) = \cos(nx)$, which
 does not converge even pointwise, for
 example $f_n'(\pi) = {(-1)}^n$.  Furthermore,
-$f_n'(0) = 1$ for all $n$, which does converge, but not to 0.
+$f_n'(0) = 1$ for all $n$, which does converge, but not to $0$.
 \begin{myfigureht}
 \includegraphics{figures/conv1nsinxn}
 \caption{Graphs of $\frac{\sin(nx)}{n}$ for
@@ -874,9 +875,9 @@ f_n'(x) %= \frac{d}{dx} \frac{1}{1+n x^2}
 For every $x$, $\lim_{n\to\infty} f_n'(x) = 0$, so the derivatives
 converge pointwise to 0,
 but the reader can check that the convergence is not uniform on any closed
-interval containing 0.
-The limit of $f_n$ is not differentiable at 0, it is not even
-continuous at 0.
+interval containing $0$.
+The limit of $f_n$ is not differentiable at $0$, it is not even
+continuous at $0$.
 \end{example}
 
 See the exercises for more examples.  Using 
@@ -963,9 +964,9 @@ integrate and even differentiate convergent power series term by term.
 
 \begin{prop}
 Let $\sum_{n=0}^\infty c_n {(x-a)}^n$ be a convergent power series with a radius
-of convergence $0 < \rho \leq \infty$.
+of convergence $\rho$, where $0 < \rho \leq \infty$.
 Then the series converges uniformly
-in $[a-r,a+r]$ for any $0 < r < \rho$.
+in $[a-r,a+r]$ whenever $0 < r < \rho$.
 
 In particular, the series defines a continuous function
 on $(a-\rho,a+\rho)$ (if $\rho < \infty$), or $\R$ (if $\rho = \infty$).
@@ -975,14 +976,14 @@ on $(a-\rho,a+\rho)$ (if $\rho < \infty$), or $\R$ (if $\rho = \infty$).
 Let $I := (a-\rho,a+\rho)$ if $\rho < \infty$,
 or let $I := \R$ if $\rho= \infty$.
 Take $0 < r < \rho$.
-The series converges absolutely for any $x \in I$,
+The series converges absolutely for every $x \in I$,
 in particular if $x = a+r$.
 Therefore $\sum_{n=0}^\infty \abs{c_n} r^n$ converges.
 Given $\epsilon >0$, find $M$ such that for all $k \geq M$,
 \begin{equation*}
 \sum_{n=k+1}^\infty \abs{c_n} {r}^n < \epsilon .
 \end{equation*}
-For any $x \in [a-r,a+r]$ and any $m > k$
+For all $x \in [a-r,a+r]$ and all $m > k$,
 \begin{multline*}
 \abs{\sum_{n=0}^m c_n {(x-a)}^n - 
 \sum_{n=0}^k c_n {(x-a)}^n}
@@ -1033,7 +1034,7 @@ where the radius of convergence of this series is at least $\rho$.
 \begin{proof}
 Take $0 < r < \rho$.
 The partial sums $\sum_{n=0}^k c_n {(x-a)}^n$ converge uniformly on $[a-r,a+r]$.
-For any fixed $x \in [a-r,a+r]$, the convergence is also uniform
+For every fixed $x \in [a-r,a+r]$, the convergence is also uniform
 on $[a,x]$ (or $[x,a]$ if $x < a$).
 Hence,
 \begin{equation*}
@@ -1258,7 +1259,7 @@ Suppose $f_n \colon [a,b] \to \R$ is a sequence of continuous
 functions that
 converges pointwise
 to a continuous $f \colon [a,b] \to \R$.  Suppose that
-for any $x \in [a,b]$ the sequence $\{ \abs{f_n(x)-f(x)} \}$ is monotone.
+for every $x \in [a,b]$, the sequence $\{ \abs{f_n(x)-f(x)} \}$ is monotone.
 Show that the sequence $\{f_n\}$ converges uniformly.
 \end{exercise}
 
@@ -1331,9 +1332,9 @@ continuous functions converging uniformly on compact subsets, then
 the limit is continuous.
 \item 
 Prove that if $f_n \colon \R \to \R$ is a sequence of
-functions Riemann integrable on any closed and bounded interval $[a,b]$,
+functions Riemann integrable on every closed and bounded interval $[a,b]$,
 and converging uniformly on compact subsets to an $f \colon \R \to \R$,
-then for any interval $[a,b]$, we have $f \in \sR[a,b]$, and
+then for every interval $[a,b]$, we have $f \in \sR[a,b]$, and
 $\int_a^b f = \lim_{n\to\infty} \int_a^b f_n$.
 \end{enumerate}
 \end{exercise}
@@ -1940,7 +1941,7 @@ $f(0)=2$ and find the Picard iterates $f_0,f_1,f_2,f_3,f_4$.
 \begin{exercise}
 Suppose $F \colon I \times J \to \R$
 is a function that is continuous in the first variable,
-that is, for any fixed $y$ the function that takes $x$ to $F(x,y)$ is
+that is, for every fixed $y$ the function that takes $x$ to $F(x,y)$ is
 continuous.  Further, suppose $F$ is Lipschitz in the second variable,
 that is, there exists a number $L$ such that
 \begin{equation*}
@@ -1974,8 +1975,8 @@ q(t) ~dt + y_0 \right).
 
 \begin{exercise}
 Consider the equation $f'(x) = f(x)$,
-from \exampleref{example:picardexponential}.  Show that given any $x_0$
-and any $y_0$, and any positive $h < \nicefrac{1}{2}$, we can pick $\alpha >
+from \exampleref{example:picardexponential}.  Show that given any $x_0$,
+any $y_0$, and any positive $h < \nicefrac{1}{2}$, we can pick $\alpha >
 0$ large enough that the proof of Picard's theorem guarantees a solution
 for the initial condition $f(x_0) = y_0$ in the interval
 $[x_0-h,x_0+h]$.
@@ -1999,9 +2000,9 @@ Find a solution for $y(1) = 0$ anyway.
 Consider the equation $x y' = 2y$.
 \begin{enumerate}[a)]
 \item
-Show that $y = Cx^2$ is a solution for any $C$.
+Show that $y = Cx^2$ is a solution for every $C$.
 \item
-Show that for any $x_0 \not= 0$, and any $y_0$, Picard's
+Show that for every $x_0 \not= 0$ and every $y_0$, Picard's
 theorem applies for the initial condition $y(x_0) = y_0$.
 \item
 Show that $y(0) = y_0$ is solvable if and only if $y_0 = 0$.

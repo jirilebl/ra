@@ -145,7 +145,7 @@ d(x,y)+ d(y,z) .
 The function $d$ is thus a metric, and we
 have an example of a nonstandard metric on $\R$.  With this metric,
 $d(x,y) < 1$ for all $x,y \in \R$.  That is,
-any two points are less than 1 unit apart.
+every two points are less than 1 unit apart.
 \end{example}
 
 An important metric space is the
@@ -305,9 +305,9 @@ field.
 For the purposes of taking limits,
 the set $\C$ is regarded as the metric space $\R^2$, where $z=x+iy \in \C$
 corresponds to $(x,y) \in \R^2$.
-For any $z=x+iy$ define the \emph{\myindex{complex modulus}}\index{modulus}
+For $z=x+iy$ define the \emph{\myindex{complex modulus}}\index{modulus}
 by $\sabs{z} := \sqrt{x^2+y^2}$.
-Then for any two complex numbers
+Then for two complex numbers
 $z_1 = x_1 + iy_1$ and $z_2 = x_2 + iy_2$, the distance is
 \begin{equation*}
 d(z_1,z_2) = \sqrt{{(x_1-x_2)}^2+ {(y_1-y_2)}^2} = \sabs{z_1-z_2}.
@@ -362,11 +362,11 @@ $\abs{f(x)-g(x)}$ is a continuous function on a closed bounded interval
 $[a,b]$, and so is bounded.
 It is clear that $d(f,g) \geq 0$, 
 it is the supremum of nonnegative numbers.  If $f = g$,
-then $\abs{f(x)-g(x)} = 0$ for all $x$ and hence $d(f,g) = 0$.  Conversely,
-if $d(f,g) = 0$, then for any $x$, we have $\abs{f(x)-g(x)} \leq d(f,g) = 0$,
-and hence $f(x) = g(x)$ for all $x$ and $f=g$.  That $d(f,g) = d(g,f)$
+then $\abs{f(x)-g(x)} = 0$ for all $x$, and hence $d(f,g) = 0$.  Conversely,
+if $d(f,g) = 0$, then for every $x$, we have $\abs{f(x)-g(x)} \leq d(f,g) = 0$,
+and hence $f(x) = g(x)$ for all $x$, and so $f=g$.  That $d(f,g) = d(g,f)$
 is equally trivial.  To show the triangle inequality we use the standard
-triangle inequality.
+triangle inequality;
 \begin{equation*}
 \begin{split}
 d(f,g) & =
@@ -489,7 +489,7 @@ a nonempty set.
 \subsection{Exercises}
 
 \begin{exercise}
-Show that for any set $X$, the discrete metric ($d(x,y) = 1$ if $x\not=y$ and
+Show that for every set $X$, the discrete metric ($d(x,y) = 1$ if $x\not=y$ and
 $d(x,x) = 0$) does give a metric space $(X,d)$.
 \end{exercise}
 
@@ -601,7 +601,7 @@ $\operatorname{diam}(S) := \sup \{ d(x,y) : x,y \in S \} < \infty$.
 \item
 Working in $\R$, compute $\operatorname{diam}\bigl([a,b]\bigr)$.
 \item
-Working in $\R^n$, for any $r > 0$, let $B_r := \{ x_1^2+x_2^2+\cdots+x_n^2
+Working in $\R^n$, for every $r > 0$, let $B_r := \{ x_1^2+x_2^2+\cdots+x_n^2
 < r^2 \}$.  Compute $\operatorname{diam}(B_r)$.
 \item
 Suppose $(X,d)$ is a metric space with at least two points,
@@ -621,7 +621,7 @@ Find a metric $d$ on $\N$, such that $\N$ is an unbounded set in $(\N,d)$.
 \item
 Find a metric $d$ on $\N$, such that $\N$ is a bounded set in $(\N,d)$.
 \item
-Find a metric $d$ on $\N$ such that for any $n \in \N$ and any $\epsilon > 0$
+Find a metric $d$ on $\N$ such that for every $n \in \N$ and every $\epsilon > 0$,
 there exists an $m \in \N$ such that $d(n,m) < \epsilon$.
 \end{enumerate}
 \end{exercise}
@@ -1063,7 +1063,7 @@ let $z := \inf (U_2 \cap [x,y])$.
 We wish to show that $z \in U_1$.
 If $z = x$, then $z \in U_1$.
 If $z > x$,
-then for any $\delta > 0$ the ball $B(z,\delta) =
+then for every $\delta > 0$, the ball $B(z,\delta) =
 (z-\delta,z+\delta)$ contains points of $[x,y]$ not in $U_2$,
 as $z$ is the infimum of such points.
 So $z \notin U_2$ as $U_2$ is open.
@@ -1299,13 +1299,13 @@ $U \cap V = \emptyset$, and $U \cup V = \Q$.
 \end{exercise}
 
 \begin{exercise}
-Show that in any metric space,
+Show that in a metric space,
 every open set can be written as a union of closed sets.
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
-In any metric space, prove:
+Prove that in a metric space,
 \begin{enumerate}[a)]
 \item
 $E$ is closed if and only if $\partial E \subset E$.
@@ -1316,13 +1316,13 @@ $U$ is open if and only if $\partial U \cap U = \emptyset$.
 \end{samepage}
 
 \begin{exercise}
-In any metric space, prove:
+Prove that in a metric space,
 \begin{enumerate}[a)]
 \item
-Show that $A$ is open if and only if $A^\circ = A$.
+$A$ is open if and only if $A^\circ = A$.
 \item
-Suppose that $U$ is an open set and $U \subset A$.  Show
-that $U \subset A^\circ$.
+$U \subset A^\circ$
+for every open set $U$ such that $U \subset A$.
 \end{enumerate}
 \end{exercise}
 
@@ -1366,7 +1366,7 @@ that $U = V \cap Y$.
 Let $(X,d)$ be a metric space.
 \begin{enumerate}[a)]
 \item
-For any $x \in X$ and $\delta > 0$, show
+For every $x \in X$ and $\delta > 0$, show
 $\overline{B(x,\delta)} \subset C(x,\delta)$.
 \item
 Is it always true that
@@ -1957,7 +1957,7 @@ is closed, then $E$ is a complete metric space with the subspace topology.
 \begin{defn}
 Let $(X,d)$ be a metric space and $K \subset X$. 
 The set $K$ is said to be \emph{\myindex{compact}}
-if for any collection
+if for every collection
 of open sets $\{ U_{\lambda} \}_{\lambda \in I}$ such that
 \begin{equation*}
 K \subset \bigcup_{\lambda \in I} U_\lambda ,
@@ -1994,13 +1994,13 @@ As above $(0,1) = \bigcup_{j=3}^\infty U_j$.  And similarly as above,
 if there exists a finite subcover, then there is one $U_j$ such that $(0,1)
 \subset U_j$, which again leads to a contradiction.
 
-The set $\{ 0 \} \subset \R$ is compact.  Proof: Given any open cover $\{
+The set $\{ 0 \} \subset \R$ is compact.  Proof: Given an open cover $\{
 U_{\lambda} \}_{\lambda \in I}$, there must exist a $\lambda_0$ such that $0
 \in U_{\lambda_0}$ as it is a cover.  But then $U_{\lambda_0}$ gives a
 finite subcover.
 
-We will prove below that $[0,1]$, and in fact any closed and bounded
-interval $[a,b]$ is compact.
+We will prove below that $[0,1]$, and in fact every closed and bounded
+interval $[a,b]$, is compact.
 \end{example}
 
 \begin{prop}
@@ -2099,7 +2099,7 @@ If the conclusion is not true, then
 there is
 an open cover $\{ U_\lambda \}_{\lambda \in I}$ of $K$ with
 the following property.
-For every $n \in \N$ there exists an $x_n \in K$ such that
+For every $n \in \N$, there exists an $x_n \in K$ such that
 $B(x_n,\nicefrac{1}{n})$ is not a subset of any $U_\lambda$.
 Take any $x \in K$.  There is
 a $\lambda \in I$ such that $x \in U_\lambda$.  As $U_\lambda$ is open,
@@ -2169,13 +2169,13 @@ Notice
 K \subset \bigcup_{x \in K} B(x,\alpha_x) .
 \end{equation*}
 Any finite collection of these balls is going to contain only finitely many
-$x_n$.  Thus for any finite collection of such balls there is an $x_n \in K$
+$x_n$.  Thus for every finite collection of such balls, there is an $x_n \in K$
 that is not in the union.  Therefore, $K$ is not compact and the claim is
 proved.
 
 So suppose that $K$ is compact and $\{ x_n \}$ is a sequence in $K$.
 Then there exists an $x \in K$ such that
-for any $\delta > 0$,
+for all $\delta > 0$,
 $B(x,\delta)$ contains $x_k$ for infinitely many $k \in \N$.
 We define the subsequence inductively.
 The ball $B(x,1)$ contains some $x_k$ so let $n_1 := k$.
@@ -2250,11 +2250,11 @@ which is a contradiction.
 \begin{example}
 The Bolzano--Weierstrass theorem for sequences of real numbers
 (\thmref{thm:bwseq})
-says that any bounded sequence in $\R$ has a convergent
-subsequence.  Therefore, any sequence in a closed interval $[a,b] \subset \R$ has 
-a convergent subsequence.  The limit must also be in $[a,b]$ as limits
+says that every bounded sequence in $\R$ has a convergent
+subsequence.  Therefore, every sequence in a closed interval $[a,b] \subset \R$ has 
+a convergent subsequence.  The limit is also in $[a,b]$ as limits
 preserve non-strict inequalities.  Hence a closed bounded interval $[a,b]
-\subset \R$ is compact.
+\subset \R$ is (sequentially) compact.
 \end{example}
 
 \begin{prop}
@@ -2293,7 +2293,7 @@ bounded, but not vice versa.
 
 \begin{proof}
 For $\R = \R^1$ if $K \subset \R$ is closed and bounded, then
-any sequence $\{ x_k \}$ in $K$ is bounded, so it has a convergent
+every sequence $\{ x_k \}$ in $K$ is bounded, so it has a convergent
 subsequence by
 Bolzano--Weierstrass theorem (\thmref{thm:bwseq}).
 As $K$ is closed, the limit of the subsequence must be an element of
@@ -2622,9 +2622,9 @@ Be careful about taking limits separately.  In \exerciseref{exercise:dicontR2}
 you are asked to prove that the function defined by $f(x,y) := \frac{xy}{x^2+y^2}$
 outside the origin and $f(0,0) := 0$, is not continuous at the origin.  See
 \figureref{fig:xyxsqysq}.
-However, for any $y$, the function $g(x) := f(x,y)$ is
+However, for every $y$, the function $g(x) := f(x,y)$ is
 continuous,
-and for any $x$, the function $h(y) := f(x,y)$ is continuous.
+and for every $x$, the function $h(y) := f(x,y)$ is continuous.
 \begin{myfigureht}
 \includegraphics{figures/xyxsqysq}
 \caption{Graph of $\frac{xy}{x^2+y^2}$.\label{fig:xyxsqysq}}
@@ -3009,9 +3009,9 @@ Let $f \colon \R^2 \to \R$ be defined by $f(0,0) := 0$, and
 $f(x,y) := \frac{xy}{x^2+y^2}$ if $(x,y) \not= (0,0)$.
 \begin{enumerate}[a)]
 \item
-Show that for any fixed $x$,
+Show that for every fixed $x$,
 the function that takes $y$ to $f(x,y)$ is continuous.  Similarly
-for any fixed $y$, the function that takes $x$ to $f(x,y)$ is continuous.
+for every fixed $y$, the function that takes $x$ to $f(x,y)$ is continuous.
 \item
 Show that $f$ is not continuous.
 \end{enumerate}
@@ -3111,7 +3111,7 @@ d(f,g) := \snorm{f-g}_u := \sup_{x \in X} \abs{f(x)-g(x)} .
 \item
 Show that $d$ makes $C(X,\R)$ into a metric space.
 \item
-Show that for any $x \in X$, the evaluation function
+Show that for every $x \in X$, the evaluation function
 $E_x \colon C(X,\R) \to \R$ defined by $E_x(f) := f(x)$
 is a continuous function.
 \end{enumerate}
@@ -3254,7 +3254,7 @@ The words \emph{complete} and \emph{contraction} are necessary.
 See \exerciseref{exercise:nofixedpoint}.
 
 \begin{proof}
-Pick any $x_0 \in X$.
+Pick $x_0 \in X$.
 Define a sequence $\{ x_n \}$ by $x_{n+1} := f(x_n)$.
 \begin{equation*}
 d(x_{n+1},x_n) = d\bigl(f(x_n),f(x_{n-1})\bigr)
@@ -3554,7 +3554,7 @@ point of $f$.
 Show that $d(x,x_n) \leq k^n d(x_1,x_0) \frac{1}{1-k}$ for all $n \in \N$.
 \item
 Suppose $d(y_1,y_2) \leq 16$ for all $y_1,y_2 \in X$, and $k=
-\nicefrac{1}{2}$.  Find an $N$ such that starting at any point $x_0 \in X$, 
+\nicefrac{1}{2}$.  Find an $N$ such that starting at any given point $x_0 \in X$, 
 $d(x,x_n) \leq 2^{-16}$ for all $n \geq N$.
 \end{enumerate}
 \end{exercise}
