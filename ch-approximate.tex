@@ -438,7 +438,7 @@ boundedness.  We leave the proof of the following proposition as an
 exercise.  It is almost identical to the proof for real-valued functions.
 
 \begin{prop} \label{prop:uniformconvbounded}
-Let $X$ be any set and $Y$ any metric space.
+Let $X$ be a set and $Y$ a metric space.
 If $f_n \colon X \to Y$ are bounded functions and converge uniformly to $f
 \colon X \to Y$, then $f$ is bounded.
 \end{prop}
@@ -449,7 +449,7 @@ again essentially the same as for the real-valued functions and
 is left as an exercise.
 
 \begin{prop} \label{prop:unifcauchymetric}
-Let $X$ be any set and let $(Y,d)$ be a Cauchy complete metric space.
+Let $X$ be a set and let $(Y,d)$ be a Cauchy complete metric space.
 Let $f_n \colon X \to Y$ be functions.  Then $\{ f_n \}$ converges
 uniformly if and only if for every $\epsilon > 0$, there is an $M$ such that
 for all $n, m \geq M$ and all $x \in X$, we have
@@ -470,7 +470,7 @@ $f_n \colon X \to \C$ converges uniformly to $f \colon X \to \C$ if and only if
 \lim_{n\to \infty} \snorm{f_n-f}_u = 0 .
 \end{equation*}
 
-The supremum norm satisfies the triangle inequality: For any $x \in X$
+The supremum norm satisfies the triangle inequality: For every $x \in X$,
 \begin{equation*}
 \sabs{f(x)+g(x)} \leq
 \sabs{f(x)}+\sabs{g(x)} \leq
@@ -496,8 +496,8 @@ a useful test for uniform convergence of a series is the
 so-called \emph{\myindex{Weierstrass $M$-test}}.
 
 \begin{thm}[\myindex{Weierstrass $M$-test}] \label{thm:weiermtest}
-Let $X$ be any set.
-Suppose $f_n \colon X \to \C$ are functions, $M_n > 0$ numbers such
+Let $X$ be a set.
+Suppose $f_n \colon X \to \C$ are functions and $M_n > 0$ numbers such
 that
 \begin{equation*}
 \sabs{f_n(x)}\leq M_n \quad \text{for all } x \in X,
@@ -562,8 +562,8 @@ The series
 \begin{equation*}
 \sum_{n=0}^\infty \frac{x^n}{n!} 
 \end{equation*}
-converges uniformly on any bounded interval.
-Proof: Take the interval $[-r,r] \subset \R$ (any bounded interval
+converges uniformly on every bounded interval.
+Proof: Take the interval $[-r,r] \subset \R$ (every bounded interval
 is contained in such an interval).  Then
 \begin{equation*}
 \abs{\frac{x^n}{n!} } \leq 
@@ -1133,7 +1133,7 @@ Let us list some series we already know:
 
 \begin{example}
 Note the difference between $\frac{1}{1-z}$ and its power series.  Let us
-expand $\frac{1}{1-z}$ as power series around any point $a \not= 1$.
+expand $\frac{1}{1-z}$ as power series around a point $a \not= 1$.
 Let $c := \frac{1}{1-a}$, then
 \begin{equation*}
 \frac{1}{1-z} = 
@@ -1179,7 +1179,7 @@ In particular, analytic functions are continuous.
 \end{prop}
 
 \begin{proof}
-For any $z_0 \in B(a,\rho)$ pick $r < \rho$ such that $z_0 \in B(a,r)$.
+For $z_0 \in B(a,\rho)$, pick $r < \rho$ such that $z_0 \in B(a,r)$.
 On $B(a,r)$ the
 partial sums (which are continuous) converge uniformly,
 and so the limit $f|_{B(a,r)}$ is continuous.
@@ -1313,12 +1313,12 @@ For all $x \in E$, we have
 \begin{equation*}
 \sabs{f_k(x)} \leq \sum_{j=1}^\infty \sabs{a_{kj}} .
 \end{equation*}
-By knowing that $\sum_k \sum_j \sabs{a_{kj}}$ converges (does not depend on
-$x$), we know that for any $x \in E$,
+By knowing that $\sum_k \sum_j \sabs{a_{kj}}$ converges (and does not depend on
+$x$), we know that
 \begin{equation*}
 \sum_{k=1}^n f_k(x)
 \end{equation*}
-converges uniformly.  So define
+converges uniformly on $E$.  Define
 \begin{equation*}
 g(x) := \sum_{k=1}^\infty f_k(x) ,
 \end{equation*}
@@ -1344,7 +1344,7 @@ So
 \end{proof}
 
 Now we prove that once we have a series converging to a function
-in some interval, we can expand the function around any point.
+in some interval, we can expand the function around every point.
 
 \begin{thm}[Taylor's theorem for real-analytic functions]
 \index{Taylor's theorem!real-analytic}%
@@ -1416,7 +1416,7 @@ We have the following corollary, which says that functions defined
 by power series are analytic.
 
 \begin{cor} \label{cor:powerseranalytic}
-For any $a \in \C$,
+For every $a \in \C$,
 if $\sum c_k {(z-a)}^k$ converges to $f(z)$ in $B(a,\rho)$ and $b \in
 B(a,\rho)$,
 then there exists a power series
@@ -1564,12 +1564,12 @@ a_{kj} :=
 \end{equation*}
 Compute (or show the limit doesn't exist):
 \\
-a)~$\displaystyle \sum_{j=1}^\infty \sabs{a_{kj}}~$ for any $k$,
+a)~$\displaystyle \sum_{j=1}^\infty \sabs{a_{kj}}~$ for every $k$,
 %mbxSTARTIGNORE
 \hspace{\fill}
 %mbxENDIGNORE
 %mbxlatex \qquad
-b)~$\displaystyle \sum_{k=1}^\infty \sabs{a_{kj}}~$ for any $j$,
+b)~$\displaystyle \sum_{k=1}^\infty \sabs{a_{kj}}~$ for every $j$,
 %mbxSTARTIGNORE
 \hspace{\fill}
 %mbxENDIGNORE
@@ -1743,7 +1743,7 @@ We already know that
 the equality
 $e^{x+y} = e^x e^y$ holds for all
 real numbers $x$ and $y$.
-For any fixed $y \in \R$, consider the expressions as
+For every fixed $y \in \R$, consider the expressions as
 functions of $x$ and apply the identity theorem
 (\thmref{thm:identityanalytic}) to get that
 $e^{z+y} = e^ze^y$ for all $z \in \C$.  Fixing an arbitrary $z \in \C$,
@@ -1755,7 +1755,7 @@ for all $w \in \C$.
 
 A simple consequence is that $e^z\not=0$ for all $z \in \C$,
 as $e^z e^{-z} = e^{z-z} = 1$.  A more complicated consequence is that we
-can easily compute the power series for the exponential at any point $a \in
+can easily compute the power series for the exponential at a point $a \in
 \C$:
 $e^z = e^a e^{z-a} = \sum \frac{e^a}{k!} {(z-a)}^k$.
 
@@ -2007,7 +2007,7 @@ All the points on the unit circle can be achieved by
 $e^{it}$ for some $t$.
 Therefore,
 we can write
-any complex number $z \in \C$
+a complex number $z \in \C$
 (in so-called \emph{\myindex{polar coordinates}}) as
 \begin{equation*}
 z = r e^{i\theta}
@@ -2234,7 +2234,7 @@ powers of $z$ are too small to make a difference.  We find similar behavior
 at infinity.
 
 \begin{lemma}
-Let $p(z)$ be a nonconstant complex polynomial.  Then for any $M > 0$ there exists
+Let $p(z)$ be a nonconstant complex polynomial.  Then for an $M > 0$, there exists
 an $R > 0$ such that
 $\sabs{p(z)} \geq M$ whenever $\sabs{z} \geq R$.
 \end{lemma}
@@ -2299,7 +2299,7 @@ such that $p(z_0) = 0$.
 \begin{proof}
 Let $\mu := \inf \bigl\{ \sabs{p(z)} : z \in \C \bigr\}$.  Find an $R$ such that
 for all $z$ with $\sabs{z} \geq R$, we have $\sabs{p(z)} \geq \mu+1$.
-Therefore, any $z$ with $\sabs{p(z)}$ close to $\mu$ must be in the
+Therefore, every $z$ with $\sabs{p(z)}$ close to $\mu$ must be in the
 closed ball $C(0,R) = \bigl\{ z \in \C : \sabs{z} \leq R \bigr\}$.  As $\sabs{p(z)}$
 is a continuous real-valued function, it achieves its minimum
 on the compact set $C(0,R)$ (closed and bounded) and this minimum must
@@ -2417,7 +2417,7 @@ Not every bounded sequence in the metric space $C([0,1],\R)$ has
 a convergent subsequence.
 
 \begin{defn}
-Let $X$ be any set.
+Let $X$ be a set.
 Let $f_n \colon X \to \C$ be functions in a sequence.  We say that
 $\{ f_n \}$
 is \emph{\myindex{pointwise bounded}} if for every $x \in X$, there is an $M_x \in \R$
@@ -2515,7 +2515,7 @@ If $X$ is countably infinite,
 we pick the sequence
 $\{ f_{k,k} \}_{k=1}^\infty$.
 This is a subsequence of the original sequence $\{ f_n \}_{n=1}^\infty$.
-For any $m$, the tail $\{ f_{k,k} \}_{k=m}^\infty$ is a subsequence of $\{ f_{m,k}
+For every $m$, the tail $\{ f_{k,k} \}_{k=m}^\infty$ is a subsequence of $\{ f_{m,k}
 \}_{k=1}^\infty$
 and hence for any $m$ the sequence $\{ f_{k,k}(x_m) \}_{k=1}^\infty$ converges.
 \end{proof}
@@ -2566,9 +2566,9 @@ all $n \geq N$
 \begin{equation*}
 \sabs{f_n(x)-f_N(x)} < \nicefrac{\epsilon}{3} \qquad \text{for all } x \in X.
 \end{equation*}
-As $X$ is compact, any continuous function is uniformly continuous.
+As $X$ is compact, every continuous function is uniformly continuous.
 So $\{ f_1,f_2,\ldots,f_N \}$ is a finite set of uniformly continuous
-functions.  And so, as we mentioned above, it is uniformly equicontinuous.
+functions.  And so, as we mentioned above, the set is uniformly equicontinuous.
 Hence there is a $\delta > 0$ such that
 \begin{equation*}
 \sabs{f_j(x)-f_j(y)} < \nicefrac{\epsilon}{3} < \epsilon
@@ -2747,7 +2747,7 @@ subsequence $\{ f_{n_j} \}$.
 
 \begin{proof}
 The trick is to use the mean value theorem.  If $M$ is the uniform bound on
-$\{ f_n' \}$, then by the mean value theorem for any $n$
+$\{ f_n' \}$, then by the mean value theorem for every $n$
 \begin{equation*}
 \sabs{f_n(x)-f_n(y)} \leq M \sabs{x-y} \qquad \text{for all } x,y \in X.
 \end{equation*}
@@ -2776,7 +2776,7 @@ equations.  See \exerciseref{exercise:peanoexistence} below.
 Another application of Arzel\`a--Ascoli using the same idea as the
 corollary above is the following.
 Take a continuous $k \colon [0,1] \times [0,1] \to \C$.
-For any $f \in C([0,1],\C)$ define
+For every $f \in C([0,1],\C)$ define
 \begin{equation*}
 T\bigl(f\bigr)(x) :=  \int_0^1 f(t) \, k(x,t)~dt .
 \end{equation*}
@@ -3152,7 +3152,7 @@ such that for all $n \geq N$,
 \end{equation*}
 Note that 
 $\int_{-1}^1 q_n(t) ~ dt = 1$ and $q_n(t) \geq 0$ on $[-1,1]$.  So for $n
-\geq N$ and any $x \in [0,1]$,
+\geq N$ and every $x \in [0,1]$,
 \begin{equation*}
 \begin{split}
 \sabs{p_n(x)-g(x)} & =
@@ -3219,7 +3219,7 @@ The metric space $C([a,b],\C)$ contains a countable dense subset.
 Without loss of generality suppose that we are dealing with $C([a,b],\R)$
 (why?).
 The real polynomials are dense in $C([a,b],\R)$ by Weierstrass.  If we show that
-any real polynomial can be approximated by polynomials with rational
+every real polynomial can be approximated by polynomials with rational
 coefficients, we are done.  This is because there are only countably many
 rational numbers and so there are only countably many polynomials with
 rational coefficients (a countable union of countable sets is still
@@ -3266,7 +3266,7 @@ approximated by polynomials
 \begin{equation*}
 \sum_{k=0}^n a_k\,  x^k
 \end{equation*}
-does not mean that any continuous $f$ is analytic, that is, equal to a
+does not mean that every continuous $f$ is analytic, that is, equal to a
 power series
 \begin{equation*}
 \sum_{k=0}^\infty c_k\,  x^k .
@@ -3276,7 +3276,7 @@ $\sabs{x}$ provides a counterexample.
 
 The key distinction is that
 the polynomials coming from the Weierstrass theorem are not the partial
-sums of any series.  For each one, the coefficients $a_k$ above can be
+sums of a power series.  For each one, the coefficients $a_k$ above can be
 completely different---they do not need to come from a single sequence $\{
 c_k \}$.
 
@@ -3408,7 +3408,7 @@ which follows by the identity $\cos(mt)\cos(nt) =
 \frac{\cos((n+m) t)}{2}+
 \frac{\cos((n-m) t)}{2}$.
 The algebra
-does not separate points if the domain is any interval of the form
+does not separate points if the domain is an interval of the form
 $[-a,a]$, because $f(-t) = f(t)$ for all $t$.
 It does separate points if the domain is $[0,\pi]$, as $\cos(t)$
 is one-to-one on that set.
@@ -3518,7 +3518,7 @@ and
 As $\widebar{\sA}$ is an algebra we are done.
 \end{proof}
 
-The claim is true for the minimum or maximum of any finite
+The claim is true for the minimum or maximum of every finite
 collection of functions as well.
 
 \medskip
@@ -3564,8 +3564,8 @@ Furthermore,
 \begin{equation*}
 g_x(t) > f(t) -\epsilon
 \end{equation*}
-for all $t \in X$, since for any $t$ there is a $y_j$ such that 
-$t \in U_{y_j}$ and so 
+for all $t \in X$, since for every $t$, there is a $y_j$ such that 
+$t \in U_{y_j}$, and so 
 $h_{y_j}(t) > f(t) -\epsilon$.
 
 Finally $h_y(x) = f(x)$ for all $y \in X$, so
@@ -3582,7 +3582,7 @@ exists an $\varphi \in \widebar{\sA}$ such that}
 \end{equation*}
 
 \begin{proof}
-For any $x$ find the function $g_x$ as in Claim 3.
+For every $x$ find the function $g_x$ as in Claim 3.
 
 Let
 \begin{equation*}
@@ -3685,7 +3685,7 @@ no point, and is self-adjoint.  Then the closure $\widebar{\sA} = C(X,\C)$.
 \begin{proof}
 Suppose $\sA_\R \subset \sA$ is the set of the real-valued elements of
 $\sA$.
-For any $f \in \sA$, write $f = u+iv$ where $u$ and $v$ are real-valued.
+For $f \in \sA$, write $f = u+iv$ where $u$ and $v$ are real-valued.
 Then
 \begin{equation*}
 u = \frac{f+\bar{f}}{2}, \qquad
@@ -3698,7 +3698,7 @@ If $x \not= y$, then find an $f \in \sA$ such that $f(x) \not= f(y)$.  If $f
 = u+iv$, then it is obvious that either $u(x) \not= u(y)$ or $v(x) \not=
 v(y)$.  So $\sA_\R$ separates points.
 
-Similarly, for any $x$ find $f \in \sA$ such that $f(x) \not= 0$.  If $f
+Similarly, for every $x$ find $f \in \sA$ such that $f(x) \not= 0$.  If $f
 = u+iv$, then either $u(x) \not= 0$ or $v(x) \not= 0$.
 So $\sA_\R$ vanishes at no point.
 
@@ -3866,7 +3866,7 @@ Prove that for all nonnegative integers $k = 0,1,2,3,\ldots$, we have
 $\int_{S^1} z^k ~ dz = 0$.
 \item
 Prove that if
-$P(z) = \sum_{k=0}^n c_k z^k$ is any
+$P(z) = \sum_{k=0}^n c_k z^k$ is a
 polynomial in $z$, then
 $\int_{S^1} P(z) ~ dz = 0$.
 \item
@@ -3882,7 +3882,7 @@ not self-adjoint) are not dense in $C(S^1,\C)$.
 Let $(X,d)$ be a compact metric space and
 suppose $\sA \subset C(X,\R)$ is a real algebra that separates points, but
 such that for some $x_0$, $f(x_0) = 0$ for all $f \in \sA$.  Prove that
-any function $g \in C(X,\R)$ such that $g(x_0) = 0$ is a uniform limit
+every function $g \in C(X,\R)$ such that $g(x_0) = 0$ is a uniform limit
 of functions from $\sA$.
 \end{exercise}
 
@@ -4113,7 +4113,7 @@ situations, but we refrain from discussing those.
 
 \medskip
 
-Conversely, we start with any integrable function $f \colon [-\pi,\pi] \to
+Conversely, we start with an integrable function $f \colon [-\pi,\pi] \to
 \C$, and we call the numbers
 \begin{equation*}
 c_n := 
@@ -4970,7 +4970,7 @@ converges to an infinitely differentiable function.
 \begin{exercise}
 Let $f$ be a $2\pi$-periodic function
 such that $f(x) = f(0) + \int_0^x g$
-for a function $g$ that is Riemann integrable on any interval.
+for a function $g$ that is Riemann integrable on every interval.
 Suppose
 \begin{equation*}
 f(x) \sim

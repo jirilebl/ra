@@ -295,7 +295,7 @@ Let $Y := \bigl\{ (1,1), (0,1) \bigr\} \subset \R^2$.  Then
 =
 \R^2 ,
 \end{equation*}
-as any point $(x,y) \in \R^2$ can be written as
+as every point $(x,y) \in \R^2$ can be written as
 a linear combination
 \begin{equation*}
 (x,y) = x (1,1) + (y-x) (0,1) .
@@ -352,8 +352,8 @@ b a_2 x_2 +  \cdots
 We formalize this statement in a proposition.
 
 \begin{prop}
-Let $X$ be a vector space.  For any $Y \subset X$,
-the set $\spn(Y)$ is a vector space itself.
+Let $X$ be a vector space.  For every $Y \subset X$,
+the set $\spn(Y)$ is a vector space.
 That is, $\spn(Y)$ is a subspace of $X$.
 \end{prop}
 
@@ -397,7 +397,7 @@ As an example, the
 set $Y$ of the two vectors in
 \exampleref{example:vecspr2span} is a basis of $\R^2$, and so
 $\dim \, \R^2 \geq 2$.
-We will see in a moment that any vector subspace of $\R^n$
+We will see in a moment that every vector subspace of $\R^n$
 has a finite dimension, and that dimension is less than or equal to $n$.
 So every set of 3 vectors in $\R^2$ is linearly dependent, and
 $\dim \, \R^2 = 2$.
@@ -662,7 +662,7 @@ A^{-1}\bigl(A(x_1+x_2)\bigr)
 If $A \in L(X,Y)$ is linear, then it is completely determined
 by its values on a basis of $X$.
 Furthermore, if $B$ is a basis of $X$,
-then any function $\widetilde{A} \colon B \to Y$ extends to a linear
+then every function $\widetilde{A} \colon B \to Y$ extends to a linear
 function on $X$.
 \end{prop}
 
@@ -797,8 +797,8 @@ standard metric on $\R^n$) is convex.
 \end{prop}
 
 \begin{example}
-As a convex combination is in particular a linear combination.
-So any subspace $V$ of a vector space $X$ is convex.
+As a convex combination is, in particular, a linear combination,
+so every subspace $V$ of a vector space $X$ is convex.
 \end{example}
 
 \begin{example}
@@ -844,7 +844,7 @@ let $C \subset V$ be a convex set.  Then $T(C)$ is convex.
 \end{prop}
 
 \begin{proof}
-Take any two points $p,q \in T(C)$.  Pick $x,y \in C$ such that
+Take two points $p,q \in T(C)$.  Pick $x,y \in C$ such that
 $Tx = p$ and $Ty=q$.  As $C$ is convex, then
 $tx+(1-t)y \in C$
 for all $t \in [0,1]$, so
@@ -859,7 +859,7 @@ T\bigl(tx+(1-t)y\bigr)
 \end{proof}
 
 For completeness, a very useful construction is the
-\emph{\myindex{convex hull}}.  Given any subset $S \subset V$ of a vector
+\emph{\myindex{convex hull}}.  Given a subset $S \subset V$ of a vector
 space, define the convex hull of $S$ as the intersection of all convex sets
 containing $S$:
 \begin{equation*}
@@ -882,10 +882,9 @@ $\operatorname{co}(\{0,1\}) \subset [0,1]$.
 
 \begin{exercise}
 Show that in $\R^n$
-(with the standard euclidean metric)
-for any $x \in \R^n$ and any $r > 0$,
-the ball $B(x,r)$ is
-convex.
+(with the standard euclidean metric),
+for every $x \in \R^n$ and every $r > 0$,
+the ball $B(x,r)$ is convex.
 \end{exercise}
 
 
@@ -1161,8 +1160,8 @@ write it as $\snorm{A}_{L(X,Y)}$.\glsadd{not:normLXY}
 \end{defn}
 
 By linearity,
-$\norm{A \frac{x}{\snorm{x}}} = \frac{\snorm{Ax}}{\snorm{x}}$,
-for any nonzero $x \in X$.
+$\norm{A \frac{x}{\snorm{x}}} = \frac{\snorm{Ax}}{\snorm{x}}$
+for all nonzero $x \in X$.
 The vector $\frac{x}{\snorm{x}}$ is of norm 1.
 Therefore,
 \begin{equation*}
@@ -1216,7 +1215,7 @@ $A$ is uniformly continuous (Lipschitz with constant $\snorm{A}$).
 \end{prop}
 
 \begin{proof}
-As we said we only prove the proposition for euclidean space so suppose
+As we said we only prove the proposition for euclidean space, so suppose
 that $X = \R^n$ and the norm is the standard euclidean norm.
 The general case is left as an exercise.
 
@@ -2077,9 +2076,9 @@ spaces and $A \in L(X,Y)$, then $\snorm{A} < \infty$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:allnormsequiv}
-Let $X$ be any finite-dimensional vector space with a norm $\snorm{\cdot}$
-and basis $\{ x_1,x_2,\ldots,x_n
-\}$.  Let $c = (c_1,c_2,\ldots,c_n) \in \R^n$ and $\snorm{c}$ be the
+Let $X$ be a finite-dimensional vector space with norm $\snorm{\cdot}$
+and basis $\{ x_1,x_2,\ldots,x_n \}$.
+Let $c = (c_1,c_2,\ldots,c_n) \in \R^n$ and $\snorm{c}$ be the
 standard euclidean norm on $\R^n$.
 \begin{enumerate}[a)]
 \item
@@ -2128,20 +2127,20 @@ which differs from the identity by one column.
 \end{exercise}
 
 \begin{exercise}
-Consider \propref{prop:finitedimpropinv}, for any $n$.
+Consider \propref{prop:finitedimpropinv} (for all $n$).
 \begin{enumerate}[a)]
 \item
 Prove that the estimate $\snorm{A-B} < \frac{1}{\snorm{A^{-1}}}$ is the
-best possible in the following sense: For any invertible
+best possible in the following sense: For every invertible
 $A \in GL(\R^n)$,
 find a $B$ where equality is satisfied and $B$ is not invertible.
 \item
-For any fixed invertible $A \in GL(\R^n)$,
+For every fixed invertible $A \in GL(\R^n)$,
 let $\sM$ denote the set of matrices
 $B$ such that
 $\snorm{A-B} < \frac{1}{\snorm{A^{-1}}}$.
-Prove that while $B \in \sM$ is 
-always invertible, $\snorm{B^{-1}}$ is unbounded
+Prove that while every $B \in \sM$ is 
+invertible, $\snorm{B^{-1}}$ is unbounded
 as a function of $B$ on $\sM$.
 \end{enumerate}
 \end{exercise}
@@ -2173,7 +2172,7 @@ Prove that $\lambda$ is an eigenvalue of $A$, if and only
 if it is an eigenvalue of $S^{-1}AS$.  Then prove that
 $\rho(S^{-1}AS) = \rho(S)$.
 In particular, $\rho$ is a well-defined function on $L(X)$ for
-any finite-dimensional vector space $X$.
+every finite-dimensional vector space $X$.
 \end{exercise}
 
 \begin{exercise}
@@ -2182,7 +2181,7 @@ Let $A$ be an $n$-by-$n$ matrix $A$.
 \item
 Prove $\rho(A) \leq \snorm{A}$.
 \item
-For any $k \in \N$, prove
+For every $k \in \N$, prove
 $\rho(A) \leq \snorm{A^k}^{1/k}$.
 \item
 Suppose $\displaystyle \lim_{k\to\infty} A^k = 0$ (limit in the operator norm).
@@ -2195,7 +2194,7 @@ We say a set $C \subset \R^n$ is \emph{symmetric} if
 $x \in C$ implies $-x \in C$.
 \begin{enumerate}[a)]
 \item
-Let $\snorm{\cdot}$ be any norm on $\R^n$.  Show that the closed unit ball
+Let $\snorm{\cdot}$ be any given norm on $\R^n$.  Show that the closed unit ball
 $C(0,1)$ (using the metric induced by this norm)
 is a compact symmetric convex set.
 \item (Challenging)
@@ -2317,11 +2316,11 @@ the origin
 =
 \norm{(A-B)\frac{h}{\snorm{h}}} .
 \end{equation*}
-For any $x$ with $\snorm{x}=1$,
+For any given $x$ with $\snorm{x}=1$,
 let $h = (\nicefrac{\delta}{2}) \, x$, then $\snorm{h} < \delta$
 and $\frac{h}{\snorm{h}} = x$.
 So $\snorm{(A-B)x} < \epsilon$.  Taking the supremum over all $x$ with
-$\snorm{x} = 1$ we get the operator norm
+$\snorm{x} = 1$, we get the operator norm
 $\snorm{A-B} \leq \epsilon$.  As $\epsilon > 0$
 was arbitrary, $\snorm{A-B} = 0$, or in other words $A = B$.
 \end{proof}
@@ -2661,7 +2660,7 @@ Let us represent $f$ by components
 $f = (f_1,f_2,\ldots,f_m)$, since it is vector-valued.
 Taking a limit in $\R^m$
 is the same as taking the limit in each component separately.  
-For any $k$
+For every $k$,
 the partial derivative
 \begin{equation*}
 \frac{\partial f_k}{\partial x_j} (p)
@@ -2669,8 +2668,8 @@ the partial derivative
 \lim_{h \to 0}
 \frac{f_k(p+h e_j)-f_k(p)}{h}
 \end{equation*}
-exists and 
-is equal to the $k$th component of $f'(p)\, e_j$, and we are done.
+exists and is equal to the $k$th component of $f'(p)\, e_j$,
+and we are done.
 \end{proof}
 
 The converse of the proposition is not true.  Just because the partial
@@ -2896,8 +2895,8 @@ $f(x,y) := \bigl( {(x+y+1)}^2 , {(x-y+2)}^2 \bigr)$.
 Suppose $f \colon \R \to \R$ and $g \colon \R \to \R$ are differentiable
 functions.  Using only the definition of the derivative, show that
 $h \colon \R^2 \to \R^2$ defined by $h(x,y)
-:= \bigl(f(x),g(y)\bigr)$ is a differentiable function and find the
-derivative at any point $(x,y)$.
+:= \bigl(f(x),g(y)\bigr)$ is a differentiable function, and find the
+derivative, at all points $(x,y)$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:noncontpartialsexist}
@@ -3208,13 +3207,13 @@ and $f'(x) = 0$ for all $x \in U$, then $f$ is constant.
 \end{cor}
 
 \begin{proof}
-For any $x \in U$, there is a ball $B(x,\delta) \subset U$.  The ball
+For any given $x \in U$, there is a ball $B(x,\delta) \subset U$.  The ball
 $B(x,\delta)$ is convex.  Since
 $\snorm{f'(y)} \leq 0$ for all $y \in B(x,\delta)$, then by the proposition,
 $\snorm{f(x)-f(y)} \leq 0 \snorm{x-y} = 0$.  So $f(x) = f(y)$ for all $y \in
 B(x,\delta)$.
 
-This means that $f^{-1}(c)$ is open for any $c \in \R^m$.  Suppose
+This means that $f^{-1}(c)$ is open for all $c \in \R^m$.  Suppose
 $f^{-1}(c)$ is nonempty.  
 The two sets
 \begin{equation*}
@@ -3317,7 +3316,7 @@ v :=
 \end{equation*}
 Let $\epsilon > 0$ be given.  By the induction hypothesis, there
 is a $\delta > 0$ such that
-for any $k \in \R^{n-1}$ with $\snorm{k} < \delta$, we have
+for every $k \in \R^{n-1}$ with $\snorm{k} < \delta$, we have
 \begin{equation*}
 \frac{\snorm{f(x+k) - f(x) - A' k}}{\snorm{k}} < \epsilon .
 \end{equation*}
@@ -3749,7 +3748,7 @@ continuous functions, it is continuous.
 \begin{cor}
 Suppose $U \subset \R^n$ is open and $f \colon U \to \R^n$ is a continuously
 differentiable mapping such that $f'(x)$ is invertible for all $x \in U$.  Then
-given any open set $V \subset U$, $f(V)$ is open ($f$ is said to be an
+for every open set $V \subset U$, the set $f(V)$ is open ($f$ is said to be an
 \emph{\myindex{open mapping}}).
 \end{cor}
 
@@ -4140,7 +4139,7 @@ Show that $f$ is differentiable everywhere.
 \item
 Show that $f'(0,0)$ is invertible.
 \item
-Show that $f$ is not one-to-one in any neighborhood of the origin (it is
+Show that $f$ is not one-to-one in every neighborhood of the origin (it is
 not locally invertible, that is, the inverse function theorem does not work).
 \item
 Show that $f$ is not continuously differentiable.
@@ -4157,7 +4156,7 @@ Define a mapping $F(r,\theta) := \bigl(r \cos(\theta), r \sin(\theta) \bigr)$.
 Show that $F$ is continuously differentiable (for all $(r,\theta) \in
 \R^2$).
 \item
-Compute $F'(0,\theta)$ for any $\theta$.
+Compute $F'(0,\theta)$ for all $\theta$.
 \item
 Show that if $r \not= 0$, then $F'(r,\theta)$ is invertible, therefore an
 inverse of $F$ exists locally as long as $r \not= 0$.
@@ -4448,7 +4447,7 @@ Note: Feel free to use what you know about sine and cosine from calculus.
 
 \begin{exercise}
 Suppose $f \colon \R^2 \to \R$ is a $C^2$ function.
-For any $(x,y) \in \R^2$ compute
+For all $(x,y) \in \R^2$, compute
 \begin{equation*}
 \lim_{t \to 0}
 \frac{f(x+t,y)+f(x-t,y)+f(x,y+t)+f(x,y-t) - 4f(x,y)}{t^2}
@@ -4486,7 +4485,7 @@ such that $\frac{\partial^2 g}{\partial x \partial y} (0,0) = 0$, and
 $\frac{\partial^2 g}{\partial x^2} (0,0) =
 \frac{\partial^2 g}{\partial y^2} (0,0) = 1$.
 \item
-For any $\epsilon > 0$ there exists a $\delta > 0$
+For every $\epsilon > 0$, there exists a $\delta > 0$
 such that 
 $\abs{g(x,y) - x^2 - y^2} < \epsilon (x^2+y^2)$ for all
 $(x,y) \in B\bigl((0,0),\delta\bigr)$.\\

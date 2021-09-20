@@ -166,7 +166,7 @@ See \figureref{fig:diffunderexample}.
 
 Hence,
 $g$ is a continuous function on $[0,1]$ and $g(0) = 0$.
-For any $\epsilon > 0$, the $y$ derivative of the integrand, $x^y$,
+For every $\epsilon > 0$, the $y$ derivative of the integrand, $x^y$,
 is continuous on $[0,1] \times [\epsilon,1]$.  Therefore,
 for $y >0$, we may differentiate under the integral sign,
 \begin{equation*}
@@ -259,8 +259,8 @@ f(x,y) :=
 \end{equation*}
 \begin{enumerate}[a)]
 \item
-Prove that for any fixed $y$ the function $x \mapsto f(x,y)$ is
-Riemann integrable on $[0,1]$ and
+Prove that for every fixed $y$, the function $x \mapsto f(x,y)$ is
+Riemann integrable on $[0,1]$, and
 \begin{equation*}
 g(y) := \int_0^1 f(x,y) ~ dx = \frac{y}{2y^2+2} .
 \end{equation*}
@@ -898,11 +898,11 @@ Define
 \omega_j\bigl(\gamma(t)\bigr) \gamma_j^{\:\prime}(t)
 \right) dt 
 \end{equation*}
-for any continuously differentiable $\gamma$.  A 
+for every continuously differentiable $\gamma$.  A 
 case that comes up naturally is when $\gamma$ is constant.  Then
 $\gamma^{\:\prime}(t) = 0$ for all $t$, and $\gamma\bigl([a,b]\bigr)$ is a single
 point, which we regard as a \myquote{curve} of length zero.  Then,
-$\int_{\gamma} \omega = 0$ for any $\omega$.
+$\int_{\gamma} \omega = 0$ for every $\omega$.
 
 \subsection{Path integral of a function}
 
@@ -1177,7 +1177,7 @@ the sets
 $\alpha^{-1}\bigl( \{ p_1,p_2,\ldots,p_k\} \bigr)$
 and
 $\beta^{-1}\bigl( \{ p_1,p_2,\ldots,p_k\} \bigr)$
-are partitions of $[a,b]$ and $[c,d]$, such that on any subinterval
+are partitions of $[a,b]$ and $[c,d]$ such that on every subinterval
 the paths are smooth (that is, they are partitions as in the definition
 of piecewise smooth path).
 \end{exercise}
@@ -1317,8 +1317,8 @@ Note: Feel free to use what you know about sine and cosine from calculus.
 Let $U \subset \R^n$ be a set and $\omega$ a one-form defined on $U$.
 The integral of $\omega$
 is said to be \emph{\myindex{path independent}}
-if for any two points $x,y \in U$ and
-any two piecewise smooth paths
+if for every pair of points $x,y \in U$ and
+every pair of piecewise smooth paths
 $\gamma \colon [a,b] \to U$ and
 $\beta \colon [c,d] \to U$ such that $\gamma(a) = \beta(c) = x$
 and $\gamma(b) = \beta(d) = y$, we have
@@ -1378,7 +1378,7 @@ $\int_x^y \omega$
 is path independent (for all $x,y \in U$) if and only if there exists
 a continuously differentiable $f \colon U \to \R$ such that $\omega = df$.
 
-In fact, if such an $f$ exists, then for any two points $x,y \in U$
+In fact, if such an $f$ exists, then for every pair of points $x,y \in U$
 \begin{equation*}
 \int_{x}^y \omega = f(y)-f(x) .
 \end{equation*}
@@ -1389,7 +1389,7 @@ for some constant $C$.
 
 \begin{proof}
 First suppose that the integral is path independent.  Pick $p \in U$.  Since
-$U$ is path connected, there exists a path from $p$ to any $x \in U$.
+$U$ is path connected, there exists a path from $p$ to every $x \in U$.
 Define
 \begin{equation*}
 f(x) := \int_{p}^x \omega .
@@ -1552,9 +1552,9 @@ path independence, or in other words it guarantees an
 $f$ whose total derivative is the given one-form
 $\omega$.  Since the criterion is local, we generally only find the
 function $f$ locally.
-We can find the antiderivative in any so-called
+We can find the antiderivative in every so-called
 \emph{\myindex{simply connected}} domain, which informally is a domain where
-any path between two points can be \myquote{continuously deformed}
+every path between two points can be \myquote{continuously deformed}
 into any other path
 between those two points.  But to make matters simple, we prove
 the result for so-called star-shaped domains, which is often good enough.
@@ -1565,7 +1565,7 @@ As balls are star-shaped we then have the result locally.
 \begin{defn}
 Let $U \subset \R^n$ be an open set and $p \in U$.  We say $U$ is
 a \emph{\myindex{star-shaped domain}}
-with respect to $p$ if for any other point $x \in U$,
+with respect to $p$ if for every other point $x \in U$,
 the line segment $[p,x]$ is in $U$, that is, if
 $(1-t)p + tx \in U$ for all $t \in [0,1]$.
 If we say simply \emph{star-shaped}, then $U$ is star-shaped with respect to
@@ -1826,7 +1826,7 @@ Usually path connectedness is defined using continuous paths rather
 than piecewise smooth paths.  Prove that for open subsets of $\R^n$
 the definitions are equivalent, in
 other words prove:\\
-Suppose $U \subset \R^n$ is open and for any $x,y \in U$, there exists a continuous function
+Suppose $U \subset \R^n$ is open and for every $x,y \in U$, there exists a continuous function
 $\gamma \colon [a,b] \to U$ such that $\gamma(a) = x$ and $\gamma(b) = y$.
 Then $U$ is path connected, that is, there is a piecewise smooth path in $U$ from
 $x$ to $y$.

@@ -148,7 +148,7 @@ results.
 \begin{prop} \label{mv:sumulbound:prop}
 Suppose $R \subset \R^n$ is a closed rectangle
 and $f \colon R \to \R$ is a bounded function.  Let $m, M \in \R$ be 
-such that for all $x \in R$, we have $m \leq f(x) \leq M$.  Then for any partition
+such that for all $x \in R$, we have $m \leq f(x) \leq M$.  Then for every partition
 $P$ of $R$,
 \begin{equation*}
 m \, V(R) \leq
@@ -292,7 +292,7 @@ m \, V(R) \leq
 \end{prop}
 
 \begin{proof}
-For any partition $P$, via \propref{mv:sumulbound:prop},
+For every partition $P$, via \propref{mv:sumulbound:prop},
 \begin{equation*}
 m\,V(R) \leq L(P,f) \leq U(P,f) \leq M\,V(R).
 \end{equation*}
@@ -530,7 +530,7 @@ $b_k-a_k \leq \alpha$ for all $k=1,2,\ldots,n$.
 
 \begin{prop} \label{prop:diameterrectangle}
 If a rectangle $R \subset \R^n$ has longest side at most $\alpha$, then
-for any $x,y \in R$,
+for all $x,y \in R$,
 \begin{equation*}
 \snorm{x-y} \leq \sqrt{n} \, \alpha .
 \end{equation*}
@@ -586,7 +586,7 @@ by \volIref{\thmref*{vI-thm:Xcompactfunifcont} from volume I}{\thmref{thm:Xcompa
 Let $\epsilon > 0$ be given.  Find a $\delta > 0$ such that
 $\snorm{x-y} < \delta$ implies $\sabs{f(x)-f(y)} < \frac{\epsilon}{V(R)}$.
 
-Let $P$ be a partition of $R$, such that longest side of any subrectangle
+Let $P$ be a partition of $R$, such that longest side of every subrectangle
 is strictly less than $\frac{\delta}{\sqrt{n}}$.
 If $x, y \in R_k$ for some subrectangle $R_k$ of $P$, then,
 by the proposition above,
@@ -718,15 +718,15 @@ supported.
 \end{example}
 
 We really only need to consider the case when $U=\R^n$.  In light of
-\exerciseref{exercise:contcompactsupportRn}, which says any continuous
+\exerciseref{exercise:contcompactsupportRn}, which says every continuous
 function on an open $U \subset \R^n$ with compact support can be extended to a
 continuous function with compact support on $\R^n$,
-this is not an oversimplification.
+considering $U=\R^n$ is not an oversimplification.
 
 \begin{example}
 The continuous function $f \colon B(0,1) \to \R$ defined by $f(x,y) :=
 \sin\bigl(\frac{1}{1-x^2-y^2}\bigr)$, does not have compact support; as
-$f$ is not constantly zero on neighborhood of any point in $B(0,1)$,
+$f$ is not constantly zero on neighborhood of every point in $B(0,1)$,
 the support is the entire disc $B(0,1)$.  The function 
 does not extend as above to a continuous function on $\R^2$.  In fact, it is not
 difficult to show that $f$ cannot be extended in any way whatsoever to be
@@ -783,7 +783,7 @@ Prove \propref{mv:intlinearity:prop}.
 
 \begin{exercise}
 Suppose $R$ is a rectangle with the length of one of the sides equal to 0.
-For any bounded function $f$, show that $f \in \sR(R)$ and $\int_R f = 0$.
+For every bounded function $f$, show that $f \in \sR(R)$ and $\int_R f = 0$.
 \end{exercise}
 
 \begin{exercise} \label{mv:zerosiderectangle}
@@ -803,7 +803,7 @@ definition, and find $\int_R f$.
 \begin{exercise} \label{mv:zeroinside}
 Suppose $R$ is a closed rectangle and $h \colon R \to \R$ is a bounded function
 such that $h(x) = 0$ if $x \notin \partial R$ (the boundary of $R$).
-Let $S$ be any closed rectangle.
+Let $S$ be a closed rectangle.
 Show that $h \in \sR(S)$ and
 \begin{equation*}
 \int_{S} h = 0 .
@@ -852,11 +852,11 @@ Suppose $f \colon \R^n \to \R$ is a function with compact support but not
 necessarily continuous.
 Prove that
 if $R$ is a closed rectangle such that $\operatorname{supp}(f) \subset R$
-and $f$ is integrable on $R$, then for any other closed rectangle
+and $f$ is integrable on $R$, then for every other closed rectangle
 $S$ with $\operatorname{supp}(f) \subset S$,
 the function $f$ is integrable on $S$ and
 $\int_S f = \int_R f$.
-Hint:~See \exerciseref{mv:zerooutside}.
+Hint: See \exerciseref{mv:zerooutside}.
 \end{exercise}
 
 \begin{exercise}
@@ -1008,12 +1008,12 @@ M_3 V(R_3)
 The upper and lower sums are arbitrarily close and the lower sum is always
 zero, so the function is integrable and $\int_R f = 0$.
 
-For any $y$, the function that takes $x$ to $f(x,y)$ is zero except
+For every fixed $y$, the function that takes $x$ to $f(x,y)$ is zero except
 perhaps at a single point $x=\nicefrac{1}{2}$.  Such a
 function is integrable and $\int_0^1 f(x,y) ~ dx = 0$.  Therefore,
 $\int_0^1 \int_0^1 f(x,y) ~ dx ~ dy = 0$.
 
-However if $x=\nicefrac{1}{2}$, the function that takes $y$ to
+However, if $x=\nicefrac{1}{2}$, the function that takes $y$ to
 $f(\nicefrac{1}{2},y)$ is the nonintegrable function that is
 1 on the rationals and 0 on the irrationals.
 See \volIref{\exampleref*{vI-example:dirichletfunc} from volume I}{\exampleref{example:dirichletfunc}}.
@@ -1282,7 +1282,7 @@ Prove \thmref{mv:fubinivB}.
 \begin{exercise}
 Let $R=[a,b] \times [c,d]$ and $f(x,y)$ is an integrable
 function on $R$ such that
-such that for any fixed $y$, the function that takes $x$ to $f(x,y)$
+for every fixed $y$, the function that takes $x$ to $f(x,y)$
 is zero except at finitely many points.  Show
 \begin{equation*}
 \int_R f = 0 .
@@ -1311,7 +1311,7 @@ is, the limit of $\int_\epsilon^1$ as $\epsilon \to 0^+$.
 
 \begin{exercise}
 Suppose $f(x,y) := g(x)$ where $g \colon [a,b] \to \R$ is Riemann integrable.
-Show that $f$ is Riemann integrable for any $R = [a,b] \times [c,d]$ and 
+Show that $f$ is Riemann integrable for every $R = [a,b] \times [c,d]$ and 
 \begin{equation*}
 \int_R f = (d-c) \int_a^b g .
 \end{equation*}
@@ -1647,13 +1647,13 @@ E \subset R_1 \cup R_2 \cup \cdots \cup R_k
 \qquad \text{and} \qquad
 \sum_{j=1}^k V(R_j) < \epsilon.
 \end{equation*}
-Moreover, for any $\delta > 0$,
-there exist finitely many open balls $B_1,B_2,\ldots,B_k$ of radii
-$r_1,r_2,\ldots,r_k < \delta$ such that
+Moreover, for every $\epsilon > 0$ and every $\delta > 0$,
+there exist finitely many open balls $B_1,B_2,\ldots,B_{\ell}$ of radii
+$r_1,r_2,\ldots,r_{\ell} < \delta$ such that
 \begin{equation*}
-E \subset B_1 \cup B_2 \cup \cdots \cup B_k
+E \subset B_1 \cup B_2 \cup \cdots \cup B_{\ell}
 \qquad \text{and} \qquad
-\sum_{j=1}^k r_j^n < \epsilon.
+\sum_{j=1}^{\ell} r_j^n < \epsilon.
 \end{equation*}
 \end{prop}
 
@@ -1682,7 +1682,7 @@ exercise.
 So that the reader is not under the impression that there are only few
 measure zero sets and that these sets are uncomplicated,
 let us give an uncountable, compact, measure zero subset of $[0,1]$.
-For any $x \in [0,1]$, write its
+For every $x \in [0,1]$, write its
 representation in ternary notation
 \begin{equation*}
 x = \sum_{n=1}^\infty d_n 3^{-n} ,
@@ -1859,10 +1859,10 @@ to use countably many balls in the second part of the proof.
 Be careful as the closure of $E$ need no
 longer be measure zero.
 \item
-Now prove it for any null set $E$.\\
+Now prove it for every null set $E$.\\
 Hint: First show that $\{ x \in U : d(x,y) \geq
 \nicefrac{1}{m} \text{ for all } y \notin U \text{ and } d(0,x) \leq m \}$
-is a compact set for any $m > 0$.
+is a compact set for every $m > 0$.
 \end{enumerate}
 \end{exercise}
 
@@ -1874,11 +1874,10 @@ Show that $f$ is of measure zero.
 \end{exercise}
 
 \begin{exercise}
-Given a closed rectangle $R \subset \R^n$, show that for any $\epsilon > 0$
-there exists a number $s > 0$ and finitely many open cubes $C_1,C_2,\ldots,C_k$
-of side $s$ such that
-$R \subset C_1 \cup C_2 \cup \cdots \cup C_k$
-and
+Given a closed rectangle $R \subset \R^n$, show that for every $\epsilon > 0$,
+there exists a number $s > 0$ and finitely many open cubes
+$C_1,C_2,\ldots,C_k$ of side $s$ such that
+$R \subset C_1 \cup C_2 \cup \cdots \cup C_k$ and
 \begin{equation*}
 \sum_{j=1}^k V(C_j) \leq V(R) + \epsilon .
 \end{equation*}
@@ -1915,7 +1914,7 @@ Prove that the Cantor set of \exampleref{example:cantor} contains no
 interval.  That is, whenever $a < b$, there exists a point $x \notin C$
 such that $a < x < b$.
 \\
-Note a consequence of this statement.  While any open set in
+Note a consequence of this statement.  While every open set in
 $\R$ is a countable disjoint union of intervals, a closed set (even though
 it is just the complement of an open set) need not be a union of intervals.
 \end{exercise}
@@ -1987,7 +1986,7 @@ $S \subset \R^n$ and $f \colon S \to \R$.
 Instead of just saying that $f$ is or is not continuous at
 a point $x \in S$,
 we want to quantify how discontinuous $f$ is 
-at $x$.  For any $\delta > 0$, define the \emph{oscillation} of 
+at $x$.  For every $\delta > 0$, define the \emph{oscillation} of 
 $f$ on the $\delta$-ball in subspace topology,
 $B_S(x,\delta) = B_{\R^n}(x,\delta) \cap S$, as
 \glsadd{not:oscillation}
@@ -3043,8 +3042,8 @@ Note: Feel free to use what you know about sine and cosine from calculus.
 \end{exercise}
 
 \begin{exercise}
-Prove that any bounded domain with piecewise smooth boundary that is
-convex is a type III domain.
+Prove that a convex bounded domain with piecewise smooth boundary
+is a type III domain.
 \end{exercise}
 
 \begin{exercise}
@@ -3212,7 +3211,7 @@ B(y,\delta) \subset W_x$.  By triangle inequality,
 $\snorm{g'(\xi)-g'(\eta)} < \epsilon$ for all $\xi, \eta \in P$.
 
 Let $R_1,R_2,\ldots,R_N$ be subrectangles partitioning $R$ such that
-the maximum side of any $R_j$ is less than
+the maximum side of every $R_j$ is less than
 $\frac{\delta}{\sqrt{n}}$.
 We also make sure that the minimum side length is at least
 $\frac{\delta}{2\sqrt{n}}$, which we can do if $\delta$ is 
@@ -3220,7 +3219,7 @@ sufficiently small relative to the sides of $R$ (\exerciseref{mv:changeofvarrect
 
 Consider some $R_j$ and some fixed $x_j \in R_j$.
 First suppose $x_j=0$, $g(0) = 0$, and $g'(0) = I$.
-For any $y \in R_j$,
+For any given $y \in R_j$,
 apply the fundamental theorem of calculus
 to the function $t \mapsto g(ty)$ to find
 $g(y) = \int_0^1 g'(ty)y ~dt$.  As the
@@ -3292,7 +3291,7 @@ V\bigl(g(R_j)\bigr) & \leq
 \end{split}
 \end{equation*}
 Translation does not change volume, and therefore
-for any $R_j$, and $x_j \in R_j$ including when $x_j \not= 0$ and $g(x_j)
+for every $R_j$, and $x_j \in R_j$, including when $x_j \not= 0$ and $g(x_j)
 \not= 0$, we find
 \begin{equation*}
 V\bigl(g(R_j)\bigr) \leq
@@ -3345,7 +3344,7 @@ Let $\epsilon$ go to zero to find
 \end{equation*}
 By adding this result for several rectangles covering an $S$ we obtain the
 result for an arbitrary bounded Jordan measurable $S \subset U$,
-and any nonnegative integrable function $f$:
+and nonnegative integrable function $f$:
 \begin{equation*}
 \int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx \geq \int_{g(S)} f(y) ~dy .
 \end{equation*}
@@ -3391,7 +3390,7 @@ $P_j^\circ \cap P^\circ_\ell = \emptyset$ whenever $j \not= \ell$.
 \begin{exercise} \label{mv:changeofvarWxopen}
 Suppose $U \subset \R^n$ is open, $x \in U$,
 and $g \colon U \to \R^n$ is a continuously differentiable mapping.
-For any $\epsilon > 0$, show that
+For every $\epsilon > 0$, show that
 \begin{equation*}
 W_x := \bigl\{ y \in U : \snorm{g'(x)-g'(y)} < \nicefrac{\epsilon}{2} \bigr\}
 \end{equation*}
@@ -3402,7 +3401,7 @@ is an open set.
 Suppose $R \subset \R^n$ is a closed bounded rectangle.
 Show that if $\delta' > 0$ is sufficiently small relative
 to the sides of $R$, then $R$ can be partitioned
-into subrectangles where each side of any subrectangle
+into subrectangles where each side of every subrectangle
 is between $\frac{\delta'}{2}$ and $\delta'$.
 \end{exercise}
 
