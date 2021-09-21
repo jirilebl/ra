@@ -1368,13 +1368,17 @@ Let $L := \lim\, c^n$.  The 1-tail $\{ c^{n+1} \}$
 also converges to $L$.  Taking the limit of both sides of $c^{n+1} = c \cdot
 c^n$, we obtain $L = cL$, or $(1-c)L=0$.  It follows that $L=0$ as $c \not= 1$.
 
-Now consider $c > 1$. Suppose for contradiction that the sequence is bounded above by $B > 0$, that is,
-$c^n \leq B$ for all $n \in \N$.  Then for all $n$,
-\begin{equation*}
-{\left(\frac{1}{c}\right)}^n = \frac{1}{c^n} \geq \frac{1}{B} > 0 .
-\end{equation*}
+Now consider $c > 1$.
+Let $B > 0$ be arbitrary.
 As $\nicefrac{1}{c} < 1$, then $\bigl\{ {(\nicefrac{1}{c})}^n \bigr\}$
-converges to 0, contradicting the bound above.
+converges to $0$.
+Hence for some large enough $n$, we get
+\begin{equation*}
+\frac{1}{c^n} =
+{\left(\frac{1}{c}\right)}^n < \frac{1}{B} .
+\end{equation*}
+In other words, $c^n > B$, and $B$ is not an upper bound for 
+$\{ c^n \}$.  As $B$ was arbitrary, $\{ c^n \}$ is unbounded.
 \end{proof}
 
 In the proposition above, the

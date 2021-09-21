@@ -597,12 +597,12 @@ Then $P(n)$ is true for all $n \in \N$.
 
 \begin{proof}
 Let $S$ be the set of natural numbers $m$ for which $P(m)$ is
-not true.  Suppose
+not true.  Suppose for contradiction that
 $S$ is nonempty.  Then $S$ has a least element by the well ordering
-property.  Let us call $m$ the least element of $S$.  We know $1 \notin
-S$ by hypothesis.  So $m > 1$ and $m-1$ is a natural number as well.
+property.  Call $m \in S$ the least element of $S$.  We know $1 \notin
+S$ by hypothesis.  So $m > 1$, and $m-1$ is a natural number as well.
 Since $m$ is the least element of $S$, we know that $P(m-1)$ is true.
-But by the induction step we see that $P(m-1+1) = P(m)$ is true, 
+But the induction step says that $P(m-1+1) = P(m)$ is true, 
 contradicting the statement that $m \in S$.  Therefore, $S$ is empty and 
 $P(n)$ is true for all $n \in \N$.
 \end{proof}
