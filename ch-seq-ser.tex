@@ -3387,14 +3387,15 @@ Let $s_n$ denote the $n$th partial sum.
 \sum_{m=2^j}^{2^{j+1}-1} \frac{1}{m^p}
 \right) .
 \end{align*}
-Instead of estimating from below, we estimate from above.  In particular,
-as $p$ is positive, then $2^p < 3^p$, and hence
+Instead of estimating from below, we estimate from above.
+As $p$ is positive, then $2^p < 3^p$, and hence
 $\frac{1}{2^p} + \frac{1}{3^p} <
 \frac{1}{2^p} + \frac{1}{2^p}$.  Similarly,
 $\frac{1}{4^p} + \frac{1}{5^p} +
 \frac{1}{6^p} + \frac{1}{7^p} <
 \frac{1}{4^p} + \frac{1}{4^p} +
 \frac{1}{4^p} + \frac{1}{4^p}$.  Therefore,
+for all $k \geq 2$,
 \begin{equation*}
 \begin{split}
 s_{2^k-1}
@@ -3435,7 +3436,7 @@ As $p > 1$, then $\frac{1}{2^{p-1}} < 1$.
 \frac{1}{2^{p-1}}
 \right)}^j
 \end{equation*}
-converges.  Therefore,
+converges.  Thus,
 \begin{equation*}
 s_{2^k-1} < 
 1+
@@ -3450,17 +3451,18 @@ s_{2^k-1} <
 \frac{1}{2^{p-1}}
 \right)}^j .
 \end{equation*}
-As $\{ s_n \}$ is a monotone sequence, then $s_n \leq s_{2^k-1}$
-for all $n \leq 2^k-1$.  Thus for all $n$,
+For every $n$ there is a $k \geq 2$ such that $n \leq 2^k-1$, and
+as $\{ s_n \}$ is a monotone sequence, $s_n \leq s_{2^k-1}$.
+So for all $n$,
 \begin{equation*}
 s_n < 
 1+
 \sum_{j=1}^\infty
 {\left(
 \frac{1}{2^{p-1}}
-\right)}^j .
+\right)}^j
 \end{equation*}
-The sequence of partial sums is bounded and hence converges.
+Thus the sequence of partial sums is bounded, and the series converges.
 \end{proof}
 
 Neither the $p$-series test nor the comparison test 
