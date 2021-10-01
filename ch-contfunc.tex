@@ -66,7 +66,7 @@ As $\{ \nicefrac{1}{n} \}$ converges to zero, $\{ x_n \}$ converges to $x$.
 
 On the other hand, if we start with a sequence of numbers $\{ x_n \}$ in $S$
 converging to $x$ such that $x_n \not= x$ for all $n$, then for every
-$\epsilon > 0$ there is an $M$ such that in particular $\abs{x_M - x} <
+$\epsilon > 0$ there is an $M$ such that, in particular, $\abs{x_M - x} <
 \epsilon$.  That is, $x_M \in (x-\epsilon,x+\epsilon) \cap S \setminus \{x\}$.
 \end{proof}
 
@@ -74,8 +74,8 @@ $\epsilon > 0$ there is an $M$ such that in particular $\abs{x_M - x} <
 
 If a function $f$ is defined on a set $S$ and $c$ is a cluster point of $S$,
 then we define the limit of $f(x)$ as $x$ gets close to $c$.  
-It is irrelevant for the definition if $f$ is defined at $c$ or not.
-Furthermore, even if the function is defined at $c$, the limit of the
+It is irrelevant for the definition whether $f$ is defined at $c$ or not.
+Even if the function is defined at $c$, the limit of the
 function as $x$ goes to $c$ can very well be different
 from $f(c)$.
 
@@ -137,17 +137,17 @@ $L_1 = L_2$.
 \end{proof}
 
 \begin{example}
-Let $f \colon \R \to \R$ be defined as $f(x) := x^2$.  Then
+Consider $f \colon \R \to \R$ defined by $f(x) := x^2$.  Then
 \begin{equation*}
 \lim_{x\to c} f(x) = \lim_{x\to c} x^2 = c^2 .
 \end{equation*}
 
-Proof: First let $c$ be fixed.  Let $\epsilon > 0$ be given.  Take
+Proof: Let $c \in \R$ be fixed, and suppose $\epsilon > 0$ is given.  Write
 \begin{equation*}
 \delta := \min \left\{ 1 , \, \frac{\epsilon}{2\abs{c}+1} \right\} .
 \end{equation*}
 Take $x \not= c$ such that $\abs{x-c} < \delta$.  In particular,
-$\abs{x-c} < 1$.  By reverse triangle inequality we get
+$\abs{x-c} < 1$.  By reverse triangle inequality, we get
 \begin{equation*}
 \abs{x}-\abs{c} \leq \abs{x-c} < 1 .
 \end{equation*}
@@ -181,7 +181,7 @@ Then
 even though $f(0) = 1$.
 
 Proof:  Let $\epsilon > 0$ be given.  Let $\delta := \epsilon$.
-Then for $x \in [0,1)$, $x \not= 0$, and $\abs{x-0} < \delta$ we get
+For $x \in [0,1)$, $x \not= 0$, and $\abs{x-0} < \delta$, we get
 \begin{equation*}
 \abs{f(x) - 0} = \abs{x} < \delta = \epsilon .
 \end{equation*}
@@ -321,7 +321,7 @@ that converges to $c$.  Let
 \begin{equation*}
 L_1 := \lim_{x\to c} f(x), \qquad \text{and} \qquad L_2 := \lim_{x\to c} g(x) .
 \end{equation*}
-By \lemmaref{seqflimit:lemma} we know $\{ f(x_n) \}$ converges to
+\lemmaref{seqflimit:lemma} says that $\{ f(x_n) \}$ converges to
 $L_1$ and $\{ g(x_n) \}$ converges to $L_2$.  We also
 have $f(x_n) \leq g(x_n)$.
 We obtain $L_1 \leq L_2$ using
@@ -457,7 +457,7 @@ $\epsilon < \alpha$ and hence
 $( A \setminus \{ c\} ) \cap (c-\epsilon,c+\epsilon)$ must be nonempty for all
 $\epsilon > 0$.  Thus $c$ is a cluster point of $A$.
 
-Now suppose $f(x) \to L$ as $x \to c$.  That is, for every $\epsilon > 0$
+Now suppose $c$ is a cluster point of $S$ and $f(x) \to L$ as $x \to c$.  That is, for every $\epsilon > 0$
 there is a $\delta > 0$ such that if $x \in S \setminus \{ c \}$
 and $\abs{x-c} < \delta$, then $\abs{f(x)-L} < \epsilon$.  Because $A \subset S$,
 if $x$ is in $A \setminus \{ c \}$, then $x$ is in $S \setminus \{ c
