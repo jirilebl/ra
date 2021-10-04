@@ -138,6 +138,7 @@ $L_1 = L_2$.
 
 \begin{example}
 Consider $f \colon \R \to \R$ defined by $f(x) := x^2$.  Then
+for any $c \in \R$,
 \begin{equation*}
 \lim_{x\to c} f(x) = \lim_{x\to c} x^2 = c^2 .
 \end{equation*}
@@ -743,9 +744,9 @@ limit of a function.  The main feature of continuous functions
 is that these are precisely the functions that behave nicely with limits.
 
 \begin{prop} \label{contbasic:prop}
-Let $S \subset \R$, let $f \colon S \to \R$ be a function, and let $c \in S$
-be a point.
-Then
+Consider a function $f \colon S \to \R$ defined on a set  $S \subset \R$
+and let $c \in S$.
+Then:
 %\begin{enumerate}[(i),itemsep=0.5\itemsep,parsep=0.5\parsep,topsep=0.5\topsep,partopsep=0.5\partopsep]
 \begin{enumerate}[(i)]
 \item If $c$ is not a cluster point of $S$, then $f$ is continuous at $c$.
@@ -754,17 +755,17 @@ if and only if the limit of $f(x)$ as $x \to c$ exists and
 \begin{equation*}
 \lim_{x\to c} f(x) = f(c) .
 \end{equation*}
-\item $f$ is continuous at $c$ if and only if for every sequence $\{ x_n \}$
+\item The function $f$ is continuous at $c$ if and only if for every sequence $\{ x_n \}$
 where $x_n \in S$ and $\lim\, x_n = c$, the sequence $\{ f(x_n) \}$ converges
 to $f(c)$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-Let us start with the first item.  Suppose $c$ is not a cluster point of
+We start with the first item.  Suppose $c$ is not a cluster point of
 $S$.  Then there exists a $\delta > 0$
 such that $S \cap (c-\delta,c+\delta) = \{ c \}$.
-Therefore, for any $\epsilon > 0$, simply pick this given $\delta$.
+For any $\epsilon > 0$, simply pick this given $\delta$.
 The only $x \in S$ such that $\abs{x-c} < \delta$ is $x=c$.  Then
 $\abs{f(x)-f(c)} = \abs{f(c)-f(c)} = 0 < \epsilon$.
 
@@ -790,10 +791,10 @@ $n \geq M$, we have that $\abs{f(x_n)-f(c)} < \epsilon$,
 so $\bigl\{ f(x_n) \bigr\}$
 converges to $f(c)$.
 
-Let us prove the other direction of the third item by contrapositive.
+We prove the other direction of the third item by contrapositive.
 Suppose $f$ is not
 continuous at $c$.  Then there exists an $\epsilon > 0$
-such that for all $\delta > 0$, there exists an $x \in S$
+such that for every $\delta > 0$, there exists an $x \in S$
 such that $\abs{x-c} < \delta$ and $\abs{f(x)-f(c)} \geq \epsilon$.
 Let us define a sequence $\{ x_n \}$ as follows.
 Let $x_n \in S$ be such that $\abs{x_n-c} < \nicefrac{1}{n}$
@@ -812,7 +813,7 @@ and even to prove that certain functions are continuous.
 It can also be strengthened, see \exerciseref{exercise:contseqalt}.
 
 \begin{example}
-$f \colon (0,\infty) \to \R$ defined by
+The function $f \colon (0,\infty) \to \R$ defined by
 $f(x) := \nicefrac{1}{x}$ is continuous.
 
 Proof: Fix $c \in (0,\infty)$.  
@@ -967,8 +968,8 @@ at $c$.
 
 \begin{proof}
 Let $\{ x_n \}$ be a sequence in $A$ such that $\lim\, x_n = c$.
-As $g$ is continuous at $c$, then $\bigl\{ g(x_n) \bigr\}$ converges to $g(c)$.
-As $f$ is continuous at $g(c)$, then $\bigl\{ f\bigl(g(x_n)\bigr) \bigr\}$ converges
+As $g$ is continuous at $c$, we have $\bigl\{ g(x_n) \bigr\}$ converges to $g(c)$.
+As $f$ is continuous at $g(c)$, we have $\bigl\{ f\bigl(g(x_n)\bigr) \bigr\}$ converges
 to $f\bigl(g(c)\bigr)$.
 Thus $f \circ g$ is continuous at $c$.
 \end{proof}
@@ -977,13 +978,13 @@ Thus $f \circ g$ is continuous at $c$.
 Claim: \emph{${\bigl(\sin(\nicefrac{1}{x})\bigr)}^2$ is a continuous
 function on $(0,\infty)$.}
 
-Proof: First note that $\nicefrac{1}{x}$ is a continuous function on
-$(0,\infty)$ and $\sin(x)$ is a continuous function on $(0,\infty)$ (actually
-on all of $\R$, but $(0,\infty)$ is the range for $\nicefrac{1}{x}$).
-Hence the composition $\sin(\nicefrac{1}{x})$ is continuous.  We also
-know that $x^2$ is continuous on the interval $(-1,1)$ (the range of $\sin$).  Thus
+Proof: The function $\nicefrac{1}{x}$ is continuous on
+$(0,\infty)$ and $\sin(x)$ is continuous on $(0,\infty)$ (actually
+on $\R$, but $(0,\infty)$ is the range for $\nicefrac{1}{x}$).
+Hence the composition $\sin(\nicefrac{1}{x})$ is continuous.  Also,
+$x^2$ is continuous on the interval $(-1,1)$ (the range of $\sin$).  Thus
 the composition
-${\bigl(\sin(\nicefrac{1}{x})\bigr)}^2$ is also continuous on $(0,\infty)$.
+${\bigl(\sin(\nicefrac{1}{x})\bigr)}^2$ is continuous on $(0,\infty)$.
 \end{example}
 
 \subsection{Discontinuous functions}
@@ -1057,6 +1058,7 @@ f(x) :=
 1 & \text{if } x \text{ is rational,} \\
 0 & \text{if } x \text{ is irrational.}
 \end{cases}
+\avoidbreak
 \end{equation*}
 The function $f$ is discontinuous at all $c \in \R$.
 
@@ -1072,7 +1074,7 @@ Let us test the limits of our intuition.  Can
 there exist a function continuous at all irrational numbers, but
 discontinuous at all rational numbers?  There are rational numbers
 arbitrarily close to any irrational number.  Perhaps strangely, the
-answer is yes.  The following example is called the
+answer is yes, such a function exists.  The following example is called the
 \emph{\myindex{Thomae function}}\footnote{Named after the German
 mathematician
 \href{https://en.wikipedia.org/wiki/Carl_Johannes_Thomae}{Carl Johannes Thomae}
