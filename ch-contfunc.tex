@@ -193,8 +193,8 @@ For $x \in [0,1)$, $x \not= 0$, and $\abs{x-0} < \delta$, we get
 Let us connect the limit as defined above with limits of sequences.
 
 \begin{lemma}\label{seqflimit:lemma}
-Let $S \subset \R$ and $c$ be a cluster point of $S$.  Let $f \colon S \to
-\R$ be a function.
+Let $S \subset \R$, let $c$ be a cluster point of $S$, let $f \colon S \to
+\R$ be a function, and let $L \in \R$.
 
 Then
 $f(x) \to L$ as $x \to c$ if and only if for every sequence $\{ x_n \}$
@@ -525,8 +525,8 @@ We have the following replacement.
 
 \begin{prop} \label{prop:onesidedlimits}
 Let $S \subset \R$ be such that $c$ is a cluster point
-of both $S \cap (-\infty,c)$ and $S \cap (c,\infty)$, and let
-$f \colon S \to \R$ be a function.  Then $c$ is a cluster point of $S$ and
+of both $S \cap (-\infty,c)$ and $S \cap (c,\infty)$, let
+$f \colon S \to \R$ be a function, and let $L \in \R$.  Then $c$ is a cluster point of $S$ and
 \begin{equation*}
 \lim_{x \to c} f(x) = L
 \qquad \text{if and only if} \qquad
@@ -1141,9 +1141,10 @@ would still fail to be continuous.  The difference is that
 $\lim_{x\to 0} g(x)$ exists while
 $\lim_{x\to 0} f(x)$ does not.
 
-Let us stay with this example but show another phenomenon.  Let $A := \{ 0
+We stay with this example to show another phenomenon.  Let $A := \{ 0
 \}$, then $g|_A$ is continuous (why?), while $g$ is not continuous on $A$.
-Similarly, if $B := \R \setminus \{0 \}$, then $g|_B$ is also continuous.
+Similarly, if $B := \R \setminus \{0 \}$, then $g|_B$ is also continuous,
+and $g$ is in fact continuous on $B$.
 \end{example}
 
 \subsection{Exercises}
