@@ -1397,18 +1397,17 @@ the set $f\bigl([a,b]\bigr) = \bigl\{ f(x) : x \in [a,b] \bigr\}$ has a supremum
 There exist sequences
 in the set $f\bigl([a,b]\bigr)$ that approach its supremum and its infimum.
 That is, there are sequences
-$\bigl\{ f(x_n) \bigr\}$ and $\bigl\{ f(y_n) \bigr\}$, where $x_n, y_n$ are in $[a,b]$,
+$\bigl\{ f(x_n) \bigr\}$ and $\bigl\{ f(y_n) \bigr\}$, where $x_n$ and $y_n$ are in $[a,b]$,
 such that
 \begin{equation*}
 \lim_{n\to\infty} f(x_n) = \inf f\bigl([a,b]\bigr) \qquad \text{and} \qquad
 \lim_{n\to\infty} f(y_n) = \sup f\bigl([a,b]\bigr).
 \end{equation*}
-We are not done yet, we need to find where the minima and the maxima are.
+We are not done yet; we need to find where the minima and the maxima are.
 The problem is that the sequences $\{ x_n \}$ and $\{ y_n \}$ need not
 converge.
-We know $\{ x_n \}$ and $\{ y_n \}$ are bounded (their elements
-belong to 
-a bounded interval $[a,b]$).
+We know $\{ x_n \}$ and $\{ y_n \}$ are bounded
+(their elements belong to a bounded interval $[a,b]$).
 Apply the 
 \hyperref[thm:bwseq]{Bolzano--Weierstrass theorem},
 to find
@@ -1420,8 +1419,8 @@ x := \lim_{i\to\infty} x_{n_i}
 \qquad \text{and} \qquad
 y := \lim_{i\to\infty} y_{m_i}.
 \end{equation*}
-As $a \leq x_{n_i} \leq b$, we have $a \leq x \leq b$,
-and similarly $a \leq y \leq b$.  So $x$ and $y$ are in $[a,b]$.
+As $a \leq x_{n_i} \leq b$ for all $i$, we have $a \leq x \leq b$.
+Similarly, $a \leq y \leq b$.  So $x$ and $y$ are in $[a,b]$.
 A limit of a subsequence is the same as the limit of the
 sequence, and we can take a limit past the continuous function $f$:
 \begin{equation*}
@@ -1506,7 +1505,7 @@ If $a_n < b_n$, then $a_n < \frac{a_n+b_n}{2} < b_n$.  So
 $a_{n+1} < b_{n+1}$.
 Thus by \hyperref[induction:thm]{induction} $a_n < b_n$ for all $n$.
 Furthermore, $a_n \leq a_{n+1}$ and 
-$b_n \geq b_{n+1}$ for all $n$, that is the sequences are monotone.
+$b_n \geq b_{n+1}$ for all $n$, that is, the sequences are monotone.
 As $a_n < b_n \leq b_1 = b$ and 
 $b_n > a_n \geq a_1 = a$ for all $n$,
 the sequences are also bounded.  Therefore, the
@@ -1568,10 +1567,10 @@ If $f(a) < y < f(b)$, then define $g(x) := f(x)-y$.  Then
 $g(a) < 0$ and $g(b) > 0$, and we apply \lemmaref{IVT:lemma}
 to $g$ to find $c$.  If $g(c) = 0$, then $f(c) = y$.
 
-Similarly, if $f(a) > y > f(b)$, then define $g(x) := y-f(x)$.  Then
-again $g(a) < 0$ and $g(b) > 0$, and we apply \lemmaref{IVT:lemma} to
+Similarly, if $f(a) > y > f(b)$, then define $g(x) := y-f(x)$.
+Again, $g(a) < 0$ and $g(b) > 0$, and we apply \lemmaref{IVT:lemma} to
 find $c$.
-Again, if $g(c) = 0$, then $f(c) = y$.
+As before, if $g(c) = 0$, then $f(c) = y$.
 \end{proof}
 
 If a function is continuous, then the restriction
@@ -1684,9 +1683,9 @@ Next, consider $g(-n)$ for $n \in \N$.  By a similar argument,
 there exists a $K \in \N$ such that
 $b_{d-1} {(-K)}^{d-1} + \cdots + b_1 (-K) + b_0 < K^d$
 and therefore $g(-K) < 0$ (see \exerciseref{exercise:odddegnegativeK}).
-In the
-proof make sure you use the fact that $d$ is odd.  In particular, 
-if $d$ is odd, then ${(-n)}^d = -(n^d)$.
+In the proof,
+ make sure you use the fact that $d$ is odd.
+In particular, if $d$ is odd, then ${(-n)}^d = -(n^d)$.
 
 We appeal to the intermediate value theorem to find a
 $c \in [-K,M]$, such that $g(c) = 0$.  As $g(x) = \frac{f(x)}{a_d}$,
@@ -1705,7 +1704,7 @@ f(x) :=
 0 & \text{if } x=0,
 \end{cases}
 \end{equation*}
-is not continuous at 0, however, it has the intermediate value property.
+is not continuous at $0$; however, it has the intermediate value property.
 That is, whenever $a < b$ and $y$ is such that $f(a) < y < f(b)$
 or $f(a) > y > f(b)$,
 there exists a $c$ such that $f(y) = c$.
