@@ -1357,6 +1357,12 @@ f\Bigl( \lim_{i\to\infty} x_{n_i} \Bigr) ,
 \end{equation*}
 \end{proof}
 
+Notice a key point of the proof.
+Boundedness of $[a,b]$ allows us to use Bolzano--Weierstrass,
+while the fact that it is closed gives us that the limit is back in $[a,b]$.
+The technique is a common one: Find a sequence with a certain property,
+then use Bolzano--Weierstrass to make such a sequence that also converges.
+
 Recall from calculus that $f \colon S \to \R$ achieves an
 \emph{\myindex{absolute minimum}}\index{minimum!absolute} at $c \in S$ if
 \begin{equation*}
@@ -1392,7 +1398,7 @@ achieves both an absolute minimum and an absolute maximum on $[a,b]$.
 \end{thm}
 
 \begin{proof}
-The lemma says that $f$ is bounded, and thus
+The lemma says that $f$ is bounded, so
 the set $f\bigl([a,b]\bigr) = \bigl\{ f(x) : x \in [a,b] \bigr\}$ has a supremum and an infimum.
 There exist sequences
 in the set $f\bigl([a,b]\bigr)$ that approach its supremum and its infimum.
@@ -1577,12 +1583,12 @@ If a function is continuous, then the restriction
 to a subset is continuous; if $f \colon S \to \R$ is continuous and
 $[a,b] \subset S$, then $f|_{[a,b]}$ is also continuous.  We generally
 apply the theorem to a function continuous on some large set $S$,
-but we restrict attention to an interval.
+but we restrict our attention to an interval.
 
 
 The proof of the lemma tells us how to find the root $c$.  The
 proof is not only useful for us pure mathematicians,
-but it is a useful idea in applied mathematics,
+it is a useful idea in applied mathematics,
 where it is called the \emph{\myindex{bisection method}}.
 
 
@@ -1603,8 +1609,7 @@ The technique above is the simplest method of finding roots of polynomials,
 which is perhaps the most common problem in applied
 mathematics.  In general, finding roots is hard to do quickly, precisely,
 and automatically.
-
-There are often better and faster methods of finding roots of equations, such
+There are other, faster methods of finding roots of polynomials, such
 as Newton's method.  One advantage of the method above is its
 simplicity.  The
 moment we find an initial interval where the intermediate value theorem
@@ -1694,7 +1699,7 @@ then $f(c) = 0$, and the proof is done.
 
 \begin{example}
 Interestingly,
-there do exist discontinuous functions that have
+there exist discontinuous functions with
 the intermediate value property.
 The function
 \begin{equation*}
@@ -1704,8 +1709,8 @@ f(x) :=
 0 & \text{if } x=0,
 \end{cases}
 \end{equation*}
-is not continuous at $0$; however, it has the intermediate value property.
-That is, whenever $a < b$ and $y$ is such that $f(a) < y < f(b)$
+is not continuous at $0$; however, $f$ has the intermediate value property:
+Whenever $a < b$ and $y$ is such that $f(a) < y < f(b)$
 or $f(a) > y > f(b)$,
 there exists a $c$ such that $f(y) = c$.
 Proof is left as \exerciseref{exercise:meanvaluepropsin1x}.
@@ -1943,11 +1948,10 @@ small $\delta > 0$ would work.
 If $x \in (0,1)$ and 
 $y = x+\nicefrac{\delta}{2} \in (0,1)$,
 then $\abs{x-y} = \nicefrac{\delta}{2} < \delta$.
-We plug that into the inequality to get $\nicefrac{\delta}{2} <
-x \bigl( x+\nicefrac{\delta}{2} \bigr) \epsilon$.
-The inequality implies $\nicefrac{\delta}{2} < x$.
+We plug $y$ into the inequality above to get $\nicefrac{\delta}{2} <
+x \bigl( x+\nicefrac{\delta}{2} \bigr) \epsilon < x$.
 If the definition of uniform continuity is satisfied, then
-the inequality holds for all $x > 0$.   But then $\delta \leq 0$.
+the inequality $\nicefrac{\delta}{2} < x$ holds for all $x > 0$.   But then $\delta \leq 0$.
 Therefore, there is no single $\delta > 0$ that works for all points.
 \end{example}
 
@@ -1978,7 +1982,7 @@ $\abs{x_n-y_n} < \nicefrac{1}{n}$ and such that $\abs{f(x_n)-f(y_n)} \geq
 \hyperref[thm:bwseq]{Bolzano--Weierstrass},
 there exists a convergent subsequence
 $\{ x_{n_k} \}$.  Let $c := \lim\, x_{n_k}$.
-As $a \leq x_{n_k} \leq b$, then $a \leq c \leq b$.  Write
+As $a \leq x_{n_k} \leq b$ for all $k$, we have $a \leq c \leq b$.  Estimate
 \begin{equation*}
 \abs{y_{n_k} - c} =
 \abs{y_{n_k} - x_{n_k} + x_{n_k} - c} \leq
@@ -1992,8 +1996,8 @@ As $a \leq x_{n_k} \leq b$, then $a \leq c \leq b$.  Write
 \end{equation*}
 As $\nicefrac{1}{n_k}$ and $\abs{x_{n_k}-c}$ both go to zero when
 $k$ goes to infinity, $\{ y_{n_k} \}$ converges and the limit
-is $c$.  We now show that $f$ is not continuous at $c$.  We
-estimate
+is $c$.  We now show that $f$ is not continuous at $c$.
+Estimate
 \begin{equation*}
 \begin{split}
 \abs{f(x_{n_k}) - f(c)} & =
@@ -2016,6 +2020,10 @@ $\{ f(y_{n_k}) \}$ cannot converge to $f(c)$, otherwise the
 left-hand side of the inequality would go to zero while the right-hand side is positive.
 Thus $f$ cannot be continuous at $c$.
 \end{proof}
+
+As before, note what is key in the proof: We can apply Bolzano--Weierstrass
+because the interval $[a,b]$ is bounded, and the limit of the subsequence is
+back in $[a,b]$ because the interval is closed.
 
 \subsection{Continuous extension}
 
