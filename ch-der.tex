@@ -541,14 +541,15 @@ $f'(c) = 0$.
 We prove the statement for a maximum.  For a minimum the statement
 follows by considering the function $-f$.
 
-Let $c$ be a relative maximum of $f$.  In particular, as long
+Let $c$ be a relative maximum of $f$.  That is, there is a $\delta > 0$ such
+that as long
 as $\abs{x-c} < \delta$, we have $f(x)-f(c) \leq 0$.
 Then we look at the difference
-quotient.  If $x > c$ we note that
+quotient.  If $c < x < c+\delta$,
 \begin{equation*}
 \frac{f(x)-f(c)}{x-c} \leq 0 ,
 \end{equation*}
-and if $y < c$, we have
+and if $c-\delta < y < c$, we have
 \begin{equation*}
 \frac{f(y)-f(c)}{y-c} \geq 0 .
 \end{equation*}
@@ -559,12 +560,12 @@ See \figureref{fig:critpt} for an illustration.
 \end{myfigureht}
 
 As $a < c < b$, there exist
-sequences $\{ x_n\}$ and $\{ y_n \}$, such
-that $x_n > c$, and
+sequences $\{ x_n\}$ and $\{ y_n \}$ in $[a,b]$ and within $\delta$ of $c$,
+such that $x_n > c$, and
 $y_n < c$ for all $n \in \N$, and such that
  $\lim\, x_n = \lim\, y_n = c$.
 Since $f$
-is differentiable at $c$ we know 
+is differentiable at $c$,
 \begin{equation*}
 0 \geq \lim_{n\to\infty} \frac{f(x_n)-f(c)}{x_n-c} 
 =
@@ -577,7 +578,7 @@ f'(c)
 For a differentiable function, a point where 
 $f'(c) = 0$ is called a \emph{\myindex{critical point}}.  When $f$ is not
 differentiable at some points,
-it is common to also say $c$ is a critical point
+it is common to also say that $c$ is a critical point
 if $f'(c)$ does not exist.
 The theorem says that a relative minimum or maximum at an interior point
 of an interval must be a critical point.
