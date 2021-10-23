@@ -727,6 +727,7 @@ Then $f$ is constant.
 
 \begin{proof}
 Take arbitrary $x,y \in I$ with $x < y$.
+As $I$ is an interval, $[x,y] \subset I$.
 Then $f$ restricted to $[x,y]$ satisfies the hypotheses
 of the \hyperref[thm:mvt]{mean value theorem}.
 Therefore, there is a $c \in (x,y)$ such that
@@ -766,9 +767,8 @@ for all $x,c \in I$ with $x \neq c$, we have
 Taking a limit as $x$ goes to $c$ we see that $f'(c) \geq 0$.
 
 For the other direction, suppose $f'(x) \geq 0$ for all $x \in I$.
-Take any $x, y \in I$ where $x < y$.  By the \hyperref[thm:mvt]{mean value
-theorem}, there is some $c \in
-(x,y)$ such that
+Take any $x, y \in I$ where $x < y$, and note that $[x,y] \subset I$.
+By the \hyperref[thm:mvt]{mean value theorem}, there is some $c \in (x,y)$ such that
 \begin{equation*}
 f(y)-f(x) = f'(c)(y-x) .
 \end{equation*}
