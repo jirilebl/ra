@@ -168,7 +168,8 @@ That is, we cut intervals in the partition into yet smaller pieces.
 
 \begin{defn}
 Let $P = \{ x_0, x_1, \ldots, x_n \}$ and
-$\widetilde{P} = \{ \widetilde{x}_0, \widetilde{x}_1, \ldots, \widetilde{x}_m \}$ be
+$\widetilde{P} = \{ \widetilde{x}_0, \widetilde{x}_1, \ldots,
+\widetilde{x}_{\ell} \}$ be
 partitions of $[a,b]$.  We say $\widetilde{P}$ is a
 \emph{refinement}\index{refinement of a partition} of $P$
 if as sets $P \subset \widetilde{P}$.
@@ -194,11 +195,11 @@ U(\widetilde{P},f) \leq U(P,f) .
 \begin{proof}
 The tricky part of this proof is to get the notation correct.
 Let $\widetilde{P} = \{ \widetilde{x}_0, \widetilde{x}_1, \ldots,
-\widetilde{x}_m \}$ be
+\widetilde{x}_{\ell} \}$ be
 a refinement of 
 $P = \{ x_0, x_1, \ldots, x_n \}$.  Then
 $x_0 = \widetilde{x}_0$ and 
-$x_n = \widetilde{x}_m$.  In fact, we can find integers
+$x_n = \widetilde{x}_{\ell}$.  In fact, there are integers
 $k_0 < k_1 < \cdots < k_n$ such that $x_j = \widetilde{x}_{k_j}$ for
 $j=0,1,2,\ldots,n$.
 
@@ -247,7 +248,7 @@ L(P,f) =
 \sum_{j=1}^n \,
 \sum_{p=k_{j-1}+1}^{k_j} \widetilde{m}_p \Delta \widetilde{x}_p
 =
-\sum_{j=1}^m
+\sum_{j=1}^{\ell}
 \widetilde{m}_j \Delta \widetilde{x}_j = L(\widetilde{P},f).
 \end{equation*}
 
@@ -438,7 +439,8 @@ proposition.
 
 \begin{prop}
 Let $f \colon [a,b] \to \R$ be a bounded function.  Then $f$ is Riemann
-integrable if for every $\epsilon > 0$, there exists a partition $P$ such that
+integrable if for every $\epsilon > 0$, there exists a partition $P$ of
+$[a,b]$ such that
 \begin{equation*}
 U(P,f) - L(P,f) < \epsilon .
 \end{equation*}
@@ -495,7 +497,7 @@ U(P,f)-L(P,f)
 The sum telescopes, the terms successively cancel each other, something
 we have seen before.
 Picking $n$ to be such that
-$\frac{b^2}{n(b+1)} < \epsilon$ the proposition is satisfied, and the
+$\frac{b^2}{n(b+1)} < \epsilon$, the proposition is satisfied, and the
 function is integrable.
 \end{example}
 
@@ -909,9 +911,9 @@ Let $m_i := \inf \{ f(x) : x \in [x_{i-1},x_i] \}$ as usual.
 Since $\alpha$ is nonnegative, we can move the multiplication by $\alpha$
 past the infimum,
 \begin{equation*}
-\inf \{ \alpha f(x) : x \in [x_{i-1},x_i] \}
+\inf \bigl\{ \alpha f(x) : x \in [x_{i-1},x_i] \bigr\}
 =
-\alpha \inf \{ f(x) : x \in [x_{i-1},x_i] \} = \alpha m_i .
+\alpha \inf \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\} = \alpha m_i .
 \end{equation*}
 Therefore,
 \begin{equation*}
@@ -958,9 +960,9 @@ $\int_a^b - f(x)~dx =
 \int_a^b f(x)~dx$.  The proof of this fact is left as
 \exerciseref{exercise:proofoflinpropparti}.
 
-The proof of the second item in the proposition is also left as
+The proof of the second item is left as
 \exerciseref{exercise:proofoflinproppartii}.
-It is not as
+It is not difficult, but it is not as
 trivial as it may appear at first glance.
 \end{proof}
 
@@ -1047,8 +1049,8 @@ and the conclusion follows.
 
 \subsection{Continuous functions}
 
-Let us show that continuous functions are Riemann integrable.  In fact, we
-will show we can even allow some discontinuities.  We start with a
+Let us show that continuous functions are Riemann integrable.  In fact, 
+we can even allow some discontinuities.  We start with a
 function continuous on the whole closed interval $[a,b]$.
 
 \begin{lemma} \label{lemma:contint}
@@ -1526,7 +1528,7 @@ f(c_i) \Delta x_i = F'(c_i) (x_i - x_{i-1}) = F(x_i) - F(x_{i-1}) .
 See \figureref{fig:fundthmfig}, and
 notice that the area of all
 three shaded rectangles is $F(x_{i+1})-F(x_{i-2})$.
-The idea is that by picking small enough subintervals
+The idea is that by taking smaller and smaller subintervals
 we prove that this area is the integral of $f$.
 \begin{myfigureht}
 \includegraphics{figures/fundthmfig}
@@ -1575,12 +1577,12 @@ the function $f(x)$ is a derivative of some other function $F(x)$,
 then we can find an explicit expression for $\int_a^b f$. 
 
 \begin{example}
-Suppose we are trying to compute
+To compute
 \begin{equation*}
-\int_0^1 x^2 ~dx .
+\int_0^1 x^2 ~dx ,
 \end{equation*}
-We notice $x^2$ is the derivative of $\frac{x^3}{3}$.  We
-use the fundamental theorem to write 
+we notice $x^2$ is the derivative of $\frac{x^3}{3}$.
+The fundamental theorem says
 \begin{equation*}
 \int_0^1 x^2 ~dx =
 \frac{1^3}{3}
@@ -1636,7 +1638,7 @@ Thus if $x > c$, then
 \bigl(f(c) + \epsilon\bigr)(x-c).
 \end{equation*}
 When $c > x$, then the inequalities are reversed.  Therefore,
-assuming $c \not= x$ we get
+assuming $c \not= x$, we get
 \begin{equation*}
 f(c)-\epsilon
 \leq
@@ -1780,7 +1782,7 @@ to integrals that we know or that we can solve using the fundamental theorem of
 calculus.
 
 \begin{example}
-From an exercise, we know that the derivative of $\sin(x)$ is $\cos(x)$.
+The derivative of $\sin(x)$ is $\cos(x)$.
 Therefore, we solve
 \begin{equation*}
 \int_0^{\sqrt{\pi}} x \cos(x^2) ~ dx = \int_0^\pi \frac{\cos(s)}{2} ~ ds
