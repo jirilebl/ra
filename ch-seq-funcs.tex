@@ -7,12 +7,12 @@
 
 \sectionnotes{1--1.5 lecture}
 
-Up till now, when we talked about sequences we always talked about
-sequences of numbers.  However, a very useful concept in analysis is to use a
-sequence of functions.  For example, a solution to some
-differential equation
-might be found by finding only approximate solutions.  Then the real solution is
-some sort of limit of those approximate solutions.
+Up till now, when we talked about limits of sequences we talked about
+sequences of numbers.
+A very useful concept in analysis is to use a sequence of functions.
+For example, a solution to some differential equation
+might be found by finding only approximate solutions.
+Then the actual solution is some sort of limit of those approximate solutions.
 
 When talking about sequences of functions, the 
 tricky part is that there are multiple notions of a limit.
@@ -23,8 +23,8 @@ notions of a limit of a sequence of functions.
 
 \begin{defn}
 \index{pointwise convergence}
-For every $n \in \N$
-let $f_n \colon S \to \R$ be a function.  We say the sequence
+For every $n \in \N$,
+let $f_n \colon S \to \R$ be a function.  The sequence
 $\{ f_n \}_{n=1}^\infty$
 \emph{\myindex{converges pointwise}} to $f \colon S \to \R$ if for every $x
 \in S$,
@@ -35,7 +35,7 @@ f(x) =
 \end{equation*}
 \end{defn}
 
-As limits of sequences of numbers are unique, given a sequence $\{ f_n \}$ that
+Limits of sequences of numbers are unique, and so if a sequence $\{ f_n \}$
 converges pointwise, the limit function $f$ is unique.
 It is common to say that $f_n \colon S \to \R$
 \emph{converges to $f$ on $T \subset S$}
@@ -45,7 +45,7 @@ restrictions of $f_n$ to $T$ converge pointwise to $f$.
 
 
 \begin{example}
-On $[-1,1]$ the sequence of functions defined by $f_n(x) := x^{2n}$
+On $[-1,1]$, the sequence of functions defined by $f_n(x) := x^{2n}$
 converges pointwise to $f \colon [-1,1] \to \R$, where
 \begin{equation*}
 f(x) =
@@ -53,6 +53,7 @@ f(x) =
 1 & \text{if } x=-1 \text{ or } x=1, \\
 0 & \text{otherwise.}
 \end{cases}
+\avoidbreak
 \end{equation*}
 See \figureref{x2nfig}.
 
@@ -68,7 +69,7 @@ We have seen before that
 \begin{equation*}
 \abs{x^{2n} - 0} = {(x^2)}^n \to 0 \quad \text{as} \quad n \to \infty .
 \end{equation*}
-Therefore $\lim\,f_n(x) = 0$.
+Therefore, $\lim\,f_n(x) = 0$.
 
 When $x = 1$ or $x=-1$, then $x^{2n} = 1$ for all $n$ and hence
 $\lim\,f_n(x) = 1$.
@@ -89,7 +90,7 @@ to denote the limit of the functions
 f_n(x) := \sum_{k=0}^n x^k .
 \end{equation*}
 When studying series, 
-we saw that on $x \in (-1,1)$ the $f_n$ converge pointwise to
+we saw that for $(-1,1)$ the $f_n$ converge pointwise to
 \begin{equation*}
 \frac{1}{1-x} .
 \end{equation*}
@@ -97,7 +98,6 @@ we saw that on $x \in (-1,1)$ the $f_n$ converge pointwise to
 The subtle point here is that while
 $\frac{1}{1-x}$ is defined for all $x \not=1$, and $f_n$ are 
 defined for all $x$ (even at $x=1$), convergence only happens on $(-1,1)$.
-
 Therefore, when we write
 \begin{equation*}
 f(x) := \sum_{k=0}^\infty x^k
@@ -138,7 +138,7 @@ $n \geq N$, we have
 
 The key point here is that $N$ can depend on $x$, not just on
 $\epsilon$.  That is, for each $x$ we can pick a different $N$.
-If we can pick one $N$ for all $x$, we have what is called
+If we could pick one $N$ for all $x$, we would have what is called
 uniform convergence.
 
 \subsection{Uniform convergence}
@@ -147,9 +147,9 @@ uniform convergence.
 \index{uniform convergence}
 Let $f_n \colon S \to \R$
 and $f \colon S \to \R$
-be functions.  We say the sequence $\{ f_n \}$
+be functions.  The sequence $\{ f_n \}$
 \emph{\myindex{converges uniformly}} to $f$ if for
-every $\epsilon > 0$ there exists an $N \in \N$ such that 
+every $\epsilon > 0$, there exists an $N \in \N$ such that 
 for all $n \geq N$, we have
 \begin{equation*}
 \abs{f_n(x) - f(x)} < \epsilon \qquad \text{for all } x \in S.
@@ -194,12 +194,13 @@ we obtain a contradiction
 \end{equation*}
 
 However, if we restrict our domain to $[-a,a]$ where $0 < a < 1$, then
-$\{ f_n \}$ converges uniformly to 0 on $[-a,a]$.  First note
-that $a^{2n} \to 0$ as $n \to \infty$.  Thus given $\epsilon > 0$,
+$\{ f_n \}$ converges uniformly to 0 on $[-a,a]$.  Note that
+$a^{2n} \to 0$ as $n \to \infty$.  Given $\epsilon > 0$,
 pick $N \in \N$ such that
 $a^{2n} < \epsilon$ for all $n \geq N$.
-Then $\abs{x} \leq a$ for all $x \in [-a,a]$.
-Therefore, for $n \geq N$,
+When $x \in [-a,a]$, we have
+$\abs{x} \leq a$.  So
+for all $n \geq N$ and all $x \in [-a,a]$,
 \begin{equation*}
 \abs{x^{2n}} = \abs{x}^{2n} \leq a^{2n} < \epsilon .
 \end{equation*}
@@ -528,10 +529,10 @@ the limit, and second we look at the integral of the limit.
 
 If we have a sequence $\{ f_n \}$ of continuous functions, is the limit continuous?
 Suppose $f$ is the (pointwise) limit of $\{ f_n \}$.
-If $\lim\, x_k = x$
+If $\lim\, x_k = x$,
 we are interested in the following
-interchange of limits.  The equality we have to prove (it is not always true)
-is marked with a question mark.  In fact, the limits to the left
+interchange of limits, where the equality to prove
+is marked with a question mark.  Equality is not always true, in fact, the limits to the left
 of the question mark might not even exist.
 \begin{equation*}
 \lim_{k \to \infty} 
@@ -642,7 +643,7 @@ $m \geq N$,
 \nicefrac{\epsilon}{3} = \epsilon .
 \end{split}
 \end{equation*}
-Therefore $\bigl\{ f(x_m) \bigr\}$ converges to $f(x)$ and hence $f$ is continuous at
+Therefore, $\bigl\{ f(x_m) \bigr\}$ converges to $f(x)$ and $f$ is continuous at
 $x$.  As $x$ was arbitrary, $f$ is continuous everywhere.
 \end{proof}
 
@@ -661,6 +662,7 @@ f_n(x) :=
 n-n^2x &  \text{if } 0 < x < \nicefrac{1}{n},\\
 0 &  \text{if } x \geq \nicefrac{1}{n}.
 \end{cases}
+\avoidbreak
 \end{equation*}
 See \figureref{intconvcntr:fig}.
 
@@ -671,7 +673,7 @@ See \figureref{intconvcntr:fig}.
 \end{myfigureht}
 
 Each $f_n$ is Riemann integrable (it is continuous on $(0,1]$ and bounded),
-and it is easy to see
+and the fundamental theorem of calculus says that
 \begin{equation*}
 \int_0^1 f_n =
 \int_0^{\nicefrac{1}{n}} (n-n^2x)~dx = \nicefrac{1}{2} .
@@ -905,8 +907,8 @@ f_n(x) = f_n(c) + \int_c^x f_n' .
 \end{equation*}
 As $\{ f_n' \}$ converges uniformly on $I$, it converges uniformly
 on $[c,x]$ (or $[x,c]$ if $x < c$).
-Therefore, we find that the limit on the right-hand side exists.
-Let us define $f$ at the remaining points by this limit:
+Therefore, the limit as $n \to \infty$ on the right-hand side exists.
+Define $f$ at the remaining points by this limit:
 \begin{equation*}
 f(x) :=
 \lim_{n\to\infty} f_n(c) + \lim_{n\to\infty} \int_c^x f_n'
@@ -924,7 +926,7 @@ Let $\epsilon > 0$ be given.  Take $M$
 such that for all $n \geq M$, we have
 $\abs{f(c)-f_n(c)} < \nicefrac{\epsilon}{2}$,
 and
-$\abs{g(x)-f_n'(x)} < \nicefrac{\epsilon}{2(b-a)}$
+$\abs{g(x)-f_n'(x)} < \frac{\epsilon}{2(b-a)}$
 for all $x \in I$.  Then
 \begin{equation*}
 \begin{split}
