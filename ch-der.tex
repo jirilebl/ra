@@ -482,7 +482,7 @@ $\abs{x-c} < \delta$.
 In other words, show that
 there exists a function $g \colon I \to \R$
 such that $\lim_{x\to c} g(x) = 0$ and
-$\abs{a+b(x-c) - f(x)} \leq \abs{x-c} g(x)$.
+$\abs{a+b(x-c) - f(x)} = g(x) \abs{x-c}$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:simpleLHopital}
@@ -499,6 +499,14 @@ that the limit of $\nicefrac{f'(x)}{g'(x)}$ as $x$ goes to $c$ exists.  Show tha
 \lim_{x \to c} \frac{f(x)}{g(x)} = 
 \lim_{x \to c} \frac{f'(x)}{g'(x)} .
 \end{equation*}
+\end{exercise}
+
+\begin{exercise}
+Suppose $f \colon (a,b) \to \R$ is differentiable at $c \in (a,b)$ and
+$f'(c) > 0$.  Prove that there is a $\delta > 0$ such that $f(x) < 0$
+whenever $c-\delta < x < c$ and
+$f(x) > 0$ 
+whenever $c < x < c+\delta$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

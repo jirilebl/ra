@@ -1740,25 +1740,26 @@ $g\bigl([a,b]\bigr) \subset [c,d]$.  Then
 \end{thm}
 
 \begin{proof}
-As $g$, $g'$, and $f$ are continuous, we know $f\bigl(g(x)\bigr)\,g'(x)$
-is a continuous function on $[a,b]$, therefore it is Riemann integrable.
+As $g$, $g'$, and $f$ are continuous, $f\bigl(g(x)\bigr)\,g'(x)$
+is a continuous function of $[a,b]$, therefore it is Riemann integrable.
 Similarly, $f$ is integrable on every subinterval of $[c,d]$.
 
-Define 
+Define $F \colon [c,d] \to \R$ by
 \begin{equation*}
 F(y) := \int_{g(a)}^{y} f(s)~ds .
 \end{equation*}
 By the second form of the fundamental
-theorem of calculus (see \remarkref{remark:fundthmbase} and \exerciseref{secondftc:exercise})
-$F$ is a differentiable function and $F'(y) = f(y)$.  We apply the chain
-rule and write
+theorem of calculus
+(see \remarkref{remark:fundthmbase} and \exerciseref{secondftc:exercise}),
+$F$ is a differentiable function and $F'(y) = f(y)$.  Apply the chain
+rule,
 \begin{equation*}
 \bigl( F \circ g \bigr)' (x) =
 F'\bigl(g(x)\bigr) g'(x)
 =
 f\bigl(g(x)\bigr) g'(x) .
 \end{equation*}
-We note that $F\bigl(g(a)\bigr) = 0$ and we
+Note that $F\bigl(g(a)\bigr) = 0$ and
 use the first form of the fundamental theorem
 to obtain
 \begin{multline*}
@@ -1808,7 +1809,7 @@ Consider
 \begin{equation*}
 \int_{-1}^{1} \frac{\ln \abs{x}}{x} ~dx .
 \end{equation*}
-It may be tempting to take $g(x) := \ln \abs{x}$.  Then take $g'(x) =
+It may be tempting to take $g(x) := \ln \abs{x}$.  Compute $g'(x) =
 \nicefrac{1}{x}$ and try to write
 \begin{equation*}
 \int_{g(-1)}^{g(1)} s ~ds = 
