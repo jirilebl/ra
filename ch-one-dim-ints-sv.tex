@@ -1429,7 +1429,7 @@ pick the simplest path possible from $x$ to $x+he_j$, that is
 $\gamma(t) := x+t he_j$ for $t \in [0,1]$.  The path is in $U$.
 Notice $\gamma^{\:\prime}(t) = h e_j$
 has only one nonzero component and that is the $j$th component, which is
-$h$.  Therefore
+$h$.  Therefore,
 \begin{equation*}
 \frac{1}{h} \int_{x}^{x+he_j} \omega 
 =
@@ -1441,14 +1441,14 @@ $h$.  Therefore
 \end{equation*}
 We wish to take the limit as $h \to 0$.  The function $\omega_j$ is
 continuous at $x$.  Given $\epsilon > 0$, suppose $h$ is small enough so that
-$\abs{\omega_j(x)-\omega_j(y)} < \epsilon$, whenever $\snorm{x-y} \leq \abs{h}$.
-Hence,
+$\abs{\omega_j(x)-\omega_j(y)} < \epsilon$ whenever $\snorm{x-y} \leq \abs{h}$.
+Thus,
 $\abs{\omega_j(x+the_j)-\omega_j(x)} < \epsilon$ for all $t \in [0,1]$,
 and we estimate
 \begin{equation*}
-\abs{\int_0^1 \omega_j(x+the_j) ~ dt  - \omega(x)}
+\abs{\int_0^1 \omega_j(x+the_j) ~ dt  - \omega_j(x)}
 =
-\abs{\int_0^1 \bigl( \omega_j(x+the_j) - \omega(x) \bigr) ~ dt}
+\abs{\int_0^1 \bigl( \omega_j(x+the_j) - \omega_j(x) \bigr) ~ dt}
 \leq
 \epsilon .
 \end{equation*}
