@@ -712,7 +712,7 @@ B(0,\nicefrac{1}{2}) = B_{[0,1]}(0,\nicefrac{1}{2})
 = [0,\nicefrac{1}{2}) .
 \end{equation*}
 This is different from $B_{\R}(0,\nicefrac{1}{2}) =
-(-\nicefrac{1}{2},\nicefrac{1}{2})$.
+(\nicefrac{-1}{2},\nicefrac{1}{2})$.
 The important thing to keep in mind is which metric space we are working
 in.
 \end{example}
@@ -770,13 +770,13 @@ Thus $[0,1)^c = \R \setminus
 Let $(X,d)$ be a metric space.
 \begin{enumerate}[(i)]
 \item \label{topology:openi} $\emptyset$ and $X$ are open.
-\item \label{topology:openii} If $V_1, V_2, \ldots, V_k$ are open, then
+\item \label{topology:openii} If $V_1, V_2, \ldots, V_k$ are open subset of $X$, then
 \begin{equation*}
 \bigcap_{j=1}^k V_j
 \end{equation*}
 is also open.  That is, a finite intersection of open sets is open.
 \item \label{topology:openiii} If $\{ V_\lambda \}_{\lambda \in I}$ is
-an arbitrary collection of open sets, then
+an arbitrary collection of open subsets of $X$, then
 \begin{equation*}
 \bigcup_{\lambda \in I} V_\lambda
 \end{equation*}
@@ -828,12 +828,13 @@ Let $(X,d)$ be a metric space.
 \begin{enumerate}[(i)]
 \item \label{topology:closedi} $\emptyset$ and $X$ are closed.
 \item \label{topology:closedii} If $\{ E_\lambda \}_{\lambda \in I}$ is
-an arbitrary collection of closed sets, then
+an arbitrary collection of closed subsets of $X$, then
 \begin{equation*}
 \bigcap_{\lambda \in I} E_\lambda
 \end{equation*}
 is also closed.  That is, an intersection of closed sets is closed.
-\item \label{topology:closediii} If $E_1, E_2, \ldots, E_k$ are closed, then
+\item \label{topology:closediii} If $E_1, E_2, \ldots, E_k$ are closed
+subset of $X$, then
 \begin{equation*}
 \bigcup_{j=1}^k E_j
 \end{equation*}
@@ -870,10 +871,10 @@ B(x,\delta)$ with the triangle inequality illustrated.\label{fig:ballisopen}}
 The proof that $C(x,\delta)$ is closed is left as an exercise.
 \end{proof}
 
-Again be careful about what is the metric space we are working in.
-As $[0,\nicefrac{1}{2})$ is
-an open ball in $[0,1]$, this means that $[0,\nicefrac{1}{2})$ is
-an open set in $[0,1]$.  On the other hand $[0,\nicefrac{1}{2})$
+Again, be careful about which metric space we are in.
+The set $[0,\nicefrac{1}{2})$ is
+an open ball in $[0,1]$, and so $[0,\nicefrac{1}{2})$ is
+an open set in $[0,1]$.  On the other hand, $[0,\nicefrac{1}{2})$
 is neither open nor closed in $\R$.
 
 \begin{prop} \label{prop:topology:intervals:openclosed}
