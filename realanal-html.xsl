@@ -66,7 +66,7 @@
 
   <!-- need hr (so far only using to separate figures) so nonstandard pretext -->
   <xsl:template match="rahr">
-    <hr/>
+    <hr class="rahr"/>
   </xsl:template>
 
   <!-- need inline image, custom width, maxwidth, etc.., so nonstandard -->
