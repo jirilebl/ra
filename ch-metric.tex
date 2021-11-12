@@ -644,7 +644,8 @@ such that $\sum_{n=1}^\infty x_n^2 < \infty$.
 \begin{enumerate}[a)]
 \item
 Prove the \myindex{Cauchy--Schwarz inequality} for two sequences
-$\{x_n \}$ and $\{ y_n \}$ in $\ell^2$:
+$\{x_n \}$ and $\{ y_n \}$ in $\ell^2$:  Prove that
+$\sum_{n=1}^\infty x_n y_n$ converges (absolutely) and
 \begin{equation*}
 {\biggl( \sum_{n=1}^\infty x_n y_n \biggr)}^2
 \leq
@@ -654,6 +655,8 @@ $\{x_n \}$ and $\{ y_n \}$ in $\ell^2$:
 \item
 Prove that $\ell^2$ is a metric space with the metric
 $d(x,y) := \sqrt{\sum_{n=1}^\infty {(x_n-y_n)}^2}$.
+Hint: Don't forget to show that the series for $d(x,y)$ always converges
+to some finite number.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
@@ -1064,8 +1067,8 @@ let $z := \inf (U_2 \cap [x,y])$.
 We wish to show that $z \in U_1$.
 If $z = x$, then $z \in U_1$.
 If $z > x$,
-then for every $\delta > 0$, the ball $B(z,\delta) =
-(z-\delta,z+\delta)$ contains points of $[x,y]$ not in $U_2$,
+then for every $\epsilon > 0$, the ball $B(z,\epsilon) =
+(z-\epsilon,z+\epsilon)$ contains points of $[x,y]$ not in $U_2$,
 as $z$ is the infimum of such points.
 So $z \notin U_2$ as $U_2$ is open.
 Therefore, $z \in U_1$ as every point of $[x,y]$ is in
