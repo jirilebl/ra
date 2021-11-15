@@ -1133,9 +1133,9 @@ So $\widebar{A} \subset A$, and thus $A = \widebar{A}$.
 
 \begin{example}
 The closure of $(0,1)$ in $\R$ is $[0,1]$.  Proof:  If
-$E$ is closed and contains $(0,1)$, then $E$ must contain $0$ and $1$ (why?).
+$E$ is closed and contains $(0,1)$, then $E$ contains $0$ and $1$ (why?).
 Thus $[0,1] \subset E$.  But $[0,1]$ is also closed.
-Therefore, the closure $\overline{(0,1)} = [0,1]$.
+Hence, the closure $\overline{(0,1)} = [0,1]$.
 \end{example}
 
 \begin{example}
@@ -1196,9 +1196,13 @@ The \emph{\myindex{boundary}} of $A$ is the set
 \end{equation*}
 \end{defn}
 
+Alternatively, the interior is the union of open sets lying in $A$,
+see \exerciseref{exercise:interiortopologic}.  By
+definition, $A^\circ \subset A$;
+however, the points of the boundary may or may not be in $A$.
+
 \begin{example}
-Suppose $A:=(0,1]$ and $X := \R$.  Then it is not hard
-to see that $\widebar{A}=[0,1]$, $A^\circ = (0,1)$,
+Suppose $A:=(0,1]$ and $X := \R$.  Then $\widebar{A}=[0,1]$, $A^\circ = (0,1)$,
 and $\partial A = \{ 0, 1 \}$.
 \end{example}
 
@@ -1366,6 +1370,7 @@ is open (in $Y$), then there exists an open set $V \subset X$ such
 that $U = V \cap Y$.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Let $(X,d)$ be a metric space.
 \begin{enumerate}[a)]
@@ -1377,8 +1382,9 @@ Is it always true that
 $\overline{B(x,\delta)} = C(x,\delta)$?  Prove or find a counterexample.
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:interiortopologic}
 Let $(X,d)$ be a metric space and $A \subset X$.  Show that
 $A^\circ = \bigcup \{ V : V \text{ is open and } V \subset A \}$.
 \end{exercise}
