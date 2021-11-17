@@ -1678,7 +1678,7 @@ M$, we have $d(x,x_n) < \epsilon$, or in other words $x_n \in B(x,\epsilon)
 
 Let us prove the other direction.  Given $\epsilon > 0$, let $U :=
 B(x,\epsilon)$ be the neighborhood of $x$.  Then there is an $M \in \N$
-such that for $n \geq M$, we have $x_n \in U = B(x,\epsilon)$ or in other
+such that for $n \geq M$, we have $x_n \in U = B(x,\epsilon)$, or in other
 words, $d(x,x_n) < \epsilon$.
 \end{proof}
 
@@ -1709,9 +1709,8 @@ elements in $A$ such that $\lim\, x_n = x$.
 
 \begin{proof}
 Let $x \in \widebar{A}$.  For every $n \in \N$,
-by
-\propref{prop:msclosureappr} there
-exists a point $x_n \in B(x,\nicefrac{1}{n}) \cap A$.
+\propref{prop:msclosureappr} guarantees
+a point $x_n \in B(x,\nicefrac{1}{n}) \cap A$.
 As $d(x,x_n) < \nicefrac{1}{n}$, we have $\lim\, x_n = x$.
 
 For the other direction, see \exerciseref{exercise:reverseclosedseq}.
@@ -1721,11 +1720,11 @@ For the other direction, see \exerciseref{exercise:reverseclosedseq}.
 
 \begin{exercise} \label{exercise:reverseclosedseq}
 Finish the proof of 
-\propref{prop:msclosureapprseq}.
+\propref{prop:msclosureapprseq}:
 Let $(X,d)$ be a metric space and
-let $A \subset X$.  Let $E$ be the set of all $x \in X$ such that there
-exists a sequence $\{ x_n \}$ in $A$ that converges to $x$.  Show 
-$E = \widebar{A}$.
+$A \subset X$.  Let $x \in X$ be
+such that there exists a sequence $\{ x_n \}$ in $A$ that converges to $x$.
+Prove that $x \in \widebar{A}$.
 \end{exercise}
 
 \begin{exercise}
@@ -1862,12 +1861,12 @@ $\{ x_j \}$ converges to $p$ in $(\R^n,d'')$.
 
 \subsection{Cauchy sequences and completeness}
 
-Just like with sequences of real numbers we define Cauchy sequences.
+Just like with sequences of real numbers, we define Cauchy sequences.
 
 \begin{defn}
 Let $(X,d)$ be a metric space.
 A sequence $\{ x_n \}$ in $X$ is a \emph{\myindex{Cauchy sequence}} if
-for every $\epsilon > 0$ there exists an $M \in \N$ such that
+for every $\epsilon > 0$, there exists an $M \in \N$ such that
 for all $n \geq M$ and all $k \geq M$, we have
 \begin{equation*}
 d(x_n, x_k) < \epsilon .
@@ -1875,7 +1874,7 @@ d(x_n, x_k) < \epsilon .
 \end{defn}
 
 The definition is again simply a translation of the concept
-from the real numbers to metric spaces.  So a sequence of real
+from the real numbers to metric spaces.  A sequence of real
 numbers is Cauchy in the sense of \chapterref{seq:chapter} if and only if
 it is Cauchy in the sense above, provided we equip the real numbers with
 the standard metric $d(x,y) = \abs{x-y}$.
@@ -1904,8 +1903,9 @@ converges to an $x \in X$.
 The space $\R^n$ with the standard metric is a complete metric space.
 \end{prop}
 
-For $\R = \R^1$ completeness was proved in \chapterref{seq:chapter}.  The proof of
-the proposition above is a reduction to the one-dimensional case.
+For $\R = \R^1$, completeness was proved in \chapterref{seq:chapter}.
+The proof of completeness in $\R^n$
+is a reduction to the one-dimensional case.
 
 \begin{proof}
 Let $\{ x_j \}_{j=1}^\infty$ be a Cauchy sequence
@@ -1936,26 +1936,28 @@ to $y \in \R^n$, and hence $\R^n$ is complete.
 A subset of $\R^n$ with the subspace metric need not be
 complete.  For example, $(0,1]$ with the subspace metric is not
 complete as $\{ \nicefrac{1}{n} \}$ is a Cauchy sequence in $(0,1]$
-with no limit in $(0,1]$.  But see also
-\exerciseref{exercise:closedcomplete}.
+with no limit in $(0,1]$.
 
 In the language of metric spaces,
 the results on continuity of section \sectionref{sec:liminter},
 say that the metric space
 $C([a,b],\R)$ of \exampleref{example:msC01} is complete.
 The proof follows by \myquote{unrolling the definitions,} 
-and is left as an exercise.
+and is left as \exerciseref{exercise:CabRcomplete}.
 
 \begin{prop} \label{prop:CabRcomplete}
 The space of continuous functions $C([a,b],\R)$ with the uniform
 norm as metric is a complete metric space.
 \end{prop}
 
-Once we have one complete metric space, any closed subspace is
-also a complete metric space.  After all, one way
+As we saw above, a subspace of a complete metric space need not be
+complete.  However, 
+a closed subspace of a complete metric space is
+complete.  After all, one way
 to think of a closed set is that it contains all points
-that can be reached from the set via a sequence.
-The proof is again an exercise.
+reachable from the set via a sequence.
+The proof is 
+\exerciseref{exercise:closedcomplete}.
 
 \begin{prop} \label{prop:closedcomplete}
 Suppose $(X,d)$ is a complete metric space and $E \subset X$
@@ -1981,7 +1983,7 @@ K \subset \bigcup_{j=1}^k U_{\lambda_j} .
 \end{defn}
 
 A collection of open sets $\{ U_{\lambda} \}_{\lambda \in I}$ as above is
-said to be an \emph{\myindex{open cover}} of $K$.  So a way to say that
+said to be an \emph{\myindex{open cover}} of $K$.  A way to say that
 $K$ is compact is to say that \emph{every open cover of $K$ has a finite
 \myindex{subcover}}.
 
@@ -2039,7 +2041,7 @@ If $y \not= x$, then
 $y \notin C(x,\nicefrac{1}{n})$
 for $n \in \N$
 such that $\nicefrac{1}{n} < d(x,y)$.
-Furthermore $x \notin K$, so
+Furthermore, $x \notin K$, so
 \begin{equation*}
 K \subset \bigcup_{n=1}^\infty {C(x,\nicefrac{1}{n})}^c .
 \end{equation*}
@@ -2065,7 +2067,7 @@ See the right-hand side of \figureref{fig:compactbndclosed}.
 \end{myfigureht}
 
 We prove below that 
-in a finite-dimensional euclidean space
+in a finite-dimensional euclidean space,
 every closed bounded set is compact.
 So closed bounded sets
 of $\R^n$ are examples of compact sets.
@@ -2142,7 +2144,7 @@ B(x,\epsilon)$ by triangle inequality.\label{fig:lebesguedelta}}
 It is important to recognize what the lemma says.  It says that
 if $K$ is sequentially compact, then given any
 cover there is a single $\delta > 0$.  The $\delta$ depends on the cover,
-but of course it does not depend on $x$.
+but, of course, it does not depend on $x$.
 
 For example, let $K := [-10,10]$ and for $n \in \Z$ let $U_n :=
 (n,n+2)$ define sets in an open cover.

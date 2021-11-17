@@ -876,14 +876,14 @@ f_n'(x) %= \frac{d}{dx} \frac{1}{1+n x^2}
 \end{equation*}
 For every $x$, $\lim_{n\to\infty} f_n'(x) = 0$, so the derivatives
 converge pointwise to 0,
-but the reader can check that the convergence is not uniform on any closed
+but the reader can check that the convergence is not uniform on any
 interval containing $0$.
-The limit of $f_n$ is not differentiable at $0$, it is not even
+The limit of $f_n$ is not differentiable at $0$---it is not even
 continuous at $0$.
 \end{example}
 
 See the exercises for more examples.  Using 
-the fundamental theorem of calculus we find an answer for continuously
+the fundamental theorem of calculus, we find an answer for continuously
 differentiable functions.  The following theorem is true even if 
 we do not assume continuity of the derivatives, but the proof is more
 difficult.
@@ -931,7 +931,7 @@ for all $x \in I$.  Then
 \begin{equation*}
 \begin{split}
 \abs{f(x) - f_n(x)} & =
-\abs{f(c) + \int_c^x g - f_n(c) - \int_c^x f_n'}
+\abs{\left(f(c) + \int_c^x g\right) - \left( f_n(c) + \int_c^x f_n' \right)}
 \\
 & \leq
 \abs{f(c) - f_n(c)} + \abs{\int_c^x g - \int_c^x f_n'}
