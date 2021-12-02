@@ -2630,10 +2630,12 @@ continuous everywhere.  Similarly, a
 polynomial in $n$ variables is continuous.
 \end{example}
 
-Be careful about taking limits separately.  In \exerciseref{exercise:dicontR2}
-you are asked to prove that the function defined by $f(x,y) := \frac{xy}{x^2+y^2}$
-outside the origin and $f(0,0) := 0$ is not continuous at the origin.  See
-\figureref{fig:xyxsqysq}.
+Be careful about taking limits separately.
+Consider the function defined by $f(x,y) := \frac{xy}{x^2+y^2}$
+outside the origin and $f(0,0) := 0$.
+See \figureref{fig:xyxsqysq}.
+In \exerciseref{exercise:dicontR2},
+you are asked to prove that $f$ is not continuous at the origin.
 However, for every $y$, the function $g(x) := f(x,y)$ is
 continuous,
 and for every $x$, the function $h(y) := f(x,y)$ is continuous.
@@ -2778,10 +2780,10 @@ We have just proved the most basic result in
 zero sets of polynomials:  The zero set of a polynomial is closed.
 
 Similarly the set where $f$ is nonnegative, that is,
-$f^{-1}\bigl( [0,\infty) \bigr) = \bigl\{ x \in X : f(x) \geq 0 \bigr\}$
+$f^{-1}\bigl( [0,\infty) \bigr) = \bigl\{ x \in X : f(x) \geq 0 \bigr\}$,
 is closed.  On the other hand the
 set where $f$ is positive,
-$f^{-1}\bigl( (0,\infty) \bigr) = \bigl\{ x \in X : f(x) > 0 \bigr\}$
+$f^{-1}\bigl( (0,\infty) \bigr) = \bigl\{ x \in X : f(x) > 0 \bigr\}$,
 is open.  
 \end{example}
 
@@ -2867,29 +2869,35 @@ is uniformly continuous.
 In particular, there exists a $\delta > 0$ such that
 whenever $\widetilde{y} \in [c,d]$ and
 $\abs{\widetilde{y}-y} < \delta$, we have
-$\abs{f(x,\widetilde{y})-f(x,y)} < \epsilon$ for all $x \in [a,b]$.
-If we let $h_n(x):= f(x,y_n)$ and $h(x) := f(x,y)$,
-we have just shown that
-$h_n \colon [a,b] \to \R$ converges uniformly 
-to
-$h \colon [a,b] \to \R$ as $n$ goes to $\infty$.
-Uniform convergence implies the limit can be taken underneath the integral.
-So
-\begin{equation*}
-\lim_{n\to \infty}
-g(y_n)
+$\abs{f(x,\widetilde{y})-f(x,y)} < \frac{\epsilon}{b-a}$ for all $x \in [a,b]$.
+So suppose $\abs{\widetilde{y}-y} < \delta$.  Then
+\begin{multline*}
+\abs{
+g(\widetilde{y})-
+g(y)
+}
 =
-\lim_{n\to \infty}
+\abs{
 \int_a^b 
-f(x,y_n) ~dx 
-= 
+f(x,\widetilde{y}) ~dx 
+-
 \int_a^b 
-\lim_{n\to \infty}
-f(x,y_n) ~dx 
-= 
+f(x,y) ~dx 
+}
+\\
+=
+\abs{
 \int_a^b 
-f(x,y) ~dx = g(y) . \qedhere
-\end{equation*}
+\bigl(
+f(x,\widetilde{y}) - f(x,y)
+\bigr)
+~dx 
+}
+\leq
+(b-a)
+\frac{\epsilon}{b-a}
+= \epsilon . \qedhere
+\end{multline*}
 \end{proof}
 
 In applications, if we are interested in continuity at $y_0$, we just
