@@ -2129,6 +2129,7 @@ where
 $B(y,\nicefrac{\epsilon}{2}) \subset B(x,\epsilon)$
 follows by triangle inequality.
 See \figureref{fig:lebesguedelta}.
+Thus $y \not= x_n$.
 In other words, for all $n \geq M$, $x_n \notin B(x,\nicefrac{\epsilon}{2})$. 
 The sequence cannot have a subsequence converging to $x$.  As $x \in K$ was
 arbitrary we are done.
@@ -2180,9 +2181,10 @@ Notice
 \begin{equation*}
 K \subset \bigcup_{x \in K} B(x,\alpha_x) .
 \end{equation*}
-Any finite collection of these balls is going to contain only finitely many
-$x_n$.  Thus for every finite collection of such balls, there is an $x_n \in K$
-that is not in the union.  Therefore, $K$ is not compact and the claim is
+Any finite collection of these balls contains at most finitely many
+elements of $\{ x_n \}$,
+and so there must be an $x_n \in K$
+not in their union.  Therefore, $K$ is not compact and the claim is
 proved.
 
 So suppose that $K$ is compact and $\{ x_n \}$ is a sequence in $K$.
@@ -2274,9 +2276,9 @@ Let $(X,d)$ be a metric space and let $K \subset X$ be compact.  If
 $E \subset K$ is a closed set, then $E$ is compact.
 \end{prop}
 
-Because $K$ is closed, then $E$ is closed in $K$ if
-and only if it is closed in $X$,
-see \propref{prop:topology:subspacesame}.
+Because $K$ is closed, $E$ is closed in $K$ if
+and only if it is closed in $X$.
+See \propref{prop:topology:subspacesame}.
 
 \begin{proof}
 Let $\{ x_n \}$ be a sequence in $E$.  It is also a sequence in $K$.
@@ -2562,8 +2564,8 @@ metric space}\index{function!continuous}.
 \end{defn}
 
 The definition agrees with the definition from \chapterref{lim:chapter} when
-$f$ is a real-valued function on the real line, if we take the standard
-metric on $\R$.
+$f$ is a real-valued function on the real line---as long as we take the standard
+metric on $\R$, of course.
 
 \begin{prop} \label{prop:contiscont}
 Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
