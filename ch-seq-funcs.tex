@@ -9,7 +9,7 @@
 
 Up till now, when we talked about limits of sequences we talked about
 sequences of numbers.
-A very useful concept in analysis is to use a sequence of functions.
+A very useful concept in analysis is a sequence of functions.
 For example, a solution to some differential equation
 might be found by finding only approximate solutions.
 Then the actual solution is some sort of limit of those approximate solutions.
@@ -122,7 +122,7 @@ $n=1,2,\ldots,10$, with higher $n$ in lighter gray.%
 
 Before we move to uniform convergence, let us reformulate pointwise
 convergence in a different way.
-We leave the proof to the reader, it is a simple application of the
+We leave the proof to the reader---it is a simple application of the
 definition of convergence of a sequence of real numbers.
 
 \begin{prop} \label{ptwsconv:prop}
@@ -208,7 +208,7 @@ for all $n \geq N$ and all $x \in [-a,a]$,
 
 \subsection{Convergence in uniform norm}
 
-For bounded functions there is another more abstract way to 
+For bounded functions, there is another more abstract way to 
 think of uniform convergence.  To every bounded function we assign
 a certain nonnegative number (called the uniform norm).  This number
 measures the \myquote{distance} of the function from 0.  We can then
@@ -265,7 +265,7 @@ $\norm{f_n - f}_u \leq \epsilon$.  Hence $\lim \norm{f_n-f}_u = 0$.
 Sometimes it is said that \emph{$\{ f_n \}$ converges to $f$ in uniform norm}
 \index{converges in uniform norm}
 \index{uniform norm convergence}
-instead of \emph{converges uniformly}.  The proposition
+instead of \emph{converges uniformly} if $\snorm{f_n-f} \to 0$.  The proposition
 says that the two notions are the same thing.
 
 \begin{example}
@@ -327,7 +327,7 @@ The sequence
 $\{ f_n \}$ converges pointwise to $f$.  To show that the convergence
 is uniform, let $\epsilon > 0$ be given.  Find an $N$ such that
 for all $m, k \geq N$, we have
-$\norm{f_m-f_k}_u < \nicefrac{\epsilon}{2}$.  In other words for
+$\norm{f_m-f_k}_u < \nicefrac{\epsilon}{2}$.  In other words, for
 all $x$, we have
 $\abs{f_m(x)-f_k(x)} < \nicefrac{\epsilon}{2}$.  We take the limit
 as $k$ goes to infinity.  Then $\abs{f_m(x)-f_k(x)}$
