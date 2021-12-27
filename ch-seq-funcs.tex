@@ -338,10 +338,11 @@ Consequently for all $x$,
 \end{equation*}
 And hence $\{ f_n \}$ converges uniformly.
 
-For the other direction, suppose $\{ f_n \}$ converges uniformly to
+Next, we prove the other direction.
+Suppose $\{ f_n \}$ converges uniformly to
 $f$.  Given $\epsilon > 0$, find $N$ such that for all $n \geq N$,
 we have $\abs{f_n(x)-f(x)} < \nicefrac{\epsilon}{4}$ for all $x \in S$.
-Therefore for all $m, k \geq N$,
+Therefore, for all $m, k \geq N$,
 \begin{equation*}
 \abs{f_m(x)-f_k(x)} = 
 \abs{f_m(x)-f(x)+f(x)-f_k(x)} \leq
@@ -510,20 +511,21 @@ For instance,
 \lim_{n\to\infty}
 \left(
 \lim_{k\to\infty}
-\frac{\nicefrac{n}{k}}{\nicefrac{n}{k} + 1}
+\frac{n}{n + k}
 \right)
 \not=
 \lim_{k\to\infty}
 \left(
 \lim_{n\to\infty}
-\frac{\nicefrac{n}{k}}{\nicefrac{n}{k} + 1}
+\frac{n}{n + k}
 \right)
 = 1 .
 \end{equation*}
 
 When talking about sequences of functions, interchange of limits comes up
-quite often.  We treat two cases.  First we look at continuity of
-the limit, and second we look at the integral of the limit.
+quite often.  We look at several instances: continuity of the limit, the
+integral of the limit, the derivative of the limit, and the convergence of
+power series.
 
 \subsection{Continuity of the limit}
 
@@ -584,7 +586,7 @@ we have $f_n(x) = 0$, and so
 \begin{equation*}
 \lim_{n \to \infty} f_n(x) = 0.
 \end{equation*}
-On the other hand if $x=0$, then
+On the other hand, if $x=0$, then
 \begin{equation*}
 \lim_{n \to \infty} f_n(0) = 
 \lim_{n \to \infty} 1 = 1.
@@ -684,7 +686,7 @@ we have $x \geq \nicefrac{1}{n}$ and so $f_n(x) = 0$.  Therefore,
 \begin{equation*}
 \lim_{n \to \infty} f_n(x) = 0.
 \end{equation*}
-We also have $f_n(0) = 0$ for all $n$.  Therefore the pointwise
+We also have $f_n(0) = 0$ for all $n$.  Therefore, the pointwise
 limit of $\{ f_n \}$ is the zero function.  Thus
 \begin{equation*}
 \nicefrac{1}{2} =
@@ -700,9 +702,13 @@ f_n(x)\right)~dx
 \end{equation*}
 \end{example}
 
-But
-if we again require the convergence to be uniform, the limits can
-be interchanged.
+But if we require the convergence to be uniform, the limits can
+be interchanged.\footnote{Weaker conditions
+are sufficient for this kind of theorem, but to prove such a generalization requires
+more sophisticated machinery than we cover here: the Lebesgue integral.
+In particular, the theorem holds with pointwise
+convergence as long as $f$ is integrable and there is an $M$ such that
+$\snorm{f_n}_u \leq M$ for all $n$.}
 
 \begin{thm} \label{integralinterchange:thm}
 Let $\{ f_n \}$ be a sequence of Riemann integrable
@@ -761,7 +767,7 @@ the fact that for all $x \in [a,b]$, we have
 $\frac{-\epsilon}{2(b-a)} < f(x)-f_n(x) < \frac{\epsilon}{2(b-a)}$.
 As $\epsilon > 0$ was arbitrary, $f$ is Riemann integrable.
 
-Finally we compute $\int_a^b f$.  We apply \propref{intbound:prop}
+Finally, we compute $\int_a^b f$.  We apply \propref{intbound:prop}
 in the calculation.  Again, for all $n \geq M$ (where $M$ is the same as above),
 \begin{equation*}
 \begin{split}
@@ -865,9 +871,9 @@ $n=1,2,\ldots,10$, with higher $n$ in lighter gray.%
 
 \begin{example} \label{exercise:badconvergenceder}
 Let $f_n(x) := \frac{1}{1+nx^2}$.
-If $x \not= 0$, then $\lim_{n \to \infty} f_n(x) = 0$
-and $\lim_{n \to \infty} f_n(0) = 1$.
-Hence $\{ f_n \}$ converges pointwise to a function that is not continuous
+If $x \not= 0$, then $\lim_{n \to \infty} f_n(x) = 0$,
+but $\lim_{n \to \infty} f_n(0) = 1$.
+Hence, $\{ f_n \}$ converges pointwise to a function that is not continuous
 at $0$.
 We compute
 \begin{equation*}
@@ -907,8 +913,8 @@ f_n(x) = f_n(c) + \int_c^x f_n' .
 \end{equation*}
 As $\{ f_n' \}$ converges uniformly on $I$, it converges uniformly
 on $[c,x]$ (or $[x,c]$ if $x < c$).
-Therefore, the limit as $n \to \infty$ on the right-hand side exists.
-Define $f$ at the remaining points by this limit:
+thus, the limit as $n \to \infty$ on the right-hand side exists.
+Define $f$ at the remaining points (where $x\neq c$) by this limit:
 \begin{equation*}
 f(x) :=
 \lim_{n\to\infty} f_n(c) + \lim_{n\to\infty} \int_c^x f_n'
@@ -980,7 +986,7 @@ or let $I := \R$ if $\rho= \infty$.
 Take $0 < r < \rho$.
 The series converges absolutely for every $x \in I$,
 in particular if $x = a+r$.
-Therefore $\sum_{n=0}^\infty \abs{c_n} r^n$ converges.
+So $\sum_{n=0}^\infty \abs{c_n} r^n$ converges.
 Given $\epsilon >0$, find $M$ such that for all $k \geq M$,
 \begin{equation*}
 \sum_{n=k+1}^\infty \abs{c_n} {r}^n < \epsilon .
@@ -1076,11 +1082,10 @@ R := \limsup_{n \to \infty} \abs{c_n}^{1/n} .
 As the series is convergent $R < \infty$, and
 the radius of convergence is $\nicefrac{1}{R}$ (or $\infty$ if $R=0$).
 
-Let $\epsilon > 0$ be given.  In \exampleref{example:nto1overn} 
+Let $\epsilon > 0$ be given.  In \exampleref{example:nto1overn},
 we saw $\lim\,n^{1/n} = 1$.
 Hence there exists an $N$ such that for all $n \geq N$, we have
 $n^{1/n} < 1+\epsilon$.
-
 So
 \begin{equation*}
 R = 
@@ -1098,7 +1103,7 @@ R =
 \end{equation*}
 As $\epsilon$ was arbitrary, $\limsup_{n \to \infty} \abs{n c_n}^{1/n} = R$.
 Therefore, $\sum_{n=1}^\infty n c_{n} {(x-a)}^{n}$ has radius of
-convergence $\rho$, and by dividing by $(x-a)$ we find
+convergence $\rho$.  By dividing by $(x-a)$, we find
 $\sum_{n=0}^\infty (n+1) c_{n+1} {(x-a)}^{n}$ has radius of convergence
 $\rho$ as well.
 
@@ -1120,7 +1125,7 @@ f(x) := \sum_{n=0}^\infty \frac{x^n}{n!}
 \end{equation*}
 has radius of convergence $\rho=\infty$.  Furthermore,
 $f(0) = 1$, and by differentiating
-term by term we find that $f'(x) = f(x)$.
+term by term, we find that $f'(x) = f(x)$.
 \end{example}
 
 \begin{example}
@@ -1140,8 +1145,9 @@ obtains the result.
 \subsection{Exercises}
 
 \begin{exercise}
-While uniform convergence preserves continuity, it does not preserve
-differentiability.  Find an explicit example of a sequence of
+%While uniform convergence preserves continuity, it does not preserve
+%differentiability.
+Find an explicit example of a sequence of
 differentiable functions on $[-1,1]$ that converge uniformly to
 a function $f$ such that $f$ is not differentiable.
 Hint:
@@ -1158,11 +1164,11 @@ a differentiable function $f$ on $[0,1]$ (find $f$).  However, show that
 $f'(1) \not= \lim\limits_{n\to\infty} f_n'(1)$.
 \end{exercise}
 
-\begin{exnote}
-Note: The previous two exercises show that
-we cannot simply swap limits with derivatives, even if the convergence is
-uniform.  See also \exerciseref{c1uniflim:exercise} below.
-\end{exnote}
+%\begin{exnote}
+%Note: The previous two exercises show that
+%we cannot simply swap limits with derivatives, even if the convergence is
+%uniform.  See also \exerciseref{c1uniflim:exercise} below.
+%\end{exnote}
 
 \begin{exercise}
 Let $f \colon [0,1] \to \R$ be a Riemann integrable (hence bounded)
@@ -1265,6 +1271,7 @@ for every $x \in [a,b]$, the sequence $\{ \abs{f_n(x)-f(x)} \}$ is monotone.
 Show that the sequence $\{f_n\}$ converges uniformly.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Find a sequence of Riemann integrable functions $f_n \colon [0,1] \to \R$ such
 that $\{ f_n \}$ converges to zero pointwise, and such that
@@ -1275,6 +1282,7 @@ $\bigl\{ \int_0^1 f_n \bigr\}_{n=1}^\infty$ increases without bound,
 $\bigl\{ \int_0^1 f_n \bigr\}_{n=1}^\infty$ is the sequence $-1,1,-1,1,-1,1, \ldots$.
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exnote}
 It is possible to define a 
@@ -1344,7 +1352,7 @@ $\int_a^b f = \lim_{n\to\infty} \int_a^b f_n$.
 \begin{exercise}[Challenging]
 Find a sequence of continuous functions $f_n \colon [0,1] \to \R$ that
 converge to the popcorn function $f \colon [0,1] \to \R$, that is the
-function such that $f(\nicefrac{p}{q}) := \frac{1}{q}$ (if $\nicefrac{p}{q}$
+function such that $f(\nicefrac{p}{q}) := \nicefrac{1}{q}$ (if $\nicefrac{p}{q}$
 is in lowest terms) and $f(x) := 0$ if $x$ is not rational (note
 that $f(0) = f(1) = 1$),
 see \exampleref{popcornfunction:example}.
