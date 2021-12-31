@@ -1060,9 +1060,9 @@ So everything you know about metric spaces applies to normed vector spaces.
 
 Before defining the standard norm on $\R^n$, let us
 define the standard 
-scalar \emph{\myindex{dot product}} on $\R^n$.  For two vectors
-if $x=(x_1,x_2,\ldots,x_n) \in \R^n$
-and $y=(y_1,y_2,\ldots,y_n) \in \R^n$, define\glsadd{not:dotprod}
+scalar \emph{\myindex{dot product}} on $\R^n$.  For vectors
+$x=(x_1,x_2,\ldots,x_n) \in \R^n$
+and $y=(y_1,y_2,\ldots,y_n) \in \R^n$ define\glsadd{not:dotprod}
 \begin{equation*}
 x \cdot y := \sum_{j=1}^n x_j\, y_j .
 \end{equation*}
@@ -1072,7 +1072,7 @@ That is,
 if $y$ is fixed, the map $x \mapsto x \cdot y$ is a linear map from
 $\R^n$ to $\R$.  Similarly, if $x$ is fixed, then
 $y \mapsto x \cdot y$ is linear.
-It is also symmetric in the sense that $x \cdot y = y \cdot x$.
+It is also \emph{\myindex{symmetric}} in the sense that $x \cdot y = y \cdot x$.
 The \emph{\myindex{euclidean norm}} is defined as\glsadd{not:normRn}
 \begin{equation*}
 \snorm{x} := \snorm{x}_{\R^n} := \sqrt{x \cdot x} = \sqrt{(x_1)^2+(x_2)^2 + \cdots + (x_n)^2}.
@@ -1170,13 +1170,13 @@ Therefore,
 =
 \sup_{\substack{x \in X\\x\neq 0}} \frac{\snorm{Ax}}{\snorm{x}} .
 \end{equation*}
-This implies that, assuming $\snorm{A}$ is not infinity,
+This implies that, assuming $\snorm{A}$ is not infinity, that for every $x$,
 \begin{equation*}
 \snorm{Ax} \leq \snorm{A}  \snorm{x} .
 \end{equation*}
 
 It is not hard to see from the definition that $\snorm{A} = 0$ if and
-only if $A = 0$, that is, if $A$ takes every vector to the zero vector.
+only if $A = 0$, where by $A=0$ we mean that $A$ takes every vector to the zero vector.
 
 It is also not difficult to compute the operator norm of the identity operator:
 \begin{equation*}
@@ -1208,9 +1208,9 @@ following proposition for the euclidean space, and the proof for a general
 finite-dimensional space is left as an exercise.
 
 \begin{prop} \label{prop:finitedimpropnormfin}
-Let $X$ and $Y$ be normed vector spaces.
+Let $X$ and $Y$ be normed vector spaces and $A \in L(X,Y)$.
 Suppose that $X$ is finite-dimensional.
-If $A \in L(X,Y)$, then $\snorm{A} < \infty$, and
+Then $\snorm{A} < \infty$, and
 $A$ is uniformly continuous (Lipschitz with constant $\snorm{A}$).
 \end{prop}
 
@@ -1726,14 +1726,16 @@ determinant is zero.  Then we reordered the columns to the
 original ordering to obtain the sgn.
 
 The conclusion that $\det(AB) = \det(A)\det(B)$
-follows by recognizing above the determinant of $B$.  
+follows by recognizing that the expression in parentheses above is the determinant of $B$.  
 We obtain this by plugging in $A=I$.
-The expression we got for the determinant of $B$ has rows and columns
+The expression we get for the determinant of $B$ has rows and columns
 swapped, so as a side note, we have also just proved that the determinant of
 a matrix and its transpose are equal.
 
-To prove the second part of the theorem, suppose $A$ is invertible.
-Then $A^{-1}A = I$ and consequently $\det(A^{-1})\det(A) = \det(A^{-1}A) = \det(I) = 1$.
+Let us prove the
+\myquote{Furthermore} part.
+If $A$ is invertible,
+then $A^{-1}A = I$ and consequently $\det(A^{-1})\det(A) = \det(A^{-1}A) = \det(I) = 1$.
 If $A$ is not invertible, then there must be a nonzero vector that $A$ takes
 to zero as $A$ is not one-to-one.  In other words, the columns of $A$ are linearly dependent.
 Suppose 
@@ -1741,7 +1743,7 @@ Suppose
 \sum_{j=1}^n \gamma_j\, a_j = 0 ,
 \end{equation*}
 where not all $\gamma_j$ are equal to 0.
-Without loss of generality suppose $\gamma_1\neq 1$.
+Without loss of generality suppose $\gamma_1\neq 0$.
 Take
 \begin{equation*}
 B := 
@@ -1811,12 +1813,13 @@ basis.
 
 If we compute the determinant of the matrix $A$, we obtain
 the same determinant if we use any other basis;
-In the other basis the matrix would be $B^{-1}AB$.
+in the other basis the matrix would be $B^{-1}AB$.
 Consequently,
 \begin{equation*}
 \det \colon L(X) \to \R
+\avoidbreak
 \end{equation*}
-is a well-defined function (not just on matrices).
+is a well-defined function (that is, $\det$ is defined on $L(X)$, not just on matrices).
 
 \medskip
 
@@ -2055,7 +2058,7 @@ $\{ x_1,x_2,\ldots,x_n \}$.
 \item
 Show that the function $f \colon \R^n \to \R$
 \begin{equation*}
-f(c_1,c_2,\ldots,c_n) = 
+f(c_1,c_2,\ldots,c_n) := 
 \snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n}
 \end{equation*}
 is continuous.
@@ -2107,8 +2110,8 @@ M \snorm{x}_1 .
 \end{equation*}
 \item
 Show that $U \subset X$ is open in the metric defined by
-$\norm{x-y}_1$ if and only if it is open in the metric defined by
-$\norm{x-y}_2$.  In other words, convergence of sequences and continuity
+$\norm{x-y}_1$ if and only if $U$ is open in the metric defined by
+$\norm{x-y}_2$.  In particular, convergence of sequences and continuity
 of functions is the same in either norm.
 \end{enumerate}
 \end{exercise}
@@ -3775,7 +3778,7 @@ Also note that just because $f'(x)$ is invertible everywhere does not
 mean that $f$ is
 one-to-one globally.  It is \myquote{locally} one-to-one but perhaps not
 \myquote{globally.}  For an
-example, take the map $f \colon \R^2 \setminus \{ 0 \} \to \R^2$ defined
+example, take the map $f \colon \R^2 \setminus \bigl\{ (0,0) \bigr\} \to \R^2$ defined
 by $f(x,y) := (x^2-y^2,2xy)$.
 It is left to student to show that $f$ is
 differentiable and the derivative is invertible.
@@ -3943,15 +3946,15 @@ $g \colon W \to \R^m$ by $g(x) := G_2(x,0)$, which is the $g$ in the theorem.
 The fact that $g(x)$ is the unique point in $W'$ follows because $W \times
 W' \subset G(V)$ and $G$ is one-to-one.
 
-Next differentiate
+Next, differentiate
 \begin{equation*}
-x\mapsto f\bigl(x,g(x)\bigr) ,
+x\mapsto f\bigl(x,g(x)\bigr)
 \end{equation*}
 at $p$,
 which is the zero map, so its derivative is zero.
 Using the chain rule,
 \begin{equation*}
-0 = A\bigl(h,g'(p)h\bigr) = A_xh + A_yg'(p)h ,
+0 = A\bigl(h,g'(p)h\bigr) = A_xh + A_yg'(p)h
 \end{equation*}
 for all $h \in \R^{n}$,
 and we obtain the desired derivative for $g$.
