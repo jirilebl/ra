@@ -3255,7 +3255,7 @@ d_Y\bigl(f(p),f(q)\bigr) \leq k\, d_X(p,q)
 
 \medskip
 
-If $f \colon X \to X$ is a map, $x \in X$ is called a
+Given a map $f \colon X \to X$, a point $x \in X$ is called a
 \emph{\myindex{fixed point}}
 if $f(x)=x$.
 \end{defn}
@@ -3277,14 +3277,15 @@ See \exerciseref{exercise:nofixedpoint}.
 
 \begin{proof}
 Pick $x_0 \in X$.
-Define a sequence $\{ x_n \}$ by $x_{n+1} := f(x_n)$.
+Define a sequence $\{ x_n \}$ by $x_{n+1} := f(x_n)$.  Then
 \begin{equation*}
 d(x_{n+1},x_n) = d\bigl(f(x_n),f(x_{n-1})\bigr)
-\leq k d(x_n,x_{n-1})
-\leq \cdots
-\leq k^n d(x_1,x_0) .
+\leq k d(x_n,x_{n-1}) .
+%\leq \cdots
+%\leq k^n d(x_1,x_0) .
 \end{equation*}
-Suppose $m > n$, then
+Repeating $n$ times, we get $d(x_{n+1},x_n) \leq k^n d(x_1,x_0)$.
+For $m > n$,
 \begin{equation*}
 \begin{split}
 d(x_m,x_n)
@@ -3305,7 +3306,7 @@ so it is Lipschitz continuous:
 f(x) = f( \lim \, x_n) = \lim\, f(x_n) = \lim\, x_{n+1} = x .
 \end{equation*}
 
-Unique?  Let $x$ and $y$ both be fixed points.
+Unique?  Let $x$ and $y$ be fixed points.
 \begin{equation*}
 d(x,y) = d\bigl(f(x),f(y)\bigr) \leq k\, d(x,y) .
 \end{equation*}
@@ -3315,11 +3316,11 @@ proved.
 
 The proof is constructive.  Not only do we know 
 a unique fixed point exists.  We also know how to find it.  Start with
-any point $x_0 \in X$, and iterate $f(x_0)$,
+any point $x_0 \in X$, then iterate $f(x_0)$,
 $f(f(x_0))$,
 $f(f(f(x_0)))$, etc.  We can even find how far away
 from the fixed point we are, see the exercises.  The idea of the proof is
-therefore used in real-world applications.
+therefore useful in real-world applications.
 
 \subsection{Picard's theorem}
 
@@ -3346,7 +3347,7 @@ Consider now the ordinary differential equation
 \begin{equation*}
 \frac{dy}{dx} = F(x,y) .
 \end{equation*}
-Given some $x_0, y_0$ we are looking for a function $y=f(x)$ such that
+Given some $x_0, y_0$, we are looking for a function $y=f(x)$ such that
 $f(x_0) = y_0$ and such that
 \begin{equation*}
 f'(x) = F\bigl(x,f(x)\bigr) .
@@ -3364,7 +3365,7 @@ A subtle issue is how long does the solution exist.
 Consider the equation $y' = y^2$, $y(0)=1$.  Then $y(x) = \frac{1}{1-x}$ is a
 solution.  While $F$ is a reasonably \myquote{nice} function and in particular
 it exists for all $x$ and $y$, the solution \myquote{blows up} at $x=1$.
-For more examples related to Picard's theorem see \sectionref{sec:picard}.
+For more examples related to Picard's theorem, see \sectionref{sec:picard}.
 
 It may be strange that we are looking in $C([a,b],\R)$ for a differentiable
 function, but the idea is to consider the corresponding
@@ -3468,7 +3469,7 @@ Therefore,
 \end{split}
 \end{equation*}
 We chose $M > 0$ and so
-$\frac{L\alpha}{M+L\alpha} < 1$.  The claim is proved by
+$\frac{L\alpha}{M+L\alpha} < 1$.  The claim that $T$ is a contraction is proved by
 taking supremum over $x \in [-h,h]$ of the left-hand side above to obtain
 $d\bigl(T(f),T(g)\bigr) \leq \frac{L\alpha}{M+L\alpha} \, d(f,g)$.
 
