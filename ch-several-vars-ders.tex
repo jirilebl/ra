@@ -337,7 +337,7 @@ b_2 x_2 +  \cdots
 (a_2 + b_2) x_2 +  \cdots
 + (a_k + b_k) x_k .
 \end{multline*}
-Similarly 
+Similarly,
 a scalar multiple of a linear combination of vectors from $Y$
 is a linear combination of vectors from $Y$:
 \begin{equation*}
@@ -349,10 +349,11 @@ b a_1  x_1 +
 b a_2 x_2 +  \cdots
 + b a_k x_k .
 \end{equation*}
-We formalize this statement in a proposition.
+Finally, if $Y$ is nonempty, $0 = 0 v$ for $v \in Y$ gives $0 \in Y$.
+We have proved the following proposition.
 
 \begin{prop}
-Let $X$ be a vector space.  For every $Y \subset X$,
+Let $X$ be a vector space.  For every nonempty $Y \subset X$,
 the set $\spn(Y)$ is a vector space.
 That is, $\spn(Y)$ is a subspace of $X$.
 \end{prop}
@@ -392,6 +393,7 @@ A subset of a linear independent set is clearly linearly independent,
 so in the definition of dimension, notice that if a set does not have $d+1$
 linearly independent vectors, no set of more than $d+1$ vectors is linearly
 independent either.
+Also note that no element of a linear independent set can be zero.
 
 As an example, the
 set $Y$ of the two vectors in
@@ -533,7 +535,7 @@ linearly independent.  So $m = d$.
 Let us look at \ref{mv:dimprop:ii}.
 First a short claim.
 If $T$ is a set of $k$ linearly independent vectors
-that do not span $X$, that is $X \setminus
+that do not span $X$, that is, $X \setminus
 \spn (T) \not= \emptyset$, then choose a vector $v \in X \setminus
 \spn (T)$.  The set $T \cup \{ v \}$ is linearly independent:
 A nonzero linear combination of elements of $T \cup \{ v \}$ would either
@@ -541,8 +543,8 @@ produce $v$ as a combination of $T$, or it would be a combination of
 elements of $T$, and neither option is possible.
 
 If $\dim \, X = d$,
-then there must exist some linearly independent set of $d$ vectors $T$,
-and it must span $X$, otherwise we could choose a larger set of linearly
+then there must exist some linearly independent set $T$ of $d$ vectors,
+and $T$ must span $X$, otherwise we could choose a larger set of linearly
 independent vectors.  So we have a basis of $d$ vectors.
 On the other hand, if we have a basis of $d$ vectors,
 it is linearly independent and spans $X$ by definition.
@@ -572,8 +574,8 @@ we follow the procedure above in the proof of
 to add a vector $v$ not in the span of $T$.  The set
 $T \cup \{ v \}$
 is linearly independent, whose span has dimension $m+1$.
-Therefore, we can repeat this procedure $d-m$ times before
-we find a set of $d$ linearly independent vectors.
+Therefore, we repeat this procedure $d-m$ times to
+find a set of $d$ linearly independent vectors.
 They must span $X$ otherwise we could add yet another vector.
 \end{proof}
 
