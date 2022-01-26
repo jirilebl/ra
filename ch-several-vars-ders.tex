@@ -276,6 +276,7 @@ If $Y \subset X$ is a set, then the \emph{\myindex{span}} of $Y$, or in notation
 $\spn(Y)$, is the set of all linear combinations
 of all finite subsets of $Y$.  We 
 say $Y$ \emph{spans} $\spn(Y)$\glsadd{not:span}.
+By convention, define $\spn(\emptyset) := \{ 0 \}.$
 \end{defn}
 
 \begin{example}
@@ -349,11 +350,11 @@ b a_1  x_1 +
 b a_2 x_2 +  \cdots
 + b a_k x_k .
 \end{equation*}
-Finally, if $Y$ is nonempty, $0 = 0 v$ for $v \in Y$ gives $0 \in Y$.
+Finally, $0 \in Y$; if $Y$ is nonempty, $0 = 0 v$ for some $v \in Y$.
 We have proved the following proposition.
 
 \begin{prop}
-Let $X$ be a vector space.  For every nonempty $Y \subset X$,
+Let $X$ be a vector space.  For every $Y \subset X$,
 the set $\spn(Y)$ is a vector space.
 That is, $\spn(Y)$ is a subspace of $X$.
 \end{prop}
@@ -394,6 +395,9 @@ so in the definition of dimension, notice that if a set does not have $d+1$
 linearly independent vectors, no set of more than $d+1$ vectors is linearly
 independent either.
 Also note that no element of a linear independent set can be zero.
+In particular, $\{ 0 \}$ is the only vector space of dimension $0$.
+By convention, the empty set is linearly independent and thus a basis
+of $\{ 0 \}$.
 
 As an example, the
 set $Y$ of the two vectors in
@@ -492,6 +496,8 @@ vectors such that $T \cup S$ is a basis of $X$.
 \end{prop}
 
 \begin{proof}
+All statements hold trivially when $d=0$, so assume $d \geq 1$.
+
 Let us start with \ref{mv:dimprop:i}.
 Suppose $S = \{ x_1 , x_2, \ldots, x_d \}$ spans $X$, and
 $T = \{ y_1, y_2, \ldots, y_m \}$ is a set of linearly independent
@@ -514,12 +520,14 @@ for some numbers $a_{1,2},a_{2,2},\ldots,a_{d,2}$, such that
 \begin{equation*}
 y_2 = a_{1,2} y_1 + \sum_{k=2}^d a_{k,2} x_k .
 \end{equation*}
-As $T$ is linearly independent, one of the $a_{k,2}$
+As $T$ is linearly independent---and so $\{ y_1, y_2 \}$ is linearly
+independent---one of the $a_{k,2}$
 for $k \geq 2$ must be nonzero.  Without loss of generality suppose 
 $a_{2,2} \not= 0$.  Proceed to solve for 
 \begin{equation*}
 x_2 = \frac{1}{a_{2,2}} y_2 - \frac{a_{1,2}}{a_{2,2}} y_1 - \sum_{k=3}^d
 \frac{a_{k,2}}{a_{2,2}} x_k .
+\avoidbreak
 \end{equation*}
 In particular,
 $\{ y_1 , y_2, x_3, \ldots, x_d \}$ spans $X$.
@@ -534,23 +542,23 @@ linearly independent.  So $m = d$.
 
 Let us look at \ref{mv:dimprop:ii}.
 First a short claim.
-If $T$ is a set of $k$ linearly independent vectors
+If $T$ is a set of linearly independent vectors
 that do not span $X$, that is, $X \setminus
-\spn (T) \not= \emptyset$, then choose a vector $v \in X \setminus
-\spn (T)$.  The set $T \cup \{ v \}$ is linearly independent:
-A nonzero linear combination of elements of $T \cup \{ v \}$ would either
+\spn (T) \not= \emptyset$, then for any vector $v \in X \setminus
+\spn (T)$, the set $T \cup \{ v \}$ is linearly independent.
+Indeed, a nonzero linear combination of elements of $T \cup \{ v \}$ would either
 produce $v$ as a combination of $T$, or it would be a combination of
 elements of $T$, and neither option is possible.
 
 If $\dim \, X = d$,
 then there must exist some linearly independent set $T$ of $d$ vectors,
 and $T$ must span $X$, otherwise we could choose a larger set of linearly
-independent vectors.  So we have a basis of $d$ vectors.
+independent vectors via the claim.  So we have a basis of $d$ vectors.
 On the other hand, if we have a basis of $d$ vectors,
-it is linearly independent and spans $X$ by definition.
-By \ref{mv:dimprop:i} we know
-there is no set of $d+1$ linearly independent vectors,
-so the dimension of $X$ must be $d$.
+the dimension is at least $d$ as a basis is linearly independent.
+On the other hand a basis also spans $X$, and so
+by \ref{mv:dimprop:i} we know that dimension is at most $d$.
+Hence the dimension of $X$ must equal $d$.
 
 For \ref{mv:dimprop:iii} notice that $\{ e_1, e_2, \ldots, e_n \}$ is a basis of $\R^n$.
 
@@ -564,10 +572,10 @@ that is linearly dependent
 and spans $X$, we will show that $m > d$.  One of the
 vectors is a linear combination of the others.  If we remove it
 from $T$ we obtain a set of $m-1$ vectors that still span $X$ and hence
-$\dim \, X \leq m-1$ by \ref{mv:dimprop:i}.
+$d = \dim \, X \leq m-1$ by \ref{mv:dimprop:i}.
 
 For \ref{mv:dimprop:vi} suppose $T = \{ x_1, x_2, \ldots, x_m \}$ is
-a linearly independent set.  Firstly, $m \leq d$.
+a linearly independent set.  Firstly, $m \leq d$ by definition of dimension.
 If $m=d$, we are done.  Otherwise,
 we follow the procedure above in the proof of
 \ref{mv:dimprop:ii}
@@ -709,9 +717,10 @@ If $X$ is a finite-dimensional vector space and $A \in L(X)$, then $A$ is one-to
 Let $\{ x_1,x_2,\ldots,x_n \}$ be a basis for $X$.
 First suppose $A$ is one-to-one.  Let $c_1,c_2,\ldots,c_n$ be such that
 \begin{equation*}
+0 =
 \sum_{j=1}^n c_j \, Ax_j =
-A\sum_{j=1}^n c_j \, x_j =
-0 .
+A\sum_{j=1}^n c_j \, x_j 
+.
 \end{equation*}
 As $A$ is one-to-one,
 the only vector that is taken to 0 is 0 itself.  
@@ -737,8 +746,8 @@ the basis, every element of $X$ is in the span of
 $\{ Ax_1, Ax_2, \ldots, Ax_n \}$.  Suppose that for some
 $c_1,c_2,\ldots,c_n$,
 \begin{equation*}
-A\sum_{j=1}^n c_j \, x_j =
-\sum_{j=1}^n c_j \, Ax_j = 0 .
+0 = A\sum_{j=1}^n c_j \, x_j =
+\sum_{j=1}^n c_j \, Ax_j .
 \end{equation*}
 By \propref{mv:dimprop}
 as $\{ Ax_1, Ax_2, \ldots, Ax_n \}$ span $X$, the set is linearly independent,
