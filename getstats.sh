@@ -9,6 +9,7 @@ echo "Sections:\t\t"`grep '^[\]section\**{' $VOLI | wc -l`
 echo "Sections \\w exercises:\t"`grep '^[\]subsection{Exercises}' $VOLI | wc -l`
 echo "Exercises:\t\t"`grep '^[\]begin{exercise' $VOLI | wc -l`
 echo "Figures:\t\t"`grep '^[\]begin{myfigureht' $VOLI | wc -l`
+echo "Footnotes:\t\t"`grep '[\]footnote{' $VOLI | wc -l`
 
 echo
 echo "Volume II"
@@ -17,6 +18,7 @@ echo "Sections:\t\t"`grep '^[\]section\**{' $VOLII | wc -l`
 echo "Sections \\w exercises:\t"`grep '^[\]subsection{Exercises}' $VOLII | wc -l`
 echo "Exercises:\t\t"`grep '^[\]begin{exercise' $VOLII | wc -l`
 echo "Figures:\t\t"`grep '^[\]begin{myfigureht' $VOLII | wc -l`
+echo "Footnotes:\t\t"`grep '[\]footnote{' $VOLII | wc -l`
 
 echo
 echo "Both volumes"
@@ -25,6 +27,7 @@ echo "Sections:\t\t"`grep '^[\]section\**{' $VOLI $VOLII | wc -l`
 echo "Sections \\w exercises:\t"`grep '^[\]subsection{Exercises}' $VOLI $VOLII | wc -l`
 echo "Exercises:\t\t"`grep '^[\]begin{exercise' $VOLI $VOLII | wc -l`
 echo "Figures:\t\t"`grep '^[\]begin{myfigureht' $VOLI $VOLII | wc -l`
+echo "Footnotes:\t\t"`grep '[\]footnote{' $VOLI $VOLII | wc -l`
 
 echo
 echo Chapter count includes introductions.
