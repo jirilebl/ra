@@ -629,7 +629,8 @@ the linear operator such that $Ix = x$ for all $x$.
 
 It is not hard to see that $aA \in L(X,Y)$
 and $A+B \in L(X,Y)$, and that $AB \in L(X,Z)$.
-In particular, $L(X,Y)$ is a vector space.
+In particular, $L(X,Y)$ is a vector space ($0$ is the linear map that takes
+everything to $0$).
 As the set $L(X)$ is not only a vector space, but also
 admits a product (composition of operators),
 it is often called an \emph{\myindex{algebra}}.
@@ -833,7 +834,7 @@ $f(x):=1$ is in $X$, but $2f$ and $-f$ is not.
 \end{example}
 
 \begin{prop}
-The intersection two convex sets is convex.  In fact,
+The intersection of two convex sets is convex.  In fact,
 if $\{ C_\lambda \}_{\lambda \in I}$ is
 an arbitrary collection of convex sets, then
 \begin{equation*}
@@ -1181,7 +1182,7 @@ Therefore,
 =
 \sup_{\substack{x \in X\\x\neq 0}} \frac{\snorm{Ax}}{\snorm{x}} .
 \end{equation*}
-This implies that, assuming $\snorm{A}$ is not infinity, that for every $x$,
+This implies, assuming $\snorm{A}$ is not infinity, that for every $x$,
 \begin{equation*}
 \snorm{Ax} \leq \snorm{A}  \snorm{x} .
 \end{equation*}
@@ -1326,7 +1327,10 @@ about open/closed sets, continuity, and convergence.
 
 \begin{prop} \label{prop:finitedimpropinv}
 Let $X$ be a finite-dimensional normed vector space.
-Let $GL(X) \subset L(X)$\glsadd{not:GLX} be the set of invertible linear operators.
+Let $GL(X) \subset L(X)$\glsadd{not:GLX} be the set of invertible linear
+operators.\footnote{$GL(X)$ is called the
+\emph{\myindex{general linear group}}, that is where the acronym GL
+comes from.}
 \begin{enumerate}[(i)]
 \item \label{finitedimpropinv:i}
 If $A \in GL(X)$, $B \in L(X)$, and
@@ -1352,8 +1356,8 @@ and in general things are a bit more difficult.
 
 \begin{proof}
 Let us prove \ref{finitedimpropinv:i}.   We know something about $A^{-1}$
-and $A-B$.  These are linear operators so let us
-apply them to a vector:
+and $A-B$; they are linear operators.
+So apply them to a vector:
 \begin{equation*}
 A^{-1}(A-B)x
 =
@@ -1370,18 +1374,21 @@ Therefore,
 \snorm{A^{-1}}\,\snorm{A-B}\, \snorm{x} + \snorm{A^{-1}}\,\snorm{Bx} .
 \end{split}
 \end{equation*}
-Now assume $x \neq 0$ and so $\snorm{x} \neq 0$.
-Using \eqref{eqcontineq} we obtain
+Assume $x \neq 0$ and so $\snorm{x} \neq 0$.
+Using \eqref{eqcontineq}, we obtain
 \begin{equation*}
-\snorm{x} < \snorm{x} + \snorm{A^{-1}} \, \snorm{Bx} ,
+\snorm{x} < \snorm{x} + \snorm{A^{-1}} \, \snorm{Bx} .
 \end{equation*}
-or in other words $\snorm{Bx} \not= 0$ for all nonzero $x$, and hence
+In other words, $\snorm{Bx} \not= 0$ for all nonzero $x$, and hence
 $Bx \not= 0$ for all nonzero $x$.  This is enough to see that
 $B$ is one-to-one (if $Bx = By$, then $B(x-y) = 0$, so $x=y$).
 As $B$ is one-to-one operator from $X$ to $X$, which is finite-dimensional,
 $B$ is invertible.
 
-Let us prove \ref{finitedimpropinv:ii}.  Fix some $A \in GL(X)$.  Let $B$ be near $A$,
+Let us prove \ref{finitedimpropinv:ii}.
+Item \ref{finitedimpropinv:i} immediately implies that $GL(X)$ is open.
+Let us show that the inverse is continuous.
+Fix some $A \in GL(X)$.  Let $B$ be near $A$,
 specifically $\snorm{A-B} < \frac{1}{2 \snorm{A^{-1}}}$.
 Then \eqref{eqcontineq} is satisfied and $B$ is invertible.
 We have shown above (using $B^{-1}y$ instead of $x$)
@@ -1424,8 +1431,8 @@ so the inverse operation is a continuous function at $A$.
 
 Once we fix a basis in a finite-dimensional
 vector space $X$, we can represent a vector of $X$ as an $n$-tuple of
-numbers, that is a vector in $\R^n$.  The same thing
-can be done with $L(X,Y)$, which brings us to matrices,
+numbers---a vector in $\R^n$.
+Same can be done with $L(X,Y)$, bringing us to matrices,
 which are a convenient way to represent
 finite-dimensional linear transformations.
 Suppose $\{ x_1, x_2, \ldots, x_n \}$ and $\{ y_1, y_2, \ldots, y_m \}$
@@ -1571,7 +1578,7 @@ $\operatorname{sgn}(x)$\glsadd{not:sgn} (read \myquote{sign of $x$}) for a numbe
 Suppose 
 $\sigma = (\sigma_1,\sigma_2,\ldots,\sigma_n)$ is a \emph{\myindex{permutation}}
 of the integers $(1,2,\ldots,n)$, that is, a reordering of $(1,2,\ldots,n)$. 
-Let
+Define
 \begin{equation} \label{eq:sgndef}
 \operatorname{sgn}(\sigma) = \operatorname{sgn}(\sigma_1,\ldots,\sigma_n) := 
 \prod_{p < q} \operatorname{sgn}(\sigma_q-\sigma_p) .
