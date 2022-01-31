@@ -1171,6 +1171,10 @@ Again, when necessary to emphasize which norm we are talking about, we may
 write it as $\snorm{A}_{L(X,Y)}$.\glsadd{not:normLXY}
 \end{defn}
 
+For example, if $X=\R^1$ with norm $\snorm{x}=\sabs{x}$, we think of elements of $L(X)$ as multiplication
+by scalars: $x \mapsto ax$.  If $\snorm{x}=\sabs{x}=1$, then $\sabs{a x} = \sabs{a}$, so
+the operator norm of $a$ is $\sabs{a}$.
+
 By linearity,
 $\norm{A \frac{x}{\snorm{x}}} = \frac{\snorm{Ax}}{\snorm{x}}$
 for all nonzero $x \in X$.
@@ -1182,14 +1186,13 @@ Therefore,
 =
 \sup_{\substack{x \in X\\x\neq 0}} \frac{\snorm{Ax}}{\snorm{x}} .
 \end{equation*}
-This implies, assuming $\snorm{A}$ is not infinity, that for every $x$,
+This implies, assuming $\snorm{A}$ is not infinity, that for every $x \in X$,
 \begin{equation*}
 \snorm{Ax} \leq \snorm{A}  \snorm{x} .
 \end{equation*}
-
+We will use this inequality a lot.
 It is not hard to see from the definition that $\snorm{A} = 0$ if and
 only if $A = 0$, where by $A=0$ we mean that $A$ takes every vector to the zero vector.
-
 It is also not difficult to compute the operator norm of the identity operator:
 \begin{equation*}
 \snorm{I} =
@@ -1208,8 +1211,9 @@ For an example,
 consider the vector space of continuously differentiable functions on
 $[0,2\pi]$ using the uniform norm.  The functions
 $t \mapsto \sin(n t)$ have norm 1, but their derivatives have norm $n$.  So
-differentiation, which is a linear operator, has infinite operator norm on this
-space.  We will stick to finite-dimensional spaces.
+differentiation, which is a linear operator valued in the space of
+continuous functions, has infinite operator norm on this space.
+We will stick to finite-dimensional spaces.
 
 When we talk about a finite-dimensional vector space $X$, we often think of
 $\R^n$, although if we have a norm on $X$, the norm might not be
@@ -1252,7 +1256,7 @@ Then
 \sum_{j=1}^n \snorm{Ae_j} .
 \end{equation*}
 The right-hand side does not depend on $x$.  We found
-a finite upper bound independent of $x$, so $\snorm{A} < \infty$.
+a finite upper bound for $\snorm{Ax}$ independent of $x$, so $\snorm{A} < \infty$.
 
 For any normed vector spaces $X$ and $Y$, and $A \in L(X,Y)$, suppose that
 $\snorm{A} < \infty$.
@@ -1351,7 +1355,7 @@ The operator $a$ is invertible ($a^{-1} = \nicefrac{1}{a}$)
 whenever $a \not=0$.  The condition $\sabs{a-b} < \frac{1}{\sabs{a^{-1}}}$ does
 indeed imply that $b$ is not zero.  And $a \mapsto \nicefrac{1}{a}$ is a continuous
 map.
-When $n > 1$, then there are other noninvertible operators than just zero,
+When the dimension is bigger than $1$, there are other noninvertible operators than just zero,
 and in general things are a bit more difficult.
 
 \begin{proof}
