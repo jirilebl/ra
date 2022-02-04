@@ -1386,7 +1386,8 @@ Using \eqref{eqcontineq}, we obtain
 In other words, $\snorm{Bx} \not= 0$ for all nonzero $x$, and hence
 $Bx \not= 0$ for all nonzero $x$.  This is enough to see that
 $B$ is one-to-one (if $Bx = By$, then $B(x-y) = 0$, so $x=y$).
-As $B$ is one-to-one operator from $X$ to $X$, which is finite-dimensional,
+As $B$ is one-to-one operator from $X$ to $X$, which is finite-dimensional
+and hence also onto by \propref{mv:prop:lin11onto},
 $B$ is invertible.
 
 Let us prove \ref{finitedimpropinv:ii}.
@@ -1395,7 +1396,7 @@ Let us show that the inverse is continuous.
 Fix some $A \in GL(X)$.  Let $B$ be near $A$,
 specifically $\snorm{A-B} < \frac{1}{2 \snorm{A^{-1}}}$.
 Then \eqref{eqcontineq} is satisfied and $B$ is invertible.
-We have shown above (using $B^{-1}y$ instead of $x$)
+A similar computation as above (using $B^{-1}y$ instead of $x$) gives
 \begin{equation*}
 \snorm{B^{-1}y} \leq 
 \snorm{A^{-1}} \, \snorm{A-B} \,  \snorm{B^{-1}y} + \snorm{A^{-1}} \, \snorm{y}
@@ -1460,7 +1461,7 @@ a_{m,1} & a_{m,2} & \cdots & a_{m,n}
 \end{equation*}
 We sometimes write $A$ as $[a_{i,j}]$.
 We say $A$ is an $m$-by-$n$ matrix.
-The \emph{\myindex{columns}} of the matrix are precisely the coefficients
+The $j$th \emph{\myindex{column}} of the matrix gives precisely the coefficients
 that represent $A x_j$ in terms of the basis $\{ y_1,y_2,\ldots,y_m \}$.
 If we know the numbers $a_{i,j}$, then via the formula
 \eqref{eq:matrixrepresent} we find the corresponding linear operator,
