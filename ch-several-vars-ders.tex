@@ -1484,14 +1484,7 @@ A z =
 \end{equation*}
 which gives rise to the familiar rule for matrix multiplication.
 
-There is a one-to-one correspondence between matrices and linear operators in
-$L(X,Y)$, once we fix a basis in $X$ and in $Y$.  If we 
-choose a different basis, we get different matrices.  This is
-an important distinction, the operator $A$ acts on elements of $X$, the matrix
-is something that works with $n$-tuples of numbers, that is, vectors of
-$\R^n$.
-
-If $B$ is an $n$-by-$r$ matrix with entries $b_{j,k}$, then 
+More generally, if $B$ is an $n$-by-$r$ matrix with entries $b_{j,k}$, then 
 the matrix for $C = AB$ is an $m$-by-$r$ matrix whose $(i,k)$th entry
 $c_{i,k}$ is
 \begin{equation*}
@@ -1501,6 +1494,14 @@ c_{i,k} =
 A way to remember it is if you order the indices as we do, that is
 \emph{row, column}, and put the elements in the same order as the matrices,
 then it is the \myquote{middle index} that is \myquote{summed-out.}
+
+There is a one-to-one correspondence between matrices and linear operators in
+$L(X,Y)$, once we fix a basis in $X$ and in $Y$.  If we 
+choose a different basis, we get different matrices.  This is
+an important distinction, the operator $A$ acts on elements of $X$, the matrix
+is something that works with $n$-tuples of numbers, that is, vectors of
+$\R^n$.  By convention, we use standard bases in $\R^n$ unless otherwise
+specified, and we identify $L(\R^n,\R^m)$ with the set of $m$-by-$n$ matrices.
 
 A linear mapping changing one basis to another is represented by a
 square matrix in which the columns represent vectors
