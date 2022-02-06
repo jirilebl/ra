@@ -1525,7 +1525,8 @@ Using the Cauchy--Schwarz inequality compute
 \sum_{i=1}^m { \left(\sum_{j=1}^n {(c_j)}^2 \right) \left(\sum_{j=1}^n
 {(a_{i,j})}^2 \right) }
 =
-\sum_{i=1}^m \left(\sum_{j=1}^n {(a_{i,j})}^2 \right)
+\left(
+\sum_{i=1}^m \sum_{j=1}^n {(a_{i,j})}^2 \right)
 \snorm{z}^2 .
 \end{equation*}
 In other words, we have a bound on the operator norm (note that equality
@@ -1534,34 +1535,41 @@ rarely happens)
 \snorm{A} \leq
 \sqrt{\sum_{i=1}^m \sum_{j=1}^n {(a_{i,j})}^2} .
 \end{equation*}
-If the entries go to zero, then $\snorm{A}$ goes to zero.  In
-particular, if $A$ is fixed and $B$ is changing such
-that the entries of $A-B$ go to zero, then $B$ goes to $A$
-in operator norm.  That is, $B$ goes to $A$
-in the metric space topology induced by the
-operator norm.  We proved the first part of:
-
-\begin{prop}
-If $f \colon S \to \R^{nm}$ is a continuous function
-for a metric space $S$,
-then considering the components of $f$ as the entries of a matrix,
-$f$ is a continuous mapping from $S$
-to $L(\R^n,\R^m)$.
+The right hand side is the euclidean norm on $\R^{nm}$, the space
+of all the entries of the matrix.
+If the entries go to zero, then $\snorm{A}$ goes to zero.
 Conversely,
-if $f \colon S \to L(\R^n,\R^m)$ is a continuous function,
-then the entries of the corresponding matrix are continuous functions.
-\end{prop}
+\begin{equation*}
+\sum_{i=1}^m \sum_{j=1}^n {(a_{i,j})}^2
+=
+\sum_{j=1}^n \snorm{A e_j}^2
+\leq
+\sum_{j=1}^n \snorm{A}^2
+= n \snorm{A}^2 .
+\end{equation*}
+So if the operator norm of $A$ goes to zero, so do the entries.
+In particular, if $A$ is fixed and $B$ is changing,
+then the entries of $B$ go to the entries of $A$ if and only if $B$ goes to $A$ in
+operator norm ($\snorm{A-B}$ goes to zero).  We have proved:
 
-Let us prove the second part.  Take $f(x) e_j$, which
-is a continuous function of $S$ to $\R^m$ with standard euclidean norm:
-$\snorm{f(x) e_j - f(y) e_j} = 
-\snorm{\bigl(f(x)- f(y) \bigr) e_j} \leq
-\snorm{f(x)- f(y)}$, so as $x \to y$, then
-$\snorm{f(x)- f(y)} \to 0$ and so 
-$\snorm{f(x) e_j - f(y) e_j} \to 0$.
-Such a
-function is continuous if and only if its components are continuous,
-and these are the entries of the $j$th column of the matrix $f(x)$.
+\begin{prop} \label{prop:matrixcont}
+The topology (the set of open sets) on $L(\R^n,\R^m)$ is the same
+whether we consider $L(\R^n,\R^m)$ as a metric space using the operator
+norm, or with the euclidean metric of $\R^{nm}$.
+
+In particular, let $S$ be a metric space and let
+$\pi \colon L(\R^n,\R^m) \to \R^{nm}$ identify
+an operator with the $nm$-tuple of entries of the corresponding matrix.
+Then
+$f \colon S \to L(\R^n,\R^m)$
+is continuous
+if and only if
+$\pi \circ f \colon S \to \R^{nm}$ is
+continuous.
+Similarly for
+$g \colon L(\R^n,\R^m) \to S$ and
+$g \circ \pi^{-1} \colon \R^{nm} \to S$.
+\end{prop}
 
 \subsection{Determinants}
 
@@ -1593,12 +1601,12 @@ summation.\glsadd{not:prod}
 
 Any permutation can be obtained by
 a sequence of transpositions (switchings of two elements).
-We say a permutation is
-a permutation \emph{even}\index{even permutation}
+A permutation is
+\emph{even}\index{even permutation}
 (resp.\ \emph{odd})\index{odd permutation}
 if it takes an even (resp.\ odd) number of
 transpositions to get from $(1,2,\ldots,n)$ to $\sigma$.
-For example, $(2,4,3,1)$ is two transpositions away from 
+For instance, $(2,4,3,1)$ is two transpositions away from 
 $(1,2,3,4)$ and is therefore even: $(1,2,3,4) \to (2,1,3,4) \to (2,4,3,1)$.
 Being even or odd is well-defined:
 $\operatorname{sgn}(\sigma)$ 
@@ -1609,7 +1617,8 @@ $\operatorname{sgn}(1,2,\ldots,n) = 1$.
 
 Let $S_n$  be the set of all permutations on $n$ elements (the
 \emph{\myindex{symmetric group}}).
-Let $A= [a_{i,j}]$ be a square $n$-by-$n$ matrix.  Define the \emph{\myindex{determinant}} of $A$
+Let $A= [a_{i,j}]$ be a square $n$-by-$n$ matrix.
+Define the \emph{\myindex{determinant}} of $A$ as
 \glsadd{not:det}
 \begin{equation*}
 \det(A) := 
@@ -1658,24 +1667,26 @@ b
 \end{multline*}
 
 \begin{proof}
-We go through the proof quickly, as you have likely seen this before.
-
+We go through the proof quickly, as you have likely seen it before.
+%
 Item \ref{prop:det:i} is trivial.  For \ref{prop:det:ii}, notice that each term in the definition of the
 determinant contains exactly one factor from each column.
-
+%
 Item \ref{prop:det:iii} follows by noting that switching two columns is like switching the
 two corresponding numbers in every element in $S_n$.  Hence, all the signs
 are changed.
 Item \ref{prop:det:iv} follows because if two columns are equal, and we
 switch them, we get
 the same matrix back.  So item \ref{prop:det:iii} says the determinant must be 0.
-
+%
 Item \ref{prop:det:v} follows because the product in each term in the definition includes
 one element from the zero column.
 Item \ref{prop:det:vi} follows as $\det$ is a polynomial in the entries of the matrix
-and hence continuous (in the entries of the matrix).  A function defined on
+and hence continuous (as a function of the entries of the matrix).
+Two matrices are 
+A function defined on
 matrices is continuous in the operator norm if and only if it is 
-continuous in the entries.
+continuous as a function of the entries (\propref{prop:matrixcont}).
 Finally, item \ref{prop:det:vii} is a direct computation.
 \end{proof}
 
