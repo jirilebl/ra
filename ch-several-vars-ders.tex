@@ -1854,7 +1854,8 @@ Consequently,
 \det \colon L(X) \to \R
 \avoidbreak
 \end{equation*}
-is a well-defined function (that is, $\det$ is defined on $L(X)$, not just on matrices).
+is a well-defined function without the need to fix a basis.
+That is, $\det$ is defined on $L(X)$, not just on matrices.
 
 \medskip
 
@@ -2098,7 +2099,7 @@ Show that the function $f \colon \R^n \to \R$
 f(c_1,c_2,\ldots,c_n) := 
 \snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n}
 \end{equation*}
-is continuous.
+is continuous (the norm is the one on $X$).
 \item
 Show that there exist numbers $m$ and $M$ such
 that if $c = (c_1,c_2,\ldots,c_n) \in \R^n$ with
@@ -2160,10 +2161,13 @@ of $A$ in terms of the diagonal entries, and prove that your formula works.
 
 \begin{exercise}
 Given an $n$-by-$n$ matrix $A$, prove that
-$\abs{\det(A)} \leq \snorm{A}^n$ (the norm on $A$ is the operator norm).
-Hint: Note that you only need to show this for invertible matrices.  Then
-possibly reorder columns and factor $A$ into $n$ matrices, each of
-which differs from the identity by one column.
+$\sabs{\det(A)} \leq \snorm{A}^n$ (the norm on $A$ is the operator norm).
+Hint: One way to do it is to first prove it in the case $\snorm{A}=1$, which
+means that all columns are of norm less than 1, then prove that this means
+that $\sabs{\det(A)} \leq 1$ using linearity.
+%Hint: Note that you only need to show this for invertible matrices.  Then
+%possibly reorder columns and factor $A$ into $n$ matrices, each of
+%which differs from the identity by one column.
 \end{exercise}
 
 \begin{exercise}
