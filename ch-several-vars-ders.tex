@@ -2428,16 +2428,16 @@ differentiable at $p \in U$.  Then $f$ is continuous at $p$.
 \end{prop}
 
 \begin{proof}
-Another way to write the differentiability of $f$ at $p$ is to first write
+Another way to write the differentiability of $f$ at $p$ is to consider
 \begin{equation*}
-r(h) := f(p+h)-f(p) - f'(p) h ,
+r(h) := f(p+h)-f(p) - f'(p) h .
 \end{equation*}
-and $\frac{\snorm{r(h)}}{\snorm{h}}$ must go to zero as $h \to 0$.
-So
-$r(h)$ itself must go to zero.  The mapping $h \mapsto f'(p) h$
-is a linear mapping between finite-dimensional spaces, it is
-therefore continuous
-and goes to zero as $h \to 0$.  Therefore,
+The function $f$ is differentiable at $p$ if
+$\frac{\snorm{r(h)}}{\snorm{h}}$ goes to zero as $h \to 0$,
+so
+$r(h)$ itself goes to zero.  The mapping $h \mapsto f'(p) h$
+is a linear mapping between finite-dimensional spaces, hence continuous
+and $f'(p) h \to 0$ as $h \to 0$.  Thus,
 $f(p+h)$ must go to $f(p)$ as $h \to 0$.  That is, $f$ is continuous at $p$.
 \end{proof}
 
@@ -2472,8 +2472,8 @@ and
 =
 \sabs{\alpha} \frac{\norm{f(p+h))-f(p) - f'(p)h}}{\snorm{h}} .
 \end{equation*}
-The limits as $h$ goes to zero of the right-hand sides as are zero by
-hypothesis.  The conclusion follows.
+The limits as $h$ goes to zero of the right-hand sides are zero by
+hypothesis.  The result follows.
 \end{proof}
 
 If $A \in L(X,Y)$ and $B \in L(Y,Z)$ are linear maps, then 
