@@ -2351,9 +2351,9 @@ Bh}}{\snorm{h}} .
 \end{split}
 \end{equation*}
 So 
-$\frac{\snorm{(A-B)h}}{\snorm{h}} \to 0$ as $h \to 0$.  That is, given
-$\epsilon > 0$, then for all nonzero $h$ in some $\delta$-ball around
-the origin
+$\frac{\snorm{(A-B)h}}{\snorm{h}} \to 0$ as $h \to 0$.  Given
+$\epsilon > 0$, for all nonzero $h$ in some $\delta$-ball around
+the origin we have
 \begin{equation*}
 \epsilon > 
 \frac{\snorm{(A-B)h}}{\snorm{h}}
@@ -2476,9 +2476,9 @@ The limits as $h$ goes to zero of the right-hand sides are zero by
 hypothesis.  The result follows.
 \end{proof}
 
-If $A \in L(X,Y)$ and $B \in L(Y,Z)$ are linear maps, then 
+If $A \in L(\R^n,\R^m)$ and $B \in L(\R^m,\R^k)$ are linear maps, then 
 they are their own derivative.  The composition
-$BA \in L(X,Z)$ is also its own derivative, and
+$BA \in L(\R^n,\R^k)$ is also its own derivative, and
 so the derivative of the composition is the composition
 of the derivatives.  As differentiable maps are
 \myquote{infinitesimally close}
@@ -2593,7 +2593,7 @@ $F'(p) = BA$, which is what was claimed.
 
 There is another way to generalize the derivative from one dimension.
 We hold all but one variable constant and take the regular
-derivative.
+one-variable derivative.
 
 \begin{defn}
 Let
@@ -2611,7 +2611,7 @@ $\frac{\partial f}{\partial x_j} (x)$ the \emph{\myindex{partial derivative}}
 of $f$
 with respect to $x_j$.  %Sometimes we write $D_j f$ instead.
 See \figureref{fig:svpartder}.
-Here $h$ is a number not a vector.
+Here $h$ is a number, not a vector.
 
 For a mapping $f \colon U \to \R^m$ we write
 $f = (f_1,f_2,\ldots,f_m)$, where $f_k$ are real-valued
