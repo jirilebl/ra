@@ -2344,7 +2344,7 @@ Suppose $h \in \R^n$, $h \not= 0$.  Compute
 \begin{equation*}
 \begin{split}
 \frac{\snorm{(A-B)h}}{\snorm{h}} & =
-\frac{\snorm{f(x+h)-f(x) - Ah - (f(x+h)-f(x) - Bh)}}{\snorm{h}} \\
+\frac{\snorm{-\bigl(f(x+h)-f(x) - Ah\bigr) + f(x+h)-f(x) - Bh}}{\snorm{h}} \\
 & \leq
 \frac{\snorm{f(x+h)-f(x) - Ah}}{\snorm{h}} + \frac{\snorm{f(x+h)-f(x) -
 Bh}}{\snorm{h}} .
@@ -2360,11 +2360,11 @@ the origin
 =
 \norm{(A-B)\frac{h}{\snorm{h}}} .
 \end{equation*}
-For any given $x$ with $\snorm{x}=1$,
-let $h = (\nicefrac{\delta}{2}) \, x$, then $\snorm{h} < \delta$
-and $\frac{h}{\snorm{h}} = x$.
-So $\snorm{(A-B)x} < \epsilon$.  Taking the supremum over all $x$ with
-$\snorm{x} = 1$, we get the operator norm
+For any given $v \in \R^n$ with $\snorm{v}=1$,
+let $h = (\nicefrac{\delta}{2}) \, v$, then $\snorm{h} < \delta$
+and $\frac{h}{\snorm{h}} = v$.
+So $\snorm{(A-B)v} < \epsilon$.  Taking the supremum over all $v$ with
+$\snorm{v} = 1$, we get the operator norm
 $\snorm{A-B} \leq \epsilon$.  As $\epsilon > 0$
 was arbitrary, $\snorm{A-B} = 0$, or in other words $A = B$.
 \end{proof}
@@ -2819,7 +2819,7 @@ Let $\gamma$ be defined by
 \gamma(t) := x + tu .
 \end{equation*}
 Then $\gamma^{\:\prime}(t) = u$ for all $t$.  
-By the computation above:
+Let us see what happens to $f$ when we travel along $\gamma$:
 \begin{equation*}
 D_u f (x) =
 \frac{d}{dt}\Big|_{t=0} \bigl[ f(x+tu) \bigr] =
@@ -2827,6 +2827,8 @@ D_u f (x) =
 =
 (\nabla f) (x) \cdot u .
 \end{equation*}
+In fact, this computation holds whenever $\gamma$ is any curve such that
+$\gamma(0) = x$ and $\gamma^{\:\prime}(0) = u$.
 
 Suppose $(\nabla f)(x) \neq 0$.
 By the Cauchy--Schwarz inequality,
@@ -2872,7 +2874,7 @@ Sometimes $J_f$ is written as
 This last piece of notation may seem somewhat confusing,
 but it is quite useful when we need to specify
 the exact variables and function components used,
-as will for example do in the implicit function theorem.
+as we will do, for example, in the implicit function theorem.
 
 The Jacobian $J_f$ is a real-valued function, and when $n=1$ it is simply the
 derivative.
