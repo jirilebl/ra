@@ -2507,7 +2507,7 @@ just as for linear maps.
 
 \begin{proof}
 Let $A := f'(p)$ and $B := g'\bigl(f(p)\bigr)$.  Take a nonzero $h \in \R^n$
-and write $q = f(p)$, $k = f(p+h)-f(p)$.  Let
+and write $q := f(p)$, $k := f(p+h)-f(p)$.  Let
 \begin{equation*}
 r(h) := f(p+h)-f(p) - A h . %= k - Ah.
 \end{equation*}
@@ -2738,13 +2738,12 @@ the \emph{\myindex{gradient}} as
 The gradient gives a way to represent the action of
 the derivative as a dot product: $f'(x)\,v = \nabla f(x) \cdot v$.
 
-Suppose $\gamma \colon (a,b) \subset \R \to \R^n$ is a differentiable
-function.
+Suppose $\gamma \colon (a,b) \subset \R \to \R^n$ is differentiable.
 Such a function and its image is sometimes called a \emph{\myindex{curve}},
 or a \emph{\myindex{differentiable curve}}.
 Write $\gamma =
 (\gamma_1,\gamma_2,\ldots,\gamma_n)$.
-For the purposes of computation
+For the purposes of computation,
 we identify $L(\R^1)$ and $\R$ as we did when we defined the
 derivative in one variable.
 We also identify $L(\R^1,\R^n)$ with $\R^n$.
@@ -2760,11 +2759,13 @@ $\gamma^{\:\prime}(t)$ acting as an operator
 in $L(\R^1,\R^n)$.
 We often use this 
 slight abuse of notation when dealing with curves.
+The vector $\gamma^{\:\prime}(t)$ is called a \emph{\myindex{tangent vector}}.
 See \figureref{fig:difcurveder}.
 \begin{myfigureht}
 \subimport*{figures/}{diffcurveder.pdf_t}
 \caption{Differentiable curve and its derivative as a
-vector.\label{fig:difcurveder}}
+vector (for clarity assuming $\gamma$ defined on $[a,b]$).
+The tangent vector $\gamma^{\:\prime}(t)$ points along the curve.\label{fig:difcurveder}}
 \end{myfigureht}
 
 Suppose $\gamma\bigl((a,b)\bigr) \subset U$ and let
