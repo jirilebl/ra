@@ -2020,7 +2020,7 @@ $\left[
 
 
 \begin{exercise} \label{exercise:normonedim}
-Using the standard euclidean norm $\R^n$. Show
+Using the standard euclidean norm $\R^n$, show:
 \begin{enumerate}[a)]
 \item
 Suppose $A \in L(\R,\R^n)$ is defined for $x \in \R$ by $Ax = xa$
@@ -2089,15 +2089,15 @@ Show that $D$ does not have bounded operator norm, that is $\snorm{D} =
 
 \pagebreak[1]
 \begin{exercise}
-In this exercise, we finish the proof of \propref{prop:finitedimpropnormfin}.
+We finish the proof of \propref{prop:finitedimpropnormfin}.
 Let $X$ be a finite-dimensional normed vector space with basis
 $\{ x_1,x_2,\ldots,x_n \}$.
 \begin{enumerate}[a)]
 \item
-Show that the function $f \colon \R^n \to \R$
+Show that $f \colon \R^n \to \R$,
 \begin{equation*}
 f(c_1,c_2,\ldots,c_n) := 
-\snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n}
+\snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n} ,
 \end{equation*}
 is continuous (the norm is the one on $X$).
 \item
@@ -2123,8 +2123,8 @@ Let $c = (c_1,c_2,\ldots,c_n) \in \R^n$ and $\snorm{c}$ be the
 standard euclidean norm on $\R^n$.
 \begin{enumerate}[a)]
 \item
-Find that there exist positive numbers $m,M > 0$ such that
-for all $c \in \R^n$
+Prove that there exist positive numbers $m,M > 0$ such that
+for all $c \in \R^n$,
 \begin{equation*}
 m \snorm{c}
 \leq
@@ -2171,15 +2171,23 @@ that $\sabs{\det(A)} \leq 1$ using linearity.
 \end{exercise}
 
 \begin{exercise}
-Consider \propref{prop:finitedimpropinv} (for all $n$).
+Consider \propref{prop:finitedimpropinv}
+where $X=\R^n$ (for all $n$) using the euclidean norm.
 \begin{enumerate}[a)]
 \item
 Prove that the estimate $\snorm{A-B} < \frac{1}{\snorm{A^{-1}}}$ is the
-best possible in the following sense: For every invertible
+best possible:
+For every 
 $A \in GL(\R^n)$,
 find a $B$ where equality is satisfied and $B$ is not invertible.
+Hint:
+Difficulty is that $\snorm{A}\snorm{A^{-1}}$ is not always $1$.
+Prove that a vector $x_1$ can be completed to a basis $\{ x_1,\ldots,x_n
+\}$ such that $x_1 \cdot x_j = 0$ for $j \geq 2$.
+For the right $x_1$,
+make it so that $(A-B)x_j = 0$ for $j \geq 2$.
 \item
-For every fixed invertible $A \in GL(\R^n)$,
+For every fixed $A \in GL(\R^n)$,
 let $\sM$ denote the set of matrices
 $B$ such that
 $\snorm{A-B} < \frac{1}{\snorm{A^{-1}}}$.
