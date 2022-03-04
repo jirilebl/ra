@@ -55,8 +55,7 @@ A \emph{\myindex{partition}} $P$ of the closed rectangle
 $R = [a_1,b_1] \times
 [a_2,b_2] \times \cdots \times
 [a_n,b_n]$
-is
-a finite set of 
+is given by
 partitions $P_1,P_2,\ldots,P_n$ of the intervals
 $[a_1,b_1], [a_2,b_2],\ldots, [a_n,b_n]$.
 We write $P=(P_1,P_2,\ldots,P_n)$.
@@ -84,13 +83,7 @@ we say $\{R_1,R_2,\ldots,R_N\}$ are the subrectangles corresponding
 to the partition $P$ of $R$, or more simply, subrectangles of
 $P$.
 In other words, we subdivided the original rectangle into many smaller
-subrectangles.  See \figureref{mv:figrect}.  It is not difficult to see that
-these subrectangles cover our original $R$, and their
-volumes sum to that of $R$.  That is,
-\begin{equation*}
-R= \bigcup_{k=1}^N R_k , \qquad \text{and} \qquad
-V(R) = \sum_{k=1}^N V(R_k).
-\end{equation*}
+subrectangles.  See \figureref{mv:figrect}.
 
 \begin{myfigureht}
 \subimport*{figures/}{figrect.pdf_t}
@@ -98,7 +91,26 @@ V(R) = \sum_{k=1}^N V(R_k).
 subrectangles is not important.\label{mv:figrect}}
 \end{myfigureht}
 
-When
+Let $R \subset \R^n$ be a closed rectangle and
+let $f \colon R \to \R$ be a bounded function.  Let $P$ be a partition of
+$R$ with $N$ subrectangles $R_1,R_2,\ldots,R_N$.
+Define
+\glsadd{not:lowerdarbouxsum}
+\glsadd{not:upperdarbouxsum}
+\begin{align*}
+& m_i := \inf \bigl\{ f(x) : x \in R_i \bigr\} , & 
+& M_i := \sup \bigl\{ f(x) : x \in R_i \bigr\} , \\
+& L(P,f) :=
+\sum_{i=1}^N m_i V(R_i) , &
+& U(P,f) :=
+\sum_{i=1}^N M_i V(R_i) .
+\end{align*}
+We call $L(P,f)$ the \emph{\myindex{lower Darboux sum}} and
+$U(P,f)$ the \emph{\myindex{upper Darboux sum}}\index{Darboux sum}.
+\end{defn}
+
+To see the relationship to the $\Delta$ notation from the one-variable
+definition, note that when
 \begin{equation*}
 R_i = [x_{1,j_1-1}~,~ x_{1,j_1}]
 \times
@@ -110,35 +122,25 @@ R_i = [x_{1,j_1-1}~,~ x_{1,j_1}]
 \end{equation*}
 then
 \begin{equation*}
-V(R_i) = 
-\Delta x_{1,j_1}
-\Delta x_{2,j_2}
-\cdots
-\Delta x_{n,j_n}
+V(R_i)
 =
 (x_{1,j_1}-x_{1,j_1-1})
 (x_{2,j_2}-x_{2,j_2-1})
 \cdots
-(x_{n,j_n}-x_{n,j_n-1}) .
+(x_{n,j_n}-x_{n,j_n-1})
+= 
+\Delta x_{1,j_1}
+\Delta x_{2,j_2}
+\cdots
+\Delta x_{n,j_n} .
 \end{equation*}
-
-Let $R \subset \R^n$ be a closed rectangle and
-let $f \colon R \to \R$ be a bounded function.  Let $P$ be a partition of
-$R$ with $N$ subrectangles $R_1,R_2,\ldots,R_N$.
-Define
-\glsadd{not:lowerdarbouxsum}
-\glsadd{not:upperdarbouxsum}
-\begin{align*}
-& m_i := \inf \bigl\{ f(x) : x \in R_i \bigr\} , \\
-& M_i := \sup \bigl\{ f(x) : x \in R_i \bigr\} , \\
-& L(P,f) :=
-\sum_{i=1}^N m_i V(R_i) , \\
-& U(P,f) :=
-\sum_{i=1}^N M_i V(R_i) .
-\end{align*}
-We call $L(P,f)$ the \emph{\myindex{lower Darboux sum}} and
-$U(P,f)$ the \emph{\myindex{upper Darboux sum}}\index{Darboux sum}.
-\end{defn}
+It is not difficult to see that
+the subrectangles of $P$ cover our original $R$, and their
+volumes sum to that of $R$.  That is,
+\begin{equation*}
+R= \bigcup_{k=1}^N R_k , \qquad \text{and} \qquad
+V(R) = \sum_{k=1}^N V(R_k).
+\end{equation*}
 
 The indexing in the definition may be complicated, but fortunately we
 do not need to go back directly to the definition often.
@@ -333,7 +335,7 @@ In other words, $\underline{\int_R} f \leq \overline{\int_R} f$.
 
 We have all we need to
 define the Riemann integral in $n$-dimensions over rectangles.
-Again, the Riemann
+As in one dimension, the Riemann
 integral is only defined on a certain class of functions, called the
 Riemann integrable functions.
 
