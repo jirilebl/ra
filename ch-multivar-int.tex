@@ -1027,7 +1027,7 @@ by using the upper and lower integrals, which are always defined.
 \medskip
 
 Split the coordinates of $\R^{n+m}$ into two parts:
-write the coordinates on $\R^{n+m} = \R^n \times \R^m$ as
+Write the coordinates on $\R^{n+m} = \R^n \times \R^m$ as
 $(x,y)$ where $x \in \R^n$ and $y \in \R^m$.  For a function $f(x,y)$,
 write
 \begin{equation*}
@@ -1113,14 +1113,14 @@ If we let
 \begin{equation*}
 m_k(x) := \inf_{y \in R'_k} f(x,y) = \inf_{y \in R'_k} f_x(y) ,
 \end{equation*}
-then of course if $x \in R_j$, then $m_{j,k} \leq m_k(x)$.  Therefore,
+then for $x \in R_j$, we have $m_{j,k} \leq m_k(x)$.  Therefore,
 \begin{equation*}
 \sum_{k=1}^K
 m_{j,k} \, V(R'_k)
 \leq \sum_{k=1}^K m_k(x) \, V(R'_k) = L(P',f_x) \leq
 \underline{\int_S} f_x = g(x) .
 \end{equation*}
-As we have the inequality for all $x \in R_j$, we have
+As the inequality holds for all $x \in R_j$, we have
 \begin{equation*}
 \sum_{k=1}^K
 m_{j,k} \, V(R'_k)
@@ -1135,11 +1135,10 @@ L\bigl((P,P'),f\bigr)
 \inf_{x \in R_j} g(x)
 \right) V(R_j) = L(P,g) .
 \end{equation*}
-
-Similarly $U\bigl((P,P'),f) \geq U(P,h)$, and the proof of this inequality is
+Similarly, $U\bigl((P,P'),f) \geq U(P,h)$, and the proof of this inequality is
 left as an exercise.
 
-Putting this together, we have
+Putting this together with the fact that $g(x) \leq h(x)$ for all $x$, we have
 \begin{equation*}
 L\bigl((P,P'),f\bigr)
 \leq
