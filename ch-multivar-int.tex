@@ -1397,7 +1397,8 @@ m^*(S)
 \end{equation*}
 where the infimum is taken over all sequences
 $\{ R_j \}$ of open rectangles such that
-$S \subset \bigcup_{j=1}^\infty R_j$.
+$S \subset \bigcup_{j=1}^\infty R_j$,
+and we are allowing both the sum and the infimum to be $\infty$.
 See \figureref{fig:outermeasure}.
 In particular, $S$ is of \emph{\myindex{measure zero}} or
 a \emph{\myindex{null set}} if $m^*(S) = 0$.
@@ -1448,13 +1449,13 @@ S \subset \bigcup_{j=1}^\infty B_j \qquad \text{and} \qquad
 Note that the \myquote{volume} of $B_j$ is proportional to $r_j^n$.
 
 \begin{proof}
-If $C$ is a (closed or open) cube (rectangle with all sides
-equal) of side $s$, then $C$ is contained in a closed ball of radius
+If $C$ is a closed cube (rectangle with all sides equal) of side $s$,
+then $C$ is contained in a closed ball of radius
 $\sqrt{n}\, s$ by \propref{prop:diameterrectangle}, and therefore
-in an open ball of size $2 \sqrt{n}\, s$.
+in an open ball of radius $2 \sqrt{n}\, s$.
 
-Suppose $R$ is a (closed or open) rectangle.
-Let $s$ be a number that is less than the smallest side of $R$ and also
+Suppose $R$ is a rectangle of positive volume.
+Let $s > 0$ be a number that is less than the smallest side of $R$ and also
 so that $2\sqrt{n} \, s < \delta$.
 We claim $R$ is contained in
 a union of closed cubes $C_1, C_2, \ldots, C_k$ of sides $s$ such that
@@ -1495,7 +1496,7 @@ B_k$, we are finished.
 For the other direction, suppose $S$ is covered by balls $B_j$
 of radii $r_j$, such that $\sum r_j^n < \epsilon$,
 as in the statement of the proposition.
-Each $B_j$ is contained in a cube $R_j$ of side $2r_j$.
+Each $B_j$ is contained in an open cube $R_j$ of side $2r_j$.
 So $V(R_j) = {(2 r_j)}^n = 2^n r_j^n$.  Therefore,
 \begin{equation*}
 S \subset \bigcup_{j=1}^\infty R_j \qquad \text{and} \qquad
@@ -1553,7 +1554,7 @@ Then
 S \subset \bigcup_{j=1}^\infty \bigcup_{k=1}^\infty R_{j,k} .
 \end{equation*}
 As $V(R_{j,k})$ is always positive, the sum over all $j$ and $k$
-can be done in any order.  In particular, it can be done as
+can be done in any manner.  In particular, it can be done as
 \begin{equation*}
 \sum_{j=1}^\infty \sum_{k=1}^\infty V(R_{j,k}) <
 \sum_{j=1}^\infty 2^{-j} \epsilon = \epsilon . \qedhere
@@ -1578,7 +1579,7 @@ Given any $\epsilon > 0$ define the open rectangle
 R := \bigl\{ x \in \R^n : c-\epsilon < x_k < c+\epsilon, \sabs{x_j} < s+1
 \text{ for all } j\not=k \bigr\} .
 \end{equation*}
-It is clear that $P_s \subset R$.  Furthermore
+It is clear that $P_s \subset R$.  Furthermore,
 \begin{equation*}
 V(R) = 2\epsilon {\bigl(2(s+1)\bigr)}^{n-1} .
 \end{equation*}
@@ -1617,7 +1618,7 @@ If $(a_i,b_i) \subset (a_j,b_j)$, then we can throw out
 $(a_i,b_i)$ as well, in other words the intervals that are left
 have distinct left endpoints, and whenever
 $a_j < a_i < b_j$, then $b_j < b_i$.
-Therefore 
+Therefore,
 $[a,b] \subset \bigcup_{j=1}^k (a_j,b_j)$ for some $k$, and
 we assume that the intervals are sorted such that $a_1 < a_2 < \cdots <
 a_k$.  Since $(a_2,b_2)$ is not contained in $(a_1,b_1)$,
@@ -1625,7 +1626,8 @@ since $a_j > a_2$ for all $j > 2$, and since the intervals
 must contain every point in $[a,b]$, we find that $a_2 < b_1$, or in
 other words
 $a_1 < a_2 < b_1 < b_2$.  Similarly
-$a_j < a_{j+1} < b_j < b_{j+1}$.  Furthermore, $a_1 < a$ and $b_k > b$.
+$a_j < a_{j+1} < b_j < b_{j+1}$ for all $j$.
+Furthermore, $a_1 < a$ and $b_k > b$.
 Thus,
 \begin{equation*}
 m^*\bigl([a,b]\bigr) \geq
@@ -1863,7 +1865,7 @@ longer be measure zero.
 Now prove it for every null set $E$.\\
 Hint: First show that $\{ x \in U : d(x,y) \geq
 \nicefrac{1}{m} \text{ for all } y \notin U \text{ and } d(0,x) \leq m \}$
-is a compact set for every $m > 0$.
+is compact for every $m > 0$.
 \end{enumerate}
 \end{exercise}
 
