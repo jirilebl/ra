@@ -1747,17 +1747,17 @@ Then $f(B) \subset B'$, where $B'$ is an open (resp.\ closed) ball of radius at 
 \end{lemma}
 
 \begin{proof}
-First suppose $B$ is closed.
+Suppose that $B$ is open.
 The ball $B$ is convex, and so via
-\propref{mv:prop:convexlip},
-$\snorm{f(x)-f(y)} \leq M \snorm{x-y}$
-for all $x,y$ in $B$.  In particular, suppose $B = C(y,r)$,
-then $f(B) \subset C\bigl(f(y),M r \bigr)$.
-If $B$ is open, let $C := C(y,r-\epsilon)$ for $\epsilon > 0$
-be a closed ball.
-Then $f(C) \subset C\bigl(f(y),M(r-\epsilon)\bigr) \subset B\bigl(f(y),Mr\bigr)$.
-As every $x \in B$ is in $C$ for some $\epsilon > 0$,
-$f(B) \subset  B\bigl(f(y),Mr\bigr)$.
+\propref{mv:prop:convexlip}, $\snorm{f(x)-f(y)} \leq M \snorm{x-y}$.
+So if $\snorm{x-y} < r$, then $\snorm{f(x)-f(y)} < Mr$, or
+in other words, if
+$B=B(y,r)$, then $f(B) \subset B\bigl(f(y),M r \bigr)$.
+If $B$ is closed, then $\overline{B(y,r)} = B$.
+As $f$ is continuous,
+$f(B) = f\bigl(\overline{B(y,r)}\bigr) \subset \overline{B\bigl(f(y),M r
+\bigr)}$, as $f(\widebar{A}) \subset \overline{f(A)}$ for any set $A$.
+% and any continuous $f$ (limit of a sequence in $A$ goes to a limit of a sequence in $f(A)$).
 \end{proof}
 
 The image of a measure zero set using a continuous map is not necessarily
