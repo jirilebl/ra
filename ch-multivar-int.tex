@@ -1776,7 +1776,7 @@ We prove the proposition for a compact $E$ and leave the general case as
 an exercise.
 
 Suppose $E$ is compact and of measure zero.
-First, we replace $U$ by a smaller open set to make $\snorm{f'(x)}$ bounded.
+First, we will replace $U$ by a smaller open set to make $\snorm{f'(x)}$ bounded.
 At each point $x \in
 E$ pick an open ball $B(x,r_x)$ such that the closed ball $C(x,r_x) \subset
 U$.  By compactness we only need to take finitely
@@ -1785,15 +1785,17 @@ many points $x_1,x_2,\ldots,x_q$ to cover $E$ we the balls $B(x_j,r_{x_j})$.  De
 U' := \bigcup_{j=1}^q B(x_j,r_{x_j}), \qquad
 K := \bigcup_{j=1}^q C(x_j,r_{x_j}).
 \end{equation*}
-We have $E \subset U' \subset K \subset U$.  The set $K$ is compact.
+We have $E \subset U' \subset K \subset U$.  The set $K$, being a finite
+union of compact sets, is compact.
 The function that takes $x$ to $\snorm{f'(x)}$ is continuous, and therefore
 there exists an $M > 0$ such that $\snorm{f'(x)} \leq M$ for all $x \in K$.
 So without loss of generality we may replace $U$ by $U'$ and from now on
 suppose that $\snorm{f'(x)} \leq M$ for all $x \in U$.
 
-At each $x \in E$ take the maximum radius $\delta_x$
+At each $x \in E$, take the maximum radius $\delta_x$
 such that $B(x,\delta_x) \subset U$ (we may assume $U \not= \R^n$).
 Let $\delta := \inf_{x\in E} \delta_x$.
+We want to show that $\delta > 0$.
 Take a sequence $\{ x_j \} \subset E$ so that $\delta_{x_j} \to \delta$.
 As $E$ is compact, we can pick the sequence to be convergent to some $y \in
 E$.  Once $\snorm{x_j-y} < \frac{\delta_y}{2}$, then
@@ -1833,7 +1835,7 @@ If $A \subset B$, then $m^*(A) \leq m^*(B)$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $X \subset \R^n$ is a set such that for every $\epsilon > 0$
+Suppose $X \subset \R^n$ is a set such that for every $\epsilon > 0$,
 there exists a set $Y$ such that $X \subset Y$ and $m^*(Y) \leq \epsilon$.
 Prove that $X$ is a measure zero set.
 \end{exercise}
@@ -1863,8 +1865,8 @@ Be careful as the closure of $E$ need no
 longer be measure zero.
 \item
 Now prove it for every null set $E$.\\
-Hint: First show that $\{ x \in U : d(x,y) \geq
-\nicefrac{1}{m} \text{ for all } y \notin U \text{ and } d(0,x) \leq m \}$
+Hint: First show that $\{ x \in U : \snorm{x-y} \geq
+\nicefrac{1}{m} \text{ for all } y \notin U \text{ and } \snorm{x} \leq m \}$
 is compact for every $m > 0$.
 \end{enumerate}
 \end{exercise}
