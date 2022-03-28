@@ -1803,13 +1803,14 @@ $\delta_{x_j} > \frac{\delta_y}{2}$ by the triangle inequality.
 Thus, $\delta > 0$.
 
 Given $\epsilon > 0$, there exist balls $B_1,B_2,\ldots,B_k$ of radii
-$r_1,r_2,\ldots,r_k < \delta$ such that
+$r_1,r_2,\ldots,r_k < \frac{\delta}{2}$ such that
 \begin{equation*}
 E \subset B_1 \cup B_2 \cup \cdots \cup B_k
 \qquad \text{and} \qquad
 \sum_{j=1}^k r_j^n < \epsilon.
 \end{equation*}
-The balls are contained in $U$.
+We can assume that each ball contains a point of $E$ and so
+the balls are contained in $U$.
 Suppose $B_1', B_2', \ldots, B_k'$ are the balls of radius
 $Mr_1, Mr_2, \ldots, Mr_k$ from
 \lemmaref{lemma:ballmapder}, such that $f(B_j) \subset B_j'$ for all $j$.
@@ -1818,8 +1819,8 @@ Then,
 f(E) \subset f(B_1) \cup f(B_2) \cup \cdots \cup f(B_k)
 \subset B_1' \cup B_2' \cup \cdots \cup B_k'
 \qquad \text{and} \qquad
-\sum_{j=1}^k Mr_j^n
- < M \epsilon. \qedhere
+\sum_{j=1}^k {(Mr_j)}^n
+ < M^n \epsilon. \qedhere
 \end{equation*}
 \end{proof}
 
@@ -2005,6 +2006,8 @@ o(f,x,\delta) :=
 \end{equation*}
 That is, $o(f,x,\delta)$ is the length of the smallest interval
 that contains the image $f\bigl(B_S(x,\delta)\bigr)$.
+For unbounded functions, the oscillation could be $\infty$, although
+we only need to worry about bounded functions.
 Clearly $o(f,x,\delta) \geq 0$ and
 $o(f,x,\delta) \leq o(f,x,\delta')$ whenever $\delta < \delta'$.
 Therefore, the limit as $\delta \to 0$ from the right exists, and
@@ -2062,7 +2065,8 @@ The set $\bigl\{ x \in S : o(f,x) \geq \epsilon \bigr\}$ is closed.
 
 \begin{proof}
 Equivalently, we want to show that
-$G = \bigl\{ x \in S : o(f,x) < \epsilon \bigr\}$ is open in the subspace topology.
+$G := \bigl\{ x \in S : o(f,x) < \epsilon \bigr\}$ is open in the subspace topology.
+Consider $x \in G$.
 As $\inf_{\delta > 0} o(f,x,\delta) < \epsilon$, find a $\delta > 0$ such
 that
 \begin{equation*}
@@ -2092,8 +2096,8 @@ zero, the function is integrable, and vice versa.
 
 \begin{thm}[Riemann--Lebesgue]\index{Riemann--Lebesgue theorem}
 Let $R \subset \R^n$ be a closed rectangle and $f \colon R \to \R$
-a bounded function.  Then $f$ is Riemann integrable if and only if
-the set of discontinuities of $f$ is of measure zero (a null set).
+bounded.  Then $f$ is Riemann integrable if and only if
+the set of discontinuities of $f$ is of measure zero.
 \end{thm}
 
 \begin{proof}
@@ -2107,7 +2111,7 @@ compactness.  If $S$ were closed, then it would be compact and we could cover
 it by finitely many small rectangles as it is of measure zero.  Unfortunately, $S$
 is not closed in general, so we need to work a little harder.
 
-For every $\epsilon > 0$, define
+Given $\epsilon > 0$, define
 \begin{equation*}
 S_\epsilon := \bigl\{ x \in R : o(f,x) \geq \epsilon \bigr\} .
 \end{equation*}
@@ -2120,9 +2124,9 @@ Via \propref{mv:prop:compactnull} finitely many open rectangles
 $O_1,O_2,\ldots,O_k$ cover $S_\epsilon$ and
 $\sum V(O_j) < \epsilon$.  
 
-The set $T = R \setminus ( O_1 \cup \cdots \cup O_k )$ is closed, bounded,
-and therefore compact.  Furthermore, $o(f,x) < \epsilon$ for all $x \in T$.
-Hence for each $x \in T$, there exists a small closed rectangle
+The set $T := R \setminus ( O_1 \cup \cdots \cup O_k )$ is closed, bounded,
+and so compact.  As $o(f,x) < \epsilon$ for all $x \in T$,
+for each $x \in T$, there exists a small closed rectangle
 $T_x$ with $x$ in the interior of $T_x$, such that
 \begin{equation*}
 \sup_{y\in T_x} f(y) - \inf_{y\in T_x} f(y) < 2\epsilon.
@@ -2130,7 +2134,7 @@ $T_x$ with $x$ in the interior of $T_x$, such that
 The interiors of the rectangles $T_x$ cover $T$.  As $T$ is compact,
 finitely many such rectangles $T_1, T_2, \ldots, T_m$
 cover $T$.
-
+%
 Take the rectangles $T_1,T_2,\ldots,T_m$ and $O_1,O_2,\ldots,O_k$
 and construct a partition out of their endpoints.  That is, construct
 a partition $P$ of $R$ with subrectangles $R_1,R_2,\ldots,R_p$
@@ -2139,7 +2143,7 @@ or the closure of $O_\ell$ for some $\ell$.  Order
 the rectangles so that $R_1,R_2,\ldots,R_q$ are those
 that are contained in some $T_\ell$, and $R_{q+1},R_{q+2},\ldots,R_{p}$
 are the rest.
-In particular,
+So
 \begin{equation*}
 \sum_{j=1}^q V(R_j) \leq V(R)
 \qquad \text{and} \qquad
@@ -2181,12 +2185,14 @@ U(P,f)-L(P,f)
 +
 2B \epsilon = \epsilon \bigl(2\, V(R)+2B\bigr) .
 \end{split}
+\avoidbreak
 \end{equation*}
 We can make the right-hand side as small as we want,
 and hence $f$ is integrable.
 
 \medskip
 
+\pagebreak[2]
 For the other direction, suppose $f$ is Riemann integrable
 on $R$.
 Let $S$ be the set of discontinuities again.  Consider
