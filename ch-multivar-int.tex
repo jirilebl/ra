@@ -1988,24 +1988,24 @@ $\mu^*(S) = m^*(S)$.
 \subsection{Oscillation and continuity}
 
 Consider
-$S \subset \R^n$ and $f \colon S \to \R$.
+$D \subset \R^n$ and $f \colon D \to \R$.
 Instead of just saying that $f$ is or is not continuous at
-a point $x \in S$,
+a point $x \in D$,
 we want to quantify how discontinuous $f$ is 
 at $x$.  For every $\delta > 0$, define the \emph{oscillation} of 
 $f$ on the $\delta$-ball in subspace topology,
-$B_S(x,\delta) = B_{\R^n}(x,\delta) \cap S$, as
+$B_D(x,\delta) = B_{\R^n}(x,\delta) \cap D$, as
 \glsadd{not:oscillation}
 \begin{equation*}
 o(f,x,\delta) :=
-{\sup_{y \in B_S(x,\delta)} f(y)}
+{\sup_{y \in B_D(x,\delta)} f(y)}
 -
-{\inf_{y \in B_S(x,\delta)} f(y)}
+{\inf_{y \in B_D(x,\delta)} f(y)}
 = 
-\sup_{y_1,y_2 \in B_S(x,\delta)} \bigl(f(y_1)-f(y_2)\bigr) .
+\sup_{y_1,y_2 \in B_D(x,\delta)} \bigl(f(y_1)-f(y_2)\bigr) .
 \end{equation*}
 That is, $o(f,x,\delta)$ is the length of the smallest interval
-that contains the image $f\bigl(B_S(x,\delta)\bigr)$.
+that contains the image $f\bigl(B_D(x,\delta)\bigr)$.
 For unbounded functions, the oscillation could be $\infty$, although
 we only need to worry about bounded functions.
 Clearly $o(f,x,\delta) \geq 0$ and
@@ -2023,14 +2023,14 @@ o(f,x,\delta) .
 
 \begin{prop}
 A function
-$f \colon S \to \R$ is continuous at $x \in S$ if and only if $o(f,x) = 0$.
+$f \colon D \to \R$ is continuous at $x \in D$ if and only if $o(f,x) = 0$.
 \end{prop}
 
 \begin{proof}
-First suppose that $f$ is continuous at $x \in S$.  Given any $\epsilon > 0$,
-there exists a $\delta > 0$ such that for $y \in B_S(x,\delta)$,
+First suppose that $f$ is continuous at $x \in D$.  Given any $\epsilon > 0$,
+there exists a $\delta > 0$ such that for $y \in B_D(x,\delta)$,
 we have $\sabs{f(x)-f(y)} < \epsilon$.  Therefore, if $y_1,y_2 \in
-B_S(x,\delta)$, then
+B_D(x,\delta)$, then
 \begin{equation*}
 f(y_1)-f(y_2) =
 \bigl(f(y_1)-f(x)\bigr)-\bigl(f(y_2)-f(x)\bigr) < \epsilon + \epsilon = 2 \epsilon .
@@ -2038,7 +2038,7 @@ f(y_1)-f(y_2) =
 We take the supremum over $y_1$ and $y_2$
 \begin{equation*}
 o(f,x,\delta) = 
-\sup_{y_1,y_2 \in B_S(x,\delta)} \bigl(f(y_1)-f(y_2)\bigr)
+\sup_{y_1,y_2 \in B_D(x,\delta)} \bigl(f(y_1)-f(y_2)\bigr)
 \leq
 2 \epsilon .
 \end{equation*}
@@ -2047,43 +2047,43 @@ $o(x,f) = 0$.
 
 On the other hand suppose $o(x,f) = 0$.  Given any $\epsilon > 0$,
 find a $\delta > 0$ such that $o(f,x,\delta) < \epsilon$.  If
-$y \in B_S(x,\delta)$, then
+$y \in B_D(x,\delta)$, then
 \begin{equation*}
 \sabs{f(x)-f(y)}
 \leq
-\sup_{y_1,y_2 \in B_S(x,\delta)} \bigl(f(y_1)-f(y_2)\bigr)
+\sup_{y_1,y_2 \in B_D(x,\delta)} \bigl(f(y_1)-f(y_2)\bigr)
 =
 o(f,x,\delta) < \epsilon. \qedhere
 \end{equation*}
 \end{proof}
 
 \begin{prop} \label{prop:seclosed}
-Let $S \subset \R^n$ be closed,
-$f \colon S \to \R$, and $\epsilon > 0$.
-The set $\bigl\{ x \in S : o(f,x) \geq \epsilon \bigr\}$ is closed.
+Let $D \subset \R^n$ be closed,
+$f \colon D \to \R$, and $\epsilon > 0$.
+The set $\bigl\{ x \in D : o(f,x) \geq \epsilon \bigr\}$ is closed.
 \end{prop}
 
 \begin{proof}
 Equivalently, we want to show that
-$G := \bigl\{ x \in S : o(f,x) < \epsilon \bigr\}$ is open in the subspace topology.
+$G := \bigl\{ x \in D : o(f,x) < \epsilon \bigr\}$ is open in the subspace topology.
 Consider $x \in G$.
 As $\inf_{\delta > 0} o(f,x,\delta) < \epsilon$, find a $\delta > 0$ such
 that
 \begin{equation*}
 o(f,x,\delta) < \epsilon
 \end{equation*}
-Take any $\xi \in B_S(x,\nicefrac{\delta}{2})$.  Notice that
-$B_S(\xi,\nicefrac{\delta}{2}) \subset B_S(x,\delta)$.  Therefore,
+Take any $\xi \in B_D(x,\nicefrac{\delta}{2})$.  Notice that
+$B_D(\xi,\nicefrac{\delta}{2}) \subset B_D(x,\delta)$.  Therefore,
 \begin{equation*}
 o(f,\xi,\nicefrac{\delta}{2}) =
-\sup_{y_1,y_2 \in B_S(\xi,\nicefrac{\delta}{2})} \bigl(f(y_1)-f(y_2)\bigr) 
+\sup_{y_1,y_2 \in B_D(\xi,\nicefrac{\delta}{2})} \bigl(f(y_1)-f(y_2)\bigr) 
 \leq
-\sup_{y_1,y_2 \in B_S(x,\delta)} \bigl(f(y_1)-f(y_2)\bigr) = o(f,x,\delta) <
+\sup_{y_1,y_2 \in B_D(x,\delta)} \bigl(f(y_1)-f(y_2)\bigr) = o(f,x,\delta) <
 \epsilon .
 \end{equation*}
 So $o(f,\xi) < \epsilon$ as well.  As this is true for all $\xi \in
-B_S(x,\nicefrac{\delta}{2})$, we get that $G$ is open in the subspace
-topology and $S \setminus G$ is closed as claimed.
+B_D(x,\nicefrac{\delta}{2})$, we get that $G$ is open in the subspace
+topology and $D \setminus G$ is closed as claimed.
 \end{proof}
 
 
@@ -2104,12 +2104,12 @@ the set of discontinuities of $f$ is of measure zero.
 Let $S \subset R$ be the set of discontinuities of $f$, that is,
 $S = \bigl\{ x \in R : o(f,x) > 0 \bigr\}$.
 Suppose $S$ is a measure zero set: $m^*(S) = 0$.
-The trick to this proof is to isolate the
-bad set into a small set of subrectangles of a partition.  There are only
-finitely many subrectangles of a partition, so we will wish to use
+The trick to proving that $f$ is integrable is to isolate the bad set
+into a small set of subrectangles of a partition.  A partition has
+finitely many subrectangles, so we need
 compactness.  If $S$ were closed, then it would be compact and we could cover
-it by finitely many small rectangles as it is of measure zero.  Unfortunately, $S$
-is not closed in general, so we need to work a little harder.
+it by finitely many small rectangles.  Unfortunately, $S$
+itself is not closed in general, but the following set is.
 
 Given $\epsilon > 0$, define
 \begin{equation*}
@@ -2118,18 +2118,19 @@ S_\epsilon := \bigl\{ x \in R : o(f,x) \geq \epsilon \bigr\} .
 By \propref{prop:seclosed}, $S_\epsilon$ is closed and as it is a subset of
 $R$,
 which is bounded, $S_\epsilon$ is compact.  Furthermore,
-$S_\epsilon \subset S$ and $S$ is of measure zero, so $S_\epsilon$ is
-measure zero.
-Via \propref{mv:prop:compactnull} finitely many open rectangles
+$S_\epsilon \subset S$ and $S$ is of measure zero,
+so $S_\epsilon$ is of measure zero.
+Via \propref{mv:prop:compactnull}, finitely many open rectangles
 $O_1,O_2,\ldots,O_k$ cover $S_\epsilon$ and
 $\sum V(O_j) < \epsilon$.  
 
 The set $T := R \setminus ( O_1 \cup \cdots \cup O_k )$ is closed, bounded,
 and so compact.  As $o(f,x) < \epsilon$ for all $x \in T$,
-for each $x \in T$, there exists a small closed rectangle
-$T_x$ with $x$ in the interior of $T_x$, such that
+for each $x \in T$, there is a $\delta > 0$ such that
+$o(f,x,\delta) < \epsilon$, so there exists a small closed rectangle
+$T_x \subset B(x,\delta)$ with $x$ in the interior of $T_x$, such that
 \begin{equation*}
-\sup_{y\in T_x} f(y) - \inf_{y\in T_x} f(y) < 2\epsilon.
+\sup_{y\in T_x} f(y) - \inf_{y\in T_x} f(y) < \epsilon.
 \end{equation*}
 The interiors of the rectangles $T_x$ cover $T$.  As $T$ is compact,
 finitely many such rectangles $T_1, T_2, \ldots, T_m$
@@ -2147,14 +2148,17 @@ So
 \begin{equation*}
 \sum_{j=1}^q V(R_j) \leq V(R)
 \qquad \text{and} \qquad
-\sum_{j=q+1}^p V(R_j) \leq \epsilon .
+\sum_{j=q+1}^p V(R_j)
+\leq
+\sum_{\ell=1}^k V(O_\ell)
+< \epsilon .
 \end{equation*}
 Let $m_j$ and $M_j$ be the inf and sup
 of $f$
 over $R_j$ as before.
-If $R_j \subset T_\ell$ for some $\ell$, then $(M_j-m_j) < 2 \epsilon$.
+If $R_j \subset T_\ell$ for some $\ell$, then $M_j-m_j < 2 \epsilon$.
 Let $B \in \R$ be such that
-$\sabs{f(x)} \leq B$ for all $x \in R$, so $(M_j-m_j) < 2B$ over all
+$\sabs{f(x)} \leq B$ for all $x \in R$, so $M_j-m_j \leq 2B$ over all
 rectangles. Then
 \begin{equation*}
 \begin{split}
@@ -2171,7 +2175,7 @@ U(P,f)-L(P,f)
 \sum_{j=q+1}^p (M_j-m_j) V(R_j)
 \right)
 \\
-& \leq
+& <
 \left(
 \sum_{j=1}^q 2\epsilon\, V(R_j)
 \right)
@@ -2180,7 +2184,7 @@ U(P,f)-L(P,f)
 \sum_{j=q+1}^p 2 B\, V(R_j)
 \right)
 \\
-& \leq
+& <
 2 \epsilon\, V(R)
 +
 2B \epsilon = \epsilon \bigl(2\, V(R)+2B\bigr) .
@@ -2213,8 +2217,10 @@ the interiors of $R_1,R_2,\ldots,R_{q}$ intersect $S_{1/k}$,
 while the interiors of $R_{q+1},R_{q+2},\ldots,R_p$
 are disjoint from $S_{1/k}$.  If $x \in R_j \cap S_{1/k}$
 and $x$ is in the interior of $R_j$,
-%so sufficiently small balls are completely inside $R_j$,
-then by definition of $S_{1/k}$ we have
+then $o(f,x) \geq \nicefrac{1}{k}$.
+As sufficiently small $\delta$-balls are completely inside $R_j$
+and $o(f,x,\delta) \geq o(f,x) \geq \nicefrac{1}{k}$,
+we get
 $M_j-m_j \geq \nicefrac{1}{k}$.
 Then
 \begin{equation*}
@@ -2229,7 +2235,8 @@ Then
 In other words,
 $\sum_{j=1}^q V(R_j) < k \epsilon$.
 Let $G$ be the set of all boundaries of all the subrectangles
-of $P$.  The set $G$ is of measure zero (see \exampleref{mv:example:planenull}).
+of $P$.  The set $G$ is of measure zero (as it can be covered by
+finitely many sets from \exampleref{mv:example:planenull}).
 Let $R_j^\circ$ denote the interior of $R_j$, then
 \begin{equation*}
 S_{1/k} \subset R_1^\circ \cup R_2^\circ \cup \cdots \cup R_q^\circ \cup G .
