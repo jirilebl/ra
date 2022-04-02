@@ -1876,7 +1876,7 @@ is compact for every $m > 0$.
 Let $U \subset \R^n$ be an open set
 and let $f \colon U \to \R$ be a continuously differentiable function.
 Let $G := \{ (x,y) \in U \times \R : y = f(x) \}$ be the graph of $f$.
-Show that $f$ is of measure zero.
+Show that $G$ is of measure zero.
 \end{exercise}
 
 \begin{exercise}
@@ -1974,6 +1974,17 @@ where the infimum is taken over all countable (finite or infinite) sets of
 open rectangles $\{ R_j \}_{j\in I}$ such that $S \subset
 \bigcup_{j \in I} R_j$.  Prove that for every $S \subset \R^n$,
 $\mu^*(S) = m^*(S)$.
+\end{exercise}
+
+\begin{exercise}
+Prove that for any two subsets $A, B \subset \R^n$, we have
+$m^*(A \cup B) \leq m^*(A)+m^*(B)$.
+\end{exercise}
+
+\begin{exercise} \label{exercise:outermeasureofsumofrectangles}
+Suppose $R_1,R_2,\ldots,R_n$ is a pairwise disjoint set of open rectangles.
+Prove that 
+$m^*(R_1 \cup R_2 \cup \cdots \cup R_n) = m^*(R_1)+m^*(R_2)+\cdots+m^*(R_n)$.
 \end{exercise}
 
 
@@ -2270,11 +2281,12 @@ then $\varphi, \psi \in \sR(R)$.
 If $f \in \sR(R)$, then $\sabs{f} \in \sR(R)$, where $\sabs{f}(x) :=
 \sabs{f(x)}$.
 \item
-If $R' \subset \R^m$ is another closed rectangle,
-$U \subset \R^n$ and $U' \subset \R^m$ are open sets such that
+If $R' \subset \R^n$ is another closed rectangle,
+$U \subset \R^n$ and $U' \subset \R^n$ are open sets such that
 $R \subset U$ and $R' \subset U'$,
 $g \colon U \to U'$ is continuously differentiable, bijective,
 $g^{-1}$ is continuously differentiable,
+$R \subset g^{-1}(R')$,
 and $f \in \sR(R')$,
 then the composition $f \circ g$ is Riemann integrable on $R$.
 \end{enumerate}
@@ -2357,11 +2369,12 @@ in terms of $f_+$ and $f_-$.
 \begin{enumerate}[a)]
 \item
 Suppose $R \subset \R^n$ and
-$R' \subset \R^m$ are closed rectangles,
-$U \subset \R^n$ and $U' \subset \R^m$ are open sets such that
+$R' \subset \R^n$ are closed rectangles,
+$U \subset \R^n$ and $U' \subset \R^n$ are open sets such that
 $R \subset U$ and $R' \subset U'$,
 $g \colon U \to U'$ is continuously differentiable, bijective,
-$g^{-1}$ is continuously differentiable, and
+$g^{-1}$ is continuously differentiable,
+$R \subset g^{-1}(R')$, and
 $f \in \sR(R')$, 
 then the composition $f \circ g$ is Riemann integrable on $R$.
 \item
@@ -2524,8 +2537,8 @@ $\chi_S$ is identically one on each $R'_j$.  In other words,
 these are the subrectangles contained in $S$.
   The interiors
 of the subrectangles $R'^\circ_j$ are disjoint and
-$V(R'^\circ_j) = V(R'_j)$.  It is easy to see from definition
-that 
+$V(R'^\circ_j) = V(R'_j)$.  Via
+\exerciseref{exercise:outermeasureofsumofrectangles},
 \begin{equation*}
 m^*\Bigl(\bigcup_{j=1}^\ell R'^\circ_j\Bigr)
 =
