@@ -1981,8 +1981,13 @@ Prove that for any two subsets $A, B \subset \R^n$, we have
 $m^*(A \cup B) \leq m^*(A)+m^*(B)$.
 \end{exercise}
 
+\begin{exercise}
+Suppose $A, B \subset \R^n$ are such that $m^*(B)=0$.  Prove that
+$m^*(A \cup B) = m^*(A)$.
+\end{exercise}
+
 \begin{exercise} \label{exercise:outermeasureofsumofrectangles}
-Suppose $R_1,R_2,\ldots,R_n$ is a pairwise disjoint set of open rectangles.
+Suppose $R_1,R_2,\ldots,R_n$ are pairwise disjoint open rectangles.
 Prove that 
 $m^*(R_1 \cup R_2 \cup \cdots \cup R_n) = m^*(R_1)+m^*(R_2)+\cdots+m^*(R_n)$.
 \end{exercise}
@@ -2520,7 +2525,7 @@ L(P,\chi_S) \geq \left( \int_R \chi_S \right) - \epsilon = V(S)-\epsilon.
 \end{equation*}
 Let $R_1,R_2,\ldots,R_k$ be all the subrectangles of $P$ such that $\chi_S$ is not
 identically zero on each $R_j$.  That is, there is some point $x \in R_j$ such
-that $x \in S$.  Let $O_j$ be an open rectangle such that $R_j \subset O_j$
+that $x \in S$ (i.e., $\chi_S(x)=1$).  Let $O_j$ be an open rectangle such that $R_j \subset O_j$
 and $V(O_j) < V(R_j) + \nicefrac{\epsilon}{k}$.  Notice that $S \subset
 \bigcup_j O_j$.  Then
 \begin{equation*}
@@ -2592,7 +2597,11 @@ is in $\sR(R)$.  In this case we write
 \end{defn}
 
 When $f$ is defined on a larger set and we wish to integrate over $S$, then
-we apply the definition to the restriction $f|_S$.  In particular, 
+we apply the definition to the restriction $f|_S$.
+As the restriction can be defined by the product $f\xi_S$, and the product
+of Riemann integrable sets is Riemann integrable, $f|_S$ is automatically
+Riemann integrable.
+  In particular, 
 if $f \colon R \to \R$ for a closed rectangle $R$, and $S \subset R$ is
 a Jordan measurable subset, then
 \begin{equation*}
@@ -2737,7 +2746,7 @@ and $K \subset S^\circ$ ($K$ is in the interior of $S$).
 
 \begin{exercise} \label{exercise:closednessofriemannintegrable}
 Prove a version of \corref{cor:closednessofriemannintegrable}, replacing all closed
-rectangles with bounded Jordan measurable sets.
+rectangles with closed and bounded Jordan measurable sets.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
