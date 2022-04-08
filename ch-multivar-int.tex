@@ -2631,7 +2631,7 @@ determinant never vanishes.
 
 \begin{prop} \label{prop:imagejordanmeas}
 Suppose $U \subset \R^n$ is open and
-$S \subset U$ is a closed bounded Jordan measurable set.
+$S \subset U$ is a compact Jordan measurable set.
 Suppose
 $g \colon U \to \R^n$ is a one-to-one
 continuously differentiable mapping such that
@@ -2640,7 +2640,7 @@ Then $g(S)$ is bounded and Jordan measurable.
 \end{prop}
 
 \begin{proof}
-Let $T := g(S)$.  As $S \subset \R^n$ is closed and bounded it is compact.
+Let $T := g(S)$.  %As $S \subset \R^n$ is closed and bounded it is compact.
 By 
 \volIref{\lemmaref*{vI-lemma:continuouscompact} from volume I}{\lemmaref{lemma:continuouscompact}},
 the set
@@ -3203,7 +3203,7 @@ but this statement is sufficient for many uses.
 
 \begin{thm}
 Suppose $U \subset \R^n$ is open,
-$S \subset U$ is a closed bounded Jordan measurable set, and
+$S \subset U$ is a compact Jordan measurable set, and
 $g \colon U \to \R^n$ is a one-to-one
 continuously differentiable mapping, such that
 $J_g$ is never zero on $S$.
@@ -3419,8 +3419,8 @@ Prove \propref{prop:volrectdet}.
 
 \begin{exercise} \label{mv:changeofvarcoverbyrects}
 Suppose $U \subset \R^n$ is open
-and $S \subset U$ is a closed bounded Jordan measurable set.
-Show that there exist finitely many closed bounded rectangles
+and $S \subset U$ is a compact Jordan measurable set.
+Show that there exist finitely many closed rectangles
 $P_1,P_2, \ldots, P_k$ such that $P_j \subset U$,
 $S \subset P_1 \cup P_2 \cup \cdots \cup P_k$, and
 the interiors are mutually disjoint, that is
@@ -3438,7 +3438,7 @@ is an open set.
 \end{exercise}
 
 \begin{exercise} \label{mv:changeofvarrectside}
-Suppose $R \subset \R^n$ is a closed bounded rectangle.
+Suppose $R \subset \R^n$ is a closed rectangle.
 Show that if $\delta' > 0$ is sufficiently small relative
 to the sides of $R$, then $R$ can be partitioned
 into subrectangles where each side of every subrectangle
@@ -3475,7 +3475,7 @@ integrable.  Then $f \circ g$ is Riemann integrable on $S$ and}
 \int_{g(S)} f(x) ~ dx = 
 \int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx .
 \end{equation*}
-Hint: Write $S$ as an increasing union of closed bounded Jordan measurable
+Hint: Write $S$ as an increasing union of compact Jordan measurable
 sets, then apply the theorem of the section to those.  Then prove that you
 can take the limit.
 \end{exercise}
