@@ -449,7 +449,7 @@ again essentially the same as for the real-valued functions and
 is left as an exercise.
 
 \begin{prop} \label{prop:unifcauchymetric}
-Let $X$ be a set and let $(Y,d)$ be a Cauchy complete metric space.
+Let $X$ be a set and let $(Y,d)$ be a Cauchy-complete metric space.
 Let $f_n \colon X \to Y$ be functions.  Then $\{ f_n \}$ converges
 uniformly if and only if for every $\epsilon > 0$, there is an $M$ such that
 for all $n, m \geq M$ and all $x \in X$, we have
@@ -515,10 +515,13 @@ Then
 Another way to state the theorem is to say that if
 $\sum \snorm{f_n}_u$ converges, then $\sum f_n$ converges uniformly.
 Note that the converse of this theorem is not true.
+Also note that applying the theorem to $\sum \sabs{f_n(x)}$ gives that
+a series satisfying the $M$-test also converges uniformly, so the series converges both absolutely
+and uniformly.
 
 \begin{proof}
 Suppose $\sum M_n$ converges.  Given $\epsilon > 0$,
-we have that the partial sums of $\sum M_n$ are Cauchy so for
+we have that the partial sums of $\sum M_n$ are Cauchy so
 there is an $N$ such that for all $m, n \geq N$ with $m \geq n$, we have
 \begin{equation*}
 \sum_{k=n+1}^m M_k < \epsilon .
@@ -540,7 +543,8 @@ The series
 \end{equation*}
 converges uniformly on $\R$.  See \figureref{fig:fouriersern2}.
 This is a Fourier series,
-we will see more of these in a later section.  It converges uniformly because
+we will see more of these in a later section.  Proof:
+The series converges uniformly because
 \begin{equation*}
 \abs{\frac{\sin(nx)}{n^2}} \leq 
 \frac{1}{n^2} ,
@@ -563,11 +567,12 @@ The series
 \sum_{n=0}^\infty \frac{x^n}{n!} 
 \end{equation*}
 converges uniformly on every bounded interval.
+This series is a power series that we will study shortly.
 Proof: Take the interval $[-r,r] \subset \R$ (every bounded interval
-is contained in such an interval).  Then
+is contained in some $[-r,r]$).  Then
 \begin{equation*}
 \abs{\frac{x^n}{n!} } \leq 
-\frac{r^n}{n!}
+\frac{r^n}{n!} ,
 \end{equation*}
 and 
 $\sum_{n=1}^\infty \frac{r^n}{n!}$ converges by the ratio test.
@@ -649,7 +654,7 @@ d_Y\bigl(a_k,a\bigr)
 We obtain an immediate corollary about continuity.
 
 \begin{cor} \label{cor:metricuniformcontinuous}
-Let $X$ and $Y$ be metric spaces such that $Y$ is Cauchy complete.
+Let $X$ and $Y$ be metric spaces such that $Y$ is Cauchy-complete.
 Let $f_n \colon X \to Y$ be continuous functions
 such that
 $\{ f_n \}$ converges uniformly to $f \colon X \to Y$.  
@@ -666,14 +671,14 @@ on the sequence, we can obtain a partial converse such as Dini's theorem,
 In \exerciseref{exercise:CXCnormedspace} the reader is asked to prove
 that for a compact $X$, $C(X,\C)$ is a normed vector space
 with the uniform norm, and hence a metric space.  We have just shown that
-$C(X,\C)$ is Cauchy complete:  \propref{prop:unifcauchymetric} says that a Cauchy
+$C(X,\C)$ is Cauchy-complete:  \propref{prop:unifcauchymetric} says that a Cauchy
 sequence in $C(X,\C)$ converges to some function,
 and \corref{cor:metricuniformcontinuous} shows that the limit is
 continuous and hence in $C(X,\C)$.
 
 \begin{cor}
 Let $(X,d)$ be a compact metric space.
-Then $C(X,\C)$ is a Cauchy complete metric space.
+Then $C(X,\C)$ is a Cauchy-complete metric space.
 \end{cor}
 
 \begin{example}
