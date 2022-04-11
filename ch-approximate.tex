@@ -613,8 +613,11 @@ an $M$ such that for all $m,n \geq M$, we have
 \begin{equation*}
 d_Y\bigl(f_n(x_k),f_m(x_k)\bigr) < \epsilon \qquad \text{for all } k .
 \end{equation*}
-As a metric is automatically continuous we let $k$ go to infinity
-to find
+Note that
+$d_Y(a_n,a_m) \leq
+d_Y\bigl(a_n,f_n(x_k)\bigr) +
+d_Y\bigl(f_n(x_k),f_m(x_k)\bigr) +
+d_Y\bigl(f_m(x_k),a_m\bigr)$ and take the limit as $k \to \infty$ to find
 \begin{equation*}
 d_Y(a_n,a_m) \leq \epsilon .
 \end{equation*}
