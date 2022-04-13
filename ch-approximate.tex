@@ -364,7 +364,9 @@ $\int_0^1 f = 0$ but $f(t) \not= 0$ for all $t \in [0,1]$.
 
 \subsection{Continuity}
 
-Let us get back to swapping limits.  Let $\{ f_n \}$ be a sequence
+Let us get back to swapping limits and expand on
+\volIref{\chapterref*{vI-fs:chapter} of volume I}{\chapterref{fs:chapter}}.
+Let $\{ f_n \}$ be a sequence
 of functions $f_n \colon X \to Y$ for a set $X$ and a metric space $Y$.
 Let $f \colon X \to Y$ be a
 function and for every $x \in X$ suppose that
@@ -400,17 +402,16 @@ We don't even a priory know if both sides exist, let alone if they are equal eac
 \begin{example}
 The functions $f_n \colon \R \to \R$,
 \begin{equation*}
-f_n(x) := \frac{1}{1+nx^2}
+f_n(x) := \frac{1}{1+nx^2},
 \end{equation*}
-are continuous and converge pointwise to
+are continuous and converge pointwise to the discontinuous function
 \begin{equation*}
 f(x) := 
 \begin{cases}
 1 & \text{if } x=0, \\
-0 & \text{else,}
+0 & \text{else.}
 \end{cases}
 \end{equation*}
-which is not continuous.
 \end{example}
 
 So pointwise convergence is not enough to preserve continuity (nor even
@@ -438,24 +439,29 @@ boundedness.  We leave the proof of the following proposition as an
 exercise.  It is almost identical to the proof for real-valued functions.
 
 \begin{prop} \label{prop:uniformconvbounded}
-Let $X$ be a set and $Y$ a metric space.
+Let $X$ be a set and $(Y,d)$ a metric space.
 If $f_n \colon X \to Y$ are bounded functions and converge uniformly to $f
 \colon X \to Y$, then $f$ is bounded.
 \end{prop}
 
-We have a notion of \emph{\myindex{uniformly Cauchy}} as for
-real-valued functions.  The proof of the following proposition is
-again essentially the same as for the real-valued functions and 
-is left as an exercise.
-
-\begin{prop} \label{prop:unifcauchymetric}
-Let $X$ be a set and let $(Y,d)$ be a Cauchy-complete metric space.
-Let $f_n \colon X \to Y$ be functions.  Then $\{ f_n \}$ converges
-uniformly if and only if for every $\epsilon > 0$, there is an $M$ such that
+If $X$ is a set and $(Y,d)$ is a metric space, then a sequence $f_n \colon X
+\to Y$ is \emph{\myindex{uniformly Cauchy}} if for every $\epsilon > 0$, there is an $M$ such that
 for all $n, m \geq M$ and all $x \in X$, we have
 \begin{equation*}
 d\bigl(f_n(x),f_m(x)\bigr) < \epsilon .
 \end{equation*}
+The notion is the same as for real-valued functions.
+The proof of the following proposition is
+again essentially the same as in that setting and
+is left as an exercise.
+
+\begin{prop} \label{prop:unifcauchymetric}
+Let $X$ be a set, $(Y,d)$ be a metric space, and
+$f_n \colon X \to Y$ be functions.
+If $\{ f_n \}$ converges uniformly,
+then $\{f_n\}$ is uniformly Cauchy.  Conversely, if 
+$\{f_n\}$ is uniformly Cauchy and $(Y,d)$ is Cauchy-complete,
+then $\{f_n\}$ converges uniformly.
 \end{prop}
 
 For $f \colon X \to \C$, we write\glsadd{not:uniformnorm}
@@ -545,13 +551,12 @@ converges uniformly on $\R$.  See \figureref{fig:fouriersern2}.
 This is a Fourier series,
 we will see more of these in a later section.  Proof:
 The series converges uniformly because
+$\sum_{n=1}^\infty \frac{1}{n^2}$
+converges and
 \begin{equation*}
 \abs{\frac{\sin(nx)}{n^2}} \leq 
-\frac{1}{n^2} ,
+\frac{1}{n^2} .
 \end{equation*}
-and
-$\sum_{n=1}^\infty \frac{1}{n^2}$
-converges.
 \end{example}
 
 \begin{myfigureht}
@@ -569,13 +574,13 @@ The series
 converges uniformly on every bounded interval.
 This series is a power series that we will study shortly.
 Proof: Take the interval $[-r,r] \subset \R$ (every bounded interval
-is contained in some $[-r,r]$).  Then
+is contained in some $[-r,r]$).
+The series $\sum_{n=0}^\infty \frac{r^n}{n!}$ converges by the ratio test,
+so $\sum_{n=0}^\infty \frac{x^n}{n!}$ converges uniformly on $[-r,r]$ as
 \begin{equation*}
 \abs{\frac{x^n}{n!} } \leq 
-\frac{r^n}{n!} ,
+\frac{r^n}{n!} .
 \end{equation*}
-and 
-$\sum_{n=1}^\infty \frac{r^n}{n!}$ converges by the ratio test.
 \end{example}
 
 Now we would love to say something about the limit.  For example, is it
@@ -583,10 +588,9 @@ continuous?
 
 
 \begin{prop} \label{prop:uniformswitch}
-Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces, and let
-$f_n \colon X \to Y$ be functions.
-Suppose $Y$ is complete metric space.
-Suppose $\{ f_n \}$ converges uniformly to $f \colon X \to Y$.  
+Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
+Suppose $f_n \colon X \to Y$ converge uniformly to
+ $f \colon X \to Y$.  
 Let $\{ x_k \}$ be a sequence in $X$ and $x := \lim \, x_k$.  Suppose
 that
 \begin{equation*}
@@ -657,11 +661,11 @@ d_Y\bigl(a_k,a\bigr)
 We obtain an immediate corollary about continuity.
 
 \begin{cor} \label{cor:metricuniformcontinuous}
-Let $X$ and $Y$ be metric spaces such that $Y$ is Cauchy-complete.
-Let $f_n \colon X \to Y$ be continuous functions
+Let $X$ and $Y$ be metric spaces.
+If $f_n \colon X \to Y$ are continuous functions
 such that
-$\{ f_n \}$ converges uniformly to $f \colon X \to Y$.  
-Then $f$ is continuous.
+$\{ f_n \}$ converges uniformly to $f \colon X \to Y$,
+then $f$ is continuous.
 \end{cor}
 
 The converse is not true.  Just because the limit is continuous doesn't mean
@@ -675,7 +679,7 @@ In \exerciseref{exercise:CXCnormedspace} the reader is asked to prove
 that for a compact $X$, $C(X,\C)$ is a normed vector space
 with the uniform norm, and hence a metric space.  We have just shown that
 $C(X,\C)$ is Cauchy-complete:  \propref{prop:unifcauchymetric} says that a Cauchy
-sequence in $C(X,\C)$ converges to some function,
+sequence in $C(X,\C)$ converges uniformly to some function,
 and \corref{cor:metricuniformcontinuous} shows that the limit is
 continuous and hence in $C(X,\C)$.
 
