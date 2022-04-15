@@ -826,7 +826,15 @@ Define
 where the sign is chosen so that there is no integer
 between $4^m x$ and $4^m(x+\delta_m) = 4^m x \pm \frac{1}{2}$.
 
-Fix $m$ for a moment.  Let
+We want to look at the difference quotient
+\begin{equation*}
+\frac{f(x+\delta_m)-f(x)}{\delta_m}
+=
+\sum_{n=0}^\infty 
+{\left(\frac{3}{4}\right)}^n
+\frac{\varphi\bigl(4^n(x+\delta_m)\bigr)-\varphi(4^nx)}{\delta_m} .
+\end{equation*}
+Fix $m$ for a moment.  Consider the expression inside the series:
 \begin{equation*}
 \gamma_{n} :=
 \frac{\varphi\bigl(4^n(x+\delta_m)\bigr)-\varphi(4^nx)}{\delta_m} .
@@ -864,19 +872,18 @@ And so
 \abs{
 \frac{f(x+\delta_m)-f(x)}{\delta_m}
 }
-& =
-\abs{
-\sum_{n=0}^\infty 
-{\left(\frac{3}{4}\right)}^n
-\frac{\varphi\bigl(4^n(x+\delta_m)\bigr)-\varphi(4^nx)}{\delta_m}
-}
+%& =
+%\abs{
+%\sum_{n=0}^\infty 
+%{\left(\frac{3}{4}\right)}^n
+%\frac{\varphi\bigl(4^n(x+\delta_m)\bigr)-\varphi(4^nx)}{\delta_m}
+%}
 =
 \abs{
 \sum_{n=0}^\infty 
 {\left(\frac{3}{4}\right)}^n
 \gamma_n
 }
-\\
 & =
 \abs{
 \sum_{n=0}^m 
@@ -4859,7 +4866,7 @@ $g=f$.
 \subsection{Exercises}
 
 \begin{exercise}
-Take the Fourier series
+Consider the Fourier series
 \begin{equation*}
 \sum_{n=1}^\infty \frac{1}{2^n} \sin(2^n x) .
 \end{equation*}
@@ -4871,13 +4878,12 @@ G.\ H.\ Hardy, \emph{Weierstrass's Non-Differentiable Function},
 Transactions of the American Mathematical Society,
 \textbf{17}, No.\ 3 (Jul., 1916), pp.\ 301--325.}.
 See \figureref{fig:fourierserweier}.
-\end{exercise}
-
 \begin{myfigureht}
 \includegraphics{figures/fourierserweier}
 \caption{Plot of 
 $\sum_{n=1}^\infty \frac{1}{2^n} \sin(2^n x)$.\label{fig:fourierserweier}}
 \end{myfigureht}
+\end{exercise}
 
 \begin{exercise}
 Suppose that a $2\pi$-periodic function that is Riemann integrable
