@@ -3980,6 +3980,7 @@ $z \in \C$ with $\sabs{z}=1,$ we write $z = e^{ix}$, and so
 \sum_{n=-N}^N c_n z^n .
 \end{equation*}
 So a trigonometric polynomial is really a rational function
+of the complex variable $z$
 (we are allowing negative powers) evaluated on the unit circle.  There is
 a wonderful connection between power series (actually Laurent series because
 of the negative powers) and
@@ -4166,13 +4167,14 @@ and $C$, $\alpha > 1$ constants such that
 \begin{equation*}
 \sabs{c_n} \leq \frac{C}{\sabs{n}^\alpha}
 \qquad \text{for all } n \in \Z \setminus \{ 0 \}.
+\avoidbreak
 \end{equation*}
 Then the series converges (absolutely and uniformly) to a continuous function on $\R$.
 \end{prop}
 
 The proof is to apply the Weierstrass $M$-test (\thmref{thm:weiermtest}) and
 the $p$-series test, to find that the series converges uniformly and hence
-to a continuous function.
+to a continuous function (\corref{cor:metricuniformcontinuous}).
 We can also take derivatives.
 
 \begin{prop}
@@ -4181,6 +4183,7 @@ and $C$, $\alpha > 2$ constants such that
 \begin{equation*}
 \sabs{c_n} \leq \frac{C}{\sabs{n}^\alpha}
 \qquad \text{for all } n \in \Z \setminus \{ 0 \}.
+\avoidbreak
 \end{equation*}
 Then the series converges to a continuously differentiable function on $\R$.
 \end{prop}
@@ -4192,7 +4195,7 @@ point.  Then differentiate the partial sums
 \sum_{n=-N}^{N}
 i n c_n \,e^{inx}
 \end{equation*}
-and notice that 
+and notice that for all nonzero $n$
 \begin{equation*}
 \sabs{i n c_n} \leq \frac{C}{\sabs{n}^{\alpha-1}} .
 \end{equation*}
@@ -4201,15 +4204,16 @@ the differentiated series
 converges uniformly, we find that the original series $\sum c_n\,e^{inx}$
 converges 
 to a continuously differentiable function, whose derivative is
-the differentiated series.
+the differentiated series (see \thmref{thm:dersconvergecomplex}).
 
-By iterating the same reasoning we find that if
-for some $C$ and $\alpha > k+1$ ($k \in \N$), we have
+We can iterate the same reasoning.
+Suppose there is
+some $C$ and $\alpha > k+1$ ($k \in \N$) such that
 \begin{equation*}
 \sabs{c_n} 
 \leq \frac{C}{\sabs{n}^\alpha}
 \end{equation*}
-for all nonzero integers $n$, then 
+for all nonzero integers $n$.  Then 
 the Fourier series converges to a $k$-times continuously differentiable
 function.  Therefore, the faster the coefficients go to zero, the more
 regular the limit is.
@@ -4889,13 +4893,13 @@ $\sum_{n=1}^\infty \frac{1}{2^n} \sin(2^n x)$.\label{fig:fourierserweier}}
 Suppose that a $2\pi$-periodic function that is Riemann integrable
 on $[-\pi,\pi]$, and such that $f$ is continuously differentiable
 on some open interval $(a,b)$.  Prove that
-for every $x \in (a,b)$, we have $\lim\, s_N(f;x) = f(x)$.
+for every $x \in (a,b)$, we have $\lim\limits_{N\to\infty} s_N(f;x) = f(x)$.
 \end{exercise}
 
 \begin{exercise}
 Prove \corref{cor:fourierpiecewisesmooth}, that is,
 suppose a $2\pi$-periodic function is continuous piecewise
-smooth near a point $x$, then $\lim\, s_N(f;x) = f(x)$.  Hint: See the previous
+smooth near a point $x$, then $\lim\limits_{N\to\infty} s_N(f;x) = f(x)$.  Hint: See the previous
 exercise.
 \end{exercise}
 
