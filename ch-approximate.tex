@@ -3064,7 +3064,10 @@ close to $x$ and it does the weighted average of them.
 When the peak gets narrower, we compute this average closer to $x$
 and we expect the result to get closer to the value of $g(x)$.  Really we are
 approximating what is called a delta function\footnote{The delta function
-is not actually a function.} (don't worry if you have not
+is not actually a function,
+it is a \myquote{thing} that supposed to give
+\myquote{$\int_{-\infty}^\infty g(x) \delta(x-t) ~ dt = g(x)$.}}
+(don't worry if you have not
 heard of this concept),
 and functions like $q_n$ are often called
 \emph{approximate delta functions}\index{approximate delta function}.
@@ -4539,8 +4542,9 @@ s_N(f;x) =
 =
 \frac{1}{2\pi} \int_{-\pi}^\pi f(t) D_N(x-t) ~ dt .
 \end{multline*}
-Convolution strikes again!
-As $D_N$ and $f$ are $2\pi$-periodic we may also change variables and write 
+If you replace $x-t$ with $t-x$ ($D_N$ is even), we see that
+convolution strikes again!
+As $D_N$ and $f$ are $2\pi$-periodic, we may also change variables and write 
 \begin{equation*}
 s_N(f;x) = 
 \frac{1}{2\pi} \int_{x-\pi}^{x+\pi} f(x-t) D_N(t) ~ dt
@@ -4557,7 +4561,8 @@ See \figureref{fig:approxdeltas} for a plot of $D_N$ for $N=5$ and $N=20$.
 
 The central peak gets taller and taller as $N$ gets larger,
 and the side peaks stay small.
-We are convolving (again) with approximate delta functions,
+We are convolving (again) with
+\emph{approximate delta functions}\index{approximate delta function},
 although these functions have
 all these oscillations away from zero.  The oscillations on the side do not go away
 but they are eventually so fast that we expect the integral to just sort of
@@ -4567,10 +4572,14 @@ $s_N(f)$ goes to $f$.  Things are not always simple,
 but under some conditions on $f$, such a conclusion holds.  For this reason
 people write
 \begin{equation*}
-\delta(x) \sim \sum_{n=\infty}^\infty e^{inx}
+2\pi \, \delta(x) \sim \sum_{n=\infty}^\infty e^{inx} ,
 \end{equation*}
-although we have not really defined the delta function (and it is not a
-function), nor a Fourier series of whatever kind of object it is.
+where $\delta$ is the \myquote{delta function} (not really a function),
+which is an object that will give something like
+\myquote{$\int_{-\pi}^{\pi} f(x-t) \delta(t) ~ dt = f(x)$.}
+We can think of $D_N(x)$ converging in some sense to $2 \pi\, \delta(x)$.
+However, we have not defined (and will not define) what kind of an object the delta function
+is, nor what does it mean for it to be a limit of $D_N$ or have a Fourier series.
 
 \subsection{Localization}
 
