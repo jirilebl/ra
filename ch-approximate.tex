@@ -725,18 +725,18 @@ are Riemann integrable and suppose that
 converges uniformly.  Then the series is Riemann integrable on $[a,b]$
 and
 \begin{equation*}
-\int_a^b \sum_{n=1}^\infty f_n(x) ~dx
+\int_a^b \sum_{n=1}^\infty f_n(x) \,dx
 =
-\sum_{n=1}^\infty \int_a^b f_n(x) ~dx
+\sum_{n=1}^\infty \int_a^b f_n(x) \,dx
 \end{equation*}
 \end{cor}
 
 \begin{example}
 Let us show how to integrate a Fourier series.
 \begin{equation*}
-\int_{0}^x \sum_{n=1}^\infty \frac{\cos(nt)}{n^2} ~dt
+\int_{0}^x \sum_{n=1}^\infty \frac{\cos(nt)}{n^2} \,dt
 =
-\sum_{n=1}^\infty \int_{0}^x \frac{\cos(nt)}{n^2}~dt
+\sum_{n=1}^\infty \int_{0}^x \frac{\cos(nt)}{n^2}\,dt
 =
 \sum_{n=1}^\infty \frac{\sin(nx)}{n^3}
 \end{equation*}
@@ -2005,15 +2005,15 @@ as exercise).
 The arclength of a curve parametrized by $\gamma \colon [a,b] \to \C$ is given
 by
 \begin{equation*}
-\int_a^b \sabs{\gamma^{\:\prime}(t)} ~ dt .
+\int_a^b \sabs{\gamma^{\:\prime}(t)} \, dt .
 \end{equation*}
 We have that $e^{it}$ parametrizes the circle for $t$ in $[0,2\pi)$.
 As $\frac{d}{dt} \bigl( e^{it} \bigr) = ie^{it}$, the circumference of the
 circle (the arclength) is
 \begin{equation*}
-\int_0^{2\pi} \sabs{i e^{it}}  ~  dt
+\int_0^{2\pi} \sabs{i e^{it}}  \,  dt
 =
-\int_0^{2\pi} 1  ~  dt  = 2\pi .
+\int_0^{2\pi} 1  \,  dt  = 2\pi .
 \end{equation*}
 
 More generally we notice that $e^{it}$ parametrizes the circle by arclength.
@@ -2796,7 +2796,7 @@ corollary above is the following.
 Take a continuous $k \colon [0,1] \times [0,1] \to \C$.
 For every $f \in C([0,1],\C)$ define
 \begin{equation*}
-T\bigl(f\bigr)(x) :=  \int_0^1 f(t) \, k(x,t)~dt .
+T\bigl(f\bigr)(x) :=  \int_0^1 f(t) \, k(x,t)\,dt .
 \end{equation*}
 In exercises to earlier sections you have shown that 
 $T$ is a linear operator on $C([0,1],\C)$.
@@ -2850,7 +2850,7 @@ $\abs{f(x)-f(y)} \leq C {d(x,y)}^\alpha$.
 Let $T \colon C([0,1],\C) \to C([0,1],\C)$ be the operator
 given by
 \begin{equation*}
-T\bigl(f\bigr) (x) := \int_0^x f(t)~dt .
+T\bigl(f\bigr) (x) := \int_0^x f(t)\, dt .
 \end{equation*}
 (That $T$ is linear and that $Tf$ is continuous follows from
 linearity of the integral and
@@ -2874,7 +2874,7 @@ Given $k \in C([0,1]\times [0,1],\C)$,
 let $T \colon C([0,1],\C) \to C([0,1],\C)$ be the operator
 defined by
 \begin{equation*}
-T\bigl(f\bigr)(x) :=  \int_0^1 f(t) \, k(x,t)~dt .
+T\bigl(f\bigr)(x) :=  \int_0^1 f(t) \, k(x,t)\,dt .
 \end{equation*}
 Show that $T$ takes the unit ball centered at 0 in $C([0,1],\C)$ into a
 relatively compact set (a set with compact closure).
@@ -2896,7 +2896,7 @@ and $g(z,w)$ a continuous function on $C(0,1) \times S^1$
 the functions $F_n \colon C(0,1) \to \C$ by
 the path integral (see \sectionref{sec:pathintegral})
 \begin{equation*}
-F_n(z) : = \int_\gamma f_n(w)\, g(z,w) ~ ds(w) . 
+F_n(z) : = \int_\gamma f_n(w)\, g(z,w) \, ds(w) . 
 \end{equation*}
 Show that $\{ F_n \}$ has a uniformly convergent subsequence.
 \end{exercise}
@@ -2958,7 +2958,7 @@ Use the following outline:
 We wish to define the Picard iterates, that is,
 set $f_0(x) := y_0$, and 
 \begin{equation*}
-f_{n+1}(x) := y_0 + \int_{x_0}^x F\bigl(t,f_n(t)\bigr)~dt .
+f_{n+1}(x) := y_0 + \int_{x_0}^x F\bigl(t,f_n(t)\bigr)\,dt .
 \end{equation*}
 Prove that there exists an $h > 0$ such that
 $f_n \colon [x_0 - h, x_0 + h] \to \C$ is well-defined
@@ -3022,12 +3022,12 @@ $g(x) := 0$ if $x < 0$ or $x > 1$.  This extended $g$ is continuous.
 
 Define
 \begin{equation*}
-c_n := {\left( \int_{-1}^1 {(1-x^2)}^n~dx \right)}^{-1} ,
+c_n := {\left( \int_{-1}^1 {(1-x^2)}^n\,dx \right)}^{-1} ,
 \qquad
 q_n(x) := c_n (1-x^2)^n .
 \end{equation*}
 The choice of $c_n$ is
-so that $\int_{-1}^1 q_n(x)~dx = 1$.
+so that $\int_{-1}^1 q_n(x)\,dx = 1$.
 See \figureref{fig:weierqn}.
 
 \begin{myfigureht}
@@ -3044,8 +3044,8 @@ is to do a \emph{\myindex{convolution}} integral with peaks like this:
 For
 for $x \in [0,1]$, let
 \begin{equation*}
-p_n(x) := \int_{0}^1 g(t)q_n(x-t) ~dt \quad \left( = \int_{-\infty}^\infty
-g(t)q_n(x-t) ~dt \right) .
+p_n(x) := \int_{0}^1 g(t)q_n(x-t) \,dt \quad \left( = \int_{-\infty}^\infty
+g(t)q_n(x-t) \,dt \right) .
 \end{equation*}
 The idea of this convolution is that we do a \myquote{weighted average} of the
 function $g$ around the point $x$ using $q_n$ as the weight.
@@ -3066,7 +3066,7 @@ and we expect the result to get closer to the value of $g(x)$.  Really we are
 approximating what is called a delta function\footnote{The delta function
 is not actually a function,
 it is a \myquote{thing} that supposed to give
-\myquote{$\int_{-\infty}^\infty g(x) \delta(x-t) ~ dt = g(x)$.}}
+\myquote{$\int_{-\infty}^\infty g(x) \delta(x-t) \, dt = g(x)$.}}
 (don't worry if you have not
 heard of this concept),
 and functions like $q_n$ are often called
@@ -3086,19 +3086,19 @@ So
 \begin{equation*}
 \begin{split}
 p_n(x) & =
-\int_{0}^1 g(t)q_n(x-t) ~dt
+\int_{0}^1 g(t)q_n(x-t) \,dt
 \\
 &=
 \left(
 \int_0^1
 g(t)
-a_0(t)~dt
+a_0(t)\,dt
 \right)
 +
 \left(
 \int_0^1
 g(t)
-a_1(t)~dt
+a_1(t)\,dt
 \right)
 \,
 x
@@ -3108,7 +3108,7 @@ x
 \left(
 \int_0^1
 g(t)
-a_{2n}(t)~dt
+a_{2n}(t)\,dt
 \right)
 \,
 x^{2n} .
@@ -3128,9 +3128,9 @@ get some handle on the size of $c_n$.
 For $x \in [0,1]$, we have that $1-x \leq 1-x^2$.  We estimate
 \begin{equation*}
 \begin{split}
-c_n^{-1}   = \int_{-1}^1 {(1-x^2)}^n ~ dx
-& = 2\int_0^1 {(1-x^2)}^n ~ dx \\
-& \geq 2\int_0^{1} {(1-x)}^n ~ dx
+c_n^{-1}   = \int_{-1}^1 {(1-x^2)}^n \, dx
+& = 2\int_0^1 {(1-x^2)}^n \, dx \\
+& \geq 2\int_0^{1} {(1-x)}^n \, dx
 = \frac{2}{n+1} .
 \end{split}
 \end{equation*}
@@ -3152,11 +3152,11 @@ is zero outside of $[0,1]$.
 So for $x \in [0,1]$,
 \begin{equation*}
 p_n(x) = 
-\int_{0}^1 g(t)q_n(x-t)  ~ dt
+\int_{0}^1 g(t)q_n(x-t) \, dt
 =
-\int_{-x}^{1-x} g(x+t)q_n(-t)  ~ dt
+\int_{-x}^{1-x} g(x+t)q_n(-t) \, dt
 =
-\int_{-1}^{1} g(x+t)q_n(t)  ~ dt .
+\int_{-1}^{1} g(x+t)q_n(t) \, dt .
 \end{equation*}
 
 Let $\epsilon > 0$ be given.
@@ -3172,37 +3172,37 @@ such that for all $n \geq N$,
 4M n{(1-\delta^2)}^n < \frac{\epsilon}{2} .
 \end{equation*}
 Note that 
-$\int_{-1}^1 q_n(t) ~ dt = 1$ and $q_n(t) \geq 0$ on $[-1,1]$.  So for $n
+$\int_{-1}^1 q_n(t) \, dt = 1$ and $q_n(t) \geq 0$ on $[-1,1]$.  So for $n
 \geq N$ and every $x \in [0,1]$,
 \begin{equation*}
 \begin{split}
 \sabs{p_n(x)-g(x)} & =
-\abs{\int_{-1}^1 g(x+t)q_n(t) ~ dt
--g(x)\int_{-1}^1 q_n(t) ~ dt} \\
+\abs{\int_{-1}^1 g(x+t)q_n(t) \, dt
+-g(x)\int_{-1}^1 q_n(t) \, dt} \\
 & =
-\abs{\int_{-1}^1 \bigl(g(x+t)-g(x)\bigr)q_n(t) ~ dt} \\
+\abs{\int_{-1}^1 \bigl(g(x+t)-g(x)\bigr)q_n(t) \, dt} \\
 & \leq
-\int_{-1}^1 \sabs{g(x+t)-g(x)} q_n(t) ~ dt \\
+\int_{-1}^1 \sabs{g(x+t)-g(x)} q_n(t) \, dt \\
 & =
-\int_{-1}^{-\delta} \sabs{g(x+t)-g(x)} q_n(t) ~ dt
+\int_{-1}^{-\delta} \sabs{g(x+t)-g(x)} q_n(t) \, dt
 \quad +
-\int_{-\delta}^{\delta} \sabs{g(x+t)-g(x)} q_n(t) ~ dt
+\int_{-\delta}^{\delta} \sabs{g(x+t)-g(x)} q_n(t) \, dt
 \\
 & \phantom{\leq} +
-\int_{\delta}^1 \sabs{g(x+t)-g(x)} q_n(t) ~ dt \\
+\int_{\delta}^1 \sabs{g(x+t)-g(x)} q_n(t) \, dt \\
 & \leq
 2M
-\int_{-1}^{-\delta} q_n(t) ~ dt
+\int_{-1}^{-\delta} q_n(t) \, dt
 \quad
 +
 \quad
 \frac{\epsilon}{2}
-\int_{-\delta}^{\delta} q_n(t) ~ dt
+\int_{-\delta}^{\delta} q_n(t) \, dt
 \quad
 +
 \quad
 2M
-\int_{\delta}^1 q_n(t) ~ dt \\
+\int_{\delta}^1 q_n(t) \, dt \\
 & \leq
 2M n{(1-\delta^2)}^n(1-\delta)
 \quad
@@ -3799,10 +3799,10 @@ coefficients of $p$ to the values of $p$
 
 \begin{exercise}
 Suppose $f \colon [0,1] \to \R$ is continuous and
-$\int_0^1 f(x) x^n ~dx = 0$ for all $n = 0,1,2,\ldots$.
+$\int_0^1 f(x) x^n \, dx = 0$ for all $n = 0,1,2,\ldots$.
 Show that $f(x) = 0$ for all $x \in [0,1]$.
 Hint: Approximate by polynomials to show that $\int_0^1 {\bigl( f(x)
-\bigr)}^2 ~ dx = 0$.
+\bigr)}^2 \, dx = 0$.
 \end{exercise}
 
 \begin{exercise}
@@ -3868,30 +3868,29 @@ satisfies the hypotheses of the complex Stone--Weierstrass theorem
 and therefore such functions are dense in the $C([-\pi,\pi],\C)$.
 \end{exercise}
 
-
 \begin{exercise} \label{exercise:selfadjointSW}
 Let $S^1 \subset \C$ be the unit circle, that is the set where
 $\sabs{z} = 1$.  Orient this set counterclockwise.
 Let $\gamma(t) := e^{it}$.
-For the one-form $f(z)~dz$ we write\footnote{%
+For the one-form $f(z)\,dz$ we write\footnote{%
 One could also define $dz := dx + i \, dy$ and then
 extend the path integral from \chapterref{path:chapter} to complex-valued
 one-forms.}
 \begin{equation*}
-\int_{S^1} f(z) ~dz := \int_0^{2\pi} f(e^{it}) \, i e^{it} ~ dt . 
+\int_{S^1} f(z) \,dz := \int_0^{2\pi} f(e^{it}) \, i e^{it} \, dt . 
 \end{equation*}
 \begin{enumerate}[a)]
 \item
 Prove that for all nonnegative integers $k = 0,1,2,3,\ldots$, we have
-$\int_{S^1} z^k ~ dz = 0$.
+$\int_{S^1} z^k \, dz = 0$.
 \item
 Prove that if
 $P(z) = \sum_{k=0}^n c_k z^k$ is a
 polynomial in $z$, then
-$\int_{S^1} P(z) ~ dz = 0$.
+$\int_{S^1} P(z) \, dz = 0$.
 \item
 Prove
-$\int_{S^1} \bar{z} ~ dz \not= 0$.
+$\int_{S^1} \bar{z} \, dz \not= 0$.
 \item
 Conclude that polynomials in $z$ (this algebra of functions is
 not self-adjoint) are not dense in $C(S^1,\C)$.
@@ -4017,7 +4016,7 @@ same, so let us stick with the period of $2\pi$.
 The antiderivative of $e^{inx}$ is $\frac{e^{inx}}{in}$ and
 so
 \begin{equation*}
-\int_{-\pi}^\pi e^{inx} ~ dx =
+\int_{-\pi}^\pi e^{inx} \, dx =
 \begin{cases}
 2\pi & \text{if } n=0, \\
 0    & \text{otherwise.}
@@ -4030,17 +4029,17 @@ f(x) := \sum_{n=-N}^N c_n e^{inx} ,
 and for $m=-N,\ldots,N$ compute
 \begin{equation*}
 \frac{1}{2\pi} \int_{-\pi}^\pi
-f(x) e^{-imx} ~ dx
+f(x) e^{-imx} \, dx
 =
 \frac{1}{2\pi} \int_{-\pi}^\pi
-\left(\sum_{n=-N}^N c_n e^{i(n-m)x}\right) ~ dx
+\left(\sum_{n=-N}^N c_n e^{i(n-m)x}\right) \, dx
 =
 \sum_{n=-N}^N
 c_n
 \frac{1}{2\pi}
 \int_{-\pi}^\pi
 e^{i(n-m)x}
- ~ dx
+ \, dx
 =
 c_m .
 \end{equation*}
@@ -4062,15 +4061,15 @@ If $f(x)$ is real-valued, that is $\overline{f(x)} = f(x)$, then
 =
 \overline{
 \frac{1}{2\pi} \int_{-\pi}^\pi
-f(x) e^{-imx} ~ dx
+f(x) e^{-imx} \, dx
 }
 =
 \frac{1}{2\pi} \int_{-\pi}^\pi
 \overline{
-f(x) e^{-imx} } ~ dx
+f(x) e^{-imx} } \, dx
 =
 \frac{1}{2\pi} \int_{-\pi}^\pi
-f(x) e^{imx} ~ dx
+f(x) e^{imx} \, dx
 = c_{-m} .
 \end{equation*}
 The complex conjugate goes inside the integral because the integral is
@@ -4139,7 +4138,7 @@ Conversely, we start with an integrable function $f \colon [-\pi,\pi] \to
 \begin{equation*}
 c_n := 
 \frac{1}{2\pi} \int_{-\pi}^\pi
-f(x) e^{-inx} ~ dx
+f(x) e^{-inx} \, dx
 \end{equation*}
 its \emph{Fourier coefficients}.  Often these numbers are
 written as $\hat{f}(n)$.\footnote{The notation seems similar
@@ -4236,7 +4235,7 @@ Riemann integrable functions on $[a,b]$ and define the inner product
 \glsadd{not:L2innprod}
 \begin{equation*}
 \langle f , g \rangle :=
-\int_a^b f(x) \overline{g(x)} ~ dx .
+\int_a^b f(x) \overline{g(x)} \, dx .
 \end{equation*}
 If you have seen Hermitian inner products in linear algebra, this
 is precisely such a product.  We have to put in the conjugate as we are
@@ -4246,7 +4245,7 @@ $L^2$ norm $\snorm{f}_2$ by (defining the square)
 \begin{equation*}
 \snorm{f}_2^2 :=
 \langle f , f \rangle =
-\int_a^b \sabs{f(x)}^2 ~ dx .
+\int_a^b \sabs{f(x)}^2 \, dx .
 \end{equation*}
 
 \begin{remark}
@@ -4277,7 +4276,7 @@ functions on $[a,b]$.  We say that this is an
 \begin{equation*}
 \langle \varphi_n , \varphi_m \rangle
 =
-\int_a^b \varphi_n(x) \, \overline{\varphi_m(x)} ~ dx
+\int_a^b \varphi_n(x) \, \overline{\varphi_m(x)} \, dx
 = 
 \begin{cases}
 1 & \text{if } n=m, \\
@@ -4303,7 +4302,7 @@ a Fourier series relative to $\{ \varphi_n \}$.  We let
 c_n :=
 \langle f , \varphi_n \rangle
 =
-\int_a^b f(x) \overline{\varphi_n(x)} ~ dx ,
+\int_a^b f(x) \overline{\varphi_n(x)} \, dx ,
 \end{equation*}
 and write
 \begin{equation*}
@@ -4333,8 +4332,8 @@ p_n (x) := \sum_{k=1}^n d_k \varphi_k(x)
 \end{equation*}
 for some other sequence $\{ d_k \}$, then
 \begin{equation*}
-\int_a^b \sabs{f(x)-s_n(x)}^2 ~ dx = \snorm{f-s_n}_2^2 \leq
-\snorm{f-p_n}_2^2 = \int_a^b \sabs{f(x)-p_n(x)}^2 ~ dx
+\int_a^b \sabs{f(x)-s_n(x)}^2 \, dx = \snorm{f-s_n}_2^2 \leq
+\snorm{f-p_n}_2^2 = \int_a^b \sabs{f(x)-p_n(x)}^2 \, dx
 \end{equation*}
 with equality only if $d_k = c_k$ for all $k=1,2,\ldots,n$.
 \end{thm}
@@ -4473,7 +4472,7 @@ then everything works and we obtain that the system $\{ e^{inx} \}$
 is orthonormal with respect to the inner product
 \begin{equation*}
 \langle f , g \rangle =
-\frac{1}{2\pi} \int_{-\pi}^\pi f(x) \, \overline{g(x)} ~ dx .
+\frac{1}{2\pi} \int_{-\pi}^\pi f(x) \, \overline{g(x)} \, dx .
 \end{equation*}
 
 Suppose $f \colon \R \to \C$ is $2\pi$-periodic and integrable
@@ -4482,7 +4481,7 @@ Let
 \begin{equation*}
 c_n := 
 \frac{1}{2\pi} \int_{-\pi}^\pi
-f(x) e^{-inx} ~ dx .
+f(x) e^{-inx} \, dx .
 \end{equation*}
 Write
 \begin{equation*}
@@ -4498,12 +4497,12 @@ s_N(f;x) :=
 The inequality leading up to Bessel now reads:
 \begin{equation*}
 \frac{1}{2\pi} \int_{-\pi}^\pi
-\sabs{s_N(f;x)}^2 ~ dx =
+\sabs{s_N(f;x)}^2 \, dx =
 \sum_{n=-N}^N \sabs{c_n}^2
 \leq
 \frac{1}{2\pi} \int_{-\pi}^\pi
 \sabs{f(x)}^2
-~ dx .
+\, dx .
 \end{equation*}
 
 The \emph{\myindex{Dirichlet kernel}} is the sum
@@ -4535,21 +4534,21 @@ The claim follows.
 We expand the definition of $s_N$
 \begin{multline*}
 s_N(f;x) = 
-\sum_{n=-N}^N \frac{1}{2\pi} \int_{-\pi}^\pi f(t) e^{-int}  ~  dt ~ e^{inx}
+\sum_{n=-N}^N \frac{1}{2\pi} \int_{-\pi}^\pi f(t) e^{-int}  \,  dt ~ e^{inx}
 \\
 =
-\frac{1}{2\pi} \int_{-\pi}^\pi f(t) \sum_{n=-N}^N e^{in(x-t)} ~ dt
+\frac{1}{2\pi} \int_{-\pi}^\pi f(t) \sum_{n=-N}^N e^{in(x-t)} \, dt
 =
-\frac{1}{2\pi} \int_{-\pi}^\pi f(t) D_N(x-t) ~ dt .
+\frac{1}{2\pi} \int_{-\pi}^\pi f(t) D_N(x-t) \, dt .
 \end{multline*}
 If you replace $x-t$ with $t-x$ ($D_N$ is even), we see that
 convolution strikes again!
 As $D_N$ and $f$ are $2\pi$-periodic, we may also change variables and write 
 \begin{equation*}
 s_N(f;x) = 
-\frac{1}{2\pi} \int_{x-\pi}^{x+\pi} f(x-t) D_N(t) ~ dt
+\frac{1}{2\pi} \int_{x-\pi}^{x+\pi} f(x-t) D_N(t) \, dt
 =
-\frac{1}{2\pi} \int_{-\pi}^\pi f(x-t) D_N(t) ~ dt .
+\frac{1}{2\pi} \int_{-\pi}^\pi f(x-t) D_N(t) \, dt .
 \end{equation*}
 See \figureref{fig:approxdeltas} for a plot of $D_N$ for $N=5$ and $N=20$.
 
@@ -4576,7 +4575,7 @@ people write
 \end{equation*}
 where $\delta$ is the \myquote{delta function} (not really a function),
 which is an object that will give something like
-\myquote{$\int_{-\pi}^{\pi} f(x-t) \delta(t) ~ dt = f(x)$.}
+\myquote{$\int_{-\pi}^{\pi} f(x-t) \delta(t) \, dt = f(x)$.}
 We can think of $D_N(x)$ converging in some sense to $2 \pi\, \delta(x)$.
 However, we have not defined (and will not define) what kind of an object the delta function
 is, nor what does it mean for it to be a limit of $D_N$ or have a Fourier series.
@@ -4633,17 +4632,17 @@ Write
 \begin{equation*}
 \begin{split}
 s_N(f;x)-f(x) & =
-\frac{1}{2\pi} \int_{-\pi}^\pi f(x-t) D_N(t) ~ dt 
+\frac{1}{2\pi} \int_{-\pi}^\pi f(x-t) D_N(t) \, dt 
 -
 f(x)
-\frac{1}{2\pi} \int_{-\pi}^\pi D_N(t) ~ dt
+\frac{1}{2\pi} \int_{-\pi}^\pi D_N(t) \, dt
 \\
 & = 
-\frac{1}{2\pi} \int_{-\pi}^\pi \bigl( f(x-t) - f(x) \bigr) D_N(t) ~ dt 
+\frac{1}{2\pi} \int_{-\pi}^\pi \bigl( f(x-t) - f(x) \bigr) D_N(t) \, dt 
 \\
 & = 
 \frac{1}{2\pi} \int_{-\pi}^\pi \frac{f(x-t) - f(x)}{\sin(\nicefrac{t}{2})} \sin\bigl(
-(N+\nicefrac{1}{2})t \bigr) ~ dt .
+(N+\nicefrac{1}{2})t \bigr) \, dt .
 \end{split}
 \end{equation*}
 By the hypotheses,
@@ -4653,7 +4652,8 @@ for small nonzero $t$ we get
 \leq
 \frac{M\sabs{t}}{\sabs{\sin(\nicefrac{t}{2})}} .
 \end{equation*}
-As $\sin(t) = t + h(t)$ where $\frac{h(t)}{t} \to 0$ as $t \to 0$,
+As $\sin(\theta) = \theta + h(\theta)$ where $\frac{h(\theta)}{\theta} \to
+0$ as $\theta \to 0$,
 we notice that
 $\frac{M\sabs{t}}{\sabs{\sin(\nicefrac{t}{2})}}$ is continuous at the origin
 and hence 
@@ -4670,14 +4670,14 @@ also Riemann integrable.  We use a trigonometric identity
 so
 \begin{multline*}
 \frac{1}{2\pi} \int_{-\pi}^\pi \frac{f(x-t) - f(x)}{\sin(\nicefrac{t}{2})} \sin\bigl(
-(N+\nicefrac{1}{2})t \bigr) ~ dt 
+(N+\nicefrac{1}{2})t \bigr) \, dt 
 = \\
 \frac{1}{2\pi} \int_{-\pi}^\pi
 \left( \frac{f(x-t) - f(x)}{\sin(\nicefrac{t}{2})}
-\cos (\nicefrac{t}{2}) \right) \sin (Nt) ~ dt
+\cos (\nicefrac{t}{2}) \right) \sin (Nt) \, dt
 +
 \frac{1}{2\pi} \int_{-\pi}^\pi \bigl( f(x-t) - f(x) \bigr)
-\cos (Nt) ~ dt .
+\cos (Nt) \, dt .
 \end{multline*}
 Now 
 $\frac{f(x-t) - f(x)}{\sin(\nicefrac{t}{2})} \cos (\nicefrac{t}{2})$
@@ -4750,7 +4750,7 @@ Then
 \lim_{N\to\infty}
 \frac{1}{2\pi}
 \int_{-\pi}^\pi
-\sabs{f(x)-s_N(f;x)}^2 ~ dx
+\sabs{f(x)-s_N(f;x)}^2 \, dx
 =0 .
 \end{equation*}
 Also
@@ -4758,7 +4758,7 @@ Also
 \langle f , g \rangle =
 \frac{1}{2\pi}
 \int_{-\pi}^\pi
-f(x) \overline{g(x)}~ dx
+f(x) \overline{g(x)}\, dx
 =
 \sum_{n=-\infty}^\infty c_n \overline{d_n} ,
 \end{equation*}
@@ -4768,7 +4768,7 @@ and
 =
 \frac{1}{2\pi}
 \int_{-\pi}^\pi
-\sabs{f(x)}^2 ~ dx
+\sabs{f(x)}^2 \, dx
 =
 \sum_{n=-\infty}^\infty \sabs{c_n}^2.
 \end{equation*}
@@ -4794,7 +4794,7 @@ Hence
 \frac{1}{2\pi}
 \int_{-\pi}^{\pi}
 \sabs{h(x)-P(x)}^2
-~
+\,
 dx
 }
 \leq \epsilon.
@@ -4832,14 +4832,14 @@ Next,
 =
 \frac{1}{2\pi}
 \int_{-\pi}^\pi
-s_N(f;x) \overline{g(x)} ~ dx
+s_N(f;x) \overline{g(x)} \, dx
 =
 \sum_{k=-N}^N
 c_k 
 \frac{1}{2\pi}
 \int_{-\pi}^\pi
 e^{ikx}
-\overline{g(x)} ~ dx
+\overline{g(x)} \, dx
 =
 \sum_{k=-N}^N
 c_k 

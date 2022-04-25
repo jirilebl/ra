@@ -113,9 +113,9 @@ upper sums are bounded sets.
 \begin{defn}
 As the sets of lower and upper Darboux sums are bounded, we define
 \begin{align*}
-& \underline{\int_a^b} f(x)~dx :=
+& \underline{\int_a^b} f(x)\,dx :=
 \sup \, \bigl\{ L(P,f) : P \text{ a partition of } [a,b] \bigr\} , \\
-& \overline{\int_a^b} f(x)~dx :=
+& \overline{\int_a^b} f(x)\,dx :=
 \inf \, \bigl\{ U(P,f) : P \text{ a partition of } [a,b] \bigr\} .
 \end{align*}
 We call $\underline{\int}$\glsadd{not:lowerdarboux}
@@ -126,10 +126,10 @@ To avoid worrying about the variable of integration,
 we often simply write
 \begin{equation*}
 \underline{\int_a^b} f :=
-\underline{\int_a^b} f(x)~dx 
+\underline{\int_a^b} f(x)\,dx 
 \qquad \text{and} \qquad
 \overline{\int_a^b} f :=
-\overline{\int_a^b} f(x)~dx  .
+\overline{\int_a^b} f(x)\,dx  .
 \end{equation*}
 \end{defn}
 
@@ -316,19 +316,19 @@ Riemann integrable functions.
 \begin{defn}
 Let $f \colon [a,b] \to \R$ be a bounded function such that
 \begin{equation*}
-\underline{\int_a^b} f(x)~dx = \overline{\int_a^b} f(x)~dx .
+\underline{\int_a^b} f(x)\,dx = \overline{\int_a^b} f(x)\,dx .
 \end{equation*}
 Then $f$ is said to be \emph{\myindex{Riemann integrable}}.
 The set of Riemann integrable functions on $[a,b]$ is denoted
 by $\sR[a,b]$.\glsadd{not:integrablefunc}
 When $f \in \sR[a,b]$, we define\glsadd{not:riemannint}
 \begin{equation*}
-\int_a^b f(x)~dx := 
-\underline{\int_a^b} f(x)~dx = \overline{\int_a^b} f(x)~dx .
+\int_a^b f(x)\,dx := 
+\underline{\int_a^b} f(x)\,dx = \overline{\int_a^b} f(x)\,dx .
 \end{equation*}
 As before, we often write
 \begin{equation*}
-\int_a^b f := \int_a^b f(x)~dx.
+\int_a^b f := \int_a^b f(x)\,dx.
 \end{equation*}
 The number $\int_a^b f$ is called the \emph{\myindex{Riemann integral}}
 of $f$, or sometimes simply the \emph{integral} of $f$.
@@ -503,7 +503,7 @@ function is integrable.
 
 \begin{remark}
 A way of thinking of the integral is that it adds up (integrates) lots of
-local information---it sums $f(x)~dx$ over all $x$.
+local information---it sums $f(x)\,dx$ over all $x$.
 The integral sign was chosen by Leibniz to be the long S to mean summation.
 Unlike derivatives, which are \myquote{local,} 
 integrals show up in applications when
@@ -538,7 +538,7 @@ At times, the variable $x$ may already have some other meaning.  When
 we need to write down the variable of integration, we may simply
 use a different letter.  For example,
 \begin{equation*}
-\int_a^b f(s)~ds := \int_a^b f(x)~dx .
+\int_a^b f(s)\,ds := \int_a^b f(x)\,dx .
 \end{equation*}
 
 \subsection{Exercises}
@@ -891,14 +891,14 @@ Let $f$ and $g$ be in $\sR[a,b]$ and $\alpha \in \R$.
 \begin{enumerate}[(i)]
 \item $\alpha f$ is in $\sR[a,b]$ and
 \begin{equation*}
-\int_a^b \alpha f(x) ~dx = \alpha \int_a^b f(x) ~dx .
+\int_a^b \alpha f(x) \,dx = \alpha \int_a^b f(x) \,dx .
 \end{equation*}
 \item $f+g$ is in $\sR[a,b]$ and
 \begin{equation*}
-\int_a^b \bigl( f(x)+g(x) \bigr) ~dx = 
-\int_a^b f(x) ~dx 
+\int_a^b \bigl( f(x)+g(x) \bigr) \,dx = 
+\int_a^b f(x) \,dx 
 +
-\int_a^b g(x) ~dx .
+\int_a^b g(x) \,dx .
 \end{equation*}
 \end{enumerate}
 \end{prop}
@@ -929,7 +929,7 @@ Again, as $\alpha \geq 0$ we
 may move multiplication by $\alpha$ past the supremum.  Hence,
 \begin{equation*}
 \begin{split}
-\underline{\int_a^b} \alpha f(x)~dx & =
+\underline{\int_a^b} \alpha f(x)\,dx & =
 \sup \, \bigl\{ L(P,\alpha f) : P \text{ a partition of } [a,b] \bigr\}
 \\
 & =
@@ -941,23 +941,23 @@ may move multiplication by $\alpha$ past the supremum.  Hence,
 \\
 & =
 \alpha
-\underline{\int_a^b} f(x)~dx .
+\underline{\int_a^b} f(x)\,dx .
 \end{split}
 \end{equation*}
 Similarly, we show 
 \begin{equation*}
-\overline{\int_a^b} \alpha f(x)~dx
+\overline{\int_a^b} \alpha f(x)\,dx
 =
 \alpha
-\overline{\int_a^b} f(x)~dx .
+\overline{\int_a^b} f(x)\,dx .
 \end{equation*}
 The conclusion now follows for $\alpha \geq 0$.
 
 To finish the proof of the first item, we need to show 
 that $-f$ is Riemann integrable and
-$\int_a^b - f(x)~dx =
+$\int_a^b - f(x)\,dx =
 -
-\int_a^b f(x)~dx$.  The proof of this fact is left as
+\int_a^b f(x)\,dx$.  The proof of this fact is left as
 \exerciseref{exercise:proofoflinpropparti}.
 
 The proof of the second item is left as
@@ -977,16 +977,16 @@ suprema and similarly for infima.
 Let $f \colon [a,b] \to \R$ and $g \colon [a,b] \to \R$ be bounded
 functions.  Then
 \begin{equation*}
-%\overline{\int_a^b} \bigl(f(x)+g(x)\bigr)~dx \leq
-%\overline{\int_a^b}f(x)~dx+\overline{\int_a^b}g(x)~dx
+%\overline{\int_a^b} \bigl(f(x)+g(x)\bigr)\,dx \leq
+%\overline{\int_a^b}f(x)\,dx+\overline{\int_a^b}g(x)\,dx
 \overline{\int_a^b} (f+g) \leq \overline{\int_a^b}f+\overline{\int_a^b}g
 ,
 \qquad
 \text{and}
 \qquad
 \underline{\int_a^b} (f+g) \geq \underline{\int_a^b}f+\underline{\int_a^b}g
-%\underline{\int_a^b} \bigl(f(x)+g(x)\bigr)~dx \geq
-%\underline{\int_a^b}f(x)~dx+\underline{\int_a^b}g(x)~dx
+%\underline{\int_a^b} \bigl(f(x)+g(x)\bigr)\,dx \geq
+%\underline{\int_a^b}f(x)\,dx+\underline{\int_a^b}g(x)\,dx
 .
 \end{equation*}
 \end{prop}
@@ -1298,7 +1298,7 @@ Finish the proof of the first part of \propref{prop:integrallinear}.
 Let $f$ be in $\sR[a,b]$.  Prove that
 $-f$ is in $\sR[a,b]$ and 
 \begin{equation*}
-\int_a^b - f(x) ~dx = - \int_a^b f(x) ~dx .
+\int_a^b - f(x) \,dx = - \int_a^b f(x) \,dx .
 \end{equation*}
 \end{exercise}
 
@@ -1307,10 +1307,10 @@ Prove the second part of \propref{prop:integrallinear}.
 Let $f$ and $g$ be in $\sR[a,b]$.
 Prove, without using \propref{prop:upperlowerlinineq}, that $f+g$ is in $\sR[a,b]$ and
 \begin{equation*}
-\int_a^b \bigl( f(x)+g(x) \bigr) ~dx = 
-\int_a^b f(x) ~dx 
+\int_a^b \bigl( f(x)+g(x) \bigr) \,dx = 
+\int_a^b f(x) \,dx 
 +
-\int_a^b g(x) ~dx .
+\int_a^b g(x) \,dx .
 \end{equation*}
 Hint: One way to do it is to use \propref{prop:refinement} to find a single partition $P$
 such that $U(P,f)-L(P,f) < \nicefrac{\epsilon}{2}$ and
@@ -1372,7 +1372,7 @@ has finitely many discontinuities.
 Show that as a function of $x$ the expression $\abs{f(x)}$ is bounded with finitely many
 discontinuities and is thus Riemann integrable.  Then show 
 \begin{equation*}
-\abs{\int_a^b f(x)~dx} \leq \int_a^b \abs{f(x)}~dx .
+\abs{\int_a^b f(x)\,dx} \leq \int_a^b \abs{f(x)}\,dx .
 \end{equation*}
 \end{exercise}
 
@@ -1481,7 +1481,7 @@ integrable.
 Suppose $f \colon [a,b] \to \R$ is continuous and $g \colon \R \to \R$ is
 Lipschitz continuous.  Define
 \begin{equation*}
-h(x) := \int_a^b g(t-x) f(t) ~ dt .
+h(x) := \int_a^b g(t-x) f(t) \, dt .
 \end{equation*}
 Prove that $h$ is Lipschitz continuous.
 \end{exercise}
@@ -1579,12 +1579,12 @@ then we can find an explicit expression for $\int_a^b f$.
 \begin{example}
 To compute
 \begin{equation*}
-\int_0^1 x^2 ~dx ,
+\int_0^1 x^2 \,dx ,
 \end{equation*}
 we notice $x^2$ is the derivative of $\frac{x^3}{3}$.
 The fundamental theorem says
 \begin{equation*}
-\int_0^1 x^2 ~dx =
+\int_0^1 x^2 \,dx =
 \frac{1^3}{3}
 -
 \frac{0^3}{3}
@@ -1694,12 +1694,12 @@ in closed-form are not really such.  We define
 the natural logarithm as the antiderivative of $\nicefrac{1}{x}$
 such that $\ln 1 = 0$:
 \begin{equation*}
-\ln x := \int_1^x \frac{1}{s}~ds .
+\ln x := \int_1^x \frac{1}{s}\,ds .
 \end{equation*}
 How does a computer find the value of $\ln x$?
 One way to do it is to numerically approximate this integral.
 Morally,
-we did not really \myquote{simplify} $\int_1^x \nicefrac{1}{s}~ds$ by
+we did not really \myquote{simplify} $\int_1^x \frac{1}{s}\,ds$ by
 writing down $\ln x$.  We simply gave the integral a name.
 If we require numerical answers,
 it is possible we end up doing
@@ -1711,7 +1711,7 @@ Another common function defined by an integral that cannot
 be evaluated symbolically in terms of elementary functions
 is the $\operatorname{erf}$ function, defined as
 \begin{equation*}
-\operatorname{erf}(x) := \frac{2}{\sqrt{\pi}} \int_0^x e^{-s^2} ~ds .
+\operatorname{erf}(x) := \frac{2}{\sqrt{\pi}} \int_0^x e^{-s^2} \,ds .
 \end{equation*}
 This function comes up often in applied mathematics.  It is simply 
 the antiderivative of $\left(\nicefrac{2}{\sqrt{\pi}}\right) e^{-x^2}$
@@ -1734,8 +1734,8 @@ Let $g \colon [a,b] \to \R$ be a continuously differentiable function,
 let $f \colon [c,d] \to \R$ be continuous, and suppose
 $g\bigl([a,b]\bigr) \subset [c,d]$.  Then
 \begin{equation*}
-\int_a^b f\bigl(g(x)\bigr)\, g'(x)~ dx =
-\int_{g(a)}^{g(b)} f(s)~ ds .
+\int_a^b f\bigl(g(x)\bigr)\, g'(x)\, dx =
+\int_{g(a)}^{g(b)} f(s)\, ds .
 \end{equation*}
 \end{thm}
 
@@ -1746,7 +1746,7 @@ Similarly, $f$ is integrable on every subinterval of $[c,d]$.
 
 Define $F \colon [c,d] \to \R$ by
 \begin{equation*}
-F(y) := \int_{g(a)}^{y} f(s)~ds .
+F(y) := \int_{g(a)}^{y} f(s)\,ds .
 \end{equation*}
 By the second form of the fundamental
 theorem of calculus
@@ -1764,15 +1764,15 @@ use the first form of the fundamental theorem
 to obtain
 \begin{multline*}
 \qquad %to center things more
-\int_{g(a)}^{g(b)} f(s)~ds = F\bigl(g(b)\bigr) = F\bigl(g(b)\bigr)-F\bigl(g(a)\bigr)
+\int_{g(a)}^{g(b)} f(s)\,ds = F\bigl(g(b)\bigr) = F\bigl(g(b)\bigr)-F\bigl(g(a)\bigr)
 \\
 =
 \int_a^b 
-\bigl( F \circ g \bigr)' (x) ~dx
+\bigl( F \circ g \bigr)' (x) \,dx
 =
 \int_a^b 
 f\bigl(g(x)\bigr) g'(x)
-~dx .
+\,dx .
 \qquad %to center things more
 \qedhere
 \end{multline*}
@@ -1786,10 +1786,10 @@ calculus.
 The derivative of $\sin(x)$ is $\cos(x)$.
 Using $g(x):=x^2$, we solve
 \begin{equation*}
-\int_0^{\sqrt{\pi}} x \cos(x^2) ~ dx = \int_0^\pi \frac{\cos(s)}{2} ~ ds
+\int_0^{\sqrt{\pi}} x \cos(x^2) \, dx = \int_0^\pi \frac{\cos(s)}{2} \, ds
 =
 \frac{1}{2}
-\int_0^\pi \cos(s) ~ ds
+\int_0^\pi \cos(s) \, ds
 =
 \frac{
 \sin(\pi) - \sin(0)
@@ -1807,13 +1807,13 @@ We must be careful that those symbols really make sense.
 \begin{example}
 Consider
 \begin{equation*}
-\int_{-1}^{1} \frac{\ln \abs{x}}{x} ~dx .
+\int_{-1}^{1} \frac{\ln \abs{x}}{x} \,dx .
 \end{equation*}
 It may be tempting to take $g(x) := \ln \abs{x}$.  Compute $g'(x) =
 \nicefrac{1}{x}$ and try to write
 \begin{equation*}
-\int_{g(-1)}^{g(1)} s ~ds = 
-\int_{0}^{0} s ~ds = 0. 
+\int_{g(-1)}^{g(1)} s \,ds = 
+\int_{0}^{0} s \,ds = 0. 
 \end{equation*}
 This \myquote{solution} is incorrect, and it does not say
 that we can solve the given integral.  First problem is that
@@ -1832,13 +1832,13 @@ on $[-1,1]$, let alone continuously differentiable.
 \begin{exercise}
 Compute
 $\displaystyle
-\frac{d}{dx} \biggl( \int_{-x}^x e^{s^2}~ds \biggr)$.
+\frac{d}{dx} \biggl( \int_{-x}^x e^{s^2}\,ds \biggr)$.
 \end{exercise}
 
 \begin{exercise}
 Compute
 $\displaystyle
-\frac{d}{dx} \biggl( \int_{0}^{x^2} \sin(s^2)~ds \biggr)$.
+\frac{d}{dx} \biggl( \int_{0}^{x^2} \sin(s^2)\,ds \biggr)$.
 \end{exercise}
 
 \begin{exercise}
@@ -1863,11 +1863,11 @@ Prove that $F$ is differentiable and that $F'(x) = f(x)$ for all $x \in
 Prove \emph{\myindex{integration by parts}}.  That is, suppose $F$ and
 $G$ are continuously differentiable functions on $[a,b]$.  Then prove
 \begin{equation*}
-\int_a^b F(x)G'(x)~dx
+\int_a^b F(x)G'(x)\,dx
 =
 F(b)G(b)-F(a)G(a)
 -
-\int_a^b F'(x)G(x)~dx .
+\int_a^b F'(x)G(x)\,dx .
 \end{equation*}
 \end{exercise}
 
@@ -1940,7 +1940,7 @@ If $f$ is even, then $\int_{-a}^a f = 2 \int_0^a f$.
 Show that $f(x) := \sin(\nicefrac{1}{x})$
 is integrable on every interval (you can define $f(0)$ to be anything).
 \item
-Compute $\int_{-1}^1 \sin(\nicefrac{1}{x})~dx$ (mind the
+Compute $\int_{-1}^1 \sin(\nicefrac{1}{x})\,dx$ (mind the
 discontinuity).
 \end{enumerate}
 \end{exercise}
@@ -2033,7 +2033,7 @@ $L(x^q) = q L(x)$.
 To prove existence, we define a candidate and show it satisfies
 all the properties.  Let
 \begin{equation*}
-L(x) := \int_1^x \frac{1}{t}~dt .
+L(x) := \int_1^x \frac{1}{t}\,dt .
 \end{equation*}
 
 Obviously, \ref{it:log:i} holds.  Property \ref{it:log:ii} holds
@@ -2044,13 +2044,13 @@ To prove property \ref{it:log:iv},
 we change variables $u=yt$ to obtain
 \begin{equation*}
 L(x) =
-\int_1^{x} \frac{1}{t}~dt
+\int_1^{x} \frac{1}{t}\,dt
 =
-\int_y^{xy} \frac{1}{u}~du
+\int_y^{xy} \frac{1}{u}\,du
 =
-\int_1^{xy} \frac{1}{u}~du
+\int_1^{xy} \frac{1}{u}\,du
 -
-\int_1^{y} \frac{1}{u}~du
+\int_1^{y} \frac{1}{u}\,du
 =
 L(xy)-L(y) .
 \end{equation*}
@@ -2062,7 +2062,7 @@ is strictly increasing and hence one-to-one.
 Let us show $L$ is onto.  
 As $\nicefrac{1}{t} \geq \nicefrac{1}{2}$ when $t \in [1,2]$,
 \begin{equation*}
-L(2) = \int_1^2 \frac{1}{t} ~dt \geq \nicefrac{1}{2} .
+L(2) = \int_1^2 \frac{1}{t} \,dt \geq \nicefrac{1}{2} .
 \end{equation*}
 By induction, \ref{it:log:iv} implies that for $n \in \N$
 \begin{equation*}
@@ -2110,7 +2110,7 @@ Uniqueness follows using properties \ref{it:log:i} and
 \ref{it:log:ii}.  Via the first form of the
 fundamental theorem of calculus (\thmref{thm:FTCv1}),
 \begin{equation*}
-L(x) = \int_1^x \frac{1}{t}~dt
+L(x) = \int_1^x \frac{1}{t}\,dt
 \end{equation*}
 is the unique function such that $L(1) = 0$ and $L'(x) = \nicefrac{1}{x}$.
 \end{proof}
@@ -2525,13 +2525,13 @@ so useful that we state it as a proposition.
 \label{impropriemann:ptest}
 The improper integral
 \begin{equation*}
-\int_1^\infty \frac{1}{x^p} ~dx
+\int_1^\infty \frac{1}{x^p} \,dx
 \end{equation*}
 converges to $\frac{1}{p-1}$ if $p > 1$ and diverges if $0 < p \leq 1$.
 
 The improper integral
 \begin{equation*}
-\int_0^1 \frac{1}{x^p} ~dx
+\int_0^1 \frac{1}{x^p} \,dx
 \end{equation*}
 converges to $\frac{1}{1-p}$ if $0 < p < 1$ and diverges if $p \geq 1$.
 \end{prop}
@@ -2546,9 +2546,9 @@ separately.
 Suppose $p > 1$.  Then
 using the fundamental theorem,
 \begin{equation*}
-\int_1^b \frac{1}{x^p} ~dx
+\int_1^b \frac{1}{x^p} \,dx
 =
-\int_1^b x^{-p} ~dx
+\int_1^b x^{-p} \,dx
 =
 \frac{b^{-p+1}}{-p+1}
 -
@@ -2753,7 +2753,7 @@ The second item is simply a contrapositive of the first item.
 \begin{example}
 The improper integral
 \begin{equation*}
-\int_0^\infty \frac{\sin(x^2)(x+2)}{x^3+1} ~dx
+\int_0^\infty \frac{\sin(x^2)(x+2)}{x^3+1} \,dx
 \end{equation*}
 converges.
 
@@ -2769,11 +2769,11 @@ For $x \geq 1$ we obtain
 \end{equation*}
 Then
 \begin{equation*}
-\int_1^\infty \frac{3}{x^2}~dx
+\int_1^\infty \frac{3}{x^2}\,dx
 =
-3 \int_1^\infty \frac{1}{x^2}~dx
+3 \int_1^\infty \frac{1}{x^2}\,dx
 %=
-%\lim_{c\to\infty} \int_1^c \frac{3}{x^2} ~dx
+%\lim_{c\to\infty} \int_1^c \frac{3}{x^2} \,dx
 =
 3 .
 \end{equation*}
@@ -2786,7 +2786,7 @@ You should be careful when doing formal manipulations with improper
 integrals.
 The integral
 \begin{equation*}
-\int_2^\infty \frac{2}{x^2-1}~dx
+\int_2^\infty \frac{2}{x^2-1}\,dx
 \end{equation*}
 converges via the comparison test using $\nicefrac{1}{x^2}$ again.  However, if you
 succumb to the temptation to write
@@ -2801,21 +2801,21 @@ It is \emph{not} true that you can split the improper
 integral in two; you cannot split the limit.
 \begin{equation*}
 \begin{split}
-\int_2^\infty \frac{2}{x^2-1} ~dx &=
-\lim_{b\to \infty} \int_2^b \frac{2}{x^2-1} ~dx
+\int_2^\infty \frac{2}{x^2-1} \,dx &=
+\lim_{b\to \infty} \int_2^b \frac{2}{x^2-1} \,dx
 \\
 &=
 \lim_{b\to \infty}
 \left(
-\int_2^b \frac{1}{x-1}~dx
+\int_2^b \frac{1}{x-1}\,dx
 -
-\int_2^b \frac{1}{x+1}~dx
+\int_2^b \frac{1}{x+1}\,dx
 \right)
 \\
 &\not=
-\int_2^\infty \frac{1}{x-1}~dx
+\int_2^\infty \frac{1}{x-1}\,dx
 -
-\int_2^\infty \frac{1}{x+1}~dx .
+\int_2^\infty \frac{1}{x+1}\,dx .
 \end{split}
 \end{equation*}
 The last line in the computation does not even make sense.  Both of the
@@ -2856,10 +2856,10 @@ we compute first.
 \begin{example}
 Let us see an example:
 \begin{equation*}
-\int_{-\infty}^\infty \frac{1}{1+x^2} ~ dx
+\int_{-\infty}^\infty \frac{1}{1+x^2} \, dx
 =
 \lim_{a \to -\infty} \, \lim_{b \to \infty} \,
-\int_{a}^b \frac{1}{1+x^2} ~ dx
+\int_{a}^b \frac{1}{1+x^2} \, dx
 =
 \lim_{a \to -\infty} \, \lim_{b \to \infty}
 \bigl( \arctan(b) - \arctan(a) \bigr)
@@ -2898,7 +2898,7 @@ expressions converges, then the improper integral converges and
 \end{prop}
 
 \begin{proof}
-Without loss of generality assume $a < 0$ and $b > 0$.  Suppose
+Without loss of generality, assume $a < 0$ and $b > 0$.  Suppose
 the first expression converges.  Then
 \begin{equation*}
 \begin{split}
@@ -3036,9 +3036,9 @@ It is not difficult to show that
 the sinc function is continuous at zero, but that is
 not important right now.  What is important is that
 \begin{equation*}
-\int_{-\infty}^\infty \operatorname{sinc}(x) ~dx = \pi ,
+\int_{-\infty}^\infty \operatorname{sinc}(x) \,dx = \pi ,
 \qquad \text{while} \qquad
-\int_{-\infty}^\infty \abs{\operatorname{sinc}(x)} ~dx = \infty .
+\int_{-\infty}^\infty \abs{\operatorname{sinc}(x)} \,dx = \infty .
 \end{equation*}
 The integral of the sinc function is a continuous analogue of the
 alternating harmonic series $\sum \nicefrac{{(-1)}^n}{n}$, while the
@@ -3051,7 +3051,7 @@ that the integral of the sinc function converges, but we will not worry
 about the exact limit.  Because $\frac{\sin(-x)}{-x} = \frac{\sin(x)}{x}$, it is
 enough to show that
 \begin{equation*}
-\int_{2\pi}^\infty \frac{\sin(x)}{x}~dx
+\int_{2\pi}^\infty \frac{\sin(x)}{x}\,dx
 \end{equation*}
 converges.  We
 also avoid $x=0$ this way to make our life simpler.
@@ -3080,15 +3080,15 @@ Via the fundamental theorem of calculus,
 =
 \int_{\pi 2n}^{\pi (2n+1)}
 \frac{\sin(x)}{\pi (2n+1)}
-~dx
+\,dx
 \leq
 \int_{\pi 2n}^{\pi (2n+1)}
 \frac{\sin(x)}{x}
-~dx
+\,dx
 \leq
 \int_{\pi 2n}^{\pi (2n+1)}
 \frac{\sin(x)}{\pi 2n}
-~dx
+\,dx
 =
 \frac{1}{\pi n} .
 \end{equation*}
@@ -3098,7 +3098,7 @@ Similarly,
 \leq
 \int_{\pi (2n+1)}^{\pi (2n+2)}
 \frac{\sin(x)}{x}
-~dx
+\,dx
 \leq
 \frac{-1}{\pi (n+1)} .
 \end{equation*}
@@ -3112,7 +3112,7 @@ Adding the two together we find
 \leq
 \int_{2\pi n}^{2\pi (n+1)}
 \frac{\sin(x)}{x}
-~dx
+\,dx
 \leq
 \frac{1}{\pi n} 
 +
@@ -3123,7 +3123,7 @@ Adding the two together we find
 See \figureref{fig:sincbound}.
 \begin{myfigureht}
 \includegraphics{figures/sincbound}
-\caption{Bound of $\int_{2\pi n}^{2\pi (n+1)} \frac{\sin(x)}{x} ~dx$ using
+\caption{Bound of $\int_{2\pi n}^{2\pi (n+1)} \frac{\sin(x)}{x} \,dx$ using
 the shaded integral (signed area
 $\frac{1}{\pi n} 
 +
@@ -3132,10 +3132,10 @@ $\frac{1}{\pi n}
 
 For $k \in \N$, 
 \begin{equation*}
-\int_{2\pi}^{2k\pi} \frac{\sin(x)}{x} ~dx
+\int_{2\pi}^{2k\pi} \frac{\sin(x)}{x} \,dx
 =
 \sum_{n=1}^{k-1}
-\int_{2\pi n}^{2\pi (n+1)} \frac{\sin(x)}{x} ~dx 
+\int_{2\pi n}^{2\pi (n+1)} \frac{\sin(x)}{x} \,dx 
 \leq
 \sum_{n=1}^{k-1}
 \frac{1}{\pi n(n+1)} .
@@ -3146,7 +3146,7 @@ converges as
 $\sum \frac{1}{\pi n (n+1)}$ is a convergent series.  Thus
 as a sequence,
 \begin{equation*}
-\lim_{k\to \infty} \int_{2\pi}^{2k\pi} \frac{\sin(x)}{x} ~dx
+\lim_{k\to \infty} \int_{2\pi}^{2k\pi} \frac{\sin(x)}{x} \,dx
 =L \leq
 \sum_{n=1}^{\infty}
 \frac{1}{\pi n(n+1)} < \infty .
@@ -3157,7 +3157,7 @@ be the largest integer such that $2k\pi \leq M$.
 For $x \in [2k\pi,M]$, we have 
 $\frac{-1}{2k\pi} \leq \frac{\sin(x)}{x} \leq \frac{1}{2k\pi}$, and so
 \begin{equation*}
-\abs{\int_{2k\pi}^{M} \frac{\sin(x)}{x} ~dx }  \leq
+\abs{\int_{2k\pi}^{M} \frac{\sin(x)}{x} \,dx }  \leq
 \frac{M-2k\pi}{2k\pi} \leq \frac{1}{k} .
 \end{equation*}
 As $k$ is the largest $k$ such that $2k\pi \leq M$,
@@ -3165,11 +3165,11 @@ then as $M\in \R$ goes to infinity, so does $k \in \N$.
 
 Then
 \begin{equation*}
-\int_{2\pi}^M \frac{\sin(x)}{x}~dx
+\int_{2\pi}^M \frac{\sin(x)}{x}\,dx
 =
-\int_{2\pi}^{2k\pi} \frac{\sin(x)}{x} ~dx
+\int_{2\pi}^{2k\pi} \frac{\sin(x)}{x} \,dx
 +
-\int_{2k\pi}^{M} \frac{\sin(x)}{x} ~dx .
+\int_{2k\pi}^{M} \frac{\sin(x)}{x} \,dx .
 \end{equation*}
 As $M$ goes to infinity,
 the first term on the
@@ -3178,7 +3178,7 @@ and the second term on the
 right-hand side
 goes to zero.  Hence
 \begin{equation*}
-\int_{2\pi}^\infty \frac{\sin(x)}{x} ~dx = L .
+\int_{2\pi}^\infty \frac{\sin(x)}{x} \,dx = L .
 %\leq \sum_{n=1}^{\infty}
 %\frac{1}{\pi n(n+1)} < \infty .
 \end{equation*}
@@ -3291,17 +3291,17 @@ but we only roughly estimated its sum.
 
 The fundamental theorem of calculus says that for all $k \in \N$,
 \begin{equation*}
-\int_{k}^\infty \frac{1}{x^2}~dx = \frac{1}{k} .
+\int_{k}^\infty \frac{1}{x^2}\,dx = \frac{1}{k} .
 \end{equation*}
 In particular, the series must converge.  But we also have
 \begin{equation*}
-\frac{1}{k} = \int_k^\infty \frac{1}{x^2}~dx
+\frac{1}{k} = \int_k^\infty \frac{1}{x^2}\,dx
 \leq
 \sum_{n=k}^\infty \frac{1}{n^2}
 \leq
 \frac{1}{k^2}
 +
-\int_k^\infty \frac{1}{x^2}~dx
+\int_k^\infty \frac{1}{x^2}\,dx
 =
 \frac{1}{k^2}
 +
@@ -3364,7 +3364,7 @@ and compare.  Hint: The sum telescopes.
 \begin{exercise}
 Prove 
 \begin{equation*}
-\int_{-\infty}^\infty \abs{\operatorname{sinc}(x)}~dx = \infty .
+\int_{-\infty}^\infty \abs{\operatorname{sinc}(x)}\,dx = \infty .
 \end{equation*}
 Hint: Again, it is enough to show this on just one side.
 \end{exercise}
@@ -3372,7 +3372,7 @@ Hint: Again, it is enough to show this on just one side.
 \begin{exercise}
 Can you interpret
 \begin{equation*}
-\int_{-1}^1 \frac{1}{\sqrt{\abs{x}}}~dx
+\int_{-1}^1 \frac{1}{\sqrt{\abs{x}}}\,dx
 \end{equation*}
 as an improper integral?  If so, compute its value.
 \end{exercise}
@@ -3384,21 +3384,21 @@ such that $\abs{f(t)} \leq M e^{at}$ for all $t \geq T$.  Show that the
 \emph{\myindex{Laplace transform}} of $f$ exists.  That is, for
 every $s > a$ the following integral converges:
 \begin{equation*}
-F(s) := \int_{0}^\infty f(t) e^{-st} ~dt .
+F(s) := \int_{0}^\infty f(t) e^{-st} \,dt .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
 Let $f \colon \R \to \R$ be a Riemann integrable function
 on every interval $[a,b]$, and such
-that $\int_{-\infty}^\infty \abs{f(x)}~dx < \infty$.  Show that the
+that $\int_{-\infty}^\infty \abs{f(x)}\,dx < \infty$.  Show that the
 \emph{\myindex{Fourier sine and cosine transforms}}
 exist.  That is, for every $\omega \geq 0$ the
 following integrals converge
 \begin{equation*}
-F^s(\omega) := \frac{1}{\pi} \int_{-\infty}^\infty f(t) \sin(\omega t) ~dt ,
+F^s(\omega) := \frac{1}{\pi} \int_{-\infty}^\infty f(t) \sin(\omega t) \,dt ,
 \qquad
-F^c(\omega) := \frac{1}{\pi} \int_{-\infty}^\infty f(t) \cos(\omega t) ~dt .
+F^c(\omega) := \frac{1}{\pi} \int_{-\infty}^\infty f(t) \cos(\omega t) \,dt .
 \end{equation*}
 Furthermore, show that $F^s$ and $F^c$ are bounded functions.
 \end{exercise}
@@ -3448,7 +3448,7 @@ $\int_1^\infty f$ converges.
 \begin{exnote}
 It is sometimes desirable to assign a value to integrals that normally
 cannot be interpreted even as improper integrals,
-e.g.\ $\int_{-1}^1 \nicefrac{1}{x}~dx$.
+e.g.\ $\int_{-1}^1 \nicefrac{1}{x}\,dx$.
 Suppose $f \colon [a,b] \to \R$ is a function and $a < c < b$,
 where $f$ is Riemann integrable on the intervals
 $[a,c-\epsilon]$ and $[c+\epsilon,b]$ for all $\epsilon > 0$.
@@ -3469,12 +3469,12 @@ if the limit exists.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Compute $p.v.\!\int_{-1}^1 \nicefrac{1}{x}~dx$.
+Compute $p.v.\!\int_{-1}^1 \nicefrac{1}{x}\,dx$.
 \item
 Compute
 $\lim_{\epsilon\to 0^+}
-( \int_{-1}^{-\epsilon} \nicefrac{1}{x}~dx + 
-\int_{2\epsilon}^1 \nicefrac{1}{x}~dx )$ and show it is not equal
+( \int_{-1}^{-\epsilon} \nicefrac{1}{x}\,dx + 
+\int_{2\epsilon}^1 \nicefrac{1}{x}\,dx )$ and show it is not equal
 to the principal value.
 \item
 Show that if $f$ is integrable on $[a,b]$, then
@@ -3488,7 +3488,7 @@ $p.v.\!\int_{-1}^1 f = 0$
 \item
 Suppose 
 $f \colon [-1,1] \to \R$ is continuous and differentiable at 0.  Show that
-$p.v.\!\int_{-1}^1 \frac{f(x)}{x}~dx$ exists.
+$p.v.\!\int_{-1}^1 \frac{f(x)}{x}\,dx$ exists.
 \end{enumerate}
 \end{exercise}
 %\end{samepage}
@@ -3503,11 +3503,11 @@ $g(x) = 0$ for all $x \notin [a,b]$ for some interval $[a,b]$.
 Show that the
 \emph{\myindex{convolution}}
 \begin{equation*}
-(g * f)(x) := \int_{-\infty}^\infty f(t)g(x-t)~dt 
+(g * f)(x) := \int_{-\infty}^\infty f(t)g(x-t)\,dt 
 \end{equation*}
 is well-defined for all $x \in \R$.
 \item
-Suppose $\int_{-\infty}^\infty \abs{f(x)}~dx < \infty$.  Prove that
+Suppose $\int_{-\infty}^\infty \abs{f(x)}\,dx < \infty$.  Prove that
 \begin{equation*}
 \lim_{x \to -\infty} (g * f)(x) = 0, \qquad \text{and} \qquad
 \lim_{x \to \infty} (g * f)(x) = 0 .

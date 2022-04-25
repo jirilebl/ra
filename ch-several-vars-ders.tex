@@ -818,16 +818,16 @@ so every subspace $V$ of a vector space $X$ is convex.
 Let $C([0,1],\R)$ be the vector space of continuous real-valued functions on $\R$.
 Let $X \subset C([0,1],\R)$ be the set of those $f$ such that
 \begin{equation*}
-\int_0^1 f(x)~dx \leq 1 \qquad \text{and} \qquad
+\int_0^1 f(x)\,dx \leq 1 \qquad \text{and} \qquad
 f(x) \geq 0 \enspace \text{for all } x \in [0,1] .
 \end{equation*}
 Then $X$ is convex.  Take $t \in [0,1]$, and note that if $f,g \in X$,
-then $t f(x) + (1-t) g(x) \geq 0$ for all $x$.  Furthermore
+then $t f(x) + (1-t) g(x) \geq 0$ for all $x$.  Furthermore,
 \begin{equation*}
-\int_0^1 \bigl(tf(x) + (1-t)g(x)\bigr) ~dx
+\int_0^1 \bigl(tf(x) + (1-t)g(x)\bigr) \,dx
 =
-t \int_0^1 f(x) ~dx
-+ (1-t)\int_0^1 g(x) ~dx \leq 1 .
+t \int_0^1 f(x) \,dx
++ (1-t)\int_0^1 g(x) \,dx \leq 1 .
 \end{equation*}
 Note that $X$ is not a vector subspace of $C([0,1],\R)$.  The function
 $f(x):=1$ is in $X$, but $2f$ and $-f$ is not.
@@ -934,7 +934,7 @@ on the interval $(\nicefrac{1}{n+1},\nicefrac{1}{n})$.
 Let $k \colon [0,1]^2 \to \R$ be continuous.  Show that
 $L \colon C([0,1],\R) \to C([0,1],\R)$ defined by
 \begin{equation*}
-Lf(y) := \int_0^1 k(x,y)f(x)~dx
+Lf(y) := \int_0^1 k(x,y)f(x)\,dx
 \end{equation*}
 is a linear operator.  That is, first show that $L$ is well-defined by
 showing that $Lf$ is continuous whenever $f$ is, and
@@ -3584,7 +3584,7 @@ differentiable.  Note that $f$ is vector-valued.
 Suppose $g \colon \R \to \R$ is continuously differentiable and
 $h \colon \R^2 \to \R$ is continuous.  Show that
 \begin{equation*}
-F(x,y) := g(x) + \int_0^y h(x,s) ~ds
+F(x,y) := g(x) + \int_0^y h(x,s) \,ds
 \end{equation*}
 is continuously differentiable, and that it is the solution of 
 the partial differential equation $\frac{\partial F}{\partial y} = h$,

@@ -343,7 +343,7 @@ Riemann integrable functions.
 Let $R \subset \R^n$ be a closed rectangle and
 $f \colon R \to \R$ a bounded function such that
 \begin{equation*}
-\underline{\int_R} f(x)~dx = \overline{\int_R} f(x)~dx .
+\underline{\int_R} f(x)\,dx = \overline{\int_R} f(x)\,dx .
 \end{equation*}
 Then $f$ is said to be \emph{\myindex{Riemann integrable}},
 and we sometimes say simply \emph{\myindex{integrable}}.
@@ -360,18 +360,18 @@ the \emph{\myindex{Riemann integral}}
 
 When the variable $x \in \R^n$ needs to be emphasized, we write
 \begin{equation*}
-\int_R f(x)~dx,
+\int_R f(x)\,dx,
 \qquad
-\int_R f(x_1,\ldots,x_n)~dx_1 \cdots dx_n,
+\int_R f(x_1,\ldots,x_n)\,dx_1 \cdots dx_n,
 \qquad
 \text{or}
 \qquad
-\int_R f(x)~dV .
+\int_R f(x)\,dV .
 \end{equation*}
 If $R \subset \R^2$, then we often say area instead of volume, and we
 write
 \begin{equation*}
-\int_R f(x)~dA .
+\int_R f(x)\,dA .
 \end{equation*}
 
 \propref{mv:intulbound:prop} immediately implies the following
@@ -937,10 +937,10 @@ function, it is not immediately clear if the three expressions
 \begin{equation*}
 \int_{[0,1]^2} f ,
 \qquad
-\int_0^1 \int_0^1 f(x,y) ~ dx ~ dy ,
+\int_0^1 \int_0^1 f(x,y) \, dx \, dy ,
 \qquad \text{and}
 \qquad
-\int_0^1 \int_0^1 f(x,y) ~ dy ~ dx
+\int_0^1 \int_0^1 f(x,y) \, dy \, dx
 \end{equation*}
 are equal, or if the last two are even well-defined.
 
@@ -954,12 +954,12 @@ f(x,y) :=
 \end{cases}
 \end{equation*}
 Then $f$ is Riemann integrable on $R := [0,1]^2$ and $\int_R f = 0$.
-Furthermore, $\int_0^1 \int_0^1 f(x,y) ~ dx ~ dy = 0$.
+Furthermore, $\int_0^1 \int_0^1 f(x,y) \, dx \, dy = 0$.
 However,
 \begin{equation*}
-\int_0^1 f(\nicefrac{1}{2},y) ~ dy
+\int_0^1 f(\nicefrac{1}{2},y) \, dy
 \end{equation*}
-does not exist, so we cannot even write $\int_0^1 \int_0^1 f(x,y) ~ dy ~ dx$.
+does not exist, so we cannot even write $\int_0^1 \int_0^1 f(x,y) \, dy \, dx$.
 
 Proof:
 Let us start with integrability of $f$.  Consider the partition
@@ -1012,8 +1012,8 @@ zero, so the function is integrable and $\int_R f = 0$.
 
 For every fixed $y$, the function that takes $x$ to $f(x,y)$ is zero except
 perhaps at a single point $x=\nicefrac{1}{2}$.  Such a
-function is integrable and $\int_0^1 f(x,y) ~ dx = 0$.  Therefore,
-$\int_0^1 \int_0^1 f(x,y) ~ dx ~ dy = 0$.
+function is integrable and $\int_0^1 f(x,y) \, dx = 0$.  Therefore,
+$\int_0^1 \int_0^1 f(x,y) \, dx \, dy = 0$.
 
 However, if $x=\nicefrac{1}{2}$, the function that takes $y$ to
 $f(\nicefrac{1}{2},y)$ is the nonintegrable function that is
@@ -1063,19 +1063,19 @@ In other words,
 \int_{R \times S} f
 =
  \int_R \left(
- \underline{\int_S} f(x,y) ~ dy
-\right) ~ dx
+ \underline{\int_S} f(x,y) \, dy
+\right) \, dx
 =
  \int_R \left(
- \overline{\int_S} f(x,y) ~ dy
-\right) ~ dx .
+ \overline{\int_S} f(x,y) \, dy
+\right) \, dx .
 \end{equation*}
 If it turns out that $f_x$ is integrable for all $x$, for example when
 $f$ is continuous, then we obtain the more familiar
 \begin{equation*}
 \int_{R \times S} f
 =
- \int_R \int_S f(x,y) ~ dy ~ dx .
+ \int_R \int_S f(x,y) \, dy \, dx .
 \end{equation*}
 
 \begin{proof}
@@ -1205,12 +1205,12 @@ That is,
 \int_{R \times S} f
 =
  \int_S \left(
- \underline{\int_R} f(x,y) ~ dx
-\right) ~ dy
+ \underline{\int_R} f(x,y) \, dx
+\right) \, dy
 =
  \int_S \left(
- \overline{\int_R} f(x,y) ~ dx
-\right) ~ dy .
+ \overline{\int_R} f(x,y) \, dx
+\right) \, dy .
 \end{equation*}
 
 Next suppose $f_x$ and $f^y$ are integrable.
@@ -1220,10 +1220,10 @@ putting the two versions together we obtain the familiar
 \int_{R \times S} f
 =
  \int_R 
- \int_S f(x,y) ~ dy ~ dx 
+ \int_S f(x,y) \, dy \, dx 
 =
  \int_S 
- \int_R f(x,y) ~ dx ~ dy .
+ \int_R f(x,y) \, dx \, dy .
 \end{equation*}
 
 Often the Fubini theorem is stated in two dimensions
@@ -1231,9 +1231,9 @@ for a continuous function $f \colon R \to
 \R$ on a rectangle $R = [a,b] \times [c,d]$.  Then the Fubini theorem
 states that
 \begin{equation*}
-\int_R f = \int_a^b \int_c^d f(x,y) ~dy~dx
+\int_R f = \int_a^b \int_c^d f(x,y) \,dy\,dx
 =
-\int_c^d \int_a^b f(x,y) ~dx~dy .
+\int_c^d \int_a^b f(x,y) \,dx\,dy .
 \end{equation*}
 The Fubini theorem is commonly thought of as \emph{the} theorem that allows us
 to swap the order of iterated integrals, although there are many variations
@@ -1267,7 +1267,7 @@ appropriately.
 \subsection{Exercises}
 
 \begin{exercise}
-Compute $\int_{0}^1 \int_{-1}^1 xe^{xy} ~ dx ~ dy$ in a simple way.
+Compute $\int_{0}^1 \int_{-1}^1 xe^{xy} \, dx \, dy$ in a simple way.
 \end{exercise}
 
 \begin{exercise}
@@ -1302,9 +1302,9 @@ $h \colon [c,d] \to \R$.  Prove
 \begin{exercise}
 Compute (using calculus)
 \begin{equation*}
-\int_0^1 \int_0^1 \frac{x^2-y^2}{{(x^2+y^2)}^2} ~ dx ~ dy
+\int_0^1 \int_0^1 \frac{x^2-y^2}{{(x^2+y^2)}^2} \, dx \, dy
 \qquad \text{and} \qquad
-\int_0^1 \int_0^1 \frac{x^2-y^2}{{(x^2+y^2)}^2} ~ dy ~ dx .
+\int_0^1 \int_0^1 \frac{x^2-y^2}{{(x^2+y^2)}^2} \, dy \, dx .
 \end{equation*}
 You will need to interpret the integrals as improper, that
 is, the limit of $\int_\epsilon^1$ as $\epsilon \to 0^+$.
@@ -1330,12 +1330,12 @@ x & \text{if } y \in \Q, \\
 \begin{enumerate}[a)]
 \item
 Show
-$\int_0^1 \int_{-1}^1 f(x,y) ~ dx ~ dy$ exists, but
-$\int_{-1}^1 \int_0^1 f(x,y) ~ dy ~ dx$ does not.
+$\int_0^1 \int_{-1}^1 f(x,y) \, dx \, dy$ exists, but
+$\int_{-1}^1 \int_0^1 f(x,y) \, dy \, dx$ does not.
 \item
 Compute
-$\int_{-1}^1 \overline{\int_0^1} f(x,y) ~ dy ~ dx$ and
-$\int_{-1}^1 \underline{\int_0^1} f(x,y) ~ dy ~ dx$.
+$\int_{-1}^1 \overline{\int_0^1} f(x,y) \, dy \, dx$ and
+$\int_{-1}^1 \underline{\int_0^1} f(x,y) \, dy \, dx$.
 \item
 Show $f$ is not Riemann integrable on $[-1,1] \times [0,1]$ (use
 Fubini).
@@ -1357,17 +1357,17 @@ f(x,y) :=
 Show $f$ is Riemann integrable on $[0,1] \times [0,1]$.
 \item
 Find 
-$\overline{\int_0^1} f(x,y) ~ dx$ and
-$\underline{\int_0^1} f(x,y) ~ dx$ for all $y \in [0,1]$, and show they are unequal for all $y
+$\overline{\int_0^1} f(x,y) \, dx$ and
+$\underline{\int_0^1} f(x,y) \, dx$ for all $y \in [0,1]$, and show they are unequal for all $y
 \in \Q$.
 \item
 Show
-$\int_0^1 \int_0^1 f(x,y) ~ dy ~ dx$ exists, but
-   $\int_0^1 \int_0^1 f(x,y) ~ dx ~ dy$ does not.
+$\int_0^1 \int_0^1 f(x,y) \, dy \, dx$ exists, but
+   $\int_0^1 \int_0^1 f(x,y) \, dx \, dy$ does not.
 \end{enumerate}
 Note: By Fubini,
-$\int_0^1 \overline{\int_0^1} f(x,y) ~ dy ~ dx$ and 
-$\int_0^1 \underline{\int_0^1} f(x,y) ~ dy ~ dx$ do exist and equal the
+$\int_0^1 \overline{\int_0^1} f(x,y) \, dy \, dx$ and 
+$\int_0^1 \underline{\int_0^1} f(x,y) \, dy \, dx$ do exist and equal the
 integral of $f$ on $R$.
 \end{exercise}
 
@@ -2695,7 +2695,7 @@ Show that $U$ is Jordan measurable.
 If $\varphi \colon U \to \R$ is Riemann integrable on $U$, then
 \begin{equation*}
 \int_U \varphi =
-\int_a^b \int_{g(x)}^{f(x)} \varphi(x,y) ~ dy ~ dx .
+\int_a^b \int_{g(x)}^{f(x)} \varphi(x,y) \, dy \, dx .
 \end{equation*}
 \end{enumerate}
 \end{exercise}
@@ -2858,7 +2858,7 @@ differentiable functions defined on some open set that contains the closure
 $\widebar{U}$.  Then
 \begin{equation*}
 \int_{\partial U}
-P ~ dx + Q~  dy
+P \, dx + Q\,  dy
 =
 \int_{U}
 \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)
@@ -2913,22 +2913,22 @@ $U$ is Jordan measurable and as $U$ is of type I\@, then
 & =
 \int_a^b \int_{g(x)}^{f(x)}
 \left(- \frac{\partial P}{\partial y} (x,y) \right)
-~ dy ~ dx 
+\, dy \, dx 
 \\
 & =
 \int_a^b \Bigl(
 - P\bigl(x,f(x)\bigr) +
 P\bigl(x,g(x)\bigr)
-\Bigr) ~ dx
+\Bigr) \, dx
 \\
 & =
-\int_a^b P\bigl(x,g(x)\bigr) ~ dx 
+\int_a^b P\bigl(x,g(x)\bigr) \, dx 
 -
-\int_a^b P\bigl(x,f(x)\bigr) ~ dx .
+\int_a^b P\bigl(x,f(x)\bigr) \, dx .
 \end{split}
 \end{equation*}
-We integrate $P~dx$ along the boundary.
-The one-form $P~dx$ integrates to zero 
+We integrate $P\,dx$ along the boundary.
+The one-form $P\,dx$ integrates to zero 
 along the straight vertical lines in the boundary.  Therefore it is
 only
 integrated along the top and along the bottom.  As a parameter,
@@ -2938,17 +2938,17 @@ $\bigl(x,g(x)\bigr)$ we recognize path integrals above.  However the second
 path integral is in the wrong direction; the top should be going right to
 left, and so we must switch orientation.
 \begin{equation*}
-\int_{\partial U} P ~ dx
+\int_{\partial U} P \, dx
 =
-\int_a^b P\bigl(x,g(x)\bigr) ~ dx 
+\int_a^b P\bigl(x,g(x)\bigr) \, dx 
 +
-\int_b^a P\bigl(x,f(x)\bigr) ~ dx
+\int_b^a P\bigl(x,f(x)\bigr) \, dx
 =
 \int_U 
 \left(- \frac{\partial P}{\partial y} \right) .
 \end{equation*}
 
-Similarly, $U$ is also of type II\@.  The form $Q~dy$ integrates to zero along
+Similarly, $U$ is also of type II\@.  The form $Q\,dy$ integrates to zero along
 horizontal lines.   So
 \begin{equation*}
 \int_U 
@@ -2956,21 +2956,21 @@ horizontal lines.   So
 =
 \int_c^d \int_{k(y)}^{h(y)}
 \frac{\partial Q}{\partial x}(x,y)
-~ dx ~ dy 
+\, dx \, dy 
 =
 \int_a^b \Bigl(
 Q\bigl(y,h(y)\bigr) 
 -
 Q\bigl(y,k(y)\bigr)
-\Bigr) ~ dx 
+\Bigr) \, dx 
 =
-\int_{\partial U} Q ~ dy .
+\int_{\partial U} Q \, dy .
 \end{equation*}
 Putting the two together we obtain
 \begin{equation*}
-\int_{\partial U} P~ dx + Q ~ dy 
+\int_{\partial U} P\, dx + Q \, dy 
 =
-\int_{\partial U} P~ dx + \int_{\partial U} Q ~ dy 
+\int_{\partial U} P\, dx + \int_{\partial U} Q \, dy 
 =
 \int_U 
 \Bigl(-\frac{\partial P}{\partial y}\Bigr)
@@ -3016,8 +3016,8 @@ Then
 =
 \frac{1}{2\pi r}
 \int_{\partial D_r}
-- \frac{\partial f}{\partial y} ~ dx + 
-\frac{\partial f}{\partial x} ~ dy
+- \frac{\partial f}{\partial y} \, dx + 
+\frac{\partial f}{\partial x} \, dy
 \\
 &
 =
@@ -3028,7 +3028,7 @@ Then
 \\
 & \hspace{1.2in}
 + \frac{\partial f}{\partial x} \bigl(x_0+r\cos(t),y_0+r\sin(t)\bigr) r\cos(t)
-\biggr) ~ dt
+\biggr) \, dt
 \\
 &
 =
@@ -3036,14 +3036,14 @@ Then
 \left[
 \frac{1}{2\pi}
 \int_0^{2\pi}
-f\bigl(x_0+r\cos(t),y_0+r\sin(t)\bigr) ~ dt
+f\bigl(x_0+r\cos(t),y_0+r\sin(t)\bigr) \, dt
 \right] .
 \end{split}
 \end{equation*}
 Let $g(r) := 
 \frac{1}{2\pi}
 \int_0^{2\pi}
-f\bigl(x_0+r\cos(t),y_0+r\sin(t)\bigr) ~ dt$.  Then $g'(r) = 0$ for all
+f\bigl(x_0+r\cos(t),y_0+r\sin(t)\bigr) \, dt$.  Then $g'(r) = 0$ for all
 $r > 0$.
 The function is constant for $r >0$ and continuous at $r=0$ (exercise).
 Therefore, $g(0) = g(r)$ for all $r > 0$, and
@@ -3051,7 +3051,7 @@ Therefore, $g(0) = g(r)$ for all $r > 0$, and
 g(r) = g(0) = 
 \frac{1}{2\pi}
 \int_0^{2\pi}
-f\bigl(x_0+0\cos(t),y_0+0\sin(t)\bigr) ~ dt
+f\bigl(x_0+0\cos(t),y_0+0\sin(t)\bigr) \, dt
 =
 f(x_0,y_0).
 \end{equation*}
@@ -3061,10 +3061,10 @@ proved the \emph{\myindex{mean value property}} of harmonic functions:
 f(x_0,y_0) = 
 \frac{1}{2\pi}
 \int_0^{2\pi}
-f\bigl(x_0+r\cos(t),y_0+r\sin(t)\bigr) ~ dt 
+f\bigl(x_0+r\cos(t),y_0+r\sin(t)\bigr) \, dt 
 =
 \frac{1}{2\pi r}
-\int_{\partial D_r} f ~ ds .
+\int_{\partial D_r} f \, ds .
 \end{equation*}
 That is, the value at $p = (x_0,y_0)$ is the average over a circle of any
 radius $r$ centered at $(x_0,y_0)$.
@@ -3092,8 +3092,8 @@ a type III domain and suppose that $U \subset \R^2$ is a domain such that
 $\widebar{V} \subset U$.  Suppose $f \colon U \to \R$ is a twice
 continuously differentiable function.  Prove that
 $\int_{\partial V}
-\frac{\partial f}{\partial x} dx + 
-\frac{\partial f}{\partial y} dy = 0$.
+\frac{\partial f}{\partial x} \, dx + 
+\frac{\partial f}{\partial y} \, dy = 0$.
 \end{exercise}
 
 \begin{samepage}
@@ -3102,12 +3102,12 @@ For a disc $B(p,r) \subset \R^2$, orient the boundary $\partial B(p,r)$
 positively.
 \begin{enumerate}[a)]
 \item
-Compute $\displaystyle \int_{\partial B(p,r)} -y ~ dx$.
+Compute $\displaystyle \int_{\partial B(p,r)} -y \, dx$.
 \item
-Compute $\displaystyle \int_{\partial B(p,r)} x ~ dy$.
+Compute $\displaystyle \int_{\partial B(p,r)} x \, dy$.
 \item
-Compute $\displaystyle \int_{\partial B(p,r)} \frac{-y}{2} ~ dx +
-\frac{x}{2} ~ dy$.
+Compute $\displaystyle \int_{\partial B(p,r)} \frac{-y}{2} \, dx +
+\frac{x}{2} \, dy$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
@@ -3140,7 +3140,7 @@ Show $f$ is harmonic where defined.
 Show $\lim_{(x,y) \to 0} f(x,y) = -\infty$.
 \item
 Using a circle $C_r$ of radius
-$r$ around the origin, compute $\frac{1}{2\pi r} \int_{\partial C_r} f ds$.
+$r$ around the origin, compute $\frac{1}{2\pi r} \int_{\partial C_r} f \, ds$.
 What happens as $r \to 0$?
 \item
 Why can't you use Green's theorem?
@@ -3158,8 +3158,8 @@ Why can't you use Green's theorem?
 
 In one variable, we have the familiar change of variables
 \begin{equation*}
-\int_a^b f\bigl(g(x)\bigr) g'(x)~ dx = 
-\int_{g(a)}^{g(b)} f(x) ~ dx .
+\int_a^b f\bigl(g(x)\bigr) g'(x)\, dx = 
+\int_{g(a)}^{g(b)} f(x) \, dx .
 \end{equation*}
 The analogue in higher dimensions is quite
 a bit more complicated.  The first complication is orientation.  If we use
@@ -3167,8 +3167,8 @@ the definition of integral from this chapter, then we do not have the notion
 of $\int_a^b$ versus $\int_b^a$.  We are simply integrating over an
 interval $[a,b]$.  With this notation, the change of variables becomes
 \begin{equation*}
-\int_{[a,b]} f\bigl(g(x)\bigr) \sabs{g'(x)}~ dx = 
-\int_{g([a,b])} f(x) ~ dx .
+\int_{[a,b]} f\bigl(g(x)\bigr) \sabs{g'(x)}\, dx = 
+\int_{g([a,b])} f(x) \, dx .
 \end{equation*}
 In this section we will obtain the several-variable analogue of this form.
 
@@ -3210,8 +3210,8 @@ $J_g$ is never zero on $S$.
 Suppose $f \colon g(S) \to \R$ is Riemann integrable.
 Then $f \circ g$ is Riemann integrable on $S$ and
 \begin{equation*}
-\int_{g(S)} f(x) ~ dx = 
-\int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx .
+\int_{g(S)} f(x) \, dx = 
+\int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} \, dx .
 \end{equation*}
 \end{thm}
 
@@ -3262,14 +3262,14 @@ First suppose $x_j=0$, $g(0) = 0$, and $g'(0) = I$.
 For any given $y \in R_j$,
 apply the fundamental theorem of calculus
 to the function $t \mapsto g(ty)$ to find
-$g(y) = \int_0^1 g'(ty)y ~dt$.  As the
+$g(y) = \int_0^1 g'(ty)y \,dt$.  As the
 side of $R_j$ is at most $\frac{\delta}{\sqrt{n}}$,
 then $\snorm{y} \leq \delta$.  So
 \begin{equation*}
 \snorm{g(y)-y} =
-\norm{\int_0^1 \bigl(g'(ty) y - y\bigr) ~dt} \leq
-\int_0^1 \snorm{g'(ty) y - y} ~dt \leq
-\snorm{y} \int_0^1 \snorm{g'(ty) - I} ~dt
+\norm{\int_0^1 \bigl(g'(ty) y - y\bigr) \,dt} \leq
+\int_0^1 \snorm{g'(ty) y - y} \,dt \leq
+\snorm{y} \int_0^1 \snorm{g'(ty) - I} \,dt
 \leq
 \delta \epsilon .
 \end{equation*}
@@ -3354,7 +3354,7 @@ For a small enough
 $\delta > 0$, we have
 \begin{equation*}
 \begin{split}
-\epsilon + \int_R f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx
+\epsilon + \int_R f\bigl(g(x)\bigr) \sabs{J_g(x)} \, dx
 & \geq
 \sum_{j=1}^N \biggl(\sup_{x \in R_j} f\bigl(g(x)\bigr) \sabs{J_g(x)} \biggr) V(R_j)
 \\
@@ -3367,12 +3367,12 @@ V\bigl(g(R_j)\bigr)
 \frac{1}{{(1+4\sqrt{n} \, \epsilon)}^n}
 \\
 & \geq
-\sum_{j=1}^N \left(\int_{g(R_j)}f(y) ~dy \right)
+\sum_{j=1}^N \left(\int_{g(R_j)}f(y) \,dy \right)
 \frac{1}{{(1+4\sqrt{n} \, \epsilon)}^n}
 \\
 & =
 \frac{1}{{(1+4\sqrt{n} \, \epsilon)}^n}
-\int_{g(R)} f(y) ~dy .
+\int_{g(R)} f(y) \,dy .
 \end{split}
 \end{equation*}
 The last equality follows because the overlaps of the rectangles
@@ -3380,13 +3380,13 @@ are their boundaries, which are of measure zero, and hence the image
 of their boundaries is also measure zero.
 Let $\epsilon$ go to zero to find
 \begin{equation*}
-\int_R f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx \geq \int_{g(R)} f(y) ~dy .
+\int_R f\bigl(g(x)\bigr) \sabs{J_g(x)} \, dx \geq \int_{g(R)} f(y) \,dy .
 \end{equation*}
 By adding this result for several rectangles covering an $S$ we obtain the
 result for an arbitrary bounded Jordan measurable $S \subset U$,
 and nonnegative integrable function $f$:
 \begin{equation*}
-\int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx \geq \int_{g(S)} f(y) ~dy .
+\int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} \, dx \geq \int_{g(S)} f(y) \,dy .
 \end{equation*}
 
 Recall that $g^{-1}$ exists and $g^{-1}\bigl(g(S)\bigr) = S$.
@@ -3394,15 +3394,15 @@ Also $1 = J_{g\circ g^{-1}} = J_g(g^{-1}(y))J_{g^{-1}}(y)$ for $y \in g(S)$.
 So
 \begin{equation*}
 \begin{split}
-\int_{g(S)} f(y) ~ dy
+\int_{g(S)} f(y) \, dy
 & =
 \int_{g(S)} f\bigl(g\bigl(g^{-1}(y)\bigr)\bigr)
-\sabs{J_g\bigl(g^{-1}(y)\bigr)} \, \sabs{J_{g^{-1}}(y)} ~ dy
+\sabs{J_g\bigl(g^{-1}(y)\bigr)} \, \sabs{J_{g^{-1}}(y)} \, dy
 \\
 & \geq
-\int_{g^{-1}(g(S))} f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx
+\int_{g^{-1}(g(S))} f\bigl(g(x)\bigr) \sabs{J_g(x)} \, dx
 =
-\int_{S} f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx .
+\int_{S} f\bigl(g(x)\bigr) \sabs{J_g(x)} \, dx .
 \end{split}
 \end{equation*}
 
@@ -3457,8 +3457,8 @@ $g(S) = K$ and $J_g$ is never zero on $S$ (in the formula
 assume $J_g(x) = 0$ if $g$ not differentiable at $x$, that is when $x \notin
 U$).  Then}
 \begin{equation*}
-\int_{\R^{n}} f(x) ~ dx = 
-\int_{\R^n} f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx .
+\int_{\R^{n}} f(x) \, dx = 
+\int_{\R^n} f\bigl(g(x)\bigr) \sabs{J_g(x)} \, dx .
 \end{equation*}
 \end{exercise}
 
@@ -3472,8 +3472,8 @@ Jordan measurable (it is also open).
 Suppose $f \colon g(S) \to \R$ is Riemann
 integrable.  Then $f \circ g$ is Riemann integrable on $S$ and}
 \begin{equation*}
-\int_{g(S)} f(x) ~ dx = 
-\int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} ~ dx .
+\int_{g(S)} f(x) \, dx = 
+\int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} \, dx .
 \end{equation*}
 Hint: Write $S$ as an increasing union of compact Jordan measurable
 sets, then apply the theorem of the section to those.  Then prove that you

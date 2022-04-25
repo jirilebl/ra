@@ -364,7 +364,6 @@ Let $f$ and $g$ be bounded functions on $[a,b]$.  Prove
 \end{equation*}
 \end{exercise}
 
-\begin{samepage}
 \begin{exercise}
 \leavevmode
 \begin{enumerate}[a)]
@@ -376,7 +375,6 @@ Is the limit uniform on $\R$?
 Is the limit uniform on $[0,1]$?
 \end{enumerate}
 \end{exercise}
-\end{samepage}
 
 \begin{exercise}
 Suppose $f_n \colon S \to \R$ are functions that converge uniformly
@@ -679,7 +677,7 @@ Each $f_n$ is Riemann integrable (it is continuous on $(0,1]$ and bounded),
 and the fundamental theorem of calculus says that
 \begin{equation*}
 \int_0^1 f_n =
-\int_0^{\nicefrac{1}{n}} (n-n^2x)~dx = \nicefrac{1}{2} .
+\int_0^{\nicefrac{1}{n}} (n-n^2x)\,dx = \nicefrac{1}{2} .
 \end{equation*}
 Let us compute the pointwise limit of $\{ f_n \}$.
 Fix an $x \in (0,1]$.  For $n \geq \nicefrac{1}{x}$,
@@ -692,14 +690,14 @@ limit of $\{ f_n \}$ is the zero function.  Thus
 \begin{equation*}
 \nicefrac{1}{2} =
 \lim_{n\to\infty}
-\int_0^1 f_n (x)~dx
+\int_0^1 f_n (x)\,dx
 \not=
 \int_0^1
 \left(
 \lim_{n\to\infty}
-f_n(x)\right)~dx
+f_n(x)\right)\,dx
 =
-\int_0^1 0~dx = 0 .
+\int_0^1 0\,dx = 0 .
 \end{equation*}
 \end{example}
 
@@ -738,24 +736,24 @@ Note that $f_n$ is integrable and compute
 -
 \underline{\int_a^b} f
 & =
-\overline{\int_a^b} \bigl( f(x) - f_n(x) + f_n(x) \bigr)~dx
+\overline{\int_a^b} \bigl( f(x) - f_n(x) + f_n(x) \bigr)\,dx
 -
-\underline{\int_a^b} \bigl( f(x) - f_n(x) + f_n(x) \bigr)~dx
+\underline{\int_a^b} \bigl( f(x) - f_n(x) + f_n(x) \bigr)\,dx
 \\
 & \leq
-\overline{\int_a^b} \bigl( f(x) - f_n(x) \bigr)~dx +  \overline{\int_a^b} f_n(x) ~dx
+\overline{\int_a^b} \bigl( f(x) - f_n(x) \bigr)\,dx +  \overline{\int_a^b} f_n(x) \,dx
 -
-\underline{\int_a^b} \bigl( f(x) - f_n(x) \bigr)~dx -  \underline{\int_a^b} f_n(x) ~dx
+\underline{\int_a^b} \bigl( f(x) - f_n(x) \bigr)\,dx -  \underline{\int_a^b} f_n(x) \,dx
 \\
 & =
-\overline{\int_a^b} \bigl( f(x) - f_n(x) \bigr)~dx +  \int_a^b f_n(x) ~dx
+\overline{\int_a^b} \bigl( f(x) - f_n(x) \bigr)\,dx +  \int_a^b f_n(x) \,dx
 -
-\underline{\int_a^b} \bigl( f(x) - f_n(x) \bigr)~dx -  \int_a^b f_n(x) ~dx
+\underline{\int_a^b} \bigl( f(x) - f_n(x) \bigr)\,dx -  \int_a^b f_n(x) \,dx
 \\
 & =
-\overline{\int_a^b} \bigl( f(x) - f_n(x) \bigr)~dx
+\overline{\int_a^b} \bigl( f(x) - f_n(x) \bigr)\,dx
 -
-\underline{\int_a^b} \bigl( f(x) - f_n(x) \bigr)~dx
+\underline{\int_a^b} \bigl( f(x) - f_n(x) \bigr)\,dx
 \\
 & \leq
 \frac{\epsilon}{2(b-a)} (b-a) + 
@@ -773,7 +771,7 @@ in the calculation.  Again, for all $n \geq M$ (where $M$ is the same as above),
 \begin{equation*}
 \begin{split}
 \abs{\int_a^b f - \int_a^b f_n} & = 
-\abs{ \int_a^b \bigl(f(x) - f_n(x)\bigr)~dx}
+\abs{ \int_a^b \bigl(f(x) - f_n(x)\bigr)\,dx}
 \\
 & \leq
 \frac{\epsilon}{2(b-a)} (b-a) = \frac{\epsilon}{2} < \epsilon .
@@ -785,7 +783,7 @@ Therefore, $\{ \int_a^b f_n \}$ converges to $\int_a^b f$.
 \begin{example}
 Suppose we wish to compute
 \begin{equation*}
-\lim_{n\to\infty} \int_0^1 \frac{nx+ \sin(nx^2)}{n} ~dx .
+\lim_{n\to\infty} \int_0^1 \frac{nx+ \sin(nx^2)}{n} \,dx .
 \end{equation*}
 It is impossible to compute the integrals for any particular $n$ using 
 calculus as $\sin(nx^2)$ has no closed-form antiderivative.  However,
@@ -794,10 +792,10 @@ We have shown before that $\frac{nx+ \sin(nx^2)}{n}$ converges uniformly
 on $[0,1]$ to $x$.
 By \thmref{integralinterchange:thm}, the limit exists and
 \begin{equation*}
-\lim_{n\to\infty} \int_0^1 \frac{nx+ \sin(nx^2)}{n} ~dx
+\lim_{n\to\infty} \int_0^1 \frac{nx+ \sin(nx^2)}{n} \,dx
 =
 \int_0^1
-x ~dx = \nicefrac{1}{2} .
+x \,dx = \nicefrac{1}{2} .
 \end{equation*}
 \end{example}
 
@@ -1174,12 +1172,12 @@ $f'(1) \not= \lim\limits_{n\to\infty} f_n'(1)$.
 \begin{exercise}
 Let $f \colon [0,1] \to \R$ be a Riemann integrable (hence bounded)
 function.  Find
-$\displaystyle \lim_{n\to\infty} \int_0^1 \frac{f(x)}{n} ~dx$.
+$\displaystyle \lim_{n\to\infty} \int_0^1 \frac{f(x)}{n} \,dx$.
 \end{exercise}
 
 \begin{exercise}
 Show
-$\displaystyle \lim_{n\to\infty} \int_1^2 e^{-nx^2} ~dx = 0$.  Feel free to
+$\displaystyle \lim_{n\to\infty} \int_1^2 e^{-nx^2} \,dx = 0$.  Feel free to
 use
 what you know about the exponential function from calculus.
 \end{exercise}
@@ -1224,7 +1222,7 @@ For the following two exercises define
 the number
 \begin{equation*}
 \norm{f}_{L^1} := 
-\int_0^1 \abs{f(x)}~dx .
+\int_0^1 \abs{f(x)}\,dx .
 \end{equation*}
 It is true that $\abs{f}$ is integrable whenever $f$ is, see
 \exerciseref{exercise:hardabsint}.
@@ -1272,8 +1270,8 @@ for every $x \in [a,b]$, the sequence $\{ \abs{f_n(x)-f(x)} \}$ is monotone.
 Show that the sequence $\{f_n\}$ converges uniformly.
 \end{exercise}
 
-\begin{samepage}
 \begin{exercise}
+\pagebreak[3]
 Find a sequence of Riemann integrable functions $f_n \colon [0,1] \to \R$ such
 that $\{ f_n \}$ converges to zero pointwise, and such that
 \begin{enumerate}[a)]
@@ -1283,7 +1281,6 @@ $\bigl\{ \int_0^1 f_n \bigr\}_{n=1}^\infty$ increases without bound,
 $\bigl\{ \int_0^1 f_n \bigr\}_{n=1}^\infty$ is the sequence $-1,1,-1,1,-1,1, \ldots$.
 \end{enumerate}
 \end{exercise}
-\end{samepage}
 
 \begin{exnote}
 It is possible to define a 
@@ -1537,7 +1534,7 @@ theorem of calculus we integrate the equation
 $f'(x) = F\bigl(x,f(x)\bigr)$, $f(x_0) = y_0$, and write \eqref{picard:diffeq}
 as the integral equation
 \begin{equation} \label{picard:inteq}
-f(x) = y_0 + \int_{x_0}^x F\bigl(t,f(t)\bigr)~dt .
+f(x) = y_0 + \int_{x_0}^x F\bigl(t,f(t)\bigr)\,dt .
 \end{equation}
 The idea of our proof is that we try to plug in approximations to
 a solution to the right-hand side of \eqref{picard:inteq} to get better approximations on the
@@ -1575,14 +1572,14 @@ continuous as
 a function of $t$ on $[-h,h]$ (left as an exercise).
 Define
 \begin{equation*}
-f_k(x) := y_0+ \int_{0}^x F\bigl(t,f_{k-1}(t)\bigr)~dt ,
+f_k(x) := y_0+ \int_{0}^x F\bigl(t,f_{k-1}(t)\bigr)\,dt ,
 \end{equation*}
 and $f_k$ is continuous on $[-h,h]$ by the fundamental theorem of calculus.
 To see that $f_k$ maps $[-h,h]$ to $[y_0-\alpha,y_0+\alpha]$, we compute for
 $x \in [-h,h]$
 \begin{equation*}
 \abs{f_k(x) - y_0} = 
-\abs{\int_{0}^x F\bigl(t,f_{k-1}(t)\bigr)~dt }
+\abs{\int_{0}^x F\bigl(t,f_{k-1}(t)\bigr)\,dt }
 \leq
 M\abs{x}
 \leq
@@ -1617,13 +1614,13 @@ Therefore
 \begin{split}
 \abs{f_n(x) - f_k(x)}
 & =
-\abs{\int_{0}^x F\bigl(t,f_{n-1}(t)\bigr)~dt 
+\abs{\int_{0}^x F\bigl(t,f_{n-1}(t)\bigr)\,dt 
 -
-\int_{0}^x F\bigl(t,f_{k-1}(t)\bigr)~dt}
+\int_{0}^x F\bigl(t,f_{k-1}(t)\bigr)\,dt}
 \\
 & =
 \abs{\int_{0}^x F\bigl(t,f_{n-1}(t)\bigr)-
-F\bigl(t,f_{k-1}(t)\bigr)~dt}
+F\bigl(t,f_{k-1}(t)\bigr)\,dt}
 \\
 & \leq
 L\norm{f_{n-1}-f_{k-1}}_u
@@ -1683,19 +1680,19 @@ for $t \in [0,x]$ (or $[x,0]$ if $x < 0$).  Therefore,
 y_0
 +
 \int_0^{x}
-F(t,f(t)\bigr)~dt
+F(t,f(t)\bigr)\,dt
 & =
 y_0
 +
 \int_0^{x}
-F\bigl(t,\lim_{n\to\infty} f_n(t)\bigr)~dt
+F\bigl(t,\lim_{n\to\infty} f_n(t)\bigr)\,dt
 & &
 \\
 & =
 y_0
 +
 \int_0^{x}
-\lim_{n\to\infty} F\bigl(t,f_n(t)\bigr)~dt
+\lim_{n\to\infty} F\bigl(t,f_n(t)\bigr)\,dt
 & & \text{(by continuity of } F\text{)}
 \\
 & =
@@ -1704,7 +1701,7 @@ y_0
 y_0
 +
 \int_0^{x}
-F\bigl(t,f_n(t)\bigr)~dt
+F\bigl(t,f_n(t)\bigr)\,dt
 \right)
 & & \text{(by uniform convergence)}
 \\
@@ -1732,13 +1729,13 @@ Then
 y_0
 +
 \int_0^{x}
-F\bigl(t,f(t)\bigr)~dt
+F\bigl(t,f(t)\bigr)\,dt
 -
 \left(
 y_0
 +
 \int_0^{x}
-F\bigl(t,g(t)\bigr)~dt
+F\bigl(t,g(t)\bigr)\,dt
 \right)
 }
 \\
@@ -1747,7 +1744,7 @@ F\bigl(t,g(t)\bigr)~dt
 \int_0^{x}
 F\bigl(t,f(t)\bigr)
 -
-F\bigl(t,g(t)\bigr)~dt
+F\bigl(t,g(t)\bigr)\,dt
 }
 \\
 & \leq
@@ -1822,12 +1819,12 @@ of the exponential.
 Let us compute the Picard iterates.
 We start with the constant function $f_0(x) := 1$.  Then
 \begin{align*}
-f_1(x) & = 1 + \int_0^x f_0(s)~ds =
+f_1(x) & = 1 + \int_0^x f_0(s)\,ds =
 1+x, \\
-f_2(x) & = 1 + \int_0^x f_1(s)~ds =
-1 + \int_0^x (1+s)~ds = 1 + x + \frac{x^2}{2}, \\
-f_3(x) & = 1 + \int_0^x f_2(s)~ds =
-1 + \int_0^x \left(1+ s + \frac{s^2}{2} \right)~ds =
+f_2(x) & = 1 + \int_0^x f_1(s)\,ds =
+1 + \int_0^x (1+s)\,ds = 1 + x + \frac{x^2}{2}, \\
+f_3(x) & = 1 + \int_0^x f_2(s)\,ds =
+1 + \int_0^x \left(1+ s + \frac{s^2}{2} \right)\,ds =
 1 + x + \frac{x^2}{2} + \frac{x^3}{6} .
 \end{align*}
 We recognize the beginning of the Taylor series for the exponential.
@@ -1980,7 +1977,7 @@ Hint: Assume existence of the exponential function and use the integrating
 factor formula for existence of $f$ (prove that it works and then that it is unique):
 \begin{equation*}
 f(x) := e^{-\int_{x_0}^x p(s)\, ds} \left( \int_{x_0}^x e^{\int_{x_0}^t p(s)\, ds}
-q(t) ~dt + y_0 \right).
+q(t) \,dt + y_0 \right).
 \end{equation*}
 \end{exercise}
 

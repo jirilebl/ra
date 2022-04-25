@@ -544,7 +544,7 @@ a metric space.
 Let $X$ be the set of continuous functions on $[0,1]$.  Let $\varphi \colon
 [0,1] \to (0,\infty)$ be continuous.  Define
 \begin{equation*}
-d(f,g) := \int_0^1 \abs{f(x)-g(x)}\varphi(x)~dx .
+d(f,g) := \int_0^1 \abs{f(x)-g(x)}\varphi(x)\,dx .
 \end{equation*}
 Show that $(X,d)$ is a metric space.
 \end{exercise}
@@ -2846,7 +2846,7 @@ d_Y\bigl(f(c),f(q)\bigr)
 As an application of uniform continuity, let us prove a useful criterion for
 continuity of functions defined by integrals.  Let $f(x,y)$ be a function of two variables and define
 \begin{equation*}
-g(y) := \int_a^b f(x,y) ~dx .
+g(y) := \int_a^b f(x,y) \,dx .
 \end{equation*}
 Question is, is $g$ is continuous?
 We are really asking when do two limiting operations commute,
@@ -2858,7 +2858,7 @@ necessary) condition is that $f$ is continuous on a closed rectangle.
 If $f \colon [a,b] \times [c,d] \to \R$ is a continuous function,
 then $g \colon [c,d] \to \R$ defined by
 \begin{equation*}
-g(y) := \int_a^b f(x,y) ~dx  \qquad \text{is continuous}.
+g(y) := \int_a^b f(x,y) \,dx  \qquad \text{is continuous}.
 \end{equation*}
 \end{prop}
 
@@ -2881,10 +2881,10 @@ g(y)
 =
 \abs{
 \int_a^b 
-f(x,\widetilde{y}) ~dx 
+f(x,\widetilde{y}) \,dx 
 -
 \int_a^b 
-f(x,y) ~dx 
+f(x,y) \,dx 
 }
 \\
 =
@@ -2893,7 +2893,7 @@ f(x,y) ~dx
 \bigl(
 f(x,\widetilde{y}) - f(x,y)
 \bigr)
-~dx 
+\,dx 
 }
 \leq
 (b-a)
@@ -3092,7 +3092,7 @@ Take the metric space of continuous functions $C([0,1],\R)$.  Let
 $k \colon [0,1] \times [0,1] \to \R$ be a continuous function.
 Given $f \in C([0,1],\R)$ define
 \begin{equation*}
-\varphi_f(x) := \int_0^1 k(x,y) f(y) ~dy .
+\varphi_f(x) := \int_0^1 k(x,y) f(y) \,dy .
 \end{equation*}
 \begin{enumerate}[a)]
 \item
@@ -3210,7 +3210,7 @@ For every fixed $x$, the function that takes $y$ to $f(x,y)$ is continuous.
 \item
 Show that $f$ is not continuous at $(0,0)$.
 \item
-Now show that $g(y) := \int_0^1 f(x,y)~dx$ is not continuous at $y=0$.
+Now show that $g(y) := \int_0^1 f(x,y)\,dx$ is not continuous at $y=0$.
 \end{enumerate}
 Note: Feel free to use what you know about $\arctan$ from calculus,
 in particular that $\frac{d}{ds} \bigl[ \arctan(s) \bigr] = \frac{1}{1+s^2}$.
@@ -3221,7 +3221,7 @@ Prove a stronger version of \propref{prop:integralcontcont}:
 If $f \colon (a,b) \times (c,d) \to \R$ is a bounded continuous function,
 then $g \colon (c,d) \to \R$ defined by
 \begin{equation*}
-g(y) := \int_a^b f(x,y) ~dx  \qquad \text{is continuous}.
+g(y) := \int_a^b f(x,y) \,dx  \qquad \text{is continuous}.
 \end{equation*}
 Hint: First integrate over $[a+\nicefrac{1}{n},b-\nicefrac{1}{n}]$.
 \end{exercise}
@@ -3373,7 +3373,7 @@ integral equation
 \begin{equation*}
 f(x)
 =
-y_0 + \int_0^x F\bigl(t,f(t)\bigr)~dt .
+y_0 + \int_0^x F\bigl(t,f(t)\bigr)\,dt .
 \end{equation*}
 To solve this integral equation we only need a continuous function, and
 in some sense our task should be easier---we have more candidate functions
@@ -3433,7 +3433,7 @@ $T \colon Y \to C([-h,h],\R)$ by
 \begin{equation*}
 T(f)(x)
 :=
-y_0 + \int_0^x F\bigl(t,f(t)\bigr)~dt .
+y_0 + \int_0^x F\bigl(t,f(t)\bigr)\,dt .
 \end{equation*}
 It is an exercise to check that
 $T$ is well-defined, and that $T(f)$ really is in $C([-h,h],\R)$.
@@ -3443,7 +3443,7 @@ As $F$ is bounded by $M$, we have
 \begin{equation*}
 \begin{split}
 \abs{T(f)(x) - y_0}
-&= \abs{\int_0^x F\bigl(t,f(t)\bigr)~dt} \\
+&= \abs{\int_0^x F\bigl(t,f(t)\bigr)\,dt} \\
 & \leq 
 \abs{x}M \leq hM \leq \frac{\alpha M}{M+ L\alpha} \leq \alpha .
 \end{split}
@@ -3462,7 +3462,7 @@ Therefore,
 \begin{equation*}
 \begin{split}
 \abs{T(f)(x) - T(g)(x)}
-&= \abs{\int_0^x F\bigl(t,f(t)\bigr) - F\bigl(t,g(t)\bigr)~dt} \\
+&= \abs{\int_0^x F\bigl(t,f(t)\bigr) - F\bigl(t,g(t)\bigr)\,dt} \\
 & \leq \abs{x} L \, d(f,g)
  \leq h L\, d(f,g)
  \leq \frac{L\alpha}{M+L\alpha} \, d(f,g) .
@@ -3476,7 +3476,7 @@ $d\bigl(T(f),T(g)\bigr) \leq \frac{L\alpha}{M+L\alpha} \, d(f,g)$.
 We apply the fixed point theorem (\thmref{thm:contr})
 to find a unique $f \in Y$ such that $T(f) = f$, that is,
 \begin{equation*} %\label{equation:msinteqpicard}
-f(x) = y_0 + \int_0^x F\bigl(t,f(t)\bigr)~dt .
+f(x) = y_0 + \int_0^x F\bigl(t,f(t)\bigr)\,dt .
 \end{equation*}
 By the fundamental theorem of calculus (\thmref{thm:FTCv2}),
 $T(f) = f$ is differentiable, its derivative is
@@ -3506,7 +3506,7 @@ is continuous on $[-h,h]$ as a function of $t$.  Use this to show that
 \begin{equation*}
 T(f)(x)
 :=
-y_0 + \int_0^x F\bigl(t,f(t)\bigr)~dt
+y_0 + \int_0^x F\bigl(t,f(t)\bigr)\,dt
 \end{equation*}
 is well-defined and that $T(f) \in C([-h,h],\R)$.
 \end{exercise}
