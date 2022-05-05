@@ -7,7 +7,7 @@
   <!-- ********************************************************* -->
   <!-- This requires editing the path based on your installation -->
   <!-- ********************************************************* -->
-  <xsl:import href="../../mathbook/xsl/pretext-html.xsl"/>
+  <xsl:import href="../../pretext/xsl/pretext-html.xsl"/>
 
   <!-- Intend output for rendering by html -->
   <!--<xsl:output method="html" />-->
