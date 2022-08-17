@@ -835,17 +835,19 @@ We must be careful about strict inequalities and taking suprema and
 infima.  Note that
 $x < y$ whenever $x \in A$ and
 $y \in B$ still only implies $\sup\, A \leq \inf\, B$, and not a strict
-inequality.  This is an important subtle point that comes up often.
-For example, take $A := \{ 0 \}$ and take $B := \{ \nicefrac{1}{n}
+inequality.
+For example, take $A := \{ 0 \}$ and $B := \{ \nicefrac{1}{n}
 : n \in \N \}$.
 Then $0 < \nicefrac{1}{n}$
 for all $n \in \N$.  However, $\sup\, A = 0$ and $\inf\, B = 0$.
+This important subtle point comes up often.
 
-%\medskip
+\medskip
+\pagebreak[1]
 
 The proof of the following
-often used elementary fact is left to the reader.
-A similar statement holds for infima.
+often used fact is left to the reader.
+A similar result holds for infima.
 
 \begin{prop} \label{prop:existsxepsfromsup}
 If $S \subset \R$ is nonempty and bounded above,
@@ -898,12 +900,11 @@ a finite set of numbers always has a supremum or an infimum that is contained
 in the set itself.  In this case we usually do not use the words
 supremum or infimum.
 
-When a set $A$ of real numbers is bounded above,
-such that 
-$\sup\, A \in A$, then we can use the word
+When a set $A$ of real numbers is bounded above and
+$\sup\, A \in A$, we can use the word
 \emph{\myindex{maximum}} and the notation $\max\, A$\glsadd{not:max} to denote the supremum.
-Similarly for infimum: When a set $A$ is bounded below
-and $\inf\, A \in A$, then we can use the
+Similarly for infimum: When $A$ is bounded below
+and $\inf\, A \in A$, we can use the
 word \emph{\myindex{minimum}} and the notation $\min\, A$.\glsadd{not:min}
 For example,
 \begin{align*}
@@ -1127,13 +1128,13 @@ On the other hand, if $x < 0$, then $\abs{x} = -x > 0$, and $\abs{x}$ is never z
 
 \ref{prop:absbas:iii}:
 If $x$ or $y$ is zero, then the result is immediate.  When $x$ and
-$y$ are both positive, then $\abs{x}\abs{y} = xy$.  $xy$ is also positive
-and hence $xy = \abs{xy}$.  If $x$ and $y$ are both negative,
-then $xy$ is still positive and $xy = \abs{xy}$, and
+$y$ are both positive, then $\abs{x}\abs{y} = xy$.  As $xy$ is also
+positive, $xy = \abs{xy}$.
+If $x$ and $y$ are both negative,
+then $xy=(-x)(-y)$ is still positive and $\abs{xy}=xy$.  Also,
 $\abs{x}\abs{y} = (-x)(-y) = xy$.
-Next assume
-$x > 0$ and $y < 0$.  Then $\abs{x}\abs{y} = x(-y) = -(xy)$.  Now
-$xy$ is negative and hence $\abs{xy} = -(xy)$.  Similarly if
+If $x > 0$ and $y < 0$, then $\abs{x}\abs{y} = x(-y) = -(xy)$.  Now
+$xy$ is negative and $\abs{xy} = -(xy)$.  Similarly when
 $x < 0$ and $y > 0$.
 
 \medskip
@@ -1203,8 +1204,8 @@ $\abs{b}-\abs{a} \leq \abs{b-a} = \abs{a-b}$.  Applying
 \propref{prop:absbas}, we obtain the reverse triangle
 inequality.
 
-The second version of the triangle inequality is obtained from the standard
-one by just replacing $y$ with $-y$, and noting $\abs{-y} =
+The second item in the corollary is obtained from the standard
+triangle inequality by just replacing $y$ with $-y$, and noting $\abs{-y} =
 \abs{y}$.
 \end{proof}
 
@@ -1546,7 +1547,7 @@ requires much more machinery than we have right now.
 
 Let us say more about the cardinality of intervals and hence about the
 cardinality of $\R$.  We have seen that there exist irrational numbers, that is
-$\R \setminus \Q$ is nonempty.  The question is: How many irrational numbers
+$\R \setminus \Q$, is nonempty.  The question is: How many irrational numbers
 are there?  It turns out there are a lot more irrational numbers than rational
 numbers.  We have seen that $\Q$ is countable, and we will show 
 that $\R$ is uncountable.
@@ -1585,13 +1586,14 @@ $a_1 := x_1$ and $b_1 := x_1+1$.
 Note that $a_1 < b_1$ and
 $x_1 \notin (a_1,b_1)$.
 For some $k > 1$,
-suppose $a_{j}$ and $b_{j}$ have been defined
-for $j=1,2,\ldots,k-1$,
+suppose $a_1,a_2,\ldots,a_{k-1}$ and $b_1,b_2,\ldots,b_{k-1}$ have been
+defined,
 suppose
-the open interval $(a_{j},b_{j})$ does not contain $x_\ell$
-for $\ell=1,2,\ldots,j$, and
-suppose
-$a_1 < a_2 < \cdots < a_{k-1} < b_{k-1} < \cdots < b_2 < b_1$.
+$a_1 < a_2 < \cdots < a_{k-1} < b_{k-1} < \cdots < b_2 < b_1$,
+and suppose
+for each $j=1,2,\ldots,k-1$,
+we have $x_\ell \notin (a_{j},b_{j})$ 
+for $\ell=1,2,\ldots,j$.
 \begin{enumerate}[(i)]
 \item Define $a_k := x_n$, where $n$ is the smallest $n \in \N$
 such that $x_n \in (a_{k-1},b_{k-1})$.  Such an $x_n$ exists by our
