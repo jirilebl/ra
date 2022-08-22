@@ -526,8 +526,6 @@ Then $m < k$ implies $\nicefrac{m}{n} < \nicefrac{k}{n}$.
 Analysis consists of proving inequalities, and
 the following proposition, or one of its many variations,
 is how an analyst proves a nonstrict inequality.
-We are interested more in the idea of the proof rather than the exact
-statement of the proposition.
 
 \begin{prop}
 If $x \in \R$ is such that $x \leq \epsilon$ for all
@@ -540,11 +538,14 @@ If $x > 0$, then $0 < \nicefrac{x}{2} < x$ (why?).  Taking
 $\epsilon = \nicefrac{x}{2}$ obtains a contradiction.  Thus $x \leq 0$.
 \end{proof}
 
-For nonnegative $x$, we obtain an equality:
+For nonnegative $x$, an equality results:
 \emph{If $x \geq 0$ is such that $x \leq \epsilon$ for all
 $\epsilon > 0$, then $x = 0$.}
-To prove that $x \geq 0$ in the first place, an analyst might prove
-that all $x \geq -\epsilon$ for all $\epsilon > 0$.
+A common version of that is:
+\emph{If $\sabs{x} \leq \epsilon$ for all
+$\epsilon > 0$, then $x = 0$.}
+To prove $x \geq 0$, an analyst might prove
+that $x \geq -\epsilon$ for all $\epsilon > 0$.
 From now on, when we say $x \geq 0$ or
 $\epsilon > 0$, we automatically mean that $x \in \R$ and $\epsilon \in \R$.
 
@@ -1480,7 +1481,7 @@ Find an example where $f$ is unbounded but $\alpha f$ is bounded.
 
 You surely saw the notation for intervals\index{interval}
 before, but let us give a formal
-definition here.  For $a,  b \in \R$ such that $a < b$ we define
+definition here.  For $a,  b \in \R$ such that $a < b$, we define
 \glsadd{not:openbdinterval}%
 \glsadd{not:closedbdinterval}%
 \glsadd{not:halfopenbdinterval}%
@@ -1497,8 +1498,8 @@ and $(a,b)$ is called an \emph{\myindex{open interval}}.  The intervals
 of the form $(a,b]$ and $[a,b)$ are called
 \emph{half-open intervals}\index{half-open interval}.
 
-The intervals above were all \emph{bounded intervals}\index{bounded
-interval}, since both $a$ and $b$ were real numbers.  We 
+The intervals above are \emph{bounded intervals}\index{bounded
+interval}, since both $a$ and $b$ are real numbers.  We 
 define \emph{unbounded intervals}\index{unbounded interval},
 \begin{align*}
 & [a,\infty) := \{ x \in \R : a \leq x \}, \\
