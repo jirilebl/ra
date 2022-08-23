@@ -302,17 +302,15 @@ If $\{ x_n \}$ is monotone decreasing and bounded, then
 
 \begin{proof}
 Consider a monotone increasing sequence $\{ x_n \}$.  Suppose 
-the sequence is bounded,
+first the sequence is bounded,
 that is,
-%so there exists a $B$
-%such that $x_n \leq B$ for all $n$, that is
 the set $\{ x_n : n \in  \N \}$ is bounded.  Let
 \begin{equation*}
 x := \sup \{ x_n : n \in \N \} .
 \end{equation*}
-Let $\epsilon > 0$ be arbitrary.  As $x$ is the supremum, then
-there must be at least one $M \in \N$ such that $x_{M} > x-\epsilon$
-(because $x$ is the supremum).  As $\{ x_n \}$ is monotone increasing,
+Let $\epsilon > 0$ be arbitrary.  As $x$ is the supremum,
+there must be at least one $M \in \N$ such that $x_{M} > x-\epsilon$.
+As $\{ x_n \}$ is monotone increasing,
 then it is easy to see (by \hyperref[induction:thm]{induction}) that
 $x_n \geq x_{M}$ for all $n \geq M$.  Hence for all $n \geq M$,
 \begin{equation*}
@@ -361,8 +359,8 @@ Hence, $b=0$ is the greatest lower bound, and $\lim \frac{1}{\sqrt{n}} = 0$.
 \end{example}
 
 \begin{example}
-A word of caution:  We must show that a monotone sequence is bounded
-in order to use \propref{prop:monotoneconv} to conclude a sequence converges.
+A word of caution:  Showing that a monotone sequence is bounded
+in order to use \propref{prop:monotoneconv} may be difficult.
 The sequence $\{ 1 + \nicefrac{1}{2} + \cdots + \nicefrac{1}{n} \}$
 is a monotone increasing
 sequence that grows very slowly.  We will see, once we get to series,
@@ -548,7 +546,7 @@ then every subsequence $\{ x_{n_i} \}$ is also convergent, and
 
 \begin{proof}
 Suppose $\lim_{n\to \infty} x_n = x$.  So for every
-$\epsilon > 0$ there is an $M \in \N$ such that for all $n \geq M$,
+$\epsilon > 0$, there is an $M \in \N$ such that for all $n \geq M$,
 \begin{equation*}
 \abs{x_n - x} < \epsilon .
 \end{equation*}
