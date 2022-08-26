@@ -832,9 +832,9 @@ Limits, when they exist, preserve non-strict inequalities.
 Let $\{ x_n \}$ and $\{ y_n \}$ be
 convergent sequences and
 \begin{equation*}
-x_n \leq y_n ,
+x_n \leq y_n \quad \text{for all } n \in \N .
 \end{equation*}
-for all $n \in \N$.  Then
+Then
 \begin{equation*}
 \lim_{n\to\infty} x_n \leq
 \lim_{n\to\infty} y_n .
@@ -875,7 +875,8 @@ using constant sequences in
 \begin{cor} \label{limandineq:cor}
 \leavevmode
 \begin{enumerate}[(i)]
-\item If $\{ x_n \}$ is a convergent sequence such that $x_n \geq 0$,
+\item If $\{ x_n \}$ is a convergent sequence such that $x_n \geq 0$ for all
+$n \in \N$,
 then
 \begin{equation*}
 \lim_{n\to\infty} x_n \geq 0.
@@ -884,9 +885,9 @@ then
 Let $a,b \in \R$ and
 let $\{ x_n \}$ be a convergent sequence such that
 \begin{equation*}
-a \leq x_n \leq b ,
+a \leq x_n \leq b \quad \text{for all } n \in \N .
 \end{equation*}
-for all $n \in \N$.  Then
+Then
 \begin{equation*}
 a \leq \lim_{n\to\infty} x_n \leq b.
 \end{equation*}
@@ -1108,7 +1109,7 @@ past powers.  Let us see if we can do the same with roots.
 \begin{prop}
 \pagebreak[2]
 Let $\{ x_n \}$ be a convergent sequence such
-that $x_n \geq 0$.
+that $x_n \geq 0$ for all $n \in \N$.
 Then
 \begin{equation*}
 \lim_{n\to\infty} \sqrt{x_n} =
@@ -1345,6 +1346,7 @@ for certain sequences there exist easy to apply tests that tell us
 if the sequence converges or not.  Let us see one such test.
 First, let
 us compute the limit of a certain specific sequence.
+
 \begin{prop}
 Let $c > 0$.
 \begin{enumerate}[(i)]
@@ -1646,16 +1648,14 @@ $n$.
 \begin{enumerate}[a)]
 \item
 Prove that if there exists an $r < 1$ and $M \in \N$ such that
-for all $n \geq M$, we have
 \begin{equation*}
-\frac{\abs{x_{n+1}}}{\abs{x_n}} \leq r ,
+\frac{\abs{x_{n+1}}}{\abs{x_n}} \leq r \quad \text{for all } n \geq M,
 \end{equation*}
 then $\{ x_n \}$ converges to $0$.
 \item
 Prove that if there exists an $r > 1$ and $M \in \N$ such that
-for all $n \geq M$, we have
 \begin{equation*}
-\frac{\abs{x_{n+1}}}{\abs{x_n}} \geq r ,
+\frac{\abs{x_{n+1}}}{\abs{x_n}} \geq r  \quad \text{for all } n \geq M,
 \end{equation*}
 then $\{ x_n \}$ is unbounded.
 \end{enumerate}
