@@ -1848,7 +1848,7 @@ The marking is the same as in \figureref{sequence-limsupliminf_an_bn}.
 
 We associate certain subsequences with $\limsup$ and $\liminf$.
 It is important to notice that $\{ a_n \}$ and $\{ b_n \}$ are not
-necessarily subsequences of $\{ x_n \}$, nor do they have to even 
+subsequences of $\{ x_n \}$, nor do they have to even 
 consist of the same numbers.
 For example, for the sequence $\{ \nicefrac{1}{n} \}$,
 $b_n = 0$ for all $n \in N$.
@@ -1910,7 +1910,7 @@ Find an $M_2 \in \N$ such that
 \begin{equation*}
 \frac{1}{M_2} \leq \frac{\epsilon}{2}.
 \end{equation*}
-Take $M := \max \{M_1 , M_2 , 2 \}$ and compute.  For all $k \geq M$,
+Take $M := \max \{M_1 , M_2 , 2 \}$.  For all $k \geq M$,
 we have
 \begin{equation*}
 \begin{split}
@@ -1959,8 +1959,8 @@ In particular, for all $n \in \N$,
 \begin{equation*}
 b_n \leq x_n \leq a_n .
 \end{equation*}
-If 
-$\liminf \, x_n = \limsup \, x_n$, then we know that $\{ a_n \}$ and $\{ b_n \}$
+First suppose
+$\liminf \, x_n = \limsup \, x_n$.  Then $\{ a_n \}$ and $\{ b_n \}$
 both converge to the same limit.
 By the squeeze lemma
 (\lemmaref{squeeze:lemma}), $\{ x_n \}$ converges and
@@ -2001,21 +2001,21 @@ inequality, and leave the first inequality as an exercise.
 
 We want to prove that
 $\limsup \, x_{n_k} \leq \limsup \, x_n$.  Define
-$a_j := \sup \{ x_k : k \geq j \}$ 
+$a_n := \sup \{ x_k : k \geq n \}$ 
 as usual.
 Also define
-$c_j := \sup \{ x_{n_k} : k \geq j \}$.
-It is not true that $\{ c_j \}$ is necessarily a subsequence of $\{ a_j \}$.  However,
+$c_n := \sup \{ x_{n_k} : k \geq n \}$.
+It is not true that $\{ c_n \}$ is necessarily a subsequence of $\{ a_n \}$.  However,
 as $n_k \geq k$ for all $k$, we have that
-$\{ x_{n_k} : k \geq j \} \subset \{ x_k : k \geq j \}$.
+$\{ x_{n_k} : k \geq n \} \subset \{ x_k : k \geq n \}$.
 A supremum of a subset is less than or equal to the supremum of the
 set and therefore
 \begin{equation*}
-c_j \leq a_j \qquad \text{for all  $j$}.
+c_n \leq a_n \qquad \text{for all $n$}.
 \end{equation*}
 \lemmaref{limandineq:lemma} gives
 \begin{equation*}
-\lim_{j\to\infty} c_j \leq \lim_{j\to\infty} a_j ,
+\lim_{n\to\infty} c_n \leq \lim_{n\to\infty} a_n ,
 \end{equation*}
 which is the desired conclusion.
 \end{proof}
@@ -2175,20 +2175,20 @@ Suppose $\{ x_n \}$ is a monotone unbounded sequence.  Then
 
 \begin{proof}
 The case of monotone increasing follows from
-\exerciseref{exercise:infseqlimlims} part c) below.  Let us do
-monotone decreasing.  Suppose $\{x_n\}$ is decreasing and unbounded,
-that is,
+\exerciseref{exercise:infseqlimlims} part c) below.
+Suppose $\{x_n\}$ is decreasing and unbounded.
+That the sequence is unbounded means that
 for every $K \in \R$, there is an $M \in \N$ such that $x_M < K$.
-By monotonicity $x_n \leq x_M < K$ for all $n \geq M$.   Therefore,
-$\lim \, x_n = -\infty$.
+By monotonicity, $x_n \leq x_M < K$ for all $n \geq M$.
+Therefore, $\lim \, x_n = -\infty$.
 \end{proof}
 
 \begin{example}
 \begin{equation*}
 \lim_{n\to \infty} n = \infty,
-\qquad 
+\qquad
 \lim_{n\to \infty} n^2 = \infty,
-\qquad 
+\qquad
 \lim_{n\to \infty} -n = -\infty.
 \end{equation*}
 We leave verification to the reader.
@@ -2206,7 +2206,7 @@ But since the extended real numbers are still an ordered set, we
 can take suprema and infima.
 
 \begin{defn}
-Let $\{ x_n \}$ be an unbounded sequence of real numbers.  Define 
+Let $\{ x_n \}$ be an unbounded sequence of real numbers.  Define
 sequences of extended real numbers by
 $a_n := \sup \{ x_k : k \geq n \}$ and
 $b_n := \inf \{ x_k : k \geq n \}$.
@@ -2223,11 +2223,11 @@ sequences whenever $\lim a_n$ or $\lim b_n$ makes sense including
 possibly $\infty$ and $-\infty$.
 
 \begin{prop}
-Let $\{ x_n \}$ be an unbounded sequence.  Define 
+Let $\{ x_n \}$ be an unbounded sequence.  Define
 $\{ a_n \}$ and $\{ b_n \}$ as above.
 Then $\{ a_n \}$ is decreasing, and $\{ b_n \}$ is increasing.
 If $a_n$ is a real number for every $n$, then
-$\limsup \, x_n = \lim \, a_n$. 
+$\limsup \, x_n = \lim \, a_n$.
 If $b_n$ is a real number for every $n$, then
 $\liminf \, x_n = \lim \, b_n$.
 \end{prop}
@@ -2248,19 +2248,19 @@ $\limsup$ and $\liminf$, see exercises \ref{exercise:infseqlimex}
 and \ref{exercise:infseqlimlims}.
 
 \begin{example}
-Suppose 
+Suppose
 $x_n := 0$ for odd $n$ and $x_n := n$ for even $n$.
 Then $a_n = \infty$ for all $n$, since for every $M$,
 there exists an even $k$ such that $x_k = k \geq M$.
 On the other hand, $b_n = 0$ for all $n$, as
 for every $n$, the set
-$\{ b_k : k \geq n \}$ consists of $0$ and nonnegative numbers.
+$\{ b_k : k \geq n \}$ consists of $0$ and positive numbers.
 So,
 \begin{equation*}
 \lim_{n\to \infty} x_n \quad \text{does not exist},
-\qquad 
+\qquad
 \limsup_{n\to \infty} \, x_n = \infty ,
-\qquad 
+\qquad
 \liminf_{n\to \infty} \, x_n = 0.
 \end{equation*}
 \end{example}
@@ -2348,8 +2348,8 @@ Hint: Look for examples that do not have a limit.
 
 \begin{samepage}
 \begin{exercise}
-Let $\{ x_n \}$ and $\{ y_n \}$ be bounded sequences (from the previous
-exercise we know that $\{ x_n + y_n \}$ is bounded).
+Let $\{ x_n \}$ and $\{ y_n \}$ be bounded sequences (by the previous
+exercise, $\{ x_n + y_n \}$ is bounded).
 \begin{enumerate}[a)]
 \item
 Show that
@@ -2403,7 +2403,7 @@ That is, there is a sequence $\{ x_n \}$ of distinct numbers in $S$.
 \begin{enumerate}[a)]
 \item
 Prove that every sequence contains a monotone subsequence.
-Hint: Call $n \in \N$ a \emph{peak} if $a_m \leq a_n$ for all $m \geq n$.  
+Hint: Call $n \in \N$ a \emph{peak} if $a_m \leq a_n$ for all $m \geq n$.
 There are two possibilities: Either the sequence has at most finitely many
 peaks,
 or it has infinitely many peaks.
