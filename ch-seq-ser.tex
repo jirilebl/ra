@@ -1851,7 +1851,7 @@ It is important to notice that $\{ a_n \}$ and $\{ b_n \}$ are not
 subsequences of $\{ x_n \}$, nor do they have to even 
 consist of the same numbers.
 For example, for the sequence $\{ \nicefrac{1}{n} \}$,
-$b_n = 0$ for all $n \in N$.
+$b_n = 0$ for all $n \in \N$.
 
 \begin{thm} \label{subseqlimsupinf:thm}
 If $\{ x_n \}$ is a bounded sequence, then there exists a subsequence
@@ -1870,17 +1870,18 @@ $\{ x_{m_k} \}$ such that
 Define $a_n := \sup \{ x_k : k \geq n \}$.
 Write
 $x := \limsup \, x_n = \lim\, a_n$.  We define the subsequence inductively.
-Let $n_1 := 1$ and suppose we have
-defined the subsequence until $n_k$ for some $k$.  Pick some $m > n_k$
+Let $n_1 := 1$, and suppose $n_1,n_2,\ldots,n_{k-1}$ are already defined for
+some $k \geq 2$.  Pick an $m > n_{k-1}$
 such that
 \begin{equation*}
-a_{(n_k+1)} - x_m < \frac{1}{k+1} .
+a_{(n_{k-1}+1)} - x_m < \frac{1}{k} .
 \end{equation*}
-We can do this as $a_{(n_k+1)}$ is a supremum of the
-set $\{ x_n : n \geq n_k + 1 \}$ and hence there are elements
+Such an $m$ exists
+as $a_{(n_{k-1}+1)}$ is a supremum of the
+set $\{ x_\ell : \ell \geq n_{k-1} + 1 \}$ and hence there are elements
 of the sequence arbitrarily close (or even possibly equal) to the supremum.
-Set $n_{k+1} :=  m$.  The subsequence $\{ x_{n_k} \}$ is defined.  Next we
-need to prove that it converges and has the right limit.
+Set $n_{k} :=  m$.  The subsequence $\{ x_{n_k} \}$ is defined.  Next, we
+must prove that it converges to $x$.
 
 For all $k \geq 2$, we have
 $a_{(n_{k-1}+1)} \geq a_{n_k}$ (why?) and $a_{n_{k}} \geq x_{n_k}$.
@@ -1911,7 +1912,6 @@ Find an $M_2 \in \N$ such that
 \frac{1}{M_2} \leq \frac{\epsilon}{2}.
 \end{equation*}
 Take $M := \max \{M_1 , M_2 , 2 \}$.  For all $k \geq M$,
-we have
 \begin{equation*}
 \begin{split}
 \abs{x- x_{n_k}} & =
