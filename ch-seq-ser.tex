@@ -2914,7 +2914,7 @@ converges and the limit is 1.  That is,
 1 .
 \end{equation*}
 
-Proof: First we prove the following equality
+Proof: We need the equality
 \begin{equation*}
 \left( \sum_{n=1}^k \frac{1}{2^n} \right)
 + \frac{1}{2^k}
@@ -3067,8 +3067,8 @@ The implication, however, goes only one way.
 Let us give an example.
 
 \begin{example} \label{example:harmonicseries}
-The series $\sum \frac{1}{n}$ diverges (despite the fact that $\lim
-\frac{1}{n} = 0$).  This is the famous \emph{\myindex{harmonic series}}%
+The series $\sum \nicefrac{1}{n}$ diverges (despite the fact that $\lim
+\nicefrac{1}{n} = 0$).  This is the famous \emph{\myindex{harmonic series}}%
 \footnote{The divergence of the harmonic series was known 
 long before the theory of series was made rigorous.  The proof we
 give is the earliest proof and was given by
@@ -3117,10 +3117,10 @@ s_{2^k} =
 \geq
 1 + \sum_{j=1}^k \frac{1}{2} = 1 + \frac{k}{2} .
 \end{equation*}
-As $\{ \frac{k}{2} \}$ is unbounded by the
+As $\{ \nicefrac{k}{2} \}$ is unbounded by the
 \hyperref[thm:arch:i]{Archimedean property}, that means that
 $\{ s_{2^k} \}$ is unbounded, and therefore $\{ s_n \}$ is unbounded.
-Hence $\{ s_n \}$ diverges, and consequently $\sum \frac{1}{n}$ diverges.
+Hence $\{ s_n \}$ diverges, and consequently $\sum \nicefrac{1}{n}$ diverges.
 \end{example}
 
 Convergent series are linear.  That is, we can multiply them by constants
@@ -3228,7 +3228,7 @@ A series $\sum x_n$
 \emph{\myindex{converges absolutely}}\index{absolute convergence} if
 the series $\sum \abs{x_n}$ converges.
 If a series converges, but does not converge absolutely, we say
-it is \emph{\myindex{conditionally convergent}}.
+it \emph{\myindex{converges conditionally}}.\index{conditional convergence}
 \end{defn}
 
 \begin{prop}
@@ -3472,7 +3472,7 @@ what made the Swiss mathematician
 famous.}
 that the limit is $\nicefrac{\pi^2}{6}$.
 If we treat $\sum \nicefrac{1}{n^p}$ as a function of $p$,
-we get the so-called Riemann $\zeta$ function.  Understanding the
+we get the so-called Riemann $\zeta$ (zeta) function.  Understanding the
 behavior of this function contains
 one of the most famous unsolved problems in mathematics today and has applications
 in seemingly unrelated areas such as modern cryptography.
@@ -3813,8 +3813,8 @@ Prove \emph{\myindex{Abel's theorem}}:
 \medskip
 
 \noindent
-\emph{\textbf{Theorem.} Suppose $\sum x_n$ is a series whose partial sums
-are a bounded sequence, $\{ \lambda_n \}$ is a sequence with $\lim \lambda_n = 0$, and
+\emph{\textbf{Theorem.} Suppose $\sum x_n$ is a series whose sequence of partial sums
+is bounded, $\{ \lambda_n \}$ is a sequence with $\lim \lambda_n = 0$, and
 $\sum \abs{ \lambda_{n+1} - \lambda_n }$ is convergent.
 Then $\sum \lambda_n x_n$ is convergent.}
 \end{exercise}
