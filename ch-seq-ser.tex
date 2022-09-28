@@ -2718,20 +2718,20 @@ the sequence converges.
 \end{proof}
 
 \begin{remark}
-The statement of this proposition is sometimes used to define the
+The statement of this theorem is sometimes used to define the
 completeness property of the real numbers.  We say a set is
 \emph{\myindex{Cauchy-complete}} (or sometimes just \emph{\myindex{complete}})
-if every Cauchy sequence converges.
+if every Cauchy sequence converges to something in the set.
 Above, we proved that
-as $\R$ has the \hyperref[defn:lub]{least-upper-bound property}, then $\R$ is 
+as $\R$ has the \hyperref[defn:lub]{least-upper-bound property}, $\R$ is 
 Cauchy-complete.
 One can construct $\R$ via
 \myquote{completing} $\Q$ by \myquote{throwing in} just enough points to make all
 Cauchy sequences converge (we omit the details).
 The resulting field has the
 least-upper-bound property.
-The advantage of using Cauchy
-sequences to define completeness is that this idea generalizes to
+The advantage of defining completeness via Cauchy
+sequences is that it generalizes to
 more abstract settings such as metric spaces, see \chapterref{ms:chapter}.
 \end{remark}
 
@@ -2970,6 +2970,7 @@ one of the few series for which we can so explicitly find the limit.
 
 \medskip
 
+\pagebreak[2]
 As for sequences we can talk about a \emph{\myindex{tail of a series}}.
 
 \begin{prop}
@@ -3010,14 +3011,14 @@ The series $\sum x_n$ is Cauchy if for every $\epsilon > 0$,
 there exists an $M \in \N$, such that for every $n \geq M$
 and $k \geq M$, we have
 \begin{equation*}
-\abs{ \left( \sum_{j=1}^k x_j \right) - \left( \sum_{j=1}^n x_j \right) }
+\abs{ \left( \sum_{i=1}^k x_i \right) - \left( \sum_{i=1}^n x_i \right) }
 < \epsilon .
 \end{equation*}
 Without loss of generality we assume $n < k$.  Then we write
 \begin{equation*}
-\abs{ \left( \sum_{j=1}^k x_j \right) - \left( \sum_{j=1}^n x_j \right) }
+\abs{ \left( \sum_{i=1}^k x_i \right) - \left( \sum_{i=1}^n x_i \right) }
 =
-\abs{ \sum_{j={n+1}}^k x_j }
+\abs{ \sum_{i={n+1}}^k x_i }
 < \epsilon .
 \end{equation*}
 We have proved the following simple proposition.
@@ -3025,9 +3026,9 @@ We have proved the following simple proposition.
 \begin{prop} \label{prop:cachyser}
 The series $\sum x_n$ is Cauchy if for every $\epsilon > 0$, 
 there exists an $M \in \N$ such that for every $n \geq M$
-and every $k > n$, we have
+and every $k > n$,
 \begin{equation*}
-\abs{ \sum_{j={n+1}}^k x_j }
+\abs{ \sum_{i={n+1}}^k x_i }
 < \epsilon .
 \end{equation*}
 \end{prop}
@@ -3047,7 +3048,7 @@ Let $\epsilon > 0$ be given.  As $\sum x_n$ is convergent, it is Cauchy.
 Thus we find an $M$ such that for every $n \geq M$, we have
 \begin{equation*}
 \epsilon > 
-\abs{ \sum_{j={n+1}}^{n+1} x_j }
+\abs{ \sum_{i={n+1}}^{n+1} x_i }
 =
 \abs{ x_{n+1} } .
 \end{equation*}
@@ -3089,9 +3090,9 @@ Write the partial sums $s_n$ for $n = 2^k$ as:
 & ~~ \vdots \\
  s_{2^k} & = 
 1 + 
-\sum_{j=1}^k
+\sum_{i=1}^k
 \left(
-\sum_{m=2^{j-1}+1}^{2^j} \frac{1}{m}
+\sum_{m=2^{i-1}+1}^{2^i} \frac{1}{m}
 \right) .
 \end{align*}
 Notice $\nicefrac{1}{3} + \nicefrac{1}{4} \geq \nicefrac{1}{4} + \nicefrac{1}{4} =
@@ -3110,12 +3111,12 @@ Therefore,
 \begin{equation*}
 s_{2^k} = 
 1 + 
-\sum_{j=1}^k
+\sum_{i=1}^k
 \left(
-\sum_{m=2^{j-1}+1}^{2^j} \frac{1}{m}
+\sum_{m=2^{i-1}+1}^{2^i} \frac{1}{m}
 \right) 
 \geq
-1 + \sum_{j=1}^k \frac{1}{2} = 1 + \frac{k}{2} .
+1 + \sum_{i=1}^k \frac{1}{2} = 1 + \frac{k}{2} .
 \end{equation*}
 As $\{ \nicefrac{k}{2} \}$ is unbounded by the
 \hyperref[thm:arch:i]{Archimedean property}, that means that
@@ -3177,17 +3178,17 @@ the proposition.
 \end{proof}
 
 An example of a useful application of the first item is the following
-formula.  If $\abs{r} < 1$ and $j \in \N$, then
+formula.  If $\abs{r} < 1$ and $i \in \N$, then
 \begin{equation*}
-\sum_{n=j}^\infty r^n = \frac{r^j}{1-r} .
+\sum_{n=i}^\infty r^n = \frac{r^i}{1-r} .
 \end{equation*}
 The formula follows by using the geometric series and multiplying by
-$r^j$:
+$r^i$:
 \begin{equation*}
-r^j \sum_{n=0}^\infty r^n =
-\sum_{n=0}^\infty r^{n+j}
+r^i \sum_{n=0}^\infty r^n =
+\sum_{n=0}^\infty r^{n+i}
 =
-\sum_{n=j}^\infty r^n .
+\sum_{n=i}^\infty r^n .
 \end{equation*}
 
 Multiplying series is not as simple as adding, see the next
@@ -3240,17 +3241,17 @@ A series is convergent if and only if it is Cauchy.  Hence
 suppose $\sum \abs{x_n}$ is Cauchy.  That is, for every $\epsilon > 0$,
 there exists an $M$ such that for all $k \geq M$ and all $n > k$, we have 
 \begin{equation*}
-\sum_{j=k+1}^n \abs{x_j} 
+\sum_{i=k+1}^n \abs{x_i} 
 =
-\abs{ \sum_{j=k+1}^n \abs{x_j} }
+\abs{ \sum_{i=k+1}^n \abs{x_i} }
 <
 \epsilon .
 \end{equation*}
 We apply the triangle inequality for a finite sum to obtain
 \begin{equation*}
-\abs{ \sum_{j=k+1}^n x_j }
+\abs{ \sum_{i=k+1}^n x_i }
 \leq
-\sum_{j=k+1}^n \abs{x_j}
+\sum_{i=k+1}^n \abs{x_i}
 <
 \epsilon .
 \end{equation*}
@@ -3264,9 +3265,9 @@ a useful inequality for absolutely convergent series,
 a series version of the triangle inequality,
 a proof of which we leave as an exercise:
 \begin{equation*}
-\abs{ \sum_{j=1}^\infty x_j }
+\abs{ \sum_{i=1}^\infty x_i }
 \leq
-\sum_{j=1}^\infty \abs{x_j} .
+\sum_{i=1}^\infty \abs{x_i} .
 \end{equation*}
 
 Absolutely convergent series have many wonderful properties.
@@ -3378,9 +3379,9 @@ Let $s_n$ denote the $n$th partial sum.
 & ~~ \vdots \\
  s_{2^k - 1} &= 
 1 + 
-\sum_{j=1}^{k-1}
+\sum_{i=1}^{k-1}
 \left(
-\sum_{m=2^j}^{2^{j+1}-1} \frac{1}{m^p}
+\sum_{m=2^i}^{2^{i+1}-1} \frac{1}{m^p}
 \right) .
 \end{align*}
 Instead of estimating from below, we estimate from above.
@@ -3397,55 +3398,55 @@ for all $k \geq 2$,
 s_{2^k-1}
 & =
 1+
-\sum_{j=1}^{k-1}
+\sum_{i=1}^{k-1}
 \left(
-\sum_{m=2^{j}}^{2^{j+1}-1} \frac{1}{m^p}
+\sum_{m=2^{i}}^{2^{i+1}-1} \frac{1}{m^p}
 \right) 
 \\
 & <
 1+
-\sum_{j=1}^{k-1}
+\sum_{i=1}^{k-1}
 \left(
-\sum_{m=2^{j}}^{2^{j+1}-1} \frac{1}{{(2^j)}^p}
+\sum_{m=2^{i}}^{2^{i+1}-1} \frac{1}{{(2^i)}^p}
 \right) 
 \\
 & =
 1+
-\sum_{j=1}^{k-1}
+\sum_{i=1}^{k-1}
 \left(
-\frac{2^j}{{(2^j)}^p}
+\frac{2^i}{{(2^i)}^p}
 \right) 
 \\
 & =
 1+
-\sum_{j=1}^{k-1}
+\sum_{i=1}^{k-1}
 {\left(
 \frac{1}{2^{p-1}}
-\right)}^j .
+\right)}^i .
 \end{split}
 \end{equation*}
 As $p > 1$, then $\frac{1}{2^{p-1}} < 1$.
 \propref{geometric:prop} says that
 \begin{equation*}
-\sum_{j=1}^\infty
+\sum_{i=1}^\infty
 {\left(
 \frac{1}{2^{p-1}}
-\right)}^j
+\right)}^i
 \end{equation*}
 converges.  Thus,
 \begin{equation*}
 s_{2^k-1} < 
 1+
-\sum_{j=1}^{k-1}
+\sum_{i=1}^{k-1}
 {\left(
 \frac{1}{2^{p-1}}
-\right)}^j 
+\right)}^i 
 \leq 
 1+
-\sum_{j=1}^\infty
+\sum_{i=1}^\infty
 {\left(
 \frac{1}{2^{p-1}}
-\right)}^j .
+\right)}^i .
 \end{equation*}
 For every $n$ there is a $k \geq 2$ such that $n \leq 2^k-1$, and
 as $\{ s_n \}$ is a monotone sequence, $s_n \leq s_{2^k-1}$.
@@ -3453,10 +3454,10 @@ So for all $n$,
 \begin{equation*}
 s_n < 
 1+
-\sum_{j=1}^\infty
+\sum_{i=1}^\infty
 {\left(
 \frac{1}{2^{p-1}}
-\right)}^j
+\right)}^i
 \end{equation*}
 Thus the sequence of partial sums is bounded, and the series converges.
 \end{proof}
