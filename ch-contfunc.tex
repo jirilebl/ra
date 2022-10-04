@@ -105,8 +105,8 @@ If no such $L$ exists, then we say that the limit does not exist or
 that $f$ \emph{\myindex{diverges}} at $c$.
 \end{defn}
 
-Again the notation and language we are using above assumes the limit
-is unique even though we have not yet proved uniqueness.
+Again the notation and language we are using above assumes the limit $L$, if
+it exists, is unique, which needs to be proved.
 Let us do that now.
 
 \begin{prop}
@@ -240,7 +240,7 @@ And we are done.
 
 It is possible to strengthen the reverse direction of
 the lemma by simply stating that
-$\{ f(x_n) \}$ converges without requiring a specific limit.
+\myquote{$\{ f(x_n) \}$ converges,} without requiring a specific limit.
 See \exerciseref{exercise:seqflimitalt}.
 
 \begin{example}
@@ -270,7 +270,7 @@ that $\lim\, x_n = 0$.  Furthermore,
 Therefore, $\bigl\{ \sin ( \nicefrac{1}{x_n} ) \bigr\}$ does not converge.
 By
 \lemmaref{seqflimit:lemma}, 
-$\lim_{x \to 0} \, \sin( \nicefrac{1}{x} )$ does not exist.
+$\displaystyle \lim_{x \to 0} \, \sin( \nicefrac{1}{x} )$ does not exist.
 
 Now consider $x\sin(\nicefrac{1}{x})$.  Let $\{ x_n \}$ be a sequence
 such that $x_n \not= 0$ for all $n$, and such that $\lim\, x_n = 0$.
@@ -391,7 +391,7 @@ $\displaystyle
 \left(\lim_{x\to c} g(x)\right) .
 $
 \item \label{falg:cor:iv} If
-$\displaystyle \lim_{x\to c} g(x) \not= 0$,
+$\displaystyle \lim_{x\to c} g(x) \not= 0$
 and $g(x) \not= 0$ for all $x \in S \setminus \{ c \}$, then
 \begin{equation*}
 \lim_{x\to c} \frac{f(x)}{g(x)} =
@@ -427,6 +427,8 @@ $f|_A$ is called the \emph{\myindex{restriction}} of $f$ to $A$.
 
 The function $f|_A$ is simply the function $f$ taken on a smaller domain.
 The following proposition is the analogue of taking a tail of a sequence.
+It says that the limit is \myquote{local}: The limit only depends on points
+arbitrarily near $c$.
 
 \begin{prop} \label{prop:limrest}
 Let $S \subset \R$, $c \in \R$, and
@@ -476,26 +478,28 @@ we have $\abs{f(x)-L} = \bigl\lvert f|_A(x)-L
 \bigr\rvert < \epsilon$.
 \end{proof}
 
-The hypothesis of the proposition is necessary.  For an arbitrary
-restriction we generally only get implication in only one direction,
+The hypothesis on $A$ in the proposition is necessary.  For an arbitrary
+restriction we generally get an implication in only one direction,
 see \exerciseref{exercise:restrictionlimitexercise}.  
-
 The usual notation for the limit is
 \begin{equation*}
 \lim_{\substack{x \to c\\x \in A}} f(x) := \lim_{x \to c} f|_A(x) .
 \end{equation*}
-The most common use of restriction with respect to limits
-are the \emph{\myindex{one-sided limits}}%
+A common use of restriction with respect to limits, which does not satisfy
+the hypothesis in the proposition, is the so-called
+\emph{\myindex{one-sided limit}}%
 \footnote{%
-There are a plethora of notations for one-sided limits.  E.g.\ for
+There are a plethora of notations for one-sided limits.  E.g., for
 $\lim\limits_{x \to c^-} f(x)$ one sees
 $\lim\limits_{\substack{x \to c\\x < c}} f(x)$,
 $\lim\limits_{x \uparrow c} f(x)$, or
 $\lim\limits_{x \nearrow c} f(x)$.}.
 
 \begin{defn} \label{defn:onesidedlimits}
-Let $f \colon S \to \R$ be function and let $c$ be a cluster point of
-$S \cap (c,\infty)$.  Then if the limit
+Let $f \colon S \to \R$ be function and let $c \in \R$.  If
+$c$ is a cluster point of
+$S \cap (c,\infty)$
+and the limit
 of the restriction of $f$ to $S \cap (c,\infty)$ 
  as $x \to c$ exists, define
 \glsadd{not:onesidedlim}
@@ -510,7 +514,7 @@ exists, define
 \end{equation*}
 \end{defn}
 
-The proposition above does not apply to one-sided limits.
+\propref{prop:limrest} does not apply to one-sided limits.
 It is possible to have one-sided limits, but no limit at a point.  For
 example, define $f \colon \R \to \R$ by $f(x) := 1$ for $x < 0$ and
 $f(x) :=
@@ -520,8 +524,7 @@ $f(x) :=
 \lim_{x \to 0^+} f(x) = 0, \qquad
 \lim_{x \to 0} f(x) \quad \text{does not exist.}
 \end{equation*}
-We have the following replacement.
-
+All is not lost, however, for we have the following replacement.
 
 \begin{prop} \label{prop:onesidedlimits}
 Let $S \subset \R$ be such that $c$ is a cluster point
@@ -536,8 +539,7 @@ L .
 \end{equation*}
 \end{prop}
 
-That is, a limit exists if both one-sided limits exist and are equal, and
-vice versa.  The
+That is, a limit at $c$ exists if and only if both one-sided limits exist and are equal.  The
 proof is a straightforward application of the definition of limit
 and is left as an exercise.  The key point is that
 $\bigl( S \cap (-\infty,c) \bigr) \cup \bigl( S \cap (c,\infty) \bigr)
@@ -712,10 +714,10 @@ form dates only to the late 1800s.
 \begin{defn}
 Let $S \subset \R$, $c \in S$, and let $f \colon S \to \R$ be a function.
 We say
-that $f$ is \emph{continuous at $c$}\index{continuous at $c$}
+$f$ is \emph{continuous at $c$}\index{continuous at $c$}
 if for every $\epsilon > 0$
 there is a $\delta > 0$ such that whenever $x \in S$ and $\abs{x-c} <
-\delta$, then
+\delta$, we have
 $\abs{f(x)-f(c)} < \epsilon$.
 
 %\medskip
