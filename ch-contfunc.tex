@@ -308,7 +308,7 @@ such that
 the limits of $f(x)$ and $g(x)$ as $x$ goes to $c$ both exist,
 and
 \begin{equation*}
-f(x) \leq g(x) \qquad \text{for all } x \in S.
+f(x) \leq g(x) \qquad \text{for all } x \in S \setminus \{ c \}.
 \end{equation*}
 Then
 \begin{equation*}
@@ -338,7 +338,7 @@ Let $S \subset \R$ and let $c$ be a cluster point of $S$.  Suppose $f \colon S \
 exists.
 Suppose there are two real numbers $a$ and $b$ such that
 \begin{equation*}
-a \leq f(x) \leq b \qquad \text{for all } x \in S.
+a \leq f(x) \leq b \qquad \text{for all } x \in S \setminus \{ c \}.
 \end{equation*}
 Then
 \begin{equation*}
@@ -354,7 +354,7 @@ Let $S \subset \R$ and let $c$ be a cluster point of $S$.
 Suppose $f \colon S \to \R$,
 $g \colon S \to \R$, and $h \colon S \to \R$ are functions such that
 \begin{equation*}
-f(x) \leq g(x) \leq h(x) \qquad \text{for all } x \in S.
+f(x) \leq g(x) \leq h(x) \qquad \text{for all } x \in S \setminus \{ c \}.
 \end{equation*}
 Suppose the limits of $f(x)$ and $h(x)$ as $x$ goes to $c$ both exist, and
 \begin{equation*}
@@ -463,18 +463,18 @@ $\epsilon > 0$.  Thus $c$ is a cluster point of $A$.
 Now suppose $c$ is a cluster point of $S$ and $f(x) \to L$ as $x \to c$.  That is, for every $\epsilon > 0$
 there is a $\delta > 0$ such that if $x \in S \setminus \{ c \}$
 and $\abs{x-c} < \delta$, then $\abs{f(x)-L} < \epsilon$.  Because $A \subset S$,
-if $x$ is in $A \setminus \{ c \}$, then $x$ is in $S \setminus \{ c
-\}$, and hence $f|_A(x) \to L$ as $x \to c$.
+if $x \in A \setminus \{ c \}$, then $x \in S \setminus \{ c \}$,
+and hence $f|_A(x) \to L$ as $x \to c$.
 
-Finally suppose $f|_A(x) \to L$ as $x \to c$.
-For every $\epsilon > 0$
-there is a $\delta' > 0$ such that if $x \in A \setminus \{ c \}$
+Finally, suppose $f|_A(x) \to L$ as $x \to c$ and let $\epsilon > 0$ be
+given.
+There is a $\delta' > 0$ such that if $x \in A \setminus \{ c \}$
 and $\abs{x-c} < \delta'$, then $\bigl\lvert f|_A(x)-L \bigr\rvert < \epsilon$.
 Take $\delta := \min \{ \delta', \alpha \}$.
 Now suppose $x \in S \setminus \{ c \}$ and
-$\abs{x-c} < \delta$.  As $\abs{x-c} < \alpha$, then $x \in A \setminus \{ c \}$,
+$\abs{x-c} < \delta$.  As $\abs{x-c} < \alpha$, we find $x \in A \setminus \{ c \}$,
 and as $\abs{x-c} < \delta'$, 
-we have $\abs{f(x)-L} = \bigl\lvert f|_A(x)-L
+we get $\abs{f(x)-L} = \bigl\lvert f|_A(x)-L
 \bigr\rvert < \epsilon$.
 \end{proof}
 
