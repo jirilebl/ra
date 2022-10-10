@@ -324,7 +324,7 @@ L_1 := \lim_{x\to c} f(x), \qquad \text{and} \qquad L_2 := \lim_{x\to c} g(x) .
 \end{equation*}
 \lemmaref{seqflimit:lemma} says that $\{ f(x_n) \}$ converges to
 $L_1$ and $\{ g(x_n) \}$ converges to $L_2$.  We also
-have $f(x_n) \leq g(x_n)$.
+have $f(x_n) \leq g(x_n)$ for all $n$.
 We obtain $L_1 \leq L_2$ using
 \lemmaref{limandineq:lemma}.
 \end{proof}
@@ -1024,17 +1024,17 @@ f(x) :=
 \end{equation*}
 is not continuous at 0.
 
-Proof: Take the sequence $\{ - \nicefrac{1}{n} \}$, which converges to 0.  Then
-$f(-\nicefrac{1}{n}) = -1$ for every $n$,
+Proof: Take the sequence $\{ \nicefrac{-1}{n} \}$, which converges to 0.  Then
+$f(\nicefrac{-1}{n}) = -1$ for every $n$,
 and so
-$\lim\, f(-\nicefrac{1}{n}) = -1$, but $f(0) = 1$.  Thus the function is
+$\lim\, f(\nicefrac{-1}{n}) = -1$, but $f(0) = 1$.  Thus the function is
 not continuous at 0.  See
 \figureref{fig:jumpdiscont}.
 
 \begin{myfigureht}
 \includegraphics{figures/jumpdiscont}
 \caption{Graph of the jump discontinuity.  The values of
-$f(-\nicefrac{1}{n})$ and $f(0)$ are marked as black dots.\label{fig:jumpdiscont}}
+$f(\nicefrac{-1}{n})$ and $f(0)$ are marked as black dots.\label{fig:jumpdiscont}}
 \end{myfigureht}
 
 Notice that $f(\nicefrac{1}{n}) = 1$ for all $n \in \N$.
@@ -1066,7 +1066,7 @@ f(x) :=
 The function $f$ is discontinuous at all $c \in \R$.
 
 Proof:
-Suppose $c$ is rational.  Take a sequence $\{ x_n \}$
+If $c$ is rational, take a sequence $\{ x_n \}$
 of irrational numbers such that $\lim\, x_n = c$ (why can we?).  Then $f(x_n) = 0$
 and so $\lim\, f(x_n) = 0$, but $f(c) = 1$.
 If $c$ is irrational, take a sequence of rational numbers $\{ x_n \}$
@@ -1233,9 +1233,9 @@ continuous, but $h$ is a continuous function?
 
 \begin{exercise}
 Let $f \colon \R \to \R$ and 
-$g \colon \R \to \R$ be continuous functions.  Suppose that for
-all rational numbers $r$, $f(r) = g(r)$.  Show that $f(x) = g(x)$ for all
-$x$.
+$g \colon \R \to \R$ be continuous functions.  Suppose that
+$f(r) = g(r)$ for all $r \in \Q$.
+Show that $f(x) = g(x)$ for all $x \in \R$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:positivecontneigh}
