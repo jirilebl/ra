@@ -3908,50 +3908,48 @@ following test gives a large supply of conditionally convergent series.
 Let $\{ x_n \}$ be a monotone decreasing sequence of positive real numbers such
 that $\lim\, x_n = 0$.  Then
 \begin{equation*}
-\sum_{n=1}^\infty {(-1)}^n x_n
+\sum_{n=1}^\infty {(-1)}^n x_n \qquad \text{converges.}
 \end{equation*}
-converges.
 \end{prop}
 
 \begin{proof}
-Let $s_m := \sum_{k=1}^m {(-1)}^k x_k$ be the $m$th partial sum.  Then write
+Let $s_m := \sum_{k=1}^m {(-1)}^n x_n$ be the $m$th partial sum.  Then
 \begin{equation*}
-s_{2n} =
-\sum_{k=1}^{2n} {(-1)}^k x_k
+s_{2k} =
+\sum_{n=1}^{2k} {(-1)}^n x_n
 =
-(-x_1 + x_2) + \cdots + (-x_{2n-1} + x_{2n})
+(-x_1 + x_2) + \cdots + (-x_{2k-1} + x_{2k})
 =
-\sum_{k=1}^{n} (-x_{2k-1} + x_{2k}) .
+\sum_{\ell=1}^{k} (-x_{2\ell-1} + x_{2\ell}) .
 \end{equation*}
-The sequence $\{ x_k \}$ is decreasing and so $(-x_{2k-1}+x_{2k}) \leq 0$
-for all $k$.
-Therefore, the subsequence $\{ s_{2n} \}$ of partial sums
-is a decreasing sequence.  Similarly, $(x_{2k}-x_{2k+1}) \geq 0$, and so
+The sequence $\{ x_n \}$ is decreasing and so $(-x_{2\ell-1}+x_{2\ell}) \leq 0$
+for all $\ell$.
+Therefore, the subsequence $\{ s_{2k} \}$ of partial sums
+is a decreasing sequence.  Similarly, $(x_{2\ell}-x_{2\ell+1}) \geq 0$, and so
 \begin{equation*}
-s_{2n} = - x_1 + ( x_2 - x_3 ) + \cdots + ( x_{2n-2} - x_{2n-1} ) + x_{2n}
+s_{2k} = - x_1 + ( x_2 - x_3 ) + \cdots + ( x_{2k-2} - x_{2k-1} ) + x_{2k}
 \geq -x_1 .
 \end{equation*}
-The sequence $\{ s_{2n} \}$ is decreasing and bounded below, so it converges.
-Let $a := \lim\, s_{2n}$.
+The sequence $\{ s_{2k} \}$ is decreasing and bounded below, so it converges.
+Let $a := \lim\, s_{2k}$.
 
 We wish to show that $\lim\, s_m = a$ (and not just for the subsequence).
-Notice
-\begin{equation*}
-s_{2n+1} = s_{2n} + x_{2n+1} .
-\end{equation*}
-Given $\epsilon > 0$, pick $M$ such that $\abs{s_{2n}-a} <
-\nicefrac{\epsilon}{2}$ whenever $2n \geq M$.
+Given $\epsilon > 0$, pick $M$ such that $\abs{s_{2k}-a} <
+\nicefrac{\epsilon}{2}$ whenever $k \geq M$.
 Since $\lim\, x_n = 0$, we also
 make $M$ possibly larger
 to obtain
-$x_{2n+1} < \nicefrac{\epsilon}{2}$ whenever $2n \geq M$.  
-If $2n \geq M$, we have
-$\abs{s_{2n}-a} < \nicefrac{\epsilon}{2} < \epsilon$, so we just need
-to check the situation for $s_{2n+1}$:
+$x_{2k+1} < \nicefrac{\epsilon}{2}$ whenever $k \geq M$.  
+Suppose $m \geq 2M+1$.  If $m=2k$, then $k \geq M+\nicefrac{1}{2} \geq M$ and
+$\abs{s_{m}-a}=\abs{s_{2k}-a} < \nicefrac{\epsilon}{2} < \epsilon$.
+If $m=2k+1$, then also $k \geq M$.  Notice
+$s_{2k+1} = s_{2k} - x_{2k+1}$.
+Thus
 \begin{equation*}
-\abs{s_{2n+1}-a} = 
-\abs{s_{2n}-a + x_{2n+1}} \leq
-\abs{s_{2n}-a} + x_{2n+1} < 
+\abs{s_{m}-a} = 
+\abs{s_{2k+1}-a} = 
+\abs{s_{2k}-a - x_{2k+1}} \leq
+\abs{s_{2k}-a} + x_{2k+1} < 
 \nicefrac{\epsilon}{2}+ \nicefrac{\epsilon}{2} = \epsilon .  \qedhere
 \end{equation*}
 \end{proof}
