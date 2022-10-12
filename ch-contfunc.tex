@@ -1090,7 +1090,7 @@ Define $f \colon (0,1) \to \R$ as
 f(x) := 
 \begin{cases}
 \nicefrac{1}{k} & \text{if } x=\nicefrac{m}{k}, \text{ where } m,k \in \N
-\text{ and } m \text{ and } k \text{ have no common divisors,} \\
+\text{ and } m \text{ and } k \text{ have no common divisors (lowest terms),} \\
 0 & \text{if } x \text{ is irrational.}
 \end{cases}
 \end{equation*}
@@ -1105,7 +1105,7 @@ discontinuous at all rational $c$.
 \end{myfigureht}
 
 Proof:
-Suppose $c = \nicefrac{m}{k}$ is rational.  Take a sequence of
+Let $c = \nicefrac{m}{k}$ be rational and in lowest terms.  Take a sequence of
 irrational numbers $\{ x_n \}$ such that $\lim\, x_n = c$.  Then
 $\lim\, f(x_n) = \lim \, 0 = 0$, but $f(c) = \nicefrac{1}{k} \not= 0$.  So $f$
 is discontinuous at $c$.
@@ -1115,8 +1115,7 @@ $\{ x_n \}$ in $(0,1)$ such that $\lim\, x_n = c$.
 Given $\epsilon > 0$, find $K \in \N$ such
 that $\nicefrac{1}{K} < \epsilon$
 by the \hyperref[thm:arch:i]{Archimedean property}.
-If $\nicefrac{m}{k} \in (0,1)$ is in lowest terms
-(no common divisors), then $0 < m < k$.
+If $\nicefrac{m}{k} \in (0,1)$ and $m,k \in \N$, then $0 < m < k$.
 So there are only finitely many rational numbers in $(0,1)$
 whose denominator $k$ in lowest terms is less than $K$.
 As $\lim\, x_n = c$, every number not equal to $c$ can appear at most
@@ -1168,7 +1167,7 @@ $f(x) := \nicefrac{1}{x}$ is continuous.
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon \R \to \R$ be defined by
+Define $f \colon \R \to \R$ by
 \begin{equation*}
 f(x) :=
 \begin{cases}
@@ -1181,8 +1180,7 @@ $f$ is continuous at $1$ and discontinuous at $2$.
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon \R \to \R$ be
-defined by
+Define $f \colon \R \to \R$ by
 \begin{equation*}
 f(x) :=
 \begin{cases}
@@ -1194,8 +1192,7 @@ Is $f$ continuous?  Prove your assertion.
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon \R \to \R$ be
-defined by
+Define $f \colon \R \to \R$ by
 \begin{equation*}
 f(x) :=
 \begin{cases}
@@ -1337,7 +1334,7 @@ A continuous function $f \colon [a,b] \to \R$ is bounded.
 \end{lemma}
 
 \begin{proof}
-Let us prove this claim by contrapositive.  Suppose $f$ is not bounded.
+We prove this claim by contrapositive.  Suppose $f$ is not bounded.
 Then for each
 $n \in \N$, there is an $x_n \in [a,b]$, such that
 \begin{equation*}
@@ -1814,7 +1811,7 @@ not achieve an absolute minimum nor an absolute maximum on $\R$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon \R \to \R$ is a continuous function such that
+Suppose $f \colon \R \to \R$ is continuous such that
 $x \leq f(x) \leq x+1$ for all $x \in \R$.  Find $f(\R)$.
 \end{exercise}
 
