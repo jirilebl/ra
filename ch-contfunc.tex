@@ -1324,10 +1324,11 @@ are quite well behaved.
 
 \subsection{Min-max or extreme value theorem}
 
-Recall a function $f \colon [a,b] \to \R$ is
+Recall that $f \colon [a,b] \to \R$ is
 \emph{bounded}\index{bounded function}\index{function!bounded}
 if there exists a $B \in \R$ such that
-$\abs{f(x)} \leq B$ for all $x \in [a,b]$.  We have the following lemma.
+$\abs{f(x)} \leq B$ for all $x \in [a,b]$.
+For a continuous function on a closed and bounded interval, we have the following lemma.
 
 \begin{lemma}
 A continuous function $f \colon [a,b] \to \R$ is bounded.
@@ -1364,18 +1365,23 @@ The technique is a common one: Find a sequence with a certain property,
 then use Bolzano--Weierstrass to make such a sequence that also converges.
 
 Recall from calculus that $f \colon S \to \R$ achieves an
-\emph{\myindex{absolute minimum}}\index{minimum!absolute} at $c \in S$ if
+\emph{\myindex{absolute minimum}}\index{minimum!absolute}%
+\index{achieves absolute minimum}
+at $c \in S$ if
 \begin{equation*}
 f(x) \geq f(c) \qquad \text{for all } x \in S.
 \end{equation*}
 On the other hand, $f$ achieves an 
-\emph{\myindex{absolute maximum}}\index{maximum!absolute} at $c \in S$ if
+\emph{\myindex{absolute maximum}}\index{maximum!absolute}%
+\index{achieves absolute maximum}
+at $c \in S$ if
 \begin{equation*}
 f(x) \leq f(c) \qquad \text{for all } x \in S.
 \end{equation*}
-If such a $c \in S$ exists, then 
+If such a $c \in S$ exists, then we say
 $f$ \emph{achieves an absolute minimum (resp.\ absolute maximum) on
-$S$}.
+$S$}, and we call
+$f(c)$ the \emph{absolute minimum (resp.\ absolute maximum)}.
 %See \figureref{fig:minmax}.
 \begin{myfigureht}
 \includegraphics{figures/minmax}
@@ -1385,17 +1391,18 @@ $c$, and an absolute minimum $f(d)$ at $d$.\label{fig:minmax}}
 
 If $S$ is a closed
 and bounded interval, then a continuous $f$
-must achieve an absolute minimum and an absolute
+is not just bounded, it must achieve an absolute minimum and an absolute
 maximum on $S$.
 
 \begin{thm}[Minimum-maximum theorem / Extreme value theorem]
 \index{minimum-maximum theorem}%
 \index{maximum-minimum theorem}%
 \index{extreme value theorem}%
-A continuous function $f \colon [a,b] \to \R$ on a closed and bounded
-interval $[a,b]$ 
+A continuous function $f \colon [a,b] \to \R$
 achieves both an absolute minimum and an absolute maximum on $[a,b]$.
 \end{thm}
+
+Again, we remark that is important that the domain of $f$ is a closed and bounded interval $[a,b]$.
 
 \begin{proof}
 The lemma says that $f$ is bounded, so
