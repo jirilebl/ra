@@ -985,7 +985,7 @@ Proof: The function $\nicefrac{1}{x}$ is continuous on
 $(0,\infty)$ and $\sin(x)$ is continuous on $(0,\infty)$ (actually
 on $\R$, but $(0,\infty)$ is the range for $\nicefrac{1}{x}$).
 Hence the composition $\sin(\nicefrac{1}{x})$ is continuous.  Also,
-$x^2$ is continuous on the interval $(-1,1)$ (the range of $\sin$).  Thus
+$x^2$ is continuous on the interval $[-1,1]$ (the range of $\sin$).  Thus
 the composition
 ${\bigl(\sin(\nicefrac{1}{x})\bigr)}^2$ is continuous on $(0,\infty)$.
 \end{example}
@@ -1437,13 +1437,13 @@ Similarly, $a \leq y \leq b$.  So $x$ and $y$ are in $[a,b]$.
 A limit of a subsequence is the same as the limit of the
 sequence, and we can take a limit past the continuous function $f$:
 \begin{equation*}
-\inf f([a,b]) = \lim_{n\to\infty} f(x_n)
+\inf f\bigl([a,b]\bigr) = \lim_{n\to\infty} f(x_n)
 = \lim_{i\to\infty} f(x_{n_i}) = 
 f \Bigl( \lim_{i\to\infty} x_{n_i} \Bigr) = f(x) .
 \end{equation*}
 Similarly,
 \begin{equation*}
-\sup f([a,b]) = \lim_{n\to\infty} f(y_n)
+\sup f\bigl([a,b]\bigr) = \lim_{n\to\infty} f(y_n)
 = \lim_{i\to\infty} f(y_{m_i}) = 
 f \Bigl( \lim_{i\to\infty} y_{m_i} \Bigr) = f(y) .
 \end{equation*}
@@ -1455,7 +1455,8 @@ $f$ achieves an absolute maximum at $y$.
 The function $f(x) := x^2+1$ defined on the interval $[-1,2]$ achieves a minimum
 at $x=0$ when $f(0) = 1$.  It achieves a maximum at $x=2$ where $f(2) = 5$.
 Do note that the domain of definition matters.  If we instead took the domain
-to be $[-10,10]$, then $x=2$ would no longer be a maximum of $f$.  Instead
+to be $[-10,10]$, then $f$ would no longer have a maximum at $x=2$.
+Instead,
 the maximum would be achieved at either $x=10$ or $x=-10$.
 \end{example}
 
@@ -1719,7 +1720,7 @@ f(x) :=
 is not continuous at $0$; however, $f$ has the intermediate value property:
 Whenever $a < b$ and $y$ is such that $f(a) < y < f(b)$
 or $f(a) > y > f(b)$,
-there exists a $c$ such that $f(y) = c$.
+there exists a $c \in (a,b)$ such that $f(c) = y$.
 Proof is left as \exerciseref{exercise:meanvaluepropsin1x}.
 \end{example}
 
@@ -1729,7 +1730,8 @@ $f(b)$.  In fact, more is true.  Combining all the results of this section
 one can prove the following useful corollary whose proof is left as an exercise.
 
 \begin{cor} \label{cor:imageofinterval}
-If $f \colon [a,b] \to \R$ is continuous, then the direct image $f([a,b])$
+If $f \colon [a,b] \to \R$ is continuous, then the direct image
+$f\bigl([a,b]\bigr)$
 is a closed and bounded interval or a single number.
 \end{cor}
 
@@ -1790,7 +1792,7 @@ $g(0) < 0$.  Show that $g$ has at least two distinct real roots.
 \begin{exercise}
 Prove \corref{cor:imageofinterval}:
 Suppose $f \colon [a,b] \to \R$ is a continuous function.  Prove
-that the direct image $f([a,b])$ is a closed and bounded interval or
+that the direct image $f\bigl([a,b]\bigr)$ is a closed and bounded interval or
 a single number.
 \end{exercise}
 
@@ -3147,7 +3149,7 @@ an increasing $F$ as above is never strictly increasing.
 \begin{exercise}[Challenging] \label{exercise:increasingfuncdiscatQ}
 Find an example of an increasing function $f \colon [0,1] \to \R$
 that has a discontinuity at each rational number.  Then show that the image
-$f([0,1])$ contains no interval.  Hint: Enumerate
+$f\bigl([0,1]\bigr)$ contains no interval.  Hint: Enumerate
 the rational numbers and define
 the function with a series.
 \end{exercise}
