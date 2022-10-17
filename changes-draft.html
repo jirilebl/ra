@@ -1,7 +1,29 @@
 This file is a draft of the new changes for https://www.jirka.org/ra/changes.html
 
+<li>In definition of limit of a sequence, don't "cheat" and say "if a limit
+	is unique."  I am starting to feel like this the previous way, while
+	a little less wordy may be confusing to students.
+<li>Do not shorten sequences to \(\{ x_n \},\) but always write out
+	\(\{x_n\}_{n=1}^\infty.\)  It seems to me this shorthand is
+	causing more confusion than it is worth, especially with
+	regards to the distinction between set and sequence, and also
+	when working with subsequences.  FIXME: in progress.
+<li>Do not shorten sequence limits to \(\lim\, x_n,\) but always write out
+	\(\lim_{n\to\infty} x_n.\)  It seems to me this shorthand is
+	causing more confusion than it is worth, especially
+	when subsequences are introduced.  FIXME: in progress.
+<li>Rename section 3.3 to "Extreme and intermediate value theorems".
+<li>Add a new Example 3.3.11 showing the existence of roots,
+	so the old 3.3.11 becomes 3.3.12, and
+	Corollary 3.3.12 becomes 3.3.13.  This is a nice application,
+	and ties in some prior results, and it is good to see it especially
+	of 4.4 is not covered.
+
+Smaller changes:
+
 <li>In the definition of \(S\) in Theorem 0.3.6, use \(n,\) to avoid overloading of \(m.\)
 <li>Say that \(A\) is a set in Cantor to be a bit more precise.
+<li>Simplify parts (iii) and (iv) of Definition 1.1.2.
 <li>In proof of part (v) of 1.1.8, should just use the definition rather than
   part (ii) of the proposition.
 <li>Improve wording around Proposition 1.2.2, remove some unnecessary words
@@ -9,8 +31,10 @@ This file is a draft of the new changes for https://www.jirka.org/ra/changes.htm
 	statement.
 <li>In the proof of 1.2.6, use \(c\) instead of \(b\) for the second
   inequality to avoid overloading \(b.\)
-<li>In Definition 2.1.16, include the \({}_{n=1}^\infty\) on the sequences
-	to emphasize that \(\{n_i\}\) is a sequence in \(i.\)
+<li>After definition of subsequences, give a little bit more detail of the
+	example subsequence.
+<li>After Proposition 2.1.10, make a remark about monotone sequences and
+	boundedness above/below.
 <li>Improve wording of Example 2.1.12.
 <li>In the proof of Proposition 2.2.11, use \(x\) instead of \(L\) in the
   proof as \(L\) is used in the related Lemma 2.2.12 for something else.
@@ -38,17 +62,12 @@ This file is a draft of the new changes for https://www.jirka.org/ra/changes.htm
   and conditional convergence.  That is, change "is conditionally
   convergent" to "converges conditionally", and add both "converges
   conditionally" and "conditional convergence" to the index.
-<li>In section 2.5, use \(i\) instead of \(j\) as that typesets a lot better
-	with the series, also it allows us a couple of better pagebreaks
-	on page 81-84, for example, the quip about "tail of series" is on
-	the same page as the relevant proposition, and Proposition 2.5.12
-	is no longer split over two pages.  Pagination is the same past page
-	85.
+<li>Throughout, where appropriate, use \(i\) or another letter instead of \(j\)
+	as that typesets a lot better with series and as powers.
 <li>Clean up the proof of Proposition 2.6.2, the Alternating series test.
   Mainly improve the readability by using the variable names more
   consistently, rewrite the end of the proof, and fix an erratum.
-  A slightly better page break is achieved, but does not change pagination
-  past page 95.
+<li>Rephrase Merten's theorem a tiny bit.
 <li>In Exercise 2.6.11 part c, be more precise in the parenthetical remark
 	about divergence.
 <li>In Corollaries 3.1.9, 3.1.10, 3.1.11, the hypothesis is only needed
@@ -77,8 +96,9 @@ This file is a draft of the new changes for https://www.jirka.org/ra/changes.htm
 <li>At the end of the proof of Proposition 3.3.10, when we claim the root
   by Bolzano, say it is in the open interval so that the claim lines up
   better with the theorem.
-<li>When saying what we mean by "uniformly continuous on \(X\)" note that
-  we mean that \(f\) is in fact continuous on \(X\) as we only apply
-  this phrase to such functions anyway.
+<li>Remove the "definition" of the phrase "uniformly continuous on \(X\)"
+	as we only ever use it in a remark and it is not standard verbiage anyway.
 <li>In Example 3.4.10, name the second function \(g\) to make things
   hopefully a bit clearer.
+<li>Reword the paragraph in front of Corollary 4.4.3, now that we have the
+	existence of roots as an explicit example in 3.3.

@@ -17,10 +17,6 @@
 
 \usepackage[T1]{fontenc}
 
-% Footnotes should use symbols, not numbers.  Numbered footnotes are
-% evil
-\usepackage[perpage,symbol*]{footmisc}
-
 \usepackage[shortlabels]{enumitem}
 \usepackage{ifpdf}
 \usepackage{amsmath}
@@ -30,6 +26,8 @@
 \usepackage{graphicx}
 \usepackage{graphbox}
 \usepackage{color}
+
+\usepackage{perpage}
 
 % Remove page numbers on chapter opens
 % must come before fullpage
@@ -111,6 +109,23 @@
 \usepackage[vvarbb]{newpxmath}
 \linespread{1.05}
 \usepackage[scr=boondoxo]{mathalfa} % but we want the nice fancy script fonts
+
+% Footnotes should use symbols, not numbers.  Numbered footnotes are
+% evil, not using footmisc as it conflicts with hyperref
+%\usepackage[perpage,symbol*]{footmisc}
+
+\usepackage{footnote}
+
+% The [2] would not use star
+%\MakePerPage[2]{footnote}
+\MakePerPage{footnote}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+% to avoid counter error on footnotes on first pass
+\makeatletter
+\gdef\@ctrerr{%
+  \@latex@warning{Counter too large}}
+\makeatother
 
 %enumitem global options
 \setlist{leftmargin=*,itemsep=0.5\itemsep,parsep=0.5\parsep,topsep=0.5\topsep,partopsep=0.5\partopsep}

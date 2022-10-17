@@ -8,20 +8,19 @@
 \sectionnotes{1.5 lectures}
 
 An integral is a way to \myquote{sum} the values of a function.
-There is often confusion among students of
-calculus between \emph{integral} and \emph{antiderivative}.
+There is sometimes confusion among students of
+calculus between the \emph{integral} and the \emph{antiderivative}.
 The integral is (informally) the area under the curve, nothing else.
 That we can compute an antiderivative using the integral is a nontrivial
-result we have to prove.  
-In this chapter we define the \emph{Riemann integral}%
+result we must prove.  
+We will define the \emph{Riemann integral}%
 \footnote{Named after the German mathematician
 \href{https://en.wikipedia.org/wiki/Riemann}{Georg Friedrich Bernhard Riemann}
 (1826--1866).}
 using the Darboux integral%
 \footnote{Named after the French mathematician
 \href{https://en.wikipedia.org/wiki/Darboux}{Jean-Gaston Darboux} (1842--1917).},
-which is technically simpler than (but equivalent to) the traditional
-definition of Riemann.
+an equivalent but technically simpler definition.
 
 \subsection{Partitions and lower and upper integrals}
 
@@ -47,12 +46,13 @@ Let $f \colon [a,b] \to \R$ be a bounded function.  Let $P$ be a partition of
 $[a,b]$.
 Define
 \begin{align*}
-& m_i := \inf \, \bigl\{ f(x) : x_{i-1} \leq x \leq x_i \bigr\} , \\
+& m_i := \inf \, \bigl\{ f(x) : x_{i-1} \leq x \leq x_i \bigr\} , &
 & M_i := \sup \, \bigl\{ f(x) : x_{i-1} \leq x \leq x_i \bigr\} , \\
 & L(P,f) :=
-\sum_{i=1}^n m_i \Delta x_i , \\
+\sum_{i=1}^n m_i \Delta x_i , &
 & U(P,f) :=
 \sum_{i=1}^n M_i \Delta x_i .
+\avoidbreak
 \end{align*}
 We call $L(P,f)$ the \emph{\myindex{lower Darboux sum}} and
 $U(P,f)$ the \emph{\myindex{upper Darboux sum}}\index{Darboux sum}.
@@ -149,10 +149,10 @@ $x \in \Q$ and $f(x) := 0$ if $x \notin \Q$.  Then
 The reason is that for every $i$, we have 
 $m_i = \inf \{ f(x) : x \in [x_{i-1},x_i] \} = 0$  and
 $M_i = \sup \{ f(x) : x \in [x_{i-1},x_i] \} = 1$.  Thus
-\begin{align*}
-& L(P,f) = \sum_{i=1}^n 0 \cdot \Delta x_i = 0 , \\
-& U(P,f) = \sum_{i=1}^n 1 \cdot \Delta x_i = \sum_{i=1}^n \Delta x_i = 1  .
-\end{align*}
+\begin{equation*}
+L(P,f) = \sum_{i=1}^n 0 \cdot \Delta x_i = 0 , \quad \text{and} \quad
+U(P,f) = \sum_{i=1}^n 1 \cdot \Delta x_i = \sum_{i=1}^n \Delta x_i = 1  .
+\end{equation*}
 \end{example}
 
 \begin{remark}
@@ -200,56 +200,56 @@ a refinement of
 $P = \{ x_0, x_1, \ldots, x_n \}$.  Then
 $x_0 = \widetilde{x}_0$ and 
 $x_n = \widetilde{x}_{\ell}$.  In fact, there are integers
-$k_0 < k_1 < \cdots < k_n$ such that $x_j = \widetilde{x}_{k_j}$ for
-$j=0,1,2,\ldots,n$.
+$k_0 < k_1 < \cdots < k_n$ such that $x_i = \widetilde{x}_{k_i}$ for
+$i=0,1,2,\ldots,n$.
 
 Let $\Delta \widetilde{x}_p := \widetilde{x}_p - \widetilde{x}_{p-1}$.
 See \figureref{fig:refinement}.
 We get 
 \begin{equation*}
-\Delta x_j
+\Delta x_i
 =
-x_j - x_{j-1} =
-\widetilde{x}_{k_j} - \widetilde{x}_{k_{j-1}} =
-\sum_{p=k_{j-1}+1}^{k_j} 
+x_i - x_{i-1} =
+\widetilde{x}_{k_i} - \widetilde{x}_{k_{i-1}} =
+\sum_{p=k_{i-1}+1}^{k_i} 
 \widetilde{x}_{p} - \widetilde{x}_{p-1}
 =
-\sum_{p=k_{j-1}+1}^{k_j} \Delta \widetilde{x}_p .
+\sum_{p=k_{i-1}+1}^{k_i} \Delta \widetilde{x}_p .
 \end{equation*}
 \begin{myfigureht}
 \subimport*{figures/}{figrefinement.pdf_t}
-\caption{Refinement of a subinterval.  Notice $\Delta x_j =
+\caption{Refinement of a subinterval.  Notice $\Delta x_i =
 \Delta \widetilde{x}_{p-2} +
 \Delta \widetilde{x}_{p-1} +
 \Delta \widetilde{x}_{p}$,
 and also
-$k_{j-1}+1 = p-2$ and
-$k_{j} = p$.\label{fig:refinement}}
+$k_{i-1}+1 = p-2$ and
+$k_{i} = p$.\label{fig:refinement}}
 \end{myfigureht}
 
-Let $m_j$ be as before and correspond to the partition $P$.
-Let $\widetilde{m}_j := \inf \{ f(x) : \widetilde{x}_{j-1} \leq x \leq
-\widetilde{x}_j \}$.
-Now, $m_j \leq \widetilde{m}_p$ for $k_{j-1} < p \leq k_j$.  Therefore,
+Let $m_i$ be as before and correspond to the partition $P$.
+Let $\widetilde{m}_i := \inf \{ f(x) : \widetilde{x}_{i-1} \leq x \leq
+\widetilde{x}_i \}$.
+Now, $m_i \leq \widetilde{m}_p$ for $k_{i-1} < p \leq k_i$.  Therefore,
 \begin{equation*}
-m_j \Delta x_j
+m_i \Delta x_i
 =
-m_j \sum_{p=k_{j-1}+1}^{k_j} \Delta \widetilde{x}_p
+m_i \sum_{p=k_{i-1}+1}^{k_i} \Delta \widetilde{x}_p
 =
-\sum_{p=k_{j-1}+1}^{k_j} m_j \Delta \widetilde{x}_p
+\sum_{p=k_{i-1}+1}^{k_i} m_i \Delta \widetilde{x}_p
 \leq
-\sum_{p=k_{j-1}+1}^{k_j} \widetilde{m}_p \Delta \widetilde{x}_p .
+\sum_{p=k_{i-1}+1}^{k_i} \widetilde{m}_p \Delta \widetilde{x}_p .
 \end{equation*}
 So
 \begin{equation*}
 L(P,f) =
-\sum_{j=1}^n m_j \Delta x_j
+\sum_{i=1}^n m_i \Delta x_i
 \leq
-\sum_{j=1}^n \,
-\sum_{p=k_{j-1}+1}^{k_j} \widetilde{m}_p \Delta \widetilde{x}_p
+\sum_{i=1}^n \,
+\sum_{p=k_{i-1}+1}^{k_i} \widetilde{m}_p \Delta \widetilde{x}_p
 =
-\sum_{j=1}^{\ell}
-\widetilde{m}_j \Delta \widetilde{x}_j = L(\widetilde{P},f).
+\sum_{i=1}^{\ell}
+\widetilde{m}_i \Delta \widetilde{x}_i = L(\widetilde{P},f).
 \end{equation*}
 
 The proof of $U(\widetilde{P},f) \leq U(P,f)$ is left as an exercise.
@@ -297,14 +297,15 @@ In other words, for two arbitrary partitions $P_1$ and $P_2$, we have
 $L(P_1,f) \leq U(P_2,f)$.  
 Recall \propref{infsupineq:prop}, and take the supremum and
 infimum over all partitions:
-\begin{equation*}
+\begin{multline*}
 \underline{\int_a^b} f = 
 \sup \, \bigl\{ L(P,f) : P \text{ a partition of } [a,b] \bigr\}
+\\
 \leq
 \inf \, \bigl\{ U(P,f) : P \text{ a partition of } [a,b] \bigr\}
 =
 \overline{\int_a^b} f . \qedhere
-\end{equation*}
+\end{multline*}
 \end{proof}
 
 \subsection{Riemann integral}
@@ -355,8 +356,8 @@ the area of the entire rectangle, $M(b-a)$, and from below by
 the area of the shaded part, $m(b-a)$.\label{fig:integralminmax}}
 \end{myfigureht}
 
-Often we use a weaker form of this proposition.  That is, if
-$\abs{f(x)} \leq M$ for all $x \in [a,b]$, then
+A weaker form of this proposition is often useful:
+If $\abs{f(x)} \leq M$ for all $x \in [a,b]$, then
 \begin{equation*}
 \abs{\int_a^b f} \leq M(b-a) .
 \end{equation*}
@@ -471,7 +472,7 @@ We have $\Delta x_j = \nicefrac{b}{n}$ for all $j$.
 As $f$ is decreasing, for every subinterval $[x_{j-1},x_j]$, we obtain
 \begin{equation*}
 m_j = \inf \left\{ \frac{1}{1+x} : x \in [x_{j-1},x_j] \right\} = \frac{1}{1+x_j} ,
-\qquad
+\quad
 M_j = \sup \left\{ \frac{1}{1+x} : x \in [x_{j-1},x_j] \right\} =
 \frac{1}{1+x_{j-1}} .
 \end{equation*}
@@ -717,9 +718,7 @@ Then
 \underline{\int_a^b} f
 +
 \underline{\int_b^c} f
-\end{equation*}
-and
-\begin{equation*}
+\quad \text{and} \quad
 \overline{\int_a^c} f
 =
 \overline{\int_a^b} f
@@ -1049,8 +1048,8 @@ and the conclusion follows.
 
 \subsection{Continuous functions}
 
-Let us show that continuous functions are Riemann integrable.  In fact, 
-we can even allow some discontinuities.  We start with a
+Let us show that continuous functions are Riemann integrable.
+We can even allow some discontinuities.  We start with a
 function continuous on the whole closed interval $[a,b]$.
 
 \begin{lemma} \label{lemma:contint}
@@ -1266,15 +1265,15 @@ many points, the integral does not change.
 \begin{prop}
 Let $f \colon [a,b] \to \R$ be Riemann integrable.  Let $g \colon [a,b] \to
 \R$ be such that $f(x) = g(x)$ for all $x \in [a,b] \setminus S$,
-where $S$ is a finite set.  Then $g$ is a Riemann integrable function
-and
+where $S$ is a finite set.
+Then $g$ is Riemann integrable and
 \begin{equation*}
 \int_a^b g = \int_a^b f.
 \end{equation*}
 \end{prop}
 
 \begin{proof}[Sketch of proof]
-Using additivity of the integral, we split up the interval $[a,b]$ into
+Using additivity of the integral, split the interval $[a,b]$ into
 smaller intervals such that $f(x) = g(x)$ holds for all $x$ except at the
 endpoints (details are left to the reader).
 

@@ -9,9 +9,11 @@
 The main object we work with in analysis is the set of
 \myindex{real numbers}.  As this set is so fundamental, often much time is
 spent on formally constructing the set of real numbers.  However, we 
-take an easier approach here and just assume that a set with the correct
-properties exists.  We start with the definitions of those
-properties.
+take an easier approach and we will assume that a set with the correct
+properties exists.
+The three key properties of the real numbers is that it is
+an ordered set, it is complete with respect to this order, and it is also a field.
+Let us start with order.
 
 \begin{defn}
 An \emph{\myindex{ordered set}} is a set $S$ together with
@@ -34,8 +36,8 @@ $>$ and $\geq$ in the obvious way.
 \end{defn}
 
 
-The set of rational numbers $\Q$ is an ordered set by letting
-$x < y$ if and only if $y-x$ is a positive rational number, that is
+The set of rational numbers $\Q$ is an ordered set:  We say
+$x < y$ if and only if $y-x$ is a positive rational number, that is,
 if $y-x = \nicefrac{p}{q}$ where $p,q \in \N$.  Similarly,
 $\N$ and $\Z$ are also ordered sets.
 
@@ -60,17 +62,17 @@ is an \emph{\myindex{upper bound}} of $E$.
 \item If there exists a $b \in S$ such that $x \geq b$ for all $x \in E$,
 then we say $E$ is \emph{\myindex{bounded below}} and $b$
 is a \emph{\myindex{lower bound}} of $E$.
-\item If there exists an upper bound $b_0$ of $E$ such that whenever
-$b$ is an upper bound for $E$ we have $b_0 \leq b$, then $b_0$
-is called the \emph{\myindex{least upper bound}} or
+\item If there exists an upper bound $b_0$ of $E$ such that
+$b_0 \leq b$ for all upper bounds $b$ of $E$, then
+$b_0$ is called the \emph{\myindex{least upper bound}} or
 the \emph{\myindex{supremum}}
 of $E$.  See \figureref{fig:lub}.  We write\glsadd{not:sup}
 \begin{equation*}
 \sup\, E := b_0  .
 \end{equation*}
-\item Similarly, if there exists a lower bound $b_0$ of $E$ such that whenever
-$b$ is a lower bound for $E$ we have $b_0 \geq b$, then $b_0$
-is called the \emph{\myindex{greatest lower bound}} or
+\item Similarly, if there exists a lower bound $b_0$ of $E$ such that
+$b_0 \geq b$ for all lower bounds $b$ of $E$, then
+$b_0$ is called the \emph{\myindex{greatest lower bound}} or
 the \emph{\myindex{infimum}}
 of $E$.  We write\glsadd{not:inf}
 \begin{equation*}
@@ -122,8 +124,7 @@ is sometimes called the \emph{\myindex{completeness property}} or the
 Named after the German mathematician
 \href{https://en.wikipedia.org/wiki/Richard_Dedekind}{Julius Wilhelm Richard Dedekind}
 (1831--1916).}.
-As we will note in the
-next section, the real numbers have this property.
+The real numbers have this property.
 
 \begin{example}
 The set $\Q$ of rational numbers does not have the least-upper-bound property.  The subset
@@ -228,7 +229,7 @@ The set $\Q$ of rational numbers is a field.  On the other hand $\Z$ is not a
 field, as it does not contain multiplicative inverses.  For example,
 there is no $x \in \Z$ such that $2x = 1$, so (M5) is not satisfied.  You
 can check that (M5) is the only property that fails\footnote{An algebraist would say that $\Z$ is an ordered
-ring, or perhaps more precisely a commutative ordered ring.}.
+ring, or perhaps a commutative ordered ring.}.
 \end{example}
 
 We will assume the basic facts about fields that are easily 
@@ -251,8 +252,8 @@ We also say $x$ is \emph{\myindex{nonnegative}} if $x \geq 0$,
 and $x$ is \emph{\myindex{nonpositive}} if $x \leq 0$.
 \end{defn}
 
-It can be checked that the rational numbers $\Q$ with the
-standard ordering is an ordered field.
+The rational numbers $\Q$ with the standard ordering is an ordered field.
+We leave the details to an interested reader.
 
 \begin{prop} \label{prop:bordfield}
 Let $F$ be an ordered field and $x,y,z,w \in F$.  Then
@@ -534,8 +535,8 @@ $\epsilon > 0$, then $x \leq 0$.
 \end{prop}
 
 \begin{proof}
-If $x > 0$, then $0 < \nicefrac{x}{2} < x$ (why?).  Taking
-$\epsilon = \nicefrac{x}{2}$ obtains a contradiction.  Thus $x \leq 0$.
+If $x > 0$, then $0 < \nicefrac{x}{2} < x$ (why?).  Take
+$\epsilon = \nicefrac{x}{2}$ to get a contradiction.  Thus $x \leq 0$.
 \end{proof}
 
 For nonnegative $x$, an equality results:
@@ -581,8 +582,8 @@ Take the set
 $A := \{ x \in \R : x^2 < 2 \}$.  We first show that $A$ is bounded above and
 nonempty.  The equation $x \geq 2$ implies $x^2 \geq 4$
 (see \exerciseref{exercise:squareineq}), so
-if $x^2 < 2$, then $x < 2$, and $A$ is bounded above.
-As $1 \in A$, the set $A$ is nonempty.  We can therefore find the supremum.
+if $x^2 < 2$, then $x < 2$.  So $A$ is bounded above.
+As $1 \in A$, the set $A$ is nonempty.  The supremum, therefore, exists.
 
 Let $r := \sup\, A$.  We will show that $r^2 = 2$ by showing
 that $r^2 \geq 2$ and $r^2 \leq 2$.  This is the way analysts show
@@ -652,8 +653,8 @@ $0 < r < s$ implies $r^2 < s^2$.  Hence $s = r$.
 
 The number $\sqrt{2} \notin \Q$.  The set
 $\R \setminus \Q$ is called the set of
-\emph{\myindex{irrational}} numbers.  We just saw that $\R \setminus \Q$
-is nonempty.  Not only is it nonempty, we will see later that it is very
+\emph{\myindex{irrational}} numbers.  We just proved that $\R \setminus \Q$
+is nonempty.  Not only is it nonempty, as we will see, it is very
 large indeed.
 
 Using the same technique as above, we can show that a positive real

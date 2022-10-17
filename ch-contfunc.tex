@@ -240,7 +240,7 @@ And we are done.
 
 It is possible to strengthen the reverse direction of
 the lemma by simply stating that
-\myquote{$\{ f(x_n) \}$ converges,} without requiring a specific limit.
+\myquote{$\{ f(x_n) \}_{n=1}^\infty$ converges,} without requiring a specific limit.
 See \exerciseref{exercise:seqflimitalt}.
 
 \begin{example}
@@ -489,11 +489,12 @@ A common use of restriction with respect to limits, which does not satisfy
 the hypothesis in the proposition, is the so-called
 \emph{\myindex{one-sided limit}}%
 \footnote{%
-There are a plethora of notations for one-sided limits.  E.g., for
-$\lim\limits_{x \to c^-} f(x)$ one sees
+One sees a plethora of one-sided limit notations.
+E.g.,
 $\lim\limits_{\substack{x \to c\\x < c}} f(x)$,
 $\lim\limits_{x \uparrow c} f(x)$, or
-$\lim\limits_{x \nearrow c} f(x)$.}.
+$\lim\limits_{x \nearrow c} f(x)$ for
+$\lim\limits_{x \to c^-} f(x)$.}
 
 \begin{defn} \label{defn:onesidedlimits}
 Let $f \colon S \to \R$ be function and let $c \in \R$.  If
@@ -1000,9 +1001,11 @@ from third item of \propref{contbasic:prop}.
 
 \begin{prop}
 Let $f \colon S \to \R$ be a function and $c \in S$.  Suppose 
-there exists a sequence $\{ x_n \}$, $x_n \in S$, and $\lim\, x_n = c$
-such that $\bigl\{ f(x_n) \bigr\}$ does not converge to $f(c)$.  Then $f$ is 
-discontinuous at $c$.
+there exists a sequence $\{ x_n \}_{n=1}^\infty$, $x_n \in S$ for all $n$,
+and $\lim_{n\to\infty} x_n = c$
+such that $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$
+does not converge to $f(c)$.
+Then $f$ is discontinuous at $c$.
 \end{prop}
 
 Again, 
@@ -1313,7 +1316,7 @@ not continuous.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Min-max and intermediate value theorems}
+\section{Extreme and intermediate value theorems}
 \label{sec:minmaxint}
 
 \sectionnotes{1.5 lectures}
@@ -1446,8 +1449,8 @@ Similarly,
 = \lim_{i\to\infty} f(y_{m_i}) = 
 f \Bigl( \lim_{i\to\infty} y_{m_i} \Bigr) = f(y) .
 \end{equation*}
-Therefore, $f$ achieves an absolute minimum at $x$ and
-$f$ achieves an absolute maximum at $y$.
+Hence, $f$ achieves an absolute minimum at $x$ and
+an absolute maximum at $y$.
 \end{proof}
 
 \begin{example}
@@ -1705,6 +1708,21 @@ then $f(c) = 0$, and the proof is done.
 \end{proof}
 
 \begin{example}
+You may recall how hard we worked to show that $\sqrt{2}$ in \exampleref{example:sqrt2}.
+With Bolzano's
+theorem, we can prove the existance $k$th root of any positive number $y >
+0$ without any effort.  We claim that for any $k \in \N$ and any $y > 0$,
+there exists a number $x > 0$ such that $x^k = y$.
+
+Proof: If $y=1$, then it is clear, so assume $y\not= 1$.
+Let $f(x) := x^k - y$.  We notice $f(0) = -y < 0$.
+If $y < 1$, then notice that $f(1) = 1^k -y > 0$.  If $y > 1$,
+then notice that $f(y) = y^k-y = y(y^{k-1}-1) > 0$.
+Apply Bolzano's theorem to find an $x$ such that $f(x) = 0$,
+or in other words $x^k = y$.
+\end{example}
+
+\begin{example}
 Interestingly,
 there exist discontinuous functions with
 the intermediate value property.
@@ -1892,10 +1910,6 @@ it only depends on $\epsilon$.  The domain of definition
 of the function makes a difference now.  A function that is not uniformly
 continuous on a larger set, may be uniformly continuous when restricted to a
 smaller set.
-We will say \emph{uniformly continuous on $X$} to mean that
-$f$ is not only continuous on $X$, but also that
-$f$ restricted to $X$ is uniformly continuous, or perhaps to just emphasize
-the domain.
 Note that $x$ and $c$ are not treated any differently
 in this definition.
 
@@ -2248,11 +2262,11 @@ Lipschitz continuous.
 The last example $g$ is a function that is uniformly
 continuous but not Lipschitz continuous.
 To see that $\sqrt{x}$ is
-uniformly continuous on $[0,\infty)$, note that it is uniformly continuous on
-$[0,1]$ by \thmref{unifcont:thm}.  It is also Lipschitz (and
-therefore uniformly continuous) on $[1,\infty)$.  It is not hard (exercise)
-to show that this means that $\sqrt{x}$ is uniformly continuous on
-$[0,\infty)$.
+uniformly continuous as a function on $[0,\infty)$,
+note that it is uniformly continuous when restricted to $[0,1]$ by \thmref{unifcont:thm}.
+It is also Lipschitz (and so uniformly continuous) when restricted to $[1,\infty)$.
+It is not hard (exercise) to show that this means that $\sqrt{x}$ is a
+uniformly continuous function on $[0,\infty)$.
 \end{example}
 
 \subsection{Exercises}

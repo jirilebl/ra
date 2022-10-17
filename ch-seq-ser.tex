@@ -16,62 +16,67 @@ definition.
 A \emph{\myindex{sequence}} (of real numbers) is a function $x \colon \N \to
 \R$.  Instead of $x(n)$, we 
 usually denote the $n$th element in the sequence by $x_n$.  We 
-use the notation $\{ x_n \}$, or more precisely
+use the notation
 \begin{equation*}
 \{ x_n \}_{n=1}^\infty,
 \end{equation*}
 \glsadd{not:sequence}
-to denote a sequence.
+to denote a sequence, though sometimes for brevity we may use $\{ x_n \}$.
 
-A sequence $\{ x_n \}$ is \emph{bounded}\index{bounded sequence} if
+A sequence $\{ x_n \}_{n=1}^\infty$ is \emph{bounded}\index{bounded sequence} if
+the underlying function is bounded.  That is, if
 there exists a $B \in \R$ such that
 \begin{equation*}
 \abs{x_n} \leq B \qquad \text{for all } n \in \N.
 \end{equation*}
-In other words, the sequence $\{x_n\}$ is bounded whenever
+In other words, the sequence $\{x_n\}_{n=1}^\infty$ is bounded whenever
 the set $\{ x_n : n \in \N \}$
-is bounded, or equivalently when it is bounded as a function.
+is bounded.
+We similarly define the words
+\emph{bounded below}\index{bounded below!sequence} and
+\emph{bounded above}\index{bounded below!sequence}.
 \end{defn}
 
 When we need
 to give a concrete sequence we often give each term as a formula in
 terms of $n$.
-For example, $\{ \nicefrac{1}{n} \}_{n=1}^\infty$, or simply $\{
-\nicefrac{1}{n} \}$, stands for
+For example, $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ stands for
 the sequence $1, \nicefrac{1}{2}, \nicefrac{1}{3}, \nicefrac{1}{4},
 \nicefrac{1}{5}, \ldots$.
-The sequence $\{ \nicefrac{1}{n} \}$
+The sequence $\{ \nicefrac{1}{n} \}_{n=1}^\infty$
 is a bounded sequence ($B=1$ suffices).  On the other hand the sequence $\{ n \}$ stands for
 $1,2,3,4,\ldots$, and this sequence is not bounded (why?).
 
 While the notation for a sequence
-is similar\footnote{\cite{BS} use the notation $(x_n)$ to denote
-a sequence instead of $\{ x_n \}$, which is what \cite{Rudin:baby} uses.
+is similar\footnote{\cite{BS} use $(x_n)_{n=1}^\infty$ to denote
+a sequence instead of $\{ x_n \}_{n=1}^\infty$, which is what \cite{Rudin:baby} uses.
 Both are common.}
 to that of a set, the notions are
-distinct.  For example, the sequence $\{ {(-1)}^n \}$ is the sequence
+distinct.  For example, the sequence $\{ {(-1)}^n \}_{n=1}^\infty$ is the sequence
 $-1,1,-1,1,-1,1,\ldots$, whereas the set of values, the
 \emph{range of the sequence}\index{range of a sequence},
 is just the set $\{ -1, 1 \}$.  We can write this set
-as $\{ {(-1)}^n : n \in \N \}$.   When ambiguity can arise, we
-use the words \emph{sequence} or \emph{set} to distinguish the two
-concepts.
+as $\{ {(-1)}^n : n \in \N \}$.
+% When ambiguity can arise, we
+%use the words \emph{sequence} or \emph{set} to distinguish the two
+%concepts.
 
 Another example of a sequence is the so-called \emph{\myindex{constant sequence}}.
-That is a sequence $\{ c \} = c,c,c,c,\ldots$ consisting of a single
+That is a sequence $\{ c \}_{n=1}^\infty = c,c,c,c,\ldots$ consisting of a single
 constant $c \in \R$ repeating indefinitely.
 
-We now get to the idea of a
-\emph{limit of a sequence}\index{limit!of a sequence}.  We will
-see in \propref{prop:limisunique}
-that the notation below is well-defined.  That is, if a limit exists, then
-it is unique.  So it makes sense to talk about \emph{the} limit of a sequence.
+%We now get to the idea of a
+%\emph{limit of a sequence}\index{limit!of a sequence}.
+%We will see in \propref{prop:limisunique}
+%that a limit, if it exists, is unique.
+%It makes sense to talk about \emph{the} limit of a sequence.
 
 \begin{defn}
-A sequence $\{ x_n \}$ is said to \emph{converge} to a number
+A sequence $\{ x_n \}_{n=1}^\infty$ is said to \emph{converge} to a number
 $x \in \R$ if for every $\epsilon > 0$, there exists an $M \in \N$ such
-that $\abs{x_n - x} < \epsilon$ for all $n \geq M$.  The number $x$
-is said to be the \emph{limit} of $\{ x_n \}$.  We write
+that $\abs{x_n - x} < \epsilon$ for all $n \geq M$.
+The number $x$ is called a \emph{limit} of the sequence.
+If the limit $x$ is unique, we write
 \glsadd{not:limseq}
 \begin{equation*}
 \lim_{n\to \infty} x_n := x .
@@ -83,6 +88,13 @@ Otherwise, we say the sequence \emph{diverges}
 or that it is
 \emph{divergent}\index{divergent!sequence}.
 \end{defn}
+
+Shortly, in \propref{prop:limisunique} we will show that the limit $x$ is always
+unique if it exists.  It makes sense to talk about \emph{the} limit of
+a sequence and we only need to show that the sequence converges to one
+number.
+For the next couple of examples, let us pretend
+we have already proved that limits are unique.
 
 It is good to know intuitively what a limit means.  It means that eventually
 every number in the sequence is close to the number $x$.  More precisely,
@@ -104,8 +116,8 @@ On bottom, the points of the same sequence are marked on the
 number line.\label{figsequenceconvergence}}
 \end{myfigureht}
 
-When we write $\lim\, x_n = x$ for some real number $x$, we are saying two
-things: first, that $\{ x_n \}$ is convergent, and second, that the limit is
+When we write $\lim_{n\to\infty} x_n = x$ for some real number $x$, we are saying two
+things: First, that $\{ x_n \}_{n=1}^\infty$ is convergent, and second, that the limit is
 $x$.
 
 The definition above is one of the most important definitions in analysis,
@@ -120,7 +132,7 @@ every $\epsilon > 0$, we pick $M = 1$.
 \end{example}
 
 \begin{example}
-Claim: \emph{The sequence $\{ \nicefrac{1}{n} \}$ is convergent and}
+Claim: \emph{The sequence $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ is convergent and}
 \begin{equation*}
 \lim_{n\to \infty} \frac{1}{n} = 0 .
 \end{equation*}
@@ -134,7 +146,7 @@ Then for all $n \geq M$,
 \end{example}
 
 \begin{example}
-The sequence $\{ {(-1)}^n \}$ is divergent.  Proof: If there
+The sequence $\{ {(-1)}^n \}_{n=1}^\infty$ is divergent.  Proof: If there
 were a limit $x$, then for $\epsilon = \frac{1}{2}$ we expect an $M$ that
 satisfies the definition.  Suppose
 such an $M$ exists.
@@ -164,7 +176,7 @@ by arbitrarily small numbers.
 
 \begin{proof}
 %NOTE: should be word for word the same as 7.3.3
-Suppose the sequence $\{ x_n \}$ has limits $x$ and $y$.
+Suppose the sequence $\{ x_n \}_{n=1}^\infty$ has limits $x$ and $y$.
 Take an arbitrary $\epsilon > 0$.
 From the definition find an $M_1$ such that for all $n \geq M_1$,
 $\abs{x_n-x} < \nicefrac{\epsilon}{2}$.  Similarly, find an $M_2$
@@ -187,11 +199,11 @@ and $y=x$.  Hence the limit (if it exists) is unique.
 \end{proof}
 
 \begin{prop}
-A convergent sequence $\{ x_n \}$ is bounded.
+A convergent sequence $\{ x_n \}_{n=1}^\infty$ is bounded.
 \end{prop}
 
 \begin{proof}
-Suppose $\{ x_n \}$ converges to $x$.  Thus there exists an $M \in \N$
+Suppose $\{ x_n \}_{n=1}^\infty$ converges to $x$.  Thus there exists an $M \in \N$
 such that for all $n \geq M$, we have
 $\abs{x_n - x} < 1$.  Let $B_1 := \abs{x}+1$ and note that for $n \geq M$,
 \begin{equation*}
@@ -214,11 +226,11 @@ Let $B := \max \{ B_1, B_2 \}$.  Then for all $n \in \N$,
 \end{equation*}
 \end{proof}
 
-The sequence $\{ {(-1)}^n \}$ shows that the converse
+The sequence $\{ {(-1)}^n \}_{n=1}^\infty$ shows that the converse
 does not hold.  A bounded sequence is not necessarily convergent.
 
 \begin{example}
-Let us show the sequence $\left\{ \frac{n^2+1}{n^2+n} \right\}$ converges and
+Let us show $\left\{ \frac{n^2+1}{n^2+n} \right\}_{n=1}^\infty$ converges and
 \begin{equation*}
 \lim_{n\to\infty} \frac{n^2+1}{n^2+n} = 1 .
 \end{equation*}
@@ -245,7 +257,7 @@ M$,
 \end{split}
 \end{equation*}
 Therefore,
-$\lim \frac{n^2+1}{n^2+n} = 1$.
+$\lim_{n\to\infty} \frac{n^2+1}{n^2+n} = 1$.
 This example shows that sometimes to get what you want, you must throw away
 some information to get a simpler estimate.
 \end{example}
@@ -260,10 +272,10 @@ monotone sequence, provided we can find the supremum or infimum
 of a countable set of numbers.
 
 \begin{defn}
-A sequence $\{ x_n \}$ is \emph{monotone increasing}\index{monotone
+A sequence $\{ x_n \}_{n=1}^\infty$ is \emph{monotone increasing}\index{monotone
 increasing sequence} if $x_n \leq x_{n+1}$ for all $n \in \N$.  
 %
-A sequence $\{ x_n \}$ is \emph{monotone decreasing}\index{monotone
+A sequence $\{ x_n \}_{n=1}^\infty$ is \emph{monotone decreasing}\index{monotone
 decreasing sequence} if $x_n \geq x_{n+1}$ for all $n \in \N$.  
 %
 If a sequence is either monotone increasing or monotone decreasing, we
@@ -273,10 +285,10 @@ authors use the word \emph{monotonic}\index{monotonic sequence}.}
 \end{defn}
 
 For example,
-$\{ n \}$ is monotone increasing,
-$\{ \nicefrac{1}{n} \}$ is monotone decreasing,
-the constant sequence $\{ 1 \}$ is both monotone increasing and monotone
-decreasing, and $\{ {(-1)}^n \}$ is not monotone.
+$\{ n \}_{n=1}^\infty$ is monotone increasing,
+$\{ \nicefrac{1}{n} \}_{n=1}^\infty$ is monotone decreasing,
+the constant sequence $\{ 1 \}_{n=1}^\infty$ is both monotone increasing and monotone
+decreasing, and $\{ {(-1)}^n \}_{n=1}^\infty$ is not monotone.
 First few terms of a sample monotone increasing sequence
 are shown in 
 \figureref{figsequenceincreasing}.
@@ -288,20 +300,20 @@ graph.\label{figsequenceincreasing}}
 \end{myfigureht}
 
 \begin{prop} \label{prop:monotoneconv}
-A monotone sequence $\{ x_n \}$ is bounded if and only if it is convergent.
+A monotone sequence $\{ x_n \}_{n=1}^\infty$ is bounded if and only if it is convergent.
 
-Furthermore, if $\{ x_n \}$ is monotone increasing and bounded, then
+Furthermore, if $\{ x_n \}_{n=1}^\infty$ is monotone increasing and bounded, then
 \begin{equation*}
 \lim_{n\to \infty} x_n = \sup \{ x_n : n \in \N \} .
 \end{equation*}
-If $\{ x_n \}$ is monotone decreasing and bounded, then
+If $\{ x_n \}_{n=1}^\infty$ is monotone decreasing and bounded, then
 \begin{equation*}
 \lim_{n\to \infty} x_n = \inf \{ x_n : n \in \N \} .
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-Consider a monotone increasing sequence $\{ x_n \}$.  Suppose 
+Consider a monotone increasing sequence $\{ x_n \}_{n=1}^\infty$.  Suppose 
 first the sequence is bounded,
 that is,
 the set $\{ x_n : n \in  \N \}$ is bounded.  Let
@@ -310,7 +322,7 @@ x := \sup \{ x_n : n \in \N \} .
 \end{equation*}
 Let $\epsilon > 0$ be arbitrary.  As $x$ is the supremum,
 there must be at least one $M \in \N$ such that $x_{M} > x-\epsilon$.
-As $\{ x_n \}$ is monotone increasing,
+As $\{ x_n \}_{n=1}^\infty$ is monotone increasing,
 then it is easy to see (by \hyperref[induction:thm]{induction}) that
 $x_n \geq x_{M}$ for all $n \geq M$.  Hence for all $n \geq M$,
 \begin{equation*}
@@ -324,8 +336,16 @@ is bounded.
 The proof for monotone decreasing sequences is left as an exercise.
 \end{proof}
 
+Note that a monotone increasing sequence $\{ x_n \}_{n=1}^\infty$
+is always bounded from below since $x_1 \leq x_2 \leq \cdots \leq x_n$
+for any $n$, so $x_1$ is a lower bound.  It to see if a 
+monotone increasing sequence is bounded, it is enough to check if
+it is bounded above.  Similarly, a monotone decreasing sequence
+is always bounded from above, so it is enough to check whether it
+is bounded from below.
+
 \begin{example}
-Take the sequence $\bigl\{ \frac{1}{\sqrt{n}} \bigr\}$.
+Take the sequence $\bigl\{ \frac{1}{\sqrt{n}} \bigr\}_{n=1}^\infty$.
 
 The sequence is
 bounded below as
@@ -337,7 +357,7 @@ we obtain
 \frac{1}{\sqrt{n+1}} \leq \frac{1}{\sqrt{n}} .
 \end{equation*}
 So the sequence is monotone decreasing and bounded below (hence
-bounded).  \propref{prop:monotoneconv} says that that the sequence is
+bounded).  Via \propref{prop:monotoneconv} we find that the sequence is
 convergent and
 \begin{equation*}
 \lim_{n\to \infty} \frac{1}{\sqrt{n}}
@@ -355,13 +375,14 @@ We have seen before that this implies that $b^2 \leq 0$ (a consequence
 of the \hyperref[thm:arch:i]{Archimedean property}).  As $b^2 \geq 0$ as
 well, we have $b^2 = 0$
 and so $b = 0$.
-Hence, $b=0$ is the greatest lower bound, and $\lim \frac{1}{\sqrt{n}} = 0$.
+Hence, $b=0$ is the greatest lower bound, and $\lim\limits_{n\to\infty} \frac{1}{\sqrt{n}} = 0$.
 \end{example}
 
 \begin{example}
 A word of caution:  Showing that a monotone sequence is bounded
 in order to use \propref{prop:monotoneconv} may be difficult.
-The sequence $\{ 1 + \nicefrac{1}{2} + \cdots + \nicefrac{1}{n} \}$
+The sequence $\{ 1 + \nicefrac{1}{2} + \cdots + \nicefrac{1}{n}
+\}_{n=1}^\infty$
 is a monotone increasing
 sequence that grows very slowly.  We will see, once we get to series,
 that this sequence has no upper bound and so does not converge.  It is not
@@ -374,7 +395,7 @@ proposition.  The proof is left as an exercise.
 \begin{prop} \label{prop:supinfseq}
 Let $S \subset \R$ be a nonempty bounded set.
 Then there exist monotone sequences
-$\{ x_n \}$ and $\{ y_n \}$ such that $x_n, y_n \in S$ and
+$\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ such that $x_n, y_n \in S$ and
 \begin{equation*}
 \sup\,S = \lim_{n\to \infty} x_n \qquad \text{and} \qquad \inf\,S =
 \lim_{n\to\infty} y_n .
@@ -384,18 +405,18 @@ $\{ x_n \}$ and $\{ y_n \}$ such that $x_n, y_n \in S$ and
 \subsection{Tail of a sequence}
 
 \begin{defn}
-For a sequence $\{ x_n \}$,
+For a sequence $\{ x_n \}_{n=1}^\infty$,
 the \emph{$K$-tail} (where $K \in \N$),
 or just the
 \emph{tail},\index{tail of a sequence} of
-$\{ x_n \}$ is the sequence starting at $K+1$, usually written as
+$\{ x_n \}_{n=1}^\infty$ is the sequence starting at $K+1$, usually written as
 \begin{equation*}
 \{ x_{n+K} \}_{n=1}^\infty
 \qquad \text{or} \qquad \{ x_n \}_{n=K+1}^\infty .
 \end{equation*}
 \end{defn}
 
-For example, the $4$-tail of $\{ \nicefrac{1}{n} \}$ is
+For example, the $4$-tail of $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ is
 $\nicefrac{1}{5}, \nicefrac{1}{6}, \nicefrac{1}{7}, \nicefrac{1}{8},
 \ldots$.  The $0$-tail of a sequence is the sequence itself.
 The convergence and the limit of a sequence only depends on its tail.
@@ -443,9 +464,9 @@ implies
 In the process we will also show that the limits are equal.
 
 We start with \ref{prop:ktail:i} implies \ref{prop:ktail:ii}.
-Suppose $\{x_n \}$ converges to some $x \in \R$.
+Suppose $\{x_n \}_{n=1}^\infty$ converges to some $x \in \R$.
 Let $K \in \N$ be arbitrary, and
-define $y_n := x_{n+K}$.  We wish to show that $\{ y_n \}$ converges
+define $y_n := x_{n+K}$.  We wish to show that $\{ y_n \}_{n=1}^\infty$ converges
 to $x$.
 Given an $\epsilon > 0$, there exists an $M \in \N$ such that
 $\abs{x-x_n} < \epsilon$ for all $n \geq M$.
@@ -454,11 +475,11 @@ all $n \geq M$, we have
 \begin{equation*}
 \abs{x-y_n} = \abs{x-x_{n+K}} < \epsilon .
 \end{equation*}
-Consequently, $\{ y_n \}$ converges to $x$.
+Consequently, $\{ y_n \}_{n=1}^\infty$ converges to $x$.
 
 Let us move to \ref{prop:ktail:iii} implies \ref{prop:ktail:i}.
 Let $K \in \N$ be given, define
-$y_n := x_{n+K}$, and suppose that $\{ y_n \}$ converges to $x \in \R$.
+$y_n := x_{n+K}$, and suppose that $\{ y_n \}_{n=1}^\infty$ converges to $x \in \R$.
 That is, given an $\epsilon > 0$, there exists an $M' \in \N$ such that
 $\abs{x-y_n} < \epsilon$ for all $n \geq M'$.
 Let $M := M'+K$.  Then $n \geq M$ implies $n-K \geq M'$.
@@ -466,7 +487,7 @@ Thus, whenever $n \geq M$, we have
 \begin{equation*}
 \abs{x-x_n} = \abs{x-y_{n-K}} < \epsilon.
 \end{equation*}
-Therefore, $\{ x_n \}$ converges to $x$.
+Therefore, $\{ x_n \}_{n=1}^\infty$ converges to $x$.
 \end{proof}
 
 At the end of the day, the limit does not care about how the sequence begins, it only
@@ -475,7 +496,7 @@ may be arbitrary.
 
 For example, the sequence defined by $x_n := \frac{n}{n^2+16}$ is decreasing
 if we start at $n=4$ (it is increasing before).  That is:
-$\{ x_n \} =
+$\{ x_n \}_{n=1}^\infty =
 \nicefrac{1}{17},
 \nicefrac{1}{10},
 \nicefrac{3}{25},
@@ -505,39 +526,41 @@ is monotone and bounded below by zero, it is convergent, and therefore the seque
 \subsection{Subsequences}
 
 It is useful to sometimes consider only some terms of a sequence.
-A subsequence of $\{ x_n \}$ is a sequence that contains
-only some of the numbers from $\{ x_n \}$ in the same order.
+A subsequence of $\{ x_n \}_{n=1}^\infty$ is a sequence that contains
+only some of the numbers from $\{ x_n \}_{n=1}^\infty$ in the same order.
 
 \begin{defn}
 Let $\{ x_n \}_{n=1}^\infty$ be a sequence.
 Let $\{ n_i \}_{i=1}^\infty$ be a strictly increasing sequence of natural
-numbers, that is, $n_i < n_{i+1}$ for all $i$ (in other words $n_1 < n_2 < n_3 < \cdots$).  
+numbers, that is, $n_i < n_{i+1}$ for all $i \in \N$ (in other words $n_1 < n_2 < n_3 < \cdots$).  
 The sequence
 \begin{equation*}
 \{ x_{n_i} \}_{i=1}^\infty
 \end{equation*}
 is called \glsadd{not:subsequence}
-a \emph{\myindex{subsequence}} of $\{ x_n \}$.
+a \emph{\myindex{subsequence}} of $\{ x_n \}_{n=1}^\infty$.
 \end{defn}
 
 So the subsequence is the sequence $x_{n_1},x_{n_2},x_{n_3},\ldots$.
-Consider the sequence $\{ \nicefrac{1}{n} \}$.  The sequence
-$\{ \nicefrac{1}{3n} \}$ is a subsequence.  To see how these two
-sequences fit in the definition, take $n_i := 3i$.  
-The numbers in the
+Consider the sequence $\{ \nicefrac{1}{n} \}_{n=1}^\infty$.  The sequence
+$\{ \nicefrac{1}{3i} \}_{i=1}^\infty$ is a subsequence.  To see how these two
+sequences fit in the definition, take $n_i := 3i$,
+that is, $\{ n_i \}_{i=1}^\infty$ is the
+sequence $3,6,9,12,\ldots$.  
+The numbers $x_{n_i}$ in the
 subsequence must come from the original sequence.  So $1,0,\nicefrac{1}{3},0,
 \nicefrac{1}{5},\ldots$
-is not a subsequence of $\{ \nicefrac{1}{n} \}$.  Similarly, order
+is not a subsequence of $\{ \nicefrac{1}{n} \}_{n=1}^\infty$.  Similarly, order
 must be preserved.  So
 the sequence $1,\nicefrac{1}{3},\nicefrac{1}{2},\nicefrac{1}{5},\ldots$
-is not a subsequence of $\{ \nicefrac{1}{n} \}$.
+is not a subsequence of $\{ \nicefrac{1}{n} \}_{n=1}^\infty$.
 
 A tail of a sequence is one special type of a subsequence.  For an arbitrary
 subsequence, we have the following proposition about convergence.
 
 \begin{prop} \label{prop:seqtosubseq}
-If $\{ x_n \}$ is a convergent sequence,
-then every subsequence $\{ x_{n_i} \}$ is also convergent, and
+If $\{ x_n \}_{n=1}^\infty$ is a convergent sequence,
+then every subsequence $\{ x_{n_i} \}_{i=1}^\infty$ is also convergent, and
 \begin{equation*}
 \lim_{n\to \infty} x_n = 
 \lim_{i\to \infty} x_{n_i} .
@@ -564,9 +587,9 @@ Existence of a convergent subsequence does not imply
 convergence of the sequence itself.
 Take the sequence $0,1,0,1,0,1,\ldots$.  That is,
 $x_n = 0$ if $n$ is odd, and $x_n = 1$ if $n$ is even.  The sequence
-$\{ x_n \}$ is divergent; however, the subsequence
-$\{ x_{2n} \}$ converges to 1 and the subsequence
-$\{ x_{2n+1} \}$ converges to 0.  Compare \propref{seqconvsubseqconv:prop}.
+$\{ x_n \}_{n=1}^\infty$ is divergent; however, the subsequence
+$\{ x_{2i} \}_{i=1}^\infty$ converges to 1 and the subsequence
+$\{ x_{2i+1} \}_{i=1}^\infty$ converges to 0.  Compare \propref{seqconvsubseqconv:prop}.
 \end{example}
 
 \subsection{Exercises}
@@ -580,65 +603,66 @@ found the correct limit, or prove that the series is divergent.
 
 \begin{exercise}
 Is the sequence
-$\{ 3n \}$
+$\{ 3n \}_{n=1}^\infty$
 bounded?  Prove or disprove.
 \end{exercise}
 
 \begin{exercise}
 Is the sequence
-$\{ n \}$
+$\{ n \}_{n=1}^\infty$
 convergent?  If so, what is the limit?
 \end{exercise}
 
 \begin{exercise}
 Is the sequence
-$\left\{ \dfrac{{(-1)}^n}{2n} \right\}$
+$\left\{ \dfrac{{(-1)}^n}{2n} \right\}_{n=1}^\infty$
 convergent?  If so, what is the limit?
 \end{exercise}
 
 \begin{exercise}
 Is the sequence
-$\{ 2^{-n} \}$
+$\{ 2^{-n} \}_{n=1}^\infty$
 convergent?  If so, what is the limit?
 \end{exercise}
 
 \begin{exercise}
 Is the sequence
-$\left\{ \dfrac{n}{n+1} \right\}$
+$\left\{ \dfrac{n}{n+1} \right\}_{n=1}^\infty$
 convergent?  If so, what is the limit?
 \end{exercise}
 
 \begin{exercise}
 Is the sequence
-$\left\{ \dfrac{n}{n^2+1} \right\}$
+$\left\{ \dfrac{n}{n^2+1} \right\}_{n=1}^\infty$
 convergent?  If so, what is the limit?
 \end{exercise}
 
 \begin{exercise} \label{exercise:absconv}
-Let $\{ x_n \}$ be a sequence.
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence.
 \begin{enumerate}[a)]
-\item Show that $\lim\, x_n = 0$ (that is, the limit exists and is zero)
-if and only if $\lim \abs{x_n} = 0$.
-\item Find an example such that $\{ \abs{x_n} \}$ converges and $\{ x_n \}$
+\item Show that $\lim\limits_{n\to\infty} x_n = 0$ (that is, the limit exists and is zero)
+if and only if $\lim\limits_{n\to\infty} \abs{x_n} = 0$.
+\item Find an example such that $\{ \abs{x_n} \}_{n=1}^\infty$ converges and
+$\{ x_n \}_{n=1}^\infty$
 diverges.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 Is the sequence
-$\left\{ \dfrac{2^n}{n!} \right\}$
+$\left\{ \dfrac{2^n}{n!} \right\}_{n=1}^\infty$
 convergent?  If so, what is the limit?
 \end{exercise}
 
 \begin{exercise}
 Show that the sequence
-$\left\{ \dfrac{1}{\sqrt[3]{n}} \right\}$ is monotone and bounded.  Then use
+$\left\{ \dfrac{1}{\sqrt[3]{n}} \right\}_{n=1}^\infty$ is monotone and bounded.  Then use
 \propref{prop:monotoneconv} to find the limit.
 \end{exercise}
 
 \begin{exercise}
 Show that the sequence
-$\left\{ \dfrac{n+1}{n} \right\}$
+$\left\{ \dfrac{n+1}{n} \right\}_{n=1}^\infty$
 is monotone and bounded.  Then use
 \propref{prop:monotoneconv} to find the limit.
 \end{exercise}
@@ -653,7 +677,7 @@ Prove \propref{prop:supinfseq}.
 \end{exercise}
 
 \begin{exercise}
-Let $\{ x_n \}$ be a convergent monotone sequence.  Suppose 
+Let $\{ x_n \}_{n=1}^\infty$ be a convergent monotone sequence.  Suppose 
 there exists a $k \in \N$ such that
 \begin{equation*}
 \lim_{n\to \infty} x_n = x_k .
@@ -662,18 +686,20 @@ Show that $x_n = x_k$ for all $n \geq k$.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 Find a convergent subsequence of the sequence
-$\{ {(-1)}^n \}$.
+$\{ {(-1)}^n \}_{n=1}^\infty$.
 \end{exercise}
 
 \begin{exercise}
-Let $\{x_n\}$ be a sequence defined by
+Let $\{x_n\}_{n=1}^\infty$ be a sequence defined by
 \begin{equation*}
 x_n := 
 \begin{cases}
 n               & \text{if } n \text{ is odd} , \\
 \nicefrac{1}{n} & \text{if } n \text{ is even} .
 \end{cases}
+\avoidbreak
 \end{equation*}
 \begin{enumerate}[a)]
 \item Is the sequence bounded? (prove or disprove)
@@ -682,43 +708,45 @@ n               & \text{if } n \text{ is odd} , \\
 \end{exercise}
 
 \begin{exercise}
-Let $\{ x_n \}$ be a sequence.
-Suppose there are two convergent subsequences $\{ x_{n_i} \}$ and
-$\{ x_{m_i} \}$.  Suppose 
+\pagebreak[2]
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence.
+Suppose there are two convergent subsequences $\{ x_{n_i} \}_{i=1}^\infty$ and
+$\{ x_{m_i} \}_{i=1}^\infty$.  Suppose 
 \begin{equation*}
 \lim_{i\to\infty} x_{n_i} = a
 \qquad \text{and} \qquad
 \lim_{i\to\infty} x_{m_i} = b,
 \end{equation*}
-where $a \not= b$.  Prove that $\{ x_n \}$ is not convergent, without
+where $a \not= b$.  Prove that $\{ x_n \}_{n=1}^\infty$ is not convergent, without
 using \propref{prop:seqtosubseq}.
 \end{exercise}
 
 \begin{exercise}[Tricky]
-Find a sequence $\{ x_n \}$ such that for every $y \in \R$, there exists a
-subsequence $\{ x_{n_i} \}$ converging to $y$.
+Find a sequence $\{ x_n \}_{n=1}^\infty$ such that for every $y \in \R$, there exists a
+subsequence $\{ x_{n_i} \}_{i=1}^\infty$ converging to $y$.
 \end{exercise}
 
 \begin{exercise}[Easy]
-Let $\{ x_n \}$ be a sequence and $x \in \R$.
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence and $x \in \R$.
 Suppose for every $\epsilon > 0$, there is an $M$ such that
 $\abs{x_n-x} \leq \epsilon$ for all $n \geq M$.
-Show that $\lim\, x_n = x$.
+Show that $\lim\limits_{n\to\infty} x_n = x$.
 \end{exercise}
 
 \begin{exercise}[Easy]
-Let $\{ x_n \}$ be a sequence and $x \in \R$ such that
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence and $x \in \R$ such that
 there exists a $k \in \N$ such that for all $n \geq k$,
-$x_n = x$.  Prove that $\{ x_n \}$ converges to $x$.
+$x_n = x$.  Prove that $\{ x_n \}_{n=1}^\infty$ converges to $x$.
 \end{exercise}
 
 \begin{exercise}
-Let $\{ x_n \}$ be a sequence and
-define a sequence $\{ y_n \}$ by
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence and
+define a sequence $\{ y_n \}_{n=1}^\infty$ by
 $y_{2k} := x_{k^2}$ and $y_{2k-1} := x_k$ for all $k \in \N$.
-Prove that $\{ x_n \}$ converges if and only if $\{ y_n \}$ converges.
+Prove that $\{ x_n \}_{n=1}^\infty$ converges if and only if
+$\{ y_n \}_{n=1}^\infty$ converges.
 Furthermore, prove that if they converge, then
-$\lim\, x_n = \lim\, y_n$.
+$\lim\limits_{n\to\infty} x_n = \lim\limits_{n\to\infty} y_n$.
 \end{exercise}
 
 \begin{exercise}
@@ -728,15 +756,15 @@ numerator of the expression $x_n-x_m$.
 \end{exercise}
 
 \begin{exercise}
-Suppose that $\{ x_n \}$ is a sequence such that
-the subsequences $\{ x_{2n} \}$, $\{ x_{2n-1} \}$, and
-$\{ x_{3n} \}$ all converge.  Show that $\{ x_n \}$ is convergent.
+Suppose that $\{ x_n \}_{n=1}^\infty$ is a sequence such that
+the subsequences $\{ x_{2n} \}_{n=1}^\infty$, $\{ x_{2n-1} \}_{n=1}^\infty$, and
+$\{ x_{3n} \}_{n=1}^\infty$ all converge.  Show that $\{ x_n \}_{n=1}^\infty$ is convergent.
 \end{exercise}
 
 \begin{exercise}
-Suppose that $\{ x_n \}$ is a monotone increasing sequence that
+Suppose that $\{ x_n \}_{n=1}^\infty$ is a monotone increasing sequence that
 has a convergent subsequence.
-Show that $\{ x_n \}$ is convergent.
+Show that $\{ x_n \}_{n=1}^\infty$ is convergent.
 Note: So \propref{prop:seqtosubseq} is an \myquote{if and only if} for monotone sequences.
 \end{exercise}
 
@@ -761,19 +789,19 @@ if we find two other simpler convergent sequences that
 \myquote{squeeze} the original sequence.
 
 \begin{lemma}[Squeeze lemma]\index{squeeze lemma} \label{squeeze:lemma}
-Let $\{ a_n \}$, 
-$\{ b_n \}$, and 
-$\{ x_n \}$ be sequences such that
+Let $\{ a_n \}_{n=1}^\infty$, 
+$\{ b_n \}_{n=1}^\infty$, and 
+$\{ x_n \}_{n=1}^\infty$ be sequences such that
 \begin{equation*}
 a_n \leq x_n \leq b_n \quad \text{for all } n \in \N.
 \end{equation*}
-Suppose $\{ a_n \}$ and $\{ b_n \}$ converge and
+Suppose $\{ a_n \}_{n=1}^\infty$ and $\{ b_n \}_{n=1}^\infty$ converge and
 \begin{equation*}
 \lim_{n\to \infty} a_n
 =
 \lim_{n\to \infty} b_n .
 \end{equation*}
-Then $\{ x_n \}$ converges and
+Then $\{ x_n \}_{n=1}^\infty$ converges and
 \begin{equation*}
 \lim_{n\to \infty} x_n
 =
@@ -784,7 +812,7 @@ Then $\{ x_n \}$ converges and
 \end{lemma}
 
 \begin{proof}
-Let $x := \lim\, a_n = \lim\, b_n$.
+Let $x := \lim_{n\to\infty} a_n = \lim_{n\to\infty} b_n$.
 Let $\epsilon > 0$ be given.
 Find an $M_1$ such that for all $n \geq M_1$, we have
 that $\abs{a_n-x} < \epsilon$, and an $M_2$
@@ -799,7 +827,7 @@ Putting everything together, we find
 x - \epsilon < a_n \leq x_n \leq b_n < x + \epsilon .
 \end{equation*}
 In other words, $-\epsilon < x_n-x < \epsilon$ or $\abs{x_n-x} < \epsilon$.
-So $\{x_n\}$ converges to $x$.
+So $\{x_n\}_{n=1}^\infty$ converges to $x$.
 See \figureref{figsqueeze}.
 \end{proof}
 
@@ -812,14 +840,15 @@ See \figureref{figsqueeze}.
 One application of
 the \hyperref[squeeze:lemma]{squeeze lemma} is to compute limits of 
 sequences using limits that we already know.  For example, consider
-the sequence $\{ \frac{1}{n\sqrt{n}} \}$.
+the sequence $\{ \frac{1}{n\sqrt{n}} \}_{n=1}^\infty$.
 Since $\sqrt{n} \geq 1$ for all $n \in \N$, we have
 \begin{equation*}
 0 \leq \frac{1}{n\sqrt{n}} \leq \frac{1}{n}
 \end{equation*}
-for all $n \in \N$.  We already know $\lim \nicefrac{1}{n} = 0$. 
+for all $n \in \N$.  We already know $\lim_{n\to\infty} \nicefrac{1}{n} = 0$. 
 Hence, using
-the constant sequence $\{ 0 \}$ and the sequence $\{ \nicefrac{1}{n} \}$ in the
+the constant sequence $\{ 0 \}_{n=1}^\infty$ and the sequence
+$\{ \nicefrac{1}{n} \}_{n=1}^\infty$ in the
 squeeze lemma, we conclude
 \begin{equation*}
 \lim_{n\to\infty} \frac{1}{n\sqrt{n}} = 0 .
@@ -829,7 +858,7 @@ squeeze lemma, we conclude
 Limits, when they exist, preserve non-strict inequalities.
 
 \begin{lemma} \label{limandineq:lemma}
-Let $\{ x_n \}$ and $\{ y_n \}$ be
+Let $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ be
 convergent sequences and
 \begin{equation*}
 x_n \leq y_n \quad \text{for all } n \in \N .
@@ -842,7 +871,7 @@ Then
 \end{lemma}
 
 \begin{proof}
-Let $x := \lim\, x_n$ and $y := \lim\, y_n$. 
+Let $x := \lim_{n\to\infty} x_n$ and $y := \lim_{n\to\infty} y_n$. 
 Let 
 $\epsilon > 0$ be given.  Find an $M_1$ such that for all $n \geq M_1$,
 we have $\abs{x_n-x} < \nicefrac{\epsilon}{2}$.  Find an $M_2$ such that
@@ -875,7 +904,7 @@ using constant sequences in
 \begin{cor} \label{limandineq:cor}
 \leavevmode
 \begin{enumerate}[(i)]
-\item If $\{ x_n \}$ is a convergent sequence such that $x_n \geq 0$ for all
+\item If $\{ x_n \}_{n=1}^\infty$ is a convergent sequence such that $x_n \geq 0$ for all
 $n \in \N$,
 then
 \begin{equation*}
@@ -883,7 +912,7 @@ then
 \end{equation*}
 \item
 Let $a,b \in \R$ and
-let $\{ x_n \}$ be a convergent sequence such that
+let $\{ x_n \}_{n=1}^\infty$ be a convergent sequence such that
 \begin{equation*}
 a \leq x_n \leq b \quad \text{for all } n \in \N .
 \end{equation*}
@@ -902,7 +931,7 @@ let $x_n := \nicefrac{-1}{n}$ and $y_n := \nicefrac{1}{n}$.
 Then $x_n < y_n$, $x_n < 0$,
 and $y_n > 0$ for all $n$.  However, these inequalities are
 not preserved by the limit operation as
-$\lim\, x_n = \lim\, y_n = 0$.
+$\lim_{n\to\infty} x_n = \lim_{n\to\infty} y_n = 0$.
 The moral of this example is that strict inequalities may become non-strict
 inequalities when limits are applied; if we know
 $x_n < y_n$ for all $n$,
@@ -918,10 +947,10 @@ This issue is a common source of errors.
 Limits interact nicely with algebraic operations.
 
 \begin{prop} \label{prop:contalg}
-Let $\{ x_n \}$ and $\{ y_n \}$ be convergent sequences.
+Let $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ be convergent sequences.
 \begin{enumerate}[(i)]
 \item \label{prop:contalg:i}
-The sequence $\{ z_n \}$, where $z_n := x_n + y_n$, converges and
+The sequence $\{ z_n \}_{n=1}^\infty$, where $z_n := x_n + y_n$, converges and
 \begin{equation*}
 \lim_{n \to \infty} (x_n + y_n) = 
 \lim_{n \to \infty} z_n = 
@@ -929,7 +958,7 @@ The sequence $\{ z_n \}$, where $z_n := x_n + y_n$, converges and
 \lim_{n \to \infty} y_n .
 \end{equation*}
 \item \label{prop:contalg:ii}
-The sequence $\{ z_n \}$, where $z_n := x_n - y_n$, converges and
+The sequence $\{ z_n \}_{n=1}^\infty$, where $z_n := x_n - y_n$, converges and
 \begin{equation*}
 \lim_{n \to \infty} (x_n - y_n) = 
 \lim_{n \to \infty} z_n = 
@@ -937,7 +966,7 @@ The sequence $\{ z_n \}$, where $z_n := x_n - y_n$, converges and
 \lim_{n \to \infty} y_n .
 \end{equation*}
 \item \label{prop:contalg:iii}
-The sequence $\{ z_n \}$, where $z_n := x_n y_n$, converges and
+The sequence $\{ z_n \}_{n=1}^\infty$, where $z_n := x_n y_n$, converges and
 \begin{equation*}
 \lim_{n \to \infty} (x_n y_n) = 
 \lim_{n \to \infty} z_n = 
@@ -945,22 +974,21 @@ The sequence $\{ z_n \}$, where $z_n := x_n y_n$, converges and
 \left( \lim_{n \to \infty} y_n \right) .
 \end{equation*}
 \item \label{prop:contalg:iv}
-If $\lim\, y_n \not= 0$ and $y_n \not= 0$ for all $n \in \N$, then
-the sequence $\{ z_n \}$, where $z_n := \dfrac{x_n}{y_n}$, converges and
+If $\lim_{n\to\infty} y_n \not= 0$ and $y_n \not= 0$ for all $n \in \N$, then
+the sequence $\{ z_n \}_{n=1}^\infty$, where $z_n := \dfrac{x_n}{y_n}$, converges and
 \begin{equation*}
 \lim_{n \to \infty} \frac{x_n}{y_n} = 
 \lim_{n \to \infty} z_n = 
-%\frac{\lim_{n \to \infty} x_n}{\lim_{n \to \infty} y_n} .
-\frac{\lim\, x_n}{\lim\, y_n} .
+\frac{\lim_{n \to \infty} x_n}{\lim_{n \to \infty} y_n} .
 \end{equation*}
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
 We start with \ref{prop:contalg:i}.
-Suppose $\{ x_n \}$ and $\{ y_n \}$ are convergent sequences and
-write $z_n := x_n + y_n$.  Let $x := \lim\, x_n$,
-$y := \lim\, y_n$, and $z := x+y$.
+Suppose $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ are convergent sequences and
+write $z_n := x_n + y_n$.  Let $x := \lim_{n\to\infty} x_n$,
+$y := \lim_{n\to\infty} y_n$, and $z := x+y$.
 
 Let $\epsilon > 0$ be given.  
 Find an $M_1$ such that for all $n \geq M_1$,
@@ -990,9 +1018,9 @@ exercise.
 
 Let us tackle 
 \ref{prop:contalg:iii}.
-Suppose again that $\{ x_n \}$ and $\{ y_n \}$ are convergent sequences and
-write $z_n := x_n y_n$.  Let $x := \lim\, x_n$,
-$y := \lim\, y_n$, and $z := xy$.
+Suppose again that $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ are convergent sequences and
+write $z_n := x_n y_n$.  Let $x := \lim_{n\to\infty} x_n$,
+$y := \lim_{n\to\infty} y_n$, and $z := xy$.
 
 Let $\epsilon > 0$ be given.
 Let $K := \max\{ \abs{x}, \abs{y}, \nicefrac{\epsilon}{3} , 1 \}$.
@@ -1038,19 +1066,20 @@ Finally, we examine
 \ref{prop:contalg:iv}.  Instead of proving 
 \ref{prop:contalg:iv} directly, we prove the following simpler claim:
 
-Claim: \emph{If $\{ y_n \}$ is a convergent sequence such that
-$\lim\, y_n \not= 0$ and $y_n \not= 0$ for all $n \in \N$, then
-$\{ \nicefrac{1}{y_n} \}$ converges and}
+Claim: \emph{If $\{ y_n \}_{n=1}^\infty$ is a convergent sequence such that
+$\lim_{n\to\infty} y_n \not= 0$ and $y_n \not= 0$ for all $n \in \N$, then
+$\{ \nicefrac{1}{y_n} \}_{n=1}^\infty$ converges and}
 \begin{equation*}
-\lim_{n\to\infty} \frac{1}{y_n} = \frac{1}{\lim\, y_n}  .
+\lim_{n\to\infty} \frac{1}{y_n} = \frac{1}{\lim_{n\to\infty} y_n}  .
 \end{equation*}
 
-Once the claim is proved, we take the sequence $\{ \nicefrac{1}{y_n} \}$,
-multiply it by the sequence $\{ x_n \}$ and apply item
+Once the claim is proved, we take the sequence
+$\{ \nicefrac{1}{y_n} \}_{n=1}^\infty$,
+multiply it by the sequence $\{ x_n \}_{n=1}^\infty$ and apply item
 \ref{prop:contalg:iii}.
 
 Proof of claim:  Let $\epsilon > 0$ be given.
-Let $y := \lim\, y_n$.
+Let $y := \lim_{n\to\infty} y_n$.
 As $\abs{y} \not= 0$, then
 $\min \left\{ \abs{y}^2\frac{\epsilon}{2}, \, \frac{\abs{y}}{2} \right\} > 0$.
 Find an $M$ such that for all $n \geq M$,
@@ -1089,7 +1118,7 @@ And we are done.
 \end{proof}
 
 By plugging in constant sequences, we get several easy corollaries.
-If $c \in \R$ and $\{ x_n \}$ is a convergent sequence, then
+If $c \in \R$ and $\{ x_n \}_{n=1}^\infty$ is a convergent sequence, then
 for example
 \begin{equation*}
 \lim_{n \to \infty} c x_n = 
@@ -1102,13 +1131,13 @@ c + \lim_{n \to \infty} x_n .
 Similarly, we find such equalities for constant subtraction and division.
 
 As we can take limits past multiplication we can show (exercise)
-that $\lim\, x_n^k = {(\lim\, x_n)}^k$ for all $k \in \N$.
+that $\lim_{n\to\infty} x_n^k = {(\lim_{n\to\infty} x_n)}^k$ for all $k \in \N$.
 That is, we can take limits
 past powers.  Let us see if we can do the same with roots.
 
 \begin{prop}
 \pagebreak[2]
-Let $\{ x_n \}$ be a convergent sequence such
+Let $\{ x_n \}_{n=1}^\infty$ be a convergent sequence such
 that $x_n \geq 0$ for all $n \in \N$.
 Then
 \begin{equation*}
@@ -1120,11 +1149,12 @@ Then
 Of course, to even make this statement, we need to apply
 \corref{limandineq:cor} to show
 that
-$\lim\, x_n \geq 0$, so that we can take the square root without
+$\lim_{n\to\infty} x_n \geq 0$, so that we can take the square root without
 worry.
 
 \begin{proof}
-Let $\{ x_n \}$ be a convergent sequence and let $x := \lim\, x_n$.
+Let $\{ x_n \}_{n=1}^\infty$ be a convergent sequence and let $x :=
+\lim_{n\to\infty} x_n$.
 As we just mentioned, $x \geq 0$.
 
 First suppose $x=0$.  Let $\epsilon > 0$ be given.
@@ -1154,7 +1184,7 @@ We leave the rest of the proof to the reader.
 
 A similar proof works for the $k$th root.  That is, we also
 obtain
-$\lim\, x_n^{1/k} = {( \lim\, x_n )}^{1/k}$.  We leave this to the reader
+$\lim_{n\to\infty} x_n^{1/k} = {( \lim_{n\to\infty} x_n )}^{1/k}$.  We leave this to the reader
 as a challenging exercise.
 
 We may also want to take the limit past the absolute value sign.
@@ -1162,7 +1192,7 @@ The converse of this proposition is not true, see
 \exerciseref{exercise:absconv} part b).
 
 \begin{prop}
-If $\{ x_n \}$ is a convergent sequence, then $\{ \abs{x_n} \}$
+If $\{ x_n \}_{n=1}^\infty$ is a convergent sequence, then $\{ \abs{x_n} \}_{n=1}^\infty$
 is convergent and
 \begin{equation*}
 \lim_{n\to\infty} \abs{x_n} = 
@@ -1181,12 +1211,12 @@ Details are left to the reader.
 \end{proof}
 
 Let us see an example putting the propositions above together.  Since
-$\lim \nicefrac{1}{n} = 0$, then
+$\lim_{n\to\infty} \nicefrac{1}{n} = 0$, then
 \begin{equation*}
 \lim_{n\to \infty}
 \abs{\sqrt{1 + \nicefrac{1}{n}} - \nicefrac{100}{n^2}} =  
-\abs{\sqrt{1 + (\lim \nicefrac{1}{n})} - 100 (\lim \nicefrac{1}{n})(\lim
-\nicefrac{1}{n})} = 1.
+\abs{\sqrt{1 + \bigl(\lim_{n\to\infty} \nicefrac{1}{n}\bigr)}
+- 100 \bigl(\lim_{n\to\infty} \nicefrac{1}{n}\bigr)\bigl(\lim_{n\to\infty} \nicefrac{1}{n}\bigr)} = 1.
 \end{equation*}
 That is, the limit on the left-hand side exists because the right-hand
 side exists.  You really should read the equality above from right to left.
@@ -1199,11 +1229,11 @@ we find
 = -1 .
 \end{equation*}
 However, 
-$\bigl\{ \frac{n^2}{n+1} \bigr\}$ and 
-$\{n\}$ are not convergent,
+$\bigl\{ \frac{n^2}{n+1} \bigr\}_{n=1}^\infty$ and 
+$\{n\}_{n=1}^\infty$ are not convergent,
 so
-$\bigl(\lim\, \frac{n^2}{n+1}\bigr) -
-\bigl(\lim\, n\bigr)$ is nonsense.
+$\bigl(\lim\limits_{n\to\infty} \frac{n^2}{n+1}\bigr) -
+\bigl(\lim\limits_{n\to\infty} n\bigr)$ is nonsense.
 
 \subsection{Recursively defined sequences}
 
@@ -1214,7 +1244,7 @@ the next number in the sequence is computed using a formula from a fixed number
 of preceding elements in the sequence.
 
 \begin{example}
-Let $\{ x_n \}$ be defined by $x_1 := 2$ and
+Let $\{ x_n \}_{n=1}^\infty$ be defined by $x_1 := 2$ and
 \begin{equation*}
 x_{n+1} := x_n - \frac{x_n^2-2}{2x_n} .
 \end{equation*}
@@ -1253,15 +1283,15 @@ x_{n+1}^2-2 =
 \end{equation*}
 Since squares are nonnegative,
 $x_{n+1}^2-2 \geq 0$ for all $n$.  Therefore,
-$\{ x_n \}$ is monotone decreasing and bounded ($x_n > 0$ for all $n$), and 
+$\{ x_n \}_{n=1}^\infty$ is monotone decreasing and bounded ($x_n > 0$ for all $n$), and 
 so the limit exists.  It remains to find the limit.
 
 Write
 \begin{equation*}
 2x_nx_{n+1} = x_n^2+2 .
 \end{equation*}
-Since $\{ x_{n+1} \}$ is the 1-tail of $\{ x_n \}$, it converges to the
-same limit.  Let us define $x := \lim\, x_n$.  Take the limit of
+Since $\{ x_{n+1} \}_{n=1}^\infty$ is the 1-tail of $\{ x_n \}_{n=1}^\infty$, it converges to the
+same limit.  Let us define $x := \lim_{n\to\infty} x_n$.  Take the limit of
 both sides to obtain
 \begin{equation*}
 2x^2 = x^2+2 ,
@@ -1292,7 +1322,7 @@ Suppose $x_1 := 1$ and $x_{n+1} := x_n^2+x_n$.
 If we blindly assumed that the limit exists (call it $x$), then we
 would get the equation $x = x^2+x$, from which we might
 conclude $x=0$.  However, it is not hard
-to show that $\{ x_n \}$ is unbounded and therefore does not converge.
+to show that $\{ x_n \}_{n=1}^\infty$ is unbounded and therefore does not converge.
 
 The thing to notice in this example is that the method still works, but
 it depends on the initial value $x_1$.  If we set $x_1 := 0$,
@@ -1308,13 +1338,13 @@ See
 It is not always necessary to go back to the definition of convergence
 to prove that a sequence is convergent.  We first give a simple convergence test.
 The main idea is that 
-$\{ x_n \}$ converges to $x$ if and only if 
-$\{ \abs{ x_n - x } \}$ converges to zero.
+$\{ x_n \}_{n=1}^\infty$ converges to $x$ if and only if 
+$\{ \abs{ x_n - x } \}_{n=1}^\infty$ converges to zero.
 
 \begin{prop} \label{convzero:prop}
-Let $\{ x_n \}$ be a sequence. 
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence. 
 Suppose there is an $x \in \R$
-and a convergent sequence $\{ a_n \}$
+and a convergent sequence $\{ a_n \}_{n=1}^\infty$
 such that
 \begin{equation*}
 \lim_{n\to\infty} a_n = 0
@@ -1325,7 +1355,7 @@ and
 \qquad
 \text{for all $n \in \N$.}
 \end{equation*}
-Then $\{ x_n \}$ converges and $\lim\, x_n = x$.
+Then $\{ x_n \}_{n=1}^\infty$ converges and $\lim\limits_{n\to\infty} x_n = x$.
 \end{prop}
 
 \begin{proof}
@@ -1356,22 +1386,22 @@ If $c < 1$, then
 \lim_{n\to\infty} c^n = 0.
 \end{equation*}
 \item
-If $c > 1$, then $\{ c^n \}$ is unbounded.
+If $c > 1$, then $\{ c^n \}_{n=1}^\infty$ is unbounded.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
 First consider $c < 1$.  As $c > 0$, then $c^n > 0$ for all $n \in \N$ by
 \hyperref[induction:thm]{induction}.  As $c < 1$, then $c^{n+1} < c^n$ for all $n$.
-So $\{ c^n \}$ is
+So $\{ c^n \}_{n=1}^\infty$ is
 a decreasing sequence that is bounded below.  Hence, it is convergent.
-Let $x := \lim\, c^n$.  The 1-tail $\{ c^{n+1} \}$
+Let $x := \lim_{n\to\infty} c^n$.  The 1-tail $\{ c^{n+1} \}_{n=1}^\infty$
 also converges to $x$.  Taking the limit of both sides of $c^{n+1} = c \cdot
 c^n$, we obtain $x = cx$, or $(1-c)x=0$.  It follows that $x=0$ as $c \not= 1$.
 
 Now consider $c > 1$.
 Let $B > 0$ be arbitrary.
-As $\nicefrac{1}{c} < 1$, then $\bigl\{ {(\nicefrac{1}{c})}^n \bigr\}$
+As $\nicefrac{1}{c} < 1$, then $\bigl\{ {(\nicefrac{1}{c})}^n \bigr\}_{n=1}^\infty$
 converges to $0$.
 Hence for some large enough $n$, we get
 \begin{equation*}
@@ -1379,7 +1409,7 @@ Hence for some large enough $n$, we get
 {\left(\frac{1}{c}\right)}^n < \frac{1}{B} .
 \end{equation*}
 In other words, $c^n > B$, and $B$ is not an upper bound for 
-$\{ c^n \}$.  As $B$ was arbitrary, $\{ c^n \}$ is unbounded.
+$\{ c^n \}_{n=1}^\infty$.  As $B$ was arbitrary, $\{ c^n \}_{n=1}^\infty$ is unbounded.
 \end{proof}
 
 In the proposition above, the
@@ -1389,7 +1419,7 @@ The following lemma will come up again once we get to series.
 
 \begin{lemma}[Ratio test for sequences]\index{ratio test for sequences}
 \label{seq:ratiotest}
-Let $\{ x_n \}$ be a sequence such that $x_n \not= 0$ for all $n$ and such that
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence such that $x_n \not= 0$ for all $n$ and such that
 the limit
 \begin{equation*}
 L := \lim_{n\to\infty} \frac{\abs{x_{n+1}}}{\abs{x_n}}
@@ -1398,19 +1428,19 @@ L := \lim_{n\to\infty} \frac{\abs{x_{n+1}}}{\abs{x_n}}
 \end{equation*}
 \begin{enumerate}[(i)]
 \item
-If $L < 1$, then $\{ x_n \}$ converges and $\lim\, x_n = 0$.
+If $L < 1$, then $\{ x_n \}_{n=1}^\infty$ converges and $\lim\limits_{n\to\infty} x_n = 0$.
 \item
-If $L > 1$, then $\{ x_n \}$ is unbounded (hence diverges).
+If $L > 1$, then $\{ x_n \}_{n=1}^\infty$ is unbounded (hence diverges).
 \end{enumerate}
 \end{lemma}
 
 If $L$ exists, but $L=1$, the lemma says nothing.  We cannot make any
 conclusion based on that information alone.  For example,
-the sequence $\{ \nicefrac{1}{n} \}$ converges to zero, but $L=1$.
-The constant sequence $\{ 1 \}$ converges to 1, not zero, and 
-$L=1$.  The sequence $\{ {(-1)}^n \}$ does not converge at all, and $L=1$ as
+the sequence $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ converges to zero, but $L=1$.
+The constant sequence $\{ 1 \}_{n=1}^\infty$ converges to 1, not zero, and 
+$L=1$.  The sequence $\{ {(-1)}^n \}_{n=1}^\infty$ does not converge at all, and $L=1$ as
 well.
-Finally, the sequence $\{  n \}$ is unbounded, yet again $L=1$.
+Finally, the sequence $\{  n \}_{n=1}^\infty$ is unbounded, yet again $L=1$.
 The statement of the lemma may be strengthened somewhat, see 
 exercises \ref{exercise:strongerratiotest1} and
 \ref{exercise:strongerratiotest2}.
@@ -1420,16 +1450,15 @@ Suppose $L < 1$.
 As
 $\frac{\abs{x_{n+1}}}{\abs{x_n}} \geq 0$ for all $n$, then $L \geq 0$.  Pick
 $r$ such that $L < r < 1$.
-We wish to compare the sequence $\{ x_n \}$ to the sequence $\{ r^n \}$.  The idea is that
+We wish to compare the sequence $\{ x_n \}_{n=1}^\infty$ to the sequence $\{ r^n \}_{n=1}^\infty$.  The idea is that
 while the ratio $\frac{\abs{x_{n+1}}}{\abs{x_n}}$ is not going to be less than $L$ eventually,
 it will eventually be less than $r$, which is still less than 1.
 The intuitive idea of the proof is illustrated in \figureref{figratseq}.
 \begin{myfigureht}
 \subimport*{figures/}{figratseq.pdf_t}
-\caption{Proof of ratio test in picture.  The short lines represent the
-ratios 
+\caption{The short lines represent the ratios 
 $\frac{\abs{x_{n+1}}}{\abs{x_n}}$
-approaching $L$.\label{figratseq}}
+approaching $L < 1$.\label{figratseq}}
 \end{myfigureht}
 
 As $r-L > 0$, there exists an $M \in \N$ such that for
@@ -1456,10 +1485,10 @@ write
 \abs{x_M}
 r r \cdots r = \abs{x_M} r^{n-M} = (\abs{x_M} r^{-M}) r^n .
 \end{equation*}
-The sequence $\{ r^n \}$ converges to zero and hence 
+The sequence $\{ r^n \}_{n=1}^\infty$ converges to zero and hence 
 $\abs{x_M} r^{-M} r^n$ converges to zero.  By \propref{convzero:prop},
 the $M$-tail of 
-$\{x_n\}$ converges to zero and therefore $\{x_n\}$ converges to zero.
+$\{x_n\}_{n=1}^\infty$ converges to zero and therefore $\{x_n\}_{n=1}^\infty$ converges to zero.
 
 Now suppose $L > 1$.  Pick
 $r$ such that $1 < r < L$.  As $L-r > 0$,
@@ -1485,10 +1514,10 @@ write
 \abs{x_M}
 r r \cdots r = \abs{x_M} r^{n-M} = (\abs{x_M} r^{-M}) r^n .
 \end{equation*}
-The sequence $\{ r^n \}$ is unbounded (since $r > 1$), and so
-$\{x_n\}$ cannot be bounded (if $\abs{x_n} \leq B$ for all $n$, then
+The sequence $\{ r^n \}_{n=1}^\infty$ is unbounded (since $r > 1$), and so
+$\{x_n\}_{n=1}^\infty$ cannot be bounded (if $\abs{x_n} \leq B$ for all $n$, then
 $r^n < \frac{B}{\abs{x_M}} r^{\:M}$ for all $n > M$, which is impossible).
-Consequently, $\{ x_n \}$ cannot converge.
+Consequently, $\{ x_n \}_{n=1}^\infty$ cannot converge.
 \end{proof}
 
 \begin{example}
@@ -1506,7 +1535,7 @@ Compute
 =
 \frac{2}{n+1} .
 \end{equation*}
-It is not hard to see that $\bigl\{ \frac{2}{n+1} \bigr\}$ converges to zero.
+It is not hard to see that $\bigl\{ \frac{2}{n+1} \bigr\}_{n=1}^\infty$ converges to zero.
 The conclusion follows by the lemma.
 \end{example}
 
@@ -1518,7 +1547,7 @@ A more complicated (and useful) application of the ratio test is to prove
 
 Proof:
 Let $\epsilon > 0$ be given.  Consider the sequence
-$\bigl\{ \frac{n}{{(1+\epsilon)}^n} \bigr\}$.  Compute
+$\bigl\{ \frac{n}{{(1+\epsilon)}^n} \bigr\}_{n=1}^\infty$.  Compute
 \begin{equation*}
 \frac{(n+1)/{(1+\epsilon)}^{n+1}}{n/{(1+\epsilon)}^{n}}
 =
@@ -1530,14 +1559,14 @@ The limit of $\frac{n+1}{n} = 1+\frac{1}{n}$ as $n \to \infty$ is 1, and so
 =
 \frac{1}{1+\epsilon}  < 1 .
 \end{equation*}
-Therefore, $\bigl\{ \frac{n}{{(1+\epsilon)}^n} \bigr\}$ converges to 0.
+Therefore, $\bigl\{ \frac{n}{{(1+\epsilon)}^n} \bigr\}_{n=1}^\infty$ converges to 0.
 In particular,
 there exists an $M$ such that for $n \geq M$, we have
 $\frac{n}{{(1+\epsilon)}^n} < 1$, or 
 $n < {(1+\epsilon)}^n$, or 
 $n^{1/n} < 1+\epsilon$.  As $n \geq 1$, then $n^{1/n} \geq 1$, and
 so $0 \leq n^{1/n}-1 < \epsilon$. Consequently,
-$\lim\, n^{1/n} = 1$.
+$\lim\limits_{n\to\infty} n^{1/n} = 1$.
 \end{example}
 
 \subsection{Exercises}
@@ -1552,7 +1581,7 @@ Prove part \ref{prop:contalg:ii} of \propref{prop:contalg}.
 \end{exercise}
 
 \begin{exercise}
-Prove that if $\{ x_n \}$ is a convergent sequence, $k \in \N$, then
+Prove that if $\{ x_n \}_{n=1}^\infty$ is a convergent sequence, $k \in \N$, then
 \begin{equation*}
 \lim_{n\to\infty} x_n^k = 
 {\left( \lim_{n\to\infty} x_n \right)}^k .
@@ -1562,27 +1591,27 @@ Hint: Use \hyperref[induction:thm]{induction}.
 
 \begin{exercise}
 Suppose $x_1 := \frac{1}{2}$ and $x_{n+1} := x_n^2$.  Show that
-$\{ x_n \}$ converges and find
-$\lim\, x_n$.  Hint: You cannot divide by zero!
+$\{ x_n \}_{n=1}^\infty$ converges and find
+$\lim_{n\to\infty} x_n$.  Hint: You cannot divide by zero!
 \end{exercise}
 
 \begin{exercise}
 Let $x_n := \frac{n-\cos(n)}{n}$.  Use the
 \hyperref[squeeze:lemma]{squeeze lemma} to show that
-$\{ x_n \}$ converges and find the limit.
+$\{ x_n \}_{n=1}^\infty$ converges and find the limit.
 \end{exercise}
 
 \begin{exercise}
 Let $x_n := \frac{1}{n^2}$ and $y_n := \frac{1}{n}$.  Define
 $z_n := \frac{x_n}{y_n}$ and 
-$w_n := \frac{y_n}{x_n}$.  Do $\{ z_n \}$ and $\{ w_n \}$
+$w_n := \frac{y_n}{x_n}$.  Do $\{ z_n \}_{n=1}^\infty$ and $\{ w_n \}_{n=1}^\infty$
 converge?  What are the limits?  Can you apply \propref{prop:contalg}?
 Why or why not?
 \end{exercise}
 
 \begin{exercise}
-True or false, prove or find a counterexample.  If $\{ x_n \}$ is a sequence
-such that $\{ x_n^2 \}$ converges, then $\{ x_n \}$ converges.
+True or false, prove or find a counterexample.  If $\{ x_n \}_{n=1}^\infty$ is a sequence
+such that $\{ x_n^2 \}_{n=1}^\infty$ converges, then $\{ x_n \}_{n=1}^\infty$ converges.
 \end{exercise}
 
 \begin{exercise}
@@ -1593,16 +1622,16 @@ Show that
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ x_n \}$ is a sequence, $x \in \R$, and $x_n \not= x$ for
+Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence, $x \in \R$, and $x_n \not= x$ for
 all $n \in \N$.  Suppose the limit
 \begin{equation*}
 L := \lim_{n \to \infty} \frac{\abs{x_{n+1}-x}}{\abs{x_n-x}}
 \end{equation*}
-exists and $L < 1$.  Show that $\{ x_n \}$ converges to $x$.
+exists and $L < 1$.  Show that $\{ x_n \}_{n=1}^\infty$ converges to $x$.
 \end{exercise}
 
 \begin{exercise}[Challenging]
-Let $\{ x_n \}$ be a convergent sequence such
+Let $\{ x_n \}_{n=1}^\infty$ be a convergent sequence such
 that $x_n \geq 0$ and $k \in \N$.
 Then
 \begin{equation*}
@@ -1624,17 +1653,17 @@ converges to $\sqrt{r}$ if $x_1 > 0$ and $-\sqrt{r}$ if $x_1 < 0$.
 
 \begin{samepage}
 \begin{exercise}
-Let $\{ a_n \}$ and $\{ b_n \}$ be sequences.
+Let $\{ a_n \}_{n=1}^\infty$ and $\{ b_n \}_{n=1}^\infty$ be sequences.
 \begin{enumerate}[a)]
 \item
-Suppose $\{ a_n \}$ is bounded and $\{ b_n \}$ converges to 0.
-Show that $\{ a_n b_n \}$ converges to 0.
+Suppose $\{ a_n \}_{n=1}^\infty$ is bounded and $\{ b_n \}_{n=1}^\infty$ converges to 0.
+Show that $\{ a_n b_n \}_{n=1}^\infty$ converges to 0.
 \item
-Find an example where $\{ a_n \}$ is unbounded, $\{ b_n \}$ converges to
-0, and $\{ a_n b_n \}$ is not convergent.
+Find an example where $\{ a_n \}_{n=1}^\infty$ is unbounded, $\{ b_n \}_{n=1}^\infty$ converges to
+0, and $\{ a_n b_n \}_{n=1}^\infty$ is not convergent.
 \item
-Find an example where $\{ a_n \}$ is bounded, $\{ b_n \}$ converges to
-some $x \not= 0$, and $\{ a_n b_n \}$ is not convergent.
+Find an example where $\{ a_n \}_{n=1}^\infty$ is bounded, $\{ b_n \}_{n=1}^\infty$ converges to
+some $x \not= 0$, and $\{ a_n b_n \}_{n=1}^\infty$ is not convergent.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
@@ -1643,7 +1672,7 @@ some $x \not= 0$, and $\{ a_n b_n \}$ is not convergent.
 \begin{exercise}[Easy] \label{exercise:strongerratiotest1}
 Prove the following stronger version of \lemmaref{seq:ratiotest}, the ratio
 test.  
-Suppose $\{ x_n \}$ is a sequence such that $x_n \not= 0$ for all
+Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence such that $x_n \not= 0$ for all
 $n$.
 \begin{enumerate}[a)]
 \item
@@ -1651,20 +1680,20 @@ Prove that if there exists an $r < 1$ and $M \in \N$ such that
 \begin{equation*}
 \frac{\abs{x_{n+1}}}{\abs{x_n}} \leq r \quad \text{for all } n \geq M,
 \end{equation*}
-then $\{ x_n \}$ converges to $0$.
+then $\{ x_n \}_{n=1}^\infty$ converges to $0$.
 \item
 Prove that if there exists an $r > 1$ and $M \in \N$ such that
 \begin{equation*}
 \frac{\abs{x_{n+1}}}{\abs{x_n}} \geq r  \quad \text{for all } n \geq M,
 \end{equation*}
-then $\{ x_n \}$ is unbounded.
+then $\{ x_n \}_{n=1}^\infty$ is unbounded.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exercise} \label{exercise:convergentinitialvalues}
 Suppose $x_1 := c$ and $x_{n+1} := x_n^2+x_n$.
-Show that $\{ x_n \}$ converges if and only if $-1 \leq c \leq 0$, in which
+Show that $\{ x_n \}_{n=1}^\infty$ converges if and only if $-1 \leq c \leq 0$, in which
 case it converges to 0.
 \end{exercise}
 
@@ -1673,10 +1702,10 @@ Prove $\lim\limits_{n \to \infty} {(n^2+1)}^{1/n} = 1$.
 \end{exercise}
 
 \begin{exercise}
-Prove that $\bigl\{ {(n!)}^{1/n} \bigr\}$
+Prove that $\bigl\{ {(n!)}^{1/n} \bigr\}_{n=1}^\infty$
 is unbounded.
-Hint: Show that $\left\{ \frac{C^n}{n!} \right\}$ converges to zero
-for all $C > 0$.
+Hint: Show that for every $C > 0$, $\left\{ \frac{C^n}{n!}
+\right\}_{n=1}^\infty$ converges to zero.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1703,7 +1732,7 @@ subsequences.
 
 We have seen that every convergent sequence is bounded,
 although there exist many bounded divergent sequences.  For example,
-the sequence $\{ {(-1)}^n \}$ is bounded,
+the sequence $\{ {(-1)}^n \}_{n=1}^\infty$ is bounded,
 but divergent.  All is not lost, however, and we can
 still compute certain limits with a bounded divergent sequence.
 
@@ -1715,7 +1744,7 @@ get the so-called \emph{\myindex{limit superior}}\index{limsup} and
 \emph{\myindex{limit inferior}}\index{liminf}.  These limits always exist for bounded
 sequences.
 
-If a sequence $\{ x_n \}$ is bounded, then 
+If a sequence $\{ x_n \}_{n=1}^\infty$ is bounded, then 
 the set $\{ x_k : k \in \N \}$ is bounded.  For every $n$,
 the set $\{ x_k : k \geq n \}$ is also bounded (as it is a subset), so we
 take its supremum and infimum.
@@ -2443,6 +2472,7 @@ $\limsup \, x_n = \inf \, S$.
 \end{exercise}
 
 \begin{exercise}[Easy] \label{exercise:infseqlimex}
+\pagebreak[2]
 Suppose $\{ x_n \}$ is such that $\liminf \, x_n = -\infty$, $\limsup \, x_n
 = \infty$.
 \begin{enumerate}[a)]
@@ -3668,16 +3698,16 @@ Find an explicit example where the converse does not hold.
 \end{samepage}
 
 \begin{exercise}
-For $j=1,2,\ldots,n$, let $\{ x_{j,k} \}_{k=1}^\infty$ denote $n$
-sequences.  Suppose that for each $j \in \N$,
+For $i=1,2,\ldots,n$, let $\{ x_{i,k} \}_{k=1}^\infty$ denote $n$
+sequences.  Suppose that for each $i \in \N$,
 \begin{equation*}
-\sum_{k=1}^\infty x_{j,k}
+\sum_{k=1}^\infty x_{i,k}
 \end{equation*}
 is convergent.  Prove
 \begin{equation*}
-\sum_{j=1}^n \left( \sum_{k=1}^\infty x_{j,k} \right)
+\sum_{i=1}^n \left( \sum_{k=1}^\infty x_{i,k} \right)
 =
-\sum_{k=1}^\infty \left( \sum_{j=1}^n x_{j,k} \right) .
+\sum_{k=1}^\infty \left( \sum_{i=1}^n x_{i,k} \right) .
 \end{equation*}
 \end{exercise}
 
@@ -3691,7 +3721,7 @@ $\frac{\abs{x_{n+1}}}{\abs{x_n}} < \rho$ for all $n \geq N$,
 then the series converges absolutely.
 %FIXME how to add this in without changing the exercise much?
 (Remark: Equivalently the condition can be stated as
-$\limsup_{n\to\infty} \frac{\abs{x_{n+1}}}{\abs{x_n}} < 1$.)
+$\limsup\limits_{n\to\infty} \frac{\abs{x_{n+1}}}{\abs{x_n}} < 1$.)
 \item
 If there is an $N$ such that
 $\frac{\abs{x_{n+1}}}{\abs{x_n}} \geq 1$
@@ -3701,7 +3731,8 @@ then the series diverges.
 \end{exercise}
 
 \begin{exercise}[Challenging]
-Suppose $\{ x_n \}$ is a decreasing sequence and $\sum x_n$ converges.
+Suppose $\{ x_n \}_{n=1}^\infty$ is a decreasing sequence and
+$\sum_{n=1}^\infty x_n$ converges.
 Prove $\displaystyle \lim_{n\to\infty} n x_n = 0$.
 \end{exercise}
 
@@ -3725,7 +3756,7 @@ not multiplied term-by-term.
 
 \begin{exercise}
 Prove the triangle inequality for series:
-If $\sum x_n$ converges absolutely, then
+If $\sum_{n=1}^\infty x_n$ converges absolutely, then
 \begin{equation*}
 \abs{\sum_{n=1}^\infty x_n} \leq
 \sum_{n=1}^\infty \abs{x_n} .
@@ -3742,9 +3773,10 @@ then either $\sum a_n$ and $\sum b_n$ both converge or both diverge.
 \end{exercise}
 
 \begin{exercise} \label{exercise:badnocauchy}
-Let $x_n := \sum_{j=1}^n \nicefrac{1}{j}$.  Show that for every $k$,
+Let $x_n := \sum_{i=1}^n \nicefrac{1}{i}$.  Show that for every $k$,
 we get
-$\displaystyle \lim_{n\to\infty} \abs{x_{n+k}-x_n} = 0$, yet $\{ x_n \}$ is not Cauchy.
+$\displaystyle \lim_{n\to\infty} \abs{x_{n+k}-x_n} = 0$, yet $\{ x_n
+\}_{n=1}^\infty$ is not Cauchy.
 \end{exercise}
 
 \begin{samepage}
@@ -3752,21 +3784,23 @@ $\displaystyle \lim_{n\to\infty} \abs{x_{n+k}-x_n} = 0$, yet $\{ x_n \}$ is not 
 Let $s_k$ be the $k$th partial sum of $\sum x_n$.
 \begin{enumerate}[a)]
 \item
-Suppose that there exists an $m \in \N$ such that $\displaystyle \lim_{k\to\infty}
-s_{mk}$ exists and $\lim\, x_n = 0$.  Show that $\sum x_n$ converges.
+Suppose there exists an $m \in \N$ such that $\lim\limits_{k\to\infty}
+s_{mk}$ exists and $\lim\limits_{n\to\infty} x_n = 0$.  Show that
+$\sum_{n=1}^\infty x_n$ converges.
 \item
-Find an example where $\displaystyle \lim_{k\to\infty} s_{2k}$ exists and
-$\lim\, x_n \not= 0$ (and therefore $\sum x_n$ diverges).
+Find an example where $\lim\limits_{k\to\infty} s_{2k}$ exists and
+$\lim\limits_{n\to\infty} x_n \not= 0$ (and therefore $\sum_{n=1}^\infty x_n$ diverges).
 \item
-(Challenging) Find an example where $\lim\, x_n = 0$, and there exists
-a subsequence $\{ s_{k_j} \}$ such that $\displaystyle \lim_{j\to\infty} s_{k_j}$ exists,
-but $\sum x_n$ still diverges.
+(Challenging) Find an example where $\lim_{n\to\infty} x_n = 0$, and there exists
+a subsequence $\{ s_{k_i} \}_{i=1}^\infty$ such that $\displaystyle \lim_{i\to\infty} s_{k_i}$ exists,
+but $\sum_{n=1}^\infty x_n$ still diverges.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exercise} \label{exercise:squareseriesconv}
-Suppose $\sum x_n$ converges and $x_n \geq 0$ for all $n$.  Prove that $\sum x_n^2$ converges.
+Suppose $\sum_{n=1}^\infty x_n$ converges and $x_n \geq 0$ for all $n$.
+Prove that $\sum_{n=1}^\infty x_n^2$ converges.
 \end{exercise}
 
 \begin{exercise}[Challenging] \label{exercise:cauchycondensation}
@@ -3789,18 +3823,17 @@ to decide the convergence of
 \medskip
 
 \noindent
-a) $\displaystyle \sum \frac{\ln n}{n^2}$
+a) $\displaystyle \sum_{n=1}^\infty \frac{\ln n}{n^2}$
 \qquad
-b) $\displaystyle \sum \frac{1}{n \ln n}$
+b) $\displaystyle \sum_{n=2}^\infty \frac{1}{n \ln n}$
 \qquad
-c) $\displaystyle \sum \frac{1}{n {(\ln n)}^2}$
+c) $\displaystyle \sum_{n=2}^\infty \frac{1}{n {(\ln n)}^2}$
 \qquad
-d) $\displaystyle \sum \frac{1}{n (\ln n ){(\ln \ln n)}^2}$
+d) $\displaystyle \sum_{n=2}^\infty \frac{1}{n (\ln n ){(\ln \ln n)}^2}$
 
 \medskip
 
 \noindent
-For the series to be well-defined you need to start some of the series at $n=2$.
 Note that only the tails of some of these series satisfy the
 hypotheses of the principle; you should argue why that is sufficient.
 
@@ -3814,10 +3847,11 @@ Prove \emph{\myindex{Abel's theorem}}:
 \medskip
 
 \noindent
-\emph{\textbf{Theorem.} Suppose $\sum x_n$ is a series whose sequence of partial sums
-is bounded, $\{ \lambda_n \}$ is a sequence with $\lim \lambda_n = 0$, and
-$\sum \abs{ \lambda_{n+1} - \lambda_n }$ is convergent.
-Then $\sum \lambda_n x_n$ is convergent.}
+\emph{\textbf{Theorem.} Suppose $\sum_{n=1}^\infty x_n$ is a series whose sequence of partial sums
+is bounded, $\{ \lambda_n \}_{n=1}^\infty$ is a sequence with
+$\lim_{n\to\infty} \lambda_n = 0$, and
+$\sum_{n=1}^\infty \abs{ \lambda_{n+1} - \lambda_n }$ is convergent.
+Then $\sum_{n=1}^\infty \lambda_n x_n$ is convergent.}
 \end{exercise}
 
 
@@ -3833,18 +3867,17 @@ Then $\sum \lambda_n x_n$ is convergent.}
 \subsection{Root test}
 
 A test similar to the ratio test is the so-called
-\emph{\myindex{root test}}.  In fact, the 
-proof of this test is similar and somewhat easier.
+\emph{\myindex{root test}}.  The proof of this test is similar.
 Again, the idea is to generalize what happens for the geometric series.
 
 \begin{prop}[Root test]
-Let $\sum x_n$ be a series and let
+Let $\sum_{n=1}^\infty x_n$ be a series and let
 \begin{equation*}
 L := \limsup_{n\to\infty} \, {\sabs{x_n}}^{1/n} .
 \end{equation*}
 \begin{enumerate}[(i)]
-\item If $L < 1$, then $\sum x_n$ converges absolutely.
-\item If $L > 1$, then $\sum x_n$ diverges.
+\item If $L < 1$, then $\sum_{n=1}^\infty x_n$ converges absolutely.
+\item If $L > 1$, then $\sum_{n=1}^\infty x_n$ diverges.
 \end{enumerate}
 \end{prop}
 
@@ -3854,8 +3887,9 @@ L := \limsup_{n\to\infty} \, {\sabs{x_n}}^{1/n} .
 %$\{ x_n \}$, and so the series diverges.
 If $L > 1$, then there exists\footnote{%
 In case $L=\infty$, see \exerciseref{exercise:extendsubseqlimsupinf}.
-Alternatively, note that if $L=\infty$, then $\bigl\{ {\abs{x_{n}}}^{1/n} \bigr\}$
-and thus $\{ x_n \}$ is unbounded.}
+Alternatively, note that if $L=\infty$, then $\bigl\{ {\abs{x_{n}}}^{1/n}
+\bigr\}_{n=1}^\infty$
+and thus $\{ x_n \}_{n=1}^\infty$ is unbounded.}
 a subsequence $\{ x_{n_k} \}$ such that
 $L = \lim_{k\to\infty} \, {\abs{x_{n_k}}}^{1/n_k}$.  Let
 $r$ be such that $L > r > 1$.  There exists an $M$ such
@@ -3895,8 +3929,8 @@ $\frac{r^{M+1}}{1-r}$.  As everything is positive,
 \left( \sum_{n=1}^M \abs{x_n} \right) + 
 \frac{r^{M+1}}{1-r} .
 \end{equation*}
-Thus the sequence of partial sums of $\sum \abs{x_n}$ is bounded, and
-the series converges.  Therefore, $\sum x_n$ converges absolutely.
+Thus the sequence of partial sums of $\sum_{n=1}^\infty \abs{x_n}$ is bounded, and
+the series converges.  Therefore, $\sum_{n=1}^\infty x_n$ converges absolutely.
 \end{proof}
 
 \subsection{Alternating series test}
@@ -3905,8 +3939,8 @@ The tests we have seen so far only addressed absolute convergence.  The
 following test gives a large supply of conditionally convergent series.
 
 \begin{prop}[Alternating series]
-Let $\{ x_n \}$ be a monotone decreasing sequence of positive real numbers such
-that $\lim\, x_n = 0$.  Then
+Let $\{ x_n \}_{n=1}^\infty$ be a monotone decreasing sequence of positive real numbers such
+that $\lim\limits_{n\to\infty} x_n = 0$.  Then
 \begin{equation*}
 \sum_{n=1}^\infty {(-1)}^n x_n \qquad \text{converges.}
 \end{equation*}
@@ -3984,9 +4018,9 @@ series:
 We simply sum the series in a different order.
 
 \begin{prop}
-Let $\sum x_n$ be an absolutely convergent series converging to a number
+Let $\sum_{n=1}^\infty x_n$ be an absolutely convergent series converging to a number
 $x$.  Let $\sigma \colon \N \to \N$ be a bijection.  Then
-$\sum x_{\sigma(n)}$ is absolutely convergent and converges to $x$.
+$\sum_{n=1}^\infty x_{\sigma(n)}$ is absolutely convergent and converges to $x$.
 \end{prop}
 
 In other words,
@@ -3994,7 +4028,7 @@ a rearrangement of an absolutely convergent series converges (absolutely)
 to the same number.
 
 \begin{proof}
-Let $\epsilon > 0$ be given.  As $\sum x_n$ is absolutely convergent, take $M$ such that
+Let $\epsilon > 0$ be given.  As $\sum_{n=1}^\infty x_n$ is absolutely convergent, take $M$ such that
 \begin{equation*}
 \abs{\left(\sum_{n=1}^M x_n \right) - x} < \frac{\epsilon}{2}
 \qquad \text{and} \qquad
@@ -4030,14 +4064,14 @@ Compute
 \end{split}
 \end{equation*}
 So 
-$\sum x_{\sigma(n)}$ converges to $x$.  To see that the convergence
-is absolute, we apply the argument above to $\sum \abs{x_n}$ to show
-that $\sum \abs{x_{\sigma(n)}}$ converges.
+$\sum_{n=1}^\infty x_{\sigma(n)}$ converges to $x$.  To see that the convergence
+is absolute, we apply the argument above to $\sum_{n=1}^\infty \abs{x_n}$ to show
+that $\sum_{n=1}^\infty \abs{x_{\sigma(n)}}$ converges.
 \end{proof}
 
 \begin{example} \label{example:harmonsumanything}
-Let us show that the alternating harmonic series $\sum
-\frac{{(-1)}^{n+1}}{n}$, which does not converge absolutely, can be
+Let us show that the alternating harmonic series
+$\sum_{n=1}^\infty \frac{{(-1)}^{n+1}}{n}$, which does not converge absolutely, can be
 rearranged to converge to anything.
 The odd terms and the even terms diverge to
 plus infinity and minus infinity respectively (prove this!):
@@ -4104,19 +4138,20 @@ the German mathematician
 \href{https://en.wikipedia.org/wiki/Franz_Mertens}{Franz Mertens}
 (1840--1927).}]
 Suppose $\sum_{n=0}^\infty a_n$ and $\sum_{n=0}^\infty b_n$ are two convergent series, converging
-to $A$ and $B$ respectively.  If at least one of the series
-converges absolutely, then the series $\sum_{n=0}^\infty c_n$ where
+to $A$ and $B$ respectively.  Suppose at least one of the series
+converges absolutely.  Define
 \begin{equation*}
-c_n = a_0 b_n + a_1 b_{n-1} + \cdots + a_n b_0 = \sum_{j=0}^n a_j b_{n-j} ,
+c_n := a_0 b_n + a_1 b_{n-1} + \cdots + a_n b_0 = \sum_{i=0}^n a_i b_{n-i} .
 \end{equation*}
+Then the series $\sum_{n=0}^\infty c_n$
 converges to $AB$.
 \end{thm}
 
-The series $\sum c_n$ is called the \emph{\myindex{Cauchy product}} of
-$\sum a_n$ and $\sum b_n$.
+The series $\sum_{n=0}^\infty c_n$ is called the \emph{\myindex{Cauchy product}} of
+$\sum_{n=0}^\infty a_n$ and $\sum_{n=0}^\infty b_n$.
 
 \begin{proof}
-Suppose $\sum a_n$ converges absolutely, and let $\epsilon > 0$ be
+Suppose $\sum_{n=0}^\infty a_n$ converges absolutely, and let $\epsilon > 0$ be
 given.
 In this proof instead of picking complicated estimates just to make
 the final estimate come out as less than $\epsilon$,
@@ -4127,12 +4162,12 @@ Write
 \begin{equation*}
 A_m := \sum_{n=0}^m a_n , \qquad B_m := \sum_{n=0}^m b_n .
 \end{equation*}
-We rearrange the $m$th partial sum of $\sum c_n$:
+We rearrange the $m$th partial sum of $\sum_{n=0}^\infty c_n$:
 \begin{equation*}
 \begin{split}
 \abs{\left(\sum_{n=0}^m c_n \right) - AB}
 & =
-\abs{\left( \sum_{n=0}^m \sum_{j=0}^n a_j b_{n-j} \right) - AB}
+\abs{\left( \sum_{n=0}^m \sum_{i=0}^n a_i b_{n-i} \right) - AB}
 \\
 & =
 \abs{\left( \sum_{n=0}^m
@@ -4158,13 +4193,13 @@ Pick $K$ such that for all $m \geq K$, we have
 $\abs{A_m - A} < \epsilon$ and
 also
 $\abs{B_m - B} < \epsilon$.  Finally,
-as $\sum a_n$ converges absolutely,
+as $\sum_{n=0}^\infty a_n$ converges absolutely,
 make sure that $K$ is large enough such that
 for all $m \geq K$,
 \begin{equation*}
 \sum_{n=K}^m \abs{a_n} < \epsilon .
 \end{equation*}
-As $\sum b_n$ converges, then
+As $\sum_{n=0}^\infty b_n$ converges, then
 we have that
 $B_{\text{max}} := \sup \{ \abs{ B_n - B } : n = 0,1,2,\ldots \}$
 is finite.  Take $m \geq 2K$, then in particular $m-K+1 > K$.  So
@@ -4268,18 +4303,18 @@ c_n =
 \right)
 =
 {(-1)}^n
-\sum_{j=0}^n \frac{1}{\sqrt{(j+1)(n-j+1)}} .
+\sum_{i=0}^n \frac{1}{\sqrt{(i+1)(n-i+1)}} .
 \end{equation*}
 Therefore,
 \begin{equation*}
 \abs{c_n} 
 =
-\sum_{j=0}^n \frac{1}{\sqrt{(j+1)(n-j+1)}} 
+\sum_{i=0}^n \frac{1}{\sqrt{(i+1)(n-i+1)}} 
 \geq
-\sum_{j=0}^n \frac{1}{\sqrt{(n+1)(n+1)}} 
+\sum_{i=0}^n \frac{1}{\sqrt{(n+1)(n+1)}} 
 = 1 .
 \end{equation*}
-The terms do not go to zero and hence $\sum c_n$ cannot converge.
+The terms do not go to zero and hence $\sum_{n=0}^\infty c_n$ cannot converge.
 \end{example}
 
 \subsection{Power series}
@@ -4295,7 +4330,7 @@ many important functions in analysis can be written
 as a power series.  We use the convention that
 $0^0 = 1$ (if $x=x_0$ and $n=0$).
 
-We say that a power series is
+A power series is said to be
 \emph{convergent}\index{convergent!power series} if
 there is at least one $x \not= x_0$ that makes the series converge.
 If $x=x_0$, then the series always
@@ -4614,19 +4649,20 @@ $c_n = a_0 b_n + a_1 b_{n-1} + \cdots + a_n b_0$, also converges absolutely.
 \end{exercise}
 
 \begin{exercise}[Challenging] \label{exercise:seriesconvergestoanything}
-Let $\sum a_n$ be conditionally convergent.
+Let $\sum_{n=1}^\infty a_n$ be conditionally convergent.
 Show that given an arbitrary $x \in \R$
-there exists a rearrangement of $\sum a_n$
+there exists a rearrangement of $\sum_{n=1}^\infty a_n$
 such that the rearranged series converges to $x$.
 Hint: See \exampleref{example:harmonsumanything}.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Show that the alternating harmonic series $\sum
-\frac{{(-1)}^{n+1}}{n}$ has a rearrangement
+Show that the alternating harmonic series $\sum_{n=1}^\infty \frac{{(-1)}^{n+1}}{n}$
+has a rearrangement
 such that whenever $x < y$, there exists a partial sum $s_n$
 of the rearranged series such that $x < s_n < y$.
 \item
@@ -4634,8 +4670,8 @@ Show that the rearrangement you found does not converge.
 See \exampleref{example:harmonsumanything}.
 \item
 Show that for every $x \in \R$, there exists a subsequence of
-partial sums $\{ s_{n_k} \}$ of your rearrangement such that 
-$\lim \, s_{n_k} = x$.
+partial sums $\{ s_{n_k} \}_{k=1}^\infty$ of your rearrangement such that 
+$\lim\limits_{k\to\infty} s_{n_k} = x$.
 \end{enumerate}
 \end{exercise}
 
@@ -4662,7 +4698,7 @@ f) $\displaystyle \sum_{n=0}^\infty n! \, x^{n!}$
 \end{exercise}
 
 \begin{exercise}
-Suppose $\sum a_n x^n$ converges for $x=1$.
+Suppose $\sum_{n=0}^\infty a_n x^n$ converges for $x=1$.
 \begin{enumerate}[a)]
 \item
 What can you say about the radius of convergence?
@@ -4682,21 +4718,21 @@ of convergence.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Find an example where the radii of convergence of $\sum a_n x^n$ and
-$\sum b_n x^n$ are both 1, but the radius of convergence of
+Find an example where the radii of convergence of $\sum_{n=0}^\infty a_n x^n$ and
+$\sum_{n=0}^\infty b_n x^n$ are both 1, but the radius of convergence of
 the sum of the two series is infinite.
 \item
 (Trickier)
-Find an example where the radii of convergence of $\sum a_n x^n$ and
-$\sum b_n x^n$ are both 1, but the radius of convergence of
+Find an example where the radii of convergence of $\sum_{n=0}^\infty a_n x^n$ and
+$\sum_{n=0}^\infty b_n x^n$ are both 1, but the radius of convergence of
 the product of the two series is infinite.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 Figure out how to compute the radius of convergence using the ratio test.
-That is, suppose $\sum a_n x^n$ is a power series and
-$R := \lim \, \frac{\abs{a_{n+1}}}{\abs{a_n}}$ exists or is $\infty$.
+That is, suppose $\sum_{n=0}^\infty a_n x^n$ is a power series and
+$R := \lim_{n\to\infty} \frac{\abs{a_{n+1}}}{\abs{a_n}}$ exists or is $\infty$.
 Find the radius of convergence and prove your claim.
 \end{exercise}
 
@@ -4705,13 +4741,13 @@ Find the radius of convergence and prove your claim.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Prove that $\lim \, n^{1/n} = 1$ using the following procedure:  Write $n^{1/n} = 1+b_n$ and
+Prove that $\lim_{n\to\infty} n^{1/n} = 1$ using the following procedure:  Write $n^{1/n} = 1+b_n$ and
 note $b_n > 0$.  Then show that ${(1+b_n)}^n \geq 
 \frac{n(n-1)}{2}b_n^2$ and use this to show that $\lim \, b_n = 0$.
 \item
 Use the result of part a) to show that
-if $\sum a_n x^n$ is a convergent power series with radius of convergence $R$,
-then $\sum n a_n x^n$ is also convergent with the same radius of convergence.
+if $\sum_{n=0}^\infty a_n x^n$ is a convergent power series with radius of convergence $R$,
+then $\sum_{n=0}^\infty n a_n x^n$ is also convergent with the same radius of convergence.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
@@ -4723,7 +4759,7 @@ than just the one we have seen.
 A common one is \emph{\myindex{Ces\`aro summability}}%
 \footnote{Named for the Italian mathematician
 \href{https://en.wikipedia.org/wiki/Ernesto_Ces\%C3\%A0ro}{Ernesto Ces\`aro}
-(1859--1906).}.  Let $\sum a_n$ be a series
+(1859--1906).}.  Let $\sum_{n=1}^\infty a_n$ be a series
 and let $s_n$ be the $n$th partial sum.  The series is said to
 be Ces\`aro summable to $a$ if
 \begin{equation*}
@@ -4732,19 +4768,20 @@ a = \lim_{n\to \infty} \frac{s_1 + s_2 + \cdots + s_n}{n} .
 \end{exnote}
 
 \begin{exercise}[Challenging]
+\pagebreak[2]
 \leavevmode
 \begin{enumerate}[a)]
 \item
-If $\sum a_n$ is convergent to $a$ (in the usual sense), show that
-$\sum a_n$ is Ces\`aro summable (see above) to $a$.
+If $\sum_{n=1}^\infty a_n$ is convergent to $a$ (in the usual sense), show that
+$\sum_{n=1}^\infty a_n$ is Ces\`aro summable (see above) to $a$.
 \item
-Show that in the sense of Ces\`aro $\sum {(-1)}^n$ is summable to
+Show that in the sense of Ces\`aro $\sum_{n=1}^\infty {(-1)}^n$ is summable to
 $\nicefrac{1}{2}$.
 \item
 Let $a_n := k$ when $n = k^3$ for some $k \in \N$,
 $a_n := -k$ when $n = k^3+1$ for some $k \in \N$,
 otherwise
-let $a_n := 0$.  Show that $\sum a_n$ diverges in the usual sense
+let $a_n := 0$.  Show that $\sum_{n=1}^\infty a_n$ diverges in the usual sense
 (in fact, both the sequence of terms and the partial sums are unbounded), but it is
 Ces\`aro summable to 0 (seems a little paradoxical at first sight).
 \end{enumerate}
@@ -4753,18 +4790,20 @@ Ces\`aro summable to 0 (seems a little paradoxical at first sight).
 \begin{exercise}[Challenging]
 Show that the monotonicity in the alternating series test
 is necessary.  That is, find a sequence of positive real numbers
-$\{ x_n \}$ with $\lim\, x_n = 0$ but such that
-$\sum {(-1)}^n x_n$ diverges.
+$\{ x_n \}_{n=1}^\infty$ with $\lim_{n\to\infty} x_n = 0$ but such that
+$\sum_{n=1}^\infty {(-1)}^n x_n$ diverges.
 \end{exercise}
 
 \begin{exercise}
-Find a series such that $\sum x_n$ converges but $\sum x_n^2$ diverges.
+Find a series such that $\sum_{n=1}^\infty x_n$ converges,
+but $\sum_{n=1}^\infty x_n^2$ diverges.
 Hint: Compare \exerciseref{exercise:squareseriesconv}.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ c_n \}$ is a sequence.  Prove that for every $r \in (0,1)$,
-there exists a strictly increasing sequence $\{ n_k \}$ of natural numbers ($n_{k+1} > n_k$) such that
+Suppose $\{ c_n \}_{n=1}^\infty$ is a sequence.  Prove that for every $r \in (0,1)$,
+there exists a strictly increasing sequence $\{ n_k \}_{k=1}^\infty$ of natural numbers
+($n_{k+1} > n_k$) such that
 \begin{equation*}
 \sum_{k=1}^\infty c_k x^{n_k}
 \end{equation*}
