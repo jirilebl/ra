@@ -816,8 +816,8 @@ and even to prove that certain functions are continuous.
 It can also be strengthened, see \exerciseref{exercise:contseqalt}.
 
 \begin{example}
-The function $f \colon (0,\infty) \to \R$ defined by
-$f(x) := \nicefrac{1}{x}$ is continuous.
+The function $f \colon (0,\infty) \to \R$,
+defined by $f(x) := \nicefrac{1}{x}$, is continuous.
 
 Proof: Fix $c \in (0,\infty)$.  
 Let $\{ x_n \}$ be a sequence in $(0,\infty)$ such that
@@ -883,14 +883,14 @@ exercise.
 Let $f \colon S \to \R$ and $g \colon S \to \R$ be functions
 continuous at $c \in S$.
 \begin{enumerate}[(i)]
-\item The function $h \colon S \to \R$ defined by
-$h(x) := f(x)+g(x)$ is continuous at $c$.
-\item The function $h \colon S \to \R$ defined by
-$h(x) := f(x)-g(x)$ is continuous at $c$.
-\item The function $h \colon S \to \R$ defined by
-$h(x) := f(x)g(x)$ is continuous at $c$.
-\item If $g(x)\not=0$ for all $x \in S$, the function $h \colon S \to \R$
-defined by $h(x) := \frac{f(x)}{g(x)}$ is continuous at $c$.
+\item The function $h \colon S \to \R$, defined by
+$h(x) := f(x)+g(x)$, is continuous at $c$.
+\item The function $h \colon S \to \R$, defined by
+$h(x) := f(x)-g(x)$, is continuous at $c$.
+\item The function $h \colon S \to \R$, defined by
+$h(x) := f(x)g(x)$, is continuous at $c$.
+\item If $g(x)\not=0$ for all $x \in S$, the function $h \colon S \to \R$,
+defined by $h(x) := \frac{f(x)}{g(x)}$, is continuous at $c$.
 \end{enumerate}
 \end{prop}
 
@@ -1014,7 +1014,7 @@ at all, or it converges to something
 other than $f(c)$.
 
 \begin{example} \label{example:jumpdiscont}
-The function $f \colon \R \to \R$ defined by
+The function $f \colon \R \to \R$, defined by
 \begin{equation*}
 f(x) := 
 \begin{cases}
@@ -1156,14 +1156,14 @@ and $g$ is in fact continuous on $B$.
 
 \begin{exercise}
 Using the definition of continuity directly prove that
-$f \colon \R \to \R$ defined by
-$f(x) := x^2$ is continuous.
+$f \colon \R \to \R$, defined by
+$f(x) := x^2$, is continuous.
 \end{exercise}
 
 \begin{exercise}
 Using the definition of continuity directly prove that
-$f \colon (0,\infty) \to \R$ defined by
-$f(x) := \nicefrac{1}{x}$ is continuous.
+$f \colon (0,\infty) \to \R$, defined by
+$f(x) := \nicefrac{1}{x}$, is continuous.
 \end{exercise}
 
 \begin{exercise}
@@ -1222,7 +1222,7 @@ if $f|_A$ is continuous at $c$, then $f$ is continuous at $c$.
 
 \begin{exercise}
 Give an example of functions $f \colon \R \to \R$ and $g \colon \R \to \R$
-such that the function $h$ defined by $h(x) := f(x) + g(x)$ is continuous,
+such that the function $h$, defined by $h(x) := f(x) + g(x)$, is continuous,
 but $f$ and $g$ are not continuous.  Can you find $f$ and $g$ that are nowhere
 continuous, but $h$ is a continuous function?
 \end{exercise}
@@ -1700,7 +1700,7 @@ In the proof,
 In particular, if $d$ is odd, then ${(-n)}^d = -(n^d)$.
 
 We appeal to the intermediate value theorem to find a
-$c \in [-K,M]$, such that $g(c) = 0$.  As $g(x) = \frac{f(x)}{a_d}$,
+$c \in (-K,M)$, such that $g(c) = 0$.  As $g(x) = \frac{f(x)}{a_d}$,
 then $f(c) = 0$, and the proof is done.
 \end{proof}
 
@@ -1872,7 +1872,7 @@ $f(\R) = \R$.  Show that $d$ is odd.
 
 We made a fuss of saying that the $\delta$ in the definition of
 continuity depended on the point $c$.  There are situations when it is
-advantageous to have a $\delta$ independent of any point, and so we
+advantageous to to be able to pick a $\delta$ independent of any point, and so we
 give a name to this concept.
 
 \begin{defn}
@@ -1893,13 +1893,14 @@ of the function makes a difference now.  A function that is not uniformly
 continuous on a larger set, may be uniformly continuous when restricted to a
 smaller set.
 We will say \emph{uniformly continuous on $X$} to mean that
+$f$ is not only continuous on $X$, but also that
 $f$ restricted to $X$ is uniformly continuous, or perhaps to just emphasize
 the domain.
 Note that $x$ and $c$ are not treated any differently
 in this definition.
 
 \begin{example}
-$f \colon [0,1] \to \R$, defined by $f(x) := x^2$ is uniformly continuous.
+$f \colon [0,1] \to \R$, defined by $f(x) := x^2$, is uniformly continuous.
 
 Proof: Note that $0 \leq x,c \leq 1$.  Then
 \begin{equation*}
@@ -1912,7 +1913,7 @@ If $\abs{x-c} < \delta$, then $\abs{x^2-c^2} < \epsilon$.
 
 \medskip
 
-On the other hand, $g \colon \R \to \R$, defined by $g(x) := x^2$ is not uniformly
+On the other hand, $g \colon \R \to \R$, defined by $g(x) := x^2$, is not uniformly
 continuous.
 
 Proof: Suppose it is uniformly continuous, then for every $\epsilon > 0$,
@@ -1934,7 +1935,7 @@ contradiction.
 
 
 \begin{example}
-The function $f \colon (0,1) \to \R$, defined by $f(x) := \nicefrac{1}{x}$ is not
+The function $f \colon (0,1) \to \R$, defined by $f(x) := \nicefrac{1}{x}$, is not
 uniformly continuous.
 
 Proof: Given $\epsilon > 0$, then $\epsilon >
@@ -2064,7 +2065,7 @@ the limits
 L_a := \lim_{x \to a} f(x) \qquad \text{and} \qquad
 L_b := \lim_{x \to b} f(x)
 \end{equation*}
-exist and the function $\widetilde{f} \colon [a,b] \to \R$
+exist and the function $\widetilde{f} \colon [a,b] \to \R$,
 defined by
 \begin{equation*}
 \widetilde{f}(x) :=
@@ -2135,7 +2136,7 @@ A common application of this proposition (together with
 is the following.
 Suppose $f \colon (-1,0) \cup (0,1) \to \R$ is uniformly continuous,
 then $\lim_{x\to 0} f(x)$ exists and the function
-has what is called an \emph{\myindex{removable singularity}}, that is,
+has a \emph{\myindex{removable singularity}}, that is,
 we can extend the function to a continuous function on $(-1,1)$.
 
 
@@ -2212,7 +2213,7 @@ Hence sine and cosine are Lipschitz continuous with $K=1$.
 \end{example}
 
 \begin{example}
-The function $f \colon [1,\infty) \to \R$ defined by $f(x) := \sqrt{x}$
+The function $f \colon [1,\infty) \to \R$, defined by $f(x) := \sqrt{x}$,
 is Lipschitz continuous. Proof:
 \begin{equation*}
 \abs{\sqrt{x}-\sqrt{y}} = 
@@ -2230,9 +2231,9 @@ As $x \geq 1$ and $y \geq 1$, we see that $\frac{1}{\sqrt{x}+\sqrt{y}}
 \abs{x-y}.
 \end{equation*}
 
-On the other hand, $f \colon [0,\infty) \to \R$ defined by
-$f(x) := \sqrt{x}$ is not Lipschitz continuous.  Let us see why:
-Suppose
+On the other hand, $g \colon [0,\infty) \to \R$, defined by
+$g(x) := \sqrt{x}$, is not Lipschitz continuous.  Proof:
+Suppose for all $x,y \in [0,\infty)$,
 \begin{equation*}
 \abs{\sqrt{x}-\sqrt{y}} 
 \leq
@@ -2241,10 +2242,10 @@ K \abs{x-y} ,
 for some $K$.  Set $y=0$ to obtain
 $\sqrt{x} \leq K x$.   If $K > 0$, then for $x > 0$ we then get
 $\nicefrac{1}{K} \leq \sqrt{x}$.  This cannot possibly be true for all
-$x > 0$.  Thus no such $K > 0$ exists and $f$ is not
+$x > 0$.  Thus no such $K > 0$ exists and $g$ is not
 Lipschitz continuous.
 
-The last example is a function that is uniformly
+The last example $g$ is a function that is uniformly
 continuous but not Lipschitz continuous.
 To see that $\sqrt{x}$ is
 uniformly continuous on $[0,\infty)$, note that it is uniformly continuous on
@@ -2275,8 +2276,8 @@ and defined by $f(x) := \nicefrac{1}{x}$ is Lipschitz continuous.
 \end{exercise}
 
 \begin{exercise}
-Show that $f \colon (0,\infty) \to \R$
-defined by $f(x) := \nicefrac{1}{x}$ is not Lipschitz continuous.
+Show that $f \colon (0,\infty) \to \R$,
+defined by $f(x) := \nicefrac{1}{x}$, is not Lipschitz continuous.
 \end{exercise}
 
 \begin{samepage}
@@ -2309,8 +2310,8 @@ $g(x) := x(1-x)f(x)$ is uniformly continuous.
 \end{exercise}
 
 \begin{exercise}
-Show that $f \colon (0,\infty) \to \R$ defined by $f(x) := \sin
-(\nicefrac{1}{x})$ is not uniformly continuous.
+Show that $f \colon (0,\infty) \to \R$, defined by $f(x) := \sin
+(\nicefrac{1}{x})$, is not uniformly continuous.
 \end{exercise}
 
 \begin{exercise}[Challenging]
@@ -3167,8 +3168,8 @@ $g(0) = f(0)$, $f(x) \leq g(x)$ for all $x$, and $g(1)-f(1) < \epsilon$.
 
 \begin{exercise}
 Prove that the \myindex{Dirichlet function}
-$f \colon [0,1] \to\R$ defined by $f(x) :=
-1$ if $x$ is rational and $f(x) := 0$ otherwise cannot be written as a
+$f \colon [0,1] \to\R$, defined by $f(x) :=
+1$ if $x$ is rational and $f(x) := 0$ otherwise, cannot be written as a
 difference of two increasing functions.  That is, there do not exist
 increasing $g$ and $h$ such that, $f(x) = g(x) - h(x)$.
 \end{exercise}
