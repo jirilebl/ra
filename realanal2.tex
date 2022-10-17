@@ -102,9 +102,15 @@
 % Times
 %\usepackage{txfonts}
 % Times, but symbol/cm/ams math fonts
-\usepackage{mathptmx}
+%\usepackage{mathptmx}
 % But we do want helvetica for sans
-\usepackage{helvet}
+%\usepackage{helvet}
+
+%Palatino
+\usepackage[theoremfont]{newpxtext}
+\usepackage[vvarbb]{newpxmath}
+\linespread{1.05}
+\usepackage[scr=boondoxo]{mathalfa} % but we want the nice fancy script fonts
 
 %enumitem global options
 \setlist{leftmargin=*,itemsep=0.5\itemsep,parsep=0.5\parsep,topsep=0.5\topsep,partopsep=0.5\partopsep}
@@ -204,7 +210,7 @@
 \newcommand{\Hom}{\operatorname{Hom}}
 
 %extra thingies
-\newcommand{\mapsfrom}{\ensuremath{\text{\reflectbox{$\mapsto$}}}}
+%\newcommand{\mapsfrom}{\ensuremath{\text{\reflectbox{$\mapsto$}}}}
 \newcommand{\from}{\ensuremath{\leftarrow}}
 \newcommand{\dhat}[1]{\hat{\hat{#1}}}
 \newcommand{\spn}{\operatorname{span}}
@@ -389,8 +395,8 @@
 by Ji{\v r}\'i Lebl\\[3ex]} 
 \today
 \\
-(version 2.6)
-% --- 2nd edition, 6th update)
+(version 6.0)
+% --- 6th edition, 0th update)
 \end{minipage}}
 
 %\addtolength{\textwidth}{\centeroffset}
@@ -475,8 +481,8 @@ the author was in part supported by NSF grant DMS-1362337.
 
 \noindent
 The date is the main identifier of version.  The major version / edition
-number is raised only if there have been substantial changes.  Each
-volume has its own version number.
+number is raised only if there have been substantial changes.
+%Each volume has its own version number.
 
 \bigskip
 
