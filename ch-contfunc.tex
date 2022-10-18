@@ -1753,12 +1753,19 @@ The intermediate value theorem says that if $f \colon [a,b] \to \R$ is
 continuous, then $f\bigl([a,b]\bigr)$ contains all the values between $f(a)$ and
 $f(b)$.  In fact, more is true.  Combining all the results of this section
 one can prove the following useful corollary whose proof is left as an exercise.
+Hint: See \figureref{fig:imageinterval} and notice what the endpoints of the
+image interval are.
 
 \begin{cor} \label{cor:imageofinterval}
 If $f \colon [a,b] \to \R$ is continuous, then the direct image
 $f\bigl([a,b]\bigr)$
 is a closed and bounded interval or a single number.
 \end{cor}
+
+\begin{myfigureht}
+\subimport*{figures/}{figimageinterval.pdf_t}
+\caption{The image of a continuous $f \colon [a,b] \to \R$.\label{fig:imageinterval}}
+\end{myfigureht}
 
 \subsection{Exercises}
 
@@ -1983,7 +1990,7 @@ We plug $y$ into the inequality above to get $\nicefrac{\delta}{2} <
 x \bigl( x+\nicefrac{\delta}{2} \bigr) \epsilon < x$.
 If the definition of uniform continuity is satisfied, then
 the inequality $\nicefrac{\delta}{2} < x$ holds for all $x > 0$.   But then $\delta \leq 0$.
-Therefore, there is no single $\delta > 0$ that works for all points.
+Therefore, no single $\delta > 0$ works for all points.
 \end{example}
 
 The examples show that if $f$ is defined on an interval that is either not closed
@@ -2193,7 +2200,6 @@ Let $\epsilon > 0$ be given.  Take $\delta :=
 \nicefrac{\epsilon}{K}$.
 For all $x$ and $y$ in $S$ such that
 $\abs{x-y} < \delta$,
-we have 
 \begin{equation*}
 \abs{f(x)-f(y)} \leq K \abs{x-y} < K \delta = K \frac{\epsilon}{K} =
 \epsilon .
@@ -2212,12 +2218,12 @@ between the points $\bigl(x,f(x)\bigr)$
 and $\bigl(y,f(y)\bigr)$, that is, a \emph{\myindex{secant line}}.  Therefore, $f$ is Lipschitz
 continuous if and only if every line that intersects the graph of $f$ in at least two
 distinct
-points has slope less than or equal to $K$.  See \figureref{fig:lipschitz}.
+points has slope in absolute value less than or equal to $K$.  See \figureref{fig:lipschitz}.
 \begin{myfigureht}
 \includegraphics{figures/lipschitzfig}
 \caption{The slope of a secant line.
-A function is Lipschitz if $\abs{\text{slope}} =
-\abs{\frac{f(x)-f(y)}{x-y}} \leq K$ for all $x$ and $y$.\label{fig:lipschitz}}
+A function is Lipschitz if %$\abs{\text{slope}} =
+$\abs{\frac{f(x)-f(y)}{x-y}} \leq K$ for all $x$ and $y$.\label{fig:lipschitz}}
 \end{myfigureht}
 
 \begin{example}
@@ -2392,6 +2398,7 @@ is Lipschitz.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 \leavevmode
 \begin{enumerate}[a)]
 \item
@@ -2408,6 +2415,7 @@ then $f$ is Lipschitz.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 Suppose for $f \colon [0,1] \to \R$, we have $\abs{f(x)-f(y)} \leq K
 \abs{x-y}$ for all $x,y$ in $[0,1]$,
 and $f(0) = f(1) = 0$.
