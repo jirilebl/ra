@@ -221,51 +221,53 @@ sequence of real numbers converging to zero.
 Let $f \colon S \to \R$ be a bounded function.  Define
 \glsadd{not:uniformnorm}
 \begin{equation*}
-\norm{f}_u :=
+\snorm{f}_S :=
 \sup \bigl\{ \abs{f(x)} : x \in S \bigr\} .
 \end{equation*}
-We call $\norm{\cdot}_u$ the \emph{\myindex{uniform norm}}.
+We call $\snorm{\cdot}_S$ the \emph{\myindex{uniform norm}}.
 \end{defn}
 
-To use this notation%
-\footnote{The notation nor terminology is not completely standardized.  The norm is
-also called the
+The subscript is the set over which the supremum is taken.  So if $K \subset S$
+then
+\begin{equation*}
+\snorm{f}_K =
+\sup \bigl\{ \abs{f(x)} : x \in K \bigr\} .
+\end{equation*}
+Sometimes other notation\footnote{The notation nor terminology
+is not completely standardized.  The norm is also called the
 \emph{\myindex{sup norm}} or
 \emph{\myindex{infinity norm}}, and in addition
-to $\norm{f}_u$ and $\norm{f}_S$ it is sometimes written
-as $\norm{f}_{\infty}$ or $\norm{f}_{\infty,S}$.}
-and this concept, the domain $S$ must be fixed.  Some authors
-use
-the notation
-$\norm{f}_S$ to emphasize the dependence on $S$.
+to $\snorm{f}_u$ and $\snorm{f}_S$ it is sometimes written
+as $\snorm{f}_{\infty}$ or $\snorm{f}_{\infty,S}$.}
+is used, such as $\snorm{f}_u$.
 
 \begin{prop}
 A sequence of bounded functions $f_n \colon S \to \R$ converges
-uniformly to $f \colon S \to \R$, if and only if
+uniformly to $f \colon S \to \R$ if and only if
 \begin{equation*}
-\lim_{n\to\infty} \norm{f_n - f}_u = 0 .
+\lim_{n\to\infty} \snorm{f_n - f}_S = 0 .
 \end{equation*}
 \end{prop}
 
 \begin{proof}
 First suppose 
-$\lim \norm{f_n - f}_u = 0$.  Let $\epsilon > 0$ be
+$\lim \norm{f_n - f}_S = 0$.  Let $\epsilon > 0$ be
 given.  Then there exists an $N$ such that
-for $n \geq N$, we have $\norm{f_n - f}_u < \epsilon$.  As $\norm{f_n-f}_u$
+for $n \geq N$, we have $\snorm{f_n - f}_S < \epsilon$.  As $\norm{f_n-f}_S$
 is the supremum of $\abs{f_n(x)-f(x)}$, we see that for all $x \in S$,
-we have $\abs{f_n(x)-f(x)} \leq \norm{f_n - f}_u < \epsilon$.
+we have $\abs{f_n(x)-f(x)} \leq \snorm{f_n - f}_S < \epsilon$.
 
 On the other hand, suppose $\{ f_n \}$ converges uniformly to $f$.
 Let $\epsilon > 0$ be given.  Then find $N$ such that 
 $\abs{f_n(x)-f(x)} < \epsilon$ for all $x \in S$.
 Taking the supremum we see that
-$\norm{f_n - f}_u \leq \epsilon$.  Hence $\lim \norm{f_n-f}_u = 0$.
+$\snorm{f_n - f}_S \leq \epsilon$.  Hence $\lim \snorm{f_n-f}_S = 0$.
 \end{proof}
 
 Sometimes it is said that \emph{$\{ f_n \}$ converges to $f$ in uniform norm}
 \index{converges in uniform norm}
 \index{uniform norm convergence}
-instead of \emph{converges uniformly} if $\snorm{f_n-f} \to 0$.  The proposition
+instead of \emph{converges uniformly} if $\snorm{f_n-f}_S \to 0$.  The proposition
 says that the two notions are the same thing.
 
 \begin{example}
@@ -273,7 +275,7 @@ Let $f_n \colon [0,1] \to \R$ be defined by $f_n(x) := \frac{nx+ \sin(nx^2)}{n}$
 We claim $\{ f_n \}$ converges uniformly to $f(x) := x$.  Let us compute:
 \begin{equation*}
 \begin{split}
-\norm{f_n-f}_u
+\norm{f_n-f}_{[0,1]}
 & =
 \sup \left\{ \abs{\frac{nx+ \sin(nx^2)}{n} - x} : x \in [0,1] \right\}
 \\
@@ -298,7 +300,7 @@ or \emph{\myindex{uniformly Cauchy}}
 if for every $\epsilon > 0$, there exists an $N \in \N$ such
 that for all $m,k \geq N$,
 \begin{equation*}
-\norm{f_m-f_k}_u < \epsilon .
+\norm{f_m-f_k}_S < \epsilon .
 \end{equation*}
 \end{defn}
 
@@ -316,7 +318,7 @@ the sequence $\{ f_n(x) \}$ is Cauchy because
 \begin{equation*}
 \abs{f_m(x)-f_k(x)}
 \leq
-\norm{f_m-f_k}_u .
+\norm{f_m-f_k}_S .
 \end{equation*}
 Thus $\{ f_n(x) \}$ converges to some real number.  Define $f \colon S
 \to \R$ by
@@ -327,7 +329,7 @@ The sequence
 $\{ f_n \}$ converges pointwise to $f$.  To show that the convergence
 is uniform, let $\epsilon > 0$ be given.  Find an $N$ such that
 for all $m, k \geq N$, we have
-$\norm{f_m-f_k}_u < \nicefrac{\epsilon}{2}$.  In other words, for
+$\norm{f_m-f_k}_S < \nicefrac{\epsilon}{2}$.  In other words, for
 all $x$, we have
 $\abs{f_m(x)-f_k(x)} < \nicefrac{\epsilon}{2}$.  For any fixed $x$, take the limit
 as $k$ goes to infinity.  Then $\abs{f_m(x)-f_k(x)}$
@@ -351,7 +353,7 @@ Therefore, for all $m, k \geq N$,
 \end{equation*}
 Take supremum over all $x$ to obtain
 \begin{equation*}
-\norm{f_m-f_k}_u \leq \nicefrac{\epsilon}{2} < \epsilon .  \qedhere
+\norm{f_m-f_k}_S \leq \nicefrac{\epsilon}{2} < \epsilon .  \qedhere
 \end{equation*}
 \end{proof}
 
@@ -360,7 +362,7 @@ Take supremum over all $x$ to obtain
 \begin{exercise}
 Let $f$ and $g$ be bounded functions on $[a,b]$.  Prove 
 \begin{equation*}
-\norm{f+g}_u \leq \norm{f}_u + \norm{g}_u .
+\norm{f+g}_{[a,b]} \leq \norm{f}_{[a,b]} + \norm{g}_{[a,b]} .
 \end{equation*}
 \end{exercise}
 
@@ -707,7 +709,7 @@ are sufficient for this kind of theorem, but to prove such a generalization requ
 more sophisticated machinery than we cover here: the Lebesgue integral.
 In particular, the theorem holds with pointwise
 convergence as long as $f$ is integrable and there is an $M$ such that
-$\snorm{f_n}_u \leq M$ for all $n$.}
+$\snorm{f_n}_{[a,b]} \leq M$ for all $n$.}
 
 \begin{thm} \label{integralinterchange:thm}
 Let $\{ f_n \}$ be a sequence of Riemann integrable
@@ -1203,7 +1205,7 @@ discontinuous.
 \begin{exercise} \label{c1uniflim:exercise}
 For a continuously differentiable function $f \colon [a,b] \to \R$, define
 \begin{equation*}
-\norm{f}_{C^1} := \norm{f}_u + \norm{f'}_u .
+\norm{f}_{C^1} := \norm{f}_{[a,b]} + \norm{f'}_{[a,b]} .
 \end{equation*}
 Suppose $\{ f_n \}$ is a sequence of continuously differentiable
 functions such that for every $\epsilon >0$, there exists an $M$
@@ -1604,9 +1606,9 @@ F\bigl(t,f_{k}(t)\bigr)}
 \leq
 L \abs{f_n(t)-f_k(t)}
 \leq
-L \norm{f_n-f_k}_u ,
+L \norm{f_n-f_k}_{[-h,h]} ,
 \end{equation*}
-where $\norm{f_n-f_k}_u$ is the uniform norm, that
+where $\norm{f_n-f_k}_{[-h,h]}$ is the uniform norm, that
 is the supremum of $\abs{f_n(t)-f_k(t)}$ for $t \in [-h,h]$.
 Now note that $\abs{x} \leq h \leq \frac{\alpha}{M+L\alpha}$.
 Therefore
@@ -1623,23 +1625,23 @@ Therefore
 F\bigl(t,f_{k-1}(t)\bigr)\,dt}
 \\
 & \leq
-L\norm{f_{n-1}-f_{k-1}}_u
+L\norm{f_{n-1}-f_{k-1}}_{[-h,h]}
 \abs{x}
 \\
 & \leq
 \frac{L\alpha}{M+L\alpha}
-\norm{f_{n-1}-f_{k-1}}_u .
+\norm{f_{n-1}-f_{k-1}}_{[-h,h]} .
 \end{split}
 \end{equation*}
 Let $C := \frac{L\alpha}{M+L\alpha}$ and note that $C < 1$.
 Taking supremum on the left-hand side we get
 \begin{equation*}
-\norm{f_n-f_k}_u \leq C \norm{f_{n-1}-f_{k-1}}_u .
+\norm{f_n-f_k}_{[-h,h]} \leq C \norm{f_{n-1}-f_{k-1}}_{[-h,h]} .
 \end{equation*}
 Without loss of generality,
 suppose $n \geq k$.  Then by \hyperref[induction:thm]{induction} we can show 
 \begin{equation*}
-\norm{f_n-f_k}_u \leq C^{k} \norm{f_{n-k}-f_{0}}_u .
+\norm{f_n-f_k}_{[-h,h]} \leq C^{k} \norm{f_{n-k}-f_{0}}_{[-h,h]} .
 \end{equation*}
 For $x \in [-h,h]$, we have
 \begin{equation*}
@@ -1650,14 +1652,15 @@ For $x \in [-h,h]$, we have
 \end{equation*}
 Therefore,
 \begin{equation*}
-\norm{f_n-f_k}_u \leq C^{k} \norm{f_{n-k}-f_{0}}_u \leq C^{k} \alpha .
+\norm{f_n-f_k}_{[-h,h]} \leq C^{k} \norm{f_{n-k}-f_{0}}_{[-h,h]} \leq C^{k} \alpha .
 \end{equation*}
 As $C < 1$, $\{f_n\}$ is uniformly Cauchy and by
 \propref{prop:uniformcauchy} we obtain that $\{ f_n \}$
 converges uniformly on $[-h,h]$ to some function $f \colon [-h,h] \to \R$.
 The function $f$ is the uniform limit of continuous functions and therefore
-continuous.  Furthermore, since $f_n([-h,h]) \subset
-[y_0-\alpha,y_0+\alpha]$ for all $n$, then $f([-h,h]) \subset [y_0-\alpha,y_0+\alpha]$
+continuous.  Furthermore, since $f_n\bigl([-h,h]\bigr) \subset
+[y_0-\alpha,y_0+\alpha]$ for all $n$,
+then $f\bigl([-h,h]\bigr) \subset [y_0-\alpha,y_0+\alpha]$
 (why?).
 
 
@@ -1669,9 +1672,9 @@ F\bigl(t,f(t)\bigr)}
 \leq
 L \abs{f_n(t)-f(t)}
 \leq
-L \norm{f_n-f}_u .
+L \norm{f_n-f}_{[-h,h]} .
 \end{equation*}
-As $\norm{f_n-f}_u$ converges to 0, then
+As $\norm{f_n-f}_{[-h,h]}$ converges to 0, then
 $F\bigl(t,f_n(t)\bigr)$ converges uniformly to $F\bigl(t,f(t)\bigr)$
 for $t \in [-h,h]$.  Hence, for $x \in [-h,h]$
 the convergence is uniform %(why?)
@@ -1719,7 +1722,7 @@ that $f(0) = y_0$.
 Finally, what is left to do is to show uniqueness.  Suppose $g \colon [-h,h]
 \to J \subset \R$ is another solution.
 As before we use the fact that
-$\abs{F\bigl(t,f(t)\bigr) - F\bigl(t,g(t)\bigr)} \leq L \norm{f-g}_u$.
+$\abs{F\bigl(t,f(t)\bigr) - F\bigl(t,g(t)\bigr)} \leq L \norm{f-g}_{[-h,h]}$.
 Then
 \begin{equation*}
 \begin{split}
@@ -1748,11 +1751,11 @@ F\bigl(t,g(t)\bigr)\,dt
 }
 \\
 & \leq
-L\norm{f-g}_u\abs{x}
+L\norm{f-g}_{[-h,h]}\abs{x}
 \leq
-Lh\norm{f-g}_u
+Lh\norm{f-g}_{[-h,h]}
 \leq
-\frac{L\alpha}{M+L\alpha}\norm{f-g}_u .
+\frac{L\alpha}{M+L\alpha}\norm{f-g}_{[-h,h]} .
 \end{split}
 \end{equation*}
 As 
@@ -1760,9 +1763,9 @@ before, $C = \frac{L\alpha}{M+L\alpha} < 1$.  By taking supremum over $x \in
 [-h,h]$ on the
 left-hand side we obtain
 \begin{equation*}
-\norm{f-g}_u \leq C \norm{f-g}_u .
+\norm{f-g}_{[-h,h]} \leq C \norm{f-g}_{[-h,h]} .
 \end{equation*}
-This is only possible if $\norm{f-g}_u = 0$.  Therefore, $f=g$, and the
+This is only possible if $\norm{f-g}_{[-h,h]} = 0$.  Therefore, $f=g$, and the
 solution is unique.
 \end{proof}
 

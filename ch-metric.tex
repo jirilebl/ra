@@ -352,8 +352,9 @@ To show that $(X,d)$ is indeed a metric space is left as an exercise.
 \end{example}
 
 \begin{example} \label{example:msC01}
-Let $C([a,b],\R)$\glsadd{not:contfuncs} be the set of continuous real-valued functions on the
-interval $[a,b]$.  Define the metric on $C([a,b],\R)$ as
+Let $C\bigl([a,b],\R\bigr)$\glsadd{not:contfuncs} be the set of
+continuous real-valued functions on the interval $[a,b]$.
+Define the metric on $C\bigl([a,b],\R\bigr)$ as
 \begin{equation*}
 d(f,g) := \sup_{x \in [a,b]} \abs{f(x)-g(x)} .
 \end{equation*}
@@ -381,12 +382,12 @@ d(f,g) & =
 \sup_{x \in [a,b]} \abs{h(x)-g(x)} = d(f,h) + d(h,g) .
 \end{split}
 \end{equation*}
-When treating $C([a,b],\R)$ as a metric space without mentioning a metric, we mean this
-particular metric.
-Notice that $d(f,g) = \norm{f-g}_u$, the uniform norm of \defnref{def:unifnorm}.
+When treating $C\bigl([a,b],\R\bigr)$ as a metric space without mentioning a metric,
+we mean this particular metric.
+Notice that $d(f,g) = \norm{f-g}_{[a,b]}$, the uniform norm of \defnref{def:unifnorm}.
 
 This example may seem esoteric at first, but it turns out that working with
-spaces such as $C([a,b],\R)$ is really the meat of a large part of modern 
+spaces such as $C\bigl([a,b],\R\bigr)$ is really the meat of a large part of modern 
 analysis.  Treating sets of functions as metric spaces allows us to
 abstract away a lot of the grubby detail and prove powerful results such as
 \hyperref[thm:fs:picard]{Picard's theorem} with less work.
@@ -627,13 +628,13 @@ there exists an $m \in \N$ such that $d(n,m) < \epsilon$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:C1ab}
-Let $C^1([a,b],\R)$\glsadd{not:contdifffuncs} be the set of once continuously differentiable
+Let $C^1\bigl([a,b],\R\bigr)$\glsadd{not:contdifffuncs} be the set of once continuously differentiable
 functions on $[a,b]$.
 Define
 \begin{equation*}
-d(f,g) := \snorm{f-g}_u + \snorm{f'-g'}_u,
+d(f,g) := \snorm{f-g}_{[a,b]} + \snorm{f'-g'}_{[a,b]},
 \end{equation*}
-where $\snorm{\cdot}_u$ is the uniform norm.  Prove that $d$ is a metric.
+where $\snorm{\cdot}_{[a,b]}$ is the uniform norm.  Prove that $d$ is a metric.
 \end{exercise}
 
 \begin{samepage}
@@ -1477,9 +1478,7 @@ is said to be
 a \emph{\myindex{subsequence}} of $\{x_n \}$.
 \end{defn}
 
-Similarly we define convergence.  Again, we cheat a little
-and use the definite article in front of the word \emph{limit}
-before we prove that the limit is unique.
+Similarly we define convergence.
 See \figureref{fig:sequence-convergence-metric}, for an idea of
 the definition.
 
@@ -1488,8 +1487,8 @@ A sequence $\{ x_n \}$ in a metric space $(X,d)$ is said
 to \emph{converge} to a point
 $p \in X$ if for every $\epsilon > 0$, there exists an $M \in \N$ such
 that $d(x_n,p) < \epsilon$ for all $n \geq M$.  The point $p$
-is said to be the \emph{limit}\index{limit!of a sequence in a metric space}
-of $\{ x_n \}$.  We write\glsadd{not:limseq}
+is said to be a \emph{limit}\index{limit!of a sequence in a metric space}
+of $\{ x_n \}$.  If the limit is unique, We write\glsadd{not:limseq}
 \begin{equation*}
 \lim_{n\to \infty} x_n := p .
 \end{equation*}
@@ -1521,7 +1520,7 @@ A convergent sequence in a metric space has a unique limit.
 
 \begin{proof}
 %NOTE: should be word for word the same as 2.1.6
-Suppose the sequence $\{ x_n \}$ has limits $x$ and $y$.
+Suppose $\{ x_n \}_{n=1}^\infty$ has limits $x$ and $y$.
 Take an arbitrary $\epsilon > 0$.
 From the definition find an $M_1$ such that for all $n \geq M_1$,
 $d(x_n,x) < \nicefrac{\epsilon}{2}$.  Similarly find an $M_2$
@@ -1553,9 +1552,9 @@ if and only
 if there exists a sequence $\{ a_n \}$ of real numbers such that
 \begin{equation*}
 d(x_n,p) \leq a_n \quad \text{for all } n \in \N,
-\end{equation*}
-and
-\begin{equation*}
+\qquad
+\text{and}
+\qquad
 \lim_{n\to\infty} a_n = 0.
 \end{equation*}
 \end{prop}
@@ -1572,7 +1571,7 @@ converges to $p \in X$, then
 \end{prop}
 
 \begin{example}
-Take $C([0,1],\R)$ be the set of continuous functions with the metric being
+Take $C\bigl([0,1],\R\bigr)$ be the set of continuous functions with the metric being
 the uniform metric.  We saw that we obtain a metric space.
 If we look at the definition of convergence, we notice that it is identical
 to uniform convergence.  That is, $\{ f_n \}$ converges uniformly if and only
@@ -1941,12 +1940,12 @@ with no limit in $(0,1]$.
 In the language of metric spaces,
 the results on continuity of section \sectionref{sec:liminter},
 say that the metric space
-$C([a,b],\R)$ of \exampleref{example:msC01} is complete.
+$C\bigl([a,b],\R\bigr)$ of \exampleref{example:msC01} is complete.
 The proof follows by \myquote{unrolling the definitions,} 
 and is left as \exerciseref{exercise:CabRcomplete}.
 
 \begin{prop} \label{prop:CabRcomplete}
-The space of continuous functions $C([a,b],\R)$ with the uniform
+The space of continuous functions $C\bigl([a,b],\R\bigr)$ with the uniform
 norm as metric is a complete metric space.
 \end{prop}
 
@@ -2076,7 +2075,7 @@ to compact.  A simple example is an incomplete metric space such as
 $(0,1)$ with the subspace metric from $\R$.
 There are many complete and very useful metric spaces
 where closed and bounded is not
-enough to give compactness: $C([a,b],\R)$ is a complete metric
+enough to give compactness: $C\bigl([a,b],\R\bigr)$ is a complete metric
 space, but the closed unit ball $C(0,1)$ is not compact, see
 \exerciseref{exercise:msclbounnotcompt}.  However, see also
 \exerciseref{exercise:mstotbound}.
@@ -2421,12 +2420,12 @@ is itself a complete metric space (using the subspace metric).
 \end{exercise}
 
 \begin{exercise} \label{exercise:CabRcomplete}
-Let $C([a,b],\R)$ be the metric space as in \exampleref{example:msC01}.  Show that
-$C([a,b],\R)$ is a complete metric space.
+Let $C\bigl([a,b],\R\bigr)$ be the metric space as in \exampleref{example:msC01}.  Show that
+$C\bigl([a,b],\R\bigr)$ is a complete metric space.
 \end{exercise}
 
 \begin{exercise}[Challenging] \label{exercise:msclbounnotcompt}
-Let $C([0,1],\R)$ be the metric space of \exampleref{example:msC01}.  Let $0$
+Let $C\bigl([0,1],\R\bigr)$ be the metric space of \exampleref{example:msC01}.  Let $0$
 denote the zero function.  Then show that the closed ball
 $C(0,1)$ is not compact (even though it is closed and bounded).
 Hints: Construct a sequence of distinct continuous functions $\{ f_n \}$ such that
@@ -2446,8 +2445,8 @@ collection of nonempty compact sets $E_1 \supset E_2 \supset E_3 \supset
 \end{exercise}
 
 \begin{exercise}[Challenging]
-Let $C([0,1],\R)$ be the metric space of \exampleref{example:msC01}.
-Let $K$ be the set of $f \in C([0,1],\R)$ such that
+Let $C\bigl([0,1],\R\bigr)$ be the metric space of \exampleref{example:msC01}.
+Let $K$ be the set of $f \in C\bigl([0,1],\R\bigr)$ such that
 $f$ is equal to a quadratic polynomial, i.e.\ $f(x) = a+bx+cx^2$, and such that
 $\abs{f(x)} \leq 1$ for all $x \in [0,1]$,
 that is $f \in C(0,1)$.  Show that $K$ is compact.
@@ -2966,8 +2965,8 @@ d_Y\bigl(f(x),L\bigr) < \epsilon .
 \end{equation*}
 Then we say $f(x)$
 \emph{converges}\index{converges!function in a metric space} to $L$ as $x$ goes
-to $p$, and $L$ is the \emph{limit} of $f(x)$ as $x$
-goes to $p$.  We write
+to $p$, and $L$ is a \emph{limit} of $f(x)$ as $x$
+goes to $p$.  If $L$ is unique, we write
 \glsadd{not:limfunc}
 \begin{equation*}
 \lim_{x \to p} f(x) := L .
@@ -2976,8 +2975,8 @@ If $f(x)$ does not converge as $x$ goes to $p$, we say $f$
 \emph{diverges}\index{diverges!function in a metric space} at $p$.
 \end{defn}
 
-As usual, we used the definite article without showing that the
-limit is unique.  The proof is a direct translation of the proof
+As usual, we prove that the limit, if it exists, is unique.
+The proof is a direct translation of the proof
 from \chapterref{lim:chapter}, so we leave it as an exercise.
 
 \begin{prop} \label{prop:mslimitisunique}
@@ -3027,6 +3026,7 @@ Find an example where $X$ is disconnected and $f$ is not constant.
 \end{exercise}
 
 \begin{exercise} \label{exercise:dicontR2}
+\pagebreak[2]
 Let $f \colon \R^2 \to \R$ be defined by $f(0,0) := 0$, and
 $f(x,y) := \frac{xy}{x^2+y^2}$ if $(x,y) \not= (0,0)$.
 \begin{enumerate}[a)]
@@ -3039,8 +3039,8 @@ Show that $f$ is not continuous.
 \end{enumerate}
 \end{exercise}
 
-\begin{samepage}
 \begin{exercise} 
+\pagebreak[2]
 Suppose $(X,d_X)$, $(Y,d_Y)$ are metric spaces and
 $f \colon X \to Y$ is continuous.
 Let $A \subset X$.
@@ -3051,7 +3051,6 @@ Show that $f(\widebar{A}) \subset \overline{f(A)}$.
 Show that the subset can be proper.
 \end{enumerate}
 \end{exercise}
-\end{samepage}
 
 \begin{exercise}
 Prove \thmref{thm:mstopocont}.  Hint: Use \lemmaref{lemma:mstopocontloc}.
@@ -3088,16 +3087,16 @@ is continuous.
 \end{exercise}
 
 \begin{exercise}
-Take the metric space of continuous functions $C([0,1],\R)$.  Let
+Take the metric space of continuous functions $C\bigl([0,1],\R\bigr)$.  Let
 $k \colon [0,1] \times [0,1] \to \R$ be a continuous function.
-Given $f \in C([0,1],\R)$ define
+Given $f \in C\bigl([0,1],\R\bigr)$ define
 \begin{equation*}
 \varphi_f(x) := \int_0^1 k(x,y) f(y) \,dy .
 \end{equation*}
 \begin{enumerate}[a)]
 \item
-Show that $T(f) := \varphi_f$ defines a function $T \colon C([0,1],\R) \to
-C([0,1],\R)$.
+Show that $T(f) := \varphi_f$ defines a function
+$T \colon C\bigl([0,1],\R\bigr) \to C\bigl([0,1],\R\bigr)$.
 \item
 Show that $T$ is continuous.
 \end{enumerate}
@@ -3127,7 +3126,7 @@ that is, $d(p,q) = \inf \{ d(x,y) \colon x \in K_1, y \in K_2 \}$.
 Let $(X,d)$ be a compact metric space, let $C(X,\R)$ be the set
 of real-valued continuous functions.  Define
 \begin{equation*}
-d(f,g) := \snorm{f-g}_u := \sup_{x \in X} \abs{f(x)-g(x)} .
+d(f,g) := \snorm{f-g}_X = \sup_{x \in X} \abs{f(x)-g(x)} .
 \end{equation*}
 \begin{enumerate}[a)]
 \item
@@ -3141,27 +3140,27 @@ is a continuous function.
 
 \begin{samepage}
 \begin{exercise}
-Let $C([a,b],\R)$ be the set of continuous functions and
-$C^1([a,b],\R)$\glsadd{not:contdifffuncs} the set of once continuously differentiable
-functions on $[a,b]$.
+Let $C\bigl([a,b],\R\bigr)$ be the set of continuous functions and
+$C^1\bigl([a,b],\R\bigr)$\glsadd{not:contdifffuncs} the set of
+once continuously differentiable functions on $[a,b]$.
 Define
 \begin{equation*}
-d_{C}(f,g) := \snorm{f-g}_u
+d_{C}(f,g) := \snorm{f-g}_{[a,b]}
 \qquad \text{and} \qquad
-d_{C^1}(f,g) := \snorm{f-g}_u + \snorm{f'-g'}_u,
+d_{C^1}(f,g) := \snorm{f-g}_{[a,b]} + \snorm{f'-g'}_{[a,b]},
 \end{equation*}
-where $\snorm{\cdot}_u$ is the uniform norm.
+where $\snorm{\cdot}_{[a,b]}$ is the uniform norm.
 By \exampleref{example:msC01} and \exerciseref{exercise:C1ab} we know that
-$C([a,b],\R)$ with $d_C$ is a metric space and
+$C\bigl([a,b],\R\bigr)$ with $d_C$ is a metric space and
 so is
-$C^1([a,b],\R)$ with $d_{C^1}$.
+$C^1\bigl([a,b],\R\bigr)$ with $d_{C^1}$.
 \begin{enumerate}[a)]
 \item
 Prove that the derivative operator $D \colon 
-C^1([a,b],\R) \to C([a,b],\R)$ defined by
+C^1\bigl([a,b],\R\bigr) \to C\bigl([a,b],\R\bigr)$ defined by
 $D(f) := f'$ is continuous.
 \item
-On the other hand if we consider the metric $d_C$ on $C^1([a,b],\R)$,
+On the other hand if we consider the metric $d_C$ on $C^1\bigl([a,b],\R\bigr)$,
 then prove the derivative operator is no longer continuous.  Hint: Consider
 $\sin(n x)$.
 \end{enumerate}
@@ -3327,14 +3326,14 @@ therefore useful in real-world applications.
 Let us start with the metric space to which we will apply the
 fixed point theorem.
 That is, the
-space $C([a,b],\R)$ of \exampleref{example:msC01},
+space $C\bigl([a,b],\R\bigr)$ of \exampleref{example:msC01},
 the space of continuous functions $f \colon [a,b] \to \R$ with the metric
 \begin{equation*}
-d(f,g) := \snorm{f-g}_u = \sup_{x \in [a,b]} \abs{f(x)-g(x)} .
+d(f,g) := \snorm{f-g}_{[a,b]} = \sup_{x \in [a,b]} \abs{f(x)-g(x)} .
 \end{equation*}
 Convergence in this metric is convergence in uniform norm, or in other
 words, uniform convergence.  Therefore,
-$C([a,b],\R)$ is a complete metric space,
+$C\bigl([a,b],\R\bigr)$ is a complete metric space,
 see \propref{prop:CabRcomplete}.
 
 \medskip
@@ -3367,7 +3366,7 @@ solution.  While $F$ is a reasonably \myquote{nice} function and in particular
 it exists for all $x$ and $y$, the solution \myquote{blows up} at $x=1$.
 For more examples related to Picard's theorem, see \sectionref{sec:picard}.
 
-It may be strange that we are looking in $C([a,b],\R)$ for a differentiable
+It may be strange that we are looking in $C\bigl([a,b],\R\bigr)$ for a differentiable
 function, but the idea is to consider the corresponding
 integral equation
 \begin{equation*}
@@ -3415,7 +3414,7 @@ h := \min \left\{ \alpha, \frac{\alpha}{M+L\alpha} \right\} .
 \end{equation*}
 Note $[-h,h] \subset I$.  Let
 \begin{equation*}
-Y := \bigl\{ f \in C([-h,h],\R) : f([-h,h]) \subset J \bigr\} .
+Y := \bigl\{ f \in C\bigl([-h,h],\R\bigr) : f\bigl([-h,h]\bigr) \subset J \bigr\} .
 \end{equation*}
 That is, $Y$ is the space of continuous functions on $[-h,h]$ with values in
 $J$, in other words,
@@ -3423,20 +3422,20 @@ exactly those functions where $F\bigl(x,f(x)\bigr)$ makes sense.
 The metric used is the standard metric given above.
 
 It is left as an exercise to show that $Y$ is closed (because $J$ is closed).
-The space $C([-h,h],\R)$ is complete, and
+The space $C\bigl([-h,h],\R\bigr)$ is complete, and
 a closed subset of a complete metric space is a complete metric space with
 the subspace metric, see \propref{prop:closedcomplete}.  So $Y$ with the
 subspace metric is a complete metric space.
 
 Define a mapping
-$T \colon Y \to C([-h,h],\R)$ by
+$T \colon Y \to C\bigl([-h,h],\R\bigr)$ by
 \begin{equation*}
 T(f)(x)
 :=
 y_0 + \int_0^x F\bigl(t,f(t)\bigr)\,dt .
 \end{equation*}
 It is an exercise to check that
-$T$ is well-defined, and that $T(f)$ really is in $C([-h,h],\R)$.
+$T$ is well-defined, and that $T(f)$ really is in $C\bigl([-h,h],\R\bigr)$.
 
 Let $f \in Y$ and $\abs{x} \leq h$.
 As $F$ is bounded by $M$, we have
@@ -3448,7 +3447,7 @@ As $F$ is bounded by $M$, we have
 \abs{x}M \leq hM \leq \frac{\alpha M}{M+ L\alpha} \leq \alpha .
 \end{split}
 \end{equation*}
-So $T(f)([-h,h]) \subset [y_0-\alpha,y_0+\alpha] \subset J$, and
+So $T(f)\bigl([-h,h]\bigr) \subset [y_0-\alpha,y_0+\alpha] \subset J$, and
 $T(f) \in Y$.  In other words, $T(Y) \subset Y$.  From now on,
 we consider $T$ as a mapping of $Y$ to $Y$.
 
@@ -3495,8 +3494,8 @@ For more exercises related to Picard's theorem see \sectionref{sec:picard}.
 
 \begin{exercise}
 Suppose $J$ is a closed and bounded interval, and let
-$Y := \bigl\{ f \in C([-h,h],\R) : f([-h,h]) \subset J \bigr\}$.
-Show that $Y \subset C([-h,h],\R)$ is closed.  Hint: $J$ is closed.
+$Y := \bigl\{ f \in C\bigl([-h,h],\R\bigr) : f\bigl([-h,h]\bigr) \subset J \bigr\}$.
+Show that $Y \subset C\bigl([-h,h],\R\bigr)$ is closed.  Hint: $J$ is closed.
 \end{exercise}
 
 \begin{exercise}
@@ -3508,7 +3507,7 @@ T(f)(x)
 :=
 y_0 + \int_0^x F\bigl(t,f(t)\bigr)\,dt
 \end{equation*}
-is well-defined and that $T(f) \in C([-h,h],\R)$.
+is well-defined and that $T(f) \in C\bigl([-h,h],\R\bigr)$.
 \end{exercise}
 
 
@@ -3519,8 +3518,8 @@ justified.  That is, prove that if we know the theorem with $x_0 = 0$, the
 theorem is true as stated.
 \end{exercise}
 
-
 \begin{exercise}
+\pagebreak[2]
 Let $F \colon \R \to \R$ be defined by
 $F(x) := kx + b$ where $0 < k < 1$, $b \in \R$.
 \begin{enumerate}[a)]
@@ -3532,6 +3531,7 @@ Find the fixed point and show directly that it is unique.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 Let $f \colon [0,\nicefrac{1}{4}] \to [0,\nicefrac{1}{4}]$ be defined by
 $f(x) := x^2$.
 \begin{enumerate}[a)]

@@ -15,13 +15,13 @@ definition.
 \begin{defn}
 A \emph{\myindex{sequence}} (of real numbers) is a function $x \colon \N \to
 \R$.  Instead of $x(n)$, we 
-usually denote the $n$th element in the sequence by $x_n$.  We 
-use the notation
+usually denote the $n$th element in the sequence by $x_n$.  To denote a
+sequence we write
+\glsadd{not:sequence}%
 \begin{equation*}
-\{ x_n \}_{n=1}^\infty,
+\{ x_n \}_{n=1}^\infty.
 \end{equation*}
-\glsadd{not:sequence}
-to denote a sequence, though sometimes for brevity we may use $\{ x_n \}$.
+%to denote a sequence, though sometimes for brevity we may use $\{ x_n \}$.
 
 A sequence $\{ x_n \}_{n=1}^\infty$ is \emph{bounded}\index{bounded sequence} if
 the underlying function is bounded.  That is, if
@@ -44,7 +44,8 @@ For example, $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ stands for
 the sequence $1, \nicefrac{1}{2}, \nicefrac{1}{3}, \nicefrac{1}{4},
 \nicefrac{1}{5}, \ldots$.
 The sequence $\{ \nicefrac{1}{n} \}_{n=1}^\infty$
-is a bounded sequence ($B=1$ suffices).  On the other hand the sequence $\{ n \}$ stands for
+is a bounded sequence ($B=1$ suffices).  On the other hand the sequence
+$\{ n \}_{n=1}^\infty$ stands for
 $1,2,3,4,\ldots$, and this sequence is not bounded (why?).
 
 While the notation for a sequence
@@ -52,11 +53,11 @@ is similar\footnote{\cite{BS} use $(x_n)_{n=1}^\infty$ to denote
 a sequence instead of $\{ x_n \}_{n=1}^\infty$, which is what \cite{Rudin:baby} uses.
 Both are common.}
 to that of a set, the notions are
-distinct.  For example, the sequence $\{ {(-1)}^n \}_{n=1}^\infty$ is the sequence
+distinct.  For example, the sequence $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ is the sequence
 $-1,1,-1,1,-1,1,\ldots$, whereas the set of values, the
 \emph{range of the sequence}\index{range of a sequence},
 is just the set $\{ -1, 1 \}$.  We can write this set
-as $\{ {(-1)}^n : n \in \N \}$.
+as $\bigl\{ {(-1)}^n : n \in \N \bigr\}$.
 % When ambiguity can arise, we
 %use the words \emph{sequence} or \emph{set} to distinguish the two
 %concepts.
@@ -146,7 +147,7 @@ Then for all $n \geq M$,
 \end{example}
 
 \begin{example}
-The sequence $\{ {(-1)}^n \}_{n=1}^\infty$ is divergent.  Proof: If there
+The sequence $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ is divergent.  Proof: If there
 were a limit $x$, then for $\epsilon = \frac{1}{2}$ we expect an $M$ that
 satisfies the definition.  Suppose
 such an $M$ exists.
@@ -176,7 +177,7 @@ by arbitrarily small numbers.
 
 \begin{proof}
 %NOTE: should be word for word the same as 7.3.3
-Suppose the sequence $\{ x_n \}_{n=1}^\infty$ has limits $x$ and $y$.
+Suppose $\{ x_n \}_{n=1}^\infty$ has limits $x$ and $y$.
 Take an arbitrary $\epsilon > 0$.
 From the definition find an $M_1$ such that for all $n \geq M_1$,
 $\abs{x_n-x} < \nicefrac{\epsilon}{2}$.  Similarly, find an $M_2$
@@ -226,7 +227,7 @@ Let $B := \max \{ B_1, B_2 \}$.  Then for all $n \in \N$,
 \end{equation*}
 \end{proof}
 
-The sequence $\{ {(-1)}^n \}_{n=1}^\infty$ shows that the converse
+The sequence $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ shows that the converse
 does not hold.  A bounded sequence is not necessarily convergent.
 
 \begin{example}
@@ -288,7 +289,7 @@ For example,
 $\{ n \}_{n=1}^\infty$ is monotone increasing,
 $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ is monotone decreasing,
 the constant sequence $\{ 1 \}_{n=1}^\infty$ is both monotone increasing and monotone
-decreasing, and $\{ {(-1)}^n \}_{n=1}^\infty$ is not monotone.
+decreasing, and $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ is not monotone.
 First few terms of a sample monotone increasing sequence
 are shown in 
 \figureref{figsequenceincreasing}.
@@ -328,9 +329,9 @@ $x_n \geq x_{M}$ for all $n \geq M$.  Hence for all $n \geq M$,
 \begin{equation*}
 \abs{x_n-x} = x-x_n \leq x-x_{M} < \epsilon  .
 \end{equation*}
-Therefore, the sequence converges to $x$, so a bounded monotone increasing
-sequence converges.
-For the other direction, we have already proved that a convergent sequence
+So $\{ x_n \}_{n=1}^\infty$ converges to $x$.
+Therefore, a bounded monotone increasing sequence converges.
+For the other direction, we already proved that a convergent sequence
 is bounded.
 
 The proof for monotone decreasing sequences is left as an exercise.
@@ -381,8 +382,8 @@ Hence, $b=0$ is the greatest lower bound, and $\lim\limits_{n\to\infty} \frac{1}
 \begin{example}
 A word of caution:  Showing that a monotone sequence is bounded
 in order to use \propref{prop:monotoneconv} may be difficult.
-The sequence $\{ 1 + \nicefrac{1}{2} + \cdots + \nicefrac{1}{n}
-\}_{n=1}^\infty$
+The sequence
+$\{ 1 + \nicefrac{1}{2} + \cdots + \nicefrac{1}{n} \}_{n=1}^\infty$
 is a monotone increasing
 sequence that grows very slowly.  We will see, once we get to series,
 that this sequence has no upper bound and so does not converge.  It is not
@@ -688,7 +689,7 @@ Show that $x_n = x_k$ for all $n \geq k$.
 \begin{exercise}
 \pagebreak[2]
 Find a convergent subsequence of the sequence
-$\{ {(-1)}^n \}_{n=1}^\infty$.
+$\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$.
 \end{exercise}
 
 \begin{exercise}
@@ -1438,7 +1439,7 @@ If $L$ exists, but $L=1$, the lemma says nothing.  We cannot make any
 conclusion based on that information alone.  For example,
 the sequence $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ converges to zero, but $L=1$.
 The constant sequence $\{ 1 \}_{n=1}^\infty$ converges to 1, not zero, and 
-$L=1$.  The sequence $\{ {(-1)}^n \}_{n=1}^\infty$ does not converge at all, and $L=1$ as
+$L=1$.  The sequence $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ does not converge at all, and $L=1$ as
 well.
 Finally, the sequence $\{  n \}_{n=1}^\infty$ is unbounded, yet again $L=1$.
 The statement of the lemma may be strengthened somewhat, see 
@@ -1487,8 +1488,8 @@ r r \cdots r = \abs{x_M} r^{n-M} = (\abs{x_M} r^{-M}) r^n .
 \end{equation*}
 The sequence $\{ r^n \}_{n=1}^\infty$ converges to zero and hence 
 $\abs{x_M} r^{-M} r^n$ converges to zero.  By \propref{convzero:prop},
-the $M$-tail of 
-$\{x_n\}_{n=1}^\infty$ converges to zero and therefore $\{x_n\}_{n=1}^\infty$ converges to zero.
+the $M$-tail
+$\{x_n\}_{n=M+1}^\infty$ converges to zero and therefore $\{x_n\}_{n=1}^\infty$ converges to zero.
 
 Now suppose $L > 1$.  Pick
 $r$ such that $1 < r < L$.  As $L-r > 0$,
@@ -1732,7 +1733,7 @@ subsequences.
 
 We have seen that every convergent sequence is bounded,
 although there exist many bounded divergent sequences.  For example,
-the sequence $\{ {(-1)}^n \}_{n=1}^\infty$ is bounded,
+the sequence $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ is bounded,
 but divergent.  All is not lost, however, and we can
 still compute certain limits with a bounded divergent sequence.
 
@@ -1750,16 +1751,17 @@ the set $\{ x_k : k \geq n \}$ is also bounded (as it is a subset), so we
 take its supremum and infimum.
 
 \begin{defn} \label{liminflimsup:def}
-Let $\{ x_n \}$ be a bounded sequence.  Define the sequences $\{ a_n \}$
-and $\{ b_n \}$ by
+Let $\{ x_n \}_{n=1}^\infty$ be a bounded sequence.  Define the sequences
+$\{ a_n \}_{n=1}^\infty$
+and $\{ b_n \}_{n=1}^\infty$ by
 $a_n := \sup \{ x_k : k \geq n \}$ and
 $b_n := \inf \{ x_k : k \geq n \}$.  
 Define, if the limits exist,\glsadd{not:limsupseq}\glsadd{not:liminfseq}
-\begin{align*}
-\limsup_{n \to \infty} \, x_n & := \lim_{n \to \infty} a_n ,
-\\
-\liminf_{n \to \infty} \, x_n & := \lim_{n \to \infty} b_n .
-\end{align*}
+\begin{equation*}
+\limsup_{n \to \infty} x_n := \lim_{n \to \infty} a_n ,
+\qquad
+\liminf_{n \to \infty} x_n := \lim_{n \to \infty} b_n .
+\end{equation*}
 \end{defn}
 
 For a bounded sequence, liminf and limsup always exist (see below).  It is possible
@@ -1770,42 +1772,44 @@ include unbounded sequences; however, we first restrict our attention to
 bounded ones.
 
 \begin{prop}
-Let $\{ x_n \}$ be a bounded sequence.  Let $a_n$ and $b_n$ be as in
+Let $\{ x_n \}_{n=1}^\infty$ be a bounded sequence.  Let $a_n$ and $b_n$ be as in
 the definition above.
 \begin{enumerate}[(i)]
 \item
 The
-sequence $\{ a_n \}$ is bounded monotone decreasing
-and $\{ b_n \}$ is bounded monotone increasing.  In particular,
-$\liminf x_n$ and $\limsup x_n$ exist.
+sequence $\{ a_n \}_{n=1}^\infty$ is bounded monotone decreasing
+and $\{ b_n \}_{n=1}^\infty$ is bounded monotone increasing.  In particular,
+$\liminf\limits_{n\to\infty} x_n$ and $\limsup\limits_{n\to\infty} x_n$ exist.
 \item
-$\displaystyle \limsup_{n \to \infty} \, x_n = \inf \{ a_n : n \in \N \}$
+$\displaystyle \limsup_{n \to \infty} x_n = \inf \{ a_n : n \in \N \}$
 and
-$\displaystyle \liminf_{n \to \infty} \, x_n = \sup \{ b_n : n \in \N \}$.
+$\displaystyle \liminf_{n \to \infty} x_n = \sup \{ b_n : n \in \N \}$.
 \item
-$\displaystyle \liminf_{n \to \infty} \, x_n \leq
-\limsup_{n \to \infty} \, x_n$.
+$\displaystyle \liminf_{n \to \infty} x_n \leq \limsup_{n \to \infty} x_n$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-Let us see why $\{ a_n \}$ is a decreasing sequence.  As $a_n$ is the least upper
+Let us see why $\{ a_n \}_{n=1}^\infty$ is a decreasing sequence.  As $a_n$ is the least upper
 bound for $\{ x_k : k \geq n \}$, it is also
-an upper bound for the subset $\{ x_k : k \geq (n+1) \}$.  Therefore
+an upper bound for the subset $\{ x_k : k \geq n+1 \}$.  Therefore
 $a_{n+1}$, the least upper bound for
-$\{ x_k : k \geq (n+1) \}$, has to be less than or equal to $a_n$,
+$\{ x_k : k \geq n+1 \}$, has to be less than or equal to $a_n$,
 the least upper bound for
 $\{ x_k : k \geq n) \}$.
 That is,
-$a_n \geq a_{n+1}$ for all $n$.  Similarly (an exercise), $\{ b_n \}$ is an increasing
-sequence.  It is left as an exercise to show that
-if $\{ x_n \}$ is bounded, then $\{ a_n \}$ and $\{ b_n \}$ must be bounded.
+$a_n \geq a_{n+1}$ for all $n$.  Similarly (an exercise),
+$\{ b_n \}_{n=1}^\infty$ is an increasing sequence.
+It is left as an exercise to show that
+if $\{ x_n \}_{n=1}^\infty$ is bounded, then $\{ a_n \}_{n=1}^\infty$ and
+$\{ b_n \}_{n=1}^\infty$ must be bounded.
 
 The second item follows as the sequences
-$\{ a_n \}$ and $\{ b_n \}$ are monotone and bounded.
+$\{ a_n \}_{n=1}^\infty$ and $\{ b_n \}_{n=1}^\infty$ are monotone and bounded.
 
 For the third item, note that $b_n \leq a_n$, as the $\inf$ of a nonempty set
-is less than or equal to its $\sup$.  The sequences $\{ a_n \}$ and $\{ b_n \}$
+is less than or equal to its $\sup$.  The sequences $\{ a_n \}_{n=1}^\infty$
+and $\{ b_n \}_{n=1}^\infty$
 converge to the limsup and the liminf respectively.
 Apply \lemmaref{limandineq:lemma} to obtain
 \begin{equation*}
@@ -1826,7 +1830,7 @@ $b_n$ are marked with diamonds ($\diamond$).\label{sequence-limsupliminf_an_bn}}
 \end{myfigureht}
 
 \begin{example} \label{example:liminfsupex}
-Let $\{ x_n \}$ be defined by
+Let $\{ x_n \}_{n=1}^\infty$ be defined by
 \begin{equation*}
 x_n :=
 \begin{cases}
@@ -1838,7 +1842,7 @@ Let us compute the $\liminf$ and $\limsup$ of this sequence.  See also
 \figureref{sequence-limsupliminf_an_bn-example}.  First the
 limit inferior:
 \begin{equation*}
-\liminf_{n\to\infty} \, x_n = 
+\liminf_{n\to\infty} x_n = 
 \lim_{n\to\infty}
 \bigl(
 \inf \{ x_k : k \geq n \}
@@ -1848,7 +1852,7 @@ limit inferior:
 \end{equation*}
 For the limit superior, we write
 \begin{equation*}
-\limsup_{n\to\infty} \, x_n = 
+\limsup_{n\to\infty} x_n = 
 \lim_{n\to\infty}
 \bigl(
 \sup \{ x_k : k \geq n \}
@@ -1864,41 +1868,43 @@ It is not hard to see that
 \end{equation*}
 We leave it to the reader to show that the limit is 1.  That is,
 \begin{equation*}
-\limsup_{n\to\infty} \, x_n = 1 .
+\limsup_{n\to\infty} x_n = 1 .
 \end{equation*}
-Do note that the sequence $\{ x_n \}$ is not a convergent sequence.
+Do note that the sequence $\{ x_n \}_{n=1}^\infty$ is not a convergent sequence.
 \begin{myfigureht}
 \includegraphics{figures/sequence-limsupliminf_an_bn-example}
 \caption{First 20 terms of the sequence in \exampleref{example:liminfsupex}.
-The marking is the same as in \figureref{sequence-limsupliminf_an_bn}.
+The marking is as in \figureref{sequence-limsupliminf_an_bn}.
 \label{sequence-limsupliminf_an_bn-example}}
 \end{myfigureht}
 \end{example}
 
 We associate certain subsequences with $\limsup$ and $\liminf$.
-It is important to notice that $\{ a_n \}$ and $\{ b_n \}$ are not
-subsequences of $\{ x_n \}$, nor do they have to even 
+It is important to notice that $\{ a_n \}_{n=1}^\infty$ and
+$\{ b_n \}_{n=1}^\infty$ are not
+subsequences of $\{ x_n \}_{n=1}^\infty$, nor do they have to even 
 consist of the same numbers.
-For example, for the sequence $\{ \nicefrac{1}{n} \}$,
+For example, for the sequence $\{ \nicefrac{1}{n} \}_{n=1}^\infty$,
 $b_n = 0$ for all $n \in \N$.
 
 \begin{thm} \label{subseqlimsupinf:thm}
-If $\{ x_n \}$ is a bounded sequence, then there exists a subsequence
-$\{ x_{n_k} \}$ such that
+If $\{ x_n \}_{n=1}^\infty$ is a bounded sequence, then there exists a subsequence
+$\{ x_{n_k} \}_{k=1}^\infty$ such that
 \begin{equation*}
-\lim_{k\to \infty} x_{n_k} = \limsup_{n \to \infty} \, x_n .
+\lim_{k\to \infty} x_{n_k} = \limsup_{n \to \infty} x_n .
 \end{equation*}
 Similarly, there exists a (perhaps different) subsequence
-$\{ x_{m_k} \}$ such that
+$\{ x_{m_k} \}_{k=1}^\infty$ such that
 \begin{equation*}
-\lim_{k\to \infty} x_{m_k} = \liminf_{n \to \infty} \, x_n .
+\lim_{k\to \infty} x_{m_k} = \liminf_{n \to \infty} x_n .
 \end{equation*}
 \end{thm}
 
 \begin{proof}
 Define $a_n := \sup \{ x_k : k \geq n \}$.
 Write
-$x := \limsup \, x_n = \lim\, a_n$.  We define the subsequence inductively.
+$x := \limsup_{n\to\infty} x_n = \lim_{n\to\infty} a_n$.
+We define the subsequence inductively.
 Let $n_1 := 1$, and suppose $n_1,n_2,\ldots,n_{k-1}$ are already defined for
 some $k \geq 2$.  Pick an $m \geq n_{k-1} + 1$
 such that
@@ -1909,7 +1915,7 @@ Such an $m$ exists
 as $a_{(n_{k-1}+1)}$ is a supremum of the
 set $\{ x_\ell : \ell \geq n_{k-1} + 1 \}$ and hence there are elements
 of the sequence arbitrarily close (or even possibly equal) to the supremum.
-Set $n_{k} :=  m$.  The subsequence $\{ x_{n_k} \}$ is defined.  Next, we
+Set $n_{k} :=  m$.  The subsequence $\{ x_{n_k} \}_{k=1}^\infty$ is defined.  Next, we
 must prove that it converges to $x$.
 
 For all $k \geq 2$, we have
@@ -1927,10 +1933,10 @@ a_{(n_{k-1}+1)} - x_{n_k}
 \end{split}
 \end{equation*}
 
-Let us show that $\{ x_{n_k} \}$ converges to $x$.
+Let us show that $\{ x_{n_k} \}_{k=1}^\infty$ converges to $x$.
 Note that the subsequence need not be monotone.  Let $\epsilon > 0$ be given.
-As $\{ a_n \}$ converges to $x$, the subsequence
-$\{ a_{n_k} \}$ converges to $x$.
+As $\{ a_n \}_{n=1}^\infty$ converges to $x$, the subsequence
+$\{ a_{n_k} \}_{k=1}^\infty$ converges to $x$.
 Thus there exists an $M_1 \in \N$
 such that for all $k \geq M_1$, we have
 \begin{equation*}
@@ -1968,17 +1974,18 @@ Working with $\liminf$ and $\limsup$ is a
 little bit like working with limits, although there are subtle differences.
 
 \begin{prop} \label{liminfsupconv:prop}
-Let $\{ x_n \}$ be a bounded sequence.  Then $\{ x_n \}$ converges
+Let $\{ x_n \}_{n=1}^\infty$ be a bounded sequence.  Then
+$\{ x_n \}_{n=1}^\infty$ converges
 if and only if
 \begin{equation*}
-\liminf_{n\to \infty} \, x_n = 
-\limsup_{n\to \infty} \, x_n.
+\liminf_{n\to \infty} x_n = 
+\limsup_{n\to \infty} x_n.
 \end{equation*}
-Furthermore, if $\{ x_n \}$ converges, then
+Furthermore, if $\{ x_n \}_{n=1}^\infty$ converges, then
 \begin{equation*}
 \lim_{n\to \infty} x_n = 
-\liminf_{n\to \infty} \, x_n = 
-\limsup_{n\to \infty} \, x_n.
+\liminf_{n\to \infty} x_n = 
+\limsup_{n\to \infty} x_n.
 \end{equation*}
 \end{prop}
 
@@ -1989,10 +1996,11 @@ In particular, for all $n \in \N$,
 b_n \leq x_n \leq a_n .
 \end{equation*}
 First suppose
-$\liminf \, x_n = \limsup \, x_n$.  Then $\{ a_n \}$ and $\{ b_n \}$
+$\liminf_{n\to\infty} x_n = \limsup_{n\to\infty} x_n$.
+Then $\{ a_n \}_{n=1}^\infty$ and $\{ b_n \}_{n=1}^\infty$
 both converge to the same limit.
 By the squeeze lemma
-(\lemmaref{squeeze:lemma}), $\{ x_n \}$ converges and
+(\lemmaref{squeeze:lemma}), $\{ x_n \}_{n=1}^\infty$ converges and
 \begin{equation*}
 \lim_{n\to \infty} b_n
 =
@@ -2001,26 +2009,27 @@ By the squeeze lemma
 \lim_{n\to \infty} a_n .
 \end{equation*}
 
-Now suppose $\{ x_n \}$ converges to $x$.
+Now suppose $\{ x_n \}_{n=1}^\infty$ converges to $x$.
 By \thmref{subseqlimsupinf:thm},
-there exists a subsequence $\{ x_{n_k} \}$
-that converges to $\limsup \, x_n$.
-As $\{ x_n \}$ converges to $x$,
+there exists a subsequence $\{ x_{n_k} \}_{k=1}^\infty$
+converging to $\limsup_{n\to\infty} x_n$.
+As $\{ x_n \}_{n=1}^\infty$ converges to $x$,
 every subsequence converges to $x$ and
-therefore $\limsup \, x_n = \lim\, x_{n_k} = x$.  Similarly, $\liminf \, x_n = x$.
+so $\limsup_{n\to\infty} x_n = \lim_{k\to\infty} x_{n_k} = x$.
+Similarly, $\liminf_{n\to\infty} x_n = x$.
 \end{proof}
 
 Limit superior and limit inferior behave nicely
 with subsequences.
 
 \begin{prop} \label{prop:subseqslimsupinf}
-Suppose $\{ x_n \}$ is a bounded sequence and
-$\{ x_{n_k} \}$ is a subsequence.  Then
+Suppose $\{ x_n \}_{n=1}^\infty$ is a bounded sequence and
+$\{ x_{n_k} \}_{k=1}^\infty$ is a subsequence.  Then
 \begin{equation*}
-\liminf_{n\to\infty} \, x_n \leq
-\liminf_{k\to\infty} \, x_{n_k} \leq
-\limsup_{k\to\infty} \, x_{n_k} \leq
-\limsup_{n\to\infty} \, x_n .
+\liminf_{n\to\infty} x_n \leq
+\liminf_{k\to\infty} x_{n_k} \leq
+\limsup_{k\to\infty} x_{n_k} \leq
+\limsup_{n\to\infty} x_n .
 \end{equation*}
 \end{prop}
 
@@ -2029,13 +2038,14 @@ The middle inequality has been proved already.  We will prove the third
 inequality, and leave the first inequality as an exercise.
 
 We want to prove that
-$\limsup \, x_{n_k} \leq \limsup \, x_n$.  Define
+$\limsup_{k\to\infty} x_{n_k} \leq \limsup_{n\to\infty} x_n$.  Define
 $a_n := \sup \{ x_k : k \geq n \}$ 
 as usual.
 Also define
 $c_n := \sup \{ x_{n_k} : k \geq n \}$.
-It is not true that $\{ c_n \}$ is necessarily a subsequence of $\{ a_n \}$.  However,
-as $n_k \geq k$ for all $k$, we have that
+It is not true that $\{ c_n \}_{n=1}^\infty$ is necessarily a subsequence
+of $\{ a_n \}_{n=1}^\infty$.
+However, as $n_k \geq k$ for all $k$, we have that
 $\{ x_{n_k} : k \geq n \} \subset \{ x_k : k \geq n \}$.
 A supremum of a subset is less than or equal to the supremum of the
 set and therefore
@@ -2051,23 +2061,24 @@ which is the desired conclusion.
 
 Limit superior and limit inferior
 are the largest and smallest
-subsequential limits.  If the subsequence $\{ x_{n_k} \}$ in the previous
+subsequential limits.  If the subsequence $\{ x_{n_k} \}_{k=1}^\infty$ in the previous
 proposition is convergent, then
-$\liminf \, x_{n_k} = \lim\, x_{n_k} = \limsup \, x_{n_k}$.  Therefore,
+$\liminf_{k\to\infty} x_{n_k} = \lim_{k\to\infty} x_{n_k} =
+\limsup_{k\to\infty} x_{n_k}$.  Therefore,
 \begin{equation*}
-\liminf_{n\to\infty} \, x_n \leq
+\liminf_{n\to\infty} x_n \leq
 \lim_{k\to\infty} x_{n_k} \leq
-\limsup_{n\to\infty} \, x_n .
+\limsup_{n\to\infty} x_n .
 \end{equation*}
 
 Similarly, we get the following useful test for convergence
 of a bounded sequence.  We leave the proof as an exercise.
 
 \begin{prop} \label{seqconvsubseqconv:prop}
-A bounded sequence $\{ x_n \}$ is convergent and converges to $x$
+A bounded sequence $\{ x_n \}_{n=1}^\infty$ is convergent and converges to $x$
 if and only if
 every convergent subsequence
-$\{ x_{n_k} \}$ converges to $x$.
+$\{ x_{n_k} \}_{k=1}^\infty$ converges to $x$.
 \end{prop}
 
 \subsection{Bolzano--Weierstrass theorem}
@@ -2080,13 +2091,13 @@ that we present in this section is the Bolzano--Weierstrass for
 sequences of real numbers.
 
 \begin{thm}[Bolzano--Weierstrass]\index{Bolzano--Weierstrass theorem}\label{thm:bwseq}
-Suppose a sequence $\{ x_n \}$ of real numbers is bounded.
-Then there exists a convergent subsequence $\{ x_{n_i} \}$.
+Suppose a sequence $\{ x_n \}_{n=1}^\infty$ of real numbers is bounded.
+Then there exists a convergent subsequence $\{ x_{n_i} \}_{i=1}^\infty$.
 \end{thm}
 
 \begin{proof}
 We use \thmref{subseqlimsupinf:thm}.  It says that there exists
-a subsequence whose limit is $\limsup \, x_n$.
+a subsequence whose limit is $\limsup_{n\to\infty} x_n$.
 \end{proof}
 
 The reader might complain right now that 
@@ -2104,10 +2115,11 @@ The idea of the following proof also generalizes to different contexts.
 \begin{proof}[Alternate proof of Bolzano--Weierstrass]
 As the sequence is bounded, then there exist two numbers $a_1 < b_1$
 such that $a_1 \leq x_n \leq b_1$ for all $n \in \N$.
-We will define a subsequence $\{ x_{n_i} \}$ and two
-sequences $\{ a_i \}$ and $\{ b_i \}$, such that
-$\{ a_i \}$ is monotone increasing, $\{ b_i \}$ is monotone decreasing,
-$a_i \leq x_{n_i} \leq b_i$ and such that $\lim\, a_i = \lim\, b_i$.   That
+We will define a subsequence $\{ x_{n_i} \}_{i=1}^\infty$ and two
+sequences $\{ a_i \}_{i=1}^\infty$ and $\{ b_i \}_{i=1}^\infty$, such that
+$\{ a_i \}_{i=1}^\infty$ is monotone increasing, $\{ b_i \}_{i=1}^\infty$ is monotone decreasing,
+$a_i \leq x_{n_i} \leq b_i$ and such that $\lim_{i\to\infty} a_i =
+\lim_{i\to\infty} b_i$.   That
 $x_{n_i}$ converges then follows by the \hyperref[squeeze:lemma]{squeeze lemma}.
 
 We define the sequences inductively.  We will always have that $a_i < b_i$,
@@ -2133,7 +2145,7 @@ and pick $n_{k+1} > n_{k}$
 such that $x_{n_{k+1}} \in [y,b_k]$.
 
 We now have the sequences defined.  What is left to prove is that
-$\lim\, a_i = \lim\, b_i$.  The limits exist as the sequences
+$\lim_{i\to\infty} a_i = \lim_{i\to\infty} b_i$.  The limits exist as the sequences
 are monotone.  In the construction,
 $b_i - a_i$ is cut in half in each step.  Therefore,
 $b_{i+1} - a_{i+1} = \frac{b_i-a_i}{2}$.  By
@@ -2142,11 +2154,11 @@ $b_{i+1} - a_{i+1} = \frac{b_i-a_i}{2}$.  By
 b_i - a_i = \frac{b_1-a_1}{2^{i-1}} .
 \end{equation*}
 
-Let $x := \lim\, a_i$.  As $\{ a_i \}$ is monotone,
+Let $x := \lim_{i\to\infty} a_i$.  As $\{ a_i \}_{i=1}^\infty$ is monotone,
 \begin{equation*}
 x = \sup \{ a_i : i \in \N \} .
 \end{equation*}
-Let $y := \lim\, b_i = \inf \{ b_i : i \in \N \}$.  Since $a_i < b_i$ for
+Let $y := \lim_{i\to\infty} b_i = \inf \{ b_i : i \in \N \}$.  Since $a_i < b_i$ for
 all $i$, then $x \leq y$.
 As the sequences are monotone, then
 for all $i$, we have (why?)
@@ -2165,14 +2177,14 @@ which is left as a challenging exercise.
 \subsection{Infinite limits}
 
 Just as for infima and suprema, it is possible to allow certain
-limits to be infinite.  That is, we write $\lim \, x_n = \infty$ or
-$\lim \, x_n = -\infty$ for certain divergent sequences.
+limits to be infinite.  That is, we write $\lim_{n\to\infty} x_n = \infty$ or
+$\lim_{n\to\infty} x_n = -\infty$ for certain divergent sequences.
 
 \begin{defn}
 \index{infinite limit!of a sequence}\index{limit!infinite}
 We say
-$\{ x_n \}$ \emph{\myindex{diverges to infinity}}%
-\footnote{Sometimes it is said that $\{ x_n \}$ \emph{converges to infinity}.}
+$\{ x_n \}_{n=1}^\infty$ \emph{\myindex{diverges to infinity}}%
+\footnote{Sometimes it is said that $\{ x_n \}_{n=1}^\infty$ \emph{converges to infinity}.}
 if for every $K \in
 \R$, there exists an $M \in \N$ such that for all $n \geq M$, we have $x_n >
 K$.  In this case we write
@@ -2181,7 +2193,7 @@ K$.  In this case we write
 \end{equation*}
 Similarly,
 if for every $K \in \R$ there exists an $M \in \N$ such that
-for all $n \geq M$, we have $x_n < K$, we say $\{ x_n \}$
+for all $n \geq M$, we have $x_n < K$, we say $\{ x_n \}_{n=1}^\infty$
 \emph{\myindex{diverges to minus infinity}} and we write
 \begin{equation*}
 \lim_{n \to \infty} x_n := -\infty .  
@@ -2189,15 +2201,15 @@ for all $n \geq M$, we have $x_n < K$, we say $\{ x_n \}$
 \end{defn}
 
 With this definition and allowing $\infty$ and $-\infty$,
-we can write $\lim \, x_n$ for any monotone sequence.
+we can write $\lim_{n\to\infty} x_n$ for any monotone sequence.
 
 \begin{prop} \label{prop:unboundedmonotone}
-Suppose $\{ x_n \}$ is a monotone unbounded sequence.  Then
+Suppose $\{ x_n \}_{n=1}^\infty$ is a monotone unbounded sequence.  Then
 \begin{equation*}
 \lim_{n \to \infty} x_n =
 \begin{cases}
-\infty  & \text{if } \{ x_n \} \text{ is increasing,} \\
--\infty & \text{if } \{ x_n \} \text{ is decreasing.}
+\infty  & \text{if } \{ x_n \}_{n=1}^\infty \text{ is increasing,} \\
+-\infty & \text{if } \{ x_n \}_{n=1}^\infty \text{ is decreasing.}
 \end{cases}
 \end{equation*}
 \end{prop}
@@ -2205,11 +2217,11 @@ Suppose $\{ x_n \}$ is a monotone unbounded sequence.  Then
 \begin{proof}
 The case of monotone increasing follows from
 \exerciseref{exercise:infseqlimlims} part c) below.
-Suppose $\{x_n\}$ is decreasing and unbounded.
+Suppose $\{x_n\}_{n=1}^\infty$ is decreasing and unbounded.
 That the sequence is unbounded means that
 for every $K \in \R$, there is an $M \in \N$ such that $x_M < K$.
 By monotonicity, $x_n \leq x_M < K$ for all $n \geq M$.
-Therefore, $\lim \, x_n = -\infty$.
+Therefore, $\lim_{n\to\infty} x_n = -\infty$.
 \end{proof}
 
 \begin{example}
@@ -2227,7 +2239,8 @@ We may also allow $\liminf$ and $\limsup$ to take on
 the values $\infty$ and $-\infty$, so that
 we can apply $\liminf$ and $\limsup$
 to absolutely any sequence, not just
-a bounded one.   Unfortunately, the sequences $\{ a_n \}$ and $\{ b_n \}$
+a bounded one.   Unfortunately, the sequences $\{ a_n \}_{n=1}^\infty$ and
+$\{ b_n \}_{n=1}^\infty$
 are not sequences of real numbers but of extended real numbers.  In
 particular, $a_n$ can equal $\infty$ for some $n$, and $b_n$ can equal
 $-\infty$.  So we have no definition for the limits.
@@ -2235,41 +2248,43 @@ But since the extended real numbers are still an ordered set, we
 can take suprema and infima.
 
 \begin{defn}
-Let $\{ x_n \}$ be an unbounded sequence of real numbers.  Define
+Let $\{ x_n \}_{n=1}^\infty$ be an unbounded sequence of real numbers.  Define
 sequences of extended real numbers by
 $a_n := \sup \{ x_k : k \geq n \}$ and
 $b_n := \inf \{ x_k : k \geq n \}$.
 Define\glsadd{not:limsupseq}\glsadd{not:liminfseq}
 \index{limit inferior}\index{limit superior}\index{limsup}\index{liminf}
 \begin{equation*}
-\limsup_{n \to \infty} \, x_n := \inf \{ a_n : n \in \N \}, \qquad \text{and} \qquad
-\liminf_{n \to \infty} \, x_n := \sup \{ b_n : n \in \N \}.
+\limsup_{n \to \infty} x_n := \inf \{ a_n : n \in \N \}, \qquad \text{and} \qquad
+\liminf_{n \to \infty} x_n := \sup \{ b_n : n \in \N \}.
 \end{equation*}
 \end{defn}
 
 This definition agrees with the definition for bounded
-sequences whenever $\lim a_n$ or $\lim b_n$ makes sense including
+sequences whenever $\lim_{n\to\infty} a_n$ or $\lim_{n\to\infty} b_n$ makes sense including
 possibly $\infty$ and $-\infty$.
 
 \begin{prop}
-Let $\{ x_n \}$ be an unbounded sequence.  Define
-$\{ a_n \}$ and $\{ b_n \}$ as above.
-Then $\{ a_n \}$ is decreasing, and $\{ b_n \}$ is increasing.
+Let $\{ x_n \}_{n=1}^\infty$ be an unbounded sequence.  Define
+$\{ a_n \}_{n=1}^\infty$ and $\{ b_n \}_{n=1}^\infty$ as above.
+Then $\{ a_n \}_{n=1}^\infty$ is decreasing, and $\{ b_n \}_{n=1}^\infty$ is increasing.
 If $a_n$ is a real number for every $n$, then
-$\limsup \, x_n = \lim \, a_n$.
+$\limsup_{n\to\infty} x_n = \lim_{n\to\infty} a_n$.
 If $b_n$ is a real number for every $n$, then
-$\liminf \, x_n = \lim \, b_n$.
+$\liminf_{n\to\infty} x_n = \lim_{n\to\infty} b_n$.
 \end{prop}
 
 \begin{proof}
 As before,
 $a_n = \sup \{ x_k : k \geq n \} \geq \sup \{ x_k : k \geq n+1 \} =
-a_{n+1}$.  So $\{ a_n \}$ is decreasing. Similarly, $\{ b_n \}$ is increasing.
+a_{n+1}$.  So $\{ a_n \}_{n=1}^\infty$ is decreasing. Similarly,
+$\{ b_n \}_{n=1}^\infty$ is increasing.
 
-If the sequence $\{ a_n \}$ is a sequence of real numbers, then
-$\lim a_n = \inf \{ a_n : n \in \N \}$.  This follows from
-\propref{prop:monotoneconv} if $\{ a_n \}$ is bounded and \propref{prop:unboundedmonotone} if $\{a_n \}$
-is unbounded.  We proceed similarly with $\{ b_n \}$.
+If the sequence $\{ a_n \}_{n=1}^\infty$ is a sequence of real numbers, then
+$\lim_{n\to\infty} a_n = \inf \{ a_n : n \in \N \}$.  This follows from
+\propref{prop:monotoneconv} if $\{ a_n \}_{n=1}^\infty$ is bounded and
+\propref{prop:unboundedmonotone} if $\{a_n \}_{n=1}^\infty$
+is unbounded.  We proceed similarly with $\{ b_n \}_{n=1}^\infty$.
 \end{proof}
 
 The definition behaves as expected with
@@ -2288,32 +2303,32 @@ So,
 \begin{equation*}
 \lim_{n\to \infty} x_n \quad \text{does not exist},
 \qquad
-\limsup_{n\to \infty} \, x_n = \infty ,
+\limsup_{n\to \infty} x_n = \infty ,
 \qquad
-\liminf_{n\to \infty} \, x_n = 0.
+\liminf_{n\to \infty} x_n = 0.
 \end{equation*}
 \end{example}
 
 \subsection{Exercises}
 
 \begin{exercise}
-Suppose $\{ x_n \}$ is a bounded sequence.  Define $a_n$ and
-$b_n$ as in \defnref{liminflimsup:def}.  Show that $\{ a_n \}$
-and $\{ b_n \}$ are bounded.
+Suppose $\{ x_n \}_{n=1}^\infty$ is a bounded sequence.  Define $a_n$ and
+$b_n$ as in \defnref{liminflimsup:def}.  Show that $\{ a_n \}_{n=1}^\infty$
+and $\{ b_n \}_{n=1}^\infty$ are bounded.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ x_n \}$ is a bounded sequence.
+Suppose $\{ x_n \}_{n=1}^\infty$ is a bounded sequence.
 Define $b_n$ as in \defnref{liminflimsup:def}.  Show that
-$\{ b_n \}$ is an increasing sequence.
+$\{ b_n \}_{n=1}^\infty$ is an increasing sequence.
 \end{exercise}
 
 \begin{exercise}
 Finish the proof of \propref{prop:subseqslimsupinf}.  That is,
-suppose $\{ x_n \}$ is a bounded sequence and
-$\{ x_{n_k} \}$ is a subsequence.  Prove
-$\displaystyle \liminf_{n\to\infty}\, x_n \leq
-\liminf_{k\to\infty}\, x_{n_k}$.
+suppose $\{ x_n \}_{n=1}^\infty$ is a bounded sequence and
+$\{ x_{n_k} \}_{k=1}^\infty$ is a subsequence.  Prove
+$\displaystyle \liminf_{n\to\infty} x_n \leq
+\liminf_{k\to\infty} x_{n_k}$.
 \end{exercise}
 
 \begin{exercise}
@@ -2325,51 +2340,51 @@ Prove \propref{seqconvsubseqconv:prop}.
 \begin{enumerate}[a)]
 \item
 Let $x_n := \dfrac{{(-1)}^n}{n}$.
-Find $\limsup \, x_n$ and $\liminf \, x_n$.
+Find $\limsup\limits_{n\to\infty} x_n$ and $\liminf\limits_{n\to\infty} x_n$.
 \item
 Let $x_n := \dfrac{(n-1){(-1)}^n}{n}$.
-Find $\limsup \, x_n$ and $\liminf \, x_n$.
+Find $\limsup\limits_{n\to\infty} x_n$ and $\liminf\limits_{n\to\infty} x_n$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Let $\{ x_n \}$ and $\{ y_n \}$ be bounded sequences such that
+Let $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ be bounded sequences such that
 $x_n \leq y_n$ for all $n$.  Show
 \begin{equation*}
-\limsup_{n\to\infty} \, x_n \leq
-\limsup_{n\to\infty} \, y_n
+\limsup_{n\to\infty} x_n \leq
+\limsup_{n\to\infty} y_n
 \qquad \text{and} \qquad
-\liminf_{n\to\infty} \, x_n \leq
-\liminf_{n\to\infty} \, y_n .
+\liminf_{n\to\infty} x_n \leq
+\liminf_{n\to\infty} y_n .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Let $\{ x_n \}$ and $\{ y_n \}$ be bounded sequences.
+Let $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ be bounded sequences.
 \begin{enumerate}[a)]
 \item
-Show that $\{ x_n + y_n \}$ is bounded.
+Show that $\{ x_n + y_n \}_{n=1}^\infty$ is bounded.
 \item
 Show that
 \begin{equation*}
-(\liminf_{n\to \infty}\, x_n)
+\Bigl(\liminf_{n\to \infty} x_n\Bigr)
 +
-(\liminf_{n\to \infty}\, y_n)
+\Bigl(\liminf_{n\to \infty} y_n\Bigr)
 \leq
-\liminf_{n\to \infty}\, (x_n+y_n) .
+\liminf_{n\to \infty} \, (x_n+y_n) .
 \end{equation*}
 Hint: One proof is to find a subsequence $\{ x_{n_m}+y_{n_m} \}_{m=1}^\infty$ of
 $\{ x_n + y_n \}_{n=1}^\infty$ that converges.
 Then find a subsequence $\{ x_{n_{m_i}} \}_{i=1}^\infty$ of
 $\{ x_{n_m} \}_{m=1}^\infty$ that converges.
 \item
-Find an explicit $\{ x_n \}$ and $\{ y_n \}$ such that
+Find an explicit $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ such that
 \begin{equation*}
-(\liminf_{n\to \infty}\, x_n)
+\Bigl(\liminf_{n\to \infty} x_n\Bigr)
 +
-(\liminf_{n\to \infty}\, y_n)
+\Bigl(\liminf_{n\to \infty} y_n\Bigr)
 <
-\liminf_{n\to \infty}\, (x_n+y_n) .
+\liminf_{n\to \infty} \, (x_n+y_n) .
 \end{equation*}
 Hint: Look for examples that do not have a limit.
 \end{enumerate}
@@ -2377,27 +2392,27 @@ Hint: Look for examples that do not have a limit.
 
 \begin{samepage}
 \begin{exercise}
-Let $\{ x_n \}$ and $\{ y_n \}$ be bounded sequences (by the previous
-exercise, $\{ x_n + y_n \}$ is bounded).
+Let $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ be bounded sequences (by the previous
+exercise, $\{ x_n + y_n \}_{n=1}^\infty$ is bounded).
 \begin{enumerate}[a)]
 \item
 Show that
 \begin{equation*}
-(\limsup_{n\to \infty}\, x_n)
+\Bigl(\limsup_{n\to \infty} x_n\Bigr)
 +
-(\limsup_{n\to \infty}\, y_n)
+\Bigl(\limsup_{n\to \infty} y_n\Bigr)
 \geq
-\limsup_{n\to \infty}\, (x_n+y_n) .
+\limsup_{n\to \infty} \, (x_n+y_n) .
 \end{equation*}
 Hint: See previous exercise.
 \item
-Find an explicit $\{ x_n \}$ and $\{ y_n \}$ such that
+Find an explicit $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ such that
 \begin{equation*}
-(\limsup_{n\to \infty}\, x_n)
+\Bigl(\limsup_{n\to \infty} x_n\Bigr)
 +
-(\limsup_{n\to \infty}\, y_n)
+\Bigl(\limsup_{n\to \infty} y_n\Bigr)
 >
-\limsup_{n\to \infty}\, (x_n+y_n) .
+\limsup_{n\to \infty} \, (x_n+y_n) .
 \end{equation*}
 Hint: See previous exercise.
 \end{enumerate}
@@ -2423,7 +2438,7 @@ then there exists at least one cluster point of $S$}.
 \medskip
 
 Hint: If $S$ is infinite, then $S$ contains a countably infinite subset.
-That is, there is a sequence $\{ x_n \}$ of distinct numbers in $S$.
+That is, there is a sequence $\{ x_n \}_{n=1}^\infty$ of distinct numbers in $S$.
 \end{exercise}
 
 \begin{samepage}
@@ -2444,42 +2459,42 @@ Conclude the Bolzano--Weierstrass theorem.
 
 \begin{exercise}
 Prove a stronger version of \propref{seqconvsubseqconv:prop}.
-Suppose $\{ x_n \}$ is a sequence such that every subsequence $\{
-x_{n_i} \}$ has a subsequence
-$\{ x_{n_{m_i}} \}$ that converges to $x$.
+Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence such that every subsequence
+$\{ x_{n_m} \}_{m=1}^\infty$ has a subsequence
+$\{ x_{n_{m_i}} \}_{i=1}^\infty$ that converges to $x$.
 \begin{enumerate}[a)]
 \item
-First show that $\{ x_n \}$ is
+First show that $\{ x_n \}_{n=1}^\infty$ is
 bounded.
 \item
-Now show that $\{ x_n \}$ converges to $x$.
+Now show that $\{ x_n \}_{n=1}^\infty$ converges to $x$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Let $\{x_n\}$ be a bounded sequence.
+Let $\{x_n\}_{n=1}^\infty$ be a bounded sequence.
 \begin{enumerate}[a)]
 \item
 Prove that there exists an $s$ such that for every $r > s$, there exists 
 an $M \in \N$ such that for all $n \geq M$, we have
 $x_n < r$.
 \item
-If $s$ is a number as in a), then prove $\limsup \, x_n \leq s$.
+If $s$ is a number as in a), then prove $\limsup\limits_{n\to\infty} x_n \leq s$.
 \item
 Show that if $S$ is the set of all $s$ as in a), then
-$\limsup \, x_n = \inf \, S$.
+$\limsup\limits_{n\to\infty} x_n = \inf \, S$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[Easy] \label{exercise:infseqlimex}
 \pagebreak[2]
-Suppose $\{ x_n \}$ is such that $\liminf \, x_n = -\infty$, $\limsup \, x_n
-= \infty$.
+Suppose $\{ x_n \}_{n=1}^\infty$ is such that $\liminf\limits_{n\to\infty} x_n = -\infty$,
+$\limsup\limits_{n\to\infty} x_n = \infty$.
 \begin{enumerate}[a)]
 \item
-Show that $\{ x_n \}$ is not convergent, and also
-that neither $\lim \, x_n = \infty$ nor $\lim \, x_n =
--\infty$
+Show that $\{ x_n \}_{n=1}^\infty$ is not convergent, and also
+that neither $\lim\limits_{n\to\infty} x_n = \infty$
+nor $\lim\limits_{n\to\infty} x_n = -\infty$
 is true.
 \item
 Find an example of such a sequence.
@@ -2487,25 +2502,26 @@ Find an example of such a sequence.
 \end{exercise}
 
 \begin{exercise} \label{exercise:infseqlimlims}
-Let $\{ x_n \}$ be a sequence.
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence.
 \begin{enumerate}[a)]
 \item
 Show that
-$\lim \, x_n = \infty$ if and only if $\liminf \, x_n = \infty$.
+$\lim\limits_{n\to\infty} x_n = \infty$ if and only if
+$\liminf\limits_{n\to\infty} x_n = \infty$.
 \item
-Then show that $\lim \, x_n = - \infty$ if and only if $\limsup \, x_n =
--\infty$.
+Then show that $\lim\limits_{n\to\infty} x_n = - \infty$ if and only if
+$\limsup\limits_{n\to\infty} x_n = -\infty$.
 \item
-If $\{ x_n \}$ is monotone increasing, show that either
-$\lim \, x_n$ exists and is finite or $\lim \, x_n = \infty$.  In either
-case, $\lim \, x_n = \sup \{ x_n : n \in \N \}$.
+If $\{ x_n \}_{n=1}^\infty$ is monotone increasing, show that either
+$\lim_{n\to\infty} x_n$ exists and is finite or $\lim_{n\to\infty} x_n = \infty$.  In either
+case, $\lim_{n\to\infty} x_n = \sup \{ x_n : n \in \N \}$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{exercise:strongerratiotest2}
 Prove the following stronger version of \lemmaref{seq:ratiotest}, the ratio
 test.
-Suppose $\{ x_n \}$ is a sequence such that $x_n \not= 0$ for all
+Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence such that $x_n \not= 0$ for all
 $n$.
 \begin{enumerate}[a)]
 \item
@@ -2513,56 +2529,57 @@ Prove that if
 \begin{equation*}
 \limsup_{n \to \infty} \frac{\abs{x_{n+1}}}{\abs{x_n}} < 1 ,
 \end{equation*}
-then $\{ x_n \}$ converges to $0$.
+then $\{ x_n \}_{n=1}^\infty$ converges to $0$.
 \item
 Prove that if
 \begin{equation*}
 \liminf_{n \to \infty} \frac{\abs{x_{n+1}}}{\abs{x_n}} > 1 ,
 \end{equation*}
-then $\{ x_n \}$ is unbounded.
+then $\{ x_n \}_{n=1}^\infty$ is unbounded.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ x_n \}$ is a bounded sequence, $a_n := \sup \{ x_k : k \geq n \}$
+Suppose $\{ x_n \}_{n=1}^\infty$ is a bounded sequence, $a_n := \sup \{ x_k : k \geq n \}$
 as before.  Suppose that for some $\ell \in \N$,
 $a_\ell \notin \{ x_k : k \geq \ell \}$.  Then show that $a_j = a_\ell$ for all $j \geq \ell$, and hence
-$\limsup\, x_n = a_\ell$.
+$\limsup\limits_{n\to\infty} x_n = a_\ell$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ x_n \}$ is a sequence,
+Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence,
 and $a_n := \sup \{ x_k : k \geq n \}$ and
 $b_n := \sup \{ x_k : k \geq n \}$ as before.
 \begin{enumerate}[a)]
 \item
 Prove that if $a_\ell = \infty$ for some $\ell \in \N$, then 
-$\limsup\, x_n = \infty$.
+$\limsup\limits_{n\to\infty} x_n = \infty$.
 \item
 Prove that if $b_\ell = -\infty$ for some $\ell \in \N$, then 
-$\liminf\, x_n = -\infty$.
+$\liminf\limits_{n\to\infty} x_n = -\infty$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ x_n \}$ is a sequence
-such that both $\liminf\, x_n$ and
-$\limsup\, x_n$  are finite.  Prove that $\{ x_n \}$ is bounded.
+Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence
+such that both $\liminf_{n\to\infty} x_n$ and
+$\limsup_{n\to\infty} x_n$  are finite.  Prove that $\{ x_n \}_{n=1}^\infty$ is bounded.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ x_n \}$ is a bounded sequence, and $\epsilon > 0$ is given.
+Suppose $\{ x_n \}_{n=1}^\infty$ is a bounded sequence, and $\epsilon > 0$ is given.
 Prove that there exists an $M$ such that for all $k \geq M$,
 \begin{equation*}
-x_k - \Bigl(\limsup_{n\to\infty}\, x_n\Bigr) < \epsilon \qquad \text{and} \qquad
-\Bigl(\liminf_{n\to\infty}\, x_n\Bigr) - x_k < \epsilon .
+x_k - \Bigl(\limsup_{n\to\infty} x_n\Bigr) < \epsilon \qquad \text{and} \qquad
+\Bigl(\liminf_{n\to\infty} x_n\Bigr) - x_k < \epsilon .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise} \label{exercise:extendsubseqlimsupinf}
-Extend \thmref{subseqlimsupinf:thm} to unbounded sequences:  Suppose that $\{
-x_n \}$ is a sequence.  If $\limsup\, x_n = \infty$, then prove that
-there exists a subsequence $\{ x_{n_i} \}$ converging to $\infty$.
+Extend \thmref{subseqlimsupinf:thm} to unbounded sequences:
+Suppose that $\{ x_n \}_{n=1}^\infty$ is a sequence.
+If $\limsup_{n\to\infty} x_n = \infty$, then prove that
+there exists a subsequence $\{ x_{n_i} \}_{i=1}^\infty$ converging to $\infty$.
 Then prove the same result for $-\infty$, and then prove both statements for
 $\liminf$.
 \end{exercise}
@@ -2583,7 +2600,7 @@ It would be nice if we could check for convergence without knowing
 the limit.
 
 \begin{defn}
-A sequence $\{ x_n \}$ is a \emph{\myindex{Cauchy sequence}}%
+A sequence $\{ x_n \}_{n=1}^\infty$ is a \emph{\myindex{Cauchy sequence}}%
 \footnote{%
 Named after the French mathematician
 \href{https://en.wikipedia.org/wiki/Cauchy}{Augustin-Louis Cauchy} (1789--1857).} if
@@ -2601,7 +2618,7 @@ convergent, and we would be correct due to $\R$ having the
 we look at some examples.
 
 \begin{example}
-The sequence $\{ \nicefrac{1}{n} \}$ is a Cauchy sequence.
+The sequence $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ is a Cauchy sequence.
 
 Proof:  Given $\epsilon > 0$, find $M$ such that
 $M > \nicefrac{2}{\epsilon}$.  Then for $n,k \geq M$,
@@ -2618,7 +2635,7 @@ we have
 \end{example}
 
 \begin{example}
-The sequence $\{ \frac{n+1}{n} \}$ is a Cauchy sequence.
+The sequence $\{ \frac{n+1}{n} \}_{n=1}^\infty$ is a Cauchy sequence.
 
 Proof:  Given $\epsilon > 0$, find $M$ such that
 $M > \nicefrac{2}{\epsilon}$.  Then for $n,k \geq M$,
@@ -2654,7 +2671,7 @@ A Cauchy sequence is bounded.
 \end{prop}
 
 \begin{proof}
-Suppose $\{ x_n \}$ is Cauchy.  Pick an $M$ such that for all
+Suppose $\{ x_n \}_{n=1}^\infty$ is Cauchy.  Pick an $M$ such that for all
 $n,k \geq M$, we have $\abs{x_n-x_k} < 1$.  In particular, 
 for all $n \geq M$,
 \begin{equation*}
@@ -2678,7 +2695,7 @@ A sequence of real numbers is Cauchy if and only if it converges.
 
 \begin{proof}
 Let $\epsilon > 0$ be given and
-suppose $\{ x_n \}$ converges to $x$.  Then there 
+suppose $\{ x_n \}_{n=1}^\infty$ converges to $x$.  Then there 
 exists an $M$ such that for $n \geq M$,
 \begin{equation*}
 \abs{x_n - x} < \frac{\epsilon}{2} .
@@ -2691,23 +2708,23 @@ Hence for $n \geq M$ and $k \geq M$,
 \epsilon .
 \end{equation*}
 
-Alright, that direction was easy.  Now suppose $\{ x_n \}$ is Cauchy.
-We have shown that $\{ x_n \}$ is bounded.
+Alright, that direction was easy.  Now suppose $\{ x_n \}_{n=1}^\infty$ is Cauchy.
+We have shown that $\{ x_n \}_{n=1}^\infty$ is bounded.
 For a bounded sequence, liminf and limsup exist, and this is
 where we use the
 \hyperref[defn:lub]{least-upper-bound property}.
 If we show that
 \begin{equation*}
-\liminf_{n\to \infty} \, x_n = \limsup_{n\to\infty} \, x_n ,
+\liminf_{n\to \infty} x_n = \limsup_{n\to\infty} x_n ,
 \end{equation*}
-then $\{ x_n \}$ must be convergent by \propref{liminfsupconv:prop}.
+then $\{ x_n \}_{n=1}^\infty$ must be convergent by \propref{liminfsupconv:prop}.
 
 
-Define $a := \limsup \, x_n$ and
-$b := \liminf \, x_n$.
+Define $a := \limsup_{n\to\infty} x_n$ and
+$b := \liminf_{n\to\infty} x_n$.
 By \thmref{subseqlimsupinf:thm}, there exist subsequences
-$\{ x_{n_i} \}$ and
-$\{ x_{m_i} \}$, such that
+$\{ x_{n_i} \}_{i=1}^\infty$ and
+$\{ x_{m_i} \}_{i=1}^\infty$, such that
 \begin{equation*}
 \lim_{i\to\infty} x_{n_i} = a
 \qquad \text{and} \qquad
@@ -2770,8 +2787,9 @@ $\abs{x_{n+1}-x_n}$ (or $\abs{x_{n+j}-x_n}$ for a fixed $j$) going to zero as
 $n$ goes to
 infinity.  When we get to the partial sums of the harmonic series
 (see \exampleref{example:harmonicseries} in the next section), we will have
-a sequence such that $x_{n+1}-x_n = \nicefrac{1}{n}$, yet $\{ x_n \}$ is
-divergent.  In fact, for that sequence,
+a sequence such that $x_{n+1}-x_n = \nicefrac{1}{n}$,
+yet $\{ x_n \}_{n=1}^\infty$ is divergent.
+In fact, for that sequence,
 $\lim_{n\to\infty} \abs{x_{n+j}-x_n} = 0$ for
 every $j \in \N$ (confer \exerciseref{exercise:badnocauchy}).
 The key point in the definition of Cauchy is that $n$ and $k$
@@ -2780,17 +2798,17 @@ vary independently and can be arbitrarily far apart.
 \subsection{Exercises}
 
 \begin{exercise}
-Prove that $\{ \frac{n^2-1}{n^2} \}$ is Cauchy using directly the definition
+Prove that $\{ \frac{n^2-1}{n^2} \}_{n=1}^\infty$ is Cauchy using directly the definition
 of Cauchy sequences.
 \end{exercise}
 
 \begin{exercise}
-Let $\{ x_n \}$ be a sequence such that
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence such that
 there exists a positive $C < 1$ and for all $n$,
 \begin{equation*}
 \abs{x_{n+1} - x_n} \leq C \abs{x_{n}-x_{n-1}} .
 \end{equation*}
-Prove that $\{ x_n \}$ is Cauchy.
+Prove that $\{ x_n \}_{n=1}^\infty$ is Cauchy.
 Hint:  You can freely use the formula (for $C \not= 1$)
 \begin{equation*}
 1+ C+ C^2 + \cdots + C^n = \frac{1-C^{n+1}}{1-C}.
@@ -2810,18 +2828,18 @@ Prove that $F$ has the \hyperref[defn:lub]{least-upper-bound property}.
 \end{exercise}
 
 \begin{exercise}
-Let $\{ x_n \}$ and $\{ y_n \}$ be sequences such
-that $\lim\, y_n =0$.  Suppose that for all $k \in \N$
+Let $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ be sequences such
+that $\lim_{n\to\infty} y_n =0$.  Suppose that for all $k \in \N$
 and
 for all $m \geq k$, we have
 \begin{equation*}
 \abs{x_m-x_k} \leq y_k .
 \end{equation*}
-Show that $\{ x_n \}$ is Cauchy.
+Show that $\{ x_n \}_{n=1}^\infty$ is Cauchy.
 \end{exercise}
 
 \begin{exercise}
-Suppose a Cauchy sequence $\{ x_n \}$ is such that for every $M \in \N$,
+Suppose a Cauchy sequence $\{ x_n \}_{n=1}^\infty$ is such that for every $M \in \N$,
 there exists a $k \geq M$ and an $n \geq M$ such that
 $x_k < 0$ and $x_n > 0$.  Using simply the definition of a Cauchy sequence
 and of a convergent sequence, show that
@@ -2830,17 +2848,17 @@ the sequence converges to $0$.
 
 \begin{exercise}
 Suppose $\abs{x_n-x_k} \leq \nicefrac{n}{k^2}$ for all $n$ and $k$.
-Show that $\{ x_n \}$ is Cauchy.
+Show that $\{ x_n \}_{n=1}^\infty$ is Cauchy.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ x_n \}$ is a Cauchy sequence such that for infinitely many
+Suppose $\{ x_n \}_{n=1}^\infty$ is a Cauchy sequence such that for infinitely many
 $n$, $x_n = c$.  Using only the definition of Cauchy sequence prove 
-that $\lim\, x_n = c$.
+that $\lim\limits_{n\to\infty} x_n = c$.
 \end{exercise}
 
 \begin{exercise}
-True or false, prove or find a counterexample:  If $\{ x_n \}$ is a Cauchy
+True or false, prove or find a counterexample:  If $\{ x_n \}_{n=1}^\infty$ is a Cauchy
 sequence, then there exists an $M$
 such that for all $n \geq M$, we have
 $\abs{x_{n+1}-x_n}
@@ -2867,17 +2885,18 @@ almost all of modern science.
 \subsection{Definition}
 
 \begin{defn}
-Given a sequence $\{ x_n \}$, we write the formal object
+Given a sequence $\{ x_n \}_{n=1}^\infty$, we write the formal object
 \begin{equation*}
 \sum_{n=1}^\infty x_n
-\qquad
-\text{or sometimes just}
-\qquad
-\sum x_n
+%\qquad
+%\text{or sometimes just}
+%\qquad
+%\sum x_n
 \end{equation*}
 \glsadd{not:series}
 and call it a \emph{\myindex{series}}.  A series
-\emph{converges}\index{convergent!series} if the sequence $\{ s_k \}$
+\emph{converges}\index{convergent!series} if the sequence
+$\{ s_k \}_{k=1}^\infty$
 defined by
 \glsadd{not:finitesum}
 \begin{equation*}
@@ -2886,16 +2905,16 @@ s_k := \sum_{n=1}^k x_n = x_1 + x_2 + \cdots + x_k ,
 converges.
 The numbers $s_k$ are called
 \emph{\myindex{partial sums}}.
-If $x := \lim\, s_k$, we write
+If $x := \lim\limits_{k\to\infty} s_k$, we write
 \begin{equation*}
 \sum_{n=1}^\infty x_n =  x .
 \end{equation*}
 In this case, we cheat a little and treat
 $\sum_{n=1}^\infty x_n$ as a number.
 
-If the sequence $\{ s_k \}$ diverges,
+If the sequence $\{ s_k \}_{k=1}^\infty$ diverges,
 we say the series is \emph{divergent}\index{divergent!series}.
-In this case, $\sum x_n$ is simply a formal object and not a number.
+In this case, $\sum_{n=1}^\infty x_n$ is simply a formal object and not a number.
 \end{defn}
 
 In other words, for a convergent series, we have
@@ -2909,7 +2928,7 @@ We only have this equality if the limit on
 the right actually exists.  If the series does not converge, the right-hand
 side does not make sense (the limit does not exist).
 Therefore, be careful as 
-$\sum x_n$ means two different things (a notation for the series itself 
+$\sum_{n=1}^\infty x_n$ means two different things (a notation for the series itself 
 or the limit of the partial sums), and you must use context
 to distinguish.
 
@@ -2923,7 +2942,7 @@ The left-hand side is more convenient to write.
 \end{remark}
 
 \begin{remark}
-It is common to write the series $\sum x_n$ as
+It is common to write the series $\sum_{n=1}^\infty x_n$ as
 \begin{equation*}
 x_1 + x_2 + x_3 + \cdots
 \end{equation*}
@@ -3004,7 +3023,7 @@ one of the few series for which we can so explicitly find the limit.
 As for sequences we can talk about a \emph{\myindex{tail of a series}}.
 
 \begin{prop}
-Let $\sum x_n$ be a series.  Let $M \in \N$.  Then
+Let $\sum_{n=1}^\infty x_n$ be a series.  Let $M \in \N$.  Then
 \begin{equation*}
 \sum_{n=1}^\infty x_n \quad \text{converges if and only if} \quad
 \sum_{n=M}^\infty x_n \quad \text{converges.}
@@ -3030,14 +3049,14 @@ $\sum_{n=1}^{M-1} x_n$ is a fixed number.  Use
 \subsection{Cauchy series}
 
 \begin{defn}
-A series $\sum x_n$ is said to be \emph{Cauchy} or a
+A series $\sum_{n=1}^\infty x_n$ is said to be \emph{Cauchy} or a
 \emph{Cauchy series}\index{Cauchy series}
 if the sequence of partial sums $\{ s_n \}$ is a Cauchy sequence.
 \end{defn}
 
 A sequence of real numbers converges if and only if it is
 Cauchy.  Therefore, a series is convergent if and only if it is Cauchy.
-The series $\sum x_n$ is Cauchy if for every $\epsilon > 0$,
+The series $\sum_{n=1}^\infty x_n$ is Cauchy if for every $\epsilon > 0$,
 there exists an $M \in \N$, such that for every $n \geq M$
 and $k \geq M$, we have
 \begin{equation*}
@@ -3054,7 +3073,7 @@ Without loss of generality we assume $n < k$.  Then we write
 We have proved the following simple proposition.
 
 \begin{prop} \label{prop:cachyser}
-The series $\sum x_n$ is Cauchy if for every $\epsilon > 0$, 
+The series $\sum_{n=1}^\infty x_n$ is Cauchy if for every $\epsilon > 0$, 
 there exists an $M \in \N$ such that for every $n \geq M$
 and every $k > n$,
 \begin{equation*}
@@ -3066,15 +3085,15 @@ and every $k > n$,
 \subsection{Basic properties}
 
 \begin{prop}
-Let $\sum x_n$ be a convergent series.  Then
-the sequence $\{ x_n \}$ is convergent and
+Let $\sum_{n=1}^\infty x_n$ be a convergent series.  Then
+the sequence $\{ x_n \}_{n=1}^\infty$ is convergent and
 \begin{equation*}
 \lim_{n\to\infty} x_n = 0.
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-Let $\epsilon > 0$ be given.  As $\sum x_n$ is convergent, it is Cauchy.
+Let $\epsilon > 0$ be given.  As $\sum_{n=1}^\infty x_n$ is convergent, it is Cauchy.
 Thus we find an $M$ such that for every $n \geq M$, we have
 \begin{equation*}
 \epsilon > 
@@ -3098,7 +3117,7 @@ The implication, however, goes only one way.
 Let us give an example.
 
 \begin{example} \label{example:harmonicseries}
-The series $\sum \nicefrac{1}{n}$ diverges (despite the fact that $\lim
+The series $\sum_{n=1}^\infty \nicefrac{1}{n}$ diverges (despite the fact that $\lim
 \nicefrac{1}{n} = 0$).  This is the famous \emph{\myindex{harmonic series}}%
 \footnote{The divergence of the harmonic series was known 
 long before the theory of series was made rigorous.  The proof we
@@ -3150,26 +3169,27 @@ s_{2^k} =
 \end{equation*}
 As $\{ \nicefrac{k}{2} \}$ is unbounded by the
 \hyperref[thm:arch:i]{Archimedean property}, that means that
-$\{ s_{2^k} \}$ is unbounded, and therefore $\{ s_n \}$ is unbounded.
-Hence $\{ s_n \}$ diverges, and consequently $\sum \nicefrac{1}{n}$ diverges.
+$\{ s_{2^k} \}_{k=1}^\infty$ is unbounded,
+and therefore $\{ s_n \}_{n=1}^\infty$ is unbounded.
+Hence $\{ s_n \}_{n=1}^\infty$ diverges, and consequently $\sum_{n=1}^\infty \nicefrac{1}{n}$ diverges.
 \end{example}
 
 Convergent series are linear.  That is, we can multiply them by constants
 and add them and these operations are done term by term.
 
 \begin{prop}[Linearity of series]\index{linearity of series}
-Let $\alpha \in \R$ and $\sum x_n$ and $\sum y_n$ be
+Let $\alpha \in \R$ and $\sum_{n=1}^\infty x_n$ and $\sum_{n=1}^\infty y_n$ be
 convergent series.  Then
 \begin{enumerate}[(i)]
 \item
-$\sum \alpha x_n$ is a convergent series and
+$\sum_{n=1}^\infty \alpha x_n$ is a convergent series and
 \begin{equation*}
 \sum_{n=1}^\infty \alpha x_n
 =
 \alpha \sum_{n=1}^\infty x_n .
 \end{equation*}
 \item
-$\sum ( x_n + y_n )$ is a convergent series and
+$\sum_{n=1}^\infty ( x_n + y_n )$ is a convergent series and
 \begin{equation*}
 \sum_{n=1}^\infty ( x_n + y_n ) 
 =
@@ -3230,13 +3250,13 @@ $(a+b)(c+d) \not= ac+bd$.
 \subsection{Absolute convergence}
 
 As monotone sequences are easier to work with than arbitrary sequences, it
-is usually easier to work with series $\sum x_n$, where $x_n \geq 0$ for
+is usually easier to work with series $\sum_{n=1}^\infty x_n$, where $x_n \geq 0$ for
 all $n$.  The sequence of partial sums is then monotone increasing
 and converges if it is bounded above.
 Let us formalize this statement as a proposition.
 
 \begin{prop}
-If $x_n \geq 0$ for all $n$, then $\sum x_n$ converges if and only if
+If $x_n \geq 0$ for all $n$, then $\sum_{n=1}^\infty x_n$ converges if and only if
 the sequence of partial sums is bounded above.
 \end{prop}
 
@@ -3255,20 +3275,20 @@ We will see that the following common criterion for convergence of series
 has big implications for how the series can be manipulated.
 
 \begin{defn}
-A series $\sum x_n$
+A series $\sum_{n=1}^\infty x_n$
 \emph{\myindex{converges absolutely}}\index{absolute convergence} if
-the series $\sum \abs{x_n}$ converges.
+the series $\sum_{n=1}^\infty \abs{x_n}$ converges.
 If a series converges, but does not converge absolutely, we say
 it \emph{\myindex{converges conditionally}}.\index{conditional convergence}
 \end{defn}
 
 \begin{prop}
-If the series $\sum x_n$ converges absolutely, then it converges.
+If the series $\sum_{n=1}^\infty x_n$ converges absolutely, then it converges.
 \end{prop}
 
 \begin{proof}
 A series is convergent if and only if it is Cauchy.  Hence
-suppose $\sum \abs{x_n}$ is Cauchy.  That is, for every $\epsilon > 0$,
+suppose $\sum_{n=1}^\infty \abs{x_n}$ is Cauchy.  That is, for every $\epsilon > 0$,
 there exists an $M$ such that for all $k \geq M$ and all $n > k$, we have 
 \begin{equation*}
 \sum_{i=k+1}^n \abs{x_i} 
@@ -3285,11 +3305,11 @@ We apply the triangle inequality for a finite sum to obtain
 <
 \epsilon .
 \end{equation*}
-Hence $\sum x_n$ is Cauchy, and therefore it converges.
+Hence $\sum_{n=1}^\infty x_n$ is Cauchy, and therefore it converges.
 \end{proof}
 
-If $\sum x_n$ converges absolutely, the limits of
-$\sum x_n$ and $\sum \abs{x_n}$ are generally different.  Computing one
+If $\sum_{n=1}^\infty x_n$ converges absolutely, the limits of
+$\sum_{n=1}^\infty x_n$ and $\sum_{n=1}^\infty \abs{x_n}$ are generally different.  Computing one
 does not help us compute the other.  However, the computation above leads to
 a useful inequality for absolutely convergent series,
 a series version of the triangle inequality,
@@ -3316,7 +3336,7 @@ On the other hand, we proved
 \sum_{n=1}^\infty \frac{1}{n}
 \end{equation*}
 diverges.  Therefore,
-$\sum \frac{{(-1)}^n}{n}$ is a conditionally convergent series.
+$\sum_{n=1}^\infty \frac{{(-1)}^n}{n}$ is a conditionally convergent series.
 
 \subsection{Comparison test and the \texorpdfstring{$p$}{p}-series}
 
@@ -3328,11 +3348,11 @@ series go to zero \myquote{fast enough.}
 
 \begin{samepage}
 \begin{prop}[Comparison test]\index{comparison test for series}
-Let $\sum x_n$ and $\sum y_n$ be series such that $0 \leq x_n \leq y_n$
+Let $\sum_{n=1}^\infty x_n$ and $\sum_{n=1}^\infty y_n$ be series such that $0 \leq x_n \leq y_n$
 for all $n \in \N$.
 \begin{enumerate}[(i)]
-\item If $\sum y_n$ converges, then so does $\sum x_n$.
-\item If $\sum x_n$ diverges, then so does $\sum y_n$.
+\item If $\sum_{n=1}^\infty y_n$ converges, then so does $\sum_{n=1}^\infty x_n$.
+\item If $\sum_{n=1}^\infty x_n$ diverges, then so does $\sum_{n=1}^\infty y_n$.
 \end{enumerate}
 \end{prop}
 \end{samepage}
@@ -3345,27 +3365,27 @@ satisfy for all $k$
 \begin{equation} \label{comptest:eq}
 \sum_{n=1}^k x_n \leq \sum_{n=1}^k y_n .
 \end{equation}
-If the series $\sum y_n$ converges, the partial sums for the series
+If the series $\sum_{n=1}^\infty y_n$ converges, the partial sums for the series
 are bounded.  Therefore, the right-hand side of \eqref{comptest:eq}
 is bounded for all $k$; there exists some $B \in \R$ such that
 $\sum_{n=1}^k y_n \leq B$ for all $k$, and so
 \begin{equation*}
 \sum_{n=1}^k x_n \leq \sum_{n=1}^k y_n \leq B.
 \end{equation*}
-Hence the partial sums for $\sum x_n$
+Hence the partial sums for $\sum_{n=1}^\infty x_n$
 are also bounded.  Since the partial sums are a monotone increasing sequence
 they are convergent.  The first item is thus proved.
 
-On the other hand if $\sum x_n$ diverges, the sequence of partial sums
+On the other hand if $\sum_{n=1}^\infty x_n$ diverges, the sequence of partial sums
 must be unbounded since it is monotone increasing.  That is, the partial
-sums for $\sum x_n$ are eventually bigger than any real number.  Putting this
+sums for $\sum_{n=1}^\infty x_n$ are eventually bigger than any real number.  Putting this
 together with \eqref{comptest:eq} we see that for every $B \in
 \R$, there is a $k$ such that 
 \begin{equation*}
 B \leq \sum_{n=1}^k x_n \leq \sum_{n=1}^k y_n .
 \end{equation*}
-Hence the partial sums for $\sum y_n$ are also unbounded, and $\sum
-y_n$ also diverges.
+Hence the partial sums for $\sum_{n=1}^\infty y_n$ are also unbounded, and
+$\sum_{n=1}^\infty y_n$ also diverges.
 \end{proof}
 
 A useful series to use with the comparison test is the
@@ -3390,8 +3410,8 @@ converges if and only if $p > 1$.
 First suppose $p \leq 1$.
 As $n \geq 1$, we have
 $\frac{1}{n^p} \geq \frac{1}{n}$.  Since
-$\sum \frac{1}{n}$ diverges,
-$\sum \frac{1}{n^p}$ must diverge for all $p \leq 1$ by the comparison test.
+$\sum_{n=1}^\infty \frac{1}{n}$ diverges,
+$\sum_{n=1}^\infty \frac{1}{n^p}$ must diverge for all $p \leq 1$ by the comparison test.
 
 Now suppose $p > 1$.
 We proceed as we did for the
@@ -3495,31 +3515,31 @@ Thus the sequence of partial sums is bounded, and the series converges.
 Neither the $p$-series test nor the comparison test 
 tell us what the sum converges to.  They only tell us that a limit
 of the partial sums exists.  For instance, while we know that
-$\sum \nicefrac{1}{n^2}$ converges, it is far harder to
+$\sum_{n=1}^\infty \nicefrac{1}{n^2}$ converges, it is far harder to
 find\footnote{Demonstration of this fact is
 what made the Swiss mathematician
 \href{https://en.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Paul Euler}
 (1707--1783)
 famous.}
 that the limit is $\nicefrac{\pi^2}{6}$.
-If we treat $\sum \nicefrac{1}{n^p}$ as a function of $p$,
+If we treat $\sum_{n=1}^\infty \nicefrac{1}{n^p}$ as a function of $p$,
 we get the so-called Riemann $\zeta$ (zeta) function.  Understanding the
 behavior of this function contains
 one of the most famous unsolved problems in mathematics today and has applications
 in seemingly unrelated areas such as modern cryptography.
 
 \begin{example}
-The series $\sum \frac{1}{n^2+1}$ converges.
+The series $\sum_{n=1}^\infty \frac{1}{n^2+1}$ converges.
 
 Proof:  First, $\frac{1}{n^2+1} < \frac{1}{n^2}$ for all $n \in \N$.
-The series $\sum \frac{1}{n^2}$ converges by the $p$-series test.
-Therefore, by the comparison test, $\sum \frac{1}{n^2+1}$ converges.
+The series $\sum_{n=1}^\infty \frac{1}{n^2}$ converges by the $p$-series test.
+Therefore, by the comparison test, $\sum_{n=1}^\infty \frac{1}{n^2+1}$ converges.
 \end{example}
 
 \subsection{Ratio test}
 
-Suppose $r > 0$.  The ratio of two subsequent terms in the geometric series $\sum
-r^n$ is $\frac{r^{n+1}}{r^n} = r$, and the series converges
+Suppose $r > 0$.  The ratio of two subsequent terms in the geometric series
+$\sum_{n=0}^\infty r^n$ is $\frac{r^{n+1}}{r^n} = r$, and the series converges
 whenever $r < 1$.  Just as for sequences, this fact
 can be generalized to more arbitrary series
 as long as we have such a ratio \myquote{in the limit.}  We then compare
@@ -3527,16 +3547,16 @@ the tail of a series to the geometric series.
 
 
 \begin{prop}[Ratio test]\index{ratio test for series}
-Let $\sum x_n$ be a series, $x_n \not= 0$ for all $n$, and such that
+Let $\sum_{n=1}^\infty x_n$ be a series, $x_n \not= 0$ for all $n$, and such that
 \begin{equation*}
 L := \lim_{n\to\infty} \frac{\abs{x_{n+1}}}{\abs{x_n}}
 \qquad \text{exists.}
 \end{equation*}
 \begin{enumerate}[(i)]
 \item
-If $L < 1$, then $\sum x_n$ converges absolutely.
+If $L < 1$, then $\sum_{n=1}^\infty x_n$ converges absolutely.
 \item
-If $L > 1$, then $\sum x_n$ diverges.
+If $L > 1$, then $\sum_{n=1}^\infty x_n$ diverges.
 \end{enumerate}
 \end{prop}
 
@@ -3547,10 +3567,10 @@ bit, see \exerciseref{exercise:strongerratiotest}.
 If $L > 1$, then
 \lemmaref{seq:ratiotest} says that the sequence $\{ x_n \}$
 diverges.  Since it is a necessary condition for the convergence of series
-that the terms go to zero, we know that $\sum x_n$ must diverge.
+that the terms go to zero, we know that $\sum_{n=1}^\infty x_n$ must diverge.
 
 Thus suppose $L < 1$.
-We will argue that $\sum \abs{x_n}$ must converge.
+We will argue that $\sum_{n=1}^\infty \abs{x_n}$ must converge.
 The proof is similar to that of \lemmaref{seq:ratiotest}.  Of course $L \geq
 0$.  
 Pick
@@ -3620,8 +3640,8 @@ limit as $k$ goes to infinity on the right-hand side above to obtain
 \end{split}
 \end{equation*}
 The right-hand side is a number that does not depend on $k$.
-Hence the sequence of partial sums of $\sum \abs{x_n}$ is bounded
-and $\sum \abs{x_n}$ is convergent.  Thus $\sum x_n$ is
+Hence the sequence of partial sums of $\sum_{n=1}^\infty \abs{x_n}$ is bounded
+and $\sum_{n=1}^\infty \abs{x_n}$ is convergent.  Thus $\sum_{n=1}^\infty x_n$ is
 absolutely convergent.
 \end{proof}
 
@@ -3713,7 +3733,7 @@ is convergent.  Prove
 
 \begin{exercise} \label{exercise:strongerratiotest}
 Prove the following stronger version of the ratio test:
-Let $\sum x_n$ be a series.
+Let $\sum_{n=1}^\infty x_n$ be a series.
 \begin{enumerate}[a)]
 \item
 If there is an $N$ and a $\rho < 1$ such that
@@ -3744,12 +3764,13 @@ Hint: Consider the sum of two subsequent entries.
 \begin{exercise}
 \leavevmode
 \begin{enumerate}[a)]
-\item Prove that if $\sum x_n$ and $\sum y_n$ converge absolutely, then
-$\sum x_ny_n$ converges absolutely.
+\item Prove that if $\sum_{n=1}^\infty x_n$ and $\sum_{n=1}^\infty y_n$ converge absolutely, then
+$\sum_{n=1}^\infty x_ny_n$ converges absolutely.
 \item Find an explicit example where the converse does not hold.
 \item Find an explicit example where all three series are absolutely convergent,
 are not just finite sums,
-and $(\sum x_n)(\sum y_n) \not= \sum x_ny_n$.  That is, show that series are
+and $\left(\sum_{n=1}^\infty x_n\right)\left(\sum_{n=1}^\infty y_n\right)
+\not= \sum_{n=1}^\infty x_ny_n$.  That is, show that series are
 not multiplied term-by-term.
 \end{enumerate}
 \end{exercise}
@@ -3769,19 +3790,19 @@ $a_n > 0$ and $b_n > 0$ for all $n$, and
 \begin{equation*}
 0 < \lim_{n\to\infty} \frac{a_n}{b_n} < \infty ,
 \end{equation*}
-then either $\sum a_n$ and $\sum b_n$ both converge or both diverge.
+then either $\sum_{n=1}^\infty a_n$ and $\sum_{n=1}^\infty b_n$ both converge or both diverge.
 \end{exercise}
 
 \begin{exercise} \label{exercise:badnocauchy}
 Let $x_n := \sum_{i=1}^n \nicefrac{1}{i}$.  Show that for every $k$,
 we get
-$\displaystyle \lim_{n\to\infty} \abs{x_{n+k}-x_n} = 0$, yet $\{ x_n
-\}_{n=1}^\infty$ is not Cauchy.
+$\displaystyle \lim_{n\to\infty} \abs{x_{n+k}-x_n} = 0$, yet
+$\{ x_n \}_{n=1}^\infty$ is not Cauchy.
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
-Let $s_k$ be the $k$th partial sum of $\sum x_n$.
+Let $s_k$ be the $k$th partial sum of $\sum_{n=1}^\infty x_n$.
 \begin{enumerate}[a)]
 \item
 Suppose there exists an $m \in \N$ such that $\lim\limits_{k\to\infty}
@@ -3873,7 +3894,7 @@ Again, the idea is to generalize what happens for the geometric series.
 \begin{prop}[Root test]
 Let $\sum_{n=1}^\infty x_n$ be a series and let
 \begin{equation*}
-L := \limsup_{n\to\infty} \, {\sabs{x_n}}^{1/n} .
+L := \limsup_{n\to\infty} {\sabs{x_n}}^{1/n} .
 \end{equation*}
 \begin{enumerate}[(i)]
 \item If $L < 1$, then $\sum_{n=1}^\infty x_n$ converges absolutely.
@@ -3891,7 +3912,7 @@ Alternatively, note that if $L=\infty$, then $\bigl\{ {\abs{x_{n}}}^{1/n}
 \bigr\}_{n=1}^\infty$
 and thus $\{ x_n \}_{n=1}^\infty$ is unbounded.}
 a subsequence $\{ x_{n_k} \}$ such that
-$L = \lim_{k\to\infty} \, {\abs{x_{n_k}}}^{1/n_k}$.  Let
+$L = \lim_{k\to\infty} {\abs{x_{n_k}}}^{1/n_k}$.  Let
 $r$ be such that $L > r > 1$.  There exists an $M$ such
 that for all $k \geq M$, we have 
 ${\abs{x_{n_k}}}^{1/n_k} > r > 1$, or in other words
@@ -3964,13 +3985,13 @@ is a decreasing sequence.  Similarly, $(x_{2\ell}-x_{2\ell+1}) \geq 0$, and so
 s_{2k} = - x_1 + ( x_2 - x_3 ) + \cdots + ( x_{2k-2} - x_{2k-1} ) + x_{2k}
 \geq -x_1 .
 \end{equation*}
-The sequence $\{ s_{2k} \}$ is decreasing and bounded below, so it converges.
-Let $a := \lim\, s_{2k}$.
+The sequence $\{ s_{2k} \}_{k=1}^\infty$ is decreasing and bounded below, so it converges.
+Let $a := \lim_{k\to\infty} s_{2k}$.
 
-We wish to show that $\lim\, s_m = a$ (and not just for the subsequence).
+We wish to show that $\lim_{m\to\infty} s_m = a$ (and not just for the subsequence).
 Given $\epsilon > 0$, pick $M$ such that $\abs{s_{2k}-a} <
 \nicefrac{\epsilon}{2}$ whenever $k \geq M$.
-Since $\lim\, x_n = 0$, we also
+Since $\lim_{n\to\infty} x_n = 0$, we also
 make $M$ possibly larger
 to obtain
 $x_{2k+1} < \nicefrac{\epsilon}{2}$ whenever $k \geq M$.  
@@ -4437,13 +4458,13 @@ and in \exampleref{ps:divergeex} the radius of convergence is $\rho=0$.
 \begin{proof}
 Write
 \begin{equation*}
-R := \limsup_{n\to\infty} \, {\abs{a_n}}^{1/n} .
+R := \limsup_{n\to\infty} {\abs{a_n}}^{1/n} .
 \end{equation*}
 We use the root test to prove the proposition:
 \begin{equation*}
-L = \limsup_{n\to\infty} \, {\abs{a_n {(x-x_0)}^n}}^{1/n} 
+L = \limsup_{n\to\infty} {\abs{a_n {(x-x_0)}^n}}^{1/n} 
 =
-\abs{x-x_0} \limsup_{n\to\infty} \, {\abs{a_n}}^{1/n}
+\abs{x-x_0} \limsup_{n\to\infty} {\abs{a_n}}^{1/n}
 =
 \abs{x-x_0} R .
 \end{equation*}
@@ -4476,7 +4497,7 @@ as a separate proposition.
 \begin{prop}
 Let $\sum_{n=0}^\infty a_n {(x-x_0)}^n$ be a power series, and let
 \begin{equation*}
-R := \limsup_{n\to\infty} \, {\abs{a_n}}^{1/n} .
+R := \limsup_{n\to\infty} {\abs{a_n}}^{1/n} .
 \end{equation*}
 If $R = \infty$, the power series is divergent.  If
 $R=0$, then the power series converges everywhere.   Otherwise,
@@ -4743,7 +4764,7 @@ Find the radius of convergence and prove your claim.
 \item
 Prove that $\lim_{n\to\infty} n^{1/n} = 1$ using the following procedure:  Write $n^{1/n} = 1+b_n$ and
 note $b_n > 0$.  Then show that ${(1+b_n)}^n \geq 
-\frac{n(n-1)}{2}b_n^2$ and use this to show that $\lim \, b_n = 0$.
+\frac{n(n-1)}{2}b_n^2$ and use this to show that $\lim\limits_{n\to\infty} b_n = 0$.
 \item
 Use the result of part a) to show that
 if $\sum_{n=0}^\infty a_n x^n$ is a convergent power series with radius of convergence $R$,

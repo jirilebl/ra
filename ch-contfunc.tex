@@ -26,7 +26,7 @@ if for every $\epsilon > 0$, the set $(x-\epsilon,x+\epsilon) \cap S
 \end{defn}
 
 That is, $x$ is a cluster point of $S$ if there are points of $S$
-arbitrarily close to $x$.  Another way of phrasing the definition is to say
+arbitrarily close to $x$.  Another way to phrase the definition is to say
 that $x$ is a cluster point of $S$ if for every $\epsilon > 0$, there
 exists a $y \in S$ such that $y \not= x$ and $\abs{x - y} < \epsilon$.
 Note that a cluster point of $S$ need not lie in $S$.
@@ -73,7 +73,7 @@ $\epsilon > 0$ there is an $M$ such that, in particular, $\abs{x_M - x} <
 \subsection{Limits of functions}
 
 If a function $f$ is defined on a set $S$ and $c$ is a cluster point of $S$,
-then we define the limit of $f(x)$ as $x$ gets close to $c$.  
+then we define the limit of $f(x)$ as $x$ approaches $c$.  
 It is irrelevant for the definition whether $f$ is defined at $c$ or not.
 Even if the function is defined at $c$, the limit of the
 function as $x$ goes to $c$ can very well be different
@@ -90,24 +90,24 @@ and $\abs{x - c} < \delta$, we have
 \abs{f(x) - L} < \epsilon .
 \end{equation*}
 We then say $f(x)$ \emph{converges}\index{converges!function} to $L$ as $x$ goes
-to $c$.  We say $L$ is the \emph{limit} of $f(x)$ as $x$
-goes to $c$.  We write
-\glsadd{not:limfunc}
-\begin{equation*}
-\lim_{x \to c} f(x) := L ,
-\end{equation*}
-or 
-\glsadd{not:limitasarrows}
+to $c$, and we write
+\glsadd{not:limitasarrows}%
 \begin{equation*}
 f(x) \to L \quad\text{as}\quad x \to c .
+\end{equation*}
+We say $L$ is a \emph{limit} of $f(x)$ as $x$
+goes to $c$, and if $L$ is unique (it is), we write
+\glsadd{not:limfunc}%
+\begin{equation*}
+\lim_{x \to c} f(x) := L .
 \end{equation*}
 If no such $L$ exists, then we say that the limit does not exist or
 that $f$ \emph{\myindex{diverges}} at $c$.
 \end{defn}
 
 Again the notation and language we are using above assumes the limit $L$, if
-it exists, is unique, which needs to be proved.
-Let us do that now.
+it exists, is unique, which needs to be proved.  Note that the fact that $c$
+is a cluster point is important to prove uniqueness.
 
 \begin{prop}
 Let $c$ be a cluster point of $S \subset \R$ and let $f \colon S \to \R$
@@ -148,12 +148,12 @@ Proof: Let $c \in \R$ be fixed, and suppose $\epsilon > 0$ is given.  Write
 \delta := \min \left\{ 1 , \, \frac{\epsilon}{2\abs{c}+1} \right\} .
 \end{equation*}
 Take $x \not= c$ such that $\abs{x-c} < \delta$.  In particular,
-$\abs{x-c} < 1$.  By reverse triangle inequality, we get
+$\abs{x-c} < 1$.  By reverse triangle inequality,
 \begin{equation*}
 \abs{x}-\abs{c} \leq \abs{x-c} < 1 .
 \end{equation*}
 Adding $2\abs{c}$ to both sides, we obtain
-$\abs{x} + \abs{c} < 2\abs{c} + 1$.  We compute
+$\abs{x} + \abs{c} < 2\abs{c} + 1$.  Estimate
 \begin{equation*}
 \begin{split}
 \abs{f(x) - c^2} &= \abs{x^2-c^2} \\
@@ -2467,8 +2467,7 @@ Lipschitz.
 
 \subsection{Limits at infinity}
 
-As for sequences, a continuous variable can also approach infinity.  Let
-us make this notion precise.
+As for sequences, a continuous variable can also approach infinity.
 
 \begin{defn}
 We say $\infty$ is a \emph{\myindex{cluster point}} of $S \subset \R$ if for every
@@ -2502,15 +2501,17 @@ such that for every $\epsilon > 0$, there is an $M \in \R$ such that
 \abs{f(x) - L} < \epsilon 
 \end{equation*}
 whenever $x \in S$ and $x \leq M$, then we say $f(x)$ \emph{converges} to $L$
-as $x$ goes to $-\infty$.  We call $L$ the \emph{limit} and write
+as $x$ goes to $-\infty$.
+Alternatively, we write $f(x) \to L$ as $x \to -\infty$.
+We call $L$ a \emph{limit} and, if unique, write
 \begin{equation*}
 \lim_{x \to -\infty} f(x) := L .
 \end{equation*}
-Alternatively we write $f(x) \to L$ as $x \to -\infty$.
 \end{defn}
 
-We cheated a little bit again and said \emph{the} limit.
-We leave it as an exercise for the reader to prove the following proposition.
+The first thing to do, as usual, is to prove that the limit, if it exists,
+is unique.
+We leave it as an exercise for the reader.
 
 \begin{prop} \label{liminfty:unique}
 The limit at $\infty$ or $-\infty$ as defined above is unique if it exists.
@@ -2538,7 +2539,7 @@ To prove this fact note that if $x = 2n+\nicefrac{1}{2}$ for some $n \in
 while if $x = 2n+\nicefrac{3}{2}$, then $f(x)=-1$.  So they cannot both be
 within a small $\epsilon$ of a single real number.
 
-We must be careful not to confuse continuous limits with limits of sequences.
+Be careful not to confuse continuous limits with limits of sequences.
 We could say
 \begin{equation*}
 \lim_{n \to \infty} \sin(\pi n) = 0, \qquad \text{but} \qquad
@@ -2564,15 +2565,13 @@ Suppose $f \colon S \to \R$ is a function, $\infty$ is a cluster
 point of $S \subset \R$, and $L \in \R$.  Then
 \begin{equation*}
 \lim_{x\to\infty} f(x) = L
-\end{equation*}
-if and only if
-\begin{equation*}
+\qquad \text{if and only if} \qquad
 \lim_{n\to\infty} f(x_n) = L
 \end{equation*}
 for all sequences $\{ x_n \}$ in $S$ such that $\lim\limits_{n\to\infty} x_n = \infty$.
 \end{lemma}
 
-The lemma holds for the limit as $x \to -\infty$.
+The lemma also holds for the limit as $x \to -\infty$.
 Its proof is almost identical and
 is left as an exercise.
 

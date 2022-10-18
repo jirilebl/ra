@@ -466,26 +466,27 @@ then $\{f_n\}$ converges uniformly.
 
 For $f \colon X \to \C$, we write\glsadd{not:uniformnorm}
 \begin{equation*}
-\snorm{f}_u := \sup_{x \in X} \sabs{f(x)} .
+\snorm{f}_X := \sup_{x \in X} \sabs{f(x)} .
 \end{equation*}
-We call $\snorm{\cdot}_u$
-the \emph{\myindex{supremum norm}} or \emph{\myindex{uniform norm}}.
+We call $\snorm{\cdot}_X$
+the \emph{\myindex{supremum norm}} or \emph{\myindex{uniform norm}},
+and the subscript denotes the set over which the supremum is taken.
 Then a sequence of functions
 $f_n \colon X \to \C$ converges uniformly to $f \colon X \to \C$ if and only if
 \begin{equation*}
-\lim_{n\to \infty} \snorm{f_n-f}_u = 0 .
+\lim_{n\to \infty} \snorm{f_n-f}_X = 0 .
 \end{equation*}
 
 The supremum norm satisfies the triangle inequality: For every $x \in X$,
 \begin{equation*}
 \sabs{f(x)+g(x)} \leq
 \sabs{f(x)}+\sabs{g(x)} \leq
-\snorm{f}_u+\snorm{g}_u .
+\snorm{f}_X+\snorm{g}_X .
 \end{equation*}
 Take a supremum on the left to get
 \begin{equation*}
-\snorm{f+g}_u \leq
-\snorm{f}_u+\snorm{g}_u .
+\snorm{f+g}_X \leq
+\snorm{f}_X+\snorm{g}_X .
 \end{equation*}
 
 For a compact metric space $X$,
@@ -519,15 +520,15 @@ Then
 \end{thm}
 
 Another way to state the theorem is to say that if
-$\sum \snorm{f_n}_u$ converges, then $\sum f_n$ converges uniformly.
+$\sum_{n=1}^\infty \snorm{f_n}_X$ converges, then $\sum_{n=1}^\infty f_n$ converges uniformly.
 Note that the converse of this theorem is not true.
-Also note that applying the theorem to $\sum \sabs{f_n(x)}$ gives that
+Also note that applying the theorem to $\sum_{n=1}^\infty \sabs{f_n(x)}$ gives that
 a series satisfying the $M$-test also converges uniformly, so the series converges both absolutely
 and uniformly.
 
 \begin{proof}
-Suppose $\sum M_n$ converges.  Given $\epsilon > 0$,
-we have that the partial sums of $\sum M_n$ are Cauchy so
+Suppose $\sum_{n=1}^\infty M_n$ converges.  Given $\epsilon > 0$,
+we have that the partial sums of $\sum_{n=1}^\infty M_n$ are Cauchy so
 there is an $N$ such that for all $m, n \geq N$ with $m \geq n$, we have
 \begin{equation*}
 \sum_{k=n+1}^m M_k < \epsilon .
@@ -917,7 +918,7 @@ And so
 \end{equation*}
 As $m \to \infty$, we have
 $\delta_m \to 0$, but $\frac{3^m+1}{2}$
-goes to infinity.  Hence $f$ cannot be differentiable at $x$.
+goes to infinity.  So $f$ cannot be differentiable at~$x$.
 \end{example}
 
 \subsection{Exercises}
@@ -932,7 +933,7 @@ Prove \propref{prop:unifcauchymetric}.
 
 \begin{exercise} \label{exercise:CXCnormedspace}
 Suppose $(X,d)$ is a compact metric space.
-Prove that $\snorm{\cdot}_u$ is a norm on the vector space of
+Prove that the uniform norm $\snorm{\cdot}_X$ is a norm on the vector space of
 continuous complex-valued functions $C(X,\C)$.
 \end{exercise}
 
@@ -954,10 +955,9 @@ where the derivatives of the partial sums do not converge.
 \end{exercise}
 
 \begin{exercise}
-Suppose $(X,d)$ is a compact metric space.
-Prove that $\snorm{f}_{C^1} := \snorm{f}_u+\snorm{f'}_u$
+Prove that $\snorm{f}_{C^1} := \snorm{f}_{[a,b]}+\snorm{f'}_{[a,b]}$
 is a norm on the vector space of
-continuously differentiable complex-valued functions $C^1(X,\C)$.
+continuously differentiable complex-valued functions $C^1\bigl([a,b],\C\bigr)$.
 \end{exercise}
 
 \begin{exercise}
@@ -980,7 +980,8 @@ f_n(x) :=
 0	    & \text{else.}
 \end{cases}
 \end{equation*}
-Prove that $\sum f_n$ converges uniformly, but $\sum \snorm{f_n}_u$
+Prove that $\sum_{n=1}^\infty f_n$ converges uniformly, but
+$\sum_{n=1}^\infty \snorm{f_n}_{[0,1]}$
 does not converge.
 \end{exercise}
 
@@ -2488,12 +2489,12 @@ $f_n$ on
 $[0,1]$occurs at the critical point
 $x=\nicefrac{1}{n^2}$:
 \begin{equation*}
-\snorm{f_n}_u
+\snorm{f_n}_{[0,1]}
 =
 f_n\left(\nicefrac{1}{n^2}\right)
 = \nicefrac{n}{2} .
 \end{equation*}
-So $\lim\, \snorm{f_n}_u = \infty$, and
+So $\lim_{n\to\infty} \snorm{f_n}_{[0,1]} = \infty$, and
 this sequence is not uniformly bounded.
 \end{example}
 
@@ -2807,7 +2808,7 @@ the image of the unit ball of functions
 T\bigl( B(0,1) \bigr) = 
 \bigl\{
 Tf \in C([0,1],\C) :  
-\snorm{f}_u < 1
+\snorm{f}_{[0,1]} < 1
 \bigr\}
 \end{equation*}
 has compact closure, usually called
@@ -3874,7 +3875,7 @@ Let $S^1 \subset \C$ be the unit circle, that is the set where
 $\sabs{z} = 1$.  Orient this set counterclockwise.
 Let $\gamma(t) := e^{it}$.
 For the one-form $f(z)\,dz$ we write\footnote{%
-One could also define $dz := dx + i \, dy$ and then
+Alternatively, one could define $dz := dx + i \, dy$ and
 extend the path integral from \chapterref{path:chapter} to complex-valued
 one-forms.}
 \begin{equation*}
@@ -3915,27 +3916,29 @@ Then $\widebar{\sA} = C(X,\R)$.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 \leavevmode
 \begin{enumerate}[a)]
 \item
 Suppose $f \colon [a,b] \to \C$ is continuously 
 differentiable.  Show that there exists a sequence of polynomials
-$\{ p_n \}$
+$\{ p_n \}_{n=1}^\infty$
 that converges in the $C^1$ norm to $f$, that is
-$\snorm{f - p_n}_u + \snorm{f'-p_n'}_u \to 0$ as $n \to \infty$.
+$\snorm{f - p_n}_{[a,b]} + \snorm{f'-p_n'}_{[a,b]} \to 0$ as $n \to \infty$.
 \item
 Suppose $f \colon [a,b] \to \C$ is $k$ times continuously 
 differentiable.  Show that there exists a sequence of polynomials
-$\{ p_n \}$
+$\{ p_n \}_{n=1}^\infty$
 that converges in the $C^k$ norm to $f$, that is,
 \begin{equation*}
-\sum_{j=0}^k \snorm{f^{(j)} - p_n^{(j)}}_u \to 0 \qquad \text{as} \qquad
+\sum_{j=0}^k \norm{f^{(j)} - p_n^{(j)}}_{[a,b]} \to 0 \qquad \text{as} \qquad
 n \to \infty.
 \end{equation*}
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 \leavevmode
 \begin{enumerate}[a)]
 \item
