@@ -1,0 +1,29 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+// gather references to integrand
+double f(double t)
+{
+  if (t==0.0) return 0.0;
+  return sqrt(fabs(t));
+}
+
+int main()
+{
+  picture(P(0,0), P(4.0,2.0), "3x1.5in");
+
+  begin();
+
+  h_axis(4);
+  v_axis(2);
+
+  bold();
+
+  plot(f, 0, 0.5, 25);
+  plot(f, 0.5, 4, 20);
+
+  tikz_format();
+  end();
+}
+

@@ -1,0 +1,42 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+int main()
+{
+  int n;
+  picture(P(-0.05,-0.3), P(1.0,0.05), "3.5x0.6in");
+
+  begin();
+
+  line(P(-0.05,0),P(1.05,0));
+  line(P(0,-0.05),P(0,0.05));
+  line(P(1,-0.05),P(1,0.05));
+
+  for (n=1; n < 40; n++) {
+	  line(P(1.0/((double)n),-0.03),P(1.0/((double)n),0.03));
+
+	  if (n <= 8) {
+		  char l[25];
+		  if (n==1)
+			  snprintf(l,25,"{\\tiny $1$}",n);
+		  else
+			  snprintf(l,25,"{\\tiny $\\frac{1}{%d}$}",n);
+		  label(P(1.0/n,-0.05),P(0,-5),l,c);
+	  }
+  }
+  label(P(1.0/16,-0.05),P(0,-5),"{\\tiny$\\cdots$}",c);
+
+  label(P(0,-0.05),P(0,-5),"{\\tiny $0$}",c);
+
+  pen(0);
+  fill(Black());
+  rect(P(0.0,-0.03),P(1.0/((double)n),0.03));
+
+
+  //bold();
+
+  tikz_format();
+  end();
+}
+

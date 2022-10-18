@@ -1,0 +1,34 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+#include <string.h>
+#include <stdio.h>
+using namespace ePiX;
+
+int main() 
+{
+  picture(P(-0.1,-0.1), P(1.1,1.1), "1.1x1.1in");
+
+  begin();   
+
+  //h_axis(1);
+  //v_axis(1);
+  line(P(-0.1,0),P(1.1,0));
+  line(P(0,-0.1),P(0,1.1));
+
+  line(P(-0.05,1),P(0.05,1));
+  line(P(1,-0.05),P(1,0.05));
+
+  dot_size(2.7);
+
+  dot(P(0,1));
+
+  bold();
+  line(P(0,0),P(1,1));
+
+  circ(P(0,0));
+  circ(P(1,1));
+
+  tikz_format();
+  end();
+}
+

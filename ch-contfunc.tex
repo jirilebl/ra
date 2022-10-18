@@ -176,10 +176,12 @@ x & \text{if } x > 0 , \\
 \end{cases}
 \end{equation*}
 Then
-\begin{equation*}
-\lim_{x\to 0} f(x) = 0 ,
-\end{equation*}
-even though $f(0) = 1$.
+$\lim\limits_{x\to 0} f(x) = 0$,
+even though $f(0) = 1$.  See \figureref{fig:limvaldiff}.
+\begin{myfigureht}
+\includegraphics{figures/limvaldiff}
+\caption{Function with a different limit and value at $0$.\label{fig:limvaldiff}}
+\end{myfigureht}
 
 Proof:  Let $\epsilon > 0$ be given.  Let $\delta := \epsilon$.
 For $x \in [0,1)$, $x \not= 0$, and $\abs{x-0} < \delta$, we get
@@ -197,10 +199,11 @@ Let $S \subset \R$, let $c$ be a cluster point of $S$, let $f \colon S \to
 \R$ be a function, and let $L \in \R$.
 
 Then
-$f(x) \to L$ as $x \to c$ if and only if for every sequence $\{ x_n \}$
-of numbers such that $x_n \in S \setminus \{c\}$ for all $n$,
-and such that $\lim\, x_n = c$,
-we have that the sequence $\{ f(x_n) \}$ converges to $L$.
+$f(x) \to L$ as $x \to c$ if and only if for every sequence $\{ x_n
+\}_{n=1}^\infty$
+such that $x_n \in S \setminus \{c\}$ for all $n$,
+and such that $\lim_{n\to\infty} x_n = c$,
+we have that the sequence $\{ f(x_n) \}_{n=1}^\infty$ converges to $L$.
 \end{lemma}
 
 \begin{proof}
@@ -283,7 +286,7 @@ Notice that $\abs{\sin(t)} \leq 1$ for all $t \in \R$.  Therefore,
 \abs{x_n} .
 \end{equation*}
 As $x_n$ goes to 0, then $\abs{x_n}$ goes to zero, and hence
-$\bigl\{ x_n\sin(\nicefrac{1}{x_n}) \bigr\}$ converges to zero.  By
+$\bigl\{ x_n\sin(\nicefrac{1}{x_n}) \bigr\}_{n=1}^\infty$ converges to zero.  By
 \lemmaref{seqflimit:lemma}, 
 $\displaystyle \lim_{x \to 0} \, x\sin( \nicefrac{1}{x} ) = 0$.
 \end{example}
@@ -291,7 +294,8 @@ $\displaystyle \lim_{x \to 0} \, x\sin( \nicefrac{1}{x} ) = 0$.
 Keep in mind the phrase \myquote{for every sequence} in the lemma.
 For example, take $\sin(\nicefrac{1}{x})$ and the sequence given by
 $x_n := \nicefrac{1}{\pi n}$.
-Then $\bigl\{ \sin (\nicefrac{1}{x_n}) \bigr\}$ is the constant zero sequence, and
+Then $\bigl\{ \sin (\nicefrac{1}{x_n}) \bigr\}_{n=1}^\infty$
+is the constant zero sequence, and
 therefore converges to zero, but the limit of 
 $\sin(\nicefrac{1}{x})$ as $x \to 0$ does not exist.
 
@@ -713,9 +717,9 @@ form dates only to the late 1800s.
 \subsection{Definition and basic properties}
 
 \begin{defn}
-Let $S \subset \R$, $c \in S$, and let $f \colon S \to \R$ be a function.
-We say
-$f$ is \emph{continuous at $c$}\index{continuous at $c$}
+Suppose $S \subset \R$ and $c \in S$.
+We say $f \colon S \to \R$
+is \emph{continuous at $c$}\index{continuous at $c$}
 if for every $\epsilon > 0$
 there is a $\delta > 0$ such that whenever $x \in S$ and $\abs{x-c} <
 \delta$, we have
@@ -891,7 +895,7 @@ $h(x) := f(x)-g(x)$, is continuous at $c$.
 \item The function $h \colon S \to \R$, defined by
 $h(x) := f(x)g(x)$, is continuous at $c$.
 \item If $g(x)\not=0$ for all $x \in S$, the function $h \colon S \to \R$,
-defined by $h(x) := \frac{f(x)}{g(x)}$, is continuous at $c$.
+given by $h(x) := \frac{f(x)}{g(x)}$, is continuous at $c$.
 \end{enumerate}
 \end{prop}
 
@@ -1036,7 +1040,7 @@ not continuous at 0.  See
 
 \begin{myfigureht}
 \includegraphics{figures/jumpdiscont}
-\caption{Graph of the jump discontinuity.  The values of
+\caption{Jump discontinuity.  The values of
 $f(\nicefrac{-1}{n})$ and $f(0)$ are marked as black dots.\label{fig:jumpdiscont}}
 \end{myfigureht}
 
@@ -1177,6 +1181,7 @@ f(x) :=
 x & \text{if } x \text{ is rational,} \\
 x^2 & \text{if } x \text{ is irrational.}
 \end{cases}
+\avoidbreak
 \end{equation*}
 Using the definition of continuity directly prove that
 $f$ is continuous at $1$ and discontinuous at $2$.
@@ -1190,6 +1195,7 @@ f(x) :=
 \sin(\nicefrac{1}{x}) & \text{if } x \not= 0, \\
 0 & \text{if } x=0.
 \end{cases}
+\avoidbreak
 \end{equation*}
 Is $f$ continuous?  Prove your assertion.
 \end{exercise}
@@ -1202,6 +1208,7 @@ f(x) :=
 x \sin(\nicefrac{1}{x}) & \text{if } x \not= 0, \\
 0 & \text{if } x=0.
 \end{cases}
+\avoidbreak
 \end{equation*}
 Is $f$ continuous?  Prove your assertion.
 \end{exercise}
@@ -1307,7 +1314,7 @@ Prove that
 if $I = (\alpha,\beta)$ an open interval and $f \colon I \to \R$ is convex,
 then $f$ is continuous.
 \item
-Find an example of a convex $f \colon [0,1] \to \R$ which is
+Find an example of a convex $f \colon [0,1] \to \R$ that is
 not continuous.
 \end{enumerate}
 \end{exercise}
@@ -1738,6 +1745,7 @@ is not continuous at $0$; however, $f$ has the intermediate value property:
 Whenever $a < b$ and $y$ is such that $f(a) < y < f(b)$
 or $f(a) > y > f(b)$,
 there exists a $c \in (a,b)$ such that $f(c) = y$.
+See \figureref{figsin1x} for a graph of $\sin(\nicefrac{1}{x})$.
 Proof is left as \exerciseref{exercise:meanvaluepropsin1x}.
 \end{example}
 
@@ -2257,7 +2265,12 @@ for some $K$.  Set $y=0$ to obtain
 $\sqrt{x} \leq K x$.   If $K > 0$, then for $x > 0$ we then get
 $\nicefrac{1}{K} \leq \sqrt{x}$.  This cannot possibly be true for all
 $x > 0$.  Thus no such $K > 0$ exists and $g$ is not
-Lipschitz continuous.
+Lipschitz continuous.  See \figureref{fig:sqrtgraph} and note how secant
+lines would be more and more vertical as we get closer to $x=0$.
+\begin{myfigureht}
+\includegraphics{figures/sqrtgraph}
+\caption{Graph of $\sqrt{x}$.\label{fig:sqrtgraph}}
+\end{myfigureht}
 
 The last example $g$ is a function that is uniformly
 continuous but not Lipschitz continuous.
