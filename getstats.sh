@@ -33,3 +33,33 @@ echo
 echo Chapter count includes introductions.
 
 echo
+echo Figures per chapter
+
+echo "Chapter 0:\t\t"`grep '^[\]begin{myfigureht' ch-vol1-intro.tex | wc -l`
+echo "Chapter 1:\t\t"`grep '^[\]begin{myfigureht' ch-real-nums.tex | wc -l`
+echo "Chapter 2:\t\t"`grep '^[\]begin{myfigureht' ch-seq-ser.tex | wc -l`
+echo "Chapter 3:\t\t"`grep '^[\]begin{myfigureht' ch-contfunc.tex | wc -l`
+echo "Chapter 4:\t\t"`grep '^[\]begin{myfigureht' ch-der.tex | wc -l`
+echo "Chapter 5:\t\t"`grep '^[\]begin{myfigureht' ch-riemann.tex | wc -l`
+echo "Chapter 6:\t\t"`grep '^[\]begin{myfigureht' ch-seq-funcs.tex | wc -l`
+echo "Chapter 7:\t\t"`grep '^[\]begin{myfigureht' ch-metric.tex | wc -l`
+echo "Chapter 8:\t\t"`grep '^[\]begin{myfigureht' ch-several-vars-ders.tex | wc -l`
+echo "Chapter 9:\t\t"`grep '^[\]begin{myfigureht' ch-one-dim-ints-sv.tex | wc -l`
+echo "Chapter 10:\t\t"`grep '^[\]begin{myfigureht' ch-multivar-int.tex | wc -l`
+echo "Chapter 11:\t\t"`grep '^[\]begin{myfigureht' ch-approximate.tex | wc -l`
+
+echo
+echo Exercises per chapter
+
+echo "Chapter 0:\t\t"`grep '^[\]begin{exercise' ch-vol1-intro.tex | wc -l`
+echo "Chapter 1:\t\t"`grep '^[\]begin{exercise' ch-real-nums.tex | wc -l`
+echo "Chapter 2:\t\t"`grep '^[\]begin{exercise' ch-seq-ser.tex | wc -l`
+echo "Chapter 3:\t\t"`grep '^[\]begin{exercise' ch-contfunc.tex | wc -l`
+echo "Chapter 4:\t\t"`grep '^[\]begin{exercise' ch-der.tex | wc -l`
+echo "Chapter 5:\t\t"`grep '^[\]begin{exercise' ch-riemann.tex | wc -l`
+echo "Chapter 6:\t\t"`grep '^[\]begin{exercise' ch-seq-funcs.tex | wc -l`
+echo "Chapter 7:\t\t"`grep '^[\]begin{exercise' ch-metric.tex | wc -l`
+echo "Chapter 8:\t\t"`grep '^[\]begin{exercise' ch-several-vars-ders.tex | wc -l`
+echo "Chapter 9:\t\t"`grep '^[\]begin{exercise' ch-one-dim-ints-sv.tex | wc -l`
+echo "Chapter 10:\t\t"`grep '^[\]begin{exercise' ch-multivar-int.tex | wc -l`
+echo "Chapter 11:\t\t"`grep '^[\]begin{exercise' ch-approximate.tex | wc -l`
