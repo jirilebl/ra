@@ -7,8 +7,9 @@
 
 \sectionnotes{2--3 lectures}
 
-Before we define continuity of functions, we must visit a somewhat
-more general notion of a limit.  Given a function $f \colon S \to
+Before we define continuity of functions, we visit a somewhat
+more general notion of a limit, than that of a sequence.
+Given a function $f \colon S \to
 \R$, we want to see how $f(x)$ behaves as $x$ tends to a certain point.
 
 \subsection{Cluster points}
@@ -47,8 +48,8 @@ The set of cluster points of $[0,1) \cup \{ 2 \}$ is the interval $[0,1]$.
 \begin{prop}
 Let $S \subset \R$.  Then $x \in \R$ is a cluster point of $S$
 if and only if
-there exists a convergent sequence of numbers $\{ x_n \}$ such that
-$x_n \not= x$ and $x_n \in S$ for all $n$, and $\lim\, x_n = x$.
+there exists a convergent sequence of numbers $\{ x_n \}_{n=1}^\infty$ such that
+$x_n \not= x$ and $x_n \in S$ for all $n$, and $\lim\limits_{n\to\infty} x_n = x$.
 \end{prop}
 
 \begin{proof}
@@ -62,9 +63,11 @@ $x_n$ is within $\nicefrac{1}{n}$ of $x$, that is,
 \abs{x-x_n} < \nicefrac{1}{n} .
 \avoidbreak
 \end{equation*}
-As $\{ \nicefrac{1}{n} \}$ converges to zero, $\{ x_n \}$ converges to $x$.
+As $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ converges to zero,
+$\{ x_n \}_{n=1}^\infty$ converges to $x$.
 
-On the other hand, if we start with a sequence of numbers $\{ x_n \}$ in $S$
+On the other hand, if we start with a sequence of numbers
+$\{ x_n \}_{n=1}^\infty$ in $S$
 converging to $x$ such that $x_n \not= x$ for all $n$, then for every
 $\epsilon > 0$ there is an $M$ such that, in particular, $\abs{x_M - x} <
 \epsilon$.  That is, $x_M \in (x-\epsilon,x+\epsilon) \cap S \setminus \{x\}$.
@@ -199,29 +202,29 @@ Let $S \subset \R$, let $c$ be a cluster point of $S$, let $f \colon S \to
 \R$ be a function, and let $L \in \R$.
 
 Then
-$f(x) \to L$ as $x \to c$ if and only if for every sequence $\{ x_n
-\}_{n=1}^\infty$
+$f(x) \to L$ as $x \to c$ if and only if for every sequence
+$\{ x_n \}_{n=1}^\infty$
 such that $x_n \in S \setminus \{c\}$ for all $n$,
 and such that $\lim_{n\to\infty} x_n = c$,
-we have that the sequence $\{ f(x_n) \}_{n=1}^\infty$ converges to $L$.
+we have that the sequence $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges to $L$.
 \end{lemma}
 
 \begin{proof}
 Suppose 
-$f(x) \to L$ as $x \to c$, and $\{ x_n \}$ is a sequence
+$f(x) \to L$ as $x \to c$, and $\{ x_n \}_{n=1}^\infty$ is a sequence
 such that
 $x_n \in S \setminus \{c\}$ and
-$\lim\, x_n = c$.
-We wish to show that $\{ f(x_n) \}$ converges to $L$.
+$\lim_{n\to\infty} x_n = c$.
+We wish to show that $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges to $L$.
 Let $\epsilon > 0$ be given.  Find a $\delta > 0$ such that
 if $x \in S \setminus \{c\}$ and $\abs{x-c} < \delta$, then
 $\abs{f(x) - L} < \epsilon$.  As
-$\{ x_n \}$  converges to $c$, find an $M$ such that for $n \geq M$,
+$\{ x_n \}_{n=1}^\infty$  converges to $c$, find an $M$ such that for $n \geq M$,
 we have that $\abs{x_n - c} < \delta$.  Therefore, for $n \geq M$,
 \begin{equation*}
 \abs{f(x_n) - L} < \epsilon .
 \end{equation*}
-Thus $\{ f(x_n) \}$ converges to $L$.
+Thus $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges to $L$.
 
 For the other direction, we use proof by contrapositive.  Suppose 
 it is not true that $f(x) \to L$ as $x \to c$.  The negation of the
@@ -231,25 +234,25 @@ $\abs{x-c} < \delta$
 and $\abs{f(x)-L} \geq \epsilon$.
 
 Let us use $\nicefrac{1}{n}$ for $\delta$ in the statement above to
-construct a sequence $\{ x_n \}$.  We have
+construct a sequence $\{ x_n \}_{n=1}^\infty$.  We have
 that there exists an $\epsilon > 0$ such that for every $n$,
 there exists a point $x_n \in S \setminus \{c\}$, where
 $\abs{x_n-c} < \nicefrac{1}{n}$
 and $\abs{f(x_n)-L} \geq \epsilon$.
-The sequence $\{ x_n \}$ just constructed converges to $c$, but
-the sequence $\{ f(x_n) \}$ does not converge to $L$.
+The sequence $\{ x_n \}_{n=1}^\infty$ just constructed converges to $c$, but
+the sequence $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ does not converge to $L$.
 And we are done.
 \end{proof}
 
 It is possible to strengthen the reverse direction of
 the lemma by simply stating that
-\myquote{$\{ f(x_n) \}_{n=1}^\infty$ converges,} without requiring a specific limit.
+\myquote{$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges,} without requiring a specific limit.
 See \exerciseref{exercise:seqflimitalt}.
 
 \begin{example}
-$\displaystyle \lim_{x \to 0} \, \sin( \nicefrac{1}{x} )$
+$\displaystyle \lim_{x \to 0} \sin( \nicefrac{1}{x} )$
 does not exist, but 
-$\displaystyle \lim_{x \to 0} \, x\sin( \nicefrac{1}{x} ) = 0$.
+$\displaystyle \lim_{x \to 0} x\sin( \nicefrac{1}{x} ) = 0$.
 See \figureref{figsin1x}.
 
 \begin{myfigureht}
@@ -263,20 +266,20 @@ Proof:
 We start with $\sin(\nicefrac{1}{x})$.  Define a sequence
 by
 $x_n := \frac{1}{\pi n + \nicefrac{\pi}{2}}$.  It is not hard to see
-that $\lim\, x_n = 0$.  Furthermore,
+that $\lim_{n\to\infty} x_n = 0$.  Furthermore,
 \begin{equation*}
 \sin ( \nicefrac{1}{x_n} )
 =
 \sin (\pi n + \nicefrac{\pi}{2})
 = {(-1)}^n .
 \end{equation*}
-Therefore, $\bigl\{ \sin ( \nicefrac{1}{x_n} ) \bigr\}$ does not converge.
+Therefore, $\bigl\{ \sin ( \nicefrac{1}{x_n} ) \bigr\}_{n=1}^\infty$ does not converge.
 By
 \lemmaref{seqflimit:lemma}, 
-$\displaystyle \lim_{x \to 0} \, \sin( \nicefrac{1}{x} )$ does not exist.
+$\displaystyle \lim_{x \to 0} \sin( \nicefrac{1}{x} )$ does not exist.
 
-Now consider $x\sin(\nicefrac{1}{x})$.  Let $\{ x_n \}$ be a sequence
-such that $x_n \not= 0$ for all $n$, and such that $\lim\, x_n = 0$.
+Now consider $x\sin(\nicefrac{1}{x})$.  Let $\{ x_n \}_{n=1}^\infty$ be a sequence
+such that $x_n \not= 0$ for all $n$, and such that $\lim_{n\to\infty} x_n = 0$.
 Notice that $\abs{\sin(t)} \leq 1$ for all $t \in \R$.  Therefore,
 \begin{equation*}
 \abs{x_n\sin(\nicefrac{1}{x_n})-0}
@@ -288,7 +291,7 @@ Notice that $\abs{\sin(t)} \leq 1$ for all $t \in \R$.  Therefore,
 As $x_n$ goes to 0, then $\abs{x_n}$ goes to zero, and hence
 $\bigl\{ x_n\sin(\nicefrac{1}{x_n}) \bigr\}_{n=1}^\infty$ converges to zero.  By
 \lemmaref{seqflimit:lemma}, 
-$\displaystyle \lim_{x \to 0} \, x\sin( \nicefrac{1}{x} ) = 0$.
+$\displaystyle \lim_{x \to 0} x\sin( \nicefrac{1}{x} ) = 0$.
 \end{example}
 
 Keep in mind the phrase \myquote{for every sequence} in the lemma.
@@ -321,13 +324,13 @@ Then
 \end{cor}
 
 \begin{proof}
-Take $\{ x_n \}$ be a sequence of numbers in $S \setminus \{ c \}$
+Take $\{ x_n \}_{n=1}^\infty$ be a sequence of numbers in $S \setminus \{ c \}$
 that converges to $c$.  Let
 \begin{equation*}
 L_1 := \lim_{x\to c} f(x), \qquad \text{and} \qquad L_2 := \lim_{x\to c} g(x) .
 \end{equation*}
-\lemmaref{seqflimit:lemma} says that $\{ f(x_n) \}$ converges to
-$L_1$ and $\{ g(x_n) \}$ converges to $L_2$.  We also
+\lemmaref{seqflimit:lemma} says that $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges to
+$L_1$ and $\bigl\{ g(x_n) \bigr\}_{n=1}^\infty$ converges to $L_2$.  We also
 have $f(x_n) \leq g(x_n)$ for all $n$.
 We obtain $L_1 \leq L_2$ using
 \lemmaref{limandineq:lemma}.
@@ -576,12 +579,12 @@ $
 \\
 d)
 $\displaystyle
-\lim_{x\to 0}\, \sin(\nicefrac{1}{x}) \cos (\nicefrac{1}{x})
+\lim_{x\to 0} \sin(\nicefrac{1}{x}) \cos (\nicefrac{1}{x})
 $
 & &
 e)
 $\displaystyle
-\lim_{x\to 0}\, \sin(x) \cos (\nicefrac{1}{x})
+\lim_{x\to 0} \sin(x) \cos (\nicefrac{1}{x})
 $ & 
 \end{tabular}
 \end{exercise}
@@ -644,9 +647,9 @@ see also
 \begin{exercise}[note\footnote{This exercise is almost identical to the next one.  It
 will be replaced in the next major edition.}]
 Let $c$ be a cluster point of $A \subset \R$, and $f \colon A \to \R$
-be a function.  Suppose for every sequence $\{x_n\}$ in $A$,
-such that $\lim\, x_n = c$,
-the sequence $\{ f(x_n) \}_{n=1}^\infty$ is Cauchy.  Prove that
+be a function.  Suppose for every sequence $\{x_n\}_{n=1}^\infty$ in $A$,
+such that $\lim_{n\to\infty} x_n = c$,
+the sequence $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ is Cauchy.  Prove that
 $\lim_{x\to c} f(x)$ exists.
 \end{exercise}
 
@@ -655,8 +658,8 @@ Prove the following stronger version of one direction of
 \lemmaref{seqflimit:lemma}:
 Let $S \subset \R$, $c$ be a cluster point of $S$, and $f \colon S \to
 \R$ be a function.
-Suppose that for every sequence $\{x_n\}$ in $S \setminus \{c\}$ such that
-$\lim\, x_n = c$ the sequence $\{ f(x_n) \}$ is convergent.
+Suppose that for every sequence $\{x_n\}_{n=1}^\infty$ in $S \setminus \{c\}$ such that
+$\lim_{n\to\infty} x_n = c$ the sequence $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ is convergent.
 Then show that the limit of $f(x)$ as $x \to c$ exists.
 \end{exercise}
 
@@ -666,9 +669,10 @@ Prove \propref{prop:onesidedlimits}.
 
 \begin{exercise}
 Suppose $S \subset \R$ and $c$ is a cluster point of $S$.  Suppose $f \colon
-S \to \R$ is bounded.  Show that there exists a sequence $\{ x_n \}$
-with $x_n \in S \setminus \{ c \}$ and $\lim\, x_n = c$ such that
-$\{ f(x_n) \}$ converges.
+S \to \R$ is bounded.  Show that there exists a sequence
+$\{ x_n \}_{n=1}^\infty$
+with $x_n \in S \setminus \{ c \}$ and $\lim_{n\to\infty} x_n = c$ such that
+$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges.
 \end{exercise}
 
 \begin{exercise}[Challenging] \label{exercise:contlimitbadcomposition}
@@ -757,27 +761,32 @@ and let $c \in S$.
 Then:
 %\begin{enumerate}[(i),itemsep=0.5\itemsep,parsep=0.5\parsep,topsep=0.5\topsep,partopsep=0.5\partopsep]
 \begin{enumerate}[(i)]
-\item If $c$ is not a cluster point of $S$, then $f$ is continuous at $c$.
-\item If $c$ is a cluster point of $S$, then $f$ is continuous at $c$
+\item \label{contbasic:prop:i}
+If $c$ is not a cluster point of $S$, then $f$ is continuous at $c$.
+\item \label{contbasic:prop:ii}
+If $c$ is a cluster point of $S$, then $f$ is continuous at $c$
 if and only if the limit of $f(x)$ as $x \to c$ exists and
 \begin{equation*}
 \lim_{x\to c} f(x) = f(c) .
 \end{equation*}
-\item The function $f$ is continuous at $c$ if and only if for every sequence $\{ x_n \}$
-where $x_n \in S$ and $\lim\, x_n = c$, the sequence $\{ f(x_n) \}$ converges
+\item \label{contbasic:prop:iii}
+The function $f$ is continuous at $c$ if and only if for every sequence
+$\{ x_n \}_{n=1}^\infty$
+where $x_n \in S$ and $\lim_{n\to\infty} x_n = c$, the sequence
+$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges
 to $f(c)$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-We start with the first item.  Suppose $c$ is not a cluster point of
+We start with \eqref{contbasic:prop:i}.  Suppose $c$ is not a cluster point of
 $S$.  Then there exists a $\delta > 0$
 such that $S \cap (c-\delta,c+\delta) = \{ c \}$.
 For any $\epsilon > 0$, simply pick this given $\delta$.
 The only $x \in S$ such that $\abs{x-c} < \delta$ is $x=c$.  Then
 $\abs{f(x)-f(c)} = \abs{f(c)-f(c)} = 0 < \epsilon$.
 
-Let us move to the second item.
+Let us move to \eqref{contbasic:prop:ii}.
 Suppose $c$ is a cluster point of $S$.  Let us first suppose
 that $\lim_{x\to c} f(x) = f(c)$.  Then for every $\epsilon > 0$,
 there is a $\delta > 0$ such that if $x \in S \setminus \{ c \}$
@@ -790,27 +799,29 @@ $\abs{f(x)-f(c)} < \epsilon$.  Then the statement is, of course, still true if
 $x \in S \setminus \{ c \} \subset S$.  Therefore, $\lim_{x\to c} f(x) =
 f(c)$.
 
-For the third item, first suppose $f$ is continuous at $c$.  Let $\{ x_n \}$
-be a sequence such that $x_n \in S$ and $\lim\, x_n = c$.  Let $\epsilon > 0$
+For \eqref{contbasic:prop:iii}, first suppose $f$ is continuous at $c$.
+Let $\{ x_n \}_{n=1}^\infty$
+be a sequence such that $x_n \in S$ and $\lim_{n\to\infty} x_n = c$.  Let $\epsilon > 0$
 be given.  Find a $\delta > 0$ such that $\abs{f(x)-f(c)} < \epsilon$
 for all $x \in S$ where $\abs{x-c} < \delta$.  Find an $M \in \N$
 such that for $n \geq M$, we have $\abs{x_n-c} < \delta$.  Then for
 $n \geq M$, we have that $\abs{f(x_n)-f(c)} < \epsilon$,
-so $\bigl\{ f(x_n) \bigr\}$
+so $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$
 converges to $f(c)$.
 
-We prove the other direction of the third item by contrapositive.
+We prove the other direction of \eqref{contbasic:prop:iii} by contrapositive.
 Suppose $f$ is not
 continuous at $c$.  Then there exists an $\epsilon > 0$
 such that for every $\delta > 0$, there exists an $x \in S$
 such that $\abs{x-c} < \delta$ and $\abs{f(x)-f(c)} \geq \epsilon$.
-Let us define a sequence $\{ x_n \}$ as follows.
+Define a sequence $\{ x_n \}_{n=1}^\infty$ as follows.
 Let $x_n \in S$ be such that $\abs{x_n-c} < \nicefrac{1}{n}$
 and $\abs{f(x_n)-f(c)} \geq \epsilon$.
-Now $\{ x_n \}$ is
-a sequence of numbers in $S$ such that
-$\lim\, x_n = c$ and such that
-$\abs{f(x_n)-f(c)} \geq \epsilon$ for all $n \in \N$.  Thus $\{ f(x_n) \}$
+Now $\{ x_n \}_{n=1}^\infty$ is
+a sequence in $S$ such that
+$\lim_{n\to\infty} x_n = c$ and such that
+$\abs{f(x_n)-f(c)} \geq \epsilon$ for all $n \in \N$.
+Thus $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$
 does not converge to $f(c)$.  It may or may not converge, but it definitely
 does not converge to $f(c)$.  
 \end{proof}
@@ -825,12 +836,12 @@ The function $f \colon (0,\infty) \to \R$,
 defined by $f(x) := \nicefrac{1}{x}$, is continuous.
 
 Proof: Fix $c \in (0,\infty)$.  
-Let $\{ x_n \}$ be a sequence in $(0,\infty)$ such that
-$\lim\, x_n = c$.  Then we know that
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence in $(0,\infty)$ such that
+$\lim_{n\to\infty} x_n = c$.  Then
 \begin{equation*}
 f(c) = \frac{1}{c}
 =
-\frac{1}{\lim\, x_n}
+\frac{1}{\lim_{n\to\infty} x_n}
 =
 \lim_{n \to \infty} \frac{1}{x_n}
 =
@@ -856,15 +867,18 @@ Then $f$ is continuous.
 
 \begin{proof}
 Fix $c \in \R$.  
-Let $\{ x_n \}$ be a sequence such that
-$\lim\, x_n = c$.  Then
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence such that
+$\lim_{n\to\infty} x_n = c$.  Then
 \begin{equation*}
 \begin{split}
 f(c) &=
 a_d c^d + a_{d-1} c^{d-1} + \cdots + a_1 c + a_0 
 \\
 &= 
-a_d {(\lim\, x_n)}^d + a_{d-1} {(\lim\, x_n)}^{d-1} + \cdots + a_1 (\lim\, x_n) + a_0 
+a_d {\left(\lim_{n\to\infty} x_n\right)}^d
++ a_{d-1} {\left(\lim_{n\to\infty} x_n\right)}^{d-1}
++ \cdots
++ a_1 \left(\lim_{n\to\infty} x_n\right) + a_0 
 \\
 & =
 \lim_{n \to \infty}
@@ -951,7 +965,7 @@ and $\abs{\sin(x)} \leq 1$.
 \end{equation*}
 
 The claim that $\sin$ and $\cos$ are continuous follows by taking an
-arbitrary sequence $\{ x_n \}$ converging to $c$, or by applying the
+arbitrary sequence $\{ x_n \}_{n=1}^\infty$ converging to $c$, or by applying the
 definition of continuity directly.  Details are left to the
 reader.
 \end{example}
@@ -975,9 +989,11 @@ at $c$.
 \end{prop}
 
 \begin{proof}
-Let $\{ x_n \}$ be a sequence in $A$ such that $\lim\, x_n = c$.
-As $g$ is continuous at $c$, we have $\bigl\{ g(x_n) \bigr\}$ converges to $g(c)$.
-As $f$ is continuous at $g(c)$, we have $\bigl\{ f\bigl(g(x_n)\bigr) \bigr\}$ converges
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence in $A$ such that
+$\lim_{n\to\infty} x_n = c$.
+As $g$ is continuous at $c$, we have $\bigl\{ g(x_n) \bigr\}_{n=1}^\infty$ converges to $g(c)$.
+As $f$ is continuous at $g(c)$, we have $\bigl\{ f\bigl(g(x_n)\bigr)
+\bigr\}_{n=1}^\infty$ converges
 to $f\bigl(g(c)\bigr)$.
 Thus $f \circ g$ is continuous at $c$.
 \end{proof}
@@ -1014,7 +1030,7 @@ Then $f$ is discontinuous at $c$.
 
 Again, 
 saying that 
-$\bigl\{ f(x_n) \bigr\}$ does not converge to $f(c)$
+$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ does not converge to $f(c)$
 means that it
 either does not converge
 at all, or it converges to something
@@ -1031,10 +1047,10 @@ f(x) :=
 \end{equation*}
 is not continuous at 0.
 
-Proof: Take the sequence $\{ \nicefrac{-1}{n} \}$, which converges to 0.  Then
+Proof: Take the sequence $\{ \nicefrac{-1}{n} \}_{n=1}^\infty$, which converges to 0.  Then
 $f(\nicefrac{-1}{n}) = -1$ for every $n$,
 and so
-$\lim\, f(\nicefrac{-1}{n}) = -1$, but $f(0) = 1$.  Thus the function is
+$\lim_{n\to\infty} f(\nicefrac{-1}{n}) = -1$, but $f(0) = 1$.  Thus the function is
 not continuous at 0.  See
 \figureref{fig:jumpdiscont}.
 
@@ -1045,10 +1061,10 @@ $f(\nicefrac{-1}{n})$ and $f(0)$ are marked as black dots.\label{fig:jumpdiscont
 \end{myfigureht}
 
 Notice that $f(\nicefrac{1}{n}) = 1$ for all $n \in \N$.
-Hence, $\lim \, f(\nicefrac{1}{n}) = f(0) = 1$.  So
-$\bigl\{ f(x_n) \bigr\}$ may converge to $f(0)$
+Hence, $\lim_{n\to\infty} f(\nicefrac{1}{n}) = f(0) = 1$.  So
+$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ may converge to $f(0)$
 for some specific
-sequence $\{ x_n \}$ going to 0,
+sequence $\{ x_n \}_{n=1}^\infty$ going to 0,
 despite the function being discontinuous at 0.
 
 Finally, consider $f\Bigl(\frac{{(-1)}^n}{n}\Bigr) = {(-1)}^n$.
@@ -1073,11 +1089,12 @@ f(x) :=
 The function $f$ is discontinuous at all $c \in \R$.
 
 Proof:
-If $c$ is rational, take a sequence $\{ x_n \}$
-of irrational numbers such that $\lim\, x_n = c$ (why can we?).  Then $f(x_n) = 0$
-and so $\lim\, f(x_n) = 0$, but $f(c) = 1$.
-If $c$ is irrational, take a sequence of rational numbers $\{ x_n \}$
-that converges to $c$ (why can we?).  Then $\lim\, f(x_n) = 1$, but $f(c) = 0$.
+If $c$ is rational, take a sequence $\{ x_n \}_{n=1}^\infty$
+of irrational numbers such that $\lim_{n\to\infty} x_n = c$ (why can we?).  Then $f(x_n) = 0$
+and so $\lim_{n\to\infty} f(x_n) = 0$, but $f(c) = 1$.
+If $c$ is irrational, take a sequence of rational numbers
+$\{ x_n \}_{n=1}^\infty$
+that converges to $c$ (why can we?).  Then $\lim_{n\to\infty} f(x_n) = 1$, but $f(c) = 0$.
 \end{example}
 
 Let us test the limits of our intuition.  Can
@@ -1113,20 +1130,20 @@ discontinuous at all rational $c$.
 
 Proof:
 Let $c = \nicefrac{m}{k}$ be rational and in lowest terms.  Take a sequence of
-irrational numbers $\{ x_n \}$ such that $\lim\, x_n = c$.  Then
-$\lim\, f(x_n) = \lim \, 0 = 0$, but $f(c) = \nicefrac{1}{k} \not= 0$.  So $f$
+irrational numbers $\{ x_n \}_{n=1}^\infty$ such that $\lim_{n\to\infty} x_n = c$.  Then
+$\lim_{n\to\infty} f(x_n) = \lim_{n\to\infty} 0 = 0$, but $f(c) = \nicefrac{1}{k} \not= 0$.  So $f$
 is discontinuous at $c$.
 
 Now let $c$ be irrational, so $f(c) = 0$.  Take a sequence 
-$\{ x_n \}$ in $(0,1)$ such that $\lim\, x_n = c$.
+$\{ x_n \}_{n=1}^\infty$ in $(0,1)$ such that $\lim_{n\to\infty} x_n = c$.
 Given $\epsilon > 0$, find $K \in \N$ such
 that $\nicefrac{1}{K} < \epsilon$
 by the \hyperref[thm:arch:i]{Archimedean property}.
 If $\nicefrac{m}{k} \in (0,1)$ and $m,k \in \N$, then $0 < m < k$.
 So there are only finitely many rational numbers in $(0,1)$
 whose denominator $k$ in lowest terms is less than $K$.
-As $\lim\, x_n = c$, every number not equal to $c$ can appear at most
-finitely many times in $\{ x_n \}$.
+As $\lim_{n\to\infty} x_n = c$, every number not equal to $c$ can appear at most
+finitely many times in $\{ x_n \}_{n=1}^\infty$.
 Hence,
 there is an $M$ such that for $n \geq M$, all the numbers $x_n$
 that are rational
@@ -1153,8 +1170,8 @@ would still fail to be continuous.  The difference is that
 $\lim_{x\to 0} g(x)$ exists while
 $\lim_{x\to 0} f(x)$ does not.
 
-We stay with this example to show another phenomenon.  Let $A := \{ 0
-\}$, then $g|_A$ is continuous (why?), while $g$ is not continuous on $A$.
+We stay with this example to show another phenomenon.
+Let $A := \{ 0 \}$, then $g|_A$ is continuous (why?), while $g$ is not continuous on $A$.
 Similarly, if $B := \R \setminus \{0 \}$, then $g|_B$ is also continuous,
 and $g$ is in fact continuous on $B$.
 \end{example}
@@ -1256,8 +1273,8 @@ Let $f \colon \Z \to \R$ be a function.  Show that $f$ is continuous.
 
 \begin{exercise} \label{exercise:contseqalt}
 Let $f \colon S \to \R$ be a function and $c \in S$, such that for every
-sequence $\{ x_n \}$ in $S$ with $\lim\, x_n = c$, the sequence
-$\{ f(x_n) \}$ converges.  Show that $f$ is continuous at $c$.
+sequence $\{ x_n \}_{n=1}^\infty$ in $S$ with $\lim_{n\to\infty} x_n = c$, the sequence
+$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges.  Show that $f$ is continuous at $c$.
 \end{exercise}
 
 \begin{exercise}
@@ -1287,9 +1304,9 @@ Suppose $S \subset \R$ and
 let $f \colon S \to \R$ and
 $g \colon S \to \R$ be continuous functions.
 Define $p \colon S \to \R$ by
-$p(x) := \max \{ f(x) , g(x) \}$ and
+$p(x) := \max \bigl\{ f(x) , g(x) \bigr\}$ and
 $q \colon S \to \R$ by
-$q(x) := \min \{ f(x) , g(x) \}$.  Prove that $p$ and $q$ are
+$q(x) := \min \bigl\{ f(x) , g(x) \bigr\}$.  Prove that $p$ and $q$ are
 continuous.
 \end{exercise}
 
@@ -1350,11 +1367,12 @@ $n \in \N$, there is an $x_n \in [a,b]$, such that
 \begin{equation*}
 \abs{f(x_n)} \geq n .
 \end{equation*}
-The sequence $\{ x_n \}$ is bounded as $a \leq x_n \leq b$.
+The sequence $\{ x_n \}_{n=1}^\infty$ is bounded as $a \leq x_n \leq b$.
 By the \hyperref[thm:bwseq]{Bolzano--Weierstrass theorem},
-there is a convergent subsequence $\{ x_{n_i} \}$.  Let $x := \lim\, x_{n_i}$.
+there is a convergent subsequence $\{ x_{n_i} \}_{i=1}^\infty$.
+Let $x := \lim_{i\to\infty} x_{n_i}$.
 Since $a \leq x_{n_i} \leq b$ for all $i$, then $a \leq x \leq b$.
-The sequence $\{ f(x_{n_i}) \}$ is not bounded 
+The sequence $\bigl\{ f(x_{n_i}) \bigr\}_{i=1}^\infty$ is not bounded 
 as 
 $\abs{f(x_{n_i})} \geq n_i \geq i$.
 Thus $f$ is not continuous at $x$ as
@@ -1419,23 +1437,24 @@ the set $f\bigl([a,b]\bigr) = \bigl\{ f(x) : x \in [a,b] \bigr\}$ has a supremum
 There exist sequences
 in the set $f\bigl([a,b]\bigr)$ that approach its supremum and its infimum.
 That is, there are sequences
-$\bigl\{ f(x_n) \bigr\}$ and $\bigl\{ f(y_n) \bigr\}$, where $x_n$ and $y_n$ are in $[a,b]$,
+$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ and $\bigl\{ f(y_n)
+\bigr\}_{n=1}^\infty$, where $x_n$ and $y_n$ are in $[a,b]$,
 such that
 \begin{equation*}
 \lim_{n\to\infty} f(x_n) = \inf f\bigl([a,b]\bigr) \qquad \text{and} \qquad
 \lim_{n\to\infty} f(y_n) = \sup f\bigl([a,b]\bigr).
 \end{equation*}
 We are not done yet; we need to find where the minima and the maxima are.
-The problem is that the sequences $\{ x_n \}$ and $\{ y_n \}$ need not
-converge.
-We know $\{ x_n \}$ and $\{ y_n \}$ are bounded
+The problem is that the sequences $\{ x_n \}_{n=1}^\infty$ and
+$\{ y_n \}_{n=1}^\infty$ need not converge.
+We know $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ are bounded
 (their elements belong to a bounded interval $[a,b]$).
 Apply the 
 \hyperref[thm:bwseq]{Bolzano--Weierstrass theorem},
 to find
 convergent subsequences
-$\{ x_{n_i} \}$ and 
-$\{ y_{m_i} \}$.  Let
+$\{ x_{n_i} \}_{i=1}^\infty$ and 
+$\{ y_{m_i} \}_{i=1}^\infty$.  Let
 \begin{equation*}
 x := \lim_{i\to\infty} x_{n_i}
 \qquad \text{and} \qquad
@@ -1510,8 +1529,8 @@ such that $f(c) = 0$.
 \end{lemma}
 
 \begin{proof}
-We define two sequences $\{ a_n \}$
-and $\{ b_n \}$ inductively:
+We define two sequences $\{ a_n \}_{n=1}^\infty$
+and $\{ b_n \}_{n=1}^\infty$ inductively:
 \begin{enumerate}[(i)]
 \item Let $a_1 := a$ and $b_1 := b$.
 \item If $f\left(\frac{a_n+b_n}{2}\right) \geq 0$, let $a_{n+1} := a_n$ and
@@ -1532,7 +1551,8 @@ $b_n \geq b_{n+1}$ for all $n$, that is, the sequences are monotone.
 As $a_n < b_n \leq b_1 = b$ and 
 $b_n > a_n \geq a_1 = a$ for all $n$,
 the sequences are also bounded.  Therefore, the
-sequences converge.  Let $c := \lim\, a_n$ and $d := \lim\, b_n$,
+sequences converge.
+Let $c := \lim_{n\to\infty} a_n$ and $d := \lim_{n\to\infty} b_n$,
 where also $a \leq c \leq d \leq b$.  We need
 to show that $c=d$.
 Notice
@@ -1551,20 +1571,20 @@ d-c = \lim_{n\to\infty} (b_n - a_n) =
 \end{equation*}
 In other words, $d=c$.
 
-By construction, for all $n$, we have
+By construction, for all $n$,
 \begin{equation*}
 f(a_n) < 0
 \qquad \text{and} \qquad
 f(b_n) \geq 0 .
 \end{equation*}
 Since
-$\lim\, a_n = \lim\, b_n = c$
-and as $f$ is continuous, we may take 
+$\lim_{n\to\infty} a_n = \lim_{n\to\infty} b_n = c$
+and $f$ is continuous at $c$, we may take 
 limits in those inequalities:
 \begin{equation*}
-f(c) = \lim\, f(a_n) \leq 0
+f(c) = \lim_{n\to\infty} f(a_n) \leq 0
 \qquad \text{and} \qquad
-f(c) = \lim\, f(b_n) \geq 0 .
+f(c) = \lim_{n\to\infty} f(b_n) \geq 0 .
 \end{equation*}
 As $f(c) \geq 0$ and 
 $f(c) \leq 0$, we conclude $f(c) = 0$.
@@ -1622,22 +1642,21 @@ thus there is a root in $(1.75,1.875)$.  We follow this procedure until we gain
 sufficient precision.  In fact, the root is at $c \approx 1.7549$.
 \end{example}
 
-The technique above is the simplest method of finding roots of polynomials,
-which is perhaps the most common problem in applied
-mathematics.  In general, finding roots is hard to do quickly, precisely,
+The technique is the simplest method of finding roots of polynomials,
+a common problem in applied mathematics.
+In general, finding roots is hard to do quickly, precisely,
 and automatically.
 There are other, faster methods of finding roots of polynomials, such
 as Newton's method.  One advantage of the method above is its
 simplicity.  The
-moment we find an initial interval where the intermediate value theorem
+moment we find an interval where the intermediate value theorem
 applies, we are guaranteed to find a root up to a desired
 precision in finitely many steps.  Furthermore, the bisection
-method finds
-roots of any
+method finds roots of any
 continuous function, not just a polynomial.
 
-The theorem guarantees at least one $c$ such that $f(c) = y$, but there
-may be many different roots of the equation $f(c) = y$.  If we follow
+The theorem guarantees one $c$ such that $f(c) = y$, but there
+may be other roots of the equation $f(c) = y$.  If we follow
 the procedure of the proof, we are guaranteed to find approximations to
 one such root.  We need to work harder to find any other roots.
 
@@ -1723,9 +1742,9 @@ there exists a number $x > 0$ such that $x^k = y$.
 
 Proof: If $y=1$, then it is clear, so assume $y\not= 1$.
 Let $f(x) := x^k - y$.  We notice $f(0) = -y < 0$.
-If $y < 1$, then notice that $f(1) = 1^k -y > 0$.  If $y > 1$,
-then notice that $f(y) = y^k-y = y(y^{k-1}-1) > 0$.
-Apply Bolzano's theorem to find an $x$ such that $f(x) = 0$,
+If $y < 1$, then $f(1) = 1^k -y > 0$.  If $y > 1$,
+then $f(y) = y^k-y = y(y^{k-1}-1) > 0$.
+In either case, apply Bolzano's theorem to find an $x > 0$ such that $f(x) = 0$,
 or in other words $x^k = y$.
 \end{example}
 
@@ -1933,12 +1952,12 @@ $f \colon [0,1] \to \R$, defined by $f(x) := x^2$, is uniformly continuous.
 
 Proof: Note that $0 \leq x,c \leq 1$.  Then
 \begin{equation*}
-\abs{x^2-c^2} = \abs{x+c}\abs{x-c}
-\leq (\abs{x}+\abs{c}) \abs{x-c}
-\leq (1+1)\abs{x-c} .
+\sabs{x^2-c^2} = \sabs{x+c}\sabs{x-c}
+\leq (\sabs{x}+\sabs{c}) \sabs{x-c}
+\leq (1+1)\sabs{x-c} .
 \end{equation*}
 Therefore, given $\epsilon > 0$, let $\delta := \nicefrac{\epsilon}{2}$.
-If $\abs{x-c} < \delta$, then $\abs{x^2-c^2} < \epsilon$.
+If $\sabs{x-c} < \delta$, then $\sabs{x^2-c^2} < \epsilon$.
 
 \medskip
 
@@ -1947,12 +1966,12 @@ continuous.
 
 Proof: Suppose it is uniformly continuous, then for every $\epsilon > 0$,
 there would exist a $\delta > 0$ such that
-if $\abs{x-c} < \delta$, then $\abs{x^2 -c^2} < \epsilon$.
+if $\sabs{x-c} < \delta$, then $\sabs{x^2 -c^2} < \epsilon$.
 Take $x > 0$ and let
 $c := x+\nicefrac{\delta}{2}$.  Write
 \begin{equation*}
 \epsilon >
-\abs{x^2-c^2} = \abs{x+c}\abs{x-c}
+\sabs{x^2-c^2} = \sabs{x+c}\sabs{x-c}
 =
 (2x+\nicefrac{\delta}{2})\nicefrac{\delta}{2} 
 \geq 
@@ -2014,12 +2033,12 @@ such that for every $\delta > 0$, there exist points $x, y$ in $[a,b]$ with
 $\abs{x-y} < \delta$ and $\abs{f(x)-f(y)} \geq \epsilon$.
 
 So for the $\epsilon > 0$ above,
-we find sequences $\{ x_n \}$ and $\{ y_n \}$ such that
+we find sequences $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ such that
 $\abs{x_n-y_n} < \nicefrac{1}{n}$ and such that $\abs{f(x_n)-f(y_n)} \geq
 \epsilon$.  By
 \hyperref[thm:bwseq]{Bolzano--Weierstrass},
 there exists a convergent subsequence
-$\{ x_{n_k} \}$.  Let $c := \lim\, x_{n_k}$.
+$\{ x_{n_k} \}_{k=1}^\infty$.  Let $c := \lim_{k\to\infty} x_{n_k}$.
 As $a \leq x_{n_k} \leq b$ for all $k$, we have $a \leq c \leq b$.  Estimate
 \begin{equation*}
 \abs{y_{n_k} - c} =
@@ -2033,7 +2052,7 @@ As $a \leq x_{n_k} \leq b$ for all $k$, we have $a \leq c \leq b$.  Estimate
 \abs{x_{n_k}-c} .
 \end{equation*}
 As $\nicefrac{1}{n_k}$ and $\abs{x_{n_k}-c}$ both go to zero when
-$k$ goes to infinity, $\{ y_{n_k} \}$ converges and the limit
+$k$ goes to infinity, $\{ y_{n_k} \}_{k=1}^\infty$ converges and the limit
 is $c$.  We now show that $f$ is not continuous at $c$.
 Estimate
 \begin{equation*}
@@ -2053,8 +2072,8 @@ Or in other words,
 \abs{f(y_{n_k})-f(c)}  \geq
 \epsilon .
 \end{equation*}
-At least one of the sequences $\{ f(x_{n_k}) \}$  or
-$\{ f(y_{n_k}) \}$ cannot converge to $f(c)$, otherwise the
+At least one of the sequences $\bigl\{ f(x_{n_k}) \bigr\}_{k=1}^\infty$  or
+$\bigl\{ f(y_{n_k}) \bigr\}_{k=1}^\infty$ cannot converge to $f(c)$, otherwise the
 left-hand side of the inequality would go to zero while the right-hand side is positive.
 Thus $f$ cannot be continuous at $c$.
 \end{proof}
@@ -2073,7 +2092,8 @@ of the function.
 
 \begin{lemma} \label{unifcauchycauchy:lemma}
 Let $f \colon S \to \R$ be a uniformly continuous function.  Let
-$\{ x_n \}$ be a Cauchy sequence in $S$.  Then $\{ f(x_n) \}$ is Cauchy.
+$\{ x_n \}_{n=1}^\infty$ be a Cauchy sequence in $S$.
+Then $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ is Cauchy.
 \end{lemma}
 
 \begin{proof}
@@ -2108,20 +2128,21 @@ is continuous.
 \end{prop}
 
 \begin{proof}
-One direction is not difficult.  If $\widetilde{f}$ is continuous, then
+One direction is quick.  If $\widetilde{f}$ is continuous, then
 it is uniformly continuous by \thmref{unifcont:thm}.  As $f$ is the
-restriction of $\widetilde{f}$ to $(a,b)$, then $f$ is also uniformly continuous
-(easy exercise).
+restriction of $\widetilde{f}$ to $(a,b)$, $f$ is also uniformly continuous
+(exercise).
 
 Now suppose $f$ is uniformly continuous.  We must first show
 that the limits $L_a$ and $L_b$ exist.  Let us concentrate on $L_a$.
-Take a sequence $\{ x_n \}$ in $(a,b)$ such that $\lim\, x_n = a$.
-The sequence $\{ x_n \}$ is Cauchy, so by
+Take $\{ x_n \}_{n=1}^\infty$ in $(a,b)$ such that
+$\lim_{n\to\infty} x_n = a$.
+The sequence $\{ x_n \}_{n=1}^\infty$ is Cauchy, so by
 \lemmaref{unifcauchycauchy:lemma}
-the sequence $\{ f(x_n) \}$ is Cauchy and thus convergent.
-We have some number $L_1 := \lim\, f(x_n)$.  Take another sequence
-$\{ y_n \}$ in $(a,b)$ such that $\lim\, y_n = a$.  By the same reasoning
-we get $L_2 := \lim\, f(y_n)$.  If we show that $L_1 = L_2$, then
+the sequence $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ is Cauchy and thus convergent.
+Let $L_1 := \lim_{n\to\infty} f(x_n)$.  Take another sequence
+$\{ y_n \}_{n=1}^\infty$ in $(a,b)$ such that $\lim_{n\to\infty} y_n = a$.  By the same reasoning
+we get $L_2 := \lim_{n\to\infty} f(y_n)$.  If we show that $L_1 = L_2$, then
 the limit $L_a = \lim_{x\to a} f(x)$ exists.  Let $\epsilon > 0$ be given.
 Find $\delta > 0$ such that $\abs{x-y} < \delta$ implies $\abs{f(x)-f(y)} <
 \nicefrac{\epsilon}{3}$.  Find $M \in \N$ such that for
@@ -2358,11 +2379,13 @@ such that $f(x) = \widetilde{f}(x)$ for all $x \in \Q$.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Find a continuous $f \colon (0,1) \to \R$ and a sequence $\{ x_n \}$ in
-$(0,1)$ that is Cauchy, but such that $\bigl\{ f(x_n) \bigr\}$ is not Cauchy.
+Find a continuous $f \colon (0,1) \to \R$ and a sequence
+$\{ x_n \}_{n=1}^\infty$ in
+$(0,1)$ that is Cauchy, but such that $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ is not Cauchy.
 \item
-Prove that if $f \colon \R \to \R$ is continuous, and $\{ x_n \}$ is
-Cauchy, then $\bigl\{ f(x_n) \bigr\}$ is Cauchy.
+Prove that if $f \colon \R \to \R$ is continuous,
+and $\{ x_n \}_{n=1}^\infty$ is
+Cauchy, then $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ is Cauchy.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
@@ -2546,7 +2569,7 @@ We could say
 \lim_{x \to \infty} \sin(\pi x) \enspace \text{does not exist}.
 \end{equation*}
 Of course the notation is ambiguous:  Are we thinking of the
-sequence $\{ \sin (\pi n) \}_{n=1}^\infty$ or the function $\sin(\pi x)$
+sequence $\bigl\{ \sin (\pi n) \bigr\}_{n=1}^\infty$ or the function $\sin(\pi x)$
 of a real variable?  We are simply using the convention
 that $n \in \N$, while $x \in \R$.  When the notation is not clear,
 it is good to explicitly mention where the variable lives, or what kind
@@ -2568,7 +2591,7 @@ point of $S \subset \R$, and $L \in \R$.  Then
 \qquad \text{if and only if} \qquad
 \lim_{n\to\infty} f(x_n) = L
 \end{equation*}
-for all sequences $\{ x_n \}$ in $S$ such that $\lim\limits_{n\to\infty} x_n = \infty$.
+for all sequences $\{ x_n \}_{n=1}^\infty$ in $S$ such that $\lim\limits_{n\to\infty} x_n = \infty$.
 \end{lemma}
 
 The lemma also holds for the limit as $x \to -\infty$.
@@ -2579,8 +2602,8 @@ is left as an exercise.
 First suppose $f(x) \to L$ as $x \to \infty$.
 Given an $\epsilon > 0$, there exists an $M$ such that for all $x \geq M$,
 we have $\abs{f(x)-L} < \epsilon$.
-Let $\{ x_n \}$
-be a sequence in $S$ such that $\lim \, x_n = \infty$.  Then there exists an
+Let $\{ x_n \}_{n=1}^\infty$
+be a sequence in $S$ such that $\lim_{n\to\infty} x_n = \infty$.  Then there exists an
 $N$ such that for all $n \geq N$, we have $x_n \geq M$.  And thus
 $\abs{f(x_n)-L} < \epsilon$.
 
@@ -2589,9 +2612,9 @@ not go to $L$ as $x \to \infty$.
 This means that there exists an $\epsilon > 0$,
 such that for every $n \in \N$, there exists an $x \in S$, $x \geq n$, let
 us call it $x_n$, such that $\abs{f(x_n)-L} \geq \epsilon$.
-Consider the sequence $\{ x_n \}$.  Clearly 
-$\{ f(x_n) \}$ does not converge to $L$.  It remains to note
-that $\lim\, x_n = \infty$, because $x_n \geq n$ for all $n$.
+Consider the sequence $\{ x_n \}_{n=1}^\infty$.  Clearly 
+$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ does not converge to $L$.  It remains to note
+that $\lim_{n\to\infty} x_n = \infty$, because $x_n \geq n$ for all $n$.
 \end{proof}
 
 Using the lemma, we again translate results about sequential
@@ -2748,7 +2771,7 @@ $\lim\limits_{x\to-\infty} P(x) = -\infty$ (see previous exercise).
 \end{exercise}
 
 \begin{exercise}
-Let $\{ x_n \}$ be a sequence.  Consider $S := \N \subset \R$, and
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence.  Consider $S := \N \subset \R$, and
 $f \colon S \to \R$ defined by $f(n) := x_n$.  Show that
 the two notions of limit,
 \begin{equation*}
@@ -2766,8 +2789,8 @@ or $c = -\infty$.  Let $f \colon S \to \R$ be a function and suppose
 $L = \infty$ or $L = -\infty$.  Show that
 \begin{equation*}
 \lim_{x\to c} f(x) = L \qquad \text{if and only if} \qquad
-\lim_{n\to\infty} f(x_n) = L \enspace \text{for all sequences } \{ x_n \}
-\text{ such that } \lim\, x_n = c .
+\lim_{n\to\infty} f(x_n) = L \enspace \text{for all sequences }
+\{ x_n \}_{n=1}^\infty \text{ such that } \lim_{n\to\infty} x_n = c .
 \end{equation*}
 \end{exercise}
 
@@ -2942,7 +2965,7 @@ As $c$ is a discontinuity, $a < b$.
 If $x < c$, then $f(x) \leq a$, and
 if $x > c$, then $f(x) \geq b$.  Therefore
 no point
-in $(a,b) \setminus \{ f(c) \}$ is in $f(I)$.
+in $(a,b) \setminus \bigl\{ f(c) \bigr\}$ is in $f(I)$.
 However there exists $x_1 \in I$, $x_1 < c$, so
 $f(x_1) \leq a$, and there exists $x_2 \in I$, $x_2 > c$,
 so $f(x_2) \geq b$.  Both $f(x_1)$ and $f(x_2)$ are in $f(I)$,
