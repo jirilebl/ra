@@ -2045,10 +2045,10 @@ Also define
 $c_n := \sup \{ x_{n_k} : k \geq n \}$.
 It is not true that $\{ c_n \}_{n=1}^\infty$ is necessarily a subsequence
 of $\{ a_n \}_{n=1}^\infty$.
-However, as $n_k \geq k$ for all $k$, we have that
+However, as $n_k \geq k$ for all $k$, we have
 $\{ x_{n_k} : k \geq n \} \subset \{ x_k : k \geq n \}$.
 A supremum of a subset is less than or equal to the supremum of the
-set and therefore
+set, and therefore
 \begin{equation*}
 c_n \leq a_n \qquad \text{for all $n$}.
 \end{equation*}
@@ -2122,9 +2122,9 @@ $a_i \leq x_{n_i} \leq b_i$ and such that $\lim_{i\to\infty} a_i =
 \lim_{i\to\infty} b_i$.   That
 $x_{n_i}$ converges then follows by the \hyperref[squeeze:lemma]{squeeze lemma}.
 
-We define the sequences inductively.  We will always have that $a_i < b_i$,
-and that $x_n \in [a_i,b_i]$ for infinitely many
-$n \in \N$.
+We define the sequences inductively.  We will define the sequences so that
+for all $i$, we have $a_i < b_i$,
+and that $x_n \in [a_i,b_i]$ for infinitely many $n \in \N$.
 We have already defined $a_1$ and $b_1$.  We take $n_1 := 1$, that is
 $x_{n_1} = x_1$.
 Suppose that up to some $k \in \N$,
@@ -2994,9 +2994,9 @@ Let $s_k$ be the partial sum.  We write
 \abs{\frac{1}{2^k}} = 
 \frac{1}{2^k} .
 \end{equation*}
-The sequence $\bigl\{ \frac{1}{2^k} \bigr\}$, and
-therefore $\bigl\{ \abs{1-s_k} \bigr\}$,
-converges to zero.  So, $\{ s_k \}$ converges to 1.
+The sequence $\bigl\{ \frac{1}{2^k} \bigr\}_{k=1}^\infty$, and
+therefore $\bigl\{ \abs{1-s_k} \bigr\}_{k=1}^\infty$,
+converges to zero.  So, $\{ s_k \}_{k=1}^\infty$ converges to 1.
 \end{example}
 
 \begin{prop} \label{geometric:prop}
@@ -3051,7 +3051,7 @@ $\sum_{n=1}^{M-1} x_n$ is a fixed number.  Use
 \begin{defn}
 A series $\sum_{n=1}^\infty x_n$ is said to be \emph{Cauchy} or a
 \emph{Cauchy series}\index{Cauchy series}
-if the sequence of partial sums $\{ s_n \}$ is a Cauchy sequence.
+if the sequence of partial sums $\{ s_n \}_{n=1}^\infty$ is a Cauchy sequence.
 \end{defn}
 
 A sequence of real numbers converges if and only if it is
@@ -3094,7 +3094,7 @@ the sequence $\{ x_n \}_{n=1}^\infty$ is convergent and
 
 \begin{proof}
 Let $\epsilon > 0$ be given.  As $\sum_{n=1}^\infty x_n$ is convergent, it is Cauchy.
-Thus we find an $M$ such that for every $n \geq M$, we have
+Thus we find an $M$ such that for every $n \geq M$,
 \begin{equation*}
 \epsilon > 
 \abs{ \sum_{i={n+1}}^{n+1} x_i }
@@ -3108,7 +3108,7 @@ Hence for every $n \geq M+1$, we have $\abs{x_{n}} < \epsilon$.
 If $r \geq 1$ or $r \leq -1$, then the geometric series $\sum_{n=0}^\infty r^n$
 diverges.
 
-Proof: $\abs{r^n} = \abs{r}^n \geq 1^n = 1$.  So the terms do not go to zero
+Proof: $\abs{r^n} = \abs{r}^n \geq 1^n = 1$.  The terms do not go to zero
 and the series cannot converge.
 \end{example}
 
@@ -3117,8 +3117,9 @@ The implication, however, goes only one way.
 Let us give an example.
 
 \begin{example} \label{example:harmonicseries}
-The series $\sum_{n=1}^\infty \nicefrac{1}{n}$ diverges (despite the fact that $\lim
-\nicefrac{1}{n} = 0$).  This is the famous \emph{\myindex{harmonic series}}%
+The series $\sum_{n=1}^\infty \nicefrac{1}{n}$ diverges (despite the fact that
+$\lim_{n\to\infty} \nicefrac{1}{n} = 0$).
+This is the famous \emph{\myindex{harmonic series}}%
 \footnote{The divergence of the harmonic series was known 
 long before the theory of series was made rigorous.  The proof we
 give is the earliest proof and was given by
@@ -3167,7 +3168,7 @@ s_{2^k} =
 \geq
 1 + \sum_{i=1}^k \frac{1}{2} = 1 + \frac{k}{2} .
 \end{equation*}
-As $\{ \nicefrac{k}{2} \}$ is unbounded by the
+As $\{ \nicefrac{k}{2} \}_{k=1}^\infty$ is unbounded by the
 \hyperref[thm:arch:i]{Archimedean property}, that means that
 $\{ s_{2^k} \}_{k=1}^\infty$ is unbounded,
 and therefore $\{ s_n \}_{n=1}^\infty$ is unbounded.
@@ -3499,7 +3500,7 @@ s_{2^k-1} <
 \right)}^i .
 \end{equation*}
 For every $n$ there is a $k \geq 2$ such that $n \leq 2^k-1$, and
-as $\{ s_n \}$ is a monotone sequence, $s_n \leq s_{2^k-1}$.
+as $\{ s_n \}_{n=1}^\infty$ is a monotone sequence, $s_n \leq s_{2^k-1}$.
 So for all $n$,
 \begin{equation*}
 s_n < 
@@ -3565,7 +3566,7 @@ bit, see \exerciseref{exercise:strongerratiotest}.
 
 \begin{proof}
 If $L > 1$, then
-\lemmaref{seq:ratiotest} says that the sequence $\{ x_n \}$
+\lemmaref{seq:ratiotest} says that the sequence $\{ x_n \}_{n=1}^\infty$
 diverges.  Since it is a necessary condition for the convergence of series
 that the terms go to zero, we know that $\sum_{n=1}^\infty x_n$ must diverge.
 
@@ -3615,7 +3616,7 @@ For $k > M$, write the partial sum as
 & =
 \left(\sum_{n=1}^{M} \abs{x_n} \right)
 +
-(\abs{x_M} r^{-M})
+\bigl(\abs{x_M} r^{-M}\bigr)
 \left( \sum_{n=M+1}^{k} r^n \right) .
 \end{split}
 \end{equation*}
@@ -3629,13 +3630,13 @@ limit as $k$ goes to infinity on the right-hand side above to obtain
 & <
 \left(\sum_{n=1}^{M} \abs{x_n} \right)
 +
-(\abs{x_M} r^{-M})
+\bigl(\abs{x_M} r^{-M}\bigr)
 \left( \sum_{n=M+1}^{k} r^n \right) 
 \\
 & \leq
 \left(\sum_{n=1}^{M} \abs{x_n} \right)
 +
-(\abs{x_M} r^{-M})
+\bigl(\abs{x_M} r^{-M}\bigr)
 \left( \sum_{n=M+1}^{\infty} r^n \right) .
 \end{split}
 \end{equation*}
@@ -3825,7 +3826,7 @@ Prove that $\sum_{n=1}^\infty x_n^2$ converges.
 \end{exercise}
 
 \begin{exercise}[Challenging] \label{exercise:cauchycondensation}
-Suppose $\{ x_n\}$ is a decreasing sequence of positive numbers.
+Suppose $\{ x_n\}_{n=1}^\infty$ is a decreasing sequence of positive numbers.
 The proof of convergence/divergence for the $p$-series generalizes.
 Prove the so-called 
 \emph{\myindex{Cauchy condensation principle}}:
@@ -3903,23 +3904,20 @@ L := \limsup_{n\to\infty} {\sabs{x_n}}^{1/n} .
 \end{prop}
 
 \begin{proof}
-%If $L=\infty$, then
-%$\bigl\{ {\abs{x_{n_k}}}^{1/n_k} \bigr\}$ is unbounded and therefore so is
-%$\{ x_n \}$, and so the series diverges.
 If $L > 1$, then there exists\footnote{%
 In case $L=\infty$, see \exerciseref{exercise:extendsubseqlimsupinf}.
-Alternatively, note that if $L=\infty$, then $\bigl\{ {\abs{x_{n}}}^{1/n}
+Alternatively, note that if $L=\infty$, then $\bigl\{ {\sabs{x_{n}}}^{1/n}
 \bigr\}_{n=1}^\infty$
 and thus $\{ x_n \}_{n=1}^\infty$ is unbounded.}
-a subsequence $\{ x_{n_k} \}$ such that
-$L = \lim_{k\to\infty} {\abs{x_{n_k}}}^{1/n_k}$.  Let
+a subsequence $\{ x_{n_k} \}_{k=1}^\infty$ such that
+$L = \lim_{k\to\infty} {\sabs{x_{n_k}}}^{1/n_k}$.  Let
 $r$ be such that $L > r > 1$.  There exists an $M$ such
 that for all $k \geq M$, we have 
-${\abs{x_{n_k}}}^{1/n_k} > r > 1$, or in other words
-$\abs{x_{n_k}} > r^{n_k} > 1$.
+${\sabs{x_{n_k}}}^{1/n_k} > r > 1$, or in other words
+$\sabs{x_{n_k}} > r^{n_k} > 1$.
 The subsequence 
-$\{ \abs{x_{n_k}} \}$, and therefore also
-$\{ \abs{x_{n}} \}$,
+$\{ \sabs{x_{n_k}} \}_{k=1}^\infty$, and therefore also
+$\{ \sabs{x_{n}} \}_{n=1}^\infty$,
 cannot possibly converge to zero, and so the series diverges.
 
 Now suppose $L < 1$.  Pick $r$ such that $L < r < 1$.
@@ -3977,15 +3975,15 @@ s_{2k} =
 =
 \sum_{\ell=1}^{k} (-x_{2\ell-1} + x_{2\ell}) .
 \end{equation*}
-The sequence $\{ x_n \}$ is decreasing and so $(-x_{2\ell-1}+x_{2\ell}) \leq 0$
+The sequence $\{ x_n \}_{n=1}^\infty$ is decreasing, so $(-x_{2\ell-1}+x_{2\ell}) \leq 0$
 for all $\ell$.
-Therefore, the subsequence $\{ s_{2k} \}$ of partial sums
+Thus, the subsequence $\{ s_{2k} \}_{k=1}^\infty$ of partial sums
 is a decreasing sequence.  Similarly, $(x_{2\ell}-x_{2\ell+1}) \geq 0$, and so
 \begin{equation*}
 s_{2k} = - x_1 + ( x_2 - x_3 ) + \cdots + ( x_{2k-2} - x_{2k-1} ) + x_{2k}
 \geq -x_1 .
 \end{equation*}
-The sequence $\{ s_{2k} \}_{k=1}^\infty$ is decreasing and bounded below, so it converges.
+As $\{ s_{2k} \}_{k=1}^\infty$ is decreasing and bounded below, it converges.
 Let $a := \lim_{k\to\infty} s_{2k}$.
 
 We wish to show that $\lim_{m\to\infty} s_m = a$ (and not just for the subsequence).
@@ -4031,7 +4029,7 @@ Consider a series
 \sum_{n=1}^\infty x_n .
 \end{equation*}
 Given a bijective function $\sigma \colon \N \to \N$, the corresponding
-rearrangement\index{rearrangement of a series} is the following
+rearrangement\index{rearrangement of a series} is the 
 series:
 \begin{equation*}
 \sum_{k=1}^\infty x_{\sigma(k)} .
@@ -4126,7 +4124,7 @@ and let $N' > N$ be where we first switch back from even to odd.  Then
 L + \frac{1}{\sigma(N)} \geq \sum_{n=1}^{N-1} a_{\sigma(n)}
 > \sum_{n=1}^{N'-1} a_{\sigma(n)} > L- \frac{1}{\sigma(N')}.
 \end{equation*}
-And similarly for switching in the other direction.  Therefore,
+Similarly for switching in the other direction.  Therefore,
 the sum up to $N'-1$ is within $\frac{1}{\min \{ \sigma(N), \sigma(N') \}}$
 of $L$.  As
 we switch infinitely many times we obtain that $\sigma(N) \to \infty$
