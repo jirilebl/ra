@@ -15,8 +15,9 @@ definition.
 \begin{defn}
 A \emph{\myindex{sequence}} (of real numbers) is a function $x \colon \N \to
 \R$.  Instead of $x(n)$, we 
-usually denote the $n$th element in the sequence by $x_n$.  To denote a
-sequence we write
+usually denote the $n$th element in the sequence by $x_n$.
+To denote a sequence we write%
+\footnote{It is common to use $\{ x_n \}$ or $\{ x_n \}_n$ for brevity.}%
 \glsadd{not:sequence}%
 \begin{equation*}
 \{ x_n \}_{n=1}^\infty.
@@ -56,7 +57,7 @@ to that of a set, the notions are
 distinct.  For example, the sequence $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ is the sequence
 $-1,1,-1,1,-1,1,\ldots$, whereas the set of values, the
 \emph{range of the sequence}\index{range of a sequence},
-is just the set $\{ -1, 1 \}$.  We can write this set
+is just the set $\{ -1, 1 \}$.  We write this set
 as $\bigl\{ {(-1)}^n : n \in \N \bigr\}$.
 % When ambiguity can arise, we
 %use the words \emph{sequence} or \emph{set} to distinguish the two
@@ -77,8 +78,9 @@ A sequence $\{ x_n \}_{n=1}^\infty$ is said to \emph{converge} to a number
 $x \in \R$ if for every $\epsilon > 0$, there exists an $M \in \N$ such
 that $\abs{x_n - x} < \epsilon$ for all $n \geq M$.
 The number $x$ is called a \emph{limit} of the sequence.
-If the limit $x$ is unique, we write
-\glsadd{not:limseq}
+If the limit $x$ is unique, we write%
+\footnote{In text, this may get rendered as $\lim_{n\to\infty} x_n$.}
+\glsadd{not:limseq}%
 \begin{equation*}
 \lim_{n\to \infty} x_n := x .
 \end{equation*}
@@ -97,7 +99,7 @@ number.
 For the next couple of examples, let us pretend
 we have already proved that limits are unique.
 
-It is good to know intuitively what a limit means.  It means that eventually
+Intuitively, the limit being $x$ means that eventually
 every number in the sequence is close to the number $x$.  More precisely,
 we can get arbitrarily close to the limit, provided we go far enough in the
 sequence.  It does not mean we ever reach the limit.  It is possible,

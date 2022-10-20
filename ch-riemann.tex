@@ -147,8 +147,8 @@ $x \in \Q$ and $f(x) := 0$ if $x \notin \Q$.  Then
 \overline{\int_0^1} f = 1 .
 \end{equation*}
 The reason is that for every $i$, we have 
-$m_i = \inf \{ f(x) : x \in [x_{i-1},x_i] \} = 0$  and
-$M_i = \sup \{ f(x) : x \in [x_{i-1},x_i] \} = 1$.  Thus
+$m_i = \inf \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\} = 0$  and
+$M_i = \sup \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\} = 1$.  Thus
 \begin{equation*}
 L(P,f) = \sum_{i=1}^n 0 \cdot \Delta x_i = 0 , \quad \text{and} \quad
 U(P,f) = \sum_{i=1}^n 1 \cdot \Delta x_i = \sum_{i=1}^n \Delta x_i = 1  .
@@ -559,7 +559,7 @@ feel free to use the propositions of this section).%\propref{intulbound:prop}).
 
 \begin{exercise}
 Let $f \colon [a,b] \to \R$ be a bounded function.
-Suppose there exists a sequence of partitions $\{ P_k \}$ of $[a,b]$
+Suppose there exists a sequence of partitions $\{ P_k \}_{k=1}^\infty$ of $[a,b]$
 such that
 \begin{equation*}
 \lim_{k \to \infty} \bigl( U(P_k,f) - L(P_k,f) \bigr) = 0 .
@@ -906,7 +906,7 @@ Let $f$ and $g$ be in $\sR[a,b]$ and $\alpha \in \R$.
 \pagebreak[2]
 Let us prove the first item for $\alpha \geq 0$. 
 Let $P$ be a partition of $[a,b]$.
-Let $m_i := \inf \{ f(x) : x \in [x_{i-1},x_i] \}$ as usual.
+Let $m_i := \inf \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\}$ as usual.
 Since $\alpha$ is nonnegative, we can move the multiplication by $\alpha$
 past the infimum,
 \begin{equation*}
@@ -1129,9 +1129,9 @@ compute the integral.
 
 \begin{lemma} \label{lemma:boundedimpriemann}
 Let $f \colon [a,b] \to \R$ be a bounded function,
-$\{ a_n \}$ and $\{b_n \}$ be sequences such that
+$\{ a_n \}_{n=1}^\infty$ and $\{b_n \}_{n=1}^\infty$ be sequences such that
 $a < a_n < b_n < b$ for all $n$, with
-$\lim \, a_n = a$ and $\lim \, b_n = b$.
+$\lim_{n\to\infty} a_n = a$ and $\lim_{n\to\infty} b_n = b$.
 Suppose $f \in \sR[a_n,b_n]$ for all $n$.
 Then $f \in \sR[a,b]$ and
 \begin{equation*}
@@ -2256,8 +2256,9 @@ x^y := \exp\bigl(y\ln(x)\bigr) .
 \end{equation*}
 As $\exp$ is continuous, then $x^y$ is a continuous function of $y$.
 Therefore, we would
-obtain the same result had we taken a sequence of rational numbers $\{ y_n \}$
-approaching $y$ and defined $x^y = \lim\, x^{y_n}$.
+obtain the same result had we taken a sequence of rational numbers
+$\{ y_n \}_{n=1}^\infty$
+approaching $y$ and defined $x^y = \lim_{n\to\infty} x^{y_n}$.
 
 Define the number $e$,
 sometimes called \emph{\myindex{Euler's number}} or
@@ -2608,9 +2609,9 @@ $f$ is Riemann integrable on $[a,b]$ for all $b > a$.
 \int_a^\infty f = \sup \left\{ \int_a^x f : x \geq a \right\} .
 \end{equation*}
 \item
-Suppose $\{ x_n \}$
-is a sequence with $\lim\, x_n = \infty$.  Then
-$\int_a^\infty f$ converges if and only if $\lim\, \int_a^{x_n} f$ exists, in
+Suppose $\{ x_n \}_{n=1}^\infty$
+is a sequence with $\lim_{n\to\infty} x_n = \infty$.  Then
+$\int_a^\infty f$ converges if and only if $\lim_{n\to\infty} \int_a^{x_n} f$ exists, in
 which case
 \begin{equation*}
 \int_a^\infty f = \lim_{n\to\infty} \int_a^{x_n} f .
@@ -2639,10 +2640,10 @@ $A - \int_a^x f < \epsilon$ for all $x \geq N$ and hence
 $\int_a^\infty f$ converges to $A$.
 
 Let us look at the second item.
-If $\int_a^\infty f$ converges, then every sequence $\{ x_n \}$ going to
+If $\int_a^\infty f$ converges, then every sequence $\{ x_n \}_{n=1}^\infty$ going to
 infinity works.  The trick is
-proving the other direction.  Suppose $\{ x_n \}$ is such that $\lim\, x_n =
-\infty$ and
+proving the other direction.  Suppose $\{ x_n \}_{n=1}^\infty$ is such that
+$\lim_{n\to\infty} x_n = \infty$ and
 \begin{equation*}
 \lim_{n\to\infty} \int_a^{x_n} f = A
 \end{equation*}
@@ -2654,7 +2655,7 @@ $x \geq x_N$
 \begin{equation*}
 A - \epsilon < \int_a^{x_N} f \leq \int_a^x f .
 \end{equation*}
-As $\{ x_n \}$ goes to $\infty$, then for any given
+As $\{ x_n \}_{n=1}^\infty$ goes to $\infty$, then for any given
 $x$, there is an $x_m$ such that $m \geq N$ and $x \leq x_m$.  Then
 \begin{equation*}
 \int_a^{x} f \leq \int_a^{x_m} f < A + \epsilon .
@@ -2705,7 +2706,7 @@ such that
 \end{equation*}
 As $g$ is nonnegative, if $B \leq b < c$, then
 $\int_b^c g < \epsilon$ as well.
-Let $\{ x_n \}$ be a sequence going to infinity.  Let $M$ be such that
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence going to infinity.  Let $M$ be such that
 $x_n \geq B$ for all $n \geq M$.  Take $n, m \geq M$,
 with $x_n \leq x_m$,
 \begin{equation*}
@@ -2714,16 +2715,17 @@ with $x_n \leq x_m$,
 \abs{\int_{x_n}^{x_m} f} 
 \leq \int_{x_n}^{x_m} g < \epsilon .
 \end{equation*}
-Therefore, the sequence $\{ \int_a^{x_n} f \}_{n=1}^\infty$ is Cauchy and hence converges.
+Therefore, the sequence $\bigl\{ \int_a^{x_n} f \bigr\}_{n=1}^\infty$ is Cauchy and hence converges.
 
-We need to show that the limit is unique.  Suppose $\{ x_n \}$ is a sequence
+We need to show that the limit is unique.  Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence
 converging to infinity such that
-$\{ \int_a^{x_n} f \}$ converges to $L_1$, and $\{ y_n \}$ is a sequence
+$\bigl\{ \int_a^{x_n} f \bigr\}_{n=1}^\infty$ converges to $L_1$, and $\{
+y_n \}_{n=1}^\infty$ is a sequence
 converging to infinity is such that
-$\{ \int_a^{y_n} f \}$ converges to $L_2$.  Then there must be some $n$ such
+$\bigl\{ \int_a^{y_n} f \bigr\}_{n=1}^\infty$ converges to $L_2$.  Then there must be some $n$ such
 that
-$\abs{\int_a^{x_n} f - L_1} < \epsilon$ and 
-$\abs{\int_a^{y_n} f - L_2} < \epsilon$.  We can also suppose $x_n \geq B$
+$\babs{\int_a^{x_n} f - L_1} < \epsilon$ and 
+$\babs{\int_a^{y_n} f - L_2} < \epsilon$.  We can also suppose $x_n \geq B$
 and $y_n \geq B$.  Then
 \begin{equation*}
 \abs{L_1 - L_2} \leq
@@ -3040,8 +3042,8 @@ not important right now.  What is important is that
 \int_{-\infty}^\infty \abs{\operatorname{sinc}(x)} \,dx = \infty .
 \end{equation*}
 The integral of the sinc function is a continuous analogue of the
-alternating harmonic series $\sum \nicefrac{{(-1)}^n}{n}$, while the
-absolute value is like the regular harmonic series $\sum \nicefrac{1}{n}$.
+alternating harmonic series $\sum_{n=1}^\infty \nicefrac{{(-1)}^n}{n}$, while the
+absolute value is like the regular harmonic series $\sum_{n=1}^\infty \nicefrac{1}{n}$.
 In particular, the fact that the integral converges must be done directly
 rather than using comparison test.
 
@@ -3142,7 +3144,7 @@ For $k \in \N$,
 We find the partial sums of a series with positive terms.
 The series
 converges as
-$\sum \frac{1}{\pi n (n+1)}$ is a convergent series.  Thus
+$\sum_{n=1}^\infty \frac{1}{\pi n (n+1)}$ is a convergent series.  Thus
 as a sequence,
 \begin{equation*}
 \lim_{k\to \infty} \int_{2\pi}^{2k\pi} \frac{\sin(x)}{x} \,dx
@@ -3344,7 +3346,7 @@ Finish the proof of \propref{impropriemann:ptest}.
 \end{exercise}
 
 \begin{exercise}
-Find out for which $a \in \R$ does $\sum\limits_{n=1}^\infty e^{an}$ converge.
+Find out for which $a \in \R$ does $\sum_{n=1}^\infty e^{an}$ converge.
 When the series converges, find an upper bound for the sum.
 \end{exercise}
 
@@ -3352,7 +3354,7 @@ When the series converges, find an upper bound for the sum.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Estimate $\sum\limits_{n=1}^\infty \frac{1}{n(n+1)}$ correct to within 0.01
+Estimate $\sum_{n=1}^\infty \frac{1}{n(n+1)}$ correct to within 0.01
 using the integral test.
 \item
 Compute the limit of the series exactly
