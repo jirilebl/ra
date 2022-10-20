@@ -569,10 +569,11 @@ See \figureref{fig:critpt} for an illustration.
 \end{myfigureht}
 
 As $a < c < b$, there exist
-sequences $\{ x_n\}$ and $\{ y_n \}$ in $[a,b]$ and within $\delta$ of $c$,
+sequences $\{ x_n \}_{n=1}^\infty$ and
+$\{ y_n \}_{n=1}^\infty$ in $[a,b]$ and within $\delta$ of $c$,
 such that $x_n > c$, and
 $y_n < c$ for all $n \in \N$, and such that
- $\lim\, x_n = \lim\, y_n = c$.
+$\lim_{n\to\infty} x_n = \lim_{n\to\infty} y_n = c$.
 Since $f$
 is differentiable at $c$,
 \begin{equation*}
@@ -841,7 +842,8 @@ at $c$.
 \begin{proof}
 We prove the first item and leave the second to the reader.
 Take $x \in (a,c)$
-and a sequence $\{ y_n\}$ such that $x < y_n < c$ for all $n$ and $\lim\, y_n = c$.
+and a sequence $\{ y_n\}_{n=1}^\infty$ such that $x < y_n < c$ for all $n$
+and $\lim_{n\to\infty} y_n = c$.
 By the preceding proposition,
 $f$ is decreasing on $(a,c)$ so $f(x) \geq f(y_n)$.
 As $f$ is
@@ -849,7 +851,8 @@ continuous at $c$, we take the limit to get
 $f(x) \geq f(c)$ for all $x \in (a,c)$.
 
 Similarly, take $x \in (c,b)$
-and $\{ y_n\}$ a sequence such that $c < y_n < x$ and $\lim\, y_n = c$.
+and $\{ y_n\}_{n=1}^\infty$ a sequence such that $c < y_n < x$ and
+$\lim_{n\to\infty} y_n = c$.
 The function is increasing on $(c,b)$ so $f(x) \geq f(y_n)$.
 By continuity of $f$ we get
 $f(x) \geq f(c)$ for all $x \in (c,b)$.  Thus $f(x) \geq f(c)$ for all
@@ -974,9 +977,9 @@ is $2 \sin (\nicefrac{1}{x}) \bigl( x \sin (\nicefrac{1}{x}) -
 \cos(\nicefrac{1}{x}) \bigr)$.
 As an exercise, show that for $x_n = \frac{4}{(8n+1)\pi}$,
 we have
-$\lim\, f'(x_n) = -1$, and for
+$\lim_{n\to\infty} f'(x_n) = -1$, and for
 $y_n = \frac{4}{(8n+3)\pi}$, we have
-$\lim\, f'(y_n) = 1$.  Hence if $f'$ exists at $0$,
+$\lim_{n\to\infty} f'(y_n) = 1$.  Hence if $f'$ exists at $0$,
 then it cannot be continuous.
 
 Let us show that $f'$ exists at $0$.  We claim that the derivative is zero.
@@ -1026,7 +1029,7 @@ that $f$ is a Lipschitz continuous function.
 \begin{exercise}
 \pagebreak[1]
 Suppose $f \colon [a,b] \to \R$ is differentiable and $c \in [a,b]$.
-Show there exists a sequence $\{ x_n \}$ converging to $c$, $x_n
+Show there exists a sequence $\{ x_n \}_{n=1}^\infty$ converging to $c$, $x_n
 \not= c$ for all $n$, such that
 \begin{equation*}
 f'(c) = \lim_{n\to \infty} f'(x_n).

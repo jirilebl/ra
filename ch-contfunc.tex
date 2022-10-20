@@ -710,8 +710,9 @@ the corollary does not hold.
 
 \sectionnotes{2--2.5 lectures}
 
-You undoubtedly heard of continuous functions in your schooling.  A
-high-school criterion for this concept is that a function is continuous if
+%You undoubtedly heard of continuous functions in your schooling.
+A high-school criterion for the concept of continuity
+is that a function is continuous if
 we can draw its graph without lifting the pen from the paper.  While that
 intuitive concept may be useful in simple situations, we require
 rigor.  The following definition took three great mathematicians
@@ -772,21 +773,22 @@ if and only if the limit of $f(x)$ as $x \to c$ exists and
 \item \label{contbasic:prop:iii}
 The function $f$ is continuous at $c$ if and only if for every sequence
 $\{ x_n \}_{n=1}^\infty$
-where $x_n \in S$ and $\lim_{n\to\infty} x_n = c$, the sequence
+where $x_n \in S$ and $\lim\limits_{n\to\infty} x_n = c$, the sequence
 $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges
 to $f(c)$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-We start with \eqref{contbasic:prop:i}.  Suppose $c$ is not a cluster point of
+\pagebreak[2]
+We start with \ref{contbasic:prop:i}.  Suppose $c$ is not a cluster point of
 $S$.  Then there exists a $\delta > 0$
 such that $S \cap (c-\delta,c+\delta) = \{ c \}$.
 For any $\epsilon > 0$, simply pick this given $\delta$.
 The only $x \in S$ such that $\abs{x-c} < \delta$ is $x=c$.  Then
 $\abs{f(x)-f(c)} = \abs{f(c)-f(c)} = 0 < \epsilon$.
 
-Let us move to \eqref{contbasic:prop:ii}.
+Let us move to \ref{contbasic:prop:ii}.
 Suppose $c$ is a cluster point of $S$.  Let us first suppose
 that $\lim_{x\to c} f(x) = f(c)$.  Then for every $\epsilon > 0$,
 there is a $\delta > 0$ such that if $x \in S \setminus \{ c \}$
@@ -799,7 +801,7 @@ $\abs{f(x)-f(c)} < \epsilon$.  Then the statement is, of course, still true if
 $x \in S \setminus \{ c \} \subset S$.  Therefore, $\lim_{x\to c} f(x) =
 f(c)$.
 
-For \eqref{contbasic:prop:iii}, first suppose $f$ is continuous at $c$.
+For \ref{contbasic:prop:iii}, first suppose $f$ is continuous at $c$.
 Let $\{ x_n \}_{n=1}^\infty$
 be a sequence such that $x_n \in S$ and $\lim_{n\to\infty} x_n = c$.  Let $\epsilon > 0$
 be given.  Find a $\delta > 0$ such that $\abs{f(x)-f(c)} < \epsilon$
@@ -857,7 +859,7 @@ algebraic operations with respect to limits of sequences, which we proved in
 the previous chapter, to prove a much more general result.
 
 \begin{prop}
-Let $f \colon \R \to \R$ be a \emph{\myindex{polynomial}}.  That is
+Let $f \colon \R \to \R$ be a \emph{\myindex{polynomial}}.  That is,
 \begin{equation*}
 f(x) = a_d x^d + a_{d-1} x^{d-1} + \cdots + a_1 x + a_0 ,
 \end{equation*}
@@ -888,6 +890,7 @@ a_d x_n^d + a_{d-1} x_n^{d-1} + \cdots + a_1 x_n + a_0
 =
 \lim_{n \to \infty}
 f(x_n) .
+\avoidbreak
 \end{split}
 \end{equation*}
 Thus $f$ is continuous at $c$.  As $f$ is continuous at all $c \in \R$,
@@ -1015,7 +1018,7 @@ ${\bigl(\sin(\nicefrac{1}{x})\bigr)}^2$ is continuous on $(0,\infty)$.
 
 When $f$ is not continuous at $c$, we
 say $f$ is \emph{\myindex{discontinuous}} at $c$, or that it has a
-\emph{\myindex{discontinuity}} at $c$.
+\emph{\myindex{discontinuity}} at~$c$.
 The following proposition is a useful test and follows immediately
 from third item of \propref{contbasic:prop}.
 
@@ -1047,7 +1050,7 @@ f(x) :=
 \end{equation*}
 is not continuous at 0.
 
-Proof: Take the sequence $\{ \nicefrac{-1}{n} \}_{n=1}^\infty$, which converges to 0.  Then
+Proof: Consider $\{ \nicefrac{-1}{n} \}_{n=1}^\infty$, which converges to 0.  Then
 $f(\nicefrac{-1}{n}) = -1$ for every $n$,
 and so
 $\lim_{n\to\infty} f(\nicefrac{-1}{n}) = -1$, but $f(0) = 1$.  Thus the function is
@@ -1361,7 +1364,7 @@ A continuous function $f \colon [a,b] \to \R$ is bounded.
 \end{lemma}
 
 \begin{proof}
-We prove this claim by contrapositive.  Suppose $f$ is not bounded.
+We prove the claim by contrapositive.  Suppose $f$ is not bounded.
 Then for each
 $n \in \N$, there is an $x_n \in [a,b]$, such that
 \begin{equation*}
