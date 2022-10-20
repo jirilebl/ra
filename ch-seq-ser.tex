@@ -206,22 +206,22 @@ A convergent sequence $\{ x_n \}_{n=1}^\infty$ is bounded.
 \begin{proof}
 Suppose $\{ x_n \}_{n=1}^\infty$ converges to $x$.  Thus there exists an $M \in \N$
 such that for all $n \geq M$, we have
-$\abs{x_n - x} < 1$.  Let $B_1 := \abs{x}+1$ and note that for $n \geq M$,
+$\abs{x_n - x} < 1$.  For $n \geq M$,
 \begin{equation*}
 \begin{split}
 \abs{x_n} & = \abs{x_n - x + x}
 \\
 & \leq \abs{x_n - x} + \abs{x}
 \\
-& < 1 + \abs{x} = B_1 .
+& < 1 + \abs{x} .
 \end{split}
 \end{equation*}
-The set $\{ \abs{x_1}, \abs{x_2}, \ldots, \abs{x_{M-1}} \}$
+The set $\bigl\{ \abs{x_1}, \abs{x_2}, \ldots, \abs{x_{M-1}} , 1+\sabs{x} \bigr\}$
 is a finite set and hence let
 \begin{equation*}
-B_2 := \max \{ \abs{x_1}, \abs{x_2}, \ldots, \abs{x_{M-1}} \} .
+B := \max \bigl\{ \abs{x_1}, \abs{x_2}, \ldots, \abs{x_{M-1}}, 1+\sabs{x} \bigr\} .
 \end{equation*}
-Let $B := \max \{ B_1, B_2 \}$.  Then for all $n \in \N$,
+Then for all $n \in \N$,
 \begin{equation*}
 \abs{x_n} \leq B. \qedhere
 \end{equation*}
@@ -1216,8 +1216,8 @@ $\lim_{n\to\infty} \nicefrac{1}{n} = 0$, then
 \begin{equation*}
 \lim_{n\to \infty}
 \abs{\sqrt{1 + \nicefrac{1}{n}} - \nicefrac{100}{n^2}} =  
-\abs{\sqrt{1 + \bigl(\lim_{n\to\infty} \nicefrac{1}{n}\bigr)}
-- 100 \bigl(\lim_{n\to\infty} \nicefrac{1}{n}\bigr)\bigl(\lim_{n\to\infty} \nicefrac{1}{n}\bigr)} = 1.
+\abs{\sqrt{1 + \Bigl(\lim_{n\to\infty} \nicefrac{1}{n}\Bigr)}
+- 100 \Bigl(\lim_{n\to\infty} \nicefrac{1}{n}\Bigr)\Bigl(\lim_{n\to\infty} \nicefrac{1}{n}\Bigr)} = 1.
 \end{equation*}
 That is, the limit on the left-hand side exists because the right-hand
 side exists.  You really should read the equality above from right to left.
@@ -1233,8 +1233,8 @@ However,
 $\bigl\{ \frac{n^2}{n+1} \bigr\}_{n=1}^\infty$ and 
 $\{n\}_{n=1}^\infty$ are not convergent,
 so
-$\bigl(\lim\limits_{n\to\infty} \frac{n^2}{n+1}\bigr) -
-\bigl(\lim\limits_{n\to\infty} n\bigr)$ is nonsense.
+$\Bigl(\lim\limits_{n\to\infty} \frac{n^2}{n+1}\Bigr) -
+\Bigl(\lim\limits_{n\to\infty} n\Bigr)$ is nonsense.
 
 \subsection{Recursively defined sequences}
 
@@ -1731,8 +1731,8 @@ Named after the Czech mathematician
 indispensable tool in analysis, showing the existence of convergent
 subsequences.
 
-We have seen that every convergent sequence is bounded,
-although there exist many bounded divergent sequences.  For example,
+We proved that every convergent sequence is bounded; nevertheless,
+there exist many bounded divergent sequences.  For instance,
 the sequence $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ is bounded,
 but divergent.  All is not lost, however, and we can
 still compute certain limits with a bounded divergent sequence.

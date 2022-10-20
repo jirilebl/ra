@@ -423,7 +423,7 @@ U(P,f) - L(P,f)
 (1+\epsilon)
 - (1-\epsilon) = 2 \epsilon .
 \end{equation*}
-By \propref{intulbound:prop}, we have $\underline{\int_0^2} f \leq \overline{\int_0^2} f$.
+By \propref{intulbound:prop}, $\underline{\int_0^2} f \leq \overline{\int_0^2} f$.
 As $\epsilon$ was arbitrary,
 $\overline{\int_0^2} f = \underline{\int_0^2} f$.  So $f$ is Riemann
 integrable.  Finally,
@@ -466,27 +466,27 @@ We will see later that continuous functions are integrable, but let us
 demonstrate how we do it directly.
 
 Let $\epsilon > 0$ be given.  Take $n \in \N$ and
-pick $x_j := \nicefrac{jb}{n}$, to form the 
+pick $x_i := \nicefrac{ib}{n}$, to form the 
 partition $P := \{ x_0,x_1,\ldots,x_n \}$ of $[0,b]$.
-We have $\Delta x_j = \nicefrac{b}{n}$ for all $j$.  
-As $f$ is decreasing, for every subinterval $[x_{j-1},x_j]$, we obtain
+We have $\Delta x_i = \nicefrac{b}{n}$ for all $i$.  
+As $f$ is decreasing, for every subinterval $[x_{i-1},x_i]$, we obtain
 \begin{equation*}
-m_j = \inf \left\{ \frac{1}{1+x} : x \in [x_{j-1},x_j] \right\} = \frac{1}{1+x_j} ,
+m_i = \inf \left\{ \frac{1}{1+x} : x \in [x_{i-1},x_i] \right\} = \frac{1}{1+x_i} ,
 \quad
-M_j = \sup \left\{ \frac{1}{1+x} : x \in [x_{j-1},x_j] \right\} =
-\frac{1}{1+x_{j-1}} .
+M_i = \sup \left\{ \frac{1}{1+x} : x \in [x_{i-1},x_i] \right\} =
+\frac{1}{1+x_{i-1}} .
 \end{equation*}
 Then
 \begin{multline*}
 U(P,f)-L(P,f)
 =
-\sum_{j=1}^n
-\Delta x_j
-(M_j-m_j)
+\sum_{i=1}^n
+\Delta x_i
+(M_i-m_i)
 =
 \frac{b}{n}
-\sum_{j=1}^n 
-\left( \frac{1}{1+\nicefrac{(j-1)b}{n}} - \frac{1}{1+\nicefrac{jb}{n}} \right) 
+\sum_{i=1}^n 
+\left( \frac{1}{1+\nicefrac{(i-1)b}{n}} - \frac{1}{1+\nicefrac{ib}{n}} \right) 
 =
 \\
 =
@@ -641,19 +641,19 @@ Prove $g$ is Riemann integrable and $\int_{0}^1 f = \int_{0}^1 g$.
 \begin{exercise}
 Let $f \colon [0,1] \to \R$ be a bounded function.
 Let $P_n = \{ x_0,x_1,\ldots,x_n \}$ be a uniform partition of $[0,1]$,
-that is, $x_j = \nicefrac{j}{n}$.  Is $\{ L(P_n,f) \}_{n=1}^\infty$
+that is, $x_i = \nicefrac{i}{n}$.  Is $\bigl\{ L(P_n,f) \bigr\}_{n=1}^\infty$
 always monotone?  Yes/No: Prove or find a counterexample.
 \end{exercise}
 
 \begin{exercise}[Challenging]
 For a bounded function $f \colon [0,1] \to \R$, let
-$R_n := (\nicefrac{1}{n})\sum_{j=1}^n f(\nicefrac{j}{n})$ (the
+$R_n := (\nicefrac{1}{n})\sum_{i=1}^n f(\nicefrac{i}{n})$ (the
 uniform right-hand rule).
 \begin{enumerate}[a)]
 \item
-If $f$ is Riemann integrable show $\int_0^1 f = \lim \, R_n$.
+If $f$ is Riemann integrable show $\int_0^1 f = \lim\limits_{n\to\infty} R_n$.
 \item
-Find an $f$ that is not Riemann integrable, but $\lim \, R_n$ exists.
+Find an $f$ that is not Riemann integrable, but $\lim\limits_{n\to\infty} R_n$ exists.
 \end{enumerate}
 \end{exercise}
 
@@ -734,11 +734,11 @@ then the set $P := P_1 \cup P_2 = \{ x_0, x_1, \ldots, x_n \}$ is
 a partition of $[a,c]$.  We find
 \begin{equation*}
 L(P,f) =
-\sum_{j=1}^n m_j \Delta x_j
+\sum_{i=1}^n m_i \Delta x_i
 =
-\sum_{j=1}^k m_j \Delta x_j
+\sum_{i=1}^k m_i \Delta x_i
 +
-\sum_{j=k+1}^n m_j \Delta x_j
+\sum_{i=k+1}^n m_i \Delta x_i
 =
 L(P_1,f) + L(P_2,f) .
 \end{equation*}
@@ -777,11 +777,11 @@ P_1 \text{ a partition of } [a,b], P_2 \text{ a partition of } [b,c] \bigr\}
 Similarly, for $P$, $P_1$, and $P_2$ as above, we obtain
 \begin{equation*}
 U(P,f) =
-\sum_{j=1}^n M_j \Delta x_j
+\sum_{i=1}^n M_i \Delta x_i
 =
-\sum_{j=1}^k M_j \Delta x_j
+\sum_{i=1}^k M_i \Delta x_i
 +
-\sum_{j=k+1}^n M_j \Delta x_j
+\sum_{i=k+1}^n M_i \Delta x_i
 =
 U(P_1,f) + U(P_2,f) .
 \end{equation*}
@@ -1228,9 +1228,9 @@ the $L$ is the same number.
 To prove the final statement of the lemma we use 
 \propref{seqconvsubseqconv:prop}.  We have shown that every convergent
 subsequence
-$\bigl\{ \int_{a_{n_k}}^{b_{n_k}} f \bigr\}$ converges to $L = \int_a^b f$.
+$\bigl\{ \int_{a_{n_k}}^{b_{n_k}} f \bigr\}_{k=1}^\infty$ converges to $L = \int_a^b f$.
 Therefore, the sequence
-$\bigl\{ \int_{a_n}^{b_n} f \bigr\}$ is convergent and converges to $\int_a^b f$.
+$\bigl\{ \int_{a_n}^{b_n} f \bigr\}_{n=1}^\infty$ is convergent and converges to $\int_a^b f$.
 \end{proof}
 
 We say a function $f \colon [a,b] \to \R$ has \emph{\myindex{finitely many
