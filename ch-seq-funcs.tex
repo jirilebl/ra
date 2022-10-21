@@ -35,12 +35,13 @@ f(x) =
 \end{equation*}
 \end{defn}
 
-Limits of sequences of numbers are unique, and so if a sequence $\{ f_n \}$
+Limits of sequences of numbers are unique, and so if a sequence
+$\{ f_n \}_{n=1}^\infty$
 converges pointwise, the limit function $f$ is unique.
 It is common to say that $f_n \colon S \to \R$
 \emph{converges to $f$ on $T \subset S$}
 for some $f \colon T \to \R$.  In that case we mean 
-$f(x) = \lim\, f_n(x)$ for every $x \in T$.  In other words, the
+$f(x) = \lim_{n\to\infty} f_n(x)$ for every $x \in T$.  In other words, the
 restrictions of $f_n$ to $T$ converge pointwise to $f$.
 
 
@@ -69,12 +70,12 @@ We have seen before that
 \begin{equation*}
 \abs{x^{2n} - 0} = {(x^2)}^n \to 0 \quad \text{as} \quad n \to \infty .
 \end{equation*}
-Therefore, $\lim\,f_n(x) = 0$.
+Therefore, $\lim_{n\to\infty}f_n(x) = 0$.
 
 When $x = 1$ or $x=-1$, then $x^{2n} = 1$ for all $n$ and hence
-$\lim\,f_n(x) = 1$.
+$\lim_{n\to\infty}f_n(x) = 1$.
 For all other $x$, the sequence
-$\{ f_n(x) \}$ does not converge.
+$\bigl\{ f_n(x) \bigr\}_{n=1}^\infty$ does not converge.
 \end{example}
 
 Often, functions are given as a series.  In this case, we use
@@ -127,7 +128,7 @@ definition of convergence of a sequence of real numbers.
 
 \begin{prop} \label{ptwsconv:prop}
 Let $f_n \colon S \to \R$ and $f \colon S \to \R$ be functions.
-Then $\{ f_n \}$ converges pointwise to $f$ if and only if
+Then $\{ f_n \}_{n=1}^\infty$ converges pointwise to $f$ if and only if
 for every $x \in S$, and every $\epsilon > 0$, there exists
 an $N \in \N$ such that for all
 $n \geq N$, we have
@@ -147,7 +148,7 @@ uniform convergence.
 \index{uniform convergence}
 Let $f_n \colon S \to \R$
 and $f \colon S \to \R$
-be functions.  The sequence $\{ f_n \}$
+be functions.  The sequence $\{ f_n \}_{n=1}^\infty$
 \emph{\myindex{converges uniformly}} to $f$ if for
 every $\epsilon > 0$, there exists an $N \in \N$ such that 
 for all $n \geq N$, we have
@@ -172,9 +173,9 @@ implies pointwise convergence, and the proof follows by
 \propref{ptwsconv:prop}:
 
 \begin{prop}
-Let $\{ f_n \}$ be a sequence of functions $f_n \colon S \to \R$.
-If $\{ f_n \}$ converges
-uniformly to $f \colon S \to \R$, then $\{ f_n \}$ converges pointwise to $f$.
+Let $\{ f_n \}_{n=1}^\infty$ be a sequence of functions $f_n \colon S \to \R$.
+If $\{ f_n \}_{n=1}^\infty$ converges
+uniformly to $f \colon S \to \R$, then $\{ f_n \}_{n=1}^\infty$ converges pointwise to $f$.
 \end{prop}
 
 The converse does not hold.
@@ -185,7 +186,7 @@ even though they converge pointwise.  To see this, suppose for contradiction
 that the convergence is uniform.  For $\epsilon := \nicefrac{1}{2}$, there would have
 to exist an $N$ such that $x^{2N} = \abs{x^{2N} - 0} < \nicefrac{1}{2}$ for all $x \in
 (-1,1)$ (as $f_n(x)$ converges to 0 on $(-1,1)$).  But that means that
-for every sequence $\{ x_k \}$ in $(-1,1)$ such that $\lim\, x_k = 1$,
+for every sequence $\{ x_k \}_{k=1}^\infty$ in $(-1,1)$ such that $\lim_{k\to\infty} x_k = 1$,
 we have $x_k^{2N} < \nicefrac{1}{2}$ for all $k$.  On the other hand,
 $x^{2N}$ is a continuous function of $x$ (it is a polynomial).  Therefore,
 we obtain a contradiction
@@ -194,7 +195,7 @@ we obtain a contradiction
 \end{equation*}
 
 However, if we restrict our domain to $[-a,a]$ where $0 < a < 1$, then
-$\{ f_n \}$ converges uniformly to 0 on $[-a,a]$.  Note that
+$\{ f_n \}_{n=1}^\infty$ converges uniformly to 0 on $[-a,a]$.  Note that
 $a^{2n} \to 0$ as $n \to \infty$.  Given $\epsilon > 0$,
 pick $N \in \N$ such that
 $a^{2n} < \epsilon$ for all $n \geq N$.
@@ -251,20 +252,20 @@ uniformly to $f \colon S \to \R$ if and only if
 
 \begin{proof}
 First suppose 
-$\lim \norm{f_n - f}_S = 0$.  Let $\epsilon > 0$ be
+$\lim_{n\to\infty} \norm{f_n - f}_S = 0$.  Let $\epsilon > 0$ be
 given.  Then there exists an $N$ such that
 for $n \geq N$, we have $\snorm{f_n - f}_S < \epsilon$.  As $\norm{f_n-f}_S$
 is the supremum of $\abs{f_n(x)-f(x)}$, we see that for all $x \in S$,
 we have $\abs{f_n(x)-f(x)} \leq \snorm{f_n - f}_S < \epsilon$.
 
-On the other hand, suppose $\{ f_n \}$ converges uniformly to $f$.
+On the other hand, suppose $\{ f_n \}_{n=1}^\infty$ converges uniformly to $f$.
 Let $\epsilon > 0$ be given.  Then find $N$ such that 
 $\abs{f_n(x)-f(x)} < \epsilon$ for all $x \in S$.
 Taking the supremum we see that
-$\snorm{f_n - f}_S \leq \epsilon$.  Hence $\lim \snorm{f_n-f}_S = 0$.
+$\snorm{f_n - f}_S \leq \epsilon$.  Hence $\lim_{n\to\infty} \snorm{f_n-f}_S = 0$.
 \end{proof}
 
-Sometimes it is said that \emph{$\{ f_n \}$ converges to $f$ in uniform norm}
+Sometimes it is said that \emph{$\{ f_n \}_{n=1}^\infty$ converges to $f$ in uniform norm}
 \index{converges in uniform norm}
 \index{uniform norm convergence}
 instead of \emph{converges uniformly} if $\snorm{f_n-f}_S \to 0$.  The proposition
@@ -272,7 +273,7 @@ says that the two notions are the same thing.
 
 \begin{example}
 Let $f_n \colon [0,1] \to \R$ be defined by $f_n(x) := \frac{nx+ \sin(nx^2)}{n}$.
-We claim $\{ f_n \}$ converges uniformly to $f(x) := x$.  Let us compute:
+We claim $\{ f_n \}_{n=1}^\infty$ converges uniformly to $f(x) := x$.  Let us compute:
 \begin{equation*}
 \begin{split}
 \norm{f_n-f}_{[0,1]}
@@ -306,27 +307,27 @@ that for all $m,k \geq N$,
 
 \begin{prop} \label{prop:uniformcauchy}
 Let $f_n \colon S \to \R$ be bounded functions.
-Then $\{ f_n \}$ is Cauchy in the uniform norm if and only if
-there exists an $f \colon S \to \R$ and $\{ f_n \}$ converges
+Then $\{ f_n \}_{n=1}^\infty$ is Cauchy in the uniform norm if and only if
+there exists an $f \colon S \to \R$ and $\{ f_n \}_{n=1}^\infty$ converges
 uniformly to $f$.
 \end{prop}
 
 \begin{proof}
-Let us first suppose $\{ f_n \}$ is Cauchy in the uniform norm.
+Let us first suppose $\{ f_n \}_{n=1}^\infty$ is Cauchy in the uniform norm.
 Let us define $f$.  Fix $x$, then
-the sequence $\{ f_n(x) \}$ is Cauchy because
+the sequence $\bigl\{ f_n(x) \bigr\}_{n=1}^\infty$ is Cauchy because
 \begin{equation*}
 \abs{f_m(x)-f_k(x)}
 \leq
 \norm{f_m-f_k}_S .
 \end{equation*}
-Thus $\{ f_n(x) \}$ converges to some real number.  Define $f \colon S
+Thus $\bigl\{ f_n(x) \bigr\}_{n=1}^\infty$ converges to some real number.  Define $f \colon S
 \to \R$ by
 \begin{equation*}
 f(x) := \lim_{n \to \infty} f_n(x) .
 \end{equation*}
 The sequence
-$\{ f_n \}$ converges pointwise to $f$.  To show that the convergence
+$\{ f_n \}_{n=1}^\infty$ converges pointwise to $f$.  To show that the convergence
 is uniform, let $\epsilon > 0$ be given.  Find an $N$ such that
 for all $m, k \geq N$, we have
 $\norm{f_m-f_k}_S < \nicefrac{\epsilon}{2}$.  In other words, for
@@ -338,10 +339,10 @@ Consequently for all $x$,
 \begin{equation*}
 \abs{f_m(x)-f(x)} \leq \nicefrac{\epsilon}{2} < \epsilon .
 \end{equation*}
-And hence $\{ f_n \}$ converges uniformly.
+And hence $\{ f_n \}_{n=1}^\infty$ converges uniformly.
 
 Next, we prove the other direction.
-Suppose $\{ f_n \}$ converges uniformly to
+Suppose $\{ f_n \}_{n=1}^\infty$ converges uniformly to
 $f$.  Given $\epsilon > 0$, find $N$ such that for all $n \geq N$,
 we have $\abs{f_n(x)-f(x)} < \nicefrac{\epsilon}{4}$ for all $x \in S$.
 Therefore, for all $m, k \geq N$,
@@ -381,55 +382,58 @@ Is the limit uniform on $[0,1]$?
 \begin{exercise}
 Suppose $f_n \colon S \to \R$ are functions that converge uniformly
 to $f \colon S \to \R$.  Suppose $A \subset S$.  Show that
-the sequence of restrictions $\{ f_n|_A \}$ converges uniformly to $f|_A$.
+the sequence of restrictions $\{ f_n|_A \}_{n=1}^\infty$ converges uniformly to $f|_A$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ f_n \}$ and $\{ g_n \}$ defined on some set $A$ converge to
-$f$ and $g$ respectively pointwise.  Show that $\{ f_n+g_n \}$ converges
+Suppose $\{ f_n \}_{n=1}^\infty$ and $\{ g_n \}_{n=1}^\infty$ defined on some set $A$ converge to
+$f$ and $g$ respectively pointwise.  Show that $\{ f_n+g_n \}_{n=1}^\infty$ converges
 pointwise to $f+g$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ f_n \}$ and $\{ g_n \}$ defined on some set $A$ converge to
-$f$ and $g$ respectively uniformly on $A$.  Show that $\{ f_n+g_n \}$
+Suppose $\{ f_n \}_{n=1}^\infty$ and $\{ g_n \}_{n=1}^\infty$ defined on some set $A$ converge to
+$f$ and $g$ respectively uniformly on $A$.
+Show that $\{ f_n+g_n \}_{n=1}^\infty$
 converges uniformly to $f+g$ on $A$.
 \end{exercise}
 
 \begin{exercise}
-Find an example of a sequence of functions $\{ f_n \}$ and $\{ g_n \}$
+Find an example of a sequence of functions $\{ f_n \}_{n=1}^\infty$ and $\{
+g_n \}_{n=1}^\infty$
 that converge uniformly to some $f$ and $g$ on some set $A$, but such that
-$\{ f_ng_n \}$ (the multiple) does not converge uniformly to $fg$ on $A$.
+$\{ f_ng_n \}_{n=1}^\infty$ (the multiple) does not converge uniformly to $fg$ on $A$.
 Hint: Let $A := \R$, let $f(x):=g(x) := x$.  You can even pick $f_n = g_n$.
 \end{exercise}
 
 \begin{exercise}
-Suppose there exists a sequence of functions $\{ g_n \}$ uniformly
+Suppose there exists a sequence of functions $\{ g_n \}_{n=1}^\infty$ uniformly
 converging to $0$ on $A$.  Now suppose we have a sequence of functions
-$\{ f_n \}$ and a function $f$ on $A$ such that
+$\{ f_n \}_{n=1}^\infty$ and a function $f$ on $A$ such that
 \begin{equation*}
 \abs{f_n(x) - f(x)} \leq g_n(x) 
 \end{equation*}
-for all $x \in A$.  Show that $\{ f_n \}$ converges uniformly to $f$ on $A$.
+for all $x \in A$.  Show that $\{ f_n \}_{n=1}^\infty$ converges uniformly to $f$ on $A$.
 \end{exercise}
 
 \begin{exercise}
-Let $\{ f_n \}$, $\{ g_n \}$ and $\{ h_n \}$ be sequences of functions on
-$[a,b]$.  Suppose $\{ f_n \}$ and $\{ h_n \}$ converge uniformly to some function
+Let $\{ f_n \}_{n=1}^\infty$, $\{ g_n \}_{n=1}^\infty$ and
+$\{ h_n \}_{n=1}^\infty$ be sequences of functions on
+$[a,b]$.  Suppose $\{ f_n \}_{n=1}^\infty$ and $\{ h_n \}_{n=1}^\infty$ converge uniformly to some function
 $f \colon [a,b] \to \R$ and suppose $f_n(x) \leq g_n(x) \leq h_n(x)$
-for all $x \in [a,b]$.  Show that $\{ g_n \}$ converges uniformly to $f$.
+for all $x \in [a,b]$.  Show that $\{ g_n \}_{n=1}^\infty$ converges uniformly to $f$.
 \end{exercise}
 
 \begin{exercise}
 Let $f_n \colon [0,1] \to \R$ be a sequence of increasing functions (that
 is, $f_n(x) \geq f_n(y)$ whenever $x \geq y$).  Suppose $f_n(0) = 0$
 and $\lim\limits_{n \to \infty} f_n(1) = 0$.  Show that
-$\{ f_n \}$
+$\{ f_n \}_{n=1}^\infty$
 converges uniformly to $0$.
 \end{exercise}
 
 \begin{exercise}
-Let $\{f_n\}$ be a sequence of functions defined on $[0,1]$.
+Let $\{f_n\}_{n=1}^\infty$ be a sequence of functions defined on $[0,1]$.
 Suppose there exists a sequence of distinct numbers $x_n \in [0,1]$ such that
 \begin{equation*}
 f_n(x_n) = 1 .
@@ -437,10 +441,10 @@ f_n(x_n) = 1 .
 Prove or disprove the following statements:
 \begin{enumerate}[a)]
 \item
-True or false: There exists $\{ f_n \}$ as above that converges to $0$
+True or false: There exists $\{ f_n \}_{n=1}^\infty$ as above that converges to $0$
 pointwise.
 \item
-True or false: There exists $\{ f_n \}$ as above that converges to $0$
+True or false: There exists $\{ f_n \}_{n=1}^\infty$ as above that converges to $0$
 uniformly on $[0,1]$.
 \end{enumerate}
 \end{exercise}
@@ -456,7 +460,7 @@ $\epsilon = \nicefrac{1}{n}$, defined on the interval $[a,b]$.  That is,
 \begin{equation*}
 f_n(x) := \frac{n}{2} \int_{x-1/n}^{x+1/n} f .
 \end{equation*}
-Show that $\{ f_n \}$ converges uniformly to $h$ on $[a,b]$.
+Show that $\{ f_n \}_{n=1}^\infty$ converges uniformly to $h$ on $[a,b]$.
 \end{exercise}
 
 
@@ -473,7 +477,7 @@ Suppose there is a single constant $B$ and
 a sequence of functions
 $f_n \colon S \to \R$ that are bounded by $B$,
 that is $\abs{f_n(x)} \leq B$ for all $x \in S$.
-Suppose that $\{ f_n \}$ converges pointwise
+Suppose that $\{ f_n \}_{n=1}^\infty$ converges pointwise
 to $f \colon S \to \R$.
 Prove that $f$ is bounded.
 \end{exercise}
@@ -529,9 +533,9 @@ power series.
 
 \subsection{Continuity of the limit}
 
-If we have a sequence $\{ f_n \}$ of continuous functions, is the limit continuous?
-Suppose $f$ is the (pointwise) limit of $\{ f_n \}$.
-If $\lim\, x_k = x$,
+If we have a sequence $\{ f_n \}_{n=1}^\infty$ of continuous functions, is the limit continuous?
+Suppose $f$ is the (pointwise) limit of $\{ f_n \}_{n=1}^\infty$.
+If $\lim_{k\to\infty} x_k = x$,
 we are interested in the following
 interchange of limits, where the equality to prove
 is marked with a question mark.  Equality is not always true, in fact, the limits to the left
@@ -556,7 +560,7 @@ f_n(x)
 =
 f(x) .
 \end{equation*}
-We wish to find conditions on the sequence $\{ f_n \}$
+We wish to find conditions on the sequence $\{ f_n \}_{n=1}^\infty$
 so that the equation above holds.
 If we only require pointwise convergence, then the limit
 of a sequence of functions need not be continuous, and the equation above
@@ -608,17 +612,17 @@ be interchanged.
 
 \begin{thm}
 Suppose $S \subset \R$.
-Let $\{ f_n \}$ be 
+Let $\{ f_n \}_{n=1}^\infty$ be 
 a sequence of continuous functions $f_n \colon S \to \R$ converging
 uniformly to  $f \colon S \to \R$.  Then $f$ is continuous.
 \end{thm}
 
 \begin{proof}
-Let $x \in S$ be fixed.  Let $\{ x_n \}$ be a sequence in $S$
+Let $x \in S$ be fixed.  Let $\{ x_n \}_{n=1}^\infty$ be a sequence in $S$
 converging to $x$.
 
 Let $\epsilon > 0$ be given.
-As $\{ f_k \}$ converges uniformly to $f$, we find a $k \in \N$ such that
+As $\{ f_k \}_{k=1}^\infty$ converges uniformly to $f$, we find a $k \in \N$ such that
 \begin{equation*}
 \abs{f_k(y)-f(y)} < \nicefrac{\epsilon}{3}
 \end{equation*}
@@ -646,7 +650,7 @@ $m \geq N$,
 \nicefrac{\epsilon}{3} = \epsilon .
 \end{split}
 \end{equation*}
-Therefore, $\bigl\{ f(x_m) \bigr\}$ converges to $f(x)$ and $f$ is continuous at
+Therefore, $\bigl\{ f(x_m) \bigr\}_{m=1}^\infty$ converges to $f(x)$ and $f$ is continuous at
 $x$.  As $x$ was arbitrary, $f$ is continuous everywhere.
 \end{proof}
 
@@ -681,14 +685,14 @@ and the fundamental theorem of calculus says that
 \int_0^1 f_n =
 \int_0^{\nicefrac{1}{n}} (n-n^2x)\,dx = \nicefrac{1}{2} .
 \end{equation*}
-Let us compute the pointwise limit of $\{ f_n \}$.
+Let us compute the pointwise limit of $\{ f_n \}_{n=1}^\infty$.
 Fix an $x \in (0,1]$.  For $n \geq \nicefrac{1}{x}$,
 we have $x \geq \nicefrac{1}{n}$ and so $f_n(x) = 0$.  Therefore,
 \begin{equation*}
 \lim_{n \to \infty} f_n(x) = 0.
 \end{equation*}
 We also have $f_n(0) = 0$ for all $n$.  Therefore, the pointwise
-limit of $\{ f_n \}$ is the zero function.  Thus
+limit of $\{ f_n \}_{n=1}^\infty$ is the zero function.  Thus
 \begin{equation*}
 \nicefrac{1}{2} =
 \lim_{n\to\infty}
@@ -712,7 +716,7 @@ convergence as long as $f$ is integrable and there is an $M$ such that
 $\snorm{f_n}_{[a,b]} \leq M$ for all $n$.}
 
 \begin{thm} \label{integralinterchange:thm}
-Let $\{ f_n \}$ be a sequence of Riemann integrable
+Let $\{ f_n \}_{n=1}^\infty$ be a sequence of Riemann integrable
 functions
 $f_n \colon [a,b] \to \R$
 converging uniformly to $f \colon [a,b]
@@ -779,7 +783,7 @@ in the calculation.  Again, for all $n \geq M$ (where $M$ is the same as above),
 \frac{\epsilon}{2(b-a)} (b-a) = \frac{\epsilon}{2} < \epsilon .
 \end{split}
 \end{equation*}
-Therefore, $\{ \int_a^b f_n \}$ converges to $\int_a^b f$.
+Therefore, $\bigl\{ \int_a^b f_n \bigr\}_{n=1}^\infty$ converges to $\int_a^b f$.
 \end{proof}
 
 \begin{example}
@@ -814,7 +818,7 @@ f_n(x) :=
 The function $f_n$ differs from the zero function at finitely many points;
 there are only finitely many fractions in $[0,1]$ with denominator less than
 or equal to $n$.   So $f_n$ is integrable and $\int_0^1 f_n = \int_0^1 0 =
-0$.  It is an easy exercise to show that $\{ f_n \}$ converges pointwise to the
+0$.  It is an easy exercise to show that $\{ f_n \}_{n=1}^\infty$ converges pointwise to the
 \myindex{Dirichlet function}
 \begin{equation*}
 f(x) :=
@@ -874,7 +878,7 @@ $n=1,2,\ldots,10$, with higher $n$ in lighter gray.%
 Let $f_n(x) := \frac{1}{1+nx^2}$.
 If $x \not= 0$, then $\lim_{n \to \infty} f_n(x) = 0$,
 but $\lim_{n \to \infty} f_n(0) = 1$.
-Hence, $\{ f_n \}$ converges pointwise to a function that is not continuous
+Hence, $\{ f_n \}_{n=1}^\infty$ converges pointwise to a function that is not continuous
 at $0$.
 We compute
 \begin{equation*}
@@ -898,9 +902,9 @@ difficult.
 \begin{thm} \label{thm:dersconverge}
 Let $I$ be a bounded interval and let
 $f_n \colon I \to \R$ be continuously differentiable functions.
-Suppose $\{ f_n' \}$ converges uniformly to $g \colon I \to \R$,
+Suppose $\{ f_n' \}_{n=1}^\infty$ converges uniformly to $g \colon I \to \R$,
 and suppose $\bigl\{ f_n(c) \bigr\}_{n=1}^\infty$ is a
-convergent sequence for some $c \in I$.  Then $\{ f_n \}$ converges uniformly to 
+convergent sequence for some $c \in I$.  Then $\{ f_n \}_{n=1}^\infty$ converges uniformly to 
 a continuously differentiable function $f \colon I \to \R$, and $f' = g$.
 \end{thm}
 
@@ -912,7 +916,7 @@ via the fundamental theorem of calculus, we find that for $x \in I$,
 \begin{equation*}
 f_n(x) = f_n(c) + \int_c^x f_n' .
 \end{equation*}
-As $\{ f_n' \}$ converges uniformly on $I$, it converges uniformly
+As $\{ f_n' \}_{n=1}^\infty$ converges uniformly on $I$, it converges uniformly
 on $[c,x]$ (or $[x,c]$ if $x < c$).
 Thus, the limit as $n \to \infty$ on the right-hand side exists.
 Define $f$ at the remaining points (where $x\neq c$) by this limit:
@@ -959,7 +963,7 @@ for all $x \in I$.  Then
 The proof goes through without boundedness of $I$, except for the
 uniform convergence of $f_n$ to $f$.  As an example suppose $I = \R$ and let
 $f_n(x) := \nicefrac{x}{n}$.  Then $f_n'(x)=\nicefrac{1}{n}$, which
-converges uniformly to $0$.  However, $\{f_n\}$ converges to 0 only pointwise.
+converges uniformly to $0$.  However, $\{f_n\}_{n=1}^\infty$ converges to 0 only pointwise.
 
 \subsection{Convergence of power series}
 
@@ -1084,7 +1088,7 @@ As the series is convergent $R < \infty$, and
 the radius of convergence is $\nicefrac{1}{R}$ (or $\infty$ if $R=0$).
 
 Let $\epsilon > 0$ be given.  In \exampleref{example:nto1overn},
-we saw $\lim\,n^{1/n} = 1$.
+we saw $\lim_{n\to\infty} n^{1/n} = 1$.
 Hence there exists an $N$ such that for all $n \geq N$, we have
 $n^{1/n} < 1+\epsilon$.
 So
@@ -1160,7 +1164,7 @@ converge uniformly, and then show that the limit is not differentiable.
 \end{exercise}
 
 \begin{exercise}
-Let $f_n(x) := \frac{x^n}{n}$.  Show that $\{ f_n \}$ converges uniformly to
+Let $f_n(x) := \frac{x^n}{n}$.  Show that $\{ f_n \}_{n=1}^\infty$ converges uniformly to
 a differentiable function $f$ on $[0,1]$ (find $f$).  However, show that
 $f'(1) \not= \lim\limits_{n\to\infty} f_n'(1)$.
 \end{exercise}
@@ -1197,7 +1201,7 @@ more challenging exercise, replace $(0,1)$ with $[0,1]$.
 
 \begin{exercise}
 True/False; prove or find a counterexample to the following statement:
-If $\{ f_n \}$ is a sequence of everywhere discontinuous functions on $[0,1]$
+If $\{ f_n \}_{n=1}^\infty$ is a sequence of everywhere discontinuous functions on $[0,1]$
 that converge uniformly to a function $f$, then $f$ is everywhere
 discontinuous.
 \end{exercise}
@@ -1207,13 +1211,13 @@ For a continuously differentiable function $f \colon [a,b] \to \R$, define
 \begin{equation*}
 \norm{f}_{C^1} := \norm{f}_{[a,b]} + \norm{f'}_{[a,b]} .
 \end{equation*}
-Suppose $\{ f_n \}$ is a sequence of continuously differentiable
+Suppose $\{ f_n \}_{n=1}^\infty$ is a sequence of continuously differentiable
 functions such that for every $\epsilon >0$, there exists an $M$
 such that for all $n,k \geq M$, we have
 \begin{equation*}
 \norm{f_n-f_k}_{C^1} < \epsilon .
 \end{equation*}
-Show that $\{ f_n \}$ converges uniformly to some continuously differentiable
+Show that $\{ f_n \}_{n=1}^\infty$ converges uniformly to some continuously differentiable
 function $f \colon [a,b] \to \R$.
 \end{exercise}
 
@@ -1236,7 +1240,7 @@ It is, however, a bit more subtle.
 \end{exnote}
 
 \begin{exercise}
-Suppose $\{ f_n \}$ is a sequence of Riemann integrable functions on $[0,1]$
+Suppose $\{ f_n \}_{n=1}^\infty$ is a sequence of Riemann integrable functions on $[0,1]$
 that converges uniformly
 to $0$.  Show that
 \begin{equation*}
@@ -1245,7 +1249,7 @@ to $0$.  Show that
 \end{exercise}
 
 \begin{exercise}
-Find a sequence $\{ f_n \}$ of Riemann integrable functions 
+Find a sequence $\{ f_n \}_{n=1}^\infty$ of Riemann integrable functions 
 on $[0,1]$ converging pointwise to $0$, but
 \begin{equation*}
 \lim_{n\to\infty} \norm{f_n}_{L^1} \text{ does not exist (is } \infty\text{)}.
@@ -1259,8 +1263,8 @@ Let $f_n \colon [a,b] \to \R$ be a sequence of continuous functions such that
 0 \leq f_{n+1}(x) \leq f_n(x) \leq \cdots \leq f_1(x) 
 \qquad \text{for all } n \in \N.
 \end{equation*}
-Suppose $\{ f_n \}$ converges pointwise to $0$.
-Show that $\{ f_n \}$ converges to zero uniformly.
+Suppose $\{ f_n \}_{n=1}^\infty$ converges pointwise to $0$.
+Show that $\{ f_n \}_{n=1}^\infty$ converges to zero uniformly.
 \end{exercise}
 
 \begin{exercise}
@@ -1268,14 +1272,15 @@ Suppose $f_n \colon [a,b] \to \R$ is a sequence of continuous
 functions that
 converges pointwise
 to a continuous $f \colon [a,b] \to \R$.  Suppose that
-for every $x \in [a,b]$, the sequence $\{ \abs{f_n(x)-f(x)} \}$ is monotone.
-Show that the sequence $\{f_n\}$ converges uniformly.
+for every $x \in [a,b]$,
+the sequence $\bigl\{ \abs{f_n(x)-f(x)} \bigr\}_{n=1}^\infty$ is monotone.
+Show that the sequence $\{f_n\}_{n=1}^\infty$ converges uniformly.
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[3]
 Find a sequence of Riemann integrable functions $f_n \colon [0,1] \to \R$ such
-that $\{ f_n \}$ converges to zero pointwise, and such that
+that $\{ f_n \}_{n=1}^\infty$ converges to zero pointwise, and such that
 \begin{enumerate}[a)]
 \item
 $\bigl\{ \int_0^1 f_n \bigr\}_{n=1}^\infty$ increases without bound,
@@ -1286,9 +1291,10 @@ $\bigl\{ \int_0^1 f_n \bigr\}_{n=1}^\infty$ is the sequence $-1,1,-1,1,-1,1, \ld
 
 \begin{exnote}
 It is possible to define a 
-\emph{\myindex{joint limit}} of a double sequence $\{ x_{n,m} \}$ of real
+\emph{\myindex{joint limit}} of a double sequence
+$\{ x_{n,m} \}_{n,m=1}^\infty$ of real
 numbers (that is a function from $\N \times \N$ to $\R$).
-We say $L$ is the joint limit of $\{ x_{n,m} \}$ and write
+We say $L$ is the joint limit of $\{ x_{n,m} \}_{n,m=1}^\infty$ and write
 \begin{equation*}
 \lim_{\substack{n\to\infty\\m\to\infty}}
 x_{n,m} = L ,
@@ -1304,7 +1310,7 @@ $\abs{x_{n,m} - L} < \epsilon$.
 \end{exnote}
 
 \begin{exercise}
-Suppose the joint limit (see above) of $\{ x_{n,m} \}$ is $L$, and suppose
+Suppose the joint limit (see above) of $\{ x_{n,m} \}_{n,m=1}^\infty$ is $L$, and suppose
 that for all $n$, $\lim\limits_{m \to \infty} x_{n,m}$ exists,
 and for all $m$, $\lim\limits_{n \to \infty} x_{n,m}$ exists.  Then show
 $\lim\limits_{n\to\infty}\lim\limits_{m \to \infty} x_{n,m}
@@ -1325,7 +1331,7 @@ $\lim\limits_{n\to\infty}\lim\limits_{m \to \infty} x_{n,m}$ nor
 $\lim\limits_{m\to\infty}\lim\limits_{n \to \infty} x_{n,m}$ makes any sense
 at all.
 \item
-Show that the joint limit of $\{ x_{n,m} \}$ exists and equals 0.
+Show that the joint limit of $\{ x_{n,m} \}_{n,m=1}^\infty$ exists and equals 0.
 \end{enumerate}
 \end{exercise}
 
@@ -1334,7 +1340,7 @@ We say that a sequence of functions $f_n \colon \R \to \R$
 \emph{\myindex{converges uniformly on compact subsets}}
 \index{uniform convergence on compact subsets}
 if for every $k \in \N$,
-the sequence $\{ f_n \}$ converges uniformly on $[-k,k]$.
+the sequence $\{ f_n \}_{n=1}^\infty$ converges uniformly on $[-k,k]$.
 \begin{enumerate}[a)]
 \item
 Prove that if $f_n \colon \R \to \R$ is a sequence of
@@ -1381,7 +1387,7 @@ whose uniform limit is $\sqrt{x}$, which is a non-Lipschitz function.
 \item
 On the other hand, show that if $f_n \colon S \to \R$ are Lipschitz
 with a uniform constant $K$ (meaning all of them satisfy the definition
-with the same constant) and $\{ f_n \}$ converges pointwise
+with the same constant) and $\{ f_n \}_{n=1}^\infty$ converges pointwise
 to $f \colon S \to \R$,
 then the limit $f$ is a Lipschitz continuous function
 with Lipschitz constant $K$.
@@ -1416,21 +1422,21 @@ Let $f_n(x) := \frac{x}{1+{(nx)}^2}$.  Notice that $f_n$ are differentiable
 functions.
 \begin{enumerate}[a)]
 \item
-Show that $\{ f_n \}$ converges uniformly to 0.
+Show that $\{ f_n \}_{n=1}^\infty$ converges uniformly to 0.
 \item
 Show that $\sabs{f_n'(x)} \leq 1$ for all $x$ and all $n$.
 \item
-Show that $\{ f_n' \}$ converges pointwise to a function discontinuous at
+Show that $\{ f_n' \}_{n=1}^\infty$ converges pointwise to a function discontinuous at
 the origin.
 \item
-Let $\{ a_n \}$ be an enumeration of the rational numbers.
+Let $\{ a_n \}_{n=1}^\infty$ be an enumeration of the rational numbers.
 Define
 \begin{equation*}
 g_n(x) := \sum_{k=1}^n 2^{-k} f_n(x-a_k) .
 \end{equation*}
-Show that $\{ g_n \}$ converges uniformly to 0.
+Show that $\{ g_n \}_{n=1}^\infty$ converges uniformly to 0.
 \item
-Show that $\{ g_n' \}$ converges pointwise to a function $\psi$ that
+Show that $\{ g_n' \}_{n=1}^\infty$ converges pointwise to a function $\psi$ that
 is discontinuous at every rational number and continuous at every
 irrational number.  In particular, $\lim_{n\to\infty} g_n'(x) \not= 0$ for
 every rational number $x$.
@@ -1498,8 +1504,8 @@ and $(x,y) \in U$ a point.  The function $F$ is \emph{continuous}
 at $(x,y)$ if 
 for every sequence
 $\bigl\{ (x_n,y_n) \bigr\}_{n=1}^\infty$ of points in $U$ such that
-$\lim\, x_n = x$ and 
-$\lim\, y_n = y$, we have 
+$\lim_{n\to\infty} x_n = x$ and 
+$\lim_{n\to\infty} y_n = y$, we have 
 \begin{equation*}
 \lim_{n \to \infty} F(x_n,y_n) = 
 F(x,y) .
@@ -1592,11 +1598,11 @@ M
 \leq \alpha .
 \end{equation*}
 We now define $f_{k+1}$ and so on, and
-we have defined a sequence $\{ f_k \}$ of functions.  We need
+we have defined a sequence $\{ f_k \}_{k=1}^\infty$ of functions.  We need
 to show that it converges to a function $f$ that solves
 the equation \eqref{picard:inteq} and therefore \eqref{picard:diffeq}.
 
-We wish to show that the sequence $\{ f_k \}$ converges uniformly
+We wish to show that the sequence $\{ f_k \}_{k=1}^\infty$ converges uniformly
 to some function on $[-h,h]$.  First, for $t \in [-h,h]$,
 we have the following
 useful bound
@@ -1654,8 +1660,8 @@ Therefore,
 \begin{equation*}
 \norm{f_n-f_k}_{[-h,h]} \leq C^{k} \norm{f_{n-k}-f_{0}}_{[-h,h]} \leq C^{k} \alpha .
 \end{equation*}
-As $C < 1$, $\{f_n\}$ is uniformly Cauchy and by
-\propref{prop:uniformcauchy} we obtain that $\{ f_n \}$
+As $C < 1$, $\{f_n\}_{n=1}^\infty$ is uniformly Cauchy and by
+\propref{prop:uniformcauchy} we obtain that $\{ f_n \}_{n=1}^\infty$
 converges uniformly on $[-h,h]$ to some function $f \colon [-h,h] \to \R$.
 The function $f$ is the uniform limit of continuous functions and therefore
 continuous.  Furthermore, since $f_n\bigl([-h,h]\bigr) \subset
