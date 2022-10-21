@@ -88,6 +88,7 @@ $in_appendix = 0;
 $exercise_num = 0;
 $thm_num = 0;
 $figure_num = 0;
+$table_num = 0;
 
 #FIXME: equation counter implement
 $equation_num = 0;
@@ -272,10 +273,10 @@ sub open_chapter {
 
 	$exercise_num = 0;
 	$thm_num = 0;
-	$efigure_num = 0;
 
 	$equation_num = 0;
 	$figure_num = 0;
+	$table_num = 0;
 
 	my $ch = get_chapter_num();
 
@@ -407,6 +408,15 @@ sub get_figure_number {
 		return "$ch.$figure_num";
 	} else {
 		return "$figure_num";
+	}
+}
+
+sub get_table_number {
+	my $ch = get_chapter_num();
+	if ($inchapter and not $ch eq "0") {
+		return "$ch.$table_num";
+	} else {
+		return "$table_num";
 	}
 }
 
@@ -1070,7 +1080,9 @@ while(1)
 			$table =~ s/\\myendframe[ \n]*//;
 
 			close_paragraph ();
-			print $out "<table xml:id=\"$theid\">\n";
+			$table_num = $table_num+1;
+			my $the_num = get_table_number ();
+			print $out "<table xml:id=\"$theid\" number=\"$the_num\">\n";
 			print $out "  <title>$caption</title>\n";
 			print $out "  <tabular top=\"major\" halign=\"left\">\n";
 
