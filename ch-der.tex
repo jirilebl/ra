@@ -547,9 +547,6 @@ $f'(c) = 0$.
 \end{lemma}
 
 \begin{proof}
-We prove the statement for a maximum.  For a minimum the statement
-follows by considering the function $-f$.
-
 Let $c$ be a relative maximum of $f$.  That is, there is a $\delta > 0$ such
 that as long
 as $\abs{x-c} < \delta$, we have $f(x)-f(c) \leq 0$.
@@ -581,8 +578,11 @@ is differentiable at $c$,
 =
 f'(c)
 =
-\lim_{n\to\infty} \frac{f(y_n)-f(c)}{y_n-c} \geq 0.  \qedhere
+\lim_{n\to\infty} \frac{f(y_n)-f(c)}{y_n-c} \geq 0.
 \end{equation*}
+We are done with a maximum.
+For a minimum, consider
+the function $-f$.
 \end{proof}
 
 For a differentiable function, a point where 
@@ -617,7 +617,7 @@ so-called Rolle's theorem%
 
 \begin{thm}[Rolle] \label{thm:rolle}
 \index{Rolle's theorem}
-Let $f \colon [a,b] \to \R$ be continuous function
+Let $f \colon [a,b] \to \R$ be a continuous function
 differentiable on $(a,b)$ such that $f(a) = f(b)$.
 Then there exists a $c \in (a,b)$ such that $f'(c) = 0$.
 \end{thm}
