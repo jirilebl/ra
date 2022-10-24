@@ -540,7 +540,7 @@ is analogous.
 \end{defn}
 
 \begin{lemma}\label{relminmax:lemma}
-Suppose $f \colon [a,b] \to \R$ is differentiable at $c \in (a,b)$,
+Suppose $f \colon (a,b) \to \R$ is differentiable at $c \in (a,b)$,
 and $f$ has
 a relative minimum or a relative maximum at $c$.  Then
 $f'(c) = 0$.
@@ -549,8 +549,8 @@ $f'(c) = 0$.
 \begin{proof}
 Suppose $c$ is a 
 relative maximum of $f$.  That is, there is a $\delta > 0$ such
-that as long
-as $\abs{x-c} < \delta$, we have $f(x)-f(c) \leq 0$.
+that for every $x \in (a,b)$ where
+$\abs{x-c} < \delta$, we have $f(x)-f(c) \leq 0$.
 Consider the difference
 quotient.  If $c < x < c+\delta$, then
 \begin{equation*}
@@ -568,7 +568,7 @@ See \figureref{fig:critpt} for an illustration.
 
 As $a < c < b$, there exist
 sequences $\{ x_n \}_{n=1}^\infty$ and
-$\{ y_n \}_{n=1}^\infty$ in $[a,b]$ and within $\delta$ of $c$,
+$\{ y_n \}_{n=1}^\infty$ in $(a,b)$ and within $\delta$ of $c$,
 such that $x_n > c$, and
 $y_n < c$ for all $n \in \N$, and such that
 $\lim_{n\to\infty} x_n = \lim_{n\to\infty} y_n = c$.
