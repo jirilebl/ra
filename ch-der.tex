@@ -547,10 +547,11 @@ $f'(c) = 0$.
 \end{lemma}
 
 \begin{proof}
-Let $c$ be a relative maximum of $f$.  That is, there is a $\delta > 0$ such
+Suppose $c$ is a 
+relative maximum of $f$.  That is, there is a $\delta > 0$ such
 that as long
 as $\abs{x-c} < \delta$, we have $f(x)-f(c) \leq 0$.
-We look at the difference
+Consider the difference
 quotient.  If $c < x < c+\delta$, then
 \begin{equation*}
 \frac{f(x)-f(c)}{x-c} \leq 0 ,
@@ -592,8 +593,8 @@ it is common to also say that $c$ is a critical point
 if $f'(c)$ does not exist.
 The theorem says that a relative minimum or maximum at an interior point
 of an interval must be a critical point.
-As you remember from calculus, finding minima and maxima of a function can
-be done by finding all the critical points together with the endpoints of
+As you remember from calculus, one finds minima and maxima of a function
+by finding all the critical points together with the endpoints of
 the interval and simply checking at which of these points
 is the function biggest or smallest.
 
@@ -666,6 +667,10 @@ and $\bigl(b,f(b)\bigr)$.
 Then $c$ is the point such that $f'(c) = \frac{f(b)-f(a)}{b-a}$, that 
 is, the tangent line at the point $\bigl(c,f(c)\bigr)$ has the same slope as the
 line between $\bigl(a,f(a)\bigr)$ and $\bigl(b,f(b)\bigr)$.
+The name comes from the fact that the slope of the secant line
+is the mean value of the derivative, so the average derivative is achieved
+in the interior of the interval.
+
 The theorem follows from \hyperref[thm:rolle]{Rolle's theorem},
 by subtracting from $f$ the affine linear function with the derivative
 $\frac{f(b)-f(a)}{b-a}$ with the same values at $a$ and $b$ as $f$.
@@ -694,7 +699,7 @@ $c \in (a,b)$ such that $g'(c) = 0$, that is,
 0 = g'(c) = f'(c)-\frac{f(b)-f(a)}{b-a} .
 \end{equation*}
 In other words,
-$f'(c)(b-a) = f(b)-f(a)$.
+$f(b)-f(a) = f'(c)(b-a)$.
 \end{proof}
 
 The proof generalizes.  By considering
@@ -782,11 +787,11 @@ By the \hyperref[thm:mvt]{mean value theorem}, there is some $c \in (x,y)$ such 
 \begin{equation*}
 f(y)-f(x) = f'(c)(y-x) .
 \end{equation*}
-As $f'(c) \geq 0$, and $y-x > 0$, then $f(y) - f(x) \geq 0$ or $f(x) \leq
-f(y)$ and so
+As $f'(c) \geq 0$ and $y-x > 0$, then $f(y) - f(x) \geq 0$ or $f(x) \leq
+f(y)$, and so
 $f$ is increasing.
 
-We leave the decreasing part to the reader as exercise.
+We leave the second item, decreasing $f$, to the reader as exercise.
 \end{proof}
 
 A similar but weaker statement is true for strictly increasing and
