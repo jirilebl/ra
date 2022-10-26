@@ -753,7 +753,7 @@ As $f'(c) = 0$, we have $f(y) = f(x)$.  Hence,
 the function is constant.
 \end{proof}
 
-Now that we know what it means for the function to stay constant, let us look
+Now that we know what it means for the function to stay constant, we look
 at increasing and decreasing functions.
 We say $f \colon I \to \R$ is \emph{\myindex{increasing}}
 (resp.\  \emph{\myindex{strictly increasing}}) if
@@ -774,12 +774,12 @@ let $f \colon I \to \R$ be a differentiable function.
 \end{prop}
 
 \begin{proof}
-Let us prove the first item.  Suppose $f$ is increasing, then
-for all $x,c \in I$ with $x \neq c$, we have
+Let us prove the first item.  Suppose $f$ is increasing.
+For all $x,c \in I$ with $x \neq c$,
 \begin{equation*}
 \frac{f(x)-f(c)}{x-c} \geq 0 .
 \end{equation*}
-Taking a limit as $x$ goes to $c$ we see that $f'(c) \geq 0$.
+Taking a limit as $x$ goes to $c$, we see that $f'(c) \geq 0$.
 
 For the other direction, suppose $f'(x) \geq 0$ for all $x \in I$.
 Take any $x, y \in I$ where $x < y$, and note that $[x,y] \subset I$.
@@ -975,7 +975,8 @@ and $f'$ is on the right.  Notice that $f(x) \leq x^2$ on the left graph.\label{
 Proof: It is immediate from the definition that $f$ has an absolute
 minimum at $0$; we know $f(x) \geq 0$ for all $x$ and $f(0) = 0$.
 
-The function $f$ is differentiable for $x\not=0$,
+For $x \not= 0$,
+$f$ is differentiable
 and
 the derivative 
 is $2 \sin (\nicefrac{1}{x}) \bigl( x \sin (\nicefrac{1}{x}) -
@@ -984,12 +985,12 @@ As an exercise, show that for $x_n = \frac{4}{(8n+1)\pi}$,
 we have
 $\lim_{n\to\infty} f'(x_n) = -1$, and for
 $y_n = \frac{4}{(8n+3)\pi}$, we have
-$\lim_{n\to\infty} f'(y_n) = 1$.  Hence if $f'$ exists at $0$,
-then it cannot be continuous.
+$\lim_{n\to\infty} f'(y_n) = 1$.  So $f'$
+cannot be continuous at $0$
+no matter what $f'(0)$ is.
 
-Let us show that $f'$ exists at $0$.  We claim that the derivative is zero.
-In other words, $\abs{\frac{f(x)-f(0)}{x-0} - 0}$ goes to zero
-as $x$ goes to zero.  For $x \not= 0$,
+Let us show that $f$ is differentiable at $0$ and $f'(0)=0$.
+For $x \not= 0$,
 \begin{equation*}
 \abs{\frac{f(x)-f(0)}{x-0} - 0}
 =
