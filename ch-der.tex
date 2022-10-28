@@ -1310,7 +1310,7 @@ Plugging in $c$ for $s$ we obtain $M_{x,x_0} = \frac{f^{(n+1)}(c)}{(n+1)!}$, and
 we are done.
 \end{proof}
 
-In the proof, we have computed 
+In the proof, we found
 ${(P_n^{x_0})}^{(k)}(x_0) = f^{(k)}(x_0)$ for $k=0,1,2,\ldots,n$.
 Therefore, the Taylor polynomial has the same derivatives as $f$ at $x_0$
 up to the $n$th derivative.  That is why the Taylor polynomial is
@@ -1323,9 +1323,11 @@ by the Taylor polynomial everywhere.
 Consider expanding the function $f(x) :=
 \frac{x}{1-x}$ around 0, for $x < 1$, we get the graphs in
 \figureref{fig:taylorgeom}.  The dotted lines are the first, second, and
-third degree approximations.  The dashed line is
-the 20th degree polynomial, and yet the approximation only seems to get
-better with the degree for $x > -1$, and for smaller $x$, it in fact gets worse.
+third degree approximations.
+The dashed line is the 20th degree polynomial.
+The approximation does seem to get
+better as the degree rises for $x > -1$.
+However, for $x < -1$, it in fact gets worse.
 The polynomials
 are the partial sums of the geometric series $\sum_{n=1}^\infty x^n$,
 and the series only converges on $(-1,1)$.
@@ -1357,7 +1359,7 @@ whose Taylor series at every point $x_0$
 converges to $f$ in some open interval containing $x_0$
 are called
 \emph{analytic functions}\index{analytic function}.
-Most functions one tends to see in practice are analytic.
+Many functions one tends to see in practice are analytic.
 See \exerciseref{exercise:nonanalytic}, for an example of a non-analytic
 function.
 
@@ -1695,7 +1697,7 @@ See also \exerciseref{exercise:oddroot}.
 \subsection{Exercises}
 
 \begin{exercise}
-Suppose $f \colon \R \to \R$ is continuously differentiable such that
+Suppose $f \colon \R \to \R$ is continuously differentiable and
 $f'(x) > 0$ for all $x$.  Show that $f$ is invertible on the interval $J =
 f(\R)$, the inverse is continuously differentiable, and ${(f^{-1})}'(y) >
 0$ for all $y \in f(\R)$.

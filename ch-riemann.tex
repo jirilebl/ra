@@ -39,9 +39,6 @@ We write
 \begin{equation*}
 \Delta x_i := x_i - x_{i-1} .
 \end{equation*}
-
-\medskip
-
 Let $f \colon [a,b] \to \R$ be a bounded function.  Let $P$ be a partition of
 $[a,b]$.
 Define
@@ -85,7 +82,7 @@ L(P,f) \leq U(P,f)
 \end{prop}
 
 \begin{proof}
-Let $P$ be a partition.  Note that $m \leq m_i$ for all $i$ and
+Let $P$ be a partition of $[a,b]$.  Note that $m \leq m_i$ for all $i$ and
 $M_i \leq M$ for all $i$.  Also $m_i \leq M_i$ for all $i$.  Finally,
 $\sum_{i=1}^n \Delta x_i = (b-a)$.  Therefore,
 \begin{multline*}
@@ -146,7 +143,7 @@ $x \in \Q$ and $f(x) := 0$ if $x \notin \Q$.  Then
 \underline{\int_0^1} f = 0 \qquad \text{and} \qquad
 \overline{\int_0^1} f = 1 .
 \end{equation*}
-The reason is that for every $i$, we have 
+The reason is that for any partition $P$ and every $i$, we have 
 $m_i = \inf \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\} = 0$  and
 $M_i = \sup \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\} = 1$.  Thus
 \begin{equation*}
@@ -228,8 +225,8 @@ $k_{i} = p$.\label{fig:refinement}}
 \end{myfigureht}
 
 Let $m_i$ be as before and correspond to the partition $P$.
-Let $\widetilde{m}_i := \inf \{ f(x) : \widetilde{x}_{i-1} \leq x \leq
-\widetilde{x}_i \}$.
+Let $\widetilde{m}_p := \inf \bigl\{ f(x) : \widetilde{x}_{p-1} \leq x \leq
+\widetilde{x}_p \bigr\}$.
 Now, $m_i \leq \widetilde{m}_p$ for $k_{i-1} < p \leq k_i$.  Therefore,
 \begin{equation*}
 m_i \Delta x_i
@@ -282,7 +279,7 @@ The inequality
 $U(P,f) \leq M(b-a)$ implies $\overline{\int_a^b} f \leq M(b-a)$.
 
 The middle inequality in
-\eqref{intulbound:eq} is the main point of this proposition.
+\eqref{intulbound:eq} is the main point of the proposition.
 Let $P_1, P_2$ be partitions of $[a,b]$.  Define 
 $\widetilde{P} := P_1 \cup P_2$.
 The set $\widetilde{P}$ is a partition of $[a,b]$, which
@@ -394,7 +391,7 @@ M_2 &= \sup \, \bigl\{ f(x) : x \in [1-\epsilon,1+\epsilon] \bigr\} = 1 , \\
 m_3 &= \inf \, \bigl\{ f(x) : x \in [1+\epsilon,2] \bigr\} = 0 , & 
 M_3 &= \sup \, \bigl\{ f(x) : x \in [1+\epsilon,2] \bigr\} = 0 .
 \end{align*}
-Furthermore, $\Delta x_1 = 1-\epsilon$, $\Delta x_2 = 2\epsilon$ and
+Furthermore, $\Delta x_1 = 1-\epsilon$, $\Delta x_2 = 2\epsilon$, and
 $\Delta x_3 = 1-\epsilon$.
 See \figureref{darbouxfigstep}.
 \begin{myfigureht}
