@@ -200,7 +200,8 @@ $x_n = \widetilde{x}_{\ell}$.  In fact, there are integers
 $k_0 < k_1 < \cdots < k_n$ such that $x_i = \widetilde{x}_{k_i}$ for
 $i=0,1,2,\ldots,n$.
 
-Let $\Delta \widetilde{x}_p := \widetilde{x}_p - \widetilde{x}_{p-1}$.
+Let $\Delta \widetilde{x}_q := \widetilde{x}_q - \widetilde{x}_{q-1}$ for
+$q=0,1,2,\ldots,\ell$.
 See \figureref{fig:refinement}.
 We get 
 \begin{equation*}
@@ -208,34 +209,34 @@ We get
 =
 x_i - x_{i-1} =
 \widetilde{x}_{k_i} - \widetilde{x}_{k_{i-1}} =
-\sum_{p=k_{i-1}+1}^{k_i} 
-\widetilde{x}_{p} - \widetilde{x}_{p-1}
+\sum_{q=k_{i-1}+1}^{k_i} 
+\widetilde{x}_{q} - \widetilde{x}_{q-1}
 =
-\sum_{p=k_{i-1}+1}^{k_i} \Delta \widetilde{x}_p .
+\sum_{q=k_{i-1}+1}^{k_i} \Delta \widetilde{x}_q .
 \end{equation*}
 \begin{myfigureht}
 \subimport*{figures/}{figrefinement.pdf_t}
 \caption{Refinement of a subinterval.  Notice $\Delta x_i =
-\Delta \widetilde{x}_{p-2} +
-\Delta \widetilde{x}_{p-1} +
-\Delta \widetilde{x}_{p}$,
+\Delta \widetilde{x}_{q-2} +
+\Delta \widetilde{x}_{q-1} +
+\Delta \widetilde{x}_{q}$,
 and also
-$k_{i-1}+1 = p-2$ and
-$k_{i} = p$.\label{fig:refinement}}
+$k_{i-1}+1 = q-2$ and
+$k_{i} = q$.\label{fig:refinement}}
 \end{myfigureht}
 
 Let $m_i$ be as before and correspond to the partition $P$.
-Let $\widetilde{m}_p := \inf \bigl\{ f(x) : \widetilde{x}_{p-1} \leq x \leq
-\widetilde{x}_p \bigr\}$.
-Now, $m_i \leq \widetilde{m}_p$ for $k_{i-1} < p \leq k_i$.  Therefore,
+Let $\widetilde{m}_q := \inf \bigl\{ f(x) : \widetilde{x}_{q-1} \leq x \leq
+\widetilde{x}_q \bigr\}$.
+Now, $m_i \leq \widetilde{m}_q$ for $k_{i-1} < q \leq k_i$.  Therefore,
 \begin{equation*}
 m_i \Delta x_i
 =
-m_i \sum_{p=k_{i-1}+1}^{k_i} \Delta \widetilde{x}_p
+m_i \sum_{q=k_{i-1}+1}^{k_i} \Delta \widetilde{x}_q
 =
-\sum_{p=k_{i-1}+1}^{k_i} m_i \Delta \widetilde{x}_p
+\sum_{q=k_{i-1}+1}^{k_i} m_i \Delta \widetilde{x}_q
 \leq
-\sum_{p=k_{i-1}+1}^{k_i} \widetilde{m}_p \Delta \widetilde{x}_p .
+\sum_{q=k_{i-1}+1}^{k_i} \widetilde{m}_q \Delta \widetilde{x}_q .
 \end{equation*}
 So
 \begin{equation*}
@@ -243,10 +244,10 @@ L(P,f) =
 \sum_{i=1}^n m_i \Delta x_i
 \leq
 \sum_{i=1}^n \,
-\sum_{p=k_{i-1}+1}^{k_i} \widetilde{m}_p \Delta \widetilde{x}_p
+\sum_{q=k_{i-1}+1}^{k_i} \widetilde{m}_q \Delta \widetilde{x}_q
 =
-\sum_{i=1}^{\ell}
-\widetilde{m}_i \Delta \widetilde{x}_i = L(\widetilde{P},f).
+\sum_{q=1}^{\ell}
+\widetilde{m}_q \Delta \widetilde{x}_q = L(\widetilde{P},f).
 \end{equation*}
 
 The proof of $U(\widetilde{P},f) \leq U(P,f)$ is left as an exercise.
@@ -384,12 +385,12 @@ Proof: Let $0 < \epsilon < 1$ be arbitrary.
 Let $P := \{0, 1-\epsilon, 1+\epsilon, 2\}$ be a partition.  We use the notation from
 the definition of the Darboux sums.  Then
 \begin{align*}
-m_1 &= \inf \, \bigl\{ f(x) : x \in [0,1-\epsilon] \bigr\} = 1 , & 
-M_1 &= \sup \, \bigl\{ f(x) : x \in [0,1-\epsilon] \bigr\} = 1 , \\
-m_2 &= \inf \, \bigl\{ f(x) : x \in [1-\epsilon,1+\epsilon] \bigr\} = 0 , & 
-M_2 &= \sup \, \bigl\{ f(x) : x \in [1-\epsilon,1+\epsilon] \bigr\} = 1 , \\
-m_3 &= \inf \, \bigl\{ f(x) : x \in [1+\epsilon,2] \bigr\} = 0 , & 
-M_3 &= \sup \, \bigl\{ f(x) : x \in [1+\epsilon,2] \bigr\} = 0 .
+m_1 &= \inf  \bigl\{ f(x) : x \in [0,1-\epsilon] \bigr\} = 1 , & 
+M_1 &= \sup  \bigl\{ f(x) : x \in [0,1-\epsilon] \bigr\} = 1 , \\
+m_2 &= \inf  \bigl\{ f(x) : x \in [1-\epsilon,1+\epsilon] \bigr\} = 0 , & 
+M_2 &= \sup  \bigl\{ f(x) : x \in [1-\epsilon,1+\epsilon] \bigr\} = 1 , \\
+m_3 &= \inf  \bigl\{ f(x) : x \in [1+\epsilon,2] \bigr\} = 0 , & 
+M_3 &= \sup  \bigl\{ f(x) : x \in [1+\epsilon,2] \bigr\} = 0 .
 \end{align*}
 Furthermore, $\Delta x_1 = 1-\epsilon$, $\Delta x_2 = 2\epsilon$, and
 $\Delta x_3 = 1-\epsilon$.
