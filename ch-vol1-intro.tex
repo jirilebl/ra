@@ -106,11 +106,11 @@ Furthermore, the proofs and the language get slightly less formal as we
 progress through the book, as more and more details are left out to avoid
 clutter.
 
-As a general rule, I use $:=$ instead of $=$ to define an
+As a general rule, I use $\coloneqq$ instead of $=$ to define an
 object rather than to simply show equality.  I use this symbol rather more
 liberally than is usual for emphasis.
 I use it even when the context is \myquote{local,}
-that is, I may simply define a function $f(x) := x^2$
+that is, I may simply define a function $f(x) \coloneqq x^2$
 for a single exercise or example.
 
 \medskip
@@ -273,11 +273,11 @@ Most of the time we will consider sets
 of numbers.  For example, the set
 \glsadd{not:set}
 \begin{equation*}
-S := \{ 0, 1, 2 \}
+S \coloneqq \{ 0, 1, 2 \}
 \end{equation*}
 is the set containing
 the three elements 0, 1, and 2.
-By \myquote{$:=$},\glsadd{not:def} we mean we are defining what $S$ is, rather than
+By \myquote{$\coloneqq$},\glsadd{not:def} we mean we are defining what $S$ is, rather than
 just showing equality.
 We write\glsadd{not:eltof}
 \begin{equation*}
@@ -308,7 +308,7 @@ While the elements of a set are often numbers,
 other objects, such as other sets, can be elements of a set.
 A set may also contain some of the same elements as another set.  For example,
 \begin{equation*}
-T := \{ 0, 2 \}
+T \coloneqq \{ 0, 2 \}
 \end{equation*}
 contains the numbers 0 and 2.  In this case all elements of $T$ also
 belong to $S$.  We write $T \subset S$.\glsadd{not:subset}
@@ -368,15 +368,15 @@ The following are sets including the standard notations.
 \begin{enumerate}[(i)]
 \item The set of \emph{\myindex{natural numbers}},
 \glsadd{not:natnums}
-$\N := \{ 1, 2, 3, \ldots
+$\N \coloneqq \{ 1, 2, 3, \ldots
 \}$.
 \item The set of \emph{\myindex{integers}},
 \glsadd{not:ints} 
-$\Z := \{ 0, -1, 1, -2, 2, \ldots
+$\Z \coloneqq \{ 0, -1, 1, -2, 2, \ldots
 \}$.
 \item The set of \emph{\myindex{rational numbers}},
 \glsadd{not:rationals} 
-$\Q := \bigl\{ \frac{m}{n} :  m, n \in \Z \text{ and } n \not= 0 \bigr\}$.
+$\Q \coloneqq \bigl\{ \frac{m}{n} :  m, n \in \Z \text{ and } n \not= 0 \bigr\}$.
 \item The set of even natural numbers, $\{  2m : m \in \N \}$.
 \item The set of real numbers,
 \glsadd{not:reals} 
@@ -396,20 +396,20 @@ We create new sets out of old ones by applying some natural operations.
 A \emph{\myindex{union}} of two sets $A$ and $B$ is defined as
 \glsadd{not:union}
 \begin{equation*}
-A \cup B := \{ x : x \in A \text{ or } x \in B \} .
+A \cup B \coloneqq \{ x : x \in A \text{ or } x \in B \} .
 \end{equation*}
 \item
 An \emph{\myindex{intersection}} of two sets $A$ and $B$ is defined as
 \glsadd{not:intersection}
 \begin{equation*}
-A \cap B := \{ x : x \in A \text{ and } x \in B \} .
+A \cap B \coloneqq \{ x : x \in A \text{ and } x \in B \} .
 \end{equation*}
 \item
 A \emph{complement of $B$ relative to $A$\index{complement relative to}}
 (or \emph{\myindex{set-theoretic difference}} of $A$ and $B$) is defined as
 \glsadd{not:setminus}
 \begin{equation*}
-A \setminus B := \{ x : x \in A \text{ and } x \notin B \} .
+A \setminus B \coloneqq \{ x : x \in A \text{ and } x \notin B \} .
 \end{equation*}
 \item
 We say
@@ -494,9 +494,9 @@ $\{ A_1, A_2, A_3, \ldots \}$.  We define
 \glsadd{not:infunion}
 \glsadd{not:infintersection}
 \begin{align*}
-& \bigcup_{n=1}^\infty A_n := \{ x : x \in A_n \text{ for some } n \in \N
+& \bigcup_{n=1}^\infty A_n \coloneqq \{ x : x \in A_n \text{ for some } n \in \N
 \} , \\
-& \bigcap_{n=1}^\infty A_n := \{ x : x \in A_n \text{ for all } n \in \N
+& \bigcap_{n=1}^\infty A_n \coloneqq \{ x : x \in A_n \text{ for all } n \in \N
 \} .
 \end{align*}
 
@@ -539,11 +539,11 @@ I$, there is a set $A_\lambda$.  Then we define
 \glsadd{not:arbitunion}
 \glsadd{not:arbitintersection}
 \begin{equation*}
-\bigcup_{\lambda \in I} A_\lambda := \{ x : x \in A_\lambda \text{ for some }
+\bigcup_{\lambda \in I} A_\lambda \coloneqq \{ x : x \in A_\lambda \text{ for some }
 \lambda \in I
 \} ,
 \qquad
-\bigcap_{\lambda \in I} A_\lambda := \{ x : x \in A_\lambda \text{ for all }
+\bigcap_{\lambda \in I} A_\lambda \coloneqq \{ x : x \in A_\lambda \text{ for all }
 \lambda \in I
 \} .
 \end{equation*}
@@ -681,9 +681,9 @@ a \emph{\myindex{set-theoretic function}}\index{function}
 $f$ taking a set $A$ to a set $B$
 is a mapping that to each $x \in A$ assigns a unique $y \in B$.  We write
 $f \colon A \to B$.\glsadd{not:func}  An example function 
-$f \colon S \to T$ taking $S := \{ 0, 1, 2 \}$ to $T := \{ 0, 2 \}$
+$f \colon S \to T$ taking $S \coloneqq \{ 0, 1, 2 \}$ to $T \coloneqq \{ 0, 2 \}$
 can be defined
-by assigning $f(0) := 2$, $f(1) := 2$, and $f(2) := 0$.  That is, a function $f
+by assigning $f(0) \coloneqq 2$, $f(1) \coloneqq 2$, and $f(2) \coloneqq 0$.  That is, a function $f
 \colon A \to B$ is
 a black box, into which we stick an element of $A$ and the function
 spits out an element of $B$.
@@ -706,7 +706,7 @@ Let $A$ and $B$ be sets.  The \emph{\myindex{Cartesian product}}
 is the set of tuples defined as
 \glsadd{not:cartprod}
 \begin{equation*}
-A \times B :=
+A \times B \coloneqq
 \bigl\{ (x,y) : x \in A, y \in B \bigr\} .
 \end{equation*}
 \end{defn}
@@ -731,7 +731,7 @@ the function itself.
 The set $A$ is called the \emph{\myindex{domain}} of $f$ (and
 sometimes confusingly denoted $D(f)$).  The set
 \begin{equation*}
-R(f) := \{ y \in B : \text{there exists an } x \in A \text{ such that }
+R(f) \coloneqq \{ y \in B : \text{there exists an } x \in A \text{ such that }
 f(x)=y \}
 \end{equation*}
 is called the \emph{\myindex{range}} of $f$.
@@ -759,13 +759,13 @@ the \emph{\myindex{image}} (or \emph{\myindex{direct image}}) of a subset
 $C \subset A$ as
 \glsadd{not:dirimage}
 \begin{equation*}
-f(C) := \bigl\{ f(x) \in B : x \in C \bigr\} .
+f(C) \coloneqq \bigl\{ f(x) \in B : x \in C \bigr\} .
 \end{equation*}
 Define the \emph{\myindex{inverse image}} of a subset $D
 \subset B$ as
 \glsadd{not:invimage}
 \begin{equation*}
-f^{-1}(D) := \bigl\{ x \in A : f(x) \in D \bigr\} .
+f^{-1}(D) \coloneqq \bigl\{ x \in A : f(x) \in D \bigr\} .
 \end{equation*}
 \end{defn}
 
@@ -776,15 +776,15 @@ the domain $A$.
 \subimport*{figures/}{funcimags_full.pdf_t}
 \caption{Example of direct and inverse images for the function
 $f \colon \{ 1,2,3,4 \} \to \{ a,b,c,d \}$ defined by
-$f(1) := b$,
-$f(2) := d$,
-$f(3) := c$,
-$f(4) := b$.\label{figfuncimags}}
+$f(1) \coloneqq b$,
+$f(2) \coloneqq d$,
+$f(3) \coloneqq c$,
+$f(4) \coloneqq b$.\label{figfuncimags}}
 \end{myfigureht}
 
 \begin{example}
 Define the function $f \colon \R \to \R$ by
-$f(x) := \sin(\pi x)$.  Then $f\bigl([0,\nicefrac{1}{2}]\bigr) = [0,1]$, 
+$f(x) \coloneqq \sin(\pi x)$.  Then $f\bigl([0,\nicefrac{1}{2}]\bigr) = [0,1]$, 
 $f^{-1}\bigl(\{0\}\bigr) = \Z$, etc.
 \end{example}
 
@@ -854,8 +854,8 @@ a unique element of $A$.  We then consider $f^{-1}$ as a function
 \glsadd{not:invfunction}
 $f^{-1} \colon B \to A$ and we write simply $f^{-1}(y)$.
 In this case, we call $f^{-1}$ the \emph{\myindex{inverse function}} of $f$.
-For instance, for the bijection $f \colon \R \to \R$ defined by $f(x) :=
-x^3$, we have
+For instance, for the bijection $f \colon \R \to \R$ defined by
+$f(x) \coloneqq x^3$, we have
 $f^{-1}(x) = \sqrt[3]{x}$.
 
 %A final piece of notation for functions that
@@ -868,11 +868,11 @@ of the functions $f$ and $g$ is the function
 $g \circ f \colon A \to C$ defined as
 \glsadd{not:composition}
 \begin{equation*}
-(g \circ f)(x) := g\bigl(f(x)\bigr) .
+(g \circ f)(x) \coloneqq g\bigl(f(x)\bigr) .
 \end{equation*}
 \end{defn}
 
-For example, if $f \colon \R \to \R$ is $f(x):=x^3$ and $g \colon \R \to \R$
+For example, if $f \colon \R \to \R$ is $f(x)\coloneqq x^3$ and $g \colon \R \to \R$
 is $g(y) = \sin(y)$, then $(g \circ f)(x) = \sin(x^3)$.
 
 \subsection{Relations and equivalence classes}
@@ -892,7 +892,7 @@ $a \, \sR \, b$.
 \end{defn}
 
 \begin{example}
-Take $A := \{ 1,2,3 \}$.
+Take $A \coloneqq \{ 1,2,3 \}$.
 
 Consider the relation `$<$'.  The corresponding set 
 of pairs is $\bigl\{ (1,2), (1,3), (2,3) \bigr\}$.  So $1 < 2$ holds as $(1,2)$
@@ -928,7 +928,7 @@ an \emph{\myindex{equivalence relation}}.
 \end{defn}
 
 \begin{example}
-Let $A := \{ 1,2,3 \}$.
+Let $A \coloneqq \{ 1,2,3 \}$.
 The relation `$<$' is transitive, but neither reflexive nor symmetric.  The
 relation `$\leq$' defined by
 $\bigl\{ (1,1), (1,2), (1,3), (2,2), (2,3), (3,3) \bigr\}$
@@ -988,11 +988,11 @@ $A$ and we simply call $\abs{A}$ the cardinality of $A$.
 \end{defn}
 
 For example, $\{ 1,2,3 \}$ has the same cardinality as $\{ a,b,c \}$ by
-defining a bijection $f(1) := a$, $f(2) := b$, $f(3) := c$.  Clearly the
+defining a bijection $f(1) \coloneqq a$, $f(2) \coloneqq b$, $f(3) \coloneqq c$.  Clearly the
 bijection is not unique.
 
 The existence of a bijection really is an equivalence relation.
-The identity, $f(x) := x$, is a bijection showing reflexivity.
+The identity, $f(x) \coloneqq x$, is a bijection showing reflexivity.
 If $f$ is a bijection, then so is $f^{-1}$ showing symmetricity.
 If $f \colon A \to B$ and $g \colon B \to C$ are bijections, then
 $g \circ f$ is a bijection of $A$ and $C$ showing transitivity.
@@ -1004,7 +1004,8 @@ In particular, there is no bijection of $B$ and $\emptyset$.
 \begin{defn}
 Suppose $A$ has the same cardinality as $\{ 1,2,3,\ldots,n \}$
 for some $n \in \N$.
-We then write $\abs{A} := n$.  If $A$ is empty, we write $\abs{A} := 0$.
+We then write $\abs{A} \coloneqq n$.  If $A$ is empty, we write
+$\abs{A} \coloneqq 0$.
 In either case, we say that $A$ is
 \emph{\myindex{finite}}.
 
@@ -1060,7 +1061,7 @@ called an $\aleph_0$-plex.}.
 The set of even natural numbers has the same cardinality as $\N$.  Proof:
 Let $E \subset \N$ be the set of even natural numbers.
 Given $k \in E$, write $k=2n$ for some $n \in \N$.
-Then $f(n) := 2n$ defines a bijection $f \colon \N \to E$.
+Then $f(n) \coloneqq 2n$ defines a bijection $f \colon \N \to E$.
 \end{example}
 
 In fact, let us mention without proof the following characterization
@@ -1119,7 +1120,7 @@ The \emph{\myindex{power set}} of a set $A$, denoted by $\sP(A)$,
 \glsadd{not:powerset} is the set of all subsets of $A$.
 \end{defn}
 
-For example, if $A := \{ 1,2\}$,
+For example, if $A \coloneqq \{ 1,2\}$,
 then $\sP(A) = \bigl\{ \emptyset, \{ 1 \}, \{ 2 \}, \{ 1, 2 \} \bigr\}$.
 In particular, $\abs{A} = 2$ and $\abs{\sP(A)} = 4 = 2^2$.
 In general,
@@ -1146,7 +1147,7 @@ $A$ onto $\sP(A)$.
 
 \begin{proof}
 An injection $f \colon A \to \sP(A)$ exists:
-For $x \in A$, let $f(x) := \{ x \}$.  Thus,
+For $x \in A$, let $f(x) \coloneqq \{ x \}$.  Thus,
 $\abs{A} \leq \abs{\sP(A)}$.
 
 To finish the proof, we must show that
@@ -1155,7 +1156,7 @@ Suppose
 $g \colon A \to \sP(A)$ is a function.  So for $x \in A$,
 $g(x)$ is a subset of $A$.  Define the set
 \begin{equation*}
-B := \bigl\{ x \in A : x \notin g(x) \bigr\} .
+B \coloneqq \bigl\{ x \in A : x \notin g(x) \bigr\} .
 \end{equation*}
 We claim that $B$ is not in the range of $g$ and hence $g$ is not a
 surjection.  Suppose for contradiction that there exists an $x_0$ such that $g(x_0) = B$.
@@ -1212,7 +1213,7 @@ $f( C \cap D)$ is a proper subset of $f(C) \cap f(D)$.
 Prove that if $A$ is nonempty and finite, then there exists a unique
 $n \in \N$ such
 that there exists a bijection between $A$ and $\{ 1, 2, 3, \ldots, n \}$.
-In other words, the notation $\abs{A} := n$ is justified.
+In other words, the notation $\abs{A} \coloneqq n$ is justified.
 Hint: Show that if $n > m$, then there is no injection from
 $\{ 1, 2, 3, \ldots, n \}$ to
 $\{ 1, 2, 3, \ldots, m \}$.
@@ -1245,7 +1246,7 @@ Show $A \Delta B = (A \cup B) \setminus ( A \cap B)$.
 \end{samepage}
 
 \begin{exercise}
-For each $n \in \N$, let $A_n := \{ (n+1)k : k \in \N \}$.
+For each $n \in \N$, let $A_n \coloneqq \{ (n+1)k : k \in \N \}$.
 \begin{enumerate}[a)]
 \item Find $A_1 \cap A_2$.
 \item Find $\bigcup_{n=1}^\infty A_n$.

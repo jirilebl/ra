@@ -68,7 +68,7 @@ $b_0$ is called the \emph{\myindex{least upper bound}} or
 the \emph{\myindex{supremum}}
 of $E$.  See \figureref{fig:lub}.  We write\glsadd{not:sup}
 \begin{equation*}
-\sup\, E := b_0  .
+\sup\, E \coloneqq b_0  .
 \end{equation*}
 \item Similarly, if there exists a lower bound $b_0$ of $E$ such that
 $b_0 \geq b$ for all lower bounds $b$ of $E$, then
@@ -76,7 +76,7 @@ $b_0$ is called the \emph{\myindex{greatest lower bound}} or
 the \emph{\myindex{infimum}}
 of $E$.  We write\glsadd{not:inf}
 \begin{equation*}
-\inf\, E := b_0  .
+\inf\, E \coloneqq b_0  .
 \end{equation*}
 \end{enumerate}
 When a set $E$ is both bounded above and bounded below, we say simply that
@@ -96,17 +96,17 @@ $b$ and $b'$ are the least upper bounds, so $b=b'$.
 \end{myfigureht}
 
 A simple example:
-Let $S := \{ a, b, c, d, e \}$ be ordered as $a < b < c < d < e$, and
-let $E := \{ a, c \}$.  Then $c$, $d$, and $e$ are upper bounds of $E$, and
+Let $S \coloneqq \{ a, b, c, d, e \}$ be ordered as $a < b < c < d < e$, and
+let $E \coloneqq \{ a, c \}$.  Then $c$, $d$, and $e$ are upper bounds of $E$, and
 $c$ is the least upper bound or supremum of $E$.
 
 A supremum or infimum for $E$ (even if it exists) need not be
-in $E$.  The set $E := \{ x \in \Q : x < 1 \}$ has a least upper
+in $E$.  The set $E \coloneqq \{ x \in \Q : x < 1 \}$ has a least upper
 bound of 1, but 1 is not in the set $E$ itself.
 The set 
-$G := \{ x \in \Q : x \leq 1 \}$ also has an upper bound of 1,
+$G \coloneqq \{ x \in \Q : x \leq 1 \}$ also has an upper bound of 1,
 and in this case $1 \in G$.  
-The set $P := \{ x \in \Q : x \geq 0 \}$ has no upper bound (why?) and therefore
+The set $P \coloneqq \{ x \in \Q : x \geq 0 \}$ has no upper bound (why?) and therefore
 it cannot have a least upper bound.  The set $P$ does have a greatest lower
 bound:~0.
 
@@ -356,10 +356,10 @@ Then $\inf\, A$ exists.
 \end{prop}
 
 \begin{proof}
-Let $B := \{ -x : x \in A \}$. Let $b \in F$ be a lower bound for $A$:
+Let $B \coloneqq \{ -x : x \in A \}$. Let $b \in F$ be a lower bound for $A$:
 If $x \in A$, then $x \geq b$. In other words, $-x \leq -b$.  So $-b$
 is an upper bound for $B$.
-Since $F$ has the least-upper-bound property, $c:=\sup\, B$ exists, and $c \leq -b$.
+Since $F$ has the least-upper-bound property, $c\coloneqq\sup\, B$ exists, and $c \leq -b$.
 As $y \leq c$
 for all $y \in B$, then $-c \leq x$ for all $x \in A$.
 So
@@ -426,7 +426,7 @@ notation for the nonstandard ordering such as $n \prec m$.
 
 \begin{exercise}
 \pagebreak[2]
-Let $F := \{ 0, 1, 2 \}$.
+Let $F \coloneqq \{ 0, 1, 2 \}$.
 \begin{enumerate}[a)]
 \item
 Prove that there is
@@ -473,7 +473,7 @@ Prove that any ordered field must contain a countably infinite set.
 \end{exercise}
 
 \begin{exercise}
-Let $\N_{\infty} := \N \cup \{ \infty \}$, where elements of $\N$ are
+Let $\N_{\infty} \coloneqq \N \cup \{ \infty \}$, where elements of $\N$ are
 ordered in the usual way amongst themselves,
 and $k < \infty$ for every $k \in \N$.  Show $\N_{\infty}$ is an ordered set
 and that every subset $E \subset \N_{\infty}$ has a supremum in
@@ -481,7 +481,7 @@ $\N_{\infty}$ (make sure to also handle the case of an empty set).
 \end{exercise}
 
 \begin{exercise}
-Let $S := \{ a_k : k \in \N \} \cup \{ b_k : k \in \N \}$, ordered such that
+Let $S \coloneqq \{ a_k : k \in \N \} \cup \{ b_k : k \in \N \}$, ordered such that
 $a_k < b_j$ for every $k$ and $j$,
 $a_k < a_m$ whenever $k < m$,
 and $b_k > b_m$ whenever $k < m$.
@@ -581,13 +581,13 @@ $r \in \R$ such that $r^2 = 2$.  We denote $r$ by $\sqrt{2}$.}
 
 \begin{proof}
 Take the set
-$A := \{ x \in \R : x^2 < 2 \}$.  We first show that $A$ is bounded above and
+$A \coloneqq \{ x \in \R : x^2 < 2 \}$.  We first show that $A$ is bounded above and
 nonempty.  The equation $x \geq 2$ implies $x^2 \geq 4$
 (see \exerciseref{exercise:squareineq}), so
 if $x^2 < 2$, then $x < 2$.  So $A$ is bounded above.
 As $1 \in A$, the set $A$ is nonempty.  The supremum, therefore, exists.
 
-Let $r := \sup\, A$.  We will show that $r^2 = 2$ by showing
+Let $r \coloneqq \sup\, A$.  We will show that $r^2 = 2$ by showing
 that $r^2 \geq 2$ and $r^2 \leq 2$.  This is the way analysts show
 equality, by showing two inequalities.
 We already know that $r \geq 1 > 0$.
@@ -624,7 +624,7 @@ $s^2 > 2$.  We wish to find an $h > 0$ such that
 ${(s-h)}^2 > 2$ and $s-h$ is still positive.
 As 
 $s^2-2 > 0$, we have $\frac{s^2-2}{2s} > 0$.
-Let $h := \frac{s^2-2}{2s}$,
+Let $h \coloneqq \frac{s^2-2}{2s}$,
 and check
 $s-h=s-\frac{s^2-2}{2s} = \frac{s}{2}+\frac{1}{s} > 0$.  Estimate,
 \begin{equation*}
@@ -700,10 +700,10 @@ $x < r < y$.
 
 \begin{proof}
 Let us prove \ref{thm:arch:i}.  Divide through by $x$.
-Then \ref{thm:arch:i} says that for every real number $t:= \nicefrac{y}{x}$,
+Then \ref{thm:arch:i} says that for every real number $t\coloneqq \nicefrac{y}{x}$,
 we can find $n \in \N$ such that $n > t$.  In other words,
 \ref{thm:arch:i} says that $\N \subset \R$ is not bounded above.
-Suppose for contradiction that $\N$ is bounded above.  Let $b := \sup \N$.
+Suppose for contradiction that $\N$ is bounded above.  Let $b \coloneqq \sup \N$.
 The number $b-1$ cannot possibly be an upper bound for $\N$ as it is strictly
 less than $b$ (the least upper bound).  Thus there exists an $m \in \N$ such that $m > b-1$.
 Add one to obtain $m+1 > b$, contradicting $b$ being an
@@ -726,7 +726,7 @@ n(y-x) > 1
 y-x > \nicefrac{1}{n}.
 \end{equation*}
 Again by \ref{thm:arch:i} the set 
-$A := \{ k \in \N : k > nx \}$ is nonempty.  By the
+$A \coloneqq \{ k \in \N : k > nx \}$ is nonempty.  By the
 \hyperlink{wop:link}{well ordering property}
 of $\N$, $A$ has a least element $m$, and as $m \in A$,
 then $m > nx$.
@@ -760,9 +760,10 @@ See \figureref{fig:oneovernset}.
 \end{cor}
 
 \begin{proof}
-Let $A := \{ \nicefrac{1}{n} : n \in \N \}$.  Obviously $A$ is not empty.
+Let $A \coloneqq \{ \nicefrac{1}{n} : n \in \N \}$.  Obviously $A$ is not empty.
 Furthermore,
-$\nicefrac{1}{n} > 0$ for all $n \in \N$, and so 0 is a lower bound, and $b := \inf\, A$ exists.
+$\nicefrac{1}{n} > 0$ for all $n \in \N$, and so 0 is a lower bound, and $b
+\coloneqq \inf\, A$ exists.
 As 0 is a lower bound, then $b \geq 0$.
 Take an arbitrary $a > 0$.  By the
 \hyperref[thm:arch:i]{Archimedean property} there exists an $n$ such that
@@ -783,8 +784,8 @@ Suprema and infima are
 compatible with algebraic operations.  For a set $A \subset \R$ and 
 $x \in \R$ define
 \begin{align*}
-x + A & := \{ x+y \in \R : y \in A \} , \\
-xA & := \{ xy \in \R : y \in A \} .
+x + A & \coloneqq \{ x+y \in \R : y \in A \} , \\
+xA & \coloneqq \{ xy \in \R : y \in A \} .
 \end{align*}
 For example, if $A = \{ 1,2,3 \}$, then $5+A = \{ 6,7,8 \}$ and $3A = \{ 3,6,9
 \}$.
@@ -848,7 +849,7 @@ infima.  Note that
 $x < y$ whenever $x \in A$ and
 $y \in B$ still only implies $\sup\, A \leq \inf\, B$, and not a strict
 inequality.
-For example, take $A := \{ 0 \}$ and $B := \{ \nicefrac{1}{n}
+For example, take $A \coloneqq \{ 0 \}$ and $B \coloneqq \{ \nicefrac{1}{n}
 : n \in \N \}$.
 Then $0 < \nicefrac{1}{n}$
 for all $n \in \N$.  However, $\sup\, A = 0$ and $\inf\, B = 0$.
@@ -875,16 +876,16 @@ bounded and nonempty.  We make the following natural definitions.
 \begin{defn}
 Let $A \subset \R$ be a set.
 \begin{enumerate}[(i)]
-\item If $A$ is empty, then $\sup\, A := -\infty$.
-\item If $A$ is not bounded above, then $\sup\, A := \infty$.
-\item If $A$ is empty, then $\inf\, A := \infty$.
-\item If $A$ is not bounded below, then $\inf\, A := -\infty$.
+\item If $A$ is empty, then $\sup\, A \coloneqq -\infty$.
+\item If $A$ is not bounded above, then $\sup\, A \coloneqq \infty$.
+\item If $A$ is empty, then $\inf\, A \coloneqq \infty$.
+\item If $A$ is not bounded below, then $\inf\, A \coloneqq -\infty$.
 \end{enumerate}
 \end{defn}
 
 For convenience,  $\infty$ and $-\infty$ are sometimes treated as if they were
 numbers, except we do not allow arbitrary arithmetic with them.
-We make $\R^* := \R \cup \{ -\infty , \infty\}$
+We make $\R^* \coloneqq \R \cup \{ -\infty , \infty\}$
 \glsadd{not:extreal}\glsadd{not:infinity}
 into an ordered set
 by letting
@@ -978,7 +979,7 @@ $\dfrac{y}{\sqrt{2}}$.
 
 \begin{exercise} \label{exercise:supofsum}
 Let $A$ and $B$ be two nonempty bounded sets of real numbers.  Let
-$C := \{ a+b : a \in A, b \in B \}$.
+$C \coloneqq \{ a+b : a \in A, b \in B \}$.
 Show that $C$ is a bounded set and that
 \begin{equation*}
 \sup\,C = \sup\,A + \sup\,B 
@@ -990,7 +991,7 @@ Show that $C$ is a bounded set and that
 \begin{exercise}
 Let $A$ and $B$ be two nonempty bounded sets of nonnegative real numbers.
 Define the set
-$C := \{ ab : a \in A, b \in B \}$.
+$C \coloneqq \{ ab : a \in A, b \in B \}$.
 Show that $C$ is a bounded set and that
 \begin{equation*}
 \sup\,C = (\sup\,A )( \sup\,B) 
@@ -1052,7 +1053,8 @@ $x \geq 0$.
 \begin{exercise} \label{exercise:realpower}
 Let us suppose we know $x^{1/n}$ exists for every $x > 0$ and every $n \in
 \N$ (see \exerciseref{exercise:rootexistshard} above).
-For integers $p$ and $q > 0$ where $\nicefrac{p}{q}$ is in lowest terms, define $x^{p/q} :=
+For integers $p$ and $q > 0$ where $\nicefrac{p}{q}$ is in lowest terms,
+define $x^{p/q} \coloneqq
 {(x^{1/q})}^p$.
 \begin{enumerate}[a)]
 \item
@@ -1074,14 +1076,14 @@ Hint: Write $r$ and $s$ with the same denominator.
 \footnote{In
 \sectionref{sec:logandexp}
 we will define exponential and the logarithm and
-define $x^z := \exp(z \ln x)$.  We will then have 
+define $x^z \coloneqq \exp(z \ln x)$.  We will then have 
 sufficient machinery to make proofs of these assertions far easier.  At this
 point, however, we do not yet have these tools.}
 For an irrational $z \in \R \setminus \Q$ and $x > 1$ define
-$x^z := \sup \{ x^r : r \leq z, r \in \Q \}$,
+$x^z \coloneqq \sup \{ x^r : r \leq z, r \in \Q \}$,
 for $x=1$ define $1^z = 1$,
 and for $0 < x < 1$ define
-$x^z := \inf \{ x^r : r \leq z, r \in \Q \}$.
+$x^z \coloneqq \inf \{ x^r : r \leq z, r \in \Q \}$.
 Prove the two assertions of part b) for all real $z$.
 \end{enumerate}
 \end{exercise}
@@ -1102,7 +1104,7 @@ You want to think of the absolute value as the \myquote{size} of a real number.
 Let us give a formal definition.
 \glsadd{not:abs}
 \begin{equation*}
-\abs{x} :=
+\abs{x} \coloneqq
 \begin{cases}
 x & \text{if } x \geq 0, \\
 -x & \text{if } x < 0 .
@@ -1293,8 +1295,8 @@ For a function $f \colon D \to \R$, we write
 an example)
 \glsadd{not:supf}\glsadd{not:inff}
 \begin{equation*}
-\sup_{x \in D} f(x) := \sup\, f(D) \qquad \text{and} \qquad
-\inf_{x \in D} f(x) := \inf\, f(D) .
+\sup_{x \in D} f(x) \coloneqq \sup\, f(D) \qquad \text{and} \qquad
+\inf_{x \in D} f(x) \coloneqq \inf\, f(D) .
 \end{equation*}
 We also sometimes replace the \myquote{$x \in D$} with an expression.
 For example if, as before, $f(x) = x^2-9x+1$, for $-1 \leq x \leq 5$, 
@@ -1458,10 +1460,10 @@ and
 $\alpha \in \R$.
 \begin{enumerate}[a)]
 \item
-Show that $\alpha f \colon D \to \R$ defined by $(\alpha f) (x) := \alpha
+Show that $\alpha f \colon D \to \R$ defined by $(\alpha f) (x) \coloneqq \alpha
 f(x)$ is a bounded function.
 \item
-Show that $f+g \colon D \to \R$ defined by $(f+g) (x) := f(x) + g(x)$
+Show that $f+g \colon D \to \R$ defined by $(f+g) (x) \coloneqq f(x) + g(x)$
 is a bounded function.
 \end{enumerate}
 \end{exercise}
@@ -1501,10 +1503,10 @@ definition here.  For $a,  b \in \R$ such that $a < b$, we define
 \glsadd{not:openubdinterval}%
 \glsadd{not:closedubdinterval}%
 \begin{align*}
-& [a,b] := \{ x \in \R : a \leq x \leq b \}, \\
-& (a,b) := \{ x \in \R : a < x < b \}, \\
-& (a,b] := \{ x \in \R : a < x \leq b \}, \\
-& [a,b) := \{ x \in \R : a \leq x < b \} .
+& [a,b] \coloneqq \{ x \in \R : a \leq x \leq b \}, \\
+& (a,b) \coloneqq \{ x \in \R : a < x < b \}, \\
+& (a,b] \coloneqq \{ x \in \R : a < x \leq b \}, \\
+& [a,b) \coloneqq \{ x \in \R : a \leq x < b \} .
 \end{align*}
 The interval $[a,b]$ is called a \emph{\myindex{closed interval}}
 and $(a,b)$ is called an \emph{\myindex{open interval}}.  The intervals
@@ -1515,12 +1517,12 @@ The intervals above are \emph{bounded intervals}\index{bounded
 interval}, since both $a$ and $b$ are real numbers.  We 
 define \emph{unbounded intervals}\index{unbounded interval},
 \begin{align*}
-& [a,\infty) := \{ x \in \R : a \leq x \}, \\
-& (a,\infty) := \{ x \in \R : a < x \}, \\
-& (-\infty,b] := \{ x \in \R : x \leq b \}, \\
-& (-\infty,b) := \{ x \in \R : x < b \} .
+& [a,\infty) \coloneqq \{ x \in \R : a \leq x \}, \\
+& (a,\infty) \coloneqq \{ x \in \R : a < x \}, \\
+& (-\infty,b] \coloneqq \{ x \in \R : x \leq b \}, \\
+& (-\infty,b) \coloneqq \{ x \in \R : x < b \} .
 \end{align*}
-For completeness, we define $(-\infty,\infty) := \R$.
+For completeness, we define $(-\infty,\infty) \coloneqq \R$.
 The intervals $[a,\infty)$, $(-\infty,b]$, and $\R$ are sometimes called
 \emph{\myindex{unbounded closed intervals}},
 and $(a,\infty)$, $(-\infty,b)$, and $\R$ are sometimes called
@@ -1543,11 +1545,11 @@ We have already seen that every open interval $(a,b)$ (where $a < b$ of course)
 must be nonempty.  For example, it contains the number $\frac{a+b}{2}$.
 An unexpected fact is that from a set-theoretic perspective,
 all intervals have the same \myquote{size,} that is, they all have
-the same cardinality.  For example the map $f(x) := 2x$
+the same cardinality.  For example the map $f(x) \coloneqq 2x$
 takes the interval $[0,1]$ bijectively to the interval $[0,2]$.
 
 Maybe more interestingly,
-the function $f(x) := \tan(x)$
+the function $f(x) \coloneqq \tan(x)$
 is a bijective map from $(-\nicefrac{\pi}{2},\nicefrac{\pi}{2})$ to $\R$.  Hence the bounded
 interval $(-\nicefrac{\pi}{2},\nicefrac{\pi}{2})$ has the same cardinality as $\R$.  It is not
 completely straightforward to construct a bijective map from $[0,1]$ to
@@ -1596,7 +1598,7 @@ is given by $x_n$ for some $n \in \N$.
 We inductively
 construct two sequences of real numbers $a_1,a_2,a_3,\ldots$ and
 $b_1,b_2,b_3,\ldots$.  Let
-$a_1 := x_1$ and $b_1 := x_1+1$.
+$a_1 \coloneqq x_1$ and $b_1 \coloneqq x_1+1$.
 Note that $a_1 < b_1$ and
 $x_1 \notin (a_1,b_1)$.
 For some $k > 1$,
@@ -1609,7 +1611,7 @@ for each $j=1,2,\ldots,k-1$,
 we have $x_\ell \notin (a_{j},b_{j})$ 
 for $\ell=1,2,\ldots,j$.
 \begin{enumerate}[(i)]
-\item Define $a_k := x_n$, where $n$ is the smallest $n \in \N$
+\item Define $a_k \coloneqq x_n$, where $n$ is the smallest $n \in \N$
 such that $x_n \in (a_{k-1},b_{k-1})$.  Such an $x_n$ exists by our
 assumption on $X$, and $n \geq k$ by the assumption on $(a_{k-1},b_{k-1})$.
 \item Next, define $b_k$ to be some real number in $(a_{k},b_{k-1})$.
@@ -1624,12 +1626,12 @@ Claim: \emph{$a_n < b_m$ for all $n$ and $m$ in $\N$.} Proof: Let us first
 assume $n < m$.  Then $a_n < a_{n+1} < \cdots < a_{m-1} < a_m < b_m$.
 Similarly for $n > m$.  The claim follows.
 
-Let $A := \{ a_n : n \in \N \}$ and $B := \{ b_n : n \in \N \}$.
+Let $A \coloneqq \{ a_n : n \in \N \}$ and $B \coloneqq \{ b_n : n \in \N \}$.
 By \propref{infsupineq:prop} and the claim above,
 \begin{equation*}
 \sup\, A \leq \inf\, B .
 \end{equation*}
-Define $y := \sup\, A$.  The number $y$ cannot be a member of $A$:  If $y = a_n$
+Define $y \coloneqq \sup\, A$.  The number $y$ cannot be a member of $A$:  If $y = a_n$
 for some $n$, then $y < a_{n+1}$, which is impossible.
 Similarly, $y$ cannot be a member of $B$.  Therefore,
 $a_n < y$ for all $n\in \N$
@@ -1790,7 +1792,7 @@ That is, we have a digit $d_j$ for every $j \in \N$.
 We renumbered the digits to avoid the negative signs.
 We call the number
 \begin{equation*}
-D_n := 
+D_n \coloneqq 
 \frac{d_1}{10} + 
 \frac{d_2}{{10}^2} + 
 \frac{d_3}{{10}^3} + 
@@ -1869,7 +1871,7 @@ nonnegative so $D_n \geq 0$, and hence
 \begin{equation*}
 0 \leq \sup_{n\in \N} \, D_n \leq 1 .
 \end{equation*}
-Therefore, $0.d_1d_2d_3\ldots$ represents a unique number $x := \sup_{n\in
+Therefore, $0.d_1d_2d_3\ldots$ represents a unique number $x \coloneqq \sup_{n\in
 \N} D_n \in [0,1]$.
 As $x$ is a supremum, then $D_n \leq x$.
 Take $m \in \N$.  If $m < n$, then $D_m - D_n \leq 0$.  If $m > n$, then
@@ -1900,7 +1902,7 @@ x - D_n
 We move on to the
 second item.  Take any $x \in (0,1]$.
 First let us tackle the existence.
-For convenience, let $D_0 := 0$.
+For convenience, let $D_0 \coloneqq 0$.
 Then,
 $D_0 < x \leq D_0 + {10}^{-0}$.
 Suppose we defined the digits $d_1,d_2,\ldots,d_n$,
@@ -1914,7 +1916,7 @@ $x-D_n \leq j {10}^{-(n+1)}$.  Take the least such $j$ and obtain
 \begin{equation} \label{eq:theDnjineq}
 (j-1){10}^{-(n+1)} < x-D_n \leq j {10}^{-(n+1)} .
 \end{equation}
-Let $d_{n+1} := j-1$.
+Let $d_{n+1} \coloneqq j-1$.
 As $D_n < x$,
 then $d_{n+1} = j-1 \geq 0$.  On the other hand, since
 $x-D_n \leq {10}^{-n}$, we have that
@@ -2005,7 +2007,7 @@ The set $(0,1]$ is uncountable.
 \end{thm}
 
 \begin{proof}
-Let $X := \{ x_1,x_2,x_3,\ldots \}$ be any countable subset of real numbers in $(0,1]$.
+Let $X \coloneqq \{ x_1,x_2,x_3,\ldots \}$ be any countable subset of real numbers in $(0,1]$.
 We will construct a real number not in $X$.  Let
 \begin{equation*}
 x_n = 0.d_1^nd_2^nd_3^n\ldots
@@ -2013,7 +2015,7 @@ x_n = 0.d_1^nd_2^nd_3^n\ldots
 be the unique representation from the proposition, that is, $d_j^n$ is the
 $j$th digit of the $n$th number.  Let
 \begin{equation*}
-e_n :=
+e_n \coloneqq
 \begin{cases}
 1 & \text{if } d_n^n \not= 1, \\
 2 & \text{if } d_n^n = 1.

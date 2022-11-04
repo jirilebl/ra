@@ -82,7 +82,7 @@ If the limit $x$ is unique, we write%
 \footnote{In text, this may get rendered as $\lim_{n\to\infty} x_n$.}
 \glsadd{not:limseq}%
 \begin{equation*}
-\lim_{n\to \infty} x_n := x .
+\lim_{n\to \infty} x_n \coloneqq x .
 \end{equation*}
 
 A sequence
@@ -221,7 +221,7 @@ $\abs{x_n - x} < 1$.  For $n \geq M$,
 The set $\bigl\{ \abs{x_1}, \abs{x_2}, \ldots, \abs{x_{M-1}} , 1+\sabs{x} \bigr\}$
 is a finite set and hence let
 \begin{equation*}
-B := \max \bigl\{ \abs{x_1}, \abs{x_2}, \ldots, \abs{x_{M-1}}, 1+\sabs{x} \bigr\} .
+B \coloneqq \max \bigl\{ \abs{x_1}, \abs{x_2}, \ldots, \abs{x_{M-1}}, 1+\sabs{x} \bigr\} .
 \end{equation*}
 Then for all $n \in \N$,
 \begin{equation*}
@@ -321,7 +321,7 @@ first the sequence is bounded,
 that is,
 the set $\{ x_n : n \in  \N \}$ is bounded.  Let
 \begin{equation*}
-x := \sup \{ x_n : n \in \N \} .
+x \coloneqq \sup \{ x_n : n \in \N \} .
 \end{equation*}
 Let $\epsilon > 0$ be arbitrary.  As $x$ is the supremum,
 there must be at least one $M \in \N$ such that $x_{M} > x-\epsilon$.
@@ -469,7 +469,7 @@ In the process we will also show that the limits are equal.
 We start with \ref{prop:ktail:i} implies \ref{prop:ktail:ii}.
 Suppose $\{x_n \}_{n=1}^\infty$ converges to some $x \in \R$.
 Let $K \in \N$ be arbitrary, and
-define $y_n := x_{n+K}$.  We wish to show that $\{ y_n \}_{n=1}^\infty$ converges
+define $y_n \coloneqq x_{n+K}$.  We wish to show that $\{ y_n \}_{n=1}^\infty$ converges
 to $x$.
 Given an $\epsilon > 0$, there exists an $M \in \N$ such that
 $\abs{x-x_n} < \epsilon$ for all $n \geq M$.
@@ -482,10 +482,10 @@ Consequently, $\{ y_n \}_{n=1}^\infty$ converges to $x$.
 
 Let us move to \ref{prop:ktail:iii} implies \ref{prop:ktail:i}.
 Let $K \in \N$ be given, define
-$y_n := x_{n+K}$, and suppose that $\{ y_n \}_{n=1}^\infty$ converges to $x \in \R$.
+$y_n \coloneqq x_{n+K}$, and suppose that $\{ y_n \}_{n=1}^\infty$ converges to $x \in \R$.
 That is, given an $\epsilon > 0$, there exists an $M' \in \N$ such that
 $\abs{x-y_n} < \epsilon$ for all $n \geq M'$.
-Let $M := M'+K$.  Then $n \geq M$ implies $n-K \geq M'$.
+Let $M \coloneqq M'+K$.  Then $n \geq M$ implies $n-K \geq M'$.
 Thus, whenever $n \geq M$, we have
 \begin{equation*}
 \abs{x-x_n} = \abs{x-y_{n-K}} < \epsilon.
@@ -497,7 +497,7 @@ At the end of the day, the limit does not care about how the sequence begins, it
 cares about the tail of the sequence.  The beginning of the sequence
 may be arbitrary.
 
-For example, the sequence defined by $x_n := \frac{n}{n^2+16}$ is decreasing
+For example, the sequence defined by $x_n \coloneqq \frac{n}{n^2+16}$ is decreasing
 if we start at $n=4$ (it is increasing before).  That is:
 $\{ x_n \}_{n=1}^\infty =
 \nicefrac{1}{17},
@@ -547,7 +547,7 @@ a \emph{\myindex{subsequence}} of $\{ x_n \}_{n=1}^\infty$.
 So the subsequence is the sequence $x_{n_1},x_{n_2},x_{n_3},\ldots$.
 Consider the sequence $\{ \nicefrac{1}{n} \}_{n=1}^\infty$.  The sequence
 $\{ \nicefrac{1}{3i} \}_{i=1}^\infty$ is a subsequence.  To see how these two
-sequences fit in the definition, take $n_i := 3i$,
+sequences fit in the definition, take $n_i \coloneqq 3i$,
 that is, $\{ n_i \}_{i=1}^\infty$ is the
 sequence $3,6,9,12,\ldots$.  
 The numbers $x_{n_i}$ in the
@@ -697,7 +697,7 @@ $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$.
 \begin{exercise}
 Let $\{x_n\}_{n=1}^\infty$ be a sequence defined by
 \begin{equation*}
-x_n := 
+x_n \coloneqq 
 \begin{cases}
 n               & \text{if } n \text{ is odd} , \\
 \nicefrac{1}{n} & \text{if } n \text{ is even} .
@@ -745,7 +745,7 @@ $x_n = x$.  Prove that $\{ x_n \}_{n=1}^\infty$ converges to $x$.
 \begin{exercise}
 Let $\{ x_n \}_{n=1}^\infty$ be a sequence and
 define a sequence $\{ y_n \}_{n=1}^\infty$ by
-$y_{2k} := x_{k^2}$ and $y_{2k-1} := x_k$ for all $k \in \N$.
+$y_{2k} \coloneqq x_{k^2}$ and $y_{2k-1} \coloneqq x_k$ for all $k \in \N$.
 Prove that $\{ x_n \}_{n=1}^\infty$ converges if and only if
 $\{ y_n \}_{n=1}^\infty$ converges.
 Furthermore, prove that if they converge, then
@@ -753,7 +753,7 @@ $\lim\limits_{n\to\infty} x_n = \lim\limits_{n\to\infty} y_n$.
 \end{exercise}
 
 \begin{exercise}
-Show that the 3-tail of the sequence defined by $x_n := \frac{n}{n^2+16}$ is
+Show that the 3-tail of the sequence defined by $x_n \coloneqq \frac{n}{n^2+16}$ is
 monotone decreasing.  Hint: Suppose $n \geq m \geq 4$ and consider the 
 numerator of the expression $x_n-x_m$.
 \end{exercise}
@@ -815,12 +815,12 @@ Then $\{ x_n \}_{n=1}^\infty$ converges and
 \end{lemma}
 
 \begin{proof}
-Let $x := \lim_{n\to\infty} a_n = \lim_{n\to\infty} b_n$.
+Let $x \coloneqq \lim_{n\to\infty} a_n = \lim_{n\to\infty} b_n$.
 Let $\epsilon > 0$ be given.
 Find an $M_1$ such that for all $n \geq M_1$, we have
 that $\abs{a_n-x} < \epsilon$, and an $M_2$
 such that for all $n \geq M_2$,
-we have $\abs{b_n-x} < \epsilon$.  Set $M := \max \{M_1, M_2 \}$.
+we have $\abs{b_n-x} < \epsilon$.  Set $M \coloneqq \max \{M_1, M_2 \}$.
 Suppose $n \geq M$.
 In particular,
 $x - a_n < \epsilon$, or 
@@ -874,7 +874,7 @@ Then
 \end{lemma}
 
 \begin{proof}
-Let $x := \lim_{n\to\infty} x_n$ and $y := \lim_{n\to\infty} y_n$. 
+Let $x \coloneqq \lim_{n\to\infty} x_n$ and $y \coloneqq \lim_{n\to\infty} y_n$. 
 Let 
 $\epsilon > 0$ be given.  Find an $M_1$ such that for all $n \geq M_1$,
 we have $\abs{x_n-x} < \nicefrac{\epsilon}{2}$.  Find an $M_2$ such that
@@ -930,7 +930,7 @@ a \leq \lim_{n\to\infty} x_n \leq b.
 In \lemmaref{limandineq:lemma} and \corref{limandineq:cor} we cannot simply replace
 all the non-strict inequalities with
 strict inequalities.  For example,
-let $x_n := \nicefrac{-1}{n}$ and $y_n := \nicefrac{1}{n}$.
+let $x_n \coloneqq \nicefrac{-1}{n}$ and $y_n \coloneqq \nicefrac{1}{n}$.
 Then $x_n < y_n$, $x_n < 0$,
 and $y_n > 0$ for all $n$.  However, these inequalities are
 not preserved by the limit operation as
@@ -953,7 +953,7 @@ Limits interact nicely with algebraic operations.
 Let $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ be convergent sequences.
 \begin{enumerate}[(i)]
 \item \label{prop:contalg:i}
-The sequence $\{ z_n \}_{n=1}^\infty$, where $z_n := x_n + y_n$, converges and
+The sequence $\{ z_n \}_{n=1}^\infty$, where $z_n \coloneqq x_n + y_n$, converges and
 \begin{equation*}
 \lim_{n \to \infty} (x_n + y_n) = 
 \lim_{n \to \infty} z_n = 
@@ -961,7 +961,7 @@ The sequence $\{ z_n \}_{n=1}^\infty$, where $z_n := x_n + y_n$, converges and
 \lim_{n \to \infty} y_n .
 \end{equation*}
 \item \label{prop:contalg:ii}
-The sequence $\{ z_n \}_{n=1}^\infty$, where $z_n := x_n - y_n$, converges and
+The sequence $\{ z_n \}_{n=1}^\infty$, where $z_n \coloneqq x_n - y_n$, converges and
 \begin{equation*}
 \lim_{n \to \infty} (x_n - y_n) = 
 \lim_{n \to \infty} z_n = 
@@ -969,7 +969,7 @@ The sequence $\{ z_n \}_{n=1}^\infty$, where $z_n := x_n - y_n$, converges and
 \lim_{n \to \infty} y_n .
 \end{equation*}
 \item \label{prop:contalg:iii}
-The sequence $\{ z_n \}_{n=1}^\infty$, where $z_n := x_n y_n$, converges and
+The sequence $\{ z_n \}_{n=1}^\infty$, where $z_n \coloneqq x_n y_n$, converges and
 \begin{equation*}
 \lim_{n \to \infty} (x_n y_n) = 
 \lim_{n \to \infty} z_n = 
@@ -978,7 +978,7 @@ The sequence $\{ z_n \}_{n=1}^\infty$, where $z_n := x_n y_n$, converges and
 \end{equation*}
 \item \label{prop:contalg:iv}
 If $\lim_{n\to\infty} y_n \not= 0$ and $y_n \not= 0$ for all $n \in \N$, then
-the sequence $\{ z_n \}_{n=1}^\infty$, where $z_n := \dfrac{x_n}{y_n}$, converges and
+the sequence $\{ z_n \}_{n=1}^\infty$, where $z_n \coloneqq \dfrac{x_n}{y_n}$, converges and
 \begin{equation*}
 \lim_{n \to \infty} \frac{x_n}{y_n} = 
 \lim_{n \to \infty} z_n = 
@@ -990,8 +990,8 @@ the sequence $\{ z_n \}_{n=1}^\infty$, where $z_n := \dfrac{x_n}{y_n}$, converge
 \begin{proof}
 We start with \ref{prop:contalg:i}.
 Suppose $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ are convergent sequences and
-write $z_n := x_n + y_n$.  Let $x := \lim_{n\to\infty} x_n$,
-$y := \lim_{n\to\infty} y_n$, and $z := x+y$.
+write $z_n \coloneqq x_n + y_n$.  Let $x \coloneqq \lim_{n\to\infty} x_n$,
+$y \coloneqq \lim_{n\to\infty} y_n$, and $z \coloneqq x+y$.
 
 Let $\epsilon > 0$ be given.  
 Find an $M_1$ such that for all $n \geq M_1$,
@@ -999,7 +999,7 @@ we have
 $\abs{x_n - x} < \nicefrac{\epsilon}{2}$.  
 Find an $M_2$ such that for all $n \geq M_2$,
 we have
-$\abs{y_n - y} < \nicefrac{\epsilon}{2}$.  Take $M := \max \{ M_1, M_2 \}$.
+$\abs{y_n - y} < \nicefrac{\epsilon}{2}$.  Take $M \coloneqq \max \{ M_1, M_2 \}$.
 For all $n \geq M$, we have
 \begin{equation*}
 \begin{split}
@@ -1022,17 +1022,17 @@ exercise.
 Let us tackle 
 \ref{prop:contalg:iii}.
 Suppose again that $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ are convergent sequences and
-write $z_n := x_n y_n$.  Let $x := \lim_{n\to\infty} x_n$,
-$y := \lim_{n\to\infty} y_n$, and $z := xy$.
+write $z_n \coloneqq x_n y_n$.  Let $x \coloneqq \lim_{n\to\infty} x_n$,
+$y \coloneqq \lim_{n\to\infty} y_n$, and $z \coloneqq xy$.
 
 Let $\epsilon > 0$ be given.
-Let $K := \max\{ \abs{x}, \abs{y}, \nicefrac{\epsilon}{3} , 1 \}$.
+Let $K \coloneqq \max\{ \abs{x}, \abs{y}, \nicefrac{\epsilon}{3} , 1 \}$.
 Find an $M_1$ such that for all $n \geq M_1$,
 we have
 $\abs{x_n - x} < \frac{\epsilon}{3K}$.
 Find an $M_2$ such that for all $n \geq M_2$,
 we have
-$\abs{y_n - y} < \frac{\epsilon}{3K}$.  Take $M := \max \{ M_1, M_2 \}$.
+$\abs{y_n - y} < \frac{\epsilon}{3K}$.  Take $M \coloneqq \max \{ M_1, M_2 \}$.
 For all $n \geq M$, we have
 \begin{equation*}
 \begin{split}
@@ -1082,7 +1082,7 @@ multiply it by the sequence $\{ x_n \}_{n=1}^\infty$ and apply item
 \ref{prop:contalg:iii}.
 
 Proof of claim:  Let $\epsilon > 0$ be given.
-Let $y := \lim_{n\to\infty} y_n$.
+Let $y \coloneqq \lim_{n\to\infty} y_n$.
 As $\abs{y} \not= 0$, then
 $\min \left\{ \abs{y}^2\frac{\epsilon}{2}, \, \frac{\abs{y}}{2} \right\} > 0$.
 Find an $M$ such that for all $n \geq M$,
@@ -1156,7 +1156,7 @@ $\lim_{n\to\infty} x_n \geq 0$, so that we can take the square root without
 worry.
 
 \begin{proof}
-Let $\{ x_n \}_{n=1}^\infty$ be a convergent sequence and let $x :=
+Let $\{ x_n \}_{n=1}^\infty$ be a convergent sequence and let $x \coloneqq
 \lim_{n\to\infty} x_n$.
 As we just mentioned, $x \geq 0$.
 
@@ -1247,9 +1247,9 @@ the next number in the sequence is computed using a formula from a fixed number
 of preceding elements in the sequence.
 
 \begin{example}
-Let $\{ x_n \}_{n=1}^\infty$ be defined by $x_1 := 2$ and
+Let $\{ x_n \}_{n=1}^\infty$ be defined by $x_1 \coloneqq 2$ and
 \begin{equation*}
-x_{n+1} := x_n - \frac{x_n^2-2}{2x_n} .
+x_{n+1} \coloneqq x_n - \frac{x_n^2-2}{2x_n} .
 \end{equation*}
 We must first find out if this sequence is well-defined; we must show we never
 divide by zero.
@@ -1294,7 +1294,7 @@ Write
 2x_nx_{n+1} = x_n^2+2 .
 \end{equation*}
 Since $\{ x_{n+1} \}_{n=1}^\infty$ is the 1-tail of $\{ x_n \}_{n=1}^\infty$, it converges to the
-same limit.  Let us define $x := \lim_{n\to\infty} x_n$.  Take the limit of
+same limit.  Let us define $x \coloneqq \lim_{n\to\infty} x_n$.  Take the limit of
 both sides to obtain
 \begin{equation*}
 2x^2 = x^2+2 ,
@@ -1321,14 +1321,14 @@ You should, however, be careful.  Before taking any limits, you must
 make sure the sequence converges.  Let us see an example.
 
 \begin{example}
-Suppose $x_1 := 1$ and $x_{n+1} := x_n^2+x_n$.
+Suppose $x_1 \coloneqq 1$ and $x_{n+1} \coloneqq x_n^2+x_n$.
 If we blindly assumed that the limit exists (call it $x$), then we
 would get the equation $x = x^2+x$, from which we might
 conclude $x=0$.  However, it is not hard
 to show that $\{ x_n \}_{n=1}^\infty$ is unbounded and therefore does not converge.
 
 The thing to notice in this example is that the method still works, but
-it depends on the initial value $x_1$.  If we set $x_1 := 0$,
+it depends on the initial value $x_1$.  If we set $x_1 \coloneqq 0$,
 then the sequence converges and the limit really is 0.
 An entire branch of mathematics, called dynamics, deals precisely with these
 issues.
@@ -1398,7 +1398,7 @@ First consider $c < 1$.  As $c > 0$, then $c^n > 0$ for all $n \in \N$ by
 \hyperref[induction:thm]{induction}.  As $c < 1$, then $c^{n+1} < c^n$ for all $n$.
 So $\{ c^n \}_{n=1}^\infty$ is
 a decreasing sequence that is bounded below.  Hence, it is convergent.
-Let $x := \lim_{n\to\infty} c^n$.  The 1-tail $\{ c^{n+1} \}_{n=1}^\infty$
+Let $x \coloneqq \lim_{n\to\infty} c^n$.  The 1-tail $\{ c^{n+1} \}_{n=1}^\infty$
 also converges to $x$.  Taking the limit of both sides of $c^{n+1} = c \cdot
 c^n$, we obtain $x = cx$, or $(1-c)x=0$.  It follows that $x=0$ as $c \not= 1$.
 
@@ -1425,7 +1425,7 @@ The following lemma will come up again once we get to series.
 Let $\{ x_n \}_{n=1}^\infty$ be a sequence such that $x_n \not= 0$ for all $n$ and such that
 the limit
 \begin{equation*}
-L := \lim_{n\to\infty} \frac{\abs{x_{n+1}}}{\abs{x_n}}
+L \coloneqq \lim_{n\to\infty} \frac{\abs{x_{n+1}}}{\abs{x_n}}
 \qquad
 \text{exists.}
 \end{equation*}
@@ -1593,21 +1593,21 @@ Hint: Use \hyperref[induction:thm]{induction}.
 \end{exercise}
 
 \begin{exercise}
-Suppose $x_1 := \frac{1}{2}$ and $x_{n+1} := x_n^2$.  Show that
+Suppose $x_1 \coloneqq \frac{1}{2}$ and $x_{n+1} \coloneqq x_n^2$.  Show that
 $\{ x_n \}_{n=1}^\infty$ converges and find
 $\lim_{n\to\infty} x_n$.  Hint: You cannot divide by zero!
 \end{exercise}
 
 \begin{exercise}
-Let $x_n := \frac{n-\cos(n)}{n}$.  Use the
+Let $x_n \coloneqq \frac{n-\cos(n)}{n}$.  Use the
 \hyperref[squeeze:lemma]{squeeze lemma} to show that
 $\{ x_n \}_{n=1}^\infty$ converges and find the limit.
 \end{exercise}
 
 \begin{exercise}
-Let $x_n := \frac{1}{n^2}$ and $y_n := \frac{1}{n}$.  Define
-$z_n := \frac{x_n}{y_n}$ and 
-$w_n := \frac{y_n}{x_n}$.  Do $\{ z_n \}_{n=1}^\infty$ and $\{ w_n \}_{n=1}^\infty$
+Let $x_n \coloneqq \frac{1}{n^2}$ and $y_n \coloneqq \frac{1}{n}$.  Define
+$z_n \coloneqq \frac{x_n}{y_n}$ and 
+$w_n \coloneqq \frac{y_n}{x_n}$.  Do $\{ z_n \}_{n=1}^\infty$ and $\{ w_n \}_{n=1}^\infty$
 converge?  What are the limits?  Can you apply \propref{prop:contalg}?
 Why or why not?
 \end{exercise}
@@ -1628,7 +1628,7 @@ Show that
 Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence, $x \in \R$, and $x_n \not= x$ for
 all $n \in \N$.  Suppose the limit
 \begin{equation*}
-L := \lim_{n \to \infty} \frac{\abs{x_{n+1}-x}}{\abs{x_n-x}}
+L \coloneqq \lim_{n \to \infty} \frac{\abs{x_{n+1}-x}}{\abs{x_n-x}}
 \end{equation*}
 exists and $L < 1$.  Show that $\{ x_n \}_{n=1}^\infty$ converges to $x$.
 \end{exercise}
@@ -1649,7 +1649,7 @@ Hint: Find an expression $q$ such that $\frac{x_n^{1/k}-x^{1/k}}{x_n-x} =
 Let $r > 0$.  Show that starting with an arbitrary $x_1 \not= 0$, the sequence
 defined by
 \begin{equation*}
-x_{n+1} := x_n - \frac{x_n^2-r}{2x_n}
+x_{n+1} \coloneqq x_n - \frac{x_n^2-r}{2x_n}
 \end{equation*}
 converges to $\sqrt{r}$ if $x_1 > 0$ and $-\sqrt{r}$ if $x_1 < 0$.
 \end{exercise}
@@ -1695,7 +1695,7 @@ then $\{ x_n \}_{n=1}^\infty$ is unbounded.
 \end{samepage}
 
 \begin{exercise} \label{exercise:convergentinitialvalues}
-Suppose $x_1 := c$ and $x_{n+1} := x_n^2+x_n$.
+Suppose $x_1 \coloneqq c$ and $x_{n+1} \coloneqq x_n^2+x_n$.
 Show that $\{ x_n \}_{n=1}^\infty$ converges if and only if $-1 \leq c \leq 0$, in which
 case it converges to 0.
 \end{exercise}
@@ -1756,13 +1756,13 @@ take its supremum and infimum.
 Let $\{ x_n \}_{n=1}^\infty$ be a bounded sequence.  Define the sequences
 $\{ a_n \}_{n=1}^\infty$
 and $\{ b_n \}_{n=1}^\infty$ by
-$a_n := \sup \{ x_k : k \geq n \}$ and
-$b_n := \inf \{ x_k : k \geq n \}$.  
+$a_n \coloneqq \sup \{ x_k : k \geq n \}$ and
+$b_n \coloneqq \inf \{ x_k : k \geq n \}$.  
 Define, if the limits exist,\glsadd{not:limsupseq}\glsadd{not:liminfseq}
 \begin{equation*}
-\limsup_{n \to \infty} x_n := \lim_{n \to \infty} a_n ,
+\limsup_{n \to \infty} x_n \coloneqq \lim_{n \to \infty} a_n ,
 \qquad
-\liminf_{n \to \infty} x_n := \lim_{n \to \infty} b_n .
+\liminf_{n \to \infty} x_n \coloneqq \lim_{n \to \infty} b_n .
 \end{equation*}
 \end{defn}
 
@@ -1834,7 +1834,7 @@ $b_n$ are marked with diamonds ($\diamond$).\label{sequence-limsupliminf_an_bn}}
 \begin{example} \label{example:liminfsupex}
 Let $\{ x_n \}_{n=1}^\infty$ be defined by
 \begin{equation*}
-x_n :=
+x_n \coloneqq
 \begin{cases}
 \frac{n+1}{n} & \text{if } n \text{ is odd,} \\
 0             & \text{if } n \text{ is even.}
@@ -1903,11 +1903,11 @@ $\{ x_{m_k} \}_{k=1}^\infty$ such that
 \end{thm}
 
 \begin{proof}
-Define $a_n := \sup \{ x_k : k \geq n \}$.
+Define $a_n \coloneqq \sup \{ x_k : k \geq n \}$.
 Write
-$x := \limsup_{n\to\infty} x_n = \lim_{n\to\infty} a_n$.
+$x \coloneqq \limsup_{n\to\infty} x_n = \lim_{n\to\infty} a_n$.
 We define the subsequence inductively.
-Let $n_1 := 1$, and suppose $n_1,n_2,\ldots,n_{k-1}$ are already defined for
+Let $n_1 \coloneqq 1$, and suppose $n_1,n_2,\ldots,n_{k-1}$ are already defined for
 some $k \geq 2$.  Pick an $m \geq n_{k-1} + 1$
 such that
 \begin{equation*}
@@ -1917,7 +1917,7 @@ Such an $m$ exists
 as $a_{(n_{k-1}+1)}$ is a supremum of the
 set $\{ x_\ell : \ell \geq n_{k-1} + 1 \}$ and hence there are elements
 of the sequence arbitrarily close (or even possibly equal) to the supremum.
-Set $n_{k} :=  m$.  The subsequence $\{ x_{n_k} \}_{k=1}^\infty$ is defined.  Next, we
+Set $n_{k} \coloneqq  m$.  The subsequence $\{ x_{n_k} \}_{k=1}^\infty$ is defined.  Next, we
 must prove that it converges to $x$.
 
 For all $k \geq 2$, we have
@@ -1948,7 +1948,7 @@ Find an $M_2 \in \N$ such that
 \begin{equation*}
 \frac{1}{M_2} \leq \frac{\epsilon}{2}.
 \end{equation*}
-Take $M := \max \{M_1 , M_2 , 2 \}$.  For all $k \geq M$,
+Take $M \coloneqq \max \{M_1 , M_2 , 2 \}$.  For all $k \geq M$,
 \begin{equation*}
 \begin{split}
 \abs{x- x_{n_k}} & =
@@ -2041,10 +2041,10 @@ inequality, and leave the first inequality as an exercise.
 
 We want to prove that
 $\limsup_{k\to\infty} x_{n_k} \leq \limsup_{n\to\infty} x_n$.  Define
-$a_n := \sup \{ x_k : k \geq n \}$ 
+$a_n \coloneqq \sup \{ x_k : k \geq n \}$ 
 as usual.
 Also define
-$c_n := \sup \{ x_{n_k} : k \geq n \}$.
+$c_n \coloneqq \sup \{ x_{n_k} : k \geq n \}$.
 It is not true that $\{ c_n \}_{n=1}^\infty$ is necessarily a subsequence
 of $\{ a_n \}_{n=1}^\infty$.
 However, as $n_k \geq k$ for all $k$, we have
@@ -2127,22 +2127,24 @@ $x_{n_i}$ converges then follows by the \hyperref[squeeze:lemma]{squeeze lemma}.
 We define the sequences inductively.  We will define the sequences so that
 for all $i$, we have $a_i < b_i$,
 and that $x_n \in [a_i,b_i]$ for infinitely many $n \in \N$.
-We have already defined $a_1$ and $b_1$.  We take $n_1 := 1$, that is
+We have already defined $a_1$ and $b_1$.  We take $n_1 \coloneqq 1$, that is
 $x_{n_1} = x_1$.
 Suppose that up to some $k \in \N$,
 we have defined the subsequence $x_{n_1}, x_{n_2}, \ldots,
 x_{n_k}$, and the sequences $a_1,a_2,\ldots,a_k$
 and $b_1,b_2,\ldots,b_k$.
-Let $y := \frac{a_k+b_k}{2}$.
+Let $y \coloneqq \frac{a_k+b_k}{2}$.
 Clearly
 $a_k < y < b_k$.  If there exist infinitely many $j \in \N$
-such that $x_j \in [a_k,y]$, then set $a_{k+1} := a_k$, $b_{k+1} := y$,
+such that $x_j \in [a_k,y]$, then set $a_{k+1} \coloneqq a_k$, $b_{k+1}
+\coloneqq y$,
 and pick $n_{k+1} > n_{k}$
 such that $x_{n_{k+1}} \in [a_k,y]$.  If there are not infinitely many 
 $j$ such that 
 $x_j \in [a_k,y]$, then it must be true that there are infinitely many $j \in
 \N$ such that 
-$x_j \in [y,b_k]$.  In this case pick $a_{k+1} := y$, $b_{k+1} := b_k$,
+$x_j \in [y,b_k]$.  In this case pick $a_{k+1} \coloneqq y$, $b_{k+1}
+\coloneqq b_k$,
 and pick $n_{k+1} > n_{k}$
 such that $x_{n_{k+1}} \in [y,b_k]$.
 
@@ -2156,11 +2158,11 @@ $b_{i+1} - a_{i+1} = \frac{b_i-a_i}{2}$.  By
 b_i - a_i = \frac{b_1-a_1}{2^{i-1}} .
 \end{equation*}
 
-Let $x := \lim_{i\to\infty} a_i$.  As $\{ a_i \}_{i=1}^\infty$ is monotone,
+Let $x \coloneqq \lim_{i\to\infty} a_i$.  As $\{ a_i \}_{i=1}^\infty$ is monotone,
 \begin{equation*}
 x = \sup \{ a_i : i \in \N \} .
 \end{equation*}
-Let $y := \lim_{i\to\infty} b_i = \inf \{ b_i : i \in \N \}$.  Since $a_i < b_i$ for
+Let $y \coloneqq \lim_{i\to\infty} b_i = \inf \{ b_i : i \in \N \}$.  Since $a_i < b_i$ for
 all $i$, then $x \leq y$.
 As the sequences are monotone, then
 for all $i$, we have (why?)
@@ -2191,14 +2193,14 @@ if for every $K \in
 \R$, there exists an $M \in \N$ such that for all $n \geq M$, we have $x_n >
 K$.  In this case we write
 \begin{equation*}
-\lim_{n \to \infty} x_n := \infty .  
+\lim_{n \to \infty} x_n \coloneqq \infty .  
 \end{equation*}
 Similarly,
 if for every $K \in \R$ there exists an $M \in \N$ such that
 for all $n \geq M$, we have $x_n < K$, we say $\{ x_n \}_{n=1}^\infty$
 \emph{\myindex{diverges to minus infinity}} and we write
 \begin{equation*}
-\lim_{n \to \infty} x_n := -\infty .  
+\lim_{n \to \infty} x_n \coloneqq -\infty .  
 \end{equation*}
 \end{defn}
 
@@ -2252,13 +2254,13 @@ can take suprema and infima.
 \begin{defn}
 Let $\{ x_n \}_{n=1}^\infty$ be an unbounded sequence of real numbers.  Define
 sequences of extended real numbers by
-$a_n := \sup \{ x_k : k \geq n \}$ and
-$b_n := \inf \{ x_k : k \geq n \}$.
+$a_n \coloneqq \sup \{ x_k : k \geq n \}$ and
+$b_n \coloneqq \inf \{ x_k : k \geq n \}$.
 Define\glsadd{not:limsupseq}\glsadd{not:liminfseq}
 \index{limit inferior}\index{limit superior}\index{limsup}\index{liminf}
 \begin{equation*}
-\limsup_{n \to \infty} x_n := \inf \{ a_n : n \in \N \}, \qquad \text{and} \qquad
-\liminf_{n \to \infty} x_n := \sup \{ b_n : n \in \N \}.
+\limsup_{n \to \infty} x_n \coloneqq \inf \{ a_n : n \in \N \}, \qquad \text{and} \qquad
+\liminf_{n \to \infty} x_n \coloneqq \sup \{ b_n : n \in \N \}.
 \end{equation*}
 \end{defn}
 
@@ -2295,7 +2297,7 @@ and \ref{exercise:infseqlimlims}.
 
 \begin{example}
 Suppose
-$x_n := 0$ for odd $n$ and $x_n := n$ for even $n$.
+$x_n \coloneqq 0$ for odd $n$ and $x_n \coloneqq n$ for even $n$.
 Then $a_n = \infty$ for all $n$, since for every $M$,
 there exists an even $k$ such that $x_k = k \geq M$.
 On the other hand, $b_n = 0$ for all $n$, as
@@ -2341,10 +2343,10 @@ Prove \propref{seqconvsubseqconv:prop}.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Let $x_n := \dfrac{{(-1)}^n}{n}$.
+Let $x_n \coloneqq \dfrac{{(-1)}^n}{n}$.
 Find $\limsup\limits_{n\to\infty} x_n$ and $\liminf\limits_{n\to\infty} x_n$.
 \item
-Let $x_n := \dfrac{(n-1){(-1)}^n}{n}$.
+Let $x_n \coloneqq \dfrac{(n-1){(-1)}^n}{n}$.
 Find $\limsup\limits_{n\to\infty} x_n$ and $\liminf\limits_{n\to\infty} x_n$.
 \end{enumerate}
 \end{exercise}
@@ -2427,7 +2429,7 @@ point}}
 if for every $\epsilon > 0$, the set $(x-\epsilon,x+\epsilon) \cap S
 \setminus \{ x \}$ is not empty.  That is, if there are points of $S$
 arbitrarily close to $x$.
-For example, $S := \{ \nicefrac{1}{n} : n \in \N \}$ has a unique (only
+For example, $S \coloneqq \{ \nicefrac{1}{n} : n \in \N \}$ has a unique (only
 one) cluster point $0$, but $0 \notin S$.
 Prove the following version of the Bolzano--Weierstrass theorem:
 
@@ -2542,7 +2544,7 @@ then $\{ x_n \}_{n=1}^\infty$ is unbounded.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ x_n \}_{n=1}^\infty$ is a bounded sequence, $a_n := \sup \{ x_k : k \geq n \}$
+Suppose $\{ x_n \}_{n=1}^\infty$ is a bounded sequence, $a_n \coloneqq \sup \{ x_k : k \geq n \}$
 as before.  Suppose that for some $\ell \in \N$,
 $a_\ell \notin \{ x_k : k \geq \ell \}$.  Then show that $a_j = a_\ell$ for all $j \geq \ell$, and hence
 $\limsup\limits_{n\to\infty} x_n = a_\ell$.
@@ -2550,8 +2552,8 @@ $\limsup\limits_{n\to\infty} x_n = a_\ell$.
 
 \begin{exercise}
 Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence,
-and $a_n := \sup \{ x_k : k \geq n \}$ and
-$b_n := \sup \{ x_k : k \geq n \}$ as before.
+and $a_n \coloneqq \sup \{ x_k : k \geq n \}$ and
+$b_n \coloneqq \sup \{ x_k : k \geq n \}$ as before.
 \begin{enumerate}[a)]
 \item
 Prove that if $a_\ell = \infty$ for some $\ell \in \N$, then 
@@ -2686,7 +2688,7 @@ $\abs{x_n} - \abs{x_M} \leq \abs{x_n - x_M} < 1$.  Hence for $n \geq M$,
 \end{equation*}
 Let
 \begin{equation*}
-B := \max \bigl\{ \abs{x_1}, \abs{x_2}, \ldots, \abs{x_{M-1}}, 1+ \abs{x_M} \bigr\} .
+B \coloneqq \max \bigl\{ \abs{x_1}, \abs{x_2}, \ldots, \abs{x_{M-1}}, 1+ \abs{x_M} \bigr\} .
 \end{equation*}
 Then $\abs{x_n} \leq B$ for all $n \in \N$.
 \end{proof}
@@ -2722,8 +2724,8 @@ If we show that
 then $\{ x_n \}_{n=1}^\infty$ must be convergent by \propref{liminfsupconv:prop}.
 
 
-Define $a := \limsup_{n\to\infty} x_n$ and
-$b := \liminf_{n\to\infty} x_n$.
+Define $a \coloneqq \limsup_{n\to\infty} x_n$ and
+$b \coloneqq \liminf_{n\to\infty} x_n$.
 By \thmref{subseqlimsupinf:thm}, there exist subsequences
 $\{ x_{n_i} \}_{i=1}^\infty$ and
 $\{ x_{m_i} \}_{i=1}^\infty$, such that
@@ -2741,7 +2743,7 @@ There also exists an $M_3$
 such that
 $\abs{x_n-x_k} < \nicefrac{\epsilon}{3}$
 for all $n,k \geq M_3$.
-Let $M := \max \{ M_1, M_2, M_3 \}$.
+Let $M \coloneqq \max \{ M_1, M_2, M_3 \}$.
 If $i \geq M$, then $n_i \geq M$ and $m_i \geq M$.  Hence,
 \begin{equation*}
 \begin{split}
@@ -2902,12 +2904,12 @@ $\{ s_k \}_{k=1}^\infty$
 defined by
 \glsadd{not:finitesum}
 \begin{equation*}
-s_k := \sum_{n=1}^k x_n = x_1 + x_2 + \cdots + x_k ,
+s_k \coloneqq \sum_{n=1}^k x_n = x_1 + x_2 + \cdots + x_k ,
 \end{equation*}
 converges.
 The numbers $s_k$ are called
 \emph{\myindex{partial sums}}.
-If $x := \lim\limits_{k\to\infty} s_k$, we write
+If $x \coloneqq \lim\limits_{k\to\infty} s_k$, we write
 \begin{equation*}
 \sum_{n=1}^\infty x_n =  x .
 \end{equation*}
@@ -3394,7 +3396,7 @@ $\sum_{n=1}^\infty y_n$ also diverges.
 A useful series to use with the comparison test is the
 $p$-series%
 \footnote{We have not yet defined $x^p$ for $x > 0$ and
-an arbitrary $p \in \R$.  The definition is $x^p := \exp ( p \ln x )$.
+an arbitrary $p \in \R$.  The definition is $x^p \coloneqq \exp ( p \ln x )$.
 We will define the logarithm and the exponential in \sectionref{sec:logandexp}.
 For now you can just think of rational $p$
 where $x^{k/m} = {(x^{1/m})}^{k}$.  See also \exerciseref{exercise:realpower}.}.
@@ -3552,7 +3554,7 @@ the tail of a series to the geometric series.
 \begin{prop}[Ratio test]\index{ratio test for series}
 Let $\sum_{n=1}^\infty x_n$ be a series, $x_n \not= 0$ for all $n$, and such that
 \begin{equation*}
-L := \lim_{n\to\infty} \frac{\abs{x_{n+1}}}{\abs{x_n}}
+L \coloneqq \lim_{n\to\infty} \frac{\abs{x_{n+1}}}{\abs{x_n}}
 \qquad \text{exists.}
 \end{equation*}
 \begin{enumerate}[(i)]
@@ -3797,7 +3799,7 @@ then either $\sum_{n=1}^\infty a_n$ and $\sum_{n=1}^\infty b_n$ both converge or
 \end{exercise}
 
 \begin{exercise} \label{exercise:badnocauchy}
-Let $x_n := \sum_{i=1}^n \nicefrac{1}{i}$.  Show that for every $k$,
+Let $x_n \coloneqq \sum_{i=1}^n \nicefrac{1}{i}$.  Show that for every $k$,
 we get
 $\displaystyle \lim_{n\to\infty} \abs{x_{n+k}-x_n} = 0$, yet
 $\{ x_n \}_{n=1}^\infty$ is not Cauchy.
@@ -3897,7 +3899,7 @@ Again, the idea is to generalize what happens for the geometric series.
 \begin{prop}[Root test]
 Let $\sum_{n=1}^\infty x_n$ be a series and let
 \begin{equation*}
-L := \limsup_{n\to\infty} {\sabs{x_n}}^{1/n} .
+L \coloneqq \limsup_{n\to\infty} {\sabs{x_n}}^{1/n} .
 \end{equation*}
 \begin{enumerate}[(i)]
 \item If $L < 1$, then $\sum_{n=1}^\infty x_n$ converges absolutely.
@@ -3968,7 +3970,7 @@ that $\lim\limits_{n\to\infty} x_n = 0$.  Then
 \end{prop}
 
 \begin{proof}
-Let $s_m := \sum_{k=1}^m {(-1)}^n x_n$ be the $m$th partial sum.  Then
+Let $s_m \coloneqq \sum_{k=1}^m {(-1)}^n x_n$ be the $m$th partial sum.  Then
 \begin{equation*}
 s_{2k} =
 \sum_{n=1}^{2k} {(-1)}^n x_n
@@ -3986,7 +3988,7 @@ s_{2k} = - x_1 + ( x_2 - x_3 ) + \cdots + ( x_{2k-2} - x_{2k-1} ) + x_{2k}
 \geq -x_1 .
 \end{equation*}
 As $\{ s_{2k} \}_{k=1}^\infty$ is decreasing and bounded below, it converges.
-Let $a := \lim_{k\to\infty} s_{2k}$.
+Let $a \coloneqq \lim_{k\to\infty} s_{2k}$.
 
 We wish to show that $\lim_{m\to\infty} s_m = a$ (and not just for the subsequence).
 Given $\epsilon > 0$, pick $M$ such that $\abs{s_{2k}-a} <
@@ -4061,7 +4063,7 @@ $n \leq M$, there exists $k \leq K$ such that $\sigma(k) = n$.
 In other words
 $\{ 1,2,\ldots,M \} \subset \sigma\bigl(\{ 1,2,\ldots,K \} \bigr)$.
 
-For $N \geq K$, let $Q := \max \sigma\bigl(\{ 1,2,\ldots,N \}\bigr)$.
+For $N \geq K$, let $Q \coloneqq \max \sigma\bigl(\{ 1,2,\ldots,N \}\bigr)$.
 Compute
 \begin{equation*}
 \begin{split}
@@ -4100,17 +4102,17 @@ plus infinity and minus infinity respectively (prove this!):
 \sum_{m=1}^\infty \frac{1}{2m-1} = \infty, \qquad \text{and} \qquad
 \sum_{m=1}^\infty \frac{-1}{2m} = -\infty .
 \end{equation*}
-Let $a_n := \frac{{(-1)}^{n+1}}{n}$ for simplicity, 
-let an arbitrary number $L \in \R$ be given, and set $\sigma(1) := 1$.
+Let $a_n \coloneqq \frac{{(-1)}^{n+1}}{n}$ for simplicity, 
+let an arbitrary number $L \in \R$ be given, and set $\sigma(1) \coloneqq 1$.
 Suppose we have
 defined $\sigma(n)$ for all $n \leq N$.  If
 \begin{equation*}
 \sum_{n=1}^N a_{\sigma(n)} \leq L ,
 \end{equation*}
-then let $\sigma(N+1) := k$ be the smallest odd $k \in \N$
+then let $\sigma(N+1) \coloneqq k$ be the smallest odd $k \in \N$
 that we have not used yet,
 that is, $\sigma(n) \not= k$ for all $n \leq N$.
-Otherwise, let $\sigma(N+1) := k$ 
+Otherwise, let $\sigma(N+1) \coloneqq k$ 
 be the smallest even $k$ that we have not yet used.
 
 By construction $\sigma \colon \N \to \N$ is one-to-one.
@@ -4162,7 +4164,7 @@ Suppose $\sum_{n=0}^\infty a_n$ and $\sum_{n=0}^\infty b_n$ are two convergent s
 to $A$ and $B$ respectively.  Suppose at least one of the series
 converges absolutely.  Define
 \begin{equation*}
-c_n := a_0 b_n + a_1 b_{n-1} + \cdots + a_n b_0 = \sum_{i=0}^n a_i b_{n-i} .
+c_n \coloneqq a_0 b_n + a_1 b_{n-1} + \cdots + a_n b_0 = \sum_{i=0}^n a_i b_{n-i} .
 \end{equation*}
 Then the series $\sum_{n=0}^\infty c_n$
 converges to $AB$.
@@ -4181,7 +4183,7 @@ and can be made arbitrarily small.
 
 Write
 \begin{equation*}
-A_m := \sum_{n=0}^m a_n , \qquad B_m := \sum_{n=0}^m b_n .
+A_m \coloneqq \sum_{n=0}^m a_n , \qquad B_m \coloneqq \sum_{n=0}^m b_n .
 \end{equation*}
 We rearrange the $m$th partial sum of $\sum_{n=0}^\infty c_n$:
 \begin{equation*}
@@ -4222,7 +4224,7 @@ for all $m \geq K$,
 \end{equation*}
 As $\sum_{n=0}^\infty b_n$ converges, then
 we have that
-$B_{\text{max}} := \sup \{ \abs{ B_n - B } : n = 0,1,2,\ldots \}$
+$B_{\text{max}} \coloneqq \sup \{ \abs{ B_n - B } : n = 0,1,2,\ldots \}$
 is finite.  Take $m \geq 2K$, then in particular $m-K+1 > K$.  So
 \begin{equation*}
 \begin{split}
@@ -4458,7 +4460,7 @@ and in \exampleref{ps:divergeex} the radius of convergence is $\rho=0$.
 \begin{proof}
 Write
 \begin{equation*}
-R := \limsup_{n\to\infty} {\abs{a_n}}^{1/n} .
+R \coloneqq \limsup_{n\to\infty} {\abs{a_n}}^{1/n} .
 \end{equation*}
 We use the root test to prove the proposition:
 \begin{equation*}
@@ -4488,7 +4490,7 @@ or
 \begin{equation*}
 \abs{x-x_0} > \nicefrac{1}{R} .
 \end{equation*}
-Letting $\rho := \nicefrac{1}{R}$ completes the proof.
+Letting $\rho \coloneqq \nicefrac{1}{R}$ completes the proof.
 \end{proof}
 
 It may be useful to restate what we have learned in the proof
@@ -4497,7 +4499,7 @@ as a separate proposition.
 \begin{prop}
 Let $\sum_{n=0}^\infty a_n {(x-x_0)}^n$ be a power series, and let
 \begin{equation*}
-R := \limsup_{n\to\infty} {\abs{a_n}}^{1/n} .
+R \coloneqq \limsup_{n\to\infty} {\abs{a_n}}^{1/n} .
 \end{equation*}
 If $R = \infty$, the power series is divergent.  If
 $R=0$, then the power series converges everywhere.   Otherwise,
@@ -4753,7 +4755,7 @@ the product of the two series is infinite.
 \begin{exercise}
 Figure out how to compute the radius of convergence using the ratio test.
 That is, suppose $\sum_{n=0}^\infty a_n x^n$ is a power series and
-$R := \lim_{n\to\infty} \frac{\abs{a_{n+1}}}{\abs{a_n}}$ exists or is $\infty$.
+$R \coloneqq \lim_{n\to\infty} \frac{\abs{a_{n+1}}}{\abs{a_n}}$ exists or is $\infty$.
 Find the radius of convergence and prove your claim.
 \end{exercise}
 
@@ -4799,10 +4801,10 @@ $\sum_{n=1}^\infty a_n$ is Ces\`aro summable (see above) to $a$.
 Show that in the sense of Ces\`aro $\sum_{n=1}^\infty {(-1)}^n$ is summable to
 $\nicefrac{1}{2}$.
 \item
-Let $a_n := k$ when $n = k^3$ for some $k \in \N$,
-$a_n := -k$ when $n = k^3+1$ for some $k \in \N$,
+Let $a_n \coloneqq k$ when $n = k^3$ for some $k \in \N$,
+$a_n \coloneqq -k$ when $n = k^3+1$ for some $k \in \N$,
 otherwise
-let $a_n := 0$.  Show that $\sum_{n=1}^\infty a_n$ diverges in the usual sense
+let $a_n \coloneqq 0$.  Show that $\sum_{n=1}^\infty a_n$ diverges in the usual sense
 (in fact, both the sequence of terms and the partial sums are unbounded), but it is
 Ces\`aro summable to 0 (seems a little paradoxical at first sight).
 \end{enumerate}
