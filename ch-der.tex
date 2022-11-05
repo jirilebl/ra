@@ -23,12 +23,12 @@ Let $I$ be an interval, let
 $f \colon I \to \R$ be a function, and let $c \in I$.  If 
 the limit
 \begin{equation*}
-L := \lim_{x \to c} \frac{f(x)-f(c)}{x-c} 
+L \coloneqq \lim_{x \to c} \frac{f(x)-f(c)}{x-c} 
 \end{equation*}
 exists, then we say $f$ is
 \emph{\myindex{differentiable}}\index{function!differentiable} at
 $c$, that $L$ is the \emph{\myindex{derivative}} of $f$ at $c$,
-and write $f'(c) := L$.\glsadd{not:derivative}
+and write $f'(c) \coloneqq L$.\glsadd{not:derivative}
 
 \medskip
 
@@ -66,7 +66,7 @@ endpoint of an interval, but all the theory still works by allowing it, and
 it makes our work easier.
 
 \begin{example}
-Let $f(x) := x^2$ defined on the whole real line.  Let $c \in \R$ be arbitrary.  We find that if
+Let $f(x) \coloneqq x^2$ defined on the whole real line.  Let $c \in \R$ be arbitrary.  We find that if
 $x \not=c$,
 \begin{equation*}
 \frac{x^2-c^2}{x-c} =
@@ -82,7 +82,7 @@ f'(c) =
 \end{example}
 
 \begin{example}
-Let $f(x) := ax + b$ for numbers $a, b \in \R$.
+Let $f(x) \coloneqq ax + b$ for numbers $a, b \in \R$.
 Let $c \in \R$ be arbitrary.
 For $x \not=c$,
 \begin{equation*}
@@ -104,7 +104,7 @@ first.
 \end{example}
 
 \begin{example}
-The function $f(x) := \sqrt{x}$ is differentiable for $x > 0$.  To see this
+The function $f(x) \coloneqq \sqrt{x}$ is differentiable for $x > 0$.  To see this
 fact, fix $c > 0$,
 and take $x \not= c$, $x > 0$.  Compute
 \begin{equation*}
@@ -128,7 +128,7 @@ f'(c) =
 \end{example}
 
 \begin{example}
-The function $f(x) := \abs{x}$ is not differentiable
+The function $f(x) \coloneqq \abs{x}$ is not differentiable
 at the origin.  When $x > 0$,
 \begin{equation*}
 \frac{\abs{x}-\abs{0}}{x-0} =
@@ -188,18 +188,18 @@ $f \colon I \to \R$ and $g \colon I \to \R$ be differentiable at $c \in I$,
 and let $\alpha \in \R$.
 \begin{enumerate}[(i)]
 \item
-Define $h \colon I \to \R$ by $h(x) := \alpha f(x)$.  Then
+Define $h \colon I \to \R$ by $h(x) \coloneqq \alpha f(x)$.  Then
 $h$ is differentiable at $c$ and
 $h'(c) = \alpha f'(c)$.
 \item
-Define $h \colon I \to \R$ by $h(x) :=  f(x) + g(x)$.  Then
+Define $h \colon I \to \R$ by $h(x) \coloneqq  f(x) + g(x)$.  Then
 $h$ is differentiable at $c$ and
 $h'(c) =  f'(c) + g'(c)$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-First, let $h(x) := \alpha f(x)$.
+First, let $h(x) \coloneqq \alpha f(x)$.
 For $x \in I$, $x \not= c$,
 \begin{equation*}
 \frac{h(x)-h(c)}{x-c} =
@@ -216,7 +216,7 @@ by \corref{falg:cor}.  We get
 Therefore, $h$ is differentiable at $c$,
 and the derivative is computed as given.
 
-Next, define $h(x) := f(x)+g(x)$.
+Next, define $h(x) \coloneqq f(x)+g(x)$.
 For $x \in I$, $x \not= c$, we have
 \begin{equation*}
 \frac{h(x)-h(c)}{x-c} =
@@ -251,7 +251,7 @@ $f \colon I \to \R$ and $g \colon I \to \R$ be
 functions differentiable at $c$.  If $h \colon I \to \R$
 is defined by
 \begin{equation*}
-h(x) := f(x) g(x) ,
+h(x) \coloneqq f(x) g(x) ,
 \end{equation*}
 then $h$ is differentiable at $c$ and
 \begin{equation*}
@@ -285,7 +285,7 @@ and $g(x) \not= 0$ for all $x \in I$.
 If $h \colon I \to \R$
 is defined by
 \begin{equation*}
-h(x) := \frac{f(x)}{g(x)},
+h(x) \coloneqq \frac{f(x)}{g(x)},
 \end{equation*}
 then $h$ is differentiable at $c$ and
 \begin{equation*}
@@ -310,7 +310,7 @@ $f \colon I_2 \to \R$ be differentiable at $g(c)$.
 If $h \colon I_1 \to \R$
 is defined by
 \begin{equation*}
-h(x) := (f \circ g) (x) = f\bigl(g(x)\bigr) ,
+h(x) \coloneqq (f \circ g) (x) = f\bigl(g(x)\bigr) ,
 \end{equation*}
 then $h$ is differentiable at $c$ and
 \begin{equation*}
@@ -319,16 +319,16 @@ h'(c) = f'\bigl(g(c)\bigr)g'(c) .
 \end{prop}
 
 \begin{proof}
-Let $d := g(c)$.  Define
+Let $d \coloneqq g(c)$.  Define
 $u \colon I_2 \to \R$ and $v \colon I_1 \to \R$ by
 \begin{equation*}
-u(y) :=
+u(y) \coloneqq
 \begin{cases}
  \frac{f(y) - f(d)}{y-d}  & \text{if } y \not=d, \\
  f'(d)                    & \text{if } y = d,
 \end{cases}
 \qquad
-v(x) :=
+v(x) \coloneqq
 \begin{cases}
  \frac{g(x) - g(c)}{x-c} & \text{if } x \not=c, \\
  g'(c)                   & \text{if } x = c.
@@ -400,7 +400,7 @@ Hint: Use the previous exercise.
 \begin{exercise}
 Define $f \colon \R \to \R$ by
 \begin{equation*}
-f(x) :=
+f(x) \coloneqq
 \begin{cases}
 x^2 & \text{if } x \in \Q,\\
 0 & \text{otherwise.}
@@ -423,7 +423,7 @@ trigonometric identity as we did before.
 
 \begin{exercise}
 Let $f \colon I \to \R$ be differentiable.  For $n \in \Z$, let $f^n$
-be the function defined by $f^n(x) := {\bigl( f(x) \bigr)}^n$.  If
+be the function defined by $f^n(x) \coloneqq {\bigl( f(x) \bigr)}^n$.  If
 $n < 0$, assume $f(x) \not= 0$ for all $x \in I$.  Prove that
 $(f^n)'(x) = n {\bigl(f(x) \bigr)}^{n-1} f'(x)$.
 \end{exercise}
@@ -445,7 +445,7 @@ to find a formula for $g'\bigl(f(c)\bigr)$ (in terms of $f'(c)$).
 \begin{exercise} \label{exercise:bndmuldiff}
 Suppose $f \colon I \to \R$ is bounded, $g \colon I \to
 \R$ is differentiable at $c \in I$, and $g(c) = g'(c) = 0$.  Show
-that $h(x) := f(x) g(x)$ is differentiable at $c$.  Hint: You
+that $h(x) \coloneqq f(x) g(x)$ is differentiable at $c$.  Hint: You
 cannot apply the product rule.
 \end{exercise}
 
@@ -464,12 +464,12 @@ Suppose $f \colon (-1,1) \to \R$ is a function such that $f(x) = x h(x)$ for a b
 function $h$.
 \begin{enumerate}[a)]
 \item
-Show that $g(x) := {\bigl( f(x) \bigr)}^2$ is
+Show that $g(x) \coloneqq {\bigl( f(x) \bigr)}^2$ is
 differentiable at the origin and $g'(0) = 0$.
 \item
 Find an example of a
 continuous function $f \colon (-1,1) \to \R$ with $f(0) = 0$, but such
-that $g(x) := {\bigl( f(x) \bigr)}^2$ is not differentiable at the origin.
+that $g(x) \coloneqq {\bigl( f(x) \bigr)}^2$ is not differentiable at the origin.
 \end{enumerate}
 \end{exercise}
 
@@ -629,7 +629,7 @@ absolute
 maximum in $[a,b]$.  We wish to apply \lemmaref{relminmax:lemma}, and
 so we need to find some $c \in (a,b)$ where $f$ attains a minimum or a
 maximum.
-Write $K := f(a) = f(b)$.
+Write $K \coloneqq f(a) = f(b)$.
 If there exists an $x$ such that $f(x) > K$, then the absolute
 maximum is bigger than $K$ and hence occurs at some $c \in (a,b)$, and
 therefore $f'(c) = 0$.  On the other hand, if there exists an $x$
@@ -641,7 +641,7 @@ $f'(x) = 0$ for all $x \in [a,b]$, so any $c \in (a,b)$ works.
 \end{proof}
 
 It is absolutely necessary for the derivative to exist for all $x
-\in (a,b)$.  Consider the function $f(x) := \abs{x}$ on $[-1,1]$.
+\in (a,b)$.  Consider the function $f(x) \coloneqq \abs{x}$ on $[-1,1]$.
 Clearly $f(-1) = f(1)$, but there is no point $c$ where $f'(c) = 0$.
 
 \subsection{Mean value theorem}
@@ -689,7 +689,7 @@ function has derivative zero.
 Define the
 function $g \colon [a,b] \to \R$ by
 \begin{equation*}
-g(x) := f(x)-f(b)-\frac{f(b)-f(a)}{b-a}(x-b) .
+g(x) \coloneqq f(x)-f(b)-\frac{f(b)-f(a)}{b-a}(x-b) .
 \end{equation*}
 The function $g$ is differentiable on $(a,b)$,
 continuous on $[a,b]$, such that $g(a) = 0$ and $g(b) = 0$.  Thus there exists
@@ -703,7 +703,7 @@ $f(b)-f(a) = f'(c)(b-a)$.
 \end{proof}
 
 The proof generalizes.  By considering
-$g(x) :=
+$g(x) \coloneqq
 f(x)-f(b)-\frac{f(b)-f(a)}{\varphi(b)-\varphi(a)}\bigl(\varphi(x)-\varphi(b)\bigr)$,
 one can prove the following version.  We leave the proof as an exercise.
 
@@ -825,7 +825,7 @@ follows from
 \ref{incdecdiffstrictprop:i} by considering $-f$
 instead.
 The converse of this proposition is not true.  The function
-$f(x) := x^3$ is strictly increasing, but $f'(0) = 0$.
+$f(x) \coloneqq x^3$ is strictly increasing, but $f'(0) = 0$.
 
 \medskip
 
@@ -924,7 +924,7 @@ Suppose
 $f'(a) < y < f'(b)$.
 Define
 \begin{equation*}
-g(x) := yx - f(x) .
+g(x) \coloneqq yx - f(x) .
 \end{equation*}
 The function $g$ is continuous on $[a,b]$, and so $g$ attains a maximum at some $c \in
 [a,b]$.
@@ -947,7 +947,7 @@ and \lemmaref{relminmax:lemma} applies: As $g$ attains a maximum
 at $c$ we find $g'(c) = 0$
 and so $f'(c) = y$.
 
-Similarly, if $f'(a) > y > f'(b)$, consider $g(x) := f(x)- yx$.
+Similarly, if $f'(a) > y > f'(b)$, consider $g(x) \coloneqq f(x)- yx$.
 \end{proof}
 
 We have seen already that
@@ -960,7 +960,7 @@ continuous.
 \begin{example} \label{baddifffunc:example}
 Let $f \colon \R \to \R$ be the function defined by
 \begin{equation*}
-f(x) :=
+f(x) \coloneqq
 \begin{cases}
 {\bigl( x \sin(\nicefrac{1}{x}) \bigr)}^2 & \text{if } x \not= 0, \\
 0 & \text{if } x = 0.
@@ -1222,7 +1222,7 @@ for $f$ at $x_0$ as
 \begin{equation*}
 \begin{split}
 P_n^{x_0}(x)
-& :=
+& \coloneqq
 \sum_{k=0}^n
 \frac{f^{(k)}(x_0)}{k!}{(x-x_0)}^k
 \\
@@ -1265,7 +1265,7 @@ f(x)=P_{n}^{x_0}(x)+\frac{f^{(n+1)}(c)}{(n+1)!}{(x-x_0)}^{n+1} .
 \end{equation*}
 \end{thm}
 
-The term $R_n^{x_0}(x):=\frac{f^{(n+1)}(c)}{(n+1)!}{(x-x_0)}^{n+1}$ is called the
+The term $R_n^{x_0}(x)\coloneqq\frac{f^{(n+1)}(c)}{(n+1)!}{(x-x_0)}^{n+1}$ is called the
 \emph{remainder term}\index{remainder term in Taylor's formula}.  This
 form 
 of the remainder term is called the
@@ -1280,7 +1280,7 @@ f(x)=P_{n}^{x_0}(x)+M_{x,x_0}{(x-x_0)}^{n+1} .
 \end{equation*}
 Define a function $g(s)$ by
 \begin{equation*}
-g(s) := f(s)-P_n^{x_0}(s)-M_{x,x_0}{(s-x_0)}^{n+1} .
+g(s) \coloneqq f(s)-P_n^{x_0}(s)-M_{x,x_0}{(s-x_0)}^{n+1} .
 \end{equation*}
 We compute
 the $k$th derivative at $x_0$ of the Taylor polynomial
@@ -1301,7 +1301,7 @@ such that $g''(x_2) = 0$.  We repeat the
 argument $n+1$ times to obtain a number $x_{n+1}$ between $x_0$ and $x_n$
 (and therefore between $x_0$ and $x$) such that $g^{(n+1)}(x_{n+1}) = 0$.
 
-Let $c:=x_{n+1}$.
+Let $c \coloneqq x_{n+1}$.
 We compute the $(n+1)$th derivative of $g$ to find
 \begin{equation*}
 g^{(n+1)}(s) = f^{(n+1)}(s)-(n+1)!\,M_{x,x_0} .
@@ -1320,8 +1320,9 @@ reasonably good approximations to the sine near $x=0$.
 
 We do not necessarily get good approximations
 by the Taylor polynomial everywhere.
-Consider expanding the function $f(x) :=
-\frac{x}{1-x}$ around 0, for $x < 1$, we get the graphs in
+Consider expanding the function
+$f(x) \coloneqq \frac{x}{1-x}$ around 0,
+for $x < 1$, we get the graphs in
 \figureref{fig:taylorgeom}.  The dotted lines are the first, second, and
 third degree approximations.
 The dashed line is the 20th degree polynomial.
@@ -1348,7 +1349,7 @@ differentiated any number of times, then
 we define the \emph{\myindex{Taylor series}}:
 \begin{equation*}
 %T^{x_0}(x)
-%:=
+%\coloneqq
 \sum_{k=0}^\infty
 \frac{f^{(k)}(x_0)}{k!}{(x-x_0)}^k .
 \end{equation*}
@@ -1427,7 +1428,7 @@ the $d$th Taylor polynomial for $p$ at $x_0$ is equal to $p$.
 \end{exercise}
 
 \begin{exercise}
-Let $f(x) := \abs{x}^3$.  Compute $f'(x)$ and $f''(x)$ for all $x$,
+Let $f(x) \coloneqq \abs{x}^3$.  Compute $f'(x)$ and $f''(x)$ for all $x$,
 but show that $f^{(3)}(0)$ does not exist.
 \end{exercise}
 
@@ -1521,7 +1522,7 @@ minimum at $x_0$.  Hint: Consider the limit definition of $f''(x_0)$.
 
 \subsection{Inverse function theorem}
 
-We start with a simple example.  Consider the function $f(x) := a x$ for a
+We start with a simple example.  Consider the function $f(x) \coloneqq a x$ for a
 number $a \not= 0$.  Then $f \colon \R \to \R$ is bijective, and the inverse
 is $f^{-1}(y) = \frac{1}{a} y$.  In particular, $f'(x) = a$ and 
 $(f^{-1})'(y) = \frac{1}{a}$.  As differentiable functions are
@@ -1546,7 +1547,7 @@ is continuously differentiable.
 \begin{proof}
 By \propref{prop:invcont}, $f$ has a continuous inverse.  For convenience
 call the inverse $g \colon J \to I$.
-Let $x_0,y_0$ be as in the statement.  For $x \in I$ write $y := f(x)$.
+Let $x_0,y_0$ be as in the statement.  For $x \in I$ write $y \coloneqq f(x)$.
 If $x \not= x_0$ and so $y \not= y_0$, we find
 \begin{equation*}
 \frac{g(y)-g(y_0)}{y-y_0} =
@@ -1562,7 +1563,7 @@ function.\label{inversefig}}
 
 Let
 \begin{equation*}
-Q(x) :=
+Q(x) \coloneqq
 \begin{cases}
 \frac{x-x_0}{f(x)-f(x_0)} & \text{if } x \neq x_0, \\
 \frac{1}{f'(x_0)}         & \text{if } x = x_0 \quad \text{(notice that }
@@ -1607,7 +1608,7 @@ Let $f \colon (a,b) \to \R$ be a continuously differentiable function,
 $x_0 \in (a,b)$ a point where $f'(x_0) \not= 0$.  Then there exists
 an open interval $I \subset (a,b)$ with $x_0 \in I$, the
 restriction $f|_{I}$ is injective with a continuously differentiable inverse
-$g \colon J \to I$ defined on an interval $J := f(I)$,
+$g \colon J \to I$ defined on an interval $J \coloneqq f(I)$,
 and
 \begin{equation*}
 g'(y) = \frac{1}{f'\bigl( g(y) \bigr)} \qquad \text{for all } y \in J.
@@ -1640,19 +1641,19 @@ far more than mere existence.
 
 \begin{cor}
 Given $n \in \N$ and $x \geq 0$ there exists a unique 
-number $y \geq 0$ (denoted $x^{1/n} := y$), such that $y^n = x$.  Furthermore,
+number $y \geq 0$ (denoted $x^{1/n} \coloneqq y$), such that $y^n = x$.  Furthermore,
 the function $g \colon (0,\infty) \to (0,\infty)$, defined by
-$g(x) := x^{1/n}$, is continuously differentiable and
+$g(x) \coloneqq x^{1/n}$, is continuously differentiable and
 \begin{equation*}
 g'(x) = \frac{1}{nx^{(n-1)/n}} = \frac{1}{n} \, x^{(1-n)/n} ,
 \end{equation*}
-using the convention $x^{m/n} := {(x^{1/n})}^{m}$.
+using the convention $x^{m/n} \coloneqq {(x^{1/n})}^{m}$.
 \end{cor}
 
 \begin{proof}
 For $x=0$ the existence of a unique root is trivial.
 
-Let $f \colon (0,\infty) \to (0,\infty)$ be defined by $f(y) := y^n$.
+Let $f \colon (0,\infty) \to (0,\infty)$ be defined by $f(y) \coloneqq y^n$.
 The function $f$ is continuously differentiable
 and $f'(y) = ny^{n-1}$, see \exerciseref{exercise:diffofxn}.  For $y > 0$ the derivative $f'$ is strictly positive
 and so again by \propref{incdecdiffstrictprop}, $f$ is strictly
@@ -1674,13 +1675,13 @@ derivative and $g'(x) =
 \begin{example}
 The corollary provides a good example of where the inverse function theorem
 gives us an interval smaller than $(a,b)$.  Take $f \colon \R \to \R$
-defined by $f(x) := x^2$.  Then $f'(x) \not= 0$
+defined by $f(x) \coloneqq x^2$.  Then $f'(x) \not= 0$
 as long as $x \not= 0$.  If $x_0 > 0$, we can take $I=(0,\infty)$, but
 no larger.
 \end{example}
 
 \begin{example}
-Another useful example is $f(x) := x^3$.  The function $f \colon \R \to \R$ is
+Another useful example is $f(x) \coloneqq x^3$.  The function $f \colon \R \to \R$ is
 one-to-one and onto, so $f^{-1}(y) = y^{1/3}$ exists on the entire real
 line including zero and negative $y$.  The function $f$ has
 a continuous derivative, but $f^{-1}$ has no derivative at the origin.  The
@@ -1715,14 +1716,14 @@ Let $n\in \N$ be even.
 Prove that every $x > 0$ has a unique negative $n$th root.
 That is, there exists a negative number $y$ such that $y^n = x$.
 Compute the derivative
-of the function $g(x) := y$.
+of the function $g(x) \coloneqq y$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:oddroot}
 Let $n \in \N$ be odd and $n \geq 3$.
 Prove that every $x$ has a unique $n$th root.
 That is, there exists a number $y$ such that $y^n = x$.  Prove that
-the function defined by $g(x) := y$ is differentiable except at $x=0$
+the function defined by $g(x) \coloneqq y$ is differentiable except at $x=0$
 and compute the derivative.  Prove that $g$ is not differentiable at $x=0$.
 \end{exercise}
 
@@ -1733,8 +1734,8 @@ derivatives.
 \end{exercise}
 
 \begin{exercise}
-Let $f(x) := x + 2 x^2 \sin(\nicefrac{1}{x})$ for $x \not= 0$ and
-$f(0) := 0$.  Show that $f$ is differentiable at all $x$, that $f'(0) > 0$,
+Let $f(x) \coloneqq x + 2 x^2 \sin(\nicefrac{1}{x})$ for $x \not= 0$ and
+$f(0) \coloneqq 0$.  Show that $f$ is differentiable at all $x$, that $f'(0) > 0$,
 but that $f$ is not invertible
 on any open interval containing the origin.
 \end{exercise}
@@ -1756,7 +1757,7 @@ for all $x$, but $f$ is not onto.
 
 \begin{exercise}
 Suppose $I,J$ are intervals and a monotone onto $f \colon I \to J$ has an inverse $g \colon J \to I$.
-Suppose $x \in I$ and $y := f(x) \in J$, and that $g$ is differentiable at
+Suppose $x \in I$ and $y \coloneqq f(x) \in J$, and that $g$ is differentiable at
 $y$.  Prove:
 \begin{enumerate}[a)]
 \item

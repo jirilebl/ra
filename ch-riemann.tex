@@ -37,17 +37,17 @@ a = x_0 < x_1 < x_2 < \cdots < x_{n-1} < x_n = b .
 \end{equation*}
 We write
 \begin{equation*}
-\Delta x_i := x_i - x_{i-1} .
+\Delta x_i \coloneqq x_i - x_{i-1} .
 \end{equation*}
 Let $f \colon [a,b] \to \R$ be a bounded function.  Let $P$ be a partition of
 $[a,b]$.
 Define
 \begin{align*}
-& m_i := \inf \, \bigl\{ f(x) : x_{i-1} \leq x \leq x_i \bigr\} , &
-& M_i := \sup \, \bigl\{ f(x) : x_{i-1} \leq x \leq x_i \bigr\} , \\
-& L(P,f) :=
+& m_i \coloneqq \inf \, \bigl\{ f(x) : x_{i-1} \leq x \leq x_i \bigr\} , &
+& M_i \coloneqq \sup \, \bigl\{ f(x) : x_{i-1} \leq x \leq x_i \bigr\} , \\
+& L(P,f) \coloneqq
 \sum_{i=1}^n m_i \Delta x_i , &
-& U(P,f) :=
+& U(P,f) \coloneqq
 \sum_{i=1}^n M_i \Delta x_i .
 \avoidbreak
 \end{align*}
@@ -110,9 +110,9 @@ upper sums are bounded sets.
 \begin{defn}
 As the sets of lower and upper Darboux sums are bounded, we define
 \begin{align*}
-& \underline{\int_a^b} f(x)\,dx :=
+& \underline{\int_a^b} f(x)\,dx \coloneqq
 \sup \, \bigl\{ L(P,f) : P \text{ a partition of } [a,b] \bigr\} , \\
-& \overline{\int_a^b} f(x)\,dx :=
+& \overline{\int_a^b} f(x)\,dx \coloneqq
 \inf \, \bigl\{ U(P,f) : P \text{ a partition of } [a,b] \bigr\} .
 \end{align*}
 We call $\underline{\int}$\glsadd{not:lowerdarboux}
@@ -122,10 +122,10 @@ $\overline{\int}$\glsadd{not:upperdarboux} the
 To avoid worrying about the variable of integration, 
 we often simply write
 \begin{equation*}
-\underline{\int_a^b} f :=
+\underline{\int_a^b} f \coloneqq
 \underline{\int_a^b} f(x)\,dx 
 \qquad \text{and} \qquad
-\overline{\int_a^b} f :=
+\overline{\int_a^b} f \coloneqq
 \overline{\int_a^b} f(x)\,dx  .
 \end{equation*}
 \end{defn}
@@ -137,8 +137,8 @@ some functions.
 
 \begin{example} \label{example:dirichletfunc}
 Take the \myindex{Dirichlet function}
-$f \colon [0,1] \to \R$, where $f(x) := 1$ if
-$x \in \Q$ and $f(x) := 0$ if $x \notin \Q$.  Then
+$f \colon [0,1] \to \R$, where $f(x) \coloneqq 1$ if
+$x \in \Q$ and $f(x) \coloneqq 0$ if $x \notin \Q$.  Then
 \begin{equation*}
 \underline{\int_0^1} f = 0 \qquad \text{and} \qquad
 \overline{\int_0^1} f = 1 .
@@ -200,7 +200,7 @@ $x_n = \widetilde{x}_{\ell}$.  In fact, there are integers
 $k_0 < k_1 < \cdots < k_n$ such that $x_i = \widetilde{x}_{k_i}$ for
 $i=0,1,2,\ldots,n$.
 
-Let $\Delta \widetilde{x}_q := \widetilde{x}_q - \widetilde{x}_{q-1}$ for
+Let $\Delta \widetilde{x}_q \coloneqq \widetilde{x}_q - \widetilde{x}_{q-1}$ for
 $q=0,1,2,\ldots,\ell$.
 See \figureref{fig:refinement}.
 We get 
@@ -226,7 +226,7 @@ $k_{i} = q$.\label{fig:refinement}}
 \end{myfigureht}
 
 Let $m_i$ be as before and correspond to the partition $P$.
-Let $\widetilde{m}_q := \inf \bigl\{ f(x) : \widetilde{x}_{q-1} \leq x \leq
+Let $\widetilde{m}_q \coloneqq \inf \bigl\{ f(x) : \widetilde{x}_{q-1} \leq x \leq
 \widetilde{x}_q \bigr\}$.
 Now, $m_i \leq \widetilde{m}_q$ for $k_{i-1} < q \leq k_i$.  Therefore,
 \begin{equation*}
@@ -282,7 +282,7 @@ $U(P,f) \leq M(b-a)$ implies $\overline{\int_a^b} f \leq M(b-a)$.
 The middle inequality in
 \eqref{intulbound:eq} is the main point of the proposition.
 Let $P_1, P_2$ be partitions of $[a,b]$.  Define 
-$\widetilde{P} := P_1 \cup P_2$.
+$\widetilde{P} \coloneqq P_1 \cup P_2$.
 The set $\widetilde{P}$ is a partition of $[a,b]$, which
 is a refinement of $P_1$ and a refinement of $P_2$.
 By \propref{prop:refinement},
@@ -322,12 +322,12 @@ The set of Riemann integrable functions on $[a,b]$ is denoted
 by $\sR[a,b]$.\glsadd{not:integrablefunc}
 When $f \in \sR[a,b]$, we define\glsadd{not:riemannint}
 \begin{equation*}
-\int_a^b f(x)\,dx := 
+\int_a^b f(x)\,dx \coloneqq 
 \underline{\int_a^b} f(x)\,dx = \overline{\int_a^b} f(x)\,dx .
 \end{equation*}
 As before, we often write
 \begin{equation*}
-\int_a^b f := \int_a^b f(x)\,dx.
+\int_a^b f \coloneqq \int_a^b f(x)\,dx.
 \end{equation*}
 The number $\int_a^b f$ is called the \emph{\myindex{Riemann integral}}
 of $f$, or sometimes simply the \emph{integral} of $f$.
@@ -363,7 +363,7 @@ If $\abs{f(x)} \leq M$ for all $x \in [a,b]$, then
 \begin{example}
 We integrate constant functions using
 \propref{intulbound:prop}.
-If $f(x) := c$ for some constant $c$, then we take $m = M = c$.
+If $f(x) \coloneqq c$ for some constant $c$, then we take $m = M = c$.
 In inequality \eqref{intulbound:eq}
 all the inequalities must be equalities.
 Thus $f$ is integrable on $[a,b]$ and $\int_a^b f = c(b-a)$.
@@ -372,7 +372,7 @@ Thus $f$ is integrable on $[a,b]$ and $\int_a^b f = c(b-a)$.
 \begin{example}
 Let $f \colon [0,2] \to \R$ be defined by
 \begin{equation*}
-f(x) :=
+f(x) \coloneqq
 \begin{cases}
 1               & \text{if } x < 1,\\
 \nicefrac{1}{2} & \text{if } x = 1,\\
@@ -382,7 +382,7 @@ f(x) :=
 We claim $f$ is Riemann integrable and $\int_0^2 f = 1$.
 
 Proof: Let $0 < \epsilon < 1$ be arbitrary.
-Let $P := \{0, 1-\epsilon, 1+\epsilon, 2\}$ be a partition.  We use the notation from
+Let $P \coloneqq \{0, 1-\epsilon, 1+\epsilon, 2\}$ be a partition.  We use the notation from
 the definition of the Darboux sums.  Then
 \begin{align*}
 m_1 &= \inf  \bigl\{ f(x) : x \in [0,1-\epsilon] \bigr\} = 1 , & 
@@ -464,8 +464,8 @@ We will see later that continuous functions are integrable, but let us
 demonstrate how we do it directly.
 
 Let $\epsilon > 0$ be given.  Take $n \in \N$ and
-pick $x_i := \nicefrac{ib}{n}$, to form the 
-partition $P := \{ x_0,x_1,\ldots,x_n \}$ of $[0,b]$.
+pick $x_i \coloneqq \nicefrac{ib}{n}$, to form the 
+partition $P \coloneqq \{ x_0,x_1,\ldots,x_n \}$ of $[0,b]$.
 We have $\Delta x_i = \nicefrac{b}{n}$ for all $i$.  
 As $f$ is decreasing, for every subinterval $[x_{i-1},x_i]$, we obtain
 \begin{equation*}
@@ -526,29 +526,29 @@ It is useful to define the integral $\int_a^b f$ even if
 $a \not< b$.  Suppose $b < a$ and $f \in \sR[b,a]$,
 then define
 \begin{equation*}
-\int_a^b f := - \int_b^a f .
+\int_a^b f \coloneqq - \int_b^a f .
 \end{equation*}
 For any function $f$, define
 \begin{equation*}
-\int_a^a f := 0 .
+\int_a^a f \coloneqq 0 .
 \end{equation*}
 
 At times, the variable $x$ may already have some other meaning.  When
 we need to write down the variable of integration, we may simply
 use a different letter.  For example,
 \begin{equation*}
-\int_a^b f(s)\,ds := \int_a^b f(x)\,dx .
+\int_a^b f(s)\,ds \coloneqq \int_a^b f(x)\,dx .
 \end{equation*}
 
 \subsection{Exercises}
 
 \begin{exercise}
-Define $f \colon [0,1] \to \R$ by $f(x) := x^3$
-and let $P := \{ 0, 0.1, 0.4, 1 \}$.  Compute $L(P,f)$ and $U(P,f)$.
+Define $f \colon [0,1] \to \R$ by $f(x) \coloneqq x^3$
+and let $P \coloneqq \{ 0, 0.1, 0.4, 1 \}$.  Compute $L(P,f)$ and $U(P,f)$.
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon [0,1] \to \R$ be defined by $f(x) := x$.
+Let $f \colon [0,1] \to \R$ be defined by $f(x) \coloneqq x$.
 Show that $f \in \sR[0,1]$ and
 compute $\int_0^1 f$ using the definition of the integral
 (but
@@ -578,7 +578,7 @@ Finish the proof of \propref{prop:refinement}.
 \begin{exercise}
 Suppose $f \colon [-1,1] \to \R$ is defined as
 \begin{equation*}
-f(x) :=
+f(x) \coloneqq
 \begin{cases}
 1 & \text{if } x > 0, \\
 0 & \text{if } x \leq 0.
@@ -595,7 +595,7 @@ feel free to use the propositions of this section).
 Let $c \in (a,b)$ and let $d \in \R$.
 Define $f \colon [a,b] \to \R$ as
 \begin{equation*}
-f(x) :=
+f(x) \coloneqq
 \begin{cases}
 d & \text{if } x = c, \\
 0 & \text{if } x \not= c.
@@ -624,7 +624,7 @@ $c_k \in [x_{k-1},x_k]$ for all $k$, we have
 \begin{exercise}
 Let $f \colon [a,b] \to \R$ be a Riemann integrable function.
 Let $\alpha > 0$ and $\beta \in \R$.
-Then define $g(x) := f(\alpha x + \beta)$ on the interval
+Then define $g(x) \coloneqq f(\alpha x + \beta)$ on the interval
 $I = [\frac{a-\beta}{\alpha}, \frac{b-\beta}{\alpha}]$.  Show
 that $g$ is Riemann integrable on $I$.
 \end{exercise}
@@ -645,7 +645,7 @@ always monotone?  Yes/No: Prove or find a counterexample.
 
 \begin{exercise}[Challenging]
 For a bounded function $f \colon [0,1] \to \R$, let
-$R_n := (\nicefrac{1}{n})\sum_{i=1}^n f(\nicefrac{i}{n})$ (the
+$R_n \coloneqq (\nicefrac{1}{n})\sum_{i=1}^n f(\nicefrac{i}{n})$ (the
 uniform right-hand rule).
 \begin{enumerate}[a)]
 \item
@@ -728,7 +728,7 @@ Then
 \begin{proof}
 If we have partitions $P_1 = \{ x_0,x_1,\ldots,x_k \}$
 of $[a,b]$ and $P_2 = \{ x_k, x_{k+1}, \ldots, x_n \}$ of $[b,c]$,
-then the set $P := P_1 \cup P_2 = \{ x_0, x_1, \ldots, x_n \}$ is
+then the set $P \coloneqq P_1 \cup P_2 = \{ x_0, x_1, \ldots, x_n \}$ is
 a partition of $[a,c]$.  We find
 \begin{equation*}
 L(P,f) =
@@ -904,7 +904,7 @@ Let $f$ and $g$ be in $\sR[a,b]$ and $\alpha \in \R$.
 \pagebreak[2]
 Let us prove the first item for $\alpha \geq 0$. 
 Let $P$ be a partition of $[a,b]$.
-Let $m_i := \inf \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\}$ as usual.
+Let $m_i \coloneqq \inf \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\}$ as usual.
 Since $\alpha$ is nonnegative, we can move the multiplication by $\alpha$
 past the infimum,
 \begin{equation*}
@@ -1017,9 +1017,9 @@ Moreover, if $f$ and $g$ are in $\sR[a,b]$, then
 Let $P = \{ x_0, x_1, \ldots, x_n \}$ be a partition of $[a,b]$.  Then
 let
 \begin{equation*}
-m_i := \inf \, \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\}
+m_i \coloneqq \inf \, \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\}
 \qquad \text{and} \qquad
-\widetilde{m}_i := \inf \, \bigl\{ g(x) : x \in [x_{i-1},x_i] \bigr\} .
+\widetilde{m}_i \coloneqq \inf \, \bigl\{ g(x) : x \in [x_{i-1},x_i] \bigr\} .
 \end{equation*}
 As $f(x) \leq g(x)$, then $m_i \leq \widetilde{m}_i$.
 Therefore,
@@ -1065,7 +1065,7 @@ Let $P = \{ x_0, x_1, \ldots, x_n \}$
 be a partition of $[a,b]$ such that $\Delta x_i < \delta$ for all $i = 1,2,
 \ldots, n$.  For example,
 take $n$ such that $\frac{b-a}{n} < \delta$, and
-let $x_i := \frac{i}{n}(b-a) + a$.
+let $x_i \coloneqq \frac{i}{n}(b-a) + a$.
 Then for all $x, y \in [x_{i-1},x_i]$, we have 
 $\abs{x-y} \leq \Delta x_i < \delta$, and so
 \begin{equation*}
@@ -1384,7 +1384,7 @@ that is Riemann integrable.
 In particular,
 define $f \colon [0,1] \to \R$ by
 \begin{equation*}
-f(x) := 
+f(x) \coloneqq 
 \begin{cases}
 \nicefrac{1}{k} & \text{if } x=\nicefrac{m}{k} \text{ where }
 m,k \in \N \text{ and } m \text{ and } k \text{ have no common divisors,} \\
@@ -1399,7 +1399,7 @@ Show $\int_0^1 f = 0$.
 If $I \subset \R$ is a bounded interval, then
 the function
 \begin{equation*}
-\varphi_I(x) :=
+\varphi_I(x) \coloneqq
 \begin{cases}
 1 & \text{if } x \in I, \\
 0 & \text{otherwise,}
@@ -1478,7 +1478,7 @@ integrable.
 Suppose $f \colon [a,b] \to \R$ is continuous and $g \colon \R \to \R$ is
 Lipschitz continuous.  Define
 \begin{equation*}
-h(x) := \int_a^b g(t-x) f(t) \, dt .
+h(x) \coloneqq \int_a^b g(t-x) f(t) \, dt .
 \end{equation*}
 Prove that $h$ is Lipschitz continuous.
 \end{exercise}
@@ -1598,7 +1598,7 @@ function and we are trying to find an $F$ that satisfies the equation.
 \begin{thm} \label{thm:FTCv2}
 Let $f \colon [a,b] \to \R$ be a Riemann integrable function.  Define
 \begin{equation*}
-F(x) := \int_a^x f .
+F(x) \coloneqq \int_a^x f .
 \end{equation*}
 First, $F$ is continuous on $[a,b]$.  Second,
 if $f$ is continuous at $c \in [a,b]$, then $F$ is differentiable at $c$
@@ -1667,20 +1667,21 @@ all $x \in [a,b]$.
 The second form of the fundamental theorem of calculus still holds if
 we let $d \in [a,b]$ and define
 \begin{equation*}
-F(x) := \int_d^x f .
+F(x) \coloneqq \int_d^x f .
 \end{equation*}
 That is, we can use any point of $[a,b]$ as our base point.  The proof is
 left as an exercise.
 \end{remark}
 
-Let us look at what a simple discontinuity can do.  Take $f(x) := -1$ if $x
-< 0$, and $f(x) := 1$ if $x \geq 0$.  Let $F(x) := \int_0^x f$.  It is not
+Let us look at what a simple discontinuity can do.  Take $f(x) \coloneqq -1$ if $x
+< 0$, and $f(x) \coloneqq 1$ if $x \geq 0$.  Let $F(x) \coloneqq \int_0^x f$.  It is not
 difficult to see that $F(x) = \abs{x}$.  Notice that $f$ is discontinuous at
 $0$ and $F$ is not differentiable at $0$.  However, the converse in the
 theorem does not
 hold.
-Let $g(x) := 0$ if $x \not= 0$, and $g(0) := 1$.  Letting $G(x) :=
-\int_0^x g$, we find that $G(x) = 0$ for all $x$.  So $g$ is discontinuous
+Let $g(x) \coloneqq 0$ if $x \not= 0$, and $g(0) \coloneqq 1$.
+Letting $G(x) \coloneqq \int_0^x g$,
+we find that $G(x) = 0$ for all $x$.  So $g$ is discontinuous
 at $0$, but $G'(0)$ exists and is equal to 0.
 
 A common misunderstanding of the integral for calculus students is to
@@ -1691,7 +1692,7 @@ in closed-form are not really such.  We define
 the natural logarithm as the antiderivative of $\nicefrac{1}{x}$
 such that $\ln 1 = 0$:
 \begin{equation*}
-\ln x := \int_1^x \frac{1}{s}\,ds .
+\ln x \coloneqq \int_1^x \frac{1}{s}\,ds .
 \end{equation*}
 How does a computer find the value of $\ln x$?
 One way to do it is to numerically approximate this integral.
@@ -1708,7 +1709,7 @@ Another common function defined by an integral that cannot
 be evaluated symbolically in terms of elementary functions
 is the $\operatorname{erf}$ function, defined as
 \begin{equation*}
-\operatorname{erf}(x) := \frac{2}{\sqrt{\pi}} \int_0^x e^{-s^2} \,ds .
+\operatorname{erf}(x) \coloneqq \frac{2}{\sqrt{\pi}} \int_0^x e^{-s^2} \,ds .
 \end{equation*}
 This function comes up often in applied mathematics.  It is simply 
 the antiderivative of $\left(\nicefrac{2}{\sqrt{\pi}}\right) e^{-x^2}$
@@ -1743,7 +1744,7 @@ Similarly, $f$ is integrable on every subinterval of $[c,d]$.
 
 Define $F \colon [c,d] \to \R$ by
 \begin{equation*}
-F(y) := \int_{g(a)}^{y} f(s)\,ds .
+F(y) \coloneqq \int_{g(a)}^{y} f(s)\,ds .
 \end{equation*}
 By the second form of the fundamental
 theorem of calculus
@@ -1781,7 +1782,7 @@ calculus.
 
 \begin{example}
 The derivative of $\sin(x)$ is $\cos(x)$.
-Using $g(x):=x^2$, we solve
+Using $g(x) \coloneqq x^2$, we solve
 \begin{equation*}
 \int_0^{\sqrt{\pi}} x \cos(x^2) \, dx = \int_0^\pi \frac{\cos(s)}{2} \, ds
 =
@@ -1806,7 +1807,7 @@ Consider
 \begin{equation*}
 \int_{-1}^{1} \frac{\ln \abs{x}}{x} \,dx .
 \end{equation*}
-It may be tempting to take $g(x) := \ln \abs{x}$.  Compute $g'(x) =
+It may be tempting to take $g(x) \coloneqq \ln \abs{x}$.  Compute $g'(x) =
 \nicefrac{1}{x}$ and try to write
 \begin{equation*}
 \int_{g(-1)}^{g(1)} s \,ds = 
@@ -1850,7 +1851,7 @@ $\int_a^b f = F(b)-F(a)$.
 Let $f \colon [a,b] \to \R$ be a continuous function.  Let $c \in [a,b]$
 be arbitrary.  Define
 \begin{equation*}
-F(x) := \int_c^x f .
+F(x) \coloneqq \int_c^x f .
 \end{equation*}
 Prove that $F$ is differentiable and that $F'(x) = f(x)$ for all $x \in
 [a,b]$.
@@ -1890,7 +1891,7 @@ non-differentiable function.
 Let $f \colon [a,b] \to \R$ be a continuous function.  Let $\epsilon > 0$
 be a constant.  For $x \in [a+\epsilon,b-\epsilon]$, define
 \begin{equation*}
-g(x) := \frac{1}{2\epsilon} \int_{x-\epsilon}^{x+\epsilon} f .
+g(x) \coloneqq \frac{1}{2\epsilon} \int_{x-\epsilon}^{x+\epsilon} f .
 \end{equation*}
 \begin{enumerate}[a)]
 \item
@@ -1899,7 +1900,7 @@ Show that $g$ is differentiable and find the derivative.
 Let $f$ be differentiable and fix $x \in (a,b)$ (let $\epsilon$
 be small enough).  What happens to $g'(x)$ as $\epsilon$ gets smaller?
 \item
-Find $g$ for $f(x) := \abs{x}$, $\epsilon = 1$ (you can assume 
+Find $g$ for $f(x) \coloneqq \abs{x}$, $\epsilon = 1$ (you can assume 
 $[a,b]$ is large enough).
 \end{enumerate}
 \end{exercise}
@@ -1934,7 +1935,7 @@ If $f$ is even, then $\int_{-a}^a f = 2 \int_0^a f$.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Show that $f(x) := \sin(\nicefrac{1}{x})$
+Show that $f(x) \coloneqq \sin(\nicefrac{1}{x})$
 is integrable on every interval (you can define $f(0)$ to be anything).
 \item
 Compute $\int_{-1}^1 \sin(\nicefrac{1}{x})\,dx$ (mind the
@@ -1950,7 +1951,7 @@ Suppose $f \colon [a,b] \to \R$ is increasing, by
 \propref{prop:monotoneintegrable},
 %\exerciseref{exercise:boundedvariationintegrable},
 $f$ is Riemann integrable.  Suppose $f$ has a discontinuity at $c \in
-(a,b)$, show that $F(x) := \int_a^x f$ is not differentiable at $c$.
+(a,b)$, show that $F(x) \coloneqq \int_a^x f$ is not differentiable at $c$.
 \item
 In \exerciseref{exercise:increasingfuncdiscatQ}, you constructed an increasing
 function $f \colon [0,1] \to \R$ that is discontinuous at every
@@ -1976,16 +1977,16 @@ logarithm that you know from calculus so well.  We start with
 exponentiation.
 If $n$ is a positive integer, it is obvious to define
 \begin{equation*}
-x^n := \underbrace{x \cdot x \cdot \cdots \cdot x}_{n \text{ times}} .
+x^n \coloneqq \underbrace{x \cdot x \cdot \cdots \cdot x}_{n \text{ times}} .
 \end{equation*}
-It makes sense to define $x^0 := 1$.
-For negative integers, let $x^{-n} := \nicefrac{1}{x^n}$.
+It makes sense to define $x^0 \coloneqq 1$.
+For negative integers, let $x^{-n} \coloneqq \nicefrac{1}{x^n}$.
 If $x > 0$, define
 $x^{1/n}$ as
 the unique positive $n$th root.  Finally, for a rational
 number $\nicefrac{n}{m}$ (in lowest terms), define
 \begin{equation*}
-x^{n/m} := {\bigl(x^{1/m}\bigr)}^n .
+x^{n/m} \coloneqq {\bigl(x^{1/m}\bigr)}^n .
 \end{equation*}
 It is not difficult to show 
 we get the same number no matter what
@@ -2030,7 +2031,7 @@ $L(x^q) = q L(x)$.
 To prove existence, we define a candidate and show it satisfies
 all the properties.  Let
 \begin{equation*}
-L(x) := \int_1^x \frac{1}{t}\,dt .
+L(x) \coloneqq \int_1^x \frac{1}{t}\,dt .
 \end{equation*}
 
 Obviously, \ref{it:log:i} holds.  Property \ref{it:log:ii} holds
@@ -2118,7 +2119,7 @@ we simply define the \emph{\myindex{logarithm}} or sometimes called the
 \emph{\myindex{natural logarithm}}:
 \glsadd{not:ln}
 \begin{equation*}
-\ln(x) := L(x) .
+\ln(x) \coloneqq L(x) .
 \end{equation*}
 
 Mathematicians usually write $\log(x)$ instead of $\ln(x)$, which is
@@ -2239,7 +2240,7 @@ Having proved $E$ is unique, we define the
 \emph{\myindex{exponential}} function as
 \glsadd{not:exp}
 \begin{equation*}
-\exp(x) := E(x) .
+\exp(x) \coloneqq E(x) .
 \end{equation*}
 
 If $y \in \Q$ and $x > 0$, then
@@ -2250,7 +2251,7 @@ We can now make sense of exponentiation $x^y$ for arbitrary $y \in \R$;
 if $x > 0$ and $y$ is irrational, define
 \glsadd{not:pow}
 \begin{equation*}
-x^y := \exp\bigl(y\ln(x)\bigr) .
+x^y \coloneqq \exp\bigl(y\ln(x)\bigr) .
 \end{equation*}
 As $\exp$ is continuous, then $x^y$ is a continuous function of $y$.
 Therefore, we would
@@ -2263,7 +2264,7 @@ sometimes called \emph{\myindex{Euler's number}} or
 the \emph{\myindex{base of the natural logarithm}}, as
 \glsadd{not:e}
 \begin{equation*}
-e := \exp(1) .
+e \coloneqq \exp(1) .
 \end{equation*}
 Let us justify the notation $e^x$ for $\exp(x)$:
 \begin{equation*}
@@ -2306,7 +2307,7 @@ from the laws of exponents, see the exercises.
 
 \begin{exercise}
 Given a real number $y$ and $b > 0$, define $f \colon (0,\infty) \to \R$
-and $g \colon \R \to \R$ as $f(x) := x^y$ and $g(x) := b^x$.  Show that $f$
+and $g \colon \R \to \R$ as $f(x) \coloneqq x^y$ and $g(x) \coloneqq b^x$.  Show that $f$
 and $g$ are differentiable and find their derivative.
 \end{exercise}
 
@@ -2319,7 +2320,7 @@ Show that for every $y > 0$, there exists a unique number $x$
 such that $y = b^x$.  Define
 the \emph{\myindex{logarithm base $b$}},
 $\log_b \colon (0,\infty) \to \R$, by
-$\log_b(y) := x$.
+$\log_b(y) \coloneqq x$.
 \item
 Show that $\log_b(x) = \frac{\ln(x)}{\ln(b)}$.
 \item
@@ -2392,7 +2393,7 @@ Prove that for $n \in \N$,
 \item
 Prove that the limit
 \begin{equation*}
-\gamma := \lim_{n\to\infty}
+\gamma \coloneqq \lim_{n\to\infty}
 \left( \left( \sum_{k=1}^{n} \frac{1}{k} \right) - \ln (n) \right)
 \end{equation*}
 exists.  This constant is known as the
@@ -2442,7 +2443,7 @@ Since $(e^x)' = e^x$, it is easy to see that $e^x$ is
 \myindex{infinitely differentiable}\index{differentiable!infinitely}
 (has derivatives of all orders).  Define the function $f \colon \R \to \R$.
 \begin{equation*}
-f(x) := \begin{cases}
+f(x) \coloneqq \begin{cases}
 e^{-1/x} & \text{if } x > 0, \\
 0 & \text{if } x \leq 0.
 \end{cases}
@@ -2490,7 +2491,7 @@ of integrals rather than integrals themselves.
 Suppose $f \colon [a,b) \to \R$ is a function (not necessarily bounded)
 that is Riemann integrable on $[a,c]$ for all $c < b$.  We define
 \begin{equation*}
-\int_a^b f := \lim_{c \to b^-} \int_a^{c} f
+\int_a^b f \coloneqq \lim_{c \to b^-} \int_a^{c} f
 \end{equation*}
 if the limit exists.
 
@@ -2498,7 +2499,7 @@ Suppose $f \colon [a,\infty) \to \R$ is a function such that
 $f$ is Riemann integrable on $[a,c]$ for all $c < \infty$.  
 We define
 \begin{equation*}
-\int_a^\infty f := \lim_{c \to \infty} \int_a^c f
+\int_a^\infty f \coloneqq \lim_{c \to \infty} \int_a^c f
 \end{equation*}
 if the limit exists.
 
@@ -2630,7 +2631,7 @@ is increasing, $\int_a^x f \geq M$ for all $x \geq N$.  So
 $\int_a^\infty f$ diverges to infinity.
 
 Next suppose the supremum is finite, say
-$A := \sup \left\{ \int_a^x f : x \geq a \right\}$.
+$A \coloneqq \sup \left\{ \int_a^x f : x \geq a \right\}$.
 For every $\epsilon > 0$, we find an $N$ such that
 $A - \int_a^N f < \epsilon$.  As $\int_a^x f$ is increasing,
 then
@@ -2830,7 +2831,7 @@ Suppose $f \colon (a,b) \to \R$ is a function
 that is Riemann integrable on $[c,d]$ for all $c$, $d$
 such that $a < c < d < b$, then we define
 \begin{equation*}
-\int_a^b f := \lim_{c \to a^+} \, \lim_{d \to b^-} \, \int_{c}^{d} f
+\int_a^b f \coloneqq \lim_{c \to a^+} \, \lim_{d \to b^-} \, \int_{c}^{d} f
 \end{equation*}
 if the limits exist.
 
@@ -2838,7 +2839,7 @@ Suppose $f \colon \R \to \R$ is a function such that
 $f$ is Riemann integrable on all bounded intervals $[a,b]$.  Then
 we define
 \begin{equation*}
-\int_{-\infty}^\infty f := \lim_{c \to -\infty} \, \lim_{d \to \infty} \, \int_c^d f
+\int_{-\infty}^\infty f \coloneqq \lim_{c \to -\infty} \, \lim_{d \to \infty} \, \int_c^d f
 \end{equation*}
 if the limits exist.
 
@@ -3020,7 +3021,7 @@ is the so-called \emph{\myindex{sinc function}}%
 This function comes up quite often
 in both pure and applied mathematics.  Define
 \begin{equation*}
-\operatorname{sinc}(x) :=
+\operatorname{sinc}(x) \coloneqq
 \begin{cases}
 \frac{\sin(x)}{x} & \text{if } x \not= 0 , \\
 1 & \text{if } x = 0 .
@@ -3383,7 +3384,7 @@ such that $\abs{f(t)} \leq M e^{at}$ for all $t \geq T$.  Show that the
 \emph{\myindex{Laplace transform}} of $f$ exists.  That is, for
 every $s > a$ the following integral converges:
 \begin{equation*}
-F(s) := \int_{0}^\infty f(t) e^{-st} \,dt .
+F(s) \coloneqq \int_{0}^\infty f(t) e^{-st} \,dt .
 \end{equation*}
 \end{exercise}
 
@@ -3395,9 +3396,9 @@ that $\int_{-\infty}^\infty \abs{f(x)}\,dx < \infty$.  Show that the
 exist.  That is, for every $\omega \geq 0$ the
 following integrals converge
 \begin{equation*}
-F^s(\omega) := \frac{1}{\pi} \int_{-\infty}^\infty f(t) \sin(\omega t) \,dt ,
+F^s(\omega) \coloneqq \frac{1}{\pi} \int_{-\infty}^\infty f(t) \sin(\omega t) \,dt ,
 \qquad
-F^c(\omega) := \frac{1}{\pi} \int_{-\infty}^\infty f(t) \cos(\omega t) \,dt .
+F^c(\omega) \coloneqq \frac{1}{\pi} \int_{-\infty}^\infty f(t) \cos(\omega t) \,dt .
 \end{equation*}
 Furthermore, show that $F^s$ and $F^c$ are bounded functions.
 \end{exercise}
@@ -3440,7 +3441,7 @@ make the function negative, on the other make the function positive.
 
 \begin{exercise}
 Suppose $f \colon [1,\infty) \to \R$ is such that
-$g(x) := x^2 f(x)$ is a bounded function. Prove that
+$g(x) \coloneqq x^2 f(x)$ is a bounded function. Prove that
 $\int_1^\infty f$ converges.
 \end{exercise}
 
@@ -3454,7 +3455,7 @@ $[a,c-\epsilon]$ and $[c+\epsilon,b]$ for all $\epsilon > 0$.
 Define
 the \emph{\myindex{Cauchy principal value}} of $\int_a^b f$ as
 \begin{equation*}
-p.v.\!\int_a^b f := \lim_{\epsilon\to 0^+}
+p.v.\!\int_a^b f \coloneqq \lim_{\epsilon\to 0^+}
 \left(
 \int_a^{c-\epsilon} f + 
 \int_{c+\epsilon}^b f
@@ -3502,7 +3503,7 @@ $g(x) = 0$ for all $x \notin [a,b]$ for some interval $[a,b]$.
 Show that the
 \emph{\myindex{convolution}}
 \begin{equation*}
-(g * f)(x) := \int_{-\infty}^\infty f(t)g(x-t)\,dt 
+(g * f)(x) \coloneqq \int_{-\infty}^\infty f(t)g(x-t)\,dt 
 \end{equation*}
 is well-defined for all $x \in \R$.
 \item

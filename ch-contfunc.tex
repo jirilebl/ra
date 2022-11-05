@@ -102,7 +102,7 @@ We say $L$ is a \emph{limit} of $f(x)$ as $x$
 goes to $c$, and if $L$ is unique (it is), we write
 \glsadd{not:limfunc}%
 \begin{equation*}
-\lim_{x \to c} f(x) := L .
+\lim_{x \to c} f(x) \coloneqq L .
 \end{equation*}
 If no such $L$ exists, then we say that the limit does not exist or
 that $f$ \emph{\myindex{diverges}} at $c$.
@@ -126,7 +126,7 @@ for all $x \in S \setminus \{c\}$ with $\abs{x-c} < \delta_1$.
 Also find $\delta_2 > 0$ such that
 $\abs{f(x)-L_2} < \nicefrac{\epsilon}{2}$
 for all $x \in S \setminus \{c\}$ with $\abs{x-c} < \delta_2$.
-Put $\delta := \min \{ \delta_1, \delta_2 \}$.  Suppose $x \in S$,
+Put $\delta \coloneqq \min \{ \delta_1, \delta_2 \}$.  Suppose $x \in S$,
 $\abs{x-c} < \delta$, and $x \not= c$.  As $\delta > 0$ and $c$ is a cluster
 point, such an $x$ exists.  Then
 \begin{equation*}
@@ -140,7 +140,7 @@ $L_1 = L_2$.
 \end{proof}
 
 \begin{example}
-Consider $f \colon \R \to \R$ defined by $f(x) := x^2$.  Then
+Consider $f \colon \R \to \R$ defined by $f(x) \coloneqq x^2$.  Then
 for any $c \in \R$,
 \begin{equation*}
 \lim_{x\to c} f(x) = \lim_{x\to c} x^2 = c^2 .
@@ -148,7 +148,7 @@ for any $c \in \R$,
 
 Proof: Let $c \in \R$ be fixed, and suppose $\epsilon > 0$ is given.  Write
 \begin{equation*}
-\delta := \min \left\{ 1 , \, \frac{\epsilon}{2\abs{c}+1} \right\} .
+\delta \coloneqq \min \left\{ 1 , \, \frac{\epsilon}{2\abs{c}+1} \right\} .
 \end{equation*}
 Take $x \not= c$ such that $\abs{x-c} < \delta$.  In particular,
 $\abs{x-c} < 1$.  By reverse triangle inequality,
@@ -172,7 +172,7 @@ $\abs{x} + \abs{c} < 2\abs{c} + 1$.  Estimate
 \begin{example}
 Define $f \colon [0,1) \to \R$ by
 \begin{equation*}
-f(x) := 
+f(x) \coloneqq 
 \begin{cases}
 x & \text{if } x > 0 , \\
 1 & \text{if } x = 0 .
@@ -186,7 +186,7 @@ even though $f(0) = 1$.  See \figureref{fig:limvaldiff}.
 \caption{Function with a different limit and value at $0$.\label{fig:limvaldiff}}
 \end{myfigureht}
 
-Proof:  Let $\epsilon > 0$ be given.  Let $\delta := \epsilon$.
+Proof:  Let $\epsilon > 0$ be given.  Let $\delta \coloneqq \epsilon$.
 For $x \in [0,1)$, $x \not= 0$, and $\abs{x-0} < \delta$, we get
 \begin{equation*}
 \abs{f(x) - 0} = \abs{x} < \delta = \epsilon .
@@ -265,7 +265,7 @@ near zero as it oscillates too fast.\label{figsin1x}}
 Proof:
 We start with $\sin(\nicefrac{1}{x})$.  Define a sequence
 by
-$x_n := \frac{1}{\pi n + \nicefrac{\pi}{2}}$.  It is not hard to see
+$x_n \coloneqq \frac{1}{\pi n + \nicefrac{\pi}{2}}$.  It is not hard to see
 that $\lim_{n\to\infty} x_n = 0$.  Furthermore,
 \begin{equation*}
 \sin ( \nicefrac{1}{x_n} )
@@ -296,7 +296,7 @@ $\displaystyle \lim_{x \to 0} x\sin( \nicefrac{1}{x} ) = 0$.
 
 Keep in mind the phrase \myquote{for every sequence} in the lemma.
 For example, take $\sin(\nicefrac{1}{x})$ and the sequence given by
-$x_n := \nicefrac{1}{\pi n}$.
+$x_n \coloneqq \nicefrac{1}{\pi n}$.
 Then $\bigl\{ \sin (\nicefrac{1}{x_n}) \bigr\}_{n=1}^\infty$
 is the constant zero sequence, and
 therefore converges to zero, but the limit of 
@@ -327,7 +327,7 @@ Then
 Take $\{ x_n \}_{n=1}^\infty$ be a sequence of numbers in $S \setminus \{ c \}$
 that converges to $c$.  Let
 \begin{equation*}
-L_1 := \lim_{x\to c} f(x), \qquad \text{and} \qquad L_2 := \lim_{x\to c} g(x) .
+L_1 \coloneqq \lim_{x\to c} f(x), \qquad \text{and} \qquad L_2 \coloneqq \lim_{x\to c} g(x) .
 \end{equation*}
 \lemmaref{seqflimit:lemma} says that $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges to
 $L_1$ and $\bigl\{ g(x_n) \bigr\}_{n=1}^\infty$ converges to $L_2$.  We also
@@ -426,7 +426,7 @@ Sometimes we work with the function defined on a subset.
 Let $f \colon S \to \R$ be a function and $A \subset S$.  Define the
 function $f|_A \colon A \to \R$ by
 \begin{equation*}
-f|_A (x) := f(x)  \qquad \text{for } x \in A.
+f|_A (x) \coloneqq f(x)  \qquad \text{for } x \in A.
 \end{equation*}
 The function
 $f|_A$ is called the \emph{\myindex{restriction}} of $f$ to $A$.
@@ -477,7 +477,7 @@ Finally, suppose $f|_A(x) \to L$ as $x \to c$ and let $\epsilon > 0$ be
 given.
 There is a $\delta' > 0$ such that if $x \in A \setminus \{ c \}$
 and $\abs{x-c} < \delta'$, then $\bigl\lvert f|_A(x)-L \bigr\rvert < \epsilon$.
-Take $\delta := \min \{ \delta', \alpha \}$.
+Take $\delta \coloneqq \min \{ \delta', \alpha \}$.
 Now suppose $x \in S \setminus \{ c \}$ and
 $\abs{x-c} < \delta$.  As $\abs{x-c} < \alpha$, we find $x \in A \setminus \{ c \}$,
 and as $\abs{x-c} < \delta'$, 
@@ -490,7 +490,7 @@ restriction we generally get an implication in only one direction,
 see \exerciseref{exercise:restrictionlimitexercise}.  
 The usual notation for the limit is
 \begin{equation*}
-\lim_{\substack{x \to c\\x \in A}} f(x) := \lim_{x \to c} f|_A(x) .
+\lim_{\substack{x \to c\\x \in A}} f(x) \coloneqq \lim_{x \to c} f|_A(x) .
 \end{equation*}
 A common use of restriction with respect to limits, which does not satisfy
 the hypothesis in the proposition, is the so-called
@@ -512,21 +512,21 @@ of the restriction of $f$ to $S \cap (c,\infty)$
  as $x \to c$ exists, define
 \glsadd{not:onesidedlim}
 \begin{equation*}
-\lim_{x \to c^+} f(x) := \lim_{x\to c} f|_{S \cap (c,\infty)}(x) .
+\lim_{x \to c^+} f(x) \coloneqq \lim_{x\to c} f|_{S \cap (c,\infty)}(x) .
 \end{equation*}
 Similarly, if $c$ is a cluster point of 
 $S \cap (-\infty,c)$ and the limit of the restriction as $x \to c$
 exists, define
 \begin{equation*}
-\lim_{x \to c^-} f(x) := \lim_{x\to c} f|_{S \cap (-\infty,c)}(x) .
+\lim_{x \to c^-} f(x) \coloneqq \lim_{x\to c} f|_{S \cap (-\infty,c)}(x) .
 \end{equation*}
 \end{defn}
 
 \propref{prop:limrest} does not apply to one-sided limits.
 It is possible to have one-sided limits, but no limit at a point.  For
-example, define $f \colon \R \to \R$ by $f(x) := 1$ for $x < 0$ and
-$f(x) :=
-0$ for $x \geq 0$.  We leave it to the reader to verify that
+example, define $f \colon \R \to \R$ by $f(x) \coloneqq 1$ for $x < 0$ and
+$f(x) \coloneqq 0$ for $x \geq 0$.
+We leave it to the reader to verify that
 \begin{equation*}
 \lim_{x \to 0^-} f(x) = 1, \qquad
 \lim_{x \to 0^+} f(x) = 0, \qquad
@@ -619,7 +619,7 @@ Note the difference from
 
 \begin{exercise}
 Find an example of a function $f \colon [-1,1] \to \R$, where for
-$A:=[0,1]$, we have
+$A\coloneqq [0,1]$, we have
 $f|_A(x) \to 0$ as $x \to 0$, but the limit of $f(x)$ as $x \to 0$
 does not exist.  Note why you cannot apply
 \propref{prop:limrest}.
@@ -637,7 +637,8 @@ a cluster point of $B \subset \R$.  Suppose
 $f \colon A \to B$ and $g \colon B \to \R$ are functions
 such that
 $f(x) \to c_2$ as $x \to c_1$ and
-$g(y) \to L$ as $y \to c_2$.  If $c_2 \in B$, also suppose that $g(c_2) = L$.  Let $h(x) := g\bigl(f(x)\bigr)$ and show
+$g(y) \to L$ as $y \to c_2$.  If $c_2 \in B$, also suppose that $g(c_2) = L$.
+Let $h(x) \coloneqq g\bigl(f(x)\bigr)$ and show
 $h(x) \to L$ as $x \to c_1$.
 Hint: Note that $f(x)$ could equal $c_2$ for many $x \in A$,
 see also
@@ -835,7 +836,7 @@ It can also be strengthened, see \exerciseref{exercise:contseqalt}.
 
 \begin{example}
 The function $f \colon (0,\infty) \to \R$,
-defined by $f(x) := \nicefrac{1}{x}$, is continuous.
+defined by $f(x) \coloneqq \nicefrac{1}{x}$, is continuous.
 
 Proof: Fix $c \in (0,\infty)$.  
 Let $\{ x_n \}_{n=1}^\infty$ be a sequence in $(0,\infty)$ such that
@@ -906,13 +907,13 @@ Let $f \colon S \to \R$ and $g \colon S \to \R$ be functions
 continuous at $c \in S$.
 \begin{enumerate}[(i)]
 \item The function $h \colon S \to \R$, defined by
-$h(x) := f(x)+g(x)$, is continuous at $c$.
+$h(x) \coloneqq f(x)+g(x)$, is continuous at $c$.
 \item The function $h \colon S \to \R$, defined by
-$h(x) := f(x)-g(x)$, is continuous at $c$.
+$h(x) \coloneqq f(x)-g(x)$, is continuous at $c$.
 \item The function $h \colon S \to \R$, defined by
-$h(x) := f(x)g(x)$, is continuous at $c$.
+$h(x) \coloneqq f(x)g(x)$, is continuous at $c$.
 \item If $g(x)\not=0$ for all $x \in S$, the function $h \colon S \to \R$,
-given by $h(x) := \frac{f(x)}{g(x)}$, is continuous at $c$.
+given by $h(x) \coloneqq \frac{f(x)}{g(x)}$, is continuous at $c$.
 \end{enumerate}
 \end{prop}
 
@@ -979,7 +980,7 @@ You probably already realized that one of the basic tools in
 constructing complicated functions out of simple ones is composition.
 Recall that for two functions $f$ and $g$,
 the composition $f \circ g$ is defined by
-$(f \circ g)(x) := f\bigl(g(x)\bigr)$.
+$(f \circ g)(x) \coloneqq f\bigl(g(x)\bigr)$.
 A composition of
 continuous functions is again
 continuous.
@@ -1042,7 +1043,7 @@ other than $f(c)$.
 \begin{example} \label{example:jumpdiscont}
 The function $f \colon \R \to \R$, defined by
 \begin{equation*}
-f(x) := 
+f(x) \coloneqq 
 \begin{cases}
 -1 & \text{if } x < 0, \\
 1 & \text{if } x \geq 0,
@@ -1082,7 +1083,7 @@ mathematician
 Dirichlet}
 (1805--1859).}.
 \begin{equation*}
-f(x) :=
+f(x) \coloneqq
 \begin{cases}
 1 & \text{if } x \text{ is rational,} \\
 0 & \text{if } x \text{ is irrational.}
@@ -1114,7 +1115,7 @@ mathematician
 \begin{example} \label{popcornfunction:example}
 Define $f \colon (0,1) \to \R$ as
 \begin{equation*}
-f(x) := 
+f(x) \coloneqq 
 \begin{cases}
 \nicefrac{1}{k} & \text{if } x=\nicefrac{m}{k}, \text{ where } m,k \in \N
 \text{ and } m \text{ and } k \text{ have no common divisors (lowest terms),} \\
@@ -1161,8 +1162,8 @@ Let us end on an easier example.
 
 \begin{example} \label{example:removablediscont}
 Define
-$g \colon \R \to \R$ by $g(x) := 0$ if $x \not= 0$ and
-$g(0) := 1$.  Then $g$ is not continuous at zero, but continuous everywhere else (why?).
+$g \colon \R \to \R$ by $g(x) \coloneqq 0$ if $x \not= 0$ and
+$g(0) \coloneqq 1$.  Then $g$ is not continuous at zero, but continuous everywhere else (why?).
 The point $x=0$ is called a \emph{\myindex{removable discontinuity}}.  That
 is because if we would change the definition of $g$, by insisting that
 $g(0)$ be $0$, we would obtain a continuous function.  On the other hand,
@@ -1174,8 +1175,8 @@ $\lim_{x\to 0} g(x)$ exists while
 $\lim_{x\to 0} f(x)$ does not.
 
 We stay with this example to show another phenomenon.
-Let $A := \{ 0 \}$, then $g|_A$ is continuous (why?), while $g$ is not continuous on $A$.
-Similarly, if $B := \R \setminus \{0 \}$, then $g|_B$ is also continuous,
+Let $A \coloneqq \{ 0 \}$, then $g|_A$ is continuous (why?), while $g$ is not continuous on $A$.
+Similarly, if $B \coloneqq \R \setminus \{0 \}$, then $g|_B$ is also continuous,
 and $g$ is in fact continuous on $B$.
 \end{example}
 
@@ -1184,19 +1185,19 @@ and $g$ is in fact continuous on $B$.
 \begin{exercise}
 Using the definition of continuity directly prove that
 $f \colon \R \to \R$, defined by
-$f(x) := x^2$, is continuous.
+$f(x) \coloneqq x^2$, is continuous.
 \end{exercise}
 
 \begin{exercise}
 Using the definition of continuity directly prove that
 $f \colon (0,\infty) \to \R$, defined by
-$f(x) := \nicefrac{1}{x}$, is continuous.
+$f(x) \coloneqq \nicefrac{1}{x}$, is continuous.
 \end{exercise}
 
 \begin{exercise}
 Define $f \colon \R \to \R$ by
 \begin{equation*}
-f(x) :=
+f(x) \coloneqq
 \begin{cases}
 x & \text{if } x \text{ is rational,} \\
 x^2 & \text{if } x \text{ is irrational.}
@@ -1210,7 +1211,7 @@ $f$ is continuous at $1$ and discontinuous at $2$.
 \begin{exercise}
 Define $f \colon \R \to \R$ by
 \begin{equation*}
-f(x) :=
+f(x) \coloneqq
 \begin{cases}
 \sin(\nicefrac{1}{x}) & \text{if } x \not= 0, \\
 0 & \text{if } x=0.
@@ -1223,7 +1224,7 @@ Is $f$ continuous?  Prove your assertion.
 \begin{exercise}
 Define $f \colon \R \to \R$ by
 \begin{equation*}
-f(x) :=
+f(x) \coloneqq
 \begin{cases}
 x \sin(\nicefrac{1}{x}) & \text{if } x \not= 0, \\
 0 & \text{if } x=0.
@@ -1246,13 +1247,13 @@ Prove that the restriction $f|_A$ is continuous.
 \begin{exercise}
 Suppose $S \subset \R$, such that $(c-\alpha,c+\alpha) \subset S$ for some $c \in \R$
 and $\alpha > 0$.
-Let $f \colon S \to \R$ be a function and $A:=(c-\alpha,c+\alpha)$.  Prove that
+Let $f \colon S \to \R$ be a function and $A \coloneqq (c-\alpha,c+\alpha)$.  Prove that
 if $f|_A$ is continuous at $c$, then $f$ is continuous at $c$.
 \end{exercise}
 
 \begin{exercise}
 Give an example of functions $f \colon \R \to \R$ and $g \colon \R \to \R$
-such that the function $h$, defined by $h(x) := f(x) + g(x)$, is continuous,
+such that the function $h$, defined by $h(x) \coloneqq f(x) + g(x)$, is continuous,
 but $f$ and $g$ are not continuous.  Can you find $f$ and $g$ that are nowhere
 continuous, but $h$ is a continuous function?
 \end{exercise}
@@ -1283,7 +1284,7 @@ $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges.  Show that $f$ is continuous at
 \begin{exercise}
 Suppose $f \colon [-1,0] \to \R$ and $g \colon [0,1] \to \R$ are continuous
 and $f(0) = g(0)$.  Define $h \colon [-1,1] \to \R$ by 
-$h(x) := f(x)$ if $x \leq 0$ and $h(x) := g(x)$ if $x > 0$.  Show that
+$h(x) \coloneqq f(x)$ if $x \leq 0$ and $h(x) \coloneqq g(x)$ if $x > 0$.  Show that
 $h$ is continuous.
 \end{exercise}
 
@@ -1307,9 +1308,9 @@ Suppose $S \subset \R$ and
 let $f \colon S \to \R$ and
 $g \colon S \to \R$ be continuous functions.
 Define $p \colon S \to \R$ by
-$p(x) := \max \bigl\{ f(x) , g(x) \bigr\}$ and
+$p(x) \coloneqq \max \bigl\{ f(x) , g(x) \bigr\}$ and
 $q \colon S \to \R$ by
-$q(x) := \min \bigl\{ f(x) , g(x) \bigr\}$.  Prove that $p$ and $q$ are
+$q(x) \coloneqq \min \bigl\{ f(x) , g(x) \bigr\}$.  Prove that $p$ and $q$ are
 continuous.
 \end{exercise}
 
@@ -1373,7 +1374,7 @@ $n \in \N$, there is an $x_n \in [a,b]$, such that
 The sequence $\{ x_n \}_{n=1}^\infty$ is bounded as $a \leq x_n \leq b$.
 By the \hyperref[thm:bwseq]{Bolzano--Weierstrass theorem},
 there is a convergent subsequence $\{ x_{n_i} \}_{i=1}^\infty$.
-Let $x := \lim_{i\to\infty} x_{n_i}$.
+Let $x \coloneqq \lim_{i\to\infty} x_{n_i}$.
 Since $a \leq x_{n_i} \leq b$ for all $i$, then $a \leq x \leq b$.
 The sequence $\bigl\{ f(x_{n_i}) \bigr\}_{i=1}^\infty$ is not bounded 
 as 
@@ -1459,9 +1460,9 @@ convergent subsequences
 $\{ x_{n_i} \}_{i=1}^\infty$ and 
 $\{ y_{m_i} \}_{i=1}^\infty$.  Let
 \begin{equation*}
-x := \lim_{i\to\infty} x_{n_i}
+x \coloneqq \lim_{i\to\infty} x_{n_i}
 \qquad \text{and} \qquad
-y := \lim_{i\to\infty} y_{m_i}.
+y \coloneqq \lim_{i\to\infty} y_{m_i}.
 \end{equation*}
 As $a \leq x_{n_i} \leq b$ for all $i$, we have $a \leq x \leq b$.
 Similarly, $a \leq y \leq b$.  So $x$ and $y$ are in $[a,b]$.
@@ -1483,7 +1484,7 @@ an absolute maximum at $y$.
 \end{proof}
 
 \begin{example}
-The function $f(x) := x^2+1$ defined on the interval $[-1,2]$ achieves a minimum
+The function $f(x) \coloneqq x^2+1$ defined on the interval $[-1,2]$ achieves a minimum
 at $x=0$ when $f(0) = 1$.  It achieves a maximum at $x=2$ where $f(2) = 5$.
 Do note that the domain of definition matters.  If we instead took the domain
 to be $[-10,10]$, then $f$ would no longer have a maximum at $x=2$.
@@ -1495,13 +1496,13 @@ We show by examples that the different hypotheses of the theorem are
 truly needed.
 
 \begin{example}
-The function $f(x) := x$, defined on the whole real line,
+The function $f(x) \coloneqq x$, defined on the whole real line,
 achieves neither a minimum, nor a maximum.  So it is important that
 we are looking at a bounded interval.
 \end{example}
 
 \begin{example}
-The function $f(x) := \nicefrac{1}{x}$, defined on $(0,1)$ 
+The function $f(x) \coloneqq \nicefrac{1}{x}$, defined on $(0,1)$ 
 achieves neither a minimum, nor a maximum.  The values of the function are
 unbounded as we approach 0.  Also as we approach $x=1$, the values of the
 function approach 1, but $f(x) > 1$ for all $x \in (0,1)$.  There is
@@ -1512,7 +1513,7 @@ we are looking at a closed interval.
 \begin{example}
 Continuity is important.
 Define $f \colon [0,1] \to \R$ by 
-$f(x) := \nicefrac{1}{x}$ for $x > 0$ and let $f(0) := 0$.
+$f(x) \coloneqq \nicefrac{1}{x}$ for $x > 0$ and let $f(0) \coloneqq 0$.
 The function does not achieve a maximum.  The problem is that
 the function is not continuous at 0.
 \end{example}
@@ -1535,11 +1536,11 @@ such that $f(c) = 0$.
 We define two sequences $\{ a_n \}_{n=1}^\infty$
 and $\{ b_n \}_{n=1}^\infty$ inductively:
 \begin{enumerate}[(i)]
-\item Let $a_1 := a$ and $b_1 := b$.
-\item If $f\left(\frac{a_n+b_n}{2}\right) \geq 0$, let $a_{n+1} := a_n$ and
-$b_{n+1} := \frac{a_n+b_n}{2}$.
-\item If $f\left(\frac{a_n+b_n}{2}\right) < 0$, let $a_{n+1} := \frac{a_n+b_n}{2}$ and
-$b_{n+1} := b_n$.
+\item Let $a_1 \coloneqq a$ and $b_1 \coloneqq b$.
+\item If $f\left(\frac{a_n+b_n}{2}\right) \geq 0$, let $a_{n+1} \coloneqq a_n$ and
+$b_{n+1} \coloneqq \frac{a_n+b_n}{2}$.
+\item If $f\left(\frac{a_n+b_n}{2}\right) < 0$, let $a_{n+1} \coloneqq \frac{a_n+b_n}{2}$ and
+$b_{n+1} \coloneqq b_n$.
 \end{enumerate}
 \begin{myfigureht}
 \includegraphics{figures/bisect}
@@ -1555,7 +1556,7 @@ As $a_n < b_n \leq b_1 = b$ and
 $b_n > a_n \geq a_1 = a$ for all $n$,
 the sequences are also bounded.  Therefore, the
 sequences converge.
-Let $c := \lim_{n\to\infty} a_n$ and $d := \lim_{n\to\infty} b_n$,
+Let $c \coloneqq \lim_{n\to\infty} a_n$ and $d \coloneqq \lim_{n\to\infty} b_n$,
 where also $a \leq c \leq d \leq b$.  We need
 to show that $c=d$.
 Notice
@@ -1609,11 +1610,11 @@ The theorem says that a continuous function on a closed interval
 achieves all the values between the values at the endpoints.
 
 \begin{proof}
-If $f(a) < y < f(b)$, then define $g(x) := f(x)-y$.  Then 
+If $f(a) < y < f(b)$, then define $g(x) \coloneqq f(x)-y$.  Then 
 $g(a) < 0$ and $g(b) > 0$, and we apply \lemmaref{IVT:lemma}
 to $g$ to find $c$.  If $g(c) = 0$, then $f(c) = y$.
 
-Similarly, if $f(a) > y > f(b)$, then define $g(x) := y-f(x)$.
+Similarly, if $f(a) > y > f(b)$, then define $g(x) \coloneqq y-f(x)$.
 Again, $g(a) < 0$ and $g(b) > 0$, and we apply \lemmaref{IVT:lemma} to
 find $c$.
 As before, if $g(c) = 0$, then $f(c) = y$.
@@ -1633,7 +1634,7 @@ where it is called the \emph{\myindex{bisection method}}.
 
 
 \begin{example}[Bisection method] %\index{bisection method}
-The polynomial $f(x) := x^3-2x^2+x-1$ has a real root in $(1,2)$.  We simply
+The polynomial $f(x) \coloneqq x^3-2x^2+x-1$ has a real root in $(1,2)$.  We simply
 notice that $f(1) = -1$ and $f(2) = 1$.  Hence there must exist a point $c
 \in (1,2)$ such that $f(c) = 0$.  To find a better approximation of
 the root we follow the proof of \lemmaref{IVT:lemma}.  
@@ -1682,7 +1683,7 @@ where $a_d \not= 0$.  We divide by $a_d$ to obtain a
 \emph{\myindex{monic polynomial}}\footnote{The word \emph{monic} means that
 the coefficient of $x^d$ is 1.}
 \begin{equation*}
-g(x) := x^d + b_{d-1} x^{d-1} + \cdots + b_1 x + b_0 ,
+g(x) \coloneqq x^d + b_{d-1} x^{d-1} + \cdots + b_1 x + b_0 ,
 \end{equation*}
 where $b_k = \nicefrac{a_k}{a_d}$.
 Let us show that $g(n)$ is
@@ -1739,12 +1740,13 @@ then $f(c) = 0$, and the proof is done.
 \begin{example}
 You may recall how hard we worked to show that $\sqrt{2}$ in \exampleref{example:sqrt2}.
 With Bolzano's
-theorem, we can prove the existance $k$th root of any positive number $y >
-0$ without any effort.  We claim that for any $k \in \N$ and any $y > 0$,
+theorem, we can prove the existance $k$th root of any positive number
+$y > 0$ without any effort.
+We claim that for any $k \in \N$ and any $y > 0$,
 there exists a number $x > 0$ such that $x^k = y$.
 
 Proof: If $y=1$, then it is clear, so assume $y\not= 1$.
-Let $f(x) := x^k - y$.  We notice $f(0) = -y < 0$.
+Let $f(x) \coloneqq x^k - y$.  We notice $f(0) = -y < 0$.
 If $y < 1$, then $f(1) = 1^k -y > 0$.  If $y > 1$,
 then $f(y) = y^k-y = y(y^{k-1}-1) > 0$.
 In either case, apply Bolzano's theorem to find an $x > 0$ such that $f(x) = 0$,
@@ -1757,7 +1759,7 @@ there exist discontinuous functions with
 the intermediate value property.
 The function
 \begin{equation*}
-f(x) :=
+f(x) \coloneqq
 \begin{cases}
 \sin(\nicefrac{1}{x}) & \text{if } x \not= 0, \\
 0 & \text{if } x=0,
@@ -1812,7 +1814,7 @@ $f$ achieves either an absolute minimum or an absolute maximum on $(0,1)$
 \begin{exercise} \label{exercise:meanvaluepropsin1x}
 Let
 \begin{equation*}
-f(x) :=
+f(x) \coloneqq
 \begin{cases}
 \sin(\nicefrac{1}{x}) & \text{if } x \not= 0, \\
 0 & \text{if } x=0.
@@ -1951,7 +1953,7 @@ Note that $x$ and $c$ are not treated any differently
 in this definition.
 
 \begin{example}
-$f \colon [0,1] \to \R$, defined by $f(x) := x^2$, is uniformly continuous.
+$f \colon [0,1] \to \R$, defined by $f(x) \coloneqq x^2$, is uniformly continuous.
 
 Proof: Note that $0 \leq x,c \leq 1$.  Then
 \begin{equation*}
@@ -1959,19 +1961,19 @@ Proof: Note that $0 \leq x,c \leq 1$.  Then
 \leq (\sabs{x}+\sabs{c}) \sabs{x-c}
 \leq (1+1)\sabs{x-c} .
 \end{equation*}
-Therefore, given $\epsilon > 0$, let $\delta := \nicefrac{\epsilon}{2}$.
+Therefore, given $\epsilon > 0$, let $\delta \coloneqq \nicefrac{\epsilon}{2}$.
 If $\sabs{x-c} < \delta$, then $\sabs{x^2-c^2} < \epsilon$.
 
 \medskip
 
-On the other hand, $g \colon \R \to \R$, defined by $g(x) := x^2$, is not uniformly
+On the other hand, $g \colon \R \to \R$, defined by $g(x) \coloneqq x^2$, is not uniformly
 continuous.
 
 Proof: Suppose it is uniformly continuous, then for every $\epsilon > 0$,
 there would exist a $\delta > 0$ such that
 if $\sabs{x-c} < \delta$, then $\sabs{x^2 -c^2} < \epsilon$.
 Take $x > 0$ and let
-$c := x+\nicefrac{\delta}{2}$.  Write
+$c \coloneqq x+\nicefrac{\delta}{2}$.  Write
 \begin{equation*}
 \epsilon >
 \sabs{x^2-c^2} = \sabs{x+c}\sabs{x-c}
@@ -1986,7 +1988,7 @@ contradiction.
 
 
 \begin{example}
-The function $f \colon (0,1) \to \R$, defined by $f(x) := \nicefrac{1}{x}$, is not
+The function $f \colon (0,1) \to \R$, defined by $f(x) \coloneqq \nicefrac{1}{x}$, is not
 uniformly continuous.
 
 Proof: Given $\epsilon > 0$, then $\epsilon >
@@ -2041,7 +2043,7 @@ $\abs{x_n-y_n} < \nicefrac{1}{n}$ and such that $\abs{f(x_n)-f(y_n)} \geq
 \epsilon$.  By
 \hyperref[thm:bwseq]{Bolzano--Weierstrass},
 there exists a convergent subsequence
-$\{ x_{n_k} \}_{k=1}^\infty$.  Let $c := \lim_{k\to\infty} x_{n_k}$.
+$\{ x_{n_k} \}_{k=1}^\infty$.  Let $c \coloneqq \lim_{k\to\infty} x_{n_k}$.
 As $a \leq x_{n_k} \leq b$ for all $k$, we have $a \leq c \leq b$.  Estimate
 \begin{equation*}
 \abs{y_{n_k} - c} =
@@ -2114,13 +2116,13 @@ it can be extended to a continuous function on the closed interval.
 A function $f \colon (a,b) \to \R$ is uniformly continuous if and only if
 the limits 
 \begin{equation*}
-L_a := \lim_{x \to a} f(x) \qquad \text{and} \qquad
-L_b := \lim_{x \to b} f(x)
+L_a \coloneqq \lim_{x \to a} f(x) \qquad \text{and} \qquad
+L_b \coloneqq \lim_{x \to b} f(x)
 \end{equation*}
 exist and the function $\widetilde{f} \colon [a,b] \to \R$,
 defined by
 \begin{equation*}
-\widetilde{f}(x) :=
+\widetilde{f}(x) \coloneqq
 \begin{cases}
 f(x) & \text{if } x \in (a,b), \\
 L_a & \text{if } x = a, \\
@@ -2143,9 +2145,9 @@ $\lim_{n\to\infty} x_n = a$.
 The sequence $\{ x_n \}_{n=1}^\infty$ is Cauchy, so by
 \lemmaref{unifcauchycauchy:lemma}
 the sequence $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ is Cauchy and thus convergent.
-Let $L_1 := \lim_{n\to\infty} f(x_n)$.  Take another sequence
+Let $L_1 \coloneqq \lim_{n\to\infty} f(x_n)$.  Take another sequence
 $\{ y_n \}_{n=1}^\infty$ in $(a,b)$ such that $\lim_{n\to\infty} y_n = a$.  By the same reasoning
-we get $L_2 := \lim_{n\to\infty} f(y_n)$.  If we show that $L_1 = L_2$, then
+we get $L_2 \coloneqq \lim_{n\to\infty} f(y_n)$.  If we show that $L_1 = L_2$, then
 the limit $L_a = \lim_{x\to a} f(x)$ exists.  Let $\epsilon > 0$ be given.
 Find $\delta > 0$ such that $\abs{x-y} < \delta$ implies $\abs{f(x)-f(y)} <
 \nicefrac{\epsilon}{3}$.  Find $M \in \N$ such that for
@@ -2220,7 +2222,7 @@ A Lipschitz continuous function is uniformly continuous.
 Let $f \colon S \to \R$ be a function and let $K$ be a constant such that
 $\abs{f(x)-f(y)} \leq K \abs{x-y}$
 for all $x, y$ in $S$.
-Let $\epsilon > 0$ be given.  Take $\delta :=
+Let $\epsilon > 0$ be given.  Take $\delta \coloneqq
 \nicefrac{\epsilon}{K}$.
 For all $x$ and $y$ in $S$ such that
 $\abs{x-y} < \delta$,
@@ -2265,7 +2267,7 @@ Hence sine and cosine are Lipschitz continuous with $K=1$.
 \end{example}
 
 \begin{example}
-The function $f \colon [1,\infty) \to \R$, defined by $f(x) := \sqrt{x}$,
+The function $f \colon [1,\infty) \to \R$, defined by $f(x) \coloneqq \sqrt{x}$,
 is Lipschitz continuous. Proof:
 \begin{equation*}
 \abs{\sqrt{x}-\sqrt{y}} = 
@@ -2284,7 +2286,7 @@ As $x \geq 1$ and $y \geq 1$, we see that $\frac{1}{\sqrt{x}+\sqrt{y}}
 \end{equation*}
 
 On the other hand, $g \colon [0,\infty) \to \R$, defined by
-$g(x) := \sqrt{x}$, is not Lipschitz continuous.  Proof:
+$g(x) \coloneqq \sqrt{x}$, is not Lipschitz continuous.  Proof:
 Suppose for all $x,y \in [0,\infty)$,
 \begin{equation*}
 \abs{\sqrt{x}-\sqrt{y}} 
@@ -2331,12 +2333,12 @@ exists.
 
 \begin{exercise}
 Show that $f \colon (c,\infty) \to \R$ for some $c > 0$
-and defined by $f(x) := \nicefrac{1}{x}$ is Lipschitz continuous.
+and defined by $f(x) \coloneqq \nicefrac{1}{x}$ is Lipschitz continuous.
 \end{exercise}
 
 \begin{exercise}
 Show that $f \colon (0,\infty) \to \R$,
-defined by $f(x) := \nicefrac{1}{x}$, is not Lipschitz continuous.
+defined by $f(x) \coloneqq \nicefrac{1}{x}$, is not Lipschitz continuous.
 \end{exercise}
 
 \begin{samepage}
@@ -2344,8 +2346,8 @@ defined by $f(x) := \nicefrac{1}{x}$, is not Lipschitz continuous.
 Let $A, B$ be intervals.
 Let $f \colon A \to \R$ and $g \colon B \to \R$ be uniformly continuous
 functions such that $f(x) = g(x)$ for $x \in A \cap B$.  Define
-the function $h \colon A \cup B \to \R$ by $h(x) := f(x)$ if
-$x \in A$ and $h(x) := g(x)$ if $x \in B \setminus A$.
+the function $h \colon A \cup B \to \R$ by $h(x) \coloneqq f(x)$ if
+$x \in A$ and $h(x) \coloneqq g(x)$ if $x \in B \setminus A$.
 \begin{enumerate}[a)]
 \item
 Prove that if $A \cap B \not= \emptyset$, then $h$ is uniformly continuous.
@@ -2365,11 +2367,11 @@ continuous.
 \begin{exercise}
 Let $f \colon (0,1) \to \R$ be a bounded continuous function.  Show that
 the function
-$g(x) := x(1-x)f(x)$ is uniformly continuous.
+$g(x) \coloneqq x(1-x)f(x)$ is uniformly continuous.
 \end{exercise}
 
 \begin{exercise}
-Show that $f \colon (0,\infty) \to \R$, defined by $f(x) := \sin
+Show that $f \colon (0,\infty) \to \R$, defined by $f(x) \coloneqq \sin
 (\nicefrac{1}{x})$, is not uniformly continuous.
 \end{exercise}
 
@@ -2401,11 +2403,11 @@ Prove:
 \begin{enumerate}[a)]
 \item
 If $f \colon S \to \R$ and $g \colon S \to \R$ are uniformly continuous,
-then $h \colon S \to \R$ given by $h(x) := f(x) + g(x)$
+then $h \colon S \to \R$ given by $h(x) \coloneqq f(x) + g(x)$
 is uniformly continuous.
 \item
 If $f \colon S \to \R$ is uniformly continuous and $a \in \R$,
-then $h \colon S \to \R$ given by $h(x) := a f(x)$
+then $h \colon S \to \R$ given by $h(x) \coloneqq a f(x)$
 is uniformly continuous.
 \end{enumerate}
 \end{exercise}
@@ -2416,11 +2418,11 @@ Prove:
 \begin{enumerate}[a)]
 \item
 If $f \colon S \to \R$ and $g \colon S \to \R$ are Lipschitz,
-then $h \colon S \to \R$ given by $h(x) := f(x) + g(x)$
+then $h \colon S \to \R$ given by $h(x) \coloneqq f(x) + g(x)$
 is Lipschitz.
 \item
 If $f \colon S \to \R$ is Lipschitz and $a \in \R$,
-then $h \colon S \to \R$ given by $h(x) := a f(x)$
+then $h \colon S \to \R$ given by $h(x) \coloneqq a f(x)$
 is Lipschitz.
 \end{enumerate}
 \end{exercise}
@@ -2430,14 +2432,14 @@ is Lipschitz.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-If $f \colon [0,1] \to \R$ is given by $f(x) := x^m$ for an integer
+If $f \colon [0,1] \to \R$ is given by $f(x) \coloneqq x^m$ for an integer
 $m \geq 0$,
 show $f$ is Lipschitz and find the best (the smallest) Lipschitz constant
 $K$ (depending on $m$ of course).
 Hint: $(x-y)(x^{m-1} + x^{m-2}y + x^{m-3}y^2 + \cdots + x y^{m-2} + y^{m-1}) = x^m - y^m$.
 \item
 Using the previous exercise, show that if $f \colon [0,1] \to \R$
-is a polynomial, that is, $f(x) := a_m x^m + a_{m-1} x^{m-1} + \cdots + a_0$,
+is a polynomial, that is, $f(x) \coloneqq a_m x^m + a_{m-1} x^{m-1} + \cdots + a_0$,
 then $f$ is Lipschitz.
 \end{enumerate}
 \end{exercise}
@@ -2517,7 +2519,7 @@ as $x$ goes to $\infty$.  We call $L$ the \emph{limit}
 and write
 \glsadd{not:limfuncinf}
 \begin{equation*}
-\lim_{x \to \infty} f(x) := L .
+\lim_{x \to \infty} f(x) \coloneqq L .
 \end{equation*}
 Alternatively we write $f(x) \to L$ as $x \to \infty$.
 
@@ -2533,7 +2535,7 @@ as $x$ goes to $-\infty$.
 Alternatively, we write $f(x) \to L$ as $x \to -\infty$.
 We call $L$ a \emph{limit} and, if unique, write
 \begin{equation*}
-\lim_{x \to -\infty} f(x) := L .
+\lim_{x \to -\infty} f(x) \coloneqq L .
 \end{equation*}
 \end{defn}
 
@@ -2546,7 +2548,7 @@ The limit at $\infty$ or $-\infty$ as defined above is unique if it exists.
 \end{prop}
 
 \begin{example}
-Let $f(x) := \frac{1}{\abs{x}+1}$.  Then
+Let $f(x) \coloneqq \frac{1}{\abs{x}+1}$.  Then
 \begin{equation*}
 \lim_{x\to \infty} f(x) = 0 \qquad \text{and} \qquad
 \lim_{x\to -\infty} f(x) = 0 .
@@ -2561,7 +2563,7 @@ The proof for $-\infty$ is left to the reader.
 \end{example}
 
 \begin{example}
-Let $f(x) := \sin(\pi x)$.  Then $\lim_{x\to\infty} f(x)$ does not exist.
+Let $f(x) \coloneqq \sin(\pi x)$.  Then $\lim_{x\to\infty} f(x)$ does not exist.
 To prove this fact note that if $x = 2n+\nicefrac{1}{2}$ for some $n \in
 \N$, then $f(x)=1$,
 while if $x = 2n+\nicefrac{3}{2}$, then $f(x)=-1$.  So they cannot both be
@@ -2651,7 +2653,7 @@ f(x) > N
 whenever $x \in S$ and $x \geq M$.
 We write
 \begin{equation*}
-\lim_{x \to \infty} f(x) := \infty ,
+\lim_{x \to \infty} f(x) \coloneqq \infty ,
 \end{equation*}
 or we say that $f(x) \to \infty$ as $x \to \infty$.
 \end{defn}
@@ -2711,7 +2713,7 @@ know the proposition when $a, b, c \in \R$, see Exercises
 continuous at $b$, if $b \in B$, is necessary.
 
 \begin{example}
-Let $h(x) := e^{-x^2+x}$.  Then
+Let $h(x) \coloneqq e^{-x^2+x}$.  Then
 \begin{equation*}
 \lim_{x\to \infty} h(x) = 0 .
 \end{equation*}
@@ -2736,7 +2738,7 @@ Prove \propref{liminfty:unique}.
 
 \begin{exercise}
 Let $f \colon [1,\infty) \to \R$ be a function.  Define
-$g \colon (0,1] \to \R$ via $g(x) := f(\nicefrac{1}{x})$.
+$g \colon (0,1] \to \R$ via $g(x) \coloneqq f(\nicefrac{1}{x})$.
 Using the definitions of limits directly,
 show that $\lim_{x\to 0^+} g(x)$
 exists if and only if $\lim_{x\to \infty} f(x)$ exists, in which
@@ -2762,7 +2764,7 @@ as $x \to -\infty$, and as $x \to c$ for a finite $c \in \R$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $P(x) := x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$ is a \emph{\myindex{monic polynomial}}
+Suppose $P(x) \coloneqq x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$ is a \emph{\myindex{monic polynomial}}
 of degree $n \geq 1$ (monic means that the coefficient of $x^n$ is 1).
 \begin{enumerate}[a)]
 \item
@@ -2776,8 +2778,8 @@ $\lim\limits_{x\to-\infty} P(x) = -\infty$ (see previous exercise).
 \end{exercise}
 
 \begin{exercise}
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence.  Consider $S := \N \subset \R$, and
-$f \colon S \to \R$ defined by $f(n) := x_n$.  Show that
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence.  Consider $S \coloneqq \N \subset \R$, and
+$f \colon S \to \R$ defined by $f(n) \coloneqq x_n$.  Show that
 the two notions of limit,
 \begin{equation*}
 \lim_{n\to\infty} x_n \qquad \text{and} \qquad
@@ -2803,7 +2805,7 @@ $L = \infty$ or $L = -\infty$.  Show that
 Suppose $f \colon \R \to \R$ is a 2-periodic function, that is $f(x +2) =
 f(x)$ for all $x$.  Define $g \colon \R \to \R$ by 
 \begin{equation*}
-g(x) := f\left(\frac{\sqrt{x^2+1}-1}{x}\right)
+g(x) \coloneqq f\left(\frac{\sqrt{x^2+1}-1}{x}\right)
 \end{equation*}
 \begin{enumerate}[a)]
 \item
@@ -2901,10 +2903,10 @@ Let us assume $f$ is increasing, and we will show the first
 equality.  The rest of the proof is very similar and is left as an
 exercise.
 
-Let $a := \sup \{ f(x) : x < c, x \in S \}$.  If $a = \infty$,
+Let $a \coloneqq \sup \{ f(x) : x < c, x \in S \}$.  If $a = \infty$,
 then given an $M \in \R$, there exists an $x_M \in S$, $x_M < c$, such that $f(x_M) > M$. 
 As $f$ is increasing, $f(x) \geq f(x_M) >  M$ for all $x \in S$ with $x > x_M$.
-Take $\delta := c-x_M > 0$ to obtain the definition of the limit going to
+Take $\delta \coloneqq c-x_M > 0$ to obtain the definition of the limit going to
 infinity.
 
 Next suppose $a < \infty$.
@@ -2916,7 +2918,7 @@ $x_\epsilon < c$,
 such that $f(x_\epsilon) > a-\epsilon$.  As $f$ is increasing,
 if $x \in S$ and $x_\epsilon < x < c$, we have
 $a-\epsilon < f(x_\epsilon) \leq f(x) \leq a$.  Let
-$\delta := c-x_\epsilon$.  Then for $x \in S \cap (-\infty,c)$
+$\delta \coloneqq c-x_\epsilon$.  Then for $x \in S \cap (-\infty,c)$
 with $\abs{x-c} < \delta$,
 we have $\abs{f(x)-a} < \epsilon$.
 \end{proof}
@@ -2962,9 +2964,9 @@ Suppose $f$ is not continuous at $c \in I$,
 and that $c$ is not an endpoint of $I$.
 Let
 \begin{equation*}
-a := \lim_{x \to c^-} f(x) = \sup \bigl\{ f(x) : x \in I, x < c \bigr\} ,
+a \coloneqq \lim_{x \to c^-} f(x) = \sup \bigl\{ f(x) : x \in I, x < c \bigr\} ,
 \qquad
-b := \lim_{x \to c^+} f(x) = \inf \bigl\{ f(x) : x \in I, x > c \bigr\} .
+b \coloneqq \lim_{x \to c^+} f(x) = \inf \bigl\{ f(x) : x \in I, x > c \bigr\} .
 \end{equation*}
 As $c$ is a discontinuity, $a < b$.
 If $x < c$, then $f(x) \leq a$, and
@@ -3005,12 +3007,12 @@ For each $c \in E$
 the one-sided limits of $f$ both exist as $c$ is not an endpoint.
 Let
 \begin{equation*}
-a := \lim_{x \to c^-} f(x) = \sup \bigl\{ f(x) : x \in I, x < c \bigr\} ,
+a \coloneqq \lim_{x \to c^-} f(x) = \sup \bigl\{ f(x) : x \in I, x < c \bigr\} ,
 \qquad
-b := \lim_{x \to c^+} f(x) = \inf \bigl\{ f(x) : x \in I, x > c \bigr\} .
+b \coloneqq \lim_{x \to c^+} f(x) = \inf \bigl\{ f(x) : x \in I, x > c \bigr\} .
 \end{equation*}
 As $c$ is a discontinuity, $a < b$.  
-There exists a rational number $q \in (a,b)$, so let $h(c) := q$.
+There exists a rational number $q \in (a,b)$, so let $h(c) \coloneqq q$.
 If $d \in E$ is another discontinuity, then if $d > c$, then there
 exist an $x \in I$ with $c < x < d$, and so $\lim_{x \to d^-} f(x) \geq b$.
 Hence the rational number we choose for $h(d)$ is different from $q$,
@@ -3024,12 +3026,12 @@ one-to-one (injective) function into $\Q$.  Therefore, $E$ is countable.
 By $\lfloor x \rfloor$ denote the largest integer less than or equal to $x$.
 Define $f \colon [0,1] \to \R$ by
 \begin{equation*}
-f(x) :=
+f(x) \coloneqq
 x +
 \sum_{n=0}^{\lfloor 1/(1-x) \rfloor}
 2^{-n} ,
 \end{equation*}
-for $x < 1$ and $f(1) := 3$.
+for $x < 1$ and $f(1) \coloneqq 3$.
 It is an exercise to show that $f$ is strictly increasing, bounded, and
 has a discontinuity at all points $1-\nicefrac{1}{k}$ for $k \in \N$.  In particular,
 there are countably many discontinuities, but the function is bounded and
@@ -3072,11 +3074,11 @@ If $c$ is not a cluster point of $f(I)$, then $f^{-1}$ is continuous at $c$
 automatically.  So let $c$ be a cluster point of $f(I)$.
 Suppose both of the following one-sided limits exist:
 \begin{align*}
-x_0 & := \lim_{y \to c^-} f^{-1}(y) =
+x_0 & \coloneqq \lim_{y \to c^-} f^{-1}(y) =
 \sup \bigl\{ f^{-1}(y) : y < c, y \in f(I) \bigr\}
 =
 \sup \bigl\{ x \in I : f(x) < c \bigr\} , \\
-x_1 & := \lim_{y \to c^+} f^{-1}(y) =
+x_1 & \coloneqq \lim_{y \to c^+} f^{-1}(y) =
 \inf \bigl\{ f^{-1}(y) : y > c, y \in f(I) \bigr\}
 =
 \inf \bigl\{ x \in I : f(x) > c \bigr\} .
@@ -3099,7 +3101,7 @@ and is left as an exercise.
 The proposition does not require $f$ itself to be continuous.  Let
 $f \colon \R \to \R$ be defined by
 \begin{equation*}
-f(x) :=
+f(x) \coloneqq
 \begin{cases}
 x & \text{if } x < 0, \\
 x+1 & \text{if } x \geq 0. \\
@@ -3230,8 +3232,8 @@ $g(0) = f(0)$, $f(x) \leq g(x)$ for all $x$, and $g(1)-f(1) < \epsilon$.
 
 \begin{exercise}
 Prove that the \myindex{Dirichlet function}
-$f \colon [0,1] \to\R$, defined by $f(x) :=
-1$ if $x$ is rational and $f(x) := 0$ otherwise, cannot be written as a
+$f \colon [0,1] \to\R$, defined by $f(x) \coloneqq 1$
+if $x$ is rational and $f(x) \coloneqq 0$ otherwise, cannot be written as a
 difference of two increasing functions.  That is, there do not exist
 increasing $g$ and $h$ such that, $f(x) = g(x) - h(x)$.
 \end{exercise}
