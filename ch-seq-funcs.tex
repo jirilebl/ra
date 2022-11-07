@@ -46,7 +46,7 @@ restrictions of $f_n$ to $T$ converge pointwise to $f$.
 
 
 \begin{example}
-On $[-1,1]$, the sequence of functions defined by $f_n(x) := x^{2n}$
+On $[-1,1]$, the sequence of functions defined by $f_n(x) \coloneqq x^{2n}$
 converges pointwise to $f \colon [-1,1] \to \R$, where
 \begin{equation*}
 f(x) =
@@ -60,7 +60,7 @@ See \figureref{x2nfig}.
 
 \begin{myfigureht}
 \includegraphics{figures/x2nfig}
-\caption{Graphs of $f_1$, $f_2$, $f_3$, and $f_8$ for $f_n(x) :=
+\caption{Graphs of $f_1$, $f_2$, $f_3$, and $f_8$ for $f_n(x) \coloneqq
 x^{2n}$.\label{x2nfig}}
 \end{myfigureht}
 
@@ -88,7 +88,7 @@ We write
 \end{equation*}
 to denote the limit of the functions
 \begin{equation*}
-f_n(x) := \sum_{k=0}^n x^k .
+f_n(x) \coloneqq \sum_{k=0}^n x^k .
 \end{equation*}
 When studying series, 
 we saw that for $(-1,1)$ the $f_n$ converge pointwise to
@@ -101,14 +101,14 @@ $\frac{1}{1-x}$ is defined for all $x \not=1$, and $f_n$ are
 defined for all $x$ (even at $x=1$), convergence only happens on $(-1,1)$.
 Therefore, when we write
 \begin{equation*}
-f(x) := \sum_{k=0}^\infty x^k
+f(x) \coloneqq \sum_{k=0}^\infty x^k
 \end{equation*}
 we mean that $f$ is defined on $(-1,1)$ and is the pointwise limit
 of the partial sums.
 \end{example}
 
 \begin{example}
-Let $f_n(x) := \sin(nx)$.  Then $f_n$ does not converge pointwise
+Let $f_n(x) \coloneqq \sin(nx)$.  Then $f_n$ does not converge pointwise
 to any function on any interval.  It may converge at certain points, such
 as when $x=0$ or $x=\pi$.  It is left as an exercise that in any interval
 $[a,b]$, there exists an $x$ such that $\sin(xn)$ does not have a limit
@@ -181,9 +181,9 @@ uniformly to $f \colon S \to \R$, then $\{ f_n \}_{n=1}^\infty$ converges pointw
 The converse does not hold.
 
 \begin{example}
-The functions $f_n(x) := x^{2n}$ do not converge uniformly on $[-1,1]$,
+The functions $f_n(x) \coloneqq x^{2n}$ do not converge uniformly on $[-1,1]$,
 even though they converge pointwise.  To see this, suppose for contradiction
-that the convergence is uniform.  For $\epsilon := \nicefrac{1}{2}$, there would have
+that the convergence is uniform.  For $\epsilon \coloneqq \nicefrac{1}{2}$, there would have
 to exist an $N$ such that $x^{2N} = \abs{x^{2N} - 0} < \nicefrac{1}{2}$ for all $x \in
 (-1,1)$ (as $f_n(x)$ converges to 0 on $(-1,1)$).  But that means that
 for every sequence $\{ x_k \}_{k=1}^\infty$ in $(-1,1)$ such that $\lim_{k\to\infty} x_k = 1$,
@@ -222,7 +222,7 @@ sequence of real numbers converging to zero.
 Let $f \colon S \to \R$ be a bounded function.  Define
 \glsadd{not:uniformnorm}
 \begin{equation*}
-\snorm{f}_S :=
+\snorm{f}_S \coloneqq
 \sup \bigl\{ \abs{f(x)} : x \in S \bigr\} .
 \end{equation*}
 We call $\snorm{\cdot}_S$ the \emph{\myindex{uniform norm}}.
@@ -272,8 +272,8 @@ instead of \emph{converges uniformly} if $\snorm{f_n-f}_S \to 0$.  The propositi
 says that the two notions are the same thing.
 
 \begin{example}
-Let $f_n \colon [0,1] \to \R$ be defined by $f_n(x) := \frac{nx+ \sin(nx^2)}{n}$.
-We claim $\{ f_n \}_{n=1}^\infty$ converges uniformly to $f(x) := x$.  Let us compute:
+Let $f_n \colon [0,1] \to \R$ be defined by $f_n(x) \coloneqq \frac{nx+ \sin(nx^2)}{n}$.
+We claim $\{ f_n \}_{n=1}^\infty$ converges uniformly to $f(x) \coloneqq x$.  Let us compute:
 \begin{equation*}
 \begin{split}
 \norm{f_n-f}_{[0,1]}
@@ -324,7 +324,7 @@ the sequence $\bigl\{ f_n(x) \bigr\}_{n=1}^\infty$ is Cauchy because
 Thus $\bigl\{ f_n(x) \bigr\}_{n=1}^\infty$ converges to some real number.  Define $f \colon S
 \to \R$ by
 \begin{equation*}
-f(x) := \lim_{n \to \infty} f_n(x) .
+f(x) \coloneqq \lim_{n \to \infty} f_n(x) .
 \end{equation*}
 The sequence
 $\{ f_n \}_{n=1}^\infty$ converges pointwise to $f$.  To show that the convergence
@@ -403,7 +403,7 @@ Find an example of a sequence of functions $\{ f_n \}_{n=1}^\infty$ and $\{
 g_n \}_{n=1}^\infty$
 that converge uniformly to some $f$ and $g$ on some set $A$, but such that
 $\{ f_ng_n \}_{n=1}^\infty$ (the multiple) does not converge uniformly to $fg$ on $A$.
-Hint: Let $A := \R$, let $f(x):=g(x) := x$.  You can even pick $f_n = g_n$.
+Hint: Let $A \coloneqq \R$, let $f(x)\coloneqq g(x) \coloneqq x$.  You can even pick $f_n = g_n$.
 \end{exercise}
 
 \begin{exercise}
@@ -451,14 +451,14 @@ uniformly on $[0,1]$.
 
 \begin{exercise}
 Fix a continuous $h \colon [a,b] \to \R$.
-Let $f(x) := h(x)$ for $x \in [a,b]$,
-$f(x) := h(a)$ for $x < a$ and $f(x) := h(b)$ for all $x > b$.  First show
+Let $f(x) \coloneqq h(x)$ for $x \in [a,b]$,
+$f(x) \coloneqq h(a)$ for $x < a$ and $f(x) \coloneqq h(b)$ for all $x > b$.  First show
 that $f \colon \R \to \R$ is continuous.
 Now let $f_n$ be
 the function $g$ from \exerciseref{exercise:smoothingout} with
 $\epsilon = \nicefrac{1}{n}$, defined on the interval $[a,b]$.  That is,
 \begin{equation*}
-f_n(x) := \frac{n}{2} \int_{x-1/n}^{x+1/n} f .
+f_n(x) \coloneqq \frac{n}{2} \int_{x-1/n}^{x+1/n} f .
 \end{equation*}
 Show that $\{ f_n \}_{n=1}^\infty$ converges uniformly to $h$ on $[a,b]$.
 \end{exercise}
@@ -569,7 +569,7 @@ need not hold.
 \begin{example}
 Define $f_n \colon [0,1] \to \R$ as
 \begin{equation*}
-f_n(x) :=
+f_n(x) \coloneqq
 \begin{cases}
 1-nx &  \text{if } x < \nicefrac{1}{n},\\
 0 &  \text{if } x \geq \nicefrac{1}{n}.
@@ -598,7 +598,7 @@ On the other hand, if $x=0$, then
 Thus the pointwise limit of $f_n$ is the function
 $f \colon [0,1] \to \R$ defined by
 \begin{equation*}
-f(x) :=
+f(x) \coloneqq
 \begin{cases}
 1 &  \text{if } x = 0,\\
 0 &  \text{if } x > 0.
@@ -663,7 +663,7 @@ of the integrals.
 \begin{example}
 Define $f_n \colon [0,1] \to \R$ as
 \begin{equation*}
-f_n(x) :=
+f_n(x) \coloneqq
 \begin{cases}
 0 &  \text{if } x = 0,\\
 n-n^2x &  \text{if } 0 < x < \nicefrac{1}{n},\\
@@ -809,7 +809,7 @@ x \,dx = \nicefrac{1}{2} .
 If convergence is only pointwise, the limit need not even be Riemann
 integrable.  On $[0,1]$ define
 \begin{equation*}
-f_n(x) :=
+f_n(x) \coloneqq
 \begin{cases}
 1 & \text{if } x = \nicefrac{p}{q} \text{ in lowest terms and } q \leq n, \\
 0 & \text{otherwise.}
@@ -821,7 +821,7 @@ or equal to $n$.   So $f_n$ is integrable and $\int_0^1 f_n = \int_0^1 0 =
 0$.  It is an easy exercise to show that $\{ f_n \}_{n=1}^\infty$ converges pointwise to the
 \myindex{Dirichlet function}
 \begin{equation*}
-f(x) :=
+f(x) \coloneqq
 \begin{cases}
 1 & \text{if } x \in \Q, \\
 0 & \text{otherwise,}
@@ -835,7 +835,7 @@ In fact, if the convergence is only pointwise, the limit of bounded
 functions is not even necessarily bounded.
 Define $f_n \colon [0,1] \to \R$ by
 \begin{equation*}
-f_n(x) :=
+f_n(x) \coloneqq
 \begin{cases}
 0 & \text{if } x < \nicefrac{1}{n},\\
 \nicefrac{1}{x} & \text{else.}
@@ -844,7 +844,7 @@ f_n(x) :=
 For every $n$ we get that $\abs{f_n(x)} \leq n$ for all $x \in [0,1]$ so the
 functions are bounded.  However $f_n$ converge pointwise to
 \begin{equation*}
-f(x) :=
+f(x) \coloneqq
 \begin{cases}
 0 & \text{if } x = 0,\\
 \nicefrac{1}{x} & \text{else,}
@@ -860,7 +860,7 @@ however, enough to swap limits with derivatives, unless you also have
 uniform convergence of the derivatives themselves.
 
 \begin{example}
-Let $f_n(x) := \frac{\sin(nx)}{n}$.  Then $f_n$ converges uniformly to
+Let $f_n(x) \coloneqq \frac{\sin(nx)}{n}$.  Then $f_n$ converges uniformly to
 0.  See \figureref{fig:conv1nsinxn}.
 The derivative of the limit is 0.  But $f_n'(x) = \cos(nx)$, which
 does not converge even pointwise, for
@@ -875,7 +875,7 @@ $n=1,2,\ldots,10$, with higher $n$ in lighter gray.%
 \end{example}
 
 \begin{example} \label{exercise:badconvergenceder}
-Let $f_n(x) := \frac{1}{1+nx^2}$.
+Let $f_n(x) \coloneqq \frac{1}{1+nx^2}$.
 If $x \not= 0$, then $\lim_{n \to \infty} f_n(x) = 0$,
 but $\lim_{n \to \infty} f_n(0) = 1$.
 Hence, $\{ f_n \}_{n=1}^\infty$ converges pointwise to a function that is not continuous
@@ -909,7 +909,7 @@ a continuously differentiable function $f \colon I \to \R$, and $f' = g$.
 \end{thm}
 
 \begin{proof}
-Define $f(c) := \lim_{n\to \infty} f_n(c)$.
+Define $f(c) \coloneqq \lim_{n\to \infty} f_n(c)$.
 As $f_n'$ are continuous and hence Riemann integrable,
 then
 via the fundamental theorem of calculus, we find that for $x \in I$,
@@ -921,7 +921,7 @@ on $[c,x]$ (or $[x,c]$ if $x < c$).
 Thus, the limit as $n \to \infty$ on the right-hand side exists.
 Define $f$ at the remaining points (where $x\neq c$) by this limit:
 \begin{equation*}
-f(x) :=
+f(x) \coloneqq
 \lim_{n\to\infty} f_n(c) + \lim_{n\to\infty} \int_c^x f_n'
 =
 f(c) + \int_c^x g .
@@ -962,7 +962,7 @@ for all $x \in I$.  Then
 
 The proof goes through without boundedness of $I$, except for the
 uniform convergence of $f_n$ to $f$.  As an example suppose $I = \R$ and let
-$f_n(x) := \nicefrac{x}{n}$.  Then $f_n'(x)=\nicefrac{1}{n}$, which
+$f_n(x) \coloneqq \nicefrac{x}{n}$.  Then $f_n'(x)=\nicefrac{1}{n}$, which
 converges uniformly to $0$.  However, $\{f_n\}_{n=1}^\infty$ converges to 0 only pointwise.
 
 \subsection{Convergence of power series}
@@ -986,8 +986,8 @@ on $(a-\rho,a+\rho)$ (if $\rho < \infty$), or $\R$ (if $\rho = \infty$).
 \end{prop}
 
 \begin{proof}
-Let $I := (a-\rho,a+\rho)$ if $\rho < \infty$,
-or let $I := \R$ if $\rho= \infty$.
+Let $I \coloneqq (a-\rho,a+\rho)$ if $\rho < \infty$,
+or let $I \coloneqq \R$ if $\rho= \infty$.
 Take $0 < r < \rho$.
 The series converges absolutely for every $x \in I$,
 in particular if $x = a+r$.
@@ -1035,8 +1035,8 @@ uniform limits.
 \begin{cor}
 Let $\sum_{n=0}^\infty c_n {(x-a)}^n$ be a convergent power series with a radius
 of convergence $0 < \rho \leq \infty$.
-Let $I := (a-\rho,a+\rho)$ if $\rho < \infty$
-or $I := \R$ if $\rho= \infty$.  Let $f \colon I \to \R$ be the limit.
+Let $I \coloneqq (a-\rho,a+\rho)$ if $\rho < \infty$
+or $I \coloneqq \R$ if $\rho= \infty$.  Let $f \colon I \to \R$ be the limit.
 Then
 \begin{equation*}
 \int_a^x f = \sum_{n=1}^\infty \frac{c_{n-1}}{n} {(x-a)}^{n} ,
@@ -1066,8 +1066,8 @@ Hence,
 \begin{cor} \label{cor:differentiatepowerser}
 Let $\sum_{n=0}^\infty c_n {(x-a)}^n$ be a convergent power series with a radius
 of convergence $0 < \rho \leq \infty$.
-Let $I := (a-\rho,a+\rho)$ if $\rho < \infty$
-or $I := \R$ if $\rho= \infty$.  Let $f \colon I \to \R$ be the limit.
+Let $I \coloneqq (a-\rho,a+\rho)$ if $\rho < \infty$
+or $I \coloneqq \R$ if $\rho= \infty$.  Let $f \colon I \to \R$ be the limit.
 Then $f$ is a differentiable function, and
 \begin{equation*}
 f'(x) = \sum_{n=0}^\infty (n+1) c_{n+1} {(x-a)}^{n} ,
@@ -1082,7 +1082,7 @@ $[a-r,a+r]$,
 but we need uniform convergence of the derivative.
 Let
 \begin{equation*}
-R := \limsup_{n \to \infty} \abs{c_n}^{1/n} .
+R \coloneqq \limsup_{n \to \infty} \abs{c_n}^{1/n} .
 \end{equation*}
 As the series is convergent $R < \infty$, and
 the radius of convergence is $\nicefrac{1}{R}$ (or $\infty$ if $R=0$).
@@ -1126,7 +1126,7 @@ we are done as $r < \rho$ was arbitrary.
 We could have used this result to define the exponential function.  That is,
 the power series
 \begin{equation*}
-f(x) := \sum_{n=0}^\infty \frac{x^n}{n!}
+f(x) \coloneqq \sum_{n=0}^\infty \frac{x^n}{n!}
 \end{equation*}
 has radius of convergence $\rho=\infty$.  Furthermore,
 $f(0) = 1$, and by differentiating
@@ -1164,7 +1164,7 @@ converge uniformly, and then show that the limit is not differentiable.
 \end{exercise}
 
 \begin{exercise}
-Let $f_n(x) := \frac{x^n}{n}$.  Show that $\{ f_n \}_{n=1}^\infty$ converges uniformly to
+Let $f_n(x) \coloneqq \frac{x^n}{n}$.  Show that $\{ f_n \}_{n=1}^\infty$ converges uniformly to
 a differentiable function $f$ on $[0,1]$ (find $f$).  However, show that
 $f'(1) \not= \lim\limits_{n\to\infty} f_n'(1)$.
 \end{exercise}
@@ -1209,7 +1209,7 @@ discontinuous.
 \begin{exercise} \label{c1uniflim:exercise}
 For a continuously differentiable function $f \colon [a,b] \to \R$, define
 \begin{equation*}
-\norm{f}_{C^1} := \norm{f}_{[a,b]} + \norm{f'}_{[a,b]} .
+\norm{f}_{C^1} \coloneqq \norm{f}_{[a,b]} + \norm{f'}_{[a,b]} .
 \end{equation*}
 Suppose $\{ f_n \}_{n=1}^\infty$ is a sequence of continuously differentiable
 functions such that for every $\epsilon >0$, there exists an $M$
@@ -1227,7 +1227,7 @@ $f \colon [0,1] \to \R$ is Riemann integrable.
 For the following two exercises define 
 the number
 \begin{equation*}
-\norm{f}_{L^1} := 
+\norm{f}_{L^1} \coloneqq 
 \int_0^1 \abs{f(x)}\,dx .
 \end{equation*}
 It is true that $\abs{f}$ is integrable whenever $f$ is, see
@@ -1320,7 +1320,7 @@ $\lim\limits_{n\to\infty}\lim\limits_{m \to \infty} x_{n,m}
 
 \begin{exercise}
 A joint limit (see above) does not mean the iterated limits exist.
-Consider $x_{n,m} := \frac{{(-1)}^{n+m}}{\min \{n,m \}}$.
+Consider $x_{n,m} \coloneqq \frac{{(-1)}^{n+m}}{\min \{n,m \}}$.
 \begin{enumerate}[a)]
 \item
 Show that for no $n$ does
@@ -1358,8 +1358,8 @@ $\int_a^b f = \lim_{n\to\infty} \int_a^b f_n$.
 \begin{exercise}[Challenging]
 Find a sequence of continuous functions $f_n \colon [0,1] \to \R$ that
 converge to the popcorn function $f \colon [0,1] \to \R$, that is the
-function such that $f(\nicefrac{p}{q}) := \nicefrac{1}{q}$ (if $\nicefrac{p}{q}$
-is in lowest terms) and $f(x) := 0$ if $x$ is not rational (note
+function such that $f(\nicefrac{p}{q}) \coloneqq \nicefrac{1}{q}$ (if $\nicefrac{p}{q}$
+is in lowest terms) and $f(x) \coloneqq 0$ if $x$ is not rational (note
 that $f(0) = f(1) = 1$),
 see \exampleref{popcornfunction:example}.
 So a pointwise limit of continuous functions can have a dense set of
@@ -1369,8 +1369,8 @@ discontinuities.  See also the next exercise.
 \begin{exercise}[Challenging]
 The \myindex{Dirichlet function}
 $f \colon [0,1] \to \R$, that is the
-function such that $f(x) := 1$ if $x \in \Q$
-and $f(x) := 0$ if $x \notin \Q$,
+function such that $f(x) \coloneqq 1$ if $x \in \Q$
+and $f(x) \coloneqq 0$ if $x \notin \Q$,
 is not the pointwise limit of
 continuous functions, although this is difficult to show.
 Prove, however, that $f$ is a pointwise limit of functions that are themselves
@@ -1403,7 +1403,7 @@ at least $\rho$.
 \end{exercise}
 
 \begin{exercise}[requires \sectionref{sec:moreonseries} and \sectionref{sec:taylor}]
-Suppose $f(x) := \sum_{n=0}^\infty c_n {(x-a)}^n$ converges in $(a-\rho,a+\rho)$.
+Suppose $f(x) \coloneqq \sum_{n=0}^\infty c_n {(x-a)}^n$ converges in $(a-\rho,a+\rho)$.
 \begin{enumerate}[a)]
 \item
 Suppose that $f^{(k)}(a) = 0$ for all $k=0,1,2,3,\ldots$.  Prove that
@@ -1418,7 +1418,7 @@ $f(x) = 0$ for all $x \in (a-\rho,a+\rho)$.
 \end{exercise}
 
 \begin{exercise}
-Let $f_n(x) := \frac{x}{1+{(nx)}^2}$.  Notice that $f_n$ are differentiable
+Let $f_n(x) \coloneqq \frac{x}{1+{(nx)}^2}$.  Notice that $f_n$ are differentiable
 functions.
 \begin{enumerate}[a)]
 \item
@@ -1432,7 +1432,7 @@ the origin.
 Let $\{ a_n \}_{n=1}^\infty$ be an enumeration of the rational numbers.
 Define
 \begin{equation*}
-g_n(x) := \sum_{k=1}^n 2^{-k} f_n(x-a_k) .
+g_n(x) \coloneqq \sum_{k=1}^n 2^{-k} f_n(x-a_k) .
 \end{equation*}
 Show that $\{ g_n \}_{n=1}^\infty$ converges uniformly to 0.
 \item
@@ -1562,12 +1562,12 @@ Pick $\alpha > 0$ such that
 $[-\alpha,\alpha] \subset I$ and $[y_0-\alpha, y_0 + \alpha] \subset J$.
 Define
 \begin{equation*}
-h := \min \left\{ \alpha, \frac{\alpha}{M+L\alpha} \right\} .
+h \coloneqq \min \left\{ \alpha, \frac{\alpha}{M+L\alpha} \right\} .
 \end{equation*}
 Observe
 $[-h,h] \subset I$.
 
-Set $f_0(x) := y_0$.
+Set $f_0(x) \coloneqq y_0$.
 We define $f_k$ inductively.
 Assuming $f_{k-1}([-h,h]) \subset [y_0-\alpha,y_0+\alpha]$,
 we see 
@@ -1580,7 +1580,7 @@ continuous as
 a function of $t$ on $[-h,h]$ (left as an exercise).
 Define
 \begin{equation*}
-f_k(x) := y_0+ \int_{0}^x F\bigl(t,f_{k-1}(t)\bigr)\,dt ,
+f_k(x) \coloneqq y_0+ \int_{0}^x F\bigl(t,f_{k-1}(t)\bigr)\,dt ,
 \end{equation*}
 and $f_k$ is continuous on $[-h,h]$ by the fundamental theorem of calculus.
 To see that $f_k$ maps $[-h,h]$ to $[y_0-\alpha,y_0+\alpha]$, we compute for
@@ -1639,7 +1639,7 @@ L\norm{f_{n-1}-f_{k-1}}_{[-h,h]}
 \norm{f_{n-1}-f_{k-1}}_{[-h,h]} .
 \end{split}
 \end{equation*}
-Let $C := \frac{L\alpha}{M+L\alpha}$ and note that $C < 1$.
+Let $C \coloneqq \frac{L\alpha}{M+L\alpha}$ and note that $C < 1$.
 Taking supremum on the left-hand side we get
 \begin{equation*}
 \norm{f_n-f_k}_{[-h,h]} \leq C \norm{f_{n-1}-f_{k-1}}_{[-h,h]} .
@@ -1804,7 +1804,7 @@ The theorem guarantees an $h > 0$ such that
 there exists a unique solution $f \colon [-h,h] \to \R$.  This solution
 is usually denoted by
 \begin{equation*}
-e^x := f(x) .
+e^x \coloneqq f(x) .
 \end{equation*}
 We leave it to the reader to verify that by picking $I$ and $J$
 large enough the proof of the theorem guarantees that
@@ -1826,7 +1826,7 @@ Therefore Picard's theorem could be used to prove the existence and uniqueness
 of the exponential.
 
 Let us compute the Picard iterates.
-We start with the constant function $f_0(x) := 1$.  Then
+We start with the constant function $f_0(x) \coloneqq 1$.  Then
 \begin{align*}
 f_1(x) & = 1 + \int_0^x f_0(s)\,ds =
 1+x, \\
@@ -1889,8 +1889,8 @@ A solution exists, but is not unique.
 \end{example}
 
 \begin{example}
-Consider $y' = \varphi(x)$ where $\varphi(x) := 0$ if $x \in \Q$ and
-$\varphi(x):=1$ if $x
+Consider $y' = \varphi(x)$ where $\varphi(x) \coloneqq 0$ if $x \in \Q$ and
+$\varphi(x)\coloneqq 1$ if $x
 \not\in \Q$.  In other words, the $F(x,y) = \varphi(x)$ is discontinuous.
 The equation has no solution regardless of the initial
 conditions.
@@ -1916,12 +1916,12 @@ Heaviside function%
 for the English engineer, mathematician, and physicist
 \href{https://en.wikipedia.org/wiki/Oliver_Heaviside}{Oliver Heaviside}
 (1850--1825).},
-that is $H(t) := 0$ for $t < 0$ and $H(t) := 1$ for $t \geq 0$.
+that is $H(t) \coloneqq 0$ for $t < 0$ and $H(t) \coloneqq 1$ for $t \geq 0$.
 Then
 $y' = H(t)$, $y(0) = 0$,
 is a common equation.
 The \myquote{solution}
-is the ramp function $f(x) := 0$ if $x < 0$ and $f(x) := x$ if $x \geq 0$,
+is the ramp function $f(x) \coloneqq 0$ if $x < 0$ and $f(x) \coloneqq x$ if $x \geq 0$,
 since this function satisfies
 $f(x) = \int_0^x H(t)\, dt$.  Notice, however, that $f'(0)$ does not exist,
 so $f$ is only a so-called \emph{\myindex{weak solution}} to the
@@ -1985,7 +1985,7 @@ satisfies the equation and the initial condition.
 Hint: Assume existence of the exponential function and use the integrating
 factor formula for existence of $f$ (prove that it works and then that it is unique):
 \begin{equation*}
-f(x) := e^{-\int_{x_0}^x p(s)\, ds} \left( \int_{x_0}^x e^{\int_{x_0}^t p(s)\, ds}
+f(x) \coloneqq e^{-\int_{x_0}^x p(s)\, ds} \left( \int_{x_0}^x e^{\int_{x_0}^t p(s)\, ds}
 q(t) \,dt + y_0 \right).
 \end{equation*}
 \end{exercise}

@@ -153,12 +153,12 @@ and multiplication by a scalar is done componentwise:
 If $a \in \R$, $v = (v_1,v_2,\ldots,v_n) \in \R^n$, and $w =
 (w_1,w_2,\ldots,w_n) \in \R^n$, then
 \begin{align*}
-& v+w :=
+& v+w \coloneqq
 (v_1,v_2,\ldots,v_n) +
 (w_1,w_2,\ldots,w_n) 
 =
 (v_1+w_1,v_2+w_2,\ldots,v_n+w_n) , \\
-& a v :=
+& a v \coloneqq
 a (v_1,v_2,\ldots,v_n) =
 (a v_1, a v_2,\ldots, a v_n) .
 \end{align*}
@@ -170,8 +170,8 @@ analysis.  Let us give a couple of examples.
 
 \begin{example}
 A trivial example of a vector space is just
-$X := \{ 0 \}$.  The operations are defined in the obvious way: $0 + 0 := 0$
-and $a0 := 0$.  A zero vector must always exist,
+$X \coloneqq \{ 0 \}$.  The operations are defined in the obvious way:
+$0 + 0 \coloneqq 0$ and $a0 \coloneqq 0$.  A zero vector must always exist,
 so all vector spaces are nonempty sets, and this $X$ is the smallest
 possible vector space.
 \end{example}
@@ -181,7 +181,7 @@ The space $C([0,1],\R)$ of continuous functions on the interval $[0,1]$
 is a vector space.  For two functions $f$ and $g$ in $C([0,1],\R)$ and
 $a \in \R$, we make the obvious definitions of $f+g$ and $af$:
 \begin{equation*}
-(f+g)(x) := f(x) + g(x), \qquad (af) (x) := a\bigl(f(x)\bigr) .
+(f+g)(x) \coloneqq f(x) + g(x), \qquad (af) (x) \coloneqq a\bigl(f(x)\bigr) .
 \end{equation*}
 The 0 is the function that is identically zero.  We leave it as an exercise
 to check that all the vector space conditions are satisfied.
@@ -276,11 +276,11 @@ If $Y \subset X$ is a set, then the \emph{\myindex{span}} of $Y$, or in notation
 $\spn(Y)$, is the set of all linear combinations
 of all finite subsets of $Y$.  We 
 say $Y$ \emph{spans} $\spn(Y)$\glsadd{not:span}.
-By convention, define $\spn(\emptyset) := \{ 0 \}.$
+By convention, define $\spn(\emptyset) \coloneqq \{ 0 \}.$
 \end{defn}
 
 \begin{example}
-Let $Y := \bigl\{ (1,1) \bigr\} \subset \R^2$.  Then
+Let $Y \coloneqq \bigl\{ (1,1) \bigr\} \subset \R^2$.  Then
 \begin{equation*}
 \spn(Y)
 =
@@ -290,7 +290,7 @@ That is, $\spn(Y)$ is the line through the origin and the point $(1,1)$.
 \end{example}
 
 \begin{example} \label{example:vecspr2span}
-Let $Y := \bigl\{ (1,1), (0,1) \bigr\} \subset \R^2$.  Then
+Let $Y \coloneqq \bigl\{ (1,1), (0,1) \bigr\} \subset \R^2$.  Then
 \begin{equation*}
 \spn(Y)
 =
@@ -304,8 +304,8 @@ a linear combination
 \end{example}
 
 \begin{example}
-Let $Y := \{ 1, t, t^2, t^3, \ldots \} \subset \R[t]$, and
-$E := \{ 1, t^2, t^4, t^6, \ldots \} \subset \R[t]$.
+Let $Y \coloneqq \{ 1, t, t^2, t^3, \ldots \} \subset \R[t]$, and
+$E \coloneqq \{ 1, t^2, t^4, t^6, \ldots \} \subset \R[t]$.
 
 The span of $Y$ is all polynomials,
 \begin{equation*}
@@ -383,11 +383,13 @@ is called a \emph{\myindex{basis}} of $X$.
 
 If a vector space $X$ contains a linearly independent set of $d$ vectors,
 but no linearly independent set of $d+1$ vectors, then we say
-the \emph{\myindex{dimension}} of $X$ is $d$, and we write $\dim \, X := d$.  If for all $d \in \N$ the vector space
+the \emph{\myindex{dimension}} of $X$ is $d$,
+and we write $\dim \, X \coloneqq d$.
+If for all $d \in \N$ the vector space
 $X$ contains a set of $d$ linearly independent vectors, we say
-$X$ is infinite-dimensional and write $\dim \, X := \infty$.
+$X$ is infinite-dimensional and write $\dim \, X \coloneqq \infty$.
 %
-For the trivial vector space $\{ 0 \}$, we define $\dim \, \{ 0 \} := 0$.
+For the trivial vector space $\{ 0 \}$, we define $\dim \, \{ 0 \} \coloneqq 0$.
 \end{defn}
 
 A subset of a linear independent set is clearly linearly independent,
@@ -458,9 +460,9 @@ For $\R^n$
 we define
 the \emph{\myindex{standard basis}} of $\R^n$:\glsadd{not:standardbasis}
 \begin{equation*}
-e_1 := (1,0,0,\ldots,0) , \quad
-e_2 := (0,1,0,\ldots,0) , \quad \ldots, \quad
-e_n := (0,0,0,\ldots,1) ,
+e_1 \coloneqq (1,0,0,\ldots,0) , \quad
+e_2 \coloneqq (0,1,0,\ldots,0) , \quad \ldots, \quad
+e_n \coloneqq (0,0,0,\ldots,1) ,
 \end{equation*}
 We use the same letters $e_j$ for any $\R^n$, and
 which space $\R^n$ we are working in is understood from context.
@@ -614,14 +616,14 @@ $Y$, and just $L(X)$\glsadd{not:LX} for the set of linear operators on $X$.
 If $a \in \R$ and $A,B \in L(X,Y)$, define
 the transformations $aA$ and $A+B$ by
 \begin{equation*}
-(aA)(x) := aAx ,
+(aA)(x) \coloneqq aAx ,
 \qquad
-(A+B)(x) := Ax + Bx .
+(A+B)(x) \coloneqq Ax + Bx .
 \end{equation*}
 If $A \in L(Y,Z)$ and $B \in L(X,Y)$, define the
 transformation $AB$ as the composition $A \circ B$, that is,
 \begin{equation*}
-ABx := A(Bx) .
+ABx \coloneqq A(Bx) .
 \end{equation*}
 Finally, denote by $I \in L(X)$ the \emph{\myindex{identity}}: 
 the linear operator such that $Ix = x$ for all $x$.
@@ -684,7 +686,7 @@ little trickier to write, so let us stick with finitely many dimensions.
 
 \begin{proof}
 Let $\{ x_1, x_2, \ldots, x_n \}$ be a basis of $X$, and let 
-$y_j := A x_j$.  Every $x \in X$ has a unique representation
+$y_j \coloneqq A x_j$.  Every $x \in X$ has a unique representation
 \begin{equation*}
 x = \sum_{j=1}^n b_j \, x_j
 \end{equation*}
@@ -697,11 +699,11 @@ A\sum_{j=1}^n b_j x_j
 =
 \sum_{j=1}^n b_j \, y_j .
 \end{equation*}
-The \myquote{furthermore} follows by setting $y_j := \widetilde{A}(x_j)$,
+The \myquote{furthermore} follows by setting $y_j \coloneqq \widetilde{A}(x_j)$,
 and then for 
 $x = \sum_{j=1}^n b_j \, x_j$,
 defining the extension as
-$Ax := \sum_{j=1}^n b_j \, y_j$.  The function is well-defined by
+$Ax \coloneqq \sum_{j=1}^n b_j \, y_j$.  The function is well-defined by
 uniqueness of the representation of $x$.
 We leave it to the reader to check that $A$ is linear.
 \end{proof}
@@ -768,7 +770,7 @@ We often identify a finite-dimensional vector
 space $X$ of dimension $n$ with $\R^n$, provided we fix a basis $\{ x_1,
 x_2, \ldots, x_n \}$ in $X$.  That is, we define a bijective
 linear map $A \in L(X,\R^n)$ by
-$Ax_j := e_j$, where $\{ e_1, e_2, \ldots, e_n \}$ is the standard
+$Ax_j \coloneqq e_j$, where $\{ e_1, e_2, \ldots, e_n \}$ is the standard
 basis in $\R^n$.  Then we have
 the correspondence \glsadd{not:mapsto}
 \begin{equation*}
@@ -798,7 +800,7 @@ also precisely the connected sets.
 In two or more dimensions
 there are lots of nonconvex connected sets.  For example,
 the set $\R^2 \setminus \{0\}$ is not convex, but it is connected.  To see
-this, take any $x \in \R^2 \setminus \{0\}$ and let $y:=-x$.
+this, take any $x \in \R^2 \setminus \{0\}$ and let $y \coloneqq -x$.
 Then $(\nicefrac{1}{2})x + (\nicefrac{1}{2})y = 0$, which is not in the set.
 Balls in $\R^n$ are convex.  We use this result often enough we state
 it as a proposition, and leave the proof as an exercise.
@@ -830,7 +832,7 @@ t \int_0^1 f(x) \,dx
 + (1-t)\int_0^1 g(x) \,dx \leq 1 .
 \end{equation*}
 Note that $X$ is not a vector subspace of $C([0,1],\R)$.  The function
-$f(x):=1$ is in $X$, but $2f$ and $-f$ is not.
+$f(x) \coloneqq 1$ is in $X$, but $2f$ and $-f$ is not.
 \end{example}
 
 \begin{prop}
@@ -838,7 +840,7 @@ The intersection of two convex sets is convex.  In fact,
 if $\{ C_\lambda \}_{\lambda \in I}$ is
 an arbitrary collection of convex sets, then
 \begin{equation*}
-C := \bigcap_{\lambda \in I} C_\lambda
+C \coloneqq \bigcap_{\lambda \in I} C_\lambda
 \end{equation*}
 is convex.
 \end{prop}
@@ -875,7 +877,7 @@ For completeness, a very useful construction is the
 space, define the convex hull of $S$ as the intersection of all convex sets
 containing $S$:
 \begin{equation*}
-\operatorname{co}(S) :=
+\operatorname{co}(S) \coloneqq
 \bigcap \{ C \subset V : S \subset C, \text{ and } C \text{ is convex} \} .
 \end{equation*}
 That is, the convex hull is the smallest convex set containing $S$.  
@@ -924,8 +926,8 @@ that $\int_0^1 f = 0$ is a vector subspace.
 Prove $C([0,1],\R)$ is an infinite-dimensional vector space
 where the operations are defined in the obvious way:
 $s=f+g$ and $m=af$ are defined as
-$s(x) := f(x)+g(x)$ and
-$m(x) := a f(x)$.
+$s(x) \coloneqq f(x)+g(x)$ and
+$m(x) \coloneqq a f(x)$.
 Hint: For the dimension, think of functions that are only nonzero
 on the interval $(\nicefrac{1}{n+1},\nicefrac{1}{n})$.
 \end{exercise}
@@ -934,7 +936,7 @@ on the interval $(\nicefrac{1}{n+1},\nicefrac{1}{n})$.
 Let $k \colon [0,1]^2 \to \R$ be continuous.  Show that
 $L \colon C([0,1],\R) \to C([0,1],\R)$ defined by
 \begin{equation*}
-Lf(y) := \int_0^1 k(x,y)f(x)\,dx
+Lf(y) \coloneqq \int_0^1 k(x,y)f(x)\,dx
 \end{equation*}
 is a linear operator.  That is, first show that $L$ is well-defined by
 showing that $Lf$ is continuous whenever $f$ is, and
@@ -955,7 +957,7 @@ Show that $D$ is a linear operator.
 \begin{exercise}
 Let us show that \propref{mv:prop:lin11onto} only works in finite
 dimensions.  Take the space of polynomials $\R[t]$ and define the operator $A \colon \R[t] \to \R[t]$
-by $A\bigl(P(t)\bigr) := tP(t)$.  Show that $A$ is linear and one-to-one, but
+by $A\bigl(P(t)\bigr) \coloneqq tP(t)$.  Show that $A$ is linear and one-to-one, but
 show that it is not onto.
 \end{exercise}
 
@@ -966,7 +968,7 @@ $\{ x_1, x_2,\ldots x_n \}$ is a basis of $X$,
 $\{ y_1, y_2,\ldots y_n \} \subset Y$, and we define a
 function
 \begin{equation*}
-Ax := \sum_{j=1}^n b_j y_j, \qquad \text{if} \quad x=\sum_{j=1}^n b_j x_j .
+Ax \coloneqq \sum_{j=1}^n b_j y_j, \qquad \text{if} \quad x=\sum_{j=1}^n b_j x_j .
 \end{equation*}
 Then prove that $A \colon X \to Y$ is linear.
 \end{exercise}
@@ -987,10 +989,10 @@ Suppose $X$ and $Y$ are vector spaces and $A \in L(X,Y)$ is a linear
 operator.
 \begin{enumerate}[a)]
 \item
-Show that the nullspace $N := \{ x \in X : Ax = 0 \}$ is a
+Show that the nullspace $N \coloneqq \{ x \in X : Ax = 0 \}$ is a
 vector space.
 \item
-Show that the range $R := \{ y \in Y : Ax = y \text{ for some } x \in X \}$ is a
+Show that the range $R \coloneqq \{ y \in Y : Ax = y \text{ for some } x \in X \}$ is a
 vector space.
 \end{enumerate}
 \end{exercise}
@@ -1066,7 +1068,7 @@ A vector space equipped with a norm is called a
 \end{defn}
 
 Given a norm (any norm) on a vector space $X$,
-we define a distance $d(x,y) := \snorm{x-y}$, and this
+we define a distance $d(x,y) \coloneqq \snorm{x-y}$, and this
 $d$ makes $X$ into a metric space (exercise).
 So everything you know about metric spaces applies to normed vector spaces.
 
@@ -1076,7 +1078,7 @@ scalar \emph{\myindex{dot product}} on $\R^n$.  For vectors
 $x=(x_1,x_2,\ldots,x_n) \in \R^n$
 and $y=(y_1,y_2,\ldots,y_n) \in \R^n$ define\glsadd{not:dotprod}
 \begin{equation*}
-x \cdot y := \sum_{j=1}^n x_j\, y_j .
+x \cdot y \coloneqq \sum_{j=1}^n x_j\, y_j .
 \end{equation*}
 The dot product is linear in each variable
 separately, or in more fancy language it is \emph{\myindex{bilinear}}.
@@ -1087,7 +1089,7 @@ $y \mapsto x \cdot y$ is linear.
 It is also \emph{\myindex{symmetric}} in the sense that $x \cdot y = y \cdot x$.
 The \emph{\myindex{euclidean norm}} is defined as\glsadd{not:normRn}
 \begin{equation*}
-\snorm{x} := \snorm{x}_{\R^n} := \sqrt{x \cdot x} = \sqrt{(x_1)^2+(x_2)^2 + \cdots + (x_n)^2}.
+\snorm{x} \coloneqq \snorm{x}_{\R^n} \coloneqq \sqrt{x \cdot x} = \sqrt{(x_1)^2+(x_2)^2 + \cdots + (x_n)^2}.
 \end{equation*}
 We normally just use $\snorm{x}$, only in the rare instance when it is necessary to
 emphasize that we are talking about the euclidean norm will we use
@@ -1154,14 +1156,14 @@ x \cdot x + y \cdot y + 2 (x \cdot y)
 \end{equation*}
 
 The distance
-$d(x,y) := \snorm{x-y}$ is the standard
+$d(x,y) \coloneqq \snorm{x-y}$ is the standard
 distance (standard metric) on $\R^n$ that
 we used when we talked about metric spaces.
 
 \begin{defn}
 Let $A \in L(X,Y)$.  Define
 \begin{equation*}
-\snorm{A} :=
+\snorm{A} \coloneqq
 \sup \bigl\{ \snorm{Ax} : x \in X \text{ with } \snorm{x} = 1 \bigr\} .
 \end{equation*}
 The number $\snorm{A}$ (possibly $\infty$)
@@ -1582,7 +1584,7 @@ Define the symbol
 $\operatorname{sgn}(x)$\glsadd{not:sgn} (read \myquote{sign of $x$}) for a number $x$ by
 \begin{equation*}
 \operatorname{sgn}(x)
-:=
+\coloneqq
 \begin{cases}
 -1 & \text{if } x < 0 , \\
 0  & \text{if } x = 0 , \\
@@ -1594,7 +1596,8 @@ $\sigma = (\sigma_1,\sigma_2,\ldots,\sigma_n)$ is a \emph{\myindex{permutation}}
 of the integers $(1,2,\ldots,n)$, that is, a reordering of $(1,2,\ldots,n)$. 
 Define
 \begin{equation} \label{eq:sgndef}
-\operatorname{sgn}(\sigma) = \operatorname{sgn}(\sigma_1,\ldots,\sigma_n) := 
+\operatorname{sgn}(\sigma) = \operatorname{sgn}(\sigma_1,\ldots,\sigma_n)
+\coloneqq 
 \prod_{p < q} \operatorname{sgn}(\sigma_q-\sigma_p) .
 \end{equation}
 Here $\prod$ stands for multiplication, similarly to how $\sum$ stands for
@@ -1622,7 +1625,7 @@ Let $A= [a_{i,j}]$ be a square $n$-by-$n$ matrix.
 Define the \emph{\myindex{determinant}} of $A$ as
 \glsadd{not:det}
 \begin{equation*}
-\det(A) := 
+\det(A) \coloneqq 
 \sum_{\sigma \in S_n}
 \operatorname{sgn} (\sigma) \prod_{i=1}^n a_{i,\sigma_i} .
 \end{equation*}
@@ -1781,7 +1784,7 @@ where not all $\gamma_j$ are equal to 0.
 Without loss of generality suppose $\gamma_1\neq 0$.
 Take
 \begin{equation*}
-B := 
+B \coloneqq 
 \begin{bmatrix}
 \gamma_1 & 0 & 0 & \cdots & 0 \\
 \gamma_2 & 1 & 0 & \cdots & 0 \\
@@ -1872,7 +1875,7 @@ the first type of an elementary matrix,
 an
 $n$-by-$n$ matrix $E$ by
 \begin{equation*}
-Ee_i := 
+Ee_i \coloneqq 
 \begin{cases}
 e_i & \text{if } i \neq j , \\
 \lambda e_i & \text{if } i = j .
@@ -1885,7 +1888,7 @@ It is an easy computation (exercise) that $\det(E) = \lambda$.
 Next, for $j$ and $k$ with $j\neq k$, and $\lambda \in \R$,
 define the second type of an elementary matrix $E$ by
 \begin{equation*}
-Ee_i := 
+Ee_i \coloneqq 
 \begin{cases}
 e_i               & \text{if } i \neq j , \\
 e_i + \lambda e_k & \text{if } i = j .
@@ -1898,7 +1901,7 @@ It is an easy computation (exercise) that $\det(E) = 1$.
 Finally, for $j$ and $k$ with $j\neq k$, define
 the third type of an elementary matrix $E$ by
 \begin{equation*}
-Ee_i := 
+Ee_i \coloneqq 
 \begin{cases}
 e_i & \text{if } i \neq j \text{ and } i \neq k , \\
 e_k & \text{if } i = j , \\
@@ -1939,7 +1942,7 @@ of the determinant.
 
 \begin{exercise}
 For a vector space $X$ with a norm $\snorm{\cdot}$, show that
-$d(x,y) := \snorm{x-y}$ makes $X$ a metric space.
+$d(x,y) \coloneqq \snorm{x-y}$ makes $X$ a metric space.
 \end{exercise}
 
 \begin{exercise}[Easy]
@@ -1949,7 +1952,7 @@ Show that for square matrices $A$ and $B$, $\det(AB) = \det(BA)$.
 \begin{exercise}
 For $x \in \R^n$, define
 \begin{equation*}
-\snorm{x}_{\infty} :=
+\snorm{x}_{\infty} \coloneqq
 \max \bigl\{ \sabs{x_1}, \sabs{x_2}, \ldots, \sabs{x_n} \bigr\} ,
 \end{equation*}
 sometimes called the sup or the max norm.
@@ -1965,7 +1968,7 @@ What is the unit ball $B(0,1)$ in this norm?
 \begin{exercise}
 For $x \in \R^n$, define
 \begin{equation*}
-\snorm{x}_{1} := \sum_{j=1}^n \sabs{x_j},
+\snorm{x}_{1} \coloneqq \sum_{j=1}^n \sabs{x_j},
 \end{equation*}
 sometimes called the $1$-norm (or $L^1$ norm).
 \begin{enumerate}[a)]
@@ -2023,12 +2026,12 @@ $\left[
 Using the standard euclidean norm $\R^n$, show:
 \begin{enumerate}[a)]
 \item
-Suppose $A \in L(\R,\R^n)$ is defined for $x \in \R$ by $Ax := xa$
+Suppose $A \in L(\R,\R^n)$ is defined for $x \in \R$ by $Ax \coloneqq xa$
 for a vector $a \in \R^n$.
 Then the operator norm $\snorm{A}_{L(\R,\R^n)} = \snorm{a}_{\R^n}$.
 (That is, the operator norm of $A$ is the euclidean norm of $a$.)
 \item
-Suppose $B \in L(\R^n,\R)$ is defined for $x \in \R^n$ by $Bx := b \cdot x$
+Suppose $B \in L(\R^n,\R)$ is defined for $x \in \R^n$ by $Bx \coloneqq b \cdot x$
 for a vector $b \in \R^n$.
 Then the operator norm $\snorm{B}_{L(\R^n,\R)} = \snorm{b}_{\R^n}$.
 \end{enumerate}
@@ -2077,7 +2080,7 @@ Take the vector space of polynomials $\R[t]$ and the linear operator $D \in
 L(\R[t])$ that is
 the differentiation (we proved in an earlier exercise that $D$ is a linear
 operator).  Given $P(t) = c_0 + c_1 t + \cdots + c_n
-t^n \in \R[t]$ define $\snorm{P} := \sup \bigl\{ \sabs{c_j} : j = 0,1,2,\ldots,n \bigr\}$.
+t^n \in \R[t]$ define $\snorm{P} \coloneqq \sup \bigl\{ \sabs{c_j} : j = 0,1,2,\ldots,n \bigr\}$.
 \begin{enumerate}[a)]
 \item
 Show that $\snorm{P}$ is a norm on $\R[t]$.
@@ -2096,7 +2099,7 @@ $\{ x_1,x_2,\ldots,x_n \}$.
 \item
 Show that $f \colon \R^n \to \R$,
 \begin{equation*}
-f(c_1,c_2,\ldots,c_n) := 
+f(c_1,c_2,\ldots,c_n) \coloneqq 
 \snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n} ,
 \end{equation*}
 is continuous (the norm is the one on $X$).
@@ -2207,7 +2210,7 @@ In particular, if $x =
 a+ib$ for real vectors $a$ and $b$, and $A$ is a real matrix, then $Ax = Aa + i Ab$).
 The number
 \begin{equation*}
-\rho(A) :=
+\rho(A) \coloneqq
 \sup \bigl\{ \abs{\lambda} : \lambda \text{ is an eigenvalue of } A \bigr\}
 \end{equation*}
 is called the \emph{\myindex{spectral radius}} of $A$.  Here $\abs{\lambda}$ is the complex
@@ -2252,7 +2255,7 @@ is a compact symmetric convex set.
 \item (Challenging)
 Let $C \subset \R^n$ be a compact symmetric convex set and $0 \in C$.  Show that
 \begin{equation*}
-\snorm{x} := \inf \left\{ \lambda : \lambda > 0 \text{ and } \frac{x}{\lambda} \in C \right\}
+\snorm{x} \coloneqq \inf \left\{ \lambda : \lambda > 0 \text{ and } \frac{x}{\lambda} \in C \right\}
 \end{equation*}
 is a norm on $\R^n$, and $C = C(0,1)$ (the closed unit ball) in the metric induced by this norm.
 \end{enumerate}
@@ -2299,7 +2302,7 @@ an $A \in L(\R^n,\R^m)$ such that
 \lim_{\substack{h \to 0\\h\in \R^n}}
 \frac{\snorm{f(x+h)-f(x) - Ah}}{\snorm{h}} = 0 .
 \end{equation*}
-We write $Df(x) := A$, or $f'(x) := A$,\glsadd{not:mvder} and
+We write $Df(x) \coloneqq A$, or $f'(x) \coloneqq A$,\glsadd{not:mvder} and
 we say $A$ is the \emph{\myindex{derivative}} of $f$ at $x$.
 When $f$ is differentiable at
 every $x \in U$, we say simply that $f$ is \emph{differentiable}.  See
@@ -2392,7 +2395,7 @@ $f'(x) = A$:
 \begin{example}
 Let $f \colon \R^2 \to \R^2$ be defined by
 \begin{equation*}
-f(x,y) = \bigl(f_1(x,y),f_2(x,y)\bigr) := (1+x+2y+x^2,2x+3y+xy).
+f(x,y) = \bigl(f_1(x,y),f_2(x,y)\bigr) \coloneqq (1+x+2y+x^2,2x+3y+xy).
 \end{equation*}
 Let us show that $f$ is differentiable at the origin and let us 
 compute the derivative,
@@ -2438,7 +2441,7 @@ differentiable at $p \in U$.  Then $f$ is continuous at $p$.
 \begin{proof}
 Another way to write the differentiability of $f$ at $p$ is to consider
 \begin{equation*}
-r(h) := f(p+h)-f(p) - f'(p) h .
+r(h) \coloneqq f(p+h)-f(p) - f'(p) h .
 \end{equation*}
 The function $f$ is differentiable at $p$ if
 $\frac{\snorm{r(h)}}{\snorm{h}}$ goes to zero as $h \to 0$,
@@ -2514,10 +2517,10 @@ $f'(p) = A$ and $g'\bigl(f(p)\bigr) = B$, then $F'(p) = BA$,
 just as for linear maps.
 
 \begin{proof}
-Let $A := f'(p)$ and $B := g'\bigl(f(p)\bigr)$.  Take a nonzero $h \in \R^n$
-and write $q := f(p)$, $k := f(p+h)-f(p)$.  Let
+Let $A \coloneqq f'(p)$ and $B \coloneqq g'\bigl(f(p)\bigr)$.  Take a nonzero $h \in \R^n$
+and write $q \coloneqq f(p)$, $k \coloneqq f(p+h)-f(p)$.  Let
 \begin{equation*}
-r(h) := f(p+h)-f(p) - A h . %= k - Ah.
+r(h) \coloneqq f(p+h)-f(p) - A h . %= k - Ah.
 \end{equation*}
 Then $r(h) = k-Ah$ or $Ah = k-r(h)$, and $f(p+h) = q+k$.
 We look at the quantity we need to go
@@ -2609,7 +2612,7 @@ $f \colon U \to \R$ be a function on an open set $U \subset \R^n$.
 If the following limit exists, we write
 \glsadd{not:partialder}
 \begin{equation*}
-\frac{\partial f}{\partial x_j} (x) := 
+\frac{\partial f}{\partial x_j} (x) \coloneqq 
 \lim_{h\to 0}\frac{f(x_1,\ldots,x_{j-1},x_j+h,x_{j+1},\ldots,x_n)-f(x)}{h}
 =
 \lim_{h\to 0}\frac{f(x+h e_j)-f(x)}{h} .
@@ -2741,7 +2744,7 @@ function.  We define
 the \emph{\myindex{gradient}} as
 \glsadd{not:gradient}
 \begin{equation*}
-\nabla f (x) := \sum_{j=1}^n \frac{\partial f}{\partial x_j} (x)\, e_j .
+\nabla f (x) \coloneqq \sum_{j=1}^n \frac{\partial f}{\partial x_j} (x)\, e_j .
 \end{equation*}
 The gradient gives a way to represent the action of
 the derivative as a dot product: $f'(x)\,v = \nabla f(x) \cdot v$.
@@ -2778,7 +2781,7 @@ The tangent vector $\gamma^{\:\prime}(t)$ points along the curve.\label{fig:difc
 
 Suppose $\gamma\bigl((a,b)\bigr) \subset U$ and let
 \begin{equation*}
-g(t) := f\bigl(\gamma(t)\bigr) .
+g(t) \coloneqq f\bigl(\gamma(t)\bigr) .
 \end{equation*}
 The function
 $g$ is differentiable. Treating $g'(t)$ as a number,
@@ -2812,7 +2815,7 @@ We define the
 \emph{\myindex{directional derivative}} as
 \glsadd{not:mvdirder}
 \begin{equation*}
-D_u f (x) := \frac{d}{dt}\Big|_{t=0} \bigl[ f(x+tu) \bigr] =
+D_u f (x) \coloneqq \frac{d}{dt}\Big|_{t=0} \bigl[ f(x+tu) \bigr] =
 \lim_{h\to 0}
 \frac{f(x+hu)-f(x)}{h} ,
 \end{equation*}
@@ -2825,7 +2828,7 @@ is used instead of $D_u f$.
 
 Let $\gamma$ be defined by
 \begin{equation*}
-\gamma(t) := x + tu .
+\gamma(t) \coloneqq x + tu .
 \end{equation*}
 Then $\gamma^{\:\prime}(t) = u$ for all $t$.  
 Let us see what happens to $f$ when we travel along $\gamma$:
@@ -2872,7 +2875,7 @@ is sometimes called the
 of $f$ at $x$ as
 \glsadd{not:jacobdet}
 \begin{equation*}
-J_f(x) := \det\bigl( f'(x) \bigr) .
+J_f(x) \coloneqq \det\bigl( f'(x) \bigr) .
 \end{equation*}
 Sometimes $J_f$ is written as
 \begin{equation*}
@@ -2919,7 +2922,7 @@ F\bigl(\alpha(t)\bigr)
 \begin{exercise}
 Let $f \colon \R^2 \to \R$ be given by
 $f(x,y)
-:=
+\coloneqq
 \sqrt{x^2+y^2}$,
 see \figureref{fig:distfromorgfunc}.
 Show that $f$ is not differentiable at the origin.
@@ -2937,11 +2940,11 @@ the following $f \colon \R^2 \to \R^2$ are differentiable at the origin and
 find their derivative.
 \begin{enumerate}[a)]
 \item
-$f(x,y) := (1+x+xy,x)$,
+$f(x,y) \coloneqq (1+x+xy,x)$,
 \item
-$f(x,y) := \bigl(y-y^{10},x \bigr)$,
+$f(x,y) \coloneqq \bigl(y-y^{10},x \bigr)$,
 \item
-$f(x,y) := \bigl( {(x+y+1)}^2 , {(x-y+2)}^2 \bigr)$.
+$f(x,y) \coloneqq \bigl( {(x+y+1)}^2 , {(x-y+2)}^2 \bigr)$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
@@ -2950,7 +2953,7 @@ $f(x,y) := \bigl( {(x+y+1)}^2 , {(x-y+2)}^2 \bigr)$.
 Suppose $f \colon \R \to \R$ and $g \colon \R \to \R$ are differentiable
 functions.  Using only the definition of the derivative, show that
 $h \colon \R^2 \to \R^2$ defined by $h(x,y)
-:= \bigl(f(x),g(y)\bigr)$ is a differentiable function, and find the
+\coloneqq \bigl(f(x),g(y)\bigr)$ is a differentiable function, and find the
 derivative, at all points $(x,y)$.
 \end{exercise}
 
@@ -2959,7 +2962,7 @@ Define a function $f \colon \R^2 \to \R$ by
 (see \figureref{fig:xyxsqysqvol2})
 \begin{equation*}
 f(x,y)
-:=
+\coloneqq
 \begin{cases}
 \frac{xy}{x^2+y^2} & \text{if } (x,y) \not= (0,0), \\
 0                  & \text{if } (x,y) = (0,0).
@@ -2987,7 +2990,7 @@ Define a function $f \colon \R^2 \to \R$ by
 (see \figureref{fig:xsqyxsqysq})
 \begin{equation*}
 f(x,y)
-:=
+\coloneqq
 \begin{cases}
 \frac{x^2y}{x^2+y^2} & \text{if } (x,y) \not= (0,0), \\
 0                    & \text{if } (x,y) = (0,0).
@@ -3064,7 +3067,7 @@ y}(x_0,y_0) = 0$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:peano}
-Define $f(x,y) := ( x-y^2 ) ( 2 y^2 - x)$.  The graph of $f$ is called
+Define $f(x,y) \coloneqq ( x-y^2 ) ( 2 y^2 - x)$.  The graph of $f$ is called
 the \emph{\myindex{Peano surface}}.%
 \footnote{Named after the Italian mathematician
 \href{https://en.wikipedia.org/wiki/Giuseppe_Peano}{Giuseppe Peano}
@@ -3077,7 +3080,7 @@ linear map in $L(\R^2,\R)$.
 \item
 Show that for every direction the restriction of $f$ to a line through the origin
 in that direction has a relative maximum at the origin.  In other words,
-for every $(x,y)$ such that $x^2+y^2=1$, the function $g(t) := f(tx,ty)$,
+for every $(x,y)$ such that $x^2+y^2=1$, the function $g(t) \coloneqq f(tx,ty)$,
 has a relative maximum at $t=0$.\\
 Hint: While not necessary
 \volIref{\sectionref*{vI-sec:taylor} of volume I}{\sectionref{sec:taylor}}
@@ -3095,7 +3098,7 @@ $f'(t) \cdot f(t) = 0$ (treating $f'$ as a vector) for all $t$.
 \end{exercise}
 
 \begin{exercise}
-Define $f \colon \R^2 \to \R^2$ by $f(x,y) :=
+Define $f \colon \R^2 \to \R^2$ by $f(x,y) \coloneqq
 \bigl(x,y+\varphi(x)\bigr)$ for some differentiable function $\varphi$ of one
 variable.  Show $f$ is differentiable and find $f'$.
 \end{exercise}
@@ -3223,7 +3226,7 @@ M \snorm{y-x} . \qedhere
 If $U$ is not convex the proposition is not true: Consider
 the set
 \begin{equation*}
-U := \bigl\{ (x,y) : 0.5 < x^2+y^2 < 2 \bigr\} \setminus \bigl\{ (x,0) : x <
+U \coloneqq \bigl\{ (x,y) : 0.5 < x^2+y^2 < 2 \bigr\} \setminus \bigl\{ (x,0) : x <
 0 \bigr\} .
 \end{equation*}
 For $(x,y) \in U$,
@@ -3334,7 +3337,7 @@ In other words, we identify the vectors $(x_1,x_2,\ldots,x_{n-1})$ and
 $(x_1,x_2,\ldots,x_{n-1},0)$.
 Let
 \begin{equation*}
-A := 
+A \coloneqq 
 \begin{bmatrix}
 \frac{\partial f_1}{\partial x_1}(x)
 & \ldots &
@@ -3347,7 +3350,7 @@ A :=
 \frac{\partial f_m}{\partial x_n}(x)
 \end{bmatrix} ,
 \qquad
-A' := 
+A' \coloneqq 
 \begin{bmatrix}
 \frac{\partial f_1}{\partial x_1}(x)
 & \ldots &
@@ -3360,7 +3363,7 @@ A' :=
 \frac{\partial f_m}{\partial x_{n-1}}(x)
 \end{bmatrix} ,
 \qquad
-v := 
+v \coloneqq 
 \begin{bmatrix}
 \frac{\partial f_1}{\partial x_n}(x)
 \\
@@ -3467,7 +3470,7 @@ Therefore $p$ is continuously differentiable.
 \begin{exercise}
 Define $f \colon \R^2 \to \R$ as
 \begin{equation*}
-f(x,y) :=
+f(x,y) \coloneqq
 \begin{cases}
 (x^2+y^2)\sin\bigl({(x^2+y^2)}^{-1}\bigr) & \text{if } (x,y) \not= (0,0), \\
 0                                         & \text{if } (x,y) = (0,0).
@@ -3484,7 +3487,7 @@ Let $f \colon \R^2 \to \R$ be the function from
 \exerciseref{exercise:noncontpartialsexist}, that is,
 \begin{equation*}
 f(x,y)
-:=
+\coloneqq
 \begin{cases}
 \frac{xy}{x^2+y^2} & \text{if } (x,y) \not= (0,0), \\
 0                  & \text{if } (x,y) = (0,0).
@@ -3541,7 +3544,7 @@ is continuous.
 \begin{exercise}
 Let $f \colon \R^2 \to \R$ be a function and
 $M \in \R$, such that
-for every $(x,y) \in \R^2$, the function $g(t) := f(xt,yt)$ is
+for every $(x,y) \in \R^2$, the function $g(t) \coloneqq f(xt,yt)$ is
 differentiable
 and $\sabs{g'(t)} \leq M$ for all $t$.
 \begin{enumerate}[a)]
@@ -3584,7 +3587,7 @@ differentiable.  Note that $f$ is vector-valued.
 Suppose $g \colon \R \to \R$ is continuously differentiable and
 $h \colon \R^2 \to \R$ is continuous.  Show that
 \begin{equation*}
-F(x,y) := g(x) + \int_0^y h(x,s) \,ds
+F(x,y) \coloneqq g(x) + \int_0^y h(x,s) \,ds
 \end{equation*}
 is continuously differentiable, and that it is the solution of 
 the partial differential equation $\frac{\partial F}{\partial y} = h$,
@@ -3633,7 +3636,7 @@ Suppose $p \in U$ and $f'(p)$ is invertible
 Then there exist open sets $V, W \subset \R^n$ such that
 $p \in V \subset U$, $f(V) = W$ and $f|_V$ is one-to-one.  
 Hence a function $g \colon W \to V$ exists such that
-$g(y) := (f|_V)^{-1}(y)$.
+$g(y) \coloneqq (f|_V)^{-1}(y)$.
 See \figureref{fig:inversefuncRn}.
 Furthermore, $g$ is continuously differentiable
 and 
@@ -3659,7 +3662,7 @@ by \propref{prop:finitedimpropinv}.
 
 Given $y \in \R^n$, we define $\varphi_y \colon V \to \R^n$ by
 \begin{equation*}
-\varphi_y (x) := x + A^{-1}\bigl(y-f(x)\bigr) .
+\varphi_y (x) \coloneqq x + A^{-1}\bigl(y-f(x)\bigr) .
 \end{equation*}
 As $A^{-1}$ is one-to-one,
 $\varphi_y(x) = x$ ($x$ is a fixed point) if only if
@@ -3689,7 +3692,7 @@ $\snorm{x_1-x_2} = \snorm{\varphi_y(x_1)-\varphi_y(x_2)} \leq
 That is, there exists at most one $x \in V$
 such that $f(x) = y$, and so $f|_V$ is one-to-one.
 
-Let $W := f(V)$ and let $g \colon W \to V$ be the inverse of $f|_V$.
+Let $W \coloneqq f(V)$ and let $g \colon W \to V$ be the inverse of $f|_V$.
 We need to show that $W$ is open.  Take a $y_0 \in W$.
 There is a unique $x_0 \in V$ such that $f(x_0) = y_0$.
 Let $r > 0$ be small enough such that the closed ball $C(x_0,r) \subset V$
@@ -3761,7 +3764,7 @@ So
 In particular, as $k$ goes to 0, so does $h$.
 
 As $x \in V$, then $f'(x)$ is invertible.
-Let $B := \bigl(f'(x)\bigr)^{-1}$, which is what we think the derivative of
+Let $B \coloneqq \bigl(f'(x)\bigr)^{-1}$, which is what we think the derivative of
 $g$ at $y$ is.  Then
 \begin{equation*}
 \begin{split}
@@ -3819,7 +3822,7 @@ $f(V)$ is open.
 \begin{example}
 The theorem, and the corollary, is not true if $f'(x)$ is not invertible for
 some $x$.  For example,
-the map $f(x,y) := (x,xy)$, maps $\R^2$ onto the set
+the map $f(x,y) \coloneqq (x,xy)$, maps $\R^2$ onto the set
 $\R^2 \setminus \bigl\{ (0,y) : y \neq 0 \bigr\}$, which is neither open nor closed.
 In fact $f^{-1}(0,0) = \bigl\{ (0,y) : y \in \R \bigr\}$.  This bad behavior
 only occurs on the $y$-axis, everywhere else the function is locally
@@ -3833,7 +3836,7 @@ one-to-one globally.  It is \myquote{locally} one-to-one but perhaps not
 \myquote{globally.}  For an
 example, take the map $f \colon \R^2 \setminus \bigl\{ (0,0) \bigr\} \to
 \R^2 \setminus \bigl\{ (0,0) \bigr\}$ defined
-by $f(x,y) := (x^2-y^2,2xy)$.
+by $f(x,y) \coloneqq (x^2-y^2,2xy)$.
 It is left to student to show that $f$ is
 differentiable and the derivative is invertible.
 
@@ -3846,7 +3849,7 @@ that replacing $x$ and $y$ with $-x$ and $-y$ we obtain another solution.
 
 The invertibility of the derivative is not a necessary
 condition, just sufficient, for having a continuous inverse and being an open
-mapping.  For example, the function $f(x) := x^3$ is an open mapping from $\R$
+mapping.  For example, the function $f(x) \coloneqq x^3$ is an open mapping from $\R$
 to $\R$ and is globally one-to-one with a continuous inverse, although the
 inverse is not differentiable at $x=0$.
 
@@ -3943,7 +3946,7 @@ $(p,q)$ in the first quadrant.\label{fig:implicitfunc}}
 \end{myfigureht}
 
 \begin{proof}
-Define $F \colon U \to \R^{n+m}$ by $F(x,y) := \bigl(x,f(x,y)\bigr)$.
+Define $F \colon U \to \R^{n+m}$ by $F(x,y) \coloneqq \bigl(x,f(x,y)\bigr)$.
 It is clear that $F$ is $C^1$, and we want to show that the derivative
 at $(p,q)$ is invertible.
 
@@ -3992,11 +3995,11 @@ there exist some open sets
 $\widetilde{W}$ and $W'$ such that $\widetilde{W} \times W' \subset G(V)$ with $p
 \in \widetilde{W}$ and
 $q \in W'$.
-Take $W := \bigl\{ x \in \widetilde{W} : G_2(x,0) \in W' \bigr\}$.
+Take $W \coloneqq \bigl\{ x \in \widetilde{W} : G_2(x,0) \in W' \bigr\}$.
 The function that takes $x$ to $G_2(x,0)$ is continuous and therefore $W$
 is open.
 Define
-$g \colon W \to \R^m$ by $g(x) := G_2(x,0)$, which is the $g$ in the theorem.
+$g \colon W \to \R^m$ by $g(x) \coloneqq G_2(x,0)$, which is the $g$ in the theorem.
 The fact that $g(x)$ is the unique point in $W'$ follows because $W \times
 W' \subset G(V)$ and $G$ is one-to-one.
 
@@ -4105,7 +4108,7 @@ continuous derivatives.  See also the next section.
 \subsection{Exercises}
 
 \begin{exercise}
-Let $C := \bigl\{ (x,y) \in \R^2 : x^2+y^2 = 1 \bigr\}$.
+Let $C \coloneqq \bigl\{ (x,y) \in \R^2 : x^2+y^2 = 1 \bigr\}$.
 \begin{enumerate}[a)]
 \item
 Solve for $y$ in terms of $x$ near $(0,1)$ (that is, find the function $g$
@@ -4118,7 +4121,7 @@ Solve for $x$ in terms of $y$ near $(-1,0)$.
 \end{exercise}
 
 \begin{exercise}
-Define $f \colon \R^2 \to \R^2$ by $f(x,y) :=
+Define $f \colon \R^2 \to \R^2$ by $f(x,y) \coloneqq
 \bigl(x,y+h(x)\bigr)$ for some continuously differentiable function $h$ of one
 variable.
 \begin{enumerate}[a)]
@@ -4133,8 +4136,8 @@ its inverse.
 \end{exercise}
 
 \begin{exercise}
-Define $f \colon \R^2 \to \R^2 \setminus \bigl\{ (0,0) \bigr\}$ by $f(x,y) :=
-\bigl(e^x\cos(y),e^x\sin(y)\bigr)$.
+Define $f \colon \R^2 \to \R^2 \setminus \bigl\{ (0,0) \bigr\}$ by
+$f(x,y) \coloneqq \bigl(e^x\cos(y),e^x\sin(y)\bigr)$.
 \begin{enumerate}[a)]
 \item
 Show that $f$ is onto.
@@ -4183,7 +4186,7 @@ $f\bigl((a,b)\bigr)$ is a graph of $g$.
 \begin{exercise}
 Define $f \colon \R^2 \to \R^2$
 \begin{equation*}
-f(x,y) :=
+f(x,y) \coloneqq
 \begin{cases}
 \bigl(x^2 \sin (\nicefrac{1}{x}) + \nicefrac{x}{2} , y \bigr) &
  \text{if } x \not= 0, \\
@@ -4208,7 +4211,7 @@ Note: Feel free to use what you know about sine and cosine from calculus.
 
 \begin{exercise}[Polar coordinates] \label{mv:exercise:polarcoordinates}
 \index{polar coordinates}
-Define a mapping $F(r,\theta) := \bigl(r \cos(\theta), r \sin(\theta) \bigr)$.
+Define a mapping $F(r,\theta) \coloneqq \bigl(r \cos(\theta), r \sin(\theta) \bigr)$.
 \begin{enumerate}[a)]
 \item
 Show that $F$ is continuously differentiable (for all $(r,\theta) \in
@@ -4232,10 +4235,10 @@ Note: Feel free to use what you know about sine and cosine from calculus.
 \end{exercise}
 
 \begin{exercise}
-Let $H := \bigl\{ (x,y) \in \R^2 : y > 0 \}$, and for $(x,y) \in H$
+Let $H \coloneqq \bigl\{ (x,y) \in \R^2 : y > 0 \}$, and for $(x,y) \in H$
 define
 \begin{equation*}
-F(x,y) := \left(
+F(x,y) \coloneqq \left(
 \frac{x^2+y^2-1}{x^2+2y+y^2+1}
 ,~
 \frac{-2x}{x^2+2y+y^2+1}
@@ -4289,7 +4292,7 @@ the partial derivative of $\frac{\partial f}{\partial x_j}$ with respect to
 $x_k$ by\glsadd{not:multivarpartder}
 \begin{equation*}
 \frac{\partial^2 f}{\partial x_k \partial x_j}
-:=
+\coloneqq
 \frac{\partial \bigl( \frac{\partial f}{\partial x_j} \bigr)}{\partial x_k} .
 \end{equation*}
 If $k=j$, then we write 
@@ -4306,7 +4309,7 @@ partial derivative with respect to that variable is denoted by
 \begin{equation*}
 \frac{\partial^{\ell} f}{\partial x_{j_{\ell}} \partial x_{j_{\ell-1}}
 \cdots \partial x_{j_1}}
-:= 
+\coloneqq 
 \frac{\partial \bigl( \frac{\partial^{\ell-1} f}{\partial x_{j_{\ell-1}} \partial
 x_{j_{\ell-2}} \cdots \partial x_{j_1}} \bigr)}{\partial x_{j_{\ell}}} .
 \end{equation*}
@@ -4378,7 +4381,7 @@ Next there exists a number $s_0 \in (0,s)$
 \end{equation*}
 In other words,
 \begin{equation*}
-g(s,t) :=
+g(s,t) \coloneqq
 \frac{f(p+se_j + te_k)- f(p+t e_k) - f(p+s e_j)+f(p)}{st}
 =
 \frac{\partial^2 f}{\partial x_j \partial x_k}(p + s_0 e_j + t_0 e_k) .
@@ -4452,7 +4455,7 @@ $\frac{\partial^2 f}{ \partial x_j \partial x_k}(p)$.
 \begin{exercise} \label{exercise:mixedpartialsunequal}
 Define
 \begin{equation*}
-f(x,y) :=
+f(x,y) \coloneqq
 \begin{cases}
 \frac{xy(x^2-y^2)}{x^2+y^2} & \text{if } (x,y) \not= (0,0),\\
 0                           & \text{if } (x,y) = (0,0).
@@ -4493,10 +4496,10 @@ such that
 $\varphi(0,\theta) = \varphi(0,\psi)$ for all $\theta,\psi \in \R$
 and
 $\varphi(r,\theta) = \varphi(r,\theta+2\pi)$ for all $r,\theta \in \R$.
-Let $F(r,\theta) := \bigl(r \cos(\theta), r \sin(\theta) \bigr)$ from 
+Let $F(r,\theta) \coloneqq \bigl(r \cos(\theta), r \sin(\theta) \bigr)$ from 
 \exerciseref{mv:exercise:polarcoordinates}.  Show that a function
 $g \colon \R^2 \to \R$, given
-$g(x,y) := \varphi \bigl(F^{-1}(x,y)\bigr)$ is well-defined (notice that
+$g(x,y) \coloneqq \varphi \bigl(F^{-1}(x,y)\bigr)$ is well-defined (notice that
 $F^{-1}(x,y)$ can only be defined locally), and
 when restricted to $\R^2 \setminus \{ 0 \}$ it is a $C^k$ function.
 \\

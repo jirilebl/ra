@@ -1057,8 +1057,9 @@ then $f \in \sR[a,b]$.
 
 \begin{proof}
 As $f$ is continuous on a closed bounded interval, it is
+bounded and
 uniformly continuous.
-Let $\epsilon > 0$ be given.  Find a $\delta > 0$ such that
+Given $\epsilon > 0$, find a $\delta > 0$ such that
 $\abs{x-y} < \delta$ implies $\abs{f(x)-f(y)} < \frac{\epsilon}{b-a}$.
 
 Let $P = \{ x_0, x_1, \ldots, x_n \}$
@@ -1246,10 +1247,11 @@ We divide the interval into finitely many intervals $[a_i,b_i]$
 so that $f$ is continuous
 on the interior $(a_i,b_i)$.  If $f$ is continuous on $(a_i,b_i)$,
 then it is continuous and hence integrable on $[c_i,d_i]$ whenever $a_i < c_i < d_i < b_i$.  By
-\lemmaref{lemma:boundedimpriemann}
+\lemmaref{lemma:boundedimpriemann},
 the restriction
-of $f$ to $[a_i,b_i]$ is integrable.  By additivity of the integral (and
-\hyperref[induction:thm]{induction}) $f$ is integrable on the union of the intervals.
+of $f$ to $[a_i,b_i]$ is integrable.
+By additivity of the integral (and \hyperref[induction:thm]{induction}),
+$f$ is integrable on the union of the intervals.
 \end{proof}
 
 \subsection{More on integrable functions}
@@ -1381,7 +1383,7 @@ is Riemann integrable.  Therefore, there exists a
 function discontinuous at all rational numbers (a dense set)
 that is Riemann integrable.
 
-In particular,
+That is,
 define $f \colon [0,1] \to \R$ by
 \begin{equation*}
 f(x) \coloneqq 

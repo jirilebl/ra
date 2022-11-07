@@ -93,7 +93,7 @@ Let us give some examples of metric spaces.
 \begin{example}
 The set of real numbers $\R$ is a metric space with the metric
 \begin{equation*}
-d(x,y) := \abs{x-y} .
+d(x,y) \coloneqq \abs{x-y} .
 \end{equation*}
 Items \ref{metric:pos}--\ref{metric:com} of the definition
 are easy to verify.  The
@@ -114,7 +114,7 @@ mean this particular metric.
 We can also put a different metric on the set of real numbers.
 For example, take the set of real numbers $\R$ together with the metric
 \begin{equation*}
-d(x,y) :=
+d(x,y) \coloneqq
 \frac{\abs{x-y}}{\abs{x-y}+1} .
 \end{equation*}
 Items \ref{metric:pos}--\ref{metric:com} are again easy to verify.  The
@@ -220,7 +220,7 @@ which is precisely what we wanted.
 Let us construct the
 standard metric\index{standard metric on $\R^n$} for $\R^n$.  Define
 \begin{equation*}
-d(x,y) :=
+d(x,y) \coloneqq
 \sqrt{
 {(x_1-y_1)}^2 + 
 {(x_2-y_2)}^2 + 
@@ -308,7 +308,7 @@ For the purposes of taking limits,
 the set $\C$ is regarded as the metric space $\R^2$, where $z=x+iy \in \C$
 corresponds to $(x,y) \in \R^2$.
 For $z=x+iy$ define the \emph{\myindex{complex modulus}}\index{modulus}
-by $\sabs{z} := \sqrt{x^2+y^2}$.
+by $\sabs{z} \coloneqq \sqrt{x^2+y^2}$.
 Then for two complex numbers
 $z_1 = x_1 + iy_1$ and $z_2 = x_2 + iy_2$, the distance is
 \begin{equation*}
@@ -318,7 +318,7 @@ Furthermore, when working with complex numbers
 it is often convenient to write the metric in terms of
 the so-called
 \emph{\myindex{complex conjugate}}: The conjugate of $z=x+iy$
-is $\bar{z} := x-iy$.  Then 
+is $\bar{z} \coloneqq x-iy$.  Then 
 ${\sabs{z}}^2 = x^2 +y^2 = z\bar{z}$, and so ${\sabs{z_1-z_2}}^2 =
 (z_1-z_2)\overline{(z_1-z_2)}$.
 \end{example}
@@ -328,7 +328,7 @@ An example to keep in mind is the so-called
 \emph{\myindex{discrete metric}}.
 For any set $X$, define
 \begin{equation*}
-d(x,y) :=
+d(x,y) \coloneqq
 \begin{cases}
 1 & \text{if } x \not= y, \\
 0 & \text{if } x = y.
@@ -358,7 +358,7 @@ Let $C\bigl([a,b],\R\bigr)$\glsadd{not:contfuncs} be the set of
 continuous real-valued functions on the interval $[a,b]$.
 Define the metric on $C\bigl([a,b],\R\bigr)$ as
 \begin{equation*}
-d(f,g) := \sup_{x \in [a,b]} \abs{f(x)-g(x)} .
+d(f,g) \coloneqq \sup_{x \in [a,b]} \abs{f(x)-g(x)} .
 \end{equation*}
 Let us check the properties.  First, $d(f,g)$ is finite as
 $\abs{f(x)-g(x)}$ is a continuous function on a closed bounded interval
@@ -399,11 +399,11 @@ abstract away a lot of the grubby detail and prove powerful results such as
 Another useful example of a metric space is the sphere
 with a metric usually called the \emph{\myindex{great circle distance}}.
 Let $S^2$ be the \myindex{unit sphere}\index{sphere} in $\R^3$,
-that is $S^2 := \{ x \in \R^3 : x_1^2+x_2^2+x_3^2 = 1 \}$.
+that is $S^2 \coloneqq \{ x \in \R^3 : x_1^2+x_2^2+x_3^2 = 1 \}$.
 Take $x$ and $y$ in $S^2$, draw a line through the origin and $x$,
 and another line through the origin and $y$,
 and let $\theta$ be the angle that the two lines make.
-Then define $d(x,y) := \theta$.  See \figureref{fig:spheremetric}.
+Then define $d(x,y) \coloneqq \theta$.  See \figureref{fig:spheremetric}.
 The law of cosines from vector calculus says
 $d(x,y) = \arccos(x_1y_1+x_2y_2+x_3y_3)$.
 It is relatively easy to see that this function satisfies the first three
@@ -421,7 +421,7 @@ sphere.\label{fig:spheremetric}}
 This distance is the shortest distance between points on a sphere if
 we are allowed to travel on the sphere only.  It is easy to
 generalize to arbitrary diameters.  If we take a sphere of radius
-$r$, we let the distance be $d(x,y) := r \theta$.  As an example, this is the
+$r$, we let the distance be $d(x,y) \coloneqq r \theta$.  As an example, this is the
 standard distance you would use if you compute a distance on the
 surface of the earth, such as computing the distance a plane travels from London to
 Los Angeles.
@@ -437,7 +437,7 @@ $d|_{Y \times Y}$ is a metric on $Y$.
 \end{prop}
 
 \begin{defn}
-If $(X,d)$ is a metric space, $Y \subset X$, and $d' := d|_{Y \times Y}$,
+If $(X,d)$ is a metric space, $Y \subset X$, and $d' \coloneqq d|_{Y \times Y}$,
 then $(Y,d')$ is said to be a \emph{\myindex{subspace}} of $(X,d)$.
 \end{defn}
 
@@ -483,7 +483,7 @@ For every $p \in X$, there exists a $B > 0$ such that $d(p,x) \leq B$ for
 all $x \in S$.
 \item
 \glsadd{not:diam}%
-$\operatorname{diam}(S) := \sup \bigl\{ d(x,y) : x,y \in S \bigr\} < \infty$.
+$\operatorname{diam}(S) \coloneqq \sup \bigl\{ d(x,y) : x,y \in S \bigr\} < \infty$.
 \end{enumerate}
 The quantity $\operatorname{diam}(S)$ is called the
 \emph{\myindex{diameter}} of a set and is usually only defined for
@@ -497,16 +497,16 @@ $d(x,x) = 0$) does give a metric space $(X,d)$.
 \end{exercise}
 
 \begin{exercise}
-Let $X := \{ 0 \}$ be a set.  Can you make it into a metric space?
+Let $X \coloneqq \{ 0 \}$ be a set.  Can you make it into a metric space?
 \end{exercise}
 
 \begin{exercise}
-Let $X := \{ a, b \}$ be a set.  Can you make it into two distinct metric
+Let $X \coloneqq \{ a, b \}$ be a set.  Can you make it into two distinct metric
 spaces?  (define two distinct metrics on it)
 \end{exercise}
 
 \begin{exercise}
-Let the set $X := \{ A, B, C \}$ represent 3 buildings on campus.  Suppose we
+Let the set $X \coloneqq \{ A, B, C \}$ represent 3 buildings on campus.  Suppose we
 wish our distance to be the time it takes to walk from one building to
 the other.
 It takes 5 minutes either way between buildings $A$ and $B$.  However,
@@ -524,7 +524,7 @@ an increasing function such that
 $\varphi(t) \geq 0$ for all $t$ and $\varphi(t) = 0$ if and only if
 $t=0$.  Also suppose $\varphi$ is \emph{\myindex{subadditive}},
 that is, $\varphi(s+t) \leq \varphi(s)+\varphi(t)$.
-Show that with $d'(x,y) := \varphi\bigl(d(x,y)\bigr)$, we obtain a new
+Show that with $d'(x,y) \coloneqq \varphi\bigl(d(x,y)\bigr)$, we obtain a new
 metric space $(X,d')$.
 \end{exercise}
 
@@ -533,11 +533,11 @@ Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
 \begin{enumerate}[a)]
 \item
 Show that $(X \times Y,d)$ with
-$d\bigl( (x_1,y_1), (x_2,y_2) \bigr) := d_X(x_1,x_2) + d_Y(y_1,y_2)$ is
+$d\bigl( (x_1,y_1), (x_2,y_2) \bigr) \coloneqq d_X(x_1,x_2) + d_Y(y_1,y_2)$ is
 a metric space.
 \item
 Show that $(X \times Y,d)$ with
-$d\bigl( (x_1,y_1), (x_2,y_2) \bigr) := \max \bigl\{ d_X(x_1,x_2) ,
+$d\bigl( (x_1,y_1), (x_2,y_2) \bigr) \coloneqq \max \bigl\{ d_X(x_1,x_2) ,
 d_Y(y_1,y_2) \bigr\}$ is
 a metric space.
 \end{enumerate}
@@ -547,7 +547,7 @@ a metric space.
 Let $X$ be the set of continuous functions on $[0,1]$.  Let $\varphi \colon
 [0,1] \to (0,\infty)$ be continuous.  Define
 \begin{equation*}
-d(f,g) := \int_0^1 \abs{f(x)-g(x)}\varphi(x)\,dx .
+d(f,g) \coloneqq \int_0^1 \abs{f(x)-g(x)}\varphi(x)\,dx .
 \end{equation*}
 Show that $(X,d)$ is a metric space.
 \end{exercise}
@@ -555,13 +555,13 @@ Show that $(X,d)$ is a metric space.
 \begin{exercise} \label{exercise:mshausdorffpseudo}
 Let $(X,d)$ be a metric space.  For nonempty bounded subsets $A$ and $B$ let
 \begin{equation*}
-d(x,B) := \inf \bigl\{ d(x,b) : b \in B \bigl\}
+d(x,B) \coloneqq \inf \bigl\{ d(x,b) : b \in B \bigl\}
 \qquad \text{and} \qquad
-d(A,B) := \sup \bigl\{ d(a,B) : a \in A \bigr\} .
+d(A,B) \coloneqq \sup \bigl\{ d(a,B) : a \in A \bigr\} .
 \end{equation*}
 Now define the \emph{\myindex{Hausdorff metric}} as
 \begin{equation*}
-d_H(A,B) := \max \bigl\{ d(A,B) , d(B,A) \bigr\} .
+d_H(A,B) \coloneqq \max \bigl\{ d(A,B) , d(B,A) \bigr\} .
 \end{equation*}
 Note: $d_H$ can be defined for arbitrary nonempty subsets if we allow the
 extended reals.
@@ -593,7 +593,7 @@ for every $p \in X$, there exists a $B > 0$ such that $d(p,x) \leq B$ for
 all $x \in S$.
 \item
 A nonempty $S$ is bounded if and only if
-$\operatorname{diam}(S) := \sup \{ d(x,y) : x,y \in S \} < \infty$.
+$\operatorname{diam}(S) \coloneqq \sup \{ d(x,y) : x,y \in S \} < \infty$.
 \end{enumerate}
 \end{exercise}
 
@@ -604,7 +604,7 @@ $\operatorname{diam}(S) := \sup \{ d(x,y) : x,y \in S \} < \infty$.
 \item
 Working in $\R$, compute $\operatorname{diam}\bigl([a,b]\bigr)$.
 \item
-Working in $\R^n$, for every $r > 0$, let $B_r := \{ x_1^2+x_2^2+\cdots+x_n^2
+Working in $\R^n$, for every $r > 0$, let $B_r \coloneqq \{ x_1^2+x_2^2+\cdots+x_n^2
 < r^2 \}$.  Compute $\operatorname{diam}(B_r)$.
 \item
 Suppose $(X,d)$ is a metric space with at least two points,
@@ -634,7 +634,7 @@ Let $C^1\bigl([a,b],\R\bigr)$\glsadd{not:contdifffuncs} be the set of once conti
 functions on $[a,b]$.
 Define
 \begin{equation*}
-d(f,g) := \snorm{f-g}_{[a,b]} + \snorm{f'-g'}_{[a,b]},
+d(f,g) \coloneqq \snorm{f-g}_{[a,b]} + \snorm{f'-g'}_{[a,b]},
 \end{equation*}
 where $\snorm{\cdot}_{[a,b]}$ is the uniform norm.  Prove that $d$ is a metric.
 \end{exercise}
@@ -657,7 +657,7 @@ $\sum_{n=1}^\infty x_n y_n$ converges (absolutely) and
 \end{equation*}
 \item
 Prove that $\ell^2$ is a metric space with the metric
-$d(x,y) := \sqrt{\sum_{n=1}^\infty {(x_n-y_n)}^2}$.
+$d(x,y) \coloneqq \sqrt{\sum_{n=1}^\infty {(x_n-y_n)}^2}$.
 Hint: Don't forget to show that the series for $d(x,y)$ always converges
 to some finite number.
 \end{enumerate}
@@ -687,18 +687,18 @@ the \emph{\myindex{open ball}}, or simply \emph{\myindex{ball}}, of radius $\del
 around $x$ as
 \glsadd{not:openball}
 \begin{equation*}
-B(x,\delta) := \bigl\{ y \in X : d(x,y) < \delta \bigr\} .
+B(x,\delta) \coloneqq \bigl\{ y \in X : d(x,y) < \delta \bigr\} .
 \end{equation*}
 Define the \emph{\myindex{closed ball}} as
 \glsadd{not:closedball}
 \begin{equation*}
-C(x,\delta) := \bigl\{ y \in X : d(x,y) \leq \delta \bigr\} .
+C(x,\delta) \coloneqq \bigl\{ y \in X : d(x,y) \leq \delta \bigr\} .
 \end{equation*}
 \end{defn}
 
 When dealing with different metric spaces, it is sometimes 
 vital to emphasize which metric space the ball is in.  We do this by
-writing $B_X(x,\delta) := B(x,\delta)$ or $C_X(x,\delta) := C(x,\delta)$.
+writing $B_X(x,\delta) \coloneqq B(x,\delta)$ or $C_X(x,\delta) \coloneqq C(x,\delta)$.
 
 \begin{example}
 Take the metric space $\R$ with the standard metric.  For
@@ -754,11 +754,11 @@ But not every set is either open or closed.  Generally, most subsets are neither
 
 \begin{example}
 The set $(0,\infty) \subset \R$ is open:  Given any $x \in (0,\infty)$,
-let $\delta := x$.  Then $B(x,\delta) = (0,2x) \subset (0,\infty)$.
+let $\delta \coloneqq x$.  Then $B(x,\delta) = (0,2x) \subset (0,\infty)$.
 
 The set $[0,\infty) \subset \R$ is closed:  Given $x \in (-\infty,0) =
 [0,\infty)^c$,
-let $\delta := -x$.  Then $B(x,\delta) = (-2x,0) \subset
+let $\delta \coloneqq -x$.  Then $B(x,\delta) = (-2x,0) \subset
 (-\infty,0) = [0,\infty)^c$.
 
 The set $[0,1) \subset \R$ is neither open nor closed.  First,
@@ -800,7 +800,7 @@ The sets $\emptyset$ and $X$ are obviously open in $X$.
 Let us prove \ref{topology:openii}.
 If $x \in \bigcap_{j=1}^k V_j$, then $x \in V_j$ for all $j$.
 As $V_j$ are all open, for every $j$ there exists a $\delta_j > 0$ 
-such that $B(x,\delta_j) \subset V_j$.  Take $\delta := \min \{
+such that $B(x,\delta_j) \subset V_j$.  Take $\delta \coloneqq \min \{
 \delta_1,\delta_2,\ldots,\delta_k \}$ and notice $\delta > 0$.  We have
 $B(x,\delta) \subset B(x,\delta_j) \subset V_j$ for every $j$ and so
 $B(x,\delta) \subset \bigcap_{j=1}^k V_j$.  Consequently the intersection is open.
@@ -860,7 +860,7 @@ $C(x,\delta)$ is closed.
 \end{prop}
 
 \begin{proof}
-Let $y \in B(x,\delta)$.  Let $\alpha := \delta-d(x,y)$.  As $\alpha
+Let $y \in B(x,\delta)$.  Let $\alpha \coloneqq \delta-d(x,y)$.  As $\alpha
 > 0$, consider $z \in B(y,\alpha)$.  Then
 \begin{equation*}
 d(x,z) \leq d(x,y) + d(y,z) < d(x,y) + \alpha = d(x,y) + \delta-d(x,y) =
@@ -902,13 +902,13 @@ there exists an open set $V \subset X$ (so open in $X$), such that
 $V \cap Y = U$.
 \end{prop}
 
-For example, let $X := \R$, $Y:=[0,1]$, $U := [0,\nicefrac{1}{2})$.
+For example, let $X \coloneqq \R$, $Y \coloneqq [0,1]$, $U \coloneqq [0,\nicefrac{1}{2})$.
 We saw that $U$ is an open set in $Y$.
-We may take $V := (\nicefrac{-1}{2},\nicefrac{1}{2})$.
+We may take $V \coloneqq (\nicefrac{-1}{2},\nicefrac{1}{2})$.
 
 \begin{proof}
 Suppose $V \subset X$ is open and $x \in V \cap Y$.
-Let $U := V \cap Y$.
+Let $U \coloneqq V \cap Y$.
 As $V$ is open, there
 exists a $\delta > 0$ such that $B_X(x,\delta) \subset V$.
 Then
@@ -1067,7 +1067,7 @@ Suppose $x \in U_1 \cap S$
 and $y \in U_2 \cap S$.  Without loss of generality, assume $x < y$.
 As $S$ is an interval, $[x,y] \subset S$.
 Note that $U_2 \cap [x,y] \not= \emptyset$, and
-let $z := \inf (U_2 \cap [x,y])$.
+let $z \coloneqq \inf (U_2 \cap [x,y])$.
 We wish to show that $z \in U_1$.
 If $z = x$, then $z \in U_1$.
 If $z > x$,
@@ -1113,7 +1113,7 @@ Let $(X,d)$ be a metric space and $A \subset X$.
 The \emph{\myindex{closure}} of $A$ is the set
 \glsadd{not:closure}
 \begin{equation*}
-\widebar{A} := \bigcap \{ E \subset X : E \text{ is closed and } A \subset
+\widebar{A} \coloneqq \bigcap \{ E \subset X : E \text{ is closed and } A \subset
 E \} .
 \end{equation*}
 \end{defn}
@@ -1191,13 +1191,13 @@ Let $(X,d)$ be a metric space and $A \subset X$.
 The \emph{\myindex{interior}} of $A$ is the set
 \glsadd{not:interior}
 \begin{equation*}
-A^\circ := \{ x \in A : \text{there exists a } \delta > 0
+A^\circ \coloneqq \{ x \in A : \text{there exists a } \delta > 0
 \text{ such that } B(x,\delta) \subset A \} .
 \end{equation*}
 The \emph{\myindex{boundary}} of $A$ is the set
 \glsadd{not:boundary}
 \begin{equation*}
-\partial A := \widebar{A}\setminus A^\circ.
+\partial A \coloneqq \widebar{A}\setminus A^\circ.
 \end{equation*}
 \end{defn}
 
@@ -1207,13 +1207,13 @@ definition, $A^\circ \subset A$;
 however, the points of the boundary may or may not be in $A$.
 
 \begin{example}
-Suppose $A:=(0,1]$ and $X := \R$.  Then $\widebar{A}=[0,1]$, $A^\circ = (0,1)$,
+Suppose $A \coloneqq (0,1]$ and $X \coloneqq \R$.  Then $\widebar{A}=[0,1]$, $A^\circ = (0,1)$,
 and $\partial A = \{ 0, 1 \}$.
 \end{example}
 
 \begin{example}
-Consider $X := \{ a, b \}$ with the discrete metric,
-and let $A := \{ a \}$.  Then $\widebar{A} = A^\circ = A$ and $\partial A =
+Consider $X \coloneqq \{ a, b \}$ with the discrete metric,
+and let $A \coloneqq \{ a \}$.  Then $\widebar{A} = A^\circ = A$ and $\partial A =
 \emptyset$.
 \end{example}
 
@@ -1429,7 +1429,7 @@ an $x \in X$ and a $\delta > 0$ such that $B(x,\delta)$ is uncountable.
 
 \begin{exercise}
 For every $x \in \R^n$ and every $\delta > 0$ define the \myquote{rectangle}
-$R(x,\delta) :=
+$R(x,\delta) \coloneqq
 (x_1-\delta,x_1+\delta) \times
 (x_2-\delta,x_2+\delta) \times \cdots \times
 (x_n-\delta,x_n+\delta)$.  Show that these sets generate the same open
@@ -1495,7 +1495,7 @@ is said to be a \emph{limit}\index{limit!of a sequence in a metric space}
 of $\{ x_n \}_{n=1}^\infty$.
 If the limit is unique, we write\glsadd{not:limseq}
 \begin{equation*}
-\lim_{n\to \infty} x_n := p .
+\lim_{n\to \infty} x_n \coloneqq p .
 \end{equation*}
 
 A sequence
@@ -1681,7 +1681,7 @@ U$.  As the sequence converges, find an $M \in \N$ such that for all $n \geq
 M$, we have $d(x,x_n) < \epsilon$, or in other words $x_n \in B(x,\epsilon)
 \subset U$.
 
-Let us prove the other direction.  Given $\epsilon > 0$, let $U :=
+Let us prove the other direction.  Given $\epsilon > 0$, let $U \coloneqq
 B(x,\epsilon)$ be the neighborhood of $x$.  Then there is an $M \in \N$
 such that for $n \geq M$, we have $x_n \in U = B(x,\epsilon)$, or in other
 words, $d(x,x_n) < \epsilon$.
@@ -1737,7 +1737,7 @@ Prove that $x \in \widebar{A}$.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Show that $d(x,y) := \min \bigl\{ 1, \abs{x-y} \bigr\}$ defines a metric on $\R$.
+Show that $d(x,y) \coloneqq \min \bigl\{ 1, \abs{x-y} \bigr\}$ defines a metric on $\R$.
 \item
 Show that a sequence converges in $(\R,d)$ if and only if it converges
 in the standard metric.
@@ -1790,13 +1790,13 @@ $x_n \in E$ for infinitely many $n \in \N$.  Show $p \in E$.
 
 \begin{exercise} \label{exercise:extendedrealsmetric}
 Take $\R^* = \{ -\infty \} \cup \R \cup \{ \infty \}$ be the extended reals.
-Define $d(x,y) := \bigl\lvert \frac{x}{1+\abs{x}} - \frac{y}{1+\abs{y}}
+Define $d(x,y) \coloneqq \bigl\lvert \frac{x}{1+\abs{x}} - \frac{y}{1+\abs{y}}
 \bigr\rvert$
 if $x, y \in \R$,
-define $d(\infty,x) := \bigl\lvert 1 - \frac{x}{1+\abs{x}} \bigr\rvert$,
-$d(-\infty,x) := \bigl\lvert 1 + \frac{x}{1+\abs{x}} \bigr\rvert$
+define $d(\infty,x) \coloneqq \bigl\lvert 1 - \frac{x}{1+\abs{x}} \bigr\rvert$,
+$d(-\infty,x) \coloneqq \bigl\lvert 1 + \frac{x}{1+\abs{x}} \bigr\rvert$
 for all $x \in \R$, and
-let $d(\infty,-\infty) := 2$.
+let $d(\infty,-\infty) \coloneqq 2$.
 \begin{enumerate}[a)]
 \item
 Show that $(\R^*,d)$ is a metric space.
@@ -1835,8 +1835,8 @@ converges to $p$.
 
 \begin{exercise}
 Consider $\R^n$, and let $d$ be the standard euclidean metric.
-Let $d'(x,y) := \sum_{\ell=1}^n \abs{x_\ell-y_\ell}$ and
-$d''(x,y) := \max \{ \abs{x_1-y_1},\abs{x_2-y_2},\cdots,\abs{x_n-y_n} \}$.
+Let $d'(x,y) \coloneqq \sum_{\ell=1}^n \abs{x_\ell-y_\ell}$ and
+$d''(x,y) \coloneqq \max \{ \abs{x_1-y_1},\abs{x_2-y_2},\cdots,\abs{x_n-y_n} \}$.
 \begin{enumerate}[a)]
 \item
 Use \exerciseref{exercise:mscross}, to show that
@@ -1995,7 +1995,7 @@ $K$ is compact is to say that \emph{every open cover of $K$ has a finite
 \begin{example}
 Let $\R$ be the metric space with the standard metric.
 
-The set $\R$ is not compact.  Proof: Take the sets $U_j := (-j,j)$.
+The set $\R$ is not compact.  Proof: Take the sets $U_j \coloneqq (-j,j)$.
 Any $x \in \R$ is in some $U_j$ (by the
 \hyperref[thm:arch:i]{Archimedean property}), so we have an open cover.
 Suppose we have a finite
@@ -2006,7 +2006,7 @@ a contradiction as $j_k \in \R$ on one hand and $j_k \notin U_{j_k} =
 other.
 
 The set $(0,1) \subset \R$ is also not compact.  Proof:  Take the 
-sets $U_{j} := (\nicefrac{1}{j},1-\nicefrac{1}{j})$ for $j=3,4,5,\ldots$.
+sets $U_{j} \coloneqq (\nicefrac{1}{j},1-\nicefrac{1}{j})$ for $j=3,4,5,\ldots$.
 As above $(0,1) = \bigcup_{j=3}^\infty U_j$.  And similarly as above,
 if there exists a finite subcover, then there is one $U_j$ such that $(0,1)
 \subset U_j$, which again leads to a contradiction.
@@ -2152,16 +2152,17 @@ if $K$ is sequentially compact, then given any
 cover there is a single $\delta > 0$.  The $\delta$ depends on the cover,
 but, of course, it does not depend on $x$.
 
-For example, let $K := [-10,10]$ and for $n \in \Z$ let $U_n :=
-(n,n+2)$ define sets in an open cover.
+For example, let $K \coloneqq [-10,10]$ and for $n \in \Z$
+let $U_n \coloneqq (n,n+2)$ define sets in an open cover.
 Take $x \in K$. There is an $n \in \Z$, 
 such that $n \leq x < n+1$.
 If $n \leq x < n+\nicefrac{1}{2}$, then
 $B\bigl(x,\nicefrac{1}{2}\bigr) \subset U_{n-1}$.
 If $n+ \nicefrac{1}{2} \leq x < n+1$, then
 $B\bigl(x,\nicefrac{1}{2}\bigr) \subset U_{n}$.  So $\delta =
-\nicefrac{1}{2}$.  If instead we let $U'_n :=
-\bigl(\frac{n}{2},\frac{n+2}{2} \bigr)$, then we again obtain an open
+\nicefrac{1}{2}$.  If instead we let
+$U'_n \coloneqq \bigl(\frac{n}{2},\frac{n+2}{2} \bigr)$,
+then we again obtain an open
 cover, but now the best $\delta$ we can find is $\nicefrac{1}{4}$.
 
 On the other hand, $\N \subset \R$ is not sequentially compact.
@@ -2197,11 +2198,11 @@ Then there exists an $x \in K$ such that
 for all $\delta > 0$,
 $B(x,\delta)$ contains $x_k$ for infinitely many $k \in \N$.
 We define the subsequence inductively.
-The ball $B(x,1)$ contains some $x_k$, so let $n_1 := k$.
+The ball $B(x,1)$ contains some $x_k$, so let $n_1 \coloneqq k$.
 Suppose $n_{j-1}$ is defined.
 There must exist a $k > n_{j-1}$
 such that $x_k \in B(x,\nicefrac{1}{j})$.  Define
-$n_j := k$.
+$n_j \coloneqq k$.
 We now posses a subsequence $\{ x_{n_j} \}_{j=1}^\infty$.
 Since
 $d(x,x_{n_j}) < \nicefrac{1}{j}$,  \propref{prop:msconvifa} says
@@ -2337,9 +2338,9 @@ convergent sequence is still convergent, so
 $\{ x_{k_{j_i}} \}_{i=1}^\infty$ is convergent.
 Let
 \begin{equation*}
-x := \lim_{i\to\infty} x_{k_{j_i}}
+x \coloneqq \lim_{i\to\infty} x_{k_{j_i}}
 \qquad \text{and} \qquad
-y := \lim_{i\to\infty} y_{k_{j_i}} .
+y \coloneqq \lim_{i\to\infty} y_{k_{j_i}} .
 \end{equation*}
 By \propref{prop:msconveuc},
 $\bigl\{ (x_{k_{j_i}},y_{k_{j_i}}) \bigr\}_{i=1}^\infty$ converges to $(x,y)$.
@@ -2381,7 +2382,7 @@ Show that $A$ is compact.
 
 \begin{samepage}
 \begin{exercise}
-Let $A := \{ \nicefrac{1}{n} : n \in \N \} \subset \R$.
+Let $A \coloneqq \{ \nicefrac{1}{n} : n \in \N \} \subset \R$.
 \begin{enumerate}[a)]
 \item
 Show that $A$ is
@@ -2509,9 +2510,9 @@ compact as a subset of itself with the subspace metric.
 
 \begin{exercise} \label{exercise:cauchydepndsonmetric}
 Consider two metrics on $\R$.
-Let $d(x,y) := \abs{x-y}$ be the standard metric,
+Let $d(x,y) \coloneqq \abs{x-y}$ be the standard metric,
 and let
-$d'(x,y) := \bigl\lvert \frac{x}{1+\abs{x}} - \frac{y}{1+\abs{y}}
+$d'(x,y) \coloneqq \bigl\lvert \frac{x}{1+\abs{x}} - \frac{y}{1+\abs{y}}
 \bigr\rvert$.
 \begin{enumerate}[a)]
 \item
@@ -2641,14 +2642,14 @@ polynomial in $n$ variables is continuous.
 \end{example}
 
 Be careful about taking limits separately.
-Consider the function defined by $f(x,y) := \frac{xy}{x^2+y^2}$
-outside the origin and $f(0,0) := 0$.
+Consider the function defined by $f(x,y) \coloneqq \frac{xy}{x^2+y^2}$
+outside the origin and $f(0,0) \coloneqq 0$.
 See \figureref{fig:xyxsqysq}.
 In \exerciseref{exercise:dicontR2},
 you are asked to prove that $f$ is not continuous at the origin.
-However, for every $y$, the function $g(x) := f(x,y)$ is
+However, for every $y$, the function $g(x) \coloneqq f(x,y)$ is
 continuous,
-and for every $x$, the function $h(y) := f(x,y)$ is continuous.
+and for every $x$, the function $h(y) \coloneqq f(x,y)$ is continuous.
 \begin{myfigureht}
 \includegraphics{figures/xyxsqysq}
 \caption{Graph of $\frac{xy}{x^2+y^2}$.\label{fig:xyxsqysq}}
@@ -2669,7 +2670,7 @@ $\bigl\{ h(p_n) \bigr\}_{n=1}^\infty$ converges to $h(p)$.
 \subsection{Compactness and continuity}
 
 Continuous maps do not map closed sets to closed sets.  For example,
-$f \colon (0,1) \to \R$ defined by $f(x) := x$ takes the set $(0,1)$, which
+$f \colon (0,1) \to \R$ defined by $f(x) \coloneqq x$ takes the set $(0,1)$, which
 is closed in $(0,1)$, to the set $(0,1)$, which is not closed in $\R$.
 On the other hand, continuous maps do preserve compact sets.
 
@@ -2854,7 +2855,7 @@ d_Y\bigl(f(c),f(q)\bigr)
 As an application of uniform continuity, let us prove a useful criterion for
 continuity of functions defined by integrals.  Let $f(x,y)$ be a function of two variables and define
 \begin{equation*}
-g(y) := \int_a^b f(x,y) \,dx .
+g(y) \coloneqq \int_a^b f(x,y) \,dx .
 \end{equation*}
 Question is, is $g$ is continuous?
 We are really asking when do two limiting operations commute,
@@ -2866,7 +2867,7 @@ necessary) condition is that $f$ is continuous on a closed rectangle.
 If $f \colon [a,b] \times [c,d] \to \R$ is a continuous function,
 then $g \colon [c,d] \to \R$ defined by
 \begin{equation*}
-g(y) := \int_a^b f(x,y) \,dx  \qquad \text{is continuous}.
+g(y) \coloneqq \int_a^b f(x,y) \,dx  \qquad \text{is continuous}.
 \end{equation*}
 \end{prop}
 
@@ -2978,7 +2979,7 @@ to $p$, and $L$ is a \emph{limit} of $f(x)$ as $x$
 goes to $p$.  If $L$ is unique, we write
 \glsadd{not:limfunc}
 \begin{equation*}
-\lim_{x \to p} f(x) := L .
+\lim_{x \to p} f(x) \coloneqq L .
 \end{equation*}
 If $f(x)$ does not converge as $x$ goes to $p$, we say $f$
 \emph{diverges}\index{diverges!function in a metric space} at $p$.
@@ -3037,8 +3038,8 @@ Find an example where $X$ is disconnected and $f$ is not constant.
 
 \begin{exercise} \label{exercise:dicontR2}
 \pagebreak[2]
-Let $f \colon \R^2 \to \R$ be defined by $f(0,0) := 0$, and
-$f(x,y) := \frac{xy}{x^2+y^2}$ if $(x,y) \not= (0,0)$.
+Let $f \colon \R^2 \to \R$ be defined by $f(0,0) \coloneqq 0$, and
+$f(x,y) \coloneqq \frac{xy}{x^2+y^2}$ if $(x,y) \not= (0,0)$.
 \begin{enumerate}[a)]
 \item
 Show that for every fixed $x$,
@@ -3101,11 +3102,11 @@ Take the metric space of continuous functions $C\bigl([0,1],\R\bigr)$.  Let
 $k \colon [0,1] \times [0,1] \to \R$ be a continuous function.
 Given $f \in C\bigl([0,1],\R\bigr)$ define
 \begin{equation*}
-\varphi_f(x) := \int_0^1 k(x,y) f(y) \,dy .
+\varphi_f(x) \coloneqq \int_0^1 k(x,y) f(y) \,dy .
 \end{equation*}
 \begin{enumerate}[a)]
 \item
-Show that $T(f) := \varphi_f$ defines a function
+Show that $T(f) \coloneqq \varphi_f$ defines a function
 $T \colon C\bigl([0,1],\R\bigr) \to C\bigl([0,1],\R\bigr)$.
 \item
 Show that $T$ is continuous.
@@ -3119,11 +3120,11 @@ Let $(X,d)$ be a metric space.
 \item
 If $p \in X$,
 show that $f \colon X \to \R$ defined
-by $f(x) := d(x,p)$ is continuous.
+by $f(x) \coloneqq d(x,p)$ is continuous.
 \item
 Define a metric on $X \times X$ as in \exerciseref{exercise:mscross} part
 b, and show that $g \colon X \times X \to \R$ defined by
-$g(x,y) := d(x,y)$ is continuous.
+$g(x,y) \coloneqq d(x,y)$ is continuous.
 \item
 Show that if $K_1$ and $K_2$ are compact subsets of $X$, then
 there exists a $p \in K_1$ and $q \in K_2$ such that $d(p,q)$ is minimal,
@@ -3136,14 +3137,14 @@ that is, $d(p,q) = \inf \{ d(x,y) \colon x \in K_1, y \in K_2 \}$.
 Let $(X,d)$ be a compact metric space, let $C(X,\R)$ be the set
 of real-valued continuous functions.  Define
 \begin{equation*}
-d(f,g) := \snorm{f-g}_X = \sup_{x \in X} \abs{f(x)-g(x)} .
+d(f,g) \coloneqq \snorm{f-g}_X = \sup_{x \in X} \abs{f(x)-g(x)} .
 \end{equation*}
 \begin{enumerate}[a)]
 \item
 Show that $d$ makes $C(X,\R)$ into a metric space.
 \item
 Show that for every $x \in X$, the evaluation function
-$E_x \colon C(X,\R) \to \R$ defined by $E_x(f) := f(x)$
+$E_x \colon C(X,\R) \to \R$ defined by $E_x(f) \coloneqq f(x)$
 is a continuous function.
 \end{enumerate}
 \end{exercise}
@@ -3155,9 +3156,9 @@ $C^1\bigl([a,b],\R\bigr)$\glsadd{not:contdifffuncs} the set of
 once continuously differentiable functions on $[a,b]$.
 Define
 \begin{equation*}
-d_{C}(f,g) := \snorm{f-g}_{[a,b]}
+d_{C}(f,g) \coloneqq \snorm{f-g}_{[a,b]}
 \qquad \text{and} \qquad
-d_{C^1}(f,g) := \snorm{f-g}_{[a,b]} + \snorm{f'-g'}_{[a,b]},
+d_{C^1}(f,g) \coloneqq \snorm{f-g}_{[a,b]} + \snorm{f'-g'}_{[a,b]},
 \end{equation*}
 where $\snorm{\cdot}_{[a,b]}$ is the uniform norm.
 By \exampleref{example:msC01} and \exerciseref{exercise:C1ab} we know that
@@ -3168,7 +3169,7 @@ $C^1\bigl([a,b],\R\bigr)$ with $d_{C^1}$.
 \item
 Prove that the derivative operator $D \colon 
 C^1\bigl([a,b],\R\bigr) \to C\bigl([a,b],\R\bigr)$ defined by
-$D(f) := f'$ is continuous.
+$D(f) \coloneqq f'$ is continuous.
 \item
 On the other hand if we consider the metric $d_C$ on $C^1\bigl([a,b],\R\bigr)$,
 then prove the derivative operator is no longer continuous.  Hint: Consider
@@ -3204,7 +3205,7 @@ $f \colon S \to Y$ is continuous at $p$ if and only if
 \begin{exercise}
 Define
 \begin{equation*}
-f(x,y) :=
+f(x,y) \coloneqq
 \begin{cases}
 \frac{2xy}{x^4+y^2} & \text{if } (x,y) \not= (0,0), \\
 0 & \text{if } (x,y) = (0,0) .
@@ -3219,7 +3220,7 @@ For every fixed $x$, the function that takes $y$ to $f(x,y)$ is continuous.
 \item
 Show that $f$ is not continuous at $(0,0)$.
 \item
-Now show that $g(y) := \int_0^1 f(x,y)\,dx$ is not continuous at $y=0$.
+Now show that $g(y) \coloneqq \int_0^1 f(x,y)\,dx$ is not continuous at $y=0$.
 \end{enumerate}
 Note: Feel free to use what you know about $\arctan$ from calculus,
 in particular that $\frac{d}{ds} \bigl[ \arctan(s) \bigr] = \frac{1}{1+s^2}$.
@@ -3230,7 +3231,7 @@ Prove a stronger version of \propref{prop:integralcontcont}:
 If $f \colon (a,b) \times (c,d) \to \R$ is a bounded continuous function,
 then $g \colon (c,d) \to \R$ defined by
 \begin{equation*}
-g(y) := \int_a^b f(x,y) \,dx  \qquad \text{is continuous}.
+g(y) \coloneqq \int_a^b f(x,y) \,dx  \qquad \text{is continuous}.
 \end{equation*}
 Hint: First integrate over $[a+\nicefrac{1}{n},b-\nicefrac{1}{n}]$.
 \end{exercise}
@@ -3286,7 +3287,7 @@ See \exerciseref{exercise:nofixedpoint}.
 
 \begin{proof}
 Pick $x_0 \in X$.
-Define a sequence $\{ x_n \}_{n=1}^\infty$ by $x_{n+1} := f(x_n)$.  Then
+Define a sequence $\{ x_n \}_{n=1}^\infty$ by $x_{n+1} \coloneqq f(x_n)$.  Then
 \begin{equation*}
 d(x_{n+1},x_n) = d\bigl(f(x_n),f(x_{n-1})\bigr)
 \leq k d(x_n,x_{n-1}) .
@@ -3306,7 +3307,7 @@ d(x_m,x_n)
 \end{split}
 \end{equation*}
 In particular, the sequence is Cauchy (why?).  Since $X$ is complete,
-we let $x := \lim_{n\to\infty} x_n$, and we claim that $x$
+we let $x \coloneqq \lim_{n\to\infty} x_n$, and we claim that $x$
 is our unique fixed point.
 
 Fixed point?  The function $f$ is a contraction,
@@ -3340,7 +3341,7 @@ That is, the
 space $C\bigl([a,b],\R\bigr)$ of \exampleref{example:msC01},
 the space of continuous functions $f \colon [a,b] \to \R$ with the metric
 \begin{equation*}
-d(f,g) := \snorm{f-g}_{[a,b]} = \sup_{x \in [a,b]} \abs{f(x)-g(x)} .
+d(f,g) \coloneqq \snorm{f-g}_{[a,b]} = \sup_{x \in [a,b]} \abs{f(x)-g(x)} .
 \end{equation*}
 Convergence in this metric is convergence in uniform norm, or in other
 words, uniform convergence.  Therefore,
@@ -3421,11 +3422,11 @@ Pick $\alpha > 0$ such that
 $[-\alpha,\alpha] \subset I$ and $[y_0-\alpha, y_0 + \alpha] \subset J$.
 Let
 \begin{equation*}
-h := \min \left\{ \alpha, \frac{\alpha}{M+L\alpha} \right\} .
+h \coloneqq \min \left\{ \alpha, \frac{\alpha}{M+L\alpha} \right\} .
 \end{equation*}
 Note $[-h,h] \subset I$.  Let
 \begin{equation*}
-Y := \bigl\{ f \in C\bigl([-h,h],\R\bigr) : f\bigl([-h,h]\bigr) \subset J \bigr\} .
+Y \coloneqq \bigl\{ f \in C\bigl([-h,h],\R\bigr) : f\bigl([-h,h]\bigr) \subset J \bigr\} .
 \end{equation*}
 That is, $Y$ is the space of continuous functions on $[-h,h]$ with values in
 $J$, in other words,
@@ -3442,7 +3443,7 @@ Define a mapping
 $T \colon Y \to C\bigl([-h,h],\R\bigr)$ by
 \begin{equation*}
 T(f)(x)
-:=
+\coloneqq
 y_0 + \int_0^x F\bigl(t,f(t)\bigr)\,dt .
 \end{equation*}
 It is an exercise to check that
@@ -3505,7 +3506,7 @@ For more exercises related to Picard's theorem see \sectionref{sec:picard}.
 
 \begin{exercise}
 Let $J$ be a closed and bounded interval and
-$Y := \bigl\{ f \in C\bigl([-h,h],\R\bigr) : f\bigl([-h,h]\bigr) \subset J \bigr\}$.
+$Y \coloneqq \bigl\{ f \in C\bigl([-h,h],\R\bigr) : f\bigl([-h,h]\bigr) \subset J \bigr\}$.
 Show that $Y \subset C\bigl([-h,h],\R\bigr)$ is closed.  Hint: $J$ is closed.
 \end{exercise}
 
@@ -3515,7 +3516,7 @@ show that if $f \colon [-h,h] \to J$ is continuous, then $F\bigl(t,f(t)\bigr)$
 is continuous on $[-h,h]$ as a function of $t$.  Use this to show that
 \begin{equation*}
 T(f)(x)
-:=
+\coloneqq
 y_0 + \int_0^x F\bigl(t,f(t)\bigr)\,dt
 \end{equation*}
 is well-defined and that $T(f) \in C\bigl([-h,h],\R\bigr)$.
@@ -3532,7 +3533,7 @@ theorem is true as stated.
 \begin{exercise}
 \pagebreak[2]
 Let $F \colon \R \to \R$ be defined by
-$F(x) := kx + b$ where $0 < k < 1$, $b \in \R$.
+$F(x) \coloneqq kx + b$ where $0 < k < 1$, $b \in \R$.
 \begin{enumerate}[a)]
 \item
 Show that $F$ is a contraction.
@@ -3544,7 +3545,7 @@ Find the fixed point and show directly that it is unique.
 \begin{exercise}
 \pagebreak[2]
 Let $f \colon [0,\nicefrac{1}{4}] \to [0,\nicefrac{1}{4}]$ be defined by
-$f(x) := x^2$.
+$f(x) \coloneqq x^2$.
 \begin{enumerate}[a)]
 \item
 Show that $f$
@@ -3580,7 +3581,7 @@ prove that $\lim\limits_{n\to\infty}f_n(x) = \frac{1}{1-x}$.
 
 \begin{exercise}
 Suppose $f \colon X \to X$ is a contraction for $k < 1$.  Suppose you use the iteration
-procedure with $x_{n+1} := f(x_n)$ as in the proof of the fixed point theorem.
+procedure with $x_{n+1} \coloneqq f(x_n)$ as in the proof of the fixed point theorem.
 Suppose $x$ is the fixed
 point of $f$.
 \begin{enumerate}[a)]
@@ -3594,7 +3595,7 @@ $d(x,x_n) \leq 2^{-16}$ for all $n \geq N$.
 \end{exercise}
 
 \begin{exercise}
-Let $f(x) := x-\frac{x^2-2}{2x}$ (you may recognize Newton's method for
+Let $f(x) \coloneqq x-\frac{x^2-2}{2x}$ (you may recognize Newton's method for
 $\sqrt{2}$).
 \begin{enumerate}[a)]
 \item
