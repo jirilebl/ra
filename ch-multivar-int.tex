@@ -31,11 +31,11 @@ $(a_1,b_1) \times
 (a_n,b_n)$ is called an \emph{\myindex{open rectangle}}.
 
 For an open or closed rectangle
-$R := [a_1,b_1] \times
+$R \coloneqq [a_1,b_1] \times
 [a_2,b_2] \times \cdots \times
 [a_n,b_n] \subset \R^n$
 or
-$R := (a_1,b_1) \times
+$R \coloneqq (a_1,b_1) \times
 (a_2,b_2) \times \cdots \times
 (a_n,b_n) \subset \R^n$,
 we define the
@@ -44,7 +44,7 @@ we define the
 \index{volume of rectangles} by
 \glsadd{not:ndimvolume}
 \begin{equation*}
-V(R) :=
+V(R) \coloneqq
 (b_1-a_1)
 (b_2-a_2)
 \cdots
@@ -98,11 +98,11 @@ Define
 \glsadd{not:lowerdarbouxsum}
 \glsadd{not:upperdarbouxsum}
 \begin{align*}
-& m_i := \inf \bigl\{ f(x) : x \in R_i \bigr\} , & 
-& M_i := \sup \bigl\{ f(x) : x \in R_i \bigr\} , \\
-& L(P,f) :=
+& m_i \coloneqq \inf \bigl\{ f(x) : x \in R_i \bigr\} , & 
+& M_i \coloneqq \sup \bigl\{ f(x) : x \in R_i \bigr\} , \\
+& L(P,f) \coloneqq
 \sum_{i=1}^N m_i V(R_i) , &
-& U(P,f) :=
+& U(P,f) \coloneqq
 \sum_{i=1}^N M_i V(R_i) .
 \end{align*}
 We call $L(P,f)$ the \emph{\myindex{lower Darboux sum}} and
@@ -195,10 +195,10 @@ Define
 \glsadd{not:upperdarbouxR}
 \begin{equation*}
 \underline{\int_R} f
-:= \sup \, \bigl\{ L(P,f) : P \text{ a partition of } R \bigr\} , 
+\coloneqq \sup \, \bigl\{ L(P,f) : P \text{ a partition of } R \bigr\} , 
 \qquad
 \overline{\int_R} f
-:= \inf \, \bigl\{ U(P,f) : P \text{ a partition of } R \bigr\} .
+\coloneqq \inf \, \bigl\{ U(P,f) : P \text{ a partition of } R \bigr\} .
 \end{equation*}
 We call $\underline{\int}$ the
 \emph{\myindex{lower Darboux integral}}\index{Darboux integral} and
@@ -262,8 +262,8 @@ R_k = \bigcup_{j \in I_k} \widetilde{R}_j,
 V(R_k) = \sum_{j \in I_k} V(\widetilde{R}_j).
 \end{equation*}
 
-Let $m_j := \inf \{ f(x) : x \in R_j \}$, and
-$\widetilde{m}_j := \inf \{ f(x) : \in \widetilde{R}_j \}$ as usual.
+Let $m_j \coloneqq \inf \bigl\{ f(x) : x \in R_j \bigr\}$, and
+$\widetilde{m}_j \coloneqq \inf \bigl\{ f(x) : \in \widetilde{R}_j \bigr\}$ as usual.
 If $j \in I_k$, then $m_k \leq \widetilde{m}_j$.  Then
 \begin{equation*}
 L(P,f) =
@@ -310,7 +310,7 @@ $Q=(Q_1,Q_2,\ldots,Q_n)$
 be partitions of $R$.  Define 
 $\widetilde{P} = ( \widetilde{P}_1,\widetilde{P}_2,\ldots,\widetilde{P}_n )$
 by letting
-$\widetilde{P}_k := P_k \cup Q_k$.
+$\widetilde{P}_k \coloneqq P_k \cup Q_k$.
 Then $\widetilde{P}$ is a partition of $R$ as can easily be checked,
 and $\widetilde{P}$ is a refinement of $P$ and a refinement of $Q$.
 By \propref{mv:prop:refinement},
@@ -353,7 +353,7 @@ For $f \in \sR(R)$ define
 the \emph{\myindex{Riemann integral}}
 \glsadd{not:riemannintR}
 \begin{equation*}
-\int_R f := 
+\int_R f \coloneqq 
 \underline{\int_R} f = \overline{\int_R} f .
 \end{equation*}
 \end{defn}
@@ -477,7 +477,7 @@ say $f$ is \emph{integrable on $R$}, or
 $f \in \sR(R)$ and we
 write
 \begin{equation*}
-\int_R f := \int_R f|_R .
+\int_R f \coloneqq \int_R f|_R .
 \end{equation*}
 
 \begin{prop} \label{mv:prop:integralsmallerset}
@@ -642,7 +642,7 @@ Let $U \subset \R^n$ be an open set and
 $f \colon U \to \R$ be a function.  The
 \emph{\myindex{support}} of $f$ is the set
 \begin{equation*}
-\operatorname{supp} (f) :=
+\operatorname{supp} (f) \coloneqq
 \overline{
 \{ x \in U : f(x) \not= 0 \}
 } ,
@@ -668,7 +668,7 @@ if $\supp(f)$ is a compact set.
 \begin{example}
 The function $f \colon \R^2 \to \R$ defined by
 \begin{equation*}
-f(x,y) :=
+f(x,y) \coloneqq
 \begin{cases}
 -x{(x^2+y^2-1)}^2 & \text{if } \sqrt{x^2+y^2} \leq 1, \\
 0                 & \text{else},
@@ -697,7 +697,7 @@ Let
 $B(0,1) \subset \R^2$ be the unit disc.  The function
 $f \colon B(0,1) \to \R$ defined by
 \begin{equation*}
-f(x,y) :=
+f(x,y) \coloneqq
 \begin{cases}
 0                                & \text{if } \sqrt{x^2+y^2} > \nicefrac{1}{2}, \\
 \nicefrac{1}{2} - \sqrt{x^2+y^2} & \text{if } \sqrt{x^2+y^2} \leq \nicefrac{1}{2},
@@ -708,7 +708,7 @@ $C(0,\nicefrac{1}{2})$.  As that is a compact set, $f$ has compact support.
 
 The function $g \colon B(0,1) \to \R$ defined by
 \begin{equation*}
-g(x,y) :=
+g(x,y) \coloneqq
 \begin{cases}
 0 & \text{if } x \leq 0, \\
 x & \text{if } x > 0,
@@ -726,9 +726,10 @@ continuous function with compact support on $\R^n$,
 considering $U=\R^n$ is not an oversimplification.
 
 \begin{example}
-The continuous function $f \colon B(0,1) \to \R$ defined by $f(x,y) :=
-\sin\bigl(\frac{1}{1-x^2-y^2}\bigr)$, does not have compact support; as
-$f$ is not constantly zero on any neighborhood of every point in $B(0,1)$,
+The continuous function $f \colon B(0,1) \to \R$ defined by
+$f(x,y) \coloneqq \sin\bigl(\frac{1}{1-x^2-y^2}\bigr)$
+does not have compact support;
+as $f$ is not constantly zero on any neighborhood of every point in $B(0,1)$,
 the support is the entire disc $B(0,1)$.  The function 
 does not extend as above to a continuous function on $\R^2$.  In fact, it is not
 difficult to show that $f$ cannot be extended in any way whatsoever to be
@@ -756,8 +757,8 @@ $\int_S f = \int_{S \cap R} f = \int_R f$.
 Because of this proposition, when $f \colon \R^n \to \R$ has compact support
 and is integrable on a rectangle $R$ containing the support we write
 \begin{equation*}
-\int f := \int_R f \qquad \text{or} \qquad 
-\int_{\R^n} f := \int_R f .
+\int f \coloneqq \int_R f \qquad \text{or} \qquad 
+\int_{\R^n} f \coloneqq \int_R f .
 \end{equation*}
 For example, if $f$ is continuous and of compact support, then
 $\int_{\R^n} f$ exists.
@@ -768,7 +769,7 @@ $\int_{\R^n} f$ exists.
 Suppose $U \subset \R^n$ is open and $f \colon U \to \R$ is continuous and
 of compact support.  Show that the function $\widetilde{f} \colon \R^n \to \R$
 \begin{equation*}
-\widetilde{f}(x) :=
+\widetilde{f}(x) \coloneqq
 \begin{cases}
 f(x) & \text{if } x \in U, \\
 0 & \text{otherwise,}
@@ -797,8 +798,8 @@ that $f \in \sR(R)$ and $\int_R f = 0$.
 
 \begin{exercise}
 Suppose $f\colon \R^n \to \R$ is such that
-$f(x) := 0$ if $x\not= 0$ and $f(0) := 1$.  Show that $f$ is integrable
-on $R := [-1,1] \times [-1,1] \times \cdots \times [-1,1]$ directly using the
+$f(x) \coloneqq 0$ if $x\not= 0$ and $f(0) \coloneqq 1$.  Show that $f$ is integrable
+on $R \coloneqq [-1,1] \times [-1,1] \times \cdots \times [-1,1]$ directly using the
 definition, and find $\int_R f$.
 \end{exercise}
 
@@ -863,19 +864,19 @@ Hint: See \exerciseref{mv:zerooutside}.
 
 \begin{exercise}
 Suppose $R$ and $S$ are closed rectangles of $\R^n$.
-Define $f \colon \R^n \to \R$ as $f(x) := 1$ if 
-$x \in R$, and $f(x) := 0$ otherwise.  Prove $f$ is integrable on $S$
+Define $f \colon \R^n \to \R$ as $f(x) \coloneqq 1$ if 
+$x \in R$, and $f(x) \coloneqq 0$ otherwise.  Prove $f$ is integrable on $S$
 and compute $\int_S f$.  Hint: Consider $S \cap R$.
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
-Let $R := [0,1] \times [0,1] \subset \R^2$.
+Let $R \coloneqq [0,1] \times [0,1] \subset \R^2$.
 \begin{enumerate}[a)]
 \item
 Suppose $f \colon R \to \R$ is defined by
 \begin{equation*}
-f(x,y) := 
+f(x,y) \coloneqq 
 \begin{cases}
 1 & \text{if } x = y, \\
 0 & \text{else.}
@@ -885,7 +886,7 @@ Show that $f \in \sR(R)$ and compute $\int_R f$.
 \item
 Suppose $f \colon R \to \R$ is defined by
 \begin{equation*}
-f(x,y) := 
+f(x,y) \coloneqq 
 \begin{cases}
 1 & \text{if } x \in \Q \text{ or } y \in \Q, \\
 0 & \text{else.}
@@ -947,13 +948,13 @@ are equal, or if the last two are even well-defined.
 \begin{example}
 Define 
 \begin{equation*}
-f(x,y) := 
+f(x,y) \coloneqq 
 \begin{cases}
 1 & \text{if } x=\nicefrac{1}{2} \text{ and } y \in \Q, \\
 0 & \text{otherwise.}
 \end{cases}
 \end{equation*}
-Then $f$ is Riemann integrable on $R := [0,1]^2$ and $\int_R f = 0$.
+Then $f$ is Riemann integrable on $R \coloneqq [0,1]^2$ and $\int_R f = 0$.
 Furthermore, $\int_0^1 \int_0^1 f(x,y) \, dx \, dy = 0$.
 However,
 \begin{equation*}
@@ -968,13 +969,12 @@ $\{ 0, \nicefrac{1}{2}-\epsilon,
 \nicefrac{1}{2}+\epsilon,1\}$ and in the $y$ direction $\{ 0, 1 \}$.
 The subrectangles of the partition are
 \begin{equation*}
-R_1 := [0,
-\nicefrac{1}{2}-\epsilon] \times [0,1],
+R_1 \coloneqq [0, \nicefrac{1}{2}-\epsilon] \times [0,1],
 \qquad
-R_2 := [\nicefrac{1}{2}-\epsilon,
+R_2 \coloneqq [\nicefrac{1}{2}-\epsilon,
 \nicefrac{1}{2}+\epsilon] \times [0,1],
 \qquad
-R_3 := [\nicefrac{1}{2}+\epsilon,1] \times [0,1] .
+R_3 \coloneqq [\nicefrac{1}{2}+\epsilon,1] \times [0,1] .
 \end{equation*}
 We have $m_1 = M_1 = 0$, $m_2 =0$, $M_2 = 1$, and $m_3 = M_3 = 0$.
 Therefore,
@@ -1031,12 +1031,12 @@ Write the coordinates on $\R^{n+m} = \R^n \times \R^m$ as
 $(x,y)$ where $x \in \R^n$ and $y \in \R^m$.  For a function $f(x,y)$,
 write
 \begin{equation*}
-f_x(y) := f(x,y)
+f_x(y) \coloneqq f(x,y)
 \end{equation*}
 when $x$ is fixed and we wish to speak of the function in terms of $y$.
 Write
 \begin{equation*}
-f^y(x) := f(x,y)
+f^y(x) \coloneqq f(x,y)
 \end{equation*}
 when $y$ is fixed and we wish to speak of the function in terms of $x$.
 
@@ -1048,9 +1048,9 @@ Let $R \times S \subset \R^n \times \R^m$ be a closed rectangle and
 $f \colon R \times S \to \R$ be integrable.
 The functions $g \colon R \to \R$ and $h \colon R \to \R$ defined by
 \begin{equation*}
-g(x) := \underline{\int_S} f_x \qquad
+g(x) \coloneqq \underline{\int_S} f_x \qquad
 \text{and} \qquad
-h(x) := \overline{\int_S} f_x 
+h(x) \coloneqq \overline{\int_S} f_x 
 \end{equation*}
 are integrable on $R$ and
 \begin{equation*}
@@ -1093,7 +1093,7 @@ $R_j \times R'_k$ where $1 \leq j \leq N$ and $1 \leq k \leq K$.
 
 Let
 \begin{equation*}
-m_{j,k} :=
+m_{j,k} \coloneqq
 \inf_{(x,y) \in R_j \times R'_k} f(x,y) .
 \end{equation*}
 We notice that
@@ -1111,7 +1111,7 @@ m_{j,k} \, V(R'_k) \right) V(R_j) .
 \end{equation*}
 If we let
 \begin{equation*}
-m_k(x) := \inf_{y \in R'_k} f(x,y) = \inf_{y \in R'_k} f_x(y) ,
+m_k(x) \coloneqq \inf_{y \in R'_k} f(x,y) = \inf_{y \in R'_k} f_x(y) ,
 \end{equation*}
 then for $x \in R_j$, we have $m_{j,k} \leq m_k(x)$.  Therefore,
 \begin{equation*}
@@ -1190,9 +1190,9 @@ Let $R \times S \subset \R^n \times \R^m$ be a closed rectangle and
 $f \colon R \times S \to \R$ be integrable.
 The functions $g \colon S \to \R$ and $h \colon S \to \R$ defined by
 \begin{equation*}
-g(y) := \underline{\int_R} f^y \qquad
+g(y) \coloneqq \underline{\int_R} f^y \qquad
 \text{and} \qquad
-h(y) := \overline{\int_R} f^y 
+h(y) \coloneqq \overline{\int_R} f^y 
 \end{equation*}
 are integrable on $S$ and
 \begin{equation*}
@@ -1241,7 +1241,7 @@ on Fubini, and we have seen but two of them.
 
 Repeatedly applying Fubini theorem gets us the following
 corollary:
-Let $R := [a_1,b_1] \times [a_2,b_2] \times \cdots \times [a_n,b_n] \subset
+Let $R \coloneqq [a_1,b_1] \times [a_2,b_2] \times \cdots \times [a_n,b_n] \subset
 \R^n$ be a closed rectangle and let
 $f \colon R \to \R$ be continuous.  Then
 \begin{equation*}
@@ -1281,7 +1281,7 @@ Prove \thmref{mv:fubinivB}.
 \end{exercise}
 
 \begin{exercise}
-Let $R:=[a,b] \times [c,d]$ and $f(x,y)$ is an integrable
+Let $R \coloneqq [a,b] \times [c,d]$ and $f(x,y)$ is an integrable
 function on $R$ such that
 for every fixed $y$, the function that takes $x$ to $f(x,y)$
 is zero except at finitely many points.  Show
@@ -1291,7 +1291,7 @@ is zero except at finitely many points.  Show
 \end{exercise}
 
 \begin{exercise}
-Let $R:=[a,b] \times [c,d]$ and $f(x,y) := g(x)h(y)$ for two continuous
+Let $R \coloneqq [a,b] \times [c,d]$ and $f(x,y) \coloneqq g(x)h(y)$ for two continuous
 functions $g \colon [a,b] \to \R$ and
 $h \colon [c,d] \to \R$.  Prove
 \begin{equation*}
@@ -1311,7 +1311,7 @@ is, the limit of $\int_\epsilon^1$ as $\epsilon \to 0^+$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f(x,y) := g(x)$ where $g \colon [a,b] \to \R$ is Riemann integrable.
+Suppose $f(x,y) \coloneqq g(x)$ where $g \colon [a,b] \to \R$ is Riemann integrable.
 Show that $f$ is Riemann integrable for every $R = [a,b] \times [c,d]$ and 
 \begin{equation*}
 \int_R f = (d-c) \int_a^b g .
@@ -1321,7 +1321,7 @@ Show that $f$ is Riemann integrable for every $R = [a,b] \times [c,d]$ and
 \begin{exercise}
 Define $f \colon [-1,1] \times [0,1] \to \R$ by
 \begin{equation*}
-f(x,y) :=
+f(x,y) \coloneqq
 \begin{cases}
 x & \text{if } y \in \Q, \\
 0 & \text{else.} 
@@ -1345,7 +1345,7 @@ Fubini).
 \begin{exercise}
 Define $f \colon [0,1] \times [0,1] \to \R$ by
 \begin{equation*}
-f(x,y) :=
+f(x,y) \coloneqq
 \begin{cases}
 \nicefrac{1}{q} & \text{if } x \in \Q, y \in \Q, \text{ and }
   y=\nicefrac{p}{q} \text{ in lowest terms,} \\
@@ -1391,7 +1391,7 @@ of $S$ as
 \glsadd{not:outermeasure}
 \begin{equation*}
 m^*(S)
-:=
+\coloneqq
 \inf\,
 \sum_{j=1}^\infty V(R_j) ,
 \end{equation*}
@@ -1564,19 +1564,19 @@ can be done in any manner.  In particular, it can be done as
 The next example is not just interesting, it will be useful later.
 
 \begin{example} \label{mv:example:planenull}
-Let $P := \{ x \in \R^n : x_k = c \}$ for a fixed $k=1,2,\ldots,n$ and
+Let $P \coloneqq \{ x \in \R^n : x_k = c \}$ for a fixed $k=1,2,\ldots,n$ and
 a fixed constant $c \in \R$.  Then $P$ is of measure zero.
 
 Proof:
 First fix $s$ and let us prove that
 \begin{equation*}
-P_s := \bigl\{ x \in \R^n : x_k = c, \sabs{x_j} \leq s
+P_s \coloneqq \bigl\{ x \in \R^n : x_k = c, \sabs{x_j} \leq s
 \text{ for all } j\not=k \bigr\}
 \end{equation*}
 is of measure zero.
 Given any $\epsilon > 0$ define the open rectangle
 \begin{equation*}
-R := \bigl\{ x \in \R^n : c-\epsilon < x_k < c+\epsilon, \sabs{x_j} < s+1
+R \coloneqq \bigl\{ x \in \R^n : c-\epsilon < x_k < c+\epsilon, \sabs{x_j} < s+1
 \text{ for all } j\not=k \bigr\} .
 \end{equation*}
 It is clear that $P_s \subset R$.  Furthermore,
@@ -1696,15 +1696,15 @@ See \volIref{\sectionref*{vI-sec:decimals} in volume I\@, in particular
 in particular \exerciseref{exercise:decimalpropbaseb}}.
 Define the \emph{\myindex{Cantor set}} $C$ as
 \begin{equation*}
-C := \Bigl\{ x \in [0,1] : x = \sum_{n=1}^\infty d_n 3^{-n},
+C \coloneqq \Bigl\{ x \in [0,1] : x = \sum_{n=1}^\infty d_n 3^{-n},
 \text{ where } d_n = 0 \text{ or } d_n = 2 \text{ for all } n \Bigr\} .
 \end{equation*}
 That is, $x$ is in $C$ if it has a ternary expansion in only $0$s and
 $2$s.  If $x$ has two expansions, as long as one of them does not have any
 $1$s, then $x$ is in $C$.
-Define $C_0 := [0,1]$ and
+Define $C_0 \coloneqq [0,1]$ and
 \begin{equation*}
-C_k := \Bigl\{ x \in [0,1] : x = \sum_{n=1}^\infty d_n 3^{-n},
+C_k \coloneqq \Bigl\{ x \in [0,1] : x = \sum_{n=1}^\infty d_n 3^{-n},
 \text{ where } d_n = 0 \text{ or } d_n = 2 \text{ for all } n=1,2,\ldots,k \Bigr\} .
 \end{equation*}
 Clearly,
@@ -1782,8 +1782,8 @@ E$ pick an open ball $B(x,r_x)$ such that the closed ball $C(x,r_x) \subset
 U$.  By compactness we only need to take finitely
 many points $x_1,x_2,\ldots,x_q$ to cover $E$ we the balls $B(x_j,r_{x_j})$.  Define
 \begin{equation*}
-U' := \bigcup_{j=1}^q B(x_j,r_{x_j}), \qquad
-K := \bigcup_{j=1}^q C(x_j,r_{x_j}).
+U' \coloneqq \bigcup_{j=1}^q B(x_j,r_{x_j}), \qquad
+K \coloneqq \bigcup_{j=1}^q C(x_j,r_{x_j}).
 \end{equation*}
 We have $E \subset U' \subset K \subset U$.  The set $K$, being a finite
 union of compact sets, is compact.
@@ -1794,7 +1794,7 @@ suppose that $\snorm{f'(x)} \leq M$ for all $x \in U$.
 
 At each $x \in E$, take the maximum radius $\delta_x$
 such that $B(x,\delta_x) \subset U$ (we may assume $U \not= \R^n$).
-Let $\delta := \inf_{x\in E} \delta_x$.
+Let $\delta \coloneqq \inf_{x\in E} \delta_x$.
 We want to show that $\delta > 0$.
 Take a sequence $\{ x_j \} \subset E$ so that $\delta_{x_j} \to \delta$.
 As $E$ is compact, we can pick the sequence to be convergent to some $y \in
@@ -1875,7 +1875,7 @@ is compact for every $m > 0$.
 \begin{exercise}
 Let $U \subset \R^n$ be an open set
 and let $f \colon U \to \R$ be a continuously differentiable function.
-Let $G := \{ (x,y) \in U \times \R : y = f(x) \}$ be the graph of $f$.
+Let $G \coloneqq \bigl\{ (x,y) \in U \times \R : y = f(x) \bigr\}$ be the graph of $f$.
 Show that $G$ is of measure zero.
 \end{exercise}
 
@@ -1931,12 +1931,13 @@ Let us construct the so-called \emph{\myindex{Cantor function}} or the
 \emph{\myindex{Devil's staircase}}.  Let $C$ be the Cantor set and
 let $C_k$ be as in \exampleref{example:cantor}.
 Write $x \in [0,1]$ in ternary representation $x = \sum_{n=1} d_n 3^{-n}$.
-If $d_n \not= 1$ for all $n$, then let $c_n := \frac{d_n}{2}$ for all $n$.
+If $d_n \not= 1$ for all $n$, then let $c_n \coloneqq \frac{d_n}{2}$ for all $n$.
 Otherwise, let $k$ be the smallest integer such that $d_k = 1$.  Then
-let $c_n := \frac{d_n}{2}$ if $n < k$, $c_k := 1$, and $c_n := 0$ if $n >
+let $c_n \coloneqq \frac{d_n}{2}$ if $n < k$, $c_k \coloneqq 1$, and $c_n
+\coloneqq 0$ if $n >
 k$.  Then define
 \begin{equation*}
-\varphi(x) := \sum_{n=1}^\infty c_n \, 2^{-n} .
+\varphi(x) \coloneqq \sum_{n=1}^\infty c_n \, 2^{-n} .
 \end{equation*}
 \begin{enumerate}[a)]
 \item
@@ -1949,7 +1950,7 @@ $\varphi'(x) = 0$.
 yet the function manages to climb from $0$ to $1$.)
 \item
 Define $\psi \colon [0,1] \to [0,2]$ by
-$\psi(x) := \varphi(x) + x$.
+$\psi(x) \coloneqq \varphi(x) + x$.
 Show that $\psi$ is continuous, strictly increasing, and bijective.
 \item
 Prove that while $m^*(C) = 0$, $m^*\bigl(\psi(C)\bigr) \not= 0$.  That is,
@@ -1969,7 +1970,7 @@ the exercise).\label{fig:cantorfunction}}
 \begin{exercise} \label{exercise:allowfiniteseqsinoutermeasure}
 Prove that we obtain the same outer measure if we allow both finite and
 infinite sequences in
-the definition.  That is, define $\mu^*(S) := \inf\, \sum_{j \in I} V(R_j)$
+the definition.  That is, define $\mu^*(S) \coloneqq \inf\, \sum_{j \in I} V(R_j)$
 where the infimum is taken over all countable (finite or infinite) sets of
 open rectangles $\{ R_j \}_{j\in I}$ such that $S \subset
 \bigcup_{j \in I} R_j$.  Prove that for every $S \subset \R^n$,
@@ -2013,7 +2014,7 @@ $f$ on the $\delta$-ball in subspace topology,
 $B_D(x,\delta) = B_{\R^n}(x,\delta) \cap D$, as
 \glsadd{not:oscillation}
 \begin{equation*}
-o(f,x,\delta) :=
+o(f,x,\delta) \coloneqq
 {\sup_{y \in B_D(x,\delta)} f(y)}
 -
 {\inf_{y \in B_D(x,\delta)} f(y)}
@@ -2030,7 +2031,7 @@ Therefore, the limit as $\delta \to 0$ from the right exists, and
 we define the \emph{\myindex{oscillation}} of $f$
 at $x$ as
 \begin{equation*}
-o(f,x) :=
+o(f,x) \coloneqq
 \lim_{\delta \to 0^+}
 o(f,x,\delta) =
 \inf_{\delta > 0}
@@ -2081,7 +2082,7 @@ The set $\bigl\{ x \in D : o(f,x) \geq \epsilon \bigr\}$ is closed.
 
 \begin{proof}
 Equivalently, we want to show that
-$G := \bigl\{ x \in D : o(f,x) < \epsilon \bigr\}$ is open in the subspace topology.
+$G \coloneqq \bigl\{ x \in D : o(f,x) < \epsilon \bigr\}$ is open in the subspace topology.
 Consider $x \in G$.
 As $\inf_{\delta > 0} o(f,x,\delta) < \epsilon$, find a $\delta > 0$ such
 that
@@ -2129,7 +2130,7 @@ itself is not closed in general, but the following set is.
 
 Given $\epsilon > 0$, define
 \begin{equation*}
-S_\epsilon := \bigl\{ x \in R : o(f,x) \geq \epsilon \bigr\} .
+S_\epsilon \coloneqq \bigl\{ x \in R : o(f,x) \geq \epsilon \bigr\} .
 \end{equation*}
 By \propref{prop:seclosed}, $S_\epsilon$ is closed and as it is a subset of
 $R$,
@@ -2140,7 +2141,7 @@ Via \propref{mv:prop:compactnull}, finitely many open rectangles
 $O_1,O_2,\ldots,O_k$ cover $S_\epsilon$ and
 $\sum V(O_j) < \epsilon$.  
 
-The set $T := R \setminus ( O_1 \cup \cdots \cup O_k )$ is closed, bounded,
+The set $T \coloneqq R \setminus ( O_1 \cup \cdots \cup O_k )$ is closed, bounded,
 and so compact.  As $o(f,x) < \epsilon$ for all $x \in T$,
 for each $x \in T$, there is a $\delta > 0$ such that
 $o(f,x,\delta) < \epsilon$, so there exists a small closed rectangle
@@ -2277,13 +2278,13 @@ and $fg \in \sR(R)$.
 \item
 If $f,g \in \sR(R)$ and
 \begin{equation*}
-\varphi(x) := \max \bigl\{ f(x) , g(x) \bigr\} ,
+\varphi(x) \coloneqq \max \bigl\{ f(x) , g(x) \bigr\} ,
 \qquad
-\psi(x) := \min \bigl\{ f(x) , g(x) \bigr\} ,
+\psi(x) \coloneqq \min \bigl\{ f(x) , g(x) \bigr\} ,
 \end{equation*}
 then $\varphi, \psi \in \sR(R)$.
 \item
-If $f \in \sR(R)$, then $\sabs{f} \in \sR(R)$, where $\sabs{f}(x) :=
+If $f \in \sR(R)$, then $\sabs{f} \in \sR(R)$, where $\sabs{f}(x) \coloneqq
 \sabs{f(x)}$.
 \item
 If $R' \subset \R^n$ is another closed rectangle,
@@ -2352,9 +2353,9 @@ and $f \colon R \to \R$ and $g \colon R \to \R$
 are Riemann integrable.
 Show that
 \begin{equation*}
-\varphi(x) := \max \bigl\{ f(x) , g(x) \bigr\} ,
+\varphi(x) \coloneqq \max \bigl\{ f(x) , g(x) \bigr\} ,
 \qquad
-\psi(x) := \min \bigl\{ f(x) , g(x) \bigr\} ,
+\psi(x) \coloneqq \min \bigl\{ f(x) , g(x) \bigr\} ,
 \end{equation*}
 are Riemann integrable.
 \end{exercise}
@@ -2364,8 +2365,8 @@ Suppose $R \subset \R^n$ is a closed rectangle
 and $f \colon R \to \R$ is Riemann integrable.
 Show that $\sabs{f}$ is Riemann integrable.
 Hint: Define
-$f_+(x) := \max \bigl\{ f(x) , 0 \bigr\}$ and
-$f_-(x) := \max \bigl\{ -f(x) , 0 \bigr\}$, and then write $\sabs{f}$
+$f_+(x) \coloneqq \max \bigl\{ f(x) , 0 \bigr\}$ and
+$f_-(x) \coloneqq \max \bigl\{ -f(x) , 0 \bigr\}$, and then write $\sabs{f}$
 in terms of $f_+$ and $f_-$.
 \end{exercise}
 
@@ -2384,7 +2385,7 @@ $f \in \sR(R')$,
 then the composition $f \circ g$ is Riemann integrable on $R$.
 \item
 Find a counterexample when $g$ is not one-to-one.
-Hint: Try $g(x,y) := (x,0)$ and $R=R'=[0,1] \times [0,1]$.
+Hint: Try $g(x,y) \coloneqq (x,0)$ and $R=R'=[0,1] \times [0,1]$.
 \end{enumerate}
 \end{exercise}
 
@@ -2392,7 +2393,7 @@ Hint: Try $g(x,y) := (x,0)$ and $R=R'=[0,1] \times [0,1]$.
 Suppose 
 $f \colon [0,1]^2 \to \R$ is defined by
 \begin{equation*}
-f(x,y) :=
+f(x,y) \coloneqq
 \begin{cases}
 \frac{1}{kq} & \text{if } x,y \in \Q \text{ and } x = \frac{\ell}{k}
 \text{ and } y=\frac{p}{q} \text{ in lowest terms,} \\
@@ -2406,7 +2407,7 @@ Show that $f \in \sR\bigl({[0,1]}^2\bigr)$.
 Compute the oscillation $o\bigl(f,(x,y)\bigr)$ for all $(x,y) \in \R^2$
 for the function
 \begin{equation*}
-f(x,y) :=
+f(x,y) \coloneqq
 \begin{cases}
 \frac{xy}{x^2+y^2} & \text{if } (x,y) \not= (0,0), \\
 0                  & \text{if } (x,y) = (0,0) .
@@ -2417,7 +2418,7 @@ f(x,y) :=
 \begin{exercise}
 Consider the popcorn function $f \colon [0,1] \to \R$,
 \begin{equation*}
-f(x) :=
+f(x) \coloneqq
 \begin{cases}
 \frac{1}{q} & \text{if } x \in \Q \text{ and } x = \frac{p}{q}
  \text{ in lowest terms,} \\
@@ -2444,7 +2445,7 @@ or \emph{\myindex{indicator function}} $\chi_S \colon \R^n \to \R$
 is defined by
 \glsadd{not:indicatorfunction}
 \begin{equation*}
-\chi_S(x) :=
+\chi_S(x) \coloneqq
 \begin{cases}
 1 & \text{if } x \in S, \\
 0 & \text{if } x \notin S.
@@ -2471,7 +2472,7 @@ We define the
 bounded Jordan measurable set $S$ as
 \glsadd{not:ndimvolume}
 \begin{equation*}
-V(S) := \int_R \chi_S ,
+V(S) \coloneqq \int_R \chi_S ,
 \end{equation*}
 where $R$ is any closed rectangle containing $S$.
 
@@ -2583,7 +2584,7 @@ or\glsadd{not:integrablefuncR} $f \in \sR(S)$, if for a closed
 rectangle $R$ such that $S \subset R$, the function $\widetilde{f} \colon R
 \to \R$ defined by
 \begin{equation*}
-\widetilde{f}(x) :=
+\widetilde{f}(x) \coloneqq
 \begin{cases}
 f(x) & \text{if } x \in S, \\
 0 & \text{otherwise},
@@ -2592,7 +2593,7 @@ f(x) & \text{if } x \in S, \\
 is in $\sR(R)$.  In this case we write
 \glsadd{not:riemannintR}%
 \begin{equation*}
-\int_S f := \int_R \widetilde{f}.
+\int_S f \coloneqq \int_R \widetilde{f}.
 \end{equation*}
 \end{defn}
 
@@ -2640,7 +2641,7 @@ Then $g(S)$ is bounded and Jordan measurable.
 \end{prop}
 
 \begin{proof}
-Let $T := g(S)$.  %As $S \subset \R^n$ is closed and bounded it is compact.
+Let $T \coloneqq g(S)$.  %As $S \subset \R^n$ is closed and bounded it is compact.
 By 
 \volIref{\lemmaref*{vI-lemma:continuouscompact} from volume I}{\lemmaref{lemma:continuouscompact}},
 the set
@@ -2686,7 +2687,7 @@ Let $f \colon [a,b] \to \R$ and
 $g \colon [a,b] \to \R$ be continuous functions and such that
 for all $x \in (a,b)$, $f(x) < g(x)$.  Let
 \begin{equation*}
-U := \bigl\{ (x,y) \in \R^2 : a < x < b \text{ and } f(x) < y < g(x) \bigr\} .
+U \coloneqq \bigl\{ (x,y) \in \R^2 : a < x < b \text{ and } f(x) < y < g(x) \bigr\} .
 \end{equation*}
 \begin{enumerate}[a)]
 \item
@@ -2706,7 +2707,7 @@ Let us construct an example of a non-Jordan measurable open set.
 Start in one dimension.  Let $\{ r_j \}$ be an enumeration
 of all rational numbers in $(0,1)$.  Let $(a_j,b_j)$ be open intervals
 such that $(a_j,b_j) \subset (0,1)$ for all $j$, $r_j \in (a_j,b_j)$,
-and $\sum_{j=1}^\infty (b_j-a_j) < \nicefrac{1}{2}$.  Now let $U :=
+and $\sum_{j=1}^\infty (b_j-a_j) < \nicefrac{1}{2}$.  Now let $U \coloneqq
 \bigcup_{j=1}^\infty (a_j,b_j)$.
 \begin{enumerate}[a)]
 \item
@@ -2716,7 +2717,7 @@ Prove $\partial U = [0,1] \setminus U$.
 \item
 Prove $\partial U$ is not of measure zero, and therefore $U$ is not Jordan measurable.
 \item
-Show that $W :=
+Show that $W \coloneqq
 \bigl( U \times (0,2) \bigr) \cup \bigl( (0,1) \times (1,2) \bigr)$
 is a connected bounded open set in $\R^2$
 that is not Jordan measurable.
@@ -2794,7 +2795,7 @@ Let $U \subset \R^2$ be a bounded domain with piecewise smooth boundary,
 let $\partial U$ be oriented ,
 and let $\gamma \colon [a,b] \to \R^2$ be a parametrization of $\partial U$
 giving the orientation.  Write $\gamma(t) = \big(x(t),y(t)\bigr)$.
-If the vector $n(t) := \bigl(-y'(t),x'(t)\bigr)$ points into the domain,
+If the vector $n(t) \coloneqq \bigl(-y'(t),x'(t)\bigr)$ points into the domain,
 that is, $\epsilon n(t) + \gamma(t)$ is in $U$ for all small enough
 $\epsilon > 0$, then $\partial U$ is
 \emph{\myindex{positively oriented}}.  
@@ -2840,7 +2841,7 @@ Define
 \begin{equation*}
 f \colon (a,b) \times (-1,1) \to \R^2,
 \qquad \text{as} \qquad
-f(x,y) := \gamma(x) .
+f(x,y) \coloneqq \gamma(x) .
 \end{equation*}
 The set $(a,b) \times \{ 0 \}$ is a null set in $\R^2$ and
 $\gamma\bigl((a,b)\bigr) = f\bigl( (a,b) \times \{ 0 \} \bigr)$.
@@ -2880,7 +2881,7 @@ $a < b$, and continuous
 functions $f \colon [a,b] \to \R$ and
 $g \colon [a,b] \to \R$, such that
 \begin{equation*}
-U := \{ (x,y) \in \R^2 : a < x < b \text{ and } f(x) < y < g(x) \} .
+U \coloneqq \bigl\{ (x,y) \in \R^2 : a < x < b \text{ and } f(x) < y < g(x) \bigr\} .
 \end{equation*}
 Similarly, $U$ is of \emph{type II}\index{type II domain}
 if there exist numbers
@@ -2888,7 +2889,7 @@ $c < d$, and continuous
 functions $h \colon [c,d] \to \R$ and
 $k \colon [c,d] \to \R$, such that
 \begin{equation*}
-U := \{ (x,y) \in \R^2 : c < y < d \text{ and } h(y) < x < k(y) \} .
+U \coloneqq \bigl\{ (x,y) \in \R^2 : c < y < d \text{ and } h(y) < x < k(y) \bigr\} .
 \end{equation*}
 Finally, $U \subset \R^2$ is of \emph{type III}\index{type III domain}
 if it is both of type I and type II\@.  See \figureref{fig:greenstypes}.
@@ -2997,7 +2998,7 @@ $\frac{\partial^2 f}{\partial x^2} +
 \frac{\partial^2 f}{\partial y^2} = 0$.
 We will prove one of the most fundamental properties of harmonic functions.
 
-Let $D_r := B(p,r)$ be closed disc such that its closure $C(p,r) \subset U$.  Write
+Let $D_r \coloneqq B(p,r)$ be closed disc such that its closure $C(p,r) \subset U$.  Write
 $p = (x_0,y_0)$.  We orient
 $\partial D_r$ positively.  See \exerciseref{green:balltype3orient}.
 Then
@@ -3040,7 +3041,7 @@ f\bigl(x_0+r\cos(t),y_0+r\sin(t)\bigr) \, dt
 \right] .
 \end{split}
 \end{equation*}
-Let $g(r) := 
+Let $g(r) \coloneqq 
 \frac{1}{2\pi}
 \int_0^{2\pi}
 f\bigl(x_0+r\cos(t),y_0+r\sin(t)\bigr) \, dt$.  Then $g'(r) = 0$ for all
@@ -3132,7 +3133,7 @@ if $f$ attains a maximum at $p \in U$, then $f$ is constant.
 \end{exercise}
 
 \begin{exercise}
-Let $f(x,y) := \ln \sqrt{x^2+y^2}$.
+Let $f(x,y) \coloneqq \ln \sqrt{x^2+y^2}$.
 \begin{enumerate}[a)]
 \item
 Show $f$ is harmonic where defined.
@@ -3167,7 +3168,7 @@ the definition of integral from this chapter, then we do not have the notion
 of $\int_a^b$ versus $\int_b^a$.  We are simply integrating over an
 interval $[a,b]$.  With this notation, the change of variables becomes
 \begin{equation*}
-\int_{[a,b]} f\bigl(g(x)\bigr) \sabs{g'(x)}\, dx = 
+\int_{[a,b]} f\bigl(g(x)\bigr) \, \sabs{g'(x)}\, dx = 
 \int_{g([a,b])} f(x) \, dx .
 \end{equation*}
 In this section we will obtain the several-variable analogue of this form.
@@ -3185,7 +3186,7 @@ by the absolute value of the determinant.
 \begin{prop} \label{prop:volrectdet}
 Suppose $R \subset \R^n$ is a rectangle
 and $A \colon \R^n \to \R^n$ is linear.  Then
-$A(R)$ is Jordan measurable and $V\bigl(A(R)\bigr) = \sabs{\det (A)} V(R)$.
+$A(R)$ is Jordan measurable and $V\bigl(A(R)\bigr) = \sabs{\det (A)} \, V(R)$.
 \end{prop}
 
 \begin{proof}
@@ -3211,7 +3212,7 @@ Suppose $f \colon g(S) \to \R$ is Riemann integrable.
 Then $f \circ g$ is Riemann integrable on $S$ and
 \begin{equation*}
 \int_{g(S)} f(x) \, dx = 
-\int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} \, dx .
+\int_S f\bigl(g(x)\bigr) \, \sabs{J_g(x)} \, dx .
 \end{equation*}
 \end{thm}
 
@@ -3227,7 +3228,7 @@ $P_1,P_2,\ldots,P_k$, whose
 interiors do not overlap such that each $P_j \subset U$
 (\exerciseref{mv:changeofvarcoverbyrects}).
 Proving the theorem for $P_j \cap S$ instead of $S$ is enough.
-Define $f(y) := 0$ for all $y \notin g(S)$.
+Define $f(y) \coloneqq 0$ for all $y \notin g(S)$.
 The new $f$ is still Riemann integrable since $g(S)$ is Jordan measurable.
 We can now replace the integrals over $S$ with integrals over the whole
 rectangle.
@@ -3236,7 +3237,7 @@ We therefore assume that $S$ is equal to a rectangle $R$.
 Let $\epsilon > 0$ be given.
 For every $x \in R$, let
 \begin{equation*}
-W_x := \bigl\{ y \in U : \snorm{g'(x)-g'(y)} < \nicefrac{\epsilon}{2} \bigr\} .
+W_x \coloneqq \bigl\{ y \in U : \snorm{g'(x)-g'(y)} < \nicefrac{\epsilon}{2} \bigr\} .
 \end{equation*}
 By \exerciseref{mv:changeofvarWxopen},
 $W_x$ is open.
@@ -3311,23 +3312,23 @@ s_2 (1+4 \sqrt{n}\, \epsilon )
 \cdots
 s_n (1+4 \sqrt{n}\, \epsilon )
 =
-V(R_j) {(1+4\sqrt{n} \, \epsilon)}^n .
+V(R_j) \, {(1+4\sqrt{n} \, \epsilon)}^n .
 \end{split}
 \end{equation*}
 In other words,
 \begin{equation*}
-V\bigl(g(R_j)\bigr) \leq V(\widetilde{R}_j) \leq V(R_j) {(1+4\sqrt{n} \, \epsilon)}^n .
+V\bigl(g(R_j)\bigr) \leq V(\widetilde{R}_j) \leq V(R_j) \, {(1+4\sqrt{n} \, \epsilon)}^n .
 \end{equation*}
-Next, suppose $A := g'(0)$ is not necessarily the identity.
+Next, suppose $A \coloneqq g'(0)$ is not necessarily the identity.
 Write $g = A \circ \widetilde{g}$ where $\widetilde{g}'(0) = I$.
 By \propref{prop:volrectdet},
-$V\bigl(A(R_j)\bigr) = \sabs{\det(A)}V(R_j)$, and hence
+$V\bigl(A(R_j)\bigr) = \sabs{\det(A)} \, V(R_j)$, and hence
 \begin{equation*}
 \begin{split}
 V\bigl(g(R_j)\bigr) & \leq
-\sabs{\det(A)} V(R_j) {(1+4\sqrt{n} \, \epsilon)}^n \\
+\sabs{\det(A)} \, V(R_j) \, {(1+4\sqrt{n} \, \epsilon)}^n \\
 & =
-\sabs{J_g(0)} V(R_j) {(1+4\sqrt{n} \, \epsilon)}^n .
+\sabs{J_g(0)} \, V(R_j) \, {(1+4\sqrt{n} \, \epsilon)}^n .
 \end{split}
 \end{equation*}
 Translation does not change volume, and therefore
@@ -3335,15 +3336,15 @@ for every $R_j$, and $x_j \in R_j$, including when $x_j \not= 0$ and $g(x_j)
 \not= 0$, we find
 \begin{equation*}
 V\bigl(g(R_j)\bigr) \leq
-\sabs{J_g(x_j)} V(R_j) {(1+4\sqrt{n} \, \epsilon)}^n .
+\sabs{J_g(x_j)} \, V(R_j) \, {(1+4\sqrt{n} \, \epsilon)}^n .
 \end{equation*}
 
 Write $f$ as
 $f = f_+ - f_-$ for two nonnegative Riemann integrable
 functions $f_+$ and $f_-$:
 \begin{equation*}
-f_+(x) := \max \{ f(x) , 0 \}, \qquad
-f_-(x) := \max \{ -f(x) , 0 \} .
+f_+(x) \coloneqq \max \bigl\{ f(x) , 0 \bigr\}, \qquad
+f_-(x) \coloneqq \max \bigl\{ -f(x) , 0 \bigr\} .
 \end{equation*}
 So, if we prove the theorem for a nonnegative $f$,
 we obtain the theorem for arbitrary $f$.
@@ -3354,15 +3355,15 @@ For a small enough
 $\delta > 0$, we have
 \begin{equation*}
 \begin{split}
-\epsilon + \int_R f\bigl(g(x)\bigr) \sabs{J_g(x)} \, dx
+\epsilon + \int_R f\bigl(g(x)\bigr) \, \sabs{J_g(x)} \, dx
 & \geq
-\sum_{j=1}^N \biggl(\sup_{x \in R_j} f\bigl(g(x)\bigr) \sabs{J_g(x)} \biggr) V(R_j)
+\sum_{j=1}^N \biggl(\sup_{x \in R_j} f\bigl(g(x)\bigr) \, \sabs{J_g(x)} \biggr) \, V(R_j)
 \\
 & \geq
-\sum_{j=1}^N \biggl(\sup_{x \in R_j} f\bigl(g(x)\bigr) \biggr) \sabs{J_g(x_j)} V(R_j)
+\sum_{j=1}^N \biggl(\sup_{x \in R_j} f\bigl(g(x)\bigr) \biggr) \, \sabs{J_g(x_j)} \, V(R_j)
 \\
 & \geq
-\sum_{j=1}^N \biggl(\sup_{y \in g(R_j)} f(y) \biggr)
+\sum_{j=1}^N \biggl(\sup_{y \in g(R_j)} f(y) \biggr) \,
 V\bigl(g(R_j)\bigr)
 \frac{1}{{(1+4\sqrt{n} \, \epsilon)}^n}
 \\
@@ -3380,29 +3381,29 @@ are their boundaries, which are of measure zero, and hence the image
 of their boundaries is also measure zero.
 Let $\epsilon$ go to zero to find
 \begin{equation*}
-\int_R f\bigl(g(x)\bigr) \sabs{J_g(x)} \, dx \geq \int_{g(R)} f(y) \,dy .
+\int_R f\bigl(g(x)\bigr) \, \sabs{J_g(x)} \, dx \geq \int_{g(R)} f(y) \,dy .
 \end{equation*}
 By adding this result for several rectangles covering an $S$ we obtain the
 result for an arbitrary bounded Jordan measurable $S \subset U$,
 and nonnegative integrable function $f$:
 \begin{equation*}
-\int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} \, dx \geq \int_{g(S)} f(y) \,dy .
+\int_S f\bigl(g(x)\bigr) \, \sabs{J_g(x)} \, dx \geq \int_{g(S)} f(y) \,dy .
 \end{equation*}
 
 Recall that $g^{-1}$ exists and $g^{-1}\bigl(g(S)\bigr) = S$.
-Also $1 = J_{g\circ g^{-1}} = J_g(g^{-1}(y))J_{g^{-1}}(y)$ for $y \in g(S)$.
+Also $1 = J_{g\circ g^{-1}} = J_g\bigl(g^{-1}(y)\bigr) \,J_{g^{-1}}(y)$ for $y \in g(S)$.
 So
 \begin{equation*}
 \begin{split}
 \int_{g(S)} f(y) \, dy
 & =
-\int_{g(S)} f\bigl(g\bigl(g^{-1}(y)\bigr)\bigr)
+\int_{g(S)} f\bigl(g\bigl(g^{-1}(y)\bigr)\bigr) \,
 \sabs{J_g\bigl(g^{-1}(y)\bigr)} \, \sabs{J_{g^{-1}}(y)} \, dy
 \\
 & \geq
-\int_{g^{-1}(g(S))} f\bigl(g(x)\bigr) \sabs{J_g(x)} \, dx
+\int_{g^{-1}(g(S))} f\bigl(g(x)\bigr) \, \sabs{J_g(x)} \, dx
 =
-\int_{S} f\bigl(g(x)\bigr) \sabs{J_g(x)} \, dx .
+\int_{S} f\bigl(g(x)\bigr) \, \sabs{J_g(x)} \, dx .
 \end{split}
 \end{equation*}
 
@@ -3432,7 +3433,7 @@ Suppose $U \subset \R^n$ is open, $x \in U$,
 and $g \colon U \to \R^n$ is a continuously differentiable mapping.
 For every $\epsilon > 0$, show that
 \begin{equation*}
-W_x := \bigl\{ y \in U : \snorm{g'(x)-g'(y)} < \nicefrac{\epsilon}{2} \bigr\}
+W_x \coloneqq \bigl\{ y \in U : \snorm{g'(x)-g'(y)} < \nicefrac{\epsilon}{2} \bigr\}
 \end{equation*}
 is an open set.
 \end{exercise}
@@ -3458,7 +3459,7 @@ assume $J_g(x) = 0$ if $g$ not differentiable at $x$, that is when $x \notin
 U$).  Then}
 \begin{equation*}
 \int_{\R^{n}} f(x) \, dx = 
-\int_{\R^n} f\bigl(g(x)\bigr) \sabs{J_g(x)} \, dx .
+\int_{\R^n} f\bigl(g(x)\bigr) \, \sabs{J_g(x)} \, dx .
 \end{equation*}
 \end{exercise}
 
@@ -3473,7 +3474,7 @@ Suppose $f \colon g(S) \to \R$ is Riemann
 integrable.  Then $f \circ g$ is Riemann integrable on $S$ and}
 \begin{equation*}
 \int_{g(S)} f(x) \, dx = 
-\int_S f\bigl(g(x)\bigr) \sabs{J_g(x)} \, dx .
+\int_S f\bigl(g(x)\bigr) \, \sabs{J_g(x)} \, dx .
 \end{equation*}
 Hint: Write $S$ as an increasing union of compact Jordan measurable
 sets, then apply the theorem of the section to those.  Then prove that you

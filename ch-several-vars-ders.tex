@@ -4283,41 +4283,42 @@ That is, the level curves can be locally \myquote{straightened.}
 \volIref{\sectionref*{vI-sec:taylor} of volume I}{\sectionref{sec:taylor}}}
 
 Let $U \subset \R^n$ be an open set and $f \colon U \to \R$ a function.
-Denote by $x = (x_1,x_2,\ldots,x_n) \in \R^n$ our coordinates.
-Suppose $\frac{\partial f}{\partial x_j}$ exists everywhere in $U$,
-then it is also a function $\frac{\partial f}{\partial x_j}
+Denote our coordinates by $x = (x_1,x_2,\ldots,x_n) \in \R^n$.
+Suppose $\frac{\partial f}{\partial x_{\ell}}$ exists everywhere in $U$,
+then it is also a function $\frac{\partial f}{\partial x_{\ell}}
 \colon U \to \R$.  Therefore, it makes sense to talk about its partial
 derivatives.  We denote 
-the partial derivative of $\frac{\partial f}{\partial x_j}$ with respect to
-$x_k$ by\glsadd{not:multivarpartder}
+the partial derivative of $\frac{\partial f}{\partial x_{\ell}}$ with respect to
+$x_m$ by\glsadd{not:multivarpartder}
 \begin{equation*}
-\frac{\partial^2 f}{\partial x_k \partial x_j}
+\frac{\partial^2 f}{\partial x_m \partial x_{\ell}}
 \coloneqq
-\frac{\partial \bigl( \frac{\partial f}{\partial x_j} \bigr)}{\partial x_k} .
+\frac{\partial \Bigl( \frac{\partial f}{\partial x_{\ell}} \Bigr)}{\partial x_m} .
 \end{equation*}
-If $k=j$, then we write 
-$\frac{\partial^2 f}{\partial x_j^2}$ for simplicity.
+If $m={\ell}$, then we write 
+$\frac{\partial^2 f}{\partial x_{\ell}^2}$ for simplicity.
 
 We define higher order derivatives inductively.
-Suppose $j_1,j_2,\ldots,j_\ell$ are integers between $1$ and $n$, and
+Suppose ${\ell}_1,{\ell}_2,\ldots,{\ell}_k$ are integers between $1$ and $n$, and
 suppose 
 \begin{equation*}
-\frac{\partial^{\ell-1} f}{\partial x_{j_{\ell-1}} \partial x_{j_{\ell-2}} \cdots \partial x_{j_1}}
+\frac{\partial^{k-1} f}{\partial x_{{\ell}_{k-1}} \partial x_{{\ell}_{k-2}}
+\cdots \partial x_{{\ell}_1}}
 \end{equation*}
-exists and is differentiable in the variable $x_{j_{\ell}}$, then the
+exists and is differentiable in the variable $x_{{\ell}_{k}}$, then the
 partial derivative with respect to that variable is denoted by
 \begin{equation*}
-\frac{\partial^{\ell} f}{\partial x_{j_{\ell}} \partial x_{j_{\ell-1}}
-\cdots \partial x_{j_1}}
+\frac{\partial^{k} f}{\partial x_{{\ell}_{k}} \partial x_{{\ell}_{k-1}}
+\cdots \partial x_{{\ell}_1}}
 \coloneqq 
-\frac{\partial \bigl( \frac{\partial^{\ell-1} f}{\partial x_{j_{\ell-1}} \partial
-x_{j_{\ell-2}} \cdots \partial x_{j_1}} \bigr)}{\partial x_{j_{\ell}}} .
+\frac{\partial \Bigl( \frac{\partial^{k-1} f}{\partial x_{{\ell}_{k-1}} \partial
+x_{{\ell}_{k-2}} \cdots \partial x_{{\ell}_1}} \Bigr)}{\partial x_{{\ell}_{k}}} .
 \end{equation*}
 Such a derivative is called a
-\emph{\myindex{partial derivative of order $\ell$}}.
+\emph{\myindex{partial derivative of order $k$}}.
 
-Sometimes the notation $f_{x_j x_k}$\glsadd{not:subpartder} is used for
-$\frac{\partial^2 f}{\partial x_k \partial x_j}$.  This notation
+Sometimes the notation $f_{x_{\ell} x_m}$\glsadd{not:subpartder} is used for
+$\frac{\partial^2 f}{\partial x_m \partial x_{\ell}}$.  This notation
 swaps the order in which we write the derivatives, which may be important.
 
 \begin{defn}
@@ -4342,49 +4343,49 @@ When the partial derivatives are continuous, we can swap their order.
 
 \begin{prop} \label{mv:prop:swapders}
 Suppose $U \subset \R^n$ is open and $f \colon U \to \R$ is a $C^2$
-function, and $j$ and $k$ are two integers from $1$ to $n$.  Then
+function, and $\ell$ and $m$ are two integers from $1$ to $n$.  Then
 \begin{equation*}
-\frac{\partial^2 f}{\partial x_k \partial x_j}
+\frac{\partial^2 f}{\partial x_m \partial x_{\ell}}
 =
-\frac{\partial^2 f}{\partial x_j \partial x_k} .
+\frac{\partial^2 f}{\partial x_{\ell} \partial x_m} .
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-Fix a $p \in U$, and let $e_j$ and $e_k$ be the standard basis vectors.
+Fix a $p \in U$, and let $e_{\ell}$ and $e_m$ be the standard basis vectors.
 Pick two positive numbers $s$ and $t$ small enough so that
-$p+s_0e_j +t_0e_k \in U$ whenever
+$p+s_0e_{\ell} +t_0e_m \in U$ whenever
 $0 < s_0 \leq s$ and $0 < t_0 \leq t$.  This can be done as $U$ is open and so
 contains a small open ball (or a box if you wish) around $p$.
 
 Use the mean value theorem on the function
 \begin{equation*}
-\tau \mapsto f(p+se_j + \tau e_k)-f(x + \tau e_k) ,
+\tau \mapsto f(p+se_{\ell} + \tau e_m)-f(x + \tau e_m) ,
 \end{equation*}
 on the interval $[0,t]$
 to find a $t_0 \in (0,t)$
 such that
 \begin{equation*}
-\frac{f(p+se_j + te_k)- f(p+t e_k) - f(p+s e_j)+f(p)}{t}
+\frac{f(p+se_{\ell} + te_m)- f(p+t e_m) - f(p+s e_{\ell})+f(p)}{t}
 =
-\frac{\partial f}{\partial x_k}(p + s e_j + t_0 e_k)
+\frac{\partial f}{\partial x_m}(p + s e_{\ell} + t_0 e_m)
 -
-\frac{\partial f}{\partial x_k}(p + t_0 e_k) .
+\frac{\partial f}{\partial x_m}(p + t_0 e_m) .
 \end{equation*}
 Next there exists a number $s_0 \in (0,s)$
 \begin{equation*}
-\frac{\frac{\partial f}{\partial x_k}(p + s e_j + t_0 e_k)
+\frac{\frac{\partial f}{\partial x_m}(p + s e_{\ell} + t_0 e_m)
 -
-\frac{\partial f}{\partial x_k}(p + t_0 e_k)}{s}
+\frac{\partial f}{\partial x_m}(p + t_0 e_m)}{s}
 =
-\frac{\partial^2 f}{\partial x_j \partial x_k}(p + s_0 e_j + t_0 e_k) .
+\frac{\partial^2 f}{\partial x_{\ell} \partial x_m}(p + s_0 e_{\ell} + t_0 e_m) .
 \end{equation*}
 In other words,
 \begin{equation*}
 g(s,t) \coloneqq
-\frac{f(p+se_j + te_k)- f(p+t e_k) - f(p+s e_j)+f(p)}{st}
+\frac{f(p+se_{\ell} + te_m)- f(p+t e_m) - f(p+s e_{\ell})+f(p)}{st}
 =
-\frac{\partial^2 f}{\partial x_j \partial x_k}(p + s_0 e_j + t_0 e_k) .
+\frac{\partial^2 f}{\partial x_{\ell} \partial x_m}(p + s_0 e_{\ell} + t_0 e_m) .
 \end{equation*}
 
 \begin{myfigureht}
@@ -4406,32 +4407,34 @@ $(0,0)$.
 By continuity of the second partial derivatives,
 \begin{equation*}
 \lim_{(s,t) \to (0,0)} g(s,t) = 
-\frac{\partial^2 f}{\partial x_j \partial x_k}(p) .
+\frac{\partial^2 f}{\partial x_{\ell} \partial x_m}(p) .
 \end{equation*}
 
 Now reverse the ordering.  Start with
-the function $\sigma \mapsto f(p+\sigma e_j + te_k)-f(p + \sigma e_j)$
+the function $\sigma \mapsto f(p+\sigma e_{\ell} + te_m)-f(p + \sigma
+e_{\ell})$
 find an $s_1 \in (0,s)$ such that
 \begin{equation*}
-\frac{f(p+te_k + se_j)- f(p+s e_j) - f(p+t e_k)+f(p)}{s}
+\frac{f(p+te_m + se_{\ell})- f(p+s e_{\ell}) - f(p+t e_m)+f(p)}{s}
 =
-\frac{\partial f}{\partial x_j}(p + t e_k + s_1 e_j)
+\frac{\partial f}{\partial x_{\ell}}(p + t e_m + s_1 e_{\ell})
 -
-\frac{\partial f}{\partial x_j}(p + s_1 e_j) .
+\frac{\partial f}{\partial x_{\ell}}(p + s_1 e_{\ell}) .
 \end{equation*}
 Find a $t_1 \in (0,t)$ such that
 \begin{equation*}
-\frac{\frac{\partial f}{\partial x_j}(p + t e_k + s_1 e_j)
+\frac{\frac{\partial f}{\partial x_{\ell}}(p + t e_m + s_1 e_{\ell})
 -
-\frac{\partial f}{\partial x_j}(p + s_1 e_j)}{t}
+\frac{\partial f}{\partial x_{\ell}}(p + s_1 e_{\ell})}{t}
 =
-\frac{\partial^2 f}{\partial x_k \partial x_j}(p + t_1 e_k + s_1 e_j) .
+\frac{\partial^2 f}{\partial x_m \partial x_{\ell}}(p + t_1 e_m + s_1
+e_{\ell}) .
 \end{equation*}
-So $g(s,t) = \frac{\partial^2 f}{\partial x_k \partial
-x_j}(p + t_1 e_k + s_1 e_j)$ for the same $g$ as above.  And as before
+So $g(s,t) = \frac{\partial^2 f}{\partial x_m \partial
+x_{\ell}}(p + t_1 e_m + s_1 e_{\ell})$ for the same $g$ as above.  And as before
 \begin{equation*}
 \lim_{(s,t) \to (0,0)} g(s,t) = 
-\frac{\partial^2 f}{\partial x_k \partial x_j}(p) .
+\frac{\partial^2 f}{\partial x_m \partial x_{\ell}}(p) .
 \end{equation*}
 Therefore the two partial derivatives are equal.
 \end{proof}
@@ -4449,7 +4452,7 @@ Suppose $f \colon U \to \R$ is a $C^2$ function for some open $U \subset
 Use the proof of \propref{mv:prop:swapders} to find an expression
 in terms of just the values of $f$ (analogue of the difference quotient
 for the first derivative), whose limit is
-$\frac{\partial^2 f}{ \partial x_j \partial x_k}(p)$.
+$\frac{\partial^2 f}{ \partial x_{\ell} \partial x_m}(p)$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:mixedpartialsunequal}
@@ -4477,16 +4480,16 @@ $\frac{\partial^2 f}{\partial x \partial y}(0,0) \not=
 
 \begin{exercise}
 Suppose $f \colon U \to \R$ is a $C^k$ function for some open $U \subset
-\R^n$ and $p \in U$.  Suppose $j_1,j_2,\ldots,j_k$ are integers between $1$
+\R^n$ and $p \in U$.  Suppose ${\ell}_1,{\ell}_2,\ldots,{\ell}_k$ are integers between $1$
 and $n$, and suppose $\sigma=(\sigma_1,\sigma_2,\ldots,\sigma_k)$ is a
 permutation of $(1,2,\ldots,k)$.  Prove
 \begin{equation*}
-\frac{\partial^{k} f}{\partial x_{j_{k}} \partial x_{j_{k-1}}
-\cdots \partial x_{j_1}} (p)
+\frac{\partial^{k} f}{\partial x_{{\ell}_{k}} \partial x_{{\ell}_{k-1}}
+\cdots \partial x_{{\ell}_1}} (p)
 =
-\frac{\partial^{k} f}{\partial x_{j_{\sigma_k}} \partial
-x_{j_{\sigma_{k-1}}}
-\cdots \partial x_{j_{\sigma_1}}} (p) .
+\frac{\partial^{k} f}{\partial x_{{\ell}_{\sigma_k}} \partial
+x_{{\ell}_{\sigma_{k-1}}}
+\cdots \partial x_{{\ell}_{\sigma_1}}} (p) .
 \end{equation*}
 \end{exercise}
 

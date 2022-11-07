@@ -32,8 +32,8 @@ called the \emph{\myindex{imaginary axis}}.  The set $\C$ is sometimes called th
 
 Define:
 \begin{align*}
-& (x,y) + (s,t) := (x+s,y+t) , \\
-& (x,y) (s,t) := (xs-yt,xt+ys) .
+& (x,y) + (s,t) \coloneqq (x+s,y+t) , \\
+& (x,y) (s,t) \coloneqq (xs-yt,xt+ys) .
 \end{align*}
 Under the identification above, we have $0 = (0,0)$ and $1 = (1,0)$.  These
 two operations make the plane into a field (exercise).
@@ -42,7 +42,7 @@ We write a complex number $(x,y)$ as $x+iy$, where we
 define\footnote{Note that engineers use $j$ instead of $i$.}
 \glsadd{not:imaginary}
 \begin{equation*}
-i := (0,1) .
+i \coloneqq (0,1) .
 \end{equation*}
 Notice that $i^2 = (0,1)(0,1) = (0-1,0+0) = -1$.
 That is, $i$ is a solution to the polynomial equation
@@ -69,19 +69,19 @@ we call $y$
 the \emph{\myindex{imaginary part}} of $z$.  We write
 \glsadd{not:realpart}\glsadd{not:imagpart}
 \begin{equation*}
-\Re\, z := x , \qquad
-\Im\, z := y .
+\Re\, z \coloneqq x , \qquad
+\Im\, z \coloneqq y .
 \end{equation*}
 Define 
 \glsadd{not:conj}
 \emph{\myindex{complex conjugate}} as
 \begin{equation*}
-\bar{z} := x-iy ,
+\bar{z} \coloneqq x-iy ,
 \end{equation*}
 and define \emph{\myindex{modulus}} as
 \glsadd{not:modulus}
 \begin{equation*}
-\sabs{z} := \sqrt{x^2+y^2} .
+\sabs{z} \coloneqq \sqrt{x^2+y^2} .
 \end{equation*}
 \end{defn}
 
@@ -202,9 +202,9 @@ numbers. The series
 \begin{equation*}
 \lim_{k\to\infty} \sum_{n=1}^k z_n \qquad \text{exists.}
 \end{equation*}
-As before, we sometimes write $\sum z_n$ for the series.
-A series \emph{converges absolutely}\index{converges
-absolutely!complex series} if $\sum \sabs{z_n}$ converges.
+%As before, we sometimes write $\sum z_n$ for the series.
+A series \emph{converges absolutely}\index{converges absolutely!complex series}
+if $\sum_{n=1}^\infty \sabs{z_n}$ converges.
 
 We say a series
 is \emph{Cauchy}\index{Cauchy!complex series}
@@ -213,7 +213,7 @@ propositions have essentially the same proofs as for real series and we
 leave them as exercises.
 
 \begin{prop} \label{prop:cachysercomplex}
-The complex series $\sum z_n$ is Cauchy if for every $\epsilon > 0$, 
+The complex series $\sum_{n=1}^\infty z_n$ is Cauchy if for every $\epsilon > 0$, 
 there exists an $M \in \N$ such that for every $n \geq M$
 and every $k > n$, we have
 \begin{equation*}
@@ -223,10 +223,10 @@ and every $k > n$, we have
 \end{prop}
 
 \begin{prop} \label{prop:absconvmeansconv}
-If a complex series $\sum z_n$ converges absolutely, then it converges.
+If a complex series $\sum_{n=1}^\infty z_n$ converges absolutely, then it converges.
 \end{prop}
 
-The series $\sum \sabs{z_n}$ is a real series.  All the
+The series $\sum_{n=1}^\infty \sabs{z_n}$ is a real series.  All the
 convergence tests (ratio test, root test, etc.)\ that talk about
 absolute convergence work with the numbers $\sabs{z_n}$, that is, they
 are really talking about convergence of series of nonnegative real
@@ -245,13 +245,13 @@ $f = u+i\,v$ for real-valued functions $u \colon X \to \R$ and $v \colon X \to
 
 Suppose we wish to integrate
 $f \colon [a,b] \to \C$.  We write
-$f = u+i\,v$ for real-valued $u$ and $v$.
+$f = u+i\,v$ for real-valued $u$ and~$v$.
 We say that $f$ is \emph{Riemann integrable}\index{Riemann
 integrable!complex-valued function}
 if $u$ and $v$ are Riemann
 integrable, and in this case we define
 \begin{equation*}
-\int_a^b f := \int_a^b u + i \int_a^b v .
+\int_a^b f \coloneqq \int_a^b u + i \int_a^b v .
 \end{equation*}
 We make the same definition for every other type of integral (improper,
 multivariable, etc.).
@@ -267,7 +267,7 @@ the
 as
 \glsadd{not:mvder}
 \begin{equation*}
-f'(t) := u'(t) + i \, v'(t) .
+f'(t) \coloneqq u'(t) + i \, v'(t) .
 \end{equation*}
 The linear operator representing the derivative is the multiplication by
 the complex number $f'(t)$, so nothing is lost in this identification.
@@ -402,11 +402,11 @@ We don't even a priory know if both sides exist, let alone if they are equal eac
 \begin{example}
 The functions $f_n \colon \R \to \R$,
 \begin{equation*}
-f_n(x) := \frac{1}{1+nx^2},
+f_n(x) \coloneqq \frac{1}{1+nx^2},
 \end{equation*}
 are continuous and converge pointwise to the discontinuous function
 \begin{equation*}
-f(x) := 
+f(x) \coloneqq 
 \begin{cases}
 1 & \text{if } x=0, \\
 0 & \text{else.}
@@ -426,7 +426,7 @@ for all $n \geq M$ and all $x \in X$, we have
 d\bigl(f_n(x),f(x)\bigr) < \epsilon .
 \end{equation*}
 
-A series $\sum f_n$ of complex-valued functions converges uniformly if the sequence of
+A series $\sum_{n=1}^\infty f_n$ of complex-valued functions converges uniformly if the sequence of
 partial sums converges uniformly, that is for every $\epsilon > 0$
 there exists an $M$ such that
 for all $n \geq M$ and all $x \in X$
@@ -466,7 +466,7 @@ then $\{f_n\}$ converges uniformly.
 
 For $f \colon X \to \C$, we write\glsadd{not:uniformnorm}
 \begin{equation*}
-\snorm{f}_X := \sup_{x \in X} \sabs{f(x)} .
+\snorm{f}_X \coloneqq \sup_{x \in X} \sabs{f(x)} .
 \end{equation*}
 We call $\snorm{\cdot}_X$
 the \emph{\myindex{supremum norm}} or \emph{\myindex{uniform norm}},
@@ -592,10 +592,10 @@ continuous?
 Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
 Suppose $f_n \colon X \to Y$ converge uniformly to
  $f \colon X \to Y$.  
-Let $\{ x_k \}$ be a sequence in $X$ and $x := \lim \, x_k$.  Suppose
+Let $\{ x_k \}$ be a sequence in $X$ and $x \coloneqq \lim \, x_k$.  Suppose
 that
 \begin{equation*}
-a_n := \lim_{k \to \infty} f_n(x_k)
+a_n \coloneqq \lim_{k \to \infty} f_n(x_k)
 \end{equation*}
 exists for all $n$.  Then
 $\{a_n\}$ converges and 
@@ -627,7 +627,7 @@ d_Y\bigl(f_m(x_k),a_m\bigr)$ and take the limit as $k \to \infty$ to find
 d_Y(a_n,a_m) \leq \epsilon .
 \end{equation*}
 Hence $\{a_n\}$ is Cauchy and converges since $Y$ is complete.  Write
-$a := \lim \, a_n$.
+$a \coloneqq \lim \, a_n$.
 
 Find a $k \in \N$ such that
 \begin{equation*}
@@ -671,7 +671,7 @@ then $f$ is continuous.
 
 The converse is not true.  Just because the limit is continuous does not mean
 that the convergence is uniform.  For example:
-$f_n \colon (0,1) \to \R$ defined by $f_n(x) := x^n$ converge to
+$f_n \colon (0,1) \to \R$ defined by $f_n(x) \coloneqq x^n$ converge to
 the zero function, but not uniformly.  However, if we add extra conditions
 on the sequence, we can obtain a partial converse such as Dini's theorem,
 \volIref{see \exerciseref*{vI-exercise:dinisthm} from volume I}{see \exerciseref{exercise:dinisthm}}.
@@ -789,7 +789,7 @@ Takagi} (1875--1960) was a Japanese mathematician.}, is a different example than
 
 Define
 \begin{equation*}
-\varphi(x) :=\sabs{x} \qquad \text{for } x \in [-1,1] .
+\varphi(x) \coloneqq \sabs{x} \qquad \text{for } x \in [-1,1] .
 \end{equation*}
 Extend the definition of $\varphi$ to all of $\R$ by making it
 2-periodic:
@@ -802,11 +802,11 @@ See \figureref{fig:triangwave}.
 \caption{The 2-periodic function $\varphi$.\label{fig:triangwave}}
 \end{myfigureht}
 
-As $\sum {\left(\frac{3}{4}\right)}^n$ converges and $\sabs{\varphi(x)} \leq
-1$ for all $x$, we have by the $M$-test
-(\thmref{thm:weiermtest}) that
+As $\sum_{n=0}^\infty {\left(\frac{3}{4}\right)}^n$ converges and $\sabs{\varphi(x)} \leq
+1$ for all $x$, by the $M$-test
+(\thmref{thm:weiermtest}),
 \begin{equation*}
-f(x) := \sum_{n=0}^\infty 
+f(x) \coloneqq \sum_{n=0}^\infty 
 {\left(\frac{3}{4}\right)}^n \varphi(4^n x)
 \end{equation*}
 converges uniformly and hence is continuous.
@@ -822,7 +822,7 @@ We claim $f \colon
 Fix $x$, and we will show $f$ is not differentiable at $x$.
 Define
 \begin{equation*}
-\delta_m := \pm \frac{1}{2} 4^{-m} ,
+\delta_m \coloneqq \pm \frac{1}{2} 4^{-m} ,
 \end{equation*}
 where the sign is chosen so that there is no integer
 between $4^m x$ and $4^m(x+\delta_m) = 4^m x \pm \frac{1}{2}$.
@@ -837,7 +837,7 @@ We want to look at the difference quotient
 \end{equation*}
 Fix $m$ for a moment.  Consider the expression inside the series:
 \begin{equation*}
-\gamma_{n} :=
+\gamma_{n} \coloneqq
 \frac{\varphi\bigl(4^n(x+\delta_m)\bigr)-\varphi(4^nx)}{\delta_m} .
 \end{equation*}
 If $n > m$, then $4^n\delta_m$ is an even integer.  As $\varphi$
@@ -942,7 +942,7 @@ continuous complex-valued functions $C(X,\C)$.
 \begin{enumerate}[a)]
 \item
 Prove that
-$f_n(x) := 2^{-n} \sin(2^n x)$
+$f_n(x) \coloneqq 2^{-n} \sin(2^n x)$
 converge uniformly to zero, but there exists a dense set $D \subset \R$
 such that $\lim_{n\to\infty} f_n'(x) = 1$ for all $x \in D$.
 \item
@@ -955,7 +955,7 @@ where the derivatives of the partial sums do not converge.
 \end{exercise}
 
 \begin{exercise}
-Prove that $\snorm{f}_{C^1} := \snorm{f}_{[a,b]}+\snorm{f'}_{[a,b]}$
+Prove that $\snorm{f}_{C^1} \coloneqq \snorm{f}_{[a,b]}+\snorm{f'}_{[a,b]}$
 is a norm on the vector space of
 continuously differentiable complex-valued functions $C^1\bigl([a,b],\C\bigr)$.
 \end{exercise}
@@ -974,7 +974,7 @@ Work through the following counterexample to the converse of
 the Weierstrass $M$-test (\thmref{thm:weiermtest}).  Define
 $f_n \colon [0,1] \to \R$ by
 \begin{equation*}
-f_n(x) :=
+f_n(x) \coloneqq
 \begin{cases}
 \frac{1}{n} & \text{if } \frac{1}{n+1} < x < \frac{1}{n},\\
 0	    & \text{else.}
@@ -987,7 +987,8 @@ does not converge.
 
 \begin{exercise}
 Suppose $f_n \colon [0,1] \to \R$ are monotone increasing functions and
-suppose that $\sum f_n$ converges pointwise.  Prove that $\sum f_n$
+suppose that $\sum_{n=1}^\infty f_n$ converges pointwise.  Prove that
+$\sum_{n=1}^\infty f_n$
 converges uniformly.
 \end{exercise}
 
@@ -1063,7 +1064,8 @@ vertical dashed line.\label{fig:1over1mz}}
 We proved several results for power series of a real variable in
 \volIref{\sectionref*{vI-sec:moreonseries} of volume I}{\sectionref{sec:moreonseries}}.   For the most part the convergence
 properties of power series deal with the series
-$\sum \sabs{c_k} \, \sabs{z-a}^k$ and so we have already proved many results about complex power
+$\sum_{k=0}^\infty \sabs{c_k} \, \sabs{z-a}^k$
+and so we have already proved many results about complex power
 series.  In particular, we computed the so-called
 \emph{radius of convergence} of a power series.
 
@@ -1088,13 +1090,13 @@ We use the real version of this proposition,
 \volIref{\propref*{vI-prop:powerserrealradius} in volume I}{\propref{prop:powerserrealradius}}.
 Let
 \begin{equation*}
-R := \limsup_{n\to\infty} \sqrt[n]{\sabs{c_n}} .
+R \coloneqq \limsup_{n\to\infty} \sqrt[n]{\sabs{c_n}} .
 \end{equation*}
 If $R = 0$, then
 $\sum_{n=0}^\infty \sabs{c_n} \, \sabs{z-a}^n$ converges for all $z$.
 If $R = \infty$, then
 $\sum_{n=0}^\infty \sabs{c_n} \, \sabs{z-a}^n$ converges only at $z=a$.
-Otherwise, let $\rho := \nicefrac{1}{R}$ and
+Otherwise, let $\rho \coloneqq \nicefrac{1}{R}$ and
 $\sum_{n=0}^\infty \sabs{c_n} \, \sabs{z-a}^n$ converges when
 $\sabs{z-a} < \rho$, and diverges (in fact the terms of the series
 do not go to zero) when $\sabs{z-a} > \rho$.
@@ -1120,9 +1122,9 @@ is convergent if $\rho > 0$.
 \caption{Radius of convergence.\label{fig:radiusconvcomplex}}
 \end{myfigureht}
 
-If $\sum c_n {(z-a)}^n$ converges for some $z$, then
+If $\sum_{n=0}^\infty c_n {(z-a)}^n$ converges for some $z$, then
 \begin{equation*}
-\sum c_n {(w-a)}^n
+\sum_{n=0}^\infty c_n {(w-a)}^n
 \end{equation*}
 converges absolutely whenever $\sabs{w-a} < \sabs{z-a}$.
 Conversely if the series diverges at $z$, then it must diverge at $w$
@@ -1154,7 +1156,7 @@ Let us list some series we already know:
 \begin{example}
 Note the difference between $\frac{1}{1-z}$ and its power series.  Let us
 expand $\frac{1}{1-z}$ as power series around a point $a \not= 1$.
-Let $c := \frac{1}{1-a}$, then
+Let $c \coloneqq \frac{1}{1-a}$, then
 \begin{equation*}
 \frac{1}{1-z} = 
 \frac{c}{1-c(z-a)}
@@ -1164,7 +1166,7 @@ c
 =
 \sum_{n=0}^\infty \left( \frac{1}{{(1-a)}^{n+1}} \right) {(z-a)}^n .
 \end{equation*}
-The series $\sum c^n {(z-a)}^n$ converges if and only if 
+The series $\sum_{n=0}^\infty c^n {(z-a)}^n$ converges if and only if 
 the series on the right-hand side converges and
 \begin{equation*}
 \limsup_{n\to\infty}
@@ -1191,7 +1193,7 @@ result later.
 \begin{prop}
 If
 \begin{equation*}
-f(z) := \sum_{n=0}^\infty c_n {(z-a)}^n
+f(z) \coloneqq \sum_{n=0}^\infty c_n {(z-a)}^n
 \end{equation*}
 is convergent in $B(a,\rho)$ for some $\rho > 0$, then
 $f \colon B(a,\rho) \to \C$ is continuous.
@@ -1212,7 +1214,7 @@ In \volIref{\corref*{vI-cor:differentiatepowerser} of volume I}{\corref{cor:diff
 differentiate real power series term by term.  That is
 we proved that if
 \begin{equation*}
-f(x) := \sum_{n=0}^\infty c_n {(x-a)}^n
+f(x) \coloneqq \sum_{n=0}^\infty c_n {(x-a)}^n
 \end{equation*}
 converges for real $x$ in an interval around $a \in \R$, then we can differentiate
 term by term and obtain a series
@@ -1264,7 +1266,7 @@ For an example,
 see \volIref{\exerciseref*{vI-exercise:nonanalytic} in volume I}{\exerciseref{exercise:nonanalytic}}:  The
 function
 \begin{equation*}
-f(x) :=
+f(x) \coloneqq
 \begin{cases}
 e^{-1/x} & \text{if } x > 0,\\
 0        & \text{if } x \leq 0,
@@ -1295,21 +1297,21 @@ We need a theorem on swapping limits of series, that is,
 Fubini's theorem for sums.
 
 \begin{thm}[\myindex{Fubini for sums}] \label{thm:fubiniforsums}
-Let $\{ a_{kj} \}_{k=1,j=1}^\infty$ be a double
+Let $\{ a_{k,m} \}_{k=1,m=1}^\infty$ be a double
 sequence of complex numbers and suppose that for every $k$ the series
 \begin{equation*}
-\sum_{j=1}^\infty \sabs{a_{kj}} \qquad \text{converges}
+\sum_{m=1}^\infty \sabs{a_{k,m}} \qquad \text{converges}
 \end{equation*}
 and furthermore that
 \begin{equation*}
-\sum_{k=1}^\infty \left( \sum_{j=1}^\infty \sabs{a_{kj}} \right)
+\sum_{k=1}^\infty \left( \sum_{m=1}^\infty \sabs{a_{k,m}} \right)
 \qquad \text{converges}.
 \end{equation*}
 Then
 \begin{equation*}
-\sum_{k=1}^\infty \left( \sum_{j=1}^\infty a_{kj} \right)
+\sum_{k=1}^\infty \left( \sum_{m=1}^\infty a_{k,m} \right)
 =
-\sum_{j=1}^\infty \left( \sum_{k=1}^\infty a_{kj} \right) ,
+\sum_{m=1}^\infty \left( \sum_{k=1}^\infty a_{k,m} \right) ,
 \end{equation*}
 where all the series involved converge.
 \end{thm}
@@ -1320,33 +1322,33 @@ and treat it as a metric space with the metric inherited from $\R$.
 Define the sequence of functions $f_k \colon E \to \C$
 by
 \begin{equation*}
-f_k(\nicefrac{1}{n}) := \sum_{j=1}^n a_{kj}
+f_k(\nicefrac{1}{n}) \coloneqq \sum_{m=1}^n a_{k,m}
 \qquad
 \text{and}
 \qquad
-f_k(0) := \sum_{j=1}^\infty a_{kj} .
+f_k(0) \coloneqq \sum_{m=1}^\infty a_{k,m} .
 \end{equation*}
 As the series converges, each $f_k$ is continuous at $0$
 (since 0 is the only cluster point, they are continuous at every point of
 $E$, but we don't need that).
 For all $x \in E$, we have
 \begin{equation*}
-\sabs{f_k(x)} \leq \sum_{j=1}^\infty \sabs{a_{kj}} .
+\sabs{f_k(x)} \leq \sum_{m=1}^\infty \sabs{a_{k,m}} .
 \end{equation*}
-By knowing that $\sum_k \sum_j \sabs{a_{kj}}$ converges (and does not depend on
+By knowing that $\sum_k \sum_m \sabs{a_{k,m}}$ converges (and does not depend on
 $x$), we know that
 \begin{equation*}
 \sum_{k=1}^n f_k(x)
 \end{equation*}
 converges uniformly on $E$.  Define
 \begin{equation*}
-g(x) := \sum_{k=1}^\infty f_k(x) ,
+g(x) \coloneqq \sum_{k=1}^\infty f_k(x) ,
 \end{equation*}
 which is therefore a continuous function at $0$.
 So
 \begin{equation*}
 \begin{split}
-\sum_{k=1}^\infty \left( \sum_{j=1}^\infty a_{kj} \right)
+\sum_{k=1}^\infty \left( \sum_{m=1}^\infty a_{k,m} \right)
 & =
 \sum_{k=1}^\infty f_k(0)
 = g(0)
@@ -1354,11 +1356,11 @@ So
 &= 
 \lim_{n\to\infty}\sum_{k=1}^\infty f_k(\nicefrac{1}{n})
 = 
-\lim_{n\to\infty}\sum_{k=1}^\infty \sum_{j=1}^n a_{kj} \\
+\lim_{n\to\infty}\sum_{k=1}^\infty \sum_{m=1}^n a_{k,m} \\
 &= 
-\lim_{n\to\infty}\sum_{j=1}^n \sum_{k=1}^\infty a_{kj}
+\lim_{n\to\infty}\sum_{m=1}^n \sum_{k=1}^\infty a_{k,m}
 = 
-\sum_{j=1}^\infty \left( \sum_{k=1}^\infty a_{kj} \right) . \qedhere
+\sum_{m=1}^\infty \left( \sum_{k=1}^\infty a_{k,m} \right) . \qedhere
 \end{split}
 \end{equation*}
 \end{proof}
@@ -1371,7 +1373,7 @@ in some interval, we can expand the function around every point.
 \label{thm:tayloranal}
 Let
 \begin{equation*}
-f(x) := \sum_{k=0}^\infty a_k x^k
+f(x) \coloneqq \sum_{k=0}^\infty a_k x^k
 \end{equation*}
 be a power series converging in $(-\rho,\rho)$ for some $\rho > 0$.  Given any $a \in
 (-\rho,\rho)$,
@@ -1395,7 +1397,7 @@ f(x) &= \sum_{k=0}^\infty a_k {\bigl((x-a)+a\bigr)}^k \\
 &= \sum_{k=0}^\infty a_k \sum_{m=0}^k \binom{k}{m} a^{k-m} {(x-a)}^m .
 \end{split}
 \end{equation*}
-Define $c_{k,m} := a_k \binom{k}{m} a^{k-m}$ if $m \leq k$ and $0$ if $m >
+Define $c_{k,m} \coloneqq a_k \binom{k}{m} a^{k-m}$ if $m \leq k$ and $0$ if $m >
 k$.  Then 
 \begin{equation} \label{eq:tsproof}
 f(x) = \sum_{k=0}^\infty \, \sum_{m=0}^\infty c_{k,m} {(x-a)}^m .
@@ -1437,24 +1439,24 @@ by power series are analytic.
 
 \begin{cor} \label{cor:powerseranalytic}
 For every $a \in \C$,
-if $\sum c_k {(z-a)}^k$ converges to $f(z)$ in $B(a,\rho)$ and $b \in
+if $\sum_{k=0}^\infty c_k {(z-a)}^k$ converges to $f(z)$ in $B(a,\rho)$ and $b \in
 B(a,\rho)$,
 then there exists a power series
-$\sum d_k {(z-b)}^k$ that converges to $f(z)$ in $B(b,\rho-\sabs{b-a})$.
+$\sum_{k=0}^\infty d_k {(z-b)}^k$ that converges to $f(z)$ in $B(b,\rho-\sabs{b-a})$.
 \end{cor}
 
 \begin{proof}
 Without loss of generality assume that $a=0$.  We can rotate to assume that $b$ is real, but
 since that is harder to picture, let us do it explicitly.
-Let $\alpha := \frac{\bar{b}}{\sabs{b}}$.
+Let $\alpha \coloneqq \frac{\bar{b}}{\sabs{b}}$.
 Notice that
 \begin{equation*}
 \abs{\nicefrac{1}{\alpha}} = \sabs{\alpha}
 = 1 .
 \end{equation*}
 Therefore the series
-$\sum c_k {(\nicefrac{z}{\alpha})}^k = 
-\sum c_k \alpha^{-k} {z}^k$
+$\sum_{k=0}^\infty c_k {(\nicefrac{z}{\alpha})}^k = 
+\sum_{k=0}^\infty c_k \alpha^{-k} {z}^k$
 converges to $f(\nicefrac{z}{\alpha})$ in $B(0,\rho)$.
 When $z=x$ is real
 we apply \thmref{thm:tayloranal} at $\sabs{b}$ and get
@@ -1497,7 +1499,7 @@ Can you see why? (exercise)
 \subsection{Identity theorem for analytic functions}
 
 \begin{lemma}
-Suppose $f(z) = \sum a_k z^k$ is a convergent power series and
+Suppose $f(z) = \sum_{k=0}^\infty a_k z^k$ is a convergent power series and
 $\{ z_n \}$ is a sequence of nonzero complex numbers converging to 0,
 such that $f(z_n) = 0$ for all $n$.  Then $a_k = 0$ for every $k$.
 \end{lemma}
@@ -1575,43 +1577,44 @@ theorem for connected open subsets of $\R$, which are just open intervals.
 \begin{exercise}
 Let
 \begin{equation*}
-a_{kj} :=
+a_{k,m} \coloneqq
 \begin{cases}
-1        & \text{if } k=j,\\
--2^{k-j} & \text{if } k<j,\\
-0        & \text{if } k>j.
+1        & \text{if } k=m,\\
+-2^{k-m} & \text{if } k<m,\\
+0        & \text{if } k>m.
 \end{cases}
 \end{equation*}
 Compute (or show the limit doesn't exist):
 \\
-a)~$\displaystyle \sum_{j=1}^\infty \sabs{a_{kj}}~$ for every $k$,
+a)~$\displaystyle \sum_{m=1}^\infty \sabs{a_{k,m}}~$ for all $k$,
 %mbxSTARTIGNORE
 \hspace{\fill}
 %mbxENDIGNORE
 %mbxlatex \qquad
-b)~$\displaystyle \sum_{k=1}^\infty \sabs{a_{kj}}~$ for every $j$,
+b)~$\displaystyle \sum_{k=1}^\infty \sabs{a_{k,m}}~$ for all $m$,
 %mbxSTARTIGNORE
 \hspace{\fill}
 %mbxENDIGNORE
 %mbxlatex \qquad
-c)~$\displaystyle \sum_{k=1}^\infty \sum_{j=1}^\infty \sabs{a_{kj}}$,
+c)~$\displaystyle \sum_{k=1}^\infty \sum_{m=1}^\infty \sabs{a_{k,m}}$,
 %mbxSTARTIGNORE
 \hspace{\fill}
 %mbxENDIGNORE
 %mbxlatex \qquad
-d)~$\displaystyle \sum_{k=1}^\infty \sum_{j=1}^\infty a_{kj}$,
+d)~$\displaystyle \sum_{k=1}^\infty \sum_{m=1}^\infty a_{k,m}$,
 %mbxSTARTIGNORE
 \hspace{\fill}
 %mbxENDIGNORE
 %mbxlatex \qquad
-e)~$\displaystyle \sum_{j=1}^\infty \sum_{k=1}^\infty a_{kj}$.
+e)~$\displaystyle \sum_{m=1}^\infty \sum_{k=1}^\infty a_{k,m}$.
 \\
 Hint: Fubini for sums does not apply, in fact, answers to
 d) and e) are different.
 \end{exercise}
 
 \begin{exercise}
-Let $f(x) := \frac{1}{1+x^2}$.  Prove that
+\pagebreak[2]
+Let $f(x) \coloneqq \frac{1}{1+x^2}$.  Prove that
 \begin{enumerate}[a)]
 \item
 $f$ is analytic function on all of $\R$
@@ -1624,6 +1627,7 @@ the power series for $f$ at the origin is 1.
 
 
 \begin{exercise}
+\pagebreak[2]
 Suppose $f \colon \C \to \C$ is analytic.  Show that for each
 $n$, there are at most finitely many zeros of $f$ in $B(0,n)$, that is,
 $f^{-1}(0) \cap B(0,n)$ is finite for each $n$.
@@ -1639,7 +1643,7 @@ for all $z \in U$.
 \begin{exercise}
 Suppose $U \subset \C$ is open and connected, $0 \in U$, and $f \colon U
 \to \C$ is analytic.  For real $x$ and $y$,
-let $h(x) := f(x)$ and $g(y) := -i \, f(iy)$.
+let $h(x) \coloneqq f(x)$ and $g(y) \coloneqq -i \, f(iy)$.
 Show that $h$ and $g$ are infinitely differentiable at the origin and
 $h'(0) = g'(0)$.
 \end{exercise}
@@ -1652,10 +1656,10 @@ Prove that the series of $f$ at the origin converges for all $z \in \C$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f(z) := \sum c_n z^n$ with a radius of convergence 1.  Suppose $f(0)
+Suppose $f(z) \coloneqq \sum_{n=0}^\infty c_n z^n$ with a radius of convergence 1.  Suppose $f(0)
 = 0$, but $f$ is not the zero function.
 Show that there exists a $k \in \N$ and a convergent
-power series $g(z) := \sum d_n z^n$ with radius of convergence 1
+power series $g(z) \coloneqq \sum_{n=0}^\infty d_n z^n$ with radius of convergence 1
 such that $f(z) = z^k g(z)$ for all $z \in B(0,1)$, and $g(0) \not= 0$.
 \end{exercise}
 
@@ -1669,13 +1673,13 @@ U$.
 \begin{exercise}
 For $\alpha \in \C$ and $k=0,1,2,3\ldots$, define
 \begin{equation*}
-\binom{\alpha}{k} := \frac{\alpha(\alpha-1)\cdots(\alpha-k)}{k!} .
+\binom{\alpha}{k} \coloneqq \frac{\alpha(\alpha-1)\cdots(\alpha-k)}{k!} .
 \end{equation*}
 \begin{enumerate}[a)]
 \item
 Show that the series
 \begin{equation*}
-f(z) := \sum_{k=0}^\infty \binom{\alpha}{k} z^k
+f(z) \coloneqq \sum_{k=0}^\infty \binom{\alpha}{k} z^k
 \end{equation*}
 converges whenever $\abs{z} < 1$.
 In fact, prove that for $\alpha = 0,1,2,3,\ldots$ the radius of
@@ -1697,9 +1701,9 @@ that $f$ is real-valued on $\R$.
 \end{exercise}
 
 \begin{exercise}
-Let $\D := B(0,1)$ be the unit disc.  Suppose
+Let $\D \coloneqq B(0,1)$ be the unit disc.  Suppose
 $f \colon \D \to \C$ is analytic with power series
-$\sum c_n z^n$.  Suppose $\sabs{c_n} \leq 1$ for all $n$.  Prove that for
+$\sum_{n=0}^\infty c_n z^n$.  Suppose $\sabs{c_n} \leq 1$ for all $n$.  Prove that for
 all $z \in \D$, we have
 $\sabs{f(z)} \leq \frac{1}{1-\sabs{z}}$.
 \end{exercise}
@@ -1716,7 +1720,7 @@ $\sabs{f(z)} \leq \frac{1}{1-\sabs{z}}$.
 
 Define
 \begin{equation*}
-E(z) := \sum_{k=0}^\infty \frac{1}{k!} z^k .
+E(z) \coloneqq \sum_{k=0}^\infty \frac{1}{k!} z^k .
 \end{equation*}
 This series converges for all $z \in \C$ and so by
 \corref{cor:powerseranalytic}, $E$ is analytic on $\C$.   We notice that $E(0) = 1$,
@@ -1731,7 +1735,7 @@ $E(0) = 1$ is the exponential.  In other words, for $x \in \R$, $e^x = E(x)$.
 
 For complex numbers $z$, we define\glsadd{not:complexexp}
 \begin{equation*}
-e^z := E(z) = 
+e^z \coloneqq E(z) = 
 \sum_{k=0}^\infty \frac{1}{k!} z^k .
 \end{equation*}
 On the real line this new definition agrees with our previous one.
@@ -1777,7 +1781,7 @@ A simple consequence is that $e^z\not=0$ for all $z \in \C$,
 as $e^z e^{-z} = e^{z-z} = 1$.  A more complicated consequence is that we
 can easily compute the power series for the exponential at a point $a \in
 \C$:
-$e^z = e^a e^{z-a} = \sum \frac{e^a}{k!} {(z-a)}^k$.
+$e^z = e^a e^{z-a} = \sum_{k=0}^\infty \frac{e^a}{k!} {(z-a)}^k$.
 
 \subsection{Trigonometric functions and $\pi$}
 
@@ -1789,9 +1793,9 @@ e^{x+iy} = e^x \bigl( \cos(y) + i \sin(y) \bigr) .
 In fact, we define sine and cosine for all complex $z$:
 \glsadd{not:sin}\glsadd{not:cos}
 \begin{equation*}
-\cos(z) := \frac{e^{iz} + e^{-iz}}{2}
+\cos(z) \coloneqq \frac{e^{iz} + e^{-iz}}{2}
 \qquad\text{and}\qquad
-\sin(z) := \frac{e^{iz} - e^{-iz}}{2i} .
+\sin(z) \coloneqq \frac{e^{iz} - e^{-iz}}{2i} .
 \end{equation*}
 
 Let us use our definition to prove the common properties we usually
@@ -1846,7 +1850,7 @@ e^{iz} = \cos(z) + i\sin(z) \qquad
 There exists an $x > 0$ such that $\cos(x) = 0$.  We define
 \glsadd{not:pi}
 \begin{equation*}
-\pi := 2 \, \inf \{ x > 0 : \cos(x) = 0 \} .
+\pi \coloneqq 2 \, \inf \{ x > 0 : \cos(x) = 0 \} .
 \end{equation*}
 \item
 For all $z \in \C$, 
@@ -1900,7 +1904,7 @@ We leave the computation of the derivatives to the reader as exercises.
 
 Let us now prove that $\sin(x) \leq x$ for $x \geq 0$.
 Consider
-$f(x) := x-\sin(x)$ and differentiate:
+$f(x) \coloneqq x-\sin(x)$ and differentiate:
 \begin{equation*}
 f'(x) = \frac{d}{dx} \bigl[ x - \sin(x) \bigr]
 =
@@ -2089,8 +2093,8 @@ $\cos(z + w) = \cos(z) \cos(w) - \sin(z) \sin(w)$ for all $z,w \in \C$.
 \end{exercise}
 
 \begin{exercise}
-Define $\operatorname{sinc}(z) := \frac{\sin(z)}{z}$ for $z \not=0$ and
-$\operatorname{sinc}(0) := 1$.
+Define $\operatorname{sinc}(z) \coloneqq \frac{\sin(z)}{z}$ for $z \not=0$ and
+$\operatorname{sinc}(0) \coloneqq 1$.
 Show that sinc is analytic and compute its power series at zero.
 \end{exercise}
 
@@ -2099,8 +2103,8 @@ Show that sinc is analytic and compute its power series at zero.
 Define the \emph{\myindex{hyperbolic sine}} and
 \emph{\myindex{hyperbolic cosine}} by
 \begin{equation*}
-\sinh(z) := \frac{e^z-e^{-z}}{2}, \qquad
-\cosh(z) := \frac{e^z+e^{-z}}{2}.
+\sinh(z) \coloneqq \frac{e^z-e^{-z}}{2}, \qquad
+\cosh(z) \coloneqq \frac{e^z+e^{-z}}{2}.
 \end{equation*}
 \end{exnote}
 
@@ -2127,7 +2131,7 @@ $x$.
 \end{exercise}
 
 \begin{exercise}
-Define $\tan(x) := \frac{\sin(x)}{\cos(x)}$ as usual.
+Define $\tan(x) \coloneqq \frac{\sin(x)}{\cos(x)}$ as usual.
 \begin{enumerate}[a)]
 \item
 Show that for $x \in (\nicefrac{-\pi}{2},\nicefrac{\pi}{2})$
@@ -2316,7 +2320,7 @@ such that $p(z_0) = 0$.
 \end{thm}
 
 \begin{proof}
-Let $\mu := \inf \bigl\{ \sabs{p(z)} : z \in \C \bigr\}$.  Find an $R$ such that
+Let $\mu \coloneqq \inf \bigl\{ \sabs{p(z)} : z \in \C \bigr\}$.  Find an $R$ such that
 for all $z$ with $\sabs{z} \geq R$, we have $\sabs{p(z)} \geq \mu+1$.
 Therefore, every $z$ with $\sabs{p(z)}$ close to $\mu$ must be in the
 closed ball $C(0,R) = \bigl\{ z \in \C : \sabs{z} \leq R \bigr\}$.  As $\sabs{p(z)}$
@@ -2358,7 +2362,7 @@ Of course, same holds for polynomials.
 \begin{exnote}
 \pagebreak[1]
 A \emph{\myindex{rational function}} is a function
-$f(z) := \frac{p(z)}{q(z)}$
+$f(z) \coloneqq \frac{p(z)}{q(z)}$
 where $p$ and $q$ are polynomials and $q$ is not identically zero.
 A point $z_0 \in \C$ where $f(z_0) = 0$ (and therefore $p(z_0) = 0$)
 is called a \emph{zero}\index{zero of a function}.
@@ -2392,7 +2396,7 @@ Hint: If $z_0$ is a zero of $p$, without loss of generality assume $z_0 =
 
 \begin{exercise}
 Prove that if $z_0$ is a removable singularity of a rational
-function $f(z) := \frac{p(z)}{q(z)}$, then there exist
+function $f(z) \coloneqq \frac{p(z)}{q(z)}$, then there exist
 polynomials $\widetilde{p}$ and $\widetilde{q}$ such that
 $\widetilde{q}(z_0) \not= 0$ and $f(z) =
 \frac{\widetilde{p}(z)}{\widetilde{q}(z)}$.
@@ -2462,7 +2466,7 @@ There exist sequences of
 continuous functions
 on $[0,1]$ that are uniformly bounded but contain no subsequence converging
 even pointwise.
-Let us state without proof that $f_n(x) := \sin (2\pi n x)$ is one
+Let us state without proof that $f_n(x) \coloneqq \sin (2\pi n x)$ is one
 such sequence.
 Below we will show that there must always exist
 a subsequence converging at countably
@@ -2470,15 +2474,15 @@ many points, but $[0,1]$ is uncountable.
 \end{example}
 
 \begin{example}
-The sequence $f_n(x) := x^n$ of continuous functions on $[0,1]$
+The sequence $f_n(x) \coloneqq x^n$ of continuous functions on $[0,1]$
 is uniformly bounded, but contains no subsequence that converges
 uniformly,
 although the sequence converges pointwise (to a discontinuous function).
 \end{example}
 
 \begin{example}
-The sequence $\{ f_n \}$ of functions in $C([0,1],\R)$ given by $f_n(x) :=
-\frac{n^3x}{1+n^4x^2}$
+The sequence $\{ f_n \}$ of functions in $C([0,1],\R)$ given by
+$f_n(x) \coloneqq \frac{n^3x}{1+n^4x^2}$
 converges pointwise to the zero function (obvious at $x=0$, and for $x > 0$,
 we have $\frac{n^3x}{1+n^4x^2} \leq \frac{1}{nx}$).
 As for each $x$, $\{f_n(x)\}$ converges to 0, it is bounded
@@ -2627,7 +2631,7 @@ a finite set of points $x_{n,1},x_{n,2},\ldots,x_{n,k_n}$ such that
 \begin{equation*}
 X= \bigcup_{j=1}^{k_n} B(x_{n,j},\nicefrac{1}{n}) .
 \end{equation*}
-Let $D := \bigcup_{n=1}^\infty \{ x_{n,1},x_{n,2},\ldots,x_{n,k_n} \}$.
+Let $D \coloneqq \bigcup_{n=1}^\infty \{ x_{n,1},x_{n,2},\ldots,x_{n,k_n} \}$.
 The set $D$ is countable as it is a countable union of finite sets.
 For every $x \in X$
 and every $\epsilon > 0$, there exists an $n$ such that
@@ -2684,7 +2688,7 @@ such that for $j=1,2,\ldots,k$, we have
 \begin{equation*}
 \sabs{f_n(x_j)} \leq M_j \qquad \text{for all } n.
 \end{equation*}
-Let $M := 1+ \max \{ M_1,M_2,\ldots,M_k \}$.  Given any
+Let $M \coloneqq 1+ \max \{ M_1,M_2,\ldots,M_k \}$.  Given any
 $x \in X$, there is a $j$ such that $x \in B(x_j,\delta)$.  Therefore,
 for all $n$, we have
 $x \in f_n^{-1}\bigl(B(f_n(x_j),1)\bigr)$, or in other words
@@ -2701,7 +2705,7 @@ And as $x$ was arbitrary, $\{f_n\}$ is uniformly bounded.
 Next, pick a countable dense subset $D \subset X$.
 By \propref{prop:subsequenceoncountableX}, we find
 a subsequence $\{ f_{n_j} \}$ that converges pointwise on $D$.
-Write $g_j := f_{n_j}$ for simplicity.
+Write $g_j \coloneqq f_{n_j}$ for simplicity.
 The sequence $\{ g_n \}$ is 
 uniformly equicontinuous.
 Let $\epsilon > 0$ be given, then there exists a $\delta > 0$
@@ -2798,7 +2802,7 @@ corollary above is the following.
 Take a continuous $k \colon [0,1] \times [0,1] \to \C$.
 For every $f \in C([0,1],\C)$ define
 \begin{equation*}
-T\bigl(f\bigr)(x) :=  \int_0^1 f(t) \, k(x,t)\,dt .
+T\bigl(f\bigr)(x) \coloneqq  \int_0^1 f(t) \, k(x,t)\,dt .
 \end{equation*}
 In exercises to earlier sections you have shown that 
 $T$ is a linear operator on $C([0,1],\C)$.
@@ -2820,7 +2824,7 @@ integration tend to be compact.
 \subsection{Exercises}
 
 \begin{exercise}
-Let $f_n \colon [-1,1] \to \R$ be given by $f_n(x) := \frac{nx}{1+{(nx)}^2}$.
+Let $f_n \colon [-1,1] \to \R$ be given by $f_n(x) \coloneqq \frac{nx}{1+{(nx)}^2}$.
 Prove that the sequence is uniformly bounded, converges pointwise to 0,
 yet there is no
 subsequence that converges uniformly.
@@ -2829,7 +2833,7 @@ is not satisfied?  Prove your assertion.
 \end{exercise}
 
 \begin{exercise}
-Define $f_n \colon \R \to \R$ by $f_n(x) := \frac{1}{{(x-n)}^2+1}$.  Prove that
+Define $f_n \colon \R \to \R$ by $f_n(x) \coloneqq \frac{1}{{(x-n)}^2+1}$.  Prove that
 this sequence is uniformly bounded, uniformly equicontinuous, the sequence
 converges pointwise to zero, yet there is no
 subsequence that converges uniformly.
@@ -2852,7 +2856,7 @@ $\abs{f(x)-f(y)} \leq C {d(x,y)}^\alpha$.
 Let $T \colon C([0,1],\C) \to C([0,1],\C)$ be the operator
 given by
 \begin{equation*}
-T\bigl(f\bigr) (x) := \int_0^x f(t)\, dt .
+T\bigl(f\bigr) (x) \coloneqq \int_0^x f(t)\, dt .
 \end{equation*}
 (That $T$ is linear and that $Tf$ is continuous follows from
 linearity of the integral and
@@ -2876,7 +2880,7 @@ Given $k \in C([0,1]\times [0,1],\C)$,
 let $T \colon C([0,1],\C) \to C([0,1],\C)$ be the operator
 defined by
 \begin{equation*}
-T\bigl(f\bigr)(x) :=  \int_0^1 f(t) \, k(x,t)\,dt .
+T\bigl(f\bigr)(x) \coloneqq  \int_0^1 f(t) \, k(x,t)\,dt .
 \end{equation*}
 Show that $T$ takes the unit ball centered at 0 in $C([0,1],\C)$ into a
 relatively compact set (a set with compact closure).
@@ -2922,12 +2926,12 @@ is uniformly equicontinuous.
 \end{exercise}
 
 \begin{exercise}
-Define $f_n \colon [0,1] \to \C$ by $f_n(t) := e^{i(2\pi t + n)}$.
+Define $f_n \colon [0,1] \to \C$ by $f_n(t) \coloneqq e^{i(2\pi t + n)}$.
 This is a uniformly equicontinuous uniformly bounded sequence.
 Prove more than just
 the conclusion of Arzel\`a--Ascoli for this sequence.  Let $\gamma \in \R$
 be given,
-and define $g(t) := e^{i(2\pi t + \gamma)}$.  Show that there exists 
+and define $g(t) \coloneqq e^{i(2\pi t + \gamma)}$.  Show that there exists 
 a subsequence of $\{ f_n \}$ converging uniformly to $g$.
 \\
 Hint: Feel free to use the \emph{\myindex{Kronecker density theorem}}\footnote{%
@@ -2958,9 +2962,9 @@ Use the following outline:
 \begin{enumerate}[a)]
 \item
 We wish to define the Picard iterates, that is,
-set $f_0(x) := y_0$, and 
+set $f_0(x) \coloneqq y_0$, and 
 \begin{equation*}
-f_{n+1}(x) := y_0 + \int_{x_0}^x F\bigl(t,f_n(t)\bigr)\,dt .
+f_{n+1}(x) \coloneqq y_0 + \int_{x_0}^x F\bigl(t,f_n(t)\bigr)\,dt .
 \end{equation*}
 Prove that there exists an $h > 0$ such that
 $f_n \colon [x_0 - h, x_0 + h] \to \C$ is well-defined
@@ -3009,7 +3013,7 @@ Furthermore, if $f$ is real-valued, we can find $p_n$ with real coefficients.
 \begin{proof}
 For $x \in [0,1]$ define
 \begin{equation*}
-g(x) := f\bigl((b-a)x+a\bigr)-f(a) - x\bigl(f(b)-f(a)\bigr) .
+g(x) \coloneqq f\bigl((b-a)x+a\bigr)-f(a) - x\bigl(f(b)-f(a)\bigr) .
 \end{equation*}
 If we prove the theorem for $g$ and find the sequence $\{ p_n \}$ for $g$,
 it is proved for $f$ as we simply
@@ -3020,13 +3024,13 @@ $p_n$, to obtain polynomials approximating $f$.
 The function $g$ is defined on $[0,1]$ and $g(0)=g(1)=0$.
 For simplicity, assume that
 $g$ is defined on the whole real line by letting
-$g(x) := 0$ if $x < 0$ or $x > 1$.  This extended $g$ is continuous.
+$g(x) \coloneqq 0$ if $x < 0$ or $x > 1$.  This extended $g$ is continuous.
 
 Define
 \begin{equation*}
-c_n := {\left( \int_{-1}^1 {(1-x^2)}^n\,dx \right)}^{-1} ,
+c_n \coloneqq {\left( \int_{-1}^1 {(1-x^2)}^n\,dx \right)}^{-1} ,
 \qquad
-q_n(x) := c_n (1-x^2)^n .
+q_n(x) \coloneqq c_n (1-x^2)^n .
 \end{equation*}
 The choice of $c_n$ is
 so that $\int_{-1}^1 q_n(x)\,dx = 1$.
@@ -3046,7 +3050,7 @@ is to do a \emph{\myindex{convolution}} integral with peaks like this:
 For
 for $x \in [0,1]$, let
 \begin{equation*}
-p_n(x) := \int_{0}^1 g(t)q_n(x-t) \,dt \quad \left( = \int_{-\infty}^\infty
+p_n(x) \coloneqq \int_{0}^1 g(t)q_n(x-t) \,dt \quad \left( = \int_{-\infty}^\infty
 g(t)q_n(x-t) \,dt \right) .
 \end{equation*}
 The idea of this convolution is that we do a \myquote{weighted average} of the
@@ -3250,13 +3254,13 @@ countable).
 
 Further without loss of generality, suppose $[a,b]=[0,1]$.  Let
 \begin{equation*}
-p(x) := \sum_{k=0}^n a_k\,  x^k
+p(x) \coloneqq \sum_{k=0}^n a_k\,  x^k
 \end{equation*}
 be a polynomial of degree $n$ where $a_k \in \R$.  Given $\epsilon > 0$, pick $b_k \in \Q$
 such that $\sabs{a_k-b_k} < \frac{\epsilon}{n+1}$.  Then
 if we let
 \begin{equation*}
-q(x) := \sum_{k=0}^n b_k \, x^k ,
+q(x) \coloneqq \sum_{k=0}^n b_k \, x^k ,
 \end{equation*}
 we have
 \begin{equation*}
@@ -3330,13 +3334,13 @@ $p_n(0) = 0$ for all $n$.
 \end{cor}
 
 \begin{proof}
-As $f(x) := \sabs{x}$ is continuous and real-valued
+As $f(x) \coloneqq \sabs{x}$ is continuous and real-valued
 on $[-a,a]$, the Weierstrass theorem gives a sequence of
 real polynomials $\{ \widetilde{p}_n \}$ that converges to $f$
 uniformly on $[-a,a]$.
 Let
 \begin{equation*}
-p_n(x) := \widetilde{p}_n(x) - \widetilde{p}_n(0) .
+p_n(x) \coloneqq \widetilde{p}_n(x) - \widetilde{p}_n(0) .
 \end{equation*}
 Obviously $p_n(0) = 0$.
 
@@ -3417,7 +3421,7 @@ there is an $f \in \sA$ such that $f(x) \not= 0$.
 \begin{example}
 The set $\sP$ of polynomials separates points and vanishes at no point
 on $\R$.  That is, $1 \in \sP$ so it vanishes at no point.  And for $x,y \in
-\R$, $x\not= y$, take $f(t) := t$.  Then $f(x) = x \not= y = f(y)$.
+\R$, $x\not= y$, take $f(t) \coloneqq t$.  Then $f(x) = x \not= y = f(y)$.
 So $\sP$ separates points.
 \end{example}
 
@@ -3459,7 +3463,7 @@ g(x) \not= g(y), \quad h(x) \not= 0, \quad k(y) \not= 0 .
 \end{equation*}
 Let
 \begin{equation*}
-f := 
+f \coloneqq 
 c
 \frac{\bigl(g - g(y)\bigr)h}{\bigl(g(x)-g(y)\bigr)h(x) } + 
 d
@@ -3524,9 +3528,9 @@ $\max(f,g) \in \widebar{\sA}$ and
 $\min(f,g) \in \widebar{\sA}$, where
 }
 \begin{equation*}
-\bigl(\max(f,g)\bigr) (x) := \max \bigl\{ f(x), g(x) \bigr\} , \qquad
+\bigl(\max(f,g)\bigr) (x) \coloneqq \max \bigl\{ f(x), g(x) \bigr\} , \qquad
 \text{and} \qquad
-\bigl(\min(f,g)\bigr) (x) := \min \bigl\{ f(x), g(x) \bigr\} .
+\bigl(\min(f,g)\bigr) (x) \coloneqq \min \bigl\{ f(x), g(x) \bigr\} .
 \end{equation*}
 
 \begin{proof}
@@ -3564,7 +3568,7 @@ h_y(x) = f(x), \qquad h_y(y)=f(y) .
 As $h_y$ and $f$ are continuous, the function $h_y-f$ is continuous,
 and the set
 \begin{equation*}
-U_y :=
+U_y \coloneqq
 \bigl\{ t \in X : h_y(t) > f(t) -\epsilon \bigr\}
 =
 {(h_y-f)}^{-1} \bigl( (-\epsilon,\infty) \bigr)
@@ -3580,7 +3584,7 @@ X = \bigcup_{j=1}^n U_{y_j}  .
 \end{equation*}
 Let 
 \begin{equation*}
-g_x := \max(h_{y_1},h_{y_2},\ldots,h_{y_n}) .
+g_x \coloneqq \max(h_{y_1},h_{y_2},\ldots,h_{y_n}) .
 \end{equation*}
 By Claim 2, $g_x \in \widebar{\sA}$.
 Furthermore,
@@ -3609,7 +3613,7 @@ For every $x$ find the function $g_x$ as in Claim 3.
 
 Let
 \begin{equation*}
-V_x := \bigl\{ t \in X : g_x(t) < f(t) + \epsilon \bigr\}.
+V_x \coloneqq \bigl\{ t \in X : g_x(t) < f(t) + \epsilon \bigr\}.
 \end{equation*}
 The sets $V_x$ are open as $g_x$ and $f$ are continuous.
 As $g_x(x) = f(x)$, then $x \in V_x$.  So the sets $V_x$ cover $X$.
@@ -3621,7 +3625,7 @@ X = \bigcup_{j=1}^k V_{x_j} .
 \end{equation*}
 Let
 \begin{equation*}
-\varphi := \min(g_{x_1},g_{x_2},\ldots,g_{x_k}) .
+\varphi \coloneqq \min(g_{x_1},g_{x_2},\ldots,g_{x_k}) .
 \end{equation*}
 By Claim 2, $\varphi \in \widebar{\sA}$.  Similarly as before (same argument as in
 Claim 3), for all $t \in X$,
@@ -3693,7 +3697,7 @@ make an extra assumption.
 
 \begin{defn}
 An algebra $\sA$ is \emph{\myindex{self-adjoint}} if for all $f \in \sA$, the function
-$\bar{f}$ defined by $\bar{f}(x) := \overline{f(x)}$ is in $\sA$, where by the
+$\bar{f}$ defined by $\bar{f}(x) \coloneqq \overline{f(x)}$ is in $\sA$, where by the
 bar we mean the complex conjugate.
 \end{defn}
 
@@ -3778,8 +3782,8 @@ single bound for all $f_n$ (and $f$).
 \end{exercise}
 
 \begin{exercise}
-Suppose $X := \R$ (not compact in particular).
-Show that $f(t) := e^t$ is not possible to uniformly approximate
+Suppose $X \coloneqq \R$ (not compact in particular).
+Show that $f(t) \coloneqq e^t$ is not possible to uniformly approximate
 by polynomials on $X$.  Hint: Consider $\abs{\frac{e^t}{t^n}}$
 as $t \to \infty$.
 \end{exercise}
@@ -3873,13 +3877,13 @@ and therefore such functions are dense in the $C([-\pi,\pi],\C)$.
 \begin{exercise} \label{exercise:selfadjointSW}
 Let $S^1 \subset \C$ be the unit circle, that is the set where
 $\sabs{z} = 1$.  Orient this set counterclockwise.
-Let $\gamma(t) := e^{it}$.
+Let $\gamma(t) \coloneqq e^{it}$.
 For the one-form $f(z)\,dz$ we write\footnote{%
-Alternatively, one could define $dz := dx + i \, dy$ and
+Alternatively, one could define $dz \coloneqq dx + i \, dy$ and
 extend the path integral from \chapterref{path:chapter} to complex-valued
 one-forms.}
 \begin{equation*}
-\int_{S^1} f(z) \,dz := \int_0^{2\pi} f(e^{it}) \, i e^{it} \, dt . 
+\int_{S^1} f(z) \,dz \coloneqq \int_0^{2\pi} f(e^{it}) \, i e^{it} \, dt . 
 \end{equation*}
 \begin{enumerate}[a)]
 \item
@@ -3911,7 +3915,7 @@ of functions from $\sA$.
 Let $(X,d)$ be a compact metric space and
 suppose $\sA \subset C(X,\R)$ is a real algebra.
 Suppose that for each $y \in X$ the closure $\widebar{\sA}$
-contains the function $\varphi_y(x) := d(y,x)$.
+contains the function $\varphi_y(x) \coloneqq d(y,x)$.
 Then $\widebar{\sA} = C(X,\R)$.
 \end{exercise}
 
@@ -4028,7 +4032,7 @@ so
 \end{equation*}
 Consider
 \begin{equation*}
-f(x) := \sum_{n=-N}^N c_n e^{inx} ,
+f(x) \coloneqq \sum_{n=-N}^N c_n e^{inx} ,
 \end{equation*}
 and for $m=-N,\ldots,N$ compute
 \begin{equation*}
@@ -4140,7 +4144,7 @@ situations, but we refrain from discussing those.
 Conversely, we start with an integrable function $f \colon [-\pi,\pi] \to
 \C$, and we call the numbers
 \begin{equation*}
-c_n := 
+c_n \coloneqq 
 \frac{1}{2\pi} \int_{-\pi}^\pi
 f(x) e^{-inx} \, dx
 \end{equation*}
@@ -4207,7 +4211,8 @@ and notice that for all nonzero $n$
 \end{equation*}
 The differentiated series converges uniformly by the $M$-test again.  Since
 the differentiated series
-converges uniformly, we find that the original series $\sum c_n\,e^{inx}$
+converges uniformly, we find that the original series
+$\sum_{n=-\infty}^\infty c_n\,e^{inx}$
 converges 
 to a continuously differentiable function, whose derivative is
 the differentiated series (see \thmref{thm:dersconvergecomplex}).
@@ -4238,7 +4243,7 @@ would be the natural choice.  Let $f$ and $g$ be complex-valued
 Riemann integrable functions on $[a,b]$ and define the inner product
 \glsadd{not:L2innprod}
 \begin{equation*}
-\langle f , g \rangle :=
+\langle f , g \rangle \coloneqq
 \int_a^b f(x) \overline{g(x)} \, dx .
 \end{equation*}
 If you have seen Hermitian inner products in linear algebra, this
@@ -4247,7 +4252,7 @@ working with complex numbers.  We then have the \myquote{size,} that is the
 $L^2$ norm $\snorm{f}_2$ by (defining the square)
 \glsadd{not:L2norm}
 \begin{equation*}
-\snorm{f}_2^2 :=
+\snorm{f}_2^2 \coloneqq
 \langle f , f \rangle =
 \int_a^b \sabs{f(x)}^2 \, dx .
 \end{equation*}
@@ -4256,7 +4261,7 @@ $L^2$ norm $\snorm{f}_2$ by (defining the square)
 Notice the similarity to finite dimensions.
 For $z = (z_1,z_2,\ldots,z_n) \in \C^n$, we define 
 \begin{equation*}
-\langle z , w \rangle :=
+\langle z , w \rangle \coloneqq
 \sum_{k=1}^n z_k \overline{w_k} .
 \end{equation*}
 Then the norm is (usually denoted by simply $\snorm{z}$ in $\C^n$
@@ -4303,7 +4308,7 @@ Having an orthonormal system $\{ \varphi_n \}$ on $[a,b]$ and an integrable func
 on $[a,b]$, we can write
 a Fourier series relative to $\{ \varphi_n \}$.  We let
 \begin{equation*}
-c_n :=
+c_n \coloneqq
 \langle f , \varphi_n \rangle
 =
 \int_a^b f(x) \overline{\varphi_n(x)} \, dx ,
@@ -4330,9 +4335,9 @@ f(x) \sim \sum_{n=1}^\infty c_n \varphi_n(x) .
 \end{equation*}
 If
 \begin{equation*}
-s_n (x) := \sum_{k=1}^n c_k \varphi_k(x)
+s_n (x) \coloneqq \sum_{k=1}^n c_k \varphi_k(x)
 \quad\text{and}\quad
-p_n (x) := \sum_{k=1}^n d_k \varphi_k(x)
+p_n (x) \coloneqq \sum_{k=1}^n d_k \varphi_k(x)
 \end{equation*}
 for some other sequence $\{ d_k \}$, then
 \begin{equation*}
@@ -4483,7 +4488,7 @@ Suppose $f \colon \R \to \C$ is $2\pi$-periodic and integrable
 on $[-\pi,\pi]$.
 Let
 \begin{equation*}
-c_n := 
+c_n \coloneqq 
 \frac{1}{2\pi} \int_{-\pi}^\pi
 f(x) e^{-inx} \, dx .
 \end{equation*}
@@ -4495,7 +4500,7 @@ f(x) \sim
 Define the \emph{\myindex{symmetric partial sums}}
 \glsadd{not:FSsympartsum}
 \begin{equation*}
-s_N(f;x) := 
+s_N(f;x) \coloneqq 
 \sum_{n=-N}^N c_n \,e^{inx} .
 \end{equation*}
 The inequality leading up to Bessel now reads:
@@ -4511,7 +4516,7 @@ The inequality leading up to Bessel now reads:
 
 The \emph{\myindex{Dirichlet kernel}} is the sum
 \begin{equation*}
-D_N(x) := \sum_{n=-N}^N e^{inx} .
+D_N(x) \coloneqq \sum_{n=-N}^N e^{inx} .
 \end{equation*}
 We claim that
 \begin{equation*}
@@ -4950,7 +4955,7 @@ a real sequence $\{ a_n \}$ with
 $\abs{a_n} \leq \frac{C}{n^\alpha}$ for all $n$.
 Let
 \begin{equation*}
-g(x) := \sum_{n=1}^\infty a_n \sin(n x) .
+g(x) \coloneqq \sum_{n=1}^\infty a_n \sin(n x) .
 \end{equation*}
 \begin{enumerate}[a)]
 \item
@@ -4983,7 +4988,7 @@ Use Parseval's theorem to find
 
 \begin{exercise}
 Suppose that $c_n = 0$ for all $n < 0$ and $\sum_{n=0}^\infty \sabs{c_n}$
-converges.  Let $\D := B(0,1) \subset \C$ be the unit disc,
+converges.  Let $\D \coloneqq B(0,1) \subset \C$ be the unit disc,
 and $\overline{\D} = C(0,1)$ be the closed unit disc.
 Show that there exists a continuous function
 $f \colon \overline{\D} \to \C$ that is analytic on $\D$
@@ -5018,8 +5023,8 @@ $\sabs{c_n} \leq \frac{C}{\sabs{n}}$.
 \begin{enumerate}[a)]
 \item
 Let $\varphi$ be the $2\pi$-periodic function 
-defined by $\varphi(x) := 0$ if $x \in (-\pi,0)$,
-and $\varphi(x) := 1$ if $x \in (0,\pi)$,
+defined by $\varphi(x) \coloneqq 0$ if $x \in (-\pi,0)$,
+and $\varphi(x) \coloneqq 1$ if $x \in (0,\pi)$,
 letting $\varphi(0)$ and $\varphi(\pi)$ be arbitrary.  Show
 that $\lim \, s_N(\varphi;0) = \nicefrac{1}{2}$.
 \item

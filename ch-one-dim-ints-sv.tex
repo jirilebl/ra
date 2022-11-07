@@ -9,7 +9,7 @@
 
 Let $f(x,y)$ be a function of two variables and define
 \begin{equation*}
-g(y) := \int_a^b f(x,y) \,dx .
+g(y) \coloneqq \int_a^b f(x,y) \,dx .
 \end{equation*}
 If $f$ is continuous on the compact rectangle $[a,b] \times [c,d]$, then
 \volIref{\propref*{vI-prop:integralcontcont} from volume I}{\propref{prop:integralcontcont}}
@@ -37,7 +37,7 @@ Suppose $f \colon [a,b] \times [c,d] \to \R$ is a continuous function,
 such that $\frac{\partial f}{\partial y}$ exists for all $(x,y) \in [a,b]
 \times [c,d]$ and is continuous.  Define
 \begin{equation*}
-g(y) := \int_a^b f(x,y) \,dx .
+g(y) \coloneqq \int_a^b f(x,y) \,dx .
 \end{equation*}
 Then $g \colon [c,d] \to \R$ is continuously differentiable and
 \begin{equation*}
@@ -152,7 +152,7 @@ the integral exists, see \exerciseref{exercise:counterexamplediffunder}.  Troubl
 We introduce a parameter $y$
 and define a function:
 \begin{equation*}
-g(y) := \int_0^{1} \frac{x^y-1}{\ln(x)} \,dx .
+g(y) \coloneqq \int_0^{1} \frac{x^y-1}{\ln(x)} \,dx .
 \end{equation*}
 The function
 $\frac{x^y-1}{\ln(x)}$
@@ -207,7 +207,7 @@ Suppose $h \colon \R \to \R$ is continuous and $g
 supported.  That is, there exists some $M > 0$, such that $g(x) = 0$ whenever
 $\abs{x} \geq M$.  Define
 \begin{equation*}
-f(x) := \int_{-\infty}^\infty h(y)g(x-y)\,dy  .
+f(x) \coloneqq \int_{-\infty}^\infty h(y)g(x-y)\,dy  .
 \end{equation*}
 Show that $f$ is differentiable.
 \end{exercise}
@@ -240,7 +240,7 @@ $\frac{\partial f}{\partial y_1},
 exist and are continuous on $[0,1] \times U$.
 Then prove that $F \colon U \to \R$ defined by
 \begin{equation*}
-F(y_1,y_2,\ldots,y_n) :=
+F(y_1,y_2,\ldots,y_n) \coloneqq
 \int_0^1
 f(x,y_1,y_2,\ldots,y_n)
 \, dx
@@ -251,7 +251,7 @@ is continuously differentiable.
 \begin{exercise}
 Work out the following counterexample:  Let
 \begin{equation*}
-f(x,y) :=
+f(x,y) \coloneqq
 \begin{cases}
 \frac{xy^3}{{(x^2+y^2)}^2} & \text{if } x\not=0 \text{ or } y\not= 0, \\
 0                          & \text{if } x=0 \text{ and } y=0.
@@ -262,7 +262,7 @@ f(x,y) :=
 Prove that for every fixed $y$, the function $x \mapsto f(x,y)$ is
 Riemann integrable on $[0,1]$, and
 \begin{equation*}
-g(y) := \int_0^1 f(x,y) \, dx = \frac{y}{2y^2+2} .
+g(y) \coloneqq \int_0^1 f(x,y) \, dx = \frac{y}{2y^2+2} .
 \end{equation*}
 Therefore, $g'(y)$ exists and its derivative is the continuous function
 \begin{equation*}
@@ -290,7 +290,7 @@ g'(0) \not= \int_0^1 \frac{\partial f}{\partial y} (x,0) \, dx .
 \pagebreak[2]
 Work out the following counterexample:  Let
 \begin{equation*}
-f(x,y) :=
+f(x,y) \coloneqq
 \begin{cases}
 x \,\sin \left(\frac{y}{x^2+y^2}\right) & \text{if } (x,y) \not= (0,0),\\
 0                                       & \text{if } (x,y)=(0,0).
@@ -301,7 +301,7 @@ x \,\sin \left(\frac{y}{x^2+y^2}\right) & \text{if } (x,y) \not= (0,0),\\
 Prove $f$ is continuous on all of $\R^2$.
 Therefore the following function is well-defined for every $y \in \R$:
 \begin{equation*}
-g(y) := \int_0^1 f(x,y) \, dx .
+g(y) \coloneqq \int_0^1 f(x,y) \, dx .
 \end{equation*}
 \item
 Prove $\frac{\partial f}{\partial y}$ exists for all $(x,y)$,
@@ -322,7 +322,7 @@ Suppose $f \colon (a,b) \times (c,d) \to \R$ is a bounded continuous function,
 such that $\frac{\partial f}{\partial y}$ exists for all $(x,y) \in (a,b)
 \times (c,d)$ and is continuous and bounded.  Define
 \begin{equation*}
-g(y) := \int_a^b f(x,y) \,dx .
+g(y) \coloneqq \int_a^b f(x,y) \,dx .
 \end{equation*}
 Then $g \colon (c,d) \to \R$ is continuously differentiable and
 \begin{equation*}
@@ -400,7 +400,7 @@ simple closed path).
 \begin{example} \label{mv:example:unitsquarepath}
 Let $\gamma \colon [0,4] \to \R^2$ be defined by
 \begin{equation*}
-\gamma(t) :=
+\gamma(t) \coloneqq
 \begin{cases}
 (t,0)   & \text{if } t \in [0,1],\\
 (1,t-1) & \text{if } t \in (1,2],\\
@@ -449,7 +449,7 @@ $\gamma\bigl([a,b]\bigr)$
 has no \myquote{corners} where $\gamma$ is smooth.
 Consider 
 \begin{equation*}
-\gamma(t) :=
+\gamma(t) \coloneqq
 \begin{cases}
 (t^2,0) & \text{if } t < 0,\\
 (0,t^2) & \text{if } t \geq 0.
@@ -477,7 +477,7 @@ extend a little bit past the endpoints.  Again, see the exercises.
 A graph of a continuously differentiable function $f \colon [a,b] \to \R$ is a smooth path.
 Define $\gamma \colon [a,b] \to \R^2$ by
 \begin{equation*}
-\gamma(t) := \bigl(t,f(t)\bigr) .
+\gamma(t) \coloneqq \bigl(t,f(t)\bigr) .
 \end{equation*}
 Then $\gamma^{\:\prime}(t) = \bigl( 1 , f'(t) \bigr)$, which is never zero,
 and $\gamma\bigl([a,b]\bigr)$ is the graph of $f$.
@@ -488,7 +488,7 @@ The function $t \mapsto (1-t)a+tb$, takes the interval $[0,1]$ to $[a,b]$.
 Define
 $\alpha \colon [0,1] \to \R^2$ by
 \begin{equation*}
-\alpha(t) := \bigl((1-t)a+tb,f((1-t)a+tb)\bigr) .
+\alpha(t) \coloneqq \bigl((1-t)a+tb,f((1-t)a+tb)\bigr) .
 \end{equation*}
 Then
 $\alpha'(t) = \bigl( b-a ,~ (b-a)f'((1-t)a+tb) \bigr)$, which is never zero.
@@ -551,7 +551,7 @@ derivative.
 Let $t_0 = a < t_1 < t_2 < \cdots < t_k = b$ be the partition from the
 definition of piecewise smooth for $\gamma$ together with the 
 points $\{ h(r_0), h(r_1), h(r_2), \ldots, h(r_\ell) \}$.
-Let $s_j := h^{-1}(t_j)$.  Then
+Let $s_j \coloneqq h^{-1}(t_j)$.  Then
 $s_0 = c < s_1 < s_2 < \cdots < s_k = d$
 is a partition that includes (is a refinement of) the
 $\{ r_0,r_1,\ldots,r_\ell \}$.
@@ -603,7 +603,7 @@ although it is better to think of it as a different object.
 
 \begin{example}
 \begin{equation*}
-\omega(x,y) := \frac{-y}{x^2+y^2} \,dx + \frac{x}{x^2+y^2} \,dy
+\omega(x,y) \coloneqq \frac{-y}{x^2+y^2} \,dx + \frac{x}{x^2+y^2} \,dy
 \end{equation*}
 is a one-form defined on $\R^2 \setminus \{ (0,0) \}$.
 \end{example}
@@ -620,7 +620,7 @@ Define:
 \begin{equation*}
 \begin{split}
 \int_{\gamma} \omega
-& :=
+& \coloneqq
 \int_a^b 
 \Bigl(
 \omega_1\bigl(\gamma(t)\bigr) \gamma_1^{\:\prime}(t) +
@@ -647,7 +647,7 @@ at $t_1,t_2,\ldots,t_{k-1}$.  As each $\gamma|_{[t_{j-1},t_j]}$ is
 a smooth path, define
 \begin{equation*}
 \int_{\gamma} \omega
-:=
+\coloneqq
 \int_{\gamma|_{[t_0,t_1]}} \omega
 \,
 +
@@ -673,8 +673,8 @@ have taken any partition not just the minimal one in the definition.
 Let $\gamma \colon [a,c] \to \R^n$ be a piecewise smooth path,
 and $b \in (a,c)$.
 Define the piecewise smooth paths
-$\alpha := \gamma|_{[a,b]}$ and
-$\beta := \gamma|_{[b,c]}$.
+$\alpha \coloneqq \gamma|_{[a,b]}$ and
+$\beta \coloneqq \gamma|_{[b,c]}$.
 Let $\omega$ be a one-form defined on
 $\gamma\bigl([a,c]\bigr)$.  Then
 \begin{equation*}
@@ -688,9 +688,9 @@ $\gamma\bigl([a,c]\bigr)$.  Then
 \begin{example} \label{example:mv:irrotoneformint}
 Let the one-form $\omega$ and the path $\gamma \colon [0,2\pi] \to \R^2$ be defined by
 \begin{equation*}
-\omega(x,y) := \frac{-y}{x^2+y^2} \,dx + \frac{x}{x^2+y^2} \,dy,
+\omega(x,y) \coloneqq \frac{-y}{x^2+y^2} \,dx + \frac{x}{x^2+y^2} \,dy,
 \qquad
-\gamma(t) := \bigl(\cos(t),\sin(t)\bigr) .
+\gamma(t) \coloneqq \bigl(\cos(t),\sin(t)\bigr) .
 \end{equation*}
 Then
 \begin{equation*}
@@ -713,7 +713,7 @@ Then
 \end{split}
 \end{equation*}
 Next, let us parametrize the same curve as
-$\alpha \colon [0,1] \to \R^2$ defined by $\alpha(t) := \bigl(\cos(2\pi
+$\alpha \colon [0,1] \to \R^2$ defined by $\alpha(t) \coloneqq \bigl(\cos(2\pi
 t),\sin(2 \pi t)\bigr)$, that is $\alpha$ is a smooth reparametrization of
 $\gamma$.  Then
 \begin{equation*}
@@ -738,7 +738,7 @@ $\gamma$.  Then
 \end{split}
 \end{equation*}
 Now let us reparametrize with $\beta \colon [0,2\pi] \to \R^2$
-as $\beta(t) := \bigl(\cos(-t),\sin(-t)\bigr)$.  Then
+as $\beta(t) \coloneqq \bigl(\cos(-t),\sin(-t)\bigr)$.  Then
 \begin{equation*}
 \begin{split}
 \int_{\beta} \omega
@@ -852,9 +852,9 @@ the condition completely as is
 illustrated by the following example.
 
 \begin{example}
-Suppose $\gamma \colon [0,2\pi] \to \R^2$ is given by $\gamma(t) :=
+Suppose $\gamma \colon [0,2\pi] \to \R^2$ is given by $\gamma(t) \coloneqq
 \bigl(\cos(t),\sin(t)\bigr)$, and
-$\beta \colon [0,2\pi] \to \R^2$ is given by $\beta(t) :=
+$\beta \colon [0,2\pi] \to \R^2$ is given by $\beta(t) \coloneqq
 \bigl(\cos(2t),\sin(2t)\bigr)$.  Notice that
 $\gamma\bigl([0,2\pi]\bigr) = \beta\bigl([0,2\pi]\bigr)$, and we travel
 around the same curve, the unit circle.  But $\gamma$ goes around the unit
@@ -892,7 +892,7 @@ It is sometimes convenient to define a path integral over $\gamma \colon
 Define
 \glsadd{not:pathintegralomega}
 \begin{equation*}
-\int_{\gamma} \omega := \int_a^b
+\int_{\gamma} \omega \coloneqq \int_a^b
 \left(
 \sum_{j=1}^n
 \omega_j\bigl(\gamma(t)\bigr) \gamma_j^{\:\prime}(t)
@@ -925,12 +925,12 @@ continuous function defined on the image $\gamma\bigl([a,b]\bigr)$.  Then
 define
 \glsadd{not:lineintegralf}
 \begin{equation*}
-\int_{\gamma} f \,ds :=
+\int_{\gamma} f \,ds \coloneqq
 \int_a^b f\bigl( \gamma(t) \bigr) \snorm{\gamma^{\:\prime}(t)} \, dt .
 \end{equation*}
 To emphasize the variables we may use
 \begin{equation*}
-\int_{\gamma} f(x) \,ds(x) := \int_{\gamma} f \,ds .
+\int_{\gamma} f(x) \,ds(x) \coloneqq \int_{\gamma} f \,ds .
 \end{equation*}
 
 The definition for a piecewise smooth path is similar as before and is left
@@ -997,14 +997,14 @@ In this case we also do not need to worry about orientation, either way we
 get the same integral.
 
 \begin{example}
-Let $f(x,y) := x$.  Let $C \subset \R^2$ be half of the unit circle for $x
+Let $f(x,y) \coloneqq x$.  Let $C \subset \R^2$ be half of the unit circle for $x
 \geq 0$.  We wish to compute
 \begin{equation*}
 \int_C f \, ds .
 \end{equation*}
 Parametrize the curve $C$ via $\gamma \colon
 [\nicefrac{-\pi}{2},\nicefrac{\pi}{2}] \to \R^2$ defined as
-$\gamma(t) := \bigl(\cos(t),\sin(t)\bigr)$.
+$\gamma(t) \coloneqq \bigl(\cos(t),\sin(t)\bigr)$.
 Then $\gamma^{\:\prime}(t) = \bigl(-\sin(t),\cos(t)\bigr)$, and
 \begin{equation*}
 \int_C f \, ds =
@@ -1023,7 +1023,7 @@ piecewise smooth path $\gamma \colon [a,b] \to \R^n$, that is
 $\gamma\bigl( [a,b] \bigr) = \Gamma$.  We define the
 \emph{\myindex{length}}\index{length of a curve} by
 \begin{equation*}
-\ell(\Gamma) := \int_{\Gamma} ds = \int_{\gamma} ds .
+\ell(\Gamma) \coloneqq \int_{\Gamma} ds = \int_{\gamma} ds .
 \end{equation*}
 \end{defn}
 
@@ -1042,7 +1042,7 @@ at all but finitely many points and is bounded, and so the integral exists.
 \begin{example}
 Let $x,y \in \R^n$ be two points and write $[x,y]$ as the straight line
 segment between the two points $x$ and $y$.  Parametrize
-$[x,y]$ by $\gamma(t) := (1-t)x + ty$ for $t$ running between $0$ and $1$.
+$[x,y]$ by $\gamma(t) \coloneqq (1-t)x + ty$ for $t$ running between $0$ and $1$.
 See \figureref{fig:straightpath}.
 Then $\gamma^{\:\prime}(t) = y-x$, and therefore
 \begin{equation*}
@@ -1140,10 +1140,10 @@ The arc-length of the unit square from
 \exampleref{mv:example:unitsquarepath} using the given parametrization.
 \item
 The arc-length of the unit circle using the parametrization
-$\gamma \colon [0,1] \to \R^2$, $\gamma(t) := \bigl(\cos(2\pi t),\sin(2\pi t)\bigr)$.
+$\gamma \colon [0,1] \to \R^2$, $\gamma(t) \coloneqq \bigl(\cos(2\pi t),\sin(2\pi t)\bigr)$.
 \item
 The arc-length of the unit circle using the parametrization
-$\beta \colon [0,2\pi] \to \R^2$, $\beta(t) := \bigl(\cos(t),\sin(t)\bigr)$.
+$\beta \colon [0,2\pi] \to \R^2$, $\beta(t) \coloneqq \bigl(\cos(t),\sin(t)\bigr)$.
 \end{enumerate}
 Note: Feel free to use what you know about sine and cosine from calculus.
 \end{exercise}
@@ -1153,7 +1153,7 @@ Suppose $\gamma \colon [0,1] \to \R^n$ is a smooth path, and
 $\omega$ is a one-form defined on the image $\gamma\bigl([a,b]\bigr)$.
 For $r \in [0,1]$, let $\gamma_r \colon [0,r] \to \R^n$ be defined
 as simply the restriction of $\gamma$ to $[0,r]$.  Show that the
-function $h(r) := \int_{\gamma_r} \omega$ is a continuously
+function $h(r) \coloneqq \int_{\gamma_r} \omega$ is a continuously
 differentiable function on $[0,1]$.
 \end{exercise}
 
@@ -1170,7 +1170,7 @@ some small distance past the end points.
 \begin{exercise} 
 Suppose $\alpha \colon [a,b] \to \R^n$ and
 $\beta \colon [c,d] \to \R^n$ are piecewise smooth paths such that
-$\Gamma := \alpha\bigl([a,b]\bigr) = \beta\bigl([c,d]\bigr)$.
+$\Gamma \coloneqq \alpha\bigl([a,b]\bigr) = \beta\bigl([c,d]\bigr)$.
 Show that there exist finitely many points
 $\{ p_1,p_2,\ldots,p_k\} \in \Gamma$, such that
 the sets
@@ -1214,7 +1214,7 @@ Suppose $\alpha \colon [a,b] \to \R^n$ and
 $\beta \colon [b,c] \to \R^n$ are piecewise smooth paths with
 $\alpha(b)=\beta(b)$.  Let $\gamma \colon [a,c] \to \R^n$ be defined by
 \begin{equation*}
-\gamma(t) :=
+\gamma(t) \coloneqq
 \begin{cases}
 \alpha(t) & \text{if } t \in [a,b], \\
 \beta(t)  & \text{if } t \in (b,c].
@@ -1273,7 +1273,7 @@ Hint: Same hint as the last exercise.
 
 \begin{exercise}
 Define $\gamma \colon [0,1] \to \R^2$ by
-$\gamma(t) := \Bigl( t^3 \sin(\nicefrac{1}{t}),\,
+$\gamma(t) \coloneqq \Bigl( t^3 \sin(\nicefrac{1}{t}),\,
 t{\bigl(3t^2\sin(\nicefrac{1}{t})-t\cos(\nicefrac{1}{t})\bigr)}^2 \Bigr)$
 for
 $t \not= 0$ and $\gamma(0) = (0,0)$.  Show that
@@ -1327,14 +1327,14 @@ and $\gamma(b) = \beta(d) = y$, we have
 \end{equation*}
 In this case, we simply write
 \begin{equation*}
-\int_x^y \omega := \int_\gamma \omega = \int_\beta \omega .
+\int_x^y \omega \coloneqq \int_\gamma \omega = \int_\beta \omega .
 \end{equation*}
 Not every one-form gives a path independent integral.  Most do not.
 
 \begin{example}
-Let $\gamma \colon [0,1] \to \R^2$ be the path $\gamma(t) := (t,0)$
+Let $\gamma \colon [0,1] \to \R^2$ be the path $\gamma(t) \coloneqq (t,0)$
 going from $(0,0)$ to $(1,0)$.  Let $\beta \colon [0,1] \to \R^2$ be the path
-$\beta(t) := \bigl(t,(1-t)t\bigr)$ also going between the same points.  Then
+$\beta(t) \coloneqq \bigl(t,(1-t)t\bigr)$ also going between the same points.  Then
 \begin{align*}
 & \int_\gamma y \, dx = 
 \int_0^1 \gamma_2(t) \gamma_1^{\:\prime}(t) \, dt
@@ -1354,7 +1354,7 @@ $\int_{(0,0)}^{(1,0)} y\,dx$ does not make sense.
 Let $U \subset \R^n$ be an open set and $f \colon U \to \R$ a 
 continuously differentiable function.  The one-form
 \begin{equation*}
-df :=
+df \coloneqq
 \frac{\partial f}{\partial x_1} \, dx_1 + 
 \frac{\partial f}{\partial x_2} \, dx_2 + \cdots +
 \frac{\partial f}{\partial x_n} \, dx_n 
@@ -1392,7 +1392,7 @@ First suppose that the integral is path independent.  Pick $p \in U$.  Since
 $U$ is path connected, there exists a path from $p$ to every $x \in U$.
 Define
 \begin{equation*}
-f(x) := \int_{p}^x \omega .
+f(x) \coloneqq \int_{p}^x \omega .
 \end{equation*}
 Write $\omega = \omega_1 \,dx_1 + \omega_2 \,dx_2 + \cdots + \omega_n \,dx_n$.
 We wish to show that for every $j = 1,2,\ldots,n$, the
@@ -1426,7 +1426,7 @@ $\abs{h}$ or
 less from $x$ are in $U$.
 As the integral is path independent,
 pick the simplest path possible from $x$ to $x+he_j$, that is
-$\gamma(t) := x+t he_j$ for $t \in [0,1]$.  The path is in $U$.
+$\gamma(t) \coloneqq x+t he_j$ for $t \in [0,1]$.  The path is in $U$.
 Notice $\gamma^{\:\prime}(t) = h e_j$
 has only one nonzero component and that is the $j$th component, which is
 $h$.  Therefore,
@@ -1524,7 +1524,7 @@ and $\alpha(1) = \beta(1) = y$.  See \figureref{fig:twopaths}.
 
 Define $\gamma \colon [0,2] \to U$ by
 \begin{equation*}
-\gamma(t) :=
+\gamma(t) \coloneqq
 \begin{cases}
 \alpha(t)  & \text{if } t \in [0,1], \\
 \beta(2-t) & \text{if } t \in (1,2].
@@ -1616,9 +1616,9 @@ sufficient for a star-shaped $U$.
 \begin{proof}
 Suppose $U$ is a star-shaped domain with respect to $p=(p_1,p_2,\ldots,p_n) \in U$.
 Given $x = (x_1,x_2,\ldots,x_n) \in U$, define the path $\gamma \colon [0,1] \to U$ as
-$\gamma(t) := (1-t)p + tx$, so $\gamma^{\:\prime}(t) = x-p$.  Let
+$\gamma(t) \coloneqq (1-t)p + tx$, so $\gamma^{\:\prime}(t) = x-p$.  Let
 \begin{equation*}
-f(x) := \int_{\gamma} \omega
+f(x) \coloneqq \int_{\gamma} \omega
 =
 \int_0^1
 \left(
@@ -1673,7 +1673,7 @@ And this is precisely what we wanted.
 \begin{example}
 Without some hypothesis on $U$ the theorem is not true.  Let
 \begin{equation*}
-\omega(x,y) := \frac{-y}{x^2+y^2} \,dx + \frac{x}{x^2+y^2} \,dy
+\omega(x,y) \coloneqq \frac{-y}{x^2+y^2} \,dx + \frac{x}{x^2+y^2} \,dy
 \end{equation*}
 be defined on $\R^2 \setminus \{ 0 \}$.  Then
 \begin{equation*}
@@ -1711,7 +1711,7 @@ the path integral of the vectorfield $v$ as
 \glsadd{not:pathintegralvecfield}
 \begin{equation*}
 \int_{\gamma} v \cdot d\gamma
-:=
+\coloneqq
 \int_a^b v\bigl(\gamma(t)\bigr) \cdot \gamma^{\:\prime}(t) \, dt ,
 \end{equation*}
 where the dot in the definition is the standard dot product.
@@ -1765,7 +1765,7 @@ Show that a star-shaped domain $U \subset \R^n$ is path connected.
 \end{exercise}
 
 \begin{exercise}
-Show that $U := \R^2 \setminus \{ (x,y) \in \R^2 : x \leq 0, y=0 \}$ is
+Show that $U \coloneqq \R^2 \setminus \{ (x,y) \in \R^2 : x \leq 0, y=0 \}$ is
 star-shaped and find all points $(x_0,y_0) \in U$ such that
 $U$ is star-shaped with respect to $(x_0,y_0)$.
 \end{exercise}
@@ -1839,7 +1839,7 @@ Take
 \end{equation*}
 defined on $\R^2 \setminus \{ (0,0) \}$.  Let $\gamma \colon [a,b] \to \R^2
 \setminus \{ (0,0) \}$ be a closed piecewise smooth path.
-Let $R:=\{ (x,y) \in \R^2 : x \leq 0 \text{ and } y=0 \}$.
+Let $R \coloneqq \{ (x,y) \in \R^2 : x \leq 0 \text{ and } y=0 \}$.
 Suppose $R \cap \gamma\bigl([a,b]\bigr)$ is a finite set of $k$ points.
 Prove that
 \begin{equation*}
