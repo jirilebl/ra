@@ -276,7 +276,7 @@ If $Y \subset X$ is a set, then the \emph{\myindex{span}} of $Y$, or in notation
 $\spn(Y)$, is the set of all linear combinations
 of all finite subsets of $Y$.  We 
 say $Y$ \emph{spans} $\spn(Y)$\glsadd{not:span}.
-By convention, define $\spn(\emptyset) \coloneqq \{ 0 \}.$
+By convention, define $\spn(\emptyset) \coloneqq \{ 0 \}$.
 \end{defn}
 
 \begin{example}
@@ -562,7 +562,7 @@ On the other hand a basis also spans $X$, and so
 by \ref{mv:dimprop:i} we know that dimension is at most $d$.
 Hence the dimension of $X$ must equal $d$.
 
-For \ref{mv:dimprop:iii} notice that $\{ e_1, e_2, \ldots, e_n \}$ is a basis of $\R^n$.
+For \ref{mv:dimprop:iii}, notice that $\{ e_1, e_2, \ldots, e_n \}$ is a basis of $\R^n$.
 
 To see \ref{mv:dimprop:iv},
 suppose $Y \subset X$ is a vector subspace,
@@ -767,8 +767,8 @@ is also finite-dimensional.
 \end{prop}
 
 We often identify a finite-dimensional vector
-space $X$ of dimension $n$ with $\R^n$, provided we fix a basis $\{ x_1,
-x_2, \ldots, x_n \}$ in $X$.  That is, we define a bijective
+space $X$ of dimension $n$ with $\R^n$, provided we fix a basis
+$\{ x_1, x_2, \ldots, x_n \}$ in $X$.  That is, we define a bijective
 linear map $A \in L(X,\R^n)$ by
 $Ax_j \coloneqq e_j$, where $\{ e_1, e_2, \ldots, e_n \}$ is the standard
 basis in $\R^n$.  Then we have
@@ -1803,17 +1803,19 @@ $\det(A) = 0$.
 \end{proof}
 
 \begin{prop}
-Determinant is independent of the basis.  In other words, if $B$ is
+Determinant is independent of the basis:  If $A$ and $B$ are
+$n$-by-$n$ matrices and $B$ is
 invertible, then
 \begin{equation*}
 \det(A) = \det(B^{-1}AB) .
 \end{equation*}
 \end{prop}
 
-The proof is to compute
+\begin{proof}
 $\det(B^{-1}AB) = 
 \det(B^{-1})\det(A)\det(B) =
 \frac{1}{\det(B)}\det(A)\det(B) = \det(A)$.
+\end{proof}
 
 If in one basis $A$ is the matrix representing a
 linear operator, then for another basis we can find a matrix $B$ such
@@ -2185,8 +2187,8 @@ $A \in GL(\R^n)$,
 find a $B$ where equality is satisfied and $B$ is not invertible.
 Hint:
 Difficulty is that $\snorm{A}\snorm{A^{-1}}$ is not always $1$.
-Prove that a vector $x_1$ can be completed to a basis $\{ x_1,\ldots,x_n
-\}$ such that $x_1 \cdot x_j = 0$ for $j \geq 2$.
+Prove that a vector $x_1$ can be completed to a basis
+$\{ x_1,\ldots,x_n \}$ such that $x_1 \cdot x_j = 0$ for $j \geq 2$.
 For the right $x_1$,
 make it so that $(A-B)x_j = 0$ for $j \geq 2$.
 \item
@@ -2279,7 +2281,8 @@ the derivative at $x$ as
 \end{equation*}
 In other words, there is a number $a$ (the derivative of $f$ at $x$) such that
 \begin{equation*}
-\lim_{h \to 0} \abs{\frac{f(x+h)-f(x)}{h} - a} =
+\lim_{h \to 0} \abs{\frac{f(x+h)-f(x)}{h} - a}
+=
 \lim_{h \to 0} \abs{\frac{f(x+h)-f(x) - ah}{h}}
 =
 \lim_{h \to 0} \frac{\sabs{f(x+h)-f(x) - ah}}{\sabs{h}}
@@ -3141,8 +3144,7 @@ continuous on $[a,b]$, then there exists a $t_0 \in (a,b)$ such that
 By the mean value theorem on the scalar-valued function
 $t \mapsto \bigl(\varphi(b)-\varphi(a) \bigr) \cdot \varphi(t)$,
 where the dot is the dot product, we obtain
-that
-there is a $t_0 \in (a,b)$ such that
+a $t_0 \in (a,b)$ such that
 \begin{equation*}
 \begin{split}
 \snorm{\varphi(b)-\varphi(a)}^2
@@ -3208,7 +3210,7 @@ Next
 =
 f'\bigl((1-t)x+ty\bigr) (y-x) .
 \end{equation*}
-By \lemmaref{lemma:mvtmv} there is some
+By \lemmaref{lemma:mvtmv}, there is some
 $t_0 \in (0,1)$ such that
 \begin{equation*}
 \begin{split}
@@ -3226,8 +3228,8 @@ M \snorm{y-x} . \qedhere
 If $U$ is not convex the proposition is not true: Consider
 the set
 \begin{equation*}
-U \coloneqq \bigl\{ (x,y) : 0.5 < x^2+y^2 < 2 \bigr\} \setminus \bigl\{ (x,0) : x <
-0 \bigr\} .
+U \coloneqq \bigl\{ (x,y) : 0.5 < x^2+y^2 < 2 \bigr\}
+\setminus \bigl\{ (x,0) : x < 0 \bigr\} .
 \end{equation*}
 For $(x,y) \in U$,
 let $f(x,y)$ be the angle that the line from the origin to $(x,y)$
