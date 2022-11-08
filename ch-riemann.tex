@@ -812,10 +812,10 @@ $f$ is Riemann integrable, then
 \end{prop}
 
 \begin{proof}
-Suppose $f \in \sR[a,c]$, then 
+Suppose $f \in \sR[a,c]$, then it is bounded and
 $\overline{\int_a^c} f = 
 \underline{\int_a^c} f = 
-\int_a^c f$.  We apply the lemma to get
+\int_a^c f$.  The lemma gives
 \begin{equation*}
 \int_a^c f
 =
@@ -853,7 +853,7 @@ Thus $f$ is Riemann integrable on $[a,b]$ and $[b,c]$ and the desired formula
 holds.
 
 Now assume $f$ is Riemann integrable on $[a,b]$ and on $[b,c]$.
-Again apply the lemma to get
+Again it is bounded, and the lemma gives
 \begin{equation*}
 \underline{\int_a^c} f
 =
@@ -903,9 +903,9 @@ Let $f$ and $g$ be in $\sR[a,b]$ and $\alpha \in \R$.
 \begin{proof}
 \pagebreak[2]
 Let us prove the first item for $\alpha \geq 0$. 
-Let $P$ be a partition of $[a,b]$.
-Let $m_i \coloneqq \inf \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\}$ as usual.
-Since $\alpha$ is nonnegative, we can move the multiplication by $\alpha$
+Let $P$ be a partition of $[a,b]$, and
+$m_i \coloneqq \inf \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\}$ as usual.
+As $\alpha \geq 0$, the multiplication by $\alpha$ moves
 past the infimum,
 \begin{equation*}
 \inf \bigl\{ \alpha f(x) : x \in [x_{i-1},x_i] \bigr\}
@@ -922,7 +922,7 @@ Similarly,
 \begin{equation*}
 U(P,\alpha f) = \alpha U(P,f) .
 \end{equation*}
-Again, as $\alpha \geq 0$ we
+Again, as $\alpha \geq 0$, we
 may move multiplication by $\alpha$ past the supremum.  Hence,
 \begin{equation*}
 \begin{split}
@@ -1891,7 +1891,7 @@ non-differentiable function.
 
 \begin{exercise} \label{exercise:smoothingout}
 Let $f \colon [a,b] \to \R$ be a continuous function.  Let $\epsilon > 0$
-be a constant.  For $x \in [a+\epsilon,b-\epsilon]$, define
+be a constant so that $a+\epsilon < b-\epsilon$.  For $x \in [a+\epsilon,b-\epsilon]$, define
 \begin{equation*}
 g(x) \coloneqq \frac{1}{2\epsilon} \int_{x-\epsilon}^{x+\epsilon} f .
 \end{equation*}

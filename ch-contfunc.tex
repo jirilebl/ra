@@ -835,8 +835,8 @@ and even to prove that certain functions are continuous.
 It can also be strengthened, see \exerciseref{exercise:contseqalt}.
 
 \begin{example}
-The function $f \colon (0,\infty) \to \R$,
-defined by $f(x) \coloneqq \nicefrac{1}{x}$, is continuous.
+The function $f \colon (0,\infty) \to \R$
+defined by $f(x) \coloneqq \nicefrac{1}{x}$ is continuous.
 
 Proof: Fix $c \in (0,\infty)$.  
 Let $\{ x_n \}_{n=1}^\infty$ be a sequence in $(0,\infty)$ such that
@@ -906,14 +906,14 @@ exercise.
 Let $f \colon S \to \R$ and $g \colon S \to \R$ be functions
 continuous at $c \in S$.
 \begin{enumerate}[(i)]
-\item The function $h \colon S \to \R$, defined by
-$h(x) \coloneqq f(x)+g(x)$, is continuous at $c$.
-\item The function $h \colon S \to \R$, defined by
-$h(x) \coloneqq f(x)-g(x)$, is continuous at $c$.
-\item The function $h \colon S \to \R$, defined by
-$h(x) \coloneqq f(x)g(x)$, is continuous at $c$.
-\item If $g(x)\not=0$ for all $x \in S$, the function $h \colon S \to \R$,
-given by $h(x) \coloneqq \frac{f(x)}{g(x)}$, is continuous at $c$.
+\item The function $h \colon S \to \R$ defined by
+$h(x) \coloneqq f(x)+g(x)$ is continuous at $c$.
+\item The function $h \colon S \to \R$ defined by
+$h(x) \coloneqq f(x)-g(x)$ is continuous at $c$.
+\item The function $h \colon S \to \R$ defined by
+$h(x) \coloneqq f(x)g(x)$ is continuous at $c$.
+\item If $g(x)\not=0$ for all $x \in S$, the function $h \colon S \to \R$
+given by $h(x) \coloneqq \frac{f(x)}{g(x)}$ is continuous at $c$.
 \end{enumerate}
 \end{prop}
 
@@ -1041,12 +1041,12 @@ at all, or it converges to something
 other than $f(c)$.
 
 \begin{example} \label{example:jumpdiscont}
-The function $f \colon \R \to \R$, defined by
+The function $f \colon \R \to \R$ defined by
 \begin{equation*}
 f(x) \coloneqq 
 \begin{cases}
 -1 & \text{if } x < 0, \\
-1 & \text{if } x \geq 0,
+1 & \text{if } x \geq 0
 \end{cases}
 \end{equation*}
 is not continuous at 0.
@@ -1184,14 +1184,14 @@ and $g$ is in fact continuous on $B$.
 
 \begin{exercise}
 Using the definition of continuity directly prove that
-$f \colon \R \to \R$, defined by
-$f(x) \coloneqq x^2$, is continuous.
+$f \colon \R \to \R$ defined by
+$f(x) \coloneqq x^2$ is continuous.
 \end{exercise}
 
 \begin{exercise}
 Using the definition of continuity directly prove that
-$f \colon (0,\infty) \to \R$, defined by
-$f(x) \coloneqq \nicefrac{1}{x}$, is continuous.
+$f \colon (0,\infty) \to \R$ defined by
+$f(x) \coloneqq \nicefrac{1}{x}$ is continuous.
 \end{exercise}
 
 \begin{exercise}
@@ -1953,7 +1953,7 @@ Note that $x$ and $c$ are not treated any differently
 in this definition.
 
 \begin{example}
-$f \colon [0,1] \to \R$, defined by $f(x) \coloneqq x^2$, is uniformly continuous.
+$f \colon [0,1] \to \R$ defined by $f(x) \coloneqq x^2$ is uniformly continuous.
 
 Proof: Note that $0 \leq x,c \leq 1$.  Then
 \begin{equation*}
@@ -1966,7 +1966,7 @@ If $\sabs{x-c} < \delta$, then $\sabs{x^2-c^2} < \epsilon$.
 
 \medskip
 
-On the other hand, $g \colon \R \to \R$, defined by $g(x) \coloneqq x^2$, is not uniformly
+On the other hand, $g \colon \R \to \R$ defined by $g(x) \coloneqq x^2$ is not uniformly
 continuous.
 
 Proof: Suppose it is uniformly continuous, then for every $\epsilon > 0$,
@@ -1988,7 +1988,7 @@ contradiction.
 
 
 \begin{example}
-The function $f \colon (0,1) \to \R$, defined by $f(x) \coloneqq \nicefrac{1}{x}$, is not
+The function $f \colon (0,1) \to \R$ defined by $f(x) \coloneqq \nicefrac{1}{x}$ is not
 uniformly continuous.
 
 Proof: Given $\epsilon > 0$, then $\epsilon >
@@ -2119,14 +2119,14 @@ the limits
 L_a \coloneqq \lim_{x \to a} f(x) \qquad \text{and} \qquad
 L_b \coloneqq \lim_{x \to b} f(x)
 \end{equation*}
-exist and the function $\widetilde{f} \colon [a,b] \to \R$,
+exist and the function $\widetilde{f} \colon [a,b] \to \R$
 defined by
 \begin{equation*}
 \widetilde{f}(x) \coloneqq
 \begin{cases}
 f(x) & \text{if } x \in (a,b), \\
 L_a & \text{if } x = a, \\
-L_b & \text{if } x = b,
+L_b & \text{if } x = b
 \end{cases}
 \end{equation*}
 is continuous.
@@ -2267,7 +2267,7 @@ Hence sine and cosine are Lipschitz continuous with $K=1$.
 \end{example}
 
 \begin{example}
-The function $f \colon [1,\infty) \to \R$, defined by $f(x) \coloneqq \sqrt{x}$,
+The function $f \colon [1,\infty) \to \R$ defined by $f(x) \coloneqq \sqrt{x}$
 is Lipschitz continuous. Proof:
 \begin{equation*}
 \abs{\sqrt{x}-\sqrt{y}} = 
@@ -2285,8 +2285,8 @@ As $x \geq 1$ and $y \geq 1$, we see that $\frac{1}{\sqrt{x}+\sqrt{y}}
 \abs{x-y}.
 \end{equation*}
 
-On the other hand, $g \colon [0,\infty) \to \R$, defined by
-$g(x) \coloneqq \sqrt{x}$, is not Lipschitz continuous.  Proof:
+On the other hand, $g \colon [0,\infty) \to \R$ defined by
+$g(x) \coloneqq \sqrt{x}$ is not Lipschitz continuous.  Proof:
 Suppose for all $x,y \in [0,\infty)$,
 \begin{equation*}
 \abs{\sqrt{x}-\sqrt{y}} 
@@ -2337,8 +2337,8 @@ and defined by $f(x) \coloneqq \nicefrac{1}{x}$ is Lipschitz continuous.
 \end{exercise}
 
 \begin{exercise}
-Show that $f \colon (0,\infty) \to \R$,
-defined by $f(x) \coloneqq \nicefrac{1}{x}$, is not Lipschitz continuous.
+Show that $f \colon (0,\infty) \to \R$
+defined by $f(x) \coloneqq \nicefrac{1}{x}$ is not Lipschitz continuous.
 \end{exercise}
 
 \begin{samepage}
@@ -2371,8 +2371,8 @@ $g(x) \coloneqq x(1-x)f(x)$ is uniformly continuous.
 \end{exercise}
 
 \begin{exercise}
-Show that $f \colon (0,\infty) \to \R$, defined by $f(x) \coloneqq \sin
-(\nicefrac{1}{x})$, is not uniformly continuous.
+Show that $f \colon (0,\infty) \to \R$ defined by $f(x) \coloneqq \sin
+(\nicefrac{1}{x})$ is not uniformly continuous.
 \end{exercise}
 
 \begin{exercise}[Challenging]
