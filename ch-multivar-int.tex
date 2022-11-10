@@ -1396,7 +1396,7 @@ m^*(S)
 \sum_{j=1}^\infty V(R_j) ,
 \end{equation*}
 where the infimum is taken over all sequences
-$\{ R_j \}$ of open rectangles such that
+$\{ R_j \}_{j=1}^\infty$ of open rectangles such that
 $S \subset \bigcup_{j=1}^\infty R_j$,
 and we are allowing both the sum and the infimum to be $\infty$.
 See \figureref{fig:outermeasure}.
@@ -1423,7 +1423,7 @@ The theory of measures on $\R^n$ is a very complicated subject.
 We will only require measure-zero sets and so we focus on these.
 A set $S$ is of measure zero if
 for every $\epsilon > 0$
-there exists a sequence of open rectangles $\{ R_j \}$ such that
+there exists a sequence of open rectangles $\{ R_j \}_{j=1}^\infty$ such that
 \begin{equation} \label{mv:eq:nullR}
 S \subset \bigcup_{j=1}^\infty R_j \qquad \text{and} \qquad
 \sum_{j=1}^\infty V(R_j) < \epsilon.
@@ -1438,7 +1438,7 @@ choose balls no bigger than a fixed radius.
 \begin{prop} \label{mv:prop:ballsnull}
 Let $\delta > 0$ be given.
 A set $S \subset \R^n$ is of measure zero if and only if for every $\epsilon >
-0$, there exists a sequence of open balls $\{ B_j \}$, where the radius of
+0$, there exists a sequence of open balls $\{ B_j \}_{j=1}^\infty$, where the radius of
 $B_j$ is $r_j < \delta$, and such that
 \begin{equation*}
 S \subset \bigcup_{j=1}^\infty B_j \qquad \text{and} \qquad
@@ -1451,7 +1451,7 @@ Note that the \myquote{volume} of $B_j$ is proportional to $r_j^n$.
 \begin{proof}
 If $C$ is a closed cube (rectangle with all sides equal) of side $s$,
 then $C$ is contained in a closed ball of radius
-$\sqrt{n}\, s$ by \propref{prop:diameterrectangle}, and therefore
+$\sqrt{n}\, s$ by \propref{prop:diameterrectangle}, and hence
 in an open ball of radius $2 \sqrt{n}\, s$.
 
 Suppose $R$ is a rectangle of positive volume.
@@ -1471,10 +1471,10 @@ rectangle of volume at most $2^n$ times larger, but whose sides are
 multiples of $s$.
 
 So suppose that $S$ is a null set and
-there exist $\{ R_j \}$ whose union contains $S$ and such that
+there exist $\{ R_j \}_{j=1}^\infty$ whose union contains $S$ and such that
 \eqref{mv:eq:nullR} is true.  As we have seen above, we can choose closed
-cubes $\{ C_k \}$ with $C_k$ of side $s_k$ as above that cover all the rectangles $\{ R_j \}$
-and so that
+cubes $\{ C_k \}_{k=1}^\infty$ with $C_k$ of side $s_k$ as above that cover
+all the rectangles $\{ R_j \}_{j=1}^\infty$ and so that
 \begin{equation*}
 \sum_{k=1}^\infty s_k^n =
 \sum_{k=1}^\infty V(C_k) \leq
@@ -1494,7 +1494,7 @@ And as $S \subset\bigcup_{j} R_j \subset \bigcup_{k} C_k \subset \bigcup_{k}
 B_k$, we are finished.
 
 For the other direction, suppose $S$ is covered by balls $B_j$
-of radii $r_j$, such that $\sum r_j^n < \epsilon$,
+of radii $r_j$, such that $\sum_{j=1}^\infty r_j^n < \epsilon$,
 as in the statement of the proposition.
 Each $B_j$ is contained in an open cube $R_j$ of side $2r_j$.
 So $V(R_j) = {(2 r_j)}^n = 2^n r_j^n$.  Therefore,
@@ -1514,7 +1514,7 @@ as well.  We leave this generalization to the reader.
 
 \begin{example}
 The set $\Q^n \subset \R^n$ of points with rational coordinates
-is a set of measure zero.
+is of measure zero.
 
 Proof:
 The set $\Q^n$ is countable and therefore let us write it
@@ -1544,17 +1544,15 @@ there exists a sequence of open rectangles $\{ R_{j,k} \}_{k=1}^\infty$
 such that
 \begin{equation*}
 S_j \subset \bigcup_{k=1}^\infty R_{j,k}
-\end{equation*}
-and 
-\begin{equation*}
+\qquad \text{and} \qquad
 \sum_{k=1}^\infty V(R_{j,k}) < 2^{-j} \epsilon .
 \end{equation*}
 Then
 \begin{equation*}
 S \subset \bigcup_{j=1}^\infty \bigcup_{k=1}^\infty R_{j,k} .
 \end{equation*}
-As $V(R_{j,k})$ is always positive, the sum over all $j$ and $k$
-can be done in any manner.  In particular, it can be done as
+All $V(R_{j,k})$ are nonnegative, so the sum over all $j$ and $k$
+can be done in any manner.  In particular, as
 \begin{equation*}
 \sum_{j=1}^\infty \sum_{k=1}^\infty V(R_{j,k}) <
 \sum_{j=1}^\infty 2^{-j} \epsilon = \epsilon . \qedhere
@@ -1587,13 +1585,13 @@ As $s$ is fixed, we
 make $V(R)$
 arbitrarily small by
 picking $\epsilon$ small enough.
-So $P_s$ is measure zero.
+So $P_s$ is of measure zero.
 
 Next 
 \begin{equation*}
 P = \bigcup_{j=1}^\infty P_j
 \end{equation*}
-and a countable union of measure zero sets is measure zero.
+and a countable union of measure zero sets is of measure zero.
 \end{example}
 
 \begin{example}
@@ -1605,23 +1603,24 @@ Since $[a,b] \subset (a-\epsilon,b+\epsilon)$ for all $\epsilon > 0$.
 Hence, $m^*\bigl([a,b]\bigr) \leq b-a$.
 
 Let us prove the other inequality.
-Suppose $\bigl\{ (a_j,b_j) \bigr\}$ are open intervals such that
+Suppose $\bigl\{ (a_j,b_j) \bigr\}_{j=1}^\infty$ are open intervals such that
 \begin{equation*}
 [a,b] \subset \bigcup_{j=1}^\infty (a_j,b_j) .
 \end{equation*}
-We wish to bound $\sum (b_j-a_j)$ from below.
-Since $[a,b]$ is compact, then finitely many of the open intervals
+We wish to bound $\sum_{j=1}^\infty (b_j-a_j)$ from below.
+Since $[a,b]$ is compact, finitely many of the open intervals
 still cover $[a,b]$.  As throwing out some of the intervals only makes the
 sum smaller, we only need to consider the finite number of intervals
-still covering $[a,b]$.
-If $(a_i,b_i) \subset (a_j,b_j)$, then we can throw out
-$(a_i,b_i)$ as well, in other words the intervals that are left
+covering $[a,b]$.
+If $(a_i,b_i) \subset (a_j,b_j)$, then we throw out
+$(a_i,b_i)$ as well.
+The intervals that are left
 have distinct left endpoints, and whenever
 $a_j < a_i < b_j$, then $b_j < b_i$.
 Therefore,
 $[a,b] \subset \bigcup_{j=1}^k (a_j,b_j)$ for some $k$, and
 we assume that the intervals are sorted such that $a_1 < a_2 < \cdots <
-a_k$.  Since $(a_2,b_2)$ is not contained in $(a_1,b_1)$,
+a_k$.  As $(a_2,b_2)$ is not contained in $(a_1,b_1)$,
 since $a_j > a_2$ for all $j > 2$, and since the intervals
 must contain every point in $[a,b]$, we find that $a_2 < b_1$, or in
 other words
@@ -1662,7 +1661,7 @@ E \subset B_1 \cup B_2 \cup \cdots \cup B_{\ell}
 
 \begin{proof}
 As $E$ is of measure zero,
-there exists a sequence of open rectangles $\{ R_j \}$ such that 
+there exists a sequence of open rectangles $\{ R_j \}_{j=1}^\infty$ such that 
 \begin{equation*}
 E \subset \bigcup_{j=1}^\infty R_j
 \qquad \text{and} \qquad
@@ -1684,7 +1683,7 @@ exercise.
 \begin{example} \label{example:cantor}
 So that the reader is not under the impression that there are only few
 measure zero sets and that these sets are uncomplicated,
-let us give an uncountable, compact, measure zero subset of $[0,1]$.
+here is an uncountable, compact, measure zero subset of $[0,1]$.
 For every $x \in [0,1]$, write its
 representation in ternary notation
 \begin{equation*}
@@ -1796,7 +1795,7 @@ At each $x \in E$, take the maximum radius $\delta_x$
 such that $B(x,\delta_x) \subset U$ (we may assume $U \not= \R^n$).
 Let $\delta \coloneqq \inf_{x\in E} \delta_x$.
 We want to show that $\delta > 0$.
-Take a sequence $\{ x_j \} \subset E$ so that $\delta_{x_j} \to \delta$.
+Take a sequence $\{ x_j \}_{j=1}^\infty$ in $E$ so that $\delta_{x_j} \to \delta$.
 As $E$ is compact, we can pick the sequence to be convergent to some $y \in
 E$.  Once $\snorm{x_j-y} < \frac{\delta_y}{2}$, then
 $\delta_{x_j} > \frac{\delta_y}{2}$ by the triangle inequality.
@@ -1827,7 +1826,7 @@ f(E) \subset f(B_1) \cup f(B_2) \cup \cdots \cup f(B_k)
 \subsection{Exercises}
 
 \begin{exercise}
-Finish the proof of \propref{mv:prop:compactnull}, that is, show that you
+Finish the proof of \propref{mv:prop:compactnull}:  Show that you
 can use balls instead of rectangles.
 \end{exercise}
 
@@ -1852,6 +1851,7 @@ $\widebar{S} = \R^n$.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 Prove the general case of  \propref{prop:imagenull} without using compactness:
 \begin{enumerate}[a)]
 \item
@@ -1896,7 +1896,7 @@ the following holds.
 Given $B(x,r) \subset \R^n$ and $\delta > 0$, there exist
 $k$ open balls $B_1,B_2,\ldots,B_k$ of radius at most
 $\delta$ such that $B(x,r) \subset B_1 \cup B_2 \cup \cdots \cup B_k$.
-Note that you can find $k$ that really only depends on $n$ and the ratio
+Note that you can find $k$ that only depends on $n$ and the ratio
 $\nicefrac{\delta}{r}$.
 \end{exercise}
 
@@ -2139,7 +2139,7 @@ $S_\epsilon \subset S$ and $S$ is of measure zero,
 so $S_\epsilon$ is of measure zero.
 Via \propref{mv:prop:compactnull}, finitely many open rectangles
 $O_1,O_2,\ldots,O_k$ cover $S_\epsilon$ and
-$\sum V(O_j) < \epsilon$.  
+$\sum_{j=1}^\infty V(O_j) < \epsilon$.  
 
 The set $T \coloneqq R \setminus ( O_1 \cup \cdots \cup O_k )$ is closed, bounded,
 and so compact.  As $o(f,x) < \epsilon$ for all $x \in T$,
@@ -2661,10 +2661,11 @@ We use the inverse function theorem (\thmref{thm:inverse}).  We find
 a neighborhood $V \subset U$ of $x$ and an open set $W$ such that
 the restriction $f|_V$ is a one-to-one and onto function from $V$ to $W$
 with a continuously differentiable inverse.  In particular, $g(x) = y \in W$.
-As $y \in \partial T$, there exists a sequence $\{ y_k \}$ in $W$ with
-$\lim y_k = y$ and $y_k \notin T$.  As $g|_V$ is invertible and in
+As $y \in \partial T$, there exists a sequence $\{ y_k \}_{k=1}^\infty$ in $W$ with
+$\lim_{k\to\infty} y_k = y$ and $y_k \notin T$.  As $g|_V$ is invertible and in
 particular has a continuous inverse, there exists
-a sequence $\{ x_k \}$ in $V$ such that $g(x_k) = y_k$ and $\lim x_k = x$.
+a sequence $\{ x_k \}_{k=1}^\infty$ in $V$ such that $g(x_k) = y_k$ and
+$\lim_{k\to\infty} x_k = x$.
 Since $y_k \notin T = g(S)$, clearly $x_k \notin S$.  Since $x \in S$, we
 conclude that $x \in \partial S$.  The claim is proved, $\partial T \subset
 g(\partial S)$.
@@ -2704,7 +2705,7 @@ If $\varphi \colon U \to \R$ is Riemann integrable on $U$, then
 
 \begin{exercise}
 Let us construct an example of a non-Jordan measurable open set.
-Start in one dimension.  Let $\{ r_j \}$ be an enumeration
+Start in one dimension.  Let $\{ r_j \}_{j=1}^\infty$ be an enumeration
 of all rational numbers in $(0,1)$.  Let $(a_j,b_j)$ be open intervals
 such that $(a_j,b_j) \subset (0,1)$ for all $j$, $r_j \in (a_j,b_j)$,
 and $\sum_{j=1}^\infty (b_j-a_j) < \nicefrac{1}{2}$.  Now let $U \coloneqq
