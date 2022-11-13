@@ -121,7 +121,8 @@ Items \ref{metric:pos}--\ref{metric:com} are again easy to verify.  The
 triangle inequality \ref{metric:triang} is a little bit more difficult.
 Note that $d(x,y) = \varphi(\abs{x-y})$ where $\varphi(t) =
 \frac{t}{t+1}$ and $\varphi$ is an increasing function
-(positive derivative).  Hence
+(positive derivative, see \figureref{fig:tovertp1}).
+Hence
 \begin{equation*}
 \begin{split}
 d(x,z) = \varphi(\abs{x-z})
@@ -146,6 +147,10 @@ The function $d$ is thus a metric, and gives
 an example of a nonstandard metric on $\R$.  With this metric,
 $d(x,y) < 1$ for all $x,y \in \R$.  That is,
 every two points are less than 1 unit apart.
+\begin{myfigureht}
+\includegraphics{figures/tovertp1graph}
+\caption{Graph of $\frac{t}{t+1}$ for positive $t$ with an asymptote at 1.\label{fig:tovertp1}}
+\end{myfigureht}
 \end{example}
 
 An important metric space is the
@@ -678,7 +683,7 @@ Before we get to convergence,
 we define the so-called \emph{\myindex{topology}}.
 That is,
 we define open and closed sets in a metric space.
-And before doing that,
+And before that,
 we define two special open and closed sets.
 
 \begin{defn}
@@ -815,11 +820,11 @@ and so the union is open.
 \end{proof}
 
 \begin{example}
-The main thing to notice is the difference between
+Notice the difference between
 items
 \ref{topology:openii} and \ref{topology:openiii}.
 Item \ref{topology:openii} is not true for an arbitrary intersection.
-For example,
+For instance,
 $\bigcap_{n=1}^\infty (\nicefrac{-1}{n},\nicefrac{1}{n}) = \{ 0 \}$,
 which is not open.
 \end{example}
@@ -866,7 +871,8 @@ Let $y \in B(x,\delta)$.  Let $\alpha \coloneqq \delta-d(x,y)$.  As $\alpha
 d(x,z) \leq d(x,y) + d(y,z) < d(x,y) + \alpha = d(x,y) + \delta-d(x,y) =
 \delta .
 \end{equation*}
-Therefore, $z \in B(x,\delta)$ for every $z \in B(y,\alpha)$.  So $B(y,\alpha) \subset B(x,\delta)$ and
+Therefore, $z \in B(x,\delta)$ for every $z \in B(y,\alpha)$.  So
+$B(y,\alpha) \subset B(x,\delta)$, and so
 $B(x,\delta)$ is open.  See \figureref{fig:ballisopen}.
 
 \begin{myfigureht}
@@ -2766,7 +2772,7 @@ such that
 B_X(c,\delta) \subset W \subset f^{-1}\bigl(B_Y\bigl(f(c),\epsilon\bigr)\bigr) .
 \end{equation*}
 That means precisely that if $d_X(x,c) < \delta$, then $d_Y\bigl(f(x),f(c)\bigr)
-< \epsilon$, and so $f$ is continuous at $c$.
+< \epsilon$, and so $f$ is continuous at~$c$.
 \end{proof}
 
 \begin{thm} \label{thm:mstopocont}
@@ -2790,9 +2796,9 @@ We have just proved the most basic result in
 \emph{\myindex{algebraic geometry}}, the study of
 zero sets of polynomials:  The zero set of a polynomial is closed.
 
-Similarly the set where $f$ is nonnegative, that is,
+Similarly, the set where $f$ is nonnegative,
 $f^{-1}\bigl( [0,\infty) \bigr) = \bigl\{ x \in X : f(x) \geq 0 \bigr\}$,
-is closed.  On the other hand the
+is closed.  On the other hand, the
 set where $f$ is positive,
 $f^{-1}\bigl( (0,\infty) \bigr) = \bigl\{ x \in X : f(x) > 0 \bigr\}$,
 is open.  

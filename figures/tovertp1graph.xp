@@ -1,0 +1,28 @@
+#include "epix.h"
+using namespace ePiX;
+
+int main()
+{
+  double t;
+  picture(P(0,0), P(6.0,1.0), "6x1.0in");
+
+  begin();
+
+  dashed();
+  line(P(0,1),P(6,1));
+
+  solid();
+  h_axis(6);
+  v_axis(1);
+
+  bold();
+
+  path p;
+  for (t = 0.0; t <= 6.000001; t+=0.1) {
+	  p.pt(P(t,t/(t+1.0)));
+  }
+  p.draw();
+
+  tikz_format();
+  end();
+}
