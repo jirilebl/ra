@@ -913,21 +913,22 @@ We saw that $U$ is an open set in $Y$.
 We may take $V \coloneqq (\nicefrac{-1}{2},\nicefrac{1}{2})$.
 
 \begin{proof}
-Suppose $V \subset X$ is open and $x \in V \cap Y$.
-Let $U \coloneqq V \cap Y$.
+Suppose $V \subset X$ is open and $U = V \cap Y$.
+Let $x \in V \cap Y$.
 As $V$ is open, there
 exists a $\delta > 0$ such that $B_X(x,\delta) \subset V$.
 Then
 \begin{equation*}
 B_Y(x,\delta) = B_X(x,\delta) \cap Y \subset V \cap Y = U .
 \end{equation*}
+So $U$ is open in $Y$.
 
 The proof of the opposite direction, that is, that if $U \subset Y$
 is open in the subspace topology there exists a $V$ is left as
 \exerciseref{exercise:mssubspace}.
 \end{proof}
 
-A hint for finshing the proof (the exercise) is that
+A hint for finishing the proof (the exercise) is that
 a useful way to think about an open set is as a union of open balls.  If $U$ is
 open, then for each $x \in U$, there is a $\delta_x > 0$ (depending on $x$) such that
 $B(x,\delta_x) \subset U$.  Then $U = \bigcup_{x\in U} B(x,\delta_x)$.
@@ -1242,7 +1243,7 @@ $\partial A = \widebar{A} \setminus A^\circ = \widebar{A} \cap
 \end{proof}
 
 The boundary is the set of points that are close to both the set and its
-complement.  See \figureref{fig:msboundary} for the a diagram
+complement.  See \figureref{fig:msboundary} for a diagram
 of the next proposition.
 
 \begin{prop}
