@@ -143,7 +143,7 @@ $\R^2$ is the same as convergence for each component and we already know
 that the real algebraic operations are continuous.  For example,
 write $z_n = x_n + i\,y_n$ and
 $w_n = s_n + i\,t_n$, and suppose that
-$\lim \, z_n = z = x+i\,y$ and $\lim \, w_n = w = s+i\,t$.
+$\lim_{n\to\infty} z_n = z = x+i\,y$ and $\lim_{n\to\infty} w_n = w = s+i\,t$.
 Let us show
 \begin{equation*}
 \lim_{n\to\infty} z_n w_n = zw .
@@ -169,7 +169,7 @@ Similarly the modulus and the complex conjugate are continuous functions.  We
 leave the proof of the following proposition as an exercise.
 
 \begin{prop} \label{prop:continuityofcomplex}
-Suppose $\{ z_n \}$, $\{ w_n \}$ are sequences of complex numbers converging
+Suppose $\{ z_n \}_{n=1}^\infty$, $\{ w_n \}_{n=1}^\infty$ are sequences of complex numbers converging
 to $z$ and $w$ respectively.  Then
 \begin{enumerate}[(i)]
 \item
@@ -192,7 +192,7 @@ the real and imaginary parts converge.  Therefore, feel free to apply
 everything you have learned about convergence in $\R^2$, as well as
 applying results about real numbers to the real and imaginary parts.
 
-We also need convergence of complex series.  Let $\{ z_n \}$ be a
+We also need convergence of complex series.  Let $\{ z_n \}_{n=1}^\infty$ be a
 sequence of complex
 numbers. The series
 \begin{equation*}
@@ -325,9 +325,9 @@ of the other
 
 \begin{exercise}
 Prove the Bolzano--Weierstrass theorem for complex sequences.
-Suppose $\{ z_n \}$ is a bounded sequence of complex numbers, that
+Suppose $\{ z_n \}_{n=1}^\infty$ is a bounded sequence of complex numbers, that
 is, there exists an $M$ such that $\sabs{z_n} \leq M$ for all $n$.  Prove
-that there exists a subsequence $\{ z_{n_k} \}$ that converges to some $z
+that there exists a subsequence $\{ z_{n_k} \}_{k=1}^\infty$ that converges to some $z
 \in \C$.
 \end{exercise}
 
@@ -366,14 +366,14 @@ $\int_0^1 f = 0$ but $f(t) \not= 0$ for all $t \in [0,1]$.
 
 Let us get back to swapping limits and expand on
 \volIref{\chapterref*{vI-fs:chapter} of volume I}{\chapterref{fs:chapter}}.
-Let $\{ f_n \}$ be a sequence
+Let $\{ f_n \}_{n=1}^\infty$ be a sequence
 of functions $f_n \colon X \to Y$ for a set $X$ and a metric space $Y$.
 Let $f \colon X \to Y$ be a
 function and for every $x \in X$ suppose that
 \begin{equation*}
 f(x) = \lim_{n\to \infty} f_n(x) .
 \end{equation*}
-We say the sequence $\{ f_n \}$
+We say the sequence $\{ f_n \}_{n=1}^\infty$
 \emph{\myindex{converges pointwise}}\index{pointwise convergence} to $f$.
 
 For $Y=\C$, a series
@@ -390,8 +390,8 @@ The question is:
 If $f_n$ are all continuous, is $f$ continuous?  Differentiable?
 Integrable?  What are the derivatives or integrals of $f$?
 
-For example, for continuity of the pointwise limit of a sequence $\{ f_n
-\}$, we are asking if
+For example, for continuity of the pointwise limit of a sequence
+$\{ f_n \}_{n=1}^\infty$, we are asking if
 \begin{equation*}
 \lim_{x\to x_0} \lim_{n\to\infty} f_n(x)
 \overset{?}{=}
@@ -418,7 +418,7 @@ So pointwise convergence is not enough to preserve continuity (nor even
 boundedness).  For that, we need uniform convergence.
 
 Let $f_n \colon X \to Y$ be functions.  Then
-$\{f_n\}$ \emph{\myindex{converges uniformly}}\index{uniform convergence}
+$\{f_n\}_{n=1}^\infty$ \emph{\myindex{converges uniformly}}\index{uniform convergence}
 to $f$ if
 for every $\epsilon > 0$, there exists an $M$ such that
 for all $n \geq M$ and all $x \in X$, we have
@@ -458,10 +458,10 @@ is left as an exercise.
 \begin{prop} \label{prop:unifcauchymetric}
 Let $X$ be a set, $(Y,d)$ be a metric space, and
 $f_n \colon X \to Y$ be functions.
-If $\{ f_n \}$ converges uniformly,
-then $\{f_n\}$ is uniformly Cauchy.  Conversely, if 
-$\{f_n\}$ is uniformly Cauchy and $(Y,d)$ is Cauchy-complete,
-then $\{f_n\}$ converges uniformly.
+If $\{ f_n \}_{n=1}^\infty$ converges uniformly,
+then $\{f_n\}_{n=1}^\infty$ is uniformly Cauchy.  Conversely, if 
+$\{f_n\}_{n=1}^\infty$ is uniformly Cauchy and $(Y,d)$ is Cauchy-complete,
+then $\{f_n\}_{n=1}^\infty$ converges uniformly.
 \end{prop}
 
 For $f \colon X \to \C$, we write\glsadd{not:uniformnorm}
@@ -592,13 +592,13 @@ continuous?
 Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
 Suppose $f_n \colon X \to Y$ converge uniformly to
  $f \colon X \to Y$.  
-Let $\{ x_k \}$ be a sequence in $X$ and $x \coloneqq \lim \, x_k$.  Suppose
+Let $\{ x_k \}_{k=1}^\infty$ be a sequence in $X$ and $x \coloneqq \lim_{k \to \infty} x_k$.  Suppose
 that
 \begin{equation*}
 a_n \coloneqq \lim_{k \to \infty} f_n(x_k)
 \end{equation*}
 exists for all $n$.  Then
-$\{a_n\}$ converges and 
+$\{a_n\}_{n=1}^\infty$ converges and 
 \begin{equation*}
 \lim_{k \to \infty} f(x_k) = \lim_{n\to\infty} a_n .
 \end{equation*}
@@ -611,8 +611,8 @@ In other words,
 \end{equation*}
 
 \begin{proof}
-First we show that $\{ a_n \}$ converges.  As
-$\{ f_n \}$ converges uniformly it is uniformly Cauchy. 
+First we show that $\{ a_n \}_{n=1}^\infty$ converges.  As
+$\{ f_n \}_{n=1}^\infty$ converges uniformly it is uniformly Cauchy. 
 Let $\epsilon > 0$ be given.  There is
 an $M$ such that for all $m,n \geq M$, we have
 \begin{equation*}
@@ -626,8 +626,8 @@ d_Y\bigl(f_m(x_k),a_m\bigr)$ and take the limit as $k \to \infty$ to find
 \begin{equation*}
 d_Y(a_n,a_m) \leq \epsilon .
 \end{equation*}
-Hence $\{a_n\}$ is Cauchy and converges since $Y$ is complete.  Write
-$a \coloneqq \lim \, a_n$.
+Hence $\{a_n\}_{n=1}^\infty$ is Cauchy and converges since $Y$ is complete.  Write
+$a \coloneqq \lim_{k \to \infty} a_n$.
 
 Find a $k \in \N$ such that
 \begin{equation*}
@@ -665,7 +665,7 @@ We obtain an immediate corollary about continuity.
 Let $X$ and $Y$ be metric spaces.
 If $f_n \colon X \to Y$ are continuous functions
 such that
-$\{ f_n \}$ converges uniformly to $f \colon X \to Y$,
+$\{ f_n \}_{n=1}^\infty$ converges uniformly to $f \colon X \to Y$,
 then $f$ is continuous.
 \end{cor}
 
@@ -703,7 +703,7 @@ in \figureref{fig:fouriersern2}).
 
 \begin{prop} \label{prop:complexlimitswapintegral}
 Suppose $f_n \colon [a,b] \to \C$
-are Riemann integrable and suppose that $\{ f_n \}$ converges
+are Riemann integrable and suppose that $\{ f_n \}_{n=1}^\infty$ converges
 uniformly to $f \colon [a,b] \to \C$.  Then $f$ is Riemann integrable
 and
 \begin{equation*}
@@ -766,9 +766,9 @@ real functions to $u$ and $v$, and is left as an exercise.
 \begin{thm} \label{thm:dersconvergecomplex}
 Let $I \subset \R$ be a bounded interval and let
 $f_n \colon I \to \C$ be continuously differentiable functions.
-Suppose $\{ f_n' \}$ converges uniformly to $g \colon I \to \C$,
+Suppose $\{ f_n' \}_{n=1}^\infty$ converges uniformly to $g \colon I \to \C$,
 and suppose $\{ f_n(c) \}_{n=1}^\infty$ is a
-convergent sequence for some $c \in I$.  Then $\{ f_n \}$ converges uniformly to 
+convergent sequence for some $c \in I$.  Then $\{ f_n \}_{n=1}^\infty$ converges uniformly to 
 a continuously differentiable function $f \colon I \to \C$, and $f' = g$.
 \end{thm}
 
@@ -1258,7 +1258,7 @@ On the other hand, just because we have an infinitely differentiable
 function doesn't mean that the numbers $c_n$ obtained by
 $c_n = \frac{f^{(n)}(0)}{n!}$ give a convergent power series.
 There is a theorem, which we will not prove,
-that given an arbitrary sequence $\{ c_n \}$, there exists an
+that given an arbitrary sequence $\{ c_n \}_{n=1}^\infty$, there exists an
 infinitely differentiable function $f$ such that
 $c_n = \frac{f^{(n)}(0)}{n!}$.  Moreover, even if the obtained series
 converges it may not converge to the function we started with.
@@ -1500,7 +1500,7 @@ Can you see why? (exercise)
 
 \begin{lemma}
 Suppose $f(z) = \sum_{k=0}^\infty a_k z^k$ is a convergent power series and
-$\{ z_n \}$ is a sequence of nonzero complex numbers converging to 0,
+$\{ z_n \}_{n=1}^\infty$ is a sequence of nonzero complex numbers converging to 0,
 such that $f(z_n) = 0$ for all $n$.  Then $a_k = 0$ for every $k$.
 \end{lemma}
 
@@ -1558,7 +1558,7 @@ which converge in some ball $B(0,\rho)$.  Therefore the series
 \sum_{k=0}^\infty (a_k-b_k) z^k
 \end{equation*}
 converges in $B(0,\rho)$.  As $0$ is a cluster point of $E$, there
-is a sequence of nonzero points $\{ z_n \}$ such that
+is a sequence of nonzero points $\{ z_n \}_{n=1}^\infty$ such that
 $f(z_n) -g(z_n) = 0$.  Hence, by the lemma above 
 $a_k = b_k$ for all $k$.  Therefore, $B(0,\rho) \subset E$.
 
@@ -2442,14 +2442,14 @@ a convergent subsequence.
 \begin{defn}
 Let $X$ be a set.
 Let $f_n \colon X \to \C$ be functions in a sequence.  We say that
-$\{ f_n \}$
+$\{ f_n \}_{n=1}^\infty$
 is \emph{\myindex{pointwise bounded}} if for every $x \in X$, there is an $M_x \in \R$
 such that
 \begin{equation*}
 \sabs{f_n(x)} \leq M_x \qquad \text{for all } n \in \N .
 \end{equation*}
 We say that
-$\{ f_n \}$
+$\{ f_n \}_{n=1}^\infty$
 is \emph{\myindex{uniformly bounded}} if there is an $M \in \R$
 such that
 \begin{equation*}
@@ -2481,12 +2481,12 @@ although the sequence converges pointwise (to a discontinuous function).
 \end{example}
 
 \begin{example}
-The sequence $\{ f_n \}$ of functions in $C([0,1],\R)$ given by
+The sequence $\{ f_n \}_{n=1}^\infty$ of functions in $C([0,1],\R)$ given by
 $f_n(x) \coloneqq \frac{n^3x}{1+n^4x^2}$
 converges pointwise to the zero function (obvious at $x=0$, and for $x > 0$,
 we have $\frac{n^3x}{1+n^4x^2} \leq \frac{1}{nx}$).
-As for each $x$, $\{f_n(x)\}$ converges to 0, it is bounded
-so $\{ f_n \}$ is pointwise bounded.
+As for each $x$, $\{f_n(x)\}_{n=1}^\infty$ converges to 0, it is bounded
+so $\{ f_n \}_{n=1}^\infty$ is pointwise bounded.
 
 Via calculus, we find that the maximum of
 $f_n$ on
@@ -2508,7 +2508,7 @@ The proof uses a very common and useful diagonal argument.
 
 \begin{prop} \label{prop:subsequenceoncountableX}
 Let $X$ be a countable set and $f_n \colon X \to \C$ give a pointwise bounded
-sequence of functions.  Then $\{ f_n \}$ has a subsequence that converges
+sequence of functions.  Then $\{ f_n \}_{n=1}^\infty$ has a subsequence that converges
 pointwise.
 \end{prop}
 
@@ -2539,8 +2539,8 @@ If $X$ is countably infinite,
 we pick the sequence
 $\{ f_{k,k} \}_{k=1}^\infty$.
 This is a subsequence of the original sequence $\{ f_n \}_{n=1}^\infty$.
-For every $m$, the tail $\{ f_{k,k} \}_{k=m}^\infty$ is a subsequence of $\{ f_{m,k}
-\}_{k=1}^\infty$
+For every $m$, the tail $\{ f_{k,k} \}_{k=m}^\infty$ is a subsequence of
+$\{ f_{m,k} \}_{k=1}^\infty$
 and hence for any $m$ the sequence $\{ f_{k,k}(x_m) \}_{k=1}^\infty$ converges.
 \end{proof}
 
@@ -2579,13 +2579,13 @@ we stick to uniform equicontinuity.
 
 \begin{prop}
 Suppose $(X,d)$ is a compact metric space,
-$f_n \in C(X,\C)$, and $\{ f_n \}$
-converges uniformly, then $\{ f_n \}$ is uniformly equicontinuous.
+$f_n \in C(X,\C)$, and $\{ f_n \}_{n=1}^\infty$
+converges uniformly, then $\{ f_n \}_{n=1}^\infty$ is uniformly equicontinuous.
 \end{prop}
 
 \begin{proof}
 Let $\epsilon > 0$ be given.
-As $\{ f_n \}$ converges uniformly, there is an $N \in \N$ such that for
+As $\{ f_n \}_{n=1}^\infty$ converges uniformly, there is an $N \in \N$ such that for
 all $n \geq N$
 \begin{equation*}
 \sabs{f_n(x)-f_N(x)} < \nicefrac{\epsilon}{3} \qquad \text{for all } x \in X.
@@ -2652,10 +2652,10 @@ Named after the Italian mathematicians
 
 \begin{thm}[Arzel\`a--Ascoli]\index{Arzel\`a--Ascoli theorem}
 \label{thm:arzelaascoli}
-Let $(X,d)$ be a compact metric space, and let $\{ f_n \}$
+Let $(X,d)$ be a compact metric space, and let $\{ f_n \}_{n=1}^\infty$
 be pointwise bounded and uniformly equicontinuous sequence
 of functions $f_n \in C(X,\C)$.  Then
-$\{f_n\}$ is uniformly bounded and $\{ f_n \}$ contains a uniformly
+$\{f_n\}_{n=1}^\infty$ is uniformly bounded and $\{ f_n \}_{n=1}^\infty$ contains a uniformly
 convergent subsequence.
 \end{thm}
 
@@ -2665,7 +2665,7 @@ is bounded (in $C(X,\C)$) and furthermore contains a convergent
 subsequence in $C(X,\C)$.
 
 As we mentioned before, as $X$ is compact, it is enough
-to just assume that $\{ f_n \}$ is equicontinuous as
+to just assume that $\{ f_n \}_{n=1}^\infty$ is equicontinuous as
 uniform equicontinuity is automatic via an exercise.
 
 \begin{proof}
@@ -2683,7 +2683,7 @@ such that
 \begin{equation*}
 X = \bigcup_{j=1}^k B(x_j,\delta) .
 \end{equation*}
-As $\{ f_n \}$ is pointwise bounded there exist $M_1,M_2,\ldots,M_k$
+As $\{ f_n \}_{n=1}^\infty$ is pointwise bounded there exist $M_1,M_2,\ldots,M_k$
 such that for $j=1,2,\ldots,k$, we have
 \begin{equation*}
 \sabs{f_n(x_j)} \leq M_j \qquad \text{for all } n.
@@ -2699,14 +2699,14 @@ By reverse triangle inequality,
 \begin{equation*}
 \sabs{f_n(x)} < 1+ \sabs{f_n(x_j)} \leq 1+M_j \leq M .
 \end{equation*}
-And as $x$ was arbitrary, $\{f_n\}$ is uniformly bounded.
+And as $x$ was arbitrary, $\{f_n\}_{n=1}^\infty$ is uniformly bounded.
 
 
 Next, pick a countable dense subset $D \subset X$.
 By \propref{prop:subsequenceoncountableX}, we find
-a subsequence $\{ f_{n_j} \}$ that converges pointwise on $D$.
+a subsequence $\{ f_{n_j} \}_{j=1}^\infty$ that converges pointwise on $D$.
 Write $g_j \coloneqq f_{n_j}$ for simplicity.
-The sequence $\{ g_n \}$ is 
+The sequence $\{ g_n \}_{n=1}^\infty$ is 
 uniformly equicontinuous.
 Let $\epsilon > 0$ be given, then there exists a $\delta > 0$
 such that for all $x \in X$ and all $n \in \N$
@@ -2720,7 +2720,7 @@ such that
 \begin{equation*}
 X = \bigcup_{j=1}^k B(x_j,\delta) .
 \end{equation*}
-As there are finitely many points and $\{ g_n \}$
+As there are finitely many points and $\{ g_n \}_{n=1}^\infty$
 converges pointwise on $D$, there exists a single $N$ such that for 
 all $n,m \geq N$, we have
 \begin{equation*}
@@ -2762,16 +2762,16 @@ $C([0,1],\C)$) is not compact.
 Hence it cannot be a uniformly equicontinuous set.
 
 \begin{cor}
-Suppose $\{ f_n \}$ is a sequence of differentiable functions on $[a,b]$,
-$\{ f_n' \}$ is uniformly bounded, and there is an
-$x_0 \in [a,b]$ such that $\{ f_n(x_0) \}$ is bounded.
+Suppose $\{ f_n \}_{n=1}^\infty$ is a sequence of differentiable functions on $[a,b]$,
+$\{ f_n' \}_{n=1}^\infty$ is uniformly bounded, and there is an
+$x_0 \in [a,b]$ such that $\{ f_n(x_0) \}_{n=1}^\infty$ is bounded.
 Then there exists a uniformly convergent
-subsequence $\{ f_{n_j} \}$.
+subsequence $\{ f_{n_j} \}_{j=1}^\infty$.
 \end{cor}
 
 \begin{proof}
 The trick is to use the mean value theorem.  If $M$ is the uniform bound on
-$\{ f_n' \}$, then by the mean value theorem for every $n$
+$\{ f_n' \}_{n=1}^\infty$, then by the mean value theorem for every $n$
 \begin{equation*}
 \sabs{f_n(x)-f_n(y)} \leq M \sabs{x-y} \qquad \text{for all } x,y \in X.
 \end{equation*}
@@ -2785,7 +2785,7 @@ For all $x \in [a,b]$,
 \sabs{f_n(x)} \leq \sabs{f_n(x_0)}+ \sabs{f_n(x)-f_n(x_0)} \leq M_0+ M \sabs{x-x_0}
 \leq M_0 + M(b-a) .
 \end{equation*}
-So $\{ f_n \}$ is uniformly bounded.
+So $\{ f_n \}_{n=1}^\infty$ is uniformly bounded.
 We apply \hyperref[thm:arzelaascoli]{Arzel\`a--Ascoli} to find the subsequence.
 \end{proof}
 
@@ -2904,24 +2904,24 @@ the path integral (see \sectionref{sec:pathintegral})
 \begin{equation*}
 F_n(z) : = \int_\gamma f_n(w)\, g(z,w) \, ds(w) . 
 \end{equation*}
-Show that $\{ F_n \}$ has a uniformly convergent subsequence.
+Show that $\{ F_n \}_{n=1}^\infty$ has a uniformly convergent subsequence.
 \end{exercise}
 
 \begin{exercise}
-Suppose $(X,d)$ is a compact metric space, $\{ f_n \}$ a uniformly equicontinuous
-sequence of functions in $C(X,\C)$.  Suppose $\{ f_n \}$ converges
+Suppose $(X,d)$ is a compact metric space, $\{ f_n \}_{n=1}^\infty$ a uniformly equicontinuous
+sequence of functions in $C(X,\C)$.  Suppose $\{ f_n \}_{n=1}^\infty$ converges
 pointwise.  Show that it converges uniformly.
 \end{exercise}
 
 \begin{exercise}
-Suppose that $\{ f_n \}$ is a uniformly equicontinuous uniformly bounded sequence of
+Suppose that $\{ f_n \}_{n=1}^\infty$ is a uniformly equicontinuous uniformly bounded sequence of
 $2\pi$-periodic functions $f_n \colon \R \to \R$.  Show that there is a
 uniformly convergent subsequence.
 \end{exercise}
 
 \begin{exercise}
 Show that for a compact metric space $X$,
-a sequence $\{ f_n \}$ that is equicontinuous at every $x \in X$
+a sequence $\{ f_n \}_{n=1}^\infty$ that is equicontinuous at every $x \in X$
 is uniformly equicontinuous.
 \end{exercise}
 
@@ -2932,7 +2932,7 @@ Prove more than just
 the conclusion of Arzel\`a--Ascoli for this sequence.  Let $\gamma \in \R$
 be given,
 and define $g(t) \coloneqq e^{i(2\pi t + \gamma)}$.  Show that there exists 
-a subsequence of $\{ f_n \}$ converging uniformly to $g$.
+a subsequence of $\{ f_n \}_{n=1}^\infty$ converging uniformly to $g$.
 \\
 Hint: Feel free to use the \emph{\myindex{Kronecker density theorem}}\footnote{%
 Named after the German mathematician
@@ -2970,10 +2970,10 @@ Prove that there exists an $h > 0$ such that
 $f_n \colon [x_0 - h, x_0 + h] \to \C$ is well-defined
 for all $n$.  Hint: $F$ is bounded (why?).
 \item
-Show that $\{ f_n \}$ is equicontinuous and bounded, in fact it is
+Show that $\{ f_n \}_{n=1}^\infty$ is equicontinuous and bounded, in fact it is
 Lipschitz with a uniform Lipschitz constant.  Arzel\`a--Ascoli
 then says that there exists a
-uniformly convergent subsequence $\{ f_{n_k} \}$.
+uniformly convergent subsequence $\{ f_{n_k} \}_{k=1}^\infty$.
 \item
 Prove 
 $\bigl\{ F\bigl(x,f_{n_k}(x)\bigr) \bigr\}_{k=1}^\infty$ converges uniformly
@@ -3005,25 +3005,26 @@ far beyond pure mathematics.
 
 \begin{thm}[Weierstrass approximation theorem]
 \index{Weierstrass approximation theorem}
-If $f \colon [a,b] \to \C$ is continuous, then there exists a sequence $\{
-p_n \}$ of polynomials converging to $f$ uniformly on $[a,b]$.
+If $f \colon [a,b] \to \C$ is continuous, then there exists a sequence
+$\{ p_n \}_{n=1}^\infty$ of polynomials converging to $f$ uniformly on $[a,b]$.
 Furthermore, if $f$ is real-valued, we can find $p_n$ with real coefficients.
 \end{thm}
 
 \begin{proof}
-For $x \in [0,1]$ define
+For $x \in [0,1]$,
+define
 \begin{equation*}
 g(x) \coloneqq f\bigl((b-a)x+a\bigr)-f(a) - x\bigl(f(b)-f(a)\bigr) .
 \end{equation*}
-If we prove the theorem for $g$ and find the sequence $\{ p_n \}$ for $g$,
+If we prove the theorem for $g$ and find the sequence
+$\{ p_n \}_{n=1}^\infty$ for $g$,
 it is proved for $f$ as we simply
 composed with an invertible affine function and added an affine
 function to $f$:  We reverse the process and apply that to our
 $p_n$, to obtain polynomials approximating $f$.
-
 The function $g$ is defined on $[0,1]$ and $g(0)=g(1)=0$.
 For simplicity, assume that
-$g$ is defined on the whole real line by letting
+$g$ is defined on $\R$ by letting
 $g(x) \coloneqq 0$ if $x < 0$ or $x > 1$.  This extended $g$ is continuous.
 
 Define
@@ -3071,7 +3072,7 @@ When the peak gets narrower, we compute this average closer to $x$
 and we expect the result to get closer to the value of $g(x)$.  Really we are
 approximating what is called a delta function\footnote{The delta function
 is not actually a function,
-it is a \myquote{thing} that supposed to give
+it is a \myquote{thing} that should give
 \myquote{$\int_{-\infty}^\infty g(x) \delta(x-t) \, dt = g(x)$.}}
 (don't worry if you have not
 heard of this concept),
@@ -3082,11 +3083,11 @@ and narrower peaks near zero.  These just happen to be the simplest ones.
 We only need this behavior on $[-1,1]$ as the convolution sees nothing
 further than this as $g$ is zero outside $[0,1]$.
 
-Because $q_n$ is a polynomial we write
+Because $q_n$ is a polynomial, we write
 \begin{equation*}
 q_n(x-t) = a_0(t) + a_1(t)\,x + \cdots + a_{2n}(t)\, x^{2n} ,
 \end{equation*}
-where $a_k(t)$ are polynomials in $t$, in particular continuous and hence
+where $a_k(t)$ are polynomials in $t$, and hence
 integrable functions.
 So
 \begin{equation*}
@@ -3126,10 +3127,10 @@ Do note that the functions $a_j$ depend on $n$, so the coefficients of $p_n$
 change as $n$ changes.}
  in $x$.
 If $g(t)$ is real-valued, then the functions $g(t)a_j(t)$ are
-real-valued and hence $p_n$ has real coefficients,
+real-valued and $p_n$ has real coefficients,
 proving the \myquote{furthermore} part of the theorem.
 
-We still need to prove that $\{ p_n \}$ converges to $g$.  First let us
+We still need to prove that $\{ p_n \}_{n=1}^\infty$ converges to $g$.  First let us
 get some handle on the size of $c_n$.
 For $x \in [0,1]$, we have that $1-x \leq 1-x^2$.  We estimate
 \begin{equation*}
@@ -3142,7 +3143,7 @@ c_n^{-1}   = \int_{-1}^1 {(1-x^2)}^n \, dx
 \end{equation*}
 So $c_n \leq \frac{n+1}{2} \leq n$.
 
-Let us see how small $q_n$ is, if we ignore some small interval around the origin,
+Let us see how small $q_n$ is if we ignore some small interval around the origin,
 which is where the peak is.
 Given any $\delta > 0$, $\delta < 1$, for
 $x$ such that $\delta \leq \sabs{x} \leq 1$, we have
@@ -3180,15 +3181,16 @@ such that for all $n \geq N$,
 Note that 
 $\int_{-1}^1 q_n(t) \, dt = 1$ and $q_n(t) \geq 0$ on $[-1,1]$.  So for $n
 \geq N$ and every $x \in [0,1]$,
-\begin{equation*}
-\begin{split}
+\begin{align*}
 \sabs{p_n(x)-g(x)} & =
 \abs{\int_{-1}^1 g(x+t)q_n(t) \, dt
 -g(x)\int_{-1}^1 q_n(t) \, dt} \\
 & =
-\abs{\int_{-1}^1 \bigl(g(x+t)-g(x)\bigr)q_n(t) \, dt} \\
+\abs{\int_{-1}^1 \bigl(g(x+t)-g(x)\bigr)q_n(t) \, dt}
+\displaybreak[0]\\
 & \leq
-\int_{-1}^1 \sabs{g(x+t)-g(x)} q_n(t) \, dt \\
+\int_{-1}^1 \sabs{g(x+t)-g(x)} q_n(t) \, dt
+\displaybreak[0]\\
 & =
 \int_{-1}^{-\delta} \sabs{g(x+t)-g(x)} q_n(t) \, dt
 \quad +
@@ -3224,8 +3226,7 @@ $\int_{-1}^1 q_n(t) \, dt = 1$ and $q_n(t) \geq 0$ on $[-1,1]$.  So for $n
 +
 \frac{\epsilon}{2}
 < \epsilon . \qedhere
-\end{split}
-\end{equation*}
+\end{align*}
 \end{proof}
 
 A convolution often inherits some property of the functions we are convolving.
@@ -3298,14 +3299,14 @@ power series
 \begin{equation*}
 \sum_{k=0}^\infty c_k\,  x^k .
 \end{equation*}
-An analytic function is infinitely differentiable, so the function
+An analytic function is infinitely differentiable, the function
 $\sabs{x}$ provides a counterexample.
 
 The key distinction is that
 the polynomials coming from the Weierstrass theorem are not the partial
 sums of a power series.  For each one, the coefficients $a_k$ above can be
-completely different---they do not need to come from a single sequence $\{
-c_k \}$.
+completely different---they do not need to come from a single sequence
+$\{ c_k \}_{k=1}^\infty$.
 
 \subsection{Stone--Weierstrass approximation}
 
@@ -3329,14 +3330,14 @@ special case of the Weierstrass theorem though.
 
 \begin{cor}
 Let $[-a,a]$ be an interval.  Then there is a sequence of real polynomials
-$\{ p_n \}$ that converges uniformly to $\sabs{x}$ on $[-a,a]$ and such that
+$\{ p_n \}_{n=1}^\infty$ that converges uniformly to $\sabs{x}$ on $[-a,a]$ and such that
 $p_n(0) = 0$ for all $n$.
 \end{cor}
 
 \begin{proof}
 As $f(x) \coloneqq \sabs{x}$ is continuous and real-valued
 on $[-a,a]$, the Weierstrass theorem gives a sequence of
-real polynomials $\{ \widetilde{p}_n \}$ that converges to $f$
+real polynomials $\{ \widetilde{p}_n \}_{n=1}^\infty$ that converges to $f$
 uniformly on $[-a,a]$.
 Let
 \begin{equation*}
@@ -3362,11 +3363,12 @@ Then for $n \geq N$,
 \end{proof}
 
 Generalizing the corollary,
-we can always make the polynomials from the Weierstrass theorem
+we can make the polynomials from the Weierstrass theorem
 be equal to our target function at one point, not just for $\sabs{x}$, but
 that's the one we will need.
 
 \begin{defn}
+\pagebreak[2]
 A set $\sA$ of complex-valued functions $f \colon X \to \C$ is said to be an 
 \emph{\myindex{algebra}} (sometimes
 \emph{\myindex{complex algebra}} or \emph{algebra over $\C$}) if for all $f,
@@ -3403,7 +3405,7 @@ If $\sA \subset C(X,\C)$ is an algebra, then the closure $\widebar{\sA}$ is also
 Similarly for a real algebra in $C(X,\R)$.
 \end{prop}
 
-Let us distill the properties of polynomials that are sufficient
+We distill the properties of polynomials that are sufficient
 for an approximation theorem.
 
 \begin{defn}
@@ -3435,10 +3437,10 @@ which follows by the identity $\cos(mt)\cos(nt) =
 \frac{\cos((n+m) t)}{2}+
 \frac{\cos((n-m) t)}{2}$.
 The algebra
-does not separate points if the domain is an interval of the form
-$[-a,a]$, because $f(-t) = f(t)$ for all $t$.
-It does separate points if the domain is $[0,\pi]$, as $\cos(t)$
-is one-to-one on that set.
+does not separate points if the domain is an interval
+$[-a,a]$, as $f(-t) = f(t)$ for all~$t$.
+It does separate points if the domain is $[0,\pi]$; $\cos(t)$
+is one-to-one on $[0,\pi]$.
 \end{example}
 
 \begin{example}
@@ -3446,11 +3448,12 @@ The set of polynomials with no constant term vanishes at the origin.
 \end{example}
 
 \begin{prop} \label{prop:SWinterpolate}
-Suppose $\sA$ is an algebra of complex-valued functions on a set $X$, that separates points
+Suppose $\sA$ is an algebra of complex-valued functions on a set $X$ that separates points
 and vanishes at no point.  Suppose $x,y$ are distinct points of $X$, and
 $c,d \in \C$.  Then there is an $f \in \sA$ such that
 \begin{equation*}
 f(x) = c, \qquad f(y) = d .
+\avoidbreak
 \end{equation*}
 If $\sA$ is a real algebra, the conclusion holds for $c,d \in \R$.
 \end{prop}
@@ -3545,8 +3548,8 @@ and
 As $\widebar{\sA}$ is an algebra we are done.
 \end{proof}
 
-The claim is true for the minimum or maximum of every finite
-collection of functions as well.
+The claim is also true for the minimum or maximum of a finite
+collection of functions.
 
 \medskip
 
@@ -3610,7 +3613,6 @@ exists an $\varphi \in \widebar{\sA}$ such that}
 
 \begin{proof}
 For every $x$ find the function $g_x$ as in Claim 3.
-
 Let
 \begin{equation*}
 V_x \coloneqq \bigl\{ t \in X : g_x(t) < f(t) + \epsilon \bigr\}.
@@ -3634,7 +3636,7 @@ Claim 3), for all $t \in X$,
 \end{equation*}
 Since all the $g_x$ satisfy $g_x(t) > f(t) - \epsilon$ for all $t \in X$,
 $\varphi(t) > f(t) - \epsilon$ as well.
-Therefore, for all $t$,
+Hence, for all $t$,
 \begin{equation*}
 -\epsilon < \varphi(t) - f(t) < \epsilon ,
 \end{equation*}
@@ -3757,7 +3759,7 @@ of the form $f(x)g(y)$ rather than $F(x,y)$.  For example, they are easier
 to integrate.  We have the following.
 
 \begin{example}
-Any continuous function $F \colon [0,1] \times [0,1] \to \C$ can be
+Any continuous $F \colon [0,1] \times [0,1] \to \C$ can be
 approximated uniformly by functions of the form
 \begin{equation*}
 \sum_{j=1}^n f_j(x) g_j(y) ,
@@ -3775,8 +3777,8 @@ we apply \hyperref[thm:SWcomplex]{Stone--Weierstrass} to obtain the result.
 
 \begin{exercise}
 Prove \propref{prop:closureofalgebra}.
-Hint: If $\{ f_n \}$ is a sequence in $C(X,\R)$
-converging to $f$, then as $f$ is bounded, you can show
+Hint: If $\{ f_n \}_{n=1}^\infty$ is a sequence in $C(X,\R)$
+converging to $f$, then as $f$ is bounded, show
 that $f_n$ is uniformly bounded, that is, there exists a
 single bound for all $f_n$ (and $f$).
 \end{exercise}
@@ -3967,9 +3969,10 @@ of the form $b_1 x + b_2 x^3 + b_3 x^5 + \cdots + b_k x^{2k-1}$.
 Fourier series\footnote{%
 Named after the French mathematician
 \href{https://en.wikipedia.org/wiki/Joseph_Fourier}{Jean-Baptiste Joseph Fourier}
-(1768--1830).} is perhaps the most important (and most difficult to
-understand) of the series that we cover in
-this book.  We have seen it in a few examples before, but let us start
+(1768--1830).} is perhaps the most important (and the most difficult)
+of the series that we cover in
+this book.  We saw a few examples of it already,
+but let us start
 at the beginning.
 
 \subsection{Trigonometric polynomials}
@@ -4020,7 +4023,7 @@ The functions $\cos (nx)$, $\sin (nx)$, and $e^{inx}$ are $2\pi$-periodic
 and hence trigonometric
 polynomials are also $2\pi$-periodic.
 We could rescale $x$ to make the period different, but the theory is the
-same, so let us stick with the period of $2\pi$.
+same, so we stick with the period $2\pi$.
 The antiderivative of $e^{inx}$ is $\frac{e^{inx}}{in}$ and
 so
 \begin{equation*}
@@ -4052,7 +4055,7 @@ e^{i(n-m)x}
 c_m .
 \end{equation*}
 We just found a way of computing the coefficients $c_m$ using an integral
-of $f$.  If $\sabs{m} > N$, the integral is just 0: We might as
+of $f$.  If $\sabs{m} > N$, the integral is 0, so we might as
 well have included enough zero coefficients to make $\sabs{m} \leq N$.
 
 \begin{prop}
@@ -4094,7 +4097,7 @@ c_{m}\, e^{imx}+ c_{-m}\, e^{-imx} ,
 \end{equation*}
 which is real valued.  Also $c_0 = \overline{c_0}$, so
 $c_0$ is real.
-By pairing up the terms we obtain that $f$ has to be real-valued.
+By pairing up the terms, we obtain that $f$ has to be real-valued.
 \end{proof}
 
 The functions $e^{inx}$ are also linearly independent.
@@ -4113,17 +4116,18 @@ The result follows immediately from the integral formula for $c_n$.
 
 \subsection{Fourier series}
 
-We now take limits.  We call the series
+We now take limits.  The series
 \begin{equation*}
 \sum_{n=-\infty}^\infty c_n \, e^{inx}
 \end{equation*}
-the \emph{\myindex{Fourier series}}.  The numbers $c_n$
-are called \emph{\myindex{Fourier coefficients}}.  Using
+is called
+the \emph{\myindex{Fourier series}} and the numbers $c_n$
+the \emph{\myindex{Fourier coefficients}}.  Using
 Euler's formula $e^{i\theta} = \cos(\theta) + i \sin (\theta)$,
 we could also develop everything with
 sines and cosines, that is, as the series
-$a_0 + \sum_{n=1}^\infty a_n \cos(nx) + b_n \sin(nx)$,
-but it is equivalent and slightly more messy.
+$a_0 + \sum_{n=1}^\infty a_n \cos(nx) + b_n \sin(nx)$.
+It is equivalent, but slightly more messy.
 
 Several questions arise.  What functions are expressible as 
 Fourier series?  Obviously, they have to be $2\pi$-periodic, but not every
@@ -4141,8 +4145,8 @@ situations, but we refrain from discussing those.
 
 \medskip
 
-Conversely, we start with an integrable function $f \colon [-\pi,\pi] \to
-\C$, and we call the numbers
+Conversely, for an integrable function $f \colon [-\pi,\pi] \to
+\C$, call the numbers
 \begin{equation*}
 c_n \coloneqq 
 \frac{1}{2\pi} \int_{-\pi}^\pi
@@ -4198,9 +4202,10 @@ and $C$, $\alpha > 2$ constants such that
 Then the series converges to a continuously differentiable function on $\R$.
 \end{prop}
 
-The trick is to first notice that the series converges first to a continuous
-function by the previous proposition, so in particular it converges at some
-point.  Then differentiate the partial sums
+The proof is to note that the series converges to a continuous
+function by the previous proposition.
+In particular, it converges at some point.
+Then differentiate the partial sums
 \begin{equation*}
 \sum_{n=-N}^{N}
 i n c_n \,e^{inx}
@@ -4220,26 +4225,27 @@ the differentiated series (see \thmref{thm:dersconvergecomplex}).
 We can iterate the same reasoning.
 Suppose there is
 some $C$ and $\alpha > k+1$ ($k \in \N$) such that
+for all nonzero integers $n$,
 \begin{equation*}
 \sabs{c_n} 
-\leq \frac{C}{\sabs{n}^\alpha}
+\leq \frac{C}{\sabs{n}^\alpha} .
 \end{equation*}
-for all nonzero integers $n$.  Then 
+Then 
 the Fourier series converges to a $k$-times continuously differentiable
 function.  Therefore, the faster the coefficients go to zero, the more
 regular the limit is.
 
 \subsection{Orthonormal systems}
 
-Let us abstract away some of the properties of the exponentials, and
+Let us abstract away the exponentials, and
 study a more general series for a function.
-One fundamental property of the exponentials that make Fourier series what it 
+One fundamental property of the exponentials that makes Fourier series work
 is that the exponentials are a so-called \emph{orthonormal system}.
-Let us fix an interval $[a,b]$.  We define an
+Fix an interval $[a,b]$.  We define an
 \emph{\myindex{inner product}} for the space of functions.  We restrict our attention
-to Riemann integrable functions since we do not have the Lebesgue
+to Riemann integrable functions as we do not have the Lebesgue
 integral, which
-would be the natural choice.  Let $f$ and $g$ be complex-valued 
+would be the natural choice.  Let $f$ and~$g$ be complex-valued 
 Riemann integrable functions on $[a,b]$ and define the inner product
 \glsadd{not:L2innprod}
 \begin{equation*}
@@ -4247,9 +4253,9 @@ Riemann integrable functions on $[a,b]$ and define the inner product
 \int_a^b f(x) \overline{g(x)} \, dx .
 \end{equation*}
 If you have seen Hermitian inner products in linear algebra, this
-is precisely such a product.  We have to put in the conjugate as we are
-working with complex numbers.  We then have the \myquote{size,} that is the
-$L^2$ norm $\snorm{f}_2$ by (defining the square)
+is precisely such a product.  We must include the conjugate as we are
+working with complex numbers.  We then have the \myquote{size} of $f$, that
+is, the $L^2$ norm $\snorm{f}_2$, by (defining the square)
 \glsadd{not:L2norm}
 \begin{equation*}
 \snorm{f}_2^2 \coloneqq
@@ -4258,28 +4264,29 @@ $L^2$ norm $\snorm{f}_2$ by (defining the square)
 \end{equation*}
 
 \begin{remark}
-Notice the similarity to finite dimensions.
-For $z = (z_1,z_2,\ldots,z_n) \in \C^n$, we define 
+Note the similarity to finite dimensions.
+For $z = (z_1,z_2,\ldots,z_d) \in \C^d$, one defines
 \begin{equation*}
 \langle z , w \rangle \coloneqq
-\sum_{k=1}^n z_k \overline{w_k} .
+\sum_{n=1}^d z_n \overline{w_n} .
 \end{equation*}
-Then the norm is (usually denoted by simply $\snorm{z}$ in $\C^n$
-rather than $\snorm{z}_2$)
+Then the norm is (usually denoted simply by $\snorm{z}$ in $\C^d$
+rather than by $\snorm{z}_2$)
 \begin{equation*}
 \snorm{z}^2 = 
 \langle z , z \rangle =
-\sum_{k=1}^n \sabs{z_k}^2 .
+\sum_{n=1}^d \sabs{z_n}^2 .
 \end{equation*}
-This is just the euclidean distance to the origin in $\C^n$ (same as
-$\R^{2n}$).
+This is just the euclidean distance to the origin in $\C^d$ (same as
+$\R^{2d}$).
 \end{remark}
 
-Let us get back to function spaces.  In what follows, we will
+%Let us get back to function spaces.
+In what follows, we will
 assume all functions are Riemann integrable.
 
 \begin{defn}
-Let $\{ \varphi_n \}$ be a sequence of integrable complex-valued
+Let $\{ \varphi_n \}_{n=1}^\infty$ be a sequence of integrable complex-valued
 functions on $[a,b]$.  We say that this is an
 \emph{\myindex{orthonormal system}} if
 \begin{equation*}
@@ -4300,13 +4307,13 @@ the system would be called an \emph{\myindex{orthogonal system}}.
 
 We noticed above that
 \begin{equation*}
-\left\{ \frac{1}{\sqrt{2\pi}} \, e^{inx} \right\}
+{\left\{ \frac{1}{\sqrt{2\pi}} \, e^{inx} \right\}}_{n=1}^\infty
 \end{equation*}
 is an orthonormal system.  The factor out in front is to make the norm be 1.
 
-Having an orthonormal system $\{ \varphi_n \}$ on $[a,b]$ and an integrable function $f$
+Having an orthonormal system $\{ \varphi_n \}_{n=1}^\infty$ on $[a,b]$ and an integrable function $f$
 on $[a,b]$, we can write
-a Fourier series relative to $\{ \varphi_n \}$.  We let
+a Fourier series relative to $\{ \varphi_n \}_{n=1}^\infty$.  Let
 \begin{equation*}
 c_n \coloneqq
 \langle f , \varphi_n \rangle
@@ -4328,23 +4335,23 @@ in fact doing just that, but in a space of functions.
 
 \begin{thm} \label{thm:l2bestapprox}
 Suppose $f$ is a Riemann integrable function on $[a,b]$.
-Let $\{ \varphi_n \}$ be an orthonormal system on $[a,b]$ and
+Let $\{ \varphi_n \}_{n=1}^\infty$ be an orthonormal system on $[a,b]$ and
 suppose
 \begin{equation*}
 f(x) \sim \sum_{n=1}^\infty c_n \varphi_n(x) .
 \end{equation*}
 If
 \begin{equation*}
-s_n (x) \coloneqq \sum_{k=1}^n c_k \varphi_k(x)
+s_k (x) \coloneqq \sum_{n=1}^k c_n \varphi_n(x)
 \quad\text{and}\quad
-p_n (x) \coloneqq \sum_{k=1}^n d_k \varphi_k(x)
+p_k (x) \coloneqq \sum_{n=1}^k d_n \varphi_n(x)
 \end{equation*}
-for some other sequence $\{ d_k \}$, then
+for some other sequence $\{ d_n \}_{n=1}^\infty$, then
 \begin{equation*}
-\int_a^b \sabs{f(x)-s_n(x)}^2 \, dx = \snorm{f-s_n}_2^2 \leq
-\snorm{f-p_n}_2^2 = \int_a^b \sabs{f(x)-p_n(x)}^2 \, dx
+\int_a^b \sabs{f(x)-s_k(x)}^2 \, dx = \snorm{f-s_k}_2^2 \leq
+\snorm{f-p_k}_2^2 = \int_a^b \sabs{f(x)-p_k(x)}^2 \, dx
 \end{equation*}
-with equality only if $d_k = c_k$ for all $k=1,2,\ldots,n$.
+with equality only if $d_n = c_n$ for all $n=1,2,\ldots,k$.
 \end{thm}
 
 In other words, the partial sums of the Fourier series are the best approximation with respect to the
@@ -4353,85 +4360,85 @@ $L^2$ norm.
 \begin{proof}
 Let us write
 \begin{equation*}
-\int_a^b \sabs{f-p_n}^2
+\int_a^b \sabs{f-p_k}^2
 =
 \int_a^b \sabs{f}^2
 -
-\int_a^b f \widebar{p_n}
+\int_a^b f \widebar{p_k}
 -
-\int_a^b \widebar{f} p_n
+\int_a^b \widebar{f} p_k
 +
-\int_a^b \sabs{p_n}^2 .
+\int_a^b \sabs{p_k}^2 .
 \end{equation*}
 Now
 \begin{equation*}
-\int_a^b f \widebar{p_n}
+\int_a^b f \widebar{p_k}
 =
-\int_a^b f \sum_{k=1}^n \overline{d_k} \overline{\varphi_k}
+\int_a^b f \sum_{n=1}^k \overline{d_n} \overline{\varphi_n}
 =
- \sum_{k=1}^n \overline{d_k} \int_a^b f \, \overline{\varphi_k}
+ \sum_{n=1}^k \overline{d_n} \int_a^b f \, \overline{\varphi_n}
 =
- \sum_{k=1}^n \overline{d_k} c_k ,
+ \sum_{n=1}^k \overline{d_n} c_n ,
 \end{equation*}
 and
 \begin{equation*}
-\int_a^b \sabs{p_n}^2
+\int_a^b \sabs{p_k}^2
 =
 \int_a^b
-\sum_{k=1}^n d_k \varphi_k
-\sum_{j=1}^n \overline{d_j} \overline{\varphi_j}
+\sum_{n=1}^k d_n \varphi_n
+\sum_{m=1}^k \overline{d_m} \overline{\varphi_m}
 =
-\sum_{k=1}^n
-\sum_{j=1}^n 
-d_k
-\overline{d_j} 
+\sum_{n=1}^k
+\sum_{m=1}^k 
+d_n
+\overline{d_m} 
 \int_a^b
-\varphi_k
-\overline{\varphi_j}
+\varphi_n
+\overline{\varphi_m}
 =
-\sum_{k=1}^n
-\sabs{d_k}^2 .
+\sum_{n=1}^k
+\sabs{d_n}^2 .
 \end{equation*}
 So
 \begin{equation*}
-\int_a^b \sabs{f-p_n}^2
+\int_a^b \sabs{f-p_k}^2
 =
 \int_a^b \sabs{f}^2
 -
-\sum_{k=1}^n \overline{d_k} c_k
+\sum_{n=1}^k \overline{d_n} c_n
 -
-\sum_{k=1}^n d_k \overline{c_k}
+\sum_{n=1}^k d_k \overline{c_n}
 +
-\sum_{k=1}^n
-\sabs{d_k}^2
+\sum_{n=1}^k
+\sabs{d_n}^2
 =
 \int_a^b \sabs{f}^2
 -
-\sum_{k=1}^n \sabs{c_k}^2
+\sum_{n=1}^k \sabs{c_n}^2
 +
-\sum_{k=1}^n
-\sabs{d_k-c_k}^2 .
+\sum_{n=1}^k
+\sabs{d_n-c_n}^2 .
 \end{equation*}
-This is minimized precisely when $d_k = c_k$.
+This is minimized precisely when $d_n = c_n$.
 \end{proof}
 
-When we do plug in $d_k = c_k$, then
+When we do plug in $d_n = c_n$, then
 \begin{equation*}
-\int_a^b \sabs{f-s_n}^2
+\int_a^b \sabs{f-s_k}^2
 =
 \int_a^b \sabs{f}^2
 -
-\sum_{k=1}^n \sabs{c_k}^2
+\sum_{n=1}^k \sabs{c_n}^2
 \end{equation*}
 and so
 \begin{equation*}
-\sum_{k=1}^n \sabs{c_k}^2
+\sum_{n=1}^k \sabs{c_n}^2
 \leq
 \int_a^b \sabs{f}^2
 \end{equation*}
-for all $n$.  Note that
+for all $k$.  Note that
 \begin{equation*}
-\sum_{k=1}^n \sabs{c_k}^2 = \snorm{s_n}_2^2
+\sum_{n=1}^k \sabs{c_n}^2 = \snorm{s_k}_2^2
 \end{equation*}
 by the calculation above.
 We take a limit to obtain the so-called
@@ -4442,22 +4449,21 @@ Named after the German astronomer, mathematician, physicist, and geodesist
 \href{https://en.wikipedia.org/wiki/Friedrich_Bessel}{Friedrich Wilhelm Bessel}
 (1784--1846).}] \label{thm:bessels}
 Suppose $f$ is a Riemann integrable function on $[a,b]$.
-Let $\{ \varphi_n \}$ be an orthonormal system on $[a,b]$ and
+Let $\{ \varphi_n \}_{n=1}^\infty$ be an orthonormal system on $[a,b]$ and
 suppose
 \begin{equation*}
 f(x) \sim \sum_{n=1}^\infty c_n \varphi_n(x) .
 \end{equation*}
 Then
 \begin{equation*}
-\sum_{k=1}^\infty \sabs{c_k}^2
+\sum_{n=1}^\infty \sabs{c_n}^2
 \leq
 \int_a^b \sabs{f}^2
 = \snorm{f}_2^2 .
 \end{equation*}
 \end{thm}
 
-In particular (given that a Riemann integrable function satisfies
-$\int_a^b \sabs{f}^2 < \infty$), we get that the series
+In particular, if $\int_a^b \sabs{f}^2 < \infty$, the series
 converges and hence
 \begin{equation*}
 \lim_{k \to \infty} c_k = 0 .
@@ -4465,19 +4471,20 @@ converges and hence
 
 \subsection{The Dirichlet kernel and approximate delta functions}
 
-Let us return to the trigonometric Fourier series.  Here we note that the
-system $\{ e^{inx} \}$ is orthogonal, but not orthonormal if we simply
-integrate over $[-\pi,\pi]$.  We can also rescale the integral
+We return to the trigonometric Fourier series.
+The system $\{ e^{inx} \}_{n=1}^\infty$ is orthogonal, but not orthonormal if we simply
+integrate over $[-\pi,\pi]$.  We can rescale the integral
 and hence the inner product to make 
-$\{ e^{inx} \}$ orthonormal.  That is, if we replace
+$\{ e^{inx} \}_{n=1}^\infty$ orthonormal.  That is, if we replace
 \begin{equation*}
 \int_a^b \qquad \text{with} \qquad
 \frac{1}{2\pi} \int_{-\pi}^\pi,
 \end{equation*}
 (we are just rescaling the $dx$ really)\footnote{%
-Mathematicians in this field sometimes simplify matters by
-making a tongue-in-cheek definition that $1=2\pi$.},
-then everything works and we obtain that the system $\{ e^{inx} \}$
+Mathematicians in this field sometimes simplify matters with
+a tongue-in-cheek definition that $1=2\pi$.},
+then everything works and we obtain that the system
+$\{ e^{inx} \}_{n=1}^\infty$
 is orthonormal with respect to the inner product
 \begin{equation*}
 \langle f , g \rangle =
@@ -4514,21 +4521,21 @@ The inequality leading up to Bessel now reads:
 \, dx .
 \end{equation*}
 
-The \emph{\myindex{Dirichlet kernel}} is the sum
+Let the \emph{\myindex{Dirichlet kernel}} be
 \begin{equation*}
 D_N(x) \coloneqq \sum_{n=-N}^N e^{inx} .
 \end{equation*}
 We claim that
 \begin{equation*}
 D_N(x) =
-\sum_{n=-N}^N e^{inx}
-=
+%\sum_{n=-N}^N e^{inx}
+%=
 \frac{\sin\bigl( (N+\nicefrac{1}{2})x \bigr)}{\sin(\nicefrac{x}{2})} ,
 \end{equation*}
-at least for $x$ such that $\sin(\nicefrac{x}{2}) \not= 0$.  We know that the left-hand
-side is continuous and hence the right-hand side extends continuously to
-all of $\R$ as well.
-To show the claim
+for $x$ such that $\sin(\nicefrac{x}{2}) \not= 0$.  The left-hand
+side is continuous on $\R$, and hence the right-hand side extends continuously to
+all of $\R$.
+To show the claim,
 we use a familiar trick:
 \begin{equation*}
 (e^{ix}-1) D_N(x) = e^{i(N+1)x} - e^{-iNx} .
@@ -4586,7 +4593,7 @@ where $\delta$ is the \myquote{delta function} (not really a function),
 which is an object that will give something like
 \myquote{$\int_{-\pi}^{\pi} f(x-t) \delta(t) \, dt = f(x)$.}
 We can think of $D_N(x)$ converging in some sense to $2 \pi\, \delta(x)$.
-However, we have not defined (and will not define) what kind of an object the delta function
+However, we have not defined (and will not define) what the delta function
 is, nor what does it mean for it to be a limit of $D_N$ or have a Fourier series.
 
 \subsection{Localization}
@@ -4611,13 +4618,13 @@ In particular,
 if $f$ is continuously
 differentiable at $x$,
 then we obtain convergence (exercise).
-We state an often used version of this corollary.
+%We state an often-used version of this corollary.
 A function $f \colon [a,b] \to \C$ is
 \emph{\myindex{continuous piecewise smooth}}\index{piecewise smooth}
 if it is continuous and there exist points
 $x_0 = a < x_1 < x_2 < \cdots < x_k = b$
-such that $f$ restricted to $[x_j,x_{j+1}]$
-is continuously differentiable (up to the endpoints) for all $j$.
+such that for every $j$, $f$ restricted to $[x_j,x_{j+1}]$
+is continuously differentiable (up to the endpoints).
 
 \begin{cor} \label{cor:fourierpiecewisesmooth}
 Let $f$ be a $2\pi$-periodic function
@@ -4705,28 +4712,30 @@ The theorem also says that convergence depends only on local behavior.
 \begin{cor}
 Suppose $f$ is a $2\pi$-periodic function, Riemann integrable on $[-\pi,\pi]$.
 If $J$ is an open interval and $f(x) = 0$ for all $x \in J$,
-then $\lim\, s_N(f;x) = 0$ for all $x \in J$.
+then $\lim\limits_{N\to\infty} s_N(f;x) = 0$ for all $x \in J$.
 
 In particular, if $f$ and $g$ are $2\pi$-periodic functions,
 Riemann integrable on $[-\pi,\pi]$, $J$ an open interval, and $f(x) = g(x)$
 for all $x \in J$, then for all $x \in J$,
 the sequence
-$\bigl\{ s_N(f;x) \bigr\}$ converges if and only if $\bigl\{ s_N(g;x) \bigr\}$ converges.
+$\bigl\{ s_N(f;x) \bigr\}_{N=1}^\infty$ converges if and only if
+$\bigl\{ s_N(g;x) \bigr\}_{N=1}^\infty$ converges.
 \end{cor}
 
-That is, convergence at $x$ is only dependent on the values of the function
-near $x$.  To prove the first claim, take $M=0$ in the theorem.
-The \myquote{In particular} follows by considering the function $f-g$, which
+The first claim follows by taking $M=0$ in the theorem.
+The \myquote{In particular} follows by considering $f-g$, which
 is zero on $J$ and $s_N(f-g) = s_N(f) - s_N(g)$.
-On the other hand, we have seen that the rate of convergence,
-that is how fast does $s_N(f)$
-converge to $f$, depends on global behavior of the function.
+So convergence at $x$ depends only on the values of the function
+near $x$.
+However, we saw that the rate of convergence,
+that is, how fast does $s_N(f)$
+converge to $f$, depends on global behavior of $f$.
 
-There is a subtle difference between the corollary and what can be
-achieved by the \hyperref[thm:SWcomplex]{Stone--Weierstrass theorem}.
+Note a subtle difference between the corollary and what 
+\hyperref[thm:SWcomplex]{Stone--Weierstrass theorem} gives.
 %By Stone--Weierstrass, 
 Any continuous function on $[-\pi,\pi]$ can be uniformly approximated
-by trigonometric polynomials, but these trigonometric polynomials need
+by trigonometric polynomials, but these trigonometric polynomials may
 not be the partial sums $s_N$.
 
 \subsection{Parseval's theorem}
@@ -4737,7 +4746,7 @@ operations on the (infinite) vectors of
 Fourier coefficients are the same as the operations using the integral
 inner product.
 
-\begin{samepage}
+%\begin{samepage}
 \begin{thm}[Parseval\footnote{%
 Named after the French mathematician
 \href{https://en.wikipedia.org/wiki/Marc-Antoine_Parseval}{Marc-Antoine
@@ -4782,7 +4791,7 @@ and
 \sum_{n=-\infty}^\infty \sabs{c_n}^2.
 \end{equation*}
 \end{thm}
-\end{samepage}
+%\end{samepage}
 
 \begin{proof}
 There exists (exercise)
@@ -4951,7 +4960,7 @@ for Riemann integrable functions on $[-\pi,\pi]$:
 \begin{exercise}
 \pagebreak[3]
 Suppose for some $C$ and $\alpha > 1$, we have
-a real sequence $\{ a_n \}$ with
+a real sequence $\{ a_n \}_{n=1}^\infty$ with
 $\abs{a_n} \leq \frac{C}{n^\alpha}$ for all $n$.
 Let
 \begin{equation*}
@@ -5026,7 +5035,7 @@ Let $\varphi$ be the $2\pi$-periodic function
 defined by $\varphi(x) \coloneqq 0$ if $x \in (-\pi,0)$,
 and $\varphi(x) \coloneqq 1$ if $x \in (0,\pi)$,
 letting $\varphi(0)$ and $\varphi(\pi)$ be arbitrary.  Show
-that $\lim \, s_N(\varphi;0) = \nicefrac{1}{2}$.
+that $\lim\limits_{N \to \infty} s_N(\varphi;0) = \nicefrac{1}{2}$.
 \item
 Let $f$ be a $2\pi$-periodic function
 Riemann integrable on $[-\pi,\pi]$, 
@@ -5038,7 +5047,7 @@ where $f(t) = g(t)$ for all $t \in [x-\delta,x)$
 and
 where $f(t) = h(t)$ for all $t \in (x,x+\delta]$.
 Then
-$\lim\, s_N(f;x) = \frac{g(x)+h(x)}{2}$, or in other words,
+$\lim\limits_{N\to\infty} s_N(f;x) = \frac{g(x)+h(x)}{2}$, or in other words,
 \begin{equation*}
 \lim_{N \to \infty} s_N(f;x) =
 \frac{1}{2}

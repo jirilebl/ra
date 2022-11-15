@@ -1037,7 +1037,7 @@ Via the discussion before the proposition, $S$ is disconnected.
 \end{proof}
 
 \begin{example}
-Let $S \subset \R$ be such that $x < z < y$ with $x,y \in S$
+Suppose $S \subset \R$ and there are $x,y,z$ such that $x < z < y$ with $x,y \in S$
 and $z \notin S$.  Claim: \emph{$S$ is disconnected}.  Proof:  Notice
 \begin{equation*}
 \bigl( (-\infty,z) \cap S \bigr)
@@ -1080,7 +1080,7 @@ If $z = x$, then $z \in U_1$.
 If $z > x$,
 then for every $\epsilon > 0$, the ball $B(z,\epsilon) =
 (z-\epsilon,z+\epsilon)$ contains points of $[x,y]$ not in $U_2$,
-as $z$ is the infimum of such points.
+as $z$ is the infimum of $U_2 \cap [x,y]$.
 So $z \notin U_2$ as $U_2$ is open.
 Therefore, $z \in U_1$ as every point of $[x,y]$ is in
 $U_1$ or $U_2$.
@@ -1160,7 +1160,7 @@ and hence $\overline{(0,1)} = (0,1]$ when working in $(0,\infty)$.
 \end{example}
 
 Let us justify the statement that the closure is everything that we can
-\myquote{approach} from the set.
+\myquote{approach} from within the set.
 
 \begin{prop} \label{prop:msclosureappr}
 Let $(X,d)$ be a metric space and $A \subset X$.  Then $x \in \widebar{A}$
@@ -1235,7 +1235,7 @@ Given $x \in A^\circ$, there is a $\delta > 0$ such that $B(x,\delta)
 \subset A$.  If $z \in B(x,\delta)$, then as open balls are open,
 there is an $\epsilon > 0$ such that $B(z,\epsilon) \subset B(x,\delta)
 \subset A$.  So $z \in A^\circ$.  Therefore, $B(x,\delta) \subset
-A^\circ$, and $A^\circ$ is open.
+A^\circ$, and so $A^\circ$ is open.
 
 As $A^\circ$ is open, then
 $\partial A = \widebar{A} \setminus A^\circ = \widebar{A} \cap
