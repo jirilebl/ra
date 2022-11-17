@@ -589,7 +589,8 @@ continuous?
 
 
 \begin{prop} \label{prop:uniformswitch}
-Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
+Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces, and suppose $(Y,d_Y)$ is
+Cauchy-complete.
 Suppose $f_n \colon X \to Y$ converge uniformly to
  $f \colon X \to Y$.  
 Let $\{ x_k \}_{k=1}^\infty$ be a sequence in $X$ and $x \coloneqq \lim_{k \to \infty} x_k$.  Suppose
@@ -660,6 +661,9 @@ d_Y\bigl(a_k,a\bigr)
 \end{proof}
 
 We obtain an immediate corollary about continuity.
+If $f_n$ are all continuous then $a_n = f_n(x)$ and 
+so $\{ a_n \}_{n=1}^\infty$ converges automatically to
+$f(x)$ and so we do not require completeness of $Y$.
 
 \begin{cor} \label{cor:metricuniformcontinuous}
 Let $X$ and $Y$ be metric spaces.
@@ -938,6 +942,7 @@ continuous complex-valued functions $C(X,\C)$.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 \leavevmode
 \begin{enumerate}[a)]
 \item
