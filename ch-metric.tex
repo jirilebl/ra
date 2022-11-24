@@ -797,7 +797,7 @@ is also open.  That is, a union of open sets is open.
 
 The index set $I$ in \ref{topology:openiii} can be arbitrarily large.
 By $\bigcup_{\lambda \in I} V_\lambda$, we simply mean the set of
-all $x$ such that $x \in V_\lambda$ for at least one $\lambda \in I$.
+all~$x$ such that $x \in V_\lambda$ for at least one $\lambda \in I$.
 
 \begin{proof}
 The sets $\emptyset$ and $X$ are obviously open in $X$.
@@ -1710,7 +1710,7 @@ an $M$ such that for all $n \geq M$,
 $x_n \in E^c$.  So $\{ x_n \}_{n=1}^\infty$  is not a sequence in $E$.
 \end{proof}
 
-To take a closure of a set $A$, we take $A$, and we throw in 
+To take a closure of a set $A$, we start with $A$, and we throw in 
 points that are limits of sequences in $A$.
 
 \begin{prop} \label{prop:msclosureapprseq}
@@ -1973,7 +1973,7 @@ The proof is
 
 \begin{prop} \label{prop:closedcomplete}
 Suppose $(X,d)$ is a complete metric space and $E \subset X$
-is closed, then $E$ is a complete metric space with the subspace topology.
+is closed, then $E$ is a complete metric space with the subspace metric.
 \end{prop}
 
 \subsection{Compactness}
@@ -2098,7 +2098,7 @@ sequence in the set has a convergent subsequence converging
 to a point in the set.
 Such sets are called
 \emph{\myindex{sequentially compact}}.
-Let us prove that in the
+We will prove that in the
 context of metric spaces, a set is compact if and only if it is sequentially
 compact.
 First we prove a lemma.
@@ -2215,9 +2215,9 @@ Since
 $d(x,x_{n_j}) < \nicefrac{1}{j}$,  \propref{prop:msconvifa} says
 $\lim_{j\to\infty} x_{n_j} = x$.
 
-For the other direction, suppose every sequence in $K$
+For the other direction, suppose every sequence in~$K$
 has a 
-subsequence converging in $K$.
+subsequence converging in~$K$.
 Take
 an open cover $\{ U_\lambda \}_{\lambda \in I}$ of $K$.
 Using the Lebesgue covering lemma above, find a $\delta > 0$
@@ -2315,7 +2315,10 @@ A closed bounded subset $K \subset \R^n$ is compact.
 So subsets of $\R^n$ are compact if and only if they are closed and bounded,
 a condition that is much easier to check.
 Let us reiterate that the Heine--Borel theorem only holds for $\R^n$ and not
-for metric spaces in general.  In general, compact implies closed and
+for metric spaces in general.
+The theorem does not hold even for subspaces of $\R^n$, just in $\R^n$
+itself.
+In general, compact implies closed and
 bounded, but not vice versa.
 
 \begin{proof}
@@ -2326,7 +2329,7 @@ Bolzano--Weierstrass theorem (\thmref{thm:bwseq}).
 As $K$ is closed, the limit of the subsequence must be an element of
 $K$.  So $K$ is compact.
 
-Let us carry out the proof for $n=2$ and leave arbitrary $n$ as an exercise.
+We carry out the proof for $n=2$ and leave arbitrary $n$ as an exercise.
 As $K \subset \R^2$ is bounded, there exists a set
 $B=[a,b]\times[c,d] \subset \R^2$ such that $K \subset B$.  We will show
 that $B$ is compact.  Then $K$, being a closed subset of a compact $B$, is
@@ -2364,8 +2367,9 @@ $X$ is an infinite set.  Then
 \item $(X,d)$ is a complete metric space.
 \item Any subset $K \subset X$ is closed and bounded.
 \item A subset $K \subset X$ is compact if and only if it is a finite set.
-\item The conclusion of the Lebesgue covering lemma is always satisfied with
-e.g. $\delta = \nicefrac{1}{2}$, even for noncompact $K \subset X$.
+\item The conclusion of the Lebesgue covering lemma is always satisfied,
+e.g. with $\delta = \nicefrac{1}{2}$,
+even for noncompact $K \subset X$.
 \end{enumerate}
 The proofs
 of the statements above are either trivial or are relegated to the exercises
@@ -2624,11 +2628,11 @@ a_{1\,1} \, xy+
 a_{0\,2} \, y^2+ \cdots +
 a_{0\,d} \, y^d ,
 \end{equation*}
-for some $d \in \N$ (the degree) and $a_{jk} \in \R$.  Then we claim 
+for some $d \in \N$ (the degree) and $a_{jk} \in \R$.  We claim 
 $f$ is continuous.  Let $\bigl\{ (x_n,y_n) \bigr\}_{n=1}^\infty$ be a sequence
 in $\R^2$ that converges to $(x,y) \in \R^2$.  We proved that this
 means $\lim_{n\to\infty} x_n = x$ and $\lim_{n\to\infty} y_n = y$.
-By \propref{prop:contalg}, we have
+By \propref{prop:contalg},
 \begin{equation*}
 \lim_{n\to\infty}
 f(x_n,y_n) =
@@ -3254,7 +3258,7 @@ Hint: First integrate over $[a+\nicefrac{1}{n},b-\nicefrac{1}{n}]$.
 In this section we prove the fixed point theorem for contraction
 mappings.  As an application we prove Picard's theorem, which we proved
 without metric spaces in \sectionref{sec:picard}.
-The proof we present here is similar, but the proof goes a lot
+The proof presented here is similar, but the proof goes a lot
 smoother with metric spaces and the fixed point theorem.
 
 \subsection{Fixed point theorem}
@@ -3342,10 +3346,9 @@ therefore useful in real-world applications.
 
 \subsection{Picard's theorem}
 
-Let us start with the metric space to which we will apply the
-fixed point theorem.
-That is, the
-space $C\bigl([a,b],\R\bigr)$ of \exampleref{example:msC01},
+We start with the metric space where we will apply the
+fixed point theorem:
+the space $C\bigl([a,b],\R\bigr)$ of \exampleref{example:msC01},
 the space of continuous functions $f \colon [a,b] \to \R$ with the metric
 \begin{equation*}
 d(f,g) \coloneqq \snorm{f-g}_{[a,b]} = \sup_{x \in [a,b]} \abs{f(x)-g(x)} .
@@ -3365,7 +3368,7 @@ Consider now the ordinary differential equation
 \begin{equation*}
 \frac{dy}{dx} = F(x,y) .
 \end{equation*}
-Given some $x_0, y_0$, we are looking for a function $y=f(x)$ such that
+Given some $x_0, y_0$, we desire a function $y=f(x)$ such that
 $f(x_0) = y_0$ and such that
 \begin{equation*}
 f'(x) = F\bigl(x,f(x)\bigr) .
@@ -3385,9 +3388,11 @@ solution.  While $F$ is a reasonably \myquote{nice} function and in particular
 it exists for all $x$ and $y$, the solution \myquote{blows up} at $x=1$.
 For more examples related to Picard's theorem, see \sectionref{sec:picard}.
 
-It may be strange that we are looking in $C\bigl([a,b],\R\bigr)$ for a differentiable
-function, but the idea is to consider the corresponding
-integral equation
+We will look for the solution in 
+$C\bigl([a,b],\R\bigr)$, which may feel strange at first as
+we are searching for a differentiable function.
+The explanation is that we consider the
+corresponding integral equation
 \begin{equation*}
 f(x)
 =
