@@ -625,9 +625,9 @@ then conclude that $(X,d)$ is bounded.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Find a metric $d$ on $\N$, such that $\N$ is an unbounded set in $(\N,d)$.
+Find a metric $d$ on $\N$ such that $\N$ is an unbounded set in $(\N,d)$.
 \item
-Find a metric $d$ on $\N$, such that $\N$ is a bounded set in $(\N,d)$.
+Find a metric $d$ on $\N$ such that $\N$ is a bounded set in $(\N,d)$.
 \item
 Find a metric $d$ on $\N$ such that for every $n \in \N$ and every $\epsilon > 0$,
 there exists an $m \in \N$ such that $d(n,m) < \epsilon$.
@@ -904,7 +904,7 @@ closed sets in the set of real numbers. %$\R$.
 \begin{prop} \label{prop:topology:subspaceopen}
 Suppose $(X,d)$ is a metric space, and $Y \subset X$.  Then $U \subset Y$
 is open in $Y$ (in the subspace topology) if and only if
-there exists an open set $V \subset X$ (so open in $X$), such that
+there exists an open set $V \subset X$ (so open in $X$) such that
 $V \cap Y = U$.
 \end{prop}
 
@@ -957,7 +957,7 @@ and leave
 
 If $U \subset V$ is open in the subspace topology, by
 \propref{prop:topology:subspaceopen}, there is a set $W \subset X$
-open in $X$, such that $U = W \cap V$.  Intersection of two open sets
+open in $X$ such that $U = W \cap V$.  Intersection of two open sets
 is open so $U$ is open in $X$.
 
 Now suppose $U$ is open in $X$.  Then $U = U \cap V$. So
@@ -1004,7 +1004,7 @@ The proposition is illustrated in \figureref{fig:disconsubset}.
 Let $(X,d)$ be a metric space.
 A nonempty set $S \subset X$ is disconnected if and only if
 there exist open sets $U_1$ and
-$U_2$ in $X$, such that $U_1 \cap U_2 \cap S = \emptyset$,
+$U_2$ in $X$ such that $U_1 \cap U_2 \cap S = \emptyset$,
 $U_1 \cap S \not= \emptyset$,
 $U_2 \cap S \not= \emptyset$, and
 \begin{equation*}
@@ -1062,7 +1062,7 @@ By \propref{prop:intervaldef}, $S$ is an interval.
 
 If $S$ is a single point, it is connected.
 Therefore, suppose $S$ is an interval.
-Consider open subsets $U_1$ and $U_2$ of $\R$, such that
+Consider open subsets $U_1$ and $U_2$ of $\R$ such that
 $U_1 \cap S$ and $U_2 \cap S$ are nonempty, and
 $S = 
 \bigl( U_1 \cap S \bigr)
@@ -1178,7 +1178,7 @@ $B(x,\delta) \subset \widebar{A}^c$.  As $A \subset \widebar{A}$ we
 see that $B(x,\delta) \subset \widebar{A}^c \subset A^c$ and hence
 $B(x,\delta) \cap A = \emptyset$.
 
-On the other hand, suppose there is a $\delta > 0$, such that
+On the other hand, suppose there is a $\delta > 0$ such that
 $B(x,\delta) \cap A = \emptyset$. 
 In other words,
 $A \subset {B(x,\delta)}^c$.
@@ -1314,7 +1314,7 @@ Take $\Q$ with the standard metric, $d(x,y) = \abs{x-y}$, as our metric space.
 Prove that $\Q$ is
 \emph{\myindex{totally disconnected}}, that is, show 
 that for every $x, y \in \Q$ with $x \not= y$, there exists an
-two open sets $U$ and $V$, such that $x \in U$, $y \in V$,
+two open sets $U$ and $V$ such that $x \in U$, $y \in V$,
 $U \cap V = \emptyset$, and $U \cup V = \Q$.
 \end{exercise}
 
@@ -1625,7 +1625,7 @@ Suppose
 the sequence
 $\{ x_m \}_{m=1}^\infty$ converges to
 $y = (y_1,y_2,\ldots,y_n) \in \R^n$.
-Given $\epsilon > 0$, there exists an $M$, such that for all
+Given $\epsilon > 0$, there exists an $M$ such that for all
 $m \geq M$, we have
 \begin{equation*}
 d(y,x_m) < \epsilon.
@@ -1643,7 +1643,7 @@ Hence the sequence $\{ x_{m,k} \}_{m=1}^\infty$ converges to $y_k$.
 
 For the other direction, suppose 
 $\{ x_{m,k} \}_{m=1}^\infty$ converges to $y_k$ for every $k=1,2,\ldots,n$.
-Given $\epsilon > 0$, pick an $M$, such that if $m \geq M$, then 
+Given $\epsilon > 0$, pick an $M$ such that if $m \geq M$, then 
 $\bigl\lvert y_k-x_{m,k} \bigr\rvert < \nicefrac{\epsilon}{\sqrt{n}}$ for all
 $k=1,2,\ldots,n$.  Then
 \begin{equation*}
@@ -1676,35 +1676,35 @@ sequences converge.
 
 \begin{prop} \label{prop:msconvtopo}
 Let $(X,d)$ be a metric space and $\{x_n\}_{n=1}^\infty$ a sequence in $X$.  Then
-$\{ x_n \}_{n=1}^\infty$ converges to $x \in X$ if and only if for every open neighborhood
-$U$ of $x$, there exists an $M \in \N$ such that for all $n \geq M$,
+$\{ x_n \}_{n=1}^\infty$ converges to $p \in X$ if and only if for every open neighborhood
+$U$ of $p$, there exists an $M \in \N$ such that for all $n \geq M$,
 we have $x_n \in U$.
 \end{prop}
 
 \begin{proof}
-Suppose $\{ x_n \}_{n=1}^\infty$ converges to $x$.  Let $U$ be an open neighborhood
-of $x$, then there exists an $\epsilon > 0$ such that $B(x,\epsilon) \subset
+Suppose $\{ x_n \}_{n=1}^\infty$ converges to $p$.  Let $U$ be an open neighborhood
+of $p$, then there exists an $\epsilon > 0$ such that $B(p,\epsilon) \subset
 U$.  As the sequence converges, find an $M \in \N$ such that for all $n \geq
-M$, we have $d(x,x_n) < \epsilon$, or in other words $x_n \in B(x,\epsilon)
+M$, we have $d(p,x_n) < \epsilon$, or in other words $x_n \in B(p,\epsilon)
 \subset U$.
 
 Let us prove the other direction.  Given $\epsilon > 0$, let $U \coloneqq
-B(x,\epsilon)$ be the neighborhood of $x$.  Then there is an $M \in \N$
-such that for $n \geq M$, we have $x_n \in U = B(x,\epsilon)$, or in other
-words, $d(x,x_n) < \epsilon$.
+B(p,\epsilon)$ be the neighborhood of $p$.  Then there is an $M \in \N$
+such that for $n \geq M$, we have $x_n \in U = B(p,\epsilon)$, or in other
+words, $d(p,x_n) < \epsilon$.
 \end{proof}
 
 A closed set contains the limits of its convergent sequences.
 
 \begin{prop} \label{prop:msclosedlim}
 Let $(X,d)$ be a metric space, $E \subset X$ a closed set,
-and $\{ x_n \}_{n=1}^\infty$ a sequence in $E$ that converges to some $x \in X$.
-Then $x \in E$.
+and $\{ x_n \}_{n=1}^\infty$ a sequence in $E$ that converges to some $p \in X$.
+Then $p \in E$.
 \end{prop}
 
 \begin{proof}
 Let us prove the contrapositive.
-Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence in $X$ that converges to $x \in E^c$.
+Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence in $X$ that converges to $p \in E^c$.
 As $E^c$ is open, \propref{prop:msconvtopo} says that there is
 an $M$ such that for all $n \geq M$,
 $x_n \in E^c$.  So $\{ x_n \}_{n=1}^\infty$  is not a sequence in $E$.
@@ -1715,16 +1715,16 @@ points that are limits of sequences in $A$.
 
 \begin{prop} \label{prop:msclosureapprseq}
 Let $(X,d)$ be a metric space and $A \subset X$.
-Then $x \in \widebar{A}$ if and only if there exists a sequence
+Then $p \in \widebar{A}$ if and only if there exists a sequence
 $\{ x_n \}_{n=1}^\infty$ of
-elements in $A$ such that $\lim\limits_{n\to\infty} x_n = x$.
+elements in $A$ such that $\lim\limits_{n\to\infty} x_n = p$.
 \end{prop}
 
 \begin{proof}
-Let $x \in \widebar{A}$.  For every $n \in \N$,
+Let $p \in \widebar{A}$.  For every $n \in \N$,
 \propref{prop:msclosureappr} guarantees
-a point $x_n \in B(x,\nicefrac{1}{n}) \cap A$.
-As $d(x,x_n) < \nicefrac{1}{n}$, we have $\lim_{n\to\infty} x_n = x$.
+a point $x_n \in B(p,\nicefrac{1}{n}) \cap A$.
+As $d(p,x_n) < \nicefrac{1}{n}$, we have $\lim_{n\to\infty} x_n = p$.
 
 For the other direction, see \exerciseref{exercise:reverseclosedseq}.
 \end{proof}
@@ -1735,9 +1735,9 @@ For the other direction, see \exerciseref{exercise:reverseclosedseq}.
 Finish the proof of 
 \propref{prop:msclosureapprseq}:
 Let $(X,d)$ be a metric space and
-$A \subset X$.  Let $x \in X$ be
-such that there exists a sequence $\{ x_n \}_{n=1}^\infty$ in $A$ that converges to $x$.
-Prove that $x \in \widebar{A}$.
+$A \subset X$.  Let $p \in X$ be
+such that there exists a sequence $\{ x_n \}_{n=1}^\infty$ in $A$ that converges to $p$.
+Prove that $p \in \widebar{A}$.
 \end{exercise}
 
 \begin{exercise}
@@ -1763,9 +1763,9 @@ Prove \propref{prop:msconvifa}.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{x_n\}_{n=1}^\infty$ converges to $x$.  Suppose $f \colon \N
+Suppose $\{x_n\}_{n=1}^\infty$ converges to $p$.  Suppose $f \colon \N
 \to \N$ is a one-to-one function.  Show that
-$\{ x_{f(n)} \}_{n=1}^\infty$ converges to $x$.
+$\{ x_{f(n)} \}_{n=1}^\infty$ converges to $p$.
 \end{exercise}
 
 \begin{exercise}
@@ -1776,9 +1776,9 @@ a $K \in \N$ such that for all $n \geq K$, we have $x_n = x_K$.
 
 \begin{exercise}
 A set $S \subset X$ is said to be \emph{\myindex{dense}} in $X$ if
-$X \subset \widebar{S}$ or in other words if for every $x \in X$,
-there exists a sequence $\{ x_n \}_{n=1}^\infty$ in $S$ that converges to $x$.  Prove
-that $\R^n$ contains a countable dense subset.
+$X \subset \widebar{S}$ or in other words if for every $p \in X$,
+there exists a sequence $\{ x_n \}_{n=1}^\infty$ in $S$ that converges to $p$.
+Prove that $\R^n$ contains a countable dense subset.
 \end{exercise}
 
 \begin{exercise}[Tricky]
@@ -1896,19 +1896,19 @@ A convergent sequence in a metric space is Cauchy.
 \end{prop}
 
 \begin{proof}
-Suppose $\{ x_n \}_{n=1}^\infty$ converges to $x$.
+Suppose $\{ x_n \}_{n=1}^\infty$ converges to $p$.
 Given $\epsilon > 0$, there is an $M$ such that for all $n \geq M$,
-we have $d(x,x_n) < \nicefrac{\epsilon}{2}$.  Hence
+we have $d(p,x_n) < \nicefrac{\epsilon}{2}$.  Hence
 for all $n,k \geq M$, we have
 $d(x_n,x_k) \leq d(x_n,x) + d(x,x_k) < \nicefrac{\epsilon}{2} +
 \nicefrac{\epsilon}{2} = \epsilon$.
 \end{proof}
 
 \begin{defn}
-Let $(X,d)$ be a metric space.  We say $X$ is
+We say a metric space $(X,d)$ is
 \emph{\myindex{complete}} or \emph{\myindex{Cauchy-complete}}
 if every Cauchy sequence $\{ x_n \}_{n=1}^\infty$ in $X$
-converges to an $x \in X$.
+converges to a $p \in X$.
 \end{defn}
 
 \begin{prop}
@@ -1945,11 +1945,6 @@ By \propref{prop:msconveuc}, $\{ x_m \}_{m=1}^\infty$ converges
 to $y \in \R^n$, and hence $\R^n$ is complete.
 \end{proof}
 
-A subset of $\R^n$ with the subspace metric need not be
-complete.  For example, $(0,1]$ with the subspace metric is not
-complete as $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ is a Cauchy sequence in $(0,1]$
-with no limit in $(0,1]$.
-
 In the language of metric spaces,
 the results on continuity of section \sectionref{sec:liminter},
 say that the metric space
@@ -1962,8 +1957,11 @@ The space of continuous functions $C\bigl([a,b],\R\bigr)$ with the uniform
 norm as metric is a complete metric space.
 \end{prop}
 
-As we saw above, a subspace of a complete metric space need not be
-complete.  However, 
+A subset of a complete metric space such as $\R^n$ with the subspace metric need not be
+complete.  For example, $(0,1]$ with the subspace metric is not
+complete, as $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ is a Cauchy sequence in $(0,1]$
+with no limit in $(0,1]$.
+However, 
 a closed subspace of a complete metric space is
 complete.  After all, one way
 to think of a closed set is that it contains all points
@@ -1973,7 +1971,8 @@ The proof is
 
 \begin{prop} \label{prop:closedcomplete}
 Suppose $(X,d)$ is a complete metric space and $E \subset X$
-is closed, then $E$ is a complete metric space with the subspace metric.
+is closed.
+Then $E$ is a complete metric space with the subspace metric.
 \end{prop}
 
 \subsection{Compactness}
@@ -1987,10 +1986,10 @@ of open sets $\{ U_{\lambda} \}_{\lambda \in I}$ such that
 K \subset \bigcup_{\lambda \in I} U_\lambda ,
 \end{equation*}
 there exists a finite subset
-$\{ \lambda_1, \lambda_2,\ldots,\lambda_k \} \subset I$
+$\{ \lambda_1, \lambda_2,\ldots,\lambda_m \} \subset I$
 such that
 \begin{equation*}
-K \subset \bigcup_{j=1}^k U_{\lambda_j} .
+K \subset \bigcup_{j=1}^m U_{\lambda_j} .
 \end{equation*}
 \end{defn}
 
@@ -2002,14 +2001,14 @@ $K$ is compact is to say that \emph{every open cover of $K$ has a finite
 \begin{example}
 Let $\R$ be the metric space with the standard metric.
 
-The set $\R$ is not compact.  Proof: Take the sets $U_j \coloneqq (-j,j)$.
+The set $\R$ is not compact.  Proof: For $j \in \N$, let $U_j \coloneqq (-j,j)$.
 Any $x \in \R$ is in some $U_j$ (by the
 \hyperref[thm:arch:i]{Archimedean property}), so we have an open cover.
 Suppose we have a finite
-subcover $\R \subset U_{j_1} \cup U_{j_2} \cup \cdots \cup U_{j_k}$,
-and suppose $j_1 < j_2 < \cdots < j_k$.  Then $\R \subset U_{j_k}$, but that is
-a contradiction as $j_k \in \R$ on one hand and $j_k \notin U_{j_k} =
-(-j_k,j_k)$ on the
+subcover $\R \subset U_{j_1} \cup U_{j_2} \cup \cdots \cup U_{j_m}$,
+and suppose $j_1 < j_2 < \cdots < j_m$.  Then $\R \subset U_{j_m}$, but that is
+a contradiction as $j_m \in \R$ on one hand and $j_m \notin U_{j_m} =
+(-j_m,j_m)$ on the
 other.
 
 The set $(0,1) \subset \R$ is also not compact.  Proof:  Take the 
@@ -2039,9 +2038,9 @@ Fix $p \in X$.  We have the open cover
 K \subset \bigcup_{n=1}^\infty B(p,n) = X .
 \end{equation*}
 If $K$ is compact, then there exists some set of indices
-$n_1 < n_2 < \ldots < n_k$ such that
+$n_1 < n_2 < \ldots < n_m$ such that
 \begin{equation*}
-K \subset \bigcup_{j=1}^k B(p,n_j) = B(p,n_k) .
+K \subset \bigcup_{j=1}^m B(p,n_j) = B(p,n_m) .
 \end{equation*}
 As $K$ is contained in a ball, $K$ is bounded.
 See the left-hand side of \figureref{fig:compactbndclosed}.
@@ -2060,15 +2059,15 @@ K \subset \bigcup_{n=1}^\infty {C(x,\nicefrac{1}{n})}^c .
 A closed ball is closed, so its complement ${C(x,\nicefrac{1}{n})}^c$ is open, and
 we have an open cover.
 If we take any
-finite collection of indices $n_1 < n_2 < \ldots < n_k$, then 
+finite collection of indices $n_1 < n_2 < \ldots < n_m$, then 
 \begin{equation*}
-\bigcup_{j=1}^k {C(x,\nicefrac{1}{n_j})}^c 
+\bigcup_{j=1}^m {C(x,\nicefrac{1}{n_j})}^c 
 =
-{C(x,\nicefrac{1}{n_k})}^c 
+{C(x,\nicefrac{1}{n_m})}^c 
 \end{equation*}
 As $x$ is in the closure of $K$,
 then
-$C(x,\nicefrac{1}{n_k}) \cap K \not= \emptyset$.  So there is no
+$C(x,\nicefrac{1}{n_m}) \cap K \not= \emptyset$.  So there is no
 finite subcover and $K$ is not compact.
 See the right-hand side of \figureref{fig:compactbndclosed}.
 \end{proof}
@@ -2159,18 +2158,19 @@ if $K$ is sequentially compact, then given any
 cover there is a single $\delta > 0$.  The $\delta$ depends on the cover,
 but, of course, it does not depend on $x$.
 
-For example, let $K \coloneqq [-10,10]$ and for $n \in \Z$
-let $U_n \coloneqq (n,n+2)$ define sets in an open cover.
-Take $x \in K$. There is an $n \in \Z$, 
+For example, let $K \coloneqq [-10,10]$ and let
+$U_n \coloneqq (n,n+2)$ for $n \in \Z$
+give an open cover.
+Consider $x \in K$. There is an $n \in \Z$, 
 such that $n \leq x < n+1$.
 If $n \leq x < n+\nicefrac{1}{2}$, then
 $B\bigl(x,\nicefrac{1}{2}\bigr) \subset U_{n-1}$.
 If $n+ \nicefrac{1}{2} \leq x < n+1$, then
 $B\bigl(x,\nicefrac{1}{2}\bigr) \subset U_{n}$.  So $\delta =
-\nicefrac{1}{2}$.  If instead we let
+\nicefrac{1}{2}$ will do.  The sets 
 $U'_n \coloneqq \bigl(\frac{n}{2},\frac{n+2}{2} \bigr)$,
-then we again obtain an open
-cover, but now the best $\delta$ we can find is $\nicefrac{1}{4}$.
+again give an open cover,
+but now the largest $\delta$ that works is $\nicefrac{1}{4}$.
 
 On the other hand, $\N \subset \R$ is not sequentially compact.
 It is an exercise to find a cover for which no $\delta > 0$ works.
@@ -2203,7 +2203,7 @@ proved.
 So suppose that $K$ is compact and $\{ x_n \}_{n=1}^\infty$ is a sequence in $K$.
 Then there exists an $x \in K$ such that
 for all $\delta > 0$,
-$B(x,\delta)$ contains $x_k$ for infinitely many $k \in \N$.
+$B(x,\delta)$ contains $x_n$ for infinitely many $n \in \N$.
 We define the subsequence inductively.
 The ball $B(x,1)$ contains some $x_k$, so let $n_1 \coloneqq k$.
 Suppose $n_{j-1}$ is defined.
@@ -3428,7 +3428,7 @@ f'(x) = F\bigl(x,f(x)\bigr) \qquad \text{and} \qquad f(x_0) = y_0.
 Without loss of generality assume $x_0 =0$ (exercise).
 As $I \times J$ is compact and
 $F(x,y)$ is continuous, it is bounded.
-So find an $M > 0$, such that
+So find an $M > 0$ such that
 $\abs{F(x,y)} \leq M$ for all $(x,y) \in I\times J$.
 Pick $\alpha > 0$ such that
 $[-\alpha,\alpha] \subset I$ and $[y_0-\alpha, y_0 + \alpha] \subset J$.
