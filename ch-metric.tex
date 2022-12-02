@@ -2287,7 +2287,7 @@ Hence, no subsequence of $\{ x_n \}_{n=1}^\infty$ is convergent,
 which is a contradiction.
 \end{proof}
 
-\begin{example}
+\begin{example} \label{example:intervalcompact}
 \thmref{thm:bwseq},
 the Bolzano--Weierstrass theorem for sequences of real numbers,
 says that every bounded sequence in $\R$ has a convergent
@@ -2297,7 +2297,7 @@ preserve non-strict inequalities.  Hence a closed bounded interval $[a,b]
 \subset \R$ is (sequentially) compact.
 \end{example}
 
-\begin{prop}
+\begin{prop} \label{prop:closedsubsetcompact}
 Let $(X,d)$ be a metric space and let $K \subset X$ be compact.  If
 $E \subset K$ is a closed set, then $E$ is compact.
 \end{prop}
@@ -2336,11 +2336,10 @@ bounded, but not vice versa.
 
 \begin{proof}
 For $\R = \R^1$, suppose $K \subset \R$ is closed and bounded.
-Every sequence $\{ x_k \}_{k=1}^\infty$ in $K$ is bounded, so it has a convergent
-subsequence by
-Bolzano--Weierstrass (\thmref{thm:bwseq}).
-As $K$ is closed, the limit of the subsequence must be an element of
-$K$.  So $K$ is compact.
+Then $K \subset [a,b]$ for some closed and bounded interval,
+which is compact by \exampleref{example:intervalcompact}.
+As $K$ is a closed subset of a compact set,
+it is compact by \propref{prop:closedsubsetcompact}.
 
 We carry out the proof for $n=2$ and leave arbitrary $n$ as an exercise.
 As $K \subset \R^2$ is bounded, there exists a set
