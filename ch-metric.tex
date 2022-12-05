@@ -2027,8 +2027,8 @@ interval $[a,b]$, is compact.
 \end{example}
 
 \begin{prop}
-Let $(X,d)$ be a metric space.  A compact set $K \subset X$ is closed and
-bounded.
+Let $(X,d)$ be a metric space.  If $K \subset X$ is compact, then
+$K$ is closed and bounded.
 \end{prop}
 
 \begin{proof}
@@ -2091,6 +2091,19 @@ enough to give compactness: $C\bigl([a,b],\R\bigr)$ is a complete metric
 space, but the closed unit ball $C(0,1)$ is not compact, see
 \exerciseref{exercise:msclbounnotcompt}.  However, see also
 \exerciseref{exercise:mstotbound}.
+
+Not worrying about the boundedness for a moment,
+note further the difference between being closed and being compact.  Being
+closed depends on the ambient metric space:
+The set $(0,1]$ is not closed in $\R$,
+but it is closed in the subspace $(0,\infty)$.
+However, a set $K$ is compact
+in some metric space $(X,d)$ if and only if it is compact in the subspace
+metric on $K$.  So for a compact set, we do not have to ask
+what metric space it lives in.
+On the other hand, every set is always closed in the 
+subspace metric as a subset of itself.
+See also \exerciseref{exercise:subspacecompact}.
 
 A useful property of compact sets in a metric space is that every
 sequence in the set has a convergent subsequence converging
@@ -2268,15 +2281,15 @@ sequence $\{ x_n \}_{n=1}^\infty$ as above.
 For contradiction, suppose that
 there is no finite subcover and we have the sequence $\{ x_n \}_{n=1}^\infty$.
 For all $n$ and $k$, $n \not= k$, 
-we have $d(x_n,x_k) \geq \delta$,
-so no subsequence of $\{ x_n \}_{n=1}^\infty$ can be
-Cauchy.  Hence, no subsequence of $\{ x_n \}_{n=1}^\infty$ can be convergent,
+we have $d(x_n,x_k) \geq \delta$.
+So no subsequence of $\{ x_n \}_{n=1}^\infty$ is Cauchy.
+Hence, no subsequence of $\{ x_n \}_{n=1}^\infty$ is convergent,
 which is a contradiction.
 \end{proof}
 
-\begin{example}
-The Bolzano--Weierstrass theorem for sequences of real numbers
-(\thmref{thm:bwseq})
+\begin{example} \label{example:intervalcompact}
+\thmref{thm:bwseq},
+the Bolzano--Weierstrass theorem for sequences of real numbers,
 says that every bounded sequence in $\R$ has a convergent
 subsequence.  Therefore, every sequence in a closed interval $[a,b] \subset \R$ has 
 a convergent subsequence.  The limit is also in $[a,b]$ as limits
@@ -2284,7 +2297,7 @@ preserve non-strict inequalities.  Hence a closed bounded interval $[a,b]
 \subset \R$ is (sequentially) compact.
 \end{example}
 
-\begin{prop}
+\begin{prop} \label{prop:closedsubsetcompact}
 Let $(X,d)$ be a metric space and let $K \subset X$ be compact.  If
 $E \subset K$ is a closed set, then $E$ is compact.
 \end{prop}
@@ -2322,12 +2335,11 @@ In general, compact implies closed and
 bounded, but not vice versa.
 
 \begin{proof}
-For $\R = \R^1$ if $K \subset \R$ is closed and bounded, then
-every sequence $\{ x_k \}_{k=1}^\infty$ in $K$ is bounded, so it has a convergent
-subsequence by
-Bolzano--Weierstrass theorem (\thmref{thm:bwseq}).
-As $K$ is closed, the limit of the subsequence must be an element of
-$K$.  So $K$ is compact.
+For $\R = \R^1$, suppose $K \subset \R$ is closed and bounded.
+Then $K \subset [a,b]$ for some closed and bounded interval,
+which is compact by \exampleref{example:intervalcompact}.
+As $K$ is a closed subset of a compact set,
+it is compact by \propref{prop:closedsubsetcompact}.
 
 We carry out the proof for $n=2$ and leave arbitrary $n$ as an exercise.
 As $K \subset \R^2$ is bounded, there exists a set
@@ -2432,7 +2444,7 @@ Prove \thmref{thm:msbw} for arbitrary dimension.
 Hint: The trick is to use the correct notation.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:subspacecompact}
 Show that a compact set $K$ (in any metric space)
 is itself a complete metric space (using the subspace metric).
 \end{exercise}
