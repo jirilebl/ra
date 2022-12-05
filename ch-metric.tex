@@ -2577,7 +2577,7 @@ $d_Y\bigl(f(x),f(c)\bigr) < \epsilon$.
 
 \medskip
 
-When $f \colon X \to Y$ is continuous at all $c \in X$, then we simply say
+When $f \colon X \to Y$ is continuous at all $c \in X$, we simply say
 that $f$ is a \emph{continuous function}\index{continuous function!in a
 metric space}\index{function!continuous}.
 \end{defn}
@@ -2653,7 +2653,7 @@ polynomial in $n$ variables is continuous.
 \end{example}
 
 Be careful about taking limits separately.
-Consider the function defined by $f(x,y) \coloneqq \frac{xy}{x^2+y^2}$
+Consider $f \colon \R^2 \to \R$ defined by $f(x,y) \coloneqq \frac{xy}{x^2+y^2}$
 outside the origin and $f(0,0) \coloneqq 0$.
 See \figureref{fig:xyxsqysq}.
 In \exerciseref{exercise:dicontR2},
@@ -2668,12 +2668,12 @@ and for every $x$, the function $h(y) \coloneqq f(x,y)$ is continuous.
 
 \begin{example}
 Let $X$ be a metric space and $f \colon X \to \C$ a complex-valued
-function.  We write $f(p) = g(p) + i h(p)$, where $g \colon X \to \R$
+function.  Write $f(p) = g(p) + i \, h(p)$, where $g \colon X \to \R$
 and $h \colon X \to \R$ are the real and imaginary parts of $f$.
 Then $f$ is continuous at $c \in X$ if and only if its real
-and imaginary parts are continuous at $c$.  
-This fact follows because $\bigl\{ f(p_n) = g(p_n) + i h(p_n) \bigr\}_{n=1}^\infty$
-converges to $f(p) = g(p) + i h(p)$ if and only if
+and imaginary parts are continuous at~$c$.  
+This fact follows because $\bigl\{ f(p_n) = g(p_n) + i \, h(p_n) \bigr\}_{n=1}^\infty$
+converges to $f(p) = g(p) + i \, h(p)$ if and only if
 $\bigl\{ g(p_n) \bigr\}_{n=1}^\infty$ converges to $g(p)$ and
 $\bigl\{ h(p_n) \bigr\}_{n=1}^\infty$ converges to $h(p)$.
 \end{example}
@@ -2776,8 +2776,9 @@ such that
 \begin{equation*}
 B_X(c,\delta) \subset W \subset f^{-1}\bigl(B_Y\bigl(f(c),\epsilon\bigr)\bigr) .
 \end{equation*}
-That means precisely that if $d_X(x,c) < \delta$, then $d_Y\bigl(f(x),f(c)\bigr)
-< \epsilon$, and so $f$ is continuous at~$c$.
+That means precisely that if $d_X(x,c) < \delta$,
+then $d_Y\bigl(f(x),f(c)\bigr) < \epsilon$.
+So $f$ is continuous at~$c$.
 \end{proof}
 
 \begin{thm} \label{thm:mstopocont}
@@ -2847,10 +2848,10 @@ Apply the \hyperref[ms:lebesgue]{Lebesgue covering lemma} to obtain a
 $\delta > 0$ such that for every $x \in X$, there is a $c \in X$
 for which $B(x,\delta) \subset B(c,\delta_c)$.
 
-If $p, q \in X$ where $d_X(p,q) < \delta$,
-find a $c \in X$ such that $B(p,\delta) \subset B(c,\delta_c)$.
+Suppose $p, q \in X$ where $d_X(p,q) < \delta$.
+Find a $c \in X$ such that $B(p,\delta) \subset B(c,\delta_c)$.
 Then $q \in B(c,\delta_c)$.  By the triangle inequality
-and the definition of $\delta_c$, we have
+and the definition of $\delta_c$,
 \begin{equation*}
 d_Y\bigl(f(p),f(q)\bigr)
 \leq
@@ -2863,8 +2864,10 @@ d_Y\bigl(f(c),f(q)\bigr)
 \end{equation*}
 \end{proof}
 
-As an application of uniform continuity, let us prove a useful criterion for
-continuity of functions defined by integrals.  Let $f(x,y)$ be a function of two variables and define
+As an application of uniform continuity,
+we prove a useful criterion for
+continuity of functions defined by integrals.
+Let $f(x,y)$ be a function of two variables and define
 \begin{equation*}
 g(y) \coloneqq \int_a^b f(x,y) \,dx .
 \end{equation*}
@@ -2875,7 +2878,7 @@ is necessary.  A useful sufficient (but not
 necessary) condition is that $f$ is continuous on a closed rectangle.
 
 \begin{prop} \label{prop:integralcontcont}
-If $f \colon [a,b] \times [c,d] \to \R$ is a continuous function,
+If $f \colon [a,b] \times [c,d] \to \R$ is continuous,
 then $g \colon [c,d] \to \R$ defined by
 \begin{equation*}
 g(y) \coloneqq \int_a^b f(x,y) \,dx  \qquad \text{is continuous}.
@@ -3049,8 +3052,9 @@ Find an example where $X$ is disconnected and $f$ is not constant.
 
 \begin{exercise} \label{exercise:dicontR2}
 \pagebreak[2]
-Let $f \colon \R^2 \to \R$ be defined by $f(0,0) \coloneqq 0$, and
+Define $f \colon \R^2 \to \R$ by $f(0,0) \coloneqq 0$, and
 $f(x,y) \coloneqq \frac{xy}{x^2+y^2}$ if $(x,y) \not= (0,0)$.
+See \figureref{fig:xyxsqysq}.
 \begin{enumerate}[a)]
 \item
 Show that for every fixed $x$,
@@ -3086,8 +3090,8 @@ and $(Y,d_Y)$.  Show that if $X$ is connected, then $f(X)$ is connected.
 \begin{exercise}
 Prove the following version of the
 \hyperref[IVT:thm]{intermediate value theorem}.  Let $(X,d)$ be a connected
-metric space and $f \colon X \to \R$ a continuous function.  Suppose that
-there exist $x_0,x_1 \in X$ and $y \in \R$ such that $f(x_0) < y < f(x_1)$.
+metric space and $f \colon X \to \R$ a continuous function.  Suppose 
+$x_0,x_1 \in X$ and $y \in \R$ are such that $f(x_0) < y < f(x_1)$.
 Then prove that there exists a $z \in X$ such that $f(z) = y$.
 Hint: See \exerciseref{exercise:msconnconn}.
 \end{exercise}
