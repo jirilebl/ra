@@ -776,6 +776,10 @@ while(1)
 		printf "volIref using \"$3\"\n";
 		#this just replaces this with the second argument
 
+	} elsif ($para =~ s/^\\volIIref\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}/$3/) {
+		printf "volIIref using \"$3\"\n";
+		#this just replaces this with the second argument
+
 	} elsif ($para =~ s/^\\eqref\{([^}]*)\}//) {
 		open_paragraph_if_not_open ();
 		my $theid = modify_id($1);
