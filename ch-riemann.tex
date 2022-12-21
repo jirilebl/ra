@@ -2011,8 +2011,8 @@ representation of $\nicefrac{n}{m}$ we use, so we do not need to use
 lowest terms.
 
 However, what do we mean by $\sqrt{2}^{\sqrt{2}}$?  Or
-$x^y$ in general?  In particular, what is $e^x$ for all $x$?
-And how do we solve $y=e^x$ for $x$?
+$x^y$ in general?  In particular, what is $e^x$ for all~$x$?
+And how do we solve $y=e^x$ for~$x$?
 This section answers these questions and more.
 
 \subsection{The logarithm}
@@ -2079,16 +2079,16 @@ As $\nicefrac{1}{t} \geq \nicefrac{1}{2}$ when $t \in [1,2]$,
 \begin{equation*}
 L(2) = \int_1^2 \frac{1}{t} \,dt \geq \nicefrac{1}{2} .
 \end{equation*}
-By induction, \ref{it:log:iv} implies that for $n \in \N$
+By induction, \ref{it:log:iv} implies that for $n \in \N$,
 \begin{equation*}
 L(2^n) = L(2) + L(2) + \cdots + L(2) = n L(2) .
 \end{equation*}
 Given $y > 0$, 
 by the \hyperref[thm:arch:i]{Archimedean property} of the real numbers
 (notice $L(2) > 0$), there is an $n \in \N$ such that
-$L(2^n) > y$.  By the
+$L(2^n) > y$.  The
 \hyperref[IVT:thm]{intermediate value theorem}
-there is an $x_1 \in (1,2^n)$ such that $L(x_1) = y$.  We get
+gives an $x_1 \in (1,2^n)$ such that $L(x_1) = y$.  Thus
 $(0,\infty)$ is in the image of $L$.
 As $L$ is increasing, $L(x) > y$ for all $x > 2^n$, and so
 \begin{equation*}
@@ -2138,10 +2138,15 @@ we simply define the \emph{\myindex{logarithm}} or sometimes called the
 \begin{equation*}
 \ln(x) \coloneqq L(x) .
 \end{equation*}
-
+See \figureref{fig:log}.
 Mathematicians usually write $\log(x)$ instead of $\ln(x)$, which is
 more familiar to calculus students.  For all practical purposes, there is only one logarithm:
 the natural logarithm.  See \exerciseref{exercise:otherlogbases}.
+\begin{myfigureht}
+\includegraphics{figures/logfig}
+\caption{Plot of $\ln(x)$ together with $\nicefrac{1}{x}$, showing the value
+$\ln(4)$.\label{fig:log}}
+\end{myfigureht}
 
 \subsection{The exponential}
 \index{exponential}
@@ -2254,11 +2259,17 @@ $F(x)-E(x) = 0$ for all $x$, and we are done.
 \end{proof}
 
 Having proved $E$ is unique, we define the
-\emph{\myindex{exponential}} function as
+\emph{\myindex{exponential}} function (see \figureref{fig:exp}) as
 \glsadd{not:exp}
 \begin{equation*}
 \exp(x) \coloneqq E(x) .
 \end{equation*}
+\begin{myfigureht}
+\includegraphics{figures/expfig}
+\caption{Plot of $e^x$, together with a slope field giving slope $y$ at
+every point $(x,y)$.
+The equation $\frac{d}{dx} e^x = e^x$ means that $y=e^x$ follows these slopes.\label{fig:exp}}
+\end{myfigureht}
 
 If $y \in \Q$ and $x > 0$, then
 \begin{equation*}
@@ -2277,7 +2288,7 @@ $\{ y_n \}_{n=1}^\infty$
 approaching $y$ and defined $x^y = \lim_{n\to\infty} x^{y_n}$.
 
 Define the number $e$,
-sometimes called \emph{\myindex{Euler's number}} or
+called \emph{\myindex{Euler's number}} or
 the \emph{\myindex{base of the natural logarithm}}, as
 \glsadd{not:e}
 \begin{equation*}

@@ -1,0 +1,58 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+double f(double t)
+{
+  return log(t);
+}
+
+double ff(double t)
+{
+  return 1/t;
+}
+
+int main()
+{
+  int n;
+  picture(P(-0.5,-2.0), P(5.5,2.0), "3x2in");
+
+  begin();
+
+  plain();
+  solid();
+  //line(P(1,0),P(1,1));
+  fill(Black(0.2));
+  dashed();
+  shadeplot(ff,1,4,20);
+  plot(ff, 0.5, 1, 5);
+  plot(ff, 4, 5, 5);
+
+  solid();
+
+  font_size("footnotesize");
+  axis Ax(P(1, 0), P(5, 0), 4, P(0,-8), b);
+  Ax.align(b).draw();
+  line(P(0,0),P(5.5,0));
+
+  axis Ay(P(0, -2.0), P(0, 2), 4, P(-8,0), l);
+  Ay.align(l).draw();
+
+
+  bold();
+  solid();
+  plot(f, exp(-2), 5.5, 60);
+
+  plain();
+  //arrow(P(4,0),P(4,log(4)));
+  arrow(P(4,log(4)/2.0 + 0.16),P(4,log(4)));
+  arrow(P(4,log(4)/2.0 - 0.16),P(4,0));
+  label(P(4,log(4)/2.0),"shaded area = $\\ln(4)$");
+
+  label(P(0.5,-0.85),P(4,0),"$y=\\ln(x)$",r);
+  label(P(0.75,1.6),P(4,0),"$y=\\nicefrac{1}{x}$",r);
+
+  tikz_format();
+  end();
+}
+

@@ -1482,7 +1482,15 @@ y' = F(x,y) .
 Generally, we also specify an \emph{\myindex{initial condition}}
 $y(x_0)=y_0$.  The solution of
 the equation is a function $y(x)$ such that 
-$y(x_0)=y_0$ and $y'(x) = F\bigl(x,y(x)\bigr)$.
+$y(x_0)=y_0$ and $y'(x) = F\bigl(x,y(x)\bigr)$.  See
+\figureref{fig:sampleslopes} for a graphical representation as a so-called
+\emph{\myindex{slope field}}.
+\begin{myfigureht}
+\includegraphics{figures/sampleslopes}
+\caption{A \emph{slope field} giving the slope $F(x,y)$ at each point,
+in this case $F(x,y)=x(1-y)$.  A solution is drawn going through the point
+$(x_0,y_0)=(1,0.3)$, notice how it follows the slopes.\label{fig:sampleslopes}}
+\end{myfigureht}
 
 When $F$ involves only the $x$ variable, the solution is given by the
 fundamental theorem of calculus.  On the other hand, when $F$ depends
@@ -1795,7 +1803,10 @@ f'(x) = f(x), \qquad f(0) = 1 .
 That is, we suppose $F(x,y) = y$, and we are looking for a function 
 $f$ such that $f'(x) = f(x)$.
 Let us forget for the moment that we solved this equation in 
-\sectionref{sec:logandexp}.
+\sectionref{sec:logandexp}.  See also \figureref{fig:exp} for a plot of
+both the equation, showing
+the slope $F(x,y)=y$ at each point, and the solution,
+the exponential, that satisfies $f(0)=1$.
 
 We pick any $I$ that contains 0
 in the interior.
@@ -1838,6 +1849,12 @@ f_3(x) & = 1 + \int_0^x f_2(s)\,ds =
 1 + x + \frac{x^2}{2} + \frac{x^3}{6} .
 \end{align*}
 We recognize the beginning of the Taylor series for the exponential.
+See \figureref{fig:exppicard}.
+\begin{myfigureht}
+\includegraphics{figures/exppicardfig}
+\caption{The exponential (solid line) together with $f_0$, $f_1$, $f_2$,
+$f_3$ (dashed).\label{fig:exppicard}}
+\end{myfigureht}
 \end{example}
 
 \begin{example}
@@ -2002,6 +2019,7 @@ $[x_0-h,x_0+h]$.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[3]
 Consider the equation $y' = y^{1/3}x$.
 \begin{enumerate}[a)]
 \item

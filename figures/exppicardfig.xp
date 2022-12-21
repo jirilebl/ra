@@ -1,0 +1,66 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+double f(double t)
+{
+  return exp(t);
+}
+
+double f0(double t)
+{
+  return 1.0;
+}
+
+double f1(double t)
+{
+  return 1.0+t;
+}
+
+double f2(double t)
+{
+  return 1.0+t+t*t/2.0;
+}
+
+double f3(double t)
+{
+  return 1.0+t+t*t/2.0+t*t*t/6.0;
+}
+
+int main()
+{
+  int n;
+  picture(P(-1.5,-0.2), P(1.5,4.5), "3x2in");
+
+  begin();
+
+  font_size("footnotesize");
+
+  plain();
+
+  axis Ax(P(-1, 0), P(1, 0), 2, P(0,-8), b);
+  Ax.align(b).draw();
+  line(P(-1.5,0),P(1.0,0));
+  line(P(1.0,0),P(1.5,0));
+
+  axis Ay(P(0, 1.0), P(0, 4), 3, P(-4,8), l);
+  Ay.align(l).draw();
+  line(P(0,0),P(0,1.0));
+  line(P(0,0),P(0,4.5));
+
+
+  dashed();
+  plot(f0, -1.5, 1.5, 30);
+  plot(f1, -1.5, 1.5, 30);
+  plot(f2, -1.5, 1.5, 30);
+  plot(f3, -1.5, 1.5, 30);
+
+  solid();
+  pen(Black(1.0));
+  bold();
+  plot(f, -1.5, 1.5, 30);
+
+  tikz_format();
+  end();
+}
+

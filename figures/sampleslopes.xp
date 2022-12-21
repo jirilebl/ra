@@ -1,0 +1,48 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+double f(double t)
+{
+  return 1.0-1.1541*exp(-t*t/2.0);
+}
+
+P yy(double x, double y)
+{
+  return P(1,x*(1-y));
+}
+
+int main()
+{
+  int n;
+  picture(P(-1.5,-1.0), P(1.5,1.0), "3x2in");
+
+  begin();
+
+  font_size("footnotesize");
+
+  plain();
+  pen(Black(0.5));
+
+  slope_field(yy, P(-1.25, -0.8), P(1.25, 0.8), 10, 7);
+
+  pen(Black(1.0));
+
+  axis Ax(P(-1, 0), P(1, 0), 2, P(0,-8), b);
+  Ax.align(b).draw_ticks();
+  line(P(-1.5,0),P(1.5,0));
+
+  axis Ay(P(0, -1.0), P(0, 1.0), 2, P(-8,3), l);
+  Ay.align(l).draw_ticks();
+
+  dot(P(1.0,0.3));
+  label(P(1.0,0.3),P(0,8),"$(x_0,y_0)$",l);
+
+  pen(Black(1.0));
+  bold();
+  plot(f, -1.5, 1.5, 50);
+
+  tikz_format();
+  end();
+}
+
