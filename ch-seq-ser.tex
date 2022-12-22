@@ -2595,7 +2595,7 @@ $\liminf$.
 \section{Cauchy sequences}
 \label{sec:cauchy}
 
-\sectionnotes{0.5--1 lecture}
+\sectionnotes{less than a lecture}
 
 Often we wish to describe a certain number 
 by a sequence that converges to it.  In this case, it is impossible to use the
@@ -2639,39 +2639,59 @@ we have
 \end{example}
 
 \begin{example}
-The sequence $\{ \frac{n+1}{n} \}_{n=1}^\infty$ is a Cauchy sequence.
+The sequence $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ is not a Cauchy sequence.
 
-Proof:  Given $\epsilon > 0$, find $M$ such that
-$M > \nicefrac{2}{\epsilon}$.  Then for $n,k \geq M$,
-we have $\nicefrac{1}{n} < \nicefrac{\epsilon}{2}$
-and
-$\nicefrac{1}{k} < \nicefrac{\epsilon}{2}$.  Therefore, for $n, k \geq M$,
-we have
+Proof:
+Given any $M \in \N$, take $n \geq M$ to be any even number, and
+let $k \coloneqq n+1$.  Then
 \begin{equation*}
 \begin{split}
-\abs{\frac{n+1}{n} - \frac{k+1}{k}}
+\abs{{(-1)}^n - {(-1)}^k}
 & =
-\abs{\frac{k(n+1)-n(k+1)}{nk}}
-\\
-& =
-\abs{\frac{kn+k-nk-n}{nk}}
+\abs{{(-1)}^n - {(-1)}^{n+1}}
 \\
 & =
-\abs{\frac{k-n}{nk}}
-\\
-& \leq
-\abs{\frac{k}{nk}}
-+
-\abs{\frac{-n}{nk}}
-\\
-& = \frac{1}{n} + \frac{1}{k}
-< \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon .
+\abs{1 - (-1)} = 2 .
 \end{split}
 \end{equation*}
+Therefore, for any $\epsilon \leq 2$ the definition cannot be satisfied, and
+the sequence is not Cauchy.
 \end{example}
 
+%\begin{example}
+%The sequence $\{ \frac{n+1}{n} \}_{n=1}^\infty$ is a Cauchy sequence.
+%
+%Proof:  Given $\epsilon > 0$, find $M$ such that
+%$M > \nicefrac{2}{\epsilon}$.  Then for $n,k \geq M$,
+%we have $\nicefrac{1}{n} < \nicefrac{\epsilon}{2}$
+%and
+%$\nicefrac{1}{k} < \nicefrac{\epsilon}{2}$.  Therefore, for $n, k \geq M$,
+%we have
+%\begin{equation*}
+%\begin{split}
+%\abs{\frac{n+1}{n} - \frac{k+1}{k}}
+%& =
+%\abs{\frac{k(n+1)-n(k+1)}{nk}}
+%\\
+%& =
+%\abs{\frac{kn+k-nk-n}{nk}}
+%\\
+%& =
+%\abs{\frac{k-n}{nk}}
+%\\
+%& \leq
+%\abs{\frac{k}{nk}}
+%+
+%\abs{\frac{-n}{nk}}
+%\\
+%& = \frac{1}{n} + \frac{1}{k}
+%< \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon .
+%\end{split}
+%\end{equation*}
+%\end{example}
+
 \begin{prop}
-A Cauchy sequence is bounded.
+If a sequence is Cauchy, then it is bounded.
 \end{prop}
 
 \begin{proof}
