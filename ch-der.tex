@@ -278,7 +278,7 @@ In other words, $\Delta (f \cdot g)
 
 
 
-\begin{prop}[Quotient Rule]\index{quotient rule}
+\begin{prop}[Quotient rule]\index{quotient rule}
 Let $I$ be an interval, let
 $f \colon I \to \R$ and $g \colon I \to \R$ be differentiable at $c$
 and $g(x) \not= 0$ for all $x \in I$.
@@ -301,7 +301,7 @@ More complicated functions are often obtained by composition,
 which is differentiated via the chain rule.  The rule also tells us
 how a derivative changes if we change variables.
 
-\begin{prop}[Chain Rule]
+\begin{prop}[Chain rule]
 \index{chain rule}
 Let $I_1, I_2$ be intervals, let
 $g \colon I_1 \to I_2$ be differentiable at $c \in I_1$,
@@ -434,7 +434,7 @@ Lipschitz continuous function.
 Prove that $f'$ is a bounded function.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:inversederformula}
 Let $I_1, I_2$ be intervals.
 Let $f \colon I_1 \to I_2$ be a bijective function and $g \colon I_2 \to I_1$
 be the inverse.  Suppose that both $f$ is differentiable at $c \in I_1$ and
@@ -1640,7 +1640,7 @@ with the machinery of this section we will prove
 far more than mere existence.
 
 \begin{cor}
-Given $n \in \N$ and $x \geq 0$ there exists a unique 
+Given $n \in \N$ and $x \geq 0$, there exists a unique 
 number $y \geq 0$ (denoted $x^{1/n} \coloneqq y$), such that $y^n = x$.  Furthermore,
 the function $g \colon (0,\infty) \to (0,\infty)$ defined by
 $g(x) \coloneqq x^{1/n}$ is continuously differentiable and
@@ -1705,13 +1705,18 @@ f(\R)$, the inverse is continuously differentiable, and ${(f^{-1})}'(y) >
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 Suppose $I,J$ are intervals and a monotone onto $f \colon I \to J$ has an inverse $g \colon J \to I$.
 Suppose you already know that both $f$ and $g$ are differentiable
 everywhere and $f'$ is never zero.  Using chain rule but not \lemmaref{lemma:ift} prove the
 formula $g'(y) = \frac{1}{f'\left(\vphantom{1_1^1}g(y)\right)}$. % \bigl( \bigr) are overly big here!
+Remark: This exercise is the same as \exerciseref{exercise:inversederformula},
+no need to do it again if you have
+solved it already..
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 Let $n\in \N$ be even.
 Prove that every $x > 0$ has a unique negative $n$th root.
 That is, there exists a negative number $y$ such that $y^n = x$.
