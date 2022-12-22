@@ -428,8 +428,7 @@ function $f|_A \colon A \to \R$ by
 \begin{equation*}
 f|_A (x) \coloneqq f(x)  \qquad \text{for } x \in A.
 \end{equation*}
-The function
-$f|_A$ is called the \emph{\myindex{restriction}} of $f$ to $A$.
+We call $f|_A$ the \emph{\myindex{restriction}} of $f$ to $A$.
 \end{defn}
 
 The function $f|_A$ is simply the function $f$ taken on a smaller domain.
@@ -1958,7 +1957,7 @@ $f \colon [0,1] \to \R$ defined by $f(x) \coloneqq x^2$ is uniformly continuous.
 Proof: Note that $0 \leq x,c \leq 1$.  Then
 \begin{equation*}
 \sabs{x^2-c^2} = \sabs{x+c}\sabs{x-c}
-\leq (\sabs{x}+\sabs{c}) \sabs{x-c}
+\leq \bigl(\sabs{x}+\sabs{c}\bigr) \sabs{x-c}
 \leq (1+1)\sabs{x-c} .
 \end{equation*}
 Therefore, given $\epsilon > 0$, let $\delta \coloneqq \nicefrac{\epsilon}{2}$.
@@ -2046,15 +2045,15 @@ there exists a convergent subsequence
 $\{ x_{n_k} \}_{k=1}^\infty$.  Let $c \coloneqq \lim_{k\to\infty} x_{n_k}$.
 As $a \leq x_{n_k} \leq b$ for all $k$, we have $a \leq c \leq b$.  Estimate
 \begin{equation*}
-\abs{y_{n_k} - c} =
-\abs{y_{n_k} - x_{n_k} + x_{n_k} - c} \leq
-\abs{y_{n_k} - x_{n_k}}
+\sabs{y_{n_k} - c} =
+\sabs{y_{n_k} - x_{n_k} + x_{n_k} - c} \leq
+\sabs{y_{n_k} - x_{n_k}}
 +
-\abs{x_{n_k}-c}
+\sabs{x_{n_k}-c}
 <
 \nicefrac{1}{n_k} 
 +
-\abs{x_{n_k}-c} .
+\sabs{x_{n_k}-c} .
 \end{equation*}
 As $\nicefrac{1}{n_k}$ and $\abs{x_{n_k}-c}$ both go to zero when
 $k$ goes to infinity, $\{ y_{n_k} \}_{k=1}^\infty$ converges and the limit
@@ -2644,7 +2643,7 @@ Let $f \colon S \to \R$ be a function and suppose
 $S$ has $\infty$ as a cluster point.
 We say $f(x)$
 \emph{\myindex{diverges to infinity}} 
-as $x$ goes to $\infty$,
+as $x$ goes to $\infty$
 if for every $N \in \R$
 there exists an $M \in \R$ such that
 \begin{equation*}

@@ -1,0 +1,63 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+#include <stdio.h>
+
+double seq[] =
+{
+	1.0,
+	1.0/3.0,
+	-1.0/2.0,
+	1.0/5.0,
+	1.0/7.0,
+	1.0/9.0,
+	-1.0/4.0,
+	1.0/11.0,
+	1.0/13.0,
+	-1.0/6.0,
+	1.0/15.0,
+	1.0/17.0,
+	1.0/19.0,
+	-1.0/8.0
+};
+
+int main() 
+{
+	int i;
+	//picture(P(0,-0.3), P(14.9,2), "3x2in");
+	picture(P(0,-0.05), P(14.3,2), "3x2in");
+
+	begin();   
+	//rect(P(0,-0.3), P(10.9,2)); // corners
+	screen subfig(P(0,0), P(14,2));
+	activate(subfig);
+
+	dashed();
+	line(P(0,1.2),P(14,1.2));
+	solid();
+
+	h_axis(14);
+	v_axis(2);
+
+	dot_size(5);
+	for (int i = 0; i < 14; i++) {
+		//char num[10];
+		double psum = 0.0;
+		for (int j = 0; j <= i; j++) {
+			psum += seq[j];
+		}
+		ddot(P(i+1, psum));
+		//sprintf(num, "%d", i+1);
+		//label(P(i+1,0),P(0,-10),num,b);
+	}
+
+	//dot_size(2);
+
+	deactivate(subfig);
+	inset(subfig);
+
+	tikz_format();
+	end();
+}
+

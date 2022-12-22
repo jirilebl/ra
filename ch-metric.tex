@@ -2910,19 +2910,19 @@ let $\epsilon > 0$ be given.
 As $f$ is continuous on $[a,b] \times [c,d]$, which is compact, $f$
 is uniformly continuous.  
 In particular, there exists a $\delta > 0$ such that
-whenever $\widetilde{y} \in [c,d]$ and
-$\abs{\widetilde{y}-y} < \delta$, we have
-$\abs{f(x,\widetilde{y})-f(x,y)} < \frac{\epsilon}{b-a}$ for all $x \in [a,b]$.
-So suppose $\abs{\widetilde{y}-y} < \delta$.  Then
+whenever $z \in [c,d]$ and
+$\abs{z-y} < \delta$, we have
+$\abs{f(x,z)-f(x,y)} < \frac{\epsilon}{b-a}$ for all $x \in [a,b]$.
+So suppose $\abs{z-y} < \delta$.  Then
 \begin{multline*}
 \abs{
-g(\widetilde{y})-
+g(z)-
 g(y)
 }
 =
 \abs{
 \int_a^b 
-f(x,\widetilde{y}) \,dx 
+f(x,z) \,dx 
 -
 \int_a^b 
 f(x,y) \,dx 
@@ -2932,7 +2932,7 @@ f(x,y) \,dx
 \abs{
 \int_a^b 
 \bigl(
-f(x,\widetilde{y}) - f(x,y)
+f(x,z) - f(x,y)
 \bigr)
 \,dx 
 }
