@@ -27,8 +27,8 @@ L \coloneqq \lim_{x \to c} \frac{f(x)-f(c)}{x-c}
 \end{equation*}
 exists, then we say $f$ is
 \emph{\myindex{differentiable}}\index{function!differentiable} at
-$c$, that $L$ is the \emph{\myindex{derivative}} of $f$ at $c$,
-and write $f'(c) \coloneqq L$.\glsadd{not:derivative}
+$c$,  we call $L$ the \emph{\myindex{derivative}} of $f$ at $c$,
+and we write $f'(c) \coloneqq L$.\glsadd{not:derivative}
 
 \medskip
 
@@ -238,8 +238,8 @@ Therefore, $h$ is differentiable at $c$,
 and the derivative is computed as given.
 \end{proof}
 
-It is not true that the derivative of a multiple of two functions is
-the multiple of the derivatives.  Instead we get the so-called \emph{product
+It is not true that the derivative of a product of two functions is
+the product of the derivatives.  Instead we get the so-called \emph{product
 rule} or the \emph{\myindex{Leibniz rule}}%
 \footnote{Named for the German mathematician
 \href{https://en.wikipedia.org/wiki/Leibniz}{Gottfried Wilhelm Leibniz}
@@ -1197,7 +1197,7 @@ the Scottish mathematician
 (1638--1675).  The statement we give
 was proved by
 \href{https://en.wikipedia.org/wiki/Lagrange}{Joseph-Louis Lagrange}
-(1736--1813)}
+(1736--1813).}
 is a generalization of the \hyperref[thm:mvt]{mean value theorem}.
 Mean value theorem says that up to a small error $f(x)$ for $x$ near $x_0$ can be
 approximated by $f(x_0)$, that is
@@ -1242,7 +1242,7 @@ f(x_0)
 See \figureref{fig:taylorsin} for
 the odd degree Taylor polynomials for the sine function at $x_0=0$.
 The even degree terms are all zero, as even derivatives 
-of sine are again a sine, which are zero at the origin.
+of sine are again sines, which are zero at the origin.
 \begin{myfigureht}
 \includegraphics{figures/taylorsin}
 \caption{The odd degree Taylor polynomials for the sine
@@ -1464,7 +1464,7 @@ it is the unique differentiable function with this property.
 \begin{exercise}[Challenging]
 Show that a simple converse to Taylor's theorem does not hold.
 Find a function $f \colon \R \to \R$ with no second derivative at $x=0$ such that
-$\abs{f(x)} \leq \abs{x^3}$, that is, $f$ goes to zero at 0 faster than $x^3$, and
+$\babs{f(x)} \leq \babs{x^3}$, that is, $f$ goes to zero at 0 faster than $x^2$, and
 while $f'(0)$ exists, $f''(0)$ does not.
 \end{exercise}
 
@@ -1628,7 +1628,7 @@ then by the
 \corref{cor:continterval}
 (or directly via the
 \hyperref[IVT:thm]{intermediate value theorem})
-$f(I)$ is in interval.
+$f(I)$ is an interval.
 Now apply \lemmaref{lemma:ift}.
 \end{proof}
 

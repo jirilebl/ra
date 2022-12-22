@@ -101,7 +101,7 @@ we have already proved that limits are unique.
 
 Intuitively, the limit being $x$ means that eventually
 every number in the sequence is close to the number $x$.  More precisely,
-we can get arbitrarily close to the limit, provided we go far enough in the
+we get arbitrarily close to the limit, provided we go far enough in the
 sequence.  It does not mean we ever reach the limit.  It is possible,
 and quite common, that there is no $x_n$ in the sequence that equals the
 limit $x$.
@@ -601,7 +601,7 @@ $\{ x_{2i+1} \}_{i=1}^\infty$ converges to 0.  Compare \propref{seqconvsubseqcon
 In the following exercises, feel free to use what you know from calculus to
 find the limit, if it exists.  But you must \emph{prove}
 that you
-found the correct limit, or prove that the series is divergent.
+found the correct limit, or prove that the sequence is divergent.
 \end{exnote}
 
 \begin{exercise}
@@ -2698,8 +2698,10 @@ A sequence of real numbers is Cauchy if and only if it converges.
 \end{thm}
 
 \begin{proof}
-Let $\epsilon > 0$ be given and
-suppose $\{ x_n \}_{n=1}^\infty$ converges to $x$.  Then there 
+Suppose $\{ x_n \}_{n=1}^\infty$ converges to $x$,
+and
+let $\epsilon > 0$ be given.
+Then there 
 exists an $M$ such that for $n \geq M$,
 \begin{equation*}
 \abs{x_n - x} < \frac{\epsilon}{2} .
@@ -2795,7 +2797,7 @@ a sequence such that $x_{n+1}-x_n = \nicefrac{1}{n}$,
 yet $\{ x_n \}_{n=1}^\infty$ is divergent.
 In fact, for that sequence,
 $\lim_{n\to\infty} \abs{x_{n+j}-x_n} = 0$ for
-every $j \in \N$ (confer \exerciseref{exercise:badnocauchy}).
+every $j \in \N$ (compare \exerciseref{exercise:badnocauchy}).
 The key point in the definition of Cauchy is that $n$ and $k$
 vary independently and can be arbitrarily far apart.
 
@@ -2853,6 +2855,8 @@ the sequence converges to $0$.
 \begin{exercise}
 Suppose $\abs{x_n-x_k} \leq \nicefrac{n}{k^2}$ for all $n$ and $k$.
 Show that $\{ x_n \}_{n=1}^\infty$ is Cauchy.
+%\footnote{After proving that
+%the sequence is Cauchy, for an extra exercise, prove the sequence is constant.}
 \end{exercise}
 
 \begin{exercise}
