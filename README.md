@@ -7,10 +7,12 @@ Volume I and II are both in this directory
 
 * realanal.tex is Volume I
 * realanal2.tex is Volume II
-* The files above are just the "driver files", the actual contents are in the files ch-???.tex
-* realanal.tex must be complied first as realanal2.tex uses the realanal.aux file
-* The file realanal12.tex does both volumes together, currently that is only used
-  for the HTML conversion
+* The files above are just the "driver files", the actual contents are in the
+  files ch-???.tex
+* realanal.tex must be complied first as realanal2.tex uses the realanal.aux
+  file
+* The file realanal12.tex does both volumes together, currently that is only
+  used for the HTML conversion
 
 Notes on figures:
 
@@ -26,9 +28,14 @@ Notes on figures:
   graphics.  You need xfig to edit these, then export to
   "Combined PDF/LaTeX (both parts)"
 
+Slides:
+
+* Some slides are in the slides/ directory.  Not a complete set (yet?).
+
 Work in progress stuff:
 
-* wip/realanal3.tex is an unfinished set of topics possibly to just add to Volume II
+* wip/realanal3.tex is an unfinished set of topics possibly to just add
+  to Volume II
 * similarly wip/extras.tex and wip/stieltjes.tex
 
 On the scripts:
@@ -39,8 +46,8 @@ On the scripts:
 * convert-to-mbx.sh (runs convert-to-mbx.pl) does the conversion to HTML through
   PreTeXt, this is the only place that realanal12.tex is currently used.
 
-*Note:* The tex sources require a very recent LaTeX.  If your latex does not
-have a recent enough ocgx2 package, you can simply comment out that line in
-the preamble.  Another is the glossaries, which has a bug until very recently,
-to do with sorting.  If you are getting undefined errors while compiling,
+*Note:* The tex sources require a somewhat recent LaTeX.  If your latex does
+not have a recent enough ocgx2 package, you can simply comment out that line
+in the preamble.  Another is the glossaries, which used to have a bug  with
+sorting.  If you are getting undefined errors while compiling,
 take out the "sort=use" option from the glossaries package.
