@@ -1,0 +1,367 @@
+
+\documentclass[10pt,aspectratio=149]{beamer}
+
+% All the boilerplate is in ac1slides.sty
+% Note that this also pulls in a custom vogtwidebar.sty
+\usepackage{ac1slides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Departemento pri Matematiko de Oklahoma {\^S}tata Universitato}
+
+\title{BA: 2.4}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+It would be nice to check convergence without knowing the limit.
+
+\pause
+
+\begin{definition}
+A sequence $\{ x_n \}$ is a \emph{Cauchy sequence}
+if for every $\epsilon > 0$ there exists an $M \in \N$ such that
+for all $n \geq M$ and all $k \geq M$, we have
+\quad
+$\abs{x_n - x_k} < \epsilon$.
+\end{definition}
+
+\pause
+
+\textbf{Example:}
+$\{ \nicefrac{1}{n} \}_{n=1}^\infty}$ is a Cauchy sequence.
+
+\medskip
+\pause
+
+Proof:  Given $\epsilon > 0$, $\exists$ $M$ such that
+$M > \nicefrac{2}{\epsilon}$.
+
+\pause
+\thus~ for $n,k \geq M$, \quad
+$\nicefrac{1}{n} < \nicefrac{\epsilon}{2}$
+and
+$\nicefrac{1}{k} < \nicefrac{\epsilon}{2}$.
+
+\pause
+\medskip
+
+\thus ~ for $n, k \geq M$, \quad
+$\displaystyle \abs{\frac{1}{n} - \frac{1}{k}}
+\pause
+\leq
+\abs{\frac{1}{n}} + \abs{\frac{1}{k}}
+\pause
+< \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$.
+
+\pause
+\medskip
+
+\textbf{Example:}
+$\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ is not a Cauchy sequence.
+
+\medskip
+\pause
+
+Proof:
+Given any $M \in \N$, take $n \geq M$ to even, and $k \coloneqq n+1$.
+
+\pause
+Then
+\[
+\abs{{(-1)}^n - {(-1)}^k}
+\pause
+=
+\abs{{(-1)}^n - {(-1)}^{n+1}}
+\pause
+=
+\abs{1 - (-1)}
+\pause
+= 2 .
+\]
+\pause
+\thus
+\quad for any $\epsilon \leq 2$ the definition is not satisfied.
+
+\medskip
+
+\thus \quad The sequence is not Cauchy.
+
+%\textbf{Example:}
+%The sequence $\{ \frac{n+1}{n} \}$ is a Cauchy sequence.
+%
+%\pause
+%Proof:  Given $\epsilon > 0$, $\exists$ $M$ such that
+%$M > \nicefrac{2}{\epsilon}$.
+%
+%\pause
+%\thus ~ for $n,k \geq M$,
+%\quad $\nicefrac{1}{n} < \nicefrac{\epsilon}{2}$
+%and
+%$\nicefrac{1}{k} < \nicefrac{\epsilon}{2}$.
+%
+%\pause
+%\medskip
+%
+%\thus ~ for $n, k \geq M$,
+%\quad
+%$\displaystyle
+%\abs{\frac{n+1}{n} - \frac{k+1}{k}}
+%\pause
+ %=
+%\abs{\frac{k(n+1)-n(k+1)}{nk}}
+%\pause
+ %=
+%\abs{\frac{kn+k-nk-n}{nk}}
+%$
+%
+%\pause
+%\qquad\qquad\qquad\qquad\qquad\qquad
+%$\displaystyle
+ %=
+%\abs{\frac{k-n}{nk}}
+%\pause
+ %\leq
+%\abs{\frac{k}{nk}}
+%+
+%\abs{\frac{-n}{nk}}
+%\pause
+ %= \frac{1}{n} + \frac{1}{k}
+%\pause
+%< \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$.
+%
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}
+A Cauchy sequence is bounded.
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+Suppose $\{ x_n \}$ is Cauchy.
+
+\pause
+\medskip
+
+Pick an $M$ such that for all
+$n,k \geq M$, we have $\abs{x_n-x_k} < 1$.
+
+\pause
+\medskip
+
+In particular, 
+for all $n \geq M$, \quad
+$\abs{x_n - x_M} < 1$.
+
+\pause
+By the reverse triangle inequality, \quad
+$\abs{x_n} - \abs{x_M} \leq \abs{x_n - x_M} < 1$.
+
+\pause
+\medskip
+
+Hence for $n \geq M$, \quad
+$\abs{x_n} < 1 + \abs{x_M}$.
+
+\pause
+\medskip
+
+Let
+$B \coloneqq \max \bigl\{ \abs{x_1}, \abs{x_2}, \ldots, \abs{x_{M-1}}, 1+ \abs{x_M}
+\bigr\}$.
+
+\pause
+\medskip
+
+Then $\abs{x_n} \leq B$ for all $n \in \N$.
+\qed
+\end{frame}
+
+\begin{frame}
+
+\begin{theorem}
+A sequence of real numbers is Cauchy if and only if it converges.
+\end{theorem}
+
+\pause
+\textbf{Proof:}
+Let $\epsilon > 0$ be given and
+suppose $\{ x_n \}$ converges to $x$.
+
+\pause
+$\exists$ $M$ such that for $n \geq M$, \quad
+$\abs{x_n - x} < \frac{\epsilon}{2}$.
+
+\pause
+\medskip
+
+\thus ~ for $n,k \geq M$,
+\quad
+$\abs{x_n - x_k}
+\pause
+= 
+\abs{x_n - x + x - x_k}
+\pause
+\leq \abs{x_n-x} + \abs{x-x_k}
+\pause
+< \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$.
+
+\end{frame}
+
+\begin{frame}
+
+Now suppose $\{ x_n \}$ is Cauchy.  \pause Thus $\{x_n\}$ is bounded.
+
+\pause
+\medskip
+
+Define $a \coloneqq \limsup \, x_n$ and $b \coloneqq \liminf \, x_n$.
+
+\pause
+By a theorem from 2.3, $\exists$ subsequences
+$\{ x_{n_i} \}$ and
+$\{ x_{m_i} \}$, such that
+
+$\displaystyle
+\lim_{i\to\infty} x_{n_i} = a
+\quad \text{and} \quad
+\lim_{i\to\infty} x_{m_i} = b$.
+
+\pause
+\medskip
+
+Given an $\epsilon > 0$,
+
+\pause
+$\exists$
+$M_1$ such that
+$\abs{x_{n_i} - a} < \nicefrac{\epsilon}{3}$ for all $i \geq M_1$,
+
+\pause
+$\exists$
+$M_2$ such that
+$\abs{x_{m_i} - b} < \nicefrac{\epsilon}{3}$ for all $i \geq M_2$,
+
+\pause
+$\exists$
+$M_3$ such that
+$\abs{x_n-x_k} < \nicefrac{\epsilon}{3}$ for all $n,k \geq M_3$.
+
+\pause
+Let $M \coloneqq \max \{ M_1, M_2, M_3 \}$.
+
+\pause
+\medskip
+
+Consider $i \geq M$. \pause  Then $n_i \geq M$ and $m_i \geq M$.
+
+\pause
+\medskip
+
+\thus\quad
+$\displaystyle
+\abs{a-b}
+\pause
+=
+\abs{a-x_{n_i}+x_{n_i}
+-x_{m_i}+x_{m_i}
+-b} 
+$
+
+\pause
+\medskip
+
+\qquad\qquad
+$\displaystyle
+\leq
+\abs{a-x_{n_i}}
++ \abs{x_{n_i} -x_{m_i}}
++ \abs{x_{m_i} -b} 
+\pause
+ <
+\frac{\epsilon}{3}
++
+\frac{\epsilon}{3}
++
+\frac{\epsilon}{3}
+= \epsilon$.
+
+\pause
+\medskip
+
+$\abs{a-b} < \epsilon$ for all $\epsilon > 0$ \wthus $a=b$.
+
+\pause
+\medskip
+
+So ~$\limsup x_n = \liminf x_n$~ and $\{ x_n \}$ converges.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Remark:}
+A set $X$ is
+\emph{Cauchy-complete}
+if every Cauchy sequence converges in $X$.
+
+\pause
+Sometimes this is used to define completeness of $\R$ instead of
+the least-upper-bound property.
+
+\pause
+We proved that for $\R$,
+least-upper-bound property implies
+Cauchy-complete.
+
+\pause
+A way to construct $\R$ is to
+``complete'' $\Q$ by ``throwing in'' enough points to make all
+Cauchy sequences converge.
+
+\pause
+The resulting field has the
+least-upper-bound property.
+
+\pause
+This thinking generalizes to more abstract settings.
+
+\pause
+\medskip
+
+\textbf{Remark:}
+Being Cauchy is stronger than 
+$\abs{x_{n+1}-x_n} \to 0$
+as $n \to \infty$
+
+\pause
+(or $\abs{x_{n+j}-x_n} \to 0$ for a fixed $j$).
+
+\pause
+E.g., the partial sums of the harmonic series satisfy
+$x_{n+1}-x_n = \nicefrac{1}{n}$,
+
+but the sequence is not Cauchy.
+
+\pause
+In fact,
+$\lim\limits_{n\to\infty} \abs{x_{n+j}-x_n} = 0$ for
+every $j \in \N$.
+
+\pause
+The key point in the definition of Cauchy is that $n$ and $k$
+vary independently and can be arbitrarily far apart.
+
+\end{frame}
+
+\end{document}

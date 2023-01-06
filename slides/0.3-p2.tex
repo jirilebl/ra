@@ -1,0 +1,486 @@
+\documentclass[10pt,aspectratio=149]{beamer}
+
+% All the boilerplate is in ac1slides.sty
+% Note that this also pulls in a custom vogtwidebar.sty
+\usepackage{ac1slides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Departemento pri Matematiko de Oklahoma {\^S}tata Universitato}
+
+\title{BA: 0.3 part 2}
+
+\date{}
+
+\begin{document}
+
+\theoremstyle{plain}
+\newtheorem*{wellordprop}{Well ordering property of $\N$}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+A common method of proof for statements over $\N$ is \emph{induction}.
+
+\medskip
+\pause
+
+Order $\N = \{ 1,2,3,\ldots \}$ naturally:
+
+\[
+1 < 2 < 3 < 4 < \cdots 
+\]
+
+\medskip
+\pause
+
+$S \subset \N$ has a \emph{least element} when $\exists$ $x \in S$ such that
+$\forall$
+$y \in S$, we have $x \leq y$.
+
+\pause
+
+\begin{wellordprop}
+Every nonempty subset of $\N$ has a least element.
+\end{wellordprop}
+
+\pause
+
+We take this property as an axiom.
+
+\end{frame}
+
+\begin{frame}
+\begin{theorem}[Principle of induction]
+Let $P(n)$ be a statement depending on a natural number $n$.
+\pause
+Suppose that
+\begin{enumerate}[(i)]
+\item \emph{(basis statement)} $P(1)$ is true.
+\pause
+\item \emph{(induction step or induction hypothesis)} If $P(n)$ is true, then $P(n+1)$ is true.
+\end{enumerate}
+\pause
+Then $P(n)$ is true for all $n \in \N$.
+\end{theorem}
+\pause
+
+\textbf{Proof:}
+Let $S \coloneqq \{ n \in \N : P(n) \text{ is not true } \}$.
+
+\medskip
+\pause
+
+Suppose for contradiction $S \not= \emptyset$.
+
+\medskip
+\pause
+
+$S$ has a least element $m \in S$ by the well ordering property.
+
+\medskip
+\pause
+
+$1 \notin S$ by hypothesis \quad $\Rightarrow$ \quad
+$m > 1$, and $m-1 \in \N$.
+
+\medskip
+\pause
+
+$m$ is the least element of $S$ \quad $\Rightarrow$ \quad $P(m-1)$ is true.
+
+\medskip
+\pause
+
+The induction step says $P(m-1+1) = P(m)$ is true, so $m \notin S$.
+
+\medskip
+\pause
+
+So $m \in S$ \emph{and} $m \notin S$, a contradiction.
+
+\medskip
+\pause
+
+So $S = \emptyset$ and $P(n)$ must be true for all $n \in \N$.
+\qed.
+
+\medskip
+\pause
+
+\textbf{Remark:} It may be convenient to start at a number different than 1.
+\end{frame}
+
+\begin{frame}
+\textbf{Example:}
+Claim: For all $n \in \N$, ~$2^{n-1} \leq n!$  \quad (Recall $n! = 1 \cdot 2 \cdot 3 \cdots n$)
+
+\medskip
+\pause
+
+\textbf{Proof:}
+Let $P(n)$ be the statement ``$2^{n-1} \leq n!$ is true.''
+
+\pause
+
+$P(1)$ is true by plugging in $n=1$.
+
+\pause
+
+Suppose $P(n)$ is true: $2^{n-1} \leq n!$ holds.
+
+\pause
+Multiply both sides by 2 to obtain:
+$2^n \leq 2(n!)$.
+
+\pause
+As $2 \leq (n+1)$ when $n \in \N$ \quad $\Rightarrow$ \quad $2(n!) \leq (n+1)(n!) = (n+1)!$
+
+\pause
+That is, $2^n \leq 2(n!) \leq  (n+1)!$ and hence $P(n+1)$ is true.
+
+\pause
+By the principle of induction, $P(n)$
+is true for all $n \in \N$.
+
+\medskip
+\pause
+
+\textbf{Example:}
+Claim: For all $c \not= 1$, we have $1 + c + c^2 + \cdots + c^n = \frac{1-c^{n+1}}{1-c}$
+
+\medskip
+\pause
+
+\textbf{Proof:}
+Easy to check for $n=1$.
+
+\pause
+Suppose it is true for $n$.  Then
+
+\pause
+\medskip
+$
+1 + c + c^2 + \cdots + c^n + c^{n+1}  =
+( 1 + c + c^2 + \cdots + c^n ) + c^{n+1}
+$
+
+\pause
+\medskip
+$\qquad = \frac{1-c^{n+1}}{1-c}  + c^{n+1}
+\pause
+= \frac{1-c^{n+1}  + (1-c)c^{n+1}}{1-c}
+\pause
+= \frac{1-c^{n+2}}{1-c} .$
+\end{frame}
+
+%\begin{frame}
+%
+%\begin{theorem}[Principle of strong induction]
+%Let $P(n)$ be a statement depending on a natural number $n$.  Suppose that
+%\begin{enumerate}[(i)]
+%\item \emph{(basis statement)} $P(1)$ is true.
+%\item \emph{(induction step)} If $P(k)$ is true for all $k = 1,2,\ldots,n$, then $P(n+1)$ is true.
+%\end{enumerate}
+%Then $P(n)$ is true for all $n \in \N$.
+%\end{theorem}
+%
+%\pause
+%
+%This is equivalent to regular induction.  Proof is an exercise.
+%
+%\end{frame}
+
+\begin{frame}
+Informally, for sets $A$ and $B$,
+a \emph{set-theoretic function} or \emph{mapping} or \emph{map}
+\[
+f \colon A \to B
+\]
+is an object that to each $x \in A$ assigns a unique $y \in B$.
+
+\medskip
+\pause
+\textbf{Example:}
+Define $f \colon S \to T$ taking $S \coloneqq \{ 0, 1, 2 \}$ to $T \coloneqq \{ 0, 2 \}$,
+by
+
+$f(0) \coloneqq 2$, $f(1) \coloneqq 2$, and $f(2) \coloneqq 0$.
+
+\medskip
+\pause
+
+A function $f \colon A \to B$ is a black box,
+taking elements of $A$ to elements of $B$.
+
+\medskip
+\pause
+
+$f$ may be given by a formula, but $f$ is \textbf{not}
+a formula, it is a table of values.
+
+\pause
+\medskip
+
+Some functions have several different formulas giving the same function.
+
+\pause
+\medskip
+
+Many functions have no formula at all.
+
+\end{frame}
+
+\begin{frame}
+
+%Let's define things rigorously.
+
+\begin{definition}
+Let $A$ and $B$ be sets.  The \emph{Cartesian product}
+is the set of tuples defined as
+\begin{equation*}
+A \times B \coloneqq
+\bigl\{ (x,y) : x \in A, y \in B \bigr\} .
+\end{equation*}
+\end{definition}
+
+\pause
+
+\textbf{Example:} $\{ a,b \} \times \{ c , d\} = \bigl\{ (a,c), (a,d), (b,c), (b,d) \bigr\}$.
+
+\medskip
+\pause
+
+\textbf{Example:} $[0,1] \times [0,1]$ is the subset of
+the plane bounded by a square with vertices $(0,0)$, $(0,1)$, $(1,0)$, and $(1,1)$.
+
+\medskip
+\pause
+
+\textbf{Notation:} $A^2 \coloneqq A \times A$.  E.g., $\R^2 = \R \times \R$ is the
+plane.
+
+\medskip
+\pause
+
+%\end{frame}
+
+%\begin{frame}
+
+\begin{definition}
+A \emph{function} $f \colon A \to B$ is a subset $f$ of $A \times B$
+such that for each $x \in A$, there exists a unique $y \in B$ for which $(x,y) \in f$.
+\pause
+We write $f(x) = y$.
+\pause
+Sometimes
+the set $f$ is called the \emph{graph} of the function rather than
+the function itself.
+
+\medskip
+\pause
+$A$ is called the \emph{domain} of $f$ and
+$B$ is called the \emph{codomain} of $f$.
+\end{definition}
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Examples:} Functions from calculus taking real numbers
+to real numbers.
+
+\pause
+\medskip
+``derivative'' or ``Laplace transform'' is a function that takes
+functions to functions.
+
+\pause
+\medskip
+Determinant from linear algebra is a function that takes matrices to
+numbers.
+
+\pause
+\medskip
+
+The ``number of classrooms'' is a function that takes the set of buildings
+on campus to the integers.
+\end{frame}
+
+\begin{frame}
+\begin{definition}
+Consider $f \colon A \to B$ and subsets $C \subset A$ and $D \subset B$.
+
+\pause
+The \emph{image} (or \emph{direct image}) is
+\quad $f(C) \coloneqq \bigl\{ f(x) \in B : x \in C \bigr\}$.
+
+\pause
+The set $f(A)$ is called the \emph{range} of $f$.
+
+\pause
+The \emph{inverse image} is \quad
+$f^{-1}(D) \coloneqq \bigl\{ x \in A : f(x) \in D \bigr\}$.
+\end{definition}
+
+\pause
+
+\textbf{Example:}
+Define
+$f \colon \{ 1,2,3,4 \} \to \{ a,b,c,d \}$ by
+
+$f(1) \coloneqq b$,
+$f(2) \coloneqq d$,
+$f(3) \coloneqq c$,
+$f(4) \coloneqq b$
+
+\subimport*{../figures/}{funcimags_full.pdf_t}
+
+\end{frame}
+
+\begin{frame}
+
+%\begin{example}
+%Define the function $f \colon \R \to \R$ by
+%$f(x) \coloneqq \sin(\pi x)$.  Then $f\bigl([0,\nicefrac{1}{2}]\bigr) = [0,1]$, 
+%$f^{-1}\bigl(\{0\}\bigr) = \Z$, etc.
+%\end{example}
+
+\begin{proposition}
+Consider $f \colon A \to B$.  Let $C, D \subset B$.  \pause Then
+
+\medskip
+$f^{-1}( C \cup D) = f^{-1} (C) \cup f^{-1} (D) , \quad
+f^{-1}( C \cap D) = f^{-1} (C) \cap f^{-1} (D)$,
+
+\medskip
+\pause
+$f^{-1}( C^c) = {\bigl( f^{-1} (C) \bigr)}^c$
+\quad
+(that is $f^{-1}( B \setminus C) = A \setminus f^{-1} (C)$).
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+Start with the union.
+
+\pause
+If $x \in f^{-1}( C \cup D)$, then $f(x) \in C$ or $f(x) \in D$.
+
+\pause
+\thus\quad  $f^{-1}( C \cup D) \subset f^{-1} (C) \cup f^{-1} (D)$.
+
+\pause
+Conversely if $x \in f^{-1}(C)$, then $x \in f^{-1}(C \cup D)$.
+\pause
+\quad Similarly for $x \in f^{-1}(D)$.
+
+\pause
+
+\thus \quad $f^{-1}( C \cup D) \supset f^{-1} (C) \cup f^{-1} (D)$, and we have
+equality.
+
+\medskip
+\pause
+
+The rest of the proof is left as an exercise.
+\qed
+
+\pause
+
+\begin{proposition}
+Consider $f \colon A \to B$.  Let $C, D \subset A$. \pause  Then
+
+$f( C \cup D) = f (C) \cup f (D) , \qquad
+f( C \cap D) \subset f (C) \cap f (D)$.
+\end{proposition}
+
+\pause
+Proof is an exercise
+\end{frame}
+
+\begin{frame}
+\begin{definition}
+$f \colon A \to B$ is
+\emph{injective}, \emph{one-to-one}, or an \emph{injection}
+if $f(x_1) = f(x_2)$ $\Rightarrow$ $x_1 = x_2$.
+
+%\pause
+%I.e.,
+%$f$ is injective if $\forall y \in B$, the set
+%$f^{-1}(\{y\})$ is empty or a single element.
+
+\pause
+\medskip
+
+If $f(A) = B$, then $f$ is
+\emph{surjective},
+\emph{onto}, or a \emph{surjection}.
+
+%\pause
+%I.e., $f$ is surjective if range = codomain.
+
+\pause
+\medskip
+If $f$ is both surjective and injective, then
+$f$ is \emph{bijective} or a \emph{bijection}.
+
+\pause
+\medskip
+
+If $f$ is a bijection, then $\forall y \in B$, $f^{-1}(\{y\})$ is a unique element of $A$,
+so by slight abuse of notation
+consider
+the \emph{inverse function}
+$f^{-1} \colon B \to A$
+and write $f^{-1}(y)$.
+\end{definition}
+
+\pause
+\textbf{Example:}
+$f \colon \R \to \R$ given by $f(x) \coloneqq
+x^3$ is a bijection.
+
+\pause
+The inverse function is defined by $f^{-1}(x) = \sqrt[3]{x}$.
+
+\medskip
+\pause
+\textbf{Example:}
+$f \colon \R \to \R$ given by $f(x) \coloneqq
+x^2$ is neither an injection as $f(-1) = 1$ \text{and} $f(1)=1$,
+nor a surjection as there is no $x$ such that $f(x) = -1$.
+
+\medskip
+\pause
+\textbf{Example:}
+$f \colon \R \to [0,\infty)$ (the non-negative
+real numbers) given by $f(x) \coloneqq x^2$ is not an injection (same reason as
+above), but 
+it is a surjection.
+
+\end{frame}
+
+\begin{frame}
+\begin{definition}
+The \emph{composition} of $f \colon A \to B$ and $g \colon B \to C$ is
+the function
+$g \circ f \colon A \to C$
+\[
+(g \circ f)(x) \coloneqq g\bigl(f(x)\bigr) .
+\]
+\end{definition}
+
+\pause
+
+E.g., if $f \colon \R \to \R$ is $f(x)\coloneqq x^3$ and $g \colon \R \to \R$
+is $g(y) = \sin(y)$,
+
+\pause
+then $(g \circ f)(x) = \sin(x^3)$.
+\end{frame}
+
+\end{document}

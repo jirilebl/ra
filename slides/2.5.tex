@@ -1,0 +1,1119 @@
+
+\documentclass[10pt,aspectratio=149]{beamer}
+
+% All the boilerplate is in ac1slides.sty
+% Note that this also pulls in a custom vogtwidebar.sty
+\usepackage{ac1slides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Departemento pri Matematiko de Oklahoma {\^S}tata Universitato}
+
+\title{BA: 2.5}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\begin{definition}
+Given a sequence $\{ x_n \}$, a \emph{series} is the formal object
+\begin{equation*}
+\sum_{n=1}^\infty x_n
+\qquad
+\text{or sometimes just}
+\qquad
+\sum x_n
+\end{equation*}
+\pause
+A series \emph{converges} if the sequence $\{ s_k \}$ defined by
+\begin{equation*}
+s_k \coloneqq \sum_{n=1}^k x_n = x_1 + x_2 + \cdots + x_k 
+\quad \text{converges}.
+\end{equation*}
+\pause
+The numbers $s_k$ are called
+\emph{partial sums}.
+\pause
+If $x \coloneqq \lim\, s_k$, we write
+\begin{equation*}
+\sum_{n=1}^\infty x_n =  x 
+\quad \text{(cheating a little by treating it as a number)}.
+\end{equation*}
+\pause
+If $\{ s_k \}$ diverges,
+we say the series is \emph{divergent}.
+\end{definition}
+
+\end{frame}
+
+\begin{frame}
+If a series is convergent, then
+\quad
+$\displaystyle
+\sum_{n=1}^\infty x_n
+=
+\lim_{k\to\infty} 
+\sum_{n=1}^k x_n$.
+
+\pause
+\medskip
+
+If the series does not converge, the right hand side is nonsense.
+
+\pause
+So (unlike for sequences) $\sum x_n$ means two different things:
+
+\pause
+1) notation for the series,
+
+\pause
+2) the actual limit.
+
+\pause
+\medskip
+
+\textbf{Remark:}
+We could start at a different index:
+\quad
+$\displaystyle
+\sum_{n=0}^\infty r^n = \sum_{n=1}^\infty r^{n-1}$.
+
+\pause
+\medskip
+
+\textbf{Remark:}
+It is common (but we will not) to write $\sum x_n$ informally as
+\begin{equation*}
+x_1 + x_2 + x_3 + \cdots
+\end{equation*}
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Example:}
+$\displaystyle \sum_{n=1}^\infty \frac{1}{2^n}$
+converges and the limit is 1.  That is,
+$\displaystyle
+\sum_{n=1}^\infty \frac{1}{2^n} = 
+\lim_{k\to\infty} \sum\limits_{n=1}^k \frac{1}{2^n} = 
+1$.
+
+\pause
+\medskip
+
+Proof: By induction (exercise), \quad
+$\displaystyle
+\left( \sum_{n=1}^k \frac{1}{2^n} \right)
++ \frac{1}{2^k}
+= 1$.
+
+\pause
+\medskip
+
+\subimport*{../figures/}{figcutseries.pdf_t}
+
+\pause
+\medskip
+
+Let $s_k$ be the partial sum, then
+\quad
+$\displaystyle
+\abs{
+1 - s_k 
+}
+=
+\abs{
+1 - 
+\sum_{n=1}^k \frac{1}{2^n}
+}
+\pause
+=
+\abs{\frac{1}{2^k}} = 
+\frac{1}{2^k}$.
+
+\pause
+\medskip
+
+$\bigl\{ \frac{1}{2^k} \bigr\} = \bigl\{ \abs{1-s_k} \bigr\}$
+converges to $0$
+\pause
+\wthus $\{ s_k \}$ converges to 1.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}
+Suppose
+$-1 < r < 1$.  Then the \emph{geometric series}
+$\displaystyle \sum_{n=0}^\infty r^n$ converges, and
+\begin{equation*}
+\sum_{n=0}^\infty r^n = \frac{1}{1-r} .
+\end{equation*}
+\end{proposition}
+
+\pause
+
+\textbf{Proof:} Exercise.
+
+\pause
+\medskip
+
+One proves
+\begin{equation*}
+\sum_{n=0}^{k-1} r^n = \frac{1-r^k}{1-r} ,
+\end{equation*}
+\pause
+and then one takes the limit $k \to \infty$.
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}[tail of a series]
+Let $\sum x_n$ be a series.  Let $M \in \N$.  Then
+\begin{equation*}
+\sum_{n=1}^\infty x_n \quad \text{converges if and only if} \quad
+\sum_{n=M}^\infty x_n \quad \text{converges.}
+\end{equation*}
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+Consider partial sums of the two series (for $k \geq M$)
+\begin{equation*}
+\sum_{n=1}^{k} x_n
+=
+\left(
+\sum_{n=1}^{M-1} x_n
+\right)
++
+\sum_{n=M}^{k} x_n .
+\end{equation*}
+\pause
+Note that 
+$\sum_{n=1}^{M-1} x_n$ is a fixed number.
+
+\pause
+\medskip
+
+Adding a constant does not change the convergence of a sequence.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\begin{definition}
+$\sum x_n$ is \emph{Cauchy} (\emph{Cauchy series})
+if the sequence of partial sums $\{ s_n \}$ is Cauchy.
+\end{definition}
+
+\pause
+A sequence converges \wiffif it is Cauchy.
+\pause \qquad So:
+
+A series converges \wiffif it is Cauchy.
+
+\pause
+\medskip
+
+$\sum x_n$ is Cauchy if $\forall$ $\epsilon > 0$, $\exists$
+$M \in \N$, s.\ t.\ $\forall$ $n,k \geq M$, ~
+$\displaystyle
+\abs{ \left( \sum\limits_{i=1}^k x_i \right) - \left( \sum\limits_{i=1}^n x_i \right) }
+< \epsilon$.
+
+\pause
+\medskip
+
+WLOG assume $n < k$.  Then
+\quad
+$\displaystyle
+\abs{ \left( \sum_{i=1}^k x_i \right) - \left( \sum_{i=1}^n x_i \right) }
+=
+\abs{ \sum_{i={n+1}}^k x_i }
+< \epsilon$.
+
+\pause
+\thus
+
+\begin{proposition}
+$\sum x_n$ is Cauchy if for every $\epsilon > 0$, 
+there exists an $M \in \N$ such that for every $n \geq M$
+and every $k > n$, we have
+\quad
+$\displaystyle \abs{ \sum_{i={n+1}}^k x_i } < \epsilon$.
+\end{proposition}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}
+Let $\sum x_n$ be a convergent series.  Then
+the sequence $\{ x_n \}$ is convergent and
+\begin{equation*}
+\lim_{n\to\infty} x_n = 0.
+\end{equation*}
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+Let $\epsilon > 0$ be given.
+
+\pause
+\medskip
+
+$\sum x_n$ is convergent \wthus it is Cauchy.
+
+\pause
+\medskip
+
+$\exists$ $M$ such that $\forall$ $n \geq M$, \quad
+$\displaystyle
+\epsilon > 
+\abs{ \sum_{i={n+1}}^{n+1} x_i }
+\pause
+=
+\abs{ x_{n+1} }$.
+
+\pause
+\medskip
+
+\thus \quad for every $n \geq M+1$, we have $\abs{x_{n}} < \epsilon$.
+\qed
+
+\pause
+\medskip
+
+\textbf{Example:}
+If $r \geq 1$ or $r \leq -1$, then the geometric series $\sum_{n=0}^\infty r^n$
+diverges.
+
+\pause
+\medskip
+
+Proof:
+$\abs{r^n} = \abs{r}^n \geq 1^n = 1$ 
+\pause
+\wthus terms do not go to 0
+\pause
+\wthus
+$\sum r^n$ diverges.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Example:}
+The \emph{harmonic series} $\sum \frac{1}{n}$ diverges (despite the fact that $\lim
+\frac{1}{n} = 0$).
+
+\pause
+\medskip
+
+Proof:
+Write the partial sums $s_n$ for $n = 2^k$ as:
+
+\pause
+\medskip
+
+$s_1 = 1$, \qquad
+\pause
+$s_2 = \left( 1 \right) + \left( \frac{1}{2} \right)$, \qquad 
+\pause
+$s_4 = \left( 1 \right) + \left( \frac{1}{2} \right) +
+        \left( \frac{1}{3} + \frac{1}{4} \right)$,
+
+\pause
+\medskip
+
+$s_8 = \left( 1 \right) + \left( \frac{1}{2} \right) +
+        \left( \frac{1}{3} + \frac{1}{4} \right) +
+        \left( \frac{1}{5} + \frac{1}{6} + \frac{1}{7} + \frac{1}{8}
+\right)$,
+
+\pause
+\medskip
+
+$\displaystyle s_{2^k} = 
+1 + 
+\sum_{i=1}^k
+\left(
+\sum_{m=2^{i-1}+1}^{2^i} \frac{1}{m}
+\right)$.
+
+\pause
+\medskip
+
+Note
+~$\frac{1}{3} + \frac{1}{4} \geq \frac{1}{4} + \frac{1}{4}
+\pause
+=
+\frac{1}{2}$~
+\pause
+and
+~$\frac{1}{5} + \frac{1}{6} + \frac{1}{7} + \frac{1}{8}
+\geq \frac{1}{8} + \frac{1}{8} + \frac{1}{8} + \frac{1}{8}
+\pause
+=
+\frac{1}{2}$.
+
+\pause
+\medskip
+
+More generally
+\quad
+$\displaystyle
+\sum_{m=2^{k-1}+1}^{2^k} \frac{1}{m}
+\geq
+\sum_{m=2^{k-1}+1}^{2^k} \frac{1}{2^k}
+\pause
+=
+(2^{k-1}) \frac{1}{2^k}
+\pause
+=
+\frac{1}{2}$.
+
+\pause
+\medskip
+
+\thus \quad
+$\displaystyle
+s_{2^k} = 
+1 + 
+\sum_{i=1}^k
+\left(
+\sum_{m=2^{i-1}+1}^{2^i} \frac{1}{m}
+\right) 
+\pause
+\geq
+1 + \sum_{i=1}^k \frac{1}{2} = 1 + \frac{k}{2}$.
+
+\pause
+\medskip
+
+$\{ \frac{k}{2} \}$ is unbounded
+\pause
+\wthus
+$\{ s_{2^k} \}$ is unbounded
+\pause
+\wthus $\{ s_n \}$ is unbounded.
+
+\medskip
+
+So $\{ s_n \}$ diverges, that is, $\sum \frac{1}{n}$ diverges.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}[Linearity of series]
+Let $\alpha \in \R$ and $\sum x_n$ and $\sum y_n$ be
+convergent series.
+\pause
+Then
+\begin{enumerate}[(i)]
+\item
+$\sum \alpha x_n$ converges and \quad
+$\displaystyle
+\sum_{n=1}^\infty \alpha x_n
+=
+\alpha \sum_{n=1}^\infty x_n$.
+\item\pause
+$\sum ( x_n + y_n )$ converges and \quad
+$\displaystyle
+\sum_{n=1}^\infty ( x_n + y_n ) 
+=
+\left( \sum_{n=1}^\infty x_n \right)
++
+\left( \sum_{n=1}^\infty y_n \right)$.
+\end{enumerate}
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+(i)
+The $k$th partial sum is 
+~~
+$\displaystyle
+\sum_{n=1}^k \alpha x_n
+=
+\alpha \left( \sum_{n=1}^k x_n \right)$.
+
+\pause
+\medskip
+
+Constant multiple of a convergent sequence is convergent.
+
+\pause
+\medskip
+
+(ii) The $k$th partial sum is
+~~
+$\displaystyle
+\sum_{n=1}^k ( x_n + y_n ) 
+=
+\left( \sum_{n=1}^k x_n \right)
++
+\left( \sum_{n=1}^k y_n \right)$.
+
+\pause
+\medskip
+
+Sum of convergent sequences converges to the sum of the limits.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Example:}
+By the first item, if $\abs{r} < 1$ and $i \in \N$, then
+\begin{equation*}
+r^i \sum_{n=0}^\infty r^n =
+\sum_{n=0}^\infty r^{n+i}
+=
+\sum_{n=i}^\infty r^n .
+\end{equation*}
+\pause
+Hence,
+\begin{equation*}
+\sum_{n=i}^\infty r^n = \frac{r^i}{1-r} .
+\end{equation*}
+
+\pause
+\medskip
+
+\textbf{Remark:}
+Multiplying series is not as simple as adding (see 2.6).
+
+\pause
+Obviously, we don't multiply term by term:
+$(a+b)(c+d) \not= ac+bd$.
+
+\end{frame}
+
+\begin{frame}
+Monotone sequences are easier than arbitrary sequences
+
+\pause
+\medskip
+
+\quad \thus
+
+\medskip
+
+Series $\sum x_n$ where $x_n \geq 0$ for all $n$ are easier,
+
+as partial sums are then monotone increasing and converge when bounded:
+
+\pause
+\begin{proposition}
+If $x_n \geq 0$ for all $n$, then $\sum x_n$ converges if and only if
+the sequence of partial sums is bounded above.
+\end{proposition}
+
+\pause
+The limit of a monotone increasing sequence is the supremum:
+
+\pause
+If
+$x_n \geq 0$ for all $n$, then
+\begin{equation*}
+\sum_{n=1}^k x_n \leq
+\sum_{n=1}^\infty x_n .
+\end{equation*}
+\pause
+(still true if we allow infinite limits).
+
+\end{frame}
+
+\begin{frame}
+
+\begin{definition}
+$\sum x_n$
+\emph{converges absolutely} if
+$\sum \abs{x_n}$ converges.
+
+\pause
+If a series converges, but not absolutely,
+it \emph{converges conditionally}.
+\end{definition}
+
+\pause
+\begin{proposition}
+If $\sum x_n$ converges absolutely, then it converges.
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+If $\sum x_n$ converges absolutely, then
+$\sum \abs{x_n}$ is convergent hence Cauchy.
+
+\pause
+\medskip
+
+$\forall$ $\epsilon > 0$,
+$\exists$ $M$ such that $\forall$ $k \geq M$ and all $n > k$,
+\quad
+$\displaystyle
+\sum_{i=k+1}^n \abs{x_i} 
+=
+\abs{ \sum_{i=k+1}^n \abs{x_i} }
+<
+\epsilon$.
+
+\pause
+\medskip
+
+By triangle inequality, \quad
+$\displaystyle
+\abs{ \sum_{i=k+1}^n x_i }
+\leq
+\sum_{i=k+1}^n \abs{x_i}
+\pause
+<
+\epsilon$.
+
+\pause
+\medskip
+
+Hence $\sum x_n$ is Cauchy, and converges.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Example:}
+$\displaystyle
+\sum_{n=1}^\infty \frac{{(-1)}^n}{n}$
+\quad
+converges (exercise),
+\pause
+but
+\quad
+$\displaystyle
+\sum_{n=1}^\infty \frac{1}{n}$
+\quad
+diverges.
+
+\pause
+\medskip
+
+So $\sum \frac{{(-1)}^n}{n}$ converges conditionally.
+
+\pause
+\medskip
+
+If $\sum x_n$ converges absolutely, the limits of
+$\sum x_n$ and $\sum \abs{x_n}$ are generally (obviously) different.
+
+\pause
+\medskip
+
+However, (exercise)
+\quad
+$\displaystyle
+\abs{ \sum_{i=1}^\infty x_i }
+\leq
+\sum_{i=1}^\infty \abs{x_i}$.
+
+\pause
+\medskip
+
+Absolutely convergent series behave nicely (e.g., can be rearranged, or
+multiplied, etc.). 
+
+\pause
+\medskip
+
+Conditionally convergent series don't.
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}[Comparison test]
+Let $\sum x_n$ and $\sum y_n$ be series such that ~$0 \leq x_n \leq y_n$~
+for all $n \in \N$.
+\begin{enumerate}[(i)]
+\item\pause If $\sum y_n$ converges, then so does $\sum x_n$.
+\item\pause If $\sum x_n$ diverges, then so does $\sum y_n$.
+\end{enumerate}
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+Terms $\geq 0$ \wthus sequences of partial sums are monotone
+increasing.
+
+\pause
+$x_n \leq y_n$ for all $n$ \wthus
+$\forall k$,
+\quad
+$\displaystyle
+\sum_{n=1}^k x_n \leq \sum_{n=1}^k y_n$.
+
+\pause
+(i) Suppose $\sum y_n$ converges \wthus its partial sums are bounded.
+
+\pause
+\thus \quad the RHS is bounded: \quad $\exists B$ s.t.
+$\forall k$,
+\quad
+$\displaystyle
+\sum_{n=1}^k x_n \leq \sum_{n=1}^k y_n \leq B$.
+
+\pause
+\medskip
+
+Partial sums of $\sum x_n$ are bounded ~\thus~ $\sum x_n$ converges.
+
+\pause
+\medskip
+
+(ii)
+Suppose $\sum x_n$ diverges \wthus partial sums unbounded.
+
+\pause
+That is, $\forall B$ ~ $\exists k$ such that
+\quad
+$\displaystyle B \leq \sum_{n=1}^k x_n
+\pause
+\leq \sum_{n=1}^k y_n$.
+
+
+\pause
+\thus \quad partial sums of $\sum y_n$ unbounded \wthus $\sum y_n$ diverges.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}[$p$-series or the $p$-test]
+For $p \in \R$, 
+\quad
+$\displaystyle
+\sum_{n=1}^\infty \frac{1}{n^p}$
+\quad
+converges if and only if $p > 1$.
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+For $p \leq 1$, then
+$\frac{1}{n^p} \geq \frac{1}{n}$. \quad
+$\sum \frac{1}{n}$ diverges ~\thus~
+$\sum \frac{1}{n^p}$ diverges (comparison).
+
+\pause
+\medskip
+
+Suppose $p > 1$.  Let $s_n$ denote the $n$th partial sum (monotone seq.
+again).
+
+\pause
+\medskip
+
+$s_1 = 1$,
+\pause
+\quad
+$s_3 = \left( 1 \right) + \left( \frac{1}{2^p} + \frac{1}{3^p} \right)$,
+\pause
+\quad
+$s_7 = \left( 1 \right) + \left( \frac{1}{2^p} + \frac{1}{3^p} \right) +
+        \left( \frac{1}{4^p} + \frac{1}{5^p} + \frac{1}{6^p} + \frac{1}{7^p}
+\right)$,
+
+\pause
+$\displaystyle
+ s_{2^k - 1} = 
+1 + 
+\sum_{i=1}^{k-1}
+\left(
+\sum_{m=2^i}^{2^{i+1}-1} \frac{1}{m^p}
+\right)$.
+
+\pause
+\medskip
+
+Note $2^p < 3^p$, so
+$\frac{1}{2^p} + \frac{1}{3^p} <
+\frac{1}{2^p} + \frac{1}{2^p}$.
+\pause
+Similarly,
+$\frac{1}{4^p} + \frac{1}{5^p} +
+\frac{1}{6^p} + \frac{1}{7^p} <
+\frac{1}{4^p} + \frac{1}{4^p} +
+\frac{1}{4^p} + \frac{1}{4^p}$.
+
+\pause
+\medskip
+
+For all $k \geq 2$, \quad
+$\displaystyle
+s_{2^k-1}
+=
+1+
+\sum_{i=1}^{k-1}
+\left(
+\sum_{m=2^{i}}^{2^{i+1}-1} \frac{1}{m^p}
+\right) 
+\pause
+<
+1+
+\sum_{i=1}^{k-1}
+\left(
+\sum_{m=2^{i}}^{2^{i+1}-1} \frac{1}{{(2^i)}^p}
+\right) 
+$
+
+\pause
+\medskip
+
+\qquad\qquad\qquad\qquad\qquad\qquad
+$\displaystyle
+=
+1+
+\sum_{i=1}^{k-1}
+\left(
+\frac{2^i}{{(2^i)}^p}
+\right) 
+\pause
+=
+1+
+\sum_{i=1}^{k-1}
+{\left(
+\frac{1}{2^{p-1}}
+\right)}^i$.
+
+\end{frame}
+
+\begin{frame}
+$p > 1$ \wthus $\frac{1}{2^{p-1}} < 1$.
+
+\pause
+\medskip
+
+The geometric series
+\quad
+$\displaystyle
+\sum_{i=1}^\infty
+{\left(
+\frac{1}{2^{p-1}}
+\right)}^i$ \quad converges.
+
+\pause
+\medskip
+
+\thus\quad
+$\displaystyle
+s_{2^k-1} < 
+1+
+\sum_{i=1}^{k-1}
+{\left(
+\frac{1}{2^{p-1}}
+\right)}^i 
+\pause
+\leq 
+1+
+\sum_{i=1}^\infty
+{\left(
+\frac{1}{2^{p-1}}
+\right)}^i$.
+
+\pause
+\medskip
+
+For every $n$ there is a $k \geq 2$ such that $n \leq 2^k-1$
+
+\pause
+\medskip
+
+\thus\qquad
+$\displaystyle
+s_n \leq s_{2^k-1}
+\pause
+< 
+1+
+\sum_{i=1}^\infty
+{\left(
+\frac{1}{2^{p-1}}
+\right)}^i$.
+
+\pause
+\medskip
+
+The sequence of partial sums is bounded
+\pause
+\wthus the series converges.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Example:}
+$\sum \frac{1}{n^2+1}$ converges.
+
+\pause
+\medskip
+
+Proof:  $\frac{1}{n^2+1} < \frac{1}{n^2}$ for all $n \in \N$.
+
+\pause
+\medskip
+
+$\sum \frac{1}{n^2}$ converges by the $p$-series test.
+
+\pause
+\medskip
+
+By the comparison test, $\sum \frac{1}{n^2+1}$ converges.
+\qed
+
+\pause
+\medskip
+
+Often easier to show a series converges than it is to find the limit.
+
+\pause
+E.g., easy to see
+$\sum \nicefrac{1}{n^2}$ converges,
+
+\pause
+much harder to show the limit is $\nicefrac{\pi^2}{6}$.
+
+\pause
+\medskip
+
+\textbf{Remark:}
+$\zeta(p) = \sum \nicefrac{1}{n^p}$ is the "Riemann zeta function".
+
+\pause
+Understanding its roots is one of the most famous unsolved problems in
+mathematics, with many applications.
+\end{frame}
+
+\begin{frame}
+Suppose $r > 0$.  Ratio of two subsequent terms in the geometric series $\sum
+r^n$ is $\frac{r^{n+1}}{r^n} = r$, and $\sum r^n$ converges
+whenever $r < 1$.
+
+\pause
+\medskip
+
+We can generalize this.
+
+\begin{proposition}[Ratio test]
+Let $\sum x_n$ be a series, $x_n \not= 0$ for all $n$, and \quad
+$L \coloneqq \lim\limits_{n\to\infty} \frac{\abs{x_{n+1}}}{\abs{x_n}}$ \quad exists.
+\begin{enumerate}[(i)]
+\item
+\pause
+If $L < 1$, then $\sum x_n$ converges absolutely.
+\item
+\pause
+If $L > 1$, then $\sum x_n$ diverges.
+\end{enumerate}
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+If $L > 1$, by ratio test for seqs., $\{ x_n \}$ diverges ~\thus~
+$\sum x_n$ cannot converge.
+
+\pause
+\medskip
+
+Suppose $L < 1$ (clearly $L \geq 0$).
+
+\pause
+Pick $r$ such that $L < r < 1$.
+
+\pause
+\medskip
+
+As $r-L > 0$, $\exists$ $M \in \N$ s.t. $\forall$ $n \geq M$,
+\quad
+$\abs{\frac{\abs{x_{n+1}}}{\abs{x_n}} - L} < r-L$
+\wthus
+$\frac{\abs{x_{n+1}}}{\abs{x_n}} < r$.
+
+\pause
+\medskip
+
+For $n > M$ (that is for $n \geq M+1$),
+write
+\begin{equation*}
+\abs{x_n} =
+\abs{x_M}
+\frac{\abs{x_{M+1}}}{\abs{x_{M}}}
+\frac{\abs{x_{M+2}}}{\abs{x_{M+1}}}
+\cdots
+\frac{\abs{x_{n}}}{\abs{x_{n-1}}}
+\pause
+<
+\abs{x_M}
+r r \cdots r = \abs{x_M} r^{n-M}
+\pause
+= (\abs{x_M} r^{-M}) r^n .
+\end{equation*}
+
+\end{frame}
+
+\begin{frame}
+For $k > M$,
+\quad
+$\displaystyle
+\sum_{n=1}^k \abs{x_n}
+\pause
+=
+\left(\sum_{n=1}^{M} \abs{x_n} \right)
++
+\left(\sum_{n=M+1}^{k} \abs{x_n} \right)
+$
+
+\pause
+\medskip
+
+\qquad\qquad\qquad\qquad\quad\,\!
+$\displaystyle
+<
+\left(\sum_{n=1}^{M} \abs{x_n} \right)
++
+\left(\sum_{n=M+1}^{k} 
+(\abs{x_M} r^{-M}) r^n
+\right)
+$
+
+\pause
+\medskip
+
+\qquad\qquad\qquad\qquad\quad\,\!
+$\displaystyle
+=
+\left(\sum_{n=1}^{M} \abs{x_n} \right)
++
+(\abs{x_M} r^{-M})
+\left( \sum_{n=M+1}^{k} r^n \right)$.
+
+\pause
+\medskip
+
+As $0 < r < 1$, ~~
+$\sum_{n=0}^{\infty} r^n$ converges
+\pause
+\wthus
+$\sum_{n=M+1}^{\infty} r^n$ converges.
+
+\pause
+\medskip
+
+Take limit as $k \to \infty$.
+
+\pause
+\medskip
+
+$\displaystyle
+\sum_{n=1}^k \abs{x_n}
+<
+\left(\sum_{n=1}^{M} \abs{x_n} \right)
++
+(\abs{x_M} r^{-M})
+\left( \sum_{n=M+1}^{k} r^n \right) 
+\pause
+\leq
+\left(\sum_{n=1}^{M} \abs{x_n} \right)
++
+(\abs{x_M} r^{-M})
+\left( \sum_{n=M+1}^{\infty} r^n \right)$.
+
+
+\pause
+\medskip
+
+The RHS does not depend on $k$
+\pause
+\wthus
+partial sums of $\sum \abs{x_n}$ are bounded
+
+\pause
+\thus \quad $\sum \abs{x_n}$ converges
+\pause
+\wthus
+$\sum x_n$ converges absolutely.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Example:}
+\begin{equation*}
+\sum_{n=1}^\infty \frac{2^n}{n!}
+\qquad
+\text{converges absolutely.}
+\end{equation*}
+
+\pause
+\medskip
+
+Proof:
+\begin{equation*}
+\lim_{n\to\infty} \frac{2^{(n+1)}/(n+1)!}{2^n / n!} =
+\lim_{n\to\infty} \frac{2}{n+1} = 0 .
+\end{equation*}
+\pause
+Therefore, the series converges absolutely by the ratio test.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+If $\sum x_n$ converges, then $x_n \to 0$.  
+
+\pause
+\medskip
+
+But $x_n \to 0$ is not enough to get the converse.
+It has to go to zero fast enough
+
+(let's stick with series with positive terms, it's even more
+complicated if negative terms are involved).
+
+\pause
+\medskip
+
+One can prove:
+
+\medskip
+
+\textbf{Exercise:}
+Suppose $\{ x_n \}$ is a decreasing sequence and $\sum x_n$ converges.
+Prove $\displaystyle \lim_{n\to\infty} n x_n = 0$.
+
+\pause
+\medskip
+
+Converse still doesn't hold:
+$\sum\limits_{n=2}^\infty \frac{1}{n \ln n}$ diverges
+even though $\lim\limits_{n\to \infty} n \left( \frac{1}{n \ln n} \right) = 0$.
+
+\end{frame}
+
+\end{document}

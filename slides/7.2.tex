@@ -1,0 +1,1101 @@
+\documentclass[10pt,aspectratio=149]{beamer}
+
+% All the boilerplate is in ac1slides.sty
+% Note that this also pulls in a custom vogtwidebar.sty
+\usepackage{ac1slides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Departemento pri Matematiko de Oklahoma {\^S}tata Universitato}
+
+\title{BA: 7.2}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\begin{definition}
+Let $(X,d)$ be a metric space, $x \in X$, and $\delta > 0$.
+\pause
+Define
+the \emph{open ball}, or \emph{ball}, of radius $\delta$
+around $x$ as
+\begin{equation*}
+B(x,\delta) \coloneqq \bigl\{ y \in X : d(x,y) < \delta \bigr\} .
+\end{equation*}
+\pause
+Define the \emph{closed ball} as
+\begin{equation*}
+C(x,\delta) \coloneqq \bigl\{ y \in X : d(x,y) \leq \delta \bigr\} .
+\end{equation*}
+\end{definition}
+\pause
+
+Write $B_X(x,\delta) \coloneqq B(x,\delta)$ or $C_X(x,\delta) \coloneqq C(x,\delta)$,
+to emphasize the space.
+
+\pause
+\medskip
+
+\textbf{Example:}
+Take $\R$ with the standard metric:
+\[
+B(x,\delta) = (x-\delta,x+\delta) \qquad \text{and} \qquad
+C(x,\delta) = [x-\delta,x+\delta] .
+\]
+
+\pause
+\medskip
+
+\textbf{Example:}
+Consider $[0,1]$ as a subspace of $\R$.
+In $[0,1]$,
+\[
+B(0,\nicefrac{1}{2}) = B_{[0,1]}(0,\nicefrac{1}{2})
+\pause
+= \bigl\{ y \in [0,1] : \abs{0-y} < \nicefrac{1}{2} \bigr\}
+\pause
+= [0,\nicefrac{1}{2}) .
+\]
+\pause
+Note the difference with $B_{\R}(0,\nicefrac{1}{2}) =
+(\nicefrac{-1}{2},\nicefrac{1}{2})$.
+
+\end{frame}
+
+\begin{frame}
+
+\begin{definition}
+Let $(X,d)$ be a metric space.
+
+\pause
+\medskip
+
+$V \subset X$
+is \emph{open}
+if $\forall$ $x \in V$, $\exists$ $\delta > 0$ such that
+$B(x,\delta) \subset V$.
+
+\pause
+\medskip
+
+$E \subset X$ is 
+\emph{closed} if $E^c = X \setminus E$ is open.
+
+\pause
+\medskip
+
+When $X$ is not clear from context,
+we say \emph{$V$ is open in $X$} and \emph{$E$ is closed in $X$}.
+
+\pause
+\medskip
+
+If $x \in V$ and $V$ is open, then
+$V$ is an \emph{open neighborhood} of $x$ (or
+just \emph{neighborhood}).
+\end{definition}
+
+\pause
+\medskip
+
+\hspace*{2.3in}\scalebox{0.7}{
+\subimport*{../figures/}{msopenset.pdf_t}
+}
+
+\pause
+\vspace*{-0.9in}
+
+\textbf{Remark:} $\delta$ depends on $x$.
+
+\pause
+\medskip
+
+An open set $V$ is a set that does not
+
+include its ``boundary.''
+
+\pause
+\medskip
+
+If we are in $V$ we are allowed to
+
+``wiggle'' and we'll stay in $V$.
+
+\pause
+\medskip
+
+$E$ is closed if everything not in $E$
+is some distance away from $E$.
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Examples:}
+
+\pause
+\medskip
+
+$(0,\infty) \subset \R$ is open:
+
+\pause
+Given $x \in (0,\infty)$,
+let $\delta \coloneqq x$
+
+\pause
+\thus \quad
+ $B(x,\delta) = (0,2x) \subset (0,\infty)$.
+
+\pause
+\medskip
+
+$[0,\infty) \subset \R$ is closed:
+
+\pause
+Given $x \in (-\infty,0) =
+[0,\infty)^c$,
+let $\delta \coloneqq -x$
+
+\pause
+\thus \quad
+ $B(x,\delta) = (-2x,0) \subset
+(-\infty,0) = [0,\infty)^c$.
+
+\pause
+\medskip
+
+$[0,1) \subset \R$ is neither open nor closed:
+
+\pause
+$\forall$ $\delta > 0$, $B(0,\delta) = (-\delta,\delta)$, contains numbers
+not in $[0,1)$
+\pause
+\hfill \thus \hfill $[0,1)$ is not open.
+
+\pause
+$\forall$ $\delta > 0$,
+$B(1,\delta) = (1-\delta,1+\delta)$, contains
+numbers in $[0,1)$,
+
+\pause
+\thus \quad $[0,1)^c$ is not open \wthus $[0,1)$ is not closed.
+
+\end{frame}
+
+\begin{frame}
+\begin{proposition}
+Let $(X,d)$ be a metric space.
+\begin{enumerate}[(i)]
+\item
+\pause
+\label{topology:openi} $\emptyset$ and $X$ are open.
+\item
+\pause
+\label{topology:openii} If $V_1, V_2, \ldots, V_k$ are open subsets of $X$, then
+\begin{equation*}
+\bigcap_{j=1}^k V_j
+\end{equation*}
+is also open.  That is, a finite intersection of open sets is open.
+\item
+\pause
+\label{topology:openiii} If $\{ V_\lambda \}_{\lambda \in I}$ is
+an arbitrary collection of open subsets of $X$, then
+\begin{equation*}
+\bigcup_{\lambda \in I} V_\lambda
+\end{equation*}
+is also open.  That is, a union of open sets is open.
+\end{enumerate}
+\end{proposition}
+
+%The index set $I$ in \eqref{topology:openiii} can be arbitrarily large.
+%By $\bigcup_{\lambda \in I} V_\lambda$, we simply mean the set of
+%all $x$ such that $x \in V_\lambda$ for at least one $\lambda \in I$.
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Proof:}
+\eqref{topology:openi}:
+$\emptyset$ and $X$ are obviously open in $X$.
+
+\pause
+\medskip
+
+\eqref{topology:openii}:
+If $x \in \bigcap_{j=1}^k V_j$, then $x \in V_j$ for all $j$.
+
+\pause
+$V_j$ are all open
+\pause
+\wthus $\forall$ $j$ $\exists$ $\delta_j > 0$ 
+such that $B(x,\delta_j) \subset V_j$.
+
+\pause
+Take $\delta \coloneqq \min \{ \delta_1,\delta_2,\ldots,\delta_k \}$.
+
+\pause
+Note $\delta > 0$.
+
+\pause
+\thus \quad $B(x,\delta) \subset B(x,\delta_j) \subset V_j$ for every $j$ and so
+$B(x,\delta) \subset \bigcap_{j=1}^k V_j$.
+
+\pause
+\thus \quad The intersection is open.
+
+\pause
+\medskip
+
+\eqref{topology:openiii}:
+If $x \in \bigcup_{\lambda \in I} V_\lambda$, then $x \in V_\lambda$ for some
+$\lambda \in I$.
+
+
+\pause
+$V_\lambda$ is open
+\pause
+\wthus $\exists$ $\delta > 0$
+such that $B(x,\delta) \subset V_\lambda$.
+
+\pause
+\thus \quad
+$B(x,\delta) \subset \bigcup_{\lambda \in I} V_\lambda$
+
+\pause
+\thus \quad The union is open.
+\qed
+
+\pause
+\medskip
+
+\textbf{Example:}
+\eqref{topology:openii} is not true for an arbitrary intersection:
+
+\pause
+$\bigcap_{n=1}^\infty (\nicefrac{-1}{n},\nicefrac{1}{n}) = \{ 0 \}$,
+which is not open.
+
+\end{frame}
+
+\begin{frame}
+\begin{proposition}
+Let $(X,d)$ be a metric space.
+\begin{enumerate}[(i)]
+\item
+\pause
+\label{topology:closedi} $\emptyset$ and $X$ are closed.
+\item
+\pause
+\label{topology:closedii} If $\{ E_\lambda \}_{\lambda \in I}$ is
+an arbitrary collection of closed subsets of $X$, then
+\begin{equation*}
+\bigcap_{\lambda \in I} E_\lambda
+\end{equation*}
+is also closed.  That is, an intersection of closed sets is closed.
+\item
+\pause
+\label{topology:closediii} If $E_1, E_2, \ldots, E_k$ are closed
+subsets of $X$, then
+\begin{equation*}
+\bigcup_{j=1}^k E_j
+\end{equation*}
+is also closed.  That is, a finite union of closed sets is closed.
+\end{enumerate}
+\end{proposition}
+
+\pause
+\textbf{Proof:} Exercise.
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}
+Let $(X,d)$ be a metric space, $x \in X$, and $\delta > 0$.
+
+\pause
+Then
+$B(x,\delta)$ is open and 
+$C(x,\delta)$ is closed.
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+Let $y \in B(x,\delta)$.
+\pause
+Let $\alpha \coloneqq \delta-d(x,y) > 0$.
+\pause
+Consider $z \in B(y,\alpha)$:
+
+\pause
+\medskip
+
+$
+d(x,z) \leq d(x,y) + d(y,z)
+$
+
+\pause
+\medskip
+\quad
+$ < d(x,y) + \alpha$
+
+\pause
+\medskip
+\quad
+$= d(x,y) + \delta-d(x,y) = \delta$.
+
+\pause
+\vspace*{-0.7in}
+\hspace*{2.9in}\scalebox{0.8}{
+\subimport*{../figures/}{ballisopen.pdf_t}
+}
+
+\vspace*{-0.3in}
+
+\pause
+\thus \quad
+$B(y,\alpha) \subset B(x,\delta)$ \wthus
+$B(x,\delta)$ is open.
+
+
+\pause
+\medskip
+
+That $C(x,\delta)$ is closed is an exercise.
+\qed
+
+\pause
+\medskip
+
+\textbf{Careful:}
+$[0,\nicefrac{1}{2})$ is
+an open ball in $[0,1]$, and so $[0,\nicefrac{1}{2})$ is
+an open set in $[0,1]$.
+
+\pause
+$[0,\nicefrac{1}{2})$ is neither open nor closed in $\R$.
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}
+Let $a, b$ be two real numbers, $a < b$.
+\pause
+Then $(a,b)$, $(a,\infty)$,
+and $(-\infty,b)$ are open in $\R$.
+\pause
+Also $[a,b]$, $[a,\infty)$,
+and $(-\infty,b]$ are closed in $\R$.
+\end{proposition}
+
+\pause
+\textbf{Proof:} Exercise.
+
+\pause
+\begin{proposition}
+Suppose $(X,d)$ is a metric space, and $Y \subset X$.
+\pause
+Then $U \subset Y$
+is open in $Y$ (in the subspace topology) \wiffif
+$\exists$ open set $V \subset X$ (so open in $X$), such that
+$V \cap Y = U$.
+\end{proposition}
+
+\pause
+\textbf{Example:}
+Let $X \coloneqq \R$, $Y \coloneqq [0,1]$, $U \coloneqq [0,\nicefrac{1}{2})$.
+
+\pause
+$U$ is an open set in $Y$, may take $V \coloneqq (\nicefrac{-1}{2},\nicefrac{1}{2})$.
+
+\pause
+\medskip
+
+\textbf{Proof of proposition:}
+Suppose $V \subset X$ is open
+\pause
+and $V \cap Y = U$.
+
+\pause
+Suppose $x \in U = V \cap Y$.
+\pause
+\quad
+$\exists$ $\delta > 0$ such that $B_X(x,\delta) \subset V$.
+
+\pause
+\medskip
+
+Then
+$
+B_Y(x,\delta)
+\pause
+= B_X(x,\delta) \cap Y
+\pause
+\subset V \cap Y
+\pause
+= U$.
+
+\pause
+\medskip
+
+The opposite direction is an exercise.
+\qed
+
+%A hint for finishing the proof (the exercise) is that
+%a useful way to think about an open set is as a union of open balls.  If $U$ is
+%open, then for each $x \in U$, there is a $\delta_x > 0$ (depending on $x$) such that
+%$B(x,\delta_x) \subset U$.  Then $U = \bigcup_{x\in U} B(x,\delta_x)$.
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}
+Suppose $(X,d)$ is a metric space, $V \subset X$ is open,
+and $E \subset X$ is closed.
+\begin{enumerate}[(i)]
+\item
+\pause
+\label{prop:topology:subspacesame:i}
+$U \subset V$ is open in the subspace topology \wiffif $U$ is open
+in $X$.
+\item
+\pause
+\label{prop:topology:subspacesame:ii}
+$F \subset E$ is closed in the subspace topology \wiffif $F$ is
+closed in $X$.
+\end{enumerate}
+\end{proposition}
+
+\pause
+
+\textbf{Proof:}
+\eqref{prop:topology:subspacesame:i}:
+Suppose $U \subset V$ is open in the subspace topology.
+
+\pause
+\medskip
+
+By the previous proposition, $\exists$ $W \subset X$,
+open in $X$, such that $U = W \cap V$
+
+\pause
+\medskip
+
+Intersection of open sets is open \wthus $U$ is open in $X$.
+
+\pause
+\medskip
+
+Now suppose $U$ is open in $X$.
+
+\pause
+\medskip
+
+\thus \quad $U = U \cap V$ \wthus
+$U$ is open in $V$ (the proposition again)
+
+\pause
+\medskip
+
+\eqref{prop:topology:subspacesame:ii}: Exercise.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\begin{definition}
+A nonempty
+metric space $(X,d)$ is \emph{connected} if the
+only subsets of $X$ that are both open and closed (so-called
+\emph{clopen} subsets) are $\emptyset$ and $X$ itself.
+
+\pause
+\medskip
+
+If a nonempty $(X,d)$ is not connected we say it is
+\emph{disconnected}.
+
+\pause
+\medskip
+
+A nonempty subset $A \subset X$ is \emph{connected} if
+$A$ is connected with the subspace topology.
+\end{definition}
+
+\pause
+A nonempty $X$ is connected if
+$X = X_1 \cup X_2$ where $X_1 \cap X_2 = \emptyset$ and $X_1$ and $X_2$ are
+open, then either $X_1 = \emptyset$ or $X_2 = \emptyset$.
+
+\pause
+\medskip
+
+To show $X$ is disconnected, find nonempty
+disjoint open sets $X_1$ and
+$X_2$ whose union is $X$.
+
+\pause
+\medskip
+
+\textbf{Example:}
+$B(x,\delta)$ is not always connected.
+
+\pause
+Consider $\{ a, b\}$ with the discrete metric.
+
+\pause
+\thus \quad $B(a,2) = \{ a , b \}$, which is not
+connected:
+
+\pause
+$B(a,1) = \{ a \}$ and 
+$B(b,1) = \{ b \}$ are open and disjoint.
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}
+Let $(X,d)$ be a metric space.
+\pause
+A nonempty $S \subset X$ is disconnected \wiffif
+$\exists$ open sets $U_1$ and
+$U_2$ in $X$, such that $U_1 \cap U_2 \cap S = \emptyset$,
+$U_1 \cap S \not= \emptyset$,
+$U_2 \cap S \not= \emptyset$, and
+\vspace*{-6pt}
+\begin{equation*}
+S = 
+\bigl( U_1 \cap S \bigr)
+\cup
+\bigl( U_2 \cap S \bigr) .
+\end{equation*}
+\end{proposition}
+
+\pause
+\begin{center}
+\scalebox{0.7}{
+\subimport*{../figures/}{disconsubset.pdf_t}
+}
+\end{center}
+
+\pause
+\textbf{Proof:}
+\thus)
+Suppose $S$ is disconnected:
+\pause
+$\exists$
+nonempty disjoint $S_1$ and $S_2$ that are
+open in $S$ and $S = S_1 \cup S_2$.
+
+\pause
+\thus~ $\exists$ $U_1$ and $U_2$
+that are open in $X$ such that $U_1 \cap S = S_1$ and
+$U_2 \cap S = S_2$.
+
+\pause
+$\Leftarrow$)
+Suppose $U_1$ and $U_2$ exist.
+\pause
+~\thus~ $U_1 \cap S$ and $U_2 \cap S$ are open in $S$.
+
+\pause
+\thus~ $S$ is disconnected.
+\qed
+
+\pause
+\medskip
+
+\textbf{Example:}
+$S \subset \R$ and $\exists$ $x,y,z$, s.t.  $x < z < y$ with $x,y \in S$
+and $z \notin S$.
+
+\pause
+Claim: \emph{$S$ is disconnected}.
+
+\pause
+Proof:
+~$
+\bigl( (-\infty,z) \cap S \bigr)
+\cup
+\bigl( (z,\infty) \cap S \bigr)
+= S$
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}
+A nonempty set $S \subset \R$ is connected \wiffif $S$ is
+an interval or a single point.
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+Suppose $S$ is connected.
+
+\pause
+\medskip
+
+If $S$ is a single point, then we are done.
+
+\pause
+\medskip
+
+Suppose $x < y$ and $x,y \in S$.
+
+\pause
+Suppose $z \in \R$ is such that $x < z < y$.
+
+\pause
+$(-\infty,z) \cap S \not= \emptyset$ and $(z,\infty) \cap S \not=
+\emptyset$.
+
+\pause
+The sets are disjoint.
+
+\pause
+As $S$ is connected, their union can't be $S$.
+
+\pause
+\thus \quad $z \in S$.
+
+\pause
+\thus \quad $S$ is an interval.
+
+\end{frame}
+
+\begin{frame}
+
+If $S$ is a single point, it is connected,
+\pause
+\quad
+so suppose $S$ is an interval.
+
+\pause
+\medskip
+
+Consider $U_1$ and $U_2$ open in $\R$, such that
+
+\pause
+$U_1 \cap S \not= \emptyset$ and $U_2 \cap S \not= \emptyset$ and $S =
+\bigl( U_1 \cap S \bigr) \cup \bigl( U_2 \cap S \bigr)$.
+
+\pause
+%We will show that $U_1 \cap S$
+%and $U_2 \cap S$ contain a common point, so they are not disjoint,
+%proving that $S$ is connected.
+Suppose $x \in U_1 \cap S$ and $y \in U_2 \cap S$, WLOG $x < y$.
+
+\pause
+$S$ is an interval \wthus $[x,y] \subset S$.
+
+\pause
+$U_2 \cap [x,y] \not= \emptyset$
+\pause
+\quad
+let $z \coloneqq \inf (U_2 \cap [x,y])$.
+\pause
+\quad
+WTS $z \in U_1$.
+
+\pause
+If $z = x$, then $z \in U_1$.
+
+\pause
+If $z > x$, then $\forall$ $\epsilon > 0$,
+$B(z,\epsilon)$ has pts of $[x,y] \setminus U_2$,
+as $z = \inf (U_2 \cap [x,y])$.
+
+\pause
+So $z \notin U_2$ as $U_2$ is open.
+
+\pause
+\thus \quad $z \in U_1$  ~~($U_1$ and $U_2$ cover $[x,y]$)
+
+\pause
+$U_1$ is open \wthus $B(z,\delta) \subset U_1$ for some $\delta > 0$.
+
+\pause
+$z = \inf (U_2 \cap [x,y])$
+\pause
+\wthus $\exists$
+$w \in U_2 \cap [x,y]$ s.t. $w \in [z,z+\delta) \subset B(z,\delta) \subset U_1$.
+
+\pause
+\begin{center}
+\scalebox{0.8}{
+\subimport*{../figures/}{intervalcon.pdf_t}
+}
+\end{center}
+
+\pause
+\thus\quad
+$w \in U_1 \cap U_2$
+\pause
+\wthus
+$(U_1 \cap S) \cap (U_2 \cap S) \not= \emptyset$
+\pause
+\wthus
+$S$ is connected.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\begin{definition}
+Let $(X,d)$ be a metric space and $A \subset X$.
+\pause
+The \emph{closure} of $A$ is the set
+\begin{equation*}
+\widebar{A} \coloneqq \bigcap \{ E \subset X : E \text{ is closed and } A \subset
+E \} .
+\end{equation*}
+\end{definition}
+
+%That is,
+%$\widebar{A}$ is the intersection of all closed sets that contain $A$.
+
+
+\pause
+\begin{proposition}
+Let $(X,d)$ be a metric space and $A \subset X$.
+\pause
+$\widebar{A}$ is closed,
+\pause
+and $A \subset \widebar{A}$.
+
+\pause
+Furthermore, if $A$ is closed, then $\widebar{A} = A$.
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+$\widebar{A}$ an intersection of closed sets
+\pause
+\wthus $\widebar{A}$ is closed.
+
+\pause
+\medskip
+
+$\exists$ at least one closed set containing $A$, namely $X$ itself,
+\pause
+\wthus
+$A \subset \widebar{A}$.
+
+\pause
+\medskip
+
+If $A$ is closed, then $A$ is a closed set that contains $A$.
+
+\pause
+\thus \quad $\widebar{A} \subset A$
+\pause
+\wthus $A = \widebar{A}$.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Example:}
+The closure of $(0,1)$ in $\R$ is $[0,1]$.
+
+\pause
+\medskip
+
+Proof:  If $E$ is closed and $(0,1) \subset E$, then $0,1 \in E$ (why?).
+\pause
+\wthus $[0,1] \subset E$.
+
+\pause
+$[0,1]$ is closed
+\pause
+\wthus
+$\overline{(0,1)} = [0,1]$.
+
+\pause
+\medskip
+
+\textbf{Example:}
+Ambient space matters.
+
+\pause
+\medskip
+
+If $X = (0,\infty)$, then
+the closure of $(0,1)$ in $(0,\infty)$ is $(0,1]$.
+
+\pause
+\medskip
+
+$(0,1]$ is closed in $(0,\infty)$ (why?).
+
+\pause
+Any closed set $E$ s.t. $(0,1) \subset E$ must contain $1$.
+
+\pause
+\thus \quad $(0,1] \subset E$
+\pause
+\wthus 
+$\overline{(0,1)} = (0,1]$ in $(0,\infty)$.
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}
+Let $(X,d)$ be a metric space and $A \subset X$.
+\pause
+\quad
+$x \in \widebar{A}$ \wiffif
+$\forall$ $\delta > 0$, $B(x,\delta) \cap A \not=\emptyset$.
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+We will show
+\pause
+\quad
+$x \notin \widebar{A}$ \wiffif $\exists$
+$\delta > 0$ such that $B(x,\delta) \cap A = \emptyset$.
+
+\pause
+\medskip
+
+Suppose $x \notin \widebar{A}$.
+
+\pause
+$\widebar{A}$ is closed \wthus $\exists$ $\delta > 0$ such that
+$B(x,\delta) \subset \widebar{A}^c$.
+
+\pause
+As $A \subset \widebar{A}$,~~
+$B(x,\delta) \subset \widebar{A}^c \subset A^c$
+\pause
+\wthus
+$B(x,\delta) \cap A = \emptyset$.
+
+\pause
+\medskip
+
+Now suppose $\exists$ $\delta > 0$, such that
+$B(x,\delta) \cap A = \emptyset$. 
+
+\pause
+\thus\quad
+$A \subset {B(x,\delta)}^c$.
+
+\pause
+${B(x,\delta)}^c$ is closed,
+\pause
+\hfill $x \not \in {B(x,\delta)}^c$, 
+\pause
+\hfill $\widebar{A}$ is the intersection
+of closed sets containing $A$
+
+\pause
+\thus \quad $x \notin \widebar{A}$.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\begin{definition}
+Let $(X,d)$ be a metric space and $A \subset X$.
+The \emph{interior} of $A$ is the set
+\begin{equation*}
+A^\circ \coloneqq \{ x \in A : \text{there exists a } \delta > 0
+\text{ such that } B(x,\delta) \subset A \} .
+\end{equation*}
+\pause
+The \emph{boundary} of $A$ is the set
+\begin{equation*}
+\partial A \coloneqq \widebar{A}\setminus A^\circ.
+\end{equation*}
+\end{definition}
+
+\pause
+\textbf{Example:}
+Suppose $A \coloneqq (0,1]$ and $X \coloneqq \R$.
+
+\pause
+\medskip
+
+\thus \quad
+$\widebar{A}=[0,1]$, $A^\circ = (0,1)$,
+and $\partial A = \{ 0, 1 \}$.
+
+\pause
+\medskip
+
+\textbf{Example:}
+Consider $X \coloneqq \{ a, b \}$ with the discrete metric,
+and $A \coloneqq \{ a \}$.
+
+\pause
+\medskip
+
+\thus \quad $\widebar{A} = A^\circ = A$ and $\partial A = \emptyset$.
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}
+Let $(X,d)$ be a metric space and $A \subset X$.
+\pause
+Then $A^\circ$ is open
+and $\partial A$ is closed.
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+Given $x \in A^\circ$, $\exists$ $\delta > 0$ such that $B(x,\delta) \subset A$.
+
+\pause
+\medskip
+
+If $z \in B(x,\delta)$, $\exists$ $\epsilon > 0$ such that $B(z,\epsilon) \subset B(x,\delta)
+\subset A$.
+
+\pause
+\thus \quad $z \in A^\circ$
+\pause
+\wthus $B(x,\delta) \subset A^\circ$
+\pause
+\wthus $A^\circ$ is open.
+
+\pause
+\medskip
+
+$A^\circ$ is open
+\wthus
+$\partial A = \widebar{A} \setminus A^\circ = \widebar{A} \cap
+{(A^\circ)}^c$ is closed.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}
+Let $(X,d)$ be a metric space and $A \subset X$.
+
+\pause
+$x \in \partial A$
+\wiffif
+$\forall$ $\delta > 0$,
+$B(x,\delta) \cap A \not=\emptyset$ and
+$B(x,\delta) \cap A^c \not=\emptyset$.
+\end{proposition}
+
+\pause
+\hspace*{2.3in}\scalebox{0.65}{
+\subimport*{../figures/}{msboundary.pdf_t}
+}
+
+\vspace*{-1.0in}
+
+\pause
+\textbf{Proof:}
+Suppose $x \in \partial A =  \widebar{A} \setminus A^\circ$ and
+
+\pause
+$\delta > 0$ is arbitrary.
+
+\pause
+$x \in \widebar{A}$ \wthus
+$B(x,\delta) \cap A \not= \emptyset$.
+
+\pause
+If $B(x,\delta) \cap A^c = \emptyset$, then $x \in A^\circ$
+
+\pause
+as $x \notin A^\circ$
+\wthus $B(x,\delta) \cap A^c \not= \emptyset$.
+
+\pause
+\medskip
+
+Now suppose $x \notin \partial A$
+\pause
+\wthus
+$x \notin \widebar{A}$ or $x \in A^\circ$.
+
+\pause
+\medskip
+
+If $x \notin \widebar{A}$, then $B(x,\delta) \subset \widebar{A}^c$
+for some $\delta > 0$ as $\widebar{A}$ is closed.
+
+\pause
+\thus \quad $B(x,\delta) \cap A = \emptyset$ ~~as $\widebar{A}^c \subset A^c$.
+
+\pause
+\medskip
+
+If $x \in A^\circ$, then
+$B(x,\delta) \subset A$ for some $\delta > 0$,
+so $B(x,\delta) \cap A^c = \emptyset$.
+\qed
+
+\pause
+\begin{corollary}
+Let $(X,d)$ be a metric space and $A \subset X$.
+Then $\partial A = \widebar{A} \cap \widebar{A^c}$.
+\end{corollary}
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Exercise:}
+Prove that in a metric space,
+\begin{enumerate}[a)]
+\item
+\pause
+$E$ is closed if and only if $\partial E \subset E$.
+\item
+\pause
+$U$ is open if and only if $\partial U \cap U = \emptyset$.
+\end{enumerate}
+
+\pause
+\medskip
+
+\textbf{Exercise:}
+Prove that in a metric space,
+\begin{enumerate}[a)]
+\pause
+\item
+$A$ is open if and only if $A^\circ = A$.
+\pause
+\item
+$U \subset A^\circ$
+for every open set $U$ such that $U \subset A$.
+\end{enumerate}
+
+\pause
+\medskip
+
+\textbf{Exercise:}
+Let $(X,d)$ be a metric space and $A \subset X$.  Show that
+$A^\circ = \bigcup \{ V : V \text{ is open and } V \subset A \}$.
+
+\end{frame}
+
+\end{document}

@@ -1,0 +1,1209 @@
+
+\documentclass[10pt,aspectratio=149]{beamer}
+
+% All the boilerplate is in ac1slides.sty
+% Note that this also pulls in a custom vogtwidebar.sty
+\usepackage{ac1slides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Departemento pri Matematiko de Oklahoma {\^S}tata Universitato}
+
+\title{BA: 2.2}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\begin{lemma}[Squeeze lemma]
+Let $\{ a_n \}_{n=1}^\infty$, 
+$\{ b_n \}_{n=1}^\infty$, and 
+$\{ x_n \}_{n=1}^\infty$ be sequences such that
+\quad
+$a_n \leq x_n \leq b_n$ \quad $\forall$ $n \in \N$.
+\pause
+
+Suppose $\{ a_n \}_{n=1}^\infty$ and $\{ b_n \}_{n=1}^\infty$ converge and
+\quad
+$\displaystyle
+\lim_{n\to \infty} a_n
+=
+\lim_{n\to \infty} b_n$.
+
+\pause
+Then $\{ x_n \}_{n=1}^\infty$ converges and
+\quad
+$\displaystyle
+\lim_{n\to \infty} x_n
+=
+\lim_{n\to \infty} a_n
+=
+\lim_{n\to \infty} b_n$.
+\end{lemma}
+
+\pause
+\textbf{Proof:}
+Let $\displaystyle x \coloneqq \lim_{n\to\infty} a_n = \lim_{n\to\infty} b_n$.
+\pause
+Let $\epsilon > 0$ be given.
+
+\pause
+Find $M_1$ s.t. $\forall$ $n \geq M_1$, ~
+$\abs{a_n-x} < \epsilon$,
+\pause
+and $M_2$  s.t. $\forall$ $n \geq M_2$,
+~ $\abs{b_n-x} < \epsilon$.
+
+\pause
+Set $M \coloneqq \max \{M_1, M_2 \}$.
+
+\pause
+$n \geq M$
+\wthus
+$x - a_n < \epsilon$ ~or~ $x - \epsilon < a_n$ \quad
+\pause
+ and \quad  $b_n < x + \epsilon$.
+
+\pause
+\thus \quad
+$x - \epsilon < a_n \leq x_n \leq b_n < x + \epsilon$.
+
+\pause
+\thus \quad $-\epsilon < x_n-x < \epsilon$
+\pause
+\wthus $\abs{x_n-x} < \epsilon$
+\pause
+\wthus
+$\{x_n\}_{n=1}^\infty$ converges to $x$.
+\qed
+
+\pause
+\medskip
+
+\subimport*{../figures/}{figsqueeze.pdf_t}
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Example:}
+Consider $\bigl\{ \frac{1}{n\sqrt{n}} \bigr\}_{n=1}^\infty$.
+
+\pause
+\medskip
+
+As $\sqrt{n} \geq 1$ for all $n \in \N$,
+\begin{equation*}
+0 \leq \frac{1}{n\sqrt{n}} \leq \frac{1}{n}
+\quad \text{for all } n \in \N.
+\end{equation*}
+
+\pause
+
+We already know $\displaystyle \lim_{n \to \infty} \nicefrac{1}{n} = 0$. 
+
+\medskip
+\pause
+
+The constant sequence $\{ 0 \}_{n=1}^\infty$ and $\{ \nicefrac{1}{n}
+\}_{n=1}^\infty$ in the
+squeeze lemma \quad \thus
+\begin{equation*}
+\lim_{n\to\infty} \frac{1}{n\sqrt{n}} = 0 .
+\end{equation*}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{lemma}
+Let $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ be
+convergent sequences and
+\quad $x_n \leq y_n$
+\quad
+for all $n \in \N$.
+
+\pause
+Then \quad 
+$\displaystyle \lim_{n\to\infty} x_n \leq \lim_{n\to\infty} y_n$.
+\end{lemma}
+
+\pause
+\textbf{Proof:}
+Let $\displaystyle x \coloneqq \lim_{n\to\infty} x_n$
+and $\displaystyle y \coloneqq \lim_{n\to\infty} y_n$. 
+
+\medskip
+\pause
+
+Let 
+$\epsilon > 0$ be given.
+
+\medskip
+\pause
+
+Find an $M_1$ such that $\abs{x_n-x} < \nicefrac{\epsilon}{2}$ for all $n \geq M_1$,
+
+\pause
+and $M_2$ such that $\abs{y_n-y} < \nicefrac{\epsilon}{2}$
+for all $n \geq M_2$.
+
+\pause
+\medskip
+
+So for some $n \geq \max\{ M_1, M_2 \}$, \quad
+$x-x_n < \nicefrac{\epsilon}{2}$ ~and~
+$y_n-y < \nicefrac{\epsilon}{2}$.
+
+\pause
+\medskip
+
+Add these to get
+\quad $y_n-x_n+x-y < \epsilon$
+\pause
+\quad or \quad $y_n-x_n < y-x+ \epsilon$.
+
+\pause
+\medskip
+
+$x_n \leq y_n$ $\forall n$
+\pause
+\wthus $0 \leq y_n-x_n$ $\forall n$
+\pause
+\wthus $0 < y-x+ \epsilon$
+\pause
+\wthus $x-y < \epsilon$.
+
+\pause
+\medskip
+
+$\epsilon > 0$ is arbitrary
+\pause
+\wthus $x-y \leq 0$
+\pause
+\wthus $x \leq y$.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\begin{corollary}
+\begin{enumerate}[(i)]
+\item If $\{ x_n \}_{n=1}^\infty$ is a convergent sequence such that $x_n \geq 0$,
+then
+$\displaystyle
+\lim_{n\to\infty} x_n \geq 0$.
+\item\pause
+Let $a,b \in \R$ and
+let $\{ x_n \}_{n=1}^\infty$ be a convergent sequence such that
+$a \leq x_n \leq b$,
+for all $n \in \N$.
+Then
+$\displaystyle a \leq \lim_{n\to\infty} x_n \leq b$.
+\end{enumerate}
+\end{corollary}
+
+\pause
+
+Proof is an exercise.
+
+\pause
+\medskip
+
+The results are not true with strict inequalities.
+
+\pause
+\medskip 
+
+\textbf{Example:}
+Let $x_n \coloneqq \nicefrac{-1}{n}$ and $y_n \coloneqq \nicefrac{1}{n}$.
+
+\pause
+Then $x_n < y_n$, $x_n < 0$, and $y_n > 0$ for all $n$.
+
+\pause
+However, $\displaystyle \lim_{n\to\infty} x_n = \lim_{n\to\infty} y_n = 0$.
+
+\pause
+\medskip
+
+Strict inequalities may become non-strict
+inequalities when limits are applied.
+\end{frame}
+
+\begin{frame}
+\begin{proposition}
+Let $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ be convergent sequences.
+\pause
+\begin{enumerate}[(i)]
+\item \label{prop:contalg:i}
+$\{ x_n + y_n \}_{n=1}^\infty$ converges and
+$\displaystyle
+\lim_{n \to \infty} (x_n + y_n) = 
+\lim_{n \to \infty} x_n + 
+\lim_{n \to \infty} y_n$.
+\item \label{prop:contalg:ii}
+\pause
+$\{ x_n - y_n \}_{n=1}^\infty$ converges and
+$\displaystyle
+\lim_{n \to \infty} (x_n - y_n) = 
+\lim_{n \to \infty} x_n - 
+\lim_{n \to \infty} y_n$.
+\item \label{prop:contalg:iii}
+\pause
+$\{ x_n y_n \}_{n=1}^\infty$ converges and
+$\displaystyle
+\lim_{n \to \infty} (x_n y_n) = 
+\left( \lim_{n \to \infty} x_n \right)
+\left( \lim_{n \to \infty} y_n \right)$.
+\item \label{prop:contalg:iv}
+\pause
+If ~$\displaystyle \lim_{n\to\infty} y_n \not= 0$~ and ~$y_n \not= 0$ for all $n \in \N$, then
+$\left\{ \frac{x_n}{y_n} \right\}_{n=1}^\infty$ converges and
+
+$\displaystyle
+\lim_{n \to \infty} \frac{x_n}{y_n} = 
+\frac{\lim_{n\to\infty} x_n}{\lim_{n\to\infty} y_n}$.
+\end{enumerate}
+\end{proposition}
+
+\pause
+
+Note that you can also use constant sequences.
+
+\pause
+
+E.g., if $c \in \R$ and $\{ x_n \}_{n=1}^\infty$ converges, then
+
+$\displaystyle
+\lim_{n \to \infty} c x_n = 
+c \left( \lim_{n \to \infty} x_n \right), \qquad
+\lim_{n \to \infty} (c + x_n) = 
+c + \lim_{n \to \infty} x_n$, \qquad etc.
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Proof:}
+\eqref{prop:contalg:i} (addition).
+
+\pause
+\medskip
+
+Suppose $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ are convergent,
+$\displaystyle x \coloneqq \lim_{n\to\infty} x_n$,
+$\displaystyle y \coloneqq \lim_{n\to\infty} y_n$.
+
+\pause
+\medskip
+
+Let $\epsilon > 0$ be given.  
+
+\pause
+Find an $M_1$ such that $\forall$ $n \geq M_1$,
+$\abs{x_n - x} < \nicefrac{\epsilon}{2}$.  
+
+\pause
+Find an $M_2$ such that $\forall$ $n \geq M_2$,
+$\abs{y_n - y} < \nicefrac{\epsilon}{2}$.
+
+\pause
+Take $M \coloneqq \max \{ M_1, M_2 \}$.
+
+\pause
+\medskip
+
+For all $n \geq M$,
+
+\pause
+\medskip
+
+$\displaystyle
+\abs{(x_n+y_n) - (x+y)}
+\pause
+=
+\abs{x_n-x + y_n-y}
+\pause
+\leq
+\abs{x_n-x} + \abs{y_n-y}
+\pause
+<
+\frac{\epsilon}{2} +
+\frac{\epsilon}{2}
+= \epsilon.
+$
+
+\medskip
+\pause
+
+\eqref{prop:contalg:i} is proved.
+
+\medskip
+\pause
+
+Proof of \eqref{prop:contalg:ii} (subtraction) is almost identical
+(exercise).
+
+\end{frame}
+
+\begin{frame}
+
+Next \eqref{prop:contalg:iii} (multiplication).
+
+\pause
+\medskip
+
+Suppose $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ are convergent and
+$\displaystyle x \coloneqq \lim_{n\to\infty} x_n$,
+$\displaystyle y \coloneqq \lim_{n\to\infty} y_n$.
+
+\pause
+\medskip
+
+Let $\epsilon > 0$ be given.
+
+\pause
+Let $K \coloneqq \max\{ \abs{x}, \abs{y}, \nicefrac{\epsilon}{3} , 1 \}$.
+
+\pause
+Find an $M_1$ such that $\forall$ $n \geq M_1$,
+$\abs{x_n - x} < \frac{\epsilon}{3K}$.
+
+\pause
+Find an $M_2$ such that $\forall$ $n \geq M_2$,
+$\abs{y_n - y} < \frac{\epsilon}{3K}$.
+
+\pause
+Take $M \coloneqq \max \{ M_1, M_2 \}$.
+
+\pause
+\medskip
+
+For all $n \geq M$, 
+
+\pause
+\medskip
+
+$\displaystyle
+\abs{(x_ny_n) - (xy)}
+\pause
+=
+\abs{(x_n-x+x)(y_n-y+y) - xy}
+$
+
+\pause
+\medskip
+
+$\displaystyle
+\qquad
+=
+\abs{(x_n-x)y + x(y_n-y) +(x_n-x)(y_n-y)}
+$
+
+\pause
+\medskip
+
+$\displaystyle
+\qquad
+\leq
+\abs{(x_n-x)y} + \abs{x(y_n - y)} +
+\abs{(x_n-x)(y_n-y)} 
+$
+
+\pause
+\medskip
+
+$\displaystyle
+\qquad
+=
+\abs{x_n -x}\abs{y} + 
+\abs{x}\abs{y_n -y} + 
+\abs{x_n -x}\abs{y_n -y}
+$
+
+\pause
+\medskip
+
+$\displaystyle
+\qquad
+<
+\frac{\epsilon}{3K} K + 
+K \frac{\epsilon}{3K} + 
+\frac{\epsilon}{3K}
+\frac{\epsilon}{3K}$
+\qquad \qquad (now notice that $\tfrac{\epsilon}{3K} \leq 1$
+and $K \geq 1$)
+
+\pause
+\medskip
+
+$\displaystyle
+\qquad
+\leq
+\frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3}
+ = \epsilon$
+
+\end{frame}
+
+\begin{frame}
+
+\eqref{prop:contalg:iv} follows from 
+\eqref{prop:contalg:iii} and the claim:
+
+\medskip
+
+Claim: \emph{If $\{ y_n \}_{n=1}^\infty$ is convergent,
+$\displaystyle \lim_{n\to\infty} y_n \not= 0$, and $y_n \not= 0$ for all $n \in \N$, then
+$\{ \nicefrac{1}{y_n} \}_{n=1}^\infty$ converges and}
+$\displaystyle \lim_{n\to\infty} \frac{1}{y_n} = \frac{1}{\lim_{n\to\infty} y_n}$.
+
+\pause
+\medskip
+
+Proof of claim:  Let $\epsilon > 0$ be given.
+
+\pause
+Let $\displaystyle y \coloneqq \lim_{n\to\infty} y_n$.
+
+\pause
+$\abs{y} \not= 0$ \wthus $\min \left\{ \abs{y}^2\frac{\epsilon}{2}, \, \frac{\abs{y}}{2} \right\} > 0$.
+
+\pause
+Find an $M$ such that for all $n \geq M$,
+\quad $\abs{y_n - y} < \min \left\{ \abs{y}^2\frac{\epsilon}{2}, \, \frac{\abs{y}}{2}
+\right\}$.
+
+\pause
+\medskip
+
+For $n \geq M$, ~
+$\abs{y - y_n} < \nicefrac{\abs{y}}{2}$, so
+\pause
+~~
+$\abs{y} = 
+\abs{y - y_n + y_n } \leq
+\abs{y - y_n} + \abs{ y_n } < \frac{\abs{y}}{2} + \abs{y_n}$.
+
+\pause
+\medskip
+
+Subtract $\nicefrac{\abs{y}}{2}$ from both sides to get
+$\nicefrac{\abs{y}}{2} < \abs{y_n}$, \quad or \quad
+$\frac{1}{\abs{y_n}} < \frac{2}{\abs{y}}$
+
+\pause
+\medskip
+$\displaystyle
+\abs{\frac{1}{y_n} - \frac{1}{y}}
+\pause
+=
+\abs{\frac{y - y_n}{y y_n}} 
+\pause
+=
+\frac{\abs{y - y_n}}{\abs{y} \abs{y_n}} 
+\pause
+\leq
+\frac{\abs{y - y_n}}{\abs{y}} \, \frac{2}{\abs{y}} 
+\pause
+<
+\frac{\abs{y}^2 \frac{\epsilon}{2}}{\abs{y}} \, \frac{2}{\abs{y}}
+\pause
+= \epsilon$.
+\qed
+
+\end{frame}
+
+\begin{frame}
+\textbf{Exercise:} (induction) $\lim\limits_{n\to\infty} x_n^k =
+{\bigl(\lim\limits_{n\to\infty} x_n\bigr)}^k$ for all $k \in \N$.
+\pause
+
+\begin{proposition}
+Let $\{ x_n \}_{n=1}^\infty$ be convergent and
+$x_n \geq 0$ for all $n \in \N$.
+Then
+$\displaystyle
+\lim_{n\to\infty} \sqrt{x_n} =
+\sqrt{ \lim_{n\to\infty} x_n }$.
+\end{proposition}
+
+\pause
+Notice $\displaystyle \lim_{n\to\infty} x_n \geq 0$ so the square root makes sense.
+
+\pause
+\textbf{Proof:}
+Let $\displaystyle x \coloneqq \lim_{n\to\infty} x_n$,
+\pause
+\quad   $x \geq 0$.
+
+\pause
+\medskip
+
+First suppose $x=0$.
+
+\pause
+Let $\epsilon > 0$ be given.
+
+\pause
+Find $M$ such that $\forall$ $n \geq M$, ~
+$x_n = \abs{x_n} < \epsilon^2$, ~or ~ $\sqrt{x_n} < \epsilon$.
+
+\pause
+\thus \quad
+$\abs{\sqrt{x_n} - \sqrt{x}} =
+\sqrt{x_n} < \epsilon$.
+
+\pause
+\medskip
+
+Now suppose $x > 0$ (and hence $\sqrt{x} > 0$).
+\pause
+\begin{equation*}
+\abs{\sqrt{x_n}-\sqrt{x}}
+\pause
+= 
+\abs{\frac{x_n-x}{\sqrt{x_n}+\sqrt{x}}} 
+\pause
+=
+\frac{1}{\sqrt{x_n}+\sqrt{x}}
+\abs{x_n-x}
+\pause
+ \leq
+\frac{1}{\sqrt{x}}
+\abs{x_n-x} .
+\end{equation*}
+\pause
+The rest is an exercise.
+\qed
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}
+If $\{ x_n \}_{n=1}^\infty$ is a convergent sequence, then $\{ \abs{x_n}
+\}_{n=1}^\infty$
+is convergent and
+\begin{equation*}
+\lim_{n\to\infty} \abs{x_n} = 
+\abs{\lim_{n\to\infty} x_n} .
+\end{equation*}
+\end{proposition}
+\pause
+
+\textbf{Proof sketch:}
+The reverse triangle inequality: \quad
+$\big\lvert \abs{x_n} - \abs{x} \big\rvert \leq \abs{x_n-x}$.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Example:}
+
+Note that
+$\lim\limits_{n\to\infty} \nicefrac{1}{n} = 0$.
+
+\pause
+Then
+\begin{equation*}
+\lim_{n\to \infty}
+\abs{\sqrt{1 + \nicefrac{1}{n}} - \nicefrac{100}{n^2}} =  
+\abs{\sqrt{1 + \Bigl(\lim_{n\to\infty} \nicefrac{1}{n}\Bigr)} -
+100 \Bigl(\lim_{n\to\infty} \nicefrac{1}{n}\Bigr)\Bigl(\lim_{n\to\infty} \nicefrac{1}{n}\Bigr)} = 1.
+\end{equation*}
+
+\pause
+Read this from right to left.  The propositions ~\thus~ LHS exists.
+
+\pause
+\medskip
+
+\textbf{Example:}
+Be careful:
+
+\medskip
+
+$\displaystyle
+\lim_{n\to \infty} \left( \frac{n^2}{n+1} - n \right)
+= -1$,
+\quad
+\pause
+but
+\quad
+$\displaystyle \left(\lim_{n\to\infty} \frac{n^2}{n+1}\right) -
+\left(\lim_{n\to\infty} n\right)$ is nonsense.
+
+\end{frame}
+
+
+\begin{frame}
+\textbf{Example:}
+Define $\{ x_n \}_{n=1}^\infty$ by $x_1 \coloneqq 2$ and
+$\displaystyle x_{n+1} \coloneqq x_n - \frac{x_n^2-2}{2x_n}$.
+
+\medskip
+\pause
+
+We must prove:
+
+\pause
+1) the sequence is well-defined,
+
+\pause
+2) the sequence converges,
+
+\pause
+3) only then try to find the limit.
+
+\medskip
+\pause
+
+First, $x_1 = 2 > 0$ (so $x_2$ exists: $x_2 = 2-\frac{2^2-2}{2\cdot 2} = 1.5
+> 0$)
+
+\medskip
+\pause
+
+Suppose for some $n$, $x_n$ exists and $x_n > 0$.
+
+\medskip
+\pause
+
+$\displaystyle
+x_{n+1} = x_n - \frac{x_n^2-2}{2x_n}
+\pause
+=
+\frac{2x_n^2 - x_n^2+2}{2x_n}
+\pause
+=
+\frac{x_n^2+2}{2x_n}$.
+
+\medskip
+\pause
+
+$x_n^2+2 > 0$ and $x_n > 0$,
+\pause
+and so
+$x_{n+1} = \frac{x_n^2+2}{2x_n} > 0$.
+
+\pause
+By induction $\{ x_n \}_{n=1}^\infty$ exists and $x_n > 0$ for all $n$.
+
+\medskip
+\pause
+
+We claim $\{ x_n \}_{n=1}^\infty$ is is monotone decreasing.
+
+\medskip
+\pause
+
+If we show that $x_n^2-2 \geq 0$ for all $n$, then $x_{n+1} \leq x_n$ for all $n$.
+
+\end{frame}
+
+\begin{frame}
+(recall: $x_1 \coloneqq 2$ and $x_{n+1} \coloneqq x_n - \frac{x_n^2-2}{2x_n}$)
+
+\medskip
+\pause
+
+$x_1^2-2 = 4-2 = 2 > 0$
+
+\medskip
+\pause
+
+$\displaystyle
+x_{n+1}^2-2
+\pause
+=
+{\left( \frac{x_n^2+2}{2x_n} \right)}^2 - 2
+\pause
+=
+\frac{x_n^4+4x_n^2+4 - 8x_n^2}{4x_n^2}
+\pause
+=
+\frac{x_n^4-4x_n^2+4}{4x_n^2}
+\pause
+=
+\frac{{\left( x_n^2-2 \right)}^2}{4x_n^2}
+\pause
+\geq 0
+$.
+
+\medskip
+\pause
+
+So $\{ x_n \}_{n=1}^\infty$ is monotone decreasing and bounded below, it
+must converge.
+
+\medskip
+\pause
+
+Write
+\[
+2x_nx_{n+1} = x_n^2+2.
+\]
+%\medskip
+\pause
+$\{ x_{n+1} \}_{n=1}^\infty$ is the 1-tail of $\{ x_n \}_{n=1}^\infty$, so
+it converges to the same limit, say $x$.
+\pause
+So
+\[
+2x^2 = x^2+2
+\qquad
+\pause
+\Rightarrow
+\qquad
+x^2 = 2 .
+\]
+\pause
+As $x_n > 0$ for all $n$, \quad $x \geq 0$.
+\pause
+\wthus $x = \sqrt{2}$.
+
+\bigskip
+
+You may have noticed the above is \emph{Newton's method} for finding
+$\sqrt{2}$,
+
+a common and practical way to find roots of equations.
+\end{frame}
+
+\begin{frame}
+\textbf{Example:}
+Suppose $x_1 \coloneqq 1$ and $x_{n+1} \coloneqq x_n^2+x_n$.
+
+\medskip
+\pause
+
+Suppose we blindly write $\displaystyle x \coloneq \lim_{n\to\infty} x_n$.
+\pause
+Then $x_{n+1} = x_n^2+x_n$ gives
+\[
+x = x^2+x
+\pause
+\qquad
+\Rightarrow
+\qquad
+x = 0 .
+\]
+\pause
+But the sequence does \textbf{not} converge (unbounded).
+\pause
+$\displaystyle \lim_{n\to\infty} x_n$ does not exist.
+
+\medskip
+\pause
+
+\textbf{Moral:} Before you can compute what a limit is, you need to know the
+sequence converges.
+
+\medskip
+\pause
+
+\textbf{More general moral:}
+Before you prove that a limit actually exists do not do any calculations
+with
+\[
+\lim_{n\to\infty} x_n .
+\]
+\pause
+Just don't write ``$\lim\limits_{n\to\infty}$'' anywhere before you prove the limit
+exists.
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence. 
+Suppose $\exists$ $x \in \R$
+and a convergent $\{ a_n \}_{n=1}^\infty$
+such that
+\quad
+$\displaystyle \lim_{n\to\infty} a_n = 0$
+\quad
+and 
+\quad
+$\displaystyle
+\abs{x_n - x} \leq a_n$
+for all $n \in \N$.
+
+\pause
+Then $\{ x_n \}_{n=1}^\infty$ converges and $\displaystyle \lim_{n\to\infty} x_n = x$.
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+Let $\epsilon > 0$ be given.
+
+\pause
+\medskip
+
+Note $a_n \geq 0$ for all $n$.
+
+\pause
+\medskip
+
+Find $M \in \N$ such that $a_n = \abs{a_n - 0} < \epsilon$ for all $n \geq M$.
+
+\pause
+\medskip
+
+So for all
+$n \geq M$, \quad
+$\abs{x_n - x} \leq a_n < \epsilon$.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}
+Let $c > 0$.
+\pause
+\begin{enumerate}[(i)]
+\item
+If $c < 1$, then
+$\displaystyle
+\lim_{n\to\infty} c^n = 0$.
+\item
+\pause
+If $c > 1$, then $\{ c^n \}_{n=1}^\infty$ is unbounded.
+\end{enumerate}
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+First consider $c < 1$.
+
+\pause
+As $c > 0$, then $c^n > 0$ for all $n \in \N$ by induction.
+
+\pause
+As $c < 1$, then $c^{n+1} < c^n$ for all $n$.
+
+\pause
+\thus~ $\{ c^n \}_{n=1}^\infty$ is decreasing bounded below ~\thus~ it
+converges.
+\pause
+Let $\displaystyle x \coloneqq \lim_{n\to\infty} c^n$.
+
+\pause
+The 1-tail $\{ c^{n+1} \}_{n=1}^\infty$ converges to $x$.
+
+\pause
+Take the limit of both sides of $c^{n+1} = c \cdot c^n$ \wthus  $x = cx$,
+~or~ $(1-c)x=0$.
+
+\pause
+\thus \quad $x=0$ as $c \not= 1$.
+
+\pause
+\medskip
+
+Now consider $c > 1$.
+\pause
+\quad
+Let $B > 0$ be arbitrary.
+
+\pause
+As $\nicefrac{1}{c} < 1$, then $\bigl\{ {(\nicefrac{1}{c})}^n
+\bigr\}_{n=1}^\infty$ converges to $0$.
+
+\pause
+\thus~ for some large enough $n$, ~
+$\frac{1}{c^n} =
+{\left(\frac{1}{c}\right)}^n < \frac{1}{B}$.
+
+\pause
+\thus ~ $c^n > B$, and $B$ is not an upper bound for $\{ c^n \}_{n=1}^\infty$.
+
+\pause
+As $B$ was arbitrary, $\{ c^n \}_{n=1}^\infty$ is unbounded.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\begin{lemma}[Ratio test for sequences]
+Let $\{ x_n \}_{n=1}^\infty$ be such that $x_n \not= 0$ for all $n$ and
+$\displaystyle L \coloneqq \lim_{n\to\infty} \frac{\abs{x_{n+1}}}{\abs{x_n}}$ exists.
+\pause
+\begin{enumerate}[(i)]
+\item
+If $L < 1$, then $\{ x_n \}_{n=1}^\infty$ converges and $\displaystyle \lim_{n\to\infty} x_n = 0$.
+\item
+\pause
+If $L > 1$, then $\{ x_n \}_{n=1}^\infty$ is unbounded (hence diverges).
+\end{enumerate}
+\end{lemma}
+
+\pause
+If $L=1$, no conclusion. E.g.,
+
+\pause
+$\{ \nicefrac{1}{n} \}_{n=1}^\infty$ converges to zero, but $L=1$.
+\pause
+\quad\qquad~\,
+$\{ 1 \}_{n=1}^\infty$ converges to 1, and $L=1$.
+
+\pause
+$\{ {(-1)}^n \}_{n=1}^\infty$ does not converge, and $L=1$.
+\pause
+\qquad
+$\{  n \}_{n=1}^\infty$ is unbounded, and $L=1$.
+
+\pause
+\medskip
+
+\textbf{Proof:}
+Suppose $L < 1$.
+
+\pause
+\medskip
+
+$\frac{\abs{x_{n+1}}}{\abs{x_n}} \geq 0$ for all $n$ \wthus $L \geq 0$.
+\qquad
+\pause
+Pick $r$ such that $L < r < 1$.
+
+\pause
+\medskip
+
+$\frac{\abs{x_{n+1}}}{\abs{x_n}}$ will eventually be less than $r$ and
+so we compare the sequence to $\{ r^n \}_{n=1}^\infty$.
+
+\pause
+\begin{center}
+\subimport*{../figures/}{figratseq.pdf_t}
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+As $r-L > 0$, $\exists$ $M \in \N$ such that for
+all $n \geq M$,
+\begin{equation*}
+\abs{\frac{\abs{x_{n+1}}}{\abs{x_n}} - L} < r-L .
+\end{equation*}
+\pause
+\thus \quad for $n \geq M$,
+\begin{equation*}
+\frac{\abs{x_{n+1}}}{\abs{x_n}} - L < r-L 
+\pause
+\qquad \text{or} \qquad
+\frac{\abs{x_{n+1}}}{\abs{x_n}} < r .
+\end{equation*}
+\pause
+For $n > M$ ($n \geq M+1$)
+\begin{equation*}
+\abs{x_n} =
+\abs{x_M}
+\frac{\abs{x_{M+1}}}{\abs{x_{M}}}
+\frac{\abs{x_{M+2}}}{\abs{x_{M+1}}}
+\cdots
+\frac{\abs{x_{n}}}{\abs{x_{n-1}}}
+\pause
+<
+\abs{x_M}
+r r \cdots r
+\pause
+= \abs{x_M} r^{n-M} = (\abs{x_M} r^{-M}) r^n .
+\end{equation*}
+\pause
+$\{ r^n \}_{n=1}^\infty$ converges to zero
+\pause
+\wthus
+$\{ \abs{x_M} r^{-M} r^n \}_{n=1}^\infty$ converges to zero.
+  
+\pause
+\medskip
+
+The $M$-tail of $\{x_n\}_{n=1}^\infty$ converges to zero \wthus
+$\{x_n\}_{n=1}^\infty$ converges to zero.
+
+\end{frame}
+
+\begin{frame}
+Now suppose $L > 1$.
+\pause
+\quad
+Pick $r$ such that $1 < r < L$.
+ 
+\pause
+\medskip
+
+As $L-r > 0$,
+$\exists$ $M \in \N$ such that for
+all $n \geq M$
+\begin{equation*}
+\abs{\frac{\abs{x_{n+1}}}{\abs{x_n}} - L} < L-r .
+\end{equation*}
+\pause
+\thus
+\begin{equation*}
+\frac{\abs{x_{n+1}}}{\abs{x_n}} > r .
+\end{equation*}
+\pause
+For $n > M$,
+\begin{equation*}
+\abs{x_n} =
+\abs{x_M}
+\frac{\abs{x_{M+1}}}{\abs{x_{M}}}
+\frac{\abs{x_{M+2}}}{\abs{x_{M+1}}}
+\cdots
+\frac{\abs{x_{n}}}{\abs{x_{n-1}}}
+\pause
+>
+\abs{x_M}
+r r \cdots r
+\pause
+= \abs{x_M} r^{n-M} = (\abs{x_M} r^{-M}) r^n .
+\end{equation*}
+\pause
+$\{ r^n \}_{n=1}^\infty$ is unbounded ($r > 1$)
+\pause
+\wthus
+$\{x_n\}_{n=1}^\infty$ is not bounded
+
+\pause
+(if $\abs{x_n} \leq B$ $\forall n$ ~\thus~
+$r^n < \frac{B}{\abs{x_M}} r^{\:M}$ for all $n > M$, \contradiction).
+
+\pause
+\medskip
+\thus \quad $\{ x_n \}_{n=1}^\infty$ diverges.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Example:}
+Claim:
+$\displaystyle
+\lim_{n\to\infty} \frac{2^n}{n!} = 0$.
+
+\pause
+\medskip
+
+Proof:
+\quad
+$\displaystyle
+\frac{2^{n+1} / (n+1)!}{2^n/n!}
+\pause
+=
+\frac{2^{n+1}}{2^n}\frac{n!}{(n+1)!}
+\pause
+=
+\frac{2}{n+1} \to 0$.
+\pause
+\quad Conclusion follows.
+
+\pause
+\medskip
+
+\textbf{Example:}
+Claim:
+$\displaystyle
+\lim_{n\to\infty} n^{1/n} = 1$.
+
+\pause
+Proof:
+Let $\epsilon > 0$ be given. 
+\pause
+Consider
+$\bigl\{ \frac{n}{{(1+\epsilon)}^n} \bigr\}_{n=1}^\infty$.
+\pause
+Compute
+
+\quad
+$\displaystyle
+\frac{(n+1)/{(1+\epsilon)}^{n+1}}{n/{(1+\epsilon)}^{n}}
+=
+\frac{n+1}{n} \frac{1}{1+\epsilon} .
+$
+
+\pause
+\medskip
+
+limit of $\frac{n+1}{n} = 1+\frac{1}{n}$ is $1$
+\pause
+\wthus
+$\displaystyle
+\lim_{n\to \infty} \frac{(n+1)/{(1+\epsilon)}^{n+1}}{n/{(1+\epsilon)}^{n}}
+=
+\frac{1}{1+\epsilon}  \pause < 1$.
+
+\pause
+\medskip
+
+\thus 
+\quad
+$\displaystyle \lim_{n\to\infty} \frac{n}{{(1+\epsilon)}^n} = 0$
+
+\pause
+\thus \quad
+$\exists$ $M$, s.t. for $n \geq M$,
+$\frac{n}{{(1+\epsilon)}^n} < 1$,
+\pause
+\quad or \quad
+$n < {(1+\epsilon)}^n$,
+\pause
+\quad or \quad
+$n^{1/n} < 1+\epsilon$.
+
+\pause
+\medskip
+
+$n^{1/n} \geq 1$ (as $n \geq 1$)
+\pause
+\wthus
+$0 \leq n^{1/n}-1 < \epsilon$.
+
+\pause
+\medskip
+
+\thus \quad
+$\displaystyle \lim_{n\to\infty} n^{1/n} = 1$.
+
+\end{frame}
+
+%\begin{frame}
+%\textbf{Exercise:}
+%Prove the following stronger version of ratio test.
+%
+%\medskip
+%
+%Suppose $\{ x_n \}_{n=1}^\infty$ is such that $x_n \not= 0$ for all
+%$n$.
+%\begin{enumerate}[a)]
+%\item
+%if $\exists$ $r < 1$ and $M \in \N$ such that
+%for all $n \geq M$, ~
+%$\displaystyle
+%\frac{\abs{x_{n+1}}}{\abs{x_n}} \leq r$,
+%
+%then $\{ x_n \}_{n=1}^\infty$ converges to $0$.
+%\item
+%If $\exists$ $r > 1$ and $M \in \N$ such that
+%for all $n \geq M$, ~
+%$\displaystyle
+%\frac{\abs{x_{n+1}}}{\abs{x_n}} \geq r$,
+%
+%then $\{ x_n \}_{n=1}^\infty$ is unbounded.
+%\end{enumerate}
+%\end{frame}
+
+\end{document}

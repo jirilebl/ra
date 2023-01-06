@@ -1,0 +1,423 @@
+\documentclass[10pt,aspectratio=149]{beamer}
+
+% All the boilerplate is in ac1slides.sty
+% Note that this also pulls in a custom vogtwidebar.sty
+\usepackage{ac1slides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Departemento pri Matematiko de Oklahoma {\^S}tata Universitato}
+
+\title{BA: 0.3 part 1}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+We start with a set theory refresher.
+
+\pause
+
+\begin{definition}
+A \emph{set} is a collection of objects called
+\emph{elements} or \emph{members}.  A set with
+no objects is called the \emph{empty set} and is denoted by
+$\emptyset$ (or sometimes by $\{ \}$).
+\end{definition}
+
+\pause
+
+Set is a ``club.''  An element can be a member of
+several clubs.
+
+Moreover, sets (clubs) can be members as well.
+
+\medskip
+\pause
+
+$S \coloneqq \{ 0, 1, 2 \}$
+\quad is the set containing
+the three elements 0, 1, and 2.
+
+\medskip
+\pause
+
+By ``$\coloneqq$'' we mean definition of $S$.
+
+\medskip
+\pause
+
+``$1 \in S$''
+means ``1 belongs to $S$.''
+
+\medskip
+\pause
+
+``$1,2 \in S$'' is shorthand for
+``$1 \in S$ and $2 \in S$.''
+
+\medskip
+\pause
+
+``$7 \notin S$'' means ``7 does not belong to $S$.''
+
+\medskip
+\pause
+
+Elements come from a \emph{universe}.
+
+\medskip
+\pause
+
+Universe is understood from context.  E.g., real numbers.
+
+\end{frame}
+
+\begin{frame}
+Every element of $T \coloneqq \{ 0 , 2 \}$ is also an element of $S$.
+\quad($S=\{0,1,2\}$)
+
+\medskip
+\pause
+
+Then write $T \subset S$.
+
+\hspace*{1.6in}\subimport*{../figures/}{sets.pdf_t}
+
+\pause
+
+\begin{definition}
+\leavevmode
+\begin{enumerate}[(i)]
+\item
+A set $A$ is a \emph{subset}
+of a set $B$ if $x \in A$ implies $x \in B$, and we write $A \subset B$
+
+(or
+$B \supset A$).
+%That is, all members of $A$ are also members of $B$.  At times we
+%write $B \supset A$ to mean the same thing.
+\item \pause
+Two sets $A$ and $B$ are \emph{equal} if $A \subset B$ and $B
+\subset A$.  We write $A = B$.
+%That is, $A$ and $B$ contain exactly the same elements.
+
+If $A$ and $B$ are not equal we write $A \not= B$.
+\item \pause
+A set $A$ is a \emph{proper subset} of $B$ if $A \subset B$
+and $A \not= B$.  We write $A \subsetneq B$.
+\end{enumerate}
+\end{definition}
+
+\pause
+E.g., $T \subset S$, but $T \not= S$ so $T \subsetneq S$.
+\end{frame}
+
+\begin{frame}
+\emph{Set building notation}:
+\quad $\bigl\{ x \in A : P(x) \bigr\}$.
+
+\pause
+\medskip
+
+Subset of $A$ containing elements that satisfy property $P(x)$.
+
+\medskip
+\pause
+
+E.g., $\{ x \in S : x \not= 2 \} = \{ 0, 1 \}$.
+
+\medskip
+\pause
+
+May abbreviate as $\bigl\{ x : P(x) \bigr\}$ if $A$ is understood
+from context.
+
+\medskip
+\pause
+
+``$x \in A$'' can also be replaced by a formula.
+
+\medskip
+\pause
+
+\textbf{Example sets:}
+
+\medskip
+\pause
+
+\emph{Natural numbers}, $\N \coloneqq \{ 1, 2, 3, \ldots \}$.
+
+\medskip
+\pause
+
+\emph{Integers}, $\Z \coloneqq \{ 0, -1, 1, -2, 2, \ldots \}$.
+
+\medskip
+\pause
+
+\emph{Rational numbers}, $\Q \coloneqq \bigl\{ \frac{m}{n} :  m, n \in \Z \text{ and } n \not= 0 \bigr\}$.
+
+\medskip
+\pause
+
+Even natural numbers, $\{  2m : m \in \N \}$.
+
+\medskip
+\pause
+
+The set of all real numbers is denoted by $\R$.
+
+\medskip
+\pause
+
+Note: $\N \subset \Z \subset \Q \subset \R$.
+
+\end{frame}
+
+\begin{frame}
+\begin{definition}
+\begin{enumerate}[(i)]
+\item
+A \emph{union} of two sets $A$ and $B$:
+
+$A \cup B \coloneqq \{ x : x \in A \text{ or } x \in B \}$.
+\item
+\pause
+An \emph{intersection} of two sets $A$ and $B$:
+
+$A \cap B \coloneqq \{ x : x \in A \text{ and } x \in B \}$.
+\item
+\pause
+A \emph{complement of $B$ relative to $A$}
+(or \emph{set-theoretic difference} of $A$ and $B$):
+
+$A \setminus B \coloneqq \{ x : x \in A \text{ and } x \notin B \}$.
+\item
+\pause
+We say
+\emph{complement} of $B$ and write $B^c$
+instead of $A \setminus B$ if
+$A$ is either the universe or the obvious
+set containing $B$ and understood from context.
+\item
+\pause
+$A$ and $B$ are \emph{disjoint} if $A \cap B = \emptyset$.
+\end{enumerate}
+\end{definition}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\scalebox{0.9}{
+\subimport*{../figures/}{figsetop.pdf_t}}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{theorem}[DeMorgan]
+Let $A, B, C$ be sets.  Then
+\quad
+${(B \cup C)}^c = B^c \cap C^c , \quad
+{(B \cap C)}^c = B^c \cup C^c$,
+
+\medskip
+\pause
+
+or,
+\quad
+$A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C) , \quad
+A \setminus (B \cap C) = (A \setminus B) \cup (A \setminus C)$.
+\end{theorem}
+
+\pause
+\textbf{Proof:}
+The second statement proves the first if $A$ is the ``universe.''
+
+\medskip
+\pause
+
+Let us prove $A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)$
+\quad (remember the definition of $=$).
+
+\medskip
+\pause
+
+%We must show
+%
+%First, \quad  $x \in A \setminus (B \cup C)$ \quad $\Rightarrow$ \quad $x \in (A \setminus B) \cap (A \setminus C)$.
+%
+%Second, \quad $x \in (A \setminus B) \cap (A \setminus C)$ \quad $\Rightarrow$ \quad $x \in A \setminus (B \cup C)$.
+%
+%\medskip
+%\pause
+
+First, suppose
+$x \in A \setminus (B \cup C)$.
+
+\pause
+
+Then $x$ is in $A$, but not in $B$ nor $C$.
+
+\pause
+
+Hence $x$ is in $A$ and not in $B$, that is, $x \in A \setminus B$.
+
+\pause
+
+Similarly $x \in A \setminus C$.
+
+\pause
+
+Thus $x \in (A \setminus B) \cap (A \setminus C)$.
+
+\medskip
+\pause
+
+On the other hand, suppose 
+$x \in (A \setminus B) \cap (A \setminus C)$.
+
+\pause
+
+In particular, $x \in (A \setminus B)$, so $x \in A$ and $x \notin B$.
+
+\pause
+
+As also $x \in (A \setminus C)$, then $x \notin C$.
+
+\pause
+
+Hence $x \in A \setminus (B \cup C)$.
+
+\medskip
+\pause
+
+The proof of the other equality is left as an exercise.
+\qed
+\end{frame}
+
+\begin{frame}
+Results called \emph{Theorem}, \emph{Proposition}, \emph{Lemma},
+\emph{Corollary}\ldots
+
+\medskip
+\pause
+
+Often:
+
+Theorem is a bigger result than Proposition,
+
+\pause
+Lemma is a tool or an intermediate step,
+
+\pause
+and Corollary is a quick consequence of something.
+
+\medskip
+\pause
+
+Often it is just traditional or stylistic.  Do not read into it
+\emph{too} much.
+
+\medskip
+\pause
+
+Important to distinguish between results (as above)
+and an \emph{Axiom}
+or a \emph{Postulate}, which are statements assumed to be true
+without proof.
+
+\medskip
+\pause
+
+We also encountered \emph{Definition}s which simply give language or
+notation, but do not actually say anything is true or false.
+\pause
+(Confusing sometimes when one says ``by definition we have this or that,''
+but that just means we write out what the definition means using other
+statements, not that the definition itself implies something.)
+
+\end{frame}
+
+\begin{frame}
+Unions/intersections can be taken over more sets.
+\pause
+If
+$\{ A_1, A_2, A_3, \ldots \}$,
+\pause
+then
+\begin{align*}
+& \bigcup_{n=1}^\infty A_n \coloneqq \{ x : x \in A_n \text{ for some } n \in \N
+\} , \\
+& \bigcap_{n=1}^\infty A_n \coloneqq \{ x : x \in A_n \text{ for all } n \in \N
+\} .
+\end{align*}
+\pause
+We could index by other sets such as two natural numbers:
+$\{ A_{1,1}, A_{1,2}, A_{2,1}, A_{1,3}, A_{2,2}, A_{3,1}, \ldots \}$.
+\pause
+\begin{equation*}
+\bigcup_{n=1}^\infty \bigcup_{m=1}^\infty A_{n,m}
+=
+\bigcup_{n=1}^\infty \left( \bigcup_{m=1}^\infty A_{n,m} \right) .
+\end{equation*}
+\pause
+Same for intersections.
+\pause
+
+\medskip
+It is not hard to see that the order of the unions can be swapped.
+
+Same for intersections.
+
+\end{frame}
+
+\begin{frame}
+But switching mixed unions/intersections is not always possible.
+
+\medskip
+\pause
+
+\textbf{Example:}
+\begin{equation*}
+\bigcup_{n=1}^\infty
+\bigcap_{m=1}^\infty
+\{ k \in \N : mk < n \}
+=
+\bigcup_{n=1}^\infty \emptyset = \emptyset .
+\end{equation*}
+\pause
+However,
+\begin{equation*}
+\bigcap_{m=1}^\infty
+\bigcup_{n=1}^\infty
+\{ k \in \N : mk < n \}
+=
+\bigcap_{m=1}^\infty
+\N
+=
+\N.
+\end{equation*}
+
+\pause
+The index set could be another set than natural numbers in which case we use
+the following notation:
+\begin{equation*}
+\bigcup_{\lambda \in I} A_\lambda \coloneqq \{ x : x \in A_\lambda \text{ for some }
+\lambda \in I
+\} ,
+\qquad
+\bigcap_{\lambda \in I} A_\lambda \coloneqq \{ x : x \in A_\lambda \text{ for all }
+\lambda \in I
+\} .
+\end{equation*}
+
+\end{frame}
+
+\end{document}

@@ -1,0 +1,968 @@
+\documentclass[10pt,aspectratio=149]{beamer}
+
+% All the boilerplate is in ac1slides.sty
+% Note that this also pulls in a custom vogtwidebar.sty
+\usepackage{ac1slides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Departemento pri Matematiko de Oklahoma {\^S}tata Universitato}
+
+\title{BA: 7.4}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\begin{definition}
+A sequence $\{ x_n \}_{n=1}^\infty$ in a metric space $(X,d)$ is \emph{Cauchy}
+\pause
+if
+for every $\epsilon > 0$, there exists an $M \in \N$ such that
+for all $n \geq M$ and all $k \geq M$,
+\quad $d(x_n, x_k) < \epsilon$.
+\end{definition}
+
+\pause
+\begin{proposition}
+A convergent sequence in a metric space is Cauchy.
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+Suppose $\{ x_n \}_{n=1}^\infty$ converges to $p$.
+
+\pause
+\medskip
+
+\pause
+Given $\epsilon > 0$, $\exists$ $M$ such that $\forall$ $n \geq M$,
+~~$d(p,x_n) < \nicefrac{\epsilon}{2}$.
+
+\pause
+\medskip
+
+\thus \quad $\forall$ $n,k \geq M$, ~~
+$d(x_n,x_k)
+\pause
+\leq d(x_n,p) + d(p,x_k)
+\pause
+< \nicefrac{\epsilon}{2} + \nicefrac{\epsilon}{2}
+\pause
+= \epsilon$.
+\qed
+
+\pause
+\begin{definition}
+A metric space $(X,d)$ is
+\emph{complete} or \emph{Cauchy-complete}
+if every Cauchy sequence $\{ x_n \}_{n=1}^\infty$ in $X$
+converges to a $p \in X$.
+\end{definition}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}
+The space $\R^n$ with the standard metric is a complete metric space.
+\end{proposition}
+
+\pause
+Already proved for $\R = \R^1$.
+
+\pause
+\medskip
+
+\textbf{Proof:}
+Let $\{ x_m \}_{m=1}^\infty$ in $\R^n$ be Cauchy,
+\pause
+\quad write 
+$x_m = \bigl(x_{m,1},x_{m,2},\ldots,x_{m,n}\bigr)$.
+
+\pause
+\medskip
+
+Given $\epsilon > 0$, $\exists$ $M$ such that $\forall$
+$i,j \geq M$,
+\quad 
+$d(x_i,x_j) < \epsilon$.
+
+\pause
+\medskip
+
+Fix $k=1,2,\ldots,n$.
+\pause
+For $i,j \geq M$,
+\[
+\bigl\lvert x_{i,k} - x_{j,k} \bigr\rvert
+\pause
+=
+\sqrt{{\bigl(x_{i,k} - x_{j,k}\bigr)}^2}
+\pause
+\leq
+\sqrt{\sum_{\ell=1}^n {\bigl(x_{i,\ell}-x_{j,\ell}\bigr)}^2}
+\pause
+= d(x_i,x_j)
+\pause
+< \epsilon .
+\]
+\pause
+\thus \quad
+$\{ x_{m,k} \}_{m=1}^\infty$ is Cauchy.
+
+\pause
+\medskip
+
+$\R$ is complete
+\pause
+\wthus
+$\{ x_{m,k} \}_{m=1}^\infty$ converges to some $y_k \in \R$.
+
+\pause
+\medskip
+
+Write $y = (y_1,y_2,\ldots,y_n) \in \R^n$.
+
+\pause
+By a proposition, $\{ x_m \}_{m=1}^\infty$ converges
+to $y$
+\pause
+\wthus $\R^n$ is complete.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+%In the language of metric spaces,
+%the results on continuity of section {sec:liminter},
+%say that the metric space
+%$C\bigl([a,b],\R\bigr)$ of {example:msC01} is complete.
+%The proof follows by ``unrolling the definitions,'' 
+%and is left as {exercise:CabRcomplete}.
+%
+%\begin{proposition}
+%The space of continuous functions $C\bigl([a,b],\R\bigr)$ with the uniform
+%norm as metric is a complete metric space.
+%\end{proposition}
+
+\textbf{Example:}
+A subset of a complete metric space need not be complete:
+
+\pause
+$(0,1]$ with the subspace metric is not complete.
+
+\pause
+$\{ \nicefrac{1}{n} \}_{n=1}^\infty$ is Cauchy
+with no limit in $(0,1]$.
+
+\pause
+\begin{proposition}
+Suppose $(X,d)$ is a complete metric space and $E \subset X$
+is closed.
+\pause
+Then $E$ is a complete metric space with the subspace metric.
+\end{proposition}
+
+\pause
+\textbf{Proof:} Exercise.
+
+\end{frame}
+
+\begin{frame}
+
+\begin{definition}
+Let $(X,d)$ be a metric space and $K \subset X$. 
+\pause
+The set $K$ is \emph{compact}
+if for every collection
+of open sets $\{ U_{\lambda} \}_{\lambda \in I}$ such that
+\quad
+$\displaystyle
+K \subset \bigcup_{\lambda \in I} U_\lambda$,
+
+\pause
+there exists a finite subset
+$\{ \lambda_1, \lambda_2,\ldots,\lambda_m \} \subset I$
+such that
+\quad
+$\displaystyle
+K \subset \bigcup_{j=1}^m U_{\lambda_j}$.
+\end{definition}
+
+\pause
+Call $\{ U_{\lambda} \}_{\lambda \in I}$ an \emph{open cover} of $K$.
+
+
+\pause
+$K$ is compact if \emph{every open cover of $K$ has a finite subcover}.
+
+\pause
+\medskip
+
+\textbf{Example:}
+$\R$ is not compact.
+
+\pause
+Proof: Take $U_j \coloneqq (-j,j)$, ~~ $j \in \N$.
+\pause
+\quad
+$\bigcup_j (-j,j) = \R$ by Archimedean property.
+
+\pause
+If $\R \subset U_{j_1} \cup U_{j_2} \cup \cdots \cup U_{j_m}$ ~
+($j_1 < j_2 < \cdots < j_m$) \wthus $\R \subset U_{j_m}$
+\pause
+\quad
+\contradiction
+
+\pause
+\medskip
+
+\textbf{Example:}
+$(0,1) \subset \R$ is not compact.
+
+\pause
+Proof:  Consider $U_{j} \coloneqq (\nicefrac{1}{j},1-\nicefrac{1}{j})$ for $j=3,4,5,\ldots$.
+\pause
+\quad
+$(0,1) = \bigcup_{j=3}^\infty U_j$.
+
+\pause
+Again, if $\exists$ finite subcover then $(0,1) \subset U_j$ for some
+$j$,
+\pause
+\qquad \contradiction
+
+\pause
+\medskip
+
+\textbf{Example:}
+$\{ 0 \} \subset \R$ is compact
+
+\pause
+Proof: For an open cover $\{ U_{\lambda} \}_{\lambda \in I}$,
+\pause
+~$\exists$ $\lambda_0$ s.t. $0 \in U_{\lambda_0}$.
+\pause
+~$\{ U_{\lambda_0} \}$ is a finite subcover.
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}
+Let $(X,d)$ be a metric space.  If $K \subset X$ is compact, then $K$ is closed and
+bounded.
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+Fix $p \in X$.
+
+\pause
+The open cover ~~
+$\displaystyle K \subset \bigcup_{n=1}^\infty B(p,n) = X$
+
+\pause
+\medskip
+
+has a finite subcover
+
+\medskip
+
+$\displaystyle K \subset \bigcup_{j=1}^m B(p,n_j)
+\pause
+= B(p,n_m)$.
+
+\pause
+\medskip
+
+\thus \quad $K$ is bounded.
+
+\pause
+\vspace*{-1.5in}
+\hspace*{2.6in}
+\scalebox{0.9}{
+\subimport*{../figures/}{compactbnd.pdf_t}
+}
+
+\end{frame}
+
+\begin{frame}
+Suppose $K$ is not closed: $\widebar{K} \not= K$
+
+\pause
+\thus \quad $\exists$ $x \in \widebar{K} \setminus K$.
+
+\pause
+\medskip
+
+\pause
+$x \notin K$
+\pause
+~\&~ if $y\not= x$
+\thus
+$y \in {C(x,\nicefrac{1}{n})}^c$ for some $n$
+
+\pause
+\medskip
+
+\pause
+\thus \quad
+$\displaystyle
+K \subset \bigcup_{n=1}^\infty {C(x,\nicefrac{1}{n})}^c$
+
+\pause
+\vspace*{-1.2in}
+\hspace*{2.75in}
+\scalebox{0.8}{
+\subimport*{../figures/}{compactclosed.pdf_t}
+}
+
+\vspace*{-0.1in}
+
+\pause
+That's an open cover as 
+${C(x,\nicefrac{1}{n})}^c$ are open.
+
+%If $y \not= x$, then
+%$y \notin C(x,\nicefrac{1}{n})$
+%for $n \in \N$
+%such that $\nicefrac{1}{n} < d(x,y)$.
+%Furthermore, $x \notin K$, so
+%\begin{equation*}
+%\end{equation*}
+
+\pause
+\medskip
+
+Take a finite collection
+\quad
+$\displaystyle
+\bigcup_{j=1}^m {C(x,\nicefrac{1}{n_j})}^c 
+\pause
+=
+{C(x,\nicefrac{1}{n_m})}^c 
+$
+
+\pause
+\medskip
+
+$x \in \overline{K}$
+\pause
+\wthus
+$C(x,\nicefrac{1}{n_m}) \cap K \not= \emptyset$.
+
+\pause
+\medskip
+
+\thus \quad so no finite subcover
+\pause
+\wthus 
+$K$ is not compact.
+\qed
+
+
+\end{frame}
+
+\begin{frame}
+
+%We prove below that 
+%in a finite-dimensional euclidean space,
+%every closed bounded set is compact.
+%So closed bounded sets
+%of $\R^n$ are examples of compact sets.
+%It is not true that in every metric space, closed and bounded is equivalent
+%to compact.  A simple example is an incomplete metric space such as
+%$(0,1)$ with the subspace metric from $\R$.
+%There are many complete and very useful metric spaces
+%where closed and bounded is not
+%enough to give compactness: $C\bigl([a,b],\R\bigr)$ is a complete metric
+%space, but the closed unit ball $C(0,1)$ is not compact, see
+%{exercise:msclbounnotcompt}.  However, see also
+%{exercise:mstotbound}.
+
+%A useful property of compact sets in a metric space is that every
+%sequence in the set has a convergent subsequence converging
+%to a point in the set.
+%Such sets are called
+%\emph{sequentially compact}.
+%We will prove that in the
+%context of metric spaces, a set is compact if and only if it is sequentially
+%compact.
+%First we prove a lemma.
+
+\begin{lemma}[Lebesgue covering lemma]
+Let $(X,d)$ be a metric space and $K \subset X$.
+\pause
+Suppose 
+every sequence in $K$ has a subsequence convergent in $K$.
+\pause
+Given
+an open cover $\{ U_\lambda \}_{\lambda \in I}$ of $K$, there exists a
+$\delta > 0$ such that for every $x \in K$, there is a $\lambda \in I$
+with $B(x,\delta) \subset U_\lambda$.
+\end{lemma}
+
+\pause
+\textbf{Proof:}
+If conclusion not true, then $\exists$
+open cover $\{ U_\lambda \}_{\lambda \in I}$ of $K$ such that:
+
+\pause
+\medskip
+
+For every $n \in \N$, $\exists$ $x_n \in K$ s.t.
+$B(x_n,\nicefrac{1}{n})$ is not a subset of any $U_\lambda$.
+
+\pause
+\medskip
+
+Take $x \in K$ \wthus $\exists$
+$\lambda \in I$ s.t. $x \in U_\lambda$.
+
+\pause
+$U_\lambda$ is open \wthus
+$\exists$ $\epsilon > 0$ s.t.  $B(x,\epsilon) \subset U_\lambda$.
+
+\pause
+\medskip
+
+Take $M$ s.t.  $\nicefrac{1}{M} < \nicefrac{\epsilon}{2}$.
+
+\pause
+\medskip
+
+If $y \in B(x,\nicefrac{\epsilon}{2})$ and $n \geq M$, then 
+
+\pause
+\medskip
+
+$
+B(y,\nicefrac{1}{n})
+\pause
+\subset
+B(y,\nicefrac{1}{M})
+$
+
+\pause
+\qquad $
+\subset
+B(y,\nicefrac{\epsilon}{2})
+\pause
+\subset
+B(x,\epsilon)
+\pause
+\subset
+U_\lambda$,
+
+\pause
+\vspace*{-0.9in}
+\hspace*{2.3in}
+\scalebox{0.8}{
+\subimport*{../figures/}{lebesguedelta.pdf_t}
+}
+\vspace*{-0.5in}
+
+\pause
+($B(y,\nicefrac{\epsilon}{2}) \subset B(x,\epsilon)$ follows by
+
+triangle inequality.)
+
+\pause
+\medskip
+
+\thus \quad $y \not= x_n$ \wthus $\{ x_n \}_{n=1}^\infty$
+has no subsequence converging to $x$.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Remark:} If $K$ such that every sequence has a convergent subsequence in
+$K$ is called \emph{sequentially compact}.
+
+\pause
+\medskip
+
+The $\delta$ in the lemma depends on the cover, but not on the $x$.
+
+\pause
+\medskip
+
+\textbf{Example:} $K \coloneqq [-10,10]$ and for $n \in \Z$,~
+$U_n \coloneqq (n,n+2)$ give an open cover.
+
+\pause
+If $x \in K$, then $\exists$ $n \in \Z$, such that $n \leq x < n+1$.
+
+\pause
+If $n \leq x < n+\nicefrac{1}{2}$, then
+$B\bigl(x,\nicefrac{1}{2}\bigr) \subset U_{n-1}$.
+
+\pause
+If $n+ \nicefrac{1}{2} \leq x < n+1$, then
+$B\bigl(x,\nicefrac{1}{2}\bigr) \subset U_{n}$.
+
+\pause
+\thus \quad $\delta = \nicefrac{1}{2}$ works.
+
+\pause
+\medskip
+
+For the cover given by
+$U'_n \coloneqq \bigl(\frac{n}{2},\frac{n+2}{2} \bigr)$
+the largest $\delta$ is
+$\nicefrac{1}{4}$.
+
+\pause
+\medskip
+
+\textbf{Example:}
+$\N \subset \R$ is not sequentially compact.
+
+\pause
+\textbf{Exercise:} Find the cover with no $\delta > 0$.
+
+\end{frame}
+
+\begin{frame}
+
+\begin{theorem}
+Let $(X,d)$ be a metric space.  Then $K \subset X$ is compact if
+and only if every sequence in $K$ has a subsequence converging to
+a point in $K$.
+\end{theorem}
+
+\pause
+\medskip
+
+\textbf{Proof:}
+Claim: \emph{Suppose $K \subset X$ and
+$\{ x_n \}_{n=1}^\infty$ is a sequence in $K$.  Suppose $\forall$ $x \in K$,
+
+$\exists$ $\alpha_x > 0$ s.t.
+$x_n \in B(x,\alpha_x)$ for only finitely many $n \in \N$.
+Then $K$ is not compact.}
+
+\pause
+Proof of the claim:
+Notice
+$
+K \subset \bigcup_{x \in K} B(x,\alpha_x)$.
+
+\pause
+Any finite subcollection contains $x_n$ for only finitely many $n$.
+
+\pause
+\thus \quad there is no subcover
+\pause
+\wthus $K$ is not compact.
+
+\pause
+\medskip
+
+Suppose $K$ is compact and $\{ x_n \}_{n=1}^\infty$ is a sequence in $K$.
+
+\pause
+By claim $\exists$ $x \in K$ s.t. $\forall$ $\delta > 0$,
+$B(x,\delta)$ contains $x_n$ for infinitely many $n \in \N$.
+
+\pause
+\medskip
+
+$B(x,1)$ contains some $x_k$ \wthus let $n_1 \coloneqq k$.
+
+\pause
+Suppose $n_{j-1}$ is defined.
+
+\pause
+$\exists$ $k > n_{j-1}$ such that $x_k \in B(x,\nicefrac{1}{j})$
+\wthus let $n_j \coloneqq k$.
+
+\pause
+\medskip
+
+$d(x,x_{n_j}) < \nicefrac{1}{j}$
+\wthus
+$\{ x_{n_j} \}_{j=1}^\infty$ converges to $x$.
+
+
+\end{frame}
+
+\begin{frame}
+
+Now suppose $K$ is sequentially compact and
+$\{ U_\lambda \}_{\lambda \in I}$ is an open cover of $K$.
+
+\pause
+By Lebesgue covering lemma, $\exists$ $\delta > 0$
+s.t. $\forall$ $x \in K$, $\exists$ $\lambda \in I$ with
+$B(x,\delta) \subset U_\lambda$.
+
+\pause
+\medskip
+
+Pick $x_1 \in K$ and find $\lambda_1 \in I$ s.t. $B(x_1,\delta) \subset U_{\lambda_1}$.
+
+\pause
+\medskip
+
+If $K \subset U_{\lambda_1}$, we are done.
+
+\pause
+Otherwise, $\exists$ $x_2 \in K \setminus U_{\lambda_1}$.
+\pause
+\qquad
+Note $d(x_2,x_1) \geq \delta$.
+
+\pause
+$\exists$ $\lambda_2 \in I$ such that $B(x_2,\delta) \subset U_{\lambda_2}$.
+\pause
+\qquad
+If $K \subset U_{\lambda_1} \cup U_{\lambda_2}$, then done.
+
+\pause
+\medskip
+
+Suppose $\lambda_{n-1}$ is defined.
+
+\pause
+Either
+$K \subset U_{\lambda_1} \cup
+%U_{\lambda_2} \cup
+\cdots \cup
+U_{\lambda_{n-1}}$
+(done),
+\pause
+or
+$\exists$ $x_n \in
+K \setminus \bigl( U_{\lambda_1} \cup
+%U_{\lambda_2} \cup
+\cdots \cup U_{\lambda_{n-1}}\bigr)$.
+
+\pause
+Note $d(x_n,x_j) \geq \delta$ for all $j = 1,2,\ldots,n-1$.
+
+\pause
+$\exists$
+$\lambda_n \in I$ s.t. $B(x_n,\delta) \subset U_{\lambda_n}$.
+
+\pause
+\vspace*{-0.3in}
+\hspace*{2in}
+\scalebox{0.7}{
+\subimport*{../figures/}{seqcompactiscompact.pdf_t}
+}
+
+%Covering $K$ by $U_{\lambda}$.  The points
+%$x_1,x_2,x_3,x_4$, 
+%the three sets 
+%$U_{\lambda_1}$,
+%$U_{\lambda_2}$,
+%$U_{\lambda_2}$,
+%and 
+%the first three balls
+%of radius $\delta$ are drawn.
+
+
+\vspace*{-0.8in}
+
+\pause
+Either we find a subcover,
+
+\pause
+or we obtain a sequence
+$\{ x_n \}_{n=1}^\infty$
+
+in $K$ such that 
+$d(x_n,x_k) \geq \delta$
+
+whenever $k \not= n$.
+
+\pause
+\medskip
+
+No subsequence of $\{ x_n \}_{n=1}^\infty$ can be
+Cauchy.
+\pause
+\quad \contradiction
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Example:}
+Bolzano--Weierstrass theorem for sequences of real numbers:
+
+Every bounded sequence in $\R$ has a convergent subsequence.
+
+\pause
+\thus \quad Every sequence in $[a,b] \subset \R$ has 
+a convergent subsequence.
+
+\pause
+\thus \quad The limit is also in $[a,b]$.
+
+\pause
+\thus \quad A closed bounded interval $[a,b] \subset \R$ is (sequentially) compact.
+
+\pause
+\begin{proposition}
+Let $(X,d)$ be a metric space and let $K \subset X$ be compact.  If
+$E \subset K$ is a closed set, then $E$ is compact.
+\end{proposition}
+
+\pause
+As $K$ is closed, $E$ is closed in $K$ \wiffif
+$E$ is closed in $X$.
+
+\pause
+\medskip
+
+\textbf{Proof:}
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence in $E$.
+
+\pause
+$\{ x_n \}_{n=1}^\infty$ is a sequence in $K$.
+
+\pause
+\thus \quad $\exists$ a convergent $\{ x_{n_j} \}_{j=1}^\infty$ converging
+to some $p \in K$.
+
+\pause
+$E$ is closed \wthus $p \in E$.
+
+\pause
+\thus \quad $E$ is (sequentially) compact.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\begin{theorem}[Heine--Borel]
+A closed bounded subset $K \subset \R^n$ is compact.
+\end{theorem}
+
+\pause
+\textbf{Warning:}
+Heine--Borel only holds for $\R^n$ and not for metric spaces in general.
+
+\pause
+The theorem does not hold even for subspaces of $\R^n$, just in $\R^n$
+itself.
+
+\pause
+\medskip
+
+\textbf{Example:} In $X = (0,\infty)$ the subset $(0,1]$ is closed and
+bounded and \textbf{not} compact.
+
+\pause
+\medskip
+
+In general, compact \thus closed and bounded, \textbf{but not vice versa!}
+
+\pause
+\medskip
+
+As there's always someone who wants to use this:
+
+\pause
+\medskip
+
+{\Huge
+\textbf{Closed and bounded does not imply compact in general!}
+}
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Proof:}
+Suppose $n=1$.
+
+\pause
+$K \subset [a,b]$.
+\pause
+\qquad
+$[a,b]$ is compact.
+\pause
+\qquad
+$K$ is a closed subset of a compact set.
+
+\pause
+\thus \quad $K$ is compact.
+
+\pause
+\medskip
+
+Now consider $n=2$.
+\pause
+\quad
+Arbitrary $n$ is an exercise.
+
+\pause
+If $K \subset \R^2$ is bounded, $\exists$
+$B = [a,b]\times[c,d] \subset \R^2$ such that $K \subset B$.
+
+\pause
+If $B$ is compact, then as $K$ is closed it is also compact.
+
+\pause
+\medskip
+
+Let $\bigl\{ (x_k,y_k) \bigr\}_{k=1}^\infty$ be a sequence in $B$.
+
+\pause
+That is, $a \leq x_k \leq b$ and $c \leq y_k \leq d$ for all $k$.
+
+\pause
+By BW, $\exists$ convergent subsequence
+$\{ x_{k_j} \}_{j=1}^\infty$.
+
+\pause
+$\{ y_{k_j} \}_{j=1}^\infty$ is also a bounded, so 
+$\exists$ convergent
+subsequence
+$\{ y_{k_{j_i}} \}_{i=1}^\infty$.
+
+\pause
+$\{ x_{k_{j_i}} \}_{i=1}^\infty$ is also convergent.
+
+\pause
+Let
+~~
+$x \coloneqq \lim\limits_{i\to\infty} x_{k_{j_i}}$
+~~
+and
+~~
+$y \coloneqq \lim\limits_{i\to\infty} y_{k_{j_i}}$.
+
+\pause
+\medskip
+
+So 
+$\bigl\{ (x_{k_{j_i}},y_{k_{j_i}}) \bigr\}_{i=1}^\infty$ converges to $(x,y)$.
+
+\pause
+$a \leq x_k \leq b$ and
+$c \leq y_k \leq d$ for all $k$ \wthus $(x,y) \in B$.
+
+\pause
+\medskip
+
+$B$ is compact \wthus $K$ is compact.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Example:}
+Let $(X,d)$ be a metric space with the discrete metric
+
+($d(x,y) = 1$ if $x \not= y$).
+
+\pause
+Suppose $X$ is an infinite set.  Then
+\begin{enumerate}[(i)]
+\item
+\pause
+$(X,d)$ is a complete metric space.
+\item
+\pause
+Any $K \subset X$ is closed and bounded.
+\item
+\pause
+$K \subset X$ is compact \wiffif $K$ is a finite set.
+\item
+\pause
+The conclusion of the Lebesgue covering lemma is always satisfied,
+e.g. with $\delta = \nicefrac{1}{2}$,
+even for noncompact $K \subset X$.
+\end{enumerate}
+
+\pause
+\textbf{Proof:} Exercises.
+
+\pause
+\medskip
+
+\textbf{Remark:}
+Compactness only depends on topology (on the set of open sets).
+
+\pause
+\medskip
+
+Completeness depends on which sequences are Cauchy, so
+it depends on the actual metric.
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Exercise:}
+Finite sets are compact.
+
+\pause
+\medskip
+
+\textbf{Exercise:}
+The union of finitely many compact sets is compact.
+
+\pause
+\medskip
+
+\textbf{Exercise:}
+A compact set is a complete metric space.
+
+\pause
+\medskip
+
+\textbf{Exercise:}
+Suppose $(X,d)$ is complete and
+$E_1 \supset E_2 \supset E_3 \supset \cdots$ are compact and nonempty.
+Prove $\bigcap_{j=1}^\infty E_j \not= \emptyset$.
+
+%\begin{exercise}[Challenging]
+%Let $(X,d)$ be a complete metric space.
+%Show that $K \subset X$ is compact if and only if $K$ is closed
+%and such that for every $\epsilon > 0$
+%there exists a finite set of points $x_1,x_2,\ldots,x_n$ with
+%$K \subset \bigcup_{j=1}^n B(x_j,\epsilon)$.
+%Note: Such a set $K$ is said to be \emph{totally bounded},
+%so in a complete metric space a set is compact if and only
+%if it is closed and totally bounded.
+%\end{exercise}
+
+\pause
+\medskip
+
+\textbf{Exercise:}
+Prove the general Bolzano--Weierstrass theorem:
+Any bounded sequence $\{ x_k \}_{k=1}^\infty$ in $\R^n$
+has a convergent subsequence.
+
+\pause
+\medskip
+
+\textbf{Exercise:}
+Let $(X,d)$ be a metric space and $K \subset X$.
+Prove that $K$ is compact as a subset of $(X,d)$ if and only if $K$ is
+compact as a subset of itself with the subspace metric.
+
+\end{frame}
+
+\end{document}

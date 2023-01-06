@@ -1,0 +1,557 @@
+\documentclass[10pt,aspectratio=149]{beamer}
+
+% All the boilerplate is in ac1slides.sty
+% Note that this also pulls in a custom vogtwidebar.sty
+\usepackage{ac1slides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Departemento pri Matematiko de Oklahoma {\^S}tata Universitato}
+
+\title{BA: 4.1}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\begin{definition}
+Let $I$ be an interval, let
+$f \colon I \to \R$ be a function, and let $c \in I$.
+\pause
+If the limit
+\begin{equation*}
+L \coloneqq \lim_{x \to c} \frac{f(x)-f(c)}{x-c} \qquad \text{exists,}
+\end{equation*}
+\pause
+then $f$ is
+\emph{differentiable} at
+$c$, $L$ is the \emph{derivative} of $f$ at $c$,
+and we write $f'(c) \coloneqq L$.
+
+\pause
+\medskip
+
+If $f$ is differentiable at all $c \in I$, we say
+$f$ is \emph{differentiable},
+
+and we obtain a function $f' \colon I \to \R$.
+
+\pause
+\medskip
+
+Other notation: $\frac{df}{dx}$ or $\frac{d}{dx}\bigl( f(x) \bigr)$.
+
+\pause
+\medskip
+
+The expression $\frac{f(x)-f(c)}{x-c}$ is called the
+\emph{difference quotient}.
+\end{definition}
+
+\pause
+\textbf{Remark:}
+We allow $I$ to be a closed interval
+
+and we allow $c$ to be an endpoint of $I$.
+
+\end{frame}
+
+\begin{frame}
+The graphical interpretation of the derivative:
+
+\medskip
+
+\begin{center}
+\scalebox{0.9}{
+\subimport*{../figures/}{deriv_derivd.pdf_t}
+}
+\end{center}
+
+\pause
+\medskip
+
+$\dfrac{f(x)-f(c)}{x-c}$ is the slope of the \emph{secant line}
+through $\bigl(c,f(c)\bigr)$ and $\bigl(x,f(x)\bigr)$.
+
+\pause
+\medskip
+
+$f'(c)$ is the limit of these slopes as $x \to c$.
+
+\end{frame}
+
+\begin{frame}
+\textbf{Example:}
+Let $f \colon \R \to \R$ be $f(x) \coloneqq x^2$ and $c \in \R$.
+\pause
+If $x \not= c$, then
+\begin{equation*}
+\frac{x^2-c^2}{x-c}
+\pause
+=
+\frac{(x+c)(x-c)}{x-c}
+\pause
+=
+(x+c) .
+\end{equation*}
+\pause
+Therefore,
+\begin{equation*}
+f'(c)
+= 
+\lim_{x\to c} \frac{x^2-c^2}{x-c}
+\pause
+=
+\lim_{x\to c} (x+c)
+\pause
+= 2c.
+\end{equation*}
+
+\pause
+\medskip
+
+\textbf{Example:}
+Let $f(x) \coloneqq ax + b$ for $a, b \in \R$.
+\pause
+Let $c \in \R$.
+\pause
+For $x \not=c$,
+\begin{equation*}
+\frac{f(x)-f(c)}{x-c}
+\pause
+=
+\frac{a(x-c)}{x-c}
+\pause
+= a .
+\end{equation*}
+\pause
+Therefore,
+\begin{equation*}
+f'(c)
+=
+\lim_{x\to c} 
+\frac{f(x)-f(c)}{x-c}
+\pause
+=
+\lim_{x\to c} 
+a
+= a.
+\end{equation*}
+
+\pause
+
+\textbf{Remark:}
+Every differentiable $f$ ``infinitesimally'' behaves like
+the affine function $ax + b$.
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Example:}
+$f(x) \coloneqq \sqrt{x}$ is differentiable for $x > 0$.
+\pause
+Proof:
+Fix $c > 0$ and take $x \not= c$, $x > 0$.
+\pause
+\begin{equation*}
+\frac{\sqrt{x}-\sqrt{c}}{x-c}
+\pause
+=
+\frac{\sqrt{x}-\sqrt{c}}{(\sqrt{x}-\sqrt{c})(\sqrt{x}+\sqrt{c})}
+\pause
+=
+\frac{1}{\sqrt{x}+\sqrt{c}} .
+\end{equation*}
+\pause
+Therefore,
+\begin{equation*}
+f'(c)
+=
+\lim_{x\to c}
+\frac{\sqrt{x}-\sqrt{c}}{x-c}
+\pause
+=
+\lim_{x\to c}
+\frac{1}{\sqrt{x}+\sqrt{c}}
+\pause
+=
+\frac{1}{2\sqrt{c}} .
+\end{equation*}
+
+\pause
+\medskip
+
+\textbf{Example:}
+$f(x) \coloneqq \abs{x}$ is not differentiable at $0$.
+
+\pause
+When $x > 0$,
+\begin{equation*}
+\frac{\abs{x}-\abs{0}}{x-0} =
+\frac{x-0}{x-0} = 1 .
+\end{equation*}
+\pause
+When $x < 0$,
+\begin{equation*}
+\frac{\abs{x}-\abs{0}}{x-0} =
+\frac{-x-0}{x-0} = -1 .
+\end{equation*}
+\pause
+So the limit $x \to 0$ does not exist.
+
+\end{frame}
+
+\begin{frame}
+A continuous function exists which is not differentiable at any point
+(Weierstrass).
+\pause
+However,
+
+\begin{proposition}
+Let $f \colon I \to \R$ be differentiable at $c \in I$,
+then it is continuous at $c$.
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+\begin{equation*}
+\lim_{x\to c}\frac{f(x)-f(c)}{x-c} = f'(c)
+\qquad
+\pause
+\text{and}
+\qquad
+\lim_{x\to c}(x-c) = 0 .
+\end{equation*}
+
+\pause
+\begin{equation*}
+f(x)-f(c) = 
+\left( \frac{f(x)-f(c)}{x-c} \right) (x-c) .
+\end{equation*}
+
+\pause
+\thus \quad limit of $f(x)-f(c)$ as $x \to c$ exists
+\pause
+and
+\begin{equation*}
+\lim_{x\to c} \bigl( f(x)-f(c) \bigr)
+\pause
+=
+\left(\lim_{x\to c} \frac{f(x)-f(c)}{x-c} \right)
+\left(\lim_{x\to c} (x-c) \right)
+\pause
+=
+f'(c) \cdot 0  = 0.
+\end{equation*}
+\pause
+\thus \quad $\lim\limits_{x\to c} f(x) = f(c)$
+\pause
+\wthus $f$ is continuous at $c$.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}[Linearity]
+Let $I$ be an interval, let
+$f \colon I \to \R$ and $g \colon I \to \R$ be differentiable at $c \in I$,
+and $\alpha \in \R$.%
+\begin{enumerate}[(i)]
+\item\pause
+Define $h \colon I \to \R$ by $h(x) \coloneqq \alpha f(x)$.  Then
+$h$ is differentiable at $c$ and
+$h'(c) = \alpha f'(c)$.
+\item\pause
+Define $h \colon I \to \R$ by $h(x) \coloneqq  f(x) + g(x)$.  Then
+$h$ is differentiable at $c$ and
+$h'(c) =  f'(c) + g'(c)$.
+\end{enumerate}
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+(i) For $x \in I$, $x \not= c$,
+\pause
+\quad
+$\displaystyle
+\frac{h(x)-h(c)}{x-c}
+\pause
+=
+\frac{\alpha f(x) - \alpha f(c)}{x-c}
+\pause
+=
+\alpha \frac{f(x) - f(c)}{x-c}$.
+
+\pause
+\medskip
+
+The limit as $x \to c$ of the RHS exists
+\pause
+and
+\quad
+$\displaystyle
+\lim_{x\to c}\frac{h(x)-h(c)}{x-c}
+\pause
+=
+\alpha \lim_{x\to c} \frac{f(x) - f(c)}{x-c}$.
+
+\pause
+\medskip
+
+(ii)
+For $x \in I$, $x \not= c$,
+
+\pause
+\medskip
+
+\quad $\displaystyle
+\frac{h(x)-h(c)}{x-c}
+\pause
+=
+\frac{\bigl(f(x) + g(x)\bigr) - \bigl(f(c) + g(c)\bigr)}{x-c}
+\pause
+=
+\frac{f(x) - f(c)}{x-c}
++
+\frac{g(x) - g(c)}{x-c}$.
+
+\pause
+\medskip
+
+The limit as $x \to c$ of RHS exists
+\pause
+and
+
+\medskip
+\quad $\displaystyle
+\lim_{x\to c}\frac{h(x)-h(c)}{x-c}
+\pause
+=
+\lim_{x\to c} \frac{f(x) - f(c)}{x-c}
++
+\lim_{x\to c}\frac{g(x) - g(c)}{x-c}$.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}[Product rule / Leibniz rule]
+Let $I$ be an interval, let
+$f \colon I \to \R$ and $g \colon I \to \R$ be 
+functions differentiable at $c$.  If $h \colon I \to \R$
+is defined by
+$h(x) \coloneqq f(x) g(x)$,
+\pause
+then $h$ is differentiable at $c$ and
+\begin{equation*}
+h'(c) = f(c) g'(c) + f'(c) g(c) .
+\end{equation*}
+\end{proposition}
+
+\pause
+
+\textbf{Proof:} Exercise.
+\pause
+Hint: 
+$f(x) g(x) - f(c) g(c) =
+f(x)\bigl( g(x) - g(c) \bigr)
++ \bigl( f(x) - f(c) \bigr) g(c)$
+
+\pause
+
+or \qquad
+$\Delta (f \cdot g) = f \cdot \Delta g + \Delta f \cdot g$.
+
+\pause
+\begin{center}
+\scalebox{0.9}{
+\subimport*{../figures/}{figprodrule.pdf_t}
+}
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}[Quotient rule]
+Let $I$ be an interval, let
+$f \colon I \to \R$ and $g \colon I \to \R$ be differentiable at $c$
+and $g(x) \not= 0$ for all $x \in I$.
+If $h \colon I \to \R$
+is defined by
+$h(x) \coloneqq \frac{f(x)}{g(x)}$,
+\pause
+then $h$ is differentiable at $c$ and
+\begin{equation*}
+h'(c) = \frac{f'(c) g(c) - f(c) g'(c)}{{\bigl(g(c)\bigr)}^2} .
+\end{equation*}
+\end{proposition}
+
+\pause
+
+\textbf{Proof:}  Exercise.
+
+\end{frame}
+
+\begin{frame}
+
+\begin{proposition}[Chain rule]
+Let $I_1, I_2$ be intervals, let
+$g \colon I_1 \to I_2$ be differentiable at $c \in I_1$,
+and
+$f \colon I_2 \to \R$ be differentiable at $g(c)$.
+\pause
+If $h \colon I_1 \to \R$
+is defined by
+$h(x) \coloneqq (f \circ g) (x) = f\bigl(g(x)\bigr)$,
+\pause
+then $h$ is differentiable at $c$ and
+\begin{equation*}
+h'(c) = f'\bigl(g(c)\bigr)g'(c) .
+\end{equation*}
+\end{proposition}
+
+\pause
+\textbf{Proof:}
+Let $d \coloneqq g(c)$.
+
+\pause
+Define
+$u \colon I_2 \to \R$ and $v \colon I_1 \to \R$ by
+\begin{equation*}
+u(y) \coloneqq
+\begin{cases}
+ \frac{f(y) - f(d)}{y-d}  & \text{if } y \not=d, \\
+ f'(d)                    & \text{if } y = d,
+\end{cases}
+\pause
+\qquad
+v(x) \coloneqq
+\begin{cases}
+ \frac{g(x) - g(c)}{x-c} & \text{if } x \not=c, \\
+ g'(c)                   & \text{if } x = c.
+\end{cases}
+\end{equation*}
+
+\pause
+$f$ differentiable at $d = g(c)$ \wthus $u$ is continuous at $d$.
+
+\pause
+$g$ differentiable at $c$ \wthus $v$ is continuous at $c$.
+
+\pause
+\medskip
+
+$f(y)-f(d) = u(y) (y-d)$
+\pause
+\quad and \quad
+$g(x)-g(c) = v(x) (x-c)
+\qquad \forall x,y$.
+
+\pause
+\medskip
+
+\thus \quad
+$
+h(x)-h(c)
+\pause
+=
+f\bigl(g(x)\bigr)-f\bigl(g(c)\bigr)
+\pause
+=
+u\bigl( g(x) \bigr) \bigl(g(x)-g(c)\bigr)
+\pause
+=
+u\bigl( g(x) \bigr) \bigl(v(x) (x-c)\bigr)$.
+
+\end{frame}
+
+\begin{frame}
+If $x \not= c$, then
+\qquad
+$\displaystyle \frac{h(x)-h(c)}{x-c}
+\pause
+=
+u\bigl( g(x) \bigr) v(x)$.
+
+\pause
+\medskip
+
+$u$ is continuous at $d$
+\wthus
+$\displaystyle \lim_{y \to d} u(y) = f'(d) = f'\bigl(g(c)\bigr)$.
+
+\pause
+\medskip
+
+$v$ is continuous at $c$
+\wthus
+$\displaystyle \lim_{x \to c} v(x) = g'(c)$.
+
+\pause
+\medskip
+
+$g$ is continuous at $c$
+\wthus
+$\displaystyle \lim_{x \to c} g(x) = g(c)$.
+
+\pause
+\medskip
+
+\thus \quad
+$\displaystyle\lim_{x\to c} u\bigl( g(x) \bigr) v(x)$ ~~ exists
+\pause
+and equals ~~
+$f'\bigl(g(c)\bigr) g'(c)$.
+
+\pause
+\medskip
+
+\thus \quad $h$ is differentiable at $c$
+\pause
+and $h'(c) = f'\bigl(g(c)\bigr)g'(c)$.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Exercise:}
+Prove the following simple version of L'H\^opital's rule:
+
+\pause
+Suppose 
+$f \colon (a,b) \to \R$ and $g \colon (a,b) \to \R$ are differentiable
+functions
+whose derivatives $f'$ and $g'$ are continuous functions.
+\pause
+Suppose that at $c \in (a,b)$, $f(c) = 0$, $g(c)=0$,
+$g'(x) \not= 0$ for all $x \in (a,b)$, and
+$g(x) \not= 0$ whenever $x \not= c$.
+
+\pause
+\medskip
+
+Note
+that the limit of $\nicefrac{f'(x)}{g'(x)}$ as $x$ goes to $c$ exists.
+
+\pause
+\medskip
+
+Show that
+\begin{equation*}
+\lim_{x \to c} \frac{f(x)}{g(x)} = 
+\lim_{x \to c} \frac{f'(x)}{g'(x)} .
+\end{equation*}
+\end{frame}
+
+\end{document}

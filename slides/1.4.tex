@@ -1,0 +1,272 @@
+\documentclass[10pt,aspectratio=149]{beamer}
+
+% All the boilerplate is in ac1slides.sty
+% Note that this also pulls in a custom vogtwidebar.sty
+\usepackage{ac1slides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Departemento pri Matematiko de Oklahoma {\^S}tata Universitato}
+
+\title{BA: 1.4}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+For $a < b$, define the intervals:
+
+\medskip
+\pause
+
+$[a,b] \coloneqq \{ x \in \R : a \leq x \leq b \}$
+\quad (closed interval)
+
+\pause
+
+$(a,b) \coloneqq \{ x \in \R : a < x < b \}$
+\quad (open interval)
+
+\pause
+
+$(a,b] \coloneqq \{ x \in \R : a < x \leq b \}$
+\quad (half-open interval)
+
+\pause
+
+$[a,b) \coloneqq \{ x \in \R : a \leq x < b \}$
+\quad (half-open interval)
+
+\pause
+\medskip
+
+Those were bounded intervals.  Also define unbounded intervals:
+
+\medskip
+\pause
+
+$[a,\infty) \coloneqq \{ x \in \R : a \leq x \}$
+
+\pause
+
+$(a,\infty) \coloneqq \{ x \in \R : a < x \}$
+
+\pause
+
+$(-\infty,b] \coloneqq \{ x \in \R : x \leq b \}$
+
+\pause
+
+$(-\infty,b) \coloneqq \{ x \in \R : x < b \}$
+
+\pause
+
+$(-\infty,\infty) \coloneqq \R$
+
+\pause
+
+\begin{proposition}
+A set $I \subset \R$ is an interval if and only if
+$I$ contains at least 2 points and
+for all $a,c \in I$ and $b \in \R$ such that $a < b < c$, we have $b \in I$.
+\end{proposition}
+
+\pause
+
+Proof is an exercise.
+
+\end{frame}
+
+\begin{frame}
+Set theoretically intervals have the same size.
+
+\medskip
+\pause
+
+$f(x)\coloneqq 2x$ is a bijection from $[0,1]$ to $[0,2]$
+
+\medskip
+\pause
+
+$f(x) \coloneqq \tan(x)$ is a bijection from $(-\nicefrac{\pi}{2},\nicefrac{\pi}{2})$ to $\R$
+
+\medskip
+\pause
+
+Bijection from $[0,1]$ to $(0,1)$ is harder but possible.
+
+\medskip
+\pause
+
+We saw that uncountable sets exist: e.g., $\sP(\N)$.
+
+\pause
+
+\begin{theorem}[Cantor]
+$\R$ is uncountable.
+\end{theorem}
+
+\pause
+
+So any interval is uncountable.
+
+\medskip
+\pause
+
+Also, the set $\R \setminus \Q$ is uncountable.
+
+\medskip
+\pause
+
+We'll give essentially Cantor's original 1874 proof.
+
+\end{frame}
+
+\begin{frame}
+\textbf{Proof:}
+Suppose $X \subset \R$ is countably infinite such that
+
+for every pair of real numbers $a < b$, there is an $x \in X$ such that
+$a < x < b$.
+
+\pause
+
+Were $\R$ countable, we could take $X=\R$.  \qquad We'll show $X \subsetneq \R$.
+
+\medskip
+\pause
+
+Write $X = \{ x_1, x_2, x_3, \ldots \}$ \quad ($X$ is countably infinite).
+
+\pause
+We construct two sequences
+$a_1,a_2,a_3,\ldots$ and
+$b_1,b_2,b_3,\ldots$
+
+\pause
+Let $a_1 \coloneqq x_1$ and $b_1 \coloneqq x_1+1$.
+
+\pause
+Note that $a_1 < b_1$ and $x_1 \notin (a_1,b_1)$.
+
+\pause
+Suppose for some $k > 1$, 
+$a_{j}$ and $b_{j}$ have been defined for $j=1,2,\ldots,k-1$,
+
+\pause
+for each such $j$, suppose $x_\ell \notin (a_{j},b_{j})$ for $\ell=1,2,\ldots,j$,
+
+\pause
+and suppose
+$a_1 < a_2 < \cdots < a_{k-1} < b_{k-1} < \cdots < b_2 < b_1$.
+
+\medskip
+\pause
+
+Set $a_k \coloneqq x_n$, where $n$ is the smallest $n \in \N$
+such that $x_n \in (a_{k-1},b_{k-1})$.
+
+\pause
+$x_n$ exists by assumption on $X$.
+\quad $n \geq k$ by assumption on $(a_{k-1},b_{k-1})$.
+
+\pause
+Define $b_k$ to be any real number in $(a_k,b_{k-1})$.
+
+\medskip
+\pause
+
+Note $a_{k-1} < a_k < b_k < b_{k-1}$, and
+
+\pause
+$x_k \notin (a_{k},b_{k})$ and hence
+$x_j \notin (a_{k},b_{k})$ 
+for $x_j$ for $j=1,2,\ldots,k$.
+
+\pause
+The two sequences are now defined.
+
+\end{frame}
+
+\begin{frame}
+We have two sequences such that
+
+for each $j$, suppose $x_\ell \notin (a_{j},b_{j})$ for $\ell=1,2,\ldots,j$,
+
+and 
+$a_1 < a_2 < \cdots < a_{k} < b_{k} < \cdots < b_2 < b_1$ (for every $k$).
+
+\medskip
+\pause
+
+\textbf{Claim:} \emph{$a_n < b_m$ for all $n$ and $m$ in $\N$.}
+
+\pause
+\textbf{Proof of claim:}
+Suppose $n < m$ \pause \wthus
+$a_n < a_{n+1} < \cdots < a_{m-1} < a_m < b_m$.
+
+\pause
+Similarly for $n > m$.  The claim follows.
+
+\medskip
+\pause
+
+Let $A \coloneqq \{ a_n : n \in \N \}$ and $B \coloneqq \{ b_n : n \in \N \}$.
+
+\pause
+By the claim, \quad $\sup\, A \leq \inf\, B$.
+
+\pause
+Define $y \coloneqq \sup\, A$.
+
+\pause
+$y \notin A$: If $y=a_n$ for some $n$, then $y < a_{n+1}$, which is impossible.
+
+\pause
+$y \notin B$: Similar.
+
+\pause
+So $a_n < y < b_n$ for all $n \in \N$ \quad or \quad $y \in (a_n,b_n)$ for
+all $n \in \N$.
+
+\pause
+For every $n \in \N$, $x_n \not\in (a_n,b_n)$, so $y \not= x_n$.
+
+\pause
+\thus \quad $y \notin X$ \pause \wthus $X \subsetneq \R$ \pause \wthus $\R$
+is uncountable.
+\qed
+\end{frame}
+
+\begin{frame}
+\textbf{Remark:}
+Cantor's paper was (perhaps oddly) about algebraic numbers:
+
+\medskip
+\pause
+
+$x \in \R$ is \emph{algebraic} if $x$ is a root of a polynomial with
+integer coefficients, in other words, $a_n x^n + a_{n-1} x^{n-1}  + \cdots
++ a_1 x + a_0 = 0$ where all $a_j \in \Z$.
+
+\medskip
+\pause
+
+There are only countably many algebraic numbers (exercise).
+
+\medskip
+\pause
+
+Cantor's theorem shows $\exists$ non-algebraic (transcendental)
+numbers.
+
+\end{frame}
+
+\end{document}

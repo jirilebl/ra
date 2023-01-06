@@ -1,0 +1,495 @@
+\documentclass[10pt,aspectratio=149]{beamer}
+
+% All the boilerplate is in ac1slides.sty
+% Note that this also pulls in a custom vogtwidebar.sty
+\usepackage{ac1slides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Departemento pri Matematiko de Oklahoma {\^S}tata Universitato}
+
+\title{BA: 0.3 part 3}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+Elements of sets can have relations.
+
+E.g., $1 < 2$
+for natural numbers, or $\nicefrac{1}{2} = \nicefrac{2}{4}$ for rational
+numbers, or $\{ a,c \} \subset \{ a,b,c \}$ for sets.  The `$<$', `$=$', and
+`$\subset$' are examples of \emph{relations}.
+
+\pause
+
+\begin{definition}
+Given a set $A$, a \emph{binary relation} on $A$
+is a subset $\sR \subset A \times A$,
+which are those pairs where the relation is said to hold.
+Instead of $(a,b) \in \sR$, we write
+$a \, \sR \, b$.
+\end{definition}
+
+\pause
+\textbf{Example:}
+Take $A \coloneqq \{ 1,2,3 \}$.
+Consider `$<$'.
+
+\pause
+\medskip
+
+The corresponding set 
+of pairs is $\bigl\{ (1,2), (1,3), (2,3) \bigr\}$.
+
+\pause
+\medskip
+
+$1 < 2$ holds as $(1,2)$ is in the corresponding set of pairs,
+\pause
+
+$3 < 1$ does not hold as $(3,1)$ is not in the set.
+
+\medskip
+\pause
+
+The relation `$=$'
+is defined by $\bigl\{ (1,1), (2,2), (3,3) \big\}$.
+
+\medskip
+\pause
+
+Any subset of $A \times A$ is a relation.
+\pause
+
+E.g., define the relation
+$\dagger$ via $\bigl\{ (1,2), (2,1), (2,3), (3,1) \bigr\}$,
+
+\pause
+then $1 \dagger 2$ and
+$3 \dagger 1$ are
+true, but $1 \dagger 3$ is not.
+\end{frame}
+
+\begin{frame}
+
+\begin{definition}
+Let $\sR$ be a relation on a set $A$.
+\pause
+Then $\sR$ is
+\begin{enumerate}[(i)]
+\item
+\emph{Reflexive} if $a\, \sR \, a$ for
+all $a \in A$.
+\pause
+\item
+\emph{Symmetric} if $a\, \sR \, b$ implies
+$b \, \sR \, a$.
+\pause
+\item
+\emph{Transitive} if $a\, \sR \, b$ and
+$b \, \sR \, c$ implies $a\, \sR \, c$.
+\end{enumerate}
+\pause
+If $\sR$ is reflexive, symmetric, and transitive, then it is
+an \emph{equivalence relation}.
+\end{definition}
+\pause
+
+\textbf{Example:} Consider $A \coloneqq \{ 1,2,3 \}$.
+
+\medskip
+\pause
+
+Relation `$<$' given by
+$\bigl\{ (1,2), (1,3), (2,3) \bigr\}$
+is transitive, but neither reflexive nor symmetric.
+
+\medskip
+\pause
+
+Relation `$\leq$' given by
+$\bigl\{ (1,1), (1,2), (1,3), (2,2), (2,3), (3,3) \bigr\}$
+is reflexive and transitive, but not symmetric.
+
+\medskip
+\pause
+
+Relation `$=$' given by
+$\bigl\{ (1,1), (2,2), (3,3) \bigr\}$ is
+an equivalence relation.
+
+\medskip
+\pause
+
+Relation `$\star$' given by
+$\bigl\{ (1,1), (1,2), (2,1), (2,2), (3,3) \bigr\}$ is
+an equivalence relation.
+
+\end{frame}
+
+\begin{frame}
+
+\begin{definition}
+Let $A$ be a set and $\sR$ an equivalence relation.
+An \emph{equivalence class} of $a \in A$, denoted
+by $[a]$, is the set $\{ x \in A : a\, \sR \, x \}$.
+\end{definition}
+
+\pause
+\textbf{Example:}
+For $A \coloneqq \{ 1,2,3 \}$ and
+`$\star$' defined by
+$\bigl\{ (1,1), (1,2), (2,1), (2,2), (3,3) \bigr\}$,
+there are two equivalence classes,
+$[1] = [2] = \{ 1,2 \}$ and $[3] = \{ 3 \}$.
+
+\medskip
+\pause
+
+Reflexivity $\Rightarrow$ $a \in [a]$.
+
+\pause
+Symmetry $\Rightarrow$ if $b \in [a]$, then $a \in [b]$.
+
+\pause
+Transitivity $\Rightarrow$
+if $a \in [b]$ and $b \in [c]$, then $a \in [c]$.
+
+\pause
+
+\begin{proposition}
+If $\sR$ is an equivalence relation on a set $A$,
+then every $a \in A$ is in exactly one
+equivalence class.  Moreover, $a\, \sR \, b$ ~\iffif~ $[a] = [b]$.
+\end{proposition}
+
+\pause
+Proof is an exercise.
+
+\pause
+\medskip
+
+\textbf{Example:}
+$\Q$ can be defined as the set of equivalence classes on
+$\Z \times \N$ under the relation
+$(a,b) \sim (c,d)$ when $ad = bc$ (exercise).
+\pause
+We write
+$\bigl[(a,b)\bigr]$ as $\nicefrac{a}{b}$.
+
+\end{frame}
+
+\begin{frame}
+What is the ``size'' of sets?
+
+\pause
+
+\begin{definition}
+Let $A$ and $B$ be sets.  $A$ and $B$ have the same
+\emph{cardinality}
+if $\exists$ a bijection $f \colon A \to B$.
+\pause
+Denote by $\abs{A}$ the equivalence class of all sets with the same cardinality as
+$A$ and we call $\abs{A}$ the cardinality of $A$.
+\end{definition}
+
+\pause
+Existence of a bijection really is an equivalence relation:
+
+\pause
+$f \colon A \to A$, ~ $f(x) \coloneqq x$, ~ is a bijection \wthus reflexivity.
+
+\pause
+If $f \colon A \to B$ is a bijection, then so is $f^{-1} \colon B \to A$ \wthus symmetry.
+
+\pause
+If $f \colon A \to B$ and $g \colon B \to C$ are bijections, then
+$g \circ f \colon A \to C$ is a bijection
+
+\wthus transitivity.
+
+\medskip
+\pause
+
+\textbf{Example:}
+$\{ 1,2,3 \}$ has the same cardinality as $\{ a,b,c \}$.
+\pause
+Example bijection: $f(1) \coloneqq a$, $f(2) \coloneqq b$, $f(3) \coloneqq c$.
+\pause  The bijection is \emph{not} unique.
+
+\medskip
+\pause
+
+\textbf{Example:}
+The set $E$ of even natural numbers has the same cardinality as $\N$.
+
+\pause
+Proof:
+Given $k \in E$, write $k=2n$ for some $n \in \N$.
+\pause
+So
+$f(n) \coloneqq 2n$ defines a bijection $f \colon \N \to E$.
+
+\end{frame}
+
+\begin{frame}
+
+\begin{definition}
+Write
+$\abs{A} \leq \abs{B}$
+if there exists an injection from $A$ to $B$.
+
+\pause
+Write $\abs{A} < \abs{B}$
+if $\abs{A} \leq \abs{B}$, but
+$\abs{A} \not= \abs{B}$.
+\end{definition}
+
+\pause
+\textbf{Remark:}
+It is not a trivial theorem (Cantor--Bernstein--Schr\"oder theorem) that
+$\abs{A} = \abs{B}$ if and only if
+$\abs{A} \leq \abs{B}$ and
+$\abs{B} \leq \abs{A}$.
+
+\medskip
+\pause
+
+\textbf{Remark:}
+If $A$ and $B$ are any two sets,
+we can always write $\abs{A} \leq \abs{B}$ or
+$\abs{B} \leq \abs{A}$.  But this is \emph{very} subtle.
+
+\pause
+\medskip
+
+$\abs{A} = \abs{\emptyset}$ $\Leftrightarrow$ $A = \emptyset$
+\quad
+If $B \not= \emptyset$,
+no $f \colon B \to \emptyset$ can exist.
+
+\pause
+Write $\abs{\emptyset} = 0$.
+
+\medskip
+\pause
+
+If $\abs{A} = \abs{\{ 1,2,3,\ldots,n \}}$ for $n \in \N$, write
+$\abs{A} = n$ (exercise: such $n$ is unique).
+
+\pause
+
+\begin{definition}
+$A$ is \emph{finite} if $\abs{A} \in \N$ or $\abs{A}=0$.
+
+\pause
+Otherwise $A$ is \emph{infinite}.
+
+\pause
+$A$ is \emph{countably infinite} if $\abs{A} = \abs{\N}$.
+\qquad (often denoted $\abs{\N} = \aleph_0$)
+
+\pause
+$A$ is \emph{countable} if $A$ is finite or countably infinite.
+
+\pause
+If $A$ is not countable, then it is \emph{uncountable}.
+\end{definition}
+\end{frame}
+
+\begin{frame}
+%\emph{Remark:}
+%A set is infinite if and only if it is in one-to-one
+%correspondence with a proper subset of itself.
+%
+%\pause
+%We skip the proof as this is again \emph{very} subtle and not necessary for us.
+%
+%\medskip
+%\pause
+
+\textbf{Example:}
+$\abs{\N \times \N} = \abs{\N}$.
+
+\medskip
+\pause
+Sketch of proof: Arrange 
+$\N \times \N$ as
+%$(1,1)$, $(1,2)$, $(2,1)$, $(1,3)$, $(2,2)$, $(3,1)$, \ldots.
+
+%\medskip
+
+\hspace*{1in}\subimport*{../figures/}{NcrossNcard.pdf_t}
+
+%\medskip
+\pause
+
+Define a bijection by $f(1) \coloneqq (1,1)$, $f(2) \coloneqq (1,2)$, etc.
+
+\medskip
+\pause
+
+
+%\end{frame}
+
+%\begin{frame}
+
+\textbf{Example:}
+$\abs{\Q}=\abs{\N}$.
+
+\medskip
+\pause
+Sketch of proof:
+For positive $\Q$,
+as for $\N \times \N$, write
+$\nicefrac{1}{1}$, $\nicefrac{1}{2}$, $\nicefrac{2}{1}$, etc.,
+then cross out any pair such as $\nicefrac{2}{2}$ that
+has already appeared as a rational number.
+
+\pause
+For all $\Q$, also include $0$ and the negatives:
+$0$,
+$\nicefrac{1}{1}$,
+$\nicefrac{-1}{1}$,
+$\nicefrac{1}{2}$,
+$\nicefrac{-1}{2}$,
+$\nicefrac{2}{1}$,
+$\nicefrac{-2}{1}$,
+etc.
+
+%\medskip
+%\pause
+%
+%From the exercises:
+%
+%\pause
+%
+%\emph{If $A \subset
+%B$ and $B$ is countable, then $A$ is countable.}
+%
+%\pause
+%
+%In other words, if $A \subset B$, and $A$ is
+%uncountable, then $B$ is uncountable.
+%
+%\pause
+%
+%As a consequence, if $\abs{A} < \abs{\N}$, then $A$ is
+%finite.
+%
+%\pause
+%
+%Also, \emph{if $B$ is finite and $A \subset B$, then $A$ is finite.}
+%
+\end{frame}
+
+\begin{frame}
+
+\begin{definition}
+The \emph{power set} of a set $A$, denoted by $\sP(A)$,
+is the set of all subsets of $A$.
+\end{definition}
+
+\pause
+
+E.g., if $A \coloneqq \{ 1,2\}$, then $\sP(A) = \bigl\{ \emptyset, \{ 1 \}, \{ 2 \}, \{ 1, 2 \} \bigr\}$.
+
+\pause
+$\abs{A} = 2$ and $\abs{\sP(A)} = 4 = 2^2$.
+
+\medskip
+\pause
+
+Exercise: If $\abs{A} = n \in \N$, then $\abs{\sP(A)} = 2^n$.
+
+\medskip
+\pause
+
+So if $A$ is finite, $\abs{A} = n < 2^n = \abs{\sP(A)}$.
+
+\medskip
+\pause
+
+Interestingly, it works for infinite sets too:
+
+\begin{theorem}[Cantor]
+$\abs{A} < \abs{\sP(A)}$ for any set $A$.
+\end{theorem}
+
+%\pause
+%
+%In particular, no surjection from
+%$A$ onto $\sP(A)$ exists.
+
+\end{frame}
+
+\begin{frame}
+
+\begin{theorem}[Cantor]
+$\abs{A} < \abs{\sP(A)}$ for any set $A$.
+\end{theorem}
+
+\pause
+
+\textbf{Proof:}
+$f \colon A \to \sP(A)$ defined by
+$f(x) \coloneqq \{ x \}$ is injective \pause $\Rightarrow$
+$\abs{A} \leq \abs{\sP(A)}$.
+
+\medskip
+\pause
+
+We must show no surjection exists.
+
+\pause
+
+Suppose $g \colon A \to \sP(A)$ is a function.
+Define
+\[
+B \coloneqq \bigl\{ x \in A : x \notin g(x) \bigr\} .
+\]
+\pause
+Claim: $B$ is not in $g(A)$.
+
+\pause
+Suppose for contradiction $g(x_0) = B$ for some $x_0 \in A$.
+
+\pause
+Either $x_0 \in B$ or $x_0 \notin B$.
+
+\pause
+$x_0 \in B$ \wthus $x_0 \notin g(x_0) = B$, \quad a contradiction.
+
+\pause
+$x_0 \notin B$ \wthus $x_0 \in g(x_0) = B$, \quad a contradiction.
+
+\pause
+\thus ~
+No such $x_0$ exists
+\pause
+\wthus $g$ is not a surjection
+\pause
+\wthus no surjection exists.
+\qed
+
+\medskip
+\pause
+
+\emph{Consequence:} Uncountable sets exist, e.g., $\sP(\N)$.
+
+\medskip
+\pause
+
+In fact,
+$\abs{\N} < \abs{\sP(\N)} < \abs{\sP(\sP(\N))} < \abs{\sP(\sP(\sP(\N)))}$, etc.
+
+\end{frame}
+
+\end{document}

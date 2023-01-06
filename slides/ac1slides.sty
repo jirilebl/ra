@@ -1,0 +1,190 @@
+\usepackage{etex}
+
+\mode<handout>
+\usepackage{pgfpages}
+\pgfpagesuselayout{4 on 1}[letterpaper,border shrink=5mm,landscape]
+%\pgfpagesuselayout{2 on 1}[letterpaper,border shrink=5mm]
+\setbeamercolor{background canvas}{bg=black!2}
+\mode
+<all>
+
+%\setbeamercovered{transparent=15}
+%\setbeamercovered{highly dynamic}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage[all]{xy}
+\usepackage{floatflt}
+\usepackage{booktabs}
+\usepackage{nicefrac}
+\usepackage{bbding}
+\usepackage{tikz}
+\usepackage{floatflt}
+\usepackage{import}
+\usepackage{vogtwidebar}
+\usepackage{faktor}
+
+\usepackage{tikz}
+\usetikzlibrary{cd}
+\usepackage{rotating}
+
+\usefonttheme{serif}
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage{concmath}
+
+\usepackage[theoremfont]{newpxtext}
+\usepackage[vvarbb]{newpxmath}
+\linespread{1.05}
+\usepackage[scr=boondoxo]{mathalfa} % but we want the nice fancy script fonts
+
+\usepackage[T1]{fontenc}
+
+
+\usepackage{mathtools}
+
+
+% useful
+\newcommand{\ignore}[1]{}
+
+% analysis/geometry stuff
+\newcommand{\ann}{\operatorname{ann}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\Orb}{\operatorname{Orb}}
+\newcommand{\hol}{\operatorname{hol}}
+\newcommand{\aut}{\operatorname{aut}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\codim}{\operatorname{codim}}
+\newcommand{\sing}{\operatorname{sing}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\Arg}{\operatorname{Arg}}
+\newcommand{\Log}{\operatorname{Log}}
+
+% reals
+\newcommand{\esssup}{\operatorname{ess~sup}}
+\newcommand{\essran}{\operatorname{essran}}
+\newcommand{\innprod}[2]{\langle #1 | #2 \rangle}
+\newcommand{\linnprod}[2]{\langle #1 , #2 \rangle}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Nul}{\operatorname{Nul}}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\abs}[1]{\left\lvert {#1} \right\rvert}
+\newcommand{\norm}[1]{\left\lVert {#1} \right\rVert}
+\newcommand{\sabs}[1]{\lvert {#1} \rvert}
+\newcommand{\snorm}[1]{\lVert {#1} \rVert}
+\newcommand{\babs}[1]{\bigl\lvert {#1} \bigr\rvert}
+\newcommand{\bnorm}[1]{\bigl\lVert {#1} \bigr\rVert}
+\newcommand{\Babs}[1]{\Bigl\lvert {#1} \Bigr\rvert}
+\newcommand{\Bnorm}[1]{\Bigl\lVert {#1} \Bigr\rVert}
+\newcommand{\bbabs}[1]{\biggl\lvert {#1} \biggr\rvert}
+\newcommand{\bbnorm}[1]{\biggl\lVert {#1} \biggr\rVert}
+\newcommand{\BBabs}[1]{\Biggl\lvert {#1} \Biggr\rvert}
+\newcommand{\BBnorm}[1]{\Biggl\lVert {#1} \Biggr\rVert}
+
+
+% sets (some)
+\newcommand{\C}{{\mathbb{C}}}
+\newcommand{\R}{{\mathbb{R}}}
+\newcommand{\Z}{{\mathbb{Z}}}
+\newcommand{\N}{{\mathbb{N}}}
+\newcommand{\Q}{{\mathbb{Q}}}
+\newcommand{\D}{{\mathbb{D}}}
+\newcommand{\F}{{\mathbb{F}}}
+
+% consistent
+\newcommand{\bB}{{\mathbb{B}}}
+\newcommand{\bC}{{\mathbb{C}}}
+\newcommand{\bR}{{\mathbb{R}}}
+\newcommand{\bZ}{{\mathbb{Z}}}
+\newcommand{\bN}{{\mathbb{N}}}
+\newcommand{\bQ}{{\mathbb{Q}}}
+\newcommand{\bD}{{\mathbb{D}}}
+\newcommand{\bF}{{\mathbb{F}}}
+\newcommand{\bH}{{\mathbb{H}}}
+\newcommand{\bO}{{\mathbb{O}}}
+\newcommand{\bP}{{\mathbb{P}}}
+\newcommand{\bK}{{\mathbb{K}}}
+\newcommand{\bV}{{\mathbb{V}}}
+\newcommand{\CP}{{\mathbb{CP}}}
+\newcommand{\RP}{{\mathbb{RP}}}
+\newcommand{\HP}{{\mathbb{HP}}}
+\newcommand{\OP}{{\mathbb{OP}}}
+\newcommand{\sA}{{\mathcal{A}}}
+\newcommand{\sB}{{\mathcal{B}}}
+\newcommand{\sC}{{\mathcal{C}}}
+\newcommand{\sF}{{\mathcal{F}}}
+\newcommand{\sG}{{\mathcal{G}}}
+\newcommand{\sH}{{\mathcal{H}}}
+\newcommand{\sM}{{\mathcal{M}}}
+\newcommand{\sO}{{\mathcal{O}}}
+\newcommand{\sP}{{\mathcal{P}}}
+\newcommand{\sQ}{{\mathcal{Q}}}
+\newcommand{\sR}{{\mathcal{R}}}
+\newcommand{\sS}{{\mathcal{S}}}
+\newcommand{\sI}{{\mathcal{I}}}
+\newcommand{\sL}{{\mathcal{L}}}
+\newcommand{\sK}{{\mathcal{K}}}
+\newcommand{\sU}{{\mathcal{U}}}
+\newcommand{\sV}{{\mathcal{V}}}
+\newcommand{\sX}{{\mathcal{X}}}
+\newcommand{\sY}{{\mathcal{Y}}}
+\newcommand{\sZ}{{\mathcal{Z}}}
+\newcommand{\fS}{{\mathfrak{S}}}
+
+\newcommand{\interior}{\operatorname{int}}
+
+% Topo stuff
+\newcommand{\id}{\textit{id}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Tor}{\operatorname{Tor}}
+\newcommand{\Torsion}{\operatorname{Torsion}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\Hom}{\operatorname{Hom}}
+
+%extra thingies
+%\newcommand{\mapsfrom}{\ensuremath{\text{\reflectbox{$\mapsto$}}}}
+\newcommand{\from}{\ensuremath{\leftarrow}}
+\newcommand{\dhat}[1]{\hat{\hat{#1}}}
+
+\newcommand{\thus}{$\Rightarrow$}
+\newcommand{\wthus}{\quad$\Rightarrow$\quad}
+\newcommand{\wwthus}{\qquad$\Rightarrow$\qquad}
+\newcommand{\contradiction}{$\Rightarrow\Leftarrow$}
+\newcommand{\iffif}{$\Leftrightarrow$}
+\newcommand{\wiffif}{\quad$\Leftrightarrow$\quad}
+\newcommand{\wwiffif}{\qquad$\Leftrightarrow$\qquad}
+
+\newcommand{\myindex}[1]{#1}
+
+\newtheorem{theoremstar}[theorem]{Theorem*}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{natquestion}[theorem]{Natural question}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{proposition}[theorem]{Proposition}
+
+
+\useoutertheme{shadow}
+\setbeamertemplate{footline}{}
+%\setbeamertemplate{footline}{{\color{gray}\insertframenumber\,/\,\inserttotalframenumber}}
+%\setbeamertemplate{navigation symbols}{}%remove navigation symbols 
+\setbeamertemplate{navigation symbols}{{\color{gray}\insertframenumber\,/\,\inserttotalframenumber}}
+%\setbeamertemplate{navigation symbols}{\insertframenumber\,/\,\inserttotalframenumber}%remove navigation symbols 
+\useinnertheme[shadow]{rounded}
+%\setbeamertemplate{items}{\raisebox{-4pt}{\Large \HandCuffRight}}
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true,shadow=false]
+\setbeamertemplate{part page}[default][colsep=-4bp,rounded=true,shadow=false]
+\setbeamercolor{structure}{fg=darkred!60!black}
+\usecolortheme{beaver}
+\usecolortheme{rose}
+\setbeamercolor{block title}{fg=darkred!60!black,bg=gray!20!white}
+\setbeamercolor{titlelike}{parent=palette primary,fg=darkred!60!black,bg=white}
+
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{enumerate subitems}[default]
+\setbeamertemplate{enumerate subsubitems}[default]
