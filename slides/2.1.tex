@@ -26,9 +26,6 @@ A \emph{sequence} (in $\R$) is a function $x \colon \N \to
 we write
 \begin{equation*}
 \{ x_n \}_{n=1}^\infty .
-%\quad \text{or} \quad
-%\{ x_n \} 
-%\quad \text{for short.}
 \end{equation*}
 \pause
 $\{ x_n \}_{n=1}^\infty$ is \emph{bounded} if
@@ -120,7 +117,15 @@ once we know $\epsilon$.
 
 \begin{frame}
 \centering
-\subimport*{../figures/}{sequence-convergence_full.pdf_t}
+\scalebox{0.9}{
+\includegraphics{../figures/sequence-convergence}
+}
+
+\medskip
+
+\scalebox{0.9}{
+\includegraphics{../figures/sequence-convergence-2}
+}
 \end{frame}
 
 \begin{frame}
@@ -130,7 +135,7 @@ $\{ 1 \}_{n=1}^\infty$ converges to 1.  \pause
 Proof: Given $\epsilon > 0$, let $M=1$.
 
 \pause
-Then for $n \geq M=1$, we have
+Then for $n \geq M=1$, \quad
 $\abs{x_n-x} = \abs{1-1} = 0 < \epsilon$.
 
 \medskip
@@ -235,7 +240,7 @@ Hence the limit (if it exists) is unique.
 \medskip
 \pause
 
-\textbf{Remark:} Note the technique.  A quantity to be shown as zero, is
+\textbf{Remark:} Note the technique.  A quantity to be shown as zero is
 written as a sum of two things that are small.
 \end{frame}
 
@@ -341,8 +346,9 @@ $\lim\limits_{n\to\infty} \frac{n^2+1}{n^2+n} = 1$.
 \medskip
 \pause
 
-\textbf{Remark:} Sometimes you must throw something away
+\textbf{Remark:} Sometimes you throw something away
 to make things simpler.
+
 \pause
 Just don't throw away too much.
 
@@ -386,7 +392,9 @@ $\{ {(-1)}^n \}_{n=1}^\infty$ is not monotone.
 \textbf{Example:} Monotone increasing sequence:
 
 \begin{center}
+\scalebox{0.9}{
 \includegraphics{../figures/sequence-increasing}
+}
 \end{center}
 
 \end{frame}
