@@ -130,8 +130,8 @@ $M$ can depend on $\epsilon$, so we only pick an $M$ once we know
 $\epsilon$.  Let us illustrate convergence on a few examples.
 
 \begin{example}
-The constant sequence $1,1,1,1,\ldots$ is convergent and the limit is 1.  For
-every $\epsilon > 0$, we pick $M = 1$.
+The constant sequence $1,1,1,1,\ldots$ converges to 1.  For
+every $\epsilon > 0$, pick $M = 1$.  That is, $\sabs{x_n-x} = \sabs{1-1} < \epsilon$ for all $n$.
 \end{example}
 
 \begin{example}
@@ -139,12 +139,14 @@ Claim: \emph{The sequence $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ is convergent and
 \begin{equation*}
 \lim_{n\to \infty} \frac{1}{n} = 0 .
 \end{equation*}
-Proof: Given an $\epsilon > 0$, we find an $M \in \N$ such that
+Proof: Given an $\epsilon > 0$, find an $M \in \N$ such that
 $0 < \nicefrac{1}{M} < \epsilon$
 (\hyperref[thm:arch:i]{Archimedean property} at work).
-Then for all $n \geq M$,
+For all $n \geq M$,
 \begin{equation*}
-\abs{x_n - 0} = \abs{\frac{1}{n}} = \frac{1}{n} \leq \frac{1}{M} < \epsilon .
+\abs{x_n - x}
+=
+\abs{\frac{1}{n} - 0} = \abs{\frac{1}{n}} = \frac{1}{n} \leq \frac{1}{M} < \epsilon .
 \end{equation*}
 \end{example}
 
@@ -153,18 +155,17 @@ The sequence $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ is divergent.  Proof: If th
 were a limit $x$, then for $\epsilon = \frac{1}{2}$ we expect an $M$ that
 satisfies the definition.  Suppose
 such an $M$ exists.
-Then for an even $n \geq M$ we compute
+Then for an even $n \geq M$, we compute
 \begin{equation*}
 \nicefrac{1}{2} > \abs{x_n - x}  = \abs{1 - x}
 \qquad \text{and} \qquad
 \nicefrac{1}{2} > \abs{x_{n+1} - x}  = \abs{-1 - x} .
 \end{equation*}
-But
+And we obtain a contradiction
 \begin{equation*}
 2 = \abs{1 - x - (-1 -x)} \leq
-\abs{1 - x} + \abs{-1 -x} < \nicefrac{1}{2} + \nicefrac{1}{2} = 1 ,
+\abs{1 - x} + \abs{-1 -x} < \nicefrac{1}{2} + \nicefrac{1}{2} = 1 .
 \end{equation*}
-and that is a contradiction.
 \end{example}
 
 \begin{prop} \label{prop:limisunique}
@@ -1256,11 +1257,12 @@ divide by zero.
 Then we must find out if the sequence converges.  Only then
 can we attempt to find the limit.
 
-So let us prove 
-$x_n$ exists and $x_n > 0$ for all $n$ (so the sequence is well-defined
-and bounded below).
+So let us prove that for all $n$ 
+$x_n$ exists and $x_n > 0$
+(so the sequence is well-defined and bounded below).
 Let us show this by \hyperref[induction:thm]{induction}.  We know that
-$x_1 = 2 > 0$.  For the induction step, suppose $x_n > 0$.  Then
+$x_1 = 2 > 0$.  For the induction step, suppose $x_n$ exists and
+$x_n > 0$.  Then
 \begin{equation*}
 x_{n+1} = x_n - \frac{x_n^2-2}{2x_n} =
 \frac{2x_n^2 - x_n^2+2}{2x_n} =
@@ -1268,7 +1270,7 @@ x_{n+1} = x_n - \frac{x_n^2-2}{2x_n} =
 \end{equation*}
 It is always true that $x_n^2+2 > 0$,
 and as
-$x_n > 0$, then $\frac{x_n^2+2}{2x_n} > 0$ and hence $x_{n+1} > 0$.
+$x_n > 0$, then $x_{n+1} = \frac{x_n^2+2}{2x_n} > 0$.
 
 Next let us
 show that the sequence is monotone decreasing.  If we show that
