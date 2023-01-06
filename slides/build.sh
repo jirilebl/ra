@@ -8,5 +8,8 @@ for n in *.tex ; do
 	rubber -d $n
 done
 
+echo =============================
+echo Making raslides.zip
+
 rm -f raslides.zip
 zip raslides *.pdf
