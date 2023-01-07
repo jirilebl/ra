@@ -1,4 +1,3 @@
-
 \documentclass[10pt,aspectratio=149]{beamer}
 
 % All the boilerplate is in ac1slides.sty
@@ -86,7 +85,11 @@ $\{x_n\}_{n=1}^\infty$ converges to $x$.
 \pause
 \medskip
 
+\begin{center}
+\scalebox{0.9}{
 \subimport*{../figures/}{figsqueeze.pdf_t}
+}
+\end{center}
 
 \end{frame}
 
@@ -196,15 +199,18 @@ $\epsilon > 0$ is arbitrary
 
 \begin{corollary}
 \begin{enumerate}[(i)]
-\item If $\{ x_n \}_{n=1}^\infty$ is a convergent sequence such that $x_n \geq 0$,
+\item If $\{ x_n \}_{n=1}^\infty$ is convergent
+such that $x_n \geq 0$ $\forall$ $n \in \N$,
 then
+\quad
 $\displaystyle
 \lim_{n\to\infty} x_n \geq 0$.
 \item\pause
 Let $a,b \in \R$ and
-let $\{ x_n \}_{n=1}^\infty$ be a convergent sequence such that
-$a \leq x_n \leq b$,
-for all $n \in \N$.
+$\{ x_n \}_{n=1}^\infty$ be convergent such that
+$a \leq x_n \leq b$
+$\forall$ $n \in \N$.
+
 Then
 $\displaystyle a \leq \lim_{n\to\infty} x_n \leq b$.
 \end{enumerate}
@@ -299,7 +305,9 @@ c + \lim_{n \to \infty} x_n$, \qquad etc.
 \medskip
 
 Suppose $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ are convergent,
+~
 $\displaystyle x \coloneqq \lim_{n\to\infty} x_n$,
+~
 $\displaystyle y \coloneqq \lim_{n\to\infty} y_n$.
 
 \pause
@@ -695,13 +703,15 @@ $x_n^2+2 > 0$ and $x_n > 0$,
 and so
 $x_{n+1} = \frac{x_n^2+2}{2x_n} > 0$.
 
+\medskip
 \pause
+
 By induction $\{ x_n \}_{n=1}^\infty$ exists and $x_n > 0$ for all $n$.
 
 \medskip
 \pause
 
-We claim $\{ x_n \}_{n=1}^\infty$ is is monotone decreasing.
+We claim $\{ x_n \}_{n=1}^\infty$ is monotone decreasing.
 
 \medskip
 \pause
@@ -771,6 +781,7 @@ As $x_n > 0$ for all $n$, \quad $x \geq 0$.
 \pause
 \wthus $x = \sqrt{2}$.
 
+\pause
 \bigskip
 
 You may have noticed the above is \emph{Newton's method} for finding
@@ -986,7 +997,9 @@ so we compare the sequence to $\{ r^n \}_{n=1}^\infty$.
 
 \pause
 \begin{center}
+\scalebox{0.9}{
 \subimport*{../figures/}{figratseq.pdf_t}
+}
 \end{center}
 
 \end{frame}
