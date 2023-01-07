@@ -90,7 +90,7 @@
 %\usepackage{rotating}
 
 \usepackage{cellspace}
-\usepackage[toc,nopostdot,sort=use,nomain,automake]{glossaries}
+\usepackage[toc,nopostdot,sort=use,automake]{glossaries}
 
 \usepackage{vogtwidebar}
 
@@ -362,8 +362,7 @@
 
 
 % List of Symbols/Notation
-\newglossary[nlg]{notation}{not}{ntn}{List of Notation}
-
+% rubber: depend notations.tex
 \loadglsentries{notations}
 \makeglossaries
 
@@ -643,7 +642,7 @@ at github: \url{https://github.com/jirilebl/ra}
    \begin{longtable}{Sl @{\extracolsep{\fill}} Sl @{\extracolsep{\fill}} Sl}}%
   {\end{longtable}}%
 \microtypesetup{protrusion=false}
-\printglossary[type=notation] 
+\printglossary[title=List of Notation] 
 \microtypesetup{protrusion=true}
 \endgroup
 
