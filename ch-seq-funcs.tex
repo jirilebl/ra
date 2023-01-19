@@ -133,14 +133,14 @@ Let $f_n \colon S \to \R$ and $f \colon S \to \R$ be functions.
 Then $\{ f_n \}_{n=1}^\infty$ converges pointwise to $f$ if and only if
 for every $x \in S$, and every $\epsilon > 0$, there exists
 an $N \in \N$ such that for all
-$n \geq N$, we have
+$n \geq N$,
 \begin{equation*}
 \abs{f_n(x)-f(x)} < \epsilon .
 \end{equation*}
 \end{prop}
 
 The key point here is that $N$ can depend on $x$, not just on
-$\epsilon$.  That is, for each $x$ we can pick a different $N$.
+$\epsilon$.  For each $x$, we can pick a different $N$.
 If we could pick one $N$ for all $x$, we would have what is called
 uniform convergence.
 
@@ -153,7 +153,7 @@ and $f \colon S \to \R$
 be functions.  The sequence $\{ f_n \}_{n=1}^\infty$
 \emph{\myindex{converges uniformly}} to $f$ if for
 every $\epsilon > 0$, there exists an $N \in \N$ such that 
-for all $n \geq N$, we have
+for all $n \geq N$,
 \begin{equation*}
 \abs{f_n(x) - f(x)} < \epsilon \qquad \text{for all } x \in S.
 \end{equation*}
@@ -200,7 +200,7 @@ $\{ f_n \}_{n=1}^\infty$ converges uniformly to 0 on $[-a,a]$.  Note that
 $a^{2n} \to 0$ as $n \to \infty$.  Given $\epsilon > 0$,
 pick $N \in \N$ such that
 $a^{2n} < \epsilon$ for all $n \geq N$.
-When $x \in [-a,a]$, we have
+If $x \in [-a,a]$, then
 $\abs{x} \leq a$.  So
 for all $n \geq N$ and all $x \in [-a,a]$,
 \begin{equation*}
@@ -261,8 +261,9 @@ we have $\abs{f_n(x)-f(x)} \leq \snorm{f_n - f}_S < \epsilon$.
 
 On the other hand, suppose $\{ f_n \}_{n=1}^\infty$ converges uniformly to $f$.
 Let $\epsilon > 0$ be given.  Then find $N$ such that 
+for all $n \geq N$, we have
 $\abs{f_n(x)-f(x)} < \epsilon$ for all $x \in S$.
-Taking the supremum we see that
+Taking the supremum over $x \in S$, we see that
 $\snorm{f_n - f}_S \leq \epsilon$.  Hence $\lim_{n\to\infty} \snorm{f_n-f}_S = 0$.
 \end{proof}
 
@@ -688,12 +689,13 @@ and the fundamental theorem of calculus says that
 \end{equation*}
 Let us compute the pointwise limit of $\{ f_n \}_{n=1}^\infty$.
 Fix an $x \in (0,1]$.  For $n \geq \nicefrac{1}{x}$,
-we have $x \geq \nicefrac{1}{n}$ and so $f_n(x) = 0$.  Therefore,
+we have $x \geq \nicefrac{1}{n}$ and so $f_n(x) = 0$.  Hence,
 \begin{equation*}
 \lim_{n \to \infty} f_n(x) = 0.
 \end{equation*}
-We also have $f_n(0) = 0$ for all $n$.  Therefore, the pointwise
-limit of $\{ f_n \}_{n=1}^\infty$ is the zero function.  Thus
+We also have $f_n(0) = 0$ for all $n$.  So the pointwise
+limit of $\{ f_n \}_{n=1}^\infty$ is the zero function.
+In summary,
 \begin{equation*}
 \nicefrac{1}{2} =
 \lim_{n\to\infty}
@@ -768,7 +770,7 @@ Note that $f_n$ is integrable and compute
 \end{split}
 \end{equation*}
 The first inequality is \propref{prop:upperlowerlinineq}.
-The second inequality follows from \propref{intulbound:prop} and 
+The second inequality follows by \propref{intulbound:prop} and 
 the fact that for all $x \in [a,b]$, we have
 $\frac{-\epsilon}{2(b-a)} < f(x)-f_n(x) < \frac{\epsilon}{2(b-a)}$.
 As $\epsilon > 0$ was arbitrary, $f$ is Riemann integrable.
@@ -843,15 +845,15 @@ f_n(x) \coloneqq
 \end{cases}
 \end{equation*}
 For every $n$ we get that $\abs{f_n(x)} \leq n$ for all $x \in [0,1]$ so the
-functions are bounded.  However $f_n$ converge pointwise to
+functions are bounded.  However, $\{ f_n \}_{n=1}^\infty$ converges pointwise to
+the unbounded function
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
 0 & \text{if } x = 0,\\
-\nicefrac{1}{x} & \text{else,}
+\nicefrac{1}{x} & \text{else.}
 \end{cases}
 \end{equation*}
-which is unbounded.
 \end{example}
 
 \subsection{Derivative of the limit}
@@ -865,7 +867,7 @@ Let $f_n(x) \coloneqq \frac{\sin(nx)}{n}$.  Then $f_n$ converges uniformly to
 0.  See \figureref{fig:conv1nsinxn}.
 The derivative of the limit is 0.  But $f_n'(x) = \cos(nx)$, which
 does not converge even pointwise, for
-example $f_n'(\pi) = {(-1)}^n$.  Furthermore,
+example $f_n'(\pi) = {(-1)}^n$.  Moreover,
 $f_n'(0) = 1$ for all $n$, which does converge, but not to $0$.
 \begin{myfigureht}
 \includegraphics{figures/conv1nsinxn}
@@ -1920,7 +1922,7 @@ at any point (why?).  No solution exists by
 \end{example}
 
 The examples show that without the Lipschitz condition, a solution might
-exist but not be a unique, and without continuity of $F$, we may not
+exist but not be unique, and without continuity of $F$, we may not
 have a solution at all.
 It is in fact a theorem, the Peano existence theorem, that if $F$ is
 continuous a solution exists (but may not be unique).
