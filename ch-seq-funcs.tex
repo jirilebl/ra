@@ -26,7 +26,9 @@ notions of a limit of a sequence of functions.
 For every $n \in \N$,
 let $f_n \colon S \to \R$ be a function.  The sequence
 $\{ f_n \}_{n=1}^\infty$
-\emph{\myindex{converges pointwise}} to $f \colon S \to \R$ if for every $x
+\emph{\myindex{converges pointwise}}\footnote{Unless otherwise specified,
+\emph{converges} generally means \emph{converges pointwise}.}
+to $f \colon S \to \R$ if for every $x
 \in S$,
 we have
 \begin{equation*}
@@ -39,7 +41,7 @@ Limits of sequences of numbers are unique, and so if a sequence
 $\{ f_n \}_{n=1}^\infty$
 converges pointwise, the limit function $f$ is unique.
 It is common to say that $f_n \colon S \to \R$
-\emph{converges to $f$ on $T \subset S$}
+\emph{converges pointwise to $f$ on $T \subset S$}
 for some $f \colon T \to \R$.  In that case we mean 
 $f(x) = \lim_{n\to\infty} f_n(x)$ for every $x \in T$.  In other words, the
 restrictions of $f_n$ to $T$ converge pointwise to $f$.
@@ -156,10 +158,6 @@ for all $n \geq N$, we have
 \abs{f_n(x) - f(x)} < \epsilon \qquad \text{for all } x \in S.
 \end{equation*}
 \end{defn}
-
-In uniform convergence, $N$ cannot depend on $x$.  Given $\epsilon > 0$,
-we must find an $N$ that works for all $x \in S$.  See
-\figureref{fig:uniformconv} for an illustration.
 \begin{myfigureht}
 \includegraphics{figures/uniformconv}
 \caption{In uniform convergence,
@@ -168,6 +166,9 @@ the functions $f_n$ are within a strip of $\pm\epsilon$ from $f$.%
 \label{fig:uniformconv}}
 \end{myfigureht}
 
+In uniform convergence, $N$ cannot depend on $x$.  Given $\epsilon > 0$,
+we must find an $N$ that works for all $x \in S$.  See
+\figureref{fig:uniformconv} for an illustration.
 Uniform convergence
 implies pointwise convergence, and the proof follows by
 \propref{ptwsconv:prop}:
@@ -253,7 +254,7 @@ uniformly to $f \colon S \to \R$ if and only if
 \begin{proof}
 First suppose 
 $\lim_{n\to\infty} \norm{f_n - f}_S = 0$.  Let $\epsilon > 0$ be
-given.  Then there exists an $N$ such that
+given.  There exists an $N$ such that
 for $n \geq N$, we have $\snorm{f_n - f}_S < \epsilon$.  As $\norm{f_n-f}_S$
 is the supremum of $\abs{f_n(x)-f(x)}$, we see that for all $x \in S$,
 we have $\abs{f_n(x)-f(x)} \leq \snorm{f_n - f}_S < \epsilon$.
@@ -291,7 +292,7 @@ We claim $\{ f_n \}_{n=1}^\infty$ converges uniformly to $f(x) \coloneqq x$.  Le
 \end{equation*}
 \end{example}
 
-Using uniform norm, we define Cauchy sequences in a similar way
+Using the uniform norm, we define Cauchy sequences in a similar way
 as we define Cauchy sequences of real numbers.
 
 \begin{defn}
@@ -313,9 +314,9 @@ uniformly to $f$.
 \end{prop}
 
 \begin{proof}
-Let us first suppose $\{ f_n \}_{n=1}^\infty$ is Cauchy in the uniform norm.
-Let us define $f$.  Fix $x$, then
-the sequence $\bigl\{ f_n(x) \bigr\}_{n=1}^\infty$ is Cauchy because
+First suppose $\{ f_n \}_{n=1}^\infty$ is Cauchy in the uniform norm.
+Let us define $f$.  Fix $x$.
+The sequence $\bigl\{ f_n(x) \bigr\}_{n=1}^\infty$ is Cauchy because
 \begin{equation*}
 \abs{f_m(x)-f_k(x)}
 \leq
@@ -339,13 +340,13 @@ Consequently for all $x$,
 \begin{equation*}
 \abs{f_m(x)-f(x)} \leq \nicefrac{\epsilon}{2} < \epsilon .
 \end{equation*}
-And hence $\{ f_n \}_{n=1}^\infty$ converges uniformly.
+Hence, $\{ f_n \}_{n=1}^\infty$ converges uniformly.
 
 Next, we prove the other direction.
 Suppose $\{ f_n \}_{n=1}^\infty$ converges uniformly to
 $f$.  Given $\epsilon > 0$, find $N$ such that for all $n \geq N$,
 we have $\abs{f_n(x)-f(x)} < \nicefrac{\epsilon}{4}$ for all $x \in S$.
-Therefore, for all $m, k \geq N$,
+Therefore, for all $m, k \geq N$ and all $x$,
 \begin{equation*}
 \abs{f_m(x)-f_k(x)} = 
 \abs{f_m(x)-f(x)+f(x)-f_k(x)} \leq
@@ -981,8 +982,8 @@ of convergence $\rho$, where $0 < \rho \leq \infty$.
 Then the series converges uniformly
 in $[a-r,a+r]$ whenever $0 < r < \rho$.
 
-In particular, the series defines a continuous function
-on $(a-\rho,a+\rho)$ (if $\rho < \infty$), or $\R$ (if $\rho = \infty$).
+In particular, the series converges (pointwise) to a continuous function
+on $(a-\rho,a+\rho)$ if $\rho < \infty$, or on $\R$ if $\rho = \infty$.
 \end{prop}
 
 \begin{proof}
