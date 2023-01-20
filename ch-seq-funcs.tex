@@ -348,13 +348,15 @@ Suppose $\{ f_n \}_{n=1}^\infty$ converges uniformly to
 $f$.  Given $\epsilon > 0$, find $N$ such that for all $n \geq N$,
 we have $\abs{f_n(x)-f(x)} < \nicefrac{\epsilon}{4}$ for all $x \in S$.
 Therefore, for all $m, k \geq N$ and all $x$,
-\begin{equation*}
+\begin{multline*}
 \abs{f_m(x)-f_k(x)} = 
-\abs{f_m(x)-f(x)+f(x)-f_k(x)} \leq
+\abs{f_m(x)-f(x)+f(x)-f_k(x)}
+\\
+\leq
 \abs{f_m(x)-f(x)}+\abs{f(x)-f_k(x)} < \nicefrac{\epsilon}{4} +
-\nicefrac{\epsilon}{4} .
-\end{equation*}
-Take supremum over all $x$ to obtain
+\nicefrac{\epsilon}{4} = \nicefrac{\epsilon}{2} .
+\end{multline*}
+Take the supremum over all $x$ to obtain
 \begin{equation*}
 \norm{f_m-f_k}_S \leq \nicefrac{\epsilon}{2} < \epsilon .  \qedhere
 \end{equation*}
