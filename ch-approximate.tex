@@ -1507,7 +1507,7 @@ Can you see why? (exercise)
 \begin{lemma}
 Suppose $f(z) = \sum_{k=0}^\infty a_k z^k$ is a convergent power series and
 $\{ z_n \}_{n=1}^\infty$ is a sequence of nonzero complex numbers converging to 0,
-such that $f(z_n) = 0$ for all $n$.  Then $a_k = 0$ for every $k$.
+such that $f(z_n) = 0$ for all $n$.  Then $a_k = 0$ for every~$k$.
 \end{lemma}
 
 \begin{proof}
@@ -1717,7 +1717,7 @@ $\sabs{f(z)} \leq \frac{1}{1-\sabs{z}}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{The complex exponential and the trigonometric functions}
+\section{Complex exponential and trigonometric functions}
 \label{sec:complexexp}
 
 \sectionnotes{1 lecture}
@@ -2938,7 +2938,7 @@ Prove more than just
 the conclusion of Arzel\`a--Ascoli for this sequence.  Let $\gamma \in \R$
 be given,
 and define $g(t) \coloneqq e^{i(2\pi t + \gamma)}$.  Show that there exists 
-a subsequence of $\{ f_n \}_{n=1}^\infty$ converging uniformly to $g$.
+a subsequence of $\{ f_n \}_{n=1}^\infty$ converging uniformly to~$g$.
 \\
 Hint: Feel free to use the \emph{\myindex{Kronecker density theorem}}\footnote{%
 Named after the German mathematician
@@ -3003,7 +3003,7 @@ and applying the fundamental theorem of calculus.
 
 Perhaps surprisingly, even a very badly behaved continuous function is
 a uniform limit of polynomials.
-And we cannot really get any \myquote{nicer}
+We cannot really get any \myquote{nicer}
 functions than polynomials.
 The idea of the proof is a very common approximation or \myquote{smoothing} idea
 (convolution with an approximate delta function) that has applications
@@ -3284,10 +3284,10 @@ we have
 \end{proof}
 
 \begin{remark}
-While we will not prove this, the corollary above implies that
+While we will not prove so, the corollary above implies that
 $C([a,b],\C)$ has the same cardinality as $\R$, which may be a
 bit surprising.  The set of all functions $[a,b] \to \C$ has
-cardinality that is strictly greater than the cardinality of $\R$, it has the
+cardinality strictly greater than the cardinality of $\R$, it has the
 cardinality of the power set of $\R$.  So the
 set of continuous functions is a very tiny subset of the set of all
 functions.
@@ -3418,7 +3418,7 @@ for an approximation theorem.
 Let $\sA$ be a set of complex-valued functions defined on a set $X$.
 \begin{enumerate}[(i)]
 \item $\sA$ \emph{\myindex{separates points}}
-if for every $x,y \in X$, with $x \not= y$ there is a function $f \in \sA$ such that
+if for every $x,y \in X$ with $x \not= y$, there is an $f \in \sA$ such that
 $f(x) \not= f(y)$.
 \item 
 $\sA$ \emph{\myindex{vanishes at no point}} if for every $x \in X$
@@ -3467,25 +3467,26 @@ If $\sA$ is a real algebra, the conclusion holds for $c,d \in \R$.
 \begin{proof}
 There must exist an $g,h,k \in \sA$
 such that 
-\begin{equation*}
-g(x) \not= g(y), \quad h(x) \not= 0, \quad k(y) \not= 0 .
-\end{equation*}
+$g(x) \not= g(y)$, $h(x) \not= 0$, $k(y) \not= 0$.
 Let
 \begin{equation*}
-f \coloneqq 
+\begin{split}
+f & \coloneqq 
 c
 \frac{\bigl(g - g(y)\bigr)h}{\bigl(g(x)-g(y)\bigr)h(x) } + 
 d
 \frac{\bigl(g - g(x)\bigr)k}{\bigl(g(y)-g(x)\bigr)k(y)}
-=
+\\
+& =
 c
 \frac{gh - g(y)h}{g(x)h(x)-g(y)h(x) } + 
 d
 \frac{gk - g(x)k}{g(y)k(y)-g(x)k(y)} .
+\end{split}
 \end{equation*}
-Do note that we are not dividing by zero (clear from the first formula).
-Also from the first formula we see that $f(x) = c$ and $f(y) = d$.
-By the second formula we see that $f \in \sA$ (as $\sA$ is an algebra).
+We are not dividing by zero (clear from the first formula).
+Also by the first formula, $f(x) = c$ and $f(y) = d$.
+By the second formula, $f \in \sA$ (as $\sA$ is an algebra).
 \end{proof}
 
 \begin{thm}[Stone--Weierstrass, real version]
@@ -3512,17 +3513,17 @@ Let $\epsilon > 0$ be given.  By the corollary to the Weierstrass theorem there
 exists a real polynomial $c_1 y + c_2 y^2 + \cdots+ c_n y^n$ (vanishing at
 $y=0$) such that
 \begin{equation*}
-\abs{\sabs{y} - \sum_{j=1}^N c_j y^j} < \epsilon
+\abs{\sabs{y} - \sum_{k=1}^N c_k y^k} < \epsilon
 \end{equation*}
 for all $y \in [-M,M]$.
 Because $\widebar{\sA}$ is an algebra and because there is no constant term in the
 polynomial,
 \begin{equation*}
-\sum_{j=1}^N c_j f^j \in \widebar{\sA} .
+\sum_{k=1}^N c_k f^k \in \widebar{\sA} .
 \end{equation*}
 As $\sabs{f(x)} \leq M$, then  for all $x \in X$
 \begin{equation*}
-\abs{\sabs{f(x)} - \sum_{j=1}^N c_j {\bigl(f(x)\bigr)}^j}
+\abs{\sabs{f(x)} - \sum_{k=1}^N c_k {\bigl(f(x)\bigr)}^k}
 < \epsilon .
 \end{equation*}
 So $\sabs{f}$ is in the closure of $\widebar{\sA}$, which is closed.
@@ -3546,9 +3547,7 @@ $\min(f,g) \in \widebar{\sA}$, where
 Write:
 \begin{equation*}
 \max(f,g) = \frac{f+g}{2} + \frac{\sabs{f-g}}{2} ,
-\end{equation*}
-and
-\begin{equation*}
+\qquad\text{and}\qquad
 \min(f,g) = \frac{f+g}{2} - \frac{\sabs{f-g}}{2} .
 \end{equation*}
 As $\widebar{\sA}$ is an algebra we are done.
@@ -3589,7 +3588,7 @@ The space $X$ is compact so there exist finitely many
 points $y_1,y_2,\ldots,y_n$ in $X$ such
 that
 \begin{equation*}
-X = \bigcup_{j=1}^n U_{y_j}  .
+X = \bigcup_{k=1}^n U_{y_k}  .
 \end{equation*}
 Let 
 \begin{equation*}
@@ -3600,9 +3599,9 @@ Furthermore,
 \begin{equation*}
 g_x(t) > f(t) -\epsilon
 \end{equation*}
-for all $t \in X$, since for every $t$, there is a $y_j$ such that 
-$t \in U_{y_j}$, and so 
-$h_{y_j}(t) > f(t) -\epsilon$.
+for all $t \in X$, since for every $t$, there is a $y_k$ such that 
+$t \in U_{y_k}$, and so 
+$h_{y_k}(t) > f(t) -\epsilon$.
 
 Finally $h_y(x) = f(x)$ for all $y \in X$, so
 $g_x(x) = f(x)$.
@@ -3627,13 +3626,13 @@ The sets $V_x$ are open as $g_x$ and $f$ are continuous.
 As $g_x(x) = f(x)$, then $x \in V_x$.  So the sets $V_x$ cover $X$.
 By compactness of $X$,
 there
-are finitely many points $x_1,x_2,\ldots,x_k$ such that
+are finitely many points $x_1,x_2,\ldots,x_n$ such that
 \begin{equation*}
-X = \bigcup_{j=1}^k V_{x_j} .
+X = \bigcup_{k=1}^n V_{x_k} .
 \end{equation*}
 Let
 \begin{equation*}
-\varphi \coloneqq \min(g_{x_1},g_{x_2},\ldots,g_{x_k}) .
+\varphi \coloneqq \min(g_{x_1},g_{x_2},\ldots,g_{x_n}) .
 \end{equation*}
 By Claim 2, $\varphi \in \widebar{\sA}$.  Similarly as before (same argument as in
 Claim 3), for all $t \in X$,
@@ -3657,17 +3656,17 @@ closed.  So the theorem is proved.
 \begin{example}
 The functions of the form
 \begin{equation*}
-f(t) = \sum_{j=1}^n c_j \, e^{jt},
+f(t) = \sum_{k=1}^n c_k \, e^{kt},
 \end{equation*}
-for $c_j \in \R$,
+for $c_k \in \R$,
 are dense in $C([a,b],\R)$.  We need to note that such functions are a real
-algebra, which follows from $e^{jt} e^{kt} = e^{(j+k)t}$.  They separate
+algebra, which follows from $e^{kt} e^{\ell t} = e^{(k+\ell)t}$.  They separate
 points as $e^t$ is one-to-one, and $e^t > 0$ for all $t$ so the algebra
 does not vanish at any point.
 \end{example}
 
-In general if we have a set of functions that separates points and does
-not vanish at any point, we can let these functions
+In general, given a set of functions that separates points and does
+not vanish at any point, we let these functions
 \emph{generate}\index{generate an algebra}
 an algebra
 by considering all the linear combinations of arbitrary multiples of such
@@ -3732,11 +3731,11 @@ real-valued $u, v \in \sA_\R$.
 If $x \not= y$, then find an $f \in \sA$ such that $f(x) \not= f(y)$.  If $f
 = u+iv$, then it is obvious that either $u(x) \not= u(y)$ or $v(x) \not=
 v(y)$.  So $\sA_\R$ separates points.
-
+%
 Similarly, for every $x$ find $f \in \sA$ such that $f(x) \not= 0$.  If $f
 = u+iv$, then either $u(x) \not= 0$ or $v(x) \not= 0$.
 So $\sA_\R$ vanishes at no point.
-
+%
 The set $\sA_\R$ is a real algebra, and satisfies the hypotheses of the
 \hyperref[thm:SWreal]{real Stone--Weierstrass theorem}.
 Given any $f = u+iv \in C(X,\C)$,
@@ -3792,7 +3791,7 @@ single bound for all $f_n$ (and $f$).
 \begin{exercise}
 Suppose $X \coloneqq \R$ (not compact in particular).
 Show that $f(t) \coloneqq e^t$ is not possible to uniformly approximate
-by polynomials on $X$.  Hint: Consider $\abs{\frac{e^t}{t^n}}$
+by polynomials on $X$.  Hint: Consider $\babs{\frac{e^t}{t^n}}$
 as $t \to \infty$.
 \end{exercise}
 
@@ -3829,7 +3828,7 @@ Prove that $I(f) = \int_0^1 f$ for all $f \in C([0,1],\R)$.
 
 \begin{exercise}
 Let $\sA$ be the collection of real polynomials in $x^2$,
-that is polynomials of the form
+that is, polynomials of the form
 $c_0 + c_1 x^2 + c_2 x^4 + \cdots + c_d x^{2d}$.
 \begin{enumerate}[a)]
 \item
@@ -3846,7 +3845,7 @@ for the domain $[-1,1]$?
 \end{exercise}
 
 \begin{exercise}
-\pagebreak[2]
+\pagebreak[3]
 Let $\sabs{z}=1$ define the unit circle $S^1 \subset \C$.
 \begin{enumerate}[a)]
 \item
@@ -4436,13 +4435,13 @@ When we do plug in $d_n = c_n$, then
 -
 \sum_{n=1}^k \sabs{c_n}^2
 \end{equation*}
-and so
+and so for all $k$,
 \begin{equation*}
 \sum_{n=1}^k \sabs{c_n}^2
 \leq
 \int_a^b \sabs{f}^2
 \end{equation*}
-for all $k$.  Note that
+Note that
 \begin{equation*}
 \sum_{n=1}^k \sabs{c_n}^2 = \snorm{s_k}_2^2
 \end{equation*}

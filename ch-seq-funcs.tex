@@ -1189,8 +1189,8 @@ $\displaystyle \lim_{n\to\infty} \int_0^1 \frac{f(x)}{n} \,dx$.
 \begin{exercise}
 Show
 $\displaystyle \lim_{n\to\infty} \int_1^2 e^{-nx^2} \,dx = 0$.  Feel free to
-use
-what you know about the exponential function from calculus.
+use calculus facts about the exponential.
+%what you know about the exponential function from calculus.
 \end{exercise}
 
 \begin{exercise}
@@ -1255,7 +1255,7 @@ to $0$.  Show that
 
 \begin{exercise}
 Find a sequence $\{ f_n \}_{n=1}^\infty$ of Riemann integrable functions 
-on $[0,1]$ converging pointwise to $0$, but
+on $[0,1]$ converging pointwise to~$0$, but such that
 \begin{equation*}
 \lim_{n\to\infty} \norm{f_n}_{L^1} \text{ does not exist (is } \infty\text{)}.
 \end{equation*}
@@ -1284,7 +1284,7 @@ Show that the sequence $\{f_n\}_{n=1}^\infty$ converges uniformly.
 
 \begin{exercise}
 \pagebreak[3]
-Find a sequence of Riemann integrable functions $f_n \colon [0,1] \to \R$ such
+Find sequences of Riemann integrable functions $f_n \colon [0,1] \to \R$ such
 that $\{ f_n \}_{n=1}^\infty$ converges to zero pointwise, and such that
 \begin{enumerate}[a)]
 \item
@@ -1356,7 +1356,7 @@ Prove that if $f_n \colon \R \to \R$ is a sequence of
 functions Riemann integrable on every closed and bounded interval $[a,b]$,
 and converging uniformly on compact subsets to an $f \colon \R \to \R$,
 then for every interval $[a,b]$, we have $f \in \sR[a,b]$, and
-$\int_a^b f = \lim_{n\to\infty} \int_a^b f_n$.
+$\int_a^b f = \lim\limits_{n\to\infty} \int_a^b f_n$.
 \end{enumerate}
 \end{exercise}
 
@@ -1444,7 +1444,7 @@ Show that $\{ g_n \}_{n=1}^\infty$ converges uniformly to 0.
 \item
 Show that $\{ g_n' \}_{n=1}^\infty$ converges pointwise to a function $\psi$ that
 is discontinuous at every rational number and continuous at every
-irrational number.  In particular, $\lim_{n\to\infty} g_n'(x) \not= 0$ for
+irrational number.  In particular, $\lim\limits_{n\to\infty} g_n'(x) \not= 0$ for
 every rational number~$x$.
 \end{enumerate}
 \end{exercise}
@@ -1827,10 +1827,11 @@ We leave it to the reader to verify that by picking $I$ and $J$
 large enough the proof of the theorem guarantees that
 we are able to pick $\alpha$ such that we get any
 $h$ we want as long as $h < \nicefrac{1}{2}$.  We omit the calculation.
-
 Of course, we know %(though we have not proved)
 this function exists
-as a function for all $x$, so an arbitrary $h$ ought to work.
+as a function for all $x$, so an arbitrary $h$ ought to work, but the
+theorem only provides $h < \nicefrac{1}{2}$.
+
 By same reasoning as above,
 no matter what $x_0$ and $y_0$ are,
 the proof guarantees an arbitrary $h$ as long as $h < \nicefrac{1}{2}$.
@@ -1839,7 +1840,7 @@ We get a unique function defined on $[x_0-h,x_0+h]$.  After defining the
 function on $[-h,h]$ we find a solution on the interval $[0,2h]$
 and notice that the two functions must coincide on $[0,h]$ by uniqueness.
 We thus iteratively construct the exponential for all $x \in \R$.
-Therefore Picard's theorem could be used to prove the existence and uniqueness
+Therefore, Picard's theorem could be used to prove the existence and uniqueness
 of the exponential.
 
 Let us compute the Picard iterates.
@@ -1882,7 +1883,7 @@ the $L$ required has to be larger and larger as $y_0$ grows.
 If we apply the
 theorem with $x_0$ close to 1 and $y_0 = \frac{1}{1-x_0}$ we find
 that the $h$ that the proof guarantees is smaller and smaller as $x_0$
-approaches 1.
+approaches~1.
 
 The $h$ from the proof is not the best $h$.
 By picking $\alpha$ correctly, the proof of the theorem guarantees

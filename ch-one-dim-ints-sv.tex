@@ -15,9 +15,9 @@ If $f$ is continuous on the compact rectangle $[a,b] \times [c,d]$, then
 \volIref{\propref*{vI-prop:integralcontcont} from volume I}{\propref{prop:integralcontcont}}
 says that $g$ is continuous on $[c,d]$.
 
-Suppose $f$ is differentiable in $y$.  The main question we want to
-ask is when can we \myquote{differentiate under the integral,} that is,
-when is it true that $g$ is differentiable and its derivative is
+Suppose $f$ is differentiable in $y$.  
+When can we \myquote{differentiate under the integral}?
+That is, when is it true that $g$ is differentiable and its derivative is
 \begin{equation*}
 g'(y) \overset{?}{=} \int_a^b \frac{\partial f}{\partial y}(x,y) \,dx .
 \end{equation*}
@@ -218,7 +218,7 @@ such that $f(0) = 0$.  Then show that there exists an infinitely
 differentiable function $g \colon \R \to \R$ such that $f(x) = x\,g(x)$.
 Show also that
 if $f'(0) \not= 0$, then $g(0) \not= 0$.\\
-Hint: First write
+Hint: Write
 $f(x) = \int_0^x f'(s) \,ds$ and then rewrite the integral to go
 from $0$ to $1$.
 \end{exercise}
@@ -248,7 +248,14 @@ f(x,y_1,y_2,\ldots,y_n)
 is continuously differentiable.
 \end{exercise}
 
+\begin{myfigureht}
+\includegraphics{figures/diffunderex916}
+\caption{The graph $z= \frac{xy^3}{{(x^2+y^2)}^2}$ on
+$[0,1] \times [0,1]$.\label{fig:diffunderex916}}
+\end{myfigureht}
+
 \begin{exercise}
+\pagebreak[2]
 Work out the following counterexample:  Let
 \begin{equation*}
 f(x,y) \coloneqq
@@ -257,6 +264,7 @@ f(x,y) \coloneqq
 0                          & \text{if } x=0 \text{ and } y=0.
 \end{cases}
 \end{equation*}
+See \figureref{fig:diffunderex916}.
 \begin{enumerate}[a)]
 \item
 Prove that for every fixed $y$, the function $x \mapsto f(x,y)$ is
@@ -317,6 +325,7 @@ Note: Feel free to use what you know about sine and cosine from calculus.
 \end{exercise}
 
 \begin{exercise} \label{exercise:strongerleibniz}
+\pagebreak[3]
 Strengthen the Leibniz integral rule in the following way.
 Suppose $f \colon (a,b) \times (c,d) \to \R$ is a bounded continuous function,
 such that $\frac{\partial f}{\partial y}$ exists for all $(x,y) \in (a,b)
@@ -854,9 +863,9 @@ illustrated by the following example.
 \begin{example}
 Suppose $\gamma \colon [0,2\pi] \to \R^2$ is given by $\gamma(t) \coloneqq
 \bigl(\cos(t),\sin(t)\bigr)$, and
-$\beta \colon [0,2\pi] \to \R^2$ is given by $\beta(t) \coloneqq
+$\beta \colon [0,2\pi] \to \R^2$ by $\beta(t) \coloneqq
 \bigl(\cos(2t),\sin(2t)\bigr)$.  Notice that
-$\gamma\bigl([0,2\pi]\bigr) = \beta\bigl([0,2\pi]\bigr)$, and we travel
+$\gamma\bigl([0,2\pi]\bigr) = \beta\bigl([0,2\pi]\bigr)$; we travel
 around the same curve, the unit circle.  But $\gamma$ goes around the unit
 circle once in the counter clockwise direction, and $\beta$ goes around the
 unit circle twice (in the same direction). 
@@ -906,7 +915,7 @@ $\int_{\gamma} \omega = 0$ for every $\omega$.
 
 \subsection{Path integral of a function}
 
-Next we integrate a function against the so-called
+Next, we integrate a function against the so-called
 \emph{\myindex{arc-length measure}} $ds$.  The geometric picture we have in mind
 is the area under the graph of the function over a path.
 Imagine a fence erected over $\gamma$ with height given by the function
@@ -951,7 +960,7 @@ $\gamma\bigl([a,b]\bigr)$.  Then
 \end{prop}
 
 \begin{proof}
-Suppose first that $h$ is orientation preserving and that $\gamma$ and $h$
+Suppose $h$ is orientation preserving and that $\gamma$ and $h$
 are both smooth.  Then 
 \begin{equation*}
 \begin{split}
@@ -993,7 +1002,7 @@ simply write
 \begin{equation*}
 \int_\Gamma f\, ds .
 \end{equation*}
-In this case we also do not need to worry about orientation, either way we
+In this case we do not need to worry about orientation, either way we
 get the same integral.
 
 \begin{example}
@@ -1054,7 +1063,7 @@ Then $\gamma^{\:\prime}(t) = y-x$, and therefore
 =
 \snorm{y-x} .
 \end{equation*}
-So the length of $[x,y]$ is the standard euclidean distance between $x$ and $y$,
+The length of $[x,y]$ is the standard euclidean distance between $x$ and $y$,
 justifying the name.
 \begin{myfigureht}
 \includegraphics{figures/straightpath}
@@ -1183,6 +1192,7 @@ of piecewise smooth path).
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[3]
 \leavevmode
 \begin{enumerate}[a)]
 \item
@@ -1833,6 +1843,7 @@ $x$ to $y$.
 \end{exercise}
 
 \begin{exercise}[Hard]
+\pagebreak[2]
 Take
 \begin{equation*}
 \omega(x,y) = \frac{-y}{x^2+y^2} \, dx + \frac{x}{x^2+y^2} \, dy

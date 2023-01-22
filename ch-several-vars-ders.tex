@@ -316,14 +316,14 @@ The span of $E$ is the set of polynomials with even powers of $t$ only.
 
 Suppose we have two linear combinations of vectors from $Y$.  One linear
 combination uses the vectors $\{ x_1,x_2,\ldots,x_k \}$, and the other uses
-$\{ \widetilde{x}_1,\widetilde{x}_2,\ldots,\widetilde{x}_\ell \}$.  Then clearly we can write
+$\{ \widetilde{x}_1,\widetilde{x}_2,\ldots,\widetilde{x}_\ell \}$.  We can write
 both linear combinations using vectors from the union
 $\{ x_1,x_2,\ldots,x_k \} \cup
 \{ \widetilde{x}_1,\widetilde{x}_2,\ldots,\widetilde{x}_\ell \}$, by just taking zero
 multiples of the vectors we do not need, e.g. $x_1 = x_1 + 0 \widetilde{x}_1$.
-Suppose we have two linear combinations, we can without loss of
+So if we have two linear combinations, we can without loss of
 generality write them as a linear combination of $x_1,x_2,\ldots,x_k$.
-Then their sum is also a linear combination of vectors from $Y$:
+Then their sum is also a linear combination of vectors from~$Y$:
 \begin{multline*}
 (a_1 x_1 + 
 a_2 x_2 +  \cdots
@@ -350,7 +350,7 @@ b a_1  x_1 +
 b a_2 x_2 +  \cdots
 + b a_k x_k .
 \end{equation*}
-Finally, $0 \in Y$; if $Y$ is nonempty, $0 = 0 v$ for some $v \in Y$.
+Finally, $0 \in \spn(Y)$; if $Y$ is nonempty, $0 = 0 v$ for some $v \in Y$.
 We have proved the following proposition.
 
 \begin{prop}
@@ -1098,8 +1098,8 @@ It is easy to see that the euclidean norm satisfies \ref{defn:norm:i} and
 \ref{defn:norm:ii}.  To prove
 that \ref{defn:norm:iii} holds, the key
 inequality is the so-called Cauchy--Schwarz inequality
-we saw before.  As this inequality is so important, we restate and
-reprove a slightly stronger version using the notation of this chapter.
+we saw before.  As this inequality is so important, we state and
+prove a slightly stronger version using the notation of this chapter.
 
 \begin{thm}[\myindex{Cauchy--Schwarz inequality}]
 Let $x, y \in \R^n$, then
@@ -1114,7 +1114,7 @@ $\lambda \in \R$.
 If $x=0$ or $y = 0$, then the theorem holds trivially.
 So assume $x\not= 0$ and $y \not= 0$.
 
-If $x$ is a scalar multiple of $y$, that is $x = \lambda y$ for some
+If $x$ is a scalar multiple of $y$, that is, $x = \lambda y$ for some
 $\lambda \in \R$, then the theorem holds with equality:
 \begin{equation*}
 \sabs{ x \cdot y } =
@@ -1226,8 +1226,8 @@ following proposition for the euclidean space, and the proof for a general
 finite-dimensional space is left as an exercise.
 
 \begin{prop} \label{prop:finitedimpropnormfin}
-Let $X$ and $Y$ be normed vector spaces and $A \in L(X,Y)$.
-Suppose that $X$ is finite-dimensional.
+Let $X$ and $Y$ be normed vector spaces, $A \in L(X,Y)$, and
+$X$ is finite-dimensional.
 Then $\snorm{A} < \infty$, and
 $A$ is uniformly continuous (Lipschitz with constant $\snorm{A}$).
 \end{prop}
@@ -1271,6 +1271,7 @@ As $\snorm{A} < \infty$, then this says $A$ is Lipschitz with constant $\snorm{A
 \end{proof}
 
 \begin{prop} \label{prop:finitedimpropnorm}
+\pagebreak[3]
 Let $X$, $Y$, and $Z$ be finite-dimensional normed vector
 spaces\footnote{If we strike the \myquote{In particular} part and interpret the
 algebra with infinite operator norms properly, namely decree that $0$ times
@@ -1354,11 +1355,12 @@ Let us make sense of this proposition on a simple example.
 Consider $X=\R^1$, where linear operators are just
 numbers $a$ and the operator norm of $a$ is $\sabs{a}$.
 The operator $a$ is invertible ($a^{-1} = \nicefrac{1}{a}$)
-whenever $a \not=0$.  The condition $\sabs{a-b} < \frac{1}{\sabs{a^{-1}}}$ does
-indeed imply that $b$ is not zero.  And $a \mapsto \nicefrac{1}{a}$ is a continuous
-map.
-When the dimension is bigger than $1$, there are other noninvertible operators than just zero,
-and in general things are a bit more difficult.
+whenever $a \not=0$.  The condition $\sabs{a-b} < \frac{1}{\sabs{a^{-1}}}$
+indeed implies that $b$ is not zero, and $a \mapsto \nicefrac{1}{a}$
+is a continuous function.
+When the dimension is $2$ or higher,
+there are other noninvertible operators than just zero,
+and things are a bit more difficult.
 
 \begin{proof}
 Let us prove \ref{finitedimpropinv:i}.   We know something about $A^{-1}$
@@ -1393,9 +1395,9 @@ and hence also onto by \propref{mv:prop:lin11onto},
 $B$ is invertible.
 
 Let us prove \ref{finitedimpropinv:ii}.
-Item \ref{finitedimpropinv:i} immediately implies that $GL(X)$ is open.
-Let us show that the inverse is continuous.
-Fix some $A \in GL(X)$.  Let $B$ be near $A$,
+Item \ref{finitedimpropinv:i} implies that $GL(X)$ is open.
+We must show that the inverse is continuous.
+Fix a $A \in GL(X)$.  Let $B$ be near $A$,
 specifically $\snorm{A-B} < \frac{1}{2 \snorm{A^{-1}}}$.
 Then \eqref{eqcontineq} is satisfied and $B$ is invertible.
 A similar computation as above (using $B^{-1}y$ instead of $x$) gives
@@ -1463,14 +1465,13 @@ a_{m,1} & a_{m,2} & \cdots & a_{m,n}
 \end{equation*}
 We sometimes write $A$ as $[a_{i,j}]$.
 We say $A$ is an $m$-by-$n$ matrix.
-The $j$th \emph{\myindex{column}} of the matrix gives precisely the coefficients
+The $j$th \emph{\myindex{column}} of the matrix contains precisely the coefficients
 that represent $A x_j$ in terms of the basis $\{ y_1,y_2,\ldots,y_m \}$.
-If we know the numbers $a_{i,j}$, then via the formula
+Given the numbers $a_{i,j}$, then via the formula
 \eqref{eq:matrixrepresent} we find the corresponding linear operator,
 as it is determined by the action on a basis.  Hence, once we fix
 a basis on $X$ and on $Y$, we have a one-to-one correspondence between
 $L(X,Y)$ and the $m$-by-$n$ matrices.
-
 When
 \begin{equation*}
 z = \sum_{j=1}^n c_j \, x_j ,
@@ -1495,7 +1496,7 @@ c_{i,k} =
 \end{equation*}
 A way to remember it is if you order the indices as we do, that is
 \emph{row, column}, and put the elements in the same order as the matrices,
-then it is the \myquote{middle index} that is \myquote{summed-out.}
+then the \myquote{middle index} is \myquote{summed-out.}
 
 There is a one-to-one correspondence between matrices and linear operators in
 $L(X,Y)$, once we fix a basis in $X$ and in $Y$.  If we 
@@ -1558,7 +1559,7 @@ operator norm ($\snorm{A-B}$ goes to zero).  We have proved:
 \begin{prop} \label{prop:matrixcont}
 The topology (the set of open sets) on $L(\R^n,\R^m)$ is the same
 whether we consider $L(\R^n,\R^m)$ as a metric space using the operator
-norm, or with the euclidean metric of $\R^{nm}$.
+norm, or the euclidean metric of $\R^{nm}$.
 
 In particular, let $S$ be a metric space and let
 $\pi \colon L(\R^n,\R^m) \to \R^{nm}$ identify
@@ -1673,10 +1674,10 @@ b
 \begin{proof}
 We go through the proof quickly, as you have likely seen it before.
 %
-Item \ref{prop:det:i} is trivial.  For \ref{prop:det:ii}, notice that each term in the definition of the
+Item \ref{prop:det:i} is trivial.  For \ref{prop:det:ii}, note that each term in the definition of the
 determinant contains exactly one factor from each column.
 %
-Item \ref{prop:det:iii} follows by noting that switching two columns is like switching the
+Item \ref{prop:det:iii} follows as switching two columns is switching the
 two corresponding numbers in every element in $S_n$.  Hence, all the signs
 are changed.
 Item \ref{prop:det:iv} follows because if two columns are equal, and we
@@ -1697,10 +1698,10 @@ Finally, item \ref{prop:det:vii} is a direct computation.
 The determinant tells us about areas and volumes, and how they change.
 For example, in the $1$-by-$1$ case, a matrix is just a number, and the
 determinant is exactly this number.  It says how the linear mapping
-\myquote{stretches} the space.  Similarly for $\R^2$.
-Suppose $A \in L(\R^2)$ is a linear transformation.
+\myquote{stretches} the space.  Similarly,
+suppose $A \in L(\R^2)$ is a linear transformation.
 It can be checked directly that
-the area of the image of the unit square $A\bigl([0,1]^2\bigr)$ is precisely
+the area of the image of the unit square $A\bigl([0,1]^2\bigr)$ is
 $\sabs{\det(A)}$.
 This works with arbitrary figures, not just the unit
 square:
@@ -1756,12 +1757,12 @@ b_{j_n,n}
 \det \bigl([ a_{1} \quad a_{2} \quad  \cdots \quad  a_{n} ]\bigr) .
 \end{split}
 \end{equation*}
-In the last equality, we can sum over just the elements of $S_n$
+In the last equality, we sum over the elements of $S_n$
 instead of all $n$-tuples for integers between 1 and $n$
-by noting that
+because
 when two columns in the determinant are the same, then the
-determinant is zero.  Then we reordered the columns to the
-original ordering to obtain the sgn.
+determinant is zero.  Reordering the columns to the
+original ordering to obtains the sgn.
 
 The conclusion that $\det(AB) = \det(A)\det(B)$
 follows by recognizing that the expression in parentheses above is the determinant of $B$.  
@@ -1771,11 +1772,11 @@ swapped, so as a side note, we have also just proved that the determinant of
 a matrix and its transpose are equal.
 
 Let us prove the
-\myquote{Furthermore} part.
+\myquote{Furthermore.}
 If $A$ is invertible,
 then $A^{-1}A = I$ and consequently $\det(A^{-1})\det(A) = \det(A^{-1}A) = \det(I) = 1$.
-If $A$ is not invertible, then there must be a nonzero vector that $A$ takes
-to zero as $A$ is not one-to-one.  In other words, the columns of $A$ are linearly dependent.
+If $A$ is not invertible, then it is not one-to-one, and so $A$ takes
+some nonzero vector to zero.  In other words, the columns of $A$ are linearly dependent.
 Suppose 
 \begin{equation*}
 \sum_{j=1}^n \gamma_j\, a_j = 0 ,
@@ -2025,6 +2026,7 @@ $\left[
 
 
 \begin{exercise} \label{exercise:normonedim}
+\pagebreak[2]
 Using the standard euclidean norm $\R^n$, show:
 \begin{enumerate}[a)]
 \item
@@ -2122,6 +2124,7 @@ spaces and $A \in L(X,Y)$, then $\snorm{A} < \infty$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:allnormsequiv}
+\pagebreak[3]
 Let $X$ be a finite-dimensional vector space with norm $\snorm{\cdot}$
 and basis $\{ x_1,x_2,\ldots,x_n \}$.
 Let $c = (c_1,c_2,\ldots,c_n) \in \R^n$ and $\snorm{c}$ be the
@@ -3815,7 +3818,7 @@ for every open set $V \subset U$, the set $f(V)$ is open ($f$ is said to be an
 
 \begin{proof}
 Without loss of generality, suppose $U=V$.
-For each point $y \in f(V)$, we pick $x \in f^{-1}(y)$ (there could be more
+For each $y \in f(V)$, pick $x \in f^{-1}(y)$ (there could be more
 than one such point), then by the inverse function theorem there is a
 neighborhood of $x$ in $V$ that maps onto a neighborhood of $y$.  Hence
 $f(V)$ is open.
@@ -3958,17 +3961,18 @@ Let us compute the derivative.  The quotient
 \end{equation*}
 goes to zero as $\snorm{(h,k)} = \sqrt{\snorm{h}^2+\snorm{k}^2}$ goes to zero.
 But then so does
-\begin{equation*}
-\begin{split}
+\begin{multline*}
 \frac{\snorm{F(p+h,q+k)-F(p,q) - (h,A_x h+A_y k)}}{\snorm{(h,k)}}
+\\
+\begin{aligned}
 & =
 \frac{\snorm{\bigl(h,f(p+h,q+k)-f(p,q)\bigr) - (h,A_x h+A_y
 k)}}{\snorm{(h,k)}}
 \\
 & =
 \frac{\snorm{f(p+h,q+k) - f(p,q) - A_x h - A_y k}}{\snorm{(h,k)}} .
-\end{split}
-\end{equation*}
+\end{aligned}
+\end{multline*}
 So the derivative of $F$ at $(p,q)$ takes $(h,k)$ to $(h,A_x h+A_y k)$.
 In block matrix form, it is
 $\left[\begin{smallmatrix}I & 0\\A_x & A_y\end{smallmatrix}\right]$.  If 
