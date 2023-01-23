@@ -158,8 +158,10 @@ $n$-dimensional \emph{\myindex{euclidean space}}
 \glsadd{not:euclidspace}
 $\R^n = \R \times \R \times \cdots \times \R$.   We use the following
 notation for points: $x =(x_1,x_2,\ldots,x_n) \in \R^n$.  We will not write
-$\vec{x}$ nor $\mathbf{x}$ for a vector, we simply give it a name such as
-$x$ and we will remember that $x$ is a vector.
+$\vec{x}$ nor $\mathbf{x}$ for a point in $\R^n$ as is common in
+multivariable calculus,
+we simply give it a name such as $x$ and we will remember that $x$
+is an element of $\R^n$.
 We also
 write simply $0 \in \R^n$ to mean the point $(0,0,\ldots,0)$.  Before
 making $\R^n$ a metric space, we prove an important inequality, the
@@ -352,7 +354,7 @@ between any two points is $1$.\label{fig:msdiscmetric}}
 \end{myfigureht}
 
 While this particular
-example seldom comes up in practice, it gives a useful 
+example may seldom come up in practice, it gives a useful 
 \myquote{smell test.}  If you make a statement about metric spaces,
 try it with the discrete metric.
 To show that $(X,d)$ is indeed a metric space is left as an exercise.
@@ -3351,7 +3353,6 @@ so it is Lipschitz continuous:
 f(x) = f\Bigl( \lim_{n\to\infty} x_n\Bigr) = \lim_{n\to\infty} f(x_n) =
 \lim_{n\to\infty} x_{n+1} = x .
 \end{equation*}
-
 Unique?  Let $x$ and $y$ be fixed points.
 \begin{equation*}
 d(x,y) = d\bigl(f(x),f(y)\bigr) \leq k\, d(x,y) .
@@ -3361,7 +3362,7 @@ proved.
 \end{proof}
 
 The proof is constructive.  Not only do we know 
-a unique fixed point exists.  We also know how to find it.  Start with
+a unique fixed point exists, we also know how to find it.  Start with
 any point $x_0 \in X$, then iterate $f(x_0)$,
 $f(f(x_0))$,
 $f(f(f(x_0)))$, etc.  We can even find how far away

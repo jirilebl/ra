@@ -141,17 +141,34 @@ to $y$
 
 \begin{frame}
 
-%In the language of metric spaces,
-%the results on continuity of section {sec:liminter},
-%say that the metric space
-%$C\bigl([a,b],\R\bigr)$ of {example:msC01} is complete.
-%The proof follows by ``unrolling the definitions,'' 
-%and is left as {exercise:CabRcomplete}.
-%
-%\begin{proposition}
-%The space of continuous functions $C\bigl([a,b],\R\bigr)$ with the uniform
-%norm as metric is a complete metric space.
-%\end{proposition}
+Consider $C\bigl([a,b],\R\bigr)$ with the uniform norm
+as the metric
+\[
+d(f,g) = \snorm{f-g}_{[a,b]} = \sup_{x \in [a,b]} \abs{f(x)-g(x)} .
+\]
+\pause
+Convergence in this metric space is uniform convergence.
+
+\medskip
+\pause
+
+In chapter 6, we proved a uniform limit of continuous
+functions is continuous.
+
+\medskip
+\pause
+
+The following proposition is then an easy exercise
+in verifying the definitions:
+
+\begin{proposition}
+The space of continuous functions $C\bigl([a,b],\R\bigr)$ with the uniform
+norm as metric is a complete metric space.
+\end{proposition}
+
+\end{frame}
+
+\begin{frame}
 
 \textbf{Example:}
 A subset of a complete metric space need not be complete:
@@ -374,31 +391,6 @@ $K$ is not compact.
 \end{frame}
 
 \begin{frame}
-
-%We prove below that 
-%in a finite-dimensional euclidean space,
-%every closed bounded set is compact.
-%So closed bounded sets
-%of $\R^n$ are examples of compact sets.
-%It is not true that in every metric space, closed and bounded is equivalent
-%to compact.  A simple example is an incomplete metric space such as
-%$(0,1)$ with the subspace metric from $\R$.
-%There are many complete and very useful metric spaces
-%where closed and bounded is not
-%enough to give compactness: $C\bigl([a,b],\R\bigr)$ is a complete metric
-%space, but the closed unit ball $C(0,1)$ is not compact, see
-%{exercise:msclbounnotcompt}.  However, see also
-%{exercise:mstotbound}.
-
-%A useful property of compact sets in a metric space is that every
-%sequence in the set has a convergent subsequence converging
-%to a point in the set.
-%Such sets are called
-%\emph{sequentially compact}.
-%We will prove that in the
-%context of metric spaces, a set is compact if and only if it is sequentially
-%compact.
-%First we prove a lemma.
 
 \begin{lemma}[Lebesgue covering lemma]
 Let $(X,d)$ be a metric space and $K \subset X$.
@@ -772,19 +764,24 @@ bounded and \textbf{not} compact.
 \pause
 \medskip
 
-In general, compact \thus closed and bounded, \textbf{but not vice versa!}
+In general, compact \wthus closed and bounded, \textbf{but not vice versa!}
 
 \pause
 \medskip
 
-As there's always someone who wants to use this:
-
-\pause
-\medskip
-
-{\Huge
+Just for emphasis:
 \textbf{Closed and bounded does not imply compact in general!}
-}
+
+\medskip
+\pause
+
+An example complete metric space where closed and bounded is not
+compact is the space of continuous functions $C([0,1],\R)$.
+
+\medskip
+\pause
+
+\textbf{Exercise:} The closed unit ball $C(0,1)$ in $C([0,1],\R)$ is not compact.
 
 \end{frame}
 
