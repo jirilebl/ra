@@ -3291,8 +3291,8 @@ smoother with metric spaces and the fixed point theorem.
 
 \begin{defn}
 Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
-A mapping
-$f \colon X \to Y$ is said to be a \emph{\myindex{contraction}}
+A map
+$f \colon X \to Y$ is a \emph{\myindex{contraction}}
 (or a contractive map) if it is
 a $k$-Lipschitz map for some $k < 1$, i.e.\ if there exists a $k < 1$ such that
 \begin{equation*}
@@ -3357,15 +3357,16 @@ Unique?  Let $x$ and $y$ be fixed points.
 \begin{equation*}
 d(x,y) = d\bigl(f(x),f(y)\bigr) \leq k\, d(x,y) .
 \end{equation*}
-As $k < 1$ this means that $d(x,y) = 0$ and hence $x=y$.  The theorem is
+As $k < 1$, the inequality means that $d(x,y) = 0$, and hence $x=y$.  The theorem is
 proved.
 \end{proof}
 
 The proof is constructive.  Not only do we know 
-a unique fixed point exists, we also know how to find it.  Start with
+a unique fixed point exists, we know how to find it.  Start with
 any point $x_0 \in X$, then iterate $f(x_0)$,
 $f(f(x_0))$,
-$f(f(f(x_0)))$, etc.  We can even find how far away
+$f(f(f(x_0)))$, etc.\ to find better and better approximations.
+We can even find how far away
 from the fixed point we are, see the exercises.  The idea of the proof is
 therefore useful in real-world applications.
 
@@ -3450,9 +3451,9 @@ f'(x) = F\bigl(x,f(x)\bigr) \qquad \text{and} \qquad f(x_0) = y_0.
 \end{samepage}
 
 \begin{proof}
-Without loss of generality assume $x_0 =0$ (exercise).
+Without loss of generality, assume $x_0 =0$ (exercise).
 As $I \times J$ is compact and
-$F(x,y)$ is continuous, it is bounded.
+$F$ is continuous, $F$ is bounded.
 So find an $M > 0$ such that
 $\abs{F(x,y)} \leq M$ for all $(x,y) \in I\times J$.
 Pick $\alpha > 0$ such that
@@ -3465,12 +3466,11 @@ Note $[-h,h] \subset I$.  Let
 \begin{equation*}
 Y \coloneqq \bigl\{ f \in C\bigl([-h,h],\R\bigr) : f\bigl([-h,h]\bigr) \subset J \bigr\} .
 \end{equation*}
-That is, $Y$ is the space of continuous functions on $[-h,h]$ with values in
+That is, $Y$ is the set of continuous functions on $[-h,h]$ with values in
 $J$, in other words,
 exactly those functions where $F\bigl(x,f(x)\bigr)$ makes sense.
-The metric used is the standard metric given above.
-
-It is left as an exercise to show that $Y$ is closed (because $J$ is closed).
+It is left as an exercise to show that $Y$ is a closed subset of $C\bigl([-h,h],\R\bigr)$
+(because $J$ is closed).
 The space $C\bigl([-h,h],\R\bigr)$ is complete, and
 a closed subset of a complete metric space is a complete metric space with
 the subspace metric, see \propref{prop:closedcomplete}.  So $Y$ with the
@@ -3484,8 +3484,7 @@ T(f)(x)
 y_0 + \int_0^x F\bigl(t,f(t)\bigr)\,dt .
 \end{equation*}
 It is an exercise to check that
-$T$ is well-defined, and that $T(f)$ really is in $C\bigl([-h,h],\R\bigr)$.
-
+$T$ is well-defined, and that for $f \in Y$, $T(f)$ really is in $C\bigl([-h,h],\R\bigr)$.
 Let $f \in Y$ and $\abs{x} \leq h$.
 As $F$ is bounded by $M$, we have
 \begin{equation*}
@@ -3517,20 +3516,23 @@ Therefore,
 \end{split}
 \end{equation*}
 We chose $M > 0$ and so
-$\frac{L\alpha}{M+L\alpha} < 1$.  The claim that $T$ is a contraction is proved by
-taking supremum over $x \in [-h,h]$ of the left-hand side above to obtain
-$d\bigl(T(f),T(g)\bigr) \leq \frac{L\alpha}{M+L\alpha} \, d(f,g)$.
+$\frac{L\alpha}{M+L\alpha} < 1$.
+Take supremum over $x \in [-h,h]$ of the left-hand side above to obtain
+$d\bigl(T(f),T(g)\bigr) \leq \frac{L\alpha}{M+L\alpha} \, d(f,g)$,
+that is, $T$ is a contraction.
 
-We apply the fixed point theorem (\thmref{thm:contr})
-to find a unique $f \in Y$ such that $T(f) = f$, that is,
+The fixed point theorem (\thmref{thm:contr})
+gives a unique $f \in Y$ such that $T(f) = f$.
+In other words,
 \begin{equation*} %\label{equation:msinteqpicard}
 f(x) = y_0 + \int_0^x F\bigl(t,f(t)\bigr)\,dt .
 \end{equation*}
+Clearly, $f(0) = y_0$.
 By the fundamental theorem of calculus (\thmref{thm:FTCv2}),
-$T(f) = f$ is differentiable, its derivative is
-$F\bigl(x,f(x)\bigr)$ and $T(f)(0) = y_0$.
+$f$ is differentiable and its derivative is
+$F\bigl(x,f(x)\bigr)$.
 Differentiable functions are continuous, so
-$f$ is the unique differentiable function $f \colon [-h,h] \to J$
+$f$ is the unique differentiable $f \colon [-h,h] \to J$
 such that
  $f'(x) = F\bigl(x,f(x)\bigr)$ and $f(0) = y_0$.
 \end{proof}
