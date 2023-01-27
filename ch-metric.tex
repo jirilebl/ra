@@ -3422,7 +3422,7 @@ corresponding integral equation
 \begin{equation*}
 f(x)
 =
-y_0 + \int_0^x F\bigl(t,f(t)\bigr)\,dt .
+y_0 + \int_{x_0}^x F\bigl(t,f(t)\bigr)\,dt .
 \end{equation*}
 To solve this integral equation we only need a continuous function, and
 in some sense our task should be easier---we have more candidate functions
@@ -3442,7 +3442,7 @@ an $L \in \R$ such that
 \abs{F(x,y) - F(x,z)} \leq L \abs{y-z}
 \qquad \text{for all } y,z \in J, x \in I .
 \end{equation*}
-Then there exists an $h > 0$ and a unique differentiable
+Then there exists an $h > 0$ such that $[x_0-h,x_0+h] \subset I$ and a unique differentiable
 function $f \colon [x_0 - h, x_0 + h] \to J \subset \R$ such that
 \begin{equation*}
 f'(x) = F\bigl(x,f(x)\bigr) \qquad \text{and} \qquad f(x_0) = y_0.

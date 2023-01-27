@@ -1533,7 +1533,7 @@ We say $F$ is \emph{continuous} if it is continuous at all points in $U$.
 \label{thm:fs:picard}
 Let $I, J \subset \R$ be closed bounded intervals, 
 let $I^\circ$ and $J^\circ$ be their interiors%
-\footnote{By interior of $[a,b]$ we mean $(a,b)$.},
+\footnote{By interior of $[a,b]$, we mean $(a,b)$.},
 and
 let $(x_0,y_0) \in I^\circ \times J^\circ$.
 Suppose $F \colon I \times J \to \R$ is continuous
@@ -1543,7 +1543,7 @@ an $L \in \R$ such that
 \abs{F(x,y) - F(x,z)} \leq L \abs{y-z}
 \qquad \text{for all } y,z \in J, x \in I .
 \end{equation*}
-Then there exists an $h > 0$ and a unique differentiable
+Then there exists an $h > 0$ such that $[x_0-h,x_0+h] \subset I$ and a unique differentiable
 function $f \colon [x_0 - h, x_0 + h] \to J \subset \R$ such that
 \begin{equation} \label{picard:diffeq}
 f'(x) = F\bigl(x,f(x)\bigr) \qquad \text{and} \qquad f(x_0) = y_0.
