@@ -16,7 +16,7 @@ differential calculus is to approximate differentiable functions by linear
 functions (approximating the graph by a straight line).
 In several variables, we must introduce a little bit of linear
 algebra before we can move on.
-We start with vector spaces and linear mappings on vector spaces.
+We start with vector spaces and linear mappings of vector spaces.
 
 While it is common to use $\vec{v}$ or the bold
 $\mathbf{v}$ for elements of $\R^n$,
@@ -75,53 +75,53 @@ if the following conditions are satisfied:
 \begin{enumerate}[(i)]
 \item
 %mbxSTARTIGNORE
-\makebox[2.1in][l]{(Addition is associative)}
+\makebox[2.15in][l]{(Addition is associative)}
 %mbxENDIGNORE
 %mbxlatex (Addition is associative) \quad
 If $u, v, w \in X$, then $u+(v+w) = (u+v)+w$.
 \item
 %mbxSTARTIGNORE
-\makebox[2.1in][l]{(Addition is commutative)}
+\makebox[2.15in][l]{(Addition is commutative)}
 %mbxENDIGNORE
 %mbxlatex (Addition is commutative) \quad
 If $u, v \in X$, then $u+v = v+u$.
 \item \label{vecspacedefn:addidentity}
 %mbxSTARTIGNORE
-\makebox[2.1in][l]{(Additive identity)}
+\makebox[2.15in][l]{(Additive identity)}
 %mbxENDIGNORE
 %mbxlatex (Additive identity) \quad
 There is a $0 \in X$ such that $v+0=v$ for all $v \in X$.
 \item
 %mbxSTARTIGNORE
-\makebox[2.1in][l]{(Additive inverse)}
+\makebox[2.15in][l]{(Additive inverse)}
 %mbxENDIGNORE
 %mbxlatex (Additive inverse) \quad
-For every $v \in X$, there is a $-v \in X$,
+For each $v \in X$, there is a $-v \in X$,
 such that $v+(-v)=0$.
 \item
 %mbxSTARTIGNORE
-\makebox[2.1in][l]{(Distributive law)}
+\makebox[2.15in][l]{(Distributive law)}
 %mbxENDIGNORE
 %mbxlatex (Distributive law) \quad
 If $a \in \R$, $u,v \in X$, then
 $a(u+v) = au+av$.
 \item
 %mbxSTARTIGNORE
-\makebox[2.1in][l]{(Distributive law)}
+\makebox[2.15in][l]{(Distributive law)}
 %mbxENDIGNORE
 %mbxlatex (Distributive law) \quad
 If $a,b \in \R$, $v \in X$, then
 $(a+b)v = av+bv$.
 \item
 %mbxSTARTIGNORE
-\makebox[2.1in][l]{(Multiplication is associative)}
+\makebox[2.15in][l]{(Multiplication is associative)}
 %mbxENDIGNORE
 %mbxlatex (Multiplication is associative) \quad
 If $a,b \in \R$, $v \in X$, then
 $(ab)v = a(bv)$.
 \item
 %mbxSTARTIGNORE
-\makebox[2.1in][l]{(Multiplicative identity)}
+\makebox[2.15in][l]{(Multiplicative identity)}
 %mbxENDIGNORE
 %mbxlatex (Multiplicative identity) \quad
 $1v = v$ for all $v \in X$.
@@ -140,7 +140,7 @@ For example, $2v = (1+1)v = 1v + 1v = v+v$, similarly $3v = v+v+v$, and
 so on.  
 One particular fact we often use is that $0 v = 0$, where
 the zero on the left is $0 \in \R$ and the zero on the right is $0 \in X$.
-To see this start with
+To see this, start with
 $0v = (0+0)v = 0v + 0v$, and add $-(0v)$ to both sides
 to obtain $0 = 0v$.  Similarly $-v = (-1)v$, which follows by
 $(-1)v+v = (-1)v + 1v = (-1+1)v = 0v = 0$.
@@ -164,9 +164,9 @@ a (v_1,v_2,\ldots,v_n) =
 \end{align*}
 \end{example}
 
-In this book, we mostly deal with vector spaces that can be often regarded as
-subsets of $\R^n$, but there are other vector spaces useful in
-analysis.  Let us give a couple of examples.
+In this book, we mostly deal with vector spaces that can often be regarded as
+subsets of $\R^n$, but other vector spaces are useful in
+analysis.  Let us give a few examples.
 
 \begin{example}
 A trivial example of a vector space is just
@@ -192,8 +192,8 @@ a subspace of $C([0,1],\R)$.
 
 \begin{example}
 The space of polynomials $c_0 + c_1 t + c_2 t^2 + \cdots + c_m t^m$
-(of arbitrary degree $m$) is a vector space.
-Let us denote it by $\R[t]$\glsadd{not:realpoly} (coefficients are real and
+(of arbitrary degree~$m$) is a vector space,
+denoted by $\R[t]$\glsadd{not:realpoly} (coefficients are real and
 the variable is $t$).  The operations are defined in the same way as for
 functions above.
 Suppose there are
@@ -253,10 +253,11 @@ that are already satisfied in $X$ and thus must be satisfied in a subset.
 
 It is often better to think of even the simpler \myquote{finite-dimensional}
 vector spaces using the abstract notion rather than always as $\R^n$.
-It is possible to use other fields than $\R$ in the definition (for
-example it is common to use the complex numbers $\C$), but let us stick with
+It is possible to use other fields than $\R$ in the definition
+(for example, it is common to use the complex numbers $\C$),
+but let us stick with
 the real numbers\footnote{If you want a very funky vector space over a different field,
-$\R$ itself is a vector space over the rational numbers.}.
+$\R$ itself is a vector space over the field $\Q$.}.
 
 \subsection{Linear combinations and dimension}
 
