@@ -923,9 +923,10 @@ is linearly independent if and only if for every $k=1,2,\ldots,n$
 That is, the span of the set with one vector removed is strictly smaller.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:intzerosubspace}
 Show that the set $X \subset C([0,1],\R)$ of those functions such 
 that $\int_0^1 f = 0$ is a vector subspace.
+Compare \exerciseref{exercise:intoneconvex}.
 \end{exercise}
 
 \begin{exercise}[Challenging]
@@ -1018,9 +1019,10 @@ in $\R^2$.
 Show that the set $\bigl\{ (x,y) \in \R^2 : y > x^2 \bigr\}$ is a convex set.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:intoneconvex}
 Show that the set $X \subset C([0,1],\R)$ of those functions such 
 that $\int_0^1 f = 1$ is a convex set, but not a vector subspace.
+Compare \exerciseref{exercise:intzerosubspace}.
 \end{exercise}
 
 
@@ -1032,8 +1034,8 @@ topology on $\R^n$.
 \begin{exercise}
 Suppose $K \subset \R^2$ is a convex set such that the only point of
 the form $(x,0)$ in $K$ is the point $(0,0)$.  Further suppose that
-there $(0,1) \in K$ and $(1,1) \in K$.  Then show that if $(x,y) \in K$,
-then $y > 0$ unless $x=0$.
+$(0,1) \in K$ and $(1,1) \in K$.  Show that if $(x,y) \in K$ and $x
+\not= 0$, then $y > 0$.
 \end{exercise}
 
 \begin{exercise}
@@ -1066,8 +1068,8 @@ a function $\snorm{\cdot} \colon X \to \R$ is a
 \item \label{defn:norm:i} $\snorm{x} \geq 0$, with $\snorm{x}=0$ if and only if $x=0$.
 \item \label{defn:norm:ii} $\snorm{cx} = \sabs{c} \, \snorm{x}$ for all $c \in \R$ and $x \in X$.
 \item \label{defn:norm:iii} $\snorm{x+y} \leq \snorm{x}+\snorm{y}$ for all
-$x,y \in X$.
-\qquad (\emph{triangle inequality})\index{triangle inequality!norms}
+$x,y \in X$
+\qquad (\emph{triangle inequality})\index{triangle inequality!norms}.
 \end{enumerate}
 A vector space equipped with a norm is called a
 \emph{\myindex{normed vector space}}.
@@ -1179,8 +1181,9 @@ Again, when necessary to emphasize which norm we are talking about, we may
 write it as $\snorm{A}_{L(X,Y)}$.\glsadd{not:normLXY}
 \end{defn}
 
-For example, if $X=\R^1$ with norm $\snorm{x}=\sabs{x}$, we think of elements of $L(X)$ as multiplication
-by scalars: $x \mapsto ax$.  If $\snorm{x}=\sabs{x}=1$, then $\sabs{a x} = \sabs{a}$, so
+For example, if $X=\R^1$ with norm $\snorm{x}=\sabs{x}$, elements of $L(X)$
+are multiplication by scalars, $x \mapsto ax$, and we identify $a \in \R$ with the
+corresponding element of $L(X)$.  If $\snorm{x}=\sabs{x}=1$, then $\sabs{a x} = \sabs{a}$, so
 the operator norm of $a$ is $\sabs{a}$.
 
 By linearity,
@@ -1226,10 +1229,10 @@ We will stick to finite-dimensional spaces.
 When we talk about a finite-dimensional vector space $X$, we often think of
 $\R^n$, although if we have a norm on $X$, the norm might not be
 the standard euclidean norm.  In the exercises, you can prove that
-every norm is \myquote{equivalent} to the euclidean norm in that the
+every norm on $\R^n$ is \myquote{equivalent} to the euclidean norm in that the
 topology it generates is the same.  For simplicity, we only prove the
-following proposition for the euclidean space, and the proof for a general
-finite-dimensional space is left as an exercise.
+following proposition for euclidean spaces, and the proof for general
+finite-dimensional spaces is left as an exercise.
 
 \begin{prop} \label{prop:finitedimpropnormfin}
 Let $X$ and $Y$ be normed vector spaces, $A \in L(X,Y)$, and
@@ -1239,7 +1242,7 @@ $A$ is uniformly continuous (Lipschitz with constant $\snorm{A}$).
 \end{prop}
 
 \begin{proof}
-As we said we only prove the proposition for euclidean space, so suppose
+As we said we only prove the proposition for euclidean spaces, so suppose
 that $X = \R^n$ and the norm is the standard euclidean norm.
 The general case is left as an exercise.
 
@@ -1454,11 +1457,12 @@ Suppose $\{ x_1, x_2, \ldots, x_n \}$ and $\{ y_1, y_2, \ldots, y_m \}$
 are bases for vector spaces $X$ and $Y$ respectively.  A linear operator is 
 determined by its values on the basis.  Given $A \in L(X,Y)$,
 $A x_j$ is an element of $Y$.  Define the numbers
-$a_{i,j}$ as follows
+$a_{i,j}$ via
 \begin{equation} \label{eq:matrixrepresent}
 A x_j = \sum_{i=1}^m a_{i,j} \, y_i ,
 \end{equation}
-and write them as a \emph{\myindex{matrix}}
+and write them as a \emph{\myindex{matrix}},
+which we by slight abuse of notation also call $A$
 \glsadd{not:matrix}
 \begin{equation*}
 A =
@@ -1598,9 +1602,9 @@ $\operatorname{sgn}(x)$\glsadd{not:sgn} (read \myquote{sign of $x$}) for a numbe
 1  & \text{if } x > 0 .
 \end{cases}
 \end{equation*}
-Suppose 
-$\sigma = (\sigma_1,\sigma_2,\ldots,\sigma_n)$ is a \emph{\myindex{permutation}}
-of the integers $(1,2,\ldots,n)$, that is, a reordering of $(1,2,\ldots,n)$. 
+A \emph{\myindex{permutation}}
+$\sigma = (\sigma_1,\sigma_2,\ldots,\sigma_n)$ is
+a reordering of $(1,2,\ldots,n)$. 
 Define
 \begin{equation} \label{eq:sgndef}
 \operatorname{sgn}(\sigma) = \operatorname{sgn}(\sigma_1,\ldots,\sigma_n)
@@ -1610,7 +1614,7 @@ Define
 Here $\prod$ stands for multiplication, similarly to how $\sum$ stands for
 summation.\glsadd{not:prod}
 
-Any permutation can be obtained by
+Every permutation can be obtained by
 a sequence of transpositions (switchings of two elements).
 A permutation is
 \emph{even}\index{even permutation}
@@ -1622,8 +1626,8 @@ $(1,2,3,4)$ and is therefore even: $(1,2,3,4) \to (2,1,3,4) \to (2,4,3,1)$.
 Being even or odd is well-defined:
 $\operatorname{sgn}(\sigma)$ 
 is $1$ if $\sigma$ is even and $-1$ if $\sigma$ is odd (exercise).
-This fact can be proved by noting that applying
-a transposition changes the sign, and computing that
+This fact follows since applying
+a transposition changes the sign and
 $\operatorname{sgn}(1,2,\ldots,n) = 1$.
 
 Let $S_n$  be the set of all permutations on $n$ elements (the
@@ -2336,7 +2340,7 @@ $L(\R^1,\R^1)$.  As in one dimension, the idea is that a differentiable
 mapping is \myquote{infinitesimally close} to a linear mapping, and this
 linear mapping is the derivative.
 
-Notice which norms are being used in the definition.
+Notice the norms used in the definition.
 The norm in the
 numerator is on $\R^m$, and the norm in the denominator is on $\R^n$ where $h$
 lives.
