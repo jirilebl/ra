@@ -3292,19 +3292,19 @@ smoother with metric spaces and the fixed point theorem.
 \begin{defn}
 Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
 A map
-$f \colon X \to Y$ is a \emph{\myindex{contraction}}
+$\varphi \colon X \to Y$ is a \emph{\myindex{contraction}}
 (or a contractive map) if it is
 a $k$-Lipschitz map for some $k < 1$, i.e.\ if there exists a $k < 1$ such that
 \begin{equation*}
-d_Y\bigl(f(p),f(q)\bigr) \leq k\, d_X(p,q)
+d_Y\bigl(\varphi(p),\varphi(q)\bigr) \leq k\, d_X(p,q)
 \qquad \text{for all } p,q \in X.
 \end{equation*}
 
 \medskip
 
-Given a map $f \colon X \to X$, a point $x \in X$ is called a
+Given a map $\varphi \colon X \to X$, a point $x \in X$ is called a
 \emph{\myindex{fixed point}}
-if $f(x)=x$.
+if $\varphi(x)=x$.
 \end{defn}
 
 \begin{thm}%
@@ -3314,9 +3314,9 @@ or \myindex{Banach fixed point theorem}\index{fixed point theorem}%
 \href{https://en.wikipedia.org/wiki/Stefan_Banach}{Stefan Banach}
 (1892--1945) who first stated the theorem in 1922.}]
 \label{thm:contr}
-Let $(X,d)$ be a nonempty complete metric space and $f \colon X \to X$ a
+Let $(X,d)$ be a nonempty complete metric space and $\varphi \colon X \to X$ a
 contraction.
-Then $f$ has a unique fixed point.
+Then $\varphi$ has a unique fixed point.
 \end{thm}
 
 The words \emph{complete} and \emph{contraction} are necessary.
@@ -3324,9 +3324,9 @@ See \exerciseref{exercise:nofixedpoint}.
 
 \begin{proof}
 Pick $x_0 \in X$.
-Define a sequence $\{ x_n \}_{n=1}^\infty$ by $x_{n+1} \coloneqq f(x_n)$.  Then
+Define a sequence $\{ x_n \}_{n=1}^\infty$ by $x_{n+1} \coloneqq \varphi(x_n)$.  Then
 \begin{equation*}
-d(x_{n+1},x_n) = d\bigl(f(x_n),f(x_{n-1})\bigr)
+d(x_{n+1},x_n) = d\bigl(\varphi(x_n),\varphi(x_{n-1})\bigr)
 \leq k d(x_n,x_{n-1}) .
 %\leq \cdots
 %\leq k^n d(x_1,x_0) .
@@ -3347,15 +3347,16 @@ In particular, the sequence is Cauchy (why?).  Since $X$ is complete,
 we let $x \coloneqq \lim_{n\to\infty} x_n$, and we claim that $x$
 is our unique fixed point.
 
-Fixed point?  The function $f$ is a contraction,
+Fixed point?  The function $\varphi$ is a contraction,
 so it is Lipschitz continuous:
 \begin{equation*}
-f(x) = f\Bigl( \lim_{n\to\infty} x_n\Bigr) = \lim_{n\to\infty} f(x_n) =
+\varphi(x) = \varphi\Bigl( \lim_{n\to\infty} x_n\Bigr) = \lim_{n\to\infty}
+\varphi(x_n) =
 \lim_{n\to\infty} x_{n+1} = x .
 \end{equation*}
 Unique?  Let $x$ and $y$ be fixed points.
 \begin{equation*}
-d(x,y) = d\bigl(f(x),f(y)\bigr) \leq k\, d(x,y) .
+d(x,y) = d\bigl(\varphi(x),\varphi(y)\bigr) \leq k\, d(x,y) .
 \end{equation*}
 As $k < 1$, the inequality means that $d(x,y) = 0$, and hence $x=y$.  The theorem is
 proved.
@@ -3363,9 +3364,9 @@ proved.
 
 The proof is constructive.  Not only do we know 
 a unique fixed point exists, we know how to find it.  Start with
-any point $x_0 \in X$, then iterate $f(x_0)$,
-$f(f(x_0))$,
-$f(f(f(x_0)))$, etc.\ to find better and better approximations.
+any point $x_0 \in X$, then iterate $\varphi(x_0)$,
+$\varphi(\varphi(x_0))$,
+$\varphi(\varphi(\varphi(x_0)))$, etc.\ to find better and better approximations.
 We can even find how far away
 from the fixed point we are, see the exercises.  The idea of the proof is
 therefore useful in real-world applications.
@@ -3475,6 +3476,7 @@ The space $C\bigl([-h,h],\R\bigr)$ is complete, and
 a closed subset of a complete metric space is a complete metric space with
 the subspace metric, see \propref{prop:closedcomplete}.  So $Y$ with the
 subspace metric is a complete metric space.
+We will write $d(f,g) = \snorm{f-g}_{[-h,h]}$ for this metric.
 
 Define a mapping
 $T \colon Y \to C\bigl([-h,h],\R\bigr)$ by
@@ -3509,7 +3511,7 @@ Therefore,
 \begin{equation*}
 \begin{split}
 \abs{T(f)(x) - T(g)(x)}
-&= \abs{\int_0^x F\bigl(t,f(t)\bigr) - F\bigl(t,g(t)\bigr)\,dt} \\
+&= \abs{\int_0^x \Bigl( F\bigl(t,f(t)\bigr) - F\bigl(t,g(t)\bigr)\Bigr)\,dt} \\
 & \leq \abs{x} L \, d(f,g)
  \leq h L\, d(f,g)
  \leq \frac{L\alpha}{M+L\alpha} \, d(f,g) .

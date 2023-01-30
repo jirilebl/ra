@@ -41,7 +41,7 @@ v_1 \\ v_2 \\ \vdots \\ v_n
 \right]
 }
 \end{equation*}
-We will do so when convenient.
+We do so when convenient.
 We call real numbers
 \emph{\myindex{scalars}} to distinguish them from vectors.
 
@@ -57,8 +57,7 @@ the magnitude, and it does not know where it starts.
 \caption{Vector as an arrow.\label{fig:vecasarrow}}
 \end{myfigureht}
 
-On the other hand, each
-vector also represents a point in $\R^n$.  Usually, we think of $v \in \R^n$
+Each vector also represents a point in $\R^n$.  Usually, we think of $v \in \R^n$
 as a point if we are thinking of $\R^n$ as a metric space, and we think of
 it as an arrow if we think of the so-called \emph{vector space structure} on
 $\R^n$ (addition and scalar multiplication).
@@ -91,7 +90,7 @@ If $u, v \in X$, then $u+v = v+u$.
 %mbxENDIGNORE
 %mbxlatex (Additive identity) \quad
 There is a $0 \in X$ such that $v+0=v$ for all $v \in X$.
-\item
+\item \label{vecspacedefn:addinverse}
 %mbxSTARTIGNORE
 \makebox[2.15in][l]{(Additive inverse)}
 %mbxENDIGNORE
@@ -148,7 +147,7 @@ These algebraic facts which follow quickly from the definition we will take
 for granted from now on.
 
 \begin{example}
-An example vector space is $\R^n$, where addition
+The set $\R^n$ is a vector space, addition
 and multiplication by a scalar is done componentwise:
 If $a \in \R$, $v = (v_1,v_2,\ldots,v_n) \in \R^n$, and $w =
 (w_1,w_2,\ldots,w_n) \in \R^n$, then
@@ -169,7 +168,7 @@ subsets of $\R^n$, but other vector spaces are useful in
 analysis.  Let us give a few examples.
 
 \begin{example}
-A trivial example of a vector space is just
+A trivial example of a vector space is
 $X \coloneqq \{ 0 \}$.  The operations are defined in the obvious way:
 $0 + 0 \coloneqq 0$ and $a0 \coloneqq 0$.  A zero vector must always exist,
 so all vector spaces are nonempty sets, and this $X$ is the smallest
@@ -221,7 +220,7 @@ if $\sP_n$ is the set of polynomials of degree $n$ or less,
 then $\sP_n$ is a finite-dimensional vector space, and we could 
 identify it with $\R^{n+1}$.
 
-In the above, the variable $t$ is really just a formal placeholder.
+Above, the variable $t$ is really just a formal placeholder.
 By setting $t$ equal to a real number we obtain a function.
 So the space $\R[t]$ can be thought of as a subspace of $C(\R,\R)$.
 If we restrict the range of $t$ to $[0,1]$, $\R[t]$ can be identified with
@@ -229,29 +228,31 @@ a subspace of $C([0,1],\R)$.
 \end{example}
 
 \begin{remark}
-If $X$ is a vector space, to check that a subset $S \subset X$
-is a vector subspace, we only need
+For $S \subset X$ to be a vector subspace
+of a vector space $X$, we only need to check:
+%If $X$ is a vector space, for $S \subset X$
+%to be a vector subspace, we only need to check
 \begin{enumerate}[1)]
 \item
-$0 \in S$,
+$0 \in S$.
 \item
-$S$ is closed under addition, adding two vectors in $S$ gets us a vector in
-$S$, and
+$S$ is closed under addition: If $x,y \in S$, then $x+y \in S$.
 \item
-$S$ is closed under scalar multiplication, multiplying a vector in
-$S$ by a scalar gets us a vector in $S$.
+$S$ is closed under scalar multiplication:
+If $x \in S$ and $a \in \R$, then $ax \in S$.
 \end{enumerate}
 Items 2) and 3)
-make sure that the addition and scalar multiplication are indeed defined on
-$S$.  Item 1) is required
+make sure that addition and scalar multiplication are indeed defined on~$S$.
+Item 1) is required
 to fulfill item \ref{vecspacedefn:addidentity} from the definition of vector
 space.  Existence
-of additive inverse $-v$ follows because $-v = (-1)v$ and item 3) says that
+of additive inverse $-v$, item \ref{vecspacedefn:addinverse},
+follows because $-v = (-1)v$ and item 3) says that
 $-v \in S$ if $v \in S$.  All other properties are certain equalities
 that are already satisfied in $X$ and thus must be satisfied in a subset.
 \end{remark}
 
-It is often better to think of even the simpler \myquote{finite-dimensional}
+It is better to think of even the simpler \myquote{finite-dimensional}
 vector spaces using the abstract notion rather than always as $\R^n$.
 It is possible to use other fields than $\R$ in the definition
 (for example, it is common to use the complex numbers $\C$),
@@ -263,20 +264,20 @@ $\R$ itself is a vector space over the field $\Q$.}.
 
 \begin{defn}
 Suppose $X$ is a vector space,
-$x_1, x_2, \ldots, x_k \in X$ are vectors, and
-$a_1, a_2, \ldots, a_k \in \R$ are scalars.  Then
+$x_1, x_2, \ldots, x_m \in X$ are vectors, and
+$a_1, a_2, \ldots, a_m \in \R$ are scalars.  Then
 \begin{equation*}
 a_1 x_1 + 
 a_2 x_2 +  \cdots
-+ a_k x_k
++ a_m x_m
 \end{equation*}
 is called a \emph{\myindex{linear combination}} of the vectors $x_1, x_2,
-\ldots, x_k$.
+\ldots, x_m$.
 
-If $Y \subset X$ is a set, then the \emph{\myindex{span}} of $Y$, or in notation
-$\spn(Y)$, is the set of all linear combinations
-of all finite subsets of $Y$.  We 
-say $Y$ \emph{spans} $\spn(Y)$\glsadd{not:span}.
+For a subset $Y \subset X$, let $\spn(Y)$,\glsadd{not:span}
+or the \emph{\myindex{span}} of $Y$,
+be the set of all linear combinations of all finite subsets of $Y$.
+We say $Y$ \emph{spans} $\spn(Y)$.
 By convention, define $\spn(\emptyset) \coloneqq \{ 0 \}$.
 \end{defn}
 
@@ -316,28 +317,29 @@ The span of $E$ is the set of polynomials with even powers of $t$ only.
 \end{example}
 
 Suppose we have two linear combinations of vectors from $Y$.  One linear
-combination uses the vectors $\{ x_1,x_2,\ldots,x_k \}$, and the other uses
-$\{ \widetilde{x}_1,\widetilde{x}_2,\ldots,\widetilde{x}_\ell \}$.  We can write
+combination uses the vectors $\{ x_1,x_2,\ldots,x_m \}$, and the other uses
+$\{ \widetilde{x}_1,\widetilde{x}_2,\ldots,\widetilde{x}_n \}$.  We can write
 both linear combinations using vectors from the union
-$\{ x_1,x_2,\ldots,x_k \} \cup
-\{ \widetilde{x}_1,\widetilde{x}_2,\ldots,\widetilde{x}_\ell \}$, by just taking zero
+$\{ x_1,x_2,\ldots,x_m \} \cup
+\{ \widetilde{x}_1,\widetilde{x}_2,\ldots,\widetilde{x}_n \}$, by just taking zero
 multiples of the vectors we do not need, e.g. $x_1 = x_1 + 0 \widetilde{x}_1$.
 So if we have two linear combinations, we can without loss of
-generality write them as a linear combination of $x_1,x_2,\ldots,x_k$.
+generality write them as a linear combination of one subset of vectors
+$\{ x_1,x_2,\ldots,x_m \}$ from~$Y$.
 Then their sum is also a linear combination of vectors from~$Y$:
 \begin{multline*}
 (a_1 x_1 + 
 a_2 x_2 +  \cdots
-+ a_k x_k)
++ a_m x_m)
 +
 (b_1 x_1 + 
 b_2 x_2 +  \cdots
-+ b_k x_k)
++ b_m x_m)
 \\
 =
 (a_1 + b_1) x_1 + 
 (a_2 + b_2) x_2 +  \cdots
-+ (a_k + b_k) x_k .
++ (a_m + b_m) x_m .
 \end{multline*}
 Similarly,
 a scalar multiple of a linear combination of vectors from $Y$
@@ -345,25 +347,24 @@ is a linear combination of vectors from $Y$:
 \begin{equation*}
 b (a_1 x_1 + 
 a_2 x_2 +  \cdots
-+ a_k x_k)
++ a_m x_m)
 =
 b a_1  x_1 + 
 b a_2 x_2 +  \cdots
-+ b a_k x_k .
++ b a_m x_m .
 \end{equation*}
 Finally, $0 \in \spn(Y)$; if $Y$ is nonempty, $0 = 0 v$ for some $v \in Y$.
 We have proved the following proposition.
 
 \begin{prop}
-Let $X$ be a vector space.  For every $Y \subset X$,
-the set $\spn(Y)$ is a vector space.
-That is, $\spn(Y)$ is a subspace of $X$.
+Let $X$ be a vector space and $Y \subset X$ is a subset.
+Then the set $\spn(Y)$ is a vector subspace of $X$.
 \end{prop}
 
-If $Y$ is already a vector space, then $\spn(Y) = Y$.
+If $Y$ is already a vector subspace, then $\spn(Y) = Y$.
 
 \begin{defn}
-A set of vectors $\{ x_1, x_2, \ldots, x_k \} \subset X$ is 
+A set of vectors $\{ x_1, x_2, \ldots, x_m \} \subset X$ is 
 \emph{\myindex{linearly independent}}\footnote{%
 For an infinite set $Y \subset X$, we would say $Y$ is linearly
 independent if every finite subset of $Y$ is linearly independent
@@ -372,13 +373,14 @@ However, this situation only comes up in infinitely many dimensions and
 we will not require it.}
 if the equation
 \begin{equation} \label{eq:lincomb}
-a_1 x_1 + a_2 x_2 + \cdots + a_k x_k = 0
+a_1 x_1 + a_2 x_2 + \cdots + a_m x_m = 0
 \end{equation}
-has only the trivial solution $a_1 = a_2 = \cdots = a_k = 0$.
+has only the trivial solution $a_1 = a_2 = \cdots = a_m = 0$.
+By convention, $\emptyset$ is linearly independent.
 A set that is not linearly independent is
 \emph{\myindex{linearly dependent}}.
 %
-A linearly independent set of vectors $B$ such that
+A linearly independent set of vectors $B \subset X$ such that
 $\spn(B) = X$ 
 is called a \emph{\myindex{basis}} of $X$.
 
@@ -393,13 +395,13 @@ $X$ is infinite-dimensional and write $\dim \, X \coloneqq \infty$.
 For the trivial vector space $\{ 0 \}$, we define $\dim \, \{ 0 \} \coloneqq 0$.
 \end{defn}
 
-A subset of a linear independent set is clearly linearly independent,
-so in the definition of dimension, notice that if a set does not have $d+1$
+A subset of a linear independent set is clearly linearly independent.
+So notice that if a set does not have $d+1$
 linearly independent vectors, no set of more than $d+1$ vectors is linearly
 independent either.
 Also note that no element of a linear independent set can be zero.
 In particular, $\{ 0 \}$ is the only vector space of dimension $0$.
-By convention, the empty set is linearly independent and thus a basis
+As the empty set is linearly independent, it is a basis
 of $\{ 0 \}$.
 
 As an example, the
@@ -414,17 +416,17 @@ $\dim \, \R^2 = 2$.
 If a set is linearly dependent, then one of the
 vectors is a linear combination of the others.  In other words, in
 \eqref{eq:lincomb}
-if $a_j \not= 0$, then we solve for $x_j$:
+if $a_k \not= 0$, then we solve for $x_k$:
 \begin{equation*}
-x_j = \frac{-a_1}{a_j} x_1 + \cdots + 
-\frac{-a_{j-1}}{a_j} x_{j-1} +
-\frac{-a_{j+1}}{a_j} x_{j+1} +
+x_k = \frac{-a_1}{a_k} x_1 + \cdots + 
+\frac{-a_{k-1}}{a_k} x_{k-1} +
+\frac{-a_{k+1}}{a_k} x_{k+1} +
 \cdots + 
-\frac{-a_k}{a_k} x_k .
+\frac{-a_m}{a_m} x_m .
 \end{equation*}
-The vector $x_j$ has at least two different representations
-as linear combinations of $\{ x_1,x_2,\ldots,x_k \}$. The one above and
-$x_j$ itself. 
+The vector $x_k$ has at least two different representations
+as linear combinations of the vectors $\{ x_1,x_2,\ldots,x_m \}$. The one above and
+$x_k$ itself. 
 For example, the set $\bigl\{ (0,1), (2,3), (5,0) \bigr\}$ in $\R^2$ is linearly dependent:
 \begin{equation*}
 3(0,1) - (2,3) + 2(1,0) = 0 ,
@@ -434,12 +436,12 @@ For example, the set $\bigl\{ (0,1), (2,3), (5,0) \bigr\}$ in $\R^2$ is linearly
 
 \begin{prop}
 Suppose a vector space $X$ has basis 
-$B = \{ x_1, x_2, \ldots, x_k \}$.  Then
+$B = \{ x_1, x_2, \ldots, x_n \}$.  Then
 every $y \in X$ has a unique representation of the form
 \begin{equation*}
-y = \sum_{j=1}^k a_j \, x_j
+y = \sum_{k=1}^n a_k \, x_k
 \end{equation*}
-for some scalars $a_1, a_2, \ldots, a_k$.
+for some scalars $a_1, a_2, \ldots, a_n$.
 \end{prop}
 
 \begin{proof}
@@ -447,13 +449,13 @@ As $X$ is the span of $B$,
 every $y \in X$ is a linear combination of elements of $B$.
 Suppose
 \begin{equation*}
-y = \sum_{j=1}^k a_j \, x_j = \sum_{j=1}^k b_j \, x_j .
+y = \sum_{k=1}^n a_k \, x_k = \sum_{k=1}^n b_k \, x_k .
 \end{equation*}
 Then
 \begin{equation*}
-\sum_{j=1}^k (a_j-b_j) x_j = 0 .
+\sum_{k=1}^n (a_k-b_k) x_k = 0 .
 \end{equation*}
-By linear independence of the basis $a_j = b_j$ for all $j$, and so
+By linear independence of the basis, $a_k = b_k$ for all $k$, and so
 the representation is unique.
 \end{proof}
 
@@ -465,13 +467,13 @@ e_1 \coloneqq (1,0,0,\ldots,0) , \quad
 e_2 \coloneqq (0,1,0,\ldots,0) , \quad \ldots, \quad
 e_n \coloneqq (0,0,0,\ldots,1) ,
 \end{equation*}
-We use the same letters $e_j$ for any $\R^n$, and
+We use the same letters $e_k$ for any $\R^n$, and
 which space $\R^n$ we are working in is understood from context.
 A direct computation shows that $\{ e_1, e_2, \ldots, e_n \}$ is really
 a basis of $\R^n$; it spans $\R^n$ and is
 linearly independent.  In fact,
 \begin{equation*}
-a = (a_1,a_2,\ldots,a_n) = \sum_{j=1}^n a_j \, e_j .
+a = (a_1,a_2,\ldots,a_n) = \sum_{k=1}^n a_k \, e_k .
 \end{equation*}
 
 \begin{prop} \label{mv:dimprop}
@@ -501,9 +503,9 @@ vectors such that $T \cup S$ is a basis of $X$.
 \begin{proof}
 All statements hold trivially when $d=0$, so assume $d \geq 1$.
 
-Let us start with \ref{mv:dimprop:i}.
-Suppose $S = \{ x_1 , x_2, \ldots, x_d \}$ spans $X$, and
-$T = \{ y_1, y_2, \ldots, y_m \}$ is a set of linearly independent
+We start with \ref{mv:dimprop:i}.
+Suppose $S \coloneqq \{ x_1 , x_2, \ldots, x_d \}$ spans $X$, and
+$T \coloneqq \{ y_1, y_2, \ldots, y_m \}$ is a set of linearly independent
 vectors of $X$.  We wish to show that $m \leq d$.
 Write
 \begin{equation*}
@@ -511,13 +513,12 @@ y_1 = \sum_{k=1}^d a_{k,1} x_k ,
 \end{equation*}
 for some numbers $a_{1,1},a_{2,1},\ldots,a_{d,1}$,
 which we can do as $S$ spans $X$.  One of the
-$a_{k,1}$ is nonzero (otherwise $y_1$ would be zero),
-so suppose without loss of generality that this
-is $a_{1,1}$.  Then we solve
+$a_{k,1}$ is nonzero (otherwise $y_1$ would be zero).
+Suppose without loss of generality that $a_{1,1} \not= 0$.  We solve
 \begin{equation*}
 x_1 = \frac{1}{a_{1,1}} y_1 - \sum_{k=2}^d \frac{a_{k,1}}{a_{1,1}} x_k .
 \end{equation*}
-In particular, $\{ y_1 , x_2, \ldots, x_d \}$ span $X$, since $x_1$ can be
+In particular, $\{ y_1 , x_2, \ldots, x_d \}$ spans $X$, since $x_1$ can be
 obtained from $\{ y_1 , x_2, \ldots, x_d \}$.  Therefore, there are some numbers
 for some numbers $a_{1,2},a_{2,2},\ldots,a_{d,2}$, such that
 \begin{equation*}
@@ -535,15 +536,15 @@ x_2 = \frac{1}{a_{2,2}} y_2 - \frac{a_{1,2}}{a_{2,2}} y_1 - \sum_{k=3}^d
 In particular,
 $\{ y_1 , y_2, x_3, \ldots, x_d \}$ spans $X$.
 
-We continue this procedure.  If $m < d$, then we are done.  So suppose
+We continue this procedure.  If $m < d$, we are done.  Suppose
 $m \geq d$.
 After $d$ steps, we obtain that 
 $\{ y_1 , y_2, \ldots, y_d \}$ spans $X$.  Any
 other vector $v$ in $X$ is a linear combination of
-$\{ y_1 , y_2, \ldots, y_d \}$, and hence cannot be in $T$ as $T$ is
+$\{ y_1 , y_2, \ldots, y_d \}$ and hence cannot be in $T$ as $T$ is
 linearly independent.  So $m = d$.
 
-Let us look at \ref{mv:dimprop:ii}.
+We move to \ref{mv:dimprop:ii}.
 First a short claim.
 If $T$ is a set of linearly independent vectors
 that do not span $X$, that is, $X \setminus
@@ -559,7 +560,7 @@ and $T$ must span $X$, otherwise we could choose a larger set of linearly
 independent vectors via the claim.  So we have a basis of $d$ vectors.
 On the other hand, if we have a basis of $d$ vectors,
 the dimension is at least $d$ as a basis is linearly independent.
-On the other hand a basis also spans $X$, and so
+A basis also spans $X$, and so
 by \ref{mv:dimprop:i} we know that dimension is at most $d$.
 Hence the dimension of $X$ must equal $d$.
 
@@ -570,12 +571,15 @@ suppose $Y \subset X$ is a vector subspace,
 where $\dim \, X = d$.  As $X$ cannot contain $d+1$ linearly independent
 vectors, neither can $Y$.
 
-For \ref{mv:dimprop:v} suppose $T$ is a set of $m$ vectors
+For \ref{mv:dimprop:v}, suppose $T$ is a set of $m$ vectors
 that is linearly dependent
-and spans $X$, we will show that $m > d$.  One of the
+and spans $X$.
+We will show that $m > d$.
+One of the
 vectors is a linear combination of the others.  If we remove it
-from $T$ we obtain a set of $m-1$ vectors that still span $X$ and hence
-$d = \dim \, X \leq m-1$ by \ref{mv:dimprop:i}.
+from $T$, we obtain a set of $m-1$ vectors that still span $X$.
+Hence
+$d = \dim \, X \leq m-1$ by~\ref{mv:dimprop:i}.
 
 For \ref{mv:dimprop:vi} suppose $T = \{ x_1, x_2, \ldots, x_m \}$ is
 a linearly independent set.  Firstly, $m \leq d$ by definition of dimension.
@@ -603,7 +607,7 @@ is \emph{\myindex{linear}} (we also say $A$ is a
 or a \emph{\myindex{linear operator}}\index{operator, linear})
 if for all $a \in \R$ and all $x,y \in X$,
 \begin{equation*}
-A(a x) = a A(x), \qquad \text{and} \qquad A(x+y) = A(x)+A(y) .
+A(a x) = a A(x) \qquad \text{and} \qquad A(x+y) = A(x)+A(y) .
 \end{equation*}
 We usually write $Ax$ instead of $A(x)$ if $A$ is linear.
 If $A$ is one-to-one and onto, then we say $A$ is
@@ -622,7 +626,7 @@ the transformations $aA$ and $A+B$ by
 (A+B)(x) \coloneqq Ax + Bx .
 \end{equation*}
 If $A \in L(Y,Z)$ and $B \in L(X,Y)$, define the
-transformation $AB$ as the composition $A \circ B$, that is,
+transformation $AB$ as the composition $A \circ B$,
 \begin{equation*}
 ABx \coloneqq A(Bx) .
 \end{equation*}
@@ -687,24 +691,24 @@ little trickier to write, so let us stick with finitely many dimensions.
 
 \begin{proof}
 Let $\{ x_1, x_2, \ldots, x_n \}$ be a basis of $X$, and let 
-$y_j \coloneqq A x_j$.  Every $x \in X$ has a unique representation
+$y_k \coloneqq A x_k$.  Every $x \in X$ has a unique representation
 \begin{equation*}
-x = \sum_{j=1}^n b_j \, x_j
+x = \sum_{k=1}^n b_k \, x_k
 \end{equation*}
 for some numbers $b_1,b_2,\ldots,b_n$.  By linearity
 \begin{equation*}
 Ax = 
-A\sum_{j=1}^n b_j x_j
+A\sum_{k=1}^n b_k x_k
 =
-\sum_{j=1}^n b_j \, Ax_j
+\sum_{k=1}^n b_k \, Ax_k
 =
-\sum_{j=1}^n b_j \, y_j .
+\sum_{k=1}^n b_k \, y_k .
 \end{equation*}
-The \myquote{furthermore} follows by setting $y_j \coloneqq \widetilde{A}(x_j)$,
+The \myquote{furthermore} follows by setting $y_k \coloneqq \widetilde{A}(x_k)$,
 and then for 
-$x = \sum_{j=1}^n b_j \, x_j$,
+$x = \sum_{k=1}^n b_k \, x_k$,
 defining the extension as
-$Ax \coloneqq \sum_{j=1}^n b_j \, y_j$.  The function is well-defined by
+$Ax \coloneqq \sum_{k=1}^n b_k \, y_k$.  The function is well-defined by
 uniqueness of the representation of $x$.
 We leave it to the reader to check that $A$ is linear.
 \end{proof}
@@ -722,8 +726,8 @@ Let $\{ x_1,x_2,\ldots,x_n \}$ be a basis for $X$.
 First suppose $A$ is one-to-one.  Let $c_1,c_2,\ldots,c_n$ be such that
 \begin{equation*}
 0 =
-\sum_{j=1}^n c_j \, Ax_j =
-A\sum_{j=1}^n c_j \, x_j 
+\sum_{k=1}^n c_k \, Ax_k =
+A\sum_{k=1}^n c_k \, x_k 
 .
 \end{equation*}
 As $A$ is one-to-one,
@@ -731,17 +735,17 @@ the only vector that is taken to 0 is 0 itself.
 Hence,
 \begin{equation*}
 0 =
-\sum_{j=1}^n c_j \, x_j
+\sum_{k=1}^n c_k \, x_k
 \end{equation*}
-and $c_j = 0$ for all $j$.
+and $c_k = 0$ for all $k$.
 So $\{ Ax_1, Ax_2, \ldots, Ax_n \}$ is a linearly independent set.
 By \propref{mv:dimprop}
 and the fact that the dimension is $n$, we conclude
 $\{ Ax_1, Ax_2, \ldots, Ax_n \}$ spans $X$.  Any point $x \in X$
 can be written as
 \begin{equation*}
-x = \sum_{j=1}^n a_j \, Ax_j =
-A\sum_{j=1}^n a_j \, x_j ,
+x = \sum_{k=1}^n a_k \, Ax_k =
+A\sum_{k=1}^n a_k \, x_k ,
 \end{equation*}
 so $A$ is onto.
 
@@ -750,12 +754,12 @@ the basis, every element of $X$ is in the span of
 $\{ Ax_1, Ax_2, \ldots, Ax_n \}$.  Suppose that for some
 $c_1,c_2,\ldots,c_n$,
 \begin{equation*}
-0 = A\sum_{j=1}^n c_j \, x_j =
-\sum_{j=1}^n c_j \, Ax_j .
+0 = A\sum_{k=1}^n c_k \, x_k =
+\sum_{k=1}^n c_k \, Ax_k .
 \end{equation*}
 By \propref{mv:dimprop}
 as $\{ Ax_1, Ax_2, \ldots, Ax_n \}$ span $X$, the set is linearly independent,
-and hence $c_j = 0$ for all $j$.  In other words, if $Ax = 0$, then $x=0$.  This means that
+and hence $c_k = 0$ for all $k$.  In other words, if $Ax = 0$, then $x=0$.  This means that
 $A$ is one-to-one:  If $Ax = Ay$, then $A(x-y) = 0$ and so
 $x=y$.
 \end{proof}
@@ -771,11 +775,11 @@ We often identify a finite-dimensional vector
 space $X$ of dimension $n$ with $\R^n$, provided we fix a basis
 $\{ x_1, x_2, \ldots, x_n \}$ in $X$.  That is, we define a bijective
 linear map $A \in L(X,\R^n)$ by
-$Ax_j \coloneqq e_j$, where $\{ e_1, e_2, \ldots, e_n \}$ is the standard
-basis in $\R^n$.  Then we have
-the correspondence \glsadd{not:mapsto}
+$Ax_k \coloneqq e_k$, where $\{ e_1, e_2, \ldots, e_n \}$ is the standard
+basis in $\R^n$.  We have
+the correspondence\glsadd{not:mapsto}
 \begin{equation*}
-\sum_{j=1}^n c_j \, x_j \, \in X
+\sum_{k=1}^n c_k \, x_k \, \in X
 \quad
 \overset{A}{\mapsto}
 \quad
@@ -803,12 +807,13 @@ there are lots of nonconvex connected sets.  For example,
 the set $\R^2 \setminus \{0\}$ is not convex, but it is connected.  To see
 this, take any $x \in \R^2 \setminus \{0\}$ and let $y \coloneqq -x$.
 Then $(\nicefrac{1}{2})x + (\nicefrac{1}{2})y = 0$, which is not in the set.
-Balls in $\R^n$ are convex.  We use this result often enough we state
+Balls (in the standard metric) in $\R^n$ are convex.  We use this result often enough we state
 it as a proposition, and leave the proof as an exercise.
 
 \begin{prop}
-Let $x \in \R^n$ and $r > 0$.  The ball $B(x,r) \subset \R^n$ (using the
-standard metric on $\R^n$) is convex.
+Let $x \in \R^n$ and $r > 0$.  The ball $B(x,r) \subset \R^n$
+%(using the standard metric on $\R^n$)
+is convex.
 \end{prop}
 
 \begin{example}
@@ -842,8 +847,8 @@ if $\{ C_\lambda \}_{\lambda \in I}$ is
 an arbitrary collection of convex sets, then
 \begin{equation*}
 C \coloneqq \bigcap_{\lambda \in I} C_\lambda
+\qquad \text{is convex.}
 \end{equation*}
-is convex.
 \end{prop}
 
 \begin{proof}
@@ -910,9 +915,9 @@ Verify that $\R^n$ is a vector space.
 \begin{exercise}
 Let $X$ be a vector space.
 Prove that a finite set of vectors $\{ x_1,x_2,\ldots,x_n \} \subset X$ 
-is linearly independent if and only if for every $j=1,2,\ldots,n$
+is linearly independent if and only if for every $k=1,2,\ldots,n$
 \begin{equation*}
-\spn\bigl( \{ x_1,\ldots,x_{j-1},x_{j+1},\ldots,x_n \}\bigr) \subsetneq
+\spn\bigl( \{ x_1,\ldots,x_{k-1},x_{k+1},\ldots,x_n \}\bigr) \subsetneq
 \spn\bigl( \{ x_1,x_2,\ldots,x_n \}\bigr) .
 \end{equation*}
 That is, the span of the set with one vector removed is strictly smaller.
@@ -969,7 +974,7 @@ $\{ x_1, x_2,\ldots x_n \}$ is a basis of $X$,
 $\{ y_1, y_2,\ldots y_n \} \subset Y$, and we define a
 function
 \begin{equation*}
-Ax \coloneqq \sum_{j=1}^n b_j y_j, \qquad \text{if} \quad x=\sum_{j=1}^n b_j x_j .
+Ax \coloneqq \sum_{k=1}^n b_k y_k, \qquad \text{if} \quad x=\sum_{k=1}^n b_k x_k .
 \end{equation*}
 Then prove that $A \colon X \to Y$ is linear.
 \end{exercise}
@@ -1079,7 +1084,7 @@ scalar \emph{\myindex{dot product}} on $\R^n$.  For vectors
 $x=(x_1,x_2,\ldots,x_n) \in \R^n$
 and $y=(y_1,y_2,\ldots,y_n) \in \R^n$ define\glsadd{not:dotprod}
 \begin{equation*}
-x \cdot y \coloneqq \sum_{j=1}^n x_j\, y_j .
+x \cdot y \coloneqq \sum_{k=1}^n x_k\, y_k .
 \end{equation*}
 The dot product is linear in each variable
 separately, or in more fancy language it is \emph{\myindex{bilinear}}.
@@ -1241,22 +1246,22 @@ The general case is left as an exercise.
 Let $\{ e_1,e_2,\ldots,e_n \}$ be the standard basis of $\R^n$.
 Write $x \in \R^n$, with $\snorm{x} = 1$, as
 \begin{equation*}
-x = \sum_{j=1}^n c_j \, e_j .
+x = \sum_{k=1}^n c_k \, e_k .
 \end{equation*}
-Since $e_j \cdot e_\ell = 0$ whenever $j\not=\ell$ and $e_j \cdot e_j = 1$,
-then $c_j = x \cdot e_j$ and by Cauchy--Schwarz
+Since $e_k \cdot e_\ell = 0$ whenever $k\not=\ell$ and $e_k \cdot e_k = 1$,
+then $c_k = x \cdot e_k$ and by Cauchy--Schwarz
 \begin{equation*}
-\sabs{c_j} = \sabs{ x \cdot e_j }
-\leq \snorm{x} \, \snorm{e_j} = 1 .
+\sabs{c_k} = \sabs{ x \cdot e_k }
+\leq \snorm{x} \, \snorm{e_k} = 1 .
 \end{equation*}
 Then
 \begin{equation*}
 \snorm{Ax} =
-\norm{\sum_{j=1}^n c_j \, Ae_j}
+\norm{\sum_{k=1}^n c_k \, Ae_k}
 \leq
-\sum_{j=1}^n \sabs{c_j} \, \snorm{Ae_j} 
+\sum_{k=1}^n \sabs{c_k} \, \snorm{Ae_k} 
 \leq
-\sum_{j=1}^n \snorm{Ae_j} .
+\sum_{k=1}^n \snorm{Ae_k} .
 \end{equation*}
 The right-hand side does not depend on $x$.  We found
 a finite upper bound for $\snorm{Ax}$ independent of $x$, so $\snorm{A} < \infty$.
@@ -1780,9 +1785,9 @@ If $A$ is not invertible, then it is not one-to-one, and so $A$ takes
 some nonzero vector to zero.  In other words, the columns of $A$ are linearly dependent.
 Suppose 
 \begin{equation*}
-\sum_{j=1}^n \gamma_j\, a_j = 0 ,
+\sum_{k=1}^n \gamma_k\, a_k = 0 ,
 \end{equation*}
-where not all $\gamma_j$ are equal to 0.
+where not all $\gamma_k$ are equal to 0.
 Without loss of generality suppose $\gamma_1\neq 0$.
 Take
 \begin{equation*}
@@ -1972,7 +1977,7 @@ What is the unit ball $B(0,1)$ in this norm?
 \begin{exercise}
 For $x \in \R^n$, define
 \begin{equation*}
-\snorm{x}_{1} \coloneqq \sum_{j=1}^n \sabs{x_j},
+\snorm{x}_{1} \coloneqq \sum_{k=1}^n \sabs{x_k},
 \end{equation*}
 sometimes called the $1$-norm (or $L^1$ norm).
 \begin{enumerate}[a)]

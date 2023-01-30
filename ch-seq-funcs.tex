@@ -1642,8 +1642,12 @@ Therefore
 \int_{0}^x F\bigl(t,f_{k-1}(t)\bigr)\,dt}
 \\
 & =
-\abs{\int_{0}^x F\bigl(t,f_{n-1}(t)\bigr)-
-F\bigl(t,f_{k-1}(t)\bigr)\,dt}
+\abs{\int_{0}^x
+\Bigl(
+F\bigl(t,f_{n-1}(t)\bigr)-
+F\bigl(t,f_{k-1}(t)\bigr)
+\Bigr)
+\,dt}
 \\
 & \leq
 L\norm{f_{n-1}-f_{k-1}}_{[-h,h]}
@@ -1766,9 +1770,12 @@ F\bigl(t,g(t)\bigr)\,dt
 & =
 \abs{
 \int_0^{x}
+\Bigl(
 F\bigl(t,f(t)\bigr)
 -
-F\bigl(t,g(t)\bigr)\,dt
+F\bigl(t,g(t)\bigr)
+\Bigr)
+\,dt
 }
 \\
 & \leq
