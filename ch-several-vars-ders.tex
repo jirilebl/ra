@@ -47,14 +47,18 @@ We call real numbers
 
 We often think of vectors as a direction and a magnitude and draw the
 vector as an arrow.  The vector $(v_1,v_2,\ldots,v_n)$ is represented
-by an arrow from the origin to the point $(v_1,v_2,\ldots,v_n)$, see
-\figureref{fig:vecasarrow} in the plane $\R^2$.
+by an arrow from the origin to the point $(v_1,v_2,\ldots,v_n)$.
 When we think of vectors as arrows, they are
 not based at the origin necessarily; a vector is simply the direction and
 the magnitude, and it does not know where it starts.
+There is a natural algebraic structure when thinking of vectors as arrows.
+We can add vectors as arrows by following one vector and then the other.
+And we can take scalar multiples of vectors as arrows by rescaling
+the magnitude.  See \figureref{fig:vecasarrow}.
 \begin{myfigureht}
 \subimport*{figures/}{vecasarrow.pdf_t}
-\caption{Vector as an arrow.\label{fig:vecasarrow}}
+\caption{Vector as an arrow in $\R^2$, and the meaning of addition and
+scalar multiplication.\label{fig:vecasarrow}}
 \end{myfigureht}
 
 Each vector also represents a point in $\R^n$.  Usually, we think of $v \in \R^n$
@@ -381,23 +385,32 @@ A linearly independent set of vectors $B \subset X$ such that
 $\spn(B) = X$ 
 is called a \emph{\myindex{basis}} of $X$.
 
-If a vector space $X$ contains a linearly independent set of $d$ vectors,
-but no linearly independent set of $d+1$ vectors, then we say
-the \emph{\myindex{dimension}} of $X$ is $d$,
+Suppose $d$ is largest integer for which $X$ contains a set of
+$d$ linearly independent vectors.  We then say $d$ is
+the \emph{\myindex{dimension}} of $X$,
 and we write $\dim \, X \coloneqq d$.
-If for all $d \in \N$, the vector space
-$X$ contains a set of $d$ linearly independent vectors, then we say
+If $X$ contains a set of $d$ linearly independent vectors 
+for arbitrarily large $d$, we say
 $X$ is infinite-dimensional and write $\dim \, X \coloneqq \infty$.
 %
 For the trivial vector space $\{ 0 \}$, we define $\dim \, \{ 0 \} \coloneqq 0$.
 \end{defn}
 
 A subset of a linearly independent set is clearly linearly independent.
-So notice that if a set does not have $d+1$
+So if a set contains $d$ linearly independent vectors, it also contains a
+set of $m$ linearly independent vectors for all $m \leq d$.
+Moreover, if a set does not have $d+1$
 linearly independent vectors, no set of more than $d+1$ vectors is linearly
-independent either.
-Also note that no element of a linear independent set can be zero.
+independent.
+So $X$ is of dimension is $d$ if there
+is a set of $d$ linearly independent vectors, but no
+set of $d+1$ vectors is linearly independent.
+
+No element of a linearly independent set can be zero,
+and a set with one nonzero element is always linearly independent.
 In particular, $\{ 0 \}$ is the only vector space of dimension $0$.
+Every other vector space has a positive dimension
+or is infinite-dimensional.
 As the empty set is linearly independent, it is a basis
 of $\{ 0 \}$.
 
