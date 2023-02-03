@@ -363,7 +363,10 @@ Let $X$ be a vector space and $Y \subset X$ is a subset.
 Then the set $\spn(Y)$ is a vector subspace of $X$.
 \end{prop}
 
-If $Y$ is already a vector subspace, then $\spn(Y) = Y$.
+Every linear combination of elements in a subspace is an element of that
+subspace.  So $\spn(Y)$ is the smallest subspace that contains $Y$.
+In particular,
+if $Y$ is already a vector subspace, then $\spn(Y) = Y$.
 
 \begin{defn}
 A set of vectors $\{ x_1, x_2, \ldots, x_m \} \subset X$ is 
@@ -510,6 +513,9 @@ vectors such that $T \cup S$ is a basis of $X$.
 \end{enumerate}
 \end{prop}
 
+In particular, the last item says that if $\dim X = d$ and $T$ is
+a set of $d$ linearly independent vectors, then $T$ spans $X$.
+
 \begin{proof}
 All statements hold trivially when $d=0$, so assume $d \geq 1$.
 
@@ -597,7 +603,7 @@ $d = \dim \, X \leq m-1$ by~\ref{mv:dimprop:i}.
 For \ref{mv:dimprop:vi} suppose $T = \{ x_1, x_2, \ldots, x_m \}$ is
 a linearly independent set.  First, $m \leq d$ by definition of dimension.
 If $m=d$, the set $T$ must span $X$ as in the proof of \ref{mv:dimprop:ii},
-otherwise we could add another vector.
+otherwise we could add another vector to $T$.
 If $m < d$,  $T$ cannot span $X$ by \ref{mv:dimprop:ii}.
 So find $v$ not in the span of~$T$.
 Via the claim, the set $T \cup \{ v \}$ is
@@ -630,8 +636,8 @@ and we denote the inverse by $A^{-1}$.
 If $A \colon X \to X$ is linear, then we say $A$ is a
 \emph{linear operator on $X$}.
 
-We write $L(X,Y)$\glsadd{not:LXY} for the set of all linear transformations from $X$ to
-$Y$, and just $L(X)$\glsadd{not:LX} for the set of linear operators on $X$.
+We write $L(X,Y)$\glsadd{not:LXY} for the set of linear transformations from $X$ to
+$Y$, and $L(X)$\glsadd{not:LX} for the set of linear operators on $X$.
 If $a \in \R$ and $A,B \in L(X,Y)$, define
 the transformations $aA$ and $A+B$ by
 \begin{equation*}
@@ -786,7 +792,7 @@ If $X$ and $Y$ are finite-dimensional vector spaces, then $L(X,Y)$
 is also finite-dimensional.
 \end{prop}
 
-We often identify a finite-dimensional vector
+We can identify a finite-dimensional vector
 space $X$ of dimension $n$ with $\R^n$, provided we fix a basis
 $\{ x_1, x_2, \ldots, x_n \}$ in $X$.  That is, we define a bijective
 linear map $A \in L(X,\R^n)$ by
