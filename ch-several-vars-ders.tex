@@ -813,7 +813,7 @@ A subset $U$ of a vector space is \emph{\myindex{convex}}
 if whenever $x,y \in U$, the line segment from
 $x$ to $y$ lies in $U$.  That is, if the \emph{\myindex{convex combination}}
 $(1-t)x+ty$ is in $U$ for all $t \in [0,1]$.
-Sometimes we write $[x,y]$ for this line segment.
+We write $[x,y]$ for this line segment.\glsadd{not:segmentinRn}
 See \figureref{mv:convexcomb}.
 
 \begin{myfigureht}
@@ -825,11 +825,12 @@ In $\R$, convex sets are precisely the intervals, which are
 also precisely the connected sets.
 In two or more dimensions
 there are lots of nonconvex connected sets.  For example,
-the set $\R^2 \setminus \{0\}$ is not convex, but it is connected.  To see
+the set $\R^2 \setminus \{0\}$ is connected, but not convex.  To see
 this, take any $x \in \R^2 \setminus \{0\}$ and let $y \coloneqq -x$.
 Then $(\nicefrac{1}{2})x + (\nicefrac{1}{2})y = 0$, which is not in the set.
-Balls (in the standard metric) in $\R^n$ are convex.  We use this result often enough we state
-it as a proposition, and leave the proof as an exercise.
+Balls (in the standard metric) in $\R^n$ are convex.  We use this result
+often enough to state it as a proposition,
+and we leave its proof as an exercise.
 
 \begin{prop}
 Let $x \in \R^n$ and $r > 0$.  The ball $B(x,r) \subset \R^n$
@@ -838,8 +839,8 @@ is convex.
 \end{prop}
 
 \begin{example}
-As a convex combination is, in particular, a linear combination,
-so every subspace $V$ of a vector space $X$ is convex.
+A convex combination is, in particular, a linear combination.
+So every vector subspace $V$ of a vector space $X$ is convex.
 \end{example}
 
 \begin{example}
