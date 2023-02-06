@@ -321,31 +321,31 @@ The span of $E$ is the set of polynomials with even powers of $t$ only.
 Suppose we have two linear combinations of vectors from $Y$.  One linear
 combination uses the vectors $\{ x_1,x_2,\ldots,x_m \}$, and the other uses
 $\{ \widetilde{x}_1,\widetilde{x}_2,\ldots,\widetilde{x}_n \}$.  We can write
-both linear combinations using vectors from the union
+their sum using vectors from the union
 $\{ x_1,x_2,\ldots,x_m \} \cup
-\{ \widetilde{x}_1,\widetilde{x}_2,\ldots,\widetilde{x}_n \}$, by just taking zero
-multiples of the vectors we do not need, e.g. $x_1 = x_1 + 0 \widetilde{x}_1$.
-So if we have two linear combinations, we can without loss of
-generality write them as a linear combination of one subset of vectors
-$\{ x_1,x_2,\ldots,x_m \}$ from~$Y$.
-Then their sum is also a linear combination of vectors from~$Y$:
+\{ \widetilde{x}_1,\widetilde{x}_2,\ldots,\widetilde{x}_n \}$:
 \begin{multline*}
 (a_1 x_1 + 
 a_2 x_2 +  \cdots
 + a_m x_m)
 +
-(b_1 x_1 + 
-b_2 x_2 +  \cdots
-+ b_m x_m)
+(b_1 \widetilde{x}_1 + 
+b_2 \widetilde{x}_2 +  \cdots
++ b_n \widetilde{x}_n)
 \\
 =
-(a_1 + b_1) x_1 + 
-(a_2 + b_2) x_2 +  \cdots
-+ (a_m + b_m) x_m .
+a_1 x_1 + 
+a_2 x_2 +  \cdots
++ a_m x_m
++
+b_1 \widetilde{x}_1 + 
+b_2 \widetilde{x}_2 +  \cdots
++ b_n \widetilde{x}_n .
 \end{multline*}
+So the sum is also a linear combination of vectors from~$Y$.
 Similarly,
-a scalar multiple of a linear combination of vectors from $Y$
-is a linear combination of vectors from $Y$:
+a scalar multiple of a linear combination of vectors from~$Y$
+is a linear combination of vectors from~$Y$:
 \begin{equation*}
 b (a_1 x_1 + 
 a_2 x_2 +  \cdots
@@ -531,7 +531,7 @@ y_1 = \sum_{k=1}^d a_{k,1} x_k ,
 for some numbers $a_{1,1},a_{2,1},\ldots,a_{d,1}$.
 One of the
 $a_{k,1}$ is nonzero, otherwise $y_1$ would be zero.
-Without loss of generality, suppose $a_{1,1} \not= 0$.  We solve
+Without loss of generality, suppose $a_{1,1} \not= 0$.  Solve
 \begin{equation*}
 x_1 = \frac{1}{a_{1,1}} y_1 - \sum_{k=2}^d \frac{a_{k,1}}{a_{1,1}} x_k .
 \end{equation*}
@@ -671,7 +671,7 @@ If $A \in L(X,Y)$ is invertible, then $A^{-1}$ is linear.
 
 \begin{proof}
 Let $a \in \R$ and $y \in Y$.  As $A$ is onto, then there is an 
-$x$ such that $y = Ax$.
+$x \in X$ such that $y = Ax$.
 As it is also one-to-one, $A^{-1}(Az) = z$ for all $z \in X$.
 So
 \begin{equation*}
@@ -705,10 +705,13 @@ then every function $\widetilde{A} \colon B \to Y$ extends to a linear
 function $A$ on $X$.
 \end{prop}
 
-We will only prove this proposition for finite-dimensional spaces, as we do
+We only prove this proposition for finite-dimensional spaces, as we do
 not need infinite-dimensional spaces.
 For infinite-dimensional spaces, the proof is essentially the same, but a
-little trickier to write, so let us stick with finitely many dimensions.
+little trickier to write.
+Moreover, we haven't even defined what a basis is for
+infinite-dimensional spaces.
+So let us stick with finitely many dimensions.
 
 \begin{proof}
 Let $\{ x_1, x_2, \ldots, x_n \}$ be a basis of $X$, and let 
@@ -716,7 +719,7 @@ $y_k \coloneqq A x_k$.  Every $x \in X$ has a unique representation
 \begin{equation*}
 x = \sum_{k=1}^n b_k \, x_k
 \end{equation*}
-for some numbers $b_1,b_2,\ldots,b_n$.  By linearity
+for some numbers $b_1,b_2,\ldots,b_n$.  By linearity,
 \begin{equation*}
 Ax = 
 A\sum_{k=1}^n b_k x_k
