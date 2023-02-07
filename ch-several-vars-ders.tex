@@ -621,7 +621,7 @@ a function $f \colon X \to Y$ is often called a
 rather than a \emph{function}.
 
 \begin{defn}
-A mapping $A \colon X \to Y$ of vector spaces $X$ and $Y$
+A map $A \colon X \to Y$ of vector spaces $X$ and $Y$
 is \emph{\myindex{linear}} (we also say $A$ is a
 \emph{\myindex{linear transformation}}\index{transformation, linear}
 or a \emph{\myindex{linear operator}}\index{operator, linear})
@@ -636,17 +636,17 @@ and we denote the inverse by $A^{-1}$.
 If $A \colon X \to X$ is linear, then we say $A$ is a
 \emph{linear operator on $X$}.
 
-We write $L(X,Y)$\glsadd{not:LXY} for the set of linear transformations from $X$ to
+We write $L(X,Y)$\glsadd{not:LXY} for the set of linear maps from $X$ to
 $Y$, and $L(X)$\glsadd{not:LX} for the set of linear operators on $X$.
 If $a \in \R$ and $A,B \in L(X,Y)$, define
-the transformations $aA$ and $A+B$ by
+the maps $aA$ and $A+B$ by
 \begin{equation*}
 (aA)(x) \coloneqq aAx ,
 \qquad
 (A+B)(x) \coloneqq Ax + Bx .
 \end{equation*}
 If $A \in L(Y,Z)$ and $B \in L(X,Y)$, define the
-transformation $AB$ as the composition $A \circ B$,
+map $AB \colon X \to Z$ as the composition $A \circ B$,
 \begin{equation*}
 ABx \coloneqq A(Bx) .
 \end{equation*}
@@ -659,10 +659,10 @@ $A+B \in L(X,Y)$, and that $AB \in L(X,Z)$.
 In particular, $L(X,Y)$ is a vector space ($0$ is the linear map that takes
 everything to $0$).
 As $L(X)$ is not only a vector space, but also
-admits a product (composition of operators),
-it is often called an \emph{\myindex{algebra}}.
+admits a product (composition),
+it is called an \emph{\myindex{algebra}}.
 
-An immediate consequence of the definition of a linear mapping is: If
+An immediate consequence of the definition is: If
 $A$ is linear, then $A0 = 0$.
 
 \begin{prop}
@@ -769,21 +769,22 @@ can be written as
 \begin{equation*}
 x = \sum_{k=1}^n a_k \, Ax_k =
 A\sum_{k=1}^n a_k \, x_k ,
+\avoidbreak
 \end{equation*}
 so $A$ is onto.
 
-For the other direction, suppose $A$ is onto.  As $A$ is determined by the action on
-the basis, every element of $X$ is in the span of
-$\{ Ax_1, Ax_2, \ldots, Ax_n \}$.  Suppose that for some
+For the other direction, suppose $A$ is onto.
+Suppose that for some
 $c_1,c_2,\ldots,c_n$,
 \begin{equation*}
 0 = A\sum_{k=1}^n c_k \, x_k =
 \sum_{k=1}^n c_k \, Ax_k .
 \end{equation*}
-By \propref{mv:dimprop}
-as $\{ Ax_1, Ax_2, \ldots, Ax_n \}$ span $X$, the set is linearly independent,
-and hence $c_k = 0$ for all $k$.  In other words, if $Ax = 0$, then $x=0$.  This means that
-$A$ is one-to-one:  If $Ax = Ay$, then $A(x-y) = 0$ and so
+As $A$ is determined by the action on the basis,
+$\{ Ax_1, Ax_2, \ldots, Ax_n \}$ spans $X$.
+So by \propref{mv:dimprop}, the set is linearly independent,
+and $c_k = 0$ for all $k$.  In other words, if $Ax = 0$, then $x=0$.
+Thus, $A$ is one-to-one:  If $Ax = Ay$, then $A(x-y) = 0$ and so
 $x=y$.
 \end{proof}
 
@@ -827,12 +828,13 @@ In $\R$, convex sets are precisely the intervals, which are
 also precisely the connected sets.
 In two or more dimensions
 there are lots of nonconvex connected sets.  For example,
-the set $\R^2 \setminus \{0\}$ is connected, but not convex.  To see
-this, take any $x \in \R^2 \setminus \{0\}$ and let $y \coloneqq -x$.
-Then $(\nicefrac{1}{2})x + (\nicefrac{1}{2})y = 0$, which is not in the set.
-Balls (in the standard metric) in $\R^n$ are convex.  We use this result
-often enough to state it as a proposition,
-and we leave its proof as an exercise.
+the set $\R^2 \setminus \{0\}$ is connected,
+but not convex---for any $x \in \R^2 \setminus \{0\}$ where $y \coloneqq -x$,
+we find
+$(\nicefrac{1}{2})x + (\nicefrac{1}{2})y = 0$, which is not in the set.
+Balls (in the standard metric) in $\R^n$ are convex.  It is
+a useful enough result to state as a proposition,
+but we leave its proof as an exercise.
 
 \begin{prop}
 Let $x \in \R^n$ and $r > 0$.  The ball $B(x,r) \subset \R^n$
@@ -865,7 +867,7 @@ Note that $X$ is not a vector subspace of $C([0,1],\R)$.  The function
 $f(x) \coloneqq 1$ is in $X$, but $2f$ and $-f$ is not.
 \end{example}
 
-\begin{prop}
+\begin{prop} \label{prop:intersectionconvex}
 The intersection of two convex sets is convex.  In fact,
 if $\{ C_\lambda \}_{\lambda \in I}$ is
 an arbitrary collection of convex sets, then
@@ -902,7 +904,7 @@ T\bigl(tx+(1-t)y\bigr)
 \end{equation*}
 \end{proof}
 
-For completeness, a very useful construction is the
+For completeness, a useful construction is the
 \emph{\myindex{convex hull}}.  Given a subset $S \subset V$ of a vector
 space, define the convex hull of $S$ as the intersection of all convex sets
 containing $S$:
@@ -911,12 +913,13 @@ containing $S$:
 \bigcap \{ C \subset V : S \subset C, \text{ and } C \text{ is convex} \} .
 \end{equation*}
 That is, the convex hull is the smallest convex set containing $S$.  
-By a proposition above, the intersection of convex sets is convex and
-hence, the convex hull is convex.
+By \propref{prop:intersectionconvex}, the intersection of convex sets is
+convex.
+Hence the convex hull is convex.
 
 \begin{example}
 The convex hull of $\{ 0, 1 \}$ in $\R$ is $[0,1]$.  Proof:
-Any convex set containing 0 and 1 must contain $[0,1]$, so
+A convex set containing 0 and 1 must contain $[0,1]$, so
 $[0,1] \subset \operatorname{co}(\{0,1\})$.
 The set $[0,1]$ is convex and contains $\{0,1\}$, so
 $\operatorname{co}(\{0,1\}) \subset [0,1]$.
@@ -996,12 +999,12 @@ show that it is not onto.
 Finish the proof of \propref{mv:lindefonbasis} in the finite-dimensional case.
 That is, suppose
 $\{ x_1, x_2,\ldots x_n \}$ is a basis of $X$,
-$\{ y_1, y_2,\ldots y_n \} \subset Y$, and we define a
+$\{ y_1, y_2,\ldots y_n \} \subset Y$, and define a
 function
 \begin{equation*}
-Ax \coloneqq \sum_{k=1}^n b_k y_k, \qquad \text{if} \quad x=\sum_{k=1}^n b_k x_k .
+A(x) \coloneqq \sum_{k=1}^n b_k y_k, \qquad \text{if} \quad x=\sum_{k=1}^n b_k x_k .
 \end{equation*}
-Then prove that $A \colon X \to Y$ is linear.
+Prove that $A \colon X \to Y$ is linear.
 \end{exercise}
 
 
@@ -1137,6 +1140,7 @@ prove a slightly stronger version using the notation of this chapter.
 Let $x, y \in \R^n$, then
 \begin{equation*}
 \sabs{x \cdot y} \leq \snorm{x} \, \snorm{y} = \sqrt{x\cdot x}\, \sqrt{y\cdot y},
+\avoidbreak
 \end{equation*}
 with equality if and only if $x = \lambda y$ or $y = \lambda x$ for some
 $\lambda \in \R$.
@@ -1156,8 +1160,9 @@ $\lambda \in \R$, then the theorem holds with equality:
 \end{equation*}
 
 Fixing $x$ and $y$,
-as a function of $t$, 
-$\snorm{x+ty}^2$ is a quadratic polynomial:
+then $\snorm{x+ty}^2$
+is a quadratic polynomial
+as a function of $t$:
 \begin{equation*}
 \snorm{x+ty}^2 =
 (x+ty) \cdot (x+ty) =
@@ -1227,7 +1232,7 @@ This implies, assuming $\snorm{A}$ is not infinity, that for every $x \in X$,
 \end{equation*}
 We will use this inequality a lot.
 It is not hard to see from the definition that $\snorm{A} = 0$ if and
-only if $A = 0$, where by $A=0$ we mean that $A$ takes every vector to the zero vector.
+only if $A = 0$, where $A=0$ means that $A$ takes every vector to the zero vector.
 It is also not difficult to compute the operator norm of the identity operator:
 \begin{equation*}
 \snorm{I} =
@@ -1250,7 +1255,7 @@ differentiation, which is a linear operator valued in the space of
 continuous functions, has infinite operator norm on this space.
 We will stick to finite-dimensional spaces.
 
-When we talk about a finite-dimensional vector space $X$, we often think of
+Given a finite-dimensional vector space $X$, we often think of
 $\R^n$, although if we have a norm on $X$, the norm might not be
 the standard euclidean norm.  In the exercises, you can prove that
 every norm on $\R^n$ is \myquote{equivalent} to the euclidean norm in that the
@@ -1337,7 +1342,6 @@ For \ref{item:finitedimpropnorm:i},
 \bigl(\snorm{A}+\snorm{B}\bigr) \snorm{x} .
 \end{equation*}
 So $\snorm{A+B} \leq \snorm{A}+\snorm{B}$.
-
 Similarly,
 \begin{equation*}
 \snorm{(cA)x} =
@@ -1361,8 +1365,8 @@ For \ref{item:finitedimpropnorm:ii} write
 
 As a norm defines a metric,
 there is
-a metric space topology on $L(X,Y)$ for finite-dimensional vector spaces,
-so we can talk
+a metric space topology on $L(X,Y)$ for finite-dimensional vector spaces.
+We can talk
 about open/closed sets, continuity, and convergence.
 
 \begin{prop} \label{prop:finitedimpropinv}
@@ -1486,7 +1490,7 @@ $a_{i,j}$ via
 A x_j = \sum_{i=1}^m a_{i,j} \, y_i ,
 \end{equation}
 and write them as a \emph{\myindex{matrix}},
-which we by slight abuse of notation also call $A$
+which we by slight abuse of notation also call $A$,
 \glsadd{not:matrix}
 \begin{equation*}
 A =
@@ -1502,9 +1506,9 @@ We say $A$ is an $m$-by-$n$ matrix.
 The $j$th \emph{\myindex{column}} of the matrix contains precisely the coefficients
 that represent $A x_j$ in terms of the basis $\{ y_1,y_2,\ldots,y_m \}$.
 Given the numbers $a_{i,j}$, then via the formula
-\eqref{eq:matrixrepresent} we find the corresponding linear operator,
+\eqref{eq:matrixrepresent}, we find the corresponding linear operator,
 as it is determined by the action on a basis.  Hence, once we fix
-a basis on $X$ and on $Y$, we have a one-to-one correspondence between
+bases on $X$ and $Y$, we have a one-to-one correspondence between
 $L(X,Y)$ and the $m$-by-$n$ matrices.
 When
 \begin{equation*}
