@@ -654,22 +654,27 @@ Finally, denote by $I \in L(X)$ the \emph{\myindex{identity}}:
 the linear operator such that $Ix = x$ for all $x$.
 \end{defn}
 
-It is not hard to see that $aA \in L(X,Y)$,
-$A+B \in L(X,Y)$, and that $AB \in L(X,Z)$.
-In particular, $L(X,Y)$ is a vector space ($0$ is the linear map that takes
-everything to $0$).
+\begin{prop} \label{prop:LXYvs}
+Let $X$, $Y$, and $Z$ be vector spaces.
+\begin{enumerate}[(i)]
+\item If $A \in L(X,Y)$, then $A0 = 0$.
+\item If $A,B \in L(X,Y)$, then $A+B \in L(X,Y)$.
+\item If $A \in L(X,Y)$ and $a \in \R$, then $aA \in L(X,Y)$.
+\item If $A \in L(Y,Z)$ and $B \in L(X,Y)$, then $AB \in L(X,Z)$. 
+\item If $A \in L(X,Y)$ is invertible, then $A^{-1} \in L(Y,X)$.
+\end{enumerate}
+\end{prop}
+
+In particular, $L(X,Y)$ is a vector space, where $0 \in L(X,Y)$ is the
+linear map that takes everything to $0$.
 As $L(X)$ is not only a vector space, but also
 admits a product (composition),
 it is called an \emph{\myindex{algebra}}.
 
-An immediate consequence of the definition is: If
-$A$ is linear, then $A0 = 0$.
-
-\begin{prop}
-If $A \in L(X,Y)$ is invertible, then $A^{-1}$ is linear.
-\end{prop}
-
 \begin{proof}
+We leave the first four items as a quick exercise,
+\exerciseref{exercise:LXYvs}.
+Let us prove the last item.
 Let $a \in \R$ and $y \in Y$.  As $A$ is onto, then there is an 
 $x \in X$ such that $y = Ax$.
 As it is also one-to-one, $A^{-1}(Az) = z$ for all $z \in X$.
@@ -731,7 +736,7 @@ The \myquote{furthermore} follows by setting $y_k \coloneqq \widetilde{A}(x_k)$,
 and then for 
 $x = \sum_{k=1}^n b_k \, x_k$,
 defining the extension as
-$Ax \coloneqq \sum_{k=1}^n b_k \, y_k$.  The function is well-defined by
+$A(x) \coloneqq \sum_{k=1}^n b_k \, y_k$.  The function is well-defined by
 uniqueness of the representation of $x$.
 We leave it to the reader to check that $A$ is linear.
 \end{proof}
@@ -758,9 +763,9 @@ the only vector that is taken to 0 is 0 itself.
 Hence,
 \begin{equation*}
 0 =
-\sum_{k=1}^n c_k \, x_k
+\sum_{k=1}^n c_k \, x_k,
 \end{equation*}
-and $c_k = 0$ for all $k$.
+and so $c_k = 0$ for all $k$ as $\{ x_1,x_2,\ldots,x_n \}$ is a basis.
 So $\{ Ax_1, Ax_2, \ldots, Ax_n \}$ is linearly independent.
 By \propref{mv:dimprop}
 and the fact that the dimension is $n$, we conclude
@@ -1075,6 +1080,11 @@ then
 $\bigcap_{\lambda \in I} V_\lambda$ is a vector subspace of $X$.
 \end{exercise}
 
+\begin{exercise}[Easy] \label{exercise:LXYvs}
+Finish the proof of \propref{prop:LXYvs}, that is, prove the first four
+items of the proposition.
+\end{exercise}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
@@ -1103,32 +1113,34 @@ A vector space equipped with a norm is called a
 \end{defn}
 
 Given a norm (any norm) on a vector space $X$,
-we define a distance $d(x,y) \coloneqq \snorm{x-y}$, and this
-$d$ makes $X$ into a metric space (exercise).
-So everything you know about metric spaces applies to normed vector spaces.
-
-Before defining the standard norm on $\R^n$, let us
+define a distance $d(x,y) \coloneqq \snorm{x-y}$, which
+makes $X$ into a metric space (exercise).
+So what you know about metric spaces applies to normed vector spaces.
+Before defining the standard norm on $\R^n$, we
 define the standard 
-scalar \emph{\myindex{dot product}} on $\R^n$.  For vectors
+scalar \emph{\myindex{dot product}} on $\R^n$.
+For 
 $x=(x_1,x_2,\ldots,x_n) \in \R^n$
 and $y=(y_1,y_2,\ldots,y_n) \in \R^n$ define\glsadd{not:dotprod}
 \begin{equation*}
 x \cdot y \coloneqq \sum_{k=1}^n x_k\, y_k .
 \end{equation*}
-The dot product is linear in each variable
-separately, or in more fancy language it is \emph{\myindex{bilinear}}.
+Dot product is linear in each variable
+separately---in more fancy language, it is \emph{\myindex{bilinear}}.
 That is,
 if $y$ is fixed, the map $x \mapsto x \cdot y$ is a linear map from
-$\R^n$ to $\R$.  Similarly, if $x$ is fixed, then
+$\R^n$ to $\R$.  Similarly, if $x$ is fixed,
 $y \mapsto x \cdot y$ is linear.
-It is also \emph{\myindex{symmetric}} in the sense that $x \cdot y = y \cdot x$.
-The \emph{\myindex{euclidean norm}} is defined as\glsadd{not:normRn}
+It is \emph{\myindex{symmetric}} in the sense that $x \cdot y = y \cdot x$.
+Define the \emph{\myindex{euclidean norm}} as\glsadd{not:normRn}
 \begin{equation*}
 \snorm{x} \coloneqq \snorm{x}_{\R^n} \coloneqq \sqrt{x \cdot x} = \sqrt{(x_1)^2+(x_2)^2 + \cdots + (x_n)^2}.
 \end{equation*}
 We normally just use $\snorm{x}$, only in the rare instance when it is necessary to
 emphasize that we are talking about the euclidean norm will we use
 $\snorm{x}_{\R^n}$.
+Unless otherwise stated, if we talk about $\R^n$ as a normed vector space,
+we mean the standard euclidean norm.
 It is easy to see that the euclidean norm satisfies \ref{defn:norm:i} and
 \ref{defn:norm:ii}.  To prove
 that \ref{defn:norm:iii} holds, the key
