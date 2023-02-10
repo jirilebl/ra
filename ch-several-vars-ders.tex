@@ -1238,7 +1238,8 @@ Therefore,
 =
 \sup_{\substack{x \in X\\x\neq 0}} \frac{\snorm{Ax}}{\snorm{x}} .
 \end{equation*}
-This implies, assuming $\snorm{A}$ is not infinity, that for every $x \in X$,
+This implies, assuming $\snorm{A}\not= \infty$ to avoid a technicality when $x=0$,
+that for every $x \in X$,
 \begin{equation*}
 \snorm{Ax} \leq \snorm{A}  \snorm{x} .
 \end{equation*}
@@ -1293,7 +1294,7 @@ Write $x \in \R^n$, with $\snorm{x} = 1$, as
 x = \sum_{k=1}^n c_k \, e_k .
 \end{equation*}
 Since $e_k \cdot e_\ell = 0$ whenever $k\not=\ell$ and $e_k \cdot e_k = 1$,
-then $c_k = x \cdot e_k$ and by Cauchy--Schwarz
+we have $c_k = x \cdot e_k$.  By Cauchy--Schwarz,
 \begin{equation*}
 \sabs{c_k} = \sabs{ x \cdot e_k }
 \leq \snorm{x} \, \snorm{e_k} = 1 .
@@ -1310,7 +1311,7 @@ Then
 The right-hand side does not depend on $x$.  We found
 a finite upper bound for $\snorm{Ax}$ independent of $x$, so $\snorm{A} < \infty$.
 
-For any normed vector spaces $X$ and $Y$, and $A \in L(X,Y)$, suppose that
+Take normed vector spaces $X$ and $Y$, and $A \in L(X,Y)$ with
 $\snorm{A} < \infty$.
 For $v,w \in X$,
 \begin{equation*}
