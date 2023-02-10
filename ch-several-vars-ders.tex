@@ -855,27 +855,27 @@ So every vector subspace $V$ of a vector space $X$ is convex.
 \begin{example}
 %A somewhat more complicated example is given by the following.
 Let $C([0,1],\R)$ be the vector space of continuous real-valued functions on $\R$.
-Let $X \subset C([0,1],\R)$ be the set of those $f$ such that
+Let $V \subset C([0,1],\R)$ be the set of those $f$ such that
 \begin{equation*}
 \int_0^1 f(x)\,dx \leq 1 \qquad \text{and} \qquad
 f(x) \geq 0 \enspace \text{for all } x \in [0,1] .
 \end{equation*}
-Then $X$ is convex.  Take $t \in [0,1]$, and note that if $f,g \in X$,
-then $t f(x) + (1-t) g(x) \geq 0$ for all $x$.  Furthermore,
+Then $V$ is convex.  Take $t \in [0,1]$, and note that if $f,g \in V$,
+then $(1-t) f(x) + t g(x) \geq 0$ for all $x$.  Furthermore,
 \begin{equation*}
-\int_0^1 \bigl(tf(x) + (1-t)g(x)\bigr) \,dx
+\int_0^1 \bigl((1-t)f(x) + t g(x)\bigr) \,dx
 =
-t \int_0^1 f(x) \,dx
-+ (1-t)\int_0^1 g(x) \,dx \leq 1 .
+(1-t) \int_0^1 f(x) \,dx
++ t \int_0^1 g(x) \,dx \leq 1 .
 \end{equation*}
-Note that $X$ is not a vector subspace of $C([0,1],\R)$.  The function
-$f(x) \coloneqq 1$ is in $X$, but $2f$ and $-f$ is not.
+Note that $V$ is not a vector subspace of $C([0,1],\R)$.  The function
+$f(x) \coloneqq 1$ is in $V$, but $2f$ and $-f$ is not.
 \end{example}
 
 \begin{prop} \label{prop:intersectionconvex}
 The intersection of two convex sets is convex.  In fact,
 if $\{ C_\lambda \}_{\lambda \in I}$ is
-an arbitrary collection of convex sets, then
+an arbitrary collection of convex sets in a vector space, then
 \begin{equation*}
 C \coloneqq \bigcap_{\lambda \in I} C_\lambda
 \qquad \text{is convex.}
@@ -884,38 +884,18 @@ C \coloneqq \bigcap_{\lambda \in I} C_\lambda
 
 \begin{proof}
 If $x, y \in C$, then $x,y \in C_\lambda$ for all
-$\lambda \in I$, and hence if $t \in [0,1]$, then $tx + (1-t)y \in
-C_\lambda$ for all $\lambda \in I$.  Therefore, $tx + (1-t)y \in C$ and $C$
+$\lambda \in I$, and hence if $t \in [0,1]$, then $(1-t)x + ty \in
+C_\lambda$ for all $\lambda \in I$.  Therefore, $(1-t)x + ty \in C$ and $C$
 is convex.
 \end{proof}
 
-\begin{prop}
-Let $T \colon V \to W$ be a linear mapping between two vector spaces and
-let $C \subset V$ be a convex set.  Then $T(C)$ is convex.
-\end{prop}
-
-\begin{proof}
-Take two points $p,q \in T(C)$.  Pick $x,y \in C$ such that
-$Tx = p$ and $Ty=q$.  As $C$ is convex, then
-$tx+(1-t)y \in C$
-for all $t \in [0,1]$, so
-\begin{equation*}
-tp+(1-t)q 
-=
-tTx+(1-t)Ty
-=
-T\bigl(tx+(1-t)y\bigr)
-\in T(C) .  \qedhere
-\end{equation*}
-\end{proof}
-
-For completeness, a useful construction is the
-\emph{\myindex{convex hull}}.  Given a subset $S \subset V$ of a vector
-space, define the convex hull of $S$ as the intersection of all convex sets
+A useful construction using intersections of convex sets is the
+\emph{\myindex{convex hull}}.  Given a subset $S$ of a vector
+space $X$, define the convex hull of $S$ as the intersection of all convex sets
 containing $S$:
 \begin{equation*}
 \operatorname{co}(S) \coloneqq
-\bigcap \{ C \subset V : S \subset C, \text{ and } C \text{ is convex} \} .
+\bigcap \{ C \subset X : S \subset C, \text{ and } C \text{ is convex} \} .
 \end{equation*}
 That is, the convex hull is the smallest convex set containing $S$.  
 By \propref{prop:intersectionconvex}, the intersection of convex sets is
@@ -929,6 +909,31 @@ $[0,1] \subset \operatorname{co}(\{0,1\})$.
 The set $[0,1]$ is convex and contains $\{0,1\}$, so
 $\operatorname{co}(\{0,1\}) \subset [0,1]$.
 \end{example}
+
+Linear mappings preserve convex sets.  So in some sense, convex sets are the
+right sort of sets when considering linear mappings or changes of
+coordinates.
+
+\begin{prop}
+Let $X,Y$ be vector spaces, $A \in L(X,Y)$, and let $C \subset X$ be convex.
+Then $A(C)$ is convex.
+\end{prop}
+
+\begin{proof}
+Take two points $p,q \in A(C)$.  Pick $u,v \in C$ such that
+$Au = p$ and $Av=q$.  As $C$ is convex, then
+$(1-t)u+t v \in C$
+for all $t \in [0,1]$, so
+\begin{equation*}
+(1-t)p+t q 
+=
+(1-t)Au+tAv
+=
+A\bigl((1-t)u+tv\bigr)
+\in A(C) .  \qedhere
+\end{equation*}
+\end{proof}
+
 
 \subsection{Exercises}
 
