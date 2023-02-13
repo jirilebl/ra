@@ -387,6 +387,9 @@ A set that is not linearly independent is
 A linearly independent set of vectors $B \subset X$ such that
 $\spn(B) = X$ 
 is called a \emph{\myindex{basis}} of $X$.
+We generally consider the basis as not just a set, but as
+an ordered $m$-tuple:
+$x_1,x_2,\ldots,x_m$.
 
 Suppose $d$ is largest integer for which $X$ contains a set of
 $d$ linearly independent vectors.  We then say $d$ is
@@ -1141,8 +1144,8 @@ Define the \emph{\myindex{euclidean norm}} as\glsadd{not:normRn}
 \begin{equation*}
 \snorm{x} \coloneqq \snorm{x}_{\R^n} \coloneqq \sqrt{x \cdot x} = \sqrt{(x_1)^2+(x_2)^2 + \cdots + (x_n)^2}.
 \end{equation*}
-We normally just use $\snorm{x}$, only in the rare instance when it is necessary to
-emphasize that we are talking about the euclidean norm will we use
+We will normally write $\snorm{x}$, only in the rare instance when it is necessary to
+emphasize that we are talking about the euclidean norm will we write
 $\snorm{x}_{\R^n}$.
 Unless otherwise stated, if we talk about $\R^n$ as a normed vector space,
 we mean the standard euclidean norm.
@@ -1177,7 +1180,7 @@ $\lambda \in \R$, then the theorem holds with equality:
 \end{equation*}
 
 Fixing $x$ and $y$,
-then $\snorm{x+ty}^2$
+$\snorm{x+ty}^2$
 is a quadratic polynomial
 as a function of $t$:
 \begin{equation*}
@@ -1192,9 +1195,9 @@ $\snorm{x+ty}^2 > 0$ for all $t$.  So the polynomial $\snorm{x+ty}^2$
 is never zero.
 Elementary algebra says that the discriminant must be negative:
 \begin{equation*}
-4 {(x \cdot y)}^2 - 4 \snorm{x}^2\snorm{y}^2 < 0,
+4 {(x \cdot y)}^2 - 4 \snorm{x}^2\snorm{y}^2 < 0.
 \end{equation*}
-or in other words, ${(x \cdot y)}^2 < \snorm{x}^2\snorm{y}^2$.
+In other words, ${(x \cdot y)}^2 < \snorm{x}^2\snorm{y}^2$.
 \end{proof}
 
 Item \ref{defn:norm:iii}, the triangle inequality in $\R^n$,
@@ -1222,7 +1225,7 @@ Let $A \in L(X,Y)$.  Define
 \end{equation*}
 The number $\snorm{A}$ (possibly $\infty$)
 is called the \emph{\myindex{operator norm}}.  We will see below
-that it is indeed a norm for finite-dimensional spaces.
+that it is indeed a norm on $L(X,Y)$ for finite-dimensional spaces.
 Again, when necessary to emphasize which norm we are talking about, we may
 write it as $\snorm{A}_{L(X,Y)}$.\glsadd{not:normLXY}
 \end{defn}
@@ -1323,7 +1326,8 @@ For $v,w \in X$,
 \snorm{Av - Aw} =
 \snorm{A(v-w)} \leq \snorm{A} \, \snorm{v-w} .
 \end{equation*}
-As $\snorm{A} < \infty$, then this says $A$ is Lipschitz with constant $\snorm{A}$.
+As $\snorm{A} < \infty$, then the inequality above says that
+$A$ is Lipschitz with constant $\snorm{A}$.
 \end{proof}
 
 \begin{prop} \label{prop:finitedimpropnorm}
@@ -1351,7 +1355,7 @@ If $A \in L(X,Y)$ and $B \in L(Y,Z)$, then
 First, since all the spaces are finite-dimensional, then all the operator
 norms are finite, and the statements make sense to begin with.
 
-For \ref{item:finitedimpropnorm:i},
+For \ref{item:finitedimpropnorm:i}, let $x \in X$ be arbitrary.  Then
 \begin{equation*}
 \snorm{(A+B)x} =
 \snorm{Ax+Bx} \leq
@@ -1374,7 +1378,7 @@ Thus $\snorm{cA} \leq \sabs{c} \, \snorm{A}$.  Next,
 Hence $\sabs{c} \, \snorm{A} \leq \snorm{cA}$.
 
 
-For \ref{item:finitedimpropnorm:ii} write
+For \ref{item:finitedimpropnorm:ii}, write
 \begin{equation*}
 \snorm{BAx} \leq \snorm{B} \, \snorm{Ax} \leq \snorm{B} \, \snorm{A} \, \snorm{x} .
 \qedhere
@@ -1406,12 +1410,12 @@ function on $GL(X)$.
 \end{enumerate}
 \end{prop}
 
-Let us make sense of this proposition on a simple example.
+We illustrate this proposition on a simple example.
 Consider $X=\R^1$, where linear operators are just
 numbers $a$ and the operator norm of $a$ is $\sabs{a}$.
 The operator $a$ is invertible ($a^{-1} = \nicefrac{1}{a}$)
 whenever $a \not=0$.  The condition $\sabs{a-b} < \frac{1}{\sabs{a^{-1}}}$
-indeed implies that $b$ is not zero, and $a \mapsto \nicefrac{1}{a}$
+indeed implies that $b$ is not zero.  Moreover, $a \mapsto \nicefrac{1}{a}$
 is a continuous function.
 When the dimension is $2$ or higher,
 there are other noninvertible operators than just zero,
@@ -1508,7 +1512,7 @@ $a_{i,j}$ via
 A x_j = \sum_{i=1}^m a_{i,j} \, y_i ,
 \end{equation}
 and write them as a \emph{\myindex{matrix}},
-which we by slight abuse of notation also call $A$,
+which we, by slight abuse of notation, also call $A$,
 \glsadd{not:matrix}
 \begin{equation*}
 A =
@@ -1556,8 +1560,9 @@ then the \myquote{middle index} is \myquote{summed-out.}
 
 There is a one-to-one correspondence between matrices and linear operators in
 $L(X,Y)$, once we fix a basis in $X$ and in $Y$.  If we 
-choose a different basis, we get different matrices.  This is
-an important distinction, the operator $A$ acts on elements of $X$, the matrix
+choose a different basis, we get different matrices.
+This is an important distinction.
+The operator $A$ acts on elements of $X$, while the matrix
 is something that works with $n$-tuples of numbers, that is, vectors of
 $\R^n$.  By convention, we use standard bases in $\R^n$ unless otherwise
 specified, and we identify $L(\R^n,\R^m)$ with the set of $m$-by-$n$ matrices.
