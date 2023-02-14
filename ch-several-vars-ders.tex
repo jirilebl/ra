@@ -1545,8 +1545,9 @@ A z =
 =
 \sum_{i=1}^m \left(\sum_{j=1}^n  a_{i,j}\, c_j \right) y_i ,
 \end{equation*}
-which gives rise to the familiar rule for matrix multiplication.
-
+which gives rise to the familiar rule for matrix multiplication,
+thinking of $z$ as a column vector, that is, an $n$-by-1 matrix.
+%
 More generally, if $B$ is an $n$-by-$r$ matrix with entries $b_{j,k}$, then 
 the matrix for $C = AB$ is an $m$-by-$r$ matrix whose $(i,k)$th entry
 $c_{i,k}$ is
@@ -1715,8 +1716,9 @@ $L(\R^n)$.
 In fact, the determinant is the unique function that satisfies
 \ref{prop:det:i},
 \ref{prop:det:ii}, and
-\ref{prop:det:iii}.
-But we digress.  By \ref{prop:det:ii}, we mean that if we fix all the vectors
+\ref{prop:det:iii},
+but we digress.
+By \ref{prop:det:ii}, we mean that if we fix all the vectors
 $x_1,\ldots,x_n$ except for $x_j$, and let
 $v,w \in \R^n$ be two vectors,
 and $a,b \in \R$ be scalars, then
@@ -1749,7 +1751,6 @@ Item \ref{prop:det:v} follows because the product in each term in the definition
 one element from the zero column.
 Item \ref{prop:det:vi} follows as $\det$ is a polynomial in the entries of the matrix
 and hence continuous (as a function of the entries of the matrix).
-Two matrices are 
 A function defined on
 matrices is continuous in the operator norm if and only if it is 
 continuous as a function of the entries (\propref{prop:matrixcont}).
@@ -1763,7 +1764,7 @@ determinant is exactly this number.  It says how the linear mapping
 suppose $A \in L(\R^2)$ is a linear transformation.
 It can be checked directly that
 the area of the image of the unit square $A\bigl([0,1]^2\bigr)$ is
-$\sabs{\det(A)}$.
+$\sabs{\det(A)}$, see \figureref{fig:imagesquare} for an example.
 This works with arbitrary figures, not just the unit
 square:
 The absolute value of the determinant tells us the stretch in the area.
@@ -1772,6 +1773,13 @@ flipped (changes orientation) or not.
 In $\R^3$ it
 tells us about the 3-dimensional volume, and in $n$ dimensions about the
 $n$-dimensional volume.  We claim this without proof.
+\begin{myfigureht}
+\subimport*{figures/}{linalg-imagesquare.pdf_t}
+\caption{Image of the unit square ${[0,1]}^2$ via the matrix
+$\left[\begin{smallmatrix}1 & 1 \\ -1 & 1\end{smallmatrix}\right]$.
+The image is a square of side $\sqrt{2}$, thus of volume 2, and the determinant of the
+matrix is 2.\label{fig:imagesquare}}
+\end{myfigureht}
 
 \begin{prop}
 If $A$ and $B$ are $n$-by-$n$ matrices, then $\det(AB) = \det(A)\det(B)$.
@@ -1819,7 +1827,7 @@ b_{j_n,n}
 \end{split}
 \end{equation*}
 In the last equality, we sum over the elements of $S_n$
-instead of all $n$-tuples for integers between 1 and $n$
+instead of all $n$-tuples for integers between 1 and $n$,
 because
 when two columns in the determinant are the same, then the
 determinant is zero.  Reordering the columns to the
@@ -1835,9 +1843,10 @@ a matrix and its transpose are equal.
 Let us prove the
 \myquote{Furthermore.}
 If $A$ is invertible,
-then $A^{-1}A = I$ and consequently $\det(A^{-1})\det(A) = \det(A^{-1}A) = \det(I) = 1$.
+then $A^{-1}A = I$.
+Consequently $\det(A^{-1})\det(A) = \det(A^{-1}A) = \det(I) = 1$.
 If $A$ is not invertible, then it is not one-to-one, and so $A$ takes
-some nonzero vector to zero.  In other words, the columns of $A$ are linearly dependent.
+some nonzero vector to zero,  In other words, the columns of $A$ are linearly dependent.
 Suppose 
 \begin{equation*}
 \sum_{k=1}^n \gamma_k\, a_k = 0 ,
@@ -1949,7 +1958,7 @@ Given any $n$-by-$m$ matrix $M$ the matrix $EM$ is the same matrix as $M$
 except with the $j$th row multiplied by $\lambda$.
 It is an easy computation (exercise) that $\det(E) = \lambda$.
 
-Next, for $j$ and $k$ with $j\neq k$, and $\lambda \in \R$,
+Next, for $j,k$ with $j\neq k$ and $\lambda \in \R$,
 define the second type of an elementary matrix $E$ by
 \begin{equation*}
 Ee_i \coloneqq 
@@ -2047,6 +2056,7 @@ Hint: It is, for example, a convex hull of a finite number of points.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[3]
 Using the euclidean norm on $\R^2$, compute the operator norm of the
 operators in $L(\R^2)$ given by the matrices:
 
