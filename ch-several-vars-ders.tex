@@ -2169,55 +2169,58 @@ Show that $D$ does not have bounded operator norm, that is $\snorm{D} =
 \pagebreak[1]
 We finish the proof of \propref{prop:finitedimpropnormfin}.
 Let $X$ be a finite-dimensional normed vector space with basis
-$\{ x_1,x_2,\ldots,x_n \}$.
+$\{ x_1,x_2,\ldots,x_n \}$.  Denote by $\snorm{\cdot}_X$ the norm on $X$,
+by $\snorm{\cdot}_{\R^n}$ the standard euclidean norm on $\R^n$, and
+by $\snorm{\cdot}_{L(X,Y)}$ the operator norm.
 \begin{enumerate}[a)]
 \item
 Show that $f \colon \R^n \to \R$,
 \begin{equation*}
 f(c_1,c_2,\ldots,c_n) \coloneqq 
-\snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n} ,
+\snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n}_X ,
 \end{equation*}
-is continuous (the norm is the one on $X$).
+is continuous.
 \item
 Show that there exist numbers $m$ and $M$ such
 that if $c = (c_1,c_2,\ldots,c_n) \in \R^n$ with
-$\snorm{c} = 1$ (standard euclidean norm), then 
-$m \leq \snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n} \leq M$ (here the
-norm is on $X$).
+$\snorm{c}_{\R^n} = 1$, then 
+$m \leq \snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n}_X \leq M$.
 \item
 Show that there exists a number $B$ such that if
-$\snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n}=1$,
+$\snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n}_X = 1$,
 then $\sabs{c_j} \leq B$.
 \item
-Use part c) to show that if $X$ is finite-dimensional vector 
-spaces and $A \in L(X,Y)$, then $\snorm{A} < \infty$.
+Use part c) to show that if $X$ is a finite-dimensional vector 
+space and $A \in L(X,Y)$, then $\snorm{A}_{L(X,Y)} < \infty$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{exercise:allnormsequiv}
 \pagebreak[3]
-Let $X$ be a finite-dimensional vector space with norm $\snorm{\cdot}$
-and basis $\{ x_1,x_2,\ldots,x_n \}$.
-Let $c = (c_1,c_2,\ldots,c_n) \in \R^n$ and $\snorm{c}$ be the
-standard euclidean norm on $\R^n$.
+Let $X$ be a finite-dimensional vector space.
 \begin{enumerate}[a)]
 \item
-Prove that there exist positive numbers $m,M > 0$ such that
+Let $\{ x_1,x_2,\ldots,x_n \}$ be a basis for $X$,
+$\snorm{\cdot}_X$ a norm on $X$,
+$c = (c_1,c_2,\ldots,c_n) \in \R^n$,
+and $\snorm{\cdot}_{\R^n}$ the
+standard euclidean norm on $\R^n$.
+Prove that there exist numbers $m,M > 0$ such that
 for all $c \in \R^n$,
 \begin{equation*}
-m \snorm{c}
+m \snorm{c}_{\R^n}
 \leq
-\snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n}
+\snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n}_X
 \leq
-M \snorm{c} .
+M \snorm{c}_{\R^n} .
 \end{equation*}
-Hint: See previous exercise.
+Hint: See the previous exercise.
 \item
-Use part a) to show that of
+Use part a) to show that if
 $\snorm{\cdot}_1$ and
-$\snorm{\cdot}_2$ are two norms on $X$, then there exist positive
+$\snorm{\cdot}_2$ are two norms on $X$, then there exist
 numbers $m,M > 0$ (perhaps different from above) such that
-for all $x \in X$, we have
+for all $x \in X$,
 \begin{equation*}
 m \snorm{x}_1
 \leq
@@ -2278,18 +2281,18 @@ as a function of $B$ on $\sM$.
 
 \begin{exnote}
 Let $A$ be an $n$-by-$n$ matrix.
-A number $\lambda \in \C$ (possibly complex even for a real matrix)
-is called an \emph{\myindex{eigenvalue}} of $A$
-if there is a nonzero (possibly complex) vector $x \in \C^n$ such that $Ax = \lambda
-x$ (the multiplication by complex vectors is the same as for real vectors.
-In particular, if $x =
-a+ib$ for real vectors $a$ and $b$, and $A$ is a real matrix, then $Ax = Aa + i Ab$).
+A $\lambda \in \C$ (possibly complex even for a real matrix)
+is an \emph{\myindex{eigenvalue}} of $A$
+if there is a nonzero (possibly complex) vector $x \in \C^n$ such that
+$Ax = \lambda x$
+(the multiplication by complex vectors is the same as for real vectors;
+if $x = a+ib$ for real vectors $a$ and $b$, and $A$ is a real matrix, then $Ax = Aa + i Ab$).
 The number
 \begin{equation*}
 \rho(A) \coloneqq
 \sup \bigl\{ \abs{\lambda} : \lambda \text{ is an eigenvalue of } A \bigr\}
 \end{equation*}
-is called the \emph{\myindex{spectral radius}} of $A$.  Here $\abs{\lambda}$ is the complex
+is the \emph{\myindex{spectral radius}} of $A$.  Here $\abs{\lambda}$ is the complex
 modulus.  We state without proof that at least one eigenvalue always exists,
 and there are no more than $n$ distinct eigenvalues of $A$.  You can
 therefore assume that $0 \leq \rho(A) < \infty$.
@@ -2307,10 +2310,11 @@ every finite-dimensional vector space $X$.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 Let $A$ be an $n$-by-$n$ matrix $A$.
 \begin{enumerate}[a)]
 \item
-Prove $\rho(A) \leq \snorm{A}$.
+Prove $\rho(A) \leq \snorm{A}$.  (See above for definition of $\rho$.)
 \item
 For every $k \in \N$, prove
 $\rho(A) \leq \snorm{A^k}^{1/k}$.
