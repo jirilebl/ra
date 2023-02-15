@@ -1250,8 +1250,12 @@ This implies, assuming $\snorm{A}\not= \infty$ to avoid a technicality when $x=0
 that for every $x \in X$,
 \begin{equation*}
 \snorm{Ax} \leq \snorm{A}  \snorm{x} .
+\avoidbreak
 \end{equation*}
-We will use this inequality a lot.
+%We will use this inequality a lot.
+Conversely, if one shows $\snorm{Ax} \leq C \snorm{x}$ for all $x$,
+then $\snorm{A} \leq C$.
+
 It is not hard to see from the definition that $\snorm{A} = 0$ if and
 only if $A = 0$, where $A=0$ means that $A$ takes every vector to the zero vector.
 It is also not difficult to compute the operator norm of the identity operator:
@@ -1385,11 +1389,10 @@ For \ref{item:finitedimpropnorm:ii}, write
 \end{equation*}
 \end{proof}
 
-As a norm defines a metric,
-there is
-a metric space topology on $L(X,Y)$ for finite-dimensional vector spaces.
-We can talk
-about open/closed sets, continuity, and convergence.
+A norm defines a metric,
+giving a metric space topology on $L(X,Y)$ for finite-dimensional vector spaces.
+So, we can talk
+about open/closed sets, continuity, convergence, etc.
 
 \begin{prop} \label{prop:finitedimpropinv}
 Let $X$ be a finite-dimensional normed vector space.
@@ -1447,11 +1450,11 @@ Using \eqref{eqcontineq}, we obtain
 \snorm{x} < \snorm{x} + \snorm{A^{-1}} \, \snorm{Bx} .
 \end{equation*}
 In other words, $\snorm{Bx} \not= 0$ for all nonzero $x$, and hence
-$Bx \not= 0$ for all nonzero $x$.  This is enough to see that
-$B$ is one-to-one (if $Bx = By$, then $B(x-y) = 0$, so $x=y$).
-As $B$ is one-to-one operator from $X$ to $X$, which is finite-dimensional
-and hence also onto by \propref{mv:prop:lin11onto},
-$B$ is invertible.
+$Bx \not= 0$ for all nonzero $x$.  Thus,
+$B$ is one-to-one; if $Bx = By$, then $B(x-y) = 0$, so $x=y$.
+As $B$ is a one-to-one linear mapping from $X$ to $X$, which is finite-dimensional,
+it is also onto by \propref{mv:prop:lin11onto}.
+Therefore, $B$ is invertible.
 
 Let us prove \ref{finitedimpropinv:ii}.
 Item \ref{finitedimpropinv:i} implies that $GL(X)$ is open.
@@ -1534,16 +1537,16 @@ bases on $X$ and $Y$, we have a one-to-one correspondence between
 $L(X,Y)$ and the $m$-by-$n$ matrices.
 When
 \begin{equation*}
-z = \sum_{j=1}^n c_j \, x_j ,
+z = \sum_{j=1}^n z_j \, x_j ,
 \end{equation*}
 then
 \begin{equation*}
 A z =
-\sum_{j=1}^n c_j \, A x_j 
+\sum_{j=1}^n z_j \, A x_j 
 =
-\sum_{j=1}^n c_j \left( \sum_{i=1}^m  a_{i,j}\, y_i \right) 
+\sum_{j=1}^n z_j \left( \sum_{i=1}^m  a_{i,j}\, y_i \right) 
 =
-\sum_{i=1}^m \left(\sum_{j=1}^n  a_{i,j}\, c_j \right) y_i ,
+\sum_{i=1}^m \left(\sum_{j=1}^n  a_{i,j}\, z_j \right) y_i ,
 \end{equation*}
 which gives rise to the familiar rule for matrix multiplication,
 thinking of $z$ as a column vector, that is, an $n$-by-1 matrix.
@@ -1560,8 +1563,8 @@ A way to remember it is if you order the indices as we do, that is
 then the \myquote{middle index} is \myquote{summed-out.}
 
 There is a one-to-one correspondence between matrices and linear operators in
-$L(X,Y)$, once we fix a basis in $X$ and in $Y$.  If we 
-choose a different basis, we get different matrices.
+$L(X,Y)$, once we fix bases in $X$ and $Y$.  If we 
+choose different bases, we get different matrices.
 This is an important distinction.
 The operator $A$ acts on elements of $X$, while the matrix
 is something that works with $n$-tuples of numbers, that is, vectors of
@@ -1582,9 +1585,9 @@ matrix which does the corresponding operation on $\R^n$.
 Suppose
 $X=\R^n$, $Y=\R^m$, and
 all the bases are just the standard bases.
-Using the Cauchy--Schwarz inequality compute
+Using the Cauchy--Schwarz inequality, with $c=(c_1,c_2,\ldots,c_n) \in \R^n$, compute
 \begin{equation*}
-\snorm{Az}^2
+\snorm{Ac}^2
 =
 \sum_{i=1}^m { \left(\sum_{j=1}^n a_{i,j} \, c_j \right)}^2
 \leq
@@ -1593,7 +1596,7 @@ Using the Cauchy--Schwarz inequality compute
 =
 \left(
 \sum_{i=1}^m \sum_{j=1}^n {(a_{i,j})}^2 \right)
-\snorm{z}^2 .
+\snorm{c}^2 .
 \end{equation*}
 In other words, we have a bound on the operator norm (note that equality
 rarely happens)
@@ -1662,6 +1665,7 @@ Define
 \operatorname{sgn}(\sigma) = \operatorname{sgn}(\sigma_1,\ldots,\sigma_n)
 \coloneqq 
 \prod_{p < q} \operatorname{sgn}(\sigma_q-\sigma_p) .
+\avoidbreak
 \end{equation}
 Here $\prod$ stands for multiplication, similarly to how $\sum$ stands for
 summation.\glsadd{not:prod}
@@ -2197,11 +2201,11 @@ space and $A \in L(X,Y)$, then $\snorm{A}_{L(X,Y)} < \infty$.
 
 \begin{exercise} \label{exercise:allnormsequiv}
 \pagebreak[3]
-Let $X$ be a finite-dimensional vector space.
+Let $X$ be a finite-dimensional vector space with basis
+$\{ x_1,x_2,\ldots,x_n \}$.
 \begin{enumerate}[a)]
 \item
-Let $\{ x_1,x_2,\ldots,x_n \}$ be a basis for $X$,
-$\snorm{\cdot}_X$ a norm on $X$,
+Let $\snorm{\cdot}_X$ be a norm on $X$,
 $c = (c_1,c_2,\ldots,c_n) \in \R^n$,
 and $\snorm{\cdot}_{\R^n}$ the
 standard euclidean norm on $\R^n$.
@@ -2333,13 +2337,16 @@ Let $\snorm{\cdot}$ be any given norm on $\R^n$.  Show that the closed unit ball
 $C(0,1)$ (using the metric induced by this norm)
 is a compact symmetric convex set.
 \item (Challenging)
-Let $C \subset \R^n$ be a compact symmetric convex set and $0 \in C$.  Show that
+Let $C \subset \R^n$ be a compact,
+but note symmetric convex set and $0 \in C$.  Show that
 \begin{equation*}
 \snorm{x} \coloneqq \inf \left\{ \lambda : \lambda > 0 \text{ and } \frac{x}{\lambda} \in C \right\}
 \end{equation*}
 is a norm on $\R^n$, and $C = C(0,1)$ (the closed unit ball) in the metric induced by this norm.
 \end{enumerate}
-Hint: Feel free to the result of \exerciseref{exercise:allnormsequiv} part c).
+Hint: Feel free to the result of \exerciseref{exercise:allnormsequiv}
+part c).  In particular, whether a set is ``compact'' is independent of the
+norm.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
