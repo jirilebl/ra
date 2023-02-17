@@ -1449,8 +1449,8 @@ Using \eqref{eqcontineq}, we obtain
 \begin{equation*}
 \snorm{x} < \snorm{x} + \snorm{A^{-1}} \, \snorm{Bx} .
 \end{equation*}
-In other words, $\snorm{Bx} \not= 0$ for all nonzero $x$, and hence
-$Bx \not= 0$ for all nonzero $x$.  Thus,
+Thus $\snorm{Bx} \not= 0$ for all $x \not= 0$, and consequently
+$Bx \not= 0$ for all $x \not= 0$.  So
 $B$ is one-to-one; if $Bx = By$, then $B(x-y) = 0$, so $x=y$.
 As $B$ is a one-to-one linear mapping from $X$ to $X$, which is finite-dimensional,
 it is also onto by \propref{mv:prop:lin11onto}.
@@ -1841,7 +1841,7 @@ The conclusion that $\det(AB) = \det(A)\det(B)$
 follows by recognizing that the expression in parentheses above is the determinant of $B$.  
 We obtain this by plugging in $A=I$.
 The expression we get for the determinant of $B$ has rows and columns
-swapped, so as a side note, we have also just proved that the determinant of
+swapped, so as a bonus, we have also just proved that the determinant of
 a matrix and its transpose are equal.
 
 Let us prove the
@@ -1850,13 +1850,14 @@ If $A$ is invertible,
 then $A^{-1}A = I$.
 Consequently $\det(A^{-1})\det(A) = \det(A^{-1}A) = \det(I) = 1$.
 If $A$ is not invertible, then it is not one-to-one, and so $A$ takes
-some nonzero vector to zero,  In other words, the columns of $A$ are linearly dependent.
+some nonzero vector to zero.
+In other words, the columns of $A$ are linearly dependent.
 Suppose 
 \begin{equation*}
 \sum_{k=1}^n \gamma_k\, a_k = 0 ,
 \end{equation*}
 where not all $\gamma_k$ are equal to 0.
-Without loss of generality suppose $\gamma_1\neq 0$.
+Without loss of generality, suppose $\gamma_1\neq 0$.
 Take
 \begin{equation*}
 B \coloneqq 
@@ -1943,7 +1944,6 @@ There are three types of so-called
 \emph{elementary matrices}\index{elementary matrix}.
 Let
 $e_1,e_2,\ldots,e_n$ be the standard basis on $\R^n$ as usual.
-
 First,
 for $j =
 1,2,\ldots,n$ and
@@ -2155,17 +2155,15 @@ that $\det(A) = d_{1,1}d_{2,2} \cdots d_{n,n}$.
 
 \begin{exercise}
 \pagebreak[1]
-Take the vector space of polynomials $\R[t]$ and the linear operator $D \in
-L(\R[t])$ that is
-the differentiation (we proved in an earlier exercise that $D$ is a linear
+Take the vector space of polynomials $\R[t]$ and let $D \in L(\R[t])$ be
+differentiation (we proved in an earlier exercise that $D$ is a linear
 operator).  Given $P(t) = c_0 + c_1 t + \cdots + c_n
 t^n \in \R[t]$ define $\snorm{P} \coloneqq \sup \bigl\{ \sabs{c_j} : j = 0,1,2,\ldots,n \bigr\}$.
 \begin{enumerate}[a)]
 \item
-Show that $\snorm{P}$ is a norm on $\R[t]$.
+Show that $\snorm{\cdot}$ is a norm on $\R[t]$.
 \item
-Show that $D$ does not have bounded operator norm, that is $\snorm{D} =
-\infty$.  Hint: Consider the polynomials $t^n$ as $n$ tends to infinity.
+Prove $\snorm{D} = \infty$.  Hint: Consider the polynomials $t^n$ as $n$ tends to infinity.
 \end{enumerate}
 \end{exercise}
 
@@ -2178,11 +2176,12 @@ by $\snorm{\cdot}_{\R^n}$ the standard euclidean norm on $\R^n$, and
 by $\snorm{\cdot}_{L(X,Y)}$ the operator norm.
 \begin{enumerate}[a)]
 \item
-Show that $f \colon \R^n \to \R$,
+Define $f \colon \R^n \to \R$,
 \begin{equation*}
 f(c_1,c_2,\ldots,c_n) \coloneqq 
-\snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n}_X ,
+\snorm{c_1 x_1 + c_2 x_2 + \cdots + c_n x_n}_X .
 \end{equation*}
+Show $f$ 
 is continuous.
 \item
 Show that there exist numbers $m$ and $M$ such
@@ -2235,7 +2234,7 @@ M \snorm{x}_1 .
 \item
 Show that $U \subset X$ is open in the metric defined by
 $\norm{x-y}_1$ if and only if $U$ is open in the metric defined by
-$\norm{x-y}_2$.  In particular, convergence of sequences and continuity
+$\norm{x-y}_2$.  So convergence of sequences and continuity
 of functions is the same in either norm.
 \end{enumerate}
 \end{exercise}
@@ -2390,6 +2389,7 @@ an $A \in L(\R^n,\R^m)$ such that
 \lim_{\substack{h \to 0\\h\in \R^n}}
 \frac{\snorm{f(x+h)-f(x) - Ah}}{\snorm{h}} = 0 .
 \end{equation*}
+We will show momentarily that $A$, if it exists, is unique.
 We write $Df(x) \coloneqq A$, or $f'(x) \coloneqq A$,\glsadd{not:mvder} and
 we say $A$ is the \emph{\myindex{derivative}} of $f$ at $x$.
 When $f$ is differentiable at
@@ -2412,17 +2412,18 @@ $L(\R^1,\R^1)$.  As in one dimension, the idea is that a differentiable
 mapping is \myquote{infinitesimally close} to a linear mapping, and this
 linear mapping is the derivative.
 
-Notice the norms used in the definition.
+Notice the norms in the definition.
 The norm in the
 numerator is on $\R^m$, and the norm in the denominator is on $\R^n$ where $h$
 lives.
 Normally it is understood that $h \in \R^n$ from context
 (the formula makes no sense otherwise).
 We will not explicitly say so from now on.
+Let us prove, as promised, that the derivative is unique.
 
-We have again cheated somewhat and said that $A$
-is \emph{the} derivative.  We have not shown yet that there
-is only one, let us do that now.
+%We have again cheated somewhat and said that $A$
+%is \emph{the} derivative.  We have not shown yet that there
+%is only one, let us do that now.
 
 \begin{prop}
 Let $U \subset \R^n$ be an open subset and $f \colon U \to \R^m$ a function.  Suppose
@@ -2460,7 +2461,7 @@ the origin we have
 \norm{(A-B)\frac{h}{\snorm{h}}} .
 \end{equation*}
 For any given $v \in \R^n$ with $\snorm{v}=1$,
-let $h = (\nicefrac{\delta}{2}) \, v$, then $\snorm{h} < \delta$
+if $h = (\nicefrac{\delta}{2}) \, v$, then $\snorm{h} < \delta$
 and $\frac{h}{\snorm{h}} = v$.
 So $\snorm{(A-B)v} < \epsilon$.  Taking the supremum over all $v$ with
 $\snorm{v} = 1$, we get the operator norm
@@ -2485,10 +2486,9 @@ Let $f \colon \R^2 \to \R^2$ be defined by
 \begin{equation*}
 f(x,y) = \bigl(f_1(x,y),f_2(x,y)\bigr) \coloneqq (1+x+2y+x^2,2x+3y+xy).
 \end{equation*}
-Let us show that $f$ is differentiable at the origin and let us 
-compute the derivative,
-directly using the definition.  If the
-derivative exists, it is in $L(\R^2,\R^2)$, so it can be
+Let us show that $f$ is differentiable at the origin and
+compute the derivative directly using the definition.
+If the derivative exists, it is in $L(\R^2,\R^2)$, so it can be
 represented by a $2$-by-$2$ matrix
 $\left[\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right]$.  Suppose $h =
 (h_1,h_2)$.  We need the following expression to go to zero.
@@ -2584,12 +2584,12 @@ of the derivatives.  As differentiable maps are
 to linear maps, they have the same property:
 
 \begin{thm}[Chain rule] \index{chain rule}
-Let $U \subset \R^n$ be open and let $f \colon U \to \R^m$ be
-differentiable at $p \in U$.  Let $V \subset \R^m$ be open,
-$f(U) \subset V$ and let $g \colon V \to \R^\ell$ be differentiable
-at $f(p)$.  Then
+Let $U \subset \R^n$ and $V \subset \R^m$ be open sets, $f \colon U \to
+\R^m$ be differentiable at $p \in U$, $f(U) \subset V$,
+and let $g \colon V \to \R^\ell$ be differentiable
+at $f(p)$.  Then $F \colon U \to \R^{\ell}$ defined by
 \begin{equation*}
-F(x) = g\bigl(f(x)\bigr)
+F(x) \coloneqq g\bigl(f(x)\bigr)
 \end{equation*}
 is differentiable at $p$ and
 \begin{equation*}
@@ -2597,11 +2597,11 @@ F'(p) = g'\bigl(f(p)\bigr) f'(p) .
 \end{equation*}
 \end{thm}
 
-Without the points where things are evaluated, this is sometimes written as
-$F' = {(g \circ f)}' = g' f'$.  The way to
-understand it is that the derivative of the composition $g \circ f$
-is the composition of the derivatives of $g$ and $f$.  If
-$f'(p) = A$ and $g'\bigl(f(p)\bigr) = B$, then $F'(p) = BA$,
+Without the points where things are evaluated, this is written as
+$F' = {(g \circ f)}' = g' f'$.
+The derivative of the composition $g \circ f$
+is the composition of the derivatives of $g$ and $f$:
+If $f'(p) = A$ and $g'\bigl(f(p)\bigr) = B$, then $F'(p) = BA$,
 just as for linear maps.
 
 \begin{proof}
@@ -2712,7 +2712,7 @@ with respect to $x_j$.  %Sometimes we write $D_j f$ instead.
 See \figureref{fig:svpartder}.
 Here $h$ is a number, not a vector.
 
-For a mapping $f \colon U \to \R^m$ we write
+For a mapping $f \colon U \to \R^m$, we write
 $f = (f_1,f_2,\ldots,f_m)$, where $f_k$ are real-valued
 functions.  We then take partial derivatives of
 the components,
@@ -2799,8 +2799,8 @@ differentiability of $f$, and hence
 \lim_{h \to 0}
 \frac{f(p+h e_j)-f(p)}{h} = f'(p) \, e_j  .
 \end{equation*}
-Let us represent $f$ by components
-$f = (f_1,f_2,\ldots,f_m)$, since it is vector-valued.
+Represent $f$ in components
+$f = (f_1,f_2,\ldots,f_m)$.
 Taking a limit in $\R^m$
 is the same as taking the limit in each component separately.  
 For every $k$,
