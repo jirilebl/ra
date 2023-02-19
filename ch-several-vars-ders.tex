@@ -1591,8 +1591,11 @@ Using the Cauchy--Schwarz inequality, with $c=(c_1,c_2,\ldots,c_n) \in \R^n$, co
 =
 \sum_{i=1}^m { \left(\sum_{j=1}^n a_{i,j} \, c_j \right)}^2
 \leq
-\sum_{i=1}^m { \left(\sum_{j=1}^n {(c_j)}^2 \right) \left(\sum_{j=1}^n
-{(a_{i,j})}^2 \right) }
+\sum_{i=1}^m
+\left(
+\left(\sum_{j=1}^n {(a_{i,j})}^2 \right)
+\left(\sum_{j=1}^n {(c_j)}^2 \right)
+\right)
 =
 \left(
 \sum_{i=1}^m \sum_{j=1}^n {(a_{i,j})}^2 \right)
@@ -2001,11 +2004,11 @@ and
 \end{equation*}
 \end{prop}
 
-The proof is left as an exercise.  The proposition says that we can compute
-the determinant by doing elementary row operations.  For computing the
-determinant, one does not have to factor the matrix into a product of
-elementary matrices completely.  One only does row operations
-until one finds an \emph{\myindex{upper triangular matrix}}, that is, a matrix
+The proof is left as an exercise.
+The proposition says we can compute the determinant via elementary row operations.
+We do not have to factor the matrix into a product of
+elementary matrices completely.  It is sufficient to do row operations
+until we find an \emph{\myindex{upper triangular matrix}}, that is, a matrix
 $[a_{i,j}]$ where $a_{i,j} = 0$ if $i > j$.  Computing determinant of such a
 matrix is not difficult (exercise).
 
