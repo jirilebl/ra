@@ -2954,15 +2954,16 @@ in the direction in which $D_u f(x)$ is maximal.
 \begin{defn}
 Let $U \subset \R^n$ and
 $f \colon U \to \R^n$ be a differentiable mapping.  Define the
-\emph{\myindex{Jacobian}}%
+\emph{\myindex{Jacobian determinant}}%
 \footnote{Named after the Italian mathematician
 \href{https://en.wikipedia.org/wiki/Carl_Gustav_Jacob_Jacobi}{Carl Gustav Jacob Jacobi}
 (1804--1851).},
-or the
-\emph{\myindex{Jacobian determinant}}%
+or simply the
+\emph{\myindex{Jacobian}}%
 \footnote{The matrix from \propref{mv:prop:jacobianmatrix} representing $f'(x)$
-is sometimes called the
-\emph{\myindex{Jacobian matrix}}.},
+is called the
+\emph{\myindex{Jacobian matrix}}, or sometimes confusingly also called just ``the
+Jacobian.''},
 of $f$ at $x$ as
 \glsadd{not:jacobdet}
 \begin{equation*}
@@ -2979,7 +2980,7 @@ but it is quite useful when we need to specify
 the exact variables and function components used,
 as we will do, for example, in the implicit function theorem.
 
-The Jacobian $J_f$ is a real-valued function, and when $n=1$ it is simply the
+The Jacobian determinant $J_f$ is a real-valued function, and when $n=1$ it is simply the
 derivative.
 From the chain rule and the fact that $\det(AB) = \det(A)\det(B)$, it follows that:
 \begin{equation*}
@@ -2988,8 +2989,9 @@ J_{f \circ g} (x) = J_f\bigl(g(x)\bigr) J_g(x) .
 
 The determinant of a linear mapping tells us what happens to
 area/volume under the mapping.
-Similarly, the Jacobian measures how much a differentiable mapping stretches
+Similarly, the Jacobian determinant measures how much a differentiable mapping stretches
 things locally, and if it flips orientation.  In particular, if the Jacobian
+determinant
 is non-zero than we would assume that locally the mapping is invertible (and
 we would be correct as we will later see).
 
@@ -3947,7 +3949,8 @@ inverse is not differentiable at $x=0$.
 
 As a side note, there is a related famous, and as yet unsolved problem,
 called the \emph{\myindex{Jacobian conjecture}}.  If $F \colon \R^n \to
-\R^n$ is polynomial (each component is a polynomial) and $J_F$ is a nonzero
+\R^n$ is polynomial (each component is a polynomial) and $J_F$
+(the Jacobian determinant) is a nonzero
 constant, does $F$ have a polynomial inverse?
 The inverse function theorem gives a local $C^1$ inverse, but can one always
 find a global polynomial inverse is the question.
