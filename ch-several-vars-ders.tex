@@ -2549,9 +2549,9 @@ functions.
 \begin{prop}
 Suppose $U \subset \R^n$ is open,
 $f \colon U \to \R^m$ and
-$g \colon U \to \R^m$ are differentiable at $p$,
+$g \colon U \to \R^m$ are differentiable at $p \in U$,
 and $\alpha \in \R$.  Then the functions $f+g$ and $\alpha f$
-are differentiable at $p$ and
+are differentiable at $p$,
 \begin{equation*}
 (f+g)'(p) = f'(p) + g'(p) , \qquad \text{and} \qquad (\alpha f)'(p) = \alpha
 f'(p) .
@@ -2594,7 +2594,7 @@ at $f(p)$.  Then $F \colon U \to \R^{\ell}$ defined by
 \begin{equation*}
 F(x) \coloneqq g\bigl(f(x)\bigr)
 \end{equation*}
-is differentiable at $p$ and
+is differentiable at $p$, and
 \begin{equation*}
 F'(p) = g'\bigl(f(p)\bigr) f'(p) .
 \end{equation*}
@@ -2652,8 +2652,9 @@ to zero:
 First, $\snorm{B}$ is a constant and $f$ is differentiable at $p$,
 so
 the term $\snorm{B}\frac{\snorm{r(h)}}{\snorm{h}}$ goes to 0.
-Next because $f$ is continuous at $p$, then as
-$h$ goes to 0, so $k$ goes to 0.  Thus
+Next, because $f$ is continuous at $p$,
+$k$ goes to 0 as $h$ goes to 0.
+Thus
 $\frac
 {\snorm{g(q+k)-g(q) - Bk}}
 {\snorm{k}}$ goes to 0, because $g$ is differentiable at $q$.
@@ -2797,7 +2798,7 @@ Fix a $j$ and note that for nonzero $h$,
 \end{split}
 \end{equation*}
 As $h$ goes to 0, the right-hand side goes to zero by
-differentiability of $f$, and hence
+differentiability of $f$.  Hence,
 \begin{equation*}
 \lim_{h \to 0}
 \frac{f(p+h e_j)-f(p)}{h} = f'(p) \, e_j  .
@@ -2823,7 +2824,7 @@ derivatives exist, does not mean that the function is differentiable.  See
 the exercises.
 However, when the partial derivatives are continuous, we will prove that the
 converse holds.
-One of the consequences of the proposition is that if $f$
+One of the consequences of the proposition above is that if $f$
 is differentiable on $U$, then $f' \colon U \to
 L(\R^n,\R^m)$ is a continuous function if and only if
 all the $\frac{\partial f_k}{\partial x_j}$ are continuous functions.
