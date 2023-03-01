@@ -2803,11 +2803,12 @@ differentiability of $f$.  Hence,
 \lim_{h \to 0}
 \frac{f(p+h e_j)-f(p)}{h} = f'(p) \, e_j  .
 \end{equation*}
+The limit is in $\R^m$.
 Represent $f$ in components
 $f = (f_1,f_2,\ldots,f_m)$.
 Taking a limit in $\R^m$
 is the same as taking the limit in each component separately.  
-For every $k$,
+So for every $k$,
 the partial derivative
 \begin{equation*}
 \frac{\partial f_k}{\partial x_j} (p)
@@ -2815,7 +2816,8 @@ the partial derivative
 \lim_{h \to 0}
 \frac{f_k(p+h e_j)-f_k(p)}{h}
 \end{equation*}
-exists and is equal to the $k$th component of $f'(p)\, e_j$,
+exists and is equal to the $k$th component of $f'(p)\, e_j$, which is the
+$j$th column of $f'(p)$,
 and we are done.
 \end{proof}
 
