@@ -3283,7 +3283,7 @@ be a differentiable function, and an $M$ be such that
 \snorm{f'(x)} \leq M
 \qquad \text{for all } x \in U.
 \end{equation*}
-Then $f$ is Lipschitz with constant $M$, that is
+Then $f$ is Lipschitz with constant $M$, that is,
 \begin{equation*}
 \snorm{f(x)-f(y)} \leq M \snorm{x-y}
 \qquad
@@ -3363,16 +3363,18 @@ $B(x,\delta)$ is convex.  Since
 $\snorm{f'(y)} \leq 0$ for all $y \in B(x,\delta)$, then by the proposition,
 $\snorm{f(x)-f(y)} \leq 0 \snorm{x-y} = 0$.  So $f(x) = f(y)$ for all $y \in
 B(x,\delta)$.
+Therefore, $f^{-1}(c)$ is open for all $c \in \R^m$.
 
-This means that $f^{-1}(c)$ is open for all $c \in \R^m$.  Suppose
-$f^{-1}(c)$ is nonempty.  
-The two sets
+Suppose
+$f^{-1}(c_0)$ is nonempty. 
+As $f$ is also continuous,
+the two sets
 \begin{equation*}
-U' = f^{-1}(c), \qquad U'' = f^{-1}\bigl(\R^m\setminus\{c\}\bigr)
+U' = f^{-1}(c_0), \qquad U'' = f^{-1}\bigl(\R^m\setminus\{c_0\}\bigr)
 \end{equation*}
 are open and disjoint, and further $U = U' \cup U''$.  As $U'$ is nonempty
 and $U$ is connected, then
-$U'' = \emptyset$.  So $f(x) = c$ for all $x \in U$.
+$U'' = \emptyset$.  So $f(x) = c_0$ for all $x \in U$.
 \end{proof}
 
 \subsection{Continuously differentiable functions}
