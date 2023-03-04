@@ -3418,18 +3418,18 @@ the entries are continuous functions, the matrix-valued function $f'$ is
 continuous.
 
 We do induction on dimension.  First,
-the conclusion is true when $n=1$.  In this case the derivative
-is just the regular derivative (exercise, noting
-that $f$ is vector-valued).
-
-Suppose the conclusion is true for $\R^{n-1}$,
-that is,
+the conclusion is true when $n=1$.  In this case, $f'(x)$
+is the derivative of
+\volIref{\chapterref*{vI-der:chapter} of volume I}{\chapterref{der:chapter}}
+(exercise, note that $f$ is vector-valued).
+Suppose the conclusion is true for $\R^{n-1}$.
+That is,
 if we restrict to the first $n-1$ variables, the function is differentiable.
-It is easy to see that the first $n-1$
-partial derivatives of $f$ restricted to the set where the last coordinate is
-fixed are the same as those for $f$.
+When taking the partial derivatives in $x_1$ through $x_{n-1}$,
+it does not matter if we consider $f$ or $f$ restricted to the set where
+$x_n$ is fixed.
 In the following, by a slight abuse of notation,
-we think of $\R^{n-1}$ as a subset of $\R^n$, that is the set in $\R^n$ where $x_n = 0$.
+we think of $\R^{n-1}$ as a subset of $\R^n$, that is, the set in $\R^n$ where $x_n = 0$.
 In other words, we identify the vectors $(x_1,x_2,\ldots,x_{n-1})$ and
 $(x_1,x_2,\ldots,x_{n-1},0)$.
 Let
@@ -3504,9 +3504,9 @@ for each $j$ there is some $\theta_j \in [0,t]$ (or $[t,0]$ if $t < 0$), such th
 f_j(x+k + t e_n) - f_j(x+k) =
 t \frac{\partial f_j}{\partial x_n}(x+k+\theta_j e_n).
 \end{equation*}
-Note that if $\snorm{h} < \delta$, then $\snorm{k+\theta_j e_n} \leq \snorm{h}
-< \delta$.
-We finish the estimate
+We have $\snorm{k+\theta_j e_n} \leq \snorm{h}
+< \delta$, and so we can
+finish the estimate
 \begin{equation*}
 \begin{split}
 \snorm{f(x+h) - f(x) - Ah}
@@ -3524,8 +3524,8 @@ t \frac{\partial f_j}{\partial x_n}(x)\right)}^2} + \epsilon \snorm{k}
 \end{proof}
 
 A common application is to prove that a certain function is
-differentiable.  For example, let us show that all polynomials
-are differentiable, and in fact continuously differentiable
+differentiable.  For example, we can show that all polynomials
+are differentiable, and in fact continuously differentiable,
 by computing the partial derivatives.
 
 \begin{cor}
@@ -3700,23 +3700,6 @@ with the initial condition $F(x,0) = g(x)$ for all $x \in \R$.
 
 \sectionnotes{2--3 lectures}
 
-To prove the inverse function theorem, we use the contraction mapping
-principle from
-\volIref{\chapterref*{vI-ms:chapter}}{\chapterref{ms:chapter}},
-where we used it
-to prove Picard's theorem.
-Recall that a mapping $f \colon X \to Y$ between two metric
-spaces $(X,d_X)$ and $(Y,d_Y)$ is called a contraction 
-if there exists a $k < 1$ such that
-\begin{equation*}
-d_Y\bigl(f(p),f(q)\bigr) \leq k \, d_X(p,q)
-\qquad \text{for all } p,q \in X.
-\end{equation*}
-The contraction mapping principle says that if $f \colon X \to X$
-is a contraction and $X$ is a complete metric space,
-then there exists a unique fixed point, that is,
-there exists a unique $x \in X$ such that $f(x) = x$.
-
 Intuitively, if a function is continuously differentiable, then it
 locally \myquote{behaves like} the derivative (which is a linear function).
 The idea of the inverse function theorem is that if a function is
@@ -3746,6 +3729,23 @@ g'(y) = {\bigl(f'(x)\bigr)}^{-1}, \qquad \text{for all } x \in V, y = f(x).
 \subimport*{figures/}{inversefuncRn.pdf_t}
 \caption{Setup of the inverse function theorem in $\R^n$.\label{fig:inversefuncRn}}
 \end{myfigureht}
+
+To prove the inverse function theorem, we use the contraction mapping
+principle from
+\volIref{\chapterref*{vI-ms:chapter}}{\chapterref{ms:chapter}},
+where we used it
+to prove Picard's theorem.
+Recall that a mapping $f \colon X \to Y$ between two metric
+spaces $(X,d_X)$ and $(Y,d_Y)$ is called a contraction 
+if there exists a $k < 1$ such that
+\begin{equation*}
+d_Y\bigl(f(p),f(q)\bigr) \leq k \, d_X(p,q)
+\qquad \text{for all } p,q \in X.
+\end{equation*}
+The contraction mapping principle says that if $f \colon X \to X$
+is a contraction and $X$ is a complete metric space,
+then there exists a unique fixed point, that is,
+there exists a unique $x \in X$ such that $f(x) = x$.
 
 \begin{proof}
 Write $A = f'(p)$.  As $f'$ is continuous, there exists an open ball
