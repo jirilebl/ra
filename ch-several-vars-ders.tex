@@ -3275,44 +3275,44 @@ By the Cauchy--Schwarz inequality
 \end{proof}
 
 Recall that a set $U$ is convex
-if whenever $x,y \in U$, the line segment from
-$x$ to $y$ lies in $U$.
+if whenever $p,q \in U$, the line segment from
+$p$ to $q$ lies in $U$.
 
 \begin{prop} \label{mv:prop:convexlip}
 Let $U \subset \R^n$ be a convex open set, $f \colon U \to \R^m$
 be a differentiable function, and an $M$ be such that
 \begin{equation*}
-\snorm{f'(x)} \leq M
-\qquad \text{for all } x \in U.
+\snorm{f'(p)} \leq M
+\qquad \text{for all } p \in U.
 \end{equation*}
 Then $f$ is Lipschitz with constant $M$, that is,
 \begin{equation*}
-\snorm{f(x)-f(y)} \leq M \snorm{x-y}
+\snorm{f(p)-f(q)} \leq M \snorm{p-q}
 \qquad
-\text{for all } x,y \in U.
+\text{for all } p,q \in U.
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-Fix $x$ and $y$ in $U$ and note that
-$(1-t)x+ty \in U$ for all $t \in [0,1]$
+Fix $p$ and $q$ in $U$ and note that
+$(1-t)p+tq \in U$ for all $t \in [0,1]$
 by convexity.
 Next
 \begin{equation*}
-\frac{d}{dt} \Bigl[f\bigl((1-t)x+ty\bigr)\Bigr]
+\frac{d}{dt} \Bigl[f\bigl((1-t)p+tq\bigr)\Bigr]
 =
-f'\bigl((1-t)x+ty\bigr) (y-x) .
+f'\bigl((1-t)p+tq\bigr) (q-p) .
 \end{equation*}
 By \lemmaref{lemma:mvtmv}, there is some
 $t_0 \in (0,1)$ such that
 \begin{equation*}
 \begin{split}
-\snorm{f(x)-f(y)} & \leq
-\norm{\frac{d}{dt} \Big|_{t=t_0} \Bigl[ f\bigl((1-t)x+ty\bigr) \Bigr] }
+\snorm{f(p)-f(q)} & \leq
+\norm{\frac{d}{dt} \Big|_{t=t_0} \Bigl[ f\bigl((1-t)p+tq\bigr) \Bigr] }
 \\
 & \leq
-\norm{f'\bigl((1-t_0)x+t_0y\bigr)} \, \snorm{y-x} \leq
-M \snorm{y-x} . \qedhere
+\norm{f'\bigl((1-t_0)p+t_0q\bigr)} \, \snorm{q-p} \leq
+M \snorm{q-p} . \qedhere
 \end{split}
 \end{equation*}
 \end{proof}
@@ -3367,8 +3367,8 @@ $\snorm{f(x)-f(y)} \leq 0 \snorm{x-y} = 0$.  So $f(x) = f(y)$ for all $y \in
 B(x,\delta)$.
 Therefore, $f^{-1}(c)$ is open for all $c \in \R^m$.
 
-Suppose
-$f^{-1}(c_0)$ is nonempty. 
+Suppose $c_0 \in \R^m$ is such that
+$f^{-1}(c_0) \not= \emptyset$. 
 As $f$ is also continuous,
 the two sets
 \begin{equation*}
@@ -3394,8 +3394,8 @@ is continuous.
 Let $U \subset \R^n$ be open and
 $f \colon U \to \R^m$.  The function
 $f$ is continuously differentiable if and only if 
-the partial derivatives $\frac{\partial f_j}{\partial x_\ell}$
-exist for all $j$ and $\ell$ and are continuous.
+the partial derivatives $\frac{\partial f_k}{\partial x_j}$
+exist for all $k$ and $j$ and are continuous.
 \end{prop}
 
 Without continuity the theorem does not hold.  Just because
@@ -3406,22 +3406,22 @@ for the last section and also for this section.
 \begin{proof}
 We proved that if $f$ is differentiable, then
 the partial derivatives exist.  The partial
-derivatives are the entries of the matrix of $f'(x)$.  If
+derivatives are the entries of the matrix representing $f'(x)$.  If
 $f' \colon U \to L(\R^n,\R^m)$ is continuous, then the entries are
 continuous, and hence the partial derivatives are continuous.
 
 To prove the opposite direction,
 suppose the partial derivatives exist and are continuous.
 Fix $x \in U$.  If we show that $f'(x)$ exists we are done, because
-the entries of the matrix $f'(x)$ are the partial derivatives and if
-the entries are continuous functions, the matrix-valued function $f'$ is
-continuous.
+the entries of the matrix representing $f'(x)$ are the partial
+derivatives and if the entries are continuous functions,
+the matrix-valued function $f'$ is continuous.
 
 We do induction on dimension.  First,
-the conclusion is true when $n=1$.  In this case, $f'(x)$
-is the derivative of
-\volIref{\chapterref*{vI-der:chapter} of volume I}{\chapterref{der:chapter}}
+the conclusion is true when $n=1$
 (exercise, note that $f$ is vector-valued).
+In this case, $f'(x)$ is essentially the derivative of
+\volIref{\chapterref*{vI-der:chapter}}{\chapterref{der:chapter}}.
 Suppose the conclusion is true for $\R^{n-1}$.
 That is,
 if we restrict to the first $n-1$ variables, the function is differentiable.
@@ -3432,91 +3432,90 @@ In the following, by a slight abuse of notation,
 we think of $\R^{n-1}$ as a subset of $\R^n$, that is, the set in $\R^n$ where $x_n = 0$.
 In other words, we identify the vectors $(x_1,x_2,\ldots,x_{n-1})$ and
 $(x_1,x_2,\ldots,x_{n-1},0)$.
-Let
+
+Fix $p \in U$ and let
 \begin{equation*}
 A \coloneqq 
 \begin{bmatrix}
-\frac{\partial f_1}{\partial x_1}(x)
+\frac{\partial f_1}{\partial x_1}(p)
 & \ldots &
-\frac{\partial f_1}{\partial x_n}(x)
+\frac{\partial f_1}{\partial x_n}(p)
 \\
 \vdots & \ddots & \vdots
 \\
-\frac{\partial f_m}{\partial x_1}(x)
+\frac{\partial f_m}{\partial x_1}(p)
 & \ldots &
-\frac{\partial f_m}{\partial x_n}(x)
+\frac{\partial f_m}{\partial x_n}(p)
 \end{bmatrix} ,
 \qquad
 A' \coloneqq 
 \begin{bmatrix}
-\frac{\partial f_1}{\partial x_1}(x)
+\frac{\partial f_1}{\partial x_1}(p)
 & \ldots &
-\frac{\partial f_1}{\partial x_{n-1}}(x)
+\frac{\partial f_1}{\partial x_{n-1}}(p)
 \\
 \vdots & \ddots & \vdots
 \\
-\frac{\partial f_m}{\partial x_1}(x)
+\frac{\partial f_m}{\partial x_1}(p)
 & \ldots &
-\frac{\partial f_m}{\partial x_{n-1}}(x)
+\frac{\partial f_m}{\partial x_{n-1}}(p)
 \end{bmatrix} ,
 \qquad
 v \coloneqq 
 \begin{bmatrix}
-\frac{\partial f_1}{\partial x_n}(x)
+\frac{\partial f_1}{\partial x_n}(p)
 \\
 \vdots
 \\
-\frac{\partial f_m}{\partial x_n}(x)
+\frac{\partial f_m}{\partial x_n}(p)
 \end{bmatrix} .
 \end{equation*}
 Let $\epsilon > 0$ be given.  By the induction hypothesis, there
 is a $\delta > 0$ such that
-for every $k \in \R^{n-1}$ with $\snorm{k} < \delta$, we have
+for every $h' \in \R^{n-1}$ with $\snorm{h'} < \delta$, we have
 \begin{equation*}
-\frac{\snorm{f(x+k) - f(x) - A' k}}{\snorm{k}} < \epsilon .
+\frac{\snorm{f(p+h') - f(p) - A' h'}}{\snorm{h'}} < \epsilon .
 \end{equation*}
 By continuity of the partial derivatives, suppose $\delta$ is small
 enough so that
 \begin{equation*}
-\abs{\frac{\partial f_j}{\partial x_n}(x+h)
-      - \frac{\partial f_j}{\partial x_n}(x)} < \epsilon
+\abs{\frac{\partial f_k}{\partial x_n}(p+h)
+      - \frac{\partial f_k}{\partial x_n}(p)} < \epsilon
 \end{equation*}
-for all $j$ and all $h \in \R^n$ with $\snorm{h} < \delta$.
+for all $k$ and all $h \in \R^n$ with $\snorm{h} < \delta$.
 
-Suppose $h = k + t e_n$ is a vector in $\R^n$, where $k \in \R^{n-1}$, $t
-\in \R$, such that
-$\snorm{h} < \delta$.  Then $\snorm{k} \leq \snorm{h} < \delta$.
-Note that $Ah = A' k + tv$.
+Suppose $h = h' + t e_n$ is a vector in $\R^n$, where $h' \in \R^{n-1}$,
+$t \in \R$, such that
+$\snorm{h} < \delta$.  Then $\snorm{h'} \leq \snorm{h} < \delta$.
+Note that $Ah = A' h' + tv$.
 \begin{equation*}
 \begin{split}
-\snorm{f(x+h) - f(x) - Ah}
-& = \snorm{f(x+k + t e_n) - f(x+k) - tv + f(x+k) - f(x) - A' k}
+\snorm{f(p+h) - f(p) - Ah}
+& = \snorm{f(p+h' + t e_n) - f(p+h') - tv + f(p+h') - f(p) - A' h'}
 \\
-& \leq \snorm{f(x+k + t e_n) - f(x+k) -tv} + \snorm{f(x+k) - f(x) -
-A' k}
+& \leq \snorm{f(p+h' + t e_n) - f(p+h') -tv} + \snorm{f(p+h') - f(p) -
+A' h'}
 \\
-& \leq \snorm{f(x+k + t e_n) - f(x+k) -tv} + \epsilon \snorm{k} .
+& \leq \snorm{f(p+h' + t e_n) - f(p+h') -tv} + \epsilon \snorm{h'} .
 \end{split}
 \end{equation*}
 As all the partial derivatives exist, by the mean value theorem,
-for each $j$ there is some $\theta_j \in [0,t]$ (or $[t,0]$ if $t < 0$), such that
+for each $k$ there is some $\theta_k \in [0,t]$ (or $[t,0]$ if $t < 0$), such that
 \begin{equation*}
-f_j(x+k + t e_n) - f_j(x+k) =
-t \frac{\partial f_j}{\partial x_n}(x+k+\theta_j e_n).
+f_k(p+h' + t e_n) - f_k(p+h') =
+t \frac{\partial f_k}{\partial x_n}(p+h'+\theta_k e_n).
 \end{equation*}
-We have $\snorm{k+\theta_j e_n} \leq \snorm{h}
-< \delta$, and so we can
-finish the estimate
+We have $\snorm{h'+\theta_k e_n} \leq \snorm{h} < \delta$,
+and so we can finish the estimate
 \begin{equation*}
 \begin{split}
-\snorm{f(x+h) - f(x) - Ah}
-& \leq \snorm{f(x+k + t e_n) - f(x+k) -tv} + \epsilon \snorm{k}
+\snorm{f(p+h) - f(p) - Ah}
+& \leq \snorm{f(p+h' + t e_n) - f(p+h') -tv} + \epsilon \snorm{h'}
 \\
-& \leq \sqrt{\sum_{j=1}^m {\left(t\frac{\partial f_j}{\partial
-x_n}(x+k+\theta_j e_n) -
-t \frac{\partial f_j}{\partial x_n}(x)\right)}^2} + \epsilon \snorm{k}
+& \leq \sqrt{\sum_{k=1}^m {\left(t\frac{\partial f_k}{\partial x_n}(p+h'+\theta_k e_n) -
+t \frac{\partial f_k}{\partial x_n}(p)\right)}^2} + \epsilon \snorm{h'}
 \\
-& \leq \sqrt{m}\, \epsilon \sabs{t} + \epsilon \snorm{k}
+& \leq \sqrt{m}\, \epsilon \sabs{t} + \epsilon \snorm{h'}
 \\
 & \leq (\sqrt{m}+1)\epsilon \snorm{h} . \qedhere
 \end{split}
