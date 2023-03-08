@@ -3713,29 +3713,29 @@ $f \colon U \to \R^n$ be a continuously differentiable function.
 Suppose $p \in U$ and $f'(p)$ is invertible
 (that is, $J_f(p) \not=0$).
 Then there exist open sets $V, W \subset \R^n$ such that
-$p \in V \subset U$, $f(V) = W$ and $f|_V$ is one-to-one.  
+$p \in V \subset U$, $f(V) = W$, and $f|_V$ is one-to-one.  
 Hence a function $g \colon W \to V$ exists such that
 $g(y) \coloneqq (f|_V)^{-1}(y)$.
-See \figureref{fig:inversefuncRn}.
 Furthermore, $g$ is continuously differentiable
 and 
 \begin{equation*}
 g'(y) = {\bigl(f'(x)\bigr)}^{-1}, \qquad \text{for all } x \in V, y = f(x).
 \end{equation*}
 \end{thm}
+See \figureref{fig:inversefuncRn}.
 
 \begin{myfigureht}
 \subimport*{figures/}{inversefuncRn.pdf_t}
 \caption{Setup of the inverse function theorem in $\R^n$.\label{fig:inversefuncRn}}
 \end{myfigureht}
 
-To prove the inverse function theorem, we use the contraction mapping
+To prove the theorem, we use the contraction mapping
 principle from
 \volIref{\chapterref*{vI-ms:chapter}}{\chapterref{ms:chapter}},
 where we used it
 to prove Picard's theorem.
-Recall that a mapping $f \colon X \to Y$ between two metric
-spaces $(X,d_X)$ and $(Y,d_Y)$ is called a contraction 
+Recall that a mapping $f \colon X \to Y$ between metric
+spaces $(X,d_X)$ and $(Y,d_Y)$ is a contraction 
 if there exists a $k < 1$ such that
 \begin{equation*}
 d_Y\bigl(f(p),f(q)\bigr) \leq k \, d_X(p,q)
@@ -3756,7 +3756,7 @@ $V$ around $p$ such that
 Consequently, the derivative $f'(x)$ is invertible for all $x \in V$
 by \propref{prop:finitedimpropinv}.
 
-Given $y \in \R^n$, we define $\varphi_y \colon V \to \R^n$ by
+Given $y \in \R^n$, define $\varphi_y \colon V \to \R^n$ by
 \begin{equation*}
 \varphi_y (x) \coloneqq x + A^{-1}\bigl(y-f(x)\bigr) .
 \end{equation*}
@@ -3917,10 +3917,10 @@ $f(V)$ is open.
 
 \begin{example}
 The theorem, and the corollary, is not true if $f'(x)$ is not invertible for
-some $x$.  For example,
+some~$x$.  For example,
 the map $f(x,y) \coloneqq (x,xy)$, maps $\R^2$ onto the set
 $\R^2 \setminus \bigl\{ (0,y) : y \neq 0 \bigr\}$, which is neither open nor closed.
-In fact $f^{-1}(0,0) = \bigl\{ (0,y) : y \in \R \bigr\}$.  This bad behavior
+In fact, $f^{-1}(0,0) = \bigl\{ (0,y) : y \in \R \bigr\}$.  This bad behavior
 only occurs on the $y$-axis, everywhere else the function is locally
 invertible.  If we avoid the $y$-axis, $f$ is even one-to-one.
 \end{example}
@@ -3938,7 +3938,8 @@ differentiable and the derivative is invertible.
 
 On the other hand, the mapping $f$ is 2-to-1 globally.  For every
 $(a,b)$ that is not the origin, there are exactly two
-solutions to $x^2-y^2=a$ and $2xy=b$ (it is also onto).  We leave it to the student
+solutions to $x^2-y^2=a$ and $2xy=b$ (it is also onto).  We leave it to the
+reader
 to show that there is at least one solution, and then notice
 that replacing $x$ and $y$ with $-x$ and $-y$ we obtain another solution.
 \end{example}
