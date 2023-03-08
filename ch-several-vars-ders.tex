@@ -4428,7 +4428,8 @@ or a $C^k$\glsadd{not:Ck} function, if all partial derivatives of all orders up 
 including order $k$ exist and are continuous.
 \end{defn}
 
-So a continuously differentiable, or $C^1$, function is one where all partial
+So a continuously differentiable, or $C^1$, function is one where all
+first order partial
 derivatives exist and are continuous, which agrees with our previous
 definition due to \propref{mv:prop:contdiffpartials}.  We
 could have required only that the $k$th order partial derivatives exist and
@@ -4529,16 +4530,17 @@ Find a $t_1 \in (0,t)$ such that
 e_{\ell}) .
 \end{equation*}
 So $g(s,t) = \frac{\partial^2 f}{\partial x_m \partial
-x_{\ell}}(p + t_1 e_m + s_1 e_{\ell})$ for the same $g$ as above.  And as before
+x_{\ell}}(p + t_1 e_m + s_1 e_{\ell})$ for the same $g$ as above.
+As before,
 \begin{equation*}
 \lim_{(s,t) \to (0,0)} g(s,t) = 
 \frac{\partial^2 f}{\partial x_m \partial x_{\ell}}(p) .
 \end{equation*}
-Therefore the two partial derivatives are equal.
+Therefore, the two partial derivatives are equal.
 \end{proof}
 
 The proposition does not hold if the derivatives are not
-continuous.  See the \exerciseref{exercise:mixedpartialsunequal}.
+continuous.  See \exerciseref{exercise:mixedpartialsunequal}.
 Notice also that we did not really need a $C^2$ function, we only needed the
 two second order partial derivatives involved to be continuous functions.
 
@@ -4570,16 +4572,17 @@ The first order partial derivatives exist and are continuous.
 The partial derivatives
 $\frac{\partial^2 f}{\partial x \partial y}$ and
 $\frac{\partial^2 f}{\partial y \partial x}$ exist, but are not continuous
-at the origin, and 
+at $(0,0)$, and
 $\frac{\partial^2 f}{\partial x \partial y}(0,0) \not= 
 \frac{\partial^2 f}{\partial y \partial x}(0,0)$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon U \to \R$ is a $C^k$ function for some open $U \subset
-\R^n$ and $p \in U$.  Suppose ${\ell}_1,{\ell}_2,\ldots,{\ell}_k$ are integers between $1$
-and $n$, and suppose $\sigma=(\sigma_1,\sigma_2,\ldots,\sigma_k)$ is a
+Let $f \colon U \to \R$ be a $C^k$ function for some open $U \subset \R^n$
+and $p \in U$.
+Suppose ${\ell}_1,{\ell}_2,\ldots,{\ell}_k$ are integers between $1$
+and $n$, and $\sigma=(\sigma_1,\sigma_2,\ldots,\sigma_k)$ is a
 permutation of $(1,2,\ldots,k)$.  Prove
 \begin{equation*}
 \frac{\partial^{k} f}{\partial x_{{\ell}_{k}} \partial x_{{\ell}_{k-1}}
