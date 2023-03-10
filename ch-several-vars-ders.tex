@@ -3747,8 +3747,8 @@ then there exists a unique fixed point, that is,
 there exists a unique $x \in X$ such that $f(x) = x$.
 
 \begin{proof}
-Write $A = f'(p)$.  As $f'$ is continuous, there exists an open ball
-$V$ around $p$ such that
+Write $A = f'(p)$.  As $f'$ is continuous, there is an open ball
+$V$ centered at $p$ such that
 \begin{equation*}
 \snorm{A-f'(x)} < \frac{1}{2\snorm{A^{-1}}}
 \qquad \text{for all } x \in V.
@@ -3967,13 +3967,13 @@ function theorem, which we prove next.  Although somewhat ironically we
 prove the implicit function theorem using the inverse function theorem.
 In the inverse function theorem we showed that
 the equation $x-f(y) = 0$ is solvable for $y$ in terms of $x$ if the derivative
-in terms of $y$ is invertible, that is if $f'(y)$ is invertible.
+with respect to $y$ is invertible, that is, if $f'(y)$ is invertible.
 Then there is (locally) a
 function $g$ such that $x-f\bigl(g(x)\bigr) = 0$.
 
 OK\@, so how about the equation $f(x,y) = 0$.  This equation is
 not solvable for $y$ in terms of $x$ in every case.  For example,
-there is no solution
+there is generally no solution
 when $f(x,y)$ does not actually depend on $y$.  For a slightly more
 complicated example, notice that $x^2+y^2-1 = 0$ defines the unit circle, and
 we can locally solve for $y$ in terms of $x$ when 1) we are near
@@ -3981,7 +3981,7 @@ a point that lies on the unit circle and 2) when we are not at a point
 where the circle has a vertical tangency, or in other words where
 $\frac{\partial f}{\partial y} = 0$.
 
-To make things simple, we fix some notation.  We let $(x,y) \in
+We fix some notation.  We let $(x,y) \in
 \R^{n+m}$ denote the coordinates $(x_1,\ldots,x_n,y_1,\ldots,y_m)$.  A
 linear transformation $A \in L(\R^{n+m},\R^m)$ can then 
 be written as
@@ -4035,7 +4035,7 @@ The condition
 $\frac{\partial(f_1,\ldots,f_m)}{\partial(y_1,\ldots,y_m)} (p,q) =
 \det(A_y)  \neq 0$
 simply means that $A_y$ is invertible.  If $n=m=1$, the condition 
-becomes $\frac{\partial f}{\partial y}(p,q) \not= 0$, $W$ and $W'$ are 
+becomes $\frac{\partial f}{\partial y}(p,q) \not= 0$. The sets $W$ and $W'$ are 
 open intervals.  See \figureref{fig:implicitfunc}.
 \begin{myfigureht}
 \subimport*{figures/}{implicitfunc.pdf_t}
@@ -4078,7 +4078,7 @@ $F(p,q) = (p,0) \in V$,
 and a  $C^1$
 mapping $G \colon V \to \R^{n+m}$, such that $F\bigl(G(x,s)\bigr) = (x,s)$ for
 all $(x,s) \in V$, $G$ is one-to-one, and $G(V)$ is open. % (where $x \in \R^n$ and $s \in \R^m$).
-Write $G = (G_1,G_2)$ (the first $n$ and the second $m$ components of $G$).
+Write $G = (G_1,G_2)$ (the first $n$ and the next $m$ components of $G$).
 Then
 \begin{equation*}
 F\bigl(G_1(x,s),G_2(x,s)\bigr) = \Bigl(G_1(x,s),f\bigl(G_1(x,s),G_2(x,s) \bigr)\Bigr)
