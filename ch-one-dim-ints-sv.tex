@@ -35,11 +35,11 @@ We prove a simple, but perhaps the most useful version of this kind of result.
 \begin{thm}[\myindex{Leibniz integral rule}]
 Suppose $f \colon [a,b] \times [c,d] \to \R$ is a continuous function,
 such that $\frac{\partial f}{\partial y}$ exists for all $(x,y) \in [a,b]
-\times [c,d]$ and is continuous.  Define
+\times [c,d]$ and is continuous.  Define $g \colon [c,d] \to \R$ by
 \begin{equation*}
 g(y) \coloneqq \int_a^b f(x,y) \,dx .
 \end{equation*}
-Then $g \colon [c,d] \to \R$ is continuously differentiable and
+Then $g$ is continuously differentiable and
 \begin{equation*}
 g'(y) = \int_a^b \frac{\partial f}{\partial y}(x,y) \,dx .
 \end{equation*}
@@ -330,11 +330,12 @@ Note: Feel free to use what you know about sine and cosine from calculus.
 Strengthen the Leibniz integral rule in the following way.
 Suppose $f \colon (a,b) \times (c,d) \to \R$ is a bounded continuous function,
 such that $\frac{\partial f}{\partial y}$ exists for all $(x,y) \in (a,b)
-\times (c,d)$ and is continuous and bounded.  Define
+\times (c,d)$ and is continuous and bounded.  Define $g \colon (c,d) \to \R$
+by
 \begin{equation*}
 g(y) \coloneqq \int_a^b f(x,y) \,dx .
 \end{equation*}
-Then $g \colon (c,d) \to \R$ is continuously differentiable and
+Then $g$ is continuously differentiable and
 \begin{equation*}
 g'(y) = \int_a^b \frac{\partial f}{\partial y}(x,y) \,dx .
 \end{equation*}
@@ -374,7 +375,7 @@ Equivalently,
 $\gamma_j$ is a continuously differentiable function on $[a,b]$
 for every $j=1,2,\ldots,n$.
 By \exerciseref{exercise:normonedim}, the operator norm of
-the operator $\gamma^{\:\prime}(t)$ is equal to
+the operator $\gamma^{\:\prime}(t)$ equals
 the euclidean norm of the corresponding vector, so there is no
 confusion when writing $\snorm{\gamma^{\:\prime}(t)}$.
 

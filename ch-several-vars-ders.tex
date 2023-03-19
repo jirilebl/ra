@@ -3928,31 +3928,29 @@ invertible.  If we avoid the $y$-axis, $f$ is even one-to-one.
 \begin{example}
 Just because $f'(x)$ is invertible everywhere does not
 mean that $f$ is
-one-to-one globally.  It is \myquote{locally} one-to-one but perhaps not
-\myquote{globally.}  For an
-example, take the map $f \colon \R^2 \setminus \bigl\{ (0,0) \bigr\} \to
+one-to-one.  It is \myquote{locally} one-to-one, but perhaps not
+\myquote{globally.}
+Consider $f \colon \R^2 \setminus \bigl\{ (0,0) \bigr\} \to
 \R^2 \setminus \bigl\{ (0,0) \bigr\}$ defined
 by $f(x,y) \coloneqq (x^2-y^2,2xy)$.
-It is left to student to show that $f$ is
-differentiable and the derivative is invertible.
-
-On the other hand, the mapping $f$ is 2-to-1 globally.  For every
+It is left to the reader to verify the following statements.
+The map $f$ is differentiable and the derivative is invertible.
+On the other hand, $f$ is 2-to-1 globally: For every
 $(a,b)$ that is not the origin, there are exactly two
-solutions to $x^2-y^2=a$ and $2xy=b$ (it is also onto).  We leave it to the
-reader
-to show that there is at least one solution, and then notice
-that replacing $x$ and $y$ with $-x$ and $-y$ we obtain another solution.
+solutions to $x^2-y^2=a$ and $2xy=b$ ($f$ is also onto).  Notice that
+once you show that there is at least one solution,
+replacing $x$ and $y$ with $-x$ and $-y$ we obtain another solution.
 \end{example}
 
 The invertibility of the derivative is not a necessary
-condition, just sufficient, for having a continuous inverse and being an open
+condition, just sufficient, for having a continuous inverse and for being an open
 mapping.  For example, the function $f(x) \coloneqq x^3$ is an open mapping from $\R$
 to $\R$ and is globally one-to-one with a continuous inverse, although the
 inverse is not differentiable at $x=0$.
 
 \medskip
 
-As a side note, there is a related famous, and as yet unsolved problem,
+As a side note, there is a related famous, and as yet unsolved, problem
 called the \emph{\myindex{Jacobian conjecture}}.  If $F \colon \R^n \to
 \R^n$ is polynomial (each component is a polynomial) and $J_F$
 (the Jacobian determinant) is a nonzero
@@ -3972,7 +3970,7 @@ Then there is (locally) a
 function $g$ such that $x-f\bigl(g(x)\bigr) = 0$.
 
 OK\@, so how about the equation $f(x,y) = 0$.  This equation is
-not solvable for $y$ in terms of $x$ in every case.  For example,
+not solvable for $y$ in terms of $x$ in every case.  For instance,
 there is generally no solution
 when $f(x,y)$ does not actually depend on $y$.  For a slightly more
 complicated example, notice that $x^2+y^2-1 = 0$ defines the unit circle, and
@@ -3981,13 +3979,14 @@ a point that lies on the unit circle and 2) when we are not at a point
 where the circle has a vertical tangency, or in other words where
 $\frac{\partial f}{\partial y} = 0$.
 
-We fix some notation.  We let $(x,y) \in
+We fix some notation.  Let $(x,y) \in
 \R^{n+m}$ denote the coordinates $(x_1,\ldots,x_n,y_1,\ldots,y_m)$.  A
 linear transformation $A \in L(\R^{n+m},\R^m)$ can then 
 be written as
 $A = [ A_x ~ A_y ]$ so that $A(x,y) = A_x x + A_y y$,
 where $A_x \in L(\R^n,\R^m)$ and
 $A_y \in L(\R^m)$.
+First, the linear version of the theorem.
 
 \begin{prop}
 Let $A = [A_x~A_y] \in L(\R^{n+m},\R^m)$ and suppose 
@@ -4017,7 +4016,7 @@ $f(p,q) = 0$ and such that
 Then there exists an
 open set $W \subset \R^n$ with $p \in W$,
 an open set $W' \subset \R^m$ with $q \in W'$,
-with $W \times W' \subset U$,
+where $W \times W' \subset U$,
 and
 a $C^1(W)$ mapping $g \colon W \to W'$, with $g(p) = q$, and
 for all $x \in W$, the point $g(x)$ is the unique point in $W'$
@@ -4035,7 +4034,7 @@ The condition
 $\frac{\partial(f_1,\ldots,f_m)}{\partial(y_1,\ldots,y_m)} (p,q) =
 \det(A_y)  \neq 0$
 simply means that $A_y$ is invertible.  If $n=m=1$, the condition 
-becomes $\frac{\partial f}{\partial y}(p,q) \not= 0$. The sets $W$ and $W'$ are 
+is $\frac{\partial f}{\partial y}(p,q) \not= 0$, and $W$ and $W'$ are 
 open intervals.  See \figureref{fig:implicitfunc}.
 \begin{myfigureht}
 \subimport*{figures/}{implicitfunc.pdf_t}
@@ -4070,8 +4069,8 @@ So the derivative of $F$ at $(p,q)$ takes $(h,k)$ to $(h,A_x h+A_y k)$.
 In block matrix form, it is
 $\left[\begin{smallmatrix}I & 0\\A_x & A_y\end{smallmatrix}\right]$.  If 
 $(h,A_x h+A_y k) = (0,0)$, then $h=0$, and so $A_y k = 0$.  As $A_y$ is
-one-to-one, $k=0$.  Thus $F'(p,q)$ is one-to-one or in other
-words invertible, and we apply the inverse function theorem.
+one-to-one, $k=0$.  Thus $F'(p,q)$ is one-to-one, and hence invertible.
+We apply the inverse function theorem.
 
 That is, there exists an open set $V \subset \R^{n+m}$ with
 $F(p,q) = (p,0) \in V$,
@@ -4124,9 +4123,8 @@ $m$ equations in $n+m$ unknowns:
 & \qquad \qquad \qquad  \vdots \\
 & f_m (x_1,\ldots,x_n,y_1,\ldots,y_m) = 0 .
 \end{align*}
-The condition guaranteeing a solution is that $f$ is a $C^1$ mapping
-(all the components are
-$C^1$: partial derivatives in all variables exist
+The condition guaranteeing a solution is that $f=(f_1,f_2,\ldots,f_m)$ is a $C^1$ mapping
+(the components are $C^1$: partial derivatives in all variables exist
 and are continuous) and that the matrix
 \begin{equation*}
 \begin{bmatrix}
@@ -4180,7 +4178,7 @@ e^0 & e^0
 1 & 1
 \end{bmatrix}
 \end{equation*}
-is invertible.  Hence near $(0,0,0)$ we can solve for $y$ and $z$
+is invertible.  Hence near $(0,0,0)$, we can solve for $y$ and $z$
 as $C^1$ functions of $x$ such that for $x$ near $0$,
 \begin{equation*}
 x^2+y(x)^2-{\bigl(z(x)+1\bigr)}^3 = -1,
