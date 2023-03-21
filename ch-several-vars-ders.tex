@@ -3960,7 +3960,7 @@ find a global polynomial inverse is the question.
 
 \subsection{Implicit function theorem}
 
-The inverse function theorem is really a special case of the implicit
+The inverse function theorem is a special case of the implicit
 function theorem, which we prove next.  Although somewhat ironically we 
 prove the implicit function theorem using the inverse function theorem.
 In the inverse function theorem we showed that
@@ -3969,20 +3969,20 @@ with respect to $y$ is invertible, that is, if $f'(y)$ is invertible.
 Then there is (locally) a
 function $g$ such that $x-f\bigl(g(x)\bigr) = 0$.
 
-OK\@, so how about the equation $f(x,y) = 0$.  This equation is
-not solvable for $y$ in terms of $x$ in every case.  For instance,
-there is generally no solution
-when $f(x,y)$ does not actually depend on $y$.  For a slightly more
-complicated example, notice that $x^2+y^2-1 = 0$ defines the unit circle, and
+In general, the equation $f(x,y) = 0$ is not
+not solvable for $y$ in terms of $x$ in every case.
+For instance, there is generally no solution
+when $f(x,y)$ does not actually depend on $y$.
+For a more interesting example, notice that $x^2+y^2-1 = 0$ defines the unit circle, and
 we can locally solve for $y$ in terms of $x$ when 1) we are near
-a point that lies on the unit circle and 2) when we are not at a point
-where the circle has a vertical tangency, or in other words where
+a point on the unit circle and 2)~we are not at a point
+where the circle has a vertical tangency, that is, where
 $\frac{\partial f}{\partial y} = 0$.
 
 We fix some notation.  Let $(x,y) \in
-\R^{n+m}$ denote the coordinates $(x_1,\ldots,x_n,y_1,\ldots,y_m)$.  A
-linear transformation $A \in L(\R^{n+m},\R^m)$ can then 
-be written as
+\R^{n+m}$ denote the coordinates $(x_1,\ldots,x_n,y_1,\ldots,y_m)$.  
+We can then write a
+linear map $A \in L(\R^{n+m},\R^m)$ as
 $A = [ A_x ~ A_y ]$ so that $A(x,y) = A_x x + A_y y$,
 where $A_x \in L(\R^n,\R^m)$ and
 $A_y \in L(\R^m)$.
@@ -3999,9 +3999,10 @@ Furthermore, $y=Bx$ is the unique $y \in \R^m$ such that $A(x,y) = 0$.
 
 The proof is immediate: We solve and obtain $y = Bx$.
 Another way to solve is to \myquote{complete the basis,} that is, add
-rows to the matrix until we have an invertible matrix.  In this case,
-we construct a mapping $(x,y) \mapsto (x,A_x x + A_y y)$, and
-find that this operator in $L(\R^{n+m})$ is invertible, and the map $B$
+rows to the matrix until we have an invertible matrix:
+The operator in $L(\R^{n+m})$ given by
+$(x,y) \mapsto (x,A_x x + A_y y)$
+is invertible, and the map $B$
 can be read off from the inverse.
 Let us show that the same can be done for $C^1$ functions.
 
@@ -4018,7 +4019,7 @@ open set $W \subset \R^n$ with $p \in W$,
 an open set $W' \subset \R^m$ with $q \in W'$,
 where $W \times W' \subset U$,
 and
-a $C^1(W)$ mapping $g \colon W \to W'$, with $g(p) = q$, and
+a $C^1(W)$ map $g \colon W \to W'$, with $g(p) = q$, and
 for all $x \in W$, the point $g(x)$ is the unique point in $W'$
 such that 
 \begin{equation*}
@@ -4044,9 +4045,8 @@ $(p,q)$ in the first quadrant.\label{fig:implicitfunc}}
 
 \begin{proof}
 Define $F \colon U \to \R^{n+m}$ by $F(x,y) \coloneqq \bigl(x,f(x,y)\bigr)$.
-It is clear that $F$ is $C^1$, and we want to show that the derivative
+It is clear that $F$ is $C^1$, and we want to show that its derivative
 at $(p,q)$ is invertible.
-
 Let us compute the derivative.  The quotient
 \begin{equation*}
 \frac{\snorm{f(p+h,q+k) - f(p,q) - A_x h - A_y k}}{\snorm{(h,k)}}
@@ -4123,9 +4123,10 @@ $m$ equations in $n+m$ unknowns:
 & \qquad \qquad \qquad  \vdots \\
 & f_m (x_1,\ldots,x_n,y_1,\ldots,y_m) = 0 .
 \end{align*}
-The condition guaranteeing a solution is that $f=(f_1,f_2,\ldots,f_m)$ is a $C^1$ mapping
+The theorem guarantees a solution if 
+$f=(f_1,f_2,\ldots,f_m)$ is a $C^1$ map
 (the components are $C^1$: partial derivatives in all variables exist
-and are continuous) and that the matrix
+and are continuous) and the matrix
 \begin{equation*}
 \begin{bmatrix}
 \frac{\partial f_1}{\partial y_1}
@@ -4185,20 +4186,20 @@ x^2+y(x)^2-{\bigl(z(x)+1\bigr)}^3 = -1,
 \qquad
 e^x+e^{y(x)}+e^{z(x)} = 3 .
 \end{equation*}
-The theorem does not tell us how to find $y(x)$ and $z(x)$ explicitly,
-it just tells us they exist.
 In other words, near the origin the set of solutions is a
 smooth curve in $\R^3$ that goes through the origin.
+The theorem does not tell us how to find $y(x)$ and $z(x)$ explicitly,
+it just tells us they exist.
 \end{example}
 
-An interesting observation from the proof is that we solved the equation
+An interesting, and sometimes useful, observation from the proof is that we solved the equation
 $f\bigl(x,g(x)\bigr) = s$ for all $s$ in some neighborhood of $0$, not just
 $s=0$.
 
 \begin{remark}
-There are versions of the theorem for arbitrarily many derivatives.
-If $f$ has $k$ continuous derivatives, then the solution has $k$
-continuous derivatives as well.  See also the next section.
+There are versions of the theorem for arbitrarily many derivatives:
+If $f$ has $k$ continuous derivatives (see the next section), then the solution has $k$
+continuous derivatives as well.
 \end{remark}
 
 
