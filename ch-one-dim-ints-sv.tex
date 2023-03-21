@@ -359,7 +359,7 @@ Let $\gamma \colon [a,b] \to \R^n$ be a function and write
 $\gamma = (\gamma_1,\gamma_2,\ldots,\gamma_n)$. 
 Suppose $\gamma$ is 
 \emph{continuously differentiable},
-that is,
+meaning
 it is differentiable and the derivative is continuous.
 In other words, there exists a continuous function $\gamma^{\:\prime} \colon [a,b]
 \to \R^n$ such that for every $t \in [a,b]$, we have
@@ -376,8 +376,8 @@ $\gamma_j$ is a continuously differentiable function on $[a,b]$
 for every $j=1,2,\ldots,n$.
 By \exerciseref{exercise:normonedim}, the operator norm of
 the operator $\gamma^{\:\prime}(t)$ equals
-the euclidean norm of the corresponding vector, so there is no
-confusion when writing $\snorm{\gamma^{\:\prime}(t)}$.
+the euclidean norm of the corresponding vector, which allows us to write 
+$\snorm{\gamma^{\:\prime}(t)}$ without any confusion.
 
 \begin{defn}
 A continuously differentiable function $\gamma \colon [a,b] \to \R^n$ is
@@ -399,8 +399,8 @@ the restriction $\gamma|_{[t_{j-1},t_j]}$ is smooth path for every
 $j=1,2,\ldots,k$.
 
 A path $\gamma$ is 
-a \emph{\myindex{closed path}} if $\gamma(a) = \gamma(b)$, that is
-if the path starts and ends in the same point.
+a \emph{\myindex{closed path}} if $\gamma(a) = \gamma(b)$, that is,
+the path starts and ends in the same point.
 A path $\gamma$ is a \emph{\myindex{simple path}} if 
 either 1) $\gamma$ is a one-to-one function, or 2)
 $\gamma|_{[a,b)}$ is one-to-one and $\gamma(a)=\gamma(b)$ ($\gamma$ is a
@@ -475,7 +475,8 @@ More complicated examples with, say, infinitely many corners exist,
 see the exercises.
 \begin{myfigureht}
 \includegraphics{figures/cornersmoothpath}
-\caption{Smooth path with zero derivative with a corner.  Several values of
+\caption{``Smooth'' path with a corner if we allow zero derivative.  The
+points corresponding to several values of
 $t$ are marked with dots.\label{fig:cornersmoothpath}}
 \end{myfigureht}
 \end{example}
@@ -589,7 +590,7 @@ by the chain rule
 (h|_{[s_{j-1},s_j]})'(\tau) \not= 0 .
 \end{equation*}
 Consequently, $\gamma \circ h$ is a piecewise smooth path.
-Orientation reversing $h$ is left as an exercise.
+The proof for orientation reversing $h$ is left as an exercise.
 \end{proof}
 
 If two paths are simple and their images are the same, it is
