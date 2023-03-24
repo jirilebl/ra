@@ -19,13 +19,13 @@ in the sections following.
 \begin{defn}
 Let $(a_1,a_2,\ldots,a_n)$ and
 $(b_1,b_2,\ldots,b_n)$ be such that $a_k \leq b_k$ for all $k$.
-A set of the form
+The set
 $[a_1,b_1] \times
 [a_2,b_2] \times \cdots \times
 [a_n,b_n]$ is called a \emph{\myindex{closed rectangle}}\index{rectangle}.
 In this setting it is sometimes useful to allow $a_k = b_k$, in which case we 
 think of $[a_k,b_k] = \{ a_k \}$ as usual.
-If $a_k < b_k$ for all $k$, then a set of the form
+If $a_k < b_k$ for all $k$, then the set
 $(a_1,b_1) \times
 (a_2,b_2) \times \cdots \times
 (a_n,b_n)$ is called an \emph{\myindex{open rectangle}}.
@@ -144,8 +144,6 @@ V(R) = \sum_{k=1}^N V(R_k).
 
 The indexing in the definition may be complicated, but fortunately we
 do not need to go back directly to the definition often.
-We start by proving facts about the Darboux sums analogous to the one-variable
-results.
 
 \begin{prop} \label{mv:sumulbound:prop}
 Suppose $R \subset \R^n$ is a closed rectangle
@@ -347,7 +345,7 @@ $f \colon R \to \R$ a bounded function such that
 \end{equation*}
 Then $f$ is said to be \emph{\myindex{Riemann integrable}},
 and we sometimes say simply \emph{\myindex{integrable}}.
-The set of Riemann integrable functions on $R$ is denoted
+We denote the set of Riemann integrable functions on $R$
 by $\sR(R)$.\glsadd{not:integrablefuncR}
 For $f \in \sR(R)$ define
 the \emph{\myindex{Riemann integral}}
@@ -399,8 +397,8 @@ So $f$ is integrable, and furthermore $\int_R f = c\,V(R)$.
 \end{example}
 
 The proofs of linearity and monotonicity are almost completely identical as
-the proofs from one variable.  We therefore leave it as an exercise to prove
-the next two propositions.
+the proofs from one variable.
+We leave the next two propositions as exercises.
 
 \begin{samepage}
 \begin{prop}[Linearity] \label{mv:intlinearity:prop}

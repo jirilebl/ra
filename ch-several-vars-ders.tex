@@ -4471,7 +4471,7 @@ such that
 -
 \frac{\partial f}{\partial x_m}(p + t_0 e_m) .
 \end{equation*}
-Next there exists a number $s_0 \in (0,s)$
+Similarly, there exists a number $s_0 \in (0,s)$ such that
 \begin{equation*}
 \frac{\frac{\partial f}{\partial x_m}(p + s e_{\ell} + t_0 e_m)
 -
@@ -4498,39 +4498,37 @@ See \figureref{fig:der2orderflip}.
 The $s_0$ and $t_0$ depend on $s$ and $t$,
 but $0 < s_0 < s$ and
 $0 < t_0 < t$.
-Denote by $\R_+^2$ the set of $(s,t)$ where $s > 0$ and $t > 0$.
-The set $\R_+^2$ is the domain of $g$, and $(0,0)$ is a cluster
-point of $\R_+^2$.
-As $(s,t) \in \R_+^2$ goes to $(0,0)$, $(s_0,t_0) \in \R_+^2$ also goes to
-$(0,0)$.
+Let the domain of the function $g$ be the set $(0,\epsilon) \times
+(0,\epsilon)$ for some small $\epsilon > 0$.
+As $(s,t) \in (0,\epsilon) \times (0,\epsilon)$ goes to $(0,0)$,
+$(s_0,t_0)$ also goes to $(0,0)$.
 By continuity of the second partial derivatives,
 \begin{equation*}
 \lim_{(s,t) \to (0,0)} g(s,t) = 
 \frac{\partial^2 f}{\partial x_{\ell} \partial x_m}(p) .
 \end{equation*}
 
-Now reverse the ordering.  Start with
+Now reverse the roles of $s$ and $t$ (and $\ell$ and $m$).  Start with
 the function $\sigma \mapsto f(p+\sigma e_{\ell} + te_m)-f(p + \sigma
 e_{\ell})$
 find an $s_1 \in (0,s)$ such that
 \begin{equation*}
-\frac{f(p+te_m + se_{\ell})- f(p+s e_{\ell}) - f(p+t e_m)+f(p)}{s}
+\frac{f(p+ se_{\ell} + te_m )- f(p+s e_{\ell}) - f(p+t e_m)+f(p)}{s}
 =
-\frac{\partial f}{\partial x_{\ell}}(p + t e_m + s_1 e_{\ell})
+\frac{\partial f}{\partial x_{\ell}}(p + s_1 e_{\ell} + t e_m)
 -
 \frac{\partial f}{\partial x_{\ell}}(p + s_1 e_{\ell}) .
 \end{equation*}
 Find a $t_1 \in (0,t)$ such that
 \begin{equation*}
-\frac{\frac{\partial f}{\partial x_{\ell}}(p + t e_m + s_1 e_{\ell})
+\frac{\frac{\partial f}{\partial x_{\ell}}(p + s_1 e_{\ell} + t e_m)
 -
 \frac{\partial f}{\partial x_{\ell}}(p + s_1 e_{\ell})}{t}
 =
-\frac{\partial^2 f}{\partial x_m \partial x_{\ell}}(p + t_1 e_m + s_1
-e_{\ell}) .
+\frac{\partial^2 f}{\partial x_m \partial x_{\ell}}(p + s_1 e_{\ell} + t_1 e_m) .
 \end{equation*}
 So $g(s,t) = \frac{\partial^2 f}{\partial x_m \partial
-x_{\ell}}(p + t_1 e_m + s_1 e_{\ell})$ for the same $g$ as above.
+x_{\ell}}(p + s_1 e_{\ell} + t_1 e_m)$ for the same $g$ as above.
 As before,
 \begin{equation*}
 \lim_{(s,t) \to (0,0)} g(s,t) = 
