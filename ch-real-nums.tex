@@ -2073,7 +2073,7 @@ What is left is $\nicefrac{r_1}{(10q)}$.  This is the same as computing the
 first digit of $\nicefrac{r_1}{q}$.
 To compute $d_2$ divide $10 r_1$ by $q$, and so on.
 After computing $n-1$ digits, we have
-$\nicefrac{p}{q} = D_{n-1} + \nicefrac{r_{n-1}}{(10^{n} q)}$.
+$\nicefrac{p}{q} = D_{n-1} + \nicefrac{r_{n-1}}{(10^{n-1} q)}$.
 To get the $n$th digit,
 divide $10 r_{n-1}$ by $q$
 to get quotient $d_n$, remainder $r_n$, and the inequalities
@@ -2084,7 +2084,7 @@ to get quotient $d_n$, remainder $r_n$, and the inequalities
 \end{equation*}
 Dividing by $10^{n-1}$ and adding $D_{n-1}$ we find
 \begin{equation*}
-D_n \leq D_{n-1} + \frac{r_{n-1}}{10^{n} q} = \frac{p}{q} \leq D_n +
+D_n \leq D_{n-1} + \frac{r_{n-1}}{10^{n-1} q} = \frac{p}{q} \leq D_n +
 \frac{1}{10^n} .
 \end{equation*}
 By uniqueness we really have 
