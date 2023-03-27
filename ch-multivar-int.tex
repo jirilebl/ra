@@ -388,7 +388,7 @@ m \, V(R) \leq
 \end{prop}
 
 \begin{example}
-A constant function is Riemann integrable.  Suppose
+A constant function is Riemann integrable.  Proof: Suppose
 $f(x) = c$ for all $x \in R$.  Then
 \begin{equation*}
 c \, V(R) \leq \underline{\int_R} f \leq \overline{\int_R} f \leq c\, V(R) .
@@ -449,9 +449,12 @@ U(P,f) - L(P,f) < \epsilon .
 
 \begin{proof}
 First, if $f$ is integrable, then the supremum of $L(P,f)$ and
-infimum of $U(P,f)$ are equal and hence the
-infimum of $U(P,f)-L(P,f)$ is zero.  Therefore, for
-every $\epsilon > 0$ there must be some partition $P$ such that 
+infimum of $U(Q,f)$ over all partitions $P$ and $Q$ are equal and hence the
+infimum of $U(P,f)-L(Q,f)$ is zero.  Taking a common refinement
+$\widetilde{P}$ of $P$ and $Q$ we find
+$U(\widetilde{P},f)-L(\widetilde{P},f) \leq U(P,f)-L(Q,f)$.
+Hence the infimum of $U(P,f)-L(P,f)$ over all partitions $P$ is zero, and
+so for every $\epsilon > 0$, there must be some partition $P$ such that 
 $U(P,f) - L(P,f) < \epsilon$.
 
 For the other direction, given an $\epsilon > 0$ find $P$ such that
@@ -472,7 +475,7 @@ Suppose $f \colon S \to \R$ is a function and $R \subset S$
 is a closed rectangle.  If the restriction $f|_R$ is integrable,
 then for simplicity we
 say $f$ is \emph{integrable on $R$}, or
-$f \in \sR(R)$ and we
+$f \in \sR(R)$, and we
 write
 \begin{equation*}
 \int_R f \coloneqq \int_R f|_R .
@@ -485,18 +488,24 @@ is a closed rectangle, then $f$ is integrable on $R$.
 \end{prop}
 
 \begin{proof}
-Given $\epsilon > 0$, we find a partition $P$ of $S$ such that
+Given $\epsilon > 0$, find a partition $P=(P_1,\ldots,P_n)$
+of $S$ such that
 $U(P,f)-L(P,f) < \epsilon$.  By making a refinement of $P$
 if necessary,
-we assume that the endpoints of $R$ are in $P$.  In other words,
-$R$ is a union of subrectangles of $P$.  The subrectangles of $P$
-divide into two collections, ones that are subsets of $R$
-and ones whose intersection with the interior of $R$ is empty.
-Suppose $R_1,R_2\ldots,R_K$ are the subrectangles that
-are subsets of $R$ and let $R_{K+1},\ldots, R_N$ be the rest.
-Let $\widetilde{P}$ be the partition of $R$ composed of 
-those subrectangles of $P$ contained in $R$.
-Using the same notation as before,
+assume that the endpoints of $R$ are in $P$.  That is,
+if $R = [a_1,b_1] \times [a_2,b_2] \times \cdots \times [a_n,b_n]$,
+then $a_i,b_i \in P_i$.
+Let $\widetilde{P} = (\widetilde{P}_1,\ldots,\widetilde{P}_n)$
+be the partition of $R$ given by $\widetilde{P}_i = P_i \cap [a_i,b_i]$.
+Subrectangles of $\widetilde{P}$ are subrectangles of~$P$, that
+is, $R$ is a union of subrectangles of~$P$.
+Divide the subrectangles of $P$ into two collections:
+Let $R_1,R_2\ldots,R_K$ be the subrectangles of $P$ that are
+also subrectangles of $\widetilde{P}$ and
+let $R_{K+1},\ldots, R_N$ be the rest.
+See \figureref{fig:figrectsubrect}.
+Let $m_k$ and $M_k$ be the infimum and supremum
+of $f$ on $R_k$ as usual.  Then,
 \begin{equation*}
 \begin{split}
 \epsilon & > 
@@ -515,6 +524,14 @@ U(\widetilde{P},f|_R)-L(\widetilde{P},f|_R) .
 \end{equation*}
 Therefore, $f|_R$ is integrable.
 \end{proof}
+\begin{myfigureht}
+\subimport*{figures/}{figrectsubrect.pdf_t}
+\caption{A partition of a large rectangle $S$, that also gives a partition
+of a smaller rectangle (shaded and outlined) $R \subset S$.
+The subrectangles $R_1,R_2,R_3,R_4$ are the subrectangles of
+$\widetilde{P} = \bigl( \{ x_{1,1}, x_{1,2} , x_{1,3} \} ,
+\{ x_{2,1}, x_{2,2} , x_{2,3} \} \bigr)$.\label{fig:figrectsubrect}}
+\end{myfigureht}
 
 \subsection{Integrals of continuous functions}
 
@@ -581,15 +598,15 @@ If $f \colon R \to \R$ is continuous, then $f \in \sR(R)$.
 \begin{proof}
 The proof is analogous to the one-variable proof with some complications.
 The set $R$ is a closed and bounded subset of $\R^n$, and hence compact.  So
-$f$ is not just continuous, but in fact uniformly continuous 
+$f$ is uniformly continuous 
 by \volIref{\thmref*{vI-thm:Xcompactfunifcont} from volume I}{\thmref{thm:Xcompactfunifcont}}.
 Let $\epsilon > 0$ be given.  Find a $\delta > 0$ such that
 $\snorm{x-y} < \delta$ implies $\sabs{f(x)-f(y)} < \frac{\epsilon}{V(R)}$.
 
 Let $P$ be a partition of $R$, such that longest side of every subrectangle
 is strictly less than $\frac{\delta}{\sqrt{n}}$.
-If $x, y \in R_k$ for some subrectangle $R_k$ of $P$, then,
-by the proposition above,
+If $x, y \in R_k$ for a subrectangle $R_k$ of $P$, then,
+by the proposition,
 $\snorm{x-y} < \sqrt{n} \frac{\delta}{\sqrt{n}} = \delta$.  Therefore,
 \begin{equation*}
 f(x)-f(y) \leq \sabs{f(x)-f(y)} < \frac{\epsilon}{V(R)} .
@@ -599,7 +616,7 @@ on this subrectangle.
 Let $x$ be a point where $f$ attains the maximum and $y$ be a point
 where $f$ attains the minimum.  Then $f(x) = M_k$
 and $f(y) = m_k$ in the notation from the definition of the integral.
-Therefore,
+Thus,
 \begin{equation*}
 M_k-m_k = f(x)-f(y) < 
 \frac{\epsilon}{V(R)} .
@@ -629,6 +646,7 @@ m_k V(R_k)
 V(R_k)
 = \epsilon.
 \end{split}
+\avoidbreak
 \end{equation*}
 Via application of \propref{mv:prop:upperlowerepsilon}, we find that $f \in
 \sR(R)$.
@@ -713,7 +731,7 @@ x & \text{if } x > 0,
 \end{cases}
 \end{equation*}
 is continuous on $B(0,1)$, but its support is the set
-$\bigl\{ (x,y) \in B(0,1) : x \geq 0 \bigr\}$.  In particular, $g$ is not compactly
+$\bigl\{ (x,y) \in B(0,1) : x \geq 0 \bigr\}$.  In particular, $g$~is not compactly
 supported.
 \end{example}
 
@@ -922,7 +940,7 @@ integrable function such $f(x) = -f(-x)$.  Using the definition prove
 \sectionnotes{1--2 lectures}
 
 The Riemann integral in several variables
-is hard to compute by the definition.
+is hard to compute via the definition.
 For one-dimensional Riemann integral, we have the fundamental
 theorem of calculus,
 %(FIXME link?)
@@ -2131,9 +2149,9 @@ Given $\epsilon > 0$, define
 \begin{equation*}
 S_\epsilon \coloneqq \bigl\{ x \in R : o(f,x) \geq \epsilon \bigr\} .
 \end{equation*}
-By \propref{prop:seclosed}, $S_\epsilon$ is closed and as it is a subset of
-$R$,
-which is bounded, $S_\epsilon$ is compact.  Furthermore,
+By \propref{prop:seclosed}, $S_\epsilon$ is closed,
+and as it is also a subset of the bounded $R$,
+$S_\epsilon$ is compact.  Moreover,
 $S_\epsilon \subset S$ and $S$ is of measure zero,
 so $S_\epsilon$ is of measure zero.
 Via \propref{mv:prop:compactnull}, finitely many open rectangles
