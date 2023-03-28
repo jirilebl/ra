@@ -944,7 +944,7 @@ is hard to compute via the definition.
 For one-dimensional Riemann integral, we have the fundamental
 theorem of calculus,
 %(FIXME link?)
-and we can compute many integrals without
+which allows computing many integrals without
 having to appeal to the definition of the integral.
 We will rewrite 
 a Riemann integral in several variables into
@@ -979,11 +979,11 @@ However,
 does not exist, so we cannot even write $\int_0^1 \int_0^1 f(x,y) \, dy \, dx$.
 
 Proof:
-Let us start with integrability of $f$.  Consider the partition
+We start with integrability of $f$.  Consider the partition
 of $[0,1]^2$ where the partition in the $x$ direction is
 $\{ 0, \nicefrac{1}{2}-\epsilon,
 \nicefrac{1}{2}+\epsilon,1\}$ and in the $y$ direction $\{ 0, 1 \}$.
-The subrectangles of the partition are
+The corresponding subrectangles are
 \begin{equation*}
 R_1 \coloneqq [0, \nicefrac{1}{2}-\epsilon] \times [0,1],
 \qquad
@@ -1030,7 +1030,6 @@ For every fixed $y$, the function that takes $x$ to $f(x,y)$ is zero except
 perhaps at a single point $x=\nicefrac{1}{2}$.  Such a
 function is integrable and $\int_0^1 f(x,y) \, dx = 0$.  Therefore,
 $\int_0^1 \int_0^1 f(x,y) \, dx \, dy = 0$.
-
 However, if $x=\nicefrac{1}{2}$, the function that takes $y$ to
 $f(\nicefrac{1}{2},y)$ is the nonintegrable function that is
 1 on the rationals and 0 on the irrationals.
@@ -1038,7 +1037,8 @@ See \volIref{\exampleref*{vI-example:dirichletfunc} from volume I}{\exampleref{e
 \end{example}
 
 We solve this problem of undefined inside integrals
-by using the upper and lower integrals, which are always defined.
+by using the upper and lower integrals, which are always defined
+for any bounded function.
 
 \medskip
 
@@ -1049,12 +1049,12 @@ write
 \begin{equation*}
 f_x(y) \coloneqq f(x,y)
 \end{equation*}
-when $x$ is fixed and we wish to speak of the function in terms of $y$.
+when $x$ is fixed and we want a function of $y$.
 Write
 \begin{equation*}
 f^y(x) \coloneqq f(x,y)
 \end{equation*}
-when $y$ is fixed and we wish to speak of the function in terms of $x$.
+when $y$ is fixed and we want a function of $x$.
 
 \begin{thm}[Fubini version A%
 \footnote{Named after the Italian mathematician
