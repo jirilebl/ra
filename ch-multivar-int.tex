@@ -977,6 +977,17 @@ However,
 \int_0^1 f(\nicefrac{1}{2},y) \, dy
 \end{equation*}
 does not exist, so we cannot even write $\int_0^1 \int_0^1 f(x,y) \, dy \, dx$.
+See \figureref{fig:fubinibad}.
+
+\begin{myfigureht}
+\subimport*{figures/}{fubinibad.pdf_t}
+\caption{Left: $[0,1]^2$ with the line $x=\nicefrac{1}{2}$ marked
+dotted, and $\int_0^1 f(x,y) \, dx$ marked as gray solid line for a generic $y$.
+Center: Similar picture but $\int_0^1 f(x,y) \, dy$
+marked for some $x \not= \nicefrac{1}{2}$.
+Right: The three different rectangles in the partition used to integrate $f$
+in different grays.\label{fig:fubinibad}}
+\end{myfigureht}
 
 Proof:
 We start with integrability of $f$.  Consider the partition
@@ -1086,8 +1097,8 @@ In other words,
  \overline{\int_S} f(x,y) \, dy
 \right) \, dx .
 \end{equation*}
-If it turns out that $f_x$ is integrable for all $x$, for example when
-$f$ is continuous, then we obtain the more familiar
+If $f_x$ is integrable for all $x$, for example when
+$f$ is continuous, we obtain the more familiar
 \begin{equation*}
 \int_{R \times S} f
 =
