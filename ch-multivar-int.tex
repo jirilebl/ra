@@ -692,7 +692,7 @@ f(x,y) \coloneqq
 \end{equation*}
 is continuous and its support is the closed unit disc
 $C(0,1) = \bigl\{ (x,y) : \sqrt{x^2 + y^2} \leq 1 \bigr\}$, which is a compact set, so $f$ has compact support.
-Do note that the function is zero on the entire $y$-axis
+Note that the function is zero on the entire $y$-axis
 and on the unit circle, but
 all points that lie in the closed unit disc are still within the support
 as they are in the closure of points where $f$ is nonzero.
@@ -944,7 +944,7 @@ is hard to compute via the definition.
 For one-dimensional Riemann integral, we have the fundamental
 theorem of calculus,
 %(FIXME link?)
-and we can compute many integrals without
+which allows computing many integrals without
 having to appeal to the definition of the integral.
 We will rewrite 
 a Riemann integral in several variables into
@@ -977,13 +977,24 @@ However,
 \int_0^1 f(\nicefrac{1}{2},y) \, dy
 \end{equation*}
 does not exist, so we cannot even write $\int_0^1 \int_0^1 f(x,y) \, dy \, dx$.
+See \figureref{fig:fubinibad}.
+
+\begin{myfigureht}
+\subimport*{figures/}{fubinibad.pdf_t}
+\caption{Left: $[0,1]^2$ with the line $x=\nicefrac{1}{2}$ marked
+dotted, and $\int_0^1 f(x,y) \, dx$ marked as gray solid line for a generic $y$.
+Center: Similar picture but $\int_0^1 f(x,y) \, dy$
+marked for some $x \not= \nicefrac{1}{2}$.
+Right: The three different rectangles in the partition used to integrate $f$
+in different grays.\label{fig:fubinibad}}
+\end{myfigureht}
 
 Proof:
-Let us start with integrability of $f$.  Consider the partition
+We start with integrability of $f$.  Consider the partition
 of $[0,1]^2$ where the partition in the $x$ direction is
 $\{ 0, \nicefrac{1}{2}-\epsilon,
 \nicefrac{1}{2}+\epsilon,1\}$ and in the $y$ direction $\{ 0, 1 \}$.
-The subrectangles of the partition are
+The corresponding subrectangles are
 \begin{equation*}
 R_1 \coloneqq [0, \nicefrac{1}{2}-\epsilon] \times [0,1],
 \qquad
@@ -1030,7 +1041,6 @@ For every fixed $y$, the function that takes $x$ to $f(x,y)$ is zero except
 perhaps at a single point $x=\nicefrac{1}{2}$.  Such a
 function is integrable and $\int_0^1 f(x,y) \, dx = 0$.  Therefore,
 $\int_0^1 \int_0^1 f(x,y) \, dx \, dy = 0$.
-
 However, if $x=\nicefrac{1}{2}$, the function that takes $y$ to
 $f(\nicefrac{1}{2},y)$ is the nonintegrable function that is
 1 on the rationals and 0 on the irrationals.
@@ -1038,7 +1048,8 @@ See \volIref{\exampleref*{vI-example:dirichletfunc} from volume I}{\exampleref{e
 \end{example}
 
 We solve this problem of undefined inside integrals
-by using the upper and lower integrals, which are always defined.
+by using the upper and lower integrals, which are always defined
+for any bounded function.
 
 \medskip
 
@@ -1049,12 +1060,12 @@ write
 \begin{equation*}
 f_x(y) \coloneqq f(x,y)
 \end{equation*}
-when $x$ is fixed and we wish to speak of the function in terms of $y$.
+when $x$ is fixed and we want a function of $y$.
 Write
 \begin{equation*}
 f^y(x) \coloneqq f(x,y)
 \end{equation*}
-when $y$ is fixed and we wish to speak of the function in terms of $x$.
+when $y$ is fixed and we want a function of $x$.
 
 \begin{thm}[Fubini version A%
 \footnote{Named after the Italian mathematician
@@ -1086,8 +1097,8 @@ In other words,
  \overline{\int_S} f(x,y) \, dy
 \right) \, dx .
 \end{equation*}
-If it turns out that $f_x$ is integrable for all $x$, for example when
-$f$ is continuous, then we obtain the more familiar
+If $f_x$ is integrable for all $x$, for example when
+$f$ is continuous, we obtain the more familiar
 \begin{equation*}
 \int_{R \times S} f
 =
@@ -1095,8 +1106,8 @@ $f$ is continuous, then we obtain the more familiar
 \end{equation*}
 
 \begin{proof}
-Any partition of $R \times S$ is a concatenation of a partition of $R$ and a
-partition of $S$.  That is, write a partition of $R \times S$
+A partition of $R \times S$ is a concatenation of a partition of $R$ and a
+partition of~$S$.  That is, write a partition of $R \times S$
 as $(P,P') = (P_1,P_2,\ldots,P_n,P'_1,P'_2,\ldots,P'_m)$,
 where
 $P = (P_1,P_2,\ldots,P_n)$ and
