@@ -1115,45 +1115,45 @@ $P' = (P'_1,P'_2,\ldots,P'_m)$ are partitions of $R$ and $S$ respectively.
 Let
 $R_1,R_2,\ldots,R_N$ be the subrectangles of $P$ and
 $R'_1,R'_2,\ldots,R'_K$ be the subrectangles of $P'$.
-Then the subrectangles of $(P,P')$ are
-$R_j \times R'_k$ where $1 \leq j \leq N$ and $1 \leq k \leq K$.
+The subrectangles of $(P,P')$ are
+$R_i \times R'_j$ where $1 \leq i \leq N$ and $1 \leq j \leq K$.
 
 Let
 \begin{equation*}
-m_{j,k} \coloneqq
-\inf_{(x,y) \in R_j \times R'_k} f(x,y) .
+m_{i,j} \coloneqq
+\inf_{(x,y) \in R_i \times R'_j} f(x,y) .
 \end{equation*}
-We notice that
-$V(R_j \times R'_k) = V(R_j)V(R'_k)$ and hence
+Notice that
+$V(R_i \times R'_j) = V(R_i)V(R'_j)$ and hence
 \begin{equation*}
 L\bigl((P,P'),f\bigr) =
-\sum_{j=1}^N
-\sum_{k=1}^K
-m_{j,k} \, V(R_j \times R'_k)
+\sum_{i=1}^N
+\sum_{j=1}^K
+m_{i,j} \, V(R_i \times R'_j)
 =
-\sum_{j=1}^N
+\sum_{i=1}^N
 \left(
-\sum_{k=1}^K
-m_{j,k} \, V(R'_k) \right) V(R_j) .
+\sum_{j=1}^K
+m_{i,j} \, V(R'_j) \right) V(R_i) .
 \end{equation*}
-If we let
+Define
 \begin{equation*}
-m_k(x) \coloneqq \inf_{y \in R'_k} f(x,y) = \inf_{y \in R'_k} f_x(y) ,
+m_j(x) \coloneqq \inf_{y \in R'_j} f(x,y) = \inf_{y \in R'_j} f_x(y) .
 \end{equation*}
-then for $x \in R_j$, we have $m_{j,k} \leq m_k(x)$.  Therefore,
+For $x \in R_i$, we have $m_{i,j} \leq m_j(x)$, and therefore,
 \begin{equation*}
-\sum_{k=1}^K
-m_{j,k} \, V(R'_k)
-\leq \sum_{k=1}^K m_k(x) \, V(R'_k) = L(P',f_x) \leq
+\sum_{j=1}^K
+m_{i,j} \, V(R'_j)
+\leq \sum_{j=1}^K m_j(x) \, V(R'_j) = L(P',f_x) \leq
 \underline{\int_S} f_x = g(x) .
 \end{equation*}
-As the inequality holds for all $x \in R_j$, we have
+The inequality holds for all $x \in R_i$, and so
 \begin{equation*}
-\sum_{k=1}^K
-m_{j,k} \, V(R'_k)
-\leq \inf_{x \in R_j} g(x) .
+\sum_{j=1}^K
+m_{i,j} \, V(R'_j)
+\leq \inf_{x \in R_i} g(x) .
 \end{equation*}
-We thus obtain
+We obtain
 \begin{equation*}
 L\bigl((P,P'),f\bigr) 
 \leq
@@ -1165,7 +1165,7 @@ L\bigl((P,P'),f\bigr)
 
 Similarly, $U\bigl((P,P'),f) \geq U(P,h)$, and the proof of this inequality is
 left as an exercise.
-Putting the two inequalities together with the fact that $g(x) \leq h(x)$ for all $x$, we have
+Putting the two inequalities together with the fact that $g(x) \leq h(x)$ for all $x$,
 \begin{equation*}
 L\bigl((P,P'),f\bigr)
 \leq
@@ -1174,7 +1174,7 @@ U(P,g) \leq
 U(P,h) \leq
 U\bigl((P,P'),f\bigr) .
 \end{equation*}
-And since $f$ is integrable, it must be that $g$ is integrable as
+Since $f$ is integrable, it must be that $g$ is integrable as
 \begin{equation*}
 U(P,g) - L(P,g)
 \leq
@@ -1183,10 +1183,10 @@ L\bigl((P,P'),f\bigr) ,
 \end{equation*}
 and we can make the right-hand side arbitrarily small.
 As for any partition we have 
-$L\bigl((P,P'),f\bigr) \leq L(P,g) \leq U\bigl((P,P'),f\bigr)$, we must have
+$L\bigl((P,P'),f\bigr) \leq L(P,g) \leq U\bigl((P,P'),f\bigr)$, we have
 $\int_R g = \int_{R \times S} f$.
 
-Similarly,
+Likewise,
 \begin{equation*}
 L\bigl((P,P'),f\bigr)
 \leq
@@ -1203,14 +1203,14 @@ U\bigl((P,P'),f\bigr) -
 L\bigl((P,P'),f\bigr) .
 \end{equation*}
 If $f$ is integrable, so is $h$.
-As $L\bigl((P,P'),f\bigr) \leq L(P,h) \leq U\bigl((P,P'),f\bigr)$ we must have
-that $\int_R h = \int_{R \times S} f$.
+As $L\bigl((P,P'),f\bigr) \leq L(P,h) \leq U\bigl((P,P'),f\bigr)$, we have
+$\int_R h = \int_{R \times S} f$.
 \end{proof}
 
 We can also do the iterated integration in the opposite order.
 The proof of this version is almost identical to version A
 (or follows quickly from version A)\@.
-We leave it as an exercise to the reader.
+We leave it as an exercise.
 
 \begin{thm}[Fubini version B]\label{mv:fubinivB}\index{Fubini's theorem}
 \pagebreak[2]
@@ -1287,8 +1287,8 @@ dx_{n-1}
 dx_1 .
 \end{equation*}
 
-Clearly we may switch the order of integration to any order we please.
-We may also relax the continuity requirement by making sure that all the
+We may switch the order of integration to any order we please.
+We may relax the continuity requirement by making sure that all the
 intermediate functions are integrable, or by using upper or lower integrals
 appropriately.
 
@@ -1413,9 +1413,8 @@ Before we characterize all Riemann integrable functions, we need to make
 a slight detour.  We introduce a way of measuring the size of sets in $\R^n$.
 
 \begin{defn}
-Let 
-$S \subset \R^n$ be a subset.  Define the \emph{\myindex{outer measure}}
-of $S$ as
+Define the \emph{\myindex{outer measure}}
+of a set $S \subset \R^n$ as
 \glsadd{not:outermeasure}
 \begin{equation*}
 m^*(S)
@@ -1450,7 +1449,7 @@ finite sequences.
 The theory of measures on $\R^n$ is a very complicated subject.
 We will only require measure-zero sets and so we focus on these.
 A set $S$ is of measure zero if
-for every $\epsilon > 0$
+for every $\epsilon > 0$,
 there exists a sequence of open rectangles $\{ R_j \}_{j=1}^\infty$ such that
 \begin{equation} \label{mv:eq:nullR}
 S \subset \bigcup_{j=1}^\infty R_j \qquad \text{and} \qquad
