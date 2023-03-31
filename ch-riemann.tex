@@ -319,8 +319,8 @@ Let $f \colon [a,b] \to \R$ be a bounded function such that
 \end{equation*}
 Then $f$ is said to be \emph{\myindex{Riemann integrable}}.
 The set of Riemann integrable functions on $[a,b]$ is denoted
-by $\sR[a,b]$.\glsadd{not:integrablefunc}
-When $f \in \sR[a,b]$, we define\glsadd{not:riemannint}
+by $\sR\bigl([a,b]\bigr)$.\glsadd{not:integrablefunc}
+When $f \in \sR\bigl([a,b]\bigr)$, we define\glsadd{not:riemannint}
 \begin{equation*}
 \int_a^b f(x)\,dx \coloneqq 
 \underline{\int_a^b} f(x)\,dx = \overline{\int_a^b} f(x)\,dx .
@@ -517,13 +517,13 @@ $[a,b] \subset S$,
 we say $f$ is Riemann integrable on $[a,b]$ if the restriction of $f$
 to $[a,b]$ is Riemann integrable. 
 In this case,
-we say $f \in \sR[a,b]$,
+we say $f \in \sR\bigl([a,b]\bigr)$,
 and
 we write $\int_a^b f$ to mean the Riemann integral
 of the restriction of $f$ to $[a,b]$.
 
 It is useful to define the integral $\int_a^b f$ even if
-$a \not< b$.  Suppose $b < a$ and $f \in \sR[b,a]$,
+$a \not< b$.  Suppose $b < a$ and $f \in \sR\bigl([b,a]\bigr)$,
 then define
 \begin{equation*}
 \int_a^b f \coloneqq - \int_b^a f .
@@ -549,7 +549,7 @@ and let $P \coloneqq \{ 0, 0.1, 0.4, 1 \}$.  Compute $L(P,f)$ and $U(P,f)$.
 
 \begin{exercise}
 Let $f \colon [0,1] \to \R$ be defined by $f(x) \coloneqq x$.
-Show that $f \in \sR[0,1]$ and
+Show that $f \in \sR\bigl([0,1]\bigr)$ and
 compute $\int_0^1 f$ using the definition of the integral
 (but
 feel free to use the propositions of this section).%\propref{intulbound:prop}).
@@ -584,7 +584,7 @@ f(x) \coloneqq
 0 & \text{if } x \leq 0.
 \end{cases}
 \end{equation*}
-Prove that $f \in \sR[-1,1]$ and
+Prove that $f \in \sR\bigl([-1,1]\bigr)$ and
 compute $\int_{-1}^1 f$ using the definition of the integral
 (but
 feel free to use the propositions of this section).
@@ -601,7 +601,7 @@ d & \text{if } x = c, \\
 0 & \text{if } x \not= c.
 \end{cases}
 \end{equation*}
-Prove that $f \in \sR[a,b]$ and
+Prove that $f \in \sR\bigl([a,b]\bigr)$ and
 compute
 $\int_a^b f$ using the definition of the integral
 %(feel free to use \propref{intulbound:prop}).
@@ -657,12 +657,12 @@ Find an $f$ that is not Riemann integrable, but $\lim\limits_{n\to\infty} R_n$ e
 
 \begin{exercise}[Challenging] \label{exercise:riemannintdarboux}
 Generalize the previous exercise.
-Show that $f \in \sR[a,b]$ if and only if there exists an $I \in \R$,
+Show that $f \in \sR\bigl([a,b]\bigr)$ if and only if there exists an $I \in \R$,
 such that for every $\epsilon > 0$ there exists
 a $\delta > 0$ such that if $P$ is a partition with $\Delta x_i < \delta$
 for all $i$, then
 $\abs{L(P,f) - I} < \epsilon$ and
-$\abs{U(P,f) - I} < \epsilon$.  If $f \in \sR[a,b]$, then $I = \int_a^b f$.
+$\abs{U(P,f) - I} < \epsilon$.  If $f \in \sR\bigl([a,b]\bigr)$, then $I = \int_a^b f$.
 \end{exercise}
 
 \begin{exercise}
@@ -671,14 +671,14 @@ the proof in \exerciseref{exercise:taggedpartition}, show that
 Darboux integral is the same as the standard definition
 of Riemann integral, which you have most likely seen in calculus.  That is,
 show that
-$f \in \sR[a,b]$ if and only if there exists an $I \in \R$,
+$f \in \sR\bigl([a,b]\bigr)$ if and only if there exists an $I \in \R$,
 such that for every $\epsilon > 0$ there exists
 a $\delta > 0$ such that if $P = \{ x_0,x_1,\ldots,x_n \}$
 is a partition with $\Delta x_i < \delta$
 for all $i$, then
 $\abs{\sum_{i=1}^n f(c_i) \Delta x_i - I} < \epsilon$ for every set
 $\{ c_1,c_2,\ldots,c_n \}$ with $c_i \in [x_{i-1},x_i]$.
-If $f \in \sR[a,b]$, then $I = \int_a^b f$.
+If $f \in \sR\bigl([a,b]\bigr)$, then $I = \int_a^b f$.
 \end{exercise}
 
 
@@ -819,7 +819,7 @@ $f$ is Riemann integrable, then
 \end{prop}
 
 \begin{proof}
-Suppose $f \in \sR[a,c]$, then it is bounded and
+Suppose $f \in \sR\bigl([a,c]\bigr)$, then it is bounded and
 $\overline{\int_a^c} f = 
 \underline{\int_a^c} f = 
 \int_a^c f$.  The lemma gives
@@ -880,9 +880,9 @@ An easy consequence of the additivity is the following corollary.  We
 leave the details to the reader as an exercise.
 
 \begin{cor} \label{intsubcor}
-If $f \in \sR[a,b]$ and
+If $f \in \sR\bigl([a,b]\bigr)$ and
 $[c,d] \subset [a,b]$, then
-the restriction $f|_{[c,d]}$ is in $\sR[c,d]$.
+the restriction $f|_{[c,d]}$ is in $\sR\bigl([c,d]\bigr)$.
 \end{cor}
 
 \subsection{Linearity and monotonicity}
@@ -891,13 +891,13 @@ A sum is a linear function of the summands.  So is the integral.
 
 \begin{prop}[Linearity]
 \index{linearity of the integral}\label{prop:integrallinear}
-Let $f$ and $g$ be in $\sR[a,b]$ and $\alpha \in \R$.
+Let $f$ and $g$ be in $\sR\bigl([a,b]\bigr)$ and $\alpha \in \R$.
 \begin{enumerate}[(i)]
-\item $\alpha f$ is in $\sR[a,b]$ and
+\item $\alpha f$ is in $\sR\bigl([a,b]\bigr)$ and
 \begin{equation*}
 \int_a^b \alpha f(x) \,dx = \alpha \int_a^b f(x) \,dx .
 \end{equation*}
-\item $f+g$ is in $\sR[a,b]$ and
+\item $f+g$ is in $\sR\bigl([a,b]\bigr)$ and
 \begin{equation*}
 \int_a^b \bigl( f(x)+g(x) \bigr) \,dx = 
 \int_a^b f(x) \,dx 
@@ -1012,7 +1012,7 @@ for all $x \in [a,b]$.  Then
 \leq
 \overline{\int_a^b} g .
 \end{equation*}
-Moreover, if $f$ and $g$ are in $\sR[a,b]$, then
+Moreover, if $f$ and $g$ are in $\sR\bigl([a,b]\bigr)$, then
 \begin{equation*}
 \int_a^b f 
 \leq
@@ -1059,7 +1059,7 @@ function continuous on the whole closed interval $[a,b]$.
 
 \begin{lemma} \label{lemma:contint}
 If $f \colon [a,b] \to \R$ is a continuous function,
-then $f \in \sR[a,b]$.
+then $f \in \sR\bigl([a,b]\bigr)$.
 \end{lemma}
 
 \begin{proof}
@@ -1138,8 +1138,8 @@ Let $f \colon [a,b] \to \R$ be a bounded function,
 $\{ a_n \}_{n=1}^\infty$ and $\{b_n \}_{n=1}^\infty$ be sequences such that
 $a < a_n < b_n < b$ for all $n$, with
 $\lim_{n\to\infty} a_n = a$ and $\lim_{n\to\infty} b_n = b$.
-Suppose $f \in \sR[a_n,b_n]$ for all $n$.
-Then $f \in \sR[a,b]$ and
+Suppose $f \in \sR\bigl([a_n,b_n]\bigr)$ for all $n$.
+Then $f \in \sR\bigl([a,b]\bigr)$ and
 \begin{equation*}
 \int_a^b f = 
 \lim_{n \to \infty} \int_{a_n}^{b_n} f .
@@ -1246,7 +1246,7 @@ at all points of $[a,b] \setminus S$.
 
 \begin{thm}
 Let $f \colon [a,b] \to \R$ be a bounded function with finitely
-many discontinuities.  Then $f \in \sR[a,b]$.
+many discontinuities.  Then $f \in \sR\bigl([a,b]\bigr)$.
 \end{thm}
 
 \begin{proof}
@@ -1294,15 +1294,16 @@ Riemann integrable.  The proof is left to the reader as part of
 \exerciseref{exercise:boundedvariationintegrable}.
 
 \begin{prop} \label{prop:monotoneintegrable}
-Let $f \colon [a,b] \to \R$ be a monotone function.  Then $f \in \sR[a,b]$.
+Let $f \colon [a,b] \to \R$ be a monotone function.  Then $f \in
+\sR\bigl([a,b]\bigr)$.
 \end{prop}
 
 \subsection{Exercises}
 
 \begin{exercise} \label{exercise:proofoflinpropparti}
 Finish the proof of the first part of \propref{prop:integrallinear}.
-Let $f$ be in $\sR[a,b]$.  Prove that
-$-f$ is in $\sR[a,b]$ and 
+Let $f$ be in $\sR\bigl([a,b]\bigr)$.  Prove that
+$-f$ is in $\sR\bigl([a,b]\bigr)$ and 
 \begin{equation*}
 \int_a^b - f(x) \,dx = - \int_a^b f(x) \,dx .
 \end{equation*}
@@ -1310,8 +1311,9 @@ $-f$ is in $\sR[a,b]$ and
 
 \begin{exercise} \label{exercise:proofoflinproppartii}
 Prove the second part of \propref{prop:integrallinear}.
-Let $f$ and $g$ be in $\sR[a,b]$.
-Prove, without using \propref{prop:upperlowerlinineq}, that $f+g$ is in $\sR[a,b]$ and
+Let $f$ and $g$ be in $\sR\bigl([a,b]\bigr)$.
+Prove, without using \propref{prop:upperlowerlinineq}, that $f+g$ is in
+$\sR\bigl([a,b]\bigr)$ and
 \begin{equation*}
 \int_a^b \bigl( f(x)+g(x) \bigr) \,dx = 
 \int_a^b f(x) \,dx 
@@ -1358,7 +1360,7 @@ Show that there exists a $c \in [a,b]$ such that $f(c) = g(c)$.
 \end{exercise}
 
 \begin{exercise}
-Let $f \in \sR[a,b]$.  Let $\alpha, \beta, \gamma$ be arbitrary numbers in
+Let $f \in \sR\bigl([a,b]\bigr)$.  Let $\alpha, \beta, \gamma$ be arbitrary numbers in
 $[a,b]$ (not necessarily ordered in any way).  Prove 
 \begin{equation*}
 \int_\alpha^\gamma f =
@@ -1462,7 +1464,7 @@ functions on $[a,b]$.  Show that $h$ is Riemann integrable.
 \end{exercise}
 
 \begin{exercise}[Challenging] \label{exercise:hardabsint}
-Suppose $f \in \sR[a,b]$, then the function that takes $x$ to
+Suppose $f \in \sR\bigl([a,b]\bigr)$, then the function that takes $x$ to
 $\abs{f(x)}$ is also Riemann integrable on $[a,b]$.
 Then show the same inequality as \exerciseref{exercise:easyabsint}.
 \end{exercise}
@@ -1512,7 +1514,7 @@ using the integral and vice versa.
 
 \begin{thm} \label{thm:FTCv1}
 Let $F \colon [a,b] \to \R$ be a continuous function, differentiable
-on $(a,b)$.  Let $f \in \sR[a,b]$ be such that $f(x) = F'(x)$ for $x \in
+on $(a,b)$.  Let $f \in \sR\bigl([a,b]\bigr)$ be such that $f(x) = F'(x)$ for $x \in
 (a,b)$.  Then
 \begin{equation*}
 \int_a^b f = F(b)-F(a) .
@@ -1851,7 +1853,7 @@ $\displaystyle
 \begin{exercise}
 Suppose $F \colon [a,b] \to \R$ is continuous and differentiable
 on $[a,b] \setminus S$, where $S$ is a finite set.  Suppose there
-exists an $f \in \sR[a,b]$ such that $f(x) = F'(x)$ for $x \in [a,b]
+exists an $f \in \sR\bigl([a,b]\bigr)$ such that $f(x) = F'(x)$ for $x \in [a,b]
 \setminus S$.  Show that
 $\int_a^b f = F(b)-F(a)$.
 \end{exercise}

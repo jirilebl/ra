@@ -392,13 +392,14 @@ If $f_n$ are all continuous, is $f$ continuous?  Differentiable?
 Integrable?  What are the derivatives or integrals of $f$?
 
 For example, for continuity of the pointwise limit of a sequence
+of functions
 $\{ f_n \}_{n=1}^\infty$, we are asking if
 \begin{equation*}
 \lim_{x\to x_0} \lim_{n\to\infty} f_n(x)
 \overset{?}{=}
 \lim_{n\to\infty} \lim_{x\to x_0} f_n(x) .
 \end{equation*}
-We don't even a priory know if both sides exist, let alone if they are equal each other.
+A priori we do not even know if both sides exist, let alone if they equal each other.
 
 \begin{example}
 The functions $f_n \colon \R \to \R$,
@@ -417,7 +418,6 @@ f(x) \coloneqq
 
 So pointwise convergence is not enough to preserve continuity (nor even
 boundedness).  For that, we need uniform convergence.
-
 Let $f_n \colon X \to Y$ be functions.  Then
 $\{f_n\}_{n=1}^\infty$ \emph{\myindex{converges uniformly}}\index{uniform convergence}
 to $f$ if
@@ -428,7 +428,7 @@ d\bigl(f_n(x),f(x)\bigr) < \epsilon .
 \end{equation*}
 
 A series $\sum_{n=1}^\infty f_n$ of complex-valued functions converges uniformly if the sequence of
-partial sums converges uniformly, that is for every $\epsilon > 0$
+partial sums converges uniformly, that is, if for every $\epsilon > 0$,
 there exists an $M$ such that
 for all $n \geq M$ and all $x \in X$
 \begin{equation*}
@@ -550,7 +550,7 @@ The series
 \sum_{n=1}^\infty \frac{\sin(nx)}{n^2}
 \end{equation*}
 converges uniformly on $\R$.  See \figureref{fig:fouriersern2}.
-This is a Fourier series,
+This series is a Fourier series, and
 we will see more of these in a later section.  Proof:
 The series converges uniformly because
 $\sum_{n=1}^\infty \frac{1}{n^2}$
@@ -595,7 +595,6 @@ Cauchy-complete.
 Suppose $f_n \colon X \to Y$ converge uniformly to
  $f \colon X \to Y$.  
 Let $\{ x_k \}_{k=1}^\infty$ be a sequence in $X$ and $x \coloneqq \lim_{k \to \infty} x_k$.  Suppose
-that
 \begin{equation*}
 a_n \coloneqq \lim_{k \to \infty} f_n(x_k)
 \end{equation*}
@@ -1034,16 +1033,16 @@ f(z) = \sum_{n=0}^\infty c_n {(z-a)}^n
 for all $z \in B(a,\rho)$.
 Then we say $f$ is an \emph{\myindex{analytic}} function.
 
-Similarly if we have an interval $(a,b) \subset \R$, we say that $f \colon (a,b)
-\to \C$ is analytic or perhaps \emph{\myindex{real-analytic}}
+Similarly, given an interval $(a,b) \subset \R$, we say that $f \colon (a,b) \to \C$
+is analytic or perhaps \emph{\myindex{real-analytic}}
 if for each point $c \in
 (a,b)$ there is a power series around $c$ that converges in some
 $(c-\rho,c+\rho)$
 for some $\rho > 0$.
 
 As we will sometimes talk about real and sometimes about complex power
-series we will use $z$ to denote a complex number and $x$ a real number, but
-we will always mention which case we are working with.
+series, we will use $z$ to denote a complex number and $x$ a real number.
+We will always mention which case we are working with.
 
 An analytic function has different expansions around different
 points.  Also the convergence does not automatically happen on the entire
@@ -1054,7 +1053,7 @@ domain of the function.  For example, if $\sabs{z} < 1$, then
 While the left-hand side exists on all of $z \not= 1$, the right-hand side
 happens to converge only if $\sabs{z} < 1$.  See a graph
 of a small piece of $\frac{1}{1-z}$ in \figureref{fig:1over1mz}.
-Notice that we can't graph the
+We cannot graph the
 function itself, we can only graph its real or imaginary parts for lack
 of dimensions in our universe.
 
@@ -1073,7 +1072,7 @@ properties of power series deal with the series
 $\sum_{k=0}^\infty \sabs{c_k} \, \sabs{z-a}^k$
 and so we have already proved many results about complex power
 series.  In particular, we computed the so-called
-\emph{radius of convergence} of a power series.
+radius of convergence of a power series.
 
 \begin{samepage}
 \begin{prop}
@@ -1091,6 +1090,15 @@ the series converges uniformly on the closed ball $C(a,r)$.
 \end{prop}
 \end{samepage}
 
+The number $\rho$ is the \emph{\myindex{radius of convergence}}.
+See \figureref{fig:radiusconvcomplex}.
+The radius of convergence gives a disc around $a$ where the series converges.  A power series
+is convergent if $\rho > 0$.
+\begin{myfigureht}
+\subimport*{figures/}{radiusconvcomplex.pdf_t}
+\caption{Radius of convergence.\label{fig:radiusconvcomplex}}
+\end{myfigureht}
+
 \begin{proof}
 We use the real version of this proposition,
 \volIref{\propref*{vI-prop:powerserrealradius} in volume I}{\propref{prop:powerserrealradius}}.
@@ -1107,7 +1115,7 @@ $\sum_{n=0}^\infty \sabs{c_n} \, \sabs{z-a}^n$ converges when
 $\sabs{z-a} < \rho$, and diverges (in fact the terms of the series
 do not go to zero) when $\sabs{z-a} > \rho$.
 
-To prove the furthermore suppose
+To prove the ``Furthermore,'' suppose
 $0 < r < \rho$ and $z \in C(a,r)$.  Then
 consider the partial sums
 \begin{equation*}
@@ -1119,15 +1127,6 @@ consider the partial sums
 \end{equation*}
 \end{proof}
 
-The number $\rho$ is called the \emph{\myindex{radius of convergence}}.
-See \figureref{fig:radiusconvcomplex}.
-The radius of convergence gives us a disk around $a$ where the series converges.  A power series
-is convergent if $\rho > 0$.
-\begin{myfigureht}
-\subimport*{figures/}{radiusconvcomplex.pdf_t}
-\caption{Radius of convergence.\label{fig:radiusconvcomplex}}
-\end{myfigureht}
-
 If $\sum_{n=0}^\infty c_n {(z-a)}^n$ converges for some $z$, then
 \begin{equation*}
 \sum_{n=0}^\infty c_n {(w-a)}^n
@@ -1135,12 +1134,12 @@ If $\sum_{n=0}^\infty c_n {(z-a)}^n$ converges for some $z$, then
 converges absolutely whenever $\sabs{w-a} < \sabs{z-a}$.
 Conversely if the series diverges at $z$, then it must diverge at $w$
 whenever $\sabs{w-a} > \sabs{z-a}$.
-This means that to show
+Hence, to show
 that the radius of convergence is at least some number, we simply need to
 show convergence at some point by any method we know.
 
 \begin{example}
-Let us list some series we already know:
+We list some series we already know:
 \begin{align*}
 & &
 & \sum_{n=0}^\infty z^n
@@ -1216,8 +1215,9 @@ $z_0$ has some tail that is completely in the open ball $B(a,r)$,
 hence $f$ is continuous at $z_0$.
 \end{proof}
 
-In \volIref{\corref*{vI-cor:differentiatepowerser} of volume I}{\corref{cor:differentiatepowerser}} we proved that we can
-differentiate real power series term by term.  That is
+In \volIref{\corref*{vI-cor:differentiatepowerser} of volume
+I}{\corref{cor:differentiatepowerser}}, we proved that we can
+differentiate real power series term by term.  That is,
 we proved that if
 \begin{equation*}
 f(x) \coloneqq \sum_{n=0}^\infty c_n {(x-a)}^n
@@ -1245,7 +1245,7 @@ i
 We apply the theorem to the real and
 imaginary part.
 
-By iterating this theorem we find that an
+By iterating this theorem, we find that an
 analytic function is infinitely differentiable:
 \begin{equation*}
 f^{(\ell)}(x) =
@@ -1256,8 +1256,9 @@ f^{(\ell)}(x) =
 In particular,
 \begin{equation} \label{eq:formulaforpscoeffs}
 f^{(\ell)}(a) = \ell! \, c_\ell .
+\avoidbreak
 \end{equation}
-So the coefficients are uniquely determined by the derivatives of the
+The coefficients are uniquely determined by the derivatives of the
 function, and vice versa.
 
 On the other hand, just because we have an infinitely differentiable
@@ -2249,9 +2250,9 @@ has are precisely at the zeros.
 \end{remark}
 
 \begin{remark}
-The lemma does not hold if we restrict to real numbers.  For
-example, $x^2+1$ has a minimum at $x=0$, but no zero there.  The thing is that
-there is a $w$ arbitrarily close to $0$ such that $\sabs{w^2+1} < 1$, but this
+The lemma does not hold if we restrict to the real numbers.  For
+example, $x^2+1$ has a minimum at $x=0$, but no zero there.
+There is a $w$ arbitrarily close to $0$ such that $\sabs{w^2+1} < 1$, but this
 $w$ is necessarily not real.  Letting $w = i\epsilon$ for small
 $\epsilon > 0$ works.
 \end{remark}
