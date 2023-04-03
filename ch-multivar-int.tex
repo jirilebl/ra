@@ -1458,6 +1458,7 @@ S \subset \bigcup_{j=1}^\infty R_j \qquad \text{and} \qquad
 If $S$ is of measure zero and $S' \subset S$, then
 $S'$ is of measure zero.  We can use the same exact rectangles.
 
+\pagebreak[2]
 It is sometimes more convenient to use balls instead of rectangles.
 Furthermore, we can
 choose balls no bigger than a fixed radius.
@@ -1465,15 +1466,15 @@ choose balls no bigger than a fixed radius.
 \begin{prop} \label{mv:prop:ballsnull}
 Let $\delta > 0$ be given.
 A set $S \subset \R^n$ is of measure zero if and only if for every $\epsilon >
-0$, there exists a sequence of open balls $\{ B_j \}_{j=1}^\infty$, where the radius of
-$B_j$ is $r_j < \delta$, and such that
+0$, there exists a sequence of open balls $\{ B_k \}_{k=1}^\infty$, where the radius of
+$B_k$ is $r_k < \delta$, and such that
 \begin{equation*}
-S \subset \bigcup_{j=1}^\infty B_j \qquad \text{and} \qquad
-\sum_{j=1}^\infty r_j^n < \epsilon.
+S \subset \bigcup_{k=1}^\infty B_k \qquad \text{and} \qquad
+\sum_{k=1}^\infty r_k^n < \epsilon.
 \end{equation*}
 \end{prop}
 
-Note that the \myquote{volume} of $B_j$ is proportional to $r_j^n$.
+Note that the \myquote{volume} of $B_k$ is proportional to $r_k^n$.
 
 \begin{proof}
 If $C$ is a closed cube (rectangle with all sides equal) of side $s$,
@@ -1482,20 +1483,30 @@ $\sqrt{n}\, s$ by \propref{prop:diameterrectangle}, and hence
 in an open ball of radius $2 \sqrt{n}\, s$.
 
 Suppose $R$ is a rectangle of positive volume.
-Let $s > 0$ be a number that is less than the smallest side of $R$ and also
-so that $2\sqrt{n} \, s < \delta$.
-We claim $R$ is contained in
-a union of closed cubes $C_1, C_2, \ldots, C_k$ of sides $s$ such that
+Let $s > 0$ be a number less than the smallest side of $R$ and
+such that $2\sqrt{n} \, s < \delta$.
+If each side of $R$ is an integer multiple of $s$, then $R$ is
+contained in a union of closed cubes
+$C_1, C_2, \ldots, C_m$ of side $s$ such that
+$\sum_{k=1}^m V(C_k) = V(R)$.  So suppose the sides
+of $R$ are not integer multiples of $s$.
+Consider a side of length $(\ell+\alpha) s$, for
+an integer $\ell$ and $0 \leq \alpha < 1$.  As $s$ is less than the smallest
+side, $\ell \geq 1$, and so $(\ell+\alpha)s \leq 2\ell s$.
+Increasing this side to $2\ell s$,
+and similarly increasing every side of $R$, we obtain a new larger
+rectangle of volume at most $2^n$ times larger, whose sides are
+multiples of~$s$.  See \figureref{fig:nullrectcube}.
+Thus $R$ is contained in a union of
+closed cubes $C_1, C_2, \ldots, C_m$ of side $s$ such that
 \begin{equation*}
-\sum_{j=1}^k V(C_j) \leq 2^n V(R) .
+\sum_{k=1}^m V(C_k) \leq 2^n V(R) .
 \end{equation*}
-It is clearly true (without the $2^n$) if $R$ has sides that are
-integer multiples of $s$.  So if a side is of length $(\ell+\alpha) s$, for
-$\ell \in \N$ and $0 \leq \alpha < 1$, then
-$(\ell+\alpha)s \leq 2\ell s$.  Increasing the side to $2\ell s$,
-and then doing the same for every side, we obtain a new larger
-rectangle of volume at most $2^n$ times larger, but whose sides are
-multiples of $s$.
+
+\begin{myfigureht}
+\subimport*{figures/}{nullrectcube.pdf_t}
+\caption{Covering a rectangle by cubes of total size at most $2^n V(R)$.\label{fig:nullrectcube}}
+\end{myfigureht}
 
 So suppose that $S$ is a null set and
 there exist open rectangles $\{ R_j \}_{j=1}^\infty$ whose union contains $S$ and such that
@@ -1508,7 +1519,7 @@ all the rectangles $\{ R_j \}_{j=1}^\infty$ and so that
 2^n \sum_{j=1}^\infty V(R_j)
 < 2^n \epsilon.
 \end{equation*}
-Covering $C_k$ with balls $B_k$ of radius $r_k = 2\sqrt{n} \, s_k < \delta$,
+Covering each $C_k$ with a ball $B_k$ of radius $r_k = 2\sqrt{n} \, s_k < \delta$,
 we obtain 
 \begin{equation*}
 \sum_{k=1}^\infty r_k^n
@@ -1518,7 +1529,8 @@ we obtain
 {(4\sqrt{n})}^n \epsilon .
 \end{equation*}
 As $S \subset\bigcup_{j} R_j \subset \bigcup_{k} C_k \subset \bigcup_{k}
-B_k$, $S$ is covered by the required balls.
+B_k$ and ${(4\sqrt{n})}^n \epsilon$ can be arbitrarily small,
+the forward direction follows.
 
 For the other direction, suppose $S$ is covered by balls $B_j$
 of radii $r_j$, such that $\sum_{j=1}^\infty r_j^n < \epsilon$,
@@ -1589,8 +1601,9 @@ can be done in any manner.  In particular, as
 The next example is not just interesting, it will be useful later.
 
 \begin{example} \label{mv:example:planenull}
-Let $P \coloneqq \{ x \in \R^n : x_k = c \}$ for a fixed $k=1,2,\ldots,n$ and
-a fixed constant $c \in \R$.  Then $P$ is of measure zero.
+Let $n \in \N$ and fix some $k=1,2,\ldots,n$ and a constant $c \in \R$.
+Then $P \coloneqq \{ x \in \R^n : x_k = c \}$ is of measure zero.
+Note that if $n \geq 2$, then $P$ is uncountable.
 
 Proof:
 First fix $s$ and let us prove that
@@ -1604,7 +1617,7 @@ Given any $\epsilon > 0$ define the open rectangle
 R \coloneqq \bigl\{ x \in \R^n : c-\epsilon < x_k < c+\epsilon, \sabs{x_j} < s+1
 \text{ for all } j\not=k \bigr\} .
 \end{equation*}
-It is clear that $P_s \subset R$.  Furthermore,
+Clearly, $P_s \subset R$.  Furthermore,
 \begin{equation*}
 V(R) = 2\epsilon {\bigl(2(s+1)\bigr)}^{n-1} .
 \end{equation*}
@@ -1654,9 +1667,9 @@ other words
 $a_1 < a_2 < b_1 < b_2$.  Similarly
 $a_j < a_{j+1} < b_j < b_{j+1}$ for all $j$.
 Furthermore, $a_1 < a$ and $b_k > b$.
-Thus,
+See \figureref{fig:measureinterval} for a sample configuration.
+As $b_j-a_j \leq a_{j+1}-a_j$, we obtain
 \begin{equation*}
-m^*\bigl([a,b]\bigr) \geq
 \sum_{j=1}^k (b_j-a_j)
 \geq
 \sum_{j=1}^{k-1} (a_{j+1}-a_j)
@@ -1665,6 +1678,12 @@ m^*\bigl([a,b]\bigr) \geq
 =
 b_k-a_1 > b-a .
 \end{equation*}
+So $m^*\bigl([a,b]\bigr) \geq b-a$.
+\begin{myfigureht}
+\subimport*{figures/}{measureinterval.pdf_t}
+\caption{Open intervals covering $[a,b]$ which satisfy
+$a_j < a_{j+1} < b_j < b_{j+1}$ for all $j$.\label{fig:measureinterval}}
+\end{myfigureht}
 \end{example}
 
 \begin{prop} \label{mv:prop:compactnull}
@@ -1711,8 +1730,7 @@ exercise.
 So that the reader is not under the impression that there are only few
 measure zero sets and that these sets are uncomplicated,
 here is an uncountable, compact, measure zero subset of $[0,1]$.
-For every $x \in [0,1]$, write its
-representation in ternary notation
+Any $x \in [0,1]$ can be expanded in ternary
 \begin{equation*}
 x = \sum_{n=1}^\infty d_n 3^{-n} ,
 \qquad \text{where } d_n=0, 1, \text{ or } 2.
@@ -1882,7 +1900,7 @@ $\widebar{S} = \R^n$.
 Prove the general case of  \propref{prop:imagenull} without using compactness:
 \begin{enumerate}[a)]
 \item
-Mimic the proof to first prove that the proposition holds if $E$ is
+Mimic the proof to prove that the proposition holds if $E$ is
 \emph{\myindex{relatively compact}}; a set $E \subset U$ is relatively
 compact if the closure of $E$ in the subspace topology on $U$ is compact,
 or in other words if there exists a compact set $K$ with $K \subset U$
@@ -1943,6 +1961,7 @@ The set $C$ is in one-to-one correspondence with $[0,1]$.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[3]
 Prove that the Cantor set of \exampleref{example:cantor} contains no
 interval.  That is, whenever $a < b$, there exists a point $x \notin C$
 such that $a < x < b$.
