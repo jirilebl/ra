@@ -2084,7 +2084,28 @@ o(f,x,\delta) =
 o(f,x,\delta) .
 \end{equation*}
 
+We will prove that function is continuous at $x$ if and only if $o(f,x) = 0$.
+Fox example, if $f \colon \R \to \R$ is the Dirichlet function where
+$f(x)=1$ if $x \in \Q$ and $f(x)=0$ otherwise, then $o(f,x) = 1$ for every
+$x$, as any interval contains both rational and irrational numbers.
+Accordingly, $f$ is not continuous at any $x$.
+For another example, which perhaps is the origin of the terminology,
+let $g \colon \R \to \R$ be given by
+$g(x) = \sin(\nicefrac{1}{x})$ for $x\neq 0$ and $g(0)=0$,
+see \figureref{fig:sin1xosc}.
+Then at the discontinuity at $x=0$, we find $o(g,0) = 2$, as
+in any neighborhood of $0$ the function takes both values $1$ and $-1$.
+For all $x \neq 0$, the function is continuous and so, as we will see,
+$o(g,x) = 0$.
+
+\begin{myfigureht}
+% also used in 3.1
+\includegraphics{figures/sin1xfig}
+\caption{Graph of $\sin(\nicefrac{1}{x})$.\label{fig:sin1xosc}}
+\end{myfigureht}
+
 \begin{prop}
+\pagebreak[2]
 A function
 $f \colon D \to \R$ is continuous at $x \in D$ if and only if $o(f,x) = 0$.
 \end{prop}
