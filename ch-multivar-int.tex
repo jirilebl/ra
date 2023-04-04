@@ -1606,7 +1606,7 @@ Then $P \coloneqq \{ x \in \R^n : x_k = c \}$ is of measure zero.
 Note that if $n \geq 2$, then $P$ is uncountable.
 
 Proof:
-First fix $s$ and let us prove that
+First fix $s \in \N$ and let us prove that
 \begin{equation*}
 P_s \coloneqq \bigl\{ x \in \R^n : x_k = c, \sabs{x_j} \leq s
 \text{ for all } j\not=k \bigr\}
@@ -1639,8 +1639,9 @@ If $a < b$, then $m^*\bigl([a,b]\bigr) = b-a$.
 
 Proof:
 In $\R$, open rectangles are open intervals.
-Since $[a,b] \subset (a-\epsilon,b+\epsilon)$ for all $\epsilon > 0$.
-Hence, $m^*\bigl([a,b]\bigr) \leq b-a$.
+Since $[a,b] \subset (a-\epsilon,b+\epsilon)$ for all $\epsilon > 0$,
+we have
+$m^*\bigl([a,b]\bigr) \leq b-a$.
 
 The other inequality is harder.
 Suppose $\bigl\{ (a_j,b_j) \bigr\}_{j=1}^\infty$ are open intervals such that
@@ -1729,7 +1730,8 @@ exercise.
 \begin{example} \label{example:cantor}
 So that the reader is not under the impression that there are only few
 measure zero sets and that these sets are uncomplicated,
-here is an uncountable, compact, measure zero subset of $[0,1]$.
+here is an uncountable, compact, measure zero subset of $[0,1]$, which
+contains no intervals.
 Any $x \in [0,1]$ can be expanded in ternary
 \begin{equation*}
 x = \sum_{n=1}^\infty d_n 3^{-n} ,
@@ -1757,7 +1759,7 @@ C = \bigcap_{k=1}^\infty C_k .
 \end{equation*}
 See \figureref{fig:cantor}.
 
-We leave as an exercise to prove that
+We leave as an exercise to prove:
 \begin{enumerate}[(i)]
 \item Each $C_k$ is a finite union of closed intervals.  It is obtained by
 taking $C_{k-1}$, and from each closed interval removing the
@@ -1978,10 +1980,10 @@ Let us construct the so-called \emph{\myindex{Cantor function}} or the
 let $C_k$ be as in \exampleref{example:cantor}.
 Write $x \in [0,1]$ in ternary representation $x = \sum_{n=1} d_n 3^{-n}$.
 If $d_n \not= 1$ for all $n$, then let $c_n \coloneqq \frac{d_n}{2}$ for all $n$.
-Otherwise, let $k$ be the smallest integer such that $d_k = 1$.  Then
-let $c_n \coloneqq \frac{d_n}{2}$ if $n < k$, $c_k \coloneqq 1$, and $c_n
-\coloneqq 0$ if $n >
-k$.  Then define
+Otherwise, let $k$ be the smallest integer such that $d_k = 1$.
+Let $c_n \coloneqq \frac{d_n}{2}$ if $n < k$, $c_k \coloneqq 1$, and $c_n
+\coloneqq 0$ if $n > k$.
+Define
 \begin{equation*}
 \varphi(x) \coloneqq \sum_{n=1}^\infty c_n \, 2^{-n} .
 \end{equation*}
@@ -2000,7 +2002,7 @@ $\psi(x) \coloneqq \varphi(x) + x$.
 Show that $\psi$ is continuous, strictly increasing, and bijective.
 \item
 Prove that while $m^*(C) = 0$, $m^*\bigl(\psi(C)\bigr) \not= 0$.  That is,
-continuous functions need take measure zero sets to measure zero sets.
+continuous functions need not take measure zero sets to measure zero sets.
 Hint: $m^*\bigl(\psi([0,1] \setminus C)\bigr) = 1$, but
 $m^*\bigl([0,2]\bigr) = 2$.
 \end{enumerate}
@@ -2111,7 +2113,7 @@ $f \colon D \to \R$ is continuous at $x \in D$ if and only if $o(f,x) = 0$.
 \end{prop}
 
 \begin{proof}
-First suppose that $f$ is continuous at $x \in D$.  Given any $\epsilon > 0$,
+First suppose that $f$ is continuous at $x \in D$.  Given $\epsilon > 0$,
 there exists a $\delta > 0$ such that for $y \in B_D(x,\delta)$,
 we have $\sabs{f(x)-f(y)} < \epsilon$.  Therefore, if $y_1,y_2 \in
 B_D(x,\delta)$, then
