@@ -1556,7 +1556,7 @@ The set $\Q^n \subset \R^n$ of points with rational coordinates
 is of measure zero.
 
 Proof:
-The set $\Q^n$ is countable and so let us write it
+The set $\Q^n$ is countable, so write it
 as a sequence $q_1,q_2,\ldots$.  For each $q_j$, find an open rectangle
 $R_j$ with $q_j \in R_j$ and $V(R_j) < \epsilon 2^{-j}$.  Then
 \begin{equation*}
@@ -1578,7 +1578,7 @@ Suppose
 S = \bigcup_{j=1}^\infty S_j ,
 \end{equation*}
 where $S_j$ are all measure zero sets.  Let $\epsilon > 0$ be given.
-For each $j$
+For each $j$,
 there exists a sequence of open rectangles $\{ R_{j,k} \}_{k=1}^\infty$
 such that
 \begin{equation*}
@@ -1601,20 +1601,20 @@ can be done in any manner.  In particular, as
 The next example is not just interesting, it will be useful later.
 
 \begin{example} \label{mv:example:planenull}
-Let $n \in \N$ and fix some $k=1,2,\ldots,n$ and a constant $c \in \R$.
+Suppose
+$n \in \N$, $k=1,2,\ldots,n$, and $c \in \R$.
 Then $P \coloneqq \{ x \in \R^n : x_k = c \}$ is of measure zero.
 Note that if $n \geq 2$, then $P$ is uncountable.
 
 Proof:
-First fix $s \in \N$ and let us prove that
+First fix $s \in \N$ and consider
 \begin{equation*}
-P_s \coloneqq \bigl\{ x \in \R^n : x_k = c, \sabs{x_j} \leq s
-\text{ for all } j\not=k \bigr\}
+P_s \coloneqq \bigl\{ x \in \R^n : x_k = c \text{ and } \sabs{x_j} \leq s
+\text{ for all } j\not=k \bigr\} .
 \end{equation*}
-is of measure zero.
 Given any $\epsilon > 0$ define the open rectangle
 \begin{equation*}
-R \coloneqq \bigl\{ x \in \R^n : c-\epsilon < x_k < c+\epsilon, \sabs{x_j} < s+1
+R \coloneqq \bigl\{ x \in \R^n : c-\epsilon < x_k < c+\epsilon \text{ and } \sabs{x_j} < s+1
 \text{ for all } j\not=k \bigr\} .
 \end{equation*}
 Clearly, $P_s \subset R$.  Furthermore,
@@ -1669,7 +1669,7 @@ $a_1 < a_2 < b_1 < b_2$.  Similarly
 $a_j < a_{j+1} < b_j < b_{j+1}$ for all $j$.
 Furthermore, $a_1 < a$ and $b_k > b$.
 See \figureref{fig:measureinterval} for a sample configuration.
-As $b_j-a_j \leq a_{j+1}-a_j$, we obtain
+As $b_j-a_j > a_{j+1}-a_j$, we obtain
 \begin{equation*}
 \sum_{j=1}^k (b_j-a_j)
 \geq
@@ -1732,7 +1732,7 @@ So that the reader is not under the impression that there are only few
 measure zero sets and that these sets are uncomplicated,
 here is an uncountable, compact, measure zero subset of $[0,1]$, which
 contains no intervals.
-Any $x \in [0,1]$ can be expanded in ternary
+Any $x \in [0,1]$ can be expanded in ternary:
 \begin{equation*}
 x = \sum_{n=1}^\infty d_n 3^{-n} ,
 \qquad \text{where } d_n=0, 1, \text{ or } 2.
@@ -1787,7 +1787,8 @@ continuously differentiable function does to a ball.
 
 \begin{lemma} \label{lemma:ballmapder}
 Suppose $U \subset \R^n$ is an open set,
-$B \subset U$ is an open (resp.\ closed) ball of radius at most $r$, $f \colon B \to \R^n$ is continuously
+$B \subset U$ is an open (resp.\ closed) ball of radius at most $r$,
+$f \colon U \to \R^n$ is continuously
 differentiable and suppose $\snorm{f'(x)} \leq M$ for all $x \in B$.
 Then $f(B) \subset B'$, where $B'$ is an open (resp.\ closed) ball of radius at most $Mr$.
 \end{lemma}
@@ -1795,7 +1796,8 @@ Then $f(B) \subset B'$, where $B'$ is an open (resp.\ closed) ball of radius at 
 \begin{proof}
 Suppose that $B$ is open.
 The ball $B$ is convex, and so via
-\propref{mv:prop:convexlip}, $\snorm{f(x)-f(y)} \leq M \snorm{x-y}$.
+\propref{mv:prop:convexlip}, $\snorm{f(x)-f(y)} \leq M \snorm{x-y}$ for
+all $x,y \in B$.
 So if $\snorm{x-y} < r$, then $\snorm{f(x)-f(y)} < Mr$, or
 in other words, if
 $B=B(y,r)$, then $f(B) \subset B\bigl(f(y),M r \bigr)$.
@@ -1809,18 +1811,17 @@ $f(B) = f\bigl(\overline{B(y,r)}\bigr) \subset \overline{B\bigl(f(y),M r
 The image of a measure zero set using a continuous map is not necessarily
 a measure zero set, although this is not easy to show (see the exercises).
 However, if the mapping is continuously
-differentiable, then the mapping cannot \myquote{stretch} the set that much.
+differentiable, then it cannot \myquote{stretch} the set that much.
 
 \begin{prop} \label{prop:imagenull}
-Suppose $U \subset \R^n$ is an open set and $f \colon U \to \R^n$
-is a continuously differentiable mapping.  If $E \subset U$ is a 
+Suppose $U \subset \R^n$ is open and $f \colon U \to \R^n$
+is continuously differentiable.  If $E \subset U$ is a 
 measure zero set, then $f(E)$ is measure zero.
 \end{prop}
 
 \begin{proof}
 We prove the proposition for a compact $E$ and leave the general case as
 an exercise.
-
 Suppose $E$ is compact and of measure zero.
 First, we will replace $U$ by a smaller open set to make $\snorm{f'(x)}$ bounded.
 At each point $x \in
@@ -2096,7 +2097,7 @@ let $g \colon \R \to \R$ be given by
 $g(x) = \sin(\nicefrac{1}{x})$ for $x\neq 0$ and $g(0)=0$,
 see \figureref{fig:sin1xosc}.
 Then at the discontinuity at $x=0$, we find $o(g,0) = 2$, as
-in any neighborhood of $0$ the function takes both values $1$ and $-1$.
+in any neighborhood of $0$, the function takes both values $1$ and $-1$.
 For all $x \neq 0$, the function is continuous and so, as we will see,
 $o(g,x) = 0$.
 
