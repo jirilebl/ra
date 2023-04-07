@@ -4865,3 +4865,29 @@ there exists a strictly increasing sequence $\{ n_k \}_{k=1}^\infty$ of natural 
 converges absolutely for all $x \in [-r,r]$.
 \end{exercise}
 
+\begin{exercise}[Tonelli/Fubini for sums] \label{exercise:tonellifubiniforsums}
+Suppose let $\{ x_{k,\ell} \}_{k=1,\ell=1}^\infty$ denote a doubly
+indexed sequence and let $\sigma \colon \N \to \N^2$ be a bijection.
+Consider the series
+\begin{equation*}
+i)~\sum_{i=1}^\infty x_{\sigma(i)}
+\qquad
+ii)~\sum_{k=1}^n \left( \sum_{\ell=1}^\infty x_{k,\ell} \right)
+\qquad
+iii)~\sum_{\ell=1}^n \left( \sum_{k=1}^\infty x_{k,\ell} \right) .
+\end{equation*}
+The ii) and iii) are series of series and so we say they converge
+if the inner series always converges and the outer series then also
+converges.
+\begin{enumerate}[a)]
+\item
+(Tonelli) Suppose $x_{k,\ell} \geq 0$ for all $k,\ell$.
+Show that the three series i), ii), iii) either all diverge (to $\infty$)
+or they all converge to the same number.
+In the case of divergence, some of the ``inner'' series might be infinity
+in which case we consider the entire sum to diverge.
+\item
+(Fubini) Suppose i) converges absolutely.  Show that ii) and iii)
+converge and they both converge to the same number as i).
+\end{enumerate}
+\end{exercise}
