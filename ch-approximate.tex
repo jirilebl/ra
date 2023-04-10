@@ -299,10 +299,9 @@ Prove \propref{prop:absconvmeansconv}.
 
 \begin{samepage}
 \begin{exercise}
-Considering the definition of complex multiplication, given $x +iy$
-define the matrix
+Given $x +iy$ define the matrix
 $\left[ \begin{smallmatrix} x & -y \\ y & x \end{smallmatrix} \right]$.
-Prove that
+Prove:
 \begin{enumerate}[a)]
 \item
 The action of this matrix on a vector $(s,t)$ is the same
@@ -310,16 +309,15 @@ as the action of multiplying $(x+iy)(s+it)$.
 \item
 Multiplying two such matrices is the same multiplying the underlying complex
 numbers and then finding the corresponding matrix for the product.
-In other words, we can think of the field $\C$ as also a subset of
-the 2-by-2 matrices.
+In other words, the field $\C$ can be identified with a subset of the 2-by-2 matrices.
 \item
-Show that 
+The matrix
 $\left[ \begin{smallmatrix} x & -y \\ y & x \end{smallmatrix} \right]$
 has eigenvalues $x+iy$ and $x-iy$.  Recall that $\lambda$ is
 an eigenvalue of a matrix $A$ if $A-\lambda I$ (a complex matrix in our case)
-is not invertible, or in other words
-if it has linearly dependent rows: That is, one row is a (complex) multiple
-of the other
+is not invertible, that is,
+if it has linearly dependent rows: one row is a (complex) multiple
+of the other.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
@@ -1044,8 +1042,8 @@ As we will sometimes talk about real and sometimes about complex power
 series, we will use $z$ to denote a complex number and $x$ a real number.
 We will always mention which case we are working with.
 
-An analytic function has different expansions around different
-points.  Also the convergence does not automatically happen on the entire
+An analytic function has different expansions around different points.
+Moreover, convergence does not automatically happen on the entire
 domain of the function.  For example, if $\sabs{z} < 1$, then
 \begin{equation*}
 \frac{1}{1-z} = \sum_{n=0}^\infty z^n .
@@ -1080,7 +1078,7 @@ Let $\sum_{n=0}^\infty c_n {(z-a)}^n$ be a power series.
 There exists a $\rho \in [0,\infty]$ such that
 \begin{enumerate}[(i)]
 \item If $\rho = 0$, then the series diverges.
-\item If $\rho = \infty$, then the series converges for all $z \in \C$.
+\item If $\rho = \infty$, then the series converges absolutely for all $z \in \C$.
 \item If $0 < \rho < \infty$, then the
 series converges absolutely on $B(a,\rho)$,
 and diverges when $\sabs{z-a} > \rho$.
@@ -1268,7 +1266,7 @@ There is a theorem, which we will not prove,
 that given an arbitrary sequence $\{ c_n \}_{n=1}^\infty$, there exists an
 infinitely differentiable function $f$ such that
 $c_n = \frac{f^{(n)}(0)}{n!}$.  Moreover, even if the obtained series
-converges it may not converge to the function we started with.
+converges, it may not converge to the function we started with.
 For an example,
 see \volIref{\exerciseref*{vI-exercise:nonanalytic} in volume I}{\exerciseref{exercise:nonanalytic}}:  The
 function
@@ -1282,26 +1280,29 @@ e^{-1/x} & \text{if } x > 0,\\
 is infinitely differentiable, and all derivatives at the origin are zero.
 So
 its series at the origin would be just the zero series, and while that
-series converges, it does not converge to $f$ for $x > 0$.
+series converges, it does not converge to~$f$ for $x > 0$.
 
 \medskip
 
-Note that we can always apply an affine transformation $z \mapsto z+a$ that
-converts a power series to a series at the origin.
+We can apply an affine transformation $z \mapsto z+a$ that
+converts a power series at $a$ to a series at the origin.
 That is, if
 \begin{equation*}
 f(z) = \sum_{n=0}^\infty c_n {(z-a)}^n,
 \qquad \text{we consider} \qquad
 f(z+a) = \sum_{n=0}^\infty c_n {z}^n.
 \end{equation*}
-Therefore it is usually
+Therefore, it is usually
 sufficient to prove results about power series at the origin.
 From now on, we often assume $a=0$ for simplicity.
 
 \subsection{Power series as analytic functions}
 
 We need a theorem on swapping limits of series, that is, 
-Fubini's theorem for sums.
+Fubini's theorem for sums.  For real series this was
+\volIref{\exerciseref*{vI-exercise:tonellifubiniforsums} in volume
+I}{\exerciseref{exercise:tonellifubiniforsums}}, but we have a slicker
+argument now.
 
 \begin{thm}[\myindex{Fubini for sums}] \label{thm:fubiniforsums}
 Let $\{ a_{k,m} \}_{k=1,m=1}^\infty$ be a double
@@ -1342,7 +1343,7 @@ For all $x \in E$, we have
 \begin{equation*}
 \sabs{f_k(x)} \leq \sum_{m=1}^\infty \sabs{a_{k,m}} .
 \end{equation*}
-By knowing that $\sum_k \sum_m \sabs{a_{k,m}}$ converges (and does not depend on
+As $\sum_k \sum_m \sabs{a_{k,m}}$ converges (and does not depend on
 $x$), we know that
 \begin{equation*}
 \sum_{k=1}^n f_k(x)
@@ -1351,7 +1352,7 @@ converges uniformly on $E$.  Define
 \begin{equation*}
 g(x) \coloneqq \sum_{k=1}^\infty f_k(x) ,
 \end{equation*}
-which is therefore a continuous function at $0$.
+which is, therefore, a continuous function at $0$.
 So
 \begin{equation*}
 \begin{split}

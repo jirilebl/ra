@@ -4461,11 +4461,11 @@ Therefore, the series diverges for all $x \not= 0$.
 \end{example}
 
 Convergence of power series in general works analogously to
-one of the three examples above.
+the three examples above.
 
 \begin{prop} \label{prop:powerserrealradius}
 Let $\sum_{n=0}^\infty a_n {(x-x_0)}^n$ be a power series.
-If the series is convergent, then either it converges at
+If the series is convergent, then either it converges absolutely at
 all $x \in \R$, or
 there exists a number $\rho$, such that
 the series converges absolutely on the interval
@@ -4475,14 +4475,14 @@ $(x_0-\rho,x_0+\rho)$ and diverges when $x < x_0-\rho$ or $x > x_0+\rho$.
 The number $\rho$ is called the \emph{\myindex{radius of convergence}} of the
 power series.  We write $\rho = \infty$ if the series converges for
 all $x$, and we write $\rho = 0$ if the series is divergent.
-At the endpoints, that is if $x = x_0+\rho$ or $x = x_0-\rho$,
+At the endpoints, that is, if $x = x_0+\rho$ or $x = x_0-\rho$,
 the proposition says nothing,
 and the series might or might not converge.
 See \figureref{ps:convfig}.
 In \exampleref{ps:1kex}
-the radius of convergence is $\rho=1$.
-In \exampleref{ps:expex} the radius of convergence is $\rho=\infty$,
-and in \exampleref{ps:divergeex} the radius of convergence is $\rho=0$.
+the radius of convergence is $\rho=1$,
+in \exampleref{ps:expex}, the radius of convergence is $\rho=\infty$,
+and in \exampleref{ps:divergeex}, the radius of convergence is $\rho=0$.
 
 \begin{myfigureht}
 \subimport*{figures/}{ps-conv.pdf_t}
@@ -4494,7 +4494,7 @@ Write
 \begin{equation*}
 R \coloneqq \limsup_{n\to\infty} {\abs{a_n}}^{1/n} .
 \end{equation*}
-We use the root test to prove the proposition:
+We apply the root test,
 \begin{equation*}
 L = \limsup_{n\to\infty} {\abs{a_n {(x-x_0)}^n}}^{1/n} 
 =
@@ -4502,7 +4502,7 @@ L = \limsup_{n\to\infty} {\abs{a_n {(x-x_0)}^n}}^{1/n}
 =
 \abs{x-x_0} R .
 \end{equation*}
-In particular, if $R = \infty$, then $L=\infty$ for every $x \not= x_0$, and
+If $R = \infty$, then $L=\infty$ for every $x \not= x_0$, and
 the series diverges by the root test.
 On the other hand,
 if $R = 0$, then $L=0$ for every $x$,
@@ -4512,7 +4512,7 @@ Suppose $0 < R < \infty$.
 The series
 converges absolutely if
 $1 > L = R \abs{x-x_0}$,
-or in other words when
+that is,
 \begin{equation*}
 \abs{x-x_0} < \nicefrac{1}{R} .
 \end{equation*}
@@ -4543,6 +4543,7 @@ three cases, with
 the understanding of what $\rho$ should be if $R = 0$ or $R =
 \infty$.
 
+\pagebreak[2]
 Convergent power series can be added and multiplied together, and multiplied
 by constants.
 The proposition has a straight forward proof using what we know about series
@@ -4578,20 +4579,19 @@ where
 $c_n = a_0b_n + a_1 b_{n-1} + \cdots + a_n b_0$.
 \end{prop}
 
-That is, after performing the algebraic operations, the
-radius of convergence of the resulting series is at least $\rho$.
 For all $x$ with $\abs{x-x_0} < \rho$, we have two convergent series so
-their term by term addition and multiplication by constants
-follows by what we learned in the last section.
-For multiplication of two power series,
-the series are absolutely convergent inside
-the radius of convergence and that is why for those $x$
-we can apply Mertens' theorem.
-Note that after applying an algebraic operation the radius of convergence
-could increase.  See the exercises.
+their term-by-term addition and multiplication by constants
+follows by the previous section.
+As for such $x$ the series converges absolutely,
+we can apply Merten's theorem to find the product of two series.
+Consequently, after performing the algebraic operations, the
+radius of convergence of the resulting series is at least $\rho$.
+The radius of convergence of the result could be strictly larger than
+the radius of convergence of either of the series we started with.
+See the exercises.
 
 Let us look at some examples of power series.
-Polynomials are simply finite power series.  That is, a polynomial
+Polynomials are simply finite power series:  A polynomial
 is a power series where
 the $a_n$ are zero for all $n$ large enough.  We expand
 a polynomial as a power series about any point $x_0$ by writing
@@ -4607,7 +4607,7 @@ as power series, although we will not completely prove this fact here.
 Notice that a series for a rational function only defines the function
 on an interval even if the function is defined elsewhere.  For example, for
 the \emph{\myindex{geometric series}}, we have that for
-$x \in (-1,1)$
+$x \in (-1,1)$,
 \begin{equation*}
 \frac{1}{1-x} =
 \sum_{n=0}^\infty x^n .
@@ -4765,8 +4765,8 @@ what can you say?
 
 \begin{exercise}
 Expand
-$\dfrac{x}{4-x^2}$ as a power series around $x_0 = 0$ and compute its radius
-of convergence.
+$\dfrac{x}{4-x^2}$ as a power series around $x_0 = 0$,
+and compute its radius of convergence.
 \end{exercise}
 
 \begin{exercise}
@@ -4850,7 +4850,8 @@ $\sum_{n=1}^\infty {(-1)}^n x_n$ diverges.
 \end{exercise}
 
 \begin{exercise}
-Find a series such that $\sum_{n=1}^\infty x_n$ converges,
+Find a series
+$\sum_{n=1}^\infty x_n$ that converges,
 but $\sum_{n=1}^\infty x_n^2$ diverges.
 Hint: Compare \exerciseref{exercise:squareseriesconv}.
 \end{exercise}
@@ -4865,16 +4866,18 @@ there exists a strictly increasing sequence $\{ n_k \}_{k=1}^\infty$ of natural 
 converges absolutely for all $x \in [-r,r]$.
 \end{exercise}
 
-\begin{exercise}[Tonelli/Fubini for sums] \label{exercise:tonellifubiniforsums}
+\begin{exercise}[Tonelli/Fubini for sums, challenging]
+\label{exercise:tonellifubiniforsums}%
+\index{Fubini for sums}\index{Tonelli for sums}%
 Suppose let $\{ x_{k,\ell} \}_{k=1,\ell=1}^\infty$ denote a doubly
 indexed sequence and let $\sigma \colon \N \to \N^2$ be a bijection.
 Consider the series
 \begin{equation*}
 i)~\sum_{i=1}^\infty x_{\sigma(i)}
 \qquad
-ii)~\sum_{k=1}^n \left( \sum_{\ell=1}^\infty x_{k,\ell} \right)
+ii)~\sum_{k=1}^\infty \left( \sum_{\ell=1}^\infty x_{k,\ell} \right)
 \qquad
-iii)~\sum_{\ell=1}^n \left( \sum_{k=1}^\infty x_{k,\ell} \right) .
+iii)~\sum_{\ell=1}^\infty \left( \sum_{k=1}^\infty x_{k,\ell} \right) .
 \end{equation*}
 The ii) and iii) are series of series and so we say they converge
 if the inner series always converges and the outer series then also

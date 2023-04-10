@@ -2077,8 +2077,8 @@ o(f,x,\delta) \coloneqq
 \end{equation*}
 That is, $o(f,x,\delta)$ is the length of the smallest interval
 that contains the image $f\bigl(B_D(x,\delta)\bigr)$.
-For unbounded functions, the oscillation could be $\infty$, although
-we only need to worry about bounded functions.
+The definition makes sense for unbounded functions, where the oscillation
+can be $\infty$, although we will mainly consider bounded functions.
 Clearly $o(f,x,\delta) \geq 0$ and
 $o(f,x,\delta) \leq o(f,x,\delta')$ whenever $\delta < \delta'$.
 Therefore, the limit as $\delta \to 0$ from the right exists, and
@@ -2097,7 +2097,7 @@ Fox example, if $f \colon \R \to \R$ is the Dirichlet function where
 $f(x)=1$ if $x \in \Q$ and $f(x)=0$ otherwise, then $o(f,x) = 1$ for every
 $x$, as any interval contains both rational and irrational numbers.
 Accordingly, $f$ is not continuous at any $x$.
-For another example, which perhaps is the origin of the terminology,
+For another example, which is perhaps the origin of the terminology,
 let $g \colon \R \to \R$ be given by
 $g(x) = \sin(\nicefrac{1}{x})$ for $x\neq 0$ and $g(0)=0$,
 see \figureref{fig:sin1xosc}.
@@ -2127,7 +2127,7 @@ B_D(x,\delta)$, then
 f(y_1)-f(y_2) =
 \bigl(f(y_1)-f(x)\bigr)-\bigl(f(y_2)-f(x)\bigr) < \epsilon + \epsilon = 2 \epsilon .
 \end{equation*}
-We take the supremum over $y_1$ and $y_2$
+Take the supremum over $y_1$ and $y_2$ to find
 \begin{equation*}
 o(f,x,\delta) = 
 \sup_{y_1,y_2 \in B_D(x,\delta)} \bigl(f(y_1)-f(y_2)\bigr)
@@ -2137,7 +2137,7 @@ o(f,x,\delta) =
 As $o(x,f) \leq o(f,x,\delta) \leq 2\epsilon$, and $\epsilon > 0$ was arbitrary,
 $o(x,f) = 0$.
 
-On the other hand, suppose $o(x,f) = 0$.  Given any $\epsilon > 0$,
+On the other hand, suppose $o(x,f) = 0$.  Given $\epsilon > 0$,
 find a $\delta > 0$ such that $o(f,x,\delta) < \epsilon$.  If
 $y \in B_D(x,\delta)$, then
 \begin{equation*}
