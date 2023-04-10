@@ -790,6 +790,7 @@ of compact support.  Show that the function $\widetilde{f} \colon \R^n \to \R$
 f(x) & \text{if } x \in U, \\
 0 & \text{otherwise,}
 \end{cases}
+\avoidbreak
 \end{equation*}
 is continuous.
 \end{exercise}
@@ -1792,27 +1793,28 @@ continuously differentiable function does to a ball.
 Suppose $U \subset \R^n$ is an open set,
 $B \subset U$ is an open (resp.\ closed) ball of radius at most $r$,
 $f \colon U \to \R^n$ is continuously
-differentiable and suppose $\snorm{f'(x)} \leq M$ for all $x \in B$.
+differentiable, and suppose $\snorm{f'(x)} \leq M$ for all $x \in B$.
 Then $f(B) \subset B'$, where $B'$ is an open (resp.\ closed) ball of radius at most $Mr$.
 \end{lemma}
 
 \begin{proof}
-Suppose that $B$ is open.
-The ball $B$ is convex, and so via
-\propref{mv:prop:convexlip}, $\snorm{f(x)-f(y)} \leq M \snorm{x-y}$ for
+Suppose $B$ is open.
+As the ball $B$ is convex,
+\propref{mv:prop:convexlip} says that $\snorm{f(x)-f(y)} \leq M \snorm{x-y}$ for
 all $x,y \in B$.
-So if $\snorm{x-y} < r$, then $\snorm{f(x)-f(y)} < Mr$, or
-in other words, if
+So if $\snorm{x-y} < r$, then $\snorm{f(x)-f(y)} < Mr$.
+In other words, if
 $B=B(y,r)$, then $f(B) \subset B\bigl(f(y),M r \bigr)$.
 If $B$ is closed, then $\overline{B(y,r)} = B$.
 As $f$ is continuous,
-$f(B) = f\bigl(\overline{B(y,r)}\bigr) \subset \overline{B\bigl(f(y),M r
-\bigr)}$, as $f(\widebar{A}) \subset \overline{f(A)}$ for any set $A$.
+$f(B) = f\bigl(\overline{B(y,r)}\bigr) \subset
+\overline{f\bigl(B(y,r)\bigr)} \subset \overline{B\bigl(f(y),M r
+\bigr)}$, as $f(\widebar{A}) \subset \overline{f(A)}$ for any set~$A$.
 % and any continuous $f$ (limit of a sequence in $A$ goes to a limit of a sequence in $f(A)$).
 \end{proof}
 
 The image of a measure zero set using a continuous map is not necessarily
-a measure zero set, although this is not easy to show (see the exercises).
+a measure zero set, although this takes some work to show (see the exercises).
 However, if the mapping is continuously
 differentiable, then it cannot \myquote{stretch} the set that much.
 
@@ -1829,8 +1831,8 @@ Suppose $E$ is compact and of measure zero.
 First, we will replace $U$ by a smaller open set to make $\snorm{f'(x)}$ bounded.
 At each point $x \in
 E$ pick an open ball $B(x,r_x)$ such that the closed ball $C(x,r_x) \subset
-U$.  By compactness we only need to take finitely
-many points $x_1,x_2,\ldots,x_q$ to cover $E$ we the balls $B(x_j,r_{x_j})$.  Define
+U$.  By compactness, we only need to take finitely
+many points $x_1,x_2,\ldots,x_q$ to cover $E$ with the balls $B(x_j,r_{x_j})$.  Define
 \begin{equation*}
 U' \coloneqq \bigcup_{j=1}^q B(x_j,r_{x_j}), \qquad
 K \coloneqq \bigcup_{j=1}^q C(x_j,r_{x_j}).
@@ -1839,7 +1841,7 @@ We have $E \subset U' \subset K \subset U$.  The set $K$, being a finite
 union of compact sets, is compact.
 The function that takes $x$ to $\snorm{f'(x)}$ is continuous, and therefore
 there exists an $M > 0$ such that $\snorm{f'(x)} \leq M$ for all $x \in K$.
-So without loss of generality we may replace $U$ by $U'$ and from now on
+So without loss of generality, we may replace $U$ by $U'$ and from now on
 suppose that $\snorm{f'(x)} \leq M$ for all $x \in U$.
 
 At each $x \in E$, take the maximum radius $\delta_x$
@@ -1853,7 +1855,7 @@ $\delta_{x_j} > \frac{\delta_y}{2}$ by the triangle inequality.
 Thus, $\delta > 0$.
 
 Given $\epsilon > 0$, there exist balls $B_1,B_2,\ldots,B_k$ of radii
-$r_1,r_2,\ldots,r_k < \frac{\delta}{2}$ such that
+$r_1,r_2,\ldots,r_k < \nicefrac{\delta}{2}$ such that
 \begin{equation*}
 E \subset B_1 \cup B_2 \cup \cdots \cup B_k
 \qquad \text{and} \qquad
@@ -1943,7 +1945,7 @@ $R \subset C_1 \cup C_2 \cup \cdots \cup C_k$ and
 \begin{exercise}
 Show that there exists a number $k = k(n,r,\delta)$ depending only on $n$,
 $r$ and $\delta$ such
-the following holds.
+the following holds:
 Given $B(x,r) \subset \R^n$ and $\delta > 0$, there exist
 $k$ open balls $B_1,B_2,\ldots,B_k$ of radius at most
 $\delta$ such that $B(x,r) \subset B_1 \cup B_2 \cup \cdots \cup B_k$.
@@ -2060,7 +2062,7 @@ Consider
 $D \subset \R^n$ and $f \colon D \to \R$.
 Instead of just saying that $f$ is or is not continuous at
 a point $x \in D$,
-we want to quantify how discontinuous $f$ is 
+we want to quantify how discontinuous is $f$
 at $x$.  For every $\delta > 0$, define the \emph{oscillation} of 
 $f$ on the $\delta$-ball in subspace topology,
 $B_D(x,\delta) = B_{\R^n}(x,\delta) \cap D$, as
@@ -2300,7 +2302,7 @@ $R_1,R_2,\ldots,R_p$ such that
 \begin{equation*}
 U(P,f)-L(P,f) =
 \sum_{j=1}^p (M_j-m_j) V(R_j)
-< \epsilon
+< \epsilon .
 \end{equation*}
 Suppose $R_1,R_2,\ldots,R_p$ are ordered so that
 the interiors of $R_1,R_2,\ldots,R_{q}$ intersect $S_{1/k}$,
@@ -2320,7 +2322,7 @@ Then
 \sum_{j=1}^q (M_j-m_j) V(R_j)
 \geq
 \frac{1}{k}
-\sum_{j=1}^q V(R_j)
+\sum_{j=1}^q V(R_j) .
 \end{equation*}
 In other words,
 $\sum_{j=1}^q V(R_j) < k \epsilon$.
