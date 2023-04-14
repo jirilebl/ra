@@ -2175,7 +2175,7 @@ o(f,\xi,\nicefrac{\delta}{2}) =
 \end{equation*}
 So $o(f,\xi) < \epsilon$ as well.  As this is true for all $\xi \in
 B_D(x,\nicefrac{\delta}{2})$, we get that $G$ is open in the subspace
-topology and $D \setminus G$ is closed as claimed.
+topology, and $D \setminus G$ is closed as claimed.
 \end{proof}
 
 
@@ -2228,13 +2228,15 @@ finitely many such rectangles $T_1, T_2, \ldots, T_m$
 cover $T$.
 %
 Take the rectangles $T_1,T_2,\ldots,T_m$ and $O_1,O_2,\ldots,O_k$
-and construct a partition out of their endpoints.  That is, construct
+and construct a partition out of their endpoints (ignoring those that
+are outside the endpoints of $R$).  That is, construct
 a partition $P$ of $R$ with subrectangles $R_1,R_2,\ldots,R_p$
 such that every $R_j$ is contained in $T_\ell$ for some~$\ell$
 or the closure of $O_\ell$ for some~$\ell$.  Order
 the rectangles so that $R_1,R_2,\ldots,R_q$ are those
 that are contained in some $T_\ell$, and $R_{q+1},R_{q+2},\ldots,R_{p}$
 are the rest.
+See \figureref{fig:nullsetintegrate}.
 So
 \begin{equation*}
 \sum_{j=1}^q V(R_j) \leq V(R)
@@ -2244,10 +2246,11 @@ So
 \sum_{\ell=1}^k V(O_\ell)
 < \epsilon .
 \end{equation*}
-Let $m_j$ and $M_j$ be the inf and sup
-of $f$
-over $R_j$ as before.
-If $R_j \subset T_\ell$ for some $\ell$, then $M_j-m_j < 2 \epsilon$.
+The second estimate holds because the $R_j$ that are subsets of $\widebar{O}_\ell$
+give a partition of $\widebar{O}_\ell$ and hence their volumes sum to
+$V(O_\ell)$.
+Let $m_j$ and $M_j$ be the inf and sup of $f$ over $R_j$ as before.
+If $R_j \subset T_\ell$ for some $\ell$, then $M_j-m_j < \epsilon$.
 Let $B \in \R$ be such that
 $\sabs{f(x)} \leq B$ for all $x \in R$, so $M_j-m_j \leq 2B$ over all
 rectangles. Then
@@ -2268,7 +2271,7 @@ U(P,f)-L(P,f)
 \\
 & <
 \left(
-\sum_{j=1}^q 2\epsilon\, V(R_j)
+\sum_{j=1}^q \epsilon\, V(R_j)
 \right)
 +
 \left(
@@ -2276,14 +2279,21 @@ U(P,f)-L(P,f)
 \right)
 \\
 & <
-2 \epsilon\, V(R)
+\epsilon\, V(R)
 +
-2B \epsilon = \epsilon \bigl(2\, V(R)+2B\bigr) .
+2B \epsilon = \epsilon \bigl(V(R)+2B\bigr) .
 \end{split}
 \avoidbreak
 \end{equation*}
 We can make the right-hand side as small as we want,
 and hence $f$ is integrable.
+
+\begin{myfigureht}
+\subimport*{figures/}{nullsetintegrate.pdf_t}
+\caption{A rectangle $R$ with $S_\epsilon$ marked as thick black line, and the
+$O_\ell$ as shaded rectangles.  The partition is given by the dotted
+lines.  Note how the $R_j$ partition the $O_\ell$.\label{fig:nullsetintegrate}}
+\end{myfigureht}
 
 \medskip
 
@@ -2306,12 +2316,13 @@ U(P,f)-L(P,f) =
 Suppose $R_1,R_2,\ldots,R_p$ are ordered so that
 the interiors of $R_1,R_2,\ldots,R_{q}$ intersect $S_{1/k}$,
 while the interiors of $R_{q+1},R_{q+2},\ldots,R_p$
-are disjoint from $S_{1/k}$.  If $x \in R_j \cap S_{1/k}$
-and $x$ is in the interior of $R_j$,
-then $o(f,x) \geq \nicefrac{1}{k}$.
-As sufficiently small $\delta$-balls are completely inside $R_j$
-and $o(f,x,\delta) \geq o(f,x) \geq \nicefrac{1}{k}$,
-we get
+are disjoint from $S_{1/k}$.
+Let $R_j^\circ$ denote the interior of $R_j$.
+Suppose $j \leq q$ and consider
+$x \in R_j^\circ \cap S_{1/k}$.
+Let $\delta > 0$ be small enough so that $B(x,\delta) \subset R_j$.
+As $x \in S_{1/k}$, we get $o(f,x,\delta) \geq o(f,x) \geq \nicefrac{1}{k}$,
+which, along with $B(x,\delta) \subset R_j$, implies
 $M_j-m_j \geq \nicefrac{1}{k}$.
 Then
 \begin{equation*}
@@ -2326,9 +2337,9 @@ Then
 In other words,
 $\sum_{j=1}^q V(R_j) < k \epsilon$.
 Let $G$ be the set of all boundaries of all the subrectangles
-of $P$.  The set $G$ is of measure zero (as it can be covered by
+of $P$.  The set $G$ is of measure zero (it can be covered by
 finitely many sets from \exampleref{mv:example:planenull}).
-Let $R_j^\circ$ denote the interior of $R_j$, then
+We find
 \begin{equation*}
 S_{1/k} \subset R_1^\circ \cup R_2^\circ \cup \cdots \cup R_q^\circ \cup G .
 \end{equation*}
@@ -3061,18 +3072,106 @@ Putting the two computations together we obtain
 \end{equation*}
 \end{proof}
 
-We illustrate the usefulness of Green's theorem on a fundamental result
+Let's see how one can use the simple version of Green's for a more complex
+path.
+
+\begin{example}
+Suppose $P(x,y) = \frac{-y}{x^2+y^2}$, 
+$Q(x,y) = \frac{x}{x^2+y^2}$.  If we think of $(P,Q)$ as a vector, so that
+we have a so-called \emph{\myindex{vector field}}, $(P,Q)$ is
+called the \emph{\myindex{vortex vector field}}, as it gives the velocity
+of particles traveling in a vortex around the origin.  Variations on this
+vector field come up often in applications.
+Suppose that $\gamma$ is a path that goes counterclockwise around a rectangle
+which contains the origin.
+We claim
+\begin{equation*}
+\int_{\gamma} \frac{-y}{x^2+y^2} \, dx + \frac{x}{x^2+y^2} \, dy = 2 \pi .
+\end{equation*}
+
+First we draw a circle $C$ of radius $r > 0$ centered at the origin such
+that the entire circle is within $\gamma$ and oriented clockwise.
+Consider $U$ to be the domain between $\gamma$ and $C$.
+See \figureref{fig:vortexbox}.
+The integral around $\partial U$ is the integral around $\gamma$ plus the
+integral around $C$.
+Now $U$ is not a domain of type III so we cannot just apply Green's theorem.
+However, if we cut the box along the axis as shown in the figure with
+dashed lines, the four resulting domains, let us call them $U_1,U_2,U_3,U_4$,
+are of type III.  Now the dashed lines are oriented in opposite directions
+for the two $U_j$ that share them, and so when we integrate along both the
+integrals just cancel.  That is,
+\begin{multline*}
+\int_{\partial U} P\, dx + Q \, dy
+=
+\\
+\int_{\partial U_1} P\, dx + Q \, dy
++
+\int_{\partial U_2} P\, dx + Q \, dy
++
+\int_{\partial U_3} P\, dx + Q \, dy
++
+\int_{\partial U_4} P\, dx + Q \, dy .
+\end{multline*}
+Now we can apply Green's theorem to every $U_j$.
+We leave it to the reader to verify that outside of the origin,
+$\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} = 0$.
+So 
+\begin{equation*}
+\int_{\partial U_j} P\, dx + Q \, dy 
+=
+\int_{U_j} \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial
+y} \right)
+=
+\int_{U_j} 0 = 0 .
+\end{equation*}
+Next we notice that
+\begin{equation*}
+\int_C P \, dx + Q \, dy
++
+\int_{\gamma} P \, dx + Q \, dy
+=
+\int_{\partial U} P \, dx + Q \, dy = 0 .
+\end{equation*}
+So the integral around $C$ is minus the integral around $\gamma$.  The
+integral around $C$ is easy to compute as on $C$ we have $x^2+y^2 = r^2$,
+so $P(x,y) = \frac{-y}{r^2}$ and $Q(x,y) = \frac{x}{r^2}$.
+We leave it to the reader to compute
+\begin{equation*}
+\int_C P\, dx + Q \, dy
+=
+\int_C \frac{-y}{r^2}\, dx + \frac{x}{r^2} \, dy
+=
+- 2 \pi .
+\end{equation*}
+The claim follows.
+\begin{myfigureht}
+\subimport*{figures/}{vortexbox.pdf_t}
+\caption{Changing the box integral to an integral around a small circle around
+the origin.  The domain $U$ is the shaded area between the circle and the
+box.\label{fig:vortexbox}}
+\end{myfigureht}
+
+We remark that if $\gamma$ would not contain the origin, $\int_\gamma
+P\,dx+Q\,dy = 0$ as we could just apply Green's to $\gamma$.
+So this integral can detect whether the origin is inside $\gamma$ or not.
+\end{example}
+
+As a second example, we illustrate the usefulness of Green's theorem on a fundamental result
 about harmonic functions.
 
 \begin{example}
 Suppose $U \subset \R^2$ is open and
 $f \colon U \to \R$ is harmonic, that is, $f$ is twice continuously
 differentiable and
+satisfies the \emph{\myindex{Laplace equation}},
 $\frac{\partial^2 f}{\partial x^2} +
 \frac{\partial^2 f}{\partial y^2} = 0$.
-We will prove one of the most fundamental properties of harmonic functions.
+Harmonic functions are, for instance, the steady state heat distribution,
+or the electric potential between charges.
+We will prove one of the most fundamental properties of these functions.
 
-Let $D_r \coloneqq B(p,r)$ be closed disc such that its closure $C(p,r) \subset U$.  Write
+Let $D_r \coloneqq B(p,r)$ be a disc such that its closure $C(p,r) \subset U$.  Write
 $p = (x_0,y_0)$.  We orient
 $\partial D_r$ positively.  See \exerciseref{green:balltype3orient}.
 Then
@@ -3141,8 +3240,8 @@ f\bigl(x_0+r\cos(t),y_0+r\sin(t)\bigr) \, dt
 \frac{1}{2\pi r}
 \int_{\partial D_r} f \, ds .
 \end{equation*}
-That is, the value at $p = (x_0,y_0)$ is the average over a circle of any
-radius $r$ centered at $(x_0,y_0)$.
+That is, for a harmonic function, the value at $p = (x_0,y_0)$ is the average
+over a circle of any radius $r$ centered at $(x_0,y_0)$.
 \end{example}
 
 \subsection{Exercises}
