@@ -1,0 +1,98 @@
+
+\begin{proof}[Proof of Green's theorem for general $U$]
+Let $\epsilon > 0$ be given.
+Let $R$ be a closed rectangle that contains $\widebar{U}$.
+As $P$ and $Q$ are continuously differentiable,
+$\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}$
+is continuous on $\widebar{U}$ which is Jordan measurable and compact.
+So $\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}$ is
+continuous on $U$ and bounded, so also Riemann integrable on $U$.
+Suppose for some $M$,
+$\abs{\frac{\partial Q}{\partial x}(x,y)-\frac{\partial P}{\partial y}(x,y)}
+\leq M$ for all $(x,y) \in \widebar{U}$.
+Let $\varphi(x,y)$ be the function that is $0$ if $(x,y) \notin U$
+and
+$\frac{\partial Q}{\partial x}(x,y)-\frac{\partial P}{\partial y}(x,y)$
+if $(x,y) \in U$.  So $\varphi$ is also bounded by $M$.
+
+As $\partial U$ is of measure zero and compact, we can cover it by
+finitely many open rectangles $O_1,\ldots,O_n$ so that
+$\sum_{k=1}^n V(O_k) < \epsilon$.  We can assume that these
+open rectangles are subsets of $R$.  Consider a partition $\Pi$
+made from the endpoints of $O_1,\ldots,O_n$.
+Moreover, by possibly taking a further refinement of $\Pi$, suppose that
+\begin{equation*}
+U(\Pi,\varphi)-L(\Pi,\varphi) < \epsilon .
+\end{equation*}
+In particular $L(\Pi,\varphi)$ and $U(\Pi,\varphi)$ are
+within $\epsilon$ of $\int_U \varphi$.
+Divide the subrectangles $R_1,\ldots,R_N$ of $\Pi$ into
+$R_1,\ldots,R_q$ which do not lie inside any closure $\widebar{O}_k$.
+and $R_{q+1},\ldots,R_N$ that do.  Given the usual meaning of $M_k$ and $m_k$,
+note that
+\begin{equation*}
+L(\Pi,\varphi)
+=
+\sum_{k=1}^N m_k V(R_k)
+=
+\sum_{k=1}^q m_k V(R_k)
++
+\sum_{k=q+1}^N m_k V(R_k)
+\end{equation*}
+Next, we have
+\begin{equation*}
+\abs{\sum_{k=q+1}^N m_k V(R_k)}
+\leq
+M
+\sum_{k=q+1}^N V(R_k)
+\leq
+M
+\sum_{\ell=1}^n V(O_\ell)
+< M \epsilon .
+\end{equation*}
+Similarly for the upper sums, that is,
+\begin{equation*}
+L(\Pi,\varphi)-M\epsilon \leq \sum_{k=1}^q m_k V(R_k)
+\qquad \text{and} \qquad
+U(\Pi,\varphi)+M\epsilon \geq \sum_{k=1}^q M_k V(R_k) .
+\end{equation*}
+So
+\begin{equation*}
+L(\Pi,\varphi)
+- M\epsilon
+\leq
+\sum_{k=1}^q m_k V(R_k)
+\leq
+\sum_{k=1}^q \int_{R_k} \varphi
+\leq
+\sum_{k=1}^q M_k V(R_k)
+\leq
+U(\Pi,\varphi) + M \epsilon .
+\end{equation*}
+In other words,
+\begin{equation*}
+\abs{\int_U \varphi - \sum_{k=1}^q \int_{R_k} \varphi} \leq \epsilon + M
+\epsilon .
+\end{equation*}
+The same computation works for any refinement of $\Pi$.
+
+FIXME: The above partition is still not quite right, need to be careful
+about the rectangles we take so that the path integral works too.  Perhaps
+start with that side.
+
+FIXME:
+
+We could have taken
+By taking a small enough refinement, we can assume that the 
+
+
+
+Thus, given that $P$ and $Q$ are continuous and hence
+uniformly continuous, consider a refinement
+
+so that $P$ and $Q$
+
+
+
+
+\end{proof}
