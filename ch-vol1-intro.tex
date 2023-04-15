@@ -443,15 +443,16 @@ Let us now establish one of most basic theorems about sets and logic.
 
 \begin{thm}[DeMorgan]\index{DeMorgan's theorem}
 Let $A, B, C$ be sets.  Then
-\begin{align*}
-{(B \cup C)}^c &= B^c \cap C^c , \\
-{(B \cap C)}^c &= B^c \cup C^c ,
-\end{align*}
+\begin{equation*}
+{(B \cup C)}^c = B^c \cap C^c , \qquad
+{(B \cap C)}^c = B^c \cup C^c ,
+\end{equation*}
 or, more generally,
-\begin{align*}
-A \setminus (B \cup C) &= (A \setminus B) \cap (A \setminus C) , \\
-A \setminus (B \cap C) &= (A \setminus B) \cup (A \setminus C) .
-\end{align*}
+\begin{equation*}
+A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C) , 
+\qquad
+A \setminus (B \cap C) = (A \setminus B) \cup (A \setminus C) .
+\end{equation*}
 \end{thm}
 
 \begin{proof}
@@ -464,12 +465,10 @@ if $x \in A \setminus (B \cup C)$, then
 $x \in (A \setminus B) \cap (A \setminus C)$.  Second, we must also show that
 if $x \in (A \setminus B) \cap (A \setminus C)$, then
 $x \in A \setminus (B \cup C)$.
-
 So let us assume $x \in A \setminus (B \cup C)$.  Then $x$ is in 
 $A$, but not in $B$ nor $C$.  Hence $x$ is in $A$ and not in $B$, that is,
 $x \in A \setminus B$.  Similarly $x \in A \setminus C$.  Thus
 $x \in (A \setminus B) \cap (A \setminus C)$.
-
 On the other hand suppose 
 $x \in (A \setminus B) \cap (A \setminus C)$.  In particular,
 $x \in (A \setminus B)$, so 
@@ -815,8 +814,8 @@ equality.
 The rest of the proof is left as an exercise.
 \end{proof}
 
-The proposition does not hold for direct images.  We do have
-the following weaker result.
+For direct images, the best we can do is the
+following weaker result.
 
 \begin{prop} \label{st:propfor}
 Consider $f \colon A \to B$.  Let $C, D$ be subsets of $A$.  Then
@@ -876,6 +875,10 @@ $g \circ f \colon A \to C$ defined as
 
 For example, if $f \colon \R \to \R$ is $f(x)\coloneqq x^3$ and $g \colon \R \to \R$
 is $g(y) = \sin(y)$, then $(g \circ f)(x) = \sin(x^3)$.
+It is left to the reader as an easy exericise
+to show that composition of one-to-one maps is
+one-to-one and composition of onto maps is onto.
+Therefore, composition of bijections is a bijection.
 
 \subsection{Relations and equivalence classes}
 
@@ -1065,7 +1068,7 @@ Given $k \in E$, write $k=2n$ for some $n \in \N$.
 Then $f(n) \coloneqq 2n$ defines a bijection $f \colon \N \to E$.
 \end{example}
 
-In fact, let us mention without proof the following characterization
+In fact, we mention without proof the following characterization
 of infinite sets: \emph{A set is infinite if and only if it is in one-to-one
 correspondence with a proper subset of itself}.
 
@@ -1369,4 +1372,68 @@ Suppose $\abs{\N} \leq \abs{S}$, or in other words, $S$
 contains a countably infinite subset.
 Show that there exists a countably infinite subset $A \subset S$ and
 a bijection between $S \setminus A$ and $S$.
+\end{exercise}
+
+\begin{exercise}
+Prove the infinite versions of DeMorgan's laws.
+Suppose $A$ is a set and $B_\lambda$ is a collection of sets for $\lambda
+\in I$.  Prove
+\begin{equation*}
+A \setminus \biggl(
+\bigcup_{\lambda \in I} B_\lambda
+\biggr)
+=
+\bigcap_{\lambda \in I}
+(
+A \setminus
+B_\lambda
+) ,
+\qquad
+A \setminus \biggl(
+\bigcap_{\lambda \in I} B_\lambda
+\biggr)
+=
+\bigcup_{\lambda \in I}
+(
+A \setminus
+B_\lambda
+) .
+\end{equation*}
+\end{exercise}
+
+\begin{exercise}
+Suppose $f \colon A \to B$ is a function, and for $\lambda \in I$, we have
+a collection of subsets $C_\lambda \subset A$ and
+$D_\lambda \subset B$.  Prove
+\begin{equation*}
+f^{-1} \biggl(
+\bigcup_{\lambda \in I} D_\lambda
+\biggr)
+=
+\bigcup_{\lambda \in I}
+f^{-1}(D_\lambda) ,
+\quad
+f^{-1} \biggl(
+\bigcap_{\lambda \in I} D_\lambda
+\biggr)
+=
+\bigcap_{\lambda \in I}
+f^{-1}(D_\lambda) ,
+\end{equation*}
+and
+\begin{equation*}
+f \biggl(
+\bigcup_{\lambda \in I} C_\lambda
+\biggr)
+=
+\bigcup_{\lambda \in I}
+f(C_\lambda) ,
+\quad
+f \biggl(
+\bigcap_{\lambda \in I} C_\lambda
+\biggr)
+\subset
+\bigcap_{\lambda \in I}
+f(C_\lambda) .
+\end{equation*}
 \end{exercise}
