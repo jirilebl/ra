@@ -30,7 +30,7 @@ bounded functions.  Only then can we talk about the Riemann integral and
 the Riemann integrable functions.
 
 \begin{defn}
-A \emph{\myindex{partition}} $P$ of the interval $[a,b]$ is
+A \emph{\myindex{partition}} $P$ of $[a,b]$ is
 a finite set of numbers $\{ x_0,x_1,x_2,\ldots,x_n \}$ such that
 \begin{equation*}
 a = x_0 < x_1 < x_2 < \cdots < x_{n-1} < x_n = b .
@@ -39,7 +39,7 @@ We write
 \begin{equation*}
 \Delta x_i \coloneqq x_i - x_{i-1} .
 \end{equation*}
-Let $f \colon [a,b] \to \R$ be a bounded function.  Let $P$ be a partition of
+Suppose $f \colon [a,b] \to \R$ is bounded and $P$ is a partition of
 $[a,b]$.
 Define
 \begin{align*}
@@ -2974,12 +2974,11 @@ the first expression converges.  Then
 Similar computation shows the other direction.  Therefore, if
 either expression converges, then the improper integral converges
 and
-\begin{equation*}
-\begin{split}
+\begin{multline*}
 \int_{-\infty}^\infty f
 =
 \lim_{a \to -\infty} \, \lim_{b \to \infty} \, \int_a^b f
-& =
+=
 \left(
 \lim_{a \to -\infty}
 \int_a^0 f
@@ -2990,7 +2989,7 @@ and
 \int_0^b f
 \right)
 \\
-& =
+=
 \left(
 \lim_{a \to \infty}
 \int_{-a}^0 f
@@ -3010,8 +3009,7 @@ and
 =
 \lim_{a \to \infty}
 \int_{-a}^a f .
-\end{split}
-\end{equation*}
+\end{multline*}
 \end{proof}
 
 \begin{example}
