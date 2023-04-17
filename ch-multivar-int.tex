@@ -827,6 +827,7 @@ Let $S$ be a closed rectangle.
 Show that $h \in \sR(S)$ and
 \begin{equation*}
 \int_{S} h = 0 .
+\avoidbreak
 \end{equation*}
 Hint: Write $h$ as a sum of functions as in \exerciseref{mv:zerosiderectangle}.
 \end{exercise}
@@ -862,6 +863,7 @@ Let $f \colon R \to \R$ be a function such that $f \in \sR(R')$ and
 $f \in \sR(R'')$.  Show that $f \in \sR(R)$ and
 \begin{equation*}
 \int_{R} f = \int_{R'} f + \int_{R''} f .
+\avoidbreak
 \end{equation*}
 Hint: See previous exercise.
 \end{exercise}
@@ -2226,11 +2228,11 @@ $T_x \subset B(x,\delta)$ with $x$ in the interior of $T_x$, such that
 The interiors of the rectangles $T_x$ cover $T$.  As $T$ is compact,
 finitely many such rectangles $T_1, T_2, \ldots, T_m$
 cover $T$.
-%
-Take the rectangles $T_1,T_2,\ldots,T_m$ and $O_1,O_2,\ldots,O_k$
-and construct a partition out of their endpoints (ignoring those that
-are outside the endpoints of $R$).  That is, construct
-a partition $P$ of $R$ with subrectangles $R_1,R_2,\ldots,R_p$
+Construct a partition $P$ out of the
+endpoints of the rectangles $T_1,T_2,\ldots,T_m$
+and $O_1,O_2,\ldots,O_k$ (ignoring those that
+are outside the endpoints of $R$).  The
+subrectangles $R_1,R_2,\ldots,R_p$ of $P$ are
 such that every $R_j$ is contained in $T_\ell$ for some~$\ell$
 or the closure of $O_\ell$ for some~$\ell$.  Order
 the rectangles so that $R_1,R_2,\ldots,R_q$ are those
@@ -2249,7 +2251,7 @@ So
 The second estimate holds because the $R_j$ that are subsets of $\widebar{O}_\ell$
 give a partition of $\widebar{O}_\ell$ and hence their volumes sum to
 $V(O_\ell)$.
-Let $m_j$ and $M_j$ be the inf and sup of $f$ over $R_j$ as before.
+Let $m_j$ and $M_j$ be the inf and sup of $f$ over $R_j$ as usual.
 If $R_j \subset T_\ell$ for some $\ell$, then $M_j-m_j < \epsilon$.
 Let $B \in \R$ be such that
 $\sabs{f(x)} \leq B$ for all $x \in R$, so $M_j-m_j \leq 2B$ over all
@@ -2301,7 +2303,7 @@ lines.  Note how the $R_j$ partition the $O_\ell$.\label{fig:nullsetintegrate}}
 For the other direction, suppose $f$ is Riemann integrable
 on $R$.
 Let $S$ be the set of discontinuities of $f$ again.  Consider
-the sets
+the sequence of sets
 \begin{equation*}
 S_{1/k} = \bigl\{ x \in R : o(f,x) \geq \nicefrac{1}{k} \bigr\}.
 \end{equation*}
@@ -2353,6 +2355,7 @@ $S$ is of measure zero.
 \end{proof}
 
 \begin{cor} \label{cor:closednessofriemannintegrable}
+\pagebreak[2]
 Let $R \subset \R^n$ be a closed rectangle.  Let $\sR(R)$ be the set
 of Riemann integrable functions on $R$.  Then
 \begin{enumerate}[(i)]
@@ -3082,8 +3085,8 @@ we have a so-called \emph{\myindex{vector field}}, $(P,Q)$ is
 called the \emph{\myindex{vortex vector field}}, as it gives the velocity
 of particles traveling in a vortex around the origin.  Variations on this
 vector field come up often in applications.
-Suppose that $\gamma$ is a path that goes counterclockwise around a rectangle
-which contains the origin.
+Suppose that $\gamma$ is a path that goes counterclockwise around
+a rectangle whose interior contains the origin.
 We claim
 \begin{equation*}
 \int_{\gamma} \frac{-y}{x^2+y^2} \, dx + \frac{x}{x^2+y^2} \, dy = 2 \pi .
@@ -3095,12 +3098,16 @@ Consider $U$ to be the domain between $\gamma$ and $C$.
 See \figureref{fig:vortexbox}.
 The integral around $\partial U$ is the integral around $\gamma$ plus the
 integral around $C$.
-Now $U$ is not a domain of type III so we cannot just apply Green's theorem.
+Now $U$ is not a domain of type III so we cannot just apply the version of
+Green's theorem we actually proved.
 However, if we cut the box along the axis as shown in the figure with
-dashed lines, the four resulting domains, let us call them $U_1,U_2,U_3,U_4$,
-are of type III.  Now the dashed lines are oriented in opposite directions
-for the two $U_j$ that share them, and so when we integrate along both the
-integrals just cancel.  That is,
+dashed lines, the four resulting domains,
+let us call them $U_1,U_2,U_3,U_4$,
+are of type III.
+The dashed lines are oriented in opposite directions
+for the two $U_j$ that share them,
+and so when we integrate along both,
+ the integrals cancel.  That is,
 \begin{multline*}
 \int_{\partial U} P\, dx + Q \, dy
 =
@@ -3153,7 +3160,7 @@ box.\label{fig:vortexbox}}
 \end{myfigureht}
 
 We remark that if $\gamma$ would not contain the origin, $\int_\gamma
-P\,dx+Q\,dy = 0$ as we could just apply Green's to $\gamma$.
+P\,dx+Q\,dy = 0$, as we could just apply Green's to $\gamma$.
 So this integral can detect whether the origin is inside $\gamma$ or not.
 \end{example}
 
