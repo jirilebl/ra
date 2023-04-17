@@ -2452,7 +2452,7 @@ We would like an analogue of Bolzano--Weierstrass.  Something to the tune of
 sequence of functions (with some property) has a convergent subsequence.}
 Matters are not
 as simple even for continuous functions. 
-Not every bounded sequence in the metric space $C([0,1],\R)$ has
+Not every bounded sequence in the metric space $C\bigl([0,1],\R\bigr)$ has
 a convergent subsequence.
 
 \begin{defn}
@@ -2497,7 +2497,7 @@ although the sequence converges pointwise (to a discontinuous function).
 \end{example}
 
 \begin{example}
-The sequence $\{ f_n \}_{n=1}^\infty$ of functions in $C([0,1],\R)$ given by
+The sequence $\{ f_n \}_{n=1}^\infty$ of functions in $C\bigl([0,1],\R\bigr)$ given by
 $f_n(x) \coloneqq \frac{n^3x}{1+n^4x^2}$
 converges pointwise to the zero function (obvious at $x=0$, and for $x > 0$,
 we have $\frac{n^3x}{1+n^4x^2} \leq \frac{1}{nx}$).
@@ -2773,8 +2773,8 @@ Then $S$ is compact.
 The theorem says that $S$
 is sequentially compact and that means
 compact in a metric space.
-Recall that the closed unit ball in $C([0,1],\R)$ (and therefore also in
-$C([0,1],\C)$) is not compact.
+Recall that the closed unit ball in $C\bigl([0,1],\R\bigr)$, and therefore also in
+$C\bigl([0,1],\C\bigr)$, is not compact.
 Hence it cannot be a uniformly equicontinuous set.
 
 \begin{cor}
@@ -2816,18 +2816,18 @@ equations.  See \exerciseref{exercise:peanoexistence} below.
 Another application of Arzel\`a--Ascoli using the same idea as the
 corollary above is the following.
 Take a continuous $k \colon [0,1] \times [0,1] \to \C$.
-For every $f \in C([0,1],\C)$ define
+For every $f \in C\bigl([0,1],\C\bigr)$ define
 \begin{equation*}
 T\bigl(f\bigr)(x) \coloneqq  \int_0^1 f(t) \, k(x,t)\,dt .
 \end{equation*}
 In exercises to earlier sections you have shown that 
-$T$ is a linear operator on $C([0,1],\C)$.
+$T$ is a linear operator on $C\bigl([0,1],\C\bigr)$.
 Via Arzel\`a--Ascoli, we also find (exercise) that
 the image of the unit ball of functions
 \begin{equation*}
 T\bigl( B(0,1) \bigr) = 
 \bigl\{
-Tf \in C([0,1],\C) :  
+Tf \in C\bigl([0,1],\C\bigr) :  
 \snorm{f}_{[0,1]} < 1
 \bigr\}
 \end{equation*}
@@ -2869,7 +2869,7 @@ $\abs{f(x)-f(y)} \leq C {d(x,y)}^\alpha$.
 \end{exercise}
 
 \begin{exercise}
-Let $T \colon C([0,1],\C) \to C([0,1],\C)$ be the operator
+Let $T \colon C\bigl([0,1],\C\bigr) \to C\bigl([0,1],\C\bigr)$ be the operator
 given by
 \begin{equation*}
 T\bigl(f\bigr) (x) \coloneqq \int_0^x f(t)\, dt .
@@ -2879,12 +2879,12 @@ linearity of the integral and
 the fundamental theorem of calculus.)
 \begin{enumerate}[a)]
 \item
-Show that $T$ takes the unit ball centered at 0 in $C([0,1],\C)$ into a
+Show that $T$ takes the unit ball centered at 0 in $C\bigl([0,1],\C\bigr)$ into a
 relatively compact set (a set with compact closure).
 That is, $T$ is a compact operator.\\
 Hint: See \volIref{\exerciseref*{vI-exercise:relativelycompactseq} in volume I}{\exerciseref{exercise:relativelycompactseq}}.
 \item
-Let $C \subset C([0,1],\C)$ the closed unit ball,
+Let $C \subset C\bigl([0,1],\C\bigr)$ the closed unit ball,
 prove that
 the image $T(C)$ is not closed (though it is relatively compact).
 \end{enumerate}
@@ -2892,13 +2892,13 @@ the image $T(C)$ is not closed (though it is relatively compact).
 
 \begin{samepage}
 \begin{exercise}
-Given $k \in C([0,1]\times [0,1],\C)$,
-let $T \colon C([0,1],\C) \to C([0,1],\C)$ be the operator
-defined by
+Given $k \in C\bigl([0,1]\times [0,1],\C\bigr)$,
+define the operator
+$T \colon C\bigl([0,1],\C\bigr) \to C\bigl([0,1],\C\bigr)$ by
 \begin{equation*}
 T\bigl(f\bigr)(x) \coloneqq  \int_0^1 f(t) \, k(x,t)\,dt .
 \end{equation*}
-Show that $T$ takes the unit ball centered at 0 in $C([0,1],\C)$ into a
+Show that $T$ takes the unit ball centered at 0 in $C\bigl([0,1],\C\bigr)$ into a
 relatively compact set (a set with compact closure).
 That is, $T$ is a compact operator.\\
 Hint: See \volIref{\exerciseref*{vI-exercise:relativelycompactseq} in volume I}{\exerciseref{exercise:relativelycompactseq}}.
@@ -2942,11 +2942,10 @@ is uniformly equicontinuous.
 \end{exercise}
 
 \begin{exercise}
-Define $f_n \colon [0,1] \to \C$ by $f_n(t) \coloneqq e^{i(2\pi t + n)}$.
-This is a uniformly equicontinuous uniformly bounded sequence.
-Prove more than just
-the conclusion of Arzel\`a--Ascoli for this sequence.  Let $\gamma \in \R$
-be given,
+Define $f_n \colon [0,1] \to \C$ by $f_n(t) \coloneqq e^{i(2\pi t + n)}$,
+which gives a uniformly equicontinuous uniformly bounded sequence.
+Prove a stronger conclusion than that of Arzel\`a--Ascoli for this sequence.
+Let $\gamma \in \R$ be given,
 and define $g(t) \coloneqq e^{i(2\pi t + \gamma)}$.  Show that there exists 
 a subsequence of $\{ f_n \}_{n=1}^\infty$ converging uniformly to~$g$.
 \\
@@ -3256,13 +3255,14 @@ Let us note an immediate application of the Weierstrass theorem.  We have
 already seen that countable dense subsets can be very useful.
 
 \begin{cor}
-The metric space $C([a,b],\C)$ contains a countable dense subset.
+The metric space $C\bigl([a,b],\C\bigr)$ contains a countable dense subset.
 \end{cor}
 
 \begin{proof}
-Without loss of generality suppose that we are dealing with $C([a,b],\R)$
+Without loss of generality suppose that we are dealing with
+$C\bigl([a,b],\R\bigr)$
 (why?).
-The real polynomials are dense in $C([a,b],\R)$ by Weierstrass.  If we show that
+The real polynomials are dense in $C\bigl([a,b],\R\bigr)$ by Weierstrass.  If we show that
 every real polynomial can be approximated by polynomials with rational
 coefficients, we are done.  This is because there are only countably many
 rational numbers and so there are only countably many polynomials with
@@ -3295,7 +3295,7 @@ we have
 
 \begin{remark}
 While we will not prove so, the corollary above implies that
-$C([a,b],\C)$ has the same cardinality as $\R$, which may be a
+$C\bigl([a,b],\C\bigr)$ has the same cardinality as $\R$, which may be a
 bit surprising.  The set of all functions $[a,b] \to \C$ has
 cardinality strictly greater than the cardinality of $\R$, it has the
 cardinality of the power set of $\R$.  So the
@@ -3409,8 +3409,8 @@ from now on we mean the closure in $C(X,\C)$
 as a metric space.  Same for $C(X,\R)$.
 
 The set $\sP$ of all polynomials is an algebra in
-$C([a,b],\C)$, and we
-have shown that its closure $\widebar{\sP} = C([a,b],\C)$.
+$C\bigl([a,b],\C\bigr)$, and we
+have shown that its closure $\widebar{\sP} = C\bigl([a,b],\C\bigr)$.
 That is, it is dense.  That is the sort of result that we wish to prove.
 
 We leave the following proposition as an exercise.
@@ -3669,7 +3669,7 @@ The functions of the form
 f(t) = \sum_{k=1}^n c_k \, e^{kt},
 \end{equation*}
 for $c_k \in \R$,
-are dense in $C([a,b],\R)$.  We need to note that such functions are a real
+are dense in $C\bigl([a,b],\R\bigr)$.  We need to note that such functions are a real
 algebra, which follows from $e^{kt} e^{\ell t} = e^{(k+\ell)t}$.  They separate
 points as $e^t$ is one-to-one, and $e^t > 0$ for all $t$ so the algebra
 does not vanish at any point.
@@ -3829,11 +3829,11 @@ Hint: Approximate by polynomials to show that $\int_0^1 {\bigl( f(x)
 \end{exercise}
 
 \begin{exercise}
-Suppose $I \colon C([0,1],\R) \to \R$ is 
+Suppose $I \colon C\bigl([0,1],\R\bigr) \to \R$ is 
 a linear continuous function such that
 $I(x^n) = \frac{1}{n+1}$
 for all $n=0,1,2,3,\ldots$.
-Prove that $I(f) = \int_0^1 f$ for all $f \in C([0,1],\R)$.
+Prove that $I(f) = \int_0^1 f$ for all $f \in C\bigl([0,1],\R\bigr)$.
 \end{exercise}
 
 \begin{exercise}
@@ -3842,10 +3842,10 @@ that is, polynomials of the form
 $c_0 + c_1 x^2 + c_2 x^4 + \cdots + c_d x^{2d}$.
 \begin{enumerate}[a)]
 \item
-Show that every $f \in C([0,1],\R)$ is a uniform limit of
+Show that every $f \in C\bigl([0,1],\R\bigr)$ is a uniform limit of
 polynomials from $\sA$.
 \item
-Find an $f \in  C([-1,1],\R)$ that is not a
+Find an $f \in  C\bigl([-1,1],\R\bigr)$ that is not a
 uniform limit of
 polynomials from $\sA$.
 \item
@@ -3888,7 +3888,7 @@ of the form
 \sum_{k=-n}^n c_k \, e^{ik x}
 \end{equation*}
 satisfies the hypotheses of the complex Stone--Weierstrass theorem
-and therefore such functions are dense in the $C([-\pi,\pi],\C)$.
+and therefore such functions are dense in the $C\bigl([-\pi,\pi],\C\bigr)$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:selfadjointSW}
