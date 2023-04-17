@@ -539,7 +539,14 @@ sums of the functions
 \sum_{k=n+1}^m \sabs{f_k(x)} \leq
 \sum_{k=n+1}^m M_k < \epsilon .
 \end{equation*}
-We are done by \propref{prop:cachysercomplex}.
+The series converges by \propref{prop:cachysercomplex}.
+The convergence is uniform, as $N$ does not depend on $x$.
+Indeed, for all $n \geq N$,
+\begin{equation*}
+\abs{\sum_{k=1}^\infty f_k(x) - \sum_{k=1}^n f_k(x)} \leq
+\abs{\sum_{k=n+1}^\infty f_k(x)} \leq \epsilon .
+\qedhere
+\end{equation*}
 \end{proof}
 
 \begin{example} \label{example:sinnsqfourier}
@@ -789,16 +796,15 @@ although this
 particular one, essentially due to
 Takagi\footnote{\href{https://en.wikipedia.org/wiki/Teiji_Takagi}{Teiji
 Takagi} (1875--1960) was a Japanese mathematician.}, is a different example than what Weierstrass gave.
-
 Define
 \begin{equation*}
 \varphi(x) \coloneqq \sabs{x} \qquad \text{for } x \in [-1,1] .
 \end{equation*}
-Extend the definition of $\varphi$ to all of $\R$ by making it
+Extend $\varphi$ to all of $\R$ by making it
 2-periodic:
 Decree that
 $\varphi(x) = \varphi(x+2)$.  The function $\varphi \colon \R \to \R$
-is continuous, in fact $\sabs{\varphi(x)-\varphi(y)} \leq \sabs{x-y}$ (why?).
+is continuous, in fact, $\sabs{\varphi(x)-\varphi(y)} \leq \sabs{x-y}$ (why?).
 See \figureref{fig:triangwave}.
 \begin{myfigureht}
 \includegraphics{figures/triangwave}
@@ -826,6 +832,7 @@ Fix $x$, and we will show $f$ is not differentiable at $x$.
 Define
 \begin{equation*}
 \delta_m \coloneqq \pm \frac{1}{2} 4^{-m} ,
+\avoidbreak
 \end{equation*}
 where the sign is chosen so that there is no integer
 between $4^m x$ and $4^m(x+\delta_m) = 4^m x \pm \frac{1}{2}$.
