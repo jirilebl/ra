@@ -508,7 +508,8 @@ sub read_paragraph {
 			$mbxignore = 0;
 
 		} elsif ($mbxignore == 0 &&
-			 $line =~ m/^\\input[ \t][ \t]*(.*)$/) {
+			 ($line =~ m/^[ \t]*\\input[ \t][ \t]*(.*)$/ ||
+			  $line =~ m/^[ \t]*\\input\{*(.*)\}.*$/)) {
 			 my $thefile = $1;
 			 push @ins, $in;
 			 undef $in;
