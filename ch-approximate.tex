@@ -3084,11 +3084,11 @@ As $q_n$ is a narrow peak, the integral
 mostly sees the values of $g$ that are
 close to $x$ and it does the weighted average of them.
 When the peak gets narrower, we compute this average closer to $x$
-and we expect the result to get closer to the value of $g(x)$.  Really we are
+and we expect the result to get closer to the value of $g(x)$.  Really, we are
 approximating what is called a delta function\footnote{The delta function
 is not actually a function,
 it is a \myquote{thing} that should give
-\myquote{$\int_{-\infty}^\infty g(x) \delta(x-t) \, dt = g(x)$.}}
+\myquote{$\int_{-\infty}^\infty g(t) \delta(x-t) \, dt = g(x)$.}}
 (don't worry if you have not
 heard of this concept),
 and functions like $q_n$ are often called
@@ -3145,8 +3145,8 @@ If $g(t)$ is real-valued, then the functions $g(t)a_j(t)$ are
 real-valued and $p_n$ has real coefficients,
 proving the \myquote{furthermore} part of the theorem.
 
-We still need to prove that $\{ p_n \}_{n=1}^\infty$ converges to $g$.  First let us
-get some handle on the size of $c_n$.
+We still need to prove that $\{ p_n \}_{n=1}^\infty$ converges to $g$.
+We start with estimating the size of $c_n$.
 For $x \in [0,1]$, we have that $1-x \leq 1-x^2$.  We estimate
 \begin{equation*}
 \begin{split}
@@ -3159,9 +3159,10 @@ c_n^{-1}   = \int_{-1}^1 {(1-x^2)}^n \, dx
 So $c_n \leq \frac{n+1}{2} \leq n$.
 
 Let us see how small $q_n$ is if we ignore some small interval around the origin,
-which is where the peak is.
-Given any $\delta > 0$, $\delta < 1$, for
-$x$ such that $\delta \leq \sabs{x} \leq 1$, we have
+where the peak is.
+Given any $\delta > 0$, $\delta < 1$,
+we have that for all
+$x$ such that $\delta \leq \sabs{x} \leq 1$,
 \begin{equation*}
 q_n(x) \leq c_n {(1-\delta^2)}^n \leq  n{(1-\delta^2)}^n ,
 \end{equation*}
@@ -3259,15 +3260,16 @@ The metric space $C\bigl([a,b],\C\bigr)$ contains a countable dense subset.
 \end{cor}
 
 \begin{proof}
-Without loss of generality suppose that we are dealing with
+Without loss of generality, suppose we are dealing with
 $C\bigl([a,b],\R\bigr)$
 (why?).
-The real polynomials are dense in $C\bigl([a,b],\R\bigr)$ by Weierstrass.  If we show that
+Real polynomials are dense in $C\bigl([a,b],\R\bigr)$ by Weierstrass.
+If we show that
 every real polynomial can be approximated by polynomials with rational
-coefficients, we are done.  This is because there are only countably many
+coefficients, we are done.
+Indeed, there are only countably many
 rational numbers and so there are only countably many polynomials with
-rational coefficients (a countable union of countable sets is still
-countable).
+rational coefficients (a countable union of countable sets is countable).
 
 Further without loss of generality, suppose $[a,b]=[0,1]$.  Let
 \begin{equation*}
