@@ -368,7 +368,7 @@ Let us get back to swapping limits and expand on
 Let $\{ f_n \}_{n=1}^\infty$ be a sequence
 of functions $f_n \colon X \to Y$ for a set $X$ and a metric space $Y$.
 Let $f \colon X \to Y$ be a
-function and for every $x \in X$ suppose that
+function and for every $x \in X$, suppose
 \begin{equation*}
 f(x) = \lim_{n\to \infty} f_n(x) .
 \end{equation*}
@@ -428,7 +428,7 @@ d\bigl(f_n(x),f(x)\bigr) < \epsilon .
 A series $\sum_{n=1}^\infty f_n$ of complex-valued functions converges uniformly if the sequence of
 partial sums converges uniformly, that is, if for every $\epsilon > 0$,
 there exists an $M$ such that
-for all $n \geq M$ and all $x \in X$
+for all $n \geq M$ and all $x \in X$,
 \begin{equation*}
 \abs{\left(\sum_{k=1}^n f_k(x)\right)-f(x)} < \epsilon .
 \end{equation*}
@@ -2506,7 +2506,7 @@ so $\{ f_n \}_{n=1}^\infty$ is pointwise bounded.
 
 Via calculus, we find that the maximum of
 $f_n$ on
-$[0,1]$occurs at the critical point
+$[0,1]$ occurs at the critical point
 $x=\nicefrac{1}{n^2}$:
 \begin{equation*}
 \snorm{f_n}_{[0,1]}
@@ -2685,8 +2685,7 @@ to just assume that $\{ f_n \}_{n=1}^\infty$ is equicontinuous as
 uniform equicontinuity is automatic via an exercise.
 
 \begin{proof}
-Let us first show that the sequence is uniformly bounded.
-
+We first show that the sequence is uniformly bounded.
 By uniform equicontinuity,
 there is a $\delta > 0$
 such that
@@ -2715,7 +2714,7 @@ By reverse triangle inequality,
 \begin{equation*}
 \sabs{f_n(x)} < 1+ \sabs{f_n(x_j)} \leq 1+M_j \leq M .
 \end{equation*}
-And as $x$ was arbitrary, $\{f_n\}_{n=1}^\infty$ is uniformly bounded.
+As $x$ was arbitrary, $\{f_n\}_{n=1}^\infty$ is uniformly bounded.
 
 
 Next, pick a countable dense subset $D \subset X$.
@@ -2751,13 +2750,17 @@ $x \in B(x_j,\delta)$ and so for all $\ell \in \N$,
 \end{equation*}
 So for $n,m \geq N$,
 \begin{equation*}
-\sabs{g_n(x)-g_m(x)} \leq
+\begin{split}
+\sabs{g_n(x)-g_m(x)} & \leq
 \sabs{g_n(x)-g_n(x_j)} +
 \sabs{g_n(x_j)-g_m(x_j)} +
-\sabs{g_m(x_j)-g_m(x)} <
+\sabs{g_m(x_j)-g_m(x)}
+\\
+& <
 \nicefrac{\epsilon}{3} +
 \nicefrac{\epsilon}{3} +
 \nicefrac{\epsilon}{3} = \epsilon .
+\end{split}
 \end{equation*}
 Hence, the sequence is uniformly Cauchy.  By completeness of $\C$,
 it is uniformly convergent.
@@ -3256,11 +3259,11 @@ Let us note an immediate application of the Weierstrass theorem.  We have
 already seen that countable dense subsets can be very useful.
 
 \begin{cor}
-The metric space $C\bigl([a,b],\C\bigr)$ contains a countable dense subset.
+The metric spaces $C\bigl([a,b],\R\bigr)$ and $C\bigl([a,b],\C\bigr)$ each contain a countable dense subset.
 \end{cor}
 
 \begin{proof}
-Without loss of generality, suppose we are dealing with
+Without loss of generality, consider only
 $C\bigl([a,b],\R\bigr)$
 (why?).
 Real polynomials are dense in $C\bigl([a,b],\R\bigr)$ by Weierstrass.
@@ -3520,7 +3523,6 @@ The proof is divided into several claims.
 \begin{proof}
 The function $f$ is bounded (continuous on a compact set), so there is an $M$
 such that $\sabs{f(x)} \leq M$ for all $x \in X$.
-
 Let $\epsilon > 0$ be given.  By the corollary to the Weierstrass theorem there
 exists a real polynomial $c_1 y + c_2 y^2 + \cdots+ c_n y^n$ (vanishing at
 $y=0$) such that
@@ -3538,7 +3540,7 @@ As $\sabs{f(x)} \leq M$, then  for all $x \in X$
 \abs{\sabs{f(x)} - \sum_{k=1}^N c_k {\bigl(f(x)\bigr)}^k}
 < \epsilon .
 \end{equation*}
-So $\sabs{f}$ is in the closure of $\widebar{\sA}$, which is closed.
+So $\sabs{f}$ is in the closure of $\widebar{\sA}$, which is itself closed.
 In other words, $\sabs{f} \in \widebar{\sA}$.
 \end{proof}
 
@@ -3571,7 +3573,7 @@ collection of functions.
 \medskip
 
 \noindent
-\textbf{Claim 3:} \emph{Given $f \in C(X,\R)$, $x \in X$ and $\epsilon > 0$
+\textbf{Claim 3:} \emph{Given $f \in C(X,\R)$, $x \in X$, and $\epsilon > 0$,
 there exists a $g_x \in \widebar{\sA}$ with $g_x(x) = f(x)$ and
 }
 \begin{equation*}
