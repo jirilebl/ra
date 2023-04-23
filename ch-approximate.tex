@@ -3160,7 +3160,6 @@ c_n^{-1}   = \int_{-1}^1 {(1-x^2)}^n \, dx
 \end{split}
 \end{equation*}
 So $c_n \leq \frac{n+1}{2} \leq n$.
-
 Let us see how small $q_n$ is if we ignore some small interval around the origin,
 where the peak is.
 Given any $\delta > 0$, $\delta < 1$,
@@ -3184,7 +3183,6 @@ p_n(x) =
 =
 \int_{-1}^{1} g(x+t)q_n(t) \, dt .
 \end{equation*}
-
 Let $\epsilon > 0$ be given.
 As $[-1,2]$ is compact and $g$ is continuous on $[-1,2]$, we have that $g$ is uniformly continuous.
 Pick $0 < \delta < 1$ such that if
@@ -3320,8 +3318,11 @@ power series
 \begin{equation*}
 \sum_{k=0}^\infty c_k\,  x^k .
 \end{equation*}
-An analytic function is infinitely differentiable, the function
-$\sabs{x}$ provides a counterexample.
+An analytic function is infinitely differentiable,
+however,
+the function $\sabs{x}$ is continuous and near the origin
+approximable by polynomials,
+and so provides a counterexample.
 
 The key distinction is that
 the polynomials coming from the Weierstrass theorem are not the partial
@@ -3673,9 +3674,10 @@ The functions of the form
 f(t) = \sum_{k=1}^n c_k \, e^{kt},
 \end{equation*}
 for $c_k \in \R$,
-are dense in $C\bigl([a,b],\R\bigr)$.  We need to note that such functions are a real
+are dense in $C\bigl([a,b],\R\bigr)$.  Such functions are a real
 algebra, which follows from $e^{kt} e^{\ell t} = e^{(k+\ell)t}$.  They separate
-points as $e^t$ is one-to-one, and $e^t > 0$ for all $t$ so the algebra
+points as $e^t$ is one-to-one.
+As $e^t > 0$ for all $t$, the algebra
 does not vanish at any point.
 \end{example}
 
@@ -3768,10 +3770,10 @@ for all $t \in X$.
 So $\widebar{\sA} = C(X,\C)$.
 \end{proof}
 
-The self-adjoint requirement is necessary although it is not so obvious to
+The self-adjoint requirement is necessary, although it is not so obvious to
 see it.  For an example see \exerciseref{exercise:selfadjointSW}.
 
-Here is an interesting application.
+We give an interesting application.
 When working
 with functions of two variables, it may be useful to work with functions
 of the form $f(x)g(y)$ rather than $F(x,y)$.  For example, they are easier
@@ -3788,8 +3790,9 @@ where $f_j \colon [0,1] \to \C$ and $g_j \colon [0,1] \to \C$ are continuous.
 Proof:
 It is not hard to see that the functions of the above form are a complex
 algebra.  It is equally easy to show that they vanish nowhere, separate
-points, and the algebra is self-adjoint.  As $[0,1] \times [0,1]$ is compact
-we apply \hyperref[thm:SWcomplex]{Stone--Weierstrass} to obtain the result.
+points, and the algebra is self-adjoint.  As $[0,1] \times [0,1]$ is
+compact,
+\hyperref[thm:SWcomplex]{Stone--Weierstrass} obtains the result.
 \end{example}
 
 \subsection{Exercises}
