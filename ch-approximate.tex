@@ -138,9 +138,9 @@ numbers.
 
 \subsection{Complex numbers and limits}
 
-It is not hard to show that the algebraic operations are
-continuous.  This is because convergence in 
-$\R^2$ is the same as convergence for each component and we already know
+Algebraic operations with complex numbers are
+continuous because convergence in 
+$\R^2$ is the same as convergence for each component, and we already know
 that the real algebraic operations are continuous.  For example,
 write $z_n = x_n + i\,y_n$ and
 $w_n = s_n + i\,t_n$, and suppose that
@@ -161,13 +161,13 @@ Hence,
 \lim_{n\to\infty} (x_nt_n+y_ns_n) = xt+ys .
 \end{equation*}
 As
-$(xs-yt)+i(xt+ys) = zw$, then
+$(xs-yt)+i(xt+ys) = zw$,
 \begin{equation*}
 \lim_{n\to\infty} z_n w_n = zw .
 \end{equation*}
 
 Similarly the modulus and the complex conjugate are continuous functions.  We
-leave the proof of the following proposition as an exercise.
+leave the remainder of the proof of the following proposition as an exercise.
 
 \begin{prop} \label{prop:continuityofcomplex}
 Suppose $\{ z_n \}_{n=1}^\infty$, $\{ w_n \}_{n=1}^\infty$ are sequences of complex numbers converging
@@ -258,9 +258,9 @@ We make the same definition for every other type of integral (improper,
 multivariable, etc.).
 
 Similarly when we differentiate, write $f \colon [a,b] \to \C$ as
-$f = u+i\,v$.  Thinking of $\C$ as $\R^2$ we say that $f$ is differentiable
+$f = u+i\,v$.  Thinking of $\C$ as $\R^2$, we say that $f$ is differentiable
 if $u$ and $v$ are differentiable.  For a function valued in $\R^2$, the derivative
-was represented by a vector in $\R^2$.  Now a vector in $\R^2$ is a complex
+is represented by a vector in $\R^2$.  Now a vector in $\R^2$ is a complex
 number.  In other words,
 we write
 the
@@ -1971,7 +1971,7 @@ So $e^{i2\pi} = 1 = e^0$.  The addition formula says
 \begin{equation*}
 e^{z+i2\pi} = e^z
 \end{equation*}
-for all $z \in \C$.  Immediately we also obtain
+for all $z \in \C$.  Immediately, we also obtain
 $\cos(z+2\pi) = \cos(z)$ and $\sin(z+2\pi) = \sin(z)$.
 So $\sin$ and $\cos$ are $2\pi$-periodic.
 
@@ -3444,7 +3444,7 @@ there is an $f \in \sA$ such that $f(x) \not= 0$.
 
 \begin{example}
 The set $\sP$ of polynomials separates points and vanishes at no point
-on $\R$.  That is, $1 \in \sP$ so it vanishes at no point.  And for $x,y \in
+on $\R$.  That is, $1 \in \sP$, so it vanishes at no point.  And for $x,y \in
 \R$, $x\not= y$, take $f(t) \coloneqq t$.  Then $f(x) = x \not= y = f(y)$.
 So $\sP$ separates points.
 \end{example}
@@ -3508,7 +3508,7 @@ By the second formula, $f \in \sA$ (as $\sA$ is an algebra).
 \begin{thm}[Stone--Weierstrass, real version]
 \label{thm:SWreal}%
 \index{Stone--Weierstrass!real version}%
-Let $X$ be a compact metric space and $\sA$ an algebra of real-valued
+Let $X$ be a compact metric space and $\sA$ a real algebra of real-valued
 continuous functions on $X$, such that $\sA$ separates points and vanishes at
 no point.  Then the closure $\widebar{\sA} = C(X,\R)$.
 \end{thm}
@@ -3583,7 +3583,7 @@ g_x(t) > f(t)-\epsilon \qquad \text{for all } t \in X.
 
 \begin{proof}
 Fix $f$, $x$, and $\epsilon$.
-By \propref{prop:SWinterpolate}, for every $y \in X$ we find an $h_y \in
+By \propref{prop:SWinterpolate}, for every $y \in X$, find an $h_y \in
 \sA$ such that
 \begin{equation*}
 h_y(x) = f(x), \qquad h_y(y)=f(y) .
@@ -3598,8 +3598,8 @@ U_y \coloneqq
 \end{equation*}
 is open (it is the inverse image of an open set by a continuous function).
 Furthermore $y \in U_y$.  So the sets $U_y$ cover $X$.
-
-The space $X$ is compact so there exist finitely many
+The space $X$ is compact,:w
+ so there exist finitely many
 points $y_1,y_2,\ldots,y_n$ in $X$ such
 that
 \begin{equation*}
@@ -3610,15 +3610,14 @@ Let
 g_x \coloneqq \max(h_{y_1},h_{y_2},\ldots,h_{y_n}) .
 \end{equation*}
 By Claim 2, $g_x \in \widebar{\sA}$.
-Furthermore,
+Moreover,
 \begin{equation*}
 g_x(t) > f(t) -\epsilon
 \end{equation*}
 for all $t \in X$, since for every $t$, there is a $y_k$ such that 
 $t \in U_{y_k}$, and so 
 $h_{y_k}(t) > f(t) -\epsilon$.
-
-Finally $h_y(x) = f(x)$ for all $y \in X$, so
+Finally, $h_y(x) = f(x)$ for all $y \in X$, so
 $g_x(x) = f(x)$.
 \end{proof}
 
