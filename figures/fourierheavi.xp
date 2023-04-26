@@ -10,17 +10,17 @@ double f(double t)
 
 	//fprintf (stderr, "t %g\n", t);
 	
-	s = 0.5;
+	s = 0;
 
 	for (n=1; n <= N; n++) {
-		s += (sin(n*t)-cos(M_PI*n)*sin(n*t))/((double)n*M_PI);
+		s += 2*(sin(n*t)-cos(M_PI*n)*sin(n*t))/((double)n*M_PI);
 	}
 	return s;
 }
 
 int main()
 {
-  picture(P(-4,-0.15), P(4,1.15), "2.5x1.5in");
+  picture(P(-4,-1.15), P(4,1.15), "2.5x1.5in");
 
   begin();
   //border();
@@ -35,19 +35,19 @@ int main()
   bold();
   //plot(f, xmin(), xmax(), 200);
   line(P(-4,1),P(-M_PI,1));
-  line(P(-M_PI,0),P(0,0));
+  line(P(-M_PI,-1),P(0,-1));
   line(P(0,1),P(M_PI,1));
-  line(P(M_PI,0),P(4,0));
+  line(P(M_PI,-1),P(4,-1));
   plain();
 
 
   font_size("footnotesize");
   //axis Ax(P(xmin(), ymin()), P(xmax(), ymin()), 4, P(0,-8), b);
-  axis Ax(P(xmin(), 0), P(xmax(), 0), 4, P(0,-8), b);
+  axis Ax(P(xmin(), ymin()), P(xmax(), ymin()), 4, P(0,-8), b);
   Ax.align(b).draw();
-  line(P(xmin(),ymin()),P(xmin(),0));
+  line(P(xmin(),ymin()),P(xmin(),-1));
 
-  axis Ay(P(xmin(), -0), P(xmin(), 1), 2, P(-8,0), l);
+  axis Ay(P(xmin(), -1), P(xmin(), 1), 4, P(-8,0), l);
   Ay.align(l).draw();
 
   tikz_format();

@@ -3549,17 +3549,17 @@ Let $\epsilon > 0$ be given.  By the corollary to the Weierstrass theorem,
 there exists a real polynomial $c_1 y + c_2 y^2 + \cdots+ c_n y^n$
 (vanishing at $y=0$) such that
 \begin{equation*}
-\abs{\sabs{y} - \sum_{k=1}^N c_k y^k} < \epsilon
+\abs{\sabs{y} - \sum_{k=1}^n c_k y^k} < \epsilon
 \end{equation*}
 for all $y \in [-M,M]$.
 Because $\widebar{\sA}$ is an algebra and because there is no constant term in the
 polynomial,
 \begin{equation*}
-\sum_{k=1}^N c_k f^k \in \widebar{\sA} .
+\sum_{k=1}^n c_k f^k \in \widebar{\sA} .
 \end{equation*}
 As $\sabs{f(x)} \leq M$, then  for all $x \in X$
 \begin{equation*}
-\abs{\sabs{f(x)} - \sum_{k=1}^N c_k {\bigl(f(x)\bigr)}^k}
+\abs{\sabs{f(x)} - \sum_{k=1}^n c_k {\bigl(f(x)\bigr)}^k}
 < \epsilon .
 \end{equation*}
 So $\sabs{f}$ is in the closure of $\widebar{\sA}$, which is itself closed.
@@ -4235,75 +4235,101 @@ c_n \coloneqq
 \frac{1}{2\pi} \int_{-\pi}^\pi
 f(x) e^{-inx} \, dx
 \end{equation*}
-its \emph{Fourier coefficients}.  Often these numbers are
-written as $\hat{f}(n)$.\footnote{The notation seems similar
+its \emph{Fourier coefficients}.  To emphasize the function
+the coefficients belong to,
+we write $\hat{f}(n)$.\footnote{The notation seems similar
 to Fourier transform for those readers that have seen it.
 The similarity is not just
 coincidental, we are taking a type of Fourier transform here.}
-We then formally write down a Fourier series.
-As you might imagine such a series might not even converge.
-We write\glsadd{not:FS}
+We then formally write down a Fourier series:\glsadd{not:FS}
 \begin{equation*}
 f(x) \sim
-\sum_{n=-\infty}^\infty c_n \, e^{inx} ,
+\sum_{n=-\infty}^\infty c_n \, e^{inx} .
 \end{equation*}
-although the $\sim$ doesn't imply anything about the two sides being equal
+As you might imagine such a series might not even converge.
+The $\sim$ doesn't imply anything about the two sides being equal
 in any way.  It is simply that we created a formal series using the formula
-for the coefficients.
+for the coefficients.  We will see that when the functions are
+\myquote{nice enough,} we do get convergence.
 
 \begin{example}
 Consider the step function $h(x)$ so that $h(x) \coloneqq 1$
-on $[0,\pi]$ and $h(x) \coloneqq 0$ on $(-\pi,0)$ extended periodically to a
+on $[0,\pi]$ and $h(x) \coloneqq -1$ on $(-\pi,0)$, extended periodically to a
 $2\pi$-periodic function.  With a little bit of calculus,
 we compute the coefficients:
 \begin{equation*}
-c_0 = \frac{1}{2\pi} \int_{-pi}^\pi h(x) \, dx = \frac{1}{2},
+\hat{h}(0) = \frac{1}{2\pi} \int_{-\pi}^\pi h(x) \, dx = 0,
 \qquad
-c_n = \frac{1}{2\pi} \int_{-pi}^\pi h(x) e^{-inx} \, dx = \frac{i\bigl(
-(-1)^n-1 \bigr)}{2 \pi n} \quad \text{for } n \geq 1 .
+\hat{h}(n) = \frac{1}{2\pi} \int_{-\pi}^\pi h(x) e^{-inx} \, dx = \frac{i\bigl(
+(-1)^n-1 \bigr)}{\pi n} \quad \text{for } n \geq 1 .
 \end{equation*}
 A little bit of simplification leads to
 \begin{equation*}
 s_N(h;x) =
-\sum_{n=-N}^N c_n \,e^{inx} 
+\sum_{n=-N}^N \hat{h}(n) \,e^{inx} 
 =
-\frac{1}{2} + 
-\sum_{n=1}^N \frac{1-(-1)^n}{\pi n} \sin(n x) .
+\sum_{n=1}^N \frac{2\bigl(1-(-1)^n\bigr)}{\pi n} \sin(n x) .
+\avoidbreak
 \end{equation*}
 See the left hand graph in \figureref{fig:fourierheavicsaw}
-for a graph of $h$ and several of the symmetric partial sums.
+for a graph of $h$ and several symmetric partial sums.
 
 For a second example, consider the function $g(x) \coloneqq \sabs{x}$
 on $[-\pi,\pi]$ and then extended to a $2\pi$-periodic function.
-Computing the coefficients we find
+Computing the coefficients, we find
 \begin{equation*}
-c_0 = \frac{1}{2\pi} \int_{-pi}^\pi g(x) \, dx = \frac{\pi}{2},
+\hat{g}(0) = \frac{1}{2\pi} \int_{-\pi}^\pi g(x) \, dx = \frac{\pi}{2},
 \qquad
-c_n = \frac{1}{2\pi} \int_{-pi}^\pi g(x) e^{-inx} \, dx
-= \frac{\bigl( (-1)^n-1 \bigr)}{\pi n^2} \quad \text{for } n \geq 1 .
+\hat{g}(n) = \frac{1}{2\pi} \int_{-\pi}^\pi g(x) e^{-inx} \, dx
+= \frac{(-1)^n-1}{\pi n^2} \quad \text{for } n \geq 1 .
 \end{equation*}
 A little simplification yields
 \begin{equation*}
 s_N(g;x) =
-\sum_{n=-N}^N c_n \,e^{inx} 
+\sum_{n=-N}^N \hat{g}(n) \,e^{inx} 
 =
-\frac{1}{2} + 
+\frac{\pi}{2} + 
 \sum_{n=1}^N \frac{2\bigl((-1)^n-1\bigr)}{\pi n^2} \cos(n x) .
 \end{equation*}
+See the right hand graph in \figureref{fig:fourierheavicsaw}.
 
 \begin{myfigureht}
 \subimport*{figures/}{fourierheavi_csaw.pdf_t}
 \caption{The functions $h$ and $g$ in bold, with several
-symmetric partial sums (up to $N=9$ in gray).  Note that for both
-functions all coefficients for even $n$ are zero.\label{fig:fourierheavicsaw}}
+symmetric partial sums in gray.\label{fig:fourierheavicsaw}}
 \end{myfigureht}
 
+Note that for both functions the even coefficients (except for $\hat{g}(0)$)
+happen to vanish, but that is not so important.
+What is important is the convergence.
+First, notice that at the discontinuity at $x=0$, the partial sum for $h$
+is just equal to $0$ for all $N$, so at the discontinuity, we converge
+to a different number than $h(0)$ (it turns out at a jump discontinuity, it is always
+the average of the two sided limits, see the exercises).  That should not be
+so surprising, the coefficients are gotten by integration, and integration
+will not notice if you change the value of the function at a single point.
+We should note however, that we are not guaranteed that the series converges
+to the function even at a point where the function is continuous.
+
+What is important is how fast these coefficients go to zero.  For the
+discontinuity, the coefficients $\hat{h}(n)$ go to zero approximately like
+$\nicefrac{1}{n}$.  On the other hand, for the continuous $g$, we get that
+the coefficients $\hat{g}(n)$ go to zero approximately like
+$\nicefrac{1}{n^2}$, so the Fourier coefficients \myquote{see} the discontinuity
+in some sense.
+
+Do note that the when talking about continuity here, we include continuity
+at the endpoints.  So the function $f(x) = x$ defined on $(-\pi,\pi]$
+and extended periodically would be discontinuous at the endpoints $-\pi$ and
+$\pi$.
 \end{example}
 
-
-
-
-
+In general the relationship between regularity of the function and
+the rate of decay of the coefficients is somewhat more complicated
+than the example above
+might make it seem, but there are simple conclusions we can make.
+We forget about getting a series out of a function for a moment
+and consider simply the limit of the series.
 A few sections ago, we proved that the Fourier series 
 \begin{equation*}
 \sum_{n=1}^\infty \frac{\sin(nx)}{n^2}
@@ -4412,6 +4438,7 @@ rather than by $\snorm{z}_2$)
 \snorm{z}^2 = 
 \langle z , z \rangle =
 \sum_{n=1}^d \sabs{z_n}^2 .
+\avoidbreak
 \end{equation*}
 This is just the euclidean distance to the origin in $\C^d$ (same as
 $\R^{2d}$).
@@ -4444,6 +4471,7 @@ the system would be called an \emph{\myindex{orthogonal system}}.
 We noticed above that
 \begin{equation*}
 {\left\{ \frac{1}{\sqrt{2\pi}} \, e^{inx} \right\}}_{n=1}^\infty
+\avoidbreak
 \end{equation*}
 is an orthonormal system.  The factor out in front is to make the norm be 1.
 
@@ -4567,13 +4595,13 @@ When we do plug in $d_n = c_n$, then
 =
 \int_a^b \sabs{f}^2
 -
-\sum_{n=1}^k \sabs{c_n}^2
+\sum_{n=1}^k \sabs{c_n}^2 ,
 \end{equation*}
 and so for all $k$,
 \begin{equation*}
 \sum_{n=1}^k \sabs{c_n}^2
 \leq
-\int_a^b \sabs{f}^2
+\int_a^b \sabs{f}^2 .
 \end{equation*}
 Note that
 \begin{equation*}
@@ -4632,23 +4660,18 @@ is orthonormal with respect to the inner product
 
 Suppose $f \colon \R \to \C$ is $2\pi$-periodic and integrable
 on $[-\pi,\pi]$.
-Let
+Write
 \begin{equation*}
+f(x) \sim
+\sum_{n=-\infty}^\infty c_n \,e^{inx} ,
+\qquad \text{where} \quad
 c_n \coloneqq 
 \frac{1}{2\pi} \int_{-\pi}^\pi
 f(x) e^{-inx} \, dx .
 \end{equation*}
-Write
-\begin{equation*}
-f(x) \sim
-\sum_{n=-\infty}^\infty c_n \,e^{inx} .
-\end{equation*}
-Define the \emph{\myindex{symmetric partial sums}}
-\glsadd{not:FSsympartsum}
-\begin{equation*}
-s_N(f;x) \coloneqq 
-\sum_{n=-N}^N c_n \,e^{inx} .
-\end{equation*}
+Recall the notation for the symmetric partial sums,
+$s_N(f;x) \coloneqq 
+\sum_{n=-N}^N c_n \,e^{inx}$.
 The inequality leading up to Bessel now reads:
 \begin{equation*}
 \frac{1}{2\pi} \int_{-\pi}^\pi
@@ -4683,10 +4706,11 @@ Multiply by $e^{-ix/2}$
 \begin{equation*}
 (e^{ix/2}-e^{-ix/2}) D_N(x) = e^{i(N+\nicefrac{1}{2})x} -
 e^{-i(N+\nicefrac{1}{2})x} .
+\avoidbreak
 \end{equation*}
 The claim follows.
 
-We expand the definition of $s_N$
+Expand the definition of $s_N$
 \begin{multline*}
 s_N(f;x) = 
 \sum_{n=-N}^N \frac{1}{2\pi} \int_{-\pi}^\pi f(t) e^{-int}  \,  dt ~ e^{inx}
