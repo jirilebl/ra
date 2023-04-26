@@ -3805,7 +3805,7 @@ So $\widebar{\sA} = C(X,\C)$.
 \end{proof}
 
 The self-adjoint requirement is necessary, although it is not so obvious to
-see it.  For an example see \exerciseref{exercise:selfadjointSW}.
+see it.  For an example, see \exerciseref{exercise:selfadjointSW}.
 
 We give an interesting application.
 When working
@@ -4299,24 +4299,27 @@ See the right hand graph in \figureref{fig:fourierheavicsaw}.
 symmetric partial sums in gray.\label{fig:fourierheavicsaw}}
 \end{myfigureht}
 
-Note that for both functions the even coefficients (except for $\hat{g}(0)$)
-happen to vanish, but that is not so important.
-What is important is the convergence.
-First, notice that at the discontinuity at $x=0$, the partial sum for $h$
-is just equal to $0$ for all $N$, so at the discontinuity, we converge
-to a different number than $h(0)$ (it turns out at a jump discontinuity, it is always
-the average of the two sided limits, see the exercises).  That should not be
-so surprising, the coefficients are gotten by integration, and integration
-will not notice if you change the value of the function at a single point.
-We should note however, that we are not guaranteed that the series converges
-to the function even at a point where the function is continuous.
+Note that for both $f$ and $g$, the even coefficients (except $\hat{g}(0)$)
+happen to vanish, but that is not really important.
+What is important is convergence.
+First, at the discontinuity at $x=0$, we find $s_N(h;0) = 0$
+for all $N$, so $s_N(h;0)$ converges
+to a different number from $h(0)$ (at a nice enough jump discontinuity, the
+limit is the average of the two-sided limits, see the exercises).
+That should not be surprising;
+the coefficients are computed by an integral, and integration
+does not notice if the value of a function changes at a single point.
+We should remark, however, that we are not guaranteed that in general
+the Fourier series converges to the function even at a point where
+the function is continuous.
+We will prove convergence if the function is at least Lipschitz.
 
-What is important is how fast these coefficients go to zero.  For the
-discontinuity, the coefficients $\hat{h}(n)$ go to zero approximately like
-$\nicefrac{1}{n}$.  On the other hand, for the continuous $g$, we get that
+What is really important is how fast the coefficients go to zero.  For the
+discontinuous $h$, the coefficients $\hat{h}(n)$ go to zero approximately like
+$\nicefrac{1}{n}$.  On the other hand, for the continuous $g$,
 the coefficients $\hat{g}(n)$ go to zero approximately like
-$\nicefrac{1}{n^2}$, so the Fourier coefficients \myquote{see} the discontinuity
-in some sense.
+$\nicefrac{1}{n^2}$, so the Fourier coefficients \myquote{see}
+the discontinuity in some sense.
 
 Do note that the when talking about continuity here, we include continuity
 at the endpoints.  So the function $f(x) = x$ defined on $(-\pi,\pi]$
@@ -4327,9 +4330,9 @@ $\pi$.
 In general the relationship between regularity of the function and
 the rate of decay of the coefficients is somewhat more complicated
 than the example above
-might make it seem, but there are simple conclusions we can make.
-We forget about getting a series out of a function for a moment
-and consider simply the limit of the series.
+might make it seem, but there are some quick conclusions we can make.
+We forget about finding a series for a function for a moment,
+and we consider simply the limit of some given series.
 A few sections ago, we proved that the Fourier series 
 \begin{equation*}
 \sum_{n=1}^\infty \frac{\sin(nx)}{n^2}
@@ -4349,7 +4352,7 @@ Then the series converges (absolutely and uniformly) to a continuous function on
 \end{prop}
 
 The proof is to apply the Weierstrass $M$-test (\thmref{thm:weiermtest}) and
-the $p$-series test, to find that the series converges uniformly and hence
+the $p$-series test to find that the series converges uniformly and hence
 to a continuous function (\corref{cor:metricuniformcontinuous}).
 We can also take derivatives.
 
@@ -4384,7 +4387,7 @@ converges
 to a continuously differentiable function, whose derivative is
 the differentiated series (see \thmref{thm:dersconvergecomplex}).
 
-We can iterate the same reasoning.
+We can iterate this reasoning.
 Suppose there is
 some $C$ and $\alpha > k+1$ ($k \in \N$) such that
 for all nonzero integers $n$,
@@ -4720,8 +4723,7 @@ s_N(f;x) =
 =
 \frac{1}{2\pi} \int_{-\pi}^\pi f(t) D_N(x-t) \, dt .
 \end{multline*}
-If you replace $x-t$ with $t-x$ ($D_N$ is even), we see that
-convolution strikes again!
+Convolution strikes again!
 As $D_N$ and $f$ are $2\pi$-periodic, we may also change variables and write 
 \begin{equation*}
 s_N(f;x) = 
@@ -4834,19 +4836,24 @@ for small nonzero $t$ we get
 As $\sin(\theta) = \theta + h(\theta)$ where $\frac{h(\theta)}{\theta} \to
 0$ as $\theta \to 0$,
 we notice that
-$\frac{M\sabs{t}}{\sabs{\sin(\nicefrac{t}{2})}}$ is continuous at the origin
-and hence 
-$\frac{f(x-t) - f(x)}{\sin(\nicefrac{t}{2})}$ must be bounded near the origin.
+$\frac{M\sabs{t}}{\sabs{\sin(\nicefrac{t}{2})}}$ is continuous at the
+origin.
+Hence,
+$\frac{f(x-t) - f(x)}{\sin(\nicefrac{t}{2})}$, as a function of $t$,
+is bounded near the origin.
 As $t=0$ is the only place on $[-\pi,\pi]$ where the denominator vanishes,
-it is the only place where there could be a problem.  The function is
-also Riemann integrable.  We use a trigonometric identity
+it is the only place where there could be a problem.
+Since again, the function is bounded near $t=0$ and clearly
+Riemann integrable on any interval not including $0$, we get that
+it is Riemann integrable on $[-\pi,\pi]$.
+We use the trigonometric identity
 \begin{equation*}
 \sin\bigl( (N+\nicefrac{1}{2})t \bigr)
 =
 \cos(\nicefrac{t}{2}) \sin(Nt) + 
 \sin(\nicefrac{t}{2}) \cos(Nt) ,
 \end{equation*}
-so
+to compute
 \begin{multline*}
 \frac{1}{2\pi} \int_{-\pi}^\pi \frac{f(x-t) - f(x)}{\sin(\nicefrac{t}{2})} \sin\bigl(
 (N+\nicefrac{1}{2})t \bigr) \, dt 
@@ -4858,7 +4865,7 @@ so
 \frac{1}{2\pi} \int_{-\pi}^\pi \bigl( f(x-t) - f(x) \bigr)
 \cos (Nt) \, dt .
 \end{multline*}
-Now 
+As functions of $t$, 
 $\frac{f(x-t) - f(x)}{\sin(\nicefrac{t}{2})} \cos (\nicefrac{t}{2})$
 and
 $\bigl( f(x-t) - f(x) \bigr)$ are bounded Riemann integrable functions
@@ -4871,6 +4878,8 @@ Hence $s_N(f;x)-f(x)$ goes to 0, that is, $s_N(f;x)$ goes to $f(x)$.
 \end{proof}
 
 The theorem also says that convergence depends only on local behavior.
+That is, to understand convergence of $s_N(f;x)$ we only need to know
+$f$ in some neighborhood of $x$.
 
 \begin{cor}
 Suppose $f$ is a $2\pi$-periodic function, Riemann integrable on $[-\pi,\pi]$.
@@ -4909,7 +4918,7 @@ operations on the (infinite) vectors of
 Fourier coefficients are the same as the operations using the integral
 inner product.
 
-%\begin{samepage}
+\begin{samepage}
 \begin{thm}[Parseval\footnote{%
 Named after the French mathematician
 \href{https://en.wikipedia.org/wiki/Marc-Antoine_Parseval}{Marc-Antoine
@@ -4954,7 +4963,7 @@ and
 \sum_{n=-\infty}^\infty \sabs{c_n}^2.
 \end{equation*}
 \end{thm}
-%\end{samepage}
+\end{samepage}
 
 \begin{proof}
 There exists (exercise)
@@ -4980,12 +4989,12 @@ dx
 }
 \leq \epsilon.
 \end{equation*}
-If $P$ is of degree $N_0$, then for all $N \geq N_0$
+If $P$ is of degree $N_0$, then for all $N \geq N_0$ ,
 \begin{equation*}
 \snorm{h-s_N(h)}_2 \leq \snorm{h-P}_2 \leq \epsilon ,
 \end{equation*}
 as $s_N(h)$ is the best approximation for $h$ in $L^2$ (\thmref{thm:l2bestapprox}).
-By the inequality leading up to Bessel, we have
+By the inequality leading up to Bessel,
 \begin{equation*}
 \snorm{s_N(h)-s_N(f)}_2
 =
@@ -5027,14 +5036,14 @@ c_k
 \overline{d_k} .
 \end{equation*}
 We need the Schwarz (or Cauchy--Schwarz or Cauchy--Bunyakovsky--Schwarz)
-inequality, that is,
+inequality for $L^2$, that is,
 \begin{equation*}
 {\abs{\int_a^b f\bar{g}}}^2
 \leq
 \left( \int_a^b \sabs{f}^2 \right)
 \left( \int_a^b \sabs{g}^2 \right) .
 \end{equation*}
-This is left as an exercise.  The proof is not really
+Its proof is left as an exercise; it is not much
 different from the finite-dimensional version.
 So
 \begin{equation*}
@@ -5062,15 +5071,18 @@ $g=f$.
 \begin{exercise}
 Consider the Fourier series
 \begin{equation*}
-\sum_{n=1}^\infty \frac{1}{2^n} \sin(2^n x) .
+\sum_{k=1}^\infty \frac{1}{2^k} \sin(2^k x) .
 \end{equation*}
 Show that the series converges uniformly and absolutely to a continuous
-function.  Note: This is another example of a nowhere differentiable
+function.  Remark: This is another example of a nowhere differentiable
 function (you do not have to prove that)\footnote{%
 See
 G.\ H.\ Hardy, \emph{Weierstrass's Non-Differentiable Function},
 Transactions of the American Mathematical Society,
-\textbf{17}, No.\ 3 (Jul., 1916), pp.\ 301--325.}.
+\textbf{17}, No.\ 3 (Jul., 1916), pp.\ 301--325.
+A thing to notice here is the $n$th Fourier coefficient is $\nicefrac{1}{n}$
+if $n=2^k$ and zero otherwise, so the coefficients go to zero like
+$\nicefrac{1}{n}$.}.
 See \figureref{fig:fourierserweier}.
 \begin{myfigureht}
 \includegraphics{figures/fourierserweier}

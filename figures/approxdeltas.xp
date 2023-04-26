@@ -29,8 +29,11 @@ int main()
 
 
   font_size("footnotesize");
-  axis Ax(P(xmin(), ymin()), P(xmax(), ymin()), 8, P(0,-8), b);
+  //axis Ax(P(xmin(), ymin()), P(xmax(), ymin()), 8, P(0,-8), b);
+  axis Ax(P(-M_PI, ymin()), P(M_PI, ymin()), 4, P(0,-8), b);
+  Ax.trig();
   Ax.align(b).draw();
+  line(P(xmin(),ymin()),P(xmax(),ymin()));
 
   axis Ay(P(xmin(), ymin()), P(xmin(), ymax()), 5, P(-8,0), l);
   Ay.align(l).draw();

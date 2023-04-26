@@ -34,21 +34,26 @@ int main()
   pen(Black());
   bold();
   //plot(f, xmin(), xmax(), 200);
-  line(P(-4,-4+2*M_PI),P(-M_PI,M_PI));
-  line(P(0,0),P(-M_PI,M_PI));
-  line(P(0,0),P(M_PI,M_PI));
-  line(P(4,-4+2*M_PI),P(M_PI,M_PI));
+  path gr;
+  gr.pt(P(-4,-4+2*M_PI));
+  gr.pt(P(-M_PI,M_PI));
+  gr.pt(P(0,0));
+  gr.pt(P(M_PI,M_PI));
+  gr.pt(P(4,-4+2*M_PI));
+  gr.draw();
   plain();
 
 
   font_size("footnotesize");
-  //axis Ax(P(xmin(), ymin()), P(xmax(), ymin()), 4, P(0,-8), b);
-  axis Ax(P(xmin(), 0), P(xmax(), 0), 4, P(0,-8), b);
+  axis Ax(P(-M_PI, ymin()), P(M_PI, ymin()), 4, P(0,-8), b);
+  Ax.trig();
   Ax.align(b).draw();
-  //line(P(xmin(),ymin()),P(xmin(),0));
+  line(P(xmin(),ymin()),P(xmax(),ymin()));
 
-  axis Ay(P(xmin(), -0), P(xmin(), 3), 3, P(-8,0), l);
+  axis Ay(P(xmin(), -0), P(xmin(), M_PI), 2, P(-8,0), l);
+  Ay.trig();
   Ay.align(l).draw();
+  line(P(xmin(),ymin()),P(xmin(),0));
 
   tikz_format();
   end();
