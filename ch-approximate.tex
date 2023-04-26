@@ -4218,7 +4218,13 @@ talk about the following limit:
 \sum_{n=-N}^N c_n e^{inx} .
 \end{equation*}
 There are other ways we can sum the series that can get convergence in more
-situations, but we refrain from discussing those.
+situations, but we refrain from discussing those.  In light of this,
+define the \emph{\myindex{symmetric partial sums}}
+\glsadd{not:FSsympartsum}
+\begin{equation*}
+s_N(f;x) \coloneqq 
+\sum_{n=-N}^N c_n \,e^{inx} .
+\end{equation*}
 
 \medskip
 
@@ -4244,6 +4250,59 @@ f(x) \sim
 although the $\sim$ doesn't imply anything about the two sides being equal
 in any way.  It is simply that we created a formal series using the formula
 for the coefficients.
+
+\begin{example}
+Consider the step function $h(x)$ so that $h(x) \coloneqq 1$
+on $[0,\pi]$ and $h(x) \coloneqq 0$ on $(-\pi,0)$ extended periodically to a
+$2\pi$-periodic function.  With a little bit of calculus,
+we compute the coefficients:
+\begin{equation*}
+c_0 = \frac{1}{2\pi} \int_{-pi}^\pi h(x) \, dx = \frac{1}{2},
+\qquad
+c_n = \frac{1}{2\pi} \int_{-pi}^\pi h(x) e^{-inx} \, dx = \frac{i\bigl(
+(-1)^n-1 \bigr)}{2 \pi n} \quad \text{for } n \geq 1 .
+\end{equation*}
+A little bit of simplification leads to
+\begin{equation*}
+s_N(h;x) =
+\sum_{n=-N}^N c_n \,e^{inx} 
+=
+\frac{1}{2} + 
+\sum_{n=1}^N \frac{1-(-1)^n}{\pi n} \sin(n x) .
+\end{equation*}
+See the left hand graph in \figureref{fig:fourierheavicsaw}
+for a graph of $h$ and several of the symmetric partial sums.
+
+For a second example, consider the function $g(x) \coloneqq \sabs{x}$
+on $[-\pi,\pi]$ and then extended to a $2\pi$-periodic function.
+Computing the coefficients we find
+\begin{equation*}
+c_0 = \frac{1}{2\pi} \int_{-pi}^\pi g(x) \, dx = \frac{\pi}{2},
+\qquad
+c_n = \frac{1}{2\pi} \int_{-pi}^\pi g(x) e^{-inx} \, dx
+= \frac{\bigl( (-1)^n-1 \bigr)}{\pi n^2} \quad \text{for } n \geq 1 .
+\end{equation*}
+A little simplification yields
+\begin{equation*}
+s_N(g;x) =
+\sum_{n=-N}^N c_n \,e^{inx} 
+=
+\frac{1}{2} + 
+\sum_{n=1}^N \frac{2\bigl((-1)^n-1\bigr)}{\pi n^2} \cos(n x) .
+\end{equation*}
+
+\begin{myfigureht}
+\subimport*{figures/}{fourierheavi_csaw.pdf_t}
+\caption{The functions $h$ and $g$ in bold, with several
+symmetric partial sums (up to $N=9$ in gray).  Note that for both
+functions all coefficients for even $n$ are zero.\label{fig:fourierheavicsaw}}
+\end{myfigureht}
+
+\end{example}
+
+
+
+
 
 A few sections ago, we proved that the Fourier series 
 \begin{equation*}
