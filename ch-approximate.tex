@@ -3443,9 +3443,10 @@ there is an $f \in \sA$ such that $f(x) \not= 0$.
 \end{defn}
 
 \begin{example}
-The set $\sP$ of polynomials separates points and vanishes at no point
-on $\R$.  That is, $1 \in \sP$, so it vanishes at no point.  And for $x,y \in
-\R$, $x\not= y$, take $f(t) \coloneqq t$.  Then $f(x) = x \not= y = f(y)$.
+Given any $X \subset \R$ (or $X \subset \C$),
+the set $\sP$ of polynomials in one variable separates points and vanishes at no point
+on $X$.  That is, $1 \in \sP$, so it vanishes at no point.  And for $x,y \in
+X$, $x\not= y$, take $f(t) \coloneqq t$.  Then $f(x) = x \not= y = f(y)$.
 So $\sP$ separates points.
 \end{example}
 
@@ -3458,8 +3459,8 @@ is an algebra,
 which follows by the identity $\cos(mt)\cos(nt) = 
 \frac{\cos((n+m) t)}{2}+
 \frac{\cos((n-m) t)}{2}$.
-The algebra
-does not separate points if the domain is an interval
+The algebra vanishes at no point as it contains a constant function.
+It does not separate points if the domain is an interval
 $[-a,a]$, as $f(-t) = f(t)$ for all~$t$.
 It does separate points if the domain is $[0,\pi]$; $\cos(t)$
 is one-to-one on $[0,\pi]$.
@@ -3524,9 +3525,9 @@ The proof is divided into several claims.
 \begin{proof}
 The function $f$ is bounded (continuous on a compact set), so there is an $M$
 such that $\sabs{f(x)} \leq M$ for all $x \in X$.
-Let $\epsilon > 0$ be given.  By the corollary to the Weierstrass theorem there
-exists a real polynomial $c_1 y + c_2 y^2 + \cdots+ c_n y^n$ (vanishing at
-$y=0$) such that
+Let $\epsilon > 0$ be given.  By the corollary to the Weierstrass theorem,
+there exists a real polynomial $c_1 y + c_2 y^2 + \cdots+ c_n y^n$
+(vanishing at $y=0$) such that
 \begin{equation*}
 \abs{\sabs{y} - \sum_{k=1}^N c_k y^k} < \epsilon
 \end{equation*}
@@ -3568,7 +3569,7 @@ Write:
 As $\widebar{\sA}$ is an algebra we are done.
 \end{proof}
 
-The claim is also true for the minimum or maximum of a finite
+By induction, the claim is also true for the minimum or maximum of a finite
 collection of functions.
 
 \medskip
@@ -3598,8 +3599,8 @@ U_y \coloneqq
 \end{equation*}
 is open (it is the inverse image of an open set by a continuous function).
 Furthermore $y \in U_y$.  So the sets $U_y$ cover $X$.
-The space $X$ is compact,:w
- so there exist finitely many
+The space $X$ is compact,
+so there exist finitely many
 points $y_1,y_2,\ldots,y_n$ in $X$ such
 that
 \begin{equation*}
@@ -3646,7 +3647,7 @@ exists an $\varphi \in \widebar{\sA}$ such that}
 \end{equation*}
 
 \begin{proof}
-For every $x$ find the function $g_x$ as in Claim 3.
+For every $x \in X$, find the function $g_x$ as in Claim 3.
 Let
 \begin{equation*}
 V_x \coloneqq \bigl\{ t \in X : g_x(t) < f(t) + \epsilon \bigr\}.
@@ -3679,8 +3680,7 @@ which is the desired conclusion.
 
 The proof of the theorem follows from Claim 4.  The claim states that an
 arbitrary continuous function is in the closure of $\widebar{\sA}$,
-which itself is
-closed.  So the theorem is proved.
+which is already closed.  The theorem is proved.
 
 \begin{example}
 The functions of the form
@@ -3726,7 +3726,7 @@ a_0 +
 That is \emph{not true}!
 There exist continuous functions
 whose Fourier series does not converge even pointwise
-let alone uniformly.
+let alone uniformly.  See \sectionref{sec:fourier}.
 \end{example}
 
 To obtain Stone--Weierstrass for complex algebras, we must
@@ -3965,7 +3965,7 @@ Then $\widebar{\sA} = C(X,\R)$.
 Suppose $f \colon [a,b] \to \C$ is continuously 
 differentiable.  Show that there exists a sequence of polynomials
 $\{ p_n \}_{n=1}^\infty$
-that converges in the $C^1$ norm to $f$, that is
+that converges in the $C^1$ norm to $f$, that is,
 $\snorm{f - p_n}_{[a,b]} + \snorm{f'-p_n'}_{[a,b]} \to 0$ as $n \to \infty$.
 \item
 Suppose $f \colon [a,b] \to \C$ is $k$ times continuously 
