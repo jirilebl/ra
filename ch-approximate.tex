@@ -3609,7 +3609,7 @@ Let
 \begin{equation*}
 g_x \coloneqq \max(h_{y_1},h_{y_2},\ldots,h_{y_n}) .
 \end{equation*}
-By Claim 2, $g_x \in \widebar{\sA}$.
+By Claim 2, $g_x \in \widebar{\sA}$.  See \figureref{fig:stonegx}.
 Moreover,
 \begin{equation*}
 g_x(t) > f(t) -\epsilon
@@ -3621,7 +3621,22 @@ Finally, $h_y(x) = f(x)$ for all $y \in X$, so
 $g_x(x) = f(x)$.
 \end{proof}
 
+\begin{myfigureht}
+\subimport*{figures/}{stonegx.pdf_t}
+\caption{Construction of $g_x$ out of two $h_{y_1}$ (longer dashes) and
+$h_{y_2}$ (shorter dashes).\label{fig:stonegx}}
+\end{myfigureht}
+
+What we have now is for each $x$ a function $g_x \in \widebar{\sA}$
+that is within $\epsilon$ of $f$ near $x$ (being continuous),
+but also $g_x$ is within $\epsilon$ of $f$ from at least one side at
+all points.
+If we cover $X$ with neighborhoods where $g_x$ is a good approximation,
+we can repeat the idea of the argument with a minimum to get
+a function that is within $\epsilon$ from both sides.
+
 \medskip
+\pagebreak[2]
 
 \noindent
 \textbf{Claim 4:} \emph{If $f \in C(X,\R)$ and $\epsilon > 0$ is given, then there
