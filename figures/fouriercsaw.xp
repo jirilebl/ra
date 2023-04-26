@@ -1,0 +1,56 @@
+#include "epix.h"
+using namespace ePiX;
+
+int N = 60;
+
+double f(double t)
+{
+	double s = 0;
+	int n;
+
+	//fprintf (stderr, "t %g\n", t);
+	
+	s = M_PI/2.0;
+
+	for (n=1; n <= N; n++) {
+		s += (2*(cos(M_PI*n)-1)*cos(n*t))/((double)n*n*M_PI);
+	}
+	return s;
+}
+
+int main()
+{
+  picture(P(-4,-0.15), P(4,4), "2.5x1.5in");
+
+  begin();
+  //border();
+
+  for (N=9; N >= 1; N-=2) {
+	  pen(Black(0.5-0.39*(N/9.0)));
+	  plot(f, xmin(), xmax(), 200);
+  }
+
+  //N=60;
+  pen(Black());
+  bold();
+  //plot(f, xmin(), xmax(), 200);
+  line(P(-4,-4+2*M_PI),P(-M_PI,M_PI));
+  line(P(0,0),P(-M_PI,M_PI));
+  line(P(0,0),P(M_PI,M_PI));
+  line(P(4,-4+2*M_PI),P(M_PI,M_PI));
+  plain();
+
+
+  font_size("footnotesize");
+  //axis Ax(P(xmin(), ymin()), P(xmax(), ymin()), 4, P(0,-8), b);
+  axis Ax(P(xmin(), 0), P(xmax(), 0), 4, P(0,-8), b);
+  Ax.align(b).draw();
+  //line(P(xmin(),ymin()),P(xmin(),0));
+
+  axis Ay(P(xmin(), -0), P(xmin(), 3), 3, P(-8,0), l);
+  Ay.align(l).draw();
+
+  tikz_format();
+  end();
+}
+
