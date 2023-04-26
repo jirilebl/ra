@@ -3330,25 +3330,11 @@ sums of a power series.  For each one, the coefficients $a_k$ above can be
 completely different---they do not need to come from a single sequence
 $\{ c_k \}_{k=1}^\infty$.
 
-\subsection{Stone--Weierstrass approximation}
+\medskip
 
-We want to abstract away what is not really
-necessary and prove a general version of the Weierstrass theorem.
-The polynomials are dense in the space of continuous
-functions on a compact interval.  What other kind of families of
-functions are also dense?  And if the domain is an
-arbitrary metric space, then we no longer have polynomials
-to begin with.
-
-The theorem we will prove is the Stone--Weierstrass theorem\footnote{%
-Named after the American mathematician
-\href{https://en.wikipedia.org/wiki/Marshall_Harvey_Stone}{Marshall Harvey Stone}
-(1903--1989), and the German mathematician
-\href{https://en.wikipedia.org/wiki/Karl_Weierstrass}{Karl Theodor Wilhelm Weierstrass}
-(1815--1897).}.
-First,
-we need a very
-special case of the Weierstrass theorem though.
+Interestingly, to generalize Weierstrass, we will only need to use it to
+approximate the absolute value function by polynomials without
+a constant term.
 
 \begin{cor}
 Let $[-a,a]$ be an interval.  Then there is a sequence of real polynomials
@@ -3387,7 +3373,27 @@ Then for $n \geq N$,
 Generalizing the corollary,
 we can make the polynomials from the Weierstrass theorem
 be equal to our target function at one point, not just for $\sabs{x}$, but
-that's the one we will need.
+that's the one we will need.  It is also possible (see
+\exerciseref{exercise:finitelymanyweierequal})
+to make the polynomials
+equal at finitely many points by subtracting not a constant but a properly
+crafted polynomial.
+
+\subsection{Stone--Weierstrass approximation}
+
+We want to abstract away what is not really
+necessary and prove a general version of the Weierstrass theorem,
+the Stone--Weierstrass theorem\footnote{%
+Named after the American mathematician
+\href{https://en.wikipedia.org/wiki/Marshall_Harvey_Stone}{Marshall Harvey Stone}
+(1903--1989), and the German mathematician
+\href{https://en.wikipedia.org/wiki/Karl_Weierstrass}{Karl Theodor Wilhelm Weierstrass}
+(1815--1897).}.
+Polynomials are dense in the space of continuous
+functions on a compact interval.  What other kind of families of
+functions are also dense?  And if the domain is an
+arbitrary metric space, then we no longer have polynomials
+to begin with.
 
 \begin{defn}
 \pagebreak[2]
@@ -4005,6 +4011,27 @@ of the form $a_0 + a_1 x^2 + a_2 x^4 + \cdots + a_k x^{2k}$.
 Show that an odd function $f \colon [-1,1] \to \R$ is a uniform
 limit of polynomials with odd powers only, that is, polynomials
 of the form $b_1 x + b_2 x^3 + b_3 x^5 + \cdots + b_k x^{2k-1}$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise} \label{exercise:finitelymanyweierequal}
+\pagebreak[2]
+Let $f \colon [a,b] \to \R$ be continuous.
+\begin{enumerate}[a)]
+\item
+Given two points $x_1,x_2 \in [a,b]$, show that
+there exists a sequence of real polynomials $\{ p_n \}_{n=1}^\infty$
+so that $p_n(x_1) = f(x_1)$ and $p_n(x_2) = f(x_2)$ for all $n$.
+\item
+Generalize the previous part to $k$ points:
+Given the points $x_1,x_2,\ldots,x_k \in [a,b]$, show that
+there exists a sequence of real polynomials $\{ p_n \}_{n=1}^\infty$
+so that for all $n$, $p_n(x_j) = f(x_j)$ for $j=1,2,\ldots,k$.
+\\
+Hint: The polynomial $(x-x_1)(x-x_2)\cdots(x-x_{\ell-1})(x-x_{\ell+1})
+\cdots(x-x_k)$ is zero at $x_j$ for $j\not=\ell$ but nonzero at
+$x_\ell$.  Use it to construct a polynomial that takes prescribed values
+at $x_1,x_2,\ldots,x_k$.
 \end{enumerate}
 \end{exercise}
 
