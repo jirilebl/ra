@@ -4478,8 +4478,9 @@ d_n
 \end{equation*}
 So
 \begin{equation*}
+\begin{split}
 \int_a^b \sabs{f-p_k}^2
-=
+& =
 \int_a^b \sabs{f}^2
 -
 \sum_{n=1}^k \overline{d_n} c_n
@@ -4488,13 +4489,15 @@ So
 +
 \sum_{n=1}^k
 \sabs{d_n}^2
-=
+\\
+& =
 \int_a^b \sabs{f}^2
 -
 \sum_{n=1}^k \sabs{c_n}^2
 +
 \sum_{n=1}^k
 \sabs{d_n-c_n}^2 .
+\end{split}
 \end{equation*}
 This is minimized precisely when $d_n = c_n$.
 \end{proof}
