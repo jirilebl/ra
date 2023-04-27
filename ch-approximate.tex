@@ -1734,17 +1734,17 @@ $\sabs{f(z)} \leq \frac{1}{1-\sabs{z}}$.
 
 \subsection{The complex exponential}
 
-Define
+Let
 \begin{equation*}
 E(z) \coloneqq \sum_{k=0}^\infty \frac{1}{k!} z^k .
 \end{equation*}
-This series converges for all $z \in \C$ and so by
+This series converges for all $z \in \C$, and so by
 \corref{cor:powerseranalytic}, $E$ is analytic on $\C$.   We notice that $E(0) = 1$,
-and that for $z=x \in \R$, $E(x) \in \R$.  Keeping $x$ real, we find
+and that for $z=x \in \R$, $E(x) \in \R$.  Keeping $x$ real, direct
+computation shows
 \begin{equation*}
-\frac{d}{dx} \bigl( E(x) \bigr) = E(x)
+\frac{d}{dx} \bigl( E(x) \bigr) = E(x) .
 \end{equation*}
-by direct calculation.
 In \volIref{\sectionref*{vI-sec:logandexp} of volume I}{\sectionref{sec:logandexp}} (or by Picard's theorem), we proved that
 the unique function satisfying $E' = E$ and
 $E(0) = 1$ is the exponential.  In other words, for $x \in \R$, $e^x = E(x)$.
@@ -1797,7 +1797,9 @@ A simple consequence is that $e^z\not=0$ for all $z \in \C$,
 as $e^z e^{-z} = e^{z-z} = 1$.  A more complicated consequence is that we
 can easily compute the power series for the exponential at a point $a \in
 \C$:
-$e^z = e^a e^{z-a} = \sum_{k=0}^\infty \frac{e^a}{k!} {(z-a)}^k$.
+\begin{equation*}
+e^z = e^a e^{z-a} = \sum_{k=0}^\infty \frac{e^a}{k!} {(z-a)}^k .
+\end{equation*}
 
 \subsection{Trigonometric functions and $\pi$}
 
@@ -1852,7 +1854,7 @@ e^{iz} = \cos(z) + i\sin(z) \qquad
 \begin{equation*}
 \sabs{\sin(x)} \leq 1, \qquad \sabs{\cos(x)} \leq 1 .
 \end{equation*}
-\item For all $x \in \R$
+\item For all $x \in \R$,
 \begin{equation*}
 \frac{d}{dx} \bigl[ \cos(x) \bigr] = -\sin(x)
 \qquad \text{and} \qquad
@@ -1904,7 +1906,7 @@ $x$ is real,
 Thus for real $x$,
 $\cos(x) = \Re (e^{ix})$ and $\sin(x) = \Im (e^{ix})$.
 
-For real $x$ we compute
+For real $x$, we compute
 \begin{equation*}
 1 =  e^{ix} e^{-ix} = \sabs{e^{ix}}^2 = {\bigl( \cos(x) \bigr)}^2 + {\bigl( \sin(x) \bigr)}^2 .
 \end{equation*}
@@ -2037,10 +2039,10 @@ circle (the arclength) is
 \int_0^{2\pi} 1  \,  dt  = 2\pi .
 \end{equation*}
 
-More generally we notice that $e^{it}$ parametrizes the circle by arclength.
-That is, $t$ measures the arclength, and hence a circle of radius 1 by
-the angle in radians.  So the definitions of $\sin$ and $\cos$ we have
-used above agree with the standard geometric definitions.
+More generally, $e^{it}$ parametrizes the circle by arclength.
+That is, $t$ measures the arclength on a circle of radius 1 by
+the angle in radians.  So the definitions of $\sin$ and $\cos$ given
+above agree with the standard geometric definitions.
 
 All the points on the unit circle can be achieved by
 $e^{it}$ for some $t$.
@@ -2072,7 +2074,7 @@ Derive the power series for $\sin(z)$ and $\cos(z)$ at the origin.
 \end{exercise}
 
 \begin{exercise}
-Using the power series, show that for $x$ real, we have
+Using the power series, show that for real $x$, we have
 $\frac{d}{dx} \bigl[ \sin(x)\bigr] = \cos(x)$ and
 $\frac{d}{dx} \bigl[ \cos(x)\bigr] = -\sin(x)$.
 \end{exercise}
@@ -2317,7 +2319,7 @@ we can pick $R$ large enough to be bigger than a given $M$.
 \end{proof}
 
 The lemma above does \emph{not} generalize to analytic
-functions, even those defined in all of $\C$.  The function
+functions, even those defined on all of $\C$.  The function
 $\cos(z)$ is a counterexample.
 Note that we had to look
 at the term with the largest degree, and we only have such a term for
@@ -2699,7 +2701,7 @@ such that
 X = \bigcup_{j=1}^k B(x_j,\delta) .
 \end{equation*}
 As $\{ f_n \}_{n=1}^\infty$ is pointwise bounded there exist $M_1,M_2,\ldots,M_k$
-such that for $j=1,2,\ldots,k$, we have
+such that for $j=1,2,\ldots,k$,
 \begin{equation*}
 \sabs{f_n(x_j)} \leq M_j \qquad \text{for all } n.
 \end{equation*}
@@ -2710,7 +2712,7 @@ $x \in f_n^{-1}\bigl(B(f_n(x_j),1)\bigr)$, or in other words
 \begin{equation*}
 \sabs{f_n(x)-f_n(x_j)} < 1 .
 \end{equation*}
-By reverse triangle inequality,
+By the reverse triangle inequality,
 \begin{equation*}
 \sabs{f_n(x)} < 1+ \sabs{f_n(x_j)} \leq 1+M_j \leq M .
 \end{equation*}
@@ -2724,20 +2726,21 @@ Write $g_j \coloneqq f_{n_j}$ for simplicity.
 The sequence $\{ g_n \}_{n=1}^\infty$ is 
 uniformly equicontinuous.
 Let $\epsilon > 0$ be given, then there exists a $\delta > 0$
-such that for all $x \in X$ and all $n \in \N$
+such that for all $x \in X$ and all $n \in \N$,
 \begin{equation*}
 B(x,\delta) \subset g_n^{-1}\bigl(B(g_n(x),\nicefrac{\epsilon}{3})\bigr).
 \end{equation*}
-By density of $D$ and because $\delta$ is fixed, every $x \in X$ is in some $B(y,\delta)$
+By density of $D$ and because $\delta$ is fixed, every $x \in X$ is in $B(y,\delta)$
 for some $y \in D$.  By compactness of $X$,
 there is a finite subset $\{ x_1,x_2,\ldots,x_k \} \subset D$
 such that
 \begin{equation*}
 X = \bigcup_{j=1}^k B(x_j,\delta) .
 \end{equation*}
-As there are finitely many points and $\{ g_n \}_{n=1}^\infty$
+As $\{ x_1,x_2,\ldots,x_k \}$
+is a finite set and $\{ g_n \}_{n=1}^\infty$
 converges pointwise on $D$, there exists a single $N$ such that for 
-all $n,m \geq N$, we have
+all $n,m \geq N$,
 \begin{equation*}
 \sabs{g_n(x_j)-g_m(x_j)} < \nicefrac{\epsilon}{3}
  \qquad \text{for all } j=1,2,\ldots,k.
@@ -2762,7 +2765,7 @@ So for $n,m \geq N$,
 \nicefrac{\epsilon}{3} = \epsilon .
 \end{split}
 \end{equation*}
-Hence, the sequence is uniformly Cauchy.  By completeness of $\C$,
+Hence, $\{ g_n \}_{n=1}^\infty$ is uniformly Cauchy.  By completeness of $\C$,
 it is uniformly convergent.
 %FIXME: reference?
 \end{proof}
@@ -3149,7 +3152,7 @@ real-valued and $p_n$ has real coefficients,
 proving the \myquote{furthermore} part of the theorem.
 
 We still need to prove that $\{ p_n \}_{n=1}^\infty$ converges to $g$.
-We start with estimating the size of $c_n$.
+We start with estimating the size of~$c_n$.
 For $x \in [0,1]$, we have that $1-x \leq 1-x^2$.  We estimate
 \begin{equation*}
 \begin{split}
@@ -3214,7 +3217,8 @@ $\int_{-1}^1 q_n(t) \, dt = 1$ and $q_n(t) \geq 0$ on $[-1,1]$.  So for $n
 \int_{-\delta}^{\delta} \sabs{g(x+t)-g(x)} q_n(t) \, dt
 \\
 & \phantom{\leq} +
-\int_{\delta}^1 \sabs{g(x+t)-g(x)} q_n(t) \, dt \\
+\int_{\delta}^1 \sabs{g(x+t)-g(x)} q_n(t) \, dt
+\displaybreak[0]\\
 & \leq
 2M
 \int_{-1}^{-\delta} q_n(t) \, dt
@@ -3227,7 +3231,8 @@ $\int_{-1}^1 q_n(t) \, dt = 1$ and $q_n(t) \geq 0$ on $[-1,1]$.  So for $n
 +
 \quad
 2M
-\int_{\delta}^1 q_n(t) \, dt \\
+\int_{\delta}^1 q_n(t) \, dt
+\\
 & \leq
 2M n{(1-\delta^2)}^n(1-\delta)
 \quad
