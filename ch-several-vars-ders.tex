@@ -446,7 +446,7 @@ x_k = \frac{-a_1}{a_k} x_1 + \cdots +
 The vector $x_k$ has at least two different representations
 as linear combinations of the vectors $\{ x_1,x_2,\ldots,x_m \}$. The one above and
 $x_k$ itself. 
-For example, the set $\bigl\{ (0,1), (2,3), (5,0) \bigr\}$ in $\R^2$ is linearly dependent:
+For instance, the set $\bigl\{ (0,1), (2,3), (5,0) \bigr\}$ in $\R^2$ is linearly dependent:
 \begin{equation*}
 3(0,1) - (2,3) + 2(1,0) = 0 ,
 \qquad \text{so} \qquad
@@ -502,9 +502,12 @@ Let $X$ be a vector space and $d$ a nonnegative integer.
 \item \label{mv:dimprop:i}
 If $X$ is spanned by $d$ vectors, then $\dim \, X \leq d$.
 \item \label{mv:dimprop:ii}
-$\dim \, X = d$ if and only if $X$ has a basis of $d$
-vectors (and so every basis has $d$ vectors).
+If $T$ is a linearly independent set and
+$v \in X \setminus \spn (T)$, then
+$T \cup \{ v \}$ is linearly independent.
 \item \label{mv:dimprop:iii}
+$\dim \, X = d$ if and only if $X$ has a basis of $d$
+vectors.
 In particular, $\dim \, \R^n = n$.
 \item \label{mv:dimprop:iv}
 If $Y \subset X$ is a vector subspace and $\dim \, X = d$,
@@ -521,6 +524,8 @@ vectors such that $T \cup S$ is a basis of $X$.
 
 In particular, the last item says that if $\dim X = d$ and $T$ is
 a set of $d$ linearly independent vectors, then $T$ spans $X$.
+Another thing to note is that item \ref{mv:dimprop:iii} implies that every
+basis of a finite dimensional vector space has the same number of elements.
 
 \begin{proof}
 All statements hold trivially when $d=0$, so assume $d \geq 1$.
@@ -567,29 +572,30 @@ other vector $v$ in $X$ is a linear combination of
 $\{ y_1 , y_2, \ldots, y_d \}$ and hence cannot be in $T$ as $T$ is
 linearly independent.  So $m = d$.
 
-We move to \ref{mv:dimprop:ii}.
-First a short claim.
-If $T = \{x_1,x_2,\ldots,x_m\}$ is linearly independent and
-does not span $X$, then for any vector $v \in X \setminus \spn (T)$,
-the set $T \cup \{ v \}$ is linearly independent.
-Indeed, suppose 
+We continue with \ref{mv:dimprop:ii}.
+Suppose 
+$T = \{x_1,x_2,\ldots,x_m\}$ is linearly independent,
+does not span $X$, and $v \in X \setminus \spn (T)$.
+Suppose 
 $a_1 x_1 + a_2 x_2 + \cdots + a_m x_m + a_{m+1} v = 0$
 for some scalars $a_1,a_2,\ldots,a_{m+1}$.
 If $a_{m+1} \not=0$, then $v$ would be a linear combination of $T$,
 so $a_{m+1} = 0$.  Then, as $T$ is linearly independent, $a_1=a_2=\cdots=a_m = 0$.
 So $T \cup \{ v \}$ is linearly independent.
 
+We move to \ref{mv:dimprop:iii}.
 If $\dim \, X = d$,
 then there must exist some linearly independent set $T$ of $d$ vectors,
 and $T$ must span $X$, otherwise we could choose a larger set of linearly
-independent vectors via the claim.  So we have a basis of $d$ vectors.
+independent vectors via \ref{mv:dimprop:ii}.
+So we have a basis of $d$ vectors.
 On the other hand, if we have a basis of $d$ vectors,
 the dimension is at least $d$ as a basis is linearly independent.
 A basis also spans $X$, and so
 by \ref{mv:dimprop:i} we know that dimension is at most $d$.
 Hence the dimension of $X$ must equal $d$.
-
-For \ref{mv:dimprop:iii}, notice that $\{ e_1, e_2, \ldots, e_n \}$ is a basis of $\R^n$.
+The \myquote{in particular} follows by noting that
+$\{ e_1, e_2, \ldots, e_n \}$ is a basis of $\R^n$.
 
 To see \ref{mv:dimprop:iv},
 suppose $Y \subset X$ is a vector subspace,
@@ -608,11 +614,11 @@ $d = \dim \, X \leq m-1$ by~\ref{mv:dimprop:i}.
 
 For \ref{mv:dimprop:vi} suppose $T = \{ x_1, x_2, \ldots, x_m \}$ is
 a linearly independent set.  First, $m \leq d$ by definition of dimension.
-If $m=d$, the set $T$ must span $X$ as in the proof of \ref{mv:dimprop:ii},
+If $m=d$, the set $T$ must span $X$ as in the proof of \ref{mv:dimprop:iii},
 otherwise we could add another vector to $T$.
-If $m < d$,  $T$ cannot span $X$ by \ref{mv:dimprop:ii}.
+If $m < d$,  $T$ cannot span $X$ by \ref{mv:dimprop:iii}.
 So find $v$ not in the span of~$T$.
-Via the claim, the set $T \cup \{ v \}$ is
+Via \ref{mv:dimprop:ii}, the set $T \cup \{ v \}$ is
 a linearly independent set of $m+1$ elements.
 Therefore, we repeat this procedure $d-m$ times to
 find a set of $d$ linearly independent vectors.
