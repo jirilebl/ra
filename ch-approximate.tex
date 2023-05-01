@@ -4053,7 +4053,7 @@ Named after the French mathematician
 \href{https://en.wikipedia.org/wiki/Joseph_Fourier}{Jean-Baptiste Joseph Fourier}
 (1768--1830).} is perhaps the most important (and the most difficult)
 of the series that we cover in
-this book.  We saw a few examples of it already,
+this book.  We saw a few examples already,
 but let us start
 at the beginning.
 
@@ -4084,14 +4084,14 @@ but we will not investigate this further.
 
 \medskip
 
-Another reason why Fourier series are important and come up in so many
-applications is that the functions are eigenfunctions%
+Another reason why Fourier series is important and comes up in so many
+applications is that the functions $e^{inx}$ are eigenfunctions%
 \footnote{Eigenfunction is like an eigenvector for a matrix, but for a linear
 operator on a vector space of functions.} of various
 differential operators.  For example,
 \begin{equation*}
-\frac{d}{dx} \bigl[ e^{ikx} \bigr] = (ik) e^{ikx}, \qquad
-\frac{d^2}{dx^2} \bigl[ e^{ikx} \bigr] = (-k^2) e^{ikx} .
+\frac{d}{dx} \bigl[ e^{inx} \bigr] = (in) e^{inx}, \qquad
+\frac{d^2}{dx^2} \bigl[ e^{inx} \bigr] = (-n^2) e^{inx} .
 \end{equation*}
 That is, they are the functions whose derivative is a scalar (the
 eigenvalue) times itself.
@@ -4168,7 +4168,7 @@ f(x) e^{imx} \, dx
 The complex conjugate goes inside the integral because the integral is
 done on real and imaginary parts separately.
 
-On the other hand if 
+On the other hand, if 
 $c_{-m} = \overline{c_m}$, then
 \begin{equation*}
 \overline{c_{-m}\, e^{-imx}+ c_{m}\, e^{imx}}
@@ -4222,7 +4222,7 @@ talk about the following limit:
 \lim_{N\to\infty} 
 \sum_{n=-N}^N c_n e^{inx} .
 \end{equation*}
-There are other ways we can sum the series that can get convergence in more
+There are other ways we can sum the series to get convergence in more
 situations, but we refrain from discussing those.  In light of this,
 define the \emph{\myindex{symmetric partial sums}}
 \glsadd{not:FSsympartsum}
@@ -4242,8 +4242,8 @@ f(x) e^{-inx} \, dx
 \end{equation*}
 its \emph{Fourier coefficients}.  To emphasize the function
 the coefficients belong to,
-we write $\hat{f}(n)$.\footnote{The notation seems similar
-to Fourier transform for those readers that have seen it.
+we write $\hat{f}(n)$.\footnote{The notation should seem similar
+to Fourier transform to those readers that have seen it.
 The similarity is not just
 coincidental, we are taking a type of Fourier transform here.}
 We then formally write down a Fourier series:\glsadd{not:FS}
@@ -4323,16 +4323,17 @@ What is really important is how fast the coefficients go to zero.  For the
 discontinuous $h$, the coefficients $\hat{h}(n)$ go to zero approximately like
 $\nicefrac{1}{n}$.  On the other hand, for the continuous $g$,
 the coefficients $\hat{g}(n)$ go to zero approximately like
-$\nicefrac{1}{n^2}$, so the Fourier coefficients \myquote{see}
+$\nicefrac{1}{n^2}$.
+The Fourier coefficients \myquote{see}
 the discontinuity in some sense.
 
-Do note that the when talking about continuity here, we include continuity
-at the endpoints.  So the function $f(x) = x$ defined on $(-\pi,\pi]$
-and extended periodically would be discontinuous at the endpoints $-\pi$ and
-$\pi$.
+Do note that continuity in this setting is the continuity of the
+periodic extension, that is, we include the endpoints $\pm \pi$.
+So the function $f(x) = x$ defined on $(-\pi,\pi]$
+and extended periodically would be discontinuous at the endpoints $\pm\pi$.
 \end{example}
 
-In general the relationship between regularity of the function and
+In general, the relationship between regularity of the function and
 the rate of decay of the coefficients is somewhat more complicated
 than the example above
 might make it seem, but there are some quick conclusions we can make.
@@ -4638,7 +4639,7 @@ Then
 \end{equation*}
 \end{thm}
 
-In particular, if $\int_a^b \sabs{f}^2 < \infty$, the series
+In particular, $\int_a^b \sabs{f}^2 < \infty$ implies the series
 converges and hence
 \begin{equation*}
 \lim_{k \to \infty} c_k = 0 .
