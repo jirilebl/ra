@@ -5031,16 +5031,16 @@ Next,
 \int_{-\pi}^\pi
 s_N(f;x) \overline{g(x)} \, dx
 =
-\sum_{k=-N}^N
-c_k 
+\sum_{n=-N}^N
+c_n 
 \frac{1}{2\pi}
 \int_{-\pi}^\pi
-e^{ikx}
+e^{inx}
 \overline{g(x)} \, dx
 =
-\sum_{k=-N}^N
-c_k 
-\overline{d_k} .
+\sum_{n=-N}^N
+c_n 
+\overline{d_n} .
 \end{equation*}
 We need the Schwarz (or Cauchy--Schwarz or Cauchy--Bunyakovsky--Schwarz)
 inequality for $L^2$, that is,
@@ -5075,7 +5075,7 @@ $g=f$.
 
 \subsection{Exercises}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:fsweierser}
 Consider the Fourier series
 \begin{equation*}
 \sum_{k=1}^\infty \frac{1}{2^k} \sin(2^k x) .
@@ -5184,7 +5184,7 @@ and $\overline{\D} = C(0,1)$ be the closed unit disc.
 Show that there exists a continuous function
 $f \colon \overline{\D} \to \C$ that is analytic on $\D$
 and such that on the boundary of $\D$ we have
-$f(e^{i\theta}) = \sum_{n=0}^\infty c_n e^{i\theta}$.\\
+$f(e^{i\theta}) = \sum_{n=0}^\infty c_n e^{in\theta}$.\\
 Hint: If $z=re^{i\theta}$, then $z^n = r^n e^{in\theta}$.
 \end{exercise}
 
@@ -5196,7 +5196,7 @@ Show that
 converges to an infinitely differentiable function.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:fsdiffmindecay}
 Let $f$ be a $2\pi$-periodic function
 such that $f(x) = f(0) + \int_0^x g$
 for a function $g$ that is Riemann integrable on every interval.
@@ -5206,7 +5206,7 @@ f(x) \sim
 \sum_{n=-\infty}^\infty c_n \,e^{inx} .
 \end{equation*}
 Show that there exists a $C > 0$ such that
-$\sabs{c_n} \leq \frac{C}{\sabs{n}}$.
+$\sabs{c_n} \leq \frac{C}{\sabs{n}}$ for all nonzero $n$.
 \end{exercise}
 
 \begin{exercise}
@@ -5239,4 +5239,19 @@ $\lim\limits_{N\to\infty} s_N(f;x) = \frac{g(x)+h(x)}{2}$, or in other words,
 \right) .
 \end{equation*}
 \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Let
+$\{ a_n \}_{n=1}^\infty$ be such that 
+$\lim_{n\to \infty} a_n = 0$.  Show that there is a continuous
+$2\pi$-periodic function $f$ whose Fourier coefficients
+$c_{n}$
+satisfy that for each $N$ there is a $k \geq N$ where $\sabs{c_k} \geq
+a_k$.\\
+Remark: The exercise says that if $f$ is only continuous, there is
+no \myquote{minimum rate of decay} of the coefficients.  Compare with
+\exerciseref{exercise:fsdiffmindecay}.
+\\
+Hint: Look at \exerciseref{exercise:fsweierser} for inspiration.
 \end{exercise}
