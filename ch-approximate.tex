@@ -4482,7 +4482,8 @@ We noticed above that
 {\left\{ \frac{1}{\sqrt{2\pi}} \, e^{inx} \right\}}_{n=1}^\infty
 \avoidbreak
 \end{equation*}
-is an orthonormal system.  The factor out in front is to make the norm be 1.
+is an orthonormal system on $[-\pi,\pi]$.
+The factor out in front is to make the norm be 1.
 
 Having an orthonormal system $\{ \varphi_n \}_{n=1}^\infty$ on $[a,b]$ and an integrable function $f$
 on $[a,b]$, we can write
@@ -4788,7 +4789,7 @@ for all $t \in (-\delta,\delta)$, then
 In particular,
 if $f$ is continuously
 differentiable at $x$,
-then we obtain convergence (exercise).
+then we obtain convergence at $x$ (exercise).
 %We state an often-used version of this corollary.
 A function $f \colon [a,b] \to \C$ is
 \emph{\myindex{continuous piecewise smooth}}\index{piecewise smooth}
@@ -4833,7 +4834,7 @@ f(x)
 \end{split}
 \end{equation*}
 By the hypotheses,
-for small nonzero $t$ we get
+for small nonzero $t$,
 \begin{equation*}
 \abs{ \frac{f(x-t) - f(x)}{\sin(\nicefrac{t}{2})} }
 \leq
@@ -4909,7 +4910,7 @@ However, we saw that the rate of convergence,
 that is, how fast does $s_N(f)$
 converge to $f$, depends on global behavior of $f$.
 
-Note a subtle difference between the corollary and what 
+Note a subtle difference between the results above and what 
 \hyperref[thm:SWcomplex]{Stone--Weierstrass theorem} gives.
 %By Stone--Weierstrass, 
 Any continuous function on $[-\pi,\pi]$ can be uniformly approximated
@@ -5112,10 +5113,10 @@ exercise.
 \end{exercise}
 
 \begin{exercise}
-Given a $2\pi$-periodic function $f \colon \R \to \C$ Riemann integrable on
+Given a $2\pi$-periodic function $f \colon \R \to \C$, Riemann integrable on
 $[-\pi,\pi]$,
-and $\epsilon > 0$.
-Show that there exists a continuous $2\pi$-periodic function $g \colon \R
+and $\epsilon > 0$,
+show that there exists a continuous $2\pi$-periodic function $g \colon \R
 \to \C$ such that $\snorm{f-g}_2 < \epsilon$.
 \end{exercise}
 
