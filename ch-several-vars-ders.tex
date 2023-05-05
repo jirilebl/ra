@@ -3697,14 +3697,12 @@ differentiable.  Note that $f$ is vector-valued.
 \end{exercise}
 
 \begin{exercise}
-Suppose $g \colon \R \to \R$ is continuously differentiable and
-$h \colon \R^2 \to \R$ is continuous.  Show that
-\begin{equation*}
-F(x,y) \coloneqq g(x) + \int_0^y h(x,s) \,ds
-\end{equation*}
-is continuously differentiable, and that it is the solution of 
-the partial differential equation $\frac{\partial F}{\partial y} = h$,
-with the initial condition $F(x,0) = g(x)$ for all $x \in \R$.
+Suppose that $U \subset \R^n$ is open, $f \colon U \to \R^m$ is
+differentiable, there is an $M$ such that $\snorm{f'(p)} \leq M$
+for all $p \in U$, and $K \subset U$ is a compact set.  Prove that
+there exists an $M'$ (where $M' \geq M$), such that
+for all $p,q \in K$ we have $\snorm{f(p)-f(q)} \leq M' \snorm{p-q}$.
+Compare to \propref{mv:prop:convexlip}.
 \end{exercise}
 
 
