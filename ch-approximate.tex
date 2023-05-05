@@ -32,13 +32,12 @@ As $\C$ is just the plane, we also call the set $\C$ the
 \emph{\myindex{complex plane}}.
 
 Define:
-\begin{align*}
-& (x,y) + (s,t) \coloneqq (x+s,y+t) , \\
-& (x,y) (s,t) \coloneqq (xs-yt,xt+ys) .
-\end{align*}
+\begin{equation*}
+(x,y) + (s,t) \coloneqq (x+s,y+t) , \qquad
+(x,y) (s,t) \coloneqq (xs-yt,xt+ys) .
+\end{equation*}
 Under the identification above, we have $0 = (0,0)$ and $1 = (1,0)$.  These
 two operations make the plane into a field (exercise).
-
 We write a complex number $(x,y)$ as $x+iy$, where we
 define\footnote{Note that engineers use $j$ instead of $i$.}
 \glsadd{not:imaginary}
@@ -388,7 +387,6 @@ f(x) = \lim_{n\to \infty} \sum_{k=1}^n f_k(x) =
 The question is:
 If $f_n$ are all continuous, is $f$ continuous?  Differentiable?
 Integrable?  What are the derivatives or integrals of $f$?
-
 For example, for continuity of the pointwise limit of a sequence
 of functions
 $\{ f_n \}_{n=1}^\infty$, we are asking if
@@ -397,7 +395,7 @@ $\{ f_n \}_{n=1}^\infty$, we are asking if
 \overset{?}{=}
 \lim_{n\to\infty} \lim_{x\to x_0} f_n(x) .
 \end{equation*}
-A priori we do not even know if both sides exist, let alone if they equal each other.
+A priori, we do not even know if both sides exist, let alone if they equal each other.
 
 \begin{example}
 The functions $f_n \colon \R \to \R$,
@@ -1038,14 +1036,12 @@ f(z) = \sum_{n=0}^\infty c_n {(z-a)}^n
 \end{equation*}
 for all $z \in B(a,\rho)$.
 Then we say $f$ is an \emph{\myindex{analytic}} function.
-
 Similarly, given an interval $(a,b) \subset \R$, we say that $f \colon (a,b) \to \C$
 is analytic or perhaps \emph{\myindex{real-analytic}}
 if for each point $c \in
 (a,b)$ there is a power series around $c$ that converges in some
 $(c-\rho,c+\rho)$
 for some $\rho > 0$.
-
 As we will sometimes talk about real and sometimes about complex power
 series, we will use $z$ to denote a complex number and $x$ a real number.
 We will always mention which case we are working with.
@@ -1080,8 +1076,8 @@ and so we have already proved many results about complex power
 series.  In particular, we computed the so-called
 radius of convergence of a power series.
 
-\begin{samepage}
 \begin{prop}
+\pagebreak[2]
 Let $\sum_{n=0}^\infty c_n {(z-a)}^n$ be a power series.
 There exists a $\rho \in [0,\infty]$ such that
 \begin{enumerate}[(i)]
@@ -1094,7 +1090,6 @@ and diverges when $\sabs{z-a} > \rho$.
 Furthermore, if $0 < r < \rho$, then
 the series converges uniformly on the closed ball $C(a,r)$.
 \end{prop}
-\end{samepage}
 
 The number $\rho$ is the \emph{\myindex{radius of convergence}}.
 See \figureref{fig:radiusconvcomplex}.
@@ -1138,7 +1133,7 @@ If $\sum_{n=0}^\infty c_n {(z-a)}^n$ converges for some $z$, then
 \sum_{n=0}^\infty c_n {(w-a)}^n
 \end{equation*}
 converges absolutely whenever $\sabs{w-a} < \sabs{z-a}$.
-Conversely if the series diverges at $z$, then it must diverge at $w$
+Conversely, if the series diverges at $z$, then it must diverge at $w$
 whenever $\sabs{w-a} > \sabs{z-a}$.
 Hence, to show
 that the radius of convergence is at least some number, we simply need to
@@ -1393,7 +1388,7 @@ f(x) \coloneqq \sum_{k=0}^\infty a_k x^k
 \end{equation*}
 be a power series converging in $(-\rho,\rho)$ for some $\rho > 0$.  Given any $a \in
 (-\rho,\rho)$,
-and $x$ such that $\sabs{x-a} < \rho-\sabs{a}$, we obtain
+and $x$ such that $\sabs{x-a} < \rho-\sabs{a}$, we have
 \begin{equation*}
 f(x) =
 \sum_{k=0}^\infty \frac{f^{(k)}(a)}{k!} {(x-a)}^{k} .
