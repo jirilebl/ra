@@ -2180,23 +2180,27 @@ Use this to show that
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Fundamental theorem of algebra}
+\section{Maximum principle and the fundamental theorem of algebra}
 \label{sec:fundalgeb}
 
 \sectionnotes{half a lecture, optional}
 
-In this section we study the local behavior of polynomials
-and the growth of polynomials as $z$ goes to infinity.  As an application
-we prove the fundamental theorem of algebra: Any nonconstant polynomial
+In this section we study the local behavior of polynomials,
+and analytic functions in general, and the growth of polynomials as $z$ goes to infinity.
+As an application we prove the fundamental theorem of algebra: Any nonconstant polynomial
 has a complex root.
 
 \begin{lemma} \label{lemma:polyalwaysgetssmaller}
-Let $p(z)$ be a nonconstant complex polynomial.  If $p(z_0) \not= 0$, then there
-exist $w \in \C$ such that $\sabs{p(w)} < \sabs{p(z_0)}$.  In fact,
-we can pick $w$ to be arbitrarily close to $z_0$.
+Let $\epsilon > 0$,
+let $p(z)$ be a nonconstant complex polynomial, or more generally
+a nonconstant power series converging in $B(z_0,\epsilon)$,
+and suppose $p(z_0) \not= 0$.
+Then there exists a $w \in B(z_0,\epsilon)$ such that $\sabs{p(w)} < \sabs{p(z_0)}$.
 \end{lemma}
 
 \begin{proof}
+We prove this lemma for a polynomial and leave the general case as
+\exerciseref{exercise:minprinciple}.
 Without loss of generality assume that $z_0 = 0$ and $p(0) = 1$.  Write
 \begin{equation*}
 p(z) = 1+a_kz^k + a_{k+1}z^{k+1} + \cdots + a_d z^d ,
@@ -2247,16 +2251,27 @@ For small enough $r$, the expression in the parentheses is positive
 as $\sabs{a_k} > 0$.  Hence, $\abs{p(re^{it})} < 1 = p(0)$.
 \end{proof}
 
-\begin{remark}
-The lemma above holds essentially with an unchanged proof for (complex) analytic
-functions.  A proof of this generalization is left as an exercise to the reader.
 What the lemma
-says is that the only minima the modulus of analytic functions (polynomials)
+says is that the only minima the modulus of analytic functions
 has are precisely at the zeros.
-\end{remark}
+It is sometimes called the \emph{\myindex{minimum modulus principle}}.
+If $f$ is analytic and nonzero at a point,
+then $\nicefrac{1}{f}$ is analytic near that point.  Applying the lemma and
+the identity theorem, one obtains the \emph{maximum modulus principle}, or sometimes
+just the \emph{maximum principle}.
+
+\begin{thm}[Maximum modulus principle]\index{maximum modulus principle}%
+\index{maximum principle!analytic functions}%
+\label{thm:maxprinciple}
+If $U \subset \C$ is open and connected,
+$f \colon U \to \C$ is analytic, and $\sabs{f(z)}$ attains a relative
+maximum at $z_0 \in U$, then $f$ is constant.
+\end{thm}
+
+The details of the proof is left as \exerciseref{exercise:maxprinciple}.
 
 \begin{remark}
-The lemma does not hold if we restrict to the real numbers.  For
+The lemma (and the maximum principle) does not hold if we restrict to the real numbers.  For
 example, $x^2+1$ has a minimum at $x=0$, but no zero there.
 There is a $w$ arbitrarily close to $0$ such that $\sabs{w^2+1} < 1$, but this
 $w$ is necessarily not real.  Letting $w = i\epsilon$ for small
@@ -2264,9 +2279,9 @@ $\epsilon > 0$ works.
 \end{remark}
 
 The moral of the story is that if $p(0) = 1$, then very close to 0, the
-polynomial
+series (or polynomial)
 looks like $1+az^k$, and $1+az^k$ has no minimum at the origin.  All the higher
-powers of $z$ are too small to make a difference.  We find similar behavior
+powers of $z$ are too small to make a difference.  For polynomials, we find similar behavior
 at infinity.
 
 \begin{lemma}
@@ -2313,10 +2328,10 @@ Therefore,
 we can pick $R$ large enough to be bigger than a given $M$.
 \end{proof}
 
-The lemma above does \emph{not} generalize to analytic
-functions, even those defined on all of $\C$.  The function
+This second lemma does \emph{not} generalize to analytic
+functions, even those defined on the entire plane $\C$.  The function
 $\cos(z)$ is a counterexample.
-Note that we had to look
+We had to look
 at the term with the largest degree, and we only have such a term for
 a polynomial.  In fact, something that we will not prove is that
 an analytic function defined on all of $\C$ satisfying the conclusion
@@ -2344,22 +2359,19 @@ As that is a minimum of $\sabs{p(z)}$ on $\C$, then by the first lemma
 above, we have $\sabs{p(z_0)} = 0$.
 \end{proof}
 
-The fundamental theorem also does not generalize to analytic functions.  For example,
-$e^{z}$ is an analytic function on $\C$ with no zeros.
+The fundamental theorem also does not generalize to analytic functions.  The
+exponential $e^{z}$ is an analytic function on $\C$ with no zeros.
 
 \subsection{Exercises}
 
 \begin{exercise} \label{exercise:minprinciple}
 Prove \lemmaref{lemma:polyalwaysgetssmaller} for an analytic function.  That
-is, suppose that $p(z)$ is a power series around $z_0$.
+is, suppose that $p(z)$ is a nonconstant power series converging in
+$B(z_0,\epsilon)$.
 \end{exercise}
 
-\begin{exercise}
-Use \exerciseref{exercise:minprinciple} to prove the \emph{maximum
-principle for analytic functions}\index{maximum principle!analytic functions}:
-\emph{If $U \subset \C$ is open and connected,
-$f \colon U \to \C$ is analytic, and $\sabs{f(z)}$ attains a relative
-maximum at $z_0 \in U$, then $f$ is constant.}
+\begin{exercise} \label{exercise:maxprinciple}
+Use \lemmaref{lemma:polyalwaysgetssmaller} for analytic functions to prove \thmref{thm:maxprinciple}.
 \end{exercise}
 
 \begin{exercise}
