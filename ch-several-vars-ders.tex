@@ -1275,6 +1275,28 @@ It is also not difficult to compute the operator norm of the identity operator:
 \sup_{\substack{x \in X\\x\neq 0}} \frac{\snorm{x}}{\snorm{x}} 
 = 1.
 \end{equation*}
+The operator norm is not always so easy to compute using the definition
+alone, nor is it easy to read off the form of the operator.
+Consider $\R^2$ and the operator $A \in L(\R^2)$ that takes
+$(x,y)$ to $(x+y,2x)$.  
+Unit norm vectors can be written as
+$\bigl(\pm t, \pm \sqrt{1-t^2}\bigr)$
+for $t \in [0,1]$
+(or perhaps $\bigl(\cos(\theta), \sin(\theta) \bigr)$).
+One then maximizes
+\begin{equation*}
+\snorm{A(x,y)} = \sqrt{{\left(t \pm \sqrt{1-t^2}\right)}^2+4t^2}
+\end{equation*}
+to find $\snorm{A} = \sqrt{3+\sqrt{5}}$.
+More generally, one often does two steps.  For instance, consider
+the operator
+$B \in L\bigl(C([0,1],\R),\R\bigr)$
+taking a continuous $f$ to $f(0)$.  If $\snorm{f} = 1$ (the uniform norm),
+then clearly $\sabs{f(0)} \leq 1$, so $\sabs{Bf} \leq 1$, meaning
+$\snorm{B} \leq 1$.
+To prove it is equal to $1$, note that the constant function $1$ has
+norm $1$, so $B1 = 1$, meaning $\snorm{B} \geq 1$.
+So $\snorm{B}=1$.
 
 The operator norm is not always a norm on $L(X,Y)$, in particular,
 $\snorm{A}$ is not always finite for $A \in L(X,Y)$.
@@ -1415,9 +1437,10 @@ If $A \in GL(X)$, $B \in L(X)$, and
 \begin{equation} \label{eqcontineq}
 \snorm{A-B} <  \frac{1}{\snorm{A^{-1}}},
 \end{equation}
-then $B$ is invertible.
+then $B \in GL(X)$, that is, $B$ is invertible.
+In particular, $GL(X)$ is open.
 \item \label{finitedimpropinv:ii}
-$GL(X)$ is an open subset, and $A \mapsto A^{-1}$ is a continuous
+$A \mapsto A^{-1}$ is a continuous
 function on $GL(X)$.
 \end{enumerate}
 \end{prop}
@@ -1464,9 +1487,9 @@ $B$ is one-to-one; if $Bx = By$, then $B(x-y) = 0$, so $x=y$.
 As $B$ is a one-to-one linear mapping from $X$ to $X$, which is finite-dimensional,
 it is also onto by \propref{mv:prop:lin11onto}.
 Therefore, $B$ is invertible.
+It follows that, in particular, $GL(X)$ is open.
 
 Let us prove \ref{finitedimpropinv:ii}.
-Item \ref{finitedimpropinv:i} implies that $GL(X)$ is open.
 We must show that the inverse is continuous.
 Fix a $A \in GL(X)$.  Let $B$ be near $A$,
 specifically $\snorm{A-B} < \frac{1}{2 \snorm{A^{-1}}}$.
