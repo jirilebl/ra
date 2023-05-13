@@ -2545,7 +2545,7 @@ for all $x \in R$, then $\int_R f > 0$.
 \section{Jordan measurable sets}
 \label{sec:jordansets}
 
-\sectionnotes{1 lecture}
+\sectionnotes{1--1.5 lecture}
 
 \subsection{Volume and Jordan measurable sets}
 
@@ -2734,6 +2734,83 @@ possibly discontinuous at $\partial S$, which is a set of measure zero,
 and we are finished.
 \end{proof}
 
+We say some property
+\emph{\myindex{for almost every} $x$}\index{almost every} if it holds
+for all $x$ except on a set of measure zero.  We can also just say that
+it happens \emph{\myindex{almost everywhere}}.
+For example,
+we say $f \colon S \to \R$ and $g \colon S \to \R$ are equal almost
+everywhere if there exists a measure zero set $E \subset S$ such that
+$f(x) = g(x)$ for all $x \in S \setminus E$.
+
+\medskip
+
+Many of the standard properties of the integral just carry over easily
+since we are really integrating over a rectangle.  Furthermore, we can
+make some of the statements to be \emph{almost everywhere}.
+Proofs of the following three propositions left as exercises.
+
+\begin{prop} \label{prop:jordanintbasic}
+Suppose $S \subset \R^n$ is a bounded Jordan measurable set
+and $f \colon S \to \R$ and
+$g \colon S \to \R$ are Riemann integrable on $S$, and $\alpha \in \R$.
+Then
+\begin{enumerate}[(i)]
+\item
+If $f = 0$ almost everywhere, then $\int_S f = 0$.
+\item
+If $f = g$ almost everywhere, then $\int_S f = \int_S g$.
+\item
+$f+g$ is Riemann integrable on $S$ and $\int_S (f+g) = \int_S f + \int_S
+g$.
+\item
+$\alpha f$ is Riemann integrable on $S$ and $\int_S \alpha f = \alpha \int_S f$.
+\item
+If $f(x) \leq g(x)$ for almost every $x$, then $\int_S f \leq \int_S g$.
+\end{enumerate}
+\end{prop}
+
+We also have additivity.
+
+\begin{prop} \label{prop:jordanintadd}
+Suppose $A \subset \R^n$ and $B \subset \R^n$ are disjoint bounded Jordan
+measurable sets and $f \colon A \cup B \to \R$
+is such that the restrictions $f|_A$ and $f|_B$
+are Riemann integrable on $A$ and $B$ respectively.
+Then $f$ is Riemann integrable on $A \cup B$
+and
+\begin{equation*}
+\int_{A \cup B} f = \int_A f + \int_B f .
+\end{equation*}
+\end{prop}
+
+Finally, to integrate over non-rectangular regions using Fubini's theorem,
+the typical way is to cut the region into simpler pieces that can be
+described by two graphs.  We state the theorem in the plane, but similar
+statements can be made in more variables.  The proof is again left as an
+exercise.
+
+\begin{prop} \label{prop:intovertypeIset}
+Let $f \colon [a,b] \to \R$ and
+$g \colon [a,b] \to \R$ be continuous functions and such that
+for all $x \in (a,b)$, $f(x) < g(x)$.  Let
+\begin{equation*}
+U \coloneqq \bigl\{ (x,y) \in \R^2 : a < x < b \text{ and } f(x) < y < g(x) \bigr\} .
+\end{equation*}
+See \figureref{fig:typeIdomain}.
+Then $U$ is Jordan measurable, and if 
+$\varphi \colon U \to \R$ is Riemann integrable on $U$, then
+\begin{equation*}
+\int_U \varphi =
+\int_a^b \int_{f(x)}^{g(x)} \varphi(x,y) \, dy \, dx .
+\end{equation*}
+\end{prop}
+
+\begin{myfigureht}
+\includegraphics{figures/typeIdomain}
+\caption{Domain between two graphs.\label{fig:typeIdomain}}
+\end{myfigureht}
+
 \subsection{Images of Jordan measurable subsets}
 
 Finally, images of Jordan measurable sets are Jordan measurable under
@@ -2792,26 +2869,17 @@ Prove that a bounded convex set is Jordan measurable.  Hint: Induction on
 dimension.
 \end{exercise}
 
-\begin{samepage}
 \begin{exercise} \label{exercise:intovertypeIset}
-Let $f \colon [a,b] \to \R$ and
-$g \colon [a,b] \to \R$ be continuous functions and such that
-for all $x \in (a,b)$, $f(x) < g(x)$.  Let
-\begin{equation*}
-U \coloneqq \bigl\{ (x,y) \in \R^2 : a < x < b \text{ and } f(x) < y < g(x) \bigr\} .
-\end{equation*}
+Prove \propref{prop:intovertypeIset}.  That is,
 \begin{enumerate}[a)]
 \item
 Show that $U$ is Jordan measurable.
 \item
-If $\varphi \colon U \to \R$ is Riemann integrable on $U$, then
-\begin{equation*}
-\int_U \varphi =
-\int_a^b \int_{g(x)}^{f(x)} \varphi(x,y) \, dy \, dx .
-\end{equation*}
+Prove that
+$\int_U \varphi =
+\int_a^b \int_{f(x)}^{g(x)} \varphi(x,y) \, dy \, dx$.
 \end{enumerate}
 \end{exercise}
-\end{samepage}
 
 \begin{exercise}
 Let us construct an example of a non-Jordan measurable open set.
@@ -2859,6 +2927,14 @@ and $K \subset S^\circ$ ($K$ is in the interior of $S$).
 \begin{exercise} \label{exercise:closednessofriemannintegrable}
 Prove a version of \corref{cor:closednessofriemannintegrable}, replacing all closed
 rectangles with closed and bounded Jordan measurable sets.
+\end{exercise}
+
+\begin{exercise}
+Prove \propref{prop:jordanintbasic}.
+\end{exercise}
+
+\begin{exercise}
+Prove \propref{prop:jordanintadd}.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3015,7 +3091,7 @@ We will only prove Green's theorem for type III domains.
 
 \begin{proof}[Proof of Green's theorem for $U$ of type III]
 Let $f,g,h,k$ be the functions defined above.
-Using \exerciseref{exercise:intovertypeIset},
+Using \propref{prop:intovertypeIset},
 $U$ is Jordan measurable and as $U$ is of type I\@, then
 \begin{equation*}
 \begin{split}

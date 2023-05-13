@@ -1,0 +1,61 @@
+/* slightly modified sample from epix samples gallery */
+#include "epix.h"
+using namespace ePiX;
+
+double
+f(double x)
+{
+	double xx = x-0;
+
+	return xx*(xx-0.2)*(xx-1.0)+0.2*(1.0-xx);
+}
+
+double
+g(double x)
+{
+	double xx = x-0;
+
+	return 1.0-(xx-0.1)*(xx-0.7)*(xx-1.0);
+}
+
+int main()
+{
+  int n;
+
+  picture(P(-0.2,-0.5), P(1.2,1.25), "2.5x1.8in");
+
+  begin();
+  //border();
+
+  fill(Black(0.2));
+  shadeplot(f,g,0.0,1.0,20);
+
+  bold();
+  line(P(0,f(0)),P(0,g(0)));
+  line(P(1,f(1)),P(1,g(1)));
+
+  plot(f,0.0,1.0,20);
+  plot(g,0.0,1.0,20);
+
+  plain();
+  for (n=1; n<10; n++) {
+	  double x = n/10.0;
+	  line(P(x,f(x)),P(x,g(x)));
+  }
+
+  line(P(xmin(),-0.31),P(xmax(),-0.31));
+  line(P(-0.15,ymin()),P(-0.15,ymax()));
+
+  line(P(0,-0.31+0.07),P(0,-0.31-0.07));
+  line(P(1,-0.31+0.07),P(1,-0.31-0.07));
+
+  label(P(0,-0.5), P(0,0), "$a$", t);
+  label(P(1,-0.5), P(0,0), "$b$", t);
+
+  label(P(0.20,0.03), P(0,0), "$y=f(x)$", b);
+  label(P(0.8,1.08), P(0,0), "$y=g(x)$", t);
+
+  tikz_format();
+  end();
+}
+
