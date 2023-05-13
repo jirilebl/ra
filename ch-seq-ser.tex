@@ -303,7 +303,8 @@ are shown in
 graph.\label{figsequenceincreasing}}
 \end{myfigureht}
 
-\begin{prop} \label{prop:monotoneconv}
+\begin{thm}[Monotone convergence theorem] \label{thm:monotoneconv}
+\index{monotone convergence theorem}%
 A monotone sequence $\{ x_n \}_{n=1}^\infty$ is bounded if and only if it is convergent.
 
 Furthermore, if $\{ x_n \}_{n=1}^\infty$ is monotone increasing and bounded, then
@@ -314,7 +315,7 @@ If $\{ x_n \}_{n=1}^\infty$ is monotone decreasing and bounded, then
 \begin{equation*}
 \lim_{n\to \infty} x_n = \inf \{ x_n : n \in \N \} .
 \end{equation*}
-\end{prop}
+\end{thm}
 
 \begin{proof}
 Consider a monotone increasing sequence $\{ x_n \}_{n=1}^\infty$.  Suppose 
@@ -340,9 +341,9 @@ is bounded.
 The proof for monotone decreasing sequences is left as an exercise.
 \end{proof}
 
-Note that a monotone increasing sequence $\{ x_n \}_{n=1}^\infty$
+A monotone increasing sequence $\{ x_n \}_{n=1}^\infty$
 is always bounded from below since $x_1 \leq x_2 \leq \cdots \leq x_n$
-for any $n$, so $x_1$ is a lower bound.  It to see if a 
+for any $n$, so $x_1$ is a lower bound.  So to see if a 
 monotone increasing sequence is bounded, it is enough to check if
 it is bounded above.  Similarly, a monotone decreasing sequence
 is always bounded from above, so it is enough to check whether it
@@ -361,7 +362,7 @@ we obtain
 \frac{1}{\sqrt{n+1}} \leq \frac{1}{\sqrt{n}} .
 \end{equation*}
 So the sequence is monotone decreasing and bounded below (hence
-bounded).  Via \propref{prop:monotoneconv} we find that the sequence is
+bounded).  Via \thmref{thm:monotoneconv} we find that the sequence is
 convergent and
 \begin{equation*}
 \lim_{n\to \infty} \frac{1}{\sqrt{n}}
@@ -384,11 +385,12 @@ Hence, $b=0$ is the greatest lower bound, and $\lim\limits_{n\to\infty} \frac{1}
 
 \begin{example}
 A word of caution:  Showing that a monotone sequence is bounded
-in order to use \propref{prop:monotoneconv} may be difficult.
+in order to use \thmref{thm:monotoneconv} may be difficult.
 The sequence
 $\{ 1 + \nicefrac{1}{2} + \cdots + \nicefrac{1}{n} \}_{n=1}^\infty$
 is a monotone increasing
-sequence that grows very slowly.  We will see, once we get to series,
+sequence that grows slowly and in fact grows slower and slower as $n$ gets
+larger.  We will see, once we get to series,
 that this sequence has no upper bound and so does not converge.  It is not
 at all obvious that this sequence has no upper bound.
 \end{example}
@@ -661,18 +663,18 @@ convergent?  If so, what is the limit?
 \begin{exercise}
 Show that the sequence
 $\left\{ \dfrac{1}{\sqrt[3]{n}} \right\}_{n=1}^\infty$ is monotone and bounded.  Then use
-\propref{prop:monotoneconv} to find the limit.
+\thmref{thm:monotoneconv} to find the limit.
 \end{exercise}
 
 \begin{exercise}
 Show that the sequence
 $\left\{ \dfrac{n+1}{n} \right\}_{n=1}^\infty$
 is monotone and bounded.  Then use
-\propref{prop:monotoneconv} to find the limit.
+\thmref{thm:monotoneconv} to find the limit.
 \end{exercise}
 
 \begin{exercise}
-Finish the proof of \propref{prop:monotoneconv} for monotone decreasing
+Finish the proof of \thmref{thm:monotoneconv} for monotone decreasing
 sequences.
 \end{exercise}
 
@@ -2288,7 +2290,7 @@ $\{ b_n \}_{n=1}^\infty$ is increasing.
 
 If the sequence $\{ a_n \}_{n=1}^\infty$ is a sequence of real numbers, then
 $\lim_{n\to\infty} a_n = \inf \{ a_n : n \in \N \}$.  This follows from
-\propref{prop:monotoneconv} if $\{ a_n \}_{n=1}^\infty$ is bounded and
+\thmref{thm:monotoneconv} if $\{ a_n \}_{n=1}^\infty$ is bounded and
 \propref{prop:unboundedmonotone} if $\{a_n \}_{n=1}^\infty$
 is unbounded.  We proceed similarly with $\{ b_n \}_{n=1}^\infty$.
 \end{proof}

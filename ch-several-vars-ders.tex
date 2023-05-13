@@ -753,9 +753,14 @@ uniqueness of the representation of $x$.
 We leave it to the reader to check that $A$ is linear.
 \end{proof}
 
-The next proposition only works for finite-dimensional vector spaces.
-It is a special case of the so-called rank-nullity theorem from linear
-algebra.
+For a linear map, it is sufficient to check injectivity at the origin.
+That is, if the only $x$ such that $Ax =0$ is $x=0$, then $A$ is one-to-one,
+because if $Ay=Az$, then $A(y-z) = 0$.  For this reason, 
+one often studies the \emph{\myindex{nullspace}} of $A$, that is,
+$\{ x \in X : Ax = 0 \}$.
+For finite-dimensional vector spaces (and only in finitely many dimensions)
+we have the following special case of the
+so-called rank-nullity theorem from linear algebra.
 
 \begin{prop} \label{mv:prop:lin11onto}
 If $X$ is a finite-dimensional vector space and $A \in L(X)$, then $A$ is one-to-one if and only if it is onto.
@@ -781,14 +786,13 @@ and so $c_k = 0$ for all $k$ as $\{ x_1,x_2,\ldots,x_n \}$ is a basis.
 So $\{ Ax_1, Ax_2, \ldots, Ax_n \}$ is linearly independent.
 By \propref{mv:dimprop}
 and the fact that the dimension is $n$, we conclude
-$\{ Ax_1, Ax_2, \ldots, Ax_n \}$ spans $X$.  Any point $x \in X$
-can be written as
+$\{ Ax_1, Ax_2, \ldots, Ax_n \}$ spans $X$.  Consequently, $A$ is onto,
+as any $y \in X$ can be written as
 \begin{equation*}
-x = \sum_{k=1}^n a_k \, Ax_k =
-A\sum_{k=1}^n a_k \, x_k ,
+y = \sum_{k=1}^n a_k \, Ax_k =
+A\sum_{k=1}^n a_k \, x_k .
 \avoidbreak
 \end{equation*}
-so $A$ is onto.
 
 For the other direction, suppose $A$ is onto.
 Suppose that for some
@@ -801,8 +805,7 @@ As $A$ is determined by the action on the basis,
 $\{ Ax_1, Ax_2, \ldots, Ax_n \}$ spans $X$.
 So by \propref{mv:dimprop}, the set is linearly independent,
 and $c_k = 0$ for all $k$.  In other words, if $Ax = 0$, then $x=0$.
-Thus, $A$ is one-to-one:  If $Ax = Ay$, then $A(x-y) = 0$ and so
-$x=y$.
+Thus, $A$ is one-to-one.
 \end{proof}
 
 We leave the proof of the next proposition as an exercise.
