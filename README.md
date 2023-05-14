@@ -36,7 +36,7 @@ Work in progress stuff:
 
 * wip/realanal3.tex is an unfinished set of topics possibly to just add
   to Volume II
-* similarly wip/extras.tex and wip/stieltjes.tex
+* similarly wip/extras.tex and wip/stieltjes.tex wip/green.tex
 
 On the scripts:
 
