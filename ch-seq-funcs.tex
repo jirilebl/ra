@@ -897,7 +897,13 @@ converge pointwise to 0,
 but the reader can check that the convergence is not uniform on any
 interval containing $0$.
 The limit of $f_n$ is not differentiable at $0$---it is not even
-continuous at $0$.
+continuous at $0$.  See \figureref{fig:convder1over1pnxsq}.
+\begin{myfigureht}
+\includegraphics{figures/convder1over1pnxsq}
+\caption{Graphs of $\frac{1}{1+nx^2}$ and its derivatives
+for $n=1,2,\ldots,10$, with higher $n$ in lighter gray.%
+\label{fig:convder1over1pnxsq}}
+\end{myfigureht}
 \end{example}
 
 See the exercises for more examples.  Using 
@@ -1448,6 +1454,15 @@ is discontinuous at every rational number and continuous at every
 irrational number.  In particular, $\lim\limits_{n\to\infty} g_n'(x) \not= 0$ for
 every rational number~$x$.
 \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[requires \sectionref{sec:impropriemann}]
+Show that uniform convergence is not enough to pass the limit through
+improper integrals over infinite intervals.
+That is, find a sequence of functions $f_n \colon \R \to
+\R$ Riemann integrable on every bounded interval,
+converging uniformly to zero, and such that
+$\int_{-\infty}^\infty f_n = 1$ for every $n$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
