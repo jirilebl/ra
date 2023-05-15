@@ -434,7 +434,8 @@ we conclude $\int_0^2 f = 1$.
 \end{example}
 
 It may be worthwhile to extract part of the technique of the example into a
-proposition.
+proposition.  Note that $U(P,f)-L(P,f)$ is exactly the total area of the white
+part of the rectangles in \figureref{darbouxfig}.
 
 \begin{prop}
 Let $f \colon [a,b] \to \R$ be a bounded function.  Then $f$ is Riemann
@@ -464,10 +465,10 @@ We will see later that continuous functions are integrable, but let us
 demonstrate how we do it directly.
 
 Let $\epsilon > 0$ be given.  Take $n \in \N$ and
-pick $x_i \coloneqq \nicefrac{ib}{n}$, to form the 
+let $x_i \coloneqq \nicefrac{ib}{n}$ form the 
 partition $P \coloneqq \{ x_0,x_1,\ldots,x_n \}$ of $[0,b]$.
-We have $\Delta x_i = \nicefrac{b}{n}$ for all $i$.  
-As $f$ is decreasing, for every subinterval $[x_{i-1},x_i]$, we obtain
+Then $\Delta x_i = \nicefrac{b}{n}$ for all $i$.  
+As $f$ is decreasing, for every subinterval $[x_{i-1},x_i]$,
 \begin{equation*}
 m_i = \inf \left\{ \frac{1}{1+x} : x \in [x_{i-1},x_i] \right\} = \frac{1}{1+x_i} ,
 \quad
