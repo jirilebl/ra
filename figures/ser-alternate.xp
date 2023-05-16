@@ -1,0 +1,82 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+#include <stdio.h>
+
+double
+xn[] =
+{
+	1.0,
+	0.8,
+	0.7,
+	0.55,
+	0.45,
+	0.3,
+	0.2,
+	0.13,
+};
+
+int main() 
+{
+	int i;
+	picture(P(-2.4,-1.0), P(9.0,1.0), "4x2in");
+
+	begin();   
+	//border();
+
+	h_axis(P(0,0),P(8,0),8);
+	v_axis(P(0,-1),P(0,1),2);
+
+	line_style("...");
+	line(P(8,0),P(8.6,0));
+	solid();
+
+
+	dot_size(5);
+	for (int i = 1; i <= 8; i+=2) {
+		char num[20];
+		solid();
+		line(P(i,0),P(i,-xn[i-1]));
+		ddot(P(i, -xn[i-1]));
+
+		line_style("- - ");
+		line(P(-0.5,-xn[i-1]),P(i,-xn[i-1]));
+
+		sprintf(num, "$-x_{%d}$", i);
+		label(P(i,-xn[i-1]),P(5,0),num,r);
+	}
+
+	for (int i = 2; i <= 8; i+=2) {
+		char num[20];
+
+		solid();
+		line(P(i,0),P(i,xn[i-1]));
+		ddot(P(i, xn[i-1]));
+
+		line_style("...");
+		line(P(i,0),P(i,-xn[i-1]));
+		ddot(P(i, -xn[i-1]));
+
+		line_style("- - ");
+		line(P(-0.5,-xn[i-1]),P(i,-xn[i-1]));
+
+		solid();
+		bold();
+		line(P(-0.45,-xn[i-1]),P(-0.45,-xn[i-2]));
+		plain();
+
+		sprintf(num, "$-x_{%d}+x_{%d}$", i-1, i);
+		label(P(-0.6,(-xn[i-1]-xn[i-2])/2.0),P(0,0),num,l);
+
+		sprintf(num, "$-x_{%d}$", i);
+		label(P(i,-xn[i-1]),P(5,0),num,r);
+
+		sprintf(num, "$x_{%d}$", i);
+		label(P(i,xn[i-1]),P(5,0),num,r);
+	}
+
+	tikz_format();
+	end();
+}
+

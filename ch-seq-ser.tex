@@ -39,7 +39,7 @@ We similarly define the words
 \end{defn}
 
 When we need
-to give a concrete sequence we often give each term as a formula in
+to give a concrete sequence, we often give each term as a formula in
 terms of $n$.
 For example, $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ stands for
 the sequence $1, \nicefrac{1}{2}, \nicefrac{1}{3}, \nicefrac{1}{4},
@@ -107,7 +107,7 @@ and quite common, that there is no $x_n$ in the sequence that equals the
 limit $x$.
 We illustrate the concept in \figureref{figsequenceconvergence}.  In the
 figure we first think of the sequence as a graph, as it is a function of
-$\N$.   Secondly we also plot it as a sequence of labeled points on the real
+$\N$.   Secondly, we also plot it as a sequence of labeled points on the real
 line.
 
 \begin{myfigureht}
@@ -3697,7 +3697,7 @@ Therefore, the series converges absolutely by the ratio test.
 
 \begin{exercise}
 Suppose the $k$th partial sum of $\displaystyle \sum_{n=1}^\infty x_n$ is $s_k = \frac{k}{k+1}$.
-Find the series, that is find $x_n$, prove that the series converges, and
+Find the series, that is, find $x_n$, prove that the series converges, and
 then find the limit.
 \end{exercise}
 
@@ -4015,9 +4015,15 @@ is a decreasing sequence.  Similarly, $(x_{2\ell}-x_{2\ell+1}) \geq 0$, and so
 s_{2k} = - x_1 + ( x_2 - x_3 ) + \cdots + ( x_{2k-2} - x_{2k-1} ) + x_{2k}
 \geq -x_1 .
 \end{equation*}
+The intuition behind the bound
+$0 \geq s_{2k} \geq -x_1$ is illustrated in \figureref{fig:seralternate}.
+\begin{myfigureht}
+\includegraphics{figures/ser-alternate}
+\caption{Showing that $0 \geq s_{2k} \geq -x_1$ where $k=4$ for an alternating series.\label{fig:seralternate}}
+\end{myfigureht}
+
 As $\{ s_{2k} \}_{k=1}^\infty$ is decreasing and bounded below, it converges.
 Let $a \coloneqq \lim_{k\to\infty} s_{2k}$.
-
 We wish to show that $\lim_{m\to\infty} s_m = a$ (and not just for the subsequence).
 Given $\epsilon > 0$, pick $M$ such that $\abs{s_{2k}-a} <
 \nicefrac{\epsilon}{2}$ whenever $k \geq M$.
@@ -4143,7 +4149,7 @@ that is, $\sigma(n) \not= k$ for all $n \leq N$.
 Otherwise, let $\sigma(N+1) \coloneqq k$ 
 be the smallest even $k$ that we have not yet used.
 
-By construction $\sigma \colon \N \to \N$ is one-to-one.
+By construction, $\sigma \colon \N \to \N$ is one-to-one.
 It is also onto, because if we keep adding either odd (resp.\ even) terms,
 eventually we pass $L$ and switch
 to the evens (resp.\ odds).  So we switch infinitely many times.
@@ -4156,11 +4162,12 @@ and let $N' > N$ be where we first switch back from even to odd.  Then
 L + \frac{1}{\sigma(N)} \geq \sum_{n=1}^{N-1} a_{\sigma(n)}
 > \sum_{n=1}^{N'-1} a_{\sigma(n)} > L- \frac{1}{\sigma(N')}.
 \end{equation*}
-Similarly for switching in the other direction.  Therefore,
+Similarly for switching in the other direction.
+Therefore,
 the sum up to $N'-1$ is within $\frac{1}{\min \{ \sigma(N), \sigma(N') \}}$
 of $L$.  As
-we switch infinitely many times we obtain that $\sigma(N) \to \infty$
-and $\sigma(N') \to \infty$, and hence
+we switch infinitely many times, $\sigma(N) \to \infty$
+and $\sigma(N') \to \infty$. Hence
 \begin{equation*}
 \sum_{n=1}^\infty a_{\sigma(n)} = 
 \sum_{n=1}^\infty \frac{{(-1)}^{\sigma(n)+1}}{\sigma(n)} = L .
@@ -4176,7 +4183,7 @@ At this point we are no more than $\nicefrac{1}{8}$ from the limit.
 See \figureref{fig:serrearrange}.
 \begin{myfigureht}
 \includegraphics{figures/ser-rearrange}
-\caption{The first 14 partial sums of the rearrangement convering
+\caption{The first 14 partial sums of the rearrangement converging
 to $1.2$.\label{fig:serrearrange}}
 \end{myfigureht}
 \end{example}
@@ -4257,9 +4264,10 @@ for all $m \geq K$,
 \sum_{n=K}^m \abs{a_n} < \epsilon .
 \end{equation*}
 As $\sum_{n=0}^\infty b_n$ converges, then
-we have that
-$B_{\text{max}} \coloneqq \sup \{ \abs{ B_n - B } : n = 0,1,2,\ldots \}$
-is finite.  Take $m \geq 2K$, then in particular $m-K+1 > K$.  So
+$B_{\text{max}} \coloneqq \sup \bigl\{ \abs{ B_n - B } : n = 0,1,2,\ldots
+\bigr\}$
+is finite.  Take $m \geq 2K$.
+In particular $m-K+1 > K$.  So
 \begin{equation*}
 \begin{split}
 \sum_{n=0}^m
@@ -4385,7 +4393,7 @@ is a series of the form
 A power series is really a function of $x$, and
 many important functions in analysis can be written
 as a power series.  We use the convention that
-$0^0 = 1$ (if $x=x_0$ and $n=0$).
+$0^0 = 1$ (that is, if $x=x_0$ and $n=0$).
 
 A power series is said to be
 \emph{convergent}\index{convergent!power series} if
@@ -4875,13 +4883,13 @@ Suppose let $\{ x_{k,\ell} \}_{k=1,\ell=1}^\infty$ denote a doubly
 indexed sequence and let $\sigma \colon \N \to \N^2$ be a bijection.
 Consider the series
 \begin{equation*}
-i)~\sum_{i=1}^\infty x_{\sigma(i)}
+\text{i)}~\sum_{i=1}^\infty x_{\sigma(i)},
 \qquad
-ii)~\sum_{k=1}^\infty \left( \sum_{\ell=1}^\infty x_{k,\ell} \right)
+\text{ii)}~\sum_{k=1}^\infty \left( \sum_{\ell=1}^\infty x_{k,\ell} \right),
 \qquad
-iii)~\sum_{\ell=1}^\infty \left( \sum_{k=1}^\infty x_{k,\ell} \right) .
+\text{iii)}~\sum_{\ell=1}^\infty \left( \sum_{k=1}^\infty x_{k,\ell} \right) .
 \end{equation*}
-The ii) and iii) are series of series and so we say they converge
+The expressions ii) and iii) are series of series and so we say they converge
 if the inner series always converges and the outer series then also
 converges.
 \begin{enumerate}[a)]
