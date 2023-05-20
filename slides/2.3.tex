@@ -20,8 +20,8 @@ Departemento pri Matematiko de Oklahoma {\^S}tata Universitato}
 \end{frame}
 
 \begin{frame}
-\textbf{Example:} 
-The sequence $\{ {(-1)}^n \}$ is bounded but divergent.
+\textbf{Example:}
+$\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ is bounded but divergent.
 
 \pause
 But there are convergent subsequences converging to $-1$ and $1$.
@@ -32,20 +32,20 @@ Let's get at these limits.
 \medskip
 \pause
 
-If $\{ x_n \}$ is bounded, then for every $n \in \N$, the set $\{ x_k : k \geq n \}$
+If $\{ x_n \}_{n=1}^\infty$ is bounded, then for every $n \in \N$, the set $\{ x_k : k \geq n \}$
 is bounded.
 
 \pause
 
 \begin{definition}
-Let $\{ x_n \}$ be a bounded sequence.
+Let $\{ x_n \}_{n=1}^\infty$ be a bounded sequence.
 
 \medskip
 \pause
 
 Define
 $a_n \coloneqq \sup \{ x_k : k \geq n \}$ and
-$b_n \coloneqq \inf \{ x_k : k \geq n \}$.  
+$b_n \coloneqq \inf \{ x_k : k \geq n \}$.
 
 \medskip
 \pause
@@ -56,10 +56,10 @@ Define, if the limits exist,
 
 \quad
 $\displaystyle
-\limsup_{n \to \infty} \, x_n \coloneqq \lim_{n \to \infty} a_n$,
+\limsup_{n \to \infty} x_n \coloneqq \lim_{n \to \infty} a_n$,
 \qquad
 $\displaystyle
-\liminf_{n \to \infty} \, x_n \coloneqq \lim_{n \to \infty} b_n$.
+\liminf_{n \to \infty} x_n \coloneqq \lim_{n \to \infty} b_n$.
 \end{definition}
 
 \pause
@@ -72,7 +72,7 @@ $\liminf$ is called \emph{limit inferior}.
 \begin{frame}
 
 \textbf{Example:}
-Consider a sequence $\{x_n\}$:
+Consider $\{x_n\}_{n=1}^\infty$:
 
 \medskip
 
@@ -80,7 +80,7 @@ Consider a sequence $\{x_n\}$:
 
 \medskip
 
-Terms $x_n$ of the sequence are marked with dots (\raisebox{0.25ex}{\tiny$\bullet$}),
+$x_n$ are marked with dots (\raisebox{0.25ex}{\tiny$\bullet$}),
 
 $a_n$ are marked with circles ($\circ$),
 
@@ -91,22 +91,21 @@ $b_n$ are marked with diamonds ($\diamond$).
 \begin{frame}
 
 \begin{proposition}
-Let $\{ x_n \}$ be a bounded sequence.  Let $a_n$ and $b_n$ be as in
-the definition above.
+Let $\{ x_n \}_{n=1}^\infty$ be a bounded sequence.  Let $a_n$ and $b_n$ be
+as above.
 \pause
 \begin{enumerate}[(i)]
 \item
-The
-sequence $\{ a_n \}$ is bounded monotone decreasing
-and $\{ b_n \}$ is bounded monotone increasing.  In particular,
-$\liminf x_n$ and $\limsup x_n$ exist.
+$\{ a_n \}_{n=1}^\infty$ is bounded monotone decreasing
+and $\{ b_n \}_{n=1}^\infty$ is bounded monotone increasing.  In particular,
+$\liminf\limits_{n\to\infty} x_n$ and $\limsup\limits_{n\to\infty} x_n$ exist.
 \item\pause
-$\displaystyle \limsup_{n \to \infty} \, x_n = \inf \{ a_n : n \in \N \}$
+$\displaystyle \limsup_{n \to \infty} x_n = \inf \{ a_n : n \in \N \}$
 and
-$\displaystyle \liminf_{n \to \infty} \, x_n = \sup \{ b_n : n \in \N \}$.
+$\displaystyle \liminf_{n \to \infty} x_n = \sup \{ b_n : n \in \N \}$.
 \item\pause
-$\displaystyle \liminf_{n \to \infty} \, x_n \leq
-\limsup_{n \to \infty} \, x_n$.
+$\displaystyle \liminf_{n \to \infty} x_n \leq
+\limsup_{n \to \infty} x_n$.
 \end{enumerate}
 \end{proposition}
 
@@ -120,21 +119,21 @@ $\{ x_k : k \geq (n+1) \}$
 \pause
 
 \thus \quad $a_{n+1} \leq a_n$ for all $n$.
-
 %\medskip
 \pause
-
-Similarly for $\{ b_n \}$ (exercise).
-
-\pause
-\medskip
-
-Exercise: $\{a_n \}$ and $\{ b_n \}$ bounded.
+\quad
+Similarly for $\{ b_n \}_{n=1}^\infty$ (exercise).
 
 \pause
 \medskip
 
-(ii) follows.
+\textbf{Exercise:}
+$\{a_n \}_{n=1}^\infty$ and $\{ b_n \}_{n=1}^\infty$ bounded.
+
+\pause
+\medskip
+
+(ii) follows from (i).
 
 \pause
 \medskip
@@ -143,10 +142,10 @@ Exercise: $\{a_n \}$ and $\{ b_n \}$ bounded.
 $b_n \leq a_n$ for all $n$ \quad ($\inf \leq \sup$ for a nonempty set)
 
 \pause
-$b_n \to \liminf x_n$ and $a_n \to \limsup x_n$
-
+$b_n \to \liminf\limits_{n\to\infty} x_n$ \quad
+and \quad $a_n \to \limsup\limits_{n\to\infty} x_n$
 \pause
-\thus \quad $\liminf x_n \leq \limsup x_n$ \qed
+\wthus $\liminf\limits_{n\to\infty} x_n \leq \limsup\limits_{n\to\infty} x_n$ \qed
 
 \end{frame}
 
@@ -157,7 +156,7 @@ $b_n \to \liminf x_n$ and $a_n \to \limsup x_n$
 \vspace*{-1.5in}
 
 \textbf{Example:}
-Consider $\{ x_n \}$,
+Consider $\{ x_n \}_{n=1}^\infty$,
 
 \medskip
 
@@ -173,7 +172,7 @@ $
 \medskip
 
 $\displaystyle
-\liminf_{n\to\infty} \, x_n = 
+\liminf_{n\to\infty} x_n =
 \lim_{n\to\infty}
 \bigl(
 \inf \{ x_k : k \geq n \}
@@ -194,7 +193,7 @@ $\displaystyle
 \medskip
 
 $\displaystyle
-\limsup_{n\to\infty} \, x_n = 
+\limsup_{n\to\infty} x_n =
 \lim_{n\to\infty}
 \bigl(
 \sup \{ x_k : k \geq n \}
@@ -214,37 +213,39 @@ $\displaystyle
 \pause
 \medskip
 
-We leave it to the reader to show that $\displaystyle \limsup_{n\to\infty} \, x_n = 1$.
+\textbf{Exercise:} $\displaystyle \limsup_{n\to\infty} x_n = 1$.
 
 \end{frame}
 
 \begin{frame}
 
-\textbf{Remark:} $\{ a_n \}$ and $\{b_n\}$ are \textbf{not} subsequences of $\{x_n\}$.
+\textbf{Remark:} $\{ a_n \}_{n=1}^\infty$ and $\{b_n\}_{n=1}^\infty$ are
+\textbf{not} subsequences of $\{x_n\}_{n=1}^\infty$.
 
 \pause
-Example: If $x_n = \frac{1}{n}$, then $b_n = 0$ for all $n$.
+\textbf{Example:} If $x_n = \frac{1}{n}$, then $b_n = 0$ for all $n$.
 
 \pause
 \begin{theorem}
-Suppose $\{ x_n \}$ is a bounded sequence.
+Suppose $\{ x_n \}_{n=1}^\infty$ is a bounded sequence.
 
 \pause
-Then $\exists$ a subsequence $\{ x_{n_k} \}$ such that
+Then $\exists$ a subsequence $\{ x_{n_k} \}_{k=1}^\infty$ such that
 \quad
-$\displaystyle \lim_{k\to \infty} x_{n_k} = \limsup_{n \to \infty} \, x_n$.
+$\displaystyle \lim_{k\to \infty} x_{n_k} = \limsup_{n \to \infty} x_n$.
 
 \pause
 Also, $\exists$ a subsequence
-$\{ x_{m_k} \}$ such that
+$\{ x_{m_k} \}_{k=1}^\infty$ such that
 \quad
-$\displaystyle 
-\lim_{k\to \infty} x_{m_k} = \liminf_{n \to \infty} \, x_n$.
+$\displaystyle
+\lim_{k\to \infty} x_{m_k} = \liminf_{n \to \infty} x_n$.
 \end{theorem}
 
 \pause
 \textbf{Proof:}
-If $a_n \coloneqq \sup \{ x_k : k \geq n \}$, let $x \coloneqq \limsup \, x_n = \lim\, a_n$.
+If $a_n \coloneqq \sup \{ x_k : k \geq n \}$,
+let $\displaystyle x \coloneqq \limsup_{n\to\infty} x_n = \lim_{n\to\infty} a_n$.
 
 \pause
 Let $n_1 \coloneqq 1$ and suppose we defined $n_1,\ldots,n_{k-1}$.
@@ -257,7 +258,7 @@ $\exists$ $m \geq n_{k-1} + 1$ such that
 \pause
 \medskip
 
-Let $n_{k} \coloneqq  m$.  The subsequence $\{ x_{n_k} \}$ is defined.
+Let $n_{k} \coloneqq m$.  The subsequence $\{ x_{n_k} \}_{k=1}^\infty$ is defined.
 
 \pause
 \medskip
@@ -266,7 +267,7 @@ For $k \geq 2$, ~ $a_{(n_{k-1}+1)} \geq a_{n_k}$ (why?) and $a_{n_{k}} \geq x_{n
 
 \pause
 \thus \quad for $k \geq 2$,
-\quad $\displaystyle \abs{a_{n_k} - x_{n_k}} = 
+\quad $\displaystyle \abs{a_{n_k} - x_{n_k}} =
 a_{n_k} - x_{n_k}
 \pause
 \leq
@@ -277,13 +278,13 @@ a_{(n_{k-1}+1)} - x_{n_k}
 \pause
 \medskip
 
-Next we show $\{ x_{n_k} \}$ converges to $x$.
+Next we show $\{ x_{n_k} \}_{k=1}^\infty$ converges to $x$.
 
 \end{frame}
 
 \begin{frame}
 
-Note: $\{ x_{n_k} \}$ need not be monotone.
+Note: $\{ x_{n_k} \}_{k=1}^\infty$ need not be monotone.
 
 \pause
 \medskip
@@ -293,7 +294,7 @@ Let $\epsilon > 0$ be given.
 \pause
 \medskip
 
-$\{ a_n \}$ converges to $x$ \wthus $\{ a_{n_k} \}$ converges to $x$.
+$\{ a_n \}_{n=1}^\infty$ converges to $x$ \wthus $\{ a_{n_k} \}_{k=1}^\infty$ converges to $x$.
 
 \pause
 \medskip
@@ -304,7 +305,7 @@ $\abs{a_{n_k} - x} < \frac{\epsilon}{2}$.
 \pause
 \medskip
 
-$\exists$ $M_2 \in \N$ such that 
+$\exists$ $M_2 \in \N$ such that
 \quad $\displaystyle \frac{1}{M_2} \leq \frac{\epsilon}{2}$.
 
 \pause
@@ -315,7 +316,7 @@ Let $M \coloneqq \max \{M_1 , M_2 , 2 \}$.
 \pause
 \medskip
 
-For all $k \geq M$,
+$\forall$ $k \geq M$,
 
 \medskip
 
@@ -350,75 +351,73 @@ $\liminf$ is an exercise.
 
 \begin{frame}
 \begin{proposition}
-Let $\{ x_n \}$ be a bounded sequence.
+Let $\{ x_n \}_{n=1}^\infty$ be a bounded sequence.
 
 \pause
-Then $\{ x_n \}$ converges
+Then $\{ x_n \}_{n=1}^\infty$ converges
 if and only if
 \quad
 $\displaystyle
-\liminf_{n\to \infty} \, x_n = 
-\limsup_{n\to \infty} \, x_n$.
+\liminf_{n\to \infty} x_n =
+\limsup_{n\to \infty} x_n$.
 
 \pause
-Furthermore, if $\{ x_n \}$ converges, then
+Furthermore, if $\{ x_n \}_{n=1}^\infty$ converges, then
 \quad
 $\displaystyle
-\lim_{n\to \infty} x_n = 
-\liminf_{n\to \infty} \, x_n = 
-\limsup_{n\to \infty} \, x_n$.
+\lim_{n\to \infty} x_n =
+\liminf_{n\to \infty} x_n =
+\limsup_{n\to \infty} x_n$.
 \end{proposition}
 
 \pause
 \textbf{Proof:}
-Let $a_n \coloneqq \sup \{ x_k : k \geq n \}$ and $b_n \coloneqq \inf \{ x_k : k \geq n \}$.  
-
+Let $a_n \coloneqq \sup \{ x_k : k \geq n \}$ and $b_n \coloneqq \inf \{ x_k : k \geq n \}$.
 \pause
-\medskip
-
-For all $n$, \quad
+\quad
+$\forall$ $n$, ~
 $b_n \leq x_n \leq a_n$.
 
 \pause
 \medskip
 
-First suppose $\liminf \, x_n = \limsup \, x_n$.  That is,
-$\lim \, b_n = \lim \, a_n$.
+First suppose $\displaystyle \liminf_{n\to\infty} x_n = \limsup_{n\to\infty} x_n$.  That is,
+$\displaystyle \lim_{n\to\infty} b_n = \lim_{n\to\infty} a_n$.
 
 \pause
 \medskip
 
 By the squeeze lemma,
-$\{ x_n \}$ converges and
+$\{ x_n \}_{n=1}^\infty$ converges and
 \quad $\displaystyle
-\lim\, b_n
+\lim_{n\to\infty} b_n
 =
-\lim\, x_n
+\lim_{n\to\infty} x_n
 =
-\lim\, a_n$.
+\lim_{n\to\infty} a_n$.
 
 \pause
 \medskip
 
-For the other direction suppose $\{ x_n \}$ converges to $x$.
+For the other direction suppose $\{ x_n \}_{n=1}^\infty$ converges to $x$.
 
 \pause
 \medskip
 
 By the theorem, $\exists$ a subsequence
-$\{ x_{n_k} \}$ converging to $\limsup \, x_n$.
+$\{ x_{n_k} \}_{k=1}^\infty$ converging to $\limsup\limits_{n\to\infty} x_n$.
 
 \pause
-As $\{ x_n \}$ converges to $x$,
-\quad $\{ x_{n_k} \}$ converges to $x$
+As $\{ x_n \}_{b=1}^\infty$ converges to $x$,
+\quad $\{ x_{n_k} \}_{k=1}^\infty$ converges to $x$
 
 \pause
-\thus \quad $\limsup \, x_n = \lim\, x_{n_k} = x$.
+\thus \quad $\displaystyle \limsup_{n\to\infty} x_n = \lim_{k\to\infty} x_{n_k} = x$.
 
 \pause
 \medskip
 
-Similarly, $\liminf \, x_n = x$.
+Similarly, $\liminf\limits_{n\to\infty} x_n = x$.
 \qed
 
 
@@ -426,19 +425,21 @@ Similarly, $\liminf \, x_n = x$.
 
 \begin{frame}
 \begin{proposition}
-Suppose $\{ x_n \}$ is a bounded sequence and
-$\{ x_{n_k} \}$ is a subsequence.  Then
+Suppose $\{ x_n \}_{n=1}^\infty$ is a bounded sequence and
+$\{ x_{n_k} \}_{k=1}^\infty$ is a subsequence.  Then
 \begin{equation*}
-\liminf_{n\to\infty} \, x_n \leq
-\liminf_{k\to\infty} \, x_{n_k} \leq
-\limsup_{k\to\infty} \, x_{n_k} \leq
-\limsup_{n\to\infty} \, x_n .
+\liminf_{n\to\infty} x_n \leq
+\liminf_{k\to\infty} x_{n_k} \leq
+\limsup_{k\to\infty} x_{n_k} \leq
+\limsup_{n\to\infty} x_n .
 \end{equation*}
 \end{proposition}
 
 \pause
 \textbf{Proof:}
-Middle proved already, we'll prove the third, first is an exercise.
+$2^{\text{nd}}$ inequality proved already,
+we'll prove the $3^{\text{rd}}$,
+the $1^{\text{st}}$ is an exercise.
 
 \pause
 \medskip
@@ -453,7 +454,8 @@ Define $c_n \coloneqq \sup \{ x_{n_k} : k \geq n \}$.
 \pause
 \medskip
 
-Remark: $\{ c_n \}$ need not be a subsequence of $\{ a_n \}$.
+\textbf{Remark:} $\{ c_n \}_{n=1}^\infty$ need not be a subsequence of
+$\{ a_n \}_{n=1}^\infty$.
 
 \pause
 \medskip
@@ -476,15 +478,15 @@ $\displaystyle \lim_{n\to\infty} c_n \leq \lim_{n\to\infty} a_n$.
 \medskip
 
 \textbf{Remark:}
-$\limsup$ and $\liminf$ are the 
+$\limsup$ and $\liminf$ are the
 largest and smallest subsequential limits.
 
 \pause
-If $\{ x_{n_k} \}$ converges, then
+If $\{ x_{n_k} \}_{k=1}^\infty$ converges, then
 \quad
-$\displaystyle \liminf_{n\to\infty} \, x_n \leq
+$\displaystyle \liminf_{n\to\infty} x_n \leq
 \lim_{k\to\infty} x_{n_k} \leq
-\limsup_{n\to\infty} \, x_n$.
+\limsup_{n\to\infty} x_n$.
 
 \end{frame}
 
@@ -493,10 +495,10 @@ $\displaystyle \liminf_{n\to\infty} \, x_n \leq
 We get the following useful convergence test.
 
 \begin{proposition}
-A bounded sequence $\{ x_n \}$ is convergent and converges to $x$
+A bounded sequence $\{ x_n \}_{n=1}^\infty$ is convergent and converges to $x$
 if and only if
 every convergent subsequence
-$\{ x_{n_k} \}$ converges to $x$.
+$\{ x_{n_k} \}_{k=1}^\infty$ converges to $x$.
 \end{proposition}
 
 \pause
@@ -510,23 +512,23 @@ There is another version of this result that we also leave as an exercise.
 \medskip
 
 \textbf{Exercise:}
-Suppose $\{ x_n \}$ is a sequence such that every subsequence $\{
-x_{n_i} \}$ has a subsequence
-$\{ x_{n_{m_i}} \}$ that converges to $x$.
-Prove that $\{ x_n \}$ converges to $x$.
+Suppose $\{ x_n \}_{n=1}^\infty$ is such that every subsequence
+$\{ x_{n_i} \}_{i=1}^\infty$ has a subsequence
+$\{ x_{n_{m_i}} \}_{i=1}^\infty$ that converges to $x$.
+Prove that $\{ x_n \}_{n=1}^\infty$ converges to $x$.
 
 \end{frame}
 
 \begin{frame}
 
 \begin{theorem}[Bolzano--Weierstrass]
-Suppose a sequence $\{ x_n \}$ of real numbers is bounded.
-Then there exists a convergent subsequence $\{ x_{n_i} \}$.
+Suppose a sequence $\{ x_n \}_{n=1}^\infty$ of real numbers is bounded.
+Then there exists a convergent subsequence $\{ x_{n_i} \}_{i=1}^\infty$.
 \end{theorem}
 
 \pause
 \textbf{Proof:}
-There exists a subsequence whose limit is $\limsup \, x_n$.
+There exists a subsequence whose limit is $\displaystyle \limsup_{n\to\infty} x_n$.
 \qed
 
 \pause
@@ -551,9 +553,9 @@ $\limsup$/$\liminf$ may not make sense.
 \begin{frame}
 
 \begin{definition}
-if for every $K \in \R$, there exists an $M \in \N$ such that
+If for every $K \in \R$, there exists an $M \in \N$ such that
 for all $n \geq M$, we have $x_n > K$,
-we say $\{ x_n \}$ \emph{diverges to infinity} and write
+we say $\{ x_n \}_{n=1}^\infty$ \emph{diverges to infinity} and write
 \quad
 $\displaystyle \lim_{n \to \infty} x_n \coloneqq \infty$.
 
@@ -562,36 +564,37 @@ $\displaystyle \lim_{n \to \infty} x_n \coloneqq \infty$.
 
 If for every $K \in \R$ there exists an $M \in \N$ such that
 for all $n \geq M$, we have $x_n < K$,
-we say $\{ x_n \}$ \emph{diverges to minus infinity} and write
+we say $\{ x_n \}_{n=1}^\infty$ \emph{diverges to minus infinity} and write
 \quad
 $\displaystyle \lim_{n \to \infty} x_n \coloneqq -\infty$.
 \end{definition}
 
 %With this definition and allowing $\infty$ and $-\infty$,
-%we can write $\lim \, x_n$ for any monotone sequence.
+%we can write $\lim_{n\to\infty} x_n$ for any monotone sequence.
 
 \pause
 
 \begin{proposition}
-If $\{ x_n \}$ is monotone and unbounded, then
+If $\{ x_n \}_{n=1}^\infty$ is monotone and unbounded, then
 $\displaystyle
 \lim_{n \to \infty} x_n =
 \begin{cases}
-\infty  & \text{if } \{ x_n \} \text{ is increasing,} \\
--\infty & \text{if } \{ x_n \} \text{ is decreasing.}
+\infty  & \text{if } \{ x_n \}_{n=1}^\infty \text{ is increasing,} \\
+-\infty & \text{if } \{ x_n \}_{n=1}^\infty \text{ is decreasing.}
 \end{cases}
 $
 \end{proposition}
 
 \pause
 \textbf{Proof:}
-Suppose $\{x_n\}$ is decreasing and unbounded (increasing is an exercise).
+Suppose $\{x_n\}_{n=1}^\infty$ is decreasing and unbounded.
 
 \pause
 Unbounded means that $\forall$ $K \in \R$, $\exists$ $M \in \N$ s. t. $x_M < K$.
 
 \pause
 By monotonicity $x_n \leq x_M < K$ for all $n \geq M$.
+\pause \quad (increasing is an exercise).
 \qed
 
 \pause
@@ -599,64 +602,61 @@ By monotonicity $x_n \leq x_M < K$ for all $n \geq M$.
 
 \textbf{Examples:}
 $\displaystyle \lim_{n\to \infty} n = \infty,
-\qquad 
+\qquad
 \lim_{n\to \infty} n^2 = \infty,
-\qquad 
+\qquad
 \lim_{n\to \infty} -n = -\infty$.
 \end{frame}
 
 \begin{frame}
 
 $\liminf$ and $\limsup$ can also take on $\infty$ and $-\infty$
-if $\{x_n \}$ is unbounded.
+if $\{x_n \}_{n=1}^\infty$ is unbounded.
 
 \pause
-However, then $\{ a_n \}$ and $\{ b_n \}$ may be extended reals.
+However, then $\{ a_n \}_{n=1}^\infty$ and $\{ b_n \}_{n=1}^\infty$ may be extended reals.
 
 \pause
 \begin{definition}
-Let $\{ x_n \}$ be an unbounded sequence of real numbers.  Define 
+Let $\{ x_n \}_{n=1}^\infty$ be an unbounded sequence of real numbers.  Define
 sequences of extended real numbers by
 $a_n \coloneqq \sup \{ x_k : k \geq n \}$ and
 $b_n \coloneqq \inf \{ x_k : k \geq n \}$.
 
 \pause
-\medskip
-
 Define \quad
 $\displaystyle
-\limsup_{n \to \infty} \, x_n \coloneqq \inf \{ a_n : n \in \N \}, ~\text{and}~
-\liminf_{n \to \infty} \, x_n \coloneqq \sup \{ b_n : n \in \N \}$.
+\limsup_{n \to \infty} x_n \coloneqq \inf \{ a_n : n \in \N \}, ~\text{and}~
+\liminf_{n \to \infty} x_n \coloneqq \sup \{ b_n : n \in \N \}$.
 \end{definition}
 
 \pause
 This definition agrees with the definition for bounded
-sequences whenever $\lim a_n$ or $\lim b_n$ makes sense including
-possibly $\infty$ and $-\infty$.
+sequences.
 
 \pause
 \begin{proposition}
-Let $\{ x_n \}$ be an unbounded sequence.  Define 
-$\{ a_n \}$ and $\{ b_n \}$ as above.
-Then $\{ a_n \}$ is decreasing, and $\{ b_n \}$ is increasing.
-If $a_n$ is a real number for every $n$, then
-$\limsup \, x_n = \lim \, a_n$. 
-If $b_n$ is a real number for every $n$, then
-$\liminf \, x_n = \lim \, b_n$.
+Let $\{ x_n \}_{n=1}^\infty$ be unbounded.  Define
+$\{ a_n \}_{n=1}^\infty$ and $\{ b_n \}_{n=1}^\infty$ as above.
+Then $\{ a_n \}_{n=1}^\infty$ is decreasing, and $\{ b_n \}_{n=1}^\infty$ is increasing.
+If $a_n \in \R$ for every $n$, then
+$\displaystyle \limsup_{n\to\infty} x_n = \lim_{n\to\infty} a_n$.
+If $b_n \in \R$ for every $n$, then
+$\displaystyle \liminf_{n\to\infty} x_n = \lim_{n\to\infty} b_n$.
 \end{proposition}
 
 \pause
 \textbf{Proof:}
 $a_n = \sup \{ x_k : k \geq n \} \geq \sup \{ x_k : k \geq n+1 \} =
-a_{n+1}$.  Same for $\{ b_n \}$.
+a_{n+1}$.  Same for $\{ b_n \}_{n=1}^\infty$.
 
 \pause
-If $\{ a_n \}$ is a sequence of reals, then
-$\lim a_n = \inf \{ a_n : n \in \N \}$.
+If $\{ a_n \}_{n=1}^\infty$ is a sequence of reals, then
+$\lim\limits_{n\to\infty} a_n = \inf \{ a_n : n \in \N \}$.
 
 \pause
-If $\{ b_n \}$ is a sequence of reals, then
-$\lim b_n = \sup \{ b_n : n \in \N \}$.
+If $\{ b_n \}_{n=1}^\infty$ is a sequence of reals, then
+$\lim\limits_{n\to\infty} b_n = \sup \{ b_n : n \in \N \}$.
 \qed
 
 \end{frame}
@@ -664,7 +664,7 @@ $\lim b_n = \sup \{ b_n : n \in \N \}$.
 \begin{frame}
 
 \textbf{Example:}
-Suppose 
+Suppose
 $x_n \coloneqq 0$ for odd $n$ and $x_n \coloneqq n$ for even $n$.
 
 \pause
@@ -676,41 +676,41 @@ $\exists$ an even $k$ such that $x_k = k \geq M$.
 \pause
 \medskip
 
-$b_n = 0$ for all $n$, as for every $n$, 
+$b_n = 0$ for all $n$, as for every $n$,
 $\{ b_k : k \geq n \}$ consists of $0$ and positive numbers.
 
 \pause
 
 \begin{equation*}
 \lim_{n\to \infty} x_n \quad \text{does not exist},
-\qquad 
-\limsup_{n\to \infty} \, x_n = \infty ,
-\qquad 
-\liminf_{n\to \infty} \, x_n = 0.
+\qquad
+\limsup_{n\to \infty} x_n = \infty ,
+\qquad
+\liminf_{n\to \infty} x_n = 0.
 \end{equation*}
 
 \end{frame}
 
 \begin{frame}
 
-Limsups and liminfs play nice with inequalities:
+Limsups and liminfs play nice with inequalities (``bounded'' is for simplicity):
 
 \pause
 \medskip
 
 \textbf{Exercise:}
-Let $\{ x_n \}$ and $\{ y_n \}$ be bounded sequences such that
+Let $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ be bounded such that
 $x_n \leq y_n$ for all $n$.  Then
 \quad
 $\displaystyle
-\limsup_{n\to\infty} \, x_n \leq
-\limsup_{n\to\infty} \, y_n$
+\limsup_{n\to\infty} x_n \leq
+\limsup_{n\to\infty} y_n$
 \quad
 and
 \quad
 $\displaystyle
-\liminf_{n\to\infty} \, x_n \leq
-\liminf_{n\to\infty} \, y_n$.
+\liminf_{n\to\infty} x_n \leq
+\liminf_{n\to\infty} y_n$.
 
 \pause
 \medskip
@@ -721,42 +721,42 @@ Things are a little bit more complicated with algebra.
 \medskip
 
 \textbf{Exercise:}
-Let $\{ x_n \}$ and $\{ y_n \}$ be bounded sequences.
+Let $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ be bounded sequences.
 \begin{enumerate}[a)]
 \item\pause
-Show that $\{ x_n + y_n \}$ is bounded.
+Show that $\{ x_n + y_n \}_{n=1}^\infty$ is bounded.
 \item
 Show that
 \quad $\displaystyle
-(\liminf_{n\to \infty}\, x_n)
+\left(\liminf_{n\to \infty} x_n\right)
 +
-(\liminf_{n\to \infty}\, y_n)
+\left(\liminf_{n\to \infty} y_n\right)
 \leq
-\liminf_{n\to \infty}\, (x_n+y_n)$.
+\liminf_{n\to \infty} (x_n+y_n)$.
 \item\pause
 Find an example where
 $\displaystyle
-(\liminf_{n\to \infty}\, x_n)
+\left(\liminf_{n\to \infty} x_n\right)
 +
-(\liminf_{n\to \infty}\, y_n)
+\left(\liminf_{n\to \infty} y_n\right)
 <
-\liminf_{n\to \infty}\, (x_n+y_n)$.
+\liminf_{n\to \infty} (x_n+y_n)$.
 \item\pause
 Show that
 \quad $\displaystyle
-(\limsup_{n\to \infty}\, x_n)
+\left(\limsup_{n\to \infty} x_n\right)
 +
-(\limsup_{n\to \infty}\, y_n)
+\left(\limsup_{n\to \infty} y_n\right)
 \geq
-\limsup_{n\to \infty}\, (x_n+y_n)$.
+\limsup_{n\to \infty} (x_n+y_n)$.
 \item\pause
 Find an example where
 $\displaystyle
-(\limsup_{n\to \infty}\, x_n)
+\left(\limsup_{n\to \infty} x_n\right)
 +
-(\limsup_{n\to \infty}\, y_n)
+\left(\limsup_{n\to \infty} y_n\right)
 >
-\limsup_{n\to \infty}\, (x_n+y_n)$.
+\limsup_{n\to \infty} (x_n+y_n)$.
 \end{enumerate}
 
 \end{frame}
