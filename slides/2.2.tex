@@ -377,7 +377,7 @@ $\displaystyle y \coloneqq \lim_{n\to\infty} y_n$.
 \medskip
 
 Let $\epsilon > 0$ be given.
-
+\quad
 \pause
 Let $K \coloneqq \max\{ \abs{x}, \abs{y}, \nicefrac{\epsilon}{3} , 1 \}$.
 
@@ -468,7 +468,7 @@ $\displaystyle
 
 \medskip
 
-Claim: \emph{If $\{ y_n \}_{n=1}^\infty$ is convergent,
+\textbf{Claim:} \emph{If $\{ y_n \}_{n=1}^\infty$ is convergent,
 $\displaystyle \lim_{n\to\infty} y_n \not= 0$, and $y_n \not= 0$ for all $n \in \N$, then
 $\{ \nicefrac{1}{y_n} \}_{n=1}^\infty$ converges and}
 $\displaystyle \lim_{n\to\infty} \frac{1}{y_n} = \frac{1}{\lim_{n\to\infty} y_n}$.
@@ -476,7 +476,7 @@ $\displaystyle \lim_{n\to\infty} \frac{1}{y_n} = \frac{1}{\lim_{n\to\infty} y_n}
 \pause
 \medskip
 
-Proof of claim:  Let $\epsilon > 0$ be given.
+\textbf{Proof of claim:}  Let $\epsilon > 0$ be given.
 
 \pause
 Let $\displaystyle y \coloneqq \lim_{n\to\infty} y_n$.
@@ -1104,14 +1104,13 @@ $r^n < \frac{B}{\abs{x_M}} r^{\:M}$ for all $n > M$, \contradiction).
 \begin{frame}
 
 \textbf{Example:}
-Claim:
 $\displaystyle
 \lim_{n\to\infty} \frac{2^n}{n!} = 0$.
 
 \pause
 \medskip
 
-Proof:
+\textbf{Proof:}
 \quad
 $\displaystyle
 \frac{2^{n+1} / (n+1)!}{2^n/n!}
@@ -1122,25 +1121,24 @@ $\displaystyle
 =
 \frac{2}{n+1} \to 0$.
 \pause
-\quad Conclusion follows.
+\quad Conclusion follows. \qed
 
 \pause
 \medskip
 
 \textbf{Example:}
-Claim:
 $\displaystyle
 \lim_{n\to\infty} n^{1/n} = 1$.
 
 \pause
-Proof:
+\textbf{Proof:}
 Let $\epsilon > 0$ be given. 
 \pause
 Consider
-$\bigl\{ \frac{n}{{(1+\epsilon)}^n} \bigr\}_{n=1}^\infty$.
+$\left\{ \dfrac{n}{{(1+\epsilon)}^n} \right\}_{n=1}^\infty$.
 \pause
-Compute
-
+%Compute
+%
 \quad
 $\displaystyle
 \frac{(n+1)/{(1+\epsilon)}^{n+1}}{n/{(1+\epsilon)}^{n}}
@@ -1151,7 +1149,9 @@ $
 \pause
 \medskip
 
-limit of $\frac{n+1}{n} = 1+\frac{1}{n}$ is $1$
+$\displaystyle
+\lim_{n\to\infty} \frac{n+1}{n}
+= \lim_{n\to\infty} \left(1+\dfrac{1}{n} \right) = 1$
 \pause
 \wthus
 $\displaystyle
@@ -1189,7 +1189,7 @@ $0 \leq n^{1/n}-1 < \epsilon$.
 \medskip
 
 \thus \quad
-$\displaystyle \lim_{n\to\infty} n^{1/n} = 1$.
+$\displaystyle \lim_{n\to\infty} n^{1/n} = 1$. \qed
 
 \end{frame}
 

@@ -25,7 +25,7 @@ It would be nice to check convergence without knowing the limit.
 \pause
 
 \begin{definition}
-A sequence $\{ x_n \}$ is a \emph{Cauchy sequence}
+A sequence $\{ x_n \}_{n=1}^\infty$ is a \emph{Cauchy sequence}
 if for every $\epsilon > 0$ there exists an $M \in \N$ such that
 for all $n \geq M$ and all $k \geq M$, we have
 \quad
@@ -40,7 +40,7 @@ $\{ \nicefrac{1}{n} \}_{n=1}^{\infty}$ is a Cauchy sequence.
 \medskip
 \pause
 
-Proof:  Given $\epsilon > 0$, $\exists$ $M$ such that
+\textbf{Proof:}  Given $\epsilon > 0$, $\exists$ $M$ such that
 $M > \nicefrac{2}{\epsilon}$.
 
 \pause
@@ -58,7 +58,7 @@ $\displaystyle \abs{\frac{1}{n} - \frac{1}{k}}
 \leq
 \abs{\frac{1}{n}} + \abs{\frac{1}{k}}
 \pause
-< \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$.
+< \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$. \qed
 
 \pause
 \medskip
@@ -69,7 +69,7 @@ $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ is not a Cauchy sequence.
 \medskip
 \pause
 
-Proof:
+\textbf{Proof:}
 Given any $M \in \N$, take $n \geq M$ to even, and $k \coloneqq n+1$.
 
 \pause
@@ -88,13 +88,15 @@ Then
 \pause
 \thus
 \quad for any $\epsilon \leq 2$ the definition is not satisfied.
-
-\medskip
-
-\thus \quad The sequence is not Cauchy.
+%
+%\medskip
+%
+\pause
+\quad
+\thus \quad The sequence is not Cauchy. \qed
 
 %\textbf{Example:}
-%The sequence $\{ \frac{n+1}{n} \}$ is a Cauchy sequence.
+%The sequence $\{ \frac{n+1}{n} \}_{n=1}^\infty$ is a Cauchy sequence.
 %
 %\pause
 %Proof:  Given $\epsilon > 0$, $\exists$ $M$ such that
@@ -146,7 +148,7 @@ A Cauchy sequence is bounded.
 
 \pause
 \textbf{Proof:}
-Suppose $\{ x_n \}$ is Cauchy.
+Suppose $\{ x_n \}_{n=1}^\infty$ is Cauchy.
 
 \pause
 \medskip
@@ -194,7 +196,7 @@ A sequence of real numbers is Cauchy if and only if it converges.
 \pause
 \textbf{Proof:}
 Let $\epsilon > 0$ be given and
-suppose $\{ x_n \}$ converges to $x$.
+suppose $\{ x_n \}_{n=1}^\infty$ converges to $x$.
 
 \pause
 $\exists$ $M$ such that for $n \geq M$, \quad
@@ -218,17 +220,19 @@ $\abs{x_n - x_k}
 
 \begin{frame}
 
-Now suppose $\{ x_n \}$ is Cauchy.  \pause Thus $\{x_n\}$ is bounded.
+Now suppose $\{ x_n \}_{n=1}^\infty$ is Cauchy.  \pause Thus
+$\{x_n\}_{n=1}^\infty$ is bounded.
 
 \pause
 \medskip
 
-Define $a \coloneqq \limsup \, x_n$ and $b \coloneqq \liminf \, x_n$.
+Define $a \coloneqq \limsup\limits_{n\to \infty} x_n$ and
+$b \coloneqq \liminf\limits_{n\to \infty} x_n$.
 
 \pause
 By a theorem from 2.3, $\exists$ subsequences
-$\{ x_{n_i} \}$ and
-$\{ x_{m_i} \}$, such that
+$\{ x_{n_i} \}_{i=1}^\infty$ and
+$\{ x_{m_i} \}_{i=1}^\infty$, such that
 
 $\displaystyle
 \lim_{i\to\infty} x_{n_i} = a
@@ -266,7 +270,7 @@ Consider $i \geq M$. \pause  Then $n_i \geq M$ and $m_i \geq M$.
 \pause
 \medskip
 
-\thus\quad
+%\thus\quad
 $\displaystyle
 \abs{a-b}
 \pause
@@ -274,13 +278,13 @@ $\displaystyle
 \abs{a-x_{n_i}+x_{n_i}
 -x_{m_i}+x_{m_i}
 -b} 
-$
-
+%$
+%
 \pause
-\medskip
-
-\qquad\qquad
-$\displaystyle
+%\medskip
+%
+%\qquad\qquad
+%$\displaystyle
 \leq
 \abs{a-x_{n_i}}
 + \abs{x_{n_i} -x_{m_i}}
@@ -302,7 +306,8 @@ $\abs{a-b} < \epsilon$ for all $\epsilon > 0$ \wthus $a=b$.
 \pause
 \medskip
 
-So ~$\limsup x_n = \liminf x_n$~ and $\{ x_n \}$ converges.
+So ~$\displaystyle \limsup_{n\to\infty} x_n = \liminf_{n\to\infty} x_n$~ and
+$\{ x_n \}_{n=1}^\infty$ converges.
 \qed
 
 \end{frame}
@@ -315,7 +320,7 @@ A set $X$ is
 if every Cauchy sequence converges in $X$.
 
 \pause
-Sometimes this is used to define completeness of $\R$ instead of
+Can be used to define completeness of $\R$ instead of
 the least-upper-bound property.
 
 \pause
@@ -339,10 +344,10 @@ This thinking generalizes to more abstract settings.
 \medskip
 
 \textbf{Remark:}
-Being Cauchy is stronger than 
+Cauchy is stronger than 
 $\abs{x_{n+1}-x_n} \to 0$
 as $n \to \infty$
-
+%
 \pause
 (or $\abs{x_{n+j}-x_n} \to 0$ for a fixed $j$).
 

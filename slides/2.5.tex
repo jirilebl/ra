@@ -21,16 +21,16 @@ Departemento pri Matematiko de Oklahoma {\^S}tata Universitato}
 
 \begin{frame}
 \begin{definition}
-Given a sequence $\{ x_n \}$, a \emph{series} is the formal object
+Given a sequence $\{ x_n \}_{n=1}^\infty$, a \emph{series} is the formal object
 \begin{equation*}
 \sum_{n=1}^\infty x_n
-\qquad
-\text{or sometimes just}
-\qquad
-\sum x_n
+%\qquad
+%\text{or sometimes just}
+%\qquad
+%\sum x_n
 \end{equation*}
 \pause
-A series \emph{converges} if the sequence $\{ s_k \}$ defined by
+A series \emph{converges} if the sequence $\{ s_k \}_{k=1}^\infty$ defined by
 \begin{equation*}
 s_k \coloneqq \sum_{n=1}^k x_n = x_1 + x_2 + \cdots + x_k 
 \quad \text{converges}.
@@ -39,13 +39,13 @@ s_k \coloneqq \sum_{n=1}^k x_n = x_1 + x_2 + \cdots + x_k
 The numbers $s_k$ are called
 \emph{partial sums}.
 \pause
-If $x \coloneqq \lim\, s_k$, we write
+If the series converges, we write
 \begin{equation*}
-\sum_{n=1}^\infty x_n =  x 
-\quad \text{(cheating a little by treating it as a number)}.
+\sum_{n=1}^\infty x_n =  \lim_{k\to\infty} s_k 
+\quad \text{(cheating a little by treating the series as a number)}.
 \end{equation*}
 \pause
-If $\{ s_k \}$ diverges,
+If $\{ s_k \}_{k=1}^\infty$ diverges,
 we say the series is \emph{divergent}.
 \end{definition}
 
@@ -66,7 +66,7 @@ $\displaystyle
 If the series does not converge, the right hand side is nonsense.
 
 \pause
-So (unlike for sequences) $\sum x_n$ means two different things:
+So (unlike for sequences) $\displaystyle\sum_{n=1}^\infty x_n$ means two different things:
 
 \pause
 1) notation for the series,
@@ -87,7 +87,7 @@ $\displaystyle
 \medskip
 
 \textbf{Remark:}
-It is common (but we will not) to write $\sum x_n$ informally as
+It is common (but we will not) to write $\displaystyle\sum_{n=1}^\infty x_n$ informally as
 \begin{equation*}
 x_1 + x_2 + x_3 + \cdots
 \end{equation*}
@@ -101,13 +101,13 @@ $\displaystyle \sum_{n=1}^\infty \frac{1}{2^n}$
 converges and the limit is 1.  That is,
 $\displaystyle
 \sum_{n=1}^\infty \frac{1}{2^n} = 
-\lim_{k\to\infty} \sum\limits_{n=1}^k \frac{1}{2^n} = 
+\lim_{k\to\infty} \sum_{n=1}^k \frac{1}{2^n} = 
 1$.
 
 \pause
 \medskip
 
-Proof: By induction (exercise), \quad
+\textbf{Proof:} By induction (exercise), \quad
 $\displaystyle
 \left( \sum_{n=1}^k \frac{1}{2^n} \right)
 + \frac{1}{2^k}
@@ -116,7 +116,9 @@ $\displaystyle
 \pause
 \medskip
 
+\hspace*{\fill}
 \subimport*{../figures/}{figcutseries.pdf_t}
+\hspace*{\fill}
 
 \pause
 \medskip
@@ -140,10 +142,11 @@ $\displaystyle
 \pause
 \medskip
 
-$\bigl\{ \frac{1}{2^k} \bigr\} = \bigl\{ \abs{1-s_k} \bigr\}$
+$\bigl\{ \frac{1}{2^k} \bigr\}_{k=1}^\infty = \bigl\{ \abs{1-s_k}
+\bigr\}_{k=1}^\infty$
 converges to $0$
 \pause
-\wthus $\{ s_k \}$ converges to 1.
+\wthus $\{ s_k \}_{k=1}^\infty$ converges to 1.
 \qed
 
 \end{frame}
@@ -154,9 +157,12 @@ converges to $0$
 Suppose
 $-1 < r < 1$.  Then the \emph{geometric series}
 $\displaystyle \sum_{n=0}^\infty r^n$ converges, and
-\begin{equation*}
-\sum_{n=0}^\infty r^n = \frac{1}{1-r} .
-\end{equation*}
+%\begin{equation*}
+\quad
+$\displaystyle
+\sum_{n=0}^\infty r^n = \frac{1}{1-r}
+$.
+%\end{equation*}
 \end{proposition}
 
 \pause
@@ -178,7 +184,7 @@ and then one takes the limit $k \to \infty$.
 \begin{frame}
 
 \begin{proposition}[tail of a series]
-Let $\sum x_n$ be a series.  Let $M \in \N$.  Then
+Let $\displaystyle\sum_{n=1}^\infty x_n$ be a series.  Let $M \in \N$.  Then
 \begin{equation*}
 \sum_{n=1}^\infty x_n \quad \text{converges if and only if} \quad
 \sum_{n=M}^\infty x_n \quad \text{converges.}
@@ -212,23 +218,22 @@ Adding a constant does not change the convergence of a sequence.
 \begin{frame}
 
 \begin{definition}
-$\sum x_n$ is \emph{Cauchy} (\emph{Cauchy series})
-if the sequence of partial sums $\{ s_n \}$ is Cauchy.
+$\displaystyle\sum_{n=1}^\infty x_n$ is \emph{Cauchy} (\emph{Cauchy series})
+if the sequence of partial sums $\{ s_n \}_{n=1}^\infty$ is Cauchy.
 \end{definition}
 
 \pause
 A sequence converges \wiffif it is Cauchy.
-\pause \qquad So:
-
+\pause \quad So:
 A series converges \wiffif it is Cauchy.
 
 \pause
 \medskip
 
-$\sum x_n$ is Cauchy if $\forall$ $\epsilon > 0$, $\exists$
+$\displaystyle\sum_{n=1}^\infty x_n$ is Cauchy if $\forall$ $\epsilon > 0$, $\exists$
 $M \in \N$, s.\ t.\ $\forall$ $n,k \geq M$, ~
 $\displaystyle
-\abs{ \left( \sum\limits_{i=1}^k x_i \right) - \left( \sum\limits_{i=1}^n x_i \right) }
+\abs{ \left( \sum_{i=1}^k x_i \right) - \left( \sum_{i=1}^n x_i \right) }
 < \epsilon$.
 
 \pause
@@ -241,14 +246,14 @@ $\displaystyle
 =
 \abs{ \sum_{i={n+1}}^k x_i }
 < \epsilon$.
-
 \pause
+\quad
 \thus
 
 \begin{proposition}
-$\sum x_n$ is Cauchy if for every $\epsilon > 0$, 
-there exists an $M \in \N$ such that for every $n \geq M$
-and every $k > n$, we have
+$\displaystyle\sum_{n=1}^\infty x_n$ is Cauchy ~if~ $\forall$ $\epsilon > 0$, 
+$\exists$ $M \in \N$ such that $\forall$ $n \geq M$
+and $\forall$ $k > n$, 
 \quad
 $\displaystyle \abs{ \sum_{i={n+1}}^k x_i } < \epsilon$.
 \end{proposition}
@@ -258,25 +263,30 @@ $\displaystyle \abs{ \sum_{i={n+1}}^k x_i } < \epsilon$.
 \begin{frame}
 
 \begin{proposition}
-Let $\sum x_n$ be a convergent series.  Then
-the sequence $\{ x_n \}$ is convergent and
-\begin{equation*}
-\lim_{n\to\infty} x_n = 0.
-\end{equation*}
+Let $\displaystyle\sum_{n=1}^\infty x_n$ be a convergent series.  Then
+$\{ x_n \}_{n=1}^\infty$ is convergent and
+%\begin{equation*}
+\quad
+$\displaystyle
+\lim_{n\to\infty} x_n = 0
+$
+.
+%\end{equation*}
 \end{proposition}
 
 \pause
 \textbf{Proof:}
+$\displaystyle\sum_{n=1}^\infty x_n$ is convergent \wthus it is Cauchy.
+
+\pause
+\medskip
+
 Let $\epsilon > 0$ be given.
-
+%
 \pause
-\medskip
-
-$\sum x_n$ is convergent \wthus it is Cauchy.
-
-\pause
-\medskip
-
+%\medskip
+\qquad
+%
 $\exists$ $M$ such that $\forall$ $n \geq M$, \quad
 $\displaystyle
 \epsilon > 
@@ -295,19 +305,19 @@ $\displaystyle
 \medskip
 
 \textbf{Example:}
-If $r \geq 1$ or $r \leq -1$, then the geometric series $\sum_{n=0}^\infty r^n$
+If $r \geq 1$ or $r \leq -1$, then the geometric series $\displaystyle \sum_{n=0}^\infty r^n$
 diverges.
 
 \pause
 \medskip
 
-Proof:
+\textbf{Proof:}
 $\abs{r^n} = \abs{r}^n \geq 1^n = 1$ 
 \pause
 \wthus terms do not go to 0
 \pause
 \wthus
-$\sum r^n$ diverges.
+$\displaystyle\sum_{n=1}^\infty r^n$ diverges.
 \qed
 
 \end{frame}
@@ -315,28 +325,26 @@ $\sum r^n$ diverges.
 \begin{frame}
 
 \textbf{Example:}
-The \emph{harmonic series} $\sum \frac{1}{n}$ diverges (despite the fact that $\lim
-\frac{1}{n} = 0$).
+The \emph{harmonic series} $\displaystyle\sum_{n=1}^\infty \frac{1}{n}$ diverges
+(despite the fact that $\lim\limits_{n\to\infty} \frac{1}{n} = 0$).
 
 \pause
 \medskip
 
-Proof:
+\textbf{Proof:}
 Write the partial sums $s_n$ for $n = 2^k$ as:
 
 \pause
 \medskip
 
-$s_1 = 1$, \qquad
+$s_1 = 1$, \quad
 \pause
-$s_2 = \left( 1 \right) + \left( \frac{1}{2} \right)$, \qquad 
+$s_2 = \left( 1 \right) + \left( \frac{1}{2} \right)$, \quad 
 \pause
 $s_4 = \left( 1 \right) + \left( \frac{1}{2} \right) +
-        \left( \frac{1}{3} + \frac{1}{4} \right)$,
-
+        \left( \frac{1}{3} + \frac{1}{4} \right)$, \quad
 \pause
-\medskip
-
+%\medskip
 $s_8 = \left( 1 \right) + \left( \frac{1}{2} \right) +
         \left( \frac{1}{3} + \frac{1}{4} \right) +
         \left( \frac{1}{5} + \frac{1}{6} + \frac{1}{7} + \frac{1}{8}
@@ -351,10 +359,10 @@ $\displaystyle s_{2^k} =
 \left(
 \sum_{m=2^{i-1}+1}^{2^i} \frac{1}{m}
 \right)$.
-
+%
 \pause
-\medskip
-
+%\medskip
+\qquad
 Note
 ~$\frac{1}{3} + \frac{1}{4} \geq \frac{1}{4} + \frac{1}{4}
 \pause
@@ -371,8 +379,8 @@ and
 \pause
 \medskip
 
-More generally
-\quad
+%More generally
+%\quad
 $\displaystyle
 \sum_{m=2^{k-1}+1}^{2^k} \frac{1}{m}
 \geq
@@ -382,12 +390,15 @@ $\displaystyle
 (2^{k-1}) \frac{1}{2^k}
 \pause
 =
-\frac{1}{2}$.
-
+\frac{1}{2}$
+%.
+%
 \pause
-\medskip
-
-\thus \quad
+%\medskip
+%
+%\qquad
+\hfill\thus\hfill
+% \quad
 $\displaystyle
 s_{2^k} = 
 1 + 
@@ -402,16 +413,17 @@ s_{2^k} =
 \pause
 \medskip
 
-$\{ \frac{k}{2} \}$ is unbounded
+$\{ \frac{k}{2} \}_{k=1}^\infty$ is unbounded
 \pause
 \wthus
-$\{ s_{2^k} \}$ is unbounded
+$\{ s_{2^k} \}_{k=1}^\infty$ is unbounded
 \pause
-\wthus $\{ s_n \}$ is unbounded.
+\wthus $\{ s_n \}_{n=1}^\infty$ is unbounded.
 
 \medskip
 
-So $\{ s_n \}$ diverges, that is, $\sum \frac{1}{n}$ diverges.
+So $\{ s_n \}_{n=1}^\infty$ diverges, that is,
+$\displaystyle\sum_{n=1}^\infty \frac{1}{n}$ diverges.
 \qed
 
 \end{frame}
@@ -419,19 +431,20 @@ So $\{ s_n \}$ diverges, that is, $\sum \frac{1}{n}$ diverges.
 \begin{frame}
 
 \begin{proposition}[Linearity of series]
-Let $\alpha \in \R$ and $\sum x_n$ and $\sum y_n$ be
+Let $\alpha \in \R$ and $\displaystyle\sum_{n=1}^\infty x_n$ and
+$\displaystyle\sum_{n=1}^\infty y_n$ be
 convergent series.
 \pause
 Then
 \begin{enumerate}[(i)]
 \item
-$\sum \alpha x_n$ converges and \quad
+$\displaystyle\sum_{n=1}^\infty \alpha x_n$ converges and \quad
 $\displaystyle
 \sum_{n=1}^\infty \alpha x_n
 =
 \alpha \sum_{n=1}^\infty x_n$.
 \item\pause
-$\sum ( x_n + y_n )$ converges and \quad
+$\displaystyle\sum_{n=1}^\infty ( x_n + y_n )$ converges and \quad
 $\displaystyle
 \sum_{n=1}^\infty ( x_n + y_n ) 
 =
@@ -510,17 +523,13 @@ Monotone sequences are easier than arbitrary sequences
 \pause
 \medskip
 
-\quad \thus
-
-\medskip
-
-Series $\sum x_n$ where $x_n \geq 0$ for all $n$ are easier,
-
-as partial sums are then monotone increasing and converge when bounded:
+\thus \quad
+$\displaystyle\sum_{n=1}^\infty x_n$ where $x_n \geq 0$ for all $n$ are easier,
+as partial sums are monotone increasing.
 
 \pause
 \begin{proposition}
-If $x_n \geq 0$ for all $n$, then $\sum x_n$ converges if and only if
+If $x_n \geq 0$ for all $n$, then $\displaystyle\sum_{n=1}^\infty x_n$ converges if and only if
 the sequence of partial sums is bounded above.
 \end{proposition}
 
@@ -542,9 +551,9 @@ $x_n \geq 0$ for all $n$, then
 \begin{frame}
 
 \begin{definition}
-$\sum x_n$
+$\displaystyle\sum_{n=1}^\infty x_n$
 \emph{converges absolutely} if
-$\sum \abs{x_n}$ converges.
+$\displaystyle\sum_{n=1}^\infty \abs{x_n}$ converges.
 
 \pause
 If a series converges, but not absolutely,
@@ -553,13 +562,13 @@ it \emph{converges conditionally}.
 
 \pause
 \begin{proposition}
-If $\sum x_n$ converges absolutely, then it converges.
+If $\displaystyle\sum_{n=1}^\infty x_n$ converges absolutely, then it converges.
 \end{proposition}
 
 \pause
 \textbf{Proof:}
-If $\sum x_n$ converges absolutely, then
-$\sum \abs{x_n}$ is convergent hence Cauchy.
+If $\displaystyle\sum_{n=1}^\infty x_n$ converges absolutely, then
+$\displaystyle\sum_{n=1}^\infty \abs{x_n}$ is convergent hence Cauchy.
 
 \pause
 \medskip
@@ -577,19 +586,19 @@ $\displaystyle
 \pause
 \medskip
 
-By triangle inequality, \quad
+By triangle inequality, %\quad
 $\displaystyle
 \abs{ \sum_{i=k+1}^n x_i }
 \leq
 \sum_{i=k+1}^n \abs{x_i}
 \pause
 <
-\epsilon$.
-
+\epsilon$
+%
 \pause
-\medskip
-
-Hence $\sum x_n$ is Cauchy, and converges.
+%\medskip
+\wthus
+$\displaystyle\sum_{n=1}^\infty x_n$ is Cauchy ~\thus~ converges.
 \qed
 
 \end{frame}
@@ -612,13 +621,14 @@ diverges.
 \pause
 \medskip
 
-So $\sum \frac{{(-1)}^n}{n}$ converges conditionally.
+So $\displaystyle\sum_{n=1}^\infty \frac{{(-1)}^n}{n}$ converges conditionally.
 
 \pause
 \medskip
 
-If $\sum x_n$ converges absolutely, the limits of
-$\sum x_n$ and $\sum \abs{x_n}$ are generally (obviously) different.
+If $\displaystyle\sum_{n=1}^\infty x_n$ converges absolutely, the limits of
+$\displaystyle\sum_{n=1}^\infty x_n$ and
+$\displaystyle\sum_{n=1}^\infty \abs{x_n}$ are in general different.
 
 \pause
 \medskip
@@ -645,57 +655,70 @@ Conditionally convergent series don't.
 \begin{frame}
 
 \begin{proposition}[Comparison test]
-Let $\sum x_n$ and $\sum y_n$ be series such that ~$0 \leq x_n \leq y_n$~
+Let $\displaystyle\sum_{n=1}^\infty x_n$ and $\displaystyle\sum_{n=1}^\infty y_n$ be series such that ~$0 \leq x_n \leq y_n$~
 for all $n \in \N$.
-\begin{enumerate}[(i)]
-\item\pause If $\sum y_n$ converges, then so does $\sum x_n$.
-\item\pause If $\sum x_n$ diverges, then so does $\sum y_n$.
-\end{enumerate}
+
+\pause
+(i)
+%\begin{enumerate}[(i)]
+%\item\pause
+If $\displaystyle\sum_{n=1}^\infty y_n$ converges, then so does
+$\displaystyle\sum_{n=1}^\infty x_n$.
+\pause
+\qquad
+(ii)
+%\item\pause
+If $\displaystyle\sum_{n=1}^\infty x_n$ diverges, then so does
+$\displaystyle\sum_{n=1}^\infty y_n$.
+%\end{enumerate}
 \end{proposition}
 
 \pause
 \textbf{Proof:}
-Terms $\geq 0$ \wthus sequences of partial sums are monotone
-increasing.
+Partial sums monotone (terms $\geq 0$) and
+%Terms $\geq 0$ ~\thus~ partial sums monotone and
+%increasing, and
+\quad
+\pause
+$x_n \leq y_n$ for all $n$ ~\thus~
+$\forall k$,
+~%\quad
+$\sum\limits_{n=1}^k x_n \leq \sum\limits_{n=1}^k y_n$.
 
 \pause
-$x_n \leq y_n$ for all $n$ \wthus
+(i) If $\sum\limits_{n=1}^\infty y_n$ converges, partial sums bounded
+\wthus
+$\exists B$ such that
 $\forall k$,
 \quad
-$\displaystyle
-\sum_{n=1}^k x_n \leq \sum_{n=1}^k y_n$.
-
+$B \geq \sum\limits_{n=1}^k y_n
 \pause
-(i) Suppose $\sum y_n$ converges \wthus its partial sums are bounded.
-
-\pause
-\thus \quad the RHS is bounded: \quad $\exists B$ s.t.
-$\forall k$,
-\quad
-$\displaystyle
-\sum_{n=1}^k x_n \leq \sum_{n=1}^k y_n \leq B$.
+\geq
+\sum\limits_{n=1}^k x_n$.
 
 \pause
 \medskip
 
-Partial sums of $\sum x_n$ are bounded ~\thus~ $\sum x_n$ converges.
+Partial sums of $\sum\limits_{n=1}^\infty x_n$ are bounded ~\thus~
+$\sum\limits_{n=1}^\infty x_n$ converges.
 
 \pause
 \medskip
 
 (ii)
-Suppose $\sum x_n$ diverges \wthus partial sums unbounded.
-
+If $\sum\limits_{n=1}^\infty x_n$ diverges, partial sums unbounded
 \pause
-That is, $\forall B$ ~ $\exists k$ such that
+\wthus
+$\forall B$ ~ $\exists k$ such that
 \quad
-$\displaystyle B \leq \sum_{n=1}^k x_n
+$B \leq \sum\limits_{n=1}^k x_n
 \pause
-\leq \sum_{n=1}^k y_n$.
+\leq \sum\limits_{n=1}^k y_n$.
 
 
 \pause
-\thus \quad partial sums of $\sum y_n$ unbounded \wthus $\sum y_n$ diverges.
+\thus \quad partial sums of $\sum\limits_{n=1}^\infty y_n$ unbounded
+\wthus $\sum\limits_{n=1}^\infty y_n$ diverges.
 \qed
 
 \end{frame}
@@ -714,9 +737,9 @@ converges if and only if $p > 1$.
 \pause
 \textbf{Proof:}
 For $p \leq 1$, then
-$\frac{1}{n^p} \geq \frac{1}{n}$. \quad
-$\sum \frac{1}{n}$ diverges ~\thus~
-$\sum \frac{1}{n^p}$ diverges (comparison).
+$\dfrac{1}{n^p} \geq \dfrac{1}{n}$. \quad
+$\displaystyle\sum_{n=1}^\infty \frac{1}{n}$ diverges ~\thus~
+$\displaystyle\sum_{n=1}^\infty \frac{1}{n^p}$ diverges (comparison).
 
 \pause
 \medskip
@@ -745,15 +768,17 @@ $\displaystyle
 \left(
 \sum_{m=2^i}^{2^{i+1}-1} \frac{1}{m^p}
 \right)$.
-
+%
 \pause
-\medskip
-
-Note $2^p < 3^p$, so
+\quad
+%\medskip
+%
+Note %$2^p < 3^p$, so
 $\frac{1}{2^p} + \frac{1}{3^p} <
-\frac{1}{2^p} + \frac{1}{2^p}$.
+\frac{1}{2^p} + \frac{1}{2^p}$
 \pause
-Similarly,
+and
+%Similarly,
 $\frac{1}{4^p} + \frac{1}{5^p} +
 \frac{1}{6^p} + \frac{1}{7^p} <
 \frac{1}{4^p} + \frac{1}{4^p} +
@@ -762,7 +787,9 @@ $\frac{1}{4^p} + \frac{1}{5^p} +
 \pause
 \medskip
 
-For all $k \geq 2$, \quad
+For all $k \geq 2$, 
+
+%\quad
 $\displaystyle
 s_{2^k-1}
 =
@@ -778,13 +805,13 @@ s_{2^k-1}
 \left(
 \sum_{m=2^{i}}^{2^{i+1}-1} \frac{1}{{(2^i)}^p}
 \right) 
-$
-
+%$
+%
 \pause
-\medskip
-
-\qquad\qquad\qquad\qquad\qquad\qquad
-$\displaystyle
+%\medskip
+%
+%\qquad\qquad\qquad\qquad\qquad\qquad
+%$\displaystyle
 =
 1+
 \sum_{i=1}^{k-1}
@@ -866,22 +893,22 @@ The sequence of partial sums is bounded
 \begin{frame}
 
 \textbf{Example:}
-$\sum \frac{1}{n^2+1}$ converges.
+$\displaystyle\sum_{n=1}^\infty \frac{1}{n^2+1}$ converges.
 
 \pause
 \medskip
 
-Proof:  $\frac{1}{n^2+1} < \frac{1}{n^2}$ for all $n \in \N$.
+\textbf{Proof:}  $\dfrac{1}{n^2+1} < \dfrac{1}{n^2}$ for all $n \in \N$.
 
 \pause
 \medskip
 
-$\sum \frac{1}{n^2}$ converges by the $p$-series test.
-
+$\displaystyle\sum_{n=1}^\infty \frac{1}{n^2}$ converges by the $p$-series test.
+%
 \pause
-\medskip
-
-By the comparison test, $\sum \frac{1}{n^2+1}$ converges.
+%\medskip
+\qquad
+By the comparison test, $\displaystyle\sum_{n=1}^\infty \frac{1}{n^2+1}$ converges.
 \qed
 
 \pause
@@ -891,8 +918,8 @@ Often easier to show a series converges than it is to find the limit.
 
 \pause
 E.g., easy to see
-$\sum \nicefrac{1}{n^2}$ converges,
-
+$\displaystyle\sum_{n=1}^\infty \frac{1}{n^2}$ converges,
+%
 \pause
 much harder to show the limit is $\nicefrac{\pi^2}{6}$.
 
@@ -900,7 +927,8 @@ much harder to show the limit is $\nicefrac{\pi^2}{6}$.
 \medskip
 
 \textbf{Remark:}
-$\zeta(p) = \sum \nicefrac{1}{n^p}$ is the "Riemann zeta function".
+$\displaystyle \zeta(p) = \sum_{n=1}^\infty \frac{1}{n^p}$ is the
+``Riemann zeta function''.
 
 \pause
 Understanding its roots is one of the most famous unsolved problems in
@@ -908,38 +936,48 @@ mathematics, with many applications.
 \end{frame}
 
 \begin{frame}
-Suppose $r > 0$.  Ratio of two subsequent terms in the geometric series $\sum
-r^n$ is $\frac{r^{n+1}}{r^n} = r$, and $\sum r^n$ converges
+Suppose $r > 0$.
+Ratio of two subsequent terms in the geometric series
+
+$\displaystyle \sum_{n=0}^\infty r^n$ is $\dfrac{r^{n+1}}{r^n} = r$, and $\displaystyle\sum_{n=0}^\infty r^n$ converges
 whenever $r < 1$.
-
+%
 \pause
-\medskip
-
+%\medskip
+%
 We can generalize this.
 
 \begin{proposition}[Ratio test]
-Let $\sum x_n$ be a series, $x_n \not= 0$ for all $n$, and \quad
+Let $\displaystyle\sum_{n=1}^\infty x_n$ be a series, $x_n \not= 0$ for all $n$, and \quad
 $L \coloneqq \lim\limits_{n\to\infty} \frac{\abs{x_{n+1}}}{\abs{x_n}}$ \quad exists.
-\begin{enumerate}[(i)]
-\item
+%\begin{enumerate}[(i)]
+%\item
+%\pause
+
 \pause
-If $L < 1$, then $\sum x_n$ converges absolutely.
-\item
+(i)
+If $L < 1$, then $\displaystyle\sum_{n=1}^\infty x_n$ converges absolutely.
+\qquad
 \pause
-If $L > 1$, then $\sum x_n$ diverges.
-\end{enumerate}
+(ii)
+%\item
+%\pause
+If $L > 1$, then $\displaystyle\sum_{n=1}^\infty x_n$ diverges.
+%\end{enumerate}
 \end{proposition}
 
 \pause
 \textbf{Proof:}
-If $L > 1$, by ratio test for seqs., $\{ x_n \}$ diverges ~\thus~
-$\sum x_n$ cannot converge.
+If $L > 1$, by ratio test for seqs., $\{ x_n \}_{n=1}^\infty$ diverges ~\thus~
+the series
+%$\displaystyle\sum_{n=1}^\infty x_n$
+cannot converge.
 
 \pause
 \medskip
 
 Suppose $L < 1$ (clearly $L \geq 0$).
-
+\quad
 \pause
 Pick $r$ such that $L < r < 1$.
 
@@ -997,13 +1035,13 @@ $\displaystyle
 \left(\sum_{n=M+1}^{k} 
 (\abs{x_M} r^{-M}) r^n
 \right)
-$
-
+%$
+%
 \pause
-\medskip
-
-\qquad\qquad\qquad\qquad\quad\,\!
-$\displaystyle
+%\medskip
+%
+%\qquad\qquad\qquad\qquad\quad\,\!
+%$\displaystyle
 =
 \left(\sum_{n=1}^{M} \abs{x_n} \right)
 +
@@ -1014,10 +1052,10 @@ $\displaystyle
 \medskip
 
 As $0 < r < 1$, ~~
-$\sum_{n=0}^{\infty} r^n$ converges
+$\displaystyle\sum_{n=0}^{\infty} r^n$ converges
 \pause
 \wthus
-$\sum_{n=M+1}^{\infty} r^n$ converges.
+$\displaystyle\sum_{n=M+1}^{\infty} r^n$ converges.
 
 \pause
 \medskip
@@ -1048,13 +1086,13 @@ $\displaystyle
 The RHS does not depend on $k$
 \pause
 \wthus
-partial sums of $\sum \abs{x_n}$ are bounded
+partial sums of $\displaystyle\sum_{n=1}^\infty \abs{x_n}$ are bounded
 
 \pause
-\thus \quad $\sum \abs{x_n}$ converges
+\thus \quad $\displaystyle\sum_{n=1}^\infty \abs{x_n}$ converges
 \pause
 \wthus
-$\sum x_n$ converges absolutely.
+$\displaystyle\sum_{n=1}^\infty x_n$ converges absolutely.
 \qed
 
 \end{frame}
@@ -1071,7 +1109,7 @@ $\sum x_n$ converges absolutely.
 \pause
 \medskip
 
-Proof:
+\textbf{Proof:}
 \begin{equation*}
 \lim_{n\to\infty} \frac{2^{(n+1)}/(n+1)!}{2^n / n!} =
 \lim_{n\to\infty} \frac{2}{n+1} = 0 .
@@ -1084,7 +1122,7 @@ Therefore, the series converges absolutely by the ratio test.
 
 \begin{frame}
 
-If $\sum x_n$ converges, then $x_n \to 0$.  
+If $\displaystyle \sum_{n=1}^\infty x_n$ converges, then $x_n \to 0$.  
 
 \pause
 \medskip
@@ -1092,7 +1130,7 @@ If $\sum x_n$ converges, then $x_n \to 0$.
 But $x_n \to 0$ is not enough to get the converse.
 It has to go to zero fast enough
 
-(let's stick with series with positive terms, it's even more
+(let's stick with series with positive terms, it's
 complicated if negative terms are involved).
 
 \pause
@@ -1103,15 +1141,17 @@ One can prove:
 \medskip
 
 \textbf{Exercise:}
-Suppose $\{ x_n \}$ is a decreasing sequence and $\sum x_n$ converges.
+Suppose $\{ x_n \}_{n=1}^\infty$ is a decreasing sequence and
+$\displaystyle\sum_{n=1}^\infty x_n$ converges.
+
 Prove $\displaystyle \lim_{n\to\infty} n x_n = 0$.
 
 \pause
 \medskip
 
 Converse still doesn't hold:
-$\sum\limits_{n=2}^\infty \frac{1}{n \ln n}$ diverges
-even though $\lim\limits_{n\to \infty} n \left( \frac{1}{n \ln n} \right) = 0$.
+$\displaystyle \sum_{n=2}^\infty \frac{1}{n \ln n}$ diverges
+even though $\lim\limits_{n\to \infty} n \left( \dfrac{1}{n \ln n} \right) = 0$.
 
 \end{frame}
 

@@ -62,8 +62,8 @@ $\N$ has no cluster points.
 \begin{proposition}
 Let $S \subset \R$.  Then $x \in \R$ is a cluster point of $S$
 if and only if
-there exists a convergent sequence of numbers $\{ x_n \}$ such that
-$x_n \not= x$ and $x_n \in S$ for all $n$, and $\lim\, x_n = x$.
+there exists a convergent sequence of numbers $\{ x_n \}_{n=1}^\infty$ such that
+$x_n \not= x$ and $x_n \in S$ for all $n$, and $\lim\limits_{n\to\infty} x_n = x$.
 \end{proposition}
 
 \pause
@@ -88,14 +88,15 @@ $\abs{x-x_n} < \nicefrac{1}{n}$.
 \pause
 %\medskip
 
-$\{ \nicefrac{1}{n} \}$ converges to zero, $\{ x_n \}$ converges to $x$.
+$\{ \nicefrac{1}{n} \}_{n=1}^\infty$ converges to zero,
+$\{ x_n \}_{n=1}^\infty$ converges to $x$.
 
 \pause
 \medskip
 
 On the other hand, 
 
-suppose $\{ x_n \}$ is a seq. in $S \setminus \{ x \}$ converging to $x$.
+suppose $\{ x_n \}_{n=1}^\infty$ is a seq. in $S \setminus \{ x \}$ converging to $x$.
 
 \pause
 \thus \quad
@@ -225,10 +226,10 @@ for any $c \in \R$,
 \end{equation*}
 
 \pause
-Proof: Fix $c \in \R$, and let $\epsilon > 0$ is given.
+\textbf{Proof:} Fix $c \in \R$, and let $\epsilon > 0$ is given.
 
 \pause
-Let $\delta \coloneqq \min \left\{ 1 , \, \frac{\epsilon}{2\abs{c}+1} \right\}$.
+Let $\delta \coloneqq \min \left\{ 1 , \, \dfrac{\epsilon}{2\abs{c}+1} \right\}$.
 
 \pause
 Take $x \not= c$ such that $\abs{x-c} < \delta$ (in particular, $\abs{x-c} < 1$).
@@ -266,7 +267,7 @@ $
 \pause
 < (2\abs{c}+1)\abs{x-c}
 \pause
-< (2\abs{c}+1)\frac{\epsilon}{2\abs{c}+1} = \epsilon$.
+< (2\abs{c}+1)\dfrac{\epsilon}{2\abs{c}+1} = \epsilon$. \qed
 
 \end{frame}
 
@@ -292,7 +293,13 @@ even though $f(0) = 1$.
 \pause
 \medskip
 
-Proof:  Let $\epsilon > 0$ be given.
+\begin{center}
+\includegraphics{../figures/limvaldiff}
+\end{center}
+
+\pause
+
+\textbf{Proof:}  Let $\epsilon > 0$ be given.
 
 \pause
 Let $\delta \coloneqq \epsilon$.
@@ -312,16 +319,17 @@ Let $S \subset \R$, let $c$ be a cluster point of $S$, let $f \colon S \to
 
 \pause
 Then
-$f(x) \to L$ as $x \to c$ if and only if for every sequence $\{ x_n \}$ in
+$f(x) \to L$ as $x \to c$ if and only if for every sequence
+$\{ x_n \}_{n=1}^\infty$ in
 $S \setminus \{c\}$
-such that $\lim\, x_n = c$,
-we have that the sequence $\{ f(x_n) \}$ converges to $L$.
+such that $\lim\limits_{n\to\infty} x_n = c$,
+we have that the sequence $\{ f(x_n) \}_{n=1}^\infty$ converges to $L$.
 \end{lemma}
 
 \pause
 \textbf{Proof:}
-Suppose $f(x) \to L$ as $x \to c$, and $\{ x_n \}$ is a seq. in
-$S \setminus \{c\}$ and $\lim\, x_n = c$.
+Suppose $f(x) \to L$ as $x \to c$, and $\{ x_n \}_{n=1}^\infty$ is a seq. in
+$S \setminus \{c\}$ and $\lim\limits_{n\to\infty} x_n = c$.
 
 \pause
 Let $\epsilon > 0$ be given.
@@ -338,7 +346,7 @@ Find an $M$ such that for $n \geq M$, we have $\abs{x_n - c} < \delta$.
 \thus \quad for $n \geq M$, \quad
 $\abs{f(x_n) - L} < \epsilon$
 \pause
-\wthus $\{ f(x_n) \}$ converges to $L$.
+\wthus $\{ f(x_n) \}_{n=1}^\infty$ converges to $L$.
 
 \pause
 \medskip
@@ -358,8 +366,8 @@ $\exists$ $x_n \in S \setminus \{c\}$, where
 $\abs{x_n-c} < \nicefrac{1}{n}$ and $\abs{f(x_n)-L} \geq \epsilon$.
 
 \pause
-$\{ x_n \}$ converges to $c$, but
-$\{ f(x_n) \}$ does not converge to $L$.
+$\{ x_n \}_{n=1}^\infty$ converges to $c$, but
+$\{ f(x_n) \}_{n=1}^\infty$ does not converge to $L$.
 \qed
 
 \pause
@@ -367,7 +375,7 @@ $\{ f(x_n) \}$ does not converge to $L$.
 
 \textbf{Exercise:} It is possible to strengthen the $\Leftarrow$:
 It is enough to suppose that
-$\{ f(x_n) \}$ converges for every $\{ x_n \}$ without requiring a specific limit.
+$\{ f(x_n) \}_{n=1}^\infty$ converges for every $\{ x_n \}_{n=1}^\infty$ without requiring a specific limit.
 \end{frame}
 
 \begin{frame}
@@ -389,12 +397,11 @@ Graphs of $\sin(\nicefrac{1}{x})$ and $x \sin(\nicefrac{1}{x})$:
 \pause
 \medskip
 
-Proof:
+\textbf{Proof:}
 Define
-$x_n \coloneqq \frac{1}{\pi n + \nicefrac{\pi}{2}}$, so that $x_n \to 0$.
-
+$x_n \coloneqq \frac{1}{\pi n + \nicefrac{\pi}{2}}$, so that $x_n \to 0$
 \pause
-\thus \quad $\sin ( \nicefrac{1}{x_n} )
+\wthus $\sin ( \nicefrac{1}{x_n} )
 \pause
 =
 \sin (\pi n + \nicefrac{\pi}{2})
@@ -402,7 +409,7 @@ $x_n \coloneqq \frac{1}{\pi n + \nicefrac{\pi}{2}}$, so that $x_n \to 0$.
 = {(-1)}^n$
 
 \pause
-\thus \quad $\bigl\{ \sin ( \nicefrac{1}{x_n} ) \bigr\}$ does not converge
+\thus \quad $\bigl\{ \sin ( \nicefrac{1}{x_n} ) \bigr\}_{n=1}^\infty$ does not converge
 \pause
 \wthus
 $\displaystyle \lim_{x \to 0} \, \sin( \nicefrac{1}{x} )$ does not exist.
@@ -410,7 +417,8 @@ $\displaystyle \lim_{x \to 0} \, \sin( \nicefrac{1}{x} )$ does not exist.
 \pause
 \medskip
 
-Let $\{ x_n \}$ a sequence in $\R \setminus \{ 0 \}$ such that $\lim\, x_n = 0$.
+Let $\{ x_n \}_{n=1}^\infty$ a sequence in $\R \setminus \{ 0 \}$ such that
+$\lim\limits_{n\to\infty} x_n = 0$.
 
 \pause
 $\abs{\sin(t)} \leq 1$ for all $t \in \R$
@@ -447,7 +455,7 @@ in mind the ``for every sequence'':
 
 \pause
 If $x_n \coloneqq \nicefrac{1}{\pi n}$, then
-$\{ \sin (\nicefrac{1}{x_n}) \} = \{ 0 \}$, but $\displaystyle \lim_{x\to 0}
+$\{ \sin (\nicefrac{1}{x_n}) \}_{n=1}^\infty = \{ 0 \}_{n=1}^\infty$, but $\displaystyle \lim_{x\to 0}
 \sin(\nicefrac{1}{x})$ DNE.
 \end{frame}
 
@@ -472,7 +480,7 @@ Then
 
 \pause
 \textbf{Proof:}
-Take $\{ x_n \}$ be a sequence in $S \setminus \{ c \}$
+Take $\{ x_n \}_{n=1}^\infty$ be a sequence in $S \setminus \{ c \}$
 converging to $c$.
 
 \pause
@@ -487,7 +495,8 @@ $\displaystyle L_2 \coloneqq \lim_{x\to c} g(x)$.
 \medskip
 
 By the lemma above,
-$\{ f(x_n) \}$ converges to $L_1$ and $\{ g(x_n) \}$ converges to $L_2$.
+$\{ f(x_n) \}_{n=1}^\infty$ converges to $L_1$ and
+$\{ g(x_n) \}_{n=1}^\infty$ converges to $L_2$.
 
 \pause
 \medskip
@@ -582,8 +591,7 @@ $\displaystyle
 \pause
 \begin{corollary}
 Let $S \subset \R$ and let $c$ be a cluster point of $S$.
-Suppose $f \colon S \to \R$ is such that the limit of $f(x)$ as $x$ goes to $c$
-exists.
+Suppose $f \colon S \to \R$ is such that $\lim\limits_{x\to c} f(x)$ exists.
 
 \pause
 \medskip
