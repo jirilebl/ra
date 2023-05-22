@@ -401,7 +401,7 @@ $\{ {(-1)}^n \}_{n=1}^\infty$ is not monotone.
 
 \begin{frame}
 
-\begin{proposition}
+\begin{theorem}[Monotone convergence theorem]
 A monotone sequence $\{ x_n \}_{n=1}^\infty$ is bounded if and only if it is convergent.
 
 \pause
@@ -413,7 +413,7 @@ $\displaystyle
 If $\{ x_n \}_{n=1}^\infty$ is monotone decreasing and bounded, then \quad
 $\displaystyle
 \lim_{n\to \infty} x_n = \inf \{ x_n : n \in \N \}$.
-\end{proposition}
+\end{theorem}
 
 \pause
 
@@ -437,9 +437,8 @@ As $\{ x_n \}_{n=1}^\infty$ is monotone increasing (by induction),
 \pause
 \thus \quad for all $n \geq M$,
 \quad $\abs{x_n-x} = x-x_n \leq x-x_{M} < \epsilon$.
-
 \pause
-\thus \quad $\{x_n \}_{n=1}^\infty$ converges to $x$.
+\wthus $\{x_n \}_{n=1}^\infty$ converges to $x$.
 
 \medskip
 \pause
@@ -452,6 +451,16 @@ On the other hand, we already proved a convergent sequence is bounded.
 Monotone decreasing left as exercise.
 \qed
 
+\pause
+\medskip
+
+\textbf{Note:} monotone increasing $\{ x_n \}_{n=1}^\infty$ is bounded from below
+by $x_1$, so enough to check if bounded from above.
+
+\medskip
+\pause
+
+Similarly for monotone decreasing, enough to check if bounded from below.
 \end{frame}
 
 \begin{frame}
