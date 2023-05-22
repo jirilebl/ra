@@ -114,7 +114,9 @@ and $f(c)$ is called the \emph{absolute minimum (resp.\ absolute maximum)}.
 \medskip
 
 \begin{center}
+\scalebox{0.85}{
 \includegraphics{../figures/minmax}
+}
 \end{center}
 \end{frame}
 
@@ -131,8 +133,9 @@ achieves both an absolute minimum and an absolute maximum on $[a,b]$.
 By lemma, $f$ is bounded, so $f\bigl([a,b]\bigr)$ is bounded.
 
 \pause
-\thus~ $\exists$ seqs. $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ and $\bigl\{ f(y_n)
-\bigr\}_{n=1}^\infty$, where $x_n$ and $y_n$ are in $[a,b]$, and
+\thus~ $\exists$ seqs. $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ and
+$\bigl\{ f(y_n) \bigr\}_{n=1}^\infty$, where $x_n$ and $y_n$ are in $[a,b]$,
+and
 
 $\displaystyle \lim_{n\to\infty} f(x_n) = \inf f\bigl([a,b]\bigr)$
 \qquad and \qquad
@@ -341,7 +344,8 @@ $\{a_n\}_{n=1}^\infty$ and $\{ b_n \}_{n=1}^\infty$ are bounded.
 \pause
 \medskip
 
-Thus convergent. Let ~$c \coloneqq \lim\, a_n$,~ $d \coloneqq \lim\, b_n$,
+Thus convergent. Let ~$c \coloneqq \lim\limits_{n\to\infty} a_n$,~
+$d \coloneqq \lim\limits_{n\to\infty} b_n$,
 ~(note $a \leq c \leq d \leq b$).
 
 \pause
@@ -389,7 +393,7 @@ As $f$ is continuous:
 $f(c)
 \pause
 =
-f(\lim\limits_{n\to\infty} a_n)
+f\left(\lim\limits_{n\to\infty} a_n\right)
 \pause
 =
 \lim\limits_{n\to\infty} f(a_n)
@@ -400,7 +404,7 @@ f(\lim\limits_{n\to\infty} a_n)
 $f(c)
 \pause
 =
-f(\lim\limits_{n\to\infty} b_n)
+f\left(\lim\limits_{n\to\infty} b_n\right)
 \pause
 =
 \lim\limits_{n\to\infty} f(b_n)
@@ -601,7 +605,7 @@ $g(M) > 0$.
 \pause
 \medskip
 
-An exercise (similar as above):
+\textbf{Exercise:}
 $\exists$ $K \in \N$ such that
 $b_{d-1} {(-K)}^{d-1} + \cdots + b_1 (-K) + b_0 < K^d$
 \wthus $g(-K) < 0$
@@ -622,6 +626,54 @@ $c \in (-K,M)$, such that $g(c) = 0$.
 
 As $g(x) = \frac{f(x)}{a_d}$, then $f(c) = 0$.
 \qed
+\end{frame}
+
+\begin{frame}
+\textbf{Example:}
+Remember how hard it was to show $\sqrt{2}$ exists?
+
+\pause
+\medskip
+
+Bolzano does it with no effort at all.
+
+\medskip
+\pause
+
+\textbf{Claim:}
+For any $k \in \N$ and $y > 0$,
+there exists $x > 0$ such that $x^k = y$.
+
+\medskip
+\pause
+
+\textbf{Proof:}
+$y=1$ is clear. \quad So assume $y\not= 1$.
+
+\medskip
+\pause
+
+Let $f(x) \coloneqq x^k - y$.
+
+\pause
+\medskip
+
+$f(0) = -y < 0$.
+
+\pause
+\medskip
+If $y < 1$, then $f(1) = 1^k -y > 0$.
+
+\pause
+
+If $y > 1$,
+then $f(y) = y^k-y = y(y^{k-1}-1) > 0$.
+
+\medskip
+\pause
+
+In either case,
+Bolzano finds $x > 0$ such that $f(x)=0$. \pause I.e., $x^k = y$  \qed
 \end{frame}
 
 \begin{frame}
