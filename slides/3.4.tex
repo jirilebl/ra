@@ -21,10 +21,10 @@ Departemento pri Matematiko de Oklahoma {\^S}tata Universitato}
 
 \begin{frame}
 \begin{definition}
-Let $S \subset \R$, and let $f \colon S \to \R$ be a function.
+Let $S \subset \R$ and $f \colon S \to \R$ be a function.
 Suppose for every $\epsilon > 0$ there exists a $\delta > 0$
 such that whenever $x, c \in S$ and
-$\abs{x-c} < \delta$, then $\abs{f(x)-f(c)} < \epsilon$.
+$\abs{x-c} < \delta$, we have $\abs{f(x)-f(c)} < \epsilon$.
 Then we say $f$ is \emph{uniformly continuous}.
 \end{definition}
 
@@ -34,7 +34,7 @@ Here $\delta$ does not depend on $c$, only on $\epsilon$.
 \pause
 \medskip
 
-uniformly continuous \wthus continuous \quad (but not the other way round)
+uniformly continuous \wthus continuous \quad (but not the other way around)
 
 \pause
 \medskip
@@ -45,15 +45,20 @@ $f \colon [0,1] \to \R$ defined by $f(x) \coloneqq x^2$ is uniformly continuous.
 \pause
 \medskip
 
-Proof: Suppose $0 \leq x,c \leq 1$.  Then
+\textbf{Proof:}
+Suppose $0 \leq x,c \leq 1$.  Then
+
+\medskip
+
 $\abs{x^2-c^2}
 \pause
 = \abs{x+c}\abs{x-c}
 \pause
-\leq (\abs{x}+\abs{c}) \abs{x-c}
+\leq \bigl(\abs{x}+\abs{c}\bigr) \abs{x-c}
 \pause
 \leq (1+1)\abs{x-c}$.
 
+\medskip
 \pause
 Given $\epsilon > 0$, let $\delta \coloneqq \nicefrac{\epsilon}{2}$.
 
@@ -72,7 +77,7 @@ continuous.
 \pause
 \medskip
 
-Proof: Suppose it is.
+\textbf{Proof:} Suppose it is.
 \pause
 Given $\epsilon > 0$,
 $\exists$ $\delta > 0$ s.t.
@@ -110,7 +115,7 @@ uniformly continuous.
 \pause
 \medskip
 
-Proof:
+\textbf{Proof:}
 For any $x,y \in (0,1)$, ~~
 $\abs{\nicefrac{1}{x}-\nicefrac{1}{y}}
 \pause
@@ -137,7 +142,11 @@ $y = x+\nicefrac{\delta}{2} \in (0,1)$,
 then $\abs{x-y} = \nicefrac{\delta}{2} < \delta$.
 
 \pause
-If $\delta$ satisfies the definition, then $\nicefrac{\delta}{2} < x \bigl( x+\nicefrac{\delta}{2} \bigr) \epsilon < x$.
+Suppose $f$ is uniformly continuous and
+$\delta$ satisfies the definition.
+
+\pause
+Then $\nicefrac{\delta}{2} < x \bigl( x+\nicefrac{\delta}{2} \bigr) \epsilon < x$.
 
 \pause
 \medskip
@@ -164,9 +173,7 @@ Suppose $f$ is not uniformly continuous.
 
 \pause
 $\exists$ $\epsilon > 0$ and 
-sequences
 $\{ x_n \}_{n=1}^\infty$, $\{ y_n \}_{n=1}^\infty$ in $[a,b]$
-
 such that
 $\abs{x_n-y_n} < \nicefrac{1}{n}$ and $\abs{f(x_n)-f(y_n)} \geq
 \epsilon$.
@@ -305,7 +312,7 @@ $\abs{f(x)-f(y)}
 \pause
 < K \delta
 \pause
-= K \frac{\epsilon}{K}
+= K \dfrac{\epsilon}{K}
 \pause
 =
 \epsilon$.
@@ -367,7 +374,7 @@ is Lipschitz continuous.
 \pause
 \medskip
 
-Proof:
+\textbf{Proof:}
 $
 \abs{\sqrt{x}-\sqrt{y}}
 \pause
@@ -376,11 +383,10 @@ $
 \pause
 =
 \frac{\abs{x-y}}{\sqrt{x}+\sqrt{y}}$.
-
 \pause
-\medskip
-
-As $x \geq 1$ and $y \geq 1$, we see that $\frac{1}{\sqrt{x}+\sqrt{y}}
+\qquad
+$x \geq 1$ and $y \geq 1$
+\wthus $\frac{1}{\sqrt{x}+\sqrt{y}}
 \leq \frac{1}{2}$.
 
 \pause
@@ -395,17 +401,19 @@ $\abs{\sqrt{x}-\sqrt{y}}
 \abs{x-y}$.
 \qed
 
-\pause
+
+\puase
 \medskip
 
 \textbf{Example:}
 $g \colon [0,\infty) \to \R$ given by
-$g(x) \coloneqq \sqrt{x}$ is not Lipschitz continuous.
+$g(x) \coloneqq \sqrt{x}$ is \textbf{not} Lipschitz continuous.
 
 \pause
 \medskip
 
-Proof:  Suppose $K$ exists (assume $K>0$), s.t. 
+\textbf{Proof:}
+Suppose $K$ exists (assume $K>0$), s.t. 
 $\abs{\sqrt{x}-\sqrt{y}} 
 \leq
 K \abs{x-y}$ $\forall$ $x,y \geq 0$.
@@ -413,17 +421,26 @@ K \abs{x-y}$ $\forall$ $x,y \geq 0$.
 \pause
 \medskip
 
-Set $y=0$ \wthus $\sqrt{x} \leq K x$.
+Set $y=0$ \wthus $\sqrt{x} \leq K x$
+\qquad
+\pause
+in other words,
+~$\nicefrac{1}{K} \leq \sqrt{x}$ ~~ or ~~ $\nicefrac{1}{K^2} \leq x$.
 
 \pause
-For $x > 0$, ~$\nicefrac{1}{K} \leq \sqrt{x}$ ~~ or ~~ $\nicefrac{1}{K^2} \leq x$.
-
-\pause
-This can't be true for all $x > 0$ \wthus no $K$ exists
+Cannot be true for all $x > 0$ \wthus no $K$ exists
 \pause
 \wthus
 $g$ not Lipschitz.
 \qed
+\pause
+
+
+\hspace*{\fill}
+\scalebox{0.8}{
+\includegraphics{../figures/sqrtgraph}
+}
+\hspace*{\fill}
 
 \pause
 \medskip
