@@ -32,32 +32,30 @@ L \coloneqq \lim_{x \to c} \frac{f(x)-f(c)}{x-c} \qquad \text{exists,}
 then $f$ is
 \emph{differentiable} at
 $c$, $L$ is the \emph{derivative} of $f$ at $c$,
-and we write $f'(c) \coloneqq L$.
+and write $f'(c) \coloneqq L$.
 
 \pause
 \medskip
 
-If $f$ is differentiable at all $c \in I$, we say
+If $f$ is differentiable at all $c \in I$, say
 $f$ is \emph{differentiable},
-
-and we obtain a function $f' \colon I \to \R$.
-
-\pause
-\medskip
-
-Other notation: $\frac{df}{dx}$ or $\frac{d}{dx}\bigl( f(x) \bigr)$.
+and obtain a function $f' \colon I \to \R$.
 
 \pause
 \medskip
 
-The expression $\frac{f(x)-f(c)}{x-c}$ is called the
+Other notation: $\dfrac{df}{dx}$ or $\dfrac{d}{dx}\Bigl( f(x) \Bigr)$.
+
+\pause
+\medskip
+
+The expression $\dfrac{f(x)-f(c)}{x-c}$ is called the
 \emph{difference quotient}.
 \end{definition}
 
 \pause
 \textbf{Remark:}
-We allow $I$ to be a closed interval
-
+We allow $I$ to be a closed interval,
 and we allow $c$ to be an endpoint of $I$.
 
 \end{frame}
@@ -157,7 +155,7 @@ the affine function $ax + b$.
 \textbf{Example:}
 $f(x) \coloneqq \sqrt{x}$ is differentiable for $x > 0$.
 \pause
-Proof:
+\textbf{Proof:}
 Fix $c > 0$ and take $x \not= c$, $x > 0$.
 \pause
 \begin{equation*}
@@ -183,6 +181,9 @@ f'(c)
 \pause
 =
 \frac{1}{2\sqrt{c}} .
+\pushQED{\qed}
+\qedhere
+\popQED
 \end{equation*}
 
 \pause
@@ -192,6 +193,7 @@ f'(c)
 $f(x) \coloneqq \abs{x}$ is not differentiable at $0$.
 
 \pause
+\textbf{Proof:}
 When $x > 0$,
 \begin{equation*}
 \frac{\abs{x}-\abs{0}}{x-0} =
@@ -204,7 +206,7 @@ When $x < 0$,
 \frac{-x-0}{x-0} = -1 .
 \end{equation*}
 \pause
-So the limit $x \to 0$ does not exist.
+So the limit $x \to 0$ does not exist. \qed
 
 \end{frame}
 

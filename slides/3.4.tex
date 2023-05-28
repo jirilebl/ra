@@ -263,6 +263,189 @@ $f(y_{n_k}) \not\to f(c)$, otherwise the LHS would $\to 0$.
 \end{frame}
 
 \begin{frame}
+Uniformly continuous functions preserve Cauchy sequences:
+
+\begin{lemma}
+Let $f \colon S \to \R$ be uniformly continuous.  Let
+$\{ x_n \}_{n=1}^\infty$ be a Cauchy sequence in $S$.
+Then $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ is Cauchy.
+\end{lemma}
+
+\pause
+
+\textbf{Proof:}
+Let $\epsilon > 0$ be given.
+
+\medskip
+\pause
+
+$\exists$ $\delta > 0$ such that
+$\abs{f(x)-f(y)} < \epsilon$ whenever $x,y \in S$ and $\abs{x-y} < \delta$.
+
+\medskip
+\pause
+
+Find $M \in \N$ such that for all $n, k \geq M$, we have $\abs{x_n-x_k} < \delta$.
+
+\medskip
+\pause
+
+\thus\quad
+$\forall$ $n, k \geq M$ \quad $\abs{f(x_n)-f(x_k)} < \epsilon$.
+\qed
+
+\end{frame}
+
+\begin{frame}
+
+The lemma gives extension to endpoints for uniformly continuous functions:
+
+\begin{proposition}
+$f \colon (a,b) \to \R$ is uniformly continuous if and only if
+the limits 
+\begin{equation*}
+L_a \coloneqq \lim_{x \to a} f(x) \qquad \text{and} \qquad
+L_b \coloneqq \lim_{x \to b} f(x)
+\end{equation*}
+exist and $\widetilde{f} \colon [a,b] \to \R$
+defined by
+\begin{equation*}
+\widetilde{f}(x) \coloneqq
+\begin{cases}
+f(x) & \text{if } x \in (a,b), \\
+L_a & \text{if } x = a, \\
+L_b & \text{if } x = b
+\end{cases}
+\end{equation*}
+is continuous.
+\end{proposition}
+
+\pause
+
+
+\textbf{Proof:}
+$\Leftarrow$)
+If $\widetilde{f}$ is continuous, then
+it is uniformly continuous by the theorem.
+
+\pause
+\medskip
+
+$f$ is the restriction of $\widetilde{f}$ to $(a,b)$,
+so $f$ is also uniformly continuous (exercise).
+
+\end{frame}
+
+\begin{frame}
+$\Rightarrow$) Suppose $f$ is uniformly continuous.
+\pause
+WTS that $L_a$ and $L_b$ exist.
+
+\pause
+Take $\{ x_n \}_{n=1}^\infty$ in $(a,b)$ such that $x_n \to a$ (and so also
+Cauchy).
+
+\pause
+Lemma says
+$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ is Cauchy and thus convergent, so
+\pause
+let $L_1 \coloneqq \lim\limits_{n\to\infty} f(x_n)$.
+
+\pause
+Take another $\{ y_n \}_{n=1}^\infty$ in $(a,b)$ s.t. $y_n \to a$.
+\pause
+Similarly, $L_2 \coloneqq \lim\limits_{n\to\infty} f(y_n)$ exists.
+\pause
+WTS $L_1 = L_2$.
+
+\pause
+Given $\epsilon > 0$, \quad
+find $\delta > 0$ s.t. $\abs{x-y} < \delta$ implies $\abs{f(x)-f(y)} < \nicefrac{\epsilon}{3}$.
+
+\pause
+$\exists$
+$M \in \N$ s.t. for
+$n \geq M$, ~~ $\abs{a-x_n} < \nicefrac{\delta}{2}$,
+\pause
+$\abs{a-y_n} < \nicefrac{\delta}{2}$,
+\pause
+$\abs{f(x_n)-L_1} < \nicefrac{\epsilon}{3}$, and
+\pause
+$\abs{f(y_n)-L_2} < \nicefrac{\epsilon}{3}$.
+
+\pause
+\thus \quad for $n \geq M$,
+$
+\abs{x_n-y_n}
+\pause
+= 
+\abs{x_n-a+a-y_n}
+\pause
+\leq
+\abs{x_n-a}+\abs{a-y_n}
+\pause
+< \nicefrac{\delta}{2} + \nicefrac{\delta}{2}
+=
+\delta.
+$
+
+\pause
+
+\thus
+\quad
+$\abs{L_1-L_2}
+\pause
+=
+\abs{L_1-f(x_n)+f(x_n)-f(y_n)+f(y_n)-L_2}
+\pause
+$
+
+\qquad
+$
+\leq 
+\abs{L_1-f(x_n)}+\abs{f(x_n)-f(y_n)}+\abs{f(y_n)-L_2}
+\pause
+\leq
+\nicefrac{\epsilon}{3} + \nicefrac{\epsilon}{3} + \nicefrac{\epsilon}{3}
+=
+\epsilon$.
+
+\pause
+\thus \quad $L_1 = L_2$.
+\pause
+\wthus
+$L_a = \lim_{x\to a} f(x)$ exists.
+\quad
+\pause
+$L_b$ is almost the same.
+
+\medskip
+\pause
+
+As $\lim\limits_{x\to a} f(x) = L_a$ exists, $\lim\limits_{x\to a} \widetilde{f}(x)$ exists
+and equals $L_a$ (Proposition 3.1.15)
+\pause \quad(similarly for $b$).
+
+\pause
+\thus \quad $\widetilde{f}$ is continuous at $a$ and $b$.
+
+\pause
+As $f$ is continuous at any $c \in (a,b)$,
+then $\widetilde{f}$ is continuous at $c \in (a,b)$ (Proposition 3.1.15).
+\qed
+
+\medskip
+\pause
+
+Typical application:
+if $f \colon (-1,0) \cup (0,1) \to \R$ is uniformly continuous,
+then $\lim\limits_{x\to 0} f(x)$ exists and $f$
+has a \emph{removable singularity}:
+it can be continuously extended to $(-1,1)$.
+
+\end{frame}
+
+\begin{frame}
 
 \begin{definition}
 A function $f \colon S \to \R$
@@ -402,7 +585,7 @@ $\abs{\sqrt{x}-\sqrt{y}}
 \qed
 
 
-\puase
+\pause
 \medskip
 
 \textbf{Example:}

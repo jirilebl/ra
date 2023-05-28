@@ -211,29 +211,36 @@ $f(b)-f(a) = f'(c)(b-a)$.
 \end{theorem}
 
 \pause
-\begin{center}
+\hspace*{\fill}
 \scalebox{0.8}{\includegraphics{../figures/mvtfig}}
-\end{center}
+
+\vspace*{-1.5in}
 
 \pause
-$\frac{f(b)-f(a)}{b-a}$
-is the slope of the secant line between $\bigl(a,f(a)\bigr)$ and $\bigl(b,f(b)\bigr)$.
+$\dfrac{f(b)-f(a)}{b-a}$
+is the slope of the secant line
+
+between $\bigl(a,f(a)\bigr)$ and $\bigl(b,f(b)\bigr)$.
 
 \pause
 \medskip
 
-The slope of the secant line is the mean value of $f'$ (hence the name).
+The slope of the secant line is
+
+the mean value of $f'$ (hence the name).
 
 \pause
 \medskip
 
 So the average derivative is attained at $c$:
-\quad
-$f'(c)=\frac{f(b)-f(a)}{b-a}$.
+
+\medskip
+
+$f'(c)=\dfrac{f(b)-f(a)}{b-a}$.
 \end{frame}
 
 \begin{frame}
-\begin{theorem}[Mean value theorem]
+\begin{theorem}[Mean value theorem (MVT)]
 Let $f \colon [a,b] \to \R$ be continuous and
 differentiable on $(a,b)$.  Then there exists $c \in (a,b)$
 such that \quad
@@ -265,7 +272,7 @@ $c \in (a,b)$ such that $g'(c) = 0$.
 \pause
 \medskip
 
-$0 = g'(c) = f'(c)-\frac{f(b)-f(a)}{b-a}$
+$0 = g'(c) = f'(c)-\dfrac{f(b)-f(a)}{b-a}$
 \pause
 \quad
 \text{or}
@@ -291,13 +298,17 @@ such that
 \pause
 Hint: Consider
 $g(x) \coloneqq
-f(x)-f(b)-\frac{f(b)-f(a)}{\varphi(b)-\varphi(a)}\bigl(\varphi(x)-\varphi(b)\bigr)$.
+f(x)-f(b)-\dfrac{f(b)-f(a)}{\varphi(b)-\varphi(a)}\bigl(\varphi(x)-\varphi(b)\bigr)$.
 
 \end{frame}
 
 \begin{frame}
+MVT is useful by getting rid of a limit.  Let's see some applications.
 
-We now solve our a differential equation:
+\medskip
+\pause
+
+First, let's solve a differential equation:
 
 \begin{proposition}
 Let $I$ be an interval and
@@ -343,7 +354,7 @@ $f'(c) = 0$
 $f \colon I \to \R$ is \emph{increasing}
 (resp.\  \emph{strictly increasing}) if
 $x < y$ implies
-
+%
 $f(x) \leq f(y)$ (resp.\ $f(x) < f(y)$).
 
 \pause
@@ -438,51 +449,73 @@ $f(x) \coloneqq x^3$ is strictly increasing, but $f'(0) = 0$.
 
 \end{frame}
 
-%\begin{frame}
-%
-%Another application of the mean value theorem is the following result about
-%location of extrema, sometimes called the \emph{first derivative test}.  The theorem is stated for an absolute minimum and
-%maximum. To apply it to find relative minima
-%and maxima, restrict $f$ to an interval $(c-\delta,c+\delta)$.
-%
-%\begin{proposition}
-%Let $f \colon (a,b) \to \R$ be continuous.  Let $c \in (a,b)$
-%and suppose
-%$f$ is differentiable on $(a,c)$ and $(c,b)$.
-%\begin{enumerate}[(i)]
-%\item If $f'(x) \leq 0$ whenever $x \in (a,c)$ and
- %$f'(x) \geq 0$ whenever $x \in (c,b)$, then $f$ has an absolute minimum 
-%at $c$.
-%\item If $f'(x) \geq 0$ whenever $x \in (a,c)$ and
- %$f'(x) \leq 0$ whenever $x \in (c,b)$, then $f$ has an absolute maximum
-%at $c$.
-%\end{enumerate}
-%\end{proposition}
-%
-%\textbf{Proof:}
-%We prove the first item and leave the second to the reader.
-%Take $x \in (a,c)$
-%and a sequence $\{ y_n\}_{n=1}^\infty$ such that $x < y_n < c$ for all $n$
-%and $\lim_{n\to\infty} y_n = c$.
-%By the preceding proposition,
-%$f$ is decreasing on $(a,c)$ so $f(x) \geq f(y_n)$.
-%As $f$ is
-%continuous at $c$, we take the limit to get
-%$f(x) \geq f(c)$ for all $x \in (a,c)$.
-%
-%Similarly, take $x \in (c,b)$
-%and $\{ y_n\}_{n=1}^\infty$ a sequence such that $c < y_n < x$ and
-%$\lim_{n\to\infty} y_n = c$.
-%The function is increasing on $(c,b)$ so $f(x) \geq f(y_n)$.
-%By continuity of $f$ we get
-%$f(x) \geq f(c)$ for all $x \in (c,b)$.  Thus $f(x) \geq f(c)$ for all
-%$x \in (a,b)$.
-%\qed
-%
-%The converse of the proposition does not hold.  See
-%{baddifffunc:example} below.
-%
-%\end{frame}
+\begin{frame}
+
+\begin{proposition}[First derivative test]
+Let $f \colon (a,b) \to \R$ be continuous.  Let $c \in (a,b)$
+and suppose
+$f$ is differentiable on $(a,c)$ and $(c,b)$.
+\begin{enumerate}[(i)]
+\item If $f'(x) \leq 0$ whenever $x \in (a,c)$ and
+%$f'(x) \geq 0$ whenever $x \in (c,b)$, then $f$ has an absolute minimum 
+at $c$.
+\item If $f'(x) \geq 0$ whenever $x \in (a,c)$ and
+%$f'(x) \leq 0$ whenever $x \in (c,b)$, then $f$ has an absolute maximum
+at $c$.
+\end{enumerate}
+\end{proposition}
+
+\pause
+\textbf{Remark:}
+To apply to find relative minima
+and maxima, restrict $f$ to an interval $(c-\delta,c+\delta)$.
+
+\medskip
+\pause
+
+\textbf{Proof:}
+(i)
+Take $x \in (a,c)$ and $\{ y_n\}_{n=1}^\infty$ such that $x < y_n < c$
+$\forall$ $n$
+and $\lim\limits_{n\to\infty} y_n = c$.
+\pause
+
+$f$ is decreasing on $(a,c)$ so $f(x) \geq f(y_n)$ $\forall$ $n$.
+\pause
+
+$f$ is continuous at $c$, so take limit as $n \to \infty$ to get
+$f(x) \geq f(c)$.
+
+\medskip
+\pause
+
+Similarly, take $x \in (c,b)$
+and $\{ y_n\}_{n=1}^\infty$ such that $c < y_n < x$ and
+$\lim\limits_{n\to\infty} y_n = c$.
+\pause
+
+$f$ is increasing on $(c,b)$ so $f(x) \geq f(y_n)$ $\forall$ $n$
+\pause
+\wthus
+$f(x) \geq f(c)$.
+
+\medskip
+\pause
+
+\thus \quad
+$f(x) \geq f(c)$ $\forall$
+$x \in (a,b)$.
+
+\medskip
+\pause
+
+(ii) left as exercise.
+\qed
+
+\medskip
+\pause
+The converse of the proposition does not hold (example later).
+\end{frame}
 
 \begin{frame}
 
@@ -572,7 +605,7 @@ $g$ is differentiable on $[a,b]$ and $g'(x) = y-f'(x)$
 \pause
 \medskip
 \thus \quad $\exists$ $x > a$ such that
-$\displaystyle \frac{g(x)-g(a)}{x-a} > 0$.
+$\dfrac{g(x)-g(a)}{x-a} > 0$.
 
 \pause
 \medskip
@@ -585,7 +618,7 @@ $\displaystyle \frac{g(x)-g(a)}{x-a} > 0$.
 \medskip
 
 Similarly, $g'(b) < 0$, so $\exists$ $x < b$ such that
-$\frac{g(x)-g(b)}{x-b} < 0$ or $g(x) > g(b)$,
+$\dfrac{g(x)-g(b)}{x-b} < 0$ or $g(x) > g(b)$,
 
 \pause
 \thus \quad $g$ does not have a maximum at $b$.
@@ -706,13 +739,13 @@ $\abs{x} \to 0$ as $x \to 0$
 
 \textbf{Remark:}
 If $f \colon I \to \R$ is differentiable and
-$f'$ is continuous on $I$, then say $f$ is
+$f'$ continuous, then $f$ is
 \emph{continuously differentiable}.
 
 \pause
 \medskip
 
-One writes $C^1(I)$ for the set of continuously differentiable functions on $I$.
+Write $C^1(I)$ for the set of continuously differentiable functions on $I$.
 
 \end{frame}
 

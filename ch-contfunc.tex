@@ -2096,14 +2096,15 @@ back in $[a,b]$ because the interval is closed.
 
 \subsection{Continuous extension}
 
-Before we get to continuous extension, we show the following useful lemma.
-It says that uniformly continuous functions behave nicely with respect
-to Cauchy sequences.  The new issue here is that for a Cauchy sequence
-we no longer know where the limit ends up; it may not end up in the domain
-of the function.
+Uniformly continuous functions on open intervals extend continuously
+to the endpoints.
+The key is the following lemma, which also has many other uses.
+It says that uniformly continuous functions preserve Cauchy sequences.
+The new issue here is that for a Cauchy sequence,
+the limit may not end up in the domain of the function.
 
 \begin{lemma} \label{unifcauchycauchy:lemma}
-Let $f \colon S \to \R$ be a uniformly continuous function.  Let
+Let $S \subset \R$ and let $f \colon S \to \R$ be a uniformly continuous function.  Let
 $\{ x_n \}_{n=1}^\infty$ be a Cauchy sequence in $S$.
 Then $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ is Cauchy.
 \end{lemma}
@@ -2184,16 +2185,16 @@ So
 Therefore, $L_1 = L_2$.
 Thus $L_a$ exists.  To show that $L_b$ exists is left as an exercise.
 
-Now that we know that the
-limits $L_a$ and $L_b$ exist, we are done.  If $\lim_{x\to a} f(x)$
+If $L_a = \lim_{x\to a} f(x)$
 exists, then $\lim_{x\to a} \widetilde{f}(x)$ exists
-(see \propref{prop:limrest}).  Similarly with $L_b$.
+and equals $L_a$
+(see \propref{prop:limrest}).  Similarly for $L_b$.
 Hence $\widetilde{f}$ is continuous at $a$ and $b$.  
 And since $f$ is continuous at $c \in (a,b)$, then
-$\widetilde{f}$ is continuous at $c \in (a,b)$.
+$\widetilde{f}$ is continuous at $c \in (a,b)$ (\propref{prop:limrest} again).
 \end{proof}
 
-A common application of this proposition (together with
+A typical application of this proposition (together with
 \propref{prop:onesidedlimits})
 is the following.
 Suppose $f \colon (-1,0) \cup (0,1) \to \R$ is uniformly continuous,
