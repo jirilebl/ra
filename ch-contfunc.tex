@@ -2960,7 +2960,8 @@ continuous.
 Without loss of generality, suppose $f$ is increasing.
 
 First suppose $f$ is continuous.  Take two points
-$f(x_1) < f(x_2)$ in $f(I)$.
+$f(x_1), f(x_2)$ in $f(I)$ and suppose
+$f(x_1) < f(x_2)$.
 As $f$ is increasing, then $x_1 < x_2$.  By the
 \hyperref[IVT:thm]{intermediate value theorem},
 given $y$ with $f(x_1) < y < f(x_2)$, we find
@@ -2981,8 +2982,8 @@ If $x < c$, then $f(x) \leq a$, and
 if $x > c$, then $f(x) \geq b$.  Therefore
 no point
 in $(a,b) \setminus \bigl\{ f(c) \bigr\}$ is in $f(I)$.
-However there exists $x_1 \in I$, $x_1 < c$, so
-$f(x_1) \leq a$, and there exists $x_2 \in I$, $x_2 > c$,
+There exists $x_1 \in I$ with $x_1 < c$, so
+$f(x_1) \leq a$, and there exists $x_2 \in I$ with $x_2 > c$,
 so $f(x_2) \geq b$.  Both $f(x_1)$ and $f(x_2)$ are in $f(I)$,
 but there are points in between them that are not in $f(I)$.
 So $f(I)$ is not an interval.  See \figureref{fig:figinccont}.
@@ -3011,8 +3012,8 @@ that are not endpoints of $I$.  As there are
 only two endpoints, it is enough to show that $E$ is countable.
 Without loss of generality, suppose $f$ is increasing.
 We will define an injection $h \colon E \to \Q$.
-For each $c \in E$
-the one-sided limits of $f$ both exist as $c$ is not an endpoint.
+For each $c \in E$,
+both one-sided limits of $f$ exist as $c$ is not an endpoint.
 Let
 \begin{equation*}
 a \coloneqq \lim_{x \to c^-} f(x) = \sup \bigl\{ f(x) : x \in I, x < c \bigr\} ,
@@ -3021,12 +3022,13 @@ b \coloneqq \lim_{x \to c^+} f(x) = \inf \bigl\{ f(x) : x \in I, x > c \bigr\} .
 \end{equation*}
 As $c$ is a discontinuity, $a < b$.  
 There exists a rational number $q \in (a,b)$, so let $h(c) \coloneqq q$.
-If $d \in E$ is another discontinuity, then if $d > c$, then there
+Suppose $d \in E$ is another discontinuity.
+If $d > c$, there
 exist an $x \in I$ with $c < x < d$, and so $\lim_{x \to d^-} f(x) \geq b$.
 Hence the rational number we choose for $h(d)$ is different from $q$,
 since $q=h(c) < b$ and $h(d) > b$.
-Similarly if $d < c$.  So after making such a choice for
-every $c \in E$, we have a 
+Similarly if $d < c$.  After making such a choice for
+every element of $E$, we have a 
 one-to-one (injective) function into $\Q$.  Therefore, $E$ is countable.
 \end{proof}
 
@@ -3050,7 +3052,7 @@ defined on a closed bounded interval.  See \figureref{fig:countdiscont}.
 discontinuities.\label{fig:countdiscont}}
 \end{myfigureht}
 
-Similarly, one can find an example of a function discontinuous on a dense set
+Similarly, one can find an example of a monotone function discontinuous on a dense set
 such as the rational numbers.  See the exercises.
 \end{example}
 
