@@ -819,7 +819,7 @@ $n \geq M$, we have that $\abs{f(x_n)-f(c)} < \epsilon$,
 so $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$
 converges to $f(c)$.
 
-We prove the other direction of \eqref{contbasic:prop:iii} by contrapositive.
+We prove the other direction of \ref{contbasic:prop:iii} by contrapositive.
 Suppose $f$ is not
 continuous at $c$.  Then there exists an $\epsilon > 0$
 such that for every $\delta > 0$, there exists an $x \in S$
@@ -862,9 +862,9 @@ Thus $f$ is continuous at $c$.  As $f$ is continuous at all $c \in
 \end{example}
 
 We have previously shown $\lim_{x \to c} x^2 = c^2$ directly.  Therefore
-the function $x^2$ is continuous.  We can use the continuity of
-algebraic operations with respect to limits of sequences, which we proved in
-the previous chapter, to prove a much more general result.
+the function $x^2$ is continuous.  The last item of \propref{contbasic:prop} and the continuity of
+algebraic operations with respect to limits of sequences,
+\propref{prop:contalg}, gives a quick proof of a much more general result.
 
 \begin{prop}
 Let $f \colon \R \to \R$ be a \emph{\myindex{polynomial}}.  That is,
@@ -1503,16 +1503,18 @@ We show by examples that the different hypotheses of the theorem are
 truly needed.
 
 \begin{example}
-The function $f(x) \coloneqq x$, defined on the whole real line,
+The function $f \colon \R \to \R$ defined by $f(x) \coloneqq x$
 achieves neither a minimum, nor a maximum.  So it is important that
 we are looking at a bounded interval.
 \end{example}
 
 \begin{example}
-The function $f(x) \coloneqq \nicefrac{1}{x}$, defined on $(0,1)$ 
-achieves neither a minimum, nor a maximum.  The values of the function are
-unbounded as we approach 0.  Also as we approach $x=1$, the values of the
-function approach 1, but $f(x) > 1$ for all $x \in (0,1)$.  There is
+The function $f \colon (0,1) \to \R$ defined by $f(x) \coloneqq \nicefrac{1}{x}$
+achieves neither a minimum, nor a maximum.
+It is continuous, but $(0,1)$ is not closed.
+The values of the function are
+unbounded as we approach $0$.  Also as we approach $x=1$, the values of the
+function approach $1$, but $f(x) > 1$ for all $x \in (0,1)$.  There is
 no $x \in (0,1)$ such that $f(x) = 1$.  So it is important that
 we are looking at a closed interval.
 \end{example}
@@ -1521,7 +1523,8 @@ we are looking at a closed interval.
 Continuity is important.
 Define $f \colon [0,1] \to \R$ by 
 $f(x) \coloneqq \nicefrac{1}{x}$ for $x > 0$ and let $f(0) \coloneqq 0$.
-The function does not achieve a maximum.  The problem is that
+The function does not achieve a maximum.  The domain $[0,1]$ is closed and
+bounded, but the problem is that
 the function is not continuous at 0.
 \end{example}
 
