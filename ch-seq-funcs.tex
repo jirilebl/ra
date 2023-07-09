@@ -131,15 +131,14 @@ definition of convergence of a sequence of real numbers.
 \begin{prop} \label{ptwsconv:prop}
 Let $f_n \colon S \to \R$ and $f \colon S \to \R$ be functions.
 Then $\{ f_n \}_{n=1}^\infty$ converges pointwise to $f$ if and only if
-for every $x \in S$, and every $\epsilon > 0$, there exists
-an $N \in \N$ such that for all
-$n \geq N$,
+for every $x \in S$ and every $\epsilon > 0$, there exists
+an $N \in \N$ such that
 \begin{equation*}
-\abs{f_n(x)-f(x)} < \epsilon .
+\abs{f_n(x)-f(x)} < \epsilon \quad \text{for all } n \geq N .
 \end{equation*}
 \end{prop}
 
-The key point here is that $N$ can depend on $x$, not just on
+The key point is that $N$ can depend on $x$, not just on
 $\epsilon$.  For each $x$, we can pick a different $N$.
 If we could pick one $N$ for all $x$, we would have what is called
 uniform convergence.
@@ -212,8 +211,10 @@ for all $n \geq N$ and all $x \in [-a,a]$,
 
 For bounded functions, there is another more abstract way to 
 think of uniform convergence.  To every bounded function we assign
-a certain nonnegative number (called the uniform norm).  This number
-measures the \myquote{distance} of the function from 0.  We can then
+a certain nonnegative number that
+measures the \myquote{distance} of the function from the constant
+function $0$.
+This number allows us to
 \myquote{measure}
 how far two functions are from each other.  We then translate
 a statement about uniform convergence into a statement about a certain
@@ -225,8 +226,16 @@ Let $f \colon S \to \R$ be a bounded function.  Define
 \begin{equation*}
 \snorm{f}_S \coloneqq
 \sup \bigl\{ \abs{f(x)} : x \in S \bigr\} .
+\avoidbreak
 \end{equation*}
 We call $\snorm{\cdot}_S$ the \emph{\myindex{uniform norm}}.
+Sometimes other notation\footnote{The notation nor terminology
+is not completely standardized.  The norm is also called the
+\emph{\myindex{sup norm}} or
+\emph{\myindex{infinity norm}}, and in addition
+to $\snorm{f}_u$ and $\snorm{f}_S$ it is sometimes written
+as $\snorm{f}_{\infty}$ or $\snorm{f}_{\infty,S}$.}
+is used, such as $\snorm{f}_u$.
 \end{defn}
 
 The subscript is the set over which the supremum is taken.  So if $K \subset S$
@@ -235,13 +244,6 @@ then
 \snorm{f}_K =
 \sup \bigl\{ \abs{f(x)} : x \in K \bigr\} .
 \end{equation*}
-Sometimes other notation\footnote{The notation nor terminology
-is not completely standardized.  The norm is also called the
-\emph{\myindex{sup norm}} or
-\emph{\myindex{infinity norm}}, and in addition
-to $\snorm{f}_u$ and $\snorm{f}_S$ it is sometimes written
-as $\snorm{f}_{\infty}$ or $\snorm{f}_{\infty,S}$.}
-is used, such as $\snorm{f}_u$.
 
 \begin{prop}
 A sequence of bounded functions $f_n \colon S \to \R$ converges
@@ -267,11 +269,11 @@ Taking the supremum over $x \in S$, we see that
 $\snorm{f_n - f}_S \leq \epsilon$.  Hence $\lim_{n\to\infty} \snorm{f_n-f}_S = 0$.
 \end{proof}
 
-Sometimes it is said that \emph{$\{ f_n \}_{n=1}^\infty$ converges to $f$ in uniform norm}
-\index{converges in uniform norm}
-\index{uniform norm convergence}
+Sometimes it is said that
+\emph{$\{ f_n \}_{n=1}^\infty$ converges to $f$ in uniform norm}%
+\index{converges in uniform norm}\index{uniform norm convergence}
 instead of \emph{converges uniformly} if $\snorm{f_n-f}_S \to 0$.  The proposition
-says that the two notions are the same thing.
+says that the two notions are the same thing for bounded functions.
 
 \begin{example}
 Let $f_n \colon [0,1] \to \R$ be defined by $f_n(x) \coloneqq \frac{nx+ \sin(nx^2)}{n}$.

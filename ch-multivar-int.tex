@@ -3180,8 +3180,8 @@ Putting the two computations together we obtain
 \end{equation*}
 \end{proof}
 
-Let's see how one can use the simple version of Green's for a more complex
-path.
+Let us see how one can use the simple version of Green's (type III domains
+only) for a more complex path.
 
 \begin{example}
 Suppose $P(x,y) = \frac{-y}{x^2+y^2}$, 
@@ -3203,7 +3203,7 @@ Consider $U$ to be the domain between $\gamma$ and $C$.
 See \figureref{fig:vortexbox}.
 The integral around $\partial U$ is the integral around $\gamma$ plus the
 integral around $C$.
-Now $U$ is not a domain of type III so we cannot just apply the version of
+Now $U$ is not a domain of type III, so we cannot just apply the version of
 Green's theorem we actually proved.
 However, if we cut the box along the axis as shown in the figure with
 dashed lines, the four resulting domains,
@@ -3283,10 +3283,10 @@ Harmonic functions are, for instance, the steady state heat distribution,
 or the electric potential between charges.
 We will prove one of the most fundamental properties of these functions.
 
-Let $D_r \coloneqq B(p,r)$ be a disc such that its closure $C(p,r) \subset U$.  Write
+Let $D_r \coloneqq B(p,r)$ be a disc such that its closure $\overline{D_r} = C(p,r) \subset U$.  Write
 $p = (x_0,y_0)$.  We orient
 $\partial D_r$ positively.  See \exerciseref{green:balltype3orient}.
-Then
+Then via Green's and integration under the integral,
 \begin{equation*}
 \begin{split}
 0
@@ -3329,9 +3329,9 @@ f\bigl(x_0+r\cos(t),y_0+r\sin(t)\bigr) \, dt
 Let $g(r) \coloneqq 
 \frac{1}{2\pi}
 \int_0^{2\pi}
-f\bigl(x_0+r\cos(t),y_0+r\sin(t)\bigr) \, dt$.  Then $g'(r) = 0$ for all
-$r > 0$.
-The function is constant for $r >0$ and continuous at $r=0$ (exercise).
+f\bigl(x_0+r\cos(t),y_0+r\sin(t)\bigr) \, dt$ for $r \geq 0$ (small enough).
+The function is continuous at $r=0$ (exercise), and we have just proved that
+$g'(r) = 0$ for all $r > 0$.
 Therefore, $g(0) = g(r)$ for all $r > 0$, and
 \begin{equation*}
 g(r) = g(0) = 
@@ -3352,7 +3352,8 @@ f\bigl(x_0+r\cos(t),y_0+r\sin(t)\bigr) \, dt
 \frac{1}{2\pi r}
 \int_{\partial D_r} f \, ds .
 \end{equation*}
-That is, for a harmonic function, the value at $p = (x_0,y_0)$ is the average
+That is, for a harmonic function, the value at $p = (x_0,y_0)$ equals the average
+of its values
 over a circle of any radius $r$ centered at $(x_0,y_0)$.
 \end{example}
 
