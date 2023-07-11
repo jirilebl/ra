@@ -14,42 +14,49 @@ while($line = <STDIN>)
 {
 	if ($line =~ m/<a class="index-button.*index-1.html.*Index/) {
 		# Add extra buttons
+		#
+		# FIXME: fix tracking?
 
-		if ($track) {
-			print "<a onclick=\"gtag('event','download',{'event_category': 'ra', 'event_action': 'Link', 'event_label': 'PTXhtml(top) home ra'});\"\n";
-		} else {
-			print "<a ";
-		}
-		print " class=\"index-button toolbar-item button\" href=\"https://www.jirka.org/ra/\" title=\"Home\" alt=\"Book Home\">Home</a>\n";
+		#if ($track) {
+		#	print "<a onclick=\"gtag('event','download',{'event_category': 'ra', 'event_action': 'Link', 'event_label': 'PTXhtml(top) home ra'});\"\n";
+		#} else {
+		#	print "<a ";
+		#}
+		$extra = "<a class=\"index-button button\" href=\"https://www.jirka.org/ra/\" title=\"Home\" alt=\"Book Home\"><span class=\"name\">Home</span></a>\n";
 
-		if ($track) {
-			print "<a onclick=\"gtag('event','download',{'event_category': 'PDF', 'event_action': 'Download', 'event_label': 'PTXhtml(top) /ra/realanal.pdf'});\"\n";
-		} else {
-			print "<a ";
-		}
-		print " class=\"index-button toolbar-item button\" href=\"https://www.jirka.org/ra/realanal.pdf\" title=\"PDF\">PDF(I)</a>\n";
+		#if ($track) {
+		#	print "<a onclick=\"gtag('event','download',{'event_category': 'PDF', 'event_action': 'Download', 'event_label': 'PTXhtml(top) /ra/realanal.pdf'});\"\n";
+		#} else {
+		#	print "<a ";
+		#}
+		$extra .= "<a class=\"index-button button\" href=\"https://www.jirka.org/ra/realanal.pdf\" title=\"PDF\"><span class=\"name\">PDF(I)</span></a>\n";
 
-		if ($track) {
-			print "<a onclick=\"gtag('event','download',{'event_category': 'PDF', 'event_action': 'Download', 'event_label': 'PTXhtml(top) /ra/realanal.pdf'});\"\n";
-		} else {
-			print "<a ";
-		}
-		print " class=\"index-button toolbar-item button\" href=\"https://www.jirka.org/ra/realanal2.pdf\" title=\"PDF\">PDF(II)</a>\n";
+		#if ($track) {
+		#	print "<a onclick=\"gtag('event','download',{'event_category': 'PDF', 'event_action': 'Download', 'event_label': 'PTXhtml(top) /ra/realanal.pdf'});\"\n";
+		#} else {
+		#	print "<a ";
+		#}
+		$extra .= "<a class=\"index-button button\" href=\"https://www.jirka.org/ra/realanal2.pdf\" title=\"PDF\"><span class=\"name\">PDF(II)</span></a>\n";
 
 		##FIXME: add paperback buttons
-		if ($track) {
-			print "<a onclick=\"gtag('event','download',{'event_category': 'amazon', 'event_action': 'Link', 'event_label': 'PTXhtml(top) ra'});\"\n";
-		} else {
-			print "<a ";
-		}
-		print " class=\"index-button toolbar-item button\" href=\"https://smile.amazon.com/dp/1718862407\" title=\"Paperback\" alt=\"Buy Paperback\">Book(I)</a>\n";
+		#if ($track) {
+		#	print "<a onclick=\"gtag('event','download',{'event_category': 'amazon', 'event_action': 'Link', 'event_label': 'PTXhtml(top) ra'});\"\n";
+		#} else {
+		#	print "<a ";
+		#}
+		$extra .= "<a class=\"index-button button\" href=\"https://smile.amazon.com/dp/1718862407\" title=\"Paperback\" alt=\"Buy Paperback\"><span class=\"name\">Book(I)</span></a>\n";
 
-		if ($track) {
-			print "<a onclick=\"gtag('event','download',{'event_category': 'amazon', 'event_action': 'Link', 'event_label': 'PTXhtml(top) ra'});\"\n";
-		} else {
-			print "<a ";
+		#if ($track) {
+		#	print "<a onclick=\"gtag('event','download',{'event_category': 'amazon', 'event_action': 'Link', 'event_label': 'PTXhtml(top) ra'});\"\n";
+		#} else {
+		#	print "<a ";
+		#}
+		$extra .= "<a class=\"index-button button\" href=\"https://smile.amazon.com/dp/1718865481\" title=\"Paperback\" alt=\"Buy Paperback\"><span class=\"name\">Book(II)</span></a>\n";
+
+		if (not ($line =~ s/<button id="user-preferences-button"/$extra<button id="user-preferences-button"/)) {
+			print STDERR "Can't add extra buttons!";
+			exit 1;
 		}
-		print " class=\"index-button toolbar-item button\" href=\"https://smile.amazon.com/dp/1718865481\" title=\"Paperback\" alt=\"Buy Paperback\">Book(II)</a>\n";
 	}
 	if ($line =~ m/<\/head>/) {
 		# Fast preview doesn't seem worth it and it could be confusing since it's not quite right so disable it
@@ -76,7 +83,8 @@ while($line = <STDIN>)
 		print " or <tt>https://www.jirka.org/ra/realanal2.pdf</tt></em>\n";
 		print "</span>\n";
 	}
-	$line =~ s/>Authored in PreTeXt</>Created with PreTeXt</;
+	# no longer there
+	#$line =~ s/>Authored in PreTeXt</>Created with PreTeXt</;
 	
 	# In case chtml is broken again
 	$line =~ s/^  chtml: {/  svg: {/;
