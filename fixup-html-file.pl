@@ -44,14 +44,14 @@ while($line = <STDIN>)
 		#} else {
 		#	print "<a ";
 		#}
-		$extra .= "<a class=\"index-button button\" href=\"https://smile.amazon.com/dp/1718862407\" title=\"Paperback\" alt=\"Buy Paperback\"><span class=\"name\">Book(I)</span></a>\n";
+		$extra .= "<a class=\"index-button button\" href=\"https://www.amazon.com/dp/B0C9S99TKF\" title=\"Paperback\" alt=\"Buy Paperback\"><span class=\"name\">Book(I)</span></a>\n";
 
 		#if ($track) {
 		#	print "<a onclick=\"gtag('event','download',{'event_category': 'amazon', 'event_action': 'Link', 'event_label': 'PTXhtml(top) ra'});\"\n";
 		#} else {
 		#	print "<a ";
 		#}
-		$extra .= "<a class=\"index-button button\" href=\"https://smile.amazon.com/dp/1718865481\" title=\"Paperback\" alt=\"Buy Paperback\"><span class=\"name\">Book(II)</span></a>\n";
+		$extra .= "<a class=\"index-button button\" href=\"https://www.amazon.com/dp/B0C9S7P6M8\" title=\"Paperback\" alt=\"Buy Paperback\"><span class=\"name\">Book(II)</span></a>\n";
 
 		if (not ($line =~ s/<button id="user-preferences-button"/$extra<button id="user-preferences-button"/)) {
 			print STDERR "Can't add extra buttons!";
