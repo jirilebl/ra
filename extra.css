@@ -14,6 +14,10 @@
 .container.has-sidebar-left, .has-sidebar-left .container {
  max-width: 1104px !important;
 }
+/* bad fix for floating pics running into displaymath */
+.displaymath {
+  clear: both;
+}
 @media screen and (max-width:700px) { 
   .figure-like , .table-like , .displaymath { 
     margin-left: 0px !important; 
