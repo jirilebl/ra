@@ -15,21 +15,20 @@
 %mbxlatex 
 
 This first volume is a one semester course in basic analysis.
-With the second volume it is a year-long course.
+With the second volume, it is a year-long course.
 The book started its life
 as my lecture notes for teaching Math 444 at the
 University of Illinois at Urbana-Champaign (UIUC) in the fall semester of 2009.
-I added the metric space chapter to teach Math 521 at University of
+I added the metric space chapter for Math 521 at the University of
 Wisconsin--Madison (UW)\@.
 Volume II was added to teach Math 4143/4153 at Oklahoma State University
 (OSU)\@.
 A prerequisite for these courses is usually a basic proof course,
-using 
-for example~\cite{Hammack}, \cite{GIAM}, or \cite{DW}.
+using, for example, \cite{Hammack}, \cite{GIAM}, or~\cite{DW}.
 
 It should be possible to use the book for
 both a basic course for students who do not necessarily wish to
-go to graduate school (such as UIUC 444), but also as a more advanced one-semester
+go to graduate school (such as UIUC 444), and also as a more advanced one-semester
 course that also covers topics such as metric spaces (such as UW 521).
 Here are suggestions for a semester course.
 A slower course such as UIUC 444:
@@ -45,10 +44,10 @@ A more rigorous course covering metric spaces that runs quite a bit faster
 \end{center}
 It should also be possible to run a faster course without metric spaces
 covering all sections of chapters 0 through 6.  The approximate number of
-lectures given in the section notes through chapter 6 are a very rough
+lectures given in the section notes through Chapter 6 are a very rough
 estimate and were designed for the slower course.
 The first few chapters of the book can be used in an introductory proofs
-course as is done, for example, at Iowa State University Math 201, where 
+course, as is done, for example, at Iowa State University Math 201, where
 this book is used in conjunction with Hammack's \emph{Book of Proof}~\cite{Hammack}.
 
 With volume II, one can run a year-long course that covers multivariable
@@ -57,7 +56,7 @@ in the first semester while leaving metric spaces for the beginning of the
 second semester.
 
 The structure of the beginning of volume I somewhat follows the
-standard syllabus of UIUC Math 444 and therefore has some similarities with
+standard syllabus of UIUC Math 444 and, therefore, has some similarities with
 Bartle and Sherbert,
 \emph{Introduction to Real Analysis} \cite{BS}, which is the standard book
 at UIUC.
@@ -82,7 +81,7 @@ or, as it is commonly and lovingly called, \emph{baby Rudin}
 \emph{big Rudin}).  I took a
 lot of inspiration and ideas from Rudin.  However, Rudin is a bit more
 advanced and ambitious than this present course.
-For those that wish to continue
+For those who wish to continue
 mathematics, Rudin is a fine investment.
 An inexpensive and somewhat simpler alternative to Rudin is
 Rosenlicht's \emph{Introduction to Analysis}~\cite{Rosenlicht}.
@@ -95,7 +94,7 @@ A note about the style of some of the proofs:  Many proofs
 traditionally done by contradiction, I prefer to do by
 a direct proof or by contrapositive.  While the book does include
 proofs by contradiction, I only
-do so when the contrapositive statement seemed too awkward, or when 
+do so when the contrapositive statement seemed too awkward or when 
 contradiction follows rather quickly.
 Contradiction is more likely to get beginning students into trouble,
 as we are talking about objects that do not exist.
@@ -167,22 +166,22 @@ is true.  It is here to give you a good understanding of the concept of a
 limit, the derivative, and the integral.
 
 Let us use an analogy.
-An auto mechanic that has learned to change the oil, fix broken headlights,
+An auto mechanic who has learned to change the oil, fix broken headlights,
 and charge the battery, but who does not understand how the engine
 works, will only be able to do those simple tasks.
 He will be unable to work independently to diagnose and fix problems.
-A high school teacher that does not understand the definition of the Riemann
+A high school teacher who does not understand the definition of the Riemann
 integral or the derivative may not be able to properly answer all the
 students' questions.
 To this day I remember several nonsensical statements I heard
 from my calculus teacher in high school, who simply did not understand
-the concept of the limit, though he could \myquote{do} the problems in the
+the concept of the limit, although he could \myquote{do} the problems in the
 textbook.
 
 \medskip
 
 We start with a discussion of the real number system, most importantly
-its completeness property, which is the basis for all that comes after.
+its completeness property, which is the basis for all that follows.
 We then discuss the simplest form of a limit,
 the limit of a sequence.  Afterwards, we study
 functions of one variable, continuity, and the derivative.
@@ -195,7 +194,7 @@ spaces.
 
 Let us give the most important difference between analysis and algebra.
 In algebra, we prove equalities directly;
-we prove that an object, a number perhaps, is equal to another object.
+we prove that an object, perhaps a number, is equal to another object.
 In analysis, we usually prove inequalities,
 and we prove those inequalities by estimating.
 To illustrate the point, consider the following statement.
@@ -246,9 +245,9 @@ Let us get on with the show\ldots
 or left as reading)}
 
 Before we start talking about analysis, we need to fix some language.
-Modern\footnote{The term \myquote{modern} refers to late 19th century up to
+Modern\footnote{The term \myquote{modern} refers to the late 19th century up to
 the present.}
-analysis uses the language of sets, and therefore that is where we start.
+analysis uses the language of sets and, therefore, that is where we start.
 We talk about sets in a rather informal way, using the so-called
 \myquote{\myindex{na\"ive set theory}.}  Do not worry, that is what the majority of
 mathematicians use, and it is hard to get into trouble.
@@ -271,7 +270,7 @@ However,
 do not take the analogy too far.  A set is only defined by the members
 that form the set; two sets that have the same members are the same set.
 
-Most of the time we will consider sets
+Most of the time, we will consider sets
 of numbers.  For example, the set
 \glsadd{not:set}
 \begin{equation*}
@@ -306,13 +305,13 @@ The universe is generally understood from context
 and is not explicitly mentioned.  In this course, our universe will
 most often be the set of real numbers.
 
-While the elements of a set are often numbers,
+Although the elements of a set are often numbers,
 other objects, such as other sets, can be elements of a set.
 A set may also contain some of the same elements as another set.  For example,
 \begin{equation*}
 T \coloneqq \{ 0, 2 \}
 \end{equation*}
-contains the numbers 0 and 2.  In this case all elements of $T$ also
+contains the numbers 0 and 2.  In this case, all elements of $T$ also
 belong to $S$.  We write $T \subset S$.\glsadd{not:subset}
 See \figureref{fig:sets} for a diagram.
 %More formally we make the
@@ -439,7 +438,7 @@ shaded.\label{figsetop}}
 \end{myfigureht}
 We illustrate the operations on the
 \emph{Venn diagrams}\index{Venn diagram} in \figureref{figsetop}.
-Let us now establish one of most basic theorems about sets and logic.
+Let us now establish one of the most basic theorems about sets and logic.
 
 \begin{thm}[DeMorgan]\index{DeMorgan's theorem}
 Let $A, B, C$ be sets.  Then
@@ -467,12 +466,12 @@ if $x \in (A \setminus B) \cap (A \setminus C)$, then
 $x \in A \setminus (B \cup C)$.
 So let us assume $x \in A \setminus (B \cup C)$.  Then $x$ is in 
 $A$, but not in $B$ nor $C$.  Hence $x$ is in $A$ and not in $B$, that is,
-$x \in A \setminus B$.  Similarly $x \in A \setminus C$.  Thus
+$x \in A \setminus B$.  Similarly, $x \in A \setminus C$.  Thus
 $x \in (A \setminus B) \cap (A \setminus C)$.
-On the other hand suppose 
+On the other hand, suppose 
 $x \in (A \setminus B) \cap (A \setminus C)$.  In particular,
 $x \in (A \setminus B)$, so 
-$x \in A$ and $x \notin B$.  Also as $x \in (A \setminus C)$, then $x \notin C$.
+$x \in A$ and $x \notin B$.  Also, as $x \in (A \setminus C)$, then $x \notin C$.
 Hence $x \in A \setminus (B \cup C)$.
 
 The proof of the other equality is left as an exercise.
@@ -536,7 +535,7 @@ However,
 \N.
 \end{equation*}
 
-Sometimes, the index set is not the natural numbers.  In such a case we
+Sometimes, the index set is not the set of natural numbers.  In such a case, we
 require a more general notation.  Suppose $I$ is some set and for each $\lambda \in
 I$, there is a set $A_\lambda$.  Then we define
 \glsadd{not:arbitunion}
@@ -554,7 +553,7 @@ I$, there is a set $A_\lambda$.  Then we define
 \subsection{Induction}
 
 When a statement includes an arbitrary natural number,
-a common method of proof is the principle of induction.  
+a common proof method is the principle of induction.  
 We start with the set of natural numbers $\N = \{ 1,2,3,\ldots \}$, and we
 give them their natural ordering, 
 that is, $1 < 2 < 3 < 4 < \cdots$.
@@ -622,7 +621,7 @@ Let us prove that for all $n \in \N$,
 \begin{equation*}
 2^{n-1} \leq n! \qquad \text{(recall } n! = 1 \cdot 2 \cdot 3 \cdots n\text{)}.
 \end{equation*}
-We let $P(n)$ be the statement that
+Let $P(n)$ be the statement that
 $2^{n-1} \leq n!$ is true.
 Plug in $n=1$ to see that $P(1)$ is true.
 
@@ -696,13 +695,13 @@ and we say $f$ \emph{maps $A$ to $B$}.
 
 
 Often, functions are defined by some sort of
-formula; however, you should really think of a function as just a very big
+formula; however, you should really think of a function as just a very large
 table of values.
 The subtle issue here is that a single function can have several 
 formulas, all giving the same function.  Also, for many functions, there is
 no formula that expresses its values.
 
-To define a function rigorously, first let us define the Cartesian product.
+To define a function rigorously, let us first define the Cartesian product.
 
 \begin{defn}
 Let $A$ and $B$ be sets.  The \emph{\myindex{Cartesian product}}
@@ -720,7 +719,7 @@ For instance, $\{ a,b \} \times \{ c , d\} =
 \bigr\}$.
 A more complicated example is the set $[0,1] \times [0,1]$: a subset of the
 plane bounded by a square with vertices $(0,0)$, $(0,1)$, $(1,0)$, and $(1,1)$.
-When $A$ and $B$ are the same set we sometimes use a superscript 2 to denote
+When $A$ and $B$ are the same set, we often use a superscript 2 to denote
 such a product.  For example, $[0,1]^2 = 
 [0,1] \times [0,1]$ or $\R^2 = \R \times \R$ (the Cartesian plane).
 
@@ -748,7 +747,7 @@ assume that the domain of $f$ is nonempty.
 \begin{example}
 From calculus, you are most familiar with functions taking real numbers to real
 numbers.  However, you saw some other types of functions as well.
-The derivative is a function mapping the set of
+The derivative is a function that maps the set of
 differentiable functions to the set of all functions.
 Another example is the Laplace transform, which also
 takes functions to functions.  Yet another example is the function that takes
@@ -807,7 +806,7 @@ $f^{-1}( B \setminus C) = A \setminus f^{-1} (C)$.
 We start with the union.  If $x \in 
 f^{-1}( C \cup D)$, then 
 $x$ is taken to $C$ or $D$, that is, $f(x) \in C$ or $f(x) \in D$.  Thus
-$f^{-1}( C \cup D) \subset f^{-1} (C) \cup f^{-1} (D)$.  Conversely
+$f^{-1}( C \cup D) \subset f^{-1} (C) \cup f^{-1} (D)$.  Conversely,
 if $x \in f^{-1}(C)$, then $x \in f^{-1}(C \cup D)$.  Similarly for
 $x \in f^{-1}(D)$.  Hence
 $f^{-1}( C \cup D) \supset f^{-1} (C) \cup f^{-1} (D)$, and we have
@@ -877,15 +876,15 @@ $g \circ f \colon A \to C$ defined as
 
 For example, if $f \colon \R \to \R$ is $f(x)\coloneqq x^3$ and $g \colon \R \to \R$
 is $g(y) = \sin(y)$, then $(g \circ f)(x) = \sin(x^3)$.
-It is left to the reader as an easy exericise
+It is left to the reader as an easy exercise
 to show that composition of one-to-one maps is
 one-to-one and composition of onto maps is onto.
-Therefore, composition of bijections is a bijection.
+Therefore, the composition of bijections is a bijection.
 
 \subsection{Relations and equivalence classes}
 
 We often compare two objects in some way.  We say $1 < 2$
-for natural numbers, or $\nicefrac{1}{2} = \nicefrac{2}{4}$ for rational
+for natural numbers, $\nicefrac{1}{2} = \nicefrac{2}{4}$ for rational
 numbers, or $\{ a,c \} \subset \{ a,b,c \}$ for sets.  The `$<$', `$=$', and
 `$\subset$' are examples of
 relations.
@@ -936,7 +935,7 @@ an \emph{\myindex{equivalence relation}}.
 
 \begin{example}
 Let $A \coloneqq \{ 1,2,3 \}$.
-The relation `$<$' is transitive, but neither reflexive nor symmetric.  The
+The relation `$<$' is transitive but neither reflexive nor symmetric.  The
 relation `$\leq$' defined by
 $\bigl\{ (1,1), (1,2), (1,3), (2,2), (2,3), (3,3) \bigr\}$
 is reflexive and transitive, but not symmetric.
@@ -945,7 +944,7 @@ $\bigl\{ (1,1), (1,2), \allowbreak (2,1), \allowbreak (2,2), \allowbreak (3,3) \
 an equivalence relation.
 \end{example}
 
-Equivalence relations are useful in that they divide a set into sets of
+Equivalence relations are useful as they divide a set into sets of
 \myquote{equivalent} elements.
 
 \begin{defn}
@@ -972,15 +971,15 @@ equivalence class.  Moreover, $a\, \sR \, b$ if and only if $[a] = [b]$.
 \begin{example} \label{example:ratnums}
 The set of rational numbers can be defined as equivalence classes of
 a pair of an integer and a natural number,
-that is elements of $\Z \times \N$.  The relation
+that is, elements of $\Z \times \N$.  The relation
 is defined by $(a,b) \sim (c,d)$ whenever $ad = bc$.
 It is left as an exercise to prove that `$\sim$' is an equivalence relation.
-Usually the equivalence class $\bigl[(a,b)\bigr]$ is written as $\nicefrac{a}{b}$.
+Usually, the equivalence class $\bigl[(a,b)\bigr]$ is written as $\nicefrac{a}{b}$.
 \end{example}
 
 \subsection{Cardinality}
 
-A subtle issue in set theory and one generating a considerable amount of
+A subtle issue in set theory and one that generates a considerable amount of
 confusion among students is that of cardinality, or \myquote{size} of sets.  The
 concept of cardinality is important in modern mathematics in general and
 in analysis in particular.  In this section, we will see the first really
@@ -991,18 +990,18 @@ Let $A$ and $B$ be sets.  We say $A$ and $B$ have the same
 \emph{\myindex{cardinality}}
 when there exists a bijection $f \colon A \to B$.  We denote
 by $\abs{A}$ \glsadd{not:cardinality} the equivalence class of all sets with the same cardinality as
-$A$ and we simply call $\abs{A}$ the cardinality of $A$.
+$A$, and we simply call $\abs{A}$ the cardinality of $A$.
 \end{defn}
 
 For example, $\{ 1,2,3 \}$ has the same cardinality as $\{ a,b,c \}$ by
-defining a bijection $f(1) \coloneqq a$, $f(2) \coloneqq b$, $f(3) \coloneqq c$.  Clearly the
-bijection is not unique.
+defining a bijection $f(1) \coloneqq a$, $f(2) \coloneqq b$, $f(3) \coloneqq c$.
+Clearly, the bijection is not unique.
 
 The existence of a bijection really is an equivalence relation.
-The identity, $f(x) \coloneqq x$, is a bijection showing reflexivity.
-If $f$ is a bijection, then so is $f^{-1}$ showing symmetry.
+The identity function, $f(x) \coloneqq x$, is a bijection showing reflexivity.
+If $f$ is a bijection, then so is $f^{-1}$, showing symmetry.
 If $f \colon A \to B$ and $g \colon B \to C$ are bijections, then
-$g \circ f$ is a bijection of $A$ and $C$ showing transitivity.
+$g \circ f$ is a bijection of $A$ and $C$, showing transitivity.
 A set $A$ has the same cardinality as the empty set if and only
 if $A$ itself is the empty set:  If $B$ is nonempty, then
 no function $f \colon B \to \emptyset$ can exist.
@@ -1019,7 +1018,7 @@ We say $A$ is \emph{\myindex{infinite}} or \myquote{of infinite cardinality}
 if $A$ is not finite.
 \end{defn}
 
-That the notation $\abs{A} = n$ is justified we leave as an exercise.  That
+That the notation $\abs{A} = n$ is justified, we leave as an exercise.  That
 is, for each nonempty finite set $A$, there exists a unique natural number
 $n$ such that there exists a bijection from $A$ to $\{ 1,2,3,\ldots,n \}$.
 
@@ -1078,8 +1077,8 @@ correspondence with a proper subset of itself}.
 $\N \times \N$ is a countably infinite set.  Proof: Arrange the
 elements of $\N \times \N$ as follows
 $(1,1)$, $(1,2)$, $(2,1)$, $(1,3)$, $(2,2)$, $(3,1)$, \ldots.  That is,
-always write down first all the elements whose two entries sum to $k$,
-then write down all the elements whose entries sum to $k+1$ and so on.
+first write down all the elements whose two entries sum to $k$,
+then write down all the elements whose entries sum to $k+1$, and so on.
 Define a bijection with $\N$ by letting 1 go to $(1,1)$,
 2 go to $(1,2)$, and so on.  See \figureref{fig:NcrossNcard}.
 \begin{myfigureht}
@@ -1090,7 +1089,7 @@ Define a bijection with $\N$ by letting 1 go to $(1,1)$,
 
 \begin{example}
 The set of rational numbers is countable.  Proof: (informal)
-For positive rational numbers follow the same procedure
+For positive rational numbers, follow the same procedure
 as in the previous example, writing
 $\nicefrac{1}{1}$, $\nicefrac{1}{2}$, $\nicefrac{2}{1}$, etc.  However,
 leave out fractions (such as $\nicefrac{2}{2}$)
@@ -1118,7 +1117,7 @@ Similarly, if $B$ is finite and $A \subset B$, then $A$ is finite.
 %FIXMEevillayouthack
 \pagebreak[2]
 We give the first truly striking result about cardinality.
-To do so we need a notation for
+To do so, we need a notation for
 the set of all subsets of a set.
 
 \begin{defn}
@@ -1181,7 +1180,7 @@ the set of real numbers (which we study in the next chapter) is uncountable.
 The existence of uncountable sets may seem unintuitive, and the theorem
 caused quite a controversy at the time
 it was announced.  The theorem not only says that uncountable sets exist,
-but that there in fact exist progressively larger
+but that there, in fact, exist progressively larger
 and larger infinite sets $\N$, $\sP(\N)$,
 $\sP(\sP(\N))$, $\sP(\sP(\sP(\N)))$, etc.
 
@@ -1207,7 +1206,7 @@ Finish the proof of \propref{st:propinv}.
 \item
 Prove \propref{st:propfor}.
 \item
-Find an example for which equality of sets
+Find an example for which the equality of sets
 in 
 $f( C \cap D) \subset f (C) \cap f (D)$
 fails.  That is, find an $f$, $A$, $B$, $C$, and $D$ such that
@@ -1404,7 +1403,7 @@ B_\lambda
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon A \to B$ is a function, and for $\lambda \in I$, we have
+Suppose $f \colon A \to B$ is a function and for $\lambda \in I$, we have
 a collection of subsets $C_\lambda \subset A$ and
 $D_\lambda \subset B$.  Prove
 \begin{equation*}
