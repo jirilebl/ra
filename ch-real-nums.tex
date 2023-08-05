@@ -8,8 +8,8 @@
 
 The main object we work with in analysis is the set of
 \myindex{real numbers}.  As this set is so fundamental, often much time is
-spent on formally constructing the set of real numbers.  However, we 
-take an easier approach and we will assume that a set with the correct
+spent formally constructing the set of real numbers.  However, we 
+take an easier approach, and we will assume that a set with the correct
 properties exists.
 The three key properties of the real numbers is that it is
 an ordered set, it is complete with respect to this order, and it is also a field.
@@ -48,7 +48,7 @@ A typical ordered set that you have used since primary school is the
 dictionary.  It is the ordered set of words where the order is the
 so-called lexicographic ordering.  Such ordered sets often appear, for
 example, in
-computer science.  In this book we will mostly be interested in ordered
+computer science.  In this book, we will mostly be interested in ordered
 sets of numbers.
 
 \begin{defn}
@@ -107,14 +107,14 @@ The set
 $G \coloneqq \{ x \in \Q : x \leq 1 \}$ also has an upper bound of 1,
 and in this case $1 \in G$.  
 The set $P \coloneqq \{ x \in \Q : x \geq 0 \}$ has no upper bound (why?) and therefore
-it cannot have a least upper bound.  The set $P$ does have a greatest lower
+cannot have a least upper bound.  The set $P$ does have a greatest lower
 bound:~0.
 
 \begin{defn} \label{defn:lub}
 An ordered set $S$ has the \emph{\myindex{least-upper-bound property}} if
 every nonempty
 subset $E \subset S$ that is bounded above has a least upper bound,
-that is $\sup\, E$ exists in $S$.
+that is, $\sup\, E$ exists in $S$.
 \end{defn}
 
 The \emph{least-upper-bound property}
@@ -133,7 +133,7 @@ see later (\exampleref{example:sqrt2}) that the supremum is
 $\sqrt{2}$, which is not rational%
 \footnote{This is true for all other roots of 2, and interestingly,
 the fact that $\sqrt[k]{2}$ is never rational for $k > 1$ implies no piano can
-ever be perfectly tuned in all keys.  See for example:
+ever be perfectly tuned in all keys.  See, for example:
 \url{https://youtu.be/1Hqm0dYKUx4}.}.
 Suppose $x \in \Q$ such that $x^2 = 2$.
 Write $x=\nicefrac{m}{n}$ in lowest terms.  So ${(\nicefrac{m}{n})}^2 = 2$
@@ -145,11 +145,11 @@ contradiction as $\nicefrac{m}{n}$ is in lowest terms.
 \end{example}
 
 That $\Q$ does not have the least-upper-bound property is one of the most
-important reasons why we work with $\R$ in analysis.  The set $\Q$
+important reasons we work with $\R$ in analysis.  The set $\Q$
 is just fine for algebraists.  But us analysts require the least-upper-bound
 property to do any work.
-We also require our real numbers to have many algebraic properties.  In
-particular, we require that they are a field.
+We also require our real numbers to have many algebraic properties.
+In particular, we require that they be a field.
 
 
 %\enlargethispage{\baselineskip}
@@ -253,7 +253,7 @@ and $x$ is \emph{\myindex{nonpositive}} if $x \leq 0$.
 \end{defn}
 
 The rational numbers $\Q$ with the standard ordering is an ordered field.
-We leave the details to an interested reader.
+We leave the details to the interested reader.
 
 \begin{prop} \label{prop:bordfield}
 Let $F$ be an ordered field and $x,y,z,w \in F$.  Then
@@ -268,15 +268,15 @@ Let $F$ be an ordered field and $x,y,z,w \in F$.  Then
 \end{enumerate}
 \end{prop}
 
-Note that \ref{prop:bordfield:iv} implies in particular that $1 > 0$.
+Note that \ref{prop:bordfield:iv} implies, in particular, that $1 > 0$.
 
 \begin{proof}
 Let us prove \ref{prop:bordfield:i}.  The inequality $x > 0$ implies by item
-\ref{defn:ordfield:i} of definition of ordered fields that
+\ref{defn:ordfield:i} of the definition of ordered fields that
 $x + (-x) > 0 + (-x)$.  Apply the algebraic properties of fields to
-obtain $0 > -x$.  The \myquote{vice versa} follows by similar calculation.
+obtain $0 > -x$.  The \myquote{vice versa} follows by a similar calculation.
 
-For \ref{prop:bordfield:ii}, notice that $y < z$ implies
+For \ref{prop:bordfield:ii}, note that $y < z$ implies
 $0 < z - y$ by
 item \ref{defn:ordfield:i} of the definition of ordered fields.  
 Apply item 
@@ -324,13 +324,13 @@ $xy > 0$, then either both $x$ and $y$ are positive, or both are negative.
 \begin{proof}
 We show the contrapositive: If either one of $x$ or $y$ is zero, or
 if $x$ and $y$ have opposite signs, then $xy$ is not positive.
-If either
+If 
 $x$ or $y$ is zero, then $xy$ is zero and hence not positive.
 Hence assume that $x$ and $y$ are nonzero and have
 opposite signs.
-Without loss of
-generality suppose $x > 0$ and $y < 0$.  Multiply $y < 0$ by $x$ to get
-$xy < 0x = 0$.
+Without loss of generality,
+suppose $x > 0$ and $y < 0$.
+Multiply $y < 0$ by $x$ to get $xy < 0x = 0$.
 \end{proof}
 
 \begin{example} \label{example:complexfield}
@@ -417,10 +417,10 @@ subset.
 \end{exercise}
 
 \begin{exercise}
-Find a (nonstandard) ordering of the set of natural numbers $\N$
+Find a nonstandard ordering of the set of natural numbers $\N$
 such that there exists a nonempty proper subset $A \subsetneq \N$
 and such that $\sup\, A$ exists in $\N$, but $\sup\, A \notin A$.
-To keep things straight it might be a good idea to use a different
+To keep things straight, it might be a good idea to use a different
 notation for the nonstandard ordering such as $n \prec m$.
 \end{exercise}
 
@@ -448,7 +448,7 @@ such that $x \leq y$.  Show that $\sup \, B$ exists and $\sup \, B = \sup \, A$.
 \begin{exercise}
 Let $D$ be the ordered set of all possible words (not just English words,
 all strings of letters of arbitrary length)
-using the Latin alphabet using only lower case letters.  The order is the
+using the Latin alphabet using only lowercase letters.  The order is the
 lexicographic order as in a dictionary (e.g.\ \emph{aa} $<$ \emph{aaa} $<$ \emph{dog} $<$ \emph{door}).
 Let $A$ be the subset of $D$ containing the words whose
 first letter is `a' (e.g.\ \emph{a} $\in A$, \emph{abcd} $\in A$).
@@ -473,7 +473,7 @@ Prove that any ordered field must contain a countably infinite set.
 \end{exercise}
 
 \begin{exercise}
-Let $\N_{\infty} \coloneqq \N \cup \{ \infty \}$, where elements of $\N$ are
+Let $\N_{\infty} \coloneqq \N \cup \{ \infty \}$, where the elements of $\N$ are
 ordered in the usual way amongst themselves,
 and $k < \infty$ for every $k \in \N$.  Show $\N_{\infty}$ is an ordered set
 and that every subset $E \subset \N_{\infty}$ has a supremum in
