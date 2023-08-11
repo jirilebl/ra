@@ -95,49 +95,6 @@ Then
 \quad
 \thus \quad The sequence is not Cauchy. \qed
 
-%\textbf{Example:}
-%The sequence $\{ \frac{n+1}{n} \}_{n=1}^\infty$ is a Cauchy sequence.
-%
-%\pause
-%Proof:  Given $\epsilon > 0$, $\exists$ $M$ such that
-%$M > \nicefrac{2}{\epsilon}$.
-%
-%\pause
-%\thus ~ for $n,k \geq M$,
-%\quad $\nicefrac{1}{n} < \nicefrac{\epsilon}{2}$
-%and
-%$\nicefrac{1}{k} < \nicefrac{\epsilon}{2}$.
-%
-%\pause
-%\medskip
-%
-%\thus ~ for $n, k \geq M$,
-%\quad
-%$\displaystyle
-%\abs{\frac{n+1}{n} - \frac{k+1}{k}}
-%\pause
- %=
-%\abs{\frac{k(n+1)-n(k+1)}{nk}}
-%\pause
- %=
-%\abs{\frac{kn+k-nk-n}{nk}}
-%$
-%
-%\pause
-%\qquad\qquad\qquad\qquad\qquad\qquad
-%$\displaystyle
- %=
-%\abs{\frac{k-n}{nk}}
-%\pause
- %\leq
-%\abs{\frac{k}{nk}}
-%+
-%\abs{\frac{-n}{nk}}
-%\pause
- %= \frac{1}{n} + \frac{1}{k}
-%\pause
-%< \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$.
-%
 \end{frame}
 
 \begin{frame}
@@ -159,7 +116,7 @@ $n,k \geq M$, we have $\abs{x_n-x_k} < 1$.
 \pause
 \medskip
 
-In particular, 
+In particular,
 for all $n \geq M$, \quad
 $\abs{x_n - x_M} < 1$.
 
@@ -209,7 +166,7 @@ $\abs{x_n - x} < \frac{\epsilon}{2}$.
 \quad
 $\abs{x_n - x_k}
 \pause
-= 
+=
 \abs{x_n - x + x - x_k}
 \pause
 \leq \abs{x_n-x} + \abs{x-x_k}
@@ -277,7 +234,7 @@ $\displaystyle
 =
 \abs{a-x_{n_i}+x_{n_i}
 -x_{m_i}+x_{m_i}
--b} 
+-b}
 %$
 %
 \pause
@@ -288,7 +245,7 @@ $\displaystyle
 \leq
 \abs{a-x_{n_i}}
 + \abs{x_{n_i} -x_{m_i}}
-+ \abs{x_{m_i} -b} 
++ \abs{x_{m_i} -b}
 \pause
  <
 \frac{\epsilon}{3}
@@ -344,7 +301,7 @@ This thinking generalizes to more abstract settings.
 \medskip
 
 \textbf{Remark:}
-Cauchy is stronger than 
+Cauchy is stronger than
 $\abs{x_{n+1}-x_n} \to 0$
 as $n \to \infty$
 %
