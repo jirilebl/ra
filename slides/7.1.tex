@@ -147,10 +147,19 @@ d(x,y)
 \eqref{metric:pos}--\eqref{metric:com} are again easy.
 \pause
 \quad
-For triangle inequality, \eqref{metric:triang},
-note 
-$d(x,y) = \varphi(\abs{x-y})$ where $\varphi(t) = \frac{t}{t+1}$ and
+For triangle
+
+inequality, \eqref{metric:triang}, note
+$d(x,y) = \varphi(\abs{x-y})$,
+
+where $\varphi(t) = \frac{t}{t+1}$ and
 $\varphi$ is increasing.
+
+\vspace*{-0.5in}
+\hspace*{2.7in}
+\includegraphics[height=0.5in]{../figures/tovertp1graph}
+
+\vspace*{-0.05in}
 
 \pause
 \medskip
@@ -548,36 +557,39 @@ $
 
 \end{frame}
 
-%\begin{frame}
-%\textbf{Example} (Great circle distance)\textbf{:}
-%Another useful example of a metric space is the sphere
-%with a metric usually called the \emph{great circle distance}.
-%Let $S^2$ be the unit sphere in $\R^3$,
-%that is $S^2 \coloneqq \{ x \in \R^3 : x_1^2+x_2^2+x_3^2 = 1 \}$.
-%Take $x$ and $y$ in $S^2$, draw a line through the origin and $x$,
-%and another line through the origin and $y$,
-%and let $\theta$ be the angle that the two lines make.
-%Then define $d(x,y) \coloneqq \theta$.  See {fig:spheremetric}.
-%The law of cosines from vector calculus says
-%$d(x,y) = \arccos(x_1y_1+x_2y_2+x_3y_3)$.
-%It is relatively easy to see that this function satisfies the first three
-%properties of a metric.
-%Triangle inequality is harder to prove, and requires a bit more
-%trigonometry and linear algebra than we wish to indulge in right now, so let
-%us leave it without proof.
-%
-%\subimport*{../figures/}{spheremetric.pdf_t}
-%
-%The great circle distance on the unit sphere.
-%
-%This distance is the shortest distance between points on a sphere if
-%we are allowed to travel on the sphere only.  It is easy to
-%generalize to arbitrary diameters.  If we take a sphere of radius
-%$r$, we let the distance be $d(x,y) \coloneqq r \theta$.  As an example, this is the
-%standard distance you would use if you compute a distance on the
-%surface of the earth, such as computing the distance a plane travels from London to
-%Los Angeles.
-%\end{frame}
+\begin{frame}
+\textbf{Example} (Great circle distance)\textbf{:}
+$S^2 = \{ x \in \R^3 : x_1^2+x_2^2+x_3^2 = 1 \}$ is the unit sphere in 
+$\R^3$.
+
+\medskip
+\pause
+
+If $x$ and $y$ are in $S^2$, the lines they make
+
+with the origin meet at angle $\theta$ (in radians).
+
+\vspace*{-0.3in}
+\hspace*{3.2in}
+\subimport*{../figures/}{spheremetric.pdf_t}
+
+\vspace*{-0.95in}
+\pause
+
+The function defined by
+
+\quad
+$d(x,y) \coloneqq \theta \pause = \arccos(x_1y_1+x_2y_2+x_3y_3)$
+
+gives a metric (we skip the proof).
+
+\medskip
+\pause
+
+It is the shortest path between the points
+
+if we travel along the sphere.
+\end{frame}
 
 \begin{frame}
 
@@ -650,32 +662,33 @@ The quantity $\operatorname{diam}(S)$ is called the
 
 \end{frame}
 
-%\begin{frame}
-%
-%\textbf{Exercise:}
-%Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
-%\begin{enumerate}[a)]
-%\item
-%Show that $(X \times Y,d)$ with
-%$d\bigl( (x_1,y_1), (x_2,y_2) \bigr) \coloneqq d_X(x_1,x_2) + d_Y(y_1,y_2)$ is
-%a metric space.
-%\item
-%Show that $(X \times Y,d)$ with
-%$d\bigl( (x_1,y_1), (x_2,y_2) \bigr) \coloneqq \max \bigl\{ d_X(x_1,x_2) ,
-%d_Y(y_1,y_2) \bigr\}$ is
-%a metric space.
-%\end{enumerate}
-%
-%\medskip
-%
-%\textbf{Exercise:}
-%Let $X$ be the set of continuous functions on $[0,1]$.  Let $\varphi \colon
-%[0,1] \to (0,\infty)$ be continuous.  Define
-%\begin{equation*}
-%d(f,g) \coloneqq \int_0^1 \abs{f(x)-g(x)}\varphi(x)\,dx .
-%\end{equation*}
-%Show that $(X,d)$ is a metric space.
-%
-%\end{frame}
+\begin{frame}
+
+\textbf{Exercise:}
+Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
+\begin{enumerate}[a)]
+\item
+Show that $(X \times Y,d)$ with
+$d\bigl( (x_1,y_1), (x_2,y_2) \bigr) \coloneqq d_X(x_1,x_2) + d_Y(y_1,y_2)$ is
+a metric space.
+\item
+Show that $(X \times Y,d)$ with
+$d\bigl( (x_1,y_1), (x_2,y_2) \bigr) \coloneqq \max \bigl\{ d_X(x_1,x_2) ,
+d_Y(y_1,y_2) \bigr\}$ is
+a metric space.
+\end{enumerate}
+
+\medskip
+\pause
+
+\textbf{Exercise:}
+Let $X$ be the set of continuous functions on $[0,1]$.  Let $\varphi \colon
+[0,1] \to (0,\infty)$ be continuous.  Define
+\begin{equation*}
+d(f,g) \coloneqq \int_0^1 \abs{f(x)-g(x)}\varphi(x)\,dx .
+\end{equation*}
+Show that $(X,d)$ is a metric space.
+
+\end{frame}
 
 \end{document}

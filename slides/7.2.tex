@@ -174,18 +174,27 @@ let $\delta \coloneqq -x$
 $[0,1) \subset \R$ is neither open nor closed:
 
 \pause
-$\forall$ $\delta > 0$, $B(0,\delta) = (-\delta,\delta)$, contains numbers
+$\forall$ $\delta > 0$, $B(0,\delta) = (-\delta,\delta)$ contains numbers
 not in $[0,1)$
 \pause
-\hfill \thus \hfill $[0,1)$ is not open.
+\wthus $[0,1)$ is not open.
 
 \pause
 $\forall$ $\delta > 0$,
-$B(1,\delta) = (1-\delta,1+\delta)$, contains
-numbers in $[0,1)$,
-
+$B(1,\delta) = (1-\delta,1+\delta)$ contains
+numbers in $[0,1)$
 \pause
-\thus \quad $[0,1)^c$ is not open \wthus $[0,1)$ is not closed.
+\wthus $[0,1)^c$ is not open
+
+\pause \wthus $[0,1)$ is not closed.
+
+\medskip
+\pause
+
+In any metric space $(X,d)$, if $x \in X$, then $\{ x \}$ is closed
+(exercise).
+
+
 
 \end{frame}
 
@@ -760,14 +769,10 @@ Let $(X,d)$ be a metric space and $A \subset X$.
 \pause
 The \emph{closure} of $A$ is the set
 \begin{equation*}
-\widebar{A} \coloneqq \bigcap \{ E \subset X : E \text{ is closed and } A \subset
-E \} .
+\widebar{A} \coloneqq
+\bigcap \{ E \subset X : E \text{ is closed and } A \subset E \} .
 \end{equation*}
 \end{definition}
-
-%That is,
-%$\widebar{A}$ is the intersection of all closed sets that contain $A$.
-
 
 \pause
 \begin{proposition}
@@ -901,9 +906,9 @@ $A \subset {B(x,\delta)}^c$.
 \pause
 ${B(x,\delta)}^c$ is closed,
 \pause
-\hfill $x \not \in {B(x,\delta)}^c$, 
+\quad $x \not \in {B(x,\delta)}^c$, 
 \pause
-\hfill $\widebar{A}$ is the intersection
+\quad $\widebar{A}$ is the intersection
 of closed sets containing $A$
 
 \pause
