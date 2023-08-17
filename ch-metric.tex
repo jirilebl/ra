@@ -2914,33 +2914,14 @@ whenever $z \in [c,d]$ and
 $\abs{z-y} < \delta$, we have
 $\abs{f(x,z)-f(x,y)} < \frac{\epsilon}{b-a}$ for all $x \in [a,b]$.
 So suppose $\abs{z-y} < \delta$.  Then
-\begin{multline*}
-\abs{
-g(z)-
-g(y)
-}
-=
-\abs{
-\int_a^b 
-f(x,z) \,dx 
--
-\int_a^b 
-f(x,y) \,dx 
-}
-\\
-=
-\abs{
-\int_a^b 
-\bigl(
-f(x,z) - f(x,y)
-\bigr)
-\,dx 
-}
-\leq
-(b-a)
-\frac{\epsilon}{b-a}
-= \epsilon . \qedhere
-\end{multline*}
+\begin{equation*}
+\begin{split}
+\abs{g(z)-g(y)}
+& = \abs{\int_a^b f(x,z) \, dx - \int_a^b f(x,y) \, dx }\\
+& = \abs{\int_a^b \bigl(f(x,z) - f(x,y)\bigr) \, dx }\\
+& \leq (b-a) \frac{\epsilon}{b-a} = \epsilon . \qedhere
+\end{split}
+\end{equation*}
 \end{proof}
 
 In applications, if we are interested in continuity at $y_0$, we just
