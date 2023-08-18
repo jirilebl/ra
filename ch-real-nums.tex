@@ -8,7 +8,7 @@
 
 The main object we work with in analysis is the set of
 \myindex{real numbers}.  As this set is so fundamental, often much time is
-spent formally constructing the set of real numbers.  However, we 
+spent formally constructing the set of real numbers.  However, we
 take an easier approach, and we will assume that a set with the correct
 properties exists.
 The three key properties of the real numbers is that it is
@@ -36,7 +36,7 @@ $>$ and $\geq$ in the obvious way.
 \end{defn}
 
 
-The set of rational numbers $\Q$ is an ordered set:  We say
+The set of rational numbers $\Q$ is an ordered set: We say
 $x < y$ if and only if $y-x$ is a positive rational number, that is,
 if $y-x = \nicefrac{p}{q}$ where $p,q \in \N$.  Similarly,
 $\N$ and $\Z$ are also ordered sets.
@@ -68,7 +68,7 @@ $b_0$ is called the \emph{\myindex{least upper bound}} or
 the \emph{\myindex{supremum}}
 of $E$.  See \figureref{fig:lub}.  We write\glsadd{not:sup}
 \begin{equation*}
-\sup\, E \coloneqq b_0  .
+\sup\, E \coloneqq b_0 .
 \end{equation*}
 \item Similarly, if there exists a lower bound $b_0$ of $E$ such that
 $b_0 \geq b$ for all lower bounds $b$ of $E$, then
@@ -76,7 +76,7 @@ $b_0$ is called the \emph{\myindex{greatest lower bound}} or
 the \emph{\myindex{infimum}}
 of $E$.  We write\glsadd{not:inf}
 \begin{equation*}
-\inf\, E \coloneqq b_0  .
+\inf\, E \coloneqq b_0 .
 \end{equation*}
 \end{enumerate}
 When a set $E$ is both bounded above and bounded below, we say simply that
@@ -103,9 +103,9 @@ $c$ is the least upper bound or supremum of $E$.
 A supremum or infimum for $E$ (even if it exists) need not be
 in $E$.  The set $E \coloneqq \{ x \in \Q : x < 1 \}$ has a least upper
 bound of 1, but 1 is not in the set $E$ itself.
-The set 
+The set
 $G \coloneqq \{ x \in \Q : x \leq 1 \}$ also has an upper bound of 1,
-and in this case $1 \in G$.  
+and in this case $1 \in G$.
 The set $P \coloneqq \{ x \in \Q : x \geq 0 \}$ has no upper bound (why?) and therefore
 cannot have a least upper bound.  The set $P$ does have a greatest lower
 bound:~0.
@@ -129,7 +129,7 @@ The real numbers have this property.
 \begin{example}
 The set $\Q$ of rational numbers does not have the least-upper-bound property.  The subset
 $\{ x \in \Q : x^2 < 2 \}$ does not have a supremum in $\Q$.  We will
-see later (\exampleref{example:sqrt2}) that the supremum is 
+see later (\exampleref{example:sqrt2}) that the supremum is
 $\sqrt{2}$, which is not rational%
 \footnote{This is true for all other roots of 2, and interestingly,
 the fact that $\sqrt[k]{2}$ is never rational for $k > 1$ implies no piano can
@@ -232,7 +232,7 @@ can check that (M5) is the only property that fails\footnote{An algebraist would
 ring, or perhaps a commutative ordered ring.}.
 \end{example}
 
-We will assume the basic facts about fields that are easily 
+We will assume the basic facts about fields that are easily
 proved from the axioms.  For example, $0x = 0$ is easily proved
 by noting that $xx = (0+x)x = 0x+xx$, using (A4), (D)\@, and (M2).  Then
 using (A5) on $xx$, along with (A2), (A3), and (A4), we obtain $0 = 0x$.
@@ -241,7 +241,7 @@ using (A5) on $xx$, along with (A2), (A3), and (A4), we obtain $0 = 0x$.
 A field $F$ is said to be an \emph{\myindex{ordered field}} if
 $F$ is also an ordered set such that
 \begin{enumerate}[(i)]
-\item \label{defn:ordfield:i} For $x,y,z \in F$,  $x < y$ implies $x+z <
+\item \label{defn:ordfield:i} For $x,y,z \in F$, $x < y$ implies $x+z <
 y+z$.
 \item \label{defn:ordfield:ii} For $x,y \in F$, $x > 0$ and $y > 0$
 implies $xy > 0$.
@@ -278,8 +278,8 @@ obtain $0 > -x$.  The \myquote{vice versa} follows by a similar calculation.
 
 For \ref{prop:bordfield:ii}, note that $y < z$ implies
 $0 < z - y$ by
-item \ref{defn:ordfield:i} of the definition of ordered fields.  
-Apply item 
+item \ref{defn:ordfield:i} of the definition of ordered fields.
+Apply item
 \ref{defn:ordfield:ii} of the definition of ordered fields to obtain
 $0 < x(z-y)$.  By algebraic properties, $0 < xz - xy$.
 Again by item
@@ -288,9 +288,8 @@ Again by item
 Part \ref{prop:bordfield:iii} is left as an exercise.
 
 To prove part \ref{prop:bordfield:iv}, first suppose $x > 0$.
-By item 
-\ref{defn:ordfield:ii} of the definition of ordered fields,
-$x^2 > 0$ (use $y=x$).  If $x < 0$, we use 
+By item \ref{defn:ordfield:ii} of the definition of ordered fields,
+$x^2 > 0$ (use $y=x$).  If $x < 0$, we use
 part \ref{prop:bordfield:iii} of this proposition, where we plug in $y=x$ and
 $z=0$.
 
@@ -324,8 +323,7 @@ $xy > 0$, then either both $x$ and $y$ are positive, or both are negative.
 \begin{proof}
 We show the contrapositive: If either one of $x$ or $y$ is zero, or
 if $x$ and $y$ have opposite signs, then $xy$ is not positive.
-If 
-$x$ or $y$ is zero, then $xy$ is zero and hence not positive.
+If $x$ or $y$ is zero, then $xy$ is zero and hence not positive.
 Hence assume that $x$ and $y$ are nonzero and have
 opposite signs.
 Without loss of generality,
@@ -335,8 +333,8 @@ Multiply $y < 0$ by $x$ to get $xy < 0x = 0$.
 
 \begin{example} \label{example:complexfield}
 The reader may also know about the \emph{\myindex{complex numbers}},
-usually denoted by
-$\C$.\glsadd{not:complex}  That is, $\C$ is the set of numbers of
+usually denoted by $\C$.\glsadd{not:complex}
+That is, $\C$ is the set of numbers of
 the form $x + iy$, where $x$ and $y$ are real numbers, and $i$ is the
 imaginary number, a number such that $i^2 = -1$.  The reader may
 remember from algebra that $\C$ is also a field; however, it is not an
@@ -379,9 +377,9 @@ If $x < 0$ and $y < z$, then $xy > xz$.
 \begin{exercise} \label{exercise:finitesethasminmax}
 Let $S$ be an ordered set.  Let $A \subset S$ be a nonempty finite subset.
 Then $A$ is bounded.  Furthermore,
-$\inf\, A$ exists and is in $A$ and 
-$\sup\, A$ exists and is in $A$.  Hint: Use
-\hyperref[induction:thm]{induction}.
+$\inf\, A$ exists and is in $A$ and
+$\sup\, A$ exists and is in $A$.
+Hint: Use \hyperref[induction:thm]{induction}.
 \end{exercise}
 
 \begin{exercise} \label{exercise:squareineq}
@@ -401,7 +399,7 @@ $\sup$s exist. Show that
 \end{exercise}
 
 \begin{exercise}
-Let $S$ be an ordered set.  Let $A \subset S$ and suppose 
+Let $S$ be an ordered set.  Let $A \subset S$ and suppose
 $b$ is an upper bound for $A$.  Suppose $b \in A$.  Show
 that $b = \sup\, A$.
 \end{exercise}
@@ -518,10 +516,9 @@ ordered field $\R$ with the \hyperref[defn:lub]{least-upper-bound property}
 such that $\Q \subset \R$.
 \end{thm}
 
-Note that also $\N \subset \Q$.  We saw that $1 > 0$.  By
-\hyperref[induction:thm]{induction}
-(exercise) we can prove that
-$n > 0$ for all $n \in \N$.
+Note also that $\N \subset \Q$.  We saw that $1 > 0$.
+By \hyperref[induction:thm]{induction} (exercise),
+we can prove that $n > 0$ for all $n \in \N$.
 Similarly, we verify simple statements about rational numbers.
 For example, we proved that if $n > 0$, then $\nicefrac{1}{n} > 0$.
 Then $m < k$ implies $\nicefrac{m}{n} < \nicefrac{k}{n}$.
@@ -541,7 +538,7 @@ If $x > 0$, then $0 < \nicefrac{x}{2} < x$ (why?).  Take
 $\epsilon = \nicefrac{x}{2}$ to get a contradiction.  Thus $x \leq 0$.
 \end{proof}
 
-For nonnegative $x$, an equality results:
+For nonnegative $x$, equality results:
 \emph{If $x \geq 0$ is such that $x \leq \epsilon$ for all
 $\epsilon > 0$, then $x = 0$.}
 A common version uses the absolute value (see \sectionref{sec:absval}):
@@ -553,7 +550,7 @@ From now on, when we say $x \geq 0$ or
 $\epsilon > 0$, we automatically mean that $x \in \R$ and $\epsilon \in \R$.
 
 The idea behind the proposition above is that
-any time we have two real numbers $a < b$, then there is another
+any time we have two real numbers $a < b$, there is another
 real number $c$ such that
 $a < c < b$.  Infinitely many such $c$ exist.  One of them is, for example,
 $c = \frac{a+b}{2}$ (why?).
@@ -561,10 +558,10 @@ We will use this fact in the next example.
 
 The most useful property of $\R$ for analysts
 is not just that it is an ordered field, but that it has the
-\hyperref[defn:lub]{least-upper-bound property}.  Essentially, we want $\Q$, but we also
-want to take suprema (and infima) willy-nilly.  So what we do is 
-take $\Q$ and
-throw in enough numbers to obtain $\R$.
+\hyperref[defn:lub]{least-upper-bound property}.
+Essentially, we want $\Q$, but we also
+want to take suprema (and infima) willy-nilly.
+So what we do is take $\Q$ and throw in enough numbers to obtain $\R$.
 
 We mentioned already that $\R$ contains elements that are not in $\Q$
 because of the \hyperref[defn:lub]{least-upper-bound property}.  Let us
@@ -582,9 +579,9 @@ $r \in \R$ such that $r^2 = 2$.  We denote $r$ by $\sqrt{2}$.}
 \begin{proof}
 Take the set
 $A \coloneqq \{ x \in \R : x^2 < 2 \}$.  We first show that $A$ is bounded above and
-nonempty.  The equation $x \geq 2$ implies $x^2 \geq 4$
-(see \exerciseref{exercise:squareineq}), so
-if $x^2 < 2$, then $x < 2$.  So $A$ is bounded above.
+nonempty.  The inequality $x \geq 2$ implies $x^2 \geq 4$
+(see \exerciseref{exercise:squareineq}).
+So if $x^2 < 2$, then $x < 2$.  So $A$ is bounded above.
 As $1 \in A$, the set $A$ is nonempty.  The supremum, therefore, exists.
 
 Let $r \coloneqq \sup\, A$.  We will show that $r^2 = 2$ by showing
@@ -594,7 +591,7 @@ We already know that $r \geq 1 > 0$.
 
 %\medskip
 In the following, it may seem we are pulling certain expressions out of
-a hat.  When writing a proof such as this we would, of course, come up with
+a hat.  When writing a proof such as this, we would, of course, come up with
 the expressions only after playing around with what we wish to prove.  The
 order in which we write the proof is not necessarily the order in which we
 come up with the proof.
@@ -622,15 +619,14 @@ positive number such that $s^2 < 2$, it follows that $r^2 \geq 2$.
 Now take a positive number $s$ such that
 $s^2 > 2$.  We wish to find an $h > 0$ such that
 ${(s-h)}^2 > 2$ and $s-h$ is still positive.
-As 
-$s^2-2 > 0$, we have $\frac{s^2-2}{2s} > 0$.
+As $s^2-2 > 0$, we have $\frac{s^2-2}{2s} > 0$.
 Let $h \coloneqq \frac{s^2-2}{2s}$,
-and check
-$s-h=s-\frac{s^2-2}{2s} = \frac{s}{2}+\frac{1}{s} > 0$.  Estimate,
+and check $s-h=s-\frac{s^2-2}{2s} = \frac{s}{2}+\frac{1}{s} > 0$.
+Estimate,
 \begin{equation*}
 \begin{aligned}
 s^2 - {(s-h)}^2 & = 2sh - h^2 \\
- & < 2sh & & \quad \bigl( \text{since } h^2 > 0 \text{ as } h \not= 0 \bigr)  \\
+ & < 2sh & & \quad \bigl( \text{since } h^2 > 0 \text{ as } h \not= 0 \bigr) \\
  & = s^2-2 & & \quad \bigl( \text{since } h = \tfrac{s^2-2}{2s} \bigr) .
 \end{aligned}
 \end{equation*}
@@ -640,7 +636,7 @@ ${(s-h)}^2 > 2$.  Therefore, $s-h \notin A$.
 Moreover, if $x \geq s-h$,
 then $x^2 \geq {(s-h)}^2 > 2$ (as $x > 0$ and $s-h > 0$) and so $x \notin A$.
 Thus,
-$s-h$ is an upper bound for $A$.  However, $s-h < s$,  or in other
+$s-h$ is an upper bound for $A$.  However, $s-h < s$, or in other
 words, $s > r = \sup\, A$.  Hence, $r^2 \leq 2$.
 
 \medskip
@@ -648,8 +644,8 @@ words, $s > r = \sup\, A$.  Hence, $r^2 \leq 2$.
 Together, $r^2 \geq 2$ and $r^2 \leq 2$ imply
 $r^2 = 2$.  The existence part is finished.  We still need to
 handle uniqueness.  Suppose $s \in \R$ such that $s^2 = 2$ and $s > 0$.
-Thus $s^2 = r^2$.  However, if $0 < s < r$, then $s^2 < r^2$.  Similarly,
-$0 < r < s$ implies $r^2 < s^2$.  Hence $s = r$.
+Thus, $s^2 = r^2$.  However, if $0 < s < r$, then $s^2 < r^2$.  Similarly,
+$0 < r < s$ implies $r^2 < s^2$.  Hence, $s = r$.
 \end{proof}
 \end{example}
 
@@ -725,7 +721,7 @@ n(y-x) > 1
 \qquad \text{or} \qquad
 y-x > \nicefrac{1}{n}.
 \end{equation*}
-Again by \ref{thm:arch:i} the set 
+Again by \ref{thm:arch:i} the set
 $A \coloneqq \{ k \in \N : k > nx \}$ is nonempty.  By the
 \hyperlink{wop:link}{well ordering property}
 of $\N$, $A$ has a least element $m$, and as $m \in A$,
@@ -743,7 +739,7 @@ m-1 \leq nx \qquad \text{or} \qquad m \leq nx+1 .
 On the other hand,
 from $n(y-x) > 1$ we obtain $ny > 1+nx$.
 Hence $ny > 1+nx \geq m$, and therefore $y > \nicefrac{m}{n}$.
-Putting everything together we obtain $x < \nicefrac{m}{n} < y$.
+Putting everything together, we obtain $x < \nicefrac{m}{n} < y$.
 So take $r = \nicefrac{m}{n}$.
 
 Now assume $x < 0$.  If $y > 0$, then just take $r=0$.  If
@@ -760,11 +756,11 @@ See \figureref{fig:oneovernset}.
 \end{cor}
 
 \begin{proof}
-Let $A \coloneqq \{ \nicefrac{1}{n} : n \in \N \}$.  Obviously $A$ is not empty.
+Let $A \coloneqq \{ \nicefrac{1}{n} : n \in \N \}$.  Obviously, $A$ is not empty.
 Furthermore,
-$\nicefrac{1}{n} > 0$ for all $n \in \N$, so 0 is a lower bound,
+$\nicefrac{1}{n} > 0$ for all $n \in \N$, so $0$ is a lower bound
 and $b \coloneqq \inf\, A$ exists.
-As 0 is a lower bound, then $b \geq 0$.
+As $0$ is a lower bound, then $b \geq 0$.
 Take an arbitrary $a > 0$.  By the
 \hyperref[thm:arch:i]{Archimedean property}, there exists an $n$ such that
 $na > 1$, that is, $a > \nicefrac{1}{n} \in A$.  Therefore,
@@ -781,7 +777,7 @@ $a$ cannot be a lower bound for $A$.  Hence $b=0$.
 \subsection{Using supremum and infimum}
 
 Suprema and infima are
-compatible with algebraic operations.  For a set $A \subset \R$ and 
+compatible with algebraic operations.  For a set $A \subset \R$ and
 $x \in \R$ define
 \begin{align*}
 x + A & \coloneqq \{ x+y \in \R : y \in A \} , \\
@@ -804,7 +800,7 @@ Let $A \subset \R$ be nonempty.
 
 Do note that multiplying a set by a negative number switches supremum for an
 infimum and vice versa.  Also, as the proposition implies that
-supremum (resp.\ infimum) of $x+A$ or $xA$ exists, 
+supremum (resp.\ infimum) of $x+A$ or $xA$ exists,
 it also implies that $x+A$ or $xA$
 is nonempty and bounded above (resp.\ below).
 
@@ -818,11 +814,11 @@ bound for $x+A$.  In particular, if $b = \sup\, A$, then
 \sup (x+A) \leq x+b = x+ \sup\, A .
 \end{equation*}
 
-The opposite inequality is similar:  If $c$ is an upper bound for $x+A$,
+The opposite inequality is similar: If $c$ is an upper bound for $x+A$,
 then $x+y \leq c$
 for all $y \in A$ and so $y \leq c-x$ for all $y \in A$.
 So $c-x$ is an upper bound for $A$.
-If $c = \sup (x+A)$, then 
+If $c = \sup (x+A)$, then
 \begin{equation*}
 \sup\, A \leq c-x = \sup (x+A) -x .
 \end{equation*}
@@ -837,16 +833,14 @@ $y \in B$.  Then $A$ is bounded above, $B$ is bounded below, and $\sup\, A \leq 
 \end{prop}
 
 \begin{proof}
-Any $x \in A$ is a lower bound for $B$.  Therefore
-$x \leq \inf\, B$ for all $x \in A$, so $\inf\, B$ is an upper bound for
-$A$.
-Hence,
-$\sup\, A \leq \inf\, B$.
+Any $x \in A$ is a lower bound for $B$.
+Therefore, $x \leq \inf\, B$ for all $x \in A$,
+so $\inf\, B$ is an upper bound for $A$.
+Hence, $\sup\, A \leq \inf\, B$.
 \end{proof}
 
-We must be careful about strict inequalities and taking suprema and
-infima.  Note that
-$x < y$ whenever $x \in A$ and
+We must be careful about strict inequalities and taking suprema and infima.
+Note that $x < y$ whenever $x \in A$ and
 $y \in B$ still only implies $\sup\, A \leq \inf\, B$, and not a strict
 inequality.
 For example, take $A \coloneqq \{ 0 \}$ and $B \coloneqq \{ \nicefrac{1}{n}
@@ -883,7 +877,7 @@ Let $A \subset \R$ be a set.
 \end{enumerate}
 \end{defn}
 
-For convenience,  $\infty$ and $-\infty$ are sometimes treated as if they were
+For convenience, $\infty$ and $-\infty$ are sometimes treated as if they were
 numbers, except we do not allow arbitrary arithmetic with them.
 We make $\R^* \coloneqq \R \cup \{ -\infty , \infty\}$
 \glsadd{not:extreal}\glsadd{not:infinity}
@@ -904,14 +898,14 @@ using this arithmetic,
 it leads to easy mistakes as $\R^*$ is not a field.
 Now we can take suprema and infima without fear of emptiness or
 unboundedness.  In this book, we mostly avoid
-using $\R^*$ outside of exercises, and leave such generalizations to the interested reader.
+using $\R^*$ outside of exercises and leave such generalizations to the interested reader.
 
 \subsection{Maxima and minima}
 
 By \exerciseref{exercise:finitesethasminmax},
-a finite set of numbers always has a supremum or an infimum that is contained
-in the set itself.  In this case we usually do not use the words
-supremum or infimum.
+a finite set of numbers always has a supremum and an infimum
+and they are both contained in the set itself.
+In this case, we usually do not use the words supremum or infimum.
 When a set $A$ of real numbers is bounded above and
 $\sup\, A \in A$, we can use the word
 \emph{\myindex{maximum}} and the notation $\max\, A$\glsadd{not:max} to denote the supremum.
@@ -946,8 +940,7 @@ Finish the proof of \propref{prop:supinfalg}.
 \end{exercise}
 
 \begin{exercise}
-Let $x, y \in \R$.  Suppose $x^2 + y^2 = 0$.  Prove that 
-$x = 0$ and $y = 0$.
+Let $x, y \in \R$.  Suppose $x^2 + y^2 = 0$.  Prove that $x = 0$ and $y = 0$.
 \end{exercise}
 
 \begin{exercise}
@@ -981,7 +974,7 @@ Let $A$ and $B$ be two nonempty bounded sets of real numbers.  Let
 $C \coloneqq \{ a+b : a \in A, b \in B \}$.
 Show that $C$ is a bounded set and that
 \begin{equation*}
-\sup\,C = \sup\,A + \sup\,B 
+\sup\,C = \sup\,A + \sup\,B
 \qquad \text{and} \qquad
 \inf\,C = \inf\,A + \inf\,B .
 \end{equation*}
@@ -993,7 +986,7 @@ Define the set
 $C \coloneqq \{ ab : a \in A, b \in B \}$.
 Show that $C$ is a bounded set and that
 \begin{equation*}
-\sup\,C = (\sup\,A )( \sup\,B) 
+\sup\,C = (\sup\,A )( \sup\,B)
 \qquad \text{and} \qquad
 \inf\,C = (\inf\,A )( \inf\,B).
 \end{equation*}
@@ -1001,7 +994,7 @@ Show that $C$ is a bounded set and that
 
 \begin{exercise}[Hard] \label{exercise:rootexistshard}
 Given $x > 0$ and $n \in \N$, show that there exists a unique positive
-real number $r$ such that $x = r^n$.  Usually $r$ is denoted by $x^{1/n}$.
+real number $r$ such that $x = r^n$.  Usually, $r$ is denoted by $x^{1/n}$.
 \end{exercise}
 
 \begin{exercise}[Easy]
@@ -1029,7 +1022,7 @@ Prove $\sup \{ x \in \Q : x^2 < 2 \} = \sup \{ x \in \R : x^2 < 2 \}$.
 Prove that given $y \in \R$, we have $\sup \{ x \in \Q : x < y \} = y$.
 \item
 Let $A \subset \Q$ be a set that is bounded above such that whenever $x
-\in A$ and $t \in \Q$ with $t < x$, then $t \in A$.  Further suppose 
+\in A$ and $t \in \Q$ with $t < x$, then $t \in A$.  Further suppose
 $\sup\, A \not\in A$.  Show that there exists a $y \in \R$ such that
 $A = \{ x \in \Q : x < y \}$.  A set such as $A$ is called a
 \emph{\myindex{Dedekind cut}}.
@@ -1042,7 +1035,7 @@ real numbers.
 
 \begin{exercise}
 Prove that if $A \subset \Z$ is a nonempty subset bounded below, then
-there exists a least element in $A$.  
+there exists a least element in $A$.
 Now describe why this statement would simplify the proof of
 \thmref{thm:arch} part \ref{thm:arch:ii} so that you do not have to assume
 $x \geq 0$.
@@ -1059,14 +1052,14 @@ define $x^{p/q} \coloneqq
 \item
 Show that the power is well-defined even
 if the fraction is not in lowest terms: If $\nicefrac{p}{q} =
-\nicefrac{m}{k}$ where $m$ and $k > 0$ are integers, then 
+\nicefrac{m}{k}$ where $m$ and $k > 0$ are integers, then
 ${(x^{1/q})}^p = {(x^{1/m})}^k$.
 \item
 Let $x$ and $y$ be two positive numbers and $r$ a rational number.
 Assuming $r > 0$, show
 $x < y$ if and only if $x^r < y^r$.  Then suppose $r < 0$ and show:
 $x < y$ if and only if $x^r > y^r$.
-\item 
+\item
 Suppose $x > 1$ and $r,s$ are rational where $r < s$.
 Show $x^r < x^s$.  If $0 < x < 1$ and $r < s$, show that $x^r > x^s$.
 Hint: Write $r$ and $s$ with the same denominator.
@@ -1075,7 +1068,7 @@ Hint: Write $r$ and $s$ with the same denominator.
 \footnote{In
 \sectionref{sec:logandexp}
 we will define the exponential and the logarithm and
-define $x^z \coloneqq \exp(z \ln x)$.  We will then have 
+define $x^z \coloneqq \exp(z \ln x)$.  We will then have
 sufficient machinery to make proofs of these assertions far easier.  At this
 point, however, we do not yet have these tools.}
 For an irrational $z \in \R \setminus \Q$ and $x > 1$ define
@@ -1157,20 +1150,25 @@ x^2$.
 
 \medskip
 
-\ref{prop:absbas:v}:  Suppose $\abs{x} \leq y$.  If $x \geq 0$,
-then $x \leq y$.  It follows that $y \geq 0$, leading to $-y \leq 0 \leq x$.  So $-y \leq x \leq y$
-holds.  If $x < 0$, then $\abs{x} \leq y$ means $-x \leq y$.  Negating both
-sides we get $x \geq -y$.  Again $y \geq 0$ and so $y \geq 0 > x$.
+\ref{prop:absbas:v}:
+Suppose $\abs{x} \leq y$.
+If $x \geq 0$, then $x \leq y$.
+It follows that $y \geq 0$, leading to $-y \leq 0 \leq x$.
+So $-y \leq x \leq y$ holds.
+If $x < 0$, then $\abs{x} \leq y$ means $-x \leq y$.
+Negating both sides we get $x \geq -y$.
+Again $y \geq 0$ and so $y \geq 0 > x$.
 Hence, $-y \leq x \leq y$.
 
-On the other hand, suppose 
-$-y \leq x \leq y$ is true.  If $x \geq 0$, then $x \leq y$ is equivalent
-to $\abs{x} \leq y$.  If $x < 0$, then $-y \leq x$ implies
-$(-x) \leq y$, which is equivalent to $\abs{x} \leq y$.
+On the other hand, suppose $-y \leq x \leq y$ is true.
+If $x \geq 0$, then $x \leq y$ is equivalent to $\abs{x} \leq y$.
+If $x < 0$, then $-y \leq x$ implies $(-x) \leq y$,
+which is equivalent to $\abs{x} \leq y$.
 
 \medskip
 
-\ref{prop:absbas:vi}:  Apply \ref{prop:absbas:v} with $y = \abs{x}$.
+\ref{prop:absbas:vi}:
+Apply \ref{prop:absbas:v} with $y = \abs{x}$.
 \end{proof}
 
 A property used frequently enough to give it a name is the so-called
@@ -1211,7 +1209,7 @@ triangle inequality to obtain
 \abs{a} = \abs{a-b+b} \leq \abs{a-b} + \abs{b} ,
 \end{equation*}
 or $\abs{a}-\abs{b} \leq \abs{a-b}$.  Switching the roles of $a$ and $b$
-we find 
+we find
 $\abs{b}-\abs{a} \leq \abs{b-a} = \abs{a-b}$.  Applying
 \propref{prop:absbas}, we obtain the reverse triangle
 inequality.
@@ -1224,7 +1222,7 @@ triangle inequality by just replacing $y$ with $-y$, and noting $\abs{-y} =
 \begin{cor}
 Let $x_1, x_2, \ldots, x_n \in \R$.  Then
 \begin{equation*}
-\abs{x_1 + x_2 + \cdots + x_n} \leq 
+\abs{x_1 + x_2 + \cdots + x_n} \leq
 \abs{x_1} + \abs{x_2} + \cdots + \abs{x_n} .
 \end{equation*}
 \end{cor}
@@ -1233,14 +1231,14 @@ Let $x_1, x_2, \ldots, x_n \in \R$.  Then
 We proceed by \hyperref[induction:thm]{induction}.
 The conclusion holds trivially for $n=1$, and
 for $n=2$ it is the standard triangle inequality.  Suppose the corollary
-holds for $n$.  Take $n+1$ numbers $x_1,x_2,\ldots,x_{n+1}$ and 
+holds for $n$.  Take $n+1$ numbers $x_1,x_2,\ldots,x_{n+1}$ and
 first use the standard triangle inequality, then the induction
 hypothesis
 \begin{equation*}
 \begin{split}
-\sabs{x_1 + x_2 + \cdots + x_n + x_{n+1}} & \leq 
+\sabs{x_1 + x_2 + \cdots + x_n + x_{n+1}} & \leq
 \sabs{x_1 + x_2 + \cdots + x_n} + \sabs{x_{n+1}} \\
-& \leq 
+& \leq
 \sabs{x_1} + \sabs{x_2} + \cdots + \sabs{x_n} + \sabs{x_{n+1}} .  \qedhere
 \end{split}
 \end{equation*}
@@ -1280,7 +1278,7 @@ such that $\abs{f(x)} \leq M$ for all $x \in D$.
 \end{defn}
 
 In the example, we proved $x^2-9x+1$ is bounded when considered as a
-function on $D = \{ x : -1 \leq x \leq 5 \}$.   On the other hand,
+function on $D = \{ x : -1 \leq x \leq 5 \}$.  On the other hand,
 if we consider the same polynomial as a function on the whole real line $\R$,
 then it is not bounded.
 
@@ -1297,13 +1295,13 @@ an example)
 \inf_{x \in D} f(x) \coloneqq \inf\, f(D) .
 \end{equation*}
 We also sometimes replace the \myquote{$x \in D$} with an expression.
-For example if, as before, $f(x) = x^2-9x+1$, for $-1 \leq x \leq 5$, 
+For example if, as before, $f(x) = x^2-9x+1$, for $-1 \leq x \leq 5$,
 a little bit of calculus shows
 \begin{equation*}
-\sup_{x \in D} f(x) = 
+\sup_{x \in D} f(x) =
 \sup_{-1 \leq x \leq 5} ( x^2 -9x+1 ) = 11,
 \qquad
-\inf_{x \in D} f(x) = 
+\inf_{x \in D} f(x) =
 \inf_{-1 \leq x \leq 5} ( x^2 -9x+1 ) = \nicefrac{-77}{4} .
 \end{equation*}
 
@@ -1351,7 +1349,7 @@ The second inequality (the statement about the inf) is left as an exercise
 
 \medskip
 
-A common mistake is to conclude 
+A common mistake is to conclude
 \begin{equation} \label{rn:av:ltnottrue}
 \sup_{x \in D} f(x) \leq \inf_{y \in D} g(y) .
 \end{equation}
@@ -1394,20 +1392,20 @@ Finish the proof of \propref{prop:funcsupinf}.
 That is, prove that
 given a set $D$,
 and two bounded functions
-$f \colon D \to \R$ and $g \colon D \to \R$ 
-such that $f(x) \leq g(x)$ for all $x \in D$, then 
+$f \colon D \to \R$ and $g \colon D \to \R$
+such that $f(x) \leq g(x)$ for all $x \in D$, then
 \begin{equation*}
 \inf_{x\in D} f(x) \leq \inf_{x\in D} g(x) .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise} \label{exercise:supinffuncineq}
-Let 
+Let
 $f \colon D \to \R$ and $g \colon D \to \R$ be functions ($D$ nonempty).
 \begin{enumerate}[a)]
 %
 \item
-Suppose 
+Suppose
 $f(x) \leq g(y)$ for all $x \in D$ and $y \in D$.  Show that
 \begin{equation*}
 \sup_{x\in D} f(x) \leq \inf_{x\in D} g(x) .
@@ -1434,7 +1432,7 @@ Let $D$ be a nonempty set.
 Suppose $f \colon D \to \R$ and $g \colon D \to \R$ are bounded functions.
 \begin{enumerate}[a)]
 \item
-Show 
+Show
 \begin{equation*}
 \sup_{x\in D} \bigl(f(x) + g(x) \bigr) \leq
 \sup_{x\in D} f(x)
@@ -1494,7 +1492,7 @@ Find an example where $f$ is unbounded but $\alpha f$ is bounded.
 
 You surely saw the notation for intervals\index{interval}
 before, but let us give a formal
-definition here.  For $a,  b \in \R$ such that $a < b$, we define
+definition here.  For $a, b \in \R$ such that $a < b$, we define
 \glsadd{not:openbdinterval}%
 \glsadd{not:closedbdinterval}%
 \glsadd{not:halfopenbdinterval}%
@@ -1512,8 +1510,8 @@ of the form $(a,b]$ and $[a,b)$ are called
 \emph{half-open intervals}\index{half-open interval}.
 
 The intervals above are \emph{bounded intervals}\index{bounded
-interval}, since both $a$ and $b$ are real numbers.  We 
-define \emph{unbounded intervals}\index{unbounded interval},
+interval}, since both $a$ and $b$ are real numbers.
+We define \emph{unbounded intervals}\index{unbounded interval},
 \begin{align*}
 & [a,\infty) \coloneqq \{ x \in \R : a \leq x \}, \\
 & (a,\infty) \coloneqq \{ x \in \R : a < x \}, \\
@@ -1563,7 +1561,7 @@ Let us say more about the cardinality of intervals and hence about the
 cardinality of $\R$.  We have seen that there exist irrational numbers, that is
 $\R \setminus \Q$, is nonempty.  The question is: How many irrational numbers
 are there?  It turns out there are a lot more irrational numbers than rational
-numbers.  We have seen that $\Q$ is countable, and we will show 
+numbers.  We have seen that $\Q$ is countable, and we will show
 that $\R$ is uncountable.
 In fact, the cardinality of $\R$ is the
 same as the cardinality of $\sP(\N)$, although we will not prove this
@@ -1587,7 +1585,7 @@ we could take $X = \R$.  We will show that $X$ is necessarily
 a proper subset, and so $X$ cannot equal $\R$, and $\R$ must be
 uncountable.
 
-As $X$ is countably infinite, 
+As $X$ is countably infinite,
 there is a bijection from $\N$ to $X$.  We write $X$ as
 a sequence of real numbers $x_1, x_2, x_3,\ldots$, such that
 each number in $X$
@@ -1606,7 +1604,7 @@ suppose
 $a_1 < a_2 < \cdots < a_{k-1} < b_{k-1} < \cdots < b_2 < b_1$,
 and suppose
 for each $j=1,2,\ldots,k-1$,
-we have $x_\ell \notin (a_{j},b_{j})$ 
+we have $x_\ell \notin (a_{j},b_{j})$
 for $\ell=1,2,\ldots,j$.
 \begin{enumerate}[(i)]
 \item Define $a_k \coloneqq x_n$, where $n$ is the smallest $n \in \N$
@@ -1629,7 +1627,7 @@ By \propref{infsupineq:prop} and the claim above,
 \begin{equation*}
 \sup\, A \leq \inf\, B .
 \end{equation*}
-Define $y \coloneqq \sup\, A$.  The number $y$ cannot be a member of $A$:  If $y = a_n$
+Define $y \coloneqq \sup\, A$.  The number $y$ cannot be a member of $A$: If $y = a_n$
 for some $n$, then $y < a_{n+1}$, which is impossible.
 Similarly, $y$ cannot be a member of $B$.  Therefore,
 $a_n < y$ for all $n\in \N$
@@ -1702,7 +1700,7 @@ or a bounded closed interval.
 \end{exercise}
 
 \begin{exercise}
-Suppose $S$ is a set of disjoint open intervals in $\R$.  That is, 
+Suppose $S$ is a set of disjoint open intervals in $\R$.  That is,
 if $(a,b) \in S$ and $(c,d) \in S$, then either $(a,b) = (c,d)$
 or $(a,b) \cap (c,d) = \emptyset$.  Prove $S$ is a countable set.
 \end{exercise}
@@ -1711,8 +1709,8 @@ or $(a,b) \cap (c,d) = \emptyset$.  Prove $S$ is a countable set.
 Prove that the cardinality of $[0,1]$ is the same as the cardinality of
 $(0,1)$ by showing that
 $\abs{[0,1]} \leq \abs{(0,1)}$ and
-$\abs{(0,1)} \leq \abs{[0,1]}$.  See 
-\defnref{def:comparecards}.
+$\abs{(0,1)} \leq \abs{[0,1]}$.
+See \defnref{def:comparecards}.
 This proof requires the Cantor--Bernstein--Schr\"oder theorem, which we
 stated without proof.  Note that this proof does not give you an
 explicit bijection.
@@ -1720,7 +1718,7 @@ explicit bijection.
 
 \begin{exercise}[Challenging]
 A number $x$ is \emph{algebraic}\index{algebraic number} if $x$ is a root of a polynomial with
-integer coefficients, in other words, $a_n x^n + a_{n-1} x^{n-1}  + \cdots
+integer coefficients, in other words, $a_n x^n + a_{n-1} x^{n-1} + \cdots
 + a_1 x + a_0 = 0$ where $a_0,a_1,\ldots,a_n \in \Z$.
 \begin{enumerate}[a)]
 \item
@@ -1769,18 +1767,18 @@ numbers $x$, we can find
 a negative integer $-M$, a positive integer $K$, and digits
 $d_K,d_{K-1},\ldots,d_1,d_0,d_{-1},\ldots,d_{-M}$, such that
 \begin{equation*}
-x = d_K {10}^K + d_{K-1} {10}^{K-1} + \cdots + d_2 {10}^2 + d_1 10 + d_0 
+x = d_K {10}^K + d_{K-1} {10}^{K-1} + \cdots + d_2 {10}^2 + d_1 10 + d_0
 + d_{-1} {10}^{-1} + d_{-2} {10}^{-2} + \cdots + d_{-M} {10}^{-M} .
 \end{equation*}
 We write $x = d_K d_{K-1} \cdots d_1 d_0 \, . \, d_{-1} d_{-2} \cdots d_{-M}$.
 
 Not every real number has such a representation, even the simple
-rational number $\nicefrac{1}{3}$ does not.  The irrational number $\sqrt{2}$ 
+rational number $\nicefrac{1}{3}$ does not.  The irrational number $\sqrt{2}$
 does not have such a representation either.  To get a representation for
 all real numbers, we must allow infinitely many digits.
 
 Let us consider only real numbers in the interval $(0,1]$.  If
-we find a representation for these, adding 
+we find a representation for these, adding
 integers to them obtains a representation for all real numbers.
 Take an infinite sequence of decimal digits:
 \begin{equation*}
@@ -1790,10 +1788,10 @@ That is, we have a digit $d_j$ for every $j \in \N$.
 We renumbered the digits to avoid the negative signs.
 We call the number
 \begin{equation*}
-D_n \coloneqq 
-\frac{d_1}{10} + 
-\frac{d_2}{{10}^2} + 
-\frac{d_3}{{10}^3} + 
+D_n \coloneqq
+\frac{d_1}{10} +
+\frac{d_2}{{10}^2} +
+\frac{d_3}{{10}^3} +
 \cdots +
 \frac{d_n}{{10}^n} .
 \end{equation*}
@@ -1803,9 +1801,9 @@ sequence of digits represents a real number $x$ if
 \begin{equation*}
 x =
 \sup_{n \in \N} \left(
-\frac{d_1}{10} + 
-\frac{d_2}{{10}^2} + 
-\frac{d_3}{{10}^3} + 
+\frac{d_1}{10} +
+\frac{d_2}{{10}^2} +
+\frac{d_3}{{10}^3} +
 \cdots +
 \frac{d_n}{{10}^n}
 \right) =
@@ -1837,22 +1835,22 @@ digits $0.d_1d_2d_3\ldots$.  Use the geometric sum formula to write
 \begin{equation*}
 \begin{split}
 D_n =
-\frac{d_1}{10} + 
-\frac{d_2}{{10}^2} + 
-\frac{d_3}{{10}^3} + 
+\frac{d_1}{10} +
+\frac{d_2}{{10}^2} +
+\frac{d_3}{{10}^3} +
 \cdots +
-\frac{d_n}{{10}^n} 
+\frac{d_n}{{10}^n}
 & \leq
-\frac{9}{10} + 
-\frac{9}{{10}^2} + 
-\frac{9}{{10}^3} + 
+\frac{9}{10} +
+\frac{9}{{10}^2} +
+\frac{9}{{10}^3} +
 \cdots +
-\frac{9}{{10}^n} 
+\frac{9}{{10}^n}
 \\
 & =
 \frac{9}{10}
-\bigl( 1 + \nicefrac{1}{10} + 
-{(\nicefrac{1}{10})}^2 + \cdots + 
+\bigl( 1 + \nicefrac{1}{10} +
+{(\nicefrac{1}{10})}^2 + \cdots +
 {(\nicefrac{1}{10})}^{n-1} \bigr)
 \\
 & =
@@ -1877,11 +1875,11 @@ computing as above
 \begin{equation*}
 D_m - D_n
 =
-\frac{d_{n+1}}{{10}^{n+1}} + 
-\frac{d_{n+2}}{{10}^{n+2}} + 
-\frac{d_{n+3}}{{10}^{n+3}} + 
+\frac{d_{n+1}}{{10}^{n+1}} +
+\frac{d_{n+2}}{{10}^{n+2}} +
+\frac{d_{n+3}}{{10}^{n+3}} +
 \cdots +
-\frac{d_{m}}{{10}^m} 
+\frac{d_{m}}{{10}^m}
 \leq
 \frac{1}{{10}^{n}}
 \bigl(
@@ -1904,13 +1902,13 @@ For convenience, let $D_0 \coloneqq 0$.
 Then,
 $D_0 < x \leq D_0 + {10}^{-0}$.
 Suppose we defined the digits $d_1,d_2,\ldots,d_n$,
-and that 
+and that
 $D_k < x \leq D_k + {10}^{-k}$, for $k=0,1,2,\ldots,n$.  We need to define $d_{n+1}$.
 
-By the 
+By the
 \hyperref[thm:arch:i]{Archimedean property} of the real numbers,
 find an integer $j$ such that
-$x-D_n \leq j {10}^{-(n+1)}$.  Take the least such $j$ and obtain 
+$x-D_n \leq j {10}^{-(n+1)}$.  Take the least such $j$ and obtain
 \begin{equation} \label{eq:theDnjineq}
 (j-1){10}^{-(n+1)} < x-D_n \leq j {10}^{-(n+1)} .
 \end{equation}
@@ -1947,11 +1945,10 @@ x - \sup \{ D_m : m \in \N \}
 x - D_n \leq 10^{-n} .
 \end{equation*}
 As the inequality holds for all $n$ and
-${10}^{-n}$ can be made arbitrarily small (see
-\exerciseref{exercise:bnlimit}), we have $x \leq 
-\sup \{ D_m : m \in \N \}$.
-Therefore,
-$\sup \{ D_m : m \in \N \} = x$.
+${10}^{-n}$ can be made arbitrarily small
+(see \exerciseref{exercise:bnlimit}),
+we have $x \leq \sup \{ D_m : m \in \N \}$.
+Therefore, $\sup \{ D_m : m \in \N \} = x$.
 
 What is left to show is the uniqueness.
 Suppose $0.e_1e_2e_3\ldots$ is another representation of $x$.
@@ -2022,9 +2019,9 @@ e_n \coloneqq
 Let $E_n$ be the $n$-digit truncation of $y = 0.e_1e_2e_3\ldots$.  Because
 all the digits are nonzero we get $E_n < E_{n+1} \leq y$.  Therefore
 \begin{equation*}
-E_n < y \leq E_n + {10}^{-n} 
+E_n < y \leq E_n + {10}^{-n}
 \end{equation*}
-for all $n$, and the representation is the unique one for $y$ from 
+for all $n$, and the representation is the unique one for $y$ from
 the proposition.  For every $n$, the $n$th digit
 of $y$ is different from the $n$th digit of $x_n$, so $y \not= x_n$.
 Therefore $y \notin X$, and as $X$ was an arbitrary countable subset,
@@ -2043,7 +2040,7 @@ rational number, but we give it only for $x \in (0,1]$ for simplicity.
 
 \begin{prop} \label{prop:rationaldecimal}
 If $x \in (0,1]$ is a rational number and $x = 0.d_1d_2d_3\ldots$,
-then the decimal digits eventually start repeating.  That is, there are 
+then the decimal digits eventually start repeating.  That is, there are
 positive integers $N$ and $P$, such that for all $n \geq N$, $d_n = d_{n+P}$.
 \end{prop}
 
@@ -2085,7 +2082,7 @@ Dividing by $10^{n-1}$ and adding $D_{n-1}$ we find
 D_n \leq D_{n-1} + \frac{r_{n-1}}{10^{n-1} q} = \frac{p}{q} \leq D_n +
 \frac{1}{10^n} .
 \end{equation*}
-By uniqueness we really have 
+By uniqueness we really have
 the $n$th digit $d_n$ from the construction.
 
 The new digit depends only the remainder from the previous
@@ -2121,7 +2118,7 @@ the condition.
 
 \begin{exercise}
 Prove the converse of \propref{prop:rationaldecimal}, that is,
-if the digits in the decimal representation of $x$ are eventually repeating, then 
+if the digits in the decimal representation of $x$ are eventually repeating, then
 $x$ must be rational.
 \end{exercise}
 
@@ -2139,7 +2136,7 @@ $[0,1]$ in terms of base $b$ rather than base 10 and prove
 \end{exercise}
 
 \begin{exercise}
-Using the previous exercise with $b=2$ (binary), 
+Using the previous exercise with $b=2$ (binary),
 show that cardinality of $\R$ is the same as the cardinality of $\sP(\N)$,
 obtaining yet another (though related) proof that $\R$ is uncountable.
 Hint: Construct two injections, one from $[0,1]$ to $\sP(\N)$
@@ -2168,7 +2165,7 @@ of $x$ is in fact less than or equal to $q-1$.
 
 \begin{exercise} \label{exercise:bnlimit}
 Prove that if $b \in \N$ and $b \geq 2$, then for every $\epsilon > 0$,
-there is an $n \in \N$ such that 
+there is an $n \in \N$ such that
 $b^{-n} < \epsilon$.  Hint:
 One possibility is to first prove that $b^n > n$ for all $n \in \N$ by induction.
 \end{exercise}
