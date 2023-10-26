@@ -1087,7 +1087,7 @@ while(1)
 			close_paragraph ();
 			$table_num = $table_num+1;
 			my $the_num = get_table_number ();
-			print $out "<table xml:id=\"$theid\" number=\"$the_num\">\n";
+			print $out "<rahr/><table xml:id=\"$theid\" number=\"$the_num\">\n";
 			print $out "  <title>$caption</title>\n";
 			print $out "  <tabular top=\"major\" halign=\"left\">\n";
 
@@ -1115,7 +1115,7 @@ while(1)
 			# last row should have bottom minor
 			$table =~ s|<row>(.*?)$|<row bottom=\"minor\">$1|;
 
-			print $out "$table</cell></row>\n  </tabular>\n</table>\n";
+			print $out "$table</cell></row>\n  </tabular>\n</table><rahr/>\n";
 		} else {
 			print "\n\n\nHUH?\n\n\nNo end table!\n\n$para\n\n";
 			$num_errors++;

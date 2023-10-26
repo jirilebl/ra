@@ -84,8 +84,13 @@ echo
 echo RUNNING convert-to-mbx.pl ...
 echo
 
-
 perl convert-to-mbx.pl
+
+echo
+echo REMOVE doubled horizontal rules
+echo
+
+perl -0777 -i -pe 's:<rahr/>[ \r\n]*<rahr/>:<rahr/>:igs' ../realanal-out.xml
 
 #xmllint --format -o realanal-out2.xml realanal-out.xml
 
