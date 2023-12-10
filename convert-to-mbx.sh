@@ -10,9 +10,6 @@ echo --runpdft some figures will be missing.  You can also use --full
 echo which does all three arguments.
 echo Optimizations are in optimize-svgs.sh in figures/
 echo
-echo The option --add-track will add my google tracking, this is probably
-echo only for me.
-echo
 echo To rerun all figures first do \"rm "*-mbx.*" "*-mbxpdft.*"\", or run
 echo this script with --kill-generated.
 echo
@@ -20,7 +17,6 @@ echo
 PDFT=no
 #OPTPNG=no
 OPTSVG=no
-ADDTRACK=no
 
 # parse parameters
 while [ "$1" != "" ]; do
@@ -39,10 +35,6 @@ while [ "$1" != "" ]; do
         --optimize-svg)
 	    echo "OPTION (optimize-svg) Will run optimize-svgs.sh"
 	    OPTSVG=yes
-	    ;;
-        --add-track)
-	    echo "OPTION add tracking"
-	    ADDTRACK=yes
 	    ;;
         --full)
 	    echo "OPTION (full) Will run pdf_t optimize svgs"
@@ -128,7 +120,7 @@ echo FIXING UP HTML ...
 echo
 
 for n in *.html; do
-	../fixup-html-file.pl --track=$ADDTRACK < $n > tmpout
+	../fixup-html-file.pl < $n > tmpout
 	mv tmpout $n
 done
 
