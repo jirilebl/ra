@@ -3941,7 +3941,7 @@ of these three
 continuous functions, it is continuous.
 \end{proof}
 
-\begin{cor}
+\begin{cor} \label{cor:IVTopenmap}
 Suppose $U \subset \R^n$ is open and $f \colon U \to \R^n$ is a continuously
 differentiable mapping such that $f'(x)$ is invertible for all $x \in U$.  Then
 for every open set $V \subset U$, the set $f(V)$ is open ($f$ is said to be an
@@ -4364,8 +4364,12 @@ inverse of $F$ exists locally as long as $r \not= 0$.
 Show that $F \colon \R^2 \to \R^2$ is onto, and for each point $(x,y) \in
 \R^2$, the set $F^{-1}(x,y)$ is infinite.
 \item
-Show that $F \colon \R^2 \to \R^2$ is an open map, despite not satisfying the condition of the
-inverse function theorem.
+Show that $F \colon \R^2 \to \R^2$ is not an open mapping.
+Note that $F|_{(0,\infty) \times \R}$ is an open mapping
+via \corref{cor:IVTopenmap}.
+Hint: Where does a
+small open rectangle such as $(-\epsilon,\epsilon) \times
+(-\epsilon,\epsilon)$ go?
 \item
 Show that $F|_{(0,\infty) \times [0,2\pi)}$ is one-to-one and onto
 $\R^2 \setminus \bigl\{ (0,0) \bigr\}$.
