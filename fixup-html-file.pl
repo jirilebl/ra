@@ -6,7 +6,7 @@ my ($arg) = @ARGV;
 
 while($line = <STDIN>)
 {
-	if ($line =~ m/<a class="index-button.*index-1.html.*Index/) {
+	if ($line =~ m/<a class="index-button.*title="Index"/) {
 		# Add extra buttons
 		$extra = "<a class=\"index-button button\" href=\"https://www.jirka.org/ra/\" title=\"Home\" alt=\"Book Home\"><span class=\"name\">Home</span></a>\n";
 
@@ -19,7 +19,7 @@ while($line = <STDIN>)
 
 		$extra .= "<a class=\"index-button button\" href=\"https://www.amazon.com/dp/B0C9S7P6M8\" title=\"Paperback\" alt=\"Buy Paperback\"><span class=\"name\">Book(II)</span></a>\n";
 
-		if (not ($line =~ s/<button id="user-preferences-button"/$extra<button id="user-preferences-button"/)) {
+		if (not ($line =~ s/<div class="searchbox"/$extra<div class="searchbox"/)) {
 			print STDERR "Can't add extra buttons!";
 			exit 1;
 		}
