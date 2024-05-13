@@ -82,7 +82,7 @@ echo
 echo REMOVE doubled horizontal rules
 echo
 
-perl -0777 -i -pe 's:<rahr/>[ \r\n]*<rahr/>:<rahr/>:igs' ../realanal-out.xml
+perl -0777 -i -pe 's:<rahr/>[ \r\n]*<rahr/>:<rahr/>:igs' ./realanal-out.xml
 
 #xmllint --format -o realanal-out2.xml realanal-out.xml
 
@@ -114,6 +114,17 @@ echo RUNNING xsltproc
 echo
 
 xsltproc -stringparam publisher realanal-publisher.xml ../realanal-html.xsl ../realanal-out.xml
+
+echo
+echo Copy the _static things
+echo
+
+mkdir _static
+mkdir _static/pretext
+cp -a ~/pretext/js _static/pretext/
+cp -a ~/pretext/css _static/pretext/
+cp -a ~/pretext/js_lib _static/pretext/js/lib
+
 
 echo
 echo FIXING UP HTML ...

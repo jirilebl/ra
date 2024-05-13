@@ -14,7 +14,7 @@
 
   <!-- apply-imports applies also the original, apply-templates ignores the original-->
   <!-- need hardcoded numbers on everything, so nonstandard pretext -->
-  <xsl:template match="men|mrow|exercise|example|remark|theorem|lemma|proposition|corollary|principle|axiom|definition|chapter|appendix|section|subsection|subsubsection|figure|table" mode="number">
+  <xsl:template match="men|mrow|exercise|exercises|example|remark|theorem|lemma|proposition|corollary|principle|axiom|definition|chapter|appendix|section|subsection|subsubsection|figure|table" mode="number">
     <xsl:choose>
       <xsl:when test="@number">
         <xsl:value-of select="@number"/>
