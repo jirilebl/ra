@@ -1536,7 +1536,7 @@ number $a \not= 0$.  Then $f \colon \R \to \R$ is bijective, and the inverse
 is $f^{-1}(y) = \frac{1}{a} y$.  In particular, $f'(x) = a$ and 
 $(f^{-1})'(y) = \frac{1}{a}$.  As differentiable functions are
 \myquote{infinitesimally like} linear functions, we expect the same
-behavior from the inverse function.
+sort of behavior from the inverse of a differentiable function.
 The main idea of differentiating inverse functions is the following lemma.
 
 \begin{lemma} \label{lemma:ift}
@@ -1556,8 +1556,8 @@ is continuously differentiable.
 \begin{proof}
 By \propref{prop:invcont}, $f$ has a continuous inverse.  For convenience
 call the inverse $g \colon J \to I$.
-Let $x_0,y_0$ be as in the statement.  For $x \in I$ write $y \coloneqq f(x)$.
-If $x \not= x_0$ and so $y \not= y_0$, we find
+Let $x_0,y_0$ be as in the statement.  For $x \in I$, write $y \coloneqq f(x)$.
+If $x \not= x_0$, and so $y \not= y_0$, we find
 \begin{equation*}
 \frac{g(y)-g(y_0)}{y-y_0} =
 \frac{g\bigl(f(x)\bigr)-g\bigl(f(x_0)\bigr)}{f(x)-f(x_0)} =
@@ -1633,19 +1633,19 @@ such that $f'(x) > 0$ for all $x \in I$.  See
 By \propref{incdecdiffstrictprop}, $f$ is strictly increasing
 on $I$, and hence the restriction $f|_{I}$ is bijective onto $J: = f(I)$.
 As $f$ is continuous,
-then by the
 \corref{cor:continterval}
 (or directly via the
 \hyperref[IVT:thm]{intermediate value theorem})
+implies that
 $f(I)$ is an interval.
 Now apply \lemmaref{lemma:ift}.
 \end{proof}
 
-In \exampleref{example:sqrt2} we saw how difficult an
+In \exampleref{example:sqrt2}, we saw how difficult an
 endeavor proving the existence of $\sqrt{2}$.
-With the \hyperref[IVT:thm]{intermediate value theorem}
+With the \hyperref[IVT:thm]{intermediate value theorem},
 we made the existence of roots almost trivial, and
-with the machinery of this section we will prove
+with the machinery of this section, we will prove
 far more than mere existence.
 
 \begin{cor}
@@ -1660,23 +1660,28 @@ using the convention $x^{m/n} \coloneqq {(x^{1/n})}^{m}$.
 \end{cor}
 
 \begin{proof}
-For $x=0$ the existence of a unique root is trivial.
+For $x=0$, the existence of a unique root is trivial.
 
 Let $f \colon (0,\infty) \to (0,\infty)$ be defined by $f(y) \coloneqq y^n$.
 The function $f$ is continuously differentiable
-and $f'(y) = ny^{n-1}$, see \exerciseref{exercise:diffofxn}.  For $y > 0$ the derivative $f'$ is strictly positive
+and $f'(y) = ny^{n-1}$, see \exerciseref{exercise:diffofxn}.
+For $y > 0$, the derivative $f'$ is strictly positive,
 and so again by \propref{incdecdiffstrictprop}, $f$ is strictly
-increasing (this can also be proved directly).
-Given any $M > 1$, $f(M) = M^n \geq M$, and given any $1 > \epsilon > 0$,
-$f(\epsilon) = \epsilon^n \leq \epsilon$.  For every $x$ with $\epsilon < x <
-M$, we have, by the
+increasing (this can also be proved directly) and hence injective.
+Suppose $M$ and $\epsilon$ are such that
+$M > 1$ and $1 > \epsilon > 0$.
+Then
+$f(M) = M^n \geq M$ and
+$f(\epsilon) = \epsilon^n \leq \epsilon$.
+For every $x$ with $\epsilon < x < M$,
+we have, by the
 \hyperref[IVT:thm]{intermediate value theorem}, that $x \in
 f\bigl( [\epsilon,M] \bigr) \subset
 f\bigl( (0,\infty) \bigr)$.  As $M$ and $\epsilon$ were arbitrary, $f$ is onto
 $(0,\infty)$, and hence $f$ is bijective.
 Let $g$ be the inverse of $f$, and we obtain
 the existence and uniqueness of positive
-$n$th roots.  \lemmaref{lemma:ift} says $g$ has a continuous
+$n$th roots.  \lemmaref{lemma:ift} says that $g$ has a continuous
 derivative and $g'(x) =
 \frac{1}{f'\left(\vphantom{1^1_1}g(x)\right)} = \frac{1}{n {(x^{1/n})}^{n-1}}$.
 \end{proof}
@@ -1684,8 +1689,8 @@ derivative and $g'(x) =
 \begin{example}
 The corollary provides a good example of where the inverse function theorem
 gives us an interval smaller than $(a,b)$.  Take $f \colon \R \to \R$
-defined by $f(x) \coloneqq x^2$.  Then $f'(x) \not= 0$
-as long as $x \not= 0$.  If $x_0 > 0$, we can take $I=(0,\infty)$, but
+defined by $f(x) \coloneqq x^2$.  Then $f'(x_0) \not= 0$
+as long as $x_0 \not= 0$.  If $x_0 > 0$, we can take $I=(0,\infty)$, but
 no larger.
 \end{example}
 
