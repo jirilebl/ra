@@ -982,13 +982,15 @@ However,
 \begin{equation*}
 \int_0^1 f(\nicefrac{1}{2},y) \, dy
 \end{equation*}
-does not exist, so we cannot even write $\int_0^1 \int_0^1 f(x,y) \, dy \, dx$.
+does not exist, so strictly speaking,
+$\int_0^1 \int_0^1 f(x,y) \, dy \, dx$
+does not make sense.
 See \figureref{fig:fubinibad}.
 
 \begin{myfigureht}
 \subimport*{figures/}{fubinibad.pdf_t}
 \caption{Left: $[0,1]^2$ with the line $x=\nicefrac{1}{2}$ marked
-dotted, and $\int_0^1 f(x,y) \, dx$ marked as gray solid line for a generic $y$.
+dotted and $\int_0^1 f(x,y) \, dx$ marked as gray solid line for a generic $y$.
 Center: Similar picture but $\int_0^1 f(x,y) \, dy$
 marked for some $x \not= \nicefrac{1}{2}$.
 Right: The three different rectangles in the partition used to integrate $f$
@@ -1208,8 +1210,9 @@ U(P,h) - L(P,h)
 U\bigl((P,P'),f\bigr) -
 L\bigl((P,P'),f\bigr) .
 \end{equation*}
-If $f$ is integrable, so is $h$.
-As $L\bigl((P,P'),f\bigr) \leq L(P,h) \leq U\bigl((P,P'),f\bigr)$, we have
+As $f$ is integrable, so is $h$.
+Moreover, $L\bigl((P,P'),f\bigr) \leq L(P,h) \leq U\bigl((P,P'),f\bigr)$
+implies
 $\int_R h = \int_{R \times S} f$.
 \end{proof}
 
@@ -2824,7 +2827,7 @@ $\varphi \colon U \to \R$ is Riemann integrable on $U$, then
 
 \begin{myfigureht}
 \includegraphics{figures/typeIdomain}
-\caption{Domain between two graphs.\label{fig:typeIdomain}}
+\caption{Region between two graphs.\label{fig:typeIdomain}}
 \end{myfigureht}
 
 \subsection{Images of Jordan measurable subsets}
@@ -3074,9 +3077,9 @@ version of it.  That is, we will only prove it for a special kind of domain.
 The general version follows from the special case 
 by application of further geometry, and cutting up the general
 domain into smaller domains on which to apply the special case.
-We will not prove the general case. 
+%We will not prove the general case. 
 
-Let $U \subset \R^2$ be a domain with piecewise smooth boundary.
+Let $U \subset \R^2$ be a bounded domain with piecewise smooth boundary.
 We say $U$ is of \emph{type I}\index{type I domain}
 if there exist numbers
 $a < b$, and continuous
@@ -3269,7 +3272,7 @@ The claim follows.
 \begin{myfigureht}
 \subimport*{figures/}{vortexbox.pdf_t}
 \caption{Changing the box integral to an integral around a small circle around
-the origin.  The domain $U$ is the shaded area between the circle and the
+the origin.  The domain $U$ is the entire shaded area between the circle and the
 box.\label{fig:vortexbox}}
 \end{myfigureht}
 
@@ -3295,7 +3298,7 @@ We will prove one of the most fundamental properties of these functions.
 Let $D_r \coloneqq B(p,r)$ be a disc such that its closure $\overline{D_r} = C(p,r) \subset U$.  Write
 $p = (x_0,y_0)$.  We orient
 $\partial D_r$ positively.  See \exerciseref{green:balltype3orient}.
-Then via Green's and integration under the integral,
+Then via Green's and differentiation under the integral,
 \begin{equation*}
 \begin{split}
 0
@@ -3383,8 +3386,8 @@ is a type III domain.
 \end{exercise}
 
 \begin{exercise}
-Suppose $V \subset \R^2$ is a domain with piecewise smooth boundary that is
-a type III domain and suppose that $U \subset \R^2$ is a domain such that
+Suppose $V \subset \R^2$ is a bounded domain with piecewise smooth boundary
+of type III and suppose that $U \subset \R^2$ is an open set such that
 $\widebar{V} \subset U$.  Suppose $f \colon U \to \R$ is a twice
 continuously differentiable function.  Prove that
 $\int_{\partial V}
