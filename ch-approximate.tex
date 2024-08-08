@@ -378,8 +378,9 @@ f(x) = \lim_{n\to \infty} f_n(x) .
 We say the sequence $\{ f_n \}_{n=1}^\infty$
 \emph{\myindex{converges pointwise}}\index{pointwise convergence} to $f$.
 
-For $Y=\C$, a series
-\emph{converges pointwise}\index{converges pointwise!complex series}\index{pointwise convergence!complex series} if
+For $Y=\C$, a series of functions
+\emph{converges pointwise}\index{converges pointwise!complex
+series}\index{pointwise convergence!complex series} to $f$ if
 for every $x \in X$, we have
 \begin{equation*}
 f(x) = \lim_{n\to \infty} \sum_{k=1}^n f_k(x) =
@@ -1774,7 +1775,7 @@ $e^{4} \approx 54.6$.  The plot of the real exponential ($y=0$)
 is marked in a bold line.\label{fig:complexexpgraphs}}
 \end{myfigureht}
 
-\begin{prop}
+\begin{prop}[Law of exponents\index{law of exponents}]
 Let $z,w \in \C$ be complex numbers.  Then
 \begin{equation*}
 e^{z+w} = e^z e^w.
@@ -1796,9 +1797,9 @@ $e^{z+w} = e^z e^w$
 for all $w \in \C$.
 \end{proof}
 
-A simple consequence is that $e^z\not=0$ for all $z \in \C$,
+A simple consequence of the proposition is that $e^z\not=0$ for all $z \in \C$,
 as $e^z e^{-z} = e^{z-z} = 1$.  A more complicated consequence is that we
-can easily compute the power series for the exponential at a point $a \in
+can compute the power series for the exponential at any point $a \in
 \C$:
 \begin{equation*}
 e^z = e^a e^{z-a} = \sum_{k=0}^\infty \frac{e^a}{k!} {(z-a)}^k .
@@ -1819,8 +1820,8 @@ In fact, we define sine and cosine for all complex $z$:
 \sin(z) \coloneqq \frac{e^{iz} - e^{-iz}}{2i} .
 \end{equation*}
 
-Let us use our definition to prove the common properties we usually
-associate with sine and cosine.  In the process we also define the
+Let us use our definition to prove common properties of
+sine and cosine.  In the process, we also define the
 number $\pi$.
 
 \begin{prop}
@@ -1849,9 +1850,9 @@ e^{iz} = \cos(z) + i\sin(z) \qquad
 \qquad\text{and}\qquad
 \sin(x) = \Im (e^{ix}) .
 \end{equation*}
-\item For all $x \in \R$,
+\item For all $z \in \C$,
 \begin{equation*}
-{\bigl( \cos(x) \bigr)}^2 + {\bigl( \sin(x) \bigr)}^2 = 1 .
+{\bigl( \cos(z) \bigr)}^2 + {\bigl( \sin(z) \bigr)}^2 = 1 .
 \end{equation*}
 \item For all $x \in \R$,
 \begin{equation*}
@@ -1898,7 +1899,6 @@ real whenever $x$ is real.
 \begin{proof}
 The first three items follow directly from the definition.
 The computation of the power series for both is left as an exercise.
-
 As complex conjugate is a continuous function, the definition
 of $e^z$ implies
 $\overline{(e^z)} = e^{\bar{z}}$.  If
@@ -1907,14 +1907,39 @@ $x$ is real,
 \overline{(e^{ix})} = e^{-ix} .
 \end{equation*}
 Thus for real $x$,
-$\cos(x) = \Re (e^{ix})$ and $\sin(x) = \Im (e^{ix})$.
+$\cos(x) =
+\frac{e^{ix}-e^{-ix}}{2} =
+\frac{e^{ix}-\overline{e^{ix}}}{2} =
+\Re (e^{ix})$
+and similarly $\sin(x) = \Im (e^{ix})$.
 
-For real $x$, we compute
+%For real $x$, we compute
+For $z \in \C$,
 \begin{equation*}
-1 =  e^{ix} e^{-ix} = \sabs{e^{ix}}^2 = {\bigl( \cos(x) \bigr)}^2 + {\bigl( \sin(x) \bigr)}^2 .
+%1 =  e^{ix} e^{-ix} = \sabs{e^{ix}}^2 = {\bigl( \cos(x) \bigr)}^2 + {\bigl( \sin(x) \bigr)}^2 .
+%\end{equation*}
+%\[
+\begin{split}
+{\bigl( \cos(z) \bigr)}^2 + {\bigl( \sin(z) \bigr)}^2
+  &=
+{\left(\frac{e^{iz} + e^{-iz}}{2} \right)}^2
++
+{\left(\frac{e^{iz} - e^{-iz}}{2i} \right)}^2
+\\
+& =
+\frac{e^{iz} e^{iz} + 2 e^{iz} e^{-iz} + e^{-iz}e^{-iz}}{4}
+-
+\frac{e^{iz} e^{iz} - 2 e^{iz} e^{-iz} + e^{-iz}e^{-iz}}{4}
+\\
+& =
+\frac{e^{i2z} + 2 + e^{-i2z}
+-
+e^{i2z} + 2  - e^{-i2z}}{4} = 1 .
+\end{split}
 \end{equation*}
-In particular, is $e^{ix}$ is unimodular, the values lie on the unit circle.
-A square is always nonnegative:
+In particular, is $e^{ix}$ is unimodular for real $x$;
+the values lie on the unit circle.
+A square of a real number is always nonnegative:
 \begin{equation*}
 {\bigl(\sin(x)\bigr)}^2 = 1-{\bigl(\cos(x)\bigr)}^2 \leq 1 .
 \end{equation*}
@@ -1922,8 +1947,7 @@ So $\sabs{\sin(x)} \leq 1$ and similarly
 $\sabs{\cos(x)} \leq 1$.
 
 We leave the computation of the derivatives to the reader as exercises.
-
-Let us now prove that $\sin(x) \leq x$ for $x \geq 0$.
+Let us prove that $\sin(x) \leq x$ for $x \geq 0$.
 Consider
 $f(x) \coloneqq x-\sin(x)$ and differentiate:
 \begin{equation*}
@@ -1931,11 +1955,11 @@ f'(x) = \frac{d}{dx} \bigl[ x - \sin(x) \bigr]
 =
 1 -\cos(x) \geq 0 ,
 \end{equation*}
-for all $x$ as $\sabs{\cos(x)} \leq 1$.
+for all $x \in \R$ as $\sabs{\cos(x)} \leq 1$.
 In other words, $f$ is increasing and $f(0) = 0$.
-So $f$ must be nonnegative when $x \geq 0$.
+So $f$ must be nonnegative when $x \geq 0$ and hence, $\sin(x) \geq x$.
 
-We claim there exists a positive $x$ such that $\cos(x) = 0$.
+Next, we claim there exists a positive $x$ such that $\cos(x) = 0$.
 As $\cos(0) = 1 > 0$, $\cos(x) > 0$
 for $x$ near $0$.  Namely,
 there is some
@@ -1943,7 +1967,7 @@ $y > 0$, such that $\cos(x) > 0$ on $[0,y)$.
 Then $\sin(x)$ is strictly
 increasing on $[0,y)$.  As $\sin(0) = 0$, then
 $\sin(x) > 0$ for $x \in (0,y)$.  Take $a \in (0,y)$.  By
-the mean value theorem there is a $c \in (a,y)$ such that
+the mean value theorem, there is a $c \in (a,y)$ such that
 \begin{equation*}
 2 \geq \cos(a)-\cos(y) = \sin(c)(y-a) \geq \sin(a)(y-a) .
 \end{equation*}
@@ -1955,26 +1979,26 @@ Hence there is some largest $y$ such that $\cos(x) > 0$ in $[0,y)$,
 and let $y$ be the largest such number.
 By continuity, $\cos(y) = 0$.
 In fact, $y$ is the
-smallest positive $y$ such that $\cos(y) = 0$.  As mentioned
+smallest positive $y$ such that $\cos(y) = 0$.  As mentioned,
 $\pi$ is defined to be $2y$.
 
 As $\cos(\nicefrac{\pi}{2}) = 0$, then
 ${\bigl(\sin(\nicefrac{\pi}{2})\bigr)}^2 = 1$.
-As $\sin$ is positive on $(0,y)$, we have
+As $\sin$ is positive on $(0,\nicefrac{\pi}{2})$, we have
 $\sin(\nicefrac{\pi}{2}) = 1$.
 Hence,
 \begin{equation*}
 e^{i \pi /2} = i ,
 \end{equation*}
-and by the addition formula 
+and by the law of exponents,
 \begin{equation*}
 e^{i \pi} = -1 ,
 \qquad 
 e^{i 2\pi} = 1 .
 \end{equation*}
-So $e^{i2\pi} = 1 = e^0$.  The addition formula says
+So $e^{i2\pi} = 1 = e^0$.  The law of exponents also says
 \begin{equation*}
-e^{z+i2\pi} = e^z
+e^{z+i2\pi} = e^z e^{i2\pi} = e^z
 \end{equation*}
 for all $z \in \C$.  Immediately, we also obtain
 $\cos(z+2\pi) = \cos(z)$ and $\sin(z+2\pi) = \sin(z)$.
@@ -1983,10 +2007,10 @@ So $\sin$ and $\cos$ are $2\pi$-periodic.
 We claim that $\sin$ and $\cos$ are not periodic with a smaller period.  It
 would suffice to show that if $e^{ix} = 1$ for the
 smallest positive $x$, then
-$x = 2\pi$.  So let $x$ be the smallest positive $x$ such that
+$x = 2\pi$.  Let $x$ be the smallest positive $x$ such that
 $e^{ix} = 1$.
 Of course, $x \leq 2\pi$.
-By the addition formula,
+By the law of exponents,
 \begin{equation*}
 {\bigl(e^{ix/4}\bigr)}^4 = 1 .
 \end{equation*}
@@ -1996,28 +2020,29 @@ If $e^{ix/4} = a+ib$, then
 =a^4-6a^2b^2+b^4 + i\bigl(4ab(a^2-b^2)\bigr)
 =1 .
 \end{equation*}
+Then either $a = 0$ or $a^2 = b^2$.
 As $\nicefrac{x}{4} \leq \nicefrac{\pi}{2}$, then $a = \cos(\nicefrac{x}{4}) \geq 0$ and
-$0 < b = \sin(\nicefrac{x}{4})$.  Then either $a = 0$ 
-or $a^2 = b^2$.  If $a^2=b^2$, then
+$b = \sin(\nicefrac{x}{4}) > 0$.
+If $a^2=b^2$, then
 $a^4-6a^2b^2+b^4 = -4a^4 < 0$ and in particular not equal to 1.
-Therefore $a=0$ in which case $\nicefrac{x}{4} = \nicefrac{\pi}{2}$.
+Therefore $a=0$, in which case $\nicefrac{x}{4} = \nicefrac{\pi}{2}$.
 Hence $2\pi$ is the smallest period we could choose for $e^{ix}$
 and so also for $\cos$ and $\sin$.
 
-Finally, we also wish to show that $e^{ix}$ is one-to-one and onto
+Finally, we wish to show that $e^{ix}$ is one-to-one and onto
 from the set $[0,2\pi)$ to the set of $z \in \C$ such that
 $\sabs{z} = 1$.  Suppose $e^{ix} = e^{iy}$ and 
 $x > y$.  Then
 $e^{i(x-y)} = 1$, meaning $x-y$ is a multiple of $2\pi$ and hence
 only one of them can live in $[0,2\pi)$.
 To show onto, pick $(a,b) \in \R^2$ such that $a^2+b^2 = 1$.
-Suppose first that $a,b \geq 0$.  By the intermediate value theorem
+Suppose first that $a,b \geq 0$.  By the intermediate value theorem,
 there must exist an $x \in [0,\nicefrac{\pi}{2}]$ such that
 $\cos(x) = a$, and hence $b^2 = \bigl(\sin(x)\bigr)^2$.  As
-$b$ and $\sin(x)$ are nonnegative, we have $b = \sin(x)$.
+$b$ and $\sin(x)$ are nonnegative, $b = \sin(x)$.
 Since $-\sin(x)$ is the derivative of $\cos(x)$
 and $\cos(-x) = \cos(x)$, then $\sin(x) < 0$ for $x \in [\nicefrac{-\pi}{2},0)$.
-Using the same reasoning we obtain that
+Using the same reasoning, we obtain that
 if $a > 0$ and $b \leq 0$, we can find an $x$ in $[\nicefrac{-\pi}{2},0)$,
 and by periodicity,
 $x \in [\nicefrac{3\pi}{2},2\pi)$ such that $\cos(x) = a$ and $\sin(x)=b$.
@@ -2058,7 +2083,7 @@ z = r e^{i\theta}
 \end{equation*}
 for some $r \geq 0$ and $\theta \in \R$.  The $\theta$ is, of course,
 not unique as $\theta$ or $\theta+2\pi$ gives the same number.
-The formula $e^{a+b} = e^a e^b$ leads to a useful formula for powers
+The law of exponents $e^{a+b} = e^a e^b$ leads to a useful formula for powers
 and products of complex numbers in polar coordinates:
 \begin{equation*}
 {(r e^{i\theta})}^n
