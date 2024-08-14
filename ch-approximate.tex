@@ -1798,7 +1798,13 @@ for all $w \in \C$.
 \end{proof}
 
 A simple consequence of the proposition is that $e^z\not=0$ for all $z \in \C$,
-as $e^z e^{-z} = e^{z-z} = 1$.  A more complicated consequence is that we
+as $e^z e^{-z} = e^{z-z} = 1$.
+This computation means that ${(e^z)}^{-1} = e^{-z}$.
+Combining that fact with the law of exponents gives
+\begin{equation*}
+{(e^z)}^{n} = e^{nz} \qquad \text{for all } n \in \Z.
+\end{equation*}
+A yet more complicated consequence is that we
 can compute the power series for the exponential at any point $a \in
 \C$:
 \begin{equation*}
@@ -1877,7 +1883,7 @@ There exists an $x > 0$ such that $\cos(x) = 0$.  We define
 \item
 For all $z \in \C$, 
 \begin{equation*}
-e^{2\pi i} = 1, \qquad \text{and} \qquad e^{z + i 2\pi} = e^z.
+e^{2\pi i} = 1 \qquad \text{and} \qquad e^{z + i 2\pi} = e^z.
 \end{equation*}
 \item
 Sine and cosine are $2\pi$-periodic and not periodic with any smaller
@@ -1901,10 +1907,10 @@ The first three items follow directly from the definition.
 The computation of the power series for both is left as an exercise.
 As complex conjugate is a continuous function, the definition
 of $e^z$ implies
-$\overline{(e^z)} = e^{\bar{z}}$.  If
+$\overline{e^z} = e^{\bar{z}}$.  If
 $x$ is real,
 \begin{equation*}
-\overline{(e^{ix})} = e^{-ix} .
+\overline{e^{ix}} = e^{-ix} .
 \end{equation*}
 Thus for real $x$,
 $\cos(x) =
@@ -1913,30 +1919,16 @@ $\cos(x) =
 \Re (e^{ix})$
 and similarly $\sin(x) = \Im (e^{ix})$.
 
-%For real $x$, we compute
-For $z \in \C$,
+For real $x$, we compute
 \begin{equation*}
-%1 =  e^{ix} e^{-ix} = \sabs{e^{ix}}^2 = {\bigl( \cos(x) \bigr)}^2 + {\bigl( \sin(x) \bigr)}^2 .
-%\end{equation*}
-%\[
-\begin{split}
-{\bigl( \cos(z) \bigr)}^2 + {\bigl( \sin(z) \bigr)}^2
-  &=
-{\left(\frac{e^{iz} + e^{-iz}}{2} \right)}^2
-+
-{\left(\frac{e^{iz} - e^{-iz}}{2i} \right)}^2
-\\
-& =
-\frac{e^{iz} e^{iz} + 2 e^{iz} e^{-iz} + e^{-iz}e^{-iz}}{4}
--
-\frac{e^{iz} e^{iz} - 2 e^{iz} e^{-iz} + e^{-iz}e^{-iz}}{4}
-\\
-& =
-\frac{e^{i2z} + 2 + e^{-i2z}
--
-e^{i2z} + 2  - e^{-i2z}}{4} = 1 .
-\end{split}
+1 =  e^{ix} e^{-ix}
+= e^{ix} \, \overline{e^{ix}}
+= \sabs{e^{ix}}^2
+= \babs{\cos(x) + i \sin(x)}^2
+= {\bigl( \cos(x) \bigr)}^2 + {\bigl( \sin(x) \bigr)}^2 .
 \end{equation*}
+A slightly more complicated computation shows this fact for
+complex numbers, see \exerciseref{exercise:cossinidentity}.
 In particular, is $e^{ix}$ is unimodular for real $x$;
 the values lie on the unit circle.
 A square of a real number is always nonnegative:
@@ -2110,20 +2102,22 @@ $\frac{d}{dx} \bigl[ \cos(x)\bigr] = -\sin(x)$.
 \begin{exercise}
 Finish the proof of the argument that $x \mapsto e^{ix}$ from
 $[0,2\pi)$ is onto the unit circle.  In particular, assume that
-we get all points of the form $(a,b)$ where $a^2+b^2=1$ for $a \geq 0$.
-By multiplying by $e^{i\pi}$ or $e^{-i\pi}$ show that we get everything.
+we get all points of the form $(a,b)$ where $a^2+b^2=1$ and $a \geq 0$.
+By multiplying by $e^{i\pi}$ or $e^{-i\pi}$, show that we get everything,
+that is, even points where $a < 0$.
 \end{exercise}
 
 \begin{exercise}
-Prove that there is no $z \in \C$ such that $e^z = 0$.
+Show that the exponential is onto $\C \setminus \{ 0 \}$, and in fact,
+that for every nonzero $w$, there are infinitely many $z \in \C$ such that $e^z=w$.
 \end{exercise}
 
 \begin{exercise}
 Prove that for every $w \not= 0$ and every $\epsilon > 0$,
-there exists a $z \in \C$, $\sabs{z} < \epsilon$ such that $e^{1/z} = w$.
+there exists a $z \in \C$ with $\sabs{z} < \epsilon$ such that $e^{1/z} = w$.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise}\label{exercise:cossinidentity}
 We showed
 ${\bigl( \cos(x) \bigr)}^2 + {\bigl( \sin(x) \bigr)}^2 = 1$
 for all $x \in \R$.
@@ -2164,6 +2158,7 @@ Show
 \item
 $\sinh(0) = 0$, $\cosh(0) = 1$.
 \item
+For $x \in \R$,
 $\frac{d}{dx} \bigl[ \sinh(x) \bigr] = \cosh(x)$ and
 $\frac{d}{dx} \bigl[ \cosh(x) \bigr] = \sinh(x)$.
 \item
