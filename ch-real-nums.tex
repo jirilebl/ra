@@ -6,14 +6,15 @@
 
 \sectionnotes{1.5 lectures}
 
-The main object we work with in analysis is the set of
+In analysis, the main object we work with is the set of
 \myindex{real numbers}.  As this set is so fundamental, often much time is
 spent formally constructing the set of real numbers.  However, we
 take an easier approach, and we will assume that a set with the correct
 properties exists.
 The three key properties of the real numbers is that it is
-an ordered set, it is complete with respect to this order, and it is also a field.
-Let us start with order.
+an ordered set, it is complete with respect to this order,
+and it is a field compatible with this order.
+We start with order.
 
 \begin{defn}
 An \emph{\myindex{ordered set}} is a set $S$ together with
@@ -311,7 +312,8 @@ Parts \ref{prop:bordfield:vi} and \ref{prop:bordfield:vii} are left as
 exercises.
 \end{proof}
 
-The product of two positive numbers (elements of an ordered field) is positive.
+The product of two positive numbers (elements of an ordered field) is positive
+(follows by setting $y=0$ in \ref{prop:bordfield:ii}).
 However, it is not true that if the product is positive, then each of the two
 factors must be positive.  For instance, $(-1)(-1) = 1 > 0$.
 
@@ -332,7 +334,7 @@ Multiply $y < 0$ by $x$ to get $xy < 0x = 0$.
 \end{proof}
 
 \begin{example} \label{example:complexfield}
-The reader may also know about the \emph{\myindex{complex numbers}},
+The reader may have heard about the \emph{\myindex{complex numbers}},
 usually denoted by $\C$.\glsadd{not:complex}
 That is, $\C$ is the set of numbers of
 the form $x + iy$, where $x$ and $y$ are real numbers, and $i$ is the
@@ -355,14 +357,15 @@ Then $\inf\, A$ exists.
 
 \begin{proof}
 Let $B \coloneqq \{ -x : x \in A \}$. Let $b \in F$ be a lower bound for $A$:
-If $x \in A$, then $x \geq b$. In other words, $-x \leq -b$.  So $-b$
+If $x \in A$, then $x \geq b$
+and hence $-x \leq -b$.  So $-b$
 is an upper bound for $B$.
 Since $F$ has the least-upper-bound property, $c\coloneqq\sup\, B$ exists, and $c \leq -b$.
 As $y \leq c$
 for all $y \in B$, then $-c \leq x$ for all $x \in A$.
 So
 $-c$ is a lower bound for $A$.  As $-c \geq b$,
-$-c$ is the greatest lower bound of $A$.
+the greatest lower bound of $A$ exists and equals $-c$.
 \end{proof}
 
 \subsection{Exercises}
