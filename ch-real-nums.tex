@@ -1753,18 +1753,18 @@ if $C$ is the set of continuous functions, then $\abs{\R} = \abs{C}$.}
 \sectionnotes{1 lecture (optional)}
 
 We often think of real numbers as their
-\emph{\myindex{decimal representation}}.  For
-a positive integer $n$, we find the digits $d_K,d_{K-1},\ldots,d_2,d_1,d_0$ for some
-$K$,
-where each $d_j$ is an integer between $0$ and $9$, then
-\begin{equation*}
-n = d_K {10}^K + d_{K-1} {10}^{K-1} + \cdots + d_2 {10}^2 + d_1 10 + d_0 .
-\end{equation*}
-We often assume $d_K \not= 0$.  To represent $n$ we write the sequence of
-digits: $n = d_K d_{K-1} \cdots d_2 d_1 d_0$.
+\emph{\myindex{decimal representation}}.
 By a (decimal)
 \emph{\myindex{digit}}\index{decimal digit}, we mean an integer
 between $0$ and $9$.
+For a positive integer $n$, we find the digits $d_K,d_{K-1},\ldots,d_2,d_1,d_0$ for some
+$K$ (each $d_j$ an integer between $0$ and $9$) such that
+\begin{equation*}
+n = d_K {10}^K + d_{K-1} {10}^{K-1} + \cdots + d_2 {10}^2 + d_1 10 + d_0 .
+\end{equation*}
+We often assume $d_K \not= 0$ (avoiding leading zeros).
+To represent $n$, we write the sequence of
+digits: $n = d_K d_{K-1} \cdots d_2 d_1 d_0$.
 
 Similarly, we
 represent some rational numbers.  That is, for certain
@@ -1988,14 +1988,15 @@ number $\nicefrac{1}{2}$, the method in the proof obtains the representation
 However, $\nicefrac{1}{2}$ also has the representation $0.50000\ldots$.
 
 The only numbers that have nonunique
-representations are ones that end either in an infinite sequence of $0$s
-or $9$s, because the only representation for which
-$D_n = x$ is one where all digits past the $n$th digit are zero.  In this case
+representations are ones that end in an infinite sequence of $0$s
+or an infinite sequence of $9$s, because the only representation for which
+$D_n = x$ is one where all digits past the $n$th digit are zero.
+In this case,
 there are exactly two representations of $x$ (see the exercises).
 
 Let us give another proof of the uncountability of the reals using decimal
 representations.
-This is Cantor's second proof, and is probably better known.
+This is Cantor's second proof, which is probably better known.
 This proof may seem shorter, but it is because we already did
 the hard part above and we are left with a slick trick to prove that $\R$ is
 uncountable.  This trick is called
@@ -2022,7 +2023,7 @@ e_n \coloneqq
 \end{cases}
 \end{equation*}
 Let $E_n$ be the $n$-digit truncation of $y = 0.e_1e_2e_3\ldots$.  Because
-all the digits are nonzero we get $E_n < E_{n+1} \leq y$.  Therefore
+all the digits are nonzero we get $E_n < E_{n+1} \leq y$.  Therefore,
 \begin{equation*}
 E_n < y \leq E_n + {10}^{-n}
 \end{equation*}
@@ -2056,9 +2057,9 @@ otherwise we have seen above that both its representations are repeating,
 see also \exerciseref{exercise:nonuniquedecimals}.  This also means
 that $x \not= 1$ so $p < q$.
 
-To compute the first digit we take $10 p$ and divide by
+To compute the first digit, we take $10 p$ and divide by
 $q$.  Let $d_1$ be the quotient, and the remainder $r_1$ is some integer
-between 0 and $q-1$.  That is, $d_1$ is the largest integer
+between $0$ and $q-1$.  That is, $d_1$ is the largest integer
 such that $d_1 q \leq 10p$ and then $r_1 = 10p - d_1q$.
 As $p < q$, then $d_1 < 10$, so $d_1$ is a digit.
 Furthermore,
@@ -2067,7 +2068,7 @@ Furthermore,
 \frac{d_1}{10} + \frac{r_1}{10q} \leq \frac{d_1}{10} +
 \frac{1}{10} .
 \end{equation*}
-The first inequality must be strict since $x$ has a
+The first inequality is strict since $x$ has a
 unique representation.  That is, $d_1$ really is the first digit.
 What is left is $\nicefrac{r_1}{(10q)}$.  This is the same as computing the
 first digit of $\nicefrac{r_1}{q}$.
@@ -2087,14 +2088,14 @@ Dividing by $10^{n-1}$ and adding $D_{n-1}$ we find
 D_n \leq D_{n-1} + \frac{r_{n-1}}{10^{n-1} q} = \frac{p}{q} \leq D_n +
 \frac{1}{10^n} .
 \end{equation*}
-By uniqueness we really have
+By uniqueness, we really have
 the $n$th digit $d_n$ from the construction.
 
 The new digit depends only the remainder from the previous
-step.  There
-are at most $q$ possible remainders
-and hence at some step the process must start repeating itself,
-and $P$ is at most $q$.
+step.
+There are at most $q$ possible remainders.
+Hence, the process must start repeating itself after at most $q$ steps,
+and so $P$ is at most $q$.
 \end{proof}
 
 The converse of the proposition is also true and is left as an exercise.
@@ -2102,7 +2103,7 @@ The converse of the proposition is also true and is left as an exercise.
 \begin{example}
 The number
 \begin{equation*}
-x = 0.101001000100001000001\ldots,
+x = 0.101001000100001000001\ldots
 \end{equation*}
 is irrational.
 That is, the digits are $n$ zeros, then a one, then $n+1$
