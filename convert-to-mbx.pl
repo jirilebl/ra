@@ -358,7 +358,7 @@ sub do_more_subs {
 		$line =~ s!%MBXID%!$theid!;
 	}
 
-	while ($line =~ s!\\(chapter|Chapter|appendix|Appendix|section|subsection|thm|lemma|prop|cor|defn|remark|table|figure|example|exercise)v?ref\{(.*?)\}!<xref ref="%MBXID%" text="type-global"/>!s) {
+	while ($line =~ s!\\(chapter|Chapter|appendix|Appendix|section|subsection|thm|lemma|prop|cor|defn|remark|table|figure|example|exercise)v?ref[*]?\{(.*?)\}!<xref ref="%MBXID%" text="type-global"/>!s) {
 		my $theid = modify_id($2);
 		$line =~ s!%MBXID%!$theid!;
 	}
@@ -389,12 +389,22 @@ sub do_thmtitle_subs {
 
 	$title =~ s|\\href\{(.*?)\}\{(.*?)\}|<url href=\"$1\" visual=\"$1\">$2</url>|gs;
 
+	$title = do_more_subs($title);
+
+	while ($title =~ s/\\volIref\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}/$3/) {
+		#this just replaces this with the second argument
+		;
+	}
+
+	while ($title =~ s/\\volIIref\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}/$3/) {
+		#this just replaces this with the second argument
+		;
+	}
+
 	#FIXME: should check if multiple footnotes work
 	while ($title =~ s!\\footnote\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}!<fn>$1</fn>!s) {
 		;
 	}
-
-	$title = do_more_subs($title);
 
 	return $title;
 }
