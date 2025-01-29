@@ -81,6 +81,7 @@ Suggestion from Arthur Busch for theorem 3.4.4:
 "
 Note that |x_n-y_n| < 1/n allows you to use the squeeze lemma on {x_n-y_n}, and conclude this sequence converges to 0.  Then apply B-W to {y_n} to get a subsequence {y_{n_k}} converging to some c in the domain.  Since the subsequence {x_{n_k} - y_{n_k}} must converge to 0, you can use the algebraic properties of limits to conclude that {x_{n_k}} also converges to c.  
 You can then finish the proof with a quick case argument:  case 1:  Either {f(x_{n_k})} diverges or {f(y_{n_k})} diverges, which immediately makes f discontinuous at c.  case 2:  both these sequences converge, and then {f(x_{n_k}) - f(y_{n_k})} converges to Lx - Ly ≥ ε > 0 so at least one of these limits is different than f(c), making f discontinuous at c.
+"
 
 * Vol I:
 Suggestion from Jacob Bernstein:
@@ -112,3 +113,20 @@ One thing that Strichartz did that I liked (and wasn't in your book as far as I 
   seems a bit tricky to do rigorously, especially if the path has a corner.
   Idea: Perhaps add a remark about an idea of the proof?
 
+* Vol I:
+Suggestion from Arthur Busch:
+"It occurred to me while preparing a lecture on Section 3.6 that the proof
+of Corollary 3.6.3 (the direction not implied by the IVT), you don't need
+the assumption that I is an interval.   Furthermore, if you isolate this
+argument and state the more general result you get a very nice short proof
+of Proposition 3.6.6.
+%
+Specifically if you state and prove the following Corollary of Proposition 3.6.2: 
+For a monotone function f:S → ℝ, if f(S) is an interval then f is continuous.
+%
+Then the proof of Corollary 3.6.3 is one sentence:  "When f is continuous, f(I) is an interval by the Intermediate Value Theorem and the converse follows from the corollary above."
+%
+This also gives a similarly short proof of Proposition 3.6.6.  You simply
+need to show that a strictly monotone function has a monotone inverse.  Then
+since the range of the inverse function is the interval f-1(f(I)) = I the
+new corollary implies that the inverse function is continuous."
