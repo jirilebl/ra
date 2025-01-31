@@ -20,17 +20,17 @@ In several variables, we must introduce a little bit of linear
 algebra before we can move on.
 We start with vector spaces and linear mappings of vector spaces.
 
-While it is common to use $\vec{v}$ or the bold
+It is common to use $\vec{v}$ or the bold
 $\mathbf{v}$ for elements of $\R^n$,
-especially in the applied sciences,
-we use just plain old $v$, which is common in mathematics.
+especially in the applied sciences.
+We use just plain old $v$, which is common in mathematics.
 That is, $v \in \R^n$ is a \emph{\myindex{vector}}, which means 
 $v = (v_1,v_2,\ldots,v_n)$\glsadd{not:vector} is an $n$-tuple of
 real numbers.\footnote{Subscripts are used for many purposes,
 so sometimes we may have several vectors that may also
 be identified by subscript, such as a finite or infinite sequence of
 vectors $y_1,y_2,\ldots$.}
-It is common to write and treat vectors as
+At times, it is useful to write and treat vectors as
 \emph{\myindex{column vectors}}, that is, $n$-by-$1$ matrices:
 \glsadd{not:vectorcol}
 \begin{equation*}
@@ -63,7 +63,8 @@ the magnitude.  See \figureref{fig:vecasarrow}.
 scalar multiplication.\label{fig:vecasarrow}}
 \end{myfigureht}
 
-Each vector also represents a point in $\R^n$.  Usually, we think of $v \in \R^n$
+A vector may also represent a point in $\R^n$.
+Usually, we think of $v \in \R^n$
 as a point if we are thinking of $\R^n$ as a metric space, and we think of
 it as an arrow if we think of the so-called \emph{vector space structure} on
 $\R^n$ (addition and scalar multiplication).
@@ -73,9 +74,10 @@ are many other vector spaces than just $\R^n$.
 \begin{defn}
 Let $X$ be a set together with
 the operations of addition, $+ \colon X \times X \to X$,
-and multiplication, $\cdot \colon \R \times X \to X$, (we usually write $ax$ instead of $a
-\cdot x$).  $X$ is called a \emph{\myindex{vector space}} (or a
-\emph{\myindex{real vector space}})
+and multiplication, $\cdot \colon \R \times X \to X$,
+(we usually write $ax$ instead of $a \cdot x$).
+The set $X$ is called a \emph{\myindex{vector space}}
+(or a \emph{\myindex{real vector space}})
 if the following conditions are satisfied:
 \begin{enumerate}[(i)]
 \item
@@ -108,21 +110,21 @@ such that $v+(-v)=0$.
 \makebox[2.15in][l]{(Distributive law)}
 %mbxENDIGNORE
 %mbxlatex (Distributive law) \quad
-If $a \in \R$, $u,v \in X$, then
+If $a \in \R$, and $u,v \in X$, then
 $a(u+v) = au+av$.
 \item
 %mbxSTARTIGNORE
 \makebox[2.15in][l]{(Distributive law)}
 %mbxENDIGNORE
 %mbxlatex (Distributive law) \quad
-If $a,b \in \R$, $v \in X$, then
+If $a,b \in \R$, and $v \in X$, then
 $(a+b)v = av+bv$.
 \item
 %mbxSTARTIGNORE
 \makebox[2.15in][l]{(Multiplication is associative)}
 %mbxENDIGNORE
 %mbxlatex (Multiplication is associative) \quad
-If $a,b \in \R$, $v \in X$, then
+If $a,b \in \R$, and $v \in X$, then
 $(ab)v = a(bv)$.
 \item
 %mbxSTARTIGNORE
