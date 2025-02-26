@@ -1810,7 +1810,7 @@ an upper bound for the subset $\{ x_k : k \geq n+1 \}$.  Therefore
 $a_{n+1}$, the least upper bound for
 $\{ x_k : k \geq n+1 \}$, has to be less than or equal to $a_n$,
 the least upper bound for
-$\{ x_k : k \geq n) \}$.
+$\{ x_k : k \geq n \}$.
 That is,
 $a_n \geq a_{n+1}$ for all $n$.  Similarly (an exercise),
 $\{ b_n \}_{n=1}^\infty$ is an increasing sequence.
@@ -1898,7 +1898,7 @@ It is important to notice that $\{ a_n \}_{n=1}^\infty$ and
 $\{ b_n \}_{n=1}^\infty$ are not
 subsequences of $\{ x_n \}_{n=1}^\infty$, nor do they have to even 
 consist of the same numbers.
-For example, for the sequence $\{ \nicefrac{1}{n} \}_{n=1}^\infty$,
+For example, if the sequence is $\{ \nicefrac{1}{n} \}_{n=1}^\infty$, then
 $b_n = 0$ for all $n \in \N$.
 
 \begin{thm} \label{subseqlimsupinf:thm}
@@ -2127,14 +2127,14 @@ proof.
 The idea of the following proof also generalizes to different contexts.
 
 \begin{proof}[Alternate proof of Bolzano--Weierstrass]
-As the sequence is bounded, then there exist two numbers $a_1 < b_1$
+As the sequence is bounded, there exist two numbers $a_1 < b_1$
 such that $a_1 \leq x_n \leq b_1$ for all $n \in \N$.
 We will define a subsequence $\{ x_{n_i} \}_{i=1}^\infty$ and two
 sequences $\{ a_i \}_{i=1}^\infty$ and $\{ b_i \}_{i=1}^\infty$, such that
 $\{ a_i \}_{i=1}^\infty$ is monotone increasing, $\{ b_i \}_{i=1}^\infty$ is monotone decreasing,
 $a_i \leq x_{n_i} \leq b_i$ and such that $\lim_{i\to\infty} a_i =
 \lim_{i\to\infty} b_i$.   That
-$x_{n_i}$ converges then follows by the \hyperref[squeeze:lemma]{squeeze lemma}.
+$\{ x_{n_i} \}_{i=1}^\infty$ converges then follows by the \hyperref[squeeze:lemma]{squeeze lemma}.
 
 We define the sequences inductively.  We will define the sequences so that
 for all $i$, we have $a_i < b_i$,
@@ -3037,7 +3037,7 @@ Let $s_k$ be the partial sum.  We write
 \end{equation*}
 The sequence $\bigl\{ \frac{1}{2^k} \bigr\}_{k=1}^\infty$, and
 therefore $\bigl\{ \abs{1-s_k} \bigr\}_{k=1}^\infty$,
-converges to zero.  So, $\{ s_k \}_{k=1}^\infty$ converges to 1.
+converges to zero.  So, $\{ s_k \}_{k=1}^\infty$ converges to $1$.
 \end{example}
 
 \begin{prop} \label{geometric:prop}
