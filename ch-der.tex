@@ -572,9 +572,9 @@ See \figureref{fig:critpt} for an illustration.
 
 As $a < c < b$, there exist
 sequences $\{ x_n \}_{n=1}^\infty$ and
-$\{ y_n \}_{n=1}^\infty$ in $(a,b)$ and within $\delta$ of $c$,
-such that $x_n > c$, and
-$y_n < c$ for all $n \in \N$, and such that
+$\{ y_n \}_{n=1}^\infty$ in $(a,b)$
+such that $c < x_n < c+\delta$ and
+$c-\delta < y_n < c$ for all $n \in \N$, and such that
 $\lim_{n\to\infty} x_n = \lim_{n\to\infty} y_n = c$.
 Since $f$
 is differentiable at $c$,
@@ -675,7 +675,7 @@ The name comes from the fact that the slope of the secant line
 is the mean value of the derivative, so the average derivative is achieved
 in the interior of the interval.
 
-The theorem follows from \hyperref[thm:rolle]{Rolle's theorem},
+The theorem follows from \hyperref[thm:rolle]{Rolle's theorem}
 by subtracting from $f$ the affine linear function with the derivative
 $\frac{f(b)-f(a)}{b-a}$ with the same values at $a$ and $b$ as $f$.
 That is, we subtract the function whose graph is the straight line
@@ -723,7 +723,7 @@ such that
 \end{thm}
 
 The mean value theorem has the distinction of being one of the few theorems
-commonly cited
+cited
 in court.  That is, when police measure the speed of cars by aircraft, or
 via cameras reading license plates, they 
 measure the time the car takes to go between two points.
@@ -1187,7 +1187,7 @@ the notation would get out of hand; we denote
 by $f^{(n)}$ the
 \glsadd{not:nthder}
 \emph{$n$th derivative}\index{nth derivative@$n$th derivative} of $f$.
-
+%
 When $f$ possesses $n$ derivatives, we say $f$ is
 \emph{$n$ times differentiable}\index{n times differentiable@$n$ times
 differentiable}\index{differentiable!n times@$n$ times}.
@@ -1218,7 +1218,7 @@ It tells us that up to a small error, any $n$
 times differentiable function can be approximated at a point $x_0$
 by a polynomial.  The
 error of this approximation behaves like ${(x-x_0)}^{n}$ near the point $x_0$.
-To see why this is a good approximation notice that for a big $n$, 
+To see why this is a good approximation, notice that for a big $n$, 
 ${(x-x_0)}^n$ is very small in a small interval around $x_0$.
 
 \begin{defn}
@@ -1259,7 +1259,7 @@ function.\label{fig:taylorsin}}
 Taylor's theorem says a function behaves like its $n$th
 Taylor polynomial.  The 
 \hyperref[thm:mvt]{mean value theorem} is really Taylor's theorem
-for the first derivative.
+for $n=0$.
 
 \begin{thm}[Taylor]\index{Taylor's theorem} \label{thm:taylor}
 Suppose $f \colon [a,b] \to \R$ is a function with $n$ continuous
@@ -1299,10 +1299,10 @@ g(x_0) = g'(x_0) = g''(x_0) = \cdots = g^{(n)}(x_0) = 0 .
 \end{equation*}
 In particular, $g(x_0) = 0$.
 On the other hand $g(x) = 0$.  By the
-\hyperref[thm:mvt]{mean value theorem}
+\hyperref[thm:mvt]{mean value theorem},
 there exists an $x_1$ between $x_0$ and $x$ such that $g'(x_1) = 0$.
 Applying the \hyperref[thm:mvt]{mean value theorem}
-to $g'$ we obtain that there exists
+to $g'$, we obtain that there exists
 $x_2$ between $x_0$ and $x_1$ (and therefore between $x_0$ and $x$)
 such that $g''(x_2) = 0$.  We repeat the
 argument $n+1$ times to obtain a number $x_{n+1}$ between $x_0$ and $x_n$
@@ -1361,7 +1361,7 @@ we define the \emph{\myindex{Taylor series}}:
 \frac{f^{(k)}(x_0)}{k!}{(x-x_0)}^k .
 \end{equation*}
 There is no guarantee that this series converges for any
-$x \not= x_0$.  And even where it does converge, there is no guarantee
+$x \not= x_0$.  Even where it does converge, there is no guarantee
 that it converges to the function $f$.  Functions $f$
 whose Taylor series at every point $x_0$
 converges to $f$ in some open interval containing $x_0$
@@ -1419,7 +1419,7 @@ f(x_0) + f'(x_0) (x-x_0) +
 =
 f(x_0) + \frac{f''(c)}{2}{(x-x_0)}^{2}  .
 \end{equation*}
-As $f''(c) > 0$, and ${(x-x_0)}^2 > 0$, then $f(x) > f(x_0)$.
+As $f''(c) > 0$ and ${(x-x_0)}^2 > 0$, we have $f(x) > f(x_0)$.
 \end{proof}
 
 \subsection{Exercises}
