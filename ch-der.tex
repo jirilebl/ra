@@ -1601,7 +1601,7 @@ Therefore,
 = \lim_{y \to y_0} Q\bigl(g(y)\bigr)
 = \lim_{y \to y_0} \frac{g(y)-g(y_0)}{y-y_0} .
 \end{equation*}
-So $g$ is differentiable at $y_0$ and $g'(y_0) =
+So $g$ is differentiable at $y_0$, and $g'(y_0) =
 \frac{1}{f'\left(\vphantom{1^1_1}g(y_0)\right)}$.
 
 If $f'$ is continuous and nonzero at all $x \in I$,
@@ -1664,7 +1664,7 @@ using the convention $x^{m/n} \coloneqq {(x^{1/n})}^{m}$.
 For $x=0$, the existence of a unique root is trivial.
 
 Let $f \colon (0,\infty) \to (0,\infty)$ be defined by $f(y) \coloneqq y^n$.
-The function $f$ is continuously differentiable
+The function $f$ is continuously differentiable,
 and $f'(y) = ny^{n-1}$, see \exerciseref{exercise:diffofxn}.
 For $y > 0$, the derivative $f'$ is strictly positive,
 and so again by \propref{incdecdiffstrictprop}, $f$ is strictly
@@ -1698,10 +1698,10 @@ no larger.
 \begin{example}
 Another useful example is $f(x) \coloneqq x^3$.  The function $f \colon \R \to \R$ is
 one-to-one and onto, so $f^{-1}(y) = y^{1/3}$ exists on the entire real
-line including zero and negative $y$.  The function $f$ has
+line, including zero and negative $y$.  The function $f$ has
 a continuous derivative, but $f^{-1}$ has no derivative at the origin.  The
-point is that $f'(0) = 0$.  See \figureref{cubecuberootfig} for a graph,
-notice the vertical tangent on the cube root at the origin.
+point is that $f'(0) = 0$.  See \figureref{cubecuberootfig} for a graph.
+Notice the vertical tangent on the cube root at the origin.
 See also \exerciseref{exercise:oddroot}.
 \begin{myfigureht}
 \includegraphics{figures/cubecuberoot}
@@ -1723,11 +1723,12 @@ f(\R)$, the inverse is continuously differentiable, and ${(f^{-1})}'(y) >
 \pagebreak[2]
 Suppose $I,J$ are intervals and a monotone onto $f \colon I \to J$ has an inverse $g \colon J \to I$.
 Suppose you already know that both $f$ and $g$ are differentiable
-everywhere and $f'$ is never zero.  Using chain rule but not \lemmaref{lemma:ift} prove the
+everywhere and $f'$ is never zero.  Using chain rule but not
+\lemmaref{lemma:ift}, prove the
 formula $g'(y) = \frac{1}{f'\left(\vphantom{1_1^1}g(y)\right)}$. % \bigl( \bigr) are overly big here!
 Remark: This exercise is the same as \exerciseref{exercise:inversederformula},
 no need to do it again if you have
-solved it already..
+solved it already.
 \end{exercise}
 
 \begin{exercise}
