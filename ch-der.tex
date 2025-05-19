@@ -11,7 +11,7 @@
 
 The idea of a derivative is the following.
 If the graph of a function looks locally like a straight line,
-then we can then talk about the slope of this line.
+then we can talk about the slope of this line.
 The slope tells us the rate at which 
 the value of the function is changing at that particular point.
 Of course, we are leaving out any function that has corners or
@@ -101,7 +101,7 @@ a = a.
 \end{equation*}
 In fact, every differentiable function \myquote{infinitesimally} behaves like
 the affine function $ax + b$.  You can guess many results
-and formulas for derivatives, if you work them out for affine functions
+and formulas for derivatives if you work them out for affine functions
 first.
 \end{example}
 
@@ -180,7 +180,7 @@ Hence $\lim\limits_{x\to c} f(x) = f(c)$, and $f$ is continuous at $c$.
 An important property of the derivative is linearity.  The
 derivative is the approximation of a function by a straight line.
 The slope of a line through two points changes linearly when the
-$y$-coordinates are changed linearly.  By taking the limit,
+$y$-coordinates are changed linearly.  Taking the limit,
 it makes sense that the derivative is linear.
 
 \begin{prop}[Linearity]
@@ -395,7 +395,7 @@ Hint: Use the product rule.
 \end{exercise}
 
 \begin{exercise}
-Prove that a polynomial is differentiable and find the derivative.
+Prove that a polynomial is differentiable, and find the derivative.
 Hint: Use the previous exercise.
 \end{exercise}
 
@@ -456,7 +456,7 @@ Suppose $f \colon I \to \R$,
 $g \colon I \to \R$, and
 $h \colon I \to \R$, are functions.  Suppose $c \in I$ is such that
 $f(c) = g(c) = h(c)$, $g$ and $h$ are differentiable at $c$,
-and $g'(c) = h'(c)$.  Furthermore suppose $h(x) \leq f(x) \leq g(x)$ for
+and $g'(c) = h'(c)$.  Furthermore, suppose $h(x) \leq f(x) \leq g(x)$ for
 all $x \in I$.  Prove $f$ is differentiable at $c$ and $f'(c) = g'(c) =
 h'(c)$.
 \end{exercise}
@@ -477,7 +477,7 @@ that $g(x) \coloneqq {\bigl( f(x) \bigr)}^2$ is not differentiable at the origin
 
 \begin{exercise}
 Suppose $f \colon I \to \R$ is differentiable at $c \in I$.
-Prove there exist numbers $a$ and $b$ with the property that
+Prove that there exist numbers $a$ and $b$ with the property that
 for every $\epsilon > 0$, there is a $\delta > 0$, such that
 $\abs{a+b(x-c) - f(x)} \leq \epsilon \abs{x-c}$, whenever $x \in I$ and
 $\abs{x-c} < \delta$.
@@ -524,7 +524,7 @@ whenever $c < x < c+\delta$.
 
 \subsection{Relative minima and maxima}
 
-We talked about absolute maxima and minima.  These are the tallest peaks and
+We previously talked about absolute maxima and minima.  These are the tallest peaks and
 the lowest valleys in the entire mountain range.  What
 about peaks of individual mountains and bottoms of individual valleys?
 The derivative, being a local concept, is like walking around in a fog; it
@@ -605,7 +605,7 @@ is the function biggest or smallest.
 \subsection{Rolle's theorem}
 
 Suppose a function has the same value at both endpoints of an interval.
-Intuitively it ought to attain a minimum or a maximum in the interior of the
+Intuitively, it ought to attain a minimum or a maximum in the interior of the
 interval,
 then at such a minimum or a maximum, the derivative should be zero.
 See \figureref{rollefig} for the geometric idea.  This is the content of the
@@ -635,7 +635,7 @@ so we need to find some $c \in (a,b)$ where $f$ attains a minimum or a
 maximum.
 Write $K \coloneqq f(a) = f(b)$.
 If there exists an $x$ such that $f(x) > K$, then the absolute
-maximum is bigger than $K$ and hence occurs at some $c \in (a,b)$, and
+maximum is larger than $K$ and hence occurs at some $c \in (a,b)$, and
 therefore $f'(c) = 0$.  On the other hand, if there exists an $x$
 such that $f(x) < K$, then the absolute minimum occurs at some
 $c \in (a,b)$, and so $f'(c) = 0$.  If there is no $x$ such that
@@ -644,7 +644,7 @@ $f(x) < K$, then $f(x) = K$ for all $x$ and then
 $f'(x) = 0$ for all $x \in [a,b]$, so any $c \in (a,b)$ works.
 \end{proof}
 
-It is absolutely necessary for the derivative to exist for all $x
+It is absolutely necessary that the derivative exists for all $x
 \in (a,b)$.  Consider the function $f(x) \coloneqq \abs{x}$ on $[-1,1]$.
 Clearly $f(-1) = f(1)$, but there is no point $c$ where $f'(c) = 0$.
 
@@ -800,7 +800,7 @@ As $f'(c) \geq 0$ and $y-x > 0$, then $f(y) - f(x) \geq 0$ or $f(x) \leq
 f(y)$, and so
 $f$ is increasing.
 
-We leave the second item, decreasing $f$, to the reader as exercise.
+We leave the second item, decreasing $f$, to the reader as an exercise.
 \end{proof}
 
 A similar but weaker statement is true for strictly increasing and
@@ -834,7 +834,7 @@ $f(x) \coloneqq x^3$ is strictly increasing, but $f'(0) = 0$.
 \medskip
 
 Another application of the \hyperref[thm:mvt]{mean value theorem} is the following result about
-location of extrema, sometimes called the
+the location of extrema, sometimes called the
 \emph{\myindex{first derivative test}}.
 The result is stated for an absolute minimum and maximum.
 To apply it to find relative minima
@@ -949,7 +949,7 @@ $\frac{g(x)-g(b)}{x-b} < 0$ or that $g(x) > g(b)$, thus
 $g$ cannot possibly have a maximum at $b$.
 Therefore, $c \in (a,b)$,
 and \lemmaref{relminmax:lemma} applies: As $g$ attains a maximum
-at $c$ we find $g'(c) = 0$
+at $c$, we find $g'(c) = 0$
 and so $f'(c) = y$.
 
 Similarly, if $f'(a) > y > f'(b)$, consider $g(x) \coloneqq f(x)- yx$.
@@ -1247,8 +1247,8 @@ f(x_0)
 \end{defn}
 
 See \figureref{fig:taylorsin} for
-the odd degree Taylor polynomials for the sine function at $x_0=0$.
-The even degree terms are all zero, as even derivatives 
+the odd-degree Taylor polynomials for the sine function at $x_0=0$.
+The even-degree terms are all zero, as even derivatives 
 of sine are again sines, which are zero at the origin.
 \begin{myfigureht}
 \includegraphics{figures/taylorsin}
@@ -1335,7 +1335,7 @@ third degree approximations.
 The dashed line is the 20th degree polynomial.
 The approximation does seem to get
 better as the degree rises for $x > -1$.
-However, for $x < -1$, it in fact gets worse.
+For $x < -1$, it in fact gets visibly worse.
 The polynomials
 are the partial sums of the geometric series $\sum_{n=1}^\infty x^n$,
 and the series only converges on $(-1,1)$.
