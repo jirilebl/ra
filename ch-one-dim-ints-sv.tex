@@ -495,9 +495,10 @@ $t$ are marked with dots.\label{fig:cornersmoothpath}}
 \end{myfigureht}
 \end{example}
 
-The condition $\gamma^{\:\prime}(t) \not= 0$ even at the endpoints guarantees
+The condition $\gamma^{\:\prime}(t) \not= 0$ even at the endpoints of
+every subinterval guarantees
 not only no corners, but also that the path ends nicely, that is, it can
-extend a little bit past the endpoints.  Again, see the exercises.
+extend a little bit past the endpoints if needed.  Again, see the exercises.
 
 \begin{example}
 A graph of a continuously differentiable function $f \colon [a,b] \to \R$ is a smooth path.
@@ -553,10 +554,11 @@ $(\gamma \circ h)\bigl([c,d]\bigr) =
 The conditions on the piecewise smooth $h$ mean that
 there is some partition $t_0 = c < t_1 < t_2 < \cdots < t_k = d$,
 such that $h|_{[t_{j-1},t_j]}$ is continuously differentiable
-and $(h|_{[t_{j-1},t_j]})'(t) \not= 0$ for all $t \in [t_{j-1},t_j]$.
+and $\bigl(h|_{[t_{j-1},t_j]}\bigr)'(t) \not= 0$
+for all $t \in [t_{j-1},t_j]$.
 Since $h$ is bijective, it is either strictly increasing or
-strictly decreasing.  So either $(h|_{[t_{j-1},t_j]})'(t) > 0$
-for all $t$ or $(h|_{[t_{j-1},t_j]})'(t) < 0$ for all $t$.
+strictly decreasing.  So either $\bigl(h|_{[t_{j-1},t_j]}\bigr)'(t) > 0$
+for all $t$ or $\bigl(h|_{[t_{j-1},t_j]}\bigr)'(t) < 0$ for all $t$.
 
 \begin{prop} \label{prop:reparamapiecewisesmooth}
 If $\gamma \colon [a,b] \to \R^n$ is a piecewise smooth path,
@@ -601,7 +603,7 @@ by the chain rule
 \bigl( (\gamma \circ h)|_{[s_{j-1},s_{j}]} \bigr) ' (\tau)
 =
 \bigl( \gamma|_{[t_{j-1},t_{j}]} \bigr)' \bigl( h(\tau) \bigr)
-(h|_{[s_{j-1},s_j]})'(\tau) \not= 0 .
+\bigl(h|_{[s_{j-1},s_j]}\bigr)'(\tau) \not= 0 .
 \end{equation*}
 Consequently, $\gamma \circ h$ is a piecewise smooth path.
 The proof for orientation reversing $h$ is left as an exercise.
@@ -638,7 +640,7 @@ is a one-form defined on $\R^2 \setminus \{ (0,0) \}$.
 Let $\gamma \colon [a,b] \to \R^n$ be a smooth path
 and let
 \begin{equation*}
-\omega = \omega_1 \,dx_1 + \omega_2 \,dx_2 + \cdots + \omega_n \,dx_n ,
+\omega = \omega_1 \,dx_1 + \omega_2 \,dx_2 + \cdots + \omega_n \,dx_n
 \end{equation*}
 be a one-form defined on the direct image $\gamma\bigl([a,b]\bigr)$.
 Write $\gamma = (\gamma_1,\gamma_2,\ldots,\gamma_n)$.
@@ -1046,7 +1048,7 @@ Then $\gamma^{\:\prime}(t) = \bigl(-\sin(t),\cos(t)\bigr)$, and
 
 \begin{defn}
 Suppose $\Gamma \subset \R^n$ is parametrized by a simple
-piecewise smooth path $\gamma \colon [a,b] \to \R^n$, that is
+piecewise smooth path $\gamma \colon [a,b] \to \R^n$, that is,
 $\gamma\bigl( [a,b] \bigr) = \Gamma$.  We define the
 \emph{\myindex{length}}\index{length of a curve} by
 \begin{equation*}
@@ -1104,11 +1106,12 @@ t = \ell\bigl( \gamma\bigl([0,t]\bigr) \bigr) =
 \snorm{\gamma^{\:\prime}(\tau)}
 \, d\tau
 \end{equation*}
-for all $t$,
-which means that $\snorm{\gamma^{\:\prime}(t)} = 1$ for all $t$.
+for all $t$.
+The fundamental theorem of calculus then says
+that $\snorm{\gamma^{\:\prime}(t)} = 1$ for all $t$.
 Similarly for piecewise smooth $\gamma$, we get
 $\snorm{\gamma^{\:\prime}(t)} = 1$ for all $t$ where the derivative exists.
-So you can think of such a parametrization as moving around your curve at speed
+Think of such a parametrization as moving around your curve at speed
 1.  If $\gamma \colon [0,r] \to \R^n$ is an arclength parametrization, it is
 common to use $s$ as the variable as $\int_\gamma f \,ds
 = \int_0^r f\bigl(\gamma(s)\bigr) \,ds$.
@@ -1455,7 +1458,7 @@ Since $U$ is open, suppose $h$ is so small so that all points of distance
 $\abs{h}$ or
 less from $x$ are in $U$.
 As the integral is path independent,
-pick the simplest path possible from $x$ to $x+he_j$, that is
+pick the simplest path possible from $x$ to $x+he_j$, that is,
 $\gamma(t) \coloneqq x+t he_j$ for $t \in [0,1]$.  The path is in $U$.
 Notice $\gamma^{\:\prime}(t) = h e_j$
 has only one nonzero component and that is the $j$th component, which is
@@ -1699,15 +1702,16 @@ dt
 &= \omega_j(x) .
 \end{split}
 \end{equation*}
-And this is precisely what we wanted.
+That is precisely what we wanted.
 \end{proof}
 
 \begin{example}
-Without some hypothesis on $U$ the theorem is not true.  Let
+Without some hypothesis on $U$, the theorem is not true.
+On $\R^2 \setminus \{ (0,0) \}$, let
 \begin{equation*}
 \omega(x,y) \coloneqq \frac{-y}{x^2+y^2} \,dx + \frac{x}{x^2+y^2} \,dy
 \end{equation*}
-be defined on $\R^2 \setminus \{ 0 \}$.  Then
+Then
 \begin{equation*}
 \frac{\partial}{\partial y} \left[ 
 \frac{-y}{x^2+y^2} \right] =
@@ -1716,11 +1720,12 @@ be defined on $\R^2 \setminus \{ 0 \}$.  Then
 \frac{\partial}{\partial x} \left[ 
 \frac{x}{x^2+y^2} \right] .
 \end{equation*}
-However, there is no $f \colon \R^2 \setminus \{ 0 \} \to \R$ such that 
+However, there is no $f \colon \R^2 \setminus \{ (0,0) \} \to \R$ such that 
 $df = \omega$.  In
-\exampleref{example:mv:irrotoneformint} we integrated from $(1,0)$ to $(1,0)$
+\exampleref{example:mv:irrotoneformint},
+we integrated from $(1,0)$ to $(1,0)$
 along the unit circle counterclockwise,
-that is $\gamma(t) = \bigl(\cos(t),\sin(t)\bigr)$
+that is, $\gamma(t) = \bigl(\cos(t),\sin(t)\bigr)$
 for $t \in [0,2\pi]$, and we found the integral to be $2\pi$.  We would have
 gotten $0$ if
 the integral was path independent,
@@ -1793,12 +1798,13 @@ second direction for a smooth path, not a piecewise smooth path.
 \end{exercise}
 
 \begin{exercise}
-Show that a star-shaped domain $U \subset \R^n$ is path connected.
+Show that if $U \subset \R^n$ is a star-shaped domain,
+then it is path connected.
 \end{exercise}
 
 \begin{exercise}
 Show that $U \coloneqq \R^2 \setminus \{ (x,y) \in \R^2 : x \leq 0, y=0 \}$ is
-star-shaped and find all points $(x_0,y_0) \in U$ such that
+a star-shaped domain and find all points $(x_0,y_0) \in U$ such that
 $U$ is star-shaped with respect to $(x_0,y_0)$.
 \end{exercise}
 
@@ -1868,7 +1874,7 @@ $x$ to $y$.
 \pagebreak[2]
 Take
 \begin{equation*}
-\omega(x,y) = \frac{-y}{x^2+y^2} \, dx + \frac{x}{x^2+y^2} \, dy
+\omega(x,y) \coloneqq \frac{-y}{x^2+y^2} \, dx + \frac{x}{x^2+y^2} \, dy
 \end{equation*}
 defined on $\R^2 \setminus \{ (0,0) \}$.  Let $\gamma \colon [a,b] \to \R^2
 \setminus \{ (0,0) \}$ be a closed piecewise smooth path.
