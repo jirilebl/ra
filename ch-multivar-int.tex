@@ -25,8 +25,8 @@ The set
 $[a_1,b_1] \times
 [a_2,b_2] \times \cdots \times
 [a_n,b_n]$ is called a \emph{\myindex{closed rectangle}}\index{rectangle}.
-In this setting it is sometimes useful to allow $a_k = b_k$, in which case we 
-think of $[a_k,b_k] = \{ a_k \}$ as usual.
+It is sometimes useful to allow $a_k = b_k$, and we
+think of $[a_k,b_k] = \{ a_k \}$.
 If $a_k < b_k$ for all $k$, then the set
 $(a_1,b_1) \times
 (a_2,b_2) \times \cdots \times
@@ -184,8 +184,10 @@ M \,V(R) .  \qedhere
 
 \subsection{Upper and lower integrals}
 
-By \propref{mv:sumulbound:prop}, the set of upper and lower Darboux sums are bounded sets and we can take
-their infima and suprema.  As in one variable, we make the following definition.
+By \propref{mv:sumulbound:prop}, the sets of upper and lower Darboux sums
+are bounded sets, and we can take
+their infima and suprema.  As in one variable, we define the lower and upper
+integrals.
 
 \begin{defn}
 Let $f \colon R \to \R$ be a bounded function on a closed rectangle $R \subset
@@ -205,7 +207,8 @@ We call $\underline{\int}$ the
 $\overline{\int}$ the \emph{\myindex{upper Darboux integral}}.
 \end{defn}
 
-And as in one dimension, we define refinements of partitions.
+To refine a partition of a rectangle, we refine
+the underlying partitions of intervals.
 
 \begin{defn}
 Let $R \subset \R^n$ be a closed rectangle.
@@ -368,7 +371,7 @@ When the variable $x \in \R^n$ needs to be emphasized, we write
 \qquad
 \int_R f(x)\,dV .
 \end{equation*}
-If $R \subset \R^2$, then we often say area instead of volume, and we
+If $R \subset \R^2$, then we usually say area instead of volume, and we
 write
 \begin{equation*}
 \int_R f(x)\,dA .
@@ -398,7 +401,7 @@ c \, V(R) \leq \underline{\int_R} f \leq \overline{\int_R} f \leq c\, V(R) .
 So $f$ is integrable, and furthermore $\int_R f = c\,V(R)$.
 \end{example}
 
-The proofs of linearity and monotonicity are almost completely identical as
+The proofs of linearity and monotonicity are almost completely identical to
 the proofs from one variable.
 We leave the next two propositions as exercises.
 
@@ -605,7 +608,7 @@ by \volIref{\thmref*{vI-thm:Xcompactfunifcont} from volume I}{\thmref{thm:Xcompa
 Let $\epsilon > 0$ be given.  Find a $\delta > 0$ such that
 $\snorm{x-y} < \delta$ implies $\sabs{f(x)-f(y)} < \frac{\epsilon}{V(R)}$.
 
-Let $P$ be a partition of $R$, such that longest side of every subrectangle
+Let $P$ be a partition of $R$, where the longest side of every subrectangle
 is strictly less than $\frac{\delta}{\sqrt{n}}$.
 If $x, y \in R_k$ for a subrectangle $R_k$ of $P$, then,
 by the proposition,
@@ -650,8 +653,7 @@ V(R_k)
 \end{split}
 \avoidbreak
 \end{equation*}
-Via application of \propref{mv:prop:upperlowerepsilon}, we find that $f \in
-\sR(R)$.
+\propref{mv:prop:upperlowerepsilon} then says that $f \in \sR(R)$.
 \end{proof}
 
 \subsection{Integration of functions with compact support}
@@ -684,7 +686,7 @@ A function $f$ is said to have \emph{\myindex{compact support}}
 if $\supp(f)$ is a compact set.
 
 \begin{example}
-The function $f \colon \R^2 \to \R$ defined by
+The function $f \colon \R^2 \to \R$, defined by
 \begin{equation*}
 f(x,y) \coloneqq
 \begin{cases}
@@ -696,7 +698,7 @@ is continuous and its support is the closed unit disc
 $C(0,1) = \bigl\{ (x,y) : \sqrt{x^2 + y^2} \leq 1 \bigr\}$, which is a compact set, so $f$ has compact support.
 Note that the function is zero on the entire $y$-axis
 and on the unit circle, but
-all points that lie in the closed unit disc are still within the support
+all such points that lie in the closed unit disc are still within the support
 as they are in the closure of points where $f$ is nonzero.
 See \figureref{fig:compsup}.
 \begin{myfigureht}
@@ -713,7 +715,7 @@ two examples.
 \begin{example}
 Let 
 $B(0,1) \subset \R^2$ be the unit disc.  The function
-$f \colon B(0,1) \to \R$ defined by
+$f \colon B(0,1) \to \R$, defined by
 \begin{equation*}
 f(x,y) \coloneqq
 \begin{cases}
@@ -724,7 +726,7 @@ f(x,y) \coloneqq
 is continuous on $B(0,1)$ and its support is the smaller closed ball
 $C(0,\nicefrac{1}{2})$.  As that is a compact set, $f$ has compact support.
 
-The function $g \colon B(0,1) \to \R$ defined by
+The function $g \colon B(0,1) \to \R$, defined by
 \begin{equation*}
 g(x,y) \coloneqq
 \begin{cases}
@@ -785,7 +787,8 @@ $\int_{\R^n} f$ exists.
 
 \begin{exercise} \label{exercise:contcompactsupportRn}
 Suppose $U \subset \R^n$ is open and $f \colon U \to \R$ is continuous and
-of compact support.  Show that the function $\widetilde{f} \colon \R^n \to \R$
+of compact support.  Show that the function $\widetilde{f} \colon \R^n \to
+\R$, where
 \begin{equation*}
 \widetilde{f}(x) \coloneqq
 \begin{cases}
@@ -1985,8 +1988,9 @@ interval.  That is, whenever $a < b$, there exists a point $x \notin C$
 such that $a < x < b$.
 \\
 Note a consequence of this statement.  While every open set in
-$\R$ is a countable disjoint union of intervals, a closed set (even though
-it is just the complement of an open set) need not be a union of intervals.
+$\R$ is a countable disjoint union of intervals, a closed set (despite
+being the complement of an open set) need not be a countable union of
+intervals or points.
 \end{exercise}
 
 \begin{samepage}
@@ -2459,9 +2463,11 @@ and $f \colon R \to \R$ and $g \colon R \to \R$
 are Riemann integrable.
 Show that
 \begin{equation*}
-\varphi(x) \coloneqq \max \bigl\{ f(x) , g(x) \bigr\} ,
+\varphi(x) \coloneqq \max \bigl\{ f(x) , g(x) \bigr\}
 \qquad
-\psi(x) \coloneqq \min \bigl\{ f(x) , g(x) \bigr\} ,
+\text{and}
+\qquad
+\psi(x) \coloneqq \min \bigl\{ f(x) , g(x) \bigr\}
 \end{equation*}
 are Riemann integrable.
 \end{exercise}
@@ -2637,8 +2643,8 @@ Then
 \end{prop}
 
 The proof of the proposition is left as an exercise.
-Next, we find that the volume that we defined above coincides with the outer
-measure we defined above.
+Next, the volume that we defined above coincides with the outer
+measure we defined previously.
 
 \begin{prop}
 If $S \subset \R^n$ is Jordan measurable, then $V(S) = m^*(S)$.
@@ -2700,8 +2706,9 @@ Therefore $m^*(S) \geq V(S)$ as well.
 
 \subsection{Integration over Jordan measurable sets}
 
-In $\R$ there is only one reasonable type of set to integrate over:
-an interval.   In $\R^n$ there are many kinds of sets.  The ones
+In $\R$ there is really only one reasonable type of set to
+integrate over---an interval.
+In $\R^n$ there are many kinds of very reasonable sets.  The ones
 that work with the Riemann integral are the Jordan measurable sets.
 
 \begin{defn}
@@ -2719,16 +2726,22 @@ f(x) & \text{if } x \in S, \\
 0 & \text{otherwise},
 \end{cases}
 \end{equation*}
-is in $\sR(R)$.  In this case we write
+is in $\sR(R)$.  We write
 \glsadd{not:riemannintR}%
 \begin{equation*}
 \int_S f \coloneqq \int_R \widetilde{f}.
 \end{equation*}
 \end{defn}
 
+As above,
+\propref{mv:prop:integralsmallerset}
+and \exerciseref{mv:zerooutside} imply that
+the actual rectangle $R$  used is irrelevant and
+the integral is well-defined.
+
 When $f$ is defined on a larger set and we wish to integrate over $S$, then
 we apply the definition to the restriction $f|_S$.
-As the restriction can be defined by the product $f\xi_S$, and the product
+As the restriction can be defined by the product $f\chi_S$, and the product
 of Riemann integrable functions is Riemann integrable, $f|_S$ is automatically
 Riemann integrable.
   In particular, 
@@ -2746,7 +2759,7 @@ is a bounded continuous function, then $f$ is integrable on $S$.
 \begin{proof}
 Define the function $\widetilde{f}$ as above for some closed rectangle $R$ with $S
 \subset R$.  If $x \in R \setminus \widebar{S}$, then $\widetilde{f}$
-is identically zero in a neighborhood of $x$.  Similarly if $x$ is in the
+is identically zero in a neighborhood of $x$.  Similarly, if $x$ is in the
 interior of $S$, then $\widetilde{f} = f$ on a neighborhood of $x$
 and $f$ is continuous at $x$.  Therefore, $\widetilde{f}$ is only ever
 possibly discontinuous at $\partial S$, which is a set of measure zero,
@@ -2754,9 +2767,10 @@ and we are finished.
 \end{proof}
 
 We say some property
-\emph{\myindex{for almost every} $x$}\index{almost every} if it holds
-for all $x$ except on a set of measure zero.  We can also just say that
-it happens \emph{\myindex{almost everywhere}}.
+\emph{\myindex{for almost every} $x$}\index{almost every} or
+\emph{\myindex{almost everywhere}}
+if it holds
+for all $x$ except on a set of measure zero.
 For example,
 we say $f \colon S \to \R$ and $g \colon S \to \R$ are equal almost
 everywhere if there exists a measure zero set $E \subset S$ such that
@@ -2764,7 +2778,7 @@ $f(x) = g(x)$ for all $x \in S \setminus E$.
 
 \medskip
 
-Many of the standard properties of the integral just carry over easily
+Many of the standard properties of the integral carry over easily
 since we are really integrating over a rectangle.  Furthermore, we can
 make some of the statements to be \emph{almost everywhere}.
 Proofs of the following three propositions left as exercises.
@@ -3135,14 +3149,14 @@ P\bigl(x,g(x)\bigr)
 \end{equation*}
 We integrate $P\,dx$ along the boundary.
 The one-form $P\,dx$ integrates to zero 
-along the straight vertical lines in the boundary.  Therefore it is
+along the straight vertical lines in the boundary.  Therefore, it is
 only
 integrated along the top and along the bottom.  As a parameter,
 $x$ runs from left to right.  If we use the parametrizations that take $x$
 to $\bigl(x,f(x)\bigr)$ and to
-$\bigl(x,g(x)\bigr)$ we recognize path integrals above.  However the second
+$\bigl(x,g(x)\bigr)$, we recognize path integrals above.  However, the second
 path integral is in the wrong direction; the top should be going right to
-left, and so we must switch orientation.
+left.  After switching this orientation, we find
 \begin{equation*}
 \int_{\partial U} P \, dx
 =
@@ -3153,7 +3167,6 @@ left, and so we must switch orientation.
 \int_U 
 \left(- \frac{\partial P}{\partial y} \right) .
 \end{equation*}
-
 Similarly, $U$ is also of type II\@.  The form $Q\,dy$ integrates to zero along
 horizontal lines.   So
 \begin{equation*}
@@ -3172,7 +3185,7 @@ Q\bigl(y,k(y)\bigr)
 =
 \int_{\partial U} Q \, dy .
 \end{equation*}
-Putting the two computations together we obtain
+Putting the two computations together, we obtain
 \begin{equation*}
 \int_{\partial U} P\, dx + Q \, dy 
 =
@@ -3237,19 +3250,20 @@ and so when we integrate along both,
 +
 \int_{\partial U_4} P\, dx + Q \, dy .
 \end{multline*}
-Now we can apply Green's theorem to every $U_j$.
+Now we are allowed to apply Green's theorem to every $U_j$.
 We leave it to the reader to verify that outside of the origin,
 $\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} = 0$.
-So 
+So for each $j$, we find
 \begin{equation*}
 \int_{\partial U_j} P\, dx + Q \, dy 
 =
 \int_{U_j} \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial
 y} \right)
 =
-\int_{U_j} 0 = 0 .
+\int_{U_j} 0 = 0 ,
 \end{equation*}
-Next we notice that
+and so $\int_{\partial U} P\, dx + Q \, dy = 0$.
+As $\partial U$ is $C$ together with $\gamma$, we find
 \begin{equation*}
 \int_C P \, dx + Q \, dy
 +
@@ -3325,7 +3339,7 @@ Then via Green's and differentiation under the integral,
 - \frac{\partial f}{\partial y} \bigl(x_0+r\cos(t),y_0+r\sin(t)\bigr) \bigl(-r\sin(t)\bigr)
 \\
 & \hspace{1.2in}
-+ \frac{\partial f}{\partial x} \bigl(x_0+r\cos(t),y_0+r\sin(t)\bigr) r\cos(t)
++ \frac{\partial f}{\partial x} \bigl(x_0+r\cos(t),y_0+r\sin(t)\bigr) \, r\cos(t)
 \biggr) \, dt
 \\
 &
@@ -3366,7 +3380,8 @@ f\bigl(x_0+r\cos(t),y_0+r\sin(t)\bigr) \, dt
 \end{equation*}
 That is, for a harmonic function, the value at $p = (x_0,y_0)$ equals the average
 of its values
-over a circle of any radius $r$ centered at $(x_0,y_0)$.
+over a circle of any radius $r$ centered at $(x_0,y_0)$,
+provided $r$ is small enough so that the entire closed disc fits within $U$.
 \end{example}
 
 \subsection{Exercises}
