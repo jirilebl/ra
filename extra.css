@@ -35,33 +35,22 @@
   overflow-x: auto;
  }
 }
-.figure-like , .table-like , .displaymath {
- background-image: 
- linear-gradient(to right, white, white),
- linear-gradient(to right, white, white),
- linear-gradient(to right, rgba(0,0,0,.25), rgba(255,255,255,0)),
- linear-gradient(to left, rgba(0,0,0,.25), rgba(255,255,255,0));
-
- background-position: left center, right center, left center, right center;
- background-repeat: no-repeat;
- background-color: white;
- background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
- 
- background-attachment: local, local, scroll, scroll;
-}
-.knowl .figure-like , .knowl .table-like , .knowl .displaymath {
- background-image: 
- linear-gradient(to right, #f5f5ff, #f5f5ff),
- linear-gradient(to right, #f5f5ff, #f5f5ff),
- linear-gradient(to right, rgba(0,0,0,.25), rgba(255,255,255,0)),
- linear-gradient(to left, rgba(0,0,0,.25), rgba(255,255,255,0));
-
- background-position: left center, right center, left center, right center;
- background-repeat: no-repeat;
- background-color: #f5f5ff;
- background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
- 
- background-attachment: local, local, scroll, scroll;
+@media screen { 
+ @keyframes scroll-shadow-inset {
+  from {
+	  background-image:  linear-gradient(to right, rgba(0,0,0,0) 97%, gray);
+  }  
+  3%, 97% {
+	  background-image:  linear-gradient(to right, gray, rgba(0,0,0,0) 3%, rgba(0,0,0,0) 97%, gray);
+  }
+  to {
+	  background-image:  linear-gradient(to right, gray, rgba(0,0,0,0) 3%);
+  }
+ }
+ .figure-like , .table-like , .displaymath {
+   animation: scroll-shadow-inset linear;
+   animation-timeline: scroll( self inline );
+ }
 }
 
 /* get rid of boldness in definitions */
