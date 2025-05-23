@@ -6,6 +6,7 @@ my ($arg) = @ARGV;
 
 while($line = <STDIN>)
 {
+	$line =~ s{<span[^>]*><button id="light-dark-button".*</button></span>}{};
 	if ($line =~ m/<a class="index-button.*title="Index"/) {
 		# Add extra buttons
 		$extra = "<a class=\"index-button button\" href=\"https://www.jirka.org/ra/\" title=\"Home\" alt=\"Book Home\"><span class=\"name\">Home</span></a>\n";

@@ -196,11 +196,18 @@ Define
 \glsadd{not:lowerdarbouxR}
 \glsadd{not:upperdarbouxR}
 \begin{equation*}
+%mbxlatex \begin{aligned}
+%mbxlatex &
 \underline{\int_R} f
 \coloneqq \sup \, \bigl\{ L(P,f) : P \text{ a partition of } R \bigr\} , 
+%mbxSTARTIGNORE
 \qquad
+%mbxENDIGNORE
+%mbxlatex \\
+%mbxlatex &
 \overline{\int_R} f
 \coloneqq \inf \, \bigl\{ U(P,f) : P \text{ a partition of } R \bigr\} .
+%mbxlatex \end{aligned}
 \end{equation*}
 We call $\underline{\int}$ the
 \emph{\myindex{lower Darboux integral}}\index{Darboux integral} and
@@ -269,14 +276,21 @@ Let $m_j \coloneqq \inf \bigl\{ f(x) : x \in R_j \bigr\}$, and
 $\widetilde{m}_j \coloneqq \inf \bigl\{ f(x) : \in \widetilde{R}_j \bigr\}$ as usual.
 If $j \in I_k$, then $m_k \leq \widetilde{m}_j$.  Then
 \begin{equation*}
-L(P,f) =
+%mbxlatex \begin{aligned}
+L(P,f)
+=
 \sum_{k=1}^N m_k V(R_k)
+%mbxlatex & 
 =
 \sum_{k=1}^N \sum_{j\in I_k} m_k V(\widetilde{R}_j)
+%mbxlatex \\
+%mbxlatex & 
 \leq
 \sum_{k=1}^N \sum_{j\in I_k} \widetilde{m}_j V(\widetilde{R}_j)
 =
-\sum_{j=1}^{\widetilde{N}} \widetilde{m}_j V(\widetilde{R}_j) = L(\widetilde{P},f) . \qedhere
+\sum_{j=1}^{\widetilde{N}} \widetilde{m}_j V(\widetilde{R}_j) = L(\widetilde{P},f) .
+\qedhere
+%mbxlatex \end{aligned}
 \end{equation*}
 \end{proof}
 
@@ -1008,10 +1022,16 @@ $\{ 0, \nicefrac{1}{2}-\epsilon,
 The corresponding subrectangles are
 \begin{equation*}
 R_1 \coloneqq [0, \nicefrac{1}{2}-\epsilon] \times [0,1],
+%mbxSTARTIGNORE
 \qquad
+%mbxENDIGNORE
+%mbxlatex \quad
 R_2 \coloneqq [\nicefrac{1}{2}-\epsilon,
 \nicefrac{1}{2}+\epsilon] \times [0,1],
+%mbxSTARTIGNORE
 \qquad
+%mbxENDIGNORE
+%mbxlatex \quad
 R_3 \coloneqq [\nicefrac{1}{2}+\epsilon,1] \times [0,1] .
 \end{equation*}
 We have $m_1 = M_1 = 0$, $m_2 =0$, $M_2 = 1$, and $m_3 = M_3 = 0$.
@@ -1881,8 +1901,14 @@ $Mr_1, Mr_2, \ldots, Mr_k$ from
 \lemmaref{lemma:ballmapder}, such that $f(B_j) \subset B_j'$ for all $j$.
 Then,
 \begin{equation*}
-f(E) \subset f(B_1) \cup f(B_2) \cup \cdots \cup f(B_k)
+\begin{aligned}
+f(E)
+&
+\subset f(B_1) \cup f(B_2) \cup \cdots \cup f(B_k)
+\\
+&
 \subset B_1' \cup B_2' \cup \cdots \cup B_k'
+\end{aligned}
 \qquad \text{and} \qquad
 \sum_{j=1}^k {(Mr_j)}^n
  < M^n \epsilon. \qedhere
@@ -3580,12 +3606,20 @@ $g(y) = \int_0^1 g'(ty)y \,dt$.  As the
 side of $R_j$ is at most $\frac{\delta}{\sqrt{n}}$,
 then $\snorm{y} \leq \delta$.  So
 \begin{equation*}
-\snorm{g(y)-y} =
-\norm{\int_0^1 \bigl(g'(ty) y - y\bigr) \,dt} \leq
-\int_0^1 \snorm{g'(ty) y - y} \,dt \leq
+%mbxlatex \begin{aligned}
+\snorm{g(y)-y}
+=
+\norm{\int_0^1 \bigl(g'(ty) y - y\bigr) \,dt}
+%mbxlatex &
+\leq
+\int_0^1 \snorm{g'(ty) y - y} \,dt
+%mbxlatex \\
+%mbxlatex &
+\leq
 \snorm{y} \int_0^1 \snorm{g'(ty) - I} \,dt
 \leq
 \delta \epsilon .
+%mbxlatex \end{aligned}
 \end{equation*}
 Therefore, $g(R_j) \subset \widetilde{R}_j$, where
 $\widetilde{R}_j$ is a rectangle obtained from

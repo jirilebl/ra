@@ -1203,11 +1203,18 @@ $\snorm{x+ty}^2$
 is a quadratic polynomial
 as a function of $t$:
 \begin{equation*}
-\snorm{x+ty}^2 =
-(x+ty) \cdot (x+ty) =
+%mbxlatex \begin{aligned}
+\snorm{x+ty}^2
+=
+(x+ty) \cdot (x+ty)
+%mbxlatex &
+=
 x \cdot x + x \cdot ty + ty \cdot x + ty \cdot ty
+%mbxlatex \\
+%mbxlatex &
 =
 \snorm{x}^2 + 2t(x \cdot y) + t^2 \snorm{y}^2 .
+%mbxlatex \end{aligned}
 \end{equation*}
 If $x$ is not a scalar multiple of $y$, then 
 $\snorm{x+ty}^2 > 0$ for all $t$.  So the polynomial $\snorm{x+ty}^2$
@@ -2413,12 +2420,17 @@ the derivative at $x$ as
 \end{equation*}
 In other words, there is a number $a$ (the derivative of $f$ at $x$) such that
 \begin{equation*}
+%mbxlatex \begin{aligned}
 \lim_{h \to 0} \abs{\frac{f(x+h)-f(x)}{h} - a}
+%mbxlatex &
 =
 \lim_{h \to 0} \abs{\frac{f(x+h)-f(x) - ah}{h}}
+%mbxlatex \\
+%mbxlatex &
 =
 \lim_{h \to 0} \frac{\sabs{f(x+h)-f(x) - ah}}{\sabs{h}}
 = 0.
+%mbxlatex \end{aligned}
 \end{equation*}
 
 Multiplying by $a$ is a linear map in one dimension:
@@ -2687,6 +2699,9 @@ to zero:
 \frac
 {\snorm{f(p+h)-f(p)}}
 {\snorm{h}}
+%mbxlatex \\
+%mbxlatex &
+%mbxlatex \phantom{={}}
 +
 \snorm{B}
 \frac
@@ -2705,9 +2720,11 @@ $\frac
 {\snorm{k}}$ goes to 0, because $g$ is differentiable at $q$.
 Finally,
 \begin{equation*}
+%mbxlatex \begin{aligned}
 \frac
 {\snorm{f(p+h)-f(p)}}
 {\snorm{h}}
+%mbxlatex &
 \leq
 \frac
 {\snorm{f(p+h)-f(p)-Ah}}
@@ -2716,12 +2733,15 @@ Finally,
 \frac
 {\snorm{Ah}}
 {\snorm{h}}
+%mbxlatex \\
+%mbxlatex &
 \leq
 \frac
 {\snorm{f(p+h)-f(p)-Ah}}
 {\snorm{h}}
 +
 \snorm{A} .
+%mbxlatex \end{aligned}
 \end{equation*}
 As $f$ is differentiable at $p$,
 for small enough $h$, the quantity
@@ -3502,7 +3522,10 @@ A \coloneqq
 & \ldots &
 \frac{\partial f_m}{\partial x_n}(p)
 \end{bmatrix} ,
+%mbxSTARTIGNORE
 \qquad
+%mbxENDIGNORE
+%mbxlatex \quad
 A' \coloneqq 
 \begin{bmatrix}
 \frac{\partial f_1}{\partial x_1}(p)
@@ -3515,7 +3538,10 @@ A' \coloneqq
 & \ldots &
 \frac{\partial f_m}{\partial x_{n-1}}(p)
 \end{bmatrix} ,
+%mbxSTARTIGNORE
 \qquad
+%mbxENDIGNORE
+%mbxlatex \quad
 v \coloneqq 
 \begin{bmatrix}
 \frac{\partial f_1}{\partial x_n}(p)
@@ -3545,13 +3571,23 @@ $\snorm{h} < \delta$.  Then $\snorm{h'} \leq \snorm{h} < \delta$.
 Note that $Ah = A' h' + tv$.
 \begin{equation*}
 \begin{split}
+%mbxlatex &
 \snorm{f(p+h) - f(p) - Ah}
-& = \snorm{f(p+h' + t e_n) - f(p+h') - tv + f(p+h') - f(p) - A' h'}
+%mbxSTARTIGNORE
+&
+%mbxENDIGNORE
+%mbxlatex \\
+%mbxlatex & \qquad \qquad
+= \snorm{f(p+h' + t e_n) - f(p+h') - tv + f(p+h') - f(p) - A' h'}
 \\
-& \leq \snorm{f(p+h' + t e_n) - f(p+h') -tv} + \snorm{f(p+h') - f(p) -
+&
+%mbxlatex \qquad \qquad
+\leq \snorm{f(p+h' + t e_n) - f(p+h') -tv} + \snorm{f(p+h') - f(p) -
 A' h'}
 \\
-& \leq \snorm{f(p+h' + t e_n) - f(p+h') -tv} + \epsilon \snorm{h'} .
+&
+%mbxlatex \qquad \qquad
+\leq \snorm{f(p+h' + t e_n) - f(p+h') -tv} + \epsilon \snorm{h'} .
 \end{split}
 \end{equation*}
 As all the partial derivatives exist, by the mean value theorem,
@@ -4525,11 +4561,16 @@ on the interval $[0,t]$
 to find a $t_0 \in (0,t)$
 such that
 \begin{equation*}
+%mbxlatex \begin{aligned}
+%mbxlatex &
 \frac{f(p+se_{\ell} + te_m)- f(p+t e_m) - f(p+s e_{\ell})+f(p)}{t}
+%mbxlatex \\
+%mbxlatex & \qquad \qquad \qquad \qquad
 =
 \frac{\partial f}{\partial x_m}(p + s e_{\ell} + t_0 e_m)
 -
 \frac{\partial f}{\partial x_m}(p + t_0 e_m) .
+%mbxlatex \end{aligned}
 \end{equation*}
 Similarly, there exists a number $s_0 \in (0,s)$ such that
 \begin{equation*}
@@ -4541,10 +4582,16 @@ Similarly, there exists a number $s_0 \in (0,s)$ such that
 \end{equation*}
 In other words,
 \begin{equation*}
-g(s,t) \coloneqq
+%mbxlatex \begin{aligned}
+g(s,t)
+%mbxlatex &
+\coloneqq
 \frac{f(p+se_{\ell} + te_m)- f(p+t e_m) - f(p+s e_{\ell})+f(p)}{st}
+%mbxlatex \\
+%mbxlatex &
 =
 \frac{\partial^2 f}{\partial x_{\ell} \partial x_m}(p + s_0 e_{\ell} + t_0 e_m) .
+%mbxlatex \end{aligned}
 \end{equation*}
 
 \begin{myfigureht}
@@ -4574,11 +4621,16 @@ the function $\sigma \mapsto f(p+\sigma e_{\ell} + te_m)-f(p + \sigma
 e_{\ell})$
 find an $s_1 \in (0,s)$ such that
 \begin{equation*}
+%mbxlatex \begin{aligned}
+%mbxlatex &
 \frac{f(p+ se_{\ell} + te_m )- f(p+s e_{\ell}) - f(p+t e_m)+f(p)}{s}
+%mbxlatex \\
+%mbxlatex & \qquad \qquad \qquad \qquad
 =
 \frac{\partial f}{\partial x_{\ell}}(p + s_1 e_{\ell} + t e_m)
 -
 \frac{\partial f}{\partial x_{\ell}}(p + s_1 e_{\ell}) .
+%mbxlatex \end{aligned}
 \end{equation*}
 Find a $t_1 \in (0,t)$ such that
 \begin{equation*}

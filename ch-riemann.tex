@@ -472,10 +472,21 @@ partition $P \coloneqq \{ x_0,x_1,\ldots,x_n \}$ of $[0,b]$.
 Then $\Delta x_i = \nicefrac{b}{n}$ for all $i$.  
 As $f$ is decreasing, for every subinterval $[x_{i-1},x_i]$,
 \begin{equation*}
-m_i = \inf \left\{ \frac{1}{1+x} : x \in [x_{i-1},x_i] \right\} = \frac{1}{1+x_i} ,
+%mbxlatex \begin{aligned}
+m_i
+%mbxlatex &
+=
+\inf \left\{ \frac{1}{1+x} : x \in [x_{i-1},x_i] \right\} = \frac{1}{1+x_i} ,
+%mbxSTARTIGNORE
 \quad
-M_i = \sup \left\{ \frac{1}{1+x} : x \in [x_{i-1},x_i] \right\} =
+%mbxENDIGNORE
+%mbxlatex \\
+M_i
+=
+%mbxlatex &
+\sup \left\{ \frac{1}{1+x} : x \in [x_{i-1},x_i] \right\} =
 \frac{1}{1+x_{i-1}} .
+%mbxlatex \end{aligned}
 \end{equation*}
 Then
 \begin{multline*}
@@ -3129,21 +3140,26 @@ as $\sin(x) \leq 0$.
 
 Via the fundamental theorem of calculus,
 \begin{equation*}
+%mbxlatex \begin{aligned}
 \frac{2}{\pi (2n+1)}
 =
 \int_{\pi 2n}^{\pi (2n+1)}
 \frac{\sin(x)}{\pi (2n+1)}
 \,dx
+%mbxlatex &
 \leq
 \int_{\pi 2n}^{\pi (2n+1)}
 \frac{\sin(x)}{x}
 \,dx
+%mbxlatex \\
+%mbxlatex &
 \leq
 \int_{\pi 2n}^{\pi (2n+1)}
 \frac{\sin(x)}{\pi 2n}
 \,dx
 =
 \frac{1}{\pi n} .
+%mbxlatex \end{aligned}
 \end{equation*}
 Similarly,
 \begin{equation*}
@@ -3157,21 +3173,26 @@ Similarly,
 \end{equation*}
 Adding the two together we find
 \begin{equation*}
+%mbxlatex \begin{aligned}
 0
 =
 \frac{2}{\pi (2n+1)}
 +
 \frac{-2}{\pi (2n+1)}
+%mbxlatex &
 \leq
 \int_{2\pi n}^{2\pi (n+1)}
 \frac{\sin(x)}{x}
 \,dx
+%mbxlatex \\
+%mbxlatex &
 \leq
 \frac{1}{\pi n} 
 +
 \frac{-1}{\pi (n+1)} 
 =
 \frac{1}{\pi n(n+1)} .
+%mbxlatex \end{aligned}
 \end{equation*}
 See \figureref{fig:sincbound}.
 \begin{myfigureht}

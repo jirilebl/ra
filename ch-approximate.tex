@@ -1256,10 +1256,16 @@ imaginary part.
 By iterating this theorem, we find that an
 analytic function is infinitely differentiable:
 \begin{equation*}
-f^{(\ell)}(x) =
+%mbxlatex \begin{aligned}
+f^{(\ell)}(x)
+%mbxlatex &
+=
 \sum_{n=\ell}^\infty n(n-1)\cdots(n-\ell+1)c_k {(x-a)}^{n-\ell}
+%mbxlatex \\
+%mbxlatex &
 =
 \sum_{n=0}^\infty (n+\ell)(n+\ell-1)\cdots (n+1) c_{n+\ell} {(x-a)}^{n} .
+%mbxlatex \end{aligned}
 \end{equation*}
 In particular,
 \begin{equation} \label{eq:formulaforpscoeffs}
@@ -1618,7 +1624,7 @@ c)~$\displaystyle \sum_{k=1}^\infty \sum_{m=1}^\infty \sabs{a_{k,m}}$,
 %mbxSTARTIGNORE
 \hspace{\fill}
 %mbxENDIGNORE
-%mbxlatex \qquad
+%mbx <rabr/>
 d)~$\displaystyle \sum_{k=1}^\infty \sum_{m=1}^\infty a_{k,m}$,
 %mbxSTARTIGNORE
 \hspace{\fill}
@@ -2244,17 +2250,23 @@ p(r e^{it}) =
 So
 \begin{equation*}
 \begin{split}
+%mbxlatex &
 \abs{
 p(r e^{it}) } - \abs{
 r^{k+1}a_{k+1}e^{i(k+1)t} + \cdots + r^{d}a_{d}e^{idt}
 }
-& \leq
+%mbxlatex \\
+&
+%mbxlatex \qquad \qquad \qquad \qquad
+\leq
 \abs{
 p(r e^{it}) 
 - r^{k+1}a_{k+1}e^{i(k+1)t} - \cdots - r^{d}a_{d}e^{idt}
 }
 \\
-& =
+&
+%mbxlatex \qquad \qquad \qquad \qquad
+=
 \abs{
 1-r^k \sabs{a_k}
 }
@@ -2654,13 +2666,17 @@ whenever $d(x,y) < \delta$ and $1 \leq j \leq N$.
 
 Take $n > N$.  For $d(x,y) < \delta$, we have
 \begin{equation*}
+%mbxlatex \begin{aligned}
 \sabs{f_n(x)-f_n(y)}
+%mbxlatex &
 \leq
 \sabs{f_n(x)-f_N(x)}
 +
 \sabs{f_N(x)-f_N(y)}
 +
 \sabs{f_N(y)-f_n(y)}
+%mbxlatex \\
+%mbxlatex &
 <
 \nicefrac{\epsilon}{3}
 +
@@ -2668,6 +2684,7 @@ Take $n > N$.  For $d(x,y) < \delta$, we have
 +
 \nicefrac{\epsilon}{3}
 =\epsilon . \qedhere
+%mbxlatex \end{aligned}
 \end{equation*}
 \end{proof}
 
@@ -4163,11 +4180,15 @@ f(x) \coloneqq \sum_{n=-N}^N c_n e^{inx} ,
 \end{equation*}
 and for $m=-N,\ldots,N$ compute
 \begin{equation*}
+%mbxlatex \begin{aligned}
 \frac{1}{2\pi} \int_{-\pi}^\pi
 f(x) e^{-imx} \, dx
+%mbxlatex &
 =
 \frac{1}{2\pi} \int_{-\pi}^\pi
 \left(\sum_{n=-N}^N c_n e^{i(n-m)x}\right) \, dx
+%mbxlatex \\
+%mbxlatex &
 =
 \sum_{n=-N}^N
 c_n
@@ -4177,6 +4198,7 @@ e^{i(n-m)x}
  \, dx
 =
 c_m .
+%mbxlatex \end{aligned}
 \end{equation*}
 We just found a way of computing the coefficients $c_m$ using an integral
 of $f$.  If $\sabs{m} > N$, the integral is 0, so we might as
@@ -4305,10 +4327,22 @@ on $[0,\pi]$ and $h(x) \coloneqq -1$ on $(-\pi,0)$, extended periodically to a
 $2\pi$-periodic function.  With a little bit of calculus,
 we compute the coefficients:
 \begin{equation*}
-\hat{h}(0) = \frac{1}{2\pi} \int_{-\pi}^\pi h(x) \, dx = 0,
+%mbxlatex \begin{aligned}
+\hat{h}(0)
+%mbxlatex &
+=
+\frac{1}{2\pi} \int_{-\pi}^\pi h(x) \, dx = 0,
+%mbxSTARTIGNORE
 \qquad
-\hat{h}(n) = \frac{1}{2\pi} \int_{-\pi}^\pi h(x) e^{-inx} \, dx = \frac{i\bigl(
-(-1)^n-1 \bigr)}{\pi n} \quad \text{for } n \geq 1 .
+%mbxENDIGNORE
+%mbxlatex \\
+\hat{h}(n)
+%mbxlatex &
+=
+\frac{1}{2\pi} \int_{-\pi}^\pi h(x) e^{-inx} \, dx
+=
+\frac{i\bigl( (-1)^n-1 \bigr)}{\pi n} \quad \text{for } n \geq 1 .
+%mbxlatex \end{aligned}
 \end{equation*}
 A little bit of simplification leads to
 \begin{equation*}
@@ -4325,10 +4359,22 @@ For a second example, consider the function $g(x) \coloneqq \sabs{x}$
 on $[-\pi,\pi]$ and then extended to a $2\pi$-periodic function.
 Computing the coefficients, we find
 \begin{equation*}
-\hat{g}(0) = \frac{1}{2\pi} \int_{-\pi}^\pi g(x) \, dx = \frac{\pi}{2},
+%mbxlatex \begin{aligned}
+\hat{g}(0)
+%mbxlatex &
+=
+\frac{1}{2\pi} \int_{-\pi}^\pi g(x) \, dx = \frac{\pi}{2},
+%mbxSTARTIGNORE
 \qquad
-\hat{g}(n) = \frac{1}{2\pi} \int_{-\pi}^\pi g(x) e^{-inx} \, dx
-= \frac{(-1)^n-1}{\pi n^2} \quad \text{for } n \geq 1 .
+%mbxENDIGNORE
+%mbxlatex \\
+\hat{g}(n)
+%mbxlatex &
+=
+\frac{1}{2\pi} \int_{-\pi}^\pi g(x) e^{-inx} \, dx
+=
+\frac{(-1)^n-1}{\pi n^2} \quad \text{for } n \geq 1 .
+%mbxlatex \end{aligned}
 \end{equation*}
 A little simplification yields
 \begin{equation*}

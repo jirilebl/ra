@@ -2818,9 +2818,20 @@ Suppose $S \subset \R$ has a cluster point $c \in \R$, $c = \infty$,
 or $c = -\infty$.  Let $f \colon S \to \R$ be a function and suppose
 $L = \infty$ or $L = -\infty$.  Show that
 \begin{equation*}
-\lim_{x\to c} f(x) = L \qquad \text{if and only if} \qquad
+%mbxlatex \begin{aligned}
+%mbxlatex &
+\lim_{x\to c} f(x) = L
+%mbxlatex \\
+%mbxlatex &
+\qquad \text{if and only if}
+%mbxlatex \\
+%mbxSTARTIGNORE
+\qquad
+%mbxENDIGNORE
+%mbxlatex &
 \lim_{n\to\infty} f(x_n) = L \enspace \text{for all sequences }
 \{ x_n \}_{n=1}^\infty \text{ such that } \lim_{n\to\infty} x_n = c .
+%mbxlatex \end{aligned}
 \end{equation*}
 \end{exercise}
 
@@ -2894,25 +2905,37 @@ $g \colon S \to \R$ be decreasing.
 If $c$ is a cluster point of $S \cap (-\infty,c)$, then
 \begin{equation*}
 \lim_{x \to c^-} f(x) = \sup \{ f(x) : x < c, x \in S \}
+%mbxSTARTIGNORE
 \qquad \text{and} \qquad
+%mbxENDIGNORE
+%mbxlatex \quad \text{and} \quad
 \lim_{x \to c^-} g(x) = \inf \{ g(x) : x < c, x \in S \} .
 \end{equation*}
 If $c$ is a cluster point of $S \cap (c,\infty)$, then
 \begin{equation*}
 \lim_{x \to c^+} f(x) = \inf \{ f(x) : x > c, x \in S \}
+%mbxSTARTIGNORE
 \qquad \text{and} \qquad
+%mbxENDIGNORE
+%mbxlatex \quad \text{and} \quad
 \lim_{x \to c^+} g(x) = \sup \{ g(x) : x > c, x \in S \} .
 \end{equation*}
 If $\infty$ is a cluster point of $S$, then
 \begin{equation*}
 \lim_{x \to \infty} f(x) = \sup \{ f(x) : x \in S \}
+%mbxSTARTIGNORE
 \qquad \text{and} \qquad
+%mbxENDIGNORE
+%mbxlatex \quad \text{and} \quad
 \lim_{x \to \infty} g(x) = \inf \{ g(x) : x \in S \} .
 \end{equation*}
 If $-\infty$ is a cluster point of $S$, then
 \begin{equation*}
 \lim_{x \to -\infty} f(x) = \inf \{ f(x) : x \in S \}
+%mbxSTARTIGNORE
 \qquad \text{and} \qquad
+%mbxENDIGNORE
+%mbxlatex \quad \text{and} \quad
 \lim_{x \to -\infty} g(x) = \sup \{ g(x) : x \in S \} .
 \end{equation*}
 \end{prop}
@@ -2990,9 +3013,18 @@ Suppose $f$ is not continuous at $c \in I$,
 and that $c$ is not an endpoint of $I$.
 Let
 \begin{equation*}
-a \coloneqq \lim_{x \to c^-} f(x) = \sup \bigl\{ f(x) : x \in I, x < c \bigr\} ,
+%mbxlatex \begin{aligned}
+a
+%mbxlatex &
+\coloneqq \lim_{x \to c^-} f(x) = \sup \bigl\{ f(x) : x \in I, x < c \bigr\} ,
+%mbxSTARTIGNORE
 \qquad
-b \coloneqq \lim_{x \to c^+} f(x) = \inf \bigl\{ f(x) : x \in I, x > c \bigr\} .
+%mbxENDIGNORE
+%mbxlatex \\
+b
+%mbxlatex &
+\coloneqq \lim_{x \to c^+} f(x) = \inf \bigl\{ f(x) : x \in I, x > c \bigr\} .
+%mbxlatex \end{aligned}
 \end{equation*}
 As $c$ is a discontinuity, $a < b$.
 If $x < c$, then $f(x) \leq a$, and
@@ -3033,9 +3065,18 @@ For each $c \in E$,
 both one-sided limits of $f$ exist as $c$ is not an endpoint.
 Let
 \begin{equation*}
-a \coloneqq \lim_{x \to c^-} f(x) = \sup \bigl\{ f(x) : x \in I, x < c \bigr\} ,
+%mbxlatex \begin{aligned}
+a
+%mbxlatex &
+\coloneqq \lim_{x \to c^-} f(x) = \sup \bigl\{ f(x) : x \in I, x < c \bigr\} ,
+%mbxSTARTIGNORE
 \qquad
-b \coloneqq \lim_{x \to c^+} f(x) = \inf \bigl\{ f(x) : x \in I, x > c \bigr\} .
+%mbxENDIGNORE
+%mbxlatex \\
+b
+%mbxlatex &
+\coloneqq \lim_{x \to c^+} f(x) = \inf \bigl\{ f(x) : x \in I, x > c \bigr\} .
+%mbxlatex \end{aligned}
 \end{equation*}
 As $c$ is a discontinuity, $a < b$.  
 There exists a rational number $q \in (a,b)$, so let $h(c) \coloneqq q$.

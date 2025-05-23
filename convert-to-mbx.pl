@@ -501,6 +501,17 @@ sub do_displaymath_subs {
 	return $eqn;
 }
 
+sub do_slashmbx_subs {
+	my $txt = shift;
+
+	$txt =~ s/^\\mbx[ \t](.*?)%ENDOFLINE%[ \n]*/$1\n/mg;
+	$txt =~ s/%MBXGT%/>/g;
+	$txt =~ s/%MBXLT%/</g;
+	$txt =~ s/%MBXAMP%/&/g;
+
+	return $txt;
+}
+
 sub read_paragraph {
 	my $para = "";
 	my $read_something = 0;
@@ -924,6 +935,7 @@ while(1)
 		print "(ALIGN*)\n";
 		if ($para =~ s/^(.*?)\\end\{align\*\}[ \n]*//s) {
 			my $eqn = do_displaymath_subs($1);
+			$eqn = do_slashmbx_subs($eqn);
 
 			my $indexes = "";
 			while ($eqn =~ s/\\myindex\{(.*?)\}/$1/) {
@@ -949,6 +961,7 @@ while(1)
 		print "(ALIGN)\n";
 		if ($para =~ s/^(.*?)\\end\{align\}[ \n]*//s) {
 			my $eqn = do_displaymath_subs($1);
+			$eqn = do_slashmbx_subs($eqn);
 			#$theid = "";
 			#if ($para =~ s/^ *\\label\{(.*?)\} *//) {
 			#	$theid = $1;
@@ -985,6 +998,7 @@ while(1)
 		print "(MULTLINE*)\n";
 		if ($para =~ s/^(.*?)\\end\{multline\*\}[ \n]*//s) {
 			my $eqn = do_displaymath_subs($1);
+			$eqn = do_slashmbx_subs($eqn);
 
 			my $indexes = "";
 			while ($eqn =~ s/\\myindex\{(.*?)\}/$1/) {
@@ -1007,6 +1021,7 @@ while(1)
 		print "(MULTLINE)\n";
 		if ($para =~ s/^(.*?)\\end\{multline\}[ \n]*//s) {
 			my $eqn = do_displaymath_subs($1);
+			$eqn = do_slashmbx_subs($eqn);
 			my $theid = "";
 			if ($eqn =~ s/^[ \n]*\\label\{(.*?)\}[ \n]*//s) {
 				$theid = modify_id($1);
@@ -1041,6 +1056,7 @@ while(1)
 		print "(EQUATION*)\n";
 		if ($para =~ s/^(.*?)\\end\{equation\*\}[ \n]*//s) {
 			my $eqn = do_displaymath_subs($1);
+			$eqn = do_slashmbx_subs($eqn);
 
 			my $indexes = "";
 			while ($eqn =~ s/\\myindex\{(.*?)\}/$1/) {
@@ -1062,6 +1078,7 @@ while(1)
 		print "(EQUATION)\n";
 		if ($para =~ s/^(.*?)\\end\{equation\}[ \n]*//s) {
 			my $eqn = do_displaymath_subs($1);
+			$eqn = do_slashmbx_subs($eqn);
 			my $theid = "";
 			if ($eqn =~ s/^[ \n]*\\label\{(.*?)\}[ \n]*//s) {
 				$theid = modify_id($1);

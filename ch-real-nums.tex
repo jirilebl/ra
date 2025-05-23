@@ -1439,15 +1439,23 @@ Suppose $f \colon D \to \R$ and $g \colon D \to \R$ are bounded functions.
 \item
 Show
 \begin{equation*}
+%mbxlatex \begin{aligned}
+%mbxlatex &
 \sup_{x\in D} \bigl(f(x) + g(x) \bigr) \leq
 \sup_{x\in D} f(x)
 +
 \sup_{x\in D} g(x)
-\qquad \text{and} \qquad
+\qquad \text{and}
+%mbxSTARTIGNORE
+\qquad
+%mbxENDIGNORE
+%mbxlatex \\
+%mbxlatex &
 \inf_{x\in D} \bigl(f(x) + g(x) \bigr) \geq
 \inf_{x\in D} f(x)
 +
 \inf_{x\in D} g(x) .
+%mbxlatex \end{aligned}
 \end{equation*}
 \item
 Find an example (or examples) where we obtain strict inequalities.
@@ -1772,8 +1780,14 @@ numbers $x$, we can find
 a negative integer $-M$, a positive integer $K$, and digits
 $d_K,d_{K-1},\ldots,d_1,d_0,d_{-1},\ldots,d_{-M}$, such that
 \begin{equation*}
-x = d_K {10}^K + d_{K-1} {10}^{K-1} + \cdots + d_2 {10}^2 + d_1 10 + d_0
+%mbxlatex \begin{aligned}
+x
+%mbxlatex &
+= d_K {10}^K + d_{K-1} {10}^{K-1} + \cdots + d_2 {10}^2 + d_1 10 + d_0
+%mbxlatex \\
+%mbxlatex & \phantom{={}}
 + d_{-1} {10}^{-1} + d_{-2} {10}^{-2} + \cdots + d_{-M} {10}^{-M} .
+%mbxlatex \end{aligned}
 \end{equation*}
 We write $x = d_K d_{K-1} \cdots d_1 d_0 \, . \, d_{-1} d_{-2} \cdots d_{-M}$.
 
