@@ -460,15 +460,31 @@ sub get_equation_number {
 
 sub get_size_of_svg {
 	my $thefile = shift;
-	$thesizestr = qx!cat $thefile | grep '^<svg ' | sed 's/^<[^>]*\\(width="[^"]*"\\) *\\(height="[^"]*"\\).*\$/\\1 \\2/'!;
-	
-	# If units missing, add them
-	$thesizestr =~ s/"([0-9.]*)"/"\1px"/;
-	$thesizestr =~ s/"([0-9.]*)"/"\1px"/;
 
-	chomp($thesizestr);
+	open (my $svgf, '<', $thefile) or return "";
+
+	$thesizestr = "";
+
+	while (my $line = <$svgf> ) {
+		chomp($line);
+		if ($line =~ m{^<svg}) {
+			if ($line =~ m{^<[^>]*(width=["'][^"']*["']) *(height=["'][^"]*["'])}) {
+				$thesizestr = "$1 $2";
+				$thesizestr =~ s/'/"/g;
+
+				# If units missing, add them
+				$thesizestr =~ s/"([0-9.]*)"/"${1}px"/;
+				$thesizestr =~ s/"([0-9.]*)"/"${1}px"/;
+			}
+
+			last;
+		}
+	}
+
+	close $svgf;
+
 	print "the size string of $thefile >$thesizestr<\n";
-	return $thesizestr
+	return $thesizestr;
 }
 
 sub ensure_mbx_svg_version {
