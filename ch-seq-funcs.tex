@@ -75,11 +75,14 @@ We have seen before that
 \abs{x^{2n} - 0} = {(x^2)}^n \to 0 \quad \text{as} \quad n \to \infty .
 \end{equation*}
 Therefore, $\lim_{n\to\infty}f_n(x) = 0$.
-
 When $x = 1$ or $x=-1$, then $x^{2n} = 1$ for all $n$ and hence
 $\lim_{n\to\infty}f_n(x) = 1$.
-For all other $x$, the sequence
-$\bigl\{ f_n(x) \bigr\}_{n=1}^\infty$ does not converge.
+
+Note that for $x$ not in $[-1,1]$, the sequence
+$\bigl\{ x^{2n} \bigr\}_{n=1}^\infty$ does not converge.
+So if we defined $f_n$ on a set larger than $[-1,1]$,
+then $\bigl\{ f_n \bigr\}_{n=1}^\infty$
+would converge pointwise only on $[-1,1]$.
 \end{example}
 
 Often, functions are given as a series.  In this case, we use
@@ -105,7 +108,7 @@ $\frac{1}{1-x}$ is defined for all $x \not=1$, and $f_n$ are
 defined for all $x$ (even at $x=1$), convergence only happens on $(-1,1)$.
 Therefore, when we write
 \begin{equation*}
-f(x) \coloneqq \sum_{k=0}^\infty x^k
+f(x) \coloneqq \sum_{k=0}^\infty x^k ,
 \end{equation*}
 we mean that $f$ is defined on $(-1,1)$ and is the pointwise limit
 of the partial sums.
