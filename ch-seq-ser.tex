@@ -550,10 +550,14 @@ a \emph{\myindex{subsequence}} of $\{ x_n \}_{n=1}^\infty$.
 \end{defn}
 
 So the subsequence is the sequence $x_{n_1},x_{n_2},x_{n_3},\ldots$.
-Consider the sequence $\{ \nicefrac{1}{n} \}_{n=1}^\infty$.  The sequence
+For instance,
+the sequence
 $\{ \nicefrac{1}{3i} \}_{i=1}^\infty
-= 1,\nicefrac{1}{3},\nicefrac{1}{6},\nicefrac{1}{9},\ldots$
-is a subsequence.  To see how these two
+= \nicefrac{1}{3},\nicefrac{1}{6},\nicefrac{1}{9},\nicefrac{1}{12},\ldots$
+is a subsequence of
+$\{ \nicefrac{1}{n} \}_{n=1}^\infty
+= 1, \nicefrac{1}{2},\nicefrac{1}{3},\nicefrac{1}{4},\ldots$.
+To see how these two
 sequences fit in the definition, take $n_i \coloneqq 3i$,
 that is, $\{ n_i \}_{i=1}^\infty$ is the
 sequence $3,6,9,12,\ldots$.  
@@ -561,12 +565,13 @@ The numbers $x_{n_i}$ in the
 subsequence must come from the original sequence.  So $1,0,\nicefrac{1}{3},0,
 \nicefrac{1}{5},\ldots$
 is not a subsequence of $\{ \nicefrac{1}{n} \}_{n=1}^\infty$.  Similarly, order
-must be preserved.  So
+must be preserved;
 the sequence $1,\nicefrac{1}{3},\nicefrac{1}{2},\nicefrac{1}{5},\ldots$
 is not a subsequence of $\{ \nicefrac{1}{n} \}_{n=1}^\infty$.
 
 A tail of a sequence is one special type of a subsequence.  For an arbitrary
-subsequence, we have the following proposition about convergence.
+subsequence, we have the following proposition about convergence,
+which is weaker than that for tails.
 
 \begin{prop} \label{prop:seqtosubseq}
 If $\{ x_n \}_{n=1}^\infty$ is a convergent sequence,
@@ -4864,7 +4869,7 @@ If $\sum_{n=1}^\infty a_n$ is convergent to $a$ (in the usual sense), show that
 $\sum_{n=1}^\infty a_n$ is Ces\`aro summable (see above) to $a$.
 \item
 Show that in the sense of Ces\`aro $\sum_{n=1}^\infty {(-1)}^n$ is summable to
-$\nicefrac{1}{2}$.
+$\nicefrac{-1}{2}$.
 \item
 Let $a_n \coloneqq k$ when $n = k^3$ for some $k \in \N$,
 $a_n \coloneqq -k$ when $n = k^3+1$ for some $k \in \N$,
