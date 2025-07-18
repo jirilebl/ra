@@ -1955,7 +1955,7 @@ f'(x) = \frac{d}{dx} \bigl[ x - \sin(x) \bigr]
 \end{equation*}
 for all $x \in \R$ as $\sabs{\cos(x)} \leq 1$.
 In other words, $f$ is increasing and $f(0) = 0$.
-So $f$ must be nonnegative when $x \geq 0$ and hence, $\sin(x) \geq x$.
+So $f$ must be nonnegative when $x \geq 0$ and hence, $\sin(x) \leq x$.
 
 Next, we claim there exists a positive $x$ such that $\cos(x) = 0$.
 As $\cos(0) = 1 > 0$, $\cos(x) > 0$
@@ -2182,18 +2182,19 @@ Define $\tan(x) \coloneqq \frac{\sin(x)}{\cos(x)}$ as usual.
 \begin{enumerate}[a)]
 \item
 Show that for $x \in (\nicefrac{-\pi}{2},\nicefrac{\pi}{2})$
-both $\sin$ and $\tan$ are strictly increasing, and hence $\sin^{-1}$
-and $\tan^{-1}$ exist when we restrict to that interval.
+both $\sin$ and $\tan$ are strictly increasing, and hence
+the inverses $\arcsin$
+and $\arctan$ exist when we restrict to that interval.
 \item
-Show that $\sin^{-1}$ and $\tan^{-1}$ are differentiable
+Show that $\arcsin$ and $\arctan$ are differentiable
 and
 that
-$\frac{d}{dx} \sin^{-1}(x) = \frac{1}{\sqrt{1-x^2}}$ and
-$\frac{d}{dx} \tan^{-1}(x) = \frac{1}{1+x^2}$.
+$\frac{d}{dx} \arcsin(x) = \frac{1}{\sqrt{1-x^2}}$ and
+$\frac{d}{dx} \arctan(x) = \frac{1}{1+x^2}$.
 \item
 Using the finite geometric sum formula show
 \begin{equation*}
-\tan^{-1}(x) = \int_0^x \frac{1}{1+t^s} dt
+\arctan(x) = \int_0^x \frac{1}{1+t^2} dt
 =
 \sum_{k=0}^\infty \frac{{(-1)}^k}{2k+1} x^{2k+1}
 \end{equation*}
@@ -4341,7 +4342,7 @@ we compute the coefficients:
 =
 \frac{1}{2\pi} \int_{-\pi}^\pi h(x) e^{-inx} \, dx
 =
-\frac{i\bigl( (-1)^n-1 \bigr)}{\pi n} \quad \text{for } n \geq 1 .
+\frac{i\bigl( (-1)^n-1 \bigr)}{\pi n} \quad \text{for } n \neq 0 .
 %mbxlatex \end{aligned}
 \end{equation*}
 A little bit of simplification leads to
@@ -4373,7 +4374,7 @@ Computing the coefficients, we find
 =
 \frac{1}{2\pi} \int_{-\pi}^\pi g(x) e^{-inx} \, dx
 =
-\frac{(-1)^n-1}{\pi n^2} \quad \text{for } n \geq 1 .
+\frac{(-1)^n-1}{\pi n^2} \quad \text{for } n \neq 0 .
 %mbxlatex \end{aligned}
 \end{equation*}
 A little simplification yields
@@ -4464,7 +4465,7 @@ Then the series converges to a continuously differentiable function on $\R$.
 The proof is to note that the series converges to a continuous
 function by the previous proposition.
 In particular, it converges at some point.
-Then differentiate the partial sums
+Then differentiate the partial sums,
 \begin{equation*}
 \sum_{n=-N}^{N}
 i n c_n \,e^{inx}
@@ -4492,7 +4493,7 @@ for all nonzero integers $n$,
 Then 
 the Fourier series converges to a $k$-times continuously differentiable
 function.  Therefore, the faster the coefficients go to zero, the more
-regular the limit is.
+regular the function is.
 
 \subsection{Orthonormal systems}
 

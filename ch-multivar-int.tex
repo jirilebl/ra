@@ -1803,7 +1803,7 @@ taking $C_{k-1}$, and from each closed interval removing the
 \myquote{middle third.}
 \item Each $C_k$ is closed, and so $C$ is closed.
 \item 
-$m^*(C_k) =1 - \sum_{n=1}^k \frac{2^n}{3^{n+1}}$.
+$m^*(C_k) = {\left(\frac{2}{3}\right)}^k$.
 \item Hence,
 $m^*(C) = 0$.
 \item The set $C$ is in one-to-one correspondence with $[0,1]$, in other
@@ -1999,7 +1999,7 @@ prove:
 \item
 Each $C_k$ is a finite union of closed intervals, and so $C$ is closed.
 \item
-$m^*(C_k) =1 - \sum_{n=1}^k \frac{2^n}{3^{n+1}}$.
+$m^*(C_k) = {\left(\frac{2}{3}\right)}^k$.
 \item
 $m^*(C) = 0$.
 \item
@@ -3157,26 +3157,26 @@ $U$ is Jordan measurable and as $U$ is of type I\@, then
 \int_U 
 \left(- \frac{\partial P}{\partial y} \right)
 & =
-\int_a^b \int_{g(x)}^{f(x)}
+\int_a^b \int_{f(x)}^{g(x)}
 \left(- \frac{\partial P}{\partial y} (x,y) \right)
 \, dy \, dx 
 \\
 & =
 \int_a^b \Bigl(
-- P\bigl(x,f(x)\bigr) +
-P\bigl(x,g(x)\bigr)
+- P\bigl(x,g(x)\bigr) +
+P\bigl(x,f(x)\bigr)
 \Bigr) \, dx
 \\
 & =
-\int_a^b P\bigl(x,g(x)\bigr) \, dx 
+\int_a^b P\bigl(x,f(x)\bigr) \, dx 
 -
-\int_a^b P\bigl(x,f(x)\bigr) \, dx .
+\int_a^b P\bigl(x,g(x)\bigr) \, dx .
 \end{split}
 \end{equation*}
 We integrate $P\,dx$ along the boundary.
 The one-form $P\,dx$ integrates to zero 
-along the straight vertical lines in the boundary.  Therefore, it is
-only
+along the straight vertical lines in the boundary (if there are any).
+Therefore, it is only
 integrated along the top and along the bottom.  As a parameter,
 $x$ runs from left to right.  If we use the parametrizations that take $x$
 to $\bigl(x,f(x)\bigr)$ and to
@@ -3186,9 +3186,9 @@ left.  After switching this orientation, we find
 \begin{equation*}
 \int_{\partial U} P \, dx
 =
-\int_a^b P\bigl(x,g(x)\bigr) \, dx 
+\int_a^b P\bigl(x,f(x)\bigr) \, dx 
 +
-\int_b^a P\bigl(x,f(x)\bigr) \, dx
+\int_b^a P\bigl(x,g(x)\bigr) \, dx
 =
 \int_U 
 \left(- \frac{\partial P}{\partial y} \right) .
@@ -3199,15 +3199,15 @@ horizontal lines.   So
 \int_U 
 \frac{\partial Q}{\partial x}
 =
-\int_c^d \int_{k(y)}^{h(y)}
+\int_c^d \int_{h(y)}^{k(y)}
 \frac{\partial Q}{\partial x}(x,y)
 \, dx \, dy 
 =
-\int_a^b \Bigl(
-Q\bigl(y,h(y)\bigr) 
+\int_c^d \Bigl(
+Q\bigl(y,k(y)\bigr) 
 -
-Q\bigl(y,k(y)\bigr)
-\Bigr) \, dx 
+Q\bigl(y,h(y)\bigr)
+\Bigr) \, dy 
 =
 \int_{\partial U} Q \, dy .
 \end{equation*}
