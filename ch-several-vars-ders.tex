@@ -451,7 +451,7 @@ x_k = \frac{-a_1}{a_k} x_1 + \cdots +
 The vector $x_k$ has at least two different representations
 as linear combinations of the vectors $\{ x_1,x_2,\ldots,x_m \}$. The one above and
 $x_k$ itself. 
-For instance, the set $\bigl\{ (0,1), (2,3), (5,0) \bigr\}$ in $\R^2$ is linearly dependent:
+For instance, the set $\bigl\{ (0,1), (2,3), (1,0) \bigr\}$ in $\R^2$ is linearly dependent:
 \begin{equation*}
 3(0,1) - (2,3) + 2(1,0) = 0 ,
 \qquad \text{so} \qquad
@@ -2360,7 +2360,7 @@ are real matrices.
 Let $A,S$ be $n$-by-$n$ matrices, where $S$ is invertible.
 Prove that $\lambda$ is an eigenvalue of $A$, if and only
 if it is an eigenvalue of $S^{-1}AS$.  Then prove that
-$\rho(S^{-1}AS) = \rho(S)$.
+$\rho(S^{-1}AS) = \rho(A)$.
 In particular, $\rho$ is a well-defined function on $L(X)$ for
 every finite-dimensional vector space $X$.
 \end{exercise}
@@ -2389,8 +2389,8 @@ Let $\snorm{\cdot}$ be any given norm on $\R^n$.  Show that the closed unit ball
 $C(0,1)$ (using the metric induced by this norm)
 is a compact symmetric convex set.
 \item (Challenging)
-Let $C \subset \R^n$ be a compact,
-but note symmetric convex set and $0 \in C$.  Show that
+Let $C \subset \R^n$ be a compact
+symmetric convex set and $0 \in C$.  Show that
 \begin{equation*}
 \snorm{x} \coloneqq \inf \left\{ \lambda : \lambda > 0 \text{ and } \frac{x}{\lambda} \in C \right\}
 \end{equation*}
