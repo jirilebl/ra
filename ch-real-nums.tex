@@ -480,6 +480,10 @@ ordered in the usual way amongst themselves,
 and $k < \infty$ for every $k \in \N$.  Show $\N_{\infty}$ is an ordered set
 and that every subset $E \subset \N_{\infty}$ has a supremum in
 $\N_{\infty}$ (make sure to also handle the case of an empty set).
+Remark: Note that the case of the empty set will be different
+if our ordered set is the real numbers or the extended
+real numbers from the next section.  It is important that
+our ordered set here is $\N_{\infty}$.
 \end{exercise}
 
 \begin{exercise}
@@ -883,18 +887,21 @@ Let $A \subset \R$ be a set.
 \end{enumerate}
 \end{defn}
 
-For convenience, $\infty$ and $-\infty$ are sometimes treated as if they were
-numbers, except we do not allow arbitrary arithmetic with them.
-We make $\R^* \coloneqq \R \cup \{ -\infty , \infty\}$
-\glsadd{not:extreal}\glsadd{not:infinity}
-into an ordered set
-by letting
+The statements in the definition above
+follow naturally if instead of working in 
+the ordered set $\R$, we take suprema and infima
+in the ordered set
+$\R^* \coloneqq \R \cup \{ -\infty , \infty\}$
+\glsadd{not:extreal},\glsadd{not:infinity}
+where we let
 \begin{equation*}
 -\infty < \infty \quad \text{and} \quad
 -\infty < x \quad \text{and} \quad
 x < \infty \quad \text{for all $x \in \R$}.
 \end{equation*}
 The set $\R^*$ is called the set of \emph{\myindex{extended real numbers}}.
+For convenience, $\infty$ and $-\infty$ are sometimes treated as if they were
+numbers, except we do not allow arbitrary arithmetic with them.
 It is possible to define some arithmetic on $\R^*$.  Most operations
 are extended in an obvious way, but we must leave
 $\infty-\infty$, $0 \cdot (\pm\infty)$, and $\frac{\pm\infty}{\pm\infty}$
@@ -1629,7 +1636,7 @@ assumption on $X$, and $n \geq k$ by the assumption on $(a_{k-1},b_{k-1})$.
 Notice that %$a_k < b_k$ and
 $a_{k-1} < a_k < b_k < b_{k-1}$.
 Also notice that $(a_{k},b_{k})$ does not contain $x_k$ and hence
-does not contain $x_j$ for $j=1,2,\ldots,k$.
+does not contain $x_{\ell}$ for $\ell=1,2,\ldots,k$.
 The two sequences are now defined.
 
 Claim: \emph{$a_n < b_m$ for all $n$ and $m$ in $\N$.} Proof: Let us first
@@ -2072,11 +2079,11 @@ otherwise we have seen above that both its representations are repeating,
 see also \exerciseref{exercise:nonuniquedecimals}.  This also means
 that $x \not= 1$ so $p < q$.
 
-To compute the first digit, we take $10 p$ and divide by
+To compute the first digit, take $10 p$ and divide by
 $q$.  Let $d_1$ be the quotient, and the remainder $r_1$ is some integer
 between $0$ and $q-1$.  That is, $d_1$ is the largest integer
 such that $d_1 q \leq 10p$ and then $r_1 = 10p - d_1q$.
-As $p < q$, then $d_1 < 10$, so $d_1$ is a digit.
+As $p < q$, we have $d_1 < 10$, so $d_1$ is a digit.
 Furthermore,
 \begin{equation*}
 \frac{d_1}{10} \leq \frac{p}{q} =
@@ -2085,11 +2092,20 @@ Furthermore,
 \end{equation*}
 The first inequality is strict since $x$ has a
 unique representation.  That is, $d_1$ really is the first digit.
-What is left is $\nicefrac{r_1}{(10q)}$.  This is the same as computing the
-first digit of $\nicefrac{r_1}{q}$.
-To compute $d_2$ divide $10 r_1$ by $q$, and so on.
+What is left is $\frac{r_1}{10q}$.
+To compute $d_2$, divide $10 r_1$ by $q$ obtaining $d_2$
+and $r_2$, where $r_2 = 10 r_1 - d_2 q$.
+Solve for $r_1$ and plug into
+$\frac{p}{q} = \frac{d_1}{10} + \frac{r_1}{10 q}$
+to arrive at
+$\frac{p}{q} = \frac{d_1}{10} + \frac{d_2}{{10}^2} +
+\frac{r_2}{{10}^2 q} = D_2 +
+\frac{r_2}{{10}^2 q}$.
+As $r_2 < q$ we again get $d_2 < 10$.
+To compute $d_3$, divide $10 r_2$ by $q$
+getting $d_3$ and $r_3$.  And so on and so forth.
 After computing $n-1$ digits, we have
-$\nicefrac{p}{q} = D_{n-1} + \nicefrac{r_{n-1}}{(10^{n-1} q)}$.
+$\frac{p}{q} = D_{n-1} + \frac{r_{n-1}}{10^{n-1} q}$.
 To get the $n$th digit,
 divide $10 r_{n-1}$ by $q$
 to get quotient $d_n$, remainder $r_n$, and the inequalities
@@ -2098,7 +2114,7 @@ to get quotient $d_n$, remainder $r_n$, and the inequalities
 \frac{d_n}{10} + \frac{r_n}{10q} \leq \frac{d_n}{10} +
 \frac{1}{10} .
 \end{equation*}
-Dividing by $10^{n-1}$ and adding $D_{n-1}$ we find
+Dividing by $10^{n-1}$ and adding $D_{n-1}$, we find
 \begin{equation*}
 D_n \leq D_{n-1} + \frac{r_{n-1}}{10^{n-1} q} = \frac{p}{q} \leq D_n +
 \frac{1}{10^n} .

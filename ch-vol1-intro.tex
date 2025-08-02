@@ -621,11 +621,19 @@ contradicting the statement that $m \in S$.  Therefore, $S$ is empty and
 $P(n)$ is true for all $n \in \N$.
 \end{proof}
 
-Sometimes it is convenient to start at a different number than 1,
-all that changes is the labeling.  The assumption that
+The assumption that
 $P(n)$ is true in \myquote{if $P(n)$ is true,
 then $P(n+1)$ is true}
 is usually called the \emph{\myindex{induction hypothesis}}.
+Sometimes it is convenient to start induction
+at a different number than 1,
+all that changes is the labeling.
+For example,
+if starting say at $n=0$, then $P(0)$ is the basis statement,
+and the induction step must be proved for all
+$n \in \N \cup \{ 0 \}$.
+The conclusion is then that $P(n)$ is true for all
+$n \in \N \cup \{ 0 \}$.
 
 \begin{example}
 Let us prove that for all $n \in \N$,
@@ -653,13 +661,16 @@ $2^{n-1} \leq n!$ is true for all $n \in \N$.
 \end{example}
 
 \begin{example} \label{example:geometricsum}
-We claim that for all $c \not= 1$,
+We claim that for all $c \not= 1$
+and all $n \in \N \cup \{ 0 \}$,
 \begin{equation*}
 1 + c + c^2 + \cdots + c^n = \frac{1-c^{n+1}}{1-c} .
 \end{equation*}
 
-Proof: It is easy to check that the equation holds with $n=1$.  Suppose 
-it is true for $n$.  Then
+Proof: Fix some $c \not= 1$.
+It is easy to check that the equation holds with $n=0$.
+Suppose it holds for some $n$ (including possibly $n=0$).
+Then
 \begin{equation*}
 \begin{split}
 1 + c + c^2 + \cdots + c^n + c^{n+1} & =
@@ -669,6 +680,8 @@ it is true for $n$.  Then
 & = \frac{1-c^{n+2}}{1-c} .
 \end{split}
 \end{equation*}
+By principle of induction, the equation holds for all
+$n \in \N \cup \{ 0 \}$.
 \end{example}
 
 Sometimes, it is easier to use in the inductive step
@@ -693,26 +706,30 @@ Informally,
 a \emph{\myindex{set-theoretic function}}\index{function}
 $f$ taking a set $A$ to a set $B$
 is a mapping that to each $x \in A$ assigns a unique $y \in B$.  We write
-$f \colon A \to B$.\glsadd{not:func}  An example function 
-$f \colon S \to T$ taking $S \coloneqq \{ 0, 1, 2 \}$ to $T \coloneqq \{ 0, 2 \}$
-can be defined
-by assigning $f(0) \coloneqq 2$, $f(1) \coloneqq 2$, and $f(2) \coloneqq 0$.  That is, a function $f
+$f \colon A \to B$.\glsadd{not:func}
+A function $f
 \colon A \to B$ is
-a black box, into which we stick an element of $A$ and the function
+a black box into which we stick an element of $A$,
+and the function
 spits out an element of $B$.
 Sometimes $f$ is called a \emph{\myindex{mapping}} or a
 \emph{\myindex{map}},
 and we say $f$ \emph{maps $A$ to $B$}.
 
-
+An example function 
+$f \colon S \to T$ from $S \coloneqq \{ 0, 1, 2 \}$ to $T \coloneqq \{ 0, 2 \}$
+can be defined
+by assigning $f(0) \coloneqq 2$, $f(1) \coloneqq 2$, and $f(2) \coloneqq 0$.
+%
 Often, functions are defined by some sort of
 formula; however, you should really think of a function as just a very large
 table of values.
 The subtle issue here is that a single function can have several 
-formulas, all giving the same function.  Also, for many functions, there is
+formulas, all giving the same function.
+For many functions, there is
 no formula that expresses its values.
-
-To define a function rigorously, let us first define the Cartesian product.
+To define the notion of a function rigorously,
+we must first define the Cartesian product.
 
 \begin{defn}
 Let $A$ and $B$ be sets.  The \emph{\myindex{Cartesian product}}
@@ -737,9 +754,10 @@ such a product.  For example, $[0,1]^2 =
 \begin{defn}
 A \emph{function} $f \colon A \to B$ is a subset $f$ of $A \times B$
 such that for each $x \in A$, there exists a unique $y \in B$ for which $(x,y) \in f$.
-We write $f(x) = y$.  Sometimes
-the set $f$ is called the \emph{\myindex{graph}} of the function rather than
-the function itself.
+We write $f(x) = y$.
+If we consider $f$ simply as a subset in $A \times B$,
+then we call this set the
+\emph{\myindex{graph}} of the function.
 
 The set $A$ is called the \emph{\myindex{domain}} of $f$ (and
 sometimes confusingly denoted $D(f)$).  The set
