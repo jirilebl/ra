@@ -211,7 +211,8 @@ if $\sum_{n=1}^\infty \sabs{z_n}$ converges.
 We say a series
 is \emph{Cauchy}\index{Cauchy!complex series}
 if the sequence of partial sums is Cauchy.  The following two
-propositions have essentially the same proofs as for real series and we
+propositions have essentially the same proofs
+as their analogues for real series and we
 leave them as exercises.
 
 \begin{prop} \label{prop:cachysercomplex}
@@ -341,8 +342,8 @@ $f(0) = f(1) = 0$, but $f'(t) \not= 0$ for all $t \in [0,1]$.
 \item
 However, there is a weaker form of the mean value theorem as there is for vector-valued
 functions.  Prove: If $f \colon [a,b] \to \C$ is continuous and differentiable in
-$(a,b)$, and for some $M$, $\sabs{f'(x)} \leq M$ for all $x \in (a,b)$, then
-$\sabs{f(b)-f(a)} \leq M \sabs{b-a}$.
+$(a,b)$, and for some $M$, $\babs{f'(x)} \leq M$ for all $x \in (a,b)$, then
+$\babs{f(b)-f(a)} \leq M \sabs{b-a}$.
 \end{enumerate}
 \end{exercise}
 
@@ -468,7 +469,7 @@ then $\{f_n\}_{n=1}^\infty$ converges uniformly.
 
 For $f \colon X \to \C$, we write\glsadd{not:uniformnorm}
 \begin{equation*}
-\snorm{f}_X \coloneqq \sup_{x \in X} \sabs{f(x)} .
+\snorm{f}_X \coloneqq \sup_{x \in X} \babs{f(x)} .
 \end{equation*}
 We call $\snorm{\cdot}_X$
 the \emph{\myindex{supremum norm}} or \emph{\myindex{uniform norm}},
@@ -481,8 +482,8 @@ $f_n \colon X \to \C$ converges uniformly to $f \colon X \to \C$ if and only if
 
 The supremum norm satisfies the triangle inequality: For every $x \in X$,
 \begin{equation*}
-\sabs{f(x)+g(x)} \leq
-\sabs{f(x)}+\sabs{g(x)} \leq
+\babs{f(x)+g(x)} \leq
+\babs{f(x)}+\babs{g(x)} \leq
 \snorm{f}_X+\snorm{g}_X .
 \end{equation*}
 Take a supremum on the left to get
@@ -509,7 +510,7 @@ Let $X$ be a set.
 Suppose $f_n \colon X \to \C$ are functions and $M_n > 0$ numbers such
 that
 \begin{equation*}
-\sabs{f_n(x)}\leq M_n \quad \text{for all } x \in X,
+\babs{f_n(x)}\leq M_n \quad \text{for all } x \in X,
 \qquad \text{and} \qquad
 \sum_{n=1}^\infty M_n
 \quad \text{converges}.
@@ -524,7 +525,7 @@ Then
 Another way to state the theorem is to say that if
 $\sum_{n=1}^\infty \snorm{f_n}_X$ converges, then $\sum_{n=1}^\infty f_n$ converges uniformly.
 Note that the converse of this theorem is not true.
-Applying the theorem to $\sum_{n=1}^\infty \sabs{f_n(x)}$, we
+Applying the theorem to $\sum_{n=1}^\infty \babs{f_n(x)}$, we
 see that this series also converges uniformly.  So the series converges both absolutely
 and uniformly.
 
@@ -539,7 +540,7 @@ We estimate a Cauchy difference of the partial
 sums of the functions
 \begin{equation*}
 \abs{\sum_{k=n+1}^m f_k(x)} \leq
-\sum_{k=n+1}^m \sabs{f_k(x)} \leq
+\sum_{k=n+1}^m \babs{f_k(x)} \leq
 \sum_{k=n+1}^m M_k < \epsilon .
 \end{equation*}
 The series converges by \propref{prop:cachysercomplex}.
@@ -807,14 +808,14 @@ Extend $\varphi$ to all of $\R$ by making it
 2-periodic:
 Decree that
 $\varphi(x) = \varphi(x+2)$.  The function $\varphi \colon \R \to \R$
-is continuous, in fact, $\sabs{\varphi(x)-\varphi(y)} \leq \sabs{x-y}$ (why?).
+is continuous, in fact, $\babs{\varphi(x)-\varphi(y)} \leq \sabs{x-y}$ (why?).
 See \figureref{fig:triangwave}.
 \begin{myfigureht}
 \includegraphics{figures/triangwave}
 \caption{The 2-periodic function $\varphi$.\label{fig:triangwave}}
 \end{myfigureht}
 
-As $\sum_{n=0}^\infty {\left(\frac{3}{4}\right)}^n$ converges and $\sabs{\varphi(x)} \leq
+As $\sum_{n=0}^\infty {\left(\frac{3}{4}\right)}^n$ converges and $\babs{\varphi(x)} \leq
 1$ for all $x$, by the $M$-test
 (\thmref{thm:weiermtest}),
 \begin{equation*}
@@ -869,7 +870,7 @@ $\abs{\varphi\bigl(4^m(x+ \delta_m)\bigr)-\varphi(4^mx)} =
 }
 = 4^m .
 \end{equation*}
-Similarly, suppose $n < m$.  Since $\sabs{\varphi(s) -\varphi(t)} \leq
+Similarly, suppose $n < m$.  Since $\babs{\varphi(s) -\varphi(t)} \leq
 \sabs{s-t}$,
 \begin{equation*}
 \sabs{\gamma_n} =
@@ -1357,7 +1358,7 @@ As the series converges, each $f_k$ is continuous at $0$
 $E$, but we don't need that).
 For all $x \in E$, we have
 \begin{equation*}
-\sabs{f_k(x)} \leq \sum_{m=1}^\infty \sabs{a_{k,m}} .
+\babs{f_k(x)} \leq \sum_{m=1}^\infty \sabs{a_{k,m}} .
 \end{equation*}
 As $\sum_k \sum_m \sabs{a_{k,m}}$ converges (and does not depend on
 $x$), we know that
@@ -1429,7 +1430,7 @@ f(x) = \sum_{k=0}^\infty \, \sum_{m=0}^\infty c_{k,m} {(x-a)}^m .
 Let us show that the double sum converges absolutely.
 \begin{equation*}
 \begin{split}
-\sum_{k=0}^\infty \, \sum_{m=0}^\infty \abs{ c_{k,m} {(x-a)}^m}
+\sum_{k=0}^\infty \, \sum_{m=0}^\infty \babs{ c_{k,m} {(x-a)}^m}
 & = \sum_{k=0}^\infty \, \sum_{m=0}^k \abs{ a_k \binom{k}{m} a^{k-m} {(x-a)}^m }
 \\
 & = \sum_{k=0}^\infty \sabs{a_k} \sum_{m=0}^k \binom{k}{m} \sabs{a}^{k-m}
@@ -1705,12 +1706,12 @@ Show that the series
 \begin{equation*}
 f(z) \coloneqq \sum_{k=0}^\infty \binom{\alpha}{k} z^k
 \end{equation*}
-converges whenever $\abs{z} < 1$.
+converges whenever $\sabs{z} < 1$.
 In fact, prove that for $\alpha = 0,1,2,3,\ldots$ the radius of
 convergence is $\infty$, and for all other $\alpha$
 the radius of convergence is 1.
 \item
-Show that for $x \in \R$, $\abs{x} < 1$, we have
+Show that for $x \in \R$, $\sabs{x} < 1$, we have
 \begin{equation*}
 (1+x) f'(x) = \alpha f(x) ,
 \end{equation*}
@@ -1729,7 +1730,7 @@ Let $\D \coloneqq B(0,1)$ be the unit disc.  Suppose
 $f \colon \D \to \C$ is analytic with power series
 $\sum_{n=0}^\infty c_n z^n$.  Suppose $\sabs{c_n} \leq 1$ for all $n$.  Prove that for
 all $z \in \D$, we have
-$\sabs{f(z)} \leq \frac{1}{1-\sabs{z}}$.
+$\babs{f(z)} \leq \frac{1}{1-\sabs{z}}$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1868,7 +1869,7 @@ e^{iz} = \cos(z) + i\sin(z) \qquad
 \end{equation*}
 \item For all $x \in \R$,
 \begin{equation*}
-\sabs{\sin(x)} \leq 1, \qquad \sabs{\cos(x)} \leq 1 .
+\babs{\sin(x)} \leq 1, \qquad \babs{\cos(x)} \leq 1 .
 \end{equation*}
 \item For all $x \in \R$,
 \begin{equation*}
@@ -1941,8 +1942,8 @@ A square of a real number is always nonnegative:
 \begin{equation*}
 {\bigl(\sin(x)\bigr)}^2 = 1-{\bigl(\cos(x)\bigr)}^2 \leq 1 .
 \end{equation*}
-So $\sabs{\sin(x)} \leq 1$ and similarly 
-$\sabs{\cos(x)} \leq 1$.
+So $\babs{\sin(x)} \leq 1$ and similarly 
+$\babs{\cos(x)} \leq 1$.
 
 We leave the computation of the derivatives to the reader as exercises.
 Let us prove that $\sin(x) \leq x$ for $x \geq 0$.
@@ -1953,7 +1954,7 @@ f'(x) = \frac{d}{dx} \bigl[ x - \sin(x) \bigr]
 =
 1 -\cos(x) \geq 0 ,
 \end{equation*}
-for all $x \in \R$ as $\sabs{\cos(x)} \leq 1$.
+for all $x \in \R$ as $\babs{\cos(x)} \leq 1$.
 In other words, $f$ is increasing and $f(0) = 0$.
 So $f$ must be nonnegative when $x \geq 0$ and hence, $\sin(x) \leq x$.
 
@@ -2054,7 +2055,7 @@ as exercise).
 The arclength of a curve parametrized by $\gamma \colon [a,b] \to \C$ is given
 by
 \begin{equation*}
-\int_a^b \sabs{\gamma^{\:\prime}(t)} \, dt .
+\int_a^b \babs{\gamma^{\:\prime}(t)} \, dt .
 \end{equation*}
 We have that $e^{it}$ parametrizes the circle for $t$ in $[0,2\pi)$.
 As $\frac{d}{dt} \bigl( e^{it} \bigr) = ie^{it}$, the circumference of the
@@ -2230,7 +2231,7 @@ Let $\epsilon > 0$,
 let $p(z)$ be a nonconstant complex polynomial, or more generally
 a nonconstant power series converging in $B(z_0,\epsilon)$,
 and suppose $p(z_0) \not= 0$.
-Then there exists a $w \in B(z_0,\epsilon)$ such that $\sabs{p(w)} < \sabs{p(z_0)}$.
+Then there exists a $w \in B(z_0,\epsilon)$ such that $\babs{p(w)} < \babs{p(z_0)}$.
 \end{lemma}
 
 \begin{proof}
@@ -2252,7 +2253,7 @@ So
 \begin{equation*}
 \begin{split}
 %mbxlatex &
-\abs{
+\babs{
 p(r e^{it}) } - \abs{
 r^{k+1}a_{k+1}e^{i(k+1)t} + \cdots + r^{d}a_{d}e^{idt}
 }
@@ -2260,7 +2261,7 @@ r^{k+1}a_{k+1}e^{i(k+1)t} + \cdots + r^{d}a_{d}e^{idt}
 &
 %mbxlatex \qquad \qquad \qquad \qquad
 \leq
-\abs{
+\babs{
 p(r e^{it}) 
 - r^{k+1}a_{k+1}e^{i(k+1)t} - \cdots - r^{d}a_{d}e^{idt}
 }
@@ -2268,7 +2269,7 @@ p(r e^{it})
 &
 %mbxlatex \qquad \qquad \qquad \qquad
 =
-\abs{
+\babs{
 1-r^k \sabs{a_k}
 }
 =
@@ -2277,7 +2278,7 @@ p(r e^{it})
 \end{equation*}
 In other words,
 \begin{equation*}
-\abs{
+\babs{
 p(r e^{it}) }
 \leq
 1-r^k \left( \sabs{a_k}
@@ -2289,7 +2290,7 @@ a_{k+1}e^{i(k+1)t} + \cdots + r^{d-k-1}a_{d}e^{idt}
 \right) .
 \end{equation*}
 For small enough $r$, the expression in the parentheses is positive
-as $\sabs{a_k} > 0$.  Hence, $\abs{p(re^{it})} < 1 = p(0)$.
+as $\sabs{a_k} > 0$.  Hence, $\babs{p(re^{it})} < 1 = p(0)$.
 \end{proof}
 
 What the lemma
@@ -2305,7 +2306,7 @@ just the \emph{maximum principle}.
 \index{maximum principle!analytic functions}%
 \label{thm:maxprinciple}
 If $U \subset \C$ is open and connected,
-$f \colon U \to \C$ is analytic, and $\sabs{f(z)}$ attains a relative
+$f \colon U \to \C$ is analytic, and $\babs{f(z)}$ attains a relative
 maximum at $z_0 \in U$, then $f$ is constant.
 \end{thm}
 
@@ -2328,7 +2329,7 @@ at infinity.
 \begin{lemma}
 Let $p(z)$ be a nonconstant complex polynomial.  Then for an $M > 0$, there exists
 an $R > 0$ such that
-$\sabs{p(z)} \geq M$ whenever $\sabs{z} \geq R$.
+$\babs{p(z)} \geq M$ whenever $\sabs{z} \geq R$.
 \end{lemma}
 
 \begin{proof}
@@ -2338,7 +2339,7 @@ Suppose $\sabs{z} \geq R$ (so also $\sabs{z}^{-1} \leq R^{-1}$).
 We estimate:
 \begin{equation*}
 \begin{split}
-\sabs{p(z)}
+\babs{p(z)}
 & \geq
 \sabs{a_d z^d} -
 \sabs{a_0} - \sabs{a_1 z} - \cdots - \sabs{a_{d-1} z^{d-1} }
@@ -2361,7 +2362,7 @@ $R$.  In particular, for large enough $R$ we get that this expression
 is greater than
 $\frac{\sabs{a_d}}{2}$, and so
 \begin{equation*}
-\sabs{p(z)}
+\babs{p(z)}
 \geq
 R^d \frac{\sabs{a_d}}{2} .
 \end{equation*}
@@ -2389,15 +2390,15 @@ such that $p(z_0) = 0$.
 \end{thm}
 
 \begin{proof}
-Let $\mu \coloneqq \inf \bigl\{ \sabs{p(z)} : z \in \C \bigr\}$.  Find an $R$ such that
-for all $z$ with $\sabs{z} \geq R$, we have $\sabs{p(z)} \geq \mu+1$.
-Therefore, every $z$ with $\sabs{p(z)}$ close to $\mu$ must be in the
-closed ball $C(0,R) = \bigl\{ z \in \C : \sabs{z} \leq R \bigr\}$.  As $\sabs{p(z)}$
+Let $\mu \coloneqq \inf \bigl\{ \babs{p(z)} : z \in \C \bigr\}$.  Find an $R$ such that
+for all $z$ with $\sabs{z} \geq R$, we have $\babs{p(z)} \geq \mu+1$.
+Therefore, every $z$ with $\babs{p(z)}$ close to $\mu$ must be in the
+closed ball $C(0,R) = \bigl\{ z \in \C : \sabs{z} \leq R \bigr\}$.  As $\babs{p(z)}$
 is a continuous real-valued function, it achieves its minimum
 on the compact set $C(0,R)$ (closed and bounded) and this minimum must
-be $\mu$.  So there is a $z_0 \in C(0,R)$ such that $\sabs{p(z_0)} = \mu$.
-As that is a minimum of $\sabs{p(z)}$ on $\C$, then by the first lemma
-above, we have $\sabs{p(z_0)} = 0$.
+be $\mu$.  So there is a $z_0 \in C(0,R)$ such that $\babs{p(z_0)} = \mu$.
+As that is a minimum of $\babs{p(z)}$ on $\C$, then by the first lemma
+above, we have $\babs{p(z_0)} = 0$.
 \end{proof}
 
 The fundamental theorem also does not generalize to analytic functions.  The
@@ -2441,13 +2442,13 @@ An isolated singularity is called
 \emph{removable}\index{removable singularity}
 if $\lim_{z \mapsto z_0} f(z)$ exists.
 An isolated singularity is called a \emph{\myindex{pole}} if 
-$\lim_{z \mapsto z_0} \sabs{f(z)} = \infty$.
+$\lim_{z \mapsto z_0} \babs{f(z)} = \infty$.
 We say $f$ has pole at $\infty$ if
 \begin{equation*}
-\lim_{z \to \infty} \sabs{f(z)} = \infty ,
+\lim_{z \to \infty} \babs{f(z)} = \infty ,
 \end{equation*}
 that is, if for every $M > 0$ there exists an $R > 0$ such that
-$\sabs{f(z)} > M$ for all $z$ with $\sabs{z} > R$.
+$\babs{f(z)} > M$ for all $z$ with $\sabs{z} > R$.
 \end{exnote}
 
 \begin{exercise}
@@ -2512,14 +2513,14 @@ $\{ f_n \}_{n=1}^\infty$
 is \emph{\myindex{pointwise bounded}} if for every $x \in X$, there is an $M_x \in \R$
 such that
 \begin{equation*}
-\sabs{f_n(x)} \leq M_x \qquad \text{for all } n \in \N .
+\babs{f_n(x)} \leq M_x \qquad \text{for all } n \in \N .
 \end{equation*}
 We say that
 $\{ f_n \}_{n=1}^\infty$
 is \emph{\myindex{uniformly bounded}} if there is an $M \in \R$
 such that
 \begin{equation*}
-\sabs{f_n(x)} \leq M \qquad \text{for all } n \in \N \text{ and all } x \in X.
+\babs{f_n(x)} \leq M \qquad \text{for all } n \in \N \text{ and all } x \in X.
 \end{equation*}
 \end{defn}
 
@@ -2622,7 +2623,7 @@ $f \colon X \to \C$ is
 if for every $\epsilon > 0$, there is a $\delta > 0$
 such that if $x,y \in X$ with $d(x,y) < \delta$, we have
 \begin{equation*}
-\sabs{f(x)-f(y)} < \epsilon \qquad \text{for all } f \in S .
+\babs{f(x)-f(y)} < \epsilon \qquad \text{for all } f \in S .
 \end{equation*}
 \end{defn}
 
@@ -2636,7 +2637,7 @@ Just as for continuity, one can define equicontinuity at a point.
 That is, $S$ is \emph{\myindex{equicontinuous}} at $x \in X$
 if for every $\epsilon > 0$, there is a $\delta > 0$
 such that for $y \in X$ with $d(x,y) < \delta$, we have
-$\sabs{f(x)-f(y)} < \epsilon$ for all $f \in S$.
+$\babs{f(x)-f(y)} < \epsilon$ for all $f \in S$.
 We will only deal with compact $X$ here, and
 one can prove (exercise) that for a compact metric space $X$,
 if $S$ is equicontinuous at every $x \in X$,
@@ -2654,28 +2655,28 @@ Let $\epsilon > 0$ be given.
 As $\{ f_n \}_{n=1}^\infty$ converges uniformly, there is an $N \in \N$ such that for
 all $n \geq N$
 \begin{equation*}
-\sabs{f_n(x)-f_N(x)} < \nicefrac{\epsilon}{3} \qquad \text{for all } x \in X.
+\babs{f_n(x)-f_N(x)} < \nicefrac{\epsilon}{3} \qquad \text{for all } x \in X.
 \end{equation*}
 As $X$ is compact, every continuous function is uniformly continuous.
 So $\{ f_1,f_2,\ldots,f_N \}$ is a finite set of uniformly continuous
 functions.  And so, as we mentioned above, the set is uniformly equicontinuous.
 Hence there is a $\delta > 0$ such that
 \begin{equation*}
-\sabs{f_j(x)-f_j(y)} < \nicefrac{\epsilon}{3} < \epsilon
+\babs{f_j(x)-f_j(y)} < \nicefrac{\epsilon}{3} < \epsilon
 \end{equation*}
 whenever $d(x,y) < \delta$ and $1 \leq j \leq N$.
 
 Take $n > N$.  For $d(x,y) < \delta$, we have
 \begin{equation*}
 %mbxlatex \begin{aligned}
-\sabs{f_n(x)-f_n(y)}
+\babs{f_n(x)-f_n(y)}
 %mbxlatex &
 \leq
-\sabs{f_n(x)-f_N(x)}
+\babs{f_n(x)-f_N(x)}
 +
-\sabs{f_N(x)-f_N(y)}
+\babs{f_N(x)-f_N(y)}
 +
-\sabs{f_N(y)-f_n(y)}
+\babs{f_N(y)-f_n(y)}
 %mbxlatex \\
 %mbxlatex &
 <
@@ -2756,18 +2757,18 @@ X = \bigcup_{j=1}^k B(x_j,\delta) .
 As $\{ f_n \}_{n=1}^\infty$ is pointwise bounded there exist $M_1,M_2,\ldots,M_k$
 such that for $j=1,2,\ldots,k$,
 \begin{equation*}
-\sabs{f_n(x_j)} \leq M_j \qquad \text{for all } n.
+\babs{f_n(x_j)} \leq M_j \qquad \text{for all } n.
 \end{equation*}
 Let $M \coloneqq 1+ \max \{ M_1,M_2,\ldots,M_k \}$.  Given any
 $x \in X$, there is a $j$ such that $x \in B(x_j,\delta)$.  Therefore,
 for all $n$, we have
 $x \in f_n^{-1}\bigl(B(f_n(x_j),1)\bigr)$, or in other words
 \begin{equation*}
-\sabs{f_n(x)-f_n(x_j)} < 1 .
+\babs{f_n(x)-f_n(x_j)} < 1 .
 \end{equation*}
 By the reverse triangle inequality,
 \begin{equation*}
-\sabs{f_n(x)} < 1+ \sabs{f_n(x_j)} \leq 1+M_j \leq M .
+\babs{f_n(x)} < 1+ \babs{f_n(x_j)} \leq 1+M_j \leq M .
 \end{equation*}
 As $x$ was arbitrary, $\{f_n\}_{n=1}^\infty$ is uniformly bounded.
 
@@ -2795,22 +2796,22 @@ is a finite set and $\{ g_n \}_{n=1}^\infty$
 converges pointwise on $D$, there exists a single $N$ such that for 
 all $n,m \geq N$,
 \begin{equation*}
-\sabs{g_n(x_j)-g_m(x_j)} < \nicefrac{\epsilon}{3}
+\babs{g_n(x_j)-g_m(x_j)} < \nicefrac{\epsilon}{3}
  \qquad \text{for all } j=1,2,\ldots,k.
 \end{equation*}
 
 Let $x \in X$ be arbitrary.  There is some $j$ such that
 $x \in B(x_j,\delta)$ and so for all $\ell \in \N$,
 \begin{equation*}
-\sabs{g_\ell(x)-g_\ell(x_j)} < \nicefrac{\epsilon}{3}.
+\babs{g_\ell(x)-g_\ell(x_j)} < \nicefrac{\epsilon}{3}.
 \end{equation*}
 So for $n,m \geq N$,
 \begin{equation*}
 \begin{split}
-\sabs{g_n(x)-g_m(x)} & \leq
-\sabs{g_n(x)-g_n(x_j)} +
-\sabs{g_n(x_j)-g_m(x_j)} +
-\sabs{g_m(x_j)-g_m(x)}
+\babs{g_n(x)-g_m(x)} & \leq
+\babs{g_n(x)-g_n(x_j)} +
+\babs{g_n(x_j)-g_m(x_j)} +
+\babs{g_m(x_j)-g_m(x)}
 \\
 & <
 \nicefrac{\epsilon}{3} +
@@ -2848,16 +2849,16 @@ subsequence $\{ f_{n_j} \}_{j=1}^\infty$.
 The trick is to use the mean value theorem.  If $M$ is the uniform bound on
 $\{ f_n' \}_{n=1}^\infty$, then by the mean value theorem for every $n$
 \begin{equation*}
-\sabs{f_n(x)-f_n(y)} \leq M \sabs{x-y} \qquad \text{for all } x,y \in X.
+\babs{f_n(x)-f_n(y)} \leq M \sabs{x-y} \qquad \text{for all } x,y \in X.
 \end{equation*}
 All the $f_n$ are Lipschitz with the same constant and hence
 the sequence is
 uniformly equicontinuous.
 
-Suppose $\sabs{f_n(x_0)} \leq M_0$ for all $n$.
+Suppose $\babs{f_n(x_0)} \leq M_0$ for all $n$.
 For all $x \in [a,b]$,
 \begin{equation*}
-\sabs{f_n(x)} \leq \sabs{f_n(x_0)}+ \sabs{f_n(x)-f_n(x_0)} \leq M_0+ M \sabs{x-x_0}
+\babs{f_n(x)} \leq \babs{f_n(x_0)}+ \babs{f_n(x)-f_n(x_0)} \leq M_0+ M \sabs{x-x_0}
 \leq M_0 + M(b-a) .
 \end{equation*}
 So $\{ f_n \}_{n=1}^\infty$ is uniformly bounded.
@@ -2919,12 +2920,12 @@ is not satisfied?  Prove your assertion.
 \begin{exercise}
 Let $(X,d)$ be a compact metric space, $C > 0$, $0 < \alpha \leq 1$, and
 suppose $f_n \colon X \to \C$ are functions such as
-$\abs{f_n(x)-f_n(y)} \leq C {d(x,y)}^\alpha$ for all $x,y \in X$ and
+$\babs{f_n(x)-f_n(y)} \leq C {d(x,y)}^\alpha$ for all $x,y \in X$ and
 $n \in \N$.  Suppose also that there is a point $p \in X$ such that
 $f_n(p) = 0$ for all $n$.
 Show that there exists a uniformly convergent subsequence converging to
 an $f \colon X \to \C$ that also satisfies $f(p) = 0$ and
-$\abs{f(x)-f(y)} \leq C {d(x,y)}^\alpha$.
+$\babs{f(x)-f(y)} \leq C {d(x,y)}^\alpha$.
 \end{exercise}
 
 \begin{exercise}
@@ -3246,9 +3247,9 @@ As $[-1,2]$ is compact and $g$ is continuous on $[-1,2]$, we have that $g$ is un
 Pick $0 < \delta < 1$ such that if
 $\sabs{x-y} < \delta$ (and $x,y \in [-1,2]$), then
 \begin{equation*}
-\sabs{g(x)-g(y)} < \frac{\epsilon}{2} .
+\babs{g(x)-g(y)} < \frac{\epsilon}{2} .
 \end{equation*}
-Let $M$ be such that $\sabs{g(x)} \leq M$ for all $x$.  Let $N$ be
+Let $M$ be such that $\babs{g(x)} \leq M$ for all $x$.  Let $N$ be
 such that for all $n \geq N$,
 \begin{equation*}
 4M n{(1-\delta^2)}^n < \frac{\epsilon}{2} .
@@ -3257,22 +3258,22 @@ Note that
 $\int_{-1}^1 q_n(t) \, dt = 1$ and $q_n(t) \geq 0$ on $[-1,1]$.  So for $n
 \geq N$ and every $x \in [0,1]$,
 \begin{align*}
-\sabs{p_n(x)-g(x)} & =
+\babs{p_n(x)-g(x)} & =
 \abs{\int_{-1}^1 g(x+t)q_n(t) \, dt
 -g(x)\int_{-1}^1 q_n(t) \, dt} \\
 & =
 \abs{\int_{-1}^1 \bigl(g(x+t)-g(x)\bigr)q_n(t) \, dt}
 \displaybreak[0]\\
 & \leq
-\int_{-1}^1 \sabs{g(x+t)-g(x)} q_n(t) \, dt
+\int_{-1}^1 \babs{g(x+t)-g(x)} q_n(t) \, dt
 \displaybreak[0]\\
 & =
-\int_{-1}^{-\delta} \sabs{g(x+t)-g(x)} q_n(t) \, dt
+\int_{-1}^{-\delta} \babs{g(x+t)-g(x)} q_n(t) \, dt
 \quad +
-\int_{-\delta}^{\delta} \sabs{g(x+t)-g(x)} q_n(t) \, dt
+\int_{-\delta}^{\delta} \babs{g(x+t)-g(x)} q_n(t) \, dt
 \\
 & \phantom{\leq} +
-\int_{\delta}^1 \sabs{g(x+t)-g(x)} q_n(t) \, dt
+\int_{\delta}^1 \babs{g(x+t)-g(x)} q_n(t) \, dt
 \displaybreak[0]\\
 & \leq
 2M
@@ -3344,7 +3345,7 @@ q(x) \coloneqq \sum_{k=0}^n b_k \, x^k ,
 \end{equation*}
 we have
 \begin{equation*}
-\sabs{p(x)-q(x)}
+\babs{p(x)-q(x)}
 =
 \abs{\sum_{k=0}^n (a_k-b_k) x^k}
 \leq
@@ -3418,14 +3419,14 @@ for $n \geq N$, we have
 $\bigl\lvert\widetilde{p}_n(x)-\sabs{x}\big\rvert <
 \nicefrac{\epsilon}{2}$ for all $x \in [-a,a]$.
 In particular,
-$\sabs{\widetilde{p}_n(0)} < \nicefrac{\epsilon}{2}$.
+$\babs{\widetilde{p}_n(0)} < \nicefrac{\epsilon}{2}$.
 Then for $n \geq N$,
 \begin{equation*}
-\bigl\lvert p_n(x)-\sabs{x} \bigr\rvert
+\babs{ p_n(x)-\sabs{x} }
 =
-\bigl\lvert \widetilde{p}_n(x) - \widetilde{p}_n(0) - \sabs{x} \bigr\rvert
+\babs{ \widetilde{p}_n(x) - \widetilde{p}_n(0) - \sabs{x} }
 \leq
-\bigl\lvert \widetilde{p}_n(x) - \sabs{x} \bigr\rvert + \sabs{\widetilde{p}_n(0)} < 
+\babs{ \widetilde{p}_n(x) - \sabs{x} } + \babs{\widetilde{p}_n(0)} < 
 \nicefrac{\epsilon}{2} + \nicefrac{\epsilon}{2} = \epsilon . \qedhere
 \end{equation*}
 \end{proof}
@@ -3604,7 +3605,7 @@ The proof is divided into several claims.
 
 \begin{proof}
 The function $f$ is bounded (continuous on a compact set), so there is an $M$
-such that $\sabs{f(x)} \leq M$ for all $x \in X$.
+such that $\babs{f(x)} \leq M$ for all $x \in X$.
 Let $\epsilon > 0$ be given.  By the corollary to the Weierstrass theorem,
 there exists a real polynomial $c_1 y + c_2 y^2 + \cdots+ c_n y^n$
 (vanishing at $y=0$) such that
@@ -3617,9 +3618,9 @@ polynomial,
 \begin{equation*}
 \sum_{k=1}^n c_k f^k \in \widebar{\sA} .
 \end{equation*}
-As $\sabs{f(x)} \leq M$, then  for all $x \in X$
+As $\babs{f(x)} \leq M$, then  for all $x \in X$
 \begin{equation*}
-\abs{\sabs{f(x)} - \sum_{k=1}^n c_k {\bigl(f(x)\bigr)}^k}
+\abs{\babs{f(x)} - \sum_{k=1}^n c_k {\bigl(f(x)\bigr)}^k}
 < \epsilon .
 \end{equation*}
 So $\sabs{f}$ is in the closure of $\widebar{\sA}$, which is itself closed.
@@ -3723,7 +3724,7 @@ a function that is within $\epsilon$ from both sides.
 \textbf{Claim 4:} \emph{If $f \in C(X,\R)$ and $\epsilon > 0$ is given, then there
 exists an $\varphi \in \widebar{\sA}$ such that}
 \begin{equation*}
-\sabs{f(x) - \varphi(x)} < \epsilon .
+\babs{f(x) - \varphi(x)} < \epsilon .
 \end{equation*}
 
 \begin{proof}
@@ -3850,14 +3851,14 @@ The set $\sA_\R$ is a real algebra, and satisfies the hypotheses of the
 \hyperref[thm:SWreal]{real Stone--Weierstrass theorem}.
 Given any $f = u+iv \in C(X,\C)$,
 we find $g,h \in \sA_\R$ such that
-$\sabs{u(t)-g(t)} < \nicefrac{\epsilon}{2}$ and
-$\sabs{v(t)-h(t)} < \nicefrac{\epsilon}{2}$ for all $t \in X$.
+$\babs{u(t)-g(t)} < \nicefrac{\epsilon}{2}$ and
+$\babs{v(t)-h(t)} < \nicefrac{\epsilon}{2}$ for all $t \in X$.
 Next, $g+i h \in \sA$, and
 \begin{multline*}
 \abs{f(t) - \bigl(g(t)+ih(t)\bigr)} = 
 \abs{u(t)+iv(t) - \bigl(g(t)+ih(t)\bigr)} \\
 \leq
-\sabs{u(t)-g(t)}+\sabs{v(t)-h(t)} < \nicefrac{\epsilon}{2} +
+\babs{u(t)-g(t)}+\babs{v(t)-h(t)} < \nicefrac{\epsilon}{2} +
 \nicefrac{\epsilon}{2} = \epsilon
 \end{multline*}
 for all $t \in X$.
@@ -4520,7 +4521,7 @@ is, the $L^2$ norm $\snorm{f}_2$, by (defining the square)
 \begin{equation*}
 \snorm{f}_2^2 \coloneqq
 \langle f , f \rangle =
-\int_a^b \sabs{f(x)}^2 \, dx .
+\int_a^b \babs{f(x)}^2 \, dx .
 \end{equation*}
 
 \begin{remark}
@@ -4611,7 +4612,7 @@ p_k (x) \coloneqq \sum_{n=1}^k d_n \varphi_n(x)
 \end{equation*}
 for some other sequence $\{ d_n \}_{n=1}^\infty$, then
 \begin{equation*}
-\int_a^b \sabs{f(x)-s_k(x)}^2 \, dx = \snorm{f-s_k}_2^2 \leq
+\int_a^b \babs{f(x)-s_k(x)}^2 \, dx = \snorm{f-s_k}_2^2 \leq
 \snorm{f-p_k}_2^2 = \int_a^b \sabs{f(x)-p_k(x)}^2 \, dx
 \end{equation*}
 with equality only if $d_n = c_n$ for all $n=1,2,\ldots,k$.
@@ -4774,11 +4775,11 @@ $s_N(f;x) \coloneqq
 The inequality leading up to Bessel now reads:
 \begin{equation*}
 \frac{1}{2\pi} \int_{-\pi}^\pi
-\sabs{s_N(f;x)}^2 \, dx =
+\babs{s_N(f;x)}^2 \, dx =
 \sum_{n=-N}^N \sabs{c_n}^2
 \leq
 \frac{1}{2\pi} \int_{-\pi}^\pi
-\sabs{f(x)}^2
+\babs{f(x)}^2
 \, dx .
 \end{equation*}
 
@@ -4867,7 +4868,7 @@ Let $x$ be fixed and let $f$ be a $2\pi$-periodic function
 Riemann integrable on $[-\pi,\pi]$.  Suppose
 there exist $\delta > 0$ and $M$ such that
 \begin{equation*}
-\sabs{f(x+t)-f(x)} \leq M \sabs{t}
+\babs{f(x+t)-f(x)} \leq M \sabs{t}
 \end{equation*}
 for all $t \in (-\delta,\delta)$, then
 \begin{equation*}
@@ -4927,7 +4928,7 @@ for small nonzero $t$,
 \begin{equation*}
 \abs{ \frac{f(x-t) - f(x)}{\sin(\nicefrac{t}{2})} }
 \leq
-\frac{M\sabs{t}}{\sabs{\sin(\nicefrac{t}{2})}} .
+\frac{M\sabs{t}}{\babs{\sin(\nicefrac{t}{2})}} .
 \end{equation*}
 As $\sin(\theta) = \theta + h(\theta)$ where $\frac{h(\theta)}{\theta} \to
 0$ as $\theta \to 0$,
@@ -5032,11 +5033,11 @@ g(x) \sim
 \end{equation*}
 Then
 \begin{equation*}
-\lim_{N\to\infty} \snorm{f-s_N(f)}_2^2 = 
+\lim_{N\to\infty} \bnorm{f-s_N(f)}_2^2 = 
 \lim_{N\to\infty}
 \frac{1}{2\pi}
 \int_{-\pi}^\pi
-\sabs{f(x)-s_N(f;x)}^2 \, dx
+\babs{f(x)-s_N(f;x)}^2 \, dx
 =0 .
 \end{equation*}
 Also
@@ -5054,7 +5055,7 @@ and
 =
 \frac{1}{2\pi}
 \int_{-\pi}^\pi
-\sabs{f(x)}^2 \, dx
+\babs{f(x)}^2 \, dx
 =
 \sum_{n=-\infty}^\infty \sabs{c_n}^2.
 \end{equation*}
@@ -5071,7 +5072,7 @@ Via \hyperref[thm:SWcomplex]{Stone--Weierstrass},
 approximate $h$ with a trigonometric polynomial
 uniformly.  That is, there is a trigonometric polynomial $P(x)$
 such that
-$\sabs{h(x) - P(x)} < \epsilon$ for all $x$.
+$\babs{h(x) - P(x)} < \epsilon$ for all $x$.
 Hence
 \begin{equation*}
 \snorm{h-P}_2
@@ -5079,7 +5080,7 @@ Hence
 \sqrt{
 \frac{1}{2\pi}
 \int_{-\pi}^{\pi}
-\sabs{h(x)-P(x)}^2
+\babs{h(x)-P(x)}^2
 \,
 dx
 }
@@ -5087,27 +5088,27 @@ dx
 \end{equation*}
 If $P$ is of degree $N_0$, then for all $N \geq N_0$ ,
 \begin{equation*}
-\snorm{h-s_N(h)}_2 \leq \snorm{h-P}_2 \leq \epsilon ,
+\bnorm{h-s_N(h)}_2 \leq \snorm{h-P}_2 \leq \epsilon ,
 \end{equation*}
 as $s_N(h)$ is the best approximation for $h$ in $L^2$ (\thmref{thm:l2bestapprox}).
 By the inequality leading up to Bessel,
 \begin{equation*}
-\snorm{s_N(h)-s_N(f)}_2
+\bnorm{s_N(h)-s_N(f)}_2
 =
-\snorm{s_N(h-f)}_2
+\bnorm{s_N(h-f)}_2
 \leq
 \snorm{h-f}_2 \leq \epsilon .
 \end{equation*}
 The $L^2$ norm satisfies the triangle inequality (exercise).
 Thus, for all $N \geq N_0$,
 \begin{equation*}
-\snorm{f-s_N(f)}_2
+\bnorm{f-s_N(f)}_2
 \leq
 \snorm{f-h}_2
 +
-\snorm{h-s_N(h)}_2
+\bnorm{h-s_N(h)}_2
 +
-\snorm{s_N(h)-s_N(f)}_2
+\bnorm{s_N(h)-s_N(f)}_2
 \leq 3\epsilon .
 \end{equation*}
 Hence, the first claim follows.
@@ -5146,11 +5147,11 @@ So
 \begin{split}
 \abs{\int_{-\pi}^\pi f\bar{g} - \int_{-\pi}^\pi s_N(f)\bar{g}}
 & =
-\abs{\int_{-\pi}^\pi (f- s_N(f))\bar{g}} \\
+\abs{\int_{-\pi}^\pi \bigl(f- s_N(f)\bigr)\bar{g}} \\
 %& \leq
 %\int_{-\pi}^\pi \sabs{f- s_N(f)}\, \sabs{g} \\
 & \leq
-{\left(\int_{-\pi}^\pi \sabs{f- s_N(f)}^2 \right)}^{1/2}
+{\left(\int_{-\pi}^\pi \babs{f- s_N(f)}^2 \right)}^{1/2}
 {\left( \int_{-\pi}^\pi \sabs{g}^2 \right)}^{1/2} .
 \end{split}
 \end{equation*}
@@ -5232,7 +5233,7 @@ for Riemann integrable functions on $[-\pi,\pi]$:
 \pagebreak[3]
 Suppose for some $C$ and $\alpha > 1$, we have
 a real sequence $\{ a_n \}_{n=1}^\infty$ with
-$\abs{a_n} \leq \frac{C}{n^\alpha}$ for all $n$.
+$\sabs{a_n} \leq \frac{C}{n^\alpha}$ for all $n$.
 Let
 \begin{equation*}
 g(x) \coloneqq \sum_{n=1}^\infty a_n \sin(n x) .

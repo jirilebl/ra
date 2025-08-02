@@ -130,15 +130,15 @@ f'(c) =
 \end{example}
 
 \begin{example}
-The function $f(x) \coloneqq \abs{x}$ is not differentiable
+The function $f(x) \coloneqq \sabs{x}$ is not differentiable
 at the origin.  When $x > 0$,
 \begin{equation*}
-\frac{\abs{x}-\abs{0}}{x-0} =
+\frac{\sabs{x}-\sabs{0}}{x-0} =
 \frac{x-0}{x-0} = 1 .
 \end{equation*}
 When $x < 0$,
 \begin{equation*}
-\frac{\abs{x}-\abs{0}}{x-0} =
+\frac{\sabs{x}-\sabs{0}}{x-0} =
 \frac{-x-0}{x-0} = -1 .
 \end{equation*}
 \end{example}
@@ -413,7 +413,7 @@ except $0$.
 \end{exercise}
 
 \begin{exercise}
-Assume the inequality $\abs{x-\sin(x)} \leq x^2$.  Prove that $\sin$ is
+Assume the inequality $\babs{x-\sin(x)} \leq x^2$.  Prove that $\sin$ is
 differentiable at $0$, and find the derivative at $0$.
 \end{exercise}
 
@@ -479,12 +479,12 @@ that $g(x) \coloneqq {\bigl( f(x) \bigr)}^2$ is not differentiable at the origin
 Suppose $f \colon I \to \R$ is differentiable at $c \in I$.
 Prove that there exist numbers $a$ and $b$ with the property that
 for every $\epsilon > 0$, there is a $\delta > 0$, such that
-$\abs{a+b(x-c) - f(x)} \leq \epsilon \abs{x-c}$, whenever $x \in I$ and
-$\abs{x-c} < \delta$.
+$\babs{a+b(x-c) - f(x)} \leq \epsilon \sabs{x-c}$, whenever $x \in I$ and
+$\sabs{x-c} < \delta$.
 In other words, show that
 there exists a function $g \colon I \to \R$
 such that $\lim_{x\to c} g(x) = 0$ and
-$\abs{a+b(x-c) - f(x)} = g(x) \abs{x-c}$.
+$\babs{a+b(x-c) - f(x)} = g(x) \sabs{x-c}$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:simpleLHopital}
@@ -536,7 +536,7 @@ Let $S \subset \R$ be a set and
 let $f \colon S \to \R$ be a function.  The function $f$ is said to have
 a \emph{\myindex{relative maximum}}\index{maximum!relative}
 at $c \in S$ if there exists a $\delta>0$
-such that for all $x \in S$ where $\abs{x-c} < \delta$,
+such that for all $x \in S$ where $\sabs{x-c} < \delta$,
 we have $f(x) \leq f(c)$.
 The definition of
 \emph{\myindex{relative minimum}}\index{minimum!relative}
@@ -554,7 +554,7 @@ $f'(c) = 0$.
 Suppose $c$ is a 
 relative maximum of $f$.  That is, there is a $\delta > 0$ such
 that for every $x \in (a,b)$ where
-$\abs{x-c} < \delta$, we have $f(x)-f(c) \leq 0$.
+$\sabs{x-c} < \delta$, we have $f(x)-f(c) \leq 0$.
 Consider the difference
 quotient.  If $c < x < c+\delta$, then
 \begin{equation*}
@@ -645,7 +645,7 @@ $f'(x) = 0$ for all $x \in [a,b]$, so any $c \in (a,b)$ works.
 \end{proof}
 
 It is absolutely necessary that the derivative exists for all $x
-\in (a,b)$.  Consider the function $f(x) \coloneqq \abs{x}$ on $[-1,1]$.
+\in (a,b)$.  Consider the function $f(x) \coloneqq \sabs{x}$ on $[-1,1]$.
 Clearly $f(-1) = f(1)$, but there is no point $c$ where $f'(c) = 0$.
 
 \subsection{Mean value theorem}
@@ -708,7 +708,11 @@ $f(b)-f(a) = f'(c)(b-a)$.
 
 The proof generalizes.  By considering
 $g(x) \coloneqq
-f(x)-f(b)-\frac{f(b)-f(a)}{\varphi(b)-\varphi(a)}\bigl(\varphi(x)-\varphi(b)\bigr)$,
+\bigl(f(x)-f(b)\bigr)
+\bigl(\varphi(b)-\varphi(a)\bigr)
+-
+\bigl(f(b)-f(a)\bigr)
+\bigl(\varphi(x)-\varphi(b)\bigr)$,
 one can prove the following version.  We leave the proof as an exercise.
 
 \begin{thm}[Cauchy's mean value theorem] \label{thm:cauchymvt}
@@ -1006,15 +1010,15 @@ For $x \not= 0$,
 =
 \abs{\frac{x^2 \sin^2(\nicefrac{1}{x})}{x}}
 =
-\abs{x \sin^2(\nicefrac{1}{x})}
+\babs{x \sin^2(\nicefrac{1}{x})}
 \leq
-\abs{x} .
+\sabs{x} .
 \end{equation*}
-And, of course, as $x$ tends to zero, $\abs{x}$ tends to zero, and hence
+And, of course, as $x$ tends to zero, $\sabs{x}$ tends to zero, and hence
 $\abs{\frac{f(x)-f(0)}{x-0} - 0}$ goes to zero.  Therefore, $f$
 is differentiable at 0 and the derivative at 0 is 0.
 A key point in the calculation above
-is that $\abs{f(x)} \leq x^2$,
+is that $\babs{f(x)} \leq x^2$,
 see also Exercises \ref{exercise:bndmuldiff} and
 \ref{exercise:diffsqueeze}.
 \end{example}
@@ -1056,7 +1060,7 @@ Do note this does \emph{not} imply that $f'$ is continuous (why?).
 
 \begin{exercise}
 Suppose $f \colon \R \to \R$ is a function such that
-$\abs{f(x)-f(y)} \leq \abs{x-y}^2$ for all $x$ and $y$.  Show that
+$\babs{f(x)-f(y)} \leq \sabs{x-y}^2$ for all $x$ and $y$.  Show that
 $f(x) = C$ for some constant $C$.  Hint: Show that $f$ is differentiable
 at all points and compute the derivative.
 \end{exercise}
@@ -1435,7 +1439,7 @@ the $d$th Taylor polynomial for $p$ at $x_0$ is equal to $p$.
 \end{exercise}
 
 \begin{exercise}
-Let $f(x) \coloneqq \abs{x}^3$.  Compute $f'(x)$ and $f''(x)$ for all $x$,
+Let $f(x) \coloneqq \sabs{x}^3$.  Compute $f'(x)$ and $f''(x)$ for all $x$,
 but show that $f^{(3)}(0)$ does not exist.
 \end{exercise}
 

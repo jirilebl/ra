@@ -1109,7 +1109,7 @@ You want to think of the absolute value as the \myquote{size} of a real number.
 Here is the formal definition:
 \glsadd{not:abs}
 \begin{equation*}
-\abs{x} \coloneqq
+\sabs{x} \coloneqq
 \begin{cases}
 x & \text{if } x \geq 0, \\
 -x & \text{if } x < 0 .
@@ -1121,67 +1121,67 @@ value as a proposition.
 \begin{prop} \label{prop:absbas}
 \leavevmode
 \begin{enumerate}[(i)]
-\item \label{prop:absbas:i} $\abs{x} \geq 0$, moreover, $\abs{x}=0$ if and only if $x = 0$.
-\item \label{prop:absbas:ii} $\abs{-x} = \abs{x}$ for all $x \in \R$.
-\item \label{prop:absbas:iii} $\abs{xy} = \abs{x}\abs{y}$ for all $x,y \in \R$.
-\item \label{prop:absbas:iv} $\abs{x}^2 = x^2$ for all $x \in \R$.
-\item \label{prop:absbas:v} $\abs{x} \leq y$ if and only if $-y \leq x \leq y$.
-\item \label{prop:absbas:vi} $-\abs{x} \leq x \leq \abs{x}$ for all $x \in \R$.
+\item \label{prop:absbas:i} $\sabs{x} \geq 0$, moreover, $\sabs{x}=0$ if and only if $x = 0$.
+\item \label{prop:absbas:ii} $\sabs{-x} = \sabs{x}$ for all $x \in \R$.
+\item \label{prop:absbas:iii} $\sabs{xy} = \sabs{x}\sabs{y}$ for all $x,y \in \R$.
+\item \label{prop:absbas:iv} $\sabs{x}^2 = x^2$ for all $x \in \R$.
+\item \label{prop:absbas:v} $\sabs{x} \leq y$ if and only if $-y \leq x \leq y$.
+\item \label{prop:absbas:vi} $-\sabs{x} \leq x \leq \sabs{x}$ for all $x \in \R$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
 \ref{prop:absbas:i}:
 First suppose $x \geq 0$.
-Then $\abs{x} = x \geq 0$.  Also, $\abs{x} = x = 0$ if and only
+Then $\sabs{x} = x \geq 0$.  Also, $\sabs{x} = x = 0$ if and only
 if $x=0$.
-On the other hand, if $x < 0$, then $\abs{x} = -x > 0$, and $\abs{x}$ is never zero.
+On the other hand, if $x < 0$, then $\sabs{x} = -x > 0$, and $\sabs{x}$ is never zero.
 
 \medskip
 
-\ref{prop:absbas:ii}: If $x > 0$, then $-x < 0$ and so $\abs{-x} = -(-x) = x =
-\abs{x}$.  Similarly when $x < 0$, or $x = 0$.
+\ref{prop:absbas:ii}: If $x > 0$, then $-x < 0$ and so $\sabs{-x} = -(-x) = x =
+\sabs{x}$.  Similarly when $x < 0$, or $x = 0$.
 
 \medskip
 
 \ref{prop:absbas:iii}:
 If $x$ or $y$ is zero, then the result is immediate.  When $x$ and
-$y$ are both positive, then $\abs{x}\abs{y} = xy$.  As $xy$ is also
-positive, $xy = \abs{xy}$.
+$y$ are both positive, then $\sabs{x}\sabs{y} = xy$.  As $xy$ is also
+positive, $xy = \sabs{xy}$.
 If $x$ and $y$ are both negative,
-then $xy=(-x)(-y)$ is still positive and $\abs{xy}=xy$.  Also,
-$\abs{x}\abs{y} = (-x)(-y) = xy$.
-If $x > 0$ and $y < 0$, then $\abs{x}\abs{y} = x(-y) = -(xy)$.  Now
-$xy$ is negative and $\abs{xy} = -(xy)$.  Similarly when
+then $xy=(-x)(-y)$ is still positive and $\sabs{xy}=xy$.  Also,
+$\sabs{x}\sabs{y} = (-x)(-y) = xy$.
+If $x > 0$ and $y < 0$, then $\sabs{x}\sabs{y} = x(-y) = -(xy)$.  Now
+$xy$ is negative and $\sabs{xy} = -(xy)$.  Similarly when
 $x < 0$ and $y > 0$.
 
 \medskip
 
 \ref{prop:absbas:iv}:
-Immediate if $x \geq 0$.  If $x < 0$, then $\abs{x}^2 = {(-x)}^2 =
+Immediate if $x \geq 0$.  If $x < 0$, then $\sabs{x}^2 = {(-x)}^2 =
 x^2$.
 
 \medskip
 
 \ref{prop:absbas:v}:
-Suppose $\abs{x} \leq y$.
+Suppose $\sabs{x} \leq y$.
 If $x \geq 0$, then $x \leq y$.
 It follows that $y \geq 0$, leading to $-y \leq 0 \leq x$.
 So $-y \leq x \leq y$ holds.
-If $x < 0$, then $\abs{x} \leq y$ means $-x \leq y$.
+If $x < 0$, then $\sabs{x} \leq y$ means $-x \leq y$.
 Negating both sides we get $x \geq -y$.
 Again $y \geq 0$ and so $y \geq 0 > x$.
 Hence, $-y \leq x \leq y$.
 
 On the other hand, suppose $-y \leq x \leq y$ is true.
-If $x \geq 0$, then $x \leq y$ is equivalent to $\abs{x} \leq y$.
+If $x \geq 0$, then $x \leq y$ is equivalent to $\sabs{x} \leq y$.
 If $x < 0$, then $-y \leq x$ implies $(-x) \leq y$,
-which is equivalent to $\abs{x} \leq y$.
+which is equivalent to $\sabs{x} \leq y$.
 
 \medskip
 
 \ref{prop:absbas:vi}:
-Apply \ref{prop:absbas:v} with $y = \abs{x}$.
+Apply \ref{prop:absbas:v} with $y = \sabs{x}$.
 \end{proof}
 
 A property used frequently enough to give it a name is the so-called
@@ -1210,8 +1210,8 @@ Let $x,y \in \R$.
 \begin{enumerate}[(i)]
 \item \emph{(\myindex{reverse triangle inequality})}
 ~
-$\bigl\lvert (\abs{x}-\abs{y}) \bigr\rvert \leq \abs{x-y}$.
-\item $\abs{x-y} \leq \abs{x}+\abs{y}$.
+$\babs{ \, \sabs{x}-\sabs{y} \, } \leq \sabs{x-y}$.
+\item $\sabs{x-y} \leq \sabs{x}+\sabs{y}$.
 \end{enumerate}
 \end{cor}
 
@@ -1219,24 +1219,24 @@ $\bigl\lvert (\abs{x}-\abs{y}) \bigr\rvert \leq \abs{x-y}$.
 Let us plug in $x=a-b$ and $y=b$ into the standard
 triangle inequality to obtain
 \begin{equation*}
-\abs{a} = \abs{a-b+b} \leq \abs{a-b} + \abs{b} ,
+\sabs{a} = \sabs{a-b+b} \leq \sabs{a-b} + \sabs{b} ,
 \end{equation*}
-or $\abs{a}-\abs{b} \leq \abs{a-b}$.  Switching the roles of $a$ and $b$
+or $\sabs{a}-\sabs{b} \leq \sabs{a-b}$.  Switching the roles of $a$ and $b$
 we find
-$\abs{b}-\abs{a} \leq \abs{b-a} = \abs{a-b}$.  Applying
+$\sabs{b}-\sabs{a} \leq \sabs{b-a} = \sabs{a-b}$.  Applying
 \propref{prop:absbas}, we obtain the reverse triangle
 inequality.
 
 The second item in the corollary is obtained from the standard
-triangle inequality by just replacing $y$ with $-y$, and noting $\abs{-y} =
-\abs{y}$.
+triangle inequality by just replacing $y$ with $-y$, and noting $\sabs{-y} =
+\sabs{y}$.
 \end{proof}
 
 \begin{cor}
 Let $x_1, x_2, \ldots, x_n \in \R$.  Then
 \begin{equation*}
-\abs{x_1 + x_2 + \cdots + x_n} \leq
-\abs{x_1} + \abs{x_2} + \cdots + \abs{x_n} .
+\sabs{x_1 + x_2 + \cdots + x_n} \leq
+\sabs{x_1} + \sabs{x_2} + \cdots + \sabs{x_n} .
 \end{equation*}
 \end{cor}
 
@@ -1270,8 +1270,8 @@ Using the triangle inequality, write
 \sabs{x}^2+9\sabs{x}+1 .
 \end{equation*}
 The expression
-$\sabs{x}^2+9\sabs{x}+1$ is largest when $\abs{x}$ is largest (why?).  In the interval
-provided, $\abs{x}$ is largest when $x=5$ and so $\abs{x}=5$.  One
+$\sabs{x}^2+9\sabs{x}+1$ is largest when $\sabs{x}$ is largest (why?).  In the interval
+provided, $\sabs{x}$ is largest when $x=5$ and so $\sabs{x}=5$.  One
 possibility for $M$ is
 \begin{equation*}
 M = 5^2+9(5)+1 = 71 .
@@ -1287,7 +1287,7 @@ The last example leads us to the concept of bounded functions.
 Suppose $f \colon D \to \R$ is a function.  We say $f$ is
 \emph{bounded}\index{bounded function}
 if there exists a number $M$
-such that $\abs{f(x)} \leq M$ for all $x \in D$.
+such that $\babs{f(x)} \leq M$ for all $x \in D$.
 \end{defn}
 
 In the example, we proved $x^2-9x+1$ is bounded when considered as a
@@ -1323,7 +1323,7 @@ a little bit of calculus shows
 \begin{prop} \label{prop:funcsupinf}
 If $f \colon D \to \R$ and $g \colon D \to \R$ ($D$ nonempty) are
 bounded\footnote{The boundedness hypothesis is for simplicity,
-it can be dropped if we allow for the extended real numbers.}
+it can be dropped if we use the extended real numbers.}
 functions and
 \begin{equation*}
 f(x) \leq g(x) \qquad \text{for all } x \in D,
@@ -1379,7 +1379,7 @@ The proof as well as a counterexample is left as an exercise
 
 \begin{exercise}
 Show that
-$\abs{x-y} < \epsilon$ if and only if $x-\epsilon < y < x+\epsilon$.
+$\sabs{x-y} < \epsilon$ if and only if $x-\epsilon < y < x+\epsilon$.
 \end{exercise}
 
 \begin{exercise}
@@ -1387,11 +1387,11 @@ Show: \qquad
 %\begin{enumerate}[a)]
 %\item
 a)
-$\max \{x,y\} = \frac{x+y+\abs{x-y}}{2}$
+$\max \{x,y\} = \dfrac{x+y+\sabs{x-y}}{2}$
 %\item
 \qquad
 b)
-$\min \{x,y\} = \frac{x+y-\abs{x-y}}{2}$
+$\min \{x,y\} = \dfrac{x+y-\sabs{x-y}}{2}$
 %\end{enumerate}
 \end{exercise}
 
@@ -1729,8 +1729,8 @@ or $(a,b) \cap (c,d) = \emptyset$.  Prove $S$ is a countable set.
 \begin{exercise}
 Prove that the cardinality of $[0,1]$ is the same as the cardinality of
 $(0,1)$ by showing that
-$\abs{[0,1]} \leq \abs{(0,1)}$ and
-$\abs{(0,1)} \leq \abs{[0,1]}$.
+$\babs{[0,1]} \leq \babs{(0,1)}$ and
+$\babs{(0,1)} \leq \babs{[0,1]}$.
 See \defnref{def:comparecards}.
 This proof requires the Cantor--Bernstein--Schr\"oder theorem, which we
 stated without proof.  Note that this proof does not give you an
@@ -1755,9 +1755,9 @@ roots.
 
 \begin{exercise}[Challenging]
 Let $F$ be the set of all functions $f \colon \R \to \R$.
-Prove $\abs{\R} < \abs{F}$
+Prove $\sabs{\R} < \sabs{F}$
 using Cantor's \thmref{cantorspowersetthm}.\footnote{Interestingly,
-if $C$ is the set of continuous functions, then $\abs{\R} = \abs{C}$.}
+if $C$ is the set of continuous functions, then $\sabs{\R} = \sabs{C}$.}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

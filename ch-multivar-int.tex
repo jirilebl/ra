@@ -620,7 +620,7 @@ The set $R$ is a closed and bounded subset of $\R^n$, and hence compact.  So
 $f$ is uniformly continuous 
 by \volIref{\thmref*{vI-thm:Xcompactfunifcont} from volume I}{\thmref{thm:Xcompactfunifcont}}.
 Let $\epsilon > 0$ be given.  Find a $\delta > 0$ such that
-$\snorm{x-y} < \delta$ implies $\sabs{f(x)-f(y)} < \frac{\epsilon}{V(R)}$.
+$\snorm{x-y} < \delta$ implies $\babs{f(x)-f(y)} < \frac{\epsilon}{V(R)}$.
 
 Let $P$ be a partition of $R$, where the longest side of every subrectangle
 is strictly less than $\frac{\delta}{\sqrt{n}}$.
@@ -628,7 +628,7 @@ If $x, y \in R_k$ for a subrectangle $R_k$ of $P$, then,
 by the proposition,
 $\snorm{x-y} < \sqrt{n} \frac{\delta}{\sqrt{n}} = \delta$.  Therefore,
 \begin{equation*}
-f(x)-f(y) \leq \sabs{f(x)-f(y)} < \frac{\epsilon}{V(R)} .
+f(x)-f(y) \leq \babs{f(x)-f(y)} < \frac{\epsilon}{V(R)} .
 \end{equation*}
 As $f$ is continuous on $R_k$, which is compact, $f$ attains a maximum and a minimum
 on this subrectangle.
@@ -1826,16 +1826,16 @@ continuously differentiable function does to a ball.
 Suppose $U \subset \R^n$ is an open set,
 $B \subset U$ is an open (resp.\ closed) ball of radius at most $r$,
 $f \colon U \to \R^n$ is continuously
-differentiable, and suppose $\snorm{f'(x)} \leq M$ for all $x \in B$.
+differentiable, and suppose $\bnorm{f'(x)} \leq M$ for all $x \in B$.
 Then $f(B) \subset B'$, where $B'$ is an open (resp.\ closed) ball of radius at most $Mr$.
 \end{lemma}
 
 \begin{proof}
 Suppose $B$ is open.
 As the ball $B$ is convex,
-\propref{mv:prop:convexlip} says that $\snorm{f(x)-f(y)} \leq M \snorm{x-y}$ for
+\propref{mv:prop:convexlip} says that $\bnorm{f(x)-f(y)} \leq M \snorm{x-y}$ for
 all $x,y \in B$.
-So if $\snorm{x-y} < r$, then $\snorm{f(x)-f(y)} < Mr$.
+So if $\snorm{x-y} < r$, then $\bnorm{f(x)-f(y)} < Mr$.
 In other words, if
 $B=B(y,r)$, then $f(B) \subset B\bigl(f(y),M r \bigr)$.
 If $B$ is closed, then $\overline{B(y,r)} = B$.
@@ -1861,7 +1861,7 @@ measure zero set, then $f(E)$ is measure zero.
 We prove the proposition for a compact $E$ and leave the general case as
 an exercise.
 Suppose $E$ is compact and of measure zero.
-First, we will replace $U$ by a smaller open set to make $\snorm{f'(x)}$ bounded.
+First, we will replace $U$ by a smaller open set to make $\bnorm{f'(x)}$ bounded.
 At each point $x \in
 E$ pick an open ball $B(x,r_x)$ such that the closed ball $C(x,r_x) \subset
 U$.  By compactness, we only need to take finitely
@@ -1872,10 +1872,10 @@ K \coloneqq \bigcup_{j=1}^q C(x_j,r_{x_j}).
 \end{equation*}
 We have $E \subset U' \subset K \subset U$.  The set $K$, being a finite
 union of compact sets, is compact.
-The function that takes $x$ to $\snorm{f'(x)}$ is continuous, and therefore
-there exists an $M > 0$ such that $\snorm{f'(x)} \leq M$ for all $x \in K$.
+The function that takes $x$ to $\bnorm{f'(x)}$ is continuous, and therefore
+there exists an $M > 0$ such that $\bnorm{f'(x)} \leq M$ for all $x \in K$.
 So without loss of generality, we may replace $U$ by $U'$ and from now on
-suppose that $\snorm{f'(x)} \leq M$ for all $x \in U$.
+suppose that $\bnorm{f'(x)} \leq M$ for all $x \in U$.
 
 At each $x \in E$, take the maximum radius $\delta_x$
 such that $B(x,\delta_x) \subset U$ (we may assume $U \not= \R^n$).
@@ -2164,7 +2164,7 @@ $f \colon D \to \R$ is continuous at $x \in D$ if and only if $o(f,x) = 0$.
 \begin{proof}
 First suppose that $f$ is continuous at $x \in D$.  Given $\epsilon > 0$,
 there exists a $\delta > 0$ such that for $y \in B_D(x,\delta)$,
-we have $\sabs{f(x)-f(y)} < \epsilon$.  Therefore, if $y_1,y_2 \in
+we have $\babs{f(x)-f(y)} < \epsilon$.  Therefore, if $y_1,y_2 \in
 B_D(x,\delta)$, then
 \begin{equation*}
 f(y_1)-f(y_2) =
@@ -2184,7 +2184,7 @@ On the other hand, suppose $o(x,f) = 0$.  Given $\epsilon > 0$,
 find a $\delta > 0$ such that $o(f,x,\delta) < \epsilon$.  If
 $y \in B_D(x,\delta)$, then
 \begin{equation*}
-\sabs{f(x)-f(y)}
+\babs{f(x)-f(y)}
 \leq
 \sup_{y_1,y_2 \in B_D(x,\delta)} \bigl(f(y_1)-f(y_2)\bigr)
 =
@@ -2302,7 +2302,7 @@ $V(O_\ell)$.
 Let $m_j$ and $M_j$ be the inf and sup of $f$ over $R_j$ as usual.
 If $R_j \subset T_\ell$ for some $\ell$, then $M_j-m_j < \epsilon$.
 Let $B \in \R$ be such that
-$\sabs{f(x)} \leq B$ for all $x \in R$, so $M_j-m_j \leq 2B$ over all
+$\babs{f(x)} \leq B$ for all $x \in R$, so $M_j-m_j \leq 2B$ over all
 rectangles. Then
 \begin{equation*}
 \begin{split}
@@ -2421,7 +2421,7 @@ If $f,g \in \sR(R)$ and
 then $\varphi, \psi \in \sR(R)$.
 \item
 If $f \in \sR(R)$, then $\sabs{f} \in \sR(R)$, where $\sabs{f}(x) \coloneqq
-\sabs{f(x)}$.
+\babs{f(x)}$.
 \item
 If $R' \subset \R^n$ is another closed rectangle,
 $U \subset \R^n$ and $U' \subset \R^n$ are open sets such that
@@ -3336,9 +3336,9 @@ or the electric potential between charges.
 We will prove one of the most fundamental properties of these functions.
 
 Let $D_r \coloneqq B(p,r)$ be a disc such that its closure $\overline{D_r} = C(p,r) \subset U$.  Write
-$p = (x_0,y_0)$.  We orient
+$p = (x_0,y_0)$.  Orient
 $\partial D_r$ positively.  See \exerciseref{green:balltype3orient}.
-Then via Green's and differentiation under the integral,
+Via Green's and differentiation under the integral,
 \begin{equation*}
 \begin{split}
 0
@@ -3507,14 +3507,14 @@ the definition of integral from this chapter, then we do not have the notion
 of $\int_a^b$ versus $\int_b^a$.  We are simply integrating over an
 interval $[a,b]$.  With this notation, the change of variables becomes
 \begin{equation*}
-\int_{[a,b]} f\bigl(g(x)\bigr) \, \sabs{g'(x)}\, dx = 
+\int_{[a,b]} f\bigl(g(x)\bigr) \, \babs{g'(x)}\, dx = 
 \int_{g([a,b])} f(x) \, dx .
 \end{equation*}
 In this section we will obtain the several-variable analogue of this form.
 
-Let us remark the role of $\sabs{g'(x)}$ in the formula. 
+Let us remark the role of $\babs{g'(x)}$ in the formula. 
 The integral measures volumes in general, so in one dimension it measures length.
-Notice that $\sabs{g'(x)}$ scales the $dx$ and
+Notice that $\babs{g'(x)}$ scales the $dx$ and
 so it scales the lengths.
 If our $g$ is linear, that is, $g(x)=Lx$, then
 $g'(x) = L$ and the length of the interval $g([a,b])$ is simply
@@ -3525,7 +3525,7 @@ by the absolute value of the determinant.
 \begin{prop} \label{prop:volrectdet}
 Suppose $R \subset \R^n$ is a rectangle
 and $A \colon \R^n \to \R^n$ is linear.  Then
-$A(R)$ is Jordan measurable and $V\bigl(A(R)\bigr) = \sabs{\det (A)} \, V(R)$.
+$A(R)$ is Jordan measurable and $V\bigl(A(R)\bigr) = \babs{\det (A)} \, V(R)$.
 \end{prop}
 
 \begin{proof}
@@ -3535,8 +3535,8 @@ exercise.
 
 Let us prove that
 absolute value of the Jacobian determinant
-$\sabs{J_g(x)} = \babs{\det \bigl(g'(x)\bigr)}$
-is the replacement of $\sabs{g'(x)}$ for multiple
+$\babs{J_g(x)} = \babs{\det \bigl(g'(x)\bigr)}$
+is the replacement of $\babs{g'(x)}$ for multiple
 dimensions in the change of variables formula.
 The following theorem holds in more generality,
 but this statement is sufficient for many uses.
@@ -3551,7 +3551,7 @@ Suppose $f \colon g(S) \to \R$ is Riemann integrable.
 Then $f \circ g$ is Riemann integrable on $S$ and
 \begin{equation*}
 \int_{g(S)} f(x) \, dx = 
-\int_S f\bigl(g(x)\bigr) \, \sabs{J_g(x)} \, dx .
+\int_S f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx .
 \end{equation*}
 \end{thm}
 
@@ -3576,7 +3576,7 @@ We therefore assume that $S$ is equal to a rectangle $R$.
 Let $\epsilon > 0$ be given.
 For every $x \in R$, let
 \begin{equation*}
-W_x \coloneqq \bigl\{ y \in U : \snorm{g'(x)-g'(y)} < \nicefrac{\epsilon}{2} \bigr\} .
+W_x \coloneqq \bigl\{ y \in U : \bnorm{g'(x)-g'(y)} < \nicefrac{\epsilon}{2} \bigr\} .
 \end{equation*}
 By \exerciseref{mv:changeofvarWxopen},
 $W_x$ is open.
@@ -3588,7 +3588,7 @@ for every $y \in R$, there is an $x$ such that $B(y,\delta) \subset W_x$.
 In other words, if $P$ is a rectangle of maximum side length less
 than $\frac{\delta}{\sqrt{n}}$ and $y \in P$, then $P \subset
 B(y,\delta) \subset W_x$.  By triangle inequality,
-$\snorm{g'(\xi)-g'(\eta)} < \epsilon$ for all $\xi, \eta \in P$.
+$\bnorm{g'(\xi)-g'(\eta)} < \epsilon$ for all $\xi, \eta \in P$.
 
 Let $R_1,R_2,\ldots,R_N$ be subrectangles partitioning $R$ such that
 the maximum side of every $R_j$ is less than
@@ -3607,16 +3607,16 @@ side of $R_j$ is at most $\frac{\delta}{\sqrt{n}}$,
 then $\snorm{y} \leq \delta$.  So
 \begin{equation*}
 %mbxlatex \begin{aligned}
-\snorm{g(y)-y}
+\bnorm{g(y)-y}
 =
 \norm{\int_0^1 \bigl(g'(ty) y - y\bigr) \,dt}
 %mbxlatex &
 \leq
-\int_0^1 \snorm{g'(ty) y - y} \,dt
+\int_0^1 \bnorm{g'(ty) y - y} \,dt
 %mbxlatex \\
 %mbxlatex &
 \leq
-\snorm{y} \int_0^1 \snorm{g'(ty) - I} \,dt
+\snorm{y} \int_0^1 \bnorm{g'(ty) - I} \,dt
 \leq
 \delta \epsilon .
 %mbxlatex \end{aligned}
@@ -3647,35 +3647,38 @@ V(\widetilde{R}_j) & =
 (s_n+2\delta \epsilon )
 \\
 & \leq
-(s_1+4 \sqrt{n}\,s_1 \epsilon )
-(s_2+4 \sqrt{n}\,s_2 \epsilon )
+\bigl(s_1+4 \sqrt{n}\,s_1 \epsilon \bigr)
+\bigl(s_2+4 \sqrt{n}\,s_2 \epsilon \bigr)
 \cdots
-(s_n+4 \sqrt{n}\,s_n \epsilon )
+\bigl(s_n+4 \sqrt{n}\,s_n \epsilon \bigr)
 \\
 & =
-s_1 (1+4 \sqrt{n}\, \epsilon )
+s_1 \bigl(1+4 \sqrt{n}\, \epsilon \bigr)
 \,
-s_2 (1+4 \sqrt{n}\, \epsilon )
+s_2 \bigl(1+4 \sqrt{n}\, \epsilon \bigr)
 \cdots
-s_n (1+4 \sqrt{n}\, \epsilon )
+s_n \bigl(1+4 \sqrt{n}\, \epsilon \bigr)
 =
-V(R_j) \, {(1+4\sqrt{n} \, \epsilon)}^n .
+V(R_j) \, {\bigl(1+4\sqrt{n} \, \epsilon\bigr)}^n .
 \end{split}
 \end{equation*}
 In other words,
 \begin{equation*}
-V\bigl(g(R_j)\bigr) \leq V(\widetilde{R}_j) \leq V(R_j) \, {(1+4\sqrt{n} \, \epsilon)}^n .
+V\bigl(g(R_j)\bigr) \leq V(\widetilde{R}_j) \leq V(R_j) \,
+{\bigl(1+4\sqrt{n} \, \epsilon\bigr)}^n .
 \end{equation*}
 Next, suppose $A \coloneqq g'(0)$ is not necessarily the identity.
 Write $g = A \circ \widetilde{g}$ where $\widetilde{g}'(0) = I$.
 By \propref{prop:volrectdet},
-$V\bigl(A(R_j)\bigr) = \sabs{\det(A)} \, V(R_j)$, and hence
+$V\bigl(A(R_j)\bigr) = \babs{\det(A)} \, V(R_j)$, and hence
 \begin{equation*}
 \begin{split}
 V\bigl(g(R_j)\bigr) & \leq
-\sabs{\det(A)} \, V(R_j) \, {(1+4\sqrt{n} \, \epsilon)}^n \\
+\babs{\det(A)} \, V(R_j) \,
+{\bigl(1+4\sqrt{n} \, \epsilon\bigr)}^n \\
 & =
-\sabs{J_g(0)} \, V(R_j) \, {(1+4\sqrt{n} \, \epsilon)}^n .
+\babs{J_g(0)} \, V(R_j) \,
+{\bigl(1+4\sqrt{n} \, \epsilon\bigr)}^n .
 \end{split}
 \end{equation*}
 Translation does not change volume, and therefore
@@ -3683,7 +3686,8 @@ for every $R_j$, and $x_j \in R_j$, including when $x_j \not= 0$ and $g(x_j)
 \not= 0$, we find
 \begin{equation*}
 V\bigl(g(R_j)\bigr) \leq
-\sabs{J_g(x_j)} \, V(R_j) \, {(1+4\sqrt{n} \, \epsilon)}^n .
+\babs{J_g(x_j)} \, V(R_j) \,
+{\bigl(1+4\sqrt{n} \, \epsilon\bigr)}^n .
 \end{equation*}
 
 Write $f$ as
@@ -3702,12 +3706,12 @@ For a small enough
 $\delta > 0$, we have
 \begin{equation*}
 \begin{split}
-\epsilon + \int_R f\bigl(g(x)\bigr) \, \sabs{J_g(x)} \, dx
+\epsilon + \int_R f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx
 & \geq
-\sum_{j=1}^N \biggl(\sup_{x \in R_j} f\bigl(g(x)\bigr) \, \sabs{J_g(x)} \biggr) \, V(R_j)
+\sum_{j=1}^N \biggl(\sup_{x \in R_j} f\bigl(g(x)\bigr) \, \babs{J_g(x)} \biggr) \, V(R_j)
 \\
 & \geq
-\sum_{j=1}^N \biggl(\sup_{x \in R_j} f\bigl(g(x)\bigr) \biggr) \, \sabs{J_g(x_j)} \, V(R_j)
+\sum_{j=1}^N \biggl(\sup_{x \in R_j} f\bigl(g(x)\bigr) \biggr) \, \babs{J_g(x_j)} \, V(R_j)
 \\
 & \geq
 \sum_{j=1}^N \biggl(\sup_{y \in g(R_j)} f(y) \biggr) \,
@@ -3728,13 +3732,13 @@ are their boundaries, which are of measure zero, and hence the image
 of their boundaries is also measure zero.
 Let $\epsilon$ go to zero to find
 \begin{equation*}
-\int_R f\bigl(g(x)\bigr) \, \sabs{J_g(x)} \, dx \geq \int_{g(R)} f(y) \,dy .
+\int_R f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx \geq \int_{g(R)} f(y) \,dy .
 \end{equation*}
 By adding this result for several rectangles covering an $S$ we obtain the
 result for an arbitrary bounded Jordan measurable $S \subset U$,
 and nonnegative integrable function $f$:
 \begin{equation*}
-\int_S f\bigl(g(x)\bigr) \, \sabs{J_g(x)} \, dx \geq \int_{g(S)} f(y) \,dy .
+\int_S f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx \geq \int_{g(S)} f(y) \,dy .
 \end{equation*}
 
 Recall that $g^{-1}$ exists and $g^{-1}\bigl(g(S)\bigr) = S$.
@@ -3744,13 +3748,13 @@ So
 \begin{split}
 \int_{g(S)} f(y) \, dy
 & =
-\int_{g(S)} f\bigl(g\bigl(g^{-1}(y)\bigr)\bigr) \,
-\sabs{J_g\bigl(g^{-1}(y)\bigr)} \, \sabs{J_{g^{-1}}(y)} \, dy
+\int_{g(S)} f\Bigl(g\bigl(g^{-1}(y)\bigr)\Bigr) \,
+\Babs{J_g\bigl(g^{-1}(y)\bigr)} \, \babs{J_{g^{-1}}(y)} \, dy
 \\
 & \geq
-\int_{g^{-1}(g(S))} f\bigl(g(x)\bigr) \, \sabs{J_g(x)} \, dx
+\int_{g^{-1}(g(S))} f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx
 =
-\int_{S} f\bigl(g(x)\bigr) \, \sabs{J_g(x)} \, dx .
+\int_{S} f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx .
 \end{split}
 \end{equation*}
 
@@ -3780,7 +3784,7 @@ Suppose $U \subset \R^n$ is open, $x \in U$,
 and $g \colon U \to \R^n$ is a continuously differentiable mapping.
 For every $\epsilon > 0$, show that
 \begin{equation*}
-W_x \coloneqq \bigl\{ y \in U : \snorm{g'(x)-g'(y)} < \nicefrac{\epsilon}{2} \bigr\}
+W_x \coloneqq \bigl\{ y \in U : \bnorm{g'(x)-g'(y)} < \nicefrac{\epsilon}{2} \bigr\}
 \end{equation*}
 is an open set.
 \end{exercise}
@@ -3806,7 +3810,7 @@ assume $J_g(x) = 0$ if $g$ not differentiable at $x$, that is, when $x \notin
 U$).  Then}
 \begin{equation*}
 \int_{\R^{n}} f(x) \, dx = 
-\int_{\R^n} f\bigl(g(x)\bigr) \, \sabs{J_g(x)} \, dx .
+\int_{\R^n} f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx .
 \end{equation*}
 \end{exercise}
 
@@ -3822,7 +3826,7 @@ Suppose $f \colon g(S) \to \R$ is Riemann
 integrable.  Then $f \circ g$ is Riemann integrable on $S$ and}
 \begin{equation*}
 \int_{g(S)} f(x) \, dx = 
-\int_S f\bigl(g(x)\bigr) \, \sabs{J_g(x)} \, dx .
+\int_S f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx .
 \end{equation*}
 Hint: Write $S$ as an increasing union of compact Jordan measurable
 sets, then apply the theorem of the section to those.  Then prove that you

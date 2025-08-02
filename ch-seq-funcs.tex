@@ -72,16 +72,16 @@ To see this is so, first take $x \in (-1,1)$.  Then
 $0 \leq x^2 < 1$.
 We have seen before that
 \begin{equation*}
-\abs{x^{2n} - 0} = {(x^2)}^n \to 0 \quad \text{as} \quad n \to \infty .
+\sabs{x^{2n} - 0} = {(x^2)}^n \to 0 \quad \text{as} \quad n \to \infty .
 \end{equation*}
 Therefore, $\lim_{n\to\infty}f_n(x) = 0$.
 When $x = 1$ or $x=-1$, then $x^{2n} = 1$ for all $n$ and hence
 $\lim_{n\to\infty}f_n(x) = 1$.
 
 Note that for $x$ not in $[-1,1]$, the sequence
-$\bigl\{ x^{2n} \bigr\}_{n=1}^\infty$ does not converge.
+$\{ x^{2n} \}_{n=1}^\infty$ does not converge.
 So if we defined $f_n$ on a set larger than $[-1,1]$,
-then $\bigl\{ f_n \bigr\}_{n=1}^\infty$
+then $\{ f_n \}_{n=1}^\infty$
 would converge pointwise only on $[-1,1]$.
 \end{example}
 
@@ -139,7 +139,7 @@ Then $\{ f_n \}_{n=1}^\infty$ converges pointwise to $f$ if and only if
 for every $x \in S$ and every $\epsilon > 0$, there exists
 an $N \in \N$ such that
 \begin{equation*}
-\abs{f_n(x)-f(x)} < \epsilon \quad \text{for all } n \geq N .
+\babs{f_n(x)-f(x)} < \epsilon \quad \text{for all } n \geq N .
 \end{equation*}
 \end{prop}
 
@@ -159,7 +159,7 @@ be functions.  The sequence $\{ f_n \}_{n=1}^\infty$
 every $\epsilon > 0$, there exists an $N \in \N$ such that 
 for all $n \geq N$,
 \begin{equation*}
-\abs{f_n(x) - f(x)} < \epsilon \qquad \text{for all } x \in S.
+\babs{f_n(x) - f(x)} < \epsilon \qquad \text{for all } x \in S.
 \end{equation*}
 \end{defn}
 \begin{myfigureht}
@@ -189,7 +189,7 @@ The converse does not hold.
 The functions $f_n(x) \coloneqq x^{2n}$ do not converge uniformly on $[-1,1]$,
 even though they converge pointwise.  To see this, suppose for contradiction
 that the convergence is uniform.  For $\epsilon \coloneqq \nicefrac{1}{2}$, there would have
-to exist an $N$ such that $x^{2N} = \abs{x^{2N} - 0} < \nicefrac{1}{2}$ for all $x \in
+to exist an $N$ such that $x^{2N} = \sabs{x^{2N} - 0} < \nicefrac{1}{2}$ for all $x \in
 (-1,1)$ (as $f_n(x)$ converges to 0 on $(-1,1)$).  But that means that
 for every sequence $\{ x_k \}_{k=1}^\infty$ in $(-1,1)$ such that $\lim_{k\to\infty} x_k = 1$,
 we have $x_k^{2N} < \nicefrac{1}{2}$ for all $k$.  On the other hand,
@@ -205,10 +205,10 @@ $a^{2n} \to 0$ as $n \to \infty$.  Given $\epsilon > 0$,
 pick $N \in \N$ such that
 $a^{2n} < \epsilon$ for all $n \geq N$.
 If $x \in [-a,a]$, then
-$\abs{x} \leq a$.  So
+$\sabs{x} \leq a$.  So
 for all $n \geq N$ and all $x \in [-a,a]$,
 \begin{equation*}
-\abs{x^{2n}} = \abs{x}^{2n} \leq a^{2n} < \epsilon .
+\sabs{x^{2n}} = \sabs{x}^{2n} \leq a^{2n} < \epsilon .
 \end{equation*}
 \end{example}
 
@@ -230,7 +230,7 @@ Let $f \colon S \to \R$ be a bounded function.  Define
 \glsadd{not:uniformnorm}
 \begin{equation*}
 \snorm{f}_S \coloneqq
-\sup \bigl\{ \abs{f(x)} : x \in S \bigr\} .
+\sup \Bigl\{ \babs{f(x)} : x \in S \Bigr\} .
 \avoidbreak
 \end{equation*}
 We call $\snorm{\cdot}_S$ the \emph{\myindex{uniform norm}}.
@@ -247,7 +247,7 @@ The subscript is the set over which the supremum is taken.  So if $K \subset S$
 then
 \begin{equation*}
 \snorm{f}_K =
-\sup \bigl\{ \abs{f(x)} : x \in K \bigr\} .
+\sup \Bigl\{ \babs{f(x)} : x \in K \Bigr\} .
 \end{equation*}
 
 \begin{prop}
@@ -260,16 +260,16 @@ uniformly to $f \colon S \to \R$ if and only if
 
 \begin{proof}
 First suppose 
-$\lim_{n\to\infty} \norm{f_n - f}_S = 0$.  Let $\epsilon > 0$ be
+$\lim_{n\to\infty} \snorm{f_n - f}_S = 0$.  Let $\epsilon > 0$ be
 given.  There exists an $N$ such that
-for $n \geq N$, we have $\snorm{f_n - f}_S < \epsilon$.  As $\norm{f_n-f}_S$
-is the supremum of $\abs{f_n(x)-f(x)}$, we see that for all $x \in S$,
-we have $\abs{f_n(x)-f(x)} \leq \snorm{f_n - f}_S < \epsilon$.
+for $n \geq N$, we have $\snorm{f_n - f}_S < \epsilon$.  As $\snorm{f_n-f}_S$
+is the supremum of $\babs{f_n(x)-f(x)}$, we see that for all $x \in S$,
+we have $\babs{f_n(x)-f(x)} \leq \snorm{f_n - f}_S < \epsilon$.
 
 On the other hand, suppose $\{ f_n \}_{n=1}^\infty$ converges uniformly to $f$.
 Let $\epsilon > 0$ be given.  Then find $N$ such that 
 for all $n \geq N$, we have
-$\abs{f_n(x)-f(x)} < \epsilon$ for all $x \in S$.
+$\babs{f_n(x)-f(x)} < \epsilon$ for all $x \in S$.
 Taking the supremum over $x \in S$, we see that
 $\snorm{f_n - f}_S \leq \epsilon$.  Hence $\lim_{n\to\infty} \snorm{f_n-f}_S = 0$.
 \end{proof}
@@ -285,12 +285,12 @@ Let $f_n \colon [0,1] \to \R$ be defined by $f_n(x) \coloneqq \frac{nx+ \sin(nx^
 We claim $\{ f_n \}_{n=1}^\infty$ converges uniformly to $f(x) \coloneqq x$.  Let us compute:
 \begin{equation*}
 \begin{split}
-\norm{f_n-f}_{[0,1]}
+\snorm{f_n-f}_{[0,1]}
 & =
 \sup \left\{ \abs{\frac{nx+ \sin(nx^2)}{n} - x} : x \in [0,1] \right\}
 \\
 & =
-\sup \left\{ \frac{\abs{\sin(nx^2)}}{n} : x \in [0,1] \right\}
+\sup \left\{ \frac{\babs{\sin(nx^2)}}{n} : x \in [0,1] \right\}
 \\
 & \leq
 \sup \bigl\{ \nicefrac{1}{n} : x \in [0,1] \bigr\}
@@ -310,7 +310,7 @@ or \emph{\myindex{uniformly Cauchy}}
 if for every $\epsilon > 0$, there exists an $N \in \N$ such
 that for all $m,k \geq N$,
 \begin{equation*}
-\norm{f_m-f_k}_S < \epsilon .
+\snorm{f_m-f_k}_S < \epsilon .
 \end{equation*}
 \end{defn}
 
@@ -326,9 +326,9 @@ First suppose $\{ f_n \}_{n=1}^\infty$ is Cauchy in the uniform norm.
 Let us define $f$.  Fix $x$.
 The sequence $\bigl\{ f_n(x) \bigr\}_{n=1}^\infty$ is Cauchy because
 \begin{equation*}
-\abs{f_m(x)-f_k(x)}
+\babs{f_m(x)-f_k(x)}
 \leq
-\norm{f_m-f_k}_S .
+\snorm{f_m-f_k}_S .
 \end{equation*}
 Thus $\bigl\{ f_n(x) \bigr\}_{n=1}^\infty$ converges to some real number.  Define $f \colon S
 \to \R$ by
@@ -339,33 +339,33 @@ The sequence
 $\{ f_n \}_{n=1}^\infty$ converges pointwise to $f$.  To show that the convergence
 is uniform, let $\epsilon > 0$ be given.  Find an $N$ such that
 for all $m, k \geq N$, we have
-$\norm{f_m-f_k}_S < \nicefrac{\epsilon}{2}$.  In other words, for
+$\snorm{f_m-f_k}_S < \nicefrac{\epsilon}{2}$.  In other words, for
 all $x$, we have
-$\abs{f_m(x)-f_k(x)} < \nicefrac{\epsilon}{2}$.  For any fixed $x$, take the limit
-as $k$ goes to infinity.  Then $\abs{f_m(x)-f_k(x)}$
-goes to $\abs{f_m(x)-f(x)}$.
+$\babs{f_m(x)-f_k(x)} < \nicefrac{\epsilon}{2}$.  For any fixed $x$, take the limit
+as $k$ goes to infinity.  Then $\babs{f_m(x)-f_k(x)}$
+goes to $\babs{f_m(x)-f(x)}$.
 Consequently for all $x$,
 \begin{equation*}
-\abs{f_m(x)-f(x)} \leq \nicefrac{\epsilon}{2} < \epsilon .
+\babs{f_m(x)-f(x)} \leq \nicefrac{\epsilon}{2} < \epsilon .
 \end{equation*}
 Hence, $\{ f_n \}_{n=1}^\infty$ converges uniformly.
 
 Next, we prove the other direction.
 Suppose $\{ f_n \}_{n=1}^\infty$ converges uniformly to
 $f$.  Given $\epsilon > 0$, find $N$ such that for all $n \geq N$,
-we have $\abs{f_n(x)-f(x)} < \nicefrac{\epsilon}{4}$ for all $x \in S$.
+we have $\babs{f_n(x)-f(x)} < \nicefrac{\epsilon}{4}$ for all $x \in S$.
 Therefore, for all $m, k \geq N$ and all $x$,
 \begin{multline*}
-\abs{f_m(x)-f_k(x)} = 
-\abs{f_m(x)-f(x)+f(x)-f_k(x)}
+\babs{f_m(x)-f_k(x)} = 
+\babs{f_m(x)-f(x)+f(x)-f_k(x)}
 \\
 \leq
-\abs{f_m(x)-f(x)}+\abs{f(x)-f_k(x)} < \nicefrac{\epsilon}{4} +
+\babs{f_m(x)-f(x)}+\babs{f(x)-f_k(x)} < \nicefrac{\epsilon}{4} +
 \nicefrac{\epsilon}{4} = \nicefrac{\epsilon}{2} .
 \end{multline*}
 Take the supremum over all $x$ to obtain
 \begin{equation*}
-\norm{f_m-f_k}_S \leq \nicefrac{\epsilon}{2} < \epsilon .  \qedhere
+\snorm{f_m-f_k}_S \leq \nicefrac{\epsilon}{2} < \epsilon .  \qedhere
 \end{equation*}
 \end{proof}
 
@@ -374,7 +374,7 @@ Take the supremum over all $x$ to obtain
 \begin{exercise}
 Let $f$ and $g$ be bounded functions on $[a,b]$.  Prove 
 \begin{equation*}
-\norm{f+g}_{[a,b]} \leq \norm{f}_{[a,b]} + \norm{g}_{[a,b]} .
+\snorm{f+g}_{[a,b]} \leq \snorm{f}_{[a,b]} + \snorm{g}_{[a,b]} .
 \end{equation*}
 \end{exercise}
 
@@ -422,7 +422,7 @@ Suppose there exists a sequence of functions $\{ g_n \}_{n=1}^\infty$ uniformly
 converging to $0$ on $A$.  Now suppose we have a sequence of functions
 $\{ f_n \}_{n=1}^\infty$ and a function $f$ on $A$ such that
 \begin{equation*}
-\abs{f_n(x) - f(x)} \leq g_n(x) 
+\babs{f_n(x) - f(x)} \leq g_n(x) 
 \end{equation*}
 for all $x \in A$.  Show that $\{ f_n \}_{n=1}^\infty$ converges uniformly to $f$ on $A$.
 \end{exercise}
@@ -488,7 +488,7 @@ are bounded.
 Suppose there is a single constant $B$ and
 a sequence of functions
 $f_n \colon S \to \R$ that are bounded by $B$,
-that is $\abs{f_n(x)} \leq B$ for all $x \in S$.
+that is $\babs{f_n(x)} \leq B$ for all $x \in S$.
 Suppose that $\{ f_n \}_{n=1}^\infty$ converges pointwise
 to $f \colon S \to \R$.
 Prove that $f$ is bounded.
@@ -638,25 +638,25 @@ converging to $x$.
 Let $\epsilon > 0$ be given.
 As $\{ f_k \}_{k=1}^\infty$ converges uniformly to $f$, we find a $k \in \N$ such that
 \begin{equation*}
-\abs{f_k(y)-f(y)} < \nicefrac{\epsilon}{3}
+\babs{f_k(y)-f(y)} < \nicefrac{\epsilon}{3}
 \end{equation*}
 for all $y \in S$.  As $f_k$ is continuous at $x$,
 we find an $N \in \N$ such that for all $m \geq N$,
 \begin{equation*}
-\abs{f_k(x_m)-f_k(x)} < \nicefrac{\epsilon}{3} .
+\babs{f_k(x_m)-f_k(x)} < \nicefrac{\epsilon}{3} .
 \end{equation*}
 Thus for all
 $m \geq N$,
 \begin{equation*}
 \begin{split}
-\abs{f(x_m)-f(x)}
+\babs{f(x_m)-f(x)}
 & =
-\abs{f(x_m)-f_k(x_m)+f_k(x_m)-f_k(x)+f_k(x)-f(x)}
+\babs{f(x_m)-f_k(x_m)+f_k(x_m)-f_k(x)+f_k(x)-f(x)}
 \\
 & \leq
-\abs{f(x_m)-f_k(x_m)}+
-\abs{f_k(x_m)-f_k(x)}+
-\abs{f_k(x)-f(x)}
+\babs{f(x_m)-f_k(x_m)}+
+\babs{f_k(x_m)-f_k(x)}+
+\babs{f_k(x)-f(x)}
 \\
 & <
 \nicefrac{\epsilon}{3} +
@@ -746,9 +746,9 @@ converging uniformly to $f \colon [a,b]
 Let $\epsilon > 0$ be given.
 As $f_n$ goes to $f$ uniformly, we find an $M \in \N$ such that
 for all $n \geq M$, we have 
-$\abs{f_n(x)-f(x)} < \frac{\epsilon}{2(b-a)}$ for all $x \in [a,b]$.
+$\babs{f_n(x)-f(x)} < \frac{\epsilon}{2(b-a)}$ for all $x \in [a,b]$.
 In particular, by reverse triangle inequality,
-$\abs{f(x)} < \frac{\epsilon}{2(b-a)} + \abs{f_n(x)}$ for all $x$.
+$\babs{f(x)} < \frac{\epsilon}{2(b-a)} + \babs{f_n(x)}$ for all $x$.
 Hence $f$ is bounded,
 as $f_n$ is bounded.
 Note that $f_n$ is integrable and compute
@@ -857,7 +857,7 @@ f_n(x) \coloneqq
 \nicefrac{1}{x} & \text{else.}
 \end{cases}
 \end{equation*}
-For every $n$ we get that $\abs{f_n(x)} \leq n$ for all $x \in [0,1]$ so the
+For every $n$ we get that $\babs{f_n(x)} \leq n$ for all $x \in [0,1]$ so the
 functions are bounded.  However, $\{ f_n \}_{n=1}^\infty$ converges pointwise to
 the unbounded function
 \begin{equation*}
@@ -957,20 +957,20 @@ uniform convergence.
 Suppose $I$ has a lower bound $a$ and upper bound $b$.
 Let $\epsilon > 0$ be given.  Take $M$
 such that for all $n \geq M$, we have
-$\abs{f(c)-f_n(c)} < \nicefrac{\epsilon}{2}$
+$\babs{f(c)-f_n(c)} < \nicefrac{\epsilon}{2}$
 and
-$\abs{g(x)-f_n'(x)} < \frac{\epsilon}{2(b-a)}$
+$\babs{g(x)-f_n'(x)} < \frac{\epsilon}{2(b-a)}$
 for all $x \in I$.  Then
 \begin{equation*}
 \begin{split}
-\abs{f(x) - f_n(x)} & =
+\babs{f(x) - f_n(x)} & =
 \abs{\left(f(c) + \int_c^x g\right) - \left( f_n(c) + \int_c^x f_n' \right)}
 \\
 & \leq
-\abs{f(c) - f_n(c)} + \abs{\int_c^x g - \int_c^x f_n'}
+\babs{f(c) - f_n(c)} + \abs{\int_c^x g - \int_c^x f_n'}
 \\
 & =
-\abs{f(c) - f_n(c)} + \abs{\int_c^x \bigl(g(s) - f_n'(s)\bigr) \, ds}
+\babs{f(c) - f_n(c)} + \abs{\int_c^x \bigl(g(s) - f_n'(s)\bigr) \, ds}
 \\
 & <
 \frac{\epsilon}{2}
@@ -1013,10 +1013,10 @@ or let $I \coloneqq \R$ if $\rho= \infty$.
 Take $0 < r < \rho$.
 The series converges absolutely for every $x \in I$,
 in particular if $x = a+r$.
-So $\sum_{n=0}^\infty \abs{c_n} r^n$ converges.
+So $\sum_{n=0}^\infty \sabs{c_n} r^n$ converges.
 Given $\epsilon >0$, find $M$ such that for all $k \geq M$,
 \begin{equation*}
-\sum_{n=k+1}^\infty \abs{c_n} {r}^n < \epsilon .
+\sum_{n=k+1}^\infty \sabs{c_n} {r}^n < \epsilon .
 \end{equation*}
 For all $x \in [a-r,a+r]$ and all $m > k$,
 \begin{multline*}
@@ -1026,11 +1026,11 @@ For all $x \in [a-r,a+r]$ and all $m > k$,
 \abs{\sum_{n=k+1}^m c_n {(x-a)}^n}
 \\
 \leq
-\sum_{n=k+1}^m \abs{c_n} {\abs{x-a}}^n
+\sum_{n=k+1}^m \sabs{c_n} {\sabs{x-a}}^n
 \leq
-\sum_{n=k+1}^m \abs{c_n} {r}^n
+\sum_{n=k+1}^m \sabs{c_n} {r}^n
 \leq
-\sum_{n=k+1}^\infty \abs{c_n} {r}^n
+\sum_{n=k+1}^\infty \sabs{c_n} {r}^n
 <\epsilon.
 \end{multline*}
 The partial sums are therefore uniformly Cauchy on $[a-r,a+r]$ and
@@ -1104,7 +1104,7 @@ $[a-r,a+r]$,
 but we need uniform convergence of the derivative.
 Let
 \begin{equation*}
-R \coloneqq \limsup_{n \to \infty} \abs{c_n}^{1/n} .
+R \coloneqq \limsup_{n \to \infty} \sabs{c_n}^{1/n} .
 \end{equation*}
 As the series is convergent $R < \infty$, and
 the radius of convergence is $\nicefrac{1}{R}$ (or $\infty$ if $R=0$).
@@ -1117,18 +1117,18 @@ So
 \begin{equation*}
 R = 
 \limsup_{n \to \infty}
-\abs{c_n}^{1/n}
+\sabs{c_n}^{1/n}
 \leq
 \limsup_{n \to \infty}
-\abs{n c_n}^{1/n}
+\sabs{n c_n}^{1/n}
 \leq
 (1+\epsilon)
 \limsup_{n \to \infty}
-\abs{c_n}^{1/n}
+\sabs{c_n}^{1/n}
 =
 (1+\epsilon)R .
 \end{equation*}
-As $\epsilon$ was arbitrary, $\limsup_{n \to \infty} \abs{n c_n}^{1/n} = R$.
+As $\epsilon$ was arbitrary, $\limsup_{n \to \infty} \sabs{n c_n}^{1/n} = R$.
 Therefore, $\sum_{n=1}^\infty n c_{n} {(x-a)}^{n}$ has radius of
 convergence $\rho$.  By dividing by $(x-a)$, we find
 $\sum_{n=0}^\infty (n+1) c_{n+1} {(x-a)}^{n}$ has radius of convergence
@@ -1179,7 +1179,7 @@ differentiable functions on $[-1,1]$ that converge uniformly to
 a function $f$ such that $f$ is not differentiable.
 Hint:
 There are many possibilities,
-simplest is perhaps to combine $\abs{x}$ and $\frac{n}{2}x^2 +
+simplest is perhaps to combine $\sabs{x}$ and $\frac{n}{2}x^2 +
 \frac{1}{2n}$, another is to
 consider $\sqrt{x^2+{(\nicefrac{1}{n})}^2}$.  Show that these functions are differentiable,
 converge uniformly, and then show that the limit is not differentiable.
@@ -1230,13 +1230,13 @@ discontinuous.
 \begin{exercise} \label{c1uniflim:exercise}
 For a continuously differentiable function $f \colon [a,b] \to \R$, define
 \begin{equation*}
-\norm{f}_{C^1} \coloneqq \norm{f}_{[a,b]} + \norm{f'}_{[a,b]} .
+\snorm{f}_{C^1} \coloneqq \snorm{f}_{[a,b]} + \snorm{f'}_{[a,b]} .
 \end{equation*}
 Suppose $\{ f_n \}_{n=1}^\infty$ is a sequence of continuously differentiable
 functions such that for every $\epsilon >0$, there exists an $M$
 such that for all $n,k \geq M$, we have
 \begin{equation*}
-\norm{f_n-f_k}_{C^1} < \epsilon .
+\snorm{f_n-f_k}_{C^1} < \epsilon .
 \end{equation*}
 Show that $\{ f_n \}_{n=1}^\infty$ converges uniformly to some continuously differentiable
 function $f \colon [a,b] \to \R$.
@@ -1248,10 +1248,10 @@ $f \colon [0,1] \to \R$ is Riemann integrable.
 For the following two exercises define 
 the number
 \begin{equation*}
-\norm{f}_{L^1} \coloneqq 
-\int_0^1 \abs{f(x)}\,dx .
+\snorm{f}_{L^1} \coloneqq 
+\int_0^1 \babs{f(x)}\,dx .
 \end{equation*}
-It is true that $\abs{f}$ is integrable whenever $f$ is, see
+It is true that $\sabs{f}$ is integrable whenever $f$ is, see
 \exerciseref{exercise:hardabsint}.
 The number is called the \emph{$L^1$-norm}\index{L1-norm@$L^1$-norm} and
 defines another very common type of
@@ -1265,7 +1265,7 @@ Suppose $\{ f_n \}_{n=1}^\infty$ is a sequence of Riemann integrable functions o
 that converges uniformly
 to $0$.  Show that
 \begin{equation*}
-\lim_{n\to\infty} \norm{f_n}_{L^1} = 0 .
+\lim_{n\to\infty} \snorm{f_n}_{L^1} = 0 .
 \end{equation*}
 \end{exercise}
 
@@ -1273,7 +1273,7 @@ to $0$.  Show that
 Find a sequence $\{ f_n \}_{n=1}^\infty$ of Riemann integrable functions 
 on $[0,1]$ converging pointwise to~$0$, but such that
 \begin{equation*}
-\lim_{n\to\infty} \norm{f_n}_{L^1} \text{ does not exist (is } \infty\text{)}.
+\lim_{n\to\infty} \snorm{f_n}_{L^1} \text{ does not exist (is } \infty\text{)}.
 \end{equation*}
 \end{exercise}
 
@@ -1294,7 +1294,7 @@ functions that
 converges pointwise
 to a continuous $f \colon [a,b] \to \R$.  Suppose that
 for every $x \in [a,b]$,
-the sequence $\bigl\{ \abs{f_n(x)-f(x)} \bigr\}_{n=1}^\infty$ is monotone.
+the sequence $\bigl\{ \babs{f_n(x)-f(x)} \bigr\}_{n=1}^\infty$ is monotone.
 Show that the sequence $\{f_n\}_{n=1}^\infty$ converges uniformly.
 \end{exercise}
 
@@ -1327,7 +1327,7 @@ x_{n,m} = L ,
 \end{equation*}
 if for every $\epsilon > 0$, there
 exists an $M$ such that if $n \geq M$ and $m \geq M$, then
-$\abs{x_{n,m} - L} < \epsilon$.
+$\sabs{x_{n,m} - L} < \epsilon$.
 \end{exnote}
 
 \begin{exercise}
@@ -1565,7 +1565,7 @@ Suppose $F \colon I \times J \to \R$ is continuous
 and Lipschitz in the second variable, that is, there exists
 an $L \in \R$ such that
 \begin{equation*}
-\abs{F(x,y) - F(x,z)} \leq L \abs{y-z}
+\babs{F(x,y) - F(x,z)} \leq L \sabs{y-z}
 \qquad \text{for all } y,z \in J, x \in I .
 \end{equation*}
 Then there exists an $h > 0$ such that $[x_0-h,x_0+h] \subset I$ and a unique differentiable
@@ -1597,7 +1597,7 @@ Without loss of generality, suppose $x_0 = 0$ (exercise below).
 Another
 exercise tells us that $F$ is bounded as it is continuous.
 Therefore pick some $M > 0$ so that 
-$\abs{F(x,y)} \leq M$ for all $(x,y) \in I\times J$.
+$\babs{F(x,y)} \leq M$ for all $(x,y) \in I\times J$.
 Pick $\alpha > 0$ such that
 $[-\alpha,\alpha] \subset I$ and $[y_0-\alpha, y_0 + \alpha] \subset J$.
 Define
@@ -1626,10 +1626,10 @@ and $f_k$ is continuous on $[-h,h]$ by the fundamental theorem of calculus.
 To see that $f_k$ maps $[-h,h]$ to $[y_0-\alpha,y_0+\alpha]$, we compute for
 $x \in [-h,h]$
 \begin{equation*}
-\abs{f_k(x) - y_0} = 
+\sabs{f_k(x) - y_0} = 
 \abs{\int_{0}^x F\bigl(t,f_{k-1}(t)\bigr)\,dt }
 \leq
-M\abs{x}
+M\sabs{x}
 \leq
 Mh
 \leq
@@ -1647,20 +1647,20 @@ to some function on $[-h,h]$.  First, for $t \in [-h,h]$,
 we have the following
 useful bound
 \begin{equation*}
-\abs{F\bigl(t,f_{n}(t)\bigr) - 
+\Babs{F\bigl(t,f_{n}(t)\bigr) - 
 F\bigl(t,f_{k}(t)\bigr)}
 \leq
-L \abs{f_n(t)-f_k(t)}
+L \babs{f_n(t)-f_k(t)}
 \leq
-L \norm{f_n-f_k}_{[-h,h]} ,
+L \snorm{f_n-f_k}_{[-h,h]} ,
 \end{equation*}
-where $\norm{f_n-f_k}_{[-h,h]}$ is the uniform norm, that
-is the supremum of $\abs{f_n(t)-f_k(t)}$ for $t \in [-h,h]$.
-Now note that $\abs{x} \leq h \leq \frac{\alpha}{M+L\alpha}$.
+where $\snorm{f_n-f_k}_{[-h,h]}$ is the uniform norm, that
+is the supremum of $\babs{f_n(t)-f_k(t)}$ for $t \in [-h,h]$.
+Now note that $\sabs{x} \leq h \leq \frac{\alpha}{M+L\alpha}$.
 Therefore
 \begin{equation*}
 \begin{split}
-\abs{f_n(x) - f_k(x)}
+\babs{f_n(x) - f_k(x)}
 & =
 \abs{\int_{0}^x F\bigl(t,f_{n-1}(t)\bigr)\,dt 
 -
@@ -1675,34 +1675,34 @@ F\bigl(t,f_{k-1}(t)\bigr)
 \,dt}
 \\
 & \leq
-L\norm{f_{n-1}-f_{k-1}}_{[-h,h]}
-\abs{x}
+L\snorm{f_{n-1}-f_{k-1}}_{[-h,h]}
+\sabs{x}
 \\
 & \leq
 \frac{L\alpha}{M+L\alpha}
-\norm{f_{n-1}-f_{k-1}}_{[-h,h]} .
+\snorm{f_{n-1}-f_{k-1}}_{[-h,h]} .
 \end{split}
 \end{equation*}
 Let $C \coloneqq \frac{L\alpha}{M+L\alpha}$ and note that $C < 1$.
 Taking supremum on the left-hand side we get
 \begin{equation*}
-\norm{f_n-f_k}_{[-h,h]} \leq C \norm{f_{n-1}-f_{k-1}}_{[-h,h]} .
+\snorm{f_n-f_k}_{[-h,h]} \leq C \snorm{f_{n-1}-f_{k-1}}_{[-h,h]} .
 \end{equation*}
 Without loss of generality,
 suppose $n \geq k$.  Then by \hyperref[induction:thm]{induction} we can show 
 \begin{equation*}
-\norm{f_n-f_k}_{[-h,h]} \leq C^{k} \norm{f_{n-k}-f_{0}}_{[-h,h]} .
+\snorm{f_n-f_k}_{[-h,h]} \leq C^{k} \snorm{f_{n-k}-f_{0}}_{[-h,h]} .
 \end{equation*}
 For $x \in [-h,h]$, we have
 \begin{equation*}
-\abs{f_{n-k}(x)-f_{0}(x)}
+\babs{f_{n-k}(x)-f_{0}(x)}
 =
-\abs{f_{n-k}(x)-y_0}
+\babs{f_{n-k}(x)-y_0}
 \leq \alpha .
 \end{equation*}
 Therefore,
 \begin{equation*}
-\norm{f_n-f_k}_{[-h,h]} \leq C^{k} \norm{f_{n-k}-f_{0}}_{[-h,h]} \leq C^{k} \alpha .
+\snorm{f_n-f_k}_{[-h,h]} \leq C^{k} \snorm{f_{n-k}-f_{0}}_{[-h,h]} \leq C^{k} \alpha .
 \end{equation*}
 As $C < 1$, $\{f_n\}_{n=1}^\infty$ is uniformly Cauchy and by
 \propref{prop:uniformcauchy} we obtain that $\{ f_n \}_{n=1}^\infty$
@@ -1717,14 +1717,14 @@ then $f\bigl([-h,h]\bigr) \subset [y_0-\alpha,y_0+\alpha]$
 We now need to show that $f$ solves \eqref{picard:inteq}.
 First, as before we notice
 \begin{equation*}
-\abs{F\bigl(t,f_{n}(t)\bigr) - 
+\Babs{F\bigl(t,f_{n}(t)\bigr) - 
 F\bigl(t,f(t)\bigr)}
 \leq
-L \abs{f_n(t)-f(t)}
+L \babs{f_n(t)-f(t)}
 \leq
-L \norm{f_n-f}_{[-h,h]} .
+L \snorm{f_n-f}_{[-h,h]} .
 \end{equation*}
-As $\norm{f_n-f}_{[-h,h]}$ converges to 0, then
+As $\snorm{f_n-f}_{[-h,h]}$ converges to 0, then
 $F\bigl(t,f_n(t)\bigr)$ converges uniformly to $F\bigl(t,f(t)\bigr)$
 for $t \in [-h,h]$.  Hence, for $x \in [-h,h]$
 the convergence is uniform %(why?)
@@ -1772,11 +1772,11 @@ that $f(0) = y_0$.
 Finally, what is left to do is to show uniqueness.  Suppose $g \colon [-h,h]
 \to J \subset \R$ is another solution.
 As before we use the fact that
-$\abs{F\bigl(t,f(t)\bigr) - F\bigl(t,g(t)\bigr)} \leq L \norm{f-g}_{[-h,h]}$.
+$\babs{F\bigl(t,f(t)\bigr) - F\bigl(t,g(t)\bigr)} \leq L \snorm{f-g}_{[-h,h]}$.
 Then
 \begin{equation*}
 \begin{split}
-\abs{f(x)-g(x)}
+\babs{f(x)-g(x)}
 & =
 \abs{
 y_0
@@ -1804,11 +1804,11 @@ F\bigl(t,g(t)\bigr)
 }
 \\
 & \leq
-L\norm{f-g}_{[-h,h]}\abs{x}
+L\snorm{f-g}_{[-h,h]}\sabs{x}
 \leq
-Lh\norm{f-g}_{[-h,h]}
+Lh\snorm{f-g}_{[-h,h]}
 \leq
-\frac{L\alpha}{M+L\alpha}\norm{f-g}_{[-h,h]} .
+\frac{L\alpha}{M+L\alpha}\snorm{f-g}_{[-h,h]} .
 \end{split}
 \end{equation*}
 As 
@@ -1816,9 +1816,9 @@ before, $C = \frac{L\alpha}{M+L\alpha} < 1$.  By taking supremum over $x \in
 [-h,h]$ on the
 left-hand side we obtain
 \begin{equation*}
-\norm{f-g}_{[-h,h]} \leq C \norm{f-g}_{[-h,h]} .
+\snorm{f-g}_{[-h,h]} \leq C \snorm{f-g}_{[-h,h]} .
 \end{equation*}
-This is only possible if $\norm{f-g}_{[-h,h]} = 0$.  Therefore, $f=g$, and the
+This is only possible if $\snorm{f-g}_{[-h,h]} = 0$.  Therefore, $f=g$, and the
 solution is unique.
 \end{proof}
 
@@ -1928,9 +1928,9 @@ we saw above that any $h < 1$ should work.
 \begin{example}
 Consider the equation
 \begin{equation*}
-f'(x) = 2 \sqrt{\abs{f(x)}}, \qquad f(0) = 0 .
+f'(x) = 2 \sqrt{\babs{f(x)}}, \qquad f(0) = 0 .
 \end{equation*}
-The function $F(x,y) = 2 \sqrt{\abs{y}}$ is continuous,
+The function $F(x,y) = 2 \sqrt{\sabs{y}}$ is continuous,
 but not Lipschitz in $y$ (why?). 
 The equation does not satisfy the hypotheses of the theorem.
 The function
@@ -2019,7 +2019,7 @@ that is, for every fixed $y$ the function that takes $x$ to $F(x,y)$ is
 continuous.  Further, suppose $F$ is Lipschitz in the second variable,
 that is, there exists a number $L$ such that
 \begin{equation*}
-\abs{F(x,y) - F(x,z)} \leq L \abs{y-z}
+\babs{F(x,y) - F(x,z)} \leq L \sabs{y-z}
 \qquad \text{for all } y,z \in J, x \in I .
 \end{equation*}
 Show that $F$ is continuous as a function of two variables.  Therefore, the

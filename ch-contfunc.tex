@@ -31,7 +31,7 @@ if for every $\epsilon > 0$, the set $(x-\epsilon,x+\epsilon) \cap S
 That is, $x$ is a cluster point of $S$ if there are points of $S$
 arbitrarily close to $x$.  Another way to phrase the definition is to say
 that $x$ is a cluster point of $S$ if for every $\epsilon > 0$, there
-exists a $y \in S$ such that $y \not= x$ and $\abs{x - y} < \epsilon$.
+exists a $y \in S$ such that $y \not= x$ and $\sabs{x - y} < \epsilon$.
 Note that a cluster point of $S$ need not lie in $S$.
 
 Let us see some examples.
@@ -62,7 +62,7 @@ is nonempty because $x$ is a cluster point of $S$.
 Then
 $x_n$ is within $\nicefrac{1}{n}$ of $x$, that is,
 \begin{equation*}
-\abs{x-x_n} < \nicefrac{1}{n} .
+\sabs{x-x_n} < \nicefrac{1}{n} .
 \avoidbreak
 \end{equation*}
 As $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ converges to zero,
@@ -71,7 +71,7 @@ $\{ x_n \}_{n=1}^\infty$ converges to $x$.
 On the other hand, if we start with a sequence of numbers
 $\{ x_n \}_{n=1}^\infty$ in $S$
 converging to $x$ such that $x_n \not= x$ for all $n$, then for every
-$\epsilon > 0$ there is an $M$ such that, in particular, $\abs{x_M - x} <
+$\epsilon > 0$ there is an $M$ such that, in particular, $\sabs{x_M - x} <
 \epsilon$.  That is, $x_M \in (x-\epsilon,x+\epsilon) \cap S \setminus \{x\}$.
 \end{proof}
 
@@ -90,9 +90,9 @@ Let $f \colon S \to \R$ be a function and $c$ a cluster point of
 $S \subset \R$.
 Suppose there exists an $L \in \R$ and for every $\epsilon > 0$,
 there exists a $\delta > 0$ such that whenever $x \in S \setminus \{ c \}$
-and $\abs{x - c} < \delta$, we have
+and $\sabs{x - c} < \delta$, we have
 \begin{equation*}
-\abs{f(x) - L} < \epsilon .
+\babs{f(x) - L} < \epsilon .
 \end{equation*}
 We then say $f(x)$ \emph{converges}\index{converges!function} to $L$ as $x$ goes
 to $c$, and we write
@@ -123,21 +123,21 @@ the limit of $f(x)$ as $x$ goes to $c$ is unique.
 \begin{proof}
 Let $L_1$ and $L_2$ be two numbers that both satisfy the definition.
 Take an $\epsilon > 0$ and find a $\delta_1 > 0$ such that
-$\abs{f(x)-L_1} < \nicefrac{\epsilon}{2}$ 
-for all $x \in S \setminus \{c\}$ with $\abs{x-c} < \delta_1$.
+$\babs{f(x)-L_1} < \nicefrac{\epsilon}{2}$ 
+for all $x \in S \setminus \{c\}$ with $\sabs{x-c} < \delta_1$.
 Also find $\delta_2 > 0$ such that
-$\abs{f(x)-L_2} < \nicefrac{\epsilon}{2}$
-for all $x \in S \setminus \{c\}$ with $\abs{x-c} < \delta_2$.
+$\babs{f(x)-L_2} < \nicefrac{\epsilon}{2}$
+for all $x \in S \setminus \{c\}$ with $\sabs{x-c} < \delta_2$.
 Put $\delta \coloneqq \min \{ \delta_1, \delta_2 \}$.  Suppose $x \in S$,
-$\abs{x-c} < \delta$, and $x \not= c$.  As $\delta > 0$ and $c$ is a cluster
+$\sabs{x-c} < \delta$, and $x \not= c$.  As $\delta > 0$ and $c$ is a cluster
 point, such an $x$ exists.  Then
 \begin{equation*}
-\abs{L_1 - L_2} =
-\abs{L_1 - f(x) + f(x) - L_2} \leq
-\abs{L_1 - f(x)} + \abs{f(x) - L_2} < \frac{\epsilon}{2} + \frac{\epsilon}{2}
+\sabs{L_1 - L_2} =
+\babs{L_1 - f(x) + f(x) - L_2} \leq
+\babs{L_1 - f(x)} + \babs{f(x) - L_2} < \frac{\epsilon}{2} + \frac{\epsilon}{2}
 = \epsilon.
 \end{equation*}
-As $\abs{L_1-L_2} < \epsilon$ for arbitrary $\epsilon > 0$, then
+As $\sabs{L_1-L_2} < \epsilon$ for arbitrary $\epsilon > 0$, then
 $L_1 = L_2$.
 \end{proof}
 
@@ -150,23 +150,23 @@ for any $c \in \R$,
 
 Proof: Let $c \in \R$ be fixed, and suppose $\epsilon > 0$ is given.  Write
 \begin{equation*}
-\delta \coloneqq \min \left\{ 1 , \, \frac{\epsilon}{2\abs{c}+1} \right\} .
+\delta \coloneqq \min \left\{ 1 , \, \frac{\epsilon}{2\sabs{c}+1} \right\} .
 \end{equation*}
-Take $x \not= c$ such that $\abs{x-c} < \delta$.  In particular,
-$\abs{x-c} < 1$.  By reverse triangle inequality,
+Take $x \not= c$ such that $\sabs{x-c} < \delta$.  In particular,
+$\sabs{x-c} < 1$.  By reverse triangle inequality,
 \begin{equation*}
-\abs{x}-\abs{c} \leq \abs{x-c} < 1 .
+\sabs{x}-\sabs{c} \leq \sabs{x-c} < 1 .
 \end{equation*}
-Adding $2\abs{c}$ to both sides, we obtain
-$\abs{x} + \abs{c} < 2\abs{c} + 1$.  Estimate
+Adding $2\sabs{c}$ to both sides, we obtain
+$\sabs{x} + \sabs{c} < 2\sabs{c} + 1$.  Estimate
 \begin{equation*}
 \begin{split}
-\abs{f(x) - c^2} &= \abs{x^2-c^2} \\
-&= \abs{(x+c)(x-c)} \\
-&= \abs{x+c}\abs{x-c} \\
-&\leq (\abs{x}+\abs{c})\abs{x-c} \\
-&< (2\abs{c}+1)\abs{x-c} \\
-&< (2\abs{c}+1)\frac{\epsilon}{2\abs{c}+1} = \epsilon .
+\babs{f(x) - c^2} &= \sabs{x^2-c^2} \\
+&= \babs{(x+c)(x-c)} \\
+&= \sabs{x+c}\sabs{x-c} \\
+&\leq \bigl(\sabs{x}+\sabs{c}\bigr)\sabs{x-c} \\
+&< \bigl(2\sabs{c}+1\bigr)\sabs{x-c} \\
+&< \bigl(2\sabs{c}+1\bigr)\frac{\epsilon}{2\sabs{c}+1} = \epsilon .
 \end{split}
 \end{equation*}
 \end{example}
@@ -189,9 +189,9 @@ even though $f(0) = 1$.  See \figureref{fig:limvaldiff}.
 \end{myfigureht}
 
 Proof:  Let $\epsilon > 0$ be given.  Let $\delta \coloneqq \epsilon$.
-For $x \in [0,1)$, $x \not= 0$, and $\abs{x-0} < \delta$, we get
+For $x \in [0,1)$, $x \not= 0$, and $\sabs{x-0} < \delta$, we get
 \begin{equation*}
-\abs{f(x) - 0} = \abs{x} < \delta = \epsilon .
+\babs{f(x) - 0} = \sabs{x} < \delta = \epsilon .
 \end{equation*}
 \end{example}
 
@@ -219,12 +219,12 @@ $x_n \in S \setminus \{c\}$ and
 $\lim_{n\to\infty} x_n = c$.
 We wish to show that $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges to $L$.
 Let $\epsilon > 0$ be given.  Find a $\delta > 0$ such that
-if $x \in S \setminus \{c\}$ and $\abs{x-c} < \delta$, then
-$\abs{f(x) - L} < \epsilon$.  As
+if $x \in S \setminus \{c\}$ and $\sabs{x-c} < \delta$, then
+$\babs{f(x) - L} < \epsilon$.  As
 $\{ x_n \}_{n=1}^\infty$  converges to $c$, find an $M$ such that for $n \geq M$,
-we have that $\abs{x_n - c} < \delta$.  Therefore, for $n \geq M$,
+we have that $\sabs{x_n - c} < \delta$.  Therefore, for $n \geq M$,
 \begin{equation*}
-\abs{f(x_n) - L} < \epsilon .
+\babs{f(x_n) - L} < \epsilon .
 \end{equation*}
 Thus $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges to $L$.
 
@@ -232,15 +232,15 @@ For the other direction, we use proof by contrapositive.  Suppose
 it is not true that $f(x) \to L$ as $x \to c$.  The negation of the
 definition is that there exists an $\epsilon > 0$ such that for every
 $\delta > 0$ there exists an $x \in S \setminus \{c\}$, where
-$\abs{x-c} < \delta$
-and $\abs{f(x)-L} \geq \epsilon$.
+$\sabs{x-c} < \delta$
+and $\babs{f(x)-L} \geq \epsilon$.
 
 Let us use $\nicefrac{1}{n}$ for $\delta$ in the statement above to
 construct a sequence $\{ x_n \}_{n=1}^\infty$.  We have
 that there exists an $\epsilon > 0$ such that for every $n$,
 there exists a point $x_n \in S \setminus \{c\}$, where
-$\abs{x_n-c} < \nicefrac{1}{n}$
-and $\abs{f(x_n)-L} \geq \epsilon$.
+$\sabs{x_n-c} < \nicefrac{1}{n}$
+and $\babs{f(x_n)-L} \geq \epsilon$.
 The sequence $\{ x_n \}_{n=1}^\infty$ just constructed converges to $c$, but
 the sequence $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ does not converge to $L$.
 And we are done.
@@ -283,15 +283,15 @@ $\displaystyle \lim_{x \to 0} \sin( \nicefrac{1}{x} )$ does not exist.
 
 Now consider $x\sin(\nicefrac{1}{x})$.  Let $\{ x_n \}_{n=1}^\infty$ be a sequence
 such that $x_n \not= 0$ for all $n$, and such that $\lim_{n\to\infty} x_n = 0$.
-Notice that $\abs{\sin(t)} \leq 1$ for all $t \in \R$.  Therefore,
+Notice that $\babs{\sin(t)} \leq 1$ for all $t \in \R$.  Therefore,
 \begin{equation*}
-\abs{x_n\sin(\nicefrac{1}{x_n})-0}
+\babs{x_n\sin(\nicefrac{1}{x_n})-0}
 =
-\abs{x_n}\abs{\sin(\nicefrac{1}{x_n})}
+\sabs{x_n}\babs{\sin(\nicefrac{1}{x_n})}
 \leq
-\abs{x_n} .
+\sabs{x_n} .
 \end{equation*}
-As $x_n$ goes to 0, then $\abs{x_n}$ goes to zero, and hence
+As $x_n$ goes to 0, then $\sabs{x_n}$ goes to zero, and hence
 $\bigl\{ x_n\sin(\nicefrac{1}{x_n}) \bigr\}_{n=1}^\infty$ converges to zero.  By
 \lemmaref{seqflimit:lemma}, 
 $\displaystyle \lim_{x \to 0} x\sin( \nicefrac{1}{x} ) = 0$.
@@ -416,7 +416,7 @@ Suppose $f \colon S \to \R$ is a function such that the limit of $f(x)$ as $x$ g
 exists.
 Then
 \begin{equation*}
-\lim_{x\to c} \abs{f(x)} =
+\lim_{x\to c} \babs{f(x)} =
 \abs{\lim_{x\to c} f(x)}.
 \end{equation*}
 \end{cor}
@@ -471,20 +471,19 @@ $\epsilon > 0$.  Thus $c$ is a cluster point of $A$.
 
 Now suppose $c$ is a cluster point of $S$ and $f(x) \to L$ as $x \to c$.  That is, for every $\epsilon > 0$
 there is a $\delta > 0$ such that if $x \in S \setminus \{ c \}$
-and $\abs{x-c} < \delta$, then $\abs{f(x)-L} < \epsilon$.  Because $A \subset S$,
+and $\sabs{x-c} < \delta$, then $\babs{f(x)-L} < \epsilon$.  Because $A \subset S$,
 if $x \in A \setminus \{ c \}$, then $x \in S \setminus \{ c \}$,
 and hence $f|_A(x) \to L$ as $x \to c$.
 
 Finally, suppose $f|_A(x) \to L$ as $x \to c$ and let $\epsilon > 0$ be
 given.
 There is a $\delta' > 0$ such that if $x \in A \setminus \{ c \}$
-and $\abs{x-c} < \delta'$, then $\bigl\lvert f|_A(x)-L \bigr\rvert < \epsilon$.
+and $\sabs{x-c} < \delta'$, then $\babs{ f|_A(x)-L } < \epsilon$.
 Take $\delta \coloneqq \min \{ \delta', \alpha \}$.
 Now suppose $x \in S \setminus \{ c \}$ and
-$\abs{x-c} < \delta$.  As $\abs{x-c} < \alpha$, we find $x \in A \setminus \{ c \}$,
-and as $\abs{x-c} < \delta'$, 
-we get $\abs{f(x)-L} = \bigl\lvert f|_A(x)-L
-\bigr\rvert < \epsilon$.
+$\sabs{x-c} < \delta$.  As $\sabs{x-c} < \alpha$, we find $x \in A \setminus \{ c \}$,
+and as $\sabs{x-c} < \delta'$, 
+we get $\babs{f(x)-L} = \babs{ f|_A(x)-L } < \epsilon$.
 \end{proof}
 
 The hypothesis on $A$ in the proposition is necessary.  For an arbitrary
@@ -738,9 +737,9 @@ Suppose $S \subset \R$ and $c \in S$.
 We say $f \colon S \to \R$
 is \emph{continuous at $c$}\index{continuous at $c$}
 if for every $\epsilon > 0$
-there is a $\delta > 0$ such that whenever $x \in S$ and $\abs{x-c} <
+there is a $\delta > 0$ such that whenever $x \in S$ and $\sabs{x-c} <
 \delta$, we have
-$\abs{f(x)-f(c)} < \epsilon$.
+$\babs{f(x)-f(c)} < \epsilon$.
 
 %\medskip
 
@@ -749,7 +748,7 @@ $f$ is a \emph{\myindex{continuous function}}\index{function!continuous}.
 \end{defn}
 \begin{myfigureht}
 \subimport*{figures/}{contigr.pdf_t}
-\caption{For $\abs{x-c} < \delta$, the graph of $f(x)$ should be within the gray region.\label{fig:contigr}}
+\caption{For $\sabs{x-c} < \delta$, the graph of $f(x)$ should be within the gray region.\label{fig:contigr}}
 \end{myfigureht}
 
 If $f$ is continuous for all $c \in A$, we say
@@ -797,29 +796,29 @@ We start with \ref{contbasic:prop:i}.  Suppose $c$ is not a cluster point of
 $S$.  Then there exists a $\delta > 0$
 such that $S \cap (c-\delta,c+\delta) = \{ c \}$.
 For any $\epsilon > 0$, simply pick this given $\delta$.
-The only $x \in S$ such that $\abs{x-c} < \delta$ is $x=c$.  Then
-$\abs{f(x)-f(c)} = \abs{f(c)-f(c)} = 0 < \epsilon$.
+The only $x \in S$ such that $\sabs{x-c} < \delta$ is $x=c$.  Then
+$\babs{f(x)-f(c)} = \babs{f(c)-f(c)} = 0 < \epsilon$.
 
 Let us move to \ref{contbasic:prop:ii}.
 Suppose $c$ is a cluster point of $S$.  Let us first suppose
 that $\lim_{x\to c} f(x) = f(c)$.  Then for every $\epsilon > 0$,
 there is a $\delta > 0$ such that if $x \in S \setminus \{ c \}$
-and $\abs{x-c} < \delta$, then $\abs{f(x)-f(c)} < \epsilon$.
-Also $\abs{f(c)-f(c)} = 0 < \epsilon$, so the definition of continuity at
+and $\sabs{x-c} < \delta$, then $\babs{f(x)-f(c)} < \epsilon$.
+Also $\babs{f(c)-f(c)} = 0 < \epsilon$, so the definition of continuity at
 $c$ is satisfied.  On the other hand, suppose $f$ is continuous
 at $c$.  For every $\epsilon > 0$, there exists a $\delta > 0$
-such that for $x \in S$ where $\abs{x-c} < \delta$, we have
-$\abs{f(x)-f(c)} < \epsilon$.  Then the statement is, of course, still true if
+such that for $x \in S$ where $\sabs{x-c} < \delta$, we have
+$\babs{f(x)-f(c)} < \epsilon$.  Then the statement is, of course, still true if
 $x \in S \setminus \{ c \} \subset S$.  Therefore, $\lim_{x\to c} f(x) =
 f(c)$.
 
 For \ref{contbasic:prop:iii}, first suppose $f$ is continuous at $c$.
 Let $\{ x_n \}_{n=1}^\infty$
 be a sequence such that $x_n \in S$ and $\lim_{n\to\infty} x_n = c$.  Let $\epsilon > 0$
-be given.  Find a $\delta > 0$ such that $\abs{f(x)-f(c)} < \epsilon$
-for all $x \in S$ where $\abs{x-c} < \delta$.  Find an $M \in \N$
-such that for $n \geq M$, we have $\abs{x_n-c} < \delta$.  Then for
-$n \geq M$, we have that $\abs{f(x_n)-f(c)} < \epsilon$,
+be given.  Find a $\delta > 0$ such that $\babs{f(x)-f(c)} < \epsilon$
+for all $x \in S$ where $\sabs{x-c} < \delta$.  Find an $M \in \N$
+such that for $n \geq M$, we have $\sabs{x_n-c} < \delta$.  Then for
+$n \geq M$, we have that $\babs{f(x_n)-f(c)} < \epsilon$,
 so $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$
 converges to $f(c)$.
 
@@ -827,14 +826,14 @@ We prove the other direction of \ref{contbasic:prop:iii} by contrapositive.
 Suppose $f$ is not
 continuous at $c$.  Then there exists an $\epsilon > 0$
 such that for every $\delta > 0$, there exists an $x \in S$
-such that $\abs{x-c} < \delta$ and $\abs{f(x)-f(c)} \geq \epsilon$.
+such that $\sabs{x-c} < \delta$ and $\babs{f(x)-f(c)} \geq \epsilon$.
 Define a sequence $\{ x_n \}_{n=1}^\infty$ as follows.
-Let $x_n \in S$ be such that $\abs{x_n-c} < \nicefrac{1}{n}$
-and $\abs{f(x_n)-f(c)} \geq \epsilon$.
+Let $x_n \in S$ be such that $\sabs{x_n-c} < \nicefrac{1}{n}$
+and $\babs{f(x_n)-f(c)} \geq \epsilon$.
 Now $\{ x_n \}_{n=1}^\infty$ is
 a sequence in $S$ such that
 $\lim_{n\to\infty} x_n = c$ and such that
-$\abs{f(x_n)-f(c)} \geq \epsilon$ for all $n \in \N$.
+$\babs{f(x_n)-f(c)} \geq \epsilon$ for all $n \in \N$.
 Thus $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$
 does not converge to $f(c)$.  It may or may not converge, but it definitely
 does not converge to $f(c)$.  
@@ -932,11 +931,11 @@ given by $h(x) \coloneqq \frac{f(x)}{g(x)}$ is continuous at $c$.
 The functions $\sin(x)$ and $\cos(x)$ are continuous.
 In the following computations we use the sum-to-product
 trigonometric identities.  We also use the simple facts that
-$\abs{\sin(x)} \leq \abs{x}$, $\abs{\cos(x)} \leq 1$,
-and $\abs{\sin(x)} \leq 1$.
+$\babs{\sin(x)} \leq \sabs{x}$, $\babs{\cos(x)} \leq 1$,
+and $\babs{\sin(x)} \leq 1$.
 \begin{equation*}
 \begin{split}
-\abs{\sin(x)-\sin(c)} & =
+\babs{\sin(x)-\sin(c)} & =
 \abs{
 2 \sin \left( \frac{x-c}{2} \right) \cos \left( \frac{x+c}{2} \right)
 }
@@ -953,12 +952,12 @@ and $\abs{\sin(x)} \leq 1$.
 & \leq
 2
 \abs{ \frac{x-c}{2} }
-= \abs{x-c}
+= \sabs{x-c}
 \end{split}
 \end{equation*}
 \begin{equation*}
 \begin{split}
-\abs{\cos(x)-\cos(c)} & =
+\babs{\cos(x)-\cos(c)} & =
 \abs{
 -2 \sin \left( \frac{x-c}{2} \right) \sin \left( \frac{x+c}{2} \right)
 }
@@ -975,7 +974,7 @@ and $\abs{\sin(x)} \leq 1$.
 & \leq
 2
 \abs{ \frac{x-c}{2} }
-= \abs{x-c}
+= \sabs{x-c}
 \end{split}
 \end{equation*}
 
@@ -1164,7 +1163,7 @@ there is an $M$ such that for $n \geq M$, all the numbers $x_n$
 that are rational
 have a denominator larger than or equal to $K$.  Thus for $n \geq M$,
 \begin{equation*}
-\abs{f(x_n) - 0} = f(x_n) \leq \nicefrac{1}{K} < \epsilon .
+\babs{f(x_n) - 0} = f(x_n) \leq \nicefrac{1}{K} < \epsilon .
 \end{equation*}
 Therefore, $f$ is continuous at irrational $c$.
 \end{example}
@@ -1302,7 +1301,7 @@ $h$ is continuous.
 \begin{exercise}
 Suppose $g \colon \R \to \R$ is a continuous function such that $g(0) = 0$,
 and suppose $f \colon \R \to \R$ is such that
-$\abs{f(x)-f(y)} \leq g(x-y)$ for all $x$ and $y$.  Show that $f$ is
+$\babs{f(x)-f(y)} \leq g(x-y)$ for all $x$ and $y$.  Show that $f$ is
 continuous.
 \end{exercise}
 
@@ -1331,7 +1330,7 @@ Suppose $f \colon [-1,1] \to \R$ is a function continuous at all $x \in
 that $0 < \epsilon < 1$, there exists
 a function $g \colon [-1,1] \to \R$ continuous on all of $[-1,1]$, such that
 $f(x) = g(x)$ for all $x \in [-1,-\epsilon] \cup [\epsilon,1]$, and 
-$\abs{g(x)} \leq \abs{f(x)}$ for all $x \in [-1,1]$.
+$\babs{g(x)} \leq \babs{f(x)}$ for all $x \in [-1,1]$.
 \end{exercise}
 
 \begin{exercise}[Challenging]
@@ -1370,7 +1369,7 @@ are quite well behaved.
 Recall that $f \colon [a,b] \to \R$ is
 \emph{bounded}\index{bounded function}\index{function!bounded}
 if there exists a $B \in \R$ such that
-$\abs{f(x)} \leq B$ for all $x \in [a,b]$.
+$\babs{f(x)} \leq B$ for all $x \in [a,b]$.
 For a continuous function on a closed and bounded interval, we have the following lemma.
 
 \begin{lemma}
@@ -1382,7 +1381,7 @@ We prove the claim by contrapositive.  Suppose $f$ is not bounded.
 Then for each
 $n \in \N$, there is an $x_n \in [a,b]$, such that
 \begin{equation*}
-\abs{f(x_n)} \geq n .
+\babs{f(x_n)} \geq n .
 \end{equation*}
 The sequence $\{ x_n \}_{n=1}^\infty$ is bounded as $a \leq x_n \leq b$.
 By the \hyperref[thm:bwseq]{Bolzano--Weierstrass theorem},
@@ -1391,7 +1390,7 @@ Let $x \coloneqq \lim_{i\to\infty} x_{n_i}$.
 Since $a \leq x_{n_i} \leq b$ for all $i$, then $a \leq x \leq b$.
 The sequence $\bigl\{ f(x_{n_i}) \bigr\}_{i=1}^\infty$ is not bounded 
 as 
-$\abs{f(x_{n_i})} \geq n_i \geq i$.
+$\babs{f(x_{n_i})} \geq n_i \geq i$.
 Thus $f$ is not continuous at $x$ as
 \begin{equation*}
 f(x)
@@ -1709,20 +1708,20 @@ We first compare the highest order term with the rest:
 \begin{split}
 \abs{\frac{b_{d-1} n^{d-1} + \cdots + b_1 n + b_0}{n^d}}
 & =
-\frac{\abs{b_{d-1} n^{d-1} + \cdots + b_1 n + b_0}}{n^d}
+\frac{\sabs{b_{d-1} n^{d-1} + \cdots + b_1 n + b_0}}{n^d}
 \\
 & \leq
-\frac{\abs{b_{d-1}} n^{d-1} + \cdots + \abs{b_1} n + \abs{b_0}}{n^d}
+\frac{\sabs{b_{d-1}} n^{d-1} + \cdots + \sabs{b_1} n + \sabs{b_0}}{n^d}
 \\
 & \leq
-\frac{\abs{b_{d-1}} n^{d-1} + \cdots + \abs{b_1} n^{d-1} + \abs{b_0} n^{d-1}}{n^d}
+\frac{\sabs{b_{d-1}} n^{d-1} + \cdots + \sabs{b_1} n^{d-1} + \sabs{b_0} n^{d-1}}{n^d}
 \\
 & =
-\frac{n^{d-1}\bigl(\abs{b_{d-1}} + \cdots + \abs{b_1} + \abs{b_0}\bigr)}{n^d}
+\frac{n^{d-1}\bigl(\sabs{b_{d-1}} + \cdots + \sabs{b_1} + \sabs{b_0}\bigr)}{n^d}
 \\
 & =
 \frac{1}{n}
-\bigl(\abs{b_{d-1}} + \cdots + \abs{b_1} + \abs{b_0}\bigr) .
+\bigl(\sabs{b_{d-1}} + \cdots + \sabs{b_1} + \sabs{b_0}\bigr) .
 \end{split}
 \end{equation*}
 Therefore,
@@ -1878,7 +1877,7 @@ achieves an absolute minimum and an absolute maximum.
 
 \begin{exercise}[Challenging]
 Suppose $f(x)$ is a bounded polynomial,
-in other words, there is an $M$ such that $\abs{f(x)} \leq M$
+in other words, there is an $M$ such that $\babs{f(x)} \leq M$
 for all $x \in \R$.  Prove that $f$ must be a constant.
 \end{exercise}
 
@@ -1956,7 +1955,7 @@ give a name to this concept.
 Let $S \subset \R$, and let $f \colon S \to \R$ be a function.
 Suppose for every $\epsilon > 0$ there exists a $\delta > 0$
 such that whenever $x, c \in S$ and
-$\abs{x-c} < \delta$, then $\abs{f(x)-f(c)} < \epsilon$.
+$\sabs{x-c} < \delta$, then $\babs{f(x)-f(c)} < \epsilon$.
 Then we say $f$ is \emph{\myindex{uniformly continuous}}.
 \end{defn}
 
@@ -2017,19 +2016,19 @@ Proof: Given $\epsilon > 0$, then $\epsilon >
 \epsilon >
 \abs{\nicefrac{1}{x}-\nicefrac{1}{y}}
 =
-\frac{\abs{y-x}}{\abs{xy}} 
+\frac{\sabs{y-x}}{\sabs{xy}} 
 =
-\frac{\abs{y-x}}{xy} ,
+\frac{\sabs{y-x}}{xy} ,
 \end{equation*}
 or
 \begin{equation*}
-\abs{x-y} < xy \epsilon .
+\sabs{x-y} < xy \epsilon .
 \end{equation*}
 Suppose $\epsilon < 1$, and we wish to see if a 
 small $\delta > 0$ would work.
 If $x \in (0,1)$ and 
 $y = x+\nicefrac{\delta}{2} \in (0,1)$,
-then $\abs{x-y} = \nicefrac{\delta}{2} < \delta$.
+then $\sabs{x-y} = \nicefrac{\delta}{2} < \delta$.
 We plug $y$ into the inequality above to get $\nicefrac{\delta}{2} <
 x \bigl( x+\nicefrac{\delta}{2} \bigr) \epsilon < x$.
 If the definition of uniform continuity is satisfied, then
@@ -2055,11 +2054,11 @@ $c \in [a,b]$ where $f$ is not continuous.  Let us negate
 the definition of uniformly continuous.
 There exists an $\epsilon > 0$
 such that for every $\delta > 0$, there exist points $x, y$ in $[a,b]$ with
-$\abs{x-y} < \delta$ and $\abs{f(x)-f(y)} \geq \epsilon$.
+$\sabs{x-y} < \delta$ and $\babs{f(x)-f(y)} \geq \epsilon$.
 
 So for the $\epsilon > 0$ above,
 we find sequences $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ such that
-$\abs{x_n-y_n} < \nicefrac{1}{n}$ and such that $\abs{f(x_n)-f(y_n)} \geq
+$\sabs{x_n-y_n} < \nicefrac{1}{n}$ and such that $\babs{f(x_n)-f(y_n)} \geq
 \epsilon$.  By
 \hyperref[thm:bwseq]{Bolzano--Weierstrass},
 there exists a convergent subsequence
@@ -2076,25 +2075,25 @@ As $a \leq x_{n_k} \leq b$ for all $k$, we have $a \leq c \leq b$.  Estimate
 +
 \sabs{x_{n_k}-c} .
 \end{equation*}
-As $\nicefrac{1}{n_k}$ and $\abs{x_{n_k}-c}$ both go to zero when
+As $\nicefrac{1}{n_k}$ and $\sabs{x_{n_k}-c}$ both go to zero when
 $k$ goes to infinity, $\{ y_{n_k} \}_{k=1}^\infty$ converges and the limit
 is $c$.  We now show that $f$ is not continuous at $c$.
 Estimate
 \begin{equation*}
 \begin{split}
-\abs{f(x_{n_k}) - f(c)} & =
-\abs{f(x_{n_k}) - f(y_{n_k}) + f(y_{n_k}) - f(c)} \\
+\babs{f(x_{n_k}) - f(c)} & =
+\babs{f(x_{n_k}) - f(y_{n_k}) + f(y_{n_k}) - f(c)} \\
 & \geq
-\abs{f(x_{n_k}) - f(y_{n_k})} - \abs{f(y_{n_k}) - f(c)} \\
+\babs{f(x_{n_k}) - f(y_{n_k})} - \babs{f(y_{n_k}) - f(c)} \\
 & \geq
-\epsilon - \abs{f(y_{n_k})-f(c)} .
+\epsilon - \babs{f(y_{n_k})-f(c)} .
 \end{split}
 \end{equation*}
 Or in other words,
 \begin{equation*}
-\abs{f(x_{n_k})-f(c)} 
+\babs{f(x_{n_k})-f(c)} 
 +
-\abs{f(y_{n_k})-f(c)}  \geq
+\babs{f(y_{n_k})-f(c)}  \geq
 \epsilon .
 \end{equation*}
 At least one of the sequences $\bigl\{ f(x_{n_k}) \bigr\}_{k=1}^\infty$  or
@@ -2124,9 +2123,9 @@ Then $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ is Cauchy.
 
 \begin{proof}
 Let $\epsilon > 0$ be given.  There is a $\delta > 0$ such that
-$\abs{f(x)-f(y)} < \epsilon$ whenever $x,y \in S$ and $\abs{x-y} < \delta$.  Find an $M
-\in \N$ such that for all $n, k \geq M$, we have $\abs{x_n-x_k} < \delta$.
-Then for all $n, k \geq M$, we have $\abs{f(x_n)-f(x_k)} < \epsilon$.
+$\babs{f(x)-f(y)} < \epsilon$ whenever $x,y \in S$ and $\sabs{x-y} < \delta$.  Find an $M
+\in \N$ such that for all $n, k \geq M$, we have $\sabs{x_n-x_k} < \delta$.
+Then for all $n, k \geq M$, we have $\babs{f(x_n)-f(x_k)} < \epsilon$.
 \end{proof}
 
 An application of the lemma above is the following extension result.  It says that
@@ -2170,25 +2169,25 @@ Let $L_1 \coloneqq \lim_{n\to\infty} f(x_n)$.  Take another sequence
 $\{ y_n \}_{n=1}^\infty$ in $(a,b)$ such that $\lim_{n\to\infty} y_n = a$.  By the same reasoning
 we get $L_2 \coloneqq \lim_{n\to\infty} f(y_n)$.  If we show that $L_1 = L_2$, then
 the limit $L_a = \lim_{x\to a} f(x)$ exists.  Let $\epsilon > 0$ be given.
-Find $\delta > 0$ such that $\abs{x-y} < \delta$ implies $\abs{f(x)-f(y)} <
+Find $\delta > 0$ such that $\sabs{x-y} < \delta$ implies $\babs{f(x)-f(y)} <
 \nicefrac{\epsilon}{3}$.  Find $M \in \N$ such that for
-$n \geq M$, we have $\abs{a-x_n} < \nicefrac{\delta}{2}$,
-$\abs{a-y_n} < \nicefrac{\delta}{2}$,
-$\abs{f(x_n)-L_1} < \nicefrac{\epsilon}{3}$, and
-$\abs{f(y_n)-L_2} < \nicefrac{\epsilon}{3}$.  Then for $n \geq M$,
+$n \geq M$, we have $\sabs{a-x_n} < \nicefrac{\delta}{2}$,
+$\sabs{a-y_n} < \nicefrac{\delta}{2}$,
+$\babs{f(x_n)-L_1} < \nicefrac{\epsilon}{3}$, and
+$\babs{f(y_n)-L_2} < \nicefrac{\epsilon}{3}$.  Then for $n \geq M$,
 \begin{equation*}
-\abs{x_n-y_n} = 
-\abs{x_n-a+a-y_n} \leq
-\abs{x_n-a}+\abs{a-y_n} < \nicefrac{\delta}{2} + \nicefrac{\delta}{2} =
+\sabs{x_n-y_n} = 
+\sabs{x_n-a+a-y_n} \leq
+\sabs{x_n-a}+\sabs{a-y_n} < \nicefrac{\delta}{2} + \nicefrac{\delta}{2} =
 \delta.
 \end{equation*}
 So
 \begin{equation*}
 \begin{split}
-\abs{L_1-L_2} &=
-\abs{L_1-f(x_n)+f(x_n)-f(y_n)+f(y_n)-L_2} \\
+\sabs{L_1-L_2} &=
+\babs{L_1-f(x_n)+f(x_n)-f(y_n)+f(y_n)-L_2} \\
 & \leq 
-\abs{L_1-f(x_n)}+\abs{f(x_n)-f(y_n)}+\abs{f(y_n)-L_2} \\
+\babs{L_1-f(x_n)}+\babs{f(x_n)-f(y_n)}+\babs{f(y_n)-L_2} \\
 & \leq
 \nicefrac{\epsilon}{3} + \nicefrac{\epsilon}{3} + \nicefrac{\epsilon}{3}
 =
@@ -2225,7 +2224,7 @@ is \emph{\myindex{Lipschitz continuous}}\index{function!Lipschitz}%
 \href{https://en.wikipedia.org/wiki/Rudolf_Lipschitz}{Rudolf Otto Sigismund Lipschitz}
 (1832--1903).}, if there exists a $K \in \R$, such that
 \begin{equation*}
-\abs{f(x)-f(y)} \leq K \abs{x-y} 
+\babs{f(x)-f(y)} \leq K \sabs{x-y} 
 \qquad \text{for all } x \text{ and } y \text{ in } S.
 \end{equation*}
 \end{defn}
@@ -2241,14 +2240,14 @@ A Lipschitz continuous function is uniformly continuous.
 
 \begin{proof}
 Let $f \colon S \to \R$ be a function and let $K$ be a constant such that
-$\abs{f(x)-f(y)} \leq K \abs{x-y}$
+$\babs{f(x)-f(y)} \leq K \sabs{x-y}$
 for all $x, y$ in $S$.
 Let $\epsilon > 0$ be given.  Take $\delta \coloneqq
 \nicefrac{\epsilon}{K}$.
 For all $x$ and $y$ in $S$ such that
-$\abs{x-y} < \delta$,
+$\sabs{x-y} < \delta$,
 \begin{equation*}
-\abs{f(x)-f(y)} \leq K \abs{x-y} < K \delta = K \frac{\epsilon}{K} =
+\babs{f(x)-f(y)} \leq K \sabs{x-y} < K \delta = K \frac{\epsilon}{K} =
 \epsilon .
 \end{equation*}
 Therefore, $f$ is uniformly continuous.
@@ -2277,11 +2276,11 @@ $\abs{\frac{f(x)-f(y)}{x-y}} \leq K$ for all $x$ and $y$.\label{fig:lipschitz}}
 The functions $\sin(x)$ and $\cos(x)$ are Lipschitz continuous.
 In \exampleref{sincos:example} we have seen the following two inequalities.
 \begin{equation*}
-\abs{\sin(x)-\sin(y)} 
-\leq \abs{x-y}
+\babs{\sin(x)-\sin(y)} 
+\leq \sabs{x-y}
 \qquad \text{and} \qquad
-\abs{\cos(x)-\cos(y)}
-\leq \abs{x-y} .
+\babs{\cos(x)-\cos(y)}
+\leq \sabs{x-y} .
 \end{equation*}
 
 Hence sine and cosine are Lipschitz continuous with $K=1$.
@@ -2294,7 +2293,7 @@ is Lipschitz continuous. Proof:
 \abs{\sqrt{x}-\sqrt{y}} = 
 \abs{\frac{x-y}{\sqrt{x}+\sqrt{y}}}
 =
-\frac{\abs{x-y}}{\sqrt{x}+\sqrt{y}} .
+\frac{\sabs{x-y}}{\sqrt{x}+\sqrt{y}} .
 \end{equation*}
 As $x \geq 1$ and $y \geq 1$, we see that $\frac{1}{\sqrt{x}+\sqrt{y}}
 \leq \frac{1}{2}$.  Therefore,
@@ -2303,7 +2302,7 @@ As $x \geq 1$ and $y \geq 1$, we see that $\frac{1}{\sqrt{x}+\sqrt{y}}
 \abs{\frac{x-y}{\sqrt{x}+\sqrt{y}}}
 \leq
 \frac{1}{2}
-\abs{x-y}.
+\sabs{x-y}.
 \end{equation*}
 
 On the other hand, $g \colon [0,\infty) \to \R$ defined by
@@ -2312,7 +2311,7 @@ Suppose for all $x,y \in [0,\infty)$,
 \begin{equation*}
 \abs{\sqrt{x}-\sqrt{y}} 
 \leq
-K \abs{x-y} ,
+K \sabs{x-y} ,
 \end{equation*}
 for some $K$.  Set $y=0$ to obtain
 $\sqrt{x} \leq K x$.   If $K > 0$, then for $x > 0$ we get
@@ -2467,12 +2466,12 @@ then $f$ is Lipschitz.
 
 \begin{exercise}
 \pagebreak[2]
-Suppose for $f \colon [0,1] \to \R$, we have $\abs{f(x)-f(y)} \leq K
-\abs{x-y}$ for all $x,y$ in $[0,1]$,
+Suppose for $f \colon [0,1] \to \R$, we have $\babs{f(x)-f(y)} \leq K
+\sabs{x-y}$ for all $x,y$ in $[0,1]$,
 and $f(0) = f(1) = 0$.
-Prove that $\abs{f(x)} \leq \nicefrac{K}{2}$ for all $x \in [0,1]$.  Further show by example that
+Prove that $\babs{f(x)} \leq \nicefrac{K}{2}$ for all $x \in [0,1]$.  Further show by example that
 $\nicefrac{K}{2}$ is the best possible, that is, there exists such a continuous function
-for which $\abs{f(x)} = \nicefrac{K}{2}$ for some $x \in [0,1]$.
+for which $\babs{f(x)} = \nicefrac{K}{2}$ for some $x \in [0,1]$.
 \end{exercise}
 
 \begin{exercise}
@@ -2484,21 +2483,21 @@ is uniformly continuous.
 \begin{exercise}
 Suppose $f \colon S \to \R$ and $g \colon [0,\infty) \to [0,\infty)$
 are functions, $g$ is continuous at $0$, $g(0) = 0$, and
-whenever $x$ and $y$ are in $S$, we have $\abs{f(x)-f(y)} \leq
-g\bigl(\abs{x-y}\bigr)$.
+whenever $x$ and $y$ are in $S$, we have $\babs{f(x)-f(y)} \leq
+g\bigl(\sabs{x-y}\bigr)$.
 Prove that $f$ is uniformly continuous.
 \end{exercise}
 
 \begin{exercise}
 Suppose $f \colon [a,b] \to \R$ is a function such that for every $c \in
 [a,b]$ there is a $K_c > 0$ and an $\epsilon_c > 0$ for which
-$\abs{f(x)-f(y)} \leq K_c \abs{x-y}$ for all $x$ and $y$ in
+$\babs{f(x)-f(y)} \leq K_c \sabs{x-y}$ for all $x$ and $y$ in
 $(c-\epsilon_c,c+\epsilon_c) \cap [a,b]$.  In other words, $f$ is
 \myquote{locally Lipschitz.}
 \begin{enumerate}[a)]
 \item
 Prove that there exists a single $K > 0$ such that
-$\abs{f(x)-f(y)} \leq K \abs{x-y}$ for all $x,y$ in $[a,b]$.
+$\babs{f(x)-f(y)} \leq K \sabs{x-y}$ for all $x,y$ in $[a,b]$.
 \item
 Find a counterexample to the above if the interval is open, that is,
 find an $f \colon (a,b) \to \R$ that is locally Lipschitz, but not
@@ -2534,7 +2533,7 @@ $\infty$ is a cluster point of $S$.
 If there exists an $L \in \R$
 such that for every $\epsilon > 0$, there is an $M \in \R$ such that
 \begin{equation*}
-\abs{f(x) - L} < \epsilon 
+\babs{f(x) - L} < \epsilon 
 \end{equation*}
 whenever $x \in S$ and $x \geq M$, then we say $f(x)$
 \emph{converges}\index{converges!function} to $L$
@@ -2551,7 +2550,7 @@ and
 there exists an $L \in \R$
 such that for every $\epsilon > 0$, there is an $M \in \R$ such that
 \begin{equation*}
-\abs{f(x) - L} < \epsilon 
+\babs{f(x) - L} < \epsilon 
 \end{equation*}
 whenever $x \in S$ and $x \leq M$, then we say $f(x)$ \emph{converges} to $L$
 as $x$ goes to $-\infty$.
@@ -2571,7 +2570,7 @@ The limit at $\infty$ or $-\infty$ as defined above is unique if it exists.
 \end{prop}
 
 \begin{example}
-Let $f(x) \coloneqq \frac{1}{\abs{x}+1}$.  Then
+Let $f(x) \coloneqq \frac{1}{\sabs{x}+1}$.  Then
 \begin{equation*}
 \lim_{x\to \infty} f(x) = 0 \qquad \text{and} \qquad
 \lim_{x\to -\infty} f(x) = 0 .
@@ -2580,7 +2579,7 @@ Let $f(x) \coloneqq \frac{1}{\abs{x}+1}$.  Then
 Proof:
 Let $\epsilon > 0$ be given.  Find $M > 0$ large enough
 so that $\frac{1}{M+1} < \epsilon$.  If
-$x \geq M$, then $0 < \frac{1}{\abs{x}+1} = \frac{1}{x+1} \leq \frac{1}{M+1} < \epsilon$.
+$x \geq M$, then $0 < \frac{1}{\sabs{x}+1} = \frac{1}{x+1} \leq \frac{1}{M+1} < \epsilon$.
 The first limit follows.
 The proof for $-\infty$ is left to the reader.
 \end{example}
@@ -2631,17 +2630,17 @@ is left as an exercise.
 \begin{proof}
 First suppose $f(x) \to L$ as $x \to \infty$.
 Given an $\epsilon > 0$, there exists an $M$ such that for all $x \geq M$,
-we have $\abs{f(x)-L} < \epsilon$.
+we have $\babs{f(x)-L} < \epsilon$.
 Let $\{ x_n \}_{n=1}^\infty$
 be a sequence in $S$ such that $\lim_{n\to\infty} x_n = \infty$.  Then there exists an
 $N$ such that for all $n \geq N$, we have $x_n \geq M$.  And thus
-$\abs{f(x_n)-L} < \epsilon$.
+$\babs{f(x_n)-L} < \epsilon$.
 
 We prove the converse by contrapositive.  Suppose $f(x)$ does
 not go to $L$ as $x \to \infty$.
 This means that there exists an $\epsilon > 0$,
 such that for every $n \in \N$, there exists an $x \in S$, $x \geq n$, let
-us call it $x_n$, such that $\abs{f(x_n)-L} \geq \epsilon$.
+us call it $x_n$, such that $\babs{f(x_n)-L} \geq \epsilon$.
 Consider the sequence $\{ x_n \}_{n=1}^\infty$.  Clearly 
 $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ does not converge to $L$.  It remains to note
 that $\lim_{n\to\infty} x_n = \infty$, because $x_n \geq n$ for all $n$.
@@ -2967,8 +2966,8 @@ such that $f(x_\epsilon) > a-\epsilon$.  As $f$ is increasing,
 if $x \in S$ and $x_\epsilon < x < c$, we have
 $a-\epsilon < f(x_\epsilon) \leq f(x) \leq a$.  Let
 $\delta \coloneqq c-x_\epsilon$.  Then for $x \in S \cap (-\infty,c)$
-with $\abs{x-c} < \delta$,
-we have $\abs{f(x)-a} < \epsilon$.
+with $\sabs{x-c} < \delta$,
+we have $\babs{f(x)-a} < \epsilon$.
 \end{proof}
 
 Suppose $f \colon S \to \R$ is increasing, $c \in S$, and

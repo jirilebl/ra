@@ -357,7 +357,7 @@ the area of the shaded part, $m(b-a)$.\label{fig:integralminmax}}
 \end{myfigureht}
 
 A weaker form of this proposition is often useful:
-If $\abs{f(x)} \leq M$ for all $x \in [a,b]$, then
+If $\babs{f(x)} \leq M$ for all $x \in [a,b]$, then
 \begin{equation*}
 \abs{\int_a^b f} \leq M(b-a) .
 \end{equation*}
@@ -675,8 +675,8 @@ Show that $f \in \sR\bigl([a,b]\bigr)$ if and only if there exists an $I \in \R$
 such that for every $\epsilon > 0$ there exists
 a $\delta > 0$ such that if $P$ is a partition with $\Delta x_i < \delta$
 for all $i$, then
-$\abs{L(P,f) - I} < \epsilon$ and
-$\abs{U(P,f) - I} < \epsilon$.  If $f \in \sR\bigl([a,b]\bigr)$, then $I = \int_a^b f$.
+$\babs{L(P,f) - I} < \epsilon$ and
+$\babs{U(P,f) - I} < \epsilon$.  If $f \in \sR\bigl([a,b]\bigr)$, then $I = \int_a^b f$.
 \end{exercise}
 
 \begin{exercise}
@@ -1083,7 +1083,7 @@ As $f$ is continuous on a closed bounded interval, it is
 bounded and
 uniformly continuous.
 Given $\epsilon > 0$, find a $\delta > 0$ such that
-$\abs{x-y} < \delta$ implies $\abs{f(x)-f(y)} < \frac{\epsilon}{b-a}$.
+$\sabs{x-y} < \delta$ implies $\babs{f(x)-f(y)} < \frac{\epsilon}{b-a}$.
 
 Let $P = \{ x_0, x_1, \ldots, x_n \}$
 be a partition of $[a,b]$ such that $\Delta x_i < \delta$ for all $i = 1,2,
@@ -1091,9 +1091,9 @@ be a partition of $[a,b]$ such that $\Delta x_i < \delta$ for all $i = 1,2,
 take $n$ such that $\frac{b-a}{n} < \delta$, and
 let $x_i \coloneqq \frac{i}{n}(b-a) + a$.
 Then for all $x, y \in [x_{i-1},x_i]$, we have 
-$\abs{x-y} \leq \Delta x_i < \delta$, and so
+$\sabs{x-y} \leq \Delta x_i < \delta$, and so
 \begin{equation*}
-f(x)-f(y) \leq \abs{f(x)-f(y)} < \frac{\epsilon}{b-a} .
+f(x)-f(y) \leq \babs{f(x)-f(y)} < \frac{\epsilon}{b-a} .
 \end{equation*}
 As $f$ is continuous on $[x_{i-1},x_i]$, it attains a maximum and a minimum
 on this interval.
@@ -1163,7 +1163,7 @@ Then $f \in \sR\bigl([a,b]\bigr)$ and
 \end{lemma}
 
 \begin{proof}
-Let $M > 0$ be a real number such that $\abs{f(x)} \leq M$.
+Let $M > 0$ be a real number such that $\babs{f(x)} \leq M$.
 As $(b-a) \geq (b_n-a_n)$,
 \begin{equation*}
 -M(b-a) \leq
@@ -1393,10 +1393,10 @@ Prove \corref{intsubcor}.
 \begin{exercise} \label{exercise:easyabsint}
 Suppose $f \colon [a,b] \to \R$ is bounded and
 has finitely many discontinuities.
-Show that as a function of $x$ the expression $\abs{f(x)}$ is bounded with finitely many
+Show that as a function of $x$ the expression $\babs{f(x)}$ is bounded with finitely many
 discontinuities and is thus Riemann integrable.  Then show 
 \begin{equation*}
-\abs{\int_a^b f(x)\,dx} \leq \int_a^b \abs{f(x)}\,dx .
+\abs{\int_a^b f(x)\,dx} \leq \int_a^b \babs{f(x)}\,dx .
 \end{equation*}
 \end{exercise}
 
@@ -1482,7 +1482,7 @@ functions on $[a,b]$.  Show that $h$ is Riemann integrable.
 
 \begin{exercise}[Challenging] \label{exercise:hardabsint}
 Suppose $f \in \sR\bigl([a,b]\bigr)$, then the function that takes $x$ to
-$\abs{f(x)}$ is also Riemann integrable on $[a,b]$.
+$\babs{f(x)}$ is also Riemann integrable on $[a,b]$.
 Then show the same inequality as \exerciseref{exercise:easyabsint}.
 \end{exercise}
 
@@ -1651,15 +1651,15 @@ and $F'(c) = f(c)$.
 
 \begin{proof}
 As $f$ is bounded, there is an $M > 0$
-such that $\abs{f(x)} \leq M$ for all $x \in [a,b]$.  Suppose $x,y \in [a,b]$
+such that $\babs{f(x)} \leq M$ for all $x \in [a,b]$.  Suppose $x,y \in [a,b]$
 with $x > y$.  Then
 \begin{equation*}
-\abs{F(x)-F(y)} =
+\babs{F(x)-F(y)} =
 \abs{\int_a^x f - \int_a^y f}
 =
 \abs{\int_y^x f}
 \leq
-M\abs{x-y} .
+M\sabs{x-y} .
 \end{equation*}
 By symmetry, the same also holds if $x < y$.
 So $F$ is Lipschitz continuous and hence continuous.
@@ -1667,7 +1667,7 @@ So $F$ is Lipschitz continuous and hence continuous.
 Now suppose $f$ is continuous at $c$.
 Let $\epsilon > 0$ be given.  Let $\delta > 0$ be such that
 for $x \in [a,b]$,
-$\abs{x-c} < \delta$ implies $\abs{f(x)-f(c)} < \epsilon$.
+$\sabs{x-c} < \delta$ implies $\babs{f(x)-f(c)} < \epsilon$.
 In particular,
 for such $x$, we have
 \begin{equation*}
@@ -1719,7 +1719,7 @@ left as an exercise.
 
 Let us look at what a simple discontinuity can do.  Take $f(x) \coloneqq -1$ if $x
 < 0$, and $f(x) \coloneqq 1$ if $x \geq 0$.  Let $F(x) \coloneqq \int_0^x f$.  It is not
-difficult to see that $F(x) = \abs{x}$.  Notice that $f$ is discontinuous at
+difficult to see that $F(x) = \sabs{x}$.  Notice that $f$ is discontinuous at
 $0$ and $F$ is not differentiable at $0$.  However, the converse in the
 theorem does not
 hold.
@@ -1853,9 +1853,9 @@ We must be careful that those symbols really make sense.
 \begin{example}
 Consider
 \begin{equation*}
-\int_{-1}^{1} \frac{\ln \abs{x}}{x} \,dx .
+\int_{-1}^{1} \frac{\ln \sabs{x}}{x} \,dx .
 \end{equation*}
-It may be tempting to take $g(x) \coloneqq \ln \abs{x}$.  Compute $g'(x) =
+It may be tempting to take $g(x) \coloneqq \ln \sabs{x}$.  Compute $g'(x) =
 \nicefrac{1}{x}$ and try to write
 \begin{equation*}
 \int_{g(-1)}^{g(1)} s \,ds = 
@@ -1863,10 +1863,10 @@ It may be tempting to take $g(x) \coloneqq \ln \abs{x}$.  Compute $g'(x) =
 \end{equation*}
 This \myquote{solution} is incorrect, and it does not say
 that we can solve the given integral.  First problem is that
-$\frac{\ln \abs{x}}{x}$ is not continuous on $[-1,1]$.
+$\frac{\ln \sabs{x}}{x}$ is not continuous on $[-1,1]$.
 It is not defined at 0, and cannot be made continuous by defining a value at
 0.
-Second, $\frac{\ln \abs{x}}{x}$ is not even Riemann integrable on $[-1,1]$
+Second, $\frac{\ln \sabs{x}}{x}$ is not even Riemann integrable on $[-1,1]$
 (it is unbounded).
 The integral we wrote down simply does not make sense.
 Finally, $g$ is not continuous 
@@ -1948,7 +1948,7 @@ Show that $g$ is differentiable and find the derivative.
 Let $f$ be differentiable and fix $x \in (a,b)$ (let $\epsilon$
 be small enough).  What happens to $g'(x)$ as $\epsilon$ gets smaller?
 \item
-Find $g$ for $f(x) \coloneqq \abs{x}$, $\epsilon = 1$ (you can assume 
+Find $g$ for $f(x) \coloneqq \sabs{x}$, $\epsilon = 1$ (you can assume 
 $[a,b]$ is large enough).
 \end{enumerate}
 \end{exercise}
@@ -2742,7 +2742,7 @@ $g \colon [a,\infty) \to \R$ be functions
 that are Riemann integrable on $[a,b]$ for all $b > a$.   Suppose
 that for all $x \geq a$,
 \begin{equation*}
-\abs{f(x)} \leq g(x) .
+\babs{f(x)} \leq g(x) .
 \end{equation*}
 \begin{enumerate}[(i)]
 \item If $\int_a^\infty g$ converges, then $\int_a^\infty f$ converges,
@@ -2799,7 +2799,7 @@ $\babs{\int_a^{x_n} f - L_1} < \epsilon$ and
 $\babs{\int_a^{y_n} f - L_2} < \epsilon$.  We can also suppose $x_n \geq B$
 and $y_n \geq B$.  Then
 \begin{equation*}
-\abs{L_1 - L_2} \leq
+\sabs{L_1 - L_2} \leq
 \abs{L_1 - \int_a^{x_n} f}
 +
 \abs{\int_a^{x_n} f- \int_a^{y_n} f}
@@ -3055,7 +3055,7 @@ and
 \begin{example}
 On the other hand, you must be careful to
 take the limits independently before you know convergence.  Let
-$f(x) = \frac{x}{\abs{x}}$ for $x \not= 0$ and $f(0) = 0$.
+$f(x) = \frac{x}{\sabs{x}}$ for $x \not= 0$ and $f(0) = 0$.
 If $a < 0$ and $b > 0$, then
 \begin{equation*}
 \int_{a}^b f
@@ -3107,7 +3107,7 @@ not important right now.  What is important is that
 \begin{equation*}
 \int_{-\infty}^\infty \operatorname{sinc}(x) \,dx = \pi ,
 \qquad \text{while} \qquad
-\int_{-\infty}^\infty \abs{\operatorname{sinc}(x)} \,dx = \infty .
+\int_{-\infty}^\infty \babs{\operatorname{sinc}(x)} \,dx = \infty .
 \end{equation*}
 The integral of the sinc function is a continuous analogue of the
 alternating harmonic series $\sum_{n=1}^\infty \nicefrac{{(-1)}^n}{n}$, while the
@@ -3443,7 +3443,7 @@ and compare.  Hint: The sum telescopes.
 \begin{exercise}
 Prove 
 \begin{equation*}
-\int_{-\infty}^\infty \abs{\operatorname{sinc}(x)}\,dx = \infty .
+\int_{-\infty}^\infty \babs{\operatorname{sinc}(x)}\,dx = \infty .
 \end{equation*}
 Hint: Again, it is enough to show this on just one side.
 \end{exercise}
@@ -3451,7 +3451,7 @@ Hint: Again, it is enough to show this on just one side.
 \begin{exercise}
 Can you interpret
 \begin{equation*}
-\int_{-1}^1 \frac{1}{\sqrt{\abs{x}}}\,dx
+\int_{-1}^1 \frac{1}{\sqrt{\sabs{x}}}\,dx
 \end{equation*}
 as an improper integral?  If so, compute its value.
 \end{exercise}
@@ -3459,7 +3459,7 @@ as an improper integral?  If so, compute its value.
 \begin{exercise}
 Take $f \colon [0,\infty) \to \R$, Riemann integrable on
 every interval $[0,b]$, and such that there exist $M$, $a$, and $T$,
-such that $\abs{f(t)} \leq M e^{at}$ for all $t \geq T$.  Show that the
+such that $\babs{f(t)} \leq M e^{at}$ for all $t \geq T$.  Show that the
 \emph{\myindex{Laplace transform}} of $f$ exists.  That is, for
 every $s > a$ the following integral converges:
 \begin{equation*}
@@ -3470,7 +3470,7 @@ F(s) \coloneqq \int_{0}^\infty f(t) e^{-st} \,dt .
 \begin{exercise}
 Let $f \colon \R \to \R$ be a Riemann integrable function
 on every interval $[a,b]$, and such
-that $\int_{-\infty}^\infty \abs{f(x)}\,dx < \infty$.  Show that the
+that $\int_{-\infty}^\infty \babs{f(x)}\,dx < \infty$.  Show that the
 \emph{\myindex{Fourier sine and cosine transforms}}
 exist.  That is, for every $\omega \geq 0$ the
 following integrals converge
@@ -3586,7 +3586,7 @@ Show that the
 \end{equation*}
 is well-defined for all $x \in \R$.
 \item
-Suppose $\int_{-\infty}^\infty \abs{f(x)}\,dx < \infty$.  Prove that
+Suppose $\int_{-\infty}^\infty \babs{f(x)}\,dx < \infty$.  Prove that
 \begin{equation*}
 \lim_{x \to -\infty} (g * f)(x) = 0, \qquad \text{and} \qquad
 \lim_{x \to \infty} (g * f)(x) = 0 .

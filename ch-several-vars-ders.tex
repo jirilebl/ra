@@ -1302,14 +1302,14 @@ for $t \in [0,1]$
 (or perhaps $\bigl(\cos(\theta), \sin(\theta) \bigr)$).
 One then maximizes
 \begin{equation*}
-\snorm{A(x,y)} = \sqrt{{\left(t \pm \sqrt{1-t^2}\right)}^2+4t^2}
+\bnorm{A(x,y)} = \sqrt{{\left(t \pm \sqrt{1-t^2}\right)}^2+4t^2}
 \end{equation*}
 to find $\snorm{A} = \sqrt{3+\sqrt{5}}$.
 More generally, one often does two steps.  For instance, consider
 the operator
 $B \in L\bigl(C([0,1],\R),\R\bigr)$
 taking a continuous $f$ to $f(0)$.  If $\snorm{f} = 1$ (the uniform norm),
-then clearly $\sabs{f(0)} \leq 1$, so $\sabs{Bf} \leq 1$, meaning
+then clearly $\babs{f(0)} \leq 1$, so $\sabs{Bf} \leq 1$, meaning
 $\snorm{B} \leq 1$.
 To prove it is equal to $1$, note that the constant function $1$ has
 norm $1$, so $B1 = 1$, meaning $\snorm{B} \geq 1$.
@@ -1376,7 +1376,7 @@ $\snorm{A} < \infty$.
 For $v,w \in X$,
 \begin{equation*}
 \snorm{Av - Aw} =
-\snorm{A(v-w)} \leq \snorm{A} \, \snorm{v-w} .
+\bnorm{A(v-w)} \leq \snorm{A} \, \snorm{v-w} .
 \end{equation*}
 As $\snorm{A} < \infty$, then the inequality above says that
 $A$ is Lipschitz with constant $\snorm{A}$.
@@ -1409,7 +1409,7 @@ norms are finite, and the statements make sense to begin with.
 
 For \ref{item:finitedimpropnorm:i}, let $x \in X$ be arbitrary.  Then
 \begin{equation*}
-\snorm{(A+B)x} =
+\bnorm{(A+B)x} =
 \snorm{Ax+Bx} \leq
 \snorm{Ax}+\snorm{Bx} \leq
 \snorm{A} \, \snorm{x}+\snorm{B} \,\snorm{x} =
@@ -1418,7 +1418,7 @@ For \ref{item:finitedimpropnorm:i}, let $x \in X$ be arbitrary.  Then
 So $\snorm{A+B} \leq \snorm{A}+\snorm{B}$.
 Similarly,
 \begin{equation*}
-\snorm{(cA)x} =
+\bnorm{(cA)x} =
 \sabs{c} \, \snorm{Ax} \leq \bigl(\sabs{c} \,\snorm{A}\bigr) \snorm{x} .
 \end{equation*}
 Thus $\snorm{cA} \leq \sabs{c} \, \snorm{A}$.  Next,
@@ -1487,7 +1487,7 @@ Therefore,
 \begin{split}
 \snorm{x} 
 & =
-\snorm{A^{-1} (A-B)x + A^{-1}Bx}
+\bnorm{A^{-1} (A-B)x + A^{-1}Bx}
 \\
 & \leq
 \snorm{A^{-1}}\,\snorm{A-B}\, \snorm{x} + \snorm{A^{-1}}\,\snorm{Bx} .
@@ -1537,7 +1537,7 @@ B^{-1}-A^{-1} ,
 and
 \begin{equation*}
 \snorm{B^{-1}-A^{-1}} =
-\snorm{A^{-1}(A-B)B^{-1}} \leq
+\bnorm{A^{-1}(A-B)B^{-1}} \leq
 \snorm{A^{-1}}\,\snorm{A-B}\,\snorm{B^{-1}}
 \leq
 2\snorm{A^{-1}}^2
@@ -1821,7 +1821,7 @@ determinant is exactly this number.  It says how the linear mapping
 suppose $A \in L(\R^2)$ is a linear transformation.
 It can be checked directly that
 the area of the image of the unit square $A\bigl([0,1]^2\bigr)$ is
-$\sabs{\det(A)}$, see \figureref{fig:imagesquare} for an example.
+$\babs{\det(A)}$, see \figureref{fig:imagesquare} for an example.
 This works with arbitrary figures, not just the unit
 square:
 The absolute value of the determinant tells us the stretch in the area.
@@ -2299,10 +2299,10 @@ of $A$ in terms of the diagonal entries, and prove that your formula works.
 
 \begin{exercise}
 Given an $n$-by-$n$ matrix $A$, prove that
-$\sabs{\det(A)} \leq \snorm{A}^n$ (the norm on $A$ is the operator norm).
+$\babs{\det(A)} \leq \snorm{A}^n$ (the norm on $A$ is the operator norm).
 Hint: One way to do it is to first prove it in the case $\snorm{A}=1$, which
 means that all columns are of norm 1 or less, then prove that this means
-that $\sabs{\det(A)} \leq 1$ using linearity.
+that $\babs{\det(A)} \leq 1$ using linearity.
 %Hint: Note that you only need to show this for invertible matrices.  Then
 %possibly reorder columns and factor $A$ into $n$ matrices, each of
 %which differs from the identity by one column.
@@ -2346,9 +2346,9 @@ if $x = a+ib$ for real vectors $a$ and $b$, and $A$ is a real matrix, then $Ax =
 The number
 \begin{equation*}
 \rho(A) \coloneqq
-\sup \bigl\{ \abs{\lambda} : \lambda \text{ is an eigenvalue of } A \bigr\}
+\sup \bigl\{ \sabs{\lambda} : \lambda \text{ is an eigenvalue of } A \bigr\}
 \end{equation*}
-is the \emph{\myindex{spectral radius}} of $A$.  Here $\abs{\lambda}$ is the complex
+is the \emph{\myindex{spectral radius}} of $A$.  Here $\sabs{\lambda}$ is the complex
 modulus.  We state without proof that at least one eigenvalue always exists,
 and there are no more than $n$ distinct eigenvalues of $A$.  You can
 therefore assume that $0 \leq \rho(A) < \infty$.
@@ -2428,7 +2428,7 @@ In other words, there is a number $a$ (the derivative of $f$ at $x$) such that
 %mbxlatex \\
 %mbxlatex &
 =
-\lim_{h \to 0} \frac{\sabs{f(x+h)-f(x) - ah}}{\sabs{h}}
+\lim_{h \to 0} \frac{\babs{f(x+h)-f(x) - ah}}{\sabs{h}}
 = 0.
 %mbxlatex \end{aligned}
 \end{equation*}
@@ -2447,7 +2447,7 @@ say $f$ is \emph{\myindex{differentiable}} at $x \in U$ if there exists
 an $A \in L(\R^n,\R^m)$ such that
 \begin{equation*}
 \lim_{\substack{h \to 0\\h\in \R^n}}
-\frac{\snorm{f(x+h)-f(x) - Ah}}{\snorm{h}} = 0 .
+\frac{\bnorm{f(x+h)-f(x) - Ah}}{\snorm{h}} = 0 .
 \end{equation*}
 We will show momentarily that $A$, if it exists, is unique.
 We write $Df(x) \coloneqq A$, or $f'(x) \coloneqq A$,\glsadd{not:mvder} and
@@ -2491,10 +2491,10 @@ $x \in U$ and there exist
 $A,B \in L(\R^n,\R^m)$ such that
 \begin{equation*}
 \lim_{h \to 0}
-\frac{\snorm{f(x+h)-f(x) - Ah}}{\snorm{h}} = 0
+\frac{\bnorm{f(x+h)-f(x) - Ah}}{\snorm{h}} = 0
 \qquad \text{and} \qquad
 \lim_{h \to 0}
-\frac{\snorm{f(x+h)-f(x) - Bh}}{\snorm{h}} = 0 .
+\frac{\bnorm{f(x+h)-f(x) - Bh}}{\snorm{h}} = 0 .
 \end{equation*}
 Then $A=B$.
 \end{prop}
@@ -2503,10 +2503,10 @@ Then $A=B$.
 Suppose $h \in \R^n$, $h \not= 0$.  Compute
 \begin{equation*}
 \begin{split}
-\frac{\snorm{(A-B)h}}{\snorm{h}} & =
-\frac{\snorm{-\bigl(f(x+h)-f(x) - Ah\bigr) + f(x+h)-f(x) - Bh}}{\snorm{h}} \\
+\frac{\bnorm{(A-B)h}}{\snorm{h}} & =
+\frac{\bnorm{-\bigl(f(x+h)-f(x) - Ah\bigr) + f(x+h)-f(x) - Bh}}{\snorm{h}} \\
 & \leq
-\frac{\snorm{f(x+h)-f(x) - Ah}}{\snorm{h}} + \frac{\snorm{f(x+h)-f(x) -
+\frac{\bnorm{f(x+h)-f(x) - Ah}}{\snorm{h}} + \frac{\bnorm{f(x+h)-f(x) -
 Bh}}{\snorm{h}} .
 \end{split}
 \end{equation*}
@@ -2516,14 +2516,14 @@ $\epsilon > 0$, for all nonzero $h$ in some $\delta$-ball around
 the origin we have
 \begin{equation*}
 \epsilon > 
-\frac{\snorm{(A-B)h}}{\snorm{h}}
+\frac{\bnorm{(A-B)h}}{\snorm{h}}
 =
 \norm{(A-B)\frac{h}{\snorm{h}}} .
 \end{equation*}
 For any given $v \in \R^n$ with $\snorm{v}=1$,
 if $h = (\nicefrac{\delta}{2}) \, v$, then $\snorm{h} < \delta$
 and $\frac{h}{\snorm{h}} = v$.
-So $\snorm{(A-B)v} < \epsilon$.  Taking the supremum over all $v$ with
+So $\bnorm{(A-B)v} < \epsilon$.  Taking the supremum over all $v$ with
 $\snorm{v} = 1$, we get the operator norm
 $\snorm{A-B} \leq \epsilon$.  As $\epsilon > 0$
 was arbitrary, $\snorm{A-B} = 0$, or in other words $A = B$.
@@ -2533,9 +2533,9 @@ was arbitrary, $\snorm{A-B} = 0$, or in other words $A = B$.
 If $f(x) = Ax$ for a linear mapping $A$, then
 $f'(x) = A$:
 \begin{equation*}
-\frac{\snorm{f(x+h)-f(x) - Ah}}{\snorm{h}}
+\frac{\bnorm{f(x+h)-f(x) - Ah}}{\snorm{h}}
 =
-\frac{\snorm{A(x+h)-Ax - Ah}}{\snorm{h}}
+\frac{\bnorm{A(x+h)-Ax - Ah}}{\snorm{h}}
 =
 \frac{0}{\snorm{h}} = 0 .
 \end{equation*}
@@ -2553,11 +2553,11 @@ represented by a $2$-by-$2$ matrix
 $\left[\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right]$.  Suppose $h =
 (h_1,h_2)$.  We need the following expression to go to zero.
 \begin{multline*}
-\frac{\snorm{
+\frac{\bnorm{
 f(h_1,h_2)-f(0,0)
 -
 (ah_1 +bh_2 , ch_1+dh_2)}
-}{\snorm{(h_1,h_2)}}
+}{\bnorm{(h_1,h_2)}}
 =
 \\
 \frac{\sqrt{
@@ -2618,18 +2618,18 @@ f'(p) .
 \begin{proof}
 Let $h \in \R^n$, $h \not= 0$.  Then
 \begin{multline*}
-\frac{\norm{f(p+h)+g(p+h)-\bigl(f(p)+g(p)\bigr) - \bigl(f'(p) + g'(p)\bigr)h}}{\snorm{h}}
+\frac{\bnorm{f(p+h)+g(p+h)-\bigl(f(p)+g(p)\bigr) - \bigl(f'(p) + g'(p)\bigr)h}}{\snorm{h}}
 \\
 \leq
-\frac{\norm{f(p+h)-f(p) - f'(p)h}}{\snorm{h}}
+\frac{\bnorm{f(p+h)-f(p) - f'(p)h}}{\snorm{h}}
 +
-\frac{\norm{g(p+h)-g(p) - g'(p)h}}{\snorm{h}} ,
+\frac{\bnorm{g(p+h)-g(p) - g'(p)h}}{\snorm{h}} ,
 \end{multline*}
 and
 \begin{equation*}
-\frac{\norm{\alpha f(p+h) - \alpha f(p) - \alpha f'(p)h}}{\snorm{h}}
+\frac{\bnorm{\alpha f(p+h) - \alpha f(p) - \alpha f'(p)h}}{\snorm{h}}
 =
-\sabs{\alpha} \frac{\norm{f(p+h))-f(p) - f'(p)h}}{\snorm{h}} .
+\sabs{\alpha} \frac{\bnorm{f(p+h))-f(p) - f'(p)h}}{\snorm{h}} .
 \end{equation*}
 The limits as $h$ goes to zero of the right-hand sides are zero by
 hypothesis.  The result follows.
@@ -2675,29 +2675,29 @@ We look at the quantity we need to go
 to zero:
 \begin{equation*}
 \begin{split}
-\frac{\snorm{F(p+h)-F(p) - BAh}}{\snorm{h}}
+\frac{\bnorm{F(p+h)-F(p) - BAh}}{\snorm{h}}
 & =
-\frac{\snorm{g\bigl(f(p+h)\bigr)-g\bigl(f(p)\bigr) - BAh}}{\snorm{h}}
+\frac{\bnorm{g\bigl(f(p+h)\bigr)-g\bigl(f(p)\bigr) - BAh}}{\snorm{h}}
 \\
 & =
-\frac{\snorm{g(q+k)-g(q) - B\bigl(k-r(h)\bigr)}}{\snorm{h}}
+\frac{\bnorm{g(q+k)-g(q) - B\bigl(k-r(h)\bigr)}}{\snorm{h}}
 \\
 & \leq
 \frac
-{\snorm{g(q+k)-g(q) - Bk}}
+{\bnorm{g(q+k)-g(q) - Bk}}
 {\snorm{h}}
 +
 \snorm{B}
 \frac
-{\snorm{r(h)}}
+{\bnorm{r(h)}}
 {\snorm{h}}
 \\
 & =
 \frac
-{\snorm{g(q+k)-g(q) - Bk}}
+{\bnorm{g(q+k)-g(q) - Bk}}
 {\snorm{k}}
 \frac
-{\snorm{f(p+h)-f(p)}}
+{\bnorm{f(p+h)-f(p)}}
 {\snorm{h}}
 %mbxlatex \\
 %mbxlatex &
@@ -2705,7 +2705,7 @@ to zero:
 +
 \snorm{B}
 \frac
-{\snorm{r(h)}}
+{\bnorm{r(h)}}
 {\snorm{h}} .
 \end{split}
 \end{equation*}
@@ -2722,12 +2722,12 @@ Finally,
 \begin{equation*}
 %mbxlatex \begin{aligned}
 \frac
-{\snorm{f(p+h)-f(p)}}
+{\bnorm{f(p+h)-f(p)}}
 {\snorm{h}}
 %mbxlatex &
 \leq
 \frac
-{\snorm{f(p+h)-f(p)-Ah}}
+{\bnorm{f(p+h)-f(p)-Ah}}
 {\snorm{h}}
 +
 \frac
@@ -2737,7 +2737,7 @@ Finally,
 %mbxlatex &
 \leq
 \frac
-{\snorm{f(p+h)-f(p)-Ah}}
+{\bnorm{f(p+h)-f(p)-Ah}}
 {\snorm{h}}
 +
 \snorm{A} .
@@ -2859,7 +2859,7 @@ Fix a $j$ and note that for nonzero $h$,
 \norm{\frac{f(p+h e_j)-f(p)}{h} - f'(p) \, e_j} & = 
 \norm{\frac{f(p+h e_j)-f(p) - f'(p) \, h e_j}{h}} \\
 & =
-\frac{\snorm{f(p+h e_j)-f(p) - f'(p) \, h e_j}}{\snorm{h e_j}} .
+\frac{\bnorm{f(p+h e_j)-f(p) - f'(p) \, h e_j}}{\snorm{h e_j}} .
 \end{split}
 \end{equation*}
 As $h$ goes to 0, the right-hand side goes to zero by
@@ -3004,15 +3004,15 @@ $\gamma(0) = x$ and $\gamma^{\:\prime}(0) = u$.
 Suppose $(\nabla f)(x) \neq 0$.
 By the Cauchy--Schwarz inequality,
 \begin{equation*}
-\sabs{D_u f(x)} \leq \snorm{(\nabla f)(x)} .
+\babs{D_u f(x)} \leq \bnorm{(\nabla f)(x)} .
 \end{equation*}
 Equality is achieved when $u$ is a scalar multiple of
 $(\nabla f)(x)$.  That is, when
 \begin{equation*}
 u = 
-\frac{(\nabla f)(x)}{\snorm{(\nabla f)(x)}} ,
+\frac{(\nabla f)(x)}{\bnorm{(\nabla f)(x)}} ,
 \end{equation*}
-we get $D_u f(x) = \snorm{(\nabla f)(x)}$.
+we get $D_u f(x) = \bnorm{(\nabla f)(x)}$.
 The gradient points in the direction in which the
 function grows fastest, in other words,
 in the direction in which $D_u f(x)$ is maximal.
@@ -3253,7 +3253,7 @@ Show that $f$ does not have a relative maximum at $(0,0)$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon \R \to \R^n$ is differentiable and $\snorm{f(t)} = 1$ for
+Suppose $f \colon \R \to \R^n$ is differentiable and $\bnorm{f(t)} = 1$ for
 all $t$ (that is, we have a curve in the unit sphere).  Show that 
 $f'(t) \cdot f(t) = 0$ (treating $f'(t)$ as a vector) for all $t$.
 \end{exercise}
@@ -3304,7 +3304,7 @@ Let us prove a \myquote{\myindex{mean value theorem}} for vector-valued function
 If $\varphi \colon [a,b] \to \R^n$ is differentiable on $(a,b)$ and
 continuous on $[a,b]$, then there exists a $t_0 \in (a,b)$ such that
 \begin{equation*}
-\snorm{\varphi(b)-\varphi(a)} \leq (b-a) \snorm{\varphi'(t_0)} .
+\bnorm{\varphi(b)-\varphi(a)} \leq (b-a) \bnorm{\varphi'(t_0)} .
 \end{equation*}
 \end{lemma}
 
@@ -3315,7 +3315,7 @@ where the dot is the dot product, we obtain
 a $t_0 \in (a,b)$ such that
 \begin{equation*}
 \begin{split}
-\snorm{\varphi(b)-\varphi(a)}^2
+\bnorm{\varphi(b)-\varphi(a)}^2
 & =
 \bigl( \varphi(b)-\varphi(a) \bigr)
 \cdot
@@ -3334,18 +3334,18 @@ where we treat $\varphi'$ as a vector in $\R^n$ by the abuse of
 notation we mentioned in the previous section.
 If we think of $\varphi'(t)$ as a vector, then by
 \exerciseref{exercise:normonedim},
-$\snorm{\varphi'(t)}_{L(\R,\R^n)} = \snorm{\varphi'(t)}_{\R^n}$.
+$\bnorm{\varphi'(t)}_{L(\R,\R^n)} = \bnorm{\varphi'(t)}_{\R^n}$.
 That is, the euclidean norm of the vector is the same as the operator norm
 of $\varphi'(t)$.
 
 By the Cauchy--Schwarz inequality
 \begin{equation*}
-\snorm{\varphi(b)-\varphi(a)}^2
+\bnorm{\varphi(b)-\varphi(a)}^2
 =
 (b-a)\bigl(\varphi(b)-\varphi(a) \bigr) \cdot \varphi'(t_0)
 \leq
 (b-a)
-\snorm{\varphi(b)-\varphi(a)} \, \snorm{\varphi'(t_0)} . \qedhere
+\bnorm{\varphi(b)-\varphi(a)} \, \bnorm{\varphi'(t_0)} . \qedhere
 \end{equation*}
 \end{proof}
 
@@ -3357,12 +3357,12 @@ $p$ to $q$ lies in $U$.
 Let $U \subset \R^n$ be a convex open set, $f \colon U \to \R^m$
 be a differentiable function, and an $M$ be such that
 \begin{equation*}
-\snorm{f'(p)} \leq M
+\bnorm{f'(p)} \leq M
 \qquad \text{for all } p \in U.
 \end{equation*}
 Then $f$ is Lipschitz with constant $M$, that is,
 \begin{equation*}
-\snorm{f(p)-f(q)} \leq M \snorm{p-q}
+\bnorm{f(p)-f(q)} \leq M \snorm{p-q}
 \qquad
 \text{for all } p,q \in U.
 \end{equation*}
@@ -3382,7 +3382,7 @@ By \lemmaref{lemma:mvtmv}, there is some
 $t_0 \in (0,1)$ such that
 \begin{equation*}
 \begin{split}
-\snorm{f(p)-f(q)} & \leq
+\bnorm{f(p)-f(q)} & \leq
 \norm{\frac{d}{dt} \Big|_{t=t_0} \Bigl[ f\bigl((1-t)p+tq\bigr) \Bigr] }
 \\
 & \leq
@@ -3420,8 +3420,8 @@ think of
 what happens near where the negative $x$-axis cuts the annulus in half.
 As we approach this cut from positive $y$, $f(x,y)$ approaches $\pi$.
 From negative $y$, $f(x,y)$ approaches $-\pi$.
-So for small $\epsilon > 0$, $\sabs{f(-1,\epsilon)-f(-1,-\epsilon)}$
-approaches $2\pi$, but $\snorm{(-1,\epsilon)-(-1,-\epsilon)} = 2\epsilon$,
+So for small $\epsilon > 0$, $\babs{f(-1,\epsilon)-f(-1,-\epsilon)}$
+approaches $2\pi$, but $\bnorm{(-1,\epsilon)-(-1,-\epsilon)} = 2\epsilon$,
 which is arbitrarily small.  The conclusion of the proposition does not
 hold for this nonconvex $U$.
 \end{example}
@@ -3437,8 +3437,8 @@ and $f'(x) = 0$ for all $x \in U$, then $f$ is constant.
 \begin{proof}
 For any given $x \in U$, there is a ball $B(x,\delta) \subset U$.  The ball
 $B(x,\delta)$ is convex.  Since
-$\snorm{f'(y)} \leq 0$ for all $y \in B(x,\delta)$, then by the proposition,
-$\snorm{f(x)-f(y)} \leq 0 \snorm{x-y} = 0$.  So $f(x) = f(y)$ for all $y \in
+$\bnorm{f'(y)} \leq 0$ for all $y \in B(x,\delta)$, then by the proposition,
+$\bnorm{f(x)-f(y)} \leq 0 \snorm{x-y} = 0$.  So $f(x) = f(y)$ for all $y \in
 B(x,\delta)$.
 Therefore, $f^{-1}(c)$ is open for all $c \in \R^m$.
 
@@ -3555,7 +3555,7 @@ Let $\epsilon > 0$ be given.  By the induction hypothesis, there
 is a $\delta > 0$ such that
 for every $h' \in \R^{n-1}$ with $\snorm{h'} < \delta$, we have
 \begin{equation*}
-\frac{\snorm{f(p+h') - f(p) - A' h'}}{\snorm{h'}} < \epsilon .
+\frac{\bnorm{f(p+h') - f(p) - A' h'}}{\snorm{h'}} < \epsilon .
 \end{equation*}
 By continuity of the partial derivatives, suppose $\delta$ is small
 enough so that
@@ -3572,22 +3572,22 @@ Note that $Ah = A' h' + tv$.
 \begin{equation*}
 \begin{split}
 %mbxlatex &
-\snorm{f(p+h) - f(p) - Ah}
+\bnorm{f(p+h) - f(p) - Ah}
 %mbxSTARTIGNORE
 &
 %mbxENDIGNORE
 %mbxlatex \\
 %mbxlatex & \qquad \qquad
-= \snorm{f(p+h' + t e_n) - f(p+h') - tv + f(p+h') - f(p) - A' h'}
+= \bnorm{f(p+h' + t e_n) - f(p+h') - tv + f(p+h') - f(p) - A' h'}
 \\
 &
 %mbxlatex \qquad \qquad
-\leq \snorm{f(p+h' + t e_n) - f(p+h') -tv} + \snorm{f(p+h') - f(p) -
+\leq \bnorm{f(p+h' + t e_n) - f(p+h') -tv} + \bnorm{f(p+h') - f(p) -
 A' h'}
 \\
 &
 %mbxlatex \qquad \qquad
-\leq \snorm{f(p+h' + t e_n) - f(p+h') -tv} + \epsilon \snorm{h'} .
+\leq \bnorm{f(p+h' + t e_n) - f(p+h') -tv} + \epsilon \snorm{h'} .
 \end{split}
 \end{equation*}
 As all the partial derivatives exist, by the mean value theorem,
@@ -3600,8 +3600,8 @@ We have $\snorm{h'+\theta_k e_n} \leq \snorm{h} < \delta$,
 and so we can finish the estimate
 \begin{equation*}
 \begin{split}
-\snorm{f(p+h) - f(p) - Ah}
-& \leq \snorm{f(p+h' + t e_n) - f(p+h') -tv} + \epsilon \snorm{h'}
+\bnorm{f(p+h) - f(p) - Ah}
+& \leq \bnorm{f(p+h' + t e_n) - f(p+h') -tv} + \epsilon \snorm{h'}
 \\
 & \leq \sqrt{\sum_{k=1}^m {\left(t\frac{\partial f_k}{\partial x_n}(p+h'+\theta_k e_n) -
 t \frac{\partial f_k}{\partial x_n}(p)\right)}^2} + \epsilon \snorm{h'}
@@ -3690,19 +3690,19 @@ continuous functions.
 Let $B(0,1) \subset \R^2$ be the unit ball, that is, the set given by
 $x^2 + y^2 < 1$.
 Suppose $f \colon B(0,1) \to \R$ is a differentiable function
-such that $\sabs{f(0,0)} \leq 1$,
+such that $\babs{f(0,0)} \leq 1$,
 and 
 $\babs{\frac{\partial f}{\partial x}} \leq 1$ and
 $\babs{\frac{\partial f}{\partial y}} \leq 1$ for all
 points in $B(0,1)$.
 \begin{enumerate}[a)]
 \item
-Find an $M \in \R$ such that $\snorm{f'(x,y)} \leq M$
+Find an $M \in \R$ such that $\bnorm{f'(x,y)} \leq M$
 for all $(x,y) \in
 B(0,1)$.
 \item
 Find a $B \in \R$ such that
-$\sabs{f(x,y)} \leq B$
+$\babs{f(x,y)} \leq B$
 for all $(x,y) \in
 B(0,1)$.
 \end{enumerate}
@@ -3711,7 +3711,7 @@ B(0,1)$.
 \begin{exercise}
 Define $\varphi \colon [0,2\pi] \to \R^2$ by $\varphi(t) =
 \bigl(\sin(t),\cos(t)\bigr)$.  Compute $\varphi'(t)$ for all $t$.  Compute
-$\snorm{\varphi'(t)}$ for all $t$.  Notice that $\varphi'(t)$ is never zero,
+$\bnorm{\varphi'(t)}$ for all $t$.  Notice that $\varphi'(t)$ is never zero,
 yet $\varphi(0) = \varphi(2\pi)$, therefore, Rolle's theorem is not true
 in more than one dimension.
 \end{exercise}
@@ -3733,7 +3733,7 @@ Let $f \colon \R^2 \to \R$ be a function and
 $M \in \R$, such that
 for every $(x,y) \in \R^2$, the function $g(t) \coloneqq f(xt,yt)$ is
 differentiable
-and $\sabs{g'(t)} \leq M$ for all $t$.
+and $\babs{g'(t)} \leq M$ for all $t$.
 \begin{enumerate}[a)]
 \item
 Show that $f$ is continuous at $(0,0)$.
@@ -3772,10 +3772,10 @@ differentiable.  Note that $f$ is vector-valued.
 
 \begin{exercise}
 Suppose that $U \subset \R^n$ is open, $f \colon U \to \R^m$ is
-differentiable, there is an $M$ such that $\snorm{f'(p)} \leq M$
+differentiable, there is an $M$ such that $\bnorm{f'(p)} \leq M$
 for all $p \in U$, and $K \subset U$ is a compact set.  Prove that
 there exists an $M'$ (where $M' \geq M$), such that
-for all $p,q \in K$ we have $\snorm{f(p)-f(q)} \leq M' \snorm{p-q}$.
+for all $p,q \in K$ we have $\bnorm{f(p)-f(q)} \leq M' \snorm{p-q}$.
 Compare to \propref{mv:prop:convexlip}.
 \end{exercise}
 
@@ -3841,7 +3841,7 @@ there exists a unique $x \in X$ such that $f(x) = x$.
 Write $A = f'(p)$.  As $f'$ is continuous, there is an open ball
 $V$ centered at $p$ such that
 \begin{equation*}
-\snorm{A-f'(x)} < \frac{1}{2\snorm{A^{-1}}}
+\bnorm{A-f'(x)} < \frac{1}{2\snorm{A^{-1}}}
 \qquad \text{for all } x \in V.
 \end{equation*}
 Consequently, the derivative $f'(x)$ is invertible for all $x \in V$
@@ -3859,11 +3859,11 @@ $y-f(x) = 0$, or in other words $f(x)=y$.  Using the chain rule we obtain
 \end{equation*}
 So for $x \in V$, we have
 \begin{equation*}
-\snorm{\varphi_y'(x)} \leq \snorm{A^{-1}} \, \snorm{A-f'(x)} < \nicefrac{1}{2} .
+\bnorm{\varphi_y'(x)} \leq \snorm{A^{-1}} \, \bnorm{A-f'(x)} < \nicefrac{1}{2} .
 \end{equation*}
 As $V$ is a ball, it is convex.  Hence
 \begin{equation*}
-\snorm{\varphi_y(x_1)-\varphi_y(x_2)} \leq \frac{1}{2} \snorm{x_1-x_2} 
+\bnorm{\varphi_y(x_1)-\varphi_y(x_2)} \leq \frac{1}{2} \snorm{x_1-x_2} 
 \qquad
 \text{for all } x_1,x_2 \in V.
 \end{equation*}
@@ -3874,7 +3874,7 @@ point theorem, but we can say that $\varphi_y$
 has at most one fixed point in $V$:
 If $\varphi_y(x_1) = x_1$ and
 $\varphi_y(x_2) = x_2$, then
-$\snorm{x_1-x_2} = \snorm{\varphi_y(x_1)-\varphi_y(x_2)} \leq
+$\snorm{x_1-x_2} = \bnorm{\varphi_y(x_1)-\varphi_y(x_2)} \leq
 \frac{1}{2} \snorm{x_1-x_2}$, so $x_1 = x_2$.
 That is, there exists at most one $x \in V$
 such that $f(x) = y$, and so $f|_V$ is one-to-one.
@@ -3895,13 +3895,13 @@ If $x_1 \in
 C(x_0,r)$, then
 \begin{equation*}
 \begin{split}
-\snorm{\varphi_y(x_1)-x_0}
+\bnorm{\varphi_y(x_1)-x_0}
 & \leq
-\snorm{\varphi_y(x_1)-\varphi_y(x_0)} +
-\snorm{\varphi_y(x_0)-x_0} \\
+\bnorm{\varphi_y(x_1)-\varphi_y(x_0)} +
+\bnorm{\varphi_y(x_0)-x_0} \\
 & \leq
 \frac{1}{2}\snorm{x_1-x_0} +
-\snorm{A^{-1}(y-y_0)} \\
+\bnorm{A^{-1}(y-y_0)} \\
 & \leq
 \frac{1}{2}r +
 \snorm{A^{-1}} \, \snorm{y-y_0} \\
@@ -3939,7 +3939,7 @@ squeeze some information from the fact that $\varphi_y$ is a contraction.
 \end{equation*}
 So
 \begin{equation*}
-\snorm{h-A^{-1}k} = \snorm{\varphi_y(x+h)-\varphi_y(x)} \leq
+\snorm{h-A^{-1}k} = \bnorm{\varphi_y(x+h)-\varphi_y(x)} \leq
 \frac{1}{2}\snorm{x+h-x} = \frac{\snorm{h}}{2}.
 \end{equation*}
 By the inverse triangle inequality, $\snorm{h} - \snorm{A^{-1}k} \leq
@@ -3955,24 +3955,24 @@ Let $B \coloneqq \bigl(f'(x)\bigr)^{-1}$, which is what we think the derivative 
 $g$ at $y$ is.  Then
 \begin{equation*}
 \begin{split}
-\frac{\snorm{g(y+k)-g(y)-Bk}}{\snorm{k}}
+\frac{\bnorm{g(y+k)-g(y)-Bk}}{\snorm{k}}
 & =
 \frac{\snorm{h-Bk}}{\snorm{k}}
 \\
 & =
-\frac{\snorm{h-B\bigl(f(x+h)-f(x)\bigr)}}{\snorm{k}}
+\frac{\bnorm{h-B\bigl(f(x+h)-f(x)\bigr)}}{\snorm{k}}
 \\
 & =
-\frac{\snorm{B\bigl(f(x+h)-f(x)-f'(x)h\bigr)}}{\snorm{k}}
+\frac{\bnorm{B\bigl(f(x+h)-f(x)-f'(x)h\bigr)}}{\snorm{k}}
 \\
 & \leq
 \snorm{B}
 \frac{\snorm{h}}{\snorm{k}}\,
-\frac{\snorm{f(x+h)-f(x)-f'(x)h}}{\snorm{h}}
+\frac{\bnorm{f(x+h)-f(x)-f'(x)h}}{\snorm{h}}
 \\
 & \leq
 2\snorm{B} \, \snorm{A^{-1}}
-\frac{\snorm{f(x+h)-f(x)-f'(x)h}}{\snorm{h}} .
+\frac{\bnorm{f(x+h)-f(x)-f'(x)h}}{\snorm{h}} .
 \end{split}
 \end{equation*}
 As $k$ goes to 0, so does $h$.  So the right-hand side goes to 0 as $f$ is
@@ -4140,20 +4140,20 @@ It is clear that $F$ is $C^1$, and we want to show that its derivative
 at $(p,q)$ is invertible.
 Let us compute the derivative.  The quotient
 \begin{equation*}
-\frac{\snorm{f(p+h,q+k) - f(p,q) - A_x h - A_y k}}{\snorm{(h,k)}}
+\frac{\bnorm{f(p+h,q+k) - f(p,q) - A_x h - A_y k}}{\bnorm{(h,k)}}
 \end{equation*}
-goes to zero as $\snorm{(h,k)} = \sqrt{\snorm{h}^2+\snorm{k}^2}$ goes to zero.
+goes to zero as $\bnorm{(h,k)} = \sqrt{\snorm{h}^2+\snorm{k}^2}$ goes to zero.
 But then so does
 \begin{multline*}
-\frac{\snorm{F(p+h,q+k)-F(p,q) - (h,A_x h+A_y k)}}{\snorm{(h,k)}}
+\frac{\bnorm{F(p+h,q+k)-F(p,q) - (h,A_x h+A_y k)}}{\bnorm{(h,k)}}
 \\
 \begin{aligned}
 & =
-\frac{\snorm{\bigl(h,f(p+h,q+k)-f(p,q)\bigr) - (h,A_x h+A_y
-k)}}{\snorm{(h,k)}}
+\frac{\bnorm{\bigl(h,f(p+h,q+k)-f(p,q)\bigr) - (h,A_x h+A_y
+k)}}{\bnorm{(h,k)}}
 \\
 & =
-\frac{\snorm{f(p+h,q+k) - f(p,q) - A_x h - A_y k}}{\snorm{(h,k)}} .
+\frac{\bnorm{f(p+h,q+k) - f(p,q) - A_x h - A_y k}}{\bnorm{(h,k)}} .
 \end{aligned}
 \end{multline*}
 So the derivative of $F$ at $(p,q)$ takes $(h,k)$ to $(h,A_x h+A_y k)$.
@@ -4763,7 +4763,7 @@ $\frac{\partial^2 g}{\partial x^2} (0,0) =
 \item
 For every $\epsilon > 0$, there exists a $\delta > 0$
 such that 
-$\abs{g(x,y) - x^2 - y^2} < \epsilon (x^2+y^2)$ for all
+$\babs{g(x,y) - x^2 - y^2} < \epsilon (x^2+y^2)$ for all
 $(x,y) \in B\bigl((0,0),\delta\bigr)$.\\
 Hint: You can use Taylor's theorem in one variable.
 \item

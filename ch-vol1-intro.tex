@@ -1022,8 +1022,8 @@ unexpected theorem.
 Let $A$ and $B$ be sets.  We say $A$ and $B$ have the same
 \emph{\myindex{cardinality}}
 when there exists a bijection $f \colon A \to B$.  We denote
-by $\abs{A}$ \glsadd{not:cardinality} the equivalence class of all sets with the same cardinality as
-$A$, and we simply call $\abs{A}$ the cardinality of $A$.
+by $\sabs{A}$ \glsadd{not:cardinality} the equivalence class of all sets with the same cardinality as
+$A$, and we simply call $\sabs{A}$ the cardinality of $A$.
 \end{defn}
 
 For example, $\{ 1,2,3 \}$ has the same cardinality as $\{ a,b,c \}$ by
@@ -1043,38 +1043,38 @@ In particular, there is no bijection of $B$ and $\emptyset$.
 \begin{defn}
 If $A$ has the same cardinality as $\{ 1,2,3,\ldots,n \}$
 for some $n \in \N$,
-we write $\abs{A} \coloneqq n$.  If $A$ is empty, we write
-$\abs{A} \coloneqq 0$.
+we write $\sabs{A} \coloneqq n$.  If $A$ is empty, we write
+$\sabs{A} \coloneqq 0$.
 In either case, we say that $A$ is
 \emph{\myindex{finite}}.
 We say $A$ is \emph{\myindex{infinite}} or \myquote{of infinite cardinality}
 if $A$ is not finite.
 \end{defn}
 
-That the notation $\abs{A} = n$ is justified, we leave as an exercise.  That
+That the notation $\sabs{A} = n$ is justified, we leave as an exercise.  That
 is, for each nonempty finite set $A$, there exists a unique natural number
 $n$ such that there exists a bijection from $A$ to $\{ 1,2,3,\ldots,n \}$.
 
-We can order sets by size.
+We can order sets by size (cardinality).
 
 \begin{defn} \label{def:comparecards}
 We write
 \begin{equation*}
-\abs{A} \leq \abs{B}
+\sabs{A} \leq \sabs{B}
 \end{equation*}
-if there exists an injection from $A$ to $B$.  We write $\abs{A} = \abs{B}$
-if $A$ and $B$ have the same cardinality.  We write $\abs{A} < \abs{B}$
-if $\abs{A} \leq \abs{B}$, but $A$ and $B$ do not have the same cardinality.
+if there exists an injection from $A$ to $B$.  We write $\sabs{A} = \sabs{B}$
+if $A$ and $B$ have the same cardinality.  We write $\sabs{A} < \sabs{B}$
+if $\sabs{A} \leq \sabs{B}$, but $A$ and $B$ do not have the same cardinality.
 \end{defn}
 
 We state without proof that
 $A$ and $B$ have the same cardinality if and only if
-$\abs{A} \leq \abs{B}$ and
-$\abs{B} \leq \abs{A}$.  This is the so-called
+$\sabs{A} \leq \sabs{B}$ and
+$\sabs{B} \leq \sabs{A}$.  This is the so-called
 \myindex{Cantor--Bernstein--Schr\"oder} theorem.
 Furthermore, if $A$ and $B$ are any two sets,
-we can always write $\abs{A} \leq \abs{B}$ or
-$\abs{B} \leq \abs{A}$.  The issues surrounding this
+we can always write $\sabs{A} \leq \sabs{B}$ or
+$\sabs{B} \leq \sabs{A}$.  The issues surrounding this
 last statement are very subtle.  As we do not require either
 of these two statements, we omit proofs.
 
@@ -1082,7 +1082,7 @@ The truly interesting cases of cardinality are infinite sets.
 We will distinguish two types of infinite cardinality.
 
 \begin{defn}
-If $\abs{A} = \abs{\N}$, then we say $A$ is
+If $\sabs{A} = \sabs{\N}$, then we say $A$ is
 \emph{\myindex{countably infinite}}.
 If $A$ is finite or countably infinite, then we say $A$
 is \emph{\myindex{countable}}.
@@ -1143,7 +1143,7 @@ from the exercises.
 B$ and $B$ is countable, then $A$ is countable.}  The contrapositive of the
 statement is that if $A$ is
 uncountable, then $B$ is uncountable.
-As a consequence, if $\abs{A} < \abs{\N}$, then $A$ is
+As a consequence, if $\sabs{A} < \sabs{\N}$, then $A$ is
 finite.
 Similarly, if $B$ is finite and $A \subset B$, then $A$ is finite.
 
@@ -1160,7 +1160,7 @@ The \emph{\myindex{power set}} of a set $A$, denoted by $\sP(A)$,
 
 For example, if $A \coloneqq \{ 1,2\}$,
 then $\sP(A) = \bigl\{ \emptyset, \{ 1 \}, \{ 2 \}, \{ 1, 2 \} \bigr\}$.
-In particular, $\abs{A} = 2$ and $\abs{\sP(A)} = 4 = 2^2$.
+In particular, $\sabs{A} = 2$ and $\babs{\sP(A)} = 4 = 2^2$.
 In general,
 for a finite set $A$ of cardinality $n$, the
 cardinality of $\sP(A)$ is $2^n$.
@@ -1178,7 +1178,7 @@ Philipp Cantor} (1845--1918).}]
 \index{Cantor's theorem}
 \label{cantorspowersetthm}
 Let $A$ be a set.  Then
-$\abs{A} < \abs{\sP(A)}$.
+$\sabs{A} < \babs{\sP(A)}$.
 In particular, there exists no surjection from
 $A$ onto $\sP(A)$.
 \end{thm}
@@ -1186,7 +1186,7 @@ $A$ onto $\sP(A)$.
 \begin{proof}
 An injection $f \colon A \to \sP(A)$ exists:
 For $x \in A$, let $f(x) \coloneqq \{ x \}$.  Thus,
-$\abs{A} \leq \abs{\sP(A)}$.
+$\sabs{A} \leq \babs{\sP(A)}$.
 
 To finish the proof, we must show that
 no function $g \colon A \to \sP(A)$ is a surjection.
@@ -1251,7 +1251,7 @@ $f( C \cap D)$ is a proper subset of $f(C) \cap f(D)$.
 Prove that if $A$ is nonempty and finite, then there exists a unique
 $n \in \N$ such
 that there exists a bijection between $A$ and $\{ 1, 2, 3, \ldots, n \}$.
-In other words, the notation $\abs{A} \coloneqq n$ is justified.
+In other words, the notation $\sabs{A} \coloneqq n$ is justified.
 Hint: Show that if $n > m$, then there is no injection from
 $\{ 1, 2, 3, \ldots, n \}$ to
 $\{ 1, 2, 3, \ldots, m \}$.
@@ -1397,12 +1397,12 @@ Suppose $A \subset B$ and $B$ is countably infinite.  By constructing a
 bijection, show that $A$ is
 countable (that is, $A$ is empty, finite, or countably infinite).
 \item 
-Use part a) to show that if $\abs{A} < \abs{\N}$, then $A$ is finite.
+Use part a) to show that if $\sabs{A} < \sabs{\N}$, then $A$ is finite.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[Challenging] \label{exercise:countsubsetbij}
-Suppose $\abs{\N} \leq \abs{S}$, or in other words, $S$
+Suppose $\sabs{\N} \leq \sabs{S}$, or in other words, $S$
 contains a countably infinite subset.
 Show that there exists a countably infinite subset $A \subset S$
 such that there is 

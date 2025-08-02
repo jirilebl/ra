@@ -30,7 +30,7 @@ A sequence $\{ x_n \}_{n=1}^\infty$ is \emph{bounded}\index{bounded sequence} if
 the underlying function is bounded.  That is, if
 there exists a $B \in \R$ such that
 \begin{equation*}
-\abs{x_n} \leq B \qquad \text{for all } n \in \N.
+\sabs{x_n} \leq B \qquad \text{for all } n \in \N.
 \end{equation*}
 In other words, the sequence $\{x_n\}_{n=1}^\infty$ is bounded whenever
 the set $\{ x_n : n \in \N \}$
@@ -78,7 +78,7 @@ constant $c \in \R$ repeating indefinitely.
 \begin{defn}
 A sequence $\{ x_n \}_{n=1}^\infty$ is said to \emph{converge} to a number
 $x \in \R$ if for every $\epsilon > 0$, there exists an $M \in \N$ such
-that $\abs{x_n - x} < \epsilon$ for all $n \geq M$.
+that $\sabs{x_n - x} < \epsilon$ for all $n \geq M$.
 The number $x$ is called a \emph{limit} of the sequence.
 If the limit $x$ is unique, we write%
 \footnote{In text, this may get rendered as $\lim_{n\to\infty} x_n$.}
@@ -146,7 +146,7 @@ $0 < \nicefrac{1}{M} < \epsilon$
 (\hyperref[thm:arch:i]{Archimedean property} at work).
 For all $n \geq M$,
 \begin{equation*}
-\abs{x_n - x}
+\sabs{x_n - x}
 =
 \abs{\frac{1}{n} - 0} = \abs{\frac{1}{n}} = \frac{1}{n} \leq \frac{1}{M} < \epsilon .
 \end{equation*}
@@ -159,14 +159,14 @@ satisfies the definition.  Suppose
 such an $M$ exists.
 Then for an even $n \geq M$, we compute
 \begin{equation*}
-\nicefrac{1}{2} > \abs{x_n - x}  = \abs{1 - x}
+\nicefrac{1}{2} > \sabs{x_n - x}  = \sabs{1 - x}
 \qquad \text{and} \qquad
-\nicefrac{1}{2} > \abs{x_{n+1} - x}  = \abs{-1 - x} .
+\nicefrac{1}{2} > \sabs{x_{n+1} - x}  = \sabs{-1 - x} .
 \end{equation*}
 And we obtain a contradiction
 \begin{equation*}
-2 = \abs{1 - x - (-1 -x)} \leq
-\abs{1 - x} + \abs{-1 -x} < \nicefrac{1}{2} + \nicefrac{1}{2} = 1 .
+2 = \babs{1 - x - (-1 -x)} \leq
+\sabs{1 - x} + \sabs{-1 -x} < \nicefrac{1}{2} + \nicefrac{1}{2} = 1 .
 \end{equation*}
 \end{example}
 
@@ -185,22 +185,22 @@ by arbitrarily small numbers.
 Suppose $\{ x_n \}_{n=1}^\infty$ has limits $x$ and $y$.
 Take an arbitrary $\epsilon > 0$.
 From the definition find an $M_1$ such that for all $n \geq M_1$,
-$\abs{x_n-x} < \nicefrac{\epsilon}{2}$.  Similarly, find an $M_2$
+$\sabs{x_n-x} < \nicefrac{\epsilon}{2}$.  Similarly, find an $M_2$
 such that for all $n \geq M_2$, we have
-$\abs{x_n-y} < \nicefrac{\epsilon}{2}$.
+$\sabs{x_n-y} < \nicefrac{\epsilon}{2}$.
 Now take an $n$ such that $n \geq M_1$ and also $n \geq M_2$, and estimate
 \begin{equation*}
 \begin{split}
-\abs{y-x}
+\sabs{y-x}
 & =
-\abs{x_n-x - (x_n -y)} \\
+\babs{x_n-x - (x_n -y)} \\
 & \leq
-\abs{x_n-x} + \abs{x_n -y} \\
+\sabs{x_n-x} + \sabs{x_n -y} \\
 & <
 \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon .
 \end{split}
 \end{equation*}
-As $\abs{y-x} < \epsilon$ for all $\epsilon > 0$, then $\abs{y-x} = 0$
+As $\sabs{y-x} < \epsilon$ for all $\epsilon > 0$, then $\sabs{y-x} = 0$
 and $y=x$.  Hence the limit (if it exists) is unique.
 \end{proof}
 
@@ -211,24 +211,24 @@ A convergent sequence $\{ x_n \}_{n=1}^\infty$ is bounded.
 \begin{proof}
 Suppose $\{ x_n \}_{n=1}^\infty$ converges to $x$.  Thus there exists an $M \in \N$
 such that for all $n \geq M$, we have
-$\abs{x_n - x} < 1$.  For $n \geq M$,
+$\sabs{x_n - x} < 1$.  For $n \geq M$,
 \begin{equation*}
 \begin{split}
-\abs{x_n} & = \abs{x_n - x + x}
+\sabs{x_n} & = \sabs{x_n - x + x}
 \\
-& \leq \abs{x_n - x} + \abs{x}
+& \leq \sabs{x_n - x} + \sabs{x}
 \\
-& < 1 + \abs{x} .
+& < 1 + \sabs{x} .
 \end{split}
 \end{equation*}
-The set $\bigl\{ \abs{x_1}, \abs{x_2}, \ldots, \abs{x_{M-1}} , 1+\sabs{x} \bigr\}$
+The set $\bigl\{ \sabs{x_1}, \sabs{x_2}, \ldots, \sabs{x_{M-1}} , 1+\sabs{x} \bigr\}$
 is a finite set and hence let
 \begin{equation*}
-B \coloneqq \max \bigl\{ \abs{x_1}, \abs{x_2}, \ldots, \abs{x_{M-1}}, 1+\sabs{x} \bigr\} .
+B \coloneqq \max \bigl\{ \sabs{x_1}, \sabs{x_2}, \ldots, \sabs{x_{M-1}}, 1+\sabs{x} \bigr\} .
 \end{equation*}
 Then for all $n \in \N$,
 \begin{equation*}
-\abs{x_n} \leq B. \qedhere
+\sabs{x_n} \leq B. \qedhere
 \end{equation*}
 \end{proof}
 
@@ -333,7 +333,7 @@ As $\{ x_n \}_{n=1}^\infty$ is monotone increasing,
 then it is easy to see (by \hyperref[induction:thm]{induction}) that
 $x_n \geq x_{M}$ for all $n \geq M$.  Hence for all $n \geq M$,
 \begin{equation*}
-\abs{x_n-x} = x-x_n \leq x-x_{M} < \epsilon  .
+\sabs{x_n-x} = x-x_n \leq x-x_{M} < \epsilon  .
 \end{equation*}
 So $\{ x_n \}_{n=1}^\infty$ converges to $x$.
 Therefore, a bounded monotone increasing sequence converges.
@@ -477,11 +477,11 @@ Let $K \in \N$ be arbitrary, and
 define $y_n \coloneqq x_{n+K}$.  We wish to show that $\{ y_n \}_{n=1}^\infty$ converges
 to $x$.
 Given an $\epsilon > 0$, there exists an $M \in \N$ such that
-$\abs{x-x_n} < \epsilon$ for all $n \geq M$.
+$\sabs{x-x_n} < \epsilon$ for all $n \geq M$.
 Note that $n \geq M$ implies $n+K \geq M$.  Therefore, for
 all $n \geq M$, we have
 \begin{equation*}
-\abs{x-y_n} = \abs{x-x_{n+K}} < \epsilon .
+\sabs{x-y_n} = \sabs{x-x_{n+K}} < \epsilon .
 \end{equation*}
 Consequently, $\{ y_n \}_{n=1}^\infty$ converges to $x$.
 
@@ -489,11 +489,11 @@ Let us move to \ref{prop:ktail:iii} implies \ref{prop:ktail:i}.
 Let $K \in \N$ be given, define
 $y_n \coloneqq x_{n+K}$, and suppose that $\{ y_n \}_{n=1}^\infty$ converges to $x \in \R$.
 That is, given an $\epsilon > 0$, there exists an $M' \in \N$ such that
-$\abs{x-y_n} < \epsilon$ for all $n \geq M'$.
+$\sabs{x-y_n} < \epsilon$ for all $n \geq M'$.
 Let $M \coloneqq M'+K$.  Then $n \geq M$ implies $n-K \geq M'$.
 Thus, whenever $n \geq M$, we have
 \begin{equation*}
-\abs{x-x_n} = \abs{x-y_{n-K}} < \epsilon.
+\sabs{x-x_n} = \sabs{x-y_{n-K}} < \epsilon.
 \end{equation*}
 Therefore, $\{ x_n \}_{n=1}^\infty$ converges to $x$.
 \end{proof}
@@ -586,13 +586,13 @@ then every subsequence $\{ x_{n_i} \}_{i=1}^\infty$ is also convergent, and
 Suppose $\lim_{n\to \infty} x_n = x$.  So for every
 $\epsilon > 0$, there is an $M \in \N$ such that for all $n \geq M$,
 \begin{equation*}
-\abs{x_n - x} < \epsilon .
+\sabs{x_n - x} < \epsilon .
 \end{equation*}
 It is not hard to prove (do it!) by \hyperref[induction:thm]{induction} that
 $n_i \geq i$ for all $i \in \N$.  Hence $i \geq M$ implies $n_i \geq M$.  Thus,
 for all $i \geq M$,
 \begin{equation*}
-\abs{x_{n_i} - x} < \epsilon ,
+\sabs{x_{n_i} - x} < \epsilon ,
 \end{equation*}
 and we are done.
 \end{proof}
@@ -656,8 +656,8 @@ convergent?  If so, what is the limit?
 Let $\{ x_n \}_{n=1}^\infty$ be a sequence.
 \begin{enumerate}[a)]
 \item Show that $\lim\limits_{n\to\infty} x_n = 0$ (that is, the limit exists and is zero)
-if and only if $\lim\limits_{n\to\infty} \abs{x_n} = 0$.
-\item Find an example such that $\{ \abs{x_n} \}_{n=1}^\infty$ converges and
+if and only if $\lim\limits_{n\to\infty} \sabs{x_n} = 0$.
+\item Find an example such that $\{ \sabs{x_n} \}_{n=1}^\infty$ converges and
 $\{ x_n \}_{n=1}^\infty$
 diverges.
 \end{enumerate}
@@ -744,7 +744,7 @@ subsequence $\{ x_{n_i} \}_{i=1}^\infty$ converging to $y$.
 \begin{exercise}[Easy]
 Let $\{ x_n \}_{n=1}^\infty$ be a sequence and $x \in \R$.
 Suppose for every $\epsilon > 0$, there is an $M$ such that
-$\abs{x_n-x} \leq \epsilon$ for all $n \geq M$.
+$\sabs{x_n-x} \leq \epsilon$ for all $n \geq M$.
 Show that $\lim\limits_{n\to\infty} x_n = x$.
 \end{exercise}
 
@@ -832,9 +832,9 @@ Then $\{ x_n \}_{n=1}^\infty$ converges and
 Let $x \coloneqq \lim_{n\to\infty} a_n = \lim_{n\to\infty} b_n$.
 Let $\epsilon > 0$ be given.
 Find an $M_1$ such that for all $n \geq M_1$, we have
-that $\abs{a_n-x} < \epsilon$, and an $M_2$
+that $\sabs{a_n-x} < \epsilon$, and an $M_2$
 such that for all $n \geq M_2$,
-we have $\abs{b_n-x} < \epsilon$.  Set $M \coloneqq \max \{M_1, M_2 \}$.
+we have $\sabs{b_n-x} < \epsilon$.  Set $M \coloneqq \max \{M_1, M_2 \}$.
 Suppose $n \geq M$.
 In particular,
 $x - a_n < \epsilon$, or 
@@ -843,7 +843,7 @@ Putting everything together, we find
 \begin{equation*}
 x - \epsilon < a_n \leq x_n \leq b_n < x + \epsilon .
 \end{equation*}
-In other words, $-\epsilon < x_n-x < \epsilon$ or $\abs{x_n-x} < \epsilon$.
+In other words, $-\epsilon < x_n-x < \epsilon$ or $\sabs{x_n-x} < \epsilon$.
 So $\{x_n\}_{n=1}^\infty$ converges to $x$.
 See \figureref{figsqueeze}.
 \end{proof}
@@ -891,9 +891,9 @@ Then
 Let $x \coloneqq \lim_{n\to\infty} x_n$ and $y \coloneqq \lim_{n\to\infty} y_n$. 
 Let 
 $\epsilon > 0$ be given.  Find an $M_1$ such that for all $n \geq M_1$,
-we have $\abs{x_n-x} < \nicefrac{\epsilon}{2}$.  Find an $M_2$ such that
+we have $\sabs{x_n-x} < \nicefrac{\epsilon}{2}$.  Find an $M_2$ such that
 for all $n \geq M_2$, we have
-$\abs{y_n-y} < \nicefrac{\epsilon}{2}$.  In particular,
+$\sabs{y_n-y} < \nicefrac{\epsilon}{2}$.  In particular,
 for some $n \geq \max\{ M_1, M_2 \}$, we have
 $x-x_n < \nicefrac{\epsilon}{2}$ and
 $y_n-y < \nicefrac{\epsilon}{2}$.  We add these inequalities to
@@ -1010,19 +1010,19 @@ $y \coloneqq \lim_{n\to\infty} y_n$, and $z \coloneqq x+y$.
 Let $\epsilon > 0$ be given.  
 Find an $M_1$ such that for all $n \geq M_1$,
 we have
-$\abs{x_n - x} < \nicefrac{\epsilon}{2}$.  
+$\sabs{x_n - x} < \nicefrac{\epsilon}{2}$.  
 Find an $M_2$ such that for all $n \geq M_2$,
 we have
-$\abs{y_n - y} < \nicefrac{\epsilon}{2}$.  Take $M \coloneqq \max \{ M_1, M_2 \}$.
+$\sabs{y_n - y} < \nicefrac{\epsilon}{2}$.  Take $M \coloneqq \max \{ M_1, M_2 \}$.
 For all $n \geq M$, we have
 \begin{equation*}
 \begin{split}
-\abs{z_n - z} &=
-\abs{(x_n+y_n) - (x+y)} \\
+\sabs{z_n - z} &=
+\babs{(x_n+y_n) - (x+y)} \\
 & =
-\abs{x_n-x + y_n-y} \\
+\sabs{x_n-x + y_n-y} \\
 & \leq
-\abs{x_n-x} + \abs{y_n-y} \\
+\sabs{x_n-x} + \sabs{y_n-y} \\
 & <
 \frac{\epsilon}{2} +
 \frac{\epsilon}{2}
@@ -1040,29 +1040,29 @@ write $z_n \coloneqq x_n y_n$.  Let $x \coloneqq \lim_{n\to\infty} x_n$,
 $y \coloneqq \lim_{n\to\infty} y_n$, and $z \coloneqq xy$.
 
 Let $\epsilon > 0$ be given.
-Let $K \coloneqq \max\{ \abs{x}, \abs{y}, \nicefrac{\epsilon}{3} , 1 \}$.
+Let $K \coloneqq \max\{ \sabs{x}, \sabs{y}, \nicefrac{\epsilon}{3} , 1 \}$.
 Find an $M_1$ such that for all $n \geq M_1$,
 we have
-$\abs{x_n - x} < \frac{\epsilon}{3K}$.
+$\sabs{x_n - x} < \frac{\epsilon}{3K}$.
 Find an $M_2$ such that for all $n \geq M_2$,
 we have
-$\abs{y_n - y} < \frac{\epsilon}{3K}$.  Take $M \coloneqq \max \{ M_1, M_2 \}$.
+$\sabs{y_n - y} < \frac{\epsilon}{3K}$.  Take $M \coloneqq \max \{ M_1, M_2 \}$.
 For all $n \geq M$, we have
 \begin{equation*}
 \begin{split}
-\abs{z_n - z} &=
-\abs{(x_ny_n) - (xy)} \\
+\sabs{z_n - z} &=
+\babs{(x_ny_n) - (xy)} \\
 & =
-\abs{(x_n-x+x)(y_n-y+y) - xy} \\
+\babs{(x_n-x+x)(y_n-y+y) - xy} \\
 & =
-\abs{(x_n-x)y + x(y_n-y) +(x_n-x)(y_n-y)} \\
+\babs{(x_n-x)y + x(y_n-y) +(x_n-x)(y_n-y)} \\
 & \leq
-\abs{(x_n-x)y} + \abs{x(y_n - y)} +
-\abs{(x_n-x)(y_n-y)} \\
+\babs{(x_n-x)y} + \babs{x(y_n - y)} +
+\babs{(x_n-x)(y_n-y)} \\
 & =
-\abs{x_n -x}\abs{y} + 
-\abs{x}\abs{y_n -y} + 
-\abs{x_n -x}\abs{y_n -y}
+\sabs{x_n -x}\sabs{y} + 
+\sabs{x}\sabs{y_n -y} + 
+\sabs{x_n -x}\sabs{y_n -y}
 \\
 & <
 \frac{\epsilon}{3K} K + 
@@ -1097,25 +1097,25 @@ multiply it by the sequence $\{ x_n \}_{n=1}^\infty$ and apply item
 
 Proof of claim:  Let $\epsilon > 0$ be given.
 Let $y \coloneqq \lim_{n\to\infty} y_n$.
-As $\abs{y} \not= 0$, then
-$\min \left\{ \abs{y}^2\frac{\epsilon}{2}, \, \frac{\abs{y}}{2} \right\} > 0$.
+As $\sabs{y} \not= 0$, we have
+$\min \left\{ \sabs{y}^2\frac{\epsilon}{2}, \, \frac{\sabs{y}}{2} \right\} > 0$.
 Find an $M$ such that for all $n \geq M$,
 we have
 \begin{equation*}
-\abs{y_n - y} < \min \left\{ \abs{y}^2\frac{\epsilon}{2}, \, \frac{\abs{y}}{2}
+\sabs{y_n - y} < \min \left\{ \sabs{y}^2\frac{\epsilon}{2}, \, \frac{\sabs{y}}{2}
 \right\} .
 \end{equation*}
 For all $n \geq M$, we have
-$\abs{y - y_n} < \nicefrac{\abs{y}}{2}$, and so
+$\sabs{y - y_n} < \nicefrac{\sabs{y}}{2}$, and so
 \begin{equation*}
-\abs{y} = 
-\abs{y - y_n + y_n } \leq
-\abs{y - y_n} + \abs{ y_n } < \frac{\abs{y}}{2} + \abs{y_n}.
+\sabs{y} = 
+\sabs{y - y_n + y_n } \leq
+\sabs{y - y_n} + \sabs{ y_n } < \frac{\sabs{y}}{2} + \sabs{y_n}.
 \end{equation*}
-Subtracting $\nicefrac{\abs{y}}{2}$ from both sides we obtain
-$\nicefrac{\abs{y}}{2} < \abs{y_n}$, or in other words,
+Subtracting $\nicefrac{\sabs{y}}{2}$ from both sides we obtain
+$\nicefrac{\sabs{y}}{2} < \sabs{y_n}$, or in other words,
 \begin{equation*}
-\frac{1}{\abs{y_n}} < \frac{2}{\abs{y}} .
+\frac{1}{\sabs{y_n}} < \frac{2}{\sabs{y}} .
 \end{equation*}
 We finish the proof of the claim:
 \begin{equation*}
@@ -1123,11 +1123,11 @@ We finish the proof of the claim:
 \abs{\frac{1}{y_n} - \frac{1}{y}} &=
 \abs{\frac{y - y_n}{y y_n}} \\
 & =
-\frac{\abs{y - y_n}}{\abs{y} \abs{y_n}} \\
+\frac{\sabs{y - y_n}}{\sabs{y} \sabs{y_n}} \\
 & \leq
-\frac{\abs{y - y_n}}{\abs{y}} \, \frac{2}{\abs{y}} \\
+\frac{\sabs{y - y_n}}{\sabs{y}} \, \frac{2}{\sabs{y}} \\
 & <
-\frac{\abs{y}^2 \frac{\epsilon}{2}}{\abs{y}} \, \frac{2}{\abs{y}}
+\frac{\sabs{y}^2 \frac{\epsilon}{2}}{\sabs{y}} \, \frac{2}{\sabs{y}}
 = \epsilon .
 \end{split}
 \end{equation*}
@@ -1176,7 +1176,7 @@ As we just mentioned, $x \geq 0$.
 
 First suppose $x=0$.  Let $\epsilon > 0$ be given.
 Then there is an $M$ such that for all $n \geq M$, we have
-$x_n = \abs{x_n} < \epsilon^2$, or in other words, $\sqrt{x_n} < \epsilon$.
+$x_n = \sabs{x_n} < \epsilon^2$, or in other words, $\sqrt{x_n} < \epsilon$.
 Hence,
 \begin{equation*}
 \abs{\sqrt{x_n} - \sqrt{x}} =
@@ -1190,10 +1190,10 @@ Now suppose $x > 0$ (and hence $\sqrt{x} > 0$).
 \abs{\frac{x_n-x}{\sqrt{x_n}+\sqrt{x}}} \\
 &=
 \frac{1}{\sqrt{x_n}+\sqrt{x}}
-\abs{x_n-x} \\
+\sabs{x_n-x} \\
 & \leq
 \frac{1}{\sqrt{x}}
-\abs{x_n-x} .
+\sabs{x_n-x} .
 \end{split}
 \end{equation*}
 We leave the rest of the proof to the reader.
@@ -1209,10 +1209,10 @@ The converse of this proposition is not true, see
 \exerciseref{exercise:absconv} part b).
 
 \begin{prop}
-If $\{ x_n \}_{n=1}^\infty$ is a convergent sequence, then $\{ \abs{x_n} \}_{n=1}^\infty$
+If $\{ x_n \}_{n=1}^\infty$ is a convergent sequence, then $\{ \sabs{x_n} \}_{n=1}^\infty$
 is convergent and
 \begin{equation*}
-\lim_{n\to\infty} \abs{x_n} = 
+\lim_{n\to\infty} \sabs{x_n} = 
 \abs{\lim_{n\to\infty} x_n} .
 \end{equation*}
 \end{prop}
@@ -1220,10 +1220,10 @@ is convergent and
 \begin{proof}
 We simply note the reverse triangle inequality
 \begin{equation*}
-\big\lvert \abs{x_n} - \abs{x} \big\rvert \leq \abs{x_n-x} .
+\big\lvert \sabs{x_n} - \sabs{x} \big\rvert \leq \sabs{x_n-x} .
 \end{equation*}
-Hence if $\abs{x_n -x}$ can be made arbitrarily small, so can
-$\big\lvert \abs{x_n} - \abs{x} \big\rvert$.
+Hence if $\sabs{x_n -x}$ can be made arbitrarily small, so can
+$\big\lvert \sabs{x_n} - \sabs{x} \big\rvert$.
 Details are left to the reader.
 \end{proof}
 
@@ -1357,7 +1357,7 @@ It is not always necessary to go back to the definition of convergence
 to prove that a sequence is convergent.  We first give a simple convergence test.
 The main idea is that 
 $\{ x_n \}_{n=1}^\infty$ converges to $x$ if and only if 
-$\{ \abs{ x_n - x } \}_{n=1}^\infty$ converges to zero.
+$\{ \sabs{ x_n - x } \}_{n=1}^\infty$ converges to zero.
 
 \begin{prop} \label{convzero:prop}
 Let $\{ x_n \}_{n=1}^\infty$ be a sequence. 
@@ -1369,7 +1369,7 @@ such that
 \end{equation*}
 and 
 \begin{equation*}
-\abs{x_n - x} \leq a_n
+\sabs{x_n - x} \leq a_n
 \qquad
 \text{for all $n \in \N$.}
 \end{equation*}
@@ -1380,10 +1380,10 @@ Then $\{ x_n \}_{n=1}^\infty$ converges and $\lim\limits_{n\to\infty} x_n = x$.
 Let $\epsilon > 0$ be given.  Note that $a_n \geq 0$
 for all $n$.  Find an $M \in \N$ such that for
 all $n \geq M$, we have
-$a_n = \abs{a_n - 0} < \epsilon$.  Then, for all $n \geq M$,
+$a_n = \sabs{a_n - 0} < \epsilon$.  Then, for all $n \geq M$,
 we have
 \begin{equation*}
-\abs{x_n - x} \leq a_n < \epsilon . \qedhere
+\sabs{x_n - x} \leq a_n < \epsilon . \qedhere
 \end{equation*}
 \end{proof}
 
@@ -1440,7 +1440,7 @@ The following lemma will come up again once we get to series.
 Let $\{ x_n \}_{n=1}^\infty$ be a sequence such that $x_n \not= 0$ for all $n$ and such that
 the limit
 \begin{equation*}
-L \coloneqq \lim_{n\to\infty} \frac{\abs{x_{n+1}}}{\abs{x_n}}
+L \coloneqq \lim_{n\to\infty} \frac{\sabs{x_{n+1}}}{\sabs{x_n}}
 \qquad
 \text{exists.}
 \end{equation*}
@@ -1466,45 +1466,45 @@ exercises \ref{exercise:strongerratiotest1} and
 \begin{proof}
 Suppose $L < 1$.
 As
-$\frac{\abs{x_{n+1}}}{\abs{x_n}} \geq 0$ for all $n$, then $L \geq 0$.  Pick
+$\frac{\sabs{x_{n+1}}}{\sabs{x_n}} \geq 0$ for all $n$, then $L \geq 0$.  Pick
 $r$ such that $L < r < 1$.
 We wish to compare the sequence $\{ x_n \}_{n=1}^\infty$ to the sequence $\{ r^n \}_{n=1}^\infty$.  The idea is that
-while the ratio $\frac{\abs{x_{n+1}}}{\abs{x_n}}$ is not going to be less than $L$ eventually,
+while the ratio $\frac{\sabs{x_{n+1}}}{\sabs{x_n}}$ is not going to be less than $L$ eventually,
 it will eventually be less than $r$, which is still less than 1.
 The intuitive idea of the proof is illustrated in \figureref{figratseq}.
 \begin{myfigureht}
 \subimport*{figures/}{figratseq.pdf_t}
 \caption{The short lines represent the ratios 
-$\frac{\abs{x_{n+1}}}{\abs{x_n}}$
+$\frac{\sabs{x_{n+1}}}{\sabs{x_n}}$
 approaching $L < 1$.\label{figratseq}}
 \end{myfigureht}
 
 As $r-L > 0$, there exists an $M \in \N$ such that for
 all $n \geq M$, we have
 \begin{equation*}
-\abs{\frac{\abs{x_{n+1}}}{\abs{x_n}} - L} < r-L .
+\abs{\frac{\sabs{x_{n+1}}}{\sabs{x_n}} - L} < r-L .
 \end{equation*}
 Therefore, for $n \geq M$,
 \begin{equation*}
-\frac{\abs{x_{n+1}}}{\abs{x_n}} - L < r-L 
+\frac{\sabs{x_{n+1}}}{\sabs{x_n}} - L < r-L 
 \qquad \text{or} \qquad
-\frac{\abs{x_{n+1}}}{\abs{x_n}} < r .
+\frac{\sabs{x_{n+1}}}{\sabs{x_n}} < r .
 \end{equation*}
 For $n > M$ (that is for $n \geq M+1$)
 write
 \begin{equation*}
-\abs{x_n} =
-\abs{x_M}
-\frac{\abs{x_{M+1}}}{\abs{x_{M}}}
-\frac{\abs{x_{M+2}}}{\abs{x_{M+1}}}
+\sabs{x_n} =
+\sabs{x_M}
+\frac{\sabs{x_{M+1}}}{\sabs{x_{M}}}
+\frac{\sabs{x_{M+2}}}{\sabs{x_{M+1}}}
 \cdots
-\frac{\abs{x_{n}}}{\abs{x_{n-1}}}
+\frac{\sabs{x_{n}}}{\sabs{x_{n-1}}}
 <
-\abs{x_M}
-r r \cdots r = \abs{x_M} r^{n-M} = (\abs{x_M} r^{-M}) r^n .
+\sabs{x_M}
+r r \cdots r = \sabs{x_M} r^{n-M} = (\sabs{x_M} r^{-M}) r^n .
 \end{equation*}
 The sequence $\{ r^n \}_{n=1}^\infty$ converges to zero and hence 
-$\abs{x_M} r^{-M} r^n$ converges to zero.  By \propref{convzero:prop},
+$\sabs{x_M} r^{-M} r^n$ converges to zero.  By \propref{convzero:prop},
 the $M$-tail
 $\{x_n\}_{n=M+1}^\infty$ converges to zero and therefore $\{x_n\}_{n=1}^\infty$ converges to zero.
 
@@ -1513,28 +1513,28 @@ $r$ such that $1 < r < L$.  As $L-r > 0$,
 there exists an $M \in \N$ such that for
 all $n \geq M$
 \begin{equation*}
-\abs{\frac{\abs{x_{n+1}}}{\abs{x_n}} - L} < L-r .
+\abs{\frac{\sabs{x_{n+1}}}{\sabs{x_n}} - L} < L-r .
 \end{equation*}
 Therefore,
 \begin{equation*}
-\frac{\abs{x_{n+1}}}{\abs{x_n}} > r .
+\frac{\sabs{x_{n+1}}}{\sabs{x_n}} > r .
 \end{equation*}
 Again for $n > M$,
 write
 \begin{equation*}
-\abs{x_n} =
-\abs{x_M}
-\frac{\abs{x_{M+1}}}{\abs{x_{M}}}
-\frac{\abs{x_{M+2}}}{\abs{x_{M+1}}}
+\sabs{x_n} =
+\sabs{x_M}
+\frac{\sabs{x_{M+1}}}{\sabs{x_{M}}}
+\frac{\sabs{x_{M+2}}}{\sabs{x_{M+1}}}
 \cdots
-\frac{\abs{x_{n}}}{\abs{x_{n-1}}}
+\frac{\sabs{x_{n}}}{\sabs{x_{n-1}}}
 >
-\abs{x_M}
-r r \cdots r = \abs{x_M} r^{n-M} = (\abs{x_M} r^{-M}) r^n .
+\sabs{x_M}
+r r \cdots r = \sabs{x_M} r^{n-M} = (\sabs{x_M} r^{-M}) r^n .
 \end{equation*}
 The sequence $\{ r^n \}_{n=1}^\infty$ is unbounded (since $r > 1$), and so
-$\{x_n\}_{n=1}^\infty$ cannot be bounded (if $\abs{x_n} \leq B$ for all $n$, then
-$r^n < \frac{B}{\abs{x_M}} r^{\:M}$ for all $n > M$, which is impossible).
+$\{x_n\}_{n=1}^\infty$ cannot be bounded (if $\sabs{x_n} \leq B$ for all $n$, then
+$r^n < \frac{B}{\sabs{x_M}} r^{\:M}$ for all $n > M$, which is impossible).
 Consequently, $\{ x_n \}_{n=1}^\infty$ cannot converge.
 \end{proof}
 
@@ -1643,7 +1643,7 @@ Show that
 Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence, $x \in \R$, and $x_n \not= x$ for
 all $n \in \N$.  Suppose the limit
 \begin{equation*}
-L \coloneqq \lim_{n \to \infty} \frac{\abs{x_{n+1}-x}}{\abs{x_n-x}}
+L \coloneqq \lim_{n \to \infty} \frac{\sabs{x_{n+1}-x}}{\sabs{x_n-x}}
 \end{equation*}
 exists and $L < 1$.  Show that $\{ x_n \}_{n=1}^\infty$ converges to $x$.
 \end{exercise}
@@ -1696,13 +1696,13 @@ $n$.
 \item
 Prove that if there exists an $r < 1$ and $M \in \N$ such that
 \begin{equation*}
-\frac{\abs{x_{n+1}}}{\abs{x_n}} \leq r \quad \text{for all } n \geq M,
+\frac{\sabs{x_{n+1}}}{\sabs{x_n}} \leq r \quad \text{for all } n \geq M,
 \end{equation*}
 then $\{ x_n \}_{n=1}^\infty$ converges to $0$.
 \item
 Prove that if there exists an $r > 1$ and $M \in \N$ such that
 \begin{equation*}
-\frac{\abs{x_{n+1}}}{\abs{x_n}} \geq r  \quad \text{for all } n \geq M,
+\frac{\sabs{x_{n+1}}}{\sabs{x_n}} \geq r  \quad \text{for all } n \geq M,
 \end{equation*}
 then $\{ x_n \}_{n=1}^\infty$ is unbounded.
 \end{enumerate}
@@ -1942,7 +1942,7 @@ $a_{(n_{k-1}+1)} \geq a_{n_k}$ (why?) and $a_{n_{k}} \geq x_{n_k}$.
 Therefore, for every $k \geq 2$,
 \begin{equation*}
 \begin{split}
-\abs{a_{n_k} - x_{n_k}} & = 
+\sabs{a_{n_k} - x_{n_k}} & = 
 a_{n_k} - x_{n_k}
 \\
 & \leq
@@ -1959,7 +1959,7 @@ $\{ a_{n_k} \}_{k=1}^\infty$ converges to $x$.
 Thus there exists an $M_1 \in \N$
 such that for all $k \geq M_1$, we have
 \begin{equation*}
-\abs{a_{n_k} - x} < \frac{\epsilon}{2} .
+\sabs{a_{n_k} - x} < \frac{\epsilon}{2} .
 \end{equation*}
 Find an $M_2 \in \N$ such that
 \begin{equation*}
@@ -1968,10 +1968,10 @@ Find an $M_2 \in \N$ such that
 Take $M \coloneqq \max \{M_1 , M_2 , 2 \}$.  For all $k \geq M$,
 \begin{equation*}
 \begin{split}
-\abs{x- x_{n_k}} & =
-\abs{a_{n_k} - x_{n_k} + x - a_{n_k}}
+\sabs{x- x_{n_k}} & =
+\sabs{a_{n_k} - x_{n_k} + x - a_{n_k}}
 \\
-& \leq \abs{a_{n_k} - x_{n_k}} + \abs{x - a_{n_k}}
+& \leq \sabs{a_{n_k} - x_{n_k}} + \sabs{x - a_{n_k}}
 \\
 & < \frac{1}{k} + \frac{\epsilon}{2}
 \\
@@ -2551,13 +2551,13 @@ $n$.
 \item
 Prove that if
 \begin{equation*}
-\limsup_{n \to \infty} \frac{\abs{x_{n+1}}}{\abs{x_n}} < 1 ,
+\limsup_{n \to \infty} \frac{\sabs{x_{n+1}}}{\sabs{x_n}} < 1 ,
 \end{equation*}
 then $\{ x_n \}_{n=1}^\infty$ converges to $0$.
 \item
 Prove that if
 \begin{equation*}
-\liminf_{n \to \infty} \frac{\abs{x_{n+1}}}{\abs{x_n}} > 1 ,
+\liminf_{n \to \infty} \frac{\sabs{x_{n+1}}}{\sabs{x_n}} > 1 ,
 \end{equation*}
 then $\{ x_n \}_{n=1}^\infty$ is unbounded.
 \end{enumerate}
@@ -2573,7 +2573,7 @@ $\limsup\limits_{n\to\infty} x_n = a_\ell$.
 \begin{exercise}
 Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence,
 and $a_n \coloneqq \sup \{ x_k : k \geq n \}$ and
-$b_n \coloneqq \sup \{ x_k : k \geq n \}$ as before.
+$b_n \coloneqq \inf \{ x_k : k \geq n \}$ as before.
 \begin{enumerate}[a)]
 \item
 Prove that if $a_\ell = \infty$ for some $\ell \in \N$, then 
@@ -2631,7 +2631,7 @@ Named after the French mathematician
 for every $\epsilon > 0$ there exists an $M \in \N$ such that
 for all $n \geq M$ and all $k \geq M$, we have
 \begin{equation*}
-\abs{x_n - x_k} < \epsilon .
+\sabs{x_n - x_k} < \epsilon .
 \end{equation*}
 \end{defn}
 
@@ -2666,12 +2666,12 @@ Given any $M \in \N$, take $n \geq M$ to be any even number, and
 let $k \coloneqq n+1$.  Then
 \begin{equation*}
 \begin{split}
-\abs{{(-1)}^n - {(-1)}^k}
+\babs{{(-1)}^n - {(-1)}^k}
 & =
-\abs{{(-1)}^n - {(-1)}^{n+1}}
+\babs{{(-1)}^n - {(-1)}^{n+1}}
 \\
 & =
-\abs{1 - (-1)} = 2 .
+\babs{1 - (-1)} = 2 .
 \end{split}
 \end{equation*}
 Therefore, for any $\epsilon \leq 2$ the definition cannot be satisfied, and
@@ -2716,21 +2716,22 @@ If a sequence is Cauchy, then it is bounded.
 
 \begin{proof}
 Suppose $\{ x_n \}_{n=1}^\infty$ is Cauchy.  Pick an $M$ such that for all
-$n,k \geq M$, we have $\abs{x_n-x_k} < 1$.  In particular, 
+$n,k \geq M$, we have $\sabs{x_n-x_k} < 1$.  In particular, 
 for all $n \geq M$,
 \begin{equation*}
-\abs{x_n - x_M} < 1 .
+\sabs{x_n - x_M} < 1 .
 \end{equation*}
 By the reverse triangle inequality,
-$\abs{x_n} - \abs{x_M} \leq \abs{x_n - x_M} < 1$.  Hence for $n \geq M$,
+$\sabs{x_n} - \sabs{x_M} \leq \sabs{x_n - x_M} < 1$.  Hence for $n \geq M$,
 \begin{equation*}
-\abs{x_n} < 1 + \abs{x_M}.
+\sabs{x_n} < 1 + \sabs{x_M}.
 \end{equation*}
 Let
 \begin{equation*}
-B \coloneqq \max \bigl\{ \abs{x_1}, \abs{x_2}, \ldots, \abs{x_{M-1}}, 1+ \abs{x_M} \bigr\} .
+B \coloneqq \max \bigl\{ \sabs{x_1}, \sabs{x_2}, \ldots,
+\sabs{x_{M-1}}, 1+ \sabs{x_M} \bigr\} .
 \end{equation*}
-Then $\abs{x_n} \leq B$ for all $n \in \N$.
+Then $\sabs{x_n} \leq B$ for all $n \in \N$.
 \end{proof}
 
 \begin{thm}
@@ -2744,13 +2745,13 @@ let $\epsilon > 0$ be given.
 Then there 
 exists an $M$ such that for $n \geq M$,
 \begin{equation*}
-\abs{x_n - x} < \frac{\epsilon}{2} .
+\sabs{x_n - x} < \frac{\epsilon}{2} .
 \end{equation*}
 Hence for $n \geq M$ and $k \geq M$,
 \begin{equation*}
-\abs{x_n - x_k} = 
-\abs{x_n - x + x - x_k}
-\leq \abs{x_n-x} + \abs{x-x_k} < \frac{\epsilon}{2} + \frac{\epsilon}{2} =
+\sabs{x_n - x_k} = 
+\sabs{x_n - x + x - x_k}
+\leq \sabs{x_n-x} + \sabs{x-x_k} < \frac{\epsilon}{2} + \frac{\epsilon}{2} =
 \epsilon .
 \end{equation*}
 
@@ -2778,25 +2779,25 @@ $\{ x_{m_i} \}_{i=1}^\infty$, such that
 \end{equation*}
 Given an $\epsilon > 0$,
 there exists an $M_1$ such that
-$\abs{x_{n_i} - a} < \nicefrac{\epsilon}{3}$ for all $i \geq M_1$
+$\sabs{x_{n_i} - a} < \nicefrac{\epsilon}{3}$ for all $i \geq M_1$
 and an $M_2$ such that
-$\abs{x_{m_i} - b} < \nicefrac{\epsilon}{3}$ for all $i \geq M_2$.
+$\sabs{x_{m_i} - b} < \nicefrac{\epsilon}{3}$ for all $i \geq M_2$.
 There also exists an $M_3$
 such that
-$\abs{x_n-x_k} < \nicefrac{\epsilon}{3}$
+$\sabs{x_n-x_k} < \nicefrac{\epsilon}{3}$
 for all $n,k \geq M_3$.
 Let $M \coloneqq \max \{ M_1, M_2, M_3 \}$.
 If $i \geq M$, then $n_i \geq M$ and $m_i \geq M$.  Hence,
 \begin{equation*}
 \begin{split}
-\abs{a-b} & =
-\abs{a-x_{n_i}+x_{n_i}
+\sabs{a-b} & =
+\sabs{a-x_{n_i}+x_{n_i}
 -x_{m_i}+x_{m_i}
 -b} \\
 & \leq
-\abs{a-x_{n_i}}
-+ \abs{x_{n_i} -x_{m_i}}
-+ \abs{x_{m_i} -b} \\
+\sabs{a-x_{n_i}}
++ \sabs{x_{n_i} -x_{m_i}}
++ \sabs{x_{m_i} -b} \\
 & <
 \frac{\epsilon}{3}
 +
@@ -2806,7 +2807,7 @@ If $i \geq M$, then $n_i \geq M$ and $m_i \geq M$.  Hence,
 = \epsilon .
 \end{split}
 \end{equation*}
-As $\abs{a-b} < \epsilon$ for all $\epsilon > 0$, then $a=b$ and 
+As $\sabs{a-b} < \epsilon$ for all $\epsilon > 0$, then $a=b$ and 
 the sequence converges.
 \end{proof}
 
@@ -2829,14 +2830,14 @@ more abstract settings such as metric spaces, see \chapterref{ms:chapter}.
 \end{remark}
 
 The Cauchy criterion is stronger than 
-$\abs{x_{n+1}-x_n}$ (or $\abs{x_{n+j}-x_n}$ for a fixed $j$) going to zero as
+$\sabs{x_{n+1}-x_n}$ (or $\sabs{x_{n+j}-x_n}$ for a fixed $j$) going to zero as
 $n$ goes to
 infinity.  When we get to the partial sums of the harmonic series
 (see \exampleref{example:harmonicseries} in the next section), we will have
 a sequence such that $x_{n+1}-x_n = \nicefrac{1}{n}$,
 yet $\{ x_n \}_{n=1}^\infty$ is divergent.
 In fact, for that sequence,
-$\lim_{n\to\infty} \abs{x_{n+j}-x_n} = 0$ for
+$\lim_{n\to\infty} \sabs{x_{n+j}-x_n} = 0$ for
 every $j \in \N$ (compare \exerciseref{exercise:badnocauchy}).
 The key point in the definition of Cauchy is that $n$ and $k$
 vary independently and can be arbitrarily far apart.
@@ -2852,7 +2853,7 @@ of Cauchy sequences.
 Let $\{ x_n \}_{n=1}^\infty$ be a sequence such that
 there exists a positive $C < 1$ and for all $n$,
 \begin{equation*}
-\abs{x_{n+1} - x_n} \leq C \abs{x_{n}-x_{n-1}} .
+\sabs{x_{n+1} - x_n} \leq C \sabs{x_{n}-x_{n-1}} .
 \end{equation*}
 Prove that $\{ x_n \}_{n=1}^\infty$ is Cauchy.
 Hint:  You can freely use the formula (for $C \not= 1$)
@@ -2868,7 +2869,7 @@ that is: Whenever $x,y \in F$ are such that $x < y$,
 then there exists a $q \in \Q$ such that $x < q < y$.
 Say a sequence $\{ x_n \}_{n=1}^\infty$ of rational numbers is Cauchy
 if given every $\epsilon \in \Q$ with $\epsilon > 0$, there exists
-an $M$ such that for all $n,k \geq M$, we have $\abs{x_n-x_k} < \epsilon$.
+an $M$ such that for all $n,k \geq M$, we have $\sabs{x_n-x_k} < \epsilon$.
 Suppose every Cauchy sequence of rational numbers has a limit in $F$.
 Prove that $F$ has the \hyperref[defn:lub]{least-upper-bound property}.
 \end{exercise}
@@ -2879,7 +2880,7 @@ that $\lim_{n\to\infty} y_n =0$.  Suppose that for all $k \in \N$
 and
 for all $m \geq k$, we have
 \begin{equation*}
-\abs{x_m-x_k} \leq y_k .
+\sabs{x_m-x_k} \leq y_k .
 \end{equation*}
 Show that $\{ x_n \}_{n=1}^\infty$ is Cauchy.
 \end{exercise}
@@ -2893,7 +2894,7 @@ the sequence converges to $0$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\abs{x_n-x_k} \leq \nicefrac{n}{k^2}$ for all $n$ and $k$.
+Suppose $\sabs{x_n-x_k} \leq \nicefrac{n}{k^2}$ for all $n$ and $k$.
 Show that $\{ x_n \}_{n=1}^\infty$ is Cauchy.
 %\footnote{After proving that
 %the sequence is Cauchy, for an extra exercise, prove the sequence is constant.}
@@ -2909,9 +2910,9 @@ that $\lim\limits_{n\to\infty} x_n = c$.
 True or false, prove or find a counterexample:  If $\{ x_n \}_{n=1}^\infty$ is a Cauchy
 sequence, then there exists an $M$
 such that for all $n \geq M$, we have
-$\abs{x_{n+1}-x_n}
+$\sabs{x_{n+1}-x_n}
 \leq
-\abs{x_{n}-x_{n-1}}$.
+\sabs{x_{n}-x_{n-1}}$.
 \end{exercise}
 
 
@@ -3028,7 +3029,7 @@ $\left( \sum_{n=1}^k \frac{1}{2^n} \right)
 
 Let $s_k$ be the partial sum.  We write
 \begin{equation*}
-\abs{
+\sabs{
 1 - s_k 
 }
 =
@@ -3041,7 +3042,7 @@ Let $s_k$ be the partial sum.  We write
 \frac{1}{2^k} .
 \end{equation*}
 The sequence $\bigl\{ \frac{1}{2^k} \bigr\}_{k=1}^\infty$, and
-therefore $\bigl\{ \abs{1-s_k} \bigr\}_{k=1}^\infty$,
+therefore $\bigl\{ \sabs{1-s_k} \bigr\}_{k=1}^\infty$,
 converges to zero.  So, $\{ s_k \}_{k=1}^\infty$ converges to $1$.
 \end{example}
 
@@ -3146,16 +3147,16 @@ Thus we find an $M$ such that for every $n \geq M$,
 \epsilon > 
 \abs{ \sum_{i={n+1}}^{n+1} x_i }
 =
-\abs{ x_{n+1} } .
+\sabs{ x_{n+1} } .
 \end{equation*}
-Hence for every $n \geq M+1$, we have $\abs{x_{n}} < \epsilon$.
+Hence for every $n \geq M+1$, we have $\sabs{x_{n}} < \epsilon$.
 \end{proof}
 
 \begin{example}
 If $r \geq 1$ or $r \leq -1$, then the geometric series $\sum_{n=0}^\infty r^n$
 diverges.
 
-Proof: $\abs{r^n} = \abs{r}^n \geq 1^n = 1$.  The terms do not go to zero
+Proof: $\sabs{r^n} = \sabs{r}^n \geq 1^n = 1$.  The terms do not go to zero
 and the series cannot converge.
 \end{example}
 
@@ -3277,7 +3278,7 @@ the proposition.
 \end{proof}
 
 An example of a useful application of the first item is the following
-formula.  If $\abs{r} < 1$ and $i \in \N$, then
+formula.  If $\sabs{r} < 1$ and $i \in \N$, then
 \begin{equation*}
 \sum_{n=i}^\infty r^n = \frac{r^i}{1-r} .
 \end{equation*}
@@ -3326,7 +3327,7 @@ has big implications for how the series can be manipulated.
 \begin{defn}
 A series $\sum_{n=1}^\infty x_n$
 \emph{\myindex{converges absolutely}}\index{absolute convergence} if
-the series $\sum_{n=1}^\infty \abs{x_n}$ converges.
+the series $\sum_{n=1}^\infty \sabs{x_n}$ converges.
 If a series converges, but does not converge absolutely, we say
 it \emph{\myindex{converges conditionally}}.\index{conditional convergence}
 \end{defn}
@@ -3337,12 +3338,12 @@ If the series $\sum_{n=1}^\infty x_n$ converges absolutely, then it converges.
 
 \begin{proof}
 A series is convergent if and only if it is Cauchy.  Hence
-suppose $\sum_{n=1}^\infty \abs{x_n}$ is Cauchy.  That is, for every $\epsilon > 0$,
+suppose $\sum_{n=1}^\infty \sabs{x_n}$ is Cauchy.  That is, for every $\epsilon > 0$,
 there exists an $M$ such that for all $k \geq M$ and all $n > k$, we have 
 \begin{equation*}
-\sum_{i=k+1}^n \abs{x_i} 
+\sum_{i=k+1}^n \sabs{x_i} 
 =
-\abs{ \sum_{i=k+1}^n \abs{x_i} }
+\abs{ \sum_{i=k+1}^n \sabs{x_i} }
 <
 \epsilon .
 \end{equation*}
@@ -3350,7 +3351,7 @@ We apply the triangle inequality for a finite sum to obtain
 \begin{equation*}
 \abs{ \sum_{i=k+1}^n x_i }
 \leq
-\sum_{i=k+1}^n \abs{x_i}
+\sum_{i=k+1}^n \sabs{x_i}
 <
 \epsilon .
 \end{equation*}
@@ -3358,7 +3359,7 @@ Hence $\sum_{n=1}^\infty x_n$ is Cauchy, and therefore it converges.
 \end{proof}
 
 If $\sum_{n=1}^\infty x_n$ converges absolutely, the limits of
-$\sum_{n=1}^\infty x_n$ and $\sum_{n=1}^\infty \abs{x_n}$ are generally different.  Computing one
+$\sum_{n=1}^\infty x_n$ and $\sum_{n=1}^\infty \sabs{x_n}$ are generally different.  Computing one
 does not help us compute the other.  However, the computation above leads to
 a useful inequality for absolutely convergent series,
 a series version of the triangle inequality,
@@ -3366,7 +3367,7 @@ a proof of which we leave as an exercise:
 \begin{equation*}
 \abs{ \sum_{i=1}^\infty x_i }
 \leq
-\sum_{i=1}^\infty \abs{x_i} .
+\sum_{i=1}^\infty \sabs{x_i} .
 \end{equation*}
 
 Absolutely convergent series have many wonderful properties.
@@ -3598,7 +3599,7 @@ the tail of a series to the geometric series.
 \begin{prop}[Ratio test]\index{ratio test for series}
 Let $\sum_{n=1}^\infty x_n$ be a series, $x_n \not= 0$ for all $n$, and such that
 \begin{equation*}
-L \coloneqq \lim_{n\to\infty} \frac{\abs{x_{n+1}}}{\abs{x_n}}
+L \coloneqq \lim_{n\to\infty} \frac{\sabs{x_{n+1}}}{\sabs{x_n}}
 \qquad \text{exists.}
 \end{equation*}
 \begin{enumerate}[(i)]
@@ -3619,52 +3620,53 @@ diverges.  Since it is a necessary condition for the convergence of series
 that the terms go to zero, we know that $\sum_{n=1}^\infty x_n$ must diverge.
 
 Thus suppose $L < 1$.
-We will argue that $\sum_{n=1}^\infty \abs{x_n}$ must converge.
+We will argue that $\sum_{n=1}^\infty \sabs{x_n}$ must converge.
 The proof is similar to that of \lemmaref{seq:ratiotest}.  Of course $L \geq
 0$.  
 Pick
 $r$ such that $L < r < 1$.  As $r-L > 0$, there exists an $M \in \N$ such that for
 all $n \geq M$,
 \begin{equation*}
-\abs{\frac{\abs{x_{n+1}}}{\abs{x_n}} - L} < r-L .
+\abs{\frac{\sabs{x_{n+1}}}{\sabs{x_n}} - L} < r-L .
 \end{equation*}
 Therefore,
 \begin{equation*}
-\frac{\abs{x_{n+1}}}{\abs{x_n}} < r .
+\frac{\sabs{x_{n+1}}}{\sabs{x_n}} < r .
 \end{equation*}
 For $n > M$ (that is for $n \geq M+1$),
 write
 \begin{equation*}
-\abs{x_n} =
-\abs{x_M}
-\frac{\abs{x_{M+1}}}{\abs{x_{M}}}
-\frac{\abs{x_{M+2}}}{\abs{x_{M+1}}}
+\sabs{x_n} =
+\sabs{x_M}
+\frac{\sabs{x_{M+1}}}{\sabs{x_{M}}}
+\frac{\sabs{x_{M+2}}}{\sabs{x_{M+1}}}
 \cdots
-\frac{\abs{x_{n}}}{\abs{x_{n-1}}}
+\frac{\sabs{x_{n}}}{\sabs{x_{n-1}}}
 <
-\abs{x_M}
-r r \cdots r = \abs{x_M} r^{n-M} = (\abs{x_M} r^{-M}) r^n .
+\sabs{x_M}
+r r \cdots r = \sabs{x_M} r^{n-M} =
+\bigl(\sabs{x_M} r^{-M}\bigr) r^n .
 \end{equation*}
 For $k > M$, write the partial sum as
 \begin{equation*}
 \begin{split}
-\sum_{n=1}^k \abs{x_n}
+\sum_{n=1}^k \sabs{x_n}
 & =
-\left(\sum_{n=1}^{M} \abs{x_n} \right)
+\left(\sum_{n=1}^{M} \sabs{x_n} \right)
 +
-\left(\sum_{n=M+1}^{k} \abs{x_n} \right)
+\left(\sum_{n=M+1}^{k} \sabs{x_n} \right)
 \\
 & <
-\left(\sum_{n=1}^{M} \abs{x_n} \right)
+\left(\sum_{n=1}^{M} \sabs{x_n} \right)
 +
 \left(\sum_{n=M+1}^{k} 
-(\abs{x_M} r^{-M}) r^n
+\bigl(\sabs{x_M} r^{-M}\bigr) r^n
 \right)
 \\
 & =
-\left(\sum_{n=1}^{M} \abs{x_n} \right)
+\left(\sum_{n=1}^{M} \sabs{x_n} \right)
 +
-\bigl(\abs{x_M} r^{-M}\bigr)
+\bigl(\sabs{x_M} r^{-M}\bigr)
 \left( \sum_{n=M+1}^{k} r^n \right) .
 \end{split}
 \end{equation*}
@@ -3674,23 +3676,23 @@ $\sum_{n=M+1}^{\infty} r^n$ converges as well.  We take the
 limit as $k$ goes to infinity on the right-hand side above to obtain
 \begin{equation*}
 \begin{split}
-\sum_{n=1}^k \abs{x_n}
+\sum_{n=1}^k \sabs{x_n}
 & <
-\left(\sum_{n=1}^{M} \abs{x_n} \right)
+\left(\sum_{n=1}^{M} \sabs{x_n} \right)
 +
-\bigl(\abs{x_M} r^{-M}\bigr)
+\bigl(\sabs{x_M} r^{-M}\bigr)
 \left( \sum_{n=M+1}^{k} r^n \right) 
 \\
 & \leq
-\left(\sum_{n=1}^{M} \abs{x_n} \right)
+\left(\sum_{n=1}^{M} \sabs{x_n} \right)
 +
-\bigl(\abs{x_M} r^{-M}\bigr)
+\bigl(\sabs{x_M} r^{-M}\bigr)
 \left( \sum_{n=M+1}^{\infty} r^n \right) .
 \end{split}
 \end{equation*}
 The right-hand side is a number that does not depend on $k$.
-Hence the sequence of partial sums of $\sum_{n=1}^\infty \abs{x_n}$ is bounded
-and $\sum_{n=1}^\infty \abs{x_n}$ is convergent.  Thus $\sum_{n=1}^\infty x_n$ is
+Hence the sequence of partial sums of $\sum_{n=1}^\infty \sabs{x_n}$ is bounded
+and $\sum_{n=1}^\infty \sabs{x_n}$ is convergent.  Thus $\sum_{n=1}^\infty x_n$ is
 absolutely convergent.
 \end{proof}
 
@@ -3786,14 +3788,13 @@ Let $\sum_{n=1}^\infty x_n$ be a series.
 \begin{enumerate}[a)]
 \item
 If there is an $N$ and a $\rho < 1$ such that
-$\frac{\abs{x_{n+1}}}{\abs{x_n}} < \rho$ for all $n \geq N$,
+$\frac{\sabs{x_{n+1}}}{\sabs{x_n}} < \rho$ for all $n \geq N$,
 then the series converges absolutely.
-%FIXME how to add this in without changing the exercise much?
 (Remark: Equivalently the condition can be stated as
-$\limsup\limits_{n\to\infty} \frac{\abs{x_{n+1}}}{\abs{x_n}} < 1$.)
+$\limsup\limits_{n\to\infty} \frac{\sabs{x_{n+1}}}{\sabs{x_n}} < 1$.)
 \item
 If there is an $N$ such that
-$\frac{\abs{x_{n+1}}}{\abs{x_n}} \geq 1$
+$\frac{\sabs{x_{n+1}}}{\sabs{x_n}} \geq 1$
 for all $n \geq N$,
 then the series diverges. 
 \end{enumerate}
@@ -3829,7 +3830,7 @@ Prove the triangle inequality for series:
 If $\sum_{n=1}^\infty x_n$ converges absolutely, then
 \begin{equation*}
 \abs{\sum_{n=1}^\infty x_n} \leq
-\sum_{n=1}^\infty \abs{x_n} .
+\sum_{n=1}^\infty \sabs{x_n} .
 \end{equation*}
 \end{exercise}
 
@@ -3845,7 +3846,7 @@ then either $\sum_{n=1}^\infty a_n$ and $\sum_{n=1}^\infty b_n$ both converge or
 \begin{exercise} \label{exercise:badnocauchy}
 Let $x_n \coloneqq \sum_{i=1}^n \nicefrac{1}{i}$.  Show that for every $k$,
 we get
-$\displaystyle \lim_{n\to\infty} \abs{x_{n+k}-x_n} = 0$, yet
+$\displaystyle \lim_{n\to\infty} \sabs{x_{n+k}-x_n} = 0$, yet
 $\{ x_n \}_{n=1}^\infty$ is not Cauchy.
 \end{exercise}
 
@@ -3920,7 +3921,7 @@ Prove \emph{\myindex{Abel's theorem}}:
 \emph{\textbf{Theorem.} Suppose $\sum_{n=1}^\infty x_n$ is a series whose sequence of partial sums
 is bounded, $\{ \lambda_n \}_{n=1}^\infty$ is a sequence with
 $\lim_{n\to\infty} \lambda_n = 0$, and
-$\sum_{n=1}^\infty \abs{ \lambda_{n+1} - \lambda_n }$ is convergent.
+$\sum_{n=1}^\infty \sabs{ \lambda_{n+1} - \lambda_n }$ is convergent.
 Then $\sum_{n=1}^\infty \lambda_n x_n$ is convergent.}
 \end{exercise}
 
@@ -3967,39 +3968,40 @@ that for all $k \geq M$, we have
 ${\sabs{x_{n_k}}}^{1/n_k} > r > 1$, or in other words
 $\sabs{x_{n_k}} > r^{n_k} > 1$.
 The subsequence 
-$\{ \sabs{x_{n_k}} \}_{k=1}^\infty$, and therefore also
-$\{ \sabs{x_{n}} \}_{n=1}^\infty$,
+$\bigl\{ \sabs{x_{n_k}} \bigr\}_{k=1}^\infty$,
+and therefore also
+$\bigl\{ \sabs{x_{n}} \bigr\}_{n=1}^\infty$,
 cannot possibly converge to zero, and so the series diverges.
 
 Now suppose $L < 1$.  Pick $r$ such that $L < r < 1$.
 By definition of limit supremum,
 there is an $M$ such that for all $n \geq M$,
 \begin{equation*}
-\sup \bigl\{ {\abs{x_k}}^{1/k} : k \geq n \bigr\} < r .
+\sup \bigl\{ {\sabs{x_k}}^{1/k} : k \geq n \bigr\} < r .
 \end{equation*}
 Therefore, for all $n \geq M$,
 \begin{equation*}
-{\abs{x_n}}^{1/n} < r , \qquad \text{or in other words} \qquad \abs{x_n} < r^n .
+{\sabs{x_n}}^{1/n} < r , \qquad \text{or in other words} \qquad \sabs{x_n} < r^n .
 \end{equation*}
 Let $k > M$, and estimate the $k$th partial sum:
 \begin{equation*}
-\sum_{n=1}^k \abs{x_n} = 
-\left( \sum_{n=1}^M \abs{x_n} \right) + 
-\left( \sum_{n=M+1}^k \abs{x_n} \right)
+\sum_{n=1}^k \sabs{x_n} = 
+\left( \sum_{n=1}^M \sabs{x_n} \right) + 
+\left( \sum_{n=M+1}^k \sabs{x_n} \right)
 \leq
-\left( \sum_{n=1}^M \abs{x_n} \right) + 
+\left( \sum_{n=1}^M \sabs{x_n} \right) + 
 \left( \sum_{n=M+1}^k r^n \right) .
 \end{equation*}
 As $0 < r < 1$,
 the geometric series $\sum_{n=M+1}^\infty r^n$ converges to
 $\frac{r^{M+1}}{1-r}$.  As everything is positive,
 \begin{equation*}
-\sum_{n=1}^k \abs{x_n} 
+\sum_{n=1}^k \sabs{x_n} 
 \leq
-\left( \sum_{n=1}^M \abs{x_n} \right) + 
+\left( \sum_{n=1}^M \sabs{x_n} \right) + 
 \frac{r^{M+1}}{1-r} .
 \end{equation*}
-Thus the sequence of partial sums of $\sum_{n=1}^\infty \abs{x_n}$ is bounded, and
+Thus the sequence of partial sums of $\sum_{n=1}^\infty \sabs{x_n}$ is bounded, and
 the series converges.  Therefore, $\sum_{n=1}^\infty x_n$ converges absolutely.
 \end{proof}
 
@@ -4017,7 +4019,7 @@ that $\lim\limits_{n\to\infty} x_n = 0$.  Then
 \end{prop}
 
 \begin{proof}
-Let $s_m \coloneqq \sum_{k=1}^m {(-1)}^n x_n$ be the $m$th partial sum.  Then
+Let $s_m \coloneqq \sum_{n=1}^m {(-1)}^n x_n$ be the $m$th partial sum.  Then
 \begin{equation*}
 s_{2k} =
 \sum_{n=1}^{2k} {(-1)}^n x_n
@@ -4044,22 +4046,22 @@ $0 \geq s_{2k} \geq -x_1$ is illustrated in \figureref{fig:seralternate}.
 As $\{ s_{2k} \}_{k=1}^\infty$ is decreasing and bounded below, it converges.
 Let $a \coloneqq \lim_{k\to\infty} s_{2k}$.
 We wish to show that $\lim_{m\to\infty} s_m = a$ (and not just for the subsequence).
-Given $\epsilon > 0$, pick $M$ such that $\abs{s_{2k}-a} <
+Given $\epsilon > 0$, pick $M$ such that $\sabs{s_{2k}-a} <
 \nicefrac{\epsilon}{2}$ whenever $k \geq M$.
 Since $\lim_{n\to\infty} x_n = 0$, we also
 make $M$ possibly larger
 to obtain
 $x_{2k+1} < \nicefrac{\epsilon}{2}$ whenever $k \geq M$.  
 Suppose $m \geq 2M+1$.  If $m=2k$, then $k \geq M+\nicefrac{1}{2} \geq M$ and
-$\abs{s_{m}-a}=\abs{s_{2k}-a} < \nicefrac{\epsilon}{2} < \epsilon$.
+$\sabs{s_{m}-a}=\sabs{s_{2k}-a} < \nicefrac{\epsilon}{2} < \epsilon$.
 If $m=2k+1$, then also $k \geq M$.  Notice
 $s_{2k+1} = s_{2k} - x_{2k+1}$.
 Thus
 \begin{equation*}
-\abs{s_{m}-a} = 
-\abs{s_{2k+1}-a} = 
-\abs{s_{2k}-a - x_{2k+1}} \leq
-\abs{s_{2k}-a} + x_{2k+1} < 
+\sabs{s_{m}-a} = 
+\sabs{s_{2k+1}-a} = 
+\sabs{s_{2k}-a - x_{2k+1}} \leq
+\sabs{s_{2k}-a} + x_{2k+1} < 
 \nicefrac{\epsilon}{2}+ \nicefrac{\epsilon}{2} = \epsilon .  \qedhere
 \end{equation*}
 \end{proof}
@@ -4108,7 +4110,7 @@ Let $\epsilon > 0$ be given.  As $\sum_{n=1}^\infty x_n$ is absolutely convergen
 \begin{equation*}
 \abs{\left(\sum_{n=1}^M x_n \right) - x} < \frac{\epsilon}{2}
 \qquad \text{and} \qquad
-\sum_{n=M+1}^\infty \abs{x_n} < \frac{\epsilon}{2} .
+\sum_{n=M+1}^\infty \sabs{x_n} < \frac{\epsilon}{2} .
 \end{equation*}
 As $\sigma$ is a bijection,
 there exists a number $K$ such that for each
@@ -4129,20 +4131,20 @@ Compute
 & \leq
 \abs{ \left( \sum_{n=1}^M x_n \right) - x}
 +
-\sum_{\substack{n=1\\\sigma(n) > M}}^N \abs{x_{\sigma(n)}}
+\sum_{\substack{n=1\\\sigma(n) > M}}^N \sabs{x_{\sigma(n)}}
 \\
 & \leq
 \abs{ \left( \sum_{n=1}^M x_n \right) - x}
 +
-\sum_{n=M+1}^Q \abs{x_{n}}
+\sum_{n=M+1}^Q \sabs{x_{n}}
 \\
 & < \nicefrac{\epsilon}{2} + \nicefrac{\epsilon}{2} = \epsilon .
 \end{split}
 \end{equation*}
 So 
 $\sum_{n=1}^\infty x_{\sigma(n)}$ converges to $x$.  To see that the convergence
-is absolute, we apply the argument above to $\sum_{n=1}^\infty \abs{x_n}$ to show
-that $\sum_{n=1}^\infty \abs{x_{\sigma(n)}}$ converges.
+is absolute, we apply the argument above to $\sum_{n=1}^\infty \sabs{x_n}$ to show
+that $\sum_{n=1}^\infty \sabs{x_{\sigma(n)}}$ converges.
 \end{proof}
 
 \begin{example} \label{example:harmonsumanything}
@@ -4264,54 +4266,54 @@ We rearrange the $m$th partial sum of $\sum_{n=0}^\infty c_n$:
 & \leq
 \left(
 \sum_{n=0}^m
-  \abs{ B_n -  B } \abs{a_{m-n}}
+  \sabs{ B_n -  B } \sabs{a_{m-n}}
 \right)
 +
-\abs{B}\abs{A_m - A}
+\sabs{B}\sabs{A_m - A}
 \end{split}
 \end{equation*}
 We can surely make the second term on the right-hand side small.
 The trick is to handle the first term.
 Pick $K$ such that for all $m \geq K$, we have 
-$\abs{A_m - A} < \epsilon$ and
+$\sabs{A_m - A} < \epsilon$ and
 also
-$\abs{B_m - B} < \epsilon$.
+$\sabs{B_m - B} < \epsilon$.
 As $\sum_{n=0}^\infty a_n$ converges absolutely,
 make sure that $K$ is large enough such that
 for all $m \geq K$,
 \begin{equation*}
-\sum_{n=K}^m \abs{a_n} < \epsilon .
+\sum_{n=K}^m \sabs{a_n} < \epsilon .
 \end{equation*}
 As $\sum_{n=0}^\infty b_n$ converges, then
-$B_{\text{max}} \coloneqq \sup \bigl\{ \abs{ B_n - B } : n = 0,1,2,\ldots
+$B_{\text{max}} \coloneqq \sup \bigl\{ \sabs{ B_n - B } : n = 0,1,2,\ldots
 \bigr\}$
 is finite.  Take $m \geq 2K$.
 In particular $m-K+1 > K$.  So
 \begin{equation*}
 \begin{split}
 \sum_{n=0}^m
-  \abs{ B_n -  B } \abs{a_{m-n}}
+  \sabs{ B_n -  B } \sabs{a_{m-n}}
 & =
 \left(
 \sum_{n=0}^{m-K}
-  \abs{ B_n -  B } \abs{a_{m-n}}
+  \sabs{ B_n -  B } \sabs{a_{m-n}}
 \right)
 +
 \left(
 \sum_{n=m-K+1}^m
-  \abs{ B_n -  B } \abs{a_{m-n}}
+  \sabs{ B_n -  B } \sabs{a_{m-n}}
 \right)
 \\
 & \leq
 \left(
 \sum_{n=K}^m
-\abs{a_{n}}
+\sabs{a_{n}}
 \right)
 B_{\text{max}}
 +
 \left(
 \sum_{n=0}^{K-1}
-  \epsilon \abs{a_{n}}
+  \epsilon \sabs{a_{n}}
 \right)
 \\
 & \leq
@@ -4320,7 +4322,7 @@ B_{\text{max}}
 +
 \epsilon
 \left(
-\sum_{n=0}^\infty \abs{a_{n}}
+\sum_{n=0}^\infty \sabs{a_{n}}
 \right) .
 \end{split}
 \end{equation*}
@@ -4331,10 +4333,10 @@ Therefore, for $m \geq 2K$, we have
 & \leq
 \left(
 \sum_{n=0}^m
-  \abs{ B_n -  B } \abs{a_{m-n}}
+  \sabs{ B_n -  B } \sabs{a_{m-n}}
 \right)
 +
-\abs{B}\abs{A_m - A}
+\sabs{B}\sabs{A_m - A}
 \\
 & \leq
 \epsilon
@@ -4342,20 +4344,20 @@ B_{\text{max}}
 +
 \epsilon
 \left(
-\sum_{n=0}^\infty \abs{a_{n}}
+\sum_{n=0}^\infty \sabs{a_{n}}
 \right)
 +
-\abs{B}\epsilon
+\sabs{B}\epsilon
 =
 \epsilon 
 \left(
 B_{\text{max}}
 +
 \left(
-\sum_{n=0}^\infty \abs{a_{n}}
+\sum_{n=0}^\infty \sabs{a_{n}}
 \right)
 +
-\abs{B}
+\sabs{B}
 \right) .
 \end{split}
 \end{equation*}
@@ -4397,7 +4399,7 @@ c_n
 \end{equation*}
 Therefore,
 \begin{equation*}
-\abs{c_n} 
+\sabs{c_n} 
 =
 \sum_{i=0}^n \frac{1}{\sqrt{(i+1)(n-i+1)}} 
 \geq
@@ -4460,9 +4462,9 @@ converges absolutely for all $x \in (-1,1)$ via the ratio test:
 }
 =
 \lim_{n \to \infty}
-\abs{x} \frac{n}{n+1}
+\sabs{x} \frac{n}{n+1}
 =
-\abs{x} < 1 .
+\sabs{x} < 1 .
 \end{equation*}
 The series converges at $x=-1$,
 as
@@ -4473,7 +4475,7 @@ But the power series does not converge absolutely at $x=-1$, because
 $\sum_{n=1}^\infty \frac{1}{n}$ does not converge.
 The series
 diverges at $x=1$.
-When $\abs{x} > 1$, then the series diverges via the ratio test.
+When $\sabs{x} > 1$, then the series diverges via the ratio test.
 \end{example}
 
 \begin{example} \label{ps:divergeex}
@@ -4485,11 +4487,11 @@ diverges for all $x \not= 0$.  Let us apply the root test
 \begin{equation*}
 \limsup_{n\to\infty}
 \,
-\abs{n^n x^n}^{1/n}
+\sabs{n^n x^n}^{1/n}
 =
 \limsup_{n\to\infty}
 \,
-n \abs{x}
+n \sabs{x}
 = \infty .
 \end{equation*}
 Therefore, the series diverges for all $x \not= 0$.
@@ -4527,15 +4529,15 @@ and in \exampleref{ps:divergeex}, the radius of convergence is $\rho=0$.
 \begin{proof}
 Write
 \begin{equation*}
-R \coloneqq \limsup_{n\to\infty} {\abs{a_n}}^{1/n} .
+R \coloneqq \limsup_{n\to\infty} {\sabs{a_n}}^{1/n} .
 \end{equation*}
 We apply the root test,
 \begin{equation*}
-L = \limsup_{n\to\infty} {\abs{a_n {(x-x_0)}^n}}^{1/n} 
+L = \limsup_{n\to\infty} {\babs{a_n {(x-x_0)}^n}}^{1/n} 
 =
-\abs{x-x_0} \limsup_{n\to\infty} {\abs{a_n}}^{1/n}
+\sabs{x-x_0} \limsup_{n\to\infty} {\sabs{a_n}}^{1/n}
 =
-\abs{x-x_0} R .
+\sabs{x-x_0} R .
 \end{equation*}
 If $R = \infty$, then $L=\infty$ for every $x \not= x_0$, and
 the series diverges by the root test.
@@ -4546,16 +4548,16 @@ and the series converges absolutely for all $x$.
 Suppose $0 < R < \infty$.
 The series
 converges absolutely if
-$1 > L = R \abs{x-x_0}$,
+$1 > L = R \sabs{x-x_0}$,
 that is,
 \begin{equation*}
-\abs{x-x_0} < \nicefrac{1}{R} .
+\sabs{x-x_0} < \nicefrac{1}{R} .
 \end{equation*}
 The series diverges when
-$1 < L = R \abs{x-x_0}$,
+$1 < L = R \sabs{x-x_0}$,
 or
 \begin{equation*}
-\abs{x-x_0} > \nicefrac{1}{R} .
+\sabs{x-x_0} > \nicefrac{1}{R} .
 \end{equation*}
 Letting $\rho \coloneqq \nicefrac{1}{R}$ completes the proof.
 \end{proof}
@@ -4566,7 +4568,7 @@ as a separate proposition.
 \begin{prop}
 Let $\sum_{n=0}^\infty a_n {(x-x_0)}^n$ be a power series, and let
 \begin{equation*}
-R \coloneqq \limsup_{n\to\infty} {\abs{a_n}}^{1/n} .
+R \coloneqq \limsup_{n\to\infty} {\sabs{a_n}}^{1/n} .
 \end{equation*}
 If $R = \infty$, the power series is divergent.  If
 $R=0$, then the power series converges everywhere.   Otherwise,
@@ -4588,7 +4590,7 @@ in general, and power series in particular.  We leave the proof to the reader.
 Let $\sum_{n=0}^\infty a_n {(x-x_0)}^n$ and
 $\sum_{n=0}^\infty b_n {(x-x_0)}^n$ be two convergent power series
 with radius of convergence at least $\rho > 0$ and $\alpha \in \R$.  Then
-for all $x$ such that $\abs{x-x_0} < \rho$, we have 
+for all $x$ such that $\sabs{x-x_0} < \rho$, we have 
 \begin{equation*}
 \left(\sum_{n=0}^\infty a_n {(x-x_0)}^n\right)
 +
@@ -4614,7 +4616,7 @@ where
 $c_n = a_0b_n + a_1 b_{n-1} + \cdots + a_n b_0$.
 \end{prop}
 
-For all $x$ with $\abs{x-x_0} < \rho$, we have two convergent series so
+For all $x$ with $\sabs{x-x_0} < \rho$, we have two convergent series so
 their term-by-term addition and multiplication by constants
 follows by the previous section.
 As for such $x$ the series converges absolutely,
@@ -4647,7 +4649,7 @@ $x \in (-1,1)$,
 \frac{1}{1-x} =
 \sum_{n=0}^\infty x^n .
 \end{equation*}
-The series diverges when $\abs{x} > 1$, even though $\frac{1}{1-x}$ is
+The series diverges when $\sabs{x} > 1$, even though $\frac{1}{1-x}$ is
 defined for all $x \not= 1$.
 
 We can use the geometric series together with rules for addition and
@@ -4662,7 +4664,7 @@ Let us expand $\frac{x}{1+2x+x^2}$ as a power series around the origin ($x_0 = 0
 find the radius of convergence.
 
 Write $1+2x+x^2 = {(1+x)}^2 = {\bigl(1-(-x)\bigr)}^2$, and suppose
-$\abs{x} < 1$.  Compute
+$\sabs{x} < 1$.  Compute
 \begin{equation*}
 \begin{split}
 \frac{x}{1+2x+x^2}
@@ -4690,7 +4692,7 @@ x \,
 \end{equation*}
 Using the formula for the product of series,
 we obtain $c_0 = 1$, $c_1 = -1 -1 = -2$, $c_2 = 1+1+1 = 3$, etc.
-Hence, for $\abs{x} < 1$, 
+Hence, for $\sabs{x} < 1$, 
 \begin{equation*}
 \frac{x}{1+2x+x^2}
 =
@@ -4825,7 +4827,7 @@ the product of the two series is infinite.
 \begin{exercise}
 Figure out how to compute the radius of convergence using the ratio test.
 That is, suppose $\sum_{n=0}^\infty a_n x^n$ is a power series and
-$R \coloneqq \lim_{n\to\infty} \frac{\abs{a_{n+1}}}{\abs{a_n}}$ exists or is $\infty$.
+$R \coloneqq \lim_{n\to\infty} \frac{\sabs{a_{n+1}}}{\sabs{a_n}}$ exists or is $\infty$.
 Find the radius of convergence and prove your claim.
 \end{exercise}
 

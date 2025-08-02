@@ -59,12 +59,12 @@ Fix $y \in [c,d]$ and let $\epsilon > 0$ be given.
 As $\frac{\partial f}{\partial y}$ is continuous on $[a,b] \times [c,d]$ it
 is uniformly continuous.  In particular, there exists $\delta > 0$ such that
 whenever $y_1 \in [c,d]$ with
-$\abs{y_1-y} < \delta$ and all $x \in [a,b]$, we have
+$\sabs{y_1-y} < \delta$ and all $x \in [a,b]$, we have
 \begin{equation*}
 \abs{\frac{\partial f}{\partial y}(x,y_1)-\frac{\partial f}{\partial y}(x,y)} < \epsilon .
 \end{equation*}
 
-Suppose $h$ is such that $y+h \in [c,d]$ and $\abs{h} < \delta$.
+Suppose $h$ is such that $y+h \in [c,d]$ and $\sabs{h} < \delta$.
 Fix $x$ for a moment
 and apply the mean value theorem to find a $y_1$ between $y$ and $y+h$ such that
 \begin{equation*}
@@ -72,7 +72,7 @@ and apply the mean value theorem to find a $y_1$ between $y$ and $y+h$ such that
 =
 \frac{\partial f}{\partial y}(x,y_1) .
 \end{equation*}
-As $\abs{y_1-y} \leq \abs{h} < \delta$,
+As $\sabs{y_1-y} \leq \sabs{h} < \delta$,
 \begin{equation*}
 \abs{
 \frac{f(x,y+h)-f(x,y)}{h}
@@ -205,7 +205,7 @@ on $[0,1] \times [0,1]$.
 Suppose $h \colon \R \to \R$ is continuous and $g
 \colon \R \to \R$ is continuously differentiable and compactly
 supported.  That is, there exists some $M > 0$, such that $g(x) = 0$ whenever
-$\abs{x} \geq M$.  Define
+$\sabs{x} \geq M$.  Define
 \begin{equation*}
 f(x) \coloneqq \int_{-\infty}^\infty h(y)g(x-y)\,dy  .
 \end{equation*}
@@ -391,7 +391,7 @@ for every $j=1,2,\ldots,n$.
 By \exerciseref{exercise:normonedim}, the operator norm of
 the operator $\gamma^{\:\prime}(t)$ equals
 the euclidean norm of the corresponding vector, which allows us to write 
-$\snorm{\gamma^{\:\prime}(t)}$ without any confusion.
+$\bnorm{\gamma^{\:\prime}(t)}$ without any confusion.
 
 \begin{defn}
 A continuously differentiable function $\gamma \colon [a,b] \to \R^n$ is
@@ -959,7 +959,7 @@ define
 \glsadd{not:lineintegralf}
 \begin{equation*}
 \int_{\gamma} f \,ds \coloneqq
-\int_a^b f\bigl( \gamma(t) \bigr) \snorm{\gamma^{\:\prime}(t)} \, dt .
+\int_a^b f\bigl( \gamma(t) \bigr) \bnorm{\gamma^{\:\prime}(t)} \, dt .
 \end{equation*}
 To emphasize the variables we may use
 \begin{equation*}
@@ -991,21 +991,21 @@ are both smooth.  Then
 \int_{\gamma} f \, ds
 & =
 \int_a^b 
-f\bigl(\gamma(t)\bigr) \snorm{\gamma^{\:\prime}(t)} \, dt
+f\bigl(\gamma(t)\bigr) \bnorm{\gamma^{\:\prime}(t)} \, dt
 \\
 & =
 \int_c^d 
 f\Bigl(\gamma\bigl(h(\tau)\bigr)\Bigr)
-\snorm{\gamma^{\:\prime}\bigl(h(\tau)\bigr)} h'(\tau) \, d\tau
+\bnorm{\gamma^{\:\prime}\bigl(h(\tau)\bigr)} h'(\tau) \, d\tau
 \\
 & =
 \int_c^d 
 f\Bigl(\gamma\bigl(h(\tau)\bigr)\Bigr)
-\snorm{\gamma^{\:\prime}\bigl(h(\tau)\bigr) h'(\tau)} \, d\tau
+\bnorm{\gamma^{\:\prime}\bigl(h(\tau)\bigr) h'(\tau)} \, d\tau
 \\
 & =
 \int_c^d 
-f\bigl((\gamma \circ h)(\tau)\bigr) \snorm{(\gamma \circ h)'(\tau)} \, d\tau
+f\bigl((\gamma \circ h)(\tau)\bigr) \bnorm{(\gamma \circ h)'(\tau)} \, d\tau
 \\
 & = 
 \int_{\gamma \circ h} f \, ds .
@@ -1064,12 +1064,12 @@ If $\gamma$ is smooth,
 \begin{equation*}
 \ell(\Gamma) = 
 \int_a^b
-\snorm{\gamma^{\:\prime}(t)}\, dt .
+\bnorm{\gamma^{\:\prime}(t)}\, dt .
 \end{equation*}
 This may be a good time to mention that it is common to write
 $\int_a^b
-\snorm{\gamma^{\:\prime}(t)}\, dt$ even if the path is only piecewise smooth.
-That is because $\snorm{\gamma^{\:\prime}(t)}$ is defined and continuous
+\bnorm{\gamma^{\:\prime}(t)}\, dt$ even if the path is only piecewise smooth.
+That is because $\bnorm{\gamma^{\:\prime}(t)}$ is defined and continuous
 at all but finitely many points and is bounded, and so the integral exists.
 
 \begin{example}
@@ -1107,14 +1107,14 @@ If $\gamma$ is smooth, then
 \int_0^t d\tau =
 t = \ell\bigl( \gamma\bigl([0,t]\bigr) \bigr) =
 \int_0^t
-\snorm{\gamma^{\:\prime}(\tau)}
+\bnorm{\gamma^{\:\prime}(\tau)}
 \, d\tau
 \end{equation*}
 for all $t$.
 The fundamental theorem of calculus then says
-that $\snorm{\gamma^{\:\prime}(t)} = 1$ for all $t$.
+that $\bnorm{\gamma^{\:\prime}(t)} = 1$ for all $t$.
 Similarly for piecewise smooth $\gamma$, we get
-$\snorm{\gamma^{\:\prime}(t)} = 1$ for all $t$ where the derivative exists.
+$\bnorm{\gamma^{\:\prime}(t)} = 1$ for all $t$ where the derivative exists.
 Think of such a parametrization as moving around your curve at speed
 1.  If $\gamma \colon [0,r] \to \R^n$ is an arclength parametrization, it is
 common to use $s$ as the variable as $\int_\gamma f \,ds
@@ -1459,7 +1459,7 @@ derivative.\label{fig:pathindantider}}
 
 
 Since $U$ is open, suppose $h$ is so small so that all points of distance
-$\abs{h}$ or
+$\sabs{h}$ or
 less from $x$ are in $U$.
 As the integral is path independent,
 pick the simplest path possible from $x$ to $x+he_j$, that is,
@@ -1478,9 +1478,9 @@ $h$.  Therefore,
 \end{equation*}
 We wish to take the limit as $h \to 0$.  The function $\omega_j$ is
 continuous at $x$.  Given $\epsilon > 0$, suppose $h$ is small enough so that
-$\abs{\omega_j(x)-\omega_j(y)} < \epsilon$ whenever $\snorm{x-y} \leq \abs{h}$.
+$\babs{\omega_j(x)-\omega_j(y)} < \epsilon$ whenever $\snorm{x-y} \leq \sabs{h}$.
 Thus,
-$\abs{\omega_j(x+the_j)-\omega_j(x)} < \epsilon$ for all $t \in [0,1]$,
+$\babs{\omega_j(x+the_j)-\omega_j(x)} < \epsilon$ for all $t \in [0,1]$,
 and we estimate
 \begin{equation*}
 \abs{\int_0^1 \omega_j(x+the_j) \, dt  - \omega_j(x)}
@@ -1888,7 +1888,7 @@ Prove that
 \begin{equation*}
 \int_{\gamma} \omega = 2 \pi \ell 
 \end{equation*}
-for some integer $\ell$ with $\abs{\ell} \leq k$.\\
+for some integer $\ell$ with $\sabs{\ell} \leq k$.\\
 Hint 1: First prove that for a path $\beta$ that starts and end on $R$ but
 does not intersect it otherwise, you find that $\int_{\beta} \omega$
 is $-2\pi$, 0, or $2\pi$.

@@ -93,16 +93,16 @@ Let us give some examples of metric spaces.
 \begin{example}
 The set of real numbers $\R$ is a metric space with the metric
 \begin{equation*}
-d(x,y) \coloneqq \abs{x-y} .
+d(x,y) \coloneqq \sabs{x-y} .
 \end{equation*}
 Items \ref{metric:pos}--\ref{metric:com} of the definition
 are easy to verify.  The
 triangle inequality \ref{metric:triang} follows immediately
 from the standard triangle inequality for real numbers:
 \begin{equation*}
-d(x,z) = \abs{x-z} = 
-\abs{x-y+y-z} \leq
-\abs{x-y}+\abs{y-z} =
+d(x,z) = \sabs{x-z} = 
+\sabs{x-y+y-z} \leq
+\sabs{x-y}+\sabs{y-z} =
 d(x,y)+ d(y,z) .
 \end{equation*}
 This metric is the \emph{\myindex{standard metric on $\R$}}.  If we talk
@@ -115,31 +115,31 @@ We can also put a different metric on the set of real numbers.
 For example, take the set of real numbers $\R$ together with the metric
 \begin{equation*}
 d(x,y) \coloneqq
-\frac{\abs{x-y}}{\abs{x-y}+1} .
+\frac{\sabs{x-y}}{\sabs{x-y}+1} .
 \end{equation*}
 Items \ref{metric:pos}--\ref{metric:com} are again easy to verify.  The
 triangle inequality \ref{metric:triang} is a little bit more difficult.
-Note that $d(x,y) = \varphi(\abs{x-y})$ where $\varphi(t) =
+Note that $d(x,y) = \varphi\bigl(\sabs{x-y}\bigr)$ where $\varphi(t) =
 \frac{t}{t+1}$ and $\varphi$ is an increasing function
 (positive derivative, see \figureref{fig:tovertp1}).
 Hence
 \begin{equation*}
 \begin{split}
-d(x,z) = \varphi(\abs{x-z})
+d(x,z) = \varphi\bigl(\sabs{x-z}\bigr)
 & = 
-\varphi(\abs{x-y+y-z}) \\
+\varphi\bigl(\sabs{x-y+y-z}\bigr) \\
 & \leq
-\varphi(\abs{x-y}+\abs{y-z})
+\varphi\bigl(\sabs{x-y}+\sabs{y-z}\bigr)
 \\
 & =
-\frac{\abs{x-y}+\abs{y-z}}{\abs{x-y}+\abs{y-z}+1} \\
+\frac{\sabs{x-y}+\sabs{y-z}}{\sabs{x-y}+\sabs{y-z}+1} \\
 & =
-\frac{\abs{x-y}}{\abs{x-y}+\abs{y-z}+1} +
-\frac{\abs{y-z}}{\abs{x-y}+\abs{y-z}+1}
+\frac{\sabs{x-y}}{\sabs{x-y}+\sabs{y-z}+1} +
+\frac{\sabs{y-z}}{\sabs{x-y}+\sabs{y-z}+1}
 \\
 & \leq
-\frac{\abs{x-y}}{\abs{x-y}+1} +
-\frac{\abs{y-z}}{\abs{y-z}+1} =
+\frac{\sabs{x-y}}{\sabs{x-y}+1} +
+\frac{\sabs{y-z}}{\sabs{y-z}+1} =
 d(x,y)+ d(y,z) .
 \end{split}
 \end{equation*}
@@ -364,35 +364,35 @@ Let $C\bigl([a,b],\R\bigr)$\glsadd{not:contfuncs} be the set of
 continuous real-valued functions on the interval $[a,b]$.
 Define the metric on $C\bigl([a,b],\R\bigr)$ as
 \begin{equation*}
-d(f,g) \coloneqq \sup_{x \in [a,b]} \abs{f(x)-g(x)} .
+d(f,g) \coloneqq \sup_{x \in [a,b]} \babs{f(x)-g(x)} .
 \end{equation*}
 Let us check the properties.  First, $d(f,g)$ is finite as
-$\abs{f(x)-g(x)}$ is a continuous function on a closed bounded interval
+$\babs{f(x)-g(x)}$ is a continuous function on a closed bounded interval
 $[a,b]$, and so is bounded.
 It is clear that $d(f,g) \geq 0$, 
 it is the supremum of nonnegative numbers.  If $f = g$,
-then $\abs{f(x)-g(x)} = 0$ for all $x$, and hence $d(f,g) = 0$.  Conversely,
-if $d(f,g) = 0$, then for every $x$, we have $\abs{f(x)-g(x)} \leq d(f,g) = 0$,
+then $\babs{f(x)-g(x)} = 0$ for all $x$, and hence $d(f,g) = 0$.  Conversely,
+if $d(f,g) = 0$, then for every $x$, we have $\babs{f(x)-g(x)} \leq d(f,g) = 0$,
 and hence $f(x) = g(x)$ for all $x$, and so $f=g$.  That $d(f,g) = d(g,f)$
 is equally trivial.  To show the triangle inequality we use the standard
 triangle inequality;
 \begin{equation*}
 \begin{split}
 d(f,g) & =
-\sup_{x \in [a,b]} \abs{f(x)-g(x)} =
-\sup_{x \in [a,b]} \abs{f(x)-h(x)+h(x)-g(x)}
+\sup_{x \in [a,b]} \babs{f(x)-g(x)} =
+\sup_{x \in [a,b]} \babs{f(x)-h(x)+h(x)-g(x)}
 \\
 & \leq
-\sup_{x \in [a,b]} \bigl( \abs{f(x)-h(x)}+\abs{h(x)-g(x)} \bigr)
+\sup_{x \in [a,b]} \Bigl( \babs{f(x)-h(x)}+\babs{h(x)-g(x)} \Bigr)
 \\
 & \leq
-\sup_{x \in [a,b]} \abs{f(x)-h(x)}+
-\sup_{x \in [a,b]} \abs{h(x)-g(x)} = d(f,h) + d(h,g) .
+\sup_{x \in [a,b]} \babs{f(x)-h(x)}+
+\sup_{x \in [a,b]} \babs{h(x)-g(x)} = d(f,h) + d(h,g) .
 \end{split}
 \end{equation*}
 When treating $C\bigl([a,b],\R\bigr)$ as a metric space without mentioning a metric,
 we mean this particular metric.
-Notice that $d(f,g) = \norm{f-g}_{[a,b]}$, the uniform norm of \defnref{def:unifnorm}.
+Notice that $d(f,g) = \snorm{f-g}_{[a,b]}$, the uniform norm of \defnref{def:unifnorm}.
 
 This example may seem esoteric at first, but it turns out that working with
 spaces such as $C\bigl([a,b],\R\bigr)$ is really the meat of a large part of modern 
@@ -553,7 +553,7 @@ a metric space.
 Let $X$ be the set of continuous functions on $[0,1]$.  Let $\varphi \colon
 [0,1] \to (0,\infty)$ be continuous.  Define
 \begin{equation*}
-d(f,g) \coloneqq \int_0^1 \abs{f(x)-g(x)}\varphi(x)\,dx .
+d(f,g) \coloneqq \int_0^1 \babs{f(x)-g(x)}\varphi(x)\,dx .
 \end{equation*}
 Show that $(X,d)$ is a metric space.
 \end{exercise}
@@ -722,7 +722,7 @@ Be careful when working on a subspace.  Consider the
 metric space $[0,1]$ as a subspace of $\R$.  Then in $[0,1]$,
 \begin{equation*}
 B(0,\nicefrac{1}{2}) = B_{[0,1]}(0,\nicefrac{1}{2})
-= \bigl\{ y \in [0,1] : \abs{0-y} < \nicefrac{1}{2} \bigr\}
+= \bigl\{ y \in [0,1] : \sabs{0-y} < \nicefrac{1}{2} \bigr\}
 = [0,\nicefrac{1}{2}) .
 \end{equation*}
 This is different from $B_{\R}(0,\nicefrac{1}{2}) =
@@ -1320,7 +1320,7 @@ that $X$ is connected if and only if it contains exactly one element.
 \end{exercise}
 
 \begin{exercise}
-Take $\Q$ with the standard metric, $d(x,y) = \abs{x-y}$, as our metric space.
+Take $\Q$ with the standard metric, $d(x,y) = \sabs{x-y}$, as our metric space.
 Prove that $\Q$ is
 \emph{\myindex{totally disconnected}}, that is, show 
 that for every $x, y \in \Q$ with $x \not= y$, there exists an
@@ -1472,7 +1472,7 @@ The notion of a sequence in a metric space is very similar to a sequence of
 real numbers.
 The related definitions are essentially the same as those for real numbers
 in the sense of \chapterref{seq:chapter}, where $\R$ with
-the standard metric $d(x,y)=\abs{x-y}$ is replaced
+the standard metric $d(x,y)=\sabs{x-y}$ is replaced
 by an arbitrary metric space $(X,d)$.
 
 
@@ -1535,7 +1535,7 @@ real numbers,
 \propref{prop:limisunique}.
 Proofs of many results we know for sequences of real numbers can be
 adapted to
-the more general settings of metric spaces.  We must replace $\abs{x-y}$
+the more general settings of metric spaces.  We must replace $\sabs{x-y}$
 with $d(x,y)$ in the proofs and apply the triangle inequality correctly.
 
 \begin{prop} \label{prop:mslimisunique}
@@ -1606,7 +1606,7 @@ if it converges in the metric space sense.
 \begin{remark}
 It is perhaps surprising that on the set of functions $f \colon [a,b] \to
 \R$ (continuous or not)
-there is no metric that gives pointwise convergence.  Although the proof of
+there is no metric that gives pointwise convergence.  The proof of
 this fact is beyond the scope of this book.
 \end{remark}
 
@@ -1755,7 +1755,7 @@ Prove that $p \in \widebar{A}$.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Show that $d(x,y) \coloneqq \min \bigl\{ 1, \abs{x-y} \bigr\}$ defines a metric on $\R$.
+Show that $d(x,y) \coloneqq \min \bigl\{ 1, \sabs{x-y} \bigr\}$ defines a metric on $\R$.
 \item
 Show that a sequence converges in $(\R,d)$ if and only if it converges
 in the standard metric.
@@ -1808,11 +1808,11 @@ $x_n \in E$ for infinitely many $n \in \N$.  Show $p \in E$.
 
 \begin{exercise} \label{exercise:extendedrealsmetric}
 Take $\R^* = \{ -\infty \} \cup \R \cup \{ \infty \}$ be the extended reals.
-Define $d(x,y) \coloneqq \bigl\lvert \frac{x}{1+\abs{x}} - \frac{y}{1+\abs{y}}
-\bigr\rvert$
-if $x, y \in \R$,
-define $d(\infty,x) \coloneqq \bigl\lvert 1 - \frac{x}{1+\abs{x}} \bigr\rvert$,
-$d(-\infty,x) \coloneqq \bigl\lvert 1 + \frac{x}{1+\abs{x}} \bigr\rvert$
+Define
+$d(x,y) \coloneqq \babs{ \frac{x}{1+\sabs{x}} - \frac{y}{1+\sabs{y}} }$
+if $x, y \in \R$, define
+$d(\infty,x) \coloneqq \babs{ 1 - \frac{x}{1+\sabs{x}} }$,
+$d(-\infty,x) \coloneqq \babs{ 1 + \frac{x}{1+\sabs{x}} }$
 for all $x \in \R$, and
 let $d(\infty,-\infty) \coloneqq 2$.
 \begin{enumerate}[a)]
@@ -1853,8 +1853,10 @@ converges to $p$.
 
 \begin{exercise}
 Consider $\R^n$, and let $d$ be the standard euclidean metric.
-Let $d'(x,y) \coloneqq \sum_{\ell=1}^n \abs{x_\ell-y_\ell}$ and
-$d''(x,y) \coloneqq \max \{ \abs{x_1-y_1},\abs{x_2-y_2},\cdots,\abs{x_n-y_n} \}$.
+Let $d'(x,y) \coloneqq \sum_{\ell=1}^n \sabs{x_\ell-y_\ell}$ and
+$d''(x,y) \coloneqq \max \bigl\{
+\sabs{x_1-y_1},\sabs{x_2-y_2},\cdots,\sabs{x_n-y_n}
+\bigr\}$.
 \begin{enumerate}[a)]
 \item
 Use \exerciseref{exercise:mscross}, to show that
@@ -1902,7 +1904,7 @@ The definition is again simply a translation of the concept
 from the real numbers to metric spaces.  A sequence of real
 numbers is Cauchy in the sense of \chapterref{seq:chapter} if and only if
 it is Cauchy in the sense above, provided we equip the real numbers with
-the standard metric $d(x,y) = \abs{x-y}$.
+the standard metric $d(x,y) = \sabs{x-y}$.
 
 \begin{prop}
 A convergent sequence in a metric space is Cauchy.
@@ -2492,7 +2494,7 @@ collection of nonempty compact sets $E_1 \supset E_2 \supset E_3 \supset
 Let $C\bigl([0,1],\R\bigr)$ be the metric space of \exampleref{example:msC01}.
 Let $K$ be the set of $f \in C\bigl([0,1],\R\bigr)$ such that
 $f$ is equal to a quadratic polynomial, i.e.\ $f(x) = a+bx+cx^2$, and such that
-$\abs{f(x)} \leq 1$ for all $x \in [0,1]$,
+$\babs{f(x)} \leq 1$ for all $x \in [0,1]$,
 that is $f \in C(0,1)$.  Show that $K$ is compact.
 \end{exercise}
 
@@ -2546,10 +2548,10 @@ compact as a subset of itself with the subspace metric.
 
 \begin{exercise} \label{exercise:cauchydepndsonmetric}
 Consider two metrics on $\R$.
-Let $d(x,y) \coloneqq \abs{x-y}$ be the standard metric,
+Let $d(x,y) \coloneqq \sabs{x-y}$ be the standard metric,
 and let
-$d'(x,y) \coloneqq \bigl\lvert \frac{x}{1+\abs{x}} - \frac{y}{1+\abs{y}}
-\bigr\rvert$.
+$d'(x,y) \coloneqq
+\babs{ \frac{x}{1+\sabs{x}} - \frac{y}{1+\sabs{y}} }$.
 \begin{enumerate}[a)]
 \item
 Show that $(\R,d')$ is a metric space (if you have done
@@ -2919,11 +2921,11 @@ As $f$ is continuous on $[a,b] \times [c,d]$, which is compact, $f$
 is uniformly continuous.  
 In particular, there exists a $\delta > 0$ such that
 whenever $z \in [c,d]$ and
-$\abs{z-y} < \delta$, we have
-$\abs{f(x,z)-f(x,y)} < \frac{\epsilon}{b-a}$ for all $x \in [a,b]$.
-So suppose $\abs{z-y} < \delta$.  Then
+$\sabs{z-y} < \delta$, we have
+$\babs{f(x,z)-f(x,y)} < \frac{\epsilon}{b-a}$ for all $x \in [a,b]$.
+So suppose $\sabs{z-y} < \delta$.  Then
 \begin{multline*}
-\abs{
+\babs{
 g(z)-
 g(y)
 }
@@ -3180,7 +3182,7 @@ that is, $d(p,q) = \inf \{ d(x,y) \colon x \in K_1, y \in K_2 \}$.
 Let $(X,d)$ be a compact metric space, let $C(X,\R)$ be the set
 of real-valued continuous functions.  Define
 \begin{equation*}
-d(f,g) \coloneqq \snorm{f-g}_X = \sup_{x \in X} \abs{f(x)-g(x)} .
+d(f,g) \coloneqq \snorm{f-g}_X = \sup_{x \in X} \babs{f(x)-g(x)} .
 \end{equation*}
 \begin{enumerate}[a)]
 \item
@@ -3386,7 +3388,7 @@ fixed point theorem:
 the space $C\bigl([a,b],\R\bigr)$ of \exampleref{example:msC01},
 the space of continuous functions $f \colon [a,b] \to \R$ with the metric
 \begin{equation*}
-d(f,g) \coloneqq \snorm{f-g}_{[a,b]} = \sup_{x \in [a,b]} \abs{f(x)-g(x)} .
+d(f,g) \coloneqq \snorm{f-g}_{[a,b]} = \sup_{x \in [a,b]} \babs{f(x)-g(x)} .
 \end{equation*}
 Convergence in this metric is convergence in uniform norm, or in other
 words, uniform convergence.  Therefore,
@@ -3448,7 +3450,7 @@ Suppose $F \colon I \times J \to \R$ is continuous
 and Lipschitz in the second variable, that is, there exists
 an $L \in \R$ such that
 \begin{equation*}
-\abs{F(x,y) - F(x,z)} \leq L \abs{y-z}
+\babs{F(x,y) - F(x,z)} \leq L \sabs{y-z}
 \qquad \text{for all } y,z \in J, x \in I .
 \end{equation*}
 Then there exists an $h > 0$ such that $[x_0-h,x_0+h] \subset I$ and a unique differentiable
@@ -3464,7 +3466,7 @@ Without loss of generality, assume $x_0 =0$ (exercise).
 As $I \times J$ is compact and
 $F$ is continuous, $F$ is bounded.
 So find an $M > 0$ such that
-$\abs{F(x,y)} \leq M$ for all $(x,y) \in I\times J$.
+$\babs{F(x,y)} \leq M$ for all $(x,y) \in I\times J$.
 Pick $\alpha > 0$ such that
 $[-\alpha,\alpha] \subset I$ and $[y_0-\alpha, y_0 + \alpha] \subset J$.
 Let
@@ -3473,7 +3475,7 @@ h \coloneqq \min \left\{ \alpha, \frac{\alpha}{M+L\alpha} \right\} .
 \end{equation*}
 Note $[-h,h] \subset I$.  Let
 \begin{equation*}
-Y \coloneqq \bigl\{ f \in C\bigl([-h,h],\R\bigr) : f\bigl([-h,h]\bigr) \subset J \bigr\} .
+Y \coloneqq \Bigl\{ f \in C\bigl([-h,h],\R\bigr) : f\bigl([-h,h]\bigr) \subset J \Bigr\} .
 \end{equation*}
 That is, $Y$ is the set of continuous functions on $[-h,h]$ with values in
 $J$, in other words,
@@ -3495,14 +3497,14 @@ y_0 + \int_0^x F\bigl(t,f(t)\bigr)\,dt .
 \end{equation*}
 It is an exercise to check that
 $T$ is well-defined, and that for $f \in Y$, $T(f)$ really is in $C\bigl([-h,h],\R\bigr)$.
-Let $f \in Y$ and $\abs{x} \leq h$.
+Let $f \in Y$ and $\sabs{x} \leq h$.
 As $F$ is bounded by $M$, we have
 \begin{equation*}
 \begin{split}
-\abs{T(f)(x) - y_0}
+\babs{T(f)(x) - y_0}
 &= \abs{\int_0^x F\bigl(t,f(t)\bigr)\,dt} \\
 & \leq 
-\abs{x}M \leq hM \leq \frac{\alpha M}{M+ L\alpha} \leq \alpha .
+\sabs{x} M \leq hM \leq \frac{\alpha M}{M+ L\alpha} \leq \alpha .
 \end{split}
 \end{equation*}
 So $T(f)\bigl([-h,h]\bigr) \subset [y_0-\alpha,y_0+\alpha] \subset J$, and
@@ -3512,15 +3514,15 @@ we consider $T$ as a mapping of $Y$ to $Y$.
 We claim $T \colon Y \to Y$ is a contraction.  First, for $x \in [-h,h]$
 and $f,g \in Y$, we have
 \begin{equation*}
-\abs{F\bigl(x,f(x)\bigr) - F\bigl(x,g(x)\bigr)} \leq
-L\abs{f(x)- g(x)} \leq L \, d(f,g) .
+\Babs{F\bigl(x,f(x)\bigr) - F\bigl(x,g(x)\bigr)} \leq
+L\babs{f(x)- g(x)} \leq L \, d(f,g) .
 \end{equation*}
 Therefore,
 \begin{equation*}
 \begin{split}
-\abs{T(f)(x) - T(g)(x)}
+\babs{T(f)(x) - T(g)(x)}
 &= \abs{\int_0^x \Bigl( F\bigl(t,f(t)\bigr) - F\bigl(t,g(t)\bigr)\Bigr)\,dt} \\
-& \leq \abs{x} L \, d(f,g)
+& \leq \sabs{x} L \, d(f,g)
  \leq h L\, d(f,g)
  \leq \frac{L\alpha}{M+L\alpha} \, d(f,g) .
 \end{split}
@@ -3624,7 +3626,7 @@ from the proof of the contraction mapping principle.
 Start with $f_0(x) = 1$.  Find a 
 few iterates (at least up to $f_2$).  Prove that
 the pointwise limit of $f_n$ is $\frac{1}{1-x}$, that is, for every $x$
-with $\abs{x} < h$ for some $h > 0$,
+with $\sabs{x} < h$ for some $h > 0$,
 prove that $\lim\limits_{n\to\infty}f_n(x) = \frac{1}{1-x}$.
 \end{exercise}
 
