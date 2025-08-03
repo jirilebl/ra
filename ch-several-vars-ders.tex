@@ -530,7 +530,7 @@ vectors such that $T \cup S$ is a basis of $X$.
 In particular, the last item says that if $\dim X = d$ and $T$ is
 a set of $d$ linearly independent vectors, then $T$ spans $X$.
 Another thing to note is that item \ref{mv:dimprop:iii} implies that every
-basis of a finite dimensional vector space has the same number of elements.
+basis of a finite-dimensional vector space has the same number of elements.
 
 \begin{proof}
 All statements hold trivially when $d=0$, so assume $d \geq 1$.
@@ -2691,34 +2691,40 @@ to zero:
 \frac
 {\bnorm{r(h)}}
 {\snorm{h}}
-\\
-& =
+.
+\end{split}
+\end{equation*}
+We need both terms on the right to go to 0
+as $h$ goes to 0.
+First, $\snorm{B}$ is a constant and $f$ is differentiable at $p$,
+so
+the term $\snorm{B}\frac{\snorm{r(h)}}{\snorm{h}}$ goes to 0.
+Next,
+if $k=0$, then
+$\frac
+{\snorm{g(q+k)-g(q) - Bk}}
+{\snorm{h}} = 0$.
+So suppose that $k \not=0$.
+Then
+\begin{equation*}
+\frac
+{\bnorm{g(q+k)-g(q) - Bk}}
+{\snorm{h}}
+ =
 \frac
 {\bnorm{g(q+k)-g(q) - Bk}}
 {\snorm{k}}
 \frac
 {\bnorm{f(p+h)-f(p)}}
-{\snorm{h}}
-%mbxlatex \\
-%mbxlatex &
-%mbxlatex \phantom{={}}
-+
-\snorm{B}
-\frac
-{\bnorm{r(h)}}
 {\snorm{h}} .
-\end{split}
 \end{equation*}
-First, $\snorm{B}$ is a constant and $f$ is differentiable at $p$,
-so
-the term $\snorm{B}\frac{\snorm{r(h)}}{\snorm{h}}$ goes to 0.
-Next, because $f$ is continuous at $p$,
+Because $f$ is continuous at $p$,
 $k$ goes to 0 as $h$ goes to 0.
 Thus
 $\frac
 {\snorm{g(q+k)-g(q) - Bk}}
 {\snorm{k}}$ goes to 0, because $g$ is differentiable at $q$.
-Finally,
+We have,
 \begin{equation*}
 %mbxlatex \begin{aligned}
 \frac
@@ -2752,7 +2758,12 @@ $
 {\snorm{f(p+h)-f(p)}}
 {\snorm{h}}
 $
-stays bounded as $h$ goes to 0.  Therefore, 
+stays bounded as $h$ goes to 0.
+In other words, the term 
+$\frac
+{\snorm{g(q+k)-g(q) - Bk}}
+{\snorm{h}}$ goes to zero as $h$ goes to 0.
+Therefore, 
 $\frac{\snorm{F(p+h)-F(p) - BAh}}{\snorm{h}}$ goes to zero, and
 $F'(p) = BA$, which is what was claimed.
 \end{proof}

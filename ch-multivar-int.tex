@@ -1513,8 +1513,11 @@ Note that the \myquote{volume} of $B_k$ is proportional to $r_k^n$.
 \begin{proof}
 If $C$ is a closed cube (rectangle with all sides equal) of side $s$,
 then $C$ is contained in a closed ball of radius
-$\sqrt{n}\, s$ by \propref{prop:diameterrectangle}, and hence
-in an open ball of radius $2 \sqrt{n}\, s$.
+$\sqrt{n}\, s$ by \propref{prop:diameterrectangle} and so
+in an open ball of radius $2 \sqrt{n}\, s$.\footnote{%
+A closed ball of radius $\frac{\sqrt{n}\,s}{2}$
+could be used but that requires an argument and 
+$\sqrt{n}\, s$ is good enough.}
 
 Suppose $R$ is a rectangle of positive volume.
 Let $s > 0$ be a number less than the smallest side of $R$ and
@@ -1558,12 +1561,12 @@ we obtain
 \begin{equation*}
 \sum_{k=1}^\infty r_k^n
 =
-\sum_{k=1}^\infty {(2\sqrt{n})}^n s_k^n
+\sum_{k=1}^\infty {\bigl(2\sqrt{n}\bigr)}^n s_k^n
 <
-{(4\sqrt{n})}^n \epsilon .
+{\bigl(4\sqrt{n}\bigr)}^n \epsilon .
 \end{equation*}
 As $S \subset\bigcup_{j} R_j \subset \bigcup_{k} C_k \subset \bigcup_{k}
-B_k$ and ${(4\sqrt{n})}^n \epsilon$ can be arbitrarily small,
+B_k$ and ${\bigl(4\sqrt{n}\bigr)}^n \epsilon$ can be arbitrarily small,
 the forward direction follows.
 
 For the other direction, suppose $S$ is covered by balls $B_j$

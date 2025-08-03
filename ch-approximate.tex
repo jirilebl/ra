@@ -1261,7 +1261,7 @@ analytic function is infinitely differentiable:
 f^{(\ell)}(x)
 %mbxlatex &
 =
-\sum_{n=\ell}^\infty n(n-1)\cdots(n-\ell+1)c_k {(x-a)}^{n-\ell}
+\sum_{n=\ell}^\infty n(n-1)\cdots(n-\ell+1)c_n {(x-a)}^{n-\ell}
 %mbxlatex \\
 %mbxlatex &
 =
@@ -5063,17 +5063,16 @@ and
 \end{samepage}
 
 \begin{proof}
-There exists (exercise)
+There exists (\exerciseref{exercise:contL2close})
 a continuous $2\pi$-periodic function $h$ such that
 \begin{equation*}
 \snorm{f-h}_2 < \epsilon .
 \end{equation*}
 Via \hyperref[thm:SWcomplex]{Stone--Weierstrass},
-approximate $h$ with a trigonometric polynomial
-uniformly.  That is, there is a trigonometric polynomial $P(x)$
+there is a trigonometric polynomial $P(x)$
 such that
 $\babs{h(x) - P(x)} < \epsilon$ for all $x$.
-Hence
+Hence,
 \begin{equation*}
 \snorm{h-P}_2
 =
@@ -5099,7 +5098,8 @@ By the inequality leading up to Bessel,
 \leq
 \snorm{h-f}_2 \leq \epsilon .
 \end{equation*}
-The $L^2$ norm satisfies the triangle inequality (exercise).
+The $L^2$ norm satisfies the triangle inequality
+(\exerciseref{exercise:L2triangleineq}).
 Thus, for all $N \geq N_0$,
 \begin{equation*}
 \bnorm{f-s_N(f)}_2
@@ -5111,7 +5111,7 @@ Thus, for all $N \geq N_0$,
 \bnorm{s_N(h)-s_N(f)}_2
 \leq 3\epsilon .
 \end{equation*}
-Hence, the first claim follows.
+The first claim follows.
 
 Next,
 \begin{equation*}
@@ -5140,7 +5140,8 @@ inequality for $L^2$, that is,
 \left( \int_a^b \sabs{f}^2 \right)
 \left( \int_a^b \sabs{g}^2 \right) .
 \end{equation*}
-Its proof is left as an exercise; it is not much
+Its proof is left as \exerciseref{exercise:L2cauchyschwarz};
+it is not much
 different from the finite-dimensional version.
 So
 \begin{equation*}
@@ -5202,7 +5203,7 @@ smooth near a point $x$, then $\lim\limits_{N\to\infty} s_N(f;x) = f(x)$.  Hint:
 exercise.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:contL2close}
 Given a $2\pi$-periodic function $f \colon \R \to \C$, Riemann integrable on
 $[-\pi,\pi]$,
 and $\epsilon > 0$,
@@ -5210,7 +5211,7 @@ show that there exists a continuous $2\pi$-periodic function $g \colon \R
 \to \C$ such that $\snorm{f-g}_2 < \epsilon$.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:L2cauchyschwarz}
 Prove the Cauchy--Bunyakovsky--Schwarz inequality
 for Riemann integrable functions:
 \begin{equation*}
@@ -5221,7 +5222,7 @@ for Riemann integrable functions:
 \end{equation*}
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:L2triangleineq}
 Prove the $L^2$ triangle inequality 
 for Riemann integrable functions on $[-\pi,\pi]$:
 \begin{equation*}
