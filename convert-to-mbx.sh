@@ -9,14 +9,35 @@ echo runs the pdft figures and then also optimizes svgs.  Without
 echo --runpdft some figures will be missing.  You can also use --full
 echo which does all three arguments.
 echo Optimizations are in optimize-svgs.sh in figures/
+#echo You should first run with --runpdft --optimize-svg which
+#echo runs the pdft figures and then also optimizes svgs.  Without
+#echo --runpdft some figures will be missing.  You can also use --full
+#echo which does both arguments.
+echo You should first run with --runpdft
+echo Optimizations are in optimize-svgs.sh in figures/
+echo "But optimization (svgo) is buggy."
 echo
-echo To rerun all figures first do \"rm "*-mbx.*" "*-mbxpdft.*"\", or run
+#echo To rerun all figures first do \"rm "*-mbx.*" "*-mbxpdft.*"\", or run
+echo To rerun all figures first do \"rm "*-mbxpdft.*"\", or run
 echo this script with --kill-generated.
 echo
 
+if [ x`svgo -v` != "x3.0.4" ]; then
+	echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+	echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+	echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+	echo 
+	echo svgo at the incorrect version, do "sudo install -g svgo@3.0.4"
+	echo other versions seem to eat content
+	echo 
+	echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+	echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+	echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+fi
+
 PDFT=no
 #OPTPNG=no
-OPTSVG=no
+#OPTSVG=no
 
 # parse parameters
 while [ "$1" != "" ]; do
@@ -32,20 +53,20 @@ while [ "$1" != "" ]; do
 #	    echo "OPTION (optimize-png) Will run optimize-pngs.sh"
 #	    OPTPNG=yes
 #            ;;
-        --optimize-svg)
-	    echo "OPTION (optimize-svg) Will run optimize-svgs.sh"
-	    OPTSVG=yes
-	    ;;
+#        --optimize-svg)
+#	    echo "OPTION (optimize-svg) Will run optimize-svgs.sh"
+#	    OPTSVG=yes
+#	    ;;
         --full)
 	    echo "OPTION (full) Will run pdf_t optimize svgs"
 	    PDFT=yes
 	    #OPTPNG=yes
-	    OPTSVG=yes
+	    #OPTSVG=yes
             ;;
         --kill-generated)
-	    echo "OPTION (kill-generated) Killing generated figures and exiting."
+	    echo "OPTION (kill-generated) Killing generated figures and exiting (not killing -mbx.svg)."
 	    cd figures
-	    rm *-mbx.(svg|png)
+	    #rm *-mbx.(svg|png)
 	    rm *-mbxpdft.(svg|png)
 	    cd ..
 	    exit
@@ -87,15 +108,15 @@ perl -0777 -i -pe 's:<rahr/>[ \r\n]*<rahr/>:<rahr/>:igs' ./realanal-out.xml
 
 #xmllint --format -o realanal-out2.xml realanal-out.xml
 
-if [ "$OPTSVG" = "yes" ] ; then
-	echo
-	echo OPTIMIZING SVG...
-	echo
-
-	cd figures
-	./optimize-svgs.sh
-	cd ..
-fi
+#if [ "$OPTSVG" = "yes" ] ; then
+#	echo
+#	echo OPTIMIZING SVG...
+#	echo
+#
+#	cd figures
+#	./optimize-svgs.sh
+#	cd ..
+#fi
 
 echo
 echo MOVING OLD html, CREATING NEW html, COPYING figures/ in there
