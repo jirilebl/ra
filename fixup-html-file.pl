@@ -54,8 +54,14 @@ while($line = <STDIN>)
 	#$line =~ s/>Authored in PreTeXt</>Created with PreTeXt</;
 	
 	# In case chtml is broken again
-	$line =~ s/^  chtml: {/  svg: {/;
+	$line =~ s/^  ["]?chtml["]?: {/  "svg": {/;
 	$line =~ s/tex-chtml[.]js/tex-svg.js/;
+
+	# and upgrade to mathjax4 and use pagella font?
+	#$line =~ s/^  ["]?chtml["]?: {/  "svg": {/;
+	#$line =~ s/tex-chtml[.]js/tex-svg-nofont.js/;
+	#$line =~ s{mathjax\@3/es5}{mathjax\@4};
+	#$line =~ s/^window.MathJax = {/window.MathJax = {\n  output: {\n    font: 'mathjax-pagella'\n  },/;
 
 	#print line
 	print $line;
