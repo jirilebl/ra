@@ -4019,8 +4019,8 @@ $f(V)$ is open.
 
 \begin{example}
 The theorem, and the corollary, is not true if $f'(x)$ is not invertible for
-some~$x$.  For example,
-the map $f(x,y) \coloneqq (x,xy)$, maps $\R^2$ onto the set
+some~$x$.
+The map $f(x,y) \coloneqq (x,xy)$, maps $\R^2$ onto the set
 $\R^2 \setminus \bigl\{ (0,y) : y \neq 0 \bigr\}$, which is neither open nor closed.
 In fact, $f^{-1}(0,0) = \bigl\{ (0,y) : y \in \R \bigr\}$.  This bad behavior
 only occurs on the $y$-axis, everywhere else the function is locally
@@ -4046,13 +4046,13 @@ replacing $x$ and $y$ with $-x$ and $-y$ we obtain another solution.
 
 The invertibility of the derivative is not a necessary
 condition, just sufficient, for having a continuous inverse and for being an open
-mapping.  For example, the function $f(x) \coloneqq x^3$ is an open mapping from $\R$
+mapping.  The function $f(x) \coloneqq x^3$ is an open mapping from $\R$
 to $\R$ and is globally one-to-one with a continuous inverse, although the
 inverse is not differentiable at $x=0$.
 
 \medskip
 
-As a side note, there is a related famous, and as yet unsolved, problem
+As a side note, there is a famous related, and as yet unsolved, problem
 called the \emph{\myindex{Jacobian conjecture}}.  If $F \colon \R^n \to
 \R^n$ is polynomial (each component is a polynomial) and $J_F$
 (the Jacobian determinant) is a nonzero
@@ -4099,8 +4099,8 @@ $A_y$ is invertible.  If $B = - {(A_y)}^{-1} A_x$, then
 Furthermore, $y=Bx$ is the unique $y \in \R^m$ such that $A(x,y) = 0$.
 \end{prop}
 
-The proof is immediate: We solve and obtain $y = Bx$.
-Another way to solve is to \myquote{complete the basis,} that is, add
+The proof is immediate: We solve $A_x x +A_y y = 0$ and obtain $y = Bx$.
+Another approach is to \myquote{complete the basis,} that is, add
 rows to the matrix until we have an invertible matrix:
 The operator in $L(\R^{n+m})$ given by
 $(x,y) \mapsto (x,A_x x + A_y y)$

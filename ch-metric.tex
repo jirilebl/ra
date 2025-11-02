@@ -561,7 +561,7 @@ Show that $(X,d)$ is a metric space.
 \begin{exercise} \label{exercise:mshausdorffpseudo}
 Let $(X,d)$ be a metric space.  For nonempty bounded subsets $A$ and $B$ let
 \begin{equation*}
-d(x,B) \coloneqq \inf \bigl\{ d(x,b) : b \in B \bigl\}
+d(x,B) \coloneqq \inf \bigl\{ d(x,b) : b \in B \bigr\}
 \qquad \text{and} \qquad
 d(A,B) \coloneqq \sup \bigl\{ d(a,B) : a \in A \bigr\} .
 \end{equation*}
@@ -1694,7 +1694,7 @@ we have $x_n \in U$.
 
 \begin{proof}
 Suppose $\{ x_n \}_{n=1}^\infty$ converges to $p$.  Let $U$ be an open neighborhood
-of $p$, then there exists an $\epsilon > 0$ such that $B(p,\epsilon) \subset
+of $p$.  There exists an $\epsilon > 0$ such that $B(p,\epsilon) \subset
 U$.  As the sequence converges, find an $M \in \N$ such that for all $n \geq
 M$, we have $d(p,x_n) < \epsilon$, or in other words $x_n \in B(p,\epsilon)
 \subset U$.
@@ -1953,7 +1953,7 @@ Fix some $k=1,2,\ldots,n$.  For $i,j \geq M$,
 = d(x_i,x_j) < \epsilon .
 \end{equation*}
 Hence the sequence $\{ x_{m,k} \}_{m=1}^\infty$ is Cauchy.  As $\R$ is
-complete the sequence converges; there exists a $y_k \in \R$ such that
+complete, the sequence converges; there exists a $y_k \in \R$ such that
 $y_k = \lim_{m\to\infty} x_{m,k}$.
 Write $y = (y_1,y_2,\ldots,y_n) \in \R^n$.
 By \propref{prop:msconveuc}, $\{ x_m \}_{m=1}^\infty$ converges
@@ -2060,7 +2060,7 @@ K \subset \bigcup_{j=1}^m B(p,n_j) = B(p,n_m) .
 As $K$ is contained in a ball, $K$ is bounded.
 See the left-hand side of \figureref{fig:compactbndclosed}.
 
-Next, we show a set that is not closed is not compact.  Suppose 
+Next, we show that a set that is not closed is not compact.  Suppose 
 $\widebar{K} \not= K$, that is, there is a point $x \in \widebar{K}
 \setminus K$.
 If $y \not= x$, then
@@ -2182,8 +2182,8 @@ B(x,\epsilon)$ by triangle inequality.\label{fig:lebesguedelta}}
 \end{myfigureht}
 
 It is important to recognize what the lemma says.  It says that
-if $K$ is sequentially compact, then given any
-cover there is a single $\delta > 0$.  The $\delta$ depends on the cover,
+if $K$ is sequentially compact, then for any given
+cover, there is a single $\delta > 0$.  The $\delta$ depends on the cover,
 but, of course, it does not depend on $x$.
 
 For example, let $K \coloneqq [-10,10]$ and let
@@ -2238,7 +2238,7 @@ Suppose $n_{j-1}$ is defined.
 There must exist a $k > n_{j-1}$
 such that $x_k \in B(x,\nicefrac{1}{j})$.  Define
 $n_j \coloneqq k$.
-We now posses a subsequence $\{ x_{n_j} \}_{j=1}^\infty$.
+We now possess a subsequence $\{ x_{n_j} \}_{j=1}^\infty$.
 Since
 $d(x,x_{n_j}) < \nicefrac{1}{j}$,  \propref{prop:msconvifa} says
 $\lim_{j\to\infty} x_{n_j} = x$.
@@ -2324,7 +2324,7 @@ See \propref{prop:topology:subspacesame}.
 \begin{proof}
 Let $\{ x_n \}_{n=1}^\infty$ be a sequence in $E$.  It is also a sequence in $K$.
 Therefore, it has a convergent subsequence $\{ x_{n_j} \}_{j=1}^\infty$ that converges to
-some $x \in K$.  As $E$ is closed the limit of a sequence in $E$ is also in $E$
+some $x \in K$.  As $E$ is closed, the limit of a sequence in $E$ is also in $E$
 and so $x \in E$.  Thus $E$ must be compact.
 \end{proof}
 
@@ -2366,7 +2366,7 @@ Let $\bigl\{ (x_k,y_k) \bigr\}_{k=1}^\infty$ be a sequence in $B$.  That is,
 $a \leq x_k \leq b$ and
 $c \leq y_k \leq d$ for all $k$.  A bounded sequence of real numbers
 has a convergent
-subsequence so there is a subsequence $\{ x_{k_j} \}_{j=1}^\infty$
+subsequence, so there is a subsequence $\{ x_{k_j} \}_{j=1}^\infty$
 that is convergent.  The subsequence 
 $\{ y_{k_j} \}_{j=1}^\infty$ is also a bounded sequence so there exists
 a subsequence
@@ -2629,7 +2629,7 @@ Suppose $f$ is continuous at $c$.  Let $\{ x_n \}_{n=1}^\infty$ be a
 sequence in $X$ converging to $c$.  Given $\epsilon > 0$,
 there is a $\delta > 0$ such that $d_X(x,c) < \delta$ implies
 $d_Y\bigl(f(x),f(c)\bigr) < \epsilon$.  So take $M$ such that
-for all $n \geq M$, we have $d_X(x_n,c) < \delta$, then
+for all $n \geq M$, we have $d_X(x_n,c) < \delta$, and then
 $d_Y\bigl(f(x_n),f(c)\bigr) < \epsilon$.  Hence $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$
 converges to $f(c)$.
 
