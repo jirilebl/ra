@@ -3033,30 +3033,54 @@ function $f \colon [x_0 - h, x_0 + h] \to J \subset \R$, such that}
 f'(x) = F\bigl(x,f(x)\bigr) \qquad \text{and} \qquad f(x_0) = y_0.
 \end{equation*}
 
-Use the following outline:
+We can prove this theorem by applying the Euler's method
+for numerical solution to ODE and showing that there is
+a subsequence of these approximations that converges.
 \begin{enumerate}[a)]
 \item
-We wish to define the Picard iterates, that is,
-set $f_0(x) \coloneqq y_0$, and 
+Show
+that there exists an $h > 0$ so that the following
+functions $f_n$ and $s_n$ are well-defined on $[x_0,x_0+h]$
+for all $n \in \N$.
+Define $f_n(x_0) \coloneqq y_0$ and $s_n(x_0) \coloneqq F(x_0,y_0)$
+and for each $\ell=0,1,\ldots,n-1$ in turn
+for $x \in \bigl(x_0+\frac{h\ell}{n},x_0+\frac{h(\ell+1)}{n}\bigr]$
+let $s_n(x) \coloneqq F\bigl(x_0+\tfrac{h\ell}{n},
+f_n(x_0+\tfrac{h\ell}{n})\bigr)$ and 
 \begin{equation*}
-f_{n+1}(x) \coloneqq y_0 + \int_{x_0}^x F\bigl(t,f_n(t)\bigr)\,dt .
+\begin{split}
+f_n(x) & \coloneqq f_n\bigl(x_0+\tfrac{h\ell}{n}\bigr)
++ \bigl(x-x_0-\tfrac{h\ell}{n}\bigr) F\bigl(x_0+\tfrac{h\ell}{n},
+f_n(x_0+\tfrac{h\ell}{n}) \bigr) \\
+& = f_n\bigl(x_0+\tfrac{h\ell}{n}\bigr)
++ \int_{x_0+\tfrac{h\ell}{n}}^x s_n(t) \, dt \\
+& = y_0
++ \int_{x_0}^x s_n(t) \, dt .
+\end{split}
 \end{equation*}
-Prove that there exists an $h > 0$ such that
-$f_n \colon [x_0 - h, x_0 + h] \to \C$ is well-defined
-for all $n$.  Hint: $F$ is bounded (why?).
 \item
-Show that $\{ f_n \}_{n=1}^\infty$ is equicontinuous and bounded, in fact it is
-Lipschitz with a uniform Lipschitz constant.  Arzel\`a--Ascoli
-then says that there exists a
-uniformly convergent subsequence $\{ f_{n_k} \}_{k=1}^\infty$.
+Show that $\{ f_n \}_{n=1}^\infty$ is equicontinuous
+(in fact, Lipschitz with the same constant) and uniformly bounded.
+Arzel\`a--Ascoli then says that there exists a
+uniformly convergent subsequence $\{ f_{n_k} \}_{k=1}^\infty$
+converging to a continuous $f$ defined on $[x_0,x_0+h]$.
 \item
-Prove 
-$\bigl\{ F\bigl(x,f_{n_k}(x)\bigr) \bigr\}_{k=1}^\infty$ converges uniformly
-on $[x_0-h,x_0+h]$.
-Hint: $F$ is uniformly continuous (why?).
+Prove that for all $x \in [x_0,x_0+h]$,
+\begin{equation*}
+\int_{x_0}^x s_{n_k}(t) \, dt
+\quad
+\text{converges to}
+\quad
+\int_{x_0}^x F\bigl(t,f(t)\bigr) \, dt ,
+\end{equation*}
+and therefore, by applying the fundamental theorem of calculus,
+$f$ is differentiable on $[x_0,x_0+h]$ and $f'(x) = F\bigl(x,f(x)\bigr)$.
+Hint 1: $F$ is uniformly continuous.
+Hint 2: Show that $s_{n_k}$ converges uniformly.
 \item
-Finish the proof of the theorem by taking the limit under the integral
-and applying the fundamental theorem of calculus.
+Use the solution above to show that $f$ can be defined in $[x_0-h,x_0]$ as
+well,
+possibly for a smaller $h > 0$.
 \end{enumerate}
 \end{exercise}
 
