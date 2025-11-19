@@ -234,8 +234,8 @@ Let $f \colon S \to \R$ be a bounded function.  Define
 \avoidbreak
 \end{equation*}
 We call $\snorm{\cdot}_S$ the \emph{\myindex{uniform norm}}.
-Sometimes other notation\footnote{The notation nor terminology
-is not completely standardized.  The norm is also called the
+Sometimes other notation\footnote{The notation and terminology
+are not completely standardized.  The norm is also called the
 \emph{\myindex{sup norm}} or
 \emph{\myindex{infinity norm}}, and in addition
 to $\snorm{f}_u$ and $\snorm{f}_S$ it is sometimes written
@@ -1578,7 +1578,7 @@ f'(x) = F\bigl(x,f(x)\bigr) \qquad \text{and} \qquad f(x_0) = y_0.
 \begin{proof}
 \pagebreak[2]
 Suppose we could find a solution $f$.  Using the fundamental
-theorem of calculus we integrate the equation 
+theorem of calculus, we integrate the equation 
 $f'(x) = F\bigl(x,f(x)\bigr)$, $f(x_0) = y_0$, and write \eqref{picard:diffeq}
 as the integral equation
 \begin{equation} \label{picard:inteq}
@@ -1596,7 +1596,7 @@ and the individual functions $f_k$ are called the
 Without loss of generality, suppose $x_0 = 0$ (exercise below).
 Another
 exercise tells us that $F$ is bounded as it is continuous.
-Therefore pick some $M > 0$ so that 
+Therefore, pick some $M > 0$ so that 
 $\babs{F(x,y)} \leq M$ for all $(x,y) \in I\times J$.
 Pick $\alpha > 0$ such that
 $[-\alpha,\alpha] \subset I$ and $[y_0-\alpha, y_0 + \alpha] \subset J$.
@@ -1613,7 +1613,7 @@ Assuming $f_{k-1}([-h,h]) \subset [y_0-\alpha,y_0+\alpha]$,
 we see 
 $F\bigl(t,f_{k-1}(t)\bigr)$ is
 a well-defined function of $t$ for $t \in [-h,h]$.
-Further if $f_{k-1}$ is continuous
+If $f_{k-1}$ is continuous
 on $[-h,h]$, then
 $F\bigl(t,f_{k-1}(t)\bigr)$ is
 continuous as
@@ -1638,7 +1638,8 @@ M
 \leq \alpha .
 \end{equation*}
 We next define $f_{k+1}$ using $f_k$ and so on.
-Thus we have inductively defined a sequence $\{ f_k \}_{k=1}^\infty$ of functions.
+Thus we have inductively defined a sequence $\{ f_k \}_{k=1}^\infty$
+of continuous functions.
 We need to show that it converges to a function $f$ that solves
 the equation~\eqref{picard:inteq} and therefore~\eqref{picard:diffeq}.
 
@@ -1675,7 +1676,10 @@ F\bigl(t,f_{k-1}(t)\bigr)
 \,dt}
 \\
 & \leq
-L\snorm{f_{n-1}-f_{k-1}}_{[-h,h]}
+L
+\,
+\snorm{f_{n-1}-f_{k-1}}_{[-h,h]}
+\,
 \sabs{x}
 \\
 & \leq
@@ -1704,10 +1708,10 @@ Therefore,
 \begin{equation*}
 \snorm{f_n-f_k}_{[-h,h]} \leq C^{k} \snorm{f_{n-k}-f_{0}}_{[-h,h]} \leq C^{k} \alpha .
 \end{equation*}
-As $C < 1$, $\{f_n\}_{n=1}^\infty$ is uniformly Cauchy and by
-\propref{prop:uniformcauchy} we obtain that $\{ f_n \}_{n=1}^\infty$
+As $C < 1$, $\{f_n\}_{n=1}^\infty$ is uniformly Cauchy.
+By \propref{prop:uniformcauchy}, $\{ f_n \}_{n=1}^\infty$
 converges uniformly on $[-h,h]$ to some function $f \colon [-h,h] \to \R$.
-The function $f$ is the uniform limit of continuous functions and therefore
+The function $f$ is the uniform limit of continuous functions and thus
 continuous.  Furthermore, since $f_n\bigl([-h,h]\bigr) \subset
 [y_0-\alpha,y_0+\alpha]$ for all $n$,
 then $f\bigl([-h,h]\bigr) \subset [y_0-\alpha,y_0+\alpha]$
@@ -1863,7 +1867,7 @@ $h$ we want as long as $h < \nicefrac{1}{2}$.  We omit the calculation.
 Of course, we know %(though we have not proved)
 this function exists
 as a function for all $x$, so an arbitrary $h$ ought to work, but the
-theorem only provides $h < \nicefrac{1}{2}$.
+theorem's proof only provides $h < \nicefrac{1}{2}$.
 
 By same reasoning as above,
 no matter what $x_0$ and $y_0$ are,
@@ -1972,7 +1976,7 @@ Heaviside function%
 \footnote{Named
 for the English engineer, mathematician, and physicist
 \href{https://en.wikipedia.org/wiki/Oliver_Heaviside}{Oliver Heaviside}
-(1850--1825).},
+(1850--1925).},
 that is $H(x) \coloneqq 0$ for $x < 0$ and $H(x) \coloneqq 1$ for $x \geq 0$.
 Then
 $y' = H(x)$, $y(0) = 0$,
