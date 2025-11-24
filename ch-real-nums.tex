@@ -44,7 +44,7 @@ $\N$ and $\Z$ are also ordered sets.
 
 There are other ordered sets than sets of numbers.  For example, the
 set of countries can be ordered by landmass, so India $>$
-Lichtenstein.
+Liechtenstein.
 A typical ordered set that you have used since primary school is the
 dictionary.  It is the ordered set of words where the order is the
 so-called lexicographic ordering.  Such ordered sets often appear, for
@@ -148,7 +148,7 @@ contradiction as $\nicefrac{m}{n}$ is in lowest terms.
 
 That $\Q$ does not have the least-upper-bound property is one of the most
 important reasons we work with $\R$ in analysis.  The set $\Q$
-is just fine for algebraists.  But us analysts require the least-upper-bound
+is just fine for algebraists.  But we analysts require the least-upper-bound
 property to do any work.
 We also require our real numbers to have many algebraic properties.
 In particular, we require that they be a field.
@@ -363,7 +363,7 @@ and hence $-x \leq -b$.  So $-b$
 is an upper bound for $B$.
 Since $F$ has the least-upper-bound property, $c\coloneqq\sup\, B$ exists, and $c \leq -b$.
 As $y \leq c$
-for all $y \in B$, then $-c \leq x$ for all $x \in A$.
+for all $y \in B$, we have $-c \leq x$ for all $x \in A$.
 So
 $-c$ is a lower bound for $A$.  As $-c \geq b$
 and $b$ is an arbitrary lower bound for $A$,
@@ -375,7 +375,8 @@ the greatest lower bound of $A$ exists and equals $-c$.
 \begin{exercise}
 Prove part \ref{prop:bordfield:iii} of \propref{prop:bordfield}.
 That is, let $F$ be an ordered field and $x,y,z \in F$.  Prove
-If $x < 0$ and $y < z$, then $xy > xz$.
+that
+if $x < 0$ and $y < z$, then $xy > xz$.
 \end{exercise}
 
 
@@ -444,7 +445,7 @@ Show that $F$ cannot be an ordered field.
 \begin{exercise} \label{exercise:dominatingb}
 \pagebreak[2]
 Let $S$ be an ordered set and
-$A$ is a nonempty subset such that $\sup \, A$ exists.  Suppose there
+let $A$ be a nonempty subset such that $\sup \, A$ exists.  Suppose there
 is a $B \subset A$ such that whenever $x \in A$ there is a $y \in B$
 such that $x \leq y$.  Show that $\sup \, B$ exists and $\sup \, B = \sup \, A$.
 \end{exercise}
@@ -452,7 +453,7 @@ such that $x \leq y$.  Show that $\sup \, B$ exists and $\sup \, B = \sup \, A$.
 \begin{exercise}
 Let $D$ be the ordered set of all possible words (not just English words,
 all strings of letters of arbitrary length)
-using the Latin alphabet using only lowercase letters.  The order is the
+using the Latin alphabet with only lowercase letters.  The order is the
 lexicographic order as in a dictionary (e.g.\ \emph{aa} $<$ \emph{aaa} $<$ \emph{dog} $<$ \emph{door}).
 Let $A$ be the subset of $D$ containing the words whose
 first letter is `a' (e.g.\ \emph{a} $\in A$, \emph{abcd} $\in A$).
@@ -692,8 +693,7 @@ not seem like that at first sight.
 \href{https://en.wikipedia.org/wiki/Archimedes}{Archimedes of Syracuse}
 (c.\ 287 BC -- c.\ 212 BC)\@.
 This property is Axiom V from Archimedes' \myquote{On the Sphere and
-Cylinder} 225
-BC\@.}
+Cylinder} (225 BC)\@.}
 If $x, y \in \R$ and
 $x > 0$, then there exists an $n \in \N$ such that
 \begin{equation*}
@@ -772,7 +772,7 @@ Let $A \coloneqq \{ \nicefrac{1}{n} : n \in \N \}$.  Obviously, $A$ is not empty
 Furthermore,
 $\nicefrac{1}{n} > 0$ for all $n \in \N$, so $0$ is a lower bound
 and $b \coloneqq \inf\, A$ exists.
-As $0$ is a lower bound, then $b \geq 0$.
+As $0$ is a lower bound, $b \geq 0$.
 Take an arbitrary $a > 0$.  By the
 \hyperref[thm:arch:i]{Archimedean property}, there exists an $n$ such that
 $na > 1$, that is, $a > \nicefrac{1}{n} \in A$.  Therefore,
@@ -810,9 +810,9 @@ Let $A \subset \R$ be nonempty.
 \end{enumerate}
 \end{prop}
 
-Do note that multiplying a set by a negative number switches supremum for an
-infimum and vice versa.  Also, as the proposition implies that
-supremum (resp.\ infimum) of $x+A$ or $xA$ exists,
+Note how multiplying a set by a negative number swaps suprema and infima.
+Also, as the proposition implies that
+the supremum (resp.\ infimum) of $x+A$ or $xA$ exists,
 it also implies that $x+A$ or $xA$
 is nonempty and bounded above (resp.\ below).
 
@@ -826,7 +826,7 @@ bound for $x+A$.  In particular, if $b = \sup\, A$, then
 \sup (x+A) \leq x+b = x+ \sup\, A .
 \end{equation*}
 
-The opposite inequality is similar: If $c$ is an upper bound for $x+A$,
+The opposite inequality is similar. If $c$ is an upper bound for $x+A$,
 then $x+y \leq c$
 for all $y \in A$ and so $y \leq c-x$ for all $y \in A$.
 So $c-x$ is an upper bound for $A$.
@@ -865,7 +865,7 @@ This important subtle point comes up often.
 \pagebreak[1]
 
 The proof of the following
-often used fact is left to the reader.
+often-used fact is left to the reader.
 A similar result holds for infima.
 
 \begin{prop} \label{prop:existsxepsfromsup}
@@ -909,7 +909,7 @@ are extended in an obvious way, but we must leave
 $\infty-\infty$, $0 \cdot (\pm\infty)$, and $\frac{\pm\infty}{\pm\infty}$
 undefined.
 We refrain from
-using this arithmetic,
+using this arithmetic;
 it leads to easy mistakes as $\R^*$ is not a field.
 Now we can take suprema and infima without fear of emptiness or
 unboundedness.  In this book, we mostly avoid
@@ -1036,7 +1036,7 @@ Prove $\sup \{ x \in \Q : x^2 < 2 \} = \sup \{ x \in \R : x^2 < 2 \}$.
 \item
 Prove that given $y \in \R$, we have $\sup \{ x \in \Q : x < y \} = y$.
 \item
-Let $A \subset \Q$ be a set that is bounded above such that whenever $x
+Let $A \subset \Q$ be a nonempty set that is bounded above such that whenever $x
 \in A$ and $t \in \Q$ with $t < x$, then $t \in A$.  Further suppose
 $\sup\, A \not\in A$.  Show that there exists a $y \in \R$ such that
 $A = \{ x \in \Q : x < y \}$.  A set such as $A$ is called a
@@ -1659,7 +1659,7 @@ $a_n < y$ for all $n\in \N$
 and $y < b_n$ for all $n\in \N$.
 In other words, for every $n \in \N$, we have $y \in (a_n,b_n)$.
 By the construction of the sequence, $x_n \not\in (a_n,b_n)$,
-and so $y \not= x_n$.  As this was true for all $n \in \N$, we have that $y
+and so $y \not= x_n$.  As $y \not= x_n$ all $n \in \N$, we have that $y
 \not\in X$.
 
 We have constructed a real number $y$ that is not in $X$, and thus $X$
@@ -1900,7 +1900,7 @@ nonnegative so $D_n \geq 0$, and hence
 \end{equation*}
 Therefore, $0.d_1d_2d_3\ldots$ represents a unique number $x \coloneqq \sup_{n\in
 \N} D_n \in [0,1]$.
-As $x$ is a supremum, then $D_n \leq x$.
+As $x$ is a supremum, $D_n \leq x$.
 Take $m \in \N$.  If $m < n$, then $D_m - D_n \leq 0$.  If $m > n$, then
 computing as above
 \begin{equation*}
@@ -1967,7 +1967,7 @@ We inductively
 defined an infinite sequence of digits $0.d_1d_2d_3\ldots$.
 
 Consider $D_{n} < x \leq D_{n} + {10}^{-n}$.
-As $D_n < x$ for all $n$, then
+As $D_n < x$ for all $n$, we have
 $\sup \{ D_n : n \in \N \} \leq x$.
 The second inequality for $D_n$ implies
 \begin{equation*}
@@ -2105,7 +2105,7 @@ to arrive at
 $\frac{p}{q} = \frac{d_1}{10} + \frac{d_2}{{10}^2} +
 \frac{r_2}{{10}^2 q} = D_2 +
 \frac{r_2}{{10}^2 q}$.
-As $r_2 < q$ we again get $d_2 < 10$.
+As $r_2 < q$, we again get $d_2 < 10$.
 To compute $d_3$, divide $10 r_2$ by $q$
 getting $d_3$ and $r_3$.  And so on and so forth.
 After computing $n-1$ digits, we have
