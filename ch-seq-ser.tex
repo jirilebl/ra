@@ -200,7 +200,7 @@ Now take an $n$ such that $n \geq M_1$ and also $n \geq M_2$, and estimate
 \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon .
 \end{split}
 \end{equation*}
-As $\sabs{y-x} < \epsilon$ for all $\epsilon > 0$, then $\sabs{y-x} = 0$
+As $\sabs{y-x} < \epsilon$ for all $\epsilon > 0$, we have $\sabs{y-x} = 0$
 and $y=x$.  Hence the limit (if it exists) is unique.
 \end{proof}
 
@@ -1387,13 +1387,12 @@ we have
 \end{equation*}
 \end{proof}
 
-As the proposition shows, to study when a sequence has a limit is 
+In other words, to study when a sequence has a limit is 
 the same as studying when another sequence goes to zero.
-In general, it may be hard to decide if a sequence converges, but
-for certain sequences there exist easy to apply tests that tell us
-if the sequence converges or not.  Let us see one such test.
-First, let
-us compute the limit of a certain specific sequence.
+It may be hard to decide if a particular sequence converges, but
+for some sequences there exist easy-to-apply tests for convergence.
+Let us see one such test.
+First, we compute the limit of a certain specific sequence.
 
 \begin{prop}
 Let $c > 0$.
@@ -1409,17 +1408,20 @@ If $c > 1$, then $\{ c^n \}_{n=1}^\infty$ is unbounded.
 \end{prop}
 
 \begin{proof}
-First consider $c < 1$.  As $c > 0$, then $c^n > 0$ for all $n \in \N$ by
-\hyperref[induction:thm]{induction}.  As $c < 1$, then $c^{n+1} < c^n$ for all $n$.
-So $\{ c^n \}_{n=1}^\infty$ is
-a decreasing sequence that is bounded below.  Hence, it is convergent.
+First consider $c < 1$.  As $c > 0$, we get $c^n > 0$ for all $n \in \N$ by
+\hyperref[induction:thm]{induction}.  Then $c < 1$ implies that
+$c^{n+1} < c^n$ for all $n$.
+The sequence $\{ c^n \}_{n=1}^\infty$ is
+thus
+bounded below and
+decreasing.  Hence, it is convergent.
 Let $x \coloneqq \lim_{n\to\infty} c^n$.  The 1-tail $\{ c^{n+1} \}_{n=1}^\infty$
 also converges to $x$.  Taking the limit of both sides of $c^{n+1} = c \cdot
 c^n$, we obtain $x = cx$, or $(1-c)x=0$.  It follows that $x=0$ as $c \not= 1$.
 
 Now consider $c > 1$.
 Let $B > 0$ be arbitrary.
-As $\nicefrac{1}{c} < 1$, then $\bigl\{ {(\nicefrac{1}{c})}^n \bigr\}_{n=1}^\infty$
+As $\nicefrac{1}{c} < 1$, the sequence $\bigl\{ {(\nicefrac{1}{c})}^n \bigr\}_{n=1}^\infty$
 converges to $0$.
 Hence for some large enough $n$, we get
 \begin{equation*}
@@ -1582,7 +1584,7 @@ In particular,
 there exists an $M$ such that for $n \geq M$, we have
 $\frac{n}{{(1+\epsilon)}^n} < 1$, or 
 $n < {(1+\epsilon)}^n$, or 
-$n^{1/n} < 1+\epsilon$.  As $n \geq 1$, then $n^{1/n} \geq 1$, and
+$n^{1/n} < 1+\epsilon$.  As $n \geq 1$, we find $n^{1/n} \geq 1$, and
 so $0 \leq n^{1/n}-1 < \epsilon$. Consequently,
 $\lim\limits_{n\to\infty} n^{1/n} = 1$.
 \end{example}
@@ -2181,8 +2183,7 @@ x = \sup \{ a_i : i \in \N \} .
 \end{equation*}
 Let $y \coloneqq \lim_{i\to\infty} b_i = \inf \{ b_i : i \in \N \}$.  Since $a_i < b_i$ for
 all $i$, then $x \leq y$.
-As the sequences are monotone, then
-for all $i$, we have (why?)
+As the sequences are monotone, have (why?) that for all $i$,
 \begin{equation*}
 y-x \leq b_i-a_i = \frac{b_1-a_1}{2^{i-1}} .
 \end{equation*}
@@ -2807,7 +2808,7 @@ If $i \geq M$, then $n_i \geq M$ and $m_i \geq M$.  Hence,
 = \epsilon .
 \end{split}
 \end{equation*}
-As $\sabs{a-b} < \epsilon$ for all $\epsilon > 0$, then $a=b$ and 
+As $\sabs{a-b} < \epsilon$ for all $\epsilon > 0$, we have $a=b$ and 
 the sequence converges.
 \end{proof}
 
@@ -3310,8 +3311,8 @@ If $x_n \geq 0$ for all $n$, then $\sum_{n=1}^\infty x_n$ converges if and only 
 the sequence of partial sums is bounded above.
 \end{prop}
 
-As the limit of a monotone increasing sequence is the supremum, then
-when $x_n \geq 0$ for all $n$, we have the
+The limit of a monotone increasing sequence is the supremum.
+So when $x_n \geq 0$ for all $n$, we have the
 inequality
 \begin{equation*}
 \sum_{n=1}^k x_n \leq
@@ -3485,7 +3486,7 @@ Let $s_n$ denote the $n$th partial sum.
 \right) .
 \end{align*}
 Instead of estimating from below, we estimate from above.
-As $p$ is positive, then $2^p < 3^p$, and hence
+As $p$ is positive, $2^p < 3^p$, and hence
 $\frac{1}{2^p} + \frac{1}{3^p} <
 \frac{1}{2^p} + \frac{1}{2^p}$.  Similarly,
 $\frac{1}{4^p} + \frac{1}{5^p} +
@@ -3525,7 +3526,7 @@ s_{2^k-1}
 \right)}^i .
 \end{split}
 \end{equation*}
-As $p > 1$, then $\frac{1}{2^{p-1}} < 1$.
+As $p > 1$, we have $\frac{1}{2^{p-1}} < 1$.
 \propref{geometric:prop} says that
 \begin{equation*}
 \sum_{i=1}^\infty
@@ -4284,11 +4285,11 @@ for all $m \geq K$,
 \begin{equation*}
 \sum_{n=K}^m \sabs{a_n} < \epsilon .
 \end{equation*}
-As $\sum_{n=0}^\infty b_n$ converges, then
+As $\sum_{n=0}^\infty b_n$ converges,
 $B_{\text{max}} \coloneqq \sup \bigl\{ \sabs{ B_n - B } : n = 0,1,2,\ldots
 \bigr\}$
 is finite.  Take $m \geq 2K$.
-In particular $m-K+1 > K$.  So
+In particular, $m-K+1 > K$.  So
 \begin{equation*}
 \begin{split}
 \sum_{n=0}^m
