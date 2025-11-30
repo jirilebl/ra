@@ -1569,7 +1569,7 @@ all intervals have the same \myquote{size,} that is, they all have
 the same cardinality.  For instance, the map $f(x) \coloneqq 2x$
 takes the interval $[0,1]$ bijectively to the interval $[0,2]$.
 
-Maybe more interestingly,
+Perhaps more interestingly,
 the function $f(x) \coloneqq \tan(x)$
 is a bijective map from $(-\nicefrac{\pi}{2},\nicefrac{\pi}{2})$ to $\R$.  Hence the bounded
 interval $(-\nicefrac{\pi}{2},\nicefrac{\pi}{2})$ has the same cardinality as $\R$.  It is not
@@ -1583,7 +1583,8 @@ the difference between $[0,1]$ and $[0,2]$.  However, its proper definition
 requires much more machinery than we have right now.
 
 Let us say more about the cardinality of intervals and hence about the
-cardinality of $\R$.  We have seen that there exist irrational numbers, that is
+cardinality of $\R$.  We have seen that there exist irrational numbers;
+that is,
 $\R \setminus \Q$, is nonempty.  The question is: How many irrational numbers
 are there?  It turns out there are a lot more irrational numbers than rational
 numbers.  We have seen that $\Q$ is countable, and we will show
@@ -1659,7 +1660,7 @@ $a_n < y$ for all $n\in \N$
 and $y < b_n$ for all $n\in \N$.
 In other words, for every $n \in \N$, we have $y \in (a_n,b_n)$.
 By the construction of the sequence, $x_n \not\in (a_n,b_n)$,
-and so $y \not= x_n$.  As $y \not= x_n$ all $n \in \N$, we have that $y
+and so $y \not= x_n$.  As $y \not= x_n$ for all $n \in \N$, we have that $y
 \not\in X$.
 
 We have constructed a real number $y$ that is not in $X$, and thus $X$
@@ -1742,9 +1743,10 @@ explicit bijection.
 \end{exercise}
 
 \begin{exercise}[Challenging]
-A number $x$ is \emph{algebraic}\index{algebraic number} if $x$ is a root of a polynomial with
+A number $x$ is \emph{algebraic}\index{algebraic number} if $x$ is a root of
+a nonzero polynomial with
 integer coefficients, in other words, $a_n x^n + a_{n-1} x^{n-1} + \cdots
-+ a_1 x + a_0 = 0$ where $a_0,a_1,\ldots,a_n \in \Z$.
++ a_1 x + a_0 = 0$ where $a_0,a_1,\ldots,a_n \in \Z$, but not all zero.
 \begin{enumerate}[a)]
 \item
 Show that there are only
@@ -1753,7 +1755,7 @@ countably many algebraic numbers.
 Show that there exist non-algebraic (transcendental)
 numbers (follow in the footsteps of Cantor, use the uncountability of $\R$).
 \end{enumerate}
-Hint: Feel free to use the fact that a polynomial of degree $n$ has at most $n$ real
+Hint: Feel free to use the fact that a nonzero polynomial of degree $n$ has at most $n$ real
 roots.
 \end{exercise}
 
@@ -1787,7 +1789,7 @@ To represent $n$, we write the sequence of
 digits: $n = d_K d_{K-1} \cdots d_2 d_1 d_0$.
 
 Similarly, we
-represent some rational numbers.  That is, for certain
+represent some rational numbers.  For certain
 numbers $x$, we can find
 a negative integer $-M$, a positive integer $K$, and digits
 $d_K,d_{K-1},\ldots,d_1,d_0,d_{-1},\ldots,d_{-M}$, such that
@@ -1803,19 +1805,20 @@ x
 \end{equation*}
 We write $x = d_K d_{K-1} \cdots d_1 d_0 \, . \, d_{-1} d_{-2} \cdots d_{-M}$.
 
-Not every real number has such a representation, even the simple
+Not every real number has such a representation.
+Even the simple
 rational number $\nicefrac{1}{3}$ does not.  The irrational number $\sqrt{2}$
 does not have such a representation either.  To get a representation for
 all real numbers, we must allow infinitely many digits.
 
-Let us consider only real numbers in the interval $(0,1]$.  If
+Let us consider only real numbers in the interval $[0,1]$.  If
 we find a representation for these, adding
 integers to them obtains a representation for all real numbers.
 Take an infinite sequence of decimal digits:
 \begin{equation*}
 0.d_1d_2d_3\ldots.
 \end{equation*}
-That is, we have a digit $d_j$ for every $j \in \N$.
+We have a digit $d_j$ for every $j \in \N$.
 We renumbered the digits to avoid the negative signs.
 We call the number
 \begin{equation*}
@@ -2000,8 +2003,8 @@ Similarly,
 d_K < (x - D_{K-1}){10}^K \leq d_K + 1 .
 \end{equation*}
 Hence, both $e_K$ and $d_K$ are the largest integer $j$
-such that $j < (x - D_{K-1}){10}^K$, and therefore $e_K = d_K$.  That is,
-the representation is unique.
+such that $j < (x - D_{K-1}){10}^K$, and therefore $e_K = d_K$.
+In other words, the representation is unique.
 \end{proof}
 
 The representation is not unique if we do not require
@@ -2049,14 +2052,14 @@ e_n \coloneqq
 \end{cases}
 \end{equation*}
 Let $E_n$ be the $n$-digit truncation of $y = 0.e_1e_2e_3\ldots$.  Because
-all the digits are nonzero we get $E_n < E_{n+1} \leq y$.  Therefore,
+all the digits are nonzero, $E_n < E_{n+1} \leq y$.  Therefore,
 \begin{equation*}
 E_n < y \leq E_n + {10}^{-n}
 \end{equation*}
 for all $n$, and the representation is the unique one for $y$ from
 the proposition.  For every $n$, the $n$th digit
 of $y$ is different from the $n$th digit of $x_n$, so $y \not= x_n$.
-Therefore $y \notin X$, and as $X$ was an arbitrary countable subset,
+So $y \notin X$, and as $X$ was an arbitrary countable subset,
 $(0,1]$ must be uncountable.  See \figureref{cantorexamplefig} for an
 example.
 \begin{myfigureht}
@@ -2078,10 +2081,12 @@ positive integers $N$ and $P$, such that for all $n \geq N$, $d_n = d_{n+P}$.
 
 \begin{proof}
 Suppose $x = \nicefrac{p}{q}$ for positive integers $p$ and $q$.
-Suppose also that $x$ is a number with a unique representation, as
-otherwise we have seen above that both its representations are repeating,
-see also \exerciseref{exercise:nonuniquedecimals}.  This also means
-that $x \not= 1$ so $p < q$.
+If $x$ has a nonunique decimal representation, then both its representations
+eventually have repeating digits,
+either all $0$s or all $9$s,
+see \exerciseref{exercise:nonuniquedecimals}.
+Therefore suppose that $x$ has a unique representation.
+We also suppose that $x \not= 1$ so $p < q$.
 
 To compute the first digit, take $10 p$ and divide by
 $q$.  Let $d_1$ be the quotient, and the remainder $r_1$ is some integer
@@ -2095,7 +2100,7 @@ Furthermore,
 \frac{1}{10} .
 \end{equation*}
 The first inequality is strict since $x$ has a
-unique representation.  That is, $d_1$ really is the first digit.
+unique representation.  So $d_1$ really is the first digit.
 What is left is $\frac{r_1}{10q}$.
 To compute $d_2$, divide $10 r_1$ by $q$ obtaining $d_2$
 and $r_2$, where $r_2 = 10 r_1 - d_2 q$.
@@ -2126,7 +2131,7 @@ D_n \leq D_{n-1} + \frac{r_{n-1}}{10^{n-1} q} = \frac{p}{q} \leq D_n +
 By uniqueness, we really have
 the $n$th digit $d_n$ from the construction.
 
-The new digit depends only the remainder from the previous
+The new digit depends only on the remainder from the previous
 step.
 There are at most $q$ possible remainders.
 Hence, the process must start repeating itself after at most $q$ steps,
@@ -2141,11 +2146,11 @@ The number
 x = 0.101001000100001000001\ldots
 \end{equation*}
 is irrational.
-That is, the digits are a one,
+Specifically, the digits are a one,
 then a zero, then a one, then two zeros, then a one,
 then three zeros,
 and so on and so forth.
-The fact that $x$ is irrational follows from the
+That $x$ is irrational follows from the
 proposition; the digits never start repeating.
 For every $P$,
 if we go far enough, we find a 1 followed by at least $P$ zeros,
@@ -2184,7 +2189,7 @@ $[0,1]$ in terms of base $b$ rather than base 10 and prove
 
 \begin{exercise}
 Using the previous exercise with $b=2$ (binary),
-show that cardinality of $\R$ is the same as the cardinality of $\sP(\N)$,
+show that the cardinality of $\R$ is the same as the cardinality of $\sP(\N)$,
 obtaining yet another (though related) proof that $\R$ is uncountable.
 Hint: Construct two injections, one from $[0,1]$ to $\sP(\N)$
 and one from $\sP(\N)$ to $[0,1]$.  Hint 2: Given a

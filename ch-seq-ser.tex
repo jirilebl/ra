@@ -295,7 +295,7 @@ $\{ n \}_{n=1}^\infty$ is monotone increasing,
 $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ is monotone decreasing,
 the constant sequence $\{ 1 \}_{n=1}^\infty$ is both monotone increasing and monotone
 decreasing, and $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ is not monotone.
-First few terms of a sample monotone increasing sequence
+The first few terms of a sample monotone increasing sequence
 are shown in 
 \figureref{figsequenceincreasing}.
 
@@ -330,7 +330,7 @@ x \coloneqq \sup \{ x_n : n \in \N \} .
 Let $\epsilon > 0$ be arbitrary.  As $x$ is the supremum,
 there must be at least one $M \in \N$ such that $x_{M} > x-\epsilon$.
 As $\{ x_n \}_{n=1}^\infty$ is monotone increasing,
-then it is easy to see (by \hyperref[induction:thm]{induction}) that
+it is easy to see (by \hyperref[induction:thm]{induction}) that
 $x_n \geq x_{M}$ for all $n \geq M$.  Hence for all $n \geq M$,
 \begin{equation*}
 \sabs{x_n-x} = x-x_n \leq x-x_{M} < \epsilon  .
@@ -427,7 +427,7 @@ $\{ x_n \}_{n=1}^\infty$ is the sequence starting at $K+1$, usually written as
 For example, the $4$-tail of $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ is
 $\nicefrac{1}{5}, \nicefrac{1}{6}, \nicefrac{1}{7}, \nicefrac{1}{8},
 \ldots$.  The $0$-tail of a sequence is the sequence itself.
-The convergence and the limit of a sequence only depends on its tail.
+The convergence and the limit of a sequence only depend on its tail.
 
 \begin{prop}
 Let $\{ x_n \}_{n=1}^\infty$ be a sequence.  Then the following
@@ -894,7 +894,7 @@ $\epsilon > 0$ be given.  Find an $M_1$ such that for all $n \geq M_1$,
 we have $\sabs{x_n-x} < \nicefrac{\epsilon}{2}$.  Find an $M_2$ such that
 for all $n \geq M_2$, we have
 $\sabs{y_n-y} < \nicefrac{\epsilon}{2}$.  In particular,
-for some $n \geq \max\{ M_1, M_2 \}$, we have
+for any $n \geq \max\{ M_1, M_2 \}$, we have
 $x-x_n < \nicefrac{\epsilon}{2}$ and
 $y_n-y < \nicefrac{\epsilon}{2}$.  We add these inequalities to
 obtain
@@ -1256,7 +1256,7 @@ $\Bigl(\lim\limits_{n\to\infty} \frac{n^2}{n+1}\Bigr) -
 
 Now that we know we can interchange limits and algebraic operations, we can
 compute the limits of many sequences.
-One such class are recursively defined sequences, that is, sequences where
+One such class is recursively defined sequences, that is, sequences where
 the next number in the sequence is computed using a formula from a fixed number
 of preceding elements in the sequence.
 
@@ -1270,7 +1270,7 @@ divide by zero.
 Then we must find out if the sequence converges.  Only then
 can we attempt to find the limit.
 
-So let us prove that for all $n$ 
+So let us prove that for all $n$,
 $x_n$ exists and $x_n > 0$
 (so the sequence is well-defined and bounded below).
 Let us show this by \hyperref[induction:thm]{induction}.  We know that
@@ -1468,7 +1468,7 @@ exercises \ref{exercise:strongerratiotest1} and
 \begin{proof}
 Suppose $L < 1$.
 As
-$\frac{\sabs{x_{n+1}}}{\sabs{x_n}} \geq 0$ for all $n$, then $L \geq 0$.  Pick
+$\frac{\sabs{x_{n+1}}}{\sabs{x_n}} \geq 0$ for all $n$, we have $L \geq 0$.  Pick
 $r$ such that $L < r < 1$.
 We wish to compare the sequence $\{ x_n \}_{n=1}^\infty$ to the sequence $\{ r^n \}_{n=1}^\infty$.  The idea is that
 while the ratio $\frac{\sabs{x_{n+1}}}{\sabs{x_n}}$ is not going to be less than $L$ eventually,
@@ -1630,7 +1630,8 @@ Why or why not?
 \end{exercise}
 
 \begin{exercise}
-True or false, prove or find a counterexample.  If $\{ x_n \}_{n=1}^\infty$ is a sequence
+True or false, prove or find a counterexample:
+If $\{ x_n \}_{n=1}^\infty$ is a sequence
 such that $\{ x_n^2 \}_{n=1}^\infty$ converges, then $\{ x_n \}_{n=1}^\infty$ converges.
 \end{exercise}
 
@@ -1653,12 +1654,13 @@ exists and $L < 1$.  Show that $\{ x_n \}_{n=1}^\infty$ converges to $x$.
 \begin{exercise}[Challenging]
 Let $\{ x_n \}_{n=1}^\infty$ be a convergent sequence such
 that $x_n \geq 0$ and $k \in \N$.
-Then
+Show
 \begin{equation*}
 \lim_{n\to\infty} x_n^{1/k} =
 {\left( \lim_{n\to\infty} x_n \right)}^{1/k} .
 \end{equation*}
-Hint: Find an expression $q$ such that $\frac{x_n^{1/k}-x^{1/k}}{x_n-x} =
+Hint: First, handle limit being zero.
+Next, find an expression $q$ such that $\frac{x_n^{1/k}-x^{1/k}}{x_n-x} =
 \frac{1}{q}$.
 \end{exercise}
 
@@ -1738,7 +1740,7 @@ Hint: Show that for every $C > 0$, $\left\{ \frac{C^n}{n!}
 
 \sectionnotes{1--2 lectures, alternative proof of BW optional}
 
-In this section we study bounded sequences and their subsequences.
+In this section, we study bounded sequences and their subsequences.
 In particular, we define the so-called limit superior and limit inferior
 of a bounded sequence and talk about limits of subsequences.
 Furthermore, we prove the
@@ -1903,7 +1905,7 @@ The marking is as in \figureref{sequence-limsupliminf_an_bn}.
 We associate certain subsequences with $\limsup$ and $\liminf$.
 It is important to notice that $\{ a_n \}_{n=1}^\infty$ and
 $\{ b_n \}_{n=1}^\infty$ are not
-subsequences of $\{ x_n \}_{n=1}^\infty$, nor do they have to even 
+subsequences of $\{ x_n \}_{n=1}^\infty$, nor need they
 consist of the same numbers.
 For example, if the sequence is $\{ \nicefrac{1}{n} \}_{n=1}^\infty$, then
 $b_n = 0$ for all $n \in \N$.
@@ -2183,7 +2185,7 @@ x = \sup \{ a_i : i \in \N \} .
 \end{equation*}
 Let $y \coloneqq \lim_{i\to\infty} b_i = \inf \{ b_i : i \in \N \}$.  Since $a_i < b_i$ for
 all $i$, then $x \leq y$.
-As the sequences are monotone, have (why?) that for all $i$,
+As the sequences are monotone, we have (why?) that for all $i$,
 \begin{equation*}
 y-x \leq b_i-a_i = \frac{b_1-a_1}{2^{i-1}} .
 \end{equation*}
@@ -2446,8 +2448,7 @@ point}}
 if for every $\epsilon > 0$, the set $(x-\epsilon,x+\epsilon) \cap S
 \setminus \{ x \}$ is not empty.  That is, if there are points of $S$
 arbitrarily close to $x$.
-For example, $S \coloneqq \{ \nicefrac{1}{n} : n \in \N \}$ has a unique (only
-one) cluster point $0$, but $0 \notin S$.
+For example, $S \coloneqq \{ \nicefrac{1}{n} : n \in \N \}$ has a unique cluster point $0$, but $0 \notin S$.
 Prove the following version of the Bolzano--Weierstrass theorem:
 
 \medskip
