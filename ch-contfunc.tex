@@ -37,7 +37,7 @@ Note that a cluster point of $S$ need not lie in $S$.
 Let us see some examples.
 \begin{enumerate}[(i)]
 \item The set
-$\{ \nicefrac{1}{n} : n \in \N \}$ has a unique cluster point zero.
+$\{ \nicefrac{1}{n} : n \in \N \}$ has zero as its unique cluster point.
 \item The cluster points of the open interval $(0,1)$ are
 all points in the closed interval $[0,1]$.
 \item
@@ -153,7 +153,7 @@ Proof: Let $c \in \R$ be fixed, and suppose $\epsilon > 0$ is given.  Write
 \delta \coloneqq \min \left\{ 1 , \, \frac{\epsilon}{2\sabs{c}+1} \right\} .
 \end{equation*}
 Take $x \not= c$ such that $\sabs{x-c} < \delta$.  In particular,
-$\sabs{x-c} < 1$.  By reverse triangle inequality,
+$\sabs{x-c} < 1$.  By the reverse triangle inequality,
 \begin{equation*}
 \sabs{x}-\sabs{c} \leq \sabs{x-c} < 1 .
 \end{equation*}
@@ -327,7 +327,7 @@ Then
 \end{cor}
 
 \begin{proof}
-Take $\{ x_n \}_{n=1}^\infty$ be a sequence of numbers in $S \setminus \{ c \}$
+Take $\{ x_n \}_{n=1}^\infty$ to be a sequence of numbers in $S \setminus \{ c \}$
 that converges to $c$.  Let
 \begin{equation*}
 L_1 \coloneqq \lim_{x\to c} f(x), \qquad \text{and} \qquad L_2 \coloneqq \lim_{x\to c} g(x) .
@@ -444,7 +444,7 @@ Let $S \subset \R$, $c \in \R$, and
 let $f \colon S
 \to \R$ be a function.
 Suppose
-$A \subset S$ is such that there is some $\alpha > 0$ such that
+$A \subset S$ is such that for some $\alpha > 0$, we have
 $(A \setminus \{ c \}) \cap (c-\alpha,c+\alpha) = (S \setminus \{ c \}) \cap (c-\alpha,c+\alpha)$.
 \begin{enumerate}[(i)]
 \item The point $c$ is a cluster point of $A$ if and only if $c$ is a cluster point
@@ -505,7 +505,7 @@ $\lim\limits_{x \nearrow c} f(x)$ for
 $\lim\limits_{x \to c^-} f(x)$.}
 
 \begin{defn} \label{defn:onesidedlimits}
-Let $f \colon S \to \R$ be function and let $c \in \R$.  If
+Let $f \colon S \to \R$ be a function and let $c \in \R$.  If
 $c$ is a cluster point of
 $S \cap (c,\infty)$
 and the limit
@@ -646,16 +646,8 @@ see also
 \exerciseref{exercise:contlimitbadcomposition}.
 \end{exercise}
 
-%\begin{exercise}[note\footnote{This exercise is almost identical to the next one.  It
-%will be replaced in the next major edition.}]
-%Let $c$ be a cluster point of $A \subset \R$, and $f \colon A \to \R$
-%be a function.  Suppose for every sequence $\{x_n\}_{n=1}^\infty$ in $A$,
-%such that $\lim_{n\to\infty} x_n = c$,
-%the sequence $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ is Cauchy.  Prove that
-%$\lim_{x\to c} f(x)$ exists.
-%\end{exercise}
 \begin{exercise}
-Suppose that $f \colon \R \to \R$ be a function such that for every 
+Suppose $f \colon \R \to \R$ is a function such that for every 
 sequence $\{x_n\}_{n=1}^\infty$ in $\R$, the sequence
 $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges.  Prove that
 $f$ is constant, that is,
@@ -721,13 +713,12 @@ the corollary does not hold.
 
 \sectionnotes{2--2.5 lectures}
 
-%You undoubtedly heard of continuous functions in your schooling.
 A high-school criterion for the concept of continuity
 is that a function is continuous if
 we can draw its graph without lifting the pen from the paper.  While that
 intuitive concept may be useful in simple situations, we require
 rigor.  The following definition took three great mathematicians
-(Bolzano, Cauchy, and finally Weierstrass) to get correctly and its final
+(Bolzano, Cauchy, and finally Weierstrass) to formulate correctly and its final
 form dates only to the late 1800s.
 
 \subsection{Definition and basic properties}
@@ -867,7 +858,7 @@ Thus $f$ is continuous at $c$.  As $f$ is continuous at all $c \in
 We have previously shown $\lim_{x \to c} x^2 = c^2$ directly.  Therefore
 the function $x^2$ is continuous.  The last item of \propref{contbasic:prop} and the continuity of
 algebraic operations with respect to limits of sequences,
-\propref{prop:contalg}, gives a quick proof of a much more general result.
+\propref{prop:contalg}, give a quick proof of a much more general result.
 
 \begin{prop}
 Let $f \colon \R \to \R$ be a \emph{\myindex{polynomial}}.  That is,
@@ -1031,7 +1022,7 @@ When $f$ is not continuous at $c$, we
 say $f$ is \emph{\myindex{discontinuous}} at $c$, or that it has a
 \emph{\myindex{discontinuity}} at~$c$.
 The following proposition is a useful test and follows immediately
-from third item of \propref{contbasic:prop}.
+from the third item of \propref{contbasic:prop}.
 
 \begin{prop}
 Let $f \colon S \to \R$ be a function and $c \in S$.  Suppose 
@@ -1310,7 +1301,7 @@ Suppose $f \colon \R \to \R$ is continuous at $0$ and
 such that $f(x+y) = f(x) + f(y)$ for every $x$ and $y$.
 Show that $f(x) = ax$ for some $a \in \R$.
 Hint: Show that $f(nx) = nf(x)$, then show $f$ is continuous on $\R$.
-Then show that $\nicefrac{f(x)}{x} = f(1)$ for all rational $x$.
+Then show that $\nicefrac{f(x)}{x} = f(1)$ for all rational $x \not= 0$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:minmaxcont}
@@ -1337,7 +1328,7 @@ $\babs{g(x)} \leq \babs{f(x)}$ for all $x \in [-1,1]$.
 A function $f \colon I \to \R$ is \emph{\myindex{convex}} if
 whenever $a \leq x \leq b$ for $a,x,b$ in $I$, we have
 $f(x) \leq f(a) \frac{b-x}{b-a} + f(b) \frac{x-a}{b-a}$.  In other words,
-if the line drawn between $\bigl(a,f(a)\bigr)$ and $\bigl(b,f(b)\bigr)$ 
+the line drawn between $\bigl(a,f(a)\bigr)$ and $\bigl(b,f(b)\bigr)$ 
 is above the graph of $f$.
 \begin{enumerate}[a)]
 \item
@@ -1501,7 +1492,7 @@ at $x=0$ when $f(0) = 1$.  It achieves a maximum at $x=2$ where $f(2) = 5$.
 Do note that the domain of definition matters.  If we instead took the domain
 to be $[-10,10]$, then $f$ would no longer have a maximum at $x=2$.
 Instead,
-the maximum would be achieved at either $x=10$ or $x=-10$.
+the maximum would be achieved at $x=10$ and also at $x=-10$.
 \end{example}
 
 We show by examples that the different hypotheses of the theorem are
@@ -1509,7 +1500,7 @@ truly needed.
 
 \begin{example}
 The function $f \colon \R \to \R$ defined by $f(x) \coloneqq x$
-achieves neither a minimum, nor a maximum.  So it is important that
+achieves neither a minimum nor a maximum.  So it is important that
 we are looking at a bounded interval.
 \end{example}
 
@@ -1536,7 +1527,7 @@ the function is not continuous at 0.
 \subsection{Bolzano's intermediate value theorem}
 
 Bolzano's intermediate value theorem is one of the cornerstones of analysis.
-It is sometimes only called the intermediate value theorem, or just
+It is sometimes only called the intermediate value theorem or just
 Bolzano's theorem.  To prove Bolzano's theorem we prove the
 following simpler lemma.
 
@@ -1757,12 +1748,13 @@ You may recall how hard we worked
 in \exampleref{example:sqrt2}
 to show that $\sqrt{2}$ exists.
 With Bolzano's
-theorem, we can prove the existence $k$th root of any positive number
+theorem, we can prove the existence of a $k$th root of any positive number
 $y > 0$ without any effort.
 We claim that for any $k \in \N$ and any $y > 0$,
 there exists a number $x > 0$ such that $x^k = y$.
 
 Proof: If $y=1$, then it is clear, so assume $y\not= 1$.
+Similarly, assume $k \geq 2$.
 Let $f(x) \coloneqq x^k - y$.  We notice $f(0) = -y < 0$.
 If $y < 1$, then $f(1) = 1^k -y > 0$.  If $y > 1$,
 then $f(y) = y^k-y = y(y^{k-1}-1) > 0$.
@@ -1787,7 +1779,7 @@ Whenever $a < b$ and $y$ is such that $f(a) < y < f(b)$
 or $f(a) > y > f(b)$,
 there exists a $c \in (a,b)$ such that $f(c) = y$.
 See \figureref{figsin1x} for a graph of $\sin(\nicefrac{1}{x})$.
-Proof is left as \exerciseref{exercise:meanvaluepropsin1x}.
+The proof is left as \exerciseref{exercise:meanvaluepropsin1x}.
 \end{example}
 
 The intermediate value theorem says that if $f \colon [a,b] \to \R$ is
@@ -2531,7 +2523,8 @@ $M \in \R$, there exists an $x \in S$ such that $x \leq M$.
 Let $f \colon S \to \R$ be a function, where 
 $\infty$ is a cluster point of $S$.
 If there exists an $L \in \R$
-such that for every $\epsilon > 0$, there is an $M \in \R$ such that
+with the property
+that for every $\epsilon > 0$, there is an $M \in \R$ such that
 \begin{equation*}
 \babs{f(x) - L} < \epsilon 
 \end{equation*}
