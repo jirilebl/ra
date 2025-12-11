@@ -4,46 +4,13 @@ echo progress.  The realanal-html.xsl assumes a fixed location for the PreTeXt
 echo xsl file.  You need to edit this first.
 echo Do ^C to get out.
 echo
-echo You should first run with --runpdft --optimize-svg which
-echo runs the pdft figures and then also optimizes svgs.  Without
-echo --runpdft some figures will be missing.  You can also use --full
-echo which does all three arguments.
-echo Optimizations are in optimize-svgs.sh in figures/
-#echo You should first run with --runpdft --optimize-svg which
-#echo runs the pdft figures and then also optimizes svgs.  Without
-#echo --runpdft some figures will be missing.  You can also use --full
-#echo which does both arguments.
-echo You should first run with --runpdft
-echo Optimizations are in optimize-svgs.sh in figures/
-echo "But optimization (svgo) is buggy."
+echo You should first run with --runpdft or --full to run the pdft figures.
 echo
-#echo To rerun all figures first do \"rm "*-mbx.*" "*-mbxpdft.*"\", or run
-echo To rerun all .fig figures to pdf and svg first
-echo do \"rm "figures/*-mbxpdft.*"\", or run
+echo To rerun all figures first do \"rm "*-mbx.*" "*-mbxpdft.*"\", or run
 echo this script with --kill-generated.
 echo 
-echo Normally, the normal figure svg figures are not remade from the
-echo pdfs, to redo them, first do \"rm "figures/*-mbx.*"\".
-echo These are in git normally.
-echo Beware that svgo may be a bit buggy so good to check the output.
-echo
-
-if [ x`svgo -v` != "x3.0.4" ]; then
-	echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-	echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-	echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-	echo 
-	echo svgo at the incorrect version, do "sudo install -g svgo@3.0.4"
-	echo other versions seem to eat content
-	echo 
-	echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-	echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-	echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-fi
 
 PDFT=no
-#OPTPNG=no
-#OPTSVG=no
 
 # parse parameters
 while [ "$1" != "" ]; do
@@ -55,24 +22,14 @@ while [ "$1" != "" ]; do
 	    echo "OPTION (runpdft) Will run pdf_t figures"
 	    PDFT=yes
             ;;
-#        --optimize-png)
-#	    echo "OPTION (optimize-png) Will run optimize-pngs.sh"
-#	    OPTPNG=yes
-#            ;;
-#        --optimize-svg)
-#	    echo "OPTION (optimize-svg) Will run optimize-svgs.sh"
-#	    OPTSVG=yes
-#	    ;;
         --full)
 	    echo "OPTION (full) Will run pdf_t optimize svgs"
 	    PDFT=yes
-	    #OPTPNG=yes
-	    #OPTSVG=yes
             ;;
         --kill-generated)
 	    echo "OPTION (kill-generated) Killing generated figures and exiting (not killing -mbx.svg)."
 	    cd figures
-	    #rm *-mbx.(svg|png)
+	    rm *-mbx.(svg|png)
 	    rm *-mbxpdft.(svg|png)
 	    cd ..
 	    exit
@@ -114,16 +71,6 @@ perl -0777 -i -pe 's:<rahr/>[ \r\n]*<rahr/>:<rahr/>:igs' ./realanal-out.xml
 
 #xmllint --format -o realanal-out2.xml realanal-out.xml
 
-#if [ "$OPTSVG" = "yes" ] ; then
-#	echo
-#	echo OPTIMIZING SVG...
-#	echo
-#
-#	cd figures
-#	./optimize-svgs.sh
-#	cd ..
-#fi
-
 echo
 echo MOVING OLD html, CREATING NEW html, COPYING figures/ in there
 echo
@@ -134,6 +81,10 @@ fi
 mkdir html
 cd html
 cp -a ../figures .
+rm figures/.gitignore
+rm figures/*.sh
+rm figures/figurerun*
+rm figures/figure-concat*
 cp ../extra.css .
 cp ../logo.png .
 

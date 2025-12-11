@@ -33,7 +33,7 @@ while($line = <$in>)
 {
 	chomp($line);
 	if ($line =~ m/^%mbxFIXME/) {
-		printf("\n\n\nHUH?? FOUND mbxFIXME!\n\n\n");
+		printf("\n\n\nERROR: HUH?? FOUND mbxFIXME!\n\n\n");
 		$num_errors++;
 	} elsif ($line =~ m/^%mbxSTARTIGNORE/) {
 		$mbxignore = 1;
@@ -183,7 +183,7 @@ sub get_chapter_num {
 		elsif ($chapter_num == 3) { return "C"; }
 		elsif ($chapter_num == 4) { return "D"; }
 		elsif ($chapter_num == 5) { return "E"; }
-		print "\n\n\nHUH? too many appendices ($chapter_num)\n\n\n";
+		print "\n\n\nERROR: HUH? too many appendices ($chapter_num)\n\n\n";
 		$num_errors++;
 	}
 }
@@ -494,7 +494,7 @@ sub ensure_mbx_svg_version {
 	if ((not -e "$thefile-mbx.svg") and (-e "$thefile.pdf")) {
 		print "MAKING $thefile-mbx.svg from PDF\n";
 		system("pdftocairo -pdf $thefile.pdf $thefile-mbx.svg");
-		system("svgo $thefile-mbx.svg");
+		system("svgo-ll --enable=round $thefile-mbx.svg");
 	}
 }
 
@@ -572,7 +572,7 @@ sub read_paragraph {
 			 undef $in;
 			 print "\n((((\nFOUND \\input $thefile\n";
 			 if ( ! open($in,'<', $thefile)) {
-				 print "\n\nHUH???\n\nThere is an \\input $thefile ... but I can't open \"$thefile\"\n\n))))\n\n";
+				 print "\n\nERROR: HUH???\n\nThere is an \\input $thefile ... but I can't open \"$thefile\"\n\n))))\n\n";
 
 				 $num_errors++;
 
@@ -964,14 +964,14 @@ while(1)
 			$indexes = do_line_subs($indexes);
 
 			#FIXME: Is wrapping in aligned all kosher?
-			print $out "<me>$indexes\n";
+			print $out "<md>$indexes\n";
 			print $out "\\begin{aligned}\n";
 			print "(wrapping in aligned) EQ = $eqn\n";
 			print $out "$eqn";
 			print $out "\\end{aligned}\n";
-			print $out "</me>\n";
+			print $out "</md>\n";
 		} else {
-			print "\n\n\nHUH?\n\n\nNo end align*!\n\n$para\n\n";
+			print "\n\n\nERROR: HUH?\n\n\nNo end align*!\n\n$para\n\n";
 			$num_errors++;
 		}
 	} elsif ($para =~ s/^\\begin\{align\}[ \n]*//) {
@@ -1007,7 +1007,7 @@ while(1)
 			print $out "</mrow>\n";
 			print $out "</md>\n";
 		} else {
-			print "\n\n\nHUH?\n\n\nNo end align!\n\n$para\n\n";
+			print "\n\n\nERROR: HUH?\n\n\nNo end align!\n\n$para\n\n";
 			$num_errors++;
 		}
 
@@ -1026,12 +1026,12 @@ while(1)
 			}
 			$indexes = do_line_subs($indexes);
 
-			print $out "<me latexenv=\"multline*\">$indexes\n";
+			print $out "<md latexenv=\"multline*\">$indexes\n";
 			print "EQ(multline*) = $eqn\n";
 			print $out "$eqn";
-			print $out "</me>\n";
+			print $out "</md>\n";
 		} else {
-			print "\n\n\nHUH?\n\n\nNo end multline*!\n\n$para\n\n";
+			print "\n\n\nERROR: HUH?\n\n\nNo end multline*!\n\n$para\n\n";
 			$num_errors++;
 		}
 	} elsif ($para =~ s/^\\begin\{multline\}[ \n]*//) {
@@ -1057,15 +1057,15 @@ while(1)
 			my $the_num = get_equation_number ();
 
 			if ($theid eq "") {
-				print $out "<men number=\"$the_num\" latexenv=\"multline\">$indexes\n";
+				print $out "<md number=\"yes\" eqnumber=\"$the_num\" latexenv=\"multline\">$indexes\n";
 			} else {
-				print $out "<men xml:id=\"$theid\" number=\"$the_num\" latexenv=\"multline\">$indexes\n";
+				print $out "<md xml:id=\"$theid\" number=\"yes\" eqnumber=\"$the_num\" latexenv=\"multline\">$indexes\n";
 			}
 			print "EQ(multline) = $eqn\n";
 			print $out "$eqn";
-			print $out "</men>\n";
+			print $out "</md>\n";
 		} else {
-			print "\n\n\nHUH?\n\n\nNo end multline!\n\n$para\n\n";
+			print "\n\n\nERROR: HUH?\n\n\nNo end multline!\n\n$para\n\n";
 			$num_errors++;
 		}
 
@@ -1084,11 +1084,11 @@ while(1)
 			}
 			$indexes = do_line_subs($indexes);
 
-			print $out "<me>$indexes\n";
+			print $out "<md>$indexes\n";
 			print "EQ = $eqn\n";
-			print $out "$eqn</me>\n";
+			print $out "$eqn</md>\n";
 		} else {
-			print "\n\n\nHUH?\n\n\nNo end equation*!\n\n$para\n\n";
+			print "\n\n\nERROR: HUH?\n\n\nNo end equation*!\n\n$para\n\n";
 			$num_errors++;
 		}
 	} elsif ($para =~ s/^\\begin\{equation\}[ \n]*//) {
@@ -1116,14 +1116,14 @@ while(1)
 			my $the_num = get_equation_number ();
 
 			if ($theid eq "") {
-				print $out "<men number=\"$the_num\">$indexes\n";
+				print $out "<md number=\"yes\" eqnumber=\"$the_num\">$indexes\n";
 			} else {
-				print $out "<men xml:id=\"$theid\" number=\"$the_num\">$indexes\n";
+				print $out "<md xml:id=\"$theid\" number=\"yes\" eqnumber=\"$the_num\">$indexes\n";
 			}
 			print "EQ = $eqn\n";
-			print $out "$eqn</men>\n";
+			print $out "$eqn</md>\n";
 		} else {
-			print "\n\n\nHUH?\n\n\nNo end equation!\n\n$para\n\n";
+			print "\n\n\nERROR: HUH?\n\n\nNo end equation!\n\n$para\n\n";
 			$num_errors++;
 		}
 
@@ -1144,7 +1144,7 @@ while(1)
 				$theid = modify_id($2);
 				$caption = do_more_subs($caption);
 			} else {
-				print "\n\n\nHUH?\n\n\nNo caption/label!\n\n$para\n\n";
+				print "\n\n\nERROR: HUH?\n\n\nNo caption/label!\n\n$para\n\n";
 				$num_errors++;
 			}
 			# kill centering and the rules and the tabular 
@@ -1171,7 +1171,7 @@ while(1)
 				$fline =~ s|\$(.*?)\$|<m>$1</m>|sg;
 				print $out "    <row bottom=\"minor\"><cell>$fline</cell></row>\n";
 			} else {
-				print "\n\n\nHUH?\n\n\nNo first line!\n\n$para\n\n";
+				print "\n\n\nERROR: HUH?\n\n\nNo first line!\n\n$para\n\n";
 				$num_errors++;
 			}
 			print $out "    <row><cell>";
@@ -1190,7 +1190,7 @@ while(1)
 
 			print $out "$table</cell></row>\n  </tabular>\n</table><rahr/>\n";
 		} else {
-			print "\n\n\nHUH?\n\n\nNo end table!\n\n$para\n\n";
+			print "\n\n\nERROR: HUH?\n\n\nNo end table!\n\n$para\n\n";
 			$num_errors++;
 		}
 		#
@@ -1234,7 +1234,7 @@ while(1)
 					$fline =~ s|\$(.*?)\$|<m>$1</m>|sg;
 					print $out "  <row bottom=\"minor\"><cell>$fline</cell></row>\n";
 				} else {
-					print "\n\n\nHUH?\n\n\nNo first line!\n\n$para\n\n";
+					print "\n\n\nERROR: HUH?\n\n\nNo first line!\n\n$para\n\n";
 					$num_errors++;
 				}
 			}
@@ -1259,7 +1259,7 @@ while(1)
 				print $out "</p>\n";
 			}
 		} else {
-			print "\n\n\nHUH?\n\n\nNo end tabular/center!\n\n$para\n\n";
+			print "\n\n\nERROR: HUH?\n\n\nNo end tabular/center!\n\n$para\n\n";
 			$num_errors++;
 		}
 		
@@ -1293,7 +1293,7 @@ while(1)
 				$caption =~ s|\\myquote\{(.*?)\}|<q>$1</q>|sg;
 				$caption =~ s|\$(.*?)\$|<m>$1</m>|sg;
 			} else {
-				print "\n\n\nHUH?\n\n\nNo caption/label!\n\nFIG=>$figure<\n\n";
+				print "\n\n\nERROR: HUH?\n\n\nNo caption/label!\n\nFIG=>$figure<\n\n";
 				$num_errors++;
 			}
 
@@ -1324,14 +1324,14 @@ while(1)
 					my $thesizestr = get_size_of_svg("$thefile-mbxpdft.svg");
 					print $out "<raimage source=\"$thefile-mbxpdft\" $thesizestr />\n";
 				} elsif (not $figure eq "") {
-					print "\n\n\nHUH?\n\n\nFigure too complicated!\n\nFIG(whatsleft)=>$figure<\n\n";
+					print "\n\n\nERROR: HUH?\n\n\nFigure too complicated!\n\nFIG(whatsleft)=>$figure<\n\n";
 					$figure = "";
 					$num_errors++;
 				}
 			} while (not $figure eq "");
 			print $out "</figure><rahr/>\n";
 		} else {
-			print "\n\n\nHUH?\n\n\nNo end figure!\n\n$para\n\n";
+			print "\n\n\nERROR: HUH?\n\n\nNo end figure!\n\n$para\n\n";
 			$num_errors++;
 		}
 
@@ -1547,7 +1547,7 @@ while(1)
 		close_paragraph();
 		print "(begin enumerate resume label >$1<)\n";
 		if ($list_level > 0) {
-			print "\n\n\nHUH? RESUME ONLY WORKS ON ONE LEVEL!\n\n\n";
+			print "\n\n\nERROR: HUH? RESUME ONLY WORKS ON ONE LEVEL!\n\n\n";
 			$num_errors++;
 		}
 		print $out "<ol marker=\"$1\" start=\"$list_start\">\n";
@@ -1557,7 +1557,7 @@ while(1)
 		close_paragraph();
 		print "(begin enumerate resume)\n";
 		if ($list_level > 0) {
-			print "\n\n\nHUH? RESUME ONLY WORKS ON ONE LEVEL!\n\n\n";
+			print "\n\n\nERROR: HUH? RESUME ONLY WORKS ON ONE LEVEL!\n\n\n";
 			$num_errors++;
 		}
 		print $out "<ol start=\"$list_start\">\n";
@@ -1619,11 +1619,11 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{tasks\}\[resume\]\((.*?)\)[ \n]*//) {
 		close_paragraph();
 		#FIXME: double check that this really works
-		#print "\n\n\nHUH? Don't understand resume on tasks yet!\n\n\n";
+		#print "\n\n\nERROR: HUH? Don't understand resume on tasks yet!\n\n\n";
 		#$num_errors++;
 		print "(begin resume tasks enumerate cols=$1<)\n";
 		if ($list_level > 0) {
-			print "\n\n\nHUH? RESUME ONLY WORKS ON ONE LEVEL!\n\n\n";
+			print "\n\n\nERROR: HUH? RESUME ONLY WORKS ON ONE LEVEL!\n\n\n";
 			$num_errors++;
 		}
 		print $out "<ol marker=\"a)\" cols=\"$1\" start=\"$list_start\">\n";
@@ -1632,11 +1632,11 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{tasks\}\[resume\][ \n]*//) {
 		close_paragraph();
 		#FIXME: DOUBLE CHECK
-		#print "\n\n\nHUH? Don't understand resume on tasks yet!\n\n\n";
+		#print "\n\n\nERROR: HUH? Don't understand resume on tasks yet!\n\n\n";
 		#$num_errors++;
 		print "(begin resume tasks enumerate)\n";
 		if ($list_level > 0) {
-			print "\n\n\nHUH? RESUME ONLY WORKS ON ONE LEVEL!\n\n\n";
+			print "\n\n\nERROR: HUH? RESUME ONLY WORKS ON ONE LEVEL!\n\n\n";
 			$num_errors++;
 		}
 		print $out "<ol marker=\"a)\" start=\"$list_start\">\n";
@@ -1685,7 +1685,7 @@ while(1)
 			print $out "</em>";
 			close_paragraph();
 		} else {
-			print "\n\nHUH???\n\nNo (or unknown =\"$tagtoclose\") tag to close\n\n";
+			print "\n\nERROR: HUH???\n\nNo (or unknown =\"$tagtoclose\") tag to close\n\n";
 			$num_errors++;
 		}
 
@@ -1795,7 +1795,7 @@ while(1)
 		my $line = $1;
 		print_line($line);
 	} elsif ($para =~ s/^(\\[^ \n\r\t{]*)//) {
-		print "\n\nHUH???\n\nUNHANDLED escape $1!\n$para\n\n";
+		print "\n\nERROR: HUH???\n\nUNHANDLED escape $1!\n$para\n\n";
 		print_line($1);
 		#$para = "";
 		$num_errors++;

@@ -14,10 +14,24 @@
 
   <!-- apply-imports applies also the original, apply-templates ignores the original-->
   <!-- need hardcoded numbers on everything, so nonstandard pretext -->
-  <xsl:template match="men|mrow|exercise|exercises|example|remark|theorem|lemma|proposition|corollary|principle|axiom|definition|chapter|appendix|section|subsection|subsubsection|figure|table" mode="number">
+  <xsl:template match="exercise|exercises|example|remark|theorem|lemma|proposition|corollary|principle|axiom|definition|chapter|appendix|section|subsection|subsubsection|figure|table" mode="number">
     <xsl:choose>
       <xsl:when test="@number">
         <xsl:value-of select="@number"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:apply-imports/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <xsl:template match="mrow|md" mode="number">
+    <xsl:choose>
+      <xsl:when test="@eqnumber">
+        <xsl:value-of select="@eqnumber"/>
+      </xsl:when>
+      <xsl:when test="../@eqnumber">
+        <xsl:value-of select="../@eqnumber"/>
       </xsl:when>
       <xsl:otherwise>
         <xsl:apply-imports/>
@@ -38,7 +52,7 @@
   </xsl:template>
 
   <!-- need multline so allow custom environments -->
-  <xsl:template match="me|men" mode="displaymath-alignment">
+  <xsl:template match="md" mode="displaymath-alignment">
     <xsl:choose>
       <xsl:when test="@latexenv">
         <xsl:value-of select="@latexenv"/>
