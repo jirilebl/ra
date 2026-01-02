@@ -8,9 +8,9 @@
 \sectionnotes{1.5 lectures}
 
 As mentioned in the introduction, the main idea in analysis is to take
-limits.  In \chapterref{seq:chapter} we learned to take limits of sequences of
-real numbers.  And in \chapterref{lim:chapter} we learned to take limits
-of functions as a real number approached some other real number.
+limits.  In \chapterref{seq:chapter}, we learned to take limits of sequences of
+real numbers.  In \chapterref{lim:chapter}, we learned to take limits
+of functions as a real variable approached some real number.
 
 We want to take limits in more complicated contexts.  For
 example, we want to have sequences of points in 3-dimensional space.
@@ -69,7 +69,7 @@ if the metric is clear from context.
 \end{defn}
 
 The geometric idea is that $d$ is the distance between two points. 
-Items \ref{metric:pos}--\ref{metric:com} have obvious geometric
+Items \ref{metric:pos}--\ref{metric:com} have an obvious geometric
 interpretation: Distance is always nonnegative, the only point that is
 distance 0 away from $x$ is $x$ itself, and finally that the distance from
 $x$ to $y$ is the same as the distance from $y$ to $x$.  The triangle
@@ -165,7 +165,7 @@ is an element of $\R^n$.
 We also
 write simply $0 \in \R^n$ to mean the point $(0,0,\ldots,0)$.  Before
 making $\R^n$ a metric space, we prove an important inequality, the
-so-called Cauchy--Schwarz inequality.
+Cauchy--Schwarz inequality.
 
 \begin{lemma}[\myindex{Cauchy--Schwarz inequality}%
 \footnote{%
@@ -322,7 +322,7 @@ d(z_1,z_2) = \sqrt{{(x_1-x_2)}^2+ {(y_1-y_2)}^2} = \sabs{z_1-z_2}.
 \end{equation*}
 Furthermore, when working with complex numbers
 it is often convenient to write the metric in terms of
-the so-called
+the
 \emph{\myindex{complex conjugate}}: The conjugate of $z=x+iy$
 is $\bar{z} \coloneqq x-iy$.  Then 
 ${\sabs{z}}^2 = x^2 +y^2 = z\bar{z}$, and so ${\sabs{z_1-z_2}}^2 =
@@ -330,7 +330,7 @@ ${\sabs{z}}^2 = x^2 +y^2 = z\bar{z}$, and so ${\sabs{z_1-z_2}}^2 =
 \end{example}
 
 \begin{example}
-An example to keep in mind is the so-called
+An example to keep in mind is the
 \emph{\myindex{discrete metric}}.
 For any set $X$, define
 \begin{equation*}
@@ -369,13 +369,13 @@ d(f,g) \coloneqq \sup_{x \in [a,b]} \babs{f(x)-g(x)} .
 Let us check the properties.  First, $d(f,g)$ is finite as
 $\babs{f(x)-g(x)}$ is a continuous function on a closed bounded interval
 $[a,b]$, and so is bounded.
-It is clear that $d(f,g) \geq 0$, 
+It is clear that $d(f,g) \geq 0$;
 it is the supremum of nonnegative numbers.  If $f = g$,
 then $\babs{f(x)-g(x)} = 0$ for all $x$, and hence $d(f,g) = 0$.  Conversely,
 if $d(f,g) = 0$, then for every $x$, we have $\babs{f(x)-g(x)} \leq d(f,g) = 0$,
 and hence $f(x) = g(x)$ for all $x$, and so $f=g$.  That $d(f,g) = d(g,f)$
-is equally trivial.  To show the triangle inequality we use the standard
-triangle inequality;
+is equally trivial.  To show the triangle inequality, we use the standard
+triangle inequality.
 \begin{equation*}
 \begin{split}
 d(f,g) & =
@@ -414,7 +414,7 @@ The law of cosines from vector calculus says
 $d(x,y) = \arccos(x_1y_1+x_2y_2+x_3y_3)$.
 It is relatively easy to see that this function satisfies the first three
 properties of a metric.
-Triangle inequality is harder to prove, and requires a bit more
+The triangle inequality is harder to prove, and requires a bit more
 trigonometry and linear algebra than we wish to indulge in right now, so let
 us leave it without proof.
 
@@ -481,7 +481,7 @@ then we obtain a bounded metric space.  In fact, any set with the
 discrete metric is bounded.
 
 There are other equivalent ways we could generalize boundedness,
-and are left as exercises.  Suppose $X$ is nonempty to avoid a technicality.
+which are left as exercises.  Suppose $X$ is nonempty to avoid a technicality.
 Then $S \subset X$ being bounded is equivalent to either
 \begin{enumerate}[(i)]
 \item
@@ -519,7 +519,7 @@ It takes 5 minutes either way between buildings $A$ and $B$.  However,
 building $C$ is on a hill and it takes 10 minutes from $A$ and 15 minutes
 from $B$ to get to $C$.  On the other hand it takes 5 minutes to go
 from $C$ to $A$ and 7 minutes to go from $C$ to $B$, as we are going
-downhill.  Do these distances define a metric?  If so, prove it, if not, say
+downhill.  Do these distances define a metric?  If so, prove it; if not, say
 why not.
 \end{exercise}
 
@@ -575,7 +575,7 @@ extended reals.
 \item
 Let $Y \subset \sP(X)$ be the set of bounded nonempty subsets.
 Prove that
-$(Y,d_H)$ is a so-called \emph{\myindex{pseudometric space}}:
+$(Y,d_H)$ is what we call a \emph{\myindex{pseudometric space}}:
 $d_H$ satisfies the metric properties
 \ref{metric:pos},
 \ref{metric:com}, 
@@ -631,7 +631,7 @@ Find a metric $d$ on $\N$ such that $\N$ is an unbounded set in $(\N,d)$.
 Find a metric $d$ on $\N$ such that $\N$ is a bounded set in $(\N,d)$.
 \item
 Find a metric $d$ on $\N$ such that for every $n \in \N$ and every $\epsilon > 0$,
-there exists an $m \in \N$ such that $d(n,m) < \epsilon$.
+there exists an $m \in \N$, $m \not= n$, such that $d(n,m) < \epsilon$.
 \end{enumerate}
 \end{exercise}
 
@@ -683,9 +683,9 @@ to some finite number.
 \subsection{Topology}
 
 Before we get to convergence,
-we define the so-called \emph{\myindex{topology}}.
+we define the \emph{\myindex{topology}}.
 That is,
-we define open and closed sets in a metric space.
+we define the notion of open and closed sets.
 And before that,
 we define two special open and closed sets.
 
@@ -992,7 +992,7 @@ We avoid the empty set for essentially the same reason why
 two clopen subsets and disconnected sets have more than two.  The empty set
 has exactly one.}
 metric space $(X,d)$ is \emph{\myindex{connected}} if the
-only subsets of $X$ that are both open and closed (so-called
+only subsets of $X$ that are both open and closed (sometimes called
 \emph{\myindex{clopen}} subsets) are $\emptyset$ and $X$ itself.
 If a nonempty $(X,d)$ is not connected we say it is
 \emph{\myindex{disconnected}}.
@@ -1067,7 +1067,7 @@ Suppose $S$ is connected.  If $S$ is a single point,
 then we are done.  So suppose $x < y$ and $x,y \in S$.  If $z \in \R$ is such
 that $x < z < y$, then $(-\infty,z) \cap S$ is nonempty and $(z,\infty) \cap
 S$ is nonempty.  The two sets are disjoint.  As
-$S$ is connected, we must have they their union is not $S$, so $z \in S$.
+$S$ is connected, we must have that their union is not $S$, so $z \in S$.
 By \propref{prop:intervaldef}, $S$ is an interval.
 
 If $S$ is a single point, it is connected.
@@ -1113,7 +1113,7 @@ See \figureref{fig:intervalcon}.
 \begin{example}
 Oftentimes a ball $B(x,\delta)$ is connected, but this is not
 necessarily true in every metric space.
-For a simplest example,
+For the simplest example,
 take a two point space $\{ a, b\}$ with the discrete metric.
 Then $B(a,2) = \{ a , b \}$, which is not
 connected as $B(a,1) = \{ a \}$ and 
@@ -1322,7 +1322,7 @@ that $X$ is connected if and only if it contains exactly one element.
 \begin{exercise}
 Take $\Q$ with the standard metric, $d(x,y) = \sabs{x-y}$, as our metric space.
 Prove that $\Q$ is
-\emph{\myindex{totally disconnected}}, that is, show 
+\emph{\myindex{totally separated}}, that is, show 
 that for every $x, y \in \Q$ with $x \not= y$, there exist
 two open sets $U$ and $V$ such that $x \in U$, $y \in V$,
 $U \cap V = \emptyset$, and $U \cup V = \Q$.
@@ -2959,7 +2959,7 @@ for some small $\epsilon > 0$.  For example, if $f$ is continuous in
 $[a,b] \times \R$, then $g$ is continuous on $\R$.
 
 \begin{example}
-Useful examples of uniformly continuous functions are again the so-called
+Useful examples of uniformly continuous functions are again the
 \emph{Lipschitz continuous}%
 \index{Lipschitz continuous!in a metric space}%
 \index{function!Lipschitz}
