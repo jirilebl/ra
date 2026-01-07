@@ -2934,7 +2934,7 @@ If $-\infty$ is a cluster point of $S$, then
 \end{prop}
 
 Namely, all the one-sided limits exist whenever they make
-sense.  For monotone functions therefore, when we say
+sense.  Therefore, for monotone functions, when we say
 the left-hand limit $x \to c^-$
 exists, we mean that $c$ is a cluster point of $S \cap (-\infty,c)$,
 and same for the right-hand limit.
@@ -2947,8 +2947,8 @@ exercise.
 Let $a \coloneqq \sup \{ f(x) : x < c, x \in S \}$.  If $a = \infty$,
 then given an $M \in \R$, there exists an $x_M \in S$, $x_M < c$, such that $f(x_M) > M$. 
 As $f$ is increasing, $f(x) \geq f(x_M) >  M$ for all $x \in S$ with $x > x_M$.
-Take $\delta \coloneqq c-x_M > 0$ to obtain the definition of the limit going to
-infinity.
+Take $\delta \coloneqq c-x_M > 0$ to satisfy the definition of the limit
+being infinity.
 
 Next suppose $a < \infty$.
 Let $\epsilon > 0$ be given.  Because $a$ is the supremum and
@@ -3075,7 +3075,7 @@ As $c$ is a discontinuity, $a < b$.
 There exists a rational number $q \in (a,b)$, so let $h(c) \coloneqq q$.
 Suppose $d \in E$ is another discontinuity.
 If $d > c$, there
-exist an $x \in I$ with $c < x < d$, and so $\lim_{x \to d^-} f(x) \geq b$.
+exists an $x \in I$ with $c < x < d$, and so $\lim_{x \to d^-} f(x) \geq b$.
 Hence the rational number we choose for $h(d)$ is different from $q$,
 since $q=h(c) < b$ and $h(d) > b$.
 Similarly if $d < c$.  After making such a choice for
@@ -3133,7 +3133,8 @@ $f^{-1}\bigl(f(x)\bigr) < f^{-1}\bigl(f(y)\bigr)$.
 Take $c \in f(I)$.
 If $c$ is not a cluster point of $f(I)$, then $f^{-1}$ is continuous at $c$
 automatically.  So let $c$ be a cluster point of $f(I)$.
-Suppose both of the following one-sided limits exist:
+Suppose both of the following one-sided limits exist, that is, they both
+make sense:
 \begin{align*}
 x_0 & \coloneqq \lim_{y \to c^-} f^{-1}(y) =
 \sup \bigl\{ f^{-1}(y) : y < c, y \in f(I) \bigr\}
@@ -3154,7 +3155,8 @@ The infimum of the left-hand set is $x_0$, and the infimum of the right-hand
 set is $x_1$, so we obtain $x_0 \geq x_1$.
 So $x_1 = x_0$, and $f^{-1}$ is continuous at $c$.
 
-If one of the one-sided limits does not exist, the argument is similar
+If one of the one-sided limits does not exist (that is, when it does not
+make sense to take the limit from that side), the argument is similar
 and is left as an exercise.
 \end{proof}
 
@@ -3267,7 +3269,8 @@ then show that there exists an increasing $F \colon \R \to \R$
 such that $f(x) = F(x)$ for all $x \in S$.
 \item
 Find an example of a strictly increasing bounded $f \colon S \to \R$ such that
-an increasing $F$ as above is never strictly increasing.
+an increasing $F$ as above cannot be strictly increasing no matter how we
+choose it.
 \end{enumerate}
 \end{exercise}
 
@@ -3296,7 +3299,7 @@ Prove that the \myindex{Dirichlet function}
 $f \colon [0,1] \to\R$, defined by $f(x) \coloneqq 1$
 if $x$ is rational and $f(x) \coloneqq 0$ otherwise, cannot be written as a
 difference of two increasing functions.  That is, there do not exist
-increasing $g$ and $h$ such that, $f(x) = g(x) - h(x)$.
+increasing $g$ and $h$ such that $f(x) = g(x) - h(x)$.
 \end{exercise}
 
 \begin{exercise}
