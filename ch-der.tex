@@ -1215,28 +1215,32 @@ Taylor's theorem%
 \footnote{Named for the English mathematician
 \href{https://en.wikipedia.org/wiki/Brook_Taylor}{Brook Taylor}
 (1685--1731).
-It was first found by
+It was found by
 the Scottish mathematician
 \href{https://en.wikipedia.org/wiki/James_Gregory_(mathematician)}{James Gregory}
 (1638--1675).  The statement we give
-was proved by
+is due to
 \href{https://en.wikipedia.org/wiki/Lagrange}{Joseph-Louis Lagrange}
-(1736--1813).}
+(1736--1813).} (at least the version we give here)
 is a generalization of the \hyperref[thm:mvt]{mean value theorem}.
 Mean value theorem says that up to a small error $f(x)$ for $x$ near $x_0$ can be
-approximated by $f(x_0)$, that is
+approximated by $f(x_0)$:
 \begin{equation*}
 f(x) = f(x_0) + f'(c)(x-x_0),
 \end{equation*}
-where the \myquote{error} is measured in terms of the first derivative
+where the \myquote{error} $f'(c)(x-x_0)$
+is measured in terms of the first derivative
 at some point $c$ between $x$ and $x_0$.
 Taylor's theorem generalizes this result to higher derivatives.
 It tells us that up to a small error, any $n$
 times differentiable function can be approximated at a point $x_0$
-by a polynomial.  The
-error of this approximation behaves like ${(x-x_0)}^{n}$ near the point $x_0$.
+by a polynomial of degree $n$.  The
+error of this approximation goes to zero faster than ${(x-x_0)}^{n}$ as
+$x$ goes to $x_0$.
 To see why this is a good approximation, notice that for a big $n$, 
 ${(x-x_0)}^n$ is very small in a small interval around $x_0$.
+We will require one more (so $n+1$) derivative to write the error
+as we do in the mean value theorem.
 
 \begin{defn}
 For an $n$ times differentiable function $f$ defined near a point $x_0 \in \R$, define the
@@ -1273,32 +1277,32 @@ of sine are again sines, which are zero at the origin.
 function.\label{fig:taylorsin}}
 \end{myfigureht}
 
-Taylor's theorem says a function behaves like its $n$th
-Taylor polynomial.  The 
-\hyperref[thm:mvt]{mean value theorem} is really Taylor's theorem
-for $n=0$.
+The statement of Taylor's theorem that we give includes the
+\hyperref[thm:mvt]{mean value theorem}, which can be thought of as
+Taylor's theorem for $n=0$.
 
 \begin{thm}[Taylor]\index{Taylor's theorem} \label{thm:taylor}
 Suppose $f \colon [a,b] \to \R$ is a function with $n$ continuous
 derivatives on $[a,b]$ and such that $f^{(n+1)}$ exists on $(a,b)$.
 Given distinct points $x_0$ and $x$ in $[a,b]$,
-we can find a point $c$ between $x_0$
+there is a point $c$ between $x_0$
 and $x$ such that
 \begin{equation*}
 f(x)=P_{n}^{x_0}(x)+\frac{f^{(n+1)}(c)}{(n+1)!}{(x-x_0)}^{n+1} .
 \end{equation*}
 \end{thm}
 
-The term $R_n^{x_0}(x)\coloneqq\frac{f^{(n+1)}(c)}{(n+1)!}{(x-x_0)}^{n+1}$ is called the
+The term $R_n^{x_0}(x)\coloneqq
+f(x)-P_n^{x_0}(x) =
+\frac{f^{(n+1)}(c)}{(n+1)!}{(x-x_0)}^{n+1}$ is called the
 \emph{remainder term}\index{remainder term in Taylor's formula}.  This
-form 
-of the remainder term is called the
+form is called the
 \emph{\myindex{Lagrange form}} of the remainder.  There are other ways
 to write the remainder term, but we skip those.  Note that $c$ depends on
 both $x$ and $x_0$.
 
 \begin{proof}
-Find a number $M_{x,x_0}$ (depending on $x$ and $x_0$) solving the equation
+Let $M_{x,x_0}$ be the number (depending on $x$ and $x_0$) solving the equation
 \begin{equation*}
 f(x)=P_{n}^{x_0}(x)+M_{x,x_0}{(x-x_0)}^{n+1} .
 \end{equation*}
@@ -1315,7 +1319,8 @@ itself).  Therefore,
 g(x_0) = g'(x_0) = g''(x_0) = \cdots = g^{(n)}(x_0) = 0 .
 \end{equation*}
 In particular, $g(x_0) = 0$.
-On the other hand $g(x) = 0$.  By the
+We also have $g(x) = 0$.
+By the
 \hyperref[thm:mvt]{mean value theorem},
 there exists an $x_1$ between $x_0$ and $x$ such that $g'(x_1) = 0$.
 Applying the \hyperref[thm:mvt]{mean value theorem}
@@ -1330,7 +1335,7 @@ We compute the $(n+1)$th derivative of $g$ to find
 \begin{equation*}
 g^{(n+1)}(s) = f^{(n+1)}(s)-(n+1)!\,M_{x,x_0} .
 \end{equation*}
-Plugging in $c$ for $s$ we obtain $M_{x,x_0} = \frac{f^{(n+1)}(c)}{(n+1)!}$, and
+Plugging in $c$ for $s$, we obtain $M_{x,x_0} = \frac{f^{(n+1)}(c)}{(n+1)!}$, and
 we are done.
 \end{proof}
 
@@ -1356,7 +1361,7 @@ For $x < -1$, it in fact gets visibly worse.
 The polynomials
 are the partial sums of the geometric series $\sum_{n=1}^\infty x^n$,
 and the series only converges on $(-1,1)$.
-See the discussion of power series
+See the discussion of power series in
 \sectionref{sec:moreonseries}.
 
 \begin{myfigureht}
@@ -1403,7 +1408,7 @@ has $d$ derivatives.
 
 \medskip
 
-Taylor's theorem gives us a quick proof of a version of
+Taylor's theorem gives a quick proof of a version of
 the second derivative test.
 By a \emph{\myindex{strict relative minimum}}\index{minimum!strict relative}
 of $f$ at $c$,
@@ -1413,7 +1418,7 @@ A \emph{\myindex{strict relative maximum}}\index{maximum!strict relative}
 is defined similarly.
 Continuity of the second derivative is not needed, but the proof is more
 difficult and is left as an exercise.  The proof also generalizes
-immediately into the $n$th derivative test, which is also left as
+into the $n$th derivative test, which is also left as
 an exercise.
 
 \begin{prop}[Second derivative test]\index{second derivative test}
@@ -1466,7 +1471,10 @@ $Q(x)-P(x) = \lambda {(x-x_0)}^n$ for some $\lambda \geq 0$.
 \end{exercise}
 
 \begin{exercise}
-If $f \colon [a,b] \to \R$ has $n+1$ continuous derivatives
+If $f \colon [a,b] \to \R$ has $n+1$ continuous derivatives\footnote{%
+The same statement holds if we only require $n$ derivatives,
+but it is quite a bit harder to prove.
+}
 and $x_0 \in [a,b]$,
 prove
 $\lim\limits_{x\to x_0} \frac{R_n^{x_0}(x)}{{(x-x_0)}^n} = 0$.
@@ -1480,7 +1488,7 @@ if and only if $\lim\limits_{x\to x_0} \frac{f(x)}{{(x-x_0)}^{n+1}}$ exists.
 \end{exercise}
 
 \begin{exercise}
-Suppose $a,b,c \in \R$ and $f \colon \R \to \R$ is differentiable,
+Suppose $a,b,c \in \R$ and $f \colon \R \to \R$ is twice differentiable,
 $f''(x) = a$ for all $x$, $f'(0) = b$, and $f(0) = c$.  Find $f$ and prove that 
 it is the unique differentiable function with this property.
 \end{exercise}
