@@ -51,7 +51,7 @@ The graphical interpretation of the derivative is  depicted in
 $\bigl(c,f(c)\bigr)$
 and $\bigl(x,f(x)\bigr)$ with slope
 $\frac{f(x)-f(c)}{x-c}$, that is,
-the so-called \emph{\myindex{secant line}}.  When we take the limit as $x$ goes to $c$,
+the \emph{\myindex{secant line}}.  When we take the limit as $x$ goes to $c$,
 we get the right-hand plot, where we see
 that the derivative of the function
 at the point $c$ is the slope of the line tangent to the graph of $f$
@@ -241,8 +241,9 @@ and the derivative is computed as given.
 \end{proof}
 
 It is not true that the derivative of a product of two functions is
-the product of the derivatives.  Instead we get the so-called \emph{product
-rule} or the \emph{\myindex{Leibniz rule}}%
+the product of the derivatives.
+Instead, we get what is called the \emph{product rule}
+or the \emph{\myindex{Leibniz rule}}%
 \footnote{Named for the German mathematician
 \href{https://en.wikipedia.org/wiki/Leibniz}{Gottfried Wilhelm Leibniz}
 (1646--1716).}.
@@ -601,16 +602,16 @@ of an interval must be a critical point.
 As you remember from calculus, one finds minima and maxima of a function
 by finding all the critical points together with the endpoints of
 the interval and simply checking at which of these points
-is the function biggest or smallest.
+the function is largest or smallest.
 
 \subsection{Rolle's theorem}
 
 Suppose a function has the same value at both endpoints of an interval.
 Intuitively, it ought to attain a minimum or a maximum in the interior of the
-interval,
-then at such a minimum or a maximum, the derivative should be zero.
-See \figureref{rollefig} for the geometric idea.  This is the content of the
-so-called Rolle's theorem%
+interval.
+Then at such a minimum or a maximum, the derivative should be zero.
+See \figureref{rollefig} for the geometric idea.
+This is the content of Rolle's theorem%
 \footnote{Named after the French mathematician
 \href{https://en.wikipedia.org/wiki/Michel_Rolle}{Michel Rolle}
 (1652--1719).}.
@@ -677,12 +678,15 @@ is the mean value of the derivative, so the average derivative is achieved
 in the interior of the interval.
 
 The theorem follows from \hyperref[thm:rolle]{Rolle's theorem}
-by subtracting from $f$ the affine linear function with the derivative
-$\frac{f(b)-f(a)}{b-a}$ with the same values at $a$ and $b$ as $f$.
-That is, we subtract the function whose graph is the straight line
-$\bigl(a,f(a)\bigr)$ and $\bigl(b,f(b)\bigr)$.
-Then we are looking for a point where this new
-function has derivative zero.
+by subtracting from $f$ the affine linear function
+with the same values at $a$ and $b$ as $f$.
+The graph of this affine linear function is the 
+secant line---the straight line through
+$\bigl(a,f(a)\bigr)$ and $\bigl(b,f(b)\bigr)$---and
+its derivative is
+$\frac{f(b)-f(a)}{b-a}$.
+Then we are looking for a point where this
+difference has zero derivative.
 
 \begin{myfigureht}
 \includegraphics{figures/mvtfig}
@@ -694,7 +698,12 @@ function has derivative zero.
 Define the
 function $g \colon [a,b] \to \R$ by
 \begin{equation*}
-g(x) \coloneqq f(x)-f(b)-\frac{f(b)-f(a)}{b-a}(x-b) .
+g(x) \coloneqq
+f(x)-
+\left( f(b)+\frac{f(b)-f(a)}{b-a}(x-b) \right)
+=
+f(x)-
+f(b)-\frac{f(b)-f(a)}{b-a}(x-b) .
 \end{equation*}
 The function $g$ is differentiable on $(a,b)$,
 continuous on $[a,b]$, such that $g(a) = 0$ and $g(b) = 0$.  Thus there exists
@@ -744,7 +753,7 @@ Let us look at a few applications of the mean value theorem.
 The applications show the typical use of the theorem, which is
 to get rid of a limit by finding the right sort of points where the
 derivative is not just close to some difference quotient, but actually
-equal to one.
+equal to it.
 First, we solve our very first differential equation.
 
 \begin{prop} \label{prop:derzeroconst}
@@ -918,8 +927,9 @@ $f'(a) > y > f'(b)$.  Then there exists a $c \in (a,b)$ such that $f'(c) =
 y$.
 \end{thm}
 
-The proof follows by subtracting $f$ and a linear function with derivative
-$y$.  The new function $g$ reduces the problem
+The proof follows by letting $g$ be the difference of $f$
+and a linear function with derivative $y$.
+The new function $g$ reduces the problem
 to the case $y=0$, where $g'(a) > 0 > g'(b)$.  That is, $g$ is increasing at $a$ and
 decreasing at $b$, so it must attain a maximum inside $(a,b)$,
 where the derivative is zero.  See \figureref{darbouxthmfig}.
@@ -1029,7 +1039,8 @@ function is continuous.  If $f \colon I \to \R$ is differentiable and
 the derivative $f'$ is continuous on $I$, then we say $f$ is
 \emph{\myindex{continuously
 differentiable}}\index{differentiable!continuously}.  It is common to
-write $C^1(I)$ for the set of continuously differentiable functions on $I$.
+write $C^1(I)$ for the set of continuously differentiable functions defined
+on $I$.
 
 \subsection{Exercises}
 
@@ -1107,6 +1118,7 @@ Note: Before you do anything else, prove that $g(x) \not= 0$ when $x \not= c$.
 \begin{exercise}
 Let $f \colon (a,b) \to \R$ be an unbounded differentiable function.  Show
 $f' \colon (a,b) \to \R$ is unbounded.
+Remark: It is important that $(a,b)$ is a bounded interval.
 \end{exercise}
 
 \begin{exercise}
