@@ -84,8 +84,8 @@ L(P,f) \leq U(P,f)
 \end{prop}
 
 \begin{proof}
-Let $P$ be a partition of $[a,b]$.  Note that $m \leq m_i$ for all $i$ and
-$M_i \leq M$ for all $i$.  Also, $m_i \leq M_i$ for all $i$.  Finally,
+Let $P$ be a partition of $[a,b]$.  Note that for all $i$, we
+have $m \leq m_i \leq M_i \leq M$.  We also have
 $\sum_{i=1}^n \Delta x_i = (b-a)$.  Therefore,
 \begin{multline*}
 m(b-a) =
@@ -94,7 +94,6 @@ m \left( \sum_{i=1}^n \Delta x_i \right)
 \sum_{i=1}^n m \Delta x_i
 \leq
 \sum_{i=1}^n m_i \Delta x_i 
-\leq
 \\
 \leq
 \sum_{i=1}^n M_i \Delta x_i
@@ -507,7 +506,7 @@ U(P,f)-L(P,f)
 =
 \frac{b^2}{n(b+1)} .
 \end{multline*}
-The sum telescopes, the terms successively cancel each other, something
+The sum telescopes---the terms successively cancel each other, something
 we have seen before.
 Picking $n$ to be such that
 $\frac{b^2}{n(b+1)} < \epsilon$, the proposition is satisfied, and the
@@ -537,8 +536,8 @@ we write $\int_a^b f$ to mean the Riemann integral
 of the restriction of $f$ to $[a,b]$.
 
 It is useful to define the integral $\int_a^b f$ even if
-$a \not< b$.  Suppose $b < a$ and $f \in \sR\bigl([b,a]\bigr)$,
-then define
+$a \not< b$.  Suppose $b < a$ and $f \in \sR\bigl([b,a]\bigr)$.
+Define
 \begin{equation*}
 \int_a^b f \coloneqq - \int_b^a f .
 \end{equation*}
@@ -835,7 +834,7 @@ $f$ is Riemann integrable, then
 \end{prop}
 
 \begin{proof}
-Suppose $f \in \sR\bigl([a,c]\bigr)$, then it is bounded and
+Suppose $f \in \sR\bigl([a,c]\bigr)$.  Then it is bounded and
 $\overline{\int_a^c} f = 
 \underline{\int_a^c} f = 
 \int_a^c f$.  The lemma gives
@@ -852,7 +851,7 @@ $\overline{\int_a^c} f =
  =
 \int_a^c f .
 \end{equation*}
-Thus the inequality is an equality,
+Thus the inequality is an equality:
 \begin{equation*}
 \underline{\int_a^b} f + \underline{\int_b^c} f
 =
@@ -1044,7 +1043,7 @@ m_i \coloneqq \inf \, \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\}
 \qquad \text{and} \qquad
 \widetilde{m}_i \coloneqq \inf \, \bigl\{ g(x) : x \in [x_{i-1},x_i] \bigr\} .
 \end{equation*}
-As $f(x) \leq g(x)$, then $m_i \leq \widetilde{m}_i$.
+As $f(x) \leq g(x)$, we have $m_i \leq \widetilde{m}_i$.
 Therefore,
 \begin{equation*}
 L(P,f)
@@ -1244,7 +1243,7 @@ M\cdot 0
 Thus $\overline{\int_a^b} f = \underline{\int_a^b} f = L$
 and hence $f$ is Riemann integrable and $\int_a^b f = L$.
 In particular, no matter what
-subsequence we chose,
+subsequence we choose,
 the $L$ is the same number.
 
 To prove the final statement of the lemma we use 
@@ -1409,7 +1408,7 @@ function discontinuous at all rational numbers (a dense set)
 that is Riemann integrable.
 
 That is,
-define $f \colon [0,1] \to \R$ by
+define $f \colon [0,1] \to \R$ by $f(0)=1$ and for $x > 0$ by
 \begin{equation*}
 f(x) \coloneqq 
 \begin{cases}
@@ -1481,7 +1480,7 @@ functions on $[a,b]$.  Show that $h$ is Riemann integrable.
 \end{exercise}
 
 \begin{exercise}[Challenging] \label{exercise:hardabsint}
-Suppose $f \in \sR\bigl([a,b]\bigr)$, then the function that takes $x$ to
+Suppose $f \in \sR\bigl([a,b]\bigr)$.  Prove that the function that takes $x$ to
 $\babs{f(x)}$ is also Riemann integrable on $[a,b]$.
 Then show the same inequality as \exerciseref{exercise:easyabsint}.
 \end{exercise}
@@ -2322,7 +2321,7 @@ if $x > 0$ and $y$ is irrational, define
 \begin{equation*}
 x^y \coloneqq \exp\bigl(y\ln(x)\bigr) .
 \end{equation*}
-As $\exp$ is continuous, then $x^y$ is a continuous function of $y$.
+As $\exp$ is continuous, $x^y$ is a continuous function of $y$.
 Therefore, we would
 obtain the same result had we taken a sequence of rational numbers
 $\{ y_n \}_{n=1}^\infty$
@@ -2628,7 +2627,7 @@ using the fundamental theorem,
 +
 \frac{1}{p-1} .
 \end{equation*}
-As $p > 1$, then $p-1 > 0$.  Take the limit as $b \to \infty$
+As $p > 1$, we have $p-1 > 0$.  Take the limit as $b \to \infty$
 to obtain that $\frac{1}{b^{p-1}}$ goes to 0.  The result follows.
 \end{proof}
 
@@ -2725,7 +2724,7 @@ $x \geq x_N$
 \begin{equation*}
 A - \epsilon < \int_a^{x_N} f \leq \int_a^x f .
 \end{equation*}
-As $\{ x_n \}_{n=1}^\infty$ goes to $\infty$, then for any given
+As $\{ x_n \}_{n=1}^\infty$ goes to $\infty$, we have that for any 
 $x$, there is an $x_m$ such that $m \geq N$ and $x \leq x_m$.  Then
 \begin{equation*}
 \int_a^{x} f \leq \int_a^{x_m} f < A + \epsilon .
@@ -3327,7 +3326,7 @@ f(\ell)+
 
 Suppose first that $\int_k^\infty f$ converges and
 let $\epsilon > 0$ be given.
-As before, since $f$ is positive, then there exists
+As before, since $f$ is positive, there exists
 an $L \in \N$ such that if $\ell \geq L$, then
 $\int_\ell^{m} f < \nicefrac{\epsilon}{2}$ for all $m \geq \ell$.
 The function 
@@ -3346,8 +3345,7 @@ proposition is obtained by letting $m$ go to infinity in
 \eqref{impropriemann:eqseries} with $\ell = k$.
 
 Conversely, suppose $\int_k^\infty f$ diverges.  
-As $f$ is positive, then by
-\propref{impropriemann:possimp},
+As $f$ is positive, by \propref{impropriemann:possimp},
 the sequence $\{ \int_k^m f \}_{m=k}^\infty$ diverges to infinity.
 Using
 \eqref{impropriemann:eqseries} with $\ell = k$, we find

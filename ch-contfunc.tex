@@ -137,7 +137,7 @@ point, such an $x$ exists.  Then
 \babs{L_1 - f(x)} + \babs{f(x) - L_2} < \frac{\epsilon}{2} + \frac{\epsilon}{2}
 = \epsilon.
 \end{equation*}
-As $\sabs{L_1-L_2} < \epsilon$ for arbitrary $\epsilon > 0$, then
+As $\sabs{L_1-L_2} < \epsilon$ for arbitrary $\epsilon > 0$, we have
 $L_1 = L_2$.
 \end{proof}
 
@@ -291,7 +291,7 @@ Notice that $\babs{\sin(t)} \leq 1$ for all $t \in \R$.  Therefore,
 \leq
 \sabs{x_n} .
 \end{equation*}
-As $x_n$ goes to 0, then $\sabs{x_n}$ goes to zero, and hence
+As $x_n$ goes to zero, $\sabs{x_n}$ goes to zero, and hence
 $\bigl\{ x_n\sin(\nicefrac{1}{x_n}) \bigr\}_{n=1}^\infty$ converges to zero.  By
 \lemmaref{seqflimit:lemma}, 
 $\displaystyle \lim_{x \to 0} x\sin( \nicefrac{1}{x} ) = 0$.
@@ -456,7 +456,7 @@ $f|_A(x) \to L$ as $x \to c$.
 
 \begin{proof}
 First, let $c$ be a cluster point of $A$.
-Since $A \subset S$, then if $( A \setminus \{ c\} ) \cap
+Since $A \subset S$, if $( A \setminus \{ c\} ) \cap
 (c-\epsilon,c+\epsilon)$ is nonempty for every $\epsilon > 0$,
 then $( S \setminus \{ c\} ) \cap
 (c-\epsilon,c+\epsilon)$ is nonempty for every $\epsilon > 0$.
@@ -1378,7 +1378,7 @@ The sequence $\{ x_n \}_{n=1}^\infty$ is bounded as $a \leq x_n \leq b$.
 By the \hyperref[thm:bwseq]{Bolzano--Weierstrass theorem},
 there is a convergent subsequence $\{ x_{n_i} \}_{i=1}^\infty$.
 Let $x \coloneqq \lim_{i\to\infty} x_{n_i}$.
-Since $a \leq x_{n_i} \leq b$ for all $i$, then $a \leq x \leq b$.
+Since $a \leq x_{n_i} \leq b$ for all $i$, we have $a \leq x \leq b$.
 The sequence $\bigl\{ f(x_{n_i}) \bigr\}_{i=1}^\infty$ is not bounded 
 as 
 $\babs{f(x_{n_i})} \geq n_i \geq i$.
@@ -2830,7 +2830,7 @@ $L = \infty$ or $L = -\infty$.  Show that
 \begin{exercise}
 Suppose $f \colon \R \to \R$ is a 2-periodic function, that is $f(x + 2) =
 f(x)$ for all $x$.  Define $g \colon \R \to \R$ by 
-$g(0) := f(0)$ and for $x \not= 0$ by
+$g(0) \coloneqq f(0)$ and for $x \not= 0$ by
 \begin{equation*}
 g(x) \coloneqq f\left(\frac{\sqrt{x^2+1}-1}{x}\right)
 \end{equation*}
@@ -2995,7 +2995,7 @@ Without loss of generality, suppose $f$ is increasing.
 First suppose $f$ is continuous.  Take two points
 $f(x_1), f(x_2)$ in $f(I)$ and suppose
 $f(x_1) < f(x_2)$.
-As $f$ is increasing, then $x_1 < x_2$.  By the
+As $f$ is increasing, $x_1 < x_2$.  By the
 \hyperref[IVT:thm]{intermediate value theorem},
 given $y$ with $f(x_1) < y < f(x_2)$, we find
 a $c \in (x_1,x_2) \subset I$ such that $f(c) = y$, so $y \in f(I)$. 
