@@ -1589,7 +1589,7 @@ We sum over $i = 1,2, \ldots, n$ to get
 \end{equation*}
 In the middle sum, all the terms except the first and last cancel 
 and we end up with $F(x_n)-F(x_0) = F(b)-F(a)$.  The sums on the left
-and on the right are the lower and the upper sum respectively.  So
+and on the right are the lower and the upper sums, respectively.  So
 \begin{equation*}
 L(P,f) \leq F(b)-F(a) \leq U(P,f) .
 \end{equation*}
@@ -1861,7 +1861,7 @@ It may be tempting to take $g(x) \coloneqq \ln \sabs{x}$.  Compute $g'(x) =
 \int_{0}^{0} s \,ds = 0. 
 \end{equation*}
 This \myquote{solution} is incorrect, and it does not say
-that we can solve the given integral.  First problem is that
+that we can solve the given integral.  The first problem is that
 $\frac{\ln \sabs{x}}{x}$ is not continuous on $[-1,1]$.
 It is not defined at 0, and cannot be made continuous by defining a value at
 0.
@@ -1936,7 +1936,7 @@ non-differentiable function.
 
 \begin{exercise} \label{exercise:smoothingout}
 Let $f \colon [a,b] \to \R$ be a continuous function.  Let $\epsilon > 0$
-be a constant so that $a+\epsilon < b-\epsilon$.  For $x \in [a+\epsilon,b-\epsilon]$, define
+be a constant such that $a+\epsilon < b-\epsilon$.  For $x \in [a+\epsilon,b-\epsilon]$, define
 \begin{equation*}
 g(x) \coloneqq \frac{1}{2\epsilon} \int_{x-\epsilon}^{x+\epsilon} f .
 \end{equation*}
@@ -1994,17 +1994,18 @@ discontinuity).
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Suppose $f \colon [a,b] \to \R$ is increasing, by
-\propref{prop:monotoneintegrable},
+Suppose $f \colon [a,b] \to \R$ is increasing.
+By \propref{prop:monotoneintegrable},
 %\exerciseref{exercise:boundedvariationintegrable},
-$f$ is Riemann integrable.  Suppose $f$ has a discontinuity at $c \in
-(a,b)$, show that $F(x) \coloneqq \int_a^x f$ is not differentiable at $c$.
+$f$ is Riemann integrable.  Show that if $f$ has a discontinuity at $c \in
+(a,b)$, then $F(x) \coloneqq \int_a^x f$ is not differentiable at $c$.
 \item
 In \exerciseref{exercise:increasingfuncdiscatQ}, you constructed an increasing
 function $f \colon [0,1] \to \R$ that is discontinuous at every
 $x \in [0,1] \cap \Q$.  Use this $f$ to construct a function $F(x)$ that is
-continuous on $[0,1]$, but not differentiable at every $x \in [0,1] \cap \Q$.
+continuous on $[0,1]$, but not differentiable at all $x \in [0,1] \cap \Q$.
 \end{enumerate}
+\end{exercise}
 
 \begin{exercise}
 For any $\ell \in \N$,
@@ -2012,7 +2013,6 @@ show that the following limit exists and find what it is:
 \begin{equation*}
 \lim_{n\to\infty} \sum_{k=1}^n \frac{k^\ell}{n^{\ell+1}}
 \end{equation*}
-\end{exercise}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2032,13 +2032,15 @@ We now have the tools required to properly define the exponential
 and the
 logarithm that you know from calculus so well.  We start with
 exponentiation.
-If $n$ is a positive integer, it is obvious to define
+If $n$ is a positive integer, we define
 \begin{equation*}
-x^n \coloneqq \underbrace{x \cdot x \cdot \cdots \cdot x}_{n \text{ times}} .
+x^n \coloneqq \underbrace{x \cdot x \cdots x}_{n \text{ times}} .
 \end{equation*}
 It makes sense to define $x^0 \coloneqq 1$.
-For negative integers, let $x^{-n} \coloneqq \nicefrac{1}{x^n}$.
-If $x > 0$, define
+For negative integers, let $x^{-n} \coloneqq \nicefrac{1}{x^n}$ as long as
+$x \not= 0$.
+Next suppose $x > 0$.
+Define
 $x^{1/n}$ as
 the unique positive $n$th root.  Finally, for a rational
 number $\nicefrac{n}{m}$ (in lowest terms), define
@@ -2172,7 +2174,7 @@ is the unique function such that $L(1) = 0$ and $L'(x) = \nicefrac{1}{x}$.
 
 Having proved
 that there is a unique function with these properties,
-we simply define the \emph{\myindex{logarithm}} or sometimes called the
+we simply define the \emph{\myindex{logarithm}}, sometimes called the
 \emph{\myindex{natural logarithm}}:
 \glsadd{not:ln}
 \begin{equation*}
@@ -2204,7 +2206,7 @@ $E$ is differentiable and $E'(x) = E(x)$.
 \item \label{it:exp:iii}
 $E$ is strictly increasing, bijective, and
 \begin{equation*}
-\lim_{x\to -\infty} E(x) = 0 , \qquad \text{and} \qquad
+\lim_{x\to -\infty} E(x) = 0 \qquad \text{and} \qquad
 \lim_{x\to \infty} E(x) = \infty .
 \end{equation*}
 \item \label{it:exp:iv}
@@ -2242,8 +2244,8 @@ an $x_0$ such that $E(x_0) = \epsilon$ and
 $E(x) < \epsilon$ for all $x < x_0$.
 Therefore,
 \begin{equation*}
-\lim_{n\to -\infty} E(x) = 0 , \qquad \text{and} \qquad
-\lim_{n\to \infty} E(x) = \infty .
+\lim_{x\to -\infty} E(x) = 0 \qquad \text{and} \qquad
+\lim_{x\to \infty} E(x) = \infty .
 \end{equation*}
 
 To prove property \ref{it:exp:iv}, we use the corresponding
@@ -2279,9 +2281,8 @@ F(x)E(-x) - E(-x)F(x) = 0 .
 \end{equation*}
 Therefore, by \propref{prop:derzeroconst},
 $F(x)E(-x) = F(0)E(-0) = 1$ for all $x \in \R$.
-Next, $1 = E(0) = E(x-x) = E(x)E(-x)$.
-%Doing the computation with $F = E$,
-%we obtain $E(x)E(-x) = 1$.
+Doing the computation with $F = E$,
+we obtain $E(x)E(-x) = 1$.
 Then
 \begin{equation*}
 0 = 1-1 = F(x)E(-x) - E(x)E(-x) = \bigl(F(x)-E(x)\bigr) E(-x) .
@@ -2407,8 +2408,8 @@ all $x \in \R$
 \begin{equation*}
 e^x = \sum_{n=0}^\infty \frac{x^n}{n!} .
 \end{equation*}
-Hint: Do not differentiate the series term by term (unless you would prove that it
-works).
+Hint: Do not differentiate the series term by term (unless you prove that
+you can do that).
 \end{exercise}
 
 \begin{exercise}
@@ -2416,7 +2417,7 @@ Use the geometric sum formula to show (for $t\not= -1$)
 \begin{equation*}
 1-t+t^2-\cdots+{(-1)}^n t^n = \frac{1}{1+t} - \frac{{(-1)}^{n+1}t^{n+1}}{1+t}.
 \end{equation*}
-Using this fact show
+Using this fact, show
 \begin{equation*}
 \ln (1+x) = \sum_{n=1}^\infty \frac{{(-1)}^{n+1}x^n}{n} 
 \end{equation*}
@@ -2448,7 +2449,7 @@ compounding.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Prove that for $n \in \N$,
+Prove that for all integers $n \geq 2$,
 \begin{equation*}
 \sum_{k=2}^{n}
 \frac{1}{k}
@@ -2464,15 +2465,15 @@ Prove that the limit
 \gamma \coloneqq \lim_{n\to\infty}
 \left( \left( \sum_{k=1}^{n} \frac{1}{k} \right) - \ln (n) \right)
 \end{equation*}
-exists.  This constant is known as the
+exists.  This constant $\gamma$ is known as the
 \emph{\myindex{Euler--Mascheroni constant}}%
 \footnote{Named for the Swiss mathematician
 \href{https://en.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Paul Euler}
 (1707--1783)
 and the Italian mathematician
 \href{https://en.wikipedia.org/wiki/Lorenzo_Mascheroni}{Lorenzo Mascheroni}
-(1750--1800).}.  It is not known if this constant is rational or not.
-It is approximately $\gamma \approx 0.5772$.
+(1750--1800).}.  It is not known if $\gamma$ is rational or not.
+Approximately, $\gamma \approx 0.5772$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
