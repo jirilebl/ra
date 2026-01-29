@@ -336,7 +336,7 @@ For any set $X$, define
 \begin{equation*}
 d(x,y) \coloneqq
 \begin{cases}
-1 & \text{if } x \not= y, \\
+1 & \text{if } x \neq y, \\
 0 & \text{if } x = y.
 \end{cases}
 \end{equation*}
@@ -498,7 +498,7 @@ a nonempty set.
 \subsection{Exercises}
 
 \begin{exercise}
-Show that for every set $X$, the discrete metric ($d(x,y) = 1$ if $x\not=y$ and
+Show that for every set $X$, the discrete metric ($d(x,y) = 1$ if $x \neq y$ and
 $d(x,x) = 0$) does give a metric space $(X,d)$.
 \end{exercise}
 
@@ -582,8 +582,8 @@ $d_H$ satisfies the metric properties
 \ref{metric:triang}, and further
 $d_H(A,A) = 0$ for all $A \in Y$. 
 \item
-Show by example that $d$ itself is not symmetric, that is $d(A,B) \not=
-d(B,A)$.
+Show by example that $d$ itself is not symmetric,
+that is, $d(A,B) \neq d(B,A)$.
 \item
 Find a metric space $X$ and two different
 nonempty bounded subsets $A$ and $B$ such that $d_H(A,B) = 0$.
@@ -631,7 +631,7 @@ Find a metric $d$ on $\N$ such that $\N$ is an unbounded set in $(\N,d)$.
 Find a metric $d$ on $\N$ such that $\N$ is a bounded set in $(\N,d)$.
 \item
 Find a metric $d$ on $\N$ such that for every $n \in \N$ and every $\epsilon > 0$,
-there exists an $m \in \N$, $m \not= n$, such that $d(n,m) < \epsilon$.
+there exists an $m \in \N$, $m \neq n$, such that $d(n,m) < \epsilon$.
 \end{enumerate}
 \end{exercise}
 
@@ -1015,8 +1015,8 @@ Let $(X,d)$ be a metric space.
 A nonempty set $S \subset X$ is disconnected if and only if
 there exist open sets $U_1$ and
 $U_2$ in $X$ such that $U_1 \cap U_2 \cap S = \emptyset$,
-$U_1 \cap S \not= \emptyset$,
-$U_2 \cap S \not= \emptyset$, and
+$U_1 \cap S \neq \emptyset$,
+$U_2 \cap S \neq \emptyset$, and
 \begin{equation*}
 S = 
 \bigl( U_1 \cap S \bigr)
@@ -1083,7 +1083,7 @@ proving that $S$ is connected.
 Suppose $x \in U_1 \cap S$
 and $y \in U_2 \cap S$.  Without loss of generality, assume $x < y$.
 As $S$ is an interval, $[x,y] \subset S$.
-Note that $U_2 \cap [x,y] \not= \emptyset$, and
+Note that $U_2 \cap [x,y] \neq \emptyset$, and
 let $z \coloneqq \inf (U_2 \cap [x,y])$.
 We wish to show that $z \in U_1$.
 If $z = x$, then $z \in U_1$.
@@ -1174,7 +1174,7 @@ Let us justify the statement that the closure is everything that we can
 
 \begin{prop} \label{prop:msclosureappr}
 Let $(X,d)$ be a metric space and $A \subset X$.  Then $x \in \widebar{A}$
-if and only if for every $\delta > 0$, $B(x,\delta) \cap A \not=\emptyset$.
+if and only if for every $\delta > 0$, $B(x,\delta) \cap A \neq \emptyset$.
 \end{prop}
 
 \begin{proof}
@@ -1323,7 +1323,7 @@ that $X$ is connected if and only if it contains exactly one element.
 Take $\Q$ with the standard metric, $d(x,y) = \sabs{x-y}$, as our metric space.
 Prove that $\Q$ is
 \emph{\myindex{totally separated}}, that is, show 
-that for every $x, y \in \Q$ with $x \not= y$, there exist
+that for every $x, y \in \Q$ with $x \neq y$, there exist
 two open sets $U$ and $V$ such that $x \in U$, $y \in V$,
 $U \cap V = \emptyset$, and $U \cup V = \Q$.
 \end{exercise}
@@ -2061,9 +2061,9 @@ As $K$ is contained in a ball, $K$ is bounded.
 See the left-hand side of \figureref{fig:compactbndclosed}.
 
 Next, we show that a set that is not closed is not compact.  Suppose 
-$\widebar{K} \not= K$, that is, there is a point $x \in \widebar{K}
+$\widebar{K} \neq K$, that is, there is a point $x \in \widebar{K}
 \setminus K$.
-If $y \not= x$, then
+If $y \neq x$, then
 $y \notin C(x,\nicefrac{1}{n})$
 for $n \in \N$
 such that $\nicefrac{1}{n} < d(x,y)$.
@@ -2082,7 +2082,7 @@ finite collection of indices $n_1 < n_2 < \ldots < n_m$, then
 \end{equation*}
 As $x$ is in the closure of $K$,
 then
-$C(x,\nicefrac{1}{n_m}) \cap K \not= \emptyset$.  So there is no
+$C(x,\nicefrac{1}{n_m}) \cap K \neq \emptyset$.  So there is no
 finite subcover and $K$ is not compact.
 See the right-hand side of \figureref{fig:compactbndclosed}.
 \end{proof}
@@ -2168,7 +2168,7 @@ where
 $B(y,\nicefrac{\epsilon}{2}) \subset B(x,\epsilon)$
 follows by triangle inequality.
 See \figureref{fig:lebesguedelta}.
-Thus $y \not= x_n$.
+Thus $y \neq x_n$.
 In other words, for all $n \geq M$, $x_n \notin B(x,\nicefrac{\epsilon}{2})$. 
 The sequence cannot have a subsequence converging to $x$.  As $x \in K$ was
 arbitrary we are done.
@@ -2295,7 +2295,7 @@ infinite
 sequence $\{ x_n \}_{n=1}^\infty$ as above.
 For contradiction, suppose that
 there is no finite subcover and we have the sequence $\{ x_n \}_{n=1}^\infty$.
-For all $n$ and $k$, $n \not= k$, 
+For all $n$ and $k$, $n \neq k$, 
 we have $d(x_n,x_k) \geq \delta$.
 So no subsequence of $\{ x_n \}_{n=1}^\infty$ is Cauchy.
 Hence, no subsequence of $\{ x_n \}_{n=1}^\infty$ is convergent,
@@ -2388,7 +2388,7 @@ $c \leq y_k \leq d$ for all $k$, we know that $(x,y) \in B$.
 \begin{example}
 The discrete metric provides interesting counterexamples again.
 Let $(X,d)$ be a metric space with the discrete metric, that is, $d(x,y) = 1$
-if $x \not= y$.  Suppose
+if $x \neq y$.  Suppose
 $X$ is an infinite set.  Then
 \begin{enumerate}[(i)]
 \item $(X,d)$ is a complete metric space.
@@ -2475,7 +2475,7 @@ denote the zero function.  Then show that the closed ball
 $C(0,1)$ is not compact (even though it is closed and bounded).
 Hints: Construct a sequence of distinct continuous functions
 $\{ f_n \}_{n=1}^\infty$ such that
-$d(f_n,0) = 1$ and $d(f_n,f_k) = 1$ for all $n \not= k$.  Show that
+$d(f_n,0) = 1$ and $d(f_n,f_k) = 1$ for all $n \neq k$.  Show that
 the set $\{ f_n : n \in \N \} \subset C(0,1)$ is closed but not compact.
 See \chapterref{fs:chapter} for inspiration.
 \end{exercise}
@@ -2487,7 +2487,7 @@ Show that there exists a metric on $\R$ that makes $\R$ into a compact set.
 \begin{exercise}
 Suppose $(X,d)$ is complete and suppose we have a countably infinite
 collection of nonempty compact sets $E_1 \supset E_2 \supset E_3 \supset
-\cdots$.  Prove $\bigcap_{j=1}^\infty E_j \not= \emptyset$.
+\cdots$.  Prove $\bigcap_{j=1}^\infty E_j \neq \emptyset$.
 \end{exercise}
 
 \begin{exercise}[Challenging]
@@ -3083,7 +3083,7 @@ Find an example where $X$ is disconnected and $f$ is not constant.
 \begin{exercise} \label{exercise:dicontR2}
 \pagebreak[2]
 Define $f \colon \R^2 \to \R$ by $f(0,0) \coloneqq 0$, and
-$f(x,y) \coloneqq \frac{xy}{x^2+y^2}$ if $(x,y) \not= (0,0)$.
+$f(x,y) \coloneqq \frac{xy}{x^2+y^2}$ if $(x,y) \neq (0,0)$.
 See \figureref{fig:xyxsqysq}.
 \begin{enumerate}[a)]
 \item
@@ -3252,7 +3252,7 @@ Define
 \begin{equation*}
 f(x,y) \coloneqq
 \begin{cases}
-\frac{2xy}{x^4+y^2} & \text{if } (x,y) \not= (0,0), \\
+\frac{2xy}{x^4+y^2} & \text{if } (x,y) \neq (0,0), \\
 0 & \text{if } (x,y) = (0,0) .
 \end{cases}
 \end{equation*}
@@ -3664,7 +3664,7 @@ can be used to approximate $\sqrt{2}$.
 
 \begin{exercise}
 Suppose $f \colon X \to X$ is a contraction, and $(X,d)$ is a metric space
-with the discrete metric, that is, $d(x,y) = 1$ whenever $x \not= y$.
+with the discrete metric, that is, $d(x,y) = 1$ whenever $x \neq y$.
 Show that $f$ is constant, that is,
 there exists a $c \in X$ such that $f(x) = c$ for all $x \in X$.
 \end{exercise}

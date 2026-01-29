@@ -678,14 +678,14 @@ $f \colon U \to \R$ be a function.  The
 \begin{equation*}
 \operatorname{supp} (f) \coloneqq
 \overline{
-\{ x \in U : f(x) \not= 0 \}
+\{ x \in U : f(x) \neq 0 \}
 } ,
 \end{equation*}
 where the closure is with respect to the subspace topology on $U$.
 Taking the closure with respect to the subspace
 topology is the same as 
 $\overline{
-\{ x \in U : f(x) \not= 0 \}
+\{ x \in U : f(x) \neq 0 \}
 } \cap U$, where the closure is with respect to the ambient euclidean space
 $\R^n$.
 In particular,
@@ -722,7 +722,7 @@ is the closed unit disc (right).\label{fig:compsup}}
 \end{myfigureht}
 \end{example}
 
-If $U \not= \R^n$, then you must be careful to
+If $U \neq \R^n$, then you must be careful to
 take the closure in $U$.  Consider the following
 two examples.
 
@@ -835,7 +835,7 @@ that $f \in \sR(S)$ and $\int_S f = 0$.
 
 \begin{exercise}
 Suppose $f\colon \R^n \to \R$ is such that
-$f(x) \coloneqq 0$ if $x\not= 0$ and $f(0) \coloneqq 1$.  Show that $f$ is integrable
+$f(x) \coloneqq 0$ if $x \neq 0$ and $f(0) \coloneqq 1$.  Show that $f$ is integrable
 on $R \coloneqq [-1,1] \times [-1,1] \times \cdots \times [-1,1]$ directly using the
 definition, and find $\int_R f$.
 \end{exercise}
@@ -1009,7 +1009,7 @@ See \figureref{fig:fubinibad}.
 \caption{Left: $[0,1]^2$ with the line $x=\nicefrac{1}{2}$ marked
 dotted and $\int_0^1 f(x,y) \, dx$ marked as gray solid line for a generic $y$.
 Center: Similar picture but $\int_0^1 f(x,y) \, dy$
-marked for some $x \not= \nicefrac{1}{2}$.
+marked for some $x \neq \nicefrac{1}{2}$.
 Right: The three different rectangles in the partition used to integrate $f$
 in different grays.\label{fig:fubinibad}}
 \end{myfigureht}
@@ -1650,12 +1650,12 @@ Proof:
 First fix $s \in \N$ and consider
 \begin{equation*}
 P_s \coloneqq \bigl\{ x \in \R^n : x_k = c \text{ and } \sabs{x_j} \leq s
-\text{ for all } j\not=k \bigr\} .
+\text{ for all } j \neq k \bigr\} .
 \end{equation*}
 Given any $\epsilon > 0$ define the open rectangle
 \begin{equation*}
 R \coloneqq \bigl\{ x \in \R^n : c-\epsilon < x_k < c+\epsilon \text{ and } \sabs{x_j} < s+1
-\text{ for all } j\not=k \bigr\} .
+\text{ for all } j \neq k \bigr\} .
 \end{equation*}
 Clearly, $P_s \subset R$.  Furthermore,
 \begin{equation*}
@@ -1881,7 +1881,7 @@ So without loss of generality, we may replace $U$ by $U'$ and from now on
 suppose that $\bnorm{f'(x)} \leq M$ for all $x \in U$.
 
 At each $x \in E$, take the maximum radius $\delta_x$
-such that $B(x,\delta_x) \subset U$ (we may assume $U \not= \R^n$).
+such that $B(x,\delta_x) \subset U$ (we may assume $U \neq \R^n$).
 Let $\delta \coloneqq \inf_{x\in E} \delta_x$.
 We want to show that $\delta > 0$.
 Take a sequence $\{ x_j \}_{j=1}^\infty$ in $E$ so that $\delta_{x_j} \to \delta$.
@@ -2028,7 +2028,7 @@ Let us construct the \emph{\myindex{Cantor function}}, called also the
 \emph{\myindex{Devil's staircase}}.  Let $C$ be the Cantor set and
 let $C_k$ be as in \exampleref{example:cantor}.
 Write $x \in [0,1]$ in ternary representation $x = \sum_{n=1} d_n 3^{-n}$.
-If $d_n \not= 1$ for all $n$, then let $c_n \coloneqq \frac{d_n}{2}$ for all $n$.
+If $d_n \neq 1$ for all $n$, then let $c_n \coloneqq \frac{d_n}{2}$ for all $n$.
 Otherwise, let $k$ be the smallest integer such that $d_k = 1$.
 Let $c_n \coloneqq \frac{d_n}{2}$ if $n < k$, $c_k \coloneqq 1$, and $c_n
 \coloneqq 0$ if $n > k$.
@@ -2050,7 +2050,7 @@ Define $\psi \colon [0,1] \to [0,2]$ by
 $\psi(x) \coloneqq \varphi(x) + x$.
 Show that $\psi$ is continuous, strictly increasing, and bijective.
 \item
-Prove that while $m^*(C) = 0$, $m^*\bigl(\psi(C)\bigr) \not= 0$.  That is,
+Prove that while $m^*(C) = 0$, $m^*\bigl(\psi(C)\bigr) \neq 0$.  That is,
 continuous functions need not take measure zero sets to measure zero sets.
 Hint: $m^*\bigl(\psi([0,1] \setminus C)\bigr) = 1$, but
 $m^*\bigl([0,2]\bigr) = 2$.
@@ -2481,7 +2481,7 @@ $f|_{R\setminus E}$ is continuous.  Then $f \in \sR(R)$.
 \item
 Find an example where $E \subset R$ is a set of measure zero
 (not closed) such that
-$f|_{R\setminus E}$ is continuous and $f \not\in \sR(R)$.
+$f|_{R\setminus E}$ is continuous and $f \notin \sR(R)$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
@@ -2550,7 +2550,7 @@ for the function
 \begin{equation*}
 f(x,y) \coloneqq
 \begin{cases}
-\frac{xy}{x^2+y^2} & \text{if } (x,y) \not= (0,0), \\
+\frac{xy}{x^2+y^2} & \text{if } (x,y) \neq (0,0), \\
 0                  & \text{if } (x,y) = (0,0) .
 \end{cases}
 \end{equation*}
@@ -2905,7 +2905,7 @@ It is therefore left to prove the claim.
 As $T$ is closed, $\partial T \subset T$.
 Suppose $y \in \partial T$.  There must exist an
 $x \in S$
-such that $g(x) = y$, and by hypothesis $J_g(x) \not= 0$.
+such that $g(x) = y$, and by hypothesis $J_g(x) \neq 0$.
 We use the inverse function theorem (\thmref{thm:inverse}).  We find 
 a neighborhood $V \subset U$ of $x$ and an open set $W$ such that
 the restriction $f|_V$ is a one-to-one and onto function from $V$ to $W$
@@ -3686,8 +3686,8 @@ V\bigl(g(R_j)\bigr) & \leq
 \end{split}
 \end{equation*}
 Translation does not change volume, and therefore
-for every $R_j$, and $x_j \in R_j$, including when $x_j \not= 0$ and $g(x_j)
-\not= 0$, we find
+for every $R_j$, and $x_j \in R_j$, including when $x_j \neq 0$ and $g(x_j)
+\neq 0$, we find
 \begin{equation*}
 V\bigl(g(R_j)\bigr) \leq
 \babs{J_g(x_j)} \, V(R_j) \,
@@ -3780,7 +3780,7 @@ Show that there exist finitely many closed rectangles
 $P_1,P_2, \ldots, P_k$ such that $P_j \subset U$,
 $S \subset P_1 \cup P_2 \cup \cdots \cup P_k$, and
 the interiors are mutually disjoint, that is,
-$P_j^\circ \cap P^\circ_\ell = \emptyset$ whenever $j \not= \ell$.
+$P_j^\circ \cap P^\circ_\ell = \emptyset$ whenever $j \neq \ell$.
 \end{exercise}
 
 \begin{exercise} \label{mv:changeofvarWxopen}

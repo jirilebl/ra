@@ -203,11 +203,11 @@ $xy = yx$ for all $x,y \in F$.
 $(xy)z = x(yz)$ for all $x,y,z \in F$.
 \item
 %mbx <title>(M4)</title>
-There exists an element $1 \in F$ (and $1 \not= 0$) such that
+There exists an element $1 \in F$ (and $1 \neq 0$) such that
 $1x = x$ for all $x \in F$.
 \item
 %mbx <title>(M5)</title>
-For every $x\in F$ such that $x \not= 0$ there exists an element
+For every $x\in F$ such that $x \neq 0$ there exists an element
 $\nicefrac{1}{x} \in F$
 such that $x(\nicefrac{1}{x}) = 1$.
 %\end{enumerate}
@@ -263,7 +263,7 @@ Let $F$ be an ordered field and $x,y,z,w \in F$.  Then
 \item \label{prop:bordfield:i} If $x > 0$, then $-x < 0$ (and vice versa).
 \item \label{prop:bordfield:ii} If $x > 0$ and $y < z$, then $xy < xz$.
 \item \label{prop:bordfield:iii} If $x < 0$ and $y < z$, then $xy > xz$.
-\item \label{prop:bordfield:iv} If $x \not= 0$, then $x^2 > 0$.
+\item \label{prop:bordfield:iv} If $x \neq 0$, then $x^2 > 0$.
 \item \label{prop:bordfield:v} If $0 < x < y$, then $0 < \nicefrac{1}{y} < \nicefrac{1}{x}$.
 \item \label{prop:bordfield:vi} If $0 < x < y$, then $x^2 < y^2$.
 \item \label{prop:bordfield:vii} If $x \leq y$ and $z \leq w$, then $x + z \leq y + w$.
@@ -639,7 +639,7 @@ Estimate,
 \begin{equation*}
 \begin{aligned}
 s^2 - {(s-h)}^2 & = 2sh - h^2 \\
- & < 2sh & & \quad \bigl( \text{since } h^2 > 0 \text{ as } h \not= 0 \bigr) \\
+ & < 2sh & & \quad \bigl( \text{since } h^2 > 0 \text{ as } h \neq 0 \bigr) \\
  & = s^2-2 & & \quad \bigl( \text{since } h = \tfrac{s^2-2}{2s} \bigr) .
 \end{aligned}
 \end{equation*}
@@ -1038,7 +1038,7 @@ Prove that given $y \in \R$, we have $\sup \{ x \in \Q : x < y \} = y$.
 \item
 Let $A \subset \Q$ be a nonempty set that is bounded above such that whenever $x
 \in A$ and $t \in \Q$ with $t < x$, then $t \in A$.  Further suppose
-$\sup\, A \not\in A$.  Show that there exists a $y \in \R$ such that
+$\sup\, A \notin A$.  Show that there exists a $y \in \R$ such that
 $A = \{ x \in \Q : x < y \}$.  A set such as $A$ is called a
 \emph{\myindex{Dedekind cut}}.
 \item
@@ -1661,9 +1661,9 @@ Similarly, $y$ cannot be a member of $B$.  Therefore,
 $a_n < y$ for all $n\in \N$
 and $y < b_n$ for all $n\in \N$.
 In other words, for every $n \in \N$, we have $y \in (a_n,b_n)$.
-By the construction of the sequence, $x_n \not\in (a_n,b_n)$,
-and so $y \not= x_n$.  As $y \not= x_n$ for all $n \in \N$, we have that $y
-\not\in X$.
+By the construction of the sequence, $x_n \notin (a_n,b_n)$,
+and so $y \neq x_n$.  As $y \neq x_n$ for all $n \in \N$, we have that $y
+\notin X$.
 
 We have constructed a real number $y$ that is not in $X$, and thus $X$
 is a proper subset of $\R$.
@@ -1786,7 +1786,7 @@ $K$ (each $d_j$ an integer between $0$ and $9$) such that
 \begin{equation*}
 n = d_K {10}^K + d_{K-1} {10}^{K-1} + \cdots + d_2 {10}^2 + d_1 10 + d_0 .
 \end{equation*}
-We often assume $d_K \not= 0$ (avoiding leading zeros).
+We often assume $d_K \neq 0$ (avoiding leading zeros).
 To represent $n$, we write the sequence of
 digits: $n = d_K d_{K-1} \cdots d_2 d_1 d_0$.
 
@@ -2049,7 +2049,7 @@ $j$th digit of the $n$th number.  Let
 \begin{equation*}
 e_n \coloneqq
 \begin{cases}
-1 & \text{if } d_n^n \not= 1, \\
+1 & \text{if } d_n^n \neq 1, \\
 2 & \text{if } d_n^n = 1.
 \end{cases}
 \end{equation*}
@@ -2060,7 +2060,7 @@ E_n < y \leq E_n + {10}^{-n}
 \end{equation*}
 for all $n$, and the representation is the unique one for $y$ from
 the proposition.  For every $n$, the $n$th digit
-of $y$ is different from the $n$th digit of $x_n$, so $y \not= x_n$.
+of $y$ is different from the $n$th digit of $x_n$, so $y \neq x_n$.
 So $y \notin X$, and as $X$ was an arbitrary countable subset,
 $(0,1]$ must be uncountable.  See \figureref{cantorexamplefig} for an
 example.
@@ -2088,7 +2088,7 @@ eventually have repeating digits,
 either all $0$s or all $9$s,
 see \exerciseref{exercise:nonuniquedecimals}.
 Therefore suppose that $x$ has a unique representation.
-We also suppose that $x \not= 1$ so $p < q$.
+We also suppose that $x \neq 1$ so $p < q$.
 
 To compute the first digit, take $10 p$ and divide by
 $q$.  Let $d_1$ be the quotient, and the remainder $r_1$ is some integer
@@ -2159,7 +2159,7 @@ if we go far enough, we find a 1 followed by at least $P$ zeros,
 and there are infinitely many such 1s.
 That is, there are infinitely many $n$ (so arbitrarily large $n$)
 such that $d_n=1$ and $d_{n+P}=0$, in other words,
-$d_n \not= d_{n+P}$.
+$d_n \neq d_{n+P}$.
 \end{example}
 
 \subsection{Exercises}

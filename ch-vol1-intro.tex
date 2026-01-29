@@ -348,15 +348,15 @@ Two sets $A$ and $B$ are \emph{\myindex{equal}}\glsadd{not:equal} if $A \subset 
 \subset A$.  We write $A = B$.
 That is, $A$ and $B$ contain exactly the same elements.
 If it is not true that $A$ and $B$ are equal, then 
-we write $A \not= B$.
+we write $A \neq B$.
 \item
 A set $A$ is a \emph{\myindex{proper subset}} of $B$ if $A \subset B$
-and $A \not= B$.  We write $A \subsetneq B$.\glsadd{not:subsetneq}
+and $A \neq B$.  We write $A \subsetneq B$.\glsadd{not:subsetneq}
 \end{enumerate}
 \end{defn}
 
 For the example $S$ and $T$ defined above, $T \subset S$, but
-$T \not= S$.  So $T$ is a proper subset of $S$.
+$T \neq S$.  So $T$ is a proper subset of $S$.
 If $A = B$, then $A$ and $B$ are simply two names for the
 same exact set.
 
@@ -368,7 +368,7 @@ the
 \end{equation*}
 This notation refers to a subset of the set $A$ containing all elements
 of $A$ that satisfy the property $P(x)$.
-Using $S = \{ 0, 1, 2 \}$ as above, $\{ x \in S : x \not= 2 \}$
+Using $S = \{ 0, 1, 2 \}$ as above, $\{ x \in S : x \neq 2 \}$
 is the set $\{ 0, 1 \}$.
 The notation is sometimes
 abbreviated as $\bigl\{ x : P(x) \bigr\}$, that is, $A$ is not mentioned when understood from context.
@@ -388,7 +388,7 @@ $\Z \coloneqq \{ 0, -1, 1, -2, 2, \ldots
 \}$.
 \item The set of \emph{\myindex{rational numbers}},
 \glsadd{not:rationals} 
-$\Q \coloneqq \bigl\{ \frac{m}{n} :  m, n \in \Z \text{ and } n \not= 0 \bigr\}$.
+$\Q \coloneqq \bigl\{ \frac{m}{n} :  m, n \in \Z \text{ and } n \neq 0 \bigr\}$.
 \item The set of even natural numbers, $\{  2m : m \in \N \}$.
 \item The set of real numbers,
 \glsadd{not:reals} 
@@ -661,13 +661,13 @@ $2^{n-1} \leq n!$ is true for all $n \in \N$.
 \end{example}
 
 \begin{example} \label{example:geometricsum}
-We claim that for all $c \not= 1$
+We claim that for all $c \neq 1$
 and all $n \in \N \cup \{ 0 \}$,
 \begin{equation*}
 1 + c + c^2 + \cdots + c^n = \frac{1-c^{n+1}}{1-c} .
 \end{equation*}
 
-Proof: Fix some $c \not= 1$.
+Proof: Fix some $c \neq 1$.
 It is easy to check that the equation holds with $n=0$.
 Suppose it holds for some $n$ (including possibly $n=0$).
 Then

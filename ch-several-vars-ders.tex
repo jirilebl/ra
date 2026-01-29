@@ -440,7 +440,7 @@ $\dim \, \R^2 = 2$.
 If a set is linearly dependent, then one of the
 vectors is a linear combination of the others.
 In \eqref{eq:lincomb},
-if $a_k \not= 0$, then we solve for $x_k$:
+if $a_k \neq 0$, then we solve for $x_k$:
 \begin{equation*}
 x_k = \frac{-a_1}{a_k} x_1 + \cdots + 
 \frac{-a_{k-1}}{a_k} x_{k-1} +
@@ -547,7 +547,7 @@ y_1 = \sum_{k=1}^d a_{k,1} x_k ,
 for some numbers $a_{1,1},a_{2,1},\ldots,a_{d,1}$.
 One of the
 $a_{k,1}$ is nonzero, otherwise $y_1$ would be zero.
-Without loss of generality, suppose $a_{1,1} \not= 0$.  Solve
+Without loss of generality, suppose $a_{1,1} \neq 0$.  Solve
 \begin{equation*}
 x_1 = \frac{1}{a_{1,1}} y_1 - \sum_{k=2}^d \frac{a_{k,1}}{a_{1,1}} x_k .
 \end{equation*}
@@ -560,7 +560,7 @@ y_2 = a_{1,2} y_1 + \sum_{k=2}^d a_{k,2} x_k .
 As $T$ is linearly independent---and so $\{ y_1, y_2 \}$ is linearly
 independent---one of the $a_{k,2}$
 for $k \geq 2$ must be nonzero.  Without loss of generality suppose 
-$a_{2,2} \not= 0$.  Solve
+$a_{2,2} \neq 0$.  Solve
 \begin{equation*}
 x_2 = \frac{1}{a_{2,2}} y_2 - \frac{a_{1,2}}{a_{2,2}} y_1 - \sum_{k=3}^d
 \frac{a_{k,2}}{a_{2,2}} x_k .
@@ -584,7 +584,7 @@ does not span $X$, and $v \in X \setminus \spn (T)$.
 Suppose 
 $a_1 x_1 + a_2 x_2 + \cdots + a_m x_m + a_{m+1} v = 0$
 for some scalars $a_1,a_2,\ldots,a_{m+1}$.
-If $a_{m+1} \not=0$, then $v$ would be a linear combination of $T$,
+If $a_{m+1} \neq 0$, then $v$ would be a linear combination of $T$,
 so $a_{m+1} = 0$.  Then, as $T$ is linearly independent, $a_1=a_2=\cdots=a_m = 0$.
 So $T \cup \{ v \}$ is linearly independent.
 
@@ -632,7 +632,7 @@ Again, they must span $X$, otherwise we could add yet another vector.
 
 \subsection{Linear mappings}
 
-When $Y \not= \R$,
+When $Y \neq \R$,
 a function $f \colon X \to Y$ is often called a
 \emph{\myindex{mapping}} or a \emph{\myindex{map}}
 rather than a \emph{function}.
@@ -1044,7 +1044,7 @@ its action on a basis.  So given two bases
 $\{ x_1,\ldots,x_n \}$ and
 $\{ y_1,\ldots,y_m \}$ for $X$ and $Y$ respectively, consider the linear
 operators $A_{jk}$ that send $A_{jk} x_j = y_k$, and 
-$A_{jk} x_\ell = 0$ if $\ell \not= j$.
+$A_{jk} x_\ell = 0$ if $\ell \neq j$.
 \end{exercise}
 
 \begin{samepage}
@@ -1092,7 +1092,7 @@ topology on $\R^n$.
 Suppose $K \subset \R^2$ is a convex set such that the only point of
 the form $(x,0)$ in $K$ is the point $(0,0)$.  Further suppose that
 $(0,1) \in K$ and $(1,1) \in K$.  Show that if $(x,y) \in K$ and $x
-\not= 0$, then $y > 0$.
+\neq 0$, then $y > 0$.
 \end{exercise}
 
 \begin{exercise}
@@ -1188,7 +1188,7 @@ $\lambda \in \R$.
 
 \begin{proof}
 If $x=0$ or $y = 0$, then the theorem holds trivially.
-So assume $x\not= 0$ and $y \not= 0$.
+So assume $x \neq 0$ and $y \neq 0$.
 
 If $x$ is a scalar multiple of $y$, that is, $x = \lambda y$ for some
 $\lambda \in \R$, then the theorem holds with equality:
@@ -1273,7 +1273,7 @@ Therefore,
 =
 \sup_{\substack{x \in X\\x\neq 0}} \frac{\snorm{Ax}}{\snorm{x}} .
 \end{equation*}
-This implies, assuming $\snorm{A}\not= \infty$ to avoid a technicality when $x=0$,
+This implies, assuming $\snorm{A} \neq \infty$ to avoid a technicality when $x=0$,
 that for every $x \in X$,
 \begin{equation*}
 \snorm{Ax} \leq \snorm{A}  \snorm{x} .
@@ -1354,7 +1354,7 @@ Write $x \in \R^n$, with $\snorm{x} = 1$, as
 \begin{equation*}
 x = \sum_{k=1}^n c_k \, e_k .
 \end{equation*}
-Since $e_k \cdot e_\ell = 0$ whenever $k\not=\ell$ and $e_k \cdot e_k = 1$,
+Since $e_k \cdot e_\ell = 0$ whenever $k \neq \ell$ and $e_k \cdot e_k = 1$,
 we have $c_k = x \cdot e_k$.  By Cauchy--Schwarz,
 \begin{equation*}
 \sabs{c_k} = \sabs{ x \cdot e_k }
@@ -1467,7 +1467,7 @@ We illustrate this proposition on a simple example.
 Consider $X=\R^1$, where linear operators are just
 numbers $a$ and the operator norm of $a$ is $\sabs{a}$.
 The operator $a$ is invertible ($a^{-1} = \nicefrac{1}{a}$)
-whenever $a \not=0$.  The condition $\sabs{a-b} < \frac{1}{\sabs{a^{-1}}}$
+whenever $a \neq 0$.  The condition $\sabs{a-b} < \frac{1}{\sabs{a^{-1}}}$
 indeed implies that $b$ is not zero.  Moreover, $a \mapsto \nicefrac{1}{a}$
 is a continuous function.
 When the dimension is $2$ or higher,
@@ -1499,8 +1499,8 @@ Using \eqref{eqcontineq}, we obtain
 \begin{equation*}
 \snorm{x} < \snorm{x} + \snorm{A^{-1}} \, \snorm{Bx} .
 \end{equation*}
-Thus $\snorm{Bx} \not= 0$ for all $x \not= 0$, and consequently
-$Bx \not= 0$ for all $x \not= 0$.  So
+Thus $\snorm{Bx} \neq 0$ for all $x \neq 0$, and consequently
+$Bx \neq 0$ for all $x \neq 0$.  So
 $B$ is one-to-one; if $Bx = By$, then $B(x-y) = 0$, so $x=y$.
 As $B$ is a one-to-one linear mapping from $X$ to $X$, which is finite-dimensional,
 it is also onto by \propref{mv:prop:lin11onto}.
@@ -1841,7 +1841,7 @@ matrix is 2.\label{fig:imagesquare}}
 
 \begin{prop}
 If $A$ and $B$ are $n$-by-$n$ matrices, then $\det(AB) = \det(A)\det(B)$.
-Furthermore, $A$ is invertible if and only if $\det(A) \not= 0$ and in
+Furthermore, $A$ is invertible if and only if $\det(A) \neq 0$ and in
 this case, $\det(A^{-1}) = \frac{1}{\det(A)}$.
 \end{prop}
 
@@ -1925,7 +1925,7 @@ B \coloneqq
 \end{equation*}
 Using the definition of the determinant (there is only a single
 permutation $\sigma$ for which $\prod_{i=1}^n b_{i,\sigma_i}$ is nonzero)
-we find $\det(B) = \gamma_1 \not= 0$.
+we find $\det(B) = \gamma_1 \neq 0$.
 Then
 $\det(AB) = \det(A)\det(B) = \gamma_1\det(A)$.
 The first column of $AB$ is zero, and hence $\det(AB) = 0$.  We conclude
@@ -2200,7 +2200,7 @@ Prove \propref{prop:elemmatrixdecomp}.
 \begin{enumerate}[a)]
 \item
 Suppose $D = [d_{i,j}]$ is an $n$-by-$n$ \emph{\myindex{diagonal matrix}}, that is, $d_{i,j} = 0$ whenever $i
-\not= j$.  Show that $\det(D) = d_{1,1}d_{2,2} \cdots d_{n,n}$.
+\neq j$.  Show that $\det(D) = d_{1,1}d_{2,2} \cdots d_{n,n}$.
 \item
 Suppose $A$ is a diagonalizable matrix.  That is, there exists a matrix
 $B$ such that $B^{-1}AB = D$ for a diagonal matrix $D = [d_{i,j}]$.  Show
@@ -2502,7 +2502,7 @@ Then $A=B$.
 \end{prop}
 
 \begin{proof}
-Suppose $h \in \R^n$, $h \not= 0$.  Compute
+Suppose $h \in \R^n$, $h \neq 0$.  Compute
 \begin{equation*}
 \begin{split}
 \frac{\bnorm{(A-B)h}}{\snorm{h}} & =
@@ -2618,7 +2618,7 @@ f'(p) .
 \end{prop}
 
 \begin{proof}
-Let $h \in \R^n$, $h \not= 0$.  Then
+Let $h \in \R^n$, $h \neq 0$.  Then
 \begin{multline*}
 \frac{\bnorm{f(p+h)+g(p+h)-\bigl(f(p)+g(p)\bigr) - \bigl(f'(p) + g'(p)\bigr)h}}{\snorm{h}}
 \\
@@ -2706,7 +2706,7 @@ if $k=0$, then
 $\frac
 {\snorm{g(q+k)-g(q) - Bk}}
 {\snorm{h}} = 0$.
-So suppose that $k \not=0$.
+So suppose that $k \neq 0$.
 Then
 \begin{equation*}
 \frac
@@ -3138,7 +3138,7 @@ Define a function $f \colon \R^2 \to \R$ by
 f(x,y)
 \coloneqq
 \begin{cases}
-\frac{xy}{x^2+y^2} & \text{if } (x,y) \not= (0,0), \\
+\frac{xy}{x^2+y^2} & \text{if } (x,y) \neq (0,0), \\
 0                  & \text{if } (x,y) = (0,0).
 \end{cases}
 \end{equation*}
@@ -3166,7 +3166,7 @@ Define a function $f \colon \R^2 \to \R$ by
 f(x,y)
 \coloneqq
 \begin{cases}
-\frac{x^2y}{x^2+y^2} & \text{if } (x,y) \not= (0,0), \\
+\frac{x^2y}{x^2+y^2} & \text{if } (x,y) \neq (0,0), \\
 0                    & \text{if } (x,y) = (0,0).
 \end{cases}
 \end{equation*}
@@ -3456,7 +3456,7 @@ B(x,\delta)$.
 Therefore, $f^{-1}(c)$ is open for all $c \in \R^m$.
 
 Suppose $c_0 \in \R^m$ is such that
-$f^{-1}(c_0) \not= \emptyset$. 
+$f^{-1}(c_0) \neq \emptyset$. 
 As $f$ is also continuous,
 the two sets
 \begin{equation*}
@@ -3672,7 +3672,7 @@ Define $f \colon \R^2 \to \R$ as
 \begin{equation*}
 f(x,y) \coloneqq
 \begin{cases}
-(x^2+y^2)\sin\bigl({(x^2+y^2)}^{-1}\bigr) & \text{if } (x,y) \not= (0,0), \\
+(x^2+y^2)\sin\bigl({(x^2+y^2)}^{-1}\bigr) & \text{if } (x,y) \neq (0,0), \\
 0                                         & \text{if } (x,y) = (0,0).
 \end{cases}
 \end{equation*}
@@ -3689,7 +3689,7 @@ Let $f \colon \R^2 \to \R$ be the function from
 f(x,y)
 \coloneqq
 \begin{cases}
-\frac{xy}{x^2+y^2} & \text{if } (x,y) \not= (0,0), \\
+\frac{xy}{x^2+y^2} & \text{if } (x,y) \neq (0,0), \\
 0                  & \text{if } (x,y) = (0,0).
 \end{cases}
 \end{equation*}
@@ -3815,7 +3815,7 @@ continuously differentiable and the derivative is invertible, the function is
 Let $U \subset \R^n$ be an open set and let
 $f \colon U \to \R^n$ be a continuously differentiable function.
 Suppose $p \in U$ and $f'(p)$ is invertible
-(that is, $J_f(p) \not=0$).
+(that is, $J_f(p) \neq 0$).
 Then there exist open sets $V, W \subset \R^n$ such that
 $p \in V \subset U$, $f(V) = W$, and $f|_V$ is one-to-one.  
 Hence a function $g \colon W \to V$ exists such that
@@ -3933,10 +3933,10 @@ f\bigl(C(x_0,r)\bigr) \subset f(V) = W$.  Therefore, $W$ is open.
 
 Next we need to show that $g$ is continuously differentiable and compute
 its derivative.  First, let us show that it is differentiable.
-Let $y \in W$ and $k \in \R^n$, $k\not= 0$, such that $y+k \in W$.
+Let $y \in W$ and $k \in \R^n$, $k \neq 0$, such that $y+k \in W$.
 Because $f|_V$ is a one-to-one and onto mapping of $V$ onto $W$,
 there are unique
-$x \in V$ and $h \in \R^n$, $h \not= 0$ and $x+h \in V$, such that
+$x \in V$ and $h \in \R^n$, $h \neq 0$ and $x+h \in V$, such that
 $f(x) = y$ and $f(x+h) = y+k$.
 In other words, $g(y) = x$ and $g(y+k) = x+h$.  See
 \figureref{fig:inversefuncRn2}.
@@ -4139,7 +4139,7 @@ The condition
 $\frac{\partial(f_1,\ldots,f_m)}{\partial(y_1,\ldots,y_m)} (p,q) =
 \det(A_y)  \neq 0$
 simply means that $A_y$ is invertible.  If $n=m=1$, the condition 
-is $\frac{\partial f}{\partial y}(p,q) \not= 0$, and $W$ and $W'$ are 
+is $\frac{\partial f}{\partial y}(p,q) \neq 0$, and $W$ and $W'$ are 
 open intervals.  See \figureref{fig:implicitfunc}.
 \begin{myfigureht}
 \subimport*{figures/}{implicitfunc.pdf_t}
@@ -4364,7 +4364,7 @@ to $n$ dimensions.
 
 \begin{exercise}
 Consider $z^2 + xz + y =0$ in $\R^3$.  Find an equation $D(x,y)=0$, such that
-if $D(x_0,y_0) \not= 0$ and $z^2+x_0z+y_0 = 0$ for some $z \in \R$,
+if $D(x_0,y_0) \neq 0$ and $z^2+x_0z+y_0 = 0$ for some $z \in \R$,
 then for points near $(x_0,y_0)$ there exist
 exactly two distinct continuously differentiable functions $r_1(x,y)$
 and $r_2(x,y)$ such that $z=r_1(x,y)$ and $z=r_2(x,y)$ solve
@@ -4391,7 +4391,7 @@ Define $f \colon \R^2 \to \R^2$
 f(x,y) \coloneqq
 \begin{cases}
 \bigl(x^2 \sin (\nicefrac{1}{x}) + \nicefrac{x}{2} , y \bigr) &
- \text{if } x \not= 0, \\
+ \text{if } x \neq 0, \\
 (0,y) &
  \text{if } x=0.
 \end{cases}
@@ -4421,8 +4421,8 @@ Show that $F$ is continuously differentiable (for all $(r,\theta) \in
 \item
 Compute $F'(0,\theta)$ for all $\theta$.
 \item
-Show that if $r \not= 0$, then $F'(r,\theta)$ is invertible, therefore an
-inverse of $F$ exists locally as long as $r \not= 0$.
+Show that if $r \neq 0$, then $F'(r,\theta)$ is invertible, therefore an
+inverse of $F$ exists locally as long as $r \neq 0$.
 \item
 Show that $F \colon \R^2 \to \R^2$ is onto, and for each point $(x,y) \in
 \R^2$, the set $F^{-1}(x,y)$ is infinite.
@@ -4458,18 +4458,18 @@ differentiable.
 \begin{exercise}
 Suppose $U \subset \R^2$ is open and $f \colon U \to \R$ is
 a $C^1$ function such
-that $\nabla f(x,y) \not= 0$ for all $(x,y) \in U$.  Show that every
+that $\nabla f(x,y) \neq 0$ for all $(x,y) \in U$.  Show that every
 level set is a $C^1$ smooth curve.  That is,
 for every
 $(x,y) \in U$, there exists a $C^1$ function $\gamma \colon (-\delta,\delta)
-\to \R^2$ with $\gamma^{\:\prime}(0) \not= 0$ such that
+\to \R^2$ with $\gamma^{\:\prime}(0) \neq 0$ such that
 $f\bigl(\gamma(t)\bigr)$ is constant for all $t \in (-\delta,\delta)$.
 \end{exercise}
 
 \begin{exercise}
 Suppose $U \subset \R^2$ is open and $f \colon U \to \R$ is
 a $C^1$ function such
-that $\nabla f(x,y) \not= 0$ for all $(x,y) \in U$.
+that $\nabla f(x,y) \neq 0$ for all $(x,y) \in U$.
 Show that for every $(x,y)$ there exists a neighborhood $V$ of $(x,y)$
 an open set $W \subset \R^2$, a bijective $C^1$ function with
 a $C^1$ inverse $g \colon W \to V$ such that
@@ -4684,7 +4684,7 @@ Define
 \begin{equation*}
 f(x,y) \coloneqq
 \begin{cases}
-\frac{xy(x^2-y^2)}{x^2+y^2} & \text{if } (x,y) \not= (0,0),\\
+\frac{xy(x^2-y^2)}{x^2+y^2} & \text{if } (x,y) \neq (0,0),\\
 0                           & \text{if } (x,y) = (0,0).
 \end{cases}
 \end{equation*}
@@ -4697,7 +4697,7 @@ The partial derivatives
 $\frac{\partial^2 f}{\partial x \partial y}$ and
 $\frac{\partial^2 f}{\partial y \partial x}$ exist, but are not continuous
 at $(0,0)$, and
-$\frac{\partial^2 f}{\partial x \partial y}(0,0) \not= 
+$\frac{\partial^2 f}{\partial x \partial y}(0,0) \neq 
 \frac{\partial^2 f}{\partial y \partial x}(0,0)$.
 \end{enumerate}
 \end{exercise}

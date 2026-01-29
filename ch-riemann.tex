@@ -536,7 +536,7 @@ we write $\int_a^b f$ to mean the Riemann integral
 of the restriction of $f$ to $[a,b]$.
 
 It is useful to define the integral $\int_a^b f$ even if
-$a \not< b$.  Suppose $b < a$ and $f \in \sR\bigl([b,a]\bigr)$.
+$a \nless b$.  Suppose $b < a$ and $f \in \sR\bigl([b,a]\bigr)$.
 Define
 \begin{equation*}
 \int_a^b f \coloneqq - \int_b^a f .
@@ -611,7 +611,7 @@ Define $f \colon [a,b] \to \R$ as
 f(x) \coloneqq
 \begin{cases}
 d & \text{if } x = c, \\
-0 & \text{if } x \not= c.
+0 & \text{if } x \neq c.
 \end{cases}
 \end{equation*}
 Prove that $f \in \sR\bigl([a,b]\bigr)$ and
@@ -1678,7 +1678,7 @@ Thus if $x > c$, then
 \bigl(f(c) + \epsilon\bigr)(x-c).
 \end{equation*}
 When $c > x$, then the inequalities are reversed.  Therefore,
-assuming $x \not= c$, we get
+assuming $x \neq c$, we get
 \begin{equation*}
 f(c)-\epsilon
 \leq
@@ -1722,7 +1722,7 @@ difficult to see that $F(x) = \sabs{x}$.  Notice that $f$ is discontinuous at
 $0$ and $F$ is not differentiable at $0$.  However, the converse in the
 theorem does not
 hold.
-Let $g(x) \coloneqq 0$ if $x \not= 0$, and $g(0) \coloneqq 1$.
+Let $g(x) \coloneqq 0$ if $x \neq 0$, and $g(0) \coloneqq 1$.
 Letting $G(x) \coloneqq \int_0^x g$,
 we find that $G(x) = 0$ for all $x$.  So $g$ is discontinuous
 at $0$, but $G'(0)$ exists and is equal to 0.
@@ -2038,7 +2038,7 @@ x^n \coloneqq \underbrace{x \cdot x \cdots x}_{n \text{ times}} .
 \end{equation*}
 It makes sense to define $x^0 \coloneqq 1$.
 For negative integers, let $x^{-n} \coloneqq \nicefrac{1}{x^n}$ as long as
-$x \not= 0$.
+$x \neq 0$.
 Next suppose $x > 0$.
 Define
 $x^{1/n}$ as
@@ -2288,7 +2288,7 @@ Then
 0 = 1-1 = F(x)E(-x) - E(x)E(-x) = \bigl(F(x)-E(x)\bigr) E(-x) .
 \end{equation*}
 %Since $E(x)E(-x) = 1$,
-Finally, $E(-x) \not= 0$\footnote{%
+Finally, $E(-x) \neq 0$\footnote{%
 $E$ is a function into $(0,\infty)$ after all.
 However, $E(-x) \neq 0$ also follows
 from $E(x)E(-x) = 1$.  Therefore, we can prove uniqueness of $E$ 
@@ -2413,7 +2413,7 @@ you can do that).
 \end{exercise}
 
 \begin{exercise}
-Use the geometric sum formula to show (for $t\not= -1$)
+Use the geometric sum formula to show (for $t \neq -1$)
 \begin{equation*}
 1-t+t^2-\cdots+{(-1)}^n t^n = \frac{1}{1+t} - \frac{{(-1)}^{n+1}t^{n+1}}{1+t}.
 \end{equation*}
@@ -2438,8 +2438,8 @@ Hint: Take the logarithm.\\
 Note: The expression 
 ${\left( 1 + \frac{x}{n} \right)}^n$ arises in compound interest
 calculations.  It is the amount of money in a bank account after 1 year
-if 1 dollar was deposited initially at interest $x$
-and the interest was compounded $n$
+if 1 dollar was deposited initially at interest rate $x$ (e.g., $x=0.01$ for
+$1\%$) and the interest was compounded $n$
 times during the year.  The exponential $e^x$ is the result of continuous
 compounding.
 \end{exercise}
@@ -2468,7 +2468,7 @@ Prove that the limit
 exists.  This constant $\gamma$ is known as the
 \emph{\myindex{Euler--Mascheroni constant}}%
 \footnote{Named for the Swiss mathematician
-\href{https://en.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Paul Euler}
+\href{https://en.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler}
 (1707--1783)
 and the Italian mathematician
 \href{https://en.wikipedia.org/wiki/Lorenzo_Mascheroni}{Lorenzo Mascheroni}
@@ -2579,8 +2579,8 @@ If the limit exists, we say the improper integral
 If the limit does not exist, we say the improper integral
 \emph{diverges}\index{divergent!improper integral}.
 
-We similarly define improper integrals for the left-hand endpoint, we leave
-this to the reader.
+We similarly define improper integrals for the left-hand endpoint.
+We leave this definition to the reader.
 \end{defn}
 
 For a finite endpoint $b$, if $f$ is bounded,
@@ -2666,7 +2666,7 @@ as the following proposition demonstrates.
 The exercises will show that this proposition
 holds only for nonnegative functions.
 Analogues of this proposition
-exist for all the other types of improper limits and are left to the
+exist for all the other types of improper integrals and are left to the
 student.
 
 \begin{prop} \label{impropriemann:possimp}
@@ -2884,7 +2884,7 @@ integral in two; you cannot split the limit.
 \int_2^b \frac{1}{x+1}\,dx
 \right)
 \\
-&\not=
+&\neq
 \int_2^\infty \frac{1}{x-1}\,dx
 -
 \int_2^\infty \frac{1}{x+1}\,dx .
@@ -2916,7 +2916,7 @@ we define
 if the limits exist.
 
 We similarly define improper integrals with one infinite and one finite
-improper endpoint, we leave this to the reader.
+improper endpoint.  We leave this definition to the reader.
 \end{defn}
 
 One ought to always be careful about double limits.  The definition
@@ -3055,7 +3055,7 @@ and
 \begin{example}
 On the other hand, you must be careful to
 take the limits independently before you know convergence.  Let
-$f(x) = \frac{x}{\sabs{x}}$ for $x \not= 0$ and $f(0) = 0$.
+$f(x) = \frac{x}{\sabs{x}}$ for $x \neq 0$ and $f(0) = 0$.
 If $a < 0$ and $b > 0$, then
 \begin{equation*}
 \int_{a}^b f
@@ -3092,7 +3092,7 @@ in both pure and applied mathematics.  Define
 \begin{equation*}
 \operatorname{sinc}(x) \coloneqq
 \begin{cases}
-\frac{\sin(x)}{x} & \text{if } x \not= 0 , \\
+\frac{\sin(x)}{x} & \text{if } x \neq 0 , \\
 1 & \text{if } x = 0 .
 \end{cases}
 \end{equation*}
@@ -3113,7 +3113,7 @@ The integral of the sinc function is a continuous analogue of the
 alternating harmonic series $\sum_{n=1}^\infty \nicefrac{{(-1)}^n}{n}$, while the
 absolute value is like the regular harmonic series $\sum_{n=1}^\infty \nicefrac{1}{n}$.
 In particular, the fact that the integral converges must be done directly
-rather than using comparison test.
+rather than using the comparison test.
 
 We will not prove the first statement exactly.  Let us simply prove
 that the integral of the sinc function converges, but we will not worry
@@ -3303,7 +3303,7 @@ makes sense without additional hypotheses of integrability.
 $\int_1^\infty f$, is bounded below
 by the area of the shaded rectangles,
 $f(2)+f(3)+f(4)+\cdots$, and bounded above
-by the area entire rectangles,
+by the area of the entire rectangles, both the shaded and unshaded parts,
 $f(1)+f(2)+f(3)+\cdots$.\label{fig:integraltest}}
 \end{myfigureht}
 
@@ -3510,7 +3510,7 @@ integral over this interval is less than say $2^{-k}$.
 
 \begin{exercise}[More challenging]
 Find an example of a function $f \colon [0,\infty) \to \R$ integrable on all
-intervals such that $\lim_{n\to\infty} \int_0^n f$ converges as a
+intervals such that $\lim_{n\to\infty} \int_0^n f$ exists as a
 limit of a sequence (so $n \in \N$), but such that
 $\int_0^\infty f$ does not exist.
 Hint: For all $n\in \N$, divide $[n,n+1]$ into two halves.  On one half

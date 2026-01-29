@@ -218,7 +218,7 @@ all orders exist)
 and $f(0) = 0$.  Show that there exists an infinitely
 differentiable function $g \colon \R \to \R$ such that $f(x) = x\,g(x)$.
 Show also that
-if $f'(0) \not= 0$, then $g(0) \not= 0$.\\
+if $f'(0) \neq 0$, then $g(0) \neq 0$.\\
 Hint: Write
 $f(x) = \int_0^x f'(s) \,ds$ and then rewrite the integral to go
 from $0$ to $1$.
@@ -261,8 +261,8 @@ Work out the following counterexample:  Let
 \begin{equation*}
 f(x,y) \coloneqq
 \begin{cases}
-\frac{xy^3}{{(x^2+y^2)}^2} & \text{if } x\not=0 \text{ or } y\not= 0, \\
-0                          & \text{if } x=0 \text{ and } y=0.
+\frac{xy^3}{{(x^2+y^2)}^2} & \text{if } x \neq 0 \text{ or } y \neq 0, \\
+0                          & \text{if } x = 0 \text{ and } y = 0.
 \end{cases}
 \end{equation*}
 See \figureref{fig:diffunderex916}.
@@ -290,7 +290,7 @@ Show that for all $y$
 \end{equation*}
 exists, but
 \begin{equation*}
-g'(0) \not= \int_0^1 \frac{\partial f}{\partial y} (x,0) \, dx .
+g'(0) \neq \int_0^1 \frac{\partial f}{\partial y} (x,0) \, dx .
 \end{equation*}
 \end{enumerate}
 \end{exercise}
@@ -301,7 +301,7 @@ Work out the following counterexample:  Let
 \begin{equation*}
 f(x,y) \coloneqq
 \begin{cases}
-x \,\sin \left(\frac{y}{x^2+y^2}\right) & \text{if } (x,y) \not= (0,0),\\
+x \,\sin \left(\frac{y}{x^2+y^2}\right) & \text{if } (x,y) \neq (0,0),\\
 0                                       & \text{if } (x,y)=(0,0).
 \end{cases}
 \end{equation*}
@@ -402,7 +402,7 @@ word \myquote{smooth} can sometimes mean
 \myquote{infinitely differentiable} in the literature.}
 if
 $\gamma$ is continuously differentiable and
-$\gamma^{\:\prime}(t) \not= 0$ for all $t \in [a,b]$.
+$\gamma^{\:\prime}(t) \neq 0$ for all $t \in [a,b]$.
 
 The function $\gamma \colon [a,b] \to \R^n$ is called a
 \emph{\myindex{piecewise smooth path}} or a
@@ -442,7 +442,7 @@ The path $\gamma$ is the unit square traversed
 counterclockwise.  See \figureref{fig:squarepath}.  It is
 a piecewise smooth path.  For example,
 $\gamma|_{[1,2]}(t) = (1,t-1)$ and so
-$(\gamma|_{[1,2]})'(t) = (0,1) \not= 0$.  Similarly for the other 3 sides.
+$(\gamma|_{[1,2]})'(t) = (0,1) \neq 0$.  Similarly for the other 3 sides.
 Notice
 that
 $(\gamma|_{[1,2]})'(1) = (0,1)$,
@@ -469,7 +469,7 @@ on context.
 
 
 \begin{example}
-The condition $\gamma^{\:\prime}(t) \not= 0$ means that the image
+The condition $\gamma^{\:\prime}(t) \neq 0$ means that the image
 $\gamma\bigl([a,b]\bigr)$
 has no \myquote{corners} where $\gamma$ is smooth.
 Consider 
@@ -495,7 +495,7 @@ $t$ are marked with dots.\label{fig:cornersmoothpath}}
 \end{myfigureht}
 \end{example}
 
-The condition $\gamma^{\:\prime}(t) \not= 0$ even at the endpoints of
+The condition $\gamma^{\:\prime}(t) \neq 0$ even at the endpoints of
 every subinterval guarantees
 not only no corners, but also that the path ends nicely, that is, it can
 extend a little bit past the endpoints if needed.  Again, see the exercises.
@@ -529,7 +529,7 @@ The last example leads us to a definition.
 \begin{defn}
 Let $\gamma \colon [a,b] \to \R^n$ be a smooth path and
 $h \colon [c,d] \to [a,b]$ a continuously differentiable bijective function
-such that $h'(t) \not= 0$ for all $t \in [c,d]$.  Then
+such that $h'(t) \neq 0$ for all $t \in [c,d]$.  Then
 the composition
 $\gamma \circ h$ is called a
 \emph{\myindex{smooth reparametrization}}\index{reparametrization}
@@ -554,7 +554,7 @@ $(\gamma \circ h)\bigl([c,d]\bigr) =
 The conditions on the piecewise smooth $h$ mean that
 there is some partition $t_0 = c < t_1 < t_2 < \cdots < t_k = d$,
 such that $h|_{[t_{j-1},t_j]}$ is continuously differentiable
-and $\bigl(h|_{[t_{j-1},t_j]}\bigr)'(t) \not= 0$
+and $\bigl(h|_{[t_{j-1},t_j]}\bigr)'(t) \neq 0$
 for all $t \in [t_{j-1},t_j]$.
 Since $h$ is bijective, it is either strictly increasing or
 strictly decreasing.  So either $\bigl(h|_{[t_{j-1},t_j]}\bigr)'(t) > 0$
@@ -603,7 +603,7 @@ by the chain rule
 \bigl( (\gamma \circ h)|_{[s_{j-1},s_{j}]} \bigr) ' (\tau)
 =
 \bigl( \gamma|_{[t_{j-1},t_{j}]} \bigr)' \bigl( h(\tau) \bigr)
-\bigl(h|_{[s_{j-1},s_j]}\bigr)'(\tau) \not= 0 .
+\bigl(h|_{[s_{j-1},s_j]}\bigr)'(\tau) \neq 0 .
 \end{equation*}
 Consequently, $\gamma \circ h$ is a piecewise smooth path.
 The proof for orientation reversing $h$ is left as an exercise.
@@ -1196,7 +1196,7 @@ Suppose $\gamma \colon [a,b] \to \R^n$ is a smooth path.
 Show that there exists an $\epsilon > 0$ and a smooth function
 $\widetilde{\gamma} \colon (a-\epsilon,b+\epsilon) \to \R^n$
 with $\widetilde{\gamma}(t) = \gamma(t)$ for all $t \in [a,b]$
-and $\widetilde{\gamma}^{\:\prime}(t) \not= 0$ for all $t \in 
+and $\widetilde{\gamma}^{\:\prime}(t) \neq 0$ for all $t \in 
 (a-\epsilon,b+\epsilon)$.  That is, prove that a smooth path extends
 some small distance past the end points.
 \end{exercise}
@@ -1311,7 +1311,7 @@ Define $\gamma \colon [0,1] \to \R^2$ by
 $\gamma(t) \coloneqq \Bigl( t^3 \sin(\nicefrac{1}{t}),\,
 t{\bigl(3t^2\sin(\nicefrac{1}{t})-t\cos(\nicefrac{1}{t})\bigr)}^2 \Bigr)$
 for
-$t \not= 0$ and $\gamma(0) = (0,0)$.  Show that
+$t \neq 0$ and $\gamma(0) = (0,0)$.  Show that
 \begin{enumerate}[a)]
 \item
 $\gamma$ is continuously differentiable on $[0,1]$.

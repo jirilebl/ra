@@ -732,7 +732,7 @@ $\{ x_{m_i} \}_{i=1}^\infty$.  Suppose
 \qquad \text{and} \qquad
 \lim_{i\to\infty} x_{m_i} = b,
 \end{equation*}
-where $a \not= b$.  Prove that $\{ x_n \}_{n=1}^\infty$ is not convergent, without
+where $a \neq b$.  Prove that $\{ x_n \}_{n=1}^\infty$ is not convergent, without
 using \propref{prop:seqtosubseq}.
 \end{exercise}
 
@@ -991,7 +991,7 @@ The sequence $\{ z_n \}_{n=1}^\infty$, where $z_n \coloneqq x_n y_n$, converges 
 \left( \lim_{n \to \infty} y_n \right) .
 \end{equation*}
 \item \label{prop:contalg:iv}
-If $\lim_{n\to\infty} y_n \not= 0$ and $y_n \not= 0$ for all $n \in \N$, then
+If $\lim_{n\to\infty} y_n \neq 0$ and $y_n \neq 0$ for all $n \in \N$, then
 the sequence $\{ z_n \}_{n=1}^\infty$, where $z_n \coloneqq \dfrac{x_n}{y_n}$, converges and
 \begin{equation*}
 \lim_{n \to \infty} \frac{x_n}{y_n} = 
@@ -1084,7 +1084,7 @@ Finally, we examine
 \ref{prop:contalg:iv} directly, we prove the following simpler claim:
 
 Claim: \emph{If $\{ y_n \}_{n=1}^\infty$ is a convergent sequence such that
-$\lim_{n\to\infty} y_n \not= 0$ and $y_n \not= 0$ for all $n \in \N$, then
+$\lim_{n\to\infty} y_n \neq 0$ and $y_n \neq 0$ for all $n \in \N$, then
 $\{ \nicefrac{1}{y_n} \}_{n=1}^\infty$ converges and}
 \begin{equation*}
 \lim_{n\to\infty} \frac{1}{y_n} = \frac{1}{\lim_{n\to\infty} y_n}  .
@@ -1097,7 +1097,7 @@ multiply it by the sequence $\{ x_n \}_{n=1}^\infty$ and apply item
 
 Proof of claim:  Let $\epsilon > 0$ be given.
 Let $y \coloneqq \lim_{n\to\infty} y_n$.
-As $\sabs{y} \not= 0$, we have
+As $\sabs{y} \neq 0$, we have
 $\min \left\{ \sabs{y}^2\frac{\epsilon}{2}, \, \frac{\sabs{y}}{2} \right\} > 0$.
 Find an $M$ such that for all $n \geq M$,
 we have
@@ -1327,7 +1327,7 @@ for finding the square root of 2.  This method comes up often in
 practice and converges very rapidly.  We used the fact that
 $x_1^2 -2 >0$, although it was not strictly needed to show convergence by
 considering a tail of the sequence.
-The sequence converges as long as $x_1 \not= 0$, although with a negative $x_1$
+The sequence converges as long as $x_1 \neq 0$, although with a negative $x_1$
 we would arrive at $x=-\sqrt{2}$.  By replacing the 2 in the numerator we 
 obtain the square root of any positive number.  These statements are left as
 an exercise.
@@ -1417,7 +1417,7 @@ bounded below and
 decreasing.  Hence, it is convergent.
 Let $x \coloneqq \lim_{n\to\infty} c^n$.  The 1-tail $\{ c^{n+1} \}_{n=1}^\infty$
 also converges to $x$.  Taking the limit of both sides of $c^{n+1} = c \cdot
-c^n$, we obtain $x = cx$, or $(1-c)x=0$.  It follows that $x=0$ as $c \not= 1$.
+c^n$, we obtain $x = cx$, or $(1-c)x=0$.  It follows that $x=0$ as $c \neq 1$.
 
 Now consider $c > 1$.
 Let $B > 0$ be arbitrary.
@@ -1439,7 +1439,7 @@ The following lemma will come up again once we get to series.
 
 \begin{lemma}[Ratio test for sequences]\index{ratio test for sequences}
 \label{seq:ratiotest}
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence such that $x_n \not= 0$ for all $n$ and such that
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence such that $x_n \neq 0$ for all $n$ and such that
 the limit
 \begin{equation*}
 L \coloneqq \lim_{n\to\infty} \frac{\sabs{x_{n+1}}}{\sabs{x_n}}
@@ -1643,7 +1643,7 @@ Show that
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence, $x \in \R$, and $x_n \not= x$ for
+Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence, $x \in \R$, and $x_n \neq x$ for
 all $n \in \N$.  Suppose the limit
 \begin{equation*}
 L \coloneqq \lim_{n \to \infty} \frac{\sabs{x_{n+1}-x}}{\sabs{x_n-x}}
@@ -1665,7 +1665,7 @@ Next, find an expression $q$ such that $\frac{x_n^{1/k}-x^{1/k}}{x_n-x} =
 \end{exercise}
 
 \begin{exercise}
-Let $r > 0$.  Show that starting with an arbitrary $x_1 \not= 0$, the sequence
+Let $r > 0$.  Show that starting with an arbitrary $x_1 \neq 0$, the sequence
 defined by
 \begin{equation*}
 x_{n+1} \coloneqq x_n - \frac{x_n^2-r}{2x_n}
@@ -1685,7 +1685,7 @@ Find an example where $\{ a_n \}_{n=1}^\infty$ is unbounded, $\{ b_n \}_{n=1}^\i
 0, and $\{ a_n b_n \}_{n=1}^\infty$ is not convergent.
 \item
 Find an example where $\{ a_n \}_{n=1}^\infty$ is bounded, $\{ b_n \}_{n=1}^\infty$ converges to
-some $x \not= 0$, and $\{ a_n b_n \}_{n=1}^\infty$ is not convergent.
+some $x \neq 0$, and $\{ a_n b_n \}_{n=1}^\infty$ is not convergent.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
@@ -1694,7 +1694,7 @@ some $x \not= 0$, and $\{ a_n b_n \}_{n=1}^\infty$ is not convergent.
 \begin{exercise}[Easy] \label{exercise:strongerratiotest1}
 Prove the following stronger version of \lemmaref{seq:ratiotest}, the ratio
 test.  
-Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence such that $x_n \not= 0$ for all
+Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence such that $x_n \neq 0$ for all
 $n$.
 \begin{enumerate}[a)]
 \item
@@ -2548,7 +2548,7 @@ case, $\lim_{n\to\infty} x_n = \sup \{ x_n : n \in \N \}$.
 \begin{exercise} \label{exercise:strongerratiotest2}
 Prove the following stronger version of \lemmaref{seq:ratiotest}, the ratio
 test.
-Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence such that $x_n \not= 0$ for all
+Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence such that $x_n \neq 0$ for all
 $n$.
 \begin{enumerate}[a)]
 \item
@@ -2859,7 +2859,7 @@ there exists a positive $C < 1$ and for all $n$,
 \sabs{x_{n+1} - x_n} \leq C \sabs{x_{n}-x_{n-1}} .
 \end{equation*}
 Prove that $\{ x_n \}_{n=1}^\infty$ is Cauchy.
-Hint:  You can freely use the formula (for $C \not= 1$)
+Hint:  You can freely use the formula (for $C \neq 1$)
 \begin{equation*}
 1+ C+ C^2 + \cdots + C^n = \frac{1-C^{n+1}}{1-C}.
 \end{equation*}
@@ -3308,7 +3308,7 @@ Multiplying series is not as simple as adding; see the next
 section.
 It is not true, of course, that we multiply
 term by term.  That strategy does not work even for finite sums:
-$(a+b)(c+d) \not= ac+bd$.
+$(a+b)(c+d) \neq ac+bd$.
 
 \subsection{Absolute convergence}
 
@@ -3581,7 +3581,7 @@ of the partial sums exists.  For instance, while we know that
 $\sum_{n=1}^\infty \nicefrac{1}{n^2}$ converges, it is far harder to
 find\footnote{Demonstration of this fact is
 what made the Swiss mathematician
-\href{https://en.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Paul Euler}
+\href{https://en.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler}
 (1707--1783)
 famous.}
 that the limit is $\nicefrac{\pi^2}{6}$.
@@ -3610,7 +3610,7 @@ the tail of a series to the geometric series.
 
 
 \begin{prop}[Ratio test]\index{ratio test for series}
-Let $\sum_{n=1}^\infty x_n$ be a series, $x_n \not= 0$ for all $n$, and such that
+Let $\sum_{n=1}^\infty x_n$ be a series, $x_n \neq 0$ for all $n$, and such that
 \begin{equation*}
 L \coloneqq \lim_{n\to\infty} \frac{\sabs{x_{n+1}}}{\sabs{x_n}}
 \qquad \text{exists.}
@@ -3833,7 +3833,7 @@ $\sum_{n=1}^\infty x_ny_n$ converges absolutely.
 \item Find an explicit example where all three series are absolutely convergent,
 are not just finite sums,
 and $\left(\sum_{n=1}^\infty x_n\right)\left(\sum_{n=1}^\infty y_n\right)
-\not= \sum_{n=1}^\infty x_ny_n$.  That is, show that series are
+\neq \sum_{n=1}^\infty x_ny_n$.  That is, show that series are
 not multiplied term-by-term.
 \end{enumerate}
 \end{exercise}
@@ -3873,7 +3873,7 @@ s_{mk}$ exists and $\lim\limits_{n\to\infty} x_n = 0$.  Show that
 $\sum_{n=1}^\infty x_n$ converges.
 \item
 Find an example where $\lim\limits_{k\to\infty} s_{2k}$ exists and
-$\lim\limits_{n\to\infty} x_n \not= 0$ (and therefore $\sum_{n=1}^\infty x_n$ diverges).
+$\lim\limits_{n\to\infty} x_n \neq 0$ (and therefore $\sum_{n=1}^\infty x_n$ diverges).
 \item
 (Challenging) Find an example where $\lim_{n\to\infty} x_n = 0$, and there exists
 a subsequence $\{ s_{k_i} \}_{i=1}^\infty$ such that $\displaystyle \lim_{i\to\infty} s_{k_i}$ exists,
@@ -4179,7 +4179,7 @@ defined $\sigma(n)$ for all $n \leq N$.  If
 \end{equation*}
 then let $\sigma(N+1) \coloneqq k$ be the smallest odd $k \in \N$
 that we have not used yet,
-that is, $\sigma(n) \not= k$ for all $n \leq N$.
+that is, $\sigma(n) \neq k$ for all $n \leq N$.
 Otherwise, let $\sigma(N+1) \coloneqq k$ 
 be the smallest even $k$ that we have not yet used.
 
@@ -4437,10 +4437,10 @@ $0^0 = 1$ (that is, if $x=x_0$ and $n=0$).
 
 A power series is said to be
 \emph{convergent}\index{convergent!power series} if
-there is at least one $x \not= x_0$ that makes the series converge.
+there is at least one $x \neq x_0$ that makes the series converge.
 If $x=x_0$, then the series always
 converges since all terms except the first are zero.
-If the series does not converge for any point $x \not= x_0$, we say that
+If the series does not converge for any point $x \neq x_0$, we say that
 the series is \emph{divergent}\index{divergent!power series}.
 
 \begin{example} \label{ps:expex}
@@ -4496,7 +4496,7 @@ The series
 \begin{equation*}
 \sum_{n=1}^\infty n^n x^n
 \end{equation*}
-diverges for all $x \not= 0$.  Let us apply the root test
+diverges for all $x \neq 0$.  Let us apply the root test
 \begin{equation*}
 \limsup_{n\to\infty}
 \,
@@ -4507,7 +4507,7 @@ diverges for all $x \not= 0$.  Let us apply the root test
 n \sabs{x}
 = \infty .
 \end{equation*}
-Therefore, the series diverges for all $x \not= 0$.
+Therefore, the series diverges for all $x \neq 0$.
 \end{example}
 
 Convergence of power series in general works analogously to
@@ -4552,7 +4552,7 @@ L = \limsup_{n\to\infty} {\babs{a_n {(x-x_0)}^n}}^{1/n}
 =
 \sabs{x-x_0} R .
 \end{equation*}
-If $R = \infty$, then $L=\infty$ for every $x \not= x_0$, and
+If $R = \infty$, then $L=\infty$ for every $x \neq x_0$, and
 the series diverges by the root test.
 On the other hand,
 if $R = 0$, then $L=0$ for every $x$,
@@ -4663,7 +4663,7 @@ $x \in (-1,1)$,
 \sum_{n=0}^\infty x^n .
 \end{equation*}
 The series diverges when $\sabs{x} > 1$, even though $\frac{1}{1-x}$ is
-defined for all $x \not= 1$.
+defined for all $x \neq 1$.
 
 We can use the geometric series together with rules for addition and
 multiplication of power series to expand rational functions as power
