@@ -179,7 +179,7 @@ $\displaystyle \lim_{n\to \infty} z_n + w_n = z + w$.
 \item
 $\displaystyle \lim_{n\to \infty} z_n w_n = z w$.
 \item
-Assuming $w_n \not= 0$ for all $n$ and $w\not= 0$,
+Assuming $w_n \neq 0$ for all $n$ and $w \neq 0$,
 $\displaystyle \lim_{n\to \infty} \frac{z_n}{w_n} = \frac{z}{w}$.
 \item
 $\displaystyle \lim_{n\to \infty} \sabs{z_n} = \sabs{z}$.
@@ -338,7 +338,7 @@ that there exists a subsequence $\{ z_{n_k} \}_{k=1}^\infty$ that converges to s
 \item
 Prove that there is no simple mean value theorem for complex-valued
 functions:  Find a differentiable function $f \colon [0,1] \to \C$ such that
-$f(0) = f(1) = 0$, but $f'(t) \not= 0$ for all $t \in [0,1]$.
+$f(0) = f(1) = 0$, but $f'(t) \neq 0$ for all $t \in [0,1]$.
 \item
 However, there is a weaker form of the mean value theorem as there is for vector-valued
 functions.  Prove: If $f \colon [a,b] \to \C$ is continuous and differentiable in
@@ -351,7 +351,7 @@ $\babs{f(b)-f(a)} \leq M \sabs{b-a}$.
 Prove that there is no simple mean value theorem for integrals
 for complex-valued
 functions:  Find a continuous function $f \colon [0,1] \to \C$ such that
-$\int_0^1 f = 0$ but $f(t) \not= 0$ for all $t \in [0,1]$.
+$\int_0^1 f = 0$ but $f(t) \neq 0$ for all $t \in [0,1]$.
 \end{exercise}
 
 
@@ -1033,7 +1033,7 @@ A (complex) power series is a series of the form
 \end{equation*}
 for $c_n, z, a \in \C$.  We say the series
 \emph{converges}\index{converges!power series} if the series converges for
-some $z \not= a$.
+some $z \neq a$.
 
 Let $U \subset \C$ be an open set and
 $f \colon U \to \C$ a function.
@@ -1060,7 +1060,7 @@ domain of the function.  For example, if $\sabs{z} < 1$, then
 \begin{equation*}
 \frac{1}{1-z} = \sum_{n=0}^\infty z^n .
 \end{equation*}
-While the left-hand side exists on all of $z \not= 1$, the right-hand side
+While the left-hand side exists on all of $z \neq 1$, the right-hand side
 happens to converge only if $\sabs{z} < 1$.  See a graph
 of a small piece of $\frac{1}{1-z}$ in \figureref{fig:1over1mz}.
 We cannot graph the
@@ -1169,7 +1169,7 @@ We list some series we already know:
 
 \begin{example}
 Note the difference between $\frac{1}{1-z}$ and its power series.  Let us
-expand $\frac{1}{1-z}$ as power series around a point $a \not= 1$.
+expand $\frac{1}{1-z}$ as a power series around a point $a \neq 1$.
 Let $c \coloneqq \frac{1}{1-a}$, then
 \begin{equation*}
 \frac{1}{1-z} = 
@@ -1190,7 +1190,7 @@ the series on the right-hand side converges and
 The radius of convergence of the power series is $\sabs{1-a}$, that is, the
 distance from $1$ to $a$.  The function $\frac{1}{1-z}$
 has a power series
-representation around every $a\not= 1$ and so is analytic in $\C \setminus
+representation around every $a \neq 1$ and so is analytic in $\C \setminus
 \{ 1 \}$.
 The domain of the function is bigger than the region
 of convergence of the power series representing the function at any point.
@@ -1532,15 +1532,15 @@ such that $f(z_n) = 0$ for all $n$.  Then $a_k = 0$ for every~$k$.
 \begin{proof}
 By continuity we know $f(0) = 0$ so $a_0 = 0$.
 Suppose there exists some nonzero $a_k$.
-Let $m$ be the smallest $m$ such that $a_m \not= 0$.  Then
+Let $m$ be the smallest $m$ such that $a_m \neq 0$.  Then
 \begin{equation*}
 f(z) = \sum_{k=m}^\infty a_k z^k = 
 z^m \sum_{k=m}^\infty a_k z^{k-m} =
 z^m \sum_{k=0}^\infty a_{k+m} z^{k} .
 \end{equation*}
-Write $g(z) = \sum_{k=0}^\infty a_{k+m} z^{k}$ (this series converges in
-on the same set as $f$).  $g$ is continuous and $g(0) = a_m \not= 0$.  Thus
-there exists some $\delta > 0$ such that $g(z) \not= 0$ for all $z \in
+Write $g(z) = \sum_{k=0}^\infty a_{k+m} z^{k}$ (this series converges
+on the same set as $f$).  $g$ is continuous and $g(0) = a_m \neq 0$.  Thus
+there exists some $\delta > 0$ such that $g(z) \neq 0$ for all $z \in
 B(0,\delta)$.  As $f(z) = z^m g(z)$, the only point in $B(0,\delta)$ where
 $f(z) = 0$ is when $z=0$, but this contradicts the assumption
 that $f(z_n) = 0$ for all $n$.
@@ -1685,12 +1685,12 @@ Suppose $f(z) \coloneqq \sum_{n=0}^\infty c_n z^n$ with a radius of convergence 
 = 0$, but $f$ is not the zero function.
 Show that there exists a $k \in \N$ and a convergent
 power series $g(z) \coloneqq \sum_{n=0}^\infty d_n z^n$ with radius of convergence 1
-such that $f(z) = z^k g(z)$ for all $z \in B(0,1)$, and $g(0) \not= 0$.
+such that $f(z) = z^k g(z)$ for all $z \in B(0,1)$, and $g(0) \neq 0$.
 \end{exercise}
 
 \begin{exercise}
 Suppose $U \subset \C$ is open and connected.  Suppose that
-$f \colon U \to \C$ is analytic, $U \cap \R \not= \emptyset$ and
+$f \colon U \to \C$ is analytic, $U \cap \R \neq \emptyset$ and
 $f(x) = 0$ for all $x \in U \cap \R$.  Show that $f(z) = 0$ for all $z \in
 U$.
 \end{exercise}
@@ -1804,7 +1804,7 @@ $e^{z+w} = e^z e^w$
 for all $w \in \C$.
 \end{proof}
 
-A simple consequence of the proposition is that $e^z\not=0$ for all $z \in \C$,
+A simple consequence of the proposition is that $e^z \neq 0$ for all $z \in \C$,
 as $e^z e^{-z} = e^{z-z} = 1$.
 This computation means that ${(e^z)}^{-1} = e^{-z}$.
 Combining that fact with the law of exponents gives
@@ -2120,7 +2120,7 @@ that for every nonzero $w$, there are infinitely many $z \in \C$ such that $e^z=
 \end{exercise}
 
 \begin{exercise}
-Prove that for every $w \not= 0$ and every $\epsilon > 0$,
+Prove that for every $w \neq 0$ and every $\epsilon > 0$,
 there exists a $z \in \C$ with $\sabs{z} < \epsilon$ such that $e^{1/z} = w$.
 \end{exercise}
 
@@ -2140,7 +2140,7 @@ $\cos(z + w) = \cos(z) \cos(w) - \sin(z) \sin(w)$ for all $z,w \in \C$.
 \end{exercise}
 
 \begin{exercise}
-Define $\operatorname{sinc}(z) \coloneqq \frac{\sin(z)}{z}$ for $z \not=0$ and
+Define $\operatorname{sinc}(z) \coloneqq \frac{\sin(z)}{z}$ for $z \neq 0$ and
 $\operatorname{sinc}(0) \coloneqq 1$.
 Show that sinc is analytic and compute its power series at zero.
 \end{exercise}
@@ -2230,7 +2230,7 @@ has a complex root.
 Let $\epsilon > 0$,
 let $p(z)$ be a nonconstant complex polynomial, or more generally
 a nonconstant power series converging in $B(z_0,\epsilon)$,
-and suppose $p(z_0) \not= 0$.
+and suppose $p(z_0) \neq 0$.
 Then there exists a $w \in B(z_0,\epsilon)$ such that $\babs{p(w)} < \babs{p(z_0)}$.
 \end{lemma}
 
@@ -2241,7 +2241,7 @@ Without loss of generality assume that $z_0 = 0$ and $p(0) = 1$.  Write
 \begin{equation*}
 p(z) = 1+a_kz^k + a_{k+1}z^{k+1} + \cdots + a_d z^d ,
 \end{equation*}
-where $a_k \not= 0$.  Pick $t$ such that $a_k e^{ikt} = -\sabs{a_k}$, which
+where $a_k \neq 0$.  Pick $t$ such that $a_k e^{ikt} = -\sabs{a_k}$, which
 we can do by the discussion on trigonometric functions.  Suppose
 $r > 0$ is small enough such that
 $1-r^k \sabs{a_k} > 0$.  We have
@@ -2334,7 +2334,7 @@ $\babs{p(z)} \geq M$ whenever $\sabs{z} \geq R$.
 
 \begin{proof}
 Write $p(z) = a_0 + a_1 z + \cdots + a_d z^d$ and suppose that $d \geq 1$
-and $a_d \not= 0$.
+and $a_d \neq 0$.
 Suppose $\sabs{z} \geq R$ (so also $\sabs{z}^{-1} \leq R^{-1}$).
 We estimate:
 \begin{equation*}
@@ -2420,7 +2420,7 @@ Use \lemmaref{lemma:polyalwaysgetssmaller} for analytic functions to prove \thmr
 Let $U \subset \C$ be open and $z_0 \in U$.
 Suppose $f \colon U \to \C$ is analytic and $f(z_0) = 0$.  Show that
 there exists an $\epsilon > 0$ such that either
-$f(z) \not= 0$ for all $z$ with $0 < \sabs{z} < \epsilon$
+$f(z) \neq 0$ for all $z$ with $0 < \sabs{z} < \epsilon$
 or $f(z) = 0$ for all $z \in B(z_0,\epsilon)$.
 In other words, zeros of analytic functions are isolated.
 Of course, same holds for polynomials.
@@ -2465,7 +2465,7 @@ Hint: If $z_0$ is a zero of $p$, then without loss of generality assume $z_0 =
 Prove that if $z_0$ is a removable singularity of a rational
 function $f(z) \coloneqq \frac{p(z)}{q(z)}$, then there exist
 polynomials $\widetilde{p}$ and $\widetilde{q}$ such that
-$\widetilde{q}(z_0) \not= 0$ and $f(z) =
+$\widetilde{q}(z_0) \neq 0$ and $f(z) =
 \frac{\widetilde{p}(z)}{\widetilde{q}(z)}$.
 \\
 Hint: Without loss of generality assume $z_0 = 0$.
@@ -3525,19 +3525,19 @@ for an approximation theorem.
 Let $\sA$ be a set of complex-valued functions defined on a set $X$.
 \begin{enumerate}[(i)]
 \item $\sA$ \emph{\myindex{separates points}}
-if for every $x,y \in X$ with $x \not= y$, there is an $f \in \sA$ such that
-$f(x) \not= f(y)$.
+if for every $x,y \in X$ with $x \neq y$, there is an $f \in \sA$ such that
+$f(x) \neq f(y)$.
 \item 
 $\sA$ \emph{\myindex{vanishes at no point}} if for every $x \in X$
-there is an $f \in \sA$ such that $f(x) \not= 0$.
+there is an $f \in \sA$ such that $f(x) \neq 0$.
 \end{enumerate}
 \end{defn}
 
 \begin{example}
 Given any $X \subset \R$ (or $X \subset \C$),
 the set $\sP$ of polynomials in one variable separates points and vanishes at no point
-on $X$.  That is, $1 \in \sP$, so it vanishes at no point.  And for $x,y \in
-X$, $x\not= y$, take $f(t) \coloneqq t$.  Then $f(x) = x \not= y = f(y)$.
+on $X$.  That is, $1 \in \sP$, so it vanishes at no point.
+For $x,y \in X$, $x \neq y$, take $f(t) \coloneqq t$, to get $f(x) = x \neq y = f(y)$.
 So $\sP$ separates points.
 \end{example}
 
@@ -3589,7 +3589,7 @@ If $\sA$ is a real algebra, the conclusion holds for $c,d \in \R$.
 \begin{proof}
 There must exist an $g,h,k \in \sA$
 such that 
-$g(x) \not= g(y)$, $h(x) \not= 0$, $k(y) \not= 0$.
+$g(x) \neq g(y)$, $h(x) \neq 0$, $k(y) \neq 0$.
 Let
 \begin{equation*}
 \begin{split}
@@ -3863,12 +3863,12 @@ v = \frac{f-\bar{f}}{2i} .
 So $u, v \in \sA$ as $\sA$ is a self-adjoint algebra, and since they are
 real-valued $u, v \in \sA_\R$.
 
-If $x \not= y$, then find an $f \in \sA$ such that $f(x) \not= f(y)$.  If $f
-= u+iv$, then it is obvious that either $u(x) \not= u(y)$ or $v(x) \not=
-v(y)$.  So $\sA_\R$ separates points.
+If $x \neq y$, then find an $f \in \sA$ such that $f(x) \neq f(y)$.  If $f
+= u+iv$, then it is obvious that either $u(x) \neq u(y)$ or
+$v(x) \neq v(y)$.  So $\sA_\R$ separates points.
 %
-Similarly, for every $x$ find $f \in \sA$ such that $f(x) \not= 0$.  If $f
-= u+iv$, then either $u(x) \not= 0$ or $v(x) \not= 0$.
+Similarly, for every $x$ find $f \in \sA$ such that $f(x) \neq 0$.  If $f
+= u+iv$, then either $u(x) \neq 0$ or $v(x) \neq 0$.
 So $\sA_\R$ vanishes at no point.
 %
 The set $\sA_\R$ is a real algebra, and satisfies the hypotheses of the
@@ -4040,7 +4040,7 @@ polynomial in $z$, then
 $\int_{S^1} P(z) \, dz = 0$.
 \item
 Prove
-$\int_{S^1} \bar{z} \, dz \not= 0$.
+$\int_{S^1} \bar{z} \, dz \neq 0$.
 \item
 Conclude that polynomials in $z$ (this algebra of functions is
 not self-adjoint) are not dense in $C(S^1,\C)$.
@@ -4053,7 +4053,7 @@ suppose $\sA \subset C(X,\R)$ is a real algebra that separates points, but
 vanishes at exactly one point $x_0 \in X$.
 That is, $f(x_0) = 0$ for all $f \in \sA$,
 but for every $y \in X \setminus \{ x_0 \}$ there is
-a $\varphi \in \sA$ such that $\varphi(y) \not= 0$.  Prove that
+a $\varphi \in \sA$ such that $\varphi(y) \neq 0$.  Prove that
 every function $g \in C(X,\R)$ such that $g(x_0) = 0$ is a uniform limit
 of functions from $\sA$.
 \end{exercise}
@@ -4118,7 +4118,7 @@ there exists a sequence of real polynomials $\{ p_n \}_{n=1}^\infty$
 so that for all $n$, $p_n(x_j) = f(x_j)$ for $j=1,2,\ldots,k$.
 \\
 Hint: The polynomial $(x-x_1)(x-x_2)\cdots(x-x_{\ell-1})(x-x_{\ell+1})
-\cdots(x-x_k)$ is zero at $x_j$ for $j\not=\ell$ but nonzero at
+\cdots(x-x_k)$ is zero at $x_j$ for $j \neq \ell$ but nonzero at
 $x_\ell$.  Use it to construct a polynomial that takes prescribed values
 at $x_1,x_2,\ldots,x_k$.
 \end{enumerate}
@@ -4588,7 +4588,7 @@ functions on $[a,b]$.  We say that this is an
 \end{equation*}
 In particular, $\snorm{\varphi_n}_2 = 1$ for all $n$.  If we
 only require that 
-$\langle \varphi_n , \varphi_m \rangle = 0$ for $m\not= n$, then
+$\langle \varphi_n , \varphi_m \rangle = 0$ for $m \neq n$, then
 the system would be called an \emph{\myindex{orthogonal system}}.
 \end{defn}
 
@@ -4819,7 +4819,7 @@ D_N(x) =
 %=
 \frac{\sin\bigl( (N+\nicefrac{1}{2})x \bigr)}{\sin(\nicefrac{x}{2})} ,
 \end{equation*}
-for $x$ such that $\sin(\nicefrac{x}{2}) \not= 0$.  The left-hand
+for $x$ such that $\sin(\nicefrac{x}{2}) \neq 0$.  The left-hand
 side is continuous on $\R$, and hence the right-hand side extends continuously to
 all of $\R$.
 To show the claim,

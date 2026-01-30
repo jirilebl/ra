@@ -31,7 +31,7 @@ if for every $\epsilon > 0$, the set $(x-\epsilon,x+\epsilon) \cap S
 That is, $x$ is a cluster point of $S$ if there are points of $S$
 arbitrarily close to $x$.  Another way to phrase the definition is to say
 that $x$ is a cluster point of $S$ if for every $\epsilon > 0$, there
-exists a $y \in S$ such that $y \not= x$ and $\sabs{x - y} < \epsilon$.
+exists a $y \in S$ such that $y \neq x$ and $\sabs{x - y} < \epsilon$.
 Note that a cluster point of $S$ need not lie in $S$.
 
 Let us see some examples.
@@ -51,7 +51,7 @@ The set of cluster points of $[0,1) \cup \{ 2 \}$ is the interval $[0,1]$.
 Let $S \subset \R$.  Then $x \in \R$ is a cluster point of $S$
 if and only if
 there exists a convergent sequence of numbers $\{ x_n \}_{n=1}^\infty$ such that
-$x_n \not= x$ and $x_n \in S$ for all $n$, and $\lim\limits_{n\to\infty} x_n = x$.
+$x_n \neq x$ and $x_n \in S$ for all $n$, and $\lim\limits_{n\to\infty} x_n = x$.
 \end{prop}
 
 \begin{proof}
@@ -70,7 +70,7 @@ $\{ x_n \}_{n=1}^\infty$ converges to $x$.
 
 On the other hand, if we start with a sequence of numbers
 $\{ x_n \}_{n=1}^\infty$ in $S$
-converging to $x$ such that $x_n \not= x$ for all $n$, then for every
+converging to $x$ such that $x_n \neq x$ for all $n$, then for every
 $\epsilon > 0$ there is an $M$ such that, in particular, $\sabs{x_M - x} <
 \epsilon$.  That is, $x_M \in (x-\epsilon,x+\epsilon) \cap S \setminus \{x\}$.
 \end{proof}
@@ -129,7 +129,7 @@ Also find $\delta_2 > 0$ such that
 $\babs{f(x)-L_2} < \nicefrac{\epsilon}{2}$
 for all $x \in S \setminus \{c\}$ with $\sabs{x-c} < \delta_2$.
 Put $\delta \coloneqq \min \{ \delta_1, \delta_2 \}$.  Suppose $x \in S$,
-$\sabs{x-c} < \delta$, and $x \not= c$.  As $\delta > 0$ and $c$ is a cluster
+$\sabs{x-c} < \delta$, and $x \neq c$.  As $\delta > 0$ and $c$ is a cluster
 point, such an $x$ exists.  Then
 \begin{equation*}
 \sabs{L_1 - L_2} =
@@ -152,7 +152,7 @@ Proof: Let $c \in \R$ be fixed, and suppose $\epsilon > 0$ is given.  Write
 \begin{equation*}
 \delta \coloneqq \min \left\{ 1 , \, \frac{\epsilon}{2\sabs{c}+1} \right\} .
 \end{equation*}
-Take $x \not= c$ such that $\sabs{x-c} < \delta$.  In particular,
+Take $x \neq c$ such that $\sabs{x-c} < \delta$.  In particular,
 $\sabs{x-c} < 1$.  By the reverse triangle inequality,
 \begin{equation*}
 \sabs{x}-\sabs{c} \leq \sabs{x-c} < 1 .
@@ -189,7 +189,7 @@ even though $f(0) = 1$.  See \figureref{fig:limvaldiff}.
 \end{myfigureht}
 
 Proof:  Let $\epsilon > 0$ be given.  Let $\delta \coloneqq \epsilon$.
-For $x \in [0,1)$, $x \not= 0$, and $\sabs{x-0} < \delta$, we get
+For $x \in [0,1)$, $x \neq 0$, and $\sabs{x-0} < \delta$, we get
 \begin{equation*}
 \babs{f(x) - 0} = \sabs{x} < \delta = \epsilon .
 \end{equation*}
@@ -282,7 +282,7 @@ By
 $\displaystyle \lim_{x \to 0} \sin( \nicefrac{1}{x} )$ does not exist.
 
 Now consider $x\sin(\nicefrac{1}{x})$.  Let $\{ x_n \}_{n=1}^\infty$ be a sequence
-such that $x_n \not= 0$ for all $n$, and such that $\lim_{n\to\infty} x_n = 0$.
+such that $x_n \neq 0$ for all $n$, and such that $\lim_{n\to\infty} x_n = 0$.
 Notice that $\babs{\sin(t)} \leq 1$ for all $t \in \R$.  Therefore,
 \begin{equation*}
 \babs{x_n\sin(\nicefrac{1}{x_n})-0}
@@ -401,8 +401,8 @@ $\displaystyle
 \left(\lim_{x\to c} g(x)\right) .
 $
 \item \label{falg:cor:iv} If
-$\displaystyle \lim_{x\to c} g(x) \not= 0$
-and $g(x) \not= 0$ for all $x \in S \setminus \{ c \}$, then
+$\displaystyle \lim_{x\to c} g(x) \neq 0$
+and $g(x) \neq 0$ for all $x \in S \setminus \{ c \}$, then
 \begin{equation*}
 \lim_{x\to c} \frac{f(x)}{g(x)} =
 \frac{\lim_{x\to c} f(x)}{\lim_{x\to c} g(x)} .
@@ -913,7 +913,7 @@ $h(x) \coloneqq f(x)+g(x)$ is continuous at $c$.
 $h(x) \coloneqq f(x)-g(x)$ is continuous at $c$.
 \item The function $h \colon S \to \R$ defined by
 $h(x) \coloneqq f(x)g(x)$ is continuous at $c$.
-\item If $g(x)\not=0$ for all $x \in S$, the function $h \colon S \to \R$
+\item If $g(x) \neq 0$ for all $x \in S$, the function $h \colon S \to \R$
 given by $h(x) \coloneqq \frac{f(x)}{g(x)}$ is continuous at $c$.
 \end{enumerate}
 \end{prop}
@@ -1136,7 +1136,7 @@ discontinuous at all rational $c$.
 Proof:
 Let $c = \nicefrac{m}{k}$ be rational and in lowest terms.  Take a sequence of
 irrational numbers $\{ x_n \}_{n=1}^\infty$ such that $\lim_{n\to\infty} x_n = c$.  Then
-$\lim_{n\to\infty} f(x_n) = \lim_{n\to\infty} 0 = 0$, but $f(c) = \nicefrac{1}{k} \not= 0$.  So $f$
+$\lim_{n\to\infty} f(x_n) = \lim_{n\to\infty} 0 = 0$, but $f(c) = \nicefrac{1}{k} \neq 0$.  So $f$
 is discontinuous at $c$.
 
 Now let $c$ be irrational, so $f(c) = 0$.  Take a sequence 
@@ -1163,7 +1163,7 @@ Let us end on an easier example.
 
 \begin{example} \label{example:removablediscont}
 Define
-$g \colon \R \to \R$ by $g(x) \coloneqq 0$ if $x \not= 0$ and
+$g \colon \R \to \R$ by $g(x) \coloneqq 0$ if $x \neq 0$ and
 $g(0) \coloneqq 1$.  Then $g$ is not continuous at zero, but continuous everywhere else (why?).
 The point $x=0$ is called a \emph{\myindex{removable discontinuity}}.  That
 is because if we would change the definition of $g$, by insisting that
@@ -1214,7 +1214,7 @@ Define $f \colon \R \to \R$ by
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-\sin(\nicefrac{1}{x}) & \text{if } x \not= 0, \\
+\sin(\nicefrac{1}{x}) & \text{if } x \neq 0, \\
 0 & \text{if } x=0.
 \end{cases}
 \avoidbreak
@@ -1227,7 +1227,7 @@ Define $f \colon \R \to \R$ by
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-x \sin(\nicefrac{1}{x}) & \text{if } x \not= 0, \\
+x \sin(\nicefrac{1}{x}) & \text{if } x \neq 0, \\
 0 & \text{if } x=0.
 \end{cases}
 \avoidbreak
@@ -1301,7 +1301,7 @@ Suppose $f \colon \R \to \R$ is continuous at $0$ and
 such that $f(x+y) = f(x) + f(y)$ for every $x$ and $y$.
 Show that $f(x) = ax$ for some $a \in \R$.
 Hint: Show that $f(nx) = nf(x)$, then show $f$ is continuous on $\R$.
-Then show that $\nicefrac{f(x)}{x} = f(1)$ for all rational $x \not= 0$.
+Then show that $\nicefrac{f(x)}{x} = f(1)$ for all rational $x \neq 0$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:minmaxcont}
@@ -1598,7 +1598,7 @@ f(c) = \lim_{n\to\infty} f(b_n) \geq 0 .
 \end{equation*}
 As $f(c) \geq 0$ and 
 $f(c) \leq 0$, we conclude $f(c) = 0$.
-Thus also $c \not=a$ and $c \not= b$, so
+Thus also $c \neq a$ and $c \neq b$, so
 $a < c < b$.
 \end{proof}
 
@@ -1685,7 +1685,7 @@ Suppose $f$ is a polynomial of odd degree $d$.  We write
 \begin{equation*}
 f(x) = a_d x^d + a_{d-1} x^{d-1} + \cdots + a_1 x + a_0 ,
 \end{equation*}
-where $a_d \not= 0$.  We divide by $a_d$ to obtain a 
+where $a_d \neq 0$.  We divide by $a_d$ to obtain a 
 \emph{\myindex{monic polynomial}}\footnote{The word \emph{monic} means that
 the coefficient of $x^d$ is 1.}
 \begin{equation*}
@@ -1753,7 +1753,7 @@ $y > 0$ without any effort.
 We claim that for any $k \in \N$ and any $y > 0$,
 there exists a number $x > 0$ such that $x^k = y$.
 
-Proof: If $y=1$, then it is clear, so assume $y\not= 1$.
+Proof: If $y=1$, then it is clear, so assume $y\neq 1$.
 Similarly, assume $k \geq 2$.
 Let $f(x) \coloneqq x^k - y$.  We notice $f(0) = -y < 0$.
 If $y < 1$, then $f(1) = 1^k -y > 0$.  If $y > 1$,
@@ -1770,7 +1770,7 @@ The function
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-\sin(\nicefrac{1}{x}) & \text{if } x \not= 0, \\
+\sin(\nicefrac{1}{x}) & \text{if } x \neq 0, \\
 0 & \text{if } x=0,
 \end{cases}
 \end{equation*}
@@ -1825,7 +1825,7 @@ Let
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-\sin(\nicefrac{1}{x}) & \text{if } x \not= 0, \\
+\sin(\nicefrac{1}{x}) & \text{if } x \neq 0, \\
 0 & \text{if } x=0.
 \end{cases}
 \end{equation*}
@@ -2248,7 +2248,7 @@ Therefore, $f$ is uniformly continuous.
 
 We interpret Lipschitz continuity geometrically.  Let $f$ be a Lipschitz
 continuous function with some constant $K$.  We rewrite the inequality 
-to say that for $x \not=y$, we have
+to say that for $x \neq y$, we have
 \begin{equation*}
 \abs{\frac{f(x)-f(y)}{x-y}} \leq K .
 \end{equation*}
@@ -2363,7 +2363,7 @@ the function $h \colon A \cup B \to \R$ by $h(x) \coloneqq f(x)$ if
 $x \in A$ and $h(x) \coloneqq g(x)$ if $x \in B \setminus A$.
 \begin{enumerate}[a)]
 \item
-Prove that if $A \cap B \not= \emptyset$, then $h$ is uniformly continuous.
+Prove that if $A \cap B \neq \emptyset$, then $h$ is uniformly continuous.
 \item
 Find an example where $A \cap B = \emptyset$ and $h$ is not even
 continuous.
@@ -2830,7 +2830,7 @@ $L = \infty$ or $L = -\infty$.  Show that
 \begin{exercise}
 Suppose $f \colon \R \to \R$ is a 2-periodic function, that is $f(x + 2) =
 f(x)$ for all $x$.  Define $g \colon \R \to \R$ by 
-$g(0) \coloneqq f(0)$ and for $x \not= 0$ by
+$g(0) \coloneqq f(0)$ and for $x \neq 0$ by
 \begin{equation*}
 g(x) \coloneqq f\left(\frac{\sqrt{x^2+1}-1}{x}\right)
 \end{equation*}
@@ -2838,7 +2838,7 @@ g(x) \coloneqq f\left(\frac{\sqrt{x^2+1}-1}{x}\right)
 \item
 Find the function $\varphi \colon (-1,1) \to \R$ such that
 $g\bigl(\varphi(t)\bigr) = f(t)$, that is, $\varphi^{-1}(x) = 
-\frac{\sqrt{x^2+1}-1}{x}$ for $x \not= 0$.
+\frac{\sqrt{x^2+1}-1}{x}$ for $x \neq 0$.
 \item
 Show that $f$ is continuous if and only if $g$ is continuous and
 \begin{equation*}
@@ -3113,9 +3113,9 @@ such as the rational numbers.  See the exercises.
 
 A strictly monotone function $f$ is one-to-one (injective).
 To see this fact,
-notice that if $x \not= y$, then we can assume $x < y$.  Either $f(x) <
+notice that if $x \neq y$, then we can assume $x < y$.  Either $f(x) <
 f(y)$ if $f$ is strictly increasing or $f(x) > f(y)$ if $f$ is strictly
-decreasing, so $f(x) \not= f(y)$.
+decreasing, so $f(x) \neq f(y)$.
 Hence, $f$ must have an inverse $f^{-1}$ defined on its range.
 
 \begin{prop} \label{prop:invcont}

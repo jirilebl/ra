@@ -75,7 +75,7 @@ We have seen before that
 \sabs{x^{2n} - 0} = {(x^2)}^n \to 0 \quad \text{as} \quad n \to \infty .
 \end{equation*}
 Therefore, $\lim_{n\to\infty}f_n(x) = 0$.
-When $x = 1$ or $x=-1$, then $x^{2n} = 1$ for all $n$ and hence
+When $x = 1$ or $x=-1$, we have $x^{2n} = 1$ for all $n$ and hence
 $\lim_{n\to\infty}f_n(x) = 1$.
 
 Note that for $x$ not in $[-1,1]$, the sequence
@@ -104,7 +104,7 @@ we saw that for $(-1,1)$ the $f_n$ converge pointwise to
 \end{equation*}
 
 The subtle point here is that while
-$\frac{1}{1-x}$ is defined for all $x \not=1$, and $f_n$ are 
+$\frac{1}{1-x}$ is defined for all $x \neq 1$, and $f_n$ are 
 defined for all $x$ (even at $x=1$), convergence only happens on $(-1,1)$.
 Therefore, when we write
 \begin{equation*}
@@ -243,8 +243,8 @@ as $\snorm{f}_{\infty}$ or $\snorm{f}_{\infty,S}$.}
 is used, such as $\snorm{f}_u$.
 \end{defn}
 
-The subscript is the set over which the supremum is taken.  So if $K \subset S$
-then
+The subscript is the set over which the supremum is taken.
+So if $K \subset S$, then
 \begin{equation*}
 \snorm{f}_K =
 \sup \Bigl\{ \babs{f(x)} : x \in K \Bigr\} .
@@ -300,8 +300,8 @@ We claim $\{ f_n \}_{n=1}^\infty$ converges uniformly to $f(x) \coloneqq x$.  Le
 \end{equation*}
 \end{example}
 
-Using the uniform norm, we define Cauchy sequences in a similar way
-as we define Cauchy sequences of real numbers.
+Using the uniform norm, we define Cauchy sequences similarly to
+how we define Cauchy sequences of real numbers.
 
 \begin{defn}
 Let $f_n \colon S \to \R$ be bounded functions.
@@ -382,7 +382,8 @@ Let $f$ and $g$ be bounded functions on $[a,b]$.  Prove
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Find the pointwise limit $\dfrac{e^{x/n}}{n}$ for $x \in \R$.
+Find the pointwise limit of
+$\left\{ \dfrac{e^{x/n}}{n} \right\}_{n=1}^\infty$ for $x \in \R$.
 \item
 Is the limit uniform on $\R$?
 \item
@@ -410,8 +411,8 @@ converges uniformly to $f+g$ on $A$.
 \end{exercise}
 
 \begin{exercise}
-Find an example of a sequence of functions $\{ f_n \}_{n=1}^\infty$ and $\{
-g_n \}_{n=1}^\infty$
+Find an example of a pair of sequences of functions $\{ f_n \}_{n=1}^\infty$ and
+$\{ g_n \}_{n=1}^\infty$
 that converge uniformly to some $f$ and $g$ on some set $A$, but such that
 $\{ f_ng_n \}_{n=1}^\infty$ (the multiple) does not converge uniformly to $fg$ on $A$.
 Hint: Let $A \coloneqq \R$, let $f(x)\coloneqq g(x) \coloneqq x$.  You can even pick $f_n = g_n$.
@@ -531,7 +532,7 @@ For instance,
 \lim_{k\to\infty}
 \frac{n}{n + k}
 \right)
-\not=
+\neq
 \lim_{k\to\infty}
 \left(
 \lim_{n\to\infty}
@@ -552,7 +553,8 @@ Suppose $f$ is the (pointwise) limit of $\{ f_n \}_{n=1}^\infty$.
 If $\lim_{k\to\infty} x_k = x$,
 we are interested in the following
 interchange of limits, where the equality to prove
-is marked with a question mark.  Equality is not always true, in fact, the limits to the left
+is marked with a question mark.  Equality is not always true.
+In fact, the limits to the left
 of the question mark might not even exist.
 \begin{equation*}
 \lim_{k \to \infty} 
@@ -713,7 +715,7 @@ In summary,
 \nicefrac{1}{2} =
 \lim_{n\to\infty}
 \int_0^1 f_n (x)\,dx
-\not=
+\neq
 \int_0^1
 \left(
 \lim_{n\to\infty}
@@ -871,17 +873,17 @@ f(x) \coloneqq
 
 \subsection{Derivative of the limit}
 
-While uniform convergence is enough to swap limits with integrals, it is not,
-however, enough to swap limits with derivatives, unless you also have
+While uniform convergence is enough to swap limits with integrals, it is not
+enough to swap limits with derivatives, unless you also have
 uniform convergence of the derivatives themselves.
 
 \begin{example}
 Let $f_n(x) \coloneqq \frac{\sin(nx)}{n}$.  Then $f_n$ converges uniformly to
 0.  See \figureref{fig:conv1nsinxn}.
-The derivative of the limit is 0.  But $f_n'(x) = \cos(nx)$, which
-does not converge even pointwise, for
-example $f_n'(\pi) = {(-1)}^n$.  Moreover,
-$f_n'(0) = 1$ for all $n$, which does converge, but not to $0$.
+The derivative of the limit is 0.  However, $f_n'(x) = \cos(nx)$, which
+does not converge even pointwise.
+For example, $f_n'(\pi) = {(-1)}^n$.
+Moreover, $f_n'(0) = 1$ for all $n$, which does converge, but not to $0$.
 \begin{myfigureht}
 \includegraphics{figures/conv1nsinxn}
 \caption{Graphs of $\frac{\sin(nx)}{n}$ for
@@ -892,7 +894,7 @@ $n=1,2,\ldots,10$, with higher $n$ in lighter gray.%
 
 \begin{example} \label{exercise:badconvergenceder}
 Let $f_n(x) \coloneqq \frac{1}{1+nx^2}$.
-If $x \not= 0$, then $\lim_{n \to \infty} f_n(x) = 0$,
+If $x \neq 0$, then $\lim_{n \to \infty} f_n(x) = 0$,
 but $\lim_{n \to \infty} f_n(0) = 1$.
 Hence, $\{ f_n \}_{n=1}^\infty$ converges pointwise to a function that is not continuous
 at $0$.
@@ -933,7 +935,6 @@ a continuously differentiable function $f \colon I \to \R$, and $f' = g$.
 \begin{proof}
 Define $f(c) \coloneqq \lim_{n\to \infty} f_n(c)$.
 As $f_n'$ are continuous and hence Riemann integrable,
-then
 via the fundamental theorem of calculus, we find that for $x \in I$,
 \begin{equation*}
 f_n(x) = f_n(c) + \int_c^x f_n' .
@@ -994,7 +995,7 @@ absolutely inside its radius of convergence, so it converges pointwise.
 Let us show that it (and all its derivatives) also converges uniformly.
 This fact allows us to
 swap several types of limits.  Not only is the limit continuous,
-we can
+but we can also
 integrate and even differentiate convergent power series term by term.
 
 \begin{prop}
@@ -1106,8 +1107,8 @@ Let
 \begin{equation*}
 R \coloneqq \limsup_{n \to \infty} \sabs{c_n}^{1/n} .
 \end{equation*}
-As the series is convergent $R < \infty$, and
-the radius of convergence is $\nicefrac{1}{R}$ (or $\infty$ if $R=0$).
+As the series is convergent, $R < \infty$.
+The radius of convergence $\rho$ is $\nicefrac{1}{R}$ (or $\rho = \infty$ if $R=0$).
 
 Let $\epsilon > 0$ be given.  In \exampleref{example:nto1overn},
 we saw $\lim_{n\to\infty} n^{1/n} = 1$.
@@ -1130,7 +1131,7 @@ R =
 \end{equation*}
 As $\epsilon$ was arbitrary, $\limsup_{n \to \infty} \sabs{n c_n}^{1/n} = R$.
 Therefore, $\sum_{n=1}^\infty n c_{n} {(x-a)}^{n}$ has radius of
-convergence $\rho$.  By dividing by $(x-a)$, we find
+convergence $\rho$.  Dividing by $(x-a)$, we find
 $\sum_{n=0}^\infty (n+1) c_{n+1} {(x-a)}^{n}$ has radius of convergence
 $\rho$ as well.
 
@@ -1151,7 +1152,8 @@ the power series
 f(x) \coloneqq \sum_{n=0}^\infty \frac{x^n}{n!}
 \end{equation*}
 has radius of convergence $\rho=\infty$.  Furthermore,
-$f(0) = 1$, and by differentiating
+$f(0) = 1$.
+Differentiating
 term by term, we find that $f'(x) = f(x)$.
 \end{example}
 
@@ -1178,9 +1180,10 @@ Find an explicit example of a sequence of
 differentiable functions on $[-1,1]$ that converge uniformly to
 a function $f$ such that $f$ is not differentiable.
 Hint:
-There are many possibilities,
-simplest is perhaps to combine $\sabs{x}$ and $\frac{n}{2}x^2 +
-\frac{1}{2n}$, another is to
+There are many possibilities.
+The simplest is perhaps to combine $\sabs{x}$ and $\frac{n}{2}x^2 +
+\frac{1}{2n}$.
+Another is to
 consider $\sqrt{x^2+{(\nicefrac{1}{n})}^2}$.  Show that these functions are differentiable,
 converge uniformly, and then show that the limit is not differentiable.
 \end{exercise}
@@ -1188,7 +1191,7 @@ converge uniformly, and then show that the limit is not differentiable.
 \begin{exercise}
 Let $f_n(x) \coloneqq \frac{x^n}{n}$.  Show that $\{ f_n \}_{n=1}^\infty$ converges uniformly to
 a differentiable function $f$ on $[0,1]$ (find $f$).  However, show that
-$f'(1) \not= \lim\limits_{n\to\infty} f_n'(1)$.
+$f'(1) \neq \lim\limits_{n\to\infty} f_n'(1)$.
 \end{exercise}
 
 %\begin{exnote}
@@ -1378,7 +1381,7 @@ $\int_a^b f = \lim\limits_{n\to\infty} \int_a^b f_n$.
 
 \begin{exercise}[Challenging]
 Find a sequence of continuous functions $f_n \colon [0,1] \to \R$ that
-converge to the popcorn function $f \colon [0,1] \to \R$, that is the
+converge to the popcorn function $f \colon [0,1] \to \R$, that is, the
 function such that $f(\nicefrac{p}{q}) \coloneqq \nicefrac{1}{q}$ (if $\nicefrac{p}{q}$
 is in lowest terms) and $f(x) \coloneqq 0$ if $x$ is not rational (note
 that $f(0) = f(1) = 1$),
@@ -1389,14 +1392,14 @@ discontinuities.  See also the next exercise.
 
 \begin{exercise}[Challenging]
 The \myindex{Dirichlet function}
-$f \colon [0,1] \to \R$, that is the
+$f \colon [0,1] \to \R$, that is, the
 function such that $f(x) \coloneqq 1$ if $x \in \Q$
 and $f(x) \coloneqq 0$ if $x \notin \Q$,
 is not the pointwise limit of
 continuous functions, although this is difficult to show.
 Prove, however, that $f$ is a pointwise limit of functions that are themselves
 pointwise limits of
-continuous functions themselves.
+continuous functions.
 \end{exercise}
 
 \begin{exercise}
@@ -1460,7 +1463,7 @@ Show that $\{ g_n \}_{n=1}^\infty$ converges uniformly to 0.
 \item
 Show that $\{ g_n' \}_{n=1}^\infty$ converges pointwise to a function $\psi$ that
 is discontinuous at every rational number and continuous at every
-irrational number.  In particular, $\lim\limits_{n\to\infty} g_n'(x) \not= 0$ for
+irrational number.  In particular, $\lim\limits_{n\to\infty} g_n'(x) \neq 0$ for
 every rational number~$x$.
 \end{enumerate}
 \end{exercise}
@@ -1496,7 +1499,7 @@ theorem%
 (1856--1941).}
 on existence and uniqueness of a solution to an ordinary differential equation.
 Both the statement and the proof are beautiful examples of what one can do
-with the material we mastered so far.  It is also a good example of how analysis is
+with the material we have mastered so far.  It is also a good example of how analysis is
 applied, as differential equations are indispensable in science of every
 stripe.
 
@@ -1656,8 +1659,8 @@ L \babs{f_n(t)-f_k(t)}
 \leq
 L \snorm{f_n-f_k}_{[-h,h]} ,
 \end{equation*}
-where $\snorm{f_n-f_k}_{[-h,h]}$ is the uniform norm, that
-is the supremum of $\babs{f_n(t)-f_k(t)}$ for $t \in [-h,h]$.
+where $\snorm{f_n-f_k}_{[-h,h]}$ is the uniform norm,
+that is, the supremum of $\babs{f_n(t)-f_k(t)}$ for $t \in [-h,h]$.
 Now note that $\sabs{x} \leq h \leq \frac{\alpha}{M+L\alpha}$.
 Therefore
 \begin{equation*}
@@ -1720,7 +1723,7 @@ then $f\bigl([-h,h]\bigr) \subset [y_0-\alpha,y_0+\alpha]$
 
 
 We now need to show that $f$ solves \eqref{picard:inteq}.
-First, as before we notice
+First, as before, we notice
 \begin{equation*}
 \Babs{F\bigl(t,f_{n}(t)\bigr) - 
 F\bigl(t,f(t)\bigr)}
@@ -1870,7 +1873,7 @@ this function exists
 as a function for all $x$, so an arbitrary $h$ ought to work, but the
 theorem's proof only provides $h < \nicefrac{1}{2}$.
 
-By same reasoning as above,
+By the same reasoning as above,
 no matter what $x_0$ and $y_0$ are,
 the proof guarantees an arbitrary $h$ as long as $h < \nicefrac{1}{2}$.
 Fix such an $h$.
@@ -1953,7 +1956,7 @@ A solution exists, but is not unique.
 \begin{example}
 Consider $y' = \varphi(x)$ where $\varphi(x) \coloneqq 0$ if $x \in \Q$ and
 $\varphi(x)\coloneqq 1$ if $x
-\not\in \Q$.  In other words, the $F(x,y) = \varphi(x)$ is discontinuous.
+\notin \Q$.  In other words, the $F(x,y) = \varphi(x)$ is discontinuous.
 The equation has no solution regardless of the initial
 conditions.
 A solution would have
@@ -1986,7 +1989,7 @@ The \myquote{solution}
 is the ramp function $f(x) \coloneqq 0$ if $x < 0$ and $f(x) \coloneqq x$ if $x \geq 0$,
 since this function satisfies
 $f(x) = \int_0^x H(t)\, dt$.  Notice, however, that $f'(0)$ does not exist,
-so $f$ is only a what is called a \emph{\myindex{weak solution}} to the
+so $f$ is only what is called a \emph{\myindex{weak solution}} to the
 differential equation.
 \end{remark}
 
@@ -1997,7 +2000,7 @@ differential equation.
 Let $I, J \subset \R$ be intervals.
 Let $F \colon I \times J \to \R$ be a continuous function
 of two variables
-and suppose $f \colon I \to J$ be a continuous function.
+and suppose $f \colon I \to J$ is a continuous function.
 Show that $F\bigl(x,f(x)\bigr)$ is a continuous function on $I$.
 \end{exercise}
 
@@ -2033,9 +2036,9 @@ hypotheses in the theorem could be made even weaker.
 
 \begin{exercise}
 \pagebreak[2]
-A common type of equation one encounters are
-\emph{\myindex{linear first order differential equations}}, that is
-equations of the form
+A common type of equation is a
+\emph{\myindex{linear first order differential equation}}, that is,
+an equation of the form
 \begin{equation*}
 y' + p(x) y = q(x) , \qquad y(x_0) = y_0 .
 \end{equation*}
@@ -2083,7 +2086,7 @@ Consider the equation $x y' = 2y$.
 \item
 Show that $y = Cx^2$ is a solution for every constant $C$.
 \item
-Show that for every $x_0 \not= 0$ and every $y_0$, Picard's
+Show that for every $x_0 \neq 0$ and every $y_0$, Picard's
 theorem applies for the initial condition $y(x_0) = y_0$.
 \item
 Show that $y(0) = y_0$ is solvable if and only if $y_0 = 0$.

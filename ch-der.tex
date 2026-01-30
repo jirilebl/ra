@@ -69,7 +69,7 @@ it makes our work easier.
 
 \begin{example}
 Let $f(x) \coloneqq x^2$ be defined on the whole real line.  Let $c \in \R$ be arbitrary.  We find that if
-$x \not=c$,
+$x \neq c$,
 \begin{equation*}
 \frac{x^2-c^2}{x-c} =
 \frac{(x+c)(x-c)}{x-c} =
@@ -86,7 +86,7 @@ f'(c) =
 \begin{example}
 Let $f(x) \coloneqq ax + b$ for numbers $a, b \in \R$.
 Let $c \in \R$ be arbitrary.
-For $x \not=c$,
+For $x \neq c$,
 \begin{equation*}
 \frac{f(x)-f(c)}{x-c} =
 \frac{a(x-c)}{x-c} = a .
@@ -108,7 +108,7 @@ first.
 \begin{example}
 The function $f(x) \coloneqq \sqrt{x}$ is differentiable for $x > 0$.  To see this
 fact, fix $c > 0$,
-and suppose $x \not= c$ and $x > 0$.  Compute
+and suppose $x \neq c$ and $x > 0$.  Compute
 \begin{equation*}
 \frac{\sqrt{x}-\sqrt{c}}{x-c}
 =
@@ -202,7 +202,7 @@ $h'(c) =  f'(c) + g'(c)$.
 
 \begin{proof}
 First, let $h(x) \coloneqq \alpha f(x)$.
-For $x \in I$, $x \not= c$,
+For $x \in I$, $x \neq c$,
 \begin{equation*}
 \frac{h(x)-h(c)}{x-c} =
 \frac{\alpha f(x) - \alpha f(c)}{x-c}
@@ -219,7 +219,7 @@ Therefore, $h$ is differentiable at $c$,
 and the derivative is computed as given.
 
 Next, define $h(x) \coloneqq f(x)+g(x)$.
-For $x \in I$, $x \not= c$, we have
+For $x \in I$, $x \neq c$, we have
 \begin{equation*}
 \frac{h(x)-h(c)}{x-c} =
 \frac{\bigl(f(x) + g(x)\bigr) - \bigl(f(c) + g(c)\bigr)}{x-c}
@@ -284,7 +284,7 @@ In other words, roughly,  $\Delta (f \cdot g)
 \begin{prop}[Quotient rule]\index{quotient rule}
 Let $I$ be an interval, let
 $f \colon I \to \R$ and $g \colon I \to \R$ be differentiable at $c$
-and $g(x) \not= 0$ for all $x \in I$.
+and $g(x) \neq 0$ for all $x \in I$.
 If $h \colon I \to \R$
 is defined by
 \begin{equation*}
@@ -327,13 +327,13 @@ $u \colon I_2 \to \R$ and $v \colon I_1 \to \R$ by
 \begin{equation*}
 u(y) \coloneqq
 \begin{cases}
- \frac{f(y) - f(d)}{y-d}  & \text{if } y \not=d, \\
+ \frac{f(y) - f(d)}{y-d}  & \text{if } y \neq d, \\
  f'(d)                    & \text{if } y = d,
 \end{cases}
 \qquad
 v(x) \coloneqq
 \begin{cases}
- \frac{g(x) - g(c)}{x-c} & \text{if } x \not=c, \\
+ \frac{g(x) - g(c)}{x-c} & \text{if } x \neq c, \\
  g'(c)                   & \text{if } x = c.
 \end{cases}
 \end{equation*}
@@ -355,7 +355,7 @@ u\bigl( g(x) \bigr) \bigl(g(x)-g(c)\bigr)
 =
 u\bigl( g(x) \bigr) \bigl(v(x) (x-c)\bigr) .
 \end{equation*}
-Therefore, if $x \not= c$,
+Therefore, if $x \neq c$,
 \begin{equation} \label{eq:chainruleeq}
 \frac{h(x)-h(c)}{x-c}
 =
@@ -427,7 +427,7 @@ trigonometric identity as we did before.
 \begin{exercise}
 Let $f \colon I \to \R$ be differentiable.  For $n \in \Z$, let $f^n$
 be the function defined by $f^n(x) \coloneqq {\bigl( f(x) \bigr)}^n$.  If
-$n < 0$, assume $f(x) \not= 0$ for all $x \in I$.  Prove that
+$n < 0$, assume $f(x) \neq 0$ for all $x \in I$.  Prove that
 $(f^n)'(x) = n {\bigl(f(x) \bigr)}^{n-1} f'(x)$.
 \end{exercise}
 
@@ -441,7 +441,7 @@ Prove that $f'$ is a bounded function.
 Let $I_1, I_2$ be intervals.
 Let $f \colon I_1 \to I_2$ be a bijective function and $g \colon I_2 \to I_1$
 be the inverse.  Suppose that both $f$ is differentiable at $c \in I_1$ and
-$f'(c) \not=0$ and $g$ is differentiable at $f(c)$.  Use the chain rule
+$f'(c) \neq 0$ and $g$ is differentiable at $f(c)$.  Use the chain rule
 to find a formula for $g'\bigl(f(c)\bigr)$ (in terms of $f'(c)$).
 \end{exercise}
 
@@ -496,8 +496,8 @@ $f \colon (a,b) \to \R$ and $g \colon (a,b) \to \R$ are differentiable
 functions
 whose derivatives $f'$ and $g'$ are continuous functions.
 Suppose that at $c \in (a,b)$, $f(c) = 0$, $g(c)=0$,
-$g'(x) \not= 0$ for all $x \in (a,b)$, and
-$g(x) \not= 0$ whenever $x \not= c$.   Note
+$g'(x) \neq 0$ for all $x \in (a,b)$, and
+$g(x) \neq 0$ whenever $x \neq c$.   Note
 that the limit of $\nicefrac{f'(x)}{g'(x)}$ as $x$ goes to $c$ exists.  Show that
 \begin{equation*}
 \lim_{x \to c} \frac{f(x)}{g(x)} = 
@@ -982,7 +982,7 @@ Let $f \colon \R \to \R$ be the function defined by
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-{\bigl( x \sin(\nicefrac{1}{x}) \bigr)}^2 & \text{if } x \not= 0, \\
+{\bigl( x \sin(\nicefrac{1}{x}) \bigr)}^2 & \text{if } x \neq 0, \\
 0 & \text{if } x = 0.
 \end{cases}
 \end{equation*}
@@ -1000,7 +1000,7 @@ and $f'$ is on the right.  Notice that $f(x) \leq x^2$ on the left graph.\label{
 Proof: It is immediate from the definition that $f$ has an absolute
 minimum at $0$; we know $f(x) \geq 0$ for all $x$ and $f(0) = 0$.
 
-For $x \not= 0$,
+For $x \neq 0$,
 $f$ is differentiable
 and
 the derivative 
@@ -1015,7 +1015,7 @@ cannot be continuous at $0$
 no matter what $f'(0)$ is.
 
 Let us show that $f$ is differentiable at $0$ and $f'(0)=0$.
-For $x \not= 0$,
+For $x \neq 0$,
 \begin{equation*}
 \abs{\frac{f(x)-f(0)}{x-0} - 0}
 =
@@ -1062,7 +1062,7 @@ that $f$ is a Lipschitz continuous function.
 \pagebreak[1]
 Suppose $f \colon [a,b] \to \R$ is differentiable and $c \in [a,b]$.
 Show there exists a sequence $\{ x_n \}_{n=1}^\infty$ converging to $c$, $x_n
-\not= c$ for all $n$, such that
+\neq c$ for all $n$, such that
 \begin{equation*}
 f'(c) = \lim_{n\to \infty} f'(x_n).
 \avoidbreak
@@ -1088,7 +1088,7 @@ Show that $f$ is strictly increasing.
 \begin{exercise}
 Suppose $f \colon (a,b) \to \R$ is a differentiable function
 such that
-$f'(x) \not= 0$ for all $x \in (a,b)$.  Suppose there
+$f'(x) \neq 0$ for all $x \in (a,b)$.  Suppose there
 exists
 a point $c \in (a,b)$ such that $f'(c) > 0$.
 Prove $f'(x) > 0$ for all $x \in (a,b)$.
@@ -1105,14 +1105,14 @@ Prove the following version of \myindex{L'H\^opital's rule}\index{L'Hospital's r
 Suppose 
 $f \colon (a,b) \to \R$ and $g \colon (a,b) \to \R$ are differentiable
 functions and $c \in (a,b)$.  Suppose that $f(c) = 0$, $g(c)=0$,
-$g'(x) \not= 0$ when $x \not= c$, and
+$g'(x) \neq 0$ when $x \neq c$, and
 that the limit of $\nicefrac{f'(x)}{g'(x)}$ as $x$ goes to $c$ exists.  Show that
 \begin{equation*}
 \lim_{x \to c} \frac{f(x)}{g(x)} = 
 \lim_{x \to c} \frac{f'(x)}{g'(x)} .
 \end{equation*}
 Compare to \exerciseref{exercise:simpleLHopital}.
-Note: Before you do anything else, prove that $g(x) \not= 0$ when $x \not= c$.
+Note: Before you do anything else, prove that $g(x) \neq 0$ when $x \neq c$.
 \end{exercise}
 
 \begin{exercise}
@@ -1158,7 +1158,7 @@ is bounded.
 \begin{enumerate}[a)]
 \item
 Show that there exists a continuous function $g \colon [0,1) \to \R$
-such that $f(x) = g(x)$ for all $x \not= 0$.\\
+such that $f(x) = g(x)$ for all $x \neq 0$.\\
 Hint: \propref{context:prop} and
 \exerciseref{exercise:boundeddermeanslip}.
 \item
@@ -1383,7 +1383,7 @@ we define the \emph{\myindex{Taylor series}}:
 \frac{f^{(k)}(x_0)}{k!}{(x-x_0)}^k .
 \end{equation*}
 There is no guarantee that this series converges for any
-$x \not= x_0$.  Even where it does converge, there is no guarantee
+$x \neq x_0$.  Even where it does converge, there is no guarantee
 that it converges to the function $f$.  Functions $f$
 whose Taylor series at every point $x_0$
 converges to $f$ in some open interval containing $x_0$
@@ -1413,7 +1413,7 @@ the second derivative test.
 By a \emph{\myindex{strict relative minimum}}\index{minimum!strict relative}
 of $f$ at $c$,
 we mean that there exists a $\delta > 0$ such that $f(x) > f(c)$ for
-all $x \in (c-\delta,c+\delta)$ where $x\not=c$.
+all $x \in (c-\delta,c+\delta)$ where $x\neq c$.
 A \emph{\myindex{strict relative maximum}}\index{maximum!strict relative}
 is defined similarly.
 Continuity of the second derivative is not needed, but the proof is more
@@ -1431,7 +1431,7 @@ minimum at $x_0$.
 As $f''$ is continuous, there exists a $\delta > 0$
 such that $f''(c) > 0$ for all $c \in (x_0-\delta,x_0+\delta)$,
 see \exerciseref{exercise:positivecontneigh}.
-Take $x \in (x_0-\delta,x_0+\delta)$, $x \not= x_0$.
+Take $x \in (x_0-\delta,x_0+\delta)$, $x \neq x_0$.
 Taylor's theorem says that for some $c$ between $x_0$ and $x$,
 \begin{equation*}
 f(x) 
@@ -1506,7 +1506,7 @@ is bounded.
 \begin{enumerate}[a)]
 \item
 Show that there exists a once differentiable function $g \colon [0,1) \to \R$
-such that $f(x) = g(x)$ for all $x \not= 0$.  Hint: 
+such that $f(x) = g(x)$ for all $x \neq 0$.  Hint: 
 See
 \exerciseref{exercise:extendboundedder}.
 \item
@@ -1521,7 +1521,7 @@ Suppose $n \in \N$,
 $x_0 \in (a,b)$, and $f \colon (a,b) \to \R$ is $n$ times continuously
 differentiable, with $f^{(k)}(x_0) = 0$ for $k=1,2,\ldots,n-1$, and
 $f^{(n)}(x_0)
-\not= 0$.
+\neq 0$.
 Prove:
 \begin{enumerate}[a)]
 \item
@@ -1557,7 +1557,7 @@ minimum at $x_0$.  Hint: Consider the limit definition of $f''(x_0)$.
 \subsection{Inverse function theorem}
 
 We start with a simple example.  Consider the function $f(x) \coloneqq a x$ for a
-number $a \not= 0$.  Then $f \colon \R \to \R$ is bijective, and the inverse
+number $a \neq 0$.  Then $f \colon \R \to \R$ is bijective, and the inverse
 is $f^{-1}(y) = \frac{1}{a} y$.  In particular, $f'(x) = a$ and 
 $(f^{-1})'(y) = \frac{1}{a}$.  As differentiable functions are
 \myquote{infinitesimally like} linear functions, we expect the same
@@ -1568,7 +1568,7 @@ The main idea of differentiating inverse functions is the following lemma.
 Let $I,J \subset \R$ be intervals.
 If $f \colon I \to J$ is strictly monotone (hence one-to-one),
 onto ($f(I) = J$),
-differentiable at $x_0 \in I$, and $f'(x_0) \not= 0$,
+differentiable at $x_0 \in I$, and $f'(x_0) \neq 0$,
 then the inverse 
 $f^{-1}$ is differentiable at $y_0 = f(x_0)$ and
 \begin{equation*}
@@ -1582,7 +1582,7 @@ is continuously differentiable.
 By \propref{prop:invcont}, $f$ has a continuous inverse.  For convenience,
 call the inverse $g \colon J \to I$.
 Let $x_0,y_0$ be as in the statement.  For $x \in I$, write $y \coloneqq f(x)$.
-If $x \not= x_0$, and so $y \not= y_0$, we find
+If $x \neq x_0$, and so $y \neq y_0$, we find
 \begin{equation*}
 \frac{g(y)-g(y_0)}{y-y_0} =
 \frac{g\bigl(f(x)\bigr)-g\bigl(f(x_0)\bigr)}{f(x)-f(x_0)} =
@@ -1639,7 +1639,7 @@ What is usually called the inverse function theorem is the following result.
 
 \begin{thm}[Inverse function theorem]\index{inverse function theorem}
 Let $f \colon (a,b) \to \R$ be a continuously differentiable function,
-$x_0 \in (a,b)$ a point where $f'(x_0) \not= 0$.  Then there exists
+$x_0 \in (a,b)$ a point where $f'(x_0) \neq 0$.  Then there exists
 an open interval $I \subset (a,b)$ with $x_0 \in I$, the
 restriction $f|_{I}$ is injective with a continuously differentiable inverse
 $g \colon J \to I$ defined on an interval $J \coloneqq f(I)$,
@@ -1715,8 +1715,8 @@ derivative and $g'(x) =
 \begin{example}
 The corollary provides a good example of where the inverse function theorem
 gives us an interval smaller than $(a,b)$.  Take $f \colon \R \to \R$
-defined by $f(x) \coloneqq x^2$.  Then $f'(x_0) \not= 0$
-as long as $x_0 \not= 0$.  If $x_0 > 0$, we can take $I=(0,\infty)$, but
+defined by $f(x) \coloneqq x^2$.  Then $f'(x_0) \neq 0$
+as long as $x_0 \neq 0$.  If $x_0 > 0$, we can take $I=(0,\infty)$, but
 no larger.
 \end{example}
 
@@ -1780,7 +1780,7 @@ derivatives.
 \end{exercise}
 
 \begin{exercise}
-Let $f(x) \coloneqq x + 2 x^2 \sin(\nicefrac{1}{x})$ for $x \not= 0$ and
+Let $f(x) \coloneqq x + 2 x^2 \sin(\nicefrac{1}{x})$ for $x \neq 0$ and
 $f(0) \coloneqq 0$.  Show that $f$ is differentiable at all $x$, that $f'(0) > 0$,
 but that $f$ is not invertible
 on any open interval containing the origin.
@@ -1807,7 +1807,7 @@ Suppose $x \in I$ and $y \coloneqq f(x) \in J$, and that $g$ is differentiable a
 $y$.  Prove:
 \begin{enumerate}[a)]
 \item
-If $g'(y) \not= 0$, then $f$ is differentiable at $x$.
+If $g'(y) \neq 0$, then $f$ is differentiable at $x$.
 \item
 If $g'(y) = 0$, then $f$ is not differentiable at $x$.
 \end{enumerate}
