@@ -1915,7 +1915,7 @@ Suppose $\{ x_n \}_{n=1}^\infty$ converges to $p$.
 Given $\epsilon > 0$, there is an $M$ such that for all $n \geq M$,
 we have $d(p,x_n) < \nicefrac{\epsilon}{2}$.  Hence
 for all $n,k \geq M$, we have
-$d(x_n,x_k) \leq d(x_n,x) + d(x,x_k) < \nicefrac{\epsilon}{2} +
+$d(x_n,x_k) \leq d(x_n,p) + d(p,x_k) < \nicefrac{\epsilon}{2} +
 \nicefrac{\epsilon}{2} = \epsilon$.
 \end{proof}
 
@@ -1961,10 +1961,10 @@ to $y \in \R^n$, and hence $\R^n$ is complete.
 \end{proof}
 
 In the language of metric spaces,
-the results on continuity of section \sectionref{sec:liminter},
+the results on continuity of \sectionref{sec:liminter}
 say that the metric space
 $C\bigl([a,b],\R\bigr)$ of \exampleref{example:msC01} is complete.
-The proof follows by \myquote{unrolling the definitions,} 
+The proof follows by \myquote{unrolling the definitions} 
 and is left as \exerciseref{exercise:CabRcomplete}.
 
 \begin{prop} \label{prop:CabRcomplete}
@@ -2028,13 +2028,15 @@ other.
 
 The set $(0,1) \subset \R$ is also not compact.  Proof:  Take the 
 sets $U_{j} \coloneqq (\nicefrac{1}{j},1-\nicefrac{1}{j})$ for $j=3,4,5,\ldots$.
-As above $(0,1) = \bigcup_{j=3}^\infty U_j$.  And similarly as above,
+As above, $(0,1) = \bigcup_{j=3}^\infty U_j$.  And similarly as above,
 if there exists a finite subcover, then there is one $U_j$ such that $(0,1)
 \subset U_j$, which again leads to a contradiction.
 
 The set $\{ 0 \} \subset \R$ is compact.  Proof: Given an open cover $\{
-U_{\lambda} \}_{\lambda \in I}$, there must exist a $\lambda_0$ such that $0
-\in U_{\lambda_0}$ as it is a cover.  But then $U_{\lambda_0}$ gives a
+U_{\lambda} \}_{\lambda \in I}$, there must exist a $\lambda_0 \in I$ such that $0
+\in U_{\lambda_0}$
+since $\{ U_{\lambda} \}_{\lambda \in I}$ is a cover.
+The single $U_{\lambda_0}$ gives a
 finite subcover.
 
 We will prove below that $[0,1]$, and in fact every closed and bounded
@@ -2171,7 +2173,7 @@ See \figureref{fig:lebesguedelta}.
 Thus $y \neq x_n$.
 In other words, for all $n \geq M$, $x_n \notin B(x,\nicefrac{\epsilon}{2})$. 
 The sequence cannot have a subsequence converging to $x$.  As $x \in K$ was
-arbitrary we are done.
+arbitrary, we are done.
 \end{proof}
 
 \begin{myfigureht}
@@ -2283,7 +2285,7 @@ $x_1,x_2,x_3,x_4$,
 the three sets 
 $U_{\lambda_1}$,
 $U_{\lambda_2}$,
-$U_{\lambda_2}$,
+$U_{\lambda_3}$,
 and 
 the first three balls
 of radius $\delta$ are drawn.\label{fig:seqcompactiscompact}}
@@ -2634,7 +2636,7 @@ $d_Y\bigl(f(x_n),f(c)\bigr) < \epsilon$.  Hence $\bigl\{ f(x_n) \bigr\}_{n=1}^\i
 converges to $f(c)$.
 
 On the other hand, suppose $f$ is not continuous at $c$.
-Then there exists an $\epsilon > 0$,
+Then there exists an $\epsilon > 0$
 such that for every $n \in \N$ there exists an $x_n \in X$,
 with
 $d_X(x_n,c) < \nicefrac{1}{n}$ such that $d_Y\bigl(f(x_n),f(c)\bigr) \geq
@@ -2676,7 +2678,7 @@ a_{jk} \, x^jy^k
 =
 f(x,y) .
 \end{equation*}
-So $f$ is continuous at $(x,y)$, and as $(x,y)$ was arbitrary $f$ is
+So $f$ is continuous at $(x,y)$, and as $(x,y)$ was arbitrary, $f$ is
 continuous everywhere.  Similarly, a
 polynomial in $n$ variables is continuous.
 \end{example}
@@ -2900,8 +2902,8 @@ Let $f(x,y)$ be a function of two variables and define
 \begin{equation*}
 g(y) \coloneqq \int_a^b f(x,y) \,dx .
 \end{equation*}
-Question is, is $g$ is continuous?
-We are really asking when do two limiting operations commute,
+Question is, is $g$ continuous?
+We are really asking when two limiting operations commute,
 which is not always possible, so some extra hypothesis
 is necessary.  A useful sufficient (but not
 necessary) condition is that $f$ is continuous on a closed rectangle.
@@ -2971,7 +2973,7 @@ d_Y\bigl(f(p),f(q)\bigr) \leq K \, d_X(p,q)
 \qquad \text{for all } p,q \in X.
 \end{equation*}
 A Lipschitz function is uniformly continuous:
-Take $\delta = \nicefrac{\epsilon}{K}$.
+Take $\delta = \nicefrac{\epsilon}{K}$ (assuming that $K > 0$).
 A function can be uniformly continuous
 but not Lipschitz,
 as we already saw: $\sqrt{x}$ on $[0,1]$
@@ -3001,7 +3003,7 @@ if for every $\epsilon > 0$, the set $B(p,\epsilon) \cap S
 \setminus \{ p \}$ is not empty.
 \end{defn}
 
-It is not enough that $p$ is in the closure of $S$,
+It is not enough that $p$ is in the closure of $S$;
 it must be in the closure of
 $S \setminus \{ p \}$ (exercise).
 So, $p$ is a cluster point if and only if there exists a sequence in $S \setminus
@@ -3058,8 +3060,8 @@ such that $\lim_{n\to\infty} x_n = p$,
 the sequence $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges to $L$.
 \end{lemma}
 
-By applying \propref{prop:contiscont} or the definition directly we find
-(exercise) as in \chapterref{lim:chapter}, that for cluster points $p$ of $S
+By applying \propref{prop:contiscont} or the definition directly, we find
+(exercise), as in \chapterref{lim:chapter}, that for cluster points $p$ of $S
 \subset X$, the function
 $f \colon S \to Y$ is continuous at $p$ if and only if
 \begin{equation*}
@@ -3104,7 +3106,8 @@ Let $A \subset X$.
 \item
 Show that $f(\widebar{A}) \subset \overline{f(A)}$.
 \item
-Show that the subset can be proper.
+Show by example that $f(\widebar{A})$ can be a proper subset of
+$\overline{f(A)}$.
 \end{enumerate}
 \end{exercise}
 
@@ -3294,8 +3297,8 @@ Hint: First integrate over $[a+\nicefrac{1}{n},b-\nicefrac{1}{n}]$.
 In this section we prove the fixed point theorem for contraction
 mappings.  As an application we prove Picard's theorem, which we proved
 without metric spaces in \sectionref{sec:picard}.
-The proof presented here is similar, but the proof goes a lot
-smoother with metric spaces and the fixed point theorem.
+The proof presented here is similar, but it goes much
+more smoothly with metric spaces and the fixed point theorem.
 
 \subsection{Fixed point theorem}
 
@@ -3378,7 +3381,8 @@ any point $x_0 \in X$, then iterate $\varphi(x_0)$,
 $\varphi(\varphi(x_0))$,
 $\varphi(\varphi(\varphi(x_0)))$, etc.\ to find better and better approximations.
 We can even find how far away
-from the fixed point we are, see the exercises.  The idea of the proof is
+from the fixed point we are.
+See the exercises.  The idea of the proof is
 therefore useful in real-world applications.
 
 \subsection{Picard's theorem}
@@ -3397,10 +3401,6 @@ see \propref{prop:CabRcomplete}.
 
 \medskip
 
-%Let us use the
-%fixed point theorem
-%to prove the classical Picard's theorem on the existence and uniqueness of
-%ordinary differential equations.
 Consider now the ordinary differential equation
 \begin{equation*}
 \frac{dy}{dx} = F(x,y) .
@@ -3419,7 +3419,7 @@ The solution is the exponential $y(x) = e^x$.  A somewhat more complicated
 example is $y' = -2xy$, $y(0) = 1$, whose solution is the Gaussian
 $y(x) = e^{-x^2}$.
 
-A subtle issue is how long does the solution exist.
+A subtle issue is how long the solution exists.
 Consider the equation $y' = y^2$, $y(0)=1$.  Then $y(x) = \frac{1}{1-x}$ is a
 solution.  While $F$ is a reasonably \myquote{nice} function and in particular
 it exists for all $x$ and $y$, the solution \myquote{blows up} at $x=1$.
