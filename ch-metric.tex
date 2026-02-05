@@ -1501,7 +1501,7 @@ is said to be
 a \emph{\myindex{subsequence}} of $\{x_n \}_{n=1}^\infty$.
 \end{defn}
 
-Similarly we define convergence.
+Similarly, we define convergence.
 See \figureref{fig:sequence-convergence-metric}, for an idea of
 the definition.
 
@@ -1512,7 +1512,8 @@ $p \in X$ if for every $\epsilon > 0$, there exists an $M \in \N$ such
 that $d(x_n,p) < \epsilon$ for all $n \geq M$.  The point $p$
 is said to be a \emph{limit}\index{limit!of a sequence in a metric space}
 of $\{ x_n \}_{n=1}^\infty$.
-If the limit is unique, we write\glsadd{not:limseq}
+We will prove the limit is unique, and so
+we write\glsadd{not:limseq}
 \begin{equation*}
 \lim_{n\to \infty} x_n \coloneqq p .
 \end{equation*}
@@ -1529,7 +1530,7 @@ are shown and $M=7$ for this $\epsilon$.\label{fig:sequence-convergence-metric}}
 \end{myfigureht}
 \end{defn}
 
-The limit is unique.  The proof is almost
+We start by proving the limit is unique.  The proof is almost
 identical (word for word) to the proof of the same fact for sequences of
 real numbers,
 \propref{prop:limisunique}.
@@ -1547,7 +1548,7 @@ A convergent sequence in a metric space has a unique limit.
 Suppose $\{ x_n \}_{n=1}^\infty$ has limits $x$ and $y$.
 Take an arbitrary $\epsilon > 0$.
 From the definition find an $M_1$ such that for all $n \geq M_1$,
-$d(x_n,x) < \nicefrac{\epsilon}{2}$.  Similarly find an $M_2$
+$d(x_n,x) < \nicefrac{\epsilon}{2}$.  Similarly, find an $M_2$
 such that for all $n \geq M_2$, we have
 $d(x_n,y) < \nicefrac{\epsilon}{2}$.  Now take an $n$ such that
 $n \geq M_1$ and also $n \geq M_2$, and estimate
@@ -1596,7 +1597,7 @@ converges to $p \in X$, then
 \end{prop}
 
 \begin{example}
-Take $C\bigl([a,b],\R\bigr)$ be the set of continuous functions with the metric being
+Take $C\bigl([a,b],\R\bigr)$ to be the set of continuous functions with the metric being
 the uniform norm.  We saw that we obtain a metric space.
 If we look at the definition of convergence, we notice that it is identical
 to uniform convergence.  That is, $\{ f_n \}_{n=1}^\infty$ converges uniformly if and only
@@ -1606,7 +1607,8 @@ if it converges in the metric space sense.
 \begin{remark}
 It is perhaps surprising that on the set of functions $f \colon [a,b] \to
 \R$ (continuous or not)
-there is no metric that gives pointwise convergence.  The proof of
+there is no metric that gives pointwise convergence as the domain $[a,b]$
+is uncountable.  The proof of
 this fact is beyond the scope of this book.
 \end{remark}
 
@@ -3090,7 +3092,7 @@ See \figureref{fig:xyxsqysq}.
 \begin{enumerate}[a)]
 \item
 Show that for every fixed $x$,
-the function that takes $y$ to $f(x,y)$ is continuous.  Similarly
+the function that takes $y$ to $f(x,y)$ is continuous.  Similarly,
 for every fixed $y$, the function that takes $x$ to $f(x,y)$ is continuous.
 \item
 Show that $f$ is not continuous.
