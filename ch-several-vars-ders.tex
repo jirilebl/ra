@@ -1164,7 +1164,8 @@ Define the \emph{\myindex{euclidean norm}} as\glsadd{not:normRn}
 \begin{equation*}
 \snorm{x} \coloneqq \snorm{x}_{\R^n} \coloneqq \sqrt{x \cdot x} = \sqrt{(x_1)^2+(x_2)^2 + \cdots + (x_n)^2}.
 \end{equation*}
-We will normally write $\snorm{x}$, only in the rare instance when it is necessary to
+We will normally write $\snorm{x}$.
+Only in the rare instance when it is necessary to
 emphasize that we are talking about the euclidean norm will we write
 $\snorm{x}_{\R^n}$.
 Unless otherwise stated, if we talk about $\R^n$ as a normed vector space,
@@ -1177,7 +1178,7 @@ we saw before.  As this inequality is so important, we state and
 prove a slightly stronger version using the notation of this chapter.
 
 \begin{thm}[\myindex{Cauchy--Schwarz inequality}]
-Let $x, y \in \R^n$, then
+If $x, y \in \R^n$, then
 \begin{equation*}
 \sabs{x \cdot y} \leq \snorm{x} \, \snorm{y} = \sqrt{x\cdot x}\, \sqrt{y\cdot y},
 \avoidbreak
@@ -1339,8 +1340,9 @@ following proposition for euclidean spaces, and the proof for general
 finite-dimensional spaces is left as an exercise.
 
 \begin{prop} \label{prop:finitedimpropnormfin}
-Let $X$ and $Y$ be normed vector spaces, $A \in L(X,Y)$, and
-$X$ is finite-dimensional.
+Let $X$ and $Y$ be normed vector spaces with
+$X$ finite-dimensional, and let
+$A \in L(X,Y)$.
 Then $\snorm{A} < \infty$, and
 $A$ is uniformly continuous (Lipschitz with constant $\snorm{A}$).
 \end{prop}
@@ -1510,7 +1512,7 @@ It follows that, in particular, $GL(X)$ is open.
 
 Let us prove \ref{finitedimpropinv:ii}.
 We must show that the inverse is continuous.
-Fix a $A \in GL(X)$.  Let $B$ be near $A$,
+Fix an $A \in GL(X)$.  Let $B$ be near $A$,
 specifically $\snorm{A-B} < \frac{1}{2 \snorm{A^{-1}}}$.
 Then \eqref{eqcontineq} is satisfied and $B$ is invertible.
 A similar computation as above (using $B^{-1}y$ instead of $x$) gives
@@ -1659,7 +1661,7 @@ rarely happens)
 \snorm{A} \leq
 \sqrt{\sum_{i=1}^m \sum_{j=1}^n {(a_{i,j})}^2} .
 \end{equation*}
-The right hand side is the euclidean norm on $\R^{nm}$, the space
+The right-hand side is the euclidean norm on $\R^{nm}$, the space
 of all the entries of the matrix.
 If the entries go to zero, then $\snorm{A}$ goes to zero.
 Conversely,
@@ -1890,7 +1892,7 @@ instead of all $n$-tuples for integers between 1 and $n$,
 because
 when two columns in the determinant are the same, then the
 determinant is zero.  Reordering the columns to the
-original ordering to obtains the sgn.
+original ordering obtains the sgn.
 
 The conclusion that $\det(AB) = \det(A)\det(B)$
 follows by recognizing that the expression in parentheses above is the determinant of $B$.  
@@ -1934,7 +1936,7 @@ $\det(A) = 0$.
 \end{proof}
 
 \begin{prop}
-Determinant is independent of the basis:  If $A$ and $B$ are
+The determinant is independent of the basis:  If $A$ and $B$ are
 $n$-by-$n$ matrices and $B$ is
 invertible, then
 \begin{equation*}
@@ -2014,7 +2016,7 @@ e_i & \text{if } i \neq j , \\
 \lambda e_i & \text{if } i = j .
 \end{cases}
 \end{equation*}
-Given any $n$-by-$m$ matrix $M$ the matrix $EM$ is the same matrix as $M$
+Given any $n$-by-$m$ matrix $M$, the matrix $EM$ is the same matrix as $M$
 except with the $j$th row multiplied by $\lambda$.
 It is an easy computation (exercise) that $\det(E) = \lambda$.
 
@@ -2027,7 +2029,7 @@ e_i               & \text{if } i \neq j , \\
 e_i + \lambda e_k & \text{if } i = j .
 \end{cases}
 \end{equation*}
-Given any $n$-by-$m$ matrix $M$ the matrix $EM$ is the same matrix as $M$
+Given any $n$-by-$m$ matrix $M$, the matrix $EM$ is the same matrix as $M$
 except with $\lambda$ times the $k$th row added to the $j$th row.
 It is an easy computation (exercise) that $\det(E) = 1$.
 
@@ -2041,7 +2043,7 @@ e_k & \text{if } i = j , \\
 e_j & \text{if } i = k .
 \end{cases}
 \end{equation*}
-Given any $n$-by-$m$ matrix $M$ the matrix $EM$ is the same matrix with
+Given any $n$-by-$m$ matrix $M$, the matrix $EM$ is the same matrix with
 $j$th and $k$th rows swapped.
 It is an easy computation (exercise) that $\det(E) = -1$.
 
@@ -2370,7 +2372,7 @@ every finite-dimensional vector space $X$.
 
 \begin{exercise}
 \pagebreak[2]
-Let $A$ be an $n$-by-$n$ matrix $A$.
+Let $A$ be an $n$-by-$n$ matrix.
 \begin{enumerate}[a)]
 \item
 Prove $\rho(A) \leq \snorm{A}$.  (See above for definition of $\rho$.)
@@ -2393,13 +2395,13 @@ $C(0,1)$ (using the metric induced by this norm)
 is a compact symmetric convex set.
 \item (Challenging)
 Let $C \subset \R^n$ be a compact
-symmetric convex set and $0 \in C$.  Show that
+symmetric convex set that spans $\R^n$ and $0 \in C$.  Show that
 \begin{equation*}
 \snorm{x} \coloneqq \inf \left\{ \lambda : \lambda > 0 \text{ and } \frac{x}{\lambda} \in C \right\}
 \end{equation*}
 is a norm on $\R^n$, and $C = C(0,1)$ (the closed unit ball) in the metric induced by this norm.
 \end{enumerate}
-Hint: Feel free to the result of \exerciseref{exercise:allnormsequiv}
+Hint: Feel free to use the result of \exerciseref{exercise:allnormsequiv}
 part c).  In particular, whether a set is ``compact'' is independent of the
 norm.
 \end{exercise}
@@ -2480,13 +2482,9 @@ The norm in the
 numerator is on $\R^m$, and the norm in the denominator is on $\R^n$ where $h$
 lives.
 Normally it is understood that $h \in \R^n$ from context
-(the formula makes no sense otherwise).
-We will not explicitly say so from now on.
+(the formula makes no sense otherwise);
+it is not always necessary to explicitly say so.
 Let us prove, as promised, that the derivative is unique.
-
-%We have again cheated somewhat and said that $A$
-%is \emph{the} derivative.  We have not shown yet that there
-%is only one, let us do that now.
 
 \begin{prop}
 Let $U \subset \R^n$ be an open subset and $f \colon U \to \R^m$ a function.  Suppose
@@ -2901,7 +2899,7 @@ and we are done.
 \end{proof}
 
 The converse of the proposition is not true.  Just because the partial
-derivatives exist, does not mean that the function is differentiable.  See
+derivatives exist does not mean that the function is differentiable.  See
 the exercises.
 However, when the partial derivatives are continuous, we will prove that the
 converse holds.
@@ -2923,7 +2921,7 @@ The gradient gives a way to represent the action of
 the derivative as a dot product: $f'(x)\,v = \nabla f(x) \cdot v$.
 
 Suppose $\gamma \colon (a,b) \subset \R \to \R^n$ is differentiable.
-Such a function and its image is sometimes called a \emph{\myindex{curve}},
+Such a function (and its image) is sometimes called a \emph{\myindex{curve}},
 or a \emph{\myindex{differentiable curve}}.
 Write $\gamma =
 (\gamma_1,\gamma_2,\ldots,\gamma_n)$.
@@ -2974,7 +2972,7 @@ For convenience,
 we often 
 leave out the points where we are evaluating,
 such as above on the far right-hand side.
-With the notation of the gradient and the dot product
+With the notation of the gradient and the dot product,
 the equation becomes
 \begin{equation*}
 g'(t) = (\nabla f) \bigl(\gamma(t)\bigr) \cdot \gamma^{\:\prime}(t)
@@ -3074,7 +3072,7 @@ area/volume under the mapping.
 Similarly, the Jacobian determinant measures how much a differentiable mapping stretches
 things locally, and if it flips orientation.  In particular, if the Jacobian
 determinant
-is non-zero than we would assume that locally the mapping is invertible (and
+is nonzero, then we would assume that locally the mapping is invertible (and
 we would be correct as we will later see).
 
 \subsection{Exercises}
@@ -3253,11 +3251,11 @@ Show that
 $(0,0)$ is a critical point, that is, $f'(0,0) = 0$, the zero
 linear map in $L(\R^2,\R)$.
 \item
-Show that for every direction the restriction of $f$ to a line through the origin
+Show that for every direction, the restriction of $f$ to a line through the origin
 in that direction has a relative maximum at the origin.  In other words,
 for every $(x,y)$ such that $x^2+y^2=1$, the function $g(t) \coloneqq f(tx,ty)$,
 has a relative maximum at $t=0$.\\
-Hint: While not necessary
+Hint: While not necessary,
 \volIref{\sectionref*{vI-sec:taylor} of volume I}{\sectionref{sec:taylor}}
 makes
 this part easier.
