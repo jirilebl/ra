@@ -15,7 +15,8 @@ The euclidean space $\R^n$ has already made an appearance in the metric
 space chapter.  In this chapter, we extend the differential calculus
 we created for one variable to several variables.  The key idea in
 differential calculus is to approximate differentiable functions by linear
-functions (approximating the graph by a straight line).
+functions
+(approximating the graph by a flat object such as a line or a plane).
 In several variables, we must introduce a little bit of linear
 algebra before we can move on.
 We start with vector spaces and linear mappings of vector spaces.
@@ -51,7 +52,7 @@ We often think of vectors as a direction and a magnitude and draw the
 vector as an arrow.  The vector $(v_1,v_2,\ldots,v_n)$ is represented
 by an arrow from the origin to the point $(v_1,v_2,\ldots,v_n)$.
 When we think of vectors as arrows, they are
-not based at the origin necessarily; a vector is simply the direction and
+not necessarily based at the origin; a vector is simply the direction and
 the magnitude, and it does not know where it starts.
 There is a natural algebraic structure when thinking of vectors as arrows.
 We can add vectors as arrows by following one vector and then the other.
@@ -103,7 +104,7 @@ There is a $0 \in X$ such that $v+0=v$ for all $v \in X$.
 \makebox[2.15in][l]{(Additive inverse)}
 %mbxENDIGNORE
 %mbxlatex (Additive inverse) \quad
-For each $v \in X$, there is a $-v \in X$,
+For each $v \in X$, there is a $-v \in X$
 such that $v+(-v)=0$.
 \item
 %mbxSTARTIGNORE
@@ -176,7 +177,7 @@ We will mostly deal with \myquote{finite-dimensional} vector spaces that can
 be regarded as subsets of $\R^n$, but other vector spaces are useful in
 analysis.
 It is better to think of even such simpler
-vector spaces abstractly abstract notion rather than as $\R^n$.
+vector spaces abstractly rather than as $\R^n$.
 
 \begin{example}
 A trivial example of a vector space is
@@ -367,7 +368,7 @@ Finally, $0 \in \spn(Y)$; if $Y$ is nonempty, $0 = 0 v$ for some $v \in Y$.
 We have proved the following proposition.
 
 \begin{prop}
-Let $X$ be a vector space and $Y \subset X$ is a subset.
+Let $X$ be a vector space and $Y \subset X$ a subset.
 Then the set $\spn(Y)$ is a vector subspace of $X$.
 \end{prop}
 
@@ -399,7 +400,7 @@ We generally consider the basis as not just a set, but as
 an ordered $m$-tuple:
 $x_1,x_2,\ldots,x_m$.
 
-Suppose $d$ is largest integer for which $X$ contains a set of
+Suppose $d$ is the largest integer for which $X$ contains a set of
 $d$ linearly independent vectors.  We then say $d$ is
 the \emph{\myindex{dimension}} of $X$,
 and we write $\dim \, X \coloneqq d$.
@@ -416,7 +417,7 @@ set of $m$ linearly independent vectors for all $m \leq d$.
 Moreover, if a set does not have $d+1$
 linearly independent vectors, no set of more than $d+1$ vectors is linearly
 independent.
-So $X$ is of dimension is $d$ if there
+So $X$ is of dimension $d$ if there
 is a set of $d$ linearly independent vectors, but no
 set of $d+1$ vectors is linearly independent.
 
@@ -553,7 +554,7 @@ x_1 = \frac{1}{a_{1,1}} y_1 - \sum_{k=2}^d \frac{a_{k,1}}{a_{1,1}} x_k .
 \end{equation*}
 In particular, $\{ y_1 , x_2, \ldots, x_d \}$ spans $X$, since $x_1$ can be
 obtained from $\{ y_1 , x_2, \ldots, x_d \}$.  Therefore, there are some numbers
-for some numbers $a_{1,2},a_{2,2},\ldots,a_{d,2}$, such that
+$a_{1,2},a_{2,2},\ldots,a_{d,2}$, such that
 \begin{equation*}
 y_2 = a_{1,2} y_1 + \sum_{k=2}^d a_{k,2} x_k .
 \end{equation*}
@@ -889,7 +890,7 @@ then $(1-t) f(x) + t g(x) \geq 0$ for all $x$.  Furthermore,
 + t \int_0^1 g(x) \,dx \leq 1 .
 \end{equation*}
 Note that $V$ is not a vector subspace of $C([0,1],\R)$.  The function
-$f(x) \coloneqq 1$ is in $V$, but $2f$ and $-f$ is not.
+$f(x) \coloneqq 1$ is in $V$, but $2f$ and $-f$ are not.
 \end{example}
 
 \begin{prop} \label{prop:intersectionconvex}
@@ -1050,7 +1051,7 @@ $A_{jk} x_\ell = 0$ if $\ell \neq j$.
 \begin{samepage}
 \begin{exercise}[Easy]
 Suppose $X$ and $Y$ are vector spaces and $A \in L(X,Y)$ is a linear
-operator.
+mapping.
 \begin{enumerate}[a)]
 \item
 Show that the nullspace $N \coloneqq \{ x \in X : Ax = 0 \}$ is a
