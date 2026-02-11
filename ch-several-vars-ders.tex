@@ -158,7 +158,7 @@ for granted from now on.
 \begin{example}
 The set $\R^n$ is a vector space;
 the zero vector is $(0,\ldots,0)$, addition
-and multiplication by a scalar is done componentwise:
+and multiplication by a scalar are done componentwise:
 If $a \in \R$, $v = (v_1,v_2,\ldots,v_n) \in \R^n$, and $w =
 (w_1,w_2,\ldots,w_n) \in \R^n$, then
 \begin{align*}
@@ -1318,7 +1318,8 @@ To prove it is equal to $1$, note that the constant function $1$ has
 norm $1$, so $B1 = 1$, meaning $\snorm{B} \geq 1$.
 So $\snorm{B}=1$.
 
-The operator norm is not always a norm on $L(X,Y)$, in particular,
+The operator norm is not always a norm on $L(X,Y)$.
+In particular,
 $\snorm{A}$ is not always finite for $A \in L(X,Y)$.
 We prove below that $\snorm{A}$ is finite when $X$ is finite-dimensional.
 The operator norm being finite is equivalent to $A$ being continuous.
@@ -1556,7 +1557,7 @@ so the inverse operation is a continuous function at $A$.
 Once we fix a basis in a finite-dimensional
 vector space $X$, we can represent a vector of $X$ as an $n$-tuple of
 numbers---a vector in $\R^n$.
-Same can be done with $L(X,Y)$, bringing us to matrices,
+The same can be done with $L(X,Y)$, bringing us to matrices,
 which are a convenient way to represent
 finite-dimensional linear transformations.
 Suppose $\{ x_1, x_2, \ldots, x_n \}$ and $\{ y_1, y_2, \ldots, y_m \}$
@@ -4028,7 +4029,7 @@ $f(V)$ is open.
 \end{proof}
 
 \begin{example}
-The theorem, and the corollary, is not true if $f'(x)$ is not invertible for
+The theorem, along with the corollary, is not true if $f'(x)$ is not invertible for
 some~$x$.
 The map $f(x,y) \coloneqq (x,xy)$, maps $\R^2$ onto the set
 $\R^2 \setminus \bigl\{ (0,y) : y \neq 0 \bigr\}$, which is neither open nor closed.
@@ -4067,13 +4068,14 @@ called the \emph{\myindex{Jacobian conjecture}}.  If $F \colon \R^n \to
 \R^n$ is polynomial (each component is a polynomial) and $J_F$
 (the Jacobian determinant) is a nonzero
 constant, does $F$ have a polynomial inverse?
-The inverse function theorem gives a local $C^1$ inverse, but can one always
+The inverse function theorem gives a local $C^1$ inverse,
+but whether one can always
 find a global polynomial inverse is the question.
 
 \subsection{Implicit function theorem}
 
 The inverse function theorem is a special case of the implicit
-function theorem, which we prove next.  Although somewhat ironically we 
+function theorem, which we prove next.  Somewhat ironically we 
 prove the implicit function theorem using the inverse function theorem.
 One way to state the inverse function theorem is that
 the equation $x-f(y) = 0$ is solvable for $y$ in terms of $x$ if the derivative
