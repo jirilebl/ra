@@ -3367,7 +3367,7 @@ $p$ to $q$ lies in $U$.
 
 \begin{prop} \label{mv:prop:convexlip}
 Let $U \subset \R^n$ be a convex open set, $f \colon U \to \R^m$
-be a differentiable function, and an $M$ be such that
+be a differentiable function, and $M$ be such that
 \begin{equation*}
 \bnorm{f'(p)} \leq M
 \qquad \text{for all } p \in U.
@@ -3405,7 +3405,7 @@ M \snorm{q-p} . \qedhere
 \end{proof}
 
 \begin{example}
-If $U$ is not convex the proposition is not true: Consider
+If $U$ is not convex, the proposition is not true: Consider
 the set
 \begin{equation*}
 U \coloneqq \bigl\{ (x,y) : 0.5 < x^2+y^2 < 2 \bigr\}
@@ -3417,7 +3417,7 @@ makes with the positive $x$ axis.  We even have a formula for $f$:
 \begin{equation*}
 f(x,y) = 2 \operatorname{arctan}\left( \frac{y}{x+\sqrt{x^2+y^2}}\right) .
 \end{equation*}
-Think a spiral staircase with room in the middle.  See
+Think of a spiral staircase with room in the middle.  See
 \figureref{mv:fignonlip}.
 
 \begin{myfigureht}
@@ -3485,8 +3485,8 @@ the partial derivatives $\frac{\partial f_k}{\partial x_j}$
 exist for all $k$ and $j$ and are continuous.
 \end{prop}
 
-Without continuity the theorem does not hold.  Just because
-partial derivatives exist does not mean that $f$ is differentiable,
+Without continuity, the theorem does not hold.  Just because
+partial derivatives exist does not mean that $f$ is differentiable;
 in fact, $f$ may not even be continuous.  See the exercises
 for the last section and also for this section.
 
@@ -3499,7 +3499,7 @@ continuous, and hence the partial derivatives are continuous.
 
 To prove the opposite direction,
 suppose the partial derivatives exist and are continuous.
-Fix $x \in U$.  If we show that $f'(x)$ exists we are done, because
+Fix $x \in U$.  If we show that $f'(x)$ exists, we are done, because
 the entries of the matrix representing $f'(x)$ are the partial
 derivatives and if the entries are continuous functions,
 the matrix-valued function $f'$ is continuous.
@@ -3724,7 +3724,7 @@ B(0,1)$.
 Define $\varphi \colon [0,2\pi] \to \R^2$ by $\varphi(t) =
 \bigl(\sin(t),\cos(t)\bigr)$.  Compute $\varphi'(t)$ for all $t$.  Compute
 $\bnorm{\varphi'(t)}$ for all $t$.  Notice that $\varphi'(t)$ is never zero,
-yet $\varphi(0) = \varphi(2\pi)$, therefore, Rolle's theorem is not true
+yet $\varphi(0) = \varphi(2\pi)$.  Therefore, Rolle's theorem is not true
 in more than one dimension.
 \end{exercise}
 
@@ -3743,7 +3743,7 @@ is continuous.
 \begin{exercise}
 Let $f \colon \R^2 \to \R$ be a function and
 $M \in \R$, such that
-for every $(x,y) \in \R^2$, the function $g(t) \coloneqq f(xt,yt)$ is
+for every $(x,y) \in \R^2$ with $x^2+y^2=1$, the function $g(t) \coloneqq f(xt,yt)$ is
 differentiable
 and $\babs{g'(t)} \leq M$ for all $t$.
 \begin{enumerate}[a)]
