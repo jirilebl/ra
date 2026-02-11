@@ -3284,18 +3284,27 @@ $h \colon U \to \R$ are functions such that
 $f(p) = g(p) = h(p)$, $f$ and $h$ are differentiable at $p$,
 $f'(p) = h'(p)$, and
 \begin{equation*}
-f(x) \leq g(x) \leq h(x) \qquad \text{for all } x \in U
+f(x) \leq g(x) \leq h(x) \qquad \text{for all } x \in U .
 \end{equation*}
 Show that $g$ is differentiable at $p$ and 
 $g'(p) = f'(p) = h'(p)$.
 \end{exercise}
 
 \begin{exercise}
-Prove a version of \emph{\myindex{mean value theorem}}
+Prove a version of the \emph{\myindex{mean value theorem}}
 for functions of several variables.  That is, suppose $U \subset \R^n$
 is open, $f \colon U \to \R$ differentiable, $p,q \in U$, and the segment
 $[p,q] \in U$.  Prove that there exists an $x \in [p,q]$ such that
 $\nabla f (x) \cdot (q-p) = f(q)-f(p)$.
+\end{exercise}
+
+\begin{exercise}
+Define $f \colon \R^2 \to \R$ by $f(x,y) \coloneqq \frac{y(x^2+y^2)}{x}$
+when $x \neq 0$ and $f(0,y) \coloneqq 0$.  Show that for all $u \in \R^2$
+with $\snorm{u}=1$, we get $D_u f(0) = 0$, that is, the directional
+derivative exists and is zero in all directions at the origin, but the
+function is not continuous at the origin (in fact, not continuous whenever
+$x=0$).
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3725,7 +3734,7 @@ Define $\varphi \colon [0,2\pi] \to \R^2$ by $\varphi(t) =
 \bigl(\sin(t),\cos(t)\bigr)$.  Compute $\varphi'(t)$ for all $t$.  Compute
 $\bnorm{\varphi'(t)}$ for all $t$.  Notice that $\varphi'(t)$ is never zero,
 yet $\varphi(0) = \varphi(2\pi)$.  Therefore, Rolle's theorem is not true
-in more than one dimension.
+for vector-valued functions.
 \end{exercise}
 
 \begin{exercise}
