@@ -14,7 +14,7 @@ As in \chapterref{int:chapter}, we define the Riemann integral using the Darboux
 upper and lower integrals.  The ideas in this section are very similar to
 integration in one dimension.  The complication is mostly notational.
 The differences between one and several dimensions will grow more pronounced
-in the sections following.
+in the following sections.
 
 \subsection{Rectangles and partitions}
 
@@ -25,8 +25,8 @@ The set
 $[a_1,b_1] \times
 [a_2,b_2] \times \cdots \times
 [a_n,b_n]$ is called a \emph{\myindex{closed rectangle}}\index{rectangle}.
-It is sometimes useful to allow $a_k = b_k$, and we
-think of $[a_k,b_k] = \{ a_k \}$.
+It can be useful to allow $a_k = b_k$, where
+$[a_k,b_k] = \{ a_k \}$.
 If $a_k < b_k$ for all $k$, then the set
 $(a_1,b_1) \times
 (a_2,b_2) \times \cdots \times
@@ -80,7 +80,7 @@ the
 \times
 [x_{n,j_n-1}~,~ x_{n,j_n}] .
 \end{equation*}
-We order the subrectangles somehow and
+We order the subrectangles in any way and
 we say $\{R_1,R_2,\ldots,R_N\}$ are the subrectangles corresponding
 to the partition $P$ of $R$, or more simply, subrectangles of
 $P$.
@@ -273,7 +273,7 @@ V(R_k) = \sum_{j \in I_k} V(\widetilde{R}_j).
 \end{equation*}
 
 Let $m_j \coloneqq \inf \bigl\{ f(x) : x \in R_j \bigr\}$, and
-$\widetilde{m}_j \coloneqq \inf \bigl\{ f(x) : \in \widetilde{R}_j \bigr\}$ as usual.
+$\widetilde{m}_j \coloneqq \inf \bigl\{ f(x) : x \in \widetilde{R}_j \bigr\}$ as usual.
 If $j \in I_k$, then $m_k \leq \widetilde{m}_j$.  Then
 \begin{equation*}
 %mbxlatex \begin{aligned}
@@ -315,7 +315,7 @@ For every partition $P$, via \propref{mv:sumulbound:prop},
 \begin{equation*}
 m\,V(R) \leq L(P,f) \leq U(P,f) \leq M\,V(R).
 \end{equation*}
-Taking supremum of $L(P,f)$ and infimum of $U(P,f)$ over all partitions $P$,
+Taking the supremum of $L(P,f)$ and the infimum of $U(P,f)$ over all partitions $P$,
 we obtain the first and the last inequality in
 \eqref{mv:intulbound:eq}.
 
@@ -784,7 +784,7 @@ $\operatorname{supp}(f) \subset S$, then
 \begin{proof}
 As $f$ is continuous, it is automatically integrable on the rectangles $R$, $S$, and $R
 \cap S$.
-Then \exerciseref{mv:zerooutside} says
+Applying \exerciseref{mv:zerooutside} twice,
 $\int_S f = \int_{S \cap R} f = \int_R f$.
 \end{proof}
 
@@ -821,12 +821,12 @@ Prove \propref{mv:intlinearity:prop}.
 
 
 \begin{exercise}
-Suppose $R$ is a closed rectangle with the length of one of the sides equal to 0.
+Suppose $R \subset \R^n$ is a closed rectangle with the length of one of the sides equal to 0.
 For every bounded function $f \colon R \to \R$, show that $f \in \sR(R)$ and $\int_R f = 0$.
 \end{exercise}
 
 \begin{exercise} \label{mv:zerosiderectangle}
-Suppose $R$ is a closed rectangle with the length of one of the sides equal to 0,
+Suppose $R \subset \R^n$ is a closed rectangle with the length of one of the sides equal to 0,
 and suppose $S$ is a closed rectangle with $R \subset S$.
 If $f \colon S \to \R$
 is a bounded function such that $f(x) = 0$ for $x \in S \setminus R$, show
@@ -841,9 +841,10 @@ definition, and find $\int_R f$.
 \end{exercise}
 
 \begin{exercise} \label{mv:zeroinside}
-Suppose $R$ is a closed rectangle and $h \colon R \to \R$ is a bounded function
+Suppose $R \subset \R^n$ and $S \subset \R^n$ are closed rectangles
+where $R \subset S$.
+Let $h \colon S \to \R$ be a bounded function
 such that $h(x) = 0$ if $x \notin \partial R$ (the boundary of $R$).
-Let $S$ be a closed rectangle.
 Show that $h \in \sR(S)$ and
 \begin{equation*}
 \int_{S} h = 0 .
@@ -853,7 +854,9 @@ Hint: Write $h$ as a sum of functions as in \exerciseref{mv:zerosiderectangle}.
 \end{exercise}
 
 \begin{exercise} \label{mv:zerooutside}
-Suppose $R$ and $R'$ are two closed rectangles with $R' \subset R$.  Suppose $f \colon R \to \R$ is in $\sR(R')$
+Suppose $R$ and $R'$ are two closed rectangles
+in $\R^n$
+with $R' \subset R$.  Suppose $f \colon R \to \R$ is in $\sR(R')$
 and $f(x) = 0$ for $x \in R \setminus R'$.
 Show that $f \in \sR(R)$ and
 \begin{equation*}
@@ -902,7 +905,7 @@ Hint: See \exerciseref{mv:zerooutside}.
 \end{exercise}
 
 \begin{exercise}
-Suppose $R$ and $S$ are closed rectangles of $\R^n$.
+Suppose $R$ and $S$ are closed rectangles in $\R^n$.
 Define $f \colon \R^n \to \R$ as $f(x) \coloneqq 1$ if 
 $x \in R$, and $f(x) \coloneqq 0$ otherwise.  Prove $f$ is integrable on $S$
 and compute $\int_S f$.  Hint: Consider $S \cap R$.
@@ -937,8 +940,10 @@ Show that $f \notin \sR(R)$.
 \end{samepage}
 
 \begin{exercise}
-Suppose $R$ is a closed rectangle, and suppose $S_j$ are closed rectangles
-such that $S_j \subset R$ and $S_j \subset S_{j+1}$ for all $j$.
+Suppose $R \subset \R^n$ is a closed rectangle, and suppose $\{ S_j \}_{j=1}^\infty$ is a
+sequence of closed rectangles
+such that $S_j \subset R$ and $S_j \subset S_{j+1}$ for all $j$, and
+also $R = \bigcup_{j=1}^\infty S_j$.
 Suppose $f \colon R \to \R$ is bounded and $f \in \sR(S_j)$ for all $j$.
 Show that $f \in \sR(R)$ and
 \begin{equation*}
@@ -948,7 +953,8 @@ Show that $f \in \sR(R)$ and
 
 \begin{exercise}
 Suppose $f\colon [-1,1] \times [-1,1] \to \R$ is a Riemann
-integrable function such $f(x) = -f(-x)$.  Using the definition prove
+integrable function where $f(x) = -f(-x)$.
+Using the definition of the integral prove
 \begin{equation*}
 \int_{[-1,1] \times [-1,1]} f = 0 .
 \end{equation*}

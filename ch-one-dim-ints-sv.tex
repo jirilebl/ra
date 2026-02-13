@@ -892,7 +892,7 @@ $\beta \colon [0,2\pi] \to \R^2$ by $\beta(t) \coloneqq
 \bigl(\cos(2t),\sin(2t)\bigr)$.  Notice that
 $\gamma\bigl([0,2\pi]\bigr) = \beta\bigl([0,2\pi]\bigr)$; we travel
 around the same curve, the unit circle.  But $\gamma$ goes around the unit
-circle once in the counter clockwise direction, and $\beta$ goes around the
+circle once in the counterclockwise direction, and $\beta$ goes around the
 unit circle twice (in the same direction). 
 See \figureref{fig:circlepathrepar2}.
 \begin{myfigureht}
@@ -1194,7 +1194,7 @@ differentiable function on $[0,1]$.
 
 \begin{exercise}
 Suppose $\gamma \colon [a,b] \to \R^n$ is a smooth path.
-Show that there exists an $\epsilon > 0$ and a smooth function
+Show that there exists an $\epsilon > 0$ and a continuously differentiable function
 $\widetilde{\gamma} \colon (a-\epsilon,b+\epsilon) \to \R^n$
 with $\widetilde{\gamma}(t) = \gamma(t)$ for all $t \in [a,b]$
 and $\widetilde{\gamma}^{\:\prime}(t) \neq 0$ for all $t \in 
@@ -1352,7 +1352,7 @@ Note: Feel free to use what you know about sine and cosine from calculus.
 
 \subsection{Path independent integrals}
 
-Let $U \subset \R^n$ be a set and $\omega$ a one-form defined on $U$.
+Let $U \subset \R^n$ be an open set and $\omega$ a one-form defined on $U$.
 The integral of $\omega$
 is said to be \emph{\myindex{path independent}}
 if for every pair of points $x,y \in U$ and
@@ -1459,7 +1459,7 @@ derivative.\label{fig:pathindantider}}
 \end{myfigureht}
 
 
-Since $U$ is open, suppose $h$ is so small so that all points of distance
+Since $U$ is open, suppose $h$ is so small that all points of distance
 $\sabs{h}$ or
 less from $x$ are in $U$.
 As the integral is path independent,
@@ -1583,8 +1583,8 @@ $\beta$ integral.  Thus the integral of $\omega$ on $U$ is path independent.
 \end{proof}
 
 However one states path independence, it is often a difficult criterion to
-check, you have to check something \myquote{for all paths.}
-There is a local criterion, a differential equation, that guarantees
+check---you have to check something \myquote{for all paths.}
+There is an easier local criterion, a differential equation, that guarantees
 path independence, or in other words it guarantees an
 \emph{\myindex{antiderivative}}
 $f$ whose total derivative is the given one-form
@@ -1620,20 +1620,20 @@ star-shaped, but a star-shaped domain need not be convex.
 
 \begin{thm}[\myindex{Poincar\'e lemma}]
 Let $U \subset \R^n$ be a star-shaped domain and $\omega$ a continuously
-differentiable one-form defined on $U$.  That is, if
+differentiable one-form defined on $U$.  That is,
 \begin{equation*}
 \omega =
 \omega_1 \,dx_1 +
 \omega_2 \,dx_2 + \cdots +
 \omega_n \,dx_n ,
 \end{equation*}
-then $\omega_1,\omega_2,\ldots,\omega_n$ are continuously differentiable
-functions.  Suppose that for every $j$ and $k$
+where $\omega_1,\omega_2,\ldots,\omega_n$ are continuously differentiable
+functions.  Suppose that for every $j$ and $k$,
 \begin{equation*}
-\frac{\partial \omega_j}{\partial x_k} = \frac{\partial \omega_k}{\partial x_j} ,
+\frac{\partial \omega_j}{\partial x_k} = \frac{\partial \omega_k}{\partial x_j} .
 \avoidbreak
 \end{equation*}
-then there exists a twice continuously differentiable function $f \colon U
+Then there exists a twice continuously differentiable function $f \colon U
 \to \R$
 such that $df = \omega$.
 \end{thm}
@@ -1734,7 +1734,7 @@ that is, $\gamma(t) = \bigl(\cos(t),\sin(t)\bigr)$
 for $t \in [0,2\pi]$, and we found the integral to be $2\pi$.  We would have
 gotten $0$ if
 the integral was path independent,
-or in other words if there would exist an $f$ such that
+or in other words if there existed an $f$ such that
 $df = \omega$.
 \end{example}
 
@@ -1852,7 +1852,7 @@ Hint 3: See previous exercise.
 \item
 Show that a connected open set $U \subset \R^n$ is path connected.
 Hint: Start with a
-point $x \in U$, and let $U_x \subset U$ is the set of points that are
+point $x \in U$, and let $U_x \subset U$ be the set of points that are
 reachable by a path from $x$.  Show that $U_x$ and $U \setminus U_x$
 are both open, and since $U_x$ is nonempty ($x \in U_x$) it must be
 that $U_x = U$.
@@ -1861,8 +1861,8 @@ Prove the converse, that is, an open\footnote{If the
 definition of \myquote{path connected} is as in the next exercise,
 \myquote{open} would not be needed for this part.}
 path connected set $U \subset \R^n$ is
-connected.  Hint: For contradiction assume there exist two open and disjoint nonempty open
-sets and then assume there is a piecewise smooth (and therefore continuous)
+connected.  Hint: For contradiction assume there exist two disjoint nonempty open
+sets whose union is $U$ and then assume there is a piecewise smooth (and therefore continuous)
 path between a point in one to a point in the other.
 \end{enumerate}
 \end{exercise}
@@ -1900,5 +1900,5 @@ is $-2\pi$, 0, or $2\pi$.
 Hint 2: You proved above that $\R^2 \setminus R$ is star-shaped.
 \\
 Note: The number $\ell$ is called the \emph{\myindex{winding number}} it measures how many
-times does $\gamma$ wind around the origin in the clockwise direction.
+times $\gamma$ winds around the origin in the counterclockwise direction.
 \end{exercise}
