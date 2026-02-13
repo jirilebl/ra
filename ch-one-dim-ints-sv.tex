@@ -409,12 +409,12 @@ The function $\gamma \colon [a,b] \to \R^n$ is called a
 \emph{\myindex{piecewise continuously differentiable path}}
 if there exist finitely many points
 $t_0 = a < t_1 < t_2 < \cdots < t_k = b$ such that
-the restriction $\gamma|_{[t_{j-1},t_j]}$ is smooth path for every
+the restriction $\gamma|_{[t_{j-1},t_j]}$ is a smooth path for every
 $j=1,2,\ldots,k$.
 
 A path $\gamma$ is 
 a \emph{\myindex{closed path}} if $\gamma(a) = \gamma(b)$, that is,
-the path starts and ends in the same point.
+the path starts and ends at the same point.
 A path $\gamma$ is a \emph{\myindex{simple path}} if 
 either 1) $\gamma$ is a one-to-one function, or 2)
 $\gamma|_{[a,b)}$ is one-to-one and $\gamma(a)=\gamma(b)$ ($\gamma$ is a
@@ -442,7 +442,7 @@ The path $\gamma$ is the unit square traversed
 counterclockwise.  See \figureref{fig:squarepath}.  It is
 a piecewise smooth path.  For example,
 $\gamma|_{[1,2]}(t) = (1,t-1)$ and so
-$(\gamma|_{[1,2]})'(t) = (0,1) \neq 0$.  Similarly for the other 3 sides.
+$(\gamma|_{[1,2]})'(t) = (0,1) \neq 0$.  Similarly for the other three sides.
 Notice
 that
 $(\gamma|_{[1,2]})'(1) = (0,1)$,
@@ -687,9 +687,10 @@ a smooth path, define
 \end{equation*}
 \end{defn}
 
-The notation makes sense from the formula you remember from calculus,
-let us state it somewhat informally:
-If $x_j(t) = \gamma_j(t)$, then $dx_j = \gamma_j^{\:\prime}(t) \, dt$.
+The notation for an integral of a one-form makes sense from the
+\myquote{$u$-substitution} formula you remember from calculus.
+Somewhat informally,
+if $x_j(t) = \gamma_j(t)$, then $dx_j = \gamma_j^{\:\prime}(t) \, dt$.
 
 Paths can be cut up or concatenated.  The proof is a direct application
 of the additivity of the Riemann integral, and is left as an exercise.
@@ -942,8 +943,8 @@ $\int_{\gamma} \omega = 0$ for every $\omega$.
 Next, we integrate a function against the
 \emph{\myindex{arc-length measure}} $ds$.  The geometric picture we have in mind
 is the area under the graph of the function over a path.
-Imagine a fence erected over $\gamma$ with height given by the function
-and the integral is the area of the fence.
+Imagine a fence erected over $\gamma$ with height given by the function.
+The integral is the area of the fence.
 See \figureref{fig:fenceintegral}.
 \begin{myfigureht}
 \includegraphics{figures/fenceintegral}
@@ -1325,7 +1326,7 @@ that the $x$-coordinate of $\gamma(t_n)$ alternates between positive and
 negative (if they do not alternate you only found a subsequence,
 you need to find them all).
 \item
-Show that there is no piecewise smooth $\alpha$ whose image equals
+Show that there is no piecewise smooth path $\alpha$ whose image equals
 $\gamma\bigl([0,1]\bigr)$.  Hint: Look at part c) and show that $\alpha'$
 must be zero where it reaches the origin.
 \item
