@@ -21,16 +21,16 @@ That is, when is it true that $g$ is differentiable and its derivative is
 \begin{equation*}
 g'(y) \overset{?}{=} \int_a^b \frac{\partial f}{\partial y}(x,y) \,dx .
 \end{equation*}
-Differentiation is a limit and therefore we are really asking when do the
+Differentiation is a limit and therefore we are really asking when the
 two limiting operations of integration and differentiation commute.
-This is not always possible and some extra hypothesis is
+It is not always possible to commute them and some extra hypothesis is
 necessary.  The first
 question we would face is the integrability of
 $\frac{\partial f}{\partial y}$, but the formula above can fail even if
 $\frac{\partial f}{\partial y}$ is integrable as a function of $x$ for every
 fixed $y$.
 
-We prove a simple, but perhaps the most useful version of this kind of result.
+We prove a simple, but perhaps the most useful, version of this kind of result.
 
 \begin{thm}[\myindex{Leibniz integral rule}]
 Suppose $f \colon [a,b] \times [c,d] \to \R$ is a continuous function,
@@ -271,9 +271,9 @@ See \figureref{fig:diffunderex916}.
 Prove that for every fixed $y$, the function $x \mapsto f(x,y)$ is
 Riemann integrable on $[0,1]$, and
 \begin{equation*}
-g(y) \coloneqq \int_0^1 f(x,y) \, dx = \frac{y}{2y^2+2} .
+g(y) \coloneqq \int_0^1 f(x,y) \, dx = \frac{y}{2(y^2+1)} .
 \end{equation*}
-Therefore, $g'(y)$ exists and its derivative is the continuous function
+Therefore, $g'(y)$ exists and is the continuous function
 \begin{equation*}
 g'(y) =
 \frac{d}{dy} \int_0^1 f(x,y) \, dx

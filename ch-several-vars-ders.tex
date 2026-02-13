@@ -158,7 +158,7 @@ for granted from now on.
 \begin{example}
 The set $\R^n$ is a vector space;
 the zero vector is $(0,\ldots,0)$, addition
-and multiplication by a scalar is done componentwise:
+and multiplication by a scalar are done componentwise:
 If $a \in \R$, $v = (v_1,v_2,\ldots,v_n) \in \R^n$, and $w =
 (w_1,w_2,\ldots,w_n) \in \R^n$, then
 \begin{align*}
@@ -1318,7 +1318,8 @@ To prove it is equal to $1$, note that the constant function $1$ has
 norm $1$, so $B1 = 1$, meaning $\snorm{B} \geq 1$.
 So $\snorm{B}=1$.
 
-The operator norm is not always a norm on $L(X,Y)$, in particular,
+The operator norm is not always a norm on $L(X,Y)$.
+In particular,
 $\snorm{A}$ is not always finite for $A \in L(X,Y)$.
 We prove below that $\snorm{A}$ is finite when $X$ is finite-dimensional.
 The operator norm being finite is equivalent to $A$ being continuous.
@@ -1556,7 +1557,7 @@ so the inverse operation is a continuous function at $A$.
 Once we fix a basis in a finite-dimensional
 vector space $X$, we can represent a vector of $X$ as an $n$-tuple of
 numbers---a vector in $\R^n$.
-Same can be done with $L(X,Y)$, bringing us to matrices,
+The same can be done with $L(X,Y)$, bringing us to matrices,
 which are a convenient way to represent
 finite-dimensional linear transformations.
 Suppose $\{ x_1, x_2, \ldots, x_n \}$ and $\{ y_1, y_2, \ldots, y_m \}$
@@ -3284,18 +3285,27 @@ $h \colon U \to \R$ are functions such that
 $f(p) = g(p) = h(p)$, $f$ and $h$ are differentiable at $p$,
 $f'(p) = h'(p)$, and
 \begin{equation*}
-f(x) \leq g(x) \leq h(x) \qquad \text{for all } x \in U
+f(x) \leq g(x) \leq h(x) \qquad \text{for all } x \in U .
 \end{equation*}
 Show that $g$ is differentiable at $p$ and 
 $g'(p) = f'(p) = h'(p)$.
 \end{exercise}
 
 \begin{exercise}
-Prove a version of \emph{\myindex{mean value theorem}}
+Prove a version of the \emph{\myindex{mean value theorem}}
 for functions of several variables.  That is, suppose $U \subset \R^n$
 is open, $f \colon U \to \R$ differentiable, $p,q \in U$, and the segment
 $[p,q] \in U$.  Prove that there exists an $x \in [p,q]$ such that
 $\nabla f (x) \cdot (q-p) = f(q)-f(p)$.
+\end{exercise}
+
+\begin{exercise}
+Define $f \colon \R^2 \to \R$ by $f(x,y) \coloneqq \frac{y(x^2+y^2)}{x}$
+when $x \neq 0$ and $f(0,y) \coloneqq 0$.  Show that for all $u \in \R^2$
+with $\snorm{u}=1$, we get $D_u f(0) = 0$, that is, the directional
+derivative exists and is zero in all directions at the origin, but the
+function is not continuous at the origin (in fact, not continuous whenever
+$x=0$).
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3725,7 +3735,7 @@ Define $\varphi \colon [0,2\pi] \to \R^2$ by $\varphi(t) =
 \bigl(\sin(t),\cos(t)\bigr)$.  Compute $\varphi'(t)$ for all $t$.  Compute
 $\bnorm{\varphi'(t)}$ for all $t$.  Notice that $\varphi'(t)$ is never zero,
 yet $\varphi(0) = \varphi(2\pi)$.  Therefore, Rolle's theorem is not true
-in more than one dimension.
+for vector-valued functions.
 \end{exercise}
 
 \begin{exercise}
@@ -3864,8 +3874,8 @@ Given $y \in \R^n$, define $\varphi_y \colon V \to \R^n$ by
 \varphi_y (x) \coloneqq x + A^{-1}\bigl(y-f(x)\bigr) .
 \end{equation*}
 As $A^{-1}$ is one-to-one,
-$\varphi_y(x) = x$ ($x$ is a fixed point) if only if
-$y-f(x) = 0$, or in other words $f(x)=y$.  Using the chain rule we obtain
+$\varphi_y(x) = x$ ($x$ is a fixed point) if and only if
+$y-f(x) = 0$, or in other words $f(x)=y$.  Using the chain rule, we obtain
 \begin{equation*}
 \varphi_y'(x) = I - A^{-1} f'(x) = A^{-1} \bigl( A-f'(x) \bigr) .
 \end{equation*}
@@ -3873,7 +3883,7 @@ So for $x \in V$, we have
 \begin{equation*}
 \bnorm{\varphi_y'(x)} \leq \snorm{A^{-1}} \, \bnorm{A-f'(x)} < \nicefrac{1}{2} .
 \end{equation*}
-As $V$ is a ball, it is convex.  Hence
+As $V$ is a ball, it is convex.  Hence,
 \begin{equation*}
 \bnorm{\varphi_y(x_1)-\varphi_y(x_2)} \leq \frac{1}{2} \snorm{x_1-x_2} 
 \qquad
@@ -4019,7 +4029,7 @@ $f(V)$ is open.
 \end{proof}
 
 \begin{example}
-The theorem, and the corollary, is not true if $f'(x)$ is not invertible for
+The theorem, along with the corollary, is not true if $f'(x)$ is not invertible for
 some~$x$.
 The map $f(x,y) \coloneqq (x,xy)$, maps $\R^2$ onto the set
 $\R^2 \setminus \bigl\{ (0,y) : y \neq 0 \bigr\}$, which is neither open nor closed.
@@ -4058,15 +4068,16 @@ called the \emph{\myindex{Jacobian conjecture}}.  If $F \colon \R^n \to
 \R^n$ is polynomial (each component is a polynomial) and $J_F$
 (the Jacobian determinant) is a nonzero
 constant, does $F$ have a polynomial inverse?
-The inverse function theorem gives a local $C^1$ inverse, but can one always
+The inverse function theorem gives a local $C^1$ inverse,
+but whether one can always
 find a global polynomial inverse is the question.
 
 \subsection{Implicit function theorem}
 
 The inverse function theorem is a special case of the implicit
-function theorem, which we prove next.  Although somewhat ironically we 
+function theorem, which we prove next.  Somewhat ironically we 
 prove the implicit function theorem using the inverse function theorem.
-In the inverse function theorem we showed that
+One way to state the inverse function theorem is that
 the equation $x-f(y) = 0$ is solvable for $y$ in terms of $x$ if the derivative
 with respect to $y$ is invertible, that is, if $f'(y)$ is invertible.
 Then there is (locally) a
@@ -4331,7 +4342,7 @@ Show that $f$ is one-to-one and onto.
 \item
 Compute $f'$.  (Make sure to argue why $f'$ exists.)
 \item
-Show that $f'$ is invertible at all points, and compute
+Show that $f'$ is invertible at all points and compute
 its inverse.
 \end{enumerate}
 \end{exercise}
@@ -4489,7 +4500,7 @@ That is, the level curves can be locally \myquote{straightened.}
 
 Let $U \subset \R^n$ be an open set and $f \colon U \to \R$ a function.
 Denote our coordinates by $x = (x_1,x_2,\ldots,x_n) \in \R^n$.
-Suppose $\frac{\partial f}{\partial x_{\ell}}$ exists everywhere in $U$,
+If $\frac{\partial f}{\partial x_{\ell}}$ exists everywhere in $U$,
 then it is also a function $\frac{\partial f}{\partial x_{\ell}}
 \colon U \to \R$.  Therefore, it makes sense to talk about its partial
 derivatives.  We denote 
@@ -4510,8 +4521,8 @@ suppose
 \frac{\partial^{k-1} f}{\partial x_{{\ell}_{k-1}} \partial x_{{\ell}_{k-2}}
 \cdots \partial x_{{\ell}_1}}
 \end{equation*}
-exists and is differentiable in the variable $x_{{\ell}_{k}}$, then the
-partial derivative with respect to that variable is denoted by
+exists and is differentiable in the variable $x_{{\ell}_{k}}$.
+Then the partial derivative with respect to that variable is denoted by
 \begin{equation*}
 \frac{\partial^{k} f}{\partial x_{{\ell}_{k}} \partial x_{{\ell}_{k-1}}
 \cdots \partial x_{{\ell}_1}}
@@ -4529,7 +4540,7 @@ swaps the order in which we write the derivatives, which may be important.
 \begin{defn}
 Suppose $U \subset \R^n$ is an open set and
 $f \colon U \to \R$ is a function.  We say $f$ is
-\emph{$k$-times continuously differentiable function}%
+a \emph{$k$-times continuously differentiable function}%
 \index{k-times continuously differentiable function@$k$-times continuously differentiable function}\index{continuously differentiable},
 or a $C^k$\glsadd{not:Ck} function, if all partial derivatives of all orders up to and
 including order $k$ exist and are continuous.
@@ -4540,7 +4551,8 @@ first order partial
 derivatives exist and are continuous, which agrees with our previous
 definition due to \propref{mv:prop:contdiffpartials}.  We
 could have required only that the $k$th order partial derivatives exist and
-are continuous, as the existence of lower order partial derivatives is clearly
+are continuous.
+The existence of lower order partial derivatives is clearly
 necessary to even define $k$th order partial derivatives,
 and these lower order partial derivatives are continuous as they are
 (continuously) differentiable functions.
@@ -4567,7 +4579,7 @@ contains a small open ball (or a box if you wish) around $p$.
 
 Use the mean value theorem on the function
 \begin{equation*}
-\tau \mapsto f(p+se_{\ell} + \tau e_m)-f(x + \tau e_m) ,
+\tau \mapsto f(p+se_{\ell} + \tau e_m)-f(p + \tau e_m) ,
 \end{equation*}
 on the interval $[0,t]$
 to find a $t_0 \in (0,t)$
@@ -4628,9 +4640,10 @@ By continuity of the second partial derivatives,
 \frac{\partial^2 f}{\partial x_{\ell} \partial x_m}(p) .
 \end{equation*}
 
-Now reverse the roles of $s$ and $t$ (and $\ell$ and $m$).  Start with
+Now reverse the roles of $s$ and $t$ (and $\ell$ and $m$).
+Use the mean value theorem on
 the function $\sigma \mapsto f(p+\sigma e_{\ell} + te_m)-f(p + \sigma
-e_{\ell})$
+e_{\ell})$ to
 find an $s_1 \in (0,s)$ such that
 \begin{equation*}
 %mbxlatex \begin{aligned}
@@ -4664,7 +4677,7 @@ Therefore, the two partial derivatives are equal.
 
 The proposition does not hold if the derivatives are not
 continuous.  See \exerciseref{exercise:mixedpartialsunequal}.
-Notice also that we did not really need a $C^2$ function, we only needed the
+Notice also that we did not really need a $C^2$ function---we only needed the
 two second order partial derivatives involved to be continuous functions.
 
 \subsection{Exercises}
@@ -4720,13 +4733,16 @@ x_{{\ell}_{\sigma_{k-1}}}
 \begin{exercise}
 Suppose $\varphi \colon \R^2 \to \R$ is a $C^k$ function
 such that
-$\varphi(0,\theta) = \varphi(0,\psi)$ for all $\theta,\psi \in \R$
+$\varphi(0,\theta) = \varphi(0,\psi)$ for all $\theta,\psi \in \R$,
 and
-$\varphi(r,\theta) = \varphi(r,\theta+2\pi)$ for all $r,\theta \in \R$.
+$\varphi(r,\theta) = \varphi(r,\theta+2\pi)$
+and
+$\varphi(r,\theta) = \varphi(-r,\theta+\pi)$
+for all $r,\theta \in \R$.
 Let $F(r,\theta) \coloneqq \bigl(r \cos(\theta), r \sin(\theta) \bigr)$ from 
 \exerciseref{mv:exercise:polarcoordinates}.  Show that a function
-$g \colon \R^2 \to \R$, given
-$g(x,y) \coloneqq \varphi \bigl(F^{-1}(x,y)\bigr)$ is well-defined (notice that
+$g \colon \R^2 \to \R$, given by
+$g(x,y) \coloneqq \varphi \bigl(F^{-1}(x,y)\bigr)$, is well-defined (notice that
 $F^{-1}(x,y)$ can only be defined locally), and
 when restricted to $\R^2 \setminus \{ 0 \}$ it is a $C^k$ function.
 \\
@@ -4771,11 +4787,11 @@ that $f(0,0) = 0$.  Then prove:
 There exists an $A \in L(\R^2)$ such that $g = f \circ A$ is
 such that $\frac{\partial^2 g}{\partial x \partial y} (0,0) = 0$, and
 $\frac{\partial^2 g}{\partial x^2} (0,0) =
-\frac{\partial^2 g}{\partial y^2} (0,0) = 1$.
+\frac{\partial^2 g}{\partial y^2} (0,0) = 2$.
 \item
 For every $\epsilon > 0$, there exists a $\delta > 0$
 such that 
-$\babs{g(x,y) - x^2 - y^2} < \epsilon (x^2+y^2)$ for all
+$\babs{g(x,y) - (x^2 + y^2)} < \epsilon (x^2+y^2)$ for all
 $(x,y) \in B\bigl((0,0),\delta\bigr)$.\\
 Hint: You can use Taylor's theorem in one variable.
 \item
