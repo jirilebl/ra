@@ -963,16 +963,16 @@ Using the definition of the integral prove
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Iterated integrals and Fubini theorem}
+\section{Iterated integrals and the Fubini theorem}
 \label{sec:iteratedints}
 
 \sectionnotes{1--2 lectures}
 
 The Riemann integral in several variables
 is hard to compute via the definition.
-For one-dimensional Riemann integral, we have the fundamental
-theorem of calculus,
-%(FIXME link?)
+For the one-dimensional Riemann integral, we have the fundamental
+theorem of calculus (see 
+\volIref{\sectionref*{vI-sec:ftc} of volume I}{\sectionref{sec:ftc}}),
 which allows computing many integrals without
 having to appeal to the definition of the integral.
 We will rewrite 
@@ -1013,7 +1013,7 @@ See \figureref{fig:fubinibad}.
 \begin{myfigureht}
 \subimport*{figures/}{fubinibad.pdf_t}
 \caption{Left: $[0,1]^2$ with the line $x=\nicefrac{1}{2}$ marked
-dotted and $\int_0^1 f(x,y) \, dx$ marked as gray solid line for a generic $y$.
+dotted and $\int_0^1 f(x,y) \, dx$ marked as a gray solid line for a generic $y$.
 Center: Similar picture but $\int_0^1 f(x,y) \, dy$
 marked for some $x \neq \nicefrac{1}{2}$.
 Right: The three different rectangles in the partition used to integrate $f$
@@ -1143,9 +1143,8 @@ $f$ is continuous, we obtain the more familiar
 \end{equation*}
 
 \begin{proof}
-A partition of $R \times S$ is a concatenation of a partition of $R$ and a
-partition of~$S$.  That is, write a partition of $R \times S$
-as $(P,P') = (P_1,P_2,\ldots,P_n,P'_1,P'_2,\ldots,P'_m)$,
+A partition of $R \times S$ can be written as
+$(P,P') = (P_1,P_2,\ldots,P_n,P'_1,P'_2,\ldots,P'_m)$,
 where
 $P = (P_1,P_2,\ldots,P_n)$ and
 $P' = (P'_1,P'_2,\ldots,P'_m)$ are partitions of $R$ and $S$ respectively.
@@ -1200,7 +1199,7 @@ L\bigl((P,P'),f\bigr)
 \right) V(R_j) = L(P,g) .
 \end{equation*}
 
-Similarly, $U\bigl((P,P'),f) \geq U(P,h)$, and the proof of this inequality is
+Similarly, $U\bigl((P,P'),f\bigr) \geq U(P,h)$, and the proof of this inequality is
 left as an exercise.
 Putting the two inequalities together with the fact that $g(x) \leq h(x)$ for all $x$,
 \begin{equation*}
@@ -1305,7 +1304,7 @@ The Fubini theorem is commonly thought of as \emph{the} theorem that allows us
 to swap the order of iterated integrals, although there are many variations
 on Fubini, and we have seen but two of them.
 
-Repeatedly applying Fubini theorem gets us the following
+Repeatedly applying the Fubini theorem gives the following
 corollary:
 Let $R \coloneqq [a_1,b_1] \times [a_2,b_2] \times \cdots \times [a_n,b_n] \subset
 \R^n$ be a closed rectangle and let
@@ -1347,7 +1346,7 @@ Prove \thmref{mv:fubinivB}.
 \end{exercise}
 
 \begin{exercise}
-Let $R \coloneqq [a,b] \times [c,d]$ and $f(x,y)$ is an integrable
+Let $R \coloneqq [a,b] \times [c,d]$ and $f(x,y)$ be an integrable
 function on $R$ such that
 for every fixed~$y$, the function that takes $x$ to $f(x,y)$
 is zero except at finitely many points.  Show
@@ -1432,9 +1431,9 @@ $\int_0^1 \int_0^1 f(x,y) \, dy \, dx$ exists, but
    $\int_0^1 \int_0^1 f(x,y) \, dx \, dy$ does not.
 \end{enumerate}
 Note: By Fubini,
-$\int_0^1 \overline{\int_0^1} f(x,y) \, dy \, dx$ and 
-$\int_0^1 \underline{\int_0^1} f(x,y) \, dy \, dx$ do exist and equal the
-integral of $f$ on $R$.
+$\int_0^1 \overline{\int_0^1} f(x,y) \, dx \, dy$ and 
+$\int_0^1 \underline{\int_0^1} f(x,y) \, dx \, dy$ exist and equal
+$\int_{[0,1]\times[0,1]} f$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
