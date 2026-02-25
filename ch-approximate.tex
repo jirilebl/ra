@@ -15,7 +15,7 @@
 
 \subsection{The complex plane}
 
-In this chapter we consider approximation of functions, or in other words
+In this chapter, we consider approximation of functions, or in other words,
 functions as limits of sequences and series.
 We will extend some results we already saw to a somewhat more
 general setting, and we will look at some completely new results.
@@ -167,7 +167,7 @@ $(xs-yt)+i(xt+ys) = zw$,
 \lim_{n\to\infty} z_n w_n = zw .
 \end{equation*}
 
-Similarly the modulus and the complex conjugate are continuous functions.  We
+Similarly, the modulus and the complex conjugate are continuous functions.  We
 leave the remainder of the proof of the following proposition as an exercise.
 
 \begin{prop} \label{prop:continuityofcomplex}
@@ -175,7 +175,7 @@ Suppose $\{ z_n \}_{n=1}^\infty$, $\{ w_n \}_{n=1}^\infty$ are sequences of comp
 to $z$ and $w$ respectively.  Then
 \begin{enumerate}[(i)]
 \item
-$\displaystyle \lim_{n\to \infty} z_n + w_n = z + w$.
+$\displaystyle \lim_{n\to \infty} (z_n + w_n) = z + w$.
 \item
 $\displaystyle \lim_{n\to \infty} z_n w_n = z w$.
 \item
@@ -200,7 +200,7 @@ numbers. The series
 \begin{equation*}
 \sum_{n=1}^\infty z_n
 \end{equation*}
-\emph{converges}\index{converges!complex series} if the limit of partial sums converges, that is, if
+\emph{converges}\index{converges!complex series} if the sequence of partial sums converges, that is, if
 \begin{equation*}
 \lim_{k\to\infty} \sum_{n=1}^k z_n \qquad \text{exists.}
 \avoidbreak
@@ -234,15 +234,13 @@ convergence tests (ratio test, root test, etc.)\ that talk about
 absolute convergence work with the numbers $\sabs{z_n}$, that is, they
 are really talking about convergence of series of nonnegative real
 numbers.
-You
-can directly apply these tests
-them without needing to reprove anything for complex
-series.
+You can directly apply these tests
+without needing to reprove anything for complex series.
 
 \subsection{Complex-valued functions}
 
 When we deal with complex-valued functions
-$f \colon X \to \C$, what we often do is to write
+$f \colon X \to \C$, we often write
 $f = u+i\,v$ for real-valued functions $u \colon X \to \R$ and $v \colon X \to
 \R$.
 
@@ -307,7 +305,7 @@ Prove:
 \begin{enumerate}[a)]
 \item
 The action of this matrix on a vector $(s,t)$ is the same
-as the action of multiplying $(x+iy)(s+it)$.
+as multiplying $(x+iy)(s+it)$.
 \item
 Multiplying two such matrices is the same multiplying the underlying complex
 numbers and then finding the corresponding matrix for the product.
@@ -326,10 +324,10 @@ of the other.
 
 \begin{exercise}
 Prove the Bolzano--Weierstrass theorem for complex sequences.
-Suppose $\{ z_n \}_{n=1}^\infty$ is a bounded sequence of complex numbers, that
-is, there exists an $M$ such that $\sabs{z_n} \leq M$ for all $n$.  Prove
-that there exists a subsequence $\{ z_{n_k} \}_{k=1}^\infty$ that converges to some $z
-\in \C$.
+Suppose $\{ z_n \}_{n=1}^\infty$ is a bounded sequence of complex numbers.
+That is, there exists an $M$ such that $\sabs{z_n} \leq M$ for all $n$.
+Prove that there exists a subsequence $\{ z_{n_k} \}_{k=1}^\infty$
+that converges to some $z \in \C$.
 \end{exercise}
 
 \begin{exercise}
@@ -429,7 +427,8 @@ for all $n \geq M$ and all $x \in X$, we have
 d\bigl(f_n(x),f(x)\bigr) < \epsilon .
 \end{equation*}
 
-A series $\sum_{n=1}^\infty f_n$ of complex-valued functions converges uniformly if the sequence of
+A series $\sum_{n=1}^\infty f_n$ of complex-valued functions converges uniformly
+to $f$ if the sequence of
 partial sums converges uniformly, that is, if for every $\epsilon > 0$,
 there exists an $M$ such that
 for all $n \geq M$ and all $x \in X$,
@@ -532,12 +531,12 @@ and uniformly.
 \begin{proof}
 Suppose $\sum_{n=1}^\infty M_n$ converges.  Given $\epsilon > 0$,
 we have that the partial sums of $\sum_{n=1}^\infty M_n$ are Cauchy so
-there is an $N$ such that for all $m, n \geq N$ with $m \geq n$, we have
+there is an $N$ such that for all $m, n \geq N$ with $m > n$, we have
 \begin{equation*}
 \sum_{k=n+1}^m M_k < \epsilon .
 \end{equation*}
 We estimate a Cauchy difference of the partial
-sums of the functions
+sums of the functions:
 \begin{equation*}
 \abs{\sum_{k=n+1}^m f_k(x)} \leq
 \sum_{k=n+1}^m \babs{f_k(x)} \leq
@@ -622,7 +621,7 @@ In other words,
 
 \begin{proof}
 First we show that $\{ a_n \}_{n=1}^\infty$ converges.  As
-$\{ f_n \}_{n=1}^\infty$ converges uniformly it is uniformly Cauchy. 
+$\{ f_n \}_{n=1}^\infty$ converges uniformly, it is uniformly Cauchy. 
 Let $\epsilon > 0$ be given.  There is
 an $M$ such that for all $m,n \geq M$, we have
 \begin{equation*}
@@ -637,31 +636,31 @@ d_Y\bigl(f_m(x_k),a_m\bigr)$ and take the limit as $k \to \infty$ to find
 d_Y(a_n,a_m) \leq \epsilon .
 \end{equation*}
 Hence $\{a_n\}_{n=1}^\infty$ is Cauchy and converges since $Y$ is complete.  Write
-$a \coloneqq \lim_{k \to \infty} a_n$.
+$a \coloneqq \lim_{n \to \infty} a_n$.
 
-Find a $k \in \N$ such that
+Find an $\ell \in \N$ such that
 \begin{equation*}
-d_Y\bigl(f_k(p),f(p)\bigr) < \nicefrac{\epsilon}{3}
+d_Y\bigl(f_\ell(p),f(p)\bigr) < \nicefrac{\epsilon}{3}
 \end{equation*}
-for all $p \in X$.  Assume $k$ is large enough
+for all $p \in X$.  Assume $\ell$ is large enough
 so that
 \begin{equation*}
-d_Y(a_k,a) < \nicefrac{\epsilon}{3}  .
+d_Y(a_\ell,a) < \nicefrac{\epsilon}{3}  .
 \end{equation*}
 Find an $N \in \N$ such that for $m \geq N$,
 \begin{equation*}
-d_Y\bigl(f_k(x_m),a_k\bigr) < \nicefrac{\epsilon}{3}  .
+d_Y\bigl(f_\ell(x_m),a_\ell\bigr) < \nicefrac{\epsilon}{3}  .
 \end{equation*}
 Then for
 $m \geq N$,
 \begin{equation*}
 d_Y\bigl(f(x_m),a\bigr)
 \leq
-d_Y\bigl(f(x_m),f_k(x_m)\bigr)
+d_Y\bigl(f(x_m),f_\ell(x_m)\bigr)
 +
-d_Y\bigl(f_k(x_m),a_k\bigr)
+d_Y\bigl(f_\ell(x_m),a_\ell\bigr)
 +
-d_Y\bigl(a_k,a\bigr)
+d_Y\bigl(a_\ell,a\bigr)
 <
 \nicefrac{\epsilon}{3} +
 \nicefrac{\epsilon}{3} +
@@ -670,9 +669,10 @@ d_Y\bigl(a_k,a\bigr)
 \end{proof}
 
 We obtain an immediate corollary about continuity.
-If $f_n$ are all continuous then $a_n = f_n(x)$ and 
-so $\{ a_n \}_{n=1}^\infty$ converges automatically to
-$f(x)$ and so we do not require completeness of $Y$.
+If $f_n$ are all continuous, then $a_n = f_n(x)$.
+Hence,
+$\{ a_n \}_{n=1}^\infty$ converges automatically to
+$f(x)$ by the hypothesis and so we do not require completeness of $Y$.
 
 \begin{cor} \label{cor:metricuniformcontinuous}
 Let $X$ and $Y$ be metric spaces.
@@ -689,9 +689,9 @@ the zero function, but not uniformly.  However, if we add extra conditions
 on the sequence, we can obtain a partial converse such as Dini's theorem,
 \volIref{see \exerciseref*{vI-exercise:dinisthm} from volume I}{see \exerciseref{exercise:dinisthm}}.
 
-In \exerciseref{exercise:CXCnormedspace} the reader is asked to prove
+In \exerciseref{exercise:CXCnormedspace}, the reader is asked to prove
 that for a compact $X$, $C(X,\C)$ is a normed vector space
-with the uniform norm, and hence a metric space.  We have just shown that
+with the uniform norm and hence a metric space.  We have just shown that
 $C(X,\C)$ is Cauchy-complete:  \propref{prop:unifcauchymetric} says that a Cauchy
 sequence in $C(X,\C)$ converges uniformly to some function,
 and \corref{cor:metricuniformcontinuous} shows that the limit is
@@ -703,7 +703,7 @@ Then $C(X,\C)$ is a Cauchy-complete metric space.
 \end{cor}
 
 \begin{example}
-By \exampleref{example:sinnsqfourier}
+By \exampleref{example:sinnsqfourier},
 the Fourier series 
 \begin{equation*}
 \sum_{n=1}^\infty \frac{\sin(nx)}{n^2}
@@ -761,14 +761,14 @@ which we have proved before using the Weierstrass $M$-test
 \end{example}
 
 We remark that we can swap integrals and limits under far less stringent hypotheses,
-but for that we would need a stronger integral than the Riemann integral.
-E.g.\ the Lebesgue integral.
+but for that we would need a stronger integral than the Riemann integral,
+such as the Lebesgue integral.
 
 \subsection{Differentiation}
 
 Recall that a complex-valued function
 $f \colon [a,b] \to \C$, where $f(x) = u(x)+i\,v(x)$,
-is differentiable, if $u$ and $v$ are differentiable
+is differentiable if $u$ and $v$ are differentiable
 and the derivative is
 \begin{equation*}
 f'(x) = u'(x)+i\,v'(x) .
@@ -786,8 +786,10 @@ convergent sequence for some $c \in I$.  Then $\{ f_n \}_{n=1}^\infty$ converges
 a continuously differentiable function $f \colon I \to \C$, and $f' = g$.
 \end{thm}
 
-Uniform limits of the functions themselves are not enough, and can make
-matters even worse.  In \sectionref{sec:stoneweier} we will prove that
+Uniform convergence of the functions themselves is not enough.
+The derivatives may not converge and the limit function need not even be
+differentiable.
+In \sectionref{sec:stoneweier}, we will prove that
 continuous functions are uniform limits of polynomials, yet as the following
 example demonstrates, a continuous function need not be differentiable
 anywhere.
