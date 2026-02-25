@@ -2048,7 +2048,7 @@ Prove that $\varphi$ is continuous and increasing (see
 \item
 Prove that for $x \notin C$, $\varphi$ is differentiable at $x$ and
 $\varphi'(x) = 0$.
-(Notice that $\varphi'$ exists and is zero except for a set of measure zero,
+(Notice that $\varphi'$ exists and is zero except on a set of measure zero,
 yet the function manages to climb from $0$ to $1$.)
 \item
 Define $\psi \colon [0,1] \to [0,2]$ by
@@ -2113,8 +2113,8 @@ Consider
 $D \subset \R^n$ and $f \colon D \to \R$.
 Instead of just saying that $f$ is or is not continuous at
 a point $x \in D$,
-we want to quantify how discontinuous is $f$
-at $x$.  For every $\delta > 0$, define the \emph{oscillation} of 
+we want to quantify how discontinuous $f$ is at $x$.
+For every $\delta > 0$, define the \emph{oscillation} of 
 $f$ on the $\delta$-ball in subspace topology,
 $B_D(x,\delta) = B_{\R^n}(x,\delta) \cap D$, as
 \glsadd{not:oscillation}
@@ -2143,8 +2143,8 @@ o(f,x,\delta) =
 o(f,x,\delta) .
 \end{equation*}
 
-We will prove that function is continuous at $x$ if and only if $o(f,x) = 0$.
-Fox example, if $f \colon \R \to \R$ is the Dirichlet function where
+We will prove that a function is continuous at $x$ if and only if $o(f,x) = 0$.
+For example, if $f \colon \R \to \R$ is the Dirichlet function where
 $f(x)=1$ if $x \in \Q$ and $f(x)=0$ otherwise, then $o(f,x) = 1$ for every
 $x$, as any interval contains both rational and irrational numbers.
 Accordingly, $f$ is not continuous at any $x$.
@@ -2185,10 +2185,10 @@ o(f,x,\delta) =
 \leq
 2 \epsilon .
 \end{equation*}
-As $o(x,f) \leq o(f,x,\delta) \leq 2\epsilon$, and $\epsilon > 0$ was arbitrary,
-$o(x,f) = 0$.
+As $o(f,x) \leq o(f,x,\delta) \leq 2\epsilon$, and $\epsilon > 0$ was arbitrary,
+$o(f,x) = 0$.
 
-On the other hand, suppose $o(x,f) = 0$.  Given $\epsilon > 0$,
+On the other hand, suppose $o(f,x) = 0$.  Given $\epsilon > 0$,
 find a $\delta > 0$ such that $o(f,x,\delta) < \epsilon$.  If
 $y \in B_D(x,\delta)$, then
 \begin{equation*}
@@ -2269,17 +2269,17 @@ and as it is also a subset of the bounded $R$,
 $S_\epsilon$ is compact.  Moreover,
 $S_\epsilon \subset S$ and $S$ is of measure zero,
 so $S_\epsilon$ is of measure zero.
-Via \propref{mv:prop:compactnull}, finitely many open rectangles
-$O_1,O_2,\ldots,O_k$ cover $S_\epsilon$ and
+Via \propref{mv:prop:compactnull}, there exist finitely many open rectangles
+$O_1,O_2,\ldots,O_k$ that cover $S_\epsilon$ and
 $\sum_{j=1}^\infty V(O_j) < \epsilon$.  
 
 The set $T \coloneqq R \setminus ( O_1 \cup \cdots \cup O_k )$ is closed, bounded,
-and so compact.  As $o(f,x) < \epsilon$ for all $x \in T$,
+and thus compact.  As $o(f,x) < \epsilon$ for all $x \in T$,
 for each $x \in T$, there is a $\delta > 0$ such that
 $o(f,x,\delta) < \epsilon$, so there exists a small closed rectangle
 $T_x \subset B(x,\delta)$ with $x$ in the interior of $T_x$, such that
 \begin{equation*}
-\sup_{y\in T_x} f(y) - \inf_{y\in T_x} f(y) < \epsilon.
+\sup_{y\in T_x \cap R} f(y) - \inf_{y\in T_x \cap R} f(y) < \epsilon.
 \end{equation*}
 The interiors of the rectangles $T_x$ cover $T$.  As $T$ is compact,
 finitely many such rectangles $T_1, T_2, \ldots, T_m$
@@ -2401,7 +2401,7 @@ We find
 \begin{equation*}
 S_{1/k} \subset R_1^\circ \cup R_2^\circ \cup \cdots \cup R_q^\circ \cup G .
 \end{equation*}
-As $G$ can also be covered by open rectangles arbitrarily small volume,
+As $G$ can also be covered by open rectangles of arbitrarily small volume,
 $S_{1/k}$ must be of measure zero.  As
 \begin{equation*}
 S = \bigcup_{k=1}^\infty S_{1/k}
@@ -2527,8 +2527,8 @@ $R \subset U$ and $R' \subset U'$,
 $g \colon U \to U'$ is continuously differentiable, bijective,
 $g^{-1}$ is continuously differentiable,
 $g(R) \subset R'$, and
-$f \in \sR(R')$, 
-then the composition $f \circ g$ is Riemann integrable on $R$.
+$f \in \sR(R')$. 
+Show that the composition $f \circ g$ is Riemann integrable on $R$.
 \item
 Find a counterexample when $g$ is not one-to-one.
 Hint: Try $g(x,y) \coloneqq (x,0)$ and $R=R'=[0,1] \times [0,1]$.
