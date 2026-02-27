@@ -1040,7 +1040,7 @@ some $z \neq a$.
 Let $U \subset \C$ be an open set and
 $f \colon U \to \C$ a function.
 Suppose that for every $a \in U$ there exists a $\rho > 0$ and a power
-series convergent to the function
+series that converges to the function
 \begin{equation*}
 f(z) = \sum_{n=0}^\infty c_n {(z-a)}^n
 \end{equation*}
@@ -1066,7 +1066,7 @@ While the left-hand side exists on all of $z \neq 1$, the right-hand side
 happens to converge only if $\sabs{z} < 1$.  See a graph
 of a small piece of $\frac{1}{1-z}$ in \figureref{fig:1over1mz}.
 We cannot graph the
-function itself, we can only graph its real or imaginary parts for lack
+function itself; we can only graph its real or imaginary parts for lack
 of dimensions in our universe.
 
 \begin{myfigureht}
@@ -1091,7 +1091,7 @@ radius of convergence of a power series.
 Let $\sum_{n=0}^\infty c_n {(z-a)}^n$ be a power series.
 There exists a $\rho \in [0,\infty]$ such that
 \begin{enumerate}[(i)]
-\item If $\rho = 0$, then the series diverges.
+\item If $\rho = 0$, then the series diverges for every $z \neq a$.
 \item If $\rho = \infty$, then the series converges absolutely for all $z \in \C$.
 \item If $0 < \rho < \infty$, then the
 series converges absolutely on $B(a,\rho)$,
@@ -1121,7 +1121,8 @@ If $R = 0$, then
 $\sum_{n=0}^\infty \sabs{c_n} \, \sabs{z-a}^n$ converges for all $z$.
 If $R = \infty$, then
 $\sum_{n=0}^\infty \sabs{c_n} \, \sabs{z-a}^n$ converges only at $z=a$.
-Otherwise, let $\rho \coloneqq \nicefrac{1}{R}$ and
+Otherwise, let $\rho \coloneqq \nicefrac{1}{R}$.
+Then
 $\sum_{n=0}^\infty \sabs{c_n} \, \sabs{z-a}^n$ converges when
 $\sabs{z-a} < \rho$, and diverges (in fact the terms of the series
 do not go to zero) when $\sabs{z-a} > \rho$.
@@ -1183,7 +1184,7 @@ c
 \sum_{n=0}^\infty \left( \frac{1}{{(1-a)}^{n+1}} \right) {(z-a)}^n .
 \end{equation*}
 The series $\sum_{n=0}^\infty c^n {(z-a)}^n$ converges if and only if 
-the series on the right-hand side converges and
+the series on the right-hand side converges.  Compute,
 \begin{equation*}
 \limsup_{n\to\infty}
 \sqrt[n]{\sabs{c^n}} = \sabs{c}
@@ -1222,8 +1223,8 @@ On $B(a,r)$ the
 partial sums (which are continuous) converge uniformly,
 and so the limit $f|_{B(a,r)}$ is continuous.
 Any sequence converging to
-$z_0$ has some tail that is completely in the open ball $B(a,r)$,
-hence $f$ is continuous at $z_0$.
+$z_0$ has some tail that is completely in the open ball $B(a,r)$.
+Hence, $f$ is continuous at $z_0$.
 \end{proof}
 
 In \volIref{\corref*{vI-cor:differentiatepowerser} of volume
@@ -1242,7 +1243,8 @@ f'(x) =
 \sum_{n=0}^\infty (n+1)c_{n+1} {(x-a)}^{n} 
 \end{equation*}
 with the same radius of convergence.
-We only proved this theorem when $c_n$ is real, however, for complex $c_n$,
+We only proved this theorem when $c_n$ is real.
+However, for complex $c_n$,
 we write
 $c_n = s_n + i t_n$, and as $x$ and $a$ are real
 \begin{equation*}
@@ -1254,7 +1256,7 @@ i
 \sum_{n=0}^\infty t_n {(x-a)}^n .
 \end{equation*}
 We apply the theorem to the real and
-imaginary part.
+imaginary parts.
 
 By iterating this theorem, we find that an
 analytic function is infinitely differentiable:
@@ -1473,7 +1475,7 @@ $\sum_{k=0}^\infty d_k {(z-b)}^k$ that converges to $f(z)$ in $B(b,\rho-\sabs{b-
 \end{cor}
 
 \begin{proof}
-Without loss of generality assume that $a=0$.  We can rotate to assume that $b$ is real, but
+Without loss of generality assume that $a=0$ and $b \neq 0$.  We can rotate to assume that $b$ is real, but
 since that is harder to picture, let us do it explicitly.
 Let $\alpha \coloneqq \frac{\bar{b}}{\sabs{b}}$.
 Notice that
@@ -1512,13 +1514,13 @@ We proved above that a convergent power series is an
 analytic function where it converges.  We have also shown before that
 $\frac{1}{1-z}$ is analytic outside of $z=1$.
 
-Note that just because a real analytic function is analytic on the
-entire real line it does not necessarily mean that it has a power series
+Note that just because a real-analytic function is analytic on the
+entire real line, it does not necessarily mean that it has a power series
 representation that converges everywhere.  For example, the function
 \begin{equation*}
 f(x) = \frac{1}{1+x^2}
 \end{equation*}
-happens to be real analytic function on $\R$ (exercise).  A power
+happens to be a real-analytic function on $\R$ (exercise).  A power
 series around the origin converging to $f$
 has a radius of convergence of exactly $1$.
 Can you see why? (exercise)
@@ -1532,7 +1534,7 @@ such that $f(z_n) = 0$ for all $n$.  Then $a_k = 0$ for every~$k$.
 \end{lemma}
 
 \begin{proof}
-By continuity we know $f(0) = 0$ so $a_0 = 0$.
+By continuity, we know $f(0) = 0$, so $a_0 = 0$.
 Suppose there exists some nonzero $a_k$.
 Let $m$ be the smallest $m$ such that $a_m \neq 0$.  Then
 \begin{equation*}
@@ -1635,8 +1637,8 @@ d)~$\displaystyle \sum_{k=1}^\infty \sum_{m=1}^\infty a_{k,m}$,
 %mbxlatex \qquad
 e)~$\displaystyle \sum_{m=1}^\infty \sum_{k=1}^\infty a_{k,m}$.
 \\
-Hint: Fubini for sums does not apply, in fact, answers to
-d) and e) are different.
+Hint: Fubini for sums does not apply.
+In fact, answers to d) and e) are different.
 \end{exercise}
 
 \begin{exercise}
@@ -1644,7 +1646,7 @@ d) and e) are different.
 Let $f(x) \coloneqq \frac{1}{1+x^2}$.  Prove that
 \begin{enumerate}[a)]
 \item
-$f$ is analytic function on all of $\R$
+$f$ is an analytic function on all of $\R$
 by finding a power series for $f$ at every $a \in \R$,
 \item
 the radius of convergence of
@@ -1700,7 +1702,7 @@ U$.
 \begin{exercise}
 For $\alpha \in \C$ and $k=0,1,2,3\ldots$, define
 \begin{equation*}
-\binom{\alpha}{k} \coloneqq \frac{\alpha(\alpha-1)\cdots(\alpha-k)}{k!} .
+\binom{\alpha}{k} \coloneqq \frac{\alpha(\alpha-1)\cdots(\alpha-k+1)}{k!} .
 \end{equation*}
 \begin{enumerate}[a)]
 \item
