@@ -737,8 +737,8 @@ while(1)
 		print "(chapter >$name< label >$theid<)\n";
 		print $out "<title>$name</title>\n"; 
 		print "PARA:>$para<\n";
-	} elsif ($para =~ s/^\\chapter\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}[ \n]*//) {
-		my $name = do_line_subs($1);
+	} elsif ($para =~ s/^\\chapter(\[.*?\])?\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}[ \n]*//) {
+		my $name = do_line_subs($2);
 		my $theid;
 		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
 			$theid = modify_id($1);
@@ -749,8 +749,8 @@ while(1)
 		open_chapter($theid);
 		print "(chapter >$name< label >$theid<)\n";
 		print $out "<title>$name</title>\n"; 
-	} elsif ($para =~ s/^\\section\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}[ \n]*//) {
-		my $name = do_line_subs($1);
+	} elsif ($para =~ s/^\\section(\[.*?\])?\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}[ \n]*//) {
+		my $name = do_line_subs($2);
 		my $theid;
 		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
 			$theid = modify_id($1);

@@ -1753,7 +1753,8 @@ Let
 \begin{equation*}
 E(z) \coloneqq \sum_{k=0}^\infty \frac{1}{k!} z^k .
 \end{equation*}
-This series converges for all $z \in \C$, and so by
+This series converges for all $z \in \C$.
+So by
 \corref{cor:powerseranalytic}, $E$ is analytic on $\C$.   We notice that $E(0) = 1$,
 and that for $z=x \in \R$, $E(x) \in \R$.  Keeping $x$ real, direct
 computation shows
@@ -1761,7 +1762,7 @@ computation shows
 \frac{d}{dx} \bigl( E(x) \bigr) = E(x) .
 \end{equation*}
 In \volIref{\sectionref*{vI-sec:logandexp} of volume I}{\sectionref{sec:logandexp}} (or by Picard's theorem), we proved that
-the unique function satisfying $E' = E$ and
+the unique function on the real line satisfying $E' = E$ and
 $E(0) = 1$ is the exponential.  In other words, for $x \in \R$, $e^x = E(x)$.
 
 For complex numbers $z$, we define\glsadd{not:complexexp}
@@ -1769,7 +1770,7 @@ For complex numbers $z$, we define\glsadd{not:complexexp}
 e^z \coloneqq E(z) = 
 \sum_{k=0}^\infty \frac{1}{k!} z^k .
 \end{equation*}
-On the real line this new definition agrees with our previous one.
+On the real line, this new definition agrees with our previous one.
 See \figureref{fig:complexexpgraphs}.  Notice that in the $x$ direction
 (the real direction)
 the graph behaves like the real exponential, and in the $y$ direction
@@ -1916,7 +1917,7 @@ real whenever $x$ is real.
 \begin{proof}
 The first three items follow directly from the definition.
 The computation of the power series for both is left as an exercise.
-As complex conjugate is a continuous function, the definition
+As the complex conjugate is a continuous function, the definition
 of $e^z$ implies
 $\overline{e^z} = e^{\bar{z}}$.  If
 $x$ is real,
@@ -1925,8 +1926,8 @@ $x$ is real,
 \end{equation*}
 Thus for real $x$,
 $\cos(x) =
-\frac{e^{ix}-e^{-ix}}{2} =
-\frac{e^{ix}-\overline{e^{ix}}}{2} =
+\frac{e^{ix}+e^{-ix}}{2} =
+\frac{e^{ix}+\overline{e^{ix}}}{2} =
 \Re (e^{ix})$
 and similarly $\sin(x) = \Im (e^{ix})$.
 
@@ -1940,7 +1941,7 @@ For real $x$, we compute
 \end{equation*}
 A slightly more complicated computation shows this fact for
 complex numbers, see \exerciseref{exercise:cossinidentity}.
-In particular, is $e^{ix}$ is unimodular for real $x$;
+In particular, $e^{ix}$ is \emph{\myindex{unimodular}} for real $x$;
 the values lie on the unit circle.
 A square of a real number is always nonnegative:
 \begin{equation*}
@@ -1966,7 +1967,7 @@ Next, we claim there exists a positive $x$ such that $\cos(x) = 0$.
 As $\cos(0) = 1 > 0$, $\cos(x) > 0$
 for $x$ near $0$.  Namely,
 there is some
-$y > 0$, such that $\cos(x) > 0$ on $[0,y)$.
+$y > 0$ such that $\cos(x) > 0$ on $[0,y)$.
 Then $\sin(x)$ is strictly
 increasing on $[0,y)$.  As $\sin(0) = 0$, we have
 $\sin(x) > 0$ for $x \in (0,y)$.  Take $a \in (0,y)$.  By
@@ -2008,7 +2009,7 @@ $\cos(z+2\pi) = \cos(z)$ and $\sin(z+2\pi) = \sin(z)$.
 So $\sin$ and $\cos$ are $2\pi$-periodic.
 
 We claim that $\sin$ and $\cos$ are not periodic with a smaller period.  It
-would suffice to show that if $e^{ix} = 1$ for the
+suffices to show that if $e^{ix} = 1$ for the
 smallest positive $x$, then
 $x = 2\pi$.  Let $x$ be the smallest positive $x$ such that
 $e^{ix} = 1$.
@@ -2038,20 +2039,21 @@ $\sabs{z} = 1$.  Suppose $e^{ix} = e^{iy}$ and
 $x > y$.  Then
 $e^{i(x-y)} = 1$, meaning $x-y$ is a multiple of $2\pi$ and hence
 only one of them can live in $[0,2\pi)$.
-To show onto, pick $(a,b) \in \R^2$ such that $a^2+b^2 = 1$.
+To show $e^{ix}$ is onto, pick $(a,b) \in \R^2$ such that $a^2+b^2 = 1$.
 Suppose first that $a,b \geq 0$.  By the intermediate value theorem,
 there must exist an $x \in [0,\nicefrac{\pi}{2}]$ such that
 $\cos(x) = a$, and hence $b^2 = \bigl(\sin(x)\bigr)^2$.  As
 $b$ and $\sin(x)$ are nonnegative, $b = \sin(x)$.
 Since $-\sin(x)$ is the derivative of $\cos(x)$
-and $\cos(-x) = \cos(x)$, then $\sin(x) < 0$ for $x \in [\nicefrac{-\pi}{2},0)$.
+and $\cos(-x) = \cos(x)$,
+we have that $\sin(x) < 0$ for $x \in [\nicefrac{-\pi}{2},0)$.
 Using the same reasoning, we obtain that
 if $a > 0$ and $b \leq 0$, we can find an $x$ in $[\nicefrac{-\pi}{2},0)$,
 and by periodicity,
 $x \in [\nicefrac{3\pi}{2},2\pi)$ such that $\cos(x) = a$ and $\sin(x)=b$.
 Multiplying by $-1$ is the same as multiplying by $e^{i\pi}$ or
 $e^{-i\pi}$.  So we can always assume that $a \geq 0$ (details are left
-as exercise).
+as an exercise).
 \end{proof}
 
 \subsection{The unit circle and polar coordinates}
@@ -2111,7 +2113,7 @@ $\frac{d}{dx} \bigl[ \cos(x)\bigr] = -\sin(x)$.
 \end{exercise}
 
 \begin{exercise}
-Finish the proof of the argument that $x \mapsto e^{ix}$ from
+Finish the proof of the argument showing that $x \mapsto e^{ix}$ from
 $[0,2\pi)$ is onto the unit circle.  In particular, assume that
 we get all points of the form $(a,b)$ where $a^2+b^2=1$ and $a \geq 0$.
 By multiplying by $e^{i\pi}$ or $e^{-i\pi}$, show that we get everything,
@@ -2173,7 +2175,7 @@ For $x \in \R$,
 $\frac{d}{dx} \bigl[ \sinh(x) \bigr] = \cosh(x)$ and
 $\frac{d}{dx} \bigl[ \cosh(x) \bigr] = \sinh(x)$.
 \item
-$\cosh(x) > 0$ for all $x \in \R$ and show that
+$\cosh(x) > 0$ for all $x \in \R$ and
 $\sinh(x)$ is strictly increasing and bijective
 from $\R$ to $\R$.
 \item
@@ -2186,7 +2188,7 @@ $x$.
 Define $\tan(x) \coloneqq \frac{\sin(x)}{\cos(x)}$ as usual.
 \begin{enumerate}[a)]
 \item
-Show that for $x \in (\nicefrac{-\pi}{2},\nicefrac{\pi}{2})$
+Show that for $x \in (\nicefrac{-\pi}{2},\nicefrac{\pi}{2})$,
 both $\sin$ and $\tan$ are strictly increasing, and hence
 the inverses $\arcsin$
 and $\arctan$ exist when we restrict to that interval.
@@ -2197,7 +2199,7 @@ that
 $\frac{d}{dx} \arcsin(x) = \frac{1}{\sqrt{1-x^2}}$ and
 $\frac{d}{dx} \arctan(x) = \frac{1}{1+x^2}$.
 \item
-Using the finite geometric sum formula show
+Using the finite geometric sum formula, show
 \begin{equation*}
 \arctan(x) = \int_0^x \frac{1}{1+t^2} dt
 =
@@ -2220,7 +2222,7 @@ Use this to show that
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Maximum principle and the fundamental theorem of algebra}
+\section[Maximum principle and fundamental theorem of algebra]{Maximum principle and the fundamental theorem of algebra}
 \label{sec:fundalgeb}
 
 \sectionnotes{half a lecture, optional}
