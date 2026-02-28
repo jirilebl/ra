@@ -2228,9 +2228,12 @@ Use this to show that
 \sectionnotes{half a lecture, optional}
 
 In this section we study the local behavior of polynomials,
-and analytic functions in general, and the growth of polynomials as $z$ goes to infinity.
-As an application we prove the fundamental theorem of algebra: Any nonconstant polynomial
-has a complex root.
+and analytic functions in general,
+and the growth of polynomials as $z$ goes to infinity.
+As an application, we prove the fundamental theorem of algebra:
+Any nonconstant polynomial has a complex root.
+We consider polynomials in a complex variable $z$
+and so we may emphasize their domain by calling them complex polynomials.
 
 \begin{lemma} \label{lemma:polyalwaysgetssmaller}
 Let $\epsilon > 0$,
@@ -2316,7 +2319,7 @@ $f \colon U \to \C$ is analytic, and $\babs{f(z)}$ attains a relative
 maximum at $z_0 \in U$, then $f$ is constant.
 \end{thm}
 
-The details of the proof is left as \exerciseref{exercise:maxprinciple}.
+The details of the proof are left as \exerciseref{exercise:maxprinciple}.
 
 \begin{remark}
 The lemma (and the maximum principle) does not hold if we restrict to the real numbers.  For
@@ -2333,7 +2336,7 @@ powers of $z$ are too small to make a difference.  For polynomials, we find simi
 at infinity.
 
 \begin{lemma}
-Let $p(z)$ be a nonconstant complex polynomial.  Then for an $M > 0$, there exists
+Let $p(z)$ be a nonconstant complex polynomial.  Then for any $M > 0$, there exists
 an $R > 0$ such that
 $\babs{p(z)} \geq M$ whenever $\sabs{z} \geq R$.
 \end{lemma}
@@ -2364,7 +2367,7 @@ R^d \bigl(\sabs{a_d} -
 \end{split}
 \end{equation*}
 Then the expression in parentheses is eventually positive for large enough
-$R$.  In particular, for large enough $R$ we get that this expression
+$R$.  In particular, for large enough $R$, this expression
 is greater than
 $\frac{\sabs{a_d}}{2}$, and so
 \begin{equation*}
@@ -2439,17 +2442,17 @@ $f(z) \coloneqq \frac{p(z)}{q(z)}$
 where $p$ and $q$ are polynomials and $q$ is not identically zero.
 A point $z_0 \in \C$ where $f(z_0) = 0$ (and therefore $p(z_0) = 0$)
 is called a \emph{zero}\index{zero of a function}.
-A point $z_0 \in \C$ is called an \emph{\myindex{singularity}} of
-$f$ if $q(z_0) = 0$.  As all zeros are isolated and so
-all singularities of rational functions are isolated
+A point $z_0 \in \C$ is called a \emph{\myindex{singularity}} of
+$f$ if $q(z_0) = 0$.  As zeros of polynomials are isolated,
+singularities of rational functions are isolated
 and so are called
-an \emph{\myindex{isolated singularity}}.
+\emph{isolated singularities}\index{isolated singularity}.
 An isolated singularity is called
 \emph{removable}\index{removable singularity}
-if $\lim_{z \mapsto z_0} f(z)$ exists.
+if $\lim_{z \to z_0} f(z)$ exists.
 An isolated singularity is called a \emph{\myindex{pole}} if 
-$\lim_{z \mapsto z_0} \babs{f(z)} = \infty$.
-We say $f$ has pole at $\infty$ if
+$\lim_{z \to z_0} \babs{f(z)} = \infty$.
+We say $f$ has a pole at $\infty$ if
 \begin{equation*}
 \lim_{z \to \infty} \babs{f(z)} = \infty ,
 \end{equation*}
@@ -2458,7 +2461,7 @@ $\babs{f(z)} > M$ for all $z$ with $\sabs{z} > R$.
 \end{exnote}
 
 \begin{exercise}
-Show that a rational function which is not identically
+Show that a rational function that is not identically
 zero has at most finitely many zeros and
 singularities.  In fact, show that if $p$ is a polynomial of 
 degree $n > 0$ it has at most $n$ zeros.
@@ -2485,13 +2488,13 @@ Hint: See the previous exercise.
 \end{exercise}
 
 \begin{exercise}
-Let $f$ be a rational function and $S \subset \C$ is the 
+Let $f$ be a rational function and $S \subset \C$ be the 
 set of the singularities of $f$.
-Prove that $f$ is equal to a polynomial on $\C \setminus S$
+Prove that $f$ is equal to a nonconstant polynomial on $\C \setminus S$
 if and only if
 $f$ has a pole at infinity and all the singularities are removable.
 \\
-Hint: See previous exercises.
+Hint: See exercises above.
 \end{exercise}
 
 
