@@ -2627,7 +2627,8 @@ the French mathematician
 if for some closed rectangle $R$ such that $S \subset R$, the function
 $\chi_S$ is Riemann integrable, that is, $\chi_S \in \sR(R)$.
 Take two closed rectangles $R$ and $R'$ 
-with $S \subset R$ and $S \subset R'$, then $R \cap R'$ is a closed rectangle
+with $S \subset R$ and $S \subset R'$.
+Then $R \cap R'$ is a closed rectangle
 also containing $S$.  By \propref{mv:prop:integralsmallerset}
 and \exerciseref{mv:zerooutside}, $\chi_S \in \sR(R \cap R')$
 and so $\chi_S \in \sR(R')$.  Thus
@@ -2677,7 +2678,7 @@ Then
 \end{prop}
 
 The proof of the proposition is left as an exercise.
-Next, the volume that we defined above coincides with the outer
+Next, we show that the volume that we defined above coincides with the outer
 measure we defined previously.
 
 \begin{prop}
@@ -2733,7 +2734,7 @@ V(R'^\circ_j)
 \sum_{j=1}^\ell
 V(R'_j)
 =
-L(P,f) \geq V(S) - \epsilon .
+L(P,\chi_S) \geq V(S) - \epsilon .
 \end{equation*}
 Therefore $m^*(S) \geq V(S)$ as well.
 \end{proof}
@@ -2800,13 +2801,13 @@ possibly discontinuous at $\partial S$, which is a set of measure zero,
 and we are finished.
 \end{proof}
 
-We say some property
+We say some property holds
 \emph{\myindex{for almost every} $x$}\index{almost every} or
 \emph{\myindex{almost everywhere}}
 if it holds
 for all $x$ except on a set of measure zero.
 For example,
-we say $f \colon S \to \R$ and $g \colon S \to \R$ are equal almost
+$f \colon S \to \R$ and $g \colon S \to \R$ are equal almost
 everywhere if there exists a measure zero set $E \subset S$ such that
 $f(x) = g(x)$ for all $x \in S \setminus E$.
 
@@ -2815,7 +2816,7 @@ $f(x) = g(x)$ for all $x \in S \setminus E$.
 Many of the standard properties of the integral carry over easily
 since we are really integrating over a rectangle.  Furthermore, we can
 make some of the statements to be \emph{almost everywhere}.
-Proofs of the following three propositions left as exercises.
+Proofs of the following three propositions are left as exercises.
 
 \begin{prop} \label{prop:jordanintbasic}
 Suppose $S \subset \R^n$ is a bounded Jordan measurable set
@@ -2859,19 +2860,23 @@ exercise.
 
 \begin{prop} \label{prop:intovertypeIset}
 Let $f \colon [a,b] \to \R$ and
-$g \colon [a,b] \to \R$ be continuous functions and such that
-for all $x \in (a,b)$, $f(x) < g(x)$.  Let
+$g \colon [a,b] \to \R$ be continuous functions such that
+$f(x) < g(x)$ for all $x \in (a,b)$.  Let
 \begin{equation*}
 U \coloneqq \bigl\{ (x,y) \in \R^2 : a < x < b \text{ and } f(x) < y < g(x) \bigr\} .
 \end{equation*}
 See \figureref{fig:typeIdomain}.
 Then $U$ is Jordan measurable, and if 
-$\varphi \colon U \to \R$ is Riemann integrable on $U$, then
+$\varphi \colon U \to \R$ is continuous on $U$, then
 \begin{equation*}
 \int_U \varphi =
 \int_a^b \int_{f(x)}^{g(x)} \varphi(x,y) \, dy \, dx .
 \end{equation*}
 \end{prop}
+
+The proposition holds with
+$\varphi$ being simply Riemann integrable, however,
+the inner $dy$ integral must then be the upper or lower Darboux integral.
 
 \begin{myfigureht}
 \includegraphics{figures/typeIdomain}
@@ -2921,7 +2926,7 @@ particular has a continuous inverse, there exists
 a sequence $\{ x_k \}_{k=1}^\infty$ in $V$ such that $g(x_k) = y_k$ and
 $\lim_{k\to\infty} x_k = x$.
 Since $y_k \notin T = g(S)$, clearly $x_k \notin S$.  Since $x \in S$, we
-conclude that $x \in \partial S$.  The claim is proved, $\partial T \subset
+conclude that $x \in \partial S$.  The claim is proved: $\partial T \subset
 g(\partial S)$.
 \end{proof}
 
