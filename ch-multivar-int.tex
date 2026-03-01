@@ -3025,7 +3025,7 @@ version is called Green's theorem%
 \footnote{Named after the British mathematical physicist
 \href{https://en.wikipedia.org/wiki/George_Green_(mathematician)}{George Green}
 (1793--1841).}.  We will state the theorem in general, but
-we will only prove a special, but important, case.
+we will only prove an important special case.
 
 \begin{defn}
 Let $U \subset \R^2$ be a bounded connected open set.
@@ -3044,7 +3044,7 @@ The condition about points outside the closure says that locally $\partial U$
 separates $\R^2$ into an \myquote{inside} and an \myquote{outside.}  The condition prevents
 $\partial U$ from being just a \myquote{cut} inside $U$.  As we travel
 along the path in a certain orientation,
-there is a well-defined left and a right, and either $U$ is on the left
+there is a well-defined left and right, and either $U$ is on the left
 and the complement of $U$ is on the right, or vice versa.   
 The orientation on $U$ is the direction in which we travel along the
 paths.  We can switch orientation if needed by reparametrizing the
@@ -3052,7 +3052,7 @@ path.
 
 \begin{defn}
 Let $U \subset \R^2$ be a bounded domain with piecewise smooth boundary,
-let $\partial U$ be oriented ,
+let $\partial U$ be oriented,
 and let $\gamma \colon [a,b] \to \R^2$ be a parametrization of $\partial U$
 giving the orientation.  Write $\gamma(t) = \big(x(t),y(t)\bigr)$.
 If the vector $n(t) \coloneqq \bigl(-y'(t),x'(t)\bigr)$ points into the domain,
@@ -3094,7 +3094,7 @@ a smooth path in $\R^2$ is a null set.
 Let $\gamma \colon [a,b] \to \R^2$ be a smooth path.
 It is enough to show that
 $\gamma\bigl((a,b)\bigr)$ is a null set, as adding 
-the points $\gamma(a)$ and $\gamma(b)$,
+the points $\gamma(a)$ and $\gamma(b)$
 to a null set still results in a null set.
 Define
 \begin{equation*}
@@ -3108,7 +3108,7 @@ By \propref{prop:imagenull},
 $\gamma\bigl((a,b)\bigr)$ is a null set in $\R^2$
 and so
 $\gamma\bigl([a,b]\bigr)$ is a null set, and 
-so finally $\partial U$ is a null set.
+hence $\partial U$ is a null set.
 \end{proof}
 
 \begin{thm}[Green]\index{Green's theorem}
@@ -3129,7 +3129,7 @@ P \, dx + Q\,  dy
 We stated Green's theorem in general, although we will only prove a special 
 version of it.  That is, we will only prove it for a special kind of domain.
 The general version follows from the special case 
-by application of further geometry, and cutting up the general
+by applying further geometry and cutting up the general
 domain into smaller domains on which to apply the special case.
 %We will not prove the general case. 
 
@@ -3165,7 +3165,7 @@ We will only prove Green's theorem for type III domains.
 \begin{proof}[Proof of Green's theorem for $U$ of type III]
 Let $f,g,h,k$ be the functions defined above.
 Using \propref{prop:intovertypeIset},
-$U$ is Jordan measurable and as $U$ is of type I\@, then
+$U$ is Jordan measurable and as $U$ is of type I\@,
 \begin{equation*}
 \begin{split}
 \int_U 
@@ -3218,9 +3218,9 @@ horizontal lines.   So
 \, dx \, dy 
 =
 \int_c^d \Bigl(
-Q\bigl(y,k(y)\bigr) 
+Q\bigl(k(y),y\bigr) 
 -
-Q\bigl(y,h(y)\bigr)
+Q\bigl(h(y),y\bigr)
 \Bigr) \, dy 
 =
 \int_{\partial U} Q \, dy .
@@ -3320,8 +3320,9 @@ We leave it to the reader to compute
 =
 \int_C \frac{-y}{r^2}\, dx + \frac{x}{r^2} \, dy
 =
-- 2 \pi .
+- 2 \pi ,
 \end{equation*}
+making sure to note that $C$ is oriented clockwise not counterclockwise.
 The claim follows.
 \begin{myfigureht}
 \subimport*{figures/}{vortexbox.pdf_t}
@@ -3330,7 +3331,7 @@ the origin.  The domain $U$ is the entire shaded area between the circle and the
 box.\label{fig:vortexbox}}
 \end{myfigureht}
 
-We remark that if $\gamma$ would not contain the origin, $\int_\gamma
+We remark that if $\gamma$ did not contain the origin, $\int_\gamma
 P\,dx+Q\,dy = 0$, as we could just apply Green's to $\gamma$.
 So this integral can detect whether the origin is inside $\gamma$ or not.
 \end{example}
