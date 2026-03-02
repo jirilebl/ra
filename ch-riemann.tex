@@ -1764,9 +1764,11 @@ numerically approximate the integral.
 \subsection{Change of variables}
 
 A theorem often used in calculus to solve integrals is the change of
-variables theorem, you may have called it \emph{$u$-substitution}.
-Let us prove it now.  Recall 
-a function is continuously differentiable if
+variables theorem, you may have called it
+\emph{$u$-substitution}\index{u-substitution@$u$-substitution}.
+To make it easy to connect to your calculus class, we will also
+call the new variable $u$, that is, we make the substitution $u=g(x)$.
+Recall a function is continuously differentiable if
 it is differentiable and the derivative is continuous.
 
 \begin{thm}[Change of variables]
@@ -1776,7 +1778,7 @@ let $f \colon [c,d] \to \R$ be continuous, and suppose
 $g\bigl([a,b]\bigr) \subset [c,d]$.  Then
 \begin{equation*}
 \int_a^b f\bigl(g(x)\bigr)\, g'(x)\, dx =
-\int_{g(a)}^{g(b)} f(s)\, ds .
+\int_{g(a)}^{g(b)} f(u)\, du .
 \end{equation*}
 \end{thm}
 
@@ -1787,7 +1789,7 @@ Similarly, $f$ is integrable on every subinterval of $[c,d]$.
 
 Define $F \colon [c,d] \to \R$ by
 \begin{equation*}
-F(y) \coloneqq \int_{g(a)}^{y} f(s)\,ds .
+F(y) \coloneqq \int_{g(a)}^{y} f(u)\,du .
 \end{equation*}
 By the second form of the fundamental
 theorem of calculus
@@ -1807,7 +1809,7 @@ to obtain
 %mbxSTARTIGNORE
 \qquad %to center things more
 %mbxENDIGNORE
-\int_{g(a)}^{g(b)} f(s)\,ds = F\bigl(g(b)\bigr) = F\bigl(g(b)\bigr)-F\bigl(g(a)\bigr)
+\int_{g(a)}^{g(b)} f(u)\,du = F\bigl(g(b)\bigr) = F\bigl(g(b)\bigr)-F\bigl(g(a)\bigr)
 \\
 =
 \int_a^b 
@@ -1831,10 +1833,10 @@ calculus.
 The derivative of $\sin(x)$ is $\cos(x)$.
 Using $g(x) \coloneqq x^2$, we solve
 \begin{equation*}
-\int_0^{\sqrt{\pi}} x \cos(x^2) \, dx = \int_0^\pi \frac{\cos(s)}{2} \, ds
+\int_0^{\sqrt{\pi}} x \cos(x^2) \, dx = \int_0^\pi \frac{\cos(u)}{2} \, du
 =
 \frac{1}{2}
-\int_0^\pi \cos(s) \, ds
+\int_0^\pi \cos(u) \, du
 =
 \frac{
 \sin(\pi) - \sin(0)
@@ -1857,8 +1859,8 @@ Consider
 It may be tempting to take $g(x) \coloneqq \ln \sabs{x}$.  Compute $g'(x) =
 \nicefrac{1}{x}$ and try to write
 \begin{equation*}
-\int_{g(-1)}^{g(1)} s \,ds = 
-\int_{0}^{0} s \,ds = 0. 
+\int_{g(-1)}^{g(1)} u \,du = 
+\int_{0}^{0} u \,du = 0. 
 \end{equation*}
 This \myquote{solution} is incorrect, and it does not say
 that we can solve the given integral.  The first problem is that

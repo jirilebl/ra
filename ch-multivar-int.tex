@@ -3511,19 +3511,21 @@ Why can't you use Green's theorem in part c)?
 
 \sectionnotes{1 lecture}
 
-In one variable, we have the familiar change of variables
+In one variable, we have the familiar change of variables, the
+$u$-substitution,
 \begin{equation*}
 \int_a^b f\bigl(g(x)\bigr) g'(x)\, dx = 
-\int_{g(a)}^{g(b)} f(x) \, dx .
+\int_{g(a)}^{g(b)} f(u) \, du .
 \end{equation*}
 The analogue in higher dimensions is quite
 a bit more complicated.  The first complication is orientation.  If we use
 the definition of integral from this chapter, then we do not have the notion
 of $\int_a^b$ versus $\int_b^a$.  We are simply integrating over an
-interval $[a,b]$.  With this notation, the change of variables becomes
+interval $[a,b]$.  With this notation, and assuming $g$ is one-to-one,
+the change of variables becomes
 \begin{equation*}
 \int_{[a,b]} f\bigl(g(x)\bigr) \, \babs{g'(x)}\, dx = 
-\int_{g([a,b])} f(x) \, dx .
+\int_{g([a,b])} f(u) \, du .
 \end{equation*}
 In this section we will obtain the several-variable analogue of this form.
 
@@ -3565,8 +3567,9 @@ $J_g$ is never zero on $S$.
 Suppose $f \colon g(S) \to \R$ is Riemann integrable.
 Then $f \circ g$ is Riemann integrable on $S$ and
 \begin{equation*}
-\int_{g(S)} f(x) \, dx = 
-\int_S f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx .
+\int_S f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx
+=
+\int_{g(S)} f(u) \, du . 
 \end{equation*}
 \end{thm}
 
@@ -3752,13 +3755,13 @@ Write $f$ as
 $f = f_+ - f_-$ for two nonnegative Riemann integrable
 functions $f_+$ and $f_-$:
 \begin{equation*}
-f_+(y) \coloneqq \max \bigl\{ f(y) , 0 \bigr\}, \qquad
-f_-(y) \coloneqq \max \bigl\{ -f(y) , 0 \bigr\} .
+f_+(u) \coloneqq \max \bigl\{ f(u) , 0 \bigr\}, \qquad
+f_-(u) \coloneqq \max \bigl\{ -f(u) , 0 \bigr\} .
 \end{equation*}
 So, if we prove the theorem for a nonnegative $f$,
 we obtain the theorem for arbitrary $f$.
 Therefore, suppose without loss of generality that 
-$f(y) \geq 0$ for all $y \in g(S)$.
+$f(u) \geq 0$ for all $u \in g(S)$.
 
 As the rectangles $R_1,R_2,\ldots,R_N$ give a refinement of
 the partition $P$,
@@ -3772,17 +3775,17 @@ the partition $P$,
 \sum_{j=1}^N \biggl(\sup_{x \in R_j} f\bigl(g(x)\bigr) \biggr) \, \babs{J_g(x_j)} \, V(R_j)
 \\
 & \geq
-\sum_{j=1}^N \biggl(\sup_{y \in g(R_j)} f(y) \biggr) \,
+\sum_{j=1}^N \biggl(\sup_{u \in g(R_j)} f(u) \biggr) \,
 V\bigl(g(R_j)\bigr)
 \frac{1}{{(1+4\sqrt{n} \, \epsilon)}^n}
 \\
 & \geq
-\sum_{j=1}^N \left(\int_{g(R_j)}f(y) \,dy \right)
+\sum_{j=1}^N \left(\int_{g(R_j)}f(u) \,du \right)
 \frac{1}{{(1+4\sqrt{n} \, \epsilon)}^n}
 \\
 & =
 \frac{1}{{(1+4\sqrt{n} \, \epsilon)}^n}
-\int_{g(S)} f(y) \,dy .
+\int_{g(S)} f(u) \,du .
 \end{split}
 \end{equation*}
 The last equality follows because the overlaps of the rectangles
@@ -3790,18 +3793,18 @@ are their boundaries, which are of measure zero, and hence the image
 of their boundaries is also measure zero.
 Let $\epsilon$ go to zero to find
 \begin{equation*}
-\int_S f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx \geq \int_{g(S)} f(y) \,dy .
+\int_S f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx \geq \int_{g(S)} f(u) \,du .
 \end{equation*}
 
 Recall that $g^{-1}$ exists and $g^{-1}\bigl(g(S)\bigr) = S$.
-Also, $1 = J_{g\circ g^{-1}} = J_g\bigl(g^{-1}(y)\bigr) \,J_{g^{-1}}(y)$ for $y \in g(S)$.
+Also, $1 = J_{g\circ g^{-1}} = J_g\bigl(g^{-1}(u)\bigr) \,J_{g^{-1}}(u)$ for $u \in g(S)$.
 So
 \begin{equation*}
 \begin{split}
-\int_{g(S)} f(y) \, dy
+\int_{g(S)} f(u) \, du
 & =
-\int_{g(S)} f\Bigl(g\bigl(g^{-1}(y)\bigr)\Bigr) \,
-\Babs{J_g\bigl(g^{-1}(y)\bigr)} \, \babs{J_{g^{-1}}(y)} \, dy
+\int_{g(S)} f\Bigl(g\bigl(g^{-1}(u)\bigr)\Bigr) \,
+\Babs{J_g\bigl(g^{-1}(u)\bigr)} \, \babs{J_{g^{-1}}(u)} \, du
 \\
 & \geq
 \int_{g^{-1}(g(S))} f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx
@@ -3858,7 +3861,7 @@ $g(S) = K$ and $J_g$ is never zero on $S$ (in the formula
 assume $J_g(x) = 0$ if $g$ is not differentiable at $x$, that is, when $x \notin
 U$).  Then}
 \begin{equation*}
-\int_{\R^{n}} f(x) \, dx = 
+\int_{\R^{n}} f(u) \, du = 
 \int_{\R^n} f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx .
 \end{equation*}
 \end{exercise}
@@ -3874,7 +3877,7 @@ Jordan measurable (it is also open).
 Suppose $f \colon g(S) \to \R$ is Riemann
 integrable.  Then $f \circ g$ is Riemann integrable on $S$ and}
 \begin{equation*}
-\int_{g(S)} f(x) \, dx = 
+\int_{g(S)} f(u) \, du = 
 \int_S f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx .
 \end{equation*}
 Hint: Write $S$ as an increasing union of compact Jordan measurable
