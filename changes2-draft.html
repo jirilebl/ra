@@ -30,6 +30,31 @@ This file is a draft of the new changes for https://www.jirka.org/ra/changes2.ht
 <li>At the end of Example 10.6.5, when leaving the line integral computation
   to the reader, emphasize that \(C\) is oriented clockwise
   and not counterclockwise as is usual.
+<li>Fix issues with the proof of Theorem 10.7.2 (change of variables).
+  <ol>
+    <li>In the change of variables going from \(g'(0)=I\) to
+      a \(g'(0)=A,\) we forgot to keep track of the size of \(A^{-1} ,\)
+      to get the estimate to work out, we need the estimate defining \(W_x\)
+      to be \(&lt; \frac{\epsilon}{2M}\) where \(M\) is the bound on
+      norm of \(g'(x)^{-1} .\)
+    <li>Give more details in getting the bound for general \(A\) to ensure we
+      get it correct.
+    <li>The \(x_j\) was supposed to have been picked specifically to make
+      \(|J_g(x)|\) achieve a minimum at \(x_j .\)
+    <li>The reason why the Darboux style estimate works was glossed over
+      a bit and required the reader to note that \(\delta\) could have been
+      picked smaller to make the partition work as a partition for Darboux.
+      Include the details of this early in the proof and make it more
+      precise.
+    <li>Remove some of the repeated statements about the reductions to
+      special cases.  Also just use \(S\) for the rectangle once we assumed
+      that \(S\) is a rectangle to avoid a new letter.
+  </ol>
+<li><b>Change Exercise 10.7.3</b> slightly to make it fit better with the
+  fixed proof of theorem 10.7.2.  In particular, change the
+  \(\nicefrac{\epsilon}{2}\) to \(c\) and drop the \(W_x\) name which is not used.
+<li>In Exercise 10.7.4, be more explicit as to the exact bound we want.  Also
+  there is no need to put the prime on the \(\delta.\)
 <li>In the proof of Proposition 11.4.2, mark the "unimodular" for the index.
 <li>In Exercise 11.4.11, use \(\arctan\) and \(\arcsin\) for
   consistency.

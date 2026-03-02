@@ -3495,10 +3495,10 @@ Show $f$ is harmonic where defined.
 Show $\lim\limits_{(x,y) \to 0} f(x,y) = -\infty$.
 \item
 Using a circle $C_r$ of radius
-$r$ around the origin, compute $\frac{1}{2\pi r} \int_{\partial C_r} f \, ds$.
+$r$ around the origin, compute $\frac{1}{2\pi r} \int_{C_r} f \, ds$.
 What happens as $r \to 0$?
 \item
-Why can't you use Green's theorem?
+Why can't you use Green's theorem in part c)?
 \end{enumerate}
 \end{exercise}
 
@@ -3527,7 +3527,7 @@ interval $[a,b]$.  With this notation, the change of variables becomes
 \end{equation*}
 In this section we will obtain the several-variable analogue of this form.
 
-Let us remark the role of $\babs{g'(x)}$ in the formula. 
+Let us remark on the role of $\babs{g'(x)}$ in the formula. 
 The integral measures volumes in general, so in one dimension it measures length.
 Notice that $\babs{g'(x)}$ scales the $dx$ and
 so it scales the lengths.
@@ -3549,7 +3549,7 @@ exercise.
 \end{proof}
 
 Let us prove that
-absolute value of the Jacobian determinant
+the absolute value of the Jacobian determinant
 $\babs{J_g(x)} = \babs{\det \bigl(g'(x)\bigr)}$
 is the replacement of $\babs{g'(x)}$ for multiple
 dimensions in the change of variables formula.
@@ -3581,45 +3581,67 @@ The set $S$ can be covered by finitely many closed rectangles
 $P_1,P_2,\ldots,P_k$, whose
 interiors do not overlap such that each $P_j \subset U$
 (\exerciseref{mv:changeofvarcoverbyrects}).
-Proving the theorem for $P_j \cap S$ instead of $S$ is enough.
+Proving the theorem for $P_j \cap S$ instead of $S$ is enough
+as we can simply add up the integrals.
 Define $f(y) \coloneqq 0$ for all $y \notin g(S)$.
-The new $f$ is still Riemann integrable since $g(S)$ is Jordan measurable.
+The new $f$ is Riemann integrable as $g(S)$ is Jordan measurable.
 We can now replace the integrals over $S$ with integrals over the whole
 rectangle.
-We therefore assume that $S$ is equal to a rectangle $R$.
+We therefore assume without loss of generality that $S$ is a closed rectangle.
+
+The matrix $g'(x)$ is invertible for every $x \in S$,
+and it is continuous.  Therefore, ${\bigl(g'(x)\bigr)}^{-1}$
+and consequently 
+$\bnorm{{\bigl(g'(x)\bigr)}^{-1}}$ is continuous and never zero.
+As $S$ is compact, then there exists an $M > 1$ so that
+$\bnorm{{\bigl(g'(x)\bigr)}^{-1}} \leq M$ for all $x \in S$.
 
 Let $\epsilon > 0$ be given.
-For every $x \in R$, let
+For every $x \in S$, let
 \begin{equation*}
-W_x \coloneqq \bigl\{ y \in U : \bnorm{g'(x)-g'(y)} < \nicefrac{\epsilon}{2} \bigr\} .
+W_x \coloneqq
+\left\{ y \in U : \bnorm{g'(x)-g'(y)} < \frac{\epsilon}{2M} \right\} .
 \end{equation*}
 By \exerciseref{mv:changeofvarWxopen},
 $W_x$ is open.
-As $x \in W_x$ for every $x$, it is an open cover.
+As $x \in W_x$ for every $x$, we have an open cover.
 By the Lebesgue covering lemma
 (\volIref{\lemmaref*{vI-ms:lebesgue} from volume I}{\lemmaref{ms:lebesgue}}),
 there exists a $\delta > 0$ such that
-for every $y \in R$, there is an $x$ such that $B(y,\delta) \subset W_x$.
-In other words, if $P$ is a rectangle of maximum side length less
-than $\frac{\delta}{\sqrt{n}}$ and $y \in P$, then $P \subset
-B(y,\delta) \subset W_x$.  By triangle inequality,
-$\bnorm{g'(\xi)-g'(\eta)} < \epsilon$ for all $\xi, \eta \in P$.
+for every $y \in S$, there is an $x$ such that $B(y,\delta) \subset W_x$.
+In other words, if $Q$ is a rectangle of maximum side length less
+than $\frac{\delta}{\sqrt{n}}$ and $y \in Q$, then $Q \subset
+B(y,\delta) \subset W_x$.  By the triangle inequality,
+$\bnorm{g'(\xi)-g'(\eta)} < \nicefrac{\epsilon}{M}$ for all $\xi, \eta \in Q$.
 
-Let $R_1,R_2,\ldots,R_N$ be subrectangles partitioning $R$ such that
-the maximum side of every $R_j$ is less than
-$\frac{\delta}{\sqrt{n}}$.
-We also make sure that the minimum side length is at least
-$\frac{\delta}{2\sqrt{n}}$, which we can do if $\delta$ is 
-sufficiently small relative to the sides of $R$ (\exerciseref{mv:changeofvarrectside}).
+There exists a partition $P$ of $S$ such that
+$\epsilon + \int_S f\bigl(g(x)\bigr) \babs{J_g(x)} \, dx \geq U(P,f)$.
+We can assume $\delta$ is sufficiently small relative to the side
+of each subrectangle of the partition $P$ so that we can cut each such
+subrectangle into further subrectangles each of whose sides $s$ satisfies
+$\frac{\delta}{2\sqrt{n}} \leq s \leq \frac{\delta}{\sqrt{n}}$
+(\exerciseref{mv:changeofvarrectside}).
+Denote these subrectangles by
+$R_1,R_2,\ldots,R_N$.
+For each $j=1,2,\dots,N$, find $x_j \in R_j$ so that
+$\sabs{J_g(x_j)} \leq \sabs{J_g(x)}$ for all $x \in R_j$,
+which is possible as $\sabs{J_g(x)}$ is continuous and $R_j$
+is compact.
 
-Consider some $R_j$ and some fixed $x_j \in R_j$.
+Consider some $R_j$.
 First suppose $x_j=0$, $g(0) = 0$, and $g'(0) = I$.
+We claim that
+$g(R_j)$ is contained in a 
+rectangle of volume at most $V(R_j) \, {\bigl(1+4\sqrt{n} \, \epsilon\bigr)}^n$.
+Let us prove this claim.
 For any given $y \in R_j$,
 apply the fundamental theorem of calculus
 to the function $t \mapsto g(ty)$ to find
 $g(y) = \int_0^1 g'(ty)y \,dt$.  As the
 side of $R_j$ is at most $\frac{\delta}{\sqrt{n}}$,
-then $\snorm{y} \leq \delta$.  So
+we have $\snorm{y} \leq \delta$.
+We note that $\bnorm{g'(x)-I} < \epsilon$ as $M > 1$
+and so
 \begin{equation*}
 %mbxlatex \begin{aligned}
 \bnorm{g(y)-y}
@@ -3677,18 +3699,38 @@ s_n \bigl(1+4 \sqrt{n}\, \epsilon \bigr)
 V(R_j) \, {\bigl(1+4\sqrt{n} \, \epsilon\bigr)}^n .
 \end{split}
 \end{equation*}
-In other words,
+The claim is proved: $g(R_j) \subset \widetilde{R}_j$ and
 \begin{equation*}
 V\bigl(g(R_j)\bigr) \leq V(\widetilde{R}_j) \leq V(R_j) \,
 {\bigl(1+4\sqrt{n} \, \epsilon\bigr)}^n .
 \end{equation*}
+
 Next, suppose $A \coloneqq g'(0)$ is not necessarily the identity.
 Write $g = A \circ \widetilde{g}$ where $\widetilde{g}'(0) = I$.
+We have that $\snorm{A^{-1}} \leq M$ and so
+\begin{equation*}
+\bnorm{\widetilde{g}'(x)-I} =
+\bnorm{A^{-1}g'(x)-A^{-1}A} \leq
+\bnorm{A^{-1}}\,\bnorm{g'(x)-A} < M \frac{\epsilon}{M} = \epsilon .
+\end{equation*}
+In other words, the claim above applies to $\widetilde{g}$ as what we
+needed in its proof was precisely that $\bnorm{\widetilde{g}'(x)-I} < \epsilon$.
+Therefore, we have that
+$\widetilde{g}(R_j)$
+is contained in a rectangle $\widetilde{R}_j$ with
+$V(\widetilde{R}_j) \leq V(R_j) \, {\bigl(1+4\sqrt{n} \, \epsilon\bigr)}^n$.
+
 By \propref{prop:volrectdet},
-$V\bigl(A(R_j)\bigr) = \babs{\det(A)} \, V(R_j)$, and hence
+$V\bigl(A(\widetilde{R}_j)\bigr) = \babs{\det(A)} \, V(\widetilde{R}_j)$, and hence
 \begin{equation*}
 \begin{split}
-V\bigl(g(R_j)\bigr) & \leq
+V\bigl(g(R_j)\bigr) & =
+V\bigl(A\bigl(\widetilde{g}(R_j)\bigr)\bigr)
+\\
+& \leq
+V\bigl(A(\widetilde{R}_j)\bigr)
+\\
+& \leq
 \babs{\det(A)} \, V(R_j) \,
 {\bigl(1+4\sqrt{n} \, \epsilon\bigr)}^n \\
 & =
@@ -3709,19 +3751,19 @@ Write $f$ as
 $f = f_+ - f_-$ for two nonnegative Riemann integrable
 functions $f_+$ and $f_-$:
 \begin{equation*}
-f_+(x) \coloneqq \max \bigl\{ f(x) , 0 \bigr\}, \qquad
-f_-(x) \coloneqq \max \bigl\{ -f(x) , 0 \bigr\} .
+f_+(y) \coloneqq \max \bigl\{ f(y) , 0 \bigr\}, \qquad
+f_-(y) \coloneqq \max \bigl\{ -f(y) , 0 \bigr\} .
 \end{equation*}
 So, if we prove the theorem for a nonnegative $f$,
 we obtain the theorem for arbitrary $f$.
-Therefore, suppose that 
-$f(y) \geq 0$ for all $y \in R$.
+Therefore, suppose without loss of generality that 
+$f(y) \geq 0$ for all $y \in g(S)$.
 
-For a small enough
-$\delta > 0$, we have
+As the rectangles $R_1,R_2,\ldots,R_N$ give a refinement of
+the partition $P$,
 \begin{equation*}
 \begin{split}
-\epsilon + \int_R f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx
+\epsilon + \int_S f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx
 & \geq
 \sum_{j=1}^N \biggl(\sup_{x \in R_j} f\bigl(g(x)\bigr) \, \babs{J_g(x)} \biggr) \, V(R_j)
 \\
@@ -3739,19 +3781,13 @@ V\bigl(g(R_j)\bigr)
 \\
 & =
 \frac{1}{{(1+4\sqrt{n} \, \epsilon)}^n}
-\int_{g(R)} f(y) \,dy .
+\int_{g(S)} f(y) \,dy .
 \end{split}
 \end{equation*}
 The last equality follows because the overlaps of the rectangles
 are their boundaries, which are of measure zero, and hence the image
 of their boundaries is also measure zero.
 Let $\epsilon$ go to zero to find
-\begin{equation*}
-\int_R f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx \geq \int_{g(R)} f(y) \,dy .
-\end{equation*}
-By adding this result for several rectangles covering an $S$ we obtain the
-result for an arbitrary bounded Jordan measurable $S \subset U$,
-and nonnegative integrable function $f$:
 \begin{equation*}
 \int_S f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx \geq \int_{g(S)} f(y) \,dy .
 \end{equation*}
@@ -3770,12 +3806,9 @@ So
 \int_{g^{-1}(g(S))} f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx
 =
 \int_{S} f\bigl(g(x)\bigr) \, \babs{J_g(x)} \, dx .
+\qedhere
 \end{split}
 \end{equation*}
-
-The conclusion of the theorem holds
-for all nonnegative $f$ and as we
-mentioned above, it thus holds for all Riemann integrable $f$.
 \end{proof}
 
 \subsection{Exercises}
@@ -3797,19 +3830,19 @@ $P_j^\circ \cap P^\circ_\ell = \emptyset$ whenever $j \neq \ell$.
 \begin{exercise} \label{mv:changeofvarWxopen}
 Suppose $U \subset \R^n$ is open, $x \in U$,
 and $g \colon U \to \R^n$ is a continuously differentiable mapping.
-For every $\epsilon > 0$, show that
+For every $c > 0$, show that
 \begin{equation*}
-W_x \coloneqq \bigl\{ y \in U : \bnorm{g'(x)-g'(y)} < \nicefrac{\epsilon}{2} \bigr\}
+\bigl\{ y \in U : \bnorm{g'(x)-g'(y)} < c \bigr\}
 \end{equation*}
 is an open set.
 \end{exercise}
 
 \begin{exercise} \label{mv:changeofvarrectside}
 Suppose $R \subset \R^n$ is a closed rectangle.
-Show that if $\delta' > 0$ is sufficiently small relative
+Show that if $\delta > 0$ is sufficiently small relative
 to the sides of $R$, then $R$ can be partitioned
-into subrectangles where each side of every subrectangle
-is between $\frac{\delta'}{2}$ and $\delta'$.
+into subrectangles where each side $s$ of every subrectangle
+satisfies $\frac{\delta}{2} \leq s \leq \delta$.
 \end{exercise}
 
 \begin{exercise}
@@ -3821,7 +3854,7 @@ and $g \colon \R^n \to \R^n$ is
 a function that when restricted to a neighborhood $U$ of
 $S$ is one-to-one and continuously differentiable,
 $g(S) = K$ and $J_g$ is never zero on $S$ (in the formula 
-assume $J_g(x) = 0$ if $g$ not differentiable at $x$, that is, when $x \notin
+assume $J_g(x) = 0$ if $g$ is not differentiable at $x$, that is, when $x \notin
 U$).  Then}
 \begin{equation*}
 \int_{\R^{n}} f(x) \, dx = 
