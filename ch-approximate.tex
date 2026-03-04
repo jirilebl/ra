@@ -1725,7 +1725,7 @@ meaning that $f(x) = (1+x)^\alpha$.
 
 \begin{exercise}
 Suppose $f \colon \C \to \C$ is analytic and suppose that for some
-open interval $(a,b) \subset \R$, $f$ is real valued on $(a,b)$.  Show
+open interval $(a,b) \subset \R$, $f$ is real-valued on $(a,b)$.  Show
 that $f$ is real-valued on $\R$.
 \end{exercise}
 
@@ -4170,8 +4170,8 @@ $z \in \C$ with $\sabs{z}=1,$ we write $z = e^{ix}$, and so
 So a trigonometric polynomial is really a rational function
 of the complex variable $z$
 (we are allowing negative powers) evaluated on the unit circle.  There is
-a wonderful connection between power series (actually Laurent series because
-of the negative powers) and
+a wonderful connection between power series
+(actually Laurent series due to the negative powers) and
 Fourier series because of this observation,
 but we will not investigate this further.
 
@@ -4179,7 +4179,7 @@ but we will not investigate this further.
 
 Another reason why Fourier series is important and comes up in so many
 applications is that the functions $e^{inx}$ are eigenfunctions%
-\footnote{Eigenfunction is like an eigenvector for a matrix, but for a linear
+\footnote{An eigenfunction is like an eigenvector for a matrix, but for an
 operator on a vector space of functions.} of various
 differential operators.  For example,
 \begin{equation*}
@@ -4187,15 +4187,16 @@ differential operators.  For example,
 \frac{d^2}{dx^2} \bigl[ e^{inx} \bigr] = (-n^2) e^{inx} .
 \end{equation*}
 That is, they are the functions whose derivative is a scalar (the
-eigenvalue) times itself.
+eigenvalue) times themselves.
 Just as eigenvalues and eigenvectors are important in studying matrices,
 eigenvalues and eigenfunctions are important when studying linear
 differential equations.
 
 \medskip
 
-The functions $\cos (nx)$, $\sin (nx)$, and $e^{inx}$ are $2\pi$-periodic
-and hence trigonometric
+The functions $\cos (nx)$, $\sin (nx)$, and $e^{inx}$ are $2\pi$-periodic,
+hence
+trigonometric
 polynomials are also $2\pi$-periodic.
 We could rescale $x$ to make the period different, but the theory is the
 same, so we stick with the period $2\pi$.
@@ -4275,7 +4276,7 @@ $c_{-m} = \overline{c_m}$, then
 =
 c_{m}\, e^{imx}+ c_{-m}\, e^{-imx} ,
 \end{equation*}
-which is real valued.  Also $c_0 = \overline{c_0}$, so
+which is real-valued.  Also $c_0 = \overline{c_0}$, so
 $c_0$ is real.
 By pairing up the terms, we obtain that $f$ has to be real-valued.
 \end{proof}
@@ -4307,7 +4308,7 @@ Euler's formula $e^{i\theta} = \cos(\theta) + i \sin (\theta)$,
 we could also develop everything with
 sines and cosines, that is, as the series
 $a_0 + \sum_{n=1}^\infty a_n \cos(nx) + b_n \sin(nx)$.
-It is equivalent, but slightly more messy.
+It is equivalent, but slightly messier.
 
 Several questions arise.  What functions are expressible as 
 Fourier series?  Obviously, they have to be $2\pi$-periodic, but not every
@@ -4426,7 +4427,7 @@ See the right hand graph in \figureref{fig:fourierheavicsaw}.
 symmetric partial sums in gray.\label{fig:fourierheavicsaw}}
 \end{myfigureht}
 
-Note that for both $f$ and $g$, the even coefficients (except $\hat{g}(0)$)
+Note that for both $h$ and $g$, the even coefficients (except $\hat{g}(0)$)
 happen to vanish, but that is not really important.
 What is important is convergence.
 First, at the discontinuity at $x=0$, we find $s_N(h;0) = 0$
@@ -4881,14 +4882,14 @@ $s_N(f)$ goes to $f$.  Things are not always simple,
 but under some conditions on $f$, such a conclusion holds.  For this reason
 people write
 \begin{equation*}
-2\pi \, \delta(x) \sim \sum_{n=\infty}^\infty e^{inx} ,
+2\pi \, \delta(x) \sim \sum_{n=-\infty}^\infty e^{inx} ,
 \end{equation*}
 where $\delta$ is the \myquote{delta function} (not really a function),
 which is an object that will give something like
 \myquote{$\int_{-\pi}^{\pi} f(x-t) \delta(t) \, dt = f(x)$.}
 We can think of $D_N(x)$ converging in some sense to $2 \pi\, \delta(x)$.
 However, we have not defined (and will not define) what the delta function
-is, nor what does it mean for it to be a limit of $D_N$ or have a Fourier series.
+is, nor what it means for it to be a limit of $D_N$ or have a Fourier series.
 
 \subsection{Localization}
 
@@ -5316,7 +5317,7 @@ Hint: If $z=re^{i\theta}$, then $z^n = r^n e^{in\theta}$.
 \begin{exercise}
 Show that
 \begin{equation*}
-\sum_{n=1}^\infty e^{-1/n} \sin(n x)
+\sum_{n=1}^\infty e^{-n} \sin(n x)
 \end{equation*}
 converges to an infinitely differentiable function.
 \end{exercise}
