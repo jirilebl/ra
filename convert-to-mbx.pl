@@ -564,6 +564,10 @@ sub read_paragraph {
 		} elsif ($line =~ m/^%mbxENDIGNORE/) {
 			$mbxignore = 0;
 
+		# Kind of a hack
+		} elsif ($line =~ m/^%mbxalt[ \t][ \t]*.*$/) {
+			$para = $para . $line . "\n";
+
 		} elsif ($mbxignore == 0 &&
 			 ($line =~ m/^[ \t]*\\input[ \t][ \t]*(.*)$/ ||
 			  $line =~ m/^[ \t]*\\input\{(.*)\}.*$/)) {
@@ -689,6 +693,8 @@ sub read_paragraph {
 
 
 @cltags = ();
+
+$alttag = "";
 
 while(1)
 {
@@ -1308,21 +1314,44 @@ while(1)
 			print $out "<rahr/><figure xml:id=\"$theid\" number=\"$the_num\">\n";
 			print $out "  <caption>$caption</caption>\n";
 
+			$alttag = "";
+
 			do {
-				if ($figure =~ s/^[ \n]*\\includegraphics\[(width=[^]]*)\]\{([^}]*?)\}[ \n]*//) {
+				if ($figure =~ s/^[ \n]*%mbxalt[ \t][ \t]*([^\n]*)\n//) {
+					$alttag = $alttag . $1;
+
+				} elsif ($figure =~ s/^[ \n]*\\includegraphics\[(width=[^]]*)\]\{([^}]*?)\}[ \n]*//) {
 					my $thesizestr = "$1";
 					my $thefile = "$2";
 					ensure_mbx_svg_version ($thefile);
-					print $out "  <raimage source=\"$thefile-mbx\" background-color=\"white\" $thesizestr />\n";
+					print $out "  <raimage source=\"$thefile-mbx\" background-color=\"white\" $thesizestr ";
+					if ($alttag eq "") {
+						print $out "/>\n";
+					} else {
+						print $out "><shortdescription>$alttag</shortdescription></raimage>\n";
+					}
+					$alttag = "";
 				} elsif ($figure =~ s/^[ \n]*\\includegraphics(\[align=t\])?\{([^}]*?)\}[ \n]*//) {
 					my $thefile = "$2";
 					ensure_mbx_svg_version ($thefile);
 					my $thesizestr = get_size_of_svg("$thefile-mbx.svg");
-					print $out "  <raimage source=\"$thefile-mbx\" background-color=\"white\" $thesizestr />\n";
+					print $out "  <raimage source=\"$thefile-mbx\" background-color=\"white\" $thesizestr ";
+					if ($alttag eq "") {
+						print $out "/>\n";
+					} else {
+						print $out "><shortdescription>$alttag</shortdescription></raimage>\n";
+					}
+					$alttag = "";
 				} elsif ($figure =~ s/^[ \n]*\\subimport\*\{figures\/\}\{(.*?)\.pdf_t\}[ \n]*//) {
 					my $thefile = "figures/$1";
 					my $thesizestr = get_size_of_svg("$thefile-mbxpdft.svg");
-					print $out "<raimage source=\"$thefile-mbxpdft\" $thesizestr />\n";
+					print $out "<raimage source=\"$thefile-mbxpdft\" $thesizestr ";
+					if ($alttag eq "") {
+						print $out "/>\n";
+					} else {
+						print $out "><shortdescription>$alttag</shortdescription></raimage>\n";
+					}
+					$alttag = "";
 				} elsif (not $figure eq "") {
 					print "\n\n\nERROR: HUH?\n\n\nFigure too complicated!\n\nFIG(whatsleft)=>$figure<\n\n";
 					$figure = "";
@@ -1335,11 +1364,20 @@ while(1)
 			$num_errors++;
 		}
 
+	} elsif ($para =~ s/^%mbxalt[ \t][ \t]*([^\n]*)\n$//) {
+		$alttag = $alttag . $1;
+
 	# FIXME: This is really a hack
 	} elsif ($para =~ s/^\\begin\{center\}[ \n]*\\subimport\*\{figures\/\}\{(.*?)\.pdf_t\}[ \n]*\\end\{center\}[ \n]*//) {
 		my $thefile = "figures/$1";
 		my $thesizestr = get_size_of_svg("$thefile-mbxpdft.svg");
-		print $out "<raimage source=\"$thefile-mbxpdft\" $thesizestr />\n";
+		print $out "<raimage source=\"$thefile-mbxpdft\" $thesizestr ";
+		if ($alttag eq "") {
+			print $out "/>\n";
+		} else {
+			print $out "><shortdescription>$alttag</shortdescription></raimage>\n";
+		}
+		$alttag = "";
 
 	} elsif ($para =~ s/^\\begin\{(thm|lemma|prop|cor|defn)\}[ \n]*//) {
 		close_paragraph();

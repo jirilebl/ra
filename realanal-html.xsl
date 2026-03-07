@@ -134,10 +134,32 @@
         <xsl:value-of select="@source"/>
         <xsl:text>.svg</xsl:text>
       </xsl:attribute>
-      <!-- alt attribute for accessibility -->
-      <xsl:attribute name="alt">
-        <xsl:apply-templates select="description"/>
+      <!-- For accessibility use an ARIA role, e.g so screen  -->
+      <!-- readers do not try to read the elements of the SVG -->
+      <!-- NB: if we write SVG into the page, put this        -->
+      <!-- attribute onto the "svg" element                   -->
+      <xsl:attribute name="role">
+          <xsl:text>img</xsl:text>
       </xsl:attribute>
+      <!-- alt attribute for accessibility -->
+      <xsl:choose>
+          <xsl:when test="@decorative = 'yes'">
+              <xsl:attribute name="alt"/>
+          </xsl:when>
+          <xsl:when test="shortdescription">
+              <xsl:attribute name="alt">
+                  <xsl:apply-templates select="shortdescription"/>
+              </xsl:attribute>
+          </xsl:when>
+          <xsl:when test="description">
+              <xsl:attribute name="alt">
+                  <xsl:text>described in detail following the image</xsl:text>
+              </xsl:attribute>
+              <xsl:attribute name="aria-describedby">
+                  <xsl:apply-templates select="." mode="describedby-id"/>
+              </xsl:attribute>
+          </xsl:when>
+      </xsl:choose>
     </xsl:element>
   </xsl:template>
 
