@@ -1318,7 +1318,10 @@ while(1)
 
 			do {
 				if ($figure =~ s/^[ \n]*%mbxalt[ \t][ \t]*([^\n]*)\n//) {
-					$alttag = $alttag . $1;
+					print "add to alt tag: $1\n";
+					$alttag = $alttag . " " . $1;
+					$alttag =~ s/^ //;
+					$alttag =~ s/  / /g;
 
 				} elsif ($figure =~ s/^[ \n]*\\includegraphics\[(width=[^]]*)\]\{([^}]*?)\}[ \n]*//) {
 					my $thesizestr = "$1";
@@ -1364,13 +1367,28 @@ while(1)
 			$num_errors++;
 		}
 
-	} elsif ($para =~ s/^%mbxalt[ \t][ \t]*([^\n]*)\n$//) {
-		$alttag = $alttag . $1;
+	} elsif ($para =~ s/\A%mbxalt[ \t][ \t]*([^\n]*)$//m) {
+		print "add to alt tag: $1\n";
+		$alttag = $alttag . " " . $1;
+		$alttag =~ s/^ //;
+		$alttag =~ s/  / /g;
+		$para =~ s/^[ \n]*//;
 
 	# FIXME: This is really a hack
-	} elsif ($para =~ s/^\\begin\{center\}[ \n]*\\subimport\*\{figures\/\}\{(.*?)\.pdf_t\}[ \n]*\\end\{center\}[ \n]*//) {
-		my $thefile = "figures/$1";
+	} elsif ($para =~ s/^\\begin\{center\}[ \n]*((?:%mbxalt .*\n)*)[ \n]*\\subimport\*\{figures\/\}\{(.*?)\.pdf_t\}[ \n]*\\end\{center\}[ \n]*//) {
+		my $thefile = "figures/$2";
+
+		$alttag = $alttag . " " . $1;
+		$alttag =~ s/^ //;
+		$alttag =~ s/%mbxalt //g;
+		$alttag =~ s/\n/ /g;
+		$alttag =~ s/  / /g;
+		$alttag =~ s/ $//;
+
+		print "alt tag: $alttag\n";
+
 		my $thesizestr = get_size_of_svg("$thefile-mbxpdft.svg");
+
 		print $out "<raimage source=\"$thefile-mbxpdft\" $thesizestr ";
 		if ($alttag eq "") {
 			print $out "/>\n";
