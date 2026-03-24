@@ -16,6 +16,8 @@
 
 \usepackage[T1]{fontenc}
 
+\usepackage{perpage}
+
 \usepackage[shortlabels]{enumitem}
 \usepackage{ifpdf}
 \usepackage{amsmath}
@@ -115,7 +117,11 @@
 
 % Footnotes should use symbols, not numbers.  Numbered footnotes are
 % evil, (footmisc no longer conflicts with hyperref)
-\usepackage[perpage,symbol*]{footmisc}
+% however footmisc now has some sort of conflict with texlive 2026
+%\usepackage[perpage,symbol*]{footmisc}
+
+\MakePerPage{footnote}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 \usepackage{footnote}
 
@@ -258,6 +264,9 @@
 % the second argument is the reference if they are in the same book
 \newcommand{\volIIref}[2]{#1\@}
 
+% Our graphics commands
+\newcommand{\myincludegraphics}[3][]{\includegraphics[#1]{figures/#2}}
+\newcommand{\myincludepdft}[2]{\subimport*{figures/}{#1.pdf_t}}
 
 % Set up our index
 \makeindex
@@ -388,7 +397,7 @@ Typeset in \LaTeX.
 \bigskip
 
 \noindent
-Copyright \copyright 2009--2025 Ji{\v r}\'i Lebl
+Copyright \copyright 2009--2026 Ji{\v r}\'i Lebl
 
 %PRINT
 % not for lulu
@@ -411,9 +420,9 @@ Copyright \copyright 2009--2025 Ji{\v r}\'i Lebl
 \bigskip
 
 \noindent
-\includegraphics[width=1.38in]{figures/license}
+\myincludegraphics[width=1.38in]{license}{FIXMEALT}
 \quad
-\includegraphics[width=1.38in]{figures/license2}
+\myincludegraphics[width=1.38in]{license2}{FIXMEALT}
 
 \bigskip
 

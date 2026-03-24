@@ -15,6 +15,11 @@ my @ins;
  
 open(my $in,'<', "realanal12.tex") or die $!; 
 open(my $out, '>' ,"realanal-out.xml") or die $!; 
+
+# This is used for checking texts for grammar etc on alt texts
+# can normally be commented out (search out and comment out all the other
+# places where $alttexts appears)
+open(my $alttexts, '>' ,"alttexts.txt") or die $!; 
  
 $mbxignore = 0;
 
@@ -564,10 +569,6 @@ sub read_paragraph {
 		} elsif ($line =~ m/^%mbxENDIGNORE/) {
 			$mbxignore = 0;
 
-		# Kind of a hack
-		} elsif ($line =~ m/^%mbxalt[ \t][ \t]*.*$/) {
-			$para = $para . $line . "\n";
-
 		} elsif ($mbxignore == 0 &&
 			 ($line =~ m/^[ \t]*\\input[ \t][ \t]*(.*)$/ ||
 			  $line =~ m/^[ \t]*\\input\{(.*)\}.*$/)) {
@@ -690,11 +691,22 @@ sub read_paragraph {
 	return $para;
 }
 
+sub alttag_substs {
+	$a = shift;
+
+	$a =~ s/\n/ /g;
+	$a =~ s/  / /g;
+	$a =~ s/^\s+//;
+	$a =~ s/\s+$//;
+
+	# write to a file for checking
+	print $alttexts "$a\n\n";
+
+	return $a;
+}
 
 
 @cltags = ();
-
-$alttag = "";
 
 while(1)
 {
@@ -1314,43 +1326,56 @@ while(1)
 			print $out "<rahr/><figure xml:id=\"$theid\" number=\"$the_num\">\n";
 			print $out "  <caption>$caption</caption>\n";
 
-			$alttag = "";
-
 			do {
-				if ($figure =~ s/^[ \n]*%mbxalt[ \t][ \t]*([^\n]*)\n//) {
-					print "add to alt tag: $1\n";
-					$alttag = $alttag . " " . $1;
-					$alttag =~ s/^ //;
-					$alttag =~ s/  / /g;
-
-				} elsif ($figure =~ s/^[ \n]*\\includegraphics\[(width=[^]]*)\]\{([^}]*?)\}[ \n]*//) {
+				if ($figure =~ s/^[ \n]*\\myincludegraphics\[(width=[^]]*)\]\{([^}]*?)\}\{([^}]*?)\}[ \n]*//) {
 					my $thesizestr = "$1";
 					my $thefile = "$2";
+					my $alttag = alttag_substs($3);
+
+					print "IMAGE $thefile\n";
+					print "alttag: $alttag\n";
+
 					ensure_mbx_svg_version ($thefile);
 					print $out "  <raimage source=\"$thefile-mbx\" background-color=\"white\" $thesizestr ";
 					if ($alttag eq "") {
 						print $out "/>\n";
+						print "\n\n\nERROR: HUH?\n\n\nno alttag!\n\n";
+						$num_errors++;
 					} else {
 						print $out "><shortdescription>$alttag</shortdescription></raimage>\n";
 					}
 					$alttag = "";
-				} elsif ($figure =~ s/^[ \n]*\\includegraphics(\[align=t\])?\{([^}]*?)\}[ \n]*//) {
+				} elsif ($figure =~ s/^[ \n]*\\myincludegraphics(\[align=t\])?\{([^}]*?)\}\{([^}]*?)\}[ \n]*//) {
 					my $thefile = "$2";
+					my $alttag = alttag_substs($3);
+
+					print "IMAGE $thefile\n";
+					print "alttag: $alttag\n";
+
 					ensure_mbx_svg_version ($thefile);
 					my $thesizestr = get_size_of_svg("$thefile-mbx.svg");
 					print $out "  <raimage source=\"$thefile-mbx\" background-color=\"white\" $thesizestr ";
 					if ($alttag eq "") {
 						print $out "/>\n";
+						print "\n\n\nERROR: HUH?\n\n\nno alttag!\n\n";
+						$num_errors++;
 					} else {
 						print $out "><shortdescription>$alttag</shortdescription></raimage>\n";
 					}
 					$alttag = "";
-				} elsif ($figure =~ s/^[ \n]*\\subimport\*\{figures\/\}\{(.*?)\.pdf_t\}[ \n]*//) {
+				} elsif ($figure =~ s/^[ \n]*\\myincludepdft\{([^}]*?)\}\{([^}]*?)\}[ \n]*//) {
 					my $thefile = "figures/$1";
+					my $alttag = alttag_substs($2);
 					my $thesizestr = get_size_of_svg("$thefile-mbxpdft.svg");
+
+					print "IMAGE(PDFT) $thefile\n";
+					print "alttag: $alttag\n";
+
 					print $out "<raimage source=\"$thefile-mbxpdft\" $thesizestr ";
 					if ($alttag eq "") {
 						print $out "/>\n";
+						print "\n\n\nERROR: HUH?\n\n\nno alttag!\n\n";
+						$num_errors++;
 					} else {
 						print $out "><shortdescription>$alttag</shortdescription></raimage>\n";
 					}
@@ -1367,35 +1392,24 @@ while(1)
 			$num_errors++;
 		}
 
-	} elsif ($para =~ s/\A%mbxalt[ \t][ \t]*([^\n]*)$//m) {
-		print "add to alt tag: $1\n";
-		$alttag = $alttag . " " . $1;
-		$alttag =~ s/^ //;
-		$alttag =~ s/  / /g;
-		$para =~ s/^[ \n]*//;
-
 	# FIXME: This is really a hack
-	} elsif ($para =~ s/^\\begin\{center\}[ \n]*((?:%mbxalt .*\n)*)[ \n]*\\subimport\*\{figures\/\}\{(.*?)\.pdf_t\}[ \n]*\\end\{center\}[ \n]*//) {
-		my $thefile = "figures/$2";
+	} elsif ($para =~ s/^\\begin\{center\}[ \n]*\\myincludepdft\{([^}]*?)\}\{([^}]*?)\}[ \n]*\\end\{center\}[ \n]*//) {
+		my $thefile = "figures/$1";
+		my $alttag = alttag_substs($2);
 
-		$alttag = $alttag . " " . $1;
-		$alttag =~ s/^ //;
-		$alttag =~ s/%mbxalt //g;
-		$alttag =~ s/\n/ /g;
-		$alttag =~ s/  / /g;
-		$alttag =~ s/ $//;
-
-		print "alt tag: $alttag\n";
+		print "CENTEREDIMAGE(PDFT) $thefile\n";
+		print "alttag: $alttag\n";
 
 		my $thesizestr = get_size_of_svg("$thefile-mbxpdft.svg");
 
 		print $out "<raimage source=\"$thefile-mbxpdft\" $thesizestr ";
 		if ($alttag eq "") {
 			print $out "/>\n";
+			print "\n\n\nERROR: HUH?\n\n\nno alttag!\n\n";
+			$num_errors++;
 		} else {
 			print $out "><shortdescription>$alttag</shortdescription></raimage>\n";
 		}
-		$alttag = "";
 
 	} elsif ($para =~ s/^\\begin\{(thm|lemma|prop|cor|defn)\}[ \n]*//) {
 		close_paragraph();
@@ -1874,4 +1888,6 @@ END
 close ($in); 
 close ($out); 
  
+close ($alttexts); 
+
 print "\nDone! (number of errors $num_errors)\n"; 
