@@ -583,6 +583,7 @@ sub read_paragraph {
 
 				 $in = pop @ins;
 			 }
+			 print $alttexts "FILE: $thefile\n\n";
 
 		} elsif ($line =~ s/^%mbx[ \t](.*)$/\\mbx ${1}%ENDOFLINE%/) {
 			#do nothing here, will deal with this later
