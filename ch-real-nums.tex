@@ -1320,7 +1320,16 @@ if we consider the same polynomial as a function on the whole real line $\R$,
 then it is not bounded.
 
 \begin{myfigureht}
-\myincludegraphics{boundedfunc}{FIXMEALT}
+\myincludegraphics{boundedfunc}{%
+A diagram of the graph of a function.
+A domain D is marked on the horizontal axis, and a sinusoidal line
+representing a graph of a function on this domain is drawn.  The maximal
+value of the function is drawn as a horizontal dashed line that is touching
+the graph of the function and is marked as sup f of D.  Similarly, the
+minimum is marked inf f of D.  Two other dash-dotted lines are marked with
+M and minus M.  The line marked M is above the graph and the line marked
+minus M is below the graph.  On the vertical axis, the set of values
+that function attains is marked f of D.}
 \caption{Example of a bounded function, a bound $M$, and its supremum and infimum.\label{boundedfuncfig}}
 \end{myfigureht}
 For a function $f \colon D \to \R$, we write
@@ -1607,7 +1616,7 @@ requires much more machinery than we have right now.
 Let us say more about the cardinality of intervals and hence about the
 cardinality of $\R$.  We have seen that there exist irrational numbers;
 that is,
-$\R \setminus \Q$, is nonempty.  The question is: How many irrational numbers
+$\R \setminus \Q$ is nonempty.  The question is: How many irrational numbers
 are there?  It turns out there are a lot more irrational numbers than rational
 numbers.  We have seen that $\Q$ is countable, and we will show
 that $\R$ is uncountable.
@@ -1622,8 +1631,9 @@ $\R$ is uncountable.
 We give a version of
 Cantor's original proof from
 1874 as this proof requires the least setup.  Normally this proof is stated
-as a contradiction, but a proof by contrapositive is easier to
-understand.
+as a contradiction.  It is, however, easier
+to understand it as a direct constructive proof that any countably infinite subset
+must miss some element.
 
 \begin{proof}
 Let $X \subset \R$ be a countably infinite
@@ -1658,7 +1668,8 @@ for $\ell=1,2,\ldots,j$.
 \item Define $a_k \coloneqq x_n$, where $n$ is the smallest $n \in \N$
 such that $x_n \in (a_{k-1},b_{k-1})$.  Such an $x_n$ exists by our
 assumption on $X$, and $n \geq k$ by the assumption on $(a_{k-1},b_{k-1})$.
-\item Next, define $b_k$ to be some real number in $(a_{k},b_{k-1})$.
+\item Next, define $b_k$ to be some real number in $(a_{k},b_{k-1})$,
+for example $b_k \coloneqq \frac{a_k+b_{k-1}}{2}$.
 \end{enumerate}
 Notice that %$a_k < b_k$ and
 $a_{k-1} < a_k < b_k < b_{k-1}$.
@@ -1740,7 +1751,7 @@ Show that every open interval $(a,b)$
 is a countable union of closed intervals.
 \item
 Show that an intersection
-of a possibly infinite family of bounded closed intervals,
+of a nonempty and possibly infinite family of bounded closed intervals,
 $\bigcap\limits_{\lambda \in I} [a_\lambda,b_\lambda]$,
 is either empty, a single point,
 or a bounded closed interval.
@@ -2085,7 +2096,24 @@ So $y \notin X$, and as $X$ was an arbitrary countable subset,
 $(0,1]$ must be uncountable.  See \figureref{cantorexamplefig} for an
 example.
 \begin{myfigureht}
-\myincludepdft{cantorexamplefig}{FIXMEALT}
+\myincludepdft{cantorexamplefig}{%
+Five numbers marked x sub 1 through x sub 5 are shown aligned one above the
+other in decimal notation.
+The first five decimal digits are shown for each number are shown.
+In particular, x sub 1 is 0 dot 1 3 2 1 0 and ellipses implying
+the digits continue.
+The first digit, the 1, is marked with a box.
+x sub 2 is 0 dot 7 9 4 1 3 and ellipses.
+The second digit, the 9, is marked with a box.
+x sub 3 is 0 dot 3 0 1 3 4 and ellipses.
+The third digit, the 1, is marked with a box.
+x sub 4 is 0 dot 8 9 2 5 6 and ellipses.
+The fourth digit, the 5, is marked with a box.
+x sub 5 is 0 dot 1 6 0 2 4 and ellipses.
+The fifth digit, the 4, is marked with a box.
+Further ellipses indicate the sequence of numbers keeps going.
+On the right is the text: Number not in the list:
+y equals 0 dot 2 1 2 1 1 ellipses.}
 \caption{Example of Cantor diagonalization, the diagonal digits $d_n^n$
 marked.\label{cantorexamplefig}}
 \end{myfigureht}
