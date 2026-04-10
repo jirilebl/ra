@@ -1824,7 +1824,7 @@ digits: $n = d_K d_{K-1} \cdots d_2 d_1 d_0$.
 Similarly, we
 represent some rational numbers.  For certain
 numbers $x$, we can find
-a negative integer $-M$, a positive integer $K$, and digits
+nonnegative integers $K$ and $M$ and digits
 $d_K,d_{K-1},\ldots,d_1,d_0,d_{-1},\ldots,d_{-M}$, such that
 \begin{equation*}
 %mbxlatex \begin{aligned}
@@ -1844,7 +1844,7 @@ rational number $\nicefrac{1}{3}$ does not.  The irrational number $\sqrt{2}$
 does not have such a representation either.  To get a representation for
 all real numbers, we must allow infinitely many digits.
 
-Let us consider only real numbers in the interval $[0,1]$.  If
+Consider only real numbers in the interval $[0,1]$.  If
 we find a representation for these, adding
 integers to them obtains a representation for all real numbers.
 Take an infinite sequence of decimal digits:
@@ -1853,7 +1853,7 @@ Take an infinite sequence of decimal digits:
 \end{equation*}
 We have a digit $d_j$ for every $j \in \N$.
 We renumbered the digits to avoid the negative signs.
-We call the number
+We write
 \begin{equation*}
 D_n \coloneqq
 \frac{d_1}{10} +
@@ -1862,8 +1862,7 @@ D_n \coloneqq
 \cdots +
 \frac{d_n}{{10}^n} .
 \end{equation*}
-the truncation of $x$ to $n$ decimal digits.
-We say this
+We say the
 sequence of digits represents a real number $x$ if
 \begin{equation*}
 x =
@@ -1876,6 +1875,8 @@ x =
 \right) =
 \sup_{n \in \N} \, D_n .
 \end{equation*}
+The number $D_n=0.d_1 d_2 d_3 \ldots d_n$ is the truncation of $x$
+to $n$ decimal digits.
 
 \begin{prop} \label{prop:decimalprop}
 \leavevmode
