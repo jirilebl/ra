@@ -122,7 +122,7 @@ triangle inequality \ref{metric:triang} is a little bit more difficult.
 Note that $d(x,y) = \varphi\bigl(\sabs{x-y}\bigr)$ where $\varphi(t) =
 \frac{t}{t+1}$ and $\varphi$ is an increasing function
 (positive derivative, see \figureref{fig:tovertp1}).
-Hence
+Hence,
 \begin{equation*}
 \begin{split}
 d(x,z) = \varphi\bigl(\sabs{x-z}\bigr)
@@ -187,7 +187,7 @@ Then
 \end{lemma}
 
 \begin{proof}
-A square of a real number is nonnegative.  Hence a sum of squares is
+A square of a real number is nonnegative.  Hence, a sum of squares is
 nonnegative:
 \begin{equation*}
 \begin{split}
@@ -347,7 +347,10 @@ are not the normal euclidean distances in the plane.
 Things become subtle when $X$ is an infinite set such
 as the real numbers.
 \begin{myfigureht}
-\myincludepdft{msdiscmetric}{FIXMEALT}
+\myincludepdft{msdiscmetric}{%
+A diagram of 5 points a, b, c, d, and e.  Each point
+is connected to each other point with a line and each line is labeled
+with the number 1.}
 \caption{Sample discrete metric space $\{ a,b,c,d,e \}$, the distance
 between any two points is $1$.\label{fig:msdiscmetric}}
 \end{myfigureht}
@@ -419,7 +422,12 @@ trigonometry and linear algebra than we wish to indulge in right now, so let
 us leave it without proof.
 
 \begin{myfigureht}
-\myincludepdft{spheremetric}{FIXMEALT}
+\myincludepdft{spheremetric}{%
+A diagram of a sphere in 3-dimensional space
+that is marked S superscript 2.  The origin is marked as 0,
+and there are two points on the sphere, x and y.  There is
+a line between the origin and x, a line between the origin and y,
+and the angle between these two lines is labeled with a theta.}
 \caption{The great circle distance on the unit
 sphere.\label{fig:spheremetric}}
 \end{myfigureht}
@@ -1274,7 +1282,7 @@ Suppose $x \in \partial A =  \widebar{A} \setminus A^\circ$ and
 let $\delta > 0$ be arbitrary.
 By \propref{prop:msclosureappr}, $B(x,\delta)$ contains
 a point of $A$.  If $B(x,\delta)$ contained no points of $A^c$,
-then $x$ would be in $A^\circ$.  Hence $B(x,\delta)$ contains a point of
+then $x$ would be in $A^\circ$.  Hence, $B(x,\delta)$ contains a point of
 $A^c$ as well.
 
 Let us prove the other direction by contrapositive.  
@@ -1562,7 +1570,7 @@ d(y,x_n) + d(x_n,x) \\
 \end{split}
 \end{equation*}
 As $d(y,x) < \epsilon$ for all $\epsilon > 0$, we have $d(x,y) = 0$
-and so $y=x$.  Hence the limit (if it exists) is unique.
+and so $y=x$.  Hence, the limit (if it exists) is unique.
 \end{proof}
 
 The proofs of the following propositions are left as exercises.
@@ -1652,7 +1660,7 @@ Fix some $k=1,2,\ldots,n$.  For all $m \geq M$,
 \sqrt{\sum_{\ell=1}^n {\bigl(y_\ell-x_{m,\ell}\bigr)}^2}
 = d(y,x_m) < \epsilon .
 \end{equation*}
-Hence the sequence $\{ x_{m,k} \}_{m=1}^\infty$ converges to $y_k$.
+Hence, the sequence $\{ x_{m,k} \}_{m=1}^\infty$ converges to $y_k$.
 
 For the other direction, suppose 
 $\{ x_{m,k} \}_{m=1}^\infty$ converges to $y_k$ for every $k=1,2,\ldots,n$.
@@ -1915,7 +1923,7 @@ A convergent sequence in a metric space is Cauchy.
 \begin{proof}
 Suppose $\{ x_n \}_{n=1}^\infty$ converges to $p$.
 Given $\epsilon > 0$, there is an $M$ such that for all $n \geq M$,
-we have $d(p,x_n) < \nicefrac{\epsilon}{2}$.  Hence
+we have $d(p,x_n) < \nicefrac{\epsilon}{2}$.  Hence,
 for all $n,k \geq M$, we have
 $d(x_n,x_k) \leq d(x_n,p) + d(p,x_k) < \nicefrac{\epsilon}{2} +
 \nicefrac{\epsilon}{2} = \epsilon$.
@@ -1954,7 +1962,7 @@ Fix some $k=1,2,\ldots,n$.  For $i,j \geq M$,
 \sqrt{\sum_{\ell=1}^n {\bigl(x_{i,\ell}-x_{j,\ell}\bigr)}^2}
 = d(x_i,x_j) < \epsilon .
 \end{equation*}
-Hence the sequence $\{ x_{m,k} \}_{m=1}^\infty$ is Cauchy.  As $\R$ is
+Hence, the sequence $\{ x_{m,k} \}_{m=1}^\infty$ is Cauchy.  As $\R$ is
 complete, the sequence converges; there exists a $y_k \in \R$ such that
 $y_k = \lim_{m\to\infty} x_{m,k}$.
 Write $y = (y_1,y_2,\ldots,y_n) \in \R^n$.
@@ -2312,7 +2320,7 @@ the Bolzano--Weierstrass theorem for sequences of real numbers,
 says that every bounded sequence in $\R$ has a convergent
 subsequence.  Therefore, every sequence in a closed interval $[a,b] \subset \R$ has 
 a convergent subsequence.  The limit is also in $[a,b]$ as limits
-preserve non-strict inequalities.  Hence a closed bounded interval $[a,b]
+preserve non-strict inequalities.  Hence, a closed bounded interval $[a,b]
 \subset \R$ is (sequentially) compact.
 \end{example}
 
@@ -2634,7 +2642,7 @@ sequence in $X$ converging to $c$.  Given $\epsilon > 0$,
 there is a $\delta > 0$ such that $d_X(x,c) < \delta$ implies
 $d_Y\bigl(f(x),f(c)\bigr) < \epsilon$.  So take $M$ such that
 for all $n \geq M$, we have $d_X(x_n,c) < \delta$, and then
-$d_Y\bigl(f(x_n),f(c)\bigr) < \epsilon$.  Hence $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$
+$d_Y\bigl(f(x_n),f(c)\bigr) < \epsilon$.  Hence, $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$
 converges to $f(c)$.
 
 On the other hand, suppose $f$ is not continuous at $c$.
@@ -2758,7 +2766,7 @@ $f$ achieves an absolute minimum and an absolute maximum on $X$.
 
 \begin{proof}
 As $X$ is compact and $f$ is continuous,
-$f(X) \subset \R$ is compact.  Hence $f(X)$ is closed
+$f(X) \subset \R$ is compact.  Hence, $f(X)$ is closed
 and bounded.  In particular,
 $\sup f(X) \in f(X)$ and
 $\inf f(X) \in f(X)$, because both the sup and the inf

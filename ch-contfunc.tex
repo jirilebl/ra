@@ -184,7 +184,12 @@ Then
 $\lim\limits_{x\to 0} f(x) = 0$,
 even though $f(0) = 1$.  See \figureref{fig:limvaldiff}.
 \begin{myfigureht}
-\myincludegraphics{limvaldiff}{FIXMEALT}
+\myincludegraphics{limvaldiff}{%
+A graph of a function that is 1 when the independent
+variable x is 0, then when the independent variable
+x is any bigger than 0, the function is equal to x.
+It is indicated that the function is not defined at
+x equal to 1 or any x greater, nor at any x less than 0.}
 \caption{Function with a different limit and value at $0$.\label{fig:limvaldiff}}
 \end{myfigureht}
 
@@ -855,7 +860,7 @@ Thus $f$ is continuous at $c$.  As $f$ is continuous at all $c \in
 (0,\infty)$, $f$ is continuous.
 \end{example}
 
-We have previously shown $\lim_{x \to c} x^2 = c^2$ directly.  Therefore
+We have previously shown $\lim_{x \to c} x^2 = c^2$ directly.  Therefore,
 the function $x^2$ is continuous.  The last item of \propref{contbasic:prop} and the continuity of
 algebraic operations with respect to limits of sequences,
 \propref{prop:contalg}, give a quick proof of a much more general result.
@@ -1010,9 +1015,9 @@ function on $(0,\infty)$.}
 Proof: The function $\nicefrac{1}{x}$ is continuous on
 $(0,\infty)$ and $\sin(x)$ is continuous on $(0,\infty)$ (actually
 on $\R$, but $(0,\infty)$ is the range for $\nicefrac{1}{x}$).
-Hence the composition $\sin(\nicefrac{1}{x})$ is continuous.  Also,
-$x^2$ is continuous on the interval $[-1,1]$ (the range of $\sin$).  Thus
-the composition
+Hence, the composition $\sin(\nicefrac{1}{x})$ is continuous.  Also,
+$x^2$ is continuous on the interval $[-1,1]$ (the range of $\sin$).
+Thus, the composition
 ${\bigl(\sin(\nicefrac{1}{x})\bigr)}^2$ is continuous on $(0,\infty)$.
 \end{example}
 
@@ -1641,13 +1646,13 @@ where it is called the \emph{\myindex{bisection method}}.
 
 \begin{example}[Bisection method] %\index{bisection method}
 The polynomial $f(x) \coloneqq x^3-2x^2+x-1$ has a real root in $(1,2)$.  We simply
-notice that $f(1) = -1$ and $f(2) = 1$.  Hence there must exist a point $c
+notice that $f(1) = -1$ and $f(2) = 1$.  Hence, there must exist a point $c
 \in (1,2)$ such that $f(c) = 0$.  To find a better approximation of
 the root we follow the proof of \lemmaref{IVT:lemma}.  
 We look at 1.5 and find that $f(1.5) = -0.625$.  Therefore,
-there is a root of the polynomial in $(1.5,2)$.  Next we look at 1.75
-and note that $f(1.75) \approx -0.016$.  Hence there is a root of $f$ in
-$(1.75,2)$.  Next we look at 1.875 and find that $f(1.875) \approx 0.44$,
+there is a root of the polynomial in $(1.5,2)$.  Next, we look at 1.75
+and note that $f(1.75) \approx -0.016$.  Hence, there is a root of $f$ in
+$(1.75,2)$.  Next, we look at 1.875 and find that $f(1.875) \approx 0.44$,
 thus there is a root in $(1.75,1.875)$.  We follow this procedure until we gain
 sufficient precision.  In fact, the root is at $c \approx 1.7549$.
 \end{example}
@@ -2194,7 +2199,7 @@ If $L_a = \lim_{x\to a} f(x)$
 exists, then $\lim_{x\to a} \widetilde{f}(x)$ exists
 and equals $L_a$
 (see \propref{prop:limrest}).  Similarly for $L_b$.
-Hence $\widetilde{f}$ is continuous at $a$ and $b$.  
+Hence, $\widetilde{f}$ is continuous at $a$ and $b$.  
 And since $f$ is continuous at $c \in (a,b)$, then
 $\widetilde{f}$ is continuous at $c \in (a,b)$ (\propref{prop:limrest} again).
 \end{proof}
@@ -2276,7 +2281,7 @@ In \exampleref{sincos:example} we have seen the following two inequalities.
 \leq \sabs{x-y} .
 \end{equation*}
 
-Hence sine and cosine are Lipschitz continuous with $K=1$.
+Hence, sine and cosine are Lipschitz continuous with $K=1$.
 \end{example}
 
 \begin{example}
@@ -3021,7 +3026,7 @@ b
 \end{equation*}
 As $c$ is a discontinuity, $a < b$.
 If $x < c$, then $f(x) \leq a$, and
-if $x > c$, then $f(x) \geq b$.  Therefore
+if $x > c$, then $f(x) \geq b$.  Therefore,
 no point
 in $(a,b) \setminus \bigl\{ f(c) \bigr\}$ is in $f(I)$.
 There exists $x_1 \in I$ with $x_1 < c$, so
@@ -3076,7 +3081,7 @@ There exists a rational number $q \in (a,b)$, so let $h(c) \coloneqq q$.
 Suppose $d \in E$ is another discontinuity.
 If $d > c$, there
 exists an $x \in I$ with $c < x < d$, and so $\lim_{x \to d^-} f(x) \geq b$.
-Hence the rational number we choose for $h(d)$ is different from $q$,
+Hence, the rational number we choose for $h(d)$ is different from $q$,
 since $q=h(c) < b$ and $h(d) > b$.
 Similarly if $d < c$.  After making such a choice for
 every element of $E$, we have a 

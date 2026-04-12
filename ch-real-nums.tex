@@ -1544,7 +1544,7 @@ Find an example where $f$ is unbounded but $\alpha f$ is bounded.
 
 \sectionnotes{0.5--1 lecture (proof of uncountability of $\R$ can be optional)}
 
-You surely saw the notation for intervals\index{interval}
+You have surely seen the notation for intervals\index{interval}
 before, but let us give a formal
 definition here.  For $a, b \in \R$ such that $a < b$, we define
 \glsadd{not:openbdinterval}%
@@ -1584,12 +1584,12 @@ The proof of the following proposition is left as an exercise.
 In short, an interval is a set with at least two points
 that contains all points between any two
 points.\footnote{Sometimes single point sets and the empty set are
-also called intervals, but in this book, intervals have at least 2 points.
+also called intervals, but in this book, intervals have at least two points.
 That is, we only defined the bounded intervals if $a < b$.}
 
 \begin{prop} \label{prop:intervaldef}
 A set $I \subset \R$ is an interval if and only if
-$I$ contains at least 2 points and
+$I$ contains at least two points and
 for all $a,c \in I$ and $b \in \R$ such that $a < b < c$, we have $b \in I$.
 \end{prop}
 
@@ -1698,7 +1698,7 @@ and so $y \neq x_n$.  As $y \neq x_n$ for all $n \in \N$, we have that $y
 
 We have constructed a real number $y$ that is not in $X$, and thus $X$
 is a proper subset of $\R$.
-The sequence $x_1,x_2,\ldots$ cannot contain all elements of $\R$
+The sequence $x_1,x_2,\ldots$ cannot contain all elements of $\R$,
 and thus $\R$ is uncountable.
 \end{proof}
 
@@ -1717,7 +1717,7 @@ bijection from $[-1,1]$ to $\R$.
 \begin{exercise} \label{exercise:intervaldef}
 Prove \propref{prop:intervaldef}.
 That is,
-suppose $I \subset \R$ is a subset with at least 2 elements
+suppose $I \subset \R$ is a subset with at least two elements
 such that if $a < b < c$ and $a, c \in I$, then $b \in I$.
 Prove that $I$ is one of the nine types of intervals explicitly
 given in this section.
@@ -1808,7 +1808,7 @@ if $C$ is the set of continuous functions, then $\sabs{\R} = \sabs{C}$.}
 \sectionnotes{1 lecture (optional)}
 
 We often think of real numbers as their
-\emph{\myindex{decimal representation}}.
+\emph{decimal representations}\index{decimal representation}.
 By a (decimal)
 \emph{\myindex{digit}}\index{decimal digit}, we mean an integer
 between $0$ and $9$.
@@ -1931,7 +1931,7 @@ D_n =
 \end{split}
 \end{equation*}
 In particular, $D_n < 1$ for all $n$.  A sum of nonnegative numbers is
-nonnegative so $D_n \geq 0$, and hence
+nonnegative, so $D_n \geq 0$, and hence
 \begin{equation*}
 0 \leq \sup_{n\in \N} \, D_n \leq 1 .
 \end{equation*}
@@ -1969,7 +1969,7 @@ First, we tackle the existence.
 For convenience, let $D_0 \coloneqq 0$.
 Then,
 $D_0 < x \leq D_0 + {10}^{-0}$.
-Suppose we defined the digits $d_1,d_2,\ldots,d_n$,
+Suppose we have defined the digits $d_1,d_2,\ldots,d_n$,
 and that
 $D_k < x \leq D_k + {10}^{-k}$, for $k=0,1,2,\ldots,n$.  We need to define $d_{n+1}$.
 
@@ -1982,12 +1982,12 @@ $x-D_n \leq j {10}^{-(n+1)}$.  Take the least such $j$ and obtain
 \end{equation}
 Let $d_{n+1} \coloneqq j-1$.
 As $D_n < x$,
-then $d_{n+1} = j-1 \geq 0$.  On the other hand, since
+we have $d_{n+1} = j-1 \geq 0$.  On the other hand, since
 $x-D_n \leq {10}^{-n}$, we have that
 $j$ is at most 10, and therefore $d_{n+1} \leq 9$.
 So $d_{n+1}$ is a
 decimal digit.
-Since $D_{n+1} = D_n + d_{n+1} {10}^{-(n+1)}$
+Since $D_{n+1} = D_n + d_{n+1} {10}^{-(n+1)}$,
 add $D_n$ to the inequality
 \eqref{eq:theDnjineq} above:
 \begin{multline*}
@@ -2100,7 +2100,7 @@ example.
 \myincludepdft{cantorexamplefig}{%
 Five numbers marked x sub 1 through x sub 5 are shown aligned one above the
 other in decimal notation.
-The first five decimal digits are shown for each number are shown.
+The first five decimal digits for each number are shown.
 In particular, x sub 1 is 0 dot 1 3 2 1 0 and ellipses implying
 the digits continue.
 The first digit, the 1, is marked with a box.
@@ -2140,7 +2140,8 @@ Therefore suppose that $x$ has a unique representation.
 We also suppose that $x \neq 1$ so $p < q$.
 
 To compute the first digit, take $10 p$ and divide by
-$q$.  Let $d_1$ be the quotient, and the remainder $r_1$ is some integer
+$q$.  Let $d_1$ be the quotient.
+The remainder $r_1$ is some integer
 between $0$ and $q-1$.  That is, $d_1$ is the largest integer
 such that $d_1 q \leq 10p$ and then $r_1 = 10p - d_1q$.
 As $p < q$, we have $d_1 < 10$, so $d_1$ is a digit.
@@ -2168,7 +2169,7 @@ After computing $n-1$ digits, we have
 $\frac{p}{q} = D_{n-1} + \frac{r_{n-1}}{10^{n-1} q}$.
 To get the $n$th digit,
 divide $10 r_{n-1}$ by $q$
-to get quotient $d_n$, remainder $r_n$, and the inequalities
+to get the quotient $d_n$, the remainder $r_n$, and the inequalities
 \begin{equation*}
 \frac{d_n}{10} \leq \frac{r_{n-1}}{q} =
 \frac{d_n}{10} + \frac{r_n}{10q} \leq \frac{d_n}{10} +

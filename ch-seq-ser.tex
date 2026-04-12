@@ -213,7 +213,7 @@ Now take an $n$ such that $n \geq M_1$ and also $n \geq M_2$, and estimate
 \end{split}
 \end{equation*}
 As $\sabs{y-x} < \epsilon$ for all $\epsilon > 0$, we have $\sabs{y-x} = 0$
-and $y=x$.  Hence the limit (if it exists) is unique.
+and $y=x$.  Hence, the limit (if it exists) is unique.
 \end{proof}
 
 \begin{prop}
@@ -347,7 +347,7 @@ Let $\epsilon > 0$ be arbitrary.  As $x$ is the supremum,
 there must be at least one $M \in \N$ such that $x_{M} > x-\epsilon$.
 As $\{ x_n \}_{n=1}^\infty$ is monotone increasing,
 it is easy to see (by \hyperref[induction:thm]{induction}) that
-$x_n \geq x_{M}$ for all $n \geq M$.  Hence for all $n \geq M$,
+$x_n \geq x_{M}$ for all $n \geq M$.  Hence, for all $n \geq M$,
 \begin{equation*}
 \sabs{x_n-x} = x-x_n \leq x-x_{M} < \epsilon  .
 \end{equation*}
@@ -483,7 +483,11 @@ implies
 \end{equation*}
 %mbxENDIGNORE
 %mbxlatex \begin{center}
-%mbxlatex \myincludepdft{tail_of_sequence_cd}{FIXMEALT}
+%mbxlatex \myincludepdft{tail_of_sequence_cd}{A diagram with
+%mbxlatex three implication arrows.  First arrow from (i) to (ii)
+%mbxlatex is labeled with "to prove".  Second arrow from (ii) to (iii)
+%mbxlatex is not labeled.  Third arrow from (iii) to (i) is
+%mbxlatex labeled with "to prove".}
 %mbxlatex \end{center}
 In the process we will also show that the limits are equal.
 
@@ -605,7 +609,7 @@ $\epsilon > 0$, there is an $M \in \N$ such that for all $n \geq M$,
 \sabs{x_n - x} < \epsilon .
 \end{equation*}
 It is not hard to prove (do it!) by \hyperref[induction:thm]{induction} that
-$n_i \geq i$ for all $i \in \N$.  Hence $i \geq M$ implies $n_i \geq M$.  Thus,
+$n_i \geq i$ for all $i \in \N$.  Hence, $i \geq M$ implies $n_i \geq M$.  Thus,
 for all $i \geq M$,
 \begin{equation*}
 \sabs{x_{n_i} - x} < \epsilon ,
@@ -865,7 +869,12 @@ See \figureref{figsqueeze}.
 \end{proof}
 
 \begin{myfigureht}
-\myincludepdft{figsqueeze}{FIXMEALT}
+\myincludepdft{figsqueeze}{%
+A diagram of the real line.  Points are marked on the line
+in order from left to right: x minus epsilon, a sub n, x, x sub n,
+b sub n, and x plus epsilon.  Arrows emphasize that the distance
+from x minus epsilon to x is epsilon and that the distance
+from x to x plus epsilon is also epsilon.}
 \caption{Squeeze lemma proof in picture.\label{figsqueeze}}
 \end{myfigureht}
 
@@ -1022,7 +1031,6 @@ We start with \ref{prop:contalg:i}.
 Suppose $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ are convergent sequences and
 write $z_n \coloneqq x_n + y_n$.  Let $x \coloneqq \lim_{n\to\infty} x_n$,
 $y \coloneqq \lim_{n\to\infty} y_n$, and $z \coloneqq x+y$.
-
 Let $\epsilon > 0$ be given.  
 Find an $M_1$ such that for all $n \geq M_1$,
 we have
@@ -1045,7 +1053,7 @@ For all $n \geq M$, we have
 = \epsilon.
 \end{split}
 \end{equation*}
-Therefore \ref{prop:contalg:i} is proved.
+Therefore, \ref{prop:contalg:i} is proved.
 The proof of \ref{prop:contalg:ii} is almost identical and is left as an
 exercise.
 
@@ -1054,7 +1062,6 @@ Let us tackle
 Suppose again that $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ are convergent sequences and
 write $z_n \coloneqq x_n y_n$.  Let $x \coloneqq \lim_{n\to\infty} x_n$,
 $y \coloneqq \lim_{n\to\infty} y_n$, and $z \coloneqq xy$.
-
 Let $\epsilon > 0$ be given.
 Let $K \coloneqq \max\{ \sabs{x}, \sabs{y}, \nicefrac{\epsilon}{3} , 1 \}$.
 Find an $M_1$ such that for all $n \geq M_1$,
@@ -1096,8 +1103,8 @@ K \geq 1\text{)}
 \end{equation*}
 
 Finally, we examine
-\ref{prop:contalg:iv}.  Instead of proving 
-\ref{prop:contalg:iv} directly, we prove the following simpler claim:
+\ref{prop:contalg:iv}.
+We prove the following simpler claim:
 
 Claim: \emph{If $\{ y_n \}_{n=1}^\infty$ is a convergent sequence such that
 $\lim_{n\to\infty} y_n \neq 0$ and $y_n \neq 0$ for all $n \in \N$, then
@@ -1108,7 +1115,7 @@ $\{ \nicefrac{1}{y_n} \}_{n=1}^\infty$ converges and}
 
 Once the claim is proved, we take the sequence
 $\{ \nicefrac{1}{y_n} \}_{n=1}^\infty$,
-multiply it by the sequence $\{ x_n \}_{n=1}^\infty$ and apply item
+multiply it by the sequence $\{ x_n \}_{n=1}^\infty$, and apply item
 \ref{prop:contalg:iii}.
 
 Proof of claim:  Let $\epsilon > 0$ be given.
@@ -1146,6 +1153,7 @@ We finish the proof of the claim:
 \frac{\sabs{y}^2 \frac{\epsilon}{2}}{\sabs{y}} \, \frac{2}{\sabs{y}}
 = \epsilon .
 \end{split}
+\avoidbreak
 \end{equation*}
 And we are done.
 \end{proof}
@@ -1238,7 +1246,7 @@ We simply note the reverse triangle inequality
 \begin{equation*}
 \big\lvert \sabs{x_n} - \sabs{x} \big\rvert \leq \sabs{x_n-x} .
 \end{equation*}
-Hence if $\sabs{x_n -x}$ can be made arbitrarily small, so can
+Hence, if $\sabs{x_n -x}$ can be made arbitrarily small, so can
 $\big\lvert \sabs{x_n} - \sabs{x} \big\rvert$.
 Details are left to the reader.
 \end{proof}
@@ -1301,7 +1309,7 @@ It is always true that $x_n^2+2 > 0$,
 and as
 $x_n > 0$, then $x_{n+1} = \frac{x_n^2+2}{2x_n} > 0$.
 
-Next let us
+Next we
 show that the sequence is monotone decreasing.  If we show that
 $x_n^2-2 \geq 0$ for all $n$, then $x_{n+1} \leq x_n$ for all $n$.
 Obviously $x_1^2-2 = 4-2 = 2 > 0$.  For an arbitrary $n$, we have 
@@ -1318,7 +1326,7 @@ x_{n+1}^2-2 =
 Since squares are nonnegative,
 $x_{n+1}^2-2 \geq 0$ for all $n$.  Therefore,
 $\{ x_n \}_{n=1}^\infty$ is monotone decreasing and bounded ($x_n > 0$ for all $n$), and 
-so the limit exists.  It remains to find the limit.
+the limit exists.  It remains to find the limit.
 
 Write
 \begin{equation*}
@@ -1373,7 +1381,7 @@ It is not always necessary to go back to the definition of convergence
 to prove that a sequence is convergent.  We first give a simple convergence test.
 The main idea is that 
 $\{ x_n \}_{n=1}^\infty$ converges to $x$ if and only if 
-$\{ \sabs{ x_n - x } \}_{n=1}^\infty$ converges to zero.
+$\bigl\{ \sabs{ x_n - x } \bigr\}_{n=1}^\infty$ converges to zero.
 
 \begin{prop} \label{convzero:prop}
 Let $\{ x_n \}_{n=1}^\infty$ be a sequence. 
@@ -1439,7 +1447,7 @@ Now consider $c > 1$.
 Let $B > 0$ be arbitrary.
 As $\nicefrac{1}{c} < 1$, the sequence $\bigl\{ {(\nicefrac{1}{c})}^n \bigr\}_{n=1}^\infty$
 converges to $0$.
-Hence for some large enough $n$, we get
+Hence, for some large enough $n$, we get
 \begin{equation*}
 \frac{1}{c^n} =
 {\left(\frac{1}{c}\right)}^n < \frac{1}{B} .
@@ -1491,7 +1499,11 @@ while the ratio $\frac{\sabs{x_{n+1}}}{\sabs{x_n}}$ is not going to be less than
 it will eventually be less than $r$, which is still less than 1.
 The intuitive idea of the proof is illustrated in \figureref{figratseq}.
 \begin{myfigureht}
-\myincludepdft{figratseq}{FIXMEALT}
+\myincludepdft{figratseq}{%
+A diagram of the real line with points L on the left, then
+a little to the right a point r and further to the right the point 1.
+shorter lines mark points congregating around around L and all less
+than r.}
 \caption{The short lines represent the ratios 
 $\frac{\sabs{x_{n+1}}}{\sabs{x_n}}$
 approaching $L < 1$.\label{figratseq}}
@@ -1773,7 +1785,7 @@ subsequences.
 
 We proved that every convergent sequence is bounded; nevertheless,
 there exist many bounded divergent sequences.  For instance,
-the sequence $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ is bounded,
+the sequence $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ is bounded
 but divergent.  All is not lost, however, and we can
 still compute certain limits with a bounded divergent sequence.
 
@@ -1832,7 +1844,7 @@ $\displaystyle \liminf_{n \to \infty} x_n \leq \limsup_{n \to \infty} x_n$.
 \begin{proof}
 Let us see why $\{ a_n \}_{n=1}^\infty$ is a decreasing sequence.  As $a_n$ is the least upper
 bound for $\{ x_k : k \geq n \}$, it is also
-an upper bound for the subset $\{ x_k : k \geq n+1 \}$.  Therefore
+an upper bound for the subset $\{ x_k : k \geq n+1 \}$.  Therefore,
 $a_{n+1}$, the least upper bound for
 $\{ x_k : k \geq n+1 \}$, has to be less than or equal to $a_n$,
 the least upper bound for
@@ -1850,7 +1862,7 @@ $\{ a_n \}_{n=1}^\infty$ and $\{ b_n \}_{n=1}^\infty$ are monotone and bounded.
 For the third item, note that $b_n \leq a_n$, as the $\inf$ of a nonempty set
 is less than or equal to its $\sup$.  The sequences $\{ a_n \}_{n=1}^\infty$
 and $\{ b_n \}_{n=1}^\infty$
-converge to the limsup and the liminf respectively.
+converge to the limsup and the liminf, respectively.
 Apply \lemmaref{limandineq:lemma} to obtain
 \begin{equation*}
 \lim_{n\to \infty} b_n \leq \lim_{n\to \infty} a_n.  \qedhere
@@ -2123,7 +2135,7 @@ $\{ x_{n_k} \}_{k=1}^\infty$ converges to $x$.
 
 \subsection{Bolzano--Weierstrass theorem}
 
-While it is not true that a bounded sequence is convergent, the
+While it is not true that every bounded sequence is convergent, the
 Bolzano--Weierstrass theorem tells us that we can at least find a convergent
 subsequence.
 The version of Bolzano--Weierstrass 
@@ -2201,7 +2213,7 @@ Let $x \coloneqq \lim_{i\to\infty} a_i$.  As $\{ a_i \}_{i=1}^\infty$ is monoton
 x = \sup \{ a_i : i \in \N \} .
 \end{equation*}
 Let $y \coloneqq \lim_{i\to\infty} b_i = \inf \{ b_i : i \in \N \}$.  Since $a_i < b_i$ for
-all $i$, then $x \leq y$.
+all $i$, we have $x \leq y$.
 As the sequences are monotone, we have (why?) that for all $i$,
 \begin{equation*}
 y-x \leq b_i-a_i = \frac{b_1-a_1}{2^{i-1}} .
@@ -2338,7 +2350,7 @@ Then $a_n = \infty$ for all $n$, since for every $M$,
 there exists an even $k$ such that $x_k = k \geq M$.
 On the other hand, $b_n = 0$ for all $n$, as
 for every $n$, the set
-$\{ b_k : k \geq n \}$ consists of $0$ and positive numbers.
+$\{ x_k : k \geq n \}$ consists of $0$ and positive numbers.
 So,
 \begin{equation*}
 \lim_{n\to \infty} x_n \quad \text{does not exist},
@@ -2741,7 +2753,7 @@ for all $n \geq M$,
 \sabs{x_n - x_M} < 1 .
 \end{equation*}
 By the reverse triangle inequality,
-$\sabs{x_n} - \sabs{x_M} \leq \sabs{x_n - x_M} < 1$.  Hence for $n \geq M$,
+$\sabs{x_n} - \sabs{x_M} \leq \sabs{x_n - x_M} < 1$.  Hence, for $n \geq M$,
 \begin{equation*}
 \sabs{x_n} < 1 + \sabs{x_M}.
 \end{equation*}
@@ -2766,7 +2778,7 @@ exists an $M$ such that for $n \geq M$,
 \begin{equation*}
 \sabs{x_n - x} < \frac{\epsilon}{2} .
 \end{equation*}
-Hence for $n \geq M$ and $k \geq M$,
+Hence, for $n \geq M$ and $k \geq M$,
 \begin{equation*}
 \sabs{x_n - x_k} = 
 \sabs{x_n - x + x - x_k}
@@ -2790,7 +2802,7 @@ Define $a \coloneqq \limsup_{n\to\infty} x_n$ and
 $b \coloneqq \liminf_{n\to\infty} x_n$.
 By \thmref{subseqlimsupinf:thm}, there exist subsequences
 $\{ x_{n_i} \}_{i=1}^\infty$ and
-$\{ x_{m_i} \}_{i=1}^\infty$, such that
+$\{ x_{m_i} \}_{i=1}^\infty$ such that
 \begin{equation*}
 \lim_{i\to\infty} x_{n_i} = a
 \qquad \text{and} \qquad
@@ -2853,7 +2865,7 @@ $\sabs{x_{n+1}-x_n}$ (or $\sabs{x_{n+j}-x_n}$ for a fixed $j$) going to zero as
 $n$ goes to
 infinity.  When we get to the partial sums of the harmonic series
 (see \exampleref{example:harmonicseries} in the next section), we will have
-a sequence such that $x_{n+1}-x_n = \nicefrac{1}{n}$,
+a sequence such that $x_{n+1}-x_n = \frac{1}{n+1}$,
 yet $\{ x_n \}_{n=1}^\infty$ is divergent.
 In fact, for that sequence,
 $\lim_{n\to\infty} \sabs{x_{n+j}-x_n} = 0$ for
@@ -2870,7 +2882,7 @@ of Cauchy sequences.
 
 \begin{exercise}
 Let $\{ x_n \}_{n=1}^\infty$ be a sequence such that
-there exists a positive $C < 1$ and for all $n$,
+there exists a positive $C < 1$ and for all $n \geq 2$,
 \begin{equation*}
 \sabs{x_{n+1} - x_n} \leq C \sabs{x_{n}-x_{n-1}} .
 \end{equation*}
@@ -3049,7 +3061,15 @@ The equality is immediate when $k=1$.  The proof for general $k$
 follows by \hyperref[induction:thm]{induction}, which we leave to the
 reader.  See \figureref{figcutseries} for an illustration.
 \begin{myfigureht}
-\myincludepdft{figcutseries}{FIXMEALT}
+\myincludepdft{figcutseries}{%
+A diagram of the real line.  The point 0 is on the left and the point
+1 is on the right.  A distance of one half is marked from the 0 to
+one half.  Then the distance of one quarter is marked from one half
+to the point at 3 quarters.  Then a distance of one eighth is marked from
+3 quarters to 7 eighths.  The distance one half plus one quarter plus one
+eighth, which puts together the three aforementioned distances.
+Lastly the remaining distance of one eighth from 7 eighths to 1 is also
+marked.}
 \caption{The equality 
 $\left( \sum_{n=1}^k \frac{1}{2^n} \right)
 + \frac{1}{2^k}
@@ -3096,7 +3116,7 @@ one of the few series for which we can so explicitly find the limit.
 \medskip
 
 \pagebreak[2]
-As for sequences we can talk about a \emph{\myindex{tail of a series}}.
+As with sequences, we can talk about a \emph{\myindex{tail of a series}}.
 
 \begin{prop}
 Let $\sum_{n=1}^\infty x_n$ be a series.  Let $M \in \N$.  Then
@@ -3139,7 +3159,7 @@ and $k \geq M$, we have
 \abs{ \left( \sum_{i=1}^k x_i \right) - \left( \sum_{i=1}^n x_i \right) }
 < \epsilon .
 \end{equation*}
-Without loss of generality we assume $n < k$.  Then we write
+Without loss of generality, we assume $n < k$.  Then we write
 \begin{equation*}
 \abs{ \left( \sum_{i=1}^k x_i \right) - \left( \sum_{i=1}^n x_i \right) }
 =
@@ -3178,7 +3198,7 @@ Thus we find an $M$ such that for every $n \geq M$,
 =
 \sabs{ x_{n+1} } .
 \end{equation*}
-Hence for every $n \geq M+1$, we have $\sabs{x_{n}} < \epsilon$.
+Hence, for every $n \geq M+1$, we have $\sabs{x_{n}} < \epsilon$.
 \end{proof}
 
 \begin{example}
@@ -3249,7 +3269,7 @@ As $\{ \nicefrac{k}{2} \}_{k=1}^\infty$ is unbounded by the
 \hyperref[thm:arch:i]{Archimedean property},
 $\{ s_{2^k} \}_{k=1}^\infty$ is unbounded,
 and therefore $\{ s_n \}_{n=1}^\infty$ is unbounded.
-Hence $\{ s_n \}_{n=1}^\infty$ diverges, and consequently $\sum_{n=1}^\infty \nicefrac{1}{n}$ diverges.
+Hence, $\{ s_n \}_{n=1}^\infty$ diverges, and consequently $\sum_{n=1}^\infty \nicefrac{1}{n}$ diverges.
 \end{example}
 
 Like finite sums, convergent series behave linearly.
@@ -3366,8 +3386,8 @@ If the series $\sum_{n=1}^\infty x_n$ converges absolutely, then it converges.
 \end{prop}
 
 \begin{proof}
-A series is convergent if and only if it is Cauchy.  Hence
-suppose $\sum_{n=1}^\infty \sabs{x_n}$ is Cauchy.  That is, for every $\epsilon > 0$,
+A series is convergent if and only if it is Cauchy.
+Suppose $\sum_{n=1}^\infty \sabs{x_n}$ is Cauchy.  That is, for every $\epsilon > 0$,
 there exists an $M$ such that for all $k \geq M$ and all $n > k$, we have 
 \begin{equation*}
 \sum_{i=k+1}^n \sabs{x_i} 
@@ -3384,7 +3404,7 @@ We apply the triangle inequality for a finite sum to obtain
 <
 \epsilon .
 \end{equation*}
-Hence $\sum_{n=1}^\infty x_n$ is Cauchy, and therefore it converges.
+Hence, $\sum_{n=1}^\infty x_n$ is Cauchy, and therefore it converges.
 \end{proof}
 
 If $\sum_{n=1}^\infty x_n$ converges absolutely, the limits of
@@ -3402,7 +3422,8 @@ a proof of which we leave as an exercise:
 Absolutely convergent series have many wonderful properties.
 For example, absolutely convergent
 series can be rearranged arbitrarily, or we can multiply such
-series together easily.  Conditionally convergent series on the other hand
+series together easily.  Conditionally convergent series,
+on the other hand,
 often do not behave as one would expect.  See the next section.
 
 We leave it as an exercise to show that
@@ -3419,7 +3440,7 @@ $\sum_{n=1}^\infty \frac{{(-1)}^n}{n}$ is a conditionally convergent series.
 
 \subsection{Comparison test and the \texorpdfstring{$p$}{p}-series}
 
-We noted above that for a series with positive terms to converge
+We noted above that for a series with positive terms to converge,
 the terms not only have to go to zero, but they have to go to zero
 \myquote{fast enough.}  If we know about convergence of a certain series,
 we can use the following comparison test to see if the terms of another
@@ -3451,7 +3472,7 @@ $\sum_{n=1}^k y_n \leq B$ for all $k$, and so
 \begin{equation*}
 \sum_{n=1}^k x_n \leq \sum_{n=1}^k y_n \leq B.
 \end{equation*}
-Hence the partial sums for $\sum_{n=1}^\infty x_n$
+Hence, the partial sums for $\sum_{n=1}^\infty x_n$
 are also bounded.  Since the partial sums are a monotone increasing sequence
 they are convergent.  The first item is thus proved.
 
@@ -3463,7 +3484,7 @@ together with \eqref{comptest:eq} we see that for every $B \in
 \begin{equation*}
 B \leq \sum_{n=1}^k x_n \leq \sum_{n=1}^k y_n .
 \end{equation*}
-Hence the partial sums for $\sum_{n=1}^\infty y_n$ are also unbounded, and
+Hence, the partial sums for $\sum_{n=1}^\infty y_n$ are also unbounded, and
 $\sum_{n=1}^\infty y_n$ also diverges.
 \end{proof}
 
@@ -3592,7 +3613,7 @@ Thus the sequence of partial sums is bounded, and the series converges.
 \end{proof}
 
 Neither the $p$-series test nor the comparison test 
-tell us what the sum converges to.  They only tell us that a limit
+tells us what the sum converges to.  They only tell us that a limit
 of the partial sums exists.  For instance, while we know that
 $\sum_{n=1}^\infty \nicefrac{1}{n^2}$ converges, it is far harder to
 find\footnote{Demonstration of this fact is
@@ -3720,8 +3741,8 @@ limit as $k$ goes to infinity on the right-hand side above to obtain
 \end{split}
 \end{equation*}
 The right-hand side is a number that does not depend on $k$.
-Hence the sequence of partial sums of $\sum_{n=1}^\infty \sabs{x_n}$ is bounded
-and $\sum_{n=1}^\infty \sabs{x_n}$ is convergent.  Thus $\sum_{n=1}^\infty x_n$ is
+Hence, the sequence of partial sums of $\sum_{n=1}^\infty \sabs{x_n}$ is bounded
+and $\sum_{n=1}^\infty \sabs{x_n}$ is convergent.  Thus, $\sum_{n=1}^\infty x_n$ is
 absolutely convergent.
 \end{proof}
 
@@ -3744,7 +3765,7 @@ Therefore, the series converges absolutely by the ratio test.
 
 \begin{exercise}
 Suppose the $k$th partial sum of $\displaystyle \sum_{n=1}^\infty x_n$ is $s_k = \frac{k}{k+1}$.
-Find the series, that is, find $x_n$, prove that the series converges, and
+Find the series (that is, find $x_n$), prove that the series converges, and
 then find the limit.
 \end{exercise}
 
@@ -4181,7 +4202,7 @@ Let us show that the alternating harmonic series
 $\sum_{n=1}^\infty \frac{{(-1)}^{n+1}}{n}$, which does not converge absolutely, can be
 rearranged to converge to anything.
 The odd terms and the even terms diverge to
-plus infinity and minus infinity respectively (prove this!):
+plus infinity and minus infinity, respectively (prove this!):
 \begin{equation*}
 \sum_{m=1}^\infty \frac{1}{2m-1} = \infty, \qquad \text{and} \qquad
 \sum_{m=1}^\infty \frac{-1}{2m} = -\infty .
@@ -4205,19 +4226,21 @@ eventually we pass $L$ and switch
 to the evens (resp.\ odds).  So we switch infinitely many times.
 
 Finally, let $N$ be the $N$ where we just pass $L$ and switch.
-For example, suppose we have just switched from odd to even (so we start
-subtracting),
-and let $N' > N$ be where we first switch back from even to odd.  Then
+Suppose we have just switched from odd to even, so we start
+subtracting.
+Suppose we keep subtracting until some
+$N' > N$ and we will switch back from even to odd in the next step.
+Then
 \begin{equation*}
-L + \frac{1}{\sigma(N)} \geq \sum_{n=1}^{N-1} a_{\sigma(n)}
-> \sum_{n=1}^{N'-1} a_{\sigma(n)} > L- \frac{1}{\sigma(N')}.
+L + \frac{1}{\sigma(N)} \geq \sum_{n=1}^{N} a_{\sigma(n)}
+> \sum_{n=1}^{N'} a_{\sigma(n)} > L- \frac{1}{\sigma(N')}.
 \end{equation*}
 Similarly for switching in the other direction.
 Therefore,
-the sum up to $N'-1$ is within $\frac{1}{\min \{ \sigma(N), \sigma(N') \}}$
+the sum up to $N'$ is within $\frac{1}{\min \{ \sigma(N), \sigma(N') \}}$
 of $L$.  As
 we switch infinitely many times, $\sigma(N) \to \infty$
-and $\sigma(N') \to \infty$. Hence
+and $\sigma(N') \to \infty$. Hence,
 \begin{equation*}
 \sum_{n=1}^\infty a_{\sigma(n)} = 
 \sum_{n=1}^\infty \frac{{(-1)}^{\sigma(n)+1}}{\sigma(n)} = L .
@@ -4252,7 +4275,7 @@ the German mathematician
 \href{https://en.wikipedia.org/wiki/Franz_Mertens}{Franz Mertens}
 (1840--1927).}]
 Suppose $\sum_{n=0}^\infty a_n$ and $\sum_{n=0}^\infty b_n$ are two convergent series, converging
-to $A$ and $B$ respectively.  Suppose at least one of the series
+to $A$ and $B$, respectively.  Suppose at least one of the series
 converges absolutely.  Define
 \begin{equation*}
 c_n \coloneqq a_0 b_n + a_1 b_{n-1} + \cdots + a_n b_0 = \sum_{i=0}^n a_i b_{n-i} .
@@ -4267,7 +4290,7 @@ $\sum_{n=0}^\infty a_n$ and $\sum_{n=0}^\infty b_n$.
 \begin{proof}
 Suppose $\sum_{n=0}^\infty a_n$ converges absolutely, and let $\epsilon > 0$ be
 given.
-In this proof instead of picking complicated estimates just to make
+In this proof, instead of picking complicated estimates just to make
 the final estimate come out as less than $\epsilon$,
 let us simply obtain an estimate that depends on $\epsilon$
 and can be made arbitrarily small.
@@ -4448,7 +4471,7 @@ is a series of the form
 \end{equation*}
 A power series is really a function of $x$, and
 many important functions in analysis can be written
-as a power series.  We use the convention that
+as power series.  We use the convention that
 $0^0 = 1$ (that is, if $x=x_0$ and $n=0$).
 
 A power series is said to be
@@ -4551,7 +4574,15 @@ in \exampleref{ps:expex}, the radius of convergence is $\rho=\infty$,
 and in \exampleref{ps:divergeex}, the radius of convergence is $\rho=0$.
 
 \begin{myfigureht}
-\myincludepdft{ps-conv}{FIXMEALT}
+\myincludepdft{ps-conv}{%
+A diagra of the real line with three points marked, from left to
+right, x sub 0 minus rho, x sub 0, and x sub 0 plus rho.
+The part of the line to the left of x sub 0 minus rho and
+the part of the line to the right of x sub 0 plus rho is labeled
+as "diverges".  The interval between x sub 0 minus rho and
+x sub 0 plus rho is shaded and labeled as "converges absolutely". 
+The two points x sub 0 minus rho and x sub 0 plus rho are labeled
+with question marks.}
 \caption{Convergence of a power series.\label{ps:convfig}}
 \end{myfigureht}
 
@@ -4645,7 +4676,7 @@ where
 $c_n = a_0b_n + a_1 b_{n-1} + \cdots + a_n b_0$.
 \end{prop}
 
-For all $x$ with $\sabs{x-x_0} < \rho$, we have two convergent series so
+For all $x$ with $\sabs{x-x_0} < \rho$, we have two convergent series, so
 their term-by-term addition and multiplication by constants
 follows by the previous section.
 As for such $x$ the series converges absolutely,
@@ -4799,7 +4830,7 @@ $\lim\limits_{k\to\infty} s_{n_k} = x$.
 \begin{exercise}
 For the following power series, find if they are convergent or not, and
 if so find their radius of convergence.
-On part f), do note the factorial in the exponent.
+In part f), do note the factorial in the exponent.
 
 \medskip
 
@@ -4867,7 +4898,7 @@ Find the radius of convergence and prove your claim.
 \begin{enumerate}[a)]
 \item
 Prove that $\lim_{n\to\infty} n^{1/n} = 1$ using the following procedure:  Write $n^{1/n} = 1+b_n$ and
-note $b_n > 0$.  Then show that ${(1+b_n)}^n \geq 
+note $b_n > 0$ when $n > 1$.  Then show that ${(1+b_n)}^n \geq 
 \frac{n(n-1)}{2}b_n^2$ and use this to show that $\lim\limits_{n\to\infty} b_n = 0$.
 \item
 Use the result of part a) to show that
