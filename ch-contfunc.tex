@@ -562,7 +562,8 @@ $\bigl( S \cap (-\infty,c) \bigr) \cup \bigl( S \cap (c,\infty) \bigr)
 \subsection{Exercises}
 
 \begin{exercise}
-Find the limit (and prove it of course) or prove that the limit does not exist
+Find the limit (and prove it of course) or prove that the limit does not
+exist:
 
 \medskip
 
@@ -743,7 +744,13 @@ When $f \colon S \to \R$ is continuous at all $c \in S$, then we simply say
 $f$ is a \emph{\myindex{continuous function}}\index{function!continuous}.
 \end{defn}
 \begin{myfigureht}
-\myincludepdft{contigr}{FIXMEALT}
+\myincludepdft{contigr}{%
+A diagram of the graph of a function y equals f of x,
+near a point x equals c.  The graph is shown and the
+strip within delta of c is shown and a strip within
+epsilon of f of c is shown.  The box that fits within
+both strips is shaded, and within this range the graph
+fits within the vertical range.}
 \caption{For $\sabs{x-c} < \delta$, the graph of $f(x)$ should be within the gray region.\label{fig:contigr}}
 \end{myfigureht}
 
@@ -755,8 +762,8 @@ the converse does not hold (as we will see in \exampleref{example:removabledisco
 
 Continuity may be the most important definition to understand in analysis,
 and it is not an easy one.  See \figureref{fig:contigr}.
-Note that $\delta$ not only
-depends on $\epsilon$, but also on $c$;  we need not pick
+Note that $\delta$ depends not only
+on $\epsilon$, but also on $c$;  we need not pick
 one $\delta$ for all $c \in S$.
 It is no accident 
 that the definition of continuity is similar to the definition of a
@@ -1001,8 +1008,8 @@ at $c$.
 \begin{proof}
 Let $\{ x_n \}_{n=1}^\infty$ be a sequence in $A$ such that
 $\lim_{n\to\infty} x_n = c$.
-As $g$ is continuous at $c$, we have $\bigl\{ g(x_n) \bigr\}_{n=1}^\infty$ converges to $g(c)$.
-As $f$ is continuous at $g(c)$, we have $\bigl\{ f\bigl(g(x_n)\bigr)
+As $g$ is continuous at $c$, we have  that$\bigl\{ g(x_n) \bigr\}_{n=1}^\infty$ converges to $g(c)$.
+As $f$ is continuous at $g(c)$, we have that $\bigl\{ f\bigl(g(x_n)\bigr)
 \bigr\}_{n=1}^\infty$ converges
 to $f\bigl(g(c)\bigr)$.
 Thus $f \circ g$ is continuous at $c$.
@@ -1065,7 +1072,12 @@ not continuous at 0.  See
 \figureref{fig:jumpdiscont}.
 
 \begin{myfigureht}
-\myincludegraphics{jumpdiscont}{FIXMEALT}
+\myincludegraphics{jumpdiscont}{%
+A graph of a function that is minus 1 for negative x
+and 1 for nonnegative x.  The points minus 1,
+minus a half, minus a third, etc. are marked on
+the x-axis and the corresponding values on
+the graph are marked with dots.}
 \caption{Jump discontinuity.  The values of
 $f(\nicefrac{-1}{n})$ and $f(0)$ are marked as black dots.\label{fig:jumpdiscont}}
 \end{myfigureht}
@@ -1100,10 +1112,11 @@ The function $f$ is discontinuous at all $c \in \R$.
 
 Proof:
 If $c$ is rational, take a sequence $\{ x_n \}_{n=1}^\infty$
-of irrational numbers such that $\lim_{n\to\infty} x_n = c$ (why can we?).  Then $f(x_n) = 0$
+of irrational numbers in $(0,1)$ such that $\lim_{n\to\infty} x_n = c$ (why can we?).  Then $f(x_n) = 0$
 and so $\lim_{n\to\infty} f(x_n) = 0$, but $f(c) = 1$.
-If $c$ is irrational, take a sequence of rational numbers
+If $c$ is irrational, take a sequence
 $\{ x_n \}_{n=1}^\infty$
+of rational numbers in $(0,1)$
 that converges to $c$ (why can we?).  Then $\lim_{n\to\infty} f(x_n) = 1$, but $f(c) = 0$.
 \end{example}
 
@@ -1134,7 +1147,13 @@ We claim that
 $f$ is continuous at all irrational $c$ and 
 discontinuous at all rational $c$.
 \begin{myfigureht}
-\myincludegraphics{popcornfig}{FIXMEALT}
+\myincludegraphics{popcornfig}{%
+A graph of a function that is composed of dots.
+These dots seem arranged in what seems like
+various triangles, but it is clear this
+function is discontinuous at all those points,
+and there are more and more of such points
+the closer we get to the x-axis.}
 \caption{Graph of the \myquote{popcorn function.}\label{popcornfig}}
 \end{myfigureht}
 
@@ -1175,7 +1194,7 @@ is because if we would change the definition of $g$, by insisting that
 $g(0)$ be $0$, we would obtain a continuous function.  On the other hand,
 let $f$ be the function of \exampleref{example:jumpdiscont}.
 Then $f$ does not have a
-removable discontinuity at $0$.  No matter how we would define $f(0)$ the function
+removable discontinuity at $0$.  No matter how we would define $f(0)$, the function
 would still fail to be continuous.  The difference is that 
 $\lim_{x\to 0} g(x)$ exists while
 $\lim_{x\to 0} f(x)$ does not.
@@ -1189,13 +1208,13 @@ and $g$ is in fact continuous on $B$.
 \subsection{Exercises}
 
 \begin{exercise}
-Using the definition of continuity directly prove that
+Using the definition of continuity directly, prove that
 $f \colon \R \to \R$ defined by
 $f(x) \coloneqq x^2$ is continuous.
 \end{exercise}
 
 \begin{exercise}
-Using the definition of continuity directly prove that
+Using the definition of continuity directly, prove that
 $f \colon (0,\infty) \to \R$ defined by
 $f(x) \coloneqq \nicefrac{1}{x}$ is continuous.
 \end{exercise}
@@ -1210,7 +1229,7 @@ x^2 & \text{if } x \text{ is irrational.}
 \end{cases}
 \avoidbreak
 \end{equation*}
-Using the definition of continuity directly prove that
+Using the definition of continuity directly, prove that
 $f$ is continuous at $1$ and discontinuous at $2$.
 \end{exercise}
 
@@ -1251,7 +1270,7 @@ Prove that the restriction $f|_A$ is continuous.
 \end{exercise}
 
 \begin{exercise}
-Suppose $S \subset \R$, such that $(c-\alpha,c+\alpha) \subset S$ for some $c \in \R$
+Suppose $S \subset \R$ such that $(c-\alpha,c+\alpha) \subset S$ for some $c \in \R$
 and $\alpha > 0$.
 Let $f \colon S \to \R$ be a function and $A \coloneqq (c-\alpha,c+\alpha)$.  Prove that
 if $f|_A$ is continuous at $c$, then $f$ is continuous at $c$.
@@ -1282,7 +1301,7 @@ Let $f \colon \Z \to \R$ be a function.  Show that $f$ is continuous.
 \end{exercise}
 
 \begin{exercise} \label{exercise:contseqalt}
-Let $f \colon S \to \R$ be a function and $c \in S$, such that for every
+Let $f \colon S \to \R$ be a function and $c \in S$ such that for every
 sequence $\{ x_n \}_{n=1}^\infty$ in $S$ with $\lim_{n\to\infty} x_n = c$, the sequence
 $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges.  Show that $f$ is continuous at $c$.
 \end{exercise}
@@ -1324,7 +1343,7 @@ continuous.
 Suppose $f \colon [-1,1] \to \R$ is a function continuous at all $x \in
 [-1,1] \setminus \{ 0 \}$.  Show that for every $\epsilon$ such
 that $0 < \epsilon < 1$, there exists
-a function $g \colon [-1,1] \to \R$ continuous on all of $[-1,1]$, such that
+a function $g \colon [-1,1] \to \R$ continuous on all of $[-1,1]$ such that
 $f(x) = g(x)$ for all $x \in [-1,-\epsilon] \cup [\epsilon,1]$, and 
 $\babs{g(x)} \leq \babs{f(x)}$ for all $x \in [-1,1]$.
 \end{exercise}
@@ -1375,7 +1394,7 @@ A continuous function $f \colon [a,b] \to \R$ is bounded.
 \begin{proof}
 We prove the claim by contrapositive.  Suppose $f$ is not bounded.
 Then for each
-$n \in \N$, there is an $x_n \in [a,b]$, such that
+$n \in \N$, there is an $x_n \in [a,b]$ such that
 \begin{equation*}
 \babs{f(x_n)} \geq n .
 \end{equation*}
@@ -1423,7 +1442,13 @@ $S$}, and we call
 $f(c)$ the \emph{absolute minimum (resp.\ absolute maximum)}.
 %See \figureref{fig:minmax}.
 \begin{myfigureht}
-\myincludegraphics{minmax}{FIXMEALT}
+\myincludegraphics{minmax}{%
+A graph  of a function on the interval from a to b.
+The graph is between two horizontal lines,
+one marked as the absolute maximum of f which equals
+f of c, and
+one marked as the absolute minimum of f which equals
+f of d.}
 \caption{$f \colon [a,b] \to \R$ achieves an absolute maximum $f(c)$ at
 $c$, and an absolute minimum $f(d)$ at $d$.\label{fig:minmax}}
 \end{myfigureht}
@@ -1441,7 +1466,7 @@ A continuous function $f \colon [a,b] \to \R$
 achieves both an absolute minimum and an absolute maximum on $[a,b]$.
 \end{thm}
 
-Again, we remark that is important that the domain of $f$ is a closed and bounded interval $[a,b]$.
+Again, we remark that it is important that the domain of $f$ is a closed and bounded interval $[a,b]$.
 
 \begin{proof}
 The lemma says that $f$ is bounded, so
@@ -1474,8 +1499,9 @@ y \coloneqq \lim_{i\to\infty} y_{m_i}.
 \end{equation*}
 As $a \leq x_{n_i} \leq b$ for all $i$, we have $a \leq x \leq b$.
 Similarly, $a \leq y \leq b$.  So $x$ and $y$ are in $[a,b]$.
-A limit of a subsequence is the same as the limit of the
-sequence, and we can take a limit past the continuous function $f$:
+For convergence sequences,
+a limit of a subsequence is the same as the limit of the
+sequence.  Also, we can take a limit past the continuous function $f$.  So,
 \begin{equation*}
 \inf f\bigl([a,b]\bigr) = \lim_{n\to\infty} f(x_n)
 = \lim_{i\to\infty} f(x_{n_i}) = 
@@ -1554,13 +1580,33 @@ $b_{n+1} \coloneqq \frac{a_n+b_n}{2}$.
 $b_{n+1} \coloneqq b_n$.
 \end{enumerate}
 \begin{myfigureht}
-\myincludegraphics{bisect}{FIXMEALT}
+\myincludegraphics{bisect}{%
+Graph of a function that crosses the
+x-axis at c going upwards.  The interval
+a sub 1 to b sub 1 is marked and f is negative
+at a sub 1 and positive at b sub 1.
+Next interval is a sub 2 which is equal to a sub 1
+and b sub 2 is in the middle of the previous interval.
+Again the function is negative at a sub 2 and positive
+at b sub 2.  We continue with the intervals
+with f being negative on the left and positive
+on the right.
+The next interval is from a sub 3 which equals
+a sub 2 and b sub 3 which
+is in the middle of the previous interval.  
+For the next interval, a sub 4 is in the middle and
+b sub 4 is equal to b sub 3.
+The next a sub 5 is in the middle again and b sub 5 
+is equal to b sub 4.  The number c is
+inside all of these intervals.}
 \caption{Finding roots (bisection method).\label{bisectfig}}
 \end{myfigureht}
-See \figureref{bisectfig} for an example defining the first five steps.
+See \figureref{bisectfig} for an example of the first five steps.
 If $a_n < b_n$, then $a_n < \frac{a_n+b_n}{2} < b_n$.  So
 $a_{n+1} < b_{n+1}$.
-Thus by \hyperref[induction:thm]{induction} $a_n < b_n$ for all $n$.
+As $a_1 = a < b = b_1$,
+\hyperref[induction:thm]{induction} gives that
+$a_n < b_n$ for all $n$.
 Furthermore, $a_n \leq a_{n+1}$ and 
 $b_n \geq b_{n+1}$ for all $n$, that is, the sequences are monotone.
 As $a_n < b_n \leq b_1 = b$ and 
@@ -1583,8 +1629,9 @@ infinity to get
 \begin{equation*}
 d-c = \lim_{n\to\infty} (b_n - a_n) =
 \lim_{n\to\infty} 2^{1-n} (b-a) = 0.
+\avoidbreak
 \end{equation*}
-In other words, $d=c$.
+In other words, $c=d$.
 
 By construction, for all $n$,
 \begin{equation*}
@@ -1744,7 +1791,7 @@ In the proof,
 In particular, if $d$ is odd, then ${(-n)}^d = -(n^d)$.
 
 We appeal to the intermediate value theorem to find a
-$c \in (-K,M)$, such that $g(c) = 0$.  As $g(x) = \frac{f(x)}{a_d}$,
+$c \in (-K,M)$ such that $g(c) = 0$.  As $g(x) = \frac{f(x)}{a_d}$,
 then $f(c) = 0$, and the proof is done.
 \end{proof}
 
@@ -1801,7 +1848,11 @@ is a closed and bounded interval or a single number.
 \end{cor}
 
 \begin{myfigureht}
-\myincludepdft{figimageinterval}{FIXMEALT}
+\myincludepdft{figimageinterval}{%
+A graph of a function y equals f of x on the interval
+from a to b marked in a bold line.  On the vertical
+axis, the set of all values achieved by the function
+is marked as f of the closed interval from a to b.}
 \caption{The image of a continuous $f \colon [a,b] \to \R$.\label{fig:imageinterval}}
 \end{myfigureht}
 
@@ -1885,8 +1936,8 @@ $f(x) = x$.
 \end{exercise}
 
 \begin{exercise}
-Find an example of a continuous bounded function $f \colon \R \to \R$ that does
-not achieve an absolute minimum nor an absolute maximum on $\R$.
+Find an example of a continuous bounded function $f \colon \R \to \R$ that
+achieves neither an absolute minimum nor an absolute maximum on $\R$.
 \end{exercise}
 
 \begin{exercise}
@@ -1960,7 +2011,7 @@ A uniformly continuous function must be continuous.
 The only difference in the definitions
 is that in uniform continuity,
 for a given $\epsilon > 0$ we pick a $\delta > 0$ that
-works for all $c \in S$.  That is, $\delta$ can no longer depend on $c$,
+works for all $c \in S$.  That is, $\delta$ can no longer depend on $c$;
 it only depends on $\epsilon$.  The domain of definition
 of the function makes a difference now.  A function that is not uniformly
 continuous on a larger set may be uniformly continuous when restricted to a
@@ -2008,7 +2059,7 @@ contradiction.
 The function $f \colon (0,1) \to \R$ defined by $f(x) \coloneqq \nicefrac{1}{x}$ is not
 uniformly continuous.
 
-Proof: Given $\epsilon > 0$, then $\epsilon >
+Proof: Given $\epsilon > 0$, the inequality $\epsilon >
 \abs{\nicefrac{1}{x}-\nicefrac{1}{y}}$ holds if and only if
 \begin{equation*}
 \epsilon >
@@ -2022,7 +2073,8 @@ or
 \begin{equation*}
 \sabs{x-y} < xy \epsilon .
 \end{equation*}
-Suppose $\epsilon < 1$, and we wish to see if a 
+Suppose $\epsilon < 1$.
+We wish to see if a 
 small $\delta > 0$ would work.
 If $x \in (0,1)$ and 
 $y = x+\nicefrac{\delta}{2} \in (0,1)$,
@@ -2030,7 +2082,8 @@ then $\sabs{x-y} = \nicefrac{\delta}{2} < \delta$.
 We plug $y$ into the inequality above to get $\nicefrac{\delta}{2} <
 x \bigl( x+\nicefrac{\delta}{2} \bigr) \epsilon < x$.
 If the definition of uniform continuity is satisfied, then
-the inequality $\nicefrac{\delta}{2} < x$ holds for all $x > 0$.   But then $\delta \leq 0$.
+the inequality $\nicefrac{\delta}{2} < x$ would hold for all small $x > 0$.
+But that implies $\delta \leq 0$.
 Therefore, no single $\delta > 0$ works for all points.
 \end{example}
 
@@ -2049,7 +2102,7 @@ We prove the statement by contrapositive.
 Suppose $f$ is not uniformly continuous.  We will prove
 that there is some
 $c \in [a,b]$ where $f$ is not continuous.  Let us negate
-the definition of uniformly continuous.
+the definition of uniform continuouity:
 There exists an $\epsilon > 0$
 such that for every $\delta > 0$, there exist points $x, y$ in $[a,b]$ with
 $\sabs{x-y} < \delta$ and $\babs{f(x)-f(y)} \geq \epsilon$.
@@ -2095,7 +2148,8 @@ Or in other words,
 \epsilon .
 \end{equation*}
 At least one of the sequences $\bigl\{ f(x_{n_k}) \bigr\}_{k=1}^\infty$  or
-$\bigl\{ f(y_{n_k}) \bigr\}_{k=1}^\infty$ cannot converge to $f(c)$, otherwise the
+$\bigl\{ f(y_{n_k}) \bigr\}_{k=1}^\infty$ cannot converge to $f(c)$.
+Otherwise the
 left-hand side of the inequality would go to zero while the right-hand side is positive.
 Thus $f$ cannot be continuous at $c$.
 \end{proof}
@@ -2164,7 +2218,8 @@ The sequence $\{ x_n \}_{n=1}^\infty$ is Cauchy, so by
 \lemmaref{unifcauchycauchy:lemma}
 the sequence $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ is Cauchy and thus convergent.
 Let $L_1 \coloneqq \lim_{n\to\infty} f(x_n)$.  Take another sequence
-$\{ y_n \}_{n=1}^\infty$ in $(a,b)$ such that $\lim_{n\to\infty} y_n = a$.  By the same reasoning
+$\{ y_n \}_{n=1}^\infty$ in $(a,b)$ such that $\lim_{n\to\infty} y_n = a$.
+By the same reasoning,
 we get $L_2 \coloneqq \lim_{n\to\infty} f(y_n)$.  If we show that $L_1 = L_2$, then
 the limit $L_a = \lim_{x\to a} f(x)$ exists.  Let $\epsilon > 0$ be given.
 Find $\delta > 0$ such that $\sabs{x-y} < \delta$ implies $\babs{f(x)-f(y)} <
@@ -2200,16 +2255,18 @@ exists, then $\lim_{x\to a} \widetilde{f}(x)$ exists
 and equals $L_a$
 (see \propref{prop:limrest}).  Similarly for $L_b$.
 Hence, $\widetilde{f}$ is continuous at $a$ and $b$.  
-And since $f$ is continuous at $c \in (a,b)$, then
+And since $f$ is continuous at $c \in (a,b)$,
+we find that
 $\widetilde{f}$ is continuous at $c \in (a,b)$ (\propref{prop:limrest} again).
 \end{proof}
 
 A typical application of this proposition (together with
 \propref{prop:onesidedlimits})
 is the following.
-Suppose $f \colon (-1,0) \cup (0,1) \to \R$ is uniformly continuous,
+If $f \colon (-1,0) \cup (0,1) \to \R$ is uniformly continuous,
 then $\lim_{x\to 0} f(x)$ exists and the function
-has a \emph{\myindex{removable singularity}}; that is,
+has a \emph{\myindex{removable singularity}}.
+That is,
 we can extend the function to a continuous function on $(-1,1)$.
 
 
@@ -2220,14 +2277,14 @@ A function $f \colon S \to \R$
 is \emph{\myindex{Lipschitz continuous}}\index{function!Lipschitz}%
 \footnote{Named after the German mathematician
 \href{https://en.wikipedia.org/wiki/Rudolf_Lipschitz}{Rudolf Otto Sigismund Lipschitz}
-(1832--1903).} if there exists a $K \in \R$, such that
+(1832--1903).} if there exists a $K \in \R$ such that
 \begin{equation*}
 \babs{f(x)-f(y)} \leq K \sabs{x-y} 
 \qquad \text{for all } x \text{ and } y \text{ in } S.
 \end{equation*}
 \end{defn}
 
-A large class of functions is Lipschitz continuous.  Be careful, just as
+A large class of functions is Lipschitz continuous.  Be careful. Just as
 for uniformly continuous functions, the
 domain of definition of the function is important.  See the examples below
 and the exercises.  First, we justify the use of the word \emph{continuous}.
@@ -2264,7 +2321,12 @@ continuous if and only if every line that intersects the graph of $f$ in at leas
 distinct
 points has slope in absolute value less than or equal to $K$.  See \figureref{fig:lipschitz}.
 \begin{myfigureht}
-\myincludegraphics{lipschitzfig}{FIXMEALT}
+\myincludegraphics{lipschitzfig}{%
+A graph of a function with some corners.  Two
+points on the horizontal axis are marked with x
+and y.  A line through the corresponding points
+on the graph is drawn and its slope is labeled
+as f of x minus f of y all divided by x minus y.}
 \caption{The slope of a secant line.
 A function is Lipschitz if %$\abs{\text{slope}} =
 $\abs{\frac{f(x)-f(y)}{x-y}} \leq K$ for all $x$ and $y$.\label{fig:lipschitz}}
@@ -2305,21 +2367,34 @@ As $x \geq 1$ and $y \geq 1$, we see that $\frac{1}{\sqrt{x}+\sqrt{y}}
 
 On the other hand, $g \colon [0,\infty) \to \R$ defined by
 $g(x) \coloneqq \sqrt{x}$ is not Lipschitz continuous.  Proof:
-Suppose for all $x,y \in [0,\infty)$,
+Suppose there is a $K$ so that for all $x,y \in [0,\infty)$,
 \begin{equation*}
 \abs{\sqrt{x}-\sqrt{y}} 
 \leq
 K \sabs{x-y} ,
 \end{equation*}
-for some $K$.  Set $y=0$ to obtain
-$\sqrt{x} \leq K x$.   If $K > 0$, then for $x > 0$ we get
+We find that $K > 0$, as $K < 0$ is impossible,
+and $K=0$ would mean that $f$ is constant.
+Set $y=0$ to obtain
+$\sqrt{x} \leq K x$.
+For $x > 0$, we get
 $\nicefrac{1}{K} \leq \sqrt{x}$ or $\nicefrac{1}{K^2} \leq x$.
 This cannot possibly be true for all
-$x > 0$.  Thus no such $K > 0$ exists and $g$ is not
+$x > 0$.  Thus no $K$ exists and $g$ is not
 Lipschitz continuous.  See \figureref{fig:sqrtgraph} and note how secant
 lines would be more and more vertical as we get closer to $x=0$.
 \begin{myfigureht}
-\myincludegraphics{sqrtgraph}{FIXMEALT}
+\myincludegraphics{sqrtgraph}{%
+A graph of a function that starts rising vertically
+at the left endpoint and quickly curves to become
+much more horizontal at the right and point.
+Secant lines through the left endpoint and a
+sequence of points on the graph getting closer
+and closer to the left endpoint are drawn.
+We notice that the secant lines are more
+and more vertical as the second
+point on the secant line is closer
+to the left endpoint.}
 \caption{Graph of $\sqrt{x}$ and some secant lines through $(0,0)$ and
 $(x,\sqrt{x})$.\label{fig:sqrtgraph}}
 \end{myfigureht}
@@ -2454,7 +2529,9 @@ If $f \colon [0,1] \to \R$ is given by $f(x) \coloneqq x^m$ for an integer
 $m \geq 0$,
 show $f$ is Lipschitz and find the best (the smallest) Lipschitz constant
 $K$ (depending on $m$ of course).
-Hint: $(x-y)(x^{m-1} + x^{m-2}y + x^{m-3}y^2 + \cdots + x y^{m-2} + y^{m-1}) = x^m - y^m$.
+Hint:
+$(x-y)(x^{m-1} + x^{m-2}y + x^{m-3}y^2 + \cdots + x y^{m-2} + y^{m-1}) = x^m
+- y^m$ for positive $m$.
 \item
 Using the previous exercise, show that if $f \colon [0,1] \to \R$
 is a polynomial, that is, $f(x) \coloneqq a_m x^m + a_{m-1} x^{m-1} + \cdots + a_0$,
@@ -2468,7 +2545,8 @@ Suppose for $f \colon [0,1] \to \R$, we have $\babs{f(x)-f(y)} \leq K
 \sabs{x-y}$ for all $x,y$ in $[0,1]$,
 and $f(0) = f(1) = 0$.
 Prove that $\babs{f(x)} \leq \nicefrac{K}{2}$ for all $x \in [0,1]$.  Further show by example that
-$\nicefrac{K}{2}$ is the best possible, that is, there exists such a continuous function
+$\nicefrac{K}{2}$ is the best possible.
+That is, fund such a continuous function
 for which $\babs{f(x)} = \nicefrac{K}{2}$ for some $x \in [0,1]$.
 \end{exercise}
 
@@ -2517,7 +2595,7 @@ Lipschitz.
 
 \subsection{Limits at infinity}
 
-As for sequences, a continuous variable can also approach infinity.
+Just as with sequences, a continuous variable can also approach infinity.
 
 \begin{defn}
 We say $\infty$ is a \emph{\myindex{cluster point}} of $S \subset \R$ if for every
@@ -2536,8 +2614,8 @@ that for every $\epsilon > 0$, there is an $M \in \R$ such that
 \end{equation*}
 whenever $x \in S$ and $x \geq M$, then we say $f(x)$
 \emph{converges}\index{converges!function} to $L$
-as $x$ goes to $\infty$.  We call $L$ the \emph{limit}
-and write
+as $x$ goes to $\infty$.  We call $L$ a \emph{limit}
+and, if unique, write
 \glsadd{not:limfuncinf}
 \begin{equation*}
 \lim_{x \to \infty} f(x) \coloneqq L .
@@ -2585,9 +2663,10 @@ The proof for $-\infty$ is left to the reader.
 
 \begin{example}
 Let $f(x) \coloneqq \sin(\pi x)$.  Then $\lim_{x\to\infty} f(x)$ does not exist.
-To prove this fact note that if $x = 2n+\nicefrac{1}{2}$ for some $n \in
+To prove this fact, note that if $x = 2n+\nicefrac{1}{2}$ for some $n \in
 \N$, then $f(x)=1$,
-while if $x = 2n+\nicefrac{3}{2}$, then $f(x)=-1$.  So they cannot both be
+while if $x = 2n+\nicefrac{3}{2}$, then $f(x)=-1$.
+Both of these values, $1$ and $-1$, cannot be
 within a small $\epsilon$ of a single real number.
 
 Be careful not to confuse continuous limits with limits of sequences.
@@ -2596,19 +2675,19 @@ We could say
 \lim_{n \to \infty} \sin(\pi n) = 0, \qquad \text{but} \qquad
 \lim_{x \to \infty} \sin(\pi x) \enspace \text{does not exist}.
 \end{equation*}
-Of course the notation is ambiguous:  Are we thinking of the
+Of course, the notation is ambiguous:  Are we thinking of the
 sequence $\bigl\{ \sin (\pi n) \bigr\}_{n=1}^\infty$ or the function $\sin(\pi x)$
 of a real variable?  We are simply using the convention
 that $n \in \N$, while $x \in \R$.  When the notation is not clear,
 it is good to explicitly mention where the variable lives, or what kind
-of limit are you using.  If there is a possibility of confusion, one can
+of limit you are using.  If there is a possibility of confusion, one can
 write, for example,
 \begin{equation*}
 \lim_{\substack{n \to \infty\\n \in \N}} \sin(\pi n) .
 \end{equation*}
 \end{example}
 
-There is a connection of continuous limits to limits of sequences, but we must take all
+There is a connection between continuous limits and limits of sequences, but we must take all
 sequences going to infinity, just as before in \lemmaref{seqflimit:lemma}.
 
 \begin{lemma} \label{seqflimitinf:lemma}
@@ -2628,21 +2707,25 @@ is left as an exercise.
 
 \begin{proof}
 First suppose $f(x) \to L$ as $x \to \infty$.
-Given an $\epsilon > 0$, there exists an $M$ such that for all $x \geq M$,
+Given an $\epsilon > 0$, there exists an $M$ such that for all $x \in S$
+where $x \geq M$,
 we have $\babs{f(x)-L} < \epsilon$.
 Let $\{ x_n \}_{n=1}^\infty$
 be a sequence in $S$ such that $\lim_{n\to\infty} x_n = \infty$.  Then there exists an
-$N$ such that for all $n \geq N$, we have $x_n \geq M$.  And thus
+$N$ such that
+$x_n \geq M$
+for all $n \geq N$.
+Thus
 $\babs{f(x_n)-L} < \epsilon$.
 
 We prove the converse by contrapositive.  Suppose $f(x)$ does
 not go to $L$ as $x \to \infty$.
-This means that there exists an $\epsilon > 0$,
+This means that there exists an $\epsilon > 0$
 such that for every $n \in \N$, there exists an $x \in S$, $x \geq n$, let
 us call it $x_n$, such that $\babs{f(x_n)-L} \geq \epsilon$.
 Consider the sequence $\{ x_n \}_{n=1}^\infty$.  Clearly 
 $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ does not converge to $L$.  It remains to note
-that $\lim_{n\to\infty} x_n = \infty$, because $x_n \geq n$ for all $n$.
+that $\lim_{n\to\infty} x_n = \infty$ because $x_n \geq n$ for all $n$.
 \end{proof}
 
 Using the lemma, we again translate results about sequential
@@ -2680,11 +2763,13 @@ or we say that $f(x) \to \infty$ as $x \to \infty$.
 \end{defn}
 
 A similar definition can be made for limits as $x \to -\infty$
-or as $x \to c$ for a finite $c$.  Also similar definitions can be
+or as $x \to c$ for a finite $c$.  Also, similar definitions can be
 made for limits being $-\infty$.  Stating these definitions is left
 as an exercise.
 Note that
-sometimes \emph{\myindex{converges to infinity}} is used.
+sometimes the slightly incorrect (in this context)
+wording
+\emph{\myindex{converges to infinity}} is used.
 We can again use sequential limits, and an analogue of 
 \lemmaref{seqflimit:lemma} is left as an exercise.
 
@@ -2708,8 +2793,9 @@ So
 
 \subsection{Compositions}
 
-Finally, just as for limits at finite numbers we can compose functions
-easily.
+Finally, just as for limits at finite numbers,
+limits play nice with compositions given a
+continuity assumption.
 
 \begin{prop} \label{prop:inflimcompositions}
 Suppose $f \colon A \to B$, $g \colon B \to \R$, $A, B \subset \R$, 
@@ -3190,7 +3276,14 @@ y-1 & \text{if } y \geq 1.
 It is not difficult to see that $f^{-1}$ is a continuous function.  See
 \figureref{invcontfig} for the graphs.
 \begin{myfigureht}
-\myincludepdft{invcontfigAB}{FIXMEALT}
+\myincludepdft{invcontfigAB}{%
+Two graphs.  On the left, an upward sloping diagonal linethat goes from
+bottom left to the origin (not including the origin),
+then jumps up and then continues diagonally up.
+On the the right graph, the first line giving the
+graph is the same, but then the graph skips a short
+interval and the line starts again on the horizontal
+axis going diagonally up again.}
 \caption{Graph of $f$ on the left and $f^{-1}$ on the right.\label{invcontfig}}
 \end{myfigureht}
 \end{example}
