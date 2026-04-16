@@ -63,7 +63,14 @@ f(x) =
 See \figureref{x2nfig}.
 
 \begin{myfigureht}
-\myincludegraphics{x2nfig}{FIXMEALT}
+\myincludegraphics{x2nfig}{%
+Graphs of the functions x squared, x to the four, x to the six, and
+x to the sixteen.  The graphs are over the region from minus 1 to 1,
+and all start at the same point on the left-hand side and all end
+at the same point on the right-hand side (as the functions are all 1
+at the endpoints).  Inside the interval the higher powers make the graph
+flatter and closer to the x-axis in the middle, but they have to then rise more
+steeply back to 1 when we get to the ends of the interval.}
 \caption{Graphs of $f_1$, $f_2$, $f_3$, and $f_8$ for $f_n(x) \coloneqq
 x^{2n}$.\label{x2nfig}}
 \end{myfigureht}
@@ -121,7 +128,18 @@ as when $x=0$ or $x=\pi$.  It is left as an exercise that in any interval
 $[a,b]$, there exists an $x$ such that $\sin(xn)$ does not have a limit
 as $n$ goes to infinity.  See \figureref{fig:nonconvsinxn}.
 \begin{myfigureht}
-\myincludegraphics{nonconvsinxn}{FIXMEALT}
+\myincludegraphics{nonconvsinxn}{%
+Graphs of a number of sine waves, with higher frequencies in lighter
+gray.  It is almost like we are trying to fill out
+a horizontal strip by drawing wavy lines.
+The all the curves start at the same point on the
+x-axis on the left-hand side
+going upwards, and all go through same point on the x-axis on
+the right hand side going up.
+All the curves go through the center on the x-axis, but some upwards 
+and some downwards.
+Similar patterns repeat at other points, but only some
+of the higher frequency lines go through those points.}
 \caption{Graphs of $\sin(nx)$ for
 $n=1,2,\ldots,10$, with higher $n$ in lighter gray.%
 \label{fig:nonconvsinxn}}
@@ -163,7 +181,11 @@ for all $n \geq N$,
 \end{equation*}
 \end{defn}
 \begin{myfigureht}
-\myincludegraphics{uniformconv}{FIXMEALT}
+\myincludegraphics{uniformconv}{%
+A graph of a function marked f with a strip marked around the function
+with its boundary marked f minus epsilon and f plus epsilon.  A function
+marked f sub n is shown as a wiggly line that fits entirely within
+this strip.}
 \caption{In uniform convergence,
 for $n \geq N$,
 the functions $f_n$ are within a strip of $\pm\epsilon$ from $f$.%
@@ -594,7 +616,11 @@ f_n(x) \coloneqq
 See \figureref{contconvcntr:fig}.
 
 \begin{myfigureht}
-\myincludegraphics{contconvcntr}{FIXMEALT}
+\myincludegraphics{contconvcntr}{%
+A graph of a function on the interval
+from 0 to 1, where the function is 1 at the left-hand endpoint, then
+its graph is a straight line down to 0 on the x axis where x is 1 over n.
+Then the function is zero until the right-hand endpoint.}
 \caption{Graph of $f_n(x)$.%
 \label{contconvcntr:fig}}
 \end{myfigureht}
@@ -691,7 +717,11 @@ n-n^2x &  \text{if } 0 < x < \nicefrac{1}{n},\\
 See \figureref{intconvcntr:fig}.
 
 \begin{myfigureht}
-\myincludegraphics{intconvcntr}{FIXMEALT}
+\myincludegraphics{intconvcntr}{%
+A graph of a function on the interval 0 to 1 that is 0 on the left-hand side,
+but then there is a jump discontinuity and it is given by a
+downward line from the point (0,n) down to the x-axis
+where x is 1 over n.  It is then 0 for the rest of the interval.}
 \caption{Graph of $f_n(x)$.%
 \label{intconvcntr:fig}}
 \end{myfigureht}
@@ -885,7 +915,10 @@ does not converge even pointwise.
 For example, $f_n'(\pi) = {(-1)}^n$.
 Moreover, $f_n'(0) = 1$ for all $n$, which does converge, but not to $0$.
 \begin{myfigureht}
-\myincludegraphics{conv1nsinxn}{FIXMEALT}
+\myincludegraphics{conv1nsinxn}{%
+a sine wave for 10 different frequencies, but now it is also scaled
+down for higher frequencies, so now the higher frequencies are 
+closer to the x-axis, so it no longer fills a strip.}
 \caption{Graphs of $\frac{\sin(nx)}{n}$ for
 $n=1,2,\ldots,10$, with higher $n$ in lighter gray.%
 \label{fig:conv1nsinxn}}
@@ -910,7 +943,16 @@ interval containing $0$.
 The limit of $f_n$ is not differentiable at $0$---it is not even
 continuous at $0$.  See \figureref{fig:convder1over1pnxsq}.
 \begin{myfigureht}
-\myincludegraphics{convder1over1pnxsq}{FIXMEALT}
+\myincludegraphics{convder1over1pnxsq}{%
+Two plots with each giving several functions
+in different shades of gray.
+On the left is a plot of a bell-shape curve, with the peak being narrower
+(but of the same height) for the lighter shades of gray.
+On the right is the derivative, so it is positive with a peak before
+the origin, then it goes through the origin and has a minimum past the
+origin before going back up towards the x-axis.  As the 
+color becomes lighter the peaks and minima are thinner and go further
+away from the x-axis.}
 \caption{Graphs of $\frac{1}{1+nx^2}$ and its derivative
 for $n=1,2,\ldots,10$, with higher $n$ in lighter gray.%
 \label{fig:convder1over1pnxsq}}
@@ -1522,7 +1564,16 @@ $y(x_0)=y_0$ and $y'(x) = F\bigl(x,y(x)\bigr)$.  See
 this equation called a
 \emph{\myindex{slope field}}.
 \begin{myfigureht}
-\myincludegraphics{sampleslopes}{FIXMEALT}
+\myincludegraphics{sampleslopes}{%
+A piece of the xy-plane near the origin with
+a rectangular grid of slopes.  On the left half of the plot
+the slopes go downward, but become flatter as we go up.
+On the right half of the point they point upward, and
+again become flatter as we go up.
+A point (x sub 0, y sub 0) is given in the first quadrant.
+A graph of a solution is drawn that starts above
+the x-axis goes down and then goes back up and through the
+given point.}
 \caption{A \emph{slope field} giving the slope $F(x,y)$ at each point,
 in this case $F(x,y)=x(1-y)$.  A solution is drawn going through the point
 $(x_0,y_0)=(1,0.3)$, notice how it follows the slopes.\label{fig:sampleslopes}}
@@ -1898,7 +1949,17 @@ f_3(x) & = 1 + \int_0^x f_2(s)\,ds =
 We recognize the beginning of the Taylor series for the exponential.
 See \figureref{fig:exppicard}.
 \begin{myfigureht}
-\myincludegraphics{exppicardfig}{FIXMEALT}
+\myincludegraphics{exppicardfig}{%
+A graph of the exponential function as
+a solid curve in the
+region for x between a bit less than minus 1 and
+a bit more than 1.
+Several dashed curves give approximations.
+They all go through the point (0,1).
+First a horizontal line.  Then a line
+with the same slope as the exponential at (0,1).
+Then two further curved approximations that get yet closer
+to the exponential, especially near x equals 0.}
 \caption{The exponential (solid line) together with $f_0$, $f_1$, $f_2$,
 $f_3$ (dashed).\label{fig:exppicard}}
 \end{myfigureht}

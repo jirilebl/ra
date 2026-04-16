@@ -768,14 +768,14 @@ sometimes just \emph{\myindex{neighborhood}}).
 
 \begin{myfigureht}
 \myincludepdft{msopenset}{%
-A blob in the plane marked in light gray,
+A region in the plane marked in light gray,
 with a dotted boundary and labeled as V.
-Inside the blob there is a dotted
+Inside the region there is a dotted
 circle with center
 at a point marked x of radius delta and labeled
 as B of x comma delta.  The circle and its inside
 is shaded darker gray and lies completely inside the
-lighter gray blob.}
+lighter gray region.}
 \caption{Open set in a metric space.  Note that $\delta$ depends on $x$.\label{fig:msopenset}}
 \end{myfigureht}
 
@@ -1064,13 +1064,13 @@ S =
 
 \begin{myfigureht}
 \myincludepdft{disconsubset}{%
-Two shaded blobs with a solid boundary are both
+Two shaded regions with a solid boundary are both
 labeled S.  A dotted line surrounds each shaded
-blob.
+region.
 The inside of the first one is marked U sub 1
 and the inside of the second one is marked U sub 2.
 The insides of the two dotted lines do intersect, but
-each shaded blob is inside only one of the dotted
+each shaded region is inside only one of the dotted
 lines.}
 \caption{Disconnected subset.  Notice that $U_1 \cap U_2$ need
 not be empty, but $U_1 \cap U_2 \cap S = \emptyset$.\label{fig:disconsubset}}
@@ -2346,7 +2346,16 @@ such that $B(x_n,\delta) \subset U_{\lambda_n}$.
 See \figureref{fig:seqcompactiscompact}.
 
 \begin{myfigureht}
-\myincludepdft{seqcompactiscompact}{FIXMEALT}
+\myincludepdft{seqcompactiscompact}{%
+A shaded region with a solid boundary is marked K.
+Four points in K are marked x sub 1, x sub 2, x sub 3, and x sub 4.
+Circles of radius delta are drawn centered at x sub 1, x sub 2, and x sub 3.
+Around each of these circles there are three regions marked in dotted
+line marked U sub lambda sub 1, 
+U sub lambda sub 2,  and
+U sub lambda sub 3.
+The discs, and therefore the surrounding regions seem to be slowly
+covering the set K entirely on the left-hand side of the picture.}
 \caption{Covering $K$ by $U_{\lambda}$.  The points
 $x_1,x_2,x_3,x_4$, 
 the three sets 
@@ -2851,7 +2860,12 @@ See \figureref{fig:mscontfuncpt}.
 \end{lemma}
 
 \begin{myfigureht}
-\myincludepdft{mscontfuncpt}{FIXMEALT}
+\myincludepdft{mscontfuncpt}{%
+On the left side is a darkly shaded region marked W with dotted boundary,
+It is contained in a lightly shaded region marked f inverse of U
+with dash-dotted boundary.  On the right is a lightly shaded blob
+marked U with dotted boundary.  There is a point marked c in the region W
+has an arrow marked f connecting it to a point f of c in the region U.}
 \caption{For every neighborhood $U$ of $f(c)$, the set $f^{-1}(U)$ contains an open
 neighborhood $W$ of $c$.\label{fig:mscontfuncpt}}
 \end{myfigureht}

@@ -55,9 +55,6 @@ int main()
   //label(P(-1.0/6+0.06,0.1),P(0,10),"{\\small $\\cdots$}",c);
   label(P(-1.0/5+0.06,-0.1),P(0,-7),"{\\small $\\cdots$}",c);
 
-  line(P(-1.1,0),P(1.1,0));
-  line(P(0,-1.1),P(0,1.1));
-
   bold();
   line(P(-1,-1),P(0,-1));
   line(P(0,1),P(1,1));
@@ -73,6 +70,15 @@ int main()
        P(0,-1.034),
        P(0,-0.966),
        P(-0.05,-0.966));
+
+  plain();
+  nofill();
+
+  // Interestingly if we draw this before, the circ is
+  // very thin, somehow the line doesn't get reset
+  // unless we draw something
+  line(P(-1.1,0),P(1.1,0));
+  line(P(0,-1.1),P(0,1.1));
 
   circ(P(0,-1));
        
