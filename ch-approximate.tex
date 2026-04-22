@@ -1792,7 +1792,17 @@ the graph behaves like the real exponential, and in the $y$ direction
 (the imaginary direction) the graph oscillates.
 
 \begin{myfigureht}
-\myincludepdft{real_imag_exp}{FIXMEALT}
+\myincludepdft{real_imag_exp}{%
+The surface graphs. 
+For a fixed x both graphs are sinusoidal in the y direction
+with the amplitude of the oscillations being larger for larger x.
+In fact for negative x the graph is so small at this scale that it is
+impossible to note the oscillations there.
+In the right graph the sinusoidal wave is shifted so that
+on the left the graph goes up exponentially above the x-axis
+while on the right the graph above the x-axis is simply zero,
+that is the x-axis is contained in the graph.  The graph above
+x-axis is marked with a bold line on the graph.}
 \caption{Graphs of the real part (left) and imaginary part (right)
 of the complex exponential $e^z = e^{x+iy}$.  The $x$-axis goes from $-4$ to
 $4$, the $y$-axis goes from $-6$ to $6$, and the vertical axis goes from
@@ -3163,7 +3173,11 @@ so that $\int_{-1}^1 q_n(x)\,dx = 1$.
 See \figureref{fig:weierqn}.
 
 \begin{myfigureht}
-\myincludegraphics{weierqn}{FIXMEALT}
+\myincludegraphics{weierqn}{%
+Graphs of many functions on the interval minus 1 to 1.
+They are all a symmetric "bump" above the x-axis.  The lowest
+and widest bump is in dark color, and then taller and thinner peaks
+are in increasingly lighter shade of gray.}
 \caption{Plot of the approximate delta functions $q_n$ on $[-1,1]$ for
 $n=5,10,15,20,\ldots,100$ with higher $n$ in lighter shade.\label{fig:weierqn}}
 \end{myfigureht}
@@ -3183,7 +3197,15 @@ function $g$ around the point $x$ using $q_n$ as the weight.
 See \figureref{fig:approxdeltaconv}.
 
 \begin{myfigureht}
-\myincludegraphics{approxdeltaconv}{FIXMEALT}
+\myincludegraphics{approxdeltaconv}{%
+Graphs of three functions on the interval minus 1 to 1.
+There is a point on the x-axis marked simply x.  Symmetric about the
+point x, there is a light gray positive function whose graph is a peak
+centered at x and decaying rapidly as we get further away from x.
+In gray, there is a graph of a function that is simply a jagged line.
+In black is the product of the two graphs which is mostly almost zero where
+the light gray line is zero, and hear the peak the shape of the jagged
+gray line is magnified.}
 \caption{For $x=0.3$, the plot of $q_{100}(x-t)$ (light gray peak centered
 at $x$), some continuous function
 $g(t)$ (the jagged line) and the product $g(t)q_{100}(x-t)$ (the bold line).\label{fig:approxdeltaconv}}
