@@ -576,7 +576,12 @@ converges and
 \end{example}
 
 \begin{myfigureht}
-\myincludegraphics{fouriersern2}{FIXMEALT}
+\myincludegraphics{fouriersern2}{%
+A graph of a function in a bold line that is 
+wave with a shallow down slope and steep upslope.
+Several approximations are given in shades of gray,
+where the darker (earlier) ones are closer to a regular sine wave
+and the lighter ones are closer to the dark bold line.}
 \caption{Plot of 
 $\sum_{n=1}^\infty \frac{\sin(n x)}{n^2}$ including
 the first 8 partial sums in various shades of gray.\label{fig:fouriersern2}}
@@ -1082,7 +1087,15 @@ function itself; we can only graph its real or imaginary parts for lack
 of dimensions in our universe.
 
 \begin{myfigureht}
-\myincludepdft{real_imag_1over1mz}{FIXMEALT}
+\myincludepdft{real_imag_1over1mz}{%
+Two surface graphs in 3D over the xy-plane.  On both graphs a vertical line
+is marked above a point (1,0) on the xy-plane.  The graphs are shown on a
+small patch around the origin and ending before getting to the (1,0) point.
+The left graph is flatter away from the vertical line and goes upwards
+steeply as we get closer to the vertical line.  The right graph is similar,
+but goes upwards steeply as we get closer to the vertical line from
+the region where y is negative and goes steeply down as we approach the
+vertical line from the region where y is positive.}
 \caption{Graphs of the real and imaginary parts of $z=x+iy \mapsto \frac{1}{1-z}$
 in the square $[-0.8,0.8]^2$.  The singularity at $z=1$ is marked with a
 vertical dashed line.\label{fig:1over1mz}}
@@ -3773,7 +3786,22 @@ $g_x(x) = f(x)$.
 \end{proof}
 
 \begin{myfigureht}
-\myincludepdft{stonegx}{FIXMEALT}
+\myincludepdft{stonegx}{%
+A graph of several functions in two dimensions.  On the horizontal
+axis three points from left to right are marked, y sub 1, y sub 2,
+and x.  A graph of a function f is given in dark bold line.
+A graph of f minus epsilon is given underneath in a dotted line.
+A graph of h sub y sub 1 is given in long dashes and starts above
+f on the left, crosses the graph of f at y sub 1, then goes below
+even f minus epsilon for a while in particular around y sub 2,
+then goes up through the graph of f again at x.
+A graph of h sub y sub 2 starts below f minus epsilon, then goes up,
+crosses the graph of f at y sub 2, the crosses it
+back down at x.  Notably at every point either the graph of h sub y sub 1
+or h sub y sub 2 is above f minus epsilon, and the higher value of these two
+is highlighted in a thick gray line and marked g sub x, again
+in particular the graph of g sub x notably lies above f minus epsilon
+and agrees with f at x.}
 \caption{Construction of $g_x$ out of two $h_{y_1}$ (longer dashes) and
 $h_{y_2}$ (shorter dashes).\label{fig:stonegx}}
 \end{myfigureht}
@@ -4459,7 +4487,22 @@ s_N(g;x) =
 See the right hand graph in \figureref{fig:fourierheavicsaw}.
 
 \begin{myfigureht}
-\myincludepdft{fourierheavi_csaw}{FIXMEALT}
+\myincludepdft{fourierheavi_csaw}{%
+Two graphs of 2 pi periodic functions shown over an interval
+slightly larger than from minus pi to pi.  On the left,
+the rectangular wave is shown which starts at value 1 when x is
+less than minus pi, then becomes minus 1 from minus pi to 0, then
+becomes 1 from 0 to pi, then becomes minus pi again.
+On the right, a triangular (in particular continuous) wave is shown
+that is an upward sloping straight line hitting pi at minus pi, then a
+downward sloping straight line hitting 0 at 0, then going
+up again to pi at pi, then down again.
+Several partial sum approximations of the Fourier series are graphed
+in lighter shades of gray
+approximating the two functions.  Notably on the left the approximations
+are visibly worse with lots of viggles around the straight segments, while
+on the right the approximations quickly seem to approximate only
+approaching slowly near the corners of the graph.}
 \caption{The functions $h$ and $g$ in bold, with several
 symmetric partial sums in gray.\label{fig:fourierheavicsaw}}
 \end{myfigureht}
