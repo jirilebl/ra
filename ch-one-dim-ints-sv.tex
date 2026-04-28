@@ -160,7 +160,10 @@ also extends to a continuous function of $x$ and $y$
 for $(x,y) \in [0,1] \times [0,1]$ (also part of the exercise).
 See \figureref{fig:diffunderexample}.
 \begin{myfigureht}
-\myincludegraphics{diffunderexample}{FIXMEALT}
+\myincludegraphics{diffunderexample}{%
+Surface plot of a function in the first quadrant on the xy-plane.
+The function is zero on both the x and the y axes, however it rises very
+steeply from the y axis.}
 \caption{The graph $z= \frac{x^y-1}{\ln(x)}$ on $[0,1] \times [0,1]$.\label{fig:diffunderexample}}
 \end{myfigureht}
 
@@ -250,7 +253,12 @@ is continuously differentiable.
 \end{exercise}
 
 \begin{myfigureht}
-\myincludegraphics{diffunderex916}{FIXMEALT}
+\myincludegraphics{diffunderex916}{%
+Surface plot of a function on the unit square.  On the axes the
+function is zero and is otherwise positive, except at the origin,
+where there seems to be a discontinuity and it appears 
+that as we move from the inside of the square towards the origin we would
+attain a positive value rather than zero.}
 \caption{The graph $z= \frac{xy^3}{{(x^2+y^2)}^2}$ on
 $[0,1] \times [0,1]$.\label{fig:diffunderex916}}
 \end{myfigureht}
@@ -434,7 +442,17 @@ Let $\gamma \colon [0,4] \to \R^2$ be defined by
 \end{cases}
 \end{equation*}
 \begin{myfigureht}
-\myincludegraphics{squarepath}{FIXMEALT}
+\myincludegraphics{squarepath}{%
+A diagram of a square in the xy-plane with arrows showing
+that at t equals 0 we are at the origin.
+Then there is an arrow rightwards
+to (1,0) where we are at t equals 1.
+Then there is an arrow upwards
+to (1,1) where we are at t equals 2.
+Then there is an arrow leftwards
+to (0,1) where we are at t equals 3.
+Finally, there is an arrow downwards to the
+origin where we are at t equals 4.}
 \caption{The path $\gamma$ traversing the unit square.\label{fig:squarepath}}
 \end{myfigureht}
 
@@ -488,7 +506,16 @@ differentiable, yet the image $\gamma(\R) = \bigl\{ (x,y) \in \R^2 : (x,y) =
 More complicated examples with, say, infinitely many corners exist,
 see the exercises.
 \begin{myfigureht}
-\myincludegraphics{cornersmoothpath}{FIXMEALT}
+\myincludegraphics{cornersmoothpath}{%
+A diagram of a path in the plane.  The path has arrow indicating
+the following movement.  Starting above the origin on the y-axis
+a point where t equals minus 1 is marked.  The path moves along the y-axis
+downwards and then, much closer to the
+origin, is a point marked t equals minus one half.
+The origin is labeled t equals 0.  The path suddenly changes direction
+rightwards to go along the x-axis.  A point near the origin is
+marked t equals one half, then some distance further is a point marked t
+equals 1.}
 \caption{``Smooth'' path with a corner if we allow zero derivative.  The
 points corresponding to several values of
 $t$ are marked with dots.\label{fig:cornersmoothpath}}
@@ -1091,7 +1118,11 @@ Then $\gamma^{\:\prime}(t) = y-x$, and therefore
 The length of $[x,y]$ is the standard euclidean distance between $x$ and $y$,
 justifying the name.
 \begin{myfigureht}
-\myincludegraphics{straightpath}{FIXMEALT}
+\myincludegraphics{straightpath}{%
+A diagram of a straight line path from a point x
+to the point y, this direction is indicated as an arrow.
+The path is labeled [x,y].  The point x is also labeled as t equals 0
+and the point y is also labeled as t equals 1.}
 \caption{Straight path between $x$ and $y$ parametrized
 by $(1-t)x + ty$.\label{fig:straightpath}}
 \end{myfigureht}
@@ -1453,7 +1484,11 @@ $x+he_j$ that also happens to pass through $x$, and then we cut this path in
 two, see \figureref{fig:pathindantider}.
 
 \begin{myfigureht}
-\myincludepdft{pathindantider}{FIXMEALT}
+\myincludepdft{pathindantider}{%
+A diagram where the horizontal direction is labeled as e sub j.
+A point p is marked, and then a path going in a curved way to a
+point marked x.  Then a straight line path rightwards (horizontally)
+goes to the point x plus h times e sub j.}
 \caption{Using path independence in computing the partial
 derivative.\label{fig:pathindantider}}
 \end{myfigureht}
@@ -1556,7 +1591,9 @@ Let $x,y$ be two points in $U$ and let $\alpha \colon [0,1] \to U$ and
 $\beta \colon [0,1] \to U$ be two piecewise smooth paths with $\alpha(0) = \beta(0) = x$
 and $\alpha(1) = \beta(1) = y$.  See \figureref{fig:twopaths}.
 \begin{myfigureht}
-\myincludepdft{twopaths}{FIXMEALT}
+\myincludepdft{twopaths}{%
+A diagram of two points, x and y, and two different paths, alpha and beta,
+both starting at x and ending at y.}
 \caption{Two paths from $x$ to $y$.\label{fig:twopaths}}
 \end{myfigureht}
 
@@ -1610,7 +1647,11 @@ $(1-t)p + tx \in U$ for all $t \in [0,1]$.
 If we say simply \emph{star-shaped}, then $U$ is star-shaped with respect to
 some $p \in U$.  See \figureref{fig:starshaped}.
 \begin{myfigureht}
-\myincludepdft{starshaped}{FIXMEALT}
+\myincludepdft{starshaped}{%
+A picture of a shaded set which vaguely looks like a star.  A point p is
+marked as well as a number of other random points in the set (one of which
+is labeled x).  Each of these points is connected by a line segment with p,
+and we note that the entire line segment stays in the set.}
 \caption{A star-shaped domain with respect to $p$.\label{fig:starshaped}}
 \end{myfigureht}
 \end{defn}
