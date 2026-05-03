@@ -2157,7 +2157,22 @@ See the right-hand side of \figureref{fig:compactbndclosed}.
 \end{proof}
 
 \begin{myfigureht}
-\myincludepdft{compact_bnd_closed}{FIXMEALT}
+\myincludepdft{compact_bnd_closed}{%
+Two diagrams.  A set K is given as a shaded region with solid
+boundary.  In the left diagram, a point p is highlighted
+together with 3 nested open balls (circles in this case)
+of radius 1, 2, and 3 all centered at p with dotted boundary.
+The set K lies in
+the largest one.
+In the right diagram, the background of the diagram is shaded
+a point x that is on the boundary of K is shown and 4 closed balls
+are drawn as circles with the inside shaded in lighter and lighter gray,
+indicating that we are looking at the complements.
+The outer ball is of radius 1, then there is a ball of radius one half,
+then a ball of radius one third, then a ball of radius one fourth.
+We note that as x sits on the boundary, the complements of the balls
+cover more and more of K.  On the other hand we also note that K
+has nonempty intersection with all the closed balls.}
 \caption{Proving compact set is bounded (left) and closed (right).\label{fig:compactbndclosed}}
 \end{myfigureht}
 
@@ -2244,7 +2259,17 @@ arbitrary, we are done.
 \end{proof}
 
 \begin{myfigureht}
-\myincludepdft{lebesguedelta}{FIXMEALT}
+\myincludepdft{lebesguedelta}{%
+A diagram of a shaded open set U sub lambda.
+A point x in U sub lambda is marked and a ball of radius
+epsilon centered at x is drawn and this ball sits within U sub lambda.
+A ball of radius epsilon over 2 centered at x is also drawn which
+sits within the larger ball.  A point y in the smaller ball is marked
+and ball of radius epsilon over 2 centered at y is shown.  We note
+that this ball centered at y sits entirely within the ball
+of radius epsilon centered at x, the largest ball, and hence also within U
+sub lambda.  One last small ball of radius 1 over n centered at y is shown
+that sits within the epsilon over 2 ball centered at y.}
 \caption{Proof of Lebesgue covering lemma.
 Note that $B(y,\nicefrac{\epsilon}{2}) \subset
 B(x,\epsilon)$ by triangle inequality.\label{fig:lebesguedelta}}
