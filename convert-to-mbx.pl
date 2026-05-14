@@ -498,7 +498,7 @@ sub ensure_mbx_svg_version {
 	print "ENSURE $thefile-mbx.svg\n";
 	if ((not -e "$thefile-mbx.svg") and (-e "$thefile.pdf")) {
 		print "MAKING $thefile-mbx.svg from PDF\n";
-		system("pdftocairo -pdf $thefile.pdf $thefile-mbx.svg");
+		system("pdftocairo -svg $thefile.pdf $thefile-mbx.svg");
 		system("svgo-ll --enable=round $thefile-mbx.svg");
 	}
 }
@@ -1330,7 +1330,7 @@ while(1)
 			do {
 				if ($figure =~ s/^[ \n]*\\myincludegraphics\[(width=[^]]*)\]\{([^}]*?)\}\{([^}]*?)\}[ \n]*//) {
 					my $thesizestr = "$1";
-					my $thefile = "$2";
+					my $thefile = "figures/$2";
 					my $alttag = alttag_substs($3);
 
 					print "IMAGE $thefile\n";
@@ -1347,7 +1347,7 @@ while(1)
 					}
 					$alttag = "";
 				} elsif ($figure =~ s/^[ \n]*\\myincludegraphics(\[align=t\])?\{([^}]*?)\}\{([^}]*?)\}[ \n]*//) {
-					my $thefile = "$2";
+					my $thefile = "figures/$2";
 					my $alttag = alttag_substs($3);
 
 					print "IMAGE $thefile\n";
