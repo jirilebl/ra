@@ -1,7 +1,7 @@
 Basic Analysis: Introduction to Real Analysis
 ---------------------------------------------
 
-A free online textbook.  See https://www.jirka.org/ra/
+A free online textbook.  See https://www.jirka.org/ra/ or https://jirilebl.github.io/ra/
 
 Volume I and II are both in this directory
 

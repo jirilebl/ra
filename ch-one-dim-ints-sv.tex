@@ -383,23 +383,22 @@ Suppose $\gamma$ is
 \emph{continuously differentiable},
 meaning
 it is differentiable and the derivative is continuous.
-In other words, there exists a continuous function $\gamma^{\:\prime} \colon [a,b]
+In other words, there exists a continuous function $\gamma' \colon [a,b]
 \to \R^n$ such that for every $t \in [a,b]$, we have
 $\lim\limits_{h \to 0}
-\frac{\snorm{\gamma(t+h)-\gamma(t) - \gamma^{\:\prime}(t) \, h}}{\sabs{h}} = 0$.
+\frac{\snorm{\gamma(t+h)-\gamma(t) - \gamma'(t) \, h}}{\sabs{h}} = 0$.
 We treat
-$\gamma^{\:\prime}(t)$ either as a linear operator (an $n \times 1$ matrix) or
+$\gamma'(t)$ either as a linear operator (an $n \times 1$ matrix) or
 a vector,
-$\gamma^{\:\prime}(t) =
-\bigl( \gamma_1^{\:\prime}(t), \gamma_2^{\:\prime}(t), \ldots,
-\gamma_n^{\:\prime}(t) \bigr)$.
+$\gamma'(t) =
+\bigl( \gamma_1'(t), \gamma_2'(t), \ldots, \gamma_n'(t) \bigr)$.
 Equivalently, 
 $\gamma_j$ is a continuously differentiable function on $[a,b]$
 for every $j=1,2,\ldots,n$.
 By \exerciseref{exercise:normonedim}, the operator norm of
-the operator $\gamma^{\:\prime}(t)$ equals
+the operator $\gamma'(t)$ equals
 the euclidean norm of the corresponding vector, which allows us to write 
-$\bnorm{\gamma^{\:\prime}(t)}$ without any confusion.
+$\bnorm{\gamma'(t)}$ without any confusion.
 
 \begin{defn}
 A continuously differentiable function $\gamma \colon [a,b] \to \R^n$ is
@@ -410,7 +409,7 @@ word \myquote{smooth} can sometimes mean
 \myquote{infinitely differentiable} in the literature.}
 if
 $\gamma$ is continuously differentiable and
-$\gamma^{\:\prime}(t) \neq 0$ for all $t \in [a,b]$.
+$\gamma'(t) \neq 0$ for all $t \in [a,b]$.
 
 The function $\gamma \colon [a,b] \to \R^n$ is called a
 \emph{\myindex{piecewise smooth path}} or a
@@ -465,7 +464,7 @@ Notice
 that
 $(\gamma|_{[1,2]})'(1) = (0,1)$,
 $(\gamma|_{[0,1]})'(1) = (1,0)$, but
-$\gamma^{\:\prime}(1)$ does not exist.  At the corners $\gamma$ is 
+$\gamma'(1)$ does not exist.  At the corners $\gamma$ is 
 not differentiable.
 The path $\gamma$ is a simple closed path, as $\gamma|_{[0,4)}$ is
 one-to-one and $\gamma(0)=\gamma(4)$.
@@ -487,7 +486,7 @@ on context.
 
 
 \begin{example}
-The condition $\gamma^{\:\prime}(t) \neq 0$ means that the image
+The condition $\gamma'(t) \neq 0$ means that the image
 $\gamma\bigl([a,b]\bigr)$
 has no \myquote{corners} where $\gamma$ is smooth.
 Consider 
@@ -502,7 +501,7 @@ See \figureref{fig:cornersmoothpath}.
 It is left for the reader to check that $\gamma$ is continuously
 differentiable, yet the image $\gamma(\R) = \bigl\{ (x,y) \in \R^2 : (x,y) =
 (s,0) \text{ or } (x,y) = (0,s) \text{ for some } s \geq 0 \bigr\}$ has a
-\myquote{corner} at the origin.  And that is because $\gamma^{\:\prime}(0) = (0,0)$.
+\myquote{corner} at the origin.  And that is because $\gamma'(0) = (0,0)$.
 More complicated examples with, say, infinitely many corners exist,
 see the exercises.
 \begin{myfigureht}
@@ -516,13 +515,13 @@ The origin is labeled t equals 0.  The path suddenly changes direction
 rightwards to go along the x-axis.  A point near the origin is
 marked t equals one half, then some distance further is a point marked t
 equals 1.}
-\caption{``Smooth'' path with a corner if we allow zero derivative.  The
+\caption{\myquote{Smooth} path with a corner if we allow zero derivative.  The
 points corresponding to several values of
 $t$ are marked with dots.\label{fig:cornersmoothpath}}
 \end{myfigureht}
 \end{example}
 
-The condition $\gamma^{\:\prime}(t) \neq 0$ even at the endpoints of
+The condition $\gamma'(t) \neq 0$ even at the endpoints of
 every subinterval guarantees
 not only no corners, but also that the path ends nicely, that is, it can
 extend a little bit past the endpoints if needed.  Again, see the exercises.
@@ -533,7 +532,7 @@ Define $\gamma \colon [a,b] \to \R^2$ by
 \begin{equation*}
 \gamma(t) \coloneqq \bigl(t,f(t)\bigr) .
 \end{equation*}
-Then $\gamma^{\:\prime}(t) = \bigl( 1 , f'(t) \bigr)$, which is never zero,
+Then $\gamma'(t) = \bigl( 1 , f'(t) \bigr)$, which is never zero,
 and $\gamma\bigl([a,b]\bigr)$ is the graph of $f$.
 
 There are other ways of parametrizing the path.  That is, there are
@@ -678,19 +677,19 @@ Define:
 & \coloneqq
 \int_a^b 
 \Bigl(
-\omega_1\bigl(\gamma(t)\bigr) \gamma_1^{\:\prime}(t) +
-\omega_2\bigl(\gamma(t)\bigr) \gamma_2^{\:\prime}(t) + \cdots +
-\omega_n\bigl(\gamma(t)\bigr) \gamma_n^{\:\prime}(t) \Bigr) dt
+\omega_1\bigl(\gamma(t)\bigr) \gamma_1'(t) +
+\omega_2\bigl(\gamma(t)\bigr) \gamma_2'(t) + \cdots +
+\omega_n\bigl(\gamma(t)\bigr) \gamma_n'(t) \Bigr) dt
 \\
 &\phantom{:}=
 \int_a^b 
 \left(
 \sum_{j=1}^n
-\omega_j\bigl(\gamma(t)\bigr) \gamma_j^{\:\prime}(t) \right) dt .
+\omega_j\bigl(\gamma(t)\bigr) \gamma_j'(t) \right) dt .
 \end{split}
 \end{equation*}
 To remember the definition note that $x_j$ is $\gamma_j(t)$, so
-$dx_j$ becomes  $\gamma_j^{\:\prime}(t) \, dt$.
+$dx_j$ becomes  $\gamma_j'(t) \, dt$.
 
 If $\gamma$ is piecewise smooth, take the corresponding partition
 $t_0 = a < t_1 < t_2 < \ldots < t_k = b$, and assume the partition is
@@ -717,7 +716,7 @@ a smooth path, define
 The notation for an integral of a one-form makes sense from the
 \myquote{$u$-substitution} formula you remember from calculus.
 Somewhat informally,
-if $x_j(t) = \gamma_j(t)$, then $dx_j = \gamma_j^{\:\prime}(t) \, dt$.
+if $x_j(t) = \gamma_j(t)$, then $dx_j = \gamma_j'(t) \, dt$.
 
 Paths can be cut up or concatenated.  The proof is a direct application
 of the additivity of the Riemann integral, and is left as an exercise.
@@ -879,14 +878,14 @@ the change of variables formula for the Riemann integral:
 \int_a^b 
 \left(
 \sum_{j=1}^n
-\omega_j\bigl(\gamma(t)\bigr) \gamma_j^{\:\prime}(t)
+\omega_j\bigl(\gamma(t)\bigr) \gamma_j'(t)
 \right) dt
 \\
 & =
 \int_c^d 
 \left(
 \sum_{j=1}^n
-\omega_j\Bigl(\gamma\bigl(h(\tau)\bigr)\Bigr) \gamma_j^{\:\prime}\bigl(h(\tau)\bigr)
+\omega_j\Bigl(\gamma\bigl(h(\tau)\bigr)\Bigr) \gamma_j'\bigl(h(\tau)\bigr)
 \right) h'(\tau) \, d\tau
 \\
 & =
@@ -988,12 +987,12 @@ Define
 \int_{\gamma} \omega \coloneqq \int_a^b
 \left(
 \sum_{j=1}^n
-\omega_j\bigl(\gamma(t)\bigr) \gamma_j^{\:\prime}(t)
+\omega_j\bigl(\gamma(t)\bigr) \gamma_j'(t)
 \right) dt 
 \end{equation*}
 for every continuously differentiable $\gamma$.  A 
 case that comes up naturally is when $\gamma$ is constant.  Then
-$\gamma^{\:\prime}(t) = 0$ for all $t$, and $\gamma\bigl([a,b]\bigr)$ is a single
+$\gamma'(t) = 0$ for all $t$, and $\gamma\bigl([a,b]\bigr)$ is a single
 point, which we regard as a \myquote{curve} of length zero.  Then,
 $\int_{\gamma} \omega = 0$ for every $\omega$.
 
@@ -1023,7 +1022,7 @@ define
 \glsadd{not:lineintegralf}
 \begin{equation*}
 \int_{\gamma} f \,ds \coloneqq
-\int_a^b f\bigl( \gamma(t) \bigr) \bnorm{\gamma^{\:\prime}(t)} \, dt .
+\int_a^b f\bigl( \gamma(t) \bigr) \bnorm{\gamma'(t)} \, dt .
 \end{equation*}
 To emphasize the variables we may use
 \begin{equation*}
@@ -1055,17 +1054,17 @@ are both smooth.  Then
 \int_{\gamma} f \, ds
 & =
 \int_a^b 
-f\bigl(\gamma(t)\bigr) \bnorm{\gamma^{\:\prime}(t)} \, dt
+f\bigl(\gamma(t)\bigr) \bnorm{\gamma'(t)} \, dt
 \\
 & =
 \int_c^d 
 f\Bigl(\gamma\bigl(h(\tau)\bigr)\Bigr)
-\bnorm{\gamma^{\:\prime}\bigl(h(\tau)\bigr)} h'(\tau) \, d\tau
+\bnorm{\gamma'\bigl(h(\tau)\bigr)} h'(\tau) \, d\tau
 \\
 & =
 \int_c^d 
 f\Bigl(\gamma\bigl(h(\tau)\bigr)\Bigr)
-\bnorm{\gamma^{\:\prime}\bigl(h(\tau)\bigr) h'(\tau)} \, d\tau
+\bnorm{\gamma'\bigl(h(\tau)\bigr) h'(\tau)} \, d\tau
 \\
 & =
 \int_c^d 
@@ -1102,7 +1101,7 @@ Let $f(x,y) \coloneqq x$.  Let $C \subset \R^2$ be half of the unit circle for $
 Parametrize the curve $C$ via $\gamma \colon
 [\nicefrac{-\pi}{2},\nicefrac{\pi}{2}] \to \R^2$ defined as
 $\gamma(t) \coloneqq \bigl(\cos(t),\sin(t)\bigr)$.
-Then $\gamma^{\:\prime}(t) = \bigl(-\sin(t),\cos(t)\bigr)$, and
+Then $\gamma'(t) = \bigl(-\sin(t),\cos(t)\bigr)$, and
 \begin{equation*}
 \int_C f \, ds =
 \int_\gamma f \, ds
@@ -1128,12 +1127,12 @@ If $\gamma$ is smooth,
 \begin{equation*}
 \ell(\Gamma) = 
 \int_a^b
-\bnorm{\gamma^{\:\prime}(t)}\, dt .
+\bnorm{\gamma'(t)}\, dt .
 \end{equation*}
 This may be a good time to mention that it is common to write
 $\int_a^b
-\bnorm{\gamma^{\:\prime}(t)}\, dt$ even if the path is only piecewise smooth.
-That is because $\bnorm{\gamma^{\:\prime}(t)}$ is defined and continuous
+\bnorm{\gamma'(t)}\, dt$ even if the path is only piecewise smooth.
+That is because $\bnorm{\gamma'(t)}$ is defined and continuous
 at all but finitely many points and is bounded, and so the integral exists.
 
 \begin{example}
@@ -1141,7 +1140,7 @@ Let $x,y \in \R^n$ be two points and write $[x,y]$ as the straight line
 segment between the two points $x$ and $y$.  Parametrize
 $[x,y]$ by $\gamma(t) \coloneqq (1-t)x + ty$ for $t$ running between $0$ and $1$.
 See \figureref{fig:straightpath}.
-Then $\gamma^{\:\prime}(t) = y-x$, and therefore
+Then $\gamma'(t) = y-x$, and therefore
 \begin{equation*}
 \ell\bigl([x,y]\bigr)
 =
@@ -1175,14 +1174,14 @@ If $\gamma$ is smooth, then
 \int_0^t d\tau =
 t = \ell\bigl( \gamma\bigl([0,t]\bigr) \bigr) =
 \int_0^t
-\bnorm{\gamma^{\:\prime}(\tau)}
+\bnorm{\gamma'(\tau)}
 \, d\tau
 \end{equation*}
 for all $t$.
 The fundamental theorem of calculus then says
-that $\bnorm{\gamma^{\:\prime}(t)} = 1$ for all $t$.
+that $\bnorm{\gamma'(t)} = 1$ for all $t$.
 Similarly for piecewise smooth $\gamma$, we get
-$\bnorm{\gamma^{\:\prime}(t)} = 1$ for all $t$ where the derivative exists.
+$\bnorm{\gamma'(t)} = 1$ for all $t$ where the derivative exists.
 Think of such a parametrization as moving around your curve at speed
 1.  If $\gamma \colon [0,r] \to \R^n$ is an arclength parametrization, it is
 common to use $s$ as the variable as $\int_\gamma f \,ds
@@ -1264,7 +1263,7 @@ Suppose $\gamma \colon [a,b] \to \R^n$ is a smooth path.
 Show that there exists an $\epsilon > 0$ and a continuously differentiable function
 $\widetilde{\gamma} \colon (a-\epsilon,b+\epsilon) \to \R^n$
 with $\widetilde{\gamma}(t) = \gamma(t)$ for all $t \in [a,b]$
-and $\widetilde{\gamma}^{\:\prime}(t) \neq 0$ for all $t \in 
+and $\widetilde{\gamma}'(t) \neq 0$ for all $t \in 
 (a-\epsilon,b+\epsilon)$.  That is, prove that a smooth path extends
 some small distance past the end points.
 \end{exercise}
@@ -1386,7 +1385,7 @@ $\gamma$ is continuously differentiable on $[0,1]$.
 \item
 Show that there exists an infinite sequence $\{ t_n \}_{n=1}^\infty$ in $[0,1]$
 converging to 0, such that
-$\gamma^{\:\prime}(t_n) = (0,0)$.
+$\gamma'(t_n) = (0,0)$.
 \item
 Show that the points $\gamma(t_n)$ lie on the line $y=0$ and such
 that the $x$-coordinate of $\gamma(t_n)$ alternates between positive and
@@ -1442,7 +1441,7 @@ going from $(0,0)$ to $(1,0)$.  Let $\beta \colon [0,1] \to \R^2$ be the path
 $\beta(t) \coloneqq \bigl(t,(1-t)t\bigr)$ also going between the same points.  Then
 \begin{align*}
 & \int_\gamma y \, dx = 
-\int_0^1 \gamma_2(t) \gamma_1^{\:\prime}(t) \, dt
+\int_0^1 \gamma_2(t) \gamma_1'(t) \, dt
 =
 \int_0^1 0 (1) \, dt = 0 ,\\
 & \int_\beta y \, dx = 
@@ -1536,7 +1535,7 @@ less from $x$ are in $U$.
 As the integral is path independent,
 pick the simplest path possible from $x$ to $x+he_j$, that is,
 $\gamma(t) \coloneqq x+t he_j$ for $t \in [0,1]$.  The path is in $U$.
-Notice $\gamma^{\:\prime}(t) = h e_j$
+Notice $\gamma'(t) = h e_j$
 has only one nonzero component and that is the $j$th component, which is
 $h$.  Therefore,
 \begin{equation*}
@@ -1581,9 +1580,9 @@ $\gamma(b) = y$.  Then
 & =
 \int_a^b
 \biggl(
-\frac{\partial f}{\partial x_1}\bigl(\gamma(t)\bigr) \gamma_1^{\:\prime}(t)+
-\frac{\partial f}{\partial x_2}\bigl(\gamma(t)\bigr) \gamma_2^{\:\prime}(t)+ \cdots +
-\frac{\partial f}{\partial x_n}\bigl(\gamma(t)\bigr) \gamma_n^{\:\prime}(t)
+\frac{\partial f}{\partial x_1}\bigl(\gamma(t)\bigr) \gamma_1'(t)+
+\frac{\partial f}{\partial x_2}\bigl(\gamma(t)\bigr) \gamma_2'(t)+ \cdots +
+\frac{\partial f}{\partial x_n}\bigl(\gamma(t)\bigr) \gamma_n'(t)
 \biggr) \, dt
 \\
 & = 
@@ -1733,7 +1732,7 @@ sufficient for a star-shaped $U$.
 \begin{proof}
 Suppose $U$ is a star-shaped domain with respect to $p=(p_1,p_2,\ldots,p_n) \in U$.
 Given $x = (x_1,x_2,\ldots,x_n) \in U$, define the path $\gamma \colon [0,1] \to U$ as
-$\gamma(t) \coloneqq (1-t)p + tx$, so $\gamma^{\:\prime}(t) = x-p$.  Let
+$\gamma(t) \coloneqq (1-t)p + tx$, so $\gamma'(t) = x-p$.  Let
 \begin{equation*}
 f(x) \coloneqq \int_{\gamma} \omega
 =
@@ -1834,7 +1833,7 @@ the path integral of the vector field $v$ as
 \begin{equation*}
 \int_{\gamma} v \cdot d\gamma
 \coloneqq
-\int_a^b v\bigl(\gamma(t)\bigr) \cdot \gamma^{\:\prime}(t) \, dt ,
+\int_a^b v\bigl(\gamma(t)\bigr) \cdot \gamma'(t) \, dt ,
 \end{equation*}
 where the dot in the definition is the standard dot product.
 The definition for a piecewise smooth path is, again, done by integrating over

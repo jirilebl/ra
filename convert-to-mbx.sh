@@ -115,6 +115,7 @@ echo FIXING UP HTML ...
 echo
 
 for n in *.html; do
+	#echo -n "[$n]"
 	../fixup-html-file.pl < $n > tmpout
 	mv tmpout $n
 done
@@ -122,6 +123,7 @@ done
 echo
 echo DONE ...
 echo
-echo 'Perhaps now do (if you are me): rsync -av -e ssh html zinc.kvinzo.com:/var/www/jirka/ra/'
+echo 'Perhaps now do (if you are me): cp -a html/* ~/gh/jirilebl.github.io/ra/html/'
+echo 'then commit, then run the updghweb.sh script'
 echo 'Make sure you have run the script with --full before ...'
 echo

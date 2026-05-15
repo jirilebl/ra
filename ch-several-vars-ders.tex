@@ -2442,7 +2442,7 @@ symmetric convex set that spans $\R^n$ and $0 \in C$.  Show that
 is a norm on $\R^n$, and $C = C(0,1)$ (the closed unit ball) in the metric induced by this norm.
 \end{enumerate}
 Hint: Feel free to use the result of \exerciseref{exercise:allnormsequiv}
-part c).  In particular, whether a set is ``compact'' is independent of the
+part c).  In particular, whether a set is \myquote{compact} is independent of the
 norm.
 \end{exercise}
 
@@ -2986,19 +2986,18 @@ For the purposes of computation,
 we identify $L(\R^1)$ and $\R$ as we did when we defined the
 derivative in one variable.
 We also identify $L(\R^1,\R^n)$ with $\R^n$.
-We treat $\gamma^{\:\prime}(t)$ both as an operator in
+We treat $\gamma'(t)$ both as an operator in
 $L(\R^1,\R^n)$ and the vector
-$\bigl(\gamma_1^{\:\prime}(t),
-\gamma_2^{\:\prime}(t),\ldots,\gamma_n^{\:\prime}(t)\bigr)$
+$\bigl(\gamma_1'(t),\gamma_2'(t),\ldots,\gamma_n'(t)\bigr)$
 in $\R^n$.
 Using \propref{mv:prop:jacobianmatrix},
-if $v\in \R^n$ is $\gamma^{\:\prime}(t)$ acting as a vector,
+if $v\in \R^n$ is $\gamma'(t)$ acting as a vector,
 then $h \mapsto h \, v$ (for $h \in \R^1 = \R$) is
-$\gamma^{\:\prime}(t)$ acting as an operator
+$\gamma'(t)$ acting as an operator
 in $L(\R^1,\R^n)$.
 We often use this 
 slight abuse of notation when dealing with curves.
-The vector $\gamma^{\:\prime}(t)$ is called a \emph{\myindex{tangent vector}}.
+The vector $\gamma'(t)$ is called a \emph{\myindex{tangent vector}}.
 See \figureref{fig:difcurveder}.
 \begin{myfigureht}
 \myincludepdft{diffcurveder}{%
@@ -3011,7 +3010,7 @@ starting at this point and pointing along the curve is
 marked gamma prime of t.}
 \caption{Differentiable curve and its derivative as a
 vector (for clarity assuming $\gamma$ defined on $[a,b]$).
-The tangent vector $\gamma^{\:\prime}(t)$ points along the curve.\label{fig:difcurveder}}
+The tangent vector $\gamma'(t)$ points along the curve.\label{fig:difcurveder}}
 \end{myfigureht}
 
 Suppose $\gamma\bigl((a,b)\bigr) \subset U$ and let
@@ -3022,7 +3021,7 @@ The function
 $g$ is differentiable. Treating $g'(t)$ as a number,
 \begin{equation*}
 g'(t) =
-f'\bigl(\gamma(t)\bigr) \gamma^{\:\prime}(t)
+f'\bigl(\gamma(t)\bigr) \gamma'(t)
 =
 \sum_{j=1}^n
 \frac{\partial f}{\partial x_j} \bigl(\gamma(t)\bigr)
@@ -3039,8 +3038,8 @@ such as above on the far right-hand side.
 With the notation of the gradient and the dot product,
 the equation becomes
 \begin{equation*}
-g'(t) = (\nabla f) \bigl(\gamma(t)\bigr) \cdot \gamma^{\:\prime}(t)
-= \nabla f \cdot \gamma^{\:\prime}.
+g'(t) = (\nabla f) \bigl(\gamma(t)\bigr) \cdot \gamma'(t)
+= \nabla f \cdot \gamma'.
 \end{equation*}
 
 We use this idea to define derivatives in a specific direction.  A direction
@@ -3065,17 +3064,17 @@ Define $\gamma$ by
 \begin{equation*}
 \gamma(t) \coloneqq x + tu .
 \end{equation*}
-Then $\gamma^{\:\prime}(t) = u$ for all $t$.  
+Then $\gamma'(t) = u$ for all $t$.  
 Let us see what happens to $f$ when we travel along $\gamma$:
 \begin{equation*}
 D_u f (x) =
 \frac{d}{dt}\Big|_{t=0} \bigl[ f(x+tu) \bigr] =
-(\nabla f) \bigl(\gamma(0)\bigr) \cdot \gamma^{\:\prime}(0)
+(\nabla f) \bigl(\gamma(0)\bigr) \cdot \gamma'(0)
 =
 (\nabla f) (x) \cdot u .
 \end{equation*}
 In fact, this computation holds whenever $\gamma$ is any curve such that
-$\gamma(0) = x$ and $\gamma^{\:\prime}(0) = u$.
+$\gamma(0) = x$ and $\gamma'(0) = u$.
 
 Suppose $(\nabla f)(x) \neq 0$.
 By the Cauchy--Schwarz inequality,
@@ -3106,8 +3105,8 @@ or simply the
 \emph{\myindex{Jacobian}}%
 \footnote{The matrix from \propref{mv:prop:jacobianmatrix} representing $f'(x)$
 is called the
-\emph{\myindex{Jacobian matrix}}, or sometimes confusingly also called just ``the
-Jacobian.''},
+\emph{\myindex{Jacobian matrix}}, or sometimes confusingly also called just
+\myquote{the Jacobian.}},
 of $f$ at $x$ as
 \glsadd{not:jacobdet}
 \begin{equation*}
@@ -3144,7 +3143,7 @@ we would be correct as we will later see).
 \begin{exercise}
 Suppose $\gamma \colon (-1,1) \to \R^n$ and
 $\alpha \colon (-1,1) \to \R^n$ are two differentiable curves
-such that $\gamma(0) = \alpha(0)$ and $\gamma^{\:\prime}(0) = \alpha'(0)$.
+such that $\gamma(0) = \alpha(0)$ and $\gamma'(0) = \alpha'(0)$.
 Suppose $F \colon \R^n \to \R$ is a differentiable function.  Show that
 \begin{equation*}
 \frac{d}{dt}\Big|_{t=0}
@@ -4592,7 +4591,7 @@ that $\nabla f(x,y) \neq 0$ for all $(x,y) \in U$.  Show that every
 level set is a $C^1$ smooth curve.  That is,
 for every
 $(x,y) \in U$, there exists a $C^1$ function $\gamma \colon (-\delta,\delta)
-\to \R^2$ with $\gamma^{\:\prime}(0) \neq 0$ such that
+\to \R^2$ with $\gamma'(0) \neq 0$ such that
 $f\bigl(\gamma(t)\bigr)$ is constant for all $t \in (-\delta,\delta)$.
 \end{exercise}
 
