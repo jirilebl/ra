@@ -84,7 +84,6 @@ cp -a ../figures .
 rm figures/.gitignore
 rm figures/*.sh
 rm figures/figurerun*
-rm figures/figure-concat*
 rm figures/*.fig
 rm figures/*.pdf
 rm figures/*.pdf_t

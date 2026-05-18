@@ -993,42 +993,44 @@ while(1)
 			print "\n\n\nERROR: HUH?\n\n\nNo end align*!\n\n$para\n\n";
 			$num_errors++;
 		}
-	} elsif ($para =~ s/^\\begin\{align\}[ \n]*//) {
-		print "(ALIGN)\n";
-		if ($para =~ s/^(.*?)\\end\{align\}[ \n]*//s) {
-			my $eqn = do_displaymath_subs($1);
-			$eqn = do_slashmbx_subs($eqn);
-			#$theid = "";
-			#if ($para =~ s/^ *\\label\{(.*?)\} *//) {
-			#	$theid = $1;
-			#}
-
-			my $indexes = "";
-			while ($eqn =~ s/\\myindex\{(.*?)\}/$1/) {
-				$indexes = $indexes . "<idx>$1</idx>";
-			}
-			while ($eqn =~ s/\\index\{(.*?)\}//) {
-				$indexes = $indexes . "<idx>$1</idx>";
-			}
-			$indexes = do_line_subs($indexes);
-
-			print $out "<md>$indexes\n";
-			print $out "<mrow>\n";
-
-			#FIXME: this will mess up things with cases
-			# But currently I only have one single {align} with numbers
-			# that will need to get handled
-			$eqn =~ s|\\\\|</mrow>\n<mrow>\n|g;
-			print "EQ = $eqn\n";
-
-			print $out "$eqn";
-
-			print $out "</mrow>\n";
-			print $out "</md>\n";
-		} else {
-			print "\n\n\nERROR: HUH?\n\n\nNo end align!\n\n$para\n\n";
-			$num_errors++;
-		}
+	
+	# There is no align (and this is broken anyhow)
+	#} elsif ($para =~ s/^\\begin\{align\}[ \n]*//) {
+	#	print "(ALIGN)\n";
+	#	if ($para =~ s/^(.*?)\\end\{align\}[ \n]*//s) {
+	#		my $eqn = do_displaymath_subs($1);
+	#		$eqn = do_slashmbx_subs($eqn);
+	#		#$theid = "";
+	#		#if ($para =~ s/^ *\\label\{(.*?)\} *//) {
+	#		#	$theid = $1;
+	#		#}
+	#
+	#		my $indexes = "";
+	#		while ($eqn =~ s/\\myindex\{(.*?)\}/$1/) {
+	#			$indexes = $indexes . "<idx>$1</idx>";
+	#		}
+	#		while ($eqn =~ s/\\index\{(.*?)\}//) {
+	#			$indexes = $indexes . "<idx>$1</idx>";
+	#		}
+	#		$indexes = do_line_subs($indexes);
+	#
+	#		print $out "<md>$indexes\n";
+	#		print $out "<mrow>\n";
+	#
+	#		#FIXME: this will mess up things with cases
+	#		# But currently I only have one single {align} with numbers
+	#		# that will need to get handled
+	#		$eqn =~ s|\\\\|</mrow>\n<mrow>\n|g;
+	#		print "EQ = $eqn\n";
+	#
+	#		print $out "$eqn";
+	#
+	#		print $out "</mrow>\n";
+	#		print $out "</md>\n";
+	#	} else {
+	#		print "\n\n\nERROR: HUH?\n\n\nNo end align!\n\n$para\n\n";
+	#		$num_errors++;
+	#	}
 
 	} elsif ($para =~ s/^\\begin\{multline\*\}[ \n]*//) {
 		print "(MULTLINE*)\n";
