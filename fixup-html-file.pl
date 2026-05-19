@@ -13,7 +13,9 @@ $isindex = 0;
 
 while($line = <STDIN>)
 {
-	$line =~ s{<span[^>]*><button id="light-dark-button".*</button></span>}{};
+	# no longer needed
+	#$line =~ s{<span[^>]*><button id="light-dark-button".*</button></span>}{};
+
 	if ($line =~ m/<title>[A-Za-z ]*Index<\/title>/) {
 	  	$isindex = 1;
 	}
