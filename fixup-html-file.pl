@@ -64,13 +64,13 @@ while($line = <STDIN>)
 		$didheadstyleadd ++;
 	}
 	if ($line =~ m/<\/body>/) {
-		print "<span class=\"print-pdf-warning\">\n";
+		print "<p class=\"print-pdf-warning\">\n";
 		print " <em>For a higher quality printout use the PDF versions: ";
-		print "<tt>https://www.jirka.org/ra/realanal.pdf</tt>,";
-		print "<tt>https://www.jirka.org/ra/realanal2.pdf</tt></em>\n";
-		print "or <tt>https://jirilebl.github.io/ra/realanal.pdf</tt>,";
+		print "<tt>https://www.jirka.org/ra/realanal.pdf</tt>, ";
+		print "<tt>https://www.jirka.org/ra/realanal2.pdf</tt>\n";
+		print "or <tt>https://jirilebl.github.io/ra/realanal.pdf</tt>, ";
 		print "<tt>https://jirilebl.github.io/ra/realanal2.pdf</tt></em>\n";
-		print "</span>\n";
+		print "</p>\n";
 		$didprintwarn ++;
 	}
 	# no longer there
