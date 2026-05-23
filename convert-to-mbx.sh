@@ -104,7 +104,8 @@ mkdir _static
 mkdir _static/pretext
 cp -a ~/pretext/js _static/pretext/
 cp -a ~/pretext/css _static/pretext/
-cp _static/pretext/css/dist/theme-default-modern.css _static/pretext/css/theme.css
+# this changes the background color to darker one
+cat _static/pretext/css/dist/theme-default-modern.css | sed 's/23241f/0d0d0d/' > _static/pretext/css/theme.css
 #cp _static/pretext/css/dist/theme-default-modern.css.map _static/pretext/css/
 cp -a ~/pretext/js_lib _static/pretext/js/lib
 
