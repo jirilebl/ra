@@ -49,8 +49,10 @@ while($line = <STDIN>)
 	if ($line =~ m/<\/script><script.*mathjax\@4\/tex-mml-chtml/) {
 		#avoid inline math wrapping, it does awful things
 		print "window.MathJax = window.MathJax || {};\n";
-  		print "window.MathJax.chtml = window.MathJax.chtml || {};\n";
-  		print "window.MathJax.chtml.linebreaks = { inline: false };\n";
+  		print "window.MathJax.output = window.MathJax.output || {};\n";
+		# it will get scrdolled anyway by our css
+  		print "window.MathJax.output.displayOverflow = 'overflow';\n";
+  		print "window.MathJax.output.linebreaks = { inline: false };\n";
 		$didmathjaxconfig ++;
 	}
 	if ($line =~ m/<\/head>/) {
