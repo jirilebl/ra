@@ -120,7 +120,16 @@
 \counterwithout{footnote}{chapter} % Fix footnotes starting at 2 on the first page of a chapter.
 \usepackage{perpage}
 \MakePerPage{footnote}
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\makeatletter
+\def\safe@fnsymbol#1{%
+  \ifnum\value{#1}>9 
+    \arabic{#1}%
+  \else
+    \fnsymbol{#1}%
+  \fi
+}
+\renewcommand{\thefootnote}{\safe@fnsymbol{footnote}}
+\makeatother
 
 \usepackage{footnote}
 
